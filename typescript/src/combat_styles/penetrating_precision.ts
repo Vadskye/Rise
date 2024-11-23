@@ -183,7 +183,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Full-Body Thrust+',
 
       effect: `
-        Make a melee \\glossterm{strike} with \\damagerankseven{} extra damage.
+        Make a melee \\glossterm{strike} with \\damagerankseven extra damage.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 7,

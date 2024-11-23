@@ -19,7 +19,7 @@ export const bluntForce: CombatStyle = {
       name: 'Ground Stomp',
 
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
@@ -32,7 +32,7 @@ export const bluntForce: CombatStyle = {
       name: 'Ground Stomp+',
 
       attack: {
-        hit: `\\damagerankfive{}.`,
+        hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
@@ -99,7 +99,7 @@ export const bluntForce: CombatStyle = {
       name: 'Leap Slam',
 
       attack: {
-        hit: `\\damageranktwo{}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           You jump and move as normal for the jump (see \\pcref{Jumping}).
@@ -115,7 +115,7 @@ export const bluntForce: CombatStyle = {
 
       functionsLike: {
         name: 'leap slam',
-        exceptThat: 'the damage increases to \\damageranksix{}.',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 7,
     },

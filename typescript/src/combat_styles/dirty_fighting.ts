@@ -21,7 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\damaginghit If the target loses hit points, it takes \\damagerankseven{}.
+        \\damaginghit If the target loses hit points, it takes \\damagerankseven.
       `,
       rank: 5,
     },
@@ -32,7 +32,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target also takes \\damageranktwo{} damage.
+          the target also takes \\damageranktwo damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: 'grapple',
@@ -152,7 +152,7 @@ export const dirtyFighting: CombatStyle = {
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           % TODO: clarify that this doesn't work with "move through enemies freely" abilities
-          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo{}.
+          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: 'overrun',
@@ -167,7 +167,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'maneuver',
         exceptThat: `
-          the damage increases to \\damageranksix{}.
+          the damage increases to \\damageranksix.
         `,
         name: 'battering ram',
       },

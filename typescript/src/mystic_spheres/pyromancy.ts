@@ -88,7 +88,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{} immediately, and again during your next action.
+          \\damagerankone immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.

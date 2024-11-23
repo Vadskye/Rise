@@ -19,7 +19,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     Make an attack vs. Armor against up to two creatures or objects within \shortrange.
                     You gain a \plus2 accuracy bonus with this attack against any creature that attacked you during the previous round.
                     If you suffered a vital wound from that attack, this bonus increases to \plus10.
-                    \hit \damagerankone{}.
+                    \hit \damagerankone.
 
                     \rankline
                     \rank{2} The damage bonus from your \glossterm{power} increases to be equal to your power.
@@ -136,7 +136,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against one creature within \rngmed range.
-                    \hit \damagerankthree{}.
+                    \hit \damagerankthree.
                     If the target loses \glossterm{hit points} from this damage, it is briefly teleported into the Abyss.
                     At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
                     After it returns, it becomes immune to being teleported in this way until it finishes a \glossterm{short rest}.

@@ -69,7 +69,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // -2 ranks for delayed onset
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
           If the target loses hit points, it slowly begins freezing as a \\glossterm{condition}.
           After your action next round, it becomes \\slowed.
         `,
@@ -88,7 +88,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
           If the target takes damage, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -106,7 +106,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       // This is cheating a bit to get icy terrain
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
@@ -122,7 +122,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       // 2 ranks for larger area, 1 rank for icy terrain
       attack: {
-        hit: `\\damagerankthree{}.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\largearea cone from you.
@@ -139,7 +139,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // -3r for removed if damaged, for a total of r+5
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
           If the target loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
           This condition is automatically removed if the target takes damage.
         `,
@@ -157,7 +157,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
@@ -174,7 +174,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damageranksix{}.
+          \\damageranksix.
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
@@ -272,7 +272,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
@@ -289,7 +289,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankseven{}.
+          \\damagerankseven.
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
@@ -305,7 +305,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
@@ -325,7 +325,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damageranksix{}.
+          \\damageranksix.
           If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         miss: `
@@ -405,7 +405,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         // icy terrain for attune + every other round
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -426,7 +426,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{}.
+          the damage increases to \\damagerankfive.
         `,
       },
       rank: 6,
@@ -439,7 +439,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       // original targets: ['Yourself', 'See text']
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
@@ -455,7 +455,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Icicle Carapace',
 
       attack: {
-        hit: `\\damagerankseven{}.`,
+        hit: `\\damagerankseven.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
