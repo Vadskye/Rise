@@ -559,7 +559,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Wings of the Phoenix',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       rank: 6,
       type: 'Attune',

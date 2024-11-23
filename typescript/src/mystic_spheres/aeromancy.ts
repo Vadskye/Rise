@@ -282,7 +282,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       name: 'Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 4,
@@ -292,7 +292,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       name: 'Agile Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
         Unlike normal, flying with this fly speed does not penalize your Armor and Reflex defenses.
       `,
       // narrative: '',
@@ -303,7 +303,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       name: 'Soaring Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 120 feet (see \\pcref{Flight}).
+        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 7,
@@ -643,10 +643,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       effect: `
         You \\glossterm{shapeshift} into a cloud of mist.
-        This makes you \\trait{floating}, \\trait{legless}, and \\trait{intangible}.
+        This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
+        While you are in this form, you are unable to take any standard action other than \glossterm{movement}.
       `,
       rank: 5,
       tags: [],
@@ -701,7 +702,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       castingTime: 'one minute',
       effect: `
         Choose up to six ritual participants.
-        Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        Each target gains a 30 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
         If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       // narrative: '',
@@ -714,7 +715,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       castingTime: 'one hour',
       effect: `
         Choose up to six ritual participants.
-        Each target gains a 60 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        Each target gains a 60 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
         If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       // narrative: '',
