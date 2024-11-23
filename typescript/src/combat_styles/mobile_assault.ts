@@ -10,7 +10,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to half your movement speed in a straight line.
-        You can also make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
+        You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         On a miss, you still deal half damage.
       `,
@@ -22,7 +22,7 @@ export const mobileAssault: CombatStyle = {
 
       effect: `
         Move up to your movement speed in a straight line.
-        You can also make a melee \\glossterm{strike} using a slashing or bludgeoning weapon.
+        You can also make a melee \\glossterm{strike}.
         The strike deals double \\glossterm{weapon damage}, and it targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         On a miss, you still deal half damage.
       `,
@@ -40,7 +40,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Rushed Strike",
+      name: "Rushdown",
 
       effect: `
         You can move up to half your speed and make a strike with a -1 accuracy penalty, in either order.
@@ -49,7 +49,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: "Rushed Strike+",
+      name: "Rushdown+",
 
       effect: `
         You can move up to your speed and make a strike with a -2 accuracy penalty, in either order.
@@ -92,7 +92,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: 'Retreating Strike',
+      name: 'Fall Back',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -138,7 +138,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: 'Leaping Strike',
+      name: 'Carve the Air',
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
@@ -148,7 +148,7 @@ export const mobileAssault: CombatStyle = {
     },
 
     {
-      name: 'Leaping Impact Strike',
+      name: 'Leaping Impact',
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
