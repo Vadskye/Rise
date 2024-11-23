@@ -332,7 +332,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                     //     StandardWeapon::Claws.weapon(),
                     // ],
                     modifiers: vec![
-                        fire_immunity,
+                        fire_immunity.clone(),
                         Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Attack(StandardAttack::Enrage(2).attack()),
                         Modifier::Maneuver(Maneuver::PowerStrike),
@@ -390,7 +390,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                         }),
                     ],
                     modifiers: vec![
-                        fire_immunity,
+                        fire_immunity.clone(),
                         Modifier::PassiveAbility(PassiveAbility::soulless()),
                         Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
                             AbilityTag::Compulsion,
@@ -432,7 +432,7 @@ fn add_demons(monsters: &mut Vec<MonsterEntry>) {
                 abilities: MonsterAbilities {
                     active_abilities: vec![],
                     modifiers: vec![
-                        fire_immunity,
+                        fire_immunity.clone(),
                         Modifier::Attack(StandardAttack::Combustion(6).attack()),
                         Modifier::Attack(StandardAttack::Pyroclasm(6).attack()),
                         Modifier::Attack(StandardAttack::Pyrohemia(6).attack()),

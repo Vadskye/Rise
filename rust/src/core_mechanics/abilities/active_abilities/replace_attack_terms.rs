@@ -91,7 +91,7 @@ fn replace_damage_rank_terms(effect: &str, creature: &Creature, is_magical: bool
     let damage_pattern = Regex::new(r"\$dr\d[hl]?\b").unwrap();
     for damage_match in damage_pattern.find_iter(&replaced_effect.clone()) {
         // TODO: figure out how to trim the leading "$"
-        let parsed_damage_effect = SimpleDamageEffect::from_string(damage_match.as_str(), vec![]);
+        let parsed_damage_effect = SimpleDamageEffect::from_string(damage_match.as_str());
         let damage_dice = parsed_damage_effect.calc_damage_dice(creature, is_magical, false);
         replaced_effect = damage_pattern
             .replacen(&replaced_effect, 1, damage_dice.to_string())
