@@ -361,19 +361,19 @@ impl Monster {
     }
 
     // Useful for comparing the relative power of various attributes
-    fn pure_attribute(level: i32, attribute: Attribute) -> Self {
-        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Leader, level);
-        monster.creature.set_base_attribute(attribute, 4);
-        // We use Intelligence because it doesn't affect any monster statistics
-        monster
-            .creature
-            .set_attribute_scaling(level, vec![attribute, Attribute::Intelligence]);
-        monster
-            .creature
-            .set_name(&format!("Pure {}", attribute.name()));
+    // fn pure_attribute(level: i32, attribute: Attribute) -> Self {
+    //     let mut monster = Self::new(false, CreatureType::Planeforged, Role::Leader, level);
+    //     monster.creature.set_base_attribute(attribute, 4);
+    //     // We use Intelligence because it doesn't affect any monster statistics
+    //     monster
+    //         .creature
+    //         .set_attribute_scaling(level, vec![attribute, Attribute::Intelligence]);
+    //     monster
+    //         .creature
+    //         .set_name(&format!("Pure {}", attribute.name()));
 
-        monster
-    }
+    //     monster
+    // }
 
     pub fn example_monster(
         elite: bool,
