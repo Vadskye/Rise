@@ -474,6 +474,9 @@ export const thaumaturgy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
   ],
+  // TODO: add a ritual that can remove domination, or rewrite existing rituals to work on
+  // domination. The trick is that it's an attunement by another creature who is not
+  // present, and we generally don't want to remove attunements.
   rituals: [
     {
       name: 'Dispel Curse',
