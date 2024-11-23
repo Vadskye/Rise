@@ -487,7 +487,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             active_abilities: vec![
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearealong, 5 ft. wide line from it.
+                        The $name makes a $accuracy attack vs. Fortitude against all creatures within in a \largearealong, 5 ft. wide line from it.
                         \hit $dr2 damage.
                         \miss Half damage.
                     ".to_string(),
