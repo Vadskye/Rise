@@ -46,7 +46,7 @@ export const summoning: MysticSphere = {
         There are only two actions it can take.
         As a \\glossterm{movement}, it can move as you direct.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
-        If it hits, it deals \\damagerankzero{}.
+        If it hits, it deals \\damagerankzero.
 
         If you do not command the creature's actions, it will continue to obey its last instructions if possible or do nothing otherwise.
         Summoned creatures have no mind or independent agency, and will not act on their own even if attacked.
@@ -63,7 +63,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranktwo{}.
+          Its strikes deal \\damageranktwo.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -80,7 +80,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more offensively inclined.
-          Its strikes deal \\damageranksix{}.
+          Its strikes deal \\damageranksix.
           However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
@@ -128,7 +128,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
           If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -148,7 +148,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
           If the target takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
@@ -168,7 +168,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -186,7 +186,7 @@ export const summoning: MysticSphere = {
       name: 'Massive Trampling Summon',
 
       attack: {
-        hit: `\\damageranktwo{}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\hugearealong, 10 ft. wide line from you.
@@ -259,7 +259,7 @@ export const summoning: MysticSphere = {
           The ballista functions like any other weapon, with the following exceptions.
 
           The ballista cannot move, and it makes projectile \\glossterm{strikes} instead of melee strikes.
-          Its attacks deal \\damageranktwo{} and have \\glossterm{range limits} of 90/270.
+          Its attacks deal \\damageranktwo and have \\glossterm{range limits} of 90/270.
           The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
         `,
         name: 'summon weapon',
@@ -276,7 +276,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an earth elemental.
-          Its attacks deal \\damagerankfour{}, and have that \atEarth tag.
+          Its attacks deal \\damagerankfour, and have that \atEarth tag.
           It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
           In addition, it is immune to \atEarth attacks.
         `,
@@ -294,7 +294,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an water elemental.
-          Its attacks deal \\damagerankone{}, and have the \atWater tag.
+          Its attacks deal \\damagerankone, and have the \atWater tag.
           It has a 30 foot \\glossterm{swim speed}.
           In addition, it is immune to \atWater attacks.
           However, it is \\glossterm{vulnerable} to \atElectricity attacks.
@@ -313,7 +313,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an air elemental.
-          Its attacks deal \\damagerankthree{}, and have the \atAir tag.
+          Its attacks deal \\damagerankthree, and have the \atAir tag.
           It has a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit}.
           In addition, it is immune to \atAir attacks.
         `,
@@ -333,7 +333,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal \\damageranktwo{}, and have the \atFire tag.
+        Its attacks deal \\damageranktwo, and have the \atFire tag.
         In addition, it is immune to \atFire attacks.
         `,
         name: 'summon monster',
@@ -352,7 +352,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the creature appears to be a Medium bear.
-          Its attacks deal \\damageranktwo{}.
+          Its attacks deal \\damageranktwo.
           As a standard action, it can use the \\ability{grapple} ability against a creature adjacent to it (see \\pcref{Grapple}).
           While grappling, the manifested creature will automatically use the \\ability{maintain grapple} ability (see \\pcref{Maintain Grapple}).
         `,
@@ -369,7 +369,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -389,7 +389,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -409,7 +409,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           Each Large or smaller creature that loses \\glossterm{hit points} from this damage falls \\prone.
         `,
         missGlance: true,
@@ -430,7 +430,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour{}
+          \\damagerankfour
           Each damaged creature is \\dazzled as a \\glossterm{condition}.
         `,
         missGlance: true,
@@ -452,7 +452,7 @@ export const summoning: MysticSphere = {
       // +2r for large, +2r for +1dr?
       attack: {
         hit: `
-          \\damageranksix{}.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `
@@ -492,7 +492,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be a snake.
-          Its attacks deal \\damagerankthree{}.
+          Its attacks deal \\damagerankthree.
           Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
           Its stage 1 effect makes the target \\stunned while the poison lasts.
           Its stage 3 effect makes the target \\blinded while the poison lasts.

@@ -149,7 +149,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -165,7 +165,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -182,7 +182,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // 1 rank for movement
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\shortrange.
@@ -200,7 +200,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Armor against anything within \\medrange.
@@ -217,7 +217,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -233,7 +233,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -274,7 +274,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // +2 ranks for sustain, +1 for Large or smaller push
       attack: {
         hit: `
-          \\damageranktwo{}.
+          \\damageranktwo.
           In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
@@ -295,7 +295,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // -1r for reflex single target area, -1r for sustain minor in tiny area?
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -312,7 +312,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
@@ -518,7 +518,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
           If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is underwater, this distance is doubled and you can also move it vertically.
         `,
@@ -534,7 +534,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       functionsLike: {
         name: 'forceful aquajet',
         exceptThat:
-          'the damage increases to \\damagerankfive{}, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankfive, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 7,
@@ -669,7 +669,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damageranktwo{}.
+          \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
@@ -685,7 +685,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against one creature within \\medrange.

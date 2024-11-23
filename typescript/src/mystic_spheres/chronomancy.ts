@@ -138,7 +138,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -622,7 +622,7 @@ export const chronomancy: MysticSphere = {
       name: 'Unstable Aging',
       attack: {
         hit: `
-          \\damageranktwolow{}.
+          \\damageranktwolow.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -637,7 +637,7 @@ export const chronomancy: MysticSphere = {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          \\damageranksixlow{}.
+          \\damageranksixlow.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.

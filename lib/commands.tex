@@ -708,18 +708,6 @@
 
 \DeclareDocumentCommand{\magical}{}{\glossterm{magical}\sparkle\xspace}
 
-% "high" scaling means it scales a lot with power, but may be weak at low power
-% "low" scaling means it scales less with power, but is stronger at low power
-
-\DeclareDocumentCommand{\maybedamage}{o}
-{
-\if\relax\detokenize{#1}\relax
-    ~{}~damage
-\else
-    ~{}~#1~damage
-\fi
-}
-
 \DeclareDocumentCommand{\nonsectionlabel}{m}
 {
     \phantomsection \label{#1}
@@ -770,55 +758,55 @@
 \newcommand{\abilityusagetime}{\par\noindent Usage time:\xspace}
 
 % See Damage Scaling Calculations spreadsheet
-\newcommand{\damagerankzero}[1]
-{1d4\maybedamage[#1] \plus1 per 2 power}
-\newcommand{\damagerankzerolow}[1]
-{1d6\maybedamage[#1]}
+\newcommand{\damagerankzero}
+{1d4 damage \plus1 per 2 power}
+\newcommand{\damagerankzerolow}
+{1d6 damage}
 
-\newcommand{\damagerankone}[1]
-{1d6\maybedamage[#1] \plus1 per 2 power}
-\newcommand{\damagerankonelow}[1]
-{1d10\maybedamage[#1]}
+\newcommand{\damagerankone}
+{1d6 damage \plus1 per 2 power}
+\newcommand{\damagerankonelow}
+{1d10 damage}
 
-\newcommand{\damageranktwo}[1]
-{1d6\maybedamage[#1] \plus1 per power}
-\newcommand{\damageranktwolow}[1]
-{1d8+1d6\maybedamage[#1]}
+\newcommand{\damageranktwo}
+{1d6 damage \plus1 per power}
+\newcommand{\damageranktwolow}
+{1d8+1d6 damage}
 
-\newcommand{\damagerankthree}[1]
-{1d8\maybedamage[#1] \plus1 per power}
-\newcommand{\damagerankthreelow}[1]
-{2d10\maybedamage[#1]}
+\newcommand{\damagerankthree}
+{1d8 damage \plus1 per power}
+\newcommand{\damagerankthreelow}
+{2d10 damage}
 
-\newcommand{\damagerankfour}[1]
+\newcommand{\damagerankfour}
 {1d6 per 2 power}
-\newcommand{\damagerankfourlow}[1]
-{3d10\maybedamage[#1]}
+\newcommand{\damagerankfourlow}
+{3d10 damage}
 
-\newcommand{\damagerankfive}[1]
-{1d6\maybedamage[#1] plus 1d6 per 2 power}
-\newcommand{\damagerankfivelow}[1]
-{5d8\maybedamage[#1]}
+\newcommand{\damagerankfive}
+{1d6 damage plus 1d6 per 2 power}
+\newcommand{\damagerankfivelow}
+{5d8 damage}
 
-\newcommand{\damageranksix}[1]
-{1d8\maybedamage[#1] plus 1d8 per 2 power}
-\newcommand{\damageranksixlow}[1]
-{7d8\maybedamage[#1]} % many options
+\newcommand{\damageranksix}
+{1d8 damage plus 1d8 per 2 power}
+\newcommand{\damageranksixlow}
+{7d8 damage} % many options
 
-\newcommand{\damagerankseven}[1]
-{1d10\maybedamage[#1] plus 1d10 per 2 power}
-\newcommand{\damageranksevenlow}[1]
-{8d10\maybedamage[#1]}
+\newcommand{\damagerankseven}
+{1d10 damage plus 1d10 per 2 power}
+\newcommand{\damageranksevenlow}
+{8d10 damage}
 
-\newcommand{\damagerankeight}[1]
-{1d6\maybedamage[#1] plus 1d6 per power}
-\newcommand{\damagerankeightlow}[1]
-{11d10\maybedamage[#1]}
+\newcommand{\damagerankeight}
+{1d6 damage plus 1d6 per power}
+\newcommand{\damagerankeightlow}
+{11d10 damage}
 
-\newcommand{\damageranknine}[1]
-{2d8\maybedamage[#1] plus 1d8 per power}
-\newcommand{\damagerankninelow}[1]
-{16d10\maybedamage[#1]}
+\newcommand{\damageranknine}
+{2d8 damage plus 1d8 per power}
+\newcommand{\damagerankninelow}
+{16d10 damage}
 
 \newcommand{\critcondition}{\crit The condition must be removed an additional time before the effect ends.}
 
