@@ -176,7 +176,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \item Air: You can change the wind speed of air by up to 50 miles per hour.
                         If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
                     \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
-                    \item Fire: You can make fire leap up to 30 feet between combustable materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
+                    \item Fire: You can make fire leap up to 30 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
                     \item Water: You can change the speed of water by up to 30 feet per round.
                         If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
                 \end{itemize}
