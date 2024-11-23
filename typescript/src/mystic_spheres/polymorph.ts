@@ -865,7 +865,7 @@ export const polymorph: MysticSphere = {
       castingTime: 'one minute',
       effect: `
         Choose up to six ritual participants.
-        Each target gains a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        Each target gains a 30 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
         If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
       `,
       // narrative: '',
@@ -928,6 +928,7 @@ export const polymorph: MysticSphere = {
         It \\glossterm{shapeshifts} into a Small raven.
         Ravens have a 30 foot \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
         They cannot speak and have no \\glossterm{free hands}.
+        While in this form, the target is unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
       tags: [],

@@ -358,11 +358,11 @@ export const telekinesis: MysticSphere = {
       name: 'Levitate',
 
       effect: `
-        You gain a 20 foot \\glossterm{fly speed} with a maximum height of 30 feet (see \\pcref{Flight}).
+        You gain a 20 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
         Unlike normal, you can use this fly speed while you have \\glossterm{encumbrance}.
       `,
       rank: 4,
-      scaling: { 6: `The maximum height increases to 60 feet.` },
+      scaling: { 6: `The maximum height increases to 30 feet.` },
       type: 'Attune',
     },
 
