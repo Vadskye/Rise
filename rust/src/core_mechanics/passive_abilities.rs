@@ -124,7 +124,7 @@ impl StandardPassiveAbility {
                 description: r"
                   The $name can follow simple instructions, but is not fully \glossterm{sentient} or capable of complex reasoning.
                   It has no soul, so if it dies, it cannot be resurrected.
-                  It is immune to \abilitytag{Emotion} abilities and psychic damage.
+                  It is immune to \abilitytag{Emotion} abilities.
                   However, it is \vulnerable to \abilitytag{Compulsion} attacks.
                 ".to_string(),
                 is_magical: false,

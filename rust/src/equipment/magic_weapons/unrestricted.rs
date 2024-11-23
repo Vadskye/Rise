@@ -390,14 +390,14 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Can attack Mental defense"),
         description: String::from(r"
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psionic power.
             The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atEmotion tag.
             Its minimum accuracy is $accuracy.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Attacks Mental defense and deals psychic damage", r"
+            ItemUpgrade::new(5, "Attacks Mental defense", r"
                 All strikes with this weapon are made against the target's Mental defense instead of its Armor defense, and they have the \atEmotion tag.
-                When you imbue this weapon with psychic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
+                When you imbue this weapon with psionic power as a standard action, the strike deals double \glossterm{weapon damage}, and its minimum accuracy is $accuracy.
             "),
         ],
         ..MagicWeapon::default()

@@ -218,7 +218,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit The target takes $dr1 psychic \\glossterm<subdual damage>.
+                    \\hit The target takes $dr1 \\glossterm<subdual damage>.
                 ",
                 accuracy_modifier = rank - 1,
             ),
