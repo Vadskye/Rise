@@ -1,5 +1,6 @@
-import { add_tag_to_sphere, MysticSphere } from '.';
-import {MULTIHIT_CRIT} from './constants';
+import { MysticSphere } from '.';
+import { add_tag_to_sphere } from './add_tag';
+import { MULTIHIT_CRIT } from './constants';
 
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
