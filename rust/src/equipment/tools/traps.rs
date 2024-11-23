@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::creatures::calculate_minimum_level;
 use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 
@@ -76,6 +77,7 @@ pub fn traps() -> Vec<Tool> {
             After the trap triggers, it must be repaired with a DV {} Devices check before it can be deployed again.
             \\hit $dr3l fire damage.
         ", ground_deployment(2), awareness_dv(2)),
+        tags: vec![AbilityTag::Fire],
         upgrades: vec![
             // Increase to +2dr instead of +1dr because the area size does not scale
             ItemUpgrade::new(4, "Deals $dr6l damage in a small area", &format!("

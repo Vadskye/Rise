@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 use crate::equipment::Apparel::{Amulet, Ring};
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
@@ -317,6 +318,7 @@ fn amulets() -> Vec<Apparel> {
             If you do, it loses the loses the \abilitytag{Fire} tag and gains the \abilitytag{Cold} tag.
             In addition, you attack the target's Fortitude defense instead of its Armor defense.
         "),
+        tags: vec![AbilityTag::Cold],
         upgrades: vec![
             ItemUpgrade::new(6, r"Converts \ability{abyssal rebuke} to slowing cold", r"
                 When you make a creature lose \glossterm{hit points} from a abyssal rebuke converted to cold in this way, it becomes \slowed as a \glossterm{condition}.
@@ -333,6 +335,7 @@ fn amulets() -> Vec<Apparel> {
             You can use the Intimidate skill in place of the Persuasion skill for the \ability{denounce the heathens} cleric ability.
             When you do, each target is \goaded by you instead of stunned.
         "),
+        tags: vec![AbilityTag::Emotion],
         ..Apparel::default()
     }));
 
@@ -354,6 +357,7 @@ fn rings() -> Vec<Apparel> {
             When you do, you increase your \glossterm<fatigue level> by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         "),
+        tags: vec![AbilityTag::Air],
         ..Apparel::default()
     }));
 
@@ -365,6 +369,7 @@ fn rings() -> Vec<Apparel> {
             You can breathe water as easily as a human breathes air.
             This does not grant you the ability to breathe other liquids.
         "),
+        tags: vec![AbilityTag::Water],
         ..Apparel::default()
     }));
 

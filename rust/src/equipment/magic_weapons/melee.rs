@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::MagicWeapon::Melee;
 use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
 use crate::core_mechanics::abilities::AbilityTag;
@@ -14,6 +15,7 @@ pub fn melee() -> Vec<MagicWeapon> {
                 You do not take an accuracy penalty with attacks using this weapon while \swimming.
             ",
         ),
+        tags: vec![AbilityTag::Water],
         ..MagicWeapon::default()
     }));
 

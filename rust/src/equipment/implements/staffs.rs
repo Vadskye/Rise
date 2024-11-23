@@ -36,6 +36,7 @@ pub fn staffs() -> Vec<Implement> {
         description: String::from(r"
             Creatures that are \frightened or \panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.
         "),
+        tags: vec![AbilityTag::Emotion],
         upgrades: vec![
             ItemUpgrade::new(5, "Fear effects penalize all defenses", r"
                 The defense penalty applies to all non-Mental defenses, not just Fortitude.
@@ -111,18 +112,15 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Bloodfrenzy Staff"),
-        rank: 1,
-        short_description: String::from(r"Grants +1 accuracy against injured foes"),
+        rank: 2,
+        short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you cause a creature to lose \glossterm{hit points} with a \magical ability, you \glossterm{briefly} gain a +1 accuracy bonus against that creature.
+            Whenever you cause a creature to lose \glossterm{hit points} with a \magical ability, you \glossterm{briefly} gain a +2 accuracy bonus against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +2 accuracy against injured foes", r"
-                The accuracy bonus increases to +2.
-            "),
-            ItemUpgrade::new(5, "Grants +3 accuracy against injured foes", r"
-                The accuracy bonus increases to +3.
+            ItemUpgrade::new(5, "Grants +4 accuracy when you injure a foe", r"
+                The accuracy bonus increases to +4.
             "),
         ],
         ..Implement::default()
@@ -413,6 +411,7 @@ pub fn staffs() -> Vec<Implement> {
             If you do, you and that creature are each \glossterm<briefly> \blinded.
             After you activate this staff, you briefly cannot activate it again.
         "),
+        tags: vec![AbilityTag::Visual],
         upgrades: vec![
             ItemUpgrade::new(6, "Briefly blinds dazzled creature", r"
                 Activating this staff no longer blinds you.
@@ -430,6 +429,7 @@ pub fn staffs() -> Vec<Implement> {
             If you do, you must add a different one of those tags to the ability.
             All of the attack's effects are unchanged.
         "),
+        tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
         ..Implement::default()
     }));
 

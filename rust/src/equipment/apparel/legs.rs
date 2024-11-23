@@ -140,6 +140,7 @@ fn boots() -> Vec<Apparel> {
             If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
             Thick liquids, such as mud and lava, may cause you to rise more slowly.
         "),
+        tags: vec![AbilityTag::Water],
         ..Apparel::default()
     }));
 
@@ -150,6 +151,7 @@ fn boots() -> Vec<Apparel> {
         description: String::from(r"
             You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
         "),
+        tags: vec![AbilityTag::Cold],
         upgrades: vec![
             ItemUpgrade::new(3, "Greatly eases travel in cold areas", "
                 % TODO: degree symbol?
