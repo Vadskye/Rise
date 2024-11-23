@@ -615,7 +615,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 2,
       scaling: 'accuracy',
-      tags: ['Emotion'],
+      tags: ['Compulsion'],
     },
     {
       name: 'Mighty Mind Crush',
@@ -632,7 +632,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 6,
       scaling: 'accuracy',
-      tags: ['Emotion'],
+      tags: ['Compulsion'],
     },
 
     {
