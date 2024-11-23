@@ -415,7 +415,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                \begin{magicalactiveability}{Pass Judgment}
+                \begin{magicalactiveability}{Pass Judgment}[\atSubtle]
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
