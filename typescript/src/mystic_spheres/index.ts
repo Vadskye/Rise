@@ -91,6 +91,7 @@ export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
+// TODO: allow customizing individual ritual fatigue costs
 export interface Ritual extends Spell {
   castingTime: "24 hours" | "one minute" | "one hour" | "minor action" | "special" | "one week";
   materialCost?: boolean;
