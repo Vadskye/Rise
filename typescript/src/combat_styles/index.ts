@@ -27,6 +27,7 @@ export interface CombatStyle {
   maneuvers: Maneuver[];
   name: string;
   shortDescription: string;
+  specialRules?: string;
   stances?: Stance[];
 }
 

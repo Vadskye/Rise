@@ -6,19 +6,19 @@ export const flurryOfBlows: CombatStyle = {
 
   maneuvers: [
     {
-      name: 'Double Strike',
+      name: 'Double Flurry',
 
       effect: `
-        Make two \\glossterm{strikes} with a -1 accuracy penalty.
+        Make two \\glossterm{strikes}.
       `,
       rank: 5,
     },
 
     {
-      name: 'Triple Strike',
+      name: 'Triple Flurry',
 
       effect: `
-        Make three \\glossterm{strikes} with a -1 accuracy penalty.
+        Make three \\glossterm{strikes}.
       `,
       rank: 7,
     },
@@ -35,7 +35,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Desperate Double Strike',
+      name: 'Desperate Double Flurry',
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
@@ -46,7 +46,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Desperate Triple Strike',
+      name: 'Desperate Triple Flurry',
 
       cost: "Two \\glossterm{fatigue levels}.",
       effect: `
@@ -181,7 +181,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Frenzied Strike',
+      name: 'Frenzy',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -191,7 +191,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Frenzied Multistrike',
+      name: 'Frenzied Flurry',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -201,7 +201,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Deathseeking Double Strike',
+      name: 'Deathseeking Double Flurry',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -212,25 +212,25 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Static Strike',
+      name: 'Static Shock',
 
       effect: `
         Make a \\glossterm{strike}.
-        Damage dealt by the strike is electricity damage in addition to its normal damage types.
         \\damaginghit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
+      tags: ['Electricity'],
     },
 
     {
-      name: 'Static Strike+',
+      name: 'Static Shock+',
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        Damage dealt by the strike is electricity damage in addition to its normal damage types.
         \\damaginghit The target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
+      tags: ['Electricity'],
     },
 
     {

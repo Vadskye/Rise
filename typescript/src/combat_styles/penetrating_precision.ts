@@ -2,24 +2,14 @@ import { CombatStyle } from '.';
 
 export const penetratingPrecision: CombatStyle = {
   name: 'Penetrating Precision',
-  shortDescription: 'Stab foes with carefully aimed piercing weapons.',
+  shortDescription: 'Stab foes with careful aim.',
 
   maneuvers: [
     {
       name: 'Armorpiercer',
 
       effect: `
-        Make a \\glossterm{weak strike} using a piercing weapon.
-        The attack is made against each target's Reflex defense instead of its Armor defense.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Armorpiercer+',
-
-      effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike}.
         The attack is made against each target's Reflex defense instead of its Armor defense.
       `,
       rank: 3,
@@ -41,7 +31,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Injection',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike}.
         \\damaginghit If the target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
@@ -51,7 +41,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Penetrating Shot',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\medarealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
         On a miss, you still deal half damage.
       `,
       rank: 1,
@@ -61,7 +51,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Penetrating Shot+',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon against everything in a \\largearealong, 5 ft. wide line from you.
+        Make a ranged \\glossterm{strike} against everything in a \\largearealong, 5 ft. wide line from you.
         You take a -2 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
         On a miss, you still deal half damage.
       `,
@@ -72,7 +62,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Distant Shot',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a piercing weapon.
+        Make a ranged \\glossterm{strike}.
         You reduce your \\glossterm{longshot penalty} with the strike by 3.
       `,
       rank: 3,
@@ -82,7 +72,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Lunge',
 
       effect: `
-        Make a melee \\glossterm{strike} using a piercing weapon against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
+        Make a melee \\glossterm{strike} against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
         The line must point directly away from you.
         Only one of the spaces in the line can be adjacent to you.
       `,
@@ -93,7 +83,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Arrowguide',
 
       effect: `
-        Make a ranged \\glossterm{weak strike} using a piercing weapon.
+        Make a ranged \\glossterm{weak strike}.
         After making this strike, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against the target.
       `,
       rank: 1,
@@ -103,7 +93,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Heartpiercer',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike}.
         You gain a +3 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
@@ -117,7 +107,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Heartpiercer+',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike}.
         You gain a +10 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
@@ -131,7 +121,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike',
 
       effect: `
-        Make a melee \\glossterm{strike} using a piercing weapon.
+        Make a melee \\glossterm{strike}.
         \\damaginghit If your attack also hits the target's Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -141,7 +131,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Groundspike+',
 
       effect: `
-        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage} using a piercing weapon.
+        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
         \\damaginghit The target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -151,7 +141,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Chargebreaker',
 
       effect: `
-        Make a melee \\glossterm{strike} using a piercing weapon.
+        Make a melee \\glossterm{strike}.
         You gain a +2 accuracy bonus with the strike if you stayed in the same location while the target moved towards you during the movement phase.
       `,
       rank: 1,
@@ -161,7 +151,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Called Shot',
 
       effect: `
-        Choose a number from 1--10, then make a \\glossterm{strike} using a piercing weapon.
+        Choose a number from 1--10, then make a \\glossterm{strike}.
         If you roll that number on your attack roll, you gain a +4 accuracy bonus.
         Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
       `,
@@ -172,7 +162,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Called Shot+',
 
       effect: `
-        Choose any two numbers from 1--10, then make a \\glossterm{strike} using a piercing weapon.
+        Choose any two numbers from 1--10, then make a \\glossterm{strike}.
         If you roll either number on your attack roll, you gain a +4 accuracy bonus and the strike deals double \\glossterm{weapon damage}.
         Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
       `,
@@ -183,7 +173,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Full-Body Thrust',
 
       effect: `
-        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} +1 per two \\glossterm{power} using a piercing weapon.
+        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} +1 per two \\glossterm{power}.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 3,
@@ -193,7 +183,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Full-Body Thrust+',
 
       effect: `
-        Make a melee \\glossterm{strike} with \\damagerankseven{} extra damage using a piercing weapon.
+        Make a melee \\glossterm{strike} with \\damagerankseven{} extra damage.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 7,
@@ -203,7 +193,7 @@ export const penetratingPrecision: CombatStyle = {
       name: 'Pressure Point Puncture',
 
       effect: `
-        Make a \\glossterm{strike} using a piercing weapon.
+        Make a \\glossterm{strike}.
         \\damaginghit The target takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
