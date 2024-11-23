@@ -38,7 +38,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
-                        \hit $dr2 psychic damage.
+                        \hit $dr2 damage.
                         Each creature that loses hit points from this damage is \stunned as a condition.
                         \miss Half damage.
                     ".to_string(),
@@ -51,7 +51,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                        \hit $dr4 psychic damage.
+                        \hit $dr4 damage.
                         If the target loses hit points from this damage, it is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
@@ -157,7 +157,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against all creatures within a \largearea radius.
-                        \hit $dr1 psychic damage.
+                        \hit $dr1 damage.
                         Each creature that loses hit points is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,

@@ -563,13 +563,13 @@ mod tests {
                 // dr4 is 1d10 + (1d6 per 3 power)
                 r"
                     The $name makes a +5 attack vs. Mental against one creature within \medrange.
-                    \hit 1d6+1d10 psychic damage.
+                    \hit 1d6+1d10 damage.
                     Each creature that loses hit points from this damage is \stunned as a condition.
                 ",
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                    \hit $dr4 psychic damage.
+                    \hit $dr4 damage.
                     Each creature that loses hit points from this damage is \stunned as a condition.
                 ",
                     &sample_creature(),

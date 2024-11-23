@@ -206,11 +206,11 @@ fn thrown_attacks() -> Vec<Tool> {
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Mental against all creatures in a \smallarea radius within \shortrange.
-            This attack has the \abilitytag{Compulsion} tag.
             Your minimum accuracy is $accuracy+1.
-            \hit $dr0l psychic damage.
+            \hit $dr0l damage.
             \miss Half damage.
         ".to_string(),
+        tags: vec![AbilityTag::Compulsion],
         upgrades: vec![
             ItemUpgrade::new(3, "Throw to deal $dr2l damage in an area", r"
                 The minimum accuracy increases to $accuracy+1, and the damage increases to $dr2l.
