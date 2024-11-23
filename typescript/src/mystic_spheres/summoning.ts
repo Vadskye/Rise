@@ -476,7 +476,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
         the summoned creature appears to be either a Large or Medium pegasus.
         % TODO: wording of "trained as a mount"?
-        It has a 30 foot \\glossterm{fly speed} with a height limit of 60 feet, and is trained as a mount (see \\pcref{Flight}).
+        It has a 30 foot \\glossterm{fly speed} with a height limit of 30 feet, and is trained as a mount (see \\pcref{Flight}).
         `,
         name: 'summon mount',
       },
