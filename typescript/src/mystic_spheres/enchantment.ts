@@ -667,6 +667,38 @@ export const enchantment: MysticSphere = {
   ],
   rituals: [
     {
+      name: 'Cleansing Meditation',
+
+      castingTime: 'one minute',
+      effect: `
+        Choose up to six ritual participants.
+        Once the ritual finishes, each target enters a deep meditative state for ten minutes.
+        At the end of that time, it removes all \\atEmotion and \\atCompulsion effects affecting it, including curses.
+        It also gains the normal benefits of a \\glossterm{short rest}.
+      `,
+      rank: 2,
+      tags: ['Compulsion'],
+    },
+
+    {
+      name: 'Enforced Meditation',
+
+      castingTime: 'one minute',
+      attack: {
+        hit: `
+          Once the ritual finishes, each target enters a deep meditative state for ten minutes.
+          At the end of that time, it removes all \\atEmotion and \\atCompulsion effects affecting it, including curses.
+          It also gains the normal benefits of a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+      rank: 4,
+      tags: ['Compulsion'],
+    },
+
+    {
       name: 'Animal Messenger',
 
       castingTime: 'one minute',
