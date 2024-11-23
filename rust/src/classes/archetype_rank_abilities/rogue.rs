@@ -149,37 +149,6 @@ fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
 pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            name: "Bardic Lore",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You gain all Knowledge skills as \glossterm{class skills}.
-                In addition, you gain a bonus equal to your rank in this archetype to Knowledge skills that you are untrained in (see \pcref{Trained Skills}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Bardic Lore+",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You gain a \plus2 bonus to all Knowledge skills.
-            ",
-            modifiers: Some(vec![Modifier::Skill(
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Arcana,
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Engineering,
-                    KnowledgeSubskill::Items,
-                    KnowledgeSubskill::Local,
-                    KnowledgeSubskill::Nature,
-                    KnowledgeSubskill::Planes,
-                    KnowledgeSubskill::Religion,
-                ]),
-                2,
-            )]),
-        },
-        RankAbility {
             name: "Bardic Performances",
             is_magical: true,
             rank: 1,
@@ -439,6 +408,36 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You learn an additional bardic performance.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Bardic Lore",
+            is_magical: false,
+            rank: 2,
+            description: r"
+                You gain a bonus equal to your rank in this archetype to Knowledge skills that you are untrained in (see \pcref{Trained Skills}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Bardic Lore+",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus2 bonus to all Knowledge skills.
+            ",
+            modifiers: Some(vec![Modifier::Skill(
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Engineering,
+                    KnowledgeSubskill::Items,
+                    KnowledgeSubskill::Local,
+                    KnowledgeSubskill::Nature,
+                    KnowledgeSubskill::Planes,
+                    KnowledgeSubskill::Religion,
+                ]),
+                2,
+            )]),
         },
         RankAbility {
             name: "Musical Tolerance",
