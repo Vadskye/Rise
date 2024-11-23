@@ -688,6 +688,33 @@ export const chronomancy: MysticSphere = {
       rank: 3,
     },
     {
+      name: 'Observe the Future',
+
+      castingTime: 'one hour',
+      effect: `
+        You receive a limited insight into your immediate future.
+        When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
+        At the end of the ritual, a version of yourself from an hour into the future appears.
+        That person is a version of yourself who took your described course of action.
+        You can visibly observe any changes in their appearance, and they can briefly gesture to indicate whether they recommend following that action, but no words can be exchanged.
+
+        If no version of yourself appears, it is likely that you would not survive taking your proposed course of action.
+        The future is variable and chaotic, so making the same decisions does not guarantee the same results as your future self, but it should be likely to have a similar outcome.
+      `,
+      rank: 3,
+    },
+    {
+      name: 'Interrogate the Future',
+
+      castingTime: 'one hour',
+      functionsLike: {
+        name: "question the future",
+        exceptThat: "the duplicate can answer up to three yes or no questions before disappearing.",
+      },
+      materialCost: true,
+      rank: 5,
+    },
+    {
       name: 'Ripen',
 
       castingTime: 'one minute',
