@@ -181,7 +181,8 @@ pub fn objects() -> Vec<Tool> {
         description: r"
             This is a set of two paired stones.
             Each stone is about six inches in diameter and perfectly smooth.
-            Whenever a creature speaks while touching one of the stones, their voice is also audible from the other stone, as long as both stones are on the same plane.
+            Whenever a creature touches one of the stones, they can magically channel their voice through it.
+            If they do, their voice is also audible from the other stone, as long as both stones are on the same plane.
         ".to_string(),
         ..Tool::permanent("stone")
     });
