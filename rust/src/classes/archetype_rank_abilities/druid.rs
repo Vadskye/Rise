@@ -273,8 +273,9 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Incendiary Spell} Choose a nature \glossterm{spell} you know.
                         It gains the \atFire tag.
-                        In addition, if you hit a target with that spell, you repeat the spell's effects against that target during the next round.
+                        Whenever you hit a target with that spell, you repeat the spell's effects against that target during the next round.
                         You must make a new attack roll for the repeat with a \minus2 accuracy penalty.
+                        This repeat can only affect any individual target once, even if you attack it with the spell multiple times.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
