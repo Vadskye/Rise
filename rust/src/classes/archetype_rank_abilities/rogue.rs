@@ -273,7 +273,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against anything within \medrange.
+                        Make an attack vs. Mental against one creature within \medrange.
                         \hit \damagerankonelow{}.
 
                         \rankline

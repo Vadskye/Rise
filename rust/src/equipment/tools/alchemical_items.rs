@@ -276,7 +276,7 @@ fn thrown_attacks() -> Vec<Tool> {
         short_description: "Throw to deal $dr2l damage and deafen in an area".to_string(),
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Fortitude against everything in a \smallarea radius within \shortrange.
+            When you do, make an attack vs. Fortitude against all creatures in a \smallarea radius within \shortrange.
             Your minimum accuracy is $accuracy.
             \hit $dr2l bludgeoning damage.
             Each creature that loses \glossterm<hit points> is \deafened as a \glossterm<condition>.
