@@ -298,7 +298,7 @@ export const bluntForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         \\damaginghit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
-        This is an \\Auditory effect.
+        This is an \\atAuditory effect.
         On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
         On a miss against a secondary target, you still deal half damage.
       `,
