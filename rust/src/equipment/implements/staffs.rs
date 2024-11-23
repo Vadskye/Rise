@@ -42,7 +42,6 @@ pub fn staffs() -> Vec<Implement> {
                 The defense penalty applies to all non-Mental defenses, not just Fortitude.
             "),
         ],
-        tags: vec![AbilityTag::Emotion],
         ..Implement::default()
     }));
 
