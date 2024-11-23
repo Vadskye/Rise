@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{ItemUpgrade, Tool};
 
 pub fn objects() -> Vec<Tool> {
@@ -94,19 +95,23 @@ pub fn objects() -> Vec<Tool> {
         name: String::from("Outfit, Noble's"),
         rank: 2,
         short_description: String::from("Typical attire for nobility"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This set of clothes is designed specifically to be expensive and to show it.
             Precious metals and gems are worked into the clothing.
-        "),
+        ",
+        ),
         ..Tool::permanent("metal and textiles")
     });
     objects.push(Tool {
         name: String::from("Outfit, Royal"),
         rank: 4,
         short_description: String::from("Typical attire for royalty"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Royal clothes are ostentatious, with gems, gold, silk, and fur in abundance.
-        "),
+        ",
+        ),
         ..Tool::permanent("leather, metal, and textiles")
     });
 
@@ -211,11 +216,13 @@ fn transportation() -> Vec<Tool> {
         name: String::from("Rowboat"),
         rank: 1,
         short_description: String::from("Simple boat for short journeys"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This 8- to 12 foot long boat holds two or three Medium passengers.
             It moves about one and a half miles per hour.
             A rowboat comes with oars to row it.
-        "),
+        ",
+        ),
         ..Tool::permanent("wood")
     });
 
