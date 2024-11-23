@@ -533,15 +533,19 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Charged Dash',
 
+      // If you ignore the sustain complexity, this is a 30' line that also costs your
+      // movement and can be awkwardly dodged. Sometimes the teleport is an upside, but
+      // it's also sometimes a downside. dr4 is aggressive for this spell, and it might
+      // need to drop to dr3.
       attack: {
-        hit: `\\damagerankthree{}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
           It lasts as long as you sustain this spell.
           As a \\glossterm{movement}, you can move the duplicate up to your \\glossterm{land speed} as long as you can see it.
           It can move freely through spaces occupied by creatures, but it cannot pass through solid objects.
-          When you stop sustaining this spell, you make an attack vs. Reflex against everything in the path it took, and you \\glossterm{teleport} to its final location.
+          When you stop sustaining this spell, you make an attack vs. Reflex against everything in the path it took that round, and you \\glossterm{teleport} to its final location.
           You do not need \\glossterm{line of sight} or \\glossterm{line of effect} for this teleportation.
         `,
       },
