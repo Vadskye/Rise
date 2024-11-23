@@ -142,7 +142,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\medrange.
@@ -158,7 +158,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\longrange.
@@ -174,7 +174,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damageranktwolow{}.
+          \\damageranktwolow.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\distrange.',
       },
@@ -187,7 +187,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankfourlow{}.
+          \\damagerankfourlow.
         `,
         targeting: 'Make an attack vs. Armor against anything within \\extrange.',
       },
@@ -370,7 +370,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
         `,
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
@@ -418,7 +418,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damageranktwo{}.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -434,7 +434,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -452,7 +452,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -611,7 +611,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -627,7 +627,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `

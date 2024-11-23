@@ -82,7 +82,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
           If the target is Large or smaller and loses \\glossterm{hit points}, you may \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
@@ -104,7 +104,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix{}.
+          \\damageranksix.
           If the target is Huge or smaller and loses hit points, you \\glossterm{teleport} it up to 90 feet.
         `,
         targeting: `
@@ -290,7 +290,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -308,7 +308,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven{}.
+          \\damagerankseven.
         `,
         missGlance: true,
         targeting: `
@@ -326,7 +326,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -343,7 +343,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -363,7 +363,7 @@ export const astromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           The target \\sphereterm{flickers} to the Plane of Fire.
-          When it returns, you deal it \\damagerankone{}.
+          When it returns, you deal it \\damagerankone.
           If the target loses \\glossterm{hit points}, you deal it this damage again during your next action.
         `,
         targeting: `
@@ -383,7 +383,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Astral Plane.
-          When it returns, it takes \\damagerankone{}.
+          When it returns, it takes \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\longrange.
@@ -402,7 +402,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Earth.
-          When it returns, you deal it \\damagerankone{}.
+          When it returns, you deal it \\damagerankone.
           If it loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -424,7 +424,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Air.
-          When it returns, you deal it \\damageranktwo{}.
+          When it returns, you deal it \\damageranktwo.
           If it is Large or smaller and your attack result also beats its Fortitude defense, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
@@ -445,7 +445,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
-          When it returns, it you deal it \\damagerankfour{}.
+          When it returns, it you deal it \\damagerankfour.
           If it is a creature that breathes air and not water, and your attack result beats its Reflex defense, this attack deals maximum damage.
         `,
         targeting: `
@@ -466,7 +466,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a random assortment of planes.
-          When it returns, it takes \\damagerankfive{}.
+          When it returns, it takes \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
@@ -487,7 +487,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Far Realm.
-          When it returns, you deal it \\damagerankfive{}.
+          When it returns, you deal it \\damagerankfive.
           If it loses \\glossterm{hit points} from this damage, it is \\confused as a condition.
         `,
         targeting: `

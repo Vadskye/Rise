@@ -114,7 +114,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Bolt',
 
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
@@ -127,7 +127,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Massive Lightning Bolt',
 
       attack: {
-        hit: `\\damagerankthree{}.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
@@ -141,7 +141,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Arcing Grasp',
 
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -157,7 +157,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Grasp',
 
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -237,7 +237,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // short range for one chain
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: false,
         targeting: `
@@ -255,7 +255,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // short range for one chain
       attack: {
         hit: `
-          \\damageranktwo{}.
+          \\damageranktwo.
         `,
         missGlance: false,
         targeting: `
@@ -272,7 +272,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // short range for one chain
       attack: {
-        hit: `\\damagerankfive{}.`,
+        hit: `\\damagerankfive.`,
         missGlance: false,
         targeting: `
           Make an attack vs. Fortitude against anything within \\shortrange.
@@ -288,7 +288,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // Bunch of nonsense almost makes it as low as full AOE scaling?
       attack: {
-        hit: `\\damagerankthree{}.`,
+        hit: `\\damagerankthree.`,
         missGlance: false,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -305,7 +305,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Electromagnetic Arc',
 
       attack: {
-        hit: `\\damageranksix{}.`,
+        hit: `\\damageranksix.`,
         missGlance: false,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
@@ -345,7 +345,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // Not obvious what correct damage scaling would be.
       attack: {
-        hit: `damagerankthree{}.`,
+        hit: `damagerankthree.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           This attack can \\glossterm{chain} five times.
@@ -378,7 +378,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -397,7 +397,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'call lightning',
-        exceptThat: 'the damage increases to \\damagerankfive{}.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
       scaling: 'accuracy',
@@ -421,7 +421,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         // d2 instead of d1 for attune + every other round
-        hit: `\\damageranktwo{}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
@@ -440,7 +440,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{}.
+          the damage increases to \\damagerankfive.
         `,
       },
       rank: 6,
@@ -452,7 +452,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Ball Lightning',
 
       attack: {
-        hit: `\\damageranktwo{}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           You create a Medium size ball of lightning in one space within \\medrange.
@@ -472,7 +472,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Personal Conduction',
 
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
@@ -486,7 +486,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Personal Conduction',
 
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         targeting: `
           Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
         `,
@@ -501,7 +501,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         // add trivial extra benefit for fun
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
@@ -518,7 +518,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       cost: SWIFT_FATIGUE,
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -538,7 +538,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // it's also sometimes a downside. dr4 is aggressive for this spell, and it might
       // need to drop to dr3.
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
@@ -559,7 +559,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       cost: SWIFT_FATIGUE,
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.

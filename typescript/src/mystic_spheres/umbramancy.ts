@@ -165,7 +165,7 @@ export const umbramancy: MysticSphere = {
 
       // -2r for shadowed requirement
       attack: {
-        hit: `\\damagerankonelow{}.`,
+        hit: `\\damagerankonelow.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
@@ -182,7 +182,7 @@ export const umbramancy: MysticSphere = {
       // -2r for shadowed requirement. Enemies-only large radius is t4. Spend the 2r on
       // damage instead of area.
       attack: {
-        hit: `\\damagerankfourlow{}.`,
+        hit: `\\damagerankfourlow.`,
         missGlance: true,
         targeting: `
           You create a field of miasma centered on your location.
@@ -203,7 +203,7 @@ export const umbramancy: MysticSphere = {
 
       // Spend the 2r from shadowed on damage instead of area
       attack: {
-        hit: `\\damagerankeightlow{}.`,
+        hit: `\\damagerankeightlow.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
@@ -220,7 +220,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranktwo{}.
+          \\damageranktwo.
           If the target loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -241,7 +241,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranksixlow{}.
+          \\damageranksixlow.
           If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -261,7 +261,7 @@ export const umbramancy: MysticSphere = {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `\\damagerankthreelow{}.`,
+        hit: `\\damagerankthreelow.`,
         missGlance: true,
         targeting: `
           You create a field of darkness at a \\glossterm{shadowed} location within \\shortrange.
@@ -503,7 +503,7 @@ export const umbramancy: MysticSphere = {
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
           If the target loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
           It cannot move on its own.
           As a \\glossterm{movement}, you can control its movement instead of your own.

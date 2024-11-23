@@ -233,7 +233,7 @@ export const photomancy: MysticSphere = {
       // No rank modifier for true sunlight
       attack: {
         hit: `
-          \\damagerankfivelow{}.
+          \\damagerankfivelow.
           If this attack beats a creature's Fortitude defense, it deals maximum damage.
           If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
@@ -255,7 +255,7 @@ export const photomancy: MysticSphere = {
       // That allows a t4 area and dr6 damage.
       attack: {
         hit: `
-          \\damageranksixlow{}.
+          \\damageranksixlow.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         missGlance: true,
@@ -273,7 +273,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -292,7 +292,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour{}.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour.',
       },
       rank: 7,
     },
@@ -302,7 +302,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive{}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -430,7 +430,7 @@ export const photomancy: MysticSphere = {
         // random effect is bad, but the sphere can't normally do most of those and you
         // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
           If the target loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
@@ -449,7 +449,7 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         name: 'chromatic orb',
         exceptThat: `
-          the damage increases to \\damagerankfive{}, and damaged creatures suffer a condition even if they did not lose hit points.
+          the damage increases to \\damagerankfive, and damaged creatures suffer a condition even if they did not lose hit points.
         `,
       },
       rank: 7,
@@ -462,7 +462,7 @@ export const photomancy: MysticSphere = {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankone{}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -479,7 +479,7 @@ export const photomancy: MysticSphere = {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankfour{}.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.

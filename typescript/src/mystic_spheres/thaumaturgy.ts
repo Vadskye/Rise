@@ -48,7 +48,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range in exchange for the strong miss effect
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -68,7 +68,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree{}.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -89,7 +89,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for miss effect and cover/concealment effect
       attack: {
         hit: `
-          \\damagerankfour{}.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
@@ -110,7 +110,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for ignoring cover
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damagerankone.
         `,
         missGlance: true,
         targeting: `
@@ -131,7 +131,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for ignoring cover
       attack: {
         hit: `
-          \\damageranksix{}.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `

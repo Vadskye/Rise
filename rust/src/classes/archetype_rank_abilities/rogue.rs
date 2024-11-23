@@ -247,15 +247,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit \damagerankonelow{}.
+                        \hit \damagerankonelow.
                         \miss Half damage.
 
                         \rankline
-                        \rank{2} The damage increases to \damageranktwolow{}.
+                        \rank{2} The damage increases to \damageranktwolow.
                         \rank{3} The area increases to a \smallarea radius.
-                        \rank{4} The damage increases to \damagerankthreelow{}.
+                        \rank{4} The damage increases to \damagerankthreelow.
                         \rank{5} The area increases to a \medarea radius.
-                        \rank{6} The damage increases to \damagerankfivelow{}.
+                        \rank{6} The damage increases to \damagerankfivelow.
                         \rank{7} The area increases to a \largearea radius.
                     \end{magicalactiveability}
 
@@ -278,15 +278,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
-                        \hit \damagerankonelow{}.
+                        \hit \damagerankonelow.
 
                         \rankline
-                        \rank{2} The damage increases to \damageranktwolow{}.
-                        \rank{3} The damage increases to \damagerankthreelow{}.
-                        \rank{4} The damage increases to \damagerankfourlow{}.
-                        \rank{5} The damage increases to \damagerankfivelow{}.
-                        \rank{6} The damage increases to \damageranksixlow{}.
-                        \rank{7} The damage increases to \damageranksevenlow{}.
+                        \rank{2} The damage increases to \damageranktwolow.
+                        \rank{3} The damage increases to \damagerankthreelow.
+                        \rank{4} The damage increases to \damagerankfourlow.
+                        \rank{5} The damage increases to \damagerankfivelow.
+                        \rank{6} The damage increases to \damageranksixlow.
+                        \rank{7} The damage increases to \damageranksevenlow.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
