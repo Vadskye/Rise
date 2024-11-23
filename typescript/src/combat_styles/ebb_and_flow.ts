@@ -23,7 +23,6 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
-        This strike must be made using a slashing or bludgeoning weapon.
         This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
@@ -75,7 +74,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Sacrificial Strike',
+      name: 'All-In',
 
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
@@ -86,7 +85,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Sacrificial Flurry',
+      name: 'All-In Flurry',
 
       effect: `
         Make two melee \\glossterm{strikes}.
@@ -97,7 +96,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Momentum Strike',
+      name: 'Momentous Impact',
 
       cost: "You \\glossterm{briefly} cannot use this ability again.",
       effect: `
@@ -108,7 +107,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Certain Strike',
+      name: 'Pure Precision',
 
       effect: `
         Make a \\glossterm{weak strike} with a +2 accuracy bonus.
@@ -117,7 +116,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Certain Strike+',
+      name: 'Pure Precision+',
 
       effect: `
         Make a \\glossterm{strike} with a +6 accuracy bonus.
@@ -126,7 +125,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Power Strike',
+      name: 'Pure Power',
 
       effect: `
         Make a \\glossterm{strike} with a -4 accuracy penalty.
@@ -136,7 +135,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Power Strike+',
+      name: 'Pure Power+',
 
       effect: `
         Make a \\glossterm{strike} with a -3 accuracy penalty.
@@ -146,11 +145,11 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Hunting Strike',
+      name: "Begin the Hunt",
 
       effect: `
         Make a strike.
-        After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike with future strikes.
+        After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
         It lasts until you finish a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
@@ -159,7 +158,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Hunting Strike+',
+      name: "Begin the Hunt+",
 
       functionsLike: {
         exceptThat:

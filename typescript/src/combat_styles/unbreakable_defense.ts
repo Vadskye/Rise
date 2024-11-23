@@ -91,7 +91,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Bracing Strike',
+      name: 'Brace for Impact+',
 
       effect: `
         Make a melee \\glossterm{strike}.
@@ -139,7 +139,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Defensive Strike',
+      name: 'Guarding Blow',
 
       effect: `
         Make a melee \\glossterm{weak strike}.
@@ -160,7 +160,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Cleansing Strike',
+      name: 'Cleansing Blow',
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
@@ -171,7 +171,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Revitalizing Strike',
+      name: 'Revitalizing Blow',
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
@@ -182,7 +182,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Revitalizing Strike+',
+      name: 'Revitalizing Blow+',
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
@@ -193,7 +193,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Steadfast Strike',
+      name: 'Stand Fast',
 
       effect: `
         Make a strike.
@@ -229,27 +229,25 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Covering Strike',
+      name: 'I Am Your Opponent',
 
       effect: `
         Make a melee \\glossterm{strike}.
         \\damaginghit If your attack also hits the target's Mental defense, it becomes \\goaded by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
-      tags: [],
+      tags: ['Emotion'],
     },
 
     {
-      name: 'Covering Strike+',
+      name: 'I Am Your Opponent+',
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
         \\damaginghit The target becomes \\goaded by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,
-      tags: [],
+      tags: ['Emotion'],
     },
   ],
 };

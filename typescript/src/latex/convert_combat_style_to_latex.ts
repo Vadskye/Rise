@@ -14,6 +14,7 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
       \\hypertargetraised{style:${style.name}}{}%
       \\label{${style.name}}%
       \\textit{${style.shortDescription}}
+      ${style.specialRules ? `\\parhead{Special Rules} ${style.specialRules}` : ``}
 
       \\subsection{Maneuvers}
         ${sortByRankAndLevel(style.maneuvers)

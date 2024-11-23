@@ -21,7 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\damaginghit If the target loses hit points, it takes \\damagerankseven{bludgeoning}.
+        \\damaginghit If the target loses hit points, it takes \\damagerankseven{}.
       `,
       rank: 5,
     },
@@ -32,7 +32,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target also takes \\damageranktwo{bludgeoning} damage.
+          the target also takes \\damageranktwo{} damage.
           Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: 'grapple',
@@ -152,7 +152,7 @@ export const dirtyFighting: CombatStyle = {
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           % TODO: clarify that this doesn't work with "move through enemies freely" abilities
-          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo{bludgeoning}.
+          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo{}.
           Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: 'overrun',
@@ -167,7 +167,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'maneuver',
         exceptThat: `
-          the damage increases to \\damageranksix{bludgeoning}.
+          the damage increases to \\damageranksix{}.
         `,
         name: 'battering ram',
       },
@@ -175,7 +175,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Alchemical Strike',
+      name: 'Alchemical Combo',
 
       effect: `
         Make a melee strike.
@@ -238,7 +238,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Eye-Averting Strike',
+      name: 'Eyebite',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -268,20 +268,21 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Fake-Out Assault',
+      name: 'Fake Out',
 
       effect: `
         Make a melee \\glossterm{strike}.
+        If this attack misses, you \\glossterm{briefly} take a \minus2 accuracy penalty against the target.
         \\damaginghit If your attack also hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to your power.
       `,
       rank: 3,
     },
 
     {
-      name: 'Fake-Out Assault+',
+      name: 'Fake Out+',
 
       effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        If this attack misses, you \\glossterm{briefly} take a \minus2 accuracy penalty against the target.
         \\damaginghit If your attack also hits the target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 2 power.
       `,
       rank: 7,

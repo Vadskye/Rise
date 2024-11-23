@@ -95,7 +95,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout',
 
       attack: {
-        hit: `\\damagerankone{bludgeoning}.`,
+        hit: `\\damagerankone{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\smallarea cone from you.
@@ -109,7 +109,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `\\damagerankfour{bludgeoning}.`,
+        hit: `\\damagerankfour{}.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
@@ -124,7 +124,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          \\damagerankone{bludgeoning}.
+          \\damagerankone{}.
           If the target loses \\glossterm{hit points} from this damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -140,7 +140,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          \\damagerankthree{bludgeoning}.
+          \\damagerankthree{}.
           If the target takes damage, it is \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -163,7 +163,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Challenging Strike',
+      name: 'Challenge',
 
       effect: `
         Make a \\glossterm{strike}.
@@ -199,7 +199,7 @@ export const heraldOfWar: CombatStyle = {
     // frighten would be r3. Making it conditional on a melee strike is maybe fine? This
     // can't frighten and deal damage to the same target, so it's pretty situational.
     {
-      name: 'Awe-Inspiring Strike',
+      name: 'Inspire Awe',
 
       effect: `
         Make a melee strike.
