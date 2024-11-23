@@ -132,7 +132,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
         targeting: `
           Make an attack vs. Fortitude against anything within \\medrange.
-          You gain a +1 accuracy bonus for each size category by which the target is larger than Medium.
+          You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
           This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
       },
@@ -140,6 +140,18 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
       rank: 2,
+      scaling: 'accuracy',
+      tags: [],
+    },
+
+    {
+      name: 'Mighty Crushing Gravity',
+
+      functionsLike: {
+        name: "crushing gravity",
+        exceptThat: "the damage increases to \\damagerankfour{}.",
+      },
+      rank: 5,
       scaling: 'accuracy',
       tags: [],
     },
