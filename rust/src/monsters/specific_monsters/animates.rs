@@ -395,7 +395,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 Birch treants tend to be shy, and they to avoid conflict if at all possible.
             ")]),
             level: 5,
-            modifiers: vec![fire_vulnerability],
+            modifiers: vec![fire_vulnerability.clone()],
             name: "Birch Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -428,7 +428,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 They like playing small tricks on interesting creatures that pass by.
             ")]),
             level: 6,
-            modifiers: vec![fire_vulnerability],
+            modifiers: vec![fire_vulnerability.clone()],
             name: "Chestnut Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -462,7 +462,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                 Their attitudes tend to be similarly flexible, and they can be easily persuadable.
             ")]),
             level: 7,
-            modifiers: vec![fire_vulnerability],
+            modifiers: vec![fire_vulnerability.clone()],
             name: "Willow Treant".to_string(),
             size: Size::Large,
         }.monster(),
@@ -533,7 +533,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             modifiers: vec![
                 // All Huge treants get +2 armor
                 Modifier::Defense(Defense::Armor, 2),
-                fire_vulnerability,
+                fire_vulnerability.clone(),
             ],
             name: "Pine Treant".to_string(),
             size: Size::Huge,
@@ -569,7 +569,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
             level: 10,
             modifiers: vec![
                 Modifier::Defense(Defense::Armor, 2),
-                fire_vulnerability,
+                fire_vulnerability.clone(),
             ],
             name: "Oak Treant".to_string(),
             size: Size::Huge,
