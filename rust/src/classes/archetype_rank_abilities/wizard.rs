@@ -42,7 +42,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                The number of items you can simultaneously create and maintain with this ability increases to be equal to your rank in this archetype.
+                The number of items you can simultaneously create and maintain with this ability increases to eight.
             ",
             modifiers: None,
         },
