@@ -1,4 +1,5 @@
-import { add_tag_to_sphere, MysticSphere } from '.';
+import { MysticSphere } from '.';
+import { add_tag_to_sphere } from './add_tag';
 import { CONDITION_CRIT, SWIFT_FATIGUE  } from './constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {

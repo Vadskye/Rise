@@ -1,4 +1,5 @@
-import { add_tag_to_sphere, MysticSphere } from '.';
+import { MysticSphere } from '.';
+import { add_tag_to_sphere } from './add_tag';
 import { CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
 export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
