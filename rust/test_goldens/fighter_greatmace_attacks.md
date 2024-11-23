@@ -2,11 +2,11 @@
 
 ## Level 1
 
-Generic Accuracy Greatmace +1 (1d10+3 bludgeoning damage.)
-Certain Greatmace +3 (1d10+1 bludgeoning damage.)
-Extra Damage Greatmace +1 (1d10+3 bludgeoning damage.)
-Powerful Greatmace -3 (2d10+6 bludgeoning damage.)
-Greatmace +1 (1d10+3 bludgeoning damage.)
+Generic Accuracy Greatmace +1 (1d10+3 damage.)
+Certain Greatmace +3 (1d10+1 damage.)
+Extra Damage Greatmace +1 (1d10+3 damage.)
+Powerful Greatmace -3 (2d10+6 damage.)
+Greatmace +1 (1d10+3 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greatmace
@@ -100,11 +100,11 @@ Power        : 9.25 = (17.0 dph * 0.40 hpr) + (17.0 dpc * 0.04 cpr) + (8.5 dpg *
 
 ## Level 5
 
-Generic Accuracy Greatmace +5 (1d10+6 bludgeoning damage.)
-Certain Greatmace +7 (1d10+3 bludgeoning damage.)
-Extra Damage Greatmace +5 (1d10+6 bludgeoning damage.)
-Powerful Greatmace +1 (2d10+12 bludgeoning damage.)
-Greatmace +4 (1d10+6 bludgeoning damage.)
+Generic Accuracy Greatmace +5 (1d10+6 damage.)
+Certain Greatmace +7 (1d10+3 damage.)
+Extra Damage Greatmace +5 (1d10+6 damage.)
+Powerful Greatmace +1 (2d10+12 damage.)
+Greatmace +4 (1d10+6 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greatmace
@@ -198,11 +198,11 @@ Power        : 22.72 = (23.0 dph * 0.80 hpr) + (23.0 dpc * 0.09 cpr) + (11.5 dpg
 
 ## Level 10
 
-Generic Accuracy Greatmace +10 (1d10+11 bludgeoning damage.)
-Certain Greatmace +12 (1d10+5 bludgeoning damage.)
-Powerful Greatmace +6 (2d10+22 bludgeoning damage.)
-Extra Damage Greatmace +8 (1d10+17 bludgeoning damage.)
-Greatmace +7 (1d10+11 bludgeoning damage.)
+Generic Accuracy Greatmace +10 (1d10+11 damage.)
+Certain Greatmace +12 (1d10+5 damage.)
+Powerful Greatmace +6 (2d10+22 damage.)
+Extra Damage Greatmace +8 (1d10+17 damage.)
+Greatmace +7 (1d10+11 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greatmace
@@ -296,13 +296,13 @@ Power        : 36.63 = (33.0 dph * 1.00 hpr) + (33.0 dpc * 0.11 cpr) + (16.5 dpg
 
 ## Level 15
 
-Generic Accuracy Greatmace +13 (1d10+13 bludgeoning damage.)
-Certain Greatmace +15 (1d10+6 bludgeoning damage.)
-Powerful Greatmace +9 (2d10+26 bludgeoning damage.)
-Extra Damage Greatmace +9 (5d6+1d10+13 bludgeoning damage.)
-Certain Strike+ -- Greatmace +15 (1d10+13 bludgeoning damage.)
-Power Strike+ -- Greatmace +6 (3d10+39 bludgeoning damage.)
-Greatmace +9 (1d10+13 bludgeoning damage.)
+Generic Accuracy Greatmace +13 (1d10+13 damage.)
+Certain Greatmace +15 (1d10+6 damage.)
+Powerful Greatmace +9 (2d10+26 damage.)
+Extra Damage Greatmace +9 (5d6+1d10+13 damage.)
+Certain Strike+ -- Greatmace +15 (1d10+13 damage.)
+Power Strike+ -- Greatmace +6 (3d10+39 damage.)
+Greatmace +9 (1d10+13 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Power Strike+ -- Greatmace
@@ -416,14 +416,14 @@ Power+       : 54.83 = (55.5 dph * 0.80 hpr) + (55.5 dpc * 0.09 cpr) + (27.8 dpg
 
 ## Level 20
 
-Generic Accuracy Greatmace +18 (1d10+17 bludgeoning damage.)
-Certain Greatmace +20 (1d10+8 bludgeoning damage.)
-Powerful Greatmace +14 (2d10+34 bludgeoning damage.)
-Certain Strike+ -- Greatmace +20 (1d10+17 bludgeoning damage.)
-Power Strike+ -- Greatmace +11 (3d10+51 bludgeoning damage.)
-Extra Damage Greatmace +12 (9d8+1d10+17 bludgeoning damage.)
-Generic Triple Damage -- Greatmace +12 (3d10+51 bludgeoning damage.)
-Greatmace +12 (1d10+17 bludgeoning damage.)
+Generic Accuracy Greatmace +18 (1d10+17 damage.)
+Certain Greatmace +20 (1d10+8 damage.)
+Powerful Greatmace +14 (2d10+34 damage.)
+Certain Strike+ -- Greatmace +20 (1d10+17 damage.)
+Power Strike+ -- Greatmace +11 (3d10+51 damage.)
+Extra Damage Greatmace +12 (9d8+1d10+17 damage.)
+Generic Triple Damage -- Greatmace +12 (3d10+51 damage.)
+Greatmace +12 (1d10+17 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Generic Triple Damage -- Greatmace

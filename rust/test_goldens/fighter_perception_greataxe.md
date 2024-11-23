@@ -2,11 +2,11 @@
 
 ## Level 1
 
-Generic Accuracy Greataxe +3 (1d8+2 slashing damage.)
-Certain Greataxe +5 (1d8+1 slashing damage.)
-Extra Damage Greataxe +3 (1d8+2 slashing damage.)
-Powerful Greataxe -1 (2d8+4 slashing damage.)
-Greataxe +3 (1d8+2 slashing damage.)
+Generic Accuracy Greataxe +3 (1d8+2 damage.)
+Certain Greataxe +5 (1d8+1 damage.)
+Extra Damage Greataxe +3 (1d8+2 damage.)
+Powerful Greataxe -1 (2d8+4 damage.)
+Greataxe +3 (1d8+2 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greataxe
@@ -100,11 +100,11 @@ Power        : 9.96 = (13.0 dph * 0.60 hpr) + (13.0 dpc * 0.07 cpr) + (6.5 dpg *
 
 ## Level 5
 
-Generic Accuracy Greataxe +8 (1d8+5 slashing damage.)
-Certain Greataxe +10 (1d8+2 slashing damage.)
-Extra Damage Greataxe +8 (1d8+5 slashing damage.)
-Powerful Greataxe +4 (2d8+10 slashing damage.)
-Greataxe +7 (1d8+5 slashing damage.)
+Generic Accuracy Greataxe +8 (1d8+5 damage.)
+Certain Greataxe +10 (1d8+2 damage.)
+Extra Damage Greataxe +8 (1d8+5 damage.)
+Powerful Greataxe +4 (2d8+10 damage.)
+Greataxe +7 (1d8+5 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greataxe
@@ -198,11 +198,11 @@ Power        : 21.11 = (19.0 dph * 1.00 hpr) + (19.0 dpc * 0.11 cpr) + (9.5 dpg 
 
 ## Level 10
 
-Generic Accuracy Greataxe +13 (1d8+11 slashing damage.)
-Certain Greataxe +15 (1d8+5 slashing damage.)
-Powerful Greataxe +9 (2d8+22 slashing damage.)
-Extra Damage Greataxe +11 (1d8+17 slashing damage.)
-Greataxe +10 (1d8+11 slashing damage.)
+Generic Accuracy Greataxe +13 (1d8+11 damage.)
+Certain Greataxe +15 (1d8+5 damage.)
+Powerful Greataxe +9 (2d8+22 damage.)
+Extra Damage Greataxe +11 (1d8+17 damage.)
+Greataxe +10 (1d8+11 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Greataxe
@@ -296,13 +296,13 @@ Power        : 41.32 = (31.0 dph * 1.00 hpr) + (31.0 dpc * 0.33 cpr) + (15.5 dpg
 
 ## Level 15
 
-Generic Accuracy Greataxe +17 (1d8+14 slashing damage.)
-Certain Greataxe +19 (1d8+7 slashing damage.)
-Powerful Greataxe +13 (2d8+28 slashing damage.)
-Extra Damage Greataxe +13 (5d6+1d8+14 slashing damage.)
-Certain Strike+ -- Greataxe +19 (1d8+14 slashing damage.)
-Power Strike+ -- Greataxe +10 (3d8+42 slashing damage.)
-Greataxe +13 (1d8+14 slashing damage.)
+Generic Accuracy Greataxe +17 (1d8+14 damage.)
+Certain Greataxe +19 (1d8+7 damage.)
+Powerful Greataxe +13 (2d8+28 damage.)
+Extra Damage Greataxe +13 (5d6+1d8+14 damage.)
+Certain Strike+ -- Greataxe +19 (1d8+14 damage.)
+Power Strike+ -- Greataxe +10 (3d8+42 damage.)
+Greataxe +13 (1d8+14 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Power Strike+ -- Greataxe
@@ -416,14 +416,14 @@ Power+       : 67.82 = (55.5 dph * 1.00 hpr) + (55.5 dpc * 0.22 cpr) + (27.8 dpg
 
 ## Level 20
 
-Generic Accuracy Greataxe +21 (1d8+17 slashing damage.)
-Certain Greataxe +23 (1d8+8 slashing damage.)
-Powerful Greataxe +17 (2d8+34 slashing damage.)
-Certain Strike+ -- Greataxe +23 (1d8+17 slashing damage.)
-Power Strike+ -- Greataxe +14 (3d8+51 slashing damage.)
-Extra Damage Greataxe +15 (10d8+17 slashing damage.)
-Generic Triple Damage -- Greataxe +15 (3d8+51 slashing damage.)
-Greataxe +15 (1d8+17 slashing damage.)
+Generic Accuracy Greataxe +21 (1d8+17 damage.)
+Certain Greataxe +23 (1d8+8 damage.)
+Powerful Greataxe +17 (2d8+34 damage.)
+Certain Strike+ -- Greataxe +23 (1d8+17 damage.)
+Power Strike+ -- Greataxe +14 (3d8+51 damage.)
+Extra Damage Greataxe +15 (10d8+17 damage.)
+Generic Triple Damage -- Greataxe +15 (3d8+51 damage.)
+Greataxe +15 (1d8+17 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Generic Triple Damage -- Greataxe

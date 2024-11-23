@@ -27,7 +27,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus2 energy damage.
+                \hit 1d6\plus2 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -35,7 +35,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -43,7 +43,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus1 physical damage.
+                \hit 1d8\plus1 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -51,7 +51,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus1 physical damage.
+                \hit 1d8\plus1 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -59,7 +59,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus1 slashing damage.
+                \hit 1d8\plus1 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -67,7 +67,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus1 slashing damage.
+                \hit 1d8\plus1 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
@@ -75,7 +75,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Greatsword}
@@ -83,14 +83,14 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d6\plus2 energy damage.
+                \hit 1d6\plus2 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -98,7 +98,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Generic Accuracy Greatsword}
@@ -106,7 +106,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
@@ -114,7 +114,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
@@ -122,7 +122,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus6 physical damage.
+                \hit 2d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Greatsword}
@@ -130,7 +130,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus6 slashing damage.
+                \hit 2d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
@@ -138,7 +138,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
@@ -146,7 +146,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
 
 
@@ -181,7 +181,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus4 energy damage.
+                \hit 1d6\plus4 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -189,7 +189,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -197,7 +197,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -205,7 +205,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 physical damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -213,7 +213,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -221,7 +221,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus3 slashing damage.
+                \hit 1d8\plus3 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
@@ -229,7 +229,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Greatsword}
@@ -237,14 +237,14 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d6\plus4 energy damage.
+                \hit 1d6\plus4 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -252,7 +252,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Generic Accuracy Greatsword}
@@ -260,7 +260,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
@@ -268,7 +268,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
@@ -276,7 +276,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus12 physical damage.
+                \hit 2d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Greatsword}
@@ -284,7 +284,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus12 slashing damage.
+                \hit 2d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
@@ -292,7 +292,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
@@ -300,7 +300,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
 
 
@@ -331,14 +331,14 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
-                \hit 3d6\plus1d10 energy damage.
+                \hit 5d6 damage.
             \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Armor Bolt-}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 1d8\plus5 energy damage.
+                \hit 1d6\plus11 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -346,7 +346,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus8 physical damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -354,7 +354,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus4 physical damage.
+                \hit 1d8\plus4 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -362,7 +362,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus4 physical damage.
+                \hit 1d8\plus4 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -370,7 +370,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus4 slashing damage.
+                \hit 1d8\plus4 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -378,7 +378,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus4 slashing damage.
+                \hit 1d8\plus4 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
@@ -386,7 +386,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 3d4\plus1d8\plus8 physical damage.
+                \hit 3d4\plus1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Greatsword}
@@ -394,21 +394,21 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 3d4\plus1d8\plus8 slashing damage.
+                \hit 3d4\plus1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
-                \hit 3d6\plus1d10 energy damage.
+                \hit 5d6 damage.
             \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Fort Bolt-}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d8\plus5 energy damage.
+                \hit 1d6\plus11 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -416,7 +416,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus8 physical damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Generic Accuracy Greatsword}
@@ -424,7 +424,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus8 slashing damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
@@ -432,7 +432,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus8 slashing damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
@@ -440,7 +440,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus16 physical damage.
+                \hit 2d8\plus16 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Greatsword}
@@ -448,7 +448,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus16 slashing damage.
+                \hit 2d8\plus16 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
@@ -456,7 +456,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus8 physical damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
@@ -464,7 +464,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus8 slashing damage.
+                \hit 1d8\plus8 damage.
             \end{activeability}
 
 
@@ -499,14 +499,14 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 attack vs. Armor against one creature within \medrange.
-                \hit 5d6\plus1d10 energy damage.
+                \hit 7d6 damage.
             \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Armor Bolt-}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 1d8\plus7 energy damage.
+                \hit 1d6\plus15 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -514,7 +514,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus12 physical damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -522,7 +522,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
@@ -530,7 +530,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 physical damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -538,7 +538,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Certain Greatsword}
@@ -546,7 +546,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus6 slashing damage.
+                \hit 1d8\plus6 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
@@ -554,7 +554,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 5d4\plus1d8\plus12 physical damage.
+                \hit 5d4\plus1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Greatsword}
@@ -562,21 +562,21 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 5d4\plus1d8\plus12 slashing damage.
+                \hit 5d4\plus1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{magicalactiveability}*{Fort Bolt}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 attack vs. Fortitude against one creature within \medrange.
-                \hit 5d6\plus1d10 energy damage.
+                \hit 7d6 damage.
             \end{magicalactiveability}
         \par
             \begin{magicalactiveability}*{Fort Bolt-}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d8\plus7 energy damage.
+                \hit 1d6\plus15 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -584,7 +584,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus12 physical damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Generic Accuracy Greatsword}
@@ -592,7 +592,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus12 slashing damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Greatsword}
@@ -600,7 +600,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
-                \hit 1d8\plus12 slashing damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
@@ -608,7 +608,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus24 physical damage.
+                \hit 2d8\plus24 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Greatsword}
@@ -616,7 +616,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
-                \hit 2d8\plus24 slashing damage.
+                \hit 2d8\plus24 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
@@ -624,7 +624,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus12 physical damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Greatsword}
@@ -632,5 +632,5 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
-                \hit 1d8\plus12 slashing damage.
+                \hit 1d8\plus12 damage.
             \end{activeability}

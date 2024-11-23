@@ -2,11 +2,11 @@
 
 ## Level 1
 
-Extra Damage Bite +0 (1d8+3 physical damage.)
-Generic Accuracy Bite +0 (1d8+3 physical damage.)
-Certain Bite +2 (1d8+1 physical damage.)
-Powerful Bite -4 (2d8+6 physical damage.)
-Bite +0 (1d8+3 physical damage.)
+Extra Damage Bite +0 (1d8+3 damage.)
+Generic Accuracy Bite +0 (1d8+3 damage.)
+Certain Bite +2 (1d8+1 damage.)
+Powerful Bite -4 (2d8+6 damage.)
+Bite +0 (1d8+3 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Bite
@@ -100,11 +100,11 @@ Power        : 6.50 = (15.0 dph * 0.30 hpr) + (15.0 dpc * 0.03 cpr) + (7.5 dpg *
 
 ## Level 5
 
-Extra Damage Bite +2 (1d8+6 physical damage.)
-Generic Accuracy Bite +3 (1d8+5 physical damage.)
-Certain Bite +5 (1d8+2 physical damage.)
-Powerful Bite -1 (2d8+10 physical damage.)
-Bite +2 (1d8+5 physical damage.)
+Extra Damage Bite +2 (1d8+6 damage.)
+Generic Accuracy Bite +3 (1d8+5 damage.)
+Certain Bite +5 (1d8+2 damage.)
+Powerful Bite -1 (2d8+10 damage.)
+Bite +2 (1d8+5 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Bite
@@ -198,11 +198,11 @@ Power        : 14.55 = (19.0 dph * 0.60 hpr) + (19.0 dpc * 0.07 cpr) + (9.5 dpg 
 
 ## Level 10
 
-Extra Damage Bite +6 (3d4+1d8+8 physical damage.)
-Generic Accuracy Bite +9 (1d8+8 physical damage.)
-Certain Bite +11 (1d8+4 physical damage.)
-Powerful Bite +5 (2d8+16 physical damage.)
-Bite +6 (1d8+8 physical damage.)
+Extra Damage Bite +6 (3d4+1d8+8 damage.)
+Generic Accuracy Bite +9 (1d8+8 damage.)
+Certain Bite +11 (1d8+4 damage.)
+Powerful Bite +5 (2d8+16 damage.)
+Bite +6 (1d8+8 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Bite
@@ -296,13 +296,13 @@ Power        : 26.23 = (25.0 dph * 0.90 hpr) + (25.0 dpc * 0.10 cpr) + (12.5 dpg
 
 ## Level 15
 
-Extra Damage Bite +8 (4d6+1d8+11 physical damage.)
-Generic Accuracy Bite +12 (1d8+11 physical damage.)
-Certain Bite +14 (1d8+5 physical damage.)
-Powerful Bite +8 (2d8+22 physical damage.)
-Certain Strike+ -- Bite +14 (1d8+11 physical damage.)
-Power Strike+ -- Bite +5 (3d8+33 physical damage.)
-Bite +8 (1d8+11 physical damage.)
+Extra Damage Bite +8 (4d6+1d8+11 damage.)
+Generic Accuracy Bite +12 (1d8+11 damage.)
+Certain Bite +14 (1d8+5 damage.)
+Powerful Bite +8 (2d8+22 damage.)
+Certain Strike+ -- Bite +14 (1d8+11 damage.)
+Power Strike+ -- Bite +5 (3d8+33 damage.)
+Bite +8 (1d8+11 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Power Strike+ -- Bite
@@ -416,14 +416,14 @@ Power+       : 40.78 = (46.5 dph * 0.70 hpr) + (46.5 dpc * 0.08 cpr) + (23.2 dpg
 
 ## Level 20
 
-Extra Damage Bite +12 (9d8+13 physical damage.)
-Generic Accuracy Bite +18 (1d8+13 physical damage.)
-Certain Bite +20 (1d8+6 physical damage.)
-Powerful Bite +14 (2d8+26 physical damage.)
-Certain Strike+ -- Bite +20 (1d8+13 physical damage.)
-Power Strike+ -- Bite +11 (3d8+39 physical damage.)
-Generic Triple Damage -- Bite +12 (3d8+39 physical damage.)
-Bite +12 (1d8+13 physical damage.)
+Extra Damage Bite +12 (9d8+13 damage.)
+Generic Accuracy Bite +18 (1d8+13 damage.)
+Certain Bite +20 (1d8+6 damage.)
+Powerful Bite +14 (2d8+26 damage.)
+Certain Strike+ -- Bite +20 (1d8+13 damage.)
+Power Strike+ -- Bite +11 (3d8+39 damage.)
+Generic Triple Damage -- Bite +12 (3d8+39 damage.)
+Bite +12 (1d8+13 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Extra Damage Bite

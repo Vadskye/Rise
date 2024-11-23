@@ -11,7 +11,7 @@ Fighter 1
 AP 2, FT 6, IP 1, Skills 3
 HP 14, DR 6
 AD 8, Fort 6, Ref 3, Ment 3
-Generic Accuracy Broadsword +1 (1d6+2 slashing damage.); Certain Broadsword +3 (1d6+1 slashing damage.); Extra Damage Broadsword +1 (1d6+2 slashing damage.); Powerful Broadsword -3 (2d6+4 slashing damage.); Broadsword +1 (1d6+2 slashing damage.)
+Generic Accuracy Broadsword +1 (1d6+2 damage.); Certain Broadsword +3 (1d6+1 damage.); Extra Damage Broadsword +1 (1d6+2 damage.); Powerful Broadsword -3 (2d6+4 damage.); Broadsword +1 (1d6+2 damage.)
 Attr: Str 5, Dex 0, Con 3, Int 0, Per 2, Wil 0
 Power: 0✨/5
 
@@ -36,7 +36,7 @@ Fighter 10
 AP 4, FT 10, IP 3, Skills 3
 HP 48, DR 38
 AD 13, Fort 13, Ref 8, Ment 8
-Generic Accuracy Broadsword +10 (1d6+7 slashing damage.); Certain Broadsword +12 (1d6+3 slashing damage.); Powerful Broadsword +6 (2d6+14 slashing damage.); Extra Damage Broadsword +8 (1d6+13 slashing damage.); Broadsword +7 (1d6+7 slashing damage.)
+Generic Accuracy Broadsword +10 (1d6+7 damage.); Certain Broadsword +12 (1d6+3 damage.); Powerful Broadsword +6 (2d6+14 damage.); Extra Damage Broadsword +8 (1d6+13 damage.); Broadsword +7 (1d6+7 damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 5✨/12
 
@@ -70,7 +70,7 @@ Fighter 20
 AP 5, FT 13, IP 3, Skills 3
 HP 180, DR 96
 AD 18, Fort 19, Ref 13, Ment 13
-Generic Accuracy Broadsword +18 (1d6+11 slashing damage.); Certain Broadsword +20 (1d6+5 slashing damage.); Powerful Broadsword +14 (2d6+22 slashing damage.); Certain Strike+ -- Broadsword +20 (1d6+11 slashing damage.); Power Strike+ -- Broadsword +11 (3d6+33 slashing damage.); Extra Damage Broadsword +12 (1d6+9d8+11 slashing damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 slashing damage.); Broadsword +12 (1d6+11 slashing damage.)
+Generic Accuracy Broadsword +18 (1d6+11 damage.); Certain Broadsword +20 (1d6+5 damage.); Powerful Broadsword +14 (2d6+22 damage.); Certain Strike+ -- Broadsword +20 (1d6+11 damage.); Power Strike+ -- Broadsword +11 (3d6+33 damage.); Extra Damage Broadsword +12 (1d6+9d8+11 damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 damage.); Broadsword +12 (1d6+11 damage.)
 Attr: Str 8, Dex 0, Con 6, Int 0, Per 2, Wil 0
 Power: 10✨/18
 

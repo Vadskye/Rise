@@ -2,11 +2,11 @@
 
 ## Level 1
 
-Generic Accuracy Broadsword +1 (1d6+2 slashing damage.)
-Certain Broadsword +3 (1d6+1 slashing damage.)
-Extra Damage Broadsword +1 (1d6+2 slashing damage.)
-Powerful Broadsword -3 (2d6+4 slashing damage.)
-Broadsword +1 (1d6+2 slashing damage.)
+Generic Accuracy Broadsword +1 (1d6+2 damage.)
+Certain Broadsword +3 (1d6+1 damage.)
+Extra Damage Broadsword +1 (1d6+2 damage.)
+Powerful Broadsword -3 (2d6+4 damage.)
+Broadsword +1 (1d6+2 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Broadsword
@@ -100,11 +100,11 @@ Power        : 5.98 = (11.0 dph * 0.40 hpr) + (11.0 dpc * 0.04 cpr) + (5.5 dpg *
 
 ## Level 5
 
-Generic Accuracy Broadsword +5 (1d6+4 slashing damage.)
-Certain Broadsword +7 (1d6+2 slashing damage.)
-Extra Damage Broadsword +5 (1d6+4 slashing damage.)
-Powerful Broadsword +1 (2d6+8 slashing damage.)
-Broadsword +4 (1d6+4 slashing damage.)
+Generic Accuracy Broadsword +5 (1d6+4 damage.)
+Certain Broadsword +7 (1d6+2 damage.)
+Extra Damage Broadsword +5 (1d6+4 damage.)
+Powerful Broadsword +1 (2d6+8 damage.)
+Broadsword +4 (1d6+4 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Broadsword
@@ -198,11 +198,11 @@ Power        : 14.82 = (15.0 dph * 0.80 hpr) + (15.0 dpc * 0.09 cpr) + (7.5 dpg 
 
 ## Level 10
 
-Generic Accuracy Broadsword +10 (1d6+7 slashing damage.)
-Certain Broadsword +12 (1d6+3 slashing damage.)
-Powerful Broadsword +6 (2d6+14 slashing damage.)
-Extra Damage Broadsword +8 (1d6+13 slashing damage.)
-Broadsword +7 (1d6+7 slashing damage.)
+Generic Accuracy Broadsword +10 (1d6+7 damage.)
+Certain Broadsword +12 (1d6+3 damage.)
+Powerful Broadsword +6 (2d6+14 damage.)
+Extra Damage Broadsword +8 (1d6+13 damage.)
+Broadsword +7 (1d6+7 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Powerful Broadsword
@@ -296,13 +296,13 @@ Power        : 23.31 = (21.0 dph * 1.00 hpr) + (21.0 dpc * 0.11 cpr) + (10.5 dpg
 
 ## Level 15
 
-Generic Accuracy Broadsword +13 (1d6+8 slashing damage.)
-Certain Broadsword +15 (1d6+4 slashing damage.)
-Powerful Broadsword +9 (2d6+16 slashing damage.)
-Extra Damage Broadsword +9 (6d6+8 slashing damage.)
-Certain Strike+ -- Broadsword +15 (1d6+8 slashing damage.)
-Power Strike+ -- Broadsword +6 (3d6+24 slashing damage.)
-Broadsword +9 (1d6+8 slashing damage.)
+Generic Accuracy Broadsword +13 (1d6+8 damage.)
+Certain Broadsword +15 (1d6+4 damage.)
+Powerful Broadsword +9 (2d6+16 damage.)
+Extra Damage Broadsword +9 (6d6+8 damage.)
+Certain Strike+ -- Broadsword +15 (1d6+8 damage.)
+Power Strike+ -- Broadsword +6 (3d6+24 damage.)
+Broadsword +9 (1d6+8 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Power Strike+ -- Broadsword
@@ -416,14 +416,14 @@ Power+       : 34.09 = (34.5 dph * 0.80 hpr) + (34.5 dpc * 0.09 cpr) + (17.2 dpg
 
 ## Level 20
 
-Generic Accuracy Broadsword +18 (1d6+11 slashing damage.)
-Certain Broadsword +20 (1d6+5 slashing damage.)
-Powerful Broadsword +14 (2d6+22 slashing damage.)
-Certain Strike+ -- Broadsword +20 (1d6+11 slashing damage.)
-Power Strike+ -- Broadsword +11 (3d6+33 slashing damage.)
-Extra Damage Broadsword +12 (1d6+9d8+11 slashing damage.)
-Generic Triple Damage -- Broadsword +12 (3d6+33 slashing damage.)
-Broadsword +12 (1d6+11 slashing damage.)
+Generic Accuracy Broadsword +18 (1d6+11 damage.)
+Certain Broadsword +20 (1d6+5 damage.)
+Powerful Broadsword +14 (2d6+22 damage.)
+Certain Strike+ -- Broadsword +20 (1d6+11 damage.)
+Power Strike+ -- Broadsword +11 (3d6+33 damage.)
+Extra Damage Broadsword +12 (1d6+9d8+11 damage.)
+Generic Triple Damage -- Broadsword +12 (3d6+33 damage.)
+Broadsword +12 (1d6+11 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Extra Damage Broadsword
