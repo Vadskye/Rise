@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::poison::poison_description;
 use crate::equipment::poison::Exposure::{Contact, Ingestion, Injury};
 use crate::equipment::poison::Form::{Gas, Liquid, Powder};
@@ -6,6 +7,7 @@ use crate::equipment::{Tool, ToolCategory};
 fn poison() -> Tool {
     return Tool {
         category: ToolCategory::Poison,
+        tags: vec![AbilityTag::Poison],
         ..Default::default()
     };
 }

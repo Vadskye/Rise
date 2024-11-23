@@ -288,6 +288,7 @@ export const bluntForce: CombatStyle = {
         \\hit You and the target are \\deafened as a \\glossterm{condition}.
       `,
       rank: 1,
+      tags: ['Auditory'],
     },
 
     {
@@ -350,6 +351,7 @@ export const bluntForce: CombatStyle = {
         On a miss against a secondary target, you still deal half damage.
       `,
       rank: 3,
+      tags: ['Auditory'],
     },
   ],
 };

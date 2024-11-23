@@ -1,3 +1,4 @@
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{Tool, ToolCategory, ItemUpgrade};
 
 fn alchemical_item() -> Tool {
@@ -281,6 +282,7 @@ fn thrown_attacks() -> Vec<Tool> {
             Each creature that loses \glossterm<hit points> is \deafened as a \glossterm<condition>.
             \miss Half damage, and creatures are not deafened.
         ".to_string(),
+        tags: vec![AbilityTag::Auditory],
         upgrades: vec![
             ItemUpgrade::new(4, "Throw to deal $dr4l damage and deafen in an area", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr4l.
@@ -301,6 +303,7 @@ fn thrown_attacks() -> Vec<Tool> {
             Each creature that takes damage is \deafened as a \glossterm<condition>.
             \miss Half damage, and creatures are not deafened.
         ".to_string(),
+        tags: vec![AbilityTag::Auditory],
         ..alchemical_item()
     });
 
@@ -315,6 +318,7 @@ fn thrown_attacks() -> Vec<Tool> {
             \hit $dr2l cold damage.
             If the target loses \glossterm{hit points}, it is \slowed as a \glossterm{condition}.
         ".to_string(),
+        tags: vec![AbilityTag::Cold],
         upgrades: vec![
             // dX at Short range
             ItemUpgrade::new(4, "Throw to deal $dr5l damage and slow", r"
@@ -335,6 +339,7 @@ fn thrown_attacks() -> Vec<Tool> {
             \hit $dr6l cold damage.
             If the target takes damage, it is \slowed as a \glossterm{condition}.
         ".to_string(),
+        tags: vec![AbilityTag::Cold],
         ..alchemical_item()
     });
 
