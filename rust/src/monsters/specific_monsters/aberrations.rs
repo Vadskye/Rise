@@ -64,7 +64,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-                        \hit $dr2l poison damage.
+                        \hit $dr2l damage.
                         Each creature that loses hit points from this damage is poisoned by aboleth slime.
                     ".to_string(),
                     is_magical: true,
@@ -87,6 +87,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ".to_string(),
                     is_magical: true,
                     name: "Aboleth Slime".to_string(),
+                    tags: vec![AbilityTag::Poison],
                     usage_time: UsageTime::Triggered,
                     ..Default::default()
                 }),
