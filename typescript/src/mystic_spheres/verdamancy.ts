@@ -748,7 +748,8 @@ export const verdamancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        This ritual creates an area of bountiful growth in a one mile radius \\glossterm{zone} from your location.
+        This ritual creates an area of bountiful growth in a \\glossterm{zone} from your location.
+        You can generally choose the area affected, up a maximum of a one mile radius.
         Normal plants within the area become twice as productive as normal for the next year.
         This ritual does not stack with itself.
         If the \\ritual{infertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
@@ -762,7 +763,8 @@ export const verdamancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        This ritual creates an area of death and decay in a one mile radius \\glossterm{zone} from your location.
+        This ritual creates an area of death and decay in a \\glossterm{zone} from your location.
+        You can generally choose the area affected, up a maximum of a one mile radius.
         Normal plants within the area become half as productive as normal for the next year.
         This ritual does not stack with itself.
         If the \\ritual{fertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
