@@ -387,7 +387,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Fearful Judgment',
 
       attack: {
-        hit: `{
+        hit: `
           \\damagerankthree{}.
           If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         `,
