@@ -265,7 +265,7 @@ fn assert_melee(strike_name: &str, weapon: &Weapon) {
     assert!(weapon.is_melee(), "{} requires a melee weapon", strike_name,);
 }
 
-// Blunt Force
+// Brute Force
 impl StrikeAbility {
     // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorcrusher(rank: i32, weapon: Weapon) -> Self {
