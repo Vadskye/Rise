@@ -362,7 +362,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} You also learn the location of all creatures with that alignment.
-                    \rank{5} The area increases to a \largearea radius.
+                    \rank{5} The area changes to a \largearea radius instead of a cone.
                     \rank{7} The area increases to a \gargarea radius.
                 \end{magicalactiveability}
             ",
