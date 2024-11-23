@@ -6,6 +6,8 @@ mkdir -p core_book/generated
 mkdir -p tome_of_creation/generated
 cd rust
 
+cargo build; or exit 1
+
 # TODO: Convert uncommon species to be Rust-generated
 # cargo run --bin uncommon_classes
 cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
