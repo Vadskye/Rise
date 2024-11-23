@@ -349,26 +349,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            name: "Detect Anathema",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
-                    \abilityusagetime \glossterm{Minor action}.
-                    \rankline
-                    You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
-                    This does not give you any specific information about the location of those creatures.
-                    Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
-
-                    \rankline
-                    \rank{3} You also learn the location of all creatures with that alignment.
-                    \rank{5} The area changes to a \largearea radius instead of a cone.
-                    \rank{7} The area increases to a \gargarea radius.
-                \end{magicalactiveability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Smite",
             is_magical: true,
             rank: 1,
@@ -390,6 +370,26 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // TODO: represent special attacks
+            modifiers: None,
+        },
+        RankAbility {
+            name: "Detect Anathema",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
+                    \abilityusagetime \glossterm{Minor action}.
+                    \rankline
+                    You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
+                    This does not give you any specific information about the location of those creatures.
+                    Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
+
+                    \rankline
+                    \rank{3} You also learn the location of all creatures with that alignment.
+                    \rank{5} The area changes to a \largearea radius instead of a cone.
+                    \rank{7} The area increases to a \gargarea radius.
+                \end{magicalactiveability}
+            ",
             modifiers: None,
         },
         RankAbility {
