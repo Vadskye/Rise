@@ -1,7 +1,6 @@
 use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::MagicWeapon::Melee;
 use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
-use crate::core_mechanics::abilities::AbilityTag;
 
 pub fn melee() -> Vec<MagicWeapon> {
     let mut weapons = vec![];

@@ -1,7 +1,6 @@
-use crate::core_mechanics::abilities::AbilityTag;
-use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
-use crate::equipment::Apparel::{Amulet, Ring};
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::equipment::Apparel::{Amulet, Ring};
+use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
 pub fn jewelry() -> Vec<Apparel> {
     let mut apparel = vec![];
@@ -199,9 +198,11 @@ fn amulets() -> Vec<Apparel> {
         name: String::from("Twinhunter Amulet"),
         rank: 3,
         short_description: String::from(r"Adds an additional target with \ability<quarry>"),
-        description: String::from(r"
+        description: String::from(
+            r"
             When you use the \ability<quarry> ranger ability, you may target an additional creature.
-        "),
+        ",
+        ),
         ..Apparel::default()
     }));
 
@@ -298,14 +299,18 @@ fn amulets() -> Vec<Apparel> {
         name: String::from("Amulet of Abyssal Reach"),
         rank: 3,
         short_description: String::from(r"Increases range with \ability{abyssal rebuke}"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Your range with the \ability<abyssal rebuke> warlock ability is increased to \longrange.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(6, r"Greatly increases range with \ability{abyssal rebuke}", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            6,
+            r"Greatly increases range with \ability{abyssal rebuke}",
+            r"
                 The range increases to \distrange.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -365,10 +370,12 @@ fn rings() -> Vec<Apparel> {
         name: String::from("Ring of Water Breathing"),
         rank: 3,
         short_description: String::from("Allows breathing water like air"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can breathe water as easily as a human breathes air.
             This does not grant you the ability to breathe other liquids.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Water],
         ..Apparel::default()
     }));
@@ -389,10 +396,7 @@ fn rings() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Ring(StandardItem::skill_item(
-        "Liar's Ring",
-        "Deception",
-    )));
+    apparel.push(Ring(StandardItem::skill_item("Liar's Ring", "Deception")));
 
     apparel.push(Ring(StandardItem {
         name: String::from("Ring of Nourishment"),
@@ -462,17 +466,21 @@ fn rings() -> Vec<Apparel> {
         name: String::from("Cleansing Ring"),
         rank: 2,
         short_description: String::from("Can exert to remove a condition"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can activate this ring as a standard action.
             When you do, you remove one \glossterm<condition> affecting you.
 
             After you activate this item, you increase your \glossterm<fatigue level> by one.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Can remove a condition", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Can remove a condition",
+            r"
                 Activating this item does not increase your fatigue level.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -480,17 +488,21 @@ fn rings() -> Vec<Apparel> {
         name: String::from("Quickcleanse Ring"),
         rank: 5,
         short_description: String::from("Can exert to quickly remove a condition"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can activate this ring as a \glossterm{minor action}.
             When you do, you remove one \glossterm<condition> affecting you.
 
             After you activate this item, you increase your \glossterm<fatigue level> by two.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Can exert to quickly remove a condition", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            7,
+            "Can exert to quickly remove a condition",
+            r"
                 Activating this item only increases your fatigue level by one.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
