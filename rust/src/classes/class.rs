@@ -1560,7 +1560,7 @@ impl Class {
                             You can ask the fire simple questions and understand its responses.
                             If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
                             You cannot compel the fire to move farther than 30 feet in a single round.
-                            Fire that ends the round on non-combustable materials usually goes out, depending on the circumstances.
+                            Fire that ends the round on non-combustible materials usually goes out, depending on the circumstances.
 
                             After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
                             % TODO: What does an ``area of fire'' mean?
