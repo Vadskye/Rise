@@ -71,7 +71,7 @@
             AP 2, FT 7, IP 3, Skills 6
             HP 16, DR 5
             AD 5, Fort 6, Ref 5, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
@@ -80,7 +80,7 @@
             AP 3, FT 6, IP 4, Skills 5
             HP 10, DR 5
             AD 5, Fort 5, Ref 5, Ment 8
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 3✨/2
 
@@ -89,7 +89,7 @@
             AP 3, FT 6, IP 3, Skills 6
             HP 12, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
 
@@ -98,7 +98,7 @@
             AP 2, FT 7, IP 3, Skills 5
             HP 14, DR 5
             AD 6, Fort 6, Ref 5, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
@@ -107,7 +107,7 @@
             AP 2, FT 6, IP 3, Skills 6
             HP 10, DR 4
             AD 5, Fort 5, Ref 6, Ment 6
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 3✨/2
 
@@ -116,7 +116,7 @@
             AP 3, FT 7, IP 3, Skills 5
             HP 14, DR 5
             AD 5, Fort 6, Ref 5, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
 
@@ -125,7 +125,7 @@
             AP 3, FT 6, IP 3, Skills 7
             HP 12, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
 
@@ -134,7 +134,7 @@
             AP 3, FT 6, IP 4, Skills 9
             HP 10, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 2✨/2
 
@@ -143,7 +143,7 @@
             AP 4, FT 7, IP 3, Skills 5
             HP 11, DR 4
             AD 4, Fort 6, Ref 5, Ment 8
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
 
@@ -152,7 +152,7 @@
             AP 4, FT 6, IP 5, Skills 6
             HP 8, DR 5
             AD 5, Fort 5, Ref 5, Ment 6
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 3✨/2
 
@@ -161,7 +161,7 @@
             AP 4, FT 6, IP 5, Skills 7
             HP 8, DR 4
             AD 4, Fort 5, Ref 5, Ment 5
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
 
@@ -170,7 +170,7 @@
             AP 3, FT 7, IP 4, Skills 6
             HP 14, DR 5
             AD 5, Fort 8, Ref 5, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/2
 
@@ -179,7 +179,7 @@
             AP 2, FT 7, IP 4, Skills 8
             HP 14, DR 4
             AD 4, Fort 6, Ref 5, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/3
 
@@ -188,7 +188,7 @@
             AP 3, FT 6, IP 4, Skills 8
             HP 8, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
 
@@ -197,7 +197,7 @@
             AP 3, FT 6, IP 3, Skills 6
             HP 10, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +2 (1d8+1 bludgeoning damage.)
+            Club +2 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/3
 
@@ -206,7 +206,7 @@
             AP 2, FT 7, IP 3, Skills 6
             HP 16, DR 4
             AD 5, Fort 6, Ref 6, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
@@ -215,7 +215,7 @@
             AP 2, FT 7, IP 3, Skills 6
             HP 16, DR 5
             AD 5, Fort 8, Ref 5, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
@@ -224,7 +224,7 @@
             AP 3, FT 6, IP 3, Skills 7
             HP 12, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
-            Club +1 (1d8+1 bludgeoning damage.)
+            Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
@@ -235,7 +235,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 48, DR 18
             AD 10, Fort 11, Ref 10, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
@@ -244,7 +244,7 @@
             AP 5, FT 6, IP 6, Skills 5
             HP 28, DR 18
             AD 10, Fort 10, Ref 10, Ment 13
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 8✨/7
 
@@ -253,7 +253,7 @@
             AP 5, FT 6, IP 5, Skills 6
             HP 35, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
 
@@ -262,7 +262,7 @@
             AP 4, FT 7, IP 5, Skills 5
             HP 38, DR 18
             AD 11, Fort 11, Ref 10, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
@@ -271,7 +271,7 @@
             AP 4, FT 6, IP 5, Skills 6
             HP 28, DR 12
             AD 10, Fort 10, Ref 11, Ment 11
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 8✨/7
 
@@ -280,7 +280,7 @@
             AP 5, FT 7, IP 5, Skills 5
             HP 38, DR 18
             AD 10, Fort 11, Ref 10, Ment 11
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
 
@@ -289,7 +289,7 @@
             AP 5, FT 6, IP 5, Skills 7
             HP 35, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
 
@@ -298,7 +298,7 @@
             AP 5, FT 6, IP 6, Skills 9
             HP 28, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 7✨/7
 
@@ -307,7 +307,7 @@
             AP 6, FT 7, IP 5, Skills 5
             HP 30, DR 12
             AD 9, Fort 11, Ref 10, Ment 13
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
 
@@ -316,7 +316,7 @@
             AP 6, FT 6, IP 7, Skills 6
             HP 24, DR 18
             AD 10, Fort 10, Ref 10, Ment 11
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 8✨/7
 
@@ -325,7 +325,7 @@
             AP 6, FT 6, IP 7, Skills 7
             HP 24, DR 12
             AD 9, Fort 10, Ref 10, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
 
@@ -334,7 +334,7 @@
             AP 5, FT 7, IP 6, Skills 6
             HP 38, DR 18
             AD 10, Fort 13, Ref 10, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/7
 
@@ -343,7 +343,7 @@
             AP 4, FT 7, IP 6, Skills 8
             HP 38, DR 12
             AD 9, Fort 11, Ref 10, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/8
 
@@ -352,7 +352,7 @@
             AP 5, FT 6, IP 6, Skills 8
             HP 24, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+3 bludgeoning damage.)
+            Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
 
@@ -361,7 +361,7 @@
             AP 5, FT 6, IP 5, Skills 6
             HP 28, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/8
 
@@ -370,7 +370,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 48, DR 12
             AD 10, Fort 11, Ref 11, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
@@ -379,7 +379,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 48, DR 18
             AD 10, Fort 13, Ref 10, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
@@ -388,7 +388,7 @@
             AP 5, FT 6, IP 5, Skills 7
             HP 35, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
-            Club +6 (1d8+4 bludgeoning damage.)
+            Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
@@ -399,7 +399,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 160, DR 48
             AD 15, Fort 16, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
 
@@ -408,7 +408,7 @@
             AP 5, FT 6, IP 6, Skills 5
             HP 100, DR 48
             AD 15, Fort 15, Ref 15, Ment 18
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 13✨/12
 
@@ -417,7 +417,7 @@
             AP 5, FT 6, IP 5, Skills 6
             HP 116, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
 
@@ -426,7 +426,7 @@
             AP 4, FT 7, IP 5, Skills 5
             HP 128, DR 48
             AD 16, Fort 16, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
 
@@ -435,7 +435,7 @@
             AP 4, FT 6, IP 5, Skills 6
             HP 100, DR 32
             AD 15, Fort 15, Ref 16, Ment 16
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 13✨/12
 
@@ -444,7 +444,7 @@
             AP 5, FT 7, IP 5, Skills 5
             HP 128, DR 48
             AD 15, Fort 16, Ref 15, Ment 16
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
 
@@ -453,7 +453,7 @@
             AP 5, FT 6, IP 5, Skills 7
             HP 116, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
 
@@ -462,7 +462,7 @@
             AP 5, FT 6, IP 6, Skills 9
             HP 100, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 12✨/12
 
@@ -471,7 +471,7 @@
             AP 6, FT 7, IP 5, Skills 5
             HP 110, DR 32
             AD 14, Fort 16, Ref 15, Ment 18
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
 
@@ -480,7 +480,7 @@
             AP 6, FT 6, IP 7, Skills 6
             HP 84, DR 48
             AD 15, Fort 15, Ref 15, Ment 16
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 13✨/12
 
@@ -489,7 +489,7 @@
             AP 6, FT 6, IP 7, Skills 7
             HP 84, DR 32
             AD 14, Fort 15, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
 
@@ -498,7 +498,7 @@
             AP 5, FT 7, IP 6, Skills 6
             HP 128, DR 48
             AD 15, Fort 18, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/12
 
@@ -507,7 +507,7 @@
             AP 4, FT 7, IP 6, Skills 8
             HP 128, DR 32
             AD 14, Fort 16, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/13
 
@@ -516,7 +516,7 @@
             AP 5, FT 6, IP 6, Skills 8
             HP 84, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
 
@@ -525,7 +525,7 @@
             AP 5, FT 6, IP 5, Skills 6
             HP 100, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/13
 
@@ -534,7 +534,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 160, DR 32
             AD 15, Fort 16, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
 
@@ -543,7 +543,7 @@
             AP 4, FT 7, IP 5, Skills 6
             HP 160, DR 48
             AD 15, Fort 18, Ref 15, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
 
@@ -552,6 +552,6 @@
             AP 5, FT 6, IP 5, Skills 7
             HP 116, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
-            Club +11 (1d8+6 bludgeoning damage.)
+            Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/13
