@@ -72,7 +72,7 @@ pub fn mounts() -> Vec<Tool> {
     });
 
     mounts.push(Tool {
-        name: "Warpony".to_string(),
+        name: "War Pony".to_string(),
         rank: 2,
         short_description: "Medium pony trained for battle".to_string(),
         description: String::from(r"
