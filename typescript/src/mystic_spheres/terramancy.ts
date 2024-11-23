@@ -122,12 +122,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     },
 
     {
-      name: 'Crushing Gravity',
+      name: 'Fall to Earth',
 
       // +1r for acc and very circumstantial HP effect
       attack: {
         hit: `
-          \\damagerankone{}.
+          \\damageranktwo{}.
           If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
@@ -139,17 +139,23 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       narrative: `
         The bigger they are, the more heavily gravity pulls them to the ground.
       `,
-      rank: 2,
+      rank: 3,
       scaling: 'accuracy',
       tags: [],
     },
 
     {
-      name: 'Mighty Crushing Gravity',
+      name: 'Crushing Gravity',
 
-      functionsLike: {
-        name: "crushing gravity",
-        exceptThat: "the damage increases to \\damagerankfour{}.",
+      // +1r for acc alone, which is more powerful at higher levels
+      attack: {
+        hit: `
+          \\damagerankfive{}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against a \\glossterm{grounded} creature or object within \\shortrange.
+          You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
+        `,
       },
       rank: 5,
       scaling: 'accuracy',
