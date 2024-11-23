@@ -888,10 +888,10 @@ export const astromancy: MysticSphere = {
     },
     {
       name: 'Forge Astral Beacon',
-      rank: 4,
+      rank: 3,
       effect: `
         You draw a magic circle in a \\smallarea radius during this ritual.
-        The circle creates an \\glossterm{astral beacon}, making it easy for creatures to teleport into the circle.
+        The circle creates an \\glossterm{astral beacon}, making it easier for creatures to teleport into the circle.
         When you create the beacon, you must give it a unique name that matches its construction and the patterns you chose for the circle.
         A creature who knows the name of an beacon can use rituals like \\ritual{guided teleportation} to teleport to it.
 
@@ -899,6 +899,7 @@ export const astromancy: MysticSphere = {
         You can use this ritual to renew the duration of an existing beacon instead of creating a new beacon.
       `,
       tags: [],
+      materialCost: true,
       castingTime: '24 hours',
     },
     {

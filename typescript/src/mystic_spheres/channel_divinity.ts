@@ -468,11 +468,12 @@ export const channelDivinity: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose a destination on your current plane, and up to six Medium or smaller ritual participants.
+        Choose a destination up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
         Each target is teleported to the temple or equivalent holy site to your deity that is closest to the chosen destination.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
         You can specify the destination by naming an \\glossterm{astral beacon}.
+        If you do, this ritual's fatigue cost is reduced to one fatigue per target.
         Alternately, you can specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.

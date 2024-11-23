@@ -775,13 +775,14 @@ export const verdamancy: MysticSphere = {
 
       castingTime: '24 hours',
       effect: `
-        Choose up to six Medium or smaller ritual participants.
+        Choose a destination up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
         In addition, choose a living plant that all ritual participants touch during the ritual.
         The plant must be at least one size category larger than the largest chosen ritual participant.
-        In addition, choose a destination up to 100 miles away from you on your current plane.
-        By walking through the chosen plant, each target is teleported to the closest plant to the destination that is at least one size category larger than the largest chosen ritual participant.
+        By walking through the chosen plant, each target is teleported to the closest available plant to the destination.
+        The arrival plant must be at least one size category larger than the largest chosen ritual participant.
 
         You can specify the destination by naming an \\glossterm{astral beacon}.
+        If you do, this ritual's fatigue cost is reduced to one fatigue per target.
         Alternately, you must specify the destination with a precise mental image of its appearance.
         The image does not have to be perfect, but it must unambiguously identify the destination.
         If you specify its appearance incorrectly, or if the area has changed its appearance, the destination may be a different area than you intended.
