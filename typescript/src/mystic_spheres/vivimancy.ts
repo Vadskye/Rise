@@ -716,6 +716,8 @@ export const vivimancy: MysticSphere = {
         name: 'corpse communion',
         exceptThat: `
           the corpse can answer with a single full sentence, rather than only with "yes" or "no".
+          In addition, the ritual only requires a piece of the corpse, not an intact mouth.
+          If no mouth is present, the soul's answer is heard regardless.
         `,
       },
       rank: 6,
