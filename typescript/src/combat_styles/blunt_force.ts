@@ -1,6 +1,6 @@
 import { CombatStyle } from '.';
 
-export const bluntForce: CombatStyle = {
+export const bruteForce: CombatStyle = {
   name: 'Brute Force',
   shortDescription: 'Smash foes with raw power.',
 
