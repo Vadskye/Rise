@@ -747,8 +747,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \ff[1]{Duel Focus} At the start of each round, you may choose a creature you can see.
     During that round, you gain a \plus1 bonus to your defenses against that creature's attacks.
 
-    \ff[6]{Duelist Strike}
-    \begin{activeability}{Duelist Strike}
+    \ff[6]{Deliver the Duel}
+    \begin{activeability}{Deliver the Duel}
       \abilityusagetime Standard action.
       \rankline
       Make a melee \glossterm{strike} with a non-\weapontag{Heavy} weapon.
@@ -758,14 +758,14 @@ Feats also make the system more mechanically complex, so they are not necessaril
 
       \rankline
       \featlevel{9} If either accuracy bonus applies, the strike deals 1d4 \glossterm{extra damage}.
-      \featlevel{12} The extra damage increases to 1d8.
-      \featlevel{15} The extra damage increases to 2d8.
-      \featlevel{18} The strike always deals double \glossterm{weapon damage}.
-      % \featlevel{21} The extra damage increases to 4d8.
+      \featlevel{12} The extra damage increases to 2d6.
+      \featlevel{15} The extra damage increases to 3d8.
+      \featlevel{18} The strike deals double \glossterm{weapon damage}.
     \end{activeability}
 
     \ff[12]{Defensive Stance} You gain a \plus1 bonus to your Armor defense as long as you wield a non-\weapontag{Projectile} weapon.
-    This bonus is doubled if you are not using a shield.
+    % TODO: wording
+    This bonus is doubled if you are not using a shield, and are not gaining any shield bonus to your Armor defense by other means.
 
     \ff[18]{Duel Focus+} The bonuses from your \textit{duel focus} ability increase to \plus2.
   \end{feat}
@@ -922,8 +922,8 @@ Feats also make the system more mechanically complex, so they are not necessaril
     If you chose body armor or a shield, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
 
     % as rank 3 maneuver, except for hitting Reflex defense
-    \magicalff[6]{Spectral Strike}
-    \begin{magicalactiveability}{Spectral Strike}
+    \magicalff[6]{Spectral Slice}
+    \begin{magicalactiveability}{Spectral Slice}
       \abilityusagetime Standard action.
       \rankline
       Make a melee \glossterm{strike}.
@@ -1177,20 +1177,19 @@ Feats also make the system more mechanically complex, so they are not necessaril
       \item You gain a \plus1 bonus to your \glossterm{mundane power}.
     \end{itemize}
 
-    \ff[6]{Trained Strike}
-    \begin{activeability}{Trained Strike}
+    \ff[6]{Applied Training}
+    \begin{activeability}{Applied Training}
       \abilityusagetime Standard action.
       \rankline
       Make a \glossterm{strike} and choose either precision or power.
-      If you choose precision, you gain a \plus2 accuracy bonus.
-      If you choose power, the strike deals 1d4 \glossterm{extra damage}.
+      If you choose precision, you gain a \plus3 accuracy bonus.
+      If you choose power, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
 
       \rankline
-      \featlevel{9} \plus4 accuracy or 1d8 extra damage.
-      \featlevel{12} \plus6 accuracy or 2d8 extra damage.
-      \featlevel{15} \plus2 accuracy and double \glossterm{weapon damage} or 3d10 extra damage.
-      \featlevel{18} \plus4 accuracy and double \glossterm{weapon damage} or 5d10 extra damage.
-      % \featlevel{21} \plus6 accuracy and double \glossterm{weapon damage} or 7d10 extra damage.
+      \featlevel{9} \plus5 accuracy, or 1d4 \add half power extra damage.
+      \featlevel{12} \plus10 accuracy, or 1d4 \add power extra damage
+      \featlevel{15} \plus3 accuracy and double \glossterm{weapon damage}, or 2d8 \add power extra damage.
+      \featlevel{18} \plus6 accuracy and double \glossterm{weapon damage}, or 4d10 \add power extra damage.
     \end{activeability}
 
     \ff[12]{Equipment Training+} You gain two additional \textit{equipment training} abilities of your choice.
@@ -2058,21 +2057,21 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \magicalff[1]{Efficient Hand} You can cast the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
     In addition, the distance you can move the object increases to 30 feet, as if you had that spell's rank 4 upgrade.
 
-    \magicalff[6]{Telekinetic Strike}
-    \begin{magicalactiveability}{Telekinetic Strike}
+    \magicalff[6]{Violent Hand}
+    \begin{magicalactiveability}{Violent Hand}
       \abilityusagetime Standard action.
       \rankline
       Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
-      Make a melee \glossterm{strike} with a \plus2 accuracy bonus using that weapon.
+      Make a melee \glossterm{strike} using that weapon that deals \glossterm{extra damage} equal to half your \glossterm{power}.
       The strike comes from the weapon's location, not your location.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
+      % TODO: it would be nice if this scaled more strongly with the chosen weapon's stats?
       \rankline
-      % TODO: awkward scaling
-      \featlevel{9} The accuracy bonus increases to \plus4.
-      \featlevel{12} The accuracy bonus increases to \plus6.
-      \featlevel{15} The accuracy bonus is reduced to \plus2, but the strike deals double \glossterm{weapon damage}.
-      \featlevel{18} The accuracy bonus increases to \plus4.
+      \rank{9} The extra damage increases to 1d6 \add half your power.
+      \rank{12} The extra damage increases to 1d6 \add your power.
+      \rank{15} The extra damage increases to 3d6 \add your power.
+      \rank{18} The \glossterm{weapon damage} is doubled.
     \end{magicalactiveability}
 
     \magicalff[12]{Kinetic Spell} You learn an additional spell.

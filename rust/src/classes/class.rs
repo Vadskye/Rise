@@ -1474,7 +1474,7 @@ impl Class {
                     \subsubsection{Destruction Domain}
                         \domainability{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
                         \magicaldomainability{Aspect}
-                        \begin{magicalactiveability}{Destructive Strike}
+                        \begin{magicalactiveability}{Demolish}
                             \abilityusagetime Standard action.
                             \rankline
                             Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your power.

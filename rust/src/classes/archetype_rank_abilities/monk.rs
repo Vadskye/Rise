@@ -76,13 +76,13 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Aerial Strike",
+            name: "Death From Above",
             is_magical: false,
             rank: 3,
             // Expected jump height: 15 from speed, so can reliably jump completely
             // over Medium creatures.
             description: r"
-                \begin{activeability}{Aerial Strike}
+                \begin{activeability}{Death From Above}
                     \abilityusagetime Standard action.
                     \rankline
                     You jump and move as normal for the jump (see \pcref{Jumping}).
@@ -471,11 +471,11 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Invested Strike",
+            name: "Invested Blow",
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Invested Strike}
+                \begin{magicalactiveability}{Invest Blow}
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level} (see text).
                     \rankline

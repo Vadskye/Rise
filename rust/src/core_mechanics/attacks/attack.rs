@@ -121,7 +121,7 @@ impl Attack {
     }
 
     // Currently, the only attack-specific explosion target modifier is the Impact weapon tag.
-    // In the future, it would be possible to add support for special attacks like Feral Strike.
+    // In the future, it would be possible to add support for special attacks like Feral Ferocity.
     pub fn calc_explosion_target_modifier(&self) -> i32 {
         let mut explosion_target_modifier = 0;
 

@@ -323,7 +323,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Consecrated Strike',
+      name: 'Consecrated Blow',
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
@@ -334,9 +334,9 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Mighty Consecrated Strike',
+      name: 'Mighty Consecrated Blow',
       functionsLike: {
-        name: 'consecrated strike',
+        name: 'consecrated blow',
         exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
       rank: 5,
@@ -344,7 +344,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Exalted Strike',
+      name: 'Exalted Excision',
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).

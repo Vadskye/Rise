@@ -325,7 +325,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // Same damage scaling as Resilient Strike
+    // Same damage scaling as Resilient Blow
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vampiric"),
         rank: 3,

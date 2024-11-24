@@ -41,11 +41,11 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
         // encourages high-defense barbarians, which is weird; barbarians should generally be more
         // low-defense than fighters, but higher survivability.
         RankAbility {
-            name: "Resilient Strike",
+            name: "Resilient Blow",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Resilient Strike}
+                \begin{activeability}{Resilient Blow}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
@@ -139,11 +139,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Enraged Strike",
+            name: "Aggravated Violence",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Enraged Strike}
+                \begin{activeability}{Aggravated Violence}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike}.
@@ -482,11 +482,11 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Feral Strike",
+            name: "Feral Ferocity",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Feral Strike}
+                \begin{activeability}{Feral Ferocity}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
@@ -510,7 +510,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             // Math: By default, 10% chance of +2 accuracy and 1% chance of +4 accuracy, so +0.24
             // accuracy. But +0.5 accuracy if you can explode on a 9 from something else like
-            // Executioner, and of course +2 accuracy with Feral Strike specifically.
+            // Executioner, and of course +2 accuracy with Feral Ferocity specifically.
             description: r"
                 Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
                 As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.

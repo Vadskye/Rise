@@ -87,7 +87,7 @@ export const chronomancy: MysticSphere = {
       tags: [],
     },
     {
-      name: 'Accelerated Double Strike',
+      name: 'Accelerated Double Flurry',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
@@ -100,7 +100,7 @@ export const chronomancy: MysticSphere = {
       tags: [],
     },
     {
-      name: 'Accelerated Triple Strike',
+      name: 'Accelerated Triple Flurry',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
