@@ -10,7 +10,7 @@
   },
 
   {
-    name: 'Seeking Strike',
+    name: 'Seeking Blow',
 
     effect: `
         Make a \\glossterm{strike}.
@@ -21,7 +21,7 @@
   },
 
   {
-    name: 'Unerring Strike',
+    name: 'Unerring Blow',
 
     effect: `
         Make a \\glossterm{strike}.

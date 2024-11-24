@@ -607,7 +607,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Magnetic Strike',
+      name: 'Magnetic Blow',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
@@ -620,7 +620,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Arcing Strike',
+      name: 'Arcing Blow',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
@@ -633,9 +633,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Mighty Arcing Strike',
+      name: 'Mighty Arcing Blow',
       functionsLike: {
-        name: 'arcing strike',
+        name: 'arcing blow',
         exceptThat: "the strike is not weak.",
       },
       rank: 3,

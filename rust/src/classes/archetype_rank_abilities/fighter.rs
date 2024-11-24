@@ -40,11 +40,11 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Disciplined Strike",
+            name: "Disciplined Blow",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Disciplined Strike}
+                \begin{activeability}{Disciplined Blow}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
@@ -161,11 +161,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            name: "Armored Strike",
+            name: "Armored Crush",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Armored Strike}
+                \begin{activeability}{Armored Crush}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
@@ -378,11 +378,11 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Guarding Strike",
+            name: "Sentinel's Challenge",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Guarding Strike}
+                \begin{activeability}{Sentinel's Challenge}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
