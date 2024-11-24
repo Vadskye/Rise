@@ -26,6 +26,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 1,
+      tags: ['Earth'],
     },
 
     {
@@ -39,6 +40,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 5,
+      tags: ['Earth'],
     },
 
     {
@@ -51,6 +53,7 @@ export const bruteForce: CombatStyle = {
         On a miss, you still deal half damage.
       `,
       rank: 1,
+      tags: ['Earth'],
     },
 
     {
@@ -63,6 +66,7 @@ export const bruteForce: CombatStyle = {
         On a miss, you still deal half damage.
       `,
       rank: 5,
+      tags: ['Earth'],
     },
 
     {
