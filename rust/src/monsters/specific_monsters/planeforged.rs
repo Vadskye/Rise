@@ -50,7 +50,7 @@ pub fn planeforgeds() -> Vec<MonsterEntry> {
                 })],
                 modifiers: vec![
                     Modifier::PassiveAbility(PassiveAbility::soulless()),
-                    Modifier::vulnerable_tag(AbilityTag::Cold),
+                    Modifier::vulnerable_tag(AbilityTag::Water),
                 ],
                 movement_speeds: None,
                 senses: vec![],
@@ -475,9 +475,8 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             let mut modifiers = vec![];
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::floating()));
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::AbilityTag(
-                AbilityTag::Electricity,
-            )));
+            modifiers.push(Modifier::impervious_tag(AbilityTag::Air));
+            modifiers.push(Modifier::vulnerable_tag(AbilityTag::Earth));
             modifiers.push(Modifier::PassiveAbility(PassiveAbility {
                 description: "
                     The $name gains a +2 bonus to its defenses against ranged strikes.
@@ -598,7 +597,9 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
             let rank = calculate_standard_rank(self.level);
             let mut modifiers = vec![];
             modifiers.push(Modifier::PassiveAbility(PassiveAbility::soulless()));
-            modifiers.push(Modifier::vulnerable_tag(AbilityTag::Cold));
+            modifiers.push(Modifier::immune_tag(AbilityTag::Fire));
+            modifiers.push(Modifier::impervious_tag(AbilityTag::Cold));
+            modifiers.push(Modifier::vulnerable_tag(AbilityTag::Water));
             modifiers.push(Modifier::Attack(StandardAttack::Combustion(rank).attack()));
             modifiers.push(Modifier::Attack(StandardAttack::Firebolt(rank).attack()));
             if rank >= 3 {
@@ -700,13 +701,6 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     impl MagmaElemental {
         fn monster(mut self) -> Monster {
-            self.modifiers
-                .push(Modifier::PassiveAbility(PassiveAbility::soulless()));
-            self.modifiers
-                .push(Modifier::impervious_tag(AbilityTag::Earth));
-            self.modifiers
-                .push(Modifier::impervious_tag(AbilityTag::Cold));
-
             planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
@@ -754,9 +748,11 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
 
     fn generate_modifiers(rank: i32) -> Vec<Modifier> {
         vec![
-            Modifier::immune_tag(AbilityTag::Earth),
+            Modifier::PassiveAbility(PassiveAbility::soulless()),
+            Modifier::impervious_tag(AbilityTag::Earth),
             Modifier::immune_tag(AbilityTag::Fire),
             Modifier::impervious_tag(AbilityTag::Cold),
+            Modifier::vulnerable_tag(AbilityTag::Acid),
             Modifier::vulnerable_tag(AbilityTag::Water),
             Modifier::Attack(StandardAttack::Combustion(rank).attack()),
             generate_magma_throw(rank),
