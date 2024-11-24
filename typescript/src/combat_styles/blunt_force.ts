@@ -112,6 +112,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 3,
+      tags: ['Earth'],
     },
 
     {
@@ -122,6 +123,7 @@ export const bruteForce: CombatStyle = {
         exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 7,
+      tags: ['Earth'],
     },
 
     {
