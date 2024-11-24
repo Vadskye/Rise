@@ -175,7 +175,7 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Alchemical Combo',
+      name: 'Alchemical Admixture',
 
       effect: `
         Make a melee strike.
