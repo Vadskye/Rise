@@ -191,10 +191,9 @@ export const mobileHunter: CombatStyle = {
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
         \\damaginghit If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 3,
-      tags: [],
+      tags: ['Emotion'],
     },
 
     {
@@ -203,10 +202,9 @@ export const mobileHunter: CombatStyle = {
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
         \\damaginghit The target is \\frightened by you as a \\glossterm{condition}.
-        This is an \\abilitytag{Emotion} effect.
       `,
       rank: 7,
-      tags: [],
+      tags: ['Emotion'],
     },
 
     {
