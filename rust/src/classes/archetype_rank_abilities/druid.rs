@@ -27,12 +27,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         },
         // Like Smite, but only adds half Str instead of full Str and has extra tags
         RankAbility {
-            name: "Elemental Strike",
+            name: "Elemental Infusion",
             is_magical: true,
             rank: 1,
             description: r"
                 If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
-                \begin{magicalactiveability}{Elemental Strike}
+                \begin{magicalactiveability}{Elemental Infusion}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
@@ -59,21 +59,21 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Elemental Strike",
+            name: "Elemental Infusion",
             is_magical: true,
             rank: 3,
             description: "",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(3))]),
         },
         RankAbility {
-            name: "Elemental Strike",
+            name: "Elemental Infusion",
             is_magical: true,
             rank: 5,
             description: "",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
         },
         RankAbility {
-            name: "Elemental Strike",
+            name: "Elemental Infusion",
             is_magical: true,
             rank: 7,
             description: "",
@@ -587,13 +587,14 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
+        // TODO: damage math
         RankAbility {
-            name: "Shifting Strike",
+            name: "Shifting Claw",
             is_magical: false,
             rank: 3,
             description: r"
-                % Assume that choosing defense is worth about +3 accuracy, which is roughly 50% more damage
-                \begin{magicalactiveability}{Shifting Strike}
+                % Assume that choosing defense is worth about +3 accuracy
+                \begin{magicalactiveability}{Shifting Claw}
                     \abilityusagetime Standard action.
                     \rankline
                     Choose Armor, Reflex, or Fortitude defense.
@@ -602,9 +603,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You can choose to deal double \glossterm{weapon damage} with the strike.
                     If you do, you take a -4 accuracy penalty.
-                    \rank{5} You gain a +1 accuracy bonus with the strike.
-                    \rank{6} The accuracy bonus increases to +2.
-                    \rank{7} The accuracy bonus increases to +3.
+                    \rank{5} You gain a +2 accuracy bonus with the strike.
+                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{7} You deal double \glossterm{weapon damage} by default, or triple weapon damage if you take a -4 accuracy penalty.
                 \end{magicalactiveability}
             ",
             modifiers: None,

@@ -425,7 +425,7 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Shadowstep Strike',
+      name: 'Shadowstep Slice',
 
       functionsLike: {
         exceptThat: `

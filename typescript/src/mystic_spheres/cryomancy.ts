@@ -594,7 +594,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       tags: [],
     },
     {
-      name: 'Chilling Strike',
+      name: 'Chilling Blow',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
