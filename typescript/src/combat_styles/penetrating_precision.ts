@@ -1,7 +1,7 @@
 import { CombatStyle } from '.';
 
-export const penetratingPrecision: CombatStyle = {
-  name: 'Penetrating Precision',
+export const perfectPrecision: CombatStyle = {
+  name: 'Perfect Precision',
   shortDescription: 'Stab foes with careful aim.',
 
   maneuvers: [

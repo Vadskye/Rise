@@ -1,7 +1,7 @@
 import { CombatStyle } from '.';
 
-export const mobileAssault: CombatStyle = {
-  name: 'Mobile Assault',
+export const mobileHunter: CombatStyle = {
+  name: 'Mobile Hunter',
   shortDescription: 'Move around the battlefield with ease to avoid threats or hunt weak foes.',
 
   maneuvers: [

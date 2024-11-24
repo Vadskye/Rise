@@ -451,7 +451,7 @@ impl StrikeAbility {
     }
 }
 
-// Mobile Assault
+// Mobile Hunter
 impl StrikeAbility {
     // Considered rank 2, which is unusual for a maneuver-ish effect.
     pub fn pounce(rank: i32, weapon: Weapon) -> Self {
@@ -537,7 +537,7 @@ impl StrikeAbility {
     }
 }
 
-// Penetrating Precision
+// Perfect Precision
 impl StrikeAbility {
     // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorpiercer(weapon: Weapon) -> Self {
