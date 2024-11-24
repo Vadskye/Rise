@@ -139,7 +139,7 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Guarding Blow',
+      name: 'Defensive Blow',
 
       effect: `
         Make a melee \\glossterm{weak strike}.
