@@ -362,7 +362,6 @@ export const telekinesis: MysticSphere = {
         Unlike normal, you can use this fly speed while you have \\glossterm{encumbrance}.
       `,
       rank: 4,
-      scaling: { 6: `The maximum height increases to 30 feet.` },
       type: 'Attune',
     },
 
