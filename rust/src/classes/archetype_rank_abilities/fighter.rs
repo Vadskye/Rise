@@ -582,11 +582,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Coordinated Assault",
+            name: "Coordinated Charge",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Coordinated Assault}
+                \begin{activeability}{Coordinated Charge}
                     \abilityusagetime Standard action.
                     \rankline
                     You can move up to half your land speed.
