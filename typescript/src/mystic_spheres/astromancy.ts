@@ -470,7 +470,7 @@ export const astromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against anything within \\medrange.
-          The target must be immune to all of this spell's tags to be immune to this attack.
+          The target must be impervious or immune to all of this spell's tags to be impervous or immune to this attack.
         `,
       },
       narrative: `
