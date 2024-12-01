@@ -205,7 +205,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Two-Weapon Rhythm',
 
       effect: `
-        Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Wielding}).
+        Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
         After making this strike, you \\glossterm{briefly} gain a +1 accuracy bonus with strikes for each weapon that you hit with.
       `,
       rank: 1,
