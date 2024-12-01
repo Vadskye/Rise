@@ -34,7 +34,7 @@ export const fabrication: MysticSphere = {
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The item appears in your hand or on the ground at your feet.
 
-        If you create body armor or a weapon, it can be created from any special material other than cold iron.
+        If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide.
         The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
 
         Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
@@ -53,7 +53,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: 'forge',
         exceptThat: `
-          the item you create is magical, but cannot be made from any special material.
+          the item you create is magical, but cannot be made from any special material
           When you learn this spell, you choose a single magic weapon or armor property with a rank no higher than your spellcasting rank with this spell.
           If you create an item that the property can be applied to, the item has that property.
           Whenever your spellcasting rank with this spell increases, you can choose a new magic property.
