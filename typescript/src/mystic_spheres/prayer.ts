@@ -456,17 +456,17 @@ export const prayer: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Compulsion', 'Curse'],
     },
-    {
-      name: 'Holy Blades',
+    // {
+    //   name: 'Holy Blades',
 
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target's \\glossterm{manufactured weapons} shed light like a torch.
-        In addition, all damage they deal with \\glossterm{strikes} using those weapons becomes energy damage in addition to the attack's normal damage types.
-      `,
-      rank: 1,
-      type: 'Attune (target)',
-    },
+    //   effect: `
+    //     Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+    //     Each target's \\glossterm{manufactured weapons} shed light like a torch.
+    //     In addition, all damage they deal with \\glossterm{strikes} using those weapons becomes energy damage in addition to the attack's normal damage types.
+    //   `,
+    //   rank: 1,
+    //   type: 'Attune (target)',
+    // },
   ],
   rituals: [
     {
