@@ -462,7 +462,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Planar Jaunt -- Myriad',
 
-      // -1r for damage of all types
+      // -1r for multi-tag stuff
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a random assortment of planes.

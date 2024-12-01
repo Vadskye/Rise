@@ -254,20 +254,21 @@
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
   \traitdef{Impervious}{impervious}
-  A creature can be impervious to a particular damage type, ability tag, or other property of an attack.
+  % Are there any other things you can be impervious to?
+  A creature can be impervious to a particular ability tag.
   Creatures gain a \plus4 bonus to all defenses against attacks that they are impervious to.
   In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
-  If an attack deals damage of multiple types, a creature is impervious to that attack only if it is impervious to all of the attack's damage types.
-  For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
+  If an attack has multiple tags, a creature is impervious to the attack if it is impervious to any of the attack's tags.
+  % There shouldn't be any conditional tags like this
+  % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.
 
   \traitdef{Immune}{immune}
   A creature that is immune to an attack is completely unaffected by it.
-  Creatures and objects can be immune to specific damage types or debuffs.
-  It is also possible to be immune to more esoteric concepts, like being \grappled or gaining \glossterm{conditions}.
+  Creatures and objects can be immune to specific ability tag or debuffs.
+  It is also possible to be immune to more specific effects, like being \grappled or gaining \glossterm{conditions}.
 
-  Being immune to part of an attack does not grant immunity to other aspects of that attack.
-  If an attack deals damage of multiple types, a creature is immune to that attack only if it is impervious to all of the attack's damage types.
-  This also applies to more specific immunities that are not related to damage types.
+  If an attack has multiple tags, a creature is immune to the attack if it is immune to any of the attack's tags.
+  However, being immune to a particular effect of an attack does not make you immune to the rest of the attack's effects.
   For example, if you are immune to being \stunned, you still take full damage from an attack that deals damage and stuns you.
 
   \traitdef{Incorporeal}{incorporeal}
@@ -363,10 +364,11 @@
   This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid obstacles that are no more than half a foot thick.
 
   \traitdef{Vulnerable}{vulnerable}
-  A creature can be vulnerable to a particular damage type or ability tag.
-  It takes a \minus4 penalty to all defenses against attacks that would cause it to take damage of that type, or from abilities with that tag.
-  For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
+  % Are there any other kinds of vulnerabilities besides tags and silver / cold iron?
+  A creature can be vulnerable to a particular ability tag or weapon special material.
+  It takes a \minus4 penalty to all defenses against attacks with that tag, or attacks using weapons that it is vulnerable to.
   If a creature would be both vulnerable and \impervious or immune to an ability, it is treated as vulnerable and not impervious or immune.
+  % For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
 
   \traitdef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.
