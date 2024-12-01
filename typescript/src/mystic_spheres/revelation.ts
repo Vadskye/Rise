@@ -39,7 +39,7 @@ export const revelation: MysticSphere = {
       name: 'Weapon Proficiency',
 
       effect: `
-        You gain \\glossterm{proficiency} with one weapon group of your choice, including exotic weapons from that weapon group.
+        You gain \\glossterm{proficiency} with all weapons from one weapon group of your choice, including exotic weapons from that weapon group.
       `,
       rank: 1,
       type: 'Attune',
