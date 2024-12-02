@@ -679,6 +679,8 @@
       It can choose any of the valid tags for an \textit{essence infusion}, including the tag it chose as its essence infusion.
     \itemhead{Glowing} If appropriate to an incarnation's essence, it may naturally shed light as a torch.
       An incarnation cannot willingly disable this light, though the light can be covered by thick clothing.
+    \itemhead{Incarnation Archetype} Incarnations only gain two class archetypes instead of three.
+      Instead, they treat the Incarnation archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
     \itemhead{Poison Resistance} An incarnation is \impervious to \atPoison attacks.
     \itemhead{Unusual Body} An incarnation's body can be unusually light or heavy compared to an ordinary creature's body.
       It can be \glossterm{lightweight} or \glossterm{heavyweight}, depending on its essence.
@@ -780,6 +782,53 @@
         % don't end with an itemize right before an ability closes
         {}
       \end{magicalactiveability}
+
+  \subsection{Base Class Effects}
+    If you choose incarnation as your base class, you gain the following benefits.
+
+    \cf{Inc}{Attributes}
+      If you are tethered, you gain a \plus1 bonus to your Constitution, and a \plus1 bonus to either your Strength or Dexterity.
+      If you are untethered, you gain a \plus1 bonus to your Willpower, and a \plus1 bonus to either your Intelligence or Perception.
+
+    \cf{Inc}{Hit Points}
+      You have 8 hit points \add twice your Constitution, plus 2 hit points per level beyond 1.
+      This increases as your level increases, as indicated below.
+      \begin{itemize}
+          \itemhead{Level 7} 20 hit points \add three times your Constitution, plus 3 hit points per level beyond 7.
+          \itemhead{Level 13} 40 hit points \add six times your Constitution, plus 6 hit points per level beyond 13.
+          \itemhead{Level 19} 80 hit points \add twelve times your Constitution, plus 12 hit points per level beyond 19.
+      \end{itemize}
+
+    \cf{Inc}{Resources}
+      You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
+      You also gain two additional \glossterm{attunement points}.
+
+    \cf{Inc}{Weapon Proficiencies}
+      You are proficient with simple weapons.
+
+    \cf{Inc}{Armor Proficiencies}
+      You are proficient with light armor.
+      If you are untethered, you need \glossterm{barding} instead of regular armor (see \pcref{Barding}).
+
+    \cf{Inc}{Skills}
+      If you are tethered, you have the following \glossterm{class skills}:
+      \begin{itemize}
+        \item \subparhead{Strength} Climb, Jump.
+        \item \subparhead{Dexterity} Balance, Flexibility.
+        \item \subparhead{Constitution} Endurance.
+        \item \subparhead{Intelligence} Craft, Knowledge (arcana, nature, planes).
+        \item \subparhead{Perception} Awareness.
+        \item \subparhead{Other} Intimidate.
+      \end{itemize}
+
+      If you are untethered, you have the following \glossterm{class skills}:
+      \begin{itemize}
+        \item \subparhead{Dexterity} Flexibility.
+        \item \subparhead{Constitution} Endurance.
+        \item \subparhead{Intelligence} Deduction, Knowledge (arcana, nature, planes).
+        \item \subparhead{Perception} Awareness, Deception, Persuasion, Social Insight.
+        \item \subparhead{Other} Intimidate.
+      \end{itemize}
 
 \section{Kit}
 

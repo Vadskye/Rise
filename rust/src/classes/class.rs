@@ -32,6 +32,7 @@ pub enum Class {
     Dryaidi,
     Fighter,
     Harpy,
+    Incarnation,
     Monk,
     Oozeborn,
     Paladin,
@@ -63,6 +64,7 @@ impl Class {
             Self::Dragon,
             Self::Dryaidi,
             Self::Harpy,
+            Self::Incarnation,
             Self::Oozeborn,
             Self::Treant,
             Self::Vampire,
@@ -150,6 +152,8 @@ impl Class {
             Self::Fighter => vec![Constitution],
             Self::Harpy => vec![Strength, Dexterity, Perception],
             Self::Monk => vec![Dexterity, Willpower],
+            // Assume tethered
+            Self::Incarnation => vec![Constitution],
             Self::Oozeborn => vec![Strength, Dexterity, Constitution],
             Self::Paladin => vec![Willpower],
             Self::Ranger => vec![Dexterity, Perception],
@@ -173,6 +177,8 @@ impl Class {
             Self::Dryaidi => vec![Intelligence, Willpower],
             Self::Fighter => vec![Strength, Dexterity],
             Self::Harpy => vec![],
+            // Assume tethered
+            Self::Incarnation => vec![Strength, Dexterity],
             Self::Monk => vec![Perception, Intelligence],
             Self::Oozeborn => vec![],
             Self::Paladin => vec![Constitution, Strength],
@@ -196,6 +202,7 @@ impl Class {
             Self::Dryaidi => 1,
             Self::Fighter => 0,
             Self::Harpy => 1,
+            Self::Incarnation => 2,
             Self::Monk => 0,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
@@ -358,6 +365,18 @@ impl Class {
                 Skill::Stealth,
                 Skill::Survival,
             ],
+            // Assume tethered
+            Self::Incarnation => vec![
+                Skill::Climb,
+                Skill::Jump,
+                Skill::Balance,
+                Skill::Flexibility,
+                Skill::Endurance,
+                Skill::Craft,
+                Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Nature, KnowledgeSubskill::Planes]),
+                Skill::Awareness,
+                Skill::Intimidate,
+            ],
             Self::Monk => vec![
                 Skill::Awareness,
                 Skill::Balance,
@@ -380,6 +399,7 @@ impl Class {
             ],
             Self::Oozeborn => vec![
                 Skill::Awareness,
+
                 Skill::Balance,
                 Skill::Climb,
                 Skill::Endurance,
@@ -559,6 +579,7 @@ impl Class {
             Self::Dryaidi => HitPointProgression::Low,
             Self::Fighter => HitPointProgression::High,
             Self::Harpy => HitPointProgression::Medium,
+            Self::Incarnation => HitPointProgression::High,
             Self::Monk => HitPointProgression::Medium,
             Self::Oozeborn => HitPointProgression::VeryHigh,
             Self::Paladin => HitPointProgression::High,
@@ -591,6 +612,7 @@ impl Class {
             Self::Dryaidi => "dryaidi",
             Self::Fighter => "fighter",
             Self::Harpy => "harpy",
+            Self::Incarnation => "incarnation",
             Self::Monk => "monk",
             Self::Oozeborn => "oozeborn",
             Self::Paladin => "paladin",
@@ -623,6 +645,7 @@ impl Class {
             Self::Dryaidi => "Dry",
             Self::Fighter => "Ftr",
             Self::Harpy => "Hrp",
+            Self::Incarnation => "Inc",
             Self::Monk => "Mnk",
             Self::Oozeborn => "Ooz",
             Self::Paladin => "Pal",
@@ -646,6 +669,7 @@ impl Class {
             Self::Dryaidi => 5,
             Self::Fighter => 3,
             Self::Harpy => 4,
+            Self::Incarnation => 3,
             Self::Monk => 4,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
@@ -697,6 +721,10 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Harpy => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Incarnation => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
@@ -904,6 +932,7 @@ impl Class {
                 A typical monk would consider fighters to be overly limited in their focus on day-to-day combat, while a typical fighter would consider monks to be wasting their training with mysticism and esoteric nonsense.
             ".to_string(),
             Self::Harpy => r"".to_string(),
+            Self::Incarnation => r"".to_string(),
             Self::Monk => r"
                 Monks are agile masters of ``ki'' who hone their personal abilities to strike down foes and perform supernatural feats.
                 They undergo extensive training to control their mind and body in unison, using each to improve the other.
@@ -1134,6 +1163,11 @@ impl Class {
                 custom_weapons: None,
                 non_exotic_weapons: false,
                 simple_weapons: false,
+            },
+            Self::Incarnation => WeaponProficiencies {
+                custom_weapons: None,
+                non_exotic_weapons: false,
+                simple_weapons: true,
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapons: Some("monk weapons".to_string()),

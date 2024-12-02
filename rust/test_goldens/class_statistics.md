@@ -18,6 +18,7 @@
  *    Dragon:  30 /  91
  *   Dryaidi:  30 /  88
  *     Harpy:  30 /  89
+ * Incarnation:  29 /  93
  *  Oozeborn:  30 /  93
  *    Treant:  30 /  97
  *   Vampire:  30 /  92
@@ -38,6 +39,7 @@
  *    Dragon:  30 / 159
  *   Dryaidi:  30 / 154
  *     Harpy:  30 / 154
+ * Incarnation:  29 / 161
  *  Oozeborn:  30 / 163
  *    Treant:  30 / 167
  *   Vampire:  30 / 161
@@ -58,6 +60,7 @@
  *    Dragon:  30 / 218
  *   Dryaidi:  30 / 215
  *     Harpy:  30 / 215
+ * Incarnation:  29 / 220
  *  Oozeborn:  30 / 222
  *    Treant:  30 / 226
  *   Vampire:  30 / 221
@@ -199,6 +202,15 @@
             AD 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
+            Power: 2✨/3
+
+#### Incarnation
+            Incarnation 1
+            AP 4, FT 7, IP 3, Skills 5
+            HP 14, DR 4
+            AD 4, Fort 6, Ref 5, Ment 5
+            Club +1 (1d8+1 damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
 
 #### Oozeborn
@@ -365,6 +377,15 @@
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/8
 
+#### Incarnation
+            Incarnation 10
+            AP 6, FT 7, IP 5, Skills 5
+            HP 38, DR 12
+            AD 9, Fort 11, Ref 10, Ment 10
+            Club +6 (1d8+4 damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
+            Power: 7✨/8
+
 #### Oozeborn
             Oozeborn 10
             AP 4, FT 7, IP 5, Skills 6
@@ -527,6 +548,15 @@
             AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
+            Power: 12✨/13
+
+#### Incarnation
+            Incarnation 20
+            AP 6, FT 7, IP 5, Skills 5
+            HP 128, DR 32
+            AD 14, Fort 16, Ref 15, Ment 15
+            Club +11 (1d8+6 damage.)
+            Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
 
 #### Oozeborn
