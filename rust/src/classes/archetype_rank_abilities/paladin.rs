@@ -20,9 +20,9 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 You can choose whether it affects any combination of yourself, your \glossterm{allies}, your \glossterm{enemies}, and other creatures.
                 The effect of the aura depends on your devoted alignment, as described below.
 
-                % 20% chance of +5.5a, 70% chance of -1a, so 1.1a - 0.7a = 0.4a per ally
-                \subcf{Chaos} Each target reduces its \glossterm{explosion target} by 2 (see \pcref{Exploding Attacks}).
-                However, each target also suffers a \minus1 accuracy penalty on attacks that do not explode.
+                % 10% chance of +5.5a, so 0.55a per ally.
+                \subcf{Chaos} Whenever a target rolls a 1 on an attack roll, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
+                This does not affect bonus dice rolled for exploding attacks.
 
                 \subcf{Evil} Each target suffers a \minus1 penalty to its Armor defense as long as it is affected by at least one \glossterm{condition}.
 
@@ -47,8 +47,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The effect of your \textit{aligned aura} becomes stronger, as described below.
                 In addition, the area increases to a \largearea radius \glossterm{emanation} from you.
 
-                % 
-                \subcf{Chaos} The accuracy penalty is removed.
+                \subcf{Chaos} The effect triggers on rolling either a 1 or a 2.
                 \subcf{Evil} The penalty applies to all defenses.
                 \subcf{Good} When a targeted \glossterm{ally} would lose \glossterm{hit points}, you may lose those hit points instead.
                 This causes you to suffer any special effects of the attack that trigger on taking damage or losing hit points, while the target does not.
@@ -66,8 +65,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The effect of your \textit{aligned aura} reaches its full power, as described below.
                 In addition, the area increases to a \hugearea radius \glossterm{emanation} from you.
 
-                % 0.6a per ally
-                \subparhead{Chaos} The accuracy bonus increases to +6.
+                \subparhead{Chaos} This also affects bonus dice rolled for exploding attacks.
                 \subparhead{Evil} The penalty increases to \minus2.
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus10.
                 % 1a per ally (0.4+0.3+0.2+0.1)
