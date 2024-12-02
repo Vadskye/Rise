@@ -121,7 +121,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can perform a wide variety of unusual attacks.
-                You gain access to one of the following \glossterm{combat styles}: \combatstyle{dirty fighting}, \combatstyle{flurry of blows}, or \combatstyle{mobile assault}.
+                You gain access to one of the following \glossterm{combat styles}: \combatstyle{dirty fighting}, \combatstyle{flurry of blows}, or \combatstyle{mobile hunter}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
                 You can only learn esoteric \glossterm{maneuvers} from esoteric combat styles that you have access to.
