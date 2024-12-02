@@ -2539,13 +2539,14 @@ function handleVitalRolls() {
 function handleVitalWounds() {
   function calcVitalWoundEffect(roll) {
     roll = Number(roll);
-    if (roll <= -1) {
-      return "Unconscious, die next round";
+    if (roll <= -6) {
+      return "Immediately die";
+    } else if (roll <= 0) {
+      return "Unconscious, die after a minute";
     } else if (roll >= 10) {
       return "No effect";
     }
     return {
-      0: "Unconscious, die after a minute",
       1: "Unconscious below half HP",
       2: "-1 accuracy",
       3: "-5 foot speed",
