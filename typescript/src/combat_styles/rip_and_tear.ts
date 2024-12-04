@@ -74,6 +74,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
         \\damaginghit If the target takes damage from both weapons, it bleeds.
         A bleeding creature takes 1d6 damage +1 per two \\glossterm{power} during your next action.
+        This bleeding damage is doubled if both weapons get a critical hit.
       `,
       rank: 1,
     },
@@ -86,6 +87,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
         \\hit Each target that takes damage from both weapons bleeds.
         A bleeding creature takes 1d6 damage per 2 \\glossterm{power} during your next action.
+        This bleeding damage is doubled if both weapons get a critical hit.
       `,
       rank: 5,
     },
