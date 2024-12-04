@@ -387,8 +387,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The pool of water targeted must be at least as large as the largest item you create.
 
-        If you create body armor or a weapon, it can be created from any metallic special material other than cold iron.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+        If you create body armor or a weapon, it can be created from any metallic special material other than cold iron and dragonscale.
+        The item's rank cannot exceed your spellcasting rank with this spell.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
         First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
