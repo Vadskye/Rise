@@ -295,11 +295,11 @@
         \rank{7} The damage increases to \damagerankseven.
       \end{activeability}
 
-    \cf{Dgn}[2]{Draconic Body} You gain a \plus1 bonus to your Armor defense.
+      \magicalcf{Dgn}[2]{Draconic Flight} Your wings grow larger, granting you a limited ability to fly.
+      You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 10 feet (see \pcref{Flight}).
+      As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-    \magicalcf{Dgn}[3]{Draconic Flight} Your wings grow larger, granting you a limited ability to fly.
-    You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    \cf{Dgn}[3]{Draconic Body} You gain a \plus1 bonus to your Armor defense.
 
     \cf{Dgn}[4]{Draconic Bulk} Your size category increases to Medium.
       This increases your \glossterm{base speed} to 30 feet.
@@ -569,65 +569,69 @@
       Harpy talons are not able to effectively wield shields or manufactured weapons.
     \itemhead{Prehensile Talons} Harpies have a talon natural weapon on each foot (see \pcref{Natural Weapons}).
       In addition, they can use their feet as \glossterm{free hands}.
+      They can make short hops to use their feet to attack or manipulate objects without suffering penalties for gliding or flying.
     \itemhead{Wings} Harpies have no arms or hands.
       Instead, they have feathered wings that sprout from their shoulders.
-      These wings grant them a \glossterm{glide speed} and \glossterm{fly speed} that are both equal to the \glossterm{base speed} for their size (see \pcref{Aerial Movement}).
-      The fly speed has a 5 foot height limit.
-      As a \glossterm{free action}, a harpy can increase their \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+      These wings grant them a \glossterm{glide speed} equal to the \glossterm{base speed} for their size (see \pcref{Aerial Movement}).
+    \itemhead{Winged Agility} While a harpy is able to use its wings, it gains a \plus2 bonus to Armor defense, a \plus4 bonus to the Balance skill, and a \plus10 foot bonus to its maximum horizontal jump distance (see \pcref{Jumping}).
   \end{itemize}
   \parhead{Automatic Languages} Common.
 
   \subsection{Harpy Archetype}
 
-    \cf{Hrp}[1]{Winged Agility} While you are able to use your wings, you gain a \plus2 bonus to Armor defense, a \plus4 bonus to the Balance skill, and a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
+    \magicalcf{Hrp}[1]{Luring Song}
+    \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
+      \abilityusagetime Standard action.
+      \rankline
+      Make an attack vs. Mental against a creature within \longrange.
+      In addition, you begin a vocal performance (see \pcref{Performance}).
+      \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
+      In addition, it cannot move farther away from you at any time, except as necessary to get closer to you (such as to avoid an intervening obstacle).
+      It can otherwise act freely, and is still able to attack you and your allies.
 
-    \cf{Hrp}[1]{Winged Combat} As a \glossterm{free action}, you can make a short hop off of solid ground to hover in your space using your wings.
-      This allows you to use both of your feet without standing on them during that phase, so you can attack with both talons at once.
-      You must land at the end of the phase.
-      This brief hovering does not cause you to suffer penalties for flying.
+      The target will risk danger to reach you, such as moving towards your allies or swimming through rough water.
+      However, it is not compelled to take actions that are guaranteed to damage harm it, such as jumping off of a cliff.
+      If it cannot make any progress towards you, it remains in place.
 
-      \magicalcf{Hrp}[2]{Luring Song}
-      \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
-        \abilityusagetime Standard action.
-        \rankline
-        Make an attack vs. Mental against a creature within \longrange.
-        \hit As a \glossterm{condition}, the target must move towards you as best it can during each \glossterm{movement phase}.
-        In addition, it cannot move farther away from you at any time, except as necessary to get closer to you (such as to avoid an intervening obstacle).
-        It can otherwise act freely, and is still able to attack you and your allies.
+      If you attack the target with any ability other than this one, or if you stop your vocal performance, this effect is automatically broken.
+      When this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
+      \crit The condition must be removed twice before the effect ends.
 
-        If you attack the target with any ability other than this one, this effect is automatically broken.
-        When this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
-        \crit The condition must be removed twice before the effect ends.
+      \rankline
+      The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 1.
+      In addition:
+      \rank{3} You can target an additional creature within range.
+      \rank{5} The maximum number of targets increases to 3.
+      \rank{7} The maximum number of targets increases to 5.
+    \end{magicalactiveability}
 
-        \rankline
-        \rank{4} You can target an additional creature within range.
-        \rank{6} The maximum number of targets increases to 5.
-      \end{magicalactiveability}
-
-    \cf{Hrp}[3]{Flight} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
+    \cf{Hrp}[2]{Flight} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 10 feet (see \pcref{Flight}).
       As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
-    \cf{Hrp}[4]{Winged Agility+} You can use your wings to help you maneuver on the ground more effectively, such as by briefly hovering or gliding over obstacles.
-      The Balance bonus from your \textit{winged agility} ability increases to \plus8.
-      In addition, you ignore \glossterm{difficult terrain}.
+    \cf{Hrp}[3]{Winged Agility+} The Armor defense bonus increases to \plus3, and the Balance bonus increases to \plus8.
 
       % TODO: define correct rank
-      \magicalcf{Hrp}[5]{Siren Song}
+      \magicalcf{Hrp}[4]{Siren Song}
       \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
         \abilityusagetime Standard action.
         \rankline
         Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-        \hit Each target is both \charmed by you and \stunned as long as it can still hear you sing.
+        In addition, you begin a vocal performance (see \pcref{Performance}).
+        \hit Each target is both \charmed by you and \stunned as long as it can still hear your vocal performance.
         It remains stunned even if it stops being charmed, such as if you or your allies attack it.
         This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice that it is being influenced.
         \rankline
-        \rank{7} The area increases to a \largearea radius.
+        The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
+        In addition:
+        \rank{6} The area increases to a \largearea radius.
       \end{magicalsustainability}
 
-    \cf{Hrp}[6]{Agile Flight} Using your fly speed no longer penalizes your Armor and Reflex defenses.
-      In addition, your maximum height increases to 30 feet.
+    \cf{Hrp}[5]{Caress the Enthralled} You gain a \plus2 accuracy bonus against creatures that are affected by either your \ability{luring song} or \ability{siren song} ability.
 
-      \magicalcf{Hrp}[7]{Mythic Siren} You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
+    \cf{Hrp}[6]{Agile Flight} You reduce the penalties to your Armor and Reflex defenses from gliding or flying by 2.
+    In addition, your maximum height increases to 30 feet.
+
+    \magicalcf{Hrp}[7]{Mythic Siren} You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
 
   \subsection{Base Class Effects}
     If you choose harpy as your base class, you gain the following benefits.
@@ -755,7 +759,7 @@
     \cf{Inc}[4]{Essence Exemplar} The bonus to an attribute that you gain from being an incarnate increases to \plus2.
 
     \cf{Inc}[5]{Essence Infusion+} You become \glossterm{immune} instead of impervious to attacks with the tag from your \textit{essence infusion} ability.
-    In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
+      In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
 
     \cf{Inc}[6]{Deep Tether+} You gain a special ability depending on whether you are tethered or untethered.
       \begin{raggeditemize}
@@ -794,9 +798,9 @@
       You have 8 hit points \add twice your Constitution, plus 2 hit points per level beyond 1.
       This increases as your level increases, as indicated below.
       \begin{itemize}
-          \itemhead{Level 7} 20 hit points \add three times your Constitution, plus 3 hit points per level beyond 7.
-          \itemhead{Level 13} 40 hit points \add six times your Constitution, plus 6 hit points per level beyond 13.
-          \itemhead{Level 19} 80 hit points \add twelve times your Constitution, plus 12 hit points per level beyond 19.
+        \itemhead{Level 7} 20 hit points \add three times your Constitution, plus 3 hit points per level beyond 7.
+        \itemhead{Level 13} 40 hit points \add six times your Constitution, plus 6 hit points per level beyond 13.
+        \itemhead{Level 19} 80 hit points \add twelve times your Constitution, plus 12 hit points per level beyond 19.
       \end{itemize}
 
     \cf{Inc}{Resources}
@@ -964,14 +968,14 @@
       In addition, you gain \trait{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
       If you already have the blindsight ability, you increase its range by 15 feet.
 
-    \cf{Ooz}[2]{Ingest Object} 
-    \begin{activeability}{Ingest Object}[\atAcid]
-      \abilityusagetime Standard action.
-      \rankline
-      This ability functions like the \spell{absorb object} spell, except that the maximum size of the object is equal to your size.
-      Anything you absorb in this way takes a single point of \glossterm{environmental} damage during each of your actions while it remains absorbed.
-      This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
-    \end{activeability}
+    \cf{Ooz}[2]{Ingest Object}
+      \begin{activeability}{Ingest Object}[\atAcid]
+        \abilityusagetime Standard action.
+        \rankline
+        This ability functions like the \spell{absorb object} spell, except that the maximum size of the object is equal to your size.
+        Anything you absorb in this way takes a single point of \glossterm{environmental} damage during each of your actions while it remains absorbed.
+        This damage is insufficient to hurt most objects made from wood, stone, or metal, but it can destroy more fragile objects like paper or complex mechanical traps.
+      \end{activeability}
 
     \cf{Ooz}[3]{Amorphous Form+} You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
       In addition, your \ability{mold body} ability loses the \abilitytag{Sustain} (free) tag.
@@ -1090,7 +1094,7 @@
     \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
       In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
 
-    \magicalcf{Tre}[3]{Animate Plants}
+      \magicalcf{Tre}[3]{Animate Plants}
       \begin{magicalactiveability}{Animate Plants}[\abilitytag{Manifestation}]
         \abilityusagetime Standard action.
         \rankline
