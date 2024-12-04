@@ -418,6 +418,7 @@ export const photomancy: MysticSphere = {
 
         You become \\trait{invisible}.
         This invisibility ends if you attack or take damage.
+        If you spend one minute without attacking or taking damage, this invisibility is reapplied.
       `,
       rank: 6,
       tags: ['Attune (deep)'],
