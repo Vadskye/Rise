@@ -550,12 +550,10 @@ export const verdamancy: MysticSphere = {
 
       // Short range instead of med range for the two weird effects
       attack: {
-        hit: `
-          \\damagerankone.
-          This damage is doubled if the target is a plant, including plant creatures.
-        `,
+        hit: "\\damagerankone.",
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
+          If the target is a plant, including plant creatures, you gain a \plus10 accuracy bonus with this attack.
           In addition, all \\glossterm{undergrowth} in a \\smallarea radius around the target \\glossterm{briefly} shrivels away into the ground.
         `,
       },
