@@ -38,7 +38,7 @@ export const summoning: MysticSphere = {
           \\item Its \\glossterm{damage resistance} is equal to half its hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
           \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
-          \\item Its \\glossterm{land speed} is 30 feet.
+          \\item Its \\glossterm{land speed} is 30 feet, regardless of the number of legs it appears to have.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
