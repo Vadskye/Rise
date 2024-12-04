@@ -554,7 +554,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
           If the target is a plant, including plant creatures, you gain a \plus10 accuracy bonus with this attack.
-          In addition, all \\glossterm{undergrowth} in a \\smallarea radius around the target \\glossterm{briefly} shrivels away into the ground.
+          In addition, all \\glossterm{undergrowth} in a \\medarea radius \\glossterm{zone} around the target \\glossterm{briefly} shrivels away into the ground.
         `,
       },
       rank: 1,
