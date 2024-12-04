@@ -381,7 +381,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       effect: `
         Choose one pool of \\glossterm{unattended}, nonmagical water within \\shortrange.
-        This spell creates one or two weapons, suits of body armor, or shields from the target pool of water.
+        This spell creates up to two weapons, suits of body armor, or shields from the target pool of water.
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The pool of water targeted must be at least as large as the largest item you create.
