@@ -21,7 +21,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
     Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
     When a Large or smaller creature takes damage from a non-\\atCold ability while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
-    Any individual creature only has to make his check once per \\glossterm{phase}.
+    Any individual creature only has to make this check once per \\glossterm{phase}.
     At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
 
     If a 5-foot square of icy terrain takes any damage from a \\atFire ability, it is destroyed and becomes normal ground or water again.
