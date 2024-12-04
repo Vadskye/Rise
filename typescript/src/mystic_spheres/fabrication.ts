@@ -35,7 +35,7 @@ export const fabrication: MysticSphere = {
         The item appears in your hand or on the ground at your feet.
 
         If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+        The item's rank cannot exceed your spellcasting rank with this spell.
 
         Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
         A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
