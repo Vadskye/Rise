@@ -687,6 +687,14 @@ def universal_abilities():
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
+                "Ready Reaction",
+                """
+                    When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
+                    If that action becomes possible during this phase, it happens.
+                    Otherwise, your action is wasted.
+                """,
+            ),
+            universal_ability_button(
                 "Recover",
                 """
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
