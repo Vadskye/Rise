@@ -159,7 +159,7 @@ export const heraldOfWar: CombatStyle = {
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 3,
-      tags: ['Swift'],
+      tags: ['Auditory', 'Swift'],
     },
 
     {
@@ -220,7 +220,7 @@ export const heraldOfWar: CombatStyle = {
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d6 per 3 power \\glossterm{damage resistance}.
       `,
       rank: 3,
-      tags: ['Emotion', 'Swift'],
+      tags: ['Auditory', 'Emotion', 'Swift'],
     },
 
     {
@@ -231,7 +231,7 @@ export const heraldOfWar: CombatStyle = {
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
       `,
       rank: 7,
-      tags: ['Emotion', 'Swift'],
+      tags: ['Auditory', 'Emotion', 'Swift'],
     },
   ],
 };
