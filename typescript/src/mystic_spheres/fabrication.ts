@@ -438,7 +438,6 @@ export const fabrication: MysticSphere = {
         You create a metal cage around the target in its space.
         The cage has a 2 inch gap between its bars, allowing the target to see and be seen by creatures outside of the cage.
         This does not block \\glossterm{line of sight} or \\glossterm{line of effect}, but it provides cover.
-        Only piercing weapons can make \\glossterm{strikes} through the bars of the cage.
         % TODO: clarify that you can't create two cages around the same target
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
@@ -461,13 +460,16 @@ export const fabrication: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You create a nonmagical weapon that you are proficient with your hand.
-        You can immediately make a \\glossterm{strike} with that weapon.
+        You create a nonmagical weapon that you are proficient with your hand or hands.
+        The weapon can be made of any special material other than cold iron.
+        Its rank cannot exceed your spellcasting rank with this spell.
+
+        After the weapon appears, you can immediately make a \\glossterm{strike} with that weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },

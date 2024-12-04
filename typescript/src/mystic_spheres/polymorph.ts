@@ -94,7 +94,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
         If the target is living and your attack result beats its Fortitude defense, it bleeds.
         During your next action, it takes \\glossterm{extra damage} equal to your power.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
@@ -108,7 +108,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -122,7 +122,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} with a -3 accuracy penalty using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} with a -3 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals double \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -135,7 +135,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} with a -2 accuracy penalty using a \\glossterm{natural weapon}.
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals triple \\glossterm{weapon damage}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
@@ -144,15 +144,28 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Distant Claw',
+      name: 'Extended Claw',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using a \\glossterm{natural weapon}.
-        The strike gains the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
+        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        The strike gains the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 1,
+      rank: 2,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Massive Claw',
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        The strike deals double \\glossterm{weapon damage}, and it gains the \\weapontag{Massive} (10) weapon tag (see \\pcref{Weapon Tags}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+      `,
+      rank: 6,
       scaling: 'accuracy',
     },
 
