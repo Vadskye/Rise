@@ -624,11 +624,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{weak strike}.
+        Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         The strike \\glossterm{chains} once.
       `,
-      rank: 1,
+      rank: 3,
       scaling: 'accuracy',
     },
 
@@ -636,9 +636,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Blow',
       functionsLike: {
         name: 'arcing blow',
-        exceptThat: "the strike is not weak.",
+        exceptThat: "the strike deals double \\glossterm{weapon damage}.",
       },
-      rank: 3,
+      rank: 6,
       scaling: 'accuracy',
     },
   ],

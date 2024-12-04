@@ -560,16 +560,18 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee or thrown \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        \\damaginghit If the target loses hit points from the strike, it is \slowed as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: [],
     },
     {
       name: 'Mighty Cryostrike',
 
+      // TODO: damage math
       functionsLike: {
         name: "cryostrike",
         exceptThat: `
@@ -587,7 +589,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         name: "cryostrike",
         exceptThat: `
           the strike deals double \\glossterm{weapon damage}.
-          In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d10 per 2 power.
+          In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d8 per 2 power.
         `,
       },
       rank: 7,
@@ -595,14 +597,14 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       tags: [],
     },
     {
-      name: 'Chilling Blow',
+      name: 'Efficient Cryostrike',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike} that deals double weapon damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Each damaged creature is \\slowed as a \\glossterm{condition}.
+        \\damaginghit If your attack result also beats the target's Fortitude defense, it is \\slowed as a condition.
       `,
       rank: 5,
       scaling: 'accuracy',
