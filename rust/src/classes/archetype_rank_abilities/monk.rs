@@ -43,7 +43,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
-            name: "Heart of Air+",
+            name: "Heart of Air",
             is_magical: true,
             rank: 4,
             description: r"

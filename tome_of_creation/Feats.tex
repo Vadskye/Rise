@@ -146,7 +146,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
           \featref{Endurance Specialization}              & Trained Endurance                & Improve use of chosen skill                & \tdash            & \featpref{Endurance Specialization}         \\
           \featref{Flexibility Specialization}            & Trained Flexibility              & Improve use of chosen skill                & \tdash            & \featpref{Flexibility Specialization}       \\
           \featref{Intimidate Specialization}             & Trained Intimidate               & Improve use of chosen skill                & \tdash            & \featpref{Intimidate Specialization}        \\
-          \featref{Jump Specialization}                   & Trained Jump                     & Improve use of chosen skill                & \tdash            & \featpref{Jump Specialization}              \\
           \featref{Knowledge Specialization}              & Trained Knowledge                & Improve use of chosen skill                & \tdash            & \featpref{Knowledge Specialization}         \\
           \featref{Medicine Specialization}               & Trained Medicine                 & Improve use of chosen skill                & \tdash            & \featpref{Medicine Specialization}          \\
           \featref{Perform Specialization}                & Trained Perform                  & Improve use of chosen skill                & \tdash            & \featpref{Perform Specialization}           \\
@@ -201,6 +200,7 @@ Feats also make the system more mechanically complex, so they are not necessaril
           \featref{Executioner}                           & Per 2                            & Kill weakened foes more easily             & \tdash            & \featpref{Executioner}                      \\
           \featref{Greatweapon Warrior}                   & Str 3                            & Fight better with two-handed weapons       & \tdash            & \featpref{Greatweapon Warrior}              \\
           \magicalfeatref{Ghostblade}                     & Dex 1, Wil 2                     & Tap into ghostly powers in combat          & Magical           & \featpref{Ghostblade}                       \\
+          \featref{Heavenly Warrior}                      & Str 2                            & Leap into the air with foes                & \tdash            & \featpref{Heavenly Warrior}              \\
           \featref{Juggernaut}                            & Str 1, Con 2                     & Become unstoppable and trample foes        & \tdash            & \featpref{Juggernaut}                       \\
           \featref{Leadership}                            & Int 2 or Wil 2                   & Inspire nearby allies                      & \tdash            & \featpref{Leadership}                       \\
           \featref{Maneuverist}                           & Int 2                            & Gain limited maneuver access               & \tdash            & \featpref{Maneuverist}                      \\
@@ -967,6 +967,37 @@ Feats also make the system more mechanically complex, so they are not necessaril
     In addition, the defense penalty is removed.
   \end{feat}
 
+  \begin{feat}{Heavenly Warrior}{Combat}
+    % TODO: "Jump proficiency"?
+    \featpre Str 2, Jump as a trained skill.
+
+    \ff[1]{Featherlight Leap} Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
+    If you have the \ability{float like air} monk ability with the same effect, you instead gain a \plus5 foot bonus to your maximum jump height.
+    This does not affect the forward distance you can reach with your jumps.
+
+    % TODO: damage math in the spreadsheet. This is kind of like 1d8 extra damage, but requires two separate attacks.
+    \ff[6]{Call to Heaven}
+    \begin{activeability}{Call to Heaven}[\atBrawling (see text)]
+      \abilityusagetime Standard action.
+      \rankline
+      Make an attack vs. Fortitude against one creature or object adjacent to you.
+      If you hit, and the target's \glossterm{weight category} does not exceed your carrying capacity, you \glossterm{knockback} the target up to 10 feet into the air.
+      You can then jump up to their height, assuming it is within your maximum jump height.
+      Whether you hit or missed with the first attack, you can then make a melee \glossterm{strike} against the target.
+      The first attack has the \atBrawling tag, but the strike does not.
+
+      Typically, a creature hit by this attack will fall to the ground at the end of the round, taking \glossterm{falling damage} (see \pcref{Falling Damage}).
+      \rankline
+      % TODO: damage scaling using the spreadsheet
+    \end{activeability}
+
+    \ff[12]{Instant Leap} You are always considered to have a running start when jumping.
+
+    \ff[18]{Featherlight Leap+} Your maximum jumping height increases to twice your maximum horizontal jump distance.
+    This does not affect the forward distance you can reach with your jumps.
+    If you have the \ability{float like air+} monk ability with the same effect, you instead increase the bonus from your \textit{featherlight leap} ability to \plus15 feet.
+  \end{feat}
+
   \begin{feat}{Herbalist}{General}
     \featpre Knowledge (nature) as a trained skill.
 
@@ -1070,22 +1101,6 @@ Feats also make the system more mechanically complex, so they are not necessaril
     \ff[18]{Unstoppable+} You are immune to \glossterm{teleport}, \glossterm{knockback}, \glossterm{push} effects from attacks.
     This does not affect movement effects used by your \glossterm{allies}.
     You are also immune to being \grappled unless you initiate the grapple.
-  \end{feat}
-
-  \begin{feat}{Jump Specialization}{Skill}
-    \featpre Jump as a trained skill.
-
-    \ff[1]{Specialization} You gain a \plus3 bonus to the Jump skill.
-
-    \ff[6]{Featherlight Leap} Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
-    If you have the \ability{float like air} monk ability with the same effect, you instead gain a \plus5 foot bonus to your maximum jump height.
-    This does not affect the forward distance you can reach with your jumps.
-
-    \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
-
-    \ff[18]{Featherlight Leap+} Your maximum jumping height increases to twice your maximum horizontal jump distance.
-    This does not affect the forward distance you can reach with your jumps.
-    If you have the \ability{float like air+} monk ability with the same effect, you instead increase the bonus from your \textit{featherlight leap} ability to \plus15 feet.
   \end{feat}
 
   \begin{feat}{Knowledge Specialization}{Skill}

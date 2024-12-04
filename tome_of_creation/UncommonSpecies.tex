@@ -23,7 +23,7 @@
         Its stage 3 effect makes the target \immobilized while the poison lasts.
       \itemhead{Winged Agility} A hybrid bee has wings that are not strong enough to help it fly.
         However, the wings still help it stabilize its movements.
-        It gains a \plus3 bonus to the Balance and Jump skills, and it gains a \plus5 foot bonus to its maximum horizontal jump distance (see \pcref{Jumping}).
+        It gains a \plus3 bonus to the Balance skill, and it gains a \plus5 foot bonus to its maximum horizontal jump distance (see \pcref{Jumping}).
         This increases its maximum vertical jump distance normally.
     \end{itemize}
 
@@ -240,10 +240,12 @@
     \itemhead{Draconic Weapons} Dragons have a bite natural weapon and two claw natural weapons.
       For details, see \pcref{Natural Weapons}.
     \itemhead{Draconic Wings} Dragons have scaly wings that sprout from their backs.
-      These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
+      These wings grant them a \glossterm{glide speed} and \glossterm{fly speed} that are both equal to the \glossterm{base speed} for their size (see \pcref{Aerial Movement}).
+      The fly speed has a 5 foot height limit.
+      As a \glossterm{free action}, a dragon can increase their \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
       The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
     \itemhead{Dragon Type} Each dragon has a single type from among the dragon types on \trefnp{Dragon Types}.
-      They are immune to attacks with their associated tag.
+      They are immune to attacks with their associated ability tag.
     \itemhead{Limited Equipment} A dragon's claws are not able to effectively wield shields or manufactured weapons.
       They can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
   \end{itemize}
@@ -297,9 +299,9 @@
 
     \cf{Dgn}[2]{Draconic Body} You gain a \plus1 bonus to your Armor defense.
 
-      \magicalcf{Dgn}[3]{Draconic Flight} Your wings grow larger, granting you a limited ability to fly.
-      You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
-      As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+      % TODO: weak
+      \magicalcf{Dgn}[3]{Draconic Flight} Your wings grow larger, improving your ability to fly.
+      Your maximum height increases to 15 feet.
 
     \cf{Dgn}[4]{Draconic Bulk} Your size category increases to Medium.
       This increases your \glossterm{base speed} to 30 feet.
@@ -569,17 +571,17 @@
       Harpy talons are not able to effectively wield shields or manufactured weapons.
     \itemhead{Prehensile Talons} Harpies have a talon natural weapon on each foot (see \pcref{Natural Weapons}).
       In addition, they can use their feet as \glossterm{free hands}.
-    \itemhead{Wings} Harpies have a feathered wings that sprout from their shoulders.
-      These wings grant them a glide speed equal to the \glossterm{base speed} for their size (see \pcref{Gliding}).
-      However, they have no arms or hands.
+    \itemhead{Wings} Harpies have no arms or hands.
+      Instead, they have feathered wings that sprout from their shoulders.
+      These wings grant them a \glossterm{glide speed} and \glossterm{fly speed} that are both equal to the \glossterm{base speed} for their size (see \pcref{Aerial Movement}).
+      The fly speed has a 5 foot height limit.
+      As a \glossterm{free action}, a harpy can increase their \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
   \end{itemize}
   \parhead{Automatic Languages} Common.
 
   \subsection{Harpy Archetype}
 
-    \cf{Hrp}[1]{Winged Agility} While you are able to use your wings, you gain a \plus2 bonus to Armor defense and a \plus4 bonus to the Balance and Jump skills.
-      In addition, you gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
-      This increases your maximum vertical jump distance normally.
+    \cf{Hrp}[1]{Winged Agility} While you are able to use your wings, you gain a \plus2 bonus to Armor defense, a \plus4 bonus to the Balance skill, and a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
 
     \cf{Hrp}[1]{Winged Combat} As a \glossterm{free action}, you can make a short hop off of solid ground to hover in your space using your wings.
       This allows you to use both of your feet without standing on them during that phase, so you can attack with both talons at once.
@@ -608,7 +610,7 @@
       As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
     \cf{Hrp}[4]{Winged Agility+} You can use your wings to help you maneuver on the ground more effectively, such as by briefly hovering or gliding over obstacles.
-      The Balance and Jump bonuses from your \textit{winged agility} ability increase to \plus8.
+      The Balance bonus from your \textit{winged agility} ability increases to \plus8.
       In addition, you ignore \glossterm{difficult terrain}.
 
       % TODO: define correct rank
