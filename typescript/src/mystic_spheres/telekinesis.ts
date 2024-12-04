@@ -409,27 +409,32 @@ export const telekinesis: MysticSphere = {
       name: 'Animated Weapon',
 
       effect: `
-        Make a melee \\glossterm{strike} using a weapon you hold in a single hand.
-        The weapon gains the \\abilitytag{Long} tag for this strike, allowing you to attack more distant targets.
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} using one weapon you hold in a single hand.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
-        The weapon flies back into your hand after making the strike.
+        The weapon flies out of your hand to strike multiple enemies, granting this strike the \\weapontag{Long} and \\weapontag{Sweeping} (1) tags (see \\pcref{Weapon Tags}).
+        It flies back into your hand after making the strike.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
     {
       name: 'Mind Arrow',
 
+      // Long range dr1 is 1d6 + half power, this is basically that but better
       effect: `
+        This spell has no \\glossterm{somatic components}.
+
         Make a \\glossterm{strike} using an arrow as if you were firing it from a longbow.
         As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
+        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
 
         The arrow must be easily accessible on your person, such as in a quiver.
         You do not have to be proficient with bows, and you do not have to manually draw the arrow.
-        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
@@ -441,7 +446,7 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in a single hand.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 2,
+      rank: 1,
       type: 'Attune (deep)',
     },
 
@@ -464,7 +469,7 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in two hands if possible, or one hand otherwise.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 5,
+      rank: 4,
       tags: [],
       type: 'Attune (deep)',
     },

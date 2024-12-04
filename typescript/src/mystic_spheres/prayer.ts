@@ -324,12 +324,14 @@ export const prayer: MysticSphere = {
 
     {
       name: 'Consecrated Blow',
+      // No need to say "no somatic components" because no one who has somatic components
+      // can get access to this sphere.
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Whether you hit or miss, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 

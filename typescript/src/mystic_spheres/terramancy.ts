@@ -610,7 +610,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         The items appear in your hand or on the ground at your feet.
 
         If you create body armor or a weapon, it can be created from any special material other than cold iron and dragonscale.
-        The item's rank cannot exceed your spellcasting rank with this spell, including any modifiers from special materials.
+        The item's rank cannot exceed your spellcasting rank with this spell.
 
         An item created with this spell functions like a normal item of its type.
       `,

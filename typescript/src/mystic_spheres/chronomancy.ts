@@ -78,11 +78,11 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{weak strike}.
+        Make a \\glossterm{strike} with a \minus1 accuracy penalty.
         You may reroll the accuracy roll and take the highest result.
         In addition, you use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: [],
     },
@@ -92,7 +92,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{strikes} with a -1 accuracy penalty.
+        Make two \\glossterm{strikes}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 5,
@@ -105,7 +105,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make three \\glossterm{strikes} with a -1 accuracy penalty.
+        Make three \\glossterm{strikes}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 7,
@@ -475,12 +475,13 @@ export const chronomancy: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         You draw one or two weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
+        Then, you can make a \\glossterm{strike}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       narrative: `
         This spell seeks to mimic with time-altering magic what some skilled warriors can do naturally.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
