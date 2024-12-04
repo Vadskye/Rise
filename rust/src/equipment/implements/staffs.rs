@@ -302,6 +302,7 @@ pub fn staffs() -> Vec<Implement> {
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this effect again.
 
             The echo uses the same choices for all decisions, such as targets.
+            It still originates from you as if you had used it, so you must be in range of any targets.
             You cannot use the \ability<desperate exertion> ability to affect the ability used to activate this staff or its echo.
         "),
         ..Implement::default()
