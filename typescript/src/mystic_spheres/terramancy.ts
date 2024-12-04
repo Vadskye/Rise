@@ -603,7 +603,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
 
-        This spell creates one or two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
+        This spell creates up to two weapons, suits of body armor, or shields from a body of earth or stone within 5 feet of you.
         The body targeted must be at least as large as the largest item you create.
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
         It is sized appropriately for the target, up to a maximum of a Medium size item.
