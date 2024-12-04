@@ -671,6 +671,7 @@
         Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
         Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
         Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Ready Reaction     & Standard             & Ready an action                               & \tdash                                         \\
         Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
         Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
         Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
@@ -750,6 +751,19 @@
 
       On a hit, you can move through each target's space.
       On a miss, you end your movement immediately.
+    \end{activeability}
+
+    \begin{activeability}*{Ready Reaction}[\atSwift]
+      \abilityusagetime Standard action.
+      \rankline
+      When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
+      For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that has \glossterm{total cover}.
+
+      While your enemies are resolving their actions, if your intended action ever becomes possible, it happens.
+      Otherwise, you do nothing.
+      Any attacks you make in this way are \glossterm{reactive attacks}, so you can't use the \ability{desperate exertion} ability or similar effects.
+      Your reaction resolves after the enemy has fully completed their action, even if the completion of that action would make your ability impossible again.
+      This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
     \end{activeability}
 
     \begin{activeability}*{Recover}[\abilitytag{Swift}]
