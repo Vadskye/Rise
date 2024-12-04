@@ -24,7 +24,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     Any individual creature only has to make his check once per \\glossterm{phase}.
     At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
 
-    If an area of icy terrain takes any damage from a \\atFire ability, it is destroyed and becomes normal ground or water again.
+    If a 5-foot square of icy terrain takes any damage from a \\atFire ability, it is destroyed and becomes normal ground or water again.
+    Ice covering solid ground can't be damaged by non-Fire abilities, but ice covering water is destroyed if it takes any damage.
   `,
 
   cantrips: [
