@@ -105,18 +105,22 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}{\abilitytag{Emotion}, \abilitytag{Sustain} (free)}
+                \begin{sustainability}{Rage}{\atEmotion, \atSustain (free), \atSwift}
                     \abilityusagetime \glossterm{Free action} while not already in a rage.
                     \rankline
                     When you use this ability, you gain \glossterm{damage resistance} equal to half your maximum hit points.
                     In addition, for the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
                         \item Your current damage resistance can increase beyond your normal maximum.
+                        \item As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one.
+                            When you do, you increase your remaining damage resistance until it is equal to half your maximum hit points.
+                            This ability has the \atSwift tag.
                         \item You gain a +2 accuracy bonus with melee and thrown \glossterm{strikes}.
                         \item You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
                     \end{itemize}
+                    Because this ability has the \atSwift tag, the damage resistance and defense penalties apply to attacks against you during the current phase.
 
                     When this ability ends for any reason, you increase your \glossterm{fatigue level} by one, and you lose damage resistance equal to the amount you gained when you used this ability.
                     If this would reduce your damage resistance below 0, the excess loss has no effect.
