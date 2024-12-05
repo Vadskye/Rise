@@ -14,8 +14,8 @@ const BASE_CLASS_MODIFIERS = {
     armor_usage_class: "medium",
     damage_resistance: 0.25,
     hit_points: 'extreme',
-    fortitude: 0,
-    reflex: 0,
+    fortitude: 2,
+    reflex: 1,
     mental: 0,
   },
   skirmisher: {
@@ -24,15 +24,15 @@ const BASE_CLASS_MODIFIERS = {
     damage_resistance: 0.5,
     hit_points: 'high',
     fortitude: 0,
-    reflex: 0,
-    mental: 0,
+    reflex: 2,
+    mental: 1,
   },
   warrior: {
     armor_defense: 5,
     armor_usage_class: "heavy",
     damage_resistance: 1.0,
     hit_points: 'high',
-    fortitude: 0,
+    fortitude: 1,
     reflex: 0,
     mental: 0,
   },
@@ -42,8 +42,8 @@ const BASE_CLASS_MODIFIERS = {
     damage_resistance: 0.5,
     hit_points: 'medium',
     fortitude: 0,
-    reflex: 0,
-    mental: 0,
+    reflex: 2,
+    mental: 1,
   },
   mystic: {
     armor_defense: 3,
@@ -51,17 +51,17 @@ const BASE_CLASS_MODIFIERS = {
     damage_resistance: 1.0,
     hit_points: 'medium',
     fortitude: 0,
-    reflex: 0,
-    mental: 0,
+    reflex: 1,
+    mental: 2,
   },
   leader: {
     armor_defense: 4,
     armor_usage_class: "medium",
     damage_resistance: 0.5,
     hit_points: 'high',
-    fortitude: 0,
-    reflex: 0,
-    mental: 0,
+    fortitude: 1,
+    reflex: 1,
+    mental: 1,
   },
 
   // CLASSES
@@ -1839,12 +1839,14 @@ function handleNonArmorDefense(defense, attribute) {
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
       const sizeModifier = defense === "reflex" ? v.size_reflex_modifier : 0;
+      // Monsters only apply half attribute modifier
+      const attributeModifier = v.challenge_rating ? Math.floor(v[attribute]/2) : v[attribute];
       let totalValue =
         base +
         levelModifier +
         crModifier +
         sizeModifier +
-        v[attribute] +
+        attributeModifier +
         v.misc +
         v.all_defenses_vital_wound_modifier;
 
