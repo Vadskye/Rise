@@ -78,7 +78,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike} with a \minus1 accuracy penalty.
+        Make a \\glossterm{strike} with a \minus1 accuracy penalty using a single weapon.
         You may reroll the accuracy roll and take the highest result.
         In addition, you use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
@@ -92,7 +92,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{strikes}.
+        Make two \\glossterm{strikes} using a single weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 5,
@@ -105,7 +105,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} using a single weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 7,
@@ -261,7 +261,7 @@ export const chronomancy: MysticSphere = {
       name: 'Weapon Haste',
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -2 accuracy penalty.
+        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -2 accuracy penalty using a single weapon.
         This strike cannot be a \\glossterm{dual strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
