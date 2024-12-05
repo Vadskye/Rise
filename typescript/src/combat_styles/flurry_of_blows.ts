@@ -9,7 +9,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Double Flurry',
 
       effect: `
-        Make two \\glossterm{strikes}.
+        Make two \\glossterm{strikes} using a single weapon.
       `,
       rank: 5,
     },
@@ -18,7 +18,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Triple Flurry',
 
       effect: `
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} using a single weapon.
       `,
       rank: 7,
     },
@@ -39,7 +39,7 @@ export const flurryOfBlows: CombatStyle = {
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
-        Make two \\glossterm{weak strikes}.
+        Make two \\glossterm{weak strikes} using a single weapon.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 1,
@@ -50,7 +50,7 @@ export const flurryOfBlows: CombatStyle = {
 
       cost: "Two \\glossterm{fatigue levels}.",
       effect: `
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} using a single weapon.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 5,
@@ -84,7 +84,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Double Whirlwind',
 
       effect: `
-        Make two melee \\glossterm{strikes}.
+        Make two melee \\glossterm{strikes} using a single weapon.
         The strikes target all \\glossterm{enemies} adjacent to you.
         On a miss, you still deal half damage.
       `,
@@ -95,7 +95,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Barrage',
 
       effect: `
-        Make two ranged \\glossterm{strikes} using a \\weapontag{Projectile} weapon.
+        Make two ranged \\glossterm{strikes} using a single \\weapontag{Projectile} weapon.
         You take a -4 accuracy penalty with both strikes, and any \\glossterm{longshot penalty} that applies to the strikes is doubled.
         For each previous consecutive round that you used this ability in the same location, you reduce this accuracy penalty by 1.
       `,
@@ -194,7 +194,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Frenzied Flurry',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} using a single weapon.
         For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of two extra strikes.
       `,
       rank: 5,
@@ -204,7 +204,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Deathseeking Double Flurry',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} using a single weapon.
         \\hit Make an additional strike against all creatures that lost hit points from the first strike.
         The second strike cannot target any other creatures.
       `,
