@@ -53,7 +53,7 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: 'forge',
         exceptThat: `
-          the item you create is magical, but cannot be made from any special material
+          the item you create is magical, but cannot be made from any special material.
           When you learn this spell, you choose a single magic weapon or armor property with a rank no higher than your spellcasting rank with this spell.
           If you create an item that the property can be applied to, the item has that property.
           Whenever your spellcasting rank with this spell increases, you can choose a new magic property.
