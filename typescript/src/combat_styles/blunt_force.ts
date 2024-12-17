@@ -83,7 +83,7 @@ export const bruteForce: CombatStyle = {
       name: 'Concussion',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
+        Make a melee \\glossterm{strike}.
         \\damaginghit If the target loses \\glossterm{hit points}, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
