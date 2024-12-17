@@ -541,12 +541,6 @@
     \par \vspace{-0.1em} \textbf{Damaging~Hit}:\xspace
 }
 
-\DeclareDocumentCommand{\injuringhit}{}
-{
-    % Adding a vspace increases the spacing. Although this looks negative, it still increases the spacing relative to the previous line compared to not including a vspace at all.
-    \par \vspace{-0.1em} \textbf{Injuring~Hit}:\xspace
-}
-
 \DeclareDocumentCommand{\glance}{}
 {
     \par \textbf{Glancing blow}:\xspace
@@ -778,7 +772,7 @@
 \newcommand{\damageranktwo}
 {1d6 damage \plus1 per power}
 \newcommand{\damageranktwolow}
-{1d8+1d6 damage}
+{1d8+1d6 damage} % Scaling: 1d6 per rank beyond 2
 
 \newcommand{\damagerankthree}
 {1d8 damage \plus1 per power}

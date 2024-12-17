@@ -443,7 +443,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             As a standard action while this weapon is poisonous, you can make a mundane \glossterm<strike> using this weapon that fully transforms the striking surface to poison.
             The strike is made against the target's Fortitude defense instead of its Armor defense.
             Its minimum accuracy is $accuracy.
-            \injuringhit The target becomes poisoned by this weapon.
+            If the target loses hit points from this strike, it becomes poisoned by the weapon.
             The poison's accuracy is equal to the original strike's accuracy.
             It inflicts 2d10 damage per poison stage.
             Its stage 3 effect also ends the poison.

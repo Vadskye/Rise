@@ -220,8 +220,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranktwo.
-          If the target loses \\glossterm{hit points}, it is \\frightened by you as a \\glossterm{condition}.
+          \\damageranktwolow. If it loses hit points, the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -231,7 +230,7 @@ export const umbramancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'accuracy',
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 2.'},
       tags: ['Cold'],
     },
 
@@ -241,8 +240,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranksixlow.
-          If the target takes damage, it is \\frightened by you as a \\glossterm{condition}.
+          \\damageranksixlow. If it loses hit points, the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
