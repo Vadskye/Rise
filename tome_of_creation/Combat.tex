@@ -1,22 +1,13 @@
 \chapter{Combat}\label{Combat}
 
 \sectiongraphic*{Making Attacks}{width=\columnwidth}{core mechanics/making attacks}
+  When you try to use an ability to affect an enemy, you will generally need to make at least one attack to see if the ability hits.
 
   \subsection{Attack Rolls}\label{Attack Rolls}
     To make an attack, roll 1d10 and add your \glossterm{accuracy} with the attack.
     Each attack specifies one or more relevant \glossterm{defenses} which are used to avoid the attack.
     There are four defenses: Armor, Fortitude, Reflex, and Mental.
     Most attacks are made against exactly one defense, which is indicated in the attack's description.
-
-  \subsubsection{Exploding Attacks}\label{Exploding Attacks}
-    When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
-    That means you roll it again and add both values to determine your total.
-    If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
-
-    The number you need to roll to explode is called your \glossterm{explosion target}.
-    It is normally 10, but some effects can reduce your explosion target.
-    For example, if your explosion target is reduced by 2, you explode when you roll an 8, 9, or 10.
-    Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
 
   \subsection{Attack Results}
     There are four possible outcomes for an attack: a critical hit, a regular hit, a glancing blow, and a miss.
@@ -47,6 +38,21 @@
       A glancing blow is neither a hit nor a miss.
       However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
 
+    \subsubsection{Misses}
+      If your attack result is lower than the target's defense and it does not get a glancing blow, it is a miss.
+      An ability that misses a target typically has no effect on that target.
+      Some area abilities say they deal half damage on a miss.
+
+  \subsubsection{Exploding Attacks}\label{Exploding Attacks}
+    When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
+    That means you roll it again and add both values to determine your total.
+    If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
+
+    The number you need to roll to explode is called your \glossterm{explosion target}.
+    It is normally 10, but some effects can reduce your explosion target.
+    For example, if your explosion target is reduced by 2, you explode when you roll an 8, 9, or 10.
+    Effects which reduce your explosion target do not affect bonus dice rolled for exploding attacks.
+
 \section{Calculating Damage}
   Normally, dealing damage is fairly simple.
   This section explains some special circumstances which can change how your damage is calculated.
@@ -56,7 +62,7 @@
     Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
 
     Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-    You gain a bonus to your weapon damage equal to half your \glossterm{power} see (see \pcref{Power}).
+    You gain a bonus to your weapon damage equal to half your relevant \glossterm{power} see (see \pcref{Power}).
     Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
     However, you might use your \glossterm{magical power} instead for \magical strikes.
 
@@ -79,11 +85,12 @@
     Weak strikes do not halve flat damage penalties, such as if you have a negative power.
 
 \section{Taking Damage}\label{Taking Damage}
+  Hit points and damage resistance function in essentially the same way.
   When you take damage, the damage first reduces your \glossterm{damage resistance}.
   Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points}.
-  Hit points and damage resistance function in the same way, but damage resistance can protect you from debilitating attacks that only work if they make you lose hit points.
-  If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
+  The main difference between hit points and damage resistance is that many abilities are more effective against creatures that have no remaining damage resistance.
 
+  If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
   Monsters typically do not gain vital wounds like player characters do.
   Instead, they simply die or fall unconscious when they reach 0 hit points.
 
