@@ -500,6 +500,17 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: 'Massive Lifebomb',
+
+      functionsLike: {
+        name: "Lifebomb",
+        exceptThat: "the radius increases to a \\largearea radius from you, and the damage increases to \\damagerankfive.",
+      },
+      rank: 6,
+      scaling: 'accuracy',
+    },
+
+    {
       name: "Deathtouch",
 
       // Baseline for double defense is dr7, which is 5.5+2.75dpp.
