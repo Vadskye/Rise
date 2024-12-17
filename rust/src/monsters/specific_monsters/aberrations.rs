@@ -51,8 +51,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                        \hit $dr4 damage.
-                        If the target loses hit points from this damage, it is \stunned as a condition.
+                        \hit $dr4 damage. If it loses hit points, the target is \stunned as a \glossterm{condition}.
                     ".to_string(),
                     is_magical: true,
                     name: "Mind Crush".to_string(),
@@ -64,8 +63,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-                        \hit $dr2l damage.
-                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
+                        \hit $dr2l damage. If it loses hit points, each target is poisoned by aboleth slime.
                     ".to_string(),
                     is_magical: true,
                     name: "Slime-Covered Body".to_string(),
