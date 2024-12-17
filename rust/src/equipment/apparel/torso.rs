@@ -327,6 +327,25 @@ fn cloaks() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    // TODO: math out correct scaling
+    apparel.push(Cloak(StandardItem {
+        name: String::from("Phoenixflame Cloak"),
+        rank: 3,
+        short_description: String::from("Deals $dr3l damage when you recover"),
+        description: String::from(r"
+            Whenever you use the \abilitytag{recover} ability, make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius from you.
+            \hit \damagerankthreelow.
+            \miss Half damage.
+        "),
+        tags: vec![AbilityTag::Fire],
+        upgrades: vec![
+            ItemUpgrade::new(6, "Deals $dr6l damage when you recover", r"
+                The damage increases to $dr6l, and the area increases to a \medarea radius.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
     apparel.push(Cloak(StandardItem {
         name: String::from("Assassin's Cloak"),
         rank: 5,
