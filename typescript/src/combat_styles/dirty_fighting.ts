@@ -199,7 +199,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Sweep the Leg',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
+        Make a melee \\glossterm{strike}.
         \\damaginghit If your attack also hits the target's Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures two or more size categories larger than you.
       `,

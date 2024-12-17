@@ -59,7 +59,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Hamstring',
 
       effect: `
-        Make a melee \\glossterm{weak strike}.
+        Make a melee \\glossterm{strike}.
         \\damaginghit If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
@@ -178,7 +178,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Bloodletter',
 
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a \\glossterm{strike}.
         \\damaginghit If the target loses hit points, it takes damage from the strike again during your next action.
       `,
       rank: 1,
