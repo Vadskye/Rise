@@ -465,6 +465,64 @@ export const vivimancy: MysticSphere = {
     },
 
     {
+      name: 'Sanguine Bond',
+
+      attack: {
+        hit: `
+          \\damageranktwo. If it takes damage, the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damageranktwo.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Lifebomb',
+
+      // TODO: figure out optimal damage / radius.
+      attack: {
+        hit: `
+          \\damageranktwo.
+        `,
+        missGlance: true,
+        targeting: `
+          When you cast this spell, your life energy begins to surge.
+          During your next action, make an attack vs. Fortitude against all living \\glossterm{enemies} within a \\medarea radius from you.
+          If you are at full hit points, you gain a \plus2 accuracy bonus with this attack.
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+
+    {
+      name: "Deathtouch",
+
+      // Baseline for double defense is dr7, which is 5.5+2.75dpp.
+      // Maximized dr4 is 3dpp.
+      // Doubled dr4 is 3.5dpp.
+      attack: {
+        hit: `
+          \\damagerankfour.
+          If this attack also beats the target's Fortitude defense, or the target has no remaining damage resistance, this damage is maximized.
+          If both are true, this damage is instead doubled.
+        `,
+        missGlance: true,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Reflex against a living creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+    },
+
+    {
       name: 'Corpse Explosion',
 
       attack: {
@@ -502,7 +560,6 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: CONDITION_CRIT,
-        // No relevant glance effect
         hit: `As a \\glossterm{condition}, the target's body withers.
         It takes a -2 penalty to its Fortitude defense, and it cannot regain \\glossterm{hit points} or \\glossterm{damage resistance}.
         Whenever it loses \\glossterm{hit points}, this penalty increases by 2.
@@ -590,12 +647,12 @@ export const vivimancy: MysticSphere = {
       name: 'Lifesight',
 
       effect: `
-        You gain \\trait{lifesight} with a 30 foot range, allowing you to see living creatures without light (see \\pcref{Lifesight}).
+        You gain \\trait{lifesight} with a 30 foot range, allowing you to see living things without light (see \\pcref{Lifesight}).
       `,
-      rank: 3,
+      rank: 2,
       scaling: {
-        5: `The range increases to 60 feet.`,
-        7: `The range increases to 90 feet.`,
+        4: `The range increases to 60 feet.`,
+        6: `The range increases to 90 feet.`,
       },
       type: 'Attune',
     },
@@ -624,9 +681,9 @@ export const vivimancy: MysticSphere = {
         name: 'Lifesight',
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: {
-        7: 'The range increases to 60 feet.',
+        6: 'The range increases to 60 feet.',
       },
       type: 'Attune (target)',
     },
