@@ -123,6 +123,8 @@ def strength_based():
             stat_row("Encumbrance"),
             stat_row("Mundane power"),
             stat_row("Horizontal jump distance"),
+            stat_row("Carrying strength"),
+            stat_row("push_drag_strength", display_name = "Push/drag strength"),
         ]
     )
 

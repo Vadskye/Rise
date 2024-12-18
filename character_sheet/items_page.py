@@ -351,13 +351,15 @@ def calc_weight_limits():
             labeled_text_input(
                 "Carrying Weight Limit",
                 input_attributes={
-                    "name": "carrying_capacity_display",
+                    "readonly": True,
+                    "name": "carrying_weight_limit_category",
                 },
             ),
             labeled_text_input(
                 "Push/Drag Weight Limit",
                 input_attributes={
-                    "name": "push_drag_display",
+                    "readonly": True,
+                    "name": "push_drag_weight_limit_category",
                 },
             ),
         ],

@@ -375,6 +375,7 @@ def custom_statistic(i):
                     option({"value": "survival"}, "Survival"),
                     option({"value": "swim"}, "Swim"),
                     option({"value": "vital_rolls"}, "Vital rolls"),
+                    option({"value": "weight_limits"}, "Weight limits"),
                     option({"value": "wild_aspects_known"}, "Wild aspects"),
                     option({"value": "willpower"}, "Willpower"),
                 ],
