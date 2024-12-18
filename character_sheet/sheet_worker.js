@@ -292,6 +292,10 @@ const ATTRIBUTE_SHORTHAND = {
   other: "Other",
 };
 
+function roundToFiveFootIncrements(val) {
+  return Math.floor(Math.floor(val) / 5) * 5;
+}
+
 function sumCustomModifiers(v, prefix) {
   let sum = 0;
   for (const name of customModifierNames(prefix)) {
@@ -471,9 +475,9 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "fatigue_tolerance",
     "fortitude",
     "hit_points",
+    "horizontal_jump_distance",
     "insight_points",
     "intelligence",
-    "jump_distance",
     "mental",
     "nonclass_skill_count",
     "perception",
@@ -1734,21 +1738,25 @@ function handleInsightPoints() {
 function handleJumpDistance() {
   onGet(
     {
-      miscName: "jump_distance",
+      miscName: "horizontal_jump_distance",
       numeric: ["base_speed", "strength", "jump_level"],
     },
     (v) => {
       // In case people don't bother to set their size to Medium explicitly
       const base_speed = v.base_speed || 30;
-      const base_speed_modifier = Math.floor((base_speed / 4) / 5) * 5;
+      const base_speed_modifier = roundToFiveFootIncrements(base_speed / 4);
       const strength_modifier = v.jump_level > 0 ? Math.max(5, v.strength * 5) : Math.floor(v.strength / 2) * 5;
-      const totalValue = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
+      const horizontalDistance = Math.max(0, base_speed_modifier + strength_modifier + v.misc);
+      // TODO: add support for float like air
+      const verticalDistance = roundToFiveFootIncrements(horizontalDistance / 2);
       setAttrs({
-        jump_distance: totalValue,
-        jump_distance_explanation: formatCombinedExplanation(v.miscExplanation, [
+        combined_jump_distance: `${horizontalDistance}/${verticalDistance}`,
+        horizontal_jump_distance: horizontalDistance,
+        horizontal_jump_distance_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "base speed / 4", value: base_speed_modifier },
           { name: "strength", value: strength_modifier },
         ]),
+        vertical_jump_distance: verticalDistance,
       });
     }
   );

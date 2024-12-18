@@ -149,7 +149,7 @@ def calc_jump_distance():
                         "Spd/4",
                         number_input(
                             {
-                                "name": "jump_distance_speed",
+                                "name": "horizontal_jump_distance_speed",
                             }
                         ),
                     ),
@@ -159,18 +159,18 @@ def calc_jump_distance():
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "jump_distance_strength",
+                                "name": "horizontal_jump_distance_strength",
                                 "value": "(5*@{strength})",
                             }
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("jump_distance", 2),
+                    equation_misc_repeat("horizontal_jump_distance", 2),
                 ],
                 result_attributes={
                     "disabled": True,
-                    "name": "jump_distance_display",
-                    "value": "@{jump_distance}",
+                    "name": "horizontal_jump_distance_display",
+                    "value": "@{horizontal_jump_distance}",
                 },
             ),
         ],
