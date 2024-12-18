@@ -666,7 +666,6 @@ def universal_abilities():
                 "Jump",
                 f"""
                     As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
-                    This distance assumes you have a running start of at least 10 feet. If you do not, your jumping distance is halved.
                     You cannot jump farther than your land speed.
                 """,
             ),
