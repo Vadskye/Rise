@@ -447,12 +447,14 @@ def movement(destination):
                         "value": "@{land_speed}",
                     },
                 ),
-                sidelabeled_number_input(
+                sidelabel(
                     "Jump",
-                    input_attributes={
-                        "disabled": True,
-                        "name": f"jump_distance_display",
-                        "value": "@{jump_distance}",
+                    text_input({
+                        "readonly": True,
+                        "name": f"combined_jump_distance",
+                    }),
+                    attributes = {
+                        "class": "jump-distance",
                     },
                 ),
             ]),

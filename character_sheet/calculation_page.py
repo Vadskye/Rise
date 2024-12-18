@@ -122,7 +122,7 @@ def strength_based():
             stat_row("Brawling accuracy"),
             stat_row("Encumbrance"),
             stat_row("Mundane power"),
-            stat_row("Jump distance"),
+            stat_row("Horizontal jump distance"),
         ]
     )
 
