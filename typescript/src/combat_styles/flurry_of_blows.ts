@@ -74,7 +74,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         On a miss, you still deal half damage.
-        \\damaginghit If your attack also hits the target's Fortitude defense, it falls \\prone.
+        If the target takes damage and your attack result also hits its Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
@@ -204,7 +204,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Deathseeking Double Flurry',
 
       effect: `
-        Make a \\glossterm{strike};
+        Make a \\glossterm{strike}.
         \\hit Make an additional strike against all creatures that lost hit points from the first strike.
         The second strike cannot target any other creatures.
       `,
@@ -216,7 +216,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        If it loses hit points, the target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       tags: ['Electricity'],
@@ -227,7 +227,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\damaginghit The target becomes \\stunned as a \\glossterm{condition}.
+        If damaged, the target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Electricity'],
@@ -241,7 +241,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a strike.
         You may reroll the accuracy roll and take the highest result.
-        \\damaginghit The target becomes \\dazzled as a \\glossterm{condition}.
+        If damaged, the target becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -252,7 +252,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
-        \\damaginghit If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
+        If it loses hit points, the target becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },

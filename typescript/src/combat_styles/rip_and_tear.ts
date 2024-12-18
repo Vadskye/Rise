@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\damaginghit If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        If it loses hit points, the target becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -40,7 +40,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
+        If it loses hit points, the target is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -50,7 +50,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\damaginghit If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
+        If it loses hit points, the target is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -60,7 +60,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
+        If it loses hit points, the target is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -72,7 +72,7 @@ export const ripAndTear: CombatStyle = {
       // more damage compared to hitting with two weapons.
       effect: `
         Make a melee \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        \\damaginghit If the target takes damage from both weapons, it bleeds.
+        If damaged by both weapons, the target bleeds.
         A bleeding creature takes 1d6 damage +1 per two \\glossterm{power} during your next action.
         This bleeding damage is doubled if both weapons get a critical hit.
       `,
@@ -97,7 +97,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        \\damaginghit If your attack also beats the target's Reflex defense, it takes fire damage equal to your power during your next action.
+        If your attack beats the target's Reflex defense, it takes fire damage equal to your power during your next action.
       `,
       rank: 3,
       tags: ['Fire'],
@@ -108,7 +108,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike with double \\glossterm{weapon damage}.
-        \\damaginghit If your attack also beats the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
+        If your attack beats the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
       `,
       rank: 7,
       tags: ['Fire'],
@@ -179,7 +179,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it takes damage from the strike again during your next action.
+        If it loses hit points, the target takes damage from the strike again during your next action.
       `,
       rank: 1,
     },
@@ -189,7 +189,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it takes damage from the strike again during each of your next two actions.
+        If it loses hit points, the target takes damage from the strike again during each of your next two actions.
       `,
       rank: 5,
     },
