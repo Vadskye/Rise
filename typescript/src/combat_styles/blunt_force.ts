@@ -74,7 +74,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
+        If it loses hit points, the target is \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -84,7 +84,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit If the target loses \\glossterm{hit points}, it becomes \\stunned as a \\glossterm{condition}.
+        If it loses hit points, the target is \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -94,7 +94,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
-        \\damaginghit If the target loses hit points, it is \\confused as a \\glossterm{condition}.
+        If it loses hit points, the target is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -156,7 +156,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit If the target loses \\glossterm{hit points}, it falls \\prone.
+        If it loses hit points, the target falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -167,7 +167,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit The target falls \\prone.
+        If damaged, the target falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -178,7 +178,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit You \\glossterm{knockback} the target 15 feet.
+        If the target takes damage, you \\glossterm{knockback} it 15 feet.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -189,7 +189,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\damaginghit You \\glossterm{knockback} the target 30 feet.
+        If the target takes damage, you \\glossterm{knockback} it 30 feet.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 7,
@@ -212,7 +212,7 @@ export const bruteForce: CombatStyle = {
       name: 'Press Forward+',
 
       functionsLike: {
-        exceptThat: 'you can move up to your full movement speed instead of only 5 feet.',
+        exceptThat: 'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 5 feet.',
         name: 'press forward',
       },
       rank: 5,
@@ -247,7 +247,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a strike with a -1 accuracy penalty.
-        \\damaginghit If your attack also hits the target's Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        If the target takes damage and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -257,7 +257,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If your attack also hits the target's Fortitude defense, the strike deals triple \\glossterm{weapon damage}.
+        If your attack result hits the target's Fortitude defense, the strike deals triple \\glossterm{weapon damage}.
       `,
       rank: 5,
     },
@@ -268,7 +268,7 @@ export const bruteForce: CombatStyle = {
       // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit You and the target are \\deafened as a \\glossterm{condition}.
+        If the target takes damage, you and the target are \\deafened as a \\glossterm{condition}.
       `,
       rank: 1,
       tags: ['Auditory'],
@@ -303,7 +303,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
+        If the target takes damage, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
         This is an \\atAuditory effect.
         On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
         On a miss against a secondary target, you still deal half damage.

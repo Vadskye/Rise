@@ -32,7 +32,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+        If it target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
     },
@@ -122,7 +122,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit If your attack also hits the target's Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
@@ -132,7 +132,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
-        \\damaginghit The target becomes \\slowed as a \\glossterm{condition}.
+        If damaged, the target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -194,7 +194,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\damaginghit The target takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
+        If damaged, the target takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,

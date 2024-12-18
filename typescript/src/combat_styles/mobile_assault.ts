@@ -62,7 +62,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\damaginghit You can \\glossterm{briefly} move through the target's space as if it was not there.
+        If the target takes damaged, you can \\glossterm{briefly} move through its space as if it was not there.
       `,
       rank: 1,
     },
@@ -190,7 +190,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        \\damaginghit If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
+        If it loses hit points, the target is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 3,
       tags: ['Emotion'],
@@ -201,7 +201,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
-        \\damaginghit The target is \\frightened by you as a \\glossterm{condition}.
+        If damaged, the target is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Emotion'],
