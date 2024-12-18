@@ -12,7 +12,7 @@ ATTRIBUTE_SHORTHAND = {
     "other": "Other",
 }
 ATTRIBUTE_SKILLS = {
-    "strength": "Climb Jump Swim".split(),
+    "strength": "Climb Swim".split(),
     "dexterity": [
         "Balance",
         "Flexibility",
