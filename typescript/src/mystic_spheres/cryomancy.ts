@@ -562,7 +562,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        \\damaginghit If the target loses hit points from the strike, it is \slowed as a \\glossterm{condition}.
+        If it loses hit points, the target is \slowed as a \\glossterm{condition}.
       `,
       rank: 2,
       scaling: 'accuracy',
@@ -604,7 +604,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         Make a melee \\glossterm{strike} that deals double weapon damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        \\damaginghit If your attack result also beats the target's Fortitude defense, it is \\slowed as a condition.
+        If the target takes damage and your attack result also beats its Fortitude defense, it is \\slowed as a condition.
       `,
       rank: 5,
       scaling: 'accuracy',

@@ -404,7 +404,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             As a standard action while this weapon is psionic, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
             The strike is made against the target's Mental defense instead of its Armor defense.
             Its minimum accuracy is $accuracy.
-            \damaginghit The target becomes \stunned as a \glossterm{condition}.
+            If damaged, the target becomes \stunned as a \glossterm{condition}.
             If it was already stunned, it takes double damage from this attack instead.
         "),
         tags: vec![AbilityTag::Poison],
@@ -518,7 +518,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
             As a standard action while the weapon is burning, you can make a mundane \glossterm<strike> using this weapon that is imbued with fiery energy.
             The strike's minimum accuracy is $accuracy.
-            \damaginghit If your attack result also beats the target's Reflex defense, the target burns.
+            If the target takes damage and your attack result also beats its Reflex defense, the target burns.
             A burning creature takes 2d6 damage during your next action.
         "),
         tags: vec![AbilityTag::Fire],
