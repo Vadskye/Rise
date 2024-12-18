@@ -108,6 +108,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         You \\glossterm{knockback} the target up to 60 feet in any direction, to a maximum of a 60 foot \\glossterm{height limit}.
         You cannot change the direction of the movement partway through.
         Moving the target upwards costs twice the normal movement cost.
+
+        If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
+        It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
       scaling: {
@@ -253,14 +256,17 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       // weight category limit offsets outdoor doubling
       attack: {
         hit: `
-          If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally, to a maximum of a 30 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
+          If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
+
+          If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
+          It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
       // narrative: '',
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
     {
@@ -271,6 +277,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
           If the target has a \\glossterm{weight category} of Large or less, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
           The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
           Moving the target upwards costs twice the normal movement cost.
+
+          If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
+          It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
       },
