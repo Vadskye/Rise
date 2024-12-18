@@ -110,7 +110,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Pure Precision',
 
       effect: `
-        Make a \\glossterm{weak strike} with a +2 accuracy bonus.
+        Make a \\glossterm{weak strike} with a +3 accuracy bonus.
       `,
       rank: 1,
     },
@@ -195,10 +195,20 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Guardbreaker',
 
       effect: `
-        Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
-        \\damaginghit The target \\glossterm{briefly} takes a -2 penalty to all defenses against that ally's attacks.
+        Choose an \\glossterm{ally}, then make a \\glossterm{weak strike}.
+        If damaged, the target takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
-      rank: 3,
+      rank: 1,
+    },
+
+    {
+      name: 'Guardbreaker+',
+
+      effect: `
+        Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
+        If damaged, the target takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
+      `,
+      rank: 5,
     },
 
     {
