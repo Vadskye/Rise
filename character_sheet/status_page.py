@@ -134,15 +134,14 @@ def circumstances():
             flex_col(
                 [
                     debuff("climbing"),
-                    debuff("flying"),
-                    debuff("flying poorly"),
                     debuff("grappled"),
                     debuff("helpless"),
+                    debuff("midair"),
+                    debuff("partially unaware"),
                 ]
             ),
             flex_col(
                 [
-                    debuff("partially unaware"),
                     debuff("prone"),
                     debuff("squeezing"),
                     debuff("swimming"),
@@ -204,8 +203,7 @@ def debuff_explanation(debuff):
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
         "dominated": "must obey commands",
-        "flying": "-2 Armor and Reflex",
-        "flying poorly": "-4 Armor and Reflex",
+        "midair": "-4 Armor and Reflex",
         "frightened": "-2 Mental, -2 accuracy vs. source",
         "goaded": "-2 accuracy vs. non-goading creatures",
         "grappled": "limited mobility and actions",
