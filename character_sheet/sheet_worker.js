@@ -487,6 +487,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     "speed",
     "strength",
     "vital_rolls",
+    "weight_limits",
     "willpower",
   ]
     .concat(ALL_SKILLS)
@@ -601,11 +602,12 @@ function handleCoreStatistics() {
   handleLandSpeed();
   handleMagicalPower();
   handleMundanePower();
-  handleVitalRolls();
   handleUniversalAbilities();
   handleUnknownStatistic();
+  handleVitalRolls();
   handleWeaponDamageDice();
   handleWeaponSanitization();
+  handleWeightLimits();
 }
 
 function handleDefenses() {
@@ -2056,6 +2058,7 @@ function handleSize() {
         base_speed: baseSpeed,
         size_reflex_modifier: reflexDefense,
         size_stealth_modifier: stealth,
+        size_weight_modifier: stepsFromMedium,
       });
     },
   );
@@ -2747,6 +2750,75 @@ function handleWeaponSanitization() {
       setAttrs(attrs);
     }
   );
+}
+
+function handleWeightLimits() {
+  onGet(
+    {
+      miscName: "weight_limits",
+      numeric: ["strength", "size_weight_modifier"],
+    },
+    (v) => {
+      const effectiveStrength = v.strength + v.size_weight_modifier + v.misc;
+      const carrying = calcWeightLimitCategory(effectiveStrength);
+      const pushDrag = calcWeightLimitCategory(effectiveStrength + 3);
+
+      setAttrs({
+        carrying_weight_limit_category: carrying,
+        push_drag_weight_limit_category: pushDrag,
+        // This is a numeric value shown on the Calcs page
+        carrying_strength: effectiveStrength,
+        carrying_strength_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {name: "strength", value: v.strength},
+          {name: "size", value: v.size_weight_modifier},
+        ]),
+        push_drag_strength: effectiveStrength + 3,
+        push_drag_strength_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {name: "push/drag", value: 3},
+          {name: "strength", value: v.strength},
+          {name: "size", value: v.size_weight_modifier},
+        ]),
+      });
+    }
+  );
+}
+
+function calcWeightLimitCategory(effectiveStrength) {
+  if (effectiveStrength > 15) {
+    return "Colossal (any)";
+  }
+
+  const weightCategory = {
+    "-9": "Fine x8",
+    "-8": "Diminutive x2",
+    "-7": "Diminutive x4",
+    "-6": "Diminutive x8",
+    "-5": "Tiny x2",
+    "-4": "Tiny x4",
+    "-3": "Tiny x8",
+    "-2": "Small x2",
+    "-1": "Small x4",
+    "0": "Small x8",
+    "1": "Medium x2",
+    "2": "Medium x4",
+    "3": "Medium x8",
+    "4": "Large x2",
+    "5": "Large x4",
+    "6": "Large x8",
+    "7": "Huge x2",
+    "8": "Huge x4",
+    "9": "Huge x8",
+    "10": "Gargantuan x2",
+    "11": "Gargantuan x4",
+    "12": "Gargantuan x8",
+    "13": "Colossal x2",
+    "14": "Colossal x4",
+    "15": "Colossal x8",
+  }[effectiveStrength];
+  if (weightCategory) {
+    return weightCategory;
+  }
+  throw new Error(`No match for effective strength '${effectiveStrength}'.`);
 }
 
 function collectNamedModifierExplanations(namedModifiers) {
