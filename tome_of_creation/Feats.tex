@@ -982,27 +982,38 @@ Feats also make the system more mechanically complex, so they are not necessaril
     If you have the \ability{float like air} monk ability with the same effect, you instead gain a \plus5 foot bonus to your maximum jump height.
     This does not affect the forward distance you can reach with your jumps.
 
-    % TODO: damage math in the spreadsheet. This is kind of like 1d8 extra damage, but requires two separate attacks.
+    % TODO: damage math in the spreadsheet. This is kind of like 1d8 extra damage.
+    % It requires two separate attacks against different defenses, but hitting with the first attack makes the second attack easier.
+    % It also has highly varied effects based on the target's size category, dealing less damage to small creatures and failing completely against large creatures.
     \ff[6]{Call to Heaven}
-    \begin{activeability}{Call to Heaven}[\atBrawling (see text)]
+    \begin{activeability}{Call to Heaven}[\atBrawling (see text), \atSizeBased (see text)]
       \abilityusagetime Standard action.
       \rankline
       Make an attack vs. Fortitude against one creature or object adjacent to you.
-      If you hit, and the target's \glossterm{weight category} does not exceed your carrying capacity, you \glossterm{knockback} the target up to 10 feet into the air.
+      If you hit, and the target's \glossterm{weight category} does not exceed your carrying capacity, you \glossterm{knockback} the target up to 10 feet vertically, leaving it \glossterm{midair}.
       You can then jump up to their height, assuming it is within your maximum jump height.
-      Whether you hit or missed with the first attack, you can then make a melee \glossterm{strike} against the target.
-      The first attack has the \atBrawling tag, but the strike does not.
 
-      Typically, a creature hit by this attack will fall to the ground at the end of the round, taking \glossterm{falling damage} (see \pcref{Falling Damage}).
+      Whether you hit or missed with the first attack, you can then make a melee \glossterm{strike} against the target.
+      The knockback attack has the \atBrawling and \atSizeBased tags, but the strike does not.
+      As a reminder, land-based creatures typically suffer a \minus4 penalty to Armor and Reflex defenses while \glossterm{midair}.
+
+      % Necessary to avoid giving allies a chance to attack while the target has the massive -4 Armor/Reflex penalties
+      Once you finish using this ability, the target immediately falls to the ground, causing it to take \glossterm{falling damage} (see \pcref{Falling Damage}).
       \rankline
-      % TODO: damage scaling using the spreadsheet
+      \rank{4} The maximum knockback distance increases to 20 feet.
+      \rank{5} If you hit with either the knockback or the strike, you deal \glossterm{extra damage} equal to half your \glossterm{power}.
+      This extra damage does not apply twice if you hit with both.
+      \rank{6} The extra damage increases to be equal to your power.
+      \rank{7} The strike deals double \glossterm{weapon damage}.
     \end{activeability}
 
-    \ff[12]{Instant Leap} You are always considered to have a running start when jumping.
+    \ff[12]{Featherlight Landing} You halve all \glossterm{falling damage} you would take.
 
-    \ff[18]{Featherlight Leap+} Your maximum jumping height increases to twice your maximum horizontal jump distance.
-    This does not affect the forward distance you can reach with your jumps.
-    If you have the \ability{float like air+} monk ability with the same effect, you instead increase the bonus from your \textit{featherlight leap} ability to \plus15 feet.
+    \ff[12]{Heavenly Domain} You gain a \plus1 accuracy bonus against \glossterm{midair} creatures adjacent to you while you are jumping.
+
+    \ff[12]{Featherlight Landing+} You are immune to \glossterm{falling damage}.
+
+    \ff[18]{Heavenly Domain+} The accuracy bonus increases to \plus2.
   \end{feat}
 
   \begin{feat}{Herbalist}{General}
