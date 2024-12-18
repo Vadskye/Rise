@@ -334,7 +334,7 @@ def custom_statistic(i):
                     option({"value": "insight_points"}, "Insight points"),
                     option({"value": "intelligence"}, "Intelligence"),
                     option({"value": "intimidate"}, "Intimidate"),
-                    option({"value": "jump_distance"}, "Jump distance"),
+                    option({"value": "horizontal_jump_distance"}, "Jump distance (horizontal)"),
                     option({"value": "ki_manifestations_known"}, "Ki manifestations"),
                     option({"value": "knowledge_all"}, "Knowledge (all)"),
                     option({"value": "knowledge_arcana"}, "Knowledge (arcana)"),
