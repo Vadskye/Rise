@@ -399,20 +399,15 @@
   \subsection{Jumping}\label{Jumping}
     Creatures with legs can jump as part of movement.
     When you jump, choose a destination square where your jump ends.
-    Landing at a precise location within a square may require a check with the Jump skill (see \pcref{Jump}).
+    You must be touching a solid surface to jump.
 
     % Human with 0 strength jumps 5 feet.
     % Human with 2 strength jumps 15 feet.
     % Human with 4 strength jumps 25 feet, which is almost a world record.
-    A jump's maximum horizontal distance is normally equal to 5 feet per 2 Strength.
-    If you are trained with the Jump skill, the distance is instead equal to 5 feet per Strength, to a minimum of 5 feet.
-    If you have a running start of at least 15 feet, you also add a quarter of your \glossterm{base speed} to that distance.
+    A jump's maximum horizontal distance is normally equal to a quarter of your \glossterm{base speed} plus 5 feet per 2 Strength.
+    If you are trained with the Jump skill, the distance you add from your Strength is instead of equal to 5 feet per Strength, to a minimum of \plus5 feet.
     A jump's maximum vertical height is equal to half your maximum horizontal distance.
-
-    You must be touching a solid surface to jump.
-    Jumping off of terrain that is not solid ground, such as a wall, halves your jump distance and may require a Jump check (see \pcref{Jump}).
-    If your jump distance would be less than 5 feet, you normally cannot jump meaningfully at all.
-    The GM can decide whether that makes sense in a particular situation.
+    % TODO: minimum jump height? too complicated?
 
     If your destination square is in midair, you do not start falling until the next phase (see \pcref{Falling Damage}).
     This allows you to jump during the movement phase and act in midair during the action phase.
@@ -422,7 +417,7 @@
   \subsection{Jumping Speed Limits}
     The maximum distance that you can travel by jumping is equal to your remaining land speed during the current phase.
     This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-    For example, if your land speed is thirty feet and you get a ten-foot running start, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
+    For example, if your land speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
     If your jump distance is extremely high and your land speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
   \subsection{Measuring Movement}
@@ -557,9 +552,9 @@
   In order to use a fly speed or glide speed, a creature must not be carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
   In addition, it must not have any \glossterm{encumbrance} (see \pcref{Encumbrance}).
 
-  While in midair, land-based creatures cannot move to defend themselves effectively.
-  Whenever a creature moves with a fly speed or glide speed, it takes a \minus4 penalty to its Armor and Reflex defenses until it lands on solid ground.
-  This penalty does not apply to creatures who are native to the air, such as birds and creatures with no defined land speed.
+  While \glossterm{midair}, land-based creatures cannot move to defend themselves effectively.
+  Any land-based creature takes a \minus4 penalty to its Armor and Reflex defenses while it is \glossterm{midair}, even if it has a fly speed or glide speed.
+  This penalty does not apply to creatures who are native to the air, such as birds and monsters with no defined land speed.
 
   A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during both the \glossterm{movement phase} and the \glossterm{action phase}.
   If it does not move during a phase, it falls by 300 feet at the end of that phase (see \pcref{Falling Damage}).
