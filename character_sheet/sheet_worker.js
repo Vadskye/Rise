@@ -1419,11 +1419,10 @@ function handleDebuffs() {
       boolean: [
         // conditional debuffs
         "climbing",
-        "flying",
-        "flying_poorly",
         "goaded",
         "grappled",
         "helpless",
+        "midair",
         "prone",
         "squeezing",
         "swimming",
@@ -1477,13 +1476,9 @@ function handleDebuffs() {
         minus2("squeezing", "armor_defense");
         minus2("squeezing", "reflex");
       }
-      if (v.flying && !v.flying_poorly) {
-        minus2("flying", "armor_defense");
-        minus2("flying", "reflex");
-      }
-      if (v.flying_poorly) {
-        minus4("flying poorly", "armor_defense");
-        minus4("flying poorly", "reflex");
+      if (v.midair) {
+        minus4("midair", "armor_defense");
+        minus4("midair", "reflex");
       }
       if (v.climbing) {
         minus2("climbing", "accuracy");
