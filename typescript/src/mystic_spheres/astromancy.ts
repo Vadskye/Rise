@@ -594,6 +594,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Transposition',
 
+      cost: SWIFT_FATIGUE,
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target \\glossterm{teleports} into the other's location.
