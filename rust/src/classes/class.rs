@@ -1409,7 +1409,7 @@ impl Class {
 
                     Your pact specifies how much of your soul is granted to your soulkeeper, and the circumstances of the transfer.
                     The most common arrangement is for a soulkeeper to gain possession of your soul immediately after you die.
-                    It will keep the soul for one decade per year of your life that you spend as a warlock.
+                    It will keep the soul for ten years, plus one year for each year of your life after making the pact.
                     During that time, it will not prevent you from being resurrected.
                     At the end of that time, if your soul remains intact, your soul will pass on to its intended afterlife.
                     However, other arrangements are possible, and each warlock's pact can be unique.
