@@ -457,7 +457,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         targeting: `
           You create a Medium size ball of lightning in one space within \\medrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
-          Whenever you sustain this effect, you can move the ball up to 30 feet in any direction, even vertically.
+          Once during each \\glossterm{movement phase}, you can move the ball up to 30 feet in any direction, even vertically, as a \\glossterm{free action}.
           When you create the ball, and during each of your subsequent actions, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
           Then, if the ball is more than 120 feet from you, it disappears and this effect ends.
         `,
