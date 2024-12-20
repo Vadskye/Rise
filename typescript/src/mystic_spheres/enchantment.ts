@@ -62,6 +62,44 @@ export const enchantment: MysticSphere = {
     },
 
     {
+      name: 'Sympathetic Link',
+
+      effect: `
+        Whenever you use a \atCompulsion or \atEmotion ability that makes an attack, you can choose to include yourself as a target.
+        If you do, the attack automatically hits you.
+        As long as you are not immune to the ability or any part of its effects, this grants you a \plus2 accuracy bonus with that ability against its other targets.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+
+    {
+      name: 'Curated Threat',
+
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          As a \\glossterm{condition}, the target's assessment of the threat you pose matches your intention.
+          If you chose to appear powerful, they consider you to be their most powerful currently present foe.
+          Likewise, if you chose to appear weak, they consider you to be their weakest currently present foe.
+          This effect only changes how the target perceives you relative to its other enemies, and does not correlate to a specific level of power.
+          Depending on the creature's personality and intentions, this may cause them to prioritize you as a target or avoid you.
+        `,
+        targeting: `
+          When you cast this spell, you choose to appear either powerful or weak.
+
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 1,
+      tags: ['Emotion', 'Subtle'],
+      // Probably complex enough to be deep? But it doesn't change combat math that much,
+      // so deep for this would feel punishing.
+      type: 'Attune',
+    },
+
+    {
       name: 'Monologue',
 
       attack: {

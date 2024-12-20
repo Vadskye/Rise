@@ -49,6 +49,39 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   ],
   spells: [
     {
+      name: 'Distant Chain',
+
+      effect: `
+        Your abilities that \\glossterm{chain} can travel an extra fifteen feet between each chain.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+
+    {
+      name: 'Magnetic Chain',
+
+      effect: `
+        Your abilities that \\glossterm{chain} can chain one additional time, but only to a \\glossterm{metallic} creature or object.
+        The bonus chain can travel an extra fifteen feet.
+        This does not affect abilities that do not already chain.
+      `,
+      rank: 2,
+      type: 'Attune',
+    },
+
+    {
+      name: 'Extra Chain',
+
+      effect: `
+        Your abilities that \\glossterm{chain} can chain one additional time.
+        This does not affect abilities that do not already chain.
+      `,
+      rank: 4,
+      type: 'Attune',
+    },
+
+    {
       name: 'Magnetic Pull',
 
       effect: `
