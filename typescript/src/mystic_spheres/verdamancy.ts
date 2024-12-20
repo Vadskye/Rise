@@ -77,9 +77,9 @@ export const verdamancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\slowed as a \\glossterm{condition}.
-          This condition can be removed if the target makes a \\glossterm{difficulty value} 10 Strength check as a \\glossterm{movement} to break the plants.
+          This condition can be removed if the target makes a \\glossterm{difficulty value} 8 Strength check as a \\glossterm{movement} to break the plants.
           If the target makes this check as a standard action, it gains a +5 bonus.
-          In addition, this condition is removed if the target takes fire damage.
+          In addition, this condition is removed if the target takes damage from a \atFire ability.
         `,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\medrange.

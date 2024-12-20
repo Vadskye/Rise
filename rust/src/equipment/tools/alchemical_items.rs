@@ -346,21 +346,21 @@ fn thrown_attacks() -> Vec<Tool> {
     // Same removal effect as Entangle
     tools.push(Tool {
         name: "Tanglefoot Bag".to_string(),
-        rank: 1,
+        rank: 2,
         short_description: "Slows a foe, though it is easily removable".to_string(),
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against one Large or smaller creature within \shortrange.
             On a hit, the target is \slowed as a \glossterm<condition>.
 
-            This condition can be removed if the target makes a \glossterm{difficulty value} 10 Strength check as a \glossterm{movement} to break the plants.
+            This condition can be removed if the target makes a \glossterm{difficulty value} 8 Strength check as a \glossterm{movement} to break the entangling glue.
             If the target makes this check as a standard action, it gains a +5 bonus.
-            In addition, this condition is removed if the target is dealt fire damage.
+            In addition, this condition is removed if the target takes damage from a \atAcid or \atFire ability.
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(4, "Slows a foe", r"
                 The condition cannot be removed with a Strength check.
-                It is still removed if the target is dealt fire damage.
+                It is still removed if the target takes damage from a \atAcid or \atFire ability. 
             "),
         ],
         ..alchemical_item()
