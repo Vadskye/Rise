@@ -1419,7 +1419,7 @@ impl Class {
                     Of course, soulkeepers generally try to accelerate this process as much as possible with various forms of torture.
                     Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
 
-                    \magicalcf{War}{Whispers of the Lost}[\sparkle]
+                    \magicalcf{War}{Whispers of the Lost}
                     You hear the voices of souls that inhabit your soulkeeper's plane, linked to you through your soulkeeper.
                     Choose one of the following types of whispers that you hear.
                     {
