@@ -44,7 +44,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
-        It teleports into your hand or into an unccupied location within the same range.
+        It teleports into your hand or into an unoccupied location within the same range.
       `,
       narrative: `
         A tankard of ale disappears from the counter, appearing directly in your hand.
