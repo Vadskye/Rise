@@ -467,7 +467,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You cover your body with two layers of rock that crumple when they take damage.
         The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
         Whenever you would take damage, you reduce that damage by 5, and one layer of rock is destroyed.
-        When the last layer is destroyed, this ability provides no further benefit.
+        When the last layer is destroyed, your attunement to this ability ends.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,

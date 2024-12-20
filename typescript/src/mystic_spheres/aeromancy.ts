@@ -9,26 +9,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
   sources: ['nature', 'domain'],
   cantrips: [
     {
-      name: 'Airborne Leap',
-
-      effect: `
-        You gain a +5 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
-        This increases your maximum vertical jump distance normally.
-      `,
-      narrative: `
-        The air rises beneath you and pushes you up, propelling you farther when you leap.
-      `,
-      scaling: {
-        2: `
-          You also gain a 30 foot \\glossterm{glide speed}.
-          If you already have a glide speed, you gain a +10 foot \\glossterm{enhancement bonus} to your glide speed.
-        `,
-        4: 'You also become immune to \\glossterm{falling damage}.',
-        6: 'The jump distance bonus increases to \\plus10 feet.',
-      },
-      type: 'Attune',
-    },
-    {
       name: 'Manipulate Air',
 
       effect: `
@@ -40,9 +20,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
       `,
       scaling: {
-        3: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.',
-        5: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
-        7: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
+        2: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.',
+        4: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
+        6: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
       },
       type: 'Sustain (minor)',
     },
@@ -64,6 +44,29 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
     },
   ],
   spells: [
+    {
+      name: 'Windborne Leap',
+
+      effect: `
+        You gain a +10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
+        This increases your maximum vertical jump distance normally.
+      `,
+      narrative: `
+        The air rises beneath you and pushes you up, propelling you farther when you leap.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+    {
+      name: 'Cushion of Air',
+
+      effect: `
+        You gain a 30 foot \\glossterm{glide speed}.
+        In addition, you become immune to \\glossterm{falling damage}.
+      `,
+      rank: 3,
+      type: 'Attune',
+    },
     // Treat as t1 debuff
     {
       name: 'Arrow Attraction',
@@ -139,6 +142,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       // narrative: '',
       rank: 3,
       type: 'Attune (target)',
+    },
+    {
+      name: 'Light Toss',
+
+      effect: `
+        Whenever you \\glossterm{knockback} or \\glossterm{push} a creature or object, you can increase the distance of that knockback or push by up to ten feet.
+      `,
+      // narrative: "",
+      rank: 1,
+      type: 'Attune',
     },
     {
       name: 'Windslash',

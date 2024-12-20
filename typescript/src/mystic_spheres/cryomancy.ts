@@ -65,6 +65,26 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   ],
   spells: [
     {
+      name: 'Thick Ice',
+
+      effect: `
+        All \\glossterm{icy terrain} created by your abilities must be damaged three times before it is destroyed, rather than only once.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+
+    {
+      name: 'Slick Ice',
+
+      effect: `
+        The \\glossterm{difficulty value} to move or stay standing on \\glossterm{icy terrain} created by your abilities increases by 3.
+      `,
+      rank: 5,
+      type: 'Attune',
+    },
+
+    {
       name: 'Freezing Grasp',
 
       // -2 ranks for delayed onset
@@ -254,7 +274,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         The ice does not cover your joints, allowing you to move freely.
         Whenever you would take damage from a non-\\atFire ability, you reduce that damage by 5, and one layer of ice is destroyed.
         If you take damage from a \\atFire ability, you do not reduce that damage, and all layers of ice are destroyed.
-        When the last layer of ice is destroyed, this ability provides no further benefit.
+        When the last layer of ice is destroyed, your attunement to this ability ends.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
