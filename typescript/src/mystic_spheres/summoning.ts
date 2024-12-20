@@ -373,7 +373,7 @@ export const summoning: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          A horde of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from your location.
+          A horde of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies.
 
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
