@@ -159,7 +159,7 @@ def proficiencies():
                     input_attributes={"readonly": True, "name": "base_class_proficiencies"},
                 ),
                 labeled_text_input(
-                    "Weapon groups", input_attributes={"name": "weapon_groups"}
+                    "Weapons", input_attributes={"name": "weapon_groups"}
                 ),
                 ]),
                 labeled_textarea(
