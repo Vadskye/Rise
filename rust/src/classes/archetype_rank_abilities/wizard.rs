@@ -16,15 +16,23 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 Where you lack material components, you fill in with some of your own magic, allowing you to create items more easily.
                 The items are just as effective when used as items created normally.
                 However, they are less durable, since they are partially sustained by your magic.
-                Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
 
                 You can use this ability to create alchemical items with a rank up to your rank in this archetype (see \pcref{Item Ranks}).
-                Creating an item in this way functions in the same way as crafting items normally, with the following changes.
-                First, you do not require any raw materials or an alchemist's lab.
-                Second, you can create up to five items with this ability with 5 minutes of work.
-                Third, you can only maintain the existence of five items with this ability at once.
-                If you try to create a sixth item, you must first dismiss another item created.
-                This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
+                Creating an item in this way functions in the same way as crafting items normally (see \pcref{Crafting Items}), with the following exceptions:
+                \begin{raggeditemize}
+                    \item You do not require any raw materials or an alchemist's lab.
+                    \item Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
+                    \item You can only maintain the existence of four items with this ability at once.
+                        If you try to create an item beyond this limit, you must first dismiss another item created.
+                        This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
+                    \item Items you create with this ability still have a lingering magic tied to you when destroyed or consumed.
+                        With five minutes of work, you can recreate all of those items.
+                        This removes any lingering effects from the recreated item.
+                \end{raggeditemize}
+
+                You can invest any number of \glossterm{insight points} into this ability.
+                Unlike normal for insight points, this does not directly grant you any additional abilities known.
+                Instead, for each insight point invested, the number of items you can maintain simultaneously with this ability increases by one.
             ",
             modifiers: None,
         },
@@ -54,18 +62,23 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 You learn how to create alchemical items more effectively.
                 You gain your choice of one of the following benefits.
                 Each benefit can only be chosen once.
+                You may spend \glossterm{insight points} to gain access to one additional alchemical discovery per two insight points.
+
+                You can only apply one of your alchemical discoveries whenever you create an item.
+                For example, if you had both the Aerodynamic Construction and Expanded Construction discoveries, you could not create an item with both double throwing range and double area.
+                You would have to choose which alchemical discovery to apply when creating the item.
                 {
                     \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank up to one higher than your rank in this archetype.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
                     \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements.
-                    % TODO: wording, and does this even matter? Affects sunrods...
+                    % TODO: wording, and does this even matter? Affects sunrods.
                     \parhead{Enduring Construction} The duration of alchemical items you create is doubled.
                     In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
                     \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
                     Attacks with the item reduce their \glossterm{explosion target} by 2 (see \pcref{Exploding Attacks}).
-                    However, if the attacker rolls a 1 on the attack roll, ignoring explosions, they suffer a \glossterm{glancing blow} from the attack.
+                    However, if the attacker rolls a 1 on the attack roll, ignoring dice rolled for \glossterm{explosions}, they suffer a \glossterm{glancing blow} from the attack.
                     \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
@@ -114,7 +127,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a \plus1 bonus to your Fortitude defense.
-                In addition, you are immune to poisons.
+                In addition, you are immune to \atPoison attacks.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
@@ -124,7 +137,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain a \plus1 bonus to your Constitution.
-                In addition, you are immune to acid damage.
+                In addition, you are immune to \atAcid attacks.
             ",
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
