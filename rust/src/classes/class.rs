@@ -1145,7 +1145,7 @@ impl Class {
                 simple_weapons: false,
             },
             Self::Druid => WeaponProficiencies {
-                custom_weapons: Some("shepherd's axe, sickle, and scythe".to_string()),
+                custom_weapons: Some("the shepherd's axe, sickle, and scythe".to_string()),
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
