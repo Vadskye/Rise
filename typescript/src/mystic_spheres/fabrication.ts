@@ -47,6 +47,19 @@ export const fabrication: MysticSphere = {
   ],
   spells: [
     {
+      name: 'Desperate Shieldwall',
+
+      effect: `
+        Whenever you use the \ability{total defense} or \ability{recover} ability, you can activate this ability.
+        If you do, a sudden wall of shields appears around you, granting you a \plus4 bonus to your Armor defense for the rest of the round.
+        This is a \atSwift effect, so it affects attacks you during the current phase.
+        At the end of the round when the shields appear, your attunement to this effect ends.
+      `,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
       name: 'Mystic Forge',
 
       // TODO: unclear rank

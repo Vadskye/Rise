@@ -57,7 +57,7 @@ export const astromancy: MysticSphere = {
       },
     },
     {
-      name: 'Astral Ease',
+      name: 'Astral Familiarity',
 
       effect: `
         You gain a +3 \\glossterm{enhancement bonus} to the Knowledge (planes) skill.
@@ -77,6 +77,38 @@ export const astromancy: MysticSphere = {
     },
   ],
   spells: [
+    {
+      name: 'Panic Translocation',
+
+      effect: `
+        At the end of each round, if you gained a \\glossterm{vital wound} that round, you \\glossterm{teleport} up to 60 feet away from the source of the wound to the most distant valid destination.
+        This teleportation functions even if you are unconscious, but you cannot consciously control the direction.
+        If the source of the wound is unclear, the teleportation direction is chosen randomly.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+    {
+      name: 'Instant Retrieval',
+
+      effect: `
+        As a \\glossterm{minor action}, you can teleport one of your items into your \\glossterm{free hand}.
+        This can teleport items from your backpack, or other storage devices worn closely on your body such as weapon sheathes, as long as you are touching the outside of that storage (including though clothing or armor).
+        Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \tref{Donning Armor}).
+      `,
+      rank: 2,
+      type: 'Attune',
+    },
+    {
+      name: 'Tactical Translocation',
+
+      effect: `
+        Whenever you would make a melee \\glossterm{strike} or a \\glossterm{touch} attack, you can first \\glossterm{teleport} up to 10 feet.
+        You can only teleport in this way once per \\glossterm{round}.
+      `,
+      rank: 3,
+      type: 'Attune',
+    },
     {
       name: 'Translocating Grasp',
 

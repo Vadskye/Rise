@@ -53,11 +53,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       `,
       scaling: {
         2: `
-          You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-          If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
+          As a standard action, you can draw breath from water.
+          This allows you to \\glossterm{briefly} breathe water as easily as a human breathes air.
         `,
         4: `
-          You also gain the ability to breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
+          You can draw breath from water as a \\glossterm{minor action} rather than as a standard action.
         `,
         6: `The Swim bonus increases to +6.`,
       },
@@ -65,6 +65,44 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     },
   ],
   spells: [
+    {
+      name: 'Restorative Water',
+
+      effect: `
+        While this spell is active, water can heal you.
+        As a standard action, you can draw restorative power from water by drinking at least one ounce of clean water.
+        % dr3l
+        When you do, you regain 2d10 hit points.
+        Normally, this healing cannot increase your hit points above half your maximum hit points.
+        If you increase your \glossterm{fatigue level} by one, you can ignore this limitation for one drink of water.
+      `,
+      rank: 1,
+      scaling: { special: "The healing increases by 1d10 per rank beyond 1." },
+      type: 'Attune',
+    },
+    {
+      name: 'Cleansing Water',
+
+      effect: `
+        While this spell is active, water can purify you.
+        As a standard action, you can cleanse yourself by drinking at least one ounce of clean water.
+        When you do, you remove one \\glossterm{condition} affecting you.
+        If you are also attuned to the \ability{restorative water} spell, you can both regain hit points and remove a condition from the same drink of water.
+      `,
+      rank: 3,
+      type: 'Attune',
+    },
+    {
+      name: 'Aquatic Agility',
+
+      effect: `
+        You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
+        If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
+        While swimming, you gain a \plus1 bonus to your Armor and Reflex defenses.
+      `,
+      rank: 2,
+      type: 'Attune',
+    },
     {
       name: 'Desiccate',
 

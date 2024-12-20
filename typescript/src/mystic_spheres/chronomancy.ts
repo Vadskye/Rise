@@ -53,11 +53,11 @@ export const chronomancy: MysticSphere = {
       type: 'Sustain (minor)',
     },
     {
-      name: 'Rewind',
+      name: 'Instant Reversal -- Attack',
 
       effect: `
         Whenever you make an \\glossterm{attack} or \\glossterm{check}, you can \\glossterm{reroll} it.
-        If you do, this effect ends.
+        If you do, your attunement to this ability ends.
 
         You can decide to activate this effect after you learn whether the original roll succeeded or failed.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
@@ -72,6 +72,41 @@ export const chronomancy: MysticSphere = {
     },
   ],
   spells: [
+    {
+      name: 'Accelerated Sprint',
+
+      effect: `
+        Whenever you use the \\ability{sprint} ability, you gain a \plus10 foot bonus to your land speed during that phase.
+        This bonus is doubled as normal by the sprint ability.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+    {
+      name: 'Instant Reversal -- Movement',
+
+      effect: `
+        At the end of each movement phase, you can use this ability to rewind time to the start of the movement phase.
+        All other creatures make the same movements, but you can change your movement based on your knowledge of their previous movements.
+        After you rewind time in this way, your attunement to this ability ends.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+    {
+      name: 'Instant Reversal -- Decision',
+
+      effect: `
+        Whenever you make an attack during your action and learn whether you hit or missed, you can use this ability to rewind time to the start of your action.
+        You must use this ability before determining any damage dealt or any other effects of the attack.
+        All effects of your action are undone, except that you keep any \\glossterm{fatigue} you gained during your original action.
+        You can use an different ability on your new action, or simply make a new attack roll with the same ability and hope it succeeds this time.
+        After you rewind time in this way, your attunement to this ability ends.
+      `,
+      rank: 5,
+      type: 'Attune',
+    },
+
     {
       name: 'Accelerated Flurry',
 
@@ -363,7 +398,7 @@ export const chronomancy: MysticSphere = {
         This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
         If the locked location is occupied, the creature reappears in the closest open space.
       `,
-      rank: 2,
+      rank: 1,
       type: 'Sustain (minor)',
     },
 
@@ -510,27 +545,6 @@ export const chronomancy: MysticSphere = {
       scaling: {
         4: 'You can perform any two of the listed actions.',
         6: 'You can perform any combination of the listed actions.',
-      },
-    },
-
-    {
-      name: 'Expeditious Retreat',
-
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you gain a +10 foot bonus to your land speed for the duration of the movement.
-        `,
-        name: 'sprint',
-      },
-      narrative: `
-        You accelerate your body to flee from combat with incredible alacrity.
-      `,
-      rank: 1,
-      scaling: {
-        3: 'The speed bonus increases to +20 feet.',
-        5: 'The speed bonus increases to +30 feet.',
-        7: 'The speed bonus increases to +40 feet.',
       },
     },
 
