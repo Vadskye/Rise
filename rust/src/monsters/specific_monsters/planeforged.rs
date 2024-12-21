@@ -700,7 +700,7 @@ fn add_elementals(monsters: &mut Vec<MonsterEntry>) {
     }
 
     impl MagmaElemental {
-        fn monster(mut self) -> Monster {
+        fn monster(self) -> Monster {
             planeforged(MonsterDef {
                 name: self.name,
                 abilities: MonsterAbilities {
