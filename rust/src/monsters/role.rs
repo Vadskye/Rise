@@ -79,27 +79,25 @@ impl Role {
         }
     }
 
-    // Multiply HP by this value to determine the monster's total DR.
-    // Monsters follow the same baseline as PCs that DR should normally be 50% of HP.
-    pub fn hp_dr_multiplier(&self) -> f64 {
+    pub fn damage_resistance_progression(self) -> HitPointProgression {
         match self {
-            Role::Brute => 0.25,
-            Role::Skirmisher => 0.5,
-            Role::Warrior => 1.0,
-            Role::Sniper => 0.5,
-            Role::Mystic => 1.0,
-            Role::Leader => 0.5,
+            Role::Brute => HitPointProgression::Low,
+            Role::Leader => HitPointProgression::Medium,
+            Role::Mystic => HitPointProgression::High,
+            Role::Skirmisher => HitPointProgression::Low,
+            Role::Sniper => HitPointProgression::Low,
+            Role::Warrior => HitPointProgression::VeryHigh,
         }
     }
 
     pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Role::Brute => HitPointProgression::Extreme,
-            Role::Skirmisher => HitPointProgression::High,
-            Role::Warrior => HitPointProgression::High,
-            Role::Sniper => HitPointProgression::Medium,
-            Role::Mystic => HitPointProgression::Medium,
+            Role::Brute => HitPointProgression::VeryHigh,
             Role::Leader => HitPointProgression::High,
+            Role::Mystic => HitPointProgression::Medium,
+            Role::Skirmisher => HitPointProgression::High,
+            Role::Sniper => HitPointProgression::Medium,
+            Role::Warrior => HitPointProgression::High,
         }
     }
 

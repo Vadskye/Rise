@@ -21,7 +21,7 @@ where
         match self.category {
             CreatureCategory::Character => dr,
             CreatureCategory::Monster(cr, role) => {
-                dr += (self.calc_hit_points() as f64 * role.hp_dr_multiplier()) as i32;
+                dr += role.damage_resistance_progression().calc_hit_points(self.level, 0);
                 (dr as f64 * cr.dr_multiplier()) as i32
             }
         }
@@ -54,11 +54,9 @@ where
             CreatureCategory::Character => 0.0,
             CreatureCategory::Monster(cr, _) => cr.hp_multiplier(),
         };
-        let dr_from_hp = match self.category {
+        let dr_progression = match self.category {
             CreatureCategory::Character => 0,
-            CreatureCategory::Monster(_, role) => {
-                (self.calc_hit_points() as f64 * role.hp_dr_multiplier()) as i32
-            }
+            CreatureCategory::Monster(_, role) => role.damage_resistance_progression().calc_hit_points(self.level, 0)
         };
         let dr_multiplier = match self.category {
             CreatureCategory::Character => 0.0,
@@ -68,7 +66,7 @@ where
         format!(
             "
 HP: {hp_total} = ({hp_progression} progression: {hp_from_level} <level> + {hp_from_con} <con> + {hp_modifier} <modifier>) * {hp_multiplier} <elite multiplier>
-DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_from_hp} <monster hp>) * {dr_multiplier} <elite multiplier>
+DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_progression} <monster progression>) * {dr_multiplier} <elite multiplier>
             ",
             hp_total = self.calc_hit_points(),
             hp_progression = self.hit_point_progression.name(),
@@ -79,7 +77,7 @@ DR: {dr_total} = ({dr_armor} <armor> + {dr_modifier} <modifier> + {dr_from_hp} <
             dr_total = self.calc_damage_resistance(),
             dr_armor = self.get_armor().iter().map(|a| a.damage_resistance()).sum::<i32>(),
             dr_modifier = self.calc_total_modifier(ModifierType::DamageResistance),
-            dr_from_hp = dr_from_hp,
+            dr_progression = dr_progression,
             dr_multiplier = dr_multiplier,
         )
     }
