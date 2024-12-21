@@ -19,7 +19,7 @@ vs Leader              : Greatmace            (90% hit chance)
 vs Mystic              : Greatmace            (100% hit chance)
 vs Skirmisher          : Greatmace            (80% hit chance)
 vs Sniper              : Greatmace            (100% hit chance)
-vs Warrior             : Greatmace            (80% hit chance)
+vs Warrior             : Greatmace            (90% hit chance)
 
 ### Attacker: Barbarian Shield
 
@@ -38,7 +38,7 @@ vs Leader              : Generic Accuracy Broadsword (70% hit chance)
 vs Mystic              : Powerful Broadsword  (50% hit chance)
 vs Skirmisher          : Certain Broadsword   (80% hit chance)
 vs Sniper              : Powerful Broadsword  (40% hit chance)
-vs Warrior             : Certain Broadsword   (80% hit chance)
+vs Warrior             : Generic Accuracy Broadsword (70% hit chance)
 
 ### Attacker: Fighter Greatmace
 
@@ -57,7 +57,7 @@ vs Leader              : Generic Accuracy Greatmace (70% hit chance)
 vs Mystic              : Powerful Greatmace   (50% hit chance)
 vs Skirmisher          : Certain Greatmace    (80% hit chance)
 vs Sniper              : Powerful Greatmace   (40% hit chance)
-vs Warrior             : Certain Greatmace    (80% hit chance)
+vs Warrior             : Generic Accuracy Greatmace (70% hit chance)
 
 ### Attacker: Fighter Shield
 
@@ -76,7 +76,7 @@ vs Leader              : Generic Accuracy Broadsword (70% hit chance)
 vs Mystic              : Powerful Broadsword  (50% hit chance)
 vs Skirmisher          : Certain Broadsword   (80% hit chance)
 vs Sniper              : Powerful Broadsword  (40% hit chance)
-vs Warrior             : Certain Broadsword   (80% hit chance)
+vs Warrior             : Generic Accuracy Broadsword (70% hit chance)
 
 ### Attacker: Monk Kama
 
@@ -95,7 +95,7 @@ vs Leader              : Powerful Kama        (40% hit chance)
 vs Mystic              : Powerful Kama        (60% hit chance)
 vs Skirmisher          : Certain Kama         (90% hit chance)
 vs Sniper              : Powerful Kama        (50% hit chance)
-vs Warrior             : Certain Kama         (90% hit chance)
+vs Warrior             : Powerful Kama        (40% hit chance)
 
 ### Attacker: Paladin Shield
 
@@ -114,7 +114,7 @@ vs Leader              : Broadsword           (60% hit chance)
 vs Mystic              : Broadsword           (80% hit chance)
 vs Skirmisher          : Broadsword           (50% hit chance)
 vs Sniper              : Broadsword           (70% hit chance)
-vs Warrior             : Broadsword           (50% hit chance)
+vs Warrior             : Broadsword           (60% hit chance)
 
 ### Attacker: Ranger Longbow
 
@@ -133,7 +133,7 @@ vs Leader              : Certain Longbow      (100% hit chance)
 vs Mystic              : Powerful Longbow     (60% hit chance)
 vs Skirmisher          : Certain Longbow      (90% hit chance)
 vs Sniper              : Powerful Longbow     (50% hit chance)
-vs Warrior             : Certain Longbow      (90% hit chance)
+vs Warrior             : Certain Longbow      (100% hit chance)
 
 ### Attacker: Rogue Smallsword
 
@@ -152,7 +152,7 @@ vs Leader              : Sneak Attack -- Smallsword (90% hit chance)
 vs Mystic              : Sneak Attack -- Smallsword (100% hit chance)
 vs Skirmisher          : Sneak Attack -- Smallsword (80% hit chance)
 vs Sniper              : Sneak Attack -- Smallsword (100% hit chance)
-vs Warrior             : Sneak Attack -- Smallsword (80% hit chance)
+vs Warrior             : Sneak Attack -- Smallsword (90% hit chance)
 
 ### Attacker: Sorcerer Dexterity
 
@@ -166,12 +166,12 @@ vs Ranger Longbow      : Inflict Wound        (70% hit chance)
 vs Rogue Smallsword    : Inflict Wound        (90% hit chance)
 vs Sorcerer Dexterity  : Inflict Wound        (80% hit chance)
 vs Wizard Perception   : Inflict Wound        (90% hit chance)
-vs Brute               : Inflict Wound        (70% hit chance)
+vs Brute               : Firebolt             (70% hit chance)
 vs Leader              : Inflict Wound        (70% hit chance)
 vs Mystic              : Firebolt             (90% hit chance)
 vs Skirmisher          : Inflict Wound        (90% hit chance)
 vs Sniper              : Inflict Wound        (90% hit chance)
-vs Warrior             : Firebolt             (60% hit chance)
+vs Warrior             : Firebolt             (70% hit chance)
 
 ### Attacker: Wizard Perception
 
@@ -185,12 +185,12 @@ vs Ranger Longbow      : Inflict Wound        (80% hit chance)
 vs Rogue Smallsword    : Inflict Wound        (100% hit chance)
 vs Sorcerer Dexterity  : Inflict Wound        (90% hit chance)
 vs Wizard Perception   : Inflict Wound        (100% hit chance)
-vs Brute               : Inflict Wound        (80% hit chance)
+vs Brute               : Firebolt             (80% hit chance)
 vs Leader              : Inflict Wound        (80% hit chance)
 vs Mystic              : Firebolt             (100% hit chance)
 vs Skirmisher          : Inflict Wound        (100% hit chance)
 vs Sniper              : Inflict Wound        (100% hit chance)
-vs Warrior             : Firebolt             (70% hit chance)
+vs Warrior             : Firebolt             (80% hit chance)
 
 ### Attacker: Brute
 
@@ -209,7 +209,7 @@ vs Leader              : Certain Bite         (80% hit chance)
 vs Mystic              : Powerful Bite        (40% hit chance)
 vs Skirmisher          : Certain Bite         (70% hit chance)
 vs Sniper              : Extra Damage Bite    (70% hit chance)
-vs Warrior             : Certain Bite         (70% hit chance)
+vs Warrior             : Certain Bite         (80% hit chance)
 
 ### Attacker: Leader
 
@@ -228,7 +228,7 @@ vs Leader              : Certain Bite         (90% hit chance)
 vs Mystic              : Powerful Bite        (50% hit chance)
 vs Skirmisher          : Certain Bite         (80% hit chance)
 vs Sniper              : Powerful Bite        (40% hit chance)
-vs Warrior             : Certain Bite         (80% hit chance)
+vs Warrior             : Certain Bite         (90% hit chance)
 
 ### Attacker: Mystic
 
@@ -247,7 +247,7 @@ vs Leader              : Armor Bolt           (70% hit chance)
 vs Mystic              : Armor Bolt           (90% hit chance)
 vs Skirmisher          : Fort Bolt            (90% hit chance)
 vs Sniper              : Fort Bolt            (90% hit chance)
-vs Warrior             : Armor Bolt           (60% hit chance)
+vs Warrior             : Armor Bolt           (70% hit chance)
 
 ### Attacker: Skirmisher
 
@@ -266,7 +266,7 @@ vs Leader              : Certain Bite         (90% hit chance)
 vs Mystic              : Powerful Bite        (50% hit chance)
 vs Skirmisher          : Certain Bite         (80% hit chance)
 vs Sniper              : Powerful Bite        (40% hit chance)
-vs Warrior             : Certain Bite         (80% hit chance)
+vs Warrior             : Certain Bite         (90% hit chance)
 
 ### Attacker: Sniper
 
@@ -285,7 +285,7 @@ vs Leader              : Powerful Longbow     (40% hit chance)
 vs Mystic              : Powerful Longbow     (60% hit chance)
 vs Skirmisher          : Certain Longbow      (90% hit chance)
 vs Sniper              : Powerful Longbow     (50% hit chance)
-vs Warrior             : Certain Longbow      (90% hit chance)
+vs Warrior             : Powerful Longbow     (40% hit chance)
 
 ### Attacker: Warrior
 
@@ -304,7 +304,7 @@ vs Leader              : Certain Bite         (80% hit chance)
 vs Mystic              : Powerful Bite        (40% hit chance)
 vs Skirmisher          : Certain Bite         (70% hit chance)
 vs Sniper              : Certain Bite         (90% hit chance)
-vs Warrior             : Certain Bite         (70% hit chance)
+vs Warrior             : Certain Bite         (80% hit chance)
 
 ## Level 5
 
@@ -325,7 +325,7 @@ vs Leader              : Powerful Greatmace   (70% hit chance)
 vs Mystic              : Powerful Greatmace   (90% hit chance)
 vs Skirmisher          : Powerful Greatmace   (60% hit chance)
 vs Sniper              : Powerful Greatmace   (80% hit chance)
-vs Warrior             : Powerful Greatmace   (60% hit chance)
+vs Warrior             : Powerful Greatmace   (70% hit chance)
 
 ### Attacker: Barbarian Shield
 
@@ -344,7 +344,7 @@ vs Leader              : Powerful Broadsword  (40% hit chance)
 vs Mystic              : Powerful Broadsword  (60% hit chance)
 vs Skirmisher          : Generic Accuracy Broadsword (70% hit chance)
 vs Sniper              : Powerful Broadsword  (50% hit chance)
-vs Warrior             : Generic Accuracy Broadsword (70% hit chance)
+vs Warrior             : Powerful Broadsword  (40% hit chance)
 
 ### Attacker: Fighter Greatmace
 
@@ -363,7 +363,7 @@ vs Leader              : Powerful Greatmace   (40% hit chance)
 vs Mystic              : Powerful Greatmace   (60% hit chance)
 vs Skirmisher          : Generic Accuracy Greatmace (70% hit chance)
 vs Sniper              : Powerful Greatmace   (50% hit chance)
-vs Warrior             : Generic Accuracy Greatmace (70% hit chance)
+vs Warrior             : Powerful Greatmace   (40% hit chance)
 
 ### Attacker: Fighter Shield
 
@@ -382,7 +382,7 @@ vs Leader              : Powerful Broadsword  (40% hit chance)
 vs Mystic              : Powerful Broadsword  (60% hit chance)
 vs Skirmisher          : Generic Accuracy Broadsword (70% hit chance)
 vs Sniper              : Powerful Broadsword  (50% hit chance)
-vs Warrior             : Generic Accuracy Broadsword (70% hit chance)
+vs Warrior             : Powerful Broadsword  (40% hit chance)
 
 ### Attacker: Monk Kama
 
@@ -401,7 +401,7 @@ vs Leader              : Powerful Kama        (50% hit chance)
 vs Mystic              : Powerful Kama        (70% hit chance)
 vs Skirmisher          : Powerful Kama        (40% hit chance)
 vs Sniper              : Powerful Kama        (60% hit chance)
-vs Warrior             : Powerful Kama        (40% hit chance)
+vs Warrior             : Powerful Kama        (50% hit chance)
 
 ### Attacker: Paladin Shield
 
@@ -420,7 +420,7 @@ vs Leader              : Broadsword           (50% hit chance)
 vs Mystic              : Broadsword           (70% hit chance)
 vs Skirmisher          : Broadsword           (40% hit chance)
 vs Sniper              : Broadsword           (60% hit chance)
-vs Warrior             : Broadsword           (40% hit chance)
+vs Warrior             : Broadsword           (50% hit chance)
 
 ### Attacker: Ranger Longbow
 
@@ -439,7 +439,7 @@ vs Leader              : Powerful Longbow     (60% hit chance)
 vs Mystic              : Powerful Longbow     (80% hit chance)
 vs Skirmisher          : Powerful Longbow     (50% hit chance)
 vs Sniper              : Powerful Longbow     (70% hit chance)
-vs Warrior             : Powerful Longbow     (50% hit chance)
+vs Warrior             : Powerful Longbow     (60% hit chance)
 
 ### Attacker: Rogue Smallsword
 
@@ -458,7 +458,7 @@ vs Leader              : Sneak Attack -- Smallsword (80% hit chance)
 vs Mystic              : Sneak Attack -- Smallsword (100% hit chance)
 vs Skirmisher          : Sneak Attack -- Smallsword (70% hit chance)
 vs Sniper              : Sneak Attack -- Smallsword (90% hit chance)
-vs Warrior             : Sneak Attack -- Smallsword (70% hit chance)
+vs Warrior             : Sneak Attack -- Smallsword (80% hit chance)
 
 ### Attacker: Sorcerer Dexterity
 
@@ -477,7 +477,7 @@ vs Leader              : Firebolt             (60% hit chance)
 vs Mystic              : Firebolt             (80% hit chance)
 vs Skirmisher          : Inflict Wound        (90% hit chance)
 vs Sniper              : Firebolt             (70% hit chance)
-vs Warrior             : Firebolt             (50% hit chance)
+vs Warrior             : Firebolt             (60% hit chance)
 
 ### Attacker: Wizard Perception
 
@@ -496,7 +496,7 @@ vs Leader              : Firebolt             (80% hit chance)
 vs Mystic              : Firebolt             (100% hit chance)
 vs Skirmisher          : Firebolt             (70% hit chance)
 vs Sniper              : Firebolt             (90% hit chance)
-vs Warrior             : Firebolt             (70% hit chance)
+vs Warrior             : Firebolt             (80% hit chance)
 
 ### Attacker: Brute
 
@@ -515,7 +515,7 @@ vs Leader              : Generic Accuracy Bite (60% hit chance)
 vs Mystic              : Powerful Bite        (40% hit chance)
 vs Skirmisher          : Generic Accuracy Bite (50% hit chance)
 vs Sniper              : Generic Accuracy Bite (70% hit chance)
-vs Warrior             : Generic Accuracy Bite (50% hit chance)
+vs Warrior             : Generic Accuracy Bite (60% hit chance)
 
 ### Attacker: Leader
 
@@ -534,7 +534,7 @@ vs Leader              : Generic Accuracy Bite (70% hit chance)
 vs Mystic              : Powerful Bite        (50% hit chance)
 vs Skirmisher          : Fort Bolt            (80% hit chance)
 vs Sniper              : Fort Bolt            (80% hit chance)
-vs Warrior             : Certain Bite         (80% hit chance)
+vs Warrior             : Generic Accuracy Bite (70% hit chance)
 
 ### Attacker: Mystic
 
@@ -553,7 +553,7 @@ vs Leader              : Armor Bolt           (70% hit chance)
 vs Mystic              : Armor Bolt           (90% hit chance)
 vs Skirmisher          : Fort Bolt            (90% hit chance)
 vs Sniper              : Fort Bolt            (90% hit chance)
-vs Warrior             : Armor Bolt           (60% hit chance)
+vs Warrior             : Armor Bolt           (70% hit chance)
 
 ### Attacker: Skirmisher
 
@@ -572,7 +572,7 @@ vs Leader              : Powerful Bite        (40% hit chance)
 vs Mystic              : Powerful Bite        (60% hit chance)
 vs Skirmisher          : Generic Accuracy Bite (70% hit chance)
 vs Sniper              : Powerful Bite        (50% hit chance)
-vs Warrior             : Generic Accuracy Bite (70% hit chance)
+vs Warrior             : Powerful Bite        (40% hit chance)
 
 ### Attacker: Sniper
 
@@ -591,7 +591,7 @@ vs Leader              : Powerful Longbow     (50% hit chance)
 vs Mystic              : Powerful Longbow     (70% hit chance)
 vs Skirmisher          : Powerful Longbow     (40% hit chance)
 vs Sniper              : Powerful Longbow     (60% hit chance)
-vs Warrior             : Powerful Longbow     (40% hit chance)
+vs Warrior             : Powerful Longbow     (50% hit chance)
 
 ### Attacker: Warrior
 
@@ -610,7 +610,7 @@ vs Leader              : Certain Bite         (80% hit chance)
 vs Mystic              : Powerful Bite        (40% hit chance)
 vs Skirmisher          : Certain Bite         (70% hit chance)
 vs Sniper              : Generic Accuracy Bite (70% hit chance)
-vs Warrior             : Certain Bite         (70% hit chance)
+vs Warrior             : Certain Bite         (80% hit chance)
 
 ## Level 10
 
@@ -631,7 +631,7 @@ vs Leader              : Powerful Greatmace   (90% hit chance)
 vs Mystic              : Powerful Greatmace   (100% hit chance)
 vs Skirmisher          : Powerful Greatmace   (70% hit chance)
 vs Sniper              : Powerful Greatmace   (100% hit chance)
-vs Warrior             : Powerful Greatmace   (80% hit chance)
+vs Warrior             : Powerful Greatmace   (90% hit chance)
 
 ### Attacker: Barbarian Shield
 
@@ -650,7 +650,7 @@ vs Leader              : Powerful Broadsword  (60% hit chance)
 vs Mystic              : Powerful Broadsword  (80% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (60% hit chance)
 vs Sniper              : Powerful Broadsword  (70% hit chance)
-vs Warrior             : Extra Damage Broadsword (70% hit chance)
+vs Warrior             : Powerful Broadsword  (60% hit chance)
 
 ### Attacker: Fighter Greatmace
 
@@ -669,7 +669,7 @@ vs Leader              : Powerful Greatmace   (60% hit chance)
 vs Mystic              : Powerful Greatmace   (80% hit chance)
 vs Skirmisher          : Powerful Greatmace   (40% hit chance)
 vs Sniper              : Powerful Greatmace   (70% hit chance)
-vs Warrior             : Powerful Greatmace   (50% hit chance)
+vs Warrior             : Powerful Greatmace   (60% hit chance)
 
 ### Attacker: Fighter Shield
 
@@ -688,7 +688,7 @@ vs Leader              : Extra Damage Broadsword (80% hit chance)
 vs Mystic              : Powerful Broadsword  (80% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (60% hit chance)
 vs Sniper              : Powerful Broadsword  (70% hit chance)
-vs Warrior             : Extra Damage Broadsword (70% hit chance)
+vs Warrior             : Extra Damage Broadsword (80% hit chance)
 
 ### Attacker: Monk Kama
 
@@ -707,7 +707,7 @@ vs Leader              : Powerful Kama        (60% hit chance)
 vs Mystic              : Powerful Kama        (80% hit chance)
 vs Skirmisher          : Extra Damage Kama    (60% hit chance)
 vs Sniper              : Powerful Kama        (70% hit chance)
-vs Warrior             : Extra Damage Kama    (70% hit chance)
+vs Warrior             : Powerful Kama        (60% hit chance)
 
 ### Attacker: Paladin Shield
 
@@ -726,7 +726,7 @@ vs Leader              : Broadsword           (50% hit chance)
 vs Mystic              : Broadsword           (70% hit chance)
 vs Skirmisher          : Broadsword           (30% hit chance)
 vs Sniper              : Broadsword           (60% hit chance)
-vs Warrior             : Broadsword           (40% hit chance)
+vs Warrior             : Broadsword           (50% hit chance)
 
 ### Attacker: Ranger Longbow
 
@@ -745,7 +745,7 @@ vs Leader              : Powerful Longbow     (80% hit chance)
 vs Mystic              : Powerful Longbow     (100% hit chance)
 vs Skirmisher          : Powerful Longbow     (60% hit chance)
 vs Sniper              : Powerful Longbow     (90% hit chance)
-vs Warrior             : Powerful Longbow     (70% hit chance)
+vs Warrior             : Powerful Longbow     (80% hit chance)
 
 ### Attacker: Rogue Smallsword
 
@@ -764,7 +764,7 @@ vs Leader              : Sneak Attack -- Smallsword (80% hit chance)
 vs Mystic              : Sneak Attack -- Smallsword (100% hit chance)
 vs Skirmisher          : Sneak Attack -- Smallsword (60% hit chance)
 vs Sniper              : Sneak Attack -- Smallsword (90% hit chance)
-vs Warrior             : Sneak Attack -- Smallsword (70% hit chance)
+vs Warrior             : Sneak Attack -- Smallsword (80% hit chance)
 
 ### Attacker: Sorcerer Dexterity
 
@@ -783,7 +783,7 @@ vs Leader              : Firebolt             (60% hit chance)
 vs Mystic              : Firebolt             (80% hit chance)
 vs Skirmisher          : Firebolt             (40% hit chance)
 vs Sniper              : Firebolt             (70% hit chance)
-vs Warrior             : Firebolt             (50% hit chance)
+vs Warrior             : Firebolt             (60% hit chance)
 
 ### Attacker: Wizard Perception
 
@@ -802,7 +802,7 @@ vs Leader              : Firebolt             (80% hit chance)
 vs Mystic              : Firebolt             (100% hit chance)
 vs Skirmisher          : Firebolt             (60% hit chance)
 vs Sniper              : Firebolt             (90% hit chance)
-vs Warrior             : Firebolt             (70% hit chance)
+vs Warrior             : Firebolt             (80% hit chance)
 
 ### Attacker: Brute
 
@@ -821,7 +821,7 @@ vs Leader              : Powerful Bite        (50% hit chance)
 vs Mystic              : Powerful Bite        (70% hit chance)
 vs Skirmisher          : Generic Accuracy Bite (70% hit chance)
 vs Sniper              : Powerful Bite        (60% hit chance)
-vs Warrior             : Powerful Bite        (40% hit chance)
+vs Warrior             : Powerful Bite        (50% hit chance)
 
 ### Attacker: Leader
 
@@ -840,7 +840,7 @@ vs Leader              : Powerful Bite        (60% hit chance)
 vs Mystic              : Powerful Bite        (80% hit chance)
 vs Skirmisher          : Fort Bolt            (90% hit chance)
 vs Sniper              : Powerful Bite        (70% hit chance)
-vs Warrior             : Powerful Bite        (50% hit chance)
+vs Warrior             : Powerful Bite        (60% hit chance)
 
 ### Attacker: Mystic
 
@@ -859,7 +859,7 @@ vs Leader              : Armor Bolt           (80% hit chance)
 vs Mystic              : Armor Bolt           (100% hit chance)
 vs Skirmisher          : Fort Bolt            (100% hit chance)
 vs Sniper              : Fort Bolt            (100% hit chance)
-vs Warrior             : Armor Bolt           (70% hit chance)
+vs Warrior             : Armor Bolt           (80% hit chance)
 
 ### Attacker: Skirmisher
 
@@ -878,7 +878,7 @@ vs Leader              : Powerful Bite        (70% hit chance)
 vs Mystic              : Powerful Bite        (90% hit chance)
 vs Skirmisher          : Powerful Bite        (50% hit chance)
 vs Sniper              : Powerful Bite        (80% hit chance)
-vs Warrior             : Powerful Bite        (60% hit chance)
+vs Warrior             : Powerful Bite        (70% hit chance)
 
 ### Attacker: Sniper
 
@@ -897,7 +897,7 @@ vs Leader              : Extra Damage Longbow (90% hit chance)
 vs Mystic              : Extra Damage Longbow (100% hit chance)
 vs Skirmisher          : Extra Damage Longbow (70% hit chance)
 vs Sniper              : Extra Damage Longbow (100% hit chance)
-vs Warrior             : Extra Damage Longbow (80% hit chance)
+vs Warrior             : Extra Damage Longbow (90% hit chance)
 
 ### Attacker: Warrior
 
@@ -916,7 +916,7 @@ vs Leader              : Powerful Bite        (50% hit chance)
 vs Mystic              : Powerful Bite        (70% hit chance)
 vs Skirmisher          : Extra Damage Bite    (40% hit chance)
 vs Sniper              : Powerful Bite        (60% hit chance)
-vs Warrior             : Powerful Bite        (40% hit chance)
+vs Warrior             : Powerful Bite        (50% hit chance)
 
 ## Level 15
 
@@ -937,7 +937,7 @@ vs Leader              : Power Strike+ -- Greatmace (70% hit chance)
 vs Mystic              : Power Strike+ -- Greatmace (90% hit chance)
 vs Skirmisher          : Powerful Greatmace   (80% hit chance)
 vs Sniper              : Power Strike+ -- Greatmace (80% hit chance)
-vs Warrior             : Power Strike+ -- Greatmace (60% hit chance)
+vs Warrior             : Power Strike+ -- Greatmace (70% hit chance)
 
 ### Attacker: Barbarian Shield
 
@@ -956,7 +956,7 @@ vs Leader              : Extra Damage Broadsword (60% hit chance)
 vs Mystic              : Extra Damage Broadsword (80% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (40% hit chance)
 vs Sniper              : Extra Damage Broadsword (70% hit chance)
-vs Warrior             : Extra Damage Broadsword (50% hit chance)
+vs Warrior             : Extra Damage Broadsword (60% hit chance)
 
 ### Attacker: Fighter Greatmace
 
@@ -975,7 +975,7 @@ vs Leader              : Powerful Greatmace   (60% hit chance)
 vs Mystic              : Powerful Greatmace   (80% hit chance)
 vs Skirmisher          : Certain Strike+ -- Greatmace (100% hit chance)
 vs Sniper              : Powerful Greatmace   (70% hit chance)
-vs Warrior             : Powerful Greatmace   (50% hit chance)
+vs Warrior             : Powerful Greatmace   (60% hit chance)
 
 ### Attacker: Fighter Shield
 
@@ -994,7 +994,7 @@ vs Leader              : Extra Damage Broadsword (60% hit chance)
 vs Mystic              : Extra Damage Broadsword (80% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (40% hit chance)
 vs Sniper              : Extra Damage Broadsword (70% hit chance)
-vs Warrior             : Extra Damage Broadsword (50% hit chance)
+vs Warrior             : Extra Damage Broadsword (60% hit chance)
 
 ### Attacker: Monk Kama
 
@@ -1013,7 +1013,7 @@ vs Leader              : Extra Damage Kama    (70% hit chance)
 vs Mystic              : Extra Damage Kama    (90% hit chance)
 vs Skirmisher          : Extra Damage Kama    (50% hit chance)
 vs Sniper              : Extra Damage Kama    (80% hit chance)
-vs Warrior             : Extra Damage Kama    (60% hit chance)
+vs Warrior             : Extra Damage Kama    (70% hit chance)
 
 ### Attacker: Paladin Shield
 
@@ -1032,7 +1032,7 @@ vs Leader              : Broadsword           (40% hit chance)
 vs Mystic              : Broadsword           (60% hit chance)
 vs Skirmisher          : Broadsword           (20% hit chance)
 vs Sniper              : Broadsword           (50% hit chance)
-vs Warrior             : Broadsword           (30% hit chance)
+vs Warrior             : Broadsword           (40% hit chance)
 
 ### Attacker: Ranger Longbow
 
@@ -1051,7 +1051,7 @@ vs Leader              : Power Strike+ -- Longbow (60% hit chance)
 vs Mystic              : Power Strike+ -- Longbow (80% hit chance)
 vs Skirmisher          : Powerful Longbow     (70% hit chance)
 vs Sniper              : Power Strike+ -- Longbow (70% hit chance)
-vs Warrior             : Powerful Longbow     (80% hit chance)
+vs Warrior             : Power Strike+ -- Longbow (60% hit chance)
 
 ### Attacker: Rogue Smallsword
 
@@ -1070,7 +1070,7 @@ vs Leader              : Sneak Attack -- Smallsword (80% hit chance)
 vs Mystic              : Sneak Attack -- Smallsword (100% hit chance)
 vs Skirmisher          : Sneak Attack -- Smallsword (60% hit chance)
 vs Sniper              : Sneak Attack -- Smallsword (90% hit chance)
-vs Warrior             : Sneak Attack -- Smallsword (70% hit chance)
+vs Warrior             : Sneak Attack -- Smallsword (80% hit chance)
 
 ### Attacker: Sorcerer Dexterity
 
@@ -1089,7 +1089,7 @@ vs Leader              : Firebolt             (60% hit chance)
 vs Mystic              : Firebolt             (80% hit chance)
 vs Skirmisher          : Firebolt             (40% hit chance)
 vs Sniper              : Firebolt             (70% hit chance)
-vs Warrior             : Firebolt             (50% hit chance)
+vs Warrior             : Firebolt             (60% hit chance)
 
 ### Attacker: Wizard Perception
 
@@ -1108,7 +1108,7 @@ vs Leader              : Firebolt             (80% hit chance)
 vs Mystic              : Firebolt             (100% hit chance)
 vs Skirmisher          : Firebolt             (60% hit chance)
 vs Sniper              : Firebolt             (90% hit chance)
-vs Warrior             : Firebolt             (70% hit chance)
+vs Warrior             : Firebolt             (80% hit chance)
 
 ### Attacker: Brute
 
@@ -1127,7 +1127,7 @@ vs Leader              : Powerful Bite        (50% hit chance)
 vs Mystic              : Powerful Bite        (70% hit chance)
 vs Skirmisher          : Certain Strike+ -- Bite (90% hit chance)
 vs Sniper              : Powerful Bite        (60% hit chance)
-vs Warrior             : Certain Strike+ -- Bite (100% hit chance)
+vs Warrior             : Powerful Bite        (50% hit chance)
 
 ### Attacker: Leader
 
@@ -1146,7 +1146,7 @@ vs Leader              : Armor Bolt           (60% hit chance)
 vs Mystic              : Armor Bolt           (80% hit chance)
 vs Skirmisher          : Fort Bolt            (80% hit chance)
 vs Sniper              : Fort Bolt            (80% hit chance)
-vs Warrior             : Armor Bolt           (50% hit chance)
+vs Warrior             : Armor Bolt           (60% hit chance)
 
 ### Attacker: Mystic
 
@@ -1165,7 +1165,7 @@ vs Leader              : Armor Bolt           (80% hit chance)
 vs Mystic              : Armor Bolt           (100% hit chance)
 vs Skirmisher          : Fort Bolt            (100% hit chance)
 vs Sniper              : Fort Bolt            (100% hit chance)
-vs Warrior             : Armor Bolt           (70% hit chance)
+vs Warrior             : Armor Bolt           (80% hit chance)
 
 ### Attacker: Skirmisher
 
@@ -1184,7 +1184,7 @@ vs Leader              : Powerful Bite        (80% hit chance)
 vs Mystic              : Power Strike+ -- Bite (70% hit chance)
 vs Skirmisher          : Powerful Bite        (60% hit chance)
 vs Sniper              : Power Strike+ -- Bite (60% hit chance)
-vs Warrior             : Powerful Bite        (70% hit chance)
+vs Warrior             : Powerful Bite        (80% hit chance)
 
 ### Attacker: Sniper
 
@@ -1203,7 +1203,7 @@ vs Leader              : Extra Damage Longbow (90% hit chance)
 vs Mystic              : Power Strike+ -- Longbow (80% hit chance)
 vs Skirmisher          : Extra Damage Longbow (70% hit chance)
 vs Sniper              : Extra Damage Longbow (100% hit chance)
-vs Warrior             : Extra Damage Longbow (80% hit chance)
+vs Warrior             : Extra Damage Longbow (90% hit chance)
 
 ### Attacker: Warrior
 
@@ -1222,7 +1222,7 @@ vs Leader              : Powerful Bite        (50% hit chance)
 vs Mystic              : Powerful Bite        (70% hit chance)
 vs Skirmisher          : Certain Strike+ -- Bite (90% hit chance)
 vs Sniper              : Powerful Bite        (60% hit chance)
-vs Warrior             : Certain Strike+ -- Bite (100% hit chance)
+vs Warrior             : Powerful Bite        (50% hit chance)
 
 ## Level 20
 
@@ -1243,7 +1243,7 @@ vs Leader              : Generic Triple Damage -- Greatmace (80% hit chance)
 vs Mystic              : Generic Triple Damage -- Greatmace (100% hit chance)
 vs Skirmisher          : Generic Triple Damage -- Greatmace (60% hit chance)
 vs Sniper              : Generic Triple Damage -- Greatmace (90% hit chance)
-vs Warrior             : Generic Triple Damage -- Greatmace (70% hit chance)
+vs Warrior             : Generic Triple Damage -- Greatmace (80% hit chance)
 
 ### Attacker: Barbarian Shield
 
@@ -1262,7 +1262,7 @@ vs Leader              : Extra Damage Broadsword (60% hit chance)
 vs Mystic              : Extra Damage Broadsword (80% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (40% hit chance)
 vs Sniper              : Extra Damage Broadsword (70% hit chance)
-vs Warrior             : Extra Damage Broadsword (50% hit chance)
+vs Warrior             : Extra Damage Broadsword (60% hit chance)
 
 ### Attacker: Fighter Greatmace
 
@@ -1281,7 +1281,7 @@ vs Leader              : Generic Triple Damage -- Greatmace (50% hit chance)
 vs Mystic              : Generic Triple Damage -- Greatmace (70% hit chance)
 vs Skirmisher          : Powerful Greatmace   (50% hit chance)
 vs Sniper              : Generic Triple Damage -- Greatmace (60% hit chance)
-vs Warrior             : Generic Triple Damage -- Greatmace (40% hit chance)
+vs Warrior             : Generic Triple Damage -- Greatmace (50% hit chance)
 
 ### Attacker: Fighter Shield
 
@@ -1300,7 +1300,7 @@ vs Leader              : Extra Damage Broadsword (50% hit chance)
 vs Mystic              : Extra Damage Broadsword (70% hit chance)
 vs Skirmisher          : Extra Damage Broadsword (30% hit chance)
 vs Sniper              : Extra Damage Broadsword (60% hit chance)
-vs Warrior             : Extra Damage Broadsword (40% hit chance)
+vs Warrior             : Extra Damage Broadsword (50% hit chance)
 
 ### Attacker: Monk Kama
 
@@ -1319,7 +1319,7 @@ vs Leader              : Extra Damage Kama    (50% hit chance)
 vs Mystic              : Extra Damage Kama    (70% hit chance)
 vs Skirmisher          : Extra Damage Kama    (30% hit chance)
 vs Sniper              : Extra Damage Kama    (60% hit chance)
-vs Warrior             : Extra Damage Kama    (40% hit chance)
+vs Warrior             : Extra Damage Kama    (50% hit chance)
 
 ### Attacker: Paladin Shield
 
@@ -1338,7 +1338,7 @@ vs Leader              : Broadsword           (50% hit chance)
 vs Mystic              : Broadsword           (70% hit chance)
 vs Skirmisher          : Broadsword           (30% hit chance)
 vs Sniper              : Broadsword           (60% hit chance)
-vs Warrior             : Broadsword           (40% hit chance)
+vs Warrior             : Broadsword           (50% hit chance)
 
 ### Attacker: Ranger Longbow
 
@@ -1357,7 +1357,7 @@ vs Leader              : Extra Damage Longbow (80% hit chance)
 vs Mystic              : Extra Damage Longbow (100% hit chance)
 vs Skirmisher          : Extra Damage Longbow (60% hit chance)
 vs Sniper              : Extra Damage Longbow (90% hit chance)
-vs Warrior             : Extra Damage Longbow (70% hit chance)
+vs Warrior             : Extra Damage Longbow (80% hit chance)
 
 ### Attacker: Rogue Smallsword
 
@@ -1376,7 +1376,7 @@ vs Leader              : Sneak Attack -- Smallsword (70% hit chance)
 vs Mystic              : Sneak Attack -- Smallsword (90% hit chance)
 vs Skirmisher          : Sneak Attack -- Smallsword (50% hit chance)
 vs Sniper              : Sneak Attack -- Smallsword (80% hit chance)
-vs Warrior             : Sneak Attack -- Smallsword (60% hit chance)
+vs Warrior             : Sneak Attack -- Smallsword (70% hit chance)
 
 ### Attacker: Sorcerer Dexterity
 
@@ -1395,7 +1395,7 @@ vs Leader              : Firebolt             (60% hit chance)
 vs Mystic              : Firebolt             (80% hit chance)
 vs Skirmisher          : Firebolt             (40% hit chance)
 vs Sniper              : Firebolt             (70% hit chance)
-vs Warrior             : Firebolt             (50% hit chance)
+vs Warrior             : Firebolt             (60% hit chance)
 
 ### Attacker: Wizard Perception
 
@@ -1414,7 +1414,7 @@ vs Leader              : Firebolt             (80% hit chance)
 vs Mystic              : Firebolt             (100% hit chance)
 vs Skirmisher          : Firebolt             (60% hit chance)
 vs Sniper              : Firebolt             (90% hit chance)
-vs Warrior             : Firebolt             (70% hit chance)
+vs Warrior             : Firebolt             (80% hit chance)
 
 ### Attacker: Brute
 
@@ -1433,7 +1433,7 @@ vs Leader              : Extra Damage Bite    (50% hit chance)
 vs Mystic              : Extra Damage Bite    (70% hit chance)
 vs Skirmisher          : Extra Damage Bite    (30% hit chance)
 vs Sniper              : Extra Damage Bite    (60% hit chance)
-vs Warrior             : Extra Damage Bite    (40% hit chance)
+vs Warrior             : Extra Damage Bite    (50% hit chance)
 
 ### Attacker: Leader
 
@@ -1452,7 +1452,7 @@ vs Leader              : Armor Bolt           (60% hit chance)
 vs Mystic              : Armor Bolt           (80% hit chance)
 vs Skirmisher          : Fort Bolt            (80% hit chance)
 vs Sniper              : Fort Bolt            (80% hit chance)
-vs Warrior             : Armor Bolt           (50% hit chance)
+vs Warrior             : Armor Bolt           (60% hit chance)
 
 ### Attacker: Mystic
 
@@ -1471,7 +1471,7 @@ vs Leader              : Armor Bolt           (70% hit chance)
 vs Mystic              : Armor Bolt           (90% hit chance)
 vs Skirmisher          : Fort Bolt            (90% hit chance)
 vs Sniper              : Fort Bolt            (90% hit chance)
-vs Warrior             : Armor Bolt           (60% hit chance)
+vs Warrior             : Armor Bolt           (70% hit chance)
 
 ### Attacker: Skirmisher
 
@@ -1490,7 +1490,7 @@ vs Leader              : Generic Triple Damage -- Bite (70% hit chance)
 vs Mystic              : Generic Triple Damage -- Bite (90% hit chance)
 vs Skirmisher          : Generic Triple Damage -- Bite (50% hit chance)
 vs Sniper              : Generic Triple Damage -- Bite (80% hit chance)
-vs Warrior             : Generic Triple Damage -- Bite (60% hit chance)
+vs Warrior             : Generic Triple Damage -- Bite (70% hit chance)
 
 ### Attacker: Sniper
 
@@ -1509,7 +1509,7 @@ vs Leader              : Extra Damage Longbow (80% hit chance)
 vs Mystic              : Extra Damage Longbow (100% hit chance)
 vs Skirmisher          : Extra Damage Longbow (60% hit chance)
 vs Sniper              : Extra Damage Longbow (90% hit chance)
-vs Warrior             : Extra Damage Longbow (70% hit chance)
+vs Warrior             : Extra Damage Longbow (80% hit chance)
 
 ### Attacker: Warrior
 
@@ -1528,4 +1528,4 @@ vs Leader              : Generic Triple Damage -- Bite (50% hit chance)
 vs Mystic              : Generic Triple Damage -- Bite (70% hit chance)
 vs Skirmisher          : Powerful Bite        (50% hit chance)
 vs Sniper              : Generic Triple Damage -- Bite (60% hit chance)
-vs Warrior             : Generic Triple Damage -- Bite (40% hit chance)
+vs Warrior             : Generic Triple Damage -- Bite (50% hit chance)

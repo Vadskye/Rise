@@ -19,7 +19,7 @@ Leader              : 2.75
 Mystic              : 2.00
 Skirmisher          : 2.00
 Sniper              : 1.50
-Warrior             : 5.00
+Warrior             : 4.50
 
 ### Level 5
 
@@ -38,7 +38,7 @@ Leader              : 2.50
 Mystic              : 1.50
 Skirmisher          : 2.25
 Sniper              : 1.25
-Warrior             : 4.50
+Warrior             : 3.75
 
 ### Level 10
 
@@ -57,7 +57,7 @@ Leader              : 2.50
 Mystic              : 1.75
 Skirmisher          : 2.25
 Sniper              : 1.25
-Warrior             : 4.00
+Warrior             : 3.50
 
 ### Level 15
 
@@ -76,7 +76,7 @@ Leader              : 3.75
 Mystic              : 2.50
 Skirmisher          : 3.25
 Sniper              : 1.75
-Warrior             : 6.25
+Warrior             : 5.50
 
 ### Level 20
 
@@ -95,7 +95,7 @@ Leader              : 4.25
 Mystic              : 3.00
 Skirmisher          : 3.75
 Sniper              : 2.00
-Warrior             : 7.50
+Warrior             : 6.50
 
 ## Fighter Greatmace
 
@@ -116,7 +116,7 @@ Leader              : 2.75
 Mystic              : 2.00
 Skirmisher          : 2.00
 Sniper              : 1.50
-Warrior             : 5.00
+Warrior             : 4.50
 
 ### Level 5
 
@@ -135,7 +135,7 @@ Leader              : 2.75
 Mystic              : 1.75
 Skirmisher          : 2.50
 Sniper              : 1.50
-Warrior             : 5.50
+Warrior             : 4.25
 
 ### Level 10
 
@@ -154,7 +154,7 @@ Leader              : 2.50
 Mystic              : 1.75
 Skirmisher          : 2.50
 Sniper              : 1.50
-Warrior             : 4.50
+Warrior             : 4.00
 
 ### Level 15
 
@@ -173,7 +173,7 @@ Leader              : 4.50
 Mystic              : 3.25
 Skirmisher          : 4.00
 Sniper              : 2.25
-Warrior             : 8.00
+Warrior             : 6.75
 
 ### Level 20
 
@@ -192,7 +192,7 @@ Leader              : 5.25
 Mystic              : 3.50
 Skirmisher          : 4.75
 Sniper              : 2.50
-Warrior             : 9.75
+Warrior             : 8.00
 
 ## Fighter Shield
 
@@ -213,7 +213,7 @@ Leader              : 4.00
 Mystic              : 3.00
 Skirmisher          : 3.00
 Sniper              : 2.25
-Warrior             : 7.50
+Warrior             : 7.00
 
 ### Level 5
 
@@ -232,7 +232,7 @@ Leader              : 4.25
 Mystic              : 2.75
 Skirmisher          : 4.00
 Sniper              : 2.00
-Warrior             : 8.25
+Warrior             : 6.50
 
 ### Level 10
 
@@ -251,7 +251,7 @@ Leader              : 4.00
 Mystic              : 2.75
 Skirmisher          : 3.50
 Sniper              : 2.25
-Warrior             : 6.75
+Warrior             : 6.00
 
 ### Level 15
 
@@ -270,7 +270,7 @@ Leader              : 5.75
 Mystic              : 4.00
 Skirmisher          : 5.25
 Sniper              : 2.75
-Warrior             : 10.00
+Warrior             : 8.75
 
 ### Level 20
 
@@ -289,7 +289,7 @@ Leader              : 6.50
 Mystic              : 4.25
 Skirmisher          : 6.00
 Sniper              : 3.00
-Warrior             : 12.00
+Warrior             : 10.00
 
 ## Rogue Smallsword
 
@@ -310,7 +310,7 @@ Leader              : 3.75
 Mystic              : 4.00
 Skirmisher          : 2.75
 Sniper              : 2.50
-Warrior             : 6.75
+Warrior             : 6.50
 
 ### Level 5
 
@@ -329,7 +329,7 @@ Leader              : 5.75
 Mystic              : 4.50
 Skirmisher          : 5.00
 Sniper              : 3.25
-Warrior             : 10.25
+Warrior             : 9.00
 
 ### Level 10
 
@@ -348,7 +348,7 @@ Leader              : 4.50
 Mystic              : 3.75
 Skirmisher          : 4.00
 Sniper              : 2.50
-Warrior             : 7.50
+Warrior             : 6.75
 
 ### Level 15
 
@@ -367,7 +367,7 @@ Leader              : 5.25
 Mystic              : 4.25
 Skirmisher          : 4.25
 Sniper              : 2.75
-Warrior             : 9.00
+Warrior             : 8.00
 
 ### Level 20
 
@@ -386,7 +386,7 @@ Leader              : 5.00
 Mystic              : 3.75
 Skirmisher          : 4.00
 Sniper              : 2.50
-Warrior             : 8.75
+Warrior             : 7.75
 
 ## Sorcerer Dexterity
 
@@ -407,7 +407,7 @@ Leader              : 4.00
 Mystic              : 3.75
 Skirmisher          : 2.50
 Sniper              : 2.50
-Warrior             : 8.00
+Warrior             : 7.00
 
 ### Level 5
 
@@ -426,7 +426,7 @@ Leader              : 4.00
 Mystic              : 2.75
 Skirmisher          : 3.25
 Sniper              : 2.00
-Warrior             : 7.25
+Warrior             : 6.25
 
 ### Level 10
 
@@ -445,7 +445,7 @@ Leader              : 4.00
 Mystic              : 2.75
 Skirmisher          : 4.00
 Sniper              : 2.25
-Warrior             : 7.00
+Warrior             : 6.00
 
 ### Level 15
 
@@ -464,7 +464,7 @@ Leader              : 5.25
 Mystic              : 3.75
 Skirmisher          : 4.75
 Sniper              : 2.50
-Warrior             : 9.25
+Warrior             : 8.00
 
 ### Level 20
 
@@ -483,7 +483,7 @@ Leader              : 5.50
 Mystic              : 3.75
 Skirmisher          : 4.75
 Sniper              : 2.75
-Warrior             : 10.00
+Warrior             : 8.50
 
 ## Wizard Perception
 
@@ -504,7 +504,7 @@ Leader              : 3.50
 Mystic              : 3.50
 Skirmisher          : 2.25
 Sniper              : 2.25
-Warrior             : 7.00
+Warrior             : 6.25
 
 ### Level 5
 
@@ -523,7 +523,7 @@ Leader              : 3.00
 Mystic              : 2.25
 Skirmisher          : 2.50
 Sniper              : 1.50
-Warrior             : 5.00
+Warrior             : 4.50
 
 ### Level 10
 
@@ -542,7 +542,7 @@ Leader              : 3.00
 Mystic              : 2.50
 Skirmisher          : 2.75
 Sniper              : 1.75
-Warrior             : 5.25
+Warrior             : 4.75
 
 ### Level 15
 
@@ -561,7 +561,7 @@ Leader              : 3.75
 Mystic              : 3.00
 Skirmisher          : 3.00
 Sniper              : 2.00
-Warrior             : 6.25
+Warrior             : 5.50
 
 ### Level 20
 
@@ -580,4 +580,4 @@ Leader              : 3.75
 Mystic              : 2.75
 Skirmisher          : 2.75
 Sniper              : 1.75
-Warrior             : 6.25
+Warrior             : 5.50
