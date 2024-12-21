@@ -14,17 +14,13 @@ export const photomancy: MysticSphere = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain a +4 bonus, and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
+          you gain a +4 bonus to the Disguise check, but you can only accomplish changes that would be possible with makeup, paint, and dye.
+          You cannot make significant changes to your facial structure, equipment, and so on.
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
           This ability lasts until you use it again or until you \\glossterm{dismiss} it.
         `,
         name: 'change appearance',
-      },
-      scaling: {
-        2: `The bonus increases to +6.`,
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +10.`,
       },
       tags: ['Visual'],
     },
@@ -345,6 +341,34 @@ export const photomancy: MysticSphere = {
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 5,
+      tags: ['Visual'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Desperate Mirrorswarm',
+
+      effect: `
+        Whenever you use the \ability{total defense} or \ability{recover} ability, you can activate this ability.
+        When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
+        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance} for the rest of the round.
+        After that time, your attunement to this effect ends.
+        This is a \atSwift effect, so it protects you from attacks during the current phase.
+        It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
+      `,
+      rank: 1,
+      tags: ['Visual'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Beacon of Light',
+
+      effect: `
+        All of your abilities and equipment that create light have their light radius doubled.
+        This includes mundane equipment you carry, such as torches.
+      `,
+      rank: 1,
       tags: ['Visual'],
       type: 'Attune',
     },

@@ -200,6 +200,18 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Shrink',
+
+      effect: `
+        Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
+        Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
+        It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
+      `,
+      rank: 2,
+      type: 'Attune',
+    },
+
+    {
       name: 'Greater Shrink',
 
       effect: `
@@ -439,6 +451,22 @@ export const polymorph: MysticSphere = {
     },
 
     {
+      name: 'Minor Bodymorph',
+
+      effect: `
+        If you have Flexibility as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
+        Otherwise, you are treated as being trained in that skill.
+      `,
+      rank: 1,
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
+      type: 'Attune',
+    },
+
+    {
       name: 'Sludgeform',
 
       attack: {
@@ -605,17 +633,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 3,
       type: 'Attune',
-    },
-    {
-      name: 'Mass Scent',
-
-      functionsLike: {
-        mass: true,
-        name: 'scent',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
@@ -855,6 +872,17 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       scaling: 'accuracy',
+    },
+    {
+      name: 'Duplicate Organ',
+
+      effect: `
+        When you cast this spell, you choose your eyes, nose, mouth, or ears.
+        You gain a duplicate copy of that organ anywhere on your body.
+        You can only use one of them at a time, but you can change which one is active once per round as a \\glossterm{free action}.
+      `,
+      rank: 1,
+      type: 'Attune',
     },
   ],
   rituals: [
