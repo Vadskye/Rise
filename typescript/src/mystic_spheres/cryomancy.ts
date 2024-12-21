@@ -582,7 +582,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If it loses hit points, the target is \slowed as a \\glossterm{condition}.
+        If it loses hit points, the target is \\slowed as a \\glossterm{condition}.
       `,
       rank: 2,
       scaling: 'accuracy',

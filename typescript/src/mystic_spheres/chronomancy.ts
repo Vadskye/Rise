@@ -76,7 +76,7 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Sprint',
 
       effect: `
-        Whenever you use the \\ability{sprint} ability, you gain a \plus10 foot bonus to your land speed during that phase.
+        Whenever you use the \\ability{sprint} ability, you gain a \\plus10 foot bonus to your land speed during that phase.
         This bonus is doubled as normal by the sprint ability.
       `,
       rank: 1,
@@ -113,7 +113,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike} with a \minus1 accuracy penalty using a single weapon.
+        Make a \\glossterm{strike} with a \\minus1 accuracy penalty using a single weapon.
         You may reroll the accuracy roll and take the highest result.
         In addition, you use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,

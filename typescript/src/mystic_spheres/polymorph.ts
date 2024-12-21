@@ -746,7 +746,7 @@ export const polymorph: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Choose one of the following tags: \atAcid, \atCold, \atElectricity, or \atFire.
+          Choose one of the following tags: \\atAcid, \\atCold, \\atElectricity, or \\atFire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
@@ -1077,7 +1077,6 @@ export const polymorph: MysticSphere = {
     {
       name: 'Enduring Fortify',
 
-      // original targets: One \glossterm{unattended}, nonmagical object or part of an object of up to Large size.
       castingTime: '24 hours',
       functionsLike: {
         exceptThat: `

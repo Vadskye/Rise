@@ -492,7 +492,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           When you cast this spell, your life energy begins to surge.
           During your next action, make an attack vs. Fortitude against all living \\glossterm{enemies} within a \\medarea radius from you.
-          If you are at full hit points, you gain a \plus2 accuracy bonus with this attack.
+          If you are at full hit points, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },
       rank: 3,
@@ -522,7 +522,6 @@ export const vivimancy: MysticSphere = {
           If this attack also beats the target's Fortitude defense, or the target has no remaining damage resistance, this damage is maximized.
           If both are true, this damage is instead doubled.
         `,
-        missGlance: true,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
