@@ -16,7 +16,7 @@
                     Armor 5
                     \monsep Fort 5
                     \monsep Ref 5
-                    \monsep Ment 7
+                    \monsep Ment 6
                     \rankline
                     \pari \textbf{Attributes} Str 4, Dex 2, Con 2, Int 2, Per 2, Wil 4
                     \pari \textbf{Power} 4\sparkle \monsep 4
@@ -166,7 +166,7 @@
                     Armor 7
                     \monsep Fort 7
                     \monsep Ref 7
-                    \monsep Ment 11
+                    \monsep Ment 9
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 8\sparkle \monsep 8
@@ -320,7 +320,7 @@
                     Armor 11
                     \monsep Fort 11
                     \monsep Ref 11
-                    \monsep Ment 15
+                    \monsep Ment 13
                     \rankline
                     \pari \textbf{Attributes} Str 6, Dex 2, Con 2, Int 2, Per 2, Wil 6
                     \pari \textbf{Power} 11\sparkle \monsep 11
@@ -484,7 +484,7 @@
                     Armor 13
                     \monsep Fort 13
                     \monsep Ref 13
-                    \monsep Ment 19
+                    \monsep Ment 16
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 15\sparkle \monsep 15

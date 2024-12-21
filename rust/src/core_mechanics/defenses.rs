@@ -129,15 +129,22 @@ where
     Creature: HasModifiers + HasArmor + HasAttributes + HasSize,
 {
     fn calc_defense_modifier_attribute(&self, defense: &Defense) -> i32 {
-        let dex_multiplier: f64 = match self.category {
-            CreatureCategory::Character => {
-                if let Some(modifier) = self.minimum_dex_modifier() {
-                    modifier
-                } else {
-                    1.0
-                }
-            }
-            CreatureCategory::Monster(_, role) => role.armor_dex_multiplier(),
+        // Monsters add half the relevant attribute to all defenses
+        if matches!(self.category, CreatureCategory::Monster(_, _)) {
+            let base_attribute = match defense {
+                Defense::Armor => self.get_base_attribute(&Attribute::Dexterity),
+                Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
+                Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
+                Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
+            };
+            return base_attribute / 2;
+        }
+        // Characters add full attribute to most defenses, and Dex depends on worn armor.
+
+        let dex_multiplier: f64 = if let Some(modifier) = self.minimum_dex_modifier() {
+            modifier
+        } else {
+            1.0
         };
         let armor_attribute_modifier =
             (self.get_base_attribute(&Attribute::Dexterity) as f64 * dex_multiplier).floor() as i32;

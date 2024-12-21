@@ -1,4 +1,5 @@
 use crate::core_mechanics::{Defense, HitPointProgression};
+use crate::core_mechanics::Defense::{Armor, Fortitude, Reflex, Mental};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Default, Hash)]
@@ -37,28 +38,44 @@ impl Role {
         creature.hit_point_progression = self.hit_point_progression()
     }
 
-    pub fn armor_dex_multiplier(&self) -> f64 {
-        match self {
-            Role::Brute => 0.5,
-            Role::Skirmisher => 0.5,
-            Role::Warrior => 0.0,
-            Role::Sniper => 0.5,
-            Role::Mystic => 0.5,
-            Role::Leader => 0.5,
-        }
-    }
-
     pub fn defense(&self, defense: &Defense) -> i32 {
-        match defense {
-            &Defense::Armor => match self {
-                Role::Brute => 4,
-                Role::Skirmisher => 4,
-                Role::Warrior => 6,
-                Role::Sniper => 3,
-                Role::Mystic => 3,
-                Role::Leader => 4,
+        match self {
+            Role::Brute => match defense {
+                &Armor => 4,
+                &Fortitude => 2,
+                &Reflex => 1,
+                &Mental => 0,
             },
-            _ => 0,
+            Role::Leader => match defense {
+                &Armor => 4,
+                &Fortitude => 1,
+                &Reflex => 1,
+                &Mental => 1,
+            },
+            Role::Mystic => match defense {
+                &Armor => 3,
+                &Fortitude => 1,
+                &Reflex => 1,
+                &Mental => 3,
+            },
+            Role::Skirmisher => match defense {
+                &Armor => 4,
+                &Fortitude => 0,
+                &Reflex => 2,
+                &Mental => 1,
+            },
+            Role::Sniper => match defense {
+                &Armor => 3,
+                &Fortitude => 0,
+                &Reflex => 2,
+                &Mental => 1,
+            },
+            Role::Warrior => match defense {
+                &Armor => 5,
+                &Fortitude => 1,
+                &Reflex => 0,
+                &Mental => 0,
+            },
         }
     }
 
