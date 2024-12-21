@@ -21,14 +21,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       Most brutes charge directly at the enemy and fight in melee, though some prefer to use a few ranged attacks before entering the fray.
 
       \parhead{Defenses} \plus4 Armor, \plus2 Fortitude, \plus1 Reflex
-      \parhead{Hit Points} Extreme: It has 14 hit points \add twice its Constitution, plus 2 hit points per level beyond 1.
-      This increases as its level increases, as indicated below.
-      \begin{itemize}
-        \itemhead{Level 7} 28 hit points \add five times its Constitution, plus 5 hit points per level beyond 7.
-        \itemhead{Level 13} 60 hit points \add ten times its Constitution, plus 10 hit points per level beyond 13.
-        \itemhead{Level 19} 120 hit points \add twenty times its Constitution, plus 20 hit points per level beyond 19.
-      \end{itemize}
-      \parhead{Damage Resistance} One quarter of total hit points
+      \parhead{Hit Points} Very high, as barbarian hit points
+      \parhead{Damage Resistance} Low, as wizard hit points without Constitution
 
     \subsubsection{Leader}
       A typical leader commands their allies from behind the front lines, but is willing to enter the fray to protect more vulnerable allies.
@@ -36,16 +30,16 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       Instead, they tend to be more effective when aiding or commanding their allies.
 
       \parhead{Defenses} \plus4 Armor, \plus1 Fortitude, \plus1 Reflex, \plus1 Mental
-      \parhead{Hit Points} High, as fighter
-      \parhead{Damage Resistance} Half of total hit points
+      \parhead{Hit Points} High, as fighter hit points
+      \parhead{Damage Resistance} Medium, as cleric hit points without Constitution
 
     \subsubsection{Mystic}
       A typical mystic uses exclusively magical abilities, and their offensive capabilities can be highly varied.
       Mystics try to avoid melee combat because their physical defenses are low, but magical protections mean they can resist attacks effectively.
 
       \parhead{Defenses} \plus3 Armor, \plus1 Reflex, \plus2 Mental
-      \parhead{Hit Points} Medium, as cleric
-      \parhead{Damage Resistance} Equal to total hit points
+      \parhead{Hit Points} Medium, as cleric hit points
+      \parhead{Damage Resistance} High, as fighter hit points without Constitution
 
     \subsubsection{Skirmisher}
       A typical skirmisher uses its high mobility to fight only when it is advantageous to do so.
@@ -54,16 +48,16 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       Instead, they ambush the vulnerable back lines if possible.
 
       \parhead{Defenses} \plus4 Armor, \plus2 Reflex, \plus1 Mental
-      \parhead{Hit Points} High, as fighter
-      \parhead{Damage Resistance} Half of total hit points
+      \parhead{Hit Points} High, as fighter hit points
+      \parhead{Damage Resistance} Low, as wizard hit points without Constitution
 
     \subsubsection{Sniper}
       A typical sniper uses ranged attacks while staying as far away from combat as possible.
       Snipers tend to be fragile, so they can be quickly dispatched by creatures that are able to close the distance.
 
       \parhead{Defenses} \plus3 Armor, \plus2 Reflex, \plus1 Mental
-      \parhead{Hit Points} Medium, as cleric
-      \parhead{Damage Resistance} Half of total hit points
+      \parhead{Hit Points} Medium, as cleric hit points
+      \parhead{Damage Resistance} Low, as wizard hit points without Constitution
 
     \subsubsection{Warrior}
       A typical warrior forms a defensive front line to protect any vulnerable allies.
@@ -71,8 +65,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       However, they tend to lack offensive power and mobility, so they risk being outflanked and irrelevant.
 
       \parhead{Defenses} \plus5 Armor, \plus1 Fortitude
-      \parhead{Hit Points} High, as fighter
-      \parhead{Damage Resistance} Equal to total hit points
+      \parhead{Hit Points} High, as fighter hit points
+      \parhead{Damage Resistance} Very high, as barbarian hit points without Constitution
 
   \subsection{Level Scaling}
     Each monster has a level that indicates its approximate strength.
@@ -83,7 +77,8 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     They have the following specific changes.
     \begin{itemize}
       \item Monsters do not gain insight points, attunement points, or legacy items.
-      \item Monsters primarily calculate their damage resistance based on their hit points and role rather than armor.
+      \item Monsters primarily calculate their damage resistance based on their role rather than any armor.
+        They use the hit point progression of specific character classes, but do not apply their Constitution to that progression.
       \item Monsters only add half their attributes to their defenses instead of their full attribute.
       \item Monsters gain a \plus1 bonus to all defenses at 5th, 11th, and 17th level.
       \item Monsters gain a \plus1 accuracy bonus at 7th level and 19th level.
@@ -129,7 +124,7 @@ This chapter describes the rules for monsters, and the combat statistics for a v
     \begin{itemize}
       \item Elite monsters gain a \plus2 bonus to their \glossterm{power} and all \glossterm{defenses}.
       \item Elite monsters have three times the \glossterm{hit points} of standard monsters.
-      \item Elite monsters have 50\% more \glossterm{damage resistance} than standard monsters. This is applied after the bonus they get from having higher hit points, since monster damage resistance is based on their hit points.
+      \item Elite monsters have five times the \glossterm{damage resistance} of standard monsters.
       \item Elite monsters can have a maximum starting attribute of 6 (see \pcref{Monster Attributes}).
         % elite actions should be about as strong as regular actions, so 2x more damage
       \item Elite monsters can take an additional \glossterm{elite action} each round (see \pcref{Elite Actions}).
