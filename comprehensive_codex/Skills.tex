@@ -1,0 +1,1093 @@
+\chapter{Skills}\label{Skills}
+
+Skills represent the myriad of talents that people can have, such as cooking or swimming.
+This chapter describes each skill, including common uses for those skills.
+
+\section{Skill Overview}
+  This section describes how you learn and use skills.
+  Most skills are used to make \glossterm{checks}.
+  For details about how checks are made, see \pcref{Checks}.
+
+  \subsection{Skill Modifiers}
+    You are either trained or untrained with each skill.
+    If you are untrained in a skill, your bonus with that skill is equal to its associated attribute (if any).
+    If you are trained in a skill, your bonus with that skill is equal to 3 \add half your level \add its associated attribute (if any).
+    Many abilities can increase or decrease your bonus with particular skills.
+
+  \subsection{Class Skills}\label{Class Skills}
+    Each \glossterm{class} has an associated set of skills that members of that class often know.
+    These are called class skills.
+    Your \glossterm{base class} automatically grants you training with a specific number of skills from among your class skills.
+    The class skills from each class are summarized in \trefnp{Class Skills}.
+
+    \begin{dtable!*}
+    \lcaption{Class Skills}
+    \begin{dtabularx}{\textwidth}{l *{11}{>{\ccol}X} >{\ccol}p{4em}}
+      \tb{Skill}        & \tb{Bbn} & \tb{Clr} & \tb{Drd} & \tb{Ftr} & \tb{Mnk} & \tb{Pal} & \tb{Rgr} & \tb{Rog} & \tb{Sor} & \tb{War} & \tb{Wiz} & \tb{Key Ability} \tableheaderrule
+      Climb             & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Jump              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Swim              & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Str          \\
+      Balance           & C        & \tdash   & C        & C        & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Flexibility       & C        & \tdash   & \tdash   & C        & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Perform           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Ride              & C        & \tdash   & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & \tdash   & Dex          \\
+      Sleight of Hand   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Stealth           & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & C        & C        & \tdash   & \tdash   & \tdash   & Dex          \\
+      Endurance         & C        & \tdash   & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Con          \\
+      Craft             & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Int          \\
+      Deduction         & \tdash   & C        & C        & \tdash   & C        & C        & C        & C        & C        & C        & C        & Int          \\
+      Devices           & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
+      Disguise          & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & Int          \\
+      Knowledge         & \tdash   & C        & \tdash   & \tdash   & C        & \tdash   & \tdash   & \tdash   & C        & C        & C        & Int          \\
+      Medicine          & C        & C        & C        & C        & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Int          \\
+      Awareness         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Creature Handling & C        & \tdash   & C        & \tdash   & C        & C        & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
+      Deception         & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Persuasion        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Per          \\
+      Social Insight    & \tdash   & C        & \tdash   & \tdash   & C        & C        & \tdash   & C        & \tdash   & C        & \tdash   & Per          \\
+      Survival          & C        & \tdash   & C        & \tdash   & C        & \tdash   & C        & \tdash   & \tdash   & \tdash   & \tdash   & Per          \\
+      Intimidate        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
+      Profession        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & C        & Varies\fn{1} \\
+    \end{dtabularx}
+    C: class skill. \\
+    1. Any attribute could apply depending on how the skill is used. \\
+    \end{dtable!*}
+
+  \subsection{Tasks}\label{Tasks}
+    Each skill contains a brief description of how the skill is usually used.
+    This description is followed by a series of specific ways in which the skills can be used.
+    These tasks are simply examples, and do not list everything the skill can be used for.
+    You should be creative with your skills, rather than only using the tasks explicitly listed.
+
+  \subsection{Learning Languages}
+    You can replace skill training from your class or Intelligence with learning languages.
+    For each trained skill you forgo, you learn two \glossterm{common languages} or one \glossterm{rare language} (see \pcref{Communication and Languages}).
+
+  \subsection{Improvising}
+    Unlike maneuvers or spells, skills have a broad and ambiguous purview.
+    They are not just a set of specific actions with precise rules.
+    As a player, you should feel free to improvise actions that sound related to skills you have.
+    However, you generally shouldn't use a skill to try to duplicate the effect of another ability, especially a combat ability.
+    Skills are primarily intended to be useful out of combat, not to replace the power of manuevers and spells.
+
+\newpage
+\skill{Awareness}{Per}
+  The Awareness skill represents your ability to observe things which you might otherwise fail to notice.
+  It can be used to observe hidden creatures and traps, as well as to identify fleeting or subtle sensations.
+
+  The Awareness skill governs the result regardless of the specific sense or senses used.
+  It is most commonly used with sight and hearing, though other senses can be used, such as smell or touch.
+  Whenever you make an Awareness check, you roll only once, and most creatures have the same Awareness modifier with all of their senses.
+  However, the \glossterm{difficulty value} of the check, and the information granted by success, can be very different between senses.
+  For example, it is impossible to see through walls or without light, but that does not make hearing impossible.
+
+  \subsection{Common Awareness Tasks}
+
+    \parhead{Identify Disguise} If you succeed at an opposed Awareness vs. Disguise check, you can determine whether a creature or object is disguised.
+    \parhead{Identify Forgery} If you succeed at an opposed Awareness vs. Craft check, you can determine whether an object is a forgery.
+    \parhead{Notice Hidden Creature} If you succeed at an opposed Awareness vs. Stealth check, you can notice a hidden creature (see \pcref{Stealth}).
+    Success with a sight-based Awareness check means you can see the creature perfectly.
+    Success with any other sense just means you know its exact location, and are still \partiallyunaware of it.
+    \parhead{Notice Hidden Object} If you succeed at an opposed Awareness vs. Craft or Devices check, you can notice hidden objects such as traps and secret doors.
+    \parhead{Notice Magic Trap} If you succeed at an Awareness check, you can notice hidden magical effects such as traps.
+    The \glossterm{difficulty value} to is equal to 15 \add twice the \glossterm{rank} of the ability.
+    \parhead{Notice Sleight of Hand} If you succeed at an opposed Awareness vs. Sleight of Hand check, you can notice a creature's attempt to use the Sleight of Hand skill.
+    \parhead{Notice Subtle Effect} If you succeed at an Awareness check, you can notice the general effects of a \abilitytag{Subtle} ability affecting you.
+    The \glossterm{difficulty value} to notice the effect when it is first applied to you is 15 \add twice the \glossterm{rank} of the ability.
+    In addition, you can make another check when the ability ends to notice that you feel normal again.
+    \parhead{Read Lips} When you see a creature speaking, you can make an sight-based Awareness check to read its lips.
+    The \glossterm{difficulty value} is 10 for ordinary conversation, or up to 20 if the speaking creature makes an effort to avoid moving its lips.
+    You must be able to understand the language spoken.
+    Success means you can understand what is being said.
+
+  \subsection{Common Awareness Modifiers}\label{Common Awareness Modifiers}
+    While sleeping, you take a \minus10 penalty to the Awareness skill.
+    You gain a \plus20 bonus to notice the presence of creatures and events that directly touch or damage you, such as a creature shoving you or making a \glossterm{strike} against you.
+
+    There are three common circumstances that can make Awareness checks more difficult: obstructions, distance, and similar background sensations.
+    Minor obstructions, short distances, and slightly similar backgrounds increase the \glossterm{difficulty value} by 2.
+    Significant obstructions, long distances, and very similar backgrounds increase the DV by 5 or more.
+    If a sensation is difficult to detect for multiple reasons, the difficulty modifiers stack.
+
+    The \glossterm{difficulty value} of non-opposed checks changes depending on the size of the sensation.
+    The difficulty value increases by 5 for each size category larger than Medium, and decreases by 5 for each size category smaller than Medium.
+    Multiple sensations of the same type can also be treated as a single larger sensation, which makes them easier to detect.
+    Non-visual sensations may not have a literal size category to rely on, so the GM can decide how this modifier applies.
+
+\newpage
+\skill{Balance}{Dex}
+  % TODO: should "unsteady terrain" be a standard glossterm?
+  The Balance skill represents your ability to maintain your balance and poise on unsteady terrain.
+  It also represents your ability to precisely position your movements, such as to avoid touching traps that you are aware of.
+  Generally, creatures only have to roll Balance checks if the terrain is unsteady for some reason.
+
+  \subsection{Common Balance Tasks}
+    \parhead{Agile Charge}\nonsectionlabel{Agile Charge} You can make a \glossterm{difficulty value} 10 Balance check while using the \ability{charge} ability to change directions while charging (see \pcref{Charge}).
+    Success means you can make a single turn of up to 90 degrees during the movement.
+    \parhead{Creature Balance}\nonsectionlabel{Creature Balance} As part of movement, you can make a Balance vs. Reflex attack against a creature you touch.
+    The target must be two or more size categories larger than you.
+    On a hit, you can balance on the target's body, allowing you to walk on or jump from its body.
+    You must repeat this attack at the end of each subsequent round to stay balancing on the creature.
+    For each consecutive round that you balance on a non-ally in this way, you take a cumulative \minus5 penalty to this attack.
+    \parhead{Maintain Balance} If you take physical damage while on an unsteady surface, you must make a Balance \glossterm{reactive check} based on the surface.
+    Failure means that you fall \prone.
+    You only need to make this check once per round, even if you take damage from more than one source.
+    \parhead{Rapid Stand}\nonsectionlabel{Rapid Stand} You make a \glossterm{difficulty value} 15 Balance check as a \glossterm{movement} to stand up from a prone position.
+    Success means that you stand up so quickly that you can immediately make another movement.
+    Failure simply means that you stand up.
+    \parhead{Walk While Balancing} When you move using your \glossterm{land speed} on an unsteady surface, you must make an Balance check based on the surface.
+    If you choose to move at half speed, you gain a \plus5 bonus to the check.
+    Success means you move along the surface.
+
+  \subsection{Common Balance Modifiers}
+
+    The base \glossterm{difficulty value} to balance on a normal terrain is 0.
+    There are four common circumstances that make Balance checks more difficult: slippery, mobile, narrow, and uneven surfaces.
+    Slightly impaired surfaces increase the \glossterm{difficulty value} by 2.
+    Significantly impaired surfaces increase the DV by 5 or more.
+    If a surface is impaired for multiple reasons, add all relevant modifiers.
+    Some specific examples are listed below.
+
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X}
+        \tb{Ice}                                  & \tb{DV} \tableheaderrule
+        Rough, hardpacked ice, like a frozen lake & \plus2  \\
+        Typical ice                               & \plus5  \\
+        Recently frozen or ultra-smooth ice       & \plus10 \\
+        \tb{Liquid}                               & \tb{DV} \tableheaderrule
+        Water-covered ground, such as from rain   & \plus2  \\
+        Ankle-deep moving stream                  & \plus5  \\
+        Knee-deep static water                    & \plus5  \\
+        Oil-coated ground                         & \plus5  \\
+        Knee-deep moving stream                   & \plus10 \\
+        \tb{Narrow Surface}                       & \tb{DV} \tableheaderrule
+        About two feet wide                       & \plus2  \\
+        About one foot wide                       & \plus5  \\
+        About six inches wide                     & \plus10 \\
+        About two inches wide                     & \plus15 \\
+        Less than than two inches wide            & \plus20 \\
+        \tb{Sand}                                 & \tb{DV} \tableheaderrule
+        Water-logged beach sand                   & \plus2  \\
+        Hard-packed desert sand                   & \plus2  \\
+        Typical beach or desert sand              & \plus5  \\
+        Quicksand                                 & \plus10 \\
+        Unusually smooth, wind-tossed desert sand & \plus10 \\
+        \tb{Uneven Ground}                        & \tb{DV} \tableheaderrule
+        Infrequent ankle-high bumps and dips      & \plus2  \\
+        Constant ankle-high bumps and dips        & \plus5  \\
+        Infrequent knee-high bumps and dips       & \plus5  \\
+        Constant knee-high bumps and dips         & \plus10 \\
+      \end{dtabularx}
+    \end{columntable}
+
+\newpage
+\skill{Climb}{Str}
+  The Climb skill represents your ability to climb obstacles.
+  A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+
+  \subsection{Common Climb Tasks}
+    \parhead{Creature Climb}\nonsectionlabel{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature you touch.
+    This requires one \glossterm{free hand}, and the target must be two or more size categories larger than you.
+    On a hit, you latch onto the target and can climb on it as if it was a surface with a \glossterm{difficulty value} equal to its Reflex defense.
+    The creature takes a \minus2 accuracy penalty with \glossterm{strikes} against you.
+    You must repeat this attack at the end of each subsequent round to stay climbing on the creature.
+    For each consecutive round that you climb on a non-ally in this way, you take a cumulative \minus3 penalty to this attack.
+    \parhead{Grab Surface} You can make a Climb check as part of movement to grab a surface that you are passing by.
+    The \glossterm{difficulty value} is 10 higher than normal for the surface if you were moving for reasons out of your control (such as if you are falling).
+    Success means you grab onto the wall and interrupt your movement.
+    This does not prevent you from taking \glossterm{falling damage} appropriate for the distance you fell.
+    \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make a Climb check based on the surface.
+    Failure means you fall off of the surface, and are \prone when you land.
+    \parhead{Move} You can make a Climb check as a \glossterm{movement} while you are touching a solid surface.
+    This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
+    The \glossterm{difficulty value} is based on the surface.
+    Success means that you move along the surface, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
+    Critical success means the maximum distance you can move is doubled.
+    \parhead{Wall Jump} You can make a \glossterm{difficulty value} 10 Climb check as part of movement to jump off of a wall you are adjacent to.
+    This difficulty value increases by 5 for each time you have used this ability since landing on solid ground.
+    Success means you can jump off of the wall (see \pcref{Jumping}).
+    Failure means your jump fails, and your movement ends, which typically makes you fall to the ground.
+    \parhead{Wallrun} You can make a Climb check as part of your movement while you are touching a solid surface.
+    The \glossterm{difficulty value} is 10 higher than normal for the surface.
+    Success means you can move using your \glossterm{land speed} along the wall during the current phase.
+    You move at half speed while going up.
+    Failure means you fall.
+    For every phase in which you use this ability on the same wall without reaching a stable stopping point, the DV increases by 5.
+
+  \subsection{Common Climb Modifiers}
+    Slippery and mobile surfaces make Climb checks more difficult.
+    If you can brace against multiple surfaces, such as in a corner or between two opposed walls, climbing can be significantly easier.
+
+  \subsection{Climb Difficulty Value Examples}
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X X}
+        \tb{DV} & \tb{Surface or Activity}                     & \tb{Example} \tableheaderrule
+        0       & Steep slope                                  & A hill too steep to walk up                                          \\
+        5       & Large, sturdy hand and foot holds            & Knotted rope, heavily damaged stone wall, ship's rigging             \\
+        10      & Small, sturdy hand and foot holds            & Surface with pitons or carved holes, weathered stone wall            \\
+        10      & Inconsistent or unsteady hand and foot holds & Unknotted rope, unweathered natural rock, shoddy brick or brick wall \\
+        10      & Only large hand holds                        & Tree limbs, pulling yourself up by your hands while dangling         \\
+        15      & Rough surface with few holds                 & Weathered natural rock face, quality wood or brick wall              \\
+        20      & Rough surface without holds                  & Quality stone wall                                                   \\
+        25      & Smooth surface without holds                 & Window                                                               \\
+      \end{dtabularx}
+    \end{columntable}
+
+  \subsection{Climb Speed}\label{Climb Speed}
+    Some creatures have a listed climb speed.
+    A creature with a passive climb speed must still make a Climb check to climb on surfaces.
+    However, the distance it can move if it succeeds on the Climb check is equal to its listed climb speed, regardless of its size or whether it gets a critical success.
+
+\newpage
+\skill{Craft}{Int}
+  The Craft skills represent your ability to construct objects from raw materials.
+  Like Knowledge, Perform, and Profession, Craft is actually a number of separate skills.
+  You could have several Craft skills, each with a separate degree of training.
+  Common Craft skills are listed below, with additional description for some skills.
+  Other Craft skills exist in the universe, but are less generally useful for adventurers.
+
+  % TODO: note which skills often have magic items?
+  \begin{itemize}
+    \item Alchemy (Alchemist's fire, tanglefoot bags, potions)
+    \item Bone
+    \item Ceramics (Glass, pottery)
+    \item Leather
+    \item Manuscripts (Books, official documents, scrolls)
+    \item Metal
+    \item Poison
+    \item Stone
+    \item Textiles (Cloth, fabric)
+    \item Wood
+  \end{itemize}
+
+  A Craft skill is specifically focused on physical objects. If nothing can be created by an endeavor, it probably falls under the heading of a Profession skill. Complex structures, such as buildings or siege engines, may require Knowledge (engineering) in addition to an appropriate Craft skill.
+
+  \subsection{Common Craft Tasks}\label{Common Craft Tasks}
+    \parhead{Create Item} You can make a Craft check to create an item.
+    For details, see \pcref{Crafting Items}.
+    \parhead{Create Disguised Item} You can craft an item that superficially appears to function like a similar, but different, item.
+    This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one higher than it actually is.
+    A creature studying the item with the Identify Item task only identifies the item's false purpose unless they get a \glossterm{critical success} on the check.
+    \parhead{Create Forgery} You can make a Craft check to create a false or defective version of an item.
+    This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one lower than it actually is (to a minimum of 0).
+    Forgeries which have a function, such as a weapon, are always defective in some way which makes them unsuitable for sustained usage.
+    However, a forgery may function once or twice to pass cursory inspection.
+    \parhead{Identify Forgery} If you succeed at an opposed Craft vs. Craft check, you can determine whether an object is a forgery.
+    \parhead{Identify Item} You can make a Craft check to identify any unusual properties or functions of a magic item or esoteric mundane item.
+    The \glossterm{difficulty value} is equal to 5 \add twice the item's \glossterm{rank}.
+    Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 2 or more.
+    Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+    You also know the item's rank, which lets you estimate its value.
+    \parhead{Rebuild Item} You can make a Craft check to repair a \glossterm{destroyed} item. This functions like creating the item normally, except that you treat the item's \glossterm{rank} as being one lower than it actually is (to a minimum of 0).
+    Success means the item is restored to full hit points and functionality.
+    \parhead{Repair Item} You can make a Craft check to repair a \glossterm{broken} or damaged item. This takes as much time as creating an item two ranks lower than the item (to a minimum of 0), and does not require any raw materials other than the broken item.
+    Success means the item is restored to full hit points and functionality.
+
+  \subsection{Crafting Items}\label{Crafting Items}
+    You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty.
+
+    Each item takes a certain amount of working time to craft, as shown on \tref{Craft Requirements}.
+    In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
+    Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
+
+    You can attempt to craft items from inferior or ad-hoc materials.
+    The materials do not have to be well-suited to the item's construction, but they must be physically capable of performing any necessary actions.
+    For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
+    Generally, using ill-suited materials increases the \glossterm{difficulty value} of the Craft check by at least 5, and it may negatively impact the item's function or longevity.
+
+    In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty value}, as shown on \trefnp{Craft Requirements}.
+    If you succeed, you make progress on the item based on how long you spend crafting.
+    For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
+    Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+
+    All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible.
+
+    The time and difficulty involved in crafting an item depends on the item's rank, as defined in \trefnp{Craft Requirements}.
+
+    \begin{dtable}
+      \lcaption{Craft Requirements}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X l l X}
+        \tb{Item}                   & \tb{Subskill} & \tb{DV}            & \tb{Crafting Time}\fn{1} \tableheaderrule
+        Alchemical item             & Alchemy       & 5 \add twice rank  & Eight hours                             \\
+        Body armor\fn{2}            & Varies        & 10 \add twice rank & One month \add one month per rank\fn{3} \\
+        Exotic weapon               & Varies        & 10 \add twice rank & 24 hours \add 24 hours per rank         \\
+        Shield or non-exotic weapon & Varies        & 5 \add twice rank  & 24 hours \add 24 hours per rank         \\
+        Poison                      & Poison        & 5 \add twice rank  & Eight hours                             \\
+        Other item                  & Varies        & 5 \add twice rank  & 24 hours per rank                       \\
+      \end{dtabularx}
+      1. For the purpose of crafting times, treat rank 0 items as having a rank of 1/2. \\
+      2. Unlike other items, body armor can have up to four crafters working simultaneously to complete the same armor. \\
+      3. Assuming eight-hour working days for each day of the month.
+    \end{dtable}
+
+    % TODO: clarify how "army of animal friends" works
+\newpage
+\skill{Creature Handling}{Per}
+  % TODO: is non-sapient the right word?
+  The Creature Handling skill represents your ability to influence non-sapient creatures.
+  With it, you can convince them to do what you want or train them to follow commands.
+  This skill has no effect on creatures with an Intelligence of \minus5 or higher.
+
+  \subsection{Common Creature Handling Tasks}
+
+    \begin{sustainability}{Command}{\abilitytag{Auditory}, \abilitytag{Compulsion}, \abilitytag{Sustain} (standard)}
+      \abilityusagetime Standard action.
+      \rankline
+      Make a Creature Handling vs. Mental attack against a creature within \rngmed range.
+      In addition, choose and state an action that the creature could take.
+      \hit The target is unable to take any actions except to use the \textit{total defense} ability (see \pcref{Universal Abilities}).
+      \crit The target performs the chosen action if it is physically capable of performing it.
+
+      You take a \minus10 accuracy penalty against an actively hostile target.
+      You take a \minus5 penalty to accuracy with this attack if the target is not an animal, as normal for Creature Handling attacks and checks.
+      If the target is damaged or feels that it is in danger, this effect is automatically ended.
+    \end{sustainability}
+    \parhead{Perform Trained Action} You can make a \glossterm{difficulty value} 5 Creature Handling check to convince an \glossterm{ally} to perform an action it is already trained to perform.
+    \parhead{Rear a Wild Creature} You can make a Creature Handling check to raise a wild creature from infancy so that it becomes domesticated.
+    The time required depends on how long it takes the creature in question to reach adulthood.
+    The \glossterm{difficulty value} for this check is equal to 5 \add twice the creature's level in its adult form.
+    This check must be repeated once per year during the process of raising the creature, and when that process is complete.
+    Failure means that an additional year of training is required.
+    A successfully domesticated creature can be taught tricks at the same time it's being raised, or it can be taught as a domesticated creature later.
+    \parhead{Teach Trick} You can make a Creature Handling check to teach an \glossterm{ally} a trick.
+    A trick is a specific behavior that generally requires a single-word command, like ``fetch'' or ``stay''.
+    A creature can learn a maximum of two tricks per point of Intelligence it has above \minus10.
+    Teaching a trick generally takes at least a week of intermittent training.
+    Simple tricks have a \glossterm{difficulty value} of 5, while complex tricks have a \glossterm{difficulty value} of 10 or more.
+
+  \subsection{Common Creature Handling Modifiers}
+    Animals are easier to handle than other kinds of creatures.
+    You take a \minus5 penalty to your Creature Handling skill when using it to affect non-animals.
+
+  \subsection{Teaching Tricks}
+    Generally speaking, teaching a creature a new trick requires spending at least four hours a day in training over the course of a week.
+    It is not generally possible to accelerate the process by spending more time each day; the creature must take time to learn the new behavior.
+    If a creature is taught more tricks than its Intelligence allows it to retain, it will forget one of its old tricks during the course of learning the new trick.
+    The trainer can choose which old trick will be replaced in this way.
+
+    A list of specific tricks that creatures can be taught is given below.
+    Of course, players should feel free to define new tricks to accomplish more specific goals.
+    However, complicated tricks are probably more difficult for an animal to learn, so the difficulty value to teach a custom trick might be 15 or higher.
+
+    \parhead{Attack (DV 10)} The creature attacks apparent enemies. You may point to a particular creature that you wish the creature to attack, and it will comply if able. This trick includes teaching the creature how to stop attacking if you give it a command to relent.
+    \parhead{Come (DV 5)} The creature comes to you.
+    \parhead{Defend (DV 10)} The creature defends you (or is ready to defend you if no threat is present), even without any command being given. Alternatively, you can command the creature to defend a specific other character.
+    \parhead{Down (DV 5)} The creature breaks off from combat or otherwise backs down. A creature that doesn't know this trick continues to fight until it must flee (due to injury, a fear effect, or the like) or its opponent is defeated.
+    \parhead{Fetch (DV 5)} The creature goes and gets something. If you do not point out a specific item, the creature fetches some random object.
+    \parhead{Guard (DV 10)} The creature stays in place and prevents others from approaching.
+    \parhead{Heel (DV 5)} The creature follows you closely, even to places where it normally wouldn't go.
+    \parhead{Messenger (DV 15)} The creature carries a small item to a destination.
+    Once it arrives, it waits for up to 24 hours for someone to take the item from it.
+    The destination must be known to the creature.
+    \par When you instruct the creature to deliver the item, you must communicate the destination to the creature.
+    This normally requires a DV 20 Creature Handling check as a standard action.
+    The DV of this check is lowered to 15 for locations the creature is extremely familiar with, such as its home.
+    If you have other means of communicating the destination to the creature, such as the \textit{animal speech} druid ability (see Animal Speech, page \pref{Drd:Animal Speech}), that check is unnecessary.
+    \parhead{Perform (DV 10)} The creature performs a variety of simple tricks, such as sitting up, rolling over, roaring or barking, and so on.
+    \parhead{Seek (DV 5)} The creature moves into an area and looks around for anything that is obviously alive or animate.
+    \parhead{Stay (DV 5)} The creature stays in place, waiting for you to return. It does not challenge other creatures that come by, though it still defends itself if it needs to.
+    \parhead{Track (DV 10)} The creature tracks the scent presented to it. (This requires the creature to have the scent ability)
+    \parhead{Work (DV 5)} The creature pulls or pushes a medium or heavy load.
+
+    \subsubsection{Bonus Tricks}\label{Bonus Tricks}
+      Some trainers can teach creatures bonus tricks in addition to their normal maximum number of tricks known.
+      Once a creature has learned a bonus trick, that trick may not be retrained into a different trick by a trainer who does not have the same ability to grant bonus tricks.
+
+  \subsection{Training Non-Domesticated Creatures}
+    Although non-domesticated creatures of any type can be taught tricks with patience and training, they are not naturally obedient.
+    When outside their trainer's influence, or in stressful situations, they tend to revert to their natural behaviors.
+    In general, even the most skilled trainers can only control one non-domesticated creature in battle.
+
+    In rare circumstances, a skilled trainer may temporarily gain the service of an elite monster.
+    While acting at the behest of another creature using Creature Handling, elite monsters can only take one standard action or one elite action during each action phase, not both.
+
+\newpage
+\skill{Deception}{Per}
+  The Deception skill represents your ability to lie or otherwise mislead people without being caught.
+  Using a Deception check is part of conversation or other actions, so it requires no special action to perform.
+
+  \subsection{Common Deception Tasks}
+    \parhead{Blend In} If you succeed at an opposed Deception vs. Awareness check, you can avoid notice among a crowd of similar creatures.
+    If you act or look significantly different from the creatures around you, observers gain a bonus to their Awareness check to notice you.
+    \parhead{Convey Hidden Message} If you succeed at an opposed Deception vs. Social Insight check, you can convey a hidden message in the guise of an ordinary conversation.
+    Failure means that an observer recognizes that a hidden message is being conveyed, and may even recognize what that message is.
+    In general, you must already have a pre-established code or understanding with the intended recipients of your hidden message so they can grasp its true meaning more easily than outside observers.
+    \parhead{Distract} If you succeed at an opposed Deception vs. Social Insight check, you can distract a creature you are talking with.
+    This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
+    Normally, the creature realizes that you tricked them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
+    \parhead{Fascinate} If you succeed at an opposed Deception vs. Social Insight check, you can keep attention focused on you during a conversation.
+    This generally gives distracted creatures a \minus5 penalty to the Awareness and Social Insight skills to notice anything other than you.
+    You repeat this check once per minute, with a cumulative \minus5 penalty for each minute that the distraction has lasted.
+    \parhead{Impersonate} If you succeed at an opposed Deception vs. Social Insight check, you can impersonate another creature's mannerisms and speech patterns.
+    If you are unable to replicate important aspects of the impersonation, such as the beautiful singing voice of a famous bard, you may suffer a penalty to the Deception check.
+    This does not allow you to mimic a creature's appearance, which requires the Disguise skill.
+    \parhead{Lie} If you succeed at an opposed Deception vs. Social Insight check, you can lie without giving any indication that you are lying.
+    Failure means that the observer recognizes that you are intentionally lying.
+    Even if you succeed at this check, you still need the Persuasion skill to believe or take actions based on your lies.
+    This check only prevents a creature from recognizing the lie based on your body language and behavior.
+
+    When your overall intention is to mislead or conceal information in a conversation, you may need to make this check even if everything you are saying is technically true.
+    Generally, using half-truths and similar trickery instead of bald-faced lies gives you a bonus to your Deception check, but a skilled observer can still see through your ruse.
+
+
+\newpage
+\skill{Deduction}{Int}
+  The Deduction skill represents your ability to make logical deductions based on evidence.
+  It includes both determining which facts and observations are relevant to use as evidence, and reaching conclusions based on that evidence.
+  However, this skill cannot protect you from coming to inaccurate conclusions if you rely on inaccurate or incomplete facts and observations.
+
+  \subsection{Common Deduction Tasks}
+    \parhead{Identify Surroundings} You can make a Deduction check as a standard action to understand what aspects of your environment are important and why.
+    This may require a successful Awareness check to locate hidden objects or subtle clues.
+    \parhead{Reach Conclusion} You can combine information that you know to reach a specific conclusion.
+    This may require other checks, such as Knowledge or Awareness checks, to ensure that you have enough information to work with.
+    The time required to reach a conclusion can vary dramatically depending on how much evidence you have to work with and how easy the conclusion is to reach.
+    You can reach simple conclusions immediately after learning all of the relevant information, but complicated scenarios might require days of study and analysis to eliminate all possibilities.
+    In general, sifting through a mixture of helpful and misleading evidence increases the difficulty of the Deduction check and the time required to complete it.
+
+\newpage
+\skill{Devices}{Int}
+  The Devices skill represents your ability to to manipulate mechanical devices such as locks, traps, and other contraptions.
+  With enough skill, you can even manipulate magical devices.
+  Each device has a base \glossterm{difficulty value} based on its complexity.
+  Some tasks are much easier than others, and modify the difficulty value accordingly.
+
+  Many Devices checks require the use of thieves' tools, which contains items like lockpicks and precision cutting implements.
+  If you do not have a proper set of tools, you may be able to improvise from your surroundings.
+  Generally, this imposes a penalty of at least \minus5 to the Devices check.
+
+  \begin{dtable}
+    \lcaption{Devices Difficulty Values}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
+      \tb{Device Type}                          & \tb{Difficulty Value} \tableheaderrule
+      Simple device (wagon wheel, typical knot) & 5                              \\
+      Average device (door hinge, complex knot) & 10                             \\
+      Difficult device (typical lock)           & 15                             \\
+      Extraordinary device (expert lock)        & 20                             \\
+      Impossible device (magically sealed lock) & 25                             \\
+      Mundane trap                              & 10 \add twice \glossterm{rank} \\
+      Magic trap                                & 15 \add twice \glossterm{rank} \\
+    \end{dtabularx}
+  \end{dtable}
+
+  \subsection{Common Devices Tasks}
+    \parhead{Activate Device} You can make a Devices check using thieves' tools to make a device perform a function it was designed to do, even if you lack the normal requirements.
+    For example, you could tie or untie a knot, lock or unlock a lock without its key, or activate a trap without using its normal triggering mechanism (hopefully without being in its line of fire).
+    \parhead{Analyze Device} You can make a Devices check to study a device and understand how it functions.
+    The \glossterm{difficulty value} to analyze a device is 5 lower than the device's base difficulty value.
+    \parhead{Break Device} You can make a Devices check using thieves' tools to break a device.
+    The device ceases to function in its intended way, and the sabotage is obvious to an observer.
+    For example, you could jam a lock so it becomes unlocked and can never be locked again.
+    Breaking a trap generally triggers the trap in an unpredictable way, which may be dangerous.
+    The \glossterm{difficulty value} to break a device is 2 lower than the device's base difficulty value.
+    \parhead{Create Bindings} You can make a Devices check with a \plus5 bonus to create bindings from rope or similar materials.
+    Binding a helpless foe in this way generally requires a minute of work, though typing up very large creatures may take longer.
+    The Flexibility \glossterm{difficulty value} to escape the binding is equal to your check result.
+    \parhead{Improvise} You can make a Devices check to construct ad-hoc devices.
+    This functions like creating the item with a Craft check (see \pcref{Crafting Items}), with two exceptions.
+    First, the item is flimsy, and it breaks after being used once or twice.
+    Second, the time requirement is dramatically reduced.
+    It takes five minutes to make a device of up to Tiny size.
+    You can make a Small device in the time required to make four Tiny devices, a Medium device in the time required to make four Small devices, and so on.
+    \parhead{Remove Device} You can make a Devices check using thieves' tools to fully disable a device and remove it if possible.
+    This can allow you to bypass traps without ever triggering them, and even take them with you if they are small and portable.
+    Magical traps and large-scale physical traps, such as pit traps, are generally not portable.
+    The \glossterm{difficulty value} to remove a device is 5 higher than the device's base difficulty value.
+
+\newpage
+\skill{Disguise}{Int}
+  The Disguise skill represents your ability to create disguises to conceal the appearance of creatures or objects.
+  This skill does not help you act appropriately while disguised, which generally the Deception skill and may also require Social Insight.
+
+  Many Disguise checks require the use of a disguise kit, which contains items like makeup and false beards.
+  If you do not have a proper kit, you may be able to improvise from your surroundings.
+  Generally, this imposes a penalty of at least \minus5 to the Disguise check.
+
+  \subsection{Common Disguise Tasks}
+    \parhead{Camouflage} You can make an opposed Disguise vs. Awareness check to blend into your surroundings and avoid being noticed.
+    This generally takes at least a minute of work to prepare your disguise to match your exact surroundings.
+    It only protects you from visual observation, so you would generally need the Stealth skill to avoid being heard while moving (see \pcref{Stealth}).
+    \parhead{Change Appearance}\nonsectionlabel{Change Appearance}
+    You can make an opposed Disguise vs. Awareness check using a disguise kit to change a creature's appearance.
+    Generally, applying a disguise takes at least a minute, though complex makeup applications or clothing changes can take much longer.
+    You take a penalty to the Disguise check based on how radical your changes are, especially to the creature's basic proportions.
+    \parhead{Emulate Appearance} You can make a creature look like a different specific creature.
+    This functions like the \textit{change appearance} task, except that the result of your Disguise check can't exceed the result of an Awareness check you or someone helping you made to observe the creature you are trying to emulate.
+
+  \subsection{Common Disguise Modifiers}
+    It is generally easier to enlarge a creature or add new features than it is to shrink a creature or remove existing features.
+    You can use the table below a guide, and the GM can improvise penalties for more unusual disguises if necessary.
+    If you make multiple alterations, the penalties stack.
+
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X}
+        \tb{Age Change}                              & \tb{Disguise Penalty} \\
+        Per age category of difference & \minus2 \\
+        \tb{Body Shape Change}                              & \tb{Disguise Penalty} \\
+        To a different gender                               & \minus2               \\
+        Per removed arm                                     & \minus2               \\
+        Per removed leg                                     & \minus5               \\
+        Per additional arm or leg                           & \minus5               \\
+        \tb{Species Change}                                 & \tb{Disguise Penalty} \tableheaderrule
+        To a noticeably larger species (halfling to human)  & \minus5               \\
+        To a noticeably smaller species (human to halfling) & \minus15              \\
+        To a larger size category (human to ogre)           & \minus15              \\
+        To a smaller size category (ogre to human)          & \minus30              \\
+      \end{dtabularx}
+    \end{columntable}
+
+\newpage
+\skill{Endurance}{Con}
+  The Endurance skill represents your ability to persevere through physical trials.
+
+  \subsection{Common Endurance Tasks}
+    \parhead{Hold Breath}\nonsectionlabel{Hold Breath}
+    You can make an Endurance check to hold your breath.
+    While holding your breath, you must make an Endurance check at the end of every 5 rounds that you spend without taking any actions, or at the end of any round in which you take an action.
+    The \glossterm{difficulty value} starts at 0, and increases by 1 for each subsequent check until you breathe in air.
+    Failure means that you try to breathe in air, and you gain a \glossterm{vital wound} if there is no air available to breathe.
+
+    Essentially, you can fight while holding your breath for a number of rounds equal to your Endurance modifier with no risk of failure.
+    If you stay still, you can hold your breath for a number of minutes equal to half your Endurance modifier with no risk of failure.
+    \parhead{Maintain Exertion}\nonsectionlabel{Maintain Exertion}
+    Some activities are difficult to maintain indefinitely.
+    For example, sprinting typically exhausts a creature in a minute or less.
+    Even walking at a steady pace can become exhausting after hours without rest.
+    You can make an Endurance check to continue performing a strenuous activity without rest.
+
+    Generally, this requires a \glossterm{difficulty value} 10 Endurance check when you have performed the task for as long as a normal human can do it without rest.
+    Each time you succeed at this check, you can maintain the exertion for half that length of time.
+    At the end of that time, you must repeat this check to continue the activity, but the difficulty value increases by 5.
+    If you fail the check, you must rest.
+    The details of how long you have to rest depends on the activity you were performing, at the GM's discretion.
+
+    For example, a human can normally sprint for 10 rounds without rest.
+    If they pass a DV 10 Endurance check, they could sprint for an additional 5 rounds.
+    After that time, they would need to make a DV 15 Endurance check for the next 5 rounds, then DV 20, and so on.
+    \parhead{Overland Exertion} You can make an Endurance check while travelling overland to cover more round (see \pcref{Overland Movement}).
+    This is a special use of the Maintain Exertion ability described in the core rulebook.
+    There are two ways that you can exert yourself: hustling, which doubles your distance travelled during a given hour, and making a forced march, which allows you to travel for an extra hour beyond the normal travel time.
+    Making a forced march only increases the \glossterm{difficulty value} of the check by 2 for each additional hour, instead of the normal 5.
+
+    \parhead{Stay Awake}\nonsectionlabel{Stay Awake} You can make an Endurance check to stay awake beyond healthy limits.
+    A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+    The \glossterm{difficulty value} starts at 5, and increases by 5 for each subsequent check until you catch up on your missed sleep.
+    Failure means you increase your \glossterm{fatigue level} by three.
+    You must make another check every 8 hours as long as you are still beyond your normal sleep limits.
+
+    % This is thematically appropriate, but it breaks the rule about not introducing ``shadow'' resources
+    % \subsection{Ignore Fatigue}\label{Ignore Fatigue}
+    %     You can temporarily ignore your fatigue to try to accomplish your objectives.
+    %     Ignoring your fatigue requires a \glossterm{minor action}.
+    %     The \glossterm{difficulty value} starts at 10.
+    %     If you succeed, you reduce your \glossterm{fatigue penalty} by 1 until the end of the round.
+    %     For every 10 points by which you succeed, you reduce your fatigue penalty by an additional 1.
+    %     Ignoring your fatigue is a \abilitytag{Swift} ability.
+    %     You can only use this ability once per \glossterm{short rest}.
+
+\newpage
+\skill{Flexibility}{Dex}
+  The Flexibility skill represents your ability to escape bindings and move through small areas by contorting your body.
+
+  \begin{dtable}
+    \lcaption{Flexibility Difficulty Values}
+    \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
+      \tb{Restraint}         & \tb{Difficulty Value} \tableheaderrule
+      Net                    & 8  \\
+      Common manacles        & 15 \\
+      High-quality manacles  & 20 \\
+      Extraordinary manacles & 25 \\
+      \tb{Tight Space}       & \tb{Difficulty Value} \tableheaderrule
+      Can fit with outstretched elbows & 5 \\
+      Can fit one outstretched elbow & 10 \\
+      Can fit head and shoulders only & 15 \\
+      Can fit head only & 25 \\
+    \end{dtabularx}
+  \end{dtable}
+
+  \subsection{Common Flexibility Tasks}
+
+    \parhead{Escape Bindings} As a standard action, you can make an Flexibility check to escape physical bindings.
+    For simple restraints like nets and manacles, the \glossterm{difficulty value} generally depends on the quality of the restraint.
+    For complex restraints like carefully tied rope bindings, make an opposed Flexibility vs. Devices check against the creature that created the restraint.
+    \parhead{Escape Grapple} As a standard action, you can make a Flexibility check to escape a grapple.
+    For details, see \pcref{Escape Grapple}.
+    \parhead{Tight Squeeze} You can make a Flexibility check to squeeze into spaces too small to normally fit you (see \pcref{Squeezing}).
+
+\newpage
+\skill{Intimidate}{Varies}
+  The Intimidate skill represents your ability to intimidate and coerce people into doing what you want.
+
+  \parhead{Choosing an Attribute}
+  No attribute is a key attribute for Intimidate.
+  However, depending on how you are trying to intimidate creatures, you can add any attribute's base value to your Intimidate check.
+  For example, if you intimidate a creature by smashing a table and threatening to smash its head in, you can add your Strength to the Intimidate check.
+  On the other hand, if you intimidate a creature by staring it down in a cold fury, you can add your Willpower to the Intimidate check.
+
+  \subsection{Common Intimidate Tasks}
+    \parhead{Coerce} You can make an Intimidate check to convince a creature to do what you want. This functions like a Persuasion check to form an agreement with a group, except that you do not apply a relationship modifier (see \pcref{Persuasion}).
+    Generally, people dislike being coerced.
+
+    \parhead{Demoralize}
+    \begin{activeability}{Demoralize}
+      \abilityusagetime Standard action.
+      \rankline
+      Make an Intimidate vs. Mental attack against a creature within \rngmed range.
+      % TODO: this is a little weird as a universal ability. It's r-1 power level.
+      \hit If the target has no remaining \glossterm{damage resistance}, it is \frightened by you as a \glossterm{condition}.
+    \end{activeability}
+
+\newpage
+\skill{Jump}{Str}
+  The Jump skill represents your ability to jump.
+  Unlike most skills, you have no numeric modifier to Jump, and you never make a Jump check.
+  Instead, the distance you can jump changes depending on whether you are trained with the Jump skill.
+  For details, see (see \pcref{Jumping}).
+
+\newpage
+\skill{Knowledge}{Int}
+  The Knowledge skills represent your understanding of particular aspects of the world.
+  Like the Craft, Profession, and Perform skills, Knowledge actually encompasses a number of separate skills.
+  Knowledge represents a study of some body of lore, such an academic or even scientific discipline.
+  Typical fields of study are listed below, but the GM may create additional fields or decide that some fields are irrelevant in a particular setting.
+  \begin{itemize}
+    \item Arcana (arcane spells, dragons, magical beasts)
+    \item Dungeoneering (aberrations, caverns, oozes, spelunking, subterranean monsters)
+    \item Engineering (architecture, buildings, bridges, fortifications, siege weapons)
+    \item Items (magic items, artifacts, constructs)
+    \item Local (myths and legends, laws and customs, history, nobility and royalty, nearby monsters)
+    \item Nature (nature spells, animals, fae, monstrous humanoids, plants, terrain and climate)
+    \item Planes (pact spells, the Primal Planes, the Aligned Planes, the Astral Plane,
+      planeforged, magic related to the planes, extraplanar monsters)
+    \item Religion (divine spells, undead, deities, mythic history, religious traditions, holy symbols)
+  \end{itemize}
+
+  \subsection{Common Knowledge Tasks}
+    \parhead{Identify Monster} You can make a Knowledge check to identify a monster and recall its special powers or vulnerabilities.
+    Each monster notes in its description the specific information that you learn from a successful Knowledge check.
+    In general, the \glossterm{difficulty value} for basic information is equal to 5 \add the monster's level.
+    Legendary monsters such as dragons can be much easier to recognize.
+    \parhead{Identify Item} You can make a Knowledge check to identify any unusual properties or functions of a magic item or esoteric mundane item.
+    The \glossterm{difficulty value} is equal to 5 \add twice the item's \glossterm{rank}.
+    Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 2 or more.
+    Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+    You also know the item's rank, which lets you estimate its value.
+    \parhead{Recall Information} You can make a Knowledge check to remember information related to your field of study.
+    The \glossterm{difficulty value} varies depending on the difficulty of the question (see \pcref{Standard Difficulty Values}).
+    \parhead{Identify Magical Effect}\nonsectionlabel{Identify Magical Effect} You can make a Knowledge check to identify the general nature of a magical effect that you observe.
+    The \glossterm{difficulty value} is generally equal to 10 \add twice the effect's \glossterm{rank}.
+    Unusually obscure or obvious magical effects can have higher or lower difficulty values.
+
+    You must use a Knowledge skill relevant to the magical effect.
+    Arcane effects require Knowledge (arcana), divine effects require Knowledge (nature), nature effects require Knowledge (nature), and pact effects require Knowledge (planes).
+    In some circumstances, other Knowledge skills could be used if they are directly relevant to the magical effect.
+    For example, Knowledge (dungeoneering) could be used to identify many spells from the \sphere{terramancy} \glossterm{mystic sphere}.
+
+\newpage
+\skill{Medicine}{Int}
+  The Medicine skill represents your practical understanding of how to tend to the wounds of living creatures.
+  In order to use this skill to aid a creature, you must be able to see and touch it, and the creature must be alive.
+
+  Many Medicine checks require the use of a medical kit, which contains items like bandages and salves.
+  If you do not have a proper kit, you may be able to improvise from your surroundings.
+  Generally, this imposes a penalty of at least \minus5 to the Medicine check.
+
+  \subsection{Common Medicine Tasks}
+    \parhead{Accelerate Recovery}\nonsectionlabel{Accelerate Recovery}
+    You can make a \glossterm{difficulty value} 15 Medicine check using a medical kit to accelerate the recovery of up to four creatures from among yourself and your \glossterm{allies} during a \glossterm{long rest}.
+    Success means that each creature removes an additional vital wound (see \pcref{Removing Vital Wounds}).
+    For every 10 points by which you succeed, each creature removes an additional vital wound.
+    \parhead{First Aid}\nonsectionlabel{First Aid}
+    As a standard action, you can make a Medicine check using a medical kit to prevent a creature from dying from a \glossterm{vital wound} with a negative \glossterm{vital roll}.
+    The \glossterm{difficulty value} is equal to 10 for a vital roll of 0.
+    The DV increases by 5 for each point by which the vital roll is below 0.
+    Success means that the target treats the \glossterm{vital roll} as a 1 instead of its original value.
+    This changes the effect of the vital wound, generally preventing the target from dying.
+    For details, see \pcref{Vital Wounds}.
+    \parhead{Identify Affliction}\nonsectionlabel{Identify Affliction}
+    You can make a Medicine check to identify a poison, disease, or similar affliction currently affecting a creature.
+    The \glossterm{difficulty value} is equal to 5 \add twice the \glossterm{rank} of the poison or disease.
+    \parhead{Treat Disease} With five minutes of work, you can make a Medicine check to treat a creature that is currently diseased.
+    The next time it is attacked by its current disease, it can use your Medicine check or its Fortitude defense, whichever is higher.
+    \parhead{Treat Poison} As a standard action, you can make a Medicine check to treat a creature that is currently poisoned.
+    The next time it is attacked by its current poison, it can use your Medicine check or its Fortitude defense, whichever is higher.
+
+\newpage
+\skill{Perform}{Dex}
+  The Perform skills represent your ability to create particular forms of entertainment.
+  Like Craft, Knowledge, and Profession, Perform is actually a number of separate skills.
+  You could have several Perform skills, each with a separate degree of training.
+  Each of the nine categories of the Perform skill includes a variety of methods, instruments, or techniques, a small list of which is provided for each category below.
+
+  \begin{itemize}
+    \item Acting (drama, impersonation, mime)
+    \item Comedy (buffoonery, limericks, joke-telling)
+    \item Dance (ballet, waltz, jig)
+    \item Keyboard instruments (harpsichord, piano, pipe organ)
+    \item Oratory (epic, ode, storytelling)
+    \item Percussion instruments (bells, chimes, drums, gong)
+    \item Singing (ballad, chant, melody)
+    \item String instruments (fiddle, harp, lute, mandolin)
+    \item Wind instruments (flute, pan pipes, recorder, shawm, trumpet)
+  \end{itemize}
+
+  \subsection{Performance Types}
+    There are four types of performances: dance, instrumental, manipulation, and vocal.
+    \begin{raggeditemize}
+      \item Dance: You use your body to dance or act. This limits your ability to defend yourself, giving you a \minus2 penalty to your Armor and Reflex defenses as a \atSwift effect. Dance performances have the \atVisual tag.
+      \item Instrumental: You use an instrument to make music. This requires at least one \glossterm{free hand} to use the instrument. Instrumental performances have the \atAuditory tag.
+      \item Manipulation: You use objects or gestures to perform, such as juggling or puppetry. This requires at least one \glossterm{free hand} to use the objects. Manipulation performances have the \atVisual tag.
+      \item Vocal: You use your voice to orate or sing. This prevents you from talking or using other abilities with \glossterm{verbal components}. Vocal performances have the \atAuditory tag.
+    \end{raggeditemize}
+
+  \subsection{Limitations while Performing}
+    It takes a \glossterm{minor action} to initiate and sustain a performance.
+    While you are performing, you take a \minus5 penalty to the Perform skill for any other performances.
+    This penalty stacks, and applies separately for each simultaneous performance.
+    For example, if you were playing a lyre, singing, and juggling balls with your feet, you would take a \minus10 penalty to all three performances.
+    These limitations are in addition to any restrictions imposed by your method of performing, such as your hands being occupied playing an instrument.
+
+    You can otherwise act normally while performing, including attacking in combat, if doing so is physically possible.
+
+    \parhead{Performance Time}
+    In general, you can maintain a performance for up to an hour.
+    After that time, you must finish a \glossterm{short rest} before performing again.
+
+  \subsection{Common Perform Tasks}
+    \parhead{Distract} If you succeed at an opposed Perform vs. Social Insight check, you can distract a creature observing your performance.
+    This generally makes the distracted creature \glossterm{briefly} \partiallyunaware of you, which can allow you to hide or backstab them.
+    Normally, the creature realizes that you tricked them once the distraction ends, which prevents them from being distracted again and may influence their behavior.
+    \parhead{Entertain} You can make a Perform check to provide entertainment or to show off your skills.
+    % In theory, this should have nonlinear scaling, but it's probably not worth the effort.
+    \parhead{Earn Income} You can make a Perform check to practice your trade and make a decent living.
+    You earn about half your Perform check result in silver pieces per week of dedicated performance.
+    \parhead{Fascinate} If you succeed at an opposed Perform vs. Social Insight check, you can keep attention focused on you while you perform.
+    This generally gives distracted creatures a \minus5 penalty to the Awareness and Social Insight skills to notice anything other than you.
+    You repeat this check once per minute, with a cumulative \minus5 penalty for each minute that the distraction has lasted.
+
+\newpage
+\skill{Persuasion}{Per}
+  The Persuasion skill represents your ability to convince people to think what you want them to.
+  Depending on how it is used, it represents a combination of verbal acuity, tact, argumentative ability, grace, etiquette, and personal magnetism.
+  Using a Persuasion check usually takes at least a minute of sustained conversation.
+
+  Not all social interactions require Persuasion checks. Much of the time, being extraordinarily persuasive is unnecessary, and creatures can be convinced with normal, inartful conversation and good reasoning. Persuasion checks should only be used when your personal persuasiveness matters.
+
+  \subsection{Common Persuasion Tasks}
+    \parhead{Compel Belief} As part of conversation, you can make a Persuasion check to cause creatures to believe something you say to be true.
+    If you are lying, you must also make a Deception check to avoid revealing the lie.
+    The base \glossterm{difficulty value} is equal to each creature's Mental defense.
+    It is generally easier to convince creatures of things that are highly plausible or beneficial to them.
+    Similarly, it is generally harder to convince creatures of things that are highly unlikely or detrimental to them.
+    \parhead{Form Agreement} As part of conversation, you can make a Persuasion check to cause creatures to accept a deal or arrangement you propose.
+    The base \glossterm{difficulty value} is equal to each creature's Mental defense.
+    It is generally easier to convince creatures if the deal is good for them, and harder if it is bad for them.
+    \parhead{Gather Information} You can make a Persuasion check to gather information from people around you.
+    The \glossterm{difficulty value} is 5 for basic information, 10 for information that most people wouldn't know, and even higher for secrets or intentionally concealed information.
+    This generally requires spending a few hours to meet a variety of people and learn what they know.
+
+  \subsection{Common Persuasion Modifiers}
+    The difficulty value for all Persuasion checks is modified based on the relationship between characters in a conversation, as listed in \tref{Persuasion Relationship Modifiers}.
+    Regardless of what you are saying, you are more likely to succeed when talking to a close friend than a sworn enemy.
+
+    \begin{dtable}
+      \lcaption{Persuasion Relationship Modifiers}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
+        \tb{Relationship}                                                                                                                                                                 & \tb{Difficulty Modifier} \tableheaderrule
+        Intimate: Someone who with whom you have an implicit trust.
+        Example: A lover or spouse.                                                                                                                                                       & \minus15 \\
+        Friend: Someone with whom you have a regularly positive personal relationship.
+        Example: A long-time buddy or a sibling.                                                                                                                                          & \minus10 \\
+        Ally: Someone on the same team, but with whom you have no personal relationship.
+        Example: A cleric of the same religion or a knight serving the same king.                                                                                                         & \minus5  \\
+        Acquaintance (Positive): Someone you have met several times with no particularly negative experiences. Example: The blacksmith that buys your looted equipment regularly.         & \minus2  \\
+        Just Met: No relationship whatsoever.
+        Example: A guard at a castle or a traveler on a road.                                                                                                                             & \plus0   \\
+        Acquaintance (Negative): Someone you have met several times with no particularly positive experiences. Example: A town guard that has arrested you for drunkenness once or twice. & \plus2   \\
+        Opposition: Someone who is part of a group that consistently works against your interests, with whom you have no personal relationship.
+        Example: An outlaw (to a law-abiding person), a paladin of law (to an outlaw), or a soldier who fights for a country at war with your country.                                                                                      & \plus5   \\
+        Enemy: Someone with whom you have a specifically antagonistic relationship.
+        Example: An evil warlord whom you are attempting to thwart, a bounty hunter who is tracking you down for your crimes, or a bandit currently robbing you.                                                          & \plus10  \\
+        Nemesis: Someone who has sworn to do you, personally, harm, or vice versa. Example: The brother of a man you murdered in cold blood, or the person who murdered your brother in cold blood.                                                             & \plus15  \\
+      \end{dtabularx}
+    \end{dtable}
+
+\newpage
+\skill{Profession}{Varies}
+  The Profession skills represent your practical understanding of a particular profession.
+  Like Craft, Knowledge, and Perform, Profession is actually a number of separate skills.
+  You could have several Profession skills, each with a separate degree of training.
+  While a Craft skill represents ability in creating or making an item, a Profession skill represents an aptitude in a vocation requiring a broader range of less specific knowledge.
+  Most commoners have some training in a Profession skill.
+
+  \parhead{Choosing an Attribute}
+  No attribute is a key attribute for Profession.
+  However, depending on how you are using your Profession, you can add any attribute's base value to your Profession check.
+  For example, if you use your experience as a farmer to harrow a field, you can add your Strength to the Profession check.
+  On the other hand, if you use your experience as a sailor to determine the right angle for sails in the current wind, you can add your Perception to the Profession check.
+
+  \subsection{Common Profession Tasks}
+    \parhead{Earn Income} You can make a Profession check to practice your trade and make a decent living.
+    You earn about half your Profession check result in silver pieces per week of dedicated performance.
+    \parhead{Identify Item} You can make a Profession check to identify any unusual properties or functions of a magic item or esoteric mundane item.
+    The \glossterm{difficulty value} is equal to 5 \add twice the item's \glossterm{rank}.
+    Items that are particularly common in a particular setting may be easier to identify, which can reduce the \glossterm{difficulty value} by 2 or more.
+    Success means that you know the item's general purpose, and how to activate its functions, including any magical effects.
+    You also know the item's rank, which lets you estimate its value.
+    \parhead{Perform Task} You can make a Profession check to perform some tasks related to your profession.
+    This allows you to use Profession in place of other skills when it is appropriate.
+    For example, a sailor could use Profession to tie common knots in place of Devices or Survival, or a farmer could use Profession to identify common animals and plants in place of Knowledge (nature).
+    The \glossterm{difficulty value} when using Profession may be higher than it would be to use the normal skill for the task, depending on the relevance of the Profession skill.
+
+\newpage
+\skill{Ride}{Dex}
+  The Ride skill represents your ability to ride and control horses and other mounts.
+  Typical riding actions don't require checks. You can saddle, mount, ride, and dismount from a mount without a problem. However, some special actions require Ride checks.
+
+  Unless an ability says otherwise, you can only use this skill to ride \glossterm{allies} that are exactly one size category larger than you.
+
+  \subsection{Common Ride Modifiers}
+    If a creature is not trained as a mount, the DV to ride it increases by 5.
+    If it lacks a saddle and other riding gear, the DV to ride it increases by 5.
+    If it takes a standard action other than movement, such as attacking, the DV to ride it that round increases by 5.
+    If it uses a \glossterm{movement mode} other than a land speed, the DV to ride it that round increases by 10.
+
+  \subsection{Common Ride Tasks}
+    \parhead{Guide Mount} When riding on a creature, you can make a Ride check to direct your mount's movement.
+    While travelling, this check is only necessary when giving the mount directions.
+    In battle, this check must be repeated at the start of each round.
+    If the mount is trained for battle, the \glossterm{difficulty value} of this check is 0.
+    Otherwise, the DV is 5.
+    Success means the mount understands your direction, and will obey if it is willing and able.
+    Failure means the mount does not understand your direction, and acts of its own volition.
+
+    If you can communicate with your mount in other ways, such as by speaking with it, this check may be unnecessary.
+    \parhead{Maintain Ride} Whenever you take damage or your mount makes a sudden motion, you must make a DV 5 Ride check to continue riding the creature.
+    Sudden motions include jumping, attacking, and moving at more than half speed.
+    Failure means you fall off of your mount.
+    \parhead{Take Cover} You can make a DV 15 Ride check as a \glossterm{movement} to drop low and take \glossterm{cover} behind your mount.
+    This requires the use of a \glossterm{free hand}.
+    Failure means you can't get low enough and gain no benefit from the action.
+
+\newpage
+\skill{Sleight of Hand}{Dex}
+  The Sleight of Hand skill represents your ability to pick pockets, palm objects, and perform other feats of legerdemain.
+
+  \subsection{Common Sleight of Hand Modifiers}
+    All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Difficulty Modifiers}.
+
+    \begin{dtable}
+      \lcaption{Sleight of Hand Difficulty Modifiers}
+      \begin{dtabularx}{\columnwidth}{X l}
+        \tb{Size}   & {Difficulty Modifier} \tableheaderrule
+        Fine        & \minus10   \\
+        Diminutive & \minus5   \\
+        Tiny        & \plus0   \\
+        Small       & \plus5  \\
+        Medium      & \plus10  \\
+        Large       & \plus15 \\
+        Huge        & \plus20 \\
+        Gargantuan  & \plus25 \\
+        Colossal    & \plus30 \\
+      \end{dtabularx}
+    \end{dtable}
+
+  \subsection{Common Sleight of Hand Tasks}
+    \parhead{Conceal Object} You can make an opposed Sleight of Hand vs. Awareness check to conceal an \glossterm{ally} or \glossterm{unattended} object on your person.
+    The target must be at least one size category smaller than you are.
+    \parhead{Conceal Action} You can make an opposed Sleight of Hand vs. Awareness check to conceal an action that you take.
+    The space required to perform the action is the size of the action, and applies a size-based bonus or penalty appropriately.
+    The action must be at least one size category smaller than you are.
+    For example, throwing a dagger is a Small-sized movement, so you take a \minus5 penalty to conceal the action.
+    If you successfully conceal an attack, the defender is at least \partiallyunaware of it (see \pcref{Awareness and Surprise}).
+    \parhead{Pickpocket} You can make an Sleight of Hand check to steal an object from another creature.
+    The object must be loose and accessible, such as in a pocket.
+    All observers, including the creature you are stealing from, can make an Awareness check against your Sleight of Hand check result to observe your attempt.
+    If your check result beats the target's Reflex defense, you steal the object.
+
+\newpage
+\skill{Social Insight}{Per}
+  The Social Insight skill represents your ability to read body language and emotion.
+
+  \subsection{Common Social Insight Tasks}
+    \parhead{Discern Enchantment} You can make a Social Insight check to notice whether a creature is affected by any behavior-altering effects.
+    Noticing a \abilitytag{Compulsion} effect is \glossterm{difficulty value} 5, and noticing an \abilitytag{Emotion} or \ability{Subtle} effect is difficulty value 20.
+    You can use this task to notice effects on yourself in addition to other creatures.
+    \parhead{Discern Hidden Message} You can make an opposed Social Insight vs. Deception check to recognize when a hidden message is being conveyed in a conversation.
+    \parhead{Discern Lies} You can make an opposed Social Insight vs. Deception check to recognize when a creature is intentionally lying or concealing the truth.
+    \parhead{Social Assessment}\nonsectionlabel{Social Assessment}
+    You can make a Social Insight check to get a general assessment of a social situation after a minute of observation.
+    The base \glossterm{difficulty value} is equal to 10.
+    Simple and familiar social situations are easier to understand, while complex and unfamiliar social situations can be much harder to understand.
+    Success means you learn relevant information about the situation, such as a general understanding of expected behaviors or a rough understanding of the social hierarchy.
+
+\newpage
+\skill{Stealth}{Dex}
+  The Stealth skill represents your ability to escape detection while moving or taking large-scale actions.
+  All Stealth checks are made as part of movement or other actions, so they require no special action to perform.
+  If you have been noticed by a creature, you automatically fail all Stealth checks against that creature until you can escape its notice, such as by disappearing out of sight.
+
+  \subsection{Common Stealth Tasks}
+    \parhead{Avoid Notice} You can make an opposed Stealth vs. Awareness check to prevent creatures from noticing you.
+    Success means that the observer's awareness of you, such as unaware or partially unaware, does not change.
+    Failure means that the observer can observe you using any senses they detected you with.
+    Generally, success with sight-based senses causes creatures to become fully aware of you, while success with other senses causes creatures to be \partiallyunaware of you.
+    You must repeat this check whenever you take an action that you want to conceal, such as moving, or your circumstances otherwise meaningfully change in a way that would make you easier to observe.
+    \parhead{Hide} You can make an opposed Stealth vs. Awareness check to make creatures that are aware of you lose track of your position.
+    In order to use this ability, you must move in a way that makes observers lose sight of you for at least ten feet of your motion.
+    In addition, you must have \glossterm{cover} or \glossterm{concealment} for the entire duration of your movement.
+    This can be achieved by moving through total darkness, moving out of \glossterm{line of sight}, teleporting at least ten feet, or similar activities.
+    Success against an observer means that they become \partiallyunaware of you instead of fully aware of you.
+
+  \subsection{Common Stealth Modifiers}\label{Common Stealth Modifiers}
+
+    A creature smaller than Medium size gains a \plus5 bonus to the Stealth skill for each size category by which it is smaller than Medium.
+    Similarly, a creature larger than Medium size takes a \minus5 bonus to the Stealth skill for each size category by which it is smaller than Medium.
+    These effects are summarized below.
+    \begin{itemize}
+      \item Fine: \plus20
+      \item Diminutive: \plus15
+      \item Tiny: \plus10
+      \item Small: \plus5
+      \item Medium: \plus0
+      \item Large: \minus5
+      \item Huge: \minus10
+      \item Gargantuan: \minus15
+      \item Colossal: \minus20
+    \end{itemize}
+
+    Stealth checks generally require \glossterm{cover} or \glossterm{concealment} (see \pcref{Cover} and \pcref{Concealment}).
+    For this purpose, do not consider any cover that would be hidden as a result of a successful check, such as an object you hold in front of you.
+    You take a \minus20 penalty to Stealth checks against creatures who can observe you without any interfering cover or concealment.
+    This includes creatures who can ignore concealment with abilities like \trait{blindsight}.
+
+    You take a \minus10 penalty to Stealth checks against creatures who can know your location with a special ability like \trait{blindsense}.
+    This does not stack with the penalty for not having cover or concealment.
+
+    Moving stealthily is more difficult than hiding in place.
+    If you use a movement speed to move, you take a penalty to your Stealth check to conceal that movement.
+    This is a \minus5 penalty if you move at no more than half your speed.
+    If you use the \textit{sprint} ability or move faster than half your speed, this penalty increases to \minus10.
+
+    Making a \glossterm{strike}, using \glossterm{somatic components}, and taking other similar large-scale actions imposes a \minus10 penalty to the Stealth check.
+    If you make a strike with a \weapontag{Heavy} weapon, this penalty increases to \minus20.
+    This is separate from and stacks with the \plus20 bonus that a creature gets to notice you if you hit it with a \glossterm{strike} (see \pcref{Common Awareness Modifiers}).
+
+\newpage
+\skill{Survival}{Per}
+  The Survival skill represents your ability to take care of yourself and others in the wilderness, including the ability to follow tracks.
+
+  \subsection{Common Survival Tasks}
+    \parhead{Find Sustenance} You can make a Survival check to hunt or forage for food and water.
+    This generally takes a few hours of work to find enough sustenance for you and a small group of allies.
+    The \glossterm{difficulty value} and details of what you find depend on the terrain.
+    \parhead{Follow Tracks} You can make a Survival check to follow tracks at up to half your normal movement speed.
+    You can move at full speed if you accept a \minus5 penalty to the check.
+    The \glossterm{difficulty value} depends on how easy the tracks are to notice.
+    You must repeat this check whenever the trail changes significantly, such as when it crosses other tracks or passes through a different environment.
+    \parhead{Navigate Wilderness} You can make a Survival check while moving overland to avoid natural terrain hazards and getting lost.
+    The \glossterm{difficulty value} and consequences of failure depend on the terrain.
+    Overland travel often follows standard roads or paths, which may make this check unnecessary depending on the quality of the road.
+    \parhead{Predict Weather} You can make a \glossterm{difficulty value} 10 Survival check to predict the local weather for the next day.
+
+  \subsection{Terrain Difficulty Values}
+    These are general guidelines, not exact rules.
+    The GM can tell you more about the specific landscape you are traversing.
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l X X}
+        \tb{Terrain} & \tb{Navigation Difficulty Value} & \tb{Sustenance Difficulty Value} \tableheaderrule
+        Desert       & 10                                & 20 \\
+        Forest       & 10                                & 10 \\
+        Jungle       & 15                                & 5 \\
+        Mountains    & 10                                & 15 \\
+        Hills        & 5                                 & 10 \\
+        Plains       & 5                                 & 10 \\
+        Swamp        & 15                                & 15 \\
+      \end{dtabularx}
+    \end{columntable}
+
+  \subsection{Tracking}
+    One of the key uses for the Survival skill is to follow tracks left by creatures.
+    You can use the Awareness skill to notice signs of passage, but the Survival skill is necessary to follow tracks for any distance.
+    Some suggestions for determining the difficulty of following a trail can be found in \trefnp{Example Tracking Difficulty Values} and \trefnp{Example Tracking Difficulty Modifiers}.
+    The GM may also apply other circumstantial modifiers not listed here.
+
+    \begin{dtable}
+      \lcaption{Example Tracking Difficulty Values}
+      \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
+        \tb{Surface}     & \tb{Description}                                                                                                                                                     & \tb{Difficulty Value} \tableheaderrule
+        Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints.                                                                      & 0                                 \\
+        Soft ground      & Any surface soft enough to yield to pressure, but firmer than wet mud or fresh snow, in which a creature leaves frequent but shallow footprints                      & 5                                                                                  \\
+        Firm ground      & Most normal outdoor surfaces (such as lawns, fields, woods, and the like) or exceptionally soft or dirty indoor surfaces (thick rugs and very dirty or dusty floors) & 10                                                                                          \\
+        Hard ground      & Any surface that doesn't hold footprints at all, such as bare rock or a streambed                                                                                    & 15                    \\
+        Scent            & Tracking using the \trait{scent} ability instead of vision                                                                                                           & 5 \\
+      \end{dtabularx}
+    \end{dtable}
+
+    \begin{dtable}
+      \lcaption{Example Tracking Difficulty Modifiers}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
+        \tb{Condition}                                      & \tb{Difficulty Modifier} \tableheaderrule
+        Every three creatures in the group being tracked    & \minus1      \\
+        Size of creature or creatures being tracked:\fn{1}  &              \\
+        Fine                                                & \plus20      \\
+        Diminutive                                          & \plus15      \\
+        Tiny                                                & \plus10       \\
+        Small                                               & \plus5       \\
+        Medium                                              & \plus0       \\
+        Large                                               & \minus5      \\
+        Huge                                                & \minus10      \\
+        Gargantuan                                          & \minus15     \\
+        Colossal                                            & \minus20     \\
+        Every 24 hours since the trail was made             & \plus1\fn{3} \\
+        Every hour of rain since the trail was made         & \plus1       \\
+        Fresh snow cover since the trail was made           & \plus10      \\
+        \tb{Poor visibility:\fn{2}}                         &              \\
+        Overcast or moonless night                          & \plus6       \\
+        Moonlight                                           & \plus3       \\
+        Fog or precipitation                                & \plus3       \\
+        Tracked party hides trail (and moves at half speed) & \plus5
+      \end{dtabularx}
+      1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
+      2 Apply only the largest modifier from this category. \\
+      3 With scent-based tracking, apply this modifier per hour since the trail was made. \\
+    \end{dtable}
+
+\newpage
+\skill{Swim}{Str}
+  The Swim skill represents your ability to swim.
+
+  \subsection{Fighting While Swimming}
+    A creature that is swimming without a \glossterm{swim speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+
+    Distant fighting is limited while underwater, or otherwise submerged in a water-like liquid.
+    In clear water, both \glossterm{line of sight} and \glossterm{line of effect} are limited to 120 feet.
+    The density of the water blocks effects from spreading further than that.
+    Murky water can have drastically more limited visibility, at the GM's discretion.
+
+    Ranged weapons have great difficulty functioning underwater.
+    All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
+
+  \subsection{Common Swim Tasks}
+    \parhead{Move} You can make a Swim check as a \glossterm{movement} while you are in water or a similar liquid.
+    This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
+    The \glossterm{difficulty value} is based on the turbulence of the liquid.
+    Success means that you move through the water, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
+    Critical success means the maximum distance you can move increases to half of your base speed.
+
+  \subsection{Swim Speed}\label{Swim Speed}
+    Some creatures have a listed swim speed.
+    A creature with a passive swim speed must still make a Swim check to move in liquid.
+    However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success.
+
+  \subsection{Swim Difficulty Values}
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{>{\lcol}X >{\lcol}X}
+        \tb{Liquid}                                                       & \tb{Difficulty Value} \tableheaderrule
+        Calm water                                                        & 5  \\
+        Rough water                                                       & 10 \\
+        Viscous liquid, like a muddy swamp                                & 10 \\
+        Stormy water                                                      & 15 \\
+        Extremely stormy water                                            & 20 \\
+      \end{dtabularx}
+    \end{columntable}
