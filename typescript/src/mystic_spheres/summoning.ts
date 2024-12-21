@@ -276,9 +276,9 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an earth elemental.
-          Its attacks deal \\damagerankfour, and have that \atEarth tag.
+          Its attacks deal \\damagerankfour, and have that \\atEarth tag.
           It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
-          In addition, it is immune to \atEarth attacks.
+          In addition, it is immune to \\atEarth attacks.
         `,
         name: 'summon monster',
       },
@@ -294,10 +294,10 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an water elemental.
-          Its attacks deal \\damagerankone, and have the \atWater tag.
+          Its attacks deal \\damagerankone, and have the \\atWater tag.
           It has a 30 foot \\glossterm{swim speed}.
-          In addition, it is immune to \atWater attacks.
-          However, it is \\glossterm{vulnerable} to \atElectricity attacks.
+          In addition, it is immune to \\atWater attacks.
+          However, it is \\glossterm{vulnerable} to \\atElectricity attacks.
         `,
         name: 'summon monster',
       },
@@ -313,9 +313,9 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an air elemental.
-          Its attacks deal \\damagerankthree, and have the \atAir tag.
+          Its attacks deal \\damagerankthree, and have the \\atAir tag.
           It has a 30 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit}.
-          In addition, it is immune to \atAir attacks.
+          In addition, it is immune to \\atAir attacks.
         `,
         name: 'summon monster',
       },
@@ -328,13 +328,11 @@ export const summoning: MysticSphere = {
     {
       name: 'Summon Fire Elemental',
 
-      // original targets: One unoccupied square on stable ground within \medrange
-
       functionsLike: {
         exceptThat: `
         the summoned creature appears to be a fire elemental.
-        Its attacks deal \\damageranktwo, and have the \atFire tag.
-        In addition, it is immune to \atFire attacks.
+        Its attacks deal \\damageranktwo, and have the \\atFire tag.
+        In addition, it is immune to \\atFire attacks.
         `,
         name: 'summon monster',
       },
@@ -346,8 +344,6 @@ export const summoning: MysticSphere = {
 
     {
       name: 'Summon Bear',
-
-      // original targets: One unoccupied square on stable ground within \medrange
 
       functionsLike: {
         exceptThat: `
@@ -469,8 +465,6 @@ export const summoning: MysticSphere = {
 
     {
       name: 'Summon Pegasus',
-
-      // original targets: One unoccupied location on stable ground within \medrange
 
       functionsLike: {
         exceptThat: `

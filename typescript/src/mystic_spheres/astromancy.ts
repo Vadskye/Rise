@@ -94,7 +94,7 @@ export const astromancy: MysticSphere = {
       effect: `
         As a \\glossterm{minor action}, you can teleport one of your items into your \\glossterm{free hand}.
         This can teleport items from your backpack, or other storage devices worn closely on your body such as weapon sheathes, as long as you are touching the outside of that storage (including though clothing or armor).
-        Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \tref{Donning Armor}).
+        Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \\tref{Donning Armor}).
       `,
       rank: 2,
       type: 'Attune',

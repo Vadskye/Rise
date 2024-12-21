@@ -79,7 +79,7 @@ export const verdamancy: MysticSphere = {
           The target is \\slowed as a \\glossterm{condition}.
           This condition can be removed if the target makes a \\glossterm{difficulty value} 8 Strength check as a \\glossterm{movement} to break the plants.
           If the target makes this check as a standard action, it gains a +5 bonus.
-          In addition, this condition is removed if the target takes damage from a \atFire ability.
+          In addition, this condition is removed if the target takes damage from a \\atFire ability.
         `,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\medrange.
@@ -553,7 +553,7 @@ export const verdamancy: MysticSphere = {
         hit: "\\damagerankone.",
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
-          If the target is a plant, including plant creatures, you gain a \plus10 accuracy bonus with this attack.
+          If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with this attack.
           In addition, all \\glossterm{undergrowth} in a \\medarea radius \\glossterm{zone} around the target \\glossterm{briefly} shrivels away into the ground.
         `,
       },

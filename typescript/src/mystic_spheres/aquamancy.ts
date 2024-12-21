@@ -74,7 +74,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         % dr3l
         When you do, you regain 2d10 hit points.
         Normally, this healing cannot increase your hit points above half your maximum hit points.
-        If you increase your \glossterm{fatigue level} by one, you can ignore this limitation for one drink of water.
+        If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation for one drink of water.
       `,
       rank: 1,
       scaling: { special: "The healing increases by 1d10 per rank beyond 1." },
@@ -87,7 +87,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         While this spell is active, water can purify you.
         As a standard action, you can cleanse yourself by drinking at least one ounce of clean water.
         When you do, you remove one \\glossterm{condition} affecting you.
-        If you are also attuned to the \ability{restorative water} spell, you can both regain hit points and remove a condition from the same drink of water.
+        If you are also attuned to the \\ability{restorative water} spell, you can both regain hit points and remove a condition from the same drink of water.
       `,
       rank: 3,
       type: 'Attune',
@@ -98,7 +98,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       effect: `
         You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
         If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
-        While swimming, you gain a \plus1 bonus to your Armor and Reflex defenses.
+        While swimming, you gain a \\plus1 bonus to your Armor and Reflex defenses.
       `,
       rank: 2,
       type: 'Attune',
