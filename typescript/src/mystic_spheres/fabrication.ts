@@ -51,11 +51,52 @@ export const fabrication: MysticSphere = {
 
       effect: `
         Whenever you use the \ability{total defense} or \ability{recover} ability, you can activate this ability.
-        If you do, a sudden wall of shields appears around you, granting you a \plus4 bonus to your Armor defense for the rest of the round.
-        This is a \atSwift effect, so it affects attacks you during the current phase.
-        At the end of the round when the shields appear, your attunement to this effect ends.
+        If you do, you create a wall of indestructible shields around you.
+        This grants you a \plus2 bonus to your Armor defense and \\glossterm{cover} for the rest of the round.
+        After that time, your attunement to this effect ends.
+        This is a \atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
+      name: 'Instant Shield',
+
+      effect: `
+        As a \\glossterm{minor action}, you can create a shield that you are proficient with in one \\glossterm{free hand}.
+        The shield can be a buckler, standard shield, or tower shield.
+        It is automatically strapped to your arm, allowing you to use it immediately.
+        This is a \atSwift effect, so the shield protects you from attacks during the current phase.
+        The shield automatically disappears at the end of the round, but you can summon it again in future rounds.
+      `,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
+      name: 'Instant Copy',
+
+      effect: `
+        Choose one Small or smaller object within \medrange.
+        You create a nonmagical copy of that item that appears in your hands or at your feet.
+        Make a Craft check with a \plus5 bonus to determine how closely the appearance and function of the copy matches the original.
+        The copy is always \\glossterm{mundane}, even if the original was magical.
+        It may appear to be made of a special material such as adamantine, but functions as if it was made of an ordinary material like wood or iron.
+        The copy lasts as long as you stay attuned to this effect.
+      `,
+      rank: 2,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
+      name: 'Hidden Copy',
+
+      functionsLike: {
+        name: "instant copy",
+        exceptThat: "the copy can appear in your backpack, or some other small personal storage you are touching.",
+      },
+      rank: 5,
       tags: ['Manifestation'],
       type: 'Attune',
     },
