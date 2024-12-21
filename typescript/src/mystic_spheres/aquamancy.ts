@@ -109,7 +109,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // The accuracy bonus drops damage from d3 to d2h
       attack: {
         hit: `
-          \\damageranktwo{physical}.
+          \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -125,7 +125,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // This accuracy bonus is high enough to drop from d7 to d6h
       attack: {
         hit: `
-          \\damageranksix{physical}.
+          \\damageranksix.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -658,7 +658,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water as a \\glossterm{condition}.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes \\damagerankfour{physical} during each of your subsequent actions as it dissolves.
+            \\item If it is submerged in water or other liquid, it takes \\damagerankfour during each of your subsequent actions as it dissolves.
             \\item It is \\prone and cannot stand up.
             \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
             \\item It is unable to speak normally or use \\glossterm{verbal components} or \\glossterm{somatic components}.

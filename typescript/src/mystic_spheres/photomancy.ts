@@ -556,7 +556,7 @@ export const photomancy: MysticSphere = {
       name: 'Reflective Lightbeam',
 
       attack: {
-        hit: `\\damagerankonelow{energy}.`,
+        hit: `\\damagerankonelow.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
@@ -573,7 +573,7 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'reflective lightbeam',
-        exceptThat: 'the damage increases to \\damagerankfivelow{energy}.',
+        exceptThat: 'the damage increases to \\damagerankfivelow.',
       },
       rank: 6,
       scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.'},
