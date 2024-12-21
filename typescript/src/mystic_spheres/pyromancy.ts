@@ -83,6 +83,48 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   ],
   spells: [
     {
+      name: 'Unstable Heat',
+
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        targeting: `
+          Whenever you hit a creature with a \atBrawling attack or a creature hits you with a \atBrawling attack, make an attack vs. Reflex against that creature.
+          After you make this attack, your attunement to this ability ends.
+        `,
+      },
+      rank: 1,
+      scaling: 'accuracy',
+      type: 'Attune',
+    },
+    {
+      name: 'Mighty Unstable Heat',
+
+      functionsLike: {
+        name: "unstable heat",
+        exceptThat: "the damage increases to \\damagerankfour.",
+      },
+      rank: 4,
+      scaling: 'accuracy',
+      type: 'Attune',
+    },
+    {
+      name: 'Siphon Flame',
+
+      effect: `
+        Whenever you use a \atFire ability, you can siphon \\glossterm{mundane} flames within \longrange to fuel it.
+        This extinguishes the flame if it is Medium or smaller.
+        You gain a \plus2 accuracy bonus with that ability this round for drawing in a Small flame, such as a campfire.
+        For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \plus7 bonus from a Colossal flame.
+        As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a campfire.
+        After you enhance an ability in this way, your attunement to this ability ends.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+
+    {
       name: 'Burning Grasp',
 
       attack: {
