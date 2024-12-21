@@ -148,7 +148,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour{fire} immediately, and again during your next action.
+          \\damagerankfour immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -166,7 +166,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1dr for full self-targeting
       attack: {
         hit: `
-          \\damageranktwo{fire}.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -186,7 +186,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1dr for full self-targeting
       attack: {
         hit: `
-          \\damagerankfive{fire}.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -204,7 +204,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fireball',
 
       attack: {
-        hit: `\\damageranktwo{fire}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
@@ -219,7 +219,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Massive Fireball',
 
       attack: {
-        hit: `\\damagerankthree{fire}.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearea radius within \\medrange.
@@ -234,7 +234,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Delayed Fireball',
 
       attack: {
-        hit: `\\damagerankfive{fire}.`,
+        hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\medrange.
@@ -252,7 +252,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damageranksix{fire}.
+          \\damageranksix.
           If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
@@ -271,7 +271,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Burning Hands',
 
       attack: {
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -286,7 +286,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Burning Hands',
 
       attack: {
-        hit: `\\damagerankthree{fire}.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
@@ -303,7 +303,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
           The target catches on fire as a \\glossterm{condition}.
-          It takes \\damagerankone{fire} immediately and during each of your subsequent actions.
+          It takes \\damagerankone immediately and during each of your subsequent actions.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -321,7 +321,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: "ignition",
-        exceptThat: "the damage increases to \\damagerankfour{fire}.",
+        exceptThat: "the damage increases to \\damagerankfour.",
       },
       rank: 4,
       scaling: 'accuracy',
@@ -331,7 +331,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flame Breath',
 
       attack: {
-        hit: `\\damageranktwo{fire}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
@@ -350,7 +350,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankfive{fire}.
+          the damage increases to \\damagerankfive.
           In addition, the area increases to a \\gargarea cone.
         `,
       },
@@ -365,7 +365,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1dr for brief cooldown
       attack: {
         hit: `
-          \\damagerankthree{fire}.
+          \\damagerankthree.
         `,
         targeting: `
           You can set things on fire simply by staring at them as a standard action.
@@ -383,7 +383,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: "eyes of flame",
-        exceptThat: "the damage increases to \\damagerankseven{fire}.",
+        exceptThat: "the damage increases to \\damagerankseven.",
       },
       rank: 5,
       scaling: 'accuracy',
@@ -394,7 +394,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flaming Spheres',
 
       attack: {
-        hit: `\\damagerankthree{fire}.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
@@ -413,7 +413,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flame Serpent',
 
       attack: {
-        hit: `\\damagerankthree{fire}.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
@@ -427,7 +427,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Personal Ignition',
 
       attack: {
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone.`,
         targeting: `
           During each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -448,7 +448,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'personal ignition',
-        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       narrative: `
         You catch on fire.
@@ -464,7 +464,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         // TODO: is this damage correct?
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
@@ -481,7 +481,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'flame aura',
-        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 7,
       scaling: 'accuracy',
@@ -503,7 +503,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Wall of Fire',
 
       attack: {
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
@@ -527,7 +527,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'wall of fire',
         exceptThat: `
-          the damage increases to \\damagerankfour{fire}.
+          the damage increases to \\damagerankfour.
           In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
       },
@@ -543,7 +543,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone{fire}.
+          \\damagerankone.
           If the target loses \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
@@ -559,7 +559,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'pyrohemia',
-        exceptThat: 'the damage increases to \\damagerankfour{fire}.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -569,7 +569,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Kindled Fireburst',
 
       attack: {
-        hit: `\\damageranktwo{fire}.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Choose one Tiny or larger active fire within \\medrange.
@@ -588,7 +588,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damageranksix{fire}, and the area increases to a \\medarea radius.',
+        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\medarea radius.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
@@ -632,7 +632,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankone{fire}.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -648,7 +648,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
       attack: {
-        hit: `\\damagerankfour{fire}.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -751,16 +751,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         When the object explodes, make an attack vs. Reflex against everything within a \\medarea radius from the object.
         Your accuracy with this attack is equal to half the sum of your level and Perception.
         This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        \\hit \\damagerankthree{fire}.
+        \\hit \\damagerankthree.
         \\miss Half damage.
       `,
       rank: 4,
       scaling: {
         special: `
           You can perform this ritual at a higher rank.
-          \\rank{5} The damage increases to \\damagerankfour{fire}.
-          \\rank{6} The damage increases to \\damagerankfive{fire}.
-          \\rank{7} The damage increases to \\damageranksix{fire}.
+          \\rank{5} The damage increases to \\damagerankfour.
+          \\rank{6} The damage increases to \\damagerankfive.
+          \\rank{7} The damage increases to \\damageranksix.
         `,
       },
       tags: ['Trap'],
