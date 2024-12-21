@@ -479,7 +479,6 @@ export const revelation: MysticSphere = {
     {
       name: 'Clairvoyance',
 
-      // original targets: one unoccupied square within \medrange (see text)
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to target a location.
@@ -694,7 +693,6 @@ export const revelation: MysticSphere = {
     {
       name: 'Alarm',
 
-      // original targets: one unoccupied square within \medrange
       castingTime: 'one minute',
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in the target location.

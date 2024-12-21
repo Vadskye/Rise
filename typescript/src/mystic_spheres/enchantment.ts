@@ -65,9 +65,9 @@ export const enchantment: MysticSphere = {
       name: 'Sympathetic Link',
 
       effect: `
-        Whenever you use a \atCompulsion or \atEmotion ability that makes an attack, you can choose to include yourself as a target.
+        Whenever you use a \\atCompulsion or \\atEmotion ability that makes an attack, you can choose to include yourself as a target.
         If you do, the attack automatically hits you.
-        As long as you are not immune to the ability or any part of its effects, this grants you a \plus2 accuracy bonus with that ability against its other targets.
+        As long as you are not immune to the ability or any part of its effects, this grants you a \\plus2 accuracy bonus with that ability against its other targets.
       `,
       rank: 1,
       type: 'Attune',

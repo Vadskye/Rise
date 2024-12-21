@@ -84,7 +84,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Army of Twins',
 
-      // original targets: Up to five targets within \medrange from among you and your \glossterm{allies}
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         In addition, choose one of the targets as the primary target.
@@ -349,11 +348,11 @@ export const photomancy: MysticSphere = {
       name: 'Desperate Mirrorswarm',
 
       effect: `
-        Whenever you use the \ability{total defense} or \ability{recover} ability, you can activate this ability.
+        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
         All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance} for the rest of the round.
         After that time, your attunement to this effect ends.
-        This is a \atSwift effect, so it protects you from attacks during the current phase.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
         It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,

@@ -669,7 +669,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
-        While you are in this form, you are unable to take any standard action other than \glossterm{movement}.
+        While you are in this form, you are unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
       tags: [],
