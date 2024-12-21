@@ -32,9 +32,9 @@ const BASE_CLASS_MODIFIERS = {
     armor_usage_class: "medium",
     damage_resistance: 1.0,
     hit_points: 'medium',
-    fortitude: 0,
+    fortitude: 1,
     reflex: 1,
-    mental: 2,
+    mental: 3,
   },
   skirmisher: {
     armor_defense: 4,
