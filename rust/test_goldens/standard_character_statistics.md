@@ -4,7 +4,7 @@
 
 ### Damage Absorption
 HP: 14 = (High progression: 8 <level> + 6 <con> + 0 <modifier>) * 0 <elite multiplier>
-DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
+DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 1
@@ -29,7 +29,7 @@ fighter: attribute strength by 1
 
 ### Damage Absorption
 HP: 48 = (High progression: 29 <level> + 15 <con> + 4 <modifier>) * 0 <elite multiplier>
-DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
+DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 10
@@ -63,7 +63,7 @@ magic: HP 4
 
 ### Damage Absorption
 HP: 180 = (High progression: 92 <level> + 72 <con> + 16 <modifier>) * 0 <elite multiplier>
-DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster hp>) * 0 <elite multiplier>
+DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 20

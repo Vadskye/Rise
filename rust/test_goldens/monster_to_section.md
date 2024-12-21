@@ -11,7 +11,7 @@
                 \par \RaggedRight
                 \begin{monsterstatistics}
                 \pari \textbf{HP} 12
-                    \monsep \textbf{DR} 6
+                    \monsep \textbf{DR} 8
                 \pari \textbf{Defenses}
                     Armor 5
                     \monsep Fort 5
@@ -161,7 +161,7 @@
                 \par \RaggedRight
                 \begin{monsterstatistics}
                 \pari \textbf{HP} 36
-                    \monsep \textbf{DR} 27
+                    \monsep \textbf{DR} 32
                 \pari \textbf{Defenses}
                     Armor 7
                     \monsep Fort 7
@@ -315,7 +315,7 @@
                 \par \RaggedRight
                 \begin{monsterstatistics}
                 \pari \textbf{HP} 35
-                    \monsep \textbf{DR} 17
+                    \monsep \textbf{DR} 24
                 \pari \textbf{Defenses}
                     Armor 11
                     \monsep Fort 11
@@ -479,7 +479,7 @@
                 \par \RaggedRight
                 \begin{monsterstatistics}
                 \pari \textbf{HP} 105
-                    \monsep \textbf{DR} 78
+                    \monsep \textbf{DR} 96
                 \pari \textbf{Defenses}
                     Armor 13
                     \monsep Fort 13

@@ -12,8 +12,8 @@ const BASE_CLASS_MODIFIERS = {
   brute: {
     armor_defense: 4,
     armor_usage_class: "medium",
-    damage_resistance: 0.25,
-    hit_points: 'extreme',
+    damage_resistance: "low",
+    hit_points: 'very high',
     fortitude: 2,
     reflex: 1,
     mental: 0,
@@ -21,7 +21,7 @@ const BASE_CLASS_MODIFIERS = {
   leader: {
     armor_defense: 4,
     armor_usage_class: "medium",
-    damage_resistance: 0.5,
+    damage_resistance: "medium",
     hit_points: 'high',
     fortitude: 1,
     reflex: 1,
@@ -30,7 +30,7 @@ const BASE_CLASS_MODIFIERS = {
   mystic: {
     armor_defense: 3,
     armor_usage_class: "medium",
-    damage_resistance: 1.0,
+    damage_resistance: "high",
     hit_points: 'medium',
     fortitude: 1,
     reflex: 1,
@@ -39,7 +39,7 @@ const BASE_CLASS_MODIFIERS = {
   skirmisher: {
     armor_defense: 4,
     armor_usage_class: "medium",
-    damage_resistance: 0.5,
+    damage_resistance: "low",
     hit_points: 'high',
     fortitude: 0,
     reflex: 2,
@@ -48,7 +48,7 @@ const BASE_CLASS_MODIFIERS = {
   sniper: {
     armor_defense: 3,
     armor_usage_class: "medium",
-    damage_resistance: 0.5,
+    damage_resistance: "low",
     hit_points: 'medium',
     fortitude: 0,
     reflex: 2,
@@ -57,7 +57,7 @@ const BASE_CLASS_MODIFIERS = {
   warrior: {
     armor_defense: 5,
     armor_usage_class: "heavy",
-    damage_resistance: 1.0,
+    damage_resistance: "very high",
     hit_points: 'high',
     fortitude: 1,
     reflex: 0,
@@ -1332,16 +1332,18 @@ function handleDamageResistance() {
       },
     },
     (v) => {
-      const playerTotalDr = v.body_armor_damage_resistance + v.misc;
-
-      const hpDrMultiplier = (v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance) || 0;
-      const withHpModifier = playerTotalDr + v.hit_points_maximum * hpDrMultiplier;
+      let drFromLevel = 0;
+      const drProgression = v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance;
+      if (drProgression) {
+        drFromLevel = calcHpBonuses(drProgression, v.level, 0).hpFromLevel;
+      }
+      const playerTotalDr = v.body_armor_damage_resistance + drFromLevel + v.misc;
 
       var crMultiplier = {
         1: 1,
-        4: 1.5,
+        4: 4,
       }[v.challenge_rating] || 1;
-      const crMultipliedValue = Math.floor(withHpModifier * crMultiplier);
+      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
       const monsterTotalDr = Math.floor(
@@ -1354,8 +1356,8 @@ function handleDamageResistance() {
           v.miscExplanation,
           [
             { name: "body armor", value: v.body_armor_damage_resistance },
-            { name: "HP", value: withHpModifier - playerTotalDr },
-            { name: "CR", value: crMultipliedValue - withHpModifier },
+            { name: "Progression", value: drFromLevel },
+            { name: "CR", value: crMultipliedValue - playerTotalDr },
             { name: "vital", value: monsterTotalDr - crMultipliedValue },
           ]
         ),
@@ -1650,14 +1652,7 @@ function handleHitPoints() {
     },
     (v) => {
       const progressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
-      const { baseHp, incrementalHp } = calcHpComponents(progressionName, v.level, v.constitution);
-
-      // This is the number of levels since the last breakpoint jump. Each breakpoint jump
-      // increases base HP and incremental level count ("X HP per level above 7th").
-      const incrementalLevel = (v.level - 1) % 6;
-
-      const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
-      const hpFromConstitution = incrementalHp * v.constitution;
+      const { hpFromLevel, hpFromConstitution} = calcHpBonuses(progressionName, v.level, v.constitution);
 
       let crMultiplier = {
         1: 1,
@@ -1700,6 +1695,18 @@ function calcHpComponents(progressionName, level) {
   }[progressionName][progressionIndex];
 
   return { baseHp, incrementalHp }
+}
+
+function calcHpBonuses(progressionName, level, constitution) {
+  const { baseHp, incrementalHp } = calcHpComponents(progressionName, level);
+  // This is the number of levels since the last breakpoint jump. Each breakpoint jump
+  // increases base HP and incremental level count ("X HP per level above 7th").
+  const incrementalLevel = (level - 1) % 6;
+
+  const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
+  const hpFromConstitution = incrementalHp * constitution;
+
+  return { hpFromLevel, hpFromConstitution };
 }
 
 function handleInsightPoints() {
