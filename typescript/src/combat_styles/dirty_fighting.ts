@@ -263,7 +263,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your attack result also hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to your power.
-        If this attack misses, you \\glossterm{briefly} take a \minus2 accuracy penalty against the target.
+        If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 3,
     },
@@ -274,7 +274,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your attack result also hits the target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 2 power.
-        If this attack misses, you \\glossterm{briefly} take a \minus2 accuracy penalty against the target.
+        If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 7,
     },
