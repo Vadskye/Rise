@@ -972,9 +972,15 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         % metal encumbrance reduction                                            
         Mithral                    & \mult2                 & \minus1          & \tdash                                  & Metal         & 3 (1,000 gp)   \\
         Mithral, pure              & \mult4                 & \minus2          & \tdash                                  & Metal         & 5 (25,000 gp)  \\
+        % stealth leather
+        Shadowweave                & \mult3                 & \tdash          & \tdash                                  & Leather       & 4 (5,000 gp)   \\
+        Shadowweave, umbral        & \mult6                 & \tdash          & \tdash                                  & Leather       & 6 (125,000 gp) \\
         % early metal resistance, encumbrance                                                                                                               
         Starmetal\fn{1}            & \mult2                 & \plus2           & Very heavy                              & Metal         & 2 (200 gp)     \\
         Starmetal, pure\fn{1}      & \mult4                 & \plus2           & Very heavy                              & Metal         & 4 (5,000 gp)   \\
+        % early leather resistance, fire vulnerability
+        Vineweave                  & \mult2                 & \tdash          & Fire vulnerability                      & Leather       & 4 (5,000 gp)   \\
+        Vineweave, braided         & \mult4                 & \tdash          & Fire vulnerability                      & Leather       & 6 (125,000 gp) \\
       \end{dtabularx}
       1. This armor has special rules explained below. \\
       \end{dtable!*}
@@ -1010,17 +1016,33 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
       \parhead{Dragonscale} Each dragonscale body armor is made from the scales of a particular type of dragon.
       You are \trait{impervious} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult3 \glossterm{damage resistance} and is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
+      In addition, it provides \mult3 \glossterm{damage resistance}.
+      Dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
       \parhead{Dragonscale, Ancient} Each ancient dragonscale body armor is made from the scales of a particular type of dragon.
       You are \trait{immune} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult6 \glossterm{damage resistance} and is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
+      In addition, it provides \mult6 \glossterm{damage resistance}.
+      Dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
+
+      \parhead{Shadowweave} Shadowweave body armor is exceptionally stealthy.
+      You gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing shadowweave armor.
+      In addition, it provides \mult3 \glossterm{damage resistance}.
+
+      \parhead{Shadowweave, Umbral} Umbral shadowweave body armor is exceptionally stealthy.
+      You gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing umbral shadowweave armor.
+      In addition, it provides \mult6 \glossterm{damage resistance}.
 
       \parhead{Starmetal} Starmetal body armor is heavier than other armor, as described by adamantine armor.
       In addition, it provides \mult2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
       \parhead{Starmetal, Pure} Pure starmetal body armor is heavier than other armor, as described by adamantine armor.
       In addition, it provides \mult4 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+
+      \parhead{Vineweave} Vineweave body armor provides \mult2 \glossterm{damage resistance}.
+      However, it makes you \vulnerable to \atFire attacks.
+
+      \parhead{Vineweave, Braided} Braided vineweave body armor provides \mult4 \glossterm{damage resistance}.
+      However, it makes you \vulnerable to \atFire attacks.
 
       % Magic armor is a highly limited slot.
       % They have the same power level as self-attune spells.
