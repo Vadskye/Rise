@@ -363,9 +363,9 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The extra damage increases to 1d10, and the hit point loss increases to 4.`,
-        5: `The extra damage increases to 2d10, and the hit point loss increases to 8.`,
-        7: `The extra damage increases to 4d10, and the hit point loss increases to 16.`,
+        3: `The extra damage increases to 2d6, and the hit point loss increases to 4.`,
+        5: `The extra damage increases to 4d6, and the hit point loss increases to 8.`,
+        7: `The extra damage increases to 8d6, and the hit point loss increases to 16.`,
       },
       type: 'Attune',
     },
