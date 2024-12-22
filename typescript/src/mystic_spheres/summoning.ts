@@ -44,7 +44,7 @@ export const summoning: MysticSphere = {
 
         Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
         There are only two actions it can take: movement and attacking.
-        It moves as you direct, and can \ability{sprint} during the \\glossterm{action phase}.
+        It moves as you direct, and can \\ability{sprint} during the \\glossterm{action phase}.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
         If it hits, it deals \\damagerankzero.
 

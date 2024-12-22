@@ -34,7 +34,7 @@ export const fabrication: MysticSphere = {
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The item appears in your hand or on the ground at your feet.
 
-        If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \pcref{Armor Special Materials}, and \pcref{Weapon Special Materials}).
+        If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
         The item's rank cannot exceed your spellcasting rank with this spell.
 
         Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
@@ -514,7 +514,7 @@ export const fabrication: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         You create a nonmagical weapon that you are proficient with your hand or hands.
-        The weapon can be made of any special material other than cold iron (see \pcref{Weapon Special Materials}.
+        The weapon can be made of any special material other than cold iron (see \\pcref{Weapon Special Materials}.
         Its rank cannot exceed your spellcasting rank with this spell.
 
         After the weapon appears, you can immediately make a \\glossterm{strike} with that weapon.
