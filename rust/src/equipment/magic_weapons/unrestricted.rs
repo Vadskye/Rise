@@ -58,9 +58,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             ItemUpgrade::new(5, "Deals +1d8-2 damage if you have 4 Str", r"
                 If your Strength is at least 4, the damage die increases to 1d8.
             "),
-            // +5 damage
-            ItemUpgrade::new(7, "Deals +2d6-2 damage if you have 5 Str", r"
-                If your Strength is at least 5, the damage dice increase to 2d6.
+            // +3.5 damage
+            ItemUpgrade::new(7, "Deals +1d10-2 damage if you have 5 Str", r"
+                If your Strength is at least 5, the damage die increases to 1d10.
             "),
         ],
         ..MagicWeapon::default()
