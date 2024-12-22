@@ -880,6 +880,41 @@ export const polymorph: MysticSphere = {
         When you cast this spell, you choose your eyes, nose, mouth, or ears.
         You gain a duplicate copy of that organ anywhere on your body.
         You can only use one of them at a time, but you can change which one is active once per round as a \\glossterm{free action}.
+
+        You can sustain or attune to this spell multiple times.
+        Each time, you must choose a different organ to copy.
+      `,
+      rank: 2,
+      type: 'Sustain (attuneable, minor)',
+    },
+    {
+      name: 'Armblade',
+
+      effect: `
+        When you cast this spell, you choose a weapon you are proficient with.
+        One of your \glossterm{free hands} shapeshifts into that weapon.
+
+        The weapon functions like an ordinary manufactured weapon, with two exceptions.
+        First, it cannot leave your body, so you cannot throw it or drop it.
+        Second, you can treat it as a \glossterm{natural weapon}, a \glossterm{manufactured weapon}, or both, depending on what is more beneficial for you.
+      `,
+      rank: 1,
+      scaling: {
+        2: `
+          The weapon can be made of any special material other than cold iron and silver (see \pcref{Weapon Special Materials}).
+          Its rank cannot exceed your spellcasting rank with this spell.
+        `
+      },
+      type: 'Attune',
+    },
+    {
+      name: 'Sudden Liquification',
+
+      effect: `
+        When you would suffer a \glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
+        When it does, your body liquifies in an instant, limiting the damage to vital areas.
+        This causes the critical hit to become only a regular hit.
+        However, you are also \\glossterm{briefly} \slowed, and your attunement to this ability ends.
       `,
       rank: 1,
       type: 'Attune',

@@ -545,18 +545,27 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Stonefist',
 
-      // 1d10 plus Impact is one upgrade above a normal weapon
+      // +2 over a normal weapon
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target gains a stonefist \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
-        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
-        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Versatile Grip} weapon tags (see \\pcref{Weapon Tags}).
+        You gain a stonefist \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
+        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Impact} and \\weapontag{Resonating} weapon tags (see \\pcref{Weapon Tags}).
       `,
-      rank: 2,
+      rank: 1,
       narrative: `
         You encase one of your arms in a mighty stone bulwark, empowering it to crush your foes with sheer brute force.
       `,
       tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Mass Stonefist',
+
+      functionsLike: {
+        mass: true,
+        name: 'stonefist',
+      },
+      rank: 3,
       type: 'Attune (target)',
     },
 
@@ -566,7 +575,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // Three upgrades above a normal weapon. TODO figure out whether this is balanced??
       functionsLike: {
         name: 'stonefist',
-        exceptThat: 'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}). However, you can only target yourself.',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
       },
       rank: 6,
       tags: ['Manifestation'],
@@ -594,6 +603,46 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
+    {
+      name: 'Desperate Stoneskin',
+
+      effect: `
+        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+        If you do, your body becomes covered in stone for the rest of the round, and your attunement to this effect ends.
+        Whenever you would take damage while covered in this stone, you reduce that damage by an amount equal to your \\glossterm{power}.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+      `,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
+      name: 'Tremorsense',
+
+      effect: `
+        You gain \\trait{tremorsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Tremorsense}).
+      `,
+      rank: 1,
+      scaling: {
+        3: `The range increases to 45 feet.`,
+        5: `The range increases to 60 feet.`,
+        7: `The range increases to 90 feet.`,
+      },
+      type: 'Attune',
+    },
+    {
+      name: 'Tremorsight',
+
+      effect: `
+        You gain \\trait{tremorsight} with a 15 foot range, allowing you to see your surroundings without light (see \\pcref{Tremorsight}).
+      `,
+      rank: 3,
+      scaling: {
+        5: `The range increases to 30 feet.`,
+        7: `The range increases to 45 feet.`,
+      },
+      type: 'Attune',
+    },
   ],
   rituals: [
     {
@@ -609,7 +658,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         It is sized appropriately for the target, up to a maximum of a Medium size item.
         The items appear in your hand or on the ground at your feet.
 
-        If you create body armor or a weapon, it can be created from any special material other than cold iron and dragonscale.
+        If you create body armor or a weapon, it can be created from any special material other than cold iron and dragonscale (see \pcref{Armor Special Materials}, and \pcref{Weapon Special Materials}).
         The item's rank cannot exceed your spellcasting rank with this spell.
 
         An item created with this spell functions like a normal item of its type.

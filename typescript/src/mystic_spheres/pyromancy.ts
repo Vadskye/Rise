@@ -114,7 +114,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       effect: `
         Whenever you use a \\atFire ability, you can siphon \\glossterm{mundane} flames within \\longrange to fuel it.
-        This extinguishes the flame if it is Medium or smaller.
+        This extinguishes each siphoned flame that is Medium or smaller.
         You gain a \\plus2 accuracy bonus with that ability this round for drawing in a Small flame, such as a campfire.
         For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \\plus7 bonus from a Colossal flame.
         As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a campfire.
@@ -429,7 +429,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          During each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
@@ -657,6 +657,24 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       scaling: 'accuracy',
+    },
+    {
+      name: 'Desperate Fireburst',
+
+      attack: {
+        hit: `
+          \\damageranktwo.
+        `,
+        missGlance: true,
+        targeting: `
+          Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+          If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
+          Then, your attunement to this effect ends.
+          Unlike the \\ability{total defense} and \\ability{recover} abilities, this attack is not \\atSwift, so it takes effect during your normal action in the action phase.
+        `,
+      },
+      rank: 1,
+      type: 'Attune',
     },
   ],
   rituals: [
