@@ -69,17 +69,16 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Educated"),
         rank: 2,
-        short_description: String::from(r"Deals +1 damage if you have 3 Int"),
+        short_description: String::from(r"Deals +1d4 damage if you have 3 Int"),
         description: String::from(r"
-            If your Intelligence is at least 3, this weapon gains a +1 bonus to its \glossterm{weapon damage}.
-            This is not considered \glossterm{extra damage}.
+            If your Intelligence is at least 3, this weapon deals 1d4 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Deals +2 damage if you have 4 Int", r"
-                If your Intelligence is at least 4, the damage bonus increases to +2.
+            ItemUpgrade::new(4, "Deals +1d8 damage if you have 4 Int", r"
+                If your Intelligence is at least 4, the extra damage increases to 1d8.
             "),
-            ItemUpgrade::new(6, "Deals +4 damage if you have 5 Int", r"
-                If your Intelligence is at least 5, the damage bonus increases to +4.
+            ItemUpgrade::new(6, "Deals +3d6 damage if you have 5 Int", r"
+                If your Intelligence is at least 5, the extra damage increases to 3d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -398,7 +397,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon's striking surface is ephemeral, and it echoes the thoughts of anyone touching it back into their head.
             You can suppress or resume its psionic nature as a \glossterm{free action}.
-            While psionic, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atCompulsion tag.
+            While psionic, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCompulsion tag.
             This means that it is unable to damage most objects.
 
             As a standard action while this weapon is psionic, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
@@ -410,7 +409,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Poison],
         upgrades: vec![
             ItemUpgrade::new(6, "Is psychic, can attack Mental defense", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the psychic attack's minimum accuracy increases to $accuracy, and it deals triple damage to stunned creatures.
             "),
         ],
@@ -437,7 +436,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon's striking surface is liquified into a sinister poison.
             You can suppress or resume its poisonous nature as a \glossterm{free action}.
-            While poisonous, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atPoison tag.
+            While poisonous, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atPoison tag.
             This means that it is unable to damage most objects.
 
             As a standard action while this weapon is poisonous, you can make a mundane \glossterm<strike> using this weapon that fully transforms the striking surface to poison.
@@ -451,7 +450,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Poison],
         upgrades: vec![
             ItemUpgrade::new(6, "Is poisonous, can attack Fortitude defense", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the poisoning attack's minimum accuracy increases to $accuracy, and its poison damage increases to 6d10.
             "),
         ],
@@ -471,7 +470,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon is infused with prismatic energy.
             You can suppress or resume this infusion as a \glossterm{free action}.
-            While infused, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atCold, \atElectricity, and \atFire tags.
+            While infused, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCold, \atElectricity, and \atFire tags.
             In addition, it sheds gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that intensifies the energy.
@@ -481,7 +480,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(6, "Is infused with cold, electricity, and fire", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the transformed attack's minimum accuracy increases to $accuracy, and it deals triple weapon damage.
             "),
         ],
@@ -513,7 +512,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon constantly burns.
             You can suppress or resume this fire as a \glossterm{free action}.
-            While burning, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atFire tag.
+            While burning, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atFire tag.
             It also sheds light in a 15 foot radius of \glossterm{bright illumination}.
 
             As a standard action while the weapon is burning, you can make a mundane \glossterm<strike> using this weapon that is imbued with fiery energy.
@@ -524,11 +523,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(5, "Is on fire and can ignite", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 4d10.
             "),
             ItemUpgrade::new(7, "Is on fire and can ignite", r"
-                The weapon damage bonus increases to \plus1d8.
+                The extra damage increases to 3d6.
                 In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 10d10.
             "),
         ],
@@ -542,7 +541,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon continuously crackles with electricity.
             You can suppress or resume this charge as a \glossterm{free action}.
-            While charged, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atElectricity tag.
+            While charged, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atElectricity tag.
             It also sheds light in a 5 foot radius of \glossterm{bright illumination}.
 
             As a standard action while the weapon is charged, you can make a mundane \glossterm<strike> using this weapon that is imbued with electrical energy.
@@ -557,12 +556,12 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         upgrades: vec![
             // 2d6 extra gives (13.6/16.8) damage, or (97%/75%)
             ItemUpgrade::new(5, "Is electrically charged and can chain", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the chaining attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
             "),
             // 4d10 extra gives (30.2/34.5) damage, or (108%/77%)
             ItemUpgrade::new(7, "Is electrically charged and can chain", r"
-                The weapon damage bonus increases to \plus1d8.
+                The extra damage increases to 3d6.
                 In addition, the chaining attack's minimum accuracy increases to $accuracy, and its extra damage increases to 4d10.
             "),
         ],
@@ -576,7 +575,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon is bitterly cold to the touch.
             You can suppress or resume this chill as a \glossterm{free action}.
-            While chilled, the weapon gains a \plus1 bonus to \glossterm{weapon damage}, and all strikes with it have the \atCold tag.
+            While chilled, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCold tag.
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with frigid energy.
             The strike's minimum accuracy is $accuracy.
@@ -585,11 +584,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Cold],
         upgrades: vec![
             ItemUpgrade::new(5, "Is cold and can slow", r"
-                The weapon damage bonus increases to \plus1d4.
+                The extra damage increases to 1d8.
                 In addition, the slowing attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
             "),
             ItemUpgrade::new(7, "Is cold and can slow", r"
-                The weapon damage bonus increases to \plus1d8.
+                The extra damage increases to 3d6.
                 In addition, the slowing attack's minimum accuracy increases to $accuracy, and the extra damage increases to 4d10.
             "),
         ],
