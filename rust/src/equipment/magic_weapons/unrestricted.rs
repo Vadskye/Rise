@@ -240,13 +240,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             On a damaging hit, the target \glossterm{briefly} cannot be \glossterm{teleported}.
             An object subject to this effect is left behind if it is carried by a creature that teleports.
         "),
-        upgrades: vec![
-            // TODO: awkward wording
-            ItemUpgrade::new(5, "Prevents teleportation", r"
-                This effect no longer requires a special attack.
-                It automatically affects the target whenever you get a damaging hit with a strike using this weapon.
-            "),
-        ],
         ..MagicWeapon::default()
     }));
 
