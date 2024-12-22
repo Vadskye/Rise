@@ -572,6 +572,18 @@ export const umbramancy: MysticSphere = {
       tags: ['Barrier', 'Visual'],
       type: 'Sustain (attuneable, minor)',
     },
+
+    {
+      name: 'Bend Shadow',
+
+      effect: `
+        Your shadow is naturally cast in the wrong direction, pointing towards light instead of away from it.
+        You are considered to be \\glossterm{shadowed} if there is \\glossterm{shadowy illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+        The dark area must be large enough to hold you if you were in that location.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
   ],
   rituals: [
     {

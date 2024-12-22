@@ -206,13 +206,28 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Vine Tentacle',
 
+      // +1 over normal weapon
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target gains a vine \\glossterm{natural weapon}.
-        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        You a vine \\glossterm{natural weapon}.
         The weapon deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
       `,
-      rank: 2,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune (target)',
+    },
+
+    {
+      name: 'Mass Vine Tentacle',
+
+      functionsLike: {
+        name: 'vine tentacle',
+        exceptThat: `
+          it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
+          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
+        `,
+      },
+      rank: 3,
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -222,7 +237,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'vine tentacle',
-        exceptThat: 'the damage dealt by the weapon increases to 1d10. However, you can only target yourself.',
+        exceptThat: 'the damage dealt by the weapon increases to 1d10.',
       },
       rank: 6,
       tags: ['Manifestation'],
@@ -234,12 +249,26 @@ export const verdamancy: MysticSphere = {
 
       // +2 over normal
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target gains a vine \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
-        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        You gain a vine \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
         The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
-      rank: 3,
+      rank: 2,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Mass Braided Vine Tentacle',
+
+      functionsLike: {
+        name: 'vine tentacle',
+        exceptThat: `
+          it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
+          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
+        `,
+      },
+      rank: 4,
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -676,9 +705,10 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `You also gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.`,
-        5: `The damage resistance bonus increases to +8.`,
-        7: `The damage resistance bonus increases to +16.`,
+        2: `
+          The armor can be created from any special material other than dragonhide (see \pcref{Armor Special Materials}).
+          Its rank cannot exceed your spellcasting rank with this spell.
+        `,
       },
       tags: ['Manifestation'],
       type: 'Attune',

@@ -524,6 +524,25 @@ export const toxicology: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Acid'],
     },
+    {
+      name: 'Regenerative Fungus',
+
+      // dr2l healing is very strong as an automatic effect, but the downsides are spicy
+      // too...
+      effect: `
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain 1d8+1d6 hit points.
+        Keep track of how many total hit points you regain with this ability.
+        If that value exceeds half your maximum hit points, you are unable to \\glossterm{dismiss} this ability or stop \\glossterm{attuning} to it.
+        If that value exceeds your maximum hit points, you gain a \plus2 bonus to your Fortitude defense, but you are \slowed.
+        If that value exceeds twice your maximum hit points, you are \paralyzed.
+
+        Whenever you finish a \\glossterm{short rest}, any fungus decays, resetting the value of hit points you have healed with this ability.
+        That value cannot be reset in any other way, even if this ability ends.
+      `,
+      rank: 1,
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 1.' },
+      tags: ['Attune'],
+    },
   ],
   rituals: [
     {
