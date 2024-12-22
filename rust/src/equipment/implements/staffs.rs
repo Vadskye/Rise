@@ -441,17 +441,17 @@ pub fn staffs() -> Vec<Implement> {
     // * 7: 44.8, 11.2, 11
     implements.push(Staff(StandardItem {
         name: String::from("Brutish Staff"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Grants +1d4 damage if you have 3 Str"),
         description: String::from(r"
             If your Strength is at least 3, you deal 1d4 \glossterm<extra damage> with \magical abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1d10 damage if you have 4 Str", r"
-                The extra damage increases to 1d10 if your Strength is at least 4.
+            ItemUpgrade::new(4, "Grants +1d8 damage if you have 4 Str", r"
+                The extra damage increases to 1d8 if your Strength is at least 4.
             "),
-            ItemUpgrade::new(7, "Grants +2d10 damage if you have 5 Str", r"
-                The extra damage increases to 2d10 if your Strength is at least 5.
+            ItemUpgrade::new(6, "Grants +3d6 damage if you have 5 Str", r"
+                The extra damage increases to 3d6 if your Strength is at least 5.
             "),
         ],
         ..Implement::default()
@@ -459,17 +459,17 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Educated Staff"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Grants +1d4 damage if you have 3 Int"),
         description: String::from(r"
             If your Intelligence is at least 3, you deal 1d4 \glossterm<extra damage> with \magical abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1d10 damage if you have 4 Int", r"
-                The extra damage increases to 1d10 if your Intelligence is at least 4.
+            ItemUpgrade::new(4, "Grants +1d8 damage if you have 4 Int", r"
+                The extra damage increases to 1d8 if your Intelligence is at least 4.
             "),
-            ItemUpgrade::new(7, "Grants +2d10 damage if you have 5 Int", r"
-                The extra damage increases to 2d10 if your Intelligence is at least 5.
+            ItemUpgrade::new(6, "Grants +3d6 damage if you have 5 Int", r"
+                The extra damage increases to 3d6 if your Intelligence is at least 5.
             "),
         ],
         ..Implement::default()
@@ -482,14 +482,17 @@ pub fn staffs() -> Vec<Implement> {
     // * 6: 20, 5, 5.5
     implements.push(Staff(StandardItem {
         name: String::from("Potent Staff"),
-        rank: 4,
+        rank: 3,
         short_description: String::from(r"Grants +1d4 damage"),
         description: String::from(r"
             You deal 1d4 \glossterm<extra damage> with \magical abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Grants +1d10 damage", r"
-                The extra damage increases to 1d10.
+            ItemUpgrade::new(5, "Grants +1d8 damage", r"
+                The extra damage increases to 1d8.
+            "),
+            ItemUpgrade::new(7, "Grants +3d6 damage", r"
+                The extra damage increases to 3d6.
             "),
         ],
         ..Implement::default()
