@@ -333,7 +333,8 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Deals $dr3l damage when you recover"),
         description: String::from(r"
-            Whenever you use the \abilitytag{recover} ability, make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius from you.
+            Whenever you use the \ability{recover} ability, make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius from you.
+            This attack is not \atSwift, even though the \ability{recover} ability is Swift.
             \hit \damagerankthreelow.
             \miss Half damage.
         "),
