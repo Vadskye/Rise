@@ -643,13 +643,13 @@ export const vivimancy: MysticSphere = {
       name: 'Lifesense',
 
       effect: `
-        You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living creatures without light (see \\pcref{Lifesense}).
+        You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living things without light (see \\pcref{Lifesense}).
       `,
       rank: 1,
       scaling: {
-        3: `The range increases to 90 feet.`,
-        5: `The range increases to 120 feet.`,
-        7: `The range increases to 150 feet.`,
+        3: `The range increases to 75 feet.`,
+        5: `The range increases to 90 feet.`,
+        7: `The range increases to 120 feet.`,
       },
       type: 'Attune',
     },
@@ -661,8 +661,8 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 2,
       scaling: {
-        4: `The range increases to 60 feet.`,
-        6: `The range increases to 90 feet.`,
+        4: `The range increases to 45 feet.`,
+        6: `The range increases to 60 feet.`,
       },
       type: 'Attune',
     },
