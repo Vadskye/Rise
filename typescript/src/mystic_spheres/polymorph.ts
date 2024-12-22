@@ -200,18 +200,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Shrink',
-
-      effect: `
-        Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
-        Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
-        It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
-      `,
-      rank: 2,
-      type: 'Attune',
-    },
-
-    {
       name: 'Greater Shrink',
 
       effect: `
