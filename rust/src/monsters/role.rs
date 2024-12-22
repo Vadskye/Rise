@@ -81,23 +81,23 @@ impl Role {
 
     pub fn damage_resistance_progression(self) -> HitPointProgression {
         match self {
-            Role::Brute => HitPointProgression::Low,
-            Role::Leader => HitPointProgression::Medium,
-            Role::Mystic => HitPointProgression::High,
-            Role::Skirmisher => HitPointProgression::Low,
-            Role::Sniper => HitPointProgression::Low,
-            Role::Warrior => HitPointProgression::VeryHigh,
+            Role::Brute => HitPointProgression::Medium,
+            Role::Leader => HitPointProgression::High,
+            Role::Mystic => HitPointProgression::VeryHigh,
+            Role::Skirmisher => HitPointProgression::Medium,
+            Role::Sniper => HitPointProgression::Medium,
+            Role::Warrior => HitPointProgression::Extreme,
         }
     }
 
     pub fn hit_point_progression(&self) -> HitPointProgression {
         match self {
-            Role::Brute => HitPointProgression::VeryHigh,
-            Role::Leader => HitPointProgression::High,
-            Role::Mystic => HitPointProgression::Medium,
-            Role::Skirmisher => HitPointProgression::High,
-            Role::Sniper => HitPointProgression::Medium,
-            Role::Warrior => HitPointProgression::High,
+            Role::Brute => HitPointProgression::Extreme,
+            Role::Leader => HitPointProgression::VeryHigh,
+            Role::Mystic => HitPointProgression::High,
+            Role::Skirmisher => HitPointProgression::VeryHigh,
+            Role::Sniper => HitPointProgression::High,
+            Role::Warrior => HitPointProgression::VeryHigh,
         }
     }
 
