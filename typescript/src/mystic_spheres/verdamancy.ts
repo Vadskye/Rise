@@ -706,7 +706,7 @@ export const verdamancy: MysticSphere = {
       rank: 1,
       scaling: {
         2: `
-          The armor can be created from any special material other than dragonhide (see \pcref{Armor Special Materials}).
+          The armor can be created from any special material other than dragonhide (see \\pcref{Armor Special Materials}).
           Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },

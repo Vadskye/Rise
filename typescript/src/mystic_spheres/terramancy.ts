@@ -663,7 +663,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 1,
       scaling: {
         2: `
-          If you create body armor or a weapon, it can be created from any special material other than cold iron and dragonscale (see \pcref{Armor Special Materials}, and \pcref{Weapon Special Materials}).
+          If you create body armor or a weapon, it can be created from any special material other than cold iron and dragonscale (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
           The item's rank cannot exceed your spellcasting rank with this spell.
         `,
       },

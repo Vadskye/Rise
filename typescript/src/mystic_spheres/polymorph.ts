@@ -892,16 +892,16 @@ export const polymorph: MysticSphere = {
 
       effect: `
         When you cast this spell, you choose a weapon you are proficient with.
-        One of your \glossterm{free hands} shapeshifts into that weapon.
+        One of your \\glossterm{free hands} shapeshifts into that weapon.
 
         The weapon functions like an ordinary manufactured weapon, with two exceptions.
         First, it cannot leave your body, so you cannot throw it or drop it.
-        Second, you can treat it as a \glossterm{natural weapon}, a \glossterm{manufactured weapon}, or both, depending on what is more beneficial for you.
+        Second, you can treat it as a \\glossterm{natural weapon}, a \\glossterm{manufactured weapon}, or both, depending on what is more beneficial for you.
       `,
       rank: 1,
       scaling: {
         2: `
-          The weapon can be made of any special material other than cold iron and silver (see \pcref{Weapon Special Materials}).
+          The weapon can be made of any special material other than cold iron and silver (see \\pcref{Weapon Special Materials}).
           Its rank cannot exceed your spellcasting rank with this spell.
         `
       },
@@ -911,10 +911,10 @@ export const polymorph: MysticSphere = {
       name: 'Sudden Liquification',
 
       effect: `
-        When you would suffer a \glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
+        When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
         This causes the critical hit to become only a regular hit.
-        However, you are also \\glossterm{briefly} \slowed, and your attunement to this ability ends.
+        However, you are also \\glossterm{briefly} \\slowed, and your attunement to this ability ends.
       `,
       rank: 1,
       type: 'Attune',
