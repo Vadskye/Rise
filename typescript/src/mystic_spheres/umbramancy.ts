@@ -137,9 +137,9 @@ export const umbramancy: MysticSphere = {
       `,
       rank: 1,
       scaling: {
-        3: `The range increases to 90 feet.`,
-        5: `The range increases to 120 feet.`,
-        7: `The range increases to 150 feet.`,
+        3: `The range increases to 75 feet.`,
+        5: `The range increases to 90 feet.`,
+        7: `The range increases to 120 feet.`,
       },
       type: 'Attune',
     },
@@ -154,8 +154,8 @@ export const umbramancy: MysticSphere = {
       // narrative: '',
       rank: 3,
       scaling: {
-        5: `The radius increases to 90 feet.`,
-        7: `The radius increases to 120 feet.`,
+        5: `The range increases to 75 feet.`,
+        7: `The range increases to 90 feet.`,
       },
       type: 'Attune (target)',
     },
