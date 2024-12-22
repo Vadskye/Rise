@@ -250,13 +250,13 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Whenever you cast a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
         If you do, the spell deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
-        After you enhance a spell in this way, this effect ends.
+        After you enhance a spell in this way, your attunement to this ability ends.
       `,
       rank: 1,
       scaling: {
         3: `The extra damage increases to 1d8.`,
-        5: `The extra damage increases to 2d8.`,
-        7: `The extra damage increases to 4d8.`,
+        5: `The extra damage increases to 3d6.`,
+        7: `The extra damage increases to 6d6.`,
       },
       type: 'Attune',
     },
@@ -266,7 +266,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to gain a +4 accuracy bonus when you make your first attack with it.
-        After you enhance a spell in this way, this effect ends.
+        After you enhance a spell in this way, your attunement to this ability ends.
       `,
       rank: 3,
       type: 'Attune',

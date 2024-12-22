@@ -423,7 +423,6 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mind Arrow',
 
-      // Long range dr1 is 1d6 + half power, this is basically that but better
       effect: `
         This spell has no \\glossterm{somatic components}.
 
@@ -596,6 +595,20 @@ export const telekinesis: MysticSphere = {
 
       rank: 2,
       scaling: 'accuracy',
+    },
+    {
+      name: 'Desperate Levitation',
+
+      effect: `
+        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+        If you do, you move 20 feet up into the air and levitate there.
+        Then, your attunement to this effect ends.
+        This movement is \atSwift, so it can help you avoid attacks during the current phase.
+        While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you do not suffer penalties for being \\glossterm{midair}.
+        At the end of the round, this levitation effect ends, and you descend 20 feet without taking \\glossterm{falling damage}.
+      `,
+      rank: 1,
+      type: 'Attune',
     },
   ],
   rituals: [

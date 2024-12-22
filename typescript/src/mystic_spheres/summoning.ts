@@ -12,8 +12,8 @@ export const summoning: MysticSphere = {
 
       functionsLike: {
         exceptThat: `
-          it has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep) tag.
-          In addition, it only has a single \\glossterm{hit point}.
+          the summoned creature is destroyed if it takes any damage.
+          In addition, this has the \\abilitytag{Sustain} (standard) tag instead of the \\abilitytag{Attune} (deep) tag.
         `,
         name: 'summon monster',
       },
@@ -43,8 +43,8 @@ export const summoning: MysticSphere = {
         \\end{itemize}
 
         Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
-        There are only two actions it can take.
-        As a \\glossterm{movement}, it can move as you direct.
+        There are only two actions it can take: movement and attacking.
+        It moves as you direct, and can \ability{sprint} during the \\glossterm{action phase}.
         As a standard action, it can make a melee \\glossterm{strike} against a creature adjacent to it.
         If it hits, it deals \\damagerankzero.
 
@@ -55,6 +55,24 @@ export const summoning: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Summon Familiar',
+
+      functionsLike: {
+        exceptThat: `
+          the summoned creature cannot attack, and it is destroyed if it takes any damage.
+          However, it is able to interact with loose objects.
+          You can command it to can pick up and carry one Tiny or smaller item.
+          It still lacks the capacity to interact with devices of any complexity, such as doorknobs.
+          This spell has the \\Sustain (attuneable, standard) tag instead of the \\atAttune (deep) tag.
+        `,
+        name: 'summon monster',
+      },
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
