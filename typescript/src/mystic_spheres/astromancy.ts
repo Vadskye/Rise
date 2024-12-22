@@ -56,19 +56,6 @@ export const astromancy: MysticSphere = {
         6: 'The range increases to \\rnglong.',
       },
     },
-    {
-      name: 'Astral Familiarity',
-
-      effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to the Knowledge (planes) skill.
-      `,
-      scaling: {
-        2: 'The bonus increases to +4.',
-        4: 'The bonus increases to +5.',
-        6: 'The bonus increases to +6.',
-      },
-      type: 'Attune',
-    },
   ],
   spells: [
     {
