@@ -410,7 +410,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Poison],
         upgrades: vec![
             ItemUpgrade::new(6, "Is psychic, can attack Mental defense", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the psychic attack's minimum accuracy increases to $accuracy, and it deals triple damage to stunned creatures.
             "),
         ],
@@ -451,7 +451,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Poison],
         upgrades: vec![
             ItemUpgrade::new(6, "Is poisonous, can attack Fortitude defense", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the poisoning attack's minimum accuracy increases to $accuracy, and its poison damage increases to 6d10.
             "),
         ],
@@ -481,7 +481,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(6, "Is infused with cold, electricity, and fire", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the transformed attack's minimum accuracy increases to $accuracy, and it deals triple weapon damage.
             "),
         ],
@@ -524,11 +524,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(5, "Is on fire and can ignite", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 4d10.
             "),
             ItemUpgrade::new(7, "Is on fire and can ignite", r"
-                The weapon damage bonus increases to \plus4.
+                The weapon damage bonus increases to \plus1d8.
                 In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 10d10.
             "),
         ],
@@ -557,12 +557,12 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         upgrades: vec![
             // 2d6 extra gives (13.6/16.8) damage, or (97%/75%)
             ItemUpgrade::new(5, "Is electrically charged and can chain", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the chaining attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
             "),
             // 4d10 extra gives (30.2/34.5) damage, or (108%/77%)
             ItemUpgrade::new(7, "Is electrically charged and can chain", r"
-                The weapon damage bonus increases to \plus4.
+                The weapon damage bonus increases to \plus1d8.
                 In addition, the chaining attack's minimum accuracy increases to $accuracy, and its extra damage increases to 4d10.
             "),
         ],
@@ -585,11 +585,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Cold],
         upgrades: vec![
             ItemUpgrade::new(5, "Is cold and can slow", r"
-                The weapon damage bonus increases to \plus2.
+                The weapon damage bonus increases to \plus1d4.
                 In addition, the slowing attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
             "),
             ItemUpgrade::new(7, "Is cold and can slow", r"
-                The weapon damage bonus increases to \plus4.
+                The weapon damage bonus increases to \plus1d8.
                 In addition, the slowing attack's minimum accuracy increases to $accuracy, and the extra damage increases to 4d10.
             "),
         ],
