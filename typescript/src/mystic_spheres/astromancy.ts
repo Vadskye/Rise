@@ -63,14 +63,8 @@ export const astromancy: MysticSphere = {
         You gain a +3 \\glossterm{enhancement bonus} to the Knowledge (planes) skill.
       `,
       scaling: {
-        2: `
-          The bonus also applies to any checks that you would make as a result of plane-specific effects or actions.
-          For example, this would help you manipulate subjective gravity on the Astral Plane (see \\pcref{Planes}).
-        `,
-        4: `
-          You also take half damage from any plane-specific damaging effects.
-          This does not protect you from abilities that are simply thematically related to planes, such as the \\textit{planar jaunt} spells from this mystic sphere.
-        `,
+        2: 'The bonus increases to +4.',
+        4: 'The bonus increases to +5.',
         6: 'The bonus increases to +6.',
       },
       type: 'Attune',
