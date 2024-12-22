@@ -66,7 +66,7 @@ export const summoning: MysticSphere = {
           However, it is able to interact with loose objects.
           You can command it to can pick up and carry one Tiny or smaller item.
           It still lacks the capacity to interact with devices of any complexity, such as doorknobs.
-          This spell has the \\Sustain (attuneable, standard) tag instead of the \\atAttune (deep) tag.
+          This spell has the \\atSustain (attuneable, standard) tag instead of the \\atAttune (deep) tag.
         `,
         name: 'summon monster',
       },
