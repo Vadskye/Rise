@@ -259,7 +259,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The area increases to a \largearea radius.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Dazzling Discordance}
+                    \begin{magicalsustainability}{Dazzling Discordance}{\abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \smallarea radius from you.
@@ -272,7 +272,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The accuracy bonus increases to \plus2.
                         \rank{6} The area increases to a \hugearea radius.
                         \rank{7} The accuracy bonus increases to \plus3.
-                    \end{magicalactiveability}
+                    \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Emotion}]
                         \abilityusagetime Standard action.
