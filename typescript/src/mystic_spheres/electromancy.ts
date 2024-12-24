@@ -378,7 +378,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // Not obvious what correct damage scaling would be.
       attack: {
-        hit: `damagerankthree.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           This attack can \\glossterm{chain} five times.
