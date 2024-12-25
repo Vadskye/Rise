@@ -102,7 +102,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
+        The target gains a +5 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
       `,
       rank: 1,
       tags: [],
@@ -165,7 +165,7 @@ export const prayer: MysticSphere = {
         After a creature negates a condition in this way, this spell ends for that creature.
       `,
       rank: 1,
-      type: 'Attune (deep, target)',
+      type: 'Attune (target)',
     },
 
     {
