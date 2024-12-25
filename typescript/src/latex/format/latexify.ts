@@ -27,6 +27,10 @@ export function latexify(text: string): string {
   if (minusMatch) {
     console.error(`Problem latexifying text: contains unprefixed minus (${minusMatch.slice(0, 30)})`);
   }
+  const damageRankMatch = text.match(/[^\\]damagerank\{.*/g)
+  if (damageRankMatch) {
+    console.error(`Problem latexifying text: contains unprefixed damagerank (${damageRankMatch.slice(0, 30)})`);
+  }
 
   return text
     .replace(/ \+ /g, " \\add ")
