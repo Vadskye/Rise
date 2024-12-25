@@ -56,7 +56,7 @@ pub fn shields() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +2 Armor during total defense"),
         description: String::from(r"
-            When you take the \textit<total defense> action, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref<Total Defense>).
+            When you use the \textit<total defense> ability, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref<Total Defense>).
             This property cannot be applied to tower shields.
         "),
         ..MagicArmor::default()
