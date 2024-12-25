@@ -62,7 +62,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1 accuracy penalty.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -73,7 +72,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        On a miss, you still deal half damage.
         If the target takes damage and your attack result also hits its Fortitude defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
@@ -86,7 +84,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make two melee \\glossterm{strikes}.
         The strikes target all \\glossterm{enemies} adjacent to you.
-        On a miss, you still deal half damage.
       `,
       rank: 7,
     },
