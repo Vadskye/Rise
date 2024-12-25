@@ -1,5 +1,7 @@
 import { MysticSphere } from '.';
 
+// Normally, curses would be +2 rank, because immunity to condition removal is powerful.
+// This sphere is limited and has few attacks, so it gets curses at only +1 rank.
 export const prayer: MysticSphere = {
   name: 'Prayer',
   shortDescription: 'Grant divine blessings to aid allies and improve combat prowess.',
@@ -358,7 +360,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Curse of Poor Eyesight',
+      name: 'Curse of Blurred Vision',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -366,7 +368,7 @@ export const prayer: MysticSphere = {
           The target is \\dazzled until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       rank: 1,
@@ -386,7 +388,7 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Curse'],
     },
@@ -402,7 +404,7 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Curse'],
     },
@@ -420,7 +422,7 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: 'accuracy',
       tags: ['Curse', 'Emotion'],
     },
@@ -434,10 +436,10 @@ export const prayer: MysticSphere = {
           This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },
@@ -448,10 +450,11 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           While the target is below its maximum \\glossterm{hit points}, it is \\confused.
+          Otherwise, it is \\stunned.
           This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
       rank: 7,
