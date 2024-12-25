@@ -12,7 +12,6 @@ export const mobileHunter: CombatStyle = {
         Move up to half your movement speed in a straight line.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
-        On a miss, you still deal half damage.
       `,
       rank: 3,
     },
@@ -24,7 +23,6 @@ export const mobileHunter: CombatStyle = {
         Move up to your movement speed in a straight line.
         You can also make a melee \\glossterm{strike}.
         The strike deals double \\glossterm{weapon damage}, and it targets all \\glossterm{enemies} adjacent to you at any point during your movement.
-        On a miss, you still deal half damage.
       `,
       rank: 7,
     },
@@ -107,7 +105,6 @@ export const mobileHunter: CombatStyle = {
       effect: `
         You \\glossterm{teleport} horizontally to a location within \\shortrange.
         In addition, you can make a melee \\glossterm{strike} that targets all \\glossterm{enemies} within a 5 ft.\\ wide line between your starting location and your ending location.
-        On a miss, you still deal half damage.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
