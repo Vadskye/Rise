@@ -110,9 +110,9 @@ def ability():
                     flex_row(
                         {"class": "attack-calcs"},
                         [
-                            labeled_text_input(
+                            labeled_textarea(
                                 "Base dice",
-                                {"class": "attack-dice"},
+                                {"class": "input-dice"},
                                 {"name": "dice_pool"},
                             ),
                             underlabeled_checkbox(
@@ -317,7 +317,7 @@ def strike_based_attack():
         [
             labeled_textarea(
                 "+Damage",
-                {"class": "attack-dice"},
+                {"class": "input-dice"},
                 {"name": "attack_extra_damage"},
             ),
             underlabeled_checkbox(
@@ -440,7 +440,7 @@ def other_damaging_attack():
         [
             labeled_textarea(
                 "Damage",
-                {"class": "attack-dice"},
+                {"class": "input-dice"},
                 {"name": "attack_damage_dice"},
             ),
             underlabeled_checkbox(
