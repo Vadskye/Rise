@@ -255,8 +255,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You can only choose spells with a rank no higher than your rank in this archetype.
-                In addition, you cannot choose the same spell with more than two metamagic abilities.
+                You cannot choose the same spell with more than two metamagic abilities.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Airborne Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
@@ -271,11 +270,12 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It gains the \atEarth tag.
                         In addition, you gain a \plus2 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Incendiary Spell} Choose a nature \glossterm{spell} you know.
+                    \parhead{Incendiary Spell} Choose a damaging nature \glossterm{spell} you know.
                         It gains the \atFire tag.
                         Whenever you hit a target with that spell, you repeat the spell's effects against that target during the next round.
                         You must make a new attack roll for the repeat with a \minus2 accuracy penalty.
-                        This repeat can only affect any individual target once per round, even if you attack it with the spell multiple times.
+                        The repeat only deals damage, and has no other special effects, such as inflicting \glossterm{conditions}.
+                        Even if you hit the same target multiple times, the spell only repeats once against that target.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
@@ -678,18 +678,19 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use abilities that increase its fatigue level.
-                        \item Its \glossterm{hit points} are equal to the standard value for your level and base class (see Base Class Abilities, above).
+                        \item Its \glossterm{hit points} are equal to the standard value for a druid of your level (see Base Class Abilities, above).
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
-                        \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
+                        \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
-                        \item Its \glossterm{power} is 0.
+                        \item Its \glossterm{power} is equal to half your power.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to hit points and damage resistance.
                     \end{itemize}
                     % There must be text between an itemize block and the end of a mdframed env
 
                     \rankline
-                    \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    \rank{2} The animal gains a \plus1 bonus to all of its defenses.
+                    \rank{3} The animal's \glossterm{power} becomes equal to your power.
                     \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The accuracy bonus increases to +4.
