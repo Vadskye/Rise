@@ -32,17 +32,18 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
-                        \item Its \glossterm{hit points} are equal to the standard value for your level, base class, and Constitution (see Base Class Abilities, above).
+                        \item Its \glossterm{hit points} are equal to the standard value for a ranger of your level and Constitution (see Base Class Abilities, above).
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
-                        \item Each of its \glossterm{defenses} is equal to 5 \add half your level.
+                        \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
-                        \item Its \glossterm{power} is 0.
+                        \item Its \glossterm{power} is equal to half your power.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to hit points and damage resistance.
                     \end{itemize}
                     % There must be text between an itemize block and the end of a mdframed env
 
                     \rankline
+                    \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
                     \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The accuracy bonus increases to +2.
