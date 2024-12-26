@@ -73,6 +73,7 @@ export const channelDivinity: MysticSphere = {
         You gain a +3 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 1,
+      // TODO: does this actually need to scale?
       scaling: {
         3: 'The accuracy bonus increases to +4.',
         5: 'The accuracy bonus increases to +5.',
@@ -120,18 +121,13 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Endurance of the Faithful',
+      name: 'Endure Tribulation',
 
       effect: `
-        You gain a +2 bonus to all defenses and a +2 bonus to \\glossterm{vital rolls} this round.
+        You gain a +2 bonus to all defenses and a +4 bonus to \\glossterm{vital rolls} this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 1,
-      scaling: {
-        3: `The bonuses increase to +3.`,
-        5: `The bonuses increase to +4.`,
-        7: `The bonuses increase to +5.`,
-      },
       tags: ['Swift'],
     },
 
@@ -250,21 +246,6 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Mantle of Faith',
-
-      effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
-      `,
-      rank: 1,
-      scaling: {
-        3: `The bonus increases to +8.`,
-        5: `The bonus increases to +16.`,
-        7: `The bonus increases to +32.`,
-      },
-      type: 'Attune',
-    },
-
-    {
       name: 'Divine Might',
 
       effect: `
@@ -317,7 +298,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Faithful Endurance',
 
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
+        You gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
