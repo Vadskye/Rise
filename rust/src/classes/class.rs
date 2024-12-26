@@ -1690,7 +1690,8 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
-                        \magicaldomainability{Gift}
+                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
                             \rankline
@@ -1701,9 +1702,8 @@ impl Class {
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot be affected by other creatures using this ability on you.
                         \end{magicalactiveability}
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \magicaldomainability{Essence} The target of your \textit{divine protection} ability also takes no extra damage from \glossterm{critical hits}.
-                        \domainability{Mastery} The bonus from your \textit{divine protection} ability increases to \plus2.
+                        \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Strength Domain}
