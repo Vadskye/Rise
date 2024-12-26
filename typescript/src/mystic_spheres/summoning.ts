@@ -34,9 +34,9 @@ export const summoning: MysticSphere = {
 
         \\begin{itemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its \\glossterm{hit points} are equal to the standard value for your level and base class.
+          \\item Its \\glossterm{hit points} are equal to the standard value for a cleric of your level.
           \\item Its \\glossterm{damage resistance} is equal to half its hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
-          \\item Each of its \\glossterm{defenses} is equal to 5 \\add half your level.
+          \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
           \\item Its \\glossterm{land speed} is 30 feet, regardless of the number of legs it appears to have.
           \\item It has no \\glossterm{attunement points}.
@@ -82,7 +82,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranktwo.
-          However, its \\glossterm{hit points} are halved.
+          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
         `,
         name: 'summon monster',
       },
@@ -99,7 +99,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranksix.
-          However, its \\glossterm{hit points} are halved.
+          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
         `,
         name: 'summon monster',
       },
@@ -115,7 +115,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is more defensively inclined.
-          It gains a +1 bonus to all defenses.
+          It gains a +2 bonus to all defenses.
         `,
         name: 'summon monster',
       },
@@ -131,7 +131,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is much more defensively inclined.
-          It gains a +2 bonus to all defenses, and its \\glossterm{hit points} are doubled.
+          It gains a +2 bonus to all defenses, and its \\glossterm{hit points} are doubled, which also doubles its damage resistance.
         `,
         name: 'summon monster',
       },
