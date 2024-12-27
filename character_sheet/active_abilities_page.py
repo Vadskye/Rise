@@ -74,10 +74,15 @@ def create_page(destination):
             ),
             # Old attacks for backwards compatibility
             # *old_attacks(),
-            flex_wrapper(div({"class": "section-header"}, "Other Abilities")),
+            flex_wrapper(div({"class": "section-header"}, "Other Active Abilities")),
             fieldset(
                 {"class": f"repeating_abilities"},
                 ability(),
+            ),
+            flex_wrapper(div({"class": "section-header"}, "Passive Abilities")),
+            fieldset(
+                {"class": f"repeating_passiveabilities"},
+                passive_ability(),
             ),
             flex_wrapper(div({"class": "section-header"}, "Universal Abilities")),
             universal_abilities(),
@@ -192,48 +197,53 @@ def ability():
     )
 
 
-def passive_abilities():
-    return flex_col(
-        {"class": "passive-abilities"},
-        [
-            flex_wrapper(div({"class": "section-header"}, "Passive Abilities")),
-            "".join(
-                [
-                    flex_row(
-                        {"class": "passive-ability-row"},
-                        [
-                            passive_ability(prefix="l", ability_number=i),
-                            passive_ability(prefix="r", ability_number=i),
-                        ],
-                    )
-                    for i in range(5)
-                ]
-            ),
-        ],
-    )
-
-
-def passive_ability(prefix, ability_number):
-    return div(
-        text_input({"name": "passive{0}-{1}-name".format(ability_number, prefix)})
-    )
-
+def passive_ability():
     return flex_row(
         {"class": "passive-ability"},
         [
-            labeled_text_input(
-                "Name",
-                {"class": "passive-name"},
-                input_attributes={
-                    "name": "passive{0}-{1}-name".format(ability_number, prefix),
-                },
+            flex_col(
+                {"class": "attack-prefix"},
+                [
+                    flex_wrapper(
+                        labeled_text_input(
+                            "Name",
+                            {"class": "active-ability-name"},
+                            {"name": "ability_name"},
+                        ),
+                    ),
+                ]
             ),
             labeled_textarea(
                 "Effect",
-                {"class": "passive-effect"},
-                input_attributes={
-                    "name": "passive{0}-{1}-effect".format(ability_number, prefix),
-                },
+                {"class": "passive-ability-effect"},
+                {"name": "ability_effects"},
+            ),
+            flex_col(
+                {"class": "attack-buttons"},
+                button(
+                    {
+                        "class": "attack-roll",
+                        "name": "use_ability",
+                        "type": "roll",
+                        "value": (
+                            "&{template:custom}"
+                            + " {{title=@{ability_name}}}"
+                            + " {{subtitle=@{character_name}}}"
+                            + " {{color=@{chat_color}}}"
+                            + " {{desc=@{ability_effects}}}"
+                        ),
+                    },
+                    div({"class": "ability-name-options"}, [
+                        span({"class": "ability-name-fixed"}, "Use"),
+                        text_input(
+                            {
+                                "class": "ability-name-dynamic",
+                                "readonly": True,
+                                "name": "ability_name",
+                            }
+                        ),
+                    ])
+                ),
             ),
         ],
     )
