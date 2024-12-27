@@ -186,7 +186,7 @@ export const unbreakableDefense: CombatStyle = {
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.
       `,
       rank: 7,
@@ -243,7 +243,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent+',
 
       effect: `
-        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
         If damaged, the target becomes \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 7,

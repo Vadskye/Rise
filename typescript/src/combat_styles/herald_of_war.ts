@@ -188,7 +188,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Blow+',
 
       effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If damaged, the target becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,

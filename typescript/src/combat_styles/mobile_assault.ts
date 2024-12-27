@@ -197,7 +197,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Fearsome Pounce+',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Move up to half your movement speed and make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If damaged, the target is \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,
