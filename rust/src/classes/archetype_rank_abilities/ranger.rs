@@ -14,7 +14,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \textit{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can compel a wild animal to undergo this training by sustaining the \textit{command} ability from the Creature Handling skill (see \pcref{Command}).
-                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune} (deep), \abilitytag{Emotion}}
+                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
                     \abilityusagetime 8 hours of training, which the target must actively participate in.
                     \rankline
                     Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} that you \glossterm{touch}.
