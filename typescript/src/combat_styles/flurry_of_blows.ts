@@ -223,7 +223,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Static Shock+',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If damaged, the target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
