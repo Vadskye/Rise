@@ -11,7 +11,7 @@ export const dirtyFighting: CombatStyle = {
       // +2r for condition purposes due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If it loses hit points, the target becomes \\stunned as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -21,7 +21,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If it loses hit points, the target takes \\damagerankseven.
+        If the target loses hit points, it takes \\damagerankseven.
       `,
       rank: 5,
     },
@@ -242,7 +242,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target becomes \\dazzled as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -252,7 +252,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target becomes \\blinded as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 5,
     },

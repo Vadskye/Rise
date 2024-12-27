@@ -178,7 +178,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If it loses hit points, the target becomes \\frightened by you as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 1,
       tags: ['Emotion'],
