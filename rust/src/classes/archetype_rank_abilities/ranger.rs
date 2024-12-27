@@ -36,7 +36,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
-                        \item Its \glossterm{power} is equal to half your power.
+                        \item Its \glossterm{power} is equal to half your power. You can use the higher of your \glossterm{mundane power} and \glossterm{magical power} for this ability.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to hit points and damage resistance.
                     \end{itemize}
@@ -44,7 +44,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{2} The animal gains a \plus1 bonus to all defenses.
-                    \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{magical power}, which increases its \glossterm{weapon damage} as normal (see \pcref{Weapon Damage}).
+                    \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{power}.
                     \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The accuracy bonus increases to +4.
