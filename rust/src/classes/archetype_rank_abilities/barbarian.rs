@@ -115,7 +115,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You gain a +2 accuracy bonus with melee and thrown \glossterm{strikes}.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
-                        \item As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one.
+                        \item Once per round as a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one.
                             When you do, you gain damage resistance equal to half your maximum hit points.
                             This ability has the \atSwift tag.
                     \end{itemize}
