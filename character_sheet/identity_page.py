@@ -102,16 +102,9 @@ def paper_abilities_summary():
 
 
 def roll20_abilities_summary():
-    return div(
-        {"class": "abilities"},
-        [
-            div({"class": "section-header"}, "Passive Abilities"),
-            fieldset(
-                {"class": "repeating_passiveabilities"},
-                passive_ability(),
-            ),
-        ],
-    )
+    # Roll20 tracks passive abilities on the active abilities page.
+    # TODO: clean up that naming...
+    return div()
 
 
 def passive_ability():
