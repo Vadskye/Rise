@@ -93,7 +93,7 @@ export const bruteForce: CombatStyle = {
       name: 'Concussion+',
 
       effect: `
-        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
         If the target loses hit points and your attack result also hits its Fortitude defense, it is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -188,7 +188,7 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash+',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If the target takes damage, you \\glossterm{knockback} it 30 feet.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -235,7 +235,7 @@ export const bruteForce: CombatStyle = {
 
       cost: "One \\glossterm{fatigue level}.",
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         The strike deals 1d8 \\glossterm{extra damage} per 3 power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,

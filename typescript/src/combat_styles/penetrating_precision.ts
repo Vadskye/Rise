@@ -131,7 +131,7 @@ export const perfectPrecision: CombatStyle = {
       name: 'Groundspike+',
 
       effect: `
-        Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
         If damaged, the target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,

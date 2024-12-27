@@ -210,7 +210,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Anklesprainer+',
 
       effect: `
-        Make a melee \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,

@@ -9,7 +9,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Strip the Flesh',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If it loses hit points, the target becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -29,7 +29,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Rend the Hide+',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         The strike deals 1d8 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
       `,
       rank: 7,
@@ -49,7 +49,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Blinding Brow Gash',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If it loses hit points, the target is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -60,9 +60,18 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If it loses hit points, the target is \\slowed as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Reflex defense, it is \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
+    },
+    {
+      name: 'Hamstring+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        If the target loses hit points and your attack result also hits its Reflex defense, it is \\slowed as a \\glossterm{condition}.
+      `,
+      rank: 5,
     },
 
     {
@@ -107,7 +116,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Flintspark+',
 
       effect: `
-        Make a strike with double \\glossterm{weapon damage}.
+        Make a strike that deals double \\glossterm{weapon damage}.
         If your attack also hits the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
       `,
       rank: 7,
@@ -228,7 +237,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Tear Exposed Flesh+',
 
       effect: `
-        Make a \\glossterm{strike} with double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If the target has no remaining \\glossterm{damage resistance}, the strike deals triple \\glossterm{weapon damage}.
       `,
       // narrative: '',
