@@ -222,14 +222,14 @@ def armor(destination, armor_type):
                 else div()
             ),
             labeled_number_input(
-                "Encumbrance",
-                {"class": "armor-encumbrance"},
-                input_attributes={"name": parseable_type + "_encumbrance"},
-            ),
-            labeled_number_input(
                 "Vital rolls",
                 {"class": "armor-vital-rolls"},
                 input_attributes={"name": parseable_type + "_vital_rolls"},
+            ),
+            labeled_number_input(
+                "Encumbrance",
+                {"class": "armor-encumbrance"},
+                input_attributes={"name": parseable_type + "_encumbrance"},
             ),
             (
                 labeled_number_input(
