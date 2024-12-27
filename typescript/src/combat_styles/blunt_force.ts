@@ -84,7 +84,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If it loses hit points, the target is \\stunned as a \\glossterm{condition}.
+        If it loses hit points and your attack result beats its Fortitude defense, the target is \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -94,7 +94,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with triple \\glossterm{weapon damage}.
-        If it loses hit points, the target is \\confused as a \\glossterm{condition}.
+        If it loses hit points and your attack result beats its Fortitude defense, the target is \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
     },
