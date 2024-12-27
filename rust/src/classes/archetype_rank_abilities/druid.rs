@@ -677,6 +677,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{itemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
+                        \item Its level is equal to your level.
+                        \item All of its attributes are 0 except for Intelligence, which it does not have.
                         \item It has no \glossterm{resources}, and it cannot use abilities that increase its fatigue level.
                         \item Its \glossterm{hit points} are equal to the standard value for a druid of your level (see Base Class Abilities, above).
                         \item Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
@@ -704,20 +706,20 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 Unusual environments may have different animals than the standard animals listed below.
                 \begin{itemize}
                     \item Aquatic: A shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
-                        It has a bite \glossterm{natural weapon}.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Swim skill.
                     \item Arctic: An arctic fox appears that has no penalties for being in cold environments.
                         It has a bite \glossterm{natural weapon}.
                     \item Desert: A hyena appears that has no penalties for being in hot environments.
                         It has a bite \glossterm{natural weapon}.
                     \item Mountain: A goat appears that can move up or down steep slopes without slowing its movement.
                         It has a ram \glossterm{natural weapon}.
-                    \item Forest: A wolverine appears that has two additional \glossterm{hit points}.
+                    \item Forest: A wolverine appears that calculates its hit points as a barbarian of your level, rather than as a druid of your level.
                         It has a bite \glossterm{natural weapon}.
-                    \item Plains: A wolf appears that has the \trait{scent} ability.
+                    \item Plains: A wolf appears that has the \trait{scent} ability and is trained with the Awareness skill.
                         It has a bite \glossterm{natural weapon}.
                     \item Swamp: A crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
-                        It has a bite \glossterm{natural weapon}.
-                    \item Underground: A dire rat appears that has \trait{low-light vision}.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Swim skill.
+                    \item Underground: A dire rat appears that has \trait{low-light vision} and is trained with the Awareness skill.
                         It has a bite \glossterm{natural weapon}.
                 \end{itemize}
             ",
