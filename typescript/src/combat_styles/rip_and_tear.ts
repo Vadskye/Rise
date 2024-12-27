@@ -39,8 +39,8 @@ export const ripAndTear: CombatStyle = {
       name: 'Brow Gash',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If it loses hit points, the target is \\dazzled as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike}.
+        If the target takes damage and your attack result also hits its Reflex defense, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -97,7 +97,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        If your attack beats the target's Reflex defense, it takes fire damage equal to your power during your next action.
+        If your attack also hits the target's Reflex defense, it takes fire damage equal to your power during your next action.
       `,
       rank: 3,
       tags: ['Fire'],
@@ -108,7 +108,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike with double \\glossterm{weapon damage}.
-        If your attack beats the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
+        If your attack also hits the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
       `,
       rank: 7,
       tags: ['Fire'],
