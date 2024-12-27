@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If it loses hit points, the target becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -50,7 +50,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If it loses hit points, the target is \\blinded as a \\glossterm{condition}.
+        If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -187,7 +187,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target takes damage from the strike again during your next action.
+        If the target loses hit points, it takes damage from the strike again during your next action.
       `,
       rank: 1,
     },
@@ -197,7 +197,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target takes damage from the strike again during each of your next two actions.
+        If the target loses hit points, it takes damage from the strike again during each of your next two actions.
       `,
       rank: 5,
     },

@@ -74,7 +74,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target is \\vulnerable to all damage as a \\glossterm{condition}.
+        If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -156,7 +156,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If it loses hit points, the target falls \\prone.
+        If the target loses hit points, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
