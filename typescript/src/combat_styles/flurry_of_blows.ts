@@ -213,7 +213,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it loses hit points, the target becomes \\stunned as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       tags: ['Electricity'],
@@ -249,7 +249,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a \\glossterm{weak strike}.
         You may reroll the accuracy roll and take the highest result.
-        If it loses hit points, the target becomes \\dazzled as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },

@@ -133,7 +133,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        If it loses hit points, the target becomes \\stunned as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -143,7 +143,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{weak strike}.
-        You gain a +1 bonus to Armor and Reflex defenses this round.
+        You gain a +1 bonus to all defenses this round.
         The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
       rank: 1,
@@ -208,7 +208,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Prepared Defense',
 
       effect: `
-        Make a \\glossterm{weak strike}.
+        Make a \\glossterm{strike}.
         In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
         You \\glossterm{briefly} gain a +2 bonus to that defense.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.

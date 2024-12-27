@@ -220,7 +220,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranktwolow. If it loses hit points, the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranktwolow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -240,7 +240,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         // +1r for shadowed
         hit: `
-          \\damageranksixlow. If it loses hit points, the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranksixlow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
