@@ -595,7 +595,7 @@ def boring_stuff(destination):
                     *(
                         [
                             underlabel(
-                                "CR",
+                                "Monster?",
                                 select(
                                     {
                                         "class": "challenge-rating",
@@ -603,8 +603,8 @@ def boring_stuff(destination):
                                     },
                                     [
                                         option({"value": ""}, ""),
-                                        option({"value": "1"}, "One"),
-                                        option({"value": "4"}, "Four"),
+                                        option({"value": "1"}, "Normal"),
+                                        option({"value": "4"}, "Elite"),
                                     ],
                                 ),
                             ),
