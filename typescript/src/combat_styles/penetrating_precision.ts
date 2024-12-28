@@ -92,9 +92,15 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Heartpiercer',
 
+      // Assume you have an 80% hit chance (+0 vs AD 3).
+      // Expected damage is 0.8 + 0.5*0.2 + 0.1*0.8 = 0.98x hit damage.
+      // Losing glancing blows means you deal 0.8x.
+      // +4 accuracy with crits means you crit on a 9.
+      // That makes expected damage 0.8 + 0.2 = 1x hit damage, scaling to be stronger as
+      // your accuracy increases.
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +3 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +4 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
@@ -108,7 +114,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +10 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +15 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
