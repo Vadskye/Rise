@@ -25,24 +25,6 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Move Like Wind",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                You gain a \plus10 foot bonus to your \glossterm{land speed}.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
-        },
-        RankAbility {
-            name: "Move Like Wind+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The speed bonus increases to +20 feet.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
-        },
-        RankAbility {
             name: "Heart of Air",
             is_magical: true,
             rank: 4,
@@ -99,6 +81,15 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                 \end{activeability}
             ",
             modifiers: None,
+        },
+        RankAbility {
+            name: "Move Like Wind",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             name: "Airdance",
