@@ -43,9 +43,9 @@ HP/DR/Total: 8 / 4 / 12
 Points / Self-hit: 28 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 4 / 4 / 5 / 9
+A/F/R/M: 4 / 4 / 5 / 10
 HP/DR/Total: 12 / 4 / 16
-Points / Self-hit: 26 / 90%
+Points / Self-hit: 27 / 80%
 
 ### Wizard Perception
 A/F/R/M: 4 / 3 / 5 / 7
@@ -95,9 +95,9 @@ HP/DR/Total: 16 / 8 / 24
 Points / Self-hit: 41 / 60%
 
 ### Sorcerer Dexterity
-A/F/R/M: 7 / 6 / 8 / 12
+A/F/R/M: 7 / 6 / 8 / 13
 HP/DR/Total: 23 / 4 / 27
-Points / Self-hit: 40 / 80%
+Points / Self-hit: 41 / 70%
 
 ### Wizard Perception
 A/F/R/M: 4 / 5 / 5 / 10
@@ -147,9 +147,9 @@ HP/DR/Total: 28 / 20 / 48
 Points / Self-hit: 62 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 11 / 10 / 12 / 17
+A/F/R/M: 11 / 10 / 12 / 18
 HP/DR/Total: 52 / 8 / 60
-Points / Self-hit: 61 / 60%
+Points / Self-hit: 62 / 60%
 
 ### Wizard Perception
 A/F/R/M: 7 / 8 / 8 / 14
@@ -199,9 +199,9 @@ HP/DR/Total: 53 / 24 / 77
 Points / Self-hit: 75 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 14 / 12 / 15 / 20
+A/F/R/M: 14 / 12 / 15 / 21
 HP/DR/Total: 106 / 16 / 122
-Points / Self-hit: 75 / 70%
+Points / Self-hit: 76 / 60%
 
 ### Wizard Perception
 A/F/R/M: 9 / 10 / 10 / 17
@@ -251,9 +251,9 @@ HP/DR/Total: 96 / 48 / 144
 Points / Self-hit: 90 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 17 / 15 / 18 / 23
+A/F/R/M: 17 / 15 / 18 / 24
 HP/DR/Total: 167 / 32 / 199
-Points / Self-hit: 90 / 70%
+Points / Self-hit: 91 / 70%
 
 ### Wizard Perception
 A/F/R/M: 13 / 13 / 13 / 20

@@ -393,40 +393,40 @@ Warrior             : 7.75
 ### Level 1
 
 Barbarian Glass     : 5.00
-Barbarian Shield    : 6.25
-Fighter Greatmace   : 6.00
-Fighter Shield      : 6.00
-Monk Kama           : 3.00
-Paladin Shield      : 6.75
-Ranger Longbow      : 4.25
+Barbarian Shield    : 7.25
+Fighter Greatmace   : 6.75
+Fighter Shield      : 6.75
+Monk Kama           : 3.50
+Paladin Shield      : 7.75
+Ranger Longbow      : 5.00
 Rogue Smallsword    : 3.00
-Sorcerer Dexterity  : 4.00
+Sorcerer Dexterity  : 4.25
 Wizard Perception   : 3.50
-Brute               : 5.00
-Leader              : 4.25
+Brute               : 5.75
+Leader              : 5.00
 Mystic              : 4.00
-Skirmisher          : 3.25
+Skirmisher          : 3.50
 Sniper              : 3.00
-Warrior             : 6.25
+Warrior             : 7.00
 
 ### Level 5
 
-Barbarian Glass     : 4.75
-Barbarian Shield    : 7.00
-Fighter Greatmace   : 6.00
-Fighter Shield      : 8.00
-Monk Kama           : 5.50
-Paladin Shield      : 7.00
-Ranger Longbow      : 5.75
-Rogue Smallsword    : 4.75
+Barbarian Glass     : 4.25
+Barbarian Shield    : 7.50
+Fighter Greatmace   : 6.25
+Fighter Shield      : 9.00
+Monk Kama           : 5.00
+Paladin Shield      : 7.50
+Ranger Longbow      : 6.00
+Rogue Smallsword    : 4.00
 Sorcerer Dexterity  : 4.00
-Wizard Perception   : 3.25
-Brute               : 4.50
-Leader              : 4.50
-Mystic              : 3.75
+Wizard Perception   : 3.00
+Brute               : 4.75
+Leader              : 4.75
+Mystic              : 3.50
 Skirmisher          : 4.00
 Sniper              : 3.00
-Warrior             : 5.75
+Warrior             : 6.00
 
 ### Level 10
 
@@ -449,20 +449,20 @@ Warrior             : 6.50
 
 ### Level 15
 
-Barbarian Glass     : 5.50
-Barbarian Shield    : 10.25
+Barbarian Glass     : 5.25
+Barbarian Shield    : 10.50
 Fighter Greatmace   : 7.00
-Fighter Shield      : 9.00
+Fighter Shield      : 9.50
 Monk Kama           : 9.25
-Paladin Shield      : 8.75
-Ranger Longbow      : 7.50
+Paladin Shield      : 9.00
+Ranger Longbow      : 8.00
 Rogue Smallsword    : 6.50
-Sorcerer Dexterity  : 7.25
-Wizard Perception   : 4.00
-Brute               : 7.25
-Leader              : 6.50
-Mystic              : 4.50
-Skirmisher          : 6.25
+Sorcerer Dexterity  : 7.50
+Wizard Perception   : 3.75
+Brute               : 7.50
+Leader              : 6.75
+Mystic              : 4.25
+Skirmisher          : 6.75
 Sniper              : 3.75
 Warrior             : 8.50
 

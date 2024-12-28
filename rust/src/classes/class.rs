@@ -184,7 +184,7 @@ impl Class {
             Self::Paladin => vec![Constitution, Strength],
             Self::Ranger => vec![],
             Self::Rogue => vec![Intelligence, Perception],
-            Self::Sorcerer => vec![Perception, Willpower],
+            Self::Sorcerer => vec![Willpower, Perception],
             Self::Treant => vec![Strength, Willpower],
             Self::Warlock => vec![Intelligence, Perception],
             Self::Wizard => vec![Perception, Willpower],

@@ -11,7 +11,7 @@
  *   Paladin:  29 /  97
  *    Ranger:  29 /  94
  *     Rogue:  28 /  89
- *  Sorcerer:  29 /  92
+ *  Sorcerer:  29 /  91
  *   Warlock:  28 /  90
  *    Wizard:  28 /  88
  * Automaton:  30 /  99
@@ -32,7 +32,7 @@
  *   Paladin:  29 / 165
  *    Ranger:  29 / 159
  *     Rogue:  28 / 158
- *  Sorcerer:  29 / 157
+ *  Sorcerer:  29 / 160
  *   Warlock:  28 / 160
  *    Wizard:  28 / 154
  * Automaton:  30 / 167
@@ -53,7 +53,7 @@
  *   Paladin:  29 / 224
  *    Ranger:  29 / 219
  *     Rogue:  28 / 219
- *  Sorcerer:  29 / 218
+ *  Sorcerer:  29 / 221
  *   Warlock:  28 / 221
  *    Wizard:  28 / 215
  * Automaton:  30 / 226
@@ -145,10 +145,10 @@
             Sorcerer 1
             AP 4, FT 7, IP 3, Skills 5
             HP 11, DR 4
-            AD 4, Fort 6, Ref 5, Ment 7
-            Club +2 (1d8+1 damage.)
-            Attr: Str 2, Dex 2, Con 3, Int 2, Per 3, Wil 2
-            Power: 2✨/2
+            AD 4, Fort 6, Ref 5, Ment 8
+            Club +1 (1d8+1 damage.)
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 3✨/2
 
 #### Warlock
             Warlock 1
@@ -318,10 +318,10 @@
             Sorcerer 10
             AP 6, FT 7, IP 5, Skills 5
             HP 30, DR 12
-            AD 9, Fort 11, Ref 10, Ment 12
+            AD 9, Fort 11, Ref 10, Ment 13
             Club +6 (1d8+3 damage.)
-            Attr: Str 2, Dex 2, Con 3, Int 2, Per 3, Wil 2
-            Power: 7✨/7
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 8✨/7
 
 #### Warlock
             Warlock 10
@@ -491,10 +491,10 @@
             Sorcerer 20
             AP 6, FT 7, IP 5, Skills 5
             HP 110, DR 32
-            AD 14, Fort 16, Ref 15, Ment 17
+            AD 14, Fort 16, Ref 15, Ment 18
             Club +11 (1d8+6 damage.)
-            Attr: Str 2, Dex 2, Con 3, Int 2, Per 3, Wil 2
-            Power: 12✨/12
+            Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
+            Power: 13✨/12
 
 #### Warlock
             Warlock 20
