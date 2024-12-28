@@ -311,10 +311,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
     If you have a Strength of 3 or higher, you draw or sheathe a Heavy item at the same speed as non-Heavy items.
     In addition, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
-    If your Strength is 6 or higher, this accuracy penalty is removed.
     This cannot be used if the weapon always requires two hands to fire, such as a titanbow.
+    If your Strength is 6 or higher, this accuracy penalty is removed.
 
-    While holding a Heavy weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon, with a minimum bonus of \plus0.
+    While holding a Heavy weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
     This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
     % 20% chance of +5.5a is slightly better than +1a, but only for getting critical hits
     \weapontagdef{Impact} You reduce your \glossterm{explosion target} for strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
@@ -359,8 +359,9 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     You are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
     \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
     This allows you to deal damage with the weapon if you successfully trip the target.
+    % Doesn't cost an improvement slot; very situational
     \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
-    While holding this weapon in two hands, you gain a \plus1 damage bonus to your \glossterm{weapon damage} with it, plus \plus1 per 3 \glossterm{power}, with a minimum bonus of \plus0.
+    While holding a Versatile Grip weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon, with a minimum bonus of \plus1.
     This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
 
   \subsection{Weapon Table}
@@ -387,119 +388,118 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         \begin{longtable}{p{12em} l l l >{\lcol}p{24em}}
           \lcaption{Weapons}                                                                                                                                                                    \\
           \tb{Name}                         & \tb{Accuracy} & \tb{Damage} & \tb{Item Rank (Cost)}\fn{1} & \tb{Weapon Tags}                          \tableheaderrule
-          Armor weapons                     &               &             &                             &                                                            \\
-          \tind Armor spikes\fn{2}          & \tdash        & 1d4         & \tdash                      & \tdash                                                     \\
-          \tind Standard shield             & \plus0        & 1d4         & 0 (10 gp)                   & \tdash                                                     \\
-          \tind Spiked shield               & \plus0        & 1d6         & 1 (40 gp)                   & \tdash                                                     \\
+          Armor weapons                     &               &             &                             &                                             \\
+          \tind Standard shield             & \plus0        & 1d6         & 0 (10 gp)                   & \tdash                                      \\
+          \tind Spiked standard shield      & \plus0        & 1d8         & 1 (40 gp)                   & \tdash                                      \\
 
-          Axes                              &               &             &                             &                                                            \\
-          \tind Battleaxe                   & \plus0        & 1d6         & 0 (10 gp)                   & Sweeping (1), Versatile Grip                               \\
-          \tind Greataxe                    & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Sweeping (1)                                        \\
-          \tind Handaxe                     & \plus1        & 1d4         & 0 (10 gp)                   & Light, Thrown (30/60)                                      \\
-          \tind Poleaxe                     & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Tripping                                            \\
-          \tind Shepherd's axe              & \plus1        & 1d6         & 0 (10 gp)                   & Long                                                       \\
-          \tind Throwing axe                & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (30/60)                                             \\
+          Axes                              &               &             &                             &                                             \\
+          \tind Battleaxe                   & \plus0        & 1d8         & 0 (10 gp)                   & Sweeping (1), Versatile Grip                \\
+          \tind Greataxe                    & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Sweeping (1)                         \\
+          \tind Handaxe                     & \plus1        & 1d4         & 0 (10 gp)                   & Light, Thrown (30/60)                       \\
+          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
+          \tind Shepherd's axe              & \plus0        & 1d8         & 0 (10 gp)                   & Long, Versatile Grip                        \\
+          \tind Throwing axe                & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (30/60)                              \\
 
-          Blades                            &               &             &                             &                                                            \\
-          \tind Broadsword                  & \plus0        & 1d6         & 0 (10 gp)                   & Sweeping (1), Versatile Grip                               \\
+          Blades                            &               &             &                             &                                             \\
+          \tind Broadsword                  & \plus1        & 1d6         & 0 (10 gp)                   & Sweeping (1), Versatile Grip                \\
           % -1d for an extra tag
-          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)                             \\
-          \tind Greatsword                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Sweeping (2)                                        \\
-          \tind Rapier                      & \plus2        & 1d4         & 0 (10 gp)                   & Light                                                      \\
-          \tind Scimitar                    & \plus1        & 1d6         & 0 (10 gp)                   & Mounted                                                    \\
-          \tind Smallsword                  & \plus1        & 1d4         & 0 (10 gp)                   & Keen, Light                                                \\
+          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)              \\
+          \tind Greatsword                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Sweeping (2)                         \\
+          \tind Rapier                      & \plus2        & 1d4         & 0 (10 gp)                   & Light                                       \\
+          \tind Scimitar                    & \plus1        & 1d6         & 0 (10 gp)                   & Mounted                                     \\
+          \tind Smallsword                  & \plus1        & 1d4         & 0 (10 gp)                   & Keen, Light                                 \\
 
-          Bows                              &               &             &                             &                                                            \\
-          \tind Longbow\fn{2}               & \plus0        & 1d6         & 1 (40 gp)                   & Bow, Projectile (90/270)                                   \\
-          \tind Shortbow\fn{2}              & \plus0        & 1d4         & 0 (10 gp)                   & Bow, Projectile (60/180)                                   \\
-          \tind Arrows (20)                 & \plus0        & \tdash      & 0 (2 gp)                    & Ammunition                                                 \\
-          \tind Blunted arrows (20)         & \minus1       & \tdash      & 0 (2 gp)                    & Ammunition, Subdual                                        \\
-          \tind Fire arrows (20)\fn{2}      & \minus1       & \tdash      & 2 (40 gp)                   & Ammunition                                                 \\
-          \tind Lightning arrows (20)\fn{2} & \minus1       & \tdash      & 3 (200 gp)                  & Ammunition                                                 \\
+          Bows                              &               &             &                             &                                             \\
+          \tind Longbow\fn{2}               & \plus0        & 1d6         & 1 (40 gp)                   & Bow, Projectile (90/270)                    \\
+          \tind Shortbow\fn{2}              & \plus0        & 1d4         & 0 (10 gp)                   & Bow, Projectile (60/180)                    \\
+          \tind Arrows (20)                 & \plus0        & \tdash      & 0 (2 gp)                    & Ammunition                                  \\
+          \tind Blunted arrows (20)         & \minus1       & \tdash      & 0 (2 gp)                    & Ammunition, Subdual                         \\
+          \tind Fire arrows (20)\fn{2}      & \minus1       & \tdash      & 2 (40 gp)                   & Ammunition                                  \\
+          \tind Lightning arrows (20)\fn{2} & \minus1       & \tdash      & 3 (200 gp)                  & Ammunition                                  \\
 
-          Club-like weapons                 &               &             &                             &                                                            \\
-          \tind Cavalry mace                & \plus0        & 1d6         & 0 (10 gp)                   & Mounted, Versatile Grip                                    \\
+          Club-like weapons                 &               &             &                             &                                             \\
+          \tind Cavalry mace                & \plus0        & 1d8         & 0 (10 gp)                   & Mounted, Versatile Grip                     \\
           % only 1 improvement
-          \tind Club                        & \plus0        & 1d8         & \tdash                      & \tdash                                                     \\
-          \tind Greatmace                   & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Impact                                              \\
+          \tind Club                        & \plus0        & 1d8         & \tdash                      & Versatile Grip                              \\
+          \tind Greatmace                   & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Impact                               \\
           % only 1 improvement
-          \tind Mace                        & \plus0        & 1d6         & 0 (10 gp)                   & Impact                                                     \\
-          \tind Morning star                & \plus0        & 1d8         & 0 (10 gp)                   & Versatile Grip                                             \\
+          \tind Mace                        & \plus0        & 1d6         & 0 (10 gp)                   & Impact                                      \\
+          \tind Morning star                & \plus0        & 1d10        & 0 (10 gp)                   & Versatile Grip                              \\
           % -1d for 3 tags
-          \tind Sap                         & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Subdual                                    \\
+          \tind Sap                         & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Subdual                     \\
 
-          Crossbows                         &               &             &                             &                                                            \\
-          \tind Heavy crossbow\fn{2}        & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Projectile (90/270)                                 \\
-          \tind Light crossbow\fn{2}        & \plus0        & 1d8         & 1 (40 gp)                   & Projectile (60/180)                                        \\
-          \tind Pellet crossbow\fn{2}       & \plus2        & 1d4         & 2 (200 gp)                  & Projectile (60/180), Subdual       \\
-          \tind Bolts (20)                  & \plus0        & \tdash      & 0 (2 gp)                    & Ammunition                                                 \\
-          \tind Blunted bolts (20)          & \minus1       & \tdash      & 0 (2 gp)                    & Ammunition, Subdual                                        \\
-          \tind Round bullets (20)          & \tdash        & \tdash      & 0 (2 gp)                    & Ammunition                                                 \\
+          Crossbows                         &               &             &                             &                                             \\
+          \tind Heavy crossbow\fn{2}        & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Projectile (90/270)                  \\
+          \tind Light crossbow\fn{2}        & \plus0        & 1d8         & 1 (40 gp)                   & Projectile (60/180)                         \\
+          \tind Pellet crossbow\fn{2}       & \plus2        & 1d4         & 2 (200 gp)                  & Projectile (60/180), Subdual                \\
+          \tind Bolts (20)                  & \plus0        & \tdash      & 0 (2 gp)                    & Ammunition                                  \\
+          \tind Blunted bolts (20)          & \minus1       & \tdash      & 0 (2 gp)                    & Ammunition, Subdual                         \\
+          \tind Round bullets (20)          & \tdash        & \tdash      & 0 (2 gp)                    & Ammunition                                  \\
 
-          Flexible weapons                  &               &             &                             &                                                            \\
-          \tind Flail                       & \plus0        & 1d6         & 0 (10 gp)                   & Tripping, Versatile Grip                                   \\
-          \tind Heavy flail                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                                            \\
-          \tind Two-section staff           & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Tripping                                      \\
-          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                                            \\
-          \tind Whip\fn{2}                  & \plus0        & 1d4         & 0 (10 gp)                   & Long, Tripping                                             \\
+          Flexible weapons                  &               &             &                             &                                             \\
+          \tind Flail                       & \plus0        & 1d8         & 0 (10 gp)                   & Tripping, Versatile Grip                    \\
+          \tind Heavy flail                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
+          \tind Two-section staff           & \plus2        & 1d6         & 0 (10 gp)                   & Heavy, Long                                 \\
+          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                             \\
+          \tind Whip\fn{2}                  & \plus1        & 1d4         & 0 (10 gp)                   & Long                                        \\
 
-          Headed weapons                    &               &             &                             &                                                            \\
-          \tind Light hammer                & \plus0        & 1d6         & 0 (10 gp)                   & Light, Thrown (30/60)                                      \\
-          \tind Longhammer                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Resonating                                    \\
-          \tind Pick                        & \plus0        & 1d6         & 0 (10 gp)                   & Impact, Versatile Grip                                     \\
-          \tind Sickle                      & \plus1        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                                        \\
-          \tind Sledgehammer                & \minus1       & 2d6         & 0 (10 gp)                   & Heavy, Resonating                                          \\
-          \tind Warhammer                   & \plus0        & 1d8         & 0 (10 gp)                   & Resonating                                                 \\
+          Headed weapons                    &               &             &                             &                                             \\
+          \tind Light hammer                & \plus0        & 1d6         & 0 (10 gp)                   & Light, Thrown (30/60)                       \\
+          \tind Longhammer                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Resonating                     \\
+          \tind Pick                        & \plus0        & 1d8         & 0 (10 gp)                   & Impact, Versatile Grip                      \\
+          \tind Sickle                      & \plus1        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                         \\
+          \tind Sledgehammer                & \minus1       & 2d6         & 0 (10 gp)                   & Heavy, Resonating                           \\
+          \tind Warhammer                   & \plus0        & 1d8         & 0 (10 gp)                   & Resonating, Versatile Grip                  \\
 
-          Monk weapons                      &               &             &                             &                                                            \\
-          \tind Jitte                       & \plus2        & 1d4         & 0 (10 gp)                   & Light                                                      \\
-          \tind Kama                        & \plus1        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                                        \\
+          Monk weapons                      &               &             &                             &                                             \\
+          \tind Jitte                       & \plus2        & 1d4         & 0 (10 gp)                   & Light                                       \\
+          \tind Kama                        & \plus1        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                         \\
           % -1d for extra throwing range
-          \tind Kunai                       & \plus1        & 1d3         & 0 (10 gp)                   & Light, Thrown (60/120)                                     \\
-          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                                            \\
+          \tind Kunai                       & \plus1        & 1d3         & 0 (10 gp)                   & Light, Thrown (60/120)                      \\
+          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                             \\
           % -1d
-          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                                \\
-          \tind Shuriken (5)                & \plus2        & 1d3         & 0 (10 gp)                   & Ammunition, Compact, Light, Thrown (30/60)                 \\
+          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                 \\
+          \tind Shuriken (5)                & \plus2        & 1d3         & 0 (10 gp)                   & Ammunition, Compact, Light, Thrown (30/60)  \\
 
-          Polearms                          &               &             &                             &                                                            \\
-          \tind Bardiche                    & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Sweeping (1)                                        \\
-          \tind Glaive                      & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Sweeping (1)                                  \\
-          \tind Halberd                     & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Long                                                \\
-          \tind Longhammer                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Resonating                                    \\
-          \tind Poleaxe                     & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Tripping                                            \\
+          Polearms                          &               &             &                             &                                             \\
+          \tind Bardiche                    & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Sweeping (1)                         \\
+          \tind Glaive                      & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Sweeping (1)                   \\
+          \tind Halberd                     & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Long                                 \\
+          \tind Longhammer                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Resonating                     \\
+          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
           % -1d relative to normal Heavy
-          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                                \\
-          \tind Scythe                      & \plus1        & 1d6         & 0 (10 gp)                   & Heavy, Sweeping (2)                                        \\
+          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                 \\
+          \tind Scythe                      & \plus1        & 1d6         & 0 (10 gp)                   & Heavy, Sweeping (2)                         \\
 
-          Simple weapons                    &               &             &                             &                                                            \\
-          \tind Claw sheath\fn{2}           & \tdash        & \tdash      & 1 (40 gp)                   & \tdash                                                     \\
+          Simple weapons                    &               &             &                             &                                             \\
+          \tind Claw sheath\fn{2}           & \tdash        & \tdash      & 1 (40 gp)                   & \tdash                                      \\
           % only 1 improvement
-          \tind Club                        & \plus0        & 1d8         & \tdash                      & \tdash                                                     \\
+          \tind Club                        & \plus0        & 1d8         & \tdash                      & \tdash                                      \\
           % -1d for an extra tag
-          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)                             \\
+          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)              \\
           % only 1 improvement
-          \tind Mace                        & \plus0        & 1d6         & 0 (10 gp)                   & Impact                                                     \\
+          \tind Mace                        & \plus0        & 1d6         & 0 (10 gp)                   & Impact                                      \\
           % -1d
-          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                                \\
+          \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                 \\
 
-          Spears                            &               &             &                             &                                                            \\
-          \tind Greatspear                  & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Long                                                \\
-          \tind Javelin                     & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (60/120)                                            \\
-          \tind Lance (5)\fn{2}             & \plus0        & 1d10        & 0 (10 gp)                   & Ammunition, Long, Mounted                                  \\
-          \tind Spear                       & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (30/60), Versatile Grip                             \\
-          \tind Spontoon                    & \plus1        & 1d6         & 0 (10 gp)                   & Versatile Grip                                             \\
+          Spears                            &               &             &                             &                                             \\
+          \tind Greatspear                  & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Long                                 \\
+          \tind Javelin                     & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (60/120)                             \\
+          \tind Lance (5)\fn{2}             & \plus0        & 1d10        & 0 (10 gp)                   & Ammunition, Long, Mounted                   \\
+          \tind Spear                       & \plus1        & 1d6         & 0 (10 gp)                   & Thrown (30/60), Versatile Grip              \\
+          \tind Spontoon                    & \plus1        & 1d8         & 0 (10 gp)                   & Versatile Grip                              \\
 
-          Thrown weapons                    &               &             &                             &                                                            \\
+          Thrown weapons                    &               &             &                             &                                             \\
           % -1d for an extra tag
-          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)                             \\
-          \tind Dart (5)                    & \plus1        & 1d3         & 0 (2 gp)                    & Ammunition, Compact, Light, Thrown (60/120)                \\
-          \tind Handaxe                     & \plus1        & 1d4         & 0 (10 gp)                   & Light, Thrown (30/60)                                      \\
-          \tind Light hammer                & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (30/60)                                             \\
-          \tind Javelin                     & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (60/120)                                            \\
-          \tind Shuriken (5)                & \plus2        & 1d3         & 0 (2 gp)                    & Ammunition, Compact, Light, Thrown (30/60)                 \\
-          \tind Sling\fn{2}                 & \plus0        & 1d6         & 0 (10 gp)                   & Projectile (90/270)                                        \\
-          \tind Round bullets (20)          & \tdash        & \tdash      & 0 (2 gp)                    & Ammunition                                                 \\
-          \tind Throwing axe                & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (30/60)                                             \\
+          \tind Dagger                      & \plus1        & 1d3         & 0 (10 gp)                   & Compact, Light, Thrown (30/60)              \\
+          \tind Dart (5)                    & \plus1        & 1d3         & 0 (2 gp)                    & Ammunition, Compact, Light, Thrown (60/120) \\
+          \tind Handaxe                     & \plus1        & 1d4         & 0 (10 gp)                   & Light, Thrown (30/60)                       \\
+          \tind Light hammer                & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (30/60)                              \\
+          \tind Javelin                     & \plus0        & 1d6         & 0 (10 gp)                   & Thrown (60/120)                             \\
+          \tind Shuriken (5)                & \plus2        & 1d3         & 0 (2 gp)                    & Ammunition, Compact, Light, Thrown (30/60)  \\
+          \tind Sling\fn{2}                 & \plus0        & 1d6         & 0 (10 gp)                   & Projectile (90/270)                         \\
+          \tind Round bullets (20)          & \tdash        & \tdash      & 0 (2 gp)                    & Ammunition                                  \\
+          \tind Throwing axe                & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (30/60)                              \\
         \end{longtable}
         1 See \pcref{Item Ranks}. \\
         2 This weapon has special rules. \\
@@ -517,15 +517,15 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           Armor                          &               &             &                             &                                    \\
           \tind Armblade\fn{2}           & \plus1        & 1d4         & 1 (40 gp)                   & Grappling, Keen, Light             \\
           \tind Spiked knee\fn{2}        & \plus0        & 1d4         & 1 (40 gp)                   & Grappling, Impact, Light           \\
-          \tind Tower shield             & \plus0        & 1d8         & 1 (40 gp)                   & Heavy                              \\
-          \tind Spiked tower shield      & \plus0        & 1d10        & 1 (40 gp)                   & Heavy                              \\
+          \tind Tower shield             & \plus0        & 1d8         & 1 (40 gp)                   & Heavy, Resonating                              \\
+          \tind Spiked tower shield      & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Resonating                              \\
           Axes                           &               &             &                             &                                    \\
           \tind Dwarven throwing axe     & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (60/120)                    \\
-          \tind Dwarven waraxe           & \plus0        & 1d8         & 1 (40 gp)                   & Thrown (30/60), Versatile Grip     \\
+          \tind Dwarven waraxe           & \plus0        & 1d10        & 1 (40 gp)                   & Thrown (30/60), Versatile Grip     \\
           \tind Orcish greataxe          & \minus1       & 2d6         & 1 (40 gp)                   & Heavy, Impact, Sweeping (1)        \\
           Blades                         &               &             &                             &                                    \\
           \tind Boot dagger\fn{2}        & \plus1        & 1d4         & 0 (10 gp)                   & Compact, Light                     \\
-          \tind Falchion                 & \plus1        & 1d6         & 1 (40 gp)                   & Sweeping (2)                       \\
+          \tind Falchion                 & \plus1        & 1d6         & 1 (40 gp)                   & Sweeping (2), Versatile Grip       \\
           \tind Katana                   & \plus1        & 1d8         & 1 (40 gp)                   & Heavy, Keen, Sweeping (1)          \\
           \tind Kukri                    & \plus2        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                \\
           \tind Parrying dagger          & \plus2        & 1d4         & 0 (10 gp)                   & Parrying, Light                    \\
@@ -539,7 +539,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Culacula                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Impact, Parrying            \\
           \tind Gnomish trick mace       & \plus2        & 1d4         & 0 (10 gp)                   & Light, Tripping                    \\
           \tind Knobkerrie               & \plus1        & 1d6         & 0 (10 gp)                   & Impact, Throwing (30/60)           \\
-          \tind Totokia                  & \plus0        & 1d8         & 0 (10 gp)                   & Impact, Versatile Grip             \\
+          \tind Totokia                  & \plus0        & 1d10        & 0 (10 gp)                   & Impact, Versatile Grip             \\
           Crossbows                      &               &             &                             &                                    \\
           \tind Arbalest\fn{2}           & \plus1        & 1d10        & 2 (200 gp)                  & Heavy, Impact, Projectile (90/270) \\
           \tind Pistol crossbow\fn{2}    & \plus1        & 1d4         & 1 (40 gp)                   & Compact, Light, Projectile (30/90) \\
@@ -554,9 +554,9 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Dwarven longhammer       & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Long, Resonating            \\
           \tind Dwarven shorthammer      & \plus0        & 1d6         & 1 (40 gp)                   & Light, Thrown (60/120)             \\
           \tind Heavy pick               & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Keen, Impact                \\
-          \tind Obuch                    & \plus0        & 1d8         & 1 (40 gp)                   & Long, Tripping                     \\
+          \tind Obuch                    & \plus0        & 1d8         & 1 (40 gp)                   & Long, Tripping, Versatile Grip     \\
           Monk weapons                   &               &             &                             &                                    \\
-          \tind Hook sword               & \plus1        & 1d6         & 1 (40 gp)                   & Light, Tripping      \\
+          \tind Hook sword               & \plus1        & 1d6         & 1 (40 gp)                   & Light, Tripping                    \\
           \tind Sai                      & \plus1        & 1d4         & 0 (10 gp)                   & Grappling, Light, Parrying         \\
           \tind Three-section staff      & \plus1        & 1d6         & 1 (40 gp)                   & Heavy, Long, Parrying, Tripping    \\
           \tind War fan\fn{2}            & \plus1        & 1d4         & 1 (40 gp)                   & Light, Parrying                    \\
@@ -572,7 +572,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           % -1d because thrown + tripping is extra good?
           \tind Bolas                    & \plus1        & 1d3         & 0 (10 gp)                   & Light, Thrown (30/60), Tripping    \\
           \tind Dwarven throwing axe     & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (60/120)                    \\
-          \tind Dwarven waraxe           & \plus0        & 1d8         & 1 (40 gp)                   & Thrown (30/60), Versatile Grip     \\
+          \tind Dwarven waraxe           & \plus0        & 1d10        & 1 (40 gp)                   & Thrown (30/60), Versatile Grip     \\
           \tind Net\fn{2}                & \plus0        & \tdash      & 0 (10 gp)                   & Massive (10), Thrown (5/15)        \\
         \end{longtable}
         1 See \pcref{Item Ranks}. \\
@@ -678,8 +678,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     In order to attack with a talon, you must be trained in the Balance skill, have a Dexterity of at least 3, or be currently flying or gliding.
     \parhead{Titanbow} A titanbow is too unwieldy to use while you are mounted.
     It is the same size category as the creature it is sized for.
-    \parhead{Tower Shield} Although you can hold a tower shield in one hand, it is considered a \weapontag{Heavy} weapon because of its weight.
-    You would typically have to support it with your other hand to effectively smash it into an enemy.
+    \parhead{Tower Shield} Although you can hold a tower shield in one hand to defend yourself, you need to support it with your other hand to effectively smash it into an enemy.
+    That makes it a \weapontag{Heavy} weapon.
     \parhead{War Fan} A war fan grants you a \plus1 bonus to Armor defense while you wield it.
     If you wield two war fans at once, the bonus increases to \plus2.
     This bonus is treated as coming from a shield, and it does not stack with the benefits of using any other shield.
@@ -909,7 +909,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \parhead{Buckler} This small metal shield is worn strapped to your forearm.
     At the start of each phase, you choose whether you treat the hand using a buckler as a \glossterm{free hand}.
     If you do, you can wield weapons or otherwise take actions using the arm bearing the buckler, but do not gain the buckler's defensive bonus during that phase.
-    \par You can't bash someone with a buckler.
+    \par You can't makes \glossterm{strikes} with a buckler.
     \parhead{Full Plate} Each suit of full plate must be individually fitted to its owner by an armorsmith.
     A captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check.
     The new owner must still be of the same size category as the size category and general body shape, such as humanoid, that the suit was originally designed for.
