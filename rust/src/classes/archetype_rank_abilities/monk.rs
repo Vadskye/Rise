@@ -12,6 +12,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Your maximum jumping height is equal to your maximum horizontal jump distance, rather than half that distance (see \pcref{Jumping}).
+                You can also use Willpower in place of Strength to determine your horizontal jump distance.
             ",
             modifiers: None,
         },
@@ -20,7 +21,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Your maximum jumping height increases to twice your maximum horizontal jump distance.
+                You gain a \plus10 bonus to your maximum horizontal jump distance.
             ",
             modifiers: None,
         },
