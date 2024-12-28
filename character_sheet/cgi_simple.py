@@ -203,6 +203,7 @@ def number_input(attributes=None):
 
 def text_input(attributes=None):
     attributes = attributes or dict()
+    attributes["autocomplete"] = "off"
     attributes["type"] = "text"
     attributes["size"] = attributes.get("size", "1")
     if DESTINATION == "paper" and "value" in attributes:
