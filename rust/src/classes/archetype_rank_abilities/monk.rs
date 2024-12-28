@@ -142,7 +142,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                If you spend an \glossterm{insight point}, you can become proficient with exotic monk weapons \glossterm{exotic weapons} (see \pcref{Exotic Weapons}).
+                If you spend an \glossterm{insight point}, you can become proficient with exotic monk weapons (see \pcref{Exotic Weapons}).
                 You must already be proficient with all non-exotic monk weapons.
             ",
             // This is an abstraction of the effect of exotic weapons being better
