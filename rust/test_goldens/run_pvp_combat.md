@@ -3,9 +3,9 @@
 ## Barbarian greataxe vs barbarian greataxe
 Rounds 10.00/B 4.25/R 4.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds  7.00/B 2.75/R 2.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds  9.75/B 3.75/R 3.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds 11.25/B 4.25/R 4.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 14.25/B 5.75/R 5.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 12.25/B 4.75/R 4.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 15.50/B 6.25/R 6.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 
 ## Fighter shield vs fighter greataxe
 Rounds  8.00/B 5.00/R 6.50 Blue 0 ( 0.00%) Red 2 ( 0.30%)

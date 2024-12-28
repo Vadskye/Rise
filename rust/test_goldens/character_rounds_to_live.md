@@ -23,79 +23,79 @@ Warrior             : 4.50
 
 ### Level 5
 
-Barbarian Glass     : 2.25
-Barbarian Shield    : 4.75
-Fighter Greatmace   : 3.75
-Fighter Shield      : 5.75
-Monk Kama           : 4.25
-Paladin Shield      : 4.75
-Ranger Longbow      : 3.75
-Rogue Smallsword    : 3.50
+Barbarian Glass     : 2.50
+Barbarian Shield    : 5.00
+Fighter Greatmace   : 4.00
+Fighter Shield      : 6.00
+Monk Kama           : 4.50
+Paladin Shield      : 5.00
+Ranger Longbow      : 4.00
+Rogue Smallsword    : 3.75
 Sorcerer Dexterity  : 2.50
 Wizard Perception   : 1.75
 Brute               : 3.00
 Leader              : 3.00
-Mystic              : 2.00
+Mystic              : 2.25
 Skirmisher          : 2.75
-Sniper              : 1.75
-Warrior             : 3.50
+Sniper              : 2.00
+Warrior             : 3.75
 
 ### Level 10
 
 Barbarian Glass     : 3.50
-Barbarian Shield    : 5.50
-Fighter Greatmace   : 4.25
-Fighter Shield      : 5.50
-Monk Kama           : 6.00
-Paladin Shield      : 5.00
-Ranger Longbow      : 4.00
-Rogue Smallsword    : 4.75
-Sorcerer Dexterity  : 3.25
+Barbarian Shield    : 6.00
+Fighter Greatmace   : 4.50
+Fighter Shield      : 6.00
+Monk Kama           : 6.25
+Paladin Shield      : 5.50
+Ranger Longbow      : 4.25
+Rogue Smallsword    : 5.00
+Sorcerer Dexterity  : 3.50
 Wizard Perception   : 2.50
-Brute               : 3.25
-Leader              : 3.00
-Mystic              : 2.25
+Brute               : 3.50
+Leader              : 3.25
+Mystic              : 2.50
 Skirmisher          : 3.25
-Sniper              : 1.75
-Warrior             : 4.00
+Sniper              : 2.00
+Warrior             : 4.25
 
 ### Level 15
 
-Barbarian Glass     : 3.00
-Barbarian Shield    : 7.25
-Fighter Greatmace   : 5.00
-Fighter Shield      : 6.50
-Monk Kama           : 7.50
-Paladin Shield      : 6.25
-Ranger Longbow      : 5.25
-Rogue Smallsword    : 5.00
-Sorcerer Dexterity  : 5.25
+Barbarian Glass     : 3.25
+Barbarian Shield    : 7.75
+Fighter Greatmace   : 5.50
+Fighter Shield      : 7.00
+Monk Kama           : 8.00
+Paladin Shield      : 6.75
+Ranger Longbow      : 5.50
+Rogue Smallsword    : 5.50
+Sorcerer Dexterity  : 5.50
 Wizard Perception   : 2.25
-Brute               : 5.25
-Leader              : 4.75
-Mystic              : 3.00
-Skirmisher          : 4.50
-Sniper              : 2.50
-Warrior             : 6.00
+Brute               : 5.50
+Leader              : 5.00
+Mystic              : 3.25
+Skirmisher          : 4.75
+Sniper              : 2.75
+Warrior             : 6.50
 
 ### Level 20
 
 Barbarian Glass     : 4.00
-Barbarian Shield    : 7.25
-Fighter Greatmace   : 5.25
-Fighter Shield      : 6.75
-Monk Kama           : 10.00
-Paladin Shield      : 6.50
-Ranger Longbow      : 5.25
-Rogue Smallsword    : 6.25
-Sorcerer Dexterity  : 4.50
-Wizard Perception   : 3.00
-Brute               : 6.00
-Leader              : 5.25
-Mystic              : 3.25
-Skirmisher          : 5.25
-Sniper              : 2.75
-Warrior             : 6.75
+Barbarian Shield    : 7.75
+Fighter Greatmace   : 5.75
+Fighter Shield      : 7.25
+Monk Kama           : 10.75
+Paladin Shield      : 7.00
+Ranger Longbow      : 5.75
+Rogue Smallsword    : 6.75
+Sorcerer Dexterity  : 5.00
+Wizard Perception   : 3.25
+Brute               : 6.25
+Leader              : 5.50
+Mystic              : 3.50
+Skirmisher          : 5.50
+Sniper              : 3.00
+Warrior             : 7.00
 
 ## Fighter Greatmace
 
