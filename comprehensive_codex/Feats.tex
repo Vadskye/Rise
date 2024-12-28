@@ -920,13 +920,17 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Ghostblade}{Combat, Magical}
     \featpre Dexterity 1, Willpower 2.
 
+    \magicalff[1]{Ghost Shroud} Your Constitution does not increase your \glossterm{hit points}.
+    Instead, you gain \glossterm{damage resistance} equal to the hit points you would normally gain that way.
+    You can also use the lower of your Dexterity and Willpower in place of your Constitution for this purpose.
+
     \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} during that phase (see \pcref{Invisible}, and \pcref{Sprint}).
     This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
     This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
     After using this ability, you \glossterm{briefly} cannot use it again.
 
     \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
-    If you chose a weapon, it is treated as cold iron, and attacks with it have the \atCold tag.
+    If you chose a weapon, it is treated as cold iron, and you can choose to give attacks with it the \atCold tag.
     If you chose body armor or a shield, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
 
     % as rank 3 maneuver, except for hitting Reflex defense
@@ -950,6 +954,8 @@ They allow more distinct and unique character customization, but also increase g
     This ability has the \abilitytag{Swift} tag, so it grants you the defensive benefits of being incorporeal during the current phase.
     % TODO: wording
     If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
+
+    \magicalff[12]{Ghostly Vitality} Your negative hit points must match the sum of your maximum \glossterm{hit points} and \glossterm{damage resistance} to inflict additional \glossterm{vital wounds} on you, rather than only matching your maximum hit points (see \pcref{Negative Hit Points}).
 
     \magicalff[18]{Spectral Armament+} The effect of your \glossterm{legacy item} improves.
     If you chose a weapon, whenever you make a melee \glossterm{strike}, you can make the strike against each target's Reflex defense in place of its Armor defense.
