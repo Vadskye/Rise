@@ -78,6 +78,18 @@ export const prayer: MysticSphere = {
     },
 
     {
+      name: 'Blessing of Precision',
+
+      effect: `
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Whenever a target misses with an \\glossterm{attack}, it can \\glossterm{reroll} that attack.
+        If it does, its attunement to this ability ends.
+      `,
+      rank: 1,
+      type: 'Attune (target)',
+    },
+
+    {
       name: 'Boon of Precision',
 
       effect: `
