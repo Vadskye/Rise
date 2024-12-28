@@ -22,6 +22,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You gain a \plus10 bonus to your maximum horizontal jump distance.
+                In addition, you are immune to \glossterm{falling damage}.
             ",
             modifiers: None,
         },
