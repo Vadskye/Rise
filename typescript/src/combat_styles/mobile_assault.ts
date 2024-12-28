@@ -31,17 +31,18 @@ export const mobileHunter: CombatStyle = {
       name: 'Spring Attack',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike}.
+        Move up to half your movement speed and make a \\glossterm{strike}.
+        If the strike is a \\glossterm{melee} strike, you gain a \plus2 accuracy bonus with it.
         After making the strike, you can use the other half of your movement.
       `,
-      rank: 3,
+      rank: 5,
     },
 
     {
       name: "Rushdown",
 
       effect: `
-        You can move up to half your speed and make a strike with a -1 accuracy penalty, in either order.
+        You can move up to half your speed, then make a melee \\glossterm{strike}.
       `,
       rank: 1,
     },
@@ -50,7 +51,7 @@ export const mobileHunter: CombatStyle = {
       name: "Rushdown+",
 
       effect: `
-        You can move up to your speed and make a strike with a -2 accuracy penalty, in either order.
+        You can move up to your speed, then make a melee \\glossterm{strike}.
       `,
       rank: 3,
     },
@@ -60,7 +61,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damaged, you can \\glossterm{briefly} move through its space as if it was not there.
+        If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
       `,
       rank: 1,
     },
@@ -94,7 +95,16 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        In addition, you can move up to your movement speed in a straight line away from one target of the strike.
+        Then, you can move up to half your movement speed.
+      `,
+      rank: 1,
+    },
+    {
+      name: 'Fall Back+',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        Then, you can move up to your movement speed.
       `,
       rank: 3,
     },
