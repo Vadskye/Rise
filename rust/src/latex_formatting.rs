@@ -49,10 +49,10 @@ pub fn latexify(text: String) -> String {
     let text = plus.replace_all(text.as_str(), r"\plus$1");
 
     let sub = Regex::new(r" - (\d)").unwrap();
-    let text = sub.replace_all(text.as_ref(), r"\sub $1");
+    let text = sub.replace_all(text.as_ref(), r" \sub $1");
 
-    let minus = Regex::new(r"-(\d)").unwrap();
-    let text = minus.replace_all(text.as_ref(), r"\minus$1");
+    let minus = Regex::new(r" -(\d)").unwrap();
+    let text = minus.replace_all(text.as_ref(), r" \minus$1");
 
     text.to_string()
 }
