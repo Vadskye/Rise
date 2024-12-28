@@ -10,25 +10,15 @@ export const prayer: MysticSphere = {
   cantrips: [
     {
       effect: `
-        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{accuracy} this round.
-      `,
-      name: 'Boon of Competence',
-      scaling: {
-        2: 'The target can be any ally within \\shortrange.',
-        4: 'The bonus increases to +2.',
-        6: 'The range increases to \\medrange.',
-      },
-    },
-    {
-      effect: `
-        One \\glossterm{ally} you \\glossterm{touch} gains a +1 bonus to \\glossterm{defenses} this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
+        Choose one \\glossterm{ally} within \\medrange.
+        Each target gains a +1 bonus to its Armor defense this round.
+        Because this ability has the \\abilitytag{Swift} tag, this improves each target's defense against attacks made against it during the current phase.
       `,
       name: 'Boon of Protection',
       scaling: {
-        2: 'The target can be any ally within \\shortrange.',
+        2: 'You can target an additional \\glossterm{ally} within range.',
         4: 'The bonus increases to +2.',
-        6: 'The range increases to \\medrange.',
+        6: 'The maximum number of targets increases to three.',
       },
       tags: ['Swift'],
     },
@@ -91,9 +81,8 @@ export const prayer: MysticSphere = {
       name: 'Boon of Precision',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The next time the target makes an attack this round,
-          it gains a +1 accuracy bnous and rolls twice and takes the higher result.
+        Choose two \\glossterm{allies} within \\medrange.
+        The next time each target makes an attack this round, it rolls twice and takes the higher result.
       `,
       rank: 2,
       tags: [],
@@ -103,8 +92,8 @@ export const prayer: MysticSphere = {
       name: 'Boon of Deadly Fortune',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target gains a +5 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
       `,
       rank: 1,
       tags: [],
@@ -114,11 +103,11 @@ export const prayer: MysticSphere = {
       name: 'Boon of Invulnerability',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target takes half damage from all sources this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target takes half damage from all sources this round.
+        Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
       `,
-      rank: 6,
+      rank: 7,
       tags: ['Swift'],
     },
 
@@ -126,8 +115,8 @@ export const prayer: MysticSphere = {
       name: 'Boon of Avoidance',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target gains a +2 bonus to Armor and Reflex defenses this round.
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target gains a +2 bonus to Armor and Reflex defenses this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       rank: 3,
@@ -173,9 +162,9 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Cleansing',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: "One \\glossterm{fatigue level} from each target.",
       effect: `
-        One \\glossterm{ally} within \\medrange removes a \\glossterm{condition}.
+        Two \\glossterm{allies} within \\medrange can each remove a \\glossterm{condition}.
       `,
       rank: 4,
     },
@@ -299,11 +288,11 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
-      // dr2, +1dr for healing buff
+      cost: "One \\glossterm{fatigue level} from each target.",
+      // dr3
       effect: `
-        Choose an \\glossterm{ally} within \\medrange.
-        The target regains 1d8 \\glossterm{damage resistance} +1 per \\glossterm{power}.
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target regains 1d8 \\glossterm{damage resistance} +1 per \\glossterm{power}.
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 2,
@@ -314,13 +303,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Empowered Boon of Shielding',
 
-      // dr5, +1dr for healing buff
+      // dr6
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
+        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 2 power.',
       },
       rank: 5,
-      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
+      scaling: { special: 'The recovery increases by 2d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
