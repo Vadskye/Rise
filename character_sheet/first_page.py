@@ -573,13 +573,19 @@ def boring_stuff(destination):
                 {"class": "boring-row"},
                 [
                     labeled_text_input(
-                        "Character name", input_attributes={"name": "character_name"}
+                        "Character name",
+                        attributes={"class": "character-name"},
+                        input_attributes={"name": "character_name"}
                     ),
                     labeled_text_input(
-                        "Player name", input_attributes={"name": "player_name"}
+                        "Player name",
+                        attributes={"class": "player-name"},
+                        input_attributes={"name": "player_name"}
                     ),
                     labeled_text_input(
-                        "Experience", input_attributes={"name": "experience"}
+                        "Experience",
+                        attributes={"class": "experience"},
+                        input_attributes={"name": "experience"}
                     ),
                     underlabel_spaced(
                         "Level",
