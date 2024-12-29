@@ -268,12 +268,12 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
 
                     \rankline
-                    \rank{2} The bonus healing increases to 1d6 per 3 power.
-                    \rank{3} The base healing increases to 2d8.
-                    \rank{4} The bonus healing increases to 1d8 per 3 power.
-                    \rank{5} The base healing increases to 4d8.
-                    \rank{6} The bonus healing increases to 1d8 per 2 power.
-                    \rank{7} The base healing increases to 6d8.
+                    \rank{2} The base healing increases to 2d8.
+                    \rank{3} The bonus healing increases to 1d6 per 3 power.
+                    \rank{4} The base healing increases to 4d8.
+                    \rank{5} The bonus healing increases to 1d8 per 3 power.
+                    \rank{6} The base healing increases to 6d8.
+                    \rank{7} The bonus healing increases to 1d8 per 2 power.
                 \end{magicalactiveability}
 
             ",
