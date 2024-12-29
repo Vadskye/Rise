@@ -483,14 +483,14 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
         rank: 4,
-        short_description: String::from(r"Deals 1d4 extra damage"),
+        short_description: String::from(r"Deals 1d6 extra damage"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-            Strikes with it deal 1d4 \glossterm{extra damage}.
+            Strikes with it deal 1d6 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Deals 1d10 extra damage", r"
-                The extra damage increases to 1d10.
+            ItemUpgrade::new(6, "Deals 2d8 extra damage", r"
+                The extra damage increases to 2d8.
             "),
         ],
         ..MagicWeapon::default()
