@@ -443,7 +443,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       effect: `
         You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles.
         Each natural weapon deals 1d6 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Light} tags (see \\pcref{Weapon Tags}).
-        Strikes using the tentacles are considered \\magical abilities, which means you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
+        You use the higher of your \\glossterm{magical power} your \\glossterm{mundane power} to determine your damage with strikes using the weapons (see \\pcref{Power}).
 
         Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
         This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
