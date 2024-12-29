@@ -293,7 +293,7 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                damage_resistance: calc_dr(8, m),
                 defense: 5,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -303,7 +303,7 @@ impl Armor {
             },
             Self::HalfPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
+                damage_resistance: calc_dr(10, m),
                 defense: 5,
                 dex_multiplier: 0.5,
                 encumbrance: 6,
@@ -313,7 +313,7 @@ impl Armor {
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                damage_resistance: calc_dr(12, m),
                 defense: 5,
                 dex_multiplier: 0.5,
                 encumbrance: 6,
