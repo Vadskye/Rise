@@ -98,9 +98,14 @@ export const perfectPrecision: CombatStyle = {
       // +4 accuracy with crits means you crit on a 9.
       // That makes expected damage 0.8 + 0.2 = 1x hit damage, scaling to be stronger as
       // your accuracy increases.
+      // Now assume you crit on a 9 before this maneuver due to Keen, but you still miss
+      // on 1/2.
+      // Expected damage is 0.8 + 0.5 * 0.2 + 0.2 = 1.1x hit damage.
+      // With this maneuver, expected damage is 0.8 + 0.6 = 1.4x hit damage, or 27% more
+      // damage.
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +4 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +3 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
         However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
@@ -114,8 +119,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +15 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
-        However, you cannot get a \\glossterm{glancing blow} with this strike.
+        You gain a +10 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
       `,
       narrative: `
         You strike directly for your foe's heart.
