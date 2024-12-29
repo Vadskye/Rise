@@ -307,7 +307,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The bonus healing increases to 1d8 per 2 power.
                     \rank{5} The bonus healing increases to 1d10 per 2 power.
                     \rank{6} The bonus healing increases to 1d6 per power.
-                    \rank{7} The base healing increases to 8d6.
+                    \rank{7} The bonus healing increases to 1d10 per power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
