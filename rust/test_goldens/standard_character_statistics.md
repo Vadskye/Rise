@@ -4,12 +4,12 @@
 
 ### Damage Absorption
 HP: 14 = (High progression: 8 <level> + 6 <con> + 0 <modifier>) * 0 <elite multiplier>
-DR: 6 = (6 <armor> + 0 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
+DR: 8 = (8 <armor> + 0 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 1
 AP 2, FT 6, IP 1, Skills 3
-HP 14, DR 6
+HP 14, DR 8
 AD 8, Fort 6, Ref 3, Ment 3
 Generic Accuracy Broadsword +1 (1d6+2 damage.); Certain Broadsword +3 (1d6+1 damage.); Extra Damage Broadsword +1 (1d6+2 damage.); Powerful Broadsword -3 (2d6+4 damage.); Broadsword +1 (1d6+2 damage.)
 Attr: Str 5, Dex 0, Con 3, Int 0, Per 2, Wil 0
@@ -29,12 +29,12 @@ fighter: attribute strength by 1
 
 ### Damage Absorption
 HP: 48 = (High progression: 29 <level> + 15 <con> + 4 <modifier>) * 0 <elite multiplier>
-DR: 38 = (30 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
+DR: 44 = (36 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 10
 AP 4, FT 10, IP 3, Skills 3
-HP 48, DR 38
+HP 48, DR 44
 AD 13, Fort 13, Ref 8, Ment 8
 Generic Accuracy Broadsword +10 (1d6+7 damage.); Certain Broadsword +12 (1d6+3 damage.); Powerful Broadsword +6 (2d6+14 damage.); Extra Damage Broadsword +8 (1d6+13 damage.); Broadsword +7 (1d6+7 damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
@@ -63,12 +63,12 @@ magic: HP 4
 
 ### Damage Absorption
 HP: 180 = (High progression: 92 <level> + 72 <con> + 16 <modifier>) * 0 <elite multiplier>
-DR: 96 = (80 <armor> + 16 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
+DR: 112 = (96 <armor> + 16 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 20
 AP 5, FT 13, IP 3, Skills 3
-HP 180, DR 96
+HP 180, DR 112
 AD 18, Fort 19, Ref 13, Ment 13
 Generic Accuracy Broadsword +18 (1d6+11 damage.); Certain Broadsword +20 (1d6+5 damage.); Powerful Broadsword +14 (2d6+22 damage.); Certain Strike+ -- Broadsword +20 (1d6+11 damage.); Power Strike+ -- Broadsword +11 (3d6+33 damage.); Extra Damage Broadsword +12 (1d6+9d8+11 damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 damage.); Broadsword +12 (1d6+11 damage.)
 Attr: Str 8, Dex 0, Con 6, Int 0, Per 2, Wil 0
