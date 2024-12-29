@@ -127,7 +127,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{strikes} using a single weapon.
+        Make two \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 5,
@@ -140,7 +140,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make three \\glossterm{strikes} using a single weapon.
+        Make three \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 7,
