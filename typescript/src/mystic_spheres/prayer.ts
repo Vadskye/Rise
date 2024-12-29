@@ -96,7 +96,7 @@ export const prayer: MysticSphere = {
         Choose two \\glossterm{allies} within \\medrange.
         The next time each target makes an attack this round, it rolls twice and takes the higher result.
       `,
-      rank: 2,
+      rank: 3,
       tags: [],
     },
 
