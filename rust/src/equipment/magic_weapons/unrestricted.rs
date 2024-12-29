@@ -144,10 +144,10 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can spend 8 HP for +2d8 damage", r"
-                The HP loss increases to 8, and the extra damage increases to 2d6.
+                The HP loss increases to 8, and the extra damage increases to 2d8.
             "),
             ItemUpgrade::new(7, "Can spend 16 HP for +4d8 damage", r"
-                The HP loss increases to 16, and the extra damage increases to 4d6.
+                The HP loss increases to 16, and the extra damage increases to 4d8.
             "),
         ],
         ..MagicWeapon::default()
