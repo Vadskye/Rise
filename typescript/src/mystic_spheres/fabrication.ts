@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { MINOR_FATIGUE } from './constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -25,7 +26,8 @@ export const fabrication: MysticSphere = {
       },
       tags: ['Manifestation'],
     },
-
+  ],
+  spells: [
     {
       name: 'Forge',
 
@@ -34,18 +36,20 @@ export const fabrication: MysticSphere = {
         It is sized appropriately for you, up to a maximum of a Medium size item.
         The item appears in your hand or on the ground at your feet.
 
-        If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
-        The item's rank cannot exceed your spellcasting rank with this spell.
-
         Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
         A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
         If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, your attunement to that item ends and it disappears.
       `,
+      rank: 1,
+      scaling: {
+        2: `
+          If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
+          The item's rank cannot exceed your spellcasting rank with this spell.
+        `,
+      },
       tags: ['Manifestation'],
       type: 'Attune',
     },
-  ],
-  spells: [
     {
       name: 'Desperate Shieldwall',
 
@@ -317,21 +321,14 @@ export const fabrication: MysticSphere = {
     {
       name: 'Personal Weapon',
 
-      effect: `
-        Choose a type of weapon that you are proficient with.
-        You create a normal item of that type in your hand.
-        If the item stops touching you, it disappears, and this effect ends.
-
-        If you create a \\weapontag{Projectile} weapon, it is created in an unloaded state.
-        Loading the weapon takes the normal amount of time, though you can load it by creating projectiles out of thin air rather than using regular projectiles.
-        The projectiles disappear after the attack is complete.
-        Any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
-
-        % Strange duration for a spell
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
-      `,
+      cost: MINOR_FATIGUE,
+      functionsLike: {
+        name: "forge",
+        exceptThat: "you can only create a weapon, and this spell has the \\atSustain (free) tag instead of the \\atAttune tag.",
+      },
       rank: 1,
       tags: ['Manifestation'],
+      type: 'Sustain (free)',
     },
 
     {
@@ -358,7 +355,7 @@ export const fabrication: MysticSphere = {
         hit: `\\damagerankone.`,
         targeting: `
           You create exceptionally sharp caltrops in up to three unoccupied squares on solid ground within \\medrange.
-          Whenever a creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
+          Whenever a \\glossterm{grounded} creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
           You cannot make this attack against the same creature more than once per \\glossterm{phase}.
           Unlike most attacks, this attack can happen during the \\glossterm{movement phase}.
           Caltrops may not be effective against creatures with an unusual anatomy.
