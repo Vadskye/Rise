@@ -34,10 +34,10 @@ export const fabrication: MysticSphere = {
       effect: `
         You can create any one weapon, shield, or body armor that you are proficient with.
         It is sized appropriately for you, up to a maximum of a Medium size item.
-        The item appears in your hand or on the ground at your feet.
-        It lasts as long as you stay attuned to this spell.
+        You can choose whether the item appears in your hand, on your body ready for use, or on the ground at your feet.
+        It lasts as long as you maintain this spell.
 
-        Unlike normal \\abilitytag{Attune} spells, you can attune to this spell any number of times, creating a different item each time.
+        You can \\glossterm{attune} to this spell any number of times, creating a different item each time.
         A \\glossterm{difficulty value} 5 Knowledge (items) or relevant Craft check reveals that the item is a magical fabrication rather than an ordinary item.
         If you spend ten consecutive minutes without \\glossterm{line of effect} to the item, your attunement to that item ends and it disappears.
       `,
@@ -49,7 +49,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       tags: ['Manifestation'],
-      type: 'Attune',
+      type: 'Sustain (attuneable, free)',
     },
     {
       name: 'Desperate Shieldwall',
