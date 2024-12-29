@@ -231,6 +231,17 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
+      name: 'Imbue Weapon',
+
+      effect: `
+        Choose one weapon you are touching and proficient with.
+        You can use the higher of your \\glossterm{magical power} and \\glossterm{mundane power} to determine your damage with \\glossterm{strikes} using that weapon (see \\pcref{Power}).
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+
+    {
       name: 'Spellvoid',
 
       effect: `
