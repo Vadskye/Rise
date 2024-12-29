@@ -20,7 +20,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        The strike deals 1d4 \\glossterm{extra damage} \\plus1 per 2 power if the target is not wearing metal body armor.
+        The strike deals \\glossterm{extra damage} equal to half your power if the target is not wearing metal body armor.
       `,
       rank: 3,
     },
@@ -30,7 +30,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        The strike deals 1d8 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
+        The strike deals 1d6 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
       `,
       rank: 7,
     },
