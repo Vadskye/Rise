@@ -170,10 +170,11 @@ export const fabrication: MysticSphere = {
     {
       name: "Executioner's Axe",
 
-      // Melee single-target attack would normally be d4. Drop to d3h for multitarget.
+      // Melee single-target attack would normally be d4, or possibly d5 with delay.
+      // Drop to d4 for multi-target, and because d5 seems silly.
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
         `,
         missGlance: false,
         targeting: `
@@ -190,7 +191,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "executioner's axe",
-        exceptThat: "the damage increases to \\damagerankseven.",
+        exceptThat: "the damage increases to \\damagerankeight.",
       },
       rank: 6,
       tags: ['Manifestation'],
