@@ -408,10 +408,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         The pool of water targeted must be at least as large as the largest item you create.
 
         An item created with this spell functions like a normal item of its type, with three exceptions.
-        First, any \\glossterm{strikes} that you make with a weapon created with this ability are \\magical abilities, so you use your \\glossterm{magical power} to determine your damage instead of your \\glossterm{mundane power} (see \\pcref{Power}).
-        Second, while wearing body armor from this spell, you are \\trait{impervious} to fire damage.
-        Third, whenever you lose \\glossterm{hit points} from fire damage, all items you made with this ability disappear.
-        They reappear at the end of the next round.
+        First, any \\glossterm{strikes} made with a weapon created with this ability have the \\atCold tag.
+        Second, any creature wearing body armor created with this ability is \\impervious to \\atFire attacks.
+        Third, whenever a creature using items from this ability loses \\glossterm{hit points} from a \\atFire attack, all of the items they are holding from this ability disappear.
+        The items reappear at the end of the next round.
       `,
       rank: 1,
       scaling: {
