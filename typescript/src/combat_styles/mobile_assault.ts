@@ -32,7 +32,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a \\glossterm{strike}.
-        If the strike is a \\glossterm{melee} strike, you gain a \plus2 accuracy bonus with it.
+        If the strike is a \\glossterm{melee} strike, you gain a \\plus2 accuracy bonus with it.
         After making the strike, you can use the other half of your movement.
       `,
       rank: 5,
