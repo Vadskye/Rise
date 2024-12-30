@@ -1579,6 +1579,7 @@ impl Class {
                             You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
+                        You must make an attack vs. Mental against that creature to redirect damage to it in this way.
                         You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
 
                     \subsubsection{Fire Domain}
