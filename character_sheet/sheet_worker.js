@@ -592,6 +592,7 @@ function handleCoreStatistics() {
   handleAccuracy();
   handleAccuracyWithStrikes();
   handleBrawlingAccuracy();
+  handleCharacterNameSanitization();
   handleDefenses();
   handleDamageDice();
   handleDamageResistance();
@@ -1413,6 +1414,25 @@ function calcBaseDamageResistance(levelish) {
     baseDr = levelish;
   }
   return baseDr;
+}
+
+function sanitizeText(text) {
+  if (!text) {
+    return text;
+  }
+  return text
+          .replaceAll(",", "&#44;")
+          .replaceAll("/", "&#47;");
+}
+
+function handleCharacterNameSanitization() {
+  onGet(
+    {
+      string: ["character_name"],
+    },
+    (v) => {
+      setAttrs({ character_name_sanitized: sanitizeText(v.character_name)});
+    });
 }
 
 function handleDebuffs() {
@@ -2742,12 +2762,8 @@ function handleWeaponSanitization() {
     (v) => {
       const attrs = {};
       for (let i = 0; i < 3; i++) {
-        attrs[`weapon_${i}_name_sanitized`] = v[`weapon_${i}_name`]
-          .replaceAll(",", "&#44;")
-          .replaceAll("/", "&#47;");
-        attrs[`weapon_${i}_tags_sanitized`] = v[`weapon_${i}_tags`]
-          .replaceAll(",", "&#44;")
-          .replaceAll("/", "&#47;");
+        attrs[`weapon_${i}_name_sanitized`] = sanitizeText(v[`weapon_${i}_name`]);
+        attrs[`weapon_${i}_tags_sanitized`] = sanitizeText(v[`weapon_${i}_tags`]);
       }
       setAttrs(attrs);
     }

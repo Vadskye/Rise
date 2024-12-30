@@ -429,7 +429,7 @@ def weapon_template(i):
         " @{weapon_"
         + i
         + "_name_sanitized},"
-        + " {{subtitle=@{character_name} - @{weapon_"
+        + " {{subtitle=@{character_name_sanitized} - @{weapon_"
         + i
         + "_name_sanitized}&amp;#125;&amp;#125;"
         + " @{targeting_text_first_page}"
