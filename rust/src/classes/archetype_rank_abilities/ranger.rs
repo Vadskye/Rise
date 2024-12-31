@@ -475,7 +475,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Move up to your speed and make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
-                    The strike deals double damage to \unaware targets.
+                    You gain a \plus2 accuracy bonus if the target is \unaware or \partiallyunaware of your attack.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
