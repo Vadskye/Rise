@@ -127,6 +127,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It must not have a \glossterm{range}, and it must not create an \glossterm{emanation}.
                         The spell's area becomes a cone instead of its normal shape.
                         In addition, its area increases to to the next standard area category, to a maximum of a Gargantuan area.
+                        However, you \\glossterm{briefly} cannot cast that spell again.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Energetic Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a \plus2 bonus to your \glossterm{magical power} with that spell.
