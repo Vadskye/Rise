@@ -169,7 +169,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 In addition, you learn two rank 1 arcane \glossterm{spells}.
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
-                Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Casting Components}).
+                Arcane spells require both \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Ability Usage Components}).
                 For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
