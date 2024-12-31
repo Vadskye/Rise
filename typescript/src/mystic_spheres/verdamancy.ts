@@ -266,13 +266,13 @@ export const verdamancy: MysticSphere = {
       name: 'Mass Braided Vine Tentacle',
 
       functionsLike: {
-        name: 'vine tentacle',
+        name: 'braided vine tentacle',
         exceptThat: `
           it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
           Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
         `,
       },
-      rank: 4,
+      rank: 5,
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
