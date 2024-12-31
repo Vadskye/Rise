@@ -413,8 +413,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target gains an aqueous \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
-        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
         The weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Sweeping} (1) tags (see \\pcref{Weapon Tags}).
+        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
