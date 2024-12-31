@@ -34,7 +34,7 @@ export const fabrication: MysticSphere = {
       effect: `
         You can create any one weapon, shield, or body armor that you are proficient with.
         It is sized appropriately for you, up to a maximum of a Medium size item.
-        You can choose whether the item appears in your hand, on your body ready for use, or on the ground at your feet.
+        You can choose whether the item appears in your hand, on your body fully donned, or on the ground at your feet.
         It disappears when this spell's effect ends.
 
         You can \\glossterm{attune} to this spell any number of times, creating a different item each time.
