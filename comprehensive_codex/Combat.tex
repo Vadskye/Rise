@@ -353,7 +353,7 @@
     In addition, some abilities grant creatures the ability to move in unusual ways.
     These forms of movement are described here.
 
-    Unless otherwise noted, all creatures have a land speed equal to the base speed for their size (see \pcref{Size Categories}).
+    Unless otherwise noted, all creatures have a land speed equal to the \glossterm{base speed} for their size (see \pcref{Size Categories}).
     Creatures that are \trait{multipedal} gain a \plus10 foot bonus to their land speed.
 
     Some creatures have movement modes that are slower than their base speed for various reasons.
@@ -368,7 +368,7 @@
     \parhead{Climbing}
     A creature with a \glossterm{climb speed} can move a distance equal to its climb speed while climbing.
     It must still make a Climb check to move in challenging conditions, such as slippery walls (see \pcref{Climb}).
-    Climbing without a climb speed imposes a \minus2 penalty to your accuracy, Armor defense, and Reflex defense.
+    A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
     \parhead{Flying}
     A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
@@ -386,7 +386,8 @@
     \parhead{Swimming}
     A creature with a \glossterm{swim speed} can move a distance equal to its swim speed while swimming.
     It must still make a Swim check to move in challenging conditions, such as stormy seas (see \pcref{Swim}).
-    Swimming without a swim speed imposes a \minus2 penalty to your accuracy, Armor defense, and Reflex defense.
+    A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+    For details, see \pcref{Fighting In Water}.
 
   \subsection{Combining Movement Modes}
     You can move using multiple different movement modes in the same phase in any order.
@@ -555,7 +556,7 @@
 
   While \glossterm{midair}, land-based creatures cannot move to defend themselves effectively.
   Any land-based creature takes a \minus4 penalty to its Armor and Reflex defenses while it is \glossterm{midair}, even if it has a fly speed or glide speed.
-  This penalty does not apply to creatures who are native to the air, such as birds and monsters with no defined land speed.
+  This penalty does not apply to creatures who are native to the air, such as birds and monsters with a fly or glide speed but no land speed.
 
   A flying or gliding creature must make a \glossterm{movement} using its fly or glide speed during both the \glossterm{movement phase} and the \glossterm{action phase}.
   If it does not move during a phase, it falls by 300 feet at the end of that phase (see \pcref{Falling Damage}).
@@ -1039,6 +1040,21 @@
 
     % TODO: This is a bad name; organize these better
 \section{Special Combat Rules}
+
+  \subsection{Fighting In Water}
+    Any creature that is in water and does not have a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+    This is called being \debuff{submerged}.
+    As long as the creature has a defined swim speed, it does not suffer this penalty, even if its movements are restricted or if it fails a Swim check to navigate the water.
+    For example, a \immobilized or \grappled fish would not suffer this penalty.
+
+    Distant fighting is limited while underwater, or otherwise submerged in a water-like liquid.
+    % TODO: research to figure out correct range limit
+    In clear, still water, both \glossterm{line of sight} and \glossterm{line of effect} are limited to 120 feet.
+    The density of the water blocks effects from spreading further than that.
+    Murky or turbulent water can have drastically more limited visibility, at the GM's discretion.
+
+    Ranged weapons have great difficulty functioning underwater.
+    All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is underwater, or when used against a target that is underwater, regardless of the attack's normal range limits or any other modifiers.
 
   \subsection{Mounted Combat}\label{Mounted Combat}
     \parhead{Horses in Combat} Warhorses and warponies can serve readily as combat steeds. Light horses, ponies, and heavy horses, however, are frightened by combat.

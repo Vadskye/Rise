@@ -8,10 +8,10 @@ pub fn melee() -> Vec<MagicWeapon> {
     weapons.push(Melee(StandardItem {
         name: String::from("Aquatic"),
         rank: 1,
-        short_description: String::from("No accuracy penalty while swimming"),
+        short_description: String::from("No accuracy penalty in water"),
         description: String::from(
             r"
-                You do not take an accuracy penalty with attacks using this weapon while \swimming.
+                You do not take an accuracy penalty with attacks using this weapon while \submerged.
             ",
         ),
         tags: vec![AbilityTag::Water],

@@ -172,7 +172,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           As a \\glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
           This does not restrict its ability to breathe, and has no immediate negative effects.
           However, after your action next round, the water expands to impede the target's movements.
-          It is treated as \\swimming, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
+          It is treated as \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
         `,
         targeting: `
           Make an attack vs. Reflex against one Large or smaller creature within \\medrange.
@@ -587,7 +587,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         \\begin{itemize}
           \\item Your land speed is halved.
           \\item If you have a swim speed, you can use it to move around on land.
-          \\item You are always considered to be \\swimming, so you take penalties if you do not have a swim speed.
+          \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting in Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
           \\item You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
