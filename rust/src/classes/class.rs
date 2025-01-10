@@ -40,6 +40,7 @@ pub enum Class {
     Rogue,
     Sorcerer,
     Treant,
+    Troll,
     Warlock,
     Wizard,
     Vampire,
@@ -66,6 +67,7 @@ impl Class {
             Self::Harpy,
             Self::Incarnation,
             Self::Oozeborn,
+            Self::Troll,
             Self::Treant,
             Self::Vampire,
         ]
@@ -160,6 +162,7 @@ impl Class {
             Self::Rogue => vec![Dexterity],
             Self::Sorcerer => vec![Constitution],
             Self::Treant => vec![Constitution],
+            Self::Troll => vec![Strength, Constitution],
             Self::Warlock => vec![Willpower],
             Self::Wizard => vec![Intelligence],
             Self::Vampire => vec![Dexterity],
@@ -186,6 +189,7 @@ impl Class {
             Self::Rogue => vec![Intelligence, Perception],
             Self::Sorcerer => vec![Willpower, Perception],
             Self::Treant => vec![Strength, Willpower],
+            Self::Troll => vec![],
             Self::Warlock => vec![Intelligence, Perception],
             Self::Wizard => vec![Perception, Willpower],
             Self::Vampire => vec![Strength, Intelligence],
@@ -210,6 +214,7 @@ impl Class {
             Self::Rogue => 1,
             Self::Sorcerer => 2,
             Self::Treant => 0,
+            Self::Troll => 1,
             Self::Warlock => 2,
             Self::Wizard => 2,
             Self::Vampire => 1,
@@ -373,7 +378,11 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Endurance,
                 Skill::Craft,
-                Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Nature, KnowledgeSubskill::Planes]),
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Arcana,
+                    KnowledgeSubskill::Nature,
+                    KnowledgeSubskill::Planes,
+                ]),
                 Skill::Awareness,
                 Skill::Intimidate,
             ],
@@ -399,7 +408,6 @@ impl Class {
             ],
             Self::Oozeborn => vec![
                 Skill::Awareness,
-
                 Skill::Balance,
                 Skill::Climb,
                 Skill::Endurance,
@@ -497,6 +505,16 @@ impl Class {
                 Skill::Survival,
                 Skill::Swim,
             ],
+            Self::Troll => vec![
+                Skill::Awareness,
+                Skill::Climb,
+                Skill::Endurance,
+                Skill::Intimidate,
+                Skill::Jump,
+                Skill::Stealth,
+                Skill::Survival,
+                Skill::Swim,
+            ],
             Self::Warlock => vec![
                 Skill::Awareness,
                 Skill::Deception,
@@ -565,6 +583,10 @@ impl Class {
                 Defense::Fortitude => 2,
                 _ => 0,
             },
+            Self::Troll => match defense {
+                Defense::Fortitude => 2,
+                _ => 0,
+            },
             _ => 0,
         }
     }
@@ -587,6 +609,7 @@ impl Class {
             Self::Rogue => HitPointProgression::Medium,
             Self::Sorcerer => HitPointProgression::Medium,
             Self::Treant => HitPointProgression::VeryHigh,
+            Self::Troll => HitPointProgression::VeryHigh,
             Self::Warlock => HitPointProgression::Low,
             Self::Wizard => HitPointProgression::Low,
             Self::Vampire => HitPointProgression::High,
@@ -620,6 +643,7 @@ impl Class {
             Self::Rogue => "rogue",
             Self::Sorcerer => "sorcerer",
             Self::Treant => "treant",
+            Self::Troll => "troll",
             Self::Warlock => "warlock",
             Self::Wizard => "wizard",
             Self::Vampire => "vampire",
@@ -653,6 +677,7 @@ impl Class {
             Self::Rogue => "Rog",
             Self::Sorcerer => "Sor",
             Self::Treant => "Tre",
+            Self::Troll => "Trl",
             Self::Warlock => "War",
             Self::Wizard => "Wiz",
             Self::Vampire => "Vmp",
@@ -677,6 +702,7 @@ impl Class {
             Self::Rogue => 6,
             Self::Sorcerer => 3,
             Self::Treant => 4,
+            Self::Troll => 3,
             Self::Warlock => 3,
             Self::Wizard => 4,
             Self::Vampire => 5,
@@ -699,10 +725,7 @@ impl Class {
             },
             Self::Cleric => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![
-                    ArmorUsageClass::Light,
-                    ArmorUsageClass::Medium,
-                ],
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Dragon => ArmorProficiencies {
                 specific_armors: None,
@@ -755,6 +778,10 @@ impl Class {
             Self::Treant => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: ArmorUsageClass::all(),
+            },
+            Self::Troll => ArmorProficiencies {
+                specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::LayeredHide(None)]),
+                usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Warlock => ArmorProficiencies {
                 specific_armors: None,
@@ -1063,6 +1090,7 @@ impl Class {
                 In addition, sorcerers seem to be more common in areas that have been affected by powerful magic.
             ".to_string(),
             Self::Treant => String::from(""),
+            Self::Troll => String::from(""),
             Self::Warlock => r"
                 Warlocks are pact spellcasters who draw power from a sinister deal made with infernal creatures.
                 Their soulkeeper grants them access to great magical power.
@@ -1200,6 +1228,11 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Treant => WeaponProficiencies {
+                custom_weapons: Some(r"club-like weapons".to_string()),
+                non_exotic_weapons: false,
+                simple_weapons: true,
+            },
+            Self::Troll => WeaponProficiencies {
                 custom_weapons: Some(r"club-like weapons".to_string()),
                 non_exotic_weapons: false,
                 simple_weapons: true,
