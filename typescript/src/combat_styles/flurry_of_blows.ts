@@ -178,26 +178,6 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Frenzy',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Frenzied Flurry',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        For each previous consecutive round in which you used this ability, you can make an additional melee \\glossterm{strike}, up to a maximum of two extra strikes.
-      `,
-      rank: 5,
-    },
-
-    {
       name: 'Deathseeking Double Flurry',
 
       effect: `

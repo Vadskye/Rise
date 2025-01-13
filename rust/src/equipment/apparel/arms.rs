@@ -215,7 +215,7 @@ fn gauntlets() -> Vec<Apparel> {
         short_description: String::from(r"Grants \weapontag{Impact} to natural weapons"),
         description: String::from(r"
             Your \glossterm{natural weapons} gain the \weapontag{Impact} \glossterm{weapon tag}.
-            This reduces your \glossterm{explosion target} with strikes using that weapon by 2 (see \pcref{Exploding Attacks}).
+            This means you get a \glossterm{glancing blow} if you would miss by 5 or less (see \pcref{Glancing Blows}).
             If the natural weapon already has the Impact weapon tag, this has no effect.
         "),
         ..Apparel::default()
