@@ -251,7 +251,6 @@ impl WeaponTag {
     pub fn modifier(&self) -> Option<Modifier> {
         // TODO: add support for Keen modifier
         match self {
-            Self::Impact => Some(Modifier::ExplosionTarget(-2)),
             _ => None,
         }
     }
