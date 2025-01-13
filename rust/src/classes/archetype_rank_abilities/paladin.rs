@@ -82,10 +82,10 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your devotion to your alignment grants you immunities.
 
-                \subparhead{Chaos} You are immune to being \slowed and \immobilized.
+                \subparhead{Chaos} You are immune to \atCompulsion attacks.
                 \subparhead{Evil} You are immune to being \charmed and \goaded.
-                \subparhead{Good} You are immune to \abilitytag{Curse} attacks and being \dominated.
-                \subparhead{Law} You are immune to being \stunned and \confused.
+                \subparhead{Good} You are immune to \atCurse attacks and being \dominated.
+                \subparhead{Law} You are immune to \atEmotion attacks.
             ",
             modifiers: None,
         },

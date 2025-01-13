@@ -114,19 +114,25 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // 20% chance of +5.5 accuracy = +1.1 accuracy. So you're spending an attunement point on
-    // +0.1 accuracy unless you have synergies.
+    // Assume you already have a 70% chance to hit and +4 accuracy with crits.
+    // +4 accuracy for crits means you crit on a 10.
+    // You normally have 0.7 + 0.2*0.5 + 0.1 = 0.9x hit damage per round.
+    // With an Unbalanced weapon, you hit on a 5+ and crit on a 8+.
+    // That means 0.6 + 0.2*0.5 + 0.3 = 1x hit damage per round.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Unbalanced"),
         rank: 2,
-        short_description: String::from(r"-1 accuracy, but explode on 8 and 9"),
+        short_description: String::from(r"-1 accuracy, but +3 for criticals"),
         description: String::from(r"
             You take a -1 \glossterm<accuracy> penalty to strikes using this weapon.
-            However, you reduce your \glossterm{explosion target} with strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
+            However, you gain a \plus3 bonus to your \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "-2 accuracy, but explode on 6 or higher", r"
-                The accuracy penalty increases to -2, but the explosion target reduction increases to 4.
+            // Start with the above scenario.
+            // With an Unbalanced+ weapon, you hit on a 6+ and crit on a 6+.
+            // That means 0.5 + 0.2*0.5 + 0.5 = 1.1x hit damage per round.
+            ItemUpgrade::new(5, "-2 accuracy, but +6 for criticals", r"
+                The accuracy penalty increases to -2, but the critical hit accuracy bonus increases to +6.
             "),
         ],
         ..MagicWeapon::default()

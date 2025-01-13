@@ -1508,8 +1508,9 @@ impl Class {
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
-                        \magicaldomainability{Gift} You reduce your \glossterm{explosion target} by 1 (see \pcref{Exploding Attacks}).
-                        \domainability{Aspect} You are immune to \abilitytag{Compulsion} attacks.
+                        \magicaldomainability{Gift} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
+                        Unlike attacks, your skill checks can only explode once.
+                        \domainability{Aspect} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Twist of Fate}
                             \abilityusagetime Standard action.
@@ -1519,7 +1520,8 @@ impl Class {
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                             After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
-                        \magicaldomainability{Mastery} The reduction from this domain's gift increases to 3.
+                        \magicaldomainability{Mastery} All of your checks can explode once, not just skill checks.
+                        Your checks also explode on a 9 or 10, not just a 10.
 
                     \subsubsection{Death Domain}
                         \domainability{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
@@ -1688,7 +1690,7 @@ impl Class {
                     \subsubsection{Law Domain}
                         \magicaldomainability{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
-                        \domainability{Aspect} You gain a \plus2 bonus to your Mental defense.
+                        \domainability{Aspect} You are \impervious to \atEmotion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \abilityusagetime Standard action.
