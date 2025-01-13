@@ -20,7 +20,7 @@
  *     Harpy:  30 /  89
  * Incarnation:  29 /  93
  *  Oozeborn:  30 /  93
- *     Troll:  26 /  91
+ *     Troll:  30 /  95
  *    Treant:  30 /  97
  *   Vampire:  30 /  92
 
@@ -42,7 +42,7 @@
  *     Harpy:  30 / 154
  * Incarnation:  29 / 161
  *  Oozeborn:  30 / 163
- *     Troll:  26 / 161
+ *     Troll:  30 / 165
  *    Treant:  30 / 167
  *   Vampire:  30 / 161
 
@@ -64,7 +64,7 @@
  *     Harpy:  30 / 215
  * Incarnation:  29 / 220
  *  Oozeborn:  30 / 222
- *     Troll:  26 / 220
+ *     Troll:  30 / 224
  *    Treant:  30 / 226
  *   Vampire:  30 / 221
 
@@ -227,7 +227,7 @@
 
 #### Troll
             Troll 1
-            AP 2, FT 7, IP 3, Skills 5
+            AP 3, FT 7, IP 3, Skills 5
             HP 16, DR 4
             AD 4, Fort 8, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
@@ -409,7 +409,7 @@
 
 #### Troll
             Troll 10
-            AP 4, FT 7, IP 5, Skills 5
+            AP 5, FT 7, IP 5, Skills 5
             HP 48, DR 12
             AD 9, Fort 13, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
@@ -591,7 +591,7 @@
 
 #### Troll
             Troll 20
-            AP 4, FT 7, IP 5, Skills 5
+            AP 5, FT 7, IP 5, Skills 5
             HP 160, DR 32
             AD 14, Fort 18, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
