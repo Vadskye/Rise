@@ -120,27 +120,6 @@ impl Attack {
         self.clone()
     }
 
-    // Currently, the only attack-specific explosion target modifier is the Impact weapon tag.
-    // In the future, it would be possible to add support for special attacks like Feral Ferocity.
-    pub fn calc_explosion_target_modifier(&self) -> i32 {
-        let mut explosion_target_modifier = 0;
-
-        for tag in self.tags.as_ref().unwrap_or(&vec![]) {
-            match tag {
-                Tag::Weapon(t) => {
-                    if let Some(m) = t.modifier() {
-                        if m.modifier_type() == ModifierType::ExplosionTarget {
-                            explosion_target_modifier += m.value();
-                        }
-                    }
-                }
-                _ => {}
-            }
-        }
-
-        explosion_target_modifier
-    }
-
     pub fn generate_modified_name(
         name: &str,
         rank: i32,
@@ -380,7 +359,7 @@ where
     }
 
     fn calc_explosion_target(&self) -> i32 {
-        10 + self.calc_total_modifier(ModifierType::ExplosionTarget)
+        10
     }
 
     fn calc_magical_power(&self) -> i32 {
@@ -446,29 +425,6 @@ impl SimpleSpell {
             is_magical: true,
             is_strike: false,
             replaces_weapon: None,
-        }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    mod calc_explosion_target_modifier {
-        use super::*;
-
-        #[test]
-        fn calculates_for_normal_weapon() {
-            let attack = Weapon::broadsword().attack();
-
-            assert_eq!(0, attack.calc_explosion_target_modifier());
-        }
-
-        #[test]
-        fn calculates_for_impact_weapon() {
-            let attack = Weapon::greatmace().attack();
-
-            assert_eq!(-2, attack.calc_explosion_target_modifier());
         }
     }
 }
