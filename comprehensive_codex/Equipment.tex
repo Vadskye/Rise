@@ -304,7 +304,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for).
     This makes it easier to conceal (see \pcref{Sleight of Hand}).
     In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-    \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} attacks with this weapon against creatures who are \grappled by you.
+    \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} \glossterm{strikes} using this weapon against creatures who are \grappled by you.
     \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
     You normally need two hands to use a Heavy weapon.
     Drawing a Heavy item from a sheath, or returning it to a sheath, requires a \glossterm{standard action}.
@@ -316,9 +316,14 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
     While holding a Heavy weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon.
     This bonus is in addition to the normal bonus that you gain from your power with weapons (see \pcref{Weapon Damage}).
-    % 20% chance of +5.5a is slightly better than +1a, but only for getting critical hits
-    \weapontagdef{Impact} You reduce your \glossterm{explosion target} for strikes using this weapon by 2 (see \pcref{Exploding Attacks}).
-    \weapontagdef{Keen} You gain a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
+    \weapontagdef{Impact} You get a \glossterm{glancing blow} with this weapon if you would miss by 5 or less (see \pcref{Glancing Blows}).
+    This does not allow you to get glancing blows if that would normally be impossible for you, such as if you are making a \glossterm{dual strike}.
+    % Assume you have a 70% chance to hit (+0 vs AD 4).
+    % +3 accuracy takes you to 1x hit damage per round.
+    % +6 accuracy for crits means you crit on 8/9/10.
+    % That's a 40% chance for a regular hit and a 30% chance for a crit, so 1x hit damage per round.
+    % Therefore, +2 accuracy with crits is worth about +1 global accuracy.
+    \weapontagdef{Keen} You gain a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
     \weapontagdef{Light} Light weapons are smaller and easier to handle than other weapons.
     Drawing a Light item from a sheath, or returning it to a sheath, is a \glossterm{free action} rather than a minor action (see \pcref{Manipulating Objects}).
     Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Strikes}).
