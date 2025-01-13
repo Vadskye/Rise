@@ -431,9 +431,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Lion} You gain a \plus1 bonus to \glossterm{accuracy} as long as you have an \glossterm{ally} adjacent to you.
 
                 \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
-
-                \subcf{Wolf} At the start of each \glossterm{action phase}, you may choose one \glossterm{ally} adjacent to you.
-                That ally gains a \plus1 bonus to \glossterm{accuracy} for the rest of the round.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -445,7 +442,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves.
 
-                \subcf{Bear} The accuracy bonus also applies whenever you are below half your maximum hit points.
+                \subcf{Bear} The accuracy bonus is doubled if that damage caused you to gain a \glossterm{vital wound}.
 
                 \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
                 This is a \abilitytag{Size-Based} ability.
@@ -455,8 +452,6 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Lion} The accuracy bonus applies as long as an ally is within \shortrange of you.
 
                 \subcf{Shark} The accuracy bonus increases to \plus3.
-
-                \subcf{Wolf} You can choose an ally within \shortrange of you, rather than only an adjacent ally.
             ",
             modifiers: None,
         },
@@ -477,44 +472,36 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Lion} The accuracy bonus increases to \plus2.
 
                 \subcf{Shark} The accuracy bonus increases to \plus4.
-
-                \subcf{Wolf} The accuracy bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            name: "Feral Ferocity",
+            name: "Feral Frenzy",
             is_magical: false,
             rank: 3,
+            // TODO: run this through the spreadsheet
             description: r"
-                \begin{activeability}{Feral Ferocity}
+                \begin{activeability}{Feral Frenzy}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
-                    % 50% chance of +5.5 accuracy, so almost +3 accuracy
-                    You reduce your \glossterm{explosion target} with the attack by 5, which makes it much more likely to \glossterm{explode} (see \pcref{Exploding Attacks}).
+                    If you used this ability last round, you can make an additional melee or thrown strike.
 
                     \rankline
-                    % This strike is basically just used for crit-fishing, which only matters when you explode.
-                    % So this is roughly +1-2 accuracy, but doesn't strictly require explosion.
-                    \rank{4} You also get a +2 accuracy bonus for the purpose of determining whether you get a \glossterm{critical hit} with the strike.
-                    \rank{5} The accuracy bonus increases to +4.
-                    \rank{6} If you get a \glossterm{critical hit}, your \glossterm{weapon damage} with the attack is doubled.
-                    \rank{7} Your weapon damage with the attack is always doubled.
+                    \rank{4} You gain a +2 accuracy bonus with the first strike you make with this ability each round.
+                    \rank{5} Your \glossterm{weapon damage} is doubled with the second strike you make with this ability each round.
+                    \rank{6} The accuracy bonus applies to both strikes.
+                    \rank{7} Your weapon damage is doubled with both strikes.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
-            name: "Feral Explosion",
+            name: "Animal Ferocity",
             is_magical: false,
             rank: 5,
-            // Math: By default, 10% chance of +2 accuracy and 1% chance of +4 accuracy, so +0.24
-            // accuracy. But +0.5 accuracy if you can explode on a 9 from something else like
-            // Executioner, and of course +2 accuracy with Feral Ferocity specifically.
             description: r"
-                Whenever you \glossterm{explode} with an attack roll, you gain a \plus2 \glossterm{accuracy} bonus with the attack (see \pcref{Exploding Attacks}).
-                As normal, this bonus does not stack with itself, even if you explode multiple times with the same attack roll.
+                You gain a \plus2 bonus to your accuracy for the purpose of determining whether you get a \glossterm{critical hit}.
             ",
             // TODO: figure out how to represent this
             modifiers: None,
@@ -524,18 +511,17 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus2 bonus to the Creature Handling skill, and a \plus2 bonus to one skill based on your choice of totem animal:
+                You gain benefits based on your totem animal:
                 \begin{raggeditemize}
-                    \itemhead{Bear} Endurance
-                    \itemhead{Crocodile} Stealth
-                    \itemhead{Eagle} Awareness
-                    \itemhead{Lion} Intimidate
-                    \itemhead{Shark} Swim
-                    \itemhead{Wolf} Survival
+                    \itemhead{Bear} \plus2 Endurance and \plus1 to \glossterm{vital rolls}.
+                    \itemhead{Crocodile} \plus2 Stealth and you can hold your breath ten times as long as normal (see \pcref{Endurance}).
+                    \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
+                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your land speed while you are affected by the \ability{sprint} ability.
+                        This speed bonus is doubled as normal for that ability.
+                    \itemhead{Shark} \plus2 Swim and you gain the \trait{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
             ",
             modifiers: Some(vec![
-                Modifier::Skill(Skill::CreatureHandling, 2),
                 // Arbitrarily stick with Lion
                 Modifier::Skill(Skill::Intimidate, 2),
             ]),
@@ -545,7 +531,14 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The skill bonuses increase to \plus4.
+                The benefits based on your totem animal improve:
+                \begin{raggeditemize}
+                    \itemhead{Bear} \plus4 Endurance and \plus2 to \glossterm{vital rolls}.
+                    \itemhead{Crocodile} \plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
+                    \itemhead{Eagle} \plus4 Awareness and \plus20 feet to your maximum horizontal jump distance.
+                    \itemhead{Lion} \plus4 Intimidate and the land speed bonus applies at all times, not only while sprinting.
+                    \itemhead{Shark} \plus4 Swim, \plus2 Survival, and \plus2 Awareness.
+                \end{raggeditemize}
             ",
             modifiers: Some(vec![
                 Modifier::Skill(Skill::CreatureHandling, 2),
