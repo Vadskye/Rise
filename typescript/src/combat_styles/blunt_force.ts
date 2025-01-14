@@ -80,6 +80,27 @@ export const bruteForce: CombatStyle = {
     },
 
     {
+      name: 'Steady Slam',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
+        However, you cannot get a \\glossterm{critical hit}.
+      `,
+      rank: 1,
+    },
+
+    {
+      name: 'Steady Slam+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
+      `,
+      rank: 5,
+    },
+
+    {
       name: 'Concussion',
 
       effect: `
