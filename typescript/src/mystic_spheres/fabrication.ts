@@ -438,7 +438,7 @@ export const fabrication: MysticSphere = {
       name: 'Daggerswarm',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankthree. All sources of \\glossterm{extra damage} do not apply to this attack.`,
         targeting: `
           When you cast this spell, a small swarm of daggers appears floating over your head.
           As a \\glossterm{minor action}, you can fling one dagger at a creature or object within \\shortrange.
