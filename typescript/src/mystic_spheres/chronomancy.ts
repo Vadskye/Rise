@@ -116,7 +116,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{mundane} \\glossterm{strike} with a \minus1 accuracy penalty using a single weapon.
+        Make a \\glossterm{mundane} \\glossterm{strike} with a \\minus1 accuracy penalty using a single weapon.
         You may reroll the accuracy roll and take the highest result.
       `,
       rank: 2,
@@ -128,7 +128,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{mundane} \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
+        Make two \\glossterm{mundane} \\glossterm{strikes} with a \\minus1 accuracy penalty using a single weapon.
       `,
       rank: 5,
       scaling: 'accuracy',
@@ -140,9 +140,9 @@ export const chronomancy: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Move up to your speed.
-        At the end of your movement, you can make a \\glossterm{mundane} \glossterm{strike}.
-        If the strike is a melee strike, you gain a \plus2 accuracy bonus.
-        Otherwise, you take a \minus2 accuracy penalty.
+        At the end of your movement, you can make a \\glossterm{mundane} \\glossterm{strike}.
+        If the strike is a melee strike, you gain a \\plus2 accuracy bonus.
+        Otherwise, you take a \\minus2 accuracy penalty.
       `,
       rank: 4,
       scaling: 'accuracy',

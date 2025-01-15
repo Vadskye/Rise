@@ -9,7 +9,7 @@ export const polymorph: MysticSphere = {
   sources: ['arcane', 'nature', 'pact'],
   specialRules: `
     This mystic sphere manipulates the physical bodies of creatures, objects, or both.
-    Anything that does not have a physical body, such as an \trait{intangible} creature, is immune to all abilities from this mystic sphere.
+    Anything that does not have a physical body, such as an \\trait{intangible} creature, is immune to all abilities from this mystic sphere.
   `,
 
   cantrips: [
