@@ -203,13 +203,14 @@ impl Weapon {
 #[derive(Clone, Debug, PartialEq)]
 pub enum WeaponTag {
     Ammunition,
+    Clinch,
     Compact,
-    Grappling,
     Heavy,
     Impact,
     Keen,
     Light,
     Long,
+    Maneuverable,
     Massive(i32),
     Mounted,
     Parrying,
@@ -218,7 +219,6 @@ pub enum WeaponTag {
     Sweeping(i32),
     Subdual,
     Thrown(i32, i32),
-    Tripping,
     VersatileGrip,
 }
 
@@ -226,13 +226,14 @@ impl WeaponTag {
     pub fn latex(&self) -> String {
         match self {
             Self::Ammunition => r"\weapontag{Ammunition}".to_string(),
+            Self::Clinch => r"\weapontag{Clinch}".to_string(),
             Self::Compact => r"\weapontag{Compact}".to_string(),
-            Self::Grappling => r"\weapontag{Grappling}".to_string(),
             Self::Heavy => r"\weapontag{Heavy}".to_string(),
             Self::Impact => r"\weapontag{Impact}".to_string(),
             Self::Keen => r"\weapontag{Keen}".to_string(),
             Self::Light => r"\weapontag{Light}".to_string(),
             Self::Long => r"\weapontag{Long}".to_string(),
+            Self::Maneuverable => r"\weapontag{Maneuverable}".to_string(),
             Self::Massive(ft) => format!("\\weapontag{{Massive}} ({})", ft),
             Self::Mounted => r"\weapontag{Mounted}".to_string(),
             Self::Parrying => r"\weapontag{Parrying}".to_string(),
@@ -243,7 +244,6 @@ impl WeaponTag {
             Self::Sweeping(count) => format!("\\weapontag{{Sweeping}} ({})", count),
             Self::Subdual => r"\weapontag{Subdual}".to_string(),
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
-            Self::Tripping => r"\weapontag{Tripping}".to_string(),
             Self::VersatileGrip => r"\weapontag{Versatile Grip}".to_string(),
         }
     }
@@ -260,13 +260,14 @@ impl WeaponTag {
     pub fn visible_in_monster_tags(&self) -> bool {
         match self {
             Self::Ammunition => false,
+            Self::Clinch => true,
             Self::Compact => true,
-            Self::Grappling => true,
             Self::Heavy => false,
             Self::Impact => true,
             Self::Keen => true,
             Self::Light => true,
             Self::Long => true,
+            Self::Maneuverable => true,
             Self::Massive(_) => true,
             // The bonus here is assumed wherever it is used
             Self::Mounted => false,
@@ -276,7 +277,6 @@ impl WeaponTag {
             Self::Sweeping(_) => true,
             Self::Subdual => true,
             Self::Thrown(..) => true,
-            Self::Tripping => true,
             // TODO: monsters should somehow take this into account in the listed damage values?
             Self::VersatileGrip => false,
         }
@@ -335,7 +335,7 @@ impl StandardWeapon {
                 accuracy: 0,
                 damage_dice: DicePool::d6(),
                 name: "Bite".to_string(),
-                tags: vec![WeaponTag::Grappling],
+                tags: vec![WeaponTag::Clinch],
             },
             Self::Broadsword => Weapon {
                 accuracy: 0,
@@ -358,8 +358,8 @@ impl StandardWeapon {
             Self::Flail => Weapon {
                 accuracy: 0,
                 damage_dice: DicePool::d6(),
-                name: "Heavy flail".to_string(),
-                tags: vec![WeaponTag::Tripping],
+                name: "Flail".to_string(),
+                tags: vec![WeaponTag::Maneuverable],
             },
             Self::GiantBoulder => Weapon {
                 // Individual giants can customize these range limits
@@ -403,7 +403,7 @@ impl StandardWeapon {
                 accuracy: 0,
                 damage_dice: DicePool::d10(),
                 name: "Heavy flail".to_string(),
-                tags: vec![WeaponTag::Heavy, WeaponTag::Tripping],
+                tags: vec![WeaponTag::Heavy, WeaponTag::Maneuverable],
             },
             Self::Javelin => Weapon {
                 accuracy: 0,
@@ -440,7 +440,7 @@ impl StandardWeapon {
                 accuracy: 0,
                 damage_dice: DicePool::d8(),
                 name: "Bite".to_string(),
-                tags: vec![WeaponTag::Grappling, WeaponTag::Heavy],
+                tags: vec![WeaponTag::Clinch, WeaponTag::Heavy],
             },
             Self::MonsterHorn => Weapon {
                 accuracy: 0,
