@@ -49,7 +49,7 @@ export const verdamancy: MysticSphere = {
       name: 'Shape Plant',
 
       effect: `
-        Choose one unattended, nonmagical living plant you touch.
+        Choose one unattended, nonmagical living plant you \\glossterm{touch}.
         You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as an axe or pruning shears.
         As long as the plant's new shape is structurally sound and conducive to life, this reshaping does not harm the plant.
         It will continue growing as if it had always had its new shape.
@@ -472,7 +472,7 @@ export const verdamancy: MysticSphere = {
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
-          You transform up to three \\glossterm{unattended} acorns or similar seed structures you touch into small bombs.
+          You transform up to three \\glossterm{unattended} acorns or similar seed structures you \\glossterm{touch} into small bombs.
           As a standard action, you or another creature can throw the acorn up to 30 feet.
           % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
           % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
@@ -610,7 +610,7 @@ export const verdamancy: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        Choose one nonmagical, \\glossterm{unattended} stick of wood you touch.
+        Choose one nonmagical, \\glossterm{unattended} stick of wood you \\glossterm{touch}.
         You transform the target into a club, quarterstaff, or sap, as you choose (see \\pcref{Weapons}).
         You cannot change the target's size by more than one size category.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the weapon (see \\pcref{Power}).

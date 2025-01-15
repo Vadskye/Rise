@@ -1,6 +1,8 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { BRIEF_COOLDOWN, CONDITION_CRIT } from './constants';
 
+// This sphere gets maneuvers at equal rank to combat styles.
+// However, they are strictly mundane and limited in scope.
 export const chronomancy: MysticSphere = {
   name: 'Chronomancy',
   hasImage: true,
@@ -108,43 +110,94 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Accelerated Flurry',
+      name: 'Quicksilver Flurry',
 
+      // Rerolling is about +2 accuracy
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike} with a \\minus1 accuracy penalty using a single weapon.
+        Make a \\glossterm{mundane} \\glossterm{strike} with a \minus1 accuracy penalty using a single weapon.
         You may reroll the accuracy roll and take the highest result.
-        In addition, you use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 2,
       scaling: 'accuracy',
-      tags: [],
     },
     {
-      name: 'Accelerated Double Flurry',
+      name: 'Quicksilver Double Flurry',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+        Make two \\glossterm{mundane} \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
       `,
       rank: 5,
       scaling: 'accuracy',
-      tags: [],
     },
     {
-      name: 'Accelerated Triple Flurry',
+      name: 'Quicksilver Blitz',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make three \\glossterm{strikes} with a \minus1 accuracy penalty using a single weapon.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+        Move up to your speed.
+        At the end of your movement, you can make a \\glossterm{mundane} \glossterm{strike}.
+        If the strike is a melee strike, you gain a \plus2 accuracy bonus.
+        Otherwise, you take a \minus2 accuracy penalty.
       `,
+      rank: 4,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Quicksilver Sweep',
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a \\glossterm{mundane} melee \\glossterm{strike}.
+        The strike gains the \\weapontag{Sweeping} (8) \\glossterm{weapon tag}, allowing you to hit up to 8 additional targets (see \\pcref{Weapon Tags}).
+      `,
+      rank: 2,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Quicksilver Perfection',
+
+      cost: BRIEF_COOLDOWN,
+      // TODO: figure out how to do math??
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a \\glossterm{mundane} melee \\glossterm{strike} using a single weapon.
+        You can reroll the attack roll up to five times, keeping the highest result.
+        Before rerolling, you can learn whether your result would be a hit or critical hit, but not the damage you would deal.
+        When you finish rolling, you gain an accuracy bonus with the strike equal to the number of unused rerolls.
+      `,
+      rank: 6,
+      scaling: {
+        7: "You can reroll six times instead of five.",
+      },
+    },
+    {
+      name: 'Quicksilver Ambush',
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Move up to half your speed, then make a \\glossterm{mundane} melee strike.
+        If the target was \\partiallyunware or \\unaware of you before your movement, they remain so until after your strike.
+        From an observer's perspective, the movement and the strike happen simultaneously in a blur of motion.
+      `,
+      rank: 3,
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Quicksilver Assassination',
+
+      functionsLike: {
+        name: "quicksilver ambush",
+        exceptThat: "the strike deals double \\glossterm{weapon damage}.",
+      },
       rank: 7,
-      tags: [],
     },
 
     {
@@ -173,13 +226,12 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          \\damagerankthree.
-          If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
+          The target is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against one creature you \\glossterm{touch}.
+          Make an attack vs. Mental against one creature you \\glossterm{touch}.
         `,
       },
       rank: 3,

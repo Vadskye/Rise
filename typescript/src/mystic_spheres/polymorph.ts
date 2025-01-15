@@ -1,17 +1,23 @@
 import { MysticSphere } from '.';
 import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 
+// This sphere gets maneuvers at -1 rank from combat styles. However, the cost is that they are
+// strictly mundane and require natural weapons, forcing a gish-style caster or Spellsword.
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
   shortDescription: 'Change the physical shape or outward form of objects and creatures.',
   sources: ['arcane', 'nature', 'pact'],
+  specialRules: `
+    This mystic sphere manipulates the physical bodies of creatures, objects, or both.
+    Anything that does not have a physical body, such as an \trait{intangible} creature, is immune to all abilities from this mystic sphere.
+  `,
 
   cantrips: [
     {
       name: 'Alter Object',
 
       effect: `
-        Choose one \\glossterm{unattended}, nonmagical object you touch.
+        Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
         You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
@@ -78,7 +84,7 @@ export const polymorph: MysticSphere = {
       name: 'Reforge Armor',
 
       effect: `
-        Choose one nonmagical suit of body armor you touch.
+        Choose one nonmagical suit of body armor you \\glossterm{touch}.
         The armor becomes composed of a special material of your choice other than cold iron (see \\tref{Armor Special Materials}).
         The special material chosen must not cause the item's total rank to exceed your spellcasting rank with this spell.
         You can only change the target into a special material appropriate for its base composition of either leather or metal.
@@ -94,10 +100,9 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         If the target is living and your attack result beats its Fortitude defense, it bleeds.
         During your next action, it takes \\glossterm{extra damage} equal to your power.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 3,
       scaling: 'accuracy',
@@ -108,23 +113,20 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 2,
       scaling: 'accuracy',
     },
 
-    // TODO: nerf once less relevant to campaign
     {
       name: 'Power Claw',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} with a -3 accuracy penalty using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} with a -3 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals double \\glossterm{weapon damage}.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 1,
       scaling: 'accuracy',
@@ -135,9 +137,8 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals triple \\glossterm{weapon damage}.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 5,
       scaling: 'accuracy',
@@ -148,9 +149,8 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         The strike gains the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 2,
       scaling: 'accuracy',
@@ -161,10 +161,10 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using \\glossterm{natural weapons}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         The strike deals double \\glossterm{weapon damage}, and it gains the \\weapontag{Massive} (10) weapon tag (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
+      // Should this be rank 5?
       rank: 6,
       scaling: 'accuracy',
     },
@@ -815,7 +815,7 @@ export const polymorph: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Armor against one adjacent creature.
+          Make an attack vs. Armor against an adjacent creature.
         `,
       },
       narrative: `
@@ -836,7 +836,7 @@ export const polymorph: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Armor against one adjacent creature.
+          Make an attack vs. Armor against an adjacent creature.
         `,
       },
       rank: 3,
@@ -855,7 +855,7 @@ export const polymorph: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Armor against one adjacent creature.
+          Make an attack vs. Armor against an adjacent creature.
         `,
       },
       rank: 5,

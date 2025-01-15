@@ -87,7 +87,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Freezing Grasp',
 
-      // -2 ranks for delayed onset
+      // -2 ranks for delayed onset, which is particularly punishing if they already have
+      // to lose HP.
       attack: {
         hit: `
           \\damagerankone.
@@ -97,7 +98,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 1,
@@ -115,7 +116,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 5,

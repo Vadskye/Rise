@@ -173,12 +173,13 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Arcing Grasp',
 
+      // Baseline for grasp is dr4, dr3 for one chain
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damagerankthree.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
           This attack \\glossterm{chains} once.
         `,
       },
@@ -189,12 +190,13 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Mighty Arcing Grasp',
 
+      // Baseline for grasp is dr7, dr5 for two chains
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
           This attack \\glossterm{chains} twice.
         `,
       },
