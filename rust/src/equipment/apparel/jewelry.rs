@@ -96,13 +96,17 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Divine Healing"),
         rank: 2,
-        short_description: String::from(r"Grants +2 power with \ability{divine aid} and \ability{lay on hands}"),
+        short_description: String::from(r"Grants +1d8 healing with \ability{divine aid} and \ability{lay on hands}"),
         description: String::from(r"
-            When you use the \ability<divine aid> cleric ability or the \ability<lay on hands> paladin ability, you gain a +2 \glossterm{enhancement bonus} to your \glossterm<power>.
+            When you use the \ability<divine aid> cleric ability or the \ability<lay on hands> paladin ability, the target regains an additional 1d8 hit points.
+            This is still limited by half the target's maximum hit points unless you increase your fatigue, as normal.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Grants +4 power with \ability{divine aid} and \ability{lay on hands}", r"
-                The power bonus increases to +4.
+            ItemUpgrade::new(4, r"Grants +2d8 healing with \ability{divine aid} and \ability{lay on hands}", r"
+                The extra healing increases to 2d8.
+            "),
+            ItemUpgrade::new(6, r"Grants +4d8 healing with \ability{divine aid} and \ability{lay on hands}", r"
+                The extra healing increases to 4d8.
             "),
         ],
         ..Apparel::default()
@@ -264,15 +268,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Wild Magic Amulet"),
         rank: 3,
-        short_description: String::from(r"Increases power and chaos with \ability{wild magic}"),
+        short_description: String::from(r"Increases damage and chaos with \ability{wild magic}"),
         description: String::from(r"
-            You gain a +2 power bonus with spells you cast using the \ability{wildspell} sorcerer ability.
+            The extra damage you gain from the \ability{wildspell} sorcerer ability is calculated as if your rank in that archetype was one higher, to a maximum of 7.
             However, you take a -2 penalty to your wild magic rolls.
             If your result is 0 or less, you are the only target of the spell.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Increases power and chaos with \ability{wild magic}", r"
-                The power bonus increases to +3.
+            ItemUpgrade::new(6, r"Increases damage and chaos with \ability{wild magic}", r"
+                The extra damage is doubled, rather than calculated as if you were one rank higher.
             "),
         ],
         ..Apparel::default()
@@ -281,15 +285,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Wild Control"),
         rank: 3,
-        short_description: String::from(r"Reduces power and chaos with \ability{wild magic}"),
+        short_description: String::from(r"Reduces damage and chaos with \ability{wild magic}"),
         description: String::from(r"
-            You take a -1 penalty to power with spells you cast using the \ability{wildspell} sorcerer ability.
+            The extra damage you gain from the \ability{wildspell} sorcerer ability is calculated as if your rank in that archetype was one lower, to a minimum of 1.
             However, you gain a +1 bonus to your wild magic rolls.
             A result of 11 or more is treated as a 10.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, r"Reduces power and chaos with \ability{wild magic}", r"
-                The power penalty increases to -3, but the wild magic roll bonus increases to +2.
+                The rank penalty for calculating extra damage increases to two ranks, but the wild magic roll bonus increases to +2.
             "),
         ],
         ..Apparel::default()

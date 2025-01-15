@@ -393,12 +393,18 @@ They allow more distinct and unique character customization, but also increase g
     In addition, the range of your blindsight increases by 150 feet.
   \end{feat}
 
+  % Rank 1 wizard: 8 HP, 4 casts
+  % Rank 2 wizard: 11 HP, 5 casts
+  % Rank 3 wizard: 18 HP, 4 casts
+  % Rank 5 wizard: 38 HP, 4 casts
+  % Rank 7 wizard: 76 HP, 4 casts
   \begin{magicalfeat}{Blood Magic}{Casting, Magical}
     \featpre Access to a \glossterm{mystic sphere}, Constitution 2.
 
     \magicalff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
-    When you do, you lose \glossterm{hit points} equal to your maximum spell rank.
-    In exchange, you gain a \plus2 power bonus with the spell, and the spell does not require \glossterm{verbal components} or \glossterm{somatic components}.
+    When you do, you gain a \plus2 accuracy bonus with the spell.
+    In exchange, you lose two \glossterm{hit points}.
+    This hit point loss increases to four hit points at level 7, eight hit points at level 13, and sixteen hit points at level 19.
 
     \magicalff[6]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
     While the target is bound, you are always considered to have \glossterm{line of sight} to it.
@@ -406,7 +412,7 @@ They allow more distinct and unique character customization, but also increase g
     This binding lasts until you finish a \glossterm{long rest}.
 
     % TODO: how do you remove a blood-sworn allegiance? remove curse?
-    \magicalff[12]{Blood-Sworn Allegiance} You can swear a blood oath to your allies.
+    \magicalff[12]{Blood-Sworn Allegiance} You can swear a blood oath to your allies in a ritual.
     You automatically fail any attack rolls you make against a creature that you have sworn this blood oath with.
     Any missed attacks against those creatures have no effect, even if the attack would normally deal damage on a miss.
     Those creatures have the same effects if they try to attack you.
@@ -415,7 +421,8 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Bloodbind+} You are always considered to have \glossterm{line of effect} with \magical abilities to a creature bound by your \textit{bloodbind} ability, regardless of intervening obstacles.
     This allows you to cast spells on them through solid walls.
 
-    \magicalff[18]{Bloodspell+} The power bonus from your \textit{bloodspell} ability increases to \plus4.
+    \magicalff[18]{Bloodspell+} You can choose to increase the accuracy bonus to \plus5.
+    When you do, the hit point loss is doubled.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Boongiver}{Casting, Magical}
