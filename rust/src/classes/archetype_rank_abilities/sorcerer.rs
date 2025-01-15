@@ -129,8 +129,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         In addition, if the area was not originally a line, the area increases to to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Energetic Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a \plus2 bonus to your \glossterm{magical power} with that spell.
-                        In addition, you add any one of the following tags to that spell: \atCold, \atFire, or \atElectricity.
+                        You add any one of the following tags to that spell: \atCold, \atFire, or \atElectricity.
+                        In addition, if it deals damage, it gains \glossterm{extra damage} equal to half your \glossterm{magical power}.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a \plus2 accuracy bonus with that spell.
@@ -158,6 +158,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
+                In addition, the extra damage from Energetic Spell increases to be equal to your power.
             ",
             modifiers: None,
         },
@@ -403,34 +404,38 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-                When you do, you gain a +2 bonus to your \glossterm{magical power} with the spell.
-                In addition, roll 1d10 and apply the corresponding wild magic effect from \trefnp{Wildspell Effects}.
+                When you do, the spell deals 1d4 \glossterm{extra damage}.
+                In addition, roll 1d10 and apply the corresponding wild magic effect from the table below.
+
+                \begin{columntable}
+                    \begin{dtabularx}{\textwidth}{l X}
+                        \tb{Roll} & \tb{Effect} \tableheaderrule
+                        1 & The spell fails with no effect \\
+                        2 & On your first attack with the spell, you roll twice and take the lower result \\
+                        3 & On your first attack with the spell, you are a target of the attack in addition to any other targets \\
+                        4 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
+                        5 & The spell's area is halved this round \\
+                        6 & The spell's area is doubled this round \\
+                        7 & On your first attack with the spell, it \glossterm{chains} once to the closest unaffected creature, choosing randomly between equally close creatures \\
+                        8 & When you first deal damage with the spell, you roll twice for the damage and keep the higher result \\
+                        9 & On your first attack with the spell, you roll twice for the attack roll and keep the higher result \\
+                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
+                    \end{dtabularx}
+                \end{columntable}
 
                 Some wild magic effects cannot be meaningfully applied to all spells.
                 For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
                 Any wildspell effects that do not make sense for a particular spell have no effect.
-                The rolled wild magic effect always applies to the round that you cast the spell, even if the spell doesn't have its normal effect immediately.
 
-                All wild magic effects only change the spell during the current round.
-                In subsequent rounds, the spell has its normal effect.
-
-                \begin{dtable}
-                    \lcaption{Wildspell Effects}
-                    \begin{dtabularx}{\textwidth}{l X}
-                        \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & The spell fails with no effect \\
-                        2 & When you attack with the spell, you roll twice and take the lower result \\
-                        3 & When you attack with the spell, you are a target of the attack in addition to any other targets \\
-                        4 & The spell's area is halved \\
-                        5 & The spell's area is doubled \\
-                        6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
-                        7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to your \glossterm{power} with the spell \\
-                        8 & When you deal damage with the spell, you roll twice for the damage and take the higher result \\
-                        9 & When you attack with the spell, you roll twice for the attack roll and take the higher result \\
-                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
-                    \end{dtabularx}
-                \end{dtable}
+                The extra damage increases as your rank in this archetype increases:
+                \rank{2} The extra damage increases to 1d6.
+                \rank{3} The extra damage increases to 1d8.
+                \rank{4} The extra damage increases to 2d6.
+                \rank{5} The extra damage increases to 2d8.
+                \rank{6} The extra damage increases to 2d10.
+                \rank{7} The extra damage increases to 4d8.
             ",
+            // TODO: define extra damage modifier for scaling
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
@@ -438,34 +443,32 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The power bonus increases to +3.
-                In addition, if you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
+                If you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
-            name: "Wildspell+",
+            name: "Wildspell++",
             is_magical: true,
             rank: 7,
             description: r"
-                You replace your normal wild magic effects with the effects from the \trefnp{Wildspell+ Effects} table.
-                \begin{dtable}
-                    \lcaption{Wildspell+ Effects}
+                You replace your normal wild magic effects with the effects from the table below.
+                \begin{columntable}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & No special effect \\
-                        2 & When you attack with the spell, you roll twice and take the higher result \\
-                        3 & When you deal damage with the spell, you roll twice and take the higher result \\
-                        4 & The spell's area is doubled \\
-                        5 & The spell's area is tripled \\
-                        6 & Each target that resists damage from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
-                        7 & Each target that loses hit points from the spell takes energy \glossterm{extra damage} equal to twice your \glossterm{power} with the spell \\
-                        8 & The spell deals full damage even on a miss or glancing blow \\
-                        9 & The spell deals maximum damage if it hits \\
-                        10 & At the end of this round, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        1 & The spell has no immediate effect, but takes effect at the start of your next action \\
+                        2 & Your first attack roll with the spell \glossterm{explodes} on a 1 instead of on a 10 \\
+                        3 & On your first attack with the spell, you are a target of the attack in addition to any other targets, but with a \minus4 accuracy penalty \\
+                        4 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
+                        5 & The spell's area is doubled this round \\
+                        6 & The spell's area is tripled this round \\
+                        7 & On your first attack with the spell, it \glossterm{chains} twice to the closest unaffected creatures, choosing randomly between equally close creatures \\
+                        8 & When you first deal damage with the spell, you deal maximum damage \\
+                        9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
+                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
-                \end{dtable}
+                \end{columntable}
             ",
             modifiers: None,
         },
