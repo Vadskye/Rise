@@ -187,7 +187,7 @@
 
   \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
   It takes a \minus2 penalty to Armor and Reflex defenses.
-  However, it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes} as long as the attacker is not adjacent.
+  However, it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes} as long as the attacker is not adjacent to it.
   It moves at half of its normal speed.
   Creatures that are not on the ground, such as flying or gliding creatures, are immune to being knocked prone.
 
@@ -287,8 +287,11 @@
   If it is partially contained, it has \glossterm{cover}, but can otherwise attack and be attacked normally.
 
   \traitdef{Intangible}{intangible}
-  An intangible creature has a physical body that is gaseous or otherwise untouchable.
-  It is \trait{immune} to \glossterm{physical damage} and is never considered to be \squeezing.
+  An intangible creature has a physical body that is gaseous or otherwise amorphous.
+  It cannot be \glossterm{touched}, and is never considered to be \squeezing.
+  % Should this reference Armor defense? What abilities target Armor defense that should affect a ghost?
+  % Answer: Smite, spellblade, ki monk, and so on. But it would be useful to find a way to exclude Polymorph.
+  It is \trait{immune} to \glossterm{mundane}, \atCreation, and \atManifestation abilities.
   It moves silently and ignores the effects of abilities that only work if it has a corporeal body.
   This includes all \abilitytag{Brawling} abilities, \glossterm{difficult terrain}, being detected by \trait{tremorsense}, setting off pressure plates, and so on.
   It can move freely through spaces occupied by enemies, but cannot pass through solid objects.
