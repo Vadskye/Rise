@@ -84,14 +84,14 @@ export const astromancy: MysticSphere = {
       name: 'Tactical Translocation',
 
       effect: `
-        Whenever you would make a melee \\glossterm{strike} or a \\glossterm{touch} attack, you can first \\glossterm{teleport} up to 10 feet.
-        You can only teleport in this way once per \\glossterm{round}.
+        Once per round, when you would make a melee \\glossterm{strike} or use an ability that requires \\glossterm{touch} on a creature other than yourself, you can first \\glossterm{teleport} up to 10 feet.
+        Your destination must be adjacent to the target.
       `,
       rank: 3,
       type: 'Attune',
     },
     {
-      name: 'Translocating Grasp',
+      name: 'Splicing Grasp',
 
       attack: {
         hit: `
@@ -101,7 +101,7 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against a creature you \\glossterm{touch}.
+          Make an attack vs. Mental against a creature you \\glossterm{touch}.
         `,
       },
       narrative: `
@@ -113,7 +113,7 @@ export const astromancy: MysticSphere = {
     },
 
     {
-      name: 'Distant Translocating Grasp',
+      name: 'Distant Splicing Grasp',
 
       attack: {
         hit: `
@@ -123,13 +123,9 @@ export const astromancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against a creature you \\glossterm{touch}.
+          Make an attack vs. Mental against a creature you \\glossterm{touch}.
         `,
       },
-      narrative: `
-        Your touch makes your foe disappear.
-        Most of it reappears intact far away, but something important - and painful - was lost in transit.
-      `,
       rank: 6,
       scaling: 'accuracy',
     },

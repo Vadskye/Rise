@@ -589,7 +589,7 @@ export const revelation: MysticSphere = {
           If you cannot see yourself, you are \\blinded for combat purposes.
 
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
-          Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} against the new creature.
+          Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} vs. Mental against the new creature.
           You can only make this attack against a given target once per \\glossterm{phase}.
           On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
           On a miss, the condition remains on the previous creature.

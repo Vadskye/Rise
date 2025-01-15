@@ -41,10 +41,10 @@ export const vivimancy: MysticSphere = {
       name: 'Lifesteal Grasp',
 
       cost: "One optional \\glossterm{fatigue level} (see text).",
-      // baseline for multi-defense grasp is dr4, drop to dr3 for healing
+      // baseline for melee range is dr3, drop to dr2 for healing
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo.
           If the target loses \\glossterm{hit points}, you can increase your \\glossterm{fatigue level} by one. 
           % dr1
           When you do, you regain 1d6 hit points +1 per 2 power at the end of the round.
@@ -53,7 +53,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex and Fortitude against a living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
         `,
       },
       rank: 1,
@@ -513,19 +513,19 @@ export const vivimancy: MysticSphere = {
     {
       name: "Deathtouch",
 
-      // Baseline for double defense is dr7, which is 5.5+2.75dpp.
-      // Maximized dr4 is 3dpp.
-      // Doubled dr4 is 3.5dpp.
+      // Baseline for melee range is dr7, which is 5.5+2.75dpp.
+      // If it required no remaining DR, it would be dr9, which is 9 + 4.5dpp.
+      // Maximized dr6 is 8 + 4dpp.
       attack: {
         hit: `
-          \\damagerankfour.
-          If this attack also beats the target's Fortitude defense, or the target has no remaining damage resistance, this damage is maximized.
-          If both are true, this damage is instead doubled.
+          \\damageranksix.
+          If the target has no remaining damage resistance, this damage is maximized.
+          When you kill a creature with this ability, you \\glossterm{briefly} gain a \plus2 accuracy bonus.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against a living creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
         `,
       },
       rank: 5,

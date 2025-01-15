@@ -44,17 +44,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Caustic Grasp',
 
-      // baseline for grasp is dX+1. +2dr from extra defense, -2dr from next round damage
+      // Baseline for melee range is dr3, which is 4.5 + 1dpp.
+      // Double dr1 is 7 + 1dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo damage immediately, and again during your next action.
+          \\damagerankone damage immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Fortitude and Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 1,

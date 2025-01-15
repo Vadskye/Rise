@@ -653,15 +653,17 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     {
       name: 'Liquifying Grasp',
 
+      // Permanent prone is essentially the same as slowed, which is a t2 debuff.
+      // Vulnerability makes up the other part of the ability's power, with damage as a
+      // smaller upside.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, its lower body is transformed into a puddle of water as a \\glossterm{condition}.
           This has the following effects:
           \\begin{itemize}
-            \\item If it is submerged in water or other liquid, it takes \\damagerankfour during each of your subsequent actions as it dissolves.
-            \\item It is \\prone and cannot stand up.
-            \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-            \\item It is unable to speak normally or use \\glossterm{verbal components} or \\glossterm{somatic components}.
+            \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.
+            \\item It is \\vulnerable to \\atCold and \\atWater abilities.
+            \\item During each of your subsequent actions, if it is \\debuff{submerged} or not \\glossterm{grounded}, it takes \\damagerankfive as its body melts away.
           \\end{itemize}
 
           % There must be text between an itemize block and the end of a mdframed env
@@ -670,10 +672,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex and Fortitude against one creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
         `,
       },
-      rank: 4,
+      rank: 5,
     },
     {
       name: 'Liquify',
@@ -681,7 +683,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       attack: {
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water.
-          This functions like the effect of the \\spell{liquifying grasp} spell, except that the damage while submerged increases to \\damagerankseven.
+          This functions like the effect of the \\spell{liquifying grasp} spell, except that the damage increases to \\damagerankseven.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

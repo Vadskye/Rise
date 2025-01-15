@@ -21,7 +21,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // TODO: nerf crafting efficiency, clarify how long it typically takes to dig
       // through dirt
       effect: `
-        Choose one unattended, nonmagical body of earth or unworked stone you touch.
+        Choose one unattended, nonmagical body of earth or unworked stone you \\glossterm{touch}.
         You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
@@ -257,7 +257,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Meld into Stone',
 
       effect: `
-        You and up to 100 pounds of nonliving equipment meld into one stone object you touch that is at least as large as your body.
+        You and up to 100 pounds of nonliving equipment meld into one stone object you \\glossterm{touch} that is at least as large as your body.
         If you try to bring excess equipment into the stone, the spell fails without effect.
 
         As long as the spell lasts, you can move within the stone as if it was thick water.
