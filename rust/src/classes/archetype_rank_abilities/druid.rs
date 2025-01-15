@@ -120,7 +120,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power} with all abilities.
+                You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
@@ -129,7 +129,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonus increases to +2.
+                The power bonuses increase to +2.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },

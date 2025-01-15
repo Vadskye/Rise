@@ -85,8 +85,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         In addition, you automatically learn one free divine ritual of each rank you have access to, including new ranks as you gain access to them.
                         You cannot choose this ability multiple times.
-                    \parhead{Smiting Spell} Choose a divine \glossterm{spell} you know.
-                        You gain a \plus2 power bonus with that spell.
+                    \parhead{Smiting Spell} Choose a damaging divine \glossterm{spell} you know.
+                        It deals \glossterm{extra damage} equal to half your \glossterm{magical power}.
                         In addition, your \glossterm{allies} are immune to damage from that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Widened Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
@@ -111,6 +111,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
+                In addition, the extra damage from Smiting Spell increases to be equal to your magical power.
             ",
             modifiers: None,
         },
