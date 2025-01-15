@@ -75,11 +75,11 @@ export const chronomancy: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Accelerated Sprint',
+      name: 'Burst of Speed',
 
       effect: `
-        Whenever you use the \\ability{sprint} ability, you gain a \\plus10 foot bonus to your land speed during that phase.
-        This bonus is doubled as normal by the sprint ability.
+        When you use the \\ability{sprint} ability as a \\glossterm{movement}, you can choose not to increase your \\glossterm{fatigue level}.
+        After you sprint in this way, your attunement to this ability ends.
       `,
       rank: 1,
       type: 'Attune',
