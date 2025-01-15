@@ -168,7 +168,6 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 The power bonus increases to +3.
-                Any other aspects of the ability remain unchanged.
             ",
             modifiers: Some(vec![Modifier::Power(3)]),
         },
