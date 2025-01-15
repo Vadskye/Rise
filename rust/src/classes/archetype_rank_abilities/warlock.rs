@@ -611,20 +611,19 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Your can allow your soulkeeper to possess you temporarily.
-                This increases your power, but pushing yourself too hard can allow your soulkeeper to control you directly.
+                This improves your access to your magic, but pushing yourself too hard can allow your soulkeeper to control you directly.
                 \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \abilityusagetime \glossterm{Free action}.
+                    \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
                         \item You gain 1d4 \glossterm{extra damage} with \magical abilities.
                         \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
-                            If you would be unconscious due to fatigue without this bonus, your soulkeeper directly controls all of your actions.
-                            Your soulkeeper's objectives may differ from your own, but except in very unusual circumstances, your soulkeeper is invested in continuing your life and ensuring your victory in difficult circumstances.
+                            If you would be unconscious due to fatigue without this bonus, your soulkeeper can directly control all of your actions.
+                            Your soulkeeper's objectives may differ from your own, but soulkeeper is almost always interested in continuing your life and ensuring your victory in difficult circumstances.
                         \item You take a \minus2 penalty to your Fortitude and Mental defenses.
-                        \item You are unable to take \glossterm{standard actions} that do not cause you to make \magical attacks.
-                        \item At the end of each round, if you did not make a \magical attack during that round, this ability ends.
-                        \item When this ability ends for any reason, you increase your \glossterm{fatigue level} by one.
+                        \item Whenever you gain a \glossterm{vital wound}, you also increase your \glossterm{fatigue level} by one.
                     \end{itemize}
 
                     \rankline
