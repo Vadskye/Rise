@@ -106,7 +106,7 @@ fn bracers() -> Vec<Apparel> {
     apparel.push(Bracers(StandardItem {
         name: String::from("Greatreach Bracers"),
         rank: 4,
-        short_description: String::from(r"Allows attacking non-adjacent foes"),
+        short_description: String::from(r"Allows striking non-adjacent foes"),
         description: String::from(r"
             Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
         "),
@@ -246,7 +246,6 @@ fn gauntlets() -> Vec<Apparel> {
 }
 
 // Dexterity-related effects
-// Special touch attacks
 fn gloves() -> Vec<Apparel> {
     let mut apparel = vec![];
 
@@ -332,9 +331,9 @@ fn gloves() -> Vec<Apparel> {
         short_description: String::from("Grants a paralyzing touch"),
         description: String::from(r"
             You can activate these gloves as a standard action using a \glossterm{free hand}.
-            When you do, make an attack vs. Reflex and Fortitude against a creature you \glossterm{touch} with either glove.
+            When you do, make an attack vs. Fortitude against a creature you touch with either glove.
             Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
-            \hit If the target has no remaining \glossterm<damage resistance>, it becomes \paralyzed as a \glossterm<condition>.
+            \hit If the target has no remaining \glossterm<damage resistance>, it becomes \glossterm{briefly} \paralyzed.
         "),
         ..Apparel::default()
     }));
