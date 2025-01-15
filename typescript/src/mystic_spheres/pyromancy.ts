@@ -468,7 +468,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         // TODO: is this damage correct?
-        hit: `\\damagerankone.`,
+        hit: `\\damagerankone. All sources of \\glossterm{extra damage} do not apply to this attack.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
@@ -485,7 +485,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'flame aura',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfour. Extra damage is still not applied.',
       },
       rank: 7,
       scaling: 'accuracy',
