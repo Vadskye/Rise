@@ -217,15 +217,11 @@ fn cloaks() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants limited ability to hit ghostly creatures"),
         description: String::from(r"
-            Creatures that are \trait<intangible> or \trait<incorporeal> are only \impervious to physical damage you inflict instead of being immune to it.
-            In addition, you can touch those creatures, though they are impervious to any attacks you make to touch them.
+            Creatures that are \trait<intangible> or \trait<incorporeal> are only \impervious to your \glossterm{mundane} abilities rather than immune to them.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants ability to hit intangible creatures", "
-                Intangible and incorporeal creatures are not impervious to your physical damage and touch attacks.
-            "),
-            ItemUpgrade::new(7, "Grants ability to easily hit intangible creatures", r"
-                Intangible and incorporeal creatures are \vulnerable to your physical damage and touch attacks.
+            ItemUpgrade::new(5, "Grants ability to hit intangible creatures", "
+                Intangible and incorporeal creatures are not impervious to your mundane abilities.
             "),
         ],
         ..Apparel::default()
