@@ -382,7 +382,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You can choose to gain a \plus2 bonus to your \glossterm{power} with all abilities.
+                You can choose to gain a \plus2 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                 If you do, you take a \minus2 penalty to your Fortitude and Mental defenses.
                 Otherwise, you gain a +2 bonus to your Mental defense.
             ",
@@ -397,7 +397,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                If you chose the power bonus, it increases to +3.
+                If you chose the power bonuses, they increase to +3.
                 Otherwise, the defense bonus increases to +4.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
@@ -514,8 +514,8 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Powerful Spell} Choose a pact \glossterm{spell} you know.
-                        You gain a +2 bonus to your \glossterm{magical power} with that spell.
+                    \parhead{Powerful Spell} Choose a damaging pact \glossterm{spell} you know.
+                        It deals \glossterm{extra damage} equal to half your \glossterm{magical power}.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum \glossterm{rank} of pact spell that you can cast.
@@ -543,6 +543,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
+                In addition, the extra damage from Powerful Spell increases to be equal to your magical power.
             ",
             modifiers: None,
         },
@@ -597,13 +598,13 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         // gives more "true" damage at high Strength, but Possession is better with AOE and
         // low Willpower.
         // Rank: Expected damage, expected extra damage, dice-representable extra damage
-        // * 1: 5.6,   1.9, 2.5
-        // * 2: 8,     2.6, 3.5
-        // * 3: 11.2,  3.7, 4.5
-        // * 4: 16,    5.3, 5.5
-        // * 5: 22.4,  7.5, 7
-        // * 6: 32,   10.6, 10.5
-        // * 7: 44.8, 14.9, 14
+        // * 1: 6.4,   2.1, 2.5
+        // * 2: 9.0,     3, 3.5
+        // * 3: 12.8,  4.3, 4.5
+        // * 4: 17.9,    6, 7
+        // * 5: 25.6,  8.5, 9
+        // * 6: 35.8,   11.9, 11
+        // * 7: 51.2, 17, 18
         RankAbility {
             name: "Possession",
             is_magical: true,
@@ -629,10 +630,10 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} The extra damage increases to 1d6.
                     \rank{3} The extra damage increases to 1d8.
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 3d6.
-                    \rank{7} The extra damage increases to 4d6.
+                    \rank{4} The extra damage increases to 2d6.
+                    \rank{5} The extra damage increases to 2d8.
+                    \rank{6} The extra damage increases to 2d10.
+                    \rank{7} The extra damage increases to 4d8.
                 \end{magicalsustainability}
             ",
             modifiers: Some(vec![
