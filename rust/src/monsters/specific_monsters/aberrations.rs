@@ -26,7 +26,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     ability_type: AbilityType::Attune(None),
                     effect: r"
-                        The aboleth \glossterm{dominates} the mind of an unconscious humanoid or aberration it touches.
+                        The aboleth \glossterm{dominates} the mind of humanoid or aberration within \shortrange that is unconscious.
                         It can attune to this ability five times, allowing it to control up to five different creatures.
                     ".to_string(),
                     is_magical: true,
