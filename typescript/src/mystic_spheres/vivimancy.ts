@@ -520,7 +520,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           \\damageranksix.
           If the target has no remaining damage resistance, this damage is maximized.
-          When you kill a creature with this ability, you \\glossterm{briefly} gain a \plus2 accuracy bonus.
+          When you kill a creature with this ability, you \\glossterm{briefly} gain a \\plus2 accuracy bonus.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
