@@ -184,7 +184,7 @@ export const chronomancy: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Move up to half your speed, then make a \\glossterm{mundane} melee strike.
-        If the target was \\partiallyunware or \\unaware of you before your movement, they remain so until after your strike.
+        If the target was \\partiallyunaware or \\unaware of you before your movement, they remain so until after your strike.
         From an observer's perspective, the movement and the strike happen simultaneously in a blur of motion.
       `,
       rank: 3,
