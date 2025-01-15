@@ -68,17 +68,12 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Triumph of the Faithful',
 
+      // Compare with Boastful Battlecry
       effect: `
         At the end of the next round, you become infused with divine power.
-        You gain a +3 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
+        You gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
       `,
       rank: 1,
-      // TODO: does this actually need to scale?
-      scaling: {
-        3: 'The accuracy bonus increases to +4.',
-        5: 'The accuracy bonus increases to +5.',
-        7: 'The accuracy bonus increases to +6.',
-      },
       tags: [],
     },
 
