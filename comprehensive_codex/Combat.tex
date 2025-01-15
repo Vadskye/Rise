@@ -728,9 +728,9 @@
       Make an attack with a free hand against the Fortitude and Reflex defenses of one creature you \glossterm{touch}.
       Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
 
-      On a hit against both defenses, you and the target are \grappled by each other.
+      \hit You and the target are \grappled by each other.
       For details, see \pcref{Grappling}.
-      On a critical hit, you also control the grapple (see \pcref{Controlling a Grapple}).
+      \crit You also control the grapple (see \pcref{Controlling a Grapple}).
     \end{activeability}
 
     \begin{activeability}*{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
@@ -755,8 +755,8 @@
 
       If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
-      On a hit, you can move through each target's space.
-      On a miss, you end your movement immediately.
+      \hit You can continue your movement through the target's space.
+      \miss You end your movement before entering the target's space.
     \end{activeability}
 
     \begin{activeability}*{Ready Reaction}[\atSwift]
@@ -786,16 +786,16 @@
       \abilityusagetime Standard action normally, or \glossterm{movement} while grappling.
       \rankline
       If you are grappling or being grappled by a creature, this ability affects all creatures grappling with you (see \pcref{Grappling}).
-      Otherwise, choose one creature adjacent to you.
+      Otherwise, choose one creature you \glossterm{touch}.
 
-      Make an attack with a free hand against the Fortitude defense of each target.
+      Make a melee attack vs. Fortitude against each target.
       Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
       You must be able to \glossterm{touch} each target, but unlike normal for touch abilities, you don't have to beat their Reflex defense.
       If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
       % Critical hit shove should be equivalent to moving without any limitation.
       % This represents 
-      On a hit, you can move up to half your movement speed.
+      \hit You can move up to half your movement speed.
       During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
       If you push a target so it stops being adjacent to you, you stop being able to push it further.
       On a critical hit, or if the target is at least two size categories smaller than you, your movement speed is not halved.
@@ -848,8 +848,9 @@
     \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime Standard action.
       \rankline
-      Make a melee attack using a free hand against an adjacent creature's Fortitude defense.
-      On a hit, the target becomes \prone.
+      Make a melee attack vs. Fortitude using a free hand against a creature you \glossterm{touch}.
+      Since this is a \abilitytag{Brawling} ability, you use your Strength instead of your Perception to determine your \glossterm{accuracy}.
+      \hit The target becomes \prone.
     \end{activeability}
 
   \subsection{Grappling}\label{Grappling}
