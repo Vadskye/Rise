@@ -31,7 +31,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -39,7 +39,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
@@ -47,7 +47,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
@@ -71,7 +71,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -94,7 +94,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -118,7 +118,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
@@ -134,7 +134,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
@@ -185,7 +185,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -193,7 +193,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
@@ -201,7 +201,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus3 \glossterm{strike} vs. Armor.
@@ -225,7 +225,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -248,7 +248,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 \glossterm{strike} vs. Armor.
@@ -272,7 +272,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \minus3 \glossterm{strike} vs. Armor.
@@ -288,7 +288,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus1 attack vs. Armor against enemies in a \tinyarea radius.
@@ -342,7 +342,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
@@ -350,7 +350,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
@@ -358,7 +358,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
@@ -382,7 +382,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
@@ -412,7 +412,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
@@ -436,7 +436,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
@@ -452,7 +452,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
@@ -510,7 +510,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
@@ -518,7 +518,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
@@ -526,7 +526,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Certain Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus12 \glossterm{strike} vs. Armor.
@@ -550,7 +550,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Extra Damage Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus7 \glossterm{strike} vs. Armor.
@@ -580,7 +580,7 @@
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 \glossterm{strike} vs. Armor.
@@ -604,7 +604,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Powerful Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus6 \glossterm{strike} vs. Armor.
@@ -620,7 +620,7 @@
             \end{activeability}
         \par
             \begin{activeability}*{Whirlwind -- Bite}
-                \weapontag{Grappling}, \weapontag{Heavy}
+                \weapontag{Clinch}, \weapontag{Heavy}
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus10 attack vs. Armor against enemies in a \tinyarea radius.
