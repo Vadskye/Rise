@@ -258,7 +258,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
+                    Choose yourself or a living \glossterm{ally} you touch.
                     The target regains 1d8 \glossterm{hit points} +1 per power.
                     In addition, it removes all poisons and diseases affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
                     % TODO: wording

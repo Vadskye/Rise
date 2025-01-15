@@ -294,7 +294,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
+                    Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \glossterm{hit points} +1 per \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
 
@@ -345,7 +345,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost Three \glossterm{fatigue levels}.
                     \rankline
-                    Choose yourself or one living \glossterm{ally} you \glossterm{touch}.
+                    Choose yourself or one adjacent living \glossterm{ally}.
                     The target removes one of its \glossterm{vital wounds}.
 
                     \rankline
@@ -385,7 +385,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost Four \glossterm{fatigue levels}.
                     \rankline
-                    Choose one intact corpse you \glossterm{touch}.
+                    Choose one intact corpse within \shortrange.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
                     After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                 \end{magicalactiveability}
