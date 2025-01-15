@@ -694,7 +694,7 @@
       This ability does not have the \abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
 
       Move up to your speed in a single straight line.
-      At the end of your movement, you can make a melee \glossterm{strike} from your new location.
+      At the end of your movement, you can make a melee \glossterm{strike}.
     \end{activeability}
 
     \begin{activeability}*{Desperate Exertion}
@@ -848,14 +848,8 @@
     \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime Standard action.
       \rankline
-      Make a melee attack using a free hand or a weapon with the Tripping tag against a creature's Fortitude and Reflex defenses (see \pcref{Weapon Tags}).
-      If you attack with a weapon, you add the weapon's accuracy bonus, if any, to the attack.
-      However, this is not a \glossterm{strike}, so abilities like the \glossterm{Sweeping} weapon tag have no effect on this attack.
-
+      Make a melee attack using a free hand against an adjacent creature's Fortitude defense.
       On a hit, the target becomes \prone.
-      In addition, if you made the attack with a Tripping weapon and the attack also beat the target's Armor defense, you deal the target \glossterm{weapon damage} based on your weapon.
-      You cannot get a \glossterm{glancing blow} with this attack, and this damage is not doubled if you get a \glossterm{critical hit}.
-      This is not a \glossterm{strike}, so abilities that improve your strikes do not affect this ability.
     \end{activeability}
 
   \subsection{Grappling}\label{Grappling}
@@ -1102,6 +1096,25 @@
 
     % These also want to be organized in some way that makes sense
 \section{Special Ability Mechanics}\label{Special Ability Mechanics}
+
+  \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
+    Every ability is either \magical or mundane.
+    Magical abilities use Willpower to determine their \glossterm{power}, while mundane abilities use Strength.
+    If an ability has a \sparkle{} next to its name, it is magical.
+    Otherwise, it is mundane.
+
+    Some magical abilities can have effects that are mundane.
+    If so, they will be described as mundane explicitly, and you use your \glossterm{mundane power} instead of your \glossterm{magical power} with the ability to determine its effects (see \pcref{Ability Power}).
+    For example, the \spell{twisting claw} spell causes you to make a \glossterm{mundane} strike.
+    That strike would use your \glossterm{mundane power}, and it would be unable to affect \trait{intangible} creatures.
+    A monk with the \ability{ki energy} ability would be able to convert that strike to be \magical instead of mundane, just like they can convert any other mundane strike.
+
+  \subsection{Ability Power}\label{Ability Power}
+    Many abilities reference your ``\glossterm{power}'' without further explanation.
+    That always means ``your power with this ability'', which depends on whether the ability is \magical or mundane.
+    If you are using a \magical ability, you use your \glossterm{magical power}.
+    Otherwise, you use your \glossterm{mundane power}.
+    For context about how your power is calculated, see \pcref{Power}.
 
   \subsection{Ability Usage Components}\label{Ability Usage Components}
     Some abilities require \glossterm{verbal components}, \glossterm{somatic components}, or both.
