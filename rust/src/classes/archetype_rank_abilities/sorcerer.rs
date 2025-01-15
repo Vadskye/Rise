@@ -417,7 +417,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         5 & The spell's area is halved this round \\
                         6 & The spell's area is doubled this round \\
                         7 & On your first attack with the spell, it \glossterm{chains} once to the closest unaffected creature, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you roll twice for the damage and keep the higher result \\
+                        8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & On your first attack with the spell, you roll twice for the attack roll and keep the higher result \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
@@ -464,7 +464,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         5 & The spell's area is doubled this round \\
                         6 & The spell's area is tripled this round \\
                         7 & On your first attack with the spell, it \glossterm{chains} twice to the closest unaffected creatures, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you deal maximum damage \\
+                        8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
                     \end{dtabularx}
