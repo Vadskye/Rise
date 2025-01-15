@@ -77,13 +77,13 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
           As a \\glossterm{condition}, the target takes a -2 penalty to defenses against projectile \\glossterm{strikes}.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\medrange.
+          Make an attack vs. Reflex against one creature within \\distrange.
         `,
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
@@ -97,7 +97,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows with extreme precision.
       `,
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
     },
     {
@@ -212,24 +212,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
       scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.' },
     },
     {
-      name: 'Windseal Grasp',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Reflex and Fortitude against one creature you \\glossterm{touch}.
-        `,
-      },
-      // narrative: '',
-      rank: 1,
-      scaling: 'accuracy',
-    },
-    {
       name: 'Windseal',
 
       attack: {
@@ -238,11 +220,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
           The target is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       // narrative: '',
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
     },
     {
@@ -474,7 +456,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo.
           In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
@@ -484,7 +466,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
       scaling: 'accuracy',
     },
     {

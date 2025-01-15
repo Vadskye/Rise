@@ -127,15 +127,17 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Burning Grasp',
 
+      // Baseline for melee range is dr4, which is 3.5 + 1.75dpp.
+      // Double dr2 is 7 + 2dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damageranktwo immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 2,
@@ -145,15 +147,17 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Burning Grasp',
 
+      // Baseline for melee range is dr7, which is 5.5 + 2.75dpp.
+      // Double dr5 is 7 + 3.5dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour immediately, and again during your next action.
+          \\damagerankfive immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 5,
@@ -399,7 +403,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
           As a \\glossterm{minor action}, you can fire an orb at a creature or object within \\shortrange.
-          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
+          When you do, make an attack vs. Fortitude with a -2 accuracy penalty against that target.
           After the sphere deals damage, it disappears and another sphere appears in the cluster.
         `,
       },
