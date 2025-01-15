@@ -1589,7 +1589,6 @@ impl Class {
                         \domainability{Mastery} The defense bonus increases to \plus3, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
-                        % intentionally adjacent rather than touch
                         \magicaldomainability{Gift}
                         \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
@@ -1644,7 +1643,6 @@ impl Class {
                         Hitting with the repeated attack causes another repeat during the next round, though the accuracy penalty increases by \minus4 with each repeat.
 
                     \subsubsection{Good Domain}
-                        % intentionally adjacent rather than touch
                         \magicaldomainability{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
                         You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                         The original target suffers any other effects of the attack normally.
@@ -1731,7 +1729,6 @@ impl Class {
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
                             \rankline
-                            % Intentionally adjacent rather than touch
                             Choose an \glossterm{ally} adjacent to you.
                             It gains a \plus1 bonus to all defenses this round.
 
