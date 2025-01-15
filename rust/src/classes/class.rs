@@ -1541,7 +1541,7 @@ impl Class {
                         \domainability{Mastery} The bonus from this domain's gift increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{power} with all abilities.
+                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Demolish}
                             \abilityusagetime Standard action.
@@ -1720,7 +1720,7 @@ impl Class {
 
                         \domainability{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \magicaldomainability{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
-                        \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{power} with \magical abilities.
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power}.
                         \magicaldomainability{Mastery} The power bonus increases to \plus2.
 
                     \subsubsection{Protection Domain}
