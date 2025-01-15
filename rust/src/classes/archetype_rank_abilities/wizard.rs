@@ -288,8 +288,12 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain one of the following insights.
                 Some insights can be chosen multiple times, as indicated in their descriptions.
+                You may spend \glossterm{insight points} to gain access to one additional scholastic insight per two insight points.
 
                 {
+                    \parhead{Arcane Tattoo} You gain a \plus3 bonus to your Fortitude defense, Reflex defense, or Mental defense.
+                    \par You can choose this insight multiple times, choosing a different defense each time.
+
                     \parhead{Esoteric Spell Knowledge} You learn a single spell from any arcane \glossterm{mystic sphere}.
                     You do not not need to have access to that mystic sphere.
                     This does not grant you access to that mystic sphere for any other purposes.
@@ -297,16 +301,17 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \par You can choose this insight multiple times, learning an additional spell each time.
 
                     \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
+                    \par You can choose this insight multiple times, gaining access to an additional mystic sphere each time.
+
+                    \parhead{Soulwoven Spell} Choose a spell you know with the \atAttune tag that is not a \glossterm{deep attunement}.
+                    That spell becomes permanently active on you without requiring an \glossterm{attunement point}.
+                    No outside force can remove it, and you cannot consciously suppress its effects.
+                    If the spell would normally release its own attunement or otherwise end as part of its own effect, it is automatically applied to you again after one minute.
                     \par You cannot choose this insight multiple times.
 
-                    \parhead{Memorized Sphere} % TODO: clarify you need to be high enough rank?
-                    Choose a \glossterm{mystic sphere} you have access to.
-                    You can perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
-                    \par You can choose this insight multiple times, choosing a different \glossterm{mystic sphere} each time.
-
                     \parhead{Sphere Specialization}\nonsectionlabel{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-                    You gain a +2 \glossterm{magical power} bonus and a \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
-                    This power bonus increases to +3 at rank 4, and to +4 at rank 7.
+                    You gain \plus2 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+                    You can also perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
                     \par You cannot choose this insight multiple times.
