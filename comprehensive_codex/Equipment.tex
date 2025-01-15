@@ -252,7 +252,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       Polearms           & Bardiche, glaive, halberd, longhammer, poleaxe, quarterstaff, scythe        & Fauchard, war scythe                                             \\
       Simple weapons     & Club, dagger, mace, quarterstaff                                            & \tdash                                                           \\
       Spears             & Greatspear, javelin, lance, spear, spontoon                                 & Gnomish smallspear, partisan, pike                               \\
-      Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling, throwing axe & Bolas, dwarven throwing axe, dwarven waraxe, net                 \\
+      Thrown weapons     & Dagger, dart, handaxe, javelin, light hammer, shuriken, sling, throwing axe & Dwarven throwing axe, dwarven waraxe, net                 \\
     \end{dtabularx}
     \end{dtable!*}
 
@@ -306,7 +306,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
     \weapontagdef{Grappling} You gain a \plus2 bonus to \glossterm{accuracy} on \glossterm{melee} \glossterm{strikes} using this weapon against creatures who are \grappled by you.
     \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
-    You normally need two hands to use a Heavy weapon.
+    You normally need two hands to use a Heavy weapon, whether you are throwing it or using it in melee.
     Drawing a Heavy item from a sheath, or returning it to a sheath, requires a \glossterm{standard action}.
 
     If you have a Strength of 3 or higher, you draw or sheathe a Heavy item at the same speed as non-Heavy items.
@@ -329,6 +329,9 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Attacking with two weapons at once is more accurate with Light weapons (see \pcref{Dual Strikes}).
     \weapontagdef{Long}\label{Long Weapon} This weapon can be used to make melee \glossterm{strikes} against targets up to 10 feet away from you.
     If you use an ability with more specific targets than simply making a melee strike, such as affecting ``all enemies adjacent to you'', this weapon tag does not increase your range with that ability.
+    \weapontagdef{Maneuverable} Whenever you use a \atBrawling ability that would normally require a free hand, you can use this weapon instead.
+    When you do, you apply any accuracy bonuses that you would normally apply to \glossterm{strikes} with that weapon to the ability.
+    The ability is still not a \glossterm{strike}, and this does not cause you to deal damage with the weapon if you hit with that ability.
     \weapontagdef{Massive} This weapon hits everything in a cube-shaped area.
     Attacks with it are not \glossterm{targeted}, so they are not affected by \glossterm{miss chances}.
     Unlike most area attacks, a miss with a Massive weapon does not deal half damage.
@@ -359,11 +362,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \weapontagdef{Thrown} This weapon is designed to be thrown to deal damage at range.
     Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
     Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
-
-    Heavy thrown weapons are not always physically thrown with two hands, but they require the use of your entire body to propel the weapon.
-    You are not considered to have any \glossterm{free hands} while throwing a heavy thrown weapon.
-    \weapontagdef{Tripping} When you use the \ability{trip} ability, you can attack with this weapon instead of with a free hand (see \pcref{Trip}).
-    This allows you to deal damage with the weapon if you successfully trip the target.
     % Doesn't cost an improvement slot; very situational
     \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
     While holding a Versatile Grip weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon, with a minimum bonus of \plus1.
@@ -401,7 +399,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Battleaxe                   & \plus0        & 1d8         & 0 (10 gp)                   & Sweeping (1), Versatile Grip                \\
           \tind Greataxe                    & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Sweeping (1)                         \\
           \tind Handaxe                     & \plus1        & 1d4         & 0 (10 gp)                   & Light, Thrown (30/60)                       \\
-          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
+          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Maneuverable                             \\
           \tind Shepherd's axe              & \plus0        & 1d8         & 0 (10 gp)                   & Long, Versatile Grip                        \\
           \tind Throwing axe                & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (30/60)                              \\
 
@@ -442,10 +440,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Round bullets (20)          & \tdash        & \tdash      & 0 (2 gp)                    & Ammunition                                  \\
 
           Flexible weapons                  &               &             &                             &                                             \\
-          \tind Flail                       & \plus0        & 1d8         & 0 (10 gp)                   & Tripping, Versatile Grip                    \\
-          \tind Heavy flail                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
+          \tind Flail                       & \plus0        & 1d8         & 0 (10 gp)                   & Maneuverable, Versatile Grip                    \\
+          \tind Heavy flail                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Maneuverable                             \\
           \tind Two-section staff           & \plus2        & 1d6         & 0 (10 gp)                   & Heavy, Long                                 \\
-          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                             \\
+          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Maneuverable                             \\
           \tind Whip\fn{2}                  & \plus1        & 1d4         & 0 (10 gp)                   & Long                                        \\
 
           Headed weapons                    &               &             &                             &                                             \\
@@ -461,7 +459,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Kama                        & \plus1        & 1d4         & 0 (10 gp)                   & Light, Sweeping (1)                         \\
           % -1d for extra throwing range
           \tind Kunai                       & \plus1        & 1d3         & 0 (10 gp)                   & Light, Thrown (60/120)                      \\
-          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Tripping                             \\
+          \tind Nunchaku                    & \plus1        & 1d4         & 0 (10 gp)                   & Light, Maneuverable                             \\
           % -1d
           \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                 \\
           \tind Shuriken (5)                & \plus2        & 1d3         & 0 (10 gp)                   & Ammunition, Compact, Light, Thrown (30/60)  \\
@@ -472,7 +470,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Glaive                      & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Sweeping (1)                   \\
           \tind Halberd                     & \plus1        & 1d8         & 0 (10 gp)                   & Heavy, Long                                 \\
           \tind Longhammer                  & \plus0        & 1d8         & 0 (10 gp)                   & Heavy, Long, Resonating                     \\
-          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Tripping                             \\
+          \tind Poleaxe                     & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Maneuverable                             \\
           % -1d relative to normal Heavy
           \tind Quarterstaff                & \plus1        & 1d6         & \tdash                      & Heavy, Long                                 \\
           \tind Scythe                      & \plus1        & 1d6         & 0 (10 gp)                   & Heavy, Sweeping (2)                         \\
@@ -543,7 +541,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Titanbow\fn{2}           & \minus1       & 1d8         & 2 (200 gp)                  & Bow, Heavy, Projectile (60/180)    \\
           Club-like weapons              &               &             &                             &                                    \\
           \tind Culacula                 & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Impact, Parrying            \\
-          \tind Gnomish trick mace       & \plus2        & 1d4         & 0 (10 gp)                   & Light, Tripping                    \\
+          \tind Gnomish trick mace       & \plus2        & 1d4         & 0 (10 gp)                   & Light, Maneuverable                    \\
           \tind Knobkerrie               & \plus1        & 1d6         & 0 (10 gp)                   & Impact, Throwing (30/60)           \\
           \tind Totokia                  & \plus0        & 1d10        & 0 (10 gp)                   & Impact, Versatile Grip             \\
           Crossbows                      &               &             &                             &                                    \\
@@ -553,18 +551,18 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Repeating bolts (5)      & \plus0        & \tdash      & 1 (10 gp)                   & Ammunition                         \\
           Flexible weapons               &               &             &                             &                                    \\
           \tind Bladed whip\fn{2}        & \plus0        & 1d6         & 1 (40 gp)                   & Keen, Long, Sweeping (1)           \\
-          \tind Chain whip               & \plus0        & 1d8         & 1 (40 gp)                   & Long, Tripping                     \\
-          \tind Meteor hammer            & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Long, Tripping              \\
-          \tind Three-section staff      & \plus1        & 1d6         & 1 (40 gp)                   & Heavy, Long, Parrying, Tripping    \\
+          \tind Chain whip               & \plus0        & 1d8         & 1 (40 gp)                   & Long, Maneuverable                     \\
+          \tind Meteor hammer            & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Long, Maneuverable              \\
+          \tind Three-section staff      & \plus1        & 1d6         & 1 (40 gp)                   & Heavy, Long, Maneuverable, Parrying    \\
           Headed weapons                 &               &             &                             &                                    \\
           \tind Dwarven longhammer       & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Long, Resonating            \\
           \tind Dwarven shorthammer      & \plus0        & 1d6         & 1 (40 gp)                   & Light, Thrown (60/120)             \\
           \tind Heavy pick               & \plus0        & 1d10        & 1 (40 gp)                   & Heavy, Keen, Impact                \\
-          \tind Obuch                    & \plus0        & 1d8         & 1 (40 gp)                   & Long, Tripping, Versatile Grip     \\
+          \tind Obuch                    & \plus0        & 1d8         & 1 (40 gp)                   & Long, Maneuverable, Versatile Grip     \\
           Monk weapons                   &               &             &                             &                                    \\
-          \tind Hook sword               & \plus1        & 1d6         & 1 (40 gp)                   & Light, Tripping                    \\
+          \tind Hook sword               & \plus1        & 1d6         & 1 (40 gp)                   & Light, Maneuverable                    \\
           \tind Sai                      & \plus1        & 1d4         & 0 (10 gp)                   & Grappling, Light, Parrying         \\
-          \tind Three-section staff      & \plus1        & 1d6         & 1 (40 gp)                   & Heavy, Long, Parrying, Tripping    \\
+          \tind Three-section staff      & \plus1        & 1d6         & 1 (40 gp)                   & Heavy, Long, Maneuverable, Parrying    \\
           \tind War fan\fn{2}            & \plus1        & 1d4         & 1 (40 gp)                   & Light, Parrying                    \\
           Polearms                       &               &             &                             &                                    \\
           \tind Fauchard                 & \minus1       & 2d6         & 1 (40 gp)                   & Heavy, Long, Sweeping (1)          \\
@@ -575,8 +573,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Partisan                 & \plus1        & 1d8         & 1 (40 gp)                   & Heavy, Long, Parrying              \\
           \tind Pike\fn{2}               & \plus0        & 1d10        & 0 (10 gp)                   & Heavy, Long                        \\
           Thrown weapons                 &               &             &                             &                                    \\
-          % -1d because thrown + tripping is extra good?
-          \tind Bolas                    & \plus1        & 1d3         & 0 (10 gp)                   & Light, Thrown (30/60), Tripping    \\
+          % It's currently not clear how bolas could be used to trip from range without solving weird range issues and likely balance issues
+          % \tind Bolas                    & \plus1        & 1d3         & 0 (10 gp)                   & Light, Maneuverable, Thrown (30/60)    \\
           \tind Dwarven throwing axe     & \plus0        & 1d8         & 0 (10 gp)                   & Thrown (60/120)                    \\
           \tind Dwarven waraxe           & \plus0        & 1d10        & 1 (40 gp)                   & Thrown (30/60), Versatile Grip     \\
           \tind Net\fn{2}                & \plus0        & \tdash      & 0 (10 gp)                   & Massive (10), Thrown (5/15)        \\
@@ -767,7 +765,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \end{activeability}
 
       % Battleaxe 1d8 damage, Sweeping (1)
-      % 1H Mithral greataxe: 1d10 damage, Sweeping (1). So you're basically paying a special material cost for +1 weapon damage.
+      % 1H mithral greataxe: 1d10 damage, Sweeping (1). So you're basically paying a special material cost for +1 weapon damage.
       % More generally, this is basically adding +1 weapon upgrade to a given weapon.
       \parhead{Mithral} A non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
       A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.
