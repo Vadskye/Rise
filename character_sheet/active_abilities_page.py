@@ -746,11 +746,10 @@ def universal_abilities():
             universal_ability_button(
                 "Trip",
                 """
-                    Make a melee attack with a free hand or a Tripping weapon against a creature's Fortitude and Reflex defenses.
+                    Make a brawling attack vs. Fortitude with a free hand against an adjacent creature.
                     On a hit, the target becomes prone.
-                    If you used a Tripping weapon and beat the target's Armor defense, it also takes damage from the weapon.
                  """,
-                attack={"accuracy": "@{accuracy}", "defense": "Ref", "tags": ["Brawling", "Size-Based"]},
+                attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),
         ],
     )
