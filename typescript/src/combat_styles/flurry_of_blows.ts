@@ -162,7 +162,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You can sheathe any weapons you wield, then draw one or two weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
+        Then, you can make a \\glossterm{strike}.
       `,
       rank: 3,
     },
