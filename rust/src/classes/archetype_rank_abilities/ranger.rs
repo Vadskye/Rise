@@ -17,7 +17,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
                     \abilityusagetime 8 hours of training, which the target must actively participate in.
                     \rankline
-                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} that you \glossterm{touch}.
+                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within \shortrange.
                     Its level must not exceed your level.
                     The target serves as a loyal companion to you.
                     It follows your directions to the best of its ability.
