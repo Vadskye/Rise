@@ -25,6 +25,8 @@ fn main() -> io::Result<()> {
 fn write_character_goldens() -> io::Result<()> {
     golden_file_generation::write_class_statistics_golden()
         .expect("Should write class statistics golden");
+    golden_file_generation::write_class_complexity_golden()
+        .expect("Should write class complexity golden");
     golden_file_generation::write_fighter_greatmace_attacks_golden()
         .expect("Should write fighter greatmace attacks");
     golden_file_generation::write_fighter_shield_attacks_golden()

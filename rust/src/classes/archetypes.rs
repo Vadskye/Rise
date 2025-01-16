@@ -222,6 +222,25 @@ impl ClassArchetype {
         }
     }
 
+    pub fn complexity_at_rank(&self, rank: i32) -> i32 {
+        let abilities = self.abilities_at_rank(rank);
+        let mut complexity = 0;
+        for ability in abilities {
+            complexity += ability.complexity;
+        }
+
+        complexity
+    }
+
+    pub fn complexity_by_rank(&self, max_rank: i32) -> i32 {
+        let mut complexity = 0;
+        for rank in 1..(max_rank+1) {
+            complexity += self.complexity_at_rank(rank);
+        }
+
+        complexity
+    }
+
     pub fn abilities_at_rank(&self, rank: i32) -> Vec<RankAbility> {
         return archetype_rank_abilities(self)
             .into_iter()

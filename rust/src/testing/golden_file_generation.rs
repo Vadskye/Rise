@@ -1,4 +1,5 @@
 mod accuracy;
+mod attribute_statistics;
 mod character_attacks;
 mod character_statistics;
 mod class_statistics;
@@ -8,7 +9,6 @@ mod monster_to_section;
 mod rounds_to_live;
 mod run_combat;
 mod write_golden_file;
-mod attribute_statistics;
 
 pub use accuracy::{write_pve_accuracy_golden, write_pvp_accuracy_golden};
 pub use attribute_statistics::write_attribute_statistics_golden;
@@ -18,7 +18,7 @@ pub use character_attacks::{
     write_mystic_attacks_golden, write_perception_greataxe_attacks_golden,
 };
 pub use character_statistics::write_standard_character_statistics_golden;
-pub use class_statistics::write_class_statistics_golden;
+pub use class_statistics::{write_class_complexity_golden, write_class_statistics_golden};
 pub use defenses::{write_character_defenses_golden, write_monster_defenses_golden};
 pub use monster_attacks::write_monster_attacks_golden;
 pub use monster_to_section::write_monster_to_section_golden;
