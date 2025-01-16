@@ -437,7 +437,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         4 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
                         5 & The spell's area is halved this round \\
                         6 & The spell's area is doubled this round \\
-                        7 & On your first attack with the spell, it \glossterm{chains} once to the closest unaffected creature, choosing randomly between equally close creatures \\
+                        7 & On your first attack with the spell, it \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & On your first attack with the spell, you roll twice for the attack roll and keep the higher result \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
@@ -449,12 +449,14 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 Any wildspell effects that do not make sense for a particular spell have no effect.
 
                 The extra damage increases as your rank in this archetype increases:
-                \rank{2} The extra damage increases to 1d6.
-                \rank{3} The extra damage increases to 1d8.
-                \rank{4} The extra damage increases to 2d6.
-                \rank{5} The extra damage increases to 2d8.
-                \rank{6} The extra damage increases to 2d10.
-                \rank{7} The extra damage increases to 4d8.
+                % Use a slightly slower progression than normal for extra damage.
+                % At higher levels, a sorcerer has more tools to mitigate the downsides of wildspell, and the extra damage is strong.
+                \rank{2} The extra damage increases to 1d6.   % +38% damage
+                \rank{3} The extra damage increases to 1d8.   % +35% damage
+                \rank{4} The extra damage increases to 1d10.  % +30% damage
+                \rank{5} The extra damage increases to 2d6.   % +27% damage
+                \rank{6} The extra damage increases to 3d6.   % +29% damage
+                \rank{7} The extra damage increases to 4d6.   % +27% damage
             ",
             // TODO: define extra damage modifier for scaling
             modifiers: Some(vec![Modifier::Power(2)]),
@@ -468,7 +470,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 If you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
                 You do not gain any bonus to the wild magic reroll.
             ",
-            modifiers: Some(vec![Modifier::Power(1)]),
+            modifiers: None,
         },
         RankAbility {
             complexity: 0,
@@ -486,7 +488,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         4 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
                         5 & The spell's area is doubled this round \\
                         6 & The spell's area is tripled this round \\
-                        7 & On your first attack with the spell, it \glossterm{chains} twice to the closest unaffected creatures, choosing randomly between equally close creatures \\
+                        7 & On your first attack with the spell, it \glossterm{chains} twice to the unaffected creatures that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
