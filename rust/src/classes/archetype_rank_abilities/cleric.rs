@@ -179,9 +179,9 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 You must choose your domains from among those your deity offers.
                 The domains are listed below.
 
-                Each domain has a corresponding \textit{domain gift}.
+                Each domain has a corresponding domain gift.
                 A domain gift is a passive ability that reinforces your ability to embody your domain.
-                You gain the \textit{domain gift} for both of your domains (see \pcref{Cleric Domain Abilities}).
+                You gain the domain gift for both of your domains (see \pcref{Cleric Domain Abilities}).
 
                 \begin{itemize}
                     \item{Air}
@@ -215,9 +215,9 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Each domain has a corresponding \textit{domain aspect}.
+                Each domain has a corresponding domain aspect.
                 A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
-                You gain the \textit{domain aspect} ability for one of your domains (see \pcref{Cleric Domain Abilities}).
+                You gain the domain aspect ability for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             // Domain aspects are also weird. Some give statistical benfits, but many don't
             modifiers: None,
@@ -228,7 +228,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                At rank 3, you gain the \textit{domain aspect} for another one of your domains.
+                You gain the domain aspect for another one of your domains.
             ",
             modifiers: None,
         },
@@ -238,8 +238,8 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Each domain has a corresponding \textit{domain essence}.
-                You gain the \textit{domain essence} for both of your domains (see \pcref{Cleric Domain Abilities}).
+                Each domain has a corresponding domain essence.
+                You gain the domain essence for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             modifiers: None,
         },
@@ -279,13 +279,23 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Domain Masteries",
+            complexity: 1,
+            name: "Domain Mastery",
             is_magical: false,
             rank: 6,
             description: r"
                 Each domain has a corresponding \textit{domain mastery}.
-                You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
+                You gain the \textit{domain mastery} for one of your domains (see \pcref{Cleric Domain Abilities}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Domain Mastery+",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                You gain the domain mastery for another one of your domains.
             ",
             modifiers: None,
         },
