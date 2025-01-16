@@ -437,7 +437,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Pact Spells",
             is_magical: true,
             rank: 1,

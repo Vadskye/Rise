@@ -7,7 +7,7 @@ use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Arcane Spells",
             is_magical: true,
             rank: 1,

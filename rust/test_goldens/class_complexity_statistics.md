@@ -9,7 +9,7 @@
 * Totemist: 5
             
 ## cleric
-* Divine Magic: 4
+* Divine Magic: 5
 * Divine Spell Mastery: 4
 * Domain Influence: 6
 * Healer: 5
@@ -17,7 +17,7 @@
             
 ## druid
 * Elementalist: 7
-* Nature Magic: 4
+* Nature Magic: 5
 * Nature Spell Mastery: 5
 * Shifter: 6
 * Wildspeaker: 5
@@ -38,7 +38,7 @@
             
 ## paladin
 * Devoted Paragon: 4
-* Divine Magic: 4
+* Divine Magic: 5
 * Divine Spell Expertise: 5
 * Stalwart Guardian: 2
 * Zealous Warrior: 5
@@ -58,7 +58,7 @@
 * Suave Scoundrel: 5
             
 ## sorcerer
-* Arcane Magic: 5
+* Arcane Magic: 6
 * Arcane Spell Mastery: 4
 * Draconic Magic: 5
 * Innate Arcanist: 5
@@ -67,12 +67,12 @@
 ## warlock
 * Blessings of the Abyss: 4
 * Keeper of Forbidden Knowledge: 5
-* Pact Magic: 4
+* Pact Magic: 5
 * Pact Spell Mastery: 4
 * Soulkeeper's Chosen: 5
             
 ## wizard
-* Arcane Magic: 5
+* Arcane Magic: 6
 * Arcane Spell Mastery: 6
 * Alchemist: 8
 * Arcane Scholar: 7

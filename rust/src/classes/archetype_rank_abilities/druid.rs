@@ -205,7 +205,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Nature Spells",
             is_magical: true,
             rank: 1,
