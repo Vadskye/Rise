@@ -147,7 +147,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Arcane Spells",
             is_magical: true,
             rank: 1,

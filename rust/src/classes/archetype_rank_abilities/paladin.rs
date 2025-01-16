@@ -129,7 +129,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Divine Spells",
             is_magical: true,
             rank: 1,
