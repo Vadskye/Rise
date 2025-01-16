@@ -134,12 +134,12 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            complexity: 1,
-            name: "Fearless Anger",
+            complexity: 0,
+            name: "Amplified Anger",
             is_magical: false,
             rank: 2,
             description: r"
-                You are immune to being \frightened and \panicked.
+                You gain a \plus1 bonus to your \glossterm{mundane power}.
             ",
             modifiers: None,
         },
@@ -188,12 +188,12 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Unwavering Anger",
+            complexity: 0,
+            name: "Amplified Anger+",
             is_magical: false,
             rank: 6,
             description: r"
-                You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
+                The power bonus increases to +2.
             ",
             modifiers: None,
         },
@@ -491,7 +491,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Bear} The accuracy bonus increases to \plus3.
 
-                \subcf{Crocodile} The creature does not have to lose hit points for you to knock it prone or grapple it.
+                \subcf{Crocodile} If your attack hits the target's Fortitude defense, it does not have to lose hit points for you to knock it prone or grapple it.
 
                 % Too much?
                 \subcf{Eagle} The Perception bonus increases to \plus2.
