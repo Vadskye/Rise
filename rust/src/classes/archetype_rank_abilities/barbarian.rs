@@ -455,7 +455,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.
 
-                \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
+                \subcf{Shark} You gain a \plus2 \glossterm{accuracy} bonus against creatures within \shortrange of you that are below their maximum hit points.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -526,12 +526,12 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Animal Ferocity",
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus2 bonus to your accuracy for the purpose of determining whether you get a \glossterm{critical hit}.
+                You gain a \plus1 accuracy bonus.
             ",
             // TODO: figure out how to represent this
             modifiers: None,
