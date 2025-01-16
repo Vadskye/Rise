@@ -444,16 +444,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Pact Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional pact spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Pact Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional pact spell.
             ",
@@ -471,7 +462,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Survival Pact+",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"        
                 The bonus increases to twice your rank in this archetype.
             ",
@@ -480,7 +471,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Survival Pact+",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
                 The bonus increases to three times your rank in this archetype.
             ",
@@ -624,6 +615,8 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                         \item You take a \minus2 penalty to your Fortitude and Mental defenses.
                         \item Whenever you gain a \glossterm{vital wound}, you also increase your \glossterm{fatigue level} by one.
                     \end{itemize}
+
+                    Because this ability has the \atSwift tag, the defense penalties apply to attacks against you during the current phase.
 
                     \rankline
                     \rank{2} The extra damage increases to 1d6.
