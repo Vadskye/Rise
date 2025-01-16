@@ -176,11 +176,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Unwavering Rage",
+            name: "Unwavering Anger",
             is_magical: false,
             rank: 6,
             description: r"
-                You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks during your \ability{rage} ability.
+                You are immune to \glossterm{Compulsion} and \glossterm{Emotion} attacks.
             ",
             modifiers: None,
         },

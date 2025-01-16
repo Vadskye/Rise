@@ -44,16 +44,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Arcane Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional arcane spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Arcane Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional arcane spell.
             ",
@@ -85,7 +76,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mage Armor+",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"        
                 The damage resistance bonus increases to four times your rank in this archetype.
             ",
@@ -94,7 +85,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mage Armor+",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype.
             ",
