@@ -6,7 +6,7 @@ use crate::skills::Skill;
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Divine Spells",
             is_magical: true,
             rank: 1,
