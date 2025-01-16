@@ -29,7 +29,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         },
         // Like Smite, but only adds half Str instead of full Str and has extra tags
         RankAbility {
-            complexity: 1,
+            // Ignore complexity, assume you are a caster
+            complexity: 0,
             name: "Elemental Infusion",
             is_magical: true,
             rank: 1,
@@ -53,7 +54,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
         RankAbility {
-            complexity: 1,
+            // Ignore complexity, assume you are a caster
+            complexity: 0,
             name: "Elemental Tranquility",
             is_magical: true,
             rank: 4,
