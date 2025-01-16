@@ -153,10 +153,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Massive Aquarium',
 
       effect: `
-        You create a self-contained body of water in a \\medarea radius cylinder-shaped \\glossterm{zone} within \\medrange.
+        You create a self-contained body of water in a 20 foot radius cylinder-shaped \\glossterm{zone} within \\medrange.
         Everything inside the area is underwater (see \\pcref{Fighting While Swimming}).
       `,
-      rank: 7,
+      rank: 6,
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
