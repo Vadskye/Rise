@@ -119,20 +119,23 @@ fn format_class_detailed(class: Class, level: i32) -> String {
 pub fn write_class_complexity_golden() -> io::Result<()> {
     fn archetype_complexity(archetype: ClassArchetype) -> String {
         format!(
-            "* {archetype}: {complexity}",
+            "* {archetype}: {complexity3} / {complexity7}",
             archetype = archetype.name(),
-            // Arbitrarily stop counting complexity at rank 4, which is halfway to max level
-            complexity = archetype.complexity_by_rank(4),
+            // The first few ranks are the most important for scaring people away
+            complexity3 = archetype.complexity_by_rank(3),
+            complexity7 = archetype.complexity_by_rank(7),
         )
     }
 
     fn class_complexity(class: Class) -> String {
         format!(
             "
-## {class}
+## {class}: {total3} / {total7}
 {archetypes}
             ",
             class = class.name(),
+            total3 = class.archetypes().into_iter().map(|a| a.complexity_by_rank(3)).sum::<i32>(),
+            total7 = class.archetypes().into_iter().map(|a| a.complexity_by_rank(7)).sum::<i32>(),
             archetypes = class
                 .archetypes()
                 .into_iter()
@@ -145,6 +148,8 @@ pub fn write_class_complexity_golden() -> io::Result<()> {
     let golden = format!(
         "
 # Class Complexity Statistics
+
+Complexity is calculated at (rank 3 / rank 7).
 
 {classes}
         ",
