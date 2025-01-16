@@ -333,8 +333,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus6.
+                        \rank{6} The bonus increases to \plus8.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}
@@ -380,8 +380,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus6.
+                        \rank{6} The bonus increases to \plus8.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}
@@ -411,8 +411,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus6.
+                        \rank{6} The bonus increases to \plus8.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Scale the Highest Tower}
@@ -422,8 +422,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         % TODO: is this wording correct?
 
                         \rankline
-                        \rank{4} The Climb bonus increases to \plus8.
-                        \rank{6} The bonus increases to \plus12.
+                        \rank{4} The bonus increases to \plus6.
+                        \rank{6} The bonus increases to \plus8.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]

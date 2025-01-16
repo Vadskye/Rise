@@ -317,8 +317,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                         \rankline
-                        \rank{4} The Awareness penalty increases to \minus8.
-                        \rank{6} The Awareness penalty increases to \minus12.
+                        \rank{4} The Awareness penalty increases to \minus6.
+                        \rank{6} The Awareness penalty increases to \minus8.
                     \end{activeability}
 
                     \begin{activeability}{Cover Weaknesses}
