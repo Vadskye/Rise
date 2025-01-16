@@ -31,7 +31,7 @@
             
 ## monk
 * Airdancer: 5
-* Esoteric Warrior: 8
+* Esoteric Warrior: 7
 * Ki: 5
 * Perfected Form: 3
 * Transcendent Sage: 3

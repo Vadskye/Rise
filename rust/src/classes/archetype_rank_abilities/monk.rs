@@ -218,7 +218,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -228,7 +228,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
