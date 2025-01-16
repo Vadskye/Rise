@@ -46,15 +46,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Portable Workshop+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                The number of items you can simultaneously create and maintain with this ability increases to eight.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             name: "Alchemical Discovery",
             is_magical: true,
             rank: 2,
@@ -109,15 +100,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain a +1 \glossterm{accuracy} bonus with alchemical items.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Alchemical Precision+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The accuracy bonus increases to +2.
             ",
             modifiers: None,
         },
@@ -193,16 +175,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Arcane Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional arcane spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Arcane Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional arcane spell.
             ",
@@ -237,7 +210,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mage Armor+",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"        
                 The damage resistance bonus increases to four times your rank in this archetype.
             ",
@@ -247,7 +220,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             name: "Mage Armor+",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
                 The damage resistance bonus increases to five times your rank in this archetype.
             ",
