@@ -3,10 +3,10 @@
 Complexity is calculated at (rank 3 / rank 7).
 
 
-## barbarian: 21 / 29
+## barbarian: 20 / 28
 * Battleforged Resilience: 3 / 5
 * Battlerager: 3 / 5
-* Outland Savage: 5 / 7
+* Outland Savage: 4 / 6
 * Primal Warrior: 6 / 6
 * Totemist: 4 / 6
             

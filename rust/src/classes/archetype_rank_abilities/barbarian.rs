@@ -251,7 +251,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
-            complexity: 2,
+            complexity: 1,
             name: "Versatile Savagery",
             is_magical: false,
             rank: 2,
@@ -446,7 +446,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 You choose a totem animal that represents you.
                 Each totem animal grants you abilities that are associated with that animal.
 
-                \subcf{Bear} Whenever you take damage from a creature other than yourself, you \glossterm{briefly} gain a \plus2 accuracy bonus.
+                \subcf{Bear} You add half your Constitution to your \glossterm{mundane power}.
 
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it into any space adjacent to you.
                 This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
@@ -454,7 +454,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
-                \subcf{Lion} You gain a \plus1 bonus to \glossterm{accuracy} as long as you have an \glossterm{ally} adjacent to you.
+                \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.
 
                 \subcf{Shark} You gain a \plus2 bonus to \glossterm{accuracy} against creatures within \shortrange of you that are below their maximum hit points.
             ",
@@ -470,14 +470,14 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves.
 
-                \subcf{Bear} The accuracy bonus is doubled if that damage caused you to gain a \glossterm{vital wound}.
+                \subcf{Bear} You add half your Constitution to Climb, Swim, and Strength checks.
 
                 \subcf{Crocodile} If the creature loses \glossterm{hit points} from the strike, you can also knock it \prone or enter a grapple with it (see \pcref{Grappling}).
                 This is a \abilitytag{Size-Based} ability.
 
                 \subcf{Eagle} You gain a \plus1 bonus to your Perception.
 
-                \subcf{Lion} The accuracy bonus applies as long as an ally is within \shortrange of you.
+                \subcf{Lion} You add half your Willpower to your accuracy with \atAuditory attacks.
 
                 \subcf{Shark} The accuracy bonus increases to \plus3.
             ",
@@ -491,14 +491,14 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefit from your \textit{totem animal} ability improves further.
 
-                \subcf{Bear} The accuracy bonus increases to \plus3.
+                \subcf{Bear} You gain a \plus1 bonus to your Constitution.
 
                 \subcf{Crocodile} If your attack hits the target's Fortitude defense, it does not have to lose hit points for you to knock it prone or grapple it.
 
                 % Too much?
                 \subcf{Eagle} The Perception bonus increases to \plus2.
 
-                \subcf{Lion} The accuracy bonus increases to \plus2.
+                \subcf{Lion} You gain a \plus1 bonus to your Willpower.
 
                 \subcf{Shark} The accuracy bonus increases to \plus4.
             ",
