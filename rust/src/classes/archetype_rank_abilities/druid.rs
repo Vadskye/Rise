@@ -459,7 +459,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you have the ability to move on all four limbs.
                         When doing so, you become \trait{multipedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
                         This gives you a \plus10 foot bonus to your \glossterm{land speed} and a \plus5 bonus to the Balance skill.
-                        In addition, your bite gains the \weapontag{Heavy} weapon tag.
+                        Your bite also gains the \weapontag{Heavy} weapon tag while you are multipedal in this way.
 
                         When not using your hands to move, your ability to use your hands is unchanged.
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
