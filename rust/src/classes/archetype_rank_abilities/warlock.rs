@@ -9,6 +9,7 @@ use super::standard_modifiers::add_standard_spell_modifiers;
 pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 1,
@@ -35,6 +36,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 2,
@@ -44,6 +46,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 3,
@@ -53,6 +56,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 4,
@@ -62,6 +66,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 5,
@@ -71,6 +76,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 6,
@@ -80,6 +86,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 0,
             name: "Abyssal Rebuke",
             is_magical: true,
             rank: 7,
@@ -89,6 +96,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 1,
             name: "Abyssal Magic",
             is_magical: true,
             rank: 2,
@@ -99,6 +107,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Abyssal Magic+",
             is_magical: true,
             rank: 5,
@@ -108,6 +117,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Resist the Dark Call",
             is_magical: true,
             rank: 2,
@@ -118,6 +128,8 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            // Ignore complexity because we're assuming pact magic
+            complexity: 0,
             name: "Resist the Dark Call+",
             is_magical: true,
             rank: 5,
@@ -128,6 +140,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Banish to the Abyss",
             is_magical: true,
             rank: 3,
@@ -151,6 +164,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Hellfire",
             is_magical: true,
             rank: 4,
@@ -163,6 +177,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Hellfire+",
             is_magical: true,
             rank: 7,
@@ -172,11 +187,12 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
-            name: "Abyssal Curse",
+            complexity: 1,
+            name: "Curse of Abyssal Torment",
             is_magical: true,
             rank: 6,
             description: r"
-                \begin{magicalactiveability}{Abyssal Curse}[\abilitytag{Curse}]
+                \begin{magicalactiveability}{Curse of Abyssal Torment}[\abilitytag{Curse}]
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Fortitude against one creature or object within \rngmed range.
@@ -195,6 +211,7 @@ pub fn blessings_of_the_abyss<'a>() -> Vec<RankAbility<'a>> {
 pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 0,
             name: "Reader of Hidden Tomes",
             is_magical: true,
             rank: 1,
@@ -204,6 +221,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 1,
@@ -234,6 +252,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret+",
             is_magical: true,
             rank: 4,
@@ -250,6 +269,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret+",
             is_magical: true,
             rank: 7,
@@ -267,6 +287,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 2,
@@ -274,6 +295,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(6)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 3,
@@ -281,6 +303,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(9)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 4,
@@ -288,6 +311,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(20)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 5,
@@ -295,6 +319,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(25)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 6,
@@ -302,6 +327,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(30)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Eldritch Secret",
             is_magical: true,
             rank: 7,
@@ -309,6 +335,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::DamageResistance(49)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Unnatural Insight",
             is_magical: true,
             rank: 2,
@@ -344,6 +371,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Unnatural Insight+",
             is_magical: true,
             rank: 5,
@@ -377,6 +405,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Lore of Corrupting Power",
             is_magical: true,
             rank: 3,
@@ -392,6 +421,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Lore of Corrupting Power+",
             is_magical: true,
             rank: 6,
@@ -407,6 +437,7 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Pact Spells",
             is_magical: true,
             rank: 1,
@@ -433,6 +464,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Pact Spells+",
             is_magical: true,
             rank: 2,
@@ -442,6 +474,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Pact Spells+",
             is_magical: true,
             rank: 5,
@@ -451,6 +484,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Survival Pact",
             is_magical: true,
             rank: 1,
@@ -460,6 +494,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Survival Pact+",
             is_magical: true,
             rank: 4,
@@ -469,6 +504,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Survival Pact+",
             is_magical: true,
             rank: 7,
@@ -485,6 +521,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Metamagic",
             is_magical: true,
             rank: 1,
@@ -519,6 +556,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 4,
@@ -528,6 +566,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 7,
@@ -538,6 +577,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Desperate Pact",
             is_magical: true,
             rank: 2,
@@ -551,6 +591,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
@@ -560,6 +601,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Attunement Point",
             is_magical: true,
             rank: 5,
@@ -569,6 +611,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
             rank: 6,
@@ -596,6 +639,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
         // * 6: 35.8,   11.9, 11
         // * 7: 51.2, 17, 18
         RankAbility {
+            complexity: 2,
             name: "Possession",
             is_magical: true,
             rank: 1,
@@ -636,6 +680,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Empowering Whispers",
             is_magical: true,
             rank: 2,
@@ -658,6 +703,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Empowering Whispers+",
             is_magical: true,
             rank: 6,
@@ -679,6 +725,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Exchange Soul Fragment",
             is_magical: true,
             rank: 3,
@@ -701,6 +748,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Unwavering Possession",
             is_magical: true,
             rank: 4,
@@ -710,6 +758,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Exchange Vitality",
             is_magical: true,
             rank: 5,
@@ -725,6 +774,7 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Soul Fountain",
             is_magical: true,
             rank: 7,
