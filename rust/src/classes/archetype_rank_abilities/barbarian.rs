@@ -8,6 +8,7 @@ use super::standard_modifiers::{add_hp_scaling, add_standard_maneuver_modifiers}
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 2,
             name: "Instant Recovery",
             is_magical: false,
             rank: 1,
@@ -18,6 +19,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Battle-Scarred",
             is_magical: false,
             rank: 2,
@@ -29,6 +31,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Battle-Scarred+",
             is_magical: false,
             rank: 6,
@@ -41,6 +44,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
         // encourages high-defense barbarians, which is weird; barbarians should generally be more
         // low-defense than fighters, but higher survivability.
         RankAbility {
+            complexity: 1,
             name: "Resilient Blow",
             is_magical: false,
             rank: 3,
@@ -61,6 +65,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Primal Resilience",
             is_magical: false,
             rank: 4,
@@ -70,6 +75,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Limitless Recovery",
             is_magical: false,
             rank: 5,
@@ -80,6 +86,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Unbreakable",
             is_magical: false,
             rank: 7,
@@ -99,6 +106,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
 pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Rage",
             is_magical: false,
             rank: 1,
@@ -126,6 +134,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Fearless Anger",
             is_magical: false,
             rank: 2,
@@ -135,6 +144,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Aggravated Violence",
             is_magical: false,
             rank: 3,
@@ -157,6 +167,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Primal Brawn",
             is_magical: false,
             rank: 4,
@@ -166,6 +177,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Strength, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Insensible Anger",
             is_magical: false,
             rank: 5,
@@ -176,6 +188,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Unwavering Anger",
             is_magical: false,
             rank: 6,
@@ -185,6 +198,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Titanic Rage",
             is_magical: false,
             rank: 7,
@@ -203,6 +217,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
 pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Savage Precision",
             is_magical: false,
             rank: 1,
@@ -212,6 +227,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Savage Precision+",
             is_magical: false,
             rank: 5,
@@ -221,6 +237,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Outlandish Weaponry",
             is_magical: false,
             rank: 1,
@@ -232,6 +249,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
+            complexity: 2,
             name: "Versatile Savagery",
             is_magical: false,
             rank: 2,
@@ -244,6 +262,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Savage Rush",
             is_magical: false,
             rank: 3,
@@ -266,6 +285,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Primal Agility",
             is_magical: false,
             rank: 4,
@@ -275,6 +295,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Endless Rush",
             is_magical: false,
             rank: 6,
@@ -284,6 +305,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Primal Rush",
             is_magical: false,
             rank: 7,
@@ -299,6 +321,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
 pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Primal Maneuvers",
             is_magical: false,
             rank: 1,
@@ -321,6 +344,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Primal Maneuvers+",
             is_magical: false,
             rank: 3,
@@ -331,6 +355,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Primal Maneuvers+",
             is_magical: false,
             rank: 5,
@@ -340,16 +365,17 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Primal Maneuvers+",
             is_magical: false,
             rank: 7,
             description: r"
-                You learn an additional primal maneuver.
-                In addition, you gain access to rank 7 primal maneuvers.
+                You gain access to rank 7 primal maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
@@ -383,6 +409,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -392,6 +419,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
@@ -408,6 +436,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
 pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Totem Animal",
             is_magical: false,
             rank: 1,
@@ -431,6 +460,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            // Varies between animal
+            complexity: 1,
             name: "Totem Animal+",
             is_magical: false,
             rank: 4,
@@ -451,6 +482,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Totem Animal+",
             is_magical: false,
             rank: 7,
@@ -471,6 +503,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Feral Frenzy",
             is_magical: false,
             rank: 3,
@@ -492,6 +525,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Ferocity",
             is_magical: false,
             rank: 5,
@@ -502,6 +536,8 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            // Varies between animals
+            complexity: 1,
             name: "Animal Instincts",
             is_magical: false,
             rank: 2,
@@ -522,6 +558,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Animal Instincts+",
             is_magical: false,
             rank: 6,

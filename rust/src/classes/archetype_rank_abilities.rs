@@ -18,6 +18,24 @@ mod wizard;
 
 #[derive(Default)]
 pub struct RankAbility<'a> {
+    // 0:
+    //  * universal statistical benefit (hp, global accuracy/power, attribute)
+    //  * numerical upgrade to existing ability
+    // 1:
+    //  * new standard action active ability
+    //  * removal of a universal limitation (recover limit)
+    //  * conditional defense (impervious)
+    //  * statistical benefit with limited scope (Brawling, exotic weapons, accuracy with crits)
+    //  * attunement point
+    // 2:
+    //  * new minor action
+    //  * new optional triggered ability
+    //  * new stance (rage, possession)
+    //  * new complex category of limited scope statistical benefits (metamagic, maneuver augments)
+    //  * new spell from outside your mystic spheres, due to book diving
+    // 3:
+    //  * new complex category of active abilities (maneuvers, spells)
+    pub complexity: i32,
     pub description: &'a str,
     pub is_magical: bool,
     pub modifiers: Option<Vec<Modifier>>,

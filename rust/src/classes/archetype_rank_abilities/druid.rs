@@ -6,6 +6,7 @@ use crate::creatures::Modifier;
 pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Elemental Spell",
             is_magical: true,
             rank: 1,
@@ -17,6 +18,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Elemental Spell+",
             is_magical: true,
             rank: 4,
@@ -27,6 +29,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
         },
         // Like Smite, but only adds half Str instead of full Str and has extra tags
         RankAbility {
+            complexity: 1,
             name: "Elemental Infusion",
             is_magical: true,
             rank: 1,
@@ -50,6 +53,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
         },
         RankAbility {
+            complexity: 1,
             name: "Elemental Tranquility",
             is_magical: true,
             rank: 4,
@@ -59,6 +63,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Elemental Infusion",
             is_magical: true,
             rank: 3,
@@ -66,6 +71,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(3))]),
         },
         RankAbility {
+            complexity: 0,
             name: "Elemental Infusion",
             is_magical: true,
             rank: 5,
@@ -73,6 +79,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(5))]),
         },
         RankAbility {
+            complexity: 0,
             name: "Elemental Infusion",
             is_magical: true,
             rank: 7,
@@ -80,6 +87,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(7))]),
         },
         RankAbility {
+            // so much text
+            complexity: 2,
             name: "Elemental Influence",
             is_magical: true,
             rank: 3,
@@ -116,6 +125,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Elemental Power",
             is_magical: true,
             rank: 3,
@@ -125,6 +135,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Elemental Power+",
             is_magical: true,
             rank: 6,
@@ -134,6 +145,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Elemental Balance",
             is_magical: true,
             rank: 2,
@@ -150,6 +162,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Elemental Balance+",
             is_magical: true,
             rank: 7,
@@ -166,6 +179,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Elemental Control",
             is_magical: true,
             rank: 5,
@@ -189,6 +203,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Nature Spells",
             is_magical: true,
             rank: 1,
@@ -215,6 +230,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Nature Spells+",
             is_magical: true,
             rank: 2,
@@ -224,18 +240,10 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Nature Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional nature spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Nature Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional nature spell.
             ",
@@ -247,6 +255,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Metamagic",
             is_magical: true,
             rank: 1,
@@ -286,6 +295,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 4,
@@ -295,6 +305,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 7,
@@ -304,6 +315,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Plant Channeling",
             is_magical: true,
             rank: 2,
@@ -316,6 +328,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
@@ -325,6 +338,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Attunement Point",
             is_magical: true,
             rank: 5,
@@ -334,6 +348,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
             rank: 6,
@@ -348,6 +363,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Wild Aspects",
             is_magical: true,
             rank: 1,
@@ -561,6 +577,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 2)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Shift Body",
             is_magical: true,
             rank: 2,
@@ -578,6 +595,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Shift Body+",
             is_magical: true,
             rank: 5,
@@ -589,6 +607,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         },
         // TODO: damage math
         RankAbility {
+            complexity: 1,
             name: "Shifting Claw",
             is_magical: false,
             rank: 3,
@@ -611,19 +630,21 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Shape",
             is_magical: true,
             rank: 4,
             description: r"
                 Whenever you activate a \ability{wild aspect} that represents a specific animal, you can fully \glossterm{shapeshift} to match that animal's shape.
                 This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
-                You may choose to reshape any body armor you wear as barding to fit the animal instead of melding it into your form.
+                You may choose to reshape any body armor you wear as \glossterm{barding} to fit the animal instead of melding it into your form.
                 The armor regains its normal shape if you take it off.
                 For details about shapeshifting, see \pcref{Shapeshifting}.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Cleansing Shift",
             is_magical: true,
             rank: 6,
@@ -633,6 +654,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Shape+",
             is_magical: true,
             rank: 7,
@@ -642,6 +664,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Hybrid Aspect",
             is_magical: true,
             rank: 7,
@@ -658,6 +681,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Natural Servant",
             is_magical: true,
             rank: 1,
@@ -727,6 +751,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Natural Servant+",
             is_magical: true,
             rank: 7,
@@ -736,6 +761,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Speech",
             is_magical: true,
             rank: 2,
@@ -753,6 +779,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Speech+",
             is_magical: true,
             rank: 5,
@@ -763,6 +790,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Nature's Ally",
             is_magical: true,
             rank: 3,
@@ -775,6 +803,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Nature's Ally+",
             is_magical: true,
             rank: 6,
@@ -785,6 +814,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Natural Attunement",
             is_magical: true,
             rank: 4,
@@ -797,6 +827,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Natural Attunement+",
             is_magical: true,
             rank: 7,

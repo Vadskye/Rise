@@ -7,6 +7,7 @@ use super::standard_modifiers::add_dr_scaling;
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Aligned Aura",
             is_magical: true,
             rank: 1,
@@ -40,6 +41,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Aligned Aura+",
             is_magical: true,
             rank: 4,
@@ -58,6 +60,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Aligned Aura++",
             is_magical: true,
             rank: 7,
@@ -76,6 +79,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Aligned Immunity",
             is_magical: true,
             rank: 2,
@@ -90,6 +94,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Aligned Immunity+",
             is_magical: true,
             rank: 5,
@@ -99,6 +104,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Paragon Power",
             is_magical: false,
             rank: 3,
@@ -108,6 +114,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Paragon Power+",
             is_magical: false,
             rank: 6,
@@ -122,6 +129,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Divine Spells",
             is_magical: true,
             rank: 1,
@@ -148,6 +156,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Spells+",
             is_magical: true,
             rank: 2,
@@ -157,18 +166,10 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional divine spell.
             ",
@@ -180,6 +181,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Divine Spell Versatility",
             is_magical: false,
             rank: 1,
@@ -191,6 +193,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Spell Versatility+",
             is_magical: false,
             rank: 4,
@@ -200,6 +203,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Divine Conduit",
             is_magical: true,
             rank: 2,
@@ -209,6 +213,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Conduit+",
             is_magical: true,
             rank: 7,
@@ -218,6 +223,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
@@ -227,6 +233,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Attunement Point",
             is_magical: true,
             rank: 5,
@@ -236,6 +243,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
             rank: 6,
@@ -250,6 +258,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 1,
             name: "Lay on Hands",
             is_magical: true,
             rank: 1,
@@ -280,6 +289,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Lay on Hands+",
             is_magical: true,
             rank: 4,
@@ -290,6 +300,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Lay on Hands+",
             is_magical: true,
             rank: 7,
@@ -299,6 +310,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Stalwart Resilience",
             is_magical: false,
             rank: 2,
@@ -310,6 +322,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Stalwart Resilience+",
             is_magical: false,
             rank: 5,
@@ -319,6 +332,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Stalwart Defense",
             is_magical: false,
             rank: 3,
@@ -331,6 +345,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Stalwart Core",
             is_magical: false,
             rank: 6,
@@ -347,6 +362,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Smite",
             is_magical: true,
             rank: 1,
@@ -371,6 +387,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Detect Anathema",
             is_magical: true,
             rank: 2,
@@ -391,6 +408,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Fearless Zeal",
             is_magical: false,
             rank: 3,
@@ -400,6 +418,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Zealous Fixation",
             is_magical: true,
             rank: 4,
@@ -409,6 +428,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Pass Judgment",
             is_magical: true,
             rank: 5,
@@ -430,6 +450,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Zealous Offense",
             is_magical: false,
             rank: 6,
@@ -439,6 +460,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Zealous Pursuit",
             is_magical: true,
             rank: 7,
