@@ -2,6 +2,7 @@
 
 Complexity is calculated at (rank 3 / rank 7).
 
+
 ## barbarian: 22 / 31
 * Battleforged Resilience: 3 / 5
 * Battlerager: 4 / 7
