@@ -142,7 +142,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             complexity: 2,
             name: "Weapon Training+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 Whenever you use your \textit{weapon training} ability, you can choose one of the following weapon tags: \weapontag{Impact}, \weapontag{Keen}, \weapontag{Long}, \weapontag{Parrying}, \weapontag{Resonating}, or \weapontag{Sweeping} (1).
                 You treat the weapon you trained with as if it had the chosen weapon tag.
