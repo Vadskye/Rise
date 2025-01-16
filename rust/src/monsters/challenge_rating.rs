@@ -22,7 +22,7 @@ impl ChallengeRating {
         //     None,
         // );
         creature.add_modifier(
-            Modifier::AllDefenses(self.defense_bonus()),
+            Modifier::AllDefenses(self.defense_bonus(creature.level)),
             Some("challenge rating"),
             None,
         );
@@ -65,10 +65,20 @@ impl ChallengeRating {
         }
     }
 
-    pub fn defense_bonus(&self) -> i32 {
+    pub fn defense_bonus(&self, level: i32) -> i32 {
         match self {
             Self::One => 0,
-            Self::Four => 2,
+            Self::Four => {
+                let levels_with_defense_bonuses = vec![8, 14];
+                let mut defense_modifier = 2;
+                for &bonus_level in levels_with_defense_bonuses.iter() {
+                    if level >= bonus_level {
+                        defense_modifier += 1;
+                    }
+                }
+                
+                defense_modifier
+            },
         }
     }
 
