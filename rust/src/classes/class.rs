@@ -1835,8 +1835,8 @@ impl Class {
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
                         \magicaldomainability{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
-                        The bonuses from this domain's gift increase to \plus10.
-                        In addition, you gain a \plus1 bonus to Armor and Reflex defenses.
+                        The bonuses from this domain's gift increase to \plus5.
+                        In addition, you gain a \plus1 bonus to your Armor and Reflex defenses.
 
                     \subsubsection{Wild Domain}
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
