@@ -481,10 +481,10 @@
                 \pari \textbf{HP} 132
                     \monsep \textbf{DR} 116
                 \pari \textbf{Defenses}
-                    Armor 13
-                    \monsep Fort 13
-                    \monsep Ref 13
-                    \monsep Ment 16
+                    Armor 14
+                    \monsep Fort 14
+                    \monsep Ref 14
+                    \monsep Ment 17
                     \rankline
                     \pari \textbf{Attributes} Str 8, Dex 2, Con 2, Int 2, Per 2, Wil 8
                     \pari \textbf{Power} 15\sparkle \monsep 15
