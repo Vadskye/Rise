@@ -6,6 +6,23 @@ export const perfectPrecision: CombatStyle = {
 
   maneuvers: [
     {
+      name: 'Pure Precision',
+
+      effect: `
+        Make a \\glossterm{weak strike} with a +3 accuracy bonus.
+      `,
+      rank: 1,
+    },
+
+    {
+      name: 'Pure Precision+',
+
+      effect: `
+        Make a \\glossterm{strike} with a +6 accuracy bonus.
+      `,
+      rank: 5,
+    },
+    {
       name: 'Armorpiercer',
 
       effect: `

@@ -107,44 +107,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Pure Precision',
-
-      effect: `
-        Make a \\glossterm{weak strike} with a +3 accuracy bonus.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Pure Precision+',
-
-      effect: `
-        Make a \\glossterm{strike} with a +6 accuracy bonus.
-      `,
-      rank: 5,
-    },
-
-    {
-      name: 'Pure Power',
-
-      effect: `
-        Make a \\glossterm{strike} with a -4 accuracy penalty.
-        The strike deals double \\glossterm{weapon damage}.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Pure Power+',
-
-      effect: `
-        Make a \\glossterm{strike} with a -3 accuracy penalty.
-        The strike deals triple \\glossterm{weapon damage}.
-      `,
-      rank: 5,
-    },
-
-    {
       name: "Begin the Hunt",
 
       effect: `
