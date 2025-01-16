@@ -76,15 +76,14 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     You jump and move as normal for the jump (see \pcref{Jumping}).
-                    In addition, you can make a \glossterm{strike} that deals 1d4 \glossterm{extra damage} at any point during that jump.
-                    % TODO: is Jump clear enough about how to be directly above a creature?
-                    This extra damage is doubled against each creature that you are directly above when you make the strike.
+                    In addition, you can make a \glossterm{strike} that deals 1d6 \glossterm{extra damage} at any point during that jump.
 
+                    % Damage scaling assumes that the extra damage is doubled
                     \rankline
-                    % Weaker scaling than normal because the double damage is easy at high levels
-                    \rank{4} The extra damage increases to 1d8.
+                    % TODO: is Jump clear enough about how to be directly above a creature?
+                    \rank{4} This extra damage is doubled against each creature that you are directly above when you make the strike.
                     \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 3d8.
+                    \rank{6} The extra damage increases to 2d10.
                     \rank{7} The \glossterm{weapon damage} is doubled.
                 \end{activeability}
             ",
