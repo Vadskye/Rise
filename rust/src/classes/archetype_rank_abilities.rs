@@ -34,7 +34,9 @@ pub struct RankAbility<'a> {
     //  * new complex category of limited scope statistical benefits (metamagic, maneuver augments)
     //  * new spell from outside your mystic spheres, due to book diving
     // 3:
-    //  * new complex category of active abilities (maneuvers, spells)
+    //  * maneuvers
+    // 4:
+    //  * spells
     pub complexity: i32,
     pub description: &'a str,
     pub is_magical: bool,

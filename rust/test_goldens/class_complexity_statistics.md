@@ -1,79 +1,80 @@
 # Class Complexity Statistics
 
+Complexity is calculated at (rank 3 / rank 7).
 
-## barbarian
-* Battleforged Resilience: 3
-* Battlerager: 4
-* Outland Savage: 5
-* Primal Warrior: 6
-* Totemist: 5
+## barbarian: 22 / 31
+* Battleforged Resilience: 3 / 5
+* Battlerager: 4 / 7
+* Outland Savage: 5 / 7
+* Primal Warrior: 6 / 6
+* Totemist: 4 / 6
             
-## cleric
-* Divine Magic: 5
-* Divine Spell Mastery: 4
-* Domain Influence: 6
-* Healer: 5
-* Preacher: 5
+## cleric: 18 / 36
+* Divine Magic: 5 / 6
+* Divine Spell Mastery: 3 / 7
+* Domain Influence: 4 / 9
+* Healer: 3 / 6
+* Preacher: 3 / 8
             
-## druid
-* Elementalist: 7
-* Nature Magic: 5
-* Nature Spell Mastery: 5
-* Shifter: 6
-* Wildspeaker: 5
+## druid: 24 / 43
+* Elementalist: 6 / 10
+* Nature Magic: 5 / 6
+* Nature Spell Mastery: 4 / 8
+* Shifter: 5 / 11
+* Wildspeaker: 4 / 8
             
-## fighter
-* Combat Discipline: 3
-* Equipment Training: 5
-* Martial Mastery: 6
-* Sentinel: 5
-* Tactician: 7
+## fighter: 23 / 35
+* Combat Discipline: 2 / 4
+* Equipment Training: 4 / 10
+* Martial Mastery: 6 / 6
+* Sentinel: 5 / 6
+* Tactician: 6 / 9
             
-## monk
-* Airdancer: 5
-* Esoteric Warrior: 7
-* Ki: 5
-* Perfected Form: 3
-* Transcendent Sage: 3
+## monk: 19 / 30
+* Airdancer: 3 / 7
+* Esoteric Warrior: 7 / 7
+* Ki: 5 / 7
+* Perfected Form: 2 / 4
+* Transcendent Sage: 2 / 5
             
-## paladin
-* Devoted Paragon: 4
-* Divine Magic: 5
-* Divine Spell Expertise: 5
-* Stalwart Guardian: 2
-* Zealous Warrior: 5
+## paladin: 16 / 30
+* Devoted Paragon: 3 / 5
+* Divine Magic: 5 / 6
+* Divine Spell Expertise: 4 / 8
+* Stalwart Guardian: 1 / 3
+* Zealous Warrior: 3 / 8
             
-## ranger
-* Beastmaster: 4
-* Boundary Warden: 5
-* Huntmaster: 4
-* Scout: 3
-* Wilderness Warrior: 6
+## ranger: 21 / 27
+* Beastmaster: 3 / 6
+* Boundary Warden: 5 / 6
+* Huntmaster: 4 / 5
+* Scout: 3 / 4
+* Wilderness Warrior: 6 / 6
             
-## rogue
-* Assassin: 6
-* Bardic Music: 6
-* Combat Trickster: 6
-* Jack of All Trades: 4
-* Suave Scoundrel: 5
+## rogue: 22 / 35
+* Assassin: 5 / 8
+* Bardic Music: 4 / 8
+* Combat Trickster: 6 / 6
+* Jack of All Trades: 3 / 5
+* Suave Scoundrel: 4 / 8
             
-## sorcerer
-* Arcane Magic: 6
-* Arcane Spell Mastery: 4
-* Draconic Magic: 5
-* Innate Arcanist: 5
-* Wild Magic: 6
+## sorcerer: 23 / 36
+* Arcane Magic: 6 / 7
+* Arcane Spell Mastery: 3 / 7
+* Draconic Magic: 4 / 5
+* Innate Arcanist: 5 / 9
+* Wild Magic: 5 / 8
             
-## warlock
-* Blessings of the Abyss: 4
-* Keeper of Forbidden Knowledge: 5
-* Pact Magic: 5
-* Pact Spell Mastery: 4
-* Soulkeeper's Chosen: 5
+## warlock: 20 / 31
+* Blessings of the Abyss: 3 / 6
+* Keeper of Forbidden Knowledge: 5 / 6
+* Pact Magic: 5 / 6
+* Pact Spell Mastery: 3 / 7
+* Soulkeeper's Chosen: 4 / 6
             
-## wizard
-* Arcane Magic: 6
-* Arcane Spell Mastery: 6
-* Alchemist: 8
-* Arcane Scholar: 7
-* School Specialist: 3
+## wizard: 27 / 41
+* Arcane Magic: 6 / 7
+* Arcane Spell Mastery: 5 / 9
+* Alchemist: 7 / 10
+* Arcane Scholar: 6 / 10
+* School Specialist: 3 / 5
