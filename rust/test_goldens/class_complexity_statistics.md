@@ -16,7 +16,7 @@
 * Preacher: 5
             
 ## druid
-* Elementalist: 9
+* Elementalist: 7
 * Nature Magic: 4
 * Nature Spell Mastery: 5
 * Shifter: 6
