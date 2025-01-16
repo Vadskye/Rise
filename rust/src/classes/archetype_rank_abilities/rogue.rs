@@ -103,11 +103,11 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Darkstalker+",
+            name: "Darkstalker++",
             is_magical: false,
             rank: 7,
             description: r"
-                When you use this ability, you become undetectable by any number of the possible sense groups rather than only one.
+                When you use this ability, you become undetectable by up to three of the possible sense groups rather than only one.
             ",
             modifiers: None,
         },
