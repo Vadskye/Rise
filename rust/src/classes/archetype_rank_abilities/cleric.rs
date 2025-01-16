@@ -160,7 +160,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You gain a \plus1 accuracy bonus with spells.
+                You gain a \plus1 accuracy bonus.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
