@@ -115,3 +115,45 @@ fn format_class_detailed(class: Class, level: i32) -> String {
         statistics = character.description().trim()
     )
 }
+
+pub fn write_class_complexity_golden() -> io::Result<()> {
+    fn archetype_complexity(archetype: ClassArchetype) -> String {
+        format!(
+            "* {archetype}: {complexity}",
+            archetype = archetype.name(),
+            // Arbitrarily stop counting complexity at rank 4, which is halfway to max level
+            complexity = archetype.complexity_by_rank(4),
+        )
+    }
+
+    fn class_complexity(class: Class) -> String {
+        format!(
+            "
+## {class}
+{archetypes}
+            ",
+            class = class.name(),
+            archetypes = class
+                .archetypes()
+                .into_iter()
+                .map(archetype_complexity)
+                .collect::<Vec<String>>()
+                .join("\n"),
+        )
+    }
+
+    let golden = format!(
+        "
+# Class Complexity Statistics
+
+{classes}
+        ",
+        classes = Class::core_classes()
+            .into_iter()
+            .map(class_complexity)
+            .collect::<Vec<String>>()
+            .join(""),
+    );
+
+    write_golden_file("class_complexity_statistics", golden)
+}
