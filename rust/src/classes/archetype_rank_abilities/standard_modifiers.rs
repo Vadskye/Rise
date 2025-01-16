@@ -5,6 +5,7 @@ use crate::creatures::Modifier;
 pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
     rank_abilities.append(&mut vec![
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 1,
@@ -15,6 +16,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 2,
@@ -25,6 +27,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 3,
@@ -35,6 +38,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 4,
@@ -45,6 +49,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 5,
@@ -55,6 +60,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 6,
@@ -65,6 +71,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Spells",
             is_magical: true,
             rank: 7,
@@ -80,6 +87,7 @@ pub fn add_standard_spell_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
 pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>) {
     rank_abilities.append(&mut vec![
         RankAbility {
+            complexity: 0,
             name: "Maneuvers",
             is_magical: false,
             rank: 1,
@@ -92,6 +100,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Maneuvers",
             is_magical: false,
             rank: 3,
@@ -99,6 +108,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::GenericExtraDamage(3))]),
         },
         RankAbility {
+            complexity: 0,
             name: "Maneuvers",
             is_magical: false,
             rank: 5,
@@ -110,6 +120,7 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Maneuvers",
             is_magical: false,
             rank: 7,
@@ -129,6 +140,7 @@ pub fn add_hp_scaling(
 ) {
     for rank in triple_rank..quadruple_rank {
         rank_abilities.push(RankAbility {
+            complexity: 0,
             name: "Hit Point Scaling",
             is_magical: false,
             rank,
@@ -138,6 +150,7 @@ pub fn add_hp_scaling(
     }
     for rank in quadruple_rank..8 {
         rank_abilities.push(RankAbility {
+            complexity: 0,
             name: "Hit Point Scaling",
             is_magical: false,
             rank,
@@ -156,6 +169,7 @@ pub fn add_dr_scaling(
     let quintuple_rank = maybe_quintuple_rank.unwrap_or(8);
     for rank in triple_rank..quadruple_rank {
         rank_abilities.push(RankAbility {
+            complexity: 0,
             name: "Damage Resistance Scaling",
             is_magical: false,
             rank,
@@ -165,6 +179,7 @@ pub fn add_dr_scaling(
     }
     for rank in quadruple_rank..quintuple_rank {
         rank_abilities.push(RankAbility {
+            complexity: 0,
             name: "Damage Resistance Scaling",
             is_magical: false,
             rank,
@@ -174,6 +189,7 @@ pub fn add_dr_scaling(
     }
     for rank in quintuple_rank..8 {
         rank_abilities.push(RankAbility {
+            complexity: 0,
             name: "Damage Resistance Scaling",
             is_magical: false,
             rank,

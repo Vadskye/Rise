@@ -7,6 +7,7 @@ use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Portable Workshop",
             is_magical: true,
             rank: 1,
@@ -37,6 +38,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility{
+            complexity: 0,
             name: "Alchemical Toxins",
             is_magical: true,
             rank: 1,
@@ -46,6 +48,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Alchemical Discovery",
             is_magical: true,
             rank: 2,
@@ -77,6 +80,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Alchemical Discovery+",
             is_magical: true,
             rank: 4,
@@ -86,6 +90,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Alchemical Discovery+",
             is_magical: true,
             rank: 6,
@@ -95,6 +100,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Alchemical Precision",
             is_magical: true,
             rank: 3,
@@ -104,6 +110,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Alchemical Tolerance",
             is_magical: true,
             rank: 3,
@@ -114,6 +121,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Alchemical Tolerance+",
             is_magical: true,
             rank: 7,
@@ -124,6 +132,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Quaffing",
             is_magical: false,
             rank: 5,
@@ -138,6 +147,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Arcane Spells",
             is_magical: true,
             rank: 1,
@@ -164,6 +174,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Arcane Spells+",
             is_magical: true,
             rank: 2,
@@ -173,6 +184,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Arcane Spells+",
             is_magical: true,
             rank: 5,
@@ -182,6 +194,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Mage Armor",
             is_magical: true,
             rank: 1,
@@ -208,6 +221,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Mage Armor+",
             is_magical: true,
             rank: 4,
@@ -218,6 +232,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Mage Armor+",
             is_magical: true,
             rank: 7,
@@ -235,6 +250,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Ritualist",
             is_magical: true,
             rank: 1,
@@ -246,6 +262,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Spell Knowledge",
             is_magical: true,
             rank: 1,
@@ -255,6 +272,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Scholastic Insight",
             is_magical: true,
             rank: 2,
@@ -293,6 +311,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Scholastic Insight+",
             is_magical: true,
             rank: 4,
@@ -302,6 +321,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Scholastic Insight+",
             is_magical: true,
             rank: 6,
@@ -311,6 +331,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Contingency",
             is_magical: true,
             rank: 3,
@@ -339,6 +360,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Contingency+",
             is_magical: true,
             rank: 7,
@@ -351,6 +373,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Ritual Leader",
             is_magical: true,
             rank: 5,
@@ -365,6 +388,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Metamagic",
             is_magical: true,
             rank: 1,
@@ -400,6 +424,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 4,
@@ -409,6 +434,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 7,
@@ -418,6 +444,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Intricate Spell",
             is_magical: true,
             rank: 2,
@@ -434,6 +461,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Expert Metamage",
             is_magical: true,
             rank: 2,
@@ -443,6 +471,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
@@ -452,6 +481,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Attunement Point",
             is_magical: true,
             rank: 5,
@@ -461,6 +491,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
             rank: 6,
@@ -475,6 +506,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "School Specialization",
             is_magical: true,
             rank: 1,
@@ -510,6 +542,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
+            complexity: 0,
             name: "School Specialization+",
             is_magical: true,
             rank: 4,
@@ -532,6 +565,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(3)]),
         },
         RankAbility {
+            complexity: 0,
             name: "School Specialization+",
             is_magical: true,
             rank: 7,
@@ -556,6 +590,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(4)]),
         },
         RankAbility {
+            complexity: 1,
             name: "School Knowledge",
             is_magical: true,
             rank: 2,
@@ -567,6 +602,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "School Knowledge+",
             is_magical: true,
             rank: 5,
@@ -578,6 +614,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "School Resilience",
             is_magical: true,
             rank: 3,
@@ -601,6 +638,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "School Resilience+",
             is_magical: true,
             rank: 6,

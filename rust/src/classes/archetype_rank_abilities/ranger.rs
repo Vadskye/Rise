@@ -7,6 +7,7 @@ use crate::skills::Skill;
 pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Animal Companion",
             is_magical: true,
             rank: 1,
@@ -58,6 +59,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Companion+",
             is_magical: true,
             rank: 4,
@@ -68,6 +70,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Animal Companion+",
             is_magical: true,
             rank: 7,
@@ -78,6 +81,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Tag-Team Takedown",
             is_magical: false,
             rank: 3,
@@ -100,6 +104,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Survival Bond",
             is_magical: false,
             rank: 6,
@@ -110,6 +115,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Beast Bond",
             is_magical: false,
             rank: 2,
@@ -120,6 +126,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Beast Bond+",
             is_magical: false,
             rank: 5,
@@ -135,6 +142,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Know Your Enemy",
             is_magical: false,
             rank: 1,
@@ -148,6 +156,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Know Your Weapons",
             is_magical: false,
             rank: 1,
@@ -159,6 +168,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
+            complexity: 0,
             name: "Know Your Enemy+",
             is_magical: false,
             rank: 4,
@@ -169,6 +179,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Know Your Enemy+",
             is_magical: false,
             rank: 7,
@@ -179,6 +190,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Guide",
             is_magical: false,
             rank: 2,
@@ -189,15 +201,17 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Guide+",
             is_magical: false,
             rank: 5,
             description: r"
-                You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain}.
+                You and your \glossterm{allies} who can see or hear you can ignore all \glossterm{difficult terrain}, regardless of its source.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Steadfast Warden",
             is_magical: false,
             rank: 6,
@@ -207,6 +221,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Banestrike",
             is_magical: false,
             rank: 3,
@@ -233,6 +248,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
 pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Quarry",
             is_magical: false,
             rank: 1,
@@ -253,6 +269,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Quarry+",
             is_magical: false,
             rank: 4,
@@ -262,6 +279,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Quarry+",
             is_magical: false,
             rank: 7,
@@ -271,6 +289,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Hunting Styles",
             is_magical: false,
             rank: 2,
@@ -387,6 +406,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Tracker",
             is_magical: false,
             rank: 3,
@@ -397,6 +417,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Skill(Skill::Survival, 3)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Tracker+",
             is_magical: false,
             rank: 6,
@@ -407,6 +428,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Flexible Hunting Style",
             is_magical: false,
             rank: 5,
@@ -421,6 +443,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 pub fn scout<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Keen Vision",
             is_magical: false,
             rank: 1,
@@ -433,6 +456,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Keen Vision+",
             is_magical: false,
             rank: 6,
@@ -444,6 +468,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Blindsight",
             is_magical: false,
             rank: 2,
@@ -457,6 +482,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Blindsight+",
             is_magical: false,
             rank: 7,
@@ -467,6 +493,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Ambush",
             is_magical: false,
             rank: 3,
@@ -487,6 +514,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Skirmisher",
             is_magical: false,
             rank: 4,
@@ -496,6 +524,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Experienced Scout",
             is_magical: false,
             rank: 5,
@@ -510,6 +539,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
 pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Wild Maneuvers",
             is_magical: false,
             rank: 1,
@@ -532,6 +562,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Wild Maneuvers+",
             is_magical: false,
             rank: 3,
@@ -542,6 +573,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Wild Maneuvers+",
             is_magical: false,
             rank: 5,
@@ -551,16 +583,17 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Wild Maneuvers+",
             is_magical: false,
             rank: 7,
             description: r"
-                You learn an additional wild maneuver.
-                In addition, you gain access to rank 7 wild maneuvers.
+                You gain access to rank 7 wild maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
@@ -596,6 +629,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -605,6 +639,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,

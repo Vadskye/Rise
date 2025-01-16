@@ -7,6 +7,7 @@ use crate::skills::Skill;
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Disciplined Reaction",
             is_magical: false,
             rank: 1,
@@ -16,6 +17,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Enduring Discipline",
             is_magical: false,
             rank: 2,
@@ -28,6 +30,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Enduring Discipline+",
             is_magical: false,
             rank: 5,
@@ -40,6 +43,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Disciplined Blow",
             is_magical: false,
             rank: 3,
@@ -61,6 +65,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Cleansing Discipline",
             is_magical: false,
             rank: 4,
@@ -76,6 +81,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Vital Discipline",
             is_magical: false,
             rank: 6,
@@ -86,11 +92,13 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Inevitable Discipline",
+            // This retroactively removes some of the complexity of the earlier abilities
+            complexity: 0,
+            name: "True Discipline",
             is_magical: false,
             rank: 7,
             description: r"
-                Your \glossterm{strikes} get a \glossterm{glancing blow} if they miss by 5 or less, rather than only if they miss by 2 or less.
+                You are immune to \glossterm{conditions}.
             ",
             modifiers: None,
         },
@@ -100,6 +108,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
 pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Exotic Weapon Training",
             is_magical: false,
             rank: 1,
@@ -110,6 +119,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Weapon Training",
             is_magical: false,
             rank: 1,
@@ -129,6 +139,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Weapon Training+",
             is_magical: false,
             rank: 6,
@@ -142,6 +153,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Armor Expertise",
             is_magical: false,
             rank: 2,
@@ -161,6 +173,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Armored Crush",
             is_magical: false,
             rank: 3,
@@ -182,6 +195,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Equipment Efficiency",
             is_magical: false,
             rank: 4,
@@ -192,6 +206,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Equipment Efficiency+",
             is_magical: false,
             rank: 6,
@@ -201,6 +216,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Armor Expertise+",
             is_magical: false,
             rank: 7,
@@ -222,6 +238,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
 pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Martial Maneuvers",
             is_magical: false,
             rank: 1,
@@ -243,6 +260,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Martial Maneuvers+",
             is_magical: false,
             rank: 3,
@@ -253,6 +271,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Martial Maneuvers+",
             is_magical: false,
             rank: 5,
@@ -262,16 +281,17 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Martial Maneuvers+",
             is_magical: false,
             rank: 7,
             description: r"
-                You learn an additional martial maneuver.
-                In addition, you gain access to rank 7 martial maneuvers.
+                You gain access to rank 7 martial maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
@@ -305,6 +325,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -314,6 +335,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
@@ -331,6 +353,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Protect",
             is_magical: false,
             rank: 1,
@@ -349,6 +372,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Protect+",
             is_magical: false,
             rank: 5,
@@ -358,6 +382,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Threatening Influence",
             is_magical: false,
             rank: 2,
@@ -369,6 +394,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Threatening Influence+",
             is_magical: false,
             rank: 6,
@@ -378,6 +404,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Sentinel's Challenge",
             is_magical: false,
             rank: 3,
@@ -397,6 +424,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Stalwart Sentinel",
             is_magical: false,
             rank: 4,
@@ -408,6 +436,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Demanding Challenger",
             is_magical: false,
             rank: 7,
@@ -422,6 +451,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Battle Tactics",
             is_magical: false,
             rank: 1,
@@ -534,6 +564,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Battle Tactics+",
             is_magical: false,
             rank: 4,
@@ -543,15 +574,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            name: "Battle Tactics+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You learn an additional battle tactic.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
+            complexity: 2,
             name: "Shifting Stance",
             is_magical: false,
             rank: 2,
@@ -572,6 +595,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Shifting Stance+",
             is_magical: false,
             rank: 5,
@@ -581,6 +605,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Coordinated Charge",
             is_magical: false,
             rank: 3,
@@ -603,6 +628,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Hybrid Battle Tactics",
             is_magical: false,
             rank: 7,

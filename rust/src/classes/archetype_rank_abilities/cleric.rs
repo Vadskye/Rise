@@ -6,6 +6,7 @@ use crate::skills::Skill;
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Divine Spells",
             is_magical: true,
             rank: 1,
@@ -32,6 +33,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Spells+",
             is_magical: true,
             rank: 2,
@@ -41,18 +43,10 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Divine Spells+",
             is_magical: true,
-            rank: 4,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 You learn an additional divine spell.
             ",
@@ -64,6 +58,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Metamagic",
             is_magical: true,
             rank: 1,
@@ -97,6 +92,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 4,
@@ -106,6 +102,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Metamagic+",
             is_magical: true,
             rank: 7,
@@ -116,6 +113,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Turn Undead",
             is_magical: true,
             rank: 2,
@@ -137,6 +135,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
             rank: 3,
@@ -146,6 +145,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Attunement Point",
             is_magical: true,
             rank: 5,
@@ -155,6 +155,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
             rank: 6,
@@ -169,6 +170,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Domain Gifts",
             is_magical: false,
             rank: 1,
@@ -208,6 +210,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Domain Aspect",
             is_magical: false,
             rank: 2,
@@ -220,6 +223,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Domain Aspect+",
             is_magical: false,
             rank: 3,
@@ -229,6 +233,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Domain Essences",
             is_magical: false,
             rank: 4,
@@ -239,6 +244,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Miracle",
             is_magical: true,
             rank: 5,
@@ -262,6 +268,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Miracle+",
             is_magical: true,
             rank: 7,
@@ -272,6 +279,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Domain Masteries",
             is_magical: false,
             rank: 6,
@@ -287,6 +295,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Divine Aid",
             is_magical: true,
             rank: 1,
@@ -314,6 +323,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Healer's Grace",
             is_magical: true,
             rank: 2,
@@ -329,6 +339,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Healer's Grace+",
             is_magical: true,
             rank: 5,
@@ -338,6 +349,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Vital Restoration",
             is_magical: true,
             rank: 3,
@@ -358,6 +370,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Called to the Needy",
             is_magical: true,
             rank: 4,
@@ -369,6 +382,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Called to the Needy+",
             is_magical: true,
             rank: 7,
@@ -378,6 +392,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Revivify",
             is_magical: true,
             rank: 6,
@@ -401,6 +416,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         // enemies in medium radius is a t3 area
         // assuming -1ct for brief, stunned would be t1, for a total of a r2 effect??
         RankAbility {
+            complexity: 1,
             name: "Denounce the Heathens",
             is_magical: false,
             rank: 1,
@@ -421,6 +437,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Persuasive Certainty",
             is_magical: false,
             rank: 2,
@@ -433,6 +450,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Persuasive Certainty+",
             is_magical: false,
             rank: 6,
@@ -447,6 +465,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         // Assume that it typically affects two people, and anything more than that is a
         // bonus. Normal healing ability would be dr4, so use half of that (where possible).
         RankAbility {
+            complexity: 1,
             name: "Bless the Worthy",
             is_magical: false,
             rank: 3,
@@ -468,6 +487,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Inspiring Oration",
             is_magical: false,
             rank: 4,
@@ -480,6 +500,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         // t1.5 debuff in t5 area is a r6 effect
         RankAbility {
+            complexity: 1,
             name: "Condemn the Fearful",
             is_magical: false,
             rank: 5,
@@ -498,6 +519,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Convert the Irresolute",
             is_magical: false,
             rank: 7,

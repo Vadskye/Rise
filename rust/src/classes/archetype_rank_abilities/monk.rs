@@ -7,6 +7,7 @@ use super::standard_modifiers::{add_dr_scaling, add_standard_maneuver_modifiers}
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Float Like Air",
             is_magical: false,
             rank: 1,
@@ -17,6 +18,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Float Like Air+",
             is_magical: false,
             rank: 6,
@@ -27,6 +29,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Heart of Air",
             is_magical: true,
             rank: 4,
@@ -40,6 +43,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Evasion",
             is_magical: false,
             rank: 2,
@@ -51,6 +55,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Evasion+",
             is_magical: false,
             rank: 5,
@@ -60,6 +65,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Death From Above",
             is_magical: false,
             rank: 3,
@@ -85,6 +91,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Move Like Wind",
             is_magical: false,
             rank: 6,
@@ -94,6 +101,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Airdance",
             is_magical: true,
             rank: 7,
@@ -109,6 +117,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
 pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Esoteric Maneuvers",
             is_magical: false,
             rank: 1,
@@ -131,6 +140,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Esoteric Weaponry",
             is_magical: false,
             rank: 1,
@@ -142,6 +152,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
+            complexity: 1,
             name: "Esoteric Maneuvers+",
             is_magical: false,
             rank: 3,
@@ -152,6 +163,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Esoteric Maneuvers+",
             is_magical: false,
             rank: 5,
@@ -161,16 +173,17 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Esoteric Maneuvers+",
             is_magical: false,
             rank: 7,
             description: r"
-                You learn an additional esoteric maneuver.
-                In addition, you gain access to rank 7 esoteric maneuvers.
+                You gain access to rank 7 esoteric maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
@@ -205,6 +218,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -214,6 +228,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
@@ -230,6 +245,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 1,
             name: "Ki Energy",
             is_magical: true,
             rank: 1,
@@ -241,6 +257,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Ki Barrier",
             is_magical: true,
             rank: 1,
@@ -258,6 +275,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Ki Barrier+",
             is_magical: true,
             rank: 4,
@@ -267,6 +285,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Ki Barrier++",
             is_magical: true,
             rank: 7,
@@ -276,6 +295,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Ki Manifestations",
             is_magical: true,
             rank: 2,
@@ -455,6 +475,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Ki Manifestation",
             is_magical: true,
             rank: 5,
@@ -464,11 +485,12 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Invested Blow",
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Invest Blow}
+                \begin{magicalactiveability}{Invested Blow}
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level} (see text).
                     \rankline
@@ -490,6 +512,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Ki-Focused Mind",
             is_magical: true,
             rank: 6,
@@ -499,6 +522,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Willpower, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Endless Ki",
             is_magical: true,
             rank: 7,
@@ -548,6 +572,7 @@ fn add_ki_barrier(abilities: &mut Vec<RankAbility<'_>>) {
 pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 0,
             name: "Unarmed Warrior",
             is_magical: false,
             rank: 1,
@@ -560,6 +585,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Unarmed Warrior+",
             is_magical: false,
             rank: 4,
@@ -569,6 +595,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Unarmed Warrior+",
             is_magical: false,
             rank: 7,
@@ -579,6 +606,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Unhindered Agility",
             is_magical: false,
             rank: 1,
@@ -588,6 +616,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Unhindered Freedom",
             is_magical: false,
             rank: 4,
@@ -597,6 +626,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Unhindered Agility+",
             is_magical: false,
             rank: 7,
@@ -606,6 +636,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Perfect Precision",
             is_magical: false,
             rank: 2,
@@ -617,6 +648,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Brawling Precision",
             is_magical: false,
             rank: 5,
@@ -626,6 +658,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Perfect Body",
             is_magical: false,
             rank: 3,
@@ -636,6 +669,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Perfect Body+",
             is_magical: false,
             rank: 6,
@@ -653,6 +687,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 1,
             name: "Feel the Flow of Life",
             is_magical: true,
             rank: 1,
@@ -664,6 +699,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Transcend Frailty",
             is_magical: false,
             rank: 2,
@@ -674,6 +710,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Transcend Frailty+",
             is_magical: false,
             rank: 6,
@@ -684,6 +721,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Transcend Uncertainty",
             is_magical: false,
             rank: 3,
@@ -694,6 +732,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Transcend Emotion",
             is_magical: false,
             rank: 4,
@@ -704,6 +743,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Transcend Mortality",
             is_magical: true,
             rank: 5,
@@ -716,6 +756,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Feel the Flow of Life+",
             is_magical: true,
             rank: 6,
@@ -725,6 +766,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Inner Transcendence",
             is_magical: false,
             rank: 7,

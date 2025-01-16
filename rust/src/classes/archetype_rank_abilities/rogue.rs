@@ -8,6 +8,7 @@ use crate::skills::{KnowledgeSubskill, Skill};
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 1,
             name: "Sneak Attack",
             is_magical: false,
             rank: 1,
@@ -33,6 +34,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Exotic Assassination Tools",
             is_magical: false,
             rank: 1,
@@ -44,6 +46,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
+            complexity: 1,
             name: "Evasion",
             is_magical: false,
             rank: 2,
@@ -54,6 +57,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Evasion+",
             is_magical: false,
             rank: 6,
@@ -63,6 +67,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Darkstalker",
             is_magical: false,
             rank: 3,
@@ -86,6 +91,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Darkstalker+",
             is_magical: false,
             rank: 5,
@@ -96,6 +102,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Darkstalker+",
             is_magical: false,
             rank: 7,
@@ -105,6 +112,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Hide in Plain Sight",
             is_magical: false,
             rank: 4,
@@ -116,6 +124,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Assassination",
             is_magical: false,
             rank: 5,
@@ -150,6 +159,7 @@ fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
 pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 3,
             name: "Bardic Performances",
             is_magical: true,
             rank: 1,
@@ -406,6 +416,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Bardic Performances+",
             is_magical: true,
             rank: 5,
@@ -415,6 +426,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Bardic Lore",
             is_magical: false,
             rank: 2,
@@ -424,6 +436,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Bardic Lore+",
             is_magical: true,
             rank: 6,
@@ -445,6 +458,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
+            complexity: 1,
             name: "Musical Tolerance",
             is_magical: false,
             rank: 2,
@@ -454,6 +468,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Musical Tolerance+",
             is_magical: false,
             rank: 5,
@@ -463,6 +478,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Bardic Training",
             is_magical: false,
             rank: 3,
@@ -472,6 +488,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
         },
         RankAbility {
+            complexity: 2,
             name: "Virtuoso",
             is_magical: true,
             rank: 4,
@@ -485,6 +502,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "All the World's a Stage",
             is_magical: true,
             rank: 7,
@@ -502,6 +520,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
+            complexity: 3,
             name: "Trick Maneuvers",
             is_magical: false,
             rank: 1,
@@ -524,6 +543,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Trick Maneuvers+",
             is_magical: false,
             rank: 3,
@@ -534,6 +554,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Trick Maneuvers+",
             is_magical: false,
             rank: 5,
@@ -543,16 +564,17 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Trick Maneuvers+",
             is_magical: false,
             rank: 7,
             description: r"
-                You learn an additional trick maneuver.
-                In addition, you gain access to rank 7 trick maneuvers.
+                You gain access to rank 7 trick maneuvers.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Augmented Maneuvers",
             is_magical: false,
             rank: 2,
@@ -587,6 +609,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 4,
@@ -596,6 +619,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
             name: "Augmented Maneuvers+",
             is_magical: false,
             rank: 6,
@@ -612,6 +636,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 2,
             name: "Dabbler",
             is_magical: false,
             rank: 1,
@@ -622,6 +647,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 2)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Dabbler+",
             is_magical: false,
             rank: 4,
@@ -631,6 +657,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Skill Exemplar",
             is_magical: false,
             rank: 2,
@@ -678,6 +705,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Skill Exemplar+",
             is_magical: false,
             rank: 5,
@@ -724,6 +752,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 1,
             name: "Skill Exemplar+",
             is_magical: false,
             rank: 7,
@@ -771,6 +800,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
+            complexity: 0,
             name: "Versatile Expertise",
             is_magical: false,
             rank: 3,
@@ -781,6 +811,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
+            complexity: 0,
             name: "Versatile Expertise+",
             is_magical: false,
             rank: 6,
@@ -796,6 +827,7 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
 pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
             name: "Confound",
             is_magical: false,
             rank: 1,
@@ -817,6 +849,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
             name: "Trick Magic Device",
             is_magical: true,
             rank: 2,
@@ -829,18 +862,20 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "Trick Magic Device+",
             is_magical: true,
             rank: 5,
             description: r"
                 You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
                 In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
-                This includes spells cast from wands, the special strike you can make with a \mitem{surestrike} weapon, and other similar abilities.
+                This includes spells cast from wands, the special strike you can make with a \mitem{flaming} weapon, and other similar abilities.
                 However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Exploit Distraction",
             is_magical: false,
             rank: 3,
@@ -862,6 +897,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 1,
             name: "What's That Over There",
             is_magical: false,
             rank: 4,
@@ -882,6 +918,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Master of Deceit",
             is_magical: false,
             rank: 6,
@@ -891,6 +928,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
             name: "Nothing Is Real",
             is_magical: false,
             rank: 7,
