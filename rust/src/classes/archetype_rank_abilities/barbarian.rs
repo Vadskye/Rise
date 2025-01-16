@@ -118,7 +118,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
-                        \item You gain a +2 accuracy bonus with melee and thrown \glossterm{strikes}.
+                        \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are unaffected by all \glossterm{conditions}.
                         \item You are \enraged.
@@ -179,11 +179,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Insensible Anger",
+            name: "Insensible Rage",
             is_magical: false,
             rank: 5,
             description: r"
-                You ignore all \glossterm{vital wound} effects except for unconsciousness and death.
+                During your \ability{rage} ability, you are unaffected by all \glossterm{vital wound} effects except for unconsciousness and death.
                 Each vital wound still causes the normal \minus2 penalty to \glossterm{vital rolls}.
             ",
             modifiers: None,
