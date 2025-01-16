@@ -451,7 +451,7 @@ impl DragonType {
                 is_magical: false,
                 description: "
                         A black dragon can breathe underwater indefinitely.
-                        In addition, its breath weapon functions at full strength underwater.
+                        In addition, its breath weapon functions at full strength in water.
                     "
                 .to_string(),
             }]),
