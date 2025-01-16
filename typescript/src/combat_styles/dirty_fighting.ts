@@ -27,13 +27,94 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
+      name: 'Stay Down',
+
+      functionsLike: {
+        abilityType: 'ability',
+        exceptThat: `
+          the target is also unable to stand up during the next movement phase.
+        `,
+        name: 'trip',
+      },
+      rank: 3,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Sweep and Slam',
+
+      functionsLike: {
+        abilityType: 'ability',
+        exceptThat: `
+          the target also takes \\damagerankfour.
+          You cannot get a \\glossterm{glancing blow} with this attack.
+        `,
+        name: 'trip',
+      },
+      rank: 5,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Takedown',
+
+      functionsLike: {
+        abilityType: 'ability',
+        exceptThat: `
+          the target also falls \\prone.
+        `,
+        name: 'grapple',
+      },
+      rank: 3,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Piledriver',
+
+      // A melee range spell would deal dr3.
+      // Grapple requirement offsets the higher accuracy from the Brawling tag?
+      effect: `
+        Make an attack vs. Fortitude against a creature you are \\grappling.
+        \\hit The target takes \\damagerankthree.
+      `,
+      rank: 1,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Piledriver+',
+
+      effect: `
+        Make an attack vs. Fortitude against a creature you are \\grappling.
+        \\hit The target takes \\damagerankseven.
+      `,
+      rank: 5,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Backbreaker',
+
+      // A melee range spell would be rank 9, so it could get paralyzed on HP.
+      // Grapple requirement offsets the higher accuracy from the Brawling tag?
+      effect: `
+        Make an attack vs. Fortitude against a creature you are \\grappling.
+        \\hit The target takes \\damagerankseven.
+        If it loses hit points from this damage, it becomes \\paralyzed as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      tags: ['Brawling'],
+    },
+
+    {
       name: 'Strangle',
 
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
           the target also takes \\damageranktwo damage.
-          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
+          You cannot get a \\glossterm{glancing blow} with this attack.
         `,
         name: 'grapple',
       },
@@ -48,7 +129,6 @@ export const dirtyFighting: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           the target also has a 20\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
-          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: 'grapple',
       },
@@ -63,7 +143,6 @@ export const dirtyFighting: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           the target also has a 50\\% \\glossterm{failure chance} with abilities that have \\glossterm{verbal components} as long as it is \\grappled by you.
-          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: 'grapple',
       },
@@ -79,7 +158,6 @@ export const dirtyFighting: CombatStyle = {
         exceptThat: `
           if the target has no remaining \\glossterm{damage resistance}, it is pinned completely instead of simply grappled.
           It is \\helpless, and the only physical ability it can use is the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
-          Any accuracy bonuses you have that apply specifically to the \\textit{grapple} ability also apply to this ability.
         `,
         name: 'grapple',
       },
@@ -95,7 +173,6 @@ export const dirtyFighting: CombatStyle = {
         exceptThat: `
           you \\glossterm{knockback} the target up to 15 feet instead of pushing it.
           On a critical hit, you knockback the target 30 feet instead.
-          Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
         name: 'shove',
       },
@@ -112,7 +189,6 @@ export const dirtyFighting: CombatStyle = {
           it affects up to three creatures adjacent to you instead of only one.
           In addition, you \\glossterm{knockback} each target up to 15 feet instead of pushing it.
           On a critical hit, you knockback each target 30 feet instead.
-          Any accuracy bonuses you have that apply specifically to the \\textit{shove} ability also apply to this ability.
         `,
         name: 'shove',
       },
@@ -153,7 +229,6 @@ export const dirtyFighting: CombatStyle = {
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
           % TODO: clarify that this doesn't work with "move through enemies freely" abilities
           In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo.
-          Any accuracy bonuses you have that apply specifically to the \\textit{overrun} ability also apply to this ability.
         `,
         name: 'overrun',
       },
