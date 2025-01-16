@@ -64,17 +64,12 @@ fn amulets() -> Vec<Apparel> {
     }));
 
     apparel.push(Amulet(StandardItem {
-        name: String::from("Amulet of Mundane Rage"),
-        rank: 1,
-        short_description: String::from(r"Accuracy from \ability{rage} becomes mundane"),
+        name: String::from("Amulet of Mystic Rage"),
+        rank: 2,
+        short_description: String::from(r"Accuracy from \ability{rage} affects magical attacks"),
         description: String::from(r"
-            Your accuracy bonus from the \ability{rage} barbarian ability applies to all \glossterm{mundane} abilities, rather to melee and thrown strikes.
+            Your accuracy bonus from the \ability{rage} barbarian ability also applies to \magical abilities.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(5, r"Accuracy from \ability{rage} becomes mundane and +3", r"
-                The accuracy bonus also increases to \plus3.
-            "),
-        ],
         ..Apparel::default()
     }));
 
