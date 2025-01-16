@@ -363,36 +363,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
-      name: 'Obscuring Mist',
-
-      effect: `
-        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
-        The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
-      `,
-      rank: 1,
-      scaling: {
-        3: 'You can choose to create a \\hugearea radius instead.',
-        5: 'You can choose to create a \\gargarea radius instead.',
-        7: 'You can choose to create a 240 foot radius instead.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
-    {
-      name: 'Misty Halo',
-
-      effect: `
-        Fog fills the air within a \\largearea radius \\glossterm{zone} from your location.
-        The fog partially obstructs sight, granting \\glossterm{concealment} to anything seen through the fog (see \\pcref{Concealment}).
-        You can exclude an inner radius of any size from the area, allowing you to create fog that surrounds your location without blocking sight to things near to you.
-      `,
-      rank: 3,
-      scaling: {
-        5: 'You can choose to create a \\hugearea radius instead.',
-        7: 'You can choose to create a \\gargarea radius instead.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
-    {
       name: 'Misty Shroud',
 
       effect: `
@@ -511,24 +481,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       `,
       rank: 6,
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
-    },
-    {
-      name: 'Fog Wall',
-
-      effect: `
-        You create a \\medarealong \\glossterm{wall} of fog within \\longrange.
-        The fog makes it difficult to see through the wall, granting \\glossterm{concealment} to anything viewed through the wall (see \\pcref{Concealment}).
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
-      `,
-      rank: 1,
-      scaling: {
-        3: 'You can choose to create a \\largearealong wall instead.',
-        5: 'You can choose to create a \\hugearealong wall instead.',
-        7: 'You can choose to create a \\gargarealong wall instead.',
-      },
-      tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
     {
