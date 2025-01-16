@@ -140,6 +140,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to your \glossterm{mundane power}.
+                If your Willpower is 3 or higher, you gain an additional \plus1 bonus.
             ",
             modifiers: None,
         },
@@ -194,6 +195,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 The power bonus increases to +2.
+                If your Willpower is 6 or higher, you gain an additional \plus1 bonus.
             ",
             modifiers: None,
         },
@@ -483,7 +485,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Totem Animal+",
+            name: "Totem Animal++",
             is_magical: false,
             rank: 7,
             description: r"
