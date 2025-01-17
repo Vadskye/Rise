@@ -390,24 +390,21 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    % Barbarians get this instead of Mighty Maneuver to make them better at shouts.
-                    % It's better than Mighty Maneuver for shouts and extra damage.
-                    % However, it's worse than Mighty Maneuver if you are accuracy stacking, which is a bit off flavor for barbarians anyway.
-                    \parhead{Devastating Maneuver} You gain a \plus10 accuracy bonus for the purpose of \glossterm{critical hits}.
-                    However, you take an accuracy penalty equal to 4 - your excess rank.
+                    \parhead{Devastating Maneuver} The maneuver deals double damage, but you take an accuracy penalty equal to 4 - your excess rank.
                     If your excess rank is at least 5, this becomes an accuracy bonus.
+                    You cannot apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
+
+                    \parhead{Mighty Maneuver} All strikes from the maneuver deal double \glossterm{weapon damage}, but you take an accuracy penalty equal to 4 - your excess rank.
+                    If your excess rank is at least 5, this becomes an accuracy bonus.
+                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
                     \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
-
-                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
-                    If your excess rank is at least 4, the area triples instead.
-                    You can only apply this augment to maneuvers that affect an area.
                 }
             ",
             modifiers: None,
