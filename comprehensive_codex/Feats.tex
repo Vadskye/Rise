@@ -457,7 +457,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Unarmed Warrior} You gain a \plus2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
     This ability does not stack with the ability of the same name from the Perfected Form monk archetype (see \pcref{Perfected Form}).
 
-    \ff[1]{Brawling Expertise} You gain a \plus2 bonus to \glossterm{accuracy} with all \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
+    \ff[1]{Brawling Expertise} You gain a \plus2 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
 
     \ff[6]{Large Grappler} You are considered one size category larger than normal for the purpose of the \textit{grapple} and \textit{maintain grapple} abilities.
 
@@ -997,16 +997,16 @@ They allow more distinct and unique character customization, but also increase g
     % It requires two separate attacks against different defenses, but hitting with the first attack makes the second attack easier.
     % It also has highly varied effects based on the target's size category, dealing less damage to small creatures and failing completely against large creatures.
     \ff[6]{Call to Heaven}
-    \begin{activeability}{Call to Heaven}[\atBrawling (see text), \atSizeBased (see text)]
+    \begin{activeability}{Call to Heaven}[\atBrawling (see text)]
       \abilityusagetime Standard action.
       \rankline
-      Make an attack vs. Fortitude against one creature or object adjacent to you.
-      If you hit, and the target's \glossterm{weight category} does not exceed your carrying capacity, you \glossterm{knockback} the target up to 10 feet vertically, leaving it \glossterm{midair}.
+      Make a \glossterm{brawling attack} vs. Fortitude against one creature or object adjacent to you.
+      If you hit, and you are strong enough to carry the target, you \glossterm{knockback} the target up to 10 feet vertically, leaving it \glossterm{midair}.
       On a critical hit, the maximum knockback distance is doubled.
       You can then jump up to their height, assuming it is within your maximum jump height.
 
       Whether you hit or missed with the first attack, you can then make a melee \glossterm{strike} against the target.
-      The knockback attack has the \atBrawling and \atSizeBased tags, but the strike does not.
+      The knockback attack has the \atBrawling tag, but the strike does not.
       As a reminder, land-based creatures typically suffer a \minus4 penalty to Armor and Reflex defenses while \glossterm{midair}.
 
       % Necessary to avoid giving allies a chance to attack while the target has the massive -4 Armor/Reflex penalties
