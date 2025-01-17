@@ -390,11 +390,14 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
-
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your excess rank but the strike deals double \glossterm{weapon damage}.
+                    % Barbarians get this instead of Mighty Maneuver to make them better at shouts.
+                    % It's better than Mighty Maneuver for shouts and extra damage.
+                    % However, it's worse than Mighty Maneuver if you are accuracy stacking, which is a bit off flavor for barbarians anyway.
+                    \parhead{Devastating Maneuver} You gain a \plus10 accuracy bonus for the purpose of \glossterm{critical hits}.
+                    However, you take an accuracy penalty equal to 4 - your excess rank.
                     If your excess rank is at least 5, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
