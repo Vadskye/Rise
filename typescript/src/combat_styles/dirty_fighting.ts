@@ -75,7 +75,7 @@ export const dirtyFighting: CombatStyle = {
       // A melee range spell would deal dr3.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
-        Make an attack vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankthree.
       `,
       rank: 1,
@@ -86,10 +86,55 @@ export const dirtyFighting: CombatStyle = {
       name: 'Piledriver+',
 
       effect: `
-        Make an attack vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
       `,
       rank: 5,
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Body Bludgeon',
+
+      // The baseline for this is using a creature to hit the ground. A linear upgrade from
+      // Piledriver would expect to deal dr5 in that circumstance, though being able to
+      // hit another creature means the damage can be closer to dr4, so about 1.75dpp plus
+      // some amount.
+      // Assume the Brawling accuracy bonus offsets the grapple requirement.
+      //
+      // If you use a Medium creature, the baseline damage is 2d6 + 1.66dpp, which is
+      // roughly dr5, but with strong scaling based on the creature's size.
+      effect: `
+        Make a \\glossterm{strike} with your \\glossterm{brawling accuracy} using a creature you are \\glossterm{grappling} as a weapon.
+        The strike deals double \\glossterm{weapon damage}.
+        Treat the creature as a weapon with the \\weapontag{Heavy} weapon tag that deals 1d6 damage per size category by which the creature is above Small (minimum 1d6).
+        You must be strong enough to carry the weapon creature normally (see \pcref{Weight Limits}).
+        Your attack must hit both the Armor defense of the strike's target and the Fortitude defense of the weapon creature.
+
+        The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
+      `,
+      rank: 3,
+      // This doesn't need to be size-based because grappling already is size-based.
+      // If you can grapple above your size, we don't need to block this maneuver.
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Body Bludgeon+',
+
+      // Expected damage would be between dr8 and dr9, so about 4dpp plus some value.
+      //
+      // If you use a Medium creature, the baseline damage is 4d8 + 3.3dpp, which is
+      // roughly dr8, but with strong scaling based on the creature's size.
+      functionsLike: {
+        name: "body bludgeon",
+        exceptThat: `
+          the strike deals quadruple \\glossterm{weapon damage}, and the weapon deals 1d8 damage per size category by which the creature is above Small (minimum 1d8).
+        `,
+      },
+      rank: 7,
+      // This doesn't need to be size-based because grappling already is size-based.
+      // If you can grapple above your size, we don't need to block this maneuver.
       tags: ['Brawling'],
     },
 
@@ -99,7 +144,7 @@ export const dirtyFighting: CombatStyle = {
       // A melee range spell would be rank 9, so it could get paralyzed on HP.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
-        Make an attack vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
         If it loses hit points from this damage, it becomes \\paralyzed as a \\glossterm{condition}.
       `,
