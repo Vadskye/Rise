@@ -224,7 +224,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +2 \glossterm{accuracy} bonus with \abilitytag{Brawling} abilities (see \pcref{Special Combat Abilities}).
+                You gain a +2 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
             ",
             modifiers: None,
         },
