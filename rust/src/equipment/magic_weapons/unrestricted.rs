@@ -44,6 +44,23 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // 10% chance of +5.5a = +0.5 accuracy
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Lucky"),
+        rank: 2,
+        short_description: String::from(r"Attack rolls explode on a 9"),
+        description: String::from(r"
+            When you roll a 9 on your first die for an attack roll, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
+            This does not affect bonus dice from explosions.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Attack rolls explode on a 8 or 9", r"
+                The die also explodes if you roll an 8.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
     weapons.push(Unrestricted(StandardItem {
         // +1.5 damage
         name: String::from("Brutish"),
