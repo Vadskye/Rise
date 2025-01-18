@@ -52,7 +52,7 @@ export const thaumaturgy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
+          Make an attack vs. Armor against something within \\shortrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
@@ -72,7 +72,7 @@ export const thaumaturgy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against something within \\longrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
@@ -93,7 +93,7 @@ export const thaumaturgy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
+          Make an attack vs. Armor against something within \\shortrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
@@ -167,7 +167,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `The target is treated as if the ability that created it was \\glossterm{dismissed}.
         This usually causes the target to disappear.`,
         targeting: `
-        Make an attack against anything within \\medrange.
+        Make an attack against something within \\medrange.
         If the target is an effect of an ongoing \\magical ability, such as a summoned monster or created object, its defense against this attack is equal to 5 + twice the \\glossterm{rank} of the effect.
         Otherwise, this spell has no effect.
         `,
@@ -305,7 +305,7 @@ export const thaumaturgy: MysticSphere = {
           An object affected by this spell is left behind if it is carried by a creature that teleports.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 accuracy bonus against anything within \\medrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against something within \\medrange.
         `,
       },
 

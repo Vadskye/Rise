@@ -20,7 +20,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `2 damage.`,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange.
+          Make an attack vs. Reflex against something within \\shortrange.
         `,
       },
       scaling: {
@@ -276,7 +276,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} once.
         `,
       },
@@ -294,7 +294,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} twice.
         `,
       },
@@ -310,7 +310,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `\\damagerankfive.`,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} once.
         `,
       },
@@ -326,7 +326,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `\\damagerankthree.`,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against something within \\medrange.
           This attack \\glossterm{chains} twice.
           You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target instead of only 15 feet.
@@ -343,7 +343,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `\\damageranksix.`,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against something within \\medrange.
           This attack \\glossterm{chains} twice.
           You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
           In addition, the attack can chain up to 30 feet to reach a metallic target.
@@ -540,7 +540,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against something within \\medrange.
         `,
       },
 
@@ -633,7 +633,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           Each target with no remaining \\glossterm{damage resistance} becomes \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against something within \\medrange.
           This attack \\glossterm{chains} once.
         `,
       },

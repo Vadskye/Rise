@@ -192,7 +192,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         hit: `
           \\damageranktwolow.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\distrange.',
+        targeting: 'Make an attack vs. Armor against something within \\distrange.',
       },
       // narrative: '',
       rank: 3,
@@ -205,7 +205,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         hit: `
           \\damagerankfourlow.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\extrange.',
+        targeting: 'Make an attack vs. Armor against something within \\extrange.',
       },
       // narrative: '',
       rank: 6,
@@ -258,7 +258,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
           If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
           It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
+        targeting: 'Make an attack vs. Fortitude against something within \\medrange.',
       },
       // narrative: '',
       rank: 2,
@@ -276,7 +276,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
           If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
           It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Fortitude against anything within \\medrange.',
+        targeting: 'Make an attack vs. Fortitude against something within \\medrange.',
       },
       // narrative: '',
       rank: 5,

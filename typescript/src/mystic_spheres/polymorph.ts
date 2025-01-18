@@ -311,7 +311,7 @@ export const polymorph: MysticSphere = {
           A disintegrated creature's equipment is unaffected.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
 

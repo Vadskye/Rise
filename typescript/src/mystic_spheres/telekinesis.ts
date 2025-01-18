@@ -292,7 +292,7 @@ export const telekinesis: MysticSphere = {
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Medium or smaller within \\medrange.
+          Make an attack vs. Fortitude against something Medium or smaller within \\medrange.
         `,
       },
 
@@ -308,7 +308,7 @@ export const telekinesis: MysticSphere = {
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything Large or smaller within \\medrange.
+          Make an attack vs. Fortitude against something Large or smaller within \\medrange.
         `,
       },
       // narrative: '',
@@ -550,7 +550,7 @@ export const telekinesis: MysticSphere = {
           \\damagerankone immediately, and again during your next action.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange from you.
+          Make an attack vs. Fortitude against something within \\shortrange from you.
         `,
       },
       rank: 2,
@@ -568,7 +568,7 @@ export const telekinesis: MysticSphere = {
           The sphere left behind is three size categories smaller than the original creature.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange from you.
+          Make an attack vs. Fortitude against something within \\shortrange from you.
         `,
       },
       rank: 6,
