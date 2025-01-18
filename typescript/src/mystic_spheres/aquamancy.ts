@@ -351,6 +351,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       attack: {
         hit: `
           \\damagerankfour.
+          You \\glossterm{knockback} each Large or smaller target that loses \\glossterm{hit points} from this damage 10 feet vertically.
         `,
         missGlance: true,
         targeting: `
