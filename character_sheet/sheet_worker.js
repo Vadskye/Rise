@@ -92,7 +92,7 @@ const BASE_CLASS_MODIFIERS = {
     hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 4,
     proficiencies: "Light armor, leather lamellar armor, shepherd's axe, scimitars, and sickles",
   },
   fighter: {
