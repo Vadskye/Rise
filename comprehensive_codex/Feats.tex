@@ -123,6 +123,7 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Draconic Ancestry}                     & \tdash                           & Gain aspects of draconic power             & Ancestry          & \featpref{Draconic Ancestry}                \\
           \magicalfeatref{Entropist}                      & Wil 2                            & Master chaos and entropy                   & Magical           & \featpref{Entropist}                        \\
           \magicalfeatref{Fateweaver}                     & Per 2                            & Ensure success for you and allies          & \tdash            & \featpref{Fateweaver}                       \\
+          \featref{Fortune's Friend}                      & \tdash                           & Get lucky                                  & \tdash            & \featpref{Fortune's Friend}                 \\
           \featref{Herbalist}                             & Trained Knowledge (nature)       & Brew potions with natural ingredients      & \tdash            & \featpref{Herbalist}                        \\
           \featref{Iron Will}                             & Wil 2                            & Increase mental resilience                 & \tdash            & \featpref{Iron Will}                        \\
           \featref{Null}                                  & Wil 2                            & Become immune to magic                     & \tdash            & \featpref{Null}                             \\
@@ -919,6 +920,24 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Rapid Escape+} You can also escape bindings and use the \ability{escape grapple} ability as a \glossterm{minor action}.
 
     \ff[18]{Unnatural Flexibility} You take no penalties while \squeezing.
+  \end{feat}
+
+  \begin{feat}{Fortune's Friend}{General}
+    \featpre None.
+
+    % 20% chance of +5.5 accuracy = +1.1 accuracy
+    \ff[1]{Lucky Numbers} Choose any two numbers from 1 to 9.
+    Those are your lucky numbers.
+
+    \ff[1]{Lucky Hit} Whenever you roll one of your lucky numbers on your first die for an attack roll, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
+
+    \ff[6]{Lucky Break} Whenever you roll one of your lucky numbers on your first die for a \glossterm{check}, the check \glossterm{explodes} just like an attack.
+    Since this only affects your first die, you can only ever explode once with a check.
+
+    \ff[12]{Lucky Numbers+} You can choose a third lucky number from 1 to 9.
+
+    \ff[18]{Lucky Miss} All \glossterm{targeted} attacks against you have a 10\% \glossterm{miss chance}.
+    If they would already have a miss chance, that miss chance instead increases by 10\%.
   \end{feat}
 
   \begin{magicalfeat}{Ghostblade}{Combat, Magical}
