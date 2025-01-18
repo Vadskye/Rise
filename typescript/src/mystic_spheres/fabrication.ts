@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { MINOR_FATIGUE } from './constants';
+import { BARRIER_COOLDOWN, MINOR_FATIGUE } from './constants';
 
 export const fabrication: MysticSphere = {
   name: 'Fabrication',
@@ -269,6 +269,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Blade Barrier',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
@@ -279,8 +280,6 @@ export const fabrication: MysticSphere = {
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
-
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 2,
@@ -292,6 +291,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mighty Blade Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           the damage increases to \\damagerankfive.
@@ -307,6 +307,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Blade Perimeter',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           the area changes to a \\medarea radius \\glossterm{wall}.
@@ -485,6 +486,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Protective Cage',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
         You create a metal cage around the target in its space.
@@ -493,9 +495,7 @@ export const fabrication: MysticSphere = {
         % TODO: clarify that you can't create two cages around the same target
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
-
         The field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 3,
       scaling: {
@@ -546,6 +546,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mirror Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
@@ -565,10 +566,11 @@ export const fabrication: MysticSphere = {
     {
       name: 'Greater Mirror Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
-            The barrier's defenses become equal to 9 \\add half your level, and the hit points of each 5-ft. square increase to three times your \\glossterm{power}.
+            The barrier's defenses become equal to 9 \\add half your level, and the hit points of the wall increase to five times your \\glossterm{power}.
             Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
         `,
         name: 'mystic barrier',
@@ -581,6 +583,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Visual Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           you can choose the visibility of the barrier.
@@ -601,6 +604,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Sonic Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           you can choose whether the barrier blocks sound.
@@ -623,10 +627,11 @@ export const fabrication: MysticSphere = {
     {
       name: 'Forceful Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           it breaks objects in its area that obstruct its path.
-          Each object in the path of the wall takes \\damagerankthree.
+          Each \\glossterm{unattended} object in the path of the wall takes \\damagerankthree.
           Any object destroyed in this way does not block the barrier's area of effect.
           This does no damage to creatures, who block the path of the barrier like normal.
         `,
@@ -644,13 +649,12 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Barrier',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
       `,
       rank: 1,
       scaling: {
@@ -665,6 +669,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Mystic Bridge',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
           the wall is aligned horizontally instead of vertically.
@@ -683,9 +688,10 @@ export const fabrication: MysticSphere = {
     {
       name: 'Sturdy Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
-          the wall has \\glossterm{hit points} equal to four times your \\glossterm{power} instead of three times your power.
+          the wall has \\glossterm{hit points} equal to five times your \\glossterm{power} instead of three times your power.
         `,
         name: 'mystic barrier',
       },
@@ -701,6 +707,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Personal Sphere',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a sphere of magical energy around yourself.
         The sphere is visible as a shimmering magical membrane that does not block sight.
@@ -709,7 +716,6 @@ export const fabrication: MysticSphere = {
         When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
 
         The field as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 6,
       tags: ['Barrier', 'Manifestation'],
@@ -719,6 +725,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Entrapping Sphere',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         crit: "The sphere's \\glossterm{hit points} are doubled.",
         hit: `
@@ -727,9 +734,7 @@ export const fabrication: MysticSphere = {
           Nothing can pass through the sphere until it is destroyed.
           This prevents the target from having \\glossterm{line of effect} to anything outside of the area.
           If another creature is in the target's space when this spell is cast, this spell fails without effect.
-
           The field as a whole has \\glossterm{hit points} equal to twice your power.
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
         targeting: `
           Make an attack vs. Reflex against anything Large or smaller within \\medrange.
@@ -744,10 +749,11 @@ export const fabrication: MysticSphere = {
     {
       name: 'Invulnerable Barrier',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         exceptThat: `
-          the wall's defenses are each equal to 6 + your level, and it is \\trait{impervious} to physical damage.
-          In addition, the wall's \\glossterm{hit points} increase to four times your \\glossterm{power}.
+          the wall's defenses are each equal to 10 + half your level.
+          In addition, the wall's \\glossterm{hit points} increase to five times your \\glossterm{power}.
         `,
         name: 'mystic barrier',
       },

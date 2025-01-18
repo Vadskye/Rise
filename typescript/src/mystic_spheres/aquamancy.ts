@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
 export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
   name: 'Aquamancy',
@@ -286,6 +286,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Wall of Water',
 
       // targeting: None,
+      cost: BARRIER_COOLDOWN,
       effect: `
           You create a \\medarealong \\glossterm{wall} of water within \\medrange.
           The wall is four inches thick.
@@ -295,7 +296,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
           The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
@@ -303,7 +303,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         5: `You can increase the area to a \\hugearealong wall.`,
         7: `The range increases to \\longrange.`,
       },
-      tags: ['Manifestation'],
+      tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
     {

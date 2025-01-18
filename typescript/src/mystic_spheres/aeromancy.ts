@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
   name: 'Aeromancy',
@@ -583,12 +583,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
     {
       name: 'Wall of Wind',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\medarea \\glossterm{wall} of wind within \\longrange.
         It does not block passage or significantly obstruct sight.
         However, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {

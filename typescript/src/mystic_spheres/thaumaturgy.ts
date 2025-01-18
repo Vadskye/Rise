@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',
@@ -469,13 +469,12 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Wall of Magic Impedance',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\medarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\magical ability treats the wall as an impassable barrier.
-
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 5,
       scaling: {

@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
@@ -585,6 +585,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Wall of Stone',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
         Every square of the wall must be \\glossterm{grounded}.
@@ -592,7 +593,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
         If the entire wall is directly supported by stone, its hit points are doubled.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
