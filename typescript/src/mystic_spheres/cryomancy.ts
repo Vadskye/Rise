@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   name: 'Cryomancy',
@@ -540,6 +540,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Wall of Ice',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a wall of smooth, clear ice that does not block sight.
@@ -547,8 +548,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         The wall has \\glossterm{hit points} equal to your \\glossterm{power}.
         If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {
@@ -563,6 +562,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Ice Globe',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a sphere of ice in a \\smallarea sphere within \\medrange.
         The sphere fails to form in any occupied space, but its walls fill in the space as much as possible.
@@ -571,8 +571,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         The sphere as a whole has \\glossterm{hit points} equal to your \\glossterm{power}.
         If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 4,
       tags: ['Barrier', 'Manifestation'],

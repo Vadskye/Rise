@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
@@ -368,13 +368,12 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Wall of Force',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical field that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
       `,
       rank: 1,
       scaling: {
@@ -389,6 +388,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Forcecage',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You slowly create a 10 ft.\\ cube of telekinetic force within \\medrange.
         The cage appears at the end of the next round after you cast this spell.
@@ -396,9 +396,7 @@ export const telekinesis: MysticSphere = {
         Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
         You can create the cube around a sufficiently small creature to trap it inside.
         Each wall is transparent, but it blocks physical passage and \\glossterm{line of effect}.
-
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
+        The cube as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}.
       `,
       rank: 7,
       tags: ['Barrier'],

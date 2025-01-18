@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -515,6 +515,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Wall of Thorns',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
@@ -522,14 +523,13 @@ export const verdamancy: MysticSphere = {
           The base of at least half of the wall must be in arable earth.
           The wall is four inches thick, but permeable.
           It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
+          It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
           A field of \\glossterm{light undergrowth} spreads on the ground in all squares adjacent to the wall.
 
           Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
           Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
 
-          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
         missGlance: true,
       },
@@ -543,6 +543,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Massive Wall of Thorns',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of thorns',
         exceptThat: `
