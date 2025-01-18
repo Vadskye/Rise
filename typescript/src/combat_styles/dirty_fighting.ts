@@ -75,7 +75,7 @@ export const dirtyFighting: CombatStyle = {
       // A melee range spell would deal dr3.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankthree.
       `,
       rank: 1,
@@ -86,7 +86,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Piledriver+',
 
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
       `,
       rank: 5,
@@ -144,7 +144,7 @@ export const dirtyFighting: CombatStyle = {
       // A melee range spell would be rank 9, so it could get paralyzed on HP.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
         If it loses hit points from this damage, it becomes \\paralyzed as a \\glossterm{condition}.
       `,
