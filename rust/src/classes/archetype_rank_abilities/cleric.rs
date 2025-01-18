@@ -216,7 +216,6 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 Each domain has a corresponding domain aspect.
-                A domain aspect is an active ability that allows you to exert the influence of your domain in the world.
                 You gain the domain aspect ability for one of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             // Domain aspects are also weird. Some give statistical benfits, but many don't
