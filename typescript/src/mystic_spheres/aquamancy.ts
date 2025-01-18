@@ -381,15 +381,28 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Aqueous Tentacle',
 
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target gains an aqueous \\glossterm{natural weapon} that replaces one of its \\glossterm{free hands}.
-        The weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Sweeping} (1) tags (see \\pcref{Weapon Tags}).
-        It uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
+        You gain an aqueous \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
+        The weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Resonating} tags (see \\pcref{Weapon Tags}).
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
       `,
-      rank: 2,
+      rank: 1,
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+    {
+      name: 'Mass Aqueous Tentacle',
+
+      functionsLike: {
+        name: 'aqueous tentacle',
+        exceptThat: `
+          it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
+          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
+        `,
+      },
+      rank: 4,
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -398,7 +411,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       functionsLike: {
         name: 'aqueous tentacle',
-        exceptThat: 'the damage dealt by the weapon increases to 2d6. However, you can only target yourself with this spell.',
+        exceptThat: 'the damage dealt by the weapon increases to 2d6.',
       },
       narrative: `
         You grow a massive watery tentacle that extends from your body.
@@ -422,6 +435,40 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       `,
       rank: 4,
       type: 'Attune',
+    },
+
+    {
+      name: 'Water Whip',
+
+      attack: {
+        hit: `
+          \\damagerankone.
+          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
+        `,
+        targeting: `
+          Make an attack vs. Armor against one creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Intense Water Whip',
+
+      attack: {
+        hit: `
+          \\damagerankfive.
+          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 30 feet.
+        `,
+        targeting: `
+          Make an attack vs. Armor against one creature within \\shortrange.
+        `,
+      },
+      rank: 5,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
     },
     {
       name: 'Aqueous Form',
