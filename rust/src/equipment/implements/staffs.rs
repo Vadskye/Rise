@@ -138,8 +138,25 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
+        name: String::from("Staff of Elision"),
+        rank: 2,
+        short_description: String::from(r"Allows excluding something from an area"),
+        description: String::from(r"
+            Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can activate this staff.
+            When you do, you choose to have the ability exclude something of your choice.
+            The excluded creature or object is not a target of the ability.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Allows excluding up to three things from an area", r"
+                You can exclude up to three things of your choice.
+            "),
+        ],
+        ..Implement::default()
+    }));
+
+    implements.push(Staff(StandardItem {
         name: String::from("Selective Staff"),
-        rank: 3,
+        rank: 6,
         short_description: String::from(r"Allows excluding creatures from an area"),
         description: String::from(r"
             Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can activate this staff.
