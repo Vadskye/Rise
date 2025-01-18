@@ -647,26 +647,23 @@ pub fn soulkeepers_chosen<'a>() -> Vec<RankAbility<'a>> {
                 This improves your access to your magic, but pushing yourself too hard can allow your soulkeeper to control you directly.
                 \begin{magicalsustainability}{Possession}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                     \abilityusagetime \glossterm{Free action}.
+                    \abilitycost After you use this ability, you are unable to use it again until you finish a \glossterm{short rest}.
                     \rankline
                     You gain the following benefits and drawbacks:
                     \begin{itemize}
                         \item You gain a \plus2 accuracy bonus with \magical abilities.
-                        \item You gain a \plus4 bonus to your \glossterm{fatigue tolerance}.
-                            If you would be unconscious due to fatigue without this bonus, your soulkeeper can directly control all of your actions.
-                            Your soulkeeper's objectives may differ from your own, but soulkeeper is almost always interested in continuing your life and ensuring your victory in difficult circumstances.
                         \item You take a \minus2 penalty to your Fortitude and Mental defenses.
-                        \item Whenever you gain a \glossterm{vital wound}, you also increase your \glossterm{fatigue level} by two.
+                        \item Whenever you gain a \glossterm{vital wound}, your soulkeeper gains the ability to directly control all of your actions until this ability ends.
+                            Your soulkeeper's objectives may differ from your own, but soulkeeper is almost always interested in continuing your life and ensuring your victory in difficult circumstances.
                     \end{itemize}
 
                     Because this ability has the \atSwift tag, the defense penalties apply to attacks against you during the current phase.
                 \end{magicalsustainability}
             ",
             modifiers: Some(vec![
-                // TODO: add extra damage
-                // Modifier::Power(2),
+                Modifier::Accuracy(2),
                 Modifier::Defense(Defense::Fortitude, -2),
                 Modifier::Defense(Defense::Mental, -2),
-                Modifier::Resource(Resource::FatigueTolerance, 4),
             ]),
         },
         RankAbility {
