@@ -110,37 +110,21 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Vine Whip',
+      name: 'Tripping Vine',
 
+      // Prone is a r1 debuff, like dazzled.
+      // Short range allows brief undergrowth.
       attack: {
         hit: `
-          \\damagerankone.
-          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
+          The target falls \\glossterm{prone}.
         `,
         targeting: `
-          Make an attack vs. Armor against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
+          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Intense Vine Whip',
-
-      attack: {
-        hit: `
-          \\damagerankfive.
-          If the target takes damage, you can \\glossterm{push} it up to 30 feet.
-        `,
-        targeting: `
-          Make an attack vs. Armor against one creature within \\medrange.
-          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-        `,
-      },
-      rank: 5,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -254,7 +238,7 @@ export const verdamancy: MysticSphere = {
       // +2 over normal
       effect: `
         You gain a vine \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
+        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Maneuverable} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
@@ -281,7 +265,7 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Nitharit',
 
       effect: `
-        Choose one living creature adjacent to you.
+        Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
         Each poison stage makes the target \\glossterm{briefly} \\stunned.
         Its stage 3 effect also ends the poison.
@@ -329,7 +313,7 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Nightshade',
 
       effect: `
-        Choose one living creature adjacent to you.
+        Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
         The poison inflicts \\damagerankonelow per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
@@ -343,7 +327,7 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Sassone Leaf',
 
       effect: `
-        Choose one living creature adjacent to you.
+        Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
         The poison inflicts \\damageranktwolow per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
@@ -357,7 +341,7 @@ export const verdamancy: MysticSphere = {
       name: 'Poison -- Arsenic',
 
       effect: `
-        Choose one living creature adjacent to you.
+        Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
         The poison inflicts \\damagerankfourlow per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
@@ -436,7 +420,7 @@ export const verdamancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone damage immediately, and again during your next action.
-          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills a \\smallarea radius around it.
+          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against one creature within \\shortrange.
