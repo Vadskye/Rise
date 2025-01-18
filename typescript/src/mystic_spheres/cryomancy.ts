@@ -37,7 +37,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           2 damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       scaling: {
@@ -183,7 +183,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
-          Make an attack vs. Armor and Fortitude against anything within \\medrange.
+          Make an attack vs. Armor and Fortitude against something within \\medrange.
         `,
       },
       rank: 1,
@@ -200,7 +200,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
         `,
         targeting: `
-          Make an attack vs. Armor and Fortitude against anything within \\medrange.
+          Make an attack vs. Armor and Fortitude against something within \\medrange.
         `,
       },
       rank: 4,
@@ -298,7 +298,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
 
@@ -315,7 +315,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       rank: 7,

@@ -150,7 +150,7 @@ export const summoning: MysticSphere = {
           If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against anything that is \\glossterm{grounded} within \\shortrange.
+          Make an attack vs. Armor against something that is \\glossterm{grounded} within \\shortrange.
         `,
       },
       narrative: `
@@ -170,7 +170,7 @@ export const summoning: MysticSphere = {
           If the target takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against anything on solid ground within \\shortrange.
+          Make an attack vs. Armor against something on solid ground within \\shortrange.
         `,
       },
       narrative: `

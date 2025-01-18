@@ -118,7 +118,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 }),
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
-                        The $name makes a $accuracy attack vs. Reflex against anything within \medrange.
+                        The $name makes a $accuracy attack vs. Reflex against something within \medrange.
                         Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
                         \hit $dr1 damage.
                         If the attack result beats the target's Fortitude defense, it is \slowed as a \glossterm{condition}.

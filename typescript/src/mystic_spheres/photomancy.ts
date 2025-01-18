@@ -213,7 +213,7 @@ export const photomancy: MysticSphere = {
           If this attack beats a creature's Fortitude defense, you deal it \\glossterm{extra damage} equal to your power.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange.
+          Make an attack vs. Reflex against something within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
@@ -233,7 +233,7 @@ export const photomancy: MysticSphere = {
           This can be deadly for some creatures.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\shortrange.
+          Make an attack vs. Reflex against something within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
@@ -457,7 +457,7 @@ export const photomancy: MysticSphere = {
           If the target loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\medrange.
+          Make an attack vs. Reflex against something within \\medrange.
         `,
       },
       rank: 3,

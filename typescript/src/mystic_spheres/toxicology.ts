@@ -295,7 +295,7 @@ export const toxicology: MysticSphere = {
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       rank: 2,
@@ -313,7 +313,7 @@ export const toxicology: MysticSphere = {
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       rank: 6,

@@ -128,7 +128,7 @@ fn thrown_attacks() -> Vec<Tool> {
         short_description: "Throw to deal $dr2l damage".to_string(),
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Reflex against anything within \shortrange.
+            When you do, make an attack vs. Reflex against something within \shortrange.
             \hit $dr2l fire damage.
         ".to_string(),
         upgrades: vec![
@@ -148,7 +148,7 @@ fn thrown_attacks() -> Vec<Tool> {
         short_description: "Throw to deal $dr8l damage".to_string(),
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Reflex against anything within \shortrange.
+            When you do, make an attack vs. Reflex against something within \shortrange.
             \hit $dr8l fire and energy damage.
         ".to_string(),
         ..alchemical_item()
@@ -161,7 +161,7 @@ fn thrown_attacks() -> Vec<Tool> {
         short_description: "Throw to deal $dr3l damage over time".to_string(),
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Reflex and Fortitude against anything within \shortrange.
+            When you do, make an attack vs. Reflex and Fortitude against something within \shortrange.
             \hit $dr3l acid damage immediately, and again during your next action.
         ".to_string(),
         upgrades: vec![
@@ -314,7 +314,7 @@ fn thrown_attacks() -> Vec<Tool> {
         short_description: "Throw to deal $dr2l damage and slow".to_string(),
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Fortitude against anything within \shortrange.
+            When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr2l cold damage.
             If the target loses \glossterm{hit points}, it is \slowed as a \glossterm{condition}.
         ".to_string(),
@@ -335,7 +335,7 @@ fn thrown_attacks() -> Vec<Tool> {
         // dX - 1 at Short range
         description: r"
             You can throw this item as a standard action.
-            When you do, make an attack vs. Fortitude against anything within \shortrange.
+            When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr6l cold damage.
             If the target takes damage, it is \slowed as a \glossterm{condition}.
         ".to_string(),

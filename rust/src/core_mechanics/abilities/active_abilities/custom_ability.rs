@@ -287,7 +287,7 @@ impl CustomAbility {
     pub fn magic_missile(rank: i32) -> Self {
         Self {
             effect: "
-                The $name makes a $accuracy attack vs. Armor against anything within \\shortrange.
+                The $name makes a $accuracy attack vs. Armor against something within \\shortrange.
                 This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
                 \\hit $dr1 energy damage.
                 \\miss Half damage.
@@ -303,7 +303,7 @@ impl CustomAbility {
     pub fn magic_missile_storm(rank: i32) -> Self {
         Self {
             effect: "
-                The $name makes a $accuracy attack vs. Armor against anything within \\shortrange.
+                The $name makes a $accuracy attack vs. Armor against something within \\shortrange.
                 This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
                 \\hit $dr1l energy damage.
                 \\miss Half damage.

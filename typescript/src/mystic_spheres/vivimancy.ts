@@ -379,7 +379,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           You must be alive to cast this spell.
 
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
           Alternately, you can choose to gain a \\glossterm{vital wound} instead.
           If you do, you gain a +5 accuracy bonus with the attack.
@@ -398,7 +398,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           You must be alive to cast this spell.
 
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
           Alternately, you can increase this hit point loss to be equal to your maximum hit points.
           If you do, you gain a +5 accuracy bonus with the attack.

@@ -17,7 +17,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `2 fire damage.
         If the target is highly flammable, such as a torch or campfire, it ignites.`,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\shortrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
       scaling: {
@@ -373,7 +373,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         targeting: `
           You can set things on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Fortitude against anything within \\shortrange from you.
+          When you do, make an attack vs. Fortitude against something within \\shortrange from you.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
