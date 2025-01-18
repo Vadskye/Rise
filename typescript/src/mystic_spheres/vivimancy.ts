@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
@@ -701,6 +701,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Wall of Death',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
@@ -710,8 +711,6 @@ export const vivimancy: MysticSphere = {
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Fortitude against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
-
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 2,
@@ -723,6 +722,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Massive Wall of Death',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of death',
         exceptThat: `

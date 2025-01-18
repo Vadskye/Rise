@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from './constants';
 
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
@@ -506,6 +506,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Wall of Fire',
 
+      cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
@@ -515,8 +516,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           You can only attack a given target with this spell once per \\glossterm{phase}.
-
-          After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
         `,
       },
       rank: 2,
@@ -528,6 +527,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Wall of Fire',
 
+      cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of fire',
         exceptThat: `

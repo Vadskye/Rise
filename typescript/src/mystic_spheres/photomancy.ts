@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const photomancy: MysticSphere = {
   name: 'Photomancy',
@@ -129,13 +129,12 @@ export const photomancy: MysticSphere = {
     {
       name: 'Wall of Light',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\medarealong \\glossterm{wall} of light within \\longrange.
         The wall is visible as a solid block of light.
         It blocks all forms of vision, including \\trait{darkvision}, but does not block senses like \\trait{blindsight} that do not require the use of eyes.
         It does not inhibit the passage of objects or creatures.
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 1,
       scaling: {

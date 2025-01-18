@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP, SWIFT_FATIGUE } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP, SWIFT_FATIGUE } from './constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -556,13 +556,12 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Wall of Darkness',
 
+      cost: BARRIER_COOLDOWN,
       effect: `
         You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
         The wall is visible as a solid block of darkness.
         It blocks ordinary vision and \\trait{low-light vision}, but creatures with \\trait{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
-
-        After using this ability, you \\glossterm{briefly} cannot use it or any other \\abilitytag{Barrier} ability.
       `,
       rank: 2,
       scaling: {
