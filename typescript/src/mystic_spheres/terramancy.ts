@@ -44,7 +44,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
+          Make an attack vs. Armor against something within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
@@ -59,7 +59,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `\\damagerankfour.`,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
+          Make an attack vs. Armor against something within \\shortrange.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
         `,
       },
@@ -131,7 +131,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against anything within \\medrange.
+          Make an attack vs. Fortitude against something within \\medrange.
           You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
           This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
@@ -228,7 +228,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Armor and Reflex against anything within \\medrange that is \\glossterm{grounded}.
+          Make an attack vs. Armor and Reflex against something within \\medrange that is \\glossterm{grounded}.
         `,
       },
       rank: 1,
@@ -245,7 +245,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything within \\medrange that is \\glossterm{grounded}.
+          Make an attack vs. Reflex against something within \\medrange that is \\glossterm{grounded}.
         `,
       },
       rank: 5,

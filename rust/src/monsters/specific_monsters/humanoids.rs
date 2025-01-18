@@ -94,7 +94,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             name: "Arc".to_string(),
                             ability_type: AbilityType::Normal,
                             effect: r"
-                                The $name makes a $accuracy+1 attack vs. Fortitude against anything within \shortrange.
+                                The $name makes a $accuracy+1 attack vs. Fortitude against something within \shortrange.
                                 This attack \glossterm{chains} once.
                                 \hit $dr1 damage.
                             ".to_string(),

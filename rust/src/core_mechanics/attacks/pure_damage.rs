@@ -121,7 +121,7 @@ mod tests {
 \\abilityusagetime Standard action.
 \\rankline
 
-The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
+The $name makes a +0 attack vs. Fortitude against something within \\medrange.
 
 
 \\hit 1d6 fire damage.
@@ -150,7 +150,7 @@ The $name makes a +0 attack vs. Fortitude against anything within \\medrange.
 \\abilityusagetime Standard action.
 \\rankline
 
-The $name makes a +0 attack vs. Mental against anything within \\medrange.
+The $name makes a +0 attack vs. Mental against something within \\medrange.
 
 
 \\hit 1d10 energy damage.

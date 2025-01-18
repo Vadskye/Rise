@@ -130,7 +130,7 @@ export const fabrication: MysticSphere = {
           If the target is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\longrange.
+          Make an attack vs. Armor against something within \\longrange.
         `,
       },
       rank: 4,
@@ -737,7 +737,7 @@ export const fabrication: MysticSphere = {
           The field as a whole has \\glossterm{hit points} equal to twice your power.
         `,
         targeting: `
-          Make an attack vs. Reflex against anything Large or smaller within \\medrange.
+          Make an attack vs. Reflex against something Large or smaller within \\medrange.
         `,
       },
       rank: 7,

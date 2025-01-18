@@ -72,7 +72,7 @@ export const universal: MysticSphere = {
       attack: {
         hit: `\\damagerankfour.`,
         targeting: `
-          Make an attack against anything within \\medrange.
+          Make an attack against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },

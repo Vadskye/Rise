@@ -135,7 +135,7 @@ export const channelDivinity: MysticSphere = {
           \\damageranktwo.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against something within \\shortrange.
           You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
@@ -152,7 +152,7 @@ export const channelDivinity: MysticSphere = {
           \\damagerankfive.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against something within \\shortrange.
           You gain a +4 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
         `,
       },
@@ -368,7 +368,7 @@ export const channelDivinity: MysticSphere = {
           If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against something within \\shortrange.
         `,
       },
       rank: 3,
@@ -384,7 +384,7 @@ export const channelDivinity: MysticSphere = {
           If the target loses hit points, it is \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against something within \\shortrange.
         `,
       },
       rank: 7,

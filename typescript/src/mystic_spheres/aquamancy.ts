@@ -223,7 +223,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           \\damagerankone.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\shortrange.
+          Make an attack vs. Armor against something within \\shortrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet in a straight horizontal line away from the target.
           If you are submerged, this movement is doubled and you can also move vertically.
         `,
@@ -241,7 +241,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           \\damagerankfour.
         `,
         targeting: `
-          Make an attack vs. Armor against anything within \\medrange.
+          Make an attack vs. Armor against something within \\medrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 30 feet away in a straight horizontal line away from the target.
           If you are submerged, this movement is doubled and you can also move vertically.
         `,
@@ -560,7 +560,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is \submerged, this distance is doubled and you can also move it vertically.
         `,
-        targeting: 'Make an attack vs. Armor against anything within \\medrange.',
+        targeting: 'Make an attack vs. Armor against something within \\medrange.',
       },
       // narrative: '',
       rank: 3,

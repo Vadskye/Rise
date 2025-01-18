@@ -376,7 +376,7 @@ export const astromancy: MysticSphere = {
           If the target loses \\glossterm{hit points}, you deal it this damage again during your next action.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\shortrange.
+          Make an attack vs. Mental against something within \\shortrange.
         `,
       },
       narrative: `
@@ -395,7 +395,7 @@ export const astromancy: MysticSphere = {
           When it returns, it takes \\damagerankone.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
+          Make an attack vs. Mental against something within \\longrange.
         `,
       },
       narrative: `
@@ -415,7 +415,7 @@ export const astromancy: MysticSphere = {
           If it loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against something within \\medrange.
         `,
       },
       narrative: `
@@ -438,7 +438,7 @@ export const astromancy: MysticSphere = {
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\longrange.
+          Make an attack vs. Mental against something within \\longrange.
         `,
       },
       narrative: `
@@ -458,7 +458,7 @@ export const astromancy: MysticSphere = {
           If it is a creature that breathes air and not water, and your attack result beats its Reflex defense, this attack deals maximum damage.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against something within \\medrange.
         `,
       },
       narrative: `
@@ -478,7 +478,7 @@ export const astromancy: MysticSphere = {
           When it returns, it takes \\damagerankfive.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against something within \\medrange.
           The target must be impervious or immune to all of this spell's tags to be impervous or immune to this attack.
         `,
       },
@@ -500,7 +500,7 @@ export const astromancy: MysticSphere = {
           If it loses \\glossterm{hit points} from this damage, it is \\confused as a condition.
         `,
         targeting: `
-          Make an attack vs. Mental against anything within \\medrange.
+          Make an attack vs. Mental against something within \\medrange.
         `,
       },
       narrative: `
