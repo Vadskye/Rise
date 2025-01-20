@@ -245,7 +245,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
                         The target chooses one of its \glossterm{conditions}.
-                        For the duration of your performance, the target ignores that effect.
+                        For the duration of your performance, the target is unaffected by that condition.
 
                         \rankline
                         \rank{3} You can target an additional \glossterm{ally} within range.
