@@ -327,7 +327,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         Make an attack vs. Mental against one creature within \medrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                         \hit For the duration of your performance, the target is \charmed by you.
-                        This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced.
+                        This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced either during this effect or after it ends.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
