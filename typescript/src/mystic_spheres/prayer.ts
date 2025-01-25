@@ -215,8 +215,6 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
-        In addition, it immediately gains that many hit points.
-        When this ability ends, each target loses \\glossterm{hit points} equal to the number of hit points it gained this way.
       `,
       rank: 2,
       scaling: {
