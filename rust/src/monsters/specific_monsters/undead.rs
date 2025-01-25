@@ -217,19 +217,21 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     This penalty is removed as soon as the vampire drinks blood.
                     A vampire can can enter a torpor to survive indefinitely without blood.
                     While in a torpor, it is unconscious until it smells blood nearby.
-                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 energy damage and becomes \frightened by any creatures bearing garlic as a condition.
+                    \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 damage and becomes \frightened by any creatures bearing garlic as a condition.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
                     \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
-                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 energy damage and \glossterm{briefly} becomes \immobilized.
+                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 damage and \glossterm{briefly} becomes \immobilized.
+                    This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
                     It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
                     \parhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
-                    \parhead{True Sunlight} Whenever a vampire is exposed to true sunlight, it takes 100 energy damage and becomes \blinded as a condition.
-                    If it loses hit points from this damage, it immediately dies and dissolves into a pile of ash.
+                    \parhead{Sunlight} Whenever a vampire is exposed to sunlight, it takes 10 damage and becomes \stunned as a condition.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
+                    \parhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
+                      This can allow careful observers to identify vampires.
                     \parhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
                     The vampire becomes \paralyzed until the stake is removed.
-                    A wooden stake is a light improvised weapon that deals 1d4 damage.
+                    A wooden stake is a \weapontag{Light} improvised weapon that deals 1d4 damage.
                 ".to_string(),
                 is_magical: true,
                 name: "Unholy Creature of the Night".to_string(),
