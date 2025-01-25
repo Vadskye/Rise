@@ -267,22 +267,7 @@ fn assert_melee(strike_name: &str, weapon: &Weapon) {
 
 // Brute Force
 impl StrikeAbility {
-    // TODO: weak strikes are not correctly handled by $fullweapondamage
     pub fn armorcrusher(rank: i32, weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Fortitude with its $weapon.
-                \hit $fullweapondamage.
-            "
-            .to_string(),
-            name: strike_prefix("Armorcrushing", &weapon),
-            weapon,
-            ..Default::default()
-        }
-        .plus_accuracy(rank - 1)
-    }
-
-    pub fn armorcrusher_plus(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Fortitude with its $weapon.
@@ -539,11 +524,10 @@ impl StrikeAbility {
 
 // Perfect Precision
 impl StrikeAbility {
-    // TODO: weak strikes are not correctly handled by $fullweapondamage
-    pub fn armorpiercer(weapon: Weapon) -> Self {
+    pub fn armorpiercer(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Reflex with its $weapon.
+                The $name makes a $accuracy \glossterm{strike} vs. Reflex with its $weapon.
                 \hit $fullweapondamage.
             "
             .to_string(),
@@ -551,6 +535,7 @@ impl StrikeAbility {
             weapon,
             ..Default::default()
         }
+        .plus_accuracy(rank - 3)
     }
 
     pub fn distant_shot(rank: i32, weapon: Weapon) -> Self {
@@ -646,19 +631,6 @@ impl StrikeAbility {
 
 // Unbreakable Defense
 impl StrikeAbility {
-    pub fn defensive_strike(rank: i32, weapon: Weapon) -> Self {
-        assert_melee("Defensive Strike", &weapon);
-        Self {
-            effect: r"
-                The $name makes a $accuracy \glossterm{weak strike} vs. Armor with its $weapon.
-                In addition, it gains a +1 bonus to its Armor and Reflex defenses this round as a \abilitytag<Swift> effect.
-                \hit $fullweapondamage.
-            ".to_string(),
-            name: strike_prefix("Defensive", &weapon),
-            weapon,
-            ..Default::default()
-        }.plus_accuracy(rank - 1)
-    }
 }
 
 fn strike_prefix(prefix: &str, weapon: &Weapon) -> String {

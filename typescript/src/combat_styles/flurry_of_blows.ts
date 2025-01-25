@@ -37,9 +37,11 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Desperate Double Flurry',
 
-      cost: "One \\glossterm{fatigue level}.",
+      // Assume a 70% hit chance, so base 0.7x dpr.
+      // This is 1.0x dpr, so 42% more damage than a regular strike.
+      cost: "Two \\glossterm{fatigue levels}.",
       effect: `
-        Make two \\glossterm{weak strikes}.
+        Make two \\glossterm{strikes} with a \\minus2 accuracy penalty.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 1,
@@ -211,25 +213,23 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Dazzling Flurry+',
+      name: 'Blinding Flurry',
 
-      // reroll is about +2 ranks, weak strike dazzled would normally be r1, this is
-      // probably weak but maybe okay?
+      // Normally blind would be too strong for a 2x damage maneuver, but requiring *both*
+      // strikes to hit makes it harder to pull off.
       effect: `
-        Make a strike.
-        You may reroll the accuracy roll and take the highest result.
-        If damaged, the target becomes \\dazzled as a \\glossterm{condition}.
+        Make two \\glossterm{strikes}.
+        If both strikes deal damage and also hit the target's Reflex defense, it becomes \\blinded as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
     },
 
     {
-      name: 'Dazzling Flurry',
+      name: 'Dazzling Speed',
 
       effect: `
-        Make a \\glossterm{weak strike}.
-        You may reroll the accuracy roll and take the highest result.
-        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target takes damage and your attack result also hits its Reflex defense, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
