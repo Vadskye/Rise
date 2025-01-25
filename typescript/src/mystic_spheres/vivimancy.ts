@@ -280,8 +280,6 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
-        In addition, you immediately gain that many hit points.
-        When this ability ends, you lose \\glossterm{hit points} equal to the number of hit points you gained this way.
       `,
       rank: 1,
       scaling: {
