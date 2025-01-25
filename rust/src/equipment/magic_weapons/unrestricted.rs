@@ -420,7 +420,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             As a standard action while this weapon is psionic, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
             The strike is made against the target's Mental defense instead of its Armor defense.
             Its minimum accuracy is $accuracy.
-            If damaged, the target becomes \stunned as a \glossterm{condition}.
+            If the target takes damage, it becomes \stunned as a \glossterm{condition}.
             If it was already stunned, it takes double damage from this attack instead.
         "),
         tags: vec![AbilityTag::Poison],

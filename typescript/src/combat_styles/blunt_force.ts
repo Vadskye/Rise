@@ -207,7 +207,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If damaged, the target falls \\prone.
+        If the target takes damage, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
