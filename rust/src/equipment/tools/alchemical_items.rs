@@ -316,7 +316,7 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr2l cold damage.
-            If the target loses \glossterm{hit points}, it is \slowed as a \glossterm{condition}.
+            If the target loses \glossterm{hit points}, it becomes \slowed as a \glossterm{condition}.
         ".to_string(),
         tags: vec![AbilityTag::Cold],
         upgrades: vec![
@@ -337,7 +337,7 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr6l cold damage.
-            If the target takes damage, it is \slowed as a \glossterm{condition}.
+            If the target takes damage, it becomes \slowed as a \glossterm{condition}.
         ".to_string(),
         tags: vec![AbilityTag::Cold],
         ..alchemical_item()

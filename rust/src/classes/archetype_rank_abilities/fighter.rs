@@ -413,7 +413,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target takes damage, it is \goaded by you as a \glossterm{condition}.
+                    If the target takes damage, it becomes \goaded by you as a \glossterm{condition}.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.

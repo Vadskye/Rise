@@ -480,7 +480,7 @@ fn add_treants(monsters: &mut Vec<MonsterEntry>) {
                     r"
                         The $name makes a $accuracy strike vs. Armor with its treeclub.
                         \hit $fullweapondamage.
-                        If the target takes damage and the attack result beats its Fortitude defense, it is \stunned as a \glossterm{condition}.
+                        If the target takes damage and the attack result beats its Fortitude defense, it becomes \stunned as a \glossterm{condition}.
                     ",
                 ),
             ],

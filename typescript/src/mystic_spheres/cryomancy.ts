@@ -111,7 +111,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           \\damagerankfour.
-          If the target takes damage, it is \\slowed as a \\glossterm{condition}.
+          If the target takes damage, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -162,7 +162,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses \\glossterm{hit points} from this damage, it is \\immobilized as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it becomes \\immobilized as a \\glossterm{condition}.
           This condition is automatically removed if the target takes damage.
         `,
         targeting: `
@@ -584,7 +584,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If the target loses hit points, it is \\slowed as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 2,
       scaling: 'accuracy',
@@ -626,7 +626,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
         Make a melee \\glossterm{strike} that deals double weapon damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If the target takes damage and your attack result also beats its Fortitude defense, it is \\slowed as a condition.
+        If the target takes damage and your attack also hits its Fortitude defense, it becomes \\slowed as a condition.
       `,
       rank: 5,
       scaling: 'accuracy',

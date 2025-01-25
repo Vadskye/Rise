@@ -481,7 +481,7 @@ export const toxicology: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
-          It is \\frightened of you and all other sources of fungus as a \\glossterm{condition}.
+          It becomes \\frightened of you and all other sources of fungus as a \\glossterm{condition}.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
           Dropping \\prone as part of this action gives a +5 bonus to this check.

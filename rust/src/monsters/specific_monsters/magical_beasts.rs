@@ -121,7 +121,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                         The $name makes a $accuracy attack vs. Reflex against something within \medrange.
                         Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
                         \hit $dr1 damage.
-                        If the attack result beats the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
+                        If the attack result beats the target's Fortitude defense, it becomes \slowed as a \glossterm{condition}.
                     ".to_string(),
                     is_magical: true,
                     name: "Iceweb".to_string(),
