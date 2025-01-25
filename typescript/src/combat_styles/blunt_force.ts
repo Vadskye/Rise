@@ -242,7 +242,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike}.
         After you make the strike, you can move up to 5 feet.
         During this movement, you can move into space occupied by creatures that you damaged with the strike.
-        When you do, you \\glossterm{push} that creature up to 5 feet in any direction.
+        When you do, you \\glossterm{push} that creature up to 5 feet away from you into an unoccupied space.
         This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
