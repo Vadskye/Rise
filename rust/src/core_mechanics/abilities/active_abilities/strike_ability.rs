@@ -146,7 +146,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
-                If the target loses hit points, it is \enraged as a \glossterm{condition}.
+                If the target loses hit points, it becomes \enraged as a \glossterm{condition}.
                 Every round, it must spend a \glossterm{standard action} to make an attack.
             "
             .to_string(),
@@ -201,7 +201,7 @@ impl StrikeAbility {
 
     fn ichor_infestation_details() -> String {
         r"
-            If the target loses hit points, it is infested with ichor as a \glossterm{condition}.
+            If the target loses hit points, it becomes infested with ichor as a \glossterm{condition}.
             While infested with ichor, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
         ".to_string()
     }

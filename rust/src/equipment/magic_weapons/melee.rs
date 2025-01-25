@@ -88,7 +88,7 @@ pub fn melee() -> Vec<MagicWeapon> {
             This weapon shimmers with a chaotic pattern of colors, shedding multicolored \glossterm{bright illumination} in a \smallarea radius.
             As a standard action, you can make a mundane melee \glossterm{strike} using this weapon that accentuates its bewildering effect.
             This attack has the \atVisual tag.
-            If your attack result beats the target's Reflex defense, it is \dazzled as a \glossterm{condition}.
+            If your attack result beats the target's Reflex defense, it becomes \dazzled as a \glossterm{condition}.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Can dazzle in an area", r"

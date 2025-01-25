@@ -596,7 +596,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with frigid energy.
             The strike's minimum accuracy is $accuracy.
-            If the target loses hit points from the strike, it is \slowed as a \glossterm{condition}.
+            If the target loses hit points from the strike, it becomes \slowed as a \glossterm{condition}.
         "),
         tags: vec![AbilityTag::Cold],
         upgrades: vec![

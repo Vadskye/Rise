@@ -412,7 +412,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Earth.
           When it returns, you deal it \\damagerankone.
-          If it loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
+          If it loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -497,7 +497,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Far Realm.
           When it returns, you deal it \\damagerankfive.
-          If it loses \\glossterm{hit points} from this damage, it is \\confused as a condition.
+          If it loses \\glossterm{hit points} from this damage, it becomes \\confused as a condition.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.

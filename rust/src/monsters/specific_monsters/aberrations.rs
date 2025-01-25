@@ -51,7 +51,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                        \hit $dr4 damage. If the target loses hit points, it is \stunned as a \glossterm{condition}.
+                        \hit $dr4 damage. If the target loses hit points, it becomes \stunned as a \glossterm{condition}.
                     ".to_string(),
                     is_magical: true,
                     name: "Mind Crush".to_string(),
