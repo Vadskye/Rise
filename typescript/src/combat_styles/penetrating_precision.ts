@@ -190,11 +190,11 @@ export const perfectPrecision: CombatStyle = {
       name: 'Called Shot+',
 
       effect: `
-        Choose any two numbers from 1--10, then make a \\glossterm{strike}.
-        If you roll either number on your attack roll, you gain a +5 accuracy bonus and the strike deals double \\glossterm{weapon damage}.
+        Choose a number from 1--10, then make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        If you roll that number on your attack roll, you gain a +5 accuracy bonus.
         Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
       `,
-      rank: 3,
+      rank: 5,
     },
 
     {
