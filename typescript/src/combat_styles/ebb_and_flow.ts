@@ -148,7 +148,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike if you regained \\glossterm{hit points} or \\glossterm{damage resistance} and did not make any attacks last round.
+        It deals double \\glossterm{weapon damage} if you both regained \\glossterm{hit points} or \\glossterm{damage resistance} and did not make any attacks last round.
       `,
       rank: 3,
     },
