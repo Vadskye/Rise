@@ -159,7 +159,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If damaged, the target becomes \\slowed as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -222,7 +222,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If damaged, the target takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
+        If the target takes damage, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,
