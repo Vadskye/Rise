@@ -211,33 +211,30 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Knockback Shove',
+      name: 'Knock Flying',
 
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you \\glossterm{knockback} the target up to 15 feet instead of pushing it.
-          On a critical hit, you knockback the target 30 feet instead.
-        `,
-        name: 'shove',
-      },
+      effect: `
+        Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+        You must be strong enough to carry the target.
+        \\hit You \\glossterm{knockback} the target 10 feet away from you.
+        \\crit The knockback distance increases to 20 feet.
+      `,
       rank: 1,
       tags: ['Brawling'],
     },
 
     {
-      name: 'Knockback Sweep',
+      name: 'Knock Flying+',
 
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          it affects up to three creatures adjacent to you instead of only one.
-          In addition, you \\glossterm{knockback} each target up to 15 feet instead of pushing it.
-          On a critical hit, you knockback each target 30 feet instead.
-        `,
-        name: 'shove',
-      },
-      rank: 3,
+      // TODO: what damage value makes sense here?
+      effect: `
+        Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+        You must be strong enough to carry the target.
+        \\hit \\damagerankthree.
+        In addition, you \\glossterm{knockback} the target 20 feet away from you.
+        \\crit Double damage, and the knockback distance increases to 40 feet.
+      `,
+      rank: 5,
       tags: ['Brawling'],
     },
 
