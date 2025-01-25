@@ -232,7 +232,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
-        If damaged, the target becomes \\goaded by you as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Emotion'],

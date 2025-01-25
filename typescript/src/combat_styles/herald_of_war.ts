@@ -167,7 +167,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If damaged, the target becomes \\goaded by you as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 5,
       tags: ['Emotion'],
@@ -189,7 +189,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If damaged, the target becomes \\frightened by you as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 5,
       tags: ['Emotion'],

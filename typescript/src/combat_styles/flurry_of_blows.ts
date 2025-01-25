@@ -206,7 +206,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If damaged, the target becomes \\stunned as a \\glossterm{condition}.
+        If the target takes damage, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Electricity'],
