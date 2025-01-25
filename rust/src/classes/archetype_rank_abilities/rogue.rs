@@ -397,20 +397,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{6} The area increases to a \hugearea radius.
                         \rank{7} The accuracy bonus increases to \plus3.
                     \end{magicalactiveability}
-
-                    \begin{magicalactiveability}{Vigorous Verse}
-                        \abilityusagetime \glossterm{Minor action}.
-                        \rankline
-                        Choose one \glossterm{ally} within \rngmed range.
-                        For the duration of your performance, the target gains a \plus4 bonus to its maximum \glossterm{hit points}.
-                        In addition, it immediately gains that many hit points.
-                        When this effect ends, the target loses hit points equal to the hit points it gained this way.
-
-                        \rankline
-                        \rank{3} The bonus increases to \plus8.
-                        \rank{5} The bonus increases to \plus16.
-                        \rank{7} The bonus increases to \plus32.
-                    \end{magicalactiveability}
                 }
             ",
             modifiers: None,
