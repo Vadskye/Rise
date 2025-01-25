@@ -499,8 +499,10 @@
     If a square is considered difficult terrain for multiple reasons, the cost increases stack.
     For example, a square in a swamp that also has thick bushes blocking your passage would cost 10 extra feet of movement to leave.
 
-    \parhead{Obstacles}
-    An obstacle is anything that gets in your way. Enemies and large solid objects like walls completely block your movement. If you can get past an obstacle, like a low wall, that square is treated as difficult terrain. Some obstacles require a \glossterm{check} to bypass, such as an Balance check (see \pcref{Balance}).
+    \parhead{Obstacles}\label{Obstacles}
+    An obstacle is anything that gets in your way.
+    Enemies and large solid objects like walls completely block your movement, preventing you from entering space they occupy.
+    Some abilities can allow you to move through spaces occupied by enemies.
 
     \parhead{Squeezing}\nonsectionlabel{Squeezing}
     In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
@@ -530,13 +532,14 @@
 
     \subsubsection{Push Effects}\label{Push Effects}
       A creature affected by a \glossterm{push} effect is being pushed by a constant force.
-      If it encounters another creature or a solid obstacle during the movement, the forced movement effect ends without causing additional harm to the creature or the obstacle.
+      If it encounters an \glossterm{obstacle}, the push ends without causing harm to the creature or the obstacle.
       Similarly, if a creature being pushed stops being supported and would fall, it falls instead of being pushed further.
       This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
 
     \subsubsection{Knockback Effects}\label{Knockback Effects}
       A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
-      If it encounters another creature or a solid obstacle during the movement, it and the obstacle each take 1d6 damage per 10 feet of movement remaining.
+      If it encounters an \glossterm{obstacle}, the knockback ends.
+      Both the creature and the obstacle take 1d6 damage per 10 feet of movement remaining.
       A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
       This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
 
