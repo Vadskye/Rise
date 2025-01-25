@@ -9,18 +9,18 @@ export const perfectPrecision: CombatStyle = {
       name: 'Pure Precision',
 
       effect: `
-        Make a \\glossterm{weak strike} with a +3 accuracy bonus.
+        Make a \\glossterm{strike} with a +3 accuracy bonus.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
       name: 'Pure Precision+',
 
       effect: `
-        Make a \\glossterm{strike} with a +6 accuracy bonus.
+        Make a \\glossterm{strike} with a +15 accuracy bonus.
       `,
-      rank: 5,
+      rank: 7,
     },
     {
       name: 'Armorpiercer',
@@ -38,7 +38,7 @@ export const perfectPrecision: CombatStyle = {
       cost: "See text.",
       effect: `
         Make a \\glossterm{strike}.
-        If you miss, you can increase your \\glossterm{fatigue level} by one to reroll the attack with a +4 accuracy bonus.
+        You can increase your \\glossterm{fatigue level} by one to reroll the attack roll with a +4 accuracy bonus.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
@@ -100,8 +100,8 @@ export const perfectPrecision: CombatStyle = {
       name: 'Arrowguide',
 
       effect: `
-        Make a ranged \\glossterm{weak strike}.
-        After making this strike, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against the target.
+        Make a ranged \\glossterm{strike}.
+        If the target takes damage, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against it.
       `,
       rank: 1,
     },
@@ -145,20 +145,20 @@ export const perfectPrecision: CombatStyle = {
     },
 
     {
-      name: 'Groundspike',
+      name: 'Pinning Shot',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
     },
 
     {
-      name: 'Groundspike+',
+      name: 'Pinning Shot+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         If damaged, the target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,

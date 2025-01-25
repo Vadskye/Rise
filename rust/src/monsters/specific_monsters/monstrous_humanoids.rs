@@ -578,7 +578,7 @@ fn add_ogres(monsters: &mut Vec<MonsterEntry>) {
             monstrous_humanoid(MonsterDef {
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::armorcrusher_plus(3, Weapon::greatclub())),
+                        ActiveAbility::Strike(StrikeAbility::armorcrusher(3, Weapon::greatclub())),
                         ActiveAbility::Strike(StrikeAbility::knockdown_plus(3, Weapon::greatclub())),
                         ActiveAbility::Strike(StrikeAbility::sweeping_strike(3, Weapon::greatclub())),
                         ActiveAbility::Custom(CustomAbility::terrifying_shout(3).except_elite()),

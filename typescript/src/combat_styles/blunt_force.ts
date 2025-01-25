@@ -93,7 +93,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it is \\vulnerable to all damage as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 5,
     },
@@ -124,7 +124,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target loses hit points and your attack result also hits its Fortitude defense, it is \\stunned as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -134,7 +134,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
-        If the target loses hit points and your attack result also hits its Fortitude defense, it is \\confused as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\confused as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -261,11 +261,18 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Desperate Smash',
 
-      cost: "One \\glossterm{fatigue level}.",
+      // Expected high power is about 4.
+      // A normal strike would deal about 1d8+2 = 6.5 damage.
+      // A Heavy weapon would deal about 1d10+3 = 8.5 damage
+      // This would deal 8.5 damage normally or 10.5 with a Heavy weapon, so about 25%
+      // more damage than baseline.
+      cost: "One \\glossterm{fatigue level} (see text).",
       effect: `
         Make a \\glossterm{strike}.
-        The strike deals \\glossterm{extra damage} equal to your power.
+        The strike deals \\glossterm{extra damage} equal to half your power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
+
+        This ability only increases your fatigue level if the strike hits.
       `,
       rank: 1,
     },
@@ -276,8 +283,10 @@ export const bruteForce: CombatStyle = {
       cost: "One \\glossterm{fatigue level}.",
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        The strike deals 1d8 \\glossterm{extra damage} per 3 power.
+        The strike deals \\glossterm{extra damage} equal to your power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
+
+        This ability only increases your fatigue level if the strike hits.
       `,
       rank: 5,
     },
