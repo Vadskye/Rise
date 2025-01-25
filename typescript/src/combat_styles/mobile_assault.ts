@@ -61,7 +61,9 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, you can \\glossterm{briefly} move through its space as if it was not there.
+        If the target takes damage and is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle}.
+        This means you can move through its space freely.
+        If you end your movement in its space, this can cause you both to be \\squeezing (see \\pcref{Squeezing}).
       `,
       rank: 1,
     },
