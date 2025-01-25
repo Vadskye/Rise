@@ -870,15 +870,16 @@ They allow more distinct and unique character customization, but also increase g
     You must use this ability before rolling.
     If this result does not cause you to hit the target, you roll the attack roll normally.
 
-    % Average of +1.5 accuracy, so worse than a typical "-2 defenses" condition. A typical t1.5 debuff would be r3, requiring 7th level.
-    % If this gets a one rank discount for being a feat ability, this is reasonably balanced.
+    % Assume a 70% base hit rate, so 0.8x dpr with glances.
+    % A -2 defenses debuff increases damage to 0.95x dpr.
+    % This increases damage to 1x dpr, so it's actually better than -2 defenses normally, but worse for crit fishing.
     \magicalff[6]{Fateseal}
     \begin{magicalactiveability}{Fateseal}
       \abilityusagetime Standard action.
       \rankline
       Make an attack vs. Mental against one creature within \medrange of you.
       \hit The target is fatesealed as a \glossterm{condition}.
-      Whenever you or one of your \glossterm{allies} make an attack roll against it, if the roll would be less than a 6, treat it as a 6 instead.
+      Whenever you or one of your \glossterm{allies} make an attack roll against it, if the roll would be less than a 5, treat it as a 5 instead.
       This does not affect extra dice from exploding attacks.
       \crit This condition must be removed an additional time before the effect ends.
 
