@@ -217,7 +217,7 @@ export const dirtyFighting: CombatStyle = {
         Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
         \\hit You \\glossterm{knockback} the target 10 feet away from you.
-        \\crit The knockback distance increases to 20 feet.
+        \\crit Double damage and double knockback distance.
       `,
       rank: 1,
       tags: ['Brawling'],
@@ -232,7 +232,7 @@ export const dirtyFighting: CombatStyle = {
         You must be strong enough to carry the target.
         \\hit \\damagerankthree.
         In addition, you \\glossterm{knockback} the target 20 feet away from you.
-        \\crit Double damage, and the knockback distance increases to 40 feet.
+        \\crit Double damage and double knockback distance.
       `,
       rank: 5,
       tags: ['Brawling'],
