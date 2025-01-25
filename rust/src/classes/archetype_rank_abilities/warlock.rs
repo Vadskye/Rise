@@ -231,15 +231,17 @@ pub fn keeper_of_forbidden_knowledge<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Secret of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
                     This functions like light body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
                     It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
-                    However, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
+                    In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
                     \subcf{Secret of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 +1 per two \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
-                    However, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
+                    In exchange, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
                     \subcf{Secret of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature finishes a \glossterm{short rest}.
-                    However, whenever you would gain a \glossterm{condition} that you are not \trait{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
+                    If the condition would normally have a special way to remove it, such as the \spell{ignition} spell, that also removes the curse.
+
+                    In exchange, whenever you would gain a \glossterm{condition} that you are not \trait{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
                     Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }
