@@ -139,18 +139,6 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
-      name: 'Defensive Blow',
-
-      effect: `
-        Make a melee \\glossterm{weak strike}.
-        You gain a +1 bonus to all defenses this round.
-        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
-      `,
-      rank: 1,
-      tags: ['Swift (see text)'],
-    },
-
-    {
       name: 'Cleanse',
 
       effect: `

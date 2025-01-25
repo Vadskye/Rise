@@ -198,15 +198,8 @@ Notation:
     * Melee strike matches "dX at Grasp range"
       * t1.5 condition if lose HP
       * t1 condition if beat extra defense
-    * Melee weak strike matches "dX at Grasp range"
-      * t2 condition if lose HP
-      * t1.5 condition if beat extra defense
-      * t1 condition if take damage
     * Unrestricted strike matches "dX at Short range"
       * t1 condition if lose HP
-    * Unrestricted weak strike matches "dX-1 at Short range"
-      * t1.5 condition if lose HP
-      * t1 condition if beat extra defense
   * Rank 3
     * Melee strike matches "dX-1 at Grasp range"
       * t2.5 condition if lose HP

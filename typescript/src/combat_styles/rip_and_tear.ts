@@ -39,8 +39,8 @@ export const ripAndTear: CombatStyle = {
       name: 'Brow Gash',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result also hits its Reflex defense, it is \\dazzled as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -50,7 +50,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target loses hit points, it is \\blinded as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
     },
@@ -60,7 +60,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target loses hit points and your attack result also hits its Reflex defense, it is \\slowed as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 1,
     },
@@ -69,7 +69,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target loses hit points and your attack result also hits its Reflex defense, it is \\slowed as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
     },

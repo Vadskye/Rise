@@ -64,7 +64,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                 name: "Veteran Archer".to_string(),
                 abilities: MonsterAbilities {
                     active_abilities: vec![
-                        ActiveAbility::Strike(StrikeAbility::armorpiercer(Weapon::longbow())),
+                        ActiveAbility::Strike(StrikeAbility::armorpiercer(1, Weapon::longbow())),
                         ActiveAbility::Strike(StrikeAbility::normal_strike(1, Weapon::longbow())),
                     ],
                     trained_skills: vec![
