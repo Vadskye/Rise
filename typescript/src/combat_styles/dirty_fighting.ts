@@ -338,7 +338,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If damaged, you may switch spaces with the target, as long as this would not result in either of you entering a occupied space.
+        If the target takes damage, you may switch spaces with it, as long as this would not result in either of you entering a occupied space.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
