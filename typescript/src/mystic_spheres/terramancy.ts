@@ -225,7 +225,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, it is \\slowed as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against something within \\medrange that is \\glossterm{grounded}.
@@ -242,7 +242,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `
           \\damagerankfour.
-          If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it becomes \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against something within \\medrange that is \\glossterm{grounded}.

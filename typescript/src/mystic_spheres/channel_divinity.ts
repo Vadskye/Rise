@@ -365,7 +365,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          If the target loses hit points, it is \\frightened by you as a \\glossterm{condition}.
+          If the target loses hit points, it becomes \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
@@ -381,7 +381,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven.
-          If the target loses hit points, it is \\panicked by you as a \\glossterm{condition}.
+          If the target loses hit points, it becomes \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.

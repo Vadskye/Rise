@@ -795,7 +795,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses \\glossterm{hit points}, it is \\vulnerable to all damage as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.
