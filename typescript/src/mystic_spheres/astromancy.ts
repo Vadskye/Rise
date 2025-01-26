@@ -491,11 +491,11 @@ export const astromancy: MysticSphere = {
       tags: ['Air', 'Cold', 'Earth', 'Electricity', 'Fire', 'Water'],
     },
     {
-      name: 'Planar Jaunt -- Far Realm',
+      name: 'Planar Jaunt -- Eternal Void',
 
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to the Far Realm.
+          The target \\sphereterm{flickers} to the Eternal Void.
           When it returns, you deal it \\damagerankfive.
           If it loses \\glossterm{hit points} from this damage, it becomes \\confused as a condition.
         `,
@@ -504,7 +504,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your foe briefly teleports into the Far Realm.
+        Your foe briefly teleports into the Eternal Void.
         The distance of the journey, combined with the bizarre destination, is deeply unsettling.
       `,
       rank: 7,
