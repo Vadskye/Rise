@@ -114,7 +114,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
                 \begin{sustainability}{Rage}{\atEmotion, \atSustain (free), \atSwift}
-                    \abilityusagetime \glossterm{Free action} while not already in a rage.
+                    \abilityusagetime \glossterm{Free action}.
+                    \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{itemize}
