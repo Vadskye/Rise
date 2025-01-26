@@ -183,7 +183,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             complexity: 2,
             name: "Divine Spell Versatility",
-            is_magical: false,
+            is_magical: true,
             rank: 1,
             description: r"
                 You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{channel divinity} or \sphere{prayer}.
@@ -195,7 +195,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
         RankAbility {
             complexity: 1,
             name: "Divine Spell Versatility+",
-            is_magical: false,
+            is_magical: true,
             rank: 4,
             description: r"
                 You learn an additional spell with this ability.
