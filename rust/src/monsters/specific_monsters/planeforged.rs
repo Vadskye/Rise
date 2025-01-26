@@ -145,7 +145,7 @@ fn add_angels(monsters: &mut Vec<MonsterEntry>) {
         knowledge: Some(Knowledge::new(vec![
             (-5, "
                 Angels are the ultimate champions of good in the endless battle of good and evil.
-                They are native to the Celestial Heavens, and they often serve the interests of good-aligned deities.
+                They are native to Elysium, and they often serve the interests of good-aligned deities.
             "),
             (0, "
                 All angels have a striking and highly memorable appearance that evokes strong emotions in most viewers.

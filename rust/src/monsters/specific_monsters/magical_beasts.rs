@@ -616,7 +616,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 Only animals can be fully transformed by ichor.
                 Other creatures suffer temporary effects at worst.
                 The biological structure of transformed animals bears some resemblance to aberrations.
-                Some scholars theorize that this means the ichor originated from the Far Realm, while others think it is a mere imitation.
+                Some scholars theorize that this means the ichor originated from the Eternal Void, while others think it is a mere imitation.
             "),
         ])),
         monsters: vec![
