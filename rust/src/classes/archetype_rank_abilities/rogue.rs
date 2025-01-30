@@ -167,8 +167,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 You learn two \textit{bardic performances} from the list below.
                 You can also spend \glossterm{insight points} to learn one additional bardic performance per \glossterm{insight point}.
 
-                When you use a \textit{bardic performance} ability, you begin a performance using one of your Perform skills.
-                If you have a Perform \glossterm{trained skill} that you can use to make an relevant performance, you gain a \plus1 bonus to \glossterm{accuracy} with any \textit{bardic performance} ability using that Perform skill.
+                When you use a \textit{bardic performance} ability, you begin a performance using a Perform skill.
+                If you are not trained with that Perform skill, you take a \minus2 accuracy penalty with the bardic performance ability.
                 There are four types of performances: dance, instrumental, manipulation, and vocal.
                 \begin{raggeditemize}
                     \item Dance: You use your body to dance or act. This limits your ability to defend yourself, giving you a \minus2 penalty to your Armor and Reflex defenses as a \atSwift effect. Dance performances have the \atVisual tag.
