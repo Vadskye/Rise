@@ -50,7 +50,7 @@ impl TableRow {
             sparkle = if self.magical { r"\sparkle" } else { "" },
             category_separator = if self.category.is_some() { "&" } else { "" },
             category = self.category.clone().unwrap_or(String::from("")),
-            rank_and_price = rank_and_price_text(self.rank, self.consumable),
+            rank_and_price = rank_and_price_text(self.rank),
             short_description = self.short_description.trim(),
         );
         replace_attack_terms(latex.trim(), &item_creature(self.rank), false, None)

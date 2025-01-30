@@ -28,28 +28,24 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
   \subsection{Item Ranks}\label{Item Ranks}
 
+    % Consumable items get effects at +1 rank, since they are cheap.
     Each item has a rank associated with it.
     An item's rank is generally correlated with the item's effectiveness, rarity, and value.
     A magic item's \glossterm{power} is equal to twice its rank.
     These effects are summarized in \trefnp{Item Ranks}.
     In general, five items of a given rank are worth the same as a single item that is one rank higher.
 
-    \parhead{Permanent Items and Consumables}
-    Long-term items that are expected to be worn or otherwise used repeatedly are more expensive than items that are destroyed immediately after being used.
-    Although consumable items are cheaper, they still use their full rank for all other purposes, such as their power and how difficult they are to buy.
-    In general, five consumable items of a given rank are worth as much as a single non-consumable item of that rank.
-
     \begin{columntable}
-      \begin{dtabularx}{\columnwidth}{l l X X}
-        \tb{Rank} & \tb{Power} & \tb{Typical Permanent Item Price} & \tb{Typical Consumable Price} \tableheaderrule
-        0         & 0          & 10 gp or less                     & 2 gp or less \\
-        1         & 2          & 40 gp                             & 10 gp        \\
-        2         & 4          & 200 gp                            & 40 gp        \\
-        3         & 6          & 1,000 gp                          & 200 gp       \\
-        4         & 8          & 5,000 gp                          & 1,000 gp     \\
-        5         & 10         & 25,000 gp                         & 5,000 gp     \\
-        6         & 12         & 125,000 gp                        & 25,000 gp    \\
-        7         & 14         & 625,000 gp                        & 125,000 gp   \\
+      \begin{dtabularx}{\columnwidth}{l l X}
+        \tb{Rank} & \tb{Typical Item Price} & \tb{Power} \tableheaderrule
+        0         & 10 gp or less           & 0  \\
+        1         & 40 gp                   & 2  \\
+        2         & 200 gp                  & 4  \\
+        3         & 1,000 gp                & 6  \\
+        4         & 5,000 gp                & 8  \\
+        5         & 25,000 gp               & 10 \\
+        6         & 125,000 gp              & 12 \\
+        7         & 625,000 gp              & 14 \\
       \end{dtabularx}
     \end{columntable}
 
@@ -721,11 +717,11 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           % just vulnerabilities
           \tind Cold iron           & Common vulnerabilities                                            & 2 (200 gp)     \\
           % crit accuracy
-          \tind Diamondsteel        & \plus3 accuracy with critical hits                                & 3 (1,000 gp)   \\
-          \tind Diamondsteel, pure  & \plus5 accuracy with critical hits                                & 6 (125,000 gp)  \\
+          \tind Diamondsteel        & \plus2 accuracy with critical hits                                & 3 (1,000 gp)   \\
+          \tind Diamondsteel, pure  & \plus4 accuracy with critical hits                                & 6 (125,000 gp)  \\
           % energy damage
-          \tind Dragonfang          & \plus1d4 \glossterm{extra damage}, deals energy damage                                               & 3 (1,000 gp)   \\
-          \tind Dragonfang, ancient & \plus1d8 \glossterm{extra damage}, deals energy damage, grants breath attack                         & 5 (25,000 gp)  \\
+          \tind Dragonfang          & Deals energy damage                                               & 3 (1,000 gp)   \\
+          \tind Dragonfang, ancient & \plus1d4 \glossterm{extra damage}, deals energy damage, grants breath attack                         & 5 (25,000 gp)  \\
           % kind of an extra flex tag
           \tind Mithral             & Lighter                                           & 3 (1,000 gp)   \\
           \tind Mithral, pure       & \plus1 accuracy, lighter                          & 6 (125,000 gp)  \\
@@ -747,13 +743,13 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
       \parhead{Cold Iron} Many fey creatures and some demons are \glossterm{vulnerable} to cold iron weapons.
 
-      \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus3 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+      \parhead{Diamondsteel} A diamondsteel weapon grants you a \plus2 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
-      \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus5 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
+      \parhead{Diamondsteel, Pure} A pure diamondsteel weapon grants you a \plus4 bonus to \glossterm{accuracy} with \glossterm{strikes} using it for the purpose of determining whether you get a \glossterm{critical hit}.
 
       \parhead{Dragonfang} Strikes with a dragonfang weapon deal 1d4 \glossterm{extra damage} and have that dragon's associated tag (see \tref{Dragon Types}).
 
-      \parhead{Dragonfang, Ancient} Strikes with an ancient dragonfang weapon deal 1d8 \glossterm{extra damage} and have that dragon's associated tag (see \tref{Dragon Types}).
+      \parhead{Dragonfang, Ancient} Strikes with an ancient dragonfang weapon deal 1d4 \glossterm{extra damage} and have that dragon's associated tag (see \tref{Dragon Types}).
       You also gain the \ability{dragonfang breath} ability while wielding an ancient dragonfang weapon.
       \begin{activeability}{Dragonfang Breath}
         \abilityusagetime Standard action.
