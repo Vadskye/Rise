@@ -145,7 +145,7 @@ pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> 
         name = item.name.clone(),
         // attuneability uses {} for the last argument, but activeability uses [] for the last
         // argument.
-        rank_and_price = rank_and_price_text(item.rank, consumable),
+        rank_and_price = rank_and_price_text(item.rank),
         crafting = crafting_text,
         tags = tags.join(", "),
         description =
@@ -155,7 +155,7 @@ pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> 
         } else {
             ""
         },
-        upgrades = latex_upgrades_section(item, consumable),
+        upgrades = latex_upgrades_section(item),
     ))
 }
 
@@ -188,7 +188,7 @@ fn validate_short_description(item: &StandardItem) {
 // This uses the item instead of being a method on `Upgrade` because generating the
 // upgrade text requires a lot of information about the original item and the number of
 // upgrades.
-fn latex_upgrades_section(item: StandardItem, consumable: bool) -> String {
+fn latex_upgrades_section(item: StandardItem) -> String {
     if item.upgrades.len() == 0 {
         return String::from("");
     }
@@ -203,7 +203,7 @@ fn latex_upgrades_section(item: StandardItem, consumable: bool) -> String {
                 name = upgraded_item.name,
                 // Note that `\upgraderank` provides "Rank" text, so we don't prefix
                 // this with "Rank".
-                rank_and_price = rank_and_price_text(upgraded_item.rank, consumable),
+                rank_and_price = rank_and_price_text(upgraded_item.rank),
                 description = replace_attack_terms(
                     &upgraded_item.description,
                     &item_creature(upgraded_item.rank),
