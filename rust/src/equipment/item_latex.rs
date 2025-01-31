@@ -113,7 +113,7 @@ impl StandardItem {
 
 // The extra arguments are derived from the item's category, which is individual for each item
 // type.
-pub fn item_latex(item: StandardItem, consumable: bool, crafting_text: &str) -> String {
+pub fn item_latex(item: StandardItem, crafting_text: &str) -> String {
     validate_description(&item);
     validate_short_description(&item);
 

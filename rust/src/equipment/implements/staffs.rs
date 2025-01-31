@@ -315,12 +315,8 @@ pub fn staffs() -> Vec<Implement> {
         short_description: String::from(r"Can exert to repeat effect"),
         description: String::from(r"
             Whenever you use a \magical ability that does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you may activate this staff.
-            When you do, the ability takes effect again during your next action.
+            When you do, the ability \glossterm{repeats} during your next action.
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this effect again.
-
-            The echo uses the same choices for all decisions, such as targets.
-            It still originates from you as if you had used it, so you must be in range of any targets.
-            You cannot use the \ability<desperate exertion> ability to affect the ability used to activate this staff or its echo.
         "),
         ..Implement::default()
     }));
