@@ -592,6 +592,15 @@ A reactive attack can never be triggered by a reactive attack or reactive check.
 \glossdef{reactive check} A reactive check is a \glossterm{check} that you make during the resolution of another creature's actions.
 Just like a \glossterm{reactive attack}, you cannot modify a reactive check in any way.
 
+\glossdef{repeat} Some effects can repeat abilities at a later time.
+When an ability repeats, it retains all choices for all decisions as the original ability usage, such as targets and affected area.
+All attack rolls made for a repeated ability are \glossterm{reactive attacks}.
+
+Some repeats specify their targets, such as repeating only for a particular creature.
+Other repeats affect the entire ability.
+If a repeat specifies a target, it works on that target regardless of the ability's original targeting restrictions.
+Otherwise, the repeat originates from the creature that originally used the ability, so targeting restrictions and range limits still apply.
+
 \glossdef{reroll} Some abilities allow you to reroll a roll you just made.
 The most common ability that allows rerolling is \ability{desperate exertion} (see \pcref{Desperate Exertion}).
 You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
@@ -734,6 +743,7 @@ For details about attacking with thrown weapons, see \pcref{Basic Strike -- Thro
 
 \glossdef{touch}[touches] Some abilities function on creatures you touch, rather than having a range away from you.
 You can generally touch an adjacent creature as long as you have a \glossterm{free hand}, even if it is an enemy, though this has no mechanical effect unless an ability says it does.
+Hitting someone with a \glossterm{natural weapon} does count as touching them, but it still requires an action, so you can't make a strike as part of using another ability unless it says explicitly that you can.
 Some creatures cannot be touched, such as \trait{intangible} creatures.
 
 % TODO: define standard trap rules
