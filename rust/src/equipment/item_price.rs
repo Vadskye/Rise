@@ -3,15 +3,15 @@ use num_format::{Locale, ToFormattedString};
 pub fn item_price(rank: i32) -> String {
     let mut value = match rank {
         -1 => 5,
-        0 => 10,
-        1 => 40,
-        2 => 200,
-        3 => 1000,
-        4 => 5000,
-        5 => 25000,
-        6 => 125000,
-        7 => 625000,
-        8 => 3125000,
+        0 => 1,
+        1 => 4,
+        2 => 20,
+        3 => 100,
+        4 => 500,
+        5 => 2500,
+        6 => 12500,
+        7 => 62500,
+        8 => 312500,
         _ => panic!("Unrecognized item rank {}", rank),
     };
     value.to_formatted_string(&Locale::en)
