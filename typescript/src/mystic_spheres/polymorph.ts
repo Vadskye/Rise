@@ -6,7 +6,7 @@ import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
   shortDescription: 'Change the physical shape or outward form of objects and creatures.',
-  sources: ['arcane', 'nature', 'pact'],
+  sources: ['arcane', 'nature', 'soulkeeper'],
   specialRules: `
     This mystic sphere manipulates the physical bodies of creatures, objects, or both.
     Anything that does not have a physical body, such as an \\trait{intangible} creature, is immune to all abilities from this mystic sphere.

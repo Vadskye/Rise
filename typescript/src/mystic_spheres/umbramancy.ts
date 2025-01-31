@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP, SWIFT_FATIGUE } from
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
   shortDescription: 'Manipulate shadows and darkness to conceal allies and inhibit foes.',
-  sources: ['arcane', 'pact'],
+  sources: ['arcane', 'nature'],
   // Spells that only work vs shadowed targets have +2r. (so dr5 damage at r3)
   // Alternately, a spell can pay -1r to get +2a vs shadowed targets, or -2r for +4a
   specialRules: `

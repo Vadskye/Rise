@@ -4,7 +4,7 @@ import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 export const toxicology: MysticSphere = {
   name: 'Toxicology',
   shortDescription: 'Create and manipulate poisons, acids, and fungi.',
-  sources: ['arcane', 'nature', 'pact'],
+  sources: ['arcane', 'nature'],
 
   cantrips: [
     {

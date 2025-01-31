@@ -288,11 +288,12 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to echo it.
-        If you do, the spell takes effect again during your next action.
-        It has the same choices for all decisions, such as targets.
+        If you do, the spell \\glossterm{repeats} during your next action.
         After you echo a spell in this way, this effect ends.
       `,
       rank: 5,
+      // Deep seems pretty punishing, but echoing is scary nova? Unclear who would
+      // actually use this...
       type: 'Attune (deep)',
     },
 
