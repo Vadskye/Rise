@@ -19,6 +19,7 @@ pub fn replace_attack_terms(
     replaced_effect = replace_full_weapon_damage_terms(&replaced_effect);
     replaced_effect = replace_accuracy_terms(&replaced_effect, creature, weapon);
     replaced_effect = replace_brawling_accuracy_terms(&replaced_effect, creature);
+    replaced_effect = replace_consumable_accuracy_terms(&replaced_effect, creature);
     replaced_effect = replace_damage_terms(&replaced_effect, creature, is_magical, weapon);
     replaced_effect = replace_damage_rank_terms(&replaced_effect, creature, is_magical);
     replaced_effect = replace_power_terms(&replaced_effect, creature);
@@ -42,7 +43,23 @@ fn replace_accuracy_terms(effect: &str, creature: &Creature, weapon: Option<&Wea
     // local modifiers with the right accuracy text.
     let accuracy_pattern = Regex::new(r"(\$accuracy[+-]?\d*)\b").unwrap();
     for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
-        let parsed_text = parse_accuracy_match(accuracy_match, creature, weapon);
+        let parsed_text = parse_accuracy_match(creature.calc_accuracy(), accuracy_match, weapon);
+        replaced_effect = accuracy_pattern
+            .replacen(&replaced_effect, 1, parsed_text)
+            .to_string();
+    }
+    replaced_effect
+}
+
+// TODO: this is lazily copy/pasted from replace_accuracy_terms, with a +2 modifier on the accuracy
+fn replace_consumable_accuracy_terms(effect: &str, creature: &Creature) -> String {
+    let mut replaced_effect = effect.to_string();
+    // Find each block of "$accuracy", including any local accuracy modifiers. We'll split up those
+    // modifiers in a separate step. Doing this as a two-step process makes it easier to associate
+    // local modifiers with the right accuracy text.
+    let accuracy_pattern = Regex::new(r"(\$consumableaccuracy[+-]?\d*)\b").unwrap();
+    for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
+        let parsed_text = parse_accuracy_match(creature.calc_accuracy()+2, accuracy_match, None);
         replaced_effect = accuracy_pattern
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();
@@ -159,11 +176,11 @@ fn replace_extra_damage_terms(effect: &str, creature: &Creature, is_magical: boo
 // For a given accuracy block, such as "$accuracy" or "$accuracy+2", return the specific text that
 // should replace it, such as "+5".
 fn parse_accuracy_match(
+    accuracy: i32,
     accuracy_match: Match,
-    creature: &Creature,
     weapon: Option<&Weapon>,
 ) -> String {
-    let mut accuracy = creature.calc_accuracy();
+    let mut accuracy = accuracy;
 
     // Handle local accuracy modifiers
     let split_accuracy_pattern = Regex::new(r"\$accuracy([+-])?(\d+)?\b").unwrap();
