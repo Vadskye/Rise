@@ -443,11 +443,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-                        In addition, you gain a \plus3 bonus to the Awareness skill.
+                        In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
 
                         \rankline
                         \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
-                        \rank{5} The skill bonuses increase to \plus5.
+                        \rank{5} The skill bonus increases to \plus5.
                         \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{magicalactiveability}
@@ -486,13 +486,13 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Mouse}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus2 bonus to the Flexibility and Stealth skills.
+                        You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
                         \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
                         In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one.
-                        \rank{5} The skill bonuses increase to \plus5.
+                        \rank{5} The skill bonuses increase to \plus4.
                         \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
