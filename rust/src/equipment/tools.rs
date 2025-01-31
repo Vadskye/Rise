@@ -30,9 +30,8 @@ impl Tool {
     }
 
     pub fn to_latex(self) -> String {
-        let consumable = self.category.is_consumable();
         let latex = &self.category.crafting_latex();
-        item_latex(self.item(), consumable, latex)
+        item_latex(self.item(), latex)
     }
 
     pub fn item(&self) -> StandardItem {

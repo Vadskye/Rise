@@ -31,7 +31,6 @@ impl Implement {
     pub fn to_latex(&self) -> String {
         item_latex(
             self.item().clone(),
-            false,
             &format!("{} -- {}", self.category(), self.crafting_latex()),
         )
     }
