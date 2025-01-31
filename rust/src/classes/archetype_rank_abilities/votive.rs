@@ -266,13 +266,13 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You can choose to gain a \plus2 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
-                If you do, you take a \minus2 penalty to your \glossterm{fatigue tolerance}.
+                If you do, you take a \minus1 penalty to your \glossterm{fatigue tolerance}.
                 Otherwise, you gain a +2 bonus to your \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
-                Modifier::Defense(Defense::Fortitude, 2),
-                Modifier::Defense(Defense::Mental, 2),
+                // TODO: add FatigueTolerance modifier
+                // Modifier::FatigueTolerance(-1),
             ]),
         },
         RankAbility {
@@ -322,7 +322,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     Remove one of your \glossterm{vital wounds}.
                 \end{magicalactiveability}
             ",
-            modifiers: Some(vec![Modifier::Power(4)]),
+            modifiers: None,
         },
     ]
 }
