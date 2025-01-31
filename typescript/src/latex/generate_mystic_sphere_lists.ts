@@ -17,9 +17,21 @@ function generateSourceList(source: MysticSphereSource): string {
       ${
         source === "divine"
           ? `
-            \\subsubsection{Domain Spheres}
+            \\subsubsection{Domain-Exclusive Spheres}
             ${mysticSpheres
               .filter((sphere) => sphere.sources.includes("domain"))
+              .map(formatSphere)
+              .join("\n")}
+          `
+          : ""
+      }
+
+      ${
+        source === "pact"
+          ? `
+            \\subsubsection{Soulkeeper-Exclusive Spheres}
+            ${mysticSpheres
+              .filter((sphere) => sphere.sources.includes("soulkeeper"))
               .map(formatSphere)
               .join("\n")}
           `

@@ -57,12 +57,12 @@ pub enum ClassArchetype {
     DraconicMagic,
     InnateArcanist,
     WildMagic,
-    // Warlock
-    BlessingsOfTheAbyss,
-    KeeperOfForbiddenKnowledge,
+    // Votive
+    CovenantKeeper,
     PactMagic,
     PactSpellMastery,
-    SoulkeepersChosen,
+    PactboundWarrior,
+    Soulforged,
     // Wizard
     WizardArcaneMagic,
     WizardArcaneSpellMastery,
@@ -131,12 +131,12 @@ impl ClassArchetype {
             Self::DraconicMagic => Class::Sorcerer,
             Self::InnateArcanist => Class::Sorcerer,
             Self::WildMagic => Class::Sorcerer,
-            // Warlock
-            Self::BlessingsOfTheAbyss => Class::Warlock,
-            Self::KeeperOfForbiddenKnowledge => Class::Warlock,
-            Self::PactMagic => Class::Warlock,
-            Self::PactSpellMastery => Class::Warlock,
-            Self::SoulkeepersChosen => Class::Warlock,
+            // Votive
+            Self::CovenantKeeper => Class::Votive,
+            Self::PactMagic => Class::Votive,
+            Self::PactSpellMastery => Class::Votive,
+            Self::PactboundWarrior => Class::Votive,
+            Self::Soulforged => Class::Votive,
             // Wizard
             Self::Alchemist => Class::Wizard,
             Self::WizardArcaneMagic => Class::Wizard,
@@ -205,12 +205,12 @@ impl ClassArchetype {
             Self::DraconicMagic => "Draconic Magic",
             Self::InnateArcanist => "Innate Arcanist",
             Self::WildMagic => "Wild Magic",
-            // Warlock
-            Self::BlessingsOfTheAbyss => "Blessings of the Abyss",
-            Self::KeeperOfForbiddenKnowledge => "Keeper of Forbidden Knowledge",
+            // Votive
+            Self::CovenantKeeper => "Covenant Keeper",
             Self::PactMagic => "Pact Magic",
             Self::PactSpellMastery => "Pact Spell Mastery",
-            Self::SoulkeepersChosen => "Soulkeeper's Chosen",
+            Self::PactboundWarrior => "Pactbound Warrior",
+            Self::Soulforged => "Soulforged",
             // Wizard
             Self::Alchemist => "Alchemist",
             Self::WizardArcaneMagic => "Arcane Magic",
@@ -405,13 +405,12 @@ impl ClassArchetype {
                 This archetype makes the magic you cast more chaotic, generally increasing its power at the cost of your control over your magic.
                 You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
             ",
-            // Warlock
-            Self::BlessingsOfTheAbyss => r"
-                You can only choose this archetype if your soulkeeper is a demon.
-                This archetype enhances your connection to the Abyss and allows you to channel its sinister power more directly.
+            // Votive
+            Self::PactboundWarrior => r"
+                This archetype grants you martial prowess through your pact.
             ",
-            Self::KeeperOfForbiddenKnowledge => r"
-                This archetype grants you access to dangerous secrets revealed to you by your soulkeeper.
+            Self::CovenantKeeper => r"
+                This archetype grants you access to powerful covenants you can forge with your soulkeeper, building on your basic pact.
             ",
             Self::PactMagic => r"
                 This archetype grants you the ability to cast pact spells.
@@ -420,7 +419,7 @@ impl ClassArchetype {
                 This archetype improves your ability to cast spells with the power of your dark pact.
                 You must have the Pact Magic archetype to gain the abilities from this archetype.
             ",
-            Self::SoulkeepersChosen => r"
+            Self::Soulforged => r"
                 This archetype enhances your connection to your soulkeeper, granting you abilities relating to your pact.
             ",
             // Wizard
@@ -541,12 +540,12 @@ impl ClassArchetype {
             ClassArchetype::DraconicMagic,
             ClassArchetype::InnateArcanist,
             ClassArchetype::WildMagic,
-            // Warlock
-            ClassArchetype::BlessingsOfTheAbyss,
-            ClassArchetype::KeeperOfForbiddenKnowledge,
+            // Votive
+            ClassArchetype::CovenantKeeper,
             ClassArchetype::PactMagic,
             ClassArchetype::PactSpellMastery,
-            ClassArchetype::SoulkeepersChosen,
+            ClassArchetype::PactboundWarrior,
+            ClassArchetype::Soulforged,
             // Wizard
             ClassArchetype::WizardArcaneMagic,
             ClassArchetype::WizardArcaneSpellMastery,
