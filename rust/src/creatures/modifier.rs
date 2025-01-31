@@ -20,6 +20,7 @@ pub enum Modifier {
     Defense(Defense, i32),
     Encumbrance(i32),
     ExtraDamage(DamageDice),
+    // TODO: add FatigueTolerance modifier
     HitPoints(i32),
     MagicalPower(i32),
     // TODO: add this to creature calculations
