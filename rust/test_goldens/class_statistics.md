@@ -12,7 +12,7 @@
  *    Ranger:  29 /  94
  *     Rogue:  28 /  89
  *  Sorcerer:  29 /  91
- *   Warlock:  28 /  90
+ *    Votive:  28 /  91
  *    Wizard:  28 /  88
  * Automaton:  30 /  99
  *    Dragon:  30 /  91
@@ -34,7 +34,7 @@
  *    Ranger:  29 / 159
  *     Rogue:  28 / 158
  *  Sorcerer:  29 / 160
- *   Warlock:  28 / 160
+ *    Votive:  28 / 160
  *    Wizard:  28 / 154
  * Automaton:  30 / 167
  *    Dragon:  30 / 159
@@ -56,7 +56,7 @@
  *    Ranger:  29 / 219
  *     Rogue:  28 / 219
  *  Sorcerer:  29 / 221
- *   Warlock:  28 / 221
+ *    Votive:  28 / 221
  *    Wizard:  28 / 215
  * Automaton:  30 / 226
  *    Dragon:  30 / 218
@@ -153,10 +153,10 @@
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
 
-#### Warlock
-            Warlock 1
-            AP 4, FT 6, IP 5, Skills 6
-            HP 8, DR 5
+#### Votive
+            Votive 1
+            AP 3, FT 6, IP 5, Skills 6
+            HP 10, DR 5
             AD 5, Fort 5, Ref 5, Ment 6
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
@@ -335,10 +335,10 @@
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
 
-#### Warlock
-            Warlock 10
-            AP 6, FT 6, IP 7, Skills 6
-            HP 24, DR 18
+#### Votive
+            Votive 10
+            AP 5, FT 6, IP 7, Skills 6
+            HP 28, DR 18
             AD 10, Fort 10, Ref 10, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
@@ -517,10 +517,10 @@
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
 
-#### Warlock
-            Warlock 20
-            AP 6, FT 6, IP 7, Skills 6
-            HP 84, DR 48
+#### Votive
+            Votive 20
+            AP 5, FT 6, IP 7, Skills 6
+            HP 100, DR 48
             AD 15, Fort 15, Ref 15, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3

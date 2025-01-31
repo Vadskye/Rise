@@ -48,7 +48,7 @@ export const mysticSpheres: MysticSphere[] = [
   universal,
 ];
 
-export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pact";
+export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pact" | "soulkeeper";
 
 export interface MysticSphere {
   cantrips?: Cantrip[];

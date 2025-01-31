@@ -66,12 +66,12 @@ Complexity is calculated at (rank 3 / rank 7).
 * Innate Arcanist: 5 / 9
 * Wild Magic: 5 / 8
             
-## warlock: 20 / 31
-* Blessings of the Abyss: 3 / 6
-* Keeper of Forbidden Knowledge: 5 / 6
+## votive: 23 / 31
+* Covenant Keeper: 4 / 5
 * Pact Magic: 5 / 6
 * Pact Spell Mastery: 3 / 7
-* Soulkeeper's Chosen: 4 / 6
+* Pactbound Warrior: 7 / 7
+* Soulforged: 4 / 6
             
 ## wizard: 27 / 41
 * Arcane Magic: 6 / 7

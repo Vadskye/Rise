@@ -25,8 +25,8 @@ mod character_tests {
 
     #[test]
     fn it_calculates_modifiers() {
-        let warlock = Character::new(
-            Class::Warlock,
+        let votive = Character::new(
+            Class::Votive,
             1,
             [
                 ClassArchetype::BlessingsOfTheAbyss,
@@ -35,7 +35,7 @@ mod character_tests {
             ],
         );
 
-        let modifiers = warlock.creature.get_modifiers();
+        let modifiers = votive.creature.get_modifiers();
         let mut modifier_descriptions: Vec<String> =
             modifiers.iter().map(|a| a.description()).collect();
         modifier_descriptions.sort();
@@ -56,8 +56,8 @@ mod character_tests {
 
     #[test]
     fn it_calculates_abyssal_blast() {
-        let warlock = Character::new(
-            Class::Warlock,
+        let votive = Character::new(
+            Class::Votive,
             20,
             [
                 // If we take pact magic, we get the extra standard spell attacks which are not helpful
@@ -68,12 +68,12 @@ mod character_tests {
             ],
         );
 
-        let attacks = warlock.creature.calc_all_attacks();
+        let attacks = votive.creature.calc_all_attacks();
         assert_eq!(1, attacks.len(), "Should have one attack");
         let abyssal_blast = &attacks[0];
         assert_eq!(
             "Abyssal Rebuke +10 (12d10 fire damage.)",
-            abyssal_blast.shorthand_description(&warlock.creature),
+            abyssal_blast.shorthand_description(&votive.creature),
             "Should have correct description"
         );
     }

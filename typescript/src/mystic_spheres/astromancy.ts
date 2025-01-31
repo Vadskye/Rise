@@ -5,7 +5,7 @@ export const astromancy: MysticSphere = {
   name: 'Astromancy',
   hasImage: true,
   shortDescription: 'Transport creatures and objects instantly through space.',
-  sources: ['arcane', 'domain', 'pact'],
+  sources: ['arcane', 'domain', 'soulkeeper'],
   specialRules: `
     Many abilities from this mystic sphere cause creature to \\glossterm{teleport}.
     Unless otherwise specified, teleporation requires \\glossterm{line of sight}, \\glossterm{line of effect}, and an unoccupied destination on stable ground.
