@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
   shortDescription: 'Manipulate life energy to aid allies or harm foes.',
-  sources: ['arcane', 'divine', 'pact', 'nature'],
+  sources: ['arcane', 'divine', 'nature'],
 
   cantrips: [
     {
@@ -910,7 +910,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
     },
 
-    // TODO: prohibit warlock and druid necromancers???
+    // TODO: prohibit druid necromancers???
     {
       name: 'Animate Dead',
 

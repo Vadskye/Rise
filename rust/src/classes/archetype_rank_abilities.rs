@@ -13,7 +13,7 @@ mod ranger;
 mod rogue;
 mod sorcerer;
 mod standard_modifiers;
-mod warlock;
+mod votive;
 mod wizard;
 
 #[derive(Default)]
@@ -121,12 +121,12 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
         ClassArchetype::DraconicMagic => sorcerer::draconic_magic(),
         ClassArchetype::InnateArcanist => sorcerer::innate_arcanist(),
         ClassArchetype::WildMagic => sorcerer::wild_magic(),
-        // Warlock
-        ClassArchetype::BlessingsOfTheAbyss => warlock::blessings_of_the_abyss(),
-        ClassArchetype::KeeperOfForbiddenKnowledge => warlock::keeper_of_forbidden_knowledge(),
-        ClassArchetype::PactMagic => warlock::pact_magic(),
-        ClassArchetype::PactSpellMastery => warlock::pact_spell_mastery(),
-        ClassArchetype::SoulkeepersChosen => warlock::soulkeepers_chosen(),
+        // Votive
+        ClassArchetype::CovenantKeeper => votive::covenant_keeper(),
+        ClassArchetype::PactMagic => votive::pact_magic(),
+        ClassArchetype::PactSpellMastery => votive::pact_spell_mastery(),
+        ClassArchetype::PactboundWarrior => votive::pactbound_warrior(),
+        ClassArchetype::Soulforged => votive::soulforged(),
         // Wizard
         ClassArchetype::Alchemist => wizard::alchemist(),
         ClassArchetype::WizardArcaneMagic => wizard::arcane_magic(),

@@ -4,7 +4,7 @@ import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MINOR_FATIGUE } from './constants';
 export const revelation: MysticSphere = {
   name: 'Revelation',
   shortDescription: 'Share visions of the present and future, granting insight or combat prowess.',
-  sources: ['arcane', 'divine'],
+  sources: ['arcane', 'divine', 'soulkeeper'],
 
   cantrips: [
     {
