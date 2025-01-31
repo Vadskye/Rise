@@ -31,7 +31,6 @@ impl MagicWeapon {
     pub fn to_latex(&self) -> String {
         item_latex(
             self.item().clone(),
-            false,
             // TODO: is it useful to subdivide weapons into categories here?
             &format!("Craft ({})", self.craft_materials()),
         )

@@ -49,7 +49,6 @@ impl Apparel {
     pub fn to_latex(&self) -> String {
         item_latex(
             self.item().clone(),
-            false,
             &format!("{} -- Craft ({})", self.category(), self.craft_materials()),
         )
     }
