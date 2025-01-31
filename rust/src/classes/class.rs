@@ -41,9 +41,9 @@ pub enum Class {
     Sorcerer,
     Treant,
     Troll,
-    Warlock,
-    Wizard,
     Vampire,
+    Votive,
+    Wizard,
 }
 
 impl Class {
@@ -58,7 +58,7 @@ impl Class {
             Self::Ranger,
             Self::Rogue,
             Self::Sorcerer,
-            Self::Warlock,
+            Self::Votive,
             Self::Wizard,
             // Optional classes
             Self::Automaton,
@@ -84,7 +84,7 @@ impl Class {
             Self::Ranger,
             Self::Rogue,
             Self::Sorcerer,
-            Self::Warlock,
+            Self::Votive,
             Self::Wizard,
         ]
     }
@@ -163,7 +163,7 @@ impl Class {
             Self::Sorcerer => vec![Constitution],
             Self::Treant => vec![Constitution],
             Self::Troll => vec![Strength, Constitution],
-            Self::Warlock => vec![Willpower],
+            Self::Votive => vec![Willpower],
             Self::Wizard => vec![Intelligence],
             Self::Vampire => vec![Dexterity],
         }
@@ -190,9 +190,9 @@ impl Class {
             Self::Sorcerer => vec![Willpower, Perception],
             Self::Treant => vec![Strength, Willpower],
             Self::Troll => vec![],
-            Self::Warlock => vec![Intelligence, Perception],
-            Self::Wizard => vec![Perception, Willpower],
+            Self::Votive => vec![Intelligence, Perception],
             Self::Vampire => vec![Strength, Intelligence],
+            Self::Wizard => vec![Perception, Willpower],
         }
     }
 
@@ -215,9 +215,9 @@ impl Class {
             Self::Sorcerer => 2,
             Self::Treant => 0,
             Self::Troll => 1,
-            Self::Warlock => 2,
-            Self::Wizard => 2,
             Self::Vampire => 1,
+            Self::Votive => 1,
+            Self::Wizard => 2,
         }
     }
 
@@ -515,7 +515,25 @@ impl Class {
                 Skill::Survival,
                 Skill::Swim,
             ],
-            Self::Warlock => vec![
+            Self::Vampire => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::Climb,
+                Skill::CreatureHandling,
+                Skill::Deception,
+                Skill::Deduction,
+                Skill::Disguise,
+                Skill::Intimidate,
+                Skill::Jump,
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Dungeoneering,
+                    KnowledgeSubskill::Religion,
+                ]),
+                Skill::Persuasion,
+                Skill::SocialInsight,
+                Skill::Stealth,
+            ],
+            Self::Votive => vec![
                 Skill::Awareness,
                 Skill::Deception,
                 Skill::Deduction,
@@ -539,24 +557,6 @@ impl Class {
                 Skill::Intimidate,
                 Skill::Knowledge(KnowledgeSubskill::all()),
                 Skill::Persuasion,
-            ],
-            Self::Vampire => vec![
-                Skill::Awareness,
-                Skill::Balance,
-                Skill::Climb,
-                Skill::CreatureHandling,
-                Skill::Deception,
-                Skill::Deduction,
-                Skill::Disguise,
-                Skill::Intimidate,
-                Skill::Jump,
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Religion,
-                ]),
-                Skill::Persuasion,
-                Skill::SocialInsight,
-                Skill::Stealth,
             ],
         }
     }
@@ -610,16 +610,16 @@ impl Class {
             Self::Sorcerer => HitPointProgression::Medium,
             Self::Treant => HitPointProgression::VeryHigh,
             Self::Troll => HitPointProgression::VeryHigh,
-            Self::Warlock => HitPointProgression::Low,
-            Self::Wizard => HitPointProgression::Low,
             Self::Vampire => HitPointProgression::High,
+            Self::Votive => HitPointProgression::Medium,
+            Self::Wizard => HitPointProgression::Low,
         }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Cleric => 1,
-            Self::Warlock => 1,
+            Self::Votive => 1,
             Self::Wizard => 1,
             _ => 0,
         }
@@ -644,9 +644,9 @@ impl Class {
             Self::Sorcerer => "sorcerer",
             Self::Treant => "treant",
             Self::Troll => "troll",
-            Self::Warlock => "warlock",
-            Self::Wizard => "wizard",
             Self::Vampire => "vampire",
+            Self::Votive => "votive",
+            Self::Wizard => "wizard",
         }
     }
 
@@ -678,9 +678,9 @@ impl Class {
             Self::Sorcerer => "Sor",
             Self::Treant => "Tre",
             Self::Troll => "Trl",
-            Self::Warlock => "War",
-            Self::Wizard => "Wiz",
             Self::Vampire => "Vmp",
+            Self::Votive => "Vot",
+            Self::Wizard => "Wiz",
         }
     }
 
@@ -703,9 +703,9 @@ impl Class {
             Self::Sorcerer => 3,
             Self::Treant => 4,
             Self::Troll => 3,
-            Self::Warlock => 3,
-            Self::Wizard => 4,
             Self::Vampire => 5,
+            Self::Votive => 3,
+            Self::Wizard => 4,
         }
     }
 
@@ -783,17 +783,17 @@ impl Class {
                 specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::LayeredHide(None)]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
-            Self::Warlock => ArmorProficiencies {
+            Self::Vampire => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Votive => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Wizard => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![],
-            },
-            Self::Vampire => ArmorProficiencies {
-                specific_armors: None,
-                usage_classes: vec![ArmorUsageClass::Light],
             },
         }
     }
@@ -1004,7 +1004,7 @@ impl Class {
                 Their methods and ideology may be different, but they can often work together easily and effectively.
                 It is more difficult to characterize the relationship between paladins and other classes, since so much depends on the paladin's alignment and personal interpretation of that alignment.
                 Paladins of law typically despise barbarians and rogues, while paladins of chaos distrust the rigid mentality common to monks and fighters.
-                Warlocks are deeply suspicious to paladins of good, though paladins of good tend to be more forgiving than other paladins.
+                Votives are deeply suspicious to paladins of good, though paladins of good tend to be more forgiving than other paladins.
                 Paladins of evil despise druids who have too much respect for the sanctity of life.
                 All paladins may have strong feelings about clerics depending on the alignment of that cleric's deity.
             ".to_string(),
@@ -1091,31 +1091,30 @@ impl Class {
             ".to_string(),
             Self::Treant => String::from(""),
             Self::Troll => String::from(""),
-            Self::Warlock => r"
-                Warlocks are pact spellcasters who draw power from a sinister deal made with infernal creatures.
-                Their soulkeeper grants them access to great magical power.
-                However, they must content with the whispers of demonic influence throughout their life, and they risk losing their immortal soul.
+            Self::Votive => r"
+                Votives are pact spellcasters who draw power from a powerful ally through a binding magical pact.
+                In life, they gain great magical power.
+                However, their soul passes to their soulkeeper on death, and the pact may have other costs as well.
 
-                Most people view warlocks with suspicion, if not outright hostility.
-                Few warlocks are noble individuals who undertook their pact out of some self-sacrificing necessity.
-                Instead, warlocks are often power-hungry individuals who willingly fall under demonic influence to serve their own ends.
-                Even warlocks who start out with good intentions can be led astray over the years.
-                It takes great wisdom and mental fortitude to resist the constant pressure of a soulkeeper's twisted advice.
+                Many people view votives with suspicion.
+                Votives wield power that is not entirely their own, and may not have any great training or wisdom about how to apply it appropriately.
+                Many are short-term thinkers, prioritizing their present needs over the long-term costs, just as they did when they made their pacts.
+                In addition, votives may act as unknowing pawns in the cosmic games of their soulkeepers.
 
-                Warlocks are typically self-taught, or more accurately, educated by their soulkeeper in the use of their powers.
-                It is not uncommon for warlocks to search for warlock mentors so they can master their powers without completely trusting their soulkeeper.
+                Votives are typically self-taught, or more accurately, educated by their soulkeeper in the use of their powers.
+                It is not uncommon for votives to search for votive mentors so they can master their powers without completely trusting their soulkeeper.
                 These relationships are typically based on contracts and expectations of future services from the apprentice once their training is complete, just like a soul pact.
                 A certain level of mistrust is common, and apprentices sometimes successfully betray their mentors, just like they hope to escape their soulkeeper's clutches.
-                To minimize the danger of these relationships, warlock mentors almost never take more than a single apprentice at a time.
+                To minimize the danger of these relationships, votive mentors almost never take more than a single apprentice at a time.
 
-                Clerics and warlocks have a complicated relationship.
+                Clerics and votives have a complicated relationship.
                 From a certain perspective, they both gain power in exchange for their service to a powerful extraplanar entity.
-                Warlocks often enjoy emphasizing the similarity, which can be a useful rhetorical tool to mitigate anti-warlock prejudice.
+                Votives often enjoy emphasizing the similarity, which can be a useful rhetorical tool to mitigate anti-votive prejudice.
                 For their part, clerics tend to strongly disagree with this analogy.
 
-                Rogues tend to get along better with warlocks than most classes do.
-                Many rogues have a ``do whatever works'' attitude that helps them understand why warlocks would make a soul pact, even if they might not make the same pact themselves.
-                In addition, rogues are generally flexible about their companions, and wouldn't begrudge having a warlock in a group as long as the warlock doesn't cause problems.
+                Rogues tend to get along better with votives than most classes do.
+                Many rogues have a ``do whatever works'' attitude that helps them understand why votives would make a soul pact, even if they might not make the same pact themselves.
+                In addition, rogues are generally flexible about their companions, and wouldn't begrudge having a votive in a group as long as the votive doesn't cause problems.
             ".to_string(),
             Self::Wizard => r"
                 Wizards are arcane spellcasters who study magic to unlock its powerful secrets.
@@ -1237,19 +1236,19 @@ impl Class {
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
-            Self::Warlock => WeaponProficiencies {
+            Self::Vampire => WeaponProficiencies {
                 custom_weapons: None,
-                non_exotic_weapons: false,
+                non_exotic_weapons: true,
+                simple_weapons: true,
+            },
+            Self::Votive => WeaponProficiencies {
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Wizard => WeaponProficiencies {
                 custom_weapons: None,
                 non_exotic_weapons: false,
-                simple_weapons: true,
-            },
-            Self::Vampire => WeaponProficiencies {
-                custom_weapons: None,
-                non_exotic_weapons: true,
                 simple_weapons: true,
             },
         }
@@ -1424,49 +1423,77 @@ impl Class {
                     Your alignment cannot be changed without extraordinary repurcussions.
                 "
             }
-            Self::Warlock => {
+            // Chaos: fae
+            // Evil: devils, precursors
+            // Law: moirai
+            Self::Votive => {
                 r"
                     \subsection{Special Class Abilities}
 
                     \magicalcf{War}{Soul Pact}
-                    To become a warlock, you must make a pact with a creature capable of sharing its power with you.
-                    Such a creature must be 21st level, and must be a planeforged from a plane other than your own.
-                    You must make a sacrifice, the details of which are subject to negotiation, and offer a part of your immortal soul.
-                    In exchange, you gain the powers of a warlock.
-                    The creature you make the pact with is called your soulkeeper.
-                    Almost all warlocks make pacts with demons, though other soulkeepers are possible.
+                    To become a votive, you must make a pact with a creature capable of sharing its power with you.
+                    That creature is called your soulkeeper, and it will claim your soul for a period of time following your death.
+                    Your soulkeeper may gain other benefits after your death as well.
+                    In exchange, it will grant you power during your mortal life.
 
-                    Offering your soul to an entity in this way grants it the ability to communicate with you in limited ways.
-                    This communication typically manifests as unnatural emotional urges or whispered voices audible only to you.
-                    Many soulkeepers use this influence to tempt their warlocks into greater evils, though the skill and subtlety of this influence can vary drastically between different soulkeepers.
+                    Your pact forges a deep connection between you and your soulkeeper.
+                    This grants your soulkeeper the ability to observe your actions and communicate with you in limited ways.
+                    Communication from your soulkeeper typically manifests as unnatural emotional urges, whispered voices audible only to you, or intrusive thoughts you can recognize as not your own.
+                    Each soulkeeper will have its own goals and communication style.
 
-                    Your pact specifies how much of your soul is granted to your soulkeeper, and the circumstances of the transfer.
-                    The most common arrangement is for a soulkeeper to gain possession of your soul immediately after you die.
-                    It will keep the soul for ten years, plus one year for each year of your life after making the pact.
-                    During that time, it will not prevent you from being resurrected.
-                    At the end of that time, if your soul remains intact, your soul will pass on to its intended afterlife.
-                    However, other arrangements are possible, and each warlock's pact can be unique.
+                    \subsubsection{Soulkeepers}
+                        There are four common types of soulkeeper: devils, fae, moirai, and precursors.
+                        Each type of soulkeeper has different terms for its pacts and offers different rewards.
 
-                    The longer you spend in an afterlife that is not your own, the more likely you are to lose your sense of self and become subsumed by the plane you are on.
-                    Only a soul of extraordinary strength can maintain its integrity after decades or centuries in any plane.
-                    Of course, soulkeepers generally try to accelerate this process as much as possible with various forms of torture.
-                    Many warlocks seek power zealously while mortal to gain the mental fortitude necessary to keep their soul intact after death.
+                        \parhead{Devils}
+                        Devils are lawful evil creatures native to the Abyss, the Aligned Plane of evil.
+                        Their pacts offer the most generous terms of all soulkeepers, in theory.
+                        They impose no restrictions on your actions in life, and only affect your soul after death.
+                        A typical devil will keep your soul in the Abyss for one year for each year that you live after making the pact, to a minimum of ten years.
+                        Particularly long-lived species like elves can often negotiate better terms than this.
+                        If your soul survives this period intact, it will proceed to its normal afterlife with no permanent cost.
+                        Devils offer this bargain because they are experts in torture.
+                        They can reliably break the will of their votives during that time period, allowing them to permanently gain the power of a full soul.
 
-                    \magicalcf{War}{Whispers of the Lost}
-                    You hear the voices of souls that inhabit your soulkeeper's plane, linked to you through your soulkeeper.
-                    Choose one of the following types of whispers that you hear.
-                    {
-                        \subcf{Mentoring Whispers} You hear the voice of a dead warlock whose soul is bound to the same soulkeeper as yours.
+                        Power struggles in the Abyss are common, and mortal souls are an important currency there.
+                        It is possible for one devil to assume control over another devil's souls, becoming the new soulkeeper for their votives.
 
-                        \subcf{Spiteful Whispers} You hear the voices of cruel souls who berate you for your flaws and mistakes.
+                        Devil soulkeepers tend to be engaged and communicative.
+                        They try tempt their votives into greater evil, and encourage acquiring power by any means necessary.
 
-                        \subcf{Sycophantic Whispers} You hear the voices of adoring souls who praise your talents and everything you do.
+                        \parhead{Fae}
+                        Fae are chaotic neutral creatures native to Discord, the Aligned Plane of chaos.
+                        Their pacts can be idiosyncratic, and often come with seemingly arbitrary restrictions on how you must act in life.
+                        They are also more likely to renegotiate pact details than other soul keepers, often seeking to change the restrictions that the votive must obey in life to suit their whims.
+                        After death, they will typically keep your soul in Discord until you become boring to them, with a guarantee that you will eventually reach your proper afterlife.
 
-                        \subcf{Warning Whispers} You hear the voices of paranoid and fearful souls warning you of danger, both real and imagined.
+                        Fae soulkeepers will periodically pay great attention to their votives.
+                        When they do, they may send a distracting flurry of thoughts and urges that may or may not be relevant to the situation at hand.
+                        Eventually, they will get bored and disappear entirely until their attention is caught again.
 
-                        \subcf{Whispers of the Mighty} Your soulkeeper forges the connection to your soul into a boon granted to any soul in the Abyss strong enough to claim it in battle.
-                        You hear the voice of whatever soul currently possesses the boon, which may change suddenly and unexpectedly.
-                    }
+                        \parhead{Moirai}
+                        Moirai are lawful neutral creatures native to Ordus, the Aligned Plane of law.
+                        Each moirai is an impartial arbiter of some fundamental concept.
+                        Their pacts always impose one restriction on you in life, and retain your soul in Ordus for a hundred years after your death.
+                        The restriction is always relevant to the moirai's identity, and is focused on you as an individual rather than the world you inhabit.
+                        For example, a moirai of cleanliness may require you to remain personally clean, but would not require you to clean everywhere you go.
+
+                        Moirai soulkeepers typically remain aloof from their votives.
+                        They only rarely bother to directly observe their votives' current circumstances.
+                        They will send periodic reminders to maintain the terms of the pact and similar generic urges.
+
+                        \parhead{Precursors}
+                        The precursors are ancient aberrations that now live in the Eternal Void.
+                        They generally despite the mortals and deities that replaced them, though their current goals are inscrutable.
+                        Precursor pacts impose no restrictions on you in life, but they are the only pacts which are guaranteed to claim your soul.
+                        While you are dead, your soul will be constantly pulled away from your afterlife towards the Eternal Void.
+                        You can fight this pull to remain in your afterlife for a time.
+                        As your will and sense of self deteriorates over the years, your concentration will slip and you will drift away.
+                        There is no return from the Eternal Void.
+
+                        Precursor pacts are attractive to votives because they do not constrain you in life or significantly interfere with your normal afterlife experience.
+                        However, deities universally revile votives who make precusor pacts.
+                        Stealing souls from deities and feeding them to the precursors threatens to upend the balance of the cosmos and undo the ancient wars that established mortal life.
                 "
             }
             _ => "",
@@ -1718,10 +1745,11 @@ impl Class {
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
-                        \domainability{Gift} You gain a \plus3 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
+                        \domainability{Gift} You gain a \plus3 \glossterm{enhancement bonus} to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \magicaldomainability{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power}.
-                        \magicaldomainability{Mastery} The power bonus increases to \plus2.
+                        \magicaldomainability{Mastery} The power bonus from this domain's essence increases to \plus2.
+                        In addition, the skill bonus from this domain's gift increases to \plus5.
 
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
@@ -1742,7 +1770,7 @@ impl Class {
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus2 bonus to the Climb and Swim skills.
+                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Climb and Swim skills.
                         \magicaldomainability{Aspect} You can increase your Strength.
                         \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
                             \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
@@ -1754,6 +1782,7 @@ impl Class {
                         For example, you could pick up an entire house if your Strength was high enough, even though a house would normally fall apart under the strain if you tried to pick it up.
                         \domainability{Mastery} You lose access to the \textit{divine strength} ability.
                         Instead, you simply gain a \plus1 bonus to your Strength.
+                        In addition, the skill bonuses from this domain's gift increase to \plus4.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1783,7 +1812,7 @@ impl Class {
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus2 bonus to the Deception, Disguise, and Stealth skills.
+                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Deception, Disguise, and Stealth skills.
                         \magicaldomainability{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
                         In addition, \magical \abilitytag{Compulsion} effects cannot affect your speech in any way.
                         This means you can still talk and lie normally even while \dominated, though you cannot control the rest of your body.
@@ -1807,6 +1836,7 @@ impl Class {
                         \magicaldomainability{Mastery} You are undetectable to all \magical abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
                         For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \trait{darkvision} would not be able to see you without light.
+                        In addition, the skill bonuses from this domain's gift increase to \plus4.
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.
@@ -1818,7 +1848,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus2 bonus to the Flexibility and Swim skills.
+                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Swim skills.
                         \magicaldomainability{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Water}{\abilitytag{Attune}}
@@ -1835,7 +1865,7 @@ impl Class {
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
                         \magicaldomainability{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
-                        The bonuses from this domain's gift increase to \plus5.
+                        The skill bonuses from this domain's gift increase to \plus4.
                         In addition, you gain a \plus1 bonus to your Armor and Reflex defenses.
 
                     \subsubsection{Wild Domain}
