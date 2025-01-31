@@ -440,7 +440,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & On your first attack with the spell, it \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & On your first attack with the spell, you roll twice for the attack roll and keep the higher result \\
-                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & During your next action, the spell \glossterm{repeats} \\
                     \end{dtabularx}
                 \end{columntable}
 
@@ -491,7 +491,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & On your first attack with the spell, it \glossterm{chains} twice to the unaffected creatures that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
-                        10 & During your next action, the spell takes effect again with the same choices for all decisions, such as targets \\
+                        10 & During your next action, the spell \glossterm{repeats} \\
                     \end{dtabularx}
                 \end{columntable}
             ",
