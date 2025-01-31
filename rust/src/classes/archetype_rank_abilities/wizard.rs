@@ -18,7 +18,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 The items are just as effective when used as items created normally.
                 However, they are less durable, since they are partially sustained by your magic.
 
-                You can use this ability to create alchemical items with a rank up to your rank in this archetype (see \pcref{Item Ranks}).
+                You can use this ability to create alchemical items with a rank lower than your rank in this archetype (see \pcref{Item Ranks}).
                 Creating an item in this way functions in the same way as crafting items normally (see \pcref{Crafting Items}), with the following exceptions:
                 \begin{raggeditemize}
                     \item You do not require any raw materials or an alchemist's lab.
@@ -62,10 +62,10 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 For example, if you had both the Aerodynamic Construction and Expanded Construction discoveries, you could not create an item with both double throwing range and double area.
                 You would have to choose which alchemical discovery to apply when creating the item.
                 {
-                    \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank up to one higher than your rank in this archetype.
+                    \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank equal to your rank in this archetype.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
-                    \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements.
+                    \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements (minimum 0).
                     % TODO: wording, and does this even matter? Affects sunrods.
                     \parhead{Enduring Construction} The duration of alchemical items you create is doubled.
                     In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
