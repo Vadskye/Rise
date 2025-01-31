@@ -152,6 +152,10 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 In addition, whenever you see a creature of that type, you intuitively know what effects it is \vulnerable to.
                 This benefit lasts until you choose a different creature type with this ability.
 
+                You can invest any number of \glossterm{insight points} into this ability.
+                Unlike normal for insight points, this does not directly grant you any additional abilities known.
+                Instead, for each insight point invested, the number of creature types you can choose with this ability increases by one.
+
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -174,7 +178,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You also gain a \plus1 bonus to all defenses against creatures of your chosen types.
-                In addition, you can choose two creature types instead of one.
+                In addition, you can choose an additional creature type.
             ",
             modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
@@ -185,7 +189,6 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 The accuracy bonus increases to \plus2.
-                In addition, you can choose three creature types instead of two.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -545,7 +548,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You can channel your connection to the wilderness into dangerous attacks.
-                You gain access to one of the following \glossterm{combat styles}: \combatstyle{flurry of blows}, \combatstyle{mobile hunter}, or \combatstyle{perfect precision}.
+                You gain access to one of the following \glossterm{combat styles}: \combatstyle{mobile hunter}, \combatstyle{perfect precision}, or \combatstyle{rip and tear}.
                 In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
                 You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
                 You can only learn wild \glossterm{maneuvers} from wild combat styles that you have access to.
