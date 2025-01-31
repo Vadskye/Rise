@@ -431,7 +431,7 @@ impl ClassArchetype {
             ",
             Self::ArcaneScholar => r"
                 This archetype deepens your study of arcane magic.
-                You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
+                You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
             Self::WizardArcaneSpellMastery => r"
                 This archetype improves the arcane spells you cast.
@@ -439,7 +439,7 @@ impl ClassArchetype {
             ",
             Self::SchoolSpecialist => r"
                 This archetype improves your ability to cast spells from a particular school of magic while sacrificing some versatility.
-                You have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
+                You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
             // Uncommon species
             Self::Automaton => "",
