@@ -163,11 +163,8 @@
         \itemhead{Level 19} 80 hit points \add twelve times your Constitution, plus 12 hit points per level beyond 19.
       \end{itemize}
 
-    \cf{Aut}{Defenses}
-      You gain a \plus2 bonus to your Fortitude defense.
-
     \cf{Aut}{Resources}
-      You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
+      You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
 
     \cf{Aut}{Weapon Proficiencies}
       You are proficient with all non-exotic weapons.
@@ -419,9 +416,9 @@
   \begin{itemize}
     \itemhead{Dryad Archetype} Dryaidi only gain two class archetypes instead of three.
       Instead, they treat the Dryad archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
-    \itemhead{Enchanting Appearance} A dryaidi gains a \plus2 bonus to the Creature Handling, Perform, and Persuasion skills.
+    \magicalitemhead{Enchanting Appearance} A dryaidi gains a \plus2 \glossterm{enhancement bonus} to the Creature Handling, Perform, and Persuasion skills.
     \itemhead{Fey Vulnerability} Dryaidi are \vulnerable to cold iron weapons.
-    \itemhead{Tree Bond} A dryaidi must be bonded with a specific tree.
+    \magicalitemhead{Tree Bond} A dryaidi must be bonded with a specific tree.
       The tree must be at least a hundred years old, healthy, and intact.
       Forming a bond or severing a bond takes one week of meditation and ritual, periodically interrupted by rest.
       Forming a bond also requires asking permission from the tree through the ritual.
@@ -430,14 +427,14 @@
       As long as the bonded tree remains healthy and intact, the dryaidi gains a \plus1 bonus to Mental defense and a \plus1 bonus to its \glossterm{fatigue tolerance}.
       If the bonded tree becomes unhealthy, is seriously damaged, or is killed, these bonuses are inverted into penalties until the dryaidi forms a bond with a new tree.
       A bonded dryaidi can passively observe the general health and status of the tree it bonded to.
-    \itemhead{Verdant Flourishing} Dryaidi can use the \spell{bramblepatch} and \spell{rapid growth} \glossterm{cantrips} from the \sphere{verdamancy} sphere.
+    \magicalitemhead{Verdant Flourishing} Dryaidi can use the \spell{bramblepatch} and \spell{rapid growth} \glossterm{cantrips} from the \sphere{verdamancy} sphere.
       If they already have access to that sphere, they can sustain those cantrips as a \glossterm{free action} instead of as a minor action.
   \end{itemize}
   \parhead{Automatic Languages} Common, Sylvan.
 
   \subsection{Dryad Archetype}
 
-    \cf{Dry}[1]{Tree Stride} You can walk into and through living trees.
+    \magicalcf{Dry}[1]{Tree Stride} You can walk into and through living trees.
       Moving through a tree does not impede your movement in any way, and you can end your movement inside a tree.
       When you do, you can choose to be partially melded or fully melded with the tree.
       While partially melded, the tree provides \glossterm{cover} against all attacks against you.
@@ -445,17 +442,17 @@
 
       At the end of each round, if you are fully or partially melded with a tree that you are bonded with using your \textit{tree bond} ability, you regain hit points equal to half your maximum hit points.
 
-    \cf{Dry}[2]{Natural Speech} You can speak with plants and animals as if they were capable of ordinary speech.
+    \magicalcf{Dry}[2]{Natural Speech} You can speak with plants and animals as if they were capable of ordinary speech.
       This ability does not make them any more friendly or cooperative than normal.
       Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
       Plants do not have complex thought processes, but can provide information about events that have happened near them.
       In general, plants can remember events that happened within the most recent quarter of their lifespan.
 
-    \cf{Dry}[3]{Tree Stride+} You can \glossterm{teleport} between living trees instead of moving using your \glossterm{land speed}.
+    \magicalcf{Dry}[3]{Tree Stride+} You can \glossterm{teleport} between living trees instead of moving using your \glossterm{land speed}.
       Teleporting a given distance costs movement equal to half that distance.
       If this teleportation fails for any reason, you still expend that movement.
 
-    \cf{Dry}[4]{Fey Charm}
+    \magicalcf{Dry}[4]{Fey Charm}
       \begin{magicalsustainability}{Fey Charm}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
         \abilityusagetime \glossterm{Minor action}.
         \rankline
@@ -471,16 +468,16 @@
         \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 4.
       \end{magicalsustainability}
 
-    \cf{Dry}[5]{Tree Bond+} You can bond to a grove of trees instead of a single tree.
+    \magicalcf{Dry}[5]{Tree Bond+} You can bond to a grove of trees instead of a single tree.
       The cumulative age of all trees in the grove must be at least a thousand years, and the grove must fit within a 500 foot radius.
       While bonded to a grove, the bonuses from your \textit{tree bond} and \textit{enchanting appearance} abilities double.
 
-    \cf{Dry}[6]{Tree Union} When you meld with a tree using your \textit{tree stride} ability, you can fully unite with it.
+    \magicalcf{Dry}[6]{Tree Union} When you meld with a tree using your \textit{tree stride} ability, you can fully unite with it.
       When you do, you have \glossterm{line of sight} and \glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree's body.
       Attacks against the tree simultaneously affect both you and the tree.
       You and the tree are both \impervious to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
 
-    \cf{Dry}[7]{Acorns of Life} Whenever you visit a tree you are bonded to with your \textit{tree bond} ability, you can gather acorns of life.
+    \magicalcf{Dry}[7]{Acorns of Life} Whenever you visit a tree you are bonded to with your \textit{tree bond} ability, you can gather acorns of life.
       You can have up to ten acorns of life at once.
       As a \glossterm{minor action}, you can throw an acorn of life onto an unoccupied \glossterm{grounded} space within \medrange of you.
       The space must be made of dirt, earth, or stone.
@@ -503,7 +500,10 @@
       \end{itemize}
 
     \cf{Dry}{Resources}
-      You learn five \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
+      You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
+
+    \cf{Dry}{Defenses}
+      You gain a \plus2 bonus to your Mental defense.
 
     \cf{Dry}{Weapon Proficiencies}
       You are proficient with simple weapons.
@@ -618,6 +618,8 @@
     \cf{Hrp}[2]{Flight} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 10 feet (see \pcref{Flight}).
       As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
+    \cf{Hrp}[3]{Sharp Talons} Your talons deal 1d6 damage.
+
     \cf{Hrp}[3]{Winged Agility+} The Armor defense bonus increases to \plus3, and the Balance bonus increases to \plus8.
 
       % TODO: define correct rank
@@ -640,6 +642,8 @@
 
     \cf{Hrp}[6]{Agile Flight} You reduce the penalties to your Armor and Reflex defenses from gliding or flying by 2.
       In addition, your maximum height increases to 30 feet.
+
+    \cf{Hrp}[6]{Sharp Talons+} Your talons deal 1d8 damage and gain the \weapontag{Keen} \glossterm{weapon tag}.
 
     \magicalcf{Hrp}[7]{Mythic Siren} You gain a \plus5 \glossterm{accuracy} bonus with your \ability{luring song} and \ability{siren song} abilities.
 
@@ -1438,9 +1442,6 @@
         \itemhead{Level 19} 100 hit points \add fifteen times your Constitution, plus 15 hit points per level beyond 19.
       \end{itemize}
 
-    \cf{Trl}{Defenses}
-      You gain a \plus2 bonus to your Fortitude defense.
-
     \cf{Trl}{Resources}
       You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
       You also gain an additional \glossterm{attunement point}.
@@ -1539,7 +1540,7 @@
 
   \subsection{Vampire Archetype}
 
-    \cf{Vmp}[1]{Blood Drain} Whenever a living creature loses hit points from a \glossterm{strike} using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
+    \cf{Vmp}[1]{Blood Drain} Whenever a living creature with blood loses hit points from a \glossterm{strike} using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
       When you do, you regain \glossterm{damage resistance} and \glossterm{hit points} at the end of the round.
       The recovery is equal to the hit points the target lost from the attack, ignoring negative hit points and any damage increase from critical hits.
 
@@ -1608,7 +1609,8 @@
         The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 6.
       \end{magicalactiveability}
 
-    \magicalcf{Vmp}[7]{Blood Drain+} Using your \ability{blood drain} ability does not increase your fatigue level.
+    \magicalcf{Vmp}[7]{Blood Drain+} You can use this ability without increasing your fatigue level.
+    After you do, you \glossterm{briefly} cannot do so again.
 
     \magicalcf{Vmp}[7]{Eternal Undeath} Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
       As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
@@ -1630,7 +1632,7 @@
       \end{itemize}
 
     \cf{Vmp}{Resources}
-      You learn five \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
+      You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
       You also gain an additional \glossterm{attunement point}.
 
     \cf{Vmp}{Weapon Proficiencies}
