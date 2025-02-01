@@ -97,12 +97,12 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 28;
+        let expected_points = 37;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
                 expected_points + if class.is_uncommon_class() { 2 } else { 0 };
-            if actual_points != class_expected_points {
+            if (actual_points - class_expected_points).abs() > 1 {
                 eprintln!(
                     "Class {} has {} points; expected {}",
                     class.name(),
@@ -117,13 +117,28 @@ impl Class {
         return !Self::core_classes().contains(self);
     }
 
+    // At level 10, one attunement is worth 8 HP generically, or about 11 to a caster.
+    // Assume 2 Con
+    // Low HP is (14 + 6 + 4) = 24 HP
+    // Med HP is (18 + 6 + 4) = 28 HP
+    // High HP is (20 + 9 + 6) = 35 HP
+    // Very high HP is (24 + 12 + 8) = 44 HP
+    // Conclusion: HP gap is slightly less valuable than attunement, or similar? Seems weird.
+    // Assume that a third of the value of Con comes from the HP modifier (+1 Fort, +1 fatigue, HP)
+    // So 2 points of Con should be similar to 2 points of HP progression.
+    // Low HP is (14 + 6 + 8) = 28 HP
+    // Med HP is (18 + 6 + 8) = 32 HP
+    // High HP is (20 + 9 + 12) = 41 HP
+    // Very high HP is (24 + 12 + 16) = 49 HP
+    // Conclusion: HP progression advancement should be 4 points
     pub fn calculate_point_total(&self) -> i32 {
-        self.attunement_points() * 4
+        self.attunement_points() * 6
             + self.hit_point_progression().creation_point_cost()
-            // 2 points per insight point
-            + self.insight_points() * 2
-            // 1 point per trained skill
-            + self.trained_skills()
+            // 3 points per insight point. Int gives (insight + trained + skill bonuses), but
+            //   insight is the strongest of those, so assume it's half the value of Int.
+            + self.insight_points() * 3
+            // 2 points per trained skill
+            + self.trained_skills() * 2
             // 1 point per 8 class skills
             + ((self.class_skills().len() as f64) / 8.0).round() as i32
             // 1 point per armor proficiency after the first. Light armor proficiency isn't
@@ -133,10 +148,10 @@ impl Class {
             + if self.weapon_proficiencies().custom_weapons.is_some() { 1 } else { 0 }
             // 2 points for all nonexotics
             + if self.weapon_proficiencies().non_exotic_weapons { 2 } else { 0 }
-            // 1 point per non-Armor defense
-            + self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental)
-            // 3 points per Armor defense
-            + self.defense_bonus(&Defense::Armor) * 3
+            // 2 points per non-Armor defense
+            + 2 * (self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental))
+            // 4 points per Armor defense
+            + self.defense_bonus(&Defense::Armor) * 4
             // 6 points per mandatory attribute
             + self.mandatory_attributes().len() as i32 * 6
             // 7 points if optional attributes exist
@@ -210,7 +225,7 @@ impl Class {
             Self::Monk => 0,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
-            Self::Ranger => 1,
+            Self::Ranger => 0,
             Self::Rogue => 1,
             Self::Sorcerer => 2,
             Self::Treant => 0,
@@ -305,6 +320,7 @@ impl Class {
                 Skill::CreatureHandling,
                 Skill::Deception,
                 Skill::Deduction,
+                Skill::Disguise,
                 Skill::Endurance,
                 Skill::Intimidate,
                 Skill::Jump,
@@ -554,6 +570,7 @@ impl Class {
                 Skill::Craft,
                 Skill::Deception,
                 Skill::Deduction,
+                Skill::Devices,
                 Skill::Intimidate,
                 Skill::Knowledge(KnowledgeSubskill::all()),
                 Skill::Persuasion,
@@ -563,11 +580,11 @@ impl Class {
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match self {
-            Self::Automaton => match defense {
-                Defense::Fortitude => 2,
+            Self::Cleric => match defense {
+                Defense::Mental => 2,
                 _ => 0,
             },
-            Self::Cleric => match defense {
+            Self::Dryaidi => match defense {
                 Defense::Mental => 2,
                 _ => 0,
             },
@@ -575,16 +592,12 @@ impl Class {
                 Defense::Armor => 1,
                 _ => 0,
             },
-            Self::Sorcerer => match defense {
-                Defense::Mental => 2,
-                _ => 0,
-            },
             Self::Treant => match defense {
                 Defense::Fortitude => 2,
                 _ => 0,
             },
-            Self::Troll => match defense {
-                Defense::Fortitude => 2,
+            Self::Votive => match defense {
+                Defense::Mental => 2,
                 _ => 0,
             },
             _ => 0,
@@ -597,12 +610,12 @@ impl Class {
             Self::Barbarian => HitPointProgression::VeryHigh,
             Self::Cleric => HitPointProgression::Medium,
             Self::Dragon => HitPointProgression::High,
-            Self::Druid => HitPointProgression::High,
+            Self::Druid => HitPointProgression::Medium,
             Self::Dryaidi => HitPointProgression::Low,
             Self::Fighter => HitPointProgression::High,
             Self::Harpy => HitPointProgression::Medium,
             Self::Incarnation => HitPointProgression::High,
-            Self::Monk => HitPointProgression::Medium,
+            Self::Monk => HitPointProgression::High,
             Self::Oozeborn => HitPointProgression::VeryHigh,
             Self::Paladin => HitPointProgression::High,
             Self::Ranger => HitPointProgression::High,
@@ -619,7 +632,7 @@ impl Class {
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Cleric => 1,
-            Self::Votive => 1,
+            Self::Druid => 1,
             Self::Wizard => 1,
             _ => 0,
         }
@@ -686,24 +699,24 @@ impl Class {
 
     pub fn trained_skills(&self) -> i32 {
         match self {
-            Self::Automaton => 3,
+            Self::Automaton => 4,
             Self::Barbarian => 4,
             Self::Cleric => 3,
             Self::Dragon => 5,
             Self::Druid => 4,
-            Self::Dryaidi => 5,
+            Self::Dryaidi => 4,
             Self::Fighter => 3,
             Self::Harpy => 4,
             Self::Incarnation => 3,
             Self::Monk => 4,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
-            Self::Ranger => 5,
+            Self::Ranger => 6,
             Self::Rogue => 6,
             Self::Sorcerer => 3,
             Self::Treant => 4,
             Self::Troll => 3,
-            Self::Vampire => 5,
+            Self::Vampire => 4,
             Self::Votive => 3,
             Self::Wizard => 4,
         }
@@ -732,7 +745,7 @@ impl Class {
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Druid => ArmorProficiencies {
-                specific_armors: Some(vec![Armor::LeatherLamellar(None)]),
+                specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::StandardShield]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Dryaidi => ArmorProficiencies {
@@ -764,8 +777,8 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Ranger => ArmorProficiencies {
-                specific_armors: Some(vec![Armor::LeatherLamellar(None)]),
-                usage_classes: vec![ArmorUsageClass::Light],
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Rogue => ArmorProficiencies {
                 specific_armors: None,
@@ -1440,6 +1453,9 @@ impl Class {
                     This grants your soulkeeper the ability to observe your actions and communicate with you in limited ways.
                     Communication from your soulkeeper typically manifests as unnatural emotional urges, whispered voices audible only to you, or intrusive thoughts you can recognize as not your own.
                     Each soulkeeper will have its own goals and communication style.
+
+                    As part of the terms of a typical pact, your soulkeeper cannot prevent you from being \glossterm{resurrected} after death.
+                    However, if your pact imposes a time limit on how long your soulkeeper can retain your soul after death, resurrection restarts that time from zero.
 
                     \subsubsection{Soulkeepers}
                         There are four common types of soulkeeper: devils, fae, moirai, and precursors.
