@@ -104,7 +104,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
 
-                    \parhead{Spellfused Maneuver} Choose a pact spell you know that does not have the \atAttune or \atSustain tags.
+                    \parhead{Spellfused Maneuver\sparkle} Choose a pact spell you know that does not have the \atAttune or \atSustain tags.
                     Its rank most not exceed your excess rank with the maneuver.
                     You treat your rank with that spell as being equal to your excess rank, which limits the bonuses it gains from rank scaling.
                     Each target of the maneuver is also affected by that spell, using separate attack rolls for the spell and maneuver.
@@ -507,7 +507,8 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 When you do, you suffer no immediate negative consequences.
                 After 10 minutes, your maximum \glossterm{hit points} are reduced to three-quarters of normal until you complete a \glossterm{long rest}.
                 Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
-                If your hit points would be reduced below 1 in this way, you die.
+                If your hit points would be reduced below 1 in this way, your body is ripped through the planes directly into your soulkeeper's realm.
+                This is invariably lethal, and leaves no corpse behind.
             ",
             modifiers: None,
         },
@@ -620,6 +621,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to pact magic, you learn an additional pact spell.
                 The spell can be up to rank 2, even if you do not have access to rank 2 spells.
                 It gains a special effect based on your soulkeeper.
+                When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
                 {
                     \subcf{Devil -- Tormenting Spell} Each creature hit by the spell becomes tormented by the spell as a \glossterm{condition}.
                     If it loses hit points while it is tormented, the spell \glossterm{repeats} on that creature, and all instances of the condition are removed.
@@ -635,8 +637,6 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Precursor -- Eldritch Spell} You gain a \plus2 accuracy bonus with the spell.
                     However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to your Fortitude and Reflex defenses.
                 }
-
-                When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
             ",
             modifiers: None,
         },
