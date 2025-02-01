@@ -87,7 +87,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         Whenever you make an attack during your action and learn whether you hit or missed, you can use this ability to rewind time to the start of your action.
         You must use this ability before determining any damage dealt or any other effects of the attack.
-        All effects of your action are undone, except that you keep any \\glossterm{fatigue} you gained during your original action.
+        All effects of your action are undone, except that you keep any \\glossterm{fatigue levels} you gained during your original action.
         You can use an different ability on your new action, or simply make a new attack roll with the same ability and hope it succeeds this time.
         After you rewind time in this way, your attunement to this ability ends.
       `,

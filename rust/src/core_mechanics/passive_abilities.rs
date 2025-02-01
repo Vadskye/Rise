@@ -100,8 +100,7 @@ impl StandardPassiveAbility {
             },
             Self::Indwelt => PassiveAbility {
                 description: r"
-                  The $name is both an object and a living creature.
-                  For details, see \pcref{Indwelt}.
+                  The $name is a \trait{indwelt}, making it both an object and a living creature (see \pcref{Indwelt}).
                 ".to_string(),
                 is_magical: false,
                 name: "Indwelt".to_string(),

@@ -100,25 +100,6 @@ pub fn alchemical_items() -> Vec<Tool> {
         ..alchemical_item()
     });
 
-    tools.push(Tool {
-        name: "Torch".to_string(),
-        rank: -1,
-        short_description: "Emits light".to_string(),
-        description: r"
-            \label<Torch>
-            As a standard action, you can light a torch if you have flint and steel or another source of flame handy.
-            When you do, it sheds \glossterm<bright illumination> in a \smallarea radius.
-            A torch burns for one hour before it is destroyed.
-            You can extinguish the torch to preserve its remaining usable time.
-        ".to_string(),
-        upgrades: vec![
-            ItemUpgrade::new(1, "Emits light for one week", r"
-                The torch burns for up to one week.
-            "),
-        ],
-        ..alchemical_item()
-    });
-
     tools
 }
 
