@@ -50,17 +50,16 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Chill Air',
 
       effect: `
-        The temperatuture of the air within a \\areamed radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
+        The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
         You cannot reduce the temperature below 0 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
-
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
-        3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
-        5: 'You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.',
-        7: 'You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.',
+        2: 'The maximum temperature change increases to 25 degrees.',
+        4: 'The area increases to a \\hugearea radius.',
+        6: 'The maximum temperature change increases to 30 degrees.',
       },
+      type: 'Attune',
     },
   ],
   spells: [

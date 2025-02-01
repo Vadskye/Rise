@@ -44,7 +44,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         4: `The maximum size increases to Large.`,
         6: `The maximum size increases to Huge.`,
       },
-      type: 'Sustain (minor)',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [
