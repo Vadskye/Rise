@@ -20,9 +20,15 @@
  *     Harpy:  38 /  89
  * Incarnation:  40 /  93
  *  Oozeborn:  39 /  93
+<<<<<<< HEAD
  *     Troll:  38 /  93
  *    Treant:  41 /  97
  *   Vampire:  39 /  91
+=======
+ *     Troll:  42 /  95
+ *    Treant:  41 /  97
+ *   Vampire:  41 /  92
+>>>>>>> 0256b941e2b859abd3d0c6014e2508eeb6d68307
 
 ### Level 10: Class/Character
  * Barbarian:  38 / 166
@@ -42,9 +48,15 @@
  *     Harpy:  38 / 154
  * Incarnation:  40 / 161
  *  Oozeborn:  39 / 163
+<<<<<<< HEAD
  *     Troll:  38 / 163
  *    Treant:  41 / 167
  *   Vampire:  39 / 160
+=======
+ *     Troll:  42 / 165
+ *    Treant:  41 / 167
+ *   Vampire:  41 / 161
+>>>>>>> 0256b941e2b859abd3d0c6014e2508eeb6d68307
 
 ### Level 20: Class/Character
  * Barbarian:  38 / 225
@@ -64,9 +76,15 @@
  *     Harpy:  38 / 215
  * Incarnation:  40 / 220
  *  Oozeborn:  39 / 222
+<<<<<<< HEAD
  *     Troll:  38 / 222
  *    Treant:  41 / 226
  *   Vampire:  39 / 220
+=======
+ *     Troll:  42 / 224
+ *    Treant:  41 / 226
+ *   Vampire:  41 / 221
+>>>>>>> 0256b941e2b859abd3d0c6014e2508eeb6d68307
 
 ## Detailed
 
