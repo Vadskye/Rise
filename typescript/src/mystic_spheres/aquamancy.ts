@@ -106,10 +106,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     {
       name: 'Desiccate',
 
-      // The accuracy bonus drops damage from d3 to d2h
+      // No penalty for the extremely rare bonus
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
@@ -122,10 +122,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     {
       name: 'Mighty Desiccate',
 
-      // This accuracy bonus is high enough to drop from d7 to d6h
+      // No penalty for the extremely rare bonus
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankseven.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
