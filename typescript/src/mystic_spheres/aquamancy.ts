@@ -13,7 +13,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Create Water',
 
       effect: `
-        You create up to two gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
+        You create up to one gallon of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
         You must create a minimum of one ounce of water in each location.
       `,
       narrative: `
@@ -21,29 +21,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
       `,
       scaling: {
-        2: 'The volume created increases to five gallons.',
-        4: 'The volume created increases to ten gallons.',
-        6: 'The volume created increases to twenty gallons.',
+        2: 'The volume created increases to two gallons.',
+        4: 'The volume created increases to five gallons.',
+        6: 'The volume created increases to ten gallons.',
       },
       tags: ['Creation'],
-    },
-    {
-      name: 'Manipulate Water',
-
-      effect: `
-        You change the speed of water within a \\medarea radius \\glossterm{emanation} from you by up to 5 miles per hour.
-        If you decrease the water's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
-        You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
-
-        In addition to allowing you to change the direction of currents within large bodies of water, you can also use this to propel water across surfaces.
-        Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
-      `,
-      scaling: {
-        3: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 10 miles per hour.',
-        5: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 15 miles per hour.',
-        7: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 20 miles per hour.',
-      },
-      type: 'Sustain (minor)',
     },
     {
       name: 'Aquatic Freedom',
@@ -52,14 +34,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
       `,
       scaling: {
-        2: `
-          As a standard action, you can draw breath from water.
-          This allows you to \\glossterm{briefly} breathe water as easily as a human breathes air.
-        `,
-        4: `
-          You can draw breath from water as a \\glossterm{minor action} rather than as a standard action.
-        `,
-        6: `The Swim bonus increases to +6.`,
+        2: "The bonus increases to +4.",
+        4: "The bonus increases to +5.",
+        6: "The bonus increases to +6.",
       },
       type: 'Attune',
     },
@@ -738,6 +715,32 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     },
   ],
   rituals: [
+    {
+      name: 'Manipulate Water',
+
+      castingTime: "one minute",
+      effect: `
+        You change the speed of water within a \\largearea radius \\glossterm{emanation} from you by up to 5 miles per hour.
+        If you decrease the water's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
+        You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
+
+        In addition to allowing you to change the direction of currents within large bodies of water, you can also use this to propel water across surfaces.
+        Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
+      `,
+      rank: 2,
+      type: 'Sustain (attuneable, minor)',
+    },
+    {
+      name: 'Greater Manipulate Water',
+
+      castingTime: "one minute",
+      functionsLike: {
+        name: "manipulate water",
+        exceptThat: "the maximum speed change increases to 20 miles per hour.",
+      },
+      rank: 6,
+      type: 'Sustain (attuneable, minor)',
+    },
     {
       name: 'Rainstorm',
 

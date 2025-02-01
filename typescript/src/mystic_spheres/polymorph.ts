@@ -46,9 +46,9 @@ export const polymorph: MysticSphere = {
         name: 'disguise creature',
       },
       scaling: {
-        2: `The bonus increases to +6.`,
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +10.`,
+        2: `The bonus increases to +5.`,
+        4: `The bonus increases to +6.`,
+        6: `The bonus increases to +8.`,
       },
     },
 
@@ -412,7 +412,6 @@ export const polymorph: MysticSphere = {
         A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
         You cannot absorb only part of a larger object.
 
-        This effect lasts until you use it again or \\glossterm{dismiss} it.
         When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
       `,
       rank: 3,
@@ -420,6 +419,7 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
