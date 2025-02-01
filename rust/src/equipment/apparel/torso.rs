@@ -71,10 +71,10 @@ fn belts() -> Vec<Apparel> {
             You gain a +4 \glossterm<enhancement bonus> to your \glossterm<hit points>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +8 hit points", "
+            ItemUpgrade::new(4, "Grants +8 hit points", "
                 The bonus increases to +8.
             "),
-            ItemUpgrade::new(7, "Grants +16 hit points", "
+            ItemUpgrade::new(6, "Grants +16 hit points", "
                 The bonus increases to +16.
             "),
         ],
