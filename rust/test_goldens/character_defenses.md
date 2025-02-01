@@ -24,7 +24,7 @@ Points / Self-hit: 28 / 40%
 
 ### Monk Kama
 A/F/R/M: 5 / 5 / 8 / 4
-HP/DR/Total: 10 / 0 / 10
+HP/DR/Total: 12 / 0 / 12
 Points / Self-hit: 27 / 80%
 
 ### Paladin Shield
@@ -43,9 +43,9 @@ HP/DR/Total: 8 / 4 / 12
 Points / Self-hit: 28 / 70%
 
 ### Sorcerer Dexterity
-A/F/R/M: 4 / 4 / 5 / 10
+A/F/R/M: 4 / 4 / 5 / 8
 HP/DR/Total: 12 / 4 / 16
-Points / Self-hit: 27 / 80%
+Points / Self-hit: 25 / 80%
 
 ### Wizard Perception
 A/F/R/M: 4 / 3 / 5 / 7
@@ -76,7 +76,7 @@ Points / Self-hit: 39 / 50%
 
 ### Monk Kama
 A/F/R/M: 11 / 7 / 11 / 6
-HP/DR/Total: 18 / 8 / 26
+HP/DR/Total: 24 / 8 / 32
 Points / Self-hit: 46 / 50%
 
 ### Paladin Shield
@@ -95,9 +95,9 @@ HP/DR/Total: 16 / 8 / 24
 Points / Self-hit: 41 / 60%
 
 ### Sorcerer Dexterity
-A/F/R/M: 7 / 6 / 8 / 13
+A/F/R/M: 7 / 6 / 8 / 11
 HP/DR/Total: 23 / 4 / 27
-Points / Self-hit: 41 / 70%
+Points / Self-hit: 39 / 70%
 
 ### Wizard Perception
 A/F/R/M: 4 / 5 / 5 / 10
@@ -128,7 +128,7 @@ Points / Self-hit: 55 / 50%
 
 ### Monk Kama
 A/F/R/M: 16 / 10 / 16 / 9
-HP/DR/Total: 32 / 20 / 52
+HP/DR/Total: 39 / 20 / 59
 Points / Self-hit: 67 / 20%
 
 ### Paladin Shield
@@ -147,9 +147,9 @@ HP/DR/Total: 28 / 20 / 48
 Points / Self-hit: 62 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 11 / 10 / 12 / 18
+A/F/R/M: 11 / 10 / 12 / 16
 HP/DR/Total: 52 / 8 / 60
-Points / Self-hit: 62 / 60%
+Points / Self-hit: 60 / 60%
 
 ### Wizard Perception
 A/F/R/M: 7 / 8 / 8 / 14
@@ -180,7 +180,7 @@ Points / Self-hit: 66 / 50%
 
 ### Monk Kama
 A/F/R/M: 20 / 12 / 19 / 11
-HP/DR/Total: 63 / 33 / 96
+HP/DR/Total: 72 / 33 / 105
 Points / Self-hit: 82 / 10%
 
 ### Paladin Shield
@@ -199,9 +199,9 @@ HP/DR/Total: 53 / 24 / 77
 Points / Self-hit: 75 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 14 / 12 / 15 / 21
+A/F/R/M: 14 / 12 / 15 / 19
 HP/DR/Total: 106 / 16 / 122
-Points / Self-hit: 76 / 60%
+Points / Self-hit: 74 / 60%
 
 ### Wizard Perception
 A/F/R/M: 9 / 10 / 10 / 17
@@ -232,7 +232,7 @@ Points / Self-hit: 81 / 50%
 
 ### Monk Kama
 A/F/R/M: 24 / 16 / 22 / 15
-HP/DR/Total: 126 / 46 / 172
+HP/DR/Total: 144 / 46 / 190
 Points / Self-hit: 101 / 9%
 
 ### Paladin Shield
@@ -251,9 +251,9 @@ HP/DR/Total: 96 / 48 / 144
 Points / Self-hit: 90 / 40%
 
 ### Sorcerer Dexterity
-A/F/R/M: 17 / 15 / 18 / 24
+A/F/R/M: 17 / 15 / 18 / 22
 HP/DR/Total: 167 / 32 / 199
-Points / Self-hit: 91 / 70%
+Points / Self-hit: 89 / 70%
 
 ### Wizard Perception
 A/F/R/M: 13 / 13 / 13 / 20
