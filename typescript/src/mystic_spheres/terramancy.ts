@@ -323,7 +323,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses \\glossterm{hit points} from this damage and your attack also hits its Fortitude defense, it falls \prone.
+          If the target loses \\glossterm{hit points} from this damage and your attack also hits its Fortitude defense, it falls \\prone.
         `,
         missGlance: true,
         targeting: `
