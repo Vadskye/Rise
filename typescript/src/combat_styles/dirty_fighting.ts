@@ -108,7 +108,7 @@ export const dirtyFighting: CombatStyle = {
         Make a \\glossterm{strike} with your \\glossterm{brawling accuracy} using a creature you are \\glossterm{grappling} as a weapon.
         The strike deals double \\glossterm{weapon damage}.
         Treat the creature as a weapon with the \\weapontag{Heavy} weapon tag that deals 1d6 damage per size category by which the creature is above Small (minimum 1d6).
-        You must be strong enough to carry the weapon creature normally (see \pcref{Weight Limits}).
+        You must be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
         Your attack must hit both the Armor defense of the strike's target and the Fortitude defense of the weapon creature.
 
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
