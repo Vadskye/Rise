@@ -1394,8 +1394,8 @@ They allow more distinct and unique character customization, but also increase g
     You cannot use \glossterm{potions} or other similar magic items or abilities that affect you personally, even if they do not require attunement.
     In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
 
-    \ff[6]{Sever Magic}
-    \begin{activeability}{Sever Magic}
+    \ff[6]{Sever Attunement}
+    \begin{activeability}{Sever Attunement}
       \abilityusagetime Standard action.
       \rankline
       Make a \glossterm{strike}.
@@ -1408,14 +1408,22 @@ They allow more distinct and unique character customization, but also increase g
       You gain a \plus2 accuracy bonus with the strike for every 3 levels beyond 6.
     \end{activeability}
 
-    % TODO: does this really need to grant fatigue tolerance?
     \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-    Instead, you gain a \plus1 bonus to your \glossterm{accuracy}, your \glossterm{fatigue tolerance}, and all \glossterm{defenses}.
+    Instead, you gain a \plus1 bonus to your \glossterm{accuracy} and all \glossterm{defenses}.
     These bonuses increase to \plus2 at level 12 and to \plus3 at level 18.
 
     \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \smallarea radius from you uses a \magical ability as a standard action, the ability has a 20\% chance to fail with no effect.
     If that enemy's maximum rank is less than your maximum rank, this failure chance increases to 50\%.
     This cannot cause passive or triggered abilities to fail.
+
+    \ff[12]{Purge Magic}
+    \begin{activeability}{Purge Magic}
+      \abilityusagetime Standard action.
+      \rankline
+      Choose yourself or an \glossterm{ally} you \glossterm{touch}.
+      The target removes all \magical conditions affecting it.
+      If the target does not have the Null feat, it increases its \glossterm{fatigue level} by one.
+    \end{activeability}
 
     \ff[18]{Mundane Resilience+} The bonuses from your \textit{mundane resilience} ability increase to twice your level.
 
@@ -2128,7 +2136,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to the \sphere{Telekinesis} \glossterm{mystic sphere}.
 
     \magicalff[1]{Efficient Hand} You can cast the \spell{distant hand} \glossterm{cantrip} as a \glossterm{minor action}, and you can \glossterm{sustain} it as a \glossterm{free action}.
-    In addition, the distance you can move the object increases to 30 feet, as if you had that spell's rank 4 upgrade.
+    In addition, the distance you can move the object during each movement phase increases by 10 feet.
 
     \magicalff[6]{Violent Hand}
     \begin{magicalactiveability}{Violent Hand}
