@@ -113,7 +113,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          You gain a +2 accuracy bonus if the target has a swim speed and is not currently touching water.
+          You gain a +2 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no land speed.
         `,
       },
       rank: 2,
@@ -129,7 +129,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          You gain a +4 accuracy bonus if the target has a swim speed and is not currently touching water.
+          You gain a +4 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no land speed.
         `,
       },
       rank: 6,
