@@ -337,25 +337,26 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
-                % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
-                % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
-                Preparing a spell with this ability takes 5 minutes.
-                When the preparation is complete, the spell has no immediate effect.
-                Instead, it automatically takes effect when some specific circumstances arise.
-                During the time required to cast the spell, you specify what circumstances cause the spell to take effect.
+                \begin{magicalattuneability}{Contingency}{\atAttune}
+                    % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
+                    % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+                    \abilityusagetime One minute.
+                    \rankline
+                    When you use this ability, you choose a spell that you know.
+                    The spell has no immediate effect.
+                    Instead, you specify circumstances that will automatically cause the spell to take effect.
+                    You cannot consciously control the spell after setting the circumstances, and any attacks made as part of the spell's resolution are \glossterm{reactive attacks}.
 
-                The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
-                For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I have only one \glossterm{hit point} remaining.''
-                The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
-                If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
+                    The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
+                    For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I have only one \glossterm{hit point} remaining.''
+                    The more specific the required circumstances, the better -- vague requirements, such as ``when I am in danger'', may cause the spell to trigger unexpectedly or fail to trigger at all.
+                    If you attempt to specify multiple separate triggering conditions, such as ``when I take damage or when an enemy is adjacent to me'', the spell will randomly ignore all but one of the conditions.
 
-                If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
-                If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
-                Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made at the time it is cast.
-                You cannot alter those decisions when the contingency takes effect.
-
-                You can have only one spell with this ability active at a time.
-                If you use this ability again with a different spell, the old contingency is removed.
+                    If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
+                    If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
+                    Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made when this ability is used.
+                    You cannot alter those decisions when the contingency takes effect.
+                \end{magicalattuneability}
             ",
             modifiers: None,
         },
@@ -365,8 +366,9 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You may have two separate contingencies active at the same time.
-                Each contingency may have separate triggering conditions.
+                You gain an additional \glossterm{attunement point} that can only be used to attune to the \ability{contingency} ability.
+                In addition, you can attune to the \ability{contingency} ability up to three times.
+                Each contingency must have a different associated spell and triggering condition.
                 Only one contigency can trigger each round.
                 If multiple contingencies would activate simultaneously, choose one to activate randomly.
             ",
