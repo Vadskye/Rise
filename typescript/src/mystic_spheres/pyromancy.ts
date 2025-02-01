@@ -11,41 +11,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
   cantrips: [
     {
-      name: 'Kindle',
-
-      attack: {
-        hit: `2 fire damage.
-        If the target is highly flammable, such as a torch or campfire, it ignites.`,
-        targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
-        `,
-      },
-      scaling: {
-        2: `The damage increases to 5.`,
-        4: `The damage increases to 10.`,
-        6: `The damage increases to 20.`,
-      },
-    },
-
-    {
-      name: 'Extinguish',
-
-      attack: {
-        hit: `The flame is extinguished.`,
-        targeting: `
-          Choose one Medium or smaller active flame within \\medrange.
-          If the target is \\glossterm{attended} by a creature, such as a torch being carried, you must make an attack vs. Reflex against the attending creature.
-          Otherwise, the attack automatically hits.
-        `,
-      },
-      scaling: {
-        2: `The maximum size increases to Large.`,
-        4: `The maximum size increases to Huge.`,
-        6: `The maximum size increases to Gargantuan.`,
-      },
-    },
-
-    {
       name: 'Personal Torch',
 
       effect: `
@@ -53,32 +18,31 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
         At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius and shadowy illumination in an 60 foot radius.
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
-        On a hit, you deal the target 2 fire damage.
-
-        This effect lasts until you use it again or until you \\glossterm{dismiss} it.
+        On a hit, you deal the target 2 damage.
+        If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
       scaling: {
         2: `The damage increases to 5.`,
         4: `The damage increases to 10.`,
         6: `The damage increases to 20.`,
       },
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
       name: 'Heat Air',
 
       effect: `
-        The temperatuture of the air within a \\medarea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
+        The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
         You cannot increase the temperature above 100 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
-
-        This ability lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
-        3: 'You can choose to affect a \\largearea radius instead, and the maximum temperature change increases to 30 degrees.',
-        5: 'You can choose to affect a \\hugearea radius instead, and the maximum temperature change increases to 40 degrees.',
-        7: 'You can choose to affect a \\gargarea radius instead, and the maximum temperature change increases to 50 degrees.',
+        2: 'The maximum temperature change increases to 25 degrees.',
+        4: 'The area increases to a \\hugearea radius.',
+        6: 'The maximum temperature change increases to 30 degrees.',
       },
+      type: 'Attune',
     },
   ],
   spells: [

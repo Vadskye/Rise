@@ -25,20 +25,6 @@ export const chronomancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Accelerated Reading',
-
-      effect: `
-        You can read at twice your normal speed.
-        However, the mental effort imposes a -4 penalty to your Mental defense.
-      `,
-      scaling: {
-        2: 'You can read at three times your normal speed.',
-        4: 'You can read at five times your normal speed.',
-        6: 'You can read at ten times your normal speed.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
-    {
       name: 'Rapid Aging',
 
       effect: `
@@ -725,6 +711,28 @@ export const chronomancy: MysticSphere = {
     },
   ],
   rituals: [
+    {
+      name: 'Accelerated Reading',
+
+      castingTime: "one minute",
+      effect: `
+        You can read at twice your normal speed.
+        However, the mental effort imposes a -2 penalty to your Mental defense.
+      `,
+      rank: 1,
+      type: 'Attune',
+    },
+    {
+      name: 'Greater Accelerated Reading',
+
+      castingTime: "one minute",
+      effect: `
+        You can read at ten times your normal speed.
+        However, the mental effort imposes a -4 penalty to your Mental defense.
+      `,
+      rank: 5,
+      type: 'Attune',
+    },
     {
       name: 'Gentle Repose',
 

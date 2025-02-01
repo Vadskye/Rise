@@ -16,8 +16,6 @@ export const fabrication: MysticSphere = {
         The object appears in your hand or at your feet.
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
         At the end of each round, this spell ends if you are not within \\medrange of the item.
-
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
       `,
       scaling: {
         2: `The maximum size of the object increases to Small.`,
@@ -25,6 +23,7 @@ export const fabrication: MysticSphere = {
         6: `The maximum size of the object increases to Large.`,
       },
       tags: ['Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [

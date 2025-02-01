@@ -20,18 +20,18 @@ export const telekinesis: MysticSphere = {
         Choose one Medium or smaller \\glossterm{unattended} object within \\medrange.
         You can telekinetically control the target object as if you were holding it in a single extra hand.
         Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your rank with this cantrip.
+        During the movement phase, you can move the target up to 5 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
+        Your \\glossterm{weight limits} are calculated as if your Strength was \minus1, so you can carry a Small object normally or push a Medium object at half speed.
         At the end of each round, if the target is outside of this ability's range, this ability ends.
 
         Although you can control the object's motion, you do not have it equipped.
         This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
 
-        During the movement phase, you can move the target up to 5 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
-        You use your Willpower instead of your Strength to determine your \\glossterm{weight limits} when moving objects in this way (see \\pcref{Weight Limits}), to a maximum Willpower equal to your rank with this cantrip.
       `,
       scaling: {
-        2: `The distance moved increases to 15 feet.`,
-        4: `The distance moved increases to 30 feet.`,
-        6: `The distance moved increases to 60 feet.`,
+        2: `The maximum distance moved increases to 10 feet.`,
+        4: `The maximum distance moved increases to 15 feet.`,
+        6: `The maximum distance moved increases to 20 feet.`,
       },
       type: 'Sustain (minor)',
     },
@@ -47,9 +47,9 @@ export const telekinesis: MysticSphere = {
         This ability cannot physically move or even meaningfully impede any creature, but it can be perceived.
       `,
       scaling: {
-        2: `The force increases to lift a Tiny weight object, or to push a Small weight object.`,
-        4: `The range increases to \\longrange`,
-        6: `The force increases to lift a Small weight object, or to push a Medium weight object.`,
+        2: `The range increases to \\medrange`,
+        4: `The force increases to be able to lift a Tiny weight, or to push a Small weight.`,
+        6: `The range increases to \\longrange`,
       },
       type: 'Sustain (minor)',
     },
