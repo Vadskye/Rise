@@ -21,7 +21,7 @@ export const telekinesis: MysticSphere = {
         You can telekinetically control the target object as if you were holding it in a single extra hand.
         Any attacks you make with the object or checks you make to manipulate the object have a maximum bonus equal to your rank with this cantrip.
         During the movement phase, you can move the target up to 5 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
-        Your \\glossterm{weight limits} are calculated as if your Strength was \minus1, so you can carry a Small object normally or push a Medium object at half speed.
+        Your \\glossterm{weight limits} are calculated as if your Strength was \\minus1, so you can carry a Small object normally or push a Medium object at half speed.
         At the end of each round, if the target is outside of this ability's range, this ability ends.
 
         Although you can control the object's motion, you do not have it equipped.
