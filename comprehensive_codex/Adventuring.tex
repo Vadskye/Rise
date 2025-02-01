@@ -249,9 +249,11 @@
     Some resurrection abilities can restore more damaged corpses to life, as indicated in their descriptions.
 
     Coming back from the dead is an ordeal.
-    The creature's maximum \glossterm{fatigue tolerance} is reduced by 1.
-    This penalty lasts for thirty days, or until the creature gains a level.
-    If this would reduce a creature's maximum fatigue tolerance below 0, the creature cannot be resurrected.
+    The creature's maximum \glossterm{fatigue tolerance} is reduced by 2.
+    This penalty stacks if the creature is resurrected multiple times.
+    Every thirty days, and whenever the creature gains a level, this penalty is reduced by 1.
+    % TODO: it's odd that this makes resurrection Con-based, when it seems Willpower-based conceptually?
+    If this penalty would reduce a creature's maximum fatigue tolerance below 0, the creature cannot be resurrected.
 
     Resurrection is always voluntary.
     A soul infallibly knows the name, alignment, and patron deity (if any) of the character attempting to revive it and may refuse to return on that basis.
