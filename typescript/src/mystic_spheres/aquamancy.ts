@@ -119,7 +119,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // doubling.
       effect: `
         You create a self-contained pool of water in a 10 foot radius cylinder-shaped \\glossterm{zone} within \\shortrange.
-        Everything inside the area is \submerged (see \\pcref{Fighting While Swimming}).
+        Everything inside the area is \\submerged (see \\pcref{Fighting While Swimming}).
       `,
       rank: 2,
       tags: ['Manifestation'],
@@ -131,7 +131,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       effect: `
         You create a self-contained body of water in a 20 foot radius cylinder-shaped \\glossterm{zone} within \\medrange.
-        Everything inside the area is \submerged (see \\pcref{Fighting While Swimming}).
+        Everything inside the area is \\submerged (see \\pcref{Fighting While Swimming}).
       `,
       rank: 6,
       tags: ['Manifestation'],
@@ -535,7 +535,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         hit: `
           \\damagerankone.
           If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
-          If the target is \submerged, this distance is doubled and you can also move it vertically.
+          If the target is \\submerged, this distance is doubled and you can also move it vertically.
         `,
         targeting: 'Make an attack vs. Armor against something within \\medrange.',
       },
