@@ -249,6 +249,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                                 The $name makes a $accuracy melee strike with its bite.
                                 \hit $fullweapondamage.
                                 At the end of the round, the $name regains hit points and damage resistance equal to the hit points the target lost from the attack, ignoring negative damage and any damage increase from critical hits.
+                                This healing only works if the target has blood, as most living creatures do.
                             ".to_string(),
                             name: "Blood Drain".to_string(),
                             weapon: Weapon::bite(),
