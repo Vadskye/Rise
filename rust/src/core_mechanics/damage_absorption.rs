@@ -94,15 +94,15 @@ pub enum HitPointProgression {
 
 impl HitPointProgression {
     // 0 points for baseline
-    // 2 points for 25% more HP
-    // 4 points for 42% more HP
-    // 7 points for 75% more HP
+    // 4 points for 25% more HP
+    // 8 points for 42% more HP
+    // 12 points for 75% more HP
     pub fn creation_point_cost(&self) -> i32 {
         match self {
             Self::Low => 0,
-            Self::Medium => 2,
-            Self::High => 4,
-            Self::VeryHigh => 7,
+            Self::Medium => 4,
+            Self::High => 8,
+            Self::VeryHigh => 12,
             Self::Extreme => panic!("Extreme progression is not valid for characters")
         }
     }
