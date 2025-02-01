@@ -3,70 +3,70 @@
 ## Brief
 
 ### Level 1: Class/Character
- * Barbarian:  29 /  96
- *    Cleric:  28 /  92
- *     Druid:  28 /  92
- *   Fighter:  29 /  96
- *      Monk:  28 /  87
- *   Paladin:  29 /  97
- *    Ranger:  29 /  94
- *     Rogue:  28 /  89
- *  Sorcerer:  29 /  91
- *    Votive:  28 /  91
- *    Wizard:  28 /  88
- * Automaton:  30 /  99
- *    Dragon:  30 /  91
- *   Dryaidi:  30 /  88
- *     Harpy:  30 /  89
- * Incarnation:  29 /  93
- *  Oozeborn:  30 /  93
- *     Troll:  30 /  95
- *    Treant:  30 /  97
- *   Vampire:  30 /  92
+ * Barbarian:  38 /  96
+ *    Cleric:  38 /  92
+ *     Druid:  37 /  90
+ *   Fighter:  37 /  96
+ *      Monk:  38 /  91
+ *   Paladin:  38 /  97
+ *    Ranger:  37 /  92
+ *     Rogue:  38 /  89
+ *  Sorcerer:  36 /  89
+ *    Votive:  37 /  91
+ *    Wizard:  37 /  88
+ * Automaton:  39 /  98
+ *    Dragon:  39 /  91
+ *   Dryaidi:  39 /  89
+ *     Harpy:  38 /  89
+ * Incarnation:  40 /  93
+ *  Oozeborn:  39 /  93
+ *     Troll:  42 /  95
+ *    Treant:  41 /  97
+ *   Vampire:  41 /  92
 
 ### Level 10: Class/Character
- * Barbarian:  29 / 166
- *    Cleric:  28 / 157
- *     Druid:  28 / 157
- *   Fighter:  29 / 164
- *      Monk:  28 / 152
- *   Paladin:  29 / 165
- *    Ranger:  29 / 159
- *     Rogue:  28 / 158
- *  Sorcerer:  29 / 160
- *    Votive:  28 / 160
- *    Wizard:  28 / 154
- * Automaton:  30 / 167
- *    Dragon:  30 / 159
- *   Dryaidi:  30 / 154
- *     Harpy:  30 / 154
- * Incarnation:  29 / 161
- *  Oozeborn:  30 / 163
- *     Troll:  30 / 165
- *    Treant:  30 / 167
- *   Vampire:  30 / 161
+ * Barbarian:  38 / 166
+ *    Cleric:  38 / 157
+ *     Druid:  37 / 155
+ *   Fighter:  37 / 164
+ *      Monk:  38 / 156
+ *   Paladin:  38 / 165
+ *    Ranger:  37 / 157
+ *     Rogue:  38 / 158
+ *  Sorcerer:  36 / 158
+ *    Votive:  37 / 160
+ *    Wizard:  37 / 154
+ * Automaton:  39 / 166
+ *    Dragon:  39 / 159
+ *   Dryaidi:  39 / 155
+ *     Harpy:  38 / 154
+ * Incarnation:  40 / 161
+ *  Oozeborn:  39 / 163
+ *     Troll:  42 / 165
+ *    Treant:  41 / 167
+ *   Vampire:  41 / 161
 
 ### Level 20: Class/Character
- * Barbarian:  29 / 225
- *    Cleric:  28 / 218
- *     Druid:  28 / 217
- *   Fighter:  29 / 223
- *      Monk:  28 / 213
- *   Paladin:  29 / 224
- *    Ranger:  29 / 219
- *     Rogue:  28 / 219
- *  Sorcerer:  29 / 221
- *    Votive:  28 / 221
- *    Wizard:  28 / 215
- * Automaton:  30 / 226
- *    Dragon:  30 / 218
- *   Dryaidi:  30 / 215
- *     Harpy:  30 / 215
- * Incarnation:  29 / 220
- *  Oozeborn:  30 / 222
- *     Troll:  30 / 224
- *    Treant:  30 / 226
- *   Vampire:  30 / 221
+ * Barbarian:  38 / 225
+ *    Cleric:  38 / 218
+ *     Druid:  37 / 216
+ *   Fighter:  37 / 223
+ *      Monk:  38 / 216
+ *   Paladin:  38 / 224
+ *    Ranger:  37 / 217
+ *     Rogue:  38 / 219
+ *  Sorcerer:  36 / 219
+ *    Votive:  37 / 221
+ *    Wizard:  37 / 215
+ * Automaton:  39 / 225
+ *    Dragon:  39 / 218
+ *   Dryaidi:  39 / 216
+ *     Harpy:  38 / 215
+ * Incarnation:  40 / 220
+ *  Oozeborn:  39 / 222
+ *     Troll:  42 / 224
+ *    Treant:  41 / 226
+ *   Vampire:  41 / 221
 
 ## Detailed
 
@@ -92,8 +92,8 @@
 
 #### Druid
             Druid 1
-            AP 3, FT 6, IP 3, Skills 6
-            HP 12, DR 4
+            AP 3, FT 6, IP 4, Skills 6
+            HP 10, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -111,7 +111,7 @@
 #### Monk
             Monk 1
             AP 2, FT 6, IP 3, Skills 6
-            HP 10, DR 4
+            HP 12, DR 4
             AD 5, Fort 5, Ref 6, Ment 6
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
@@ -128,8 +128,8 @@
 
 #### Ranger
             Ranger 1
-            AP 3, FT 6, IP 3, Skills 7
-            HP 12, DR 4
+            AP 2, FT 6, IP 3, Skills 8
+            HP 12, DR 5
             AD 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -148,16 +148,16 @@
             Sorcerer 1
             AP 4, FT 7, IP 3, Skills 5
             HP 11, DR 4
-            AD 4, Fort 6, Ref 5, Ment 8
+            AD 4, Fort 6, Ref 5, Ment 6
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
 
 #### Votive
             Votive 1
-            AP 3, FT 6, IP 5, Skills 6
+            AP 3, FT 6, IP 4, Skills 6
             HP 10, DR 5
-            AD 5, Fort 5, Ref 5, Ment 6
+            AD 5, Fort 5, Ref 5, Ment 8
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 3✨/2
@@ -173,9 +173,9 @@
 
 #### Automaton
             Automaton 1
-            AP 3, FT 7, IP 4, Skills 6
+            AP 3, FT 7, IP 4, Skills 7
             HP 14, DR 5
-            AD 5, Fort 8, Ref 5, Ment 5
+            AD 5, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/2
@@ -191,9 +191,9 @@
 
 #### Dryaidi
             Dryaidi 1
-            AP 3, FT 6, IP 4, Skills 8
+            AP 3, FT 6, IP 4, Skills 7
             HP 8, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Fort 5, Ref 6, Ment 7
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
@@ -274,8 +274,8 @@
 
 #### Druid
             Druid 10
-            AP 5, FT 6, IP 5, Skills 6
-            HP 35, DR 12
+            AP 5, FT 6, IP 6, Skills 6
+            HP 28, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -293,7 +293,7 @@
 #### Monk
             Monk 10
             AP 4, FT 6, IP 5, Skills 6
-            HP 28, DR 12
+            HP 35, DR 12
             AD 10, Fort 10, Ref 11, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
@@ -310,8 +310,8 @@
 
 #### Ranger
             Ranger 10
-            AP 5, FT 6, IP 5, Skills 7
-            HP 35, DR 12
+            AP 4, FT 6, IP 5, Skills 8
+            HP 35, DR 18
             AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -330,16 +330,16 @@
             Sorcerer 10
             AP 6, FT 7, IP 5, Skills 5
             HP 30, DR 12
-            AD 9, Fort 11, Ref 10, Ment 13
+            AD 9, Fort 11, Ref 10, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
 
 #### Votive
             Votive 10
-            AP 5, FT 6, IP 7, Skills 6
+            AP 5, FT 6, IP 6, Skills 6
             HP 28, DR 18
-            AD 10, Fort 10, Ref 10, Ment 11
+            AD 10, Fort 10, Ref 10, Ment 13
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 8✨/7
@@ -355,9 +355,9 @@
 
 #### Automaton
             Automaton 10
-            AP 5, FT 7, IP 6, Skills 6
+            AP 5, FT 7, IP 6, Skills 7
             HP 38, DR 18
-            AD 10, Fort 13, Ref 10, Ment 10
+            AD 10, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/7
@@ -373,9 +373,9 @@
 
 #### Dryaidi
             Dryaidi 10
-            AP 5, FT 6, IP 6, Skills 8
+            AP 5, FT 6, IP 6, Skills 7
             HP 24, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Fort 10, Ref 11, Ment 12
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
@@ -456,8 +456,8 @@
 
 #### Druid
             Druid 20
-            AP 5, FT 6, IP 5, Skills 6
-            HP 116, DR 32
+            AP 5, FT 6, IP 6, Skills 6
+            HP 100, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -475,7 +475,7 @@
 #### Monk
             Monk 20
             AP 4, FT 6, IP 5, Skills 6
-            HP 100, DR 32
+            HP 116, DR 32
             AD 15, Fort 15, Ref 16, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
@@ -492,8 +492,8 @@
 
 #### Ranger
             Ranger 20
-            AP 5, FT 6, IP 5, Skills 7
-            HP 116, DR 32
+            AP 4, FT 6, IP 5, Skills 8
+            HP 116, DR 48
             AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
@@ -512,16 +512,16 @@
             Sorcerer 20
             AP 6, FT 7, IP 5, Skills 5
             HP 110, DR 32
-            AD 14, Fort 16, Ref 15, Ment 18
+            AD 14, Fort 16, Ref 15, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
 
 #### Votive
             Votive 20
-            AP 5, FT 6, IP 7, Skills 6
+            AP 5, FT 6, IP 6, Skills 6
             HP 100, DR 48
-            AD 15, Fort 15, Ref 15, Ment 16
+            AD 15, Fort 15, Ref 15, Ment 18
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 13✨/12
@@ -537,9 +537,9 @@
 
 #### Automaton
             Automaton 20
-            AP 5, FT 7, IP 6, Skills 6
+            AP 5, FT 7, IP 6, Skills 7
             HP 128, DR 48
-            AD 15, Fort 18, Ref 15, Ment 15
+            AD 15, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/12
@@ -555,9 +555,9 @@
 
 #### Dryaidi
             Dryaidi 20
-            AP 5, FT 6, IP 6, Skills 8
+            AP 5, FT 6, IP 6, Skills 7
             HP 84, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Fort 15, Ref 16, Ment 17
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
