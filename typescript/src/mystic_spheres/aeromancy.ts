@@ -234,8 +234,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
         crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance} and has a \\glossterm{weight category} of Large or less, it is borne aloft by heavy winds as a \\glossterm{condition}.
-          It floats five feet above the ground.
-          As long as it does not have a \\glossterm{fly speed}, it is \\immobilized.
+          It floats five feet above the ground in \\glossterm{midair}, which normally means it suffers a \\minus4 penalty to its Armor and Reflex defenses.
+          This also typically prevents it from using a land speed, though it can potentially use other speeds if it can make contact with relevant objects (such as a wall for a climb speed).
         `,
         targeting: `
           Make an attack vs. Fortitude against anyhthing within \\medrange.
