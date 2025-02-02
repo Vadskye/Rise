@@ -409,9 +409,9 @@
 %   #2: hyperlink prefix
 \DeclareDocumentCommand{\termlinks}{m m}
 {
-    % Enable this to test for missing glossary definitions
-    % \label{#1}\label{#1s}
-    % Enable this to test for unnecessary glossary entries
+    \label{#1}\label{#1s}
+    % Enable this to test for unnecessary glossary entries.
+    % If you do, you have to disable the above labels, which should normally be present.
     % \pref{#1}
 
     \hypertargetraised{#2:#1}{}

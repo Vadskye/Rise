@@ -90,7 +90,7 @@ These rules could also be used for other types of vehicles, such as flying ships
         % \item Elite ships have 50\% more \glossterm{damage resistance} than standard ships. This is applied after the bonus they get from having higher hit points, since ship damage resistance is based on their hit points.
         % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
         % elite actions should be about as strong as regular actions, so 2x more damage
-      \item Elite ships can take an additional \glossterm{elite action} each round (see \pcref{Ship Actions}).
+      \item Elite ships can take an additional \glossterm{elite action} each round, just like elite monsters.
     \end{itemize}
 
 \section{Ship Resources and Strain}
@@ -113,7 +113,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       \lcaption{Ship Vital Wound Effects}
       \begin{dtabularx}{\textwidth}{l X}
         \tb{Vital Roll} & \tb{Effect} \tableheaderrule
-        0 or less  & The ship gains a leak (see \pcref{Taking on Water})             \\
+        0 or less  & The ship gains a leak (see \pcref{Taking On Water})             \\
         1          & The ship takes a \minus2 penalty to future vital rolls                    \\
         2          & The ship's weapons take a \minus1 penalty to \glossterm{accuracy}         \\
         3          & The ship has a \minus10 foot penalty to its speed with all movement modes \\
@@ -192,7 +192,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     These repair materials can be prepurchased so they are available on the ship when it needs to be repaired.
     Ships that do not have these repair materials on hand must find a dock.
 
-\section{Ship Attributes}
+\section{Ship Attributes}\label{Ship Attributes}
   Unlike characters, ships normally have no Intelligence attribute.
   However, they have Strength, Dexterity, Constitution, Perception, and Willpower attributes.
   These represent slightly different narrative concepts than they do for characters.
@@ -266,23 +266,13 @@ These rules could also be used for other types of vehicles, such as flying ships
       Willpower is the attribute which is most affected by a ship's current crew.
 
       % Keep in sync with character attributes
+      % Note that since since 
   \subsection{Determining Ship Attributes}
-    As with characters, ships can use a predefined attribute array or use point buy to calculate attributes.
-    Ships start with 7 attribute points instead of 8 (see \pcref{Attribute Point Buy}).
-    However, a ship's attributes can be increased by crew roles and ship enhancements (see \pcref{Crew Roles}, and \pcref{Ship Enhancements}).
+    As with characters, ships can use a predefined attribute array or use an 8-point point buy to calculate attributes, just like player characters.
+    A ship's attributes can be further increased by crew roles and ship enhancements (see \pcref{Crew Roles}, and \pcref{Ship Enhancements}).
+    However, normal ships do not have an Intelligence value, so you can't increase a ship's Intelligence unless it is specifically an intelligent ship.
 
-    \subsubsection{Predefined Attribute Scores}
-      If you don't want to individually allocate a ship's attribute points, simply one of the following sets of attribute values and distribute them as you choose among the ship's attributes, ignoring Intelligence:
-      \begin{raggeditemize}
-        % 3 + 2 + 1 + 1 = 7
-        \item Standard: 3, 2, 1, 1, 0
-          % 5 + 1 + 1 = 7
-        \item Specialized: 4, 1, 1, 0, 0
-          % 2 + 2 + 2 + 1 = 7
-        \item Balanced: 2, 2, 2, 1, 0
-      \end{raggeditemize}
-
-  \subsection{Intelligent Ships}
+  \subsection{Intelligent Ships}\label{Intelligent Ships}
     Intelligence measures a ship's capability for thought and internal control.
     Normal ships have no Intelligence, and a ship's crew does not affect its Intelligence.
 
@@ -364,7 +354,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     Ships automatically move up to their movement speed during the \glossterm{movement phase}.
     They cannot move during the \glossterm{action phase}.
 
-\section{Ship Armor}
+\section{Ship Armor}\label{Ship Armor}
   Like characters, ships can have varying degrees of armor.
   Typically, even a heavily armored ship will not be literally covered in metal sheets.
   Instead, ship armor represents a heavily reinforced hull and extra layers of bracing and redundant infrastructure.
@@ -408,16 +398,16 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   % Baseline weapon is dr = rank - 1 with Projectile (200/600).
   \begin{dtable!*}
-  \lcaption{Simplified Ship Weapons}
-  \begin{dtabularx}{\textwidth}{l X l l l l}
-    \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-    Rock sling & 1d6 \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
-    Scorpion   & 1d8 \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
-    Ballista   & 1d8 \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
-    Catapult   & 1d10 plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
-    Mangonel   & 1d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
-    Trebuchet  & 2d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
-  \end{dtabularx}
+    \lcaption{Simplified Ship Weapons}
+    \begin{dtabularx}{\textwidth}{l X l l l l}
+      \tb{Name}  & \tb{Damage}                           & \tb{Targeting} & \tb{Tags}            & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+      Rock sling & 1d6 \add 1 per 2 power    & One target     & Projectile (200/600)  & Medium         & 2 (200 gp)     \\
+      Scorpion   & 1d8 \add 1 per 2 power       & One target     & Projectile (200/600) & Large           & 3 (1,000 gp)   \\
+      Ballista   & 1d8 \add 1 per power         & One target     & Projectile (200/600) & Huge           & 4 (5,000 gp)   \\
+      Catapult   & 1d10 plus 1d6 per 3 power & One target     & Projectile (200/600) & Gargantuan     & 5 (25,000 gp)  \\
+      Mangonel   & 1d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Gargantuan     & 6 (125,000 gp) \\
+      Trebuchet  & 2d8 plus 1d8 per 3 power  & One target     & Projectile (200/600) & Colossal       & 7 (625,000 gp) \\
+    \end{dtabularx}
   \end{dtable!*}
 
   % Baseline weapon is dr = rank with Projectile (90/270) and Slow Reload (1).
@@ -425,36 +415,36 @@ These rules could also be used for other types of vehicles, such as flying ships
   % Dropping to Projectile (60/180) gives +1dr.
   % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
   \begin{dtable!*}
-  \lcaption{Realistic Ship Weapons}
-  \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-    \tb{Name}                & \tb{Damage}              & \tb{Defense}          & \tb{Tags}                                          & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
-    % +1dr for -1 range
-    Rock sling               & 1d8 \add 1 per power     & Armor                 & Projectile (60/180), Slow Reload (1)               & 1         & Medium         & 2 (200 gp)     \\
-    % -1dr for +1 range
-    Springald                & 1d6 \add 1 per 2 power   & Armor                 & Projectile (120/360), Slow Reload (1)              & 1         & Large          & 2 (200 gp)     \\
-    % +1dr for reload -> load, -1dr for range
-    Lightning caller\sparkle & 3d6                      & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
-    % +2dr for slow reload, -2dr for range
-    Scorpion                 & 1d8 \add 1 per power     & Armor                 & Projectile (200/600), Slow Reload (2)              & 1         & Huge           & 3 (1,000 gp)   \\
-    % +3dr for slow reload, -3dr for range
-    Onager                   & 1d8 \add 1 per power     & Armor                 & Projectile (300/900), Slow Reload (3)              & 8         & Gargantuan     & 3 (1,000 gp)   \\
-    % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
-    Torsion ballista         & 1d8 per 3 power          & Armor                 & Projectile (300/900), Slow Load (2)                & 3         & Huge           & 4 (5,000 gp)   \\
-    % +1dr for reload -> load, -1dr for range
-    Flame caller\sparkle     & 4d6                      & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 4 (5,000 gp)   \\
-    % +1dr for reload -> load, -1dr for range
-    Acid caller\sparkle      & 5d10                     & Fortitude    \atAcid, & Fixed (200), Mystic, Slow Load (1)                 & 3         & Large          & 5 (25,000 gp)  \\
-    % -2dr for removing reload
-    Polybolos                & 1d8 \add 1 per power     & Armor                 & Projectile (90/270)                                & 3         & Huge           & 5 (25,000 gp)  \\
-    % +2dr for slow reload, -2dr for range
-    Mangonel                 & 1d8 plus 1d8 per 3 power & Armor                 & Projectile (300/900), Slow Reload (2)              & 20        & Gargantuan     & 5 (25,000 gp)  \\
-    % +1dr for reload -> load, -1dr for range
-    Storm caller\sparkle     & 5d10                     & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
-    % +3dr for slow reload, -4dr for range
-    Trebuchet                & 1d6 plus 1d6 per 2 power & Armor                 & Projectile (400/1200), Slow Reload (3)             & 10        & Gargantuan     & 6 (125,000 gp) \\
-    % +1dr for reload -> load, -1dr for range
-    Meteor caller\sparkle    & 7d10                     & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 7 (625,000 gp) \\
-  \end{compresseddtabularx}
+    \lcaption{Realistic Ship Weapons}
+    \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+      \tb{Name}                & \tb{Damage}              & \tb{Defense}          & \tb{Tags}                                          & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+      % +1dr for -1 range
+      Rock sling               & 1d8 \add 1 per power     & Armor                 & Projectile (60/180), Slow Reload (1)               & 1         & Medium         & 2 (200 gp)     \\
+      % -1dr for +1 range
+      Springald                & 1d6 \add 1 per 2 power   & Armor                 & Projectile (120/360), Slow Reload (1)              & 1         & Large          & 2 (200 gp)     \\
+      % +1dr for reload -> load, -1dr for range
+      Lightning caller\sparkle & 3d6                      & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
+      % +2dr for slow reload, -2dr for range
+      Scorpion                 & 1d8 \add 1 per power     & Armor                 & Projectile (200/600), Slow Reload (2)              & 1         & Huge           & 3 (1,000 gp)   \\
+      % +3dr for slow reload, -3dr for range
+      Onager                   & 1d8 \add 1 per power     & Armor                 & Projectile (300/900), Slow Reload (3)              & 8         & Gargantuan     & 3 (1,000 gp)   \\
+      % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
+      Torsion ballista         & 1d8 per 3 power          & Armor                 & Projectile (300/900), Slow Load (2)                & 3         & Huge           & 4 (5,000 gp)   \\
+      % +1dr for reload -> load, -1dr for range
+      Flame caller\sparkle     & 4d6                      & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 4 (5,000 gp)   \\
+      % +1dr for reload -> load, -1dr for range
+      Acid caller\sparkle      & 5d10                     & Fortitude    \atAcid, & Fixed (200), Mystic, Slow Load (1)                 & 3         & Large          & 5 (25,000 gp)  \\
+      % -2dr for removing reload
+      Polybolos                & 1d8 \add 1 per power     & Armor                 & Projectile (90/270)                                & 3         & Huge           & 5 (25,000 gp)  \\
+      % +2dr for slow reload, -2dr for range
+      Mangonel                 & 1d8 plus 1d8 per 3 power & Armor                 & Projectile (300/900), Slow Reload (2)              & 20        & Gargantuan     & 5 (25,000 gp)  \\
+      % +1dr for reload -> load, -1dr for range
+      Storm caller\sparkle     & 5d10                     & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
+      % +3dr for slow reload, -4dr for range
+      Trebuchet                & 1d6 plus 1d6 per 2 power & Armor                 & Projectile (400/1200), Slow Reload (3)             & 10        & Gargantuan     & 6 (125,000 gp) \\
+      % +1dr for reload -> load, -1dr for range
+      Meteor caller\sparkle    & 7d10                     & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 7 (625,000 gp) \\
+    \end{compresseddtabularx}
   \end{dtable!*}
 
   \subsection{Ship Weapon Tags}\label{Ship Weapon Tags}
@@ -482,7 +472,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
 
     % This replaces the automatic monster progression
-\section{Ship Enhancements}
+\section{Ship Enhancements}\label{Ship Enhancements}
   Ships can have enhancements to improve their functionality other than weapons and armor.
   These enhancements are listed in \trefnp{Ship Enhancements}.
 
@@ -491,18 +481,18 @@ These rules could also be used for other types of vehicles, such as flying ships
   However, all bonuses from ship enhancements are \glossterm{enhancement bonuses}, so bonuses to the same statistic do not stack.
 
   \begin{dtable!*}
-  \lcaption{Ship Enhancements}
-  \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-    \tb{Name}           & \tb{Effect}                  & \tb{Item Rank (Cost)} \tableheaderrule
-    Reinforced hull     & \plus1 to Armor defense      & 2 (200 gp)     \\
-    Improved attribute  & \plus1 to any attribute      & 3 (1,000 gp)   \\
-    Mystic shielding    & \plus1 to non-Armor defenses & 3 (1,000 gp)   \\
-    Reinforced hull+    & \plus2 to Armor defense      & 4 (5,000 gp)   \\
-    Mystic shielding+   & \plus2 to non-Armor defenses & 5 (25,000 gp)  \\
-    Improved attribute+ & \plus2 to any attribute      & 6 (125,000 gp) \\
-    Reinforced hull++   & \plus3 to Armor defense      & 6 (125,000 gp) \\
-    Mystic shielding++  & \plus3 to non-Armor defenses & 7 (625,000 gp) \\
-  \end{compresseddtabularx}
+    \lcaption{Ship Enhancements}
+    \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
+      \tb{Name}           & \tb{Effect}                  & \tb{Item Rank (Cost)} \tableheaderrule
+      Reinforced hull     & \plus1 to Armor defense      & 2 (200 gp)     \\
+      Improved attribute  & \plus1 to any attribute      & 3 (1,000 gp)   \\
+      Mystic shielding    & \plus1 to non-Armor defenses & 3 (1,000 gp)   \\
+      Reinforced hull+    & \plus2 to Armor defense      & 4 (5,000 gp)   \\
+      Mystic shielding+   & \plus2 to non-Armor defenses & 5 (25,000 gp)  \\
+      Improved attribute+ & \plus2 to any attribute      & 6 (125,000 gp) \\
+      Reinforced hull++   & \plus3 to Armor defense      & 6 (125,000 gp) \\
+      Mystic shielding++  & \plus3 to non-Armor defenses & 7 (625,000 gp) \\
+    \end{compresseddtabularx}
   \end{dtable!*}
 
 \section{Ships Fighting Non-Ships}
@@ -536,7 +526,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   More advanced weaponry is more generally effective against non-ship targets, however.
   If you use gunpowder-based ship weapons, they deal double damage against non-ship targets.
 
-\section{Crew Roles}
+\section{Crew Roles}\label{Crew Roles}
   Ships depend on their crew to function.
   There are many jobs that are necessary to make large ships function, including sailors, rowers, cooks, pages, and more.
   Fully defining life on a ship is outside the scope of this brief introduction to ship combat.
