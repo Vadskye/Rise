@@ -652,6 +652,40 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            // Assume pact magic, so ignore complexity
+            complexity: 0,
+            name: "Soulforged Weaponry",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                If you do not have access to pact magic, choose a magic weapon property with a rank no higher than your rank in this archetype (see \pcref{Magic Weapons}).
+                You can \glossterm{attune} to that magic weapon property.
+                If you do, you treat all of your weapons, including \glossterm{natural weapons}, as if they had that property.
+                This applies in addition to any other special material or magical properties.
+                However, it does not stack if the item would already have that property normally.
+
+                Whenever you increase your rank in this archetype, you can change which magic weapon property you have with this ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            // Assume pact magic, so ignore complexity
+            complexity: 0,
+            name: "Soulforged Armory",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                If you do not have access to pact magic, choose a magic body armor property with a rank no higher than your rank in this archetype (see \pcref{Magic Armor}).
+                You can \glossterm{attune} to that magic body armor property.
+                If you do, you treat your body armor as if it had that property, which changes its \glossterm{damage resistance} appropriately.
+                This applies in addition to any other special material or magical properties.
+                However, it does not stack if the item would already have that property normally.
+
+                Whenever you increase your rank in this archetype, you can change which magic body armor property you have with this ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 1,
             name: "Soulbound Resilience",
             is_magical: true,
