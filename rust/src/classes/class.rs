@@ -793,7 +793,7 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Troll => ArmorProficiencies {
-                specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::LayeredHide(None)]),
+                specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::LayeredHide(None), Armor::StandardShield]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Vampire => ArmorProficiencies {

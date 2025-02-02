@@ -89,11 +89,11 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 0,
     reflex: 0,
     mental: 0,
-    hit_points: 'high',
+    hit_points: 'medium',
     attunement_points: 1,
-    insight_points: 0,
+    insight_points: 1,
     class_skill_count: 4,
-    proficiencies: "Light armor, leather lamellar armor, shepherd's axe, scimitars, and sickles",
+    proficiencies: "Light armor, leather lamellar armor, standard shields, shepherd's axe, scimitars, and sickles",
   },
   fighter: {
     armor_defense: 1,
@@ -110,7 +110,7 @@ const BASE_CLASS_MODIFIERS = {
     fortitude: 0,
     reflex: 0,
     mental: 0,
-    hit_points: 'medium',
+    hit_points: 'high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
@@ -133,9 +133,9 @@ const BASE_CLASS_MODIFIERS = {
     hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 6,
     proficiencies:
-      "Light armor, leather lamellar armor, and non-exotic weapons",
+      "Light and medium armor, leather lamellar armor, and non-exotic weapons",
   },
   rogue: {
     fortitude: 0,
@@ -150,7 +150,7 @@ const BASE_CLASS_MODIFIERS = {
   sorcerer: {
     fortitude: 0,
     reflex: 0,
-    mental: 2,
+    mental: 0,
     hit_points: 'medium',
     attunement_points: 2,
     insight_points: 0,
@@ -180,13 +180,13 @@ const BASE_CLASS_MODIFIERS = {
 
   // OPTIONAL CLASSES
   automaton: {
-    fortitude: 2,
+    fortitude: 0,
     reflex: 0,
     mental: 0,
     hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
-    class_skill_count: 3,
+    class_skill_count: 4,
     proficiencies: "All armor and non-exotic weapons",
   },
   dragon: {
@@ -202,11 +202,11 @@ const BASE_CLASS_MODIFIERS = {
   dryad: {
     fortitude: 0,
     reflex: 0,
-    mental: 0,
+    mental: 2,
     hit_points: 'low',
     attunement_points: 1,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 4,
     proficiencies: "Light armor",
   },
   harpy: {
@@ -239,6 +239,16 @@ const BASE_CLASS_MODIFIERS = {
     class_skill_count: 4,
     proficiencies: "All armor and club-like weapons",
   },
+  troll: {
+    fortitude: 0,
+    reflex: 0,
+    mental: 0,
+    hit_points: 'very high',
+    attunement_points: 0,
+    insight_points: 0,
+    class_skill_count: 4,
+    proficiencies: "Light armor, leather lamellar, layered hide, standard shields, and club-like weapons",
+  },
   vampire: {
     fortitude: 0,
     reflex: 0,
@@ -246,7 +256,7 @@ const BASE_CLASS_MODIFIERS = {
     hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 4,
     proficiencies: "Light armor and non-exotic weapons",
   },
 };
