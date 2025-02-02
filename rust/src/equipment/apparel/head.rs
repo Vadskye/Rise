@@ -156,7 +156,7 @@ fn crowns() -> Vec<Apparel> {
             When you do, a burst of flame erupts around you.
             Make an attack vs. Reflex against everything in a \smallarea radius from you.
             Your minimum accuracy is $accuracy.
-            \hit $dr3l fire damage.
+            \hit $dr3l damage.
             \miss Half damage.
         "),
         tags: vec![AbilityTag::Fire],

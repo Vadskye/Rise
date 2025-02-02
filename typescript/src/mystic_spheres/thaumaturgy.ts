@@ -11,7 +11,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Detect Magic',
 
       effect: `
-        Choose a \\arealarge \\glossterm{cone} from you.
+        Choose a \\arealarge cone from you.
         You know whether any \\magical abilities were activated in that area since the start of the last round.
         This does not provide any information about passive magical effects, such as attuned spells.
         It also does not provide any information about the number or location of those magical effects.

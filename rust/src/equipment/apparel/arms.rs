@@ -160,7 +160,7 @@ fn gauntlets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Reduces thrown longshot penalty by 1"),
         description: String::from(r"
-            When you make a thrown \glossterm<strike>, you reduce your \glossterm<longshot penalty> by 1 (see \pcref<Thrown Strike>).
+            When you make a thrown \glossterm<strike>, you reduce your \glossterm<longshot penalty> by 1 (see \pcref<Weapon Range Limits>).
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Reduces thrown longshot penalty by 2", r"

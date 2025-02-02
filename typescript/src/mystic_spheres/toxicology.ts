@@ -12,7 +12,7 @@ export const toxicology: MysticSphere = {
 
       castingTime: 'one minute',
       effect: `
-          Choose a \\arealarge \\glossterm{cone} from you.
+          Choose a \\arealarge cone from you.
           You identify the presence or absence of any poisoned, poisonous, or venomous creatures and objects in the area.
           This does not provide any other information, such as location or type of poison.
       `,
@@ -533,7 +533,7 @@ export const toxicology: MysticSphere = {
       effect: `
         At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain 1d8+1d6 hit points.
         Keep track of how many total hit points you regain with this ability.
-        If that value exceeds half your maximum hit points, you are unable to \\glossterm{dismiss} this ability or stop \\glossterm{attuning} to it.
+        If that value exceeds half your maximum hit points, you are unable to \\glossterm{dismiss} this ability or stop being \\glossterm{attuned} to it.
         If that value exceeds your maximum hit points, you gain a \\plus2 bonus to your Fortitude defense, but you are \\slowed.
         If that value exceeds twice your maximum hit points, you are \\paralyzed.
 

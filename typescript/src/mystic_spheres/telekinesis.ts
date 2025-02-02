@@ -53,22 +53,6 @@ export const telekinesis: MysticSphere = {
       },
       type: 'Sustain (minor)',
     },
-
-    {
-      name: 'Personal Ward',
-
-      effect: `
-        You are \\trait{impervious} to \\glossterm{physical damage} this round.
-        Because this is a \\abilitytag{Swift} ability, it affects damage you take during the current phase.
-      `,
-      // narrative: '',
-      scaling: {
-        2: 'You also gain a +1 bonus to your Armor defense.',
-        4: 'The defense bonus increases to +2.',
-        6: 'The defense bonus increases to +3.',
-      },
-      tags: ['Swift'],
-    },
   ],
   spells: [
     {
@@ -104,6 +88,18 @@ export const telekinesis: MysticSphere = {
       },
       rank: 7,
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Personal Ward',
+
+      effect: `
+        You gain a \\plus4 bonus to your defenses against damaging attacks this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+      `,
+      rank: 3,
+      // narrative: '',
+      tags: ['Swift'],
     },
 
     {
@@ -200,7 +196,7 @@ export const telekinesis: MysticSphere = {
         missGlance: true,
         targeting: `
           This spell has no immediate effect.
-          Whenever you take physical damage during this spell's effect, you build up a kinetic charge.
+          Whenever you take damage during this spell's effect, you build up a kinetic charge.
           This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
           When you stop sustaining this spell, make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +5.
@@ -504,9 +500,12 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Shell',
 
+      // "Did not attack Fortitude or Reflex" is confusing against abilities that
+      // make a strike and also attack a secondary defense.
+      // "Attacked your Armor or Reflex" is confusing against falling damage.
       effect: `
-        You surround yourself with two layers of shielding that reduce the power of physical attacks against you.
-        Whenever you would take physical damage, you reduce that damage by 5, and one layer of shielding is destroyed.
+        You surround yourself with two layers of shielding that reduce the power of attacks against you.
+        Whenever you would take damage from an ability that attacked your Armor or Reflex defense, you reduce that damage by 5, and one layer of shielding is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.

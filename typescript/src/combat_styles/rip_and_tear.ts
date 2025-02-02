@@ -106,7 +106,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        If your attack also hits the target's Reflex defense, it takes fire damage equal to your power during your next action.
+        If your attack also hits the target's Reflex defense, it takes damage equal to your power during your next action.
       `,
       rank: 3,
       tags: ['Fire'],
@@ -117,7 +117,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike that deals double \\glossterm{weapon damage}.
-        If your attack also hits the target's Reflex defense, it takes 1d8 fire damage per 2 power during your next action.
+        If your attack also hits the target's Reflex defense, it takes 1d8 damage per 2 power during your next action.
       `,
       rank: 7,
       tags: ['Fire'],

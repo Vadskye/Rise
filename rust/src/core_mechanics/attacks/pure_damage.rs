@@ -124,7 +124,7 @@ mod tests {
 The $name makes a +0 attack vs. Fortitude against something within \\medrange.
 
 
-\\hit 1d6 fire damage.
+\\hit 1d6 damage.
 
 
 
@@ -153,7 +153,7 @@ The $name makes a +0 attack vs. Fortitude against something within \\medrange.
 The $name makes a +0 attack vs. Mental against something within \\medrange.
 
 
-\\hit 1d10 energy damage.
+\\hit 1d10 damage.
 
 
 

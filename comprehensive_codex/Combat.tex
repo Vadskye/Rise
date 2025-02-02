@@ -761,7 +761,7 @@
       \abilityusagetime Standard action.
       \rankline
       When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
-      For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that has \glossterm{total cover}.
+      For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
 
       While your enemies are resolving their actions, if your intended action ever becomes possible, it happens.
       Otherwise, you do nothing.
@@ -1087,7 +1087,7 @@
     Neutral parties can move through your \glossterm{space}.
 
     % These also want to be organized in some way that makes sense
-\section{Special Ability Mechanics}\label{Special Ability Mechanics}
+\section{Using Abilities}\label{Using Abilities}
 
   \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
     Every ability is either \magical or mundane.
@@ -1100,6 +1100,12 @@
     For example, the \spell{twisting claw} spell causes you to make a \glossterm{mundane} strike.
     That strike would use your \glossterm{mundane power}, and it would be unable to affect \trait{intangible} creatures.
     A monk with the \ability{ki energy} ability would be able to convert that strike to be \magical instead of mundane, just like they can convert any other mundane strike.
+
+  \subsection{Ability Range}\label{Ability Range}
+    Many abilities only work within a particular distance from you.
+    This maximum distance is called the ability's \glossterm{range}.
+    There are five common ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
+    Any ability with a range requires both \glossterm{line of sight} and \glossterm{line of effect} unless otherwise noted.
 
   \subsection{Ability Power}\label{Ability Power}
     Many abilities reference your ``\glossterm{power}'' without further explanation.
@@ -1165,7 +1171,7 @@
     \glossterm{Line of sight} is still measured from the ability's source.
     This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no obstacle separating from the primary target.
 
-  \subsection{Measuring Area Shapes}\label{Area Shapes}
+  \subsection{Area Shapes}\label{Area Shapes}
 
     \parhead{Cone} A cone extends from the point of origin in a quarter-hemisphere, up to the given length.
     A square is affected by a cone if it is within the cone's 90 degree arc and all of the square's points of intersection are no more than the cone's length away from the cone's point of origin.
@@ -1202,6 +1208,15 @@
 
     Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
     If a wall has hit points, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
+
+    \subsubsection{Area Types}\label{Area Types}
+      There are three common area types.
+      If an area's type is not mentioned, it is a burst.
+      \begin{raggeditemize}
+        \item Burst: Has an immediate effect and then ends.
+        \item Emanation: Has a duration based on a specific creature or object. If the source of the area moves, the area's effect moves with it.
+        \item Zone: Has a duration based on a location. Some zones can be moved after being created, but that movement is not tied to a specific creature or object.
+      \end{raggeditemize}
 
   \subsection{Impossible Spells and Rituals}
     When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
@@ -1295,3 +1310,10 @@
     Many abilities have tags that describe the nature of the ability.
     Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
     For a list of ability tags, see \pcref{Ability Tags}.
+
+  \subsection{Dismissal}\label{Dismissal}
+    When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
+    Unless otherwise noted, all \magical abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+    % Seems unnecessary
+    % This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
+    You can dismiss abilities as a \glossterm{free action} that requires only mental effort.

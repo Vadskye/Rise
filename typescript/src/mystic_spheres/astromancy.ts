@@ -831,7 +831,6 @@ export const astromancy: MysticSphere = {
         Choose a \\glossterm{planar rift} within \\medrange and up to six Medium or smaller ritual participants.
         Each creature \\glossterm{teleports} to the unoccupied spaces closest to the other side of the planar rift.
         This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
-        For details about \\glossterm{planar rifts}, see \\pcref{Planar Rifts}.
 
         % TODO: Is this planar cosmology correct?
         The Astral Plane connects to every plane, but transit from other planes is usually more limited.

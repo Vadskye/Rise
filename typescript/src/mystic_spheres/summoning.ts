@@ -278,7 +278,7 @@ export const summoning: MysticSphere = {
 
           The ballista cannot move, and it makes projectile \\glossterm{strikes} instead of melee strikes.
           Its attacks deal \\damageranktwo and have \\glossterm{range limits} of 90/270.
-          The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot} penalties unless there are no valid targets within close range.
+          The ballista chooses to attack the creature farthest from it instead of the creature closest to it, though it avoids taking \\glossterm{longshot penalty} unless there are no valid targets within close range.
         `,
         name: 'summon weapon',
       },
@@ -505,7 +505,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature appears to be a snake.
           Its attacks deal \\damagerankthree.
-          Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom (see \\tref{Typical Poisons}).
+          Whenever its strike causes a living creature to lose \\glossterm{hit points}, the damaged creature becomes \\glossterm{poisoned} with asp venom.
           Its stage 1 effect makes the target \\stunned while the poison lasts.
           Its stage 3 effect makes the target \\blinded while the poison lasts.
         `,

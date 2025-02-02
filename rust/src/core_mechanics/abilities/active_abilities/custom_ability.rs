@@ -93,7 +93,7 @@ impl CustomAbility {
             ability_type: AbilityType::Normal,
             effect: "
                 The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
-                \\hit $dr1 energy damage.
+                \\hit $dr1 damage.
             ".to_string(),
             is_magical: true,
             name: "Divine Judgment".to_string(),
@@ -289,7 +289,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Armor against something within \\shortrange.
                 This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
-                \\hit $dr1 energy damage.
+                \\hit $dr1 damage.
                 \\miss Half damage.
             "
             .to_string(),
@@ -305,7 +305,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Armor against something within \\shortrange.
                 This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
-                \\hit $dr1l energy damage.
+                \\hit $dr1l damage.
                 \\miss Half damage.
             "
             .to_string(),
@@ -337,7 +337,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea cone from it.
-                \\hit $dr1 fire damage.
+                \\hit $dr1 damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
@@ -350,7 +350,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
-                \\hit $dr2 fire damage.
+                \\hit $dr2 damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
@@ -364,7 +364,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Reflex against everything in a \\largearea cone from it.
                 After it uses this ability, it \\glossterm{briefly} cannot use it again.
-                \\hit $dr2 fire damage.
+                \\hit $dr2 damage.
                 \\miss Half damage.
             ".to_string(),
             is_magical: true,
@@ -378,7 +378,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Fortitude and Reflex against one creature within \\medrange.
                 \\hit The target catches on fire as a \\glossterm{condition}.
-                  It takes $dr1 fire damage immediately and during each of your subsequent actions.
+                  It takes $dr1 damage immediately and during each of your subsequent actions.
 
                   The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
                   Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -442,7 +442,7 @@ impl CustomAbility {
             ability_type: AbilityType::Normal,
             effect: "
                 The $name makes a $accuracy attack vs. Fortitude against one living creature within \\shortrange.
-                \\hit $dr1 energy damage.
+                \\hit $dr1 damage.
                 If the target loses hit points from this damage, it takes the damage again.
             ".to_string(),
             is_magical: true,

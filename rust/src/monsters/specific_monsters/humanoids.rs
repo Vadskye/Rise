@@ -163,7 +163,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Fortitude against one living creature within \medrange.
-                                \hit $dr1 energy damage.
+                                \hit $dr1 damage.
                             ".to_string(),
                             is_magical: true,
                             name: "Drain Life".to_string(),
