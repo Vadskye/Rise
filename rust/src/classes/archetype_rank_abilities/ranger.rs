@@ -149,7 +149,8 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you finish a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
                 You gain a \plus1 bonus to \glossterm{accuracy} against creatures of that type.
-                In addition, whenever you see a creature of that type, you intuitively know what effects it is \vulnerable to.
+                In addition, whenever you recognize a creature of that type, you intuitively know what effects it is \vulnerable to.
+                This may require an Awareness check if the target is disguised as a different creature type.
                 This benefit lasts until you choose a different creature type with this ability.
 
                 You can invest any number of \glossterm{insight points} into this ability.
