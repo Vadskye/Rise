@@ -72,7 +72,7 @@ mod character_tests {
         assert_eq!(1, attacks.len(), "Should have one attack");
         let abyssal_blast = &attacks[0];
         assert_eq!(
-            "Abyssal Rebuke +10 (12d10 fire damage.)",
+            "Abyssal Rebuke +10 (12d10 damage.)",
             abyssal_blast.shorthand_description(&votive.creature),
             "Should have correct description"
         );

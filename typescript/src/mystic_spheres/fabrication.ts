@@ -470,8 +470,8 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to fire damage.
-          This vulnerability ends for a target if it takes fire damage.
+          Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to \\atFire attacks.
+          This vulnerability ends for a target if it takes damage from a \\atFire attack.
         `,
         targeting: `
           Make an attack vs. Reflex against everything that is Large or smaller and \\glossterm{grounded} in a \\smallarea radius within \\shortrange.
@@ -806,8 +806,8 @@ export const fabrication: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a powderkeg on the ground within \\shortrange.
-          The powderkeg has 10 hit points, and it automatically takes 5 physical damage whenever you sustain this spell.
-          It explodes when it reaches 0 hit points, or when it takes any fire damage.
+          The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
+          It explodes when it reaches 0 hit points, or when it takes any damage from a \\atFire attack.
           When it explodes, make an attack vs. Armor and Reflex against everything within a \\medarea radius of it.
         `,
       },

@@ -75,7 +75,7 @@ pub fn traps() -> Vec<Tool> {
 
             When the trap is activated, it makes a $accuracy \\glossterm<reactive attack> vs. Reflex against everything in a \\smallarea radius of it.
             After the trap triggers, it must be repaired with a DV {} Devices check before it can be deployed again.
-            \\hit $dr3l fire damage.
+            \\hit $dr3l damage.
         ", ground_deployment(2), awareness_dv(2)),
         tags: vec![AbilityTag::Fire],
         upgrades: vec![

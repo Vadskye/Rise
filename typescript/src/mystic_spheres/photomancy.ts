@@ -209,7 +209,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          1d10 energy damage.
+          1d10 damage.
           If this attack beats a creature's Fortitude defense, you deal it \\glossterm{extra damage} equal to your power.
         `,
         targeting: `

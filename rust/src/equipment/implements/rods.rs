@@ -14,7 +14,7 @@ pub fn rods() -> Vec<Implement> {
             You can activate this rod as a standard action.
             When you do, make an attack vs. Reflex against everything within a \medarea cone.
             Your minimum accuracy is $accuracy.
-            \hit $dr1l fire damage.
+            \hit $dr1l damage.
             \miss Half damage.
         ",
         ),
@@ -38,7 +38,7 @@ pub fn rods() -> Vec<Implement> {
             You can activate this rod as a standard action.
             When you do, make an attack vs. Reflex against everything within a \largearea cone.
             Your minimum accuracy is $accuracy.
-            \hit $dr5l fire damage.
+            \hit $dr5l damage.
             \miss Half damage.
         ",
         ),
@@ -86,7 +86,7 @@ pub fn rods() -> Vec<Implement> {
             Make an attack against the target's Reflex defense.
             Your minimum accuracy is $accuracy.
             Whether you hit or miss, \glossterm{bright illumination} \glossterm{briefly} fills a 30 foot radius around a 5 ft. wide straight line between you and the target.
-            \hit $dr2l energy damage.
+            \hit $dr2l damage.
             If this attack beats a creature's Fortitude defense, it deals maximum damage.
         "),
         tags: vec![AbilityTag::Visual],

@@ -32,8 +32,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Each item has a rank associated with it.
     An item's rank is generally correlated with the item's effectiveness, rarity, and value.
     A magic item's \glossterm{power} is equal to twice its rank.
-    These effects are summarized in \trefnp{Item Ranks}.
     In general, five items of a given rank are worth the same as a single item that is one rank higher.
+    These effects are summarized in Item Ranks, below.
 
     \begin{columntable}
       \begin{dtabularx}{\columnwidth}{l l X}
@@ -429,8 +429,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Morning star                & \plus0        & 1d10        & 0 (1 gp)                    & Versatile Grip                              \\
           % -1d for 3 tags
           \tind Sap                         & \plus1        & 1d3         & 0 (1 gp)                    & Compact, Light, Subdual                     \\
-          % no improvements, but fire damage
-          \tind Torch\fn{2}                 & \plus0        & 1d6         & \tdash                      & \tdash                                      \\
+          % no improvements, but Fire tag
+          \tind Torch\fn{2}                 & \plus0        & 1d6         & \tdash                      & \atFire                                     \\
 
           Crossbows                         &               &             &                             &                                             \\
           \tind Heavy crossbow\fn{2}        & \plus0        & 1d10        & 1 (4 gp)                    & Heavy, Projectile (90/270)                  \\
@@ -595,9 +595,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \lcaption{Natural Weapons}
       \begin{dtabularx}{\columnwidth}{p{12em} c c >{\ccol}X}
         \tb{Natural Weapons}    & \tb{Accuracy} & \tb{Damage} & \tb{Weapon Tags} \tableheaderrule
-        % Bite is weird since it does physical damage instead of any subtype, so it can't be used with many maneuvers.
-        % Also, many creatures with a bite attack are not good at grappling.
-        % For those reasons, it gets an extra +1d.
+        % Bite is weird since many creatures with a bite attack are not good at grappling, so Clinch is often dead.
+        % It's just a useful default, so it gets an extra +1d.
         Bite                    & \plus0        & 1d8         & Clinch \\
         Claw\fn{1}              & \plus2        & 1d4         & Light     \\
         Horn                    & \plus0        & 1d6         & Impact    \\
@@ -728,7 +727,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           % crit accuracy
           \tind Diamondsteel        & \plus2 accuracy with critical hits                                           & 4 (500 gp)   \\
           \tind Diamondsteel, pure  & \plus4 accuracy with critical hits                                           & 7 (62,500 gp) \\
-          % energy damage
+          % Special damage
           \tind Dragonfang          & Deals energy damage                                                          & 3 (100 gp)   \\
           \tind Dragonfang, ancient & \plus1d6 \glossterm{extra damage}, deals energy damage, grants breath attack & 6 (12,500 gp) \\
           % kind of an extra flex tag
