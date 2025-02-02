@@ -329,7 +329,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             While the damage is delayed, it cannot be removed by any means short of the destruction of this weapon or the creature's death.
 
             As a \glossterm<minor action>, you can hurt yourself with this weapon to activate it.
-            This deals a single point of physical damage to you.
+            This deals a single point of damage to you.
             When you do, each creature with delayed damage from this weapon takes untyped damage equal to the total delayed damage built up by the weapon for that target.
             Creatures farther than one mile away from the weapon are unaffected by this damage.
             This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.

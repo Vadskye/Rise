@@ -220,7 +220,7 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Nature spells require \glossterm{verbal components} to cast (see \pcref{Ability Usage Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+                For details about mystic spheres and casting spells, see \pcref{Spells and Rituals}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
@@ -495,15 +495,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The skill bonuses increase to \plus4.
                         \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
-
-                    % \begin{magicalactiveability}{Form of the Oak}
-                    %     \rankline
-                    %     As long as you have any remaining resistance to physical damage, you are both \immobilized and \trait{impervious} to \glossterm{physical damage}.
-                    %     \rankline
-                    %     \rank{3} You also gain a \plus1 bonus to your Armor defense.
-                    %     \rank{5} The resistance bonus increases to be equal to three times your rank in this archetype.
-                    %     \rank{7} The defense bonuse increases to \plus2.
-                    % \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Viper}
                         \abilityusagetime Standard action.
@@ -810,7 +801,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                % TODO: does this need a glossterm? These are only defined fully in the Tome of Guidance.
+                % TODO: does this need a glossterm? These are only defined fully in the Grimoire of Guidance.
                 This ability also protects you and your allies from plant animates, elemental planeforged, and all summoned creatures.
             ",
             modifiers: None,

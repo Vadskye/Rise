@@ -119,7 +119,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       // doubling.
       effect: `
         You create a self-contained pool of water in a 10 foot radius cylinder-shaped \\glossterm{zone} within \\shortrange.
-        Everything inside the area is \\submerged (see \\pcref{Fighting While Swimming}).
+        Everything inside the area is \\submerged (see \\pcref{Fighting In Water}).
       `,
       rank: 2,
       tags: ['Manifestation'],
@@ -131,7 +131,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       effect: `
         You create a self-contained body of water in a 20 foot radius cylinder-shaped \\glossterm{zone} within \\medrange.
-        Everything inside the area is \\submerged (see \\pcref{Fighting While Swimming}).
+        Everything inside the area is \\submerged (see \\pcref{Fighting In Water}).
       `,
       rank: 6,
       tags: ['Manifestation'],
@@ -564,7 +564,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         \\begin{itemize}
           \\item Your land speed is halved.
           \\item If you have a swim speed, you can use it to move around on land.
-          \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting in Water}).
+          \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
           \\item You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
@@ -749,7 +749,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         Torrential rain begins falling out of thin air within a \\glossterm{zone} within \\longrange.
         You choose the radius of the zone, up to a maximum of a \\largearea radius.
         The rain extinguishes minor fires such as campfires and torches on contact.
-        Everything in the area is \\trait{impervious} to fire damage.
+        Everything in the area is \\trait{impervious} to \\atFire attacks.
       `,
       rank: 1,
       tags: ['Manifestation'],
@@ -784,7 +784,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       effect: `
           Choose up to six ritual participants.
-          Each target becomes \\glossterm{impervious} to fire damage.
+          Each target becomes \\glossterm{impervious} to \\atFire attacks.
       `,
       rank: 2,
       type: 'Attune (target)',

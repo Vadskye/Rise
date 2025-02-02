@@ -655,7 +655,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         The target suffers no harm from being in a hot environment.
         It can exist comfortably in conditions as high as 140 degrees Fahrenheit.
         Its equipment, if any, is also protected.
-        This does not protect the target from fire damage.
+        This does not protect the target from \\atFire attacks.
       `,
       rank: 1,
       type: 'Attune',

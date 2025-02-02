@@ -194,16 +194,16 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Crumpling Armor"),
         rank: 3,
-        short_description: String::from("Reduces physical damage from two attacks by 10"),
+        short_description: String::from("Reduces damage from two attacks by 10"),
         description: String::from(r"
-            Whenever you would take \glossterm<physical damage>, your armor crumples under the attack, reducing that damage by 10.
+            Whenever you would take \glossterm<damage> from an ability that attacked your Armor or Reflex defense, your armor crumples under the attack, reducing that damage by 10.
             After damage is reduced twice in this way, this has no effect until you finish a \glossterm<short rest>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Reduces physical damage from two attacks by 20", "
+            ItemUpgrade::new(5, "Reduces damage from two attacks by 20", "
                 The damage reduction improves to 20.
             "),
-            ItemUpgrade::new(7, "Reduces physical damage from two attacks by 40", "
+            ItemUpgrade::new(7, "Reduces damage from two attacks by 40", "
                 The damage reduction improves to 40.
             "),
         ],

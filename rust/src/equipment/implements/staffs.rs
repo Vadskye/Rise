@@ -326,7 +326,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 2,
         short_description: String::from(r"Deals $dr3l damage when foes remove conditions"),
         description: String::from(r"
-            Whenever a creature removes a \glossterm<condition> that you inflicted on it, it takes $dr3l \glossterm<energy damage>.
+            Whenever a creature removes a \glossterm<condition> that you inflicted on it, it takes $dr3l \glossterm<damage>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Deals $dr5l damage when foes remove conditions", r"

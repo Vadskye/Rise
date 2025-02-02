@@ -29,7 +29,6 @@ Most rank 2 abilities should apply some sort of fundamental change to how the ch
 or interacts with the universe. 
 
 Examples:
-* Battleforged Resilience: Regain physical damage resistance at the end of each round
 
 ### Rank 3: Statistical Power
 

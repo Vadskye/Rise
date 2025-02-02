@@ -35,7 +35,7 @@ For details, see \pcref{Archetype Ranks}.
 
 \glossdef{area} Many abilities affect a broad area.
 There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
-For details, see \pcref{Area}.
+For details, see \pcref{Area Shapes}, and \pcref{Area Types}.
 
 \glossdef{armor} Armor is a form of equipment that protects your body from harm.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
@@ -63,10 +63,10 @@ Some abilities can only affect \glossterm{unattended} items.
 
 \glossdef{attune}[attunement] Some abilities last as long as you attune to them.
 Attuning to an ability costs an \glossterm{attunement point} that you cannot recover as long as you maintain your attunement to that ability.
-For details, see \pcref{Attunement}.
+For details, see \pcref{Attuned Abilities}.
 
 \glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{attunement point} in it to maintain its effect.
-For details, see \pcref{Attunement}.
+For details, see \pcref{Attuned Abilities}.
 
 \glossdef{attunement point} Attunement points allow you to \glossterm{attune} to effects such as spells or items.
 For details, see \pcref{Attunement Points}, and \pcref{Attuned Abilities}.
@@ -96,6 +96,7 @@ For details, see \pcref{Brawling Accuracy}.
 Any effect which creates bright illumination in an area also creates enough light for \glossterm{shadowy illumination} in twice that area.
 For details, see \pcref{Vision and Light}.
 
+\glosssynonym{Brilliant illumination}
 \glossdef{brilliant illumination} In an area with brilliant illumination, creatures can see clearly.
 No shadows exist within an area of brilliant illumination.
 Any effect which creates brilliant illumination in an area also creates enough light for \glossterm{shadowy illumination} in twice that area.
@@ -115,7 +116,6 @@ A burst ability has an immediate effect on all valid targets within an area.
 
 \glossdef{cantrip}[cantrips] Some \glossterm{mystic spheres} have minor spells called cantrips.
 Anyone who has access to a mystic sphere knows all cantrips from that sphere.
-For details, see \pcref{Cantrips}.
 
 \glossdef{carrying capacity} Your carrying capacity defines the amount of weight you can carry without penalty.
 For details, see \pcref{Weight Limits}.
@@ -138,7 +138,7 @@ You can't chain off of the ground.
 \glossdef{check}[checks] A check is a d10 roll required to accomplish an action that has a chance of failure that is not an attack.
 If the result of your roll, including your modifier, is high enough, you succeed.
 Otherwise, you fail.
-For details, see \pcref{Checks}.
+For details, see \pcref{Making Checks}.
 
 \glossdef{class}[classes] Your class represents your fundamental source of power and the type of abilities you have.
 For example, barbarians draw power from the primal energy found deep within all living things, while clerics draw power from their worship of mighty deities.
@@ -196,7 +196,7 @@ If you miss, glance, or hit but fail to deal damage, you do not get a damaging h
 \glossdef{darkvision}[Darkvision] A creature with darkvision can see perfectly in complete darkness.
 For details, see \pcref{Darkvision}.
 
-\glossdef{dead} A dead creature's soul leaves its body. Dead creatures cannot benefit from normal or magical healing, but they can be restored to life via magic (see \pcref{Resurrecting the Dead}). A dead body decays normally unless magically preserved.
+\glossdef{dead} A dead creature's soul leaves its body. Dead creatures cannot benefit from normal or magical healing, but they can be restored to life via magic (see \pcref{Resurrection}). A dead body decays normally unless magically preserved.
 
 \glossdef{debuff} A debuff is a negative effect on a creature.
 Many debuffs are applied as \glossterm{conditions}, but some last for longer or shorter times.
@@ -226,13 +226,8 @@ For details, see \pcref{Destroyed Objects}.
 \glossdef{Dexterity} Dexterity is an \glossterm{attribute} that measures your hand-eye coordination, agility, and reflexes.
 For details, see \pcref{Dexterity}.
 
-\glossdef{dice increment}[dice increments] A die increment is a single increase or decrease in the value of a dice pool.
-For example, a 1d8 that is increased by one die increment becomes a 1d10 die.
-Similarly, a 2d6 dice pool that is decreased by one die increment also becomes a 1d10 die.
-For details, see \pcref{Dice Pools}.
-
 \glossdef{dice pool}[dice pools] A dice pool is a collection of dice that are all rolled together and summed to find a result.
-For details, see \pcref{Dice Pools}.
+Damage typically uses dice pool.
 
 \glossdef{difficult terrain} Difficult terrain costs an additional 5 feet of movement to move out of.
 For details, see \pcref{Difficult Terrain}.
@@ -240,9 +235,6 @@ For details, see \pcref{Difficult Terrain}.
 \glossdef{difficulty value} The difficulty value of a \glossterm{check} is the check result required to succeed.
 It can be abbreviated as ``DV''.
 In general, attacks are rolled to beat \glossterm{defenses}, and checks are rolled to beat a given difficulty value.
-
-\glossdef{dirty trick} You can use the \textit{dirty trick} ability to impair a foe by using your environment.
-For details, see \pcref{Dirty Trick}.
 
 \glossdef{disease} An affliction of the body, causing a steady deterioration over time.
 
@@ -257,11 +249,12 @@ Each weapon makes a separate attack, and deals damage independently.
 For details, see \pcref{Dual Strikes}.
 
 \glossdef{elite} Elite monsters are much more dangerous than standard monsters.
-For details, see \pcref{Elite Monsters}.
+% TODO: link differently depending on whether we are in the Grimoire of Guidance?
 
 \glossdef{elite action}[elite actions] Elite monsters can take a special extra action every round called an elite action.
 Every elite monster has at least one special ability which requires an elite action to use.
-For details, see \pcref{Elite Monsters}.
+% TODO: Link differently based on whether we are in the Grimoire of Guidance
+% For details, see \pcref{Elite Monsters}.
 
 \glossdef{emanation} An emanation is a type of area that an ability can have (see \pcref{Area Types}).
 An emanation ability has effects within an area for the duration of the ability.
@@ -309,8 +302,8 @@ For details, see \pcref{Falling Damage}.
 You take a \glossterm{fatigue penalty} if your fatigue level exceeds your \glossterm{fatigue tolerance}.
 For details, see \pcref{Fatigue}.
 
+% Does "fatigued" need to exist as a term?
 \glossdef{fatigue penalty} You take a penalty to \glossterm{accuracy} and \glossterm{checks} equal to your \glossterm{fatigue level} \sub your \glossterm{fatigue tolerance}.
-If you have a fatigue penalty of at least \minus1, you are considered \glossterm{fatigued}.
 When your fatigue penalty reaches \minus5, you fall \unconscious until your fatigue penalty is reduced below \minus5.
 For details, see \pcref{Fatigue Penalty}.
 
@@ -326,6 +319,7 @@ For details, see \pcref{Aerial Movement}.
 There are two types of forced movement: \glossterm{knockback} and \glossterm{push}.
 Although \glossterm{teleportation} can cause a creature's location to change unwillingly, it is not considered a type of forced movement.
 
+\glosssynonym{Free action}
 \glossdef{free action}[free actions] Each round, you take can any number of free actions.
 Free actions can be taken in any phase.
 For details, see \pcref{Free Actions}.
@@ -345,7 +339,7 @@ It cannot fly upwards, but it can travel forward while it descends, and it desce
 Most creatures suffer a \minus4 penalty to their Armor and Reflex defenses while gliding.
 For details, see \pcref{Gliding}.
 
-\glossdef{grappling} You are grappling a creature if that creature is \grappled by you.
+\glossdef{grappling} You are grappling if either a creature is \grappled by you or you are \grappled by a creature.
 For details, see \pcref{Grappling}.
 
 \glossdef{grounded} A grounded creature or object is standing on or otherwise supported by a stable surface that can support its weight.
@@ -453,7 +447,7 @@ Sorcerers and wizards cast arcane spells, clerics and paladins cast divine spell
 
 \glossdef{magical} A magical ability is an ability whose origin derives from magic.
 Examples include \glossterm{spells}, a dragon's ability to fly, and a paladin's ability to smite foes.
-For details, see \pcref{Magical Abilities}.
+For details, see \pcref{Magical and Mundane Abilities}.
 
 \glossdef{magical power} Your magical power is your \glossterm{power} with \magical abilities.
 It is typically equal to half your level \add your Willpower.
@@ -493,7 +487,7 @@ If you have multiple miss chances, only the highest one applies.
 See \pcref{Movement and Positioning}, for details.
 For specific actions that involve movement, see \glossterm{movement}.
 
-\glossdef{movement} You can make one movement during the \glossterm{movement phase} of each round.
+\glossdef{movement}[Movement] You can make one movement during the \glossterm{movement phase} of each round.
 Abilities that require a movement typically move you around the battlefield.
 For details, see \pcref{Movement and Positioning}.
 
@@ -546,7 +540,7 @@ Except for the connections between planes through \glossterm{planar rifts}, each
 For details, see the Tome of Guidance.
 
 \glossdef{point of origin}[points of origin] A point of origin is the grid intersection, creature, or object that an area originates from.
-For details, see \pcref{Area}.
+For details, see \pcref{Point of Origin}.
 
 % TODO: better short description
 \glossdef{poison}[poisoned] For a description of poisons and how they work, see \pcref{Poison}.
@@ -582,7 +576,7 @@ A push movement is always a single straight line.
 \glossdef{range} The range of an ability determines how far away it can be used.
 Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
 There are five standard ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
-For details, see \pcref{Range}.
+For details, see \pcref{Ability Range}.
 
 \glossdef{range limit}[range limits] Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
 The first number indicates the maximum range for a weapon's \glossterm{close range}.
@@ -783,7 +777,7 @@ Some abilities can only affect unattended items.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
 For details, see \pcref{Undergrowth}.
 
-\glossdef{usage class} The \glossterm{usage class} of armor is a measure of how much effort it takes to use it.
+\glossdef{usage class}[usage classes] The \glossterm{usage class} of armor is a measure of how much effort it takes to use it.
 There are three usage classes: light, medium, and heavy.
 For details, see \pcref{Armor Usage Classes}.
 
@@ -829,6 +823,7 @@ For details, see \tref{Weight Categories}.
 \glossdef{Willpower} Willpower is an \glossterm{attribute} that represents your ability to endure mental hardships.
 For details, see \pcref{Willpower}.
 
+\glosssynonym{Vital rolls}
 \glossdef{vital roll} When you gain a \glossterm{vital wound}, you make a \glossterm{vital roll} to determine the detrimental effect of the \glossterm{vital wound}.
 To make a \glossterm{vital roll}, roll 1d10 \sub the number of \glossterm{vital wounds} you already had, ignoring the vital wound you are rolling for.
 For details, see \pcref{Vital Wounds}.

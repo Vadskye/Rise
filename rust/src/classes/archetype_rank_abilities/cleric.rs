@@ -21,7 +21,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Divine spells require \glossterm{verbal components} to cast (see \pcref{Ability Usage Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
+                For details about mystic spheres and casting spells, see \pcref{Spells and Rituals}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
@@ -125,7 +125,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \hit Each target is turned by you as a \glossterm{condition}.
                     This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
                     Once this effect ends, the creature cannot be frightened in this way until it finishes a \glossterm{short rest}.
-                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes energy damage equal to half its maximum hit points.
+                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes damage equal to half its maximum hit points.
                     After taking this damage, it cannot take this damage again until it finishes a short rest.
 
                     \rankline
