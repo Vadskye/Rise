@@ -760,13 +760,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
 
       castingTime: 'one minute',
       effect: `
-        You can separate out dirt, sand, salt, and similar minor pollutants from up to ten gallons of water within \\shortrange.
+        You can separate out dirt, sand, salt, poison, and similar minor pollutants from up to one thousand gallons of water within \\shortrange.
+        That roughly corresponds to a single 5-ft\. square of water.
         The waste material moves to the edge of the water so it falls out or can be easily removed.
-        This does not remove poisons, magical effects, or contaminants heavier than half a pound.
-        Using this on a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single casting of this spell.
+        It remains separated until this ritual's effect ends.
+        This does not remove magical effects or contaminants heavier than half a pound.
+        Using this to gradually purify a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single use of this ritual.
       `,
       // narrative: '',
-      rank: 1,
+      type: 'Sustain (attuneable, minor)',
+      rank: 2,
     },
     {
       name: 'Massive Purify Water',
