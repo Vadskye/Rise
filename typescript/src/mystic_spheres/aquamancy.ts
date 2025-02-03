@@ -13,7 +13,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Create Water',
 
       effect: `
-        You create up to one gallon of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
+        You create up to two gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
         You must create a minimum of one ounce of water in each location.
       `,
       narrative: `
@@ -21,9 +21,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
       `,
       scaling: {
-        2: 'The volume created increases to two gallons.',
-        4: 'The volume created increases to five gallons.',
-        6: 'The volume created increases to ten gallons.',
+        2: 'The volume created increases to five gallons.',
+        4: 'The volume created increases to ten gallons.',
+        6: 'The volume created increases to twenty gallons.',
       },
       tags: ['Creation'],
     },
