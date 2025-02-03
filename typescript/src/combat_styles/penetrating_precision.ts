@@ -101,7 +101,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike}.
-        If the target takes damage, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against it.
+        If the target takes damage and your attack hits its Reflex defense, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against it.
       `,
       rank: 1,
     },
