@@ -29,9 +29,9 @@ export const vivimancy: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       scaling: {
-        3: `The healing increases to four \\glossterm{hit points}.`,
-        5: `The healing increases to eight \\glossterm{hit points}.`,
-        7: `The healing increases to sixteen \\glossterm{hit points}.`,
+        2: `The healing increases to four \\glossterm{hit points}.`,
+        4: `The healing increases to eight \\glossterm{hit points}.`,
+        6: `The healing increases to sixteen \\glossterm{hit points}.`,
       },
       tags: ['Swift'],
     },
