@@ -19,6 +19,7 @@
  *   Dryaidi:  39 /  89
  *     Harpy:  40 /  90
  * Incarnation:  40 /  93
+ *     Naiad:  35 /  87
  *  Oozeborn:  39 /  93
  *     Troll:  38 /  93
  *    Treant:  39 /  96
@@ -41,6 +42,7 @@
  *   Dryaidi:  39 / 155
  *     Harpy:  40 / 155
  * Incarnation:  40 / 161
+ *     Naiad:  35 / 153
  *  Oozeborn:  39 / 163
  *     Troll:  38 / 163
  *    Treant:  39 / 166
@@ -63,6 +65,7 @@
  *   Dryaidi:  39 / 216
  *     Harpy:  40 / 216
  * Incarnation:  40 / 220
+ *     Naiad:  35 / 214
  *  Oozeborn:  39 / 222
  *     Troll:  38 / 222
  *    Treant:  39 / 225
@@ -215,6 +218,15 @@
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
+
+#### Naiad
+            Naiad 1
+            AP 3, FT 6, IP 4, Skills 7
+            HP 8, DR 4
+            AD 5, Fort 5, Ref 6, Ment 5
+            Club +2 (1d8+1 damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
+            Power: 2✨/2
 
 #### Oozeborn
             Oozeborn 1
@@ -398,6 +410,15 @@
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
 
+#### Naiad
+            Naiad 10
+            AP 5, FT 6, IP 6, Skills 7
+            HP 24, DR 12
+            AD 10, Fort 10, Ref 11, Ment 10
+            Club +6 (1d8+3 damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
+            Power: 7✨/7
+
 #### Oozeborn
             Oozeborn 10
             AP 4, FT 7, IP 5, Skills 6
@@ -579,6 +600,15 @@
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
+
+#### Naiad
+            Naiad 20
+            AP 5, FT 6, IP 6, Skills 7
+            HP 84, DR 32
+            AD 15, Fort 15, Ref 16, Ment 15
+            Club +11 (1d8+6 damage.)
+            Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
+            Power: 12✨/12
 
 #### Oozeborn
             Oozeborn 20
