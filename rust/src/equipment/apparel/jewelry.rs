@@ -74,21 +74,6 @@ fn amulets() -> Vec<Apparel> {
     }));
 
     apparel.push(Amulet(StandardItem {
-        name: String::from("Amulet of Controlled Possession"),
-        rank: 3,
-        short_description: String::from(r"Reduces penalties from \ability{possession} with high Willpower"),
-        description: String::from(r"
-            If you have at least 3 Willpower, your penalties to Fortititude and Mental defense from using the \ability{possession} warlock ability are reduced by 1.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(6, r"Reduces penalties from \ability{possession} with high Willpower", r"
-                The penalty reduction increases to 2 if your Willpower is at least 5.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Divine Healing"),
         rank: 2,
         short_description: String::from(r"Grants +1d8 healing with \ability{divine aid} and \ability{lay on hands}"),
@@ -289,43 +274,6 @@ fn amulets() -> Vec<Apparel> {
         upgrades: vec![
             ItemUpgrade::new(6, r"Reduces power and chaos with \ability{wild magic}", r"
                 The rank penalty for calculating extra damage increases to two ranks, but the wild magic roll bonus increases to +2.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
-        name: String::from("Amulet of Abyssal Reach"),
-        rank: 3,
-        short_description: String::from(r"Increases range with \ability{abyssal rebuke}"),
-        description: String::from(
-            r"
-            Your range with the \ability<abyssal rebuke> warlock ability is increased to \longrange.
-        ",
-        ),
-        upgrades: vec![ItemUpgrade::new(
-            6,
-            r"Greatly increases range with \ability{abyssal rebuke}",
-            r"
-                The range increases to \distrange.
-            ",
-        )],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
-        name: String::from("Amulet of the Frozen Abyss"),
-        rank: 3,
-        short_description: String::from(r"Converts \ability{abyssal rebuke} to cold"),
-        description: String::from(r"
-            When you use your \ability<abyssal rebuke> warlock ability, you can choose to draw on the icy depths of the Abyss.
-            If you do, it loses the loses the \abilitytag{Fire} tag and gains the \abilitytag{Cold} tag.
-            In addition, you attack the target's Fortitude defense instead of its Armor defense.
-        "),
-        tags: vec![AbilityTag::Cold],
-        upgrades: vec![
-            ItemUpgrade::new(6, r"Converts \ability{abyssal rebuke} to slowing cold", r"
-                When you make a creature lose \glossterm{hit points} from a abyssal rebuke converted to cold in this way, it becomes \slowed as a \glossterm{condition}.
             "),
         ],
         ..Apparel::default()
