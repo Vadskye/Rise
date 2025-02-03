@@ -19,7 +19,7 @@
  *   Dryaidi:  39 /  89
  *     Harpy:  40 /  90
  * Incarnation:  40 /  93
- *     Naiad:  35 /  87
+ *     Naiad:  39 /  89
  *  Oozeborn:  39 /  93
  *     Troll:  38 /  93
  *    Treant:  39 /  96
@@ -42,7 +42,7 @@
  *   Dryaidi:  39 / 155
  *     Harpy:  40 / 155
  * Incarnation:  40 / 161
- *     Naiad:  35 / 153
+ *     Naiad:  39 / 155
  *  Oozeborn:  39 / 163
  *     Troll:  38 / 163
  *    Treant:  39 / 166
@@ -65,7 +65,7 @@
  *   Dryaidi:  39 / 216
  *     Harpy:  40 / 216
  * Incarnation:  40 / 220
- *     Naiad:  35 / 214
+ *     Naiad:  39 / 216
  *  Oozeborn:  39 / 222
  *     Troll:  38 / 222
  *    Treant:  39 / 225
@@ -223,7 +223,7 @@
             Naiad 1
             AP 3, FT 6, IP 4, Skills 7
             HP 8, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Fort 5, Ref 7, Ment 6
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
@@ -414,7 +414,7 @@
             Naiad 10
             AP 5, FT 6, IP 6, Skills 7
             HP 24, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Fort 10, Ref 12, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
@@ -605,7 +605,7 @@
             Naiad 20
             AP 5, FT 6, IP 6, Skills 7
             HP 84, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Fort 15, Ref 17, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
