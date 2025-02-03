@@ -34,6 +34,7 @@ pub enum Class {
     Harpy,
     Incarnation,
     Monk,
+    Naiad,
     Oozeborn,
     Paladin,
     Ranger,
@@ -66,6 +67,7 @@ impl Class {
             Self::Dryaidi,
             Self::Harpy,
             Self::Incarnation,
+            Self::Naiad,
             Self::Oozeborn,
             Self::Troll,
             Self::Treant,
@@ -174,6 +176,7 @@ impl Class {
             // Assume tethered
             Self::Incarnation => vec![Constitution],
             Self::Oozeborn => vec![Strength, Dexterity, Constitution],
+            Self::Naiad => vec![Dexterity, Perception],
             Self::Paladin => vec![Willpower],
             Self::Ranger => vec![Dexterity, Perception],
             Self::Rogue => vec![Dexterity],
@@ -200,6 +203,7 @@ impl Class {
             // Assume tethered
             Self::Incarnation => vec![Strength, Dexterity],
             Self::Monk => vec![Perception, Intelligence],
+            Self::Naiad => vec![Intelligence, Willpower],
             Self::Oozeborn => vec![],
             Self::Paladin => vec![Constitution, Strength],
             Self::Ranger => vec![],
@@ -225,6 +229,7 @@ impl Class {
             Self::Harpy => 1,
             Self::Incarnation => 2,
             Self::Monk => 0,
+            Self::Naiad => 1,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
             Self::Ranger => 0,
@@ -424,6 +429,26 @@ impl Class {
                 Skill::Survival,
                 Skill::Swim,
             ],
+            Self::Naiad => vec![
+                Skill::Awareness,
+                Skill::Balance,
+                Skill::CreatureHandling,
+                Skill::Deception,
+                Skill::Deduction,
+                Skill::Flexibility,
+                Skill::Intimidate,
+                Skill::Knowledge(vec![
+                    KnowledgeSubskill::Nature
+                ]),
+                Skill::Medicine,
+                Skill::Perform,
+                Skill::Persuasion,
+                Skill::SleightOfHand,
+                Skill::SocialInsight,
+                Skill::Stealth,
+                Skill::Survival,
+                Skill::Swim,
+            ],
             Self::Oozeborn => vec![
                 Skill::Awareness,
                 Skill::Balance,
@@ -594,6 +619,11 @@ impl Class {
                 Defense::Armor => 1,
                 _ => 0,
             },
+            Self::Naiad => match defense {
+                Defense::Reflex => 1,
+                Defense::Mental => 1,
+                _ => 0,
+            },
             Self::Treant => match defense {
                 Defense::Fortitude => 2,
                 _ => 0,
@@ -618,6 +648,7 @@ impl Class {
             Self::Harpy => HitPointProgression::Medium,
             Self::Incarnation => HitPointProgression::High,
             Self::Monk => HitPointProgression::High,
+            Self::Naiad => HitPointProgression::Low,
             Self::Oozeborn => HitPointProgression::VeryHigh,
             Self::Paladin => HitPointProgression::High,
             Self::Ranger => HitPointProgression::High,
@@ -652,6 +683,7 @@ impl Class {
             Self::Harpy => "harpy",
             Self::Incarnation => "incarnation",
             Self::Monk => "monk",
+            Self::Naiad => "naiad",
             Self::Oozeborn => "oozeborn",
             Self::Paladin => "paladin",
             Self::Ranger => "ranger",
@@ -686,6 +718,7 @@ impl Class {
             Self::Harpy => "Hrp",
             Self::Incarnation => "Inc",
             Self::Monk => "Mnk",
+            Self::Naiad => "Nai",
             Self::Oozeborn => "Ooz",
             Self::Paladin => "Pal",
             Self::Ranger => "Rgr",
@@ -711,6 +744,7 @@ impl Class {
             Self::Harpy => 5,
             Self::Incarnation => 3,
             Self::Monk => 4,
+            Self::Naiad => 4,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 6,
@@ -767,6 +801,10 @@ impl Class {
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Monk => ArmorProficiencies {
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light],
+            },
+            Self::Naiad => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
@@ -995,6 +1033,7 @@ impl Class {
                 As a result, they often try to trip, grapple, or distract their foes in combat.
                 These strategies are all most effective against humanoid opponents.
             ".to_string(),
+            Self::Naiad => r"".to_string(),
             Self::Oozeborn => r"".to_string(),
             Self::Paladin => r"
                 Paladins are divinely empowered warriors who exemplify a particular alignment.
@@ -1213,6 +1252,11 @@ impl Class {
             },
             Self::Monk => WeaponProficiencies {
                 custom_weapons: Some("monk weapons".to_string()),
+                non_exotic_weapons: false,
+                simple_weapons: true,
+            },
+            Self::Naiad => WeaponProficiencies {
+                custom_weapons: None,
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
