@@ -17,11 +17,11 @@
  * Automaton:  39 /  98
  *    Dragon:  39 /  91
  *   Dryaidi:  39 /  89
- *     Harpy:  38 /  89
+ *     Harpy:  40 /  90
  * Incarnation:  40 /  93
  *  Oozeborn:  39 /  93
  *     Troll:  38 /  93
- *    Treant:  41 /  97
+ *    Treant:  39 /  96
  *   Vampire:  39 /  91
 
 ### Level 10: Class/Character
@@ -39,11 +39,11 @@
  * Automaton:  39 / 166
  *    Dragon:  39 / 159
  *   Dryaidi:  39 / 155
- *     Harpy:  38 / 154
+ *     Harpy:  40 / 155
  * Incarnation:  40 / 161
  *  Oozeborn:  39 / 163
  *     Troll:  38 / 163
- *    Treant:  41 / 167
+ *    Treant:  39 / 166
  *   Vampire:  39 / 160
 
 ### Level 20: Class/Character
@@ -61,11 +61,11 @@
  * Automaton:  39 / 225
  *    Dragon:  39 / 218
  *   Dryaidi:  39 / 216
- *     Harpy:  38 / 215
+ *     Harpy:  40 / 216
  * Incarnation:  40 / 220
  *  Oozeborn:  39 / 222
  *     Troll:  38 / 222
- *    Treant:  41 / 226
+ *    Treant:  39 / 225
  *   Vampire:  39 / 220
 
 ## Detailed
@@ -200,7 +200,7 @@
 
 #### Harpy
             Harpy 1
-            AP 3, FT 6, IP 3, Skills 6
+            AP 3, FT 6, IP 3, Skills 7
             HP 10, DR 4
             AD 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
@@ -236,7 +236,7 @@
 
 #### Treant
             Treant 1
-            AP 2, FT 7, IP 3, Skills 6
+            AP 2, FT 7, IP 3, Skills 5
             HP 16, DR 5
             AD 5, Fort 8, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
@@ -382,7 +382,7 @@
 
 #### Harpy
             Harpy 10
-            AP 5, FT 6, IP 5, Skills 6
+            AP 5, FT 6, IP 5, Skills 7
             HP 28, DR 12
             AD 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+4 damage.)
@@ -418,7 +418,7 @@
 
 #### Treant
             Treant 10
-            AP 4, FT 7, IP 5, Skills 6
+            AP 4, FT 7, IP 5, Skills 5
             HP 48, DR 18
             AD 10, Fort 13, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
@@ -564,7 +564,7 @@
 
 #### Harpy
             Harpy 20
-            AP 5, FT 6, IP 5, Skills 6
+            AP 5, FT 6, IP 5, Skills 7
             HP 100, DR 32
             AD 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
@@ -600,7 +600,7 @@
 
 #### Treant
             Treant 20
-            AP 4, FT 7, IP 5, Skills 6
+            AP 4, FT 7, IP 5, Skills 5
             HP 160, DR 48
             AD 15, Fort 18, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
