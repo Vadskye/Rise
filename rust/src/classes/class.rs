@@ -102,7 +102,9 @@ impl Class {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
                 expected_points + if class.is_uncommon_class() { 2 } else { 0 };
-            if (actual_points - class_expected_points).abs() > 1 {
+            let too_weak = actual_points < class_expected_points;
+            let too_strong = actual_points > class_expected_points + 1;
+            if too_weak || too_strong {
                 eprintln!(
                     "Class {} has {} points; expected {}",
                     class.name(),
@@ -706,7 +708,7 @@ impl Class {
             Self::Druid => 4,
             Self::Dryaidi => 4,
             Self::Fighter => 3,
-            Self::Harpy => 4,
+            Self::Harpy => 5,
             Self::Incarnation => 3,
             Self::Monk => 4,
             Self::Oozeborn => 4,
@@ -714,7 +716,7 @@ impl Class {
             Self::Ranger => 6,
             Self::Rogue => 6,
             Self::Sorcerer => 3,
-            Self::Treant => 4,
+            Self::Treant => 3,
             Self::Troll => 3,
             Self::Vampire => 4,
             Self::Votive => 3,
