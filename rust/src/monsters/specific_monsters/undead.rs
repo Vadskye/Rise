@@ -1,11 +1,11 @@
 use crate::core_mechanics::abilities::{AbilityTag, ActiveAbility, StrikeAbility};
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    Attribute, HasAttributes, MovementMode, MovementSpeed,
-    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    Attribute, HasAttributes, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
-use crate::equipment::Weapon;
+use crate::equipment::{Weapon, WeaponMaterial};
 use crate::monsters::challenge_rating::ChallengeRating;
 use crate::monsters::creature_type::CreatureType;
 use crate::monsters::knowledge::Knowledge;
@@ -236,6 +236,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 is_magical: true,
                 name: "Unholy Creature of the Night".to_string(),
             }));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(WeaponMaterial::Silver)));
             modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
             ));
