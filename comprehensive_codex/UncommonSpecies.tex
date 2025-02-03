@@ -662,7 +662,7 @@
       \end{itemize}
 
     \cf{Hrp}{Resources}
-      You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
+      You learn five \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}). You also gain an additional \glossterm{attunement point}.
 
     \cf{Hrp}{Weapon Proficiencies}
       You are proficient with simple weapons.
@@ -876,13 +876,13 @@
   \parhead{Attributes} No change.
   \parhead{Special Abilities}
   \begin{itemize}
+    \itemhead{Aquatic Essence} Naiadi are \impervious to \atFire and \atWater attacks.
+      However, they are \vulnerable to \atCold and \atElectricity attacks.
     \itemhead{Create Water} A naiadi can cast the \spell{create water} cantrip.
       When they do so, they do not require \glossterm{verbal components} or \glossterm{somatic components}, and their spellcasting rank is considered to be equal to their rank in their highest rank archetype.
-      If they would already know that cantrip through the Aquamancy sphere, the volume of water created with the cantrip doubles.
-      This doubling is multiplicative with \ability{freshwater fountain} and any other ability which increases the water volume.
     \itemhead{Enchanting Appearance} A naiadi gains a \plus2 \glossterm{enhancement bonus} to the Creature Handling, Perform, and Persuasion skills.
     \itemhead{Low-light Vision} Naiadi have \trait{low-light vision}, allowing them to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-    \itemhead{Naiad Archetype} Naiads may choose three class archetypes, as normal.
+    \itemhead{Naiad Archetype} Naiadi may choose three class archetypes, as normal.
       However, you may choose the Naiad archetype in place of one of your class archetypes.
       If you do, you gain ranks in it just like you gain ranks in class archetypes.
       You cannot choose naiad as your base class.
@@ -895,34 +895,65 @@
 
     \magicalcf{Nai}[1]{Water Bond} You can form a bond with a fresh stream, lake, or other Gargantuan or larger body of fresh water (not salt water).
       Forming or severing a bond takes one week of meditation and ritual, periodically interrupted by rest.
-      Forming a bond also requires asking permission from the water.
+      Forming a bond also requires asking permission from the water, which you are able to do as part of the ritual.
       Any individual body of water can only be bonded to one naiad or naiadi in this way.
 
-      As long as your bonded water remains clean, pure, and large enough to be a valid subject of bonding, you gain a \plus1 bonus to your Mental defense and \glossterm{magical power}.
+      As long as your bonded water remains clean, pure, and large enough to be a valid subject of bonding, you gain a \plus2 \glossterm{enhancement bonus} to your Mental defense and \glossterm{vital rolls}.
+      While you are within 60 feet of your bonded body of water, these bonuses double.
       If your bonded water becomes contaminated or shrinks below the minimum size, these bonuses are inverted into penalties until you sever the bond.
       You can passively observe the general health and status of water you are bonded to, including knowing when significant pollutants enter the water and when the water grows or shrinks significantly.
 
-      % TODO: redesign away from generic accuracy bonus
-    \magicalcf{Nai}[2]{Fluidseeker} You gain a \plus1 bonus to \glossterm{accuracy} against creatures significantly composed of water or watery fluids.
-      This is true of almost all living creatures.
+    \magicalcf{Nai}[2]{Fluid Force} While your \textit{water bond} is active, all of your \magical attacks have the \atWater tag.
+    In addition, you gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
 
+    % Expected volume is 25 gallons per cast.
     \magicalcf{Nai}[2]{Freshwater Fountain} The volume of water you can create with the \spell{create water} cantrip is doubled.
+    In addition, you do not consider casting that cantrip to be strenuous activity, so you can cast it continuously for longer than five minutes (see \pcref{Maintain Exertion}).
+    This generally means that you can create a Small body of water with half a minute of work.
 
-    \magicalcf{Nai}[3]{Aqueous Form} You can cast the \spell{aqueous form} spell.
+    \magicalcf{Nai}[3]{Bonded Boon} While your \textit{water bond} is active, you gain a benefit based on the body of water you bonded.
+    If it's ambiguous how to categorize your body of water, you can choose any one applicable category when you gain this ability and when you form any future bonds.
+    \begin{raggeditemize}
+      \itemhead{Geyser or spring} You gain a \plus2 accuracy bonus against creatures that are at \unaware or \partiallyunaware of your attacks.
+        In addition, when you use the \ability{desperate exertion} ability to affect an attack, the target is considered \partiallyunaware of that attack.
+      \itemhead{Lake} You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points}.
+      \itemhead{River or stream} You gain a \plus2 bonus to your Reflex defense.
+        In addition, when you \ability{sprint} downhill, you gain a \plus10 foot bonus to your land speed.
+        This bonus is doubled as normal by the sprint ability.
+      \itemhead{Underground reservoir} You gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+        In addition, you gain a \plus2 \glossterm{enhancement bonus} to the Deception and Stealth skills.
+    \end{raggeditemize}
+
+    \magicalcf{Nai}[4]{Aqueous Form} You can cast the \spell{aqueous form} spell.
       When you do, you do not require \glossterm{verbal components} or \glossterm{somatic components}, and you use your rank in this archetype as your your spellcasting rank.
-      In addition, it has the Attune tag instead of the Attune (deep) tag.
+      In addition, it has the \atAttune tag instead of the \atAttune (deep) tag.
 
-    \magicalcf{Nai}[4]{Water Bond+} The bonuses from your \textit{water bond} ability increase to \plus2.
-    In addition, while your water bond is active, the bonuses from your \textit{enchanting appearance} ability are doubled.
+    \magicalcf{Nai}[4]{Enchanting Appearance+} The bonuses from your \textit{enchanting appearance} ability are doubled.
 
-    \magicalcf{Nai}[5]{Fluidseeker+} The accuracy bonus from your \textit{fluidseeker} ability increases to \plus2.
+    % Expected volume is 100 gallons per cast.
+    % Medium body of water is 935 gallons.
+    % Gargantuan body of water is 64k cubic feet, so 478k gallons.
+    % That takes 4,780 rounds, or 478 minutes, or 8 hours.
+    \magicalcf{Nai}[5]{Freshwater Fountain+} The multiplier from your \textit{freshwater fountain} ability increases to ten times the normal volume of water.
+    This generally means that you can create a Medium body of water with one minute of work, or a Gargantuan body of water with 8 hours of work.
+    You can bond with a body of water you create with this ability just like any other body of water.
 
-    \magicalcf{Nai}[5]{Freshwater Fountain+} The multiplier from your \textit{freshwater fountain} ability increases to five times the normal volume of water.
+    \magicalcf{Nai}[5]{Fluid Force+} The bonuses increase to \plus2.
 
-    \magicalcf{Nai}[6]{Aqueous Form+} When you cast the \spell{aqueous form} spell, it does not have the \abilitytag{Attune} tag.
-      Instead, it lasts until you \glossterm{dismiss} it.
+    \magicalcf{Nai}[6]{Bonded Boon+} The benefit from your bonded body of water improves.
+    \begin{raggeditemize}
+      \itemhead{Geyser or spring} The accuracy bonus increases to \plus4.
+      % Unlike barbarian, this is their only upgrade at this rank
+      \itemhead{Lake} The hit point bonus increases to five times your rank in this archetype.
+      \itemhead{River or stream} You gain a \plus10 foot \glossterm{enhancement bonus} to your speed with all movement modes.
+      \itemhead{Underground reservoir} The range of your \trait{darkvision} increases by 60 feet.
+        In addition, the skill bonuses increase to \plus4.
+    \end{raggeditemize}
 
-    \magicalcf{Nai}[7]{Supreme Water Bond} The bonuses from your \textit{water bond} ability increase to \plus3.
+    \magicalcf{Nai}[7]{Water Bond+} The bonuses from your \textit{water bond} ability increase to \plus4.
+    In addition, your bonded body of water becomes effectively impossible to contaminate.
+    The entire body of water is continuously purified, as if by the \spell{purify water} ability, with contaminants shunted to the outside.
+    It can still be physically destroyed with sufficient effort.
 
 \sectiongraphic*{Oozeborn}{width=\columnwidth}{optional rules/oozeborn}
   Oozeborn are ooze creatures that have gained true sentience through a strange quirk of their birth.
@@ -1166,7 +1197,7 @@
       You gain a \plus2 bonus to your Fortitude defense.
 
     \cf{Tre}{Resources}
-      You learn four \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
+      You learn three \glossterm{trained skills} from among your \glossterm{class skills} (see \pcref{Skills}).
 
     \cf{Tre}{Weapon Proficiencies}
       You are proficient with simple weapons and club-like weapons.
@@ -1452,7 +1483,7 @@
       You are proficient with simple weapons and club-like weapons.
 
     \cf{Trl}{Armor Proficiencies}
-      You are proficient with light armor, leather lamellar, and layered hide.
+      You are proficient with light armor, leather lamellar, layered hide, and standard shields.
 
     \cf{Trl}{Class Skills}
       You have the following \glossterm{class skills}:
