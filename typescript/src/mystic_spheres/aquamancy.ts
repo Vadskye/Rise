@@ -205,7 +205,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         targeting: `
           Make an attack vs. Armor against something within \\shortrange.
           Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet in a straight horizontal line away from the target.
-          If you are submerged, this movement is doubled and you can also move vertically.
+          If you are \\submerged, this movement is doubled and you can also move vertically.
         `,
       },
       rank: 1,
@@ -685,14 +685,17 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       tags: ['Manifestation'],
     },
     {
-      name: 'Drown',
+      name: 'Drowning Grasp',
 
+      // The +2 accuracy basically always applies
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankone.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
           You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
@@ -701,14 +704,17 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       scaling: 'accuracy',
     },
     {
-      name: 'Mighty Drown',
+      name: 'Mighty Drowning Grasp',
 
+      // 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Fortitude against one creature \\glossterm{touch}.
           You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
