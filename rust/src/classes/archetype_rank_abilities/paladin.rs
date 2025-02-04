@@ -182,9 +182,19 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             complexity: 2,
-            name: "Divine Spell Versatility",
+            name: "Divine Conduit",
             is_magical: true,
             rank: 1,
+            description: r"
+                Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may also target yourself or a creature adjacent to you with the spell.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 2,
+            name: "Divine Spell Versatility",
+            is_magical: true,
+            rank: 2,
             description: r"
                 You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{channel divinity} or \sphere{prayer}.
                 You do not have to have access to that mystic sphere.
@@ -196,19 +206,9 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Divine Spell Versatility+",
             is_magical: true,
-            rank: 4,
+            rank: 5,
             description: r"
                 You learn an additional spell with this ability.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Divine Conduit",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may also target yourself or a creature adjacent to you with the spell.
             ",
             modifiers: None,
         },
@@ -236,7 +236,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Attunement Point",
             is_magical: true,
-            rank: 5,
+            rank: 4,
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
