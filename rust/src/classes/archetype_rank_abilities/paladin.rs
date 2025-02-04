@@ -188,7 +188,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn a spell from one of the mystic spheres that are unique to divine spellcasters: \sphere{channel divinity} or \sphere{prayer}.
                 You do not have to have access to that mystic sphere.
-                As normal, you can change which spell you learn with this ability as you gain access to new spell ranks.
+                When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
             ",
             modifiers: None,
         },
