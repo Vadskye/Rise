@@ -507,7 +507,7 @@ export const verdamancy: MysticSphere = {
           The base of at least half of the wall must be in arable earth.
           The wall is four inches thick, but permeable.
           It provides \\glossterm{cover} to attacks made through the wall, but does not fully block sight.
-          It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+          It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
           A field of \\glossterm{light undergrowth} spreads on the ground in all squares adjacent to the wall.
 
           Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
@@ -712,7 +712,7 @@ export const verdamancy: MysticSphere = {
           A Huge grove of trees grows around the target, trapping it inside the wood as a \\glossterm{condition}.
           While it is trapped in the trees, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
 
-          The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, and all of its defenses are 5.
+          The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, all of its defenses are 5, and it is destroyed when its hit points reach 0.
           If the grove is destroyed, this condition ends.
           Special movement abilities such as teleportation can also remove the target from the trees, ending this effect.
           Once this condition ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.

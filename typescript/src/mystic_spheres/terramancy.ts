@@ -592,7 +592,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         Every square of the wall must be \\glossterm{grounded}.
         Nothing can pass through the wall until it is destroyed.
 
-        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
         If the entire wall is directly supported by stone, its hit points are doubled.
       `,
       rank: 1,

@@ -474,7 +474,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         You create a \\medarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
-        It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
         Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\magical ability treats the wall as an impassable barrier.
       `,
       rank: 5,
