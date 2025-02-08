@@ -25,6 +25,7 @@ fn main() {
         item_latex.join("\n")
     } else {
         match args.category.to_lowercase().as_str() {
+            "everything" => equipment::everything_table(),
             "apparel" => equipment::apparel_table(),
             "implements" => equipment::implements_table(),
             "magic armor" => equipment::magic_armor_table(),

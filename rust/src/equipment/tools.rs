@@ -1,4 +1,5 @@
 use crate::core_mechanics::abilities::AbilityTag;
+use crate::equipment::latex_table::{TableRow, ToTableRows};
 use crate::equipment::{item_latex, latex_table, ItemUpgrade, StandardItem};
 mod alchemical_items;
 mod kits;
@@ -78,10 +79,10 @@ impl ToolCategory {
 
     pub fn name(&self) -> Option<String> {
         match self {
-            Self::Alchemical => None,
+            Self::Alchemical => Some(String::from("Alchemical")),
             Self::Kit(_) => Some(String::from(r"Kit")),
             Self::Mount => Some(String::from(r"Mount")),
-            Self::Permanent(_) => None,
+            Self::Permanent(_) => Some(String::from(r"Object")),
             // TODO: "Poison" and "Potion" look annoyingly similar. Should differentiate them.
             Self::Poison => Some(String::from(r"Poison\poison")),
             Self::Potion => Some(String::from(r"Potion\potion")),
@@ -127,21 +128,23 @@ pub fn all_tools(consumable: Option<bool>) -> Vec<Tool> {
     tools
 }
 
-fn tool_rows(tool: &Tool) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(
-        &tool.item(),
-        tool.category.is_consumable(),
-        // The row should always have a category, even if we have no category for that item.
-        Some(tool.category.name().unwrap_or(String::from(""))),
-    )
+impl ToTableRows for Tool {
+    fn to_table_rows(&self) -> Vec<TableRow> {
+        TableRow::from_item(
+            &self.item(),
+            self.category.is_consumable(),
+            // The row should always have a category, even if we have no category for that item.
+            Some(self.category.name().unwrap_or(String::from(""))),
+        )
+    }
 }
 
 pub fn consumable_tools_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<latex_table::TableRow> = all_tools(Some(true))
+    let mut rows: Vec<TableRow> = all_tools(Some(true))
         .iter()
-        .map(|t| tool_rows(t))
+        .map(|t| t.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);
@@ -156,9 +159,9 @@ pub fn consumable_tools_table() -> String {
 pub fn permanent_tools_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<latex_table::TableRow> = all_tools(Some(false))
+    let mut rows: Vec<TableRow> = all_tools(Some(false))
         .iter()
-        .map(|t| tool_rows(t))
+        .map(|t| t.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);
