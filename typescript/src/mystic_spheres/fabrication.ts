@@ -339,12 +339,12 @@ export const fabrication: MysticSphere = {
       effect: `
         You fill a \\smallarea radius \\glossterm{zone} within \\medrange with webs.
         The webs make the area \\glossterm{difficult terrain}.
-        The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and all of its defenses are 0.
+        The web has \\glossterm{hit points} equal to three times your \\glossterm{power}, and it is destroyed when its hit points reach 0.
       `,
       rank: 3,
       scaling: {
-        5: "The web's hit points increase to four times your power.",
-        7: "The web's hit points increase to five times your power.",
+        5: "You can choose to create a \\medarea radius instead.",
+        7: "You can choose to create a \\largearea radius instead.",
       },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
@@ -494,7 +494,7 @@ export const fabrication: MysticSphere = {
         % TODO: clarify that you can't create two cages around the same target
         % simultaneously
         If another creature is in the target's space when this spell is cast, this spell fails without effect.
-        The field has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        The field has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
       `,
       rank: 3,
       scaling: {
@@ -653,7 +653,7 @@ export const fabrication: MysticSphere = {
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical membrane that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-        It has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
       `,
       rank: 1,
       scaling: {
@@ -714,7 +714,7 @@ export const fabrication: MysticSphere = {
         This prevents you from having \\glossterm{line of effect} to anything outside of the area.
         When you move using one of your movement speeds, the sphere moves with you, though you cannot force it against another creature or object.
 
-        The field as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        The field as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
       `,
       rank: 6,
       tags: ['Barrier', 'Manifestation'],
@@ -936,7 +936,7 @@ export const fabrication: MysticSphere = {
         The barrier is visible as a shimmering magical membrane that does not block sight.
         As a standard action, a creature can move five feet from outside the hut to inside the hut, or vice versa.
         However, the hut blocks \\glossterm{line of effect} for all other purposes.
-        The barrier has \\glossterm{hit points} equal to three times your \\glossterm{power}.
+        The barrier has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
 
         If you leave the zone, this effect ends.
       `,
