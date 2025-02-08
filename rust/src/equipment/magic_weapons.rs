@@ -1,5 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::{item_latex, latex_table, StandardItem};
+use crate::equipment::latex_table::{TableRow, ToTableRows};
 mod melee;
 mod ranged;
 mod unrestricted;
@@ -61,21 +62,18 @@ pub fn all_magic_weapons() -> Vec<MagicWeapon> {
     weapons
 }
 
-fn magic_weapon_rows(magic_weapon: &MagicWeapon) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(
-        magic_weapon.item(),
-        false,
-        // The categories are not useful enough to include
-        None,
-    )
+impl ToTableRows for MagicWeapon {
+    fn to_table_rows(&self) -> Vec<TableRow> {
+        TableRow::from_item(self.item(), false, None)
+    }
 }
 
 pub fn magic_weapons_table() -> String {
     let with_category = false;
 
-    let mut rows: Vec<latex_table::TableRow> = all_magic_weapons()
+    let mut rows: Vec<TableRow> = all_magic_weapons()
         .iter()
-        .map(|w| magic_weapon_rows(w))
+        .map(|w| w.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);

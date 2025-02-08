@@ -1,5 +1,6 @@
 mod apparel;
 mod armor;
+mod everything;
 mod implements;
 mod item_creature;
 mod item_latex;
@@ -14,6 +15,7 @@ mod weapons;
 
 pub use apparel::{all_apparel, Apparel, apparel_table};
 pub use armor::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor};
+pub use everything::everything_table;
 pub use implements::{all_implements, Implement, implements_table};
 pub use item_creature::item_creature;
 pub use item_latex::{item_latex, StandardItem};

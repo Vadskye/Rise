@@ -2,6 +2,10 @@ use crate::core_mechanics::abilities::replace_attack_terms;
 use crate::equipment::{item_creature, rank_and_price_text, StandardItem};
 use crate::latex_formatting::latexify;
 
+pub trait ToTableRows {
+    fn to_table_rows(&self) -> Vec<TableRow>;
+}
+
 pub struct TableRow {
     category: Option<String>,
     consumable: bool,
@@ -70,9 +74,12 @@ pub fn table_header(caption: &str, with_category: bool) -> String {
 }
 
 pub fn standard_sort(rows: &mut Vec<TableRow>) {
-    // Primary sort is by rank, secondary sort is by category, tertiary sort is by name.
+    // Primary sort is by rank, secondary sort is by consumability, tertiary sort is by category,
+    // final sort is by name.
     rows.sort_by(|a, b| a.name.cmp(&b.name));
     rows.sort_by(|a, b| a.category.cmp(&b.category));
+    // Flip the boolean so consumables come before permanent items
+    rows.sort_by(|a, b| (!a.consumable).cmp(&!b.consumable));
     rows.sort_by(|a, b| a.rank.cmp(&b.rank));
 }
 
