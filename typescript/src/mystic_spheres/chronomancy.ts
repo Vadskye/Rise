@@ -45,7 +45,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         Whenever you make an \\glossterm{attack} or \\glossterm{check}, you can \\glossterm{reroll} it.
-        If you do, your attunement to this ability ends.
+        After you do, this ability ends.
 
         You can decide to activate this effect after you learn whether the original roll succeeded or failed.
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
@@ -65,7 +65,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         When you use the \\ability{sprint} ability as a \\glossterm{movement}, you can choose not to increase your \\glossterm{fatigue level}.
-        After you sprint in this way, your attunement to this ability ends.
+        After you sprint in this way, this ability ends.
       `,
       rank: 1,
       type: 'Attune',
@@ -76,7 +76,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         At the end of each movement phase, you can use this ability to rewind time to the start of the movement phase.
         All other creatures make the same movements, but you can change your movement based on your knowledge of their previous movements.
-        After you rewind time in this way, your attunement to this ability ends.
+        After you rewind time in this way, this ability ends.
       `,
       rank: 1,
       type: 'Attune',
@@ -89,7 +89,7 @@ export const chronomancy: MysticSphere = {
         You must use this ability before determining any damage dealt or any other effects of the attack.
         All effects of your action are undone, except that you keep any \\glossterm{fatigue levels} you gained during your original action.
         You can use an different ability on your new action, or simply make a new attack roll with the same ability and hope it succeeds this time.
-        After you rewind time in this way, your attunement to this ability ends.
+        After you rewind time in this way, this ability ends.
       `,
       rank: 5,
       type: 'Attune',
