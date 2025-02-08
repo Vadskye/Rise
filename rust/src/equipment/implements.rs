@@ -1,5 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::{item_latex, latex_table, StandardItem};
+use crate::equipment::latex_table::{TableRow, ToTableRows};
 mod rods;
 mod staffs;
 mod wands;
@@ -64,20 +65,18 @@ pub fn all_implements() -> Vec<Implement> {
     implements
 }
 
-fn implement_rows(implement: &Implement) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(
-        implement.item(),
-        false,
-        Some(String::from(implement.category())),
-    )
+impl ToTableRows for Implement {
+    fn to_table_rows(&self) -> Vec<TableRow> {
+        TableRow::from_item(self.item(), false, Some(self.category().to_string()))
+    }
 }
 
 pub fn implements_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<latex_table::TableRow> = all_implements()
+    let mut rows: Vec<TableRow> = all_implements()
         .iter()
-        .map(|i| implement_rows(i))
+        .map(|i| i.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);

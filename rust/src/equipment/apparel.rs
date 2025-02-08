@@ -1,4 +1,5 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::equipment::latex_table::{TableRow, ToTableRows};
 use crate::equipment::{item_latex, latex_table, StandardItem};
 mod arms;
 mod head;
@@ -100,16 +101,18 @@ pub fn all_apparel() -> Vec<Apparel> {
     apparel
 }
 
-fn apparel_rows(apparel: &Apparel) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(apparel.item(), false, Some(apparel.category().to_string()))
+impl ToTableRows for Apparel {
+    fn to_table_rows(&self) -> Vec<TableRow> {
+        TableRow::from_item(self.item(), false, Some(self.category().to_string()))
+    }
 }
 
 pub fn apparel_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<latex_table::TableRow> = all_apparel()
+    let mut rows: Vec<TableRow> = all_apparel()
         .iter()
-        .map(|a| apparel_rows(a))
+        .map(|a| a.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);

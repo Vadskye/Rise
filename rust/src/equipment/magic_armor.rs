@@ -1,5 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::{item_latex, latex_table, StandardItem};
+use crate::equipment::latex_table::{TableRow, ToTableRows};
 mod body_armor;
 mod shields;
 
@@ -58,20 +59,18 @@ pub fn all_magic_armor() -> Vec<MagicArmor> {
     armor
 }
 
-fn magic_armor_rows(magic_armor: &MagicArmor) -> Vec<latex_table::TableRow> {
-    latex_table::TableRow::from_item(
-        magic_armor.item(),
-        false,
-        Some(magic_armor.category().to_string()),
-    )
+impl ToTableRows for MagicArmor {
+    fn to_table_rows(&self) -> Vec<TableRow> {
+        TableRow::from_item(self.item(), false, Some(self.category().to_string()))
+    }
 }
 
 pub fn magic_armor_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<latex_table::TableRow> = all_magic_armor()
+    let mut rows: Vec<TableRow> = all_magic_armor()
         .iter()
-        .map(|a| magic_armor_rows(a))
+        .map(|a| a.to_table_rows())
         .flatten()
         .collect();
     latex_table::standard_sort(&mut rows);
