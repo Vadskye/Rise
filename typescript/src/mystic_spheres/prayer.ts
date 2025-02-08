@@ -83,7 +83,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever a target misses with an \\glossterm{attack}, it can \\glossterm{reroll} that attack.
-        If it does, its attunement to this ability ends.
+        If it does, this ability ends for that creature.
       `,
       rank: 1,
       type: 'Attune (target)',

@@ -903,7 +903,7 @@ export const polymorph: MysticSphere = {
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
         This causes the critical hit to become only a regular hit.
         However, this rapid liquification also interferes with your own bodily functions.
-        You are \\glossterm{briefly} \\dazzled and \\stunned, and your attunement to this ability ends.
+        You are \\glossterm{briefly} \\dazzled and \\stunned, and this ability ends.
       `,
       rank: 1,
       type: 'Attune',

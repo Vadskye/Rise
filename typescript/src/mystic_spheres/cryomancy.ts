@@ -274,7 +274,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         The ice does not cover your joints, allowing you to move freely.
         Whenever you would take damage from a non-\\atFire ability, you reduce that damage by 5, and one layer of ice is destroyed.
         If you take damage from a \\atFire ability, you do not reduce that damage, and all layers of ice are destroyed.
-        When the last layer of ice is destroyed, your attunement to this ability ends.
+        When the last layer of ice is destroyed, this ability ends.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
