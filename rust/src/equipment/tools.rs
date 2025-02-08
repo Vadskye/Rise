@@ -83,7 +83,6 @@ impl ToolCategory {
             Self::Kit(_) => Some(String::from(r"Kit")),
             Self::Mount => Some(String::from(r"Mount")),
             Self::Permanent(_) => Some(String::from(r"Object")),
-            // TODO: "Poison" and "Potion" look annoyingly similar. Should differentiate them.
             Self::Poison => Some(String::from(r"Poison\poison")),
             Self::Potion => Some(String::from(r"Potion\potion")),
             Self::Trap(_) => Some(String::from(r"Trap")),
