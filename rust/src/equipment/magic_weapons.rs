@@ -79,7 +79,7 @@ pub fn magic_weapons_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Magic Weapons", with_category),
+        "Magic Weapons",
         rows,
         with_category,
     )
