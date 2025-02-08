@@ -82,7 +82,7 @@ pub fn implements_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Implements", with_category),
+        "Implements",
         rows,
         with_category,
     )

@@ -118,7 +118,7 @@ pub fn apparel_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Magic Apparel", with_category),
+        "Magic Apparel",
         rows,
         with_category,
     )
