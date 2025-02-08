@@ -52,8 +52,8 @@ pub fn everything_table() -> String {
 
     latex_table::standard_sort(&mut rows);
     let with_category = true;
-    latex_table::longtable(
-        latex_table::table_header("All Items", with_category),
+    latex_table::longtable_percentile(
+        "All Items",
         rows,
         with_category,
     )

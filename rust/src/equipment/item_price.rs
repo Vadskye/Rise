@@ -1,7 +1,7 @@
 use num_format::{Locale, ToFormattedString};
 
 pub fn item_price(rank: i32) -> String {
-    let mut value = match rank {
+    let value = match rank {
         -1 => 5,
         0 => 1,
         1 => 4,

@@ -149,7 +149,7 @@ pub fn consumable_tools_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Consumables", with_category),
+        "Consumables",
         rows,
         with_category,
     )
@@ -166,7 +166,7 @@ pub fn permanent_tools_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Permanent Tools, Goods, and Mounts", with_category),
+        "Permanent Tools, Goods, and Mounts",
         rows,
         with_category,
     )

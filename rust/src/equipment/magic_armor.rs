@@ -76,7 +76,7 @@ pub fn magic_armor_table() -> String {
     latex_table::standard_sort(&mut rows);
 
     latex_table::longtable(
-        latex_table::table_header("Magic Armor", with_category),
+        "Magic Armor",
         rows,
         with_category,
     )
