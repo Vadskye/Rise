@@ -105,11 +105,12 @@ export const dirtyFighting: CombatStyle = {
       // If you use a Medium creature, the baseline damage is 2d6 + 1.66dpp, which is
       // roughly dr5, but with strong scaling based on the creature's size.
       effect: `
-        Make a \\glossterm{strike} with your \\glossterm{brawling accuracy} using a creature you are \\glossterm{grappling} as a weapon.
+        Make an \\glossterm{brawling attack} against the Fortitude defense of a Medium or larger creature you are \\glossterm{grappling}.
+        If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
         The strike deals double \\glossterm{weapon damage}.
-        Treat the creature as a weapon with the \\weapontag{Heavy} weapon tag that deals 1d6 damage per size category by which the creature is above Small (minimum 1d6).
-        You must be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
-        Your attack must hit both the Armor defense of the strike's target and the Fortitude defense of the weapon creature.
+        Treat the creature as a weapon with the \\weapontag{Heavy} weapon tag that deals 1d6 damage per size category by which the creature is above Small.
+        This means you normally need two free hands to make the strike.
+        You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
 
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
       `,
