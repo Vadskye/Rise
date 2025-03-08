@@ -152,13 +152,12 @@ fn amulets() -> Vec<Apparel> {
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Perfect Equality"),
-        rank: 4,
+        rank: 5,
         short_description: String::from(r"Improves \ability<perfect body> on your lowest attribute"),
         description: String::from(r"
             If you have the \ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
             If your two lowest physical attributes are equal, this amulet has no effect.
         "),
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Apparel::default()
     }));
 
