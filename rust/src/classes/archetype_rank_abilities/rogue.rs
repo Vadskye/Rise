@@ -16,7 +16,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Sneak Attack}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \rngshort range (see \pcref{Weapon Tags}).
+                    Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \shortrange (see \pcref{Weapon Tags}).
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
                     This extra damage is doubled if the target is fully unaware of your attack.
@@ -854,11 +854,12 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
                 In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
-                This includes spells cast from wands, the special strike you can make with a \mitem{flaming} weapon, and other similar abilities.
+                This includes spells cast from wands, the special standard action strike you can make with a \mitem{flaming} weapon, and other similar abilities.
                 However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
             modifiers: None,
         },
+        // Same extra damage as Sneak Attack, but with different restrictions.
         RankAbility {
             complexity: 1,
             name: "Exploit Distraction",
@@ -869,14 +870,22 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target gained a new \glossterm{condition} this round, the strike deals double \glossterm{weapon damage}.
-                    This does not apply if the creature was already suffering an identical condition when it gained the new condition.
+                    For each of the following conditions that are met, the strike deals 1d10 \glossterm{extra damage}.
+                    \begin{raggeditemize}
+                        \item The target suffered a \glossterm{critical hit} from one of your \glossterm{allies} this round.
+                        \item The target gained a new \glossterm{condition} or \abilitytag{Curse} from one of your \glossterm{allies} this round.
+                            This does not apply if the creature was already suffering an identical condition or curse when it gained the new effect.
+                        \item The target is currently affected by your \ability{confound}, \ability{what's that over there}, or \ability{nothing is real} abilities.
+                    \end{raggeditemize}
+
+                    This extra damage stacks if multiple conditions are met.
+                    After you use this ability on a creature, you cannot deal it extra damage with this ability until it takes a \glossterm{short rest}.
 
                     \rankline
-                    \rank{4} The increased damage also applies if the target gained a new condition during the previous round, as long as it is still affected by that condition.
-                    \rank{5} You gain a +1 accuracy bonus with the strike.
-                    \rank{6} The strike deals triple weapon damage instead of double weapon damage.
-                    \rank{7} The accuracy bonus increases to +3.
+                    \rank{4} The extra damage increases to 2d8.
+                    \rank{5} The extra damage increases to 4d8.
+                    \rank{6} The extra damage increases to 6d8.
+                    \rank{7} The extra damage increases to 8d10.
                 \end{activeability}
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
