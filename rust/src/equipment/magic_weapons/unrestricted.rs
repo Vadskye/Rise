@@ -222,7 +222,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can briefly teleport next to struck creature"),
         description: String::from(r"
             As a standard action, you can make a \glossterm{strike} using this weapon.
-            The strike's minimum accuracy is $accuracy.
             If the target takes damage, you can apply a dimensional trace on it that lasts \glossterm{briefly}.
             While the dimensional trace lasts, you can activate this weapon as a \glossterm{minor action}.
             When you do, you \glossterm{teleport} into the closest unoccupied square adjacent to that creature, if such a space exists within \medrange.
@@ -361,7 +360,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can attack with +1d4 damage to steal HP"),
         description: String::from(r"
             As a standard action, you can make a mundane \glossterm<strike> using this weapon.
-            The strike's minimum accuracy is $accuracy.
             The strike deals 1d4 \glossterm{extra damage}.
             If a living creature loses \glossterm{hit points} from this strike, you can increase your \glossterm{fatigue level} by one.
             When you do, you regain $dr3l hit points at the end of the round.
@@ -369,11 +367,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         upgrades: vec![
             ItemUpgrade::new(5, "Can attack with +2d8 damage to steal HP", r"
                 The extra damage increases to 2d8, and the healing increases to $dr5l.
-                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
             ItemUpgrade::new(7, "Can attack with +5d10 damage to steal HP", r"
                 The extra damage increases to 5d10, and the healing increases to $dr7l.
-                In addition, the strike's minimum accuracy increases to $accuracy.
             "),
         ],
         ..MagicWeapon::default()
@@ -402,7 +398,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
             The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atCompulsion tag.
-            Its minimum accuracy is $accuracy.
         "),
         ..MagicWeapon::default()
     }));
@@ -419,7 +414,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
             As a standard action while this weapon is psionic, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
             The strike is made against the target's Mental defense instead of its Armor defense.
-            Its minimum accuracy is $accuracy.
             If the target takes damage, it becomes \stunned as a \glossterm{condition}.
             If it was already stunned, it takes double damage from this attack instead.
         "),
@@ -427,7 +421,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         upgrades: vec![
             ItemUpgrade::new(6, "Is psychic, can attack Mental defense", r"
                 The extra damage increases to 1d8.
-                In addition, the psychic attack's minimum accuracy increases to $accuracy, and it deals triple damage to stunned creatures.
+                In addition, the psychic attack deals triple damage to stunned creatures.
             "),
         ],
         ..MagicWeapon::default()
@@ -440,7 +434,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         description: String::from(r"
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that transforms the striking surface to poison.
             The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \atPoison tag.
-            Its minimum accuracy is $accuracy.
         "),
         tags: vec![AbilityTag::Poison],
         ..MagicWeapon::default()
@@ -458,7 +451,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
             As a standard action while this weapon is poisonous, you can make a mundane \glossterm<strike> using this weapon that fully transforms the striking surface to poison.
             The strike is made against the target's Fortitude defense instead of its Armor defense.
-            Its minimum accuracy is $accuracy.
             If the target loses hit points from this strike, it becomes poisoned by the weapon.
             The poison's accuracy is equal to the original strike's accuracy.
             It inflicts 2d10 damage per poison stage.
@@ -468,7 +460,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         upgrades: vec![
             ItemUpgrade::new(6, "Is poisonous, can attack Fortitude defense", r"
                 The extra damage increases to 1d8.
-                In addition, the poisoning attack's minimum accuracy increases to $accuracy, and its poison damage increases to 6d10.
+                In addition, the poison's damage increases to 6d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -492,13 +484,12 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that intensifies the energy.
             The strike deals double \glossterm{weapon damage}.
-            Its minimum accuracy is $accuracy.
         "),
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(6, "Is infused with cold, electricity, and fire", r"
                 The extra damage increases to 1d8.
-                In addition, the transformed attack's minimum accuracy increases to $accuracy, and it deals triple weapon damage.
+                In addition, the transformed attack deals triple weapon damage.
             "),
         ],
         ..MagicWeapon::default()
@@ -533,7 +524,6 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             It also sheds light in a 15 foot radius of \glossterm{bright illumination}.
 
             As a standard action while the weapon is burning, you can make a mundane \glossterm<strike> using this weapon that is imbued with fiery energy.
-            The strike's minimum accuracy is $accuracy.
             If the target takes damage and your attack result also beats its Reflex defense, the target burns.
             A burning creature takes 2d6 damage during your next action.
         "),
@@ -541,11 +531,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         upgrades: vec![
             ItemUpgrade::new(5, "Is on fire and can ignite", r"
                 The extra damage increases to 1d8.
-                In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 4d10.
+                In addition, the burning damage increases to 4d10.
             "),
             ItemUpgrade::new(7, "Is on fire and can ignite", r"
                 The extra damage increases to 3d6.
-                In addition, the burning attack's minimum accuracy increases to $accuracy, and its burning damage increases to 10d10.
+                In addition, the burning damage increases to 10d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -562,7 +552,6 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             It also sheds light in a 5 foot radius of \glossterm{bright illumination}.
 
             As a standard action while the weapon is charged, you can make a mundane \glossterm<strike> using this weapon that is imbued with electrical energy.
-            The strike's minimum accuracy is $accuracy.
             It \glossterm<chains> once.
         "),
         tags: vec![AbilityTag::Electricity],
@@ -574,12 +563,12 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             // 2d6 extra gives (13.6/16.8) damage, or (97%/75%)
             ItemUpgrade::new(5, "Is electrically charged and can chain", r"
                 The extra damage increases to 1d8.
-                In addition, the chaining attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
+                In addition, the chaining attack deals 2d6 \glossterm{extra damage}.
             "),
             // 4d10 extra gives (30.2/34.5) damage, or (108%/77%)
             ItemUpgrade::new(7, "Is electrically charged and can chain", r"
                 The extra damage increases to 3d6.
-                In addition, the chaining attack's minimum accuracy increases to $accuracy, and its extra damage increases to 4d10.
+                In addition, the chaining attack's extra damage increases to 4d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -595,18 +584,17 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             While chilled, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCold tag.
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with frigid energy.
-            The strike's minimum accuracy is $accuracy.
             If the target loses hit points from the strike, it becomes \slowed as a \glossterm{condition}.
         "),
         tags: vec![AbilityTag::Cold],
         upgrades: vec![
             ItemUpgrade::new(5, "Is cold and can slow", r"
                 The extra damage increases to 1d8.
-                In addition, the slowing attack's minimum accuracy increases to $accuracy, and it deals 2d6 \glossterm{extra damage}.
+                In addition, the slowing attack deals 2d6 \glossterm{extra damage}.
             "),
             ItemUpgrade::new(7, "Is cold and can slow", r"
                 The extra damage increases to 3d6.
-                In addition, the slowing attack's minimum accuracy increases to $accuracy, and the extra damage increases to 4d10.
+                In addition, the slowing attack's extra damage increases to 4d10.
             "),
         ],
         ..MagicWeapon::default()
