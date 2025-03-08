@@ -33,9 +33,11 @@ For details, see \pcref{Archetypes}.
 \glossdef{archetype rank} Each ability from an \glossterm{archetype} has a minimum rank required to gain the ability.
 For details, see \pcref{Archetype Ranks}.
 
-\glossdef{area} Many abilities affect a broad area.
+\glossdef{area} A area ability affects multiple targets within an area.
+Some area abilities are \glossterm{ranged}, while others are centered around their user.
 There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 For details, see \pcref{Area Shapes}, and \pcref{Area Types}.
+If an ability is not an area ability, it is either a \glossterm{melee} ability or a \glossterm{ranged} ability.
 
 \glossdef{armor} Armor is a form of equipment that protects your body from harm.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
@@ -460,8 +462,10 @@ For details, see \pcref{Combat Styles}.
 A \glossterm{natural weapon} is not a manufactured weapon.
 Some abilities affect or require manufactured weapons instead of natural weapons.
 
-\glossdef{melee}[Melee] A melee attack is an attack using your body or a weapon that does not leave your grasp.
+\glossdef{melee}[Melee] A melee ability affects targets in physical contact with its source.
+Typically, this involves touching a target or using a weapon that never leaves your grasp.
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
+If an ability is not melee, it is either a \glossterm{ranged} ability or an \glossterm{area} ability.
 
 \glossdef{metallic} A creature is considered metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
 This includes any \glossterm{body armor} with a metal material type.
@@ -575,13 +579,17 @@ A push movement is always a single straight line.
 
 \glossdef{range} The range of an ability determines how far away it can be used.
 Unless otherwise noted, all abilities with a range require both \glossterm{line of sight} and \glossterm{line of effect} to the point of origin or to all targets.
-There are five standard ranges: \shortrange, \medrange, \longrange, \distrange, and \extrange.
-For details, see \pcref{Ability Range}.
+There are five standard ranges used for abilities: \shortrange, \medrange, \longrange, \distrange, and \extrange (see \pcref{Ability Range}).
+Ranged weapons do not use those standard ranges, and instead use specific \glossterm{range limits} (see \pcref{Weapon Range Limits}).
 
 \glossdef{range limit}[range limits] Ranged weapons have two \glossterm{range limits} listed, with a slash between them, such as 60/180.
 The first number indicates the maximum range for a weapon's \glossterm{close range}.
 The second number indicates the maximum range for a weapon's \glossterm{long range}.
 For details, see \pcref{Weapon Range Limits}.
+
+\glossdef{ranged} A ranged ability affects targets at a distance from its source.
+Ranged abilities always have a \glossterm{range} at which they function.
+If an ability is not ranged, it is either a \glossterm{melee} ability or an \glossterm{area} ability.
 
 \glossdef{rank} Many abilities have a rank.
 This is typically equal to the minimum \glossterm{archetype rank} you need to learn or use the ability.
