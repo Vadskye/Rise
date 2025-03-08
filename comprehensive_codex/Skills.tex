@@ -284,41 +284,57 @@ This chapter describes each skill, including common uses for those skills.
     Success means the item is restored to full hit points and functionality.
 
   \subsection{Crafting Items}\label{Crafting Items}
-    You can use the Craft skill to create an item by expending time and material components. Creating an item often requires multiple consecutive Craft checks. Success on a check means you make progress on completing the item. Failure means you failed to make progress, but can try again without penalty.
+    You can use the Craft skill to create an item by expending time and material components.
+    Creating an item generally requires multiple consecutive Craft checks.
+    Success on a check means you make progress on completing the item.
+    Failure means you failed to make progress, but can try again without penalty.
 
-    Each item takes a certain amount of working time to craft, as shown on \tref{Craft Requirements}.
-    In addition, each item requires the expenditure of raw materials with a value equal to an item one rank lower than the item you are trying to craft (minimum rank 0).
-    Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
+      % * Level 1 crafter making a rank 1 item: +5 vs DV 7, assuming 2 Int.
+      %   * That means 10% failure, 50% 1x speed, 40% 2x speed, or 1.3x progress per craft.
+      % * Level 10 crafter making a rank 4 item: +11 vs DV 13, assuming 3 Int.
+      %   * That means 1.3x progress per craft again.
+      % * Level 21 crafter making a rank 7 item: +17 vs DV 19, assuming 4 Int.
+    The \glossterm{difficulty value} to Craft an item is normally equal to 5 \add twice its rank.
 
-    You can attempt to craft items from inferior or ad-hoc materials.
-    The materials do not have to be well-suited to the item's construction, but they must be physically capable of performing any necessary actions.
-    For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
-    Generally, using ill-suited materials increases the \glossterm{difficulty value} of the Craft check by at least 5, and it may negatively impact the item's function or longevity.
+    \subsubsection{Crafting Time}
+      The time required to craft an item depends on the \glossterm{weight category} of the constructed item:
+      \begin{raggeditemize}
+        \item Fine--Tiny: 4 hours per rank.
+        \item Small: 8 hours per rank.
+        \item Medium: 24 hours per rank.
+        \item Large: 40 hours (one week) per rank.
+        \item Huge: 120 hours (three weeks) per rank.
+        \item Gargantuan: 320 hours (two months) per rank.
+        \item Colossal: 960 hours (six months) per rank.
+      \end{raggeditemize}
 
-    In order to craft an item, you must make a Craft check against the item's Craft \glossterm{difficulty value}, as shown on \trefnp{Craft Requirements}.
-    If you succeed, you make progress on the item based on how long you spend crafting.
-    For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
-    Once your total effective working time exceeds the time required to craft the item, you have finished the item.
+      % TODO: clarify how thinly you can slice crafting?
+      When you make a Craft check to craft an item, you make progress on the item based on how long you spend crafting.
+      For every 5 points by which you beat the Craft check, you accomplish twice as much work in the same amount of time.
+      Once your total effective working time meets or exceeds the time required to craft the item, you have finished the item.
 
-    All item creation requires artisan's tools to give the best chance of success. If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted. For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible.
+      Individual items may be more or less time-consuming to craft than normal.
+      Consumable items, such as potions and arrows, typically take half the normal time to craft.
+      At the GM's discretion, individual items may be more time-consuming to craft.
+      For example, mail armor was historically quite time-consuming to make, but item-specific modifiers like that are beyond the scope of Rise's rules.
 
-    The time and difficulty involved in crafting an item depends on the item's rank, as defined in \trefnp{Craft Requirements}.
+      Multiple crafters can work on the same item, as long as it is physically possible to work on separate components of the item and then combine them together.
+      For example, potions and alchemical items typically can't be split between crafters in this way, but multiple people can work on the same set of body armor.
 
-    \begin{dtable}
-      \lcaption{Craft Requirements}
-      \begin{dtabularx}{\columnwidth}{>{\lcol}X l l X}
-        \tb{Item}                   & \tb{Subskill} & \tb{DV}            & \tb{Crafting Time}\fn{1} \tableheaderrule
-        Alchemical item             & Alchemy       & 5 \add twice rank  & Eight hours                             \\
-        Body armor\fn{2}            & Varies        & 10 \add twice rank & One month \add one month per rank\fn{3} \\
-        Exotic weapon               & Varies        & 10 \add twice rank & 24 hours \add 24 hours per rank         \\
-        Shield or non-exotic weapon & Varies        & 5 \add twice rank  & 24 hours \add 24 hours per rank         \\
-        Poison                      & Poison        & 5 \add twice rank  & Eight hours                             \\
-        Other item                  & Varies        & 5 \add twice rank  & 24 hours per rank                       \\
-      \end{dtabularx}
-      1. For the purpose of crafting times, treat rank 0 items as having a rank of 1/2. \\
-      2. Unlike other items, body armor can have up to four crafters working simultaneously to complete the same armor. \\
-      3. Assuming eight-hour working days for each day of the month.
-    \end{dtable}
+    \subsubsection{Crafting Materials}
+      Crafting an item requires the expenditure of raw materials.
+      Typically, raw materials of a given item rank can be used to make two items of that rank.
+      Note that raw materials for some items, particularly alchemical items, may be hard to come by in less civilized areas.
+
+      You can attempt to craft items from inferior or ad-hoc materials.
+      The materials do not have to be well-suited to the item's construction, but they must be physically capable of performing any necessary actions.
+      For example, you could construct a simple arrow-throwing trap from bent sticks or creatively strung rope, but not from sand.
+      Generally, using ill-suited materials increases the \glossterm{difficulty value} of the Craft check by at least 5, and it may negatively impact the item's function or longevity.
+
+    \subsubsection{Crafting Tools}
+      Creating an item requires artisan's tools to give the best chance of success.
+      If improvised tools are used, the check may be made with a penalty of \minus5 or greater, or it may be impossible, depending on the tools available and the item to be crafted.
+      For example, crafting a bow with improvised woodworking tools would impose a \minus5 penalty, but cutting a diamond without specialized tools is impossible.
 
     % TODO: clarify how "army of animal friends" works
 \newpage
