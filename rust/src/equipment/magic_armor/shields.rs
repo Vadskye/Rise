@@ -7,14 +7,14 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Arrow Catching"),
-        rank: 1,
+        rank: 2,
         short_description: String::from("Redirects nearby projectiles to hit you"),
         description: String::from(r"
-            Whenever an \glossterm<ally> within a \areasmall radius emanation from you is targeted by ranged \glossterm<strike>, the attack is redirected to target you instead.
+            Whenever an \glossterm<ally> within a \areasmall radius emanation from you is targeted by a ranged \glossterm<strike>, the attack is redirected to target you instead.
             Resolve the attack as if it had initially targeted you, except that the attack is not affected by cover or any \glossterm{miss chance}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Redirects projectiles to hit you", r"
+            ItemUpgrade::new(5, "Redirects projectiles to hit you", r"
                 The area increases to a \largearea radius.
             "),
         ],
