@@ -331,7 +331,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Spell-Trained Mind",
+            name: "Spell-Trained Senses",
             is_magical: true,
             rank: 3,
             description: r"
