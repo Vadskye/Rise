@@ -94,7 +94,7 @@ pub fn melee() -> Vec<MagicWeapon> {
             ItemUpgrade::new(3, "Can dazzle in an area", r"
                 When you make the strike, you also make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius of the strike's target.
                 This attack has the \atVisual tag.
-                Your minimum accuracy with the strike and with this area attack is $accuracy.
+                Your minimum accuracy with this area attack is $accuracy.
                 \hit Each target is \dazzled as a \glossterm{condition}.
             "),
         ],
