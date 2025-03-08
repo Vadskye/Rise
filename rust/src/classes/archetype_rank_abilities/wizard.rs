@@ -474,7 +474,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Spell-Trained Mind",
+            name: "Spell-Trained Understanding",
             is_magical: true,
             rank: 3,
             description: r"
