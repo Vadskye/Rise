@@ -355,10 +355,13 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Choose a \\magical ability you are currently sustaining that requires either a \\glossterm{free action} or a \\glossterm{minor action} to sustain.
         That ability is automatically sustained as long as this effect lasts.
-        % TODO: is this safe?
+        % Divine Offering breaks permanent sustain; there are probably others
         This can allow you to sustain that ability for longer than 5 minutes.
-        This does not allow you to make any choices as part of sustaining the chosen ability, such as telling summoned creatures how to act.
+        However, the ability automatically ends after 10 minutes, ending your attunement to this spell.
+
+        Automatically sustaining an ability with this spell does not allow you to make any new choices, such as giving summoned creatures new instructions.
         Instead, you always make the same choice you made the last time you manually sustained the effect.
+        You can still manually sustain the ability to change your choices while this spell is active.
       `,
       rank: 4,
       type: 'Attune',
