@@ -225,7 +225,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
+          You \\glossterm{knockback} each Huge or smaller target that loses \\glossterm{hit points} up to 30 feet in a straight line away from you.
         `,
         missGlance: true,
         targeting: `
