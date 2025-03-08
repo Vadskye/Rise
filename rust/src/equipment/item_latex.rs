@@ -27,7 +27,7 @@ impl StandardItem {
                 "
                     You gain a +1 \\glossterm<enhancement bonus> to your {}
                 ",
-                attribute.name(),
+                attribute.title(),
             ),
             magical: true,
             upgrades: vec![ItemUpgrade::new(
