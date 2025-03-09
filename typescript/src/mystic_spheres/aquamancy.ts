@@ -195,17 +195,17 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       tags: ['Manifestation'],
     },
     {
-      name: 'Aquajet Propulsion',
+      name: 'Water Hammer',
 
-      // 1 rank for movement
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
+          If the target loses \\glossterm{hit points}, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Armor against something within \\shortrange.
-          Whether you hit or miss, you may \\glossterm{push} yourself up to 15 feet in a straight horizontal line away from the target.
-          If you are \\submerged, this movement is doubled and you can also move vertically.
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
+          This attack automatically fails unless you hit the target with a \\atWater ability last round.
+          After you make this attack, you are \\glossterm{briefly} \\stunned.
         `,
       },
       rank: 1,
@@ -213,17 +213,51 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       tags: ['Manifestation'],
     },
     {
-      name: 'Intense Aquajet Propulsion',
+      name: 'Mighty Water Hammer',
 
-      // 3 ranks for movement, use high power scaling
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
+          If the target loses \\glossterm{hit points}, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Armor against something within \\medrange.
-          Whether you hit or miss, you may \\glossterm{push} yourself up to 30 feet away in a straight horizontal line away from the target.
-          If you are submerged, this movement is doubled and you can also move vertically.
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
+          This attack automatically fails unless you hit the target with a \\atWater ability last round.
+          After you make this attack, you are \\glossterm{briefly} \\stunned.
+        `,
+      },
+      rank: 4,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Surfing Slam',
+
+      // Treat this as a short range attack. Moving is sometimes good, sometimes bad.
+      attack: {
+        hit: `
+          \\damagerankthree.
+        `,
+        targeting: `
+          Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
+          Then, make an attack vs. Fortitude against something you \\glossterm{touch}.
+        `,
+      },
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Mighty Surfing Slam',
+
+      // Treat this as a short range attack. Moving is sometimes good, sometimes bad.
+      attack: {
+        hit: `
+          \\damageranksix.
+        `,
+        targeting: `
+          Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
+          Then, make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
       rank: 5,
