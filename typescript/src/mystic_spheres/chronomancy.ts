@@ -25,22 +25,6 @@ export const chronomancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Rapid Aging',
-
-      effect: `
-        Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\medrange.
-        In addition, choose any number of hours, up to 24 hours.
-        The target ages as if that much time had passed.
-        When this spell ends, the object returns to its original state.
-      `,
-      scaling: {
-        2: 'You can choose to age the target by up to a week.',
-        4: 'You can choose to age the target by up to a month.',
-        6: 'You can choose to age the target by up to three months.',
-      },
-      type: 'Sustain (minor)',
-    },
-    {
       name: 'Instant Reversal -- Attack',
 
       effect: `
@@ -57,6 +41,23 @@ export const chronomancy: MysticSphere = {
         6: 'The bonus increases to +4.',
       },
       type: 'Attune (deep)',
+    },
+    {
+      name: 'Timeseal',
+
+      effect: `
+        Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
+        The target becomes \\glossterm{briefly} frozen in time.
+        It becomes completely immune to all damage, attacks, and effects of any kind.
+        In addition, it cannot act in any way, and the duration of other effects on it does not expire.
+        At the end of the next round, it returns to normal, with no awareness of the intervening time.
+        After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+      `,
+      scaling: {
+        2: 'The maximum size increases to Large.',
+        4: 'The maximum size increases to Huge.',
+        6: 'The maximum size increases to Gargantuan.',
+      },
     },
   ],
   spells: [
@@ -187,7 +188,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Timeseal',
+      name: 'Hostile Timeseal',
 
       attack: {
         hit: `
@@ -266,6 +267,29 @@ export const chronomancy: MysticSphere = {
       },
       rank: 3,
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Accelerated Dodge',
+
+      effect: `
+        You gain a \\plus2 bonus to your Armor and Reflex defenses this round.
+        In addition, you can move up to half your land speed.
+        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+      `,
+      rank: 1,
+      tags: ['Swift (see text)'],
+    },
+    {
+      name: 'Distant Accelerated Dodge',
+
+      effect: `
+        You gain a \\plus3 bonus to your Armor and Reflex defenses this round.
+        In addition, you can move up to your land speed.
+        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+      `,
+      rank: 5,
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -507,7 +531,7 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Evasion',
 
       effect: `
-        You take no damage from \\glossterm{glancing blows} caused by abilities that affect an area and attack your Armor or Reflex defense.
+        You take no damage from \\glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 2,
