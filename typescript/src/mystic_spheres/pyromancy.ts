@@ -637,7 +637,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
           If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
-          Then, your attunement to this effect ends.
+          Then, this ability ends.
           Unlike the \\ability{total defense} and \\ability{recover} abilities, this attack is not \\atSwift, so it takes effect during your normal action in the action phase.
         `,
       },
