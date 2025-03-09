@@ -182,7 +182,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If your Armor defense is higher than the target's Armor defense, the strike deals double \glossterm{weapon damage}.
+                    If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double \glossterm{weapon damage}.
                     Otherwise, the strike deals 1d6 \glossterm{extra damage}.
 
                     \rankline
