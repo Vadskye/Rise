@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, DamageDice, Defense};
+use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
@@ -221,19 +221,6 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             complexity: 1,
-            name: "Versatile Savagery",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): \weapontag{Clinch}, \weapontag{Maneuverable}, \weapontag{Mounted}, or \weapontag{Thrown} (30/60).
-                You may treat all non-projectile weapons you use as if they had the chosen weapon tag.
-                If you choose the Thrown weapon tag, it does not affect your \glossterm{natural weapons}.
-                Whenever your rank in this archetype increases, you can change which weapon tag you chose with this ability.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
             name: "Outlandish Weaponry",
             is_magical: false,
             rank: 1,
@@ -248,21 +235,29 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Savage Precision",
             is_magical: false,
-            rank: 2,
+            rank: 1,
             description: r"
                 You gain a +2 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 0,
-            name: "Savage Precision+",
+            complexity: 1,
+            name: "Outlandish Movement",
             is_magical: false,
-            rank: 5,
+            rank: 2,
             description: r"
-                The accuracy bonus increases to +4.
+                You gain your choice of one of the following benefits:
+                \begin{raggeditemize}
+                    \item Climb: A \glossterm{climb speed} 10 feet slower than your \glossterm{base speed}.
+                    \item Jump: A \plus10 foot bonus to your maximum horizontal jump distance.
+                    \item Swim: A \glossterm{swim speed} 10 feet slower than your \glossterm{base speed}.
+                \end{raggeditemize}
+
+                You can invest up to two additional \glossterm{insight points} into this ability.
+                For each insight point, you can choose a different one of these benefits.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 1,
@@ -275,6 +270,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Move up to your movement speed.
                     During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
+                    You must still end your movement in an unoccupied space.
                     At the end of this movement, you may make a melee \glossterm{strike}.
 
                     \rankline
@@ -298,12 +294,24 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            complexity: 0,
-            name: "Endless Rush",
+            complexity: 1,
+            name: "Outlandish Speed",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+            ",
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Versatile Savagery",
             is_magical: false,
             rank: 6,
             description: r"
-                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): \weapontag{Clinch}, \weapontag{Impact}, \weapontag{Maneuverable}, or \weapontag{Thrown} (30/60).
+                You may treat all non-projectile weapons you use as if they had the chosen weapon tag.
+                If you choose the Thrown weapon tag, it does not affect your \glossterm{natural weapons}.
             ",
             modifiers: None,
         },
