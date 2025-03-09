@@ -350,12 +350,16 @@ export const vivimancy: MysticSphere = {
       effect: `
         You must be alive to cast this spell.
 
-        Whenever you cast a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
+        Whenever you cast or attack with with a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
+        You can choose to apply this enhancement after seeing the attack roll result, but before rolling damage.
         If you do, the spell deals 1d6 energy \\glossterm{extra damage} when it deals damage for the first time.
+        % TODO: the timing here is very weird
         In addition, the spell can target objects and nonliving creatures as if they were living creatures.
         However, you also lose 2 hit points.
-        Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+
+        You can increase this hit point loss to be equal to your maximum hit points.
         If you do, you gain a +5 accuracy bonus with the attack.
+        Since you can choose to apply this enhancement after seeing the attack roll result, you can cause a missed attack to hit in this way.
 
         After you enhance a spell in this way, this effect ends.
       `,
