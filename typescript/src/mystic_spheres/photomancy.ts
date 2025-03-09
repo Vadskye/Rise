@@ -350,7 +350,7 @@ export const photomancy: MysticSphere = {
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
         All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance} for the rest of the round.
-        After that time, your attunement to this effect ends.
+        After that time, this ability ends.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
         It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
