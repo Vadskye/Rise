@@ -56,7 +56,8 @@ export const fabrication: MysticSphere = {
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, you create a wall of indestructible shields around you.
-        This grants you a \\plus2 bonus to your Armor defense and \\glossterm{cover} for the rest of the round, and time, your attunement to this effect ends.
+        This grants you a \\plus2 bonus to your Armor defense and \\glossterm{cover} for the rest of the round.
+        After that time, this ability ends.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,

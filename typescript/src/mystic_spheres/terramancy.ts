@@ -609,7 +609,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes covered in stone for the rest of the round, and your attunement to this effect ends.
+        If you do, your body becomes covered in stone for the rest of the round, and this ability ends.
         Whenever you would take damage while covered in this stone, you reduce that damage by an amount equal to your \\glossterm{power}.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
