@@ -309,7 +309,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
           In addition, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
+          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
       scaling: {

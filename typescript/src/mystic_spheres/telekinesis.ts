@@ -370,7 +370,7 @@ export const telekinesis: MysticSphere = {
         You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
         The wall is visible as a shimmering magical field that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-        It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
+        It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
       scaling: {
@@ -393,7 +393,7 @@ export const telekinesis: MysticSphere = {
         Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
         You can create the cube around a sufficiently small creature to trap it inside.
         Each wall is transparent, but it blocks physical passage and \\glossterm{line of effect}.
-        The cube as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points reach 0.
+        The cube as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 7,
       tags: ['Barrier'],
