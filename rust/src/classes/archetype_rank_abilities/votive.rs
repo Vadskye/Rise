@@ -691,15 +691,8 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                Your defenses are improved by your soulkeeper's influence.
-
-                \subcf{Devil} You are \impervious to \atFire attacks.
-
-                \subcf{Fae} You are \impervious to \atCompulsion attacks.
-                
-                \subcf{Moirai} You are \impervious to \atEmotion attacks.
-
-                \subcf{Precursor} You are \trait{immune} to being \grappled.
+                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,
         },
@@ -709,15 +702,8 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                Your defenses are improved further by your soulkeeper's influence.
-
-                \subcf{Devil} You are \trait{immune} to \atFire attacks.
-
-                \subcf{Fae} You are \trait{immune} to \atCompulsion attacks.
-                
-                \subcf{Moirai} You are \trait{immune} to \atEmotion attacks.
-
-                \subcf{Precursor} You are \trait{immune} to being \slowed, \immobilized, and \paralyzed.
+                The bonus increases to four times your rank in this archetype.
+                In addition, you take no penalties for being \glossterm{resurrected}.
             ",
             modifiers: None,
         },
