@@ -178,6 +178,7 @@ export const mobileHunter: CombatStyle = {
       rank: 3,
     },
 
+    // TODO: higher rank version of this
     {
       name: 'Unbalancing Backstep',
 
