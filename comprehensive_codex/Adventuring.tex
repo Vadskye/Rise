@@ -371,20 +371,22 @@
     Objects have \glossterm{hit points} and \glossterm{damage resistance} like creatures.
     However, non-creature objects treat all damage they take as \glossterm{environmental damage} (see \pcref{Environmental Damage}).
     That means that all damage they take is reduced by their \glossterm{damage resistance} without subtracting from the remaining value of their damage resistance.
-
-    An object becomes \glossterm{broken} if its \glossterm{hit points} are reduced to 0 (see \pcref{Broken and Destroyed Objects}).
-    Objects cannot gain \glossterm{vital wounds}.
-    Objects are also not normally subject to \glossterm{critical hits}.
+    Objects are not normally subject to \glossterm{critical hits}.
+    When object lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
 
   \subsection{Sundering Objects}
     As a standard action, you can attempt to break an object with raw strength instead of damage.
     This requires two hands.
     When you sunder an object, make a Strength check.
     The \glossterm{difficulty value} of the check is equal to the object's \glossterm{damage resistance}, \plus5 for each \glossterm{weight category} above Diminutive.
+    Success means the object becomes \glossterm{broken}.
+    Critical success means the object becomes \glossterm{destroyed}.
 
   \subsection{Broken and Destroyed Objects}\label{Broken and Destroyed Objects}
-    An object that is reduced to 0 \glossterm{hit points} becomes \glossterm{broken}.
-    You can destroy an object by causing it to lose additional hit points equal to ten times its maximum hit points, or by succeeding at a check to sunder the object by 10.
+    If an object would gain its first \glossterm{vital wound}, typically by reaching negative hit points, it becomes \glossterm{broken} instead.
+    Unlike creatures, objects do not reset their negative hit points to 0 at the end of the round or when they are healed.
+    Instead, it continues to track its negative hit points indefinitely.
+    If its negative hit points reach ten times its maximum hit points, it becomes \glossterm{destroyed}.
 
     \parhead{Broken Objects}\nonsectionlabel{Broken Objects}
     Broken objects cannot be used for their intended purpose, but still retain enough of their original form to be repaired without too much work.
