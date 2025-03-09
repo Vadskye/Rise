@@ -11,7 +11,7 @@ export const prayer: MysticSphere = {
     {
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        Each target gains a +1 bonus to its Armor defense this round.
+        The target gains a +1 bonus to its Armor and Reflex defenses this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves each target's defense against attacks made against it during the current phase.
       `,
       name: 'Boon of Protection',
