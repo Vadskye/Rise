@@ -1155,7 +1155,7 @@
 
   \subsection{Ability Targeting}
 
-    \subsection{Primary and Secondary Targets}\label{Primary and Secondary Targets}
+    \subsubsection{Primary and Secondary Targets}\label{Primary and Secondary Targets}
       Some abilities that affect multiple targets distinguish between their primary and secondary targets.
       For example, the \spell{chain lightning} spell affects secondary targets within a small radius around a primary target.
       If an ability does not mention secondary targets, all of its targets are primary targets.
@@ -1165,22 +1165,31 @@
       \glossterm{Line of sight} is still measured from the ability's source.
       This can allow you to hit secondary targets behind walls if you can still see them or otherwise target them, and if there is no obstacle separating from the primary target.
 
-    \subsection{Adding Extra Targets}
+    \subsubsection{Adding Extra Targets}
       Many abilities are written as if they only affect one creature, so they use ``the target'' and similar wording in their descriptions.
       Through the use of \weapontag{Sweeping} weapons, \glossterm{chaining} spells, and other effects, it's possible to make those abilities affect multiple targets.
       Unless the ability specifically differentiates between its primary and secondary targets, each target is affected in the same way as a single target would be.
 
-    \subsection{Invalid Targets}
+    \subsubsection{Invalid Targets}
       You can always attempt to use a \glossterm{targeted} ability on an invalid target.
       For example, you can try to cast a healing spell on a rock if you want, even if the healing spell only affects living creatures.
       If the target is still invalid when the ability resolves, the ability has no effect on that target.
       However, it still affects any other targets of the ability normally.
 
-    \subsection{Targets In Unknown Locations}
+    \subsubsection{Targets In Unknown Locations}
       You can try to use a \glossterm{targeted} ability even if you don't know exactly where your intended target is.
       To do so, describe your intended target, such as ``the creature hiding somewhere in those bushes'', and choose a 5-foot square.
       If your chosen square contains your intended target, your ability has a 50\% \glossterm{miss chance}.
       At the GM's discretion, choosing the wrong square or missing due to the miss chance may have unintended consequences, such as affecting a different valid target.
+
+    \subsubsection{Targeting Proxy}\label{Targeting Proxy}
+     Some effects allow you to use a creature, object, or location as a \glossterm{targeting proxy} when using abilities.
+     When you use an ability through a targeting proxy, the ability takes effect as if you were in the targeting proxy's place.
+     The ability's maximum range is measured from the targeting proxy rather than you.
+     This affects \glossterm{line of effect} for the ability, but not \glossterm{line of sight}, since you still see from your normal location.
+
+     Abilities that require \glossterm{touch} can be used through a physical targeting proxy.
+     However, you can't cause the proxy to move, so this only works the target is already touching the proxy.
 
   \subsection{Area Shapes}\label{Area Shapes}
 
