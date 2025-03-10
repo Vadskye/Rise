@@ -131,7 +131,7 @@
   A confused creature automatically stops being confused after ten minutes, even if it was unable to rest due to its confusion.
 
   \debuffdef{dazzled} A dazzled creature has difficulty seeing.
-  It loses the benefits of the \trait{darkvision} and \trait{low-light vision} abilities if it has them.
+  It loses the benefits of special vision traits that require eyes, such as \trait{darkvision} and \trait{low-light vision}.
   In addition, it treats everything as if it had \glossterm{concealment}.
   Among other effects, this gives its \glossterm{targeted} attacks a 20\% \glossterm{miss chance}.
 
@@ -253,6 +253,7 @@
   Blindsense always has a specific range limit, and provides no benefit beyond that range.
   However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
   It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
+  Blindsense does not require using eyes.
 
   \traitdef{Blindsight}{blindsight}
   A creature with blindsight can perceive its surroundings perfectly regardless of concealment, invisibility, or light levels.
@@ -260,6 +261,7 @@
   This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
   Blindsight always has a specific range limit, and provides no benefit beyond that range.
   It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
+  Blindsight does not require using eyes.
 
   % TODO: should constructs regain hit points and DR when they rest?
   \traitdef{Construct}{construct}
@@ -283,7 +285,7 @@
   Darkvision always has a specific range limit, and provides no benefit beyond that range.
   As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
   The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
-  Darkvision is disabled while you are \dazzled.
+  Darkvision requires using eyes, and is disabled while you are \dazzled.
 
   \traitdef{Floating}{floating}
   A floating creature is only affected weakly by gravity.
@@ -372,7 +374,7 @@
   \traitdef{Low-light Vision}{low-light vision}
   A creature with low-light vision can see perfectly in \glossterm{shadowy illumination}, just like a human does in \glossterm{bright illumination}.
   This provides no benefit in areas of complete darkness.
-  Low-light vision is disabled while you are \dazzled.
+  Low-light vision requires using eyes, and is disabled while you are \dazzled.
 
   \traitdef{Mindless}{mindless}
   A mindless creature lacks a mind.
