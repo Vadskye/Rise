@@ -322,10 +322,8 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                Whenever you cast a spell, you may choose a Small or larger living plant within \medrange of you.
-                If you do, the spell takes effect as if you were in the plant's location.
-                This affects your \glossterm{line of effect} for the ability, but not your \glossterm{line of sight} (since you still see from your normal location).
-                Since an ability's range is measured from your location, this can allow you to affect targets outside your normal range.
+                Whenever you cast a spell, you may use a Small or larger living plant within \medrange of you as a \glossterm{targeting proxy}.
+                This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
             ",
             modifiers: None,
         },
