@@ -104,7 +104,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
 
-                    \parhead{Spellfused Maneuver\sparkle} Choose a pact spell you know that does not have the \atAttune or \atSustain tags.
+                    \parhead{Spellfused Maneuver\sparkle} Choose a \glossterm{ranged} pact spell you know that does not have the \atAttune or \atSustain tags.
                     Its rank most not exceed your excess rank with the maneuver.
                     You treat your rank with that spell as being equal to your excess rank, which limits the bonuses it gains from rank scaling.
                     Each target of the maneuver is also affected by that spell, using separate attack rolls for the spell and maneuver.
