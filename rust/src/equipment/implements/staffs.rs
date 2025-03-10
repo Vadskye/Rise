@@ -237,14 +237,9 @@ pub fn staffs() -> Vec<Implement> {
         short_description: String::from(r"Can exert to use abilities from a short distance away"),
         description: String::from(r"
             Whenever you use a \magical ability that does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you may activate this staff.
-            When you do, choose a location within \shortrange.
-            The ability takes effect as if you were in the chosen location.
+            When you do, choose a location within \shortrange to act as a \glossterm{targeting proxy}.
+            This means the ability determines its targets as if you were in that location, which can allow you to affect targets outside your normal range.
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this staff again.
-
-            This affects your \glossterm<line of effect> for the ability, but not your \glossterm<line of sight> (since you still see from your normal location).
-            % Wording?
-            Since an ability's range is measured from your location, this item can allow you to affect targets outside your normal range.
-            For example, a cone that normally bursts out from you would instead originate from your chosen location, potentially avoiding an obstacle between you and your target.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sometimes use abilities from a short distance away", r"
