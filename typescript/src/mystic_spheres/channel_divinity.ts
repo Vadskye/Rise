@@ -414,30 +414,6 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 3,
     },
-    {
-      name: 'Consecrated Ground',
-
-      castingTime: 'one hour',
-      effect: `
-        The area within an \\largearea radius \\glossterm{zone} from your location becomes sacred to your deity.
-        % TODO: what cares about consecration?
-        This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
-      `,
-      rank: 2,
-      type: 'Attune',
-    },
-    {
-      name: 'Permanent Consecrated Ground',
-
-      castingTime: '24 hours',
-      functionsLike: {
-        exceptThat: `
-          the effect is permanent.
-        `,
-        name: 'consecrated ground',
-      },
-      rank: 4,
-    },
 
     {
       name: 'Divine Transit',
@@ -469,36 +445,6 @@ export const channelDivinity: MysticSphere = {
         name: 'divine transit',
       },
       rank: 6,
-      tags: [],
-      castingTime: 'one hour',
-    },
-
-    {
-      name: 'Commune',
-
-      castingTime: '24 hours',
-      effect: `
-        You ask your source of divine power a single yes or no question.
-        You receive a correct answer to that question to the limit of that source's knowledge, which is usually quite extensive.
-        The answer is typically given as "yes" or "no", but it may answer "unclear" if the source does not know the answer.
-        In cases where a one-word answer would be misleading or contrary to the source's interests, a short phrase may be given as an answer instead.
-
-        This ritual only yields accurate results once for any given situation.
-        If you perform the ritual again in a situation that has not meaningfully changed, you receive no answer regardless of your question.
-        For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
-      `,
-      rank: 3,
-    },
-    {
-      name: 'Efficient Commune',
-
-      functionsLike: {
-        exceptThat: `
-          the casting time is shorter, and the ritual is much less exhausting.
-        `,
-        name: 'commune',
-      },
-      rank: 5,
       tags: [],
       castingTime: 'one hour',
     },
