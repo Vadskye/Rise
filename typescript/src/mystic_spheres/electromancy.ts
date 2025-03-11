@@ -509,10 +509,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \plus2 accuracy bonus with this attack.
         `,
       },
-      rank: 2,
+      rank: 3,
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -523,10 +524,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankfour.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or \\glossterm{metallic} weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \plus2 accuracy bonus with this attack.
         `,
       },
-      rank: 5,
+      rank: 6,
       type: 'Attune (deep)',
     },
 
