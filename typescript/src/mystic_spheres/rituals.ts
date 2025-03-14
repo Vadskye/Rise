@@ -1536,12 +1536,10 @@ export const rituals: Ritual[] = [
       The sensor passively observes its surroundings.
       As with other \\abilitytag{Scrying} effects, its visual acuity is the same as yours.
       You can choose the minimum size category that the alarm will notify you for when you cast this spell.
-      If it sees a creature or object of that size or larger moving within 50 feet of it, it will trigger an alarm.
-      When you perform this ritual, you choose whether the alarm causes the sound of a ringing bell or a mental "ping" that only you can notice.
+      If it sees a creature or object of that size or larger moving within 50 feet of it, it will trigger a mental "ping" that only you can notice.
       You must be within 1 mile of the sensor to receive this mental alarm.
-      This mental sensation is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
-      `,
-
+      The alarm is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
+    `,
     rank: 1,
     tags: ['Scrying'],
     type: 'Attune',
@@ -1558,7 +1556,7 @@ export const rituals: Ritual[] = [
       A creature without a proper name cannot be identified by name in this way.
       If you specify the chosen creature's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-      If the creature is within 100 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
+      If the creature is within 200 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
     `,
 
     rank: 3,
@@ -1589,7 +1587,7 @@ export const rituals: Ritual[] = [
       A creature or object without a proper name cannot be identified by name in this way.
       If you specify the chosen creature or object's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-      If the chosen creature or object is within 100 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
+      If the chosen creature or object is within 200 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
       % Wording?
       If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
       you learn only that that aspect of the information is missing.
@@ -1636,7 +1634,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      Choose a creature within 100 miles of you.
+      Choose a creature within 200 miles of you.
       You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
       However, you must specify your target with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the target.
@@ -1706,7 +1704,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Each target can communicate mentally through telepathy with each other target.
-      This communication is instantaneous, though it cannot reach more than 100 miles or across planes.
+      This communication is instantaneous, though it cannot reach more than 200 miles or across planes.
 
       % Is this grammatically correct?
       Each target must attune to this ritual independently.
@@ -1774,7 +1772,7 @@ export const rituals: Ritual[] = [
       Instead, it automatically tries to follow the target to stay in its space.
       At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
       targeting: `
-      Make an attack vs. Mental against one creature within 100 miles of you.
+      Make an attack vs. Mental against one creature within 200 miles of you.
       You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
       However,  must specify your target with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the target.
