@@ -107,8 +107,15 @@
             z-index: 0;
         }
     }
-    .specific-weapon-button .attack-roll {
-        width: 140px;
+
+    // Only show the weapon buttons if those weapons exist
+    .weapon-exists:not(:checked) + .specific-weapon-button {
+        display: none;
+    }
+    .specific-weapon-button {
+        .attack-roll {
+            width: 140px;
+        }
     }
     button[type=roll]:before {
         content: none;

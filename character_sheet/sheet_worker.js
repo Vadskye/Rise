@@ -311,6 +311,7 @@ const ATTRIBUTE_SHORTHAND = {
   willpower: "Wil",
   other: "Other",
 };
+const supportedWeaponCount = 4;
 
 function roundToFiveFootIncrements(val) {
   return Math.floor(Math.floor(val) / 5) * 5;
@@ -627,7 +628,6 @@ function handleCoreStatistics() {
   handleUnknownStatistic();
   handleVitalRolls();
   handleWeaponDamageDice();
-  handleWeaponSanitization();
   handleWeightLimits();
 }
 
@@ -2017,6 +2017,7 @@ function handleRust() {
         "weapon_0_name",
         "weapon_1_name",
         "weapon_2_name",
+        "weapon_3_name",
       ],
     },
     (v) => {
@@ -2038,6 +2039,7 @@ function handleRust() {
         v.weapon_0_name,
         v.weapon_1_name,
         v.weapon_2_name,
+        v.weapon_3_name,
       ]) {
         if (weaponName) {
           weapons.push(`StandardWeapon::${weaponName}.weapon()`);
@@ -2410,9 +2412,10 @@ function handleStrikeAttacks() {
     const extra_damage_key = `repeating_strikeattacks_${sectionId}attack_extra_damage`;
     const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
     const weapon_keys = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < supportedWeaponCount; i++) {
       weapon_keys.push(`weapon_${i}_magical_damage_total`);
       weapon_keys.push(`weapon_${i}_mundane_damage_total`);
+      weapon_keys.push(`weapon_${i}_exists`);
     }
     getAttrs(
       [
@@ -2426,13 +2429,17 @@ function handleStrikeAttacks() {
       function(v) {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
 
+        // We need to copy the weapon_exists keys into the local repeating section.
+        const weaponExistence = {};
         const weaponDice = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < supportedWeaponCount; i++) {
           weaponDice.push(v[`weapon_${i}_${dice_type}_damage_total`]);
+          weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = v[`weapon_${i}_exists`];
         }
         callback({
           extraDamage: v[extra_damage_key],
           weaponDice,
+          weaponExistence,
         });
       }
     );
@@ -2495,8 +2502,8 @@ function handleStrikeAttacks() {
     if (sectionId) {
       sectionId += "_";
     }
-    const attrs = {};
-    for (let i = 0; i < 3; i++) {
+    const attrs = parsed.weaponExistence;
+    for (let i = 0; i < supportedWeaponCount; i++) {
       const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
       const damageComponents = [
         parsed.weaponDice[i],
@@ -2504,6 +2511,7 @@ function handleStrikeAttacks() {
       ];
       attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
     }
+    console.log("Setting strike total damage", attrs);
     setAttrs(attrs);
   }
 
@@ -2519,8 +2527,9 @@ function handleStrikeAttacks() {
 
   // Global strike attack change
   on(
-    "change:weapon_0_magical_damage_total change:weapon_1_magical_damage_total change:weapon_2_magical_damage_total" +
+    "change:weapon_0_magical_damage_total change:weapon_1_magical_damage_total change:weapon_2_magical_damage_total " +
     "change:weapon_0_mundane_damage_total change:weapon_1_mundane_damage_total change:weapon_2_mundane_damage_total" +
+    "change:weapon_3_magical_damage_total change:weapon_3_mundane_damage_total" +
     " change:level change:magical_power change:mundane_power",
     function() {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
@@ -2715,8 +2724,7 @@ function handleVitalWounds() {
 }
 
 function handleWeaponDamageDice() {
-
-  for (const weaponIndex of [0, 1, 2, 3]) {
+  for (const weaponIndex of Array(supportedWeaponCount).keys()) {
     const heavyKey = `weapon_${weaponIndex}_heavy`;
     const versatileGripKey = `weapon_${weaponIndex}_versatile_grip`;
     const ignorePowerKey = `weapon_${weaponIndex}_ignore_power`;
@@ -2724,6 +2732,7 @@ function handleWeaponDamageDice() {
     const nameKey = `weapon_${weaponIndex}_name`;
     const magicalTotalKey = `weapon_${weaponIndex}_magical_damage_total`;
     const mundaneTotalKey = `weapon_${weaponIndex}_mundane_damage_total`;
+    const weaponExistsKey = `weapon_${weaponIndex}_exists`;
 
     onGet(
       {
@@ -2736,6 +2745,7 @@ function handleWeaponDamageDice() {
           setAttrs({
             [magicalTotalKey]: "",
             [mundaneTotalKey]: "",
+            [weaponExistsKey]: 0,
           });
 
           return;
@@ -2770,31 +2780,11 @@ function handleWeaponDamageDice() {
         setAttrs({
           [magicalTotalKey]: magicalTotal,
           [mundaneTotalKey]: mundaneTotal,
+          [weaponExistsKey]: magicalTotal !== "" || mundaneTotal !== "",
         });
       }
     )
   }
-}
-
-function handleWeaponSanitization() {
-  const keys = [];
-  for (let i = 0; i < 3; i++) {
-    keys.push(`weapon_${i}_tags`);
-    keys.push(`weapon_${i}_name`);
-  }
-  onGet(
-    {
-      string: keys,
-    },
-    (v) => {
-      const attrs = {};
-      for (let i = 0; i < 3; i++) {
-        attrs[`weapon_${i}_name_sanitized`] = sanitizeText(v[`weapon_${i}_name`]);
-        attrs[`weapon_${i}_tags_sanitized`] = sanitizeText(v[`weapon_${i}_tags`]);
-      }
-      setAttrs(attrs);
-    }
-  );
 }
 
 function handleWeightLimits() {
