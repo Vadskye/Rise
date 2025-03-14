@@ -238,7 +238,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.'},
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
     },
 
     {
@@ -259,7 +259,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 4.'},
+      scaling: { special: 'The damage increases by 3d8 for each rank beyond 4.' },
     },
 
     {
@@ -574,14 +574,11 @@ export const photomancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfivelow.',
       },
       rank: 6,
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.'},
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
     },
-  ],
-  rituals: [
     {
       name: 'Disguise Image',
 
-      castingTime: "one minute",
       effect: `
         You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
@@ -590,11 +587,9 @@ export const photomancy: MysticSphere = {
       tags: ['Visual'],
       type: 'Attune',
     },
-
     {
       name: 'Mass Disguise Image',
 
-      castingTime: "one minute",
       functionsLike: {
         mass: true,
         name: 'Disguise Image',
@@ -603,109 +598,17 @@ export const photomancy: MysticSphere = {
       rank: 3,
       type: 'Attune (target)',
     },
+  {
+    name: 'Malleable Disguise Image',
 
-    {
-      name: 'Malleable Disguise',
-
-      castingTime: "one hour",
-      functionsLike: {
-        exceptThat: `
-          you can change the nature of the disguise as a \\glossterm{minor action}.
-        `,
-        name: 'disguise image',
-      },
-      rank: 4,
-      type: 'Attune',
-    },
-    {
-      name: 'Continuous Light',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
-        The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius.
+    functionsLike: {
+      exceptThat: `
+        you can change the nature of the disguise as a \\glossterm{minor action}.
       `,
-      rank: 1,
-      tags: ['Visual'],
-      type: 'Attune',
+      name: 'disguise image',
     },
-
-    {
-      name: 'Massive Continuous Light',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        name: "continuous light",
-        exceptThat: "the area increases to a \\largearea radius.",
-      },
-      rank: 3,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Brilliant Light',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
-        The target glows like a torch, emitting \\glossterm{brilliant illumination} in a \\smallarea radius.
-      `,
-      rank: 5,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Massive Brilliant Light',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        name: "brilliant light",
-        exceptThat: "the area increases to a \\largearea radius.",
-      },
-      rank: 7,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Permanent Light',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        name: "continuous light",
-        exceptThat: "the effect lasts for one year.",
-      },
-      rank: 2,
-      tags: ['Visual'],
-    },
-
-    {
-      name: 'Massive Permanent Light',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        name: "continuous light",
-        exceptThat: "the area increases to a \\largearea radius, and the effect lasts for one year.",
-      },
-      rank: 4,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'False Decrepify',
-
-      castingTime: 'one hour',
-      effect: `
-        Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        The target appears old and worn down.
-        It may be appear dusty, have cracks and wrinkles from age, or otherwise appear undesirable and low quality.
-      `,
-      rank: 1,
-      tags: ['Visual'],
-      type: 'Attune',
-    },
+    rank: 4,
+    type: 'Attune',
+  },
   ],
 };

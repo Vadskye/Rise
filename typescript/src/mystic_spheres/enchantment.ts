@@ -702,132 +702,17 @@ export const enchantment: MysticSphere = {
       scaling: { special: 'The recovery increases by 2d10 for each rank beyond 6.' },
       tags: ['Swift'],
     },
-  ],
-  rituals: [
-    {
-      name: 'Cleansing Meditation',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose up to six ritual participants.
-        Once the ritual finishes, each target enters a deep meditative state for ten minutes.
-        At the end of that time, it removes all \\atEmotion and \\atCompulsion effects affecting it, including curses.
-        It also gains the normal benefits of a \\glossterm{short rest}.
-      `,
-      rank: 2,
-      tags: ['Compulsion'],
-    },
-
-    {
-      name: 'Enforced Meditation',
-
-      castingTime: 'one minute',
-      attack: {
-        hit: `
-          Once the ritual finishes, each target enters a deep meditative state for ten minutes.
-          At the end of that time, it removes all \\atEmotion and \\atCompulsion effects affecting it, including curses.
-          It also gains the normal benefits of a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 4,
-      tags: ['Compulsion'],
-    },
-
-    {
-      name: 'Animal Messenger',
-
-      castingTime: 'one minute',
-      attack: {
-        hit: `
-          The target is compelled to deliver a message for you.
-        You can give the animal a small piece of parchment or similarly sized item containing up to 25 words.
-        In addition, choose a destination that you can clearly visualize.
-        You must have a general idea of the direction and distance to that location from your current location.
-        You must also visualize what a valid recipient for the message looks like.
-        You can leave this description vague, such as "any humanoid creature", or be more specific, like "a hawk-nosed human wearing a red cloak".
-
-        The animal will attempt to travel to that destination to the best of its ability, following the directions you have given it.
-        It will not willingly part with its message until it reaches its destination.
-        Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only briefly as necessary to sustain itself.
-        When the animal has delivered its message, this effect ends, allowing you to know that the message has been delivered.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
-        `,
-      },
-      rank: 2,
-      type: 'Attune',
-    },
-
     {
       name: 'Tell the Truth',
 
-      castingTime: 'one minute',
       attack: {
         hit: `Each target is unable to say things it knows to be untrue.`,
         targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against up to five creatures within \\medrange.
+          Make an attack vs. Mental against up to five creatures within \\medrange.
         `,
       },
       rank: 3,
       type: 'Sustain (attuneable, standard)',
-    },
-
-    {
-      name: 'Antipathy',
-
-      // original targets: ['One Large or smaller object within \\medrange', 'Creatures near the target (see text)']
-      castingTime: '24 hours',
-      attack: {
-        crit: `The creature is \\panicked instead of frightened.`,
-        hit: `The creature is \\frightened by the chosen object until it finishes a \\glossterm{short rest}.`,
-        targeting: `
-        Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
-        In addition, choose one Large or smaller object within \\medrange.
-        If the target is moved, this effect ends.
-
-        Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make a \\glossterm{reactive attack} vs. Mental against it.
-        Your accuracy with this attack is equal to half the sum of your level and Perception.
-        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
-        `,
-      },
-
-      rank: 4,
-      tags: ['Emotion'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Sympathy',
-
-      castingTime: '24 hours',
-      attack: {
-        crit: `The creature is also compelled to get as close as possible to the chosen object to admire it in greater detail.`,
-        hit: `The creature is fascinated by the chosen object until it finishes a \\glossterm{short rest}.
-        It can take no actions other than staring at the object.
-        It is \\unaware of any attacks against it, and anything else going on its environment.
-        Any act by you or by creatures that appear to be your allies that threatens or harms the creature breaks the effect.
-        Harming the creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
-        `,
-        targeting: `
-        Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
-        In addition, choose one Large or smaller object within \\medrange.
-        If the target is moved, this effect ends.
-
-        Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make a \\glossterm{reactive attack} vs. Mental against it.
-        Your accuracy with this attack is equal to half the sum of your level and Perception.
-        This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
-        After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 4,
-      tags: ['Emotion'],
-      type: 'Attune',
     },
   ],
 };

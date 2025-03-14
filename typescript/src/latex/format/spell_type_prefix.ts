@@ -1,6 +1,13 @@
-import { SpellLike } from "@src/mystic_spheres";
+import { Ritual, SpellLike } from "@src/mystic_spheres";
 import { sentenceCase } from "change-case";
 import { formatTagLatex } from "@src/latex/format/ability_tag";
+
+export function ritualSpheres(
+  ritual: Ritual,
+): string {
+  // TODO: sort by name
+  return `Spheres: ${ritual.spheres.join(", ")}`;
+}
 
 export function spellTypePrefix(
   spell: Pick<SpellLike, "castingTime" | "cost" | "name" | "tags" | "type" | "rank">,
