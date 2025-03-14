@@ -89,10 +89,10 @@ def paper_ability():
 
 
 def roll20_abilities():
-    return [
+    return div({"class": "all-abilities"}, [
         div({"class": "section-header"}, "Weapon-Based Strikes"),
         flex_row(
-            {"class": "active-ability-group"},
+            {"class": "active-ability-group weapon-based-strikes"},
             fieldset(
                 {"class": f"repeating_strikeattacks"},
                 strike_based_attack(),
@@ -100,7 +100,7 @@ def roll20_abilities():
         ),
         div({"class": "section-header"}, "Other Damaging Attacks"),
         flex_row(
-            {"class": "active-ability-group"},
+            {"class": "active-ability-group other-damaging-attacks"},
             fieldset(
                 {"class": f"repeating_otherdamagingattacks"},
                 other_damaging_attack(),
@@ -108,7 +108,7 @@ def roll20_abilities():
         ),
         div({"class": "section-header"}, "Debuffs"),
         flex_row(
-            {"class": "active-ability-group"},
+            {"class": "active-ability-group debuffs"},
             fieldset(
                 {"class": f"repeating_nondamagingattacks"},
                 nondamaging_attack(),
@@ -116,7 +116,7 @@ def roll20_abilities():
         ),
         div({"class": "section-header"}, "Other Abilities"),
         flex_row(
-            {"class": "active-ability-group"},
+            {"class": "active-ability-group other-abilities"},
             fieldset(
                 {"class": f"repeating_abilities"},
                 ability(),
@@ -124,13 +124,13 @@ def roll20_abilities():
         ),
         flex_wrapper(div({"class": "section-header"}, "Temporary Modifiers")),
         flex_row(
-            {"class": "active-ability-group"},
+            {"class": "temporary-modifiers"},
             fieldset(
                 {"class": "repeating_temporarymodifiers"},
                 temporary_modifier_toggle(),
             ),
         ),
-    ]
+    ])
 
 
 def attributes_and_skills():
@@ -464,95 +464,6 @@ def movement(destination):
             ]),
         ],
     )
-
-
-def active_ability_button(ability_type):
-    prefix = "active_ability0" if ability_type == "ability" else "attack"
-    button_name = "use_ability"
-    button_value = {
-        "ability": (
-            "&{template:custom}"
-            + " {{title=@{active_ability0_name}}}"
-            + " {{subtitle=@{character_name}}}"
-            + " {{color=@{chat_color}}}"
-            + " {{desc=@{active_ability0_effect}}}"
-        ),
-        "nondamaging attack": attack_button_text(),
-        "other damaging attack": other_damaging_attack_button_text(),
-    }[ability_type]
-    extra_buttons = []
-    if ability_type == "strike-based attack":
-        for i in range(3):
-            i = str(i)
-            extra_buttons.append(
-                text_input({"class": "hidden", "name": f"weapon_{i}_total_damage_dice"})
-            )
-            extra_buttons.append(
-                text_input(
-                    {"class": "hidden", "name": f"weapon_{i}_total_damage_modifier"}
-                )
-            )
-            extra_buttons.append(
-                crit_damage_button(
-                    "@{weapon_" + i + "_total_damage}",
-                    "crit_" + i,
-                    " - @{weapon_" + i + "_name}",
-                )
-            )
-
-    return div(
-        {"class": "active-ability-button"},
-        [
-            text_input(
-                {
-                    "class": "hidden",
-                    "readonly": True,
-                    "name": prefix + "_accuracy",
-                    "value": "0",
-                }
-            ),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": prefix + "_defense"}
-            ),
-            text_input(
-                {
-                    "class": "hidden",
-                    "readonly": True,
-                    "name": "calculated_dice_and_modifier",
-                }
-            ),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": "calculated_dice_pool"}
-            ),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": "calculated_modifier"}
-            ),
-            text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
-            text_input({"class": "hidden", "name": "dice_text", "readonly": True}),
-            checkbox({"class": "hidden", "name": "is_targeted", "readonly": True}),
-            text_input(
-                {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
-            ),
-            textarea({"class": "hidden", "name": prefix + "_effect"}),
-            button(
-                {
-                    "class": "attack-roll",
-                    "name": button_name,
-                    "type": "roll",
-                    "value": button_value,
-                },
-                text_input(
-                    {
-                        "class": "attack-label",
-                        "readonly": True,
-                        "name": prefix + "_name",
-                    }
-                ),
-            ),
-            *extra_buttons,
-        ],
-    )
-
 
 
 def temporary_modifier_toggle():

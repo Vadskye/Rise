@@ -340,35 +340,26 @@ def strike_based_attack():
                 None,
                 {"name": "is_targeted"},
             ),
-            text_input(
-                {
-                    "class": "hidden",
-                    "readonly": True,
-                    "name": "targeting_text_first_page",
-                }
-            ),
         ],
         [
+            weapon_exists_checkbox(0),
             flex_row({"class": "specific-weapon-button"}, weapon_buttons(0)),
+            weapon_exists_checkbox(1),
             flex_row({"class": "specific-weapon-button"}, weapon_buttons(1)),
+            weapon_exists_checkbox(2),
             flex_row({"class": "specific-weapon-button"}, weapon_buttons(2)),
-            button(
-                {
-                    "class": "attack-roll strike-dropdown",
-                    "name": "use_ability",
-                    "type": "roll",
-                    "value": weapon_dropdown_button_text(),
-                },
-                text_input(
-                    {
-                        "class": "attack-label",
-                        "readonly": True,
-                        "name": "attack_name",
-                    }
-                ),
-            ),
+            weapon_exists_checkbox(3),
+            flex_row({"class": "specific-weapon-button"}, weapon_buttons(3)),
         ],
     )
+
+def weapon_exists_checkbox(i):
+    return checkbox({
+        "class": f"hidden weapon-exists weapon-{i}",
+        "name": f"weapon_{i}_exists_local",
+        "readonly": True,
+        "value": "1",
+    })
 
 
 def weapon_buttons(i):
@@ -402,47 +393,6 @@ def weapon_buttons(i):
             }
         ),
     ]
-
-
-def weapon_dropdown_button_text():
-    return (
-        "&{template:custom}"
-        + " {{title=@{attack_name}}}"
-        + "?{Weapon"
-        + "| "
-        + weapon_template(0)
-        + "| "
-        + weapon_template(1)
-        + "| "
-        + weapon_template(2)
-        + "}"
-        + " {{color=@{chat_color}}}"
-        + " @{debuff_headers}"
-        + " {{desc=@{attack_effect}}}"
-    )
-
-
-def weapon_template(i):
-    i = str(i)
-
-    return (
-        " @{weapon_"
-        + i
-        + "_name_sanitized},"
-        + " {{subtitle=@{character_name_sanitized} - @{weapon_"
-        + i
-        + "_name_sanitized}&amp;#125;&amp;#125;"
-        + " @{targeting_text_first_page}"
-        + " {{Attack=[[d10!+@{accuracy}+@{accuracy_with_strikes}+@{weapon_"
-        + i
-        + "_accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}&amp;#125;&amp;#125;"
-        + " {{Damage=[[@{weapon_"
-        + i
-        + "_total_damage}]]&amp;#125;&amp;#125;"
-        + " {{Tags=@{weapon_"
-        + i
-        + "_tags_sanitized} &amp;#125;&amp;#125;"
-    ).replace("~", "&amp;#126;")
 
 
 def other_damaging_attack():
