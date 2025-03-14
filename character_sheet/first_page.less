@@ -196,7 +196,7 @@
     width: 1em;
 }
 
-.active-ability-group {
+.all-abilities {
     .repcontainer {
         display: flex;
         flex-direction: row;
@@ -204,24 +204,32 @@
         justify-content: space-between;
         align-content: flex-start;
         align-items: flex-start;
-        width: calc(100% - 65px);
-
-        .repitem {
-            // Conceptually, this should match the name width displayed on the
-            // Active page. However, specifying a precise width here causes odd
-            // behavior, so we use percentages instead.
-            width: 48%;
-            flex-grow: 1;
-            max-width: 50%;
-
+        width: 100%;
+    }
+    .repitem {
+        font-size: 16px;
+        input {
             font-size: 16px;
-            input {
-                font-size: 16px;
-            }
         }
     }
 
-    .repcontrol_add, .repcontrol_del {
+    // Weapons want to use the entire width.
+    .weapon-based-strikes .repitem {
+        width: 100%;
+    }
+
+    // Other attacks want to match the name width displayed on the Active
+    // page. However, specifying a precise width here causes odd
+    // behavior, so we use percentages instead.
+    .other-damaging-attacks, .debuffs, .other-abilities {
+        .repitem {
+            width: 48%;
+            flex-grow: 1;
+            max-width: 50%;
+        }
+    }
+
+    .repcontrol_add, .repcontrol_del, .repcontrol_edit {
         // This can have an element-specific "display: inline-block" if someone
         // toggles Modify on and off, so we resort to dumber means to 
         left: -10000px;
@@ -229,29 +237,63 @@
         visibility: hidden;
     }
 
-    .attack, .ability {
-        margin-right: 1em;
+    .weapon-based-strikes {
+        gap: 0.5em;
+        // We want to display the attack name, but nothing else from .attack-prefix
+        .attack-prefix {
+            border-right: 1px solid grey;
+            width: 20%;
 
-        .attack-prefix, .attack-calcs, .attack-effect, .specific-weapon-button, .active-ability-effect {
+            .attack-calcs {
+                display: none;
+            }
+
+            .attack-name input {
+                pointer-events: none;
+            }
+
+            .attack-name .under-label {
+                display: none;
+            }
+        }
+
+        .attack-buttons {
+            flex-basis: 70%;
+            flex-grow: 1;
+            flex-direction: row;
+            gap: 0.5em;
+
+            // Only show the weapon buttons if those weapons exist
+            .weapon-exists:not(:checked) + .specific-weapon-button {
+                display: none;
+            }
+
+            .specific-weapon-button {
+                flex-basis: 20%;
+                flex-grow: 1;
+            }
+
+            .strike-total-damage {
+                display: none;
+            }
+        }
+    }
+
+    .other-damaging-attacks, .debuffs, .other-abilities {
+        .attack-prefix {
             display: none;
         }
 
-        .attack-roll {
-            align-items: center;
-        }
+        // .attack-roll {
+        //     align-items: center;
+        // }
 
         .attack-buttons {
             flex-grow: 1;
         }
+    }
 
-        .attack-label, .ability-name-dynamic {
-            background: none;
-            box-shadow: none;
-            cursor: inherit;
-            margin-left: 0.1em;
-            padding: 0;
-        }
-
+    .weapon-based-strikes, .other-damaging-attacks, .debuffs, .other-abilities {
         button {
             align-items: baseline;
             background: none;
@@ -260,6 +302,20 @@
             display: flex;
             width: 100%;
         }
+        .attack-label, .ability-name-dynamic, .attack-name input, .specific-weapon-button input {
+            background: none;
+            box-shadow: none;
+            pointer-events: none;
+            margin-left: 0.1em;
+            padding: 0;
+        }
+        .attack-effect, .active-ability-effect {
+            display: none;
+        }
+    }
+
+    .attack, .ability {
+        margin-right: 1em;
     }
 
     .custom-modifier-toggle {
