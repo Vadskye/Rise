@@ -1246,9 +1246,11 @@
         \item Zone: Has a duration based on a location. Some zones can be moved after being created, but that movement is not tied to a specific creature or object.
       \end{raggeditemize}
 
-  \subsection{Impossible Spells and Rituals}
-    When you try to use a spell or ritual in an impossible way, the ability fails with no effect.
-    This most commonly happens if you attempt to declare an invalid target for a spell.
+  \subsection{Impossible Abilities}
+    When you try to use an ability in an impossible way, it simply fails with no effect.
+    This can happen if all targets are invalid, such as if you attempt to use an ability that only affects creatures on an object.
+    An ability that has a mixture of valid and invalid targets will generally affect the valid targets normally while ignoring the invalid targets.
+    However, if the ability changes its effects based on the number of targets or otherwise would rely on the invalid targets for its choices, such as a spell that swaps the positions of multiple creatures, the entire ability fails.
 
   \subsection{Ability Durations}\label{Ability Durations}
 
