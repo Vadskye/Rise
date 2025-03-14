@@ -665,48 +665,4 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       type: 'Attune (deep)',
     },
   ],
-  rituals: [
-    {
-      name: 'Cold Tolerance',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
-        The target suffers no harm from being in a cold environment.
-        It can exist comfortably in conditions as low as -50 degrees Fahrenheit.
-        Its equipment, if any, is also protected.
-        This does not protect the target from cold damage.
-      `,
-      rank: 1,
-      type: 'Attune',
-    },
-    {
-      name: 'Frostfall',
-
-      castingTime: 'one hour',
-      effect: `
-        The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location decreases rapidly.
-        Over the next minute after you finish this ritual, the temperature decreases by 40 degrees Fahrenheit, to a minimum of \\minus30 degrees.
-        Unlike normal, this effect does not require \\glossterm{line of effect} to you.
-        Instead, it affects all outdoor locations within the area.
-        Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
-      `,
-      rank: 4,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Froststorm',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        exceptThat: `
-          the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
-        `,
-        name: 'frostfall',
-      },
-      rank: 7,
-      type: 'Attune',
-    },
-  ],
 });

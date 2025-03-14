@@ -22,6 +22,8 @@ import { verdamancy } from "./verdamancy";
 import { vivimancy } from "./vivimancy";
 import { universal } from "./universal";
 
+export { rituals } from "./rituals";
+
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
@@ -53,8 +55,7 @@ export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pa
 export interface MysticSphere {
   cantrips?: Cantrip[];
   hasImage?: boolean;
-  name: string;
-  rituals?: Ritual[];
+  name: SphereName;
   sources: MysticSphereSource[];
   shortDescription: string;
   specialRules?: string;
@@ -73,16 +74,16 @@ export interface BaseSpellLike {
   tableText?: string;
   tags?: string[];
   type?:
-    | "Attune"
-    | "Attune (deep)"
-    | "Attune (deep, target)"
-    | "Attune (target)"
-    | "Sustain (free)"
-    | "Sustain (minor)"
-    | "Sustain (standard)"
-    | "Sustain (attuneable, free)"
-    | "Sustain (attuneable, minor)"
-    | "Sustain (attuneable, standard)";
+  | "Attune"
+  | "Attune (deep)"
+  | "Attune (deep, target)"
+  | "Attune (target)"
+  | "Sustain (free)"
+  | "Sustain (minor)"
+  | "Sustain (standard)"
+  | "Sustain (attuneable, free)"
+  | "Sustain (attuneable, minor)"
+  | "Sustain (attuneable, standard)";
 }
 
 export type Cantrip = BaseSpellLike;
@@ -91,10 +92,14 @@ export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
+export type SphereName = "Aeromancy" | "Aquamancy" | "Astromancy" | "Channel Divinity" | "Chronomancy" | "Cryomancy" | "Electromancy" | "Enchantment" | "Fabrication" | "Photomancy" | "Polymorph" | "Prayer" | "Pyromancy" | "Revelation" | "Summoning" | "Telekinesis" | "Terramancy" | "Thaumaturgy" | "Toxicology" | "Umbramancy" | "Verdamancy" | "Vivimancy" | "Universal";
+
 // TODO: allow customizing individual ritual fatigue costs
 export interface Ritual extends Spell {
   castingTime: "24 hours" | "one minute" | "one hour" | "minor action" | "special" | "one week";
   materialCost?: boolean;
+  sphereEffects?: Partial<Record<SphereName, string>>;
+  spheres: SphereName[];
 }
 
 export type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;

@@ -5,9 +5,11 @@ import {
   generateCombatStyleLists,
   generateCombatStyleSummaries,
   generateMysticSphereLists,
-  generateMysticSphereSummaries,
+  generateMysticSphereRitualSummaries,
+  generateMysticSphereSpellSummaries,
+  generateRitualDescriptions,
 } from "@src/latex";
-import { mysticSpheres } from "@src/mystic_spheres";
+import { mysticSpheres, rituals } from "@src/mystic_spheres";
 import cli from "commander";
 import fs from "fs";
 
@@ -15,10 +17,14 @@ function generateLatex(latexType: string): string {
   let latex = "";
   if (latexType === "mystic_sphere_lists") {
     latex = generateMysticSphereLists();
-  } else if (latexType === "mystic_sphere_summaries") {
-    latex = generateMysticSphereSummaries();
+  } else if (latexType === "mystic_sphere_spell_summaries") {
+    latex = generateMysticSphereSpellSummaries();
+  } else if (latexType === "mystic_sphere_ritual_summaries") {
+    latex = generateMysticSphereRitualSummaries();
   } else if (latexType === "mystic_sphere_descriptions") {
     latex = mysticSpheres.map(convertMysticSphereToLatex).join("\n\\newpage\n");
+  } else if (latexType === "ritual_descriptions") {
+    latex = generateRitualDescriptions();
   } else if (latexType === "combat_style_lists") {
     latex = generateCombatStyleLists();
   } else if (latexType === "combat_style_summaries") {

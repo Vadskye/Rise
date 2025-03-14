@@ -9,6 +9,9 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   const imageText = sphere.hasImage
     ? `\\includegraphics[width=\\columnwidth]{mystic spheres/${sphere.name.toLowerCase()}}`
     : '';
+
+  const ranks = [1, 2, 3, 4, 5, 6, 7];
+  const spellsByRank = _.groupBy(sortByRankAndLevel(sphere.spells), (s) => s.rank);
   return format.latexify(`
     \\section{{${sphere.name}}}
       \\hypertargetraised{sphere:${sphere.name}}{}%
@@ -18,32 +21,18 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
-      ${
-        sphere.cantrips
-          ? `
+      ${sphere.cantrips
+      ? `
             \\subsection{Cantrips}
             ${sortByRankAndLevel(sphere.cantrips)
-              .map(convertSpellToLatex)
-              .join('\n')}
+        .map(convertSpellToLatex)
+        .join('\n')}
           `
-          : ''
-      }
+      : ''
+    }
 
-      \\subsection{Spells}
-        ${sortByRankAndLevel(sphere.spells)
-          .map(convertSpellToLatex)
-          .join('\n')}
-
-      ${
-        sphere.rituals
-          ? `
-            \\subsection{Rituals}
-            ${sortByRankAndLevel(sphere.rituals)
-              .map(convertSpellToLatex)
-              .join('\n')}
-          `
-          : ''
-      }
+      ${ranks.map((rank) => spellsByRank[rank] ? `\\subsection{Rank ${rank} Spells}
+          ${spellsByRank[rank].map(convertSpellToLatex).join('\n')}` : '').join("\n")}
   `);
 }
 

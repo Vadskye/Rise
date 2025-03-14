@@ -644,12 +644,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       type: 'Attune',
     },
-  ],
-  rituals: [
     {
       name: 'Earthcraft',
 
-      castingTime: "one hour",
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
 
@@ -658,8 +655,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
         It is sized appropriately for the target, up to a maximum of a Medium size item.
         The items appear in your hand or on the ground at your feet.
-
-        An item created with this spell functions like a normal item of its type.
       `,
       rank: 1,
       scaling: {

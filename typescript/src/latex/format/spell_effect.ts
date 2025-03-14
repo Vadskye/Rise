@@ -1,4 +1,4 @@
-import { Rank, SpellLike, StandardAttack, FunctionsLike } from "@src/mystic_spheres";
+import { Rank, SpellLike, StandardAttack, FunctionsLike, Ritual } from "@src/mystic_spheres";
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemizespace}{}"))) {
@@ -105,6 +105,24 @@ export function spellEffect(
     }
     throw err;
   }
+}
+
+export function ritualSphereEffects(ritual: Ritual): string | null {
+  if (!ritual.sphereEffects) {
+    return null;
+  }
+
+  return `
+    Mystic sphere effects:
+    \\begin{itemize}
+      ${Object.entries(ritual.sphereEffects)
+        .map(([sphereName, effect]) => {
+          assertEndsWithPeriod(effect, ritual.name);
+          return `\\item ${sphereName}: ${effect}`;
+        })
+        .join('\n')}
+    \\end{itemize}
+  `
 }
 
 function deriveExceptThat(
