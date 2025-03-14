@@ -908,321 +908,43 @@ export const polymorph: MysticSphere = {
       rank: 1,
       type: 'Attune',
     },
-  ],
-  rituals: [
     {
-      name: 'Overland Runner',
-      rank: 4,
-      // Worse than Overland Teleportation in rough terrain, but can be comparable on
-      // smooth ground depending on party composition and size.
-      effect: `
-        Choose up to six ritual participants.
-        Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
-        If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
-      `,
-      tags: [],
-      castingTime: 'one minute',
-      type: 'Attune (target)',
-    },
-    {
-      name: 'Overland Wings',
+      name: 'Form of the Snake',
 
-      castingTime: 'one minute',
       effect: `
-        Choose up to six ritual participants.
-        Each target gains a 30 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
-      `,
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
-    },
-    {
-      name: 'Sensory Enhancement',
-
-      castingTime: 'one hour',
-      effect: `
-        Choose up to six ritual participants.
-        For each creature, you choose one of the following effects.
-        \\parhead{Awareness} The target gains a +3 \\glossterm{enhancement bonus} to the Awareness skill.
-        \\parhead{Darkvision} The target gains \\trait{darkvision} with a range of 60 feet.
-        If it already has darkvision, the range of that ability increases by 60 feet instead.
-        \\parhead{Low-light Vision} The target gains \\trait{low-light vision}.
-        \\parhead{Scent} The target gains the \\glossterm{scent} ability, giving it a +10 bonus to scent-based Awareness checks (see \\pcref{Awareness}).
-      `,
-      rank: 4,
-      type: 'Attune (target)',
-    },
-    {
-      name: 'Mountform',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target must be no more than one size category larger or smaller than Large.
-        It \\glossterm{shapeshifts} into a Large horse.
-        Horses have a 50 foot land speed and a bite natural weapon.
-        They cannot speak and have no \\glossterm{free hands}.
+        You \\glossterm{shapeshift} into a Small snake.
+        As a snake, you have a 20 foot land speed, a 20 foot climb speed, and a bite natural weapon.
+        You cannot speak and have no \\glossterm{free hands}, but you do not need hands to climb.
       `,
       rank: 2,
       tags: [],
-      type: 'Attune (target)',
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Snakeform',
+      name: 'Form of the Wolf',
 
-      castingTime: 'one minute',
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target must be no more than one size category larger or smaller than Small.
-        It \\glossterm{shapeshifts} into a Small snake.
-        Snakes have a 20 foot land speed, a 20 foot climb speed, and a bite natural weapon.
-        They cannot speak and have no \\glossterm{free hands}, but they do not need hands to climb.
+        You \\glossterm{shapeshift} into a Medium wolf.
+        As a wolf, you have a 40 foot land speed, are \\trait{multipedal}, and have a bite natural weapon.
+        You cannot speak and have no \\glossterm{free hands}.
+        You also gain the \\trait{scent} ability.
       `,
-      rank: 2,
+      rank: 3,
       tags: [],
-      type: 'Attune (target)',
+      type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Ravenform',
+      name: 'Form of the Raven',
 
-      castingTime: 'one minute',
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target must be no more than one size category larger or smaller than Small.
-        It \\glossterm{shapeshifts} into a Small raven.
-        Ravens have a 30 foot \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
-        They cannot speak and have no \\glossterm{free hands}.
-        While in this form, the target is unable to take any standard action other than \\glossterm{movement}.
+        You \\glossterm{shapeshift} into a Small raven.
+        As a raven, you have a 30 foot \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
+        You cannot speak and have no \\glossterm{free hands}.
+        You are also unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
       tags: [],
-      type: 'Attune (target)',
-    },
-    {
-      name: 'Create Handholds',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose one \\glossterm{unattended}, \\glossterm{mundane} wall up to 50 feet high and 10 feet wide within \\medrange.
-        You create handholds in the target, making it easier to climb.
-        This reduces the \\glossterm{difficulty value} to climb the object by 10.
-        When this effect ends, the handholds disappear.
-      `,
-      rank: 1,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Craft Object',
-
-      castingTime: 'special',
-      effect: `
-        Choose any number of unattended, nonmagical objects within \\shortrange.
-        You make a Craft check to transform the subjects into a new item (or items) made of the same materials.
-        You require none of the tools that would normally be necessary, such as an anvil and furnace.
-        The total size of all targets combined must be Medium size or smaller.
-
-        This ritual takes time equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Craft Large Object',
-
-      castingTime: 'special',
-      functionsLike: {
-        exceptThat: `
-          the maximum combined size of all targets increases to Large.
-        `,
-        name: 'Craft Object',
-      },
-      rank: 5,
-    },
-
-    {
-      name: 'Craft Huge Object',
-
-      castingTime: 'special',
-      functionsLike: {
-        exceptThat: `
-          the maximum combined size of all targets increases to Huge.
-        `,
-        name: 'craft object',
-      },
-      rank: 7,
-    },
-
-    {
-      name: 'Morph Weapon',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose one \\glossterm{unattended} manufactured weapon within \\medrange.
-        The target changes into another weapon from the same weapon group.
-        At least one ritual participant must be proficient with that weapon group.
-        You cannot change it into an exotic weapon in this way.
-        When this effect ends, the target returns to its original shape.
-      `,
-      rank: 1,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Morph Exotic Weapon',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        exceptThat: `you can also change the target into an exotic weapon.`,
-        name: 'morph weapon',
-      },
-      rank: 3,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Fortify',
-
-      castingTime: 'one hour',
-      effect: `
-        Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
-        Unlike most abilities, this ritual can affect individual parts of a whole object.
-
-        % How should this affect Strength break difficulty value?
-        The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{damage resistance}.
-        If the target is moved, this effect ends.
-        Otherwise, it lasts for one year.
-      `,
-      rank: 1,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Enduring Fortify',
-
-      castingTime: '24 hours',
-      functionsLike: {
-        exceptThat: `
-          the effect lasts for one hundred years.
-        `,
-        name: 'fortify',
-      },
-      rank: 3,
-    },
-
-    {
-      name: 'Enduring Empowered Fortify',
-
-      // original targets: Empowered Fortify
-      castingTime: '24 hours',
-      functionsLike: {
-        exceptThat: `
-          the effect lasts for one hundred years.
-        `,
-        name: 'Empowered fortify',
-      },
-      rank: 6,
-    },
-
-    {
-      name: 'Empowered Fortify',
-
-      castingTime: 'one hour',
-      functionsLike: {
-        exceptThat: `
-          the bonus to \\glossterm{damage resistance} increases to +20.
-        `,
-        name: 'fortify',
-      },
-      rank: 4,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Purify Sustenance',
-
-      castingTime: 'one hour',
-      effect: `
-        All food and water in a single square within \\shortrange is purified.
-        Spoiled, rotten, poisonous, or otherwise contaminated food and water becomes pure and suitable for eating and drinking.
-        This does not prevent subsequent natural decay or spoiling.
-      `,
-      rank: 1,
-    },
-
-    {
-      name: 'Awaken',
-
-      castingTime: '24 hours',
-      effect: `
-        One Large or smaller \\glossterm{ally} within \\medrange becomes fully intelligent.
-        Its Intelligence becomes 1d6 - 5.
-        Its type changes from animal to magical beast.
-        It gains the ability to speak and understand one language that you know of your choice.
-        Its maximum age increases to that of a human (rolled secretly).
-        This effect is permanent.
-
-        You can only learn this ritual if you have access to this mystic sphere through the nature \\glossterm{magic source}.
-      `,
-      rank: 6,
-    },
-
-    {
-      name: 'Lungs',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose up to six ritual participants.
-        Each target can breathe air as easily as a human breathes air, preventing it from suffocating above water if it can normally only breathe water or some other substance.
-      `,
-      rank: 4,
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Meld Shut',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
-        The target changes its form so it cannot be opened.
-        A box becomes fully sealed instead of hinged, a door expands slightly to merge with its frame, and so on.
-        To a casual observer, it may not be obvious that there was ever an opening, though a DV 15 Awareness check would reveal the alteration.
-        It can be opened with a DV 25 Devices check.
-
-        When you perform this ritual, you may choose a Fine object within \\shortrange to function as a key.
-        When the chosen key touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
-      `,
-      rank: 2,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Empowered Meld Shut',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        exceptThat: `
-          the maximum size increases to Huge, and the Devices DV to unlock it increases to 35.
-        `,
-        name: 'meld shut',
-      },
-      rank: 5,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Gills',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose up to six ritual participants.
-        Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
-      `,
-      // narrative: '',
-      rank: 4,
-      type: 'Attune (target)',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
 };

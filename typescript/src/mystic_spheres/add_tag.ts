@@ -11,12 +11,6 @@ export function add_tag_to_sphere(tag: string, sphere: MysticSphere): MysticSphe
     add_tag_to_spelllike(tag, spell);
   }
 
-  if (sphere.rituals) {
-    for (const ritual of sphere.rituals) {
-      add_tag_to_spelllike(tag, ritual);
-    }
-  }
-
   return sphere;
 }
 

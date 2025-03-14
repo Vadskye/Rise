@@ -608,37 +608,4 @@ export const telekinesis: MysticSphere = {
       type: 'Attune',
     },
   ],
-  rituals: [
-    {
-      name: 'Force Lock',
-
-      castingTime: 'one minute',
-      effect: `
-        Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
-        The target is surrounded by a telekinetic barrier that prevents it from being opened.
-        It gains a +10 bonus to its \\glossterm{damage resistance}.
-        The barrier can be bypassed with a DV 20 Devices check, allowing the object to be opened.
-
-        When you perform this ritual, you may choose a Fine object within \\shortrange to function as a key.
-        When the chosen key touches the protected object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
-      `,
-      rank: 2,
-      type: 'Attune',
-    },
-
-    {
-      name: 'Empowered Force Lock',
-
-      castingTime: 'one minute',
-      functionsLike: {
-        exceptThat: `
-          the maximum size increases to Huge, and the Devices DV to unlock it increases to 30.
-          In addition, the damage resistance bonus increases to +20.
-        `,
-        name: 'force lock',
-      },
-      rank: 5,
-      type: 'Attune',
-    },
-  ],
 };
