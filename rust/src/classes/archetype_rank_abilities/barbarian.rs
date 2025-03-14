@@ -232,7 +232,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::ExtraDamage(DamageDice::new(0))]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Savage Precision",
             is_magical: false,
             rank: 1,
@@ -294,7 +294,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Outlandish Speed",
             is_magical: false,
             rank: 5,
