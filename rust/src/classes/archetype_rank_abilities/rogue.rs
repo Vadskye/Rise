@@ -181,9 +181,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 For example, you can use the \textit{palliative poem} ability with a gentle song using Perform (wind instruments) or a distracting joke using Perform (comedy) instead of a poem.
 
                 Many bardic performances require you to sustain the performance as a \glossterm{minor action}.
-                If the targets stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
+                When you use a bardic performance ability again while you are already sustaining that same ability, you can increase the number of targets affected by your existing performance rather than starting a separate performance.
+                Sustaining that single performance allows the effect to continue on any number of targets.
+                Using a different bardic performance ability still requires a separate performance and a separate action to sustain that performance.
+
+                If a target of a sustained bardic performance ability stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
                 However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
-                Using a bardic performance ability with an immediate effect does not interfere with your ability to sustain other bardic performance abilities.
                 {
                     % Bardic performance power guidelines:
                     % These generally start from the same rank 1 baseline effect as spells.
@@ -216,28 +219,29 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The ability affects all enemies who can see or hear you.
                     \end{magicalactiveability}
 
-                    \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime \glossterm{Minor action}.
+                    \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard)}
+                        \abilityusagetime Standard action.
                         \rankline
-                        Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the target gains a \plus1 \glossterm{accuracy} bonus.
+                        Choose any number of \glossterm{allies} within \medrange.
+                        For the duration of your performance, each target gains a \plus1 \glossterm{accuracy} bonus and a \plus1 bonus to its Mental defense.
 
                         \rankline
-                        \rank{3} The target also gains a \plus2 bonus to its Mental defense.
+                        \rank{3} The Mental defense bonus increases to \plus2.
                         \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{7} The bonus to Mental defense increases to \plus4.
+                        \rank{7} The Mental defense bonus increases to \plus3.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime \glossterm{Minor action}.
+                    \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
+                        \abilityusagetime Standard action.
                         \rankline
-                        Choose one \glossterm{ally} within \medrange.
-                        For the duration of your performance, the target gains a \plus1 bonus to its Armor and Reflex defenses.
+                        Choose any number of \glossterm{allies} within \medrange.
+                        For the duration of your performance, each target gains a \plus1 bonus to its Armor and Reflex defenses.
+                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
-                        \rank{3} The bonus applies to all defenses.
-                        \rank{5} The bonus to Armor and Reflex defenses increases to \plus2.
-                        \rank{7} The bonus to Fortitude and Mental defenses also increases to \plus2.
+                        \rank{3} The Reflex defense bonus increases to \plus2.
+                        \rank{5} The Armor defense bonus increases to \plus2.
+                        \rank{7} The Reflex defense bonus increases to \plus3.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Sustain} (minor)}
@@ -334,7 +338,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Intonation of Ingenuity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime \glossterm{Minor action}.
+                        \abilityusagetime Standard action.
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
                         For the duration of your performance, the target gains a \plus1 bonus to \glossterm{checks}.
@@ -361,7 +365,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The recovery increases to 10d10.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Partita of Provocation}[\abilitytag{Emotion}]
+                    \begin{magicalsustainability}{Partita of Provocation}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor)]
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against one \glossterm{enemy} adjacent to you.
@@ -369,20 +373,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
-                    \end{magicalactiveability}
+                    \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Serenade of Serenity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime \glossterm{Minor action}.
+                        \abilityusagetime Standard action.
                         \rankline
-                        For the duration of your performance, you and all \glossterm{allies} within a \largearea radius from you gain a \plus4 bonus to their defenses against \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
+                        Choose any number of \glossterm{allies} within \medrange.
+                        For the duration of your performance, each target is \trait{impervious} to \atCompulsion and \atEmotion attacks.
 
                         \rankline
                         \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
-                        \rank{5} The area increases to a \areahuge radius.
-                        \rank{7} Each target is immune to Compulsion and Emotion attacks.
+                        \rank{5} The range increases to a \distrange.
+                        \rank{7} Each target is \trait{immune} to Compulsion and Emotion attacks.
                     \end{magicalsustainability}
 
-                    \begin{magicalactiveability}{Stutterstep Staccato}
+                    \begin{magicalsustainability}{Stutterstep Staccato}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
@@ -396,7 +401,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The accuracy bonus increases to \plus2.
                         \rank{6} The area increases to a \hugearea radius.
                         \rank{7} The accuracy bonus increases to \plus3.
-                    \end{magicalactiveability}
+                    \end{magicalsustainability}
                 }
             ",
             modifiers: None,
