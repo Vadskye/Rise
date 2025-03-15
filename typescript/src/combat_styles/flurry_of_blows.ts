@@ -106,6 +106,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 1,
     },
@@ -117,6 +118,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 5,
     },
@@ -128,6 +130,7 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\smallarea radius within \\medrange.
         This requires firing your weapon five times as part of the strike to cover the full area.
         On a miss, you still deal half damage.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 3,
     },
@@ -141,6 +144,7 @@ export const flurryOfBlows: CombatStyle = {
         The strike deals \\glossterm{extra damage} equal to your power.
         This requires firing your weapon five times as part of the strike to cover the full area.
         On a miss, you still deal half damage.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 7,
     },

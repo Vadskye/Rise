@@ -59,6 +59,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 1,
     },
@@ -69,6 +70,7 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} with a -1 accuracy penalty against everything in a \\largearealong, 5 ft. wide line from you.
         The strike deals double \\glossterm{weapon damage}.
+        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 5,
     },
