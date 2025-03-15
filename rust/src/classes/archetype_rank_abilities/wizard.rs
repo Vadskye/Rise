@@ -65,7 +65,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank equal to your rank in this archetype.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
-                    \parhead{Efficient Crafting} When you craft an alchemical item without using your \textit{portable workshop} ability, you treat it as if it was one rank lower than its actual rank for the purpose of determining its material requirements (minimum 0).
+                    \parhead{Efficient Crafting} You do not need an alchemist's lab to craft alchemical items (see \pcref{Crafting Items}).
+                    In addition, you reduce the \glossterm{difficulty value} to craft alchemical items by 5.
                     % TODO: wording, and does this even matter? Affects sunrods.
                     \parhead{Enduring Construction} The duration of alchemical items you create is doubled.
                     In addition, alchemical items that last for a fixed number of uses have that number of uses doubled.
