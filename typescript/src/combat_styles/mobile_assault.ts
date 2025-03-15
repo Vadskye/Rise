@@ -115,8 +115,10 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Sweep',
 
       effect: `
-        You \\glossterm{teleport} horizontally to a location within \\shortrange.
-        In addition, you can make a melee \\glossterm{strike} that targets all \\glossterm{enemies} within a 5 ft.\\ wide line between your starting location and your ending location.
+        You can move in a straight line up to your land speed.
+        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
+        You reappear at your destination, and you can make a melee \\glossterm{strike} there.
+        The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
@@ -126,9 +128,10 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Flurry',
 
       effect: `
-        You \\glossterm{teleport} horizontally to a location within \\shortrange.
-        In addition, you can make two melee \\glossterm{strikes}.
-        Each strike targets one creature within a 5 ft.\\ wide line between your starting location and your ending location.
+        You can move in a straight line up to your land speed.
+        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
+        You reappear at your destination, and you can make two melee \\glossterm{strikes} there.
+        Each strike targets one creature adjacent to you at any point during your movement.
         You can target the same creature with both strikes.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
@@ -139,8 +142,9 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Charge',
 
       effect: `
-        You \\glossterm{teleport} horizontally to a location within \\shortrange.
-        In addition, you can make a melee \\glossterm{strike} at your destination.
+        You can move in a straight line up to your land speed.
+        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
+        You reappear at your destination, and you can make a melee \\glossterm{strike} there.
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 3,
