@@ -613,8 +613,8 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                     If your excess rank is at least 4, the range triples instead.
                     You can only apply this augment to maneuvers that have a listed range.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 4 - your excess rank but the strike deals double \glossterm{weapon damage}.
-                    If your excess rank is at least 5, this becomes an accuracy bonus.
+                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 5 - your excess rank but the strike deals double \glossterm{weapon damage}.
+                    If your excess rank is at least 6, this becomes an accuracy bonus.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
