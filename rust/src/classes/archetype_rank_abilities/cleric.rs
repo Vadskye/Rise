@@ -320,6 +320,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
+                    You can make this decision after seeing how much the target would heal.
 
                     \rankline
                     \rank{2} The bonus healing increases to 1d6 per 3 power.
