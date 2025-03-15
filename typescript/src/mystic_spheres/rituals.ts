@@ -4,7 +4,9 @@ const resurrectionSphereEffects = {
   Chronomancy: 'The target must have died no more than 48 hours before this ritual is completed.',
 };
 const teleportSphereEffects = {
+  ['Aeromancy']: "Both your destination and current location must be outdoors.",
   ['Channel Divinity']: "Either your destination or current location must be a temple or equivalent holy site to your source of divine power.",
+  ['Electromancy']: "Both your destination and current location must be outdoors.",
   Verdamancy: "As part of the ritual, each target must touch a living plant at least one size category larger than themselves. The destination must have a plant at least one size category larger than the largest target. Each target emerges that plant after teleporting.",
 };
 
@@ -540,7 +542,7 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning', 'Verdamancy'],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
   },
   {
     name: 'Distant Translocation',
@@ -561,7 +563,7 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: '24 hours',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning', 'Verdamancy'],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
   },
 
   {
@@ -578,7 +580,7 @@ export const rituals: Ritual[] = [
     rank: 7,
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning', 'Verdamancy'],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
   },
   {
     name: 'Retrieve Legacy',
@@ -2231,7 +2233,7 @@ export const rituals: Ritual[] = [
     sphereEffects: resurrectionSphereEffects,
     materialCost: true,
     rank: 3,
-    spheres: ['Chronomancy', 'Prayer', 'Toxicology', 'Vivimancy'],
+    spheres: ['Chronomancy', 'Electromancy', 'Prayer', 'Toxicology', 'Vivimancy'],
   },
 
   {
