@@ -565,7 +565,7 @@ export const rituals: Ritual[] = [
   },
 
   {
-    name: 'Efficient Distant Teleportation',
+    name: 'Efficient Distant Translocation',
 
     functionsLike: {
       exceptThat: `
