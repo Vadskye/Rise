@@ -290,7 +290,8 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
-                        In addition, you automatically learn one free nature ritual of each rank you have access to, including new ranks as you gain access to them.
+                        When you gain this ability, you can memorize a rank 1 nature ritual from any nature mystic sphere you have access to.
+                        Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
                         You cannot choose this ability multiple times.
                 }
             ",

@@ -302,7 +302,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Sphere Specialization}\nonsectionlabel{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
                     You gain \plus2 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
-                    You can also perform rituals from that \glossterm{mystic sphere} without having them written in your ritual book.
+                    You also memorize all rituals from that \glossterm{mystic sphere} that your spellcasting rank gives you access to.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
                     \par You cannot choose this insight multiple times.
@@ -416,7 +416,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform arcane rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of arcane ritual you can learn or perform is equal to the maximum \glossterm{rank} of arcane spell that you can cast.
-                        In addition, you automatically learn one free arcane ritual of each rank you have access to, including new ranks as you gain access to them.
+                        When you gain this ability, you can memorize a rank 1 arcane ritual from any arcane mystic sphere you have access to.
+                        Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
                         You cannot choose this ability multiple times.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.

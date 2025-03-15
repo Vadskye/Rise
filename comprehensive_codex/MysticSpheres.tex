@@ -20,16 +20,34 @@
 
   \subsectiongraphic*{Rituals}{width=\columnwidth}{core mechanics/rituals}
     Some characters have the ability to lead rituals.
-    Individual rituals are not a part of a character's intrinsic knowledge like most abilities are.
-    To lead a ritual, you must have a ritual book describing how that ritual is performed, and you must be able to cast a spell of the ritual's rank or higher.
-    If at any time a ritual does not have a participating leader, it ends with no effect.
+    Like spells, rituals are \magical abilities that are grouped into \glossterm{mystic spheres}.
 
       % The fatigue level cost for 24 hour rituals is equal to (ritual rank ^ 2) * 2.
       % Should this be specified explicitly?
     \subsubsection{Ritual Requirements}\label{Ritual Requirements}
-      Every ritual has two requirements to perform it: a casting time, and a number of \glossterm{fatigue levels}.
-      Once per minute, the ritual leader can allocate one fatigue level to a creature who participated during that full minute.
-      Non-leading ritual participants that are suffering a \glossterm{fatigue penalty} cannot have any additional fatigue levels allocated to them from a ritual.
+      Every ritual has three requirements to perform:
+      \begin{raggeditemize}
+        \item Fatigue: Every ritual takes at least one \glossterm{fatigue leve}, and some require much more.
+          Once per minute, the ritual leader can allocate one fatigue level to a creature who participated during that full minute.
+          Non-leading ritual participants that are suffering a \glossterm{fatigue penalty} cannot have any additional fatigue levels allocated to them from a ritual.
+        \item Leader: The ritual must be led by a spellcasting creature with access to one of the ritual's mystic spheres.
+          They must also be able to cast a spell of the ritual's rank or higher.
+          Finally, they must have knowledge of the ritual, either because they have it memorized or because they have a ritual book for the ritual.
+          If at any time a ritual does not have a participating leader, it ends with no effect.
+        \item Time: Every ritual takes at least one minute to perform, and some can take much longer.
+      \end{raggeditemize}
+
+    % TODO: how do ritual books interact with Craft (manuscript)?
+    \subsubsection{Ritual Books}\label{Ritual Books}
+      Unlike spells, you cannot learn additional rituals with \glossterm{insight points}.
+      Instead, you must acquire ritual books to learn additional rituals.
+      A ritual book contains the instructions for how to perform one or more rituals.
+
+      The act of inscribing such potent magical instructions imbues the books with intrinsic magic.
+      That magic tends to escape or fade over time, so ritual books made of ordinary ink quickly become unreadable.
+      Scribing a ritual book that can last requires expensive magical ink and thick, sturdy pages.
+      The cost to scribe a ritual book of a given rank is equal to an item of the ritual's rank (see \pcref{Item Ranks}).
+      High rank ritual books tend to be made of exotic materials, like dragonhide or mithral.
 
     \subsubsection{Ritual Participation}
       While a ritual is being performed, creatures can participate in the ritual.
@@ -37,15 +55,10 @@
       Creatures must be able to speak at least one language to participate in a ritual.
       They must also be able to receive instruction about the appropriate actions to take during the ritual.
 
-      Only the ritual leader needs to have a ritual book.
+      Only the ritual leader needs to know how to perform the ritual, either by having it memorized or with a ritual book.
       Non-leading ritual participants must be given instructions by the leader on the steps they should perform during the ritual.
       Creatures can freely start or stop participating in rituals.
       The ritual can even change leaders, as long as it always has at least one ritual leader.
-
-    \subsubsection{Scribing Rituals}
-      If you are able to lead rituals, you can scribe the steps to perform a ritual into a ritual book.
-      This expends precious magical ink with a value equal to an item of the ritual's rank (see \pcref{Item Ranks}).
-      Typically, scribing a ritual requires access to another ritual book containing that ritual.
 
     \subsubsection{Ritual Mystic Spheres}
       Each ritual belongs to multiple mystic spheres.
