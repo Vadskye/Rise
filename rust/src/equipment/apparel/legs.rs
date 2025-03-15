@@ -36,7 +36,7 @@ fn boots() -> Vec<Apparel> {
             You can activate these boots as a free action.
             When you do, you increase your \glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
             This does not allow you to move through inanimate objects.
-            If you end your movement in spaces occupied by other creatures, both of you are still \squeezing.
+            You must still end your movement in an unoccupied space.
             If you are not able to move normally, such as if you are \grappled, these boots do not help you.
 
             After you activate these boots, you \glossterm<briefly> cannot do so again.
