@@ -510,12 +510,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Bonechill',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it becomes \\immobilized as a \\glossterm{condition}.
+          \\damageranksix.
+          If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
         `,
       },
       rank: 7,
