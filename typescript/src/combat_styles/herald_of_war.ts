@@ -62,11 +62,11 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Fearsome Roar',
+      name: 'Enraging Roar',
 
       attack: {
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\frightened by you as a \\glossterm{condition}.
+          Each target is \\enraged as a \\glossterm{condition}.
         `,
         crit: CONDITION_CRIT,
         targeting: `
@@ -78,7 +78,7 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Fearsome Roar+',
+      name: 'Fearsome Roar',
 
       attack: {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
