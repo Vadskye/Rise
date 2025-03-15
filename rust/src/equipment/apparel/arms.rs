@@ -192,36 +192,6 @@ fn gauntlets() -> Vec<Apparel> {
     }));
 
     apparel.push(Gauntlets(StandardItem {
-        name: String::from("Gauntlets of Brutal Fists"),
-        rank: 2,
-        short_description: String::from(r"Natural weapons deal +1d6-2 damage with 3 Str"),
-        description: String::from(r"
-            If your Strength is at least 3, your \glossterm{natural weapons} deal +1d6 damage, but their damage is also reduced by 2.
-            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
-            This effect does not stack with the Brutal magic weapon effect.
-        "),
-        upgrades: vec![
-            // +2.5 damage
-            ItemUpgrade::new(5, "Natural weapons deal +1d8-2 damage with 4 Str", r"
-                The damage die increases to 1d8 if your Strength is at least 4.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Gauntlets(StandardItem {
-        name: String::from("Gauntlets of Mighty Fists"),
-        rank: 4,
-        short_description: String::from(r"Grants \weapontag{Impact} to natural weapons"),
-        description: String::from(r"
-            Your \glossterm{natural weapons} gain the \weapontag{Impact} \glossterm{weapon tag}.
-            This means you get a \glossterm{glancing blow} if you would miss by 5 or less (see \pcref{Glancing Blows}).
-            If the natural weapon already has the Impact weapon tag, this has no effect.
-        "),
-        ..Apparel::default()
-    }));
-
-    apparel.push(Gauntlets(StandardItem {
         name: String::from("Gauntlets of Might"),
         rank: 2,
         short_description: String::from("Grants +1 Strength for specific purposes"),
