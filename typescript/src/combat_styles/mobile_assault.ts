@@ -161,9 +161,9 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} from any location you occupy during the jump.
+        You can make a melee \\glossterm{strike} from your final location after jumping.
         Your \\glossterm{weapon damage} with the strike is doubled.
-        \\hit The target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
+        On a hit, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 7,
     },
