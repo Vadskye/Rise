@@ -221,8 +221,9 @@ def skill_box(name):
 
 def subskill_section(name):
     modifier_key = get_modifier_key(name)
-    return div(
+    return div({"class": "subskill-section"},
         [
+            div({"class": "subskill-header"}, name),
             untrained_subskill_box(name, modifier_key),
             fieldset(
                 {"class": f"repeating_{modifier_key}subskills"},
@@ -283,7 +284,7 @@ def untrained_subskill_box(display_name, parseable_name):
                     + parseable_name
                     + "_untrained}]]",
                 },
-                span({"class": "subskill-name"}, f"{display_name} (untrained)"),
+                span({"class": "subskill-name"}, f"(untrained)"),
             ),
             number_input(
                 {
