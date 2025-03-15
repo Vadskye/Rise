@@ -2410,7 +2410,7 @@ function handleStrikeAttacks() {
     }
     const extra_damage_key = `repeating_strikeattacks_${sectionId}attack_extra_damage`;
     const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
-    const multiplier_key = `repeating_strikeattacks_${sectionId}damage_multiplier`;
+    const multiplier_key = `repeating_strikeattacks_${sectionId}weapon_damage_multiplier`;
     const weapon_keys = [];
     for (let i = 0; i < supportedWeaponCount; i++) {
       weapon_keys.push(`weapon_${i}_magical_damage_total`);
@@ -2438,8 +2438,8 @@ function handleStrikeAttacks() {
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = v[`weapon_${i}_exists`];
         }
         callback({
-          damageMultiplier: v[multiplier_key] ? Number(v[multiplier_key]) : 1,
           extraDamage: v[extra_damage_key],
+          weaponDamageMultiplier: v[multiplier_key] ? Number(v[multiplier_key]) : 1,
           weaponDice,
           weaponExistence,
         });
@@ -2507,20 +2507,19 @@ function handleStrikeAttacks() {
     const attrs = parsed.weaponExistence;
     for (let i = 0; i < supportedWeaponCount; i++) {
       const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
+      const multipliedWeaponDamage = parsed.weaponDamageMultiplier === 1 ? parsed.weaponDice[i] : `${parsed.weaponDamageMultiplier}*(${parsed.weaponDice[i]})`;
       const damageComponents = [
-        parsed.weaponDice[i],
+        multipliedWeaponDamage,
         parsed.extraDamage,
       ];
-      const baseWeaponDamage = damageComponents.filter(Boolean).join("+");
-      const multipliedWeaponDamage = parsed.damageMultiplier === 1 ? baseWeaponDamage : `${parsed.damageMultiplier}*(${baseWeaponDamage})`;
-      attrs[weapon_prefix + "total_damage"] = multipliedWeaponDamage;
+      attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
     }
     setAttrs(attrs);
   }
 
   // Local strike attack change
   on(
-    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:damage_multiplier",
+    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier",
     function() {
       getStrikeAttrs("", (parsed) => {
         setStrikeTotalDamage("", parsed);
