@@ -10,7 +10,23 @@
     Most attacks are made against exactly one defense, which is indicated in the attack's description.
 
   \subsection{Attack Results}
-    There are four possible outcomes for an attack: a critical hit, a regular hit, a glancing blow, and a miss.
+    There are four possible outcomes for an attack: a glancing blow, a miss, a critical hit, and a regular hit.
+    You check the outcomes in that order.
+    This means that if an attack misses, it cannot also get a critical hit, even if you have large accuracy bonuses that only apply to critical hits.
+
+    \subsubsection{Glancing Blows}\label{Glancing Blows}
+      If you make a damaging attack with an attack result is 1 or 2 lower than the target's defense, you get a \glossterm{glancing blow} against that target.
+      Unless otherwise specified, all damaging attacks deal half damage on a glancing blow.
+      They also do not have any special effects other than immediate damage, unless those effects would also happen on a miss.
+      Non-damaging attacks cannot cause glancing blows.
+
+      A glancing blow is neither a hit nor a miss.
+      However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
+
+    \subsubsection{Misses}
+      If your attack result is lower than the target's defense, it is a miss.
+      An ability that misses a target typically has no effect on that target.
+      Some area abilities say they deal half damage on a miss.
 
     \subsubsection{Critical Hits}\label{Critical Hits}
       If your attack result is at least 10 higher than the target's defense, your attack is a \glossterm{critical hit} against that target.
@@ -28,21 +44,6 @@
     \subsubsection{Regular Hits}
       If your attack result is at least as high as the target's defense, but less than 10 higher than that defense, your attack is a regular hit against that target.
       It has its normal effect.
-
-    \subsubsection{Glancing Blows}\label{Glancing Blows}
-      If your attack result is 1 or 2 lower than the target's defense with a damaging attack, your attack is a \glossterm{glancing blow} against that target.
-      Unless otherwise specified, all damaging attacks deal half damage on a glancing blow.
-      They also do not have any special effects other than immediate damage, unless those effects would also happen on a miss.
-      Non-damaging attacks cannot cause glancing blows.
-
-      A glancing blow is neither a hit nor a miss.
-      However, some abilities trigger on both glancing blows and missed attacks, such as a \mitem{hardblock shield}.
-      If you get a glancing blow, you cannot also get a critical hit, even if you have accuracy bonuses that only apply to critical hits.
-
-    \subsubsection{Misses}
-      If your attack result is lower than the target's defense and it does not get a glancing blow, it is a miss.
-      An ability that misses a target typically has no effect on that target.
-      Some area abilities say they deal half damage on a miss.
 
     \subsubsection{Exploding Attacks}\label{Exploding Attacks}
       When you make an attack roll, if you roll a 10 on the d10, the die \glossterm{explodes}.
