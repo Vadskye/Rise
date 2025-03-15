@@ -604,19 +604,21 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                % Assume that choosing defense is worth about +3 accuracy
+                % Assume that choosing defense is worth about +3 accuracy, and that hitting all three defenses is about -3 accuracy.
                 \begin{magicalactiveability}{Shifting Claw}
                     \abilityusagetime Standard action.
                     \rankline
-                    Choose Armor, Reflex, or Fortitude defense.
-                    Make a \glossterm{strike} against that defense with a \glossterm{natural weapon}.
+                    Choose Armor, Reflex, or Fortitude defense, or all three defenses.
+                    Make a \glossterm{strike} against your chosen defenses with a \glossterm{natural weapon}.
+                    If you chose all three defenses, the strike deals double \glossterm{weapon damage}.
 
                     \rankline
-                    \rank{4} You can choose to deal double \glossterm{weapon damage} with the strike.
-                    If you do, you take a -4 accuracy penalty.
-                    \rank{5} You gain a +2 accuracy bonus with the strike.
-                    \rank{6} The accuracy bonus increases to +4.
-                    \rank{7} You deal double \glossterm{weapon damage} by default, or triple weapon damage if you take a -4 accuracy penalty.
+                    % Roughly double weapon damage with -1 accuracy
+                    \rank{4} You gain a +2 accuracy bonus with the strike.
+                    % Roughly double weapon damage with +1 accuracy
+                    \rank{5} The accuracy bonus increases to +4.
+                    \rank{6} You can choose any two defenses instead of all three defenses to deal double weapon damage.
+                    \rank{7} You deal double \glossterm{weapon damage} by default, or triple weapon damage if you attack two defenses.
                 \end{magicalactiveability}
             ",
             modifiers: None,
