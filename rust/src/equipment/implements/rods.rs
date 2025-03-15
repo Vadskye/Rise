@@ -8,22 +8,22 @@ pub fn rods() -> Vec<Implement> {
     implements.push(Rod(StandardItem {
         name: String::from("Rod of Flame"),
         rank: 2,
-        short_description: String::from(r"Deals $dr1l damage in a cone"),
+        short_description: String::from(r"Deals $dr2l damage in a cone"),
         description: String::from(
             r"
             You can activate this rod as a standard action.
-            When you do, make an attack vs. Reflex against everything within a \medarea cone.
+            When you do, make an attack vs. Reflex against everything within a \smallarea cone.
             Your minimum accuracy is $accuracy.
-            \hit $dr1l damage.
+            \hit $dr2l damage.
             \miss Half damage.
         ",
         ),
         tags: vec![AbilityTag::Fire],
         upgrades: vec![ItemUpgrade::new(
             4,
-            "Deals $dr3l damage in a cone",
+            "Deals $dr4l damage in a cone",
             r"
-                The minimum accuracy increases to $accuracy and the damage increases to $dr3l.
+                The minimum accuracy increases to $accuracy and the damage increases to $dr4l.
             ",
         )],
         ..Implement::default()
