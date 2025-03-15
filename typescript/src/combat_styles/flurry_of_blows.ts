@@ -106,8 +106,6 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
-        The strike costs five projectiles.
-        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -119,8 +117,6 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
-        The strike costs ten projectiles.
-        On a miss, you still deal half damage.
       `,
       rank: 5,
     },
@@ -130,7 +126,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\smallarea radius within \\medrange.
-        This strike costs five projectiles.
+        This requires firing your weapon five times as part of the strike to cover the full area.
         On a miss, you still deal half damage.
       `,
       rank: 3,
@@ -143,7 +139,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\medarea radius within \\distrange.
         The strike deals \\glossterm{extra damage} equal to your power.
-        This strike costs ten projectiles.
+        This requires firing your weapon five times as part of the strike to cover the full area.
         On a miss, you still deal half damage.
       `,
       rank: 7,
