@@ -5,6 +5,8 @@ export const toxicology: MysticSphere = {
   name: 'Toxicology',
   shortDescription: 'Create and manipulate poisons, acids, and fungi.',
   sources: ['arcane', 'nature'],
+  // The baseline for an injury poison is one rank higher than a standard "if no dr"
+  // spell, because you can keep attacking until they are eventually affectd.
 
   cantrips: [
     {
@@ -99,10 +101,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Asp Venom',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
         The stage 1 effect makes the target \\stunned while the poison lasts.
-        The stage 3 effect makes the target \\blinded while the poison lasts.
       `,
       rank: 1,
       scaling: 'poison',
@@ -112,15 +113,13 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Giant Wasp Venom',
 
-      // TODO: why does this have a +1 accuracy bonus?
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
-        You gain a +1 accuracy bonus with the poison.
         The stage 1 effect makes the target \\slowed while the poison lasts.
         The stage 3 effect makes the target \\immobilized while the poison lasts.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -129,9 +128,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Black Adder Venom',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
-        The poison inflicts 2d8 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankfourlow damage per \\glossterm{poison stage}.
       `,
       rank: 2,
       scaling: 'poison',
@@ -142,9 +141,11 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Wyvern Venom',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-        The poison inflicts 3d8 poison damage per \\glossterm{poison stage}.
+        You gain a +1 accuracy bonus with the poison.
+        The poison inflicts \\damagerankfivelow damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
       `,
       rank: 3,
       scaling: 'poison',
@@ -155,9 +156,22 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Blood Leech Venom',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
-        The stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+        The poison's stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
+      `,
+      rank: 5,
+      scaling: 'poison',
+      tags: ['Manifestation', 'Poison'],
+    },
+
+    {
+      name: 'Poison -- Purple Worm Venom',
+
+      effect: `
+        Choose one living creature within \\shortrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+        The poison inflicts \\damageranksevenlow damage per \\glossterm{poison stage}.
       `,
       rank: 5,
       scaling: 'poison',
@@ -168,13 +182,14 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Cockatrice Venom',
 
       effect: `
-        Choose one living creature within \\medrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by cockatrice bile (see \\pcref{Poison}).
+        Choose one living creature within \\shortrange.
+        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by cockatrice venom (see \\pcref{Poison}).
+        You gain a +1 accuracy bonus with the poison.
         The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
         The stage 3 effect makes the target petrified while the poison lasts.
         This makes the target \\paralyzed, except that they remain standing in the form of a statue.
       `,
-      rank: 5,
+      rank: 7,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -183,9 +198,9 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Jellyfish Extract',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         It becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
-        The poison inflicts 1d6 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankzerolow damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
       rank: 1,
@@ -197,11 +212,12 @@ export const toxicology: MysticSphere = {
       name: 'Poison -- Dragon Bile',
 
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature within \\shortrange.
         It becomes \\glossterm{poisoned} by dragon bile (see \\pcref{Poison}).
-        The poison inflicts 3d8 poison damage per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankthreelow damage per \\glossterm{poison stage}.
+        The stage 3 effect also ends the poison.
       `,
-      rank: 5,
+      rank: 4,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
