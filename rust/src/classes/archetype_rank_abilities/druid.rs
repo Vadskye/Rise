@@ -718,7 +718,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                 The special ability of the animal that appears depends on your environment, as described below.
                 You may choose a different animal native to that environment that is similar in size and type, but that does not change the animal's statistics.
-                For example, your \textit{natural servant} in an aquatic environment may be a fish or seal instead of a shark.
+                For example, your \textit{natural servant} in an aquatic environment may be a dolphin or seal instead of a shark.
                 Unusual environments may have different animals than the standard animals listed below.
                 \begin{itemize}
                     \item Aquatic: A shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
