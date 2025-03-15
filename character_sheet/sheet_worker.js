@@ -392,7 +392,6 @@ function onGet(variables, options, callback = null) {
         .map((e) => attrs[e])
         .filter(Boolean)
         .join(",");
-      // console.log("changeString, getVariables, v", changeString, getVariables, v);
       callback(v);
     });
   });
@@ -2411,6 +2410,7 @@ function handleStrikeAttacks() {
     }
     const extra_damage_key = `repeating_strikeattacks_${sectionId}attack_extra_damage`;
     const is_magical_key = `repeating_strikeattacks_${sectionId}is_magical`;
+    const multiplier_key = `repeating_strikeattacks_${sectionId}damage_multiplier`;
     const weapon_keys = [];
     for (let i = 0; i < supportedWeaponCount; i++) {
       weapon_keys.push(`weapon_${i}_magical_damage_total`);
@@ -2421,6 +2421,7 @@ function handleStrikeAttacks() {
       [
         extra_damage_key,
         is_magical_key,
+        multiplier_key,
         ...weapon_keys,
         // These aren't used as variables, but we need to listen to them
         "magical_power",
@@ -2437,6 +2438,7 @@ function handleStrikeAttacks() {
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = v[`weapon_${i}_exists`];
         }
         callback({
+          damageMultiplier: v[multiplier_key] ? Number(v[multiplier_key]) : 1,
           extraDamage: v[extra_damage_key],
           weaponDice,
           weaponExistence,
@@ -2509,15 +2511,19 @@ function handleStrikeAttacks() {
         parsed.weaponDice[i],
         parsed.extraDamage,
       ];
-      attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
+      const baseWeaponDamage = damageComponents.filter(Boolean).join("+");
+      const multipliedDamageComponents = [];
+      for (let j = 0; j < parsed.damageMultiplier; j++) {
+        multipliedDamageComponents.push(baseWeaponDamage);
+      }
+      attrs[weapon_prefix + "total_damage"] = multipliedDamageComponents.join("+");
     }
-    console.log("Setting strike total damage", attrs);
     setAttrs(attrs);
   }
 
   // Local strike attack change
   on(
-    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage",
+    "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:damage_multiplier",
     function() {
       getStrikeAttrs("", (parsed) => {
         setStrikeTotalDamage("", parsed);
@@ -2726,7 +2732,6 @@ function handleVitalWounds() {
 function handleWeaponDamageDice() {
   for (const weaponIndex of Array(supportedWeaponCount).keys()) {
     const heavyKey = `weapon_${weaponIndex}_heavy`;
-    const versatileGripKey = `weapon_${weaponIndex}_versatile_grip`;
     const ignorePowerKey = `weapon_${weaponIndex}_ignore_power`;
     const damageDiceKey = `weapon_${weaponIndex}_damage_dice`;
     const nameKey = `weapon_${weaponIndex}_name`;
@@ -2736,7 +2741,7 @@ function handleWeaponDamageDice() {
 
     onGet(
       {
-        boolean: [heavyKey, ignorePowerKey, versatileGripKey],
+        boolean: [heavyKey, ignorePowerKey],
         numeric: ["strength", "willpower", "mundane_power", "magical_power"],
         string: [damageDiceKey, nameKey],
       },
@@ -2753,13 +2758,9 @@ function handleWeaponDamageDice() {
 
         let magicalPowerBonus = Math.floor(v.magical_power / 2);
         let mundanePowerBonus = Math.floor(v.mundane_power / 2);
-        if (v[heavyKey] || v[versatileGripKey]) {
+        if (v[heavyKey]) {
           magicalPowerBonus += Math.max(0, Math.floor(v.magical_power / 3));
           mundanePowerBonus += Math.max(0, Math.floor(v.mundane_power / 3));
-        }
-        if (v[versatileGripKey]) {
-          magicalPowerBonus += 1;
-          mundanePowerBonus += 1;
         }
 
         let magicalTotal = v[damageDiceKey];

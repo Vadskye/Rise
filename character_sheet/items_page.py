@@ -294,14 +294,9 @@ def weapon(i):
                 {"class": "weapon-calcs"},
                 [
                 underlabeled_checkbox(
-                    "Two-handed Heavy?",
+                    "Two-handed?",
                     None,
                     {"class": "is-heavy", "name": f"weapon_{i}_heavy"},
-                ),
-                underlabeled_checkbox(
-                    "Two-handed Versatile Grip?",
-                    None,
-                    {"class": "is-versatile-grip", "name": f"weapon_{i}_versatile_grip"},
                 ),
                 underlabeled_checkbox(
                     "Ignore power for damage?",
