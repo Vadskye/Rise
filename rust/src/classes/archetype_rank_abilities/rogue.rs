@@ -907,7 +907,9 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     Make a attack vs. Mental against a creature within \medrange.
                     Your \glossterm{accuracy} is equal to your Deception skill.
                     In addition, choose a location on stable ground within range.
-                    \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely, and it cannot take any actions except to move to the location and look around at it.
+                    \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely.
+                    It must spend its \glossterm{movement} and \glossterm{standard action} to move to that location, or if it is already there, to do nothing except observe the location carefully.
+                    It can use any other actions, including \glossterm{elite actions}, as normal.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
