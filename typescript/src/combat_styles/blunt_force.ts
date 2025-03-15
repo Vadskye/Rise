@@ -66,10 +66,9 @@ export const bruteForce: CombatStyle = {
       name: 'Ground Slam',
 
       effect: `
-        Make a melee \\glossterm{strike} against a stable surface.
-        The strike targets everything supported by that surface in a \\smallarea cone from you.
-        You take a -1 accuracy penalty with the strike.
-        On a miss, you still deal half damage.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty against a stable surface.
+        % TODO: wording
+        The strike targets everything supported by that surface in a \\smallarea cone from one corner of the target space.
       `,
       rank: 1,
       tags: ['Earth'],
@@ -78,11 +77,11 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Ground Slam+',
 
+      // TODO: actual math on effectiveness; -2 accuracy?
       effect: `
-        Make a melee \\glossterm{strike} against a stable surface.
-        It targets everything supported by that surface in a \\medarea cone from you.
-        You take a -1 accuracy penalty with the strike, but it deals \\glossterm{extra damage} equal to your power.
-        On a miss, you still deal half damage.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty against a stable surface.
+        It targets everything supported by that surface in a \\medarea cone from one corner of the target space.
+        The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 5,
       tags: ['Earth'],
@@ -355,7 +354,6 @@ export const bruteForce: CombatStyle = {
         If the target takes damage, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
         This is an \\atAuditory effect.
         On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
-        On a miss against a secondary target, you still deal half damage.
       `,
       rank: 3,
       tags: [],

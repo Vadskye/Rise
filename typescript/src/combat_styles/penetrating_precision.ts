@@ -59,7 +59,6 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
-        On a miss, you still deal half damage.
       `,
       rank: 1,
     },
@@ -68,9 +67,8 @@ export const perfectPrecision: CombatStyle = {
       name: 'Penetrating Shot+',
 
       effect: `
-        Make a ranged \\glossterm{strike} against everything in a \\largearealong, 5 ft. wide line from you.
-        You take a -2 accuracy penalty with the strike, but it deals double \\glossterm{weapon damage}.
-        On a miss, you still deal half damage.
+        Make a ranged \\glossterm{strike} with a -1 accuracy penalty against everything in a \\largearealong, 5 ft. wide line from you.
+        The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 5,
     },
@@ -80,7 +78,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a ranged \\glossterm{strike}.
-        You reduce your \\glossterm{longshot penalty} with the strike by 3.
+        You reduce your \\glossterm{longshot penalty} with the strike by 4, which generally removes the penalty entirely.
       `,
       rank: 3,
     },
