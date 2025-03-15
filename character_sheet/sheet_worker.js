@@ -2512,11 +2512,8 @@ function handleStrikeAttacks() {
         parsed.extraDamage,
       ];
       const baseWeaponDamage = damageComponents.filter(Boolean).join("+");
-      const multipliedDamageComponents = [];
-      for (let j = 0; j < parsed.damageMultiplier; j++) {
-        multipliedDamageComponents.push(baseWeaponDamage);
-      }
-      attrs[weapon_prefix + "total_damage"] = multipliedDamageComponents.join("+");
+      const multipliedWeaponDamage = parsed.damageMultiplier === 1 ? baseWeaponDamage : `${parsed.damageMultiplier}*(${baseWeaponDamage})`;
+      attrs[weapon_prefix + "total_damage"] = multipliedWeaponDamage;
     }
     setAttrs(attrs);
   }
