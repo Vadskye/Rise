@@ -2415,6 +2415,7 @@ function handleStrikeAttacks() {
     for (let i = 0; i < supportedWeaponCount; i++) {
       weapon_keys.push(`weapon_${i}_magical_damage_total`);
       weapon_keys.push(`weapon_${i}_mundane_damage_total`);
+      weapon_keys.push(`weapon_${i}_extra_damage`);
       weapon_keys.push(`weapon_${i}_exists`);
     }
     getAttrs(
@@ -2433,14 +2434,18 @@ function handleStrikeAttacks() {
         // We need to copy the weapon_exists keys into the local repeating section.
         const weaponExistence = {};
         const weaponDice = [];
+        const weaponExtraDamage = [];
         for (let i = 0; i < supportedWeaponCount; i++) {
           weaponDice.push(v[`weapon_${i}_${dice_type}_damage_total`]);
+          weaponExtraDamage.push(v[`weapon_${i}_extra_damage`]);
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = v[`weapon_${i}_exists`];
         }
+
         callback({
           extraDamage: v[extra_damage_key],
           weaponDamageMultiplier: v[multiplier_key] ? Number(v[multiplier_key]) : 1,
           weaponDice,
+          weaponExtraDamage,
           weaponExistence,
         });
       }
@@ -2511,6 +2516,7 @@ function handleStrikeAttacks() {
       const damageComponents = [
         multipliedWeaponDamage,
         parsed.extraDamage,
+        parsed.weaponExtraDamage[i],
       ];
       attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
     }
