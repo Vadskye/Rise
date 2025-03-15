@@ -203,7 +203,7 @@ export const dirtyFighting: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           if the target has no remaining \\glossterm{damage resistance}, it is pinned completely instead of simply grappled.
-          It is \\helpless, and the only physical ability it can use is the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
+          It is effectively \\paralyzed, except that it can still use the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
         `,
         name: 'grapple',
       },
