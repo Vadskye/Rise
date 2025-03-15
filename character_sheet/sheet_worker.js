@@ -2515,8 +2515,8 @@ function handleStrikeAttacks() {
       const multipliedWeaponDamage = parsed.weaponDamageMultiplier === 1 ? parsed.weaponDice[i] : `${parsed.weaponDamageMultiplier}*(${parsed.weaponDice[i]})`;
       const damageComponents = [
         multipliedWeaponDamage,
-        parsed.extraDamage,
         parsed.weaponExtraDamage[i],
+        parsed.extraDamage,
       ];
       attrs[weapon_prefix + "total_damage"] = damageComponents.filter(Boolean).join("+");
     }
@@ -2533,11 +2533,16 @@ function handleStrikeAttacks() {
     }
   );
 
+  const weaponChangeKeys = [];
+  for (let i = 0; i < supportedWeaponCount; i++) {
+    weaponChangeKeys.push(`change:weapon_${i}_magical_damage_total`);
+    weaponChangeKeys.push(`change:weapon_${i}_mundane_damage_total`);
+    weaponChangeKeys.push(`change:weapon_${i}_extra_damage`);
+  }
+
   // Global strike attack change
   on(
-    "change:weapon_0_magical_damage_total change:weapon_1_magical_damage_total change:weapon_2_magical_damage_total " +
-    "change:weapon_0_mundane_damage_total change:weapon_1_mundane_damage_total change:weapon_2_mundane_damage_total" +
-    "change:weapon_3_magical_damage_total change:weapon_3_mundane_damage_total" +
+    weaponChangeKeys.join(" ") + 
     " change:level change:magical_power change:mundane_power",
     function() {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
