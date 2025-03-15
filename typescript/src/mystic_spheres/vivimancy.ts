@@ -543,6 +543,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           Choose one Small or larger corpse within \\medrange.
           Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.
+          You gain a \plus1 accuracy bonus for each size category by which the corpse is larger than Medium.
           The corpse is also destroyed.
         `,
       },
