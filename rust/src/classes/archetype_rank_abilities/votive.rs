@@ -467,7 +467,8 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Spells and Rituals}).
                         The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum \glossterm{rank} of pact spell that you can cast.
-                        In addition, you automatically learn one free pact ritual of each rank you have access to, including new ranks as you gain access to them.
+                        When you gain this ability, you can memorize a rank 1 pact ritual from any pact mystic sphere you have access to.
+                        Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
                         You cannot choose this ability multiple times.
                     \parhead{Widened Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
