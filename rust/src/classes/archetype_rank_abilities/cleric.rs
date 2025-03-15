@@ -21,7 +21,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per insight point.
 
                 Divine spells require \glossterm{verbal components} to cast (see \pcref{Ability Usage Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spells and Rituals}.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
@@ -76,7 +76,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Precise Spell} Choose a divine \glossterm{spell} you know.
                         You gain a \plus2 accuracy bonus with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Spells and Rituals}).
+                    \parhead{Rituals} You gain the ability to perform divine rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).
                         The maximum \glossterm{rank} of divine ritual you can learn or perform is equal to the maximum \glossterm{rank} of divine spell that you can cast.
                         When you gain this ability, you can memorize a rank 1 divine ritual from any divine mystic sphere you have access to.
                         Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
