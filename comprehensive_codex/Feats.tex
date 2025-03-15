@@ -758,7 +758,7 @@ They allow more distinct and unique character customization, but also increase g
   \end{dtable}
 
   \begin{feat}{Duelist}{Combat}
-    \featpre Dexterity 2, Intelligence 1.
+    \featpre Dexterity 2, Perception 1.
 
     \ff[1]{Duel Focus} At the start of each round, you may choose a creature you can see.
     During that round, you gain a \plus1 bonus to your defenses against that creature's attacks.
@@ -769,17 +769,18 @@ They allow more distinct and unique character customization, but also increase g
       \rankline
       Make a melee \glossterm{strike} with a non-\weapontag{Heavy} weapon.
       This strikes only targets a single creature, even if your weapon would normally have the Sweeping tag.
-      If you are the creature's only \glossterm{enemy} adjacent to it, you gain a \plus2 accuracy bonus with the strike.
-      If that creature is not adjacent to any of its \glossterm{allies}, you gain an additional \plus2 accuracy bonus.
+      If you are the creature's only \glossterm{enemy} adjacent to it, you deal 1d4 \glossterm{extra damage}.
+      If that creature is not adjacent to any of its \glossterm{allies}, you deal 1d4 \glossterm{extra damage}.
+      This extra damage stacks if both circumstances apply.
 
       \rankline
-      \featlevel{9} If either accuracy bonus applies, the strike deals 1d4 \glossterm{extra damage}.
-      \featlevel{12} The extra damage increases to 2d6.
-      \featlevel{15} The extra damage increases to 3d8.
-      \featlevel{18} The strike deals double \glossterm{weapon damage}.
+      \featlevel{9} The extra damage from both circumstances increases to 1d8.
+      \featlevel{12} The extra damage from both circumstances increases to 2d6.
+      \featlevel{15} The strike deals double \glossterm{weapon damage}.
+      \featlevel{18} The extra damage from both circumstances increases to 4d6.
     \end{activeability}
 
-    \ff[12]{Defensive Stance} You gain a \plus1 bonus to your Armor defense as long as you wield a non-\weapontag{Projectile} weapon.
+    \ff[12]{Defensive Stance} You gain a \plus1 bonus to your Armor defense as long as you wield a non-\weapontag{Projectile} weapon using at least one hand.
     % TODO: wording
     This bonus is doubled if you are not using a shield, and are not gaining any shield bonus to your Armor defense by other means.
 
