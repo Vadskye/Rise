@@ -9,9 +9,9 @@ pub fn wands() -> Vec<Implement> {
         rank: 1,
         short_description: String::from(r"Grants knowledge of a rank 1 spell"),
         description: String::from(r"
-            This wand grants you knowledge of a single rank 1 spell that does not have the \abilitytag<Attune> or \abilitytag<Sustain> tags.
+            This wand grants you knowledge of a single rank 1 spell.
             Each wand is associated with a specific spell.
-            You must have the ability to cast spells that are no more than one rank lower than the wand's rank.
+            You must have the ability to cast spells that are no more than one rank lower than the wand's rank (minimum 1).
             In addition, your \glossterm{magic source} must grant access to the \glossterm{mystic sphere} that the spell belongs to.
             However, you do not need to have access to the \glossterm<mystic sphere> that the spell belongs to.
 
