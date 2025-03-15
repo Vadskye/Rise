@@ -331,11 +331,11 @@ def strike_based_attack():
                 {"name": "attack_extra_damage"},
             ),
             underlabel(
-                "Multiplier",
+                "Weapon Mult",
                 select(
                     {
-                        "class": "damage-multiplier",
-                        "name": "damage_multiplier",
+                        "class": "weapon-damage-multiplier",
+                        "name": "weapon_damage_multiplier",
                     },
                     [
                         option({"value": ""}, ""),
