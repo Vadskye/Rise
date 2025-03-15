@@ -513,20 +513,21 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Feral Frenzy",
             is_magical: false,
             rank: 3,
             // TODO: run this through the spreadsheet
             description: r"
-                At the end of each round, if you dealt damage to a creature other than yourself that round, you gain a frenzy point, to a maximum of 4.
-                Otherwise, you lose a frenzy point, to a minimum of 0.
+                At the end of each round, if you dealt damage to a creature other than yourself that round, you gain a frenzy point.
+                Otherwise, you lose a frenzy point.
+                You can have a maximum of 4 frenzy points and a minimum of 0.
                 Frenzy points increase the power of your \ability{feral frenzy} ability.
                 \begin{activeability}{Feral Frenzy}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
-                    You can spend three frenzy points to make an additional melee or thrown strike.
+                    Then, you can spend three frenzy points to make an additional melee or thrown strike.
 
                     \rankline
                     \rank{4} You gain a +2 accuracy bonus with the first strike you make with this ability each round.
