@@ -287,12 +287,10 @@ def weapon(i):
                     {"name": f"weapon_{i}_damage_dice"},
                 ),
                 labeled_text_input(
-                    "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
+                    "Extra damage",
+                    {"class": "weapon-damage-dice"},
+                    {"name": f"weapon_{i}_extra_damage"},
                 ),
-            ]),
-            flex_row(
-                {"class": "weapon-calcs"},
-                [
                 underlabeled_checkbox(
                     "Two-handed?",
                     None,
@@ -303,16 +301,25 @@ def weapon(i):
                     None,
                     {"class": "ignore-power", "name": f"weapon_{i}_ignore_power"},
                 ),
+            ]),
+            flex_row(
+                {"class": "weapon-calcs"},
+                [
                 labeled_text_input(
-                    "Magical damage",
-                    {"class": "weapon-damage-dice"},
-                    input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
+                    "Tags", {"class": "weapon-tags"}, {"name": f"weapon_{i}_tags"}
                 ),
-                labeled_text_input(
-                    "Mundane damage",
-                    {"class": "weapon-damage-dice"},
-                    input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
-                ),
+                flex_row({"class": "calculated-weapon-damage"}, [
+                    labeled_text_input(
+                        "Magical weapon damage",
+                        {"class": "weapon-damage-dice"},
+                        input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
+                    ),
+                    labeled_text_input(
+                        "Mundane weapon damage",
+                        {"class": "weapon-damage-dice"},
+                        input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
+                    ),
+                ]),
             ]),
         ]
     )
