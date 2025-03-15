@@ -98,9 +98,9 @@ impl Size {
 
     pub fn massive_weapon_tag(&self) -> Option<WeaponTag> {
         match self {
-            Size::Huge => Some(WeaponTag::Massive(10)),
-            Size::Gargantuan => Some(WeaponTag::Massive(15)),
-            Size::Colossal => Some(WeaponTag::Massive(20)),
+            Size::Huge => Some(WeaponTag::Sweeping(1)),
+            Size::Gargantuan => Some(WeaponTag::Sweeping(2)),
+            Size::Colossal => Some(WeaponTag::Sweeping(3)),
             _ => None,
         }
     }
