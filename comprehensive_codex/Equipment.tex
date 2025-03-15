@@ -331,16 +331,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \weapontagdef{Maneuverable} Whenever you use a \atBrawling ability that would normally require a free hand, you can use this weapon instead.
     When you do, you apply any accuracy bonuses that you would normally apply to \glossterm{strikes} with that weapon to the ability.
     The ability is still not a \glossterm{strike}, and this does not cause you to deal damage with the weapon if you hit with that ability.
-    \weapontagdef{Massive} This weapon hits everything in a cube-shaped area.
-    Attacks with it are not \glossterm{targeted}, so they are not affected by \glossterm{miss chances}.
-    Unlike most area attacks, a miss with a Massive weapon does not deal half damage.
-
-    Massive weapons have a measurement that indicates the length of each side of the cube in feet.
-    For example, a net is a \abilitytag{Massive} (10) weapon, so it affects everything in a 10 foot wide cube.
-    If a weapon has the Massive tag, that replaces any Sweeping tag it would otherwise have.
-
-    Creatures that are Huge or larger automatically gain the Massive tag on all of their weapons.
-    For details, see \tref{Size Categories}.
     \weapontagdef{Mounted}\label{Mounted Weapon} If you are mounted, and your mount moves in the same phase that you make a \glossterm{strike} with a Mounted weapon, you gain a \plus2 \glossterm{accuracy} bonus with the strike.
     \weapontagdef{Parrying} If a creature attacks you with a \glossterm{melee} \glossterm{strike} while you wield this weapon, you \glossterm{briefly} gain a \plus2 bonus to \glossterm{accuracy} with strikes using this weapon against that creature.
     \weapontagdef{Projectile} This weapon fires ammunition at range to deal damage.
@@ -354,11 +344,9 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Unlike most non-damage effects, this penalty applies if you get a \glossterm{glancing blow} with the strike as long as the creature takes damage.
     \weapontagdef{Subdual} This weapon deals \glossterm{subdual damage} (see \pcref{Subdual Damage}).
     % (30/60) is one improvement, (60/120) is two.
-    \weapontagdef{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may also target one or more secondary creatures or objects adjacent to you.
-    If the weapon also has the \weapontag{Long} weapon tag, each secondary target may instead be within 10 feet of you.
-    Each secondary target must be within 10 feet of a primary target, and must not already be a target of the strike.
-    The strike affects each secondary target in the same way as the primary targets.
-    Sweeping weapons have a number that indicates the number of secondary targets you can affect.
+    \weapontagdef{Sweeping}\label{Sweeping} When you make a \glossterm{melee} \glossterm{strike} with this weapon, you may add additional targets to the strike.
+    Each additional target must be a valid target for the strike, which typically means it must be adjacent to you.
+    Sweeping weapons have a number that indicates the number of targets you can add, such as Sweeping (2).
     \weapontagdef{Thrown} This weapon is designed to be thrown to deal damage at range.
     Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
     Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
@@ -582,7 +570,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           % \tind Bolas                    & \plus1        & 1d3         & 0 (1 gp)                   & Light, Maneuverable, Thrown (30/60)    \\
           \tind Dwarven throwing axe     & \plus0        & 1d8         & 1 (4 gp)                   & Thrown (60/120)                    \\
           \tind Dwarven waraxe           & \plus0        & 1d10        & 1 (4 gp)                   & Thrown (30/60), Versatile Grip     \\
-          \tind Net\fn{2}                & \plus0        & \tdash      & 1 (4 gp)                   & Massive (10), Thrown (5/15)        \\
+          \tind Net\fn{2}                & \plus0        & \tdash      & 1 (4 gp)                   & Thrown (5/15)        \\
         \end{longtable}
         1 See \pcref{Item Ranks}. \\
         2 This weapon has special rules. \\

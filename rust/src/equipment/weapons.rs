@@ -211,7 +211,6 @@ pub enum WeaponTag {
     Light,
     Long,
     Maneuverable,
-    Massive(i32),
     Mounted,
     Parrying,
     Projectile(i32, i32),
@@ -234,7 +233,6 @@ impl WeaponTag {
             Self::Light => r"\weapontag{Light}".to_string(),
             Self::Long => r"\weapontag{Long}".to_string(),
             Self::Maneuverable => r"\weapontag{Maneuverable}".to_string(),
-            Self::Massive(ft) => format!("\\weapontag{{Massive}} ({})", ft),
             Self::Mounted => r"\weapontag{Mounted}".to_string(),
             Self::Parrying => r"\weapontag{Parrying}".to_string(),
             Self::Projectile(close, long) => {
@@ -268,7 +266,6 @@ impl WeaponTag {
             Self::Light => true,
             Self::Long => true,
             Self::Maneuverable => true,
-            Self::Massive(_) => true,
             // The bonus here is assumed wherever it is used
             Self::Mounted => false,
             Self::Parrying => true,

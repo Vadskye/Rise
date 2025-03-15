@@ -267,16 +267,16 @@ You can either skim past terms you don't yet understand or look them up as you g
     \begin{dtable*}
       \lcaption{Size Categories}
       \begin{dtabularx}{\textwidth}{l l l l l l l X}
-        \tb{Size}   & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex} & \tb{Stealth} & \tb{Weapons}             & \tb{Example Creature} \tableheaderrule
-        Fine        & 1/4 ft.          & 10 ft.          & \minus4 Str              & \plus4      & \plus20      & \tdash                   & Fly                   \\
-        Diminutive & 1/2 ft.          & 10 ft.          & \minus3 Str              & \plus3      & \plus15      & \tdash                   & Mouse                 \\
-        Tiny        & 1 ft.            & 20 ft.          & \minus2 Str              & \plus2      & \plus10      & \tdash                   & Rat                   \\
-        Small       & 2-1/2 ft.        & 20 ft.          & \minus1 Str              & \plus1      & \plus5       & \tdash                   & Cat                   \\
-        Medium      & 5 ft.            & 30 ft.          & \tdash                   & \tdash      & \tdash       & \tdash                   & Human                 \\
-        Large       & 10 ft.           & 40 ft.          & \plus1 Str               & \minus1     & \minus5      & \tdash                   & Ogre                  \\
-        Huge        & 20 ft.           & 50 ft.          & \plus2 Str               & \minus2     & \minus10     & \weapontag{Massive} (10) & Hill giant            \\
-        Gargantuan  & 40 ft.           & 60 ft.          & \plus3 Str               & \minus3     & \minus15     & \weapontag{Massive} (15) & Roc                   \\
-        Colossal    & 80\add ft.       & 80 ft.          & \plus4 Str               & \minus4     & \minus20     & \weapontag{Massive} (20) & Great wyrm red dragon \\
+        \tb{Size}  & \tb{Space}\fn{1} & \tb{Base Speed} & \tb{Weight Limits}\fn{2} & \tb{Reflex} & \tb{Stealth} & \tb{Weapons}                  & \tb{Example Creature} \tableheaderrule
+        Fine       & 1/4 ft.          & 10 ft.          & \minus4 Str              & \plus4      & \plus20      & \tdash                        & Fly                   \\
+        Diminutive & 1/2 ft.          & 10 ft.          & \minus3 Str              & \plus3      & \plus15      & \tdash                        & Mouse                 \\
+        Tiny       & 1 ft.            & 20 ft.          & \minus2 Str              & \plus2      & \plus10      & \tdash                        & Rat                   \\
+        Small      & 2-1/2 ft.        & 20 ft.          & \minus1 Str              & \plus1      & \plus5       & \tdash                        & Cat                   \\
+        Medium     & 5 ft.            & 30 ft.          & \tdash                   & \tdash      & \tdash       & \tdash                        & Human                 \\
+        Large      & 10 ft.           & 40 ft.          & \plus1 Str               & \minus1     & \minus5      & \tdash                        & Ogre                  \\
+        Huge       & 20 ft.           & 50 ft.          & \plus2 Str               & \minus2     & \minus10     & \weapontag{Sweeping} (1) & Hill giant            \\
+        Gargantuan & 40 ft.           & 60 ft.          & \plus3 Str               & \minus3     & \minus15     & \weapontag{Sweeping} (2) & Roc                   \\
+        Colossal   & 80\add ft.       & 80 ft.          & \plus4 Str               & \minus4     & \minus20     & \weapontag{Sweeping} (3) & Great wyrm red dragon \\
       \end{dtabularx}
       1 Creatures can vary in space. These are simply typical values. \\
       2 This modifies Strength only for the purpose of determining a creature's \glossterm{weight limits} (see \pcref{Weight Limits}). \\
@@ -316,7 +316,9 @@ You can either skim past terms you don't yet understand or look them up as you g
 
       \parhead{Movement} Creatures two size categories larger than you are not considered obstacles and do not hinder your movement.
 
-      \parhead{Massive Weapons} Creatures that are Huge or larger have \weapontag{Massive} weapons, as shown in \trefnp{Size Categories}.
+      \parhead{Sweeping Weapons} Weapons used by creatures that are Huge or larger are automatically \weapontag{Sweeping}, as shown in \trefnp{Size Categories}.
+      If the creature's weapons would already be Sweeping, add that value to the normal Sweeping value for that weapon.
+      For example, a greatsword used by a Gargantuan creature would have Sweeping (4).
 
   \subsection{Weight Limits}\label{Weight Limits}
 
