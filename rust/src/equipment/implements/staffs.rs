@@ -174,7 +174,8 @@ pub fn staffs() -> Vec<Implement> {
             Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can reshape its area.
             The new area must be a radius, line, or 90 degree cone, and it must be able to fit entirely within the ability's original area.
             For example, you could convert a radius into a cone, or a cone into a 5 foot wide line.
-            However, you could not convert a line into a cone or radius..
+            However, you could not convert a line into a cone or radius.
+            This cannot change the ability's \glossterm{point of origin}.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Allows reshaping areas to become multiple smaller areas", r"
