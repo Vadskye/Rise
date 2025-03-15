@@ -349,7 +349,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional rank 1 spell per two insight points.
 
                 Pact spells require \glossterm{verbal components} and \glossterm{somatic components} to cast (see \pcref{Ability Usage Components}).
-                For details about mystic spheres and casting spells, see \pcref{Spells and Rituals}.
+                For details about mystic spheres and casting spells, see \pcref{Spell and Ritual Mechanics}.
 
                 When you gain access to a new \glossterm{mystic sphere} or spell \glossterm{rank},
                     you can forget any number of spells you know to learn that many new spells in exchange,
@@ -465,7 +465,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Powerful Spell} Choose a damaging pact \glossterm{spell} you know.
                         It deals \glossterm{extra damage} equal to half your \glossterm{magical power}.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Spells and Rituals}).
+                    \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).
                         The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum \glossterm{rank} of pact spell that you can cast.
                         When you gain this ability, you can memorize a rank 1 pact ritual from any pact mystic sphere you have access to.
                         Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
