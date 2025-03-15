@@ -55,6 +55,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         When you do, you regain 2d10 hit points.
         Normally, this healing cannot increase your hit points above half your maximum hit points.
         If you increase your \\glossterm{fatigue level} by one, you can ignore this limitation for one drink of water.
+        You can make this decision after seeing how much you would heal.
       `,
       rank: 1,
       scaling: { special: "The healing increases by 1d10 per rank beyond 1." },
