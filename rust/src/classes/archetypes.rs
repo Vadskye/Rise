@@ -293,7 +293,7 @@ impl ClassArchetype {
             ",
             Self::NatureSpellMastery => r"
                 This archetype improves the nature spells you cast.
-                You must have the Nature Magic archetype from the cleric class to gain the abilities from this archetype.
+                You must have the Nature Magic archetype from the druid class to gain the abilities from this archetype.
             ",
             Self::Shifter => r"
                 This archetype grants you the ability to embody aspects of the natural world in your own form.
