@@ -267,10 +267,9 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
-        Each poison stage makes the target \\glossterm{briefly} \\stunned.
-        Its stage 3 effect also ends the poison.
+        The poison's stage 1 effect makes the target \stunned while the poison lasts.
       `,
-      rank: 2,
+      rank: 4,
       scaling: 'poison',
       tags: ['Manifestation'],
     },
@@ -314,11 +313,11 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \\damagerankonelow per \\glossterm{poison stage}.
+        It becomes \\glossterm{poisoned} by nightshade (see \\pcref{Poison}).
+        The poison inflicts \\damageranktwolow per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -329,10 +328,10 @@ export const verdamancy: MysticSphere = {
       effect: `
         Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \\damageranktwolow per \\glossterm{poison stage}.
+        The poison inflicts \\damagerankthreelow per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
       `,
-      rank: 2,
+      rank: 3,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -354,13 +353,26 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Poison -- Black Lotus',
 
-      // TODO: why is this the only non-adjacent poison?
       effect: `
-        Choose one living creature within \\medrange.
+        Choose one living creature you \\glossterm{touch}.
         It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
         The poison inflicts \\damagerankfivelow per \\glossterm{poison stage}.
       `,
-      rank: 7,
+      rank: 6,
+      scaling: 'poison',
+      tags: ['Manifestation', 'Poison'],
+    },
+
+    {
+      name: 'Poison -- Bloodroot',
+
+      effect: `
+        Choose one living creature you \\glossterm{touch}.
+        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
+        You gain a +1 accuracy bonus with the poison.
+        The poison's stage 1 effect makes the target \slowed while the poison lasts.
+      `,
+      rank: 5,
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
