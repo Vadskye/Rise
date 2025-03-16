@@ -128,7 +128,7 @@ export const polymorph: MysticSphere = {
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -3 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals double \\glossterm{weapon damage}.
       `,
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
     },
 
