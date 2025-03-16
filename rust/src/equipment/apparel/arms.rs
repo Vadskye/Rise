@@ -238,8 +238,8 @@ fn gloves() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Make dual strikes easily without Dexterity", "
-                You also reduce your accuracy penalty while making dual strikes from -2 to -1, as if you had 4 Dexterity.
-                This does not reduce the penaty to 0 if you do have 4 Dexterity.
+                You also reduce your accuracy penalty while making dual strikes from -5 to -4, as if you had 4 Dexterity.
+                This does not reduce the penalty if you do have 4 Dexterity.
             "),
         ],
         ..Apparel::default()
