@@ -290,6 +290,39 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Collar of Imbuement (1)"),
+        rank: 1,
+        short_description: String::from(r"Grants a rank 1 magic weapon property to natural weapons"),
+        description: String::from(r"
+            This item has a specific rank 1 magic weapon property.
+            It provides that weapon property to all of your \glossterm{natural weapons} that do not require a free hand to use, such as a bite.
+            Different versions of this item exist for each rank 1 magic weapon property.
+        "),
+        tags: vec![AbilityTag::Emotion],
+        upgrades: vec![
+            ItemUpgrade::new(2, r"Grants a rank 2 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 2.
+            "),
+            ItemUpgrade::new(3, r"Grants a rank 3 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 3.
+            "),
+            ItemUpgrade::new(4, r"Grants a rank 4 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 4.
+            "),
+            ItemUpgrade::new(5, r"Grants a rank 5 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 5.
+            "),
+            ItemUpgrade::new(6, r"Grants a rank 6 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 6.
+            "),
+            ItemUpgrade::new(7, r"Grants a rank 7 magic weapon property to natural weapons", r"
+                The magic weapon property is rank 7.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
     apparel
 }
 
