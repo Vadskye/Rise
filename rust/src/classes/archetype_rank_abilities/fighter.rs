@@ -181,15 +181,15 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Armored Crush}
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a \glossterm{strike}.
+                    Make a \glossterm{strike} with a \minus1 accuracy penalty.
                     If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double \glossterm{weapon damage}.
-                    Otherwise, the strike deals 1d6 \glossterm{extra damage}.
+                    Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
 
                     \rankline
-                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
-                    \rank{5} The accuracy bonus increases to \plus2.
-                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple weapon damage. Otherwise, it deals double weapon damage.
-                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple weapon damage. Otherwise, the extra damage increases to 2d8.
+                    \rank{4} The accuracy penalty is removed.
+                    \rank{5} You gain a \plus2 accuracy bonus with the strike.
+                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple weapon damage. Otherwise, the extra damage increases to be equal to your power.
+                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple weapon damage. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,
