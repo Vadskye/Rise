@@ -9,17 +9,17 @@ export const bruteForce: CombatStyle = {
       name: 'Pure Power',
 
       effect: `
-        Make a \\glossterm{strike} with a -4 accuracy penalty.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
         The strike deals double \\glossterm{weapon damage}.
       `,
-      rank: 1,
+      rank: 3,
     },
 
     {
       name: 'Pure Power+',
 
       effect: `
-        Make a \\glossterm{strike} with a -3 accuracy penalty.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
         The strike deals triple \\glossterm{weapon damage}.
       `,
       rank: 5,
