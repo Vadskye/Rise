@@ -519,7 +519,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             // TODO: run this through the spreadsheet
             description: r"
-                At the end of each round, if you dealt damage to a creature other than yourself that round, you gain a frenzy point.
+                At the end of each round, if you attacked a creature other than yourself that round, you gain a frenzy point.
                 Otherwise, you lose a frenzy point.
                 You can have a maximum of 4 frenzy points and a minimum of 0.
                 Frenzy points increase the power of your \ability{feral frenzy} ability.
