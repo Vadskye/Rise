@@ -633,33 +633,74 @@
       \hit You deal the target \glossterm{weapon damage} from the weapon.
     \end{activeability}
 
-    \subsubsection{Dual Strikes}\label{Dual Strikes}
-      If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
-      This is called a \glossterm{dual strike}.
-      You need a Dexterity of at least 1 to make a dual strike.
-      In addition, you cannot use a shield to make dual strikes, even if you are proficient with using it as a weapon.
+  \subsection{Dual Strikes}\label{Dual Strikes}
+    If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
+    This is called a \glossterm{dual strike}.
+    You need a Dexterity of at least 1 to make a dual strike.
+    In addition, you cannot use a shield to make dual strikes, even if you are proficient with using it as a weapon.
 
-      When you make a dual strike, you make a separate attack with each weapon.
-      Each attack deals its full \glossterm{weapon damage} if it hits.
-      You make the attacks sequentially, so you can direct the second attack at a different target depending on the results of the first attack.
+    When you make a dual strike, you treat both of your weapons as a single combined weapon.
+    You sum the accuracy modifier and \glossterm{weapon damage} from both weapons.
+    However, your weapon damage bonus from \glossterm{power} only applies once to the combined weapon, not once for each weapon.
+    All magical properties from both weapons apply to the combined weapon if possible.
+    Numeric bonuses from magical properties, including \glossterm{extra damage}, stack.
 
-      Although a dual strike make two attack rolls, it is still considered to be a single attack.
-      Even if you hit a target with both weapons, you still only apply special effects of the attack once.
-      This includes \glossterm{extra damage}, any \glossterm{conditions} caused by the strike, and so on.
-      Each target hit by either weapon still suffers those full special effects, just like other attacks that can hit multiple targets.
+    Some weapon tags have special rules for they work in a dual strike.
+    \begin{raggeditemize}
+      \weapontag{Ammunition}: No special effect. Only the Ammunition weapon breaks after making the dual strike.
+      \weapontag{Bow}: You cannot make dual strikes with Bow weapons.
+      \weapontag{Clinch}: If you use two Clinch weapons, the accuracy bonus stacks.
+      \weapontag{Compact}: No special effect.
+      \weapontag{Heavy}: You take a \minus1 accuracy penalty for each Heavy weapon.
+      \weapontag{Impact}: If you use two Impact weapons, you get a glancing blow when you would miss by 8 or less.
+      \weapontag{Keen}: If you use two Keen weapons, the accuracy bonus stacks.
+      \weapontag{Light}: You gain a \plus1 accuracy bonus for each Light weapon.
+      \weapontag{Long}: Only functions if both weapons are Long.
+      \weapontag{Maneuverable}: Only functions if both weapons are Maneuverable.
+      \weapontag{Mounted}: If you use two Mounted weapons, the accuracy bonus stacks.
+      \weapontag{Parrying}: If you use two Parrying weapons, the accuracy bonus stacks.
+      \weapontag{Projectile}: You can only make dual strikes with Projectile weapons if both weapons have the Projectile tag. Use the lower \glossterm{range limits} of the two weapons.
+      \weapontag{Resonating}: If you use two Resonating weapons, the defense penalty stacks.
+      \weapontag{Subdual}: Only functions if both weapons are Subdual.
+      \weapontag{Sweeping}: If you use two Sweeping weapons, the number of additional targets stacks.
+      \weapontag{Thrown}: Only functions if both weapons are Thrown. Use the lower \glossterm{range limits} of the two weapons.
+      \weapontag{Versatile Grip}: No special effect.
+    \end{raggeditemize}
 
-      Dual-wielding has three downsides.
-      \begin{itemize}
-        \item You cannot get a \glossterm{glancing blow} with either weapon while attacking with two weapons at once (see \pcref{Glancing Blows}).
-          If you would miss by 1 or 2, it is considered a full miss instead of a glancing blow.
-        \item You take a \minus2 accuracy penalty with both attacks.
-          If your Dexterity is 4 or higher, this penalty is reduced to \minus1.
-        \item For each non-\weapontag{Light} weapon you dual-wield with, you take an additional \minus1 accuracy penalty with both attacks.
-          Each \weapontag{Heavy} weapon instead imposes a \minus2 penalty.
-      \end{itemize}
+    % Assuming 4 Dex:
+    % 2x rapier: +3a 2d4 = +4a 2d4, +2a Light, -3a light base
+    % 2x Broadsword: -2a 2d6 Sweeping (2) = +2a 2d6, Sweeping (2), -4a base
+    % broadsword/smallsword: +1a 1d6+1d4 Sweeping (1) = +3a 1d6+1d4, Sweeping (1), +1a Light, -3a Light base
+    % 2x sickle: +1a 2d4 Sweeping (2) = +2a 2d4 Sweeping (2), +2a Light, -3a Light base
 
-      Some abilities check if you hit or miss with a \glossterm{strike}.
-      While dual-wielding, you can both hit and miss with the same strike if you hit with one weapon and miss with the other.
+    % Exotics:
+    % War scythe: +0a 1d10 Sweeping (2)
+    % 2x Kukri: +2a 2d4 Sweeping (2) = +4a 2d4 Sweeping (2), +2a Light, -4a Light exotic base
+    Normally, you take a \minus5 accuracy penalty when making a \glossterm{dual strike}.
+    If you are using at least one \glossterm{exotic weapon}, this accuracy penalty is increased by 1.
+    If you are using at least one \weapontag{Light} weapon, this accuracy penalty is reduced by 1.
+    If you have at least 4 Dexterity, this accuracy penalty is reduced by 1.
+
+    Putting this all together, here are some examples for a creature with less than 4 Dexterity:
+    % Assuming 1-3 Dex
+    \begin{raggeditemize}
+      \item Broadsword and smallsword: \plus0 accuracy, 1d6\plus1d4 damage, Sweeping (1)
+      \item Two kukris: \plus1 accuracy, 2d4 damage, Sweeping (2).
+      % = +2a 2d4, +2a light, -4a light base
+      \item Two rapiers: \plus0 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits).
+      % = +0a 2d10, -5a base
+      \item Two totokias: \minus5 accuracy, 2d10 damage, Impact+ (glance if miss by 8 or less)
+      % = +1a 1d8+1d4, +1a light, -4a light base
+      \item Throwing axe and handaxe: \minus2 accuracy, 1d8\plus1d4 damage, Thrown (30/60)
+      % = +0a 1d8+1d6, +1a light, -4a light base
+      \item Warhammer and light hammer: \minus3 accuracy, 1d8\plus1d6 damage, Resonating+ (-4 Armor on hit), Versatile Grip (usually irrelevant)
+    \end{raggeditemize}
+
+    \subsubsection{Split Strikes}
+      Whenever you make a \glossterm{dual strike}, you can designate it as a split strike.
+      A split strike deals half damage, but you can choose an additional target of the strike.
+      Unlike the \weapontag{Sweeping} weapon tag, this works with both melee and ranged attacks.
+      Narratively, this represents you hitting one creature with one weapon and a different creature with your other weapon.
 
   \subsection{Special Combat Abilities}\label{Special Combat Abilities}
 
