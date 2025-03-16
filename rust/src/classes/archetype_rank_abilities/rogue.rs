@@ -387,7 +387,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target is \trait{immune} to Compulsion and Emotion attacks.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Stutterstep Staccato}[\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
+                    \begin{magicalsustainability}{Stutterstep Staccato}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
