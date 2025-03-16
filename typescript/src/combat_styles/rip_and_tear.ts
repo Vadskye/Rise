@@ -77,13 +77,11 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Two-Weapon Rend',
 
-      // 1d6 +1 per 2 power is about the same damage as an extra strike, so about 50%
-      // more damage compared to hitting with two weapons.
       effect: `
-        Make a melee \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        If damaged by both weapons, the target bleeds.
-        A bleeding creature takes 1d6 damage +1 per two \\glossterm{power} during your next action.
-        This bleeding damage is doubled if both weapons get a critical hit.
+        Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
+        If the target takes damage, it bleeds.
+        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 1,
     },
@@ -91,12 +89,12 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Two-Weapon Rend+',
 
-      // Unclear if correct damage
+      // Currently dr4; unclear if correct damage
       effect: `
-        Make a melee \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        \\hit Each target that takes damage from both weapons bleeds.
+        Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
+        If the target takes damage, it bleeds.
         A bleeding creature takes 1d6 damage per 2 \\glossterm{power} during your next action.
-        This bleeding damage is doubled if both weapons get a critical hit.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 5,
     },
@@ -135,7 +133,7 @@ export const ripAndTear: CombatStyle = {
     },
 
     {
-      name: 'Sweeping Throw',
+      name: 'Rebounding Throw',
 
       effect: `
         Make a thrown \\glossterm{strike}.
