@@ -651,7 +651,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus2 bonus to your \glossterm{brawling accuracy}.
+                You gain a \plus1 bonus to your \glossterm{brawling accuracy}.
             ",
             modifiers: None,
         },
