@@ -1,0 +1,12 @@
+#!/usr/bin/env fish
+rgen
+g rise; or exit 1
+cd core_book
+latexrun Rise.tex
+
+latexrun TomeOfGuidance.tex
+
+cd ../comprehensive_codex
+latexrun ComprehensiveCodex.tex
+
+rtransfer

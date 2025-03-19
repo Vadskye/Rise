@@ -1,0 +1,6 @@
+#!/usr/bin/env fish
+g rise
+cd core_book
+cleanlatex
+cd ../html_book
+cleanlatex

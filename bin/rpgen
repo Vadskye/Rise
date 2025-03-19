@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+g rise
+
+g rpy
+vf activate rise_book
+set -x PYTHONPATH (p rise)/python
+latex_generation/gen_all.py
+vf deactivate

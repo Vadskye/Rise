@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+g rise
+cp -r character_sheet/paper_sheet (p utransfer)
+cp character_sheet/roll20.html (p utransfer)
+cp character_sheet/roll20.css (p utransfer)
+cp core_book/Rise.pdf (p utransfer)
+cp comprehensive_codex/ComprehensiveCodex.pdf (p utransfer)
+cp core_book/TomeOfGuidance.pdf (p utransfer)
+cp html_book/Omnibook.pdf (p utransfer)
