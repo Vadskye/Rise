@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+g rise
+cd core_book
+latexrun TomeOfGuidance.tex; and tog
