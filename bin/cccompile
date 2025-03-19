@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+g rise
+cd comprehensive_codex
+latexrun ComprehensiveCodex.tex; and codex

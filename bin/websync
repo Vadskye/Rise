@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+cd ~/github/personal-website
+node compile.js
+rsync -r /var/www/html/* joyandwonderandcupcakes:/var/www/html
+# rsync /var/www/html/.htaccess joyandwonderandcupcakes:/var/www/html

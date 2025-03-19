@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+# Generate only the Rust code, which is faster
+g rust
+./src/bin/generate_rust_files.fish

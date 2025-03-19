@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+g rise
+cd character_sheet
+vf activate rise_book
+./sheet.py
+vf deactivate
+g personalwebsite
+node compile.js
+cp -r (p html)/rise/character-sheet (p utransfer)
