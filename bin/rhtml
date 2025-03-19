@@ -1,0 +1,13 @@
+#!/usr/bin/env fish
+g rise
+cd html_book
+cleanlatex
+rm *.html
+# make4ht -c rise.cfg -u rise "xhtml,3"
+# make4ht -c rise.cfg -a info -l rise "xhtml,3"
+echo "See $HOME/.rhtml.log for logging info if this has issues."
+make4ht -a debug -c rise.cfg -l rise "xhtml,3" > "$HOME/.rhtml.log"
+g html
+rm rise/*.html
+g personalwebsite
+node compile.js

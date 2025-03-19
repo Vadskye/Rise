@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+rtransfer
+g utransfer
+"/mnt/c/Program Files/SumatraPDF/SumatraPDF.exe" ComprehensiveCodex.pdf
