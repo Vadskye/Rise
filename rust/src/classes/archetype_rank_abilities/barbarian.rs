@@ -401,7 +401,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Devastating Maneuver} The maneuver deals double damage, but you take an accuracy penalty equal to 5 - your excess rank.
                     If your excess rank is at least 5, this becomes an accuracy bonus.
-                    You cannot apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    You cannot apply this augment to \atBrawling maneuvers or maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
 
