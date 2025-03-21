@@ -1,13 +1,51 @@
-const CUSTOM_MODIFIER_TYPES = ["attuned", "legacy", "temporary", "permanent"];
-const EXPLANATION_TYPES = CUSTOM_MODIFIER_TYPES.concat([
+type SimpleValue = boolean | number | string;
+interface EventInfo {
+  newValue: SimpleValue | undefined;
+  previousValue: SimpleValue | undefined;
+  removedInfo: Record<string, string>;
+  sourceAttribute: string;
+  triggerName: string;
+};
+declare function on(changeString: string, callback: (eventInfo: EventInfo) => void): void;
+type Attrs = Record<string, any>;
+declare function getAttrs(getVariables: string[], callback: (attrs: Attrs) => void): void;
+declare function setAttrs(attrs: Attrs): void;
+declare function getSectionIDs(sectionPrefix: string, callback: (repeatingSectionIds: string[]) => void): void;
+declare function generateRowID(): string;
+declare function removeRepeatingRow(rowKey: string): void;
+
+type CustomModifierType = "attuned" | "legacy" | "temporary" | "permanent";
+const CUSTOM_MODIFIER_TYPES: CustomModifierType[] = ["attuned", "legacy", "temporary", "permanent"];
+
+type ExplanationType = CustomModifierType | "creation" | "debuff" | "vital_wound";
+const EXPLANATION_TYPES: ExplanationType[] = [
+  "attuned", "legacy", "temporary", "permanent",
   "creation",
   "debuff",
   "vital_wound",
-]);
+];
+
+type CreatureSize = "fine" | "diminutive" | "tiny" | "small" | "medium" | "large" | "huge" | "gargantuan" | "colossal";
+type ProgressionName = 'low' | 'medium' | 'high' | 'very high' | 'extreme';
+
+interface BaseClassModifier {
+  armor_defense: number;
+  armor_usage_class?: "light" | "medium" | "heavy";
+  damage_resistance?: ProgressionName;
+  hit_points: ProgressionName;
+  fortitude: number;
+  reflex: number;
+  mental: number;
+  attunement_points?: number;
+  insight_points?: number;
+  class_skill_count?: number;
+  proficiencies?: string;
+};
+
 // Treat roles as classes too.
 // Most role modifiers are handled automatically in `handleCreationModifiers`.
 // However, armor_usage_class needs custom handling in `handleArmorDefense`.
-const BASE_CLASS_MODIFIERS = {
+const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // ROLES
   brute: {
     armor_defense: 4,
@@ -66,6 +104,7 @@ const BASE_CLASS_MODIFIERS = {
 
   // CLASSES
   barbarian: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -76,6 +115,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light and medium armor, and non-exotic weapons",
   },
   cleric: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -86,6 +126,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light and medium armor",
   },
   druid: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -107,6 +148,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor and non-exotic weapons",
   },
   monk: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -117,6 +159,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor and monk weapons",
   },
   paladin: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -127,6 +170,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor and non-exotic weapons",
   },
   ranger: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -138,6 +182,7 @@ const BASE_CLASS_MODIFIERS = {
       "Light and medium armor, leather lamellar armor, and non-exotic weapons",
   },
   rogue: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -148,6 +193,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor, Compact weapons, and Light weapons",
   },
   sorcerer: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -158,6 +204,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "None",
   },
   votive: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -168,6 +215,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light and medium armor, and non-exotic weapons",
   },
   wizard: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -180,6 +228,7 @@ const BASE_CLASS_MODIFIERS = {
 
   // OPTIONAL CLASSES
   automaton: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -190,6 +239,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor and non-exotic weapons",
   },
   dragon: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -200,6 +250,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
   dryad: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -210,6 +261,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
   harpy: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -220,6 +272,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
   naiad: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 1,
     mental: 1,
@@ -230,6 +283,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
   oozeborn: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -240,6 +294,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor",
   },
   treant: {
+    armor_defense: 0,
     fortitude: 2,
     reflex: 0,
     mental: 0,
@@ -250,6 +305,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "All armor and club-like weapons",
   },
   troll: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -260,6 +316,7 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor, leather lamellar, layered hide, standard shields, and club-like weapons",
   },
   vampire: {
+    armor_defense: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -270,39 +327,8 @@ const BASE_CLASS_MODIFIERS = {
     proficiencies: "Light armor and non-exotic weapons",
   },
 };
-// const SPECIES_MODIFIERS = {
-//   human: {
-//     insight_points: 1,
-//     nonclass_skill_count: 1,
-//   },
-//   dwarf: {
-//     constitution: 1,
-//     "craft (metal)": 2,
-//     "craft (stone)": 2,
-//     dexterity: -1,
-//     speed: -5,
-//   },
-//   elf: {
-//     constitution: -1,
-//     mental: 1,
-//     awareness: 2,
-//     balance: 2,
-//   },
-//   gnome: {
-//     strength: -1,
-//     insight_points: 1,
-//     speed: -5,
-//     stealth: 2,
-//   },
-//   "half-elf": {
-//     persuasion: 2,
-//   },
-//   "half-orc": {
-//     strength: 1,
-//   },
-// };
 
-const ATTRIBUTE_SHORTHAND = {
+const ATTRIBUTE_SHORTHAND: Record<string, string> = {
   strength: "Str",
   dexterity: "Dex",
   constitution: "Con",
@@ -311,40 +337,59 @@ const ATTRIBUTE_SHORTHAND = {
   willpower: "Wil",
   other: "Other",
 };
+
 const supportedWeaponCount = 4;
 
-function roundToFiveFootIncrements(val) {
+type ChallengeRating = 1 | 4;
+
+type V = {
+  // Mandatory fields we know exist
+  eventInfo: EventInfo;
+  misc: number;
+  miscExplanation: string;
+} & {
+  // Optional fields with specific types
+  challenge_rating?: ChallengeRating;
+  size?: CreatureSize;
+} & Record<string, any>;
+
+function roundToFiveFootIncrements(val: number): number {
   return Math.floor(Math.floor(val) / 5) * 5;
 }
 
-function sumCustomModifiers(v, prefix) {
+function sumCustomModifiers(v: V, prefix: string): number {
   let sum = 0;
   for (const name of customModifierNames(prefix)) {
-    sum += v[name];
+    sum += Number(v[name]);
   }
   return sum;
 }
 
-function customModifierNames(prefix) {
+function customModifierNames(prefix: string): string[] {
   return CUSTOM_MODIFIER_TYPES.map((t) => `${prefix}_${t}_modifier`);
 }
 
-// variable types: boolean, miscName, numeric, string
-// options: { includeLevel?: Boolean, runOnSheetOpen?: Boolean }
-// This can be called with only two arguments, omitting `options`.
-function onGet(variables, options, callback = null) {
-  if (!callback) {
-    callback = options;
-    options = {
-      includeLevel: true,
-      runOnSheetOpen: false,
-    };
-  }
-  const variablesWithoutListen = options.variablesWithoutListen || {};
-  for (const varType of ["boolean", "numeric", "string"]) {
-    variables[varType] = variables[varType] || [];
-    variablesWithoutListen[varType] = variablesWithoutListen[varType] || [];
-  }
+// Define specific types for variables and options
+interface OnGetVariables {
+  boolean: string[];
+  miscName?: string;
+  numeric: string[];
+  string: string[];
+}
+
+interface OnGetOptions {
+  includeLevel?: boolean;
+  runOnSheetOpen?: boolean;
+  variablesWithoutListen?: Partial<OnGetVariables>;
+}
+
+function onGet(args: { variables: Partial<OnGetVariables>; options?: OnGetOptions; callback: (v: V) => void }): void {
+  const options = args.options ? args.options : { includeLevel: true, runOnSheetOpen: true };
+  const callback = args.callback;
+  const { variables, variablesWithoutListen } = initializeOnGetVariables({
+    variables: args.variables,
+    variablesWithoutListen: options.variablesWithoutListen || {},
+  });
   if (options.includeLevel && !variables.numeric.includes("level")) {
     variables.numeric.push("level");
   }
@@ -371,7 +416,7 @@ function onGet(variables, options, callback = null) {
   ];
   on(changeString, (eventInfo) => {
     getAttrs(getVariables, (attrs) => {
-      const v = { eventInfo, misc: 0, miscExplanation: "" };
+      const v: V = { eventInfo, misc: 0, miscExplanation: "" };
       for (const b of variables.boolean.concat(
         variablesWithoutListen.boolean
       )) {
@@ -397,11 +442,21 @@ function onGet(variables, options, callback = null) {
   });
 }
 
-function boolifySheetValue(val) {
+function initializeOnGetVariables(args: { variables: Partial<OnGetVariables>; variablesWithoutListen: Partial<OnGetVariables> }): { variables: OnGetVariables, variablesWithoutListen: OnGetVariables } {
+  const { variables, variablesWithoutListen } = args;
+  for (const varType of ["boolean" as const, "numeric" as const, "string" as const]) {
+    variables[varType] = variables[varType] || [];
+    variablesWithoutListen[varType] = variablesWithoutListen[varType] || [];
+  }
+
+  return { variables: variables as OnGetVariables, variablesWithoutListen: variablesWithoutListen as OnGetVariables };
+}
+
+function boolifySheetValue(val: string | undefined): boolean {
   return Boolean(val === "on" || val === "1");
 }
 
-const SKILLS_BY_ATTRIBUTE = {
+const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
   strength: ["climb", "jump", "swim"],
   dexterity: [
     "balance",
@@ -542,20 +597,26 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "speed",
 ]);
 
-function formatParseableSkillName(skillName) {
+function formatParseableSkillName(skillName: SimpleValue | undefined) {
   if (!skillName) {
     return null;
   }
   return skillName
+    .toString()
     .toLowerCase()
     .replaceAll(" ", "_")
     .replaceAll("(", "")
     .replaceAll(")", "");
 }
 
-function generateMiscVariables(name) {
-  const explanationVariables = [];
-  const numericVariables = [];
+interface MiscVariables {
+  explanationVariables: string[];
+  numericVariables: string[];
+}
+
+function generateMiscVariables(name: string | undefined) {
+  const explanationVariables: string[] = [];
+  const numericVariables: string[] = [];
   if (!name) {
     return { explanationVariables, numericVariables };
   }
@@ -580,7 +641,7 @@ function generateMiscVariables(name) {
   return { explanationVariables, numericVariables };
 }
 
-function formatChangeString(varName) {
+function formatChangeString(varName: string): string {
   if (varName.includes("repeating_")) {
     return varName.replace(/repeating_([^_]+)_(.*)/, "change:repeating_$1:$2");
   } else {
@@ -645,7 +706,7 @@ function handleResources() {
   handleTrainedSkills();
 }
 
-function addDiceIncrements(count, size, increments) {
+function addDiceIncrements(count: number, size: number, increments: number) {
   const all_dice_pools = [
     "1d1",
     "1d2",
@@ -683,7 +744,7 @@ function addDiceIncrements(count, size, increments) {
   }
 }
 
-function formatDicePool(count, size, modifier) {
+function formatDicePool(count: number, size: number, modifier: number) {
   let dice = `${count}d${size}`;
   if (modifier > 0) {
     return `${dice}+${modifier}`;
@@ -694,7 +755,7 @@ function formatDicePool(count, size, modifier) {
   }
 }
 
-function calcAccuracyCrScaling(level, challengeRating) {
+function calcAccuracyCrScaling(level: number, challengeRating?: ChallengeRating) {
   if (!challengeRating) {
     return 0;
   }
@@ -711,7 +772,7 @@ function calcAccuracyCrScaling(level, challengeRating) {
   return levelScaling;
 }
 
-function calcDefenseCrScaling(level, challengeRating) {
+function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) {
   if (!challengeRating) {
     return 0;
   }
@@ -737,12 +798,11 @@ function calcDefenseCrScaling(level, challengeRating) {
   return levelScaling;
 }
 
-function parseDicePool(attack_damage_dice) {
+function parseDicePool(attack_damage_dice: string) {
   if (!attack_damage_dice) {
     return null;
   }
   let [count, size] = attack_damage_dice.split("d");
-  let modifier = 0;
   if (!size) {
     return {
       count: null,
@@ -751,17 +811,16 @@ function parseDicePool(attack_damage_dice) {
     };
   }
 
-  // for example, "d4"
-  if (!count) {
-    count = 1;
-  }
+  let modifier = "0";
   if (size.includes("+")) {
     [size, modifier] = size.split("+");
   } else if (size.includes("-")) {
     [size, modifier] = size.split("-");
   }
+
+  // for example, "d4"
   return {
-    count: Number(count) || null,
+    count: count ? Number(count) : 1,
     modifier: Number(modifier),
     size: Number(size),
   };
@@ -773,12 +832,12 @@ function handleAbilitiesKnown() {
   }
 }
 
-function handleAbilityKnown(abilityName) {
-  onGet(
-    {
+function handleAbilityKnown(abilityName: string) {
+  onGet({
+    variables: {
       miscName: `${abilityName}_known`,
     },
-    (v) => {
+    callback: (v) => {
       const totalValue = v.misc;
       setAttrs({
         [`has_${abilityName}_known`]: totalValue > 0 ? "1" : "0",
@@ -788,16 +847,16 @@ function handleAbilityKnown(abilityName) {
         [`${abilityName}_known`]: totalValue,
       });
     }
-  );
+  });
 }
 
 function handleAccuracy() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "accuracy",
       numeric: ["challenge_rating", "level", "perception", "fatigue_penalty"],
     },
-    (v) => {
+    callback: (v) => {
       const levelModifier = v.level / 2;
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
@@ -817,31 +876,31 @@ function handleAccuracy() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleAccuracyWithStrikes() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "accuracy_with_strikes",
     },
-    (v) => {
+    callback: (v) => {
       setAttrs({
         accuracy_with_strikes: v.misc,
         accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
       });
     }
-  );
+  });
 }
 
 function handleBrawlingAccuracy() {
   const accuracyMiscVariables = generateMiscVariables("accuracy").numericVariables;
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "brawling_accuracy",
       numeric: ["challenge_rating", "level", "strength", "fatigue_penalty", ...accuracyMiscVariables],
     },
-    (v) => {
+    callback: (v) => {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
       const levelishModifier = levelModifier + strengthModifier;
@@ -869,11 +928,11 @@ function handleBrawlingAccuracy() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleActiveAbilityDice() {
-  function getAbilityDicePoolAttrs(keyPrefix, callback) {
+  function getAbilityDicePoolAttrs(keyPrefix: string, callback: (pool: DicePool) => void) {
     return getDicePoolAttrs(
       keyPrefix,
       "dice_pool",
@@ -901,8 +960,8 @@ function handleActiveAbilityDice() {
 }
 
 function handleArmorDefense() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "armor_defense",
       numeric: [
         "level",
@@ -914,7 +973,7 @@ function handleArmorDefense() {
       ],
       string: ["body_armor_usage_class", "shield_usage_class", "base_class"],
     },
-    (v) => {
+    callback: (v) => {
       // calculate attributeModifier
       let attributeModifier = 0;
       let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class]
@@ -956,7 +1015,7 @@ function handleArmorDefense() {
         ),
       });
     }
-  );
+  });
 }
 
 function handleAttackTargeting() {
@@ -966,16 +1025,16 @@ function handleAttackTargeting() {
     "repeating_nondamagingattacks",
     "repeating_abilities",
   ]) {
-    onGet(
-      {
+    onGet({
+      variables: {
         boolean: [`${repeatingSection}_is_targeted`],
         string: [`${repeatingSection}_attack_defense`],
       },
-      { includeLevel: false },
-      (v) => {
+      options: { includeLevel: false },
+      callback: (v) => {
         setAttackTargeting(repeatingSection, v);
       }
-    );
+    });
     on("change:level", () => {
       getSectionIDs(repeatingSection, (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
@@ -995,10 +1054,10 @@ function handleAttackTargeting() {
   }
 }
 
-function setAttackTargeting(sectionPrefix, v) {
+function setAttackTargeting(sectionPrefix: string, attrs: Attrs) {
   const { defenseText, targetText } = calcAttackTargeting(
-    v[`${sectionPrefix}_is_targeted`],
-    v[`${sectionPrefix}_attack_defense`]
+    attrs[`${sectionPrefix}_is_targeted`],
+    attrs[`${sectionPrefix}_attack_defense`]
   );
   setAttrs({
     [`${sectionPrefix}_targeting_text`]: targetText,
@@ -1010,7 +1069,7 @@ function setAttackTargeting(sectionPrefix, v) {
   });
 }
 
-function calcAttackTargeting(isTargeted, rawDefense) {
+function calcAttackTargeting(isTargeted: boolean, rawDefense: string) {
   rawDefense = (rawDefense || "").toLowerCase().trim();
   const targetText = isTargeted
     ? "{{Target=@{target|Defender|token_name}}}"
@@ -1050,18 +1109,18 @@ function handleAttributes() {
     "perception",
     "willpower",
   ]) {
-    onGet(
-      {
+    onGet({
+      variables: {
         miscName: attributeName,
         numeric: [`${attributeName}_at_creation`, `${attributeName}_level_scaling`],
       },
-      (v) => {
+      callback: (v) => {
         const totalValue = v[`${attributeName}_at_creation`] + v[`${attributeName}_level_scaling`] + v.misc;
         setAttrs({
           [attributeName]: totalValue,
         });
       }
-    );
+    });
   }
 }
 
@@ -1097,12 +1156,12 @@ function handleAttunedEffects() {
 }
 
 function handleAttunementPoints() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "attunement_points",
       numeric: ["level"],
     },
-    (v) => {
+    callback: (v) => {
       const base = 2;
       let fromLevel = 0;
       if (v.level >= 8) {
@@ -1124,35 +1183,32 @@ function handleAttunementPoints() {
         attunement_points_maximum: ap,
       });
     }
-  );
+  });
 }
 
 function handleCreationModifiers() {
-  onGet(
-    {
+  onGet({
+    variables: {
       numeric: ["archetype_rank_0", "archetype_rank_1", "archetype_rank_2"],
       string: ["base_class", "species"],
     },
-    (v) => {
+    callback: (v) => {
       const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
 
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
-      const attrs = {
+      const attrs: Attrs = {
         base_class_proficiencies: (classModifiers && classModifiers.proficiencies) || "",
         class_skill_count: (classModifiers && classModifiers.class_skill_count) || 0,
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
-        "armor_defense",
-        "fortitude",
-        "reflex",
-        "mental",
-        "attunement_points",
-        "fatigue_tolerance",
-        "insight_points",
-        "magical_power",
-        "mundane_power",
+        "armor_defense" as const,
+        "fortitude" as const,
+        "reflex" as const,
+        "mental" as const,
+        "attunement_points" as const,
+        "insight_points" as const,
       ]) {
         const modifierValue = (classModifiers && classModifiers[modifierKey]) || 0;
         attrs[`${modifierKey}_creation_explanation`] =
@@ -1167,7 +1223,7 @@ function handleCreationModifiers() {
 
       setAttrs(attrs);
     }
-  );
+  });
 }
 
 function handleCustomModifiers() {
@@ -1176,17 +1232,17 @@ function handleCustomModifiers() {
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
       function() {
         const nestedCustomStatisticCount = 3;
-        const formatStatisticId = (id, i) =>
+        const formatStatisticId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
-        const formatNameId = (id) =>
+        const formatNameId = (id: string) =>
           `repeating_${modifierType}modifiers_${id}_name`;
-        const formatValueId = (id, i) =>
+        const formatValueId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_value${i}`;
-        const formatIsActiveId = (id) =>
+        const formatIsActiveId = (id: string) =>
           `repeating_${modifierType}modifiers_${id}_is_active`;
-        const formatModifierKey = (modifierName) =>
+        const formatModifierKey = (modifierName: string) =>
           `${modifierName}_${modifierType}_modifier`;
-        const formatExplanationKey = (modifierName) =>
+        const formatExplanationKey = (modifierName: string) =>
           `${modifierName}_${modifierType}_explanation`;
 
         getSectionIDs(
@@ -1227,7 +1283,7 @@ function handleCustomModifiers() {
                   }
                 }
               }
-              const attrs = {};
+              const attrs: Attrs = {};
               for (const statisticKey of VARIABLES_WITH_CUSTOM_MODIFIERS) {
                 attrs[formatModifierKey(statisticKey)] =
                   namedModifierMap.calculateModifierValue(statisticKey);
@@ -1245,15 +1301,13 @@ function handleCustomModifiers() {
 }
 
 class NamedModifierMap {
+  namedModifiersByStatistic: Record<string, NamedModifier[]>
+
   constructor() {
     this.namedModifiersByStatistic = {};
   }
 
-  addNamedModifier(statisticKey, name, value) {
-    // support named arguments
-    if (!name) {
-      ({ statisticKey, name, value } = statisticKey);
-    }
+  addNamedModifier(statisticKey: string, name: string, value: number) {
     if (statisticKey === "all_defenses") {
       for (const defenseKey of [
         "armor_defense",
@@ -1300,7 +1354,7 @@ class NamedModifierMap {
     ).concat({ name, value });
   }
 
-  calculateModifierValue(statisticKey) {
+  calculateModifierValue(statisticKey: string) {
     if (!this.namedModifiersByStatistic[statisticKey]) {
       return 0;
     }
@@ -1311,7 +1365,7 @@ class NamedModifierMap {
     return total;
   }
 
-  generateExplanation(statisticKey, sorted = false) {
+  generateExplanation(statisticKey: string, sorted = false) {
     if (!this.namedModifiersByStatistic[statisticKey]) {
       return "";
     }
@@ -1341,8 +1395,8 @@ function handleDamageDice() {
 }
 
 function handleDamageResistance() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "damage_resistance",
       numeric: [
         "hit_points_maximum",
@@ -1353,12 +1407,12 @@ function handleDamageResistance() {
       ],
       string: ["base_class"],
     },
-    {
+    options: {
       variablesWithoutListen: {
         numeric: ["damage_resistance", "damage_resistance_maximum"],
       },
     },
-    (v) => {
+    callback: (v) => {
       let drFromLevel = 0;
       const drProgression = v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance;
       if (drProgression) {
@@ -1369,7 +1423,7 @@ function handleDamageResistance() {
       var crMultiplier = {
         1: 1,
         4: 4,
-      }[v.challenge_rating] || 1;
+      }[v.challenge_rating!] || 1;
       const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
       // use math.max as a dumb hack so we can use negative values to mean "really zero,
       // don't || into 1"
@@ -1378,7 +1432,7 @@ function handleDamageResistance() {
         Math.max(0, v.damage_resistance_vital_wound_multiplier || 1)
       );
 
-      let attrs = {
+      const attrs: Attrs = {
         damage_resistance_explanation: formatCombinedExplanation(
           v.miscExplanation,
           [
@@ -1401,10 +1455,10 @@ function handleDamageResistance() {
       }
       setAttrs(attrs);
     }
-  );
+  });
 }
 
-function calcBaseDamageResistance(levelish) {
+function calcBaseDamageResistance(levelish: number) {
   let baseDr = 0;
   if (levelish > 0) {
     if (levelish > 21) {
@@ -1412,58 +1466,63 @@ function calcBaseDamageResistance(levelish) {
       baseDr = 5 * (levelish - 21);
       levelish = 21;
     }
-    baseDr +=
-      {
-        1: 0,
-        2: 1,
-        3: 2,
-        4: 3,
-        5: 4,
-        6: 5,
-        7: 6,
-        8: 7,
-        9: 8,
-        10: 9,
-        11: 10,
-        12: 12,
-        13: 14,
-        14: 16,
-        15: 18,
-        16: 20,
-        17: 22,
-        18: 25,
-        19: 28,
-        20: 31,
-        21: 35,
-      }[levelish];
+
+    const modifier = {
+      1: 0,
+      2: 1,
+      3: 2,
+      4: 3,
+      5: 4,
+      6: 5,
+      7: 6,
+      8: 7,
+      9: 8,
+      10: 9,
+      11: 10,
+      12: 12,
+      13: 14,
+      14: 16,
+      15: 18,
+      16: 20,
+      17: 22,
+      18: 25,
+      19: 28,
+      20: 31,
+      21: 35,
+    }[levelish];
+    if (modifier === undefined) {
+      throw new Error(`Unable to calculate base damage resistance for ${levelish}`);
+    }
+    baseDr += modifier;
   } else {
     baseDr = levelish;
   }
   return baseDr;
 }
 
-function sanitizeText(text) {
+function sanitizeText(text: string) {
   if (!text) {
     return text;
   }
   return text
-          .replaceAll(",", "&#44;")
-          .replaceAll("/", "&#47;");
+    .replaceAll(",", "&#44;")
+    .replaceAll("/", "&#47;");
 }
 
 function handleCharacterNameSanitization() {
-  onGet(
-    {
+  onGet({
+    variables: {
       string: ["character_name"],
     },
-    (v) => {
-      setAttrs({ character_name_sanitized: sanitizeText(v.character_name)});
-    });
+    callback: (v) => {
+      setAttrs({ character_name_sanitized: sanitizeText(v.character_name) });
+    }
+  });
 }
 
 function handleDebuffs() {
-  onGet(
-    {
+  onGet({
+    variables: {
       boolean: [
         // conditional debuffs
         "climbing",
@@ -1492,16 +1551,14 @@ function handleDebuffs() {
         "paralyzed",
       ],
     },
-    (v) => {
+    callback: (v) => {
       let debuffHeaders = "";
 
       let namedModifierMap = new NamedModifierMap();
 
-      const minus1 = (cause, statistic) =>
-        namedModifierMap.addNamedModifier(statistic, cause, -1);
-      const minus2 = (cause, statistic) =>
+      const minus2 = (cause: string, statistic: string) =>
         namedModifierMap.addNamedModifier(statistic, cause, -2);
-      const minus4 = (cause, statistic) =>
+      const minus4 = (cause: string, statistic: string) =>
         namedModifierMap.addNamedModifier(statistic, cause, -4);
 
       // circumstantial effects
@@ -1594,7 +1651,7 @@ function handleDebuffs() {
         minus4("panicked", "mental");
       }
 
-      const attrs = { debuff_headers: debuffHeaders.trim() };
+      const attrs: Attrs = { debuff_headers: debuffHeaders.trim() };
       for (const statistic of [
         "accuracy",
         "armor_defense",
@@ -1610,16 +1667,16 @@ function handleDebuffs() {
 
       setAttrs(attrs);
     }
-  );
+  });
 }
 
 function handleEncumbrance() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "encumbrance",
       numeric: ["body_armor_encumbrance", "shield_encumbrance", "strength"],
     },
-    (v) => {
+    callback: (v) => {
       const strengthModifier = Math.max(0, v.strength);
       const totalValue = Math.max(
         0,
@@ -1637,30 +1694,30 @@ function handleEncumbrance() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleFatiguePenalty() {
-  onGet(
-    {
+  onGet({
+    variables: {
       numeric: ["fatigue_points", "fatigue_tolerance"],
     },
-    (v) => {
+    callback: (v) => {
       const totalValue = Math.max(0, v.fatigue_points - v.fatigue_tolerance);
       setAttrs({
         fatigue_penalty: totalValue,
       });
     }
-  );
+  });
 }
 
 function handleFatigueTolerance() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "fatigue_tolerance",
       numeric: ["constitution"],
     },
-    (v) => {
+    callback: (v) => {
       const base = 3;
       const totalValue = base + Math.max(0, v.constitution + v.misc);
       setAttrs({
@@ -1677,12 +1734,12 @@ function handleFatigueTolerance() {
         fatigue_points_max: totalValue,
       });
     }
-  );
+  });
 }
 
 function handleHitPoints() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "hit_points",
       numeric: [
         "level",
@@ -1691,24 +1748,24 @@ function handleHitPoints() {
       ],
       string: ["base_class"],
     },
-    {
+    options: {
       variablesWithoutListen: {
         numeric: ["hit_points", "hit_points_maximum"],
       },
     },
-    (v) => {
-      const progressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
-      const { hpFromLevel, hpFromConstitution} = calcHpBonuses(progressionName, v.level, v.constitution);
+    callback: (v) => {
+      const progressionName: ProgressionName = v.base_class ? BASE_CLASS_MODIFIERS[v.base_class].hit_points : 'low';
+      const { hpFromLevel, hpFromConstitution } = calcHpBonuses(progressionName, v.level, v.constitution);
 
       let crMultiplier = {
         1: 1,
         4: 3,
-      }[v.challenge_rating] || 1;
+      }[v.challenge_rating!] || 1;
 
       const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
       const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
-      let attrs = {
+      const attrs: Attrs = {
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: "level", value: hpFromLevel },
@@ -1727,10 +1784,10 @@ function handleHitPoints() {
       }
       setAttrs(attrs);
     }
-  );
+  });
 }
 
-function calcHpComponents(progressionName, level) {
+function calcHpComponents(progressionName: ProgressionName, level: number) {
   const progressionIndex = Math.max(0, Math.floor((level - 1) / 6));
   const [baseHp, incrementalHp] = {
     low: [[6, 1], [14, 2], [30, 4], [60, 8]],
@@ -1743,7 +1800,7 @@ function calcHpComponents(progressionName, level) {
   return { baseHp, incrementalHp }
 }
 
-function calcHpBonuses(progressionName, level, constitution) {
+function calcHpBonuses(progressionName: ProgressionName, level: number, constitution: number) {
   const { baseHp, incrementalHp } = calcHpComponents(progressionName, level);
   // This is the number of levels since the last breakpoint jump. Each breakpoint jump
   // increases base HP and incremental level count ("X HP per level above 7th").
@@ -1756,12 +1813,12 @@ function calcHpBonuses(progressionName, level, constitution) {
 }
 
 function handleInsightPoints() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "insight_points",
       numeric: ["intelligence", "level"],
     },
-    (v) => {
+    callback: (v) => {
       const base = 1;
       let fromLevel = 0;
       if (v.level >= 7) {
@@ -1782,16 +1839,16 @@ function handleInsightPoints() {
         ),
       });
     }
-  );
+  });
 }
 
 function handleJumpDistance() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "horizontal_jump_distance",
       numeric: ["base_speed", "strength", "jump_level"],
     },
-    (v) => {
+    callback: (v) => {
       // In case people don't bother to set their size to Medium explicitly
       const base_speed = v.base_speed || 30;
       const base_speed_modifier = roundToFiveFootIncrements(base_speed / 4);
@@ -1809,16 +1866,16 @@ function handleJumpDistance() {
         vertical_jump_distance: verticalDistance,
       });
     }
-  );
+  });
 }
 
 function handleLandSpeed() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "speed",
       numeric: ["base_speed", "body_armor_speed"],
     },
-    (v) => {
+    callback: (v) => {
       // In case people don't bother to set their size to Medium explicitly
       const base_speed = v.base_speed || 30;
       const totalValue = base_speed + v.body_armor_speed + v.misc;
@@ -1830,7 +1887,7 @@ function handleLandSpeed() {
         ]),
       });
     }
-  );
+  });
 }
 
 // function handleModifierExplanations() {
@@ -1866,23 +1923,23 @@ function handleLandSpeed() {
 // }
 
 function handleMonsterChatColor() {
-  onGet(
-    {
+  onGet({
+    variables: {
       numeric: ["challenge_rating"],
     },
-    (v) => {
-      if (v.challenge_rating > 0) {
+    callback: (v) => {
+      if (v.challenge_rating! > 0) {
         setAttrs({
           chat_color: "monster",
         });
       }
     }
-  );
+  });
 }
 
-function handleNonArmorDefense(defense, attribute) {
-  onGet(
-    {
+function handleNonArmorDefense(defense: string, attribute: string) {
+  onGet({
+    variables: {
       miscName: defense,
       numeric: [
         "level",
@@ -1892,13 +1949,13 @@ function handleNonArmorDefense(defense, attribute) {
         "size_reflex_modifier",
       ],
     },
-    (v) => {
+    callback: (v) => {
       const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
       const sizeModifier = defense === "reflex" ? v.size_reflex_modifier : 0;
       // Monsters only apply half attribute modifier
-      const attributeModifier = v.challenge_rating ? Math.floor(v[attribute]/2) : v[attribute];
+      const attributeModifier = v.challenge_rating ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue =
         base +
         levelModifier +
@@ -1923,12 +1980,12 @@ function handleNonArmorDefense(defense, attribute) {
         ),
       });
     }
-  );
+  });
 }
 
 function handleMagicalPower() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "magical_power",
       numeric: [
         "challenge_rating",
@@ -1936,7 +1993,7 @@ function handleMagicalPower() {
         "willpower",
       ],
     },
-    (v) => {
+    callback: (v) => {
       const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
       const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + eliteModifier;
 
@@ -1958,12 +2015,12 @@ function handleMagicalPower() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleMundanePower() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "mundane_power",
       numeric: [
         "challenge_rating",
@@ -1971,7 +2028,7 @@ function handleMundanePower() {
         "strength",
       ],
     },
-    (v) => {
+    callback: (v) => {
       const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
       const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + eliteModifier;
 
@@ -1993,12 +2050,12 @@ function handleMundanePower() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleRust() {
-  onGet(
-    {
+  onGet({
+    variables: {
       numeric: [
         "level",
         "challenge_rating",
@@ -2019,7 +2076,7 @@ function handleRust() {
         "weapon_3_name",
       ],
     },
-    (v) => {
+    callback: (v) => {
       const alignment = v.alignment ? `Usually ${v.alignment}` : "";
       const attributes = [
         v.strength,
@@ -2032,7 +2089,7 @@ function handleRust() {
       const cr = {
         1: "One",
         4: "Four",
-      }[v.challenge_rating];
+      }[v.challenge_rating!];
       const weapons = [];
       for (const weaponName of [
         v.weapon_0_name,
@@ -2064,18 +2121,18 @@ function handleRust() {
             `.trim();
       setAttrs({
         rust,
-        is_monster: v.challenge_rating > 0 ? "1" : "0",
+        is_monster: v.challenge_rating! > 0 ? "1" : "0",
       });
     }
-  );
+  });
 }
 
 function handleSize() {
-  onGet(
-    {
+  onGet({
+    variables: {
       string: ["size"],
     },
-    (v) => {
+    callback: (v) => {
       // Size modifiers are repetitive, so multiplying this value is easier.
       const stepsFromMedium = {
         fine: -4,
@@ -2087,7 +2144,7 @@ function handleSize() {
         huge: 2,
         gargantuan: 3,
         colossal: 4,
-      }[v.size] || 0;
+      }[v.size!] || 0;
 
       let baseSpeed = 0;
       if (stepsFromMedium === 4) {
@@ -2111,17 +2168,17 @@ function handleSize() {
         size_weight_modifier: stepsFromMedium,
       });
     },
-  );
+  });
 }
 
 function handleSkillPoints() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "nonclass_skill_count",
       numeric: ["class_skill_count", "intelligence"],
       string: ["base_class"],
     },
-    (v) => {
+    callback: (v) => {
       const fromInt = Math.max(0, v.intelligence);
       setAttrs({
         nonclass_skill_count: fromInt + v.misc,
@@ -2138,7 +2195,7 @@ function handleSkillPoints() {
         ),
       });
     }
-  );
+  });
 }
 
 function handleTrainedSkills() {
@@ -2146,7 +2203,7 @@ function handleTrainedSkills() {
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
-    const attrs = {};
+    const attrs: Attrs = {};
     if (trainedSkill) {
       attrs[`${trainedSkill}_is_trained`] = "1";
     }
@@ -2202,6 +2259,9 @@ function handleTrainedSkills() {
     const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
       k.endsWith("trained_skill")
     );
+    if (!skillNameKey) {
+      throw new Error("Could not find skillNameKey for trained skill removal");
+    }
     const untrainedSkill = formatParseableSkillName(
       eventInfo.removedInfo[skillNameKey]
     );
@@ -2216,6 +2276,9 @@ function handleTrainedSkills() {
         const rowIdKey = Object.keys(eventInfo.removedInfo).find((k) =>
           k.endsWith("front_rowid")
         );
+        if (!rowIdKey) {
+          throw new Error("Could not find rowIdKey for trained skill removal");
+        }
         const rowId = eventInfo.removedInfo[rowIdKey];
         removeRepeatingRow(`repeating_${skillWithSubskill}subskills_${rowId}`);
         attrs[`${untrainedSkill}_subskill_rowid`] = "";
@@ -2228,11 +2291,11 @@ function handleTrainedSkills() {
     (s) => s.toLowerCase().replaceAll(" ", "_") + "_is_trained"
   );
 
-  onGet(
-    {
+  onGet({
+    variables: {
       boolean: skillsAreTrained,
     },
-    (v) => {
+    callback: (v) => {
       let skillPointsSpent = 0;
       for (const skillIsTrained of skillsAreTrained) {
         if (v[skillIsTrained]) {
@@ -2243,7 +2306,7 @@ function handleTrainedSkills() {
         skill_points_spent: skillPointsSpent,
       });
     }
-  );
+  });
 }
 
 function handleSkills() {
@@ -2264,14 +2327,14 @@ function handleSkills() {
       if (shouldSubtractEncumbrance) {
         numeric.push("encumbrance");
       }
-      onGet(
-        {
+      onGet({
+        variables: {
           boolean: [`${skill}_is_trained`],
           miscName: skill,
           numeric,
           string: [`${skill}_subskill_rowid`],
         },
-        (v) => {
+        callback: (v) => {
           const isTrained = v[`${skill}_is_trained`];
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
           const encumbranceModifier = v.encumbrance || 0;
@@ -2307,19 +2370,19 @@ function handleSkills() {
 
           setAttrs(attrs);
         }
-      );
+      });
     }
   }
 }
 
-function uppercaseFirstLetter(str) {
+function uppercaseFirstLetter(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
 function getDicePoolAttrs(
-  keyPrefix,
-  dicePoolKey,
-  callback
+  keyPrefix: string,
+  dicePoolKey: string,
+  callback: DicePoolCallback,
 ) {
   dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
   const isMagicalKey = `${keyPrefix}_is_magical`;
@@ -2330,11 +2393,11 @@ function getDicePoolAttrs(
       dicePoolKey,
       isMagicalKey,
     ],
-    function(v) {
+    function(attrs) {
       callback(
         calculateDicePoolModifier({
-          dicePool: v[dicePoolKey],
-          power: v[isMagicalKey] ? v.magical_power : v.mundane_power,
+          dicePool: attrs[dicePoolKey],
+          power: attrs[isMagicalKey] ? attrs.magical_power : attrs.mundane_power,
         })
       );
     }
@@ -2342,20 +2405,27 @@ function getDicePoolAttrs(
 }
 
 function setCalculatedDicePool(
-  keyPrefix,
-  { dicePool }
+  keyPrefix: string,
+  { dicePool }: DicePool
 ) {
   setAttrs({
     [`${keyPrefix}_calculated_dice_pool`]: dicePool,
   });
 }
 
-function calculateDicePoolModifier({
-  dicePool,
-  power,
-}) {
+type DicePoolCallback = (dicePool: DicePool) => void;
+interface DicePool {
+  dicePool: string;
+}
+
+// In the past, we used power to calculate the real dice pool.
+// TODO: clean this up so we don't pretend to calculate anything here.
+function calculateDicePoolModifier(arg: {
+  dicePool: string;
+  power: string;
+}): DicePool {
   return {
-    dicePool: dicePool,
+    dicePool: arg.dicePool,
   };
 }
 
@@ -2363,7 +2433,7 @@ function handleOtherDamagingAttacks() {
   // We need two functions here! One updates a specific attack when that
   // specific attack changes, and one updates *all* attacks when general
   // character changes happen.
-  function getOdaDamageDiceAttrs(keyPrefix, callback) {
+  function getOdaDamageDiceAttrs(keyPrefix: string, callback: DicePoolCallback) {
     return getDicePoolAttrs(
       keyPrefix,
       "attack_damage_dice",
@@ -2403,8 +2473,16 @@ function handleOtherDamagingAttacks() {
   );
 }
 
+interface StrikeAttackAttrs {
+  extraDamage: string;
+  weaponDamageMultiplier: number;
+  weaponDice: string[];
+  weaponExistence: Record<string, boolean>;
+  weaponExtraDamage: string[];
+}
+
 function handleStrikeAttacks() {
-  function getStrikeAttrs(sectionId, callback) {
+  function getStrikeAttrs(sectionId: string, callback: (attrs: StrikeAttackAttrs) => void) {
     if (sectionId) {
       sectionId = sectionId + "_";
     }
@@ -2432,13 +2510,13 @@ function handleStrikeAttacks() {
         const dice_type = v[is_magical_key] === "1" ? "magical" : "mundane";
 
         // We need to copy the weapon_exists keys into the local repeating section.
-        const weaponExistence = {};
-        const weaponDice = [];
-        const weaponExtraDamage = [];
+        const weaponExistence: Record<string, boolean> = {};
+        const weaponDice: string[] = [];
+        const weaponExtraDamage: string[] = [];
         for (let i = 0; i < supportedWeaponCount; i++) {
           weaponDice.push(v[`weapon_${i}_${dice_type}_damage_total`]);
           weaponExtraDamage.push(v[`weapon_${i}_extra_damage`]);
-          weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = v[`weapon_${i}_exists`];
+          weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = Boolean(v[`weapon_${i}_exists`]);
         }
 
         callback({
@@ -2505,11 +2583,11 @@ function handleStrikeAttacks() {
   //   };
   // }
 
-  function setStrikeTotalDamage(sectionId, parsed) {
+  function setStrikeTotalDamage(sectionId: string, parsed: StrikeAttackAttrs) {
     if (sectionId) {
       sectionId += "_";
     }
-    const attrs = parsed.weaponExistence;
+    const attrs: Attrs = parsed.weaponExistence;
     for (let i = 0; i < supportedWeaponCount; i++) {
       const weapon_prefix = `repeating_strikeattacks_${sectionId}weapon_${i}_`;
       const multipliedWeaponDamage = parsed.weaponDamageMultiplier === 1 ? parsed.weaponDice[i] : `${parsed.weaponDamageMultiplier}*(${parsed.weaponDice[i]})`;
@@ -2527,7 +2605,7 @@ function handleStrikeAttacks() {
   on(
     "change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier",
     function() {
-      getStrikeAttrs("", (parsed) => {
+      getStrikeAttrs("", (parsed: StrikeAttackAttrs) => {
         setStrikeTotalDamage("", parsed);
       });
     }
@@ -2542,12 +2620,12 @@ function handleStrikeAttacks() {
 
   // Global strike attack change
   on(
-    weaponChangeKeys.join(" ") + 
+    weaponChangeKeys.join(" ") +
     " change:level change:magical_power change:mundane_power",
     function() {
       getSectionIDs("repeating_strikeattacks", (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
-          getStrikeAttrs(sectionId, (parsed) => {
+          getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
             setStrikeTotalDamage(sectionId, parsed);
           });
         }
@@ -2578,36 +2656,42 @@ function handleStrikeAttacks() {
 }
 
 function handleUniversalAbilities() {
-  onGet({ numeric: ["strength", "level", "accuracy", "flexibility"] }, (v) => {
-    setAttrs({
-      escape_grapple_accuracy: Math.max(
-        v.accuracy,
-        Math.floor(v.level / 2) + v.strength,
-        v.flexibility_total
-      ),
-      maintain_grapple_accuracy: Math.max(
-        v.accuracy,
-        Math.floor(v.level / 2) + v.strength
-      ),
-    });
+  onGet({
+    variables: { numeric: ["strength", "level", "accuracy", "flexibility"] },
+    callback: (v) => {
+      setAttrs({
+        escape_grapple_accuracy: Math.max(
+          v.accuracy,
+          Math.floor(v.level / 2) + v.strength,
+          v.flexibility_total
+        ),
+        maintain_grapple_accuracy: Math.max(
+          v.accuracy,
+          Math.floor(v.level / 2) + v.strength
+        ),
+      });
+    }
   });
 }
 
 function handleUnknownStatistic() {
-  onGet({ miscName: "unknown_statistic" }, (v) => {
-    setAttrs({
-      unknown_statistic: v.misc,
-    });
+  onGet({
+    variables: { miscName: "unknown_statistic" },
+    callback: (v) => {
+      setAttrs({
+        unknown_statistic: v.misc,
+      });
+    }
   });
 }
 
 function handleVitalRolls() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "vital_rolls",
       numeric: ["vital_wound_count", "body_armor_vital_rolls"],
     },
-    (v) => {
+    callback: (v) => {
       const totalValue = v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
       setAttrs({
         vital_rolls: totalValue,
@@ -2617,12 +2701,11 @@ function handleVitalRolls() {
         ]),
       });
     }
-  );
+  });
 }
 
 function handleVitalWounds() {
-  function calcVitalWoundEffect(roll) {
-    roll = Number(roll);
+  function calcVitalWoundEffect(roll: number) {
     if (roll <= -6) {
       return "Immediately die";
     } else if (roll <= 0) {
@@ -2643,7 +2726,7 @@ function handleVitalWounds() {
     }[roll];
   }
 
-  function countRolls(rolls, value) {
+  function countRolls(rolls: number[], value: number) {
     return rolls.filter((r) => r == value).length;
   }
 
@@ -2665,7 +2748,7 @@ function handleVitalWounds() {
           let reflex_penalty = -countRolls(rolls, 8) * 2;
           let mental_penalty = -countRolls(rolls, 9) * 2;
 
-          let attrs = {
+          const attrs: Attrs = {
             vital_wound_count: repeatingSectionIds.length,
 
             // accuracy - applies to both regular and brawling accuracy
@@ -2727,7 +2810,7 @@ function handleVitalWounds() {
               "_roll",
               "_effect"
             );
-            attrs[effect_id] = calcVitalWoundEffect(eventInfo.newValue);
+            attrs[effect_id] = calcVitalWoundEffect(Number(eventInfo.newValue));
           }
           setAttrs(attrs);
         });
@@ -2746,13 +2829,13 @@ function handleWeaponDamageDice() {
     const mundaneTotalKey = `weapon_${weaponIndex}_mundane_damage_total`;
     const weaponExistsKey = `weapon_${weaponIndex}_exists`;
 
-    onGet(
-      {
+    onGet({
+      variables: {
         boolean: [heavyKey, ignorePowerKey],
         numeric: ["strength", "willpower", "mundane_power", "magical_power"],
         string: [damageDiceKey, nameKey],
       },
-      (v) => {
+      callback: (v) => {
         if (!v[nameKey]) {
           setAttrs({
             [magicalTotalKey]: "",
@@ -2791,17 +2874,17 @@ function handleWeaponDamageDice() {
           [weaponExistsKey]: magicalTotal !== "" || mundaneTotal !== "",
         });
       }
-    )
+    })
   }
 }
 
 function handleWeightLimits() {
-  onGet(
-    {
+  onGet({
+    variables: {
       miscName: "weight_limits",
       numeric: ["strength", "size_weight_modifier"],
     },
-    (v) => {
+    callback: (v) => {
       const effectiveStrength = v.strength + v.size_weight_modifier + v.misc;
       const carrying = calcWeightLimitCategory(effectiveStrength);
       const pushDrag = calcWeightLimitCategory(effectiveStrength + 3);
@@ -2812,21 +2895,21 @@ function handleWeightLimits() {
         // This is a numeric value shown on the Calcs page
         carrying_strength: effectiveStrength,
         carrying_strength_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {name: "strength", value: v.strength},
-          {name: "size", value: v.size_weight_modifier},
+          { name: "strength", value: v.strength },
+          { name: "size", value: v.size_weight_modifier },
         ]),
         push_drag_strength: effectiveStrength + 3,
         push_drag_strength_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {name: "push/drag", value: 3},
-          {name: "strength", value: v.strength},
-          {name: "size", value: v.size_weight_modifier},
+          { name: "push/drag", value: 3 },
+          { name: "strength", value: v.strength },
+          { name: "size", value: v.size_weight_modifier },
         ]),
       });
     }
-  );
+  });
 }
 
-function calcWeightLimitCategory(effectiveStrength) {
+function calcWeightLimitCategory(effectiveStrength: number) {
   if (effectiveStrength > 15) {
     return "Colossal (any)";
   }
@@ -2852,7 +2935,7 @@ function calcWeightLimitCategory(effectiveStrength) {
     "8": "Huge x2",
     "9": "Huge x4",
     "10": "Huge x8",
-    "12": "Gargantuan x2",
+    "11": "Gargantuan x2",
     "12": "Gargantuan x4",
     "13": "Gargantuan x8",
     "14": "Colossal x2",
@@ -2865,14 +2948,14 @@ function calcWeightLimitCategory(effectiveStrength) {
   throw new Error(`No match for effective strength '${effectiveStrength}'.`);
 }
 
-function collectNamedModifierExplanations(namedModifiers) {
+function collectNamedModifierExplanations(namedModifiers: NamedModifier[]) {
   return namedModifiers
     .map(formatNamedModifierExplanation)
     .filter(Boolean)
     .join(",");
 }
 
-function formatNamedModifierExplanation({ name, value }) {
+function formatNamedModifierExplanation({ name, value }: NamedModifier) {
   if (value === 0) {
     return "";
   }
@@ -2880,7 +2963,12 @@ function formatNamedModifierExplanation({ name, value }) {
   return `${prefix}${value} (${name})`;
 }
 
-function formatCombinedExplanation(miscExplanation, localNamedModifiers) {
+interface NamedModifier {
+  name: string;
+  value: number;
+}
+
+function formatCombinedExplanation(miscExplanation: string, localNamedModifiers?: NamedModifier[]) {
   // miscExplanation is comma-separated because we can't save lists as attributes, so we
   // need to split it and reformat the whole thing together. First, put the local
   // explanation in an identical format.

@@ -1,8 +1,14 @@
 #!/usr/bin/env fish
+
+# Compile the sheet worker
+g rts
+npx tsc --incremental; or exit 1
+# Compile the HTML/CSS
 g rise
 cd character_sheet
 vf activate rise_book
 ./sheet.py
 ./sheet.py -d roll20
 vf deactivate
+
 rtransfer
