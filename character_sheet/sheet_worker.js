@@ -455,17 +455,6 @@ const ALL_SKILLS = Object.values(SKILLS_BY_ATTRIBUTE).flat();
 
 const SKILLS_WITH_SUBSKILLS = ["craft", "knowledge"];
 
-function formatParseableSkillName(skillName) {
-  if (!skillName) {
-    return null;
-  }
-  return skillName
-    .toLowerCase()
-    .replaceAll(" ", "_")
-    .replaceAll("(", "")
-    .replaceAll(")", "");
-}
-
 const KNOWABLE_CONCEPTS = [
   "bardic_performances",
   "battle_tactics",
@@ -552,6 +541,17 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   "mental",
   "speed",
 ]);
+
+function formatParseableSkillName(skillName) {
+  if (!skillName) {
+    return null;
+  }
+  return skillName
+    .toLowerCase()
+    .replaceAll(" ", "_")
+    .replaceAll("(", "")
+    .replaceAll(")", "");
+}
 
 function generateMiscVariables(name) {
   const explanationVariables = [];
