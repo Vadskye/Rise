@@ -2,7 +2,7 @@ from sheet_data import ATTRIBUTES, ATTRIBUTE_SKILLS
 import re
 
 def generate_script():
-    with open("./sheet_worker.js") as file:
+    with open("../typescript/src/character_sheet/sheet_worker.js") as file:
         lines = file.readlines()
         return "".join([
             '<script type="text/worker">',
