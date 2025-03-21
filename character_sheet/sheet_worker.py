@@ -6,10 +6,34 @@ def generate_script():
         lines = file.readlines()
         return "".join([
             '<script type="text/worker">',
-            *lines,
+            *prune_irrelevant_lines(lines),
             '</script>',
             '',
         ])
+
+# As a side effect of Typescript compilation, we add some extra junk that we
+# don't want to send to roll20. Remove those here.
+def prune_irrelevant_lines(lines):
+    # We think we know which lines to remove. Remove them, then assert that they
+    # had the correct shape, so we know if this assumption becomes out of sync
+    # with the current state of sheet_worker.js.
+    removed_lines = lines[0:9]
+    lines = lines[9:]
+
+    if "".join(removed_lines) != """"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.handleEverything = handleEverything;
+const roll20_shim_1 = __importDefault(require("./roll20_shim"));
+const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow, } = roll20_shim_1.default;
+;
+""":
+        raise Exception(f"Removal did not match expectation: |{''.join(removed_lines)}|")
+
+    return lines
+
 
 def standard_damage_at_power(power):
     return {

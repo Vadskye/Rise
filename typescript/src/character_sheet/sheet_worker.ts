@@ -1,29 +1,25 @@
-type SimpleValue = boolean | number | string;
-interface EventInfo {
+import roll20shim from './roll20_shim';
+const {
+  on,
+  getAttrs,
+  setAttrs,
+  getSectionIDs,
+  generateRowID,
+  removeRepeatingRow,
+} = roll20shim;
+
+export type SimpleValue = boolean | number | string;
+export interface EventInfo {
   newValue: SimpleValue | undefined;
   previousValue: SimpleValue | undefined;
   removedInfo: Record<string, string>;
   sourceAttribute: string;
   triggerName: string;
 };
-declare function on(changeString: string, callback: (eventInfo: EventInfo) => void): void;
-type Attrs = Record<string, any>;
-declare function getAttrs(getVariables: string[], callback: (attrs: Attrs) => void): void;
-declare function setAttrs(attrs: Attrs): void;
-declare function getSectionIDs(sectionPrefix: string, callback: (repeatingSectionIds: string[]) => void): void;
-declare function generateRowID(): string;
-declare function removeRepeatingRow(rowKey: string): void;
+export type Attrs = Record<string, any>;
 
 type CustomModifierType = "attuned" | "legacy" | "temporary" | "permanent";
 const CUSTOM_MODIFIER_TYPES: CustomModifierType[] = ["attuned", "legacy", "temporary", "permanent"];
-
-type ExplanationType = CustomModifierType | "creation" | "debuff" | "vital_wound";
-const EXPLANATION_TYPES: ExplanationType[] = [
-  "attuned", "legacy", "temporary", "permanent",
-  "creation",
-  "debuff",
-  "vital_wound",
-];
 
 type CreatureSize = "fine" | "diminutive" | "tiny" | "small" | "medium" | "large" | "huge" | "gargantuan" | "colossal";
 type ProgressionName = 'low' | 'medium' | 'high' | 'very high' | 'extreme';
@@ -614,7 +610,7 @@ interface MiscVariables {
   numericVariables: string[];
 }
 
-function generateMiscVariables(name: string | undefined) {
+function generateMiscVariables(name: string | undefined): MiscVariables {
   const explanationVariables: string[] = [];
   const numericVariables: string[] = [];
   if (!name) {
@@ -649,7 +645,7 @@ function formatChangeString(varName: string): string {
   }
 }
 
-function handleEverything() {
+export function handleEverything() {
   handleAbilitiesKnown();
   handleAttackTargeting();
   handleAttunedEffects();
@@ -706,55 +702,6 @@ function handleResources() {
   handleTrainedSkills();
 }
 
-function addDiceIncrements(count: number, size: number, increments: number) {
-  const all_dice_pools = [
-    "1d1",
-    "1d2",
-    "1d3",
-    "1d4",
-    "1d6",
-    "1d8",
-    "1d10",
-    "2d6",
-    "2d8",
-    "2d10",
-    "4d6",
-    "4d8",
-    "4d10",
-  ];
-  const key = `${count}d${size}`;
-  const initialIndex =
-    count > 4
-      ? count - 5 + all_dice_pools.length
-      : all_dice_pools.findIndex((pool) => pool === key);
-  const modifiedIndex = initialIndex + Number(increments);
-  if (modifiedIndex >= all_dice_pools.length) {
-    return {
-      count: modifiedIndex - all_dice_pools.length + 5,
-      size: 10,
-    };
-  } else if (modifiedIndex < 0) {
-    return {
-      count: 1,
-      size: 1,
-    };
-  } else {
-    const [count, size] = all_dice_pools[modifiedIndex].split("d");
-    return { count, size };
-  }
-}
-
-function formatDicePool(count: number, size: number, modifier: number) {
-  let dice = `${count}d${size}`;
-  if (modifier > 0) {
-    return `${dice}+${modifier}`;
-  } else if (modifier < 0) {
-    return `${dice}${modifier}`;
-  } else {
-    return dice;
-  }
-}
-
 function calcAccuracyCrScaling(level: number, challengeRating?: ChallengeRating) {
   if (!challengeRating) {
     return 0;
@@ -796,34 +743,6 @@ function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) 
     }
   }
   return levelScaling;
-}
-
-function parseDicePool(attack_damage_dice: string) {
-  if (!attack_damage_dice) {
-    return null;
-  }
-  let [count, size] = attack_damage_dice.split("d");
-  if (!size) {
-    return {
-      count: null,
-      modifier: Number(count) || null,
-      size: null,
-    };
-  }
-
-  let modifier = "0";
-  if (size.includes("+")) {
-    [size, modifier] = size.split("+");
-  } else if (size.includes("-")) {
-    [size, modifier] = size.split("-");
-  }
-
-  // for example, "d4"
-  return {
-    count: count ? Number(count) : 1,
-    modifier: Number(modifier),
-    size: Number(size),
-  };
 }
 
 function handleAbilitiesKnown() {
@@ -1456,48 +1375,6 @@ function handleDamageResistance() {
       setAttrs(attrs);
     }
   });
-}
-
-function calcBaseDamageResistance(levelish: number) {
-  let baseDr = 0;
-  if (levelish > 0) {
-    if (levelish > 21) {
-      // +5 DR per levelish over 21
-      baseDr = 5 * (levelish - 21);
-      levelish = 21;
-    }
-
-    const modifier = {
-      1: 0,
-      2: 1,
-      3: 2,
-      4: 3,
-      5: 4,
-      6: 5,
-      7: 6,
-      8: 7,
-      9: 8,
-      10: 9,
-      11: 10,
-      12: 12,
-      13: 14,
-      14: 16,
-      15: 18,
-      16: 20,
-      17: 22,
-      18: 25,
-      19: 28,
-      20: 31,
-      21: 35,
-    }[levelish];
-    if (modifier === undefined) {
-      throw new Error(`Unable to calculate base damage resistance for ${levelish}`);
-    }
-    baseDr += modifier;
-  } else {
-    baseDr = levelish;
-  }
-  return baseDr;
 }
 
 function sanitizeText(text: string) {
@@ -2529,59 +2406,6 @@ function handleStrikeAttacks() {
       }
     );
   }
-
-  // function getWeaponDamageDiceAttrs(weaponIndex, callback) {
-  //   const weapon_damage_key = `weapon_${weaponIndex}_damage_dice`;
-  //   getAttrs(
-  //     [
-  //       "level",
-  //       "strength",
-  //       "willpower",
-  //       "mundane_dice_pool_modifier",
-  //       "magical_dice_pool_modifier",
-  //       "weapon_damage_dice",
-  //       weapon_damage_key,
-  //     ],
-  //     function (v) {
-  //       const parsedAttrs = {
-  //         allWeaponsDamageDiceBonus: Number(v.weapon_damage_dice) || 0,
-  //         magicalDicePoolModifier: Number(v.magical_dice_pool_modifier) || 0,
-  //         mundaneDicePoolModifier: Number(v.mundane_dice_pool_modifier) || 0,
-  //         weaponDamageDice: v[weapon_damage_key],
-  //       };
-  //       callback(parsedAttrs);
-  //     }
-  //   );
-  // }
-
-  // function calcWeaponDamageStrings(v) {
-  //   const dicePool = parseDicePool(v.weaponDamageDice);
-  //   if (!dicePool) {
-  //     return {
-  //       magical: "",
-  //       mundane: "",
-  //     };
-  //   }
-  //   let with_global_bonus = addDiceIncrements(
-  //     dicePool.count,
-  //     dicePool.size,
-  //     v.allWeaponsDamageDiceBonus
-  //   );
-  //   let magical = addDiceIncrements(
-  //     with_global_bonus.count,
-  //     with_global_bonus.size,
-  //     v.magicalDicePoolModifier
-  //   );
-  //   let mundane = addDiceIncrements(
-  //     with_global_bonus.count,
-  //     with_global_bonus.size,
-  //     v.mundaneDicePoolModifier
-  //   );
-  //   return {
-  //     magical: formatDicePool(magical.count, magical.size, dicePool.modifier),
-  //     mundane: formatDicePool(mundane.count, mundane.size, dicePool.modifier),
-  //   };
-  // }
 
   function setStrikeTotalDamage(sectionId: string, parsed: StrikeAttackAttrs) {
     if (sectionId) {
