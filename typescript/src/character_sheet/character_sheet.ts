@@ -2,7 +2,7 @@ import { Property } from '@src/character_sheet/events/property';
 import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
-export class Character {
+export class CharacterSheet {
   characterName: string;
   private properties: Record<string, Property<SimpleValue>>;
 
