@@ -33,7 +33,7 @@
   "scripts": {
     "clean": "rm src/*.js && rm src/**/*.js",
     "script": "tsc --incremental && node -r tsconfig-paths/register",
-    "tap": "NODE_OPTIONS='--import tsx' tap",
-    "test": "NODE_OPTIONS='--import tsx' tap"
+    "tap": "tsc --incremental && NODE_OPTIONS='--import tsx' tap",
+    "test": "tsc --incremental && NODE_OPTIONS='--import tsx' tap"
   }
 }
