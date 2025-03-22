@@ -1862,20 +1862,24 @@ export const rituals: Ritual[] = [
   {
     name: 'Find the Path',
 
-    castingTime: 'one hour',
+    castingTime: '24 hours',
     effect: `
       When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
       You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
       You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
 
-      The guidance provided by this ability adjusts to match the current physical capabilities of each ritual participant, including flight and other unusual movement modes.
+      The guidance provided by this ability adjusts to match your current physical capabilities, including flight and other unusual movement modes.
       It does not consider teleportation spells or any other active abilities which could allow the creatures to bypass physical obstacles.
       It does not see into the future, and changing circumstances may cause the most direct path to change over time.
-      It also does not consider hostile creatures, traps, and other passable dangers which may endanger or slow progress.
+      It also does not consider movement impediments or dangers, including hostile creatures or treacherous terrain, which may endanger or slow progress without rendering it impossible.
     `,
-    rank: 4,
+    rank: 3,
     tags: ['Attune'],
-    spheres: ['Aeromancy', 'Prayer', 'Revelation'],
+    sphereEffects: {
+      Terramancy: "The guidance does not consider non-grounded forms of movement, such as jumping or flying.",
+      Verdamancy: "You only receive guidance while both your destination and current location have a Huge or larger living plant.",
+    },
+    spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
   },
   {
     name: 'Efficient Find the Path',
@@ -2048,8 +2052,11 @@ export const rituals: Ritual[] = [
       Powerful \\magical effects that mimic sunlight, such as \\spell{solar flare}, still affect the target normally.
     `,
     rank: 3,
+    sphereEffects: {
+      Terramancy: "The target is also \\blinded by the earth covering their body.",
+    },
     type: 'Attune (target)',
-    spheres: ['Photomancy', 'Umbramancy'],
+    spheres: ['Photomancy', 'Terramancy', 'Umbramancy'],
   },
   {
     name: 'Sunlight Ward+',
