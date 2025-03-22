@@ -299,7 +299,6 @@ fn amulets() -> Vec<Apparel> {
             It provides that weapon property to all of your \glossterm{natural weapons} that do not require a free hand to use, such as a bite.
             Different versions of this item exist for each rank 1 magic weapon property.
         "),
-        tags: vec![AbilityTag::Emotion],
         upgrades: vec![
             ItemUpgrade::new(2, r"Grants a rank 2 magic weapon property to natural weapons", r"
                 The magic weapon property is rank 2.
