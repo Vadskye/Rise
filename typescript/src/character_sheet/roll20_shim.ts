@@ -1,17 +1,17 @@
 import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
-import { getCurrentCharacter } from './current_character';
+import { getCurrentCharacterSheet } from './current_character_sheet';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export function on(changeString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
-  return getCurrentCharacter().on(changeString, callback);
+  return getCurrentCharacterSheet().on(changeString, callback);
 }
 
 export function getAttrs(getVariables: string[], callback: (attrs: Attrs) => void): void {
-  getCurrentCharacter().getProperties(getVariables, callback);
+  getCurrentCharacterSheet().getProperties(getVariables, callback);
 }
 
 export function setAttrs(attrs: Attrs): void {
-  getCurrentCharacter().setProperties(attrs);
+  getCurrentCharacterSheet().setProperties(attrs);
 }
 
 export function getSectionIDs(sectionPrefix: string, callback: (repeatingSectionIds: string[]) => void): void {
