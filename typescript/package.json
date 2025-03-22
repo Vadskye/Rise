@@ -29,7 +29,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "vadskye",
-  "license": "MIT",
+  "license": "OGL",
   "scripts": {
     "clean": "rm src/*.js && rm src/**/*.js",
     "script": "tsc --incremental && node -r tsconfig-paths/register",
