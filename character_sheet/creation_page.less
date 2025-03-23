@@ -1,58 +1,60 @@
-.is-monster:checked + .creation-step {
-    display: none;
-}
-
-.creation-step {
-    justify-content: space-between;
-    padding-top: 1em;
-    border-top: 1px solid gray;
-    margin-top: 1em;
-
-    .explanation {
-        flex-grow: 1;
-        margin-right: 2em;
-        width: 20em;
+.creation-guidance {
+    .is-monster:checked + .creation-step {
+        display: none;
     }
 
-    .mechanics {
-        width: 20em;
-    }
-
-    .attributes, .attribute-scaling {
-        margin-top: 0;
-        margin-bottom: 0;
+    .creation-step {
         justify-content: space-between;
-    }
+        padding-top: 1em;
+        border-top: 1px solid gray;
+        margin-top: 1em;
 
-    .archetype-name {
-        flex-grow: 1;
-        margin-right: 1em;
-    }
-
-    .total-trainable-skills {
-        justify-content: center;
-        margin-bottom: 0.5em;
-        > .number-label {
-            flex-grow: 0;
+        .explanation {
+            flex-grow: 1;
+            margin-right: 2em;
+            width: 20em;
         }
-    }
 
-    .base-class {
-        // Needs to be long enough for "(Monster - Skirmisher)"
-        width: 13em;
-    }
+        .mechanics {
+            width: 20em;
+        }
 
-    .species {
-        width: 10em;
-    }
+        .attributes, .attribute-scaling {
+            margin-top: 0;
+            margin-bottom: 0;
+            justify-content: space-between;
+        }
 
-    .size {
-        width: 8em;
-    }
+        .archetype-name {
+            flex-grow: 1;
+            margin-right: 1em;
+        }
 
-    .skill-row {
-        column-gap: 1em;
-        justify-content: space-between;
-        margin-bottom: 0.1em;
+        .total-trainable-skills {
+            justify-content: center;
+            margin-bottom: 0.5em;
+            > .number-label {
+                flex-grow: 0;
+            }
+        }
+
+        .base-class {
+            // Needs to be long enough for "(Monster - Skirmisher)"
+            width: 13em;
+        }
+
+        .species {
+            width: 10em;
+        }
+
+        .size {
+            width: 8em;
+        }
+
+        .skill-row {
+            column-gap: 1em;
+            justify-content: space-between;
+            margin-bottom: 0.1em;
+        }
     }
 }
