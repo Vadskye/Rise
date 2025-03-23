@@ -59,6 +59,7 @@ def creation_guidance():
                     Choose a short phrase that describes the core concept of your character.
                 """,
                 text_input({"name": "concept"}),
+                False,
             ),
             creation_step(
                 "Goals",
@@ -66,6 +67,7 @@ def creation_guidance():
                     Choose your character's motivations and goals.
                 """,
                 textarea({"name": "motivation_and_goals"}),
+                False,
             ),
             creation_step(
                 "Species",
@@ -111,6 +113,7 @@ def creation_guidance():
                         option({"value": "vampire"}, "(Vampire)"),
                     ],
                 ),
+                False,
             ),
             creation_step(
                 "Size",
@@ -143,6 +146,7 @@ def creation_guidance():
                     Choose the languages your character can speak.
                 """,
                 text_input({"name": "languages"}),
+                False,
             ),
             creation_step(
                 "Attributes",
@@ -286,6 +290,7 @@ def creation_guidance():
                         for i in range(3)
                     ]
                 ),
+                False,
             ),
             insight_points_step(),
             skills_step(),
@@ -296,6 +301,7 @@ def creation_guidance():
                     It automatically calculates proficiencies from your base class.
                 """,
                 "",
+                False,
             ),
             creation_step(
                 "Items",
@@ -343,6 +349,7 @@ def creation_guidance():
                     Choose your character's name.
                 """,
                 text_input({"name": "character_name"}),
+                False,
             ),
             creation_step(
                 "Finishing up",
@@ -351,20 +358,33 @@ def creation_guidance():
                     You can also choose a chat color for your abilities there, which will help you stand out from other characters in the game.
                 """,
                 "",
+                False,
             ),
             feats_step(),
         ],
     )
 
 
-def creation_step(header, explanation, mechanics):
-    return flex_row(
+def creation_step(header, explanation, mechanics, enabled_for_monsters=True):
+    row = flex_row(
         {"class": "creation-step"},
         [
             div({"class": "explanation"}, f"<b>{header}:</b> " + explanation),
             div({"class": "mechanics"}, mechanics),
-        ],
+        ]
     )
+    if enabled_for_monsters:
+        return div([row])
+    else:
+        return div([
+            checkbox({
+                "class": "hidden is-monster",
+                "name": f"is_monster",
+                "readonly": True,
+                "value": "1",
+            }),
+            row,
+        ])
 
 
 def insight_points_step():
@@ -387,6 +407,7 @@ def insight_points_step():
             As a reminder, you have {max_insight_points} total insight points.
         """,
         textarea({"name": "insight_points_tracking"}),
+        False,
     )
 
 

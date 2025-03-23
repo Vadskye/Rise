@@ -655,7 +655,7 @@ export function handleEverything() {
   handleCustomModifiers();
   handleDebuffs();
   // handleModifierExplanations();
-  handleMonsterChatColor();
+  handleMonsterToggles();
   handleResources();
   // TODO: reenable once this actually has value. Disabled for now to avoid performance
   // penalties.
@@ -1799,15 +1799,23 @@ function handleLandSpeed() {
 //   );
 // }
 
-function handleMonsterChatColor() {
+function handleMonsterToggles() {
   onGet({
     variables: {
       numeric: ["challenge_rating"],
+      string: ["chat_color"],
     },
     callback: (v) => {
       if (v.challenge_rating! > 0) {
         setAttrs({
           chat_color: "monster",
+          is_monster: true,
+          player_chat_color: v.chat_color,
+        });
+      } else {
+        setAttrs({
+          chat_color: v.chat_color || "black",
+          is_monster: false,
         });
       }
     }
