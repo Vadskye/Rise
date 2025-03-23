@@ -1930,79 +1930,79 @@ function handleMundanePower() {
   });
 }
 
-function handleRust() {
-  onGet({
-    variables: {
-      numeric: [
-        "level",
-        "challenge_rating",
-        "strength",
-        "dexterity",
-        "constitution",
-        "intelligence",
-        "perception",
-        "willpower",
-      ],
-      string: [
-        "alignment",
-        "character_name",
-        "size",
-        "weapon_0_name",
-        "weapon_1_name",
-        "weapon_2_name",
-        "weapon_3_name",
-      ],
-    },
-    callback: (v) => {
-      const alignment = v.alignment ? `Usually ${v.alignment}` : "";
-      const attributes = [
-        v.strength,
-        v.dexterity,
-        v.constitution,
-        v.intelligence,
-        v.perception,
-        v.willpower,
-      ];
-      const cr = {
-        1: "One",
-        4: "Four",
-      }[v.challenge_rating!];
-      const weapons = [];
-      for (const weaponName of [
-        v.weapon_0_name,
-        v.weapon_1_name,
-        v.weapon_2_name,
-        v.weapon_3_name,
-      ]) {
-        if (weaponName) {
-          weapons.push(`StandardWeapon::${weaponName}.weapon()`);
-        }
-      }
-      const weaponText = `vec![${weapons.join(", ")}]`;
-      const rust = `
-                FullMonsterDefinition {
-                    alignment: "${alignment}",
-                    attributes: vec![${attributes.join(", ")}],
-                    challenge_rating: ChallengeRating::${cr},
-                    description: None,
-                    knowledge: None,
-                    level: ${v.level},
-                    modifiers: None,
-                    movement_speeds: None,
-                    name: "${v.character_name}",
-                    senses: None,
-                    size: Size::${v.size || "Medium"},
-                    trained_skills: None,
-                    weapons: ${weaponText},
-                }
-            `.trim();
-      setAttrs({
-        rust,
-        is_monster: v.challenge_rating! > 0 ? "1" : "0",
-      });
-    }
-  });
-}
+// function handleRust() {
+//   onGet({
+//     variables: {
+//       numeric: [
+//         "level",
+//         "challenge_rating",
+//         "strength",
+//         "dexterity",
+//         "constitution",
+//         "intelligence",
+//         "perception",
+//         "willpower",
+//       ],
+//       string: [
+//         "alignment",
+//         "character_name",
+//         "size",
+//         "weapon_0_name",
+//         "weapon_1_name",
+//         "weapon_2_name",
+//         "weapon_3_name",
+//       ],
+//     },
+//     callback: (v) => {
+//       const alignment = v.alignment ? `Usually ${v.alignment}` : "";
+//       const attributes = [
+//         v.strength,
+//         v.dexterity,
+//         v.constitution,
+//         v.intelligence,
+//         v.perception,
+//         v.willpower,
+//       ];
+//       const cr = {
+//         1: "One",
+//         4: "Four",
+//       }[v.challenge_rating!];
+//       const weapons = [];
+//       for (const weaponName of [
+//         v.weapon_0_name,
+//         v.weapon_1_name,
+//         v.weapon_2_name,
+//         v.weapon_3_name,
+//       ]) {
+//         if (weaponName) {
+//           weapons.push(`StandardWeapon::${weaponName}.weapon()`);
+//         }
+//       }
+//       const weaponText = `vec![${weapons.join(", ")}]`;
+//       const rust = `
+//                 FullMonsterDefinition {
+//                     alignment: "${alignment}",
+//                     attributes: vec![${attributes.join(", ")}],
+//                     challenge_rating: ChallengeRating::${cr},
+//                     description: None,
+//                     knowledge: None,
+//                     level: ${v.level},
+//                     modifiers: None,
+//                     movement_speeds: None,
+//                     name: "${v.character_name}",
+//                     senses: None,
+//                     size: Size::${v.size || "Medium"},
+//                     trained_skills: None,
+//                     weapons: ${weaponText},
+//                 }
+//             `.trim();
+//       setAttrs({
+//         rust,
+//         is_monster: v.challenge_rating! > 0 ? "1" : "0",
+//       });
+//     }
+//   });
+// }
 
 function handleSize() {
   onGet({
