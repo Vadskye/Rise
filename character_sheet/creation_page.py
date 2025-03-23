@@ -310,6 +310,7 @@ def creation_guidance():
                     Over time, you'll find many more items, so you should go to the <b>Items</b> tab to record your choices.
                 """,
                 "",
+                False,
             ),
             creation_step(
                 "Personality",
@@ -318,6 +319,7 @@ def creation_guidance():
                     This can be vague, and it can change over time, but it can be useful to record something as a guide.
                 """,
                 textarea({"class": "personality", "name": "personality"}),
+                False,
             ),
             creation_step(
                 "Background",
@@ -326,6 +328,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "background", "name": "background"}),
+                False,
             ),
             creation_step(
                 "Appearance",
@@ -334,6 +337,7 @@ def creation_guidance():
                     This can be as sparse or extensive as you want; there's no one right way to create a character.
                 """,
                 textarea({"class": "appearance", "name": "appearance"}),
+                False,
             ),
             creation_step(
                 "Alignment",
@@ -342,6 +346,7 @@ def creation_guidance():
                     You can decide to stay neutral along either or both alignment dimensions.
                 """,
                 textarea({"class": "alignment", "name": "alignment"}),
+                False,
             ),
             creation_step(
                 "Name",
