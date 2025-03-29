@@ -293,12 +293,12 @@ impl Armor {
             // Heavy armor
             Self::LayeredHide(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(8, m),
-                defense: 5,
+                damage_resistance: calc_dr(10, m),
+                defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
                 item_rank: 1,
-                name: "layered hide".to_string(),
+                name: "breastplate".to_string(),
                 speed_modifier: -10,
             },
             Self::HalfPlate(m) => ArmorDefinition {
