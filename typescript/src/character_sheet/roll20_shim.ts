@@ -19,6 +19,11 @@ export function getSectionIDs(sectionPrefix: string, callback: (repeatingSection
   callback([]);
 }
 
+export function randomInteger(max: number): number {
+  // TODO: realistic implementation
+  return 4;
+}
+
 export function generateRowID(): string {
   // TODO: realistic implementation
   return "Unique row IDs are not yet implemented.";
@@ -34,5 +39,6 @@ export default {
   setAttrs,
   getSectionIDs,
   generateRowID,
+  randomInteger,
   removeRepeatingRow,
 }

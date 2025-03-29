@@ -2839,6 +2839,12 @@ function handleVitalRolls() {
   });
 }
 
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+// Returns an integer between 1 and dieSize, inclusive.
+function rollDie(dieSize: number) {
+  return Math.floor(Math.random() * dieSize) + 1;
+}
+
 function handleVitalWounds() {
   function calcVitalWoundEffect(roll: number) {
     if (roll <= -6) {
@@ -2864,6 +2870,18 @@ function handleVitalWounds() {
   function countRolls(rolls: number[], value: number) {
     return rolls.filter((r) => r == value).length;
   }
+
+  on("clicked:gainvitalwound", () => {
+    getAttrs(["vital_rolls"],
+      (rawAttrs: Attrs) => {
+        const rowId = generateRowID();
+        const vitalRollResult = rollDie(10) + Number(rawAttrs.vital_rolls || 0);
+        setAttrs({
+          [`repeating_vitalwounds_${rowId}_vital_wound_roll`]: vitalRollResult,
+        });
+      }
+    );
+  });
 
   on(
     "change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds",
