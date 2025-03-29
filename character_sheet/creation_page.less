@@ -58,3 +58,42 @@
         }
     }
 }
+
+.is-monster:not(:checked) + .monster-creation {
+    display: none;
+}
+
+.monster-creation {
+    .monster-attack {
+        gap: 0.25em;
+        justify-content: space-between;
+
+        .monster-attack-accuracy {
+            width: 5.5em;
+        }
+
+        .monster-attack-targeting {
+            width: 10em;
+        }
+
+        .monster-attack-area-shape {
+            width: 10em;
+        }
+
+        .monster-attack-effect {
+            width: 10em;
+        }
+
+        .monster-attack-defense {
+            width: 6em; // Matches defense width on Abilities page
+        }
+
+        .monster-attack-name {
+            width: 12em; // Shorter than Abilities page
+        }
+
+        .can-undo:not(:checked) + .undo-monster-attack {
+            display: none;
+        }
+    }
+}

@@ -54,7 +54,7 @@ def html_tag(tag_name, attributes=None, contents=None):
     # An "attr_" prefix is required by roll20 for fields that are permanently
     # stored on the sheet. We explicitly avoid storing attributes that start
     # with "nostore_".
-    if "name" in attributes and not attributes["name"].startswith("nostore_"):
+    if "name" in attributes and not attributes["name"].startswith("nostore_") and not attributes["name"].startswith("act_"):
         attributes["name"] = "attr_" + attributes["name"]
 
     is_self_closing_tag = tag_name in ["input"]
