@@ -309,7 +309,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
-    proficiencies: "Light armor, leather lamellar, layered hide, standard shields, and club-like weapons",
+    proficiencies: "Light armor, leather lamellar, standard shields, and club-like weapons",
   },
   vampire: {
     armor_defense: 0,
