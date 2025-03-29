@@ -60,7 +60,8 @@ def create_page(_destination):
                                 [
                                     button(
                                         {
-                                            "type": "roll",
+                                            "type": "action",
+                                            "name": "act_gainvitalwound",
                                             "value": "@{character_name} makes a vital roll: [[d10+@{vital_rolls}]]",
                                         },
                                         "Roll vital wound",
