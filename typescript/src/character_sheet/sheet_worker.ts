@@ -655,6 +655,7 @@ export function handleEverything() {
   handleCustomModifiers();
   handleDebuffs();
   // handleModifierExplanations();
+  handleMonsterAbilityGeneration();
   handleMonsterToggles();
   handleResources();
   // TODO: reenable once this actually has value. Disabled for now to avoid performance
@@ -1799,6 +1800,308 @@ function handleLandSpeed() {
 //   );
 // }
 
+function handleMonsterAbilityGeneration() {
+  on("clicked:createmonsterattack", () => {
+    getAttrs([
+      "level",
+      "monster_attack_accuracy",
+      "monster_attack_effect",
+      "monster_attack_name",
+      "monster_attack_area_shape",
+      "monster_attack_targeting",
+      "monster_attack_is_magical",
+      "magical_power",
+      "mundane_power",
+    ], (rawAttrs: Attrs) => {
+      const isMagical = boolifySheetValue(rawAttrs.monster_attack_is_magical);
+
+      generateMonsterAttack({
+        accuracy: rawAttrs.monster_attack_accuracy,
+        areaShape: rawAttrs.monster_attack_area_shape || "default",
+        effect: rawAttrs.monster_attack_effect,
+        isMagical,
+        name: rawAttrs.monster_attack_name || "damage",
+        power: Number(isMagical ? rawAttrs.magical_power : rawAttrs.mundane_power),
+        rank: calculateStandardRank(Number(rawAttrs.level)),
+        targeting: rawAttrs.monster_attack_targeting || "targeted_medium",
+      });
+    });
+  });
+
+  on("clicked:undomonsterattack", () => {
+    getAttrs([
+      "monster_attack_undo_name",
+    ], (rawAttrs: Attrs) => {
+      const undoName = rawAttrs.monster_attack_undo_name;
+      if (undoName) {
+        removeRepeatingRow(undoName);
+      }
+      // If this was somehow pushed when we can't actually undo anything, such as if
+      // someone double clicked the button, we want to disable clicking it again but not
+      // break anything.
+      setAttrs({
+        monster_attack_can_undo: "0",
+        monster_attack_undo_name: "",
+      });
+    });
+  });
+}
+
+type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
+type MonsterAttackDebuff = "dazzled" | "frightened" | "stunned" | "confused" | "immobilized";
+type MonsterAttackAreaShape = "default" | "cone" | "line" | "radius_from_self" | "radius_at_range";
+type MonsterAttackTargeted = "targeted_medium" | "targeted_touch" | "targeted_short" | "targeted_long";
+type MonsterAttackArea = "small_area" | "large_area";
+
+function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, power, rank, targeting }: {
+  accuracy: "low_accuracy" | "high_accuracy" | "" | undefined,
+  areaShape: MonsterAttackAreaShape;
+  effect: "damage" | MonsterAttackDebuff;
+  isMagical: boolean;
+  name: string;
+  power: number;
+  rank: number;
+  targeting: MonsterAttackTargeting;
+}) {
+
+  // Accuracy modifies base rank, unlike area size.
+  let rankModifier = 0;
+  let accuracyModifier = 0;
+  if (accuracy === "low_accuracy") {
+    accuracyModifier -= 2;
+    rankModifier += 1;
+  } else if (accuracy === "high_accuracy") {
+    accuracyModifier += 2;
+    rankModifier -= 1;
+  }
+
+  if (effect === "damage") {
+    createDamagingMonsterAttack({
+      accuracyModifier,
+      areaShape,
+      name,
+      isMagical,
+      rank: rank + rankModifier,
+      power,
+      targeting,
+    });
+  } else {
+    createMonsterDebuff({
+      accuracyModifier,
+      areaShape,
+      debuff: effect,
+      name,
+      rank: rank + rankModifier,
+      targeting,
+    })
+  }
+}
+
+function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, name, power, rank, targeting }: {
+  accuracyModifier: number;
+  areaShape: MonsterAttackAreaShape;
+  name: string;
+  power: number;
+  rank: number;
+  isMagical: boolean;
+  targeting: MonsterAttackTargeting;
+}) {
+  const damageRank = rank + calculateEffectRankModifier(targeting);
+  const halfPower = Math.floor(power / 2);
+  const damageDice = {
+    '-1': `${halfPower}`,
+    0: `1d4+${halfPower}`,
+    1: `1d6+${halfPower}`,
+    2: `1d6+${power}`,
+    3: `1d8+${power}`,
+    4: `${halfPower}d6`,
+    5: `${halfPower + 1}d6`,
+    6: `${halfPower + 1}d8`,
+    7: `${halfPower + 1}d10`,
+    8: `${power + 1}d6`,
+    9: `${power + 2}d8`,
+    10: `${power + 2}d10`,  // Not tested; may be too low
+  }[damageRank] || `Rank ${damageRank} is not supported`;
+
+  const isTargeted = targetingIsTargeted(targeting);
+  let effect = "";
+  if (isTargeted) {
+    const range = {
+      "targeted_touch": "adjacent",
+      "targeted_short": "within 30'",
+      "targeted_medium": "within 60'",
+      "targeted_long": "within 90'",
+    }[targeting];
+    effect = `Make an attack against something ${range}.`;
+  } else {
+    const area = calculateAttackArea({ areaShape, rank, targeting });
+    effect = `Make an attack against everything in a ${area}.
+Miss: Half damage.`;
+  }
+
+  const rowId = generateRowID();
+  const prefix = `repeating_otherdamagingattacks_${rowId}`
+
+  setAttrs({
+    monster_attack_name: "Success!",
+    monster_attack_can_undo: "1",
+    monster_attack_undo_name: prefix,
+    [`${prefix}_attack_accuracy`]: accuracyModifier,
+    [`${prefix}_attack_damage_dice`]: damageDice,
+    [`${prefix}_attack_effect`]: effect,
+    [`${prefix}_attack_name`]: name,
+    [`${prefix}_is_magical`]: isMagical,
+    [`${prefix}_is_targeted`]: isTargeted,
+  });
+}
+
+function createMonsterDebuff({ accuracyModifier, areaShape, debuff, name, rank, targeting }: {
+  accuracyModifier: number;
+  areaShape: MonsterAttackAreaShape;
+  debuff: MonsterAttackDebuff;
+  name: string;
+  rank: number;
+  targeting: MonsterAttackTargeting;
+}) {
+  const isTargeted = targetingIsTargeted(targeting);
+  let availableRank = rank + calculateEffectRankModifier(targeting);
+
+  // We need to make sure that we can afford to apply the debuff
+  const debuffRank = {
+    "dazzled": 1,
+    "frightened": 3,
+    "stunned": 5,
+    "confused": 9,
+    "immobilized": 11,
+  }[debuff];
+  let requiresNoDamageResistance = false;
+  if (availableRank < debuffRank) {
+    availableRank += 4;
+    requiresNoDamageResistance = true;
+  }
+  if (availableRank >= debuffRank) {
+    // Targeted effects get +2a per excess rank.
+    // Area effects get +1a per excess rank, since they also scale area with rank.
+    if (isTargeted) {
+      accuracyModifier += (availableRank - debuffRank) * 2;
+    } else {
+      accuracyModifier += availableRank - debuffRank;
+    }
+  } else {
+    // Both targeted and area effects get -2a per excess rank.
+    accuracyModifier += (availableRank - debuffRank) * 2;
+  }
+
+  let effect = "";
+  if (isTargeted) {
+    const range = {
+      "targeted_touch": "adjacent",
+      "targeted_short": "within 30'",
+      "targeted_medium": "within 60'",
+      "targeted_long": "within 90'",
+    }[targeting];
+
+    const hitEffect = requiresNoDamageResistance
+      ? `If the target has no remaining damage resistance, it is ${debuff} as a condition.`
+      : `The target is ${debuff} as a condition.`;
+    effect = `Make an attack against something ${range}.
+Hit: ${hitEffect}`;
+  } else {
+    const area = calculateAttackArea({ areaShape, rank, targeting });
+
+    const hitEffect = requiresNoDamageResistance
+      ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
+      : `Each target is ${debuff} as a condition.`;
+    effect = `Make an attack against everything in a ${area}.
+Hit: ${hitEffect}`;
+  }
+
+  const rowId = generateRowID();
+  const prefix = `repeating_nondamagingattacks_${rowId}`
+
+  setAttrs({
+    [`${prefix}_attack_accuracy`]: accuracyModifier,
+    [`${prefix}_attack_effect`]: effect,
+    [`${prefix}_attack_name`]: name,
+    [`${prefix}_is_targeted`]: isTargeted,
+  });
+}
+
+function targetingIsTargeted(targeting: MonsterAttackTargeting) {
+  return targeting !== "small_area" && targeting !== "large_area";
+}
+
+function calculateEffectRankModifier(targeting: MonsterAttackTargeting) {
+  return {
+    "targeted_medium": 0,
+    "targeted_touch": 2,
+    "targeted_short": 1,
+    "targeted_long": -1,
+    "small_area": -1,
+    "large_area": -2,
+  }[targeting];
+}
+
+function calculateAttackArea({ areaShape, rank, targeting }: {
+  areaShape: MonsterAttackAreaShape;
+  rank: number;
+  targeting: MonsterAttackTargeting;
+}) {
+  const areaRank = targeting === "small_area" ? Math.floor(rank / 2) : rank;
+
+  if (areaShape === "cone" || areaShape === "default") {
+    return {
+      1: "15' cone",
+      2: "30' cone",
+      3: "60' cone",
+      4: "60' cone",
+      5: "90' cone",
+      6: "90' cone",
+      7: "120' cone",
+      8: "120' cone",
+      9: "180' cone",
+    }[areaRank];
+  } else if (areaShape === "line") {
+    return {
+      0: "15' long, 5' wide line",
+      1: "30' long, 5' wide line",
+      2: "60' long, 5' wide line",
+      3: "60' long, 10' wide line",
+      4: "60' long, 15' wide line",
+      5: "90' long, 15' wide line",
+      6: "120' long, 15' wide line",
+      7: "180' long, 15' wide line",
+      8: "180' long, 15' wide line",
+    }[areaRank];
+  } else if (areaShape === "radius_from_self") {
+    return {
+      0: "5' radius",
+      // This is cheating a bit; normally, radius scaling is stronger at low ranks.
+      // However, monsters benefit more from "radius from self" effects than players do.
+      1: "10' radius",
+      2: "15' radius",
+      3: "30' radius",
+      4: "60' radius",
+      5: "90' radius",
+      6: "90' radius",
+      7: "120' radius",
+      8: "180' radius",
+    }[areaRank];
+  } else if (areaShape === "radius_at_range") {
+    return {
+      1: "5' radius within 30'",
+      2: "15' radius within 30'",
+      3: "15' radius within 60'",
+      4: "30' radius within 60'",
+      5: "30' radius within 90'",
+      6: "30' radius within 120'",
+      7: "60' radius within 120'",
+      8: "60' radius within 180'",
+      9: "60' radius within 180'",
+    }[areaRank];
+  }
+}
+
 function handleMonsterToggles() {
   onGet({
     variables: {
@@ -2814,6 +3117,10 @@ function formatCombinedExplanation(miscExplanation: string, localNamedModifiers?
     .filter(Boolean)
     .join(",")
     .replaceAll(",", "  ");
+}
+
+function calculateStandardRank(level: number) {
+  return Math.floor((level + 2) / 3);
 }
 
 handleEverything();
