@@ -162,9 +162,8 @@ export const polymorph: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
-        The strike deals double \\glossterm{weapon damage}, and it gains the \\weapontag{Massive} (10) weapon tag (see \\pcref{Weapon Tags}).
+        The strike targets everything in a \tinyarea radius adjacent to you, and it deals double \\glossterm{weapon damage}.
       `,
-      // Should this be rank 5?
       rank: 6,
       scaling: 'accuracy',
     },
