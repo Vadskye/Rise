@@ -1,4 +1,5 @@
 from cgi_simple import (
+    button,
     checkbox,
     div,
     equation,
@@ -44,6 +45,7 @@ def create_page(destination):
                 This tab is used to create your character.
             """,
             creation_guidance(),
+            monster_creation(),
             subskill_rowids(),
         ],
     )
@@ -522,6 +524,125 @@ def feats_step():
             labeled_text_input("Feat name", input_attributes={"name": "feat_name"}),
         ),
     )
+
+def monster_creation():
+    return div([
+        checkbox({
+            "class": "hidden is-monster",
+            "name": f"is_monster",
+            "readonly": True,
+            "value": "1",
+        }),
+        flex_col(
+            {"class": "monster-creation"},
+            [
+                div({"class": "section-header"}, "Monster Ability Generation"),
+                monster_attack(),
+                div({"class": "explanation"}, "This will automatically generate a reasonable but boring ability. You will need to choose which defense it targets, give it any relevant ability tags, and potentially add flavor text."),
+            ],
+        ),
+    ])
+
+
+def monster_attack():
+    return flex_row({"class": "monster-attack"}, [
+        labeled_text_input(
+            "Name",
+            {"class": "monster-attack-name"},
+            {"name": "monster_attack_name"},
+        ),
+        underlabel(
+            "Accuracy",
+            select(
+                {
+                    "class": "monster-attack-accuracy",
+                    "name": "monster_attack_accuracy",
+                },
+                [
+                    option({"value": ""}, "Normal"),
+                    option({"value": "low_accuracy"}, "Low"),
+                    option({"value": "high_accuracy"}, "High"),
+                ]
+            ),
+        ),
+        underlabel(
+            "Targeting",
+            select(
+                {
+                    "class": "monster-attack-targeting",
+                    "name": "monster_attack_targeting",
+                },
+                [
+                    option({"value": "targeted_medium"}, "Targeted (Medium range)"),
+                    option({"value": "targeted_touch"}, "Targeted (Touch)"),
+                    option({"value": "targeted_short"}, "Targeted (Short range)"),
+                    option({"value": "targeted_long"}, "Targeted (Long range)"),
+                    option({"value": "small_area"}, "Small area"),
+                    option({"value": "large_area"}, "Large area"),
+                ]
+            ),
+        ),
+        underlabel(
+            "Area Shape",
+            select(
+                {
+                    "class": "monster-attack-area-shape",
+                    "name": "monster_attack_area_shape",
+                },
+                [
+                    option({"value": "default"}, "Default"),
+                    option({"value": "cone"}, "Cone"),
+                    option({"value": "line"}, "Line"),
+                    option({"value": "radius_from_self"}, "Radius from self"),
+                    option({"value": "radius_at_range"}, "Radius at range"),
+                ]
+            ),
+        ),
+        underlabel(
+            "Effect",
+            select(
+                {
+                    "class": "monster-attack-effect",
+                    "name": "monster_attack_effect",
+                },
+                [
+                    option({"value": "damage"}, "Damage"),
+                    option({"value": "dazzled"}, "T1 Debuff (Dazzled)"),
+                    option({"value": "frightened"}, "T2 Debuff (Frightened)"),
+                    option({"value": "stunned"}, "T3 Debuff (Stunned)"),
+                    option({"value": "confused"}, "T4 Debuff (Confused)"),
+                    option({"value": "immobilized"}, "T5 Debuff (Immobilized)"),
+                ]
+            ),
+        ),
+        underlabeled_checkbox(
+            "Magical?",
+            {"class": "monster-attack-is-magical"},
+            {"name": "monster_attack_is_magical"},
+        ),
+        button(
+            {
+                "class": "create-monster-attack",
+                "name": "act_createmonsterattack",
+                "type": "action",
+            },
+            "Create ability",
+        ),
+        checkbox({
+            "class": "hidden can-undo",
+            "name": f"monster_attack_can_undo",
+            "readonly": True,
+            "value": "1",
+        }),
+        button(
+            {
+                "class": "undo-monster-attack",
+                "name": "act_undomonsterattack",
+                "type": "action",
+            },
+            "Undo",
+        ),
+    ])
 
 
 def subskill_rowids():
