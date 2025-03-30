@@ -7,6 +7,7 @@ def generate_script():
         return "".join([
             '<script type="text/worker">',
             *prune_irrelevant_lines(lines),
+            'handleEverything();',
             '</script>',
             '',
         ])

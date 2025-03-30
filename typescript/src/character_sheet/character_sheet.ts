@@ -5,6 +5,7 @@ import { Unsubscriber } from '@src/character_sheet/events/signal';
 export class CharacterSheet {
   characterName: string;
   private properties: Record<string, Property<SimpleValue>>;
+  private latestRowId = 0;
 
   constructor(characterName: string) {
     this.characterName = characterName;
@@ -64,5 +65,10 @@ export class CharacterSheet {
     for (const propertyName of Object.keys(attrs)) {
       this.getProperty(propertyName).set(attrs[propertyName]);
     }
+  }
+
+  public generateRowId(): string {
+    this.latestRowId += 1;
+    return `${this.latestRowId}`;
   }
 }
