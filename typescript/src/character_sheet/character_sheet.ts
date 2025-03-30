@@ -1,15 +1,18 @@
 import { Property } from '@src/character_sheet/events/property';
+import { RepeatingSection, splitPropertyName } from '@src/character_sheet/repeating_section/repeating_section';
 import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export class CharacterSheet {
   characterName: string;
   private properties: Record<string, Property<SimpleValue>>;
+  private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId = 0;
 
   constructor(characterName: string) {
     this.characterName = characterName;
     this.properties = {};
+    this.repeatingSections = {};
   }
 
   private getProperty(propertyName: string): Property<SimpleValue> {
@@ -18,6 +21,15 @@ export class CharacterSheet {
     }
 
     return this.properties[propertyName];
+  }
+
+  private getRepeatingSection(propertyName: string) {
+    const { sectionName } = splitPropertyName(propertyName);
+    if (this.repeatingSections[sectionName] === undefined) {
+      this.repeatingSections[sectionName] = new RepeatingSection(sectionName);
+    }
+
+    return this.repeatingSections[sectionName];
   }
 
   public on(changeString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
@@ -33,9 +45,15 @@ export class CharacterSheet {
 
     const unsubscribers: Unsubscriber[] = [];
     for (const propertyName of changedPropertyNames) {
-      unsubscribers.push(this.getProperty(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
-        callback(eventInfo);
-      }));
+      if (propertyName.startsWith("repeating_")) {
+        unsubscribers.push(this.getRepeatingSection(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
+          callback(eventInfo);
+        }));
+      } else {
+        unsubscribers.push(this.getProperty(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
+          callback(eventInfo);
+        }));
+      }
     }
 
     return () => {
@@ -50,6 +68,7 @@ export class CharacterSheet {
     return this.on(propertyNames.map((p) => `change:${p}`).join(" "), callback);
   }
 
+  // TODO: handle getting repeating properties
   public getProperties(propertyNames: string[], callback: (attrs: Attrs) => void): void {
     const attrs: Attrs = {}
     for (const propertyName of propertyNames) {
@@ -63,7 +82,11 @@ export class CharacterSheet {
   // attribute changes.
   public setProperties(attrs: Attrs): void {
     for (const propertyName of Object.keys(attrs)) {
-      this.getProperty(propertyName).set(attrs[propertyName]);
+      if (propertyName.startsWith("repeating_")) {
+        this.getRepeatingSection(propertyName).setProperty(propertyName, attrs[propertyName]);
+      } else {
+        this.getProperty(propertyName).set(attrs[propertyName]);
+      }
     }
   }
 

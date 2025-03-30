@@ -50,8 +50,20 @@ type BooleanCreatureProperty = RiseDebuff;
 // TODO: list all debuffs if we ever actually care
 export type RiseDebuff = "climbing";
 
-type NumericCreatureProperty = "level" | "challenge_rating" | "hit_points" | "damage_resistance" | RiseAttribute | RiseSkill;
+type NumericCreatureProperty = "accuracy" | "brawling_accuracy" | "level" | "challenge_rating" | "hit_points" | "damage_resistance" | RiseAttribute | RiseAttributeModifier | RiseSkill;
 export type RiseAttribute = "strength" | "dexterity" | "constitution" | "intelligence" | "perception" | "willpower";
+export type RiseAttributeModifier = "strength_at_creation"
+  | "strength_level_scaling"
+  | "dexterity_at_creation"
+  | "dexterity_level_scaling"
+  | "constitution_at_creation"
+  | "constitution_level_scaling"
+  | "intelligence_at_creation"
+  | "intelligence_level_scaling"
+  | "perception_at_creation"
+  | "perception_level_scaling"
+  | "willpower_at_creation"
+  | "willpower_level_scaling";
 export type RiseSkill = "climb"
   | "jump"
   | "swim"
@@ -102,17 +114,17 @@ export class Creature {
     this.sheet.setProperties(properties);
   }
 
-  setAttributes(attributes: number[]) {
+  setBaseAttributes(attributes: number[]) {
     if (attributes.length !== 6) {
       throw new Error(`Invalid attributes array: ${attributes}`);
     }
     this.setProperties({
-      strength: attributes[0],
-      dexterity: attributes[1],
-      constitution: attributes[2],
-      intelligence: attributes[3],
-      perception: attributes[4],
-      willpower: attributes[5],
+      strength_at_creation: attributes[0],
+      dexterity_at_creation: attributes[1],
+      constitution_at_creation: attributes[2],
+      intelligence_at_creation: attributes[3],
+      perception_at_creation: attributes[4],
+      willpower_at_creation: attributes[5],
     });
   }
 

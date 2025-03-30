@@ -21,6 +21,7 @@ export class Property<T extends SimpleValue> {
       previousValue,
       removedInfo: {},
       sourceAttribute: this.propertyName,
+      // TODO: this doesn't match how roll20 defines triggerName.
       triggerName: `change:${this.propertyName}`,
     });
   }
