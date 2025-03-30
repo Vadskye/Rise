@@ -2106,7 +2106,11 @@ function handleMonsterToggles() {
   onGet({
     variables: {
       numeric: ["challenge_rating"],
-      string: ["chat_color"],
+    },
+    options: {
+      variablesWithoutListen: {
+        string: ["chat_color"],
+      },
     },
     callback: (v) => {
       if (v.challenge_rating! > 0) {
@@ -3140,5 +3144,3 @@ function formatCombinedExplanation(miscExplanation: string, localNamedModifiers?
 function calculateStandardRank(level: number) {
   return Math.floor((level + 2) / 3);
 }
-
-handleEverything();

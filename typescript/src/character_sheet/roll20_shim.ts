@@ -1,4 +1,4 @@
-import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
+import { Attrs, EventInfo } from './sheet_worker';
 import { getCurrentCharacterSheet } from './current_character_sheet';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
@@ -25,8 +25,7 @@ export function randomInteger(max: number): number {
 }
 
 export function generateRowID(): string {
-  // TODO: realistic implementation
-  return "Unique row IDs are not yet implemented.";
+  return getCurrentCharacterSheet().generateRowId();
 }
 
 export function removeRepeatingRow(rowKey: string): void {
