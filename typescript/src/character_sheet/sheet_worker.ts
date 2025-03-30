@@ -2392,6 +2392,7 @@ function handleSkillPoints() {
 
 function handleTrainedSkills() {
   on(`change:repeating_trainedskills`, function(eventInfo) {
+    console.log(`Change to repeating trained skills: ${JSON.stringify(eventInfo)}`);
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
