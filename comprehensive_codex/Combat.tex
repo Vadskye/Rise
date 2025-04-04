@@ -546,6 +546,11 @@
       A creature affected by a \glossterm{push} effect is being pushed by a constant force.
       If it encounters an \glossterm{obstacle}, the push ends without causing harm to the creature or the obstacle.
       Similarly, if a creature being pushed stops being supported and would fall, it falls instead of being pushed further.
+
+      When a creature would fall while being pushed, it automatically makes a \glossterm{reactive check} with the Climb skill to avoid falling.
+      The Climb check is made against the closest available stable object, such as the edge of a cliff.
+      Success means that the creature does not fall, but is now \climbing.
+
       This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
 
     \subsubsection{Knockback Effects}\label{Knockback Effects}
@@ -827,6 +832,7 @@
       \hit You can move up to half your movement speed.
       During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
       If you push a target so it stops being adjacent to you, you stop being able to push it further.
+      When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
       \crit If you are strong enough to carry the target, you can move up to your full movement speed.
     \end{activeability}
 
