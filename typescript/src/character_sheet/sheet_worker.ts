@@ -8,7 +8,7 @@ const {
   removeRepeatingRow,
 } = roll20shim;
 
-export type SimpleValue = boolean | number | string;
+export type SimpleValue = boolean | number | string | null | undefined;
 export interface EventInfo {
   newValue: SimpleValue | undefined;
   previousValue: SimpleValue | undefined;
@@ -980,11 +980,11 @@ function setAttackTargeting(sectionPrefix: string, attrs: Attrs) {
     attrs[`${sectionPrefix}_attack_defense`]
   );
   setAttrs({
-    [`${sectionPrefix}_targeting_text`]: targetText,
-    [`${sectionPrefix}_targeting_text_first_page`]: targetText.replace(
-      "}}}",
-      "}&#125;&#125;"
-    ),
+    // [`${sectionPrefix}_targeting_text`]: targetText,
+    // [`${sectionPrefix}_targeting_text_first_page`]: targetText.replace(
+    //   "}}}",
+    //   "}&#125;&#125;"
+    // ),
     [`${sectionPrefix}_attack_defense_text`]: defenseText,
   });
 }
@@ -1847,14 +1847,15 @@ function handleMonsterAbilityGeneration() {
   });
 }
 
-type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
-type MonsterAttackDebuff = "dazzled" | "frightened" | "stunned" | "confused" | "immobilized";
-type MonsterAttackAreaShape = "default" | "cone" | "line" | "radius_from_self" | "radius_at_range";
-type MonsterAttackTargeted = "targeted_medium" | "targeted_touch" | "targeted_short" | "targeted_long";
-type MonsterAttackArea = "small_area" | "large_area";
+export type MonsterAttackAccuracy = "low_accuracy" | "high_accuracy" | "normal" | "" | undefined;
+export type MonsterAttackTargeting = MonsterAttackTargeted | MonsterAttackArea;
+export type MonsterAttackDebuff = "dazzled" | "frightened" | "stunned" | "confused" | "immobilized" | "goaded" | "slowed" | "blinded" | "panicked" | "vulnerable to all attacks" | "paralyzed";
+export type MonsterAttackAreaShape = "default" | "cone" | "line" | "radius_from_self" | "radius_at_range";
+export type MonsterAttackTargeted = "targeted_medium" | "targeted_touch" | "targeted_short" | "targeted_long";
+export type MonsterAttackArea = "small_area" | "large_area";
 
 function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, power, rank, targeting }: {
-  accuracy: "low_accuracy" | "high_accuracy" | "" | undefined,
+  accuracy: MonsterAttackAccuracy;
   areaShape: MonsterAttackAreaShape;
   effect: "damage" | MonsterAttackDebuff;
   isMagical: boolean;
@@ -1897,6 +1898,19 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
   }
 }
 
+function getTargetedText(targeting: MonsterAttackTargeting) {
+  if (targetingIsTargeted(targeting)) {
+    return {
+      "targeted_touch": "adjacent",
+      "targeted_short": "within Short (30 ft.) range",
+      "targeted_medium": "within Medium (60 ft.) range'",
+      "targeted_long": "within Long (90 ft.) range'",
+    }[targeting];
+  } else {
+    throw new Error(`Can't get targeted text for targeting '${targeting}'.`);
+  }
+}
+
 function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, name, power, rank, targeting }: {
   accuracyModifier: number;
   areaShape: MonsterAttackAreaShape;
@@ -1925,17 +1939,18 @@ function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, n
 
   const isTargeted = targetingIsTargeted(targeting);
   let effect = "";
+  let monsterEffect = "";
   if (isTargeted) {
-    const range = {
-      "targeted_touch": "adjacent",
-      "targeted_short": "within 30'",
-      "targeted_medium": "within 60'",
-      "targeted_long": "within 90'",
-    }[targeting];
+    const range = getTargetedText(targeting);
     effect = `Make an attack against something ${range}.`;
+    monsterEffect = `The $name makes an attack against something ${range}.
+Hit: ${damageDice}.`;
   } else {
     const area = calculateAttackArea({ areaShape, rank, targeting });
     effect = `Make an attack against everything in a ${area}.
+Miss: Half damage.`;
+    monsterEffect = `The $name makes an attack against something in a ${area}.
+Hit: ${damageDice}.
 Miss: Half damage.`;
   }
 
@@ -1950,6 +1965,8 @@ Miss: Half damage.`;
     [`${prefix}_attack_damage_dice`]: damageDice,
     [`${prefix}_attack_effect`]: effect,
     [`${prefix}_attack_name`]: name,
+    // This is only used for generating LaTeX outside of Roll20.
+    [`${prefix}_monster_effect`]: monsterEffect,
     [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
   });
@@ -1970,9 +1987,15 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, name, rank, 
   const debuffRank = {
     "dazzled": 1,
     "frightened": 3,
+    "goaded": 5,
+    "slowed": 5,
     "stunned": 5,
+    "blinded": 9,
     "confused": 9,
+    "panicked": 9,
+    "vulnerable to all attacks": 9,
     "immobilized": 11,
+    "paralyzed": 13,
   }[debuff];
   let requiresNoDamageResistance = false;
   if (availableRank < debuffRank) {
@@ -1993,18 +2016,16 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, name, rank, 
   }
 
   let effect = "";
+  let monsterEffect = "";
   if (isTargeted) {
-    const range = {
-      "targeted_touch": "adjacent",
-      "targeted_short": "within 30'",
-      "targeted_medium": "within 60'",
-      "targeted_long": "within 90'",
-    }[targeting];
+    const range = getTargetedText(targeting);
 
     const hitEffect = requiresNoDamageResistance
       ? `If the target has no remaining damage resistance, it is ${debuff} as a condition.`
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
+Hit: ${hitEffect}`;
+    monsterEffect = `The $name makes an attack against something ${range}.
 Hit: ${hitEffect}`;
   } else {
     const area = calculateAttackArea({ areaShape, rank, targeting });
@@ -2013,6 +2034,8 @@ Hit: ${hitEffect}`;
       ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
+Hit: ${hitEffect}`;
+    monsterEffect = `The $name makes an attack against everything in a ${area}.
 Hit: ${hitEffect}`;
   }
 
@@ -2392,7 +2415,6 @@ function handleSkillPoints() {
 
 function handleTrainedSkills() {
   on(`change:repeating_trainedskills`, function(eventInfo) {
-    console.log(`Change to repeating trained skills: ${JSON.stringify(eventInfo)}`);
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
