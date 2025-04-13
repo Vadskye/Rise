@@ -46,9 +46,8 @@ export class CharacterSheet {
     const unsubscribers: Unsubscriber[] = [];
     for (const propertyName of changedPropertyNames) {
       if (propertyName.startsWith("repeating_")) {
-        unsubscribers.push(this.getRepeatingSection(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
-          callback(eventInfo);
-        }));
+        // TODO: we don't handle unsubscribing from repeating sections right now
+        this.getRepeatingSection(propertyName).onChange(propertyName, callback);
       } else {
         unsubscribers.push(this.getProperty(propertyName).SetSignal.on((_, eventInfo: EventInfo) => {
           callback(eventInfo);
@@ -68,6 +67,12 @@ export class CharacterSheet {
     return this.on(propertyNames.map((p) => `change:${p}`).join(" "), callback);
   }
 
+  public getRepeatingSectionNames(): string[] {
+    // The filter is probably unnecessary, but it could be useful if we delete repeating
+    // sections?
+    return Object.keys(this.repeatingSections).filter((k) => this.repeatingSections[k]);
+  }
+
   // TODO: handle getting repeating properties
   public getProperties(propertyNames: string[], callback: (attrs: Attrs) => void): void {
     const attrs: Attrs = {}
@@ -80,7 +85,7 @@ export class CharacterSheet {
 
   // Note that we currently can't handle attribute removal like Roll20 does, just
   // attribute changes.
-  public setProperties(attrs: Attrs): void {
+  public setProperties(attrs: Record<string, SimpleValue>): void {
     for (const propertyName of Object.keys(attrs)) {
       if (propertyName.startsWith("repeating_")) {
         this.getRepeatingSection(propertyName).setProperty(propertyName, attrs[propertyName]);
@@ -92,6 +97,10 @@ export class CharacterSheet {
 
   public generateRowId(): string {
     this.latestRowId += 1;
+    return `${this.latestRowId}`;
+  }
+
+  public getLatestRowId(): string {
     return `${this.latestRowId}`;
   }
 }

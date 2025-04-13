@@ -1,5 +1,6 @@
+import { EventInfo, SimpleValue } from '@src/character_sheet/sheet_worker';
 import { Property } from '@src/character_sheet/events/property';
-import { SimpleValue } from '@src/character_sheet/sheet_worker';
+import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export class RepeatingSectionRow {
   private properties: Record<string, Property<SimpleValue>>;
@@ -9,8 +10,16 @@ export class RepeatingSectionRow {
   }
 
   public getProperty(propertyName: string) {
-    const property = this.properties[propertyName];
-    return property && property.value;
+    if (!this.properties[propertyName]) {
+      this.properties[propertyName] = new Property(propertyName);
+    }
+    return this.properties[propertyName];
+  }
+
+  public onChange(rowPropertyName: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
+    return this.getProperty(rowPropertyName).SetSignal.on((_, eventInfo: EventInfo) => {
+      callback(eventInfo);
+    });
   }
 
   public setProperty(propertyName: string, newValue: SimpleValue) {
