@@ -1,4 +1,5 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
+import { MonsterAttackAccuracy, MonsterAttackAreaShape, MonsterAttackTargeting, MonsterAttackDebuff } from '@src/character_sheet/sheet_worker';
 
 export type CreaturePropertyMap = {
   base_class: RiseBaseClass;
@@ -91,6 +92,38 @@ export type RiseSkill = "climb"
 
 type StringCreatureProperty = "name";
 
+// TODO: list them all individually?
+export type RiseAbilityTag = string;
+export type RiseDefense = "Armor" | "Fortitude" | "Reflex" | "Mental";
+export type RiseAbilityUsageTime = 'standard' | 'elite' | 'minor';
+
+export interface AutoAttackConfig {
+  accuracy?: MonsterAttackAccuracy;
+  areaShape?: MonsterAttackAreaShape;
+  defense: RiseDefense[];
+  effect: "damage" | MonsterAttackDebuff;
+  isMagical: boolean;
+  name: string;
+  tags?: RiseAbilityTag[];
+  targeting: MonsterAttackTargeting;
+  usageTime?: RiseAbilityUsageTime;
+}
+
+export interface CustomAttackConfig {
+  effect: string;
+  isMagical: boolean;
+  name: string;
+  usageTime?: RiseAbilityUsageTime;
+  tags?: RiseAbilityTag[];
+}
+
+export interface CreatureAttack {
+  effect: string;
+  name: string;
+  tags: RiseAbilityTag[];
+  usageTime: RiseAbilityUsageTime;
+}
+
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
 // This means that "normal" typescript code shouldn't have to grapple with the complexity
 // of, say, repeating abilities in Roll20.
@@ -108,6 +141,43 @@ export class Creature {
       // We can't make these types match neatly. That's the point of this wrapper.
       callback(attrs as any);
     });
+  }
+
+  addCustomAttack(config: CustomAttackConfig) {
+    const rowId = this.sheet.generateRowId();
+    // This isn't a repeating section that exists in the real Roll20 sheet. There's no
+    // advantage in using any of the "real" sections since we don't take advantage of any
+    // sheet worker magic anyway.
+    const prefix = `repeating_monsterattacks_${rowId}`;
+    this.sheet.setProperties({
+      [`${prefix}_attack_name`]: config.name,
+      [`${prefix}_attack_effect`]: config.effect,
+      [`${prefix}_usage_time`]: config.usageTime,
+      [`${prefix}_tags`]: config.tags?.join(","),
+    });
+  }
+
+  addAutoAttack(config: AutoAttackConfig) {
+    this.sheet.setProperties({
+      monster_attack_accuracy: config.accuracy || "normal",
+      monster_attack_area_shape: config.areaShape || "default",
+      monster_attack_effect: config.effect,
+      monster_attack_is_magical: config.isMagical,
+      monster_attack_name: config.name,
+      monster_attack_targeting: config.targeting,
+    });
+
+    const sectionName = config.effect === "damage" ? "repeating_otherdamagingattacks" : "repeating_nondamagingattacks";
+    const prefix = `${sectionName}_${this.sheet.getLatestRowId()}`;
+    this.sheet.setProperties({
+      [`${prefix}_defense`]: config.defense.join(" and "),
+      [`${prefix}_tags`]: config.tags?.join(", "),
+      [`${prefix}_usage_time`]: config.tags?.join(", "),
+    });
+  }
+
+  getAttacks(callback: (attacks: CreatureAttack[]) => void): void {
+    // TODO: use this.sheet.getRepeatingSectionNames...
   }
 
   setProperties(properties: Partial<CreaturePropertyMap>) {

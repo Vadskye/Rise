@@ -13,15 +13,44 @@ interface SplitPropertyName {
   rowPropertyName: string | null;
 }
 
+interface ListenerConfig {
+  rowPropertyName: string;
+  callback: (eventInfo: EventInfo) => void;
+}
+
 export class RepeatingSection {
   // Should always start with "repeating_", does not include row ID or local property
   // names within the repeating
   sectionName: string;
   private rows: Record<string, RepeatingSectionRow>;
+  private listeners: ListenerConfig[];
 
   constructor(sectionName: string) {
+    this.listeners = [];
     this.sectionName = sectionName;
     this.rows = {};
+  }
+
+  public onChange(fullPropertyName: FullPropertyName, callback: (eventInfo: EventInfo) => void) {
+    const {sectionName, rowId, rowPropertyName } = splitPropertyName(fullPropertyName);
+    if (sectionName !== this.sectionName) {
+      throw new Error(`Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`);
+    }
+    if (rowId && rowPropertyName) {
+      return this.getRow(rowId).onChange(rowPropertyName, callback);
+    } else if (rowId) {
+      // TODO: in what circumstances could there be a rowId without a rowPropertyName?
+      throw new Error(`Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`);
+    } else if (rowPropertyName) {
+      this.listeners.push({ callback, rowPropertyName });
+      for (const rowId of Object.keys(this.rows)) {
+        this.getRow(rowId).onChange(rowPropertyName, callback);
+      }
+    } else {
+      return this.SetSignal.on((_, eventInfo: EventInfo) => {
+        callback(eventInfo);
+      });
+    }
   }
 
   private readonly setEmitter = new SignalEmitter<RepeatingSection, EventInfo>();
@@ -29,7 +58,6 @@ export class RepeatingSection {
     return this.setEmitter.expose();
   }
   public setProperty(fullPropertyName: FullPropertyName, newValue: SimpleValue) {
-    console.log(`Setting property ${fullPropertyName} to ${newValue}.`);
     const { rowId, sectionName } = splitPropertyName(fullPropertyName);
     if (sectionName !== this.sectionName) {
       throw new Error(`RepeatingSection ${this.sectionName} cannot process section '${sectionName}'.`);
@@ -38,7 +66,7 @@ export class RepeatingSection {
       throw new Error(`Must include rowId when setting a property: ${fullPropertyName}.`);
     }
     const row = this.getRow(rowId);
-    const previousValue = row.getProperty(fullPropertyName);
+    const previousValue = row.getProperty(fullPropertyName).value;
     row.setProperty(fullPropertyName, newValue);
     this.setEmitter.trigger(this, {
       newValue,
@@ -51,11 +79,20 @@ export class RepeatingSection {
 
   private getRow(rowId: string) {
     if (!this.rows[rowId]) {
-      this.rows[rowId] = new RepeatingSectionRow()
+      this.rows[rowId] = this.createRow();
     }
     return this.rows[rowId];
   }
-} 
+
+  private createRow() {
+    const row = new RepeatingSectionRow();
+    for (const listener of this.listeners) {
+      row.onChange(listener.rowPropertyName, listener.callback);
+    }
+
+    return row;
+  }
+}
 
 
 export function splitPropertyName(propertyName: FullPropertyName): SplitPropertyName {
