@@ -8,28 +8,31 @@ export function generateMonsterDescriptions(): string {
 
   const monsterSections: Record<string, string> = {};
   for (const monsterName of grimoire.getMonsterNames()) {
-    generateMonsterSection(monsterSections, grimoire.getMonster(monsterName))
+    monsterSections[monsterName] = convertMonsterToLatex("section", grimoire.getMonster(monsterName));
   }
 
   for (const monsterGroupName of grimoire.getMonsterGroupNames()) {
-    generateMonsterGroupSection(monsterSections, grimoire.getMonsterGroup(monsterGroupName))
+    monsterSections[monsterGroupName] = convertMonsterGroupToLatex(
+      monsterGroupName, grimoire.getMonsterGroup(monsterGroupName)
+    );
   }
 
   // TODO: sort the sections
   return Object.keys(monsterSections).map((sectionName) => monsterSections[sectionName]).join("\n");
 }
 
-function generateMonsterSection(monsterSections: Record<string, string>, monster: Creature) {
-  monster.getProperties(["name"], ({ name }) => {
-    monsterSections[name] = `\\monsubsection{${name}}`;
-  });
+export function convertMonsterToLatex(sectionType: "section" | "subsection", monster: Creature) {
+  return `
+    \\mon${sectionType}{${monster.name}}
+  `;
 }
 
-function generateMonsterGroupSection(monsterSections: Record<string, string>, monsters: Creature[]) {
-  const subsections = [];
-  for (const monster of monsters) {
-    monster.getProperties(["name"], ({ name }) => {
-      subsections.push(`\\monsubsection{${name}}`);
-    });
-  }
+export function convertMonsterGroupToLatex(monsterGroupName: string, monsters: Creature[]): string {
+  const monsterText = monsters.map((monster) => convertMonsterToLatex("subsection", monster)).join("\n");
+
+  return `
+    \\monsection{${monsterGroupName}}
+
+    ${monsterText}
+  `;
 }

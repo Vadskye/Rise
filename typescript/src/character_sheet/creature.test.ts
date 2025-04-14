@@ -11,11 +11,10 @@ t.test('can set a trained skill', (t) => {
     level: 20,
   });
   creature.setTrainedSkills(["awareness"]);
-  creature.getProperties(["accuracy", "awareness"], (p) => {
-    t.match(p, {
-      accuracy: 10, // Make sure that general calculations worked
-      awareness: 13,
-    });
-    t.end();
+  const vals = creature.getPropertyValues(["accuracy", "awareness"]);
+  t.match(vals, {
+    accuracy: 10, // Make sure that general calculations worked
+    awareness: 13,
   });
+  t.end();
 });
