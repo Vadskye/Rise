@@ -4,18 +4,21 @@ import {
   convertMysticSphereToLatex,
   generateCombatStyleLists,
   generateCombatStyleSummaries,
+  generateMonsterDescriptions,
   generateMysticSphereLists,
   generateMysticSphereRitualSummaries,
   generateMysticSphereSpellSummaries,
   generateRitualDescriptions,
 } from "@src/latex";
-import { mysticSpheres, rituals } from "@src/mystic_spheres";
+import { mysticSpheres } from "@src/mystic_spheres";
 import cli from "commander";
 import fs from "fs";
 
 function generateLatex(latexType: string): string {
   let latex = "";
-  if (latexType === "mystic_sphere_lists") {
+  if (latexType === "monster_descriptions") {
+    latex = generateMonsterDescriptions();
+  } else if (latexType === "mystic_sphere_lists") {
     latex = generateMysticSphereLists();
   } else if (latexType === "mystic_sphere_spell_summaries") {
     latex = generateMysticSphereSpellSummaries();
