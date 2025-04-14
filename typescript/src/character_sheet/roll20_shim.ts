@@ -7,7 +7,7 @@ export function on(changeString: string, callback: (eventInfo: EventInfo) => voi
 }
 
 export function getAttrs(getVariables: string[], callback: (attrs: Attrs) => void): void {
-  getCurrentCharacterSheet().getProperties(getVariables, callback);
+  getCurrentCharacterSheet().getAttrs(getVariables, callback);
 }
 
 export function setAttrs(attrs: Attrs): void {

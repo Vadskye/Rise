@@ -73,14 +73,25 @@ export class CharacterSheet {
     return Object.keys(this.repeatingSections).filter((k) => this.repeatingSections[k]);
   }
 
+  // Primarily used for Roll20 compatibility. Prefer getPropertyValues generally.
+  public getAttrs(propertyNames: string[], callback: (attrs: Attrs) => void): void {
+    callback(this.getPropertyValues(propertyNames));
+  }
+
   // TODO: handle getting repeating properties
-  public getProperties(propertyNames: string[], callback: (attrs: Attrs) => void): void {
+  // Unlike getAttrs, this doesn't use a callback. Prefer using this for normal Typescript
+  // usage, and use getAttrs for Roll20 compatibility.
+  public getPropertyValues(propertyNames: string[]): Attrs {
     const attrs: Attrs = {}
     for (const propertyName of propertyNames) {
-      attrs[propertyName] = this.getProperty(propertyName).value;
+      attrs[propertyName] = this.getPropertyValue(propertyName);
     }
 
-    callback(attrs);
+    return attrs;
+  }
+
+  public getPropertyValue(propertyName: string): SimpleValue {
+    return this.getProperty(propertyName).value;
   }
 
   // Note that we currently can't handle attribute removal like Roll20 does, just

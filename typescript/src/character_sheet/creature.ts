@@ -8,7 +8,7 @@ export type CreaturePropertyMap = {
   & Record<NumericCreatureProperty, number>
   & Record<StringCreatureProperty, string>
   & Record<BooleanCreatureProperty, boolean>;
-type CreatureProperty = "size" | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
+type CreatureProperty = "base_class" | "size" | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
 
 export type RiseBaseClass = "barbarian"
   | "cleric"
@@ -65,6 +65,7 @@ export type RiseAttributeModifier = "strength_at_creation"
   | "perception_level_scaling"
   | "willpower_at_creation"
   | "willpower_level_scaling";
+
 export type RiseSkill = "climb"
   | "jump"
   | "swim"
@@ -127,7 +128,7 @@ export interface CreatureAttack {
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
 // This means that "normal" typescript code shouldn't have to grapple with the complexity
 // of, say, repeating abilities in Roll20.
-export class Creature {
+export class Creature implements CreaturePropertyMap {
   private sheet: CharacterSheet;
 
   constructor(sheet: CharacterSheet) {
@@ -136,11 +137,9 @@ export class Creature {
 
   // TODO: Is there a way to make the return type only match the keys provided in
   // propertyNames?
-  getProperties(propertyNames: CreatureProperty[], callback: (p: CreaturePropertyMap) => void): void {
-    this.sheet.getProperties(propertyNames, (attrs) => {
-      // We can't make these types match neatly. That's the point of this wrapper.
-      callback(attrs as any);
-    });
+  getPropertyValues(propertyNames: CreatureProperty[]): CreaturePropertyMap {
+    // We can't make these types match neatly. That's the point of this wrapper.
+    return this.sheet.getPropertyValues(propertyNames) as any;
   }
 
   addCustomAttack(config: CustomAttackConfig) {
@@ -205,5 +204,215 @@ export class Creature {
       props[`repeating_trainedskills_${rowId}_trained_skill`] = skillName;
     }
     this.sheet.setProperties(props);
+  }
+
+  // Getters
+
+  public get level() {
+    return this.getPropertyValues(["level"]).level;
+  }
+
+  public get base_class() {
+    return this.getPropertyValues(["base_class"]).base_class;
+  }
+
+  public get size() {
+    return this.getPropertyValues(["size"]).size;
+  }
+
+  public get accuracy() {
+    return this.getPropertyValues(["accuracy"]).accuracy;
+  }
+
+  public get brawling_accuracy() {
+    return this.getPropertyValues(["brawling_accuracy"]).brawling_accuracy;
+  }
+
+  public get hit_points() {
+    return this.getPropertyValues(["hit_points"]).hit_points;
+  }
+
+  public get damage_resistance() {
+    return this.getPropertyValues(["damage_resistance"]).damage_resistance;
+  }
+
+  public get challenge_rating() {
+    return this.getPropertyValues(["challenge_rating"]).challenge_rating;
+  }
+
+  public get strength() {
+    return this.getPropertyValues(["strength"]).strength;
+  }
+
+  public get dexterity() {
+    return this.getPropertyValues(["dexterity"]).dexterity;
+  }
+
+  public get constitution() {
+    return this.getPropertyValues(["constitution"]).constitution;
+  }
+
+  public get intelligence() {
+    return this.getPropertyValues(["intelligence"]).intelligence;
+  }
+
+  public get perception() {
+    return this.getPropertyValues(["perception"]).perception;
+  }
+
+  public get willpower() {
+    return this.getPropertyValues(["willpower"]).willpower;
+  }
+
+  public get strength_at_creation() {
+    return this.getPropertyValues(["strength_at_creation"]).strength_at_creation;
+  }
+
+  public get strength_level_scaling() {
+    return this.getPropertyValues(["strength_level_scaling"]).strength_level_scaling;
+  }
+
+  public get dexterity_at_creation() {
+    return this.getPropertyValues(["dexterity_at_creation"]).dexterity_at_creation;
+  }
+
+  public get dexterity_level_scaling() {
+    return this.getPropertyValues(["dexterity_level_scaling"]).dexterity_level_scaling;
+  }
+
+  public get constitution_at_creation() {
+    return this.getPropertyValues(["constitution_at_creation"]).constitution_at_creation;
+  }
+
+  public get constitution_level_scaling() {
+    return this.getPropertyValues(["constitution_level_scaling"]).constitution_level_scaling;
+  }
+
+  public get intelligence_at_creation() {
+    return this.getPropertyValues(["intelligence_at_creation"]).intelligence_at_creation;
+  }
+
+  public get intelligence_level_scaling() {
+    return this.getPropertyValues(["intelligence_level_scaling"]).intelligence_level_scaling;
+  }
+
+  public get perception_at_creation() {
+    return this.getPropertyValues(["perception_at_creation"]).perception_at_creation;
+  }
+
+  public get perception_level_scaling() {
+    return this.getPropertyValues(["perception_level_scaling"]).perception_level_scaling;
+  }
+
+  public get willpower_at_creation() {
+    return this.getPropertyValues(["willpower_at_creation"]).willpower_at_creation;
+  }
+
+  public get willpower_level_scaling() {
+    return this.getPropertyValues(["willpower_level_scaling"]).willpower_level_scaling;
+  }
+
+  public get climb() {
+    return this.getPropertyValues(["climb"]).climb;
+  }
+
+  public get jump() {
+    return this.getPropertyValues(["jump"]).jump;
+  }
+
+  public get swim() {
+    return this.getPropertyValues(["swim"]).swim;
+  }
+
+  public get balance() {
+    return this.getPropertyValues(["balance"]).balance;
+  }
+
+  public get flexibility() {
+    return this.getPropertyValues(["flexibility"]).flexibility;
+  }
+
+  public get perform() {
+    return this.getPropertyValues(["perform"]).perform;
+  }
+
+  public get ride() {
+    return this.getPropertyValues(["ride"]).ride;
+  }
+
+  public get sleight_of_hand() {
+    return this.getPropertyValues(["sleight_of_hand"]).sleight_of_hand;
+  }
+
+  public get stealth() {
+    return this.getPropertyValues(["stealth"]).stealth;
+  }
+
+  public get endurance() {
+    return this.getPropertyValues(["endurance"]).endurance;
+  }
+
+  public get craft() {
+    return this.getPropertyValues(["craft"]).craft;
+  }
+
+  public get deduction() {
+    return this.getPropertyValues(["deduction"]).deduction;
+  }
+
+  public get devices() {
+    return this.getPropertyValues(["devices"]).devices;
+  }
+
+  public get disguise() {
+    return this.getPropertyValues(["disguise"]).disguise;
+  }
+
+  public get knowledge() {
+    return this.getPropertyValues(["knowledge"]).knowledge;
+  }
+
+  public get medicine() {
+    return this.getPropertyValues(["medicine"]).medicine;
+  }
+
+  public get awareness() {
+    return this.getPropertyValues(["awareness"]).awareness;
+  }
+
+  public get creature_handling() {
+    return this.getPropertyValues(["creature_handling"]).creature_handling;
+  }
+
+  public get deception() {
+    return this.getPropertyValues(["deception"]).deception;
+  }
+
+  public get persuasion() {
+    return this.getPropertyValues(["persuasion"]).persuasion;
+  }
+
+  public get social_insight() {
+    return this.getPropertyValues(["social_insight"]).social_insight;
+  }
+
+  public get survival() {
+    return this.getPropertyValues(["survival"]).survival;
+  }
+
+  public get intimidate() {
+    return this.getPropertyValues(["intimidate"]).intimidate;
+  }
+
+  public get profession() {
+    return this.getPropertyValues(["profession"]).profession;
+  }
+
+  public get name() {
+    return this.getPropertyValues(["name"]).name;
+  }
+
+  public get climbing() {
+    return this.getPropertyValues(["climbing"]).climbing;
   }
 }
