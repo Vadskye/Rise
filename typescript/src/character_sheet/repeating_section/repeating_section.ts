@@ -31,6 +31,7 @@ export class RepeatingSection {
     this.rows = {};
   }
 
+  // TODO: return an unsubscriber
   public onChange(fullPropertyName: FullPropertyName, callback: (eventInfo: EventInfo) => void) {
     const {sectionName, rowId, rowPropertyName } = splitPropertyName(fullPropertyName);
     if (sectionName !== this.sectionName) {
