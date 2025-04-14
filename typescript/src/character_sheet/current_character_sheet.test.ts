@@ -18,7 +18,7 @@ t.test('can access one sheet while a different sheet is active', (t) => {
     name: "banana",
   });
 
-  appleSheet.getProperties(["level", "name"], (attrs) => {
+  appleSheet.getAttrs(["level", "name"], (attrs) => {
     t.equal(attrs.level, 1);
     t.equal(attrs.name, "apple");
     t.end();
@@ -41,7 +41,7 @@ t.test('triggers work for inactive sheets', (t) => {
     name: "banana",
   });
 
-  appleSheet.getProperties(["hit_points", "level", "name"], (attrs) => {
+  appleSheet.getAttrs(["hit_points", "level", "name"], (attrs) => {
     t.match(attrs, {
       hit_points: 6,
       level: 1,
