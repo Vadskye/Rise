@@ -664,6 +664,7 @@ export function handleEverything() {
   // handleRust();
   handleSize();
   handleSkills();
+  handleSpecialDefenses();
   handleVitalWounds();
 }
 
@@ -1231,9 +1232,9 @@ function handleCustomModifiers() {
                 }
               }
               const attrs: Attrs = {
-                immune: immuneTo.join(", "),
-                impervious: imperviousTo.join(", "),
-                vulnerable: vulnerableTo.join(", "),
+                [formatModifierKey("immune")]: immuneTo.join(", "),
+                [formatModifierKey("impervious")]: imperviousTo.join(", "),
+                [formatModifierKey("vulnerable")]: vulnerableTo.join(", "),
               };
               for (const statisticKey of VARIABLES_WITH_CUSTOM_MODIFIERS) {
                 attrs[formatModifierKey(statisticKey)] =
@@ -2619,6 +2620,31 @@ function handleSkills() {
       });
     }
   }
+}
+
+function handleSpecialDefenses() {
+  const specialDefenses = ["immune", "impervious", "vulnerable"];
+  const keys = [];
+  for (const specialDefense of specialDefenses) {
+    for (const customModifierType of CUSTOM_MODIFIER_TYPES) {
+      keys.push(`${specialDefense}_${customModifierType}_modifier`);
+    }
+  }
+  onGet({
+    variables: {
+      string: keys
+    },
+    callback: (v) => {
+
+      const attrs: Record<string, string> = {};
+      for (const specialDefense of specialDefenses) {
+        const unsorted = CUSTOM_MODIFIER_TYPES.map((m) => v[`${specialDefense}_${m}_modifier`]).filter(Boolean).join(", ");
+        const sorted = unsorted.split(", ").sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}))
+        attrs[specialDefense] = sorted.join(", ");
+      }
+      setAttrs(attrs);
+    },
+  });
 }
 
 function uppercaseFirstLetter(str: string) {
