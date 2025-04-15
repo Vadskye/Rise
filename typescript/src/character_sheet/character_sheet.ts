@@ -67,7 +67,11 @@ export class CharacterSheet {
     return this.on(propertyNames.map((p) => `change:${p}`).join(" "), callback);
   }
 
-  public getRepeatingSectionNames(): string[] {
+  public getRepeatingSectionValues(sectionName: string, propertyName: string): SimpleValue[] {
+    return this.getRepeatingSection(`repeating_${sectionName}`).getRowValues(propertyName);
+  }
+
+  public getAllRepeatingSectionNames(): string[] {
     // The filter is probably unnecessary, but it could be useful if we delete repeating
     // sections?
     return Object.keys(this.repeatingSections).filter((k) => this.repeatingSections[k]);

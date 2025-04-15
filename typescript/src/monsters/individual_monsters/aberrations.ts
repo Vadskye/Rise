@@ -27,6 +27,7 @@ export function addAberrations(grimoire: Grimoire) {
       base_class: "mystic",
       challenge_rating: 4,
       level: 12,
+      role: "Mystic",
       size: "Huge",
     });
   });
