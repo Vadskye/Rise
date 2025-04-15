@@ -1,15 +1,25 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
+import { getCurrentCharacterSheet, setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
 import { MonsterAttackAccuracy, MonsterAttackAreaShape, MonsterAttackTargeting, MonsterAttackDebuff } from '@src/character_sheet/sheet_worker';
+import { handleEverything } from '@src/character_sheet/sheet_worker';
+
+// These have unique typedefs beyond the standard string/number/bool
+type CustomCreatureProperty = "base_class" | "creature_type" | "role" | "size";
 
 export type CreaturePropertyMap = {
   base_class: RiseBaseClass;
+  creature_type: RiseCreatureType;
+  role: RiseRole;
   size: RiseSize;
 }
   & Record<NumericCreatureProperty, number>
   & Record<StringCreatureProperty, string>
   & Record<BooleanCreatureProperty, boolean>;
-type CreatureProperty = "base_class" | "size" | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
 
+type CreatureProperty = CustomCreatureProperty | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
+
+export type RiseCreatureType = "animate" | "beast" | "dragon" | "humanoid" | "planeforged" | "undead";
+export type RiseRole = "Brute" | "Skirmisher" | "Warrior" | "Sniper" | "Mystic" | "Leader";
 export type RiseBaseClass = "barbarian"
   | "cleric"
   | "druid"
@@ -47,11 +57,11 @@ export type RiseBaseClass = "barbarian"
 // First letter is capitalized; this is a value, not a key
 export type RiseSize = "Fine" | "Diminuitive" | "Tiny" | "Small" | "Medium" | "Large" | "Huge" | "Gargantuan" | "Colossal";
 
-type BooleanCreatureProperty = RiseDebuff;
+type BooleanCreatureProperty = "has_art" | RiseDebuff;
 // TODO: list all debuffs if we ever actually care
 export type RiseDebuff = "climbing";
 
-type NumericCreatureProperty = "accuracy" | "brawling_accuracy" | "level" | "challenge_rating" | "hit_points" | "damage_resistance" | RiseAttribute | RiseAttributeModifier | RiseSkill;
+type NumericCreatureProperty = "accuracy" | "brawling_accuracy" | "level" | "challenge_rating" | "hit_points" | "damage_resistance" | RiseAttribute | RiseAttributeModifier | RiseDefense | RiseSkill;
 export type RiseAttribute = "strength" | "dexterity" | "constitution" | "intelligence" | "perception" | "willpower";
 export type RiseAttributeModifier = "strength_at_creation"
   | "strength_level_scaling"
@@ -65,7 +75,10 @@ export type RiseAttributeModifier = "strength_at_creation"
   | "perception_level_scaling"
   | "willpower_at_creation"
   | "willpower_level_scaling";
+// TODO: make these consistent; it's weird that only armor has the '_defense' suffix
+export type RiseDefense = "armor_defense" | "fortitude" | "reflex" | "mental";
 
+// TODO: add perform subskills; they aren't supported properly on the sheet either
 export type RiseSkill = "climb"
   | "jump"
   | "swim"
@@ -76,11 +89,11 @@ export type RiseSkill = "climb"
   | "sleight_of_hand"
   | "stealth"
   | "endurance"
-  | "craft"
+  | RiseCraftSkill
   | "deduction"
   | "devices"
   | "disguise"
-  | "knowledge"
+  | RiseKnowledgeSkill
   | "medicine"
   | "awareness"
   | "creature_handling"
@@ -91,17 +104,75 @@ export type RiseSkill = "climb"
   | "intimidate"
   | "profession";
 
-type StringCreatureProperty = "name";
+export type RiseCraftSkill = "craft_alchemy"
+  | "craft_bone"
+  | "craft_ceramics"
+  | "craft_leather"
+  | "craft_manuscripts"
+  | "craft_metal"
+  | "craft_poison"
+  | "craft_stone"
+  | "craft_textiles"
+  | "craft_traps"
+  | "craft_wood"
+  | "craft_untrained"
+export const RISE_CRAFT_SKILLS: Set<RiseCraftSkill> = new Set([
+  "craft_alchemy",
+  "craft_bone",
+  "craft_ceramics",
+  "craft_leather",
+  "craft_manuscripts",
+  "craft_metal",
+  "craft_poison",
+  "craft_stone",
+  "craft_textiles",
+  "craft_traps",
+  "craft_wood",
+  "craft_untrained",
+])
+
+export type RiseKnowledgeSkill = "knowledge_arcana"
+  | "knowledge_dungeoneering"
+  | "knowledge_engineering"
+  | "knowledge_items"
+  | "knowledge_local"
+  | "knowledge_nature"
+  | "knowledge_planes"
+  | "knowledge_religion"
+  | "knowledge_untrained";
+export const RISE_KNOWLEDGE_SKILLS: Set<RiseKnowledgeSkill> = new Set([
+  "knowledge_arcana",
+  "knowledge_dungeoneering",
+  "knowledge_engineering",
+  "knowledge_items",
+  "knowledge_local",
+  "knowledge_nature",
+  "knowledge_planes",
+  "knowledge_religion",
+  "knowledge_untrained"
+]);
+
+type StringCreatureProperty = "description" | "name" | RiseKnowledgeResult;
+
+export type RiseKnowledgeResult = "knowledge_result_easy" | "knowledge_result_normal" | "knowledge_result_hard" | "knowledge_result_legendary";
+export interface RiseKnowledgeResultsConfig {
+  easy?: string;
+  normal?: string;
+  hard?: string;
+  legendary?: string;
+}
 
 // TODO: list them all individually?
 export type RiseAbilityTag = string;
-export type RiseDefense = "Armor" | "Fortitude" | "Reflex" | "Mental";
+// These are the defenses as displayed in attacks, not the defense statistics on
+// characters
+export type RiseDefenseHumanReadable = "Armor" | "Fortitude" | "Reflex" | "Mental";
 export type RiseAbilityUsageTime = 'standard' | 'elite' | 'minor';
 
 export interface AutoAttackConfig {
   accuracy?: MonsterAttackAccuracy;
   areaShape?: MonsterAttackAreaShape;
-  defense: RiseDefense[];
+  defense: RiseDefenseHumanReadable[];
   effect: "damage" | MonsterAttackDebuff;
   isMagical: boolean;
   name: string;
@@ -116,6 +187,19 @@ export interface CustomAttackConfig {
   name: string;
   usageTime?: RiseAbilityUsageTime;
   tags?: RiseAbilityTag[];
+}
+
+// TODO: add more standard modifiers, add infra for their effects
+export type StandardModifierName = "mindless";
+
+export interface CustomModifierConfig {
+  name: string;
+  numericEffects?: CustomModifierNumericEffect[];
+}
+
+export interface CustomModifierNumericEffect {
+  modifier: number;
+  statistic: NumericCreatureProperty;
 }
 
 export interface CreatureAttack {
@@ -133,6 +217,46 @@ export class Creature implements CreaturePropertyMap {
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
+  }
+
+  static fromName(name: string): Creature {
+    setCurrentCharacterSheet(name);
+    const sheet = getCurrentCharacterSheet();
+    handleEverything();
+    return new this(sheet);
+  }
+
+  // This is the Knowledge skill used to learn more about the creature, not the creature's
+  // own knowledge skills.
+  // TODO: redesign creature types and tags; plants should use knowledge (nature), etc.
+  getRelevantKnowledge(): RiseKnowledgeSkill {
+    if (!this.creature_type) {
+      throw new Error(`Unable to get relevant knowledge for creature ${this.name} with no creature type.`);
+    }
+    return {
+      animate: "knowledge_arcana" as const,
+      beast: "knowledge_nature" as const,
+      dragon: "knowledge_arcana" as const,
+      humanoid: "knowledge_local" as const,
+      planeforged: "knowledge_planes" as const,
+      undead: "knowledge_religion" as const,
+    }[this.creature_type];
+  }
+
+  getTrainedSkillNames(): RiseSkill[] {
+    return this.sheet.getRepeatingSectionValues("trainedskills", "trained_skill") as RiseSkill[];
+  }
+
+  getTrainedCraftSkillNames(): RiseCraftSkill[] {
+    // We have to use these `as` casts because Typescript can't figure out that this is
+    // safe. Unless I just can't figure out why this is unsafe.
+    return this.getTrainedSkillNames().filter((skillName) => RISE_CRAFT_SKILLS.has(skillName as any)) as RiseCraftSkill[];
+  }
+
+  getTrainedKnowledgeSkillNames(): RiseKnowledgeSkill[] {
+    // We have to use these `as` casts because Typescript can't figure out that this is
+    // safe. Unless I just can't figure out why this is unsafe.
+    return this.getTrainedSkillNames().filter((skillName) => RISE_KNOWLEDGE_SKILLS.has(skillName as any)) as RiseKnowledgeSkill[];
   }
 
   // TODO: Is there a way to make the return type only match the keys provided in
@@ -166,6 +290,8 @@ export class Creature implements CreaturePropertyMap {
       monster_attack_targeting: config.targeting,
     });
 
+    // TODO: figure out how to trigger the add button
+
     const sectionName = config.effect === "damage" ? "repeating_otherdamagingattacks" : "repeating_nondamagingattacks";
     const prefix = `${sectionName}_${this.sheet.getLatestRowId()}`;
     this.sheet.setProperties({
@@ -173,6 +299,35 @@ export class Creature implements CreaturePropertyMap {
       [`${prefix}_tags`]: config.tags?.join(", "),
       [`${prefix}_usage_time`]: config.tags?.join(", "),
     });
+  }
+
+  addCustomModifier(config: CustomModifierConfig) {
+    if (config.numericEffects && config.numericEffects.length > 3) {
+      throw new Error("We only support a maximum of three numeric effects per custom modifier.");
+    }
+
+    const prefix = `repeating_permanentmodifier_${this.sheet.generateRowId}`;
+    const attrs: Record<string, string | number> = {
+      [`${prefix}_name`]: config.name,
+    };
+    if (config.numericEffects) {
+      for (let i = 0; i < config.numericEffects.length; i++) {
+        attrs[`${prefix}_statistic${i}`] = config.numericEffects[i].statistic;
+        attrs[`${prefix}_value${i}`] = config.numericEffects[i].modifier;
+      }
+    }
+    this.sheet.setProperties(attrs);
+  }
+
+  addStandardModifier(modifierName: StandardModifierName) {
+    // TODO: add fancy logic for some modifiers to have special effects
+    this.addCustomModifier({name: modifierName});
+  }
+
+  // Useful for checking if a creature has some common and important modifiers that change
+  // the way LaTeX is generated, like being mindless.
+  hasModifier(modifierName: StandardModifierName): boolean {
+    return this.sheet.getRepeatingSectionValues("permanentmodifier", "name").includes(modifierName);
   }
 
   getAttacks(callback: (attacks: CreatureAttack[]) => void): void {
@@ -197,6 +352,17 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  // These are the results of a Knowledge check about the creature, not the creature's own
+  // trained knowledges.
+  setKnowledgeResults(knowledgeResults: RiseKnowledgeResultsConfig) {
+    this.setProperties({
+      knowledge_result_easy: knowledgeResults.easy,
+      knowledge_result_normal: knowledgeResults.normal,
+      knowledge_result_hard: knowledgeResults.hard,
+      knowledge_result_legendary: knowledgeResults.legendary,
+    });
+  }
+
   setTrainedSkills(skillNames: RiseSkill[]) {
     const props: Record<string, string> = {};
     for (const skillName of skillNames) {
@@ -208,12 +374,20 @@ export class Creature implements CreaturePropertyMap {
 
   // Getters
 
+  public get base_class() {
+    return this.getPropertyValues(["base_class"]).base_class;
+  }
+
+  public get creature_type() {
+    return this.getPropertyValues(["creature_type"]).creature_type;
+  }
+
   public get level() {
     return this.getPropertyValues(["level"]).level;
   }
 
-  public get base_class() {
-    return this.getPropertyValues(["base_class"]).base_class;
+  public get role() {
+    return this.getPropertyValues(["role"]).role;
   }
 
   public get size() {
@@ -312,6 +486,22 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValues(["willpower_level_scaling"]).willpower_level_scaling;
   }
 
+  public get armor_defense() {
+    return this.getPropertyValues(["armor_defense"]).armor_defense;
+  }
+
+  public get fortitude() {
+    return this.getPropertyValues(["fortitude"]).fortitude;
+  }
+
+  public get reflex() {
+    return this.getPropertyValues(["reflex"]).reflex;
+  }
+
+  public get mental() {
+    return this.getPropertyValues(["mental"]).mental;
+  }
+
   public get climb() {
     return this.getPropertyValues(["climb"]).climb;
   }
@@ -352,8 +542,52 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValues(["endurance"]).endurance;
   }
 
-  public get craft() {
-    return this.getPropertyValues(["craft"]).craft;
+  public get craft_alchemy() {
+    return this.getPropertyValues(["craft_alchemy"]).craft_alchemy;
+  }
+
+  public get craft_bone() {
+    return this.getPropertyValues(["craft_bone"]).craft_bone;
+  }
+
+  public get craft_ceramics() {
+    return this.getPropertyValues(["craft_ceramics"]).craft_ceramics;
+  }
+
+  public get craft_leather() {
+    return this.getPropertyValues(["craft_leather"]).craft_leather;
+  }
+
+  public get craft_manuscripts() {
+    return this.getPropertyValues(["craft_manuscripts"]).craft_manuscripts;
+  }
+
+  public get craft_metal() {
+    return this.getPropertyValues(["craft_metal"]).craft_metal;
+  }
+
+  public get craft_poison() {
+    return this.getPropertyValues(["craft_poison"]).craft_poison;
+  }
+
+  public get craft_stone() {
+    return this.getPropertyValues(["craft_stone"]).craft_stone;
+  }
+
+  public get craft_textiles() {
+    return this.getPropertyValues(["craft_textiles"]).craft_textiles;
+  }
+
+  public get craft_traps() {
+    return this.getPropertyValues(["craft_traps"]).craft_traps;
+  }
+
+  public get craft_wood() {
+    return this.getPropertyValues(["craft_wood"]).craft_wood;
+  }
+
+  public get craft_untrained() {
+    return this.getPropertyValues(["craft_untrained"]).craft_untrained;
   }
 
   public get deduction() {
@@ -368,8 +602,40 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValues(["disguise"]).disguise;
   }
 
-  public get knowledge() {
-    return this.getPropertyValues(["knowledge"]).knowledge;
+  public get knowledge_arcana() {
+    return this.getPropertyValues(["knowledge_arcana"]).knowledge_arcana;
+  }
+
+  public get knowledge_dungeoneering() {
+    return this.getPropertyValues(["knowledge_dungeoneering"]).knowledge_dungeoneering;
+  }
+
+  public get knowledge_engineering() {
+    return this.getPropertyValues(["knowledge_engineering"]).knowledge_engineering;
+  }
+
+  public get knowledge_items() {
+    return this.getPropertyValues(["knowledge_items"]).knowledge_items;
+  }
+
+  public get knowledge_local() {
+    return this.getPropertyValues(["knowledge_local"]).knowledge_local;
+  }
+
+  public get knowledge_nature() {
+    return this.getPropertyValues(["knowledge_nature"]).knowledge_nature;
+  }
+
+  public get knowledge_planes() {
+    return this.getPropertyValues(["knowledge_planes"]).knowledge_planes;
+  }
+
+  public get knowledge_religion() {
+    return this.getPropertyValues(["knowledge_religion"]).knowledge_religion;
+  }
+
+  public get knowledge_untrained() {
+    return this.getPropertyValues(["knowledge_untrained"]).knowledge_untrained;
   }
 
   public get medicine() {
@@ -408,8 +674,32 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValues(["profession"]).profession;
   }
 
+  public get description() {
+    return this.getPropertyValues(["description"]).description;
+  }
+
+  public get knowledge_result_easy() {
+    return this.getPropertyValues(["knowledge_result_easy"]).knowledge_result_easy;
+  }
+
+  public get knowledge_result_normal() {
+    return this.getPropertyValues(["knowledge_result_normal"]).knowledge_result_normal;
+  }
+
+  public get knowledge_result_hard() {
+    return this.getPropertyValues(["knowledge_result_hard"]).knowledge_result_hard;
+  }
+
+  public get knowledge_result_legendary() {
+    return this.getPropertyValues(["knowledge_result_legendary"]).knowledge_result_legendary;
+  }
+
   public get name() {
     return this.getPropertyValues(["name"]).name;
+  }
+
+  public get has_art() {
+    return this.getPropertyValues(["has_art"]).has_art;
   }
 
   public get climbing() {

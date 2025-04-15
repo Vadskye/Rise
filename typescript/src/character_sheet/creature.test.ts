@@ -4,9 +4,7 @@ import { getCurrentCharacterSheet } from '@src/character_sheet/current_character
 import { Creature } from './creature';
 
 t.test('can set a trained skill', (t) => {
-  const sheet = getCurrentCharacterSheet();
-  handleEverything();
-  const creature = new Creature(sheet);
+  const creature = Creature.fromName("test character");
   creature.setProperties({
     level: 20,
   });
@@ -16,5 +14,16 @@ t.test('can set a trained skill', (t) => {
     accuracy: 10, // Make sure that general calculations worked
     awareness: 13,
   });
+  t.match(creature.getTrainedSkillNames(), ["awareness"]);
+  t.end();
+});
+
+t.test('can set a trained knowledge skill', (t) => {
+  const creature = Creature.fromName("test character");
+  creature.setProperties({
+    level: 20,
+  });
+  creature.setTrainedSkills(["awareness", "knowledge_arcana", "knowledge_local"]);
+  t.match(creature.getTrainedKnowledgeSkillNames(), ["knowledge_arcana", "knowledge_local"]);
   t.end();
 });

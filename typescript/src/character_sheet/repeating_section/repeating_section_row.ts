@@ -10,6 +10,7 @@ export class RepeatingSectionRow {
   }
 
   public getProperty(propertyName: string) {
+    console.log(`Getting ${propertyName} from ${JSON.stringify(this.properties)}`);
     if (!this.properties[propertyName]) {
       this.properties[propertyName] = new Property(propertyName);
     }
