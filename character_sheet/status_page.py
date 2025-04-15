@@ -275,6 +275,31 @@ def custom_modifier(show_toggle, show_text):
                         ),
                     ],
                 ),
+                flex_row(
+                    {"class": "custom-modifier-special-effects"},
+                    [
+                        labeled_text_input(
+                            "Immune",
+                            {"class": "immune"},
+                            {"name": "immune"},
+                        ),
+                        labeled_text_input(
+                            "Impervious",
+                            {"class": "impervious"},
+                            {"name": "impervious"},
+                        ),
+                        labeled_text_input(
+                            "Vulnerable",
+                            {"class": "vulnerable"},
+                            {"name": "vulnerable"},
+                        ),
+                        labeled_text_input(
+                            "Attack effect",
+                            {"class": "attack-effect"},
+                            {"name": "attack_effect"},
+                        ),
+                    ],
+                )
             ],
         ),
     )

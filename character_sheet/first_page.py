@@ -58,6 +58,10 @@ def create_page(destination):
                             statistics_header(destination),
                             div({"class": "section-header"}, "Movement and Senses"),
                             movement(destination),
+                            div({"class": "section-header"}, "Useful Notes"),
+                            textarea(
+                                {"class": "special-defenses", "name": f"special_defenses"}
+                            ),
                             *(
                                 roll20_abilities()
                                 if destination == "roll20"
@@ -338,8 +342,34 @@ def defenses():
                             for defense in DEFENSES
                         ],
                     ),
-                    textarea(
-                        {"class": "special-defenses", "name": f"special_defenses"}
+                    flex_col(
+                        {"class": "special-defenses"},
+                        [
+                            sidelabel(
+                                "Immune",
+                                textarea({
+                                    "class": "immune",
+                                    "name": "immune",
+                                    "style": "overflow:hidden",
+                                }),
+                            ),
+                            sidelabel(
+                                "Imperv",
+                                textarea({
+                                    "class": "impervious",
+                                    "name": "impervious",
+                                    "style": "overflow:hidden",
+                                }),
+                            ),
+                            sidelabel(
+                                "Vuln",
+                                textarea({
+                                    "class": "vulnerable",
+                                    "name": "vulnerable",
+                                    "style": "overflow:hidden",
+                                }),
+                            ),
+                        ],
                     ),
                 ],
             ),
