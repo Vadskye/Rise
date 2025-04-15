@@ -350,6 +350,7 @@ def defenses():
                                 textarea({
                                     "class": "immune",
                                     "name": "immune",
+                                    "readonly": True,
                                     "style": "overflow:hidden",
                                 }),
                             ),
@@ -358,6 +359,7 @@ def defenses():
                                 textarea({
                                     "class": "impervious",
                                     "name": "impervious",
+                                    "readonly": True,
                                     "style": "overflow:hidden",
                                 }),
                             ),
@@ -366,6 +368,7 @@ def defenses():
                                 textarea({
                                     "class": "vulnerable",
                                     "name": "vulnerable",
+                                    "readonly": True,
                                     "style": "overflow:hidden",
                                 }),
                             ),
