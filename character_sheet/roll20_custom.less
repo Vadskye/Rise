@@ -283,16 +283,26 @@ div.full-sheet {
     z-index: 1;
 }
 
+// This has to be here instead of in status_page or items_page because custom
+// modifiers are shared between both pages
 .custom-modifier {
     justify-content: space-between;
     margin-bottom: 0.5em;
     column-gap: 0.5em;
 
-    .custom-modifier-details, .custom-modifier-dropdowns {
+    .custom-modifier-details, .custom-modifier-dropdowns, .custom-modifier-special-effects {
         column-gap: 1em;
     }
 
-    .custom-modifier-dropdowns {
+    .custom-modifier-dropdowns, .custom-modifier-special-effects {
+        flex-grow: 1;
+    }
+
+    .custom-modifier-special-effects {
+        margin-top: -0.5em;
+    }
+
+    .custom-modifier-special-effects > div {
         flex-grow: 1;
     }
 

@@ -448,8 +448,8 @@ function initializeOnGetVariables(args: { variables: Partial<OnGetVariables>; va
   return { variables: variables as OnGetVariables, variablesWithoutListen: variablesWithoutListen as OnGetVariables };
 }
 
-function boolifySheetValue(val: string | undefined): boolean {
-  return Boolean(val === "on" || val === "1");
+function boolifySheetValue(val: string | number | undefined): boolean {
+  return Boolean(val === "on" || val === "1" || val === 1);
 }
 
 const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
@@ -1157,6 +1157,14 @@ function handleCustomModifiers() {
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
         const formatNameId = (id: string) =>
           `repeating_${modifierType}modifiers_${id}_name`;
+
+        const formatImmuneId = (id: string) => 
+          `repeating_${modifierType}modifiers_${id}_immune`;
+        const formatImperviousId = (id: string) => 
+          `repeating_${modifierType}modifiers_${id}_impervious`;
+        const formatVulnerableId = (id: string) => 
+          `repeating_${modifierType}modifiers_${id}_vulnerable`;
+
         const formatValueId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_value${i}`;
         const formatIsActiveId = (id: string) =>
@@ -1173,6 +1181,9 @@ function handleCustomModifiers() {
             for (const id of repeatingSectionIds) {
               fullAttributeIds.push(formatIsActiveId(id));
               fullAttributeIds.push(formatNameId(id));
+              fullAttributeIds.push(formatImmuneId(id));
+              fullAttributeIds.push(formatImperviousId(id));
+              fullAttributeIds.push(formatVulnerableId(id));
               for (let i = 0; i < nestedCustomStatisticCount; i++) {
                 fullAttributeIds.push(formatStatisticId(id, i));
                 fullAttributeIds.push(formatValueId(id, i));
@@ -1184,14 +1195,18 @@ function handleCustomModifiers() {
               // statistic. This is made slightly more complicated by the fact that some
               // modifiers, such as "all_defenses", can affect multiple statistics.
               const namedModifierMap = new NamedModifierMap();
+              const immuneTo: string[] = [];
+              const imperviousTo: string[] = [];
+              const vulnerableTo: string[] = [];
 
               for (const id of repeatingSectionIds) {
                 // Permanent and legacy modifiers are always active; for temporary and attuned
                 // modifiers, we have to check the value from the checkbox.
                 const isActive = ["permanent", "legacy"].includes(modifierType)
-                  ? 1
+                  ? "1"
                   : values[formatIsActiveId(id)];
-                if (isActive === "on" || isActive == 1) {
+                if (boolifySheetValue(isActive)) {
+                  // Handle numeric statistic modifiers
                   for (let i = 0; i < nestedCustomStatisticCount; i++) {
                     const modifiedStatistic = values[formatStatisticId(id, i)];
                     const name = values[formatNameId(id)] || "Unknown";
@@ -1202,9 +1217,24 @@ function handleCustomModifiers() {
                       value
                     );
                   }
+
+                  // Handle special defenses
+                  if (values[formatImmuneId(id)]) {
+                    immuneTo.push(values[formatImmuneId(id)]);
+                  }
+                  if (values[formatImperviousId(id)]) {
+                    imperviousTo.push(values[formatImperviousId(id)]);
+                  }
+                  if (values[formatVulnerableId(id)]) {
+                    vulnerableTo.push(values[formatVulnerableId(id)]);
+                  }
                 }
               }
-              const attrs: Attrs = {};
+              const attrs: Attrs = {
+                immune: immuneTo.join(", "),
+                impervious: imperviousTo.join(", "),
+                vulnerable: vulnerableTo.join(", "),
+              };
               for (const statisticKey of VARIABLES_WITH_CUSTOM_MODIFIERS) {
                 attrs[formatModifierKey(statisticKey)] =
                   namedModifierMap.calculateModifierValue(statisticKey);
