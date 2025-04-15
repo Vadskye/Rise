@@ -559,7 +559,7 @@ def monster_attack():
                     "name": "monster_attack_accuracy",
                 },
                 [
-                    option({"value": ""}, "Normal"),
+                    option({"value": "normal"}, "Normal"),
                     option({"value": "low_accuracy"}, "Low"),
                     option({"value": "high_accuracy"}, "High"),
                 ]

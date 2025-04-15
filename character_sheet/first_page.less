@@ -95,12 +95,35 @@
         .special-defenses {
             flex-grow: 1;
             margin-left: 4px;
-            margin-top: 3px;
             margin-right: 2px;
+            height: 120px;
             width: 10em;
-            height: 110px;
         }
+    }
 
+    .special-defenses .sidelabeled-number-input {
+        margin-bottom: 0.25em;
+
+        .number-label {
+            flex-grow: 0;
+            width: 4em;
+        }
+    }
+
+    .immune, .impervious, .vulnerable {
+        background-color: inherit;
+        border: 0;
+        flex-grow: 1;
+        font-size: 0.8em;
+        height: 3em;
+        width: 8em;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: -moz-scrollbars-none;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
     }
 }
 .movement {
