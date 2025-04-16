@@ -46,13 +46,13 @@ t.test('can convert an aboleth to latex', (t) => {
 });
 
 t.test('can generate empty knowledge text', (t) => {
-  const creature = Creature.fromName("test");
+  const creature = Creature.new();
   t.equal(genKnowledgeText(creature), "");
   t.end();
 });
 
 t.test('Can generate meaningful knowledge text', (t) => {
-  const creature = Creature.fromName("test");
+  const creature = Creature.new();
   creature.setProperties({
     creature_type: "undead",
     knowledge_result_easy: "Easy result",

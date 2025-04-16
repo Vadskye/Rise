@@ -90,7 +90,7 @@ export class CharacterSheet {
   // TODO: handle getting repeating properties
   // Unlike getAttrs, this doesn't use a callback. Prefer using this for normal Typescript
   // usage, and use getAttrs for Roll20 compatibility.
-  public getPropertyValues(propertyNames: string[]): Attrs {
+  public getPropertyValues(propertyNames: readonly string[]): Attrs {
     const attrs: Attrs = {}
     for (const propertyName of propertyNames) {
       attrs[propertyName] = this.getPropertyValue(propertyName);
