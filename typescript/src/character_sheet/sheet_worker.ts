@@ -648,6 +648,7 @@ function formatChangeString(varName: string): string {
 
 export function handleEverything() {
   handleAbilitiesKnown();
+  handleAttackHeaders();
   handleAttackTargeting();
   handleAttunedEffects();
   handleAttributes();
@@ -812,6 +813,30 @@ function handleAccuracyWithStrikes() {
         accuracy_with_strikes_explanation: formatCombinedExplanation(v.miscExplanation),
       });
     }
+  });
+}
+
+function handleAttackHeaders() {
+  const stringVars = ["debuff_headers"];
+  for (const customModifierType of CUSTOM_MODIFIER_TYPES) {
+    stringVars.push(`attack_headers_${customModifierType}_modifier`);
+  }
+  onGet({
+    variables: {
+      string: stringVars,
+    },
+    callback: (v) => {
+      const allHeaders = [v.debuff_headers];
+      for (const varName of stringVars) {
+        allHeaders.push(v[varName]);
+      }
+      const unsorted = allHeaders.filter(Boolean).join(";");
+      const sorted = unsorted
+        .split(";")
+        .sort((a, b) => a.localeCompare(b, undefined, {sensitivity: 'base'}))
+        .join(" ");
+      setAttrs({ attack_headers: sorted });
+    },
   });
 }
 
@@ -1166,6 +1191,9 @@ function handleCustomModifiers() {
         const formatVulnerableId = (id: string) => 
           `repeating_${modifierType}modifiers_${id}_vulnerable`;
 
+        const formatAttackHeaderId = (id: string) => 
+          `repeating_${modifierType}modifiers_${id}_attack_header`;
+
         const formatValueId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_value${i}`;
         const formatIsActiveId = (id: string) =>
@@ -1185,6 +1213,7 @@ function handleCustomModifiers() {
               fullAttributeIds.push(formatImmuneId(id));
               fullAttributeIds.push(formatImperviousId(id));
               fullAttributeIds.push(formatVulnerableId(id));
+              fullAttributeIds.push(formatAttackHeaderId(id));
               for (let i = 0; i < nestedCustomStatisticCount; i++) {
                 fullAttributeIds.push(formatStatisticId(id, i));
                 fullAttributeIds.push(formatValueId(id, i));
@@ -1199,6 +1228,7 @@ function handleCustomModifiers() {
               const immuneTo: string[] = [];
               const imperviousTo: string[] = [];
               const vulnerableTo: string[] = [];
+              const attackHeaders: string[] = [];
 
               for (const id of repeatingSectionIds) {
                 // Permanent and legacy modifiers are always active; for temporary and attuned
@@ -1207,14 +1237,14 @@ function handleCustomModifiers() {
                   ? "1"
                   : values[formatIsActiveId(id)];
                 if (boolifySheetValue(isActive)) {
+                  const modifierName = values[formatNameId(id)] || "Unknown";
                   // Handle numeric statistic modifiers
                   for (let i = 0; i < nestedCustomStatisticCount; i++) {
                     const modifiedStatistic = values[formatStatisticId(id, i)];
-                    const name = values[formatNameId(id)] || "Unknown";
                     const value = Number(values[formatValueId(id, i)]) || 0;
                     namedModifierMap.addNamedModifier(
                       modifiedStatistic,
-                      name,
+                      modifierName,
                       value
                     );
                   }
@@ -1229,12 +1259,20 @@ function handleCustomModifiers() {
                   if (values[formatVulnerableId(id)]) {
                     vulnerableTo.push(values[formatVulnerableId(id)]);
                   }
+
+                  // Handle attack header
+                  if (values[formatAttackHeaderId(id)]) {
+                    const headerText = values[formatAttackHeaderId(id)].trim();
+                    attackHeaders.push(`{{${modifierName}=${headerText}}}`);
+                  }
                 }
               }
               const attrs: Attrs = {
                 [formatModifierKey("immune")]: immuneTo.join(", "),
                 [formatModifierKey("impervious")]: imperviousTo.join(", "),
                 [formatModifierKey("vulnerable")]: vulnerableTo.join(", "),
+                // This semicolon gets replaced in handleAttackHeaders()
+                [formatModifierKey("attack_headers")]: attackHeaders.join(";"),
               };
               for (const statisticKey of VARIABLES_WITH_CUSTOM_MODIFIERS) {
                 attrs[formatModifierKey(statisticKey)] =
@@ -1462,7 +1500,7 @@ function handleDebuffs() {
       ],
     },
     callback: (v) => {
-      let debuffHeaders = "";
+      const debuffHeaders = [];
 
       let namedModifierMap = new NamedModifierMap();
 
@@ -1512,10 +1550,10 @@ function handleDebuffs() {
 
       // rank 1 debuffs
       if (v.dazzled && !v.blinded) {
-        debuffHeaders += " {{Miss chance=Miss on 1: [[d5]]}}";
+        debuffHeaders.push("{{Miss chance=Miss on 1: [[d5]]}}");
       }
       if (v.blinded) {
-        debuffHeaders += " {{Miss chance=Miss on 1: [[d2]]}}";
+        debuffHeaders.push("{{Miss chance=Miss on 1: [[d2]]}}");
       }
       if (
         v.blinded &&
@@ -1531,7 +1569,7 @@ function handleDebuffs() {
         minus2("blinded", "reflex");
       }
       if (v.goaded) {
-        debuffHeaders += " {{Goaded=+2 accuracy vs source}}";
+        debuffHeaders.push("{{Goaded=+2 accuracy vs source}}");
         minus2("goaded", "accuracy");
       }
       if (v.slowed && !v.immobilized) {
@@ -1541,7 +1579,7 @@ function handleDebuffs() {
 
       // rank 2 debuffs
       if (v.frightened && !v.panicked) {
-        debuffHeaders += " {{Frightened=-2 accuracy vs source}}";
+        debuffHeaders.push("{{Frightened=-2 accuracy vs source}}");
         minus2("frightened", "mental");
       }
       if (v.stunned && !v.confused) {
@@ -1557,11 +1595,12 @@ function handleDebuffs() {
         minus4("immobilized", "reflex");
       }
       if (v.panicked) {
-        debuffHeaders += " {{Panicked=Cannot attack source}}";
+        debuffHeaders.push("{{Panicked=Cannot attack source}}");
         minus4("panicked", "mental");
       }
 
-      const attrs: Attrs = { debuff_headers: debuffHeaders.trim() };
+      // The semicolon is replaced in handleAttackHeaders()
+      const attrs: Attrs = { debuff_headers: debuffHeaders.join(";") };
       for (const statistic of [
         "accuracy",
         "armor_defense",
@@ -2624,15 +2663,15 @@ function handleSkills() {
 
 function handleSpecialDefenses() {
   const specialDefenses = ["immune", "impervious", "vulnerable"];
-  const keys = [];
+  const stringVars = [];
   for (const specialDefense of specialDefenses) {
     for (const customModifierType of CUSTOM_MODIFIER_TYPES) {
-      keys.push(`${specialDefense}_${customModifierType}_modifier`);
+      stringVars.push(`${specialDefense}_${customModifierType}_modifier`);
     }
   }
   onGet({
     variables: {
-      string: keys
+      string: stringVars
     },
     callback: (v) => {
 
