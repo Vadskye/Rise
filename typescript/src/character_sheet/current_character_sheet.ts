@@ -18,6 +18,12 @@ export function setCurrentCharacterSheet(characterName: string) {
   currentCharacterName = characterName;
 }
 
+export function resetDefaultCharacterSheet(): CharacterSheet {
+  currentCharacterName = "default";
+  characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
+  return characters[currentCharacterName];
+}
+
 // export function calculateCurrentCharacterSheet() {
 //   // We need to make sure that a character sheet exists to configure.
 //   getCurrentCharacterSheet();

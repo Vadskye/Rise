@@ -15,8 +15,7 @@ export function setAttrs(attrs: Attrs): void {
 }
 
 export function getSectionIDs(sectionPrefix: string, callback: (repeatingSectionIds: string[]) => void): void {
-  // TODO: Realistic implementation
-  callback([]);
+  return getCurrentCharacterSheet().getSectionIDs(sectionPrefix as any, callback);
 }
 
 export function randomInteger(max: number): number {
