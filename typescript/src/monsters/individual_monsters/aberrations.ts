@@ -24,6 +24,7 @@ export function addAberrations(grimoire: Grimoire) {
     creature.setTrainedSkills(["awareness", "endurance", "social_insight", "swim"]);
     creature.setBaseAttributes([4, 0, 6, 4, 4, 6]);
     creature.setProperties({
+      alignment: "neutral evil",
       base_class: "mystic",
       challenge_rating: 4,
       level: 12,

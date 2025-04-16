@@ -462,8 +462,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
     "sleight_of_hand",
     "stealth",
   ],
-  // TODO: fix capitalization (could break existing sheets)
-  constitution: ["Endurance"],
+  constitution: ["endurance"],
   intelligence: [
     "craft_alchemy",
     "craft_bone",

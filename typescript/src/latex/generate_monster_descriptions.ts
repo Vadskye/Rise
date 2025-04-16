@@ -1,7 +1,9 @@
 import { Grimoire } from '@src/monsters/grimoire';
-import { Creature, RiseKnowledgeSkill } from '@src/character_sheet/creature';
+import { RiseSkill, RiseKnowledgeSkill, RISE_MOVEMENT_SKILLS, RISE_SENSE_SKILLS, RISE_SOCIAL_SKILLS, RISE_OTHER_SKILLS } from '@src/character_sheet/rise_data';
+import { Creature } from '@src/character_sheet/creature';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import * as format from "@src/latex/format";
+import { caseInsensitiveSort } from '@src/util/sort';
 
 export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
@@ -107,11 +109,14 @@ function genStatisticsText(monster: Creature): string {
       ${genDefensiveStatisticsText(monster)}
       ${genSpecialDefenseModifiersText(monster)}
       ${genMovementText(monster)}
-      ${genSpaceAndReachText(monster)}
-      ${genSensesText(monster)}
+      ${genSpaceAndReachText()}
       ${genSensesText(monster)}
       ${genSocialText(monster)}
       ${genOtherSkillsText(monster)}
+      \\rankline
+      \\pari \\textbf{Attributes} ${genAttributesText(monster)}
+      \\pari \\textbf{Power} ${monster.magical_power}\\sparkle \\monsep ${monster.mundane_power}
+      \\pari \\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}
     \\end{monsterstatistics}
   `;
 }
@@ -131,33 +136,96 @@ function genDefensiveStatisticsText(monster: Creature): string {
 }
 
 function genSpecialDefenseModifiersText(monster: Creature) {
-  // TODO
-  return "";
+  return [
+      ["Immune", monster.immune],
+      ["Impervious", monster.impervious], 
+      ["Vulnerable", monster.vulnerable]
+  ].filter((sd) => sd[1]).map(([header, defenseText]) => {
+    return `\\pari \\textbf{${header}} ${defenseText}`;
+  }).join("\n")
 }
 
 function genMovementText(monster: Creature) {
+  const landSpeedText = `Land ${monster.land_speed}`;
+  const jumpText = monster.hasTrainedSkill("jump") ? `Jump ${monster.horizontal_jump_distance}` : "";
+  const movementDistances = [
+    landSpeedText,
+    ...monster.getCustomMovementSpeeds().sort(caseInsensitiveSort),
+    jumpText,
+  ].filter(Boolean);
+
+
+  const movementText = [
+    ...movementDistances,
+    ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
+  ].join("\\monsep ");
   // TODO
-  return "";
+  return `\\pari \\textbf{Movement} ${movementText}`;
 }
 
-function genSpaceAndReachText(monster: Creature) {
-  // TODO
+function genSpaceAndReachText() {
+  // TODO: only display for monsters with nonstandard space/reach for their size
   return "";
 }
 
 function genSensesText(monster: Creature) {
-  // TODO
-  return "";
+  const customSenses = monster.getCustomSenses().sort(caseInsensitiveSort);
+
+  const senseText = [
+    ...customSenses,
+    ...formatSkillList(monster, RISE_SENSE_SKILLS),
+  ].join("\\monsep ");
+
+  if (senseText.length > 0) {
+    return `\\pari \\textbf{Senses} ${senseText}`;
+  } else {
+    return "";
+  }
+}
+
+function formatSkillList<T extends RiseSkill>(monster: Creature, skillNames: readonly T[]): string[] {
+  const skillModifiers = monster.getPropertyValues(skillNames);
+  console.log("skillModifiers", skillModifiers);
+  return skillNames.map((skillName) => {
+    if (monster.hasTrainedSkill(skillName)) {
+      return `${format.skillName(skillName)} ${format.modifier(Number(skillModifiers[skillName]))}`;
+    } else {
+      return '';
+    }
+  }).filter(Boolean).sort(caseInsensitiveSort);
 }
 
 function genSocialText(monster: Creature) {
-  // TODO
-  return "";
+  const socialSkillText = formatSkillList(monster, RISE_SOCIAL_SKILLS).join("\\monsep ");
+  if (socialSkillText.length > 0) {
+    return `\\pari \\textbf{Social} ${socialSkillText}`;
+  } else {
+    return "";
+  }
 }
 
 function genOtherSkillsText(monster: Creature) {
-  // TODO
-  return "";
+  const otherSkillText = formatSkillList(monster, RISE_OTHER_SKILLS).join("\\monsep ");
+  if (otherSkillText.length > 0) {
+    return `\\pari \\textbf{Other skills} ${otherSkillText}`;
+  } else {
+    return "";
+  }
+}
+
+function genAttributesText(monster: Creature): string {
+  const formatAttribute = (val: number): string => {
+    return val > -10 ? `${val}` : "\\tdash";
+  };
+
+  return [
+    monster.strength,
+    monster.dexterity,
+    monster.constitution,
+    monster.intelligence,
+    monster.perception,
+    monster.willpower,
+  ].map(formatAttribute).join(', ');
 }
 
 function genAbilitiesText(monster: Creature): string {
