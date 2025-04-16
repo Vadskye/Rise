@@ -558,7 +558,7 @@ def weapon_attack_button(i):
         + i
         + "_tags}}}"
         + " {{color=@{chat_color}}}"
-        + " @{debuff_headers}"
+        + " @{attack_headers}"
         + " {{desc=@{attack_effect}}}"
     )
 
@@ -572,7 +572,7 @@ def attack_button_text(damage_text=None):
         + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
-        + " @{debuff_headers}"
+        + " @{attack_headers}"
         + " {{desc=@{attack_effect}}}"
     )
 

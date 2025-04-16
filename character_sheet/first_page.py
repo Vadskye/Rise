@@ -351,7 +351,6 @@ def defenses():
                                     "class": "immune",
                                     "name": "immune",
                                     "readonly": True,
-                                    "style": "overflow:hidden",
                                 }),
                             ),
                             sidelabel(
@@ -360,7 +359,6 @@ def defenses():
                                     "class": "impervious",
                                     "name": "impervious",
                                     "readonly": True,
-                                    "style": "overflow:hidden",
                                 }),
                             ),
                             sidelabel(
@@ -369,7 +367,6 @@ def defenses():
                                     "class": "vulnerable",
                                     "name": "vulnerable",
                                     "readonly": True,
-                                    "style": "overflow:hidden",
                                 }),
                             ),
                         ],
