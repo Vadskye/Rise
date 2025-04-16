@@ -1,5 +1,5 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
-import { getCurrentCharacterSheet, setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
+import { getCurrentCharacterSheet, setCurrentCharacterSheet, resetDefaultCharacterSheet } from '@src/character_sheet/current_character_sheet';
 import { MonsterAttackAccuracy, MonsterAttackAreaShape, MonsterAttackTargeting, MonsterAttackDebuff } from '@src/character_sheet/sheet_worker';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 
@@ -152,7 +152,9 @@ export const RISE_KNOWLEDGE_SKILLS: Set<RiseKnowledgeSkill> = new Set([
   "knowledge_untrained"
 ]);
 
-type StringCreatureProperty = "description" | "name" | RiseKnowledgeResult;
+type StringCreatureProperty = "description" | "name" | RiseKnowledgeResult | RiseSpecialDefense;
+
+export type RiseSpecialDefense = "immune" | "impervious" | "vulnerable";
 
 export type RiseKnowledgeResult = "knowledge_result_easy" | "knowledge_result_normal" | "knowledge_result_hard" | "knowledge_result_legendary";
 export interface RiseKnowledgeResultsConfig {
@@ -193,8 +195,11 @@ export interface CustomAttackConfig {
 export type StandardModifierName = "mindless";
 
 export interface CustomModifierConfig {
+  immune?: string;
+  impervious?: string;
   name: string;
   numericEffects?: CustomModifierNumericEffect[];
+  vulnerable?: string;
 }
 
 export interface CustomModifierNumericEffect {
@@ -219,6 +224,14 @@ export class Creature implements CreaturePropertyMap {
     this.sheet = sheet;
   }
 
+  static new() {
+    const sheet = resetDefaultCharacterSheet();
+    handleEverything();
+    return new this(sheet)
+  }
+
+  // If a sheet with this name already exists, it will use the existing sheet with that
+  // name.
   static fromName(name: string): Creature {
     setCurrentCharacterSheet(name);
     const sheet = getCurrentCharacterSheet();
@@ -266,6 +279,10 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet.getPropertyValues(propertyNames) as any;
   }
 
+  getSheetForTesting(): CharacterSheet {
+    return this.sheet;
+  }
+
   addCustomAttack(config: CustomAttackConfig) {
     const rowId = this.sheet.generateRowId();
     // This isn't a repeating section that exists in the real Roll20 sheet. There's no
@@ -306,8 +323,11 @@ export class Creature implements CreaturePropertyMap {
       throw new Error("We only support a maximum of three numeric effects per custom modifier.");
     }
 
-    const prefix = `repeating_permanentmodifier_${this.sheet.generateRowId}`;
-    const attrs: Record<string, string | number> = {
+    const prefix = `repeating_permanentmodifiers_${this.sheet.generateRowId()}`;
+    const attrs: Record<string, string | number | undefined> = {
+      [`${prefix}_immune`]: config.immune,
+      [`${prefix}_impervious`]: config.impervious,
+      [`${prefix}_vulnerable`]: config.vulnerable,
       [`${prefix}_name`]: config.name,
     };
     if (config.numericEffects) {
@@ -327,7 +347,7 @@ export class Creature implements CreaturePropertyMap {
   // Useful for checking if a creature has some common and important modifiers that change
   // the way LaTeX is generated, like being mindless.
   hasModifier(modifierName: StandardModifierName): boolean {
-    return this.sheet.getRepeatingSectionValues("permanentmodifier", "name").includes(modifierName);
+    return this.sheet.getRepeatingSectionValues("permanentmodifiers", "name").includes(modifierName);
   }
 
   getAttacks(callback: (attacks: CreatureAttack[]) => void): void {
@@ -676,6 +696,18 @@ export class Creature implements CreaturePropertyMap {
 
   public get description() {
     return this.getPropertyValues(["description"]).description;
+  }
+
+  public get immune() {
+    return this.getPropertyValues(["immune"]).immune;
+  }
+
+  public get impervious() {
+    return this.getPropertyValues(["impervious"]).impervious;
+  }
+
+  public get vulnerable() {
+    return this.getPropertyValues(["vulnerable"]).vulnerable;
   }
 
   public get knowledge_result_easy() {
