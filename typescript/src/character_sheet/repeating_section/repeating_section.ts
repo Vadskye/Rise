@@ -7,16 +7,41 @@ import { RepeatingSectionRow } from '@src/character_sheet/repeating_section/repe
 //  * "repeating_<sectionName>:<rowPropertyName>" for change registration
 type FullPropertyName = string;
 
-interface SplitPropertyName {
-  sectionName: string;
-  rowId: string | null;
-  rowPropertyName: string | null;
-}
-
 interface ListenerConfig {
   rowPropertyName: string;
   callback: (eventInfo: EventInfo) => void;
 }
+
+type ModifierSectionName = typeof MODIFIER_SECTION_NAMES[number];
+const MODIFIER_SECTION_NAMES = [
+  "attunedmodifiers",
+  "legacymodifiers",
+  "temporarymodifiers",
+  "permanentmodifiers",
+] as const;
+
+type AbilitySectionName = typeof ABILITY_SECTION_NAMES[number];
+const ABILITY_SECTION_NAMES = [
+  "abilities",
+  "strikeattacks",
+  "otherdamagingattacks",
+  "nondamagingattacks"
+] as const;
+
+type OtherSectionName = typeof OTHER_SECTION_NAMES[number];
+const OTHER_SECTION_NAMES = [
+  "knowledgesubskills",
+  "craftsubskills",
+  "trainedskills",
+  "vitalwounds",
+] as const;
+
+export type RepeatingSectionName = ModifierSectionName | AbilitySectionName | OtherSectionName;
+const REPEATING_SECTION_NAMES: Set<RepeatingSectionName> = new Set([
+  ...MODIFIER_SECTION_NAMES,
+  ...ABILITY_SECTION_NAMES,
+  ...OTHER_SECTION_NAMES,
+]);
 
 export class RepeatingSection {
   // Should always start with "repeating_", does not include row ID or local property
@@ -32,10 +57,17 @@ export class RepeatingSection {
   }
 
   public getRowValues(propertyName: string): SimpleValue[] {
-    console.log(`Getting row values for ${this.sectionName}.${propertyName}`);
     return Object.keys(this.rows).map(
       (rowId) => this.rows[rowId].getProperty(propertyName).value
     );
+  }
+
+  public getRowValue(rowId: string, propertyName: string): SimpleValue {
+    return this.getRow(rowId).getProperty(propertyName).value;
+  }
+
+  public getRowIds(): string[] {
+    return Object.keys(this.rows);
   }
 
   // TODO: return an unsubscriber
@@ -105,13 +137,20 @@ export class RepeatingSection {
   }
 }
 
-
+interface SplitPropertyName {
+  sectionName: RepeatingSectionName;
+  rowId: string | null;
+  rowPropertyName: string | null;
+}
 export function splitPropertyName(propertyName: FullPropertyName): SplitPropertyName {
-  const underscorePattern = /^repeating_([^_]+)_([^_]+)_(.+)/;
+  const underscorePattern = /^repeating_([^_:]+)_([^_:]+)_([^:]+)/;
   let match = underscorePattern.exec(propertyName);
   if (match) {
+    if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
+      throw new Error(`Unrecognized repeating section name: '${propertyName}'`);
+    }
     return {
-      sectionName: match[1],
+      sectionName: match[1] as RepeatingSectionName,
       rowId: match[2],
       rowPropertyName: match[3],
     };
@@ -120,8 +159,11 @@ export function splitPropertyName(propertyName: FullPropertyName): SplitProperty
   const changePropertyPattern = /^repeating_([^_]+):(.+)/;
   match = changePropertyPattern.exec(propertyName);
   if (match) {
+    if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
+      throw new Error(`Unrecognized repeating section name: '${propertyName}'`);
+    }
     return {
-      sectionName: match[1],
+      sectionName: match[1] as RepeatingSectionName,
       rowId: null,
       rowPropertyName: match[2]
     };
@@ -130,8 +172,11 @@ export function splitPropertyName(propertyName: FullPropertyName): SplitProperty
   const changeAnythingPattern = /^repeating_([^_]+)$/;
   match = changeAnythingPattern.exec(propertyName);
   if (match) {
+    if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
+      throw new Error(`Unrecognized repeating section name: '${propertyName}'`);
+    }
     return {
-      sectionName: match[1],
+      sectionName: match[1] as RepeatingSectionName,
       rowId: null,
       rowPropertyName: null,
     };

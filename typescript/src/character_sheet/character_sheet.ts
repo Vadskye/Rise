@@ -1,5 +1,5 @@
 import { Property } from '@src/character_sheet/events/property';
-import { RepeatingSection, splitPropertyName } from '@src/character_sheet/repeating_section/repeating_section';
+import { RepeatingSection, splitPropertyName, RepeatingSectionName } from '@src/character_sheet/repeating_section/repeating_section';
 import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
@@ -7,7 +7,7 @@ export class CharacterSheet {
   characterName: string;
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
-  private latestRowId = 0;
+  private latestRowId: number | null = null;
 
   constructor(characterName: string) {
     this.characterName = characterName;
@@ -23,8 +23,9 @@ export class CharacterSheet {
     return this.properties[propertyName];
   }
 
+  // Can provide the full property name or the section name
   private getRepeatingSection(propertyName: string) {
-    const { sectionName } = splitPropertyName(propertyName);
+    const sectionName = propertyName.startsWith("repeating_") ? splitPropertyName(propertyName).sectionName : propertyName;
     if (this.repeatingSections[sectionName] === undefined) {
       this.repeatingSections[sectionName] = new RepeatingSection(sectionName);
     }
@@ -67,19 +68,23 @@ export class CharacterSheet {
     return this.on(propertyNames.map((p) => `change:${p}`).join(" "), callback);
   }
 
-  public getRepeatingSectionValues(sectionName: string, propertyName: string): SimpleValue[] {
+  public getRepeatingSectionValues(sectionName: RepeatingSectionName, propertyName: string): SimpleValue[] {
     return this.getRepeatingSection(`repeating_${sectionName}`).getRowValues(propertyName);
   }
 
   public getAllRepeatingSectionNames(): string[] {
     // The filter is probably unnecessary, but it could be useful if we delete repeating
     // sections?
-    return Object.keys(this.repeatingSections).filter((k) => this.repeatingSections[k]);
+    return Object.keys(this.repeatingSections).filter((sectionName) => this.repeatingSections[sectionName]);
   }
 
   // Primarily used for Roll20 compatibility. Prefer getPropertyValues generally.
   public getAttrs(propertyNames: string[], callback: (attrs: Attrs) => void): void {
     callback(this.getPropertyValues(propertyNames));
+  }
+
+  public getSectionIDs(sectionName: RepeatingSectionName, callback: (repeatingSectionIds: string[]) => void): void {
+    callback(this.getRepeatingSection(sectionName).getRowIds());
   }
 
   // TODO: handle getting repeating properties
@@ -95,6 +100,14 @@ export class CharacterSheet {
   }
 
   public getPropertyValue(propertyName: string): SimpleValue {
+    if (propertyName.startsWith('repeating_')) {
+      const { sectionName, rowId, rowPropertyName } = splitPropertyName(propertyName);
+      if (rowPropertyName && rowId) {
+        return this.getRepeatingSection(sectionName).getRowValue(rowId, rowPropertyName);
+      } else {
+        throw new Error(`Cannot retrieve property value with ambiguous definition: '${propertyName}'`);
+      }
+    }
     return this.getProperty(propertyName).value;
   }
 
@@ -111,6 +124,9 @@ export class CharacterSheet {
   }
 
   public generateRowId(): string {
+    if (this.latestRowId === null) {
+      this.latestRowId = -1;
+    }
     this.latestRowId += 1;
     return `${this.latestRowId}`;
   }
