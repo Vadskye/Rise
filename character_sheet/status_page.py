@@ -294,9 +294,9 @@ def custom_modifier(show_toggle, show_text):
                             {"name": "vulnerable"},
                         ),
                         labeled_text_input(
-                            "Attack effect",
-                            {"class": "attack-effect"},
-                            {"name": "attack_effect"},
+                            "Extra attack text",
+                            {"class": "attack-header"},
+                            {"name": "attack_header"},
                         ),
                     ],
                 )

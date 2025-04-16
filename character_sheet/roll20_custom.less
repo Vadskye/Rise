@@ -302,8 +302,14 @@ div.full-sheet {
         margin-top: -0.5em;
     }
 
-    .custom-modifier-special-effects > div {
-        flex-grow: 1;
+    .custom-modifier-special-effects {
+        .immune, .impervious, .vulnerable {
+            flex-grow: 1;
+        }
+        // Need to be fixed to limit recommended size of extra text
+        .attack-header {
+            width: 14em;
+        }
     }
 
     .text-prefix {

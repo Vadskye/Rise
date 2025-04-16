@@ -101,12 +101,16 @@
         }
     }
 
-    .special-defenses .sidelabeled-number-input {
-        margin-bottom: 0.25em;
+    .special-defenses {
+        :nth-child(1), :nth-child(2) {
+            margin-bottom: 0.3em;
+        }
 
-        .number-label {
-            flex-grow: 0;
-            width: 4em;
+        .sidelabeled-number-input {
+            .number-label {
+                flex-grow: 0;
+                width: 4em;
+            }
         }
     }
 
@@ -115,12 +119,13 @@
         border: 0;
         cursor: inherit;
         flex-grow: 1;
-        font-size: 0.8em;
-        height: 3em;
+        font-size: 0.9em;
+        height: 2.5em;
+        line-height: 1.2em;
         width: 8em;
         padding-top: 0;
         padding-bottom: 0;
-        overflow: -moz-scrollbars-none;
+        overflow: hidden;
     }
 
     ::-webkit-scrollbar {
