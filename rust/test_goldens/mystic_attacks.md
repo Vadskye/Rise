@@ -23,14 +23,14 @@ Fort Bolt    : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
+Armor Bolt   : 4.82 = (5.5 dph * 0.70 hpr) + (5.5 dpc * 0.08 cpr) + (2.8 dpg * 0.20 gpr) = 3.85 hdpr + 0.42 cdpr + 0.55 gdpr
 Fort Bolt    : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
 
 ### Defender: Fighter Shield
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 2.99 = (5.5 dph * 0.40 hpr) + (5.5 dpc * 0.04 cpr) + (2.8 dpg * 0.20 gpr) = 2.20 hdpr + 0.24 cdpr + 0.55 gdpr
+Armor Bolt   : 3.60 = (5.5 dph * 0.50 hpr) + (5.5 dpc * 0.06 cpr) + (2.8 dpg * 0.20 gpr) = 2.75 hdpr + 0.30 cdpr + 0.55 gdpr
 Fort Bolt    : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
 
 ### Defender: Monk Kama
@@ -41,10 +41,10 @@ Armor Bolt   : 4.82 = (5.5 dph * 0.70 hpr) + (5.5 dpc * 0.08 cpr) + (2.8 dpg * 0
 Fort Bolt    : 4.82 = (5.5 dph * 0.70 hpr) + (5.5 dpc * 0.08 cpr) + (2.8 dpg * 0.20 gpr) = 3.85 hdpr + 0.42 cdpr + 0.55 gdpr
 
 ### Defender: Paladin Shield
-Best attack: Fort Bolt
+Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 3.60 = (5.5 dph * 0.50 hpr) + (5.5 dpc * 0.06 cpr) + (2.8 dpg * 0.20 gpr) = 2.75 hdpr + 0.30 cdpr + 0.55 gdpr
+Armor Bolt   : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
 Fort Bolt    : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
 
 ### Defender: Ranger Longbow

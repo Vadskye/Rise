@@ -7,9 +7,9 @@
 Barbarian Glass     : 2.50
 Barbarian Shield    : 5.00
 Fighter Greatmace   : 4.50
-Fighter Shield      : 5.75
+Fighter Shield      : 5.25
 Monk Kama           : 2.75
-Paladin Shield      : 5.75
+Paladin Shield      : 5.25
 Ranger Longbow      : 3.50
 Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 2.50
@@ -104,9 +104,9 @@ Warrior             : 7.00
 Barbarian Glass     : 2.50
 Barbarian Shield    : 5.00
 Fighter Greatmace   : 4.50
-Fighter Shield      : 5.75
+Fighter Shield      : 5.25
 Monk Kama           : 2.75
-Paladin Shield      : 5.75
+Paladin Shield      : 5.25
 Ranger Longbow      : 3.50
 Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 2.50
@@ -201,9 +201,9 @@ Warrior             : 8.25
 Barbarian Glass     : 3.75
 Barbarian Shield    : 7.75
 Fighter Greatmace   : 6.75
-Fighter Shield      : 8.75
+Fighter Shield      : 8.25
 Monk Kama           : 4.00
-Paladin Shield      : 8.75
+Paladin Shield      : 8.25
 Ranger Longbow      : 5.25
 Rogue Smallsword    : 4.50
 Sorcerer Dexterity  : 4.00
@@ -298,9 +298,9 @@ Warrior             : 10.25
 Barbarian Glass     : 5.00
 Barbarian Shield    : 7.00
 Fighter Greatmace   : 6.25
-Fighter Shield      : 8.00
+Fighter Shield      : 7.50
 Monk Kama           : 3.75
-Paladin Shield      : 8.00
+Paladin Shield      : 7.50
 Ranger Longbow      : 4.75
 Rogue Smallsword    : 4.00
 Sorcerer Dexterity  : 4.25
@@ -394,10 +394,10 @@ Warrior             : 7.75
 
 Barbarian Glass     : 5.00
 Barbarian Shield    : 7.25
-Fighter Greatmace   : 7.25
-Fighter Shield      : 7.25
+Fighter Greatmace   : 6.75
+Fighter Shield      : 7.75
 Monk Kama           : 4.00
-Paladin Shield      : 8.25
+Paladin Shield      : 8.75
 Ranger Longbow      : 5.00
 Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 4.25
@@ -491,10 +491,10 @@ Warrior             : 8.75
 
 Barbarian Glass     : 5.00
 Barbarian Shield    : 6.25
-Fighter Greatmace   : 6.25
-Fighter Shield      : 6.25
+Fighter Greatmace   : 6.00
+Fighter Shield      : 6.75
 Monk Kama           : 3.50
-Paladin Shield      : 7.25
+Paladin Shield      : 7.50
 Ranger Longbow      : 4.25
 Rogue Smallsword    : 3.00
 Sorcerer Dexterity  : 4.00
