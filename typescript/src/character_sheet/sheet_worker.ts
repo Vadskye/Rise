@@ -974,7 +974,7 @@ function handleAttackTargeting() {
     onGet({
       variables: {
         boolean: [`${repeatingSection}_is_targeted`],
-        string: [`${repeatingSection}_attack_defense`],
+        string: [`${repeatingSection}_attack_defense`, `${repeatingSection}_tags`],
       },
       options: { includeLevel: false },
       callback: (v) => {
@@ -986,7 +986,7 @@ function handleAttackTargeting() {
         for (const sectionId of repeatingSectionIds) {
           const sectionPrefix = `${repeatingSection}_${sectionId}`;
           getAttrs(
-            [`${sectionPrefix}_is_targeted`, `${sectionPrefix}_attack_defense`],
+            [`${sectionPrefix}_is_targeted`, `${sectionPrefix}_attack_defense`, `${sectionPrefix}_tags`],
             (v) => {
               v[`${sectionPrefix}_is_targeted`] = boolifySheetValue(
                 v[`${sectionPrefix}_is_targeted`]
@@ -1001,25 +1001,27 @@ function handleAttackTargeting() {
 }
 
 function setAttackTargeting(sectionPrefix: string, attrs: Attrs) {
-  const { defenseText, targetText } = calcAttackTargeting(
+  const { defenseText, tagsText, targetText } = calcAttackTargeting(
     attrs[`${sectionPrefix}_is_targeted`],
-    attrs[`${sectionPrefix}_attack_defense`]
+    attrs[`${sectionPrefix}_attack_defense`],
+    attrs[`${sectionPrefix}_tags`],
   );
   setAttrs({
-    // [`${sectionPrefix}_targeting_text`]: targetText,
-    // [`${sectionPrefix}_targeting_text_first_page`]: targetText.replace(
-    //   "}}}",
-    //   "}&#125;&#125;"
-    // ),
+    [`${sectionPrefix}_targeting_text`]: targetText,
     [`${sectionPrefix}_attack_defense_text`]: defenseText,
+    [`${sectionPrefix}_tags_text`]: tagsText,
   });
 }
 
-function calcAttackTargeting(isTargeted: boolean, rawDefense: string) {
+function calcAttackTargeting(isTargeted: boolean, rawDefense: string, tags: string) {
   rawDefense = (rawDefense || "").toLowerCase().trim();
   const targetText = isTargeted
     ? "{{Target=@{target|Defender|token_name}}}"
     : "";
+  const tagsText = tags
+    ? `{{Tags=${tags}}}`
+    : "";
+
   let actualDefenseText = "";
   if (isTargeted && rawDefense) {
     let actualDefense = null;
@@ -1042,6 +1044,7 @@ function calcAttackTargeting(isTargeted: boolean, rawDefense: string) {
   const defenseText = "@{attack_defense}" + actualDefenseText;
   return {
     defenseText,
+    tagsText,
     targetText,
   };
 }
@@ -1973,8 +1976,8 @@ function getTargetedText(targeting: MonsterAttackTargeting) {
     return {
       "targeted_touch": "adjacent",
       "targeted_short": "within Short (30 ft.) range",
-      "targeted_medium": "within Medium (60 ft.) range'",
-      "targeted_long": "within Long (90 ft.) range'",
+      "targeted_medium": "within Medium (60 ft.) range",
+      "targeted_long": "within Long (90 ft.) range",
     }[targeting];
   } else {
     throw new Error(`Can't get targeted text for targeting '${targeting}'.`);
