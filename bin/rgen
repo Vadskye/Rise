@@ -52,17 +52,8 @@ rm comprehensive_codex/generated/*
 g rust
 ./src/bin/generate_rust_files.fish
 
-g rts
-npx tsc --incremental
-# npm run script -- src/scripts/generate_latex.js -t monsters -o ../core_book/generated/monster_descriptions.tex
-npm run script -- src/scripts/generate_latex.js -t mystic_sphere_lists -o ../comprehensive_codex/generated/mystic_sphere_lists.tex
-npm run script -- src/scripts/generate_latex.js -t mystic_sphere_spell_summaries -o ../comprehensive_codex/generated/mystic_sphere_spell_summaries.tex
-npm run script -- src/scripts/generate_latex.js -t mystic_sphere_ritual_summaries -o ../comprehensive_codex/generated/mystic_sphere_ritual_summaries.tex
-npm run script -- src/scripts/generate_latex.js -t mystic_sphere_descriptions -o ../comprehensive_codex/generated/mystic_sphere_descriptions.tex
-npm run script -- src/scripts/generate_latex.js -t ritual_descriptions -o ../comprehensive_codex/generated/ritual_descriptions.tex
-npm run script -- src/scripts/generate_latex.js -t combat_style_lists -o ../comprehensive_codex/generated/combat_style_lists.tex
-npm run script -- src/scripts/generate_latex.js -t combat_style_summaries -o ../comprehensive_codex/generated/combat_style_summaries.tex
-npm run script -- src/scripts/generate_latex.js -t combat_style_descriptions -o ../comprehensive_codex/generated/combat_style_descriptions.tex
+rtgen
+
 g rise
 rm -r html_book/generated
 cp -r core_book/generated html_book/generated
