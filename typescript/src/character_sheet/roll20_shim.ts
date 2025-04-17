@@ -2,8 +2,8 @@ import { Attrs, EventInfo } from './sheet_worker';
 import { getCurrentCharacterSheet } from './current_character_sheet';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
-export function on(changeString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
-  return getCurrentCharacterSheet().on(changeString, callback);
+export function on(listenString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
+  return getCurrentCharacterSheet().on(listenString, callback);
 }
 
 export function getAttrs(getVariables: string[], callback: (attrs: Attrs) => void): void {

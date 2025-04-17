@@ -10,7 +10,7 @@ t.test('can get and set properties', (t) => {
 
   setAttrs(expected);
   getAttrs(["level", "name", "stunned"], (attrs) => {
-    t.match(attrs, expected);
+    t.matchOnly(attrs, expected);
     t.end();
   });
 });

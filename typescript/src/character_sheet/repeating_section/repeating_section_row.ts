@@ -9,7 +9,15 @@ export class RepeatingSectionRow {
     this.properties = {};
   }
 
-  public getProperty(propertyName: string) {
+  public getPropertyValues(propertyNames: string[]): Record<string, SimpleValue> {
+    const values: Record<string, SimpleValue> = {};
+    for (const propertyName of propertyNames) {
+      values[propertyName] = this.getProperty(propertyName).value;
+    }
+    return values;
+  }
+
+  public getProperty(propertyName: string): Property<SimpleValue> {
     if (!this.properties[propertyName]) {
       this.properties[propertyName] = new Property(propertyName);
     }
