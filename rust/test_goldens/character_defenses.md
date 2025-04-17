@@ -13,14 +13,14 @@ HP/DR/Total: 16 / 5 / 21
 Points / Self-hit: 28 / 50%
 
 ### Fighter Greatmace
-A/F/R/M: 6 / 6 / 3 / 3
-HP/DR/Total: 14 / 8 / 22
-Points / Self-hit: 24 / 60%
+A/F/R/M: 5 / 6 / 3 / 3
+HP/DR/Total: 14 / 10 / 24
+Points / Self-hit: 22 / 70%
 
 ### Fighter Shield
-A/F/R/M: 8 / 6 / 3 / 3
-HP/DR/Total: 14 / 8 / 22
-Points / Self-hit: 28 / 40%
+A/F/R/M: 7 / 6 / 3 / 3
+HP/DR/Total: 14 / 10 / 24
+Points / Self-hit: 26 / 50%
 
 ### Monk Kama
 A/F/R/M: 5 / 5 / 8 / 4
@@ -28,9 +28,9 @@ HP/DR/Total: 12 / 0 / 12
 Points / Self-hit: 27 / 80%
 
 ### Paladin Shield
-A/F/R/M: 7 / 6 / 3 / 6
-HP/DR/Total: 14 / 12 / 26
-Points / Self-hit: 29 / 40%
+A/F/R/M: 6 / 6 / 3 / 6
+HP/DR/Total: 14 / 14 / 28
+Points / Self-hit: 27 / 50%
 
 ### Ranger Longbow
 A/F/R/M: 6 / 5 / 7 / 3

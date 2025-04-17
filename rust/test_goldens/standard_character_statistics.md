@@ -4,13 +4,13 @@
 
 ### Damage Absorption
 HP: 14 = (High progression: 8 <level> + 6 <con> + 0 <modifier>) * 0 <elite multiplier>
-DR: 8 = (8 <armor> + 0 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
+DR: 10 = (10 <armor> + 0 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 1
 AP 2, FT 6, IP 1, Skills 3
-HP 14, DR 8
-AD 8, Fort 6, Ref 3, Ment 3
+HP 14, DR 10
+AD 7, Fort 6, Ref 3, Ment 3
 Generic Accuracy Broadsword +1 (1d6+2 damage.); Certain Broadsword +3 (1d6+1 damage.); Extra Damage Broadsword +1 (1d6+2 damage.); Powerful Broadsword -3 (2d6+4 damage.); Broadsword +1 (1d6+2 damage.)
 Attr: Str 5, Dex 0, Con 3, Int 0, Per 2, Wil 0
 Power: 0✨/5
