@@ -56,9 +56,15 @@ export class RepeatingSection {
     this.rows = {};
   }
 
-  public getRowValues(propertyName: string): SimpleValue[] {
+  public getValueFromAllRows(propertyName: string): SimpleValue[] {
     return Object.keys(this.rows).map(
       (rowId) => this.rows[rowId].getProperty(propertyName).value
+    );
+  }
+
+  public getValuesFromAllRows(propertyNames: string[]): Record<string, SimpleValue>[] {
+    return Object.keys(this.rows).map(
+      (rowId) => this.rows[rowId].getPropertyValues(propertyNames)
     );
   }
 
@@ -82,10 +88,10 @@ export class RepeatingSection {
       // TODO: in what circumstances could there be a rowId without a rowPropertyName?
       throw new Error(`Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`);
     } else if (rowPropertyName) {
-      this.listeners.push({ callback, rowPropertyName });
-      for (const rowId of Object.keys(this.rows)) {
-        this.getRow(rowId).onChange(rowPropertyName, callback);
-      }
+      // In Roll20, this automatically embeds some sort of context about which row
+      // triggered the listener, allowing triggers to implicitly carry information about
+      // the relevant row ID. We don't replicate that behavior, so these listeners would
+      // simply break if we included them.
     } else {
       return this.SetSignal.on((_, eventInfo: EventInfo) => {
         callback(eventInfo);
@@ -143,7 +149,10 @@ interface SplitPropertyName {
   rowPropertyName: string | null;
 }
 export function splitPropertyName(propertyName: FullPropertyName): SplitPropertyName {
-  const underscorePattern = /^repeating_([^_:]+)_([^_:]+)_([^:]+)/;
+  // This assumes that row IDs are strictly numeric, which is true for our shim and not
+  // true in real Roll20. I don't understand how Roll20 differentiates row IDs, since they
+  // can look the same as properties.
+  const underscorePattern = /^repeating_([^_:]+)_([0-9]+)_([^:]+)/;
   let match = underscorePattern.exec(propertyName);
   if (match) {
     if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
@@ -156,7 +165,7 @@ export function splitPropertyName(propertyName: FullPropertyName): SplitProperty
     };
   }
 
-  const changePropertyPattern = /^repeating_([^_]+):(.+)/;
+  const changePropertyPattern = /^repeating_([^_:]+):(.+)/;
   match = changePropertyPattern.exec(propertyName);
   if (match) {
     if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
@@ -166,6 +175,19 @@ export function splitPropertyName(propertyName: FullPropertyName): SplitProperty
       sectionName: match[1] as RepeatingSectionName,
       rowId: null,
       rowPropertyName: match[2]
+    };
+  }
+
+  const getPropertyPattern = /^repeating_([^_:]+)_([^:]+)/;
+  match = getPropertyPattern.exec(propertyName);
+  if (match) {
+    if (!REPEATING_SECTION_NAMES.has(match[1] as any)) {
+      throw new Error(`Unrecognized repeating section name: '${propertyName}'`);
+    }
+    return {
+      sectionName: match[1] as RepeatingSectionName,
+      rowId: null,
+      rowPropertyName: match[2],
     };
   }
 

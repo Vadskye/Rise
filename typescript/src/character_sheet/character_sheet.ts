@@ -1,15 +1,18 @@
 import { Property } from '@src/character_sheet/events/property';
+import { Button } from '@src/character_sheet/events/button';
 import { RepeatingSection, splitPropertyName, RepeatingSectionName } from '@src/character_sheet/repeating_section/repeating_section';
 import { Attrs, EventInfo, SimpleValue } from './sheet_worker';
 import { Unsubscriber } from '@src/character_sheet/events/signal';
 
 export class CharacterSheet {
   characterName: string;
+  private buttons: Record<string, Button>;
   private properties: Record<string, Property<SimpleValue>>;
   private repeatingSections: Record<string, RepeatingSection>;
   private latestRowId: number | null = null;
 
   constructor(characterName: string) {
+    this.buttons = {};
     this.characterName = characterName;
     this.properties = {};
     this.repeatingSections = {};
@@ -23,8 +26,16 @@ export class CharacterSheet {
     return this.properties[propertyName];
   }
 
+  private getButton(buttonName: string): Button {
+    if (this.buttons[buttonName] === undefined) {
+      this.buttons[buttonName] = new Button(buttonName);
+    }
+
+    return this.buttons[buttonName];
+  }
+
   // Can provide the full property name or the section name
-  private getRepeatingSection(propertyName: string) {
+  public getRepeatingSection(propertyName: string) {
     const sectionName = propertyName.startsWith("repeating_") ? splitPropertyName(propertyName).sectionName : propertyName;
     if (this.repeatingSections[sectionName] === undefined) {
       this.repeatingSections[sectionName] = new RepeatingSection(sectionName);
@@ -33,11 +44,14 @@ export class CharacterSheet {
     return this.repeatingSections[sectionName];
   }
 
-  public on(changeString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
+  public on(listenString: string, callback: (eventInfo: EventInfo) => void): Unsubscriber {
     const changedPropertyNames: string[] = [];
-    for (const triggerName of changeString.split(" ")) {
+    const clickedButtonNames: string[] = [];
+    for (const triggerName of listenString.split(" ")) {
       if (triggerName.startsWith("change:")) {
         changedPropertyNames.push(triggerName.replaceAll("change:", ""));
+      } else if (triggerName.startsWith("clicked:")) {
+        clickedButtonNames.push(triggerName.replaceAll("clicked:", ""));
       } else {
         // We don't currently handle anything other than changes, such as deletions
         console.log(`Ignoring unsupported trigger name ${triggerName}.`);
@@ -55,6 +69,11 @@ export class CharacterSheet {
         }));
       }
     }
+    for (const buttonName of clickedButtonNames) {
+      unsubscribers.push(this.getButton(buttonName).ClickedSignal.on((_, eventInfo: EventInfo) => {
+        callback(eventInfo);
+      }));
+    }
 
     return () => {
       for (const unsubscriber of unsubscribers) {
@@ -68,8 +87,9 @@ export class CharacterSheet {
     return this.on(propertyNames.map((p) => `change:${p}`).join(" "), callback);
   }
 
+  // For each repeating section of the given name, return the given property value
   public getRepeatingSectionValues(sectionName: RepeatingSectionName, propertyName: string): SimpleValue[] {
-    return this.getRepeatingSection(`repeating_${sectionName}`).getRowValues(propertyName);
+    return this.getRepeatingSection(`repeating_${sectionName}`).getValueFromAllRows(propertyName);
   }
 
   public getAllRepeatingSectionNames(): string[] {
@@ -87,7 +107,6 @@ export class CharacterSheet {
     callback(this.getRepeatingSection(sectionName).getRowIds());
   }
 
-  // TODO: handle getting repeating properties
   // Unlike getAttrs, this doesn't use a callback. Prefer using this for normal Typescript
   // usage, and use getAttrs for Roll20 compatibility.
   public getPropertyValues(propertyNames: readonly string[]): Attrs {
@@ -109,6 +128,10 @@ export class CharacterSheet {
       }
     }
     return this.getProperty(propertyName).value;
+  }
+
+  public clickButton(buttonName: string) {
+    this.getButton(buttonName).click();
   }
 
   // Note that we currently can't handle attribute removal like Roll20 does, just

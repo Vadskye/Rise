@@ -73,6 +73,43 @@ export interface AutoAttackConfig {
   usageTime?: RiseAbilityUsageTime;
 }
 
+// This matches the `setAttrs()` in `createDamagingMonsterAttack()`.
+export interface DamagingAutoAttackResult {
+  attack_accuracy: number;
+  attack_damage_dice: string;
+  attack_effect: string;
+  attack_name: string;
+  is_magical: boolean;
+  is_targeted: boolean;
+  monster_effect: string;
+}
+const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
+  "attack_accuracy",
+  "attack_damage_dice",
+  "attack_effect",
+  "attack_name",
+  "is_magical",
+  "is_targeted",
+  "monster_effect",
+];
+
+export interface DebuffAutoAttackResult {
+  attack_accuracy: number;
+  attack_effect: string;
+  attack_name: string;
+  is_magical: boolean;
+  is_targeted: boolean;
+  monster_effect: string;
+}
+const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
+  "attack_accuracy",
+  "attack_effect",
+  "attack_name",
+  "is_magical",
+  "is_targeted",
+  "monster_effect",
+];
+
 export interface CustomAttackConfig {
   effect: string;
   isMagical: boolean;
@@ -95,13 +132,6 @@ export interface CustomModifierConfig {
 export interface CustomModifierNumericEffect {
   modifier: number;
   statistic: NumericCreatureProperty;
-}
-
-export interface CreatureAttack {
-  effect: string;
-  name: string;
-  tags: RiseAbilityTag[];
-  usageTime: RiseAbilityUsageTime;
 }
 
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
@@ -205,7 +235,7 @@ export class Creature implements CreaturePropertyMap {
       monster_attack_targeting: config.targeting,
     });
 
-    // TODO: figure out how to trigger the add button
+    this.sheet.clickButton("createmonsterattack");
 
     const sectionName = config.effect === "damage" ? "repeating_otherdamagingattacks" : "repeating_nondamagingattacks";
     const prefix = `${sectionName}_${this.sheet.getLatestRowId()}`;
@@ -292,8 +322,18 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet.getRepeatingSectionValues("permanentmodifiers", "name").includes(modifierName);
   }
 
-  getAttacks(callback: (attacks: CreatureAttack[]) => void): void {
+  getDamagingAutoAttacks(): DamagingAutoAttackResult[] {
     // TODO: use this.sheet.getRepeatingSectionNames...
+    return [];
+  }
+
+  getDebuffAutoAttacks(): DebuffAutoAttackResult[] {
+    // We assume that everything in this section comes from an autoattack; there's no
+    // other way to add something here with current typescript. If we add more support for
+    // custom attacks, some names might have to change.
+    //
+    // TODO: figure out how to make these types work without `any`
+    return this.sheet.getRepeatingSection("nondamagingattacks").getValuesFromAllRows(DEBUFF_RESULT_KEYS) as any[];
   }
 
   setProperties(properties: Partial<CreaturePropertyMap>) {

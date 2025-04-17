@@ -10,11 +10,11 @@ t.test('can set a trained skill', (t) => {
   });
   creature.setTrainedSkills(["awareness"]);
   const vals = creature.getPropertyValues(["accuracy", "awareness"]);
-  t.match(vals, {
+  t.matchOnly(vals, {
     accuracy: 10, // Make sure that general calculations worked
     awareness: 13,
   });
-  t.match(creature.getTrainedSkillNames(), ["awareness"]);
+  t.matchOnly(creature.getTrainedSkillNames(), ["awareness"]);
   t.end();
 });
 
@@ -24,7 +24,7 @@ t.test('can set a trained knowledge skill', (t) => {
     level: 20,
   });
   creature.setTrainedSkills(["awareness", "knowledge_arcana", "knowledge_local"]);
-  t.match(creature.getTrainedKnowledgeSkillNames(), ["knowledge_arcana", "knowledge_local"]);
+  t.matchOnly(creature.getTrainedKnowledgeSkillNames(), ["knowledge_arcana", "knowledge_local"]);
   t.end();
 });
 
@@ -78,7 +78,7 @@ t.test('can add immunity modifiers', (t) => {
   });
 
   const sheet = creature.getSheetForTesting();
-  t.match(
+  t.matchOnly(
     sheet.getRepeatingSectionValues("permanentmodifiers", "immune"),
     ["Fire", "Cold"],
     "Repeating section values",
@@ -95,5 +95,29 @@ t.test('can add immunity modifiers', (t) => {
   );
 
   t.equal(creature.immune, "Cold, Fire");
+  t.end();
+});
+
+t.test('can add an autoattack', (t) => {
+  const creature = Creature.new();
+  creature.addAutoAttack({
+    defense: ["Fortitude"],
+    effect: "dazzled",
+    name: "Flashy Light",
+    isMagical: true,
+    targeting: "targeted_medium",
+  });
+
+  t.matchOnly(creature.getDebuffAutoAttacks(), [{
+    "attack_accuracy": null,
+    "attack_effect": `Make an attack against something within Medium (60 ft.) range.
+Hit: The target is dazzled as a condition.`,
+    "attack_name": "Flashy Light",
+    "is_magical": true,
+    "is_targeted": true,
+    "monster_effect": `The $name makes an attack against something within Medium (60 ft.) range.
+Hit: The target is dazzled as a condition.`,
+  }]);
+
   t.end();
 });

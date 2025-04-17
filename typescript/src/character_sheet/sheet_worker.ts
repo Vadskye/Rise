@@ -448,8 +448,8 @@ function initializeOnGetVariables(args: { variables: Partial<OnGetVariables>; va
   return { variables: variables as OnGetVariables, variablesWithoutListen: variablesWithoutListen as OnGetVariables };
 }
 
-function boolifySheetValue(val: string | number | undefined): boolean {
-  return Boolean(val === "on" || val === "1" || val === 1);
+function boolifySheetValue(val: string | number | boolean | undefined): boolean {
+  return Boolean(val === "on" || val === "1" || val === 1 || val === true);
 }
 
 const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
@@ -1964,6 +1964,7 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
       accuracyModifier,
       areaShape,
       debuff: effect,
+      isMagical,
       name,
       rank: rank + rankModifier,
       targeting,
@@ -2038,17 +2039,18 @@ Miss: Half damage.`;
     [`${prefix}_attack_damage_dice`]: damageDice,
     [`${prefix}_attack_effect`]: effect,
     [`${prefix}_attack_name`]: name,
-    // This is only used for generating LaTeX outside of Roll20.
-    [`${prefix}_monster_effect`]: monsterEffect,
     [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
+    // This is only used for generating LaTeX outside of Roll20.
+    [`${prefix}_monster_effect`]: monsterEffect,
   });
 }
 
-function createMonsterDebuff({ accuracyModifier, areaShape, debuff, name, rank, targeting }: {
+function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, name, rank, targeting }: {
   accuracyModifier: number;
   areaShape: MonsterAttackAreaShape;
   debuff: MonsterAttackDebuff;
+  isMagical: boolean,
   name: string;
   rank: number;
   targeting: MonsterAttackTargeting;
@@ -2119,7 +2121,9 @@ Hit: ${hitEffect}`;
     [`${prefix}_attack_accuracy`]: accuracyModifier,
     [`${prefix}_attack_effect`]: effect,
     [`${prefix}_attack_name`]: name,
+    [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
+    [`${prefix}_monster_effect`]: monsterEffect,
   });
 }
 
