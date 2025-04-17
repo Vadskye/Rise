@@ -185,7 +185,6 @@ function genSensesText(monster: Creature) {
 
 function formatSkillList<T extends RiseSkill>(monster: Creature, skillNames: readonly T[]): string[] {
   const skillModifiers = monster.getPropertyValues(skillNames);
-  console.log("skillModifiers", skillModifiers);
   return skillNames.map((skillName) => {
     if (monster.hasTrainedSkill(skillName)) {
       return `${format.skillName(skillName)} ${format.modifier(Number(skillModifiers[skillName]))}`;

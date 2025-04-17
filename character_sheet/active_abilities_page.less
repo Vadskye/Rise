@@ -6,8 +6,12 @@
 }
 
 .active-ability-effect, .attack-effect, .passive-ability-effect {
-    margin-left: 0.25em;
+    margin-left: 0.5em;
     flex-grow: 1;
+
+    > textarea {
+        height: 8em;
+    }
 }
 
 .active-ability-name, .attack-prefix {
@@ -26,8 +30,75 @@
     margin-bottom: 0.25em;
 }
 
-.attack-calcs {
-    justify-content: space-between;
+.attack, .ability {
+    .attack-is-targeted, .attack-is-magical {
+        align-content: center;
+        
+        > input {
+            margin-top: 0.25em;
+        }
+    }
+
+    .attack-buttons {
+        .attack-roll {
+            width: 70px;
+            margin-bottom: 0.25em;
+
+            > input[type=text] {
+                background: none;
+                border: 0;
+                box-shadow: none;
+                cursor: pointer;
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                width: 130px;
+                z-index: 0;
+            }
+        }
+
+        // Only show the weapon buttons if those weapons exist
+        .weapon-exists:not(:checked) + .specific-weapon-button {
+            display: none;
+        }
+        .specific-weapon-button {
+            .attack-roll {
+                width: 140px;
+            }
+        }
+        button[type=roll]:before {
+            content: none;
+        }
+
+        .total-damage {
+            align-items: center;
+            width: 6em;
+        }
+    }
+
+    .attack-calcs {
+        justify-content: space-between;
+
+        textarea {
+            height: 1.5em;
+            line-height: 1.25em;
+            padding: 0.15em;
+        }
+
+        .input-dice textarea {
+            width: 7em;
+        }
+    }
+    .input-tags {
+        flex-grow: 1;
+        // This seems to extend farther than it should, which is weird
+        margin-right: 0.75em;
+
+        textarea {
+            width: 100%;
+        }
+    }
 }
 
 .attack-info {
@@ -54,11 +125,6 @@
     .attack-defense {
         width: 6em;
     }
-}
-
-.input-dice textarea {
-    height: 1.5em;
-    width: 6em;
 }
 
 .attack-power {
@@ -93,45 +159,8 @@
     width: 235px;
 }
 
-.attack-buttons {
-    .attack-roll {
-        width: 70px;
-        margin-bottom: 0.25em;
-
-        > input[type=text] {
-            background: none;
-            border: 0;
-            box-shadow: none;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            width: 130px;
-            z-index: 0;
-        }
-    }
-
-    // Only show the weapon buttons if those weapons exist
-    .weapon-exists:not(:checked) + .specific-weapon-button {
-        display: none;
-    }
-    .specific-weapon-button {
-        .attack-roll {
-            width: 140px;
-        }
-    }
-    button[type=roll]:before {
-        content: none;
-    }
-}
-
 .strike-dropdown {
     display: none;
-}
-
-.total-damage {
-    width: 6em;
 }
 
 .strike-total-damage {

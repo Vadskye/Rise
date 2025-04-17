@@ -122,12 +122,12 @@ def ability():
                             ),
                             underlabeled_checkbox(
                                 "Magical?",
-                                None,
+                                {"class": "attack-is-magical"},
                                 {"name": "is_magical"},
                             ),
                             underlabeled_checkbox(
                                 "Targeted?",
-                                None,
+                                {"class": "attack-is-targeted"},
                                 {"name": "is_targeted"},
                             ),
                             text_input(
@@ -140,11 +140,23 @@ def ability():
                             text_input(
                                 {
                                     "class": "hidden",
+                                    "name": "tags_text",
+                                    "readonly": True,
+                                }
+                            ),
+                            text_input(
+                                {
+                                    "class": "hidden",
                                     "name": "dice_text",
                                     "readonly": True,
                                 }
                             ),
                         ],
+                    ),
+                    labeled_text_input(
+                        "Tags",
+                        {"class": "input-tags"},
+                        {"name": "tags"},
                     ),
                 ],
             ),
@@ -168,6 +180,7 @@ def ability():
                                 + " @{targeting_text}"
                                 + " @{dice_text}"
                                 + " {{color=@{chat_color}}}"
+                                + " @{tags_text}"
                                 + " {{desc=@{active_ability0_effect}}}"
                             ),
                         },
@@ -314,6 +327,7 @@ def shared_attack_framework(calcs=[], buttons=[]):
                 {"name": "attack_effect"},
             ),
             text_input({"class": "hidden", "readonly": True, "name": "targeting_text"}),
+            text_input({"class": "hidden", "readonly": True, "name": "tags_text"}),
             text_input(
                 {"class": "hidden", "readonly": True, "name": "attack_defense_text"}
             ),
@@ -352,7 +366,7 @@ def strike_based_attack():
             ),
             underlabeled_checkbox(
                 "Targeted?",
-                None,
+                {"class": "attack-is-targeted"},
                 {"name": "is_targeted"},
             ),
         ],
@@ -418,14 +432,14 @@ def other_damaging_attack():
                 {"class": "input-dice"},
                 {"name": "attack_damage_dice"},
             ),
-            underlabeled_checkbox(
-                "Magical?",
-                None,
-                {"name": "is_magical"},
+            labeled_text_input(
+                "Tags",
+                {"class": "input-tags"},
+                {"name": "tags"},
             ),
             underlabeled_checkbox(
                 "Targeted?",
-                None,
+                {"class": "attack-is-targeted"},
                 {"name": "is_targeted"},
             ),
         ],
@@ -476,8 +490,13 @@ def nondamaging_attack():
         [
             underlabeled_checkbox(
                 "Targeted?",
-                None,
+                {"class": "attack-is-targeted"},
                 {"name": "is_targeted"},
+            ),
+            labeled_text_input(
+                "Tags",
+                {"class": "input-tags"},
+                {"name": "tags"},
             ),
         ],
         [
@@ -572,6 +591,7 @@ def attack_button_text(damage_text=None):
         + " {{Attack=[[d10!+@{accuracy}+@{attack_accuracy}]] vs @{attack_defense_text}}}"
         + ((" {{Damage=" + damage_text + "}}") if damage_text else "")
         + " {{color=@{chat_color}}}"
+        + " @{tags_text}"
         + " @{attack_headers}"
         + " {{desc=@{attack_effect}}}"
     )
