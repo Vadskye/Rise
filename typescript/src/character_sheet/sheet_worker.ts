@@ -1972,13 +1972,13 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
   }
 }
 
-function getTargetedText(targeting: MonsterAttackTargeting) {
+function calcTargetedText(targeting: MonsterAttackTargeting) {
   if (targetingIsTargeted(targeting)) {
     return {
       "targeted_touch": "adjacent",
-      "targeted_short": "within Short (30 ft.) range",
-      "targeted_medium": "within Medium (60 ft.) range",
-      "targeted_long": "within Long (90 ft.) range",
+      "targeted_short": "within 30 feet",
+      "targeted_medium": "within 60 feet",
+      "targeted_long": "within 90 feet",
     }[targeting];
   } else {
     throw new Error(`Can't get targeted text for targeting '${targeting}'.`);
@@ -2015,16 +2015,16 @@ function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, n
   let effect = "";
   let monsterEffect = "";
   if (isTargeted) {
-    const range = getTargetedText(targeting);
+    const range = calcTargetedText(targeting);
     effect = `Make an attack against something ${range}.`;
     monsterEffect = `The $name makes an attack against something ${range}.
-Hit: ${damageDice}.`;
+Hit: ${damageDice} damage.`;
   } else {
-    const area = calculateAttackArea({ areaShape, rank, targeting });
+    const area = calcAttackArea({ areaShape, rank, targeting });
     effect = `Make an attack against everything in a ${area}.
 Miss: Half damage.`;
-    monsterEffect = `The $name makes an attack against something in a ${area}.
-Hit: ${damageDice}.
+    monsterEffect = `The $name makes an attack against everything in a ${area}.
+Hit: ${damageDice} damage.
 Miss: Half damage.`;
   }
 
@@ -2093,7 +2093,7 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, n
   let effect = "";
   let monsterEffect = "";
   if (isTargeted) {
-    const range = getTargetedText(targeting);
+    const range = calcTargetedText(targeting);
 
     const hitEffect = requiresNoDamageResistance
       ? `If the target has no remaining damage resistance, it is ${debuff} as a condition.`
@@ -2103,7 +2103,7 @@ Hit: ${hitEffect}`;
     monsterEffect = `The $name makes an attack against something ${range}.
 Hit: ${hitEffect}`;
   } else {
-    const area = calculateAttackArea({ areaShape, rank, targeting });
+    const area = calcAttackArea({ areaShape, rank, targeting });
 
     const hitEffect = requiresNoDamageResistance
       ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
@@ -2142,7 +2142,7 @@ function calculateEffectRankModifier(targeting: MonsterAttackTargeting) {
   }[targeting];
 }
 
-function calculateAttackArea({ areaShape, rank, targeting }: {
+function calcAttackArea({ areaShape, rank, targeting }: {
   areaShape: MonsterAttackAreaShape;
   rank: number;
   targeting: MonsterAttackTargeting;
@@ -2151,53 +2151,53 @@ function calculateAttackArea({ areaShape, rank, targeting }: {
 
   if (areaShape === "cone" || areaShape === "default") {
     return {
-      1: "15' cone",
-      2: "30' cone",
-      3: "60' cone",
-      4: "60' cone",
-      5: "90' cone",
-      6: "90' cone",
-      7: "120' cone",
-      8: "120' cone",
-      9: "180' cone",
+      1: "15 foot cone",
+      2: "30 foot cone",
+      3: "60 foot cone",
+      4: "60 foot cone",
+      5: "90 foot cone",
+      6: "90 foot cone",
+      7: "120 foot cone",
+      8: "120 foot cone",
+      9: "180 foot cone",
     }[areaRank];
   } else if (areaShape === "line") {
     return {
-      0: "15' long, 5' wide line",
-      1: "30' long, 5' wide line",
-      2: "60' long, 5' wide line",
-      3: "60' long, 10' wide line",
-      4: "60' long, 15' wide line",
-      5: "90' long, 15' wide line",
-      6: "120' long, 15' wide line",
-      7: "180' long, 15' wide line",
-      8: "180' long, 15' wide line",
+      0: "15 foot long, 5 foot wide line",
+      1: "30 foot long, 5 foot wide line",
+      2: "60 foot long, 5 foot wide line",
+      3: "60 foot long, 10 foot wide line",
+      4: "60 foot long, 15 foot wide line",
+      5: "90 foot long, 15 foot wide line",
+      6: "120 foot long, 15 foot wide line",
+      7: "180 foot long, 15 foot wide line",
+      8: "180 foot long, 15 foot wide line",
     }[areaRank];
   } else if (areaShape === "radius_from_self") {
     return {
-      0: "5' radius",
+      0: "5 foot radius",
       // This is cheating a bit; normally, radius scaling is stronger at low ranks.
       // However, monsters benefit more from "radius from self" effects than players do.
-      1: "10' radius",
-      2: "15' radius",
-      3: "30' radius",
-      4: "60' radius",
-      5: "90' radius",
-      6: "90' radius",
-      7: "120' radius",
-      8: "180' radius",
+      1: "10 foot radius",
+      2: "15 foot radius",
+      3: "30 foot radius",
+      4: "60 foot radius",
+      5: "90 foot radius",
+      6: "90 foot radius",
+      7: "120 foot radius",
+      8: "180 foot radius",
     }[areaRank];
   } else if (areaShape === "radius_at_range") {
     return {
-      1: "5' radius within 30'",
-      2: "15' radius within 30'",
-      3: "15' radius within 60'",
-      4: "30' radius within 60'",
-      5: "30' radius within 90'",
-      6: "30' radius within 120'",
-      7: "60' radius within 120'",
-      8: "60' radius within 180'",
-      9: "60' radius within 180'",
+      1: "5 foot radius within 30 feet",
+      2: "15 foot radius within 30 feet",
+      3: "15 foot radius within 60 feet",
+      4: "30 foot radius within 60 feet",
+      5: "30 foot radius within 90 feet",
+      6: "30 foot radius within 120 feet",
+      7: "60 foot radius within 120 feet",
+      8: "60 foot radius within 180 feet",
+      9: "60 foot radius within 180 feet",
     }[areaRank];
   }
 }

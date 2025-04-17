@@ -323,8 +323,8 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getDamagingAutoAttacks(): DamagingAutoAttackResult[] {
-    // TODO: use this.sheet.getRepeatingSectionNames...
-    return [];
+    // TODO: figure out how to make these types work without `any`
+    return this.sheet.getRepeatingSection("otherdamagingattacks").getValuesFromAllRows(DAMAGING_ATTACK_KEYS) as any[];
   }
 
   getDebuffAutoAttacks(): DebuffAutoAttackResult[] {

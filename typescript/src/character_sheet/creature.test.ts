@@ -98,8 +98,11 @@ t.test('can add immunity modifiers', (t) => {
   t.end();
 });
 
-t.test('can add an autoattack', (t) => {
+t.test('can add a debuff autoattack', (t) => {
   const creature = Creature.new();
+  creature.setProperties({
+    level: 7,
+  });
   creature.addAutoAttack({
     defense: ["Fortitude"],
     effect: "dazzled",
@@ -109,14 +112,45 @@ t.test('can add an autoattack', (t) => {
   });
 
   t.matchOnly(creature.getDebuffAutoAttacks(), [{
-    "attack_accuracy": null,
-    "attack_effect": `Make an attack against something within Medium (60 ft.) range.
+    "attack_accuracy": 4,
+    "attack_effect": `Make an attack against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
     "attack_name": "Flashy Light",
     "is_magical": true,
     "is_targeted": true,
-    "monster_effect": `The $name makes an attack against something within Medium (60 ft.) range.
+    "monster_effect": `The $name makes an attack against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
+  }]);
+
+  t.end();
+});
+
+t.test('can add a damaging autoattack', (t) => {
+  const creature = Creature.new();
+  creature.setProperties({
+    level: 7,
+  });
+  creature.addAutoAttack({
+    accuracy: "low_accuracy",
+    areaShape: "radius_at_range",
+    defense: ["Reflex"],
+    effect: "damage",
+    name: "Fireball",
+    isMagical: true,
+    targeting: "small_area",
+  });
+
+  t.matchOnly(creature.getDamagingAutoAttacks(), [{
+    "attack_accuracy": -2,
+    "attack_damage_dice": "1d8+3",
+    "attack_effect": `Make an attack against everything in a 15 foot radius within 30 feet.
+Miss: Half damage.`,
+    "attack_name": "Fireball",
+    "is_magical": true,
+    "is_targeted": false,
+    "monster_effect": `The $name makes an attack against everything in a 15 foot radius within 30 feet.
+Hit: 1d8+3 damage.
+Miss: Half damage.`,
   }]);
 
   t.end();
