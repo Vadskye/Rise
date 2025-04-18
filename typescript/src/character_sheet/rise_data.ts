@@ -140,3 +140,8 @@ export const RISE_SKILLS = [
 
 
 export type RiseSpecialDefense = "immune" | "impervious" | "vulnerable";
+
+// TODO: list them all individually?
+export type RiseTag = RiseAbilityTag | RiseWeaponTag;
+export type RiseAbilityTag = string;
+export type RiseWeaponTag = string;
