@@ -18,6 +18,9 @@ export class RepeatingSectionRow {
   }
 
   public getProperty(propertyName: string): Property<SimpleValue> {
+    if (propertyName.startsWith("repeating_")) {
+      throw new Error(`Provided full property name '${propertyName}' where row property was expected`);
+    }
     if (!this.properties[propertyName]) {
       this.properties[propertyName] = new Property(propertyName);
     }
