@@ -1883,6 +1883,7 @@ function handleMonsterAbilityGeneration() {
       "monster_attack_area_shape",
       "monster_attack_targeting",
       "monster_attack_is_magical",
+      "monster_attack_usage_time",
       "magical_power",
       "mundane_power",
     ], (rawAttrs: Attrs) => {
@@ -1897,6 +1898,7 @@ function handleMonsterAbilityGeneration() {
         power: Number(isMagical ? rawAttrs.magical_power : rawAttrs.mundane_power),
         rank: calculateStandardRank(Number(rawAttrs.level)),
         targeting: rawAttrs.monster_attack_targeting || "targeted_medium",
+        usageTime: rawAttrs.monster_attack_usage_time || "standard",
       });
     });
   });
@@ -1926,8 +1928,9 @@ export type MonsterAttackDebuff = "dazzled" | "frightened" | "stunned" | "confus
 export type MonsterAttackAreaShape = "default" | "cone" | "line" | "radius_from_self" | "radius_at_range";
 export type MonsterAttackTargeted = "targeted_medium" | "targeted_touch" | "targeted_short" | "targeted_long";
 export type MonsterAttackArea = "small_area" | "large_area";
+export type MonsterAttackUsageTime = 'standard' | 'elite' | 'minor';
 
-function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, power, rank, targeting }: {
+function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, power, rank, targeting, usageTime }: {
   accuracy: MonsterAttackAccuracy;
   areaShape: MonsterAttackAreaShape;
   effect: "damage" | MonsterAttackDebuff;
@@ -1936,6 +1939,7 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
   power: number;
   rank: number;
   targeting: MonsterAttackTargeting;
+  usageTime: MonsterAttackUsageTime;
 }) {
 
   // Accuracy modifies base rank, unlike area size.
@@ -1958,6 +1962,7 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
       rank: rank + rankModifier,
       power,
       targeting,
+      usageTime,
     });
   } else {
     createMonsterDebuff({
@@ -1968,6 +1973,7 @@ function generateMonsterAttack({ accuracy, areaShape, effect, isMagical, name, p
       name,
       rank: rank + rankModifier,
       targeting,
+      usageTime,
     })
   }
 }
@@ -1985,7 +1991,7 @@ function calcTargetedText(targeting: MonsterAttackTargeting) {
   }
 }
 
-function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, name, power, rank, targeting }: {
+function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, name, power, rank, targeting, usageTime }: {
   accuracyModifier: number;
   areaShape: MonsterAttackAreaShape;
   name: string;
@@ -1993,6 +1999,7 @@ function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, n
   rank: number;
   isMagical: boolean;
   targeting: MonsterAttackTargeting;
+  usageTime: MonsterAttackUsageTime;
 }) {
   const damageRank = rank + calculateEffectRankModifier(targeting);
   const halfPower = Math.floor(power / 2);
@@ -2043,10 +2050,11 @@ Miss: Half damage.`;
     [`${prefix}_is_targeted`]: isTargeted,
     // This is only used for generating LaTeX outside of Roll20.
     [`${prefix}_monster_effect`]: monsterEffect,
+    [`${prefix}_usage_time`]: usageTime,
   });
 }
 
-function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, name, rank, targeting }: {
+function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, name, rank, targeting, usageTime }: {
   accuracyModifier: number;
   areaShape: MonsterAttackAreaShape;
   debuff: MonsterAttackDebuff;
@@ -2054,6 +2062,7 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, n
   name: string;
   rank: number;
   targeting: MonsterAttackTargeting;
+  usageTime: MonsterAttackUsageTime;
 }) {
   const isTargeted = targetingIsTargeted(targeting);
   let availableRank = rank + calculateEffectRankModifier(targeting);
@@ -2124,6 +2133,7 @@ Hit: ${hitEffect}`;
     [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
     [`${prefix}_monster_effect`]: monsterEffect,
+    [`${prefix}_usage_time`]: usageTime,
   });
 }
 

@@ -115,7 +115,7 @@ export class RepeatingSection {
       throw new Error(`Must include rowPropertyName when setting a property: ${fullPropertyName}.`);
     }
     const row = this.getRow(rowId);
-    const previousValue = row.getProperty(fullPropertyName).value;
+    const previousValue = row.getProperty(rowPropertyName).value;
     row.setProperty(rowPropertyName, newValue);
     this.setEmitter.trigger(this, {
       newValue,
