@@ -8,4 +8,5 @@ export * from "./spell_effect";
 export * from "./spell_narrative";
 export * from "./spell_scaling";
 export * from "./spell_type_prefix";
+export * from "./title_case";
 export * from "./uppercase_first";

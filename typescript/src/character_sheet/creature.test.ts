@@ -120,6 +120,7 @@ Hit: The target is dazzled as a condition.`,
     "is_targeted": true,
     "monster_effect": `The $name makes an attack against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
+    "tags": "",
     "usage_time": "standard",
   }]);
 
@@ -152,6 +153,7 @@ Miss: Half damage.`,
     "monster_effect": `The $name makes an attack against everything in a 15 foot radius within 30 feet.
 Hit: 1d8+3 damage.
 Miss: Half damage.`,
+    "tags": "",
     "usage_time": "standard",
   }]);
 

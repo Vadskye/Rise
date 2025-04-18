@@ -20,6 +20,7 @@ import {
   RiseSize,
   RiseSkill,
   RiseSpecialDefense,
+  RiseTag,
 } from '@src/character_sheet/rise_data';
 
 // These have unique typedefs beyond the standard string/number/bool
@@ -55,8 +56,6 @@ export type CreaturePropertyMap = {
 
 type CreatureProperty = CustomCreatureProperty | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
 
-// TODO: list them all individually?
-export type RiseAbilityTag = string;
 // These are the defenses as displayed in attacks, not the defense statistics on
 // characters
 export type RiseDefenseHumanReadable = "Armor" | "Fortitude" | "Reflex" | "Mental";
@@ -68,7 +67,7 @@ export interface AutoAttackConfig {
   effect: "damage" | MonsterAttackDebuff;
   isMagical: boolean;
   name: string;
-  tags?: RiseAbilityTag[];
+  tags?: RiseTag[];
   targeting: MonsterAttackTargeting;
   usageTime?: MonsterAttackUsageTime;
 }
@@ -82,6 +81,7 @@ export interface DamagingAutoAttackResult {
   is_magical: boolean;
   is_targeted: boolean;
   monster_effect: string;
+  tags: string;
   usage_time: MonsterAttackUsageTime;
 }
 const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
@@ -92,6 +92,7 @@ const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
   "is_magical",
   "is_targeted",
   "monster_effect",
+  "tags",
   "usage_time",
 ];
 
@@ -102,6 +103,7 @@ export interface DebuffAutoAttackResult {
   is_magical: boolean;
   is_targeted: boolean;
   monster_effect: string;
+  tags: string;
   usage_time: MonsterAttackUsageTime;
 }
 const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
@@ -111,6 +113,7 @@ const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
   "is_magical",
   "is_targeted",
   "monster_effect",
+  "tags",
   "usage_time",
 ];
 
@@ -119,7 +122,7 @@ export interface CustomAttackConfig {
   isMagical: boolean;
   name: string;
   usageTime?: MonsterAttackUsageTime;
-  tags?: RiseAbilityTag[];
+  tags?: RiseTag[];
 }
 
 // TODO: add more standard modifiers, add infra for their effects
@@ -225,7 +228,7 @@ export class Creature implements CreaturePropertyMap {
       [`${prefix}_attack_name`]: config.name,
       [`${prefix}_attack_effect`]: config.effect,
       [`${prefix}_usage_time`]: config.usageTime,
-      [`${prefix}_tags`]: config.tags?.join(","),
+      [`${prefix}_tags`]: config.tags?.join(", ") || "",
     });
   }
 
@@ -246,7 +249,7 @@ export class Creature implements CreaturePropertyMap {
     const prefix = `${sectionName}_${this.sheet.getLatestRowId()}`;
     this.sheet.setProperties({
       [`${prefix}_defense`]: config.defense.join(" and "),
-      [`${prefix}_tags`]: config.tags?.join(", "),
+      [`${prefix}_tags`]: config.tags?.join(", ") || "",
     });
   }
 
