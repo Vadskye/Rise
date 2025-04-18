@@ -1,7 +1,8 @@
 import { CharacterSheet } from '@src/character_sheet/character_sheet';
 import { getCurrentCharacterSheet, setCurrentCharacterSheet, resetDefaultCharacterSheet } from '@src/character_sheet/current_character_sheet';
-import { MonsterAttackAccuracy, MonsterAttackAreaShape, MonsterAttackTargeting, MonsterAttackDebuff } from '@src/character_sheet/sheet_worker';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
+import {
+  handleEverything, MonsterAttackAccuracy, MonsterAttackAreaShape, MonsterAttackTargeting, MonsterAttackDebuff, MonsterAttackUsageTime
+} from '@src/character_sheet/sheet_worker';
 import {
   RiseAlignment,
   RiseAttribute,
@@ -59,7 +60,6 @@ export type RiseAbilityTag = string;
 // These are the defenses as displayed in attacks, not the defense statistics on
 // characters
 export type RiseDefenseHumanReadable = "Armor" | "Fortitude" | "Reflex" | "Mental";
-export type RiseAbilityUsageTime = 'standard' | 'elite' | 'minor';
 
 export interface AutoAttackConfig {
   accuracy?: MonsterAttackAccuracy;
@@ -70,7 +70,7 @@ export interface AutoAttackConfig {
   name: string;
   tags?: RiseAbilityTag[];
   targeting: MonsterAttackTargeting;
-  usageTime?: RiseAbilityUsageTime;
+  usageTime?: MonsterAttackUsageTime;
 }
 
 // This matches the `setAttrs()` in `createDamagingMonsterAttack()`.
@@ -82,6 +82,7 @@ export interface DamagingAutoAttackResult {
   is_magical: boolean;
   is_targeted: boolean;
   monster_effect: string;
+  usage_time: MonsterAttackUsageTime;
 }
 const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
   "attack_accuracy",
@@ -91,6 +92,7 @@ const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
   "is_magical",
   "is_targeted",
   "monster_effect",
+  "usage_time",
 ];
 
 export interface DebuffAutoAttackResult {
@@ -100,6 +102,7 @@ export interface DebuffAutoAttackResult {
   is_magical: boolean;
   is_targeted: boolean;
   monster_effect: string;
+  usage_time: MonsterAttackUsageTime;
 }
 const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
   "attack_accuracy",
@@ -108,13 +111,14 @@ const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
   "is_magical",
   "is_targeted",
   "monster_effect",
+  "usage_time",
 ];
 
 export interface CustomAttackConfig {
   effect: string;
   isMagical: boolean;
   name: string;
-  usageTime?: RiseAbilityUsageTime;
+  usageTime?: MonsterAttackUsageTime;
   tags?: RiseAbilityTag[];
 }
 
@@ -233,6 +237,7 @@ export class Creature implements CreaturePropertyMap {
       monster_attack_is_magical: config.isMagical,
       monster_attack_name: config.name,
       monster_attack_targeting: config.targeting,
+      monster_attack_usage_time: config.usageTime,
     });
 
     this.sheet.clickButton("createmonsterattack");
@@ -242,7 +247,6 @@ export class Creature implements CreaturePropertyMap {
     this.sheet.setProperties({
       [`${prefix}_defense`]: config.defense.join(" and "),
       [`${prefix}_tags`]: config.tags?.join(", "),
-      [`${prefix}_usage_time`]: config.tags?.join(", "),
     });
   }
 
