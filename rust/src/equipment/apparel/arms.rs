@@ -234,14 +234,9 @@ fn gloves() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Make dual strikes without Dexterity"),
         description: String::from(r"
-            You can make \glossterm<dual strikes> even if your Dexterity is less than 1 (see \pcref{Dual Strikes}).
+            You can make \glossterm<dual strikes> even if your Dexterity is less than 2 (see \pcref{Dual Strikes}).
         "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Make dual strikes easily without Dexterity", "
-                You also reduce your accuracy penalty while making dual strikes from -5 to -4, as if you had 4 Dexterity.
-                This does not reduce the penalty if you do have 4 Dexterity.
-            "),
-        ],
+        upgrades: vec![],
         ..Apparel::default()
     }));
 
