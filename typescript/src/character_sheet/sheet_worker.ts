@@ -2018,19 +2018,20 @@ function createDamagingMonsterAttack({ accuracyModifier, areaShape, isMagical, n
     10: `${power + 2}d10`,  // Not tested; may be too low
   }[damageRank] || `Rank ${damageRank} is not supported`;
 
+  const accuracyText = calcMonsterAccuracyText(accuracyModifier);
   const isTargeted = targetingIsTargeted(targeting);
   let effect = "";
   let monsterEffect = "";
   if (isTargeted) {
     const range = calcTargetedText(targeting);
     effect = `Make an attack against something ${range}.`;
-    monsterEffect = `The $name makes an attack against something ${range}.
+    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
 Hit: ${damageDice} damage.`;
   } else {
     const area = calcAttackArea({ areaShape, rank, targeting });
     effect = `Make an attack against everything in a ${area}.
 Miss: Half damage.`;
-    monsterEffect = `The $name makes an attack against everything in a ${area}.
+    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
 Hit: ${damageDice} damage.
 Miss: Half damage.`;
   }
@@ -2052,6 +2053,16 @@ Miss: Half damage.`;
     [`${prefix}_monster_effect`]: monsterEffect,
     [`${prefix}_usage_time`]: usageTime,
   });
+}
+
+function calcMonsterAccuracyText(accuracyModifier: number) {
+  if (accuracyModifier < 0) {
+    return `$accuracy${accuracyModifier}`;
+  } else if (accuracyModifier > 0) {
+    return `$accuracy+${accuracyModifier}`;
+  } else {
+    return '$accuracy';
+  }
 }
 
 function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, name, rank, targeting, usageTime }: {
@@ -2099,6 +2110,7 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, n
     accuracyModifier += (availableRank - debuffRank) * 2;
   }
 
+  const accuracyText = calcMonsterAccuracyText(accuracyModifier);
   let effect = "";
   let monsterEffect = "";
   if (isTargeted) {
@@ -2109,17 +2121,20 @@ function createMonsterDebuff({ accuracyModifier, areaShape, debuff, isMagical, n
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
 Hit: ${hitEffect}`;
-    monsterEffect = `The $name makes an attack against something ${range}.
+    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
 Hit: ${hitEffect}`;
   } else {
     const area = calcAttackArea({ areaShape, rank, targeting });
+    if (!area) {
+      throw new Error(`Unable to calculate area: ${JSON.stringify({areaShape, rank, targeting})}.`);
+    }
 
     const hitEffect = requiresNoDamageResistance
       ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
 Hit: ${hitEffect}`;
-    monsterEffect = `The $name makes an attack against everything in a ${area}.
+    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
 Hit: ${hitEffect}`;
   }
 

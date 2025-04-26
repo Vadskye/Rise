@@ -4,6 +4,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import * as format from "@src/latex/format";
 import { caseInsensitiveSort } from '@src/util/sort';
+import { convertAttackToLatex } from "@src/latex/monster_attacks";
 
 export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
@@ -228,6 +229,11 @@ function genAttributesText(monster: Creature): string {
 }
 
 function genAbilitiesText(monster: Creature): string {
-  // TODO
-  return "";
+  // TODO: handle passive abilities
+  const allAttacks = [
+    ...monster.getDebuffAutoAttacks(),
+    ...monster.getDamagingAutoAttacks(),
+  ].sort((a, b) => caseInsensitiveSort(a.attack_name, b.attack_name));
+
+  return allAttacks.map(convertAttackToLatex).join("\n");
 }
