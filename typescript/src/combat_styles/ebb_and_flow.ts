@@ -28,6 +28,7 @@ export const ebbAndFlow: CombatStyle = {
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
+      roles: ['retaliate'],
       tags: ['Swift'],
     },
 
@@ -41,6 +42,7 @@ export const ebbAndFlow: CombatStyle = {
         You can only respond once in this way, even if the creature attacks you multiple times.
       `,
       rank: 5,
+      roles: ['retaliate'],
       tags: ['Swift'],
     },
 
@@ -52,6 +54,7 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} last round.
       `,
       rank: 1,
+      roles: ['burst', 'payoff'],
     },
 
     {
