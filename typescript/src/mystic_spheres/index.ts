@@ -70,6 +70,7 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
+  role: AbilityRole[];
   scaling?: "accuracy" | "double_accuracy" | "poison" | Record<string, string>;
   tableText?: string;
   tags?: string[];
@@ -85,6 +86,8 @@ export interface BaseSpellLike {
   | "Sustain (attuneable, minor)"
   | "Sustain (attuneable, standard)";
 }
+
+export type AbilityRole = "charge" | "cleanse" | "clear" | "dive" | "goad" | "flash" | "hazard" | "burn" | "execute" | "softener" | "stasis" | "trip" | "artillery" | "barrier" | "healing" | "kite" | "retreat" | "turtle" | "wildfire" | "ramp" | "snipe" | "focus" | "generator" | "stasis";
 
 export type Cantrip = BaseSpellLike;
 
