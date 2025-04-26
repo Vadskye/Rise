@@ -66,11 +66,11 @@ There are four comparative strength contexts. Note that htese specifically refer
 
 * Superiority + Swarm = Bug Swatting:
   * Preferred effects:
-    * Absorption: Flat damage reduction to mitigate individual enemy hits
     * Charge: Rush into melee and deal damage
     * Cleanse: Remove conditions to avoid debuffs that can bring you down to the swarm's level; they will eventually roll a 10 to hit with a debuff
     * Clear: Short to mid range AOE immediate damage to quickly kill enemies
     * Dive: Move through enemies and make melee attacks to hit the most relevant targets in the swarm
+    * Goad
     * Flash: AOE brief debuffs to incapacitate enemies in bulk
     * Hazard: Creating an aoe battlefield hazard can affect enemies in bulk and constrain their mobility
   * Preferred costs:
@@ -82,12 +82,13 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Burn: Single-target damage over time optimizes damage output on a boss, who will often reach the full duration
     * Execute: High single-target damage on an injured or vulnerable target, since bosses often have a large HP pool
     * Goad: Redirect attention away from more vulnerable allies, such a with goading as a condition
-    * Payoff: Stronger ability with unusual prerequisites that generally require coordination and/or multiple weaker actions to fulfill
     * Softener: Single-target debuff condition without prerequisites to make sure the rest of your party can also hit the boss
     * Stasis: One-round single-target debuff to remove a boss's action
-    * Unbalance: One-round single-target defense debuff to support party attacks
+    * Trip: One-round single-target defense debuff to support party attacks
   * Preferred costs:
     * Defense penalty: Even with a defense penalty, you may still be a suboptimal target for a boss attack relative to an ally
+    * Payoff: Unusual prerequisites that generally require coordination and/or multiple weaker actions to fulfill
+    * Short range: Not a downside since you are a good target for the boss
 * Inferiority + Swarm = Keepaway
   * Preferred effects:
     * Artillery: Long-range AOE damage to contribute while staying out of danger
@@ -121,7 +122,6 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Artillery
     * Clear
     * Kite
-    * Reap: Has benefits when you defeat an enemy with it
   * Preferred costs:
     * Defense penalties: You'll get hit anyway if they attack you
 * Glass Cannon + Boss = Rocket Tag
@@ -131,4 +131,32 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Kite
     * Snipe
     * Stasis
-* Tank + Swarm = 
+  * Preferred costs:
+    * Execute: Only works on targets in HP
+* Tank + Swarm = Fly Swatting
+  * Preferred effects:
+    * Barrier
+    * Boon
+    * Cleanse
+    * Dive
+    * Flash
+    * Goad
+    * Hazard
+    * Healing
+    * Ramp
+    * Wildfire
+* Tank + Boss = Irritation
+  * Preferred effects:
+    * Barrier
+    * Boon
+    * Focus
+    * Generator
+    * Goad
+    * Hazard
+    * Healing
+    * Ramp
+    * Stasis
+    * Turtle
+    * Trip
+  * Preferred costs:
+    * Execute
