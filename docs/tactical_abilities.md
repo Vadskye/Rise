@@ -83,13 +83,13 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Burst: Single-target immediate damage, especially to get the boss into HP as quickly as possible
     * Execute: Single-target immediate damage that requires the target to be in hit points
     * Goad: Redirect attention away from more vulnerable allies, such a with goading as a condition
+    * Payoff: Ability with unusual prerequisites that generally require coordination and/or multiple weaker actions to fulfill
     * Retaliate: Single-target damage with a bonus if the target attacked you
     * Softener: Single-target debuff condition without prerequisites
     * Stasis: One-round single-target debuff to remove a boss's action
     * Trip: One-round single-target defense debuff to support party attacks
   * Preferred costs:
     * Defense penalty: Even with a defense penalty, you may still be a suboptimal target for a boss attack relative to an ally
-    * Payoff: Unusual prerequisites that generally require coordination and/or multiple weaker actions to fulfill
     * Short range: Not a downside since you are a good target for the boss
 * Inferiority + Swarm = Keepaway
   * Preferred effects:

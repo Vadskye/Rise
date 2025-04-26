@@ -106,6 +106,7 @@ export const ABILITY_ROLES = [
   'healing',
   'kite',
   'maim',
+  'payoff',
   'ramp',
   'retaliate',
   'retreat',
