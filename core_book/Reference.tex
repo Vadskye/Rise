@@ -263,23 +263,6 @@
   It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
   Blindsight does not require using eyes.
 
-  % TODO: should constructs regain hit points and DR when they rest?
-  \traitdef{Construct}{construct}
-    A construct is a creature that is made of nonsapient matter.
-    Its inanimate body is given a semblance of life and sentience by some form of magic.
-    Like other creatures, they can move and follow instructions.
-    However, they lack agency and cannot make the independent decisions.
-    They are \trait{mindless}, making them immune to \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
-    Constructs lack a soul and cannot be resurrected by any means if they are destroyed.
-
-    Constructs are considered to be both creatures and objects, and are affected by abilities which affect either.
-    They are not alive, and they do not need to eat, drink, or sleep.
-    They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
-
-    Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
-    Instead, their vital wounds must be repaired manually.
-    This functions like like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
-
   \traitdef{Darkvision}{darkvision}
   A creature with darkvision can see perfectly in both complete darkness and \glossterm{shadowy illumination} just like a human does in \glossterm{bright illumination}.
   Darkvision always has a specific range limit, and provides no benefit beyond that range.
@@ -321,22 +304,6 @@
   While an incorporeal creature is inside of an object, it can choose whether it is completely enveloped or partially contained.
   If it is completely enveloped, it does not have \glossterm{line of sight} or \glossterm{line of effect} outside of the object, limiting its ability to attack.
   If it is partially contained, it has \glossterm{cover}, but can otherwise attack and be attacked normally.
-
-  \traitdef{Indwelt}{indwelt}
-    An indwelt is a creature that is made of nonsapient matter.
-    Their inanimate bodies are awakened to life by connection to an external soul.
-    They have agency and true intelligence like normal creatures.
-
-    The soul of an indwelt has no connection to the matter that composes its body.
-    This contrasts with undead, which always maintain a connection between a body and its original soul.
-    As a result, an indwelt's connection to its physical body is weak.
-    If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
-    This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
-
-    Indwelt are considered to be both creatures and objects, and are affected by abilities which affect either.
-    They are alive if their base matter is alive, but not if their base matter is dead or inorganic.
-    If they are alive, they need to eat, drink, and sleep.
-    They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
 
   \traitdef{Intangible}{intangible}
   An intangible creature has a physical body that is gaseous or otherwise amorphous.
@@ -433,7 +400,96 @@
   If a creature would be both vulnerable and \impervious or immune to an ability, it is treated as vulnerable and not impervious or immune.
   % For attacks with random effects, such as the \ability{sudden entropy} ability from the Entropist feat, determine the random effect before determining if the creature is vulnerable.
 
-  \traitdef{Undead}{undead}
+\newpage
+\section{Creature Tags}\label{Creature Tags}
+
+  Creatures can have tags.
+  Unlike traits, which are defined above, creature tags are intrinsic properties of a creature that cannot be granted or removed temporarily by any means.
+  Each creature tag has a defined narrative implication, and many creature tags also affect a creature's abilities.
+  If a creature tag has combat-relevant effects, those effects will be included in its main description.
+  However, less common narrative effects of creature tags are only defined fully here.
+
+  If one tag always comes with other tags, only the primary tag is listed in a creature's description.
+  For example, all creatures with the \creaturetag{Dragon} tag also have the \creaturetag{Immortal} tag, but a monster's description would only list the \creaturetag{Dragon} tag to save space.
+
+  By default, a creature with no tags is assumed to be a \glossterm{living} creature with a body, mind, and soul.
+  It needs to eat, drink, and sleep, and it dies of old age eventually.
+
+  \creaturetagdef{Aberration}{aberration}
+  Aberrations have souls that are owned by the Precursors in the Eternal Void.
+  When an aberration dies, its soul does not splinter, and neither Nature nor ordinary deities can claim any reward.
+  Instead, the soul slowly drifts through the Astral Plane for centuries until it finally returns to the Eternal Void.
+
+  \creaturetagdef{Animal}{animal}
+  Animals are simple, \glossterm{mundane} creatures.
+  They cannot have \magical abilities, and cannot have an Intelligence above \minus8.
+  The Creature Handling skill is more effective on animals, as indicated in that skill's description.
+
+  % TODO: should constructs regain hit points and DR when they rest?
+  \creaturetagdef{Construct}{construct} A construct is a creature that is made of nonsapient matter.
+  Its inanimate body is given a semblance of life and sentience by some form of magic.
+  Like other creatures, they can move and follow instructions.
+  However, they lack agency and cannot make the independent decisions.
+  They are \trait{mindless}, making them immune to \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
+  Constructs lack a soul and cannot be resurrected by any means if they are destroyed.
+
+  Constructs are considered to be both creatures and objects, and are affected by abilities which affect either.
+  They are not alive, and they do not need to eat, drink, or sleep.
+  They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+
+  Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
+  Instead, their vital wounds must be repaired manually.
+  This functions like like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
+
+  \creaturetagdef{Dragon}{dragon} A dragon is a powerful magical creature with four legs and two wings.
+  Dragons are \creaturetag{immortal} creatures that can feed on magic and valuable metals, including gold. 
+  They are known for their vast hoards of wealth.
+  Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
+
+  % TODO: What makes fey unique? Short lifespan?
+  \creaturetagdef{Fey}{fey}
+  Fey are \magical creatures that are vulnerable to cold iron weapons.
+  They have a natural connection to Discord, the plane of chaos, but are not planeforged.
+
+  \creaturetagdef{Humanoid}{humanoid}
+  A humanoid is a Medium creature with two arms and two legs.
+  Humanoids can have magical abilities, but are usually not intrinsically magical.
+  Most civilized creatures and societies are predominantly humanoid.
+
+  \creaturetagdef{Immortal}{immortal}
+  An immortal creature can never die of old age.
+  Most immortal creatures can still be killed and need to take actions to sustain their life, such as eating and drinking.
+  Some immortal creatures completely cease aging once they reach maturity, while others continue to grow or change over time without limit.
+
+  \creaturetagdef{Indwelt}{indwelt}
+  An indwelt is a creature that is made of nonsapient matter.
+  Its inanimate body was awakened to life by connection to an external soul.
+  Unlike constructs, indwelt have agency and true intelligence.
+
+  The soul of an indwelt has no connection to the matter that composes its body.
+  This contrasts with undead, which always maintain a connection between a body and its original soul.
+  As a result, an indwelt's connection to its physical body is weak.
+  If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
+  This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
+
+  Indwelt are considered to be both creatures and objects, and are affected by abilities which affect either.
+  They are alive if their base matter is alive, but not if their base matter is dead or inorganic.
+  If they are alive, they need to eat, drink, and sleep.
+  They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+
+  \creaturetagdef{Planebound}{planebound}
+  A planebound creature cannot leave a specific plane by any means.
+  Effects which would cause it to leave that plane have no effect on that creature.
+  Most planebound creatures are \creaturetag{planeforged} creatures from that plane.
+
+  \creaturetagdef{Planeforged}{planeforged}
+  A planeforged is a creature that is made from the concentrated planar essence of only one or two planes.
+  It is not \glossterm{living}.
+  When a planeforged dies, its soul generally does not splinter.
+  Instead, the soul returns intact to its home plane, where it may reform a new body if it still has the necessary willpower.
+  Some planeforged are also \creaturetag{planebound}, including the bodies of dead souls in their afterlife.
+
+  \creaturetagdef{Undead}{undead}
   Undead are creatures that are made from the corpse or spirit of a dead creature.
   They are animated by some part of the soul of the original creature.
 
