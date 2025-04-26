@@ -36,18 +36,18 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   return `
     ${pagebreakText}
     \\par \\noindent
-    \\begin<minipage><\\columnwidth>
-        \\${sectionName}<${monster.name}><${monster.level} ${monster.role}>${eliteText}
-        \\monstersize${sizeStarText}<${monster.size} ${monster.creature_type}>
+    \\begin{minipage}{\\columnwidth}
+        \\${sectionName}{${monster.name}}{${monster.level} ${monster.role}}${eliteText}
+        \\monstersize${sizeStarText}{${monster.size} ${monster.creature_type}}
         ${genArtText(monster)}
-    \\end<minipage>
+    \\end{minipage}
     ${monster.description || ""}
     ${knowledgeText}
     ${contentBufferText}
 
     \\par \\RaggedRight
     ${genStatisticsText(monster)}
-    \\monsterabilitiesheader<$Name>
+    \\monsterabilitiesheader{$Name}
     ${genAbilitiesText(monster)}
   `;
 }
@@ -68,7 +68,7 @@ function genArtText(monster: Creature, parentGroupName?: string): string {
   }
   const name = monster.name.toLowerCase();
   const path = parentGroupName ? `${parentGroupName} - ${name}` : name;
-  return `\\noindent\\includegraphics[width=\\columnwidth]<monsters/${path}>\\vspace<0.5em>`;
+  return `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${path}}\\vspace{0.5em}`;
 }
 
 export function genKnowledgeText(monster: Creature): string {
