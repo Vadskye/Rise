@@ -21,6 +21,7 @@ import {
   RiseSkill,
   RiseSpecialDefense,
   RiseTag,
+  RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
 
 // These have unique typedefs beyond the standard string/number/bool
@@ -53,6 +54,9 @@ export type CreaturePropertyMap = {
   & Record<NumericCreatureProperty, number>
   & Record<StringCreatureProperty, string>
   & Record<BooleanCreatureProperty, boolean>;
+
+export type CreatureRequiredProperties = "alignment" | "base_class" | "challenge_rating" | "creature_type" | "level";
+export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties>;
 
 type CreatureProperty = CustomCreatureProperty | BooleanCreatureProperty | NumericCreatureProperty | StringCreatureProperty;
 
@@ -95,6 +99,8 @@ const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
   "tags",
   "usage_time",
 ];
+
+export type CreatureAttack = DamagingAutoAttackResult | DebuffAutoAttackResult;
 
 export interface DebuffAutoAttackResult {
   attack_accuracy: number;
@@ -233,6 +239,9 @@ export class Creature implements CreaturePropertyMap {
   }
 
   addAutoAttack(config: AutoAttackConfig) {
+    if (!this.level) {
+      throw new Error(`Creature ${this.name} must have level before adding an autoattack`);
+    }
     this.sheet.setProperties({
       monster_attack_accuracy: config.accuracy || "normal",
       monster_attack_area_shape: config.areaShape || "default",
@@ -343,6 +352,10 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet.getRepeatingSection("nondamagingattacks").getValuesFromAllRows(DEBUFF_RESULT_KEYS) as any[];
   }
 
+  setRequiredProperties(properties: CreatureRequiredPropertyMap) {
+    this.setProperties(properties);
+  }
+
   setProperties(properties: Partial<CreaturePropertyMap>) {
     this.sheet.setProperties(properties);
   }
@@ -379,6 +392,22 @@ export class Creature implements CreaturePropertyMap {
       props[`repeating_trainedskills_${rowId}_trained_skill`] = skillName;
     }
     this.sheet.setProperties(props);
+  }
+
+  // This should include all logic that automatically applies a weapon tag to strikes.
+  // Currently, the only relevant logic is the size-based Sweeping tag.
+  getAutomaticStrikeTags(): RiseWeaponTag[] {
+    return {
+      Fine: [],
+      Diminuitive: [],
+      Tiny: [],
+      Small: [],
+      Medium: [],
+      Large: [],
+      Huge: ["Sweeping (1)"],
+      Gargantuan: ["Sweeping (2)"],
+      Colossal: ["Sweeping (3)"],
+    }[this.size];
   }
 
   // Getters
