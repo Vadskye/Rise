@@ -1,40 +1,32 @@
 export function latexify(text: string): string {
-  if (text.includes("<") || text.includes(">")) {
-    console.error(`Problem latexifying text: contains <> (${text.trim().slice(0, 30)})`);
-  }
+  // It's sometimes valid to use '>' for table column definitions
+  warnIfPattern(text, />[^{]/, "contains '>'");
+  warnIfPattern(text, /</, "contains '<'");
+  warnIfPattern(text, /[^\\]pcref\{.*/, "contains unprefixed pcref");
 
-  const pcrefMatch = text.match(/[^\\]pcref\{.*/g)
-  if (pcrefMatch) {
-    console.error(`Problem latexifying text: contains unprefixed pcref (${pcrefMatch.slice(0, 30)})`);
-  }
-  const traitMatch = text.match(/[^\\]trait\{.*/g);
-  if (traitMatch) {
-    console.error(`Problem latexifying text: contains unprefixed trait (${traitMatch.slice(0, 30)})`);
-  }
-  const glosstermMatch = text.match(/[^\\]glossterm\{.*/g);
-  if (glosstermMatch) {
-    console.error(`Problem latexifying text: contains unprefixed glossterm (${glosstermMatch.slice(0, 30)})`);
-  }
-  const tabMatch = text.match(/\t.*/g);
-  if (tabMatch) {
-    console.error(`Problem latexifying text: contains actual tab character (${tabMatch.slice(0, 30)})`);
-  }
-  const plusMatch = text.match(/[^\\]plus\d.*/g);
-  if (plusMatch) {
-    console.error(`Problem latexifying text: contains unprefixed add (${plusMatch.slice(0, 30)})`);
-  }
-  const minusMatch = text.match(/[^\\]minus\d.*/g);
-  if (minusMatch) {
-    console.error(`Problem latexifying text: contains unprefixed minus (${minusMatch.slice(0, 30)})`);
-  }
-  const damageRankMatch = text.match(/[^\\]damagerank\{.*/g)
-  if (damageRankMatch) {
-    console.error(`Problem latexifying text: contains unprefixed damagerank (${damageRankMatch.slice(0, 30)})`);
-  }
+  warnIfPattern(text, /[^\\]trait\{.*/, "contains unprefixed trait");
+
+  warnIfPattern(text, /[^\\]glossterm\{.*/, "contains unprefixed glossterm");
+
+  warnIfPattern(text, /\t.*/, "contains actual tab character");
+
+  warnIfPattern(text, /[^\\]plus\d.*/, "contains unprefixed add");
+
+  warnIfPattern(text, /[^\\]minus\d.*/, "contains unprefixed minus");
+
+  warnIfPattern(text, /[^\\]damagerank\{.*/, "contains unprefixed damagerank");
 
   return text
     .replace(/ \+ /g, " \\add ")
     .replace(/\+(\d)/g, "\\plus$1")
     .replace(/ - (\d)/g, " \\sub $1")
     .replace(/-(\d)/, "\\minus$1");
+}
+
+function warnIfPattern(text: string, pattern: RegExp, explanation: string) {
+  if (text.match(pattern)) {
+    const sliceStart = Math.max(0, text.search(pattern) - 15);
+    const sliceEnd = Math.min(text.length, sliceStart + 30);
+    console.error(`Problem latexifying text: ${explanation} (${text.slice(sliceStart, sliceEnd)})`);
+  }
 }
