@@ -55,6 +55,8 @@ g rust
 rtgen
 
 g rise
+# Make sure the directory exists so we can safely remove it with rm -r
+mkdir -p html_book/generated
 rm -r html_book/generated
 cp -r core_book/generated html_book/generated
 cp -r comprehensive_codex/generated/* html_book/generated
