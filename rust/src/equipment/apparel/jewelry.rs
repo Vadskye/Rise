@@ -299,28 +299,45 @@ fn amulets() -> Vec<Apparel> {
             It provides that weapon property to all of your \glossterm{natural weapons} that do not require a free hand to use, such as a bite.
             Different versions of this item exist for each rank 1 magic weapon property.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(2, r"Grants a rank 2 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 2.
-            "),
-            ItemUpgrade::new(3, r"Grants a rank 3 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 3.
-            "),
-            ItemUpgrade::new(4, r"Grants a rank 4 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 4.
-            "),
-            ItemUpgrade::new(5, r"Grants a rank 5 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 5.
-            "),
-            ItemUpgrade::new(6, r"Grants a rank 6 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 6.
-            "),
-            ItemUpgrade::new(7, r"Grants a rank 7 magic weapon property to natural weapons", r"
-                The magic weapon property is rank 7.
-            "),
-        ],
         ..Apparel::default()
     }));
+
+    implements.push(Amulet(StandardItem {
+        name: String::from("Collar of Imbuement (2)"),
+        rank: 2,
+        short_description: String::from(r"Grants a rank 2 magic weapon property to natural weapons"),
+        description: String::from(r"
+            This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 2.
+        "),
+        ..Implement::default()
+    }));
+
+    implements.push(Amulet(StandardItem {
+        name: String::from("Collar of Imbuement (3)"),
+        rank: 3,
+        short_description: String::from(r"Grants a rank 3 magic weapon property to natural weapons"),
+        description: String::from(r"
+            This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 3.
+        "),
+        ..Implement::default()
+    }));
+
+    fn nth_collar(rank: i32) -> Implement {
+        Amulet(StandardItem {
+            name: format!("Collar of Imbuement ({})", rank),
+            rank,
+            short_description: format!(r"Grants a rank {} magic weapon property to natural weapons", rank),
+            description: format!("
+                This item functions like a \\mitem<collar of imbuement>, except that the magic weapon property is rank {}.
+            ", rank),
+            ..Implement::default()
+        })
+    }
+
+    implements.push(nth_collar(4));
+    implements.push(nth_collar(5));
+    implements.push(nth_collar(6));
+    implements.push(nth_collar(7));
 
     apparel
 }
