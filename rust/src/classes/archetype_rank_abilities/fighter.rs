@@ -298,6 +298,9 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain the ability to customize your martial maneuvers.
                 For each rank 1 martial maneuver you know, choose one augment from the list below and apply it to that maneuver.
+                The augment permanently changes the maneuver, so you can't use an unaugmented version of the maneuver.
+                However, you can learn the same maneuver more than once and apply different augments to each version.
+
                 Augments scale in power with your ``excess rank''.
                 Your excess rank with a maneuver is equal to your rank in this archetype minus the rank of the maneuver.
 
