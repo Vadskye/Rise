@@ -256,13 +256,15 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{attuneability}*{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}}
+                \begin{attuneability}*{Quarry}{\abilitytag{Attune}, \abilitytag{Subtle}, \atSwift}
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
                     You and your \glossterm{allies} within the same range are called your hunting party.
                     Your hunting party gains a \plus1 bonus to \glossterm{accuracy} against your quarry.
+
+                    After you use this ability, you \glossterm{briefly} cannot use it again.
                 \end{attuneability}
             ",
             // TODO: this also affects allies
@@ -275,7 +277,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Quarry+",
             is_magical: false,
-            rank: 4,
+            rank: 5,
             description: r"
                 This ability now has the \abilitytag{Sustain} (attuneable, free) tag instead of the \abilitytag{Attune} tag (see \pcref{Sustained Abilities}).
             ",
@@ -388,11 +390,11 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Swarm Hunter}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
-                        When you use your \textit{quarry} ability, you can target any number of creatures to be your quarry.
+                        When you use your \textit{quarry} ability, you can choose an additional target as your quarry.
 
                         \rankline
-                        \rank{4} As a \glossterm{free action}, you can declare one creature you see to be your quarry in addition to any existing creatures.
-                        \rank{6} You can add any number of creatures as a free action instead of only one.
+                        \rank{4} The number of additional targets increases to four.
+                        \rank{6} You can choose any number of targets with your \textit{quarry} ability.
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
@@ -431,14 +433,14 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Flexible Hunting Style",
+            complexity: 0,
+            name: "Agile Hunter",
             is_magical: false,
-            rank: 5,
+            rank: 4,
             description: r"
-                You can change which \textit{hunting style} you have active as a \glossterm{minor action}.
+                You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
     ]
 }
