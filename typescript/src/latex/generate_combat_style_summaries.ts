@@ -1,9 +1,9 @@
-import { CombatStyle, combatStyles, Maneuver } from "@src/combat_styles";
-import { sortByRankAndLevel } from "@src/latex/convert_mystic_sphere_to_latex";
-import _ from "lodash";
+import { CombatStyle, combatStyles, Maneuver } from '@src/combat_styles';
+import { sortByRankAndLevel } from '@src/latex/convert_mystic_sphere_to_latex';
+import _ from 'lodash';
 
 export function generateCombatStyleSummaries(): string {
-  return combatStyles.map(generateCombatStyleSummary).join("\n");
+  return combatStyles.map(generateCombatStyleSummary).join('\n');
 }
 
 function generateCombatStyleSummary(style: CombatStyle): string {
@@ -20,7 +20,7 @@ function generateCombatStyleSummary(style: CombatStyle): string {
           generateManeuversSummary(`Rank ${rank}`, sortByRankAndLevel(maneuverByRank[rank])),
         )
         .filter(Boolean)
-        .join("\n")}
+        .join('\n')}
     }
   `;
 }
@@ -31,5 +31,5 @@ function generateManeuversSummary(category: string, maneuvers: Maneuver[]): stri
   }
   return `\\par\\noindent ${category}: ${maneuvers
     .map((m) => `\\maneuver{${m.name.toLowerCase()}}`)
-    .join(", ")}`;
+    .join(', ')}`;
 }

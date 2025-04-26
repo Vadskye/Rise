@@ -480,7 +480,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Mending',
 
-      cost: "One \\glossterm{fatigue level} from the target if it is a creature.",
+      cost: 'One \\glossterm{fatigue level} from the target if it is a creature.',
       // dr3 from short range. No healing buff since this is more versatile and in an odd
       // sphere for healing.
       effect: `
@@ -507,7 +507,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Brief Regeneration',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // At rank 4, expected power is about 9. Normal healing would be dr5, which is
       // 1d8+3d8 = 18. This is 27 instead, which is a big buff, but healing is generally
       // best as an emergency button and this requires planning.
@@ -522,7 +522,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Empowered Brief Regeneration',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // At rank 6, expected power is about 12. Normal healing would be dr8, which is
       // 10d8 = 45. This is 6d10 each = 66 instead, which is about 50% more like the rank
       // 3 version.
@@ -537,7 +537,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Vital Regeneration',
 
-      cost: "See text.",
+      cost: 'See text.',
       effect: `
         At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
         It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
@@ -890,7 +890,7 @@ export const polymorph: MysticSphere = {
         2: `
           The weapon can be made of any special material other than cold iron and silver (see \\pcref{Weapon Special Materials}).
           Its rank cannot exceed your spellcasting rank with this spell.
-        `
+        `,
       },
       type: 'Attune',
     },

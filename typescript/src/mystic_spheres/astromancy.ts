@@ -156,8 +156,9 @@ export const astromancy: MysticSphere = {
       name: 'Banishing Rift',
 
       functionsLike: {
-        name: "banishment",
-        exceptThat: "it affects all Large or smaller creatures in a \\medarea radius within \\medrange.",
+        name: 'banishment',
+        exceptThat:
+          'it affects all Large or smaller creatures in a \\medarea radius within \\medrange.',
       },
       rank: 3,
       scaling: 'accuracy',
@@ -167,8 +168,8 @@ export const astromancy: MysticSphere = {
       name: 'Efficient Banishment',
 
       functionsLike: {
-        name: "banishment",
-        exceptThat: "it works even if the target has damage resistance remaining.",
+        name: 'banishment',
+        exceptThat: 'it works even if the target has damage resistance remaining.',
       },
       rank: 5,
       scaling: 'accuracy',

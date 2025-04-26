@@ -6,7 +6,7 @@ let currentCharacterName: string;
 
 export function getCurrentCharacterSheet(): CharacterSheet {
   if (currentCharacterName === undefined) {
-    currentCharacterName = "default";
+    currentCharacterName = 'default';
   }
   if (!characters[currentCharacterName]) {
     characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
@@ -19,7 +19,7 @@ export function setCurrentCharacterSheet(characterName: string) {
 }
 
 export function resetDefaultCharacterSheet(): CharacterSheet {
-  currentCharacterName = "default";
+  currentCharacterName = 'default';
   characters[currentCharacterName] = new CharacterSheet(currentCharacterName);
   return characters[currentCharacterName];
 }

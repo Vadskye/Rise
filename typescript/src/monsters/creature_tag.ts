@@ -1,1 +1,10 @@
-export type CreatureTag = "aberration" | "animal" | "construct" | "fey" | "humanoid" | "indwelt" | "planebound" | "planeforged" | "undead";
+export type CreatureTag =
+  | 'aberration'
+  | 'animal'
+  | 'construct'
+  | 'fey'
+  | 'humanoid'
+  | 'indwelt'
+  | 'planebound'
+  | 'planeforged'
+  | 'undead';

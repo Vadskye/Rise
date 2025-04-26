@@ -483,7 +483,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Lightbeam Dash',
 
-      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
@@ -500,7 +500,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
-      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankfour.`,
         missGlance: true,
@@ -598,17 +598,17 @@ export const photomancy: MysticSphere = {
       rank: 3,
       type: 'Attune (target)',
     },
-  {
-    name: 'Malleable Disguise Image',
+    {
+      name: 'Malleable Disguise Image',
 
-    functionsLike: {
-      exceptThat: `
+      functionsLike: {
+        exceptThat: `
         you can change the nature of the disguise as a \\glossterm{minor action}.
       `,
-      name: 'disguise image',
+        name: 'disguise image',
+      },
+      rank: 4,
+      type: 'Attune',
     },
-    rank: 4,
-    type: 'Attune',
-  },
   ],
 };

@@ -84,8 +84,7 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'interposing force',
-        exceptThat:
-          'the \\glossterm{difficulty value} of the Strength check increases to 10.',
+        exceptThat: 'the \\glossterm{difficulty value} of the Strength check increases to 10.',
       },
       rank: 7,
       scaling: 'accuracy',
@@ -448,7 +447,7 @@ export const telekinesis: MysticSphere = {
       name: 'Efficient Floating Armament',
 
       functionsLike: {
-        name: "floating armament",
+        name: 'floating armament',
         exceptThat: EXCEPT_NOT_DEEP,
       },
       rank: 6,

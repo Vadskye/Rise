@@ -25,4 +25,4 @@ export class Property<T extends SimpleValue> {
       triggerName: `change:${this.propertyName}`,
     });
   }
-} 
+}

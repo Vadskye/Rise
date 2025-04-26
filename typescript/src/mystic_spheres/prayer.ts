@@ -174,7 +174,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Cleansing',
 
-      cost: "One \\glossterm{fatigue level} from each target.",
+      cost: 'One \\glossterm{fatigue level} from each target.',
       effect: `
         Two \\glossterm{allies} within \\medrange can each remove a \\glossterm{condition}.
       `,
@@ -184,7 +184,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Cleansing Benediction',
 
-      cost: "See text.",
+      cost: 'See text.',
       effect: `
         Each \\glossterm{ally} within a \\largearea radius from you can remove a \\glossterm{condition}.
         Each ally that removes a condition in this way increases its \\glossterm{fatigue level} by one.
@@ -238,7 +238,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Blessing of Cleansing Renewal',
 
-      cost: "See text.",
+      cost: 'See text.',
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         At the end of each round, each target may remove one \\glossterm{condition} of its choice affecting it.
@@ -298,7 +298,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
-      cost: "One \\glossterm{fatigue level} from each target.",
+      cost: 'One \\glossterm{fatigue level} from each target.',
       // dr3
       effect: `
         Choose two \\glossterm{allies} within \\medrange.

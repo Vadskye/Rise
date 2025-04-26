@@ -1,9 +1,9 @@
-import { MysticSphere, mysticSpheres, MysticSphereSource } from "@src/mystic_spheres";
-import { titleCase } from "change-case";
+import { MysticSphere, mysticSpheres, MysticSphereSource } from '@src/mystic_spheres';
+import { titleCase } from 'change-case';
 
 export function generateMysticSphereLists(): string {
-  const sources: MysticSphereSource[] = ["arcane", "divine", "nature", "pact"];
-  return sources.map(generateSourceList).join("\n");
+  const sources: MysticSphereSource[] = ['arcane', 'divine', 'nature', 'pact'];
+  return sources.map(generateSourceList).join('\n');
 }
 
 function generateSourceList(source: MysticSphereSource): string {
@@ -13,29 +13,29 @@ function generateSourceList(source: MysticSphereSource): string {
       \\RaggedRight
       \\subsection{${titleCase(source)} Mystic Spheres}\\label{${titleCase(source)} Mystic Spheres}
 
-      ${sourceSpheres.map(formatSphere).join("\n")}
+      ${sourceSpheres.map(formatSphere).join('\n')}
       ${
-        source === "divine"
+        source === 'divine'
           ? `
             \\subsubsection{Domain-Exclusive Spheres}
             ${mysticSpheres
-              .filter((sphere) => sphere.sources.includes("domain"))
+              .filter((sphere) => sphere.sources.includes('domain'))
               .map(formatSphere)
-              .join("\n")}
+              .join('\n')}
           `
-          : ""
+          : ''
       }
 
       ${
-        source === "pact"
+        source === 'pact'
           ? `
             \\subsubsection{Soulkeeper-Exclusive Spheres}
             ${mysticSpheres
-              .filter((sphere) => sphere.sources.includes("soulkeeper"))
+              .filter((sphere) => sphere.sources.includes('soulkeeper'))
               .map(formatSphere)
-              .join("\n")}
+              .join('\n')}
           `
-          : ""
+          : ''
       }
     }
   `;

@@ -8,8 +8,11 @@ import { multilineEqual } from '@src/util/testing';
 t.test('can convert an aboleth to latex', (t) => {
   const grimoire = new Grimoire();
   addAberrations(grimoire);
-  const aboleth = grimoire.getMonster("aboleth");
-  multilineEqual(t, convertMonsterToLatex(aboleth), `\\newpage
+  const aboleth = grimoire.getMonster('aboleth');
+  multilineEqual(
+    t,
+    convertMonsterToLatex(aboleth),
+    `\\newpage
       \\par \\noindent
       \\begin{minipage}{\\columnwidth}
           \\monsubsection{aboleth}{12 Mystic}[Elite]
@@ -41,26 +44,30 @@ t.test('can convert an aboleth to latex', (t) => {
 
       \\end{monsterstatistics}
 
-      \\monsterabilitiesheader{$Name}`);
+      \\monsterabilitiesheader{$Name}`,
+  );
   t.end();
 });
 
 t.test('can generate empty knowledge text', (t) => {
   const creature = Creature.new();
-  t.equal(genKnowledgeText(creature), "");
+  t.equal(genKnowledgeText(creature), '');
   t.end();
 });
 
 t.test('Can generate meaningful knowledge text', (t) => {
   const creature = Creature.new();
   creature.setProperties({
-    creature_type: "undead",
-    knowledge_result_easy: "Easy result",
+    creature_type: 'undead',
+    knowledge_result_easy: 'Easy result',
     level: 20,
-    knowledge_result_hard: "Hard result",
+    knowledge_result_hard: 'Hard result',
   });
 
-  t.equal(genKnowledgeText(creature), `\\par Knowledge (religion) 10: Easy result
-\\par Knowledge (religion) 20: Hard result`);
+  t.equal(
+    genKnowledgeText(creature),
+    `\\par Knowledge (religion) 10: Easy result
+\\par Knowledge (religion) 20: Hard result`,
+  );
   t.end();
 });

@@ -66,8 +66,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Unstable Heat',
 
       functionsLike: {
-        name: "unstable heat",
-        exceptThat: "the damage increases to \\damagerankfour.",
+        name: 'unstable heat',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -288,8 +288,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Ignition',
 
       functionsLike: {
-        name: "ignition",
-        exceptThat: "the damage increases to \\damagerankfour.",
+        name: 'ignition',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -350,8 +350,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Mighty Eyes of Flame',
 
       functionsLike: {
-        name: "eyes of flame",
-        exceptThat: "the damage increases to \\damagerankseven.",
+        name: 'eyes of flame',
+        exceptThat: 'the damage increases to \\damagerankseven.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -556,7 +556,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\medarea radius.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and the area increases to a \\medarea radius.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
@@ -598,7 +599,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Dash',
 
-      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
@@ -614,7 +615,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Distant Flame Dash',
 
-      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.",
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankfour.`,
         missGlance: true,

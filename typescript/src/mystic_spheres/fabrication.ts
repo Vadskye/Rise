@@ -96,8 +96,9 @@ export const fabrication: MysticSphere = {
       name: 'Hidden Copy',
 
       functionsLike: {
-        name: "instant copy",
-        exceptThat: "the copy can appear in your backpack, or some other small personal storage you are touching.",
+        name: 'instant copy',
+        exceptThat:
+          'the copy can appear in your backpack, or some other small personal storage you are touching.',
       },
       rank: 5,
       tags: ['Manifestation'],
@@ -191,7 +192,7 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "executioner's axe",
-        exceptThat: "the damage increases to \\damagerankeight.",
+        exceptThat: 'the damage increases to \\damagerankeight.',
       },
       rank: 6,
       tags: ['Manifestation'],
@@ -325,8 +326,9 @@ export const fabrication: MysticSphere = {
 
       cost: MINOR_FATIGUE,
       functionsLike: {
-        name: "forge",
-        exceptThat: "you can only create a weapon, and this spell has the \\atSustain (free) tag instead of the \\atAttune tag.",
+        name: 'forge',
+        exceptThat:
+          'you can only create a weapon, and this spell has the \\atSustain (free) tag instead of the \\atAttune tag.',
       },
       rank: 1,
       tags: ['Manifestation'],
@@ -343,8 +345,8 @@ export const fabrication: MysticSphere = {
       `,
       rank: 3,
       scaling: {
-        5: "You can choose to create a \\medarea radius instead.",
-        7: "You can choose to create a \\largearea radius instead.",
+        5: 'You can choose to create a \\medarea radius instead.',
+        7: 'You can choose to create a \\largearea radius instead.',
       },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',

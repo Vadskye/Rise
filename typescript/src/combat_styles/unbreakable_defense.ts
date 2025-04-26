@@ -107,7 +107,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Second Wind',
 
-      cost: "Two \\glossterm{fatigue levels}.",
+      cost: 'Two \\glossterm{fatigue levels}.',
       effect: `
         You regain all of your hit points.
         After you use this ability, you cannot use it again until you finish a \\glossterm{short rest}.
@@ -150,7 +150,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Cleansing Blow',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Remove a \\glossterm{condition} affecting you.
         Then, make a \\glossterm{strike}.
@@ -161,7 +161,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Blow',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a strike.
         In addition, you regain 1d6 hit points plus 1d6 per 3 power at the end of the round.
@@ -172,7 +172,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Revitalizing Blow+',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.

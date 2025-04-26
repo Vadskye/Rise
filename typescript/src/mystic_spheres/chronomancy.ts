@@ -161,7 +161,7 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 6,
       scaling: {
-        7: "You can reroll six times instead of five.",
+        7: 'You can reroll six times instead of five.',
       },
     },
     {
@@ -181,8 +181,8 @@ export const chronomancy: MysticSphere = {
       name: 'Quicksilver Assassination',
 
       functionsLike: {
-        name: "quicksilver ambush",
-        exceptThat: "the strike deals double \\glossterm{weapon damage}.",
+        name: 'quicksilver ambush',
+        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
       rank: 7,
     },
@@ -371,7 +371,7 @@ export const chronomancy: MysticSphere = {
       name: 'Temporal Duplicate',
 
       castingTime: 'minor action',
-      cost: "One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.",
+      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
@@ -541,8 +541,8 @@ export const chronomancy: MysticSphere = {
       name: 'Efficient Accelerated Evasion',
 
       functionsLike: {
-        name: "accelerated evasion",
-        exceptThat: "it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).",
+        name: 'accelerated evasion',
+        exceptThat: 'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).',
       },
       rank: 6,
       type: 'Attune',
@@ -632,7 +632,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Rewind Damage',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d8 \\glossterm{damage resistance} \\plus1 per power.
@@ -707,7 +707,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: { special: 'The damage increases by 1d8 for each rank beyond 2.'},
+      scaling: { special: 'The damage increases by 1d8 for each rank beyond 2.' },
     },
     // d6l instead of d6 for accuracy
     {
@@ -722,7 +722,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 6.'},
+      scaling: { special: 'The damage increases by 3d8 for each rank beyond 6.' },
     },
 
     {

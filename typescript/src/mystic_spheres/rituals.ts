@@ -4,10 +4,12 @@ const resurrectionSphereEffects = {
   Chronomancy: 'The target must have died no more than 48 hours before this ritual is completed.',
 };
 const teleportSphereEffects = {
-  ['Aeromancy']: "Both your destination and current location must be outdoors.",
-  ['Channel Divinity']: "Either your destination or current location must be a temple or equivalent holy site to your source of divine power.",
-  ['Electromancy']: "Both your destination and current location must be outdoors.",
-  Verdamancy: "As part of the ritual, each target must touch a living plant at least one size category larger than themselves. The destination must have a plant at least one size category larger than the largest target. Each target emerges that plant after teleporting.",
+  ['Aeromancy']: 'Both your destination and current location must be outdoors.',
+  ['Channel Divinity']:
+    'Either your destination or current location must be a temple or equivalent holy site to your source of divine power.',
+  ['Electromancy']: 'Both your destination and current location must be outdoors.',
+  Verdamancy:
+    'As part of the ritual, each target must touch a living plant at least one size category larger than themselves. The destination must have a plant at least one size category larger than the largest target. Each target emerges that plant after teleporting.',
 };
 
 // TODO: add a ritual that can remove domination, or rewrite existing rituals to work on
@@ -233,7 +235,7 @@ export const rituals: Ritual[] = [
       This can allow it to breathe underwater and avoid inhalation-based poisons.
     `,
     sphereEffects: {
-      Aquamancy: "The target can only gain air in this way while it is underwater.",
+      Aquamancy: 'The target can only gain air in this way while it is underwater.',
     },
     // narrative: '',
     rank: 1,
@@ -250,7 +252,7 @@ export const rituals: Ritual[] = [
       This can allow it to breathe underwater and avoid inhalation-based poisons.
     `,
     sphereEffects: {
-      Aquamancy: "The target can only gain air in this way while it is underwater.",
+      Aquamancy: 'The target can only gain air in this way while it is underwater.',
     },
     // narrative: '',
     rank: 3,
@@ -301,7 +303,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Manipulate Water',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You change the speed of water within a \\largearea radius \\glossterm{emanation} from you by up to 5 miles per hour.
       If you decrease the water's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
@@ -317,10 +319,10 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Manipulate Water',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     functionsLike: {
-      name: "manipulate water",
-      exceptThat: "the maximum speed change increases to 20 miles per hour.",
+      name: 'manipulate water',
+      exceptThat: 'the maximum speed change increases to 20 miles per hour.',
     },
     rank: 6,
     type: 'Sustain (attuneable, minor)',
@@ -525,7 +527,14 @@ export const rituals: Ritual[] = [
     tags: [],
     materialCost: true,
     castingTime: '24 hours',
-    spheres: ['Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Summoning', 'Thaumaturgy'],
+    spheres: [
+      'Astromancy',
+      'Channel Divinity',
+      'Fabrication',
+      'Prayer',
+      'Summoning',
+      'Thaumaturgy',
+    ],
   },
   {
     name: 'Guided Translocation',
@@ -542,7 +551,14 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Summoning',
+      'Verdamancy',
+    ],
   },
   {
     name: 'Distant Translocation',
@@ -563,7 +579,14 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: '24 hours',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Summoning',
+      'Verdamancy',
+    ],
   },
 
   {
@@ -580,7 +603,14 @@ export const rituals: Ritual[] = [
     rank: 7,
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Summoning', 'Verdamancy'],
+    spheres: [
+      'Aeromancy',
+      'Astromancy',
+      'Channel Divinity',
+      'Electromancy',
+      'Summoning',
+      'Verdamancy',
+    ],
   },
   {
     name: 'Retrieve Legacy',
@@ -615,7 +645,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Accelerated Reading',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You can read at twice your normal speed.
       However, the mental effort imposes a -2 penalty to your Mental defense.
@@ -627,7 +657,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Accelerated Reading',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You can read at ten times your normal speed.
       However, the mental effort imposes a -4 penalty to your Mental defense.
@@ -661,8 +691,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     functionsLike: {
-      name: "gentle repose",
-      exceptThat: "the effect lasts for one year.",
+      name: 'gentle repose',
+      exceptThat: 'the effect lasts for one year.',
     },
     rank: 3,
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
@@ -690,8 +720,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     functionsLike: {
-      name: "observe the future",
-      exceptThat: "the duplicate can answer up to three yes or no questions before disappearing.",
+      name: 'observe the future',
+      exceptThat: 'the duplicate can answer up to three yes or no questions before disappearing.',
     },
     rank: 5,
     materialCost: true,
@@ -716,8 +746,8 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     functionsLike: {
-      name: "stasis chamber",
-      exceptThat: "the effect lasts for one year.",
+      name: 'stasis chamber',
+      exceptThat: 'the effect lasts for one year.',
     },
     rank: 5,
     spheres: ['Chronomancy'],
@@ -944,7 +974,8 @@ export const rituals: Ritual[] = [
     `,
     sphereEffects: {
       Cryomancy: 'The ritual requires a body of water at least as large as the created item.',
-      Terramancy: 'The ritual requires a body of earth or stone at least as large as the created item.',
+      Terramancy:
+        'The ritual requires a body of earth or stone at least as large as the created item.',
     },
     scaling: {
       special: `
@@ -1098,8 +1129,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     functionsLike: {
-      name: "continuous light",
-      exceptThat: "the area increases to a \\largearea radius.",
+      name: 'continuous light',
+      exceptThat: 'the area increases to a \\largearea radius.',
     },
     rank: 3,
     tags: ['Visual'],
@@ -1126,8 +1157,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     functionsLike: {
-      name: "brilliant light",
-      exceptThat: "the area increases to a \\largearea radius.",
+      name: 'brilliant light',
+      exceptThat: 'the area increases to a \\largearea radius.',
     },
     rank: 7,
     tags: ['Visual'],
@@ -1140,8 +1171,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     functionsLike: {
-      name: "continuous light",
-      exceptThat: "the effect lasts for one year.",
+      name: 'continuous light',
+      exceptThat: 'the effect lasts for one year.',
     },
     rank: 2,
     tags: ['Visual'],
@@ -1153,8 +1184,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     functionsLike: {
-      name: "continuous light",
-      exceptThat: "the area increases to a \\largearea radius, and the effect lasts for one year.",
+      name: 'continuous light',
+      exceptThat: 'the area increases to a \\largearea radius, and the effect lasts for one year.',
     },
     rank: 4,
     tags: ['Visual'],
@@ -1172,7 +1203,7 @@ export const rituals: Ritual[] = [
     `,
     rank: 2,
     tags: ['Visual'],
-    type: "Attune (target)",
+    type: 'Attune (target)',
     spheres: ['Polymorph', 'Umbramancy'],
   },
 
@@ -1186,7 +1217,7 @@ export const rituals: Ritual[] = [
     `,
     rank: 1,
     tags: ['Visual'],
-    type: "Attune (target)",
+    type: 'Attune (target)',
     spheres: ['Photomancy', 'Polymorph', 'Umbramancy'],
   },
 
@@ -1200,7 +1231,7 @@ export const rituals: Ritual[] = [
     `,
     rank: 3,
     tags: ['Visual'],
-    type: "Attune (target)",
+    type: 'Attune (target)',
     // Toxicology?
     spheres: ['Polymorph'],
   },
@@ -1876,8 +1907,10 @@ export const rituals: Ritual[] = [
     rank: 3,
     tags: ['Attune'],
     sphereEffects: {
-      Terramancy: "The guidance does not consider non-grounded forms of movement, such as jumping or flying.",
-      Verdamancy: "You only receive guidance while both your destination and current location have a Huge or larger living plant.",
+      Terramancy:
+        'The guidance does not consider non-grounded forms of movement, such as jumping or flying.',
+      Verdamancy:
+        'You only receive guidance while both your destination and current location have a Huge or larger living plant.',
     },
     spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
   },
@@ -2053,7 +2086,7 @@ export const rituals: Ritual[] = [
     `,
     rank: 3,
     sphereEffects: {
-      Terramancy: "The target is also \\blinded by the earth covering their body.",
+      Terramancy: 'The target is also \\blinded by the earth covering their body.',
     },
     type: 'Attune (target)',
     spheres: ['Photomancy', 'Terramancy', 'Umbramancy'],
@@ -2063,8 +2096,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     functionsLike: {
-      name: "sunlight ward",
-      exceptThat: "the target is also protected from \\magical effects that mimic sunlight.",
+      name: 'sunlight ward',
+      exceptThat: 'the target is also protected from \\magical effects that mimic sunlight.',
     },
     rank: 6,
     type: 'Attune (target)',
@@ -2335,8 +2368,9 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     functionsLike: {
-      name: "soul bind",
-      exceptThat: "the creature's soul is removed from its intended afterlife and fully trapped within the gem. In addition, the gem must be at least rank 5 (2,500 gp).",
+      name: 'soul bind',
+      exceptThat:
+        "the creature's soul is removed from its intended afterlife and fully trapped within the gem. In addition, the gem must be at least rank 5 (2,500 gp).",
     },
     rank: 5,
     spheres: ['Prayer', 'Thaumaturgy', 'Vivimancy'],
@@ -2368,13 +2402,13 @@ export const rituals: Ritual[] = [
     spheres: ['Vivimancy'],
   },
   {
-      name: 'Mystic Trap',
+    name: 'Mystic Trap',
 
-      castingTime: 'one hour',
-      attack: {
-        hit: `\\damagerankone.`,
-        missGlance: true,
-        targeting: `
+    castingTime: 'one hour',
+    attack: {
+      hit: `\\damagerankone.`,
+      missGlance: true,
+      targeting: `
           When you perform this ritual, choose a point in space within \\shortrange.
           You can choose a point within an \\glossterm{unattended} container as long as the container is currently open.
           One minute after the ritual is completed, that point becomes a trap.
@@ -2386,55 +2420,55 @@ export const rituals: Ritual[] = [
           The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
           After the trap activates, this effect is \\glossterm{dismissed}.
         `,
-      },
-      rank: 1,
-      tags: ['Trap'],
-      type: 'Attune',
-      spheres: ['Universal'],
     },
-    {
-      name: 'Enduring Mystic Trap',
+    rank: 1,
+    tags: ['Trap'],
+    type: 'Attune',
+    spheres: ['Universal'],
+  },
+  {
+    name: 'Enduring Mystic Trap',
 
-      castingTime: '24 hours',
-      functionsLike: {
-        name: 'mystic trap',
-        exceptThat: `
+    castingTime: '24 hours',
+    functionsLike: {
+      name: 'mystic trap',
+      exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
         `,
-      },
-      rank: 1,
-      tags: ['Trap'],
-      spheres: ['Universal'],
     },
-    {
-      name: 'Massive Mystic Trap',
+    rank: 1,
+    tags: ['Trap'],
+    spheres: ['Universal'],
+  },
+  {
+    name: 'Massive Mystic Trap',
 
-      castingTime: '24 hours',
-      functionsLike: {
-        name: 'mystic trap',
-        exceptThat: `
+    castingTime: '24 hours',
+    functionsLike: {
+      name: 'mystic trap',
+      exceptThat: `
           the damage increases to \\damageranktwo.
           In addition, the area of both the activation and the attack increases to a \\medarea radius.
         `,
-      },
-      rank: 4,
-      tags: ['Trap'],
-      spheres: ['Universal'],
     },
-    {
-      name: 'Massive Enduring Mystic Trap',
+    rank: 4,
+    tags: ['Trap'],
+    spheres: ['Universal'],
+  },
+  {
+    name: 'Massive Enduring Mystic Trap',
 
-      castingTime: '24 hours',
-      functionsLike: {
-        name: 'massive mystic trap',
-        exceptThat: `
+    castingTime: '24 hours',
+    functionsLike: {
+      name: 'massive mystic trap',
+      exceptThat: `
           the trap persists for one year.
           Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
         `,
-      },
-      rank: 4,
-      tags: ['Trap'],
-      spheres: ['Universal'],
     },
+    rank: 4,
+    tags: ['Trap'],
+    spheres: ['Universal'],
+  },
 ];

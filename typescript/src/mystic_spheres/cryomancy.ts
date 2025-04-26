@@ -594,7 +594,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       // TODO: damage math
       functionsLike: {
-        name: "cryostrike",
+        name: 'cryostrike',
         exceptThat: `
           if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your \\glossterm{power}.
         `,
@@ -607,7 +607,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Mighty Cryostrike+',
 
       functionsLike: {
-        name: "cryostrike",
+        name: 'cryostrike',
         exceptThat: `
           the strike deals double \\glossterm{weapon damage}.
           In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d8 per 2 power.
