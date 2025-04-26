@@ -430,6 +430,18 @@
     \label{#1}
 }
 
+\DeclareDocumentCommand{\creaturetag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{creaturetag}}
+    {\termlink{#2}{creaturetag}}
+}
+\DeclareDocumentCommand{\creaturetagdef}{m m}
+{
+    \termdef{#1}[#2]{creaturetag}
+    \label{#1}
+}
+
 \DeclareDocumentCommand{\glossterm}{o m}
 {
     \IfValueTF{#1}
