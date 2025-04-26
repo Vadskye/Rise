@@ -80,9 +80,11 @@ There are four comparative strength contexts. Note that htese specifically refer
 * Superiority + Boss = Nemesis:
   * Preferred effects:
     * Burn: Single-target damage over time optimizes damage output on a boss, who will often reach the full duration
-    * Execute: High single-target damage on an injured or vulnerable target, since bosses often have a large HP pool
+    * Burst: Single-target immediate damage, especially to get the boss into HP as quickly as possible
+    * Execute: Single-target immediate damage that requires the target to be in hit points
     * Goad: Redirect attention away from more vulnerable allies, such a with goading as a condition
-    * Softener: Single-target debuff condition without prerequisites to make sure the rest of your party can also hit the boss
+    * Retaliate: Single-target damage with a bonus if the target attacked you
+    * Softener: Single-target debuff condition without prerequisites
     * Stasis: One-round single-target debuff to remove a boss's action
     * Trip: One-round single-target defense debuff to support party attacks
   * Preferred costs:
@@ -154,7 +156,9 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Goad
     * Hazard
     * Healing
+    * Maim: Powerful debuff that requires the target to be out of DR / in HP
     * Ramp
+    * Retaliate
     * Stasis
     * Turtle
     * Trip

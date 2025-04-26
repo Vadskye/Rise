@@ -13,6 +13,7 @@ export const bruteForce: CombatStyle = {
         The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -23,6 +24,7 @@ export const bruteForce: CombatStyle = {
         The strike deals triple \\glossterm{weapon damage}.
       `,
       rank: 5,
+      roles: ['burst'],
     },
     {
       name: 'Armorcrusher',
@@ -32,6 +34,7 @@ export const bruteForce: CombatStyle = {
         The attack is made against the target's Fortitude defense instead of its Armor defense.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -45,6 +48,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 1,
+      roles: ['clear'],
       tags: ['Earth'],
     },
 
@@ -59,6 +63,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 5,
+      roles: ['clear'],
       tags: ['Earth'],
     },
 
@@ -71,6 +76,7 @@ export const bruteForce: CombatStyle = {
         The strike targets everything supported by that surface in a \\smallarea cone from one corner of the target space.
       `,
       rank: 1,
+      roles: ['clear'],
       tags: ['Earth'],
     },
 
@@ -84,6 +90,7 @@ export const bruteForce: CombatStyle = {
         The strike deals double \\glossterm{weapon damage}.
       `,
       rank: 5,
+      roles: ['clear'],
       tags: ['Earth'],
     },
 
@@ -94,6 +101,7 @@ export const bruteForce: CombatStyle = {
         Make a \\glossterm{strike}.
         If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
+      roles: ['maim'],
       rank: 5,
     },
 
@@ -105,6 +113,7 @@ export const bruteForce: CombatStyle = {
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
         However, you cannot get a \\glossterm{critical hit}.
       `,
+      roles: ['burst'],
       rank: 1,
     },
 
@@ -115,6 +124,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} using a single weapon.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
       `,
+      roles: ['burst'],
       rank: 5,
     },
 
@@ -125,6 +135,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike}.
         If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
+      roles: ['maim'],
       rank: 1,
     },
 
@@ -135,6 +146,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
         If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\confused as a \\glossterm{condition}.
       `,
+      roles: ['maim'],
       rank: 7,
     },
 
@@ -151,6 +163,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 3,
+      roles: ['clear', 'dive'],
       tags: ['Earth'],
     },
 
@@ -162,6 +175,7 @@ export const bruteForce: CombatStyle = {
         exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 7,
+      roles: ['clear', 'dive'],
       tags: ['Earth'],
     },
 
@@ -174,6 +188,7 @@ export const bruteForce: CombatStyle = {
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 3,
+      roles: ['clear'],
     },
 
     {
@@ -188,6 +203,7 @@ export const bruteForce: CombatStyle = {
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 7,
+      roles: ['clear'],
     },
 
     {
@@ -199,6 +215,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
+      roles: ['maim'],
     },
 
     {
@@ -210,6 +227,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
+      roles: ['maim'],
     },
 
     {
@@ -221,6 +239,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
+      roles: ['burst', 'combo'],
     },
 
     {
@@ -232,6 +251,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 7,
+      roles: ['burst', 'combo'],
     },
 
     {
@@ -245,6 +265,7 @@ export const bruteForce: CombatStyle = {
         This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
+      roles: ['dive'],
     },
 
     {
@@ -256,6 +277,7 @@ export const bruteForce: CombatStyle = {
         name: 'press forward',
       },
       rank: 5,
+      roles: ['dive'],
     },
 
     {
@@ -275,6 +297,7 @@ export const bruteForce: CombatStyle = {
         This ability only increases your fatigue level if the strike hits.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -289,6 +312,7 @@ export const bruteForce: CombatStyle = {
         This ability only increases your fatigue level if the strike hits.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
@@ -299,6 +323,7 @@ export const bruteForce: CombatStyle = {
         If the target takes damage and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
+      roles: ['softener'],
     },
 
     {
@@ -309,6 +334,7 @@ export const bruteForce: CombatStyle = {
         If your attack result hits the target's Fortitude defense, the strike deals triple \\glossterm{weapon damage}.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
@@ -320,6 +346,7 @@ export const bruteForce: CombatStyle = {
         If the target takes damage, you and the target are \\deafened as a \\glossterm{condition}.
       `,
       rank: 1,
+      roles: ['softener'],
       tags: ['Auditory'],
     },
 
@@ -333,6 +360,7 @@ export const bruteForce: CombatStyle = {
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -345,6 +373,7 @@ export const bruteForce: CombatStyle = {
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 7,
+      roles: ['burst'],
     },
 
     {
@@ -357,6 +386,7 @@ export const bruteForce: CombatStyle = {
         On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
       `,
       rank: 3,
+      roles: ['clear'],
       tags: [],
     },
   ],

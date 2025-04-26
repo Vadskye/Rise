@@ -70,7 +70,7 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
-  role: AbilityRole[];
+  roles: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'poison' | Record<string, string>;
   tableText?: string;
   tags?: string[];
@@ -87,31 +87,36 @@ export interface BaseSpellLike {
     | 'Sustain (attuneable, standard)';
 }
 
-export type AbilityRole =
-  | 'charge'
-  | 'cleanse'
-  | 'clear'
-  | 'dive'
-  | 'goad'
-  | 'flash'
-  | 'hazard'
-  | 'burn'
-  | 'execute'
-  | 'softener'
-  | 'stasis'
-  | 'trip'
-  | 'artillery'
-  | 'barrier'
-  | 'healing'
-  | 'kite'
-  | 'retreat'
-  | 'turtle'
-  | 'wildfire'
-  | 'ramp'
-  | 'snipe'
-  | 'focus'
-  | 'generator'
-  | 'stasis';
+export const ABILITY_ROLES = [
+  'artillery',
+  'barrier',
+  'burn',
+  'burst',
+  'charge',
+  'cleanse',
+  'clear',
+  'combo',
+  'dive',
+  'execute',
+  'flash',
+  'focus',
+  'generator',
+  'goad',
+  'hazard',
+  'healing',
+  'kite',
+  'maim',
+  'ramp',
+  'retaliate',
+  'retreat',
+  'snipe',
+  'softener',
+  'stasis',
+  'trip',
+  'turtle',
+  'wildfire',
+] as const;
+export type AbilityRole = (typeof ABILITY_ROLES)[number]; 
 
 export type Cantrip = BaseSpellLike;
 
