@@ -35,7 +35,7 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Desperate Pierce',
 
-      cost: "See text.",
+      cost: 'See text.',
       effect: `
         Make a \\glossterm{strike}.
         You can increase your \\glossterm{fatigue level} by one to reroll the attack roll with a +4 accuracy bonus.

@@ -1,28 +1,28 @@
-import { aeromancy } from "./aeromancy";
-import { aquamancy } from "./aquamancy";
-import { astromancy } from "./astromancy";
-import { channelDivinity } from "./channel_divinity";
-import { chronomancy } from "./chronomancy";
-import { cryomancy } from "./cryomancy";
-import { electromancy } from "./electromancy";
-import { enchantment } from "./enchantment";
-import { fabrication } from "./fabrication";
-import { photomancy } from "./photomancy";
-import { polymorph } from "./polymorph";
-import { prayer } from "./prayer";
-import { pyromancy } from "./pyromancy";
-import { revelation } from "./revelation";
-import { summoning } from "./summoning";
-import { telekinesis } from "./telekinesis";
-import { terramancy } from "./terramancy";
-import { thaumaturgy } from "./thaumaturgy";
-import { toxicology } from "./toxicology";
-import { umbramancy } from "./umbramancy";
-import { verdamancy } from "./verdamancy";
-import { vivimancy } from "./vivimancy";
-import { universal } from "./universal";
+import { aeromancy } from './aeromancy';
+import { aquamancy } from './aquamancy';
+import { astromancy } from './astromancy';
+import { channelDivinity } from './channel_divinity';
+import { chronomancy } from './chronomancy';
+import { cryomancy } from './cryomancy';
+import { electromancy } from './electromancy';
+import { enchantment } from './enchantment';
+import { fabrication } from './fabrication';
+import { photomancy } from './photomancy';
+import { polymorph } from './polymorph';
+import { prayer } from './prayer';
+import { pyromancy } from './pyromancy';
+import { revelation } from './revelation';
+import { summoning } from './summoning';
+import { telekinesis } from './telekinesis';
+import { terramancy } from './terramancy';
+import { thaumaturgy } from './thaumaturgy';
+import { toxicology } from './toxicology';
+import { umbramancy } from './umbramancy';
+import { verdamancy } from './verdamancy';
+import { vivimancy } from './vivimancy';
+import { universal } from './universal';
 
-export { rituals } from "./rituals";
+export { rituals } from './rituals';
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
@@ -50,7 +50,7 @@ export const mysticSpheres: MysticSphere[] = [
   universal,
 ];
 
-export type MysticSphereSource = "arcane" | "divine" | "domain" | "nature" | "pact" | "soulkeeper";
+export type MysticSphereSource = 'arcane' | 'divine' | 'domain' | 'nature' | 'pact' | 'soulkeeper';
 
 export interface MysticSphere {
   cantrips?: Cantrip[];
@@ -71,23 +71,47 @@ export interface BaseSpellLike {
   name: string;
   narrative?: string;
   role: AbilityRole[];
-  scaling?: "accuracy" | "double_accuracy" | "poison" | Record<string, string>;
+  scaling?: 'accuracy' | 'double_accuracy' | 'poison' | Record<string, string>;
   tableText?: string;
   tags?: string[];
   type?:
-  | "Attune"
-  | "Attune (deep)"
-  | "Attune (deep, target)"
-  | "Attune (target)"
-  | "Sustain (free)"
-  | "Sustain (minor)"
-  | "Sustain (standard)"
-  | "Sustain (attuneable, free)"
-  | "Sustain (attuneable, minor)"
-  | "Sustain (attuneable, standard)";
+    | 'Attune'
+    | 'Attune (deep)'
+    | 'Attune (deep, target)'
+    | 'Attune (target)'
+    | 'Sustain (free)'
+    | 'Sustain (minor)'
+    | 'Sustain (standard)'
+    | 'Sustain (attuneable, free)'
+    | 'Sustain (attuneable, minor)'
+    | 'Sustain (attuneable, standard)';
 }
 
-export type AbilityRole = "charge" | "cleanse" | "clear" | "dive" | "goad" | "flash" | "hazard" | "burn" | "execute" | "softener" | "stasis" | "trip" | "artillery" | "barrier" | "healing" | "kite" | "retreat" | "turtle" | "wildfire" | "ramp" | "snipe" | "focus" | "generator" | "stasis";
+export type AbilityRole =
+  | 'charge'
+  | 'cleanse'
+  | 'clear'
+  | 'dive'
+  | 'goad'
+  | 'flash'
+  | 'hazard'
+  | 'burn'
+  | 'execute'
+  | 'softener'
+  | 'stasis'
+  | 'trip'
+  | 'artillery'
+  | 'barrier'
+  | 'healing'
+  | 'kite'
+  | 'retreat'
+  | 'turtle'
+  | 'wildfire'
+  | 'ramp'
+  | 'snipe'
+  | 'focus'
+  | 'generator'
+  | 'stasis';
 
 export type Cantrip = BaseSpellLike;
 
@@ -95,11 +119,34 @@ export interface Spell extends BaseSpellLike {
   rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
-export type SphereName = "Aeromancy" | "Aquamancy" | "Astromancy" | "Channel Divinity" | "Chronomancy" | "Cryomancy" | "Electromancy" | "Enchantment" | "Fabrication" | "Photomancy" | "Polymorph" | "Prayer" | "Pyromancy" | "Revelation" | "Summoning" | "Telekinesis" | "Terramancy" | "Thaumaturgy" | "Toxicology" | "Umbramancy" | "Verdamancy" | "Vivimancy" | "Universal";
+export type SphereName =
+  | 'Aeromancy'
+  | 'Aquamancy'
+  | 'Astromancy'
+  | 'Channel Divinity'
+  | 'Chronomancy'
+  | 'Cryomancy'
+  | 'Electromancy'
+  | 'Enchantment'
+  | 'Fabrication'
+  | 'Photomancy'
+  | 'Polymorph'
+  | 'Prayer'
+  | 'Pyromancy'
+  | 'Revelation'
+  | 'Summoning'
+  | 'Telekinesis'
+  | 'Terramancy'
+  | 'Thaumaturgy'
+  | 'Toxicology'
+  | 'Umbramancy'
+  | 'Verdamancy'
+  | 'Vivimancy'
+  | 'Universal';
 
 // TODO: allow customizing individual ritual fatigue costs
 export interface Ritual extends Spell {
-  castingTime: "24 hours" | "one minute" | "one hour" | "minor action" | "special" | "one week";
+  castingTime: '24 hours' | 'one minute' | 'one hour' | 'minor action' | 'special' | 'one week';
   materialCost?: boolean;
   sphereEffects?: Partial<Record<SphereName, string>>;
   spheres: SphereName[];
@@ -122,7 +169,7 @@ export interface StandardAttack {
 }
 
 export interface FunctionsLike {
-  abilityType?: "cantrip" | "spell" | "maneuver" | "ability" | "ritual";
+  abilityType?: 'cantrip' | 'spell' | 'maneuver' | 'ability' | 'ritual';
   exceptThat?: string;
   mass?: boolean;
   oneYear?: boolean;

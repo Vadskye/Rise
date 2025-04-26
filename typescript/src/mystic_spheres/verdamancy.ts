@@ -300,8 +300,9 @@ export const verdamancy: MysticSphere = {
 
       // -1dr from undergrowth effect
       functionsLike: {
-        name: "erupting spikefruit",
-        exceptThat: "the damage increases to \\damagerankfive, and the area increases to a \\medarea radius within \\longrange.",
+        name: 'erupting spikefruit',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and the area increases to a \\medarea radius within \\longrange.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -487,7 +488,8 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'fire seeds',
-        exceptThat: 'the damage increases to \\damagerankthree. In addition, you can create up to six seeds at once instead of only three.',
+        exceptThat:
+          'the damage increases to \\damagerankthree. In addition, you can create up to six seeds at once instead of only three.',
       },
       rank: 5,
       scaling: 'accuracy',
@@ -580,7 +582,7 @@ export const verdamancy: MysticSphere = {
 
       // Short range instead of med range for the two weird effects
       attack: {
-        hit: "\\damagerankone.",
+        hit: '\\damagerankone.',
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
           If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with this attack.

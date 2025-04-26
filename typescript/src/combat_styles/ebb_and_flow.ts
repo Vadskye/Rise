@@ -98,7 +98,7 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Momentous Impact',
 
-      cost: "You \\glossterm{briefly} cannot use this ability again.",
+      cost: 'You \\glossterm{briefly} cannot use this ability again.',
       effect: `
         Make a melee \\glossterm{strike}.
         If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
@@ -107,7 +107,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Begin the Hunt",
+      name: 'Begin the Hunt',
 
       effect: `
         Make a strike.
@@ -120,7 +120,7 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: "Begin the Hunt+",
+      name: 'Begin the Hunt+',
 
       functionsLike: {
         exceptThat:

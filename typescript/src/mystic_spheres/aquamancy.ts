@@ -2,7 +2,7 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
 
-export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
+export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
   name: 'Aquamancy',
   hasImage: true,
   shortDescription: 'Command water to crush and drown foes.',
@@ -37,9 +37,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
       `,
       scaling: {
-        2: "The bonus increases to +4.",
-        4: "The bonus increases to +5.",
-        6: "The bonus increases to +6.",
+        2: 'The bonus increases to +4.',
+        4: 'The bonus increases to +5.',
+        6: 'The bonus increases to +6.',
       },
       type: 'Attune',
     },
@@ -58,7 +58,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
         You can make this decision after seeing how much you would heal.
       `,
       rank: 1,
-      scaling: { special: "The healing increases by 1d10 per rank beyond 1." },
+      scaling: { special: 'The healing increases by 1d10 per rank beyond 1.' },
       type: 'Attune',
     },
     {
@@ -513,7 +513,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
       name: 'Efficient Aqueous Form',
 
       functionsLike: {
-        name: "aqueous form",
+        name: 'aqueous form',
         exceptThat: EXCEPT_NOT_DEEP,
       },
       rank: 6,
@@ -741,7 +741,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere("Water", {
     {
       name: 'Mighty Drowning Grasp',
 
-      // 
+      //
       attack: {
         hit: `
           \\damagerankfour.

@@ -1,6 +1,6 @@
 import { CombatStyle } from '.';
 // TODO: move this to a more generally shared location
-import {CONDITION_CRIT } from '../mystic_spheres/constants';
+import { CONDITION_CRIT } from '../mystic_spheres/constants';
 
 export const heraldOfWar: CombatStyle = {
   name: 'Herald of War',
@@ -215,7 +215,7 @@ export const heraldOfWar: CombatStyle = {
 
       // We have to use a power scaling here because maneuvers don't have rank scaling, so
       // this would fall behind quickly otherwise
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d6 per 3 power \\glossterm{damage resistance}.
       `,
@@ -226,7 +226,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Encouraging Battlecry+',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
       `,

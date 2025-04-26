@@ -128,7 +128,7 @@ export const dirtyFighting: CombatStyle = {
       // If you use a Medium creature, the baseline damage is 4d8 + 3.3dpp, which is
       // roughly dr8, but with strong scaling based on the creature's size.
       functionsLike: {
-        name: "body bludgeon",
+        name: 'body bludgeon',
         exceptThat: `
           the strike deals quadruple \\glossterm{weapon damage}, and the weapon deals 1d8 damage per size category by which the creature is above Small (minimum 1d8).
         `,

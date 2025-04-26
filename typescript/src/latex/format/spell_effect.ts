@@ -1,31 +1,40 @@
-import { Rank, SpellLike, StandardAttack, FunctionsLike, Ritual } from "@src/mystic_spheres";
+import { Rank, SpellLike, StandardAttack, FunctionsLike, Ritual } from '@src/mystic_spheres';
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
-  if (text && !(text.trim().endsWith(".") || text.trim().endsWith("{itemizespace}{}"))) {
+  if (text && !(text.trim().endsWith('.') || text.trim().endsWith('{itemizespace}{}'))) {
     console.error(`Text from ${effectName} should end with period: ${text}`);
   }
 }
 
-export function assertStartsWithLowercase(text: string | null | undefined, effectName: string): void {
-  if (text && !(text.trim().match(/^[a-z]/))) {
+export function assertStartsWithLowercase(
+  text: string | null | undefined,
+  effectName: string,
+): void {
+  if (text && !text.trim().match(/^[a-z]/)) {
     console.error(`Text from ${effectName} should start with lowercase: ${text}`);
   }
 }
 
 // TODO: add checking for nonsensical crit effects
 function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void {
-  const dealsRepeatDamage = /damage.*immediately.*again/.test(attack.hit)
+  const dealsRepeatDamage = /damage.*immediately.*again/.test(attack.hit);
   if (dealsRepeatDamage && attack.crit === undefined) {
-    console.error(`Attack from ${effectName} should have explicit crit effect for a multi-hit attack`);
+    console.error(
+      `Attack from ${effectName} should have explicit crit effect for a multi-hit attack`,
+    );
   }
 
-  const inflictsCondition = /condition/.test(attack.hit)
-  const dealsDamage = /\\damage/.test(attack.hit)
-  const grantsImmunity = /immun.*short rest/.test(attack.hit)
+  const inflictsCondition = /condition/.test(attack.hit);
+  const dealsDamage = /\\damage/.test(attack.hit);
+  const grantsImmunity = /immun.*short rest/.test(attack.hit);
   if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
-    console.error(`Attack from ${effectName} should have explicit crit effect for condition removal`);
+    console.error(
+      `Attack from ${effectName} should have explicit crit effect for condition removal`,
+    );
   } else if (grantsImmunity && !dealsDamage && attack.crit === undefined) {
-    console.error(`Attack from ${effectName} should have explicit crit effect for removing immunity`);
+    console.error(
+      `Attack from ${effectName} should have explicit crit effect for removing immunity`,
+    );
   }
 }
 
@@ -42,23 +51,26 @@ function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
 }
 
 export function spellEffect(
-  spell: Pick<SpellLike, "attack" | "castingTime" | "effect" | "functionsLike" | "materialCost" | "rank" | "name">,
-  spellCategory: "spell" | "maneuver" | "ritual",
+  spell: Pick<
+    SpellLike,
+    'attack' | 'castingTime' | 'effect' | 'functionsLike' | 'materialCost' | 'rank' | 'name'
+  >,
+  spellCategory: 'spell' | 'maneuver' | 'ritual',
 ): string | null {
   try {
-    if (spell.castingTime && spell.castingTime !== "minor action") {
-      spellCategory = "ritual";
+    if (spell.castingTime && spell.castingTime !== 'minor action') {
+      spellCategory = 'ritual';
     }
 
-    let fatiguePointsText = "";
-    if (spellCategory === "ritual") {
+    let fatiguePointsText = '';
+    if (spellCategory === 'ritual') {
       const fatigueLevel =
-        spell.castingTime === "24 hours" || spell.castingTime === "one week"
+        spell.castingTime === '24 hours' || spell.castingTime === 'one week'
           ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
-          : "one \\glossterm{fatigue level}";
+          : 'one \\glossterm{fatigue level}';
       const materialCostText = spell.materialCost
         ? ` and the consumption of diamond dust with the equivalent value of a rank ${spell.rank} item (${calculateGp(spell.rank)})`
-        : "";
+        : '';
       fatiguePointsText = `\n\nThis ritual requires ${fatigueLevel} from its participants${materialCostText}.`;
     }
 
@@ -73,9 +85,9 @@ export function spellEffect(
         ${spell.attack.targeting.trim() + fatiguePointsText}%
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
-        ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ""}
-        ${spell.attack.missGlance ? "\\miss Half damage." : ""}
-        ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ""}
+        ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ''}
+        ${spell.attack.missGlance ? '\\miss Half damage.' : ''}
+        ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ''}
       `;
     } else if (spell.effect) {
       return fatiguePointsText
@@ -122,16 +134,14 @@ export function ritualSphereEffects(ritual: Ritual): string | null {
         })
         .join('\n')}
     \\end{itemize}
-  `
+  `;
 }
 
-function deriveExceptThat(
-  functionsLike: FunctionsLike,
-) {
+function deriveExceptThat(functionsLike: FunctionsLike) {
   if (functionsLike.mass) {
-    return "it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.";
+    return 'it affects up to five creatures of your choice from among yourself and your \\glossterm{allies} within \\medrange.';
   } else if (functionsLike.oneYear) {
-    return "the effect lasts for one year.";
+    return 'the effect lasts for one year.';
   } else if (functionsLike.exceptThat) {
     return functionsLike.exceptThat;
   } else {
@@ -141,16 +151,18 @@ function deriveExceptThat(
 
 function calculateGp(itemRank?: Rank): string {
   if (itemRank === null || itemRank === undefined) {
-    throw new Error("Cannot calculate gp for missing rank");
+    throw new Error('Cannot calculate gp for missing rank');
   }
-  return {
-    0: '10 gp or less',
-    1: '40 gp',
-    2: '200 gp',
-    3: '1,000 gp',
-    4: '5,000 gp',
-    5: '25,000 gp',
-    6: '125,000 gp',
-    7: '625,000 gp',
-  }[itemRank] || '';
+  return (
+    {
+      0: '10 gp or less',
+      1: '40 gp',
+      2: '200 gp',
+      3: '1,000 gp',
+      4: '5,000 gp',
+      5: '25,000 gp',
+      6: '125,000 gp',
+      7: '625,000 gp',
+    }[itemRank] || ''
+  );
 }

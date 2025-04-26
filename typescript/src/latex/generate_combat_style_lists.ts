@@ -1,13 +1,10 @@
-import { CombatStyle, combatStyles } from "@src/combat_styles";
+import { CombatStyle, combatStyles } from '@src/combat_styles';
 
 export function generateCombatStyleLists(): string {
   return `
     {
       \\RaggedRight
-      ${combatStyles
-        .sort()
-        .map(formatCombatStyle)
-        .join("\n")}
+      ${combatStyles.sort().map(formatCombatStyle).join('\n')}
     }
   `;
 }

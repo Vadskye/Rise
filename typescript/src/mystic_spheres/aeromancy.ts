@@ -2,7 +2,7 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
-export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
+export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
   hasImage: true,
   shortDescription: 'Command air to protect allies and blast foes.',
@@ -103,7 +103,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere("Air", {
     {
       name: 'Propulsion',
 
-      cost: "One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.",
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.',
       effect: `
         Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
         The target must have a \\glossterm{weight category} of Medium or less.

@@ -12,28 +12,28 @@ interface ListenerConfig {
   callback: (eventInfo: EventInfo) => void;
 }
 
-type ModifierSectionName = typeof MODIFIER_SECTION_NAMES[number];
+type ModifierSectionName = (typeof MODIFIER_SECTION_NAMES)[number];
 const MODIFIER_SECTION_NAMES = [
-  "attunedmodifiers",
-  "legacymodifiers",
-  "temporarymodifiers",
-  "permanentmodifiers",
+  'attunedmodifiers',
+  'legacymodifiers',
+  'temporarymodifiers',
+  'permanentmodifiers',
 ] as const;
 
-type AbilitySectionName = typeof ABILITY_SECTION_NAMES[number];
+type AbilitySectionName = (typeof ABILITY_SECTION_NAMES)[number];
 const ABILITY_SECTION_NAMES = [
-  "abilities",
-  "strikeattacks",
-  "otherdamagingattacks",
-  "nondamagingattacks"
+  'abilities',
+  'strikeattacks',
+  'otherdamagingattacks',
+  'nondamagingattacks',
 ] as const;
 
-type OtherSectionName = typeof OTHER_SECTION_NAMES[number];
+type OtherSectionName = (typeof OTHER_SECTION_NAMES)[number];
 const OTHER_SECTION_NAMES = [
-  "knowledgesubskills",
-  "craftsubskills",
-  "trainedskills",
-  "vitalwounds",
+  'knowledgesubskills',
+  'craftsubskills',
+  'trainedskills',
+  'vitalwounds',
 ] as const;
 
 export type RepeatingSectionName = ModifierSectionName | AbilitySectionName | OtherSectionName;
@@ -57,15 +57,11 @@ export class RepeatingSection {
   }
 
   public getValueFromAllRows(propertyName: string): SimpleValue[] {
-    return Object.keys(this.rows).map(
-      (rowId) => this.rows[rowId].getProperty(propertyName).value
-    );
+    return Object.keys(this.rows).map((rowId) => this.rows[rowId].getProperty(propertyName).value);
   }
 
   public getValuesFromAllRows(propertyNames: string[]): Record<string, SimpleValue>[] {
-    return Object.keys(this.rows).map(
-      (rowId) => this.rows[rowId].getPropertyValues(propertyNames)
-    );
+    return Object.keys(this.rows).map((rowId) => this.rows[rowId].getPropertyValues(propertyNames));
   }
 
   public getRowValue(rowId: string, propertyName: string): SimpleValue {
@@ -80,13 +76,17 @@ export class RepeatingSection {
   public onChange(fullPropertyName: FullPropertyName, callback: (eventInfo: EventInfo) => void) {
     const { sectionName, rowId, rowPropertyName } = splitPropertyName(fullPropertyName);
     if (sectionName !== this.sectionName) {
-      throw new Error(`Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`);
+      throw new Error(
+        `Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`,
+      );
     }
     if (rowId && rowPropertyName) {
       return this.getRow(rowId).onChange(rowPropertyName, callback);
     } else if (rowId) {
       // TODO: in what circumstances could there be a rowId without a rowPropertyName?
-      throw new Error(`Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`);
+      throw new Error(
+        `Repeating section ${this.sectionName} cannot handle change to ${fullPropertyName}`,
+      );
     } else if (rowPropertyName) {
       // In Roll20, this automatically embeds some sort of context about which row
       // triggered the listener, allowing triggers to implicitly carry information about
@@ -106,7 +106,9 @@ export class RepeatingSection {
   public setProperty(fullPropertyName: FullPropertyName, newValue: SimpleValue) {
     const { rowId, sectionName, rowPropertyName } = splitPropertyName(fullPropertyName);
     if (sectionName !== this.sectionName) {
-      throw new Error(`RepeatingSection ${this.sectionName} cannot process section '${sectionName}'.`);
+      throw new Error(
+        `RepeatingSection ${this.sectionName} cannot process section '${sectionName}'.`,
+      );
     }
     if (!rowId) {
       throw new Error(`Must include rowId when setting a property: ${fullPropertyName}.`);
@@ -174,7 +176,7 @@ export function splitPropertyName(propertyName: FullPropertyName): SplitProperty
     return {
       sectionName: match[1] as RepeatingSectionName,
       rowId: null,
-      rowPropertyName: match[2]
+      rowPropertyName: match[2],
     };
   }
 

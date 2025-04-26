@@ -1,7 +1,7 @@
 const tagPattern = /([^(]+) ?(\([^)]+\))?/;
 
 export function formatTagLatex(tag: string): string {
-  if (tag.includes("abilitytag")) {
+  if (tag.includes('abilitytag')) {
     return tag;
   }
   const match = tag.match(tagPattern);

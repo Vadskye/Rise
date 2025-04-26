@@ -39,7 +39,7 @@ export const flurryOfBlows: CombatStyle = {
 
       // Assume a 70% hit chance, so base 0.7x dpr.
       // This is 1.0x dpr, so 42% more damage than a regular strike.
-      cost: "Two \\glossterm{fatigue levels}.",
+      cost: 'Two \\glossterm{fatigue levels}.',
       effect: `
         Make two \\glossterm{strikes} with a \\minus2 accuracy penalty.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
@@ -50,7 +50,7 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Desperate Triple Flurry',
 
-      cost: "Two \\glossterm{fatigue levels}.",
+      cost: 'Two \\glossterm{fatigue levels}.',
       effect: `
         Make three \\glossterm{strikes}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.

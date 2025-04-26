@@ -1,9 +1,9 @@
-import { sortByRankAndLevel } from "@src/latex/convert_mystic_sphere_to_latex";
-import { MysticSphere, mysticSpheres, SpellLike, rituals } from "@src/mystic_spheres";
-import _ from "lodash";
+import { sortByRankAndLevel } from '@src/latex/convert_mystic_sphere_to_latex';
+import { MysticSphere, mysticSpheres, SpellLike, rituals } from '@src/mystic_spheres';
+import _ from 'lodash';
 
 export function generateMysticSphereSpellSummaries(): string {
-  return mysticSpheres.map(generateMysticSphereSpellSummary).join("\n");
+  return mysticSpheres.map(generateMysticSphereSpellSummary).join('\n');
 }
 
 function generateMysticSphereSpellSummary(sphere: MysticSphere): string {
@@ -17,26 +17,28 @@ function generateMysticSphereSpellSummary(sphere: MysticSphere): string {
       \\RaggedRight
       \\subsection{${sphere.name} Spells}
 
-      ${generateSpellsSummary("Cantrips", _.sortBy(sphere.cantrips, "name"))}
+      ${generateSpellsSummary('Cantrips', _.sortBy(sphere.cantrips, 'name'))}
       ${ranks
-        .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(spellsByRank[rank])))
+        .map((rank) =>
+          generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(spellsByRank[rank])),
+        )
         .filter(Boolean)
-        .join("\n")}
+        .join('\n')}
     }
   `;
 }
 
 function generateSpellsSummary(category: string, spells: SpellLike[]): string {
   if (!(spells?.length > 0)) {
-    return "";
+    return '';
   }
   return `\\par\\noindent ${category}: ${spells
     .map((s) => `\\spell{${s.name.toLowerCase()}}`)
-    .join(", ")}`;
+    .join(', ')}`;
 }
 
 export function generateMysticSphereRitualSummaries(): string {
-  return mysticSpheres.map(generateMysticSphereRitualSummary).join("\n");
+  return mysticSpheres.map(generateMysticSphereRitualSummary).join('\n');
 }
 
 function generateMysticSphereRitualSummary(sphere: MysticSphere): string {
@@ -49,9 +51,11 @@ function generateMysticSphereRitualSummary(sphere: MysticSphere): string {
       \\subsection{${sphere.name} Rituals}
 
       ${ranks
-        .map((rank) => generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(ritualsByRank[rank])))
+        .map((rank) =>
+          generateSpellsSummary(`Rank ${rank}`, sortByRankAndLevel(ritualsByRank[rank])),
+        )
         .filter(Boolean)
-        .join("\n")}
+        .join('\n')}
     }
   `;
 }
