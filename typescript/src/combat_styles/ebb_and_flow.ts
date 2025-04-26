@@ -15,6 +15,7 @@ export const ebbAndFlow: CombatStyle = {
         You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 1,
+      roles: ['retaliate'],
       tags: ['Swift'],
     },
 

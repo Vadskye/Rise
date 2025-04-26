@@ -14,6 +14,7 @@ export const dirtyFighting: CombatStyle = {
         If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
+      roles: ['maim'],
     },
 
     {
@@ -24,6 +25,7 @@ export const dirtyFighting: CombatStyle = {
         If the target loses hit points, it takes \\damagerankseven.
       `,
       rank: 5,
+      roles: ['execute'],
     },
 
     {
@@ -37,6 +39,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'trip',
       },
       rank: 3,
+      roles: ['trip'],
       tags: ['Brawling'],
     },
 
@@ -52,6 +55,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'trip',
       },
       rank: 5,
+      roles: ['trip'],
       tags: ['Brawling'],
     },
 
@@ -66,6 +70,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 3,
+      roles: ['softener', 'trip'],
       tags: ['Brawling'],
     },
 
@@ -79,6 +84,7 @@ export const dirtyFighting: CombatStyle = {
         \\hit The target takes \\damagerankthree.
       `,
       rank: 1,
+      roles: ['burst'],
       tags: ['Brawling'],
     },
 
@@ -90,6 +96,7 @@ export const dirtyFighting: CombatStyle = {
         \\hit The target takes \\damagerankseven.
       `,
       rank: 5,
+      roles: ['burst'],
       tags: ['Brawling'],
     },
 
@@ -115,6 +122,7 @@ export const dirtyFighting: CombatStyle = {
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
       `,
       rank: 3,
+      roles: ['burst'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
       tags: ['Brawling'],
@@ -134,6 +142,7 @@ export const dirtyFighting: CombatStyle = {
         `,
       },
       rank: 7,
+      roles: ['burst'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
       tags: ['Brawling'],
@@ -150,6 +159,7 @@ export const dirtyFighting: CombatStyle = {
         If it loses hit points from this damage, it becomes \\paralyzed as a \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['maim'],
       tags: ['Brawling'],
     },
 
@@ -165,6 +175,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 3,
+      roles: ['softener'],
       tags: ['Brawling'],
     },
 
@@ -179,6 +190,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 1,
+      roles: ['softener'],
       tags: ['Brawling'],
     },
 
@@ -193,6 +205,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 5,
+      roles: ['softener'],
       tags: ['Brawling'],
     },
 
@@ -208,6 +221,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'grapple',
       },
       rank: 7,
+      roles: ['maim'],
       tags: ['Brawling'],
     },
 
@@ -221,6 +235,7 @@ export const dirtyFighting: CombatStyle = {
         \\crit Double knockback distance.
       `,
       rank: 1,
+      roles: ['combo'],
       tags: ['Brawling'],
     },
 
@@ -236,6 +251,7 @@ export const dirtyFighting: CombatStyle = {
         \\crit Double damage and double knockback distance.
       `,
       rank: 5,
+      roles: ['combo'],
       tags: ['Brawling'],
     },
 
@@ -248,6 +264,7 @@ export const dirtyFighting: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
+      roles: ['softener'],
     },
 
     {
@@ -260,6 +277,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'disarm',
       },
       rank: 7,
+      roles: ['softener'],
     },
 
     {
@@ -276,6 +294,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'overrun',
       },
       rank: 3,
+      roles: ['clear', 'dive'],
       tags: ['Brawling'],
     },
 
@@ -290,6 +309,7 @@ export const dirtyFighting: CombatStyle = {
         name: 'battering ram',
       },
       rank: 7,
+      roles: ['clear', 'dive'],
     },
 
     {
@@ -301,6 +321,7 @@ export const dirtyFighting: CombatStyle = {
         You must still have a free hand that is not being used to make the strike to throw the object.
       `,
       rank: 3,
+      roles: ['burst', 'softener'],
     },
 
     {
@@ -312,6 +333,7 @@ export const dirtyFighting: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures two or more size categories larger than you.
       `,
       rank: 1,
+      roles: ['trip'],
     },
 
     {
@@ -322,6 +344,7 @@ export const dirtyFighting: CombatStyle = {
         If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 3,
+      roles: ['softener'],
     },
 
     {
@@ -332,6 +355,7 @@ export const dirtyFighting: CombatStyle = {
         If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
+      roles: ['softener'],
     },
 
     {
@@ -343,6 +367,7 @@ export const dirtyFighting: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
+      roles: ['dive'],
     },
 
     {
@@ -353,6 +378,7 @@ export const dirtyFighting: CombatStyle = {
         If the target takes damage and your attack result also hits its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
+      roles: ['softener'],
     },
 
     {
@@ -363,6 +389,7 @@ export const dirtyFighting: CombatStyle = {
         If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
+      roles: ['maim'],
     },
 
     {
@@ -373,6 +400,7 @@ export const dirtyFighting: CombatStyle = {
         If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 5,
+      roles: ['maim'],
     },
 
     {
@@ -384,6 +412,7 @@ export const dirtyFighting: CombatStyle = {
         If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -395,6 +424,7 @@ export const dirtyFighting: CombatStyle = {
         If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 7,
+      roles: ['burst'],
     },
   ],
 };
