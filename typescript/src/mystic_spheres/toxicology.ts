@@ -447,7 +447,8 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'acid rain',
-        exceptThat: 'it affects a \\largearea radius within \\longrange, and the damage increases to \\damageranksix.',
+        exceptThat:
+          'it affects a \\largearea radius within \\longrange, and the damage increases to \\damageranksix.',
       },
       rank: 6,
       scaling: 'accuracy',
@@ -457,7 +458,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Healing Salve',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // Stronger secondary effect due to touch range
       effect: `
         Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
@@ -472,7 +473,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Bitter Remedy',
 
-      cost: "Two \\glossterm{fatigue levels} from the target.",
+      cost: 'Two \\glossterm{fatigue levels} from the target.',
       effect: `
         Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
         The target removes one of its \\glossterm{vital wounds}.
@@ -487,7 +488,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Efficient Bitter Remedy',
 
-      cost: "Two \\glossterm{fatigue levels} from the target.",
+      cost: 'Two \\glossterm{fatigue levels} from the target.',
       functionsLike: {
         name: 'bitter remedy',
         exceptThat: `the vital wound created by this spell was no vital wound effect.`,
@@ -512,7 +513,7 @@ export const toxicology: MysticSphere = {
     {
       name: 'Cleansing Draught',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       effect: `
         You or a living \\glossterm{ally} you \\glossterm{touch} removes a \\glossterm{condition}.
       `,
@@ -562,8 +563,8 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Devouring Fungus',
 
       functionsLike: {
-        name: "fungal growth",
-        exceptThat: "the damage increases to \\damagerankfour.",
+        name: 'fungal growth',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 5,
       scaling: 'accuracy',

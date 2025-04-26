@@ -1,6 +1,9 @@
 import { Creature } from '@src/character_sheet/creature';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
-import { getCurrentCharacterSheet, setCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
+import {
+  getCurrentCharacterSheet,
+  setCurrentCharacterSheet,
+} from '@src/character_sheet/current_character_sheet';
 
 type MonsterInitializer = (creature: Creature) => void;
 

@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT, SWIFT_FATIGUE  } from './constants';
+import { CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
@@ -239,7 +239,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Energize',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
@@ -254,7 +254,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Empowered Energize',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
@@ -673,7 +673,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Blow',
       functionsLike: {
         name: 'arcing blow',
-        exceptThat: "the strike deals double \\glossterm{weapon damage}.",
+        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
       rank: 6,
       scaling: 'accuracy',

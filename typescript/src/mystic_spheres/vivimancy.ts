@@ -40,7 +40,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifesteal Grasp',
 
-      cost: "One optional \\glossterm{fatigue level} (see text).",
+      cost: 'One optional \\glossterm{fatigue level} (see text).',
       // baseline for melee range is dr3, drop to dr2 for healing
       attack: {
         hit: `
@@ -67,7 +67,8 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal grasp',
         // healing is dr4
-        exceptThat: 'the damage increases to \\damageranksix, and the healing increases to 1d6 per 2 power.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and the healing increases to 1d6 per 2 power.',
       },
       rank: 4,
       scaling: 'accuracy',
@@ -77,7 +78,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Lifesteal',
 
-      cost: "One optional \\glossterm{fatigue level} (see text).",
+      cost: 'One optional \\glossterm{fatigue level} (see text).',
       // +1r for HP theft
       attack: {
         hit: `
@@ -102,7 +103,8 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'lifesteal',
         // healing is dr6
-        exceptThat: 'the damage increases to \\damagerankfive, and the healing increases to 1d8 plus 1d8 per 2 power.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and the healing increases to 1d8 plus 1d8 per 2 power.',
       },
       rank: 6,
       tags: [],
@@ -111,7 +113,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Restoration',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr2 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
@@ -127,7 +129,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Empowered Restoration',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr5 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
@@ -141,7 +143,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Total Restoration',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr8 for short range, +1dr from healing bonus. Use drh to really reward
       // investment.
       effect: `
@@ -170,16 +172,18 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Cure Vital Wound',
 
-      cost: "Three \\glossterm{fatigue levels} from the target.",
+      cost: 'Three \\glossterm{fatigue levels} from the target.',
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
         The target removes one \\glossterm{vital wound}.
       `,
       rank: 5,
-      scaling: { 7: `
+      scaling: {
+        7: `
         The target can remove two \\glossterm{vital wounds}.
         If it does, the cost increases to six fatigue levels from the target.
-      `},
+      `,
+      },
     },
 
     {
@@ -309,8 +313,8 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Wellspring of Life',
 
-      // This has a larger effect on large healing values, so it's not a great 
-      // combo with incremental regeneration-style healing. 
+      // This has a larger effect on large healing values, so it's not a great
+      // combo with incremental regeneration-style healing.
       effect: `
         Whenever you regain hit points, you regain the maximum possible number instead of rolling.
       `,
@@ -505,15 +509,16 @@ export const vivimancy: MysticSphere = {
       name: 'Massive Lifebomb',
 
       functionsLike: {
-        name: "Lifebomb",
-        exceptThat: "the radius increases to a \\largearea radius from you, and the damage increases to \\damagerankfive.",
+        name: 'Lifebomb',
+        exceptThat:
+          'the radius increases to a \\largearea radius from you, and the damage increases to \\damagerankfive.',
       },
       rank: 6,
       scaling: 'accuracy',
     },
 
     {
-      name: "Deathtouch",
+      name: 'Deathtouch',
 
       // Baseline for melee range is dr7, which is 5.5+2.75dpp.
       // If it required no remaining DR, it would be dr9, which is 9 + 4.5dpp.

@@ -676,7 +676,7 @@ export const enchantment: MysticSphere = {
     {
       name: 'Restore Bravado',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr3l
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
@@ -691,7 +691,7 @@ export const enchantment: MysticSphere = {
     {
       name: 'Empowered Restore Bravado',
 
-      cost: "One \\glossterm{fatigue level} from the target.",
+      cost: 'One \\glossterm{fatigue level} from the target.',
       // dr7l
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.

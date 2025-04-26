@@ -39,7 +39,7 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: "Rushdown",
+      name: 'Rushdown',
 
       effect: `
         You can move up to half your speed, then make a melee \\glossterm{strike}.
@@ -48,7 +48,7 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: "Rushdown+",
+      name: 'Rushdown+',
 
       effect: `
         You can move up to your speed, then make a melee \\glossterm{strike}.
@@ -71,7 +71,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Sprinting Charge',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `

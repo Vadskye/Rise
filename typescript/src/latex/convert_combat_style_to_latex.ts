@@ -1,10 +1,10 @@
-import { CombatStyle, Maneuver } from "@src/combat_styles";
+import { CombatStyle, Maneuver } from '@src/combat_styles';
 import {
   determineAbilityType,
   sortByRankAndLevel,
-} from "@src/latex/convert_mystic_sphere_to_latex";
-import * as format from "@src/latex/format";
-import { assertEndsWithPeriod } from "@src/latex/format/spell_effect";
+} from '@src/latex/convert_mystic_sphere_to_latex';
+import * as format from '@src/latex/format';
+import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
 
 export function convertCombatStyleToLatex(style: CombatStyle): string {
   assertEndsWithPeriod(style.shortDescription, style.name);
@@ -17,16 +17,14 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
       ${style.specialRules ? `\\parhead{Special Rules} ${style.specialRules}` : ``}
 
       \\subsection{Maneuvers}
-        ${sortByRankAndLevel(style.maneuvers)
-          .map(convertManeuverToLatex)
-          .join("\n")}
+        ${sortByRankAndLevel(style.maneuvers).map(convertManeuverToLatex).join('\n')}
   `);
 }
 
 function convertManeuverToLatex(maneuver: Maneuver): string {
   const abilityType = determineAbilityType(maneuver);
   const internalComponents = [
-    format.spellEffect(maneuver, "maneuver"),
+    format.spellEffect(maneuver, 'maneuver'),
     format.spellScaling(maneuver),
     format.spellNarrative(maneuver),
   ].filter(Boolean);
@@ -36,12 +34,12 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
 
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}${wrappedRankText}
-      ${format.spellTypePrefix(maneuver) || ""}
+      ${format.spellTypePrefix(maneuver) || ''}
       \\rankline
       \\hypertargetraised{maneuver:${maneuver.name}}{}%
       \\hypertargetraised{maneuver:${maneuver.name.toLowerCase()}}{}%
       \\noindent
-      ${internalComponents.join("\n\\rankline\n\n\\noindent ").trim()}%
+      ${internalComponents.join('\n\\rankline\n\n\\noindent ').trim()}%
       \\vspace{0.1em}%
     \\end{${abilityType}}
   `;

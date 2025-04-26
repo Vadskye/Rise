@@ -31,4 +31,3 @@ export class SignalEmitter<Source, T> {
     return this;
   }
 }
-

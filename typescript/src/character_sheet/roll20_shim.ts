@@ -14,7 +14,10 @@ export function setAttrs(attrs: Attrs): void {
   getCurrentCharacterSheet().setProperties(attrs);
 }
 
-export function getSectionIDs(sectionPrefix: string, callback: (repeatingSectionIds: string[]) => void): void {
+export function getSectionIDs(
+  sectionPrefix: string,
+  callback: (repeatingSectionIds: string[]) => void,
+): void {
   return getCurrentCharacterSheet().getSectionIDs(sectionPrefix as any, callback);
 }
 
@@ -39,4 +42,4 @@ export default {
   generateRowID,
   randomInteger,
   removeRepeatingRow,
-}
+};

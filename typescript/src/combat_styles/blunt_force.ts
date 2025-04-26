@@ -251,7 +251,8 @@ export const bruteForce: CombatStyle = {
       name: 'Press Forward+',
 
       functionsLike: {
-        exceptThat: 'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 5 feet.',
+        exceptThat:
+          'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 5 feet.',
         name: 'press forward',
       },
       rank: 5,
@@ -265,7 +266,7 @@ export const bruteForce: CombatStyle = {
       // A Heavy weapon would deal about 1d10+3 = 8.5 damage
       // This would deal 8.5 damage normally or 10.5 with a Heavy weapon, so about 25%
       // more damage than baseline.
-      cost: "One \\glossterm{fatigue level} (see text).",
+      cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
         Make a \\glossterm{strike}.
         The strike deals \\glossterm{extra damage} equal to half your power.
@@ -279,7 +280,7 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Desperate Smash+',
 
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         The strike deals \\glossterm{extra damage} equal to your power.

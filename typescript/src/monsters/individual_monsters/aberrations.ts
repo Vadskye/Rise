@@ -2,17 +2,17 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
 export function addAberrations(grimoire: Grimoire) {
-  grimoire.addMonster("aboleth", (creature: Creature) => {
+  grimoire.addMonster('aboleth', (creature: Creature) => {
     creature.setRequiredProperties({
-      alignment: "neutral evil",
-      base_class: "mystic",
+      alignment: 'neutral evil',
+      base_class: 'mystic',
       challenge_rating: 4,
-      creature_type: "planeforged",
+      creature_type: 'planeforged',
       level: 12,
     });
     creature.setProperties({
       has_art: true,
-      size: "Huge",
+      size: 'Huge',
     });
     creature.setKnowledgeResults({
       easy: `
@@ -34,14 +34,14 @@ export function addAberrations(grimoire: Grimoire) {
         They sometimes use their minions as agents to spy in cities or otherwise further their sinister goals.
       `,
     });
-    creature.setTrainedSkills(["awareness", "endurance", "social_insight", "swim"]);
+    creature.setTrainedSkills(['awareness', 'endurance', 'social_insight', 'swim']);
     creature.setBaseAttributes([4, 0, 6, 4, 4, 6]);
     creature.addAutoAttack({
       areaShape: 'cone',
       defense: ['Mental'],
       effect: 'stunned',
       isMagical: true,
-      name: "Psionic Blast",
+      name: 'Psionic Blast',
       tags: ['Compulsion'],
       targeting: 'large_area',
     });

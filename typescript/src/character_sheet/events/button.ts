@@ -21,4 +21,4 @@ export class Button {
       triggerName: `clicked:${this.buttonName}`,
     });
   }
-} 
+}
