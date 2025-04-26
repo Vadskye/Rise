@@ -11,11 +11,11 @@ t.test('can convert an aboleth to latex', (t) => {
   const aboleth = grimoire.getMonster("aboleth");
   multilineEqual(t, convertMonsterToLatex(aboleth), `\\newpage
       \\par \\noindent
-      \\begin<minipage><\\columnwidth>
-          \\monsubsection<aboleth><12 Mystic>[Elite]
-          \\monstersize<Huge undefined>
+      \\begin{minipage}{\\columnwidth}
+          \\monsubsection{aboleth}{12 Mystic}[Elite]
+          \\monstersize{Huge undefined}
 
-      \\end<minipage>
+      \\end{minipage}
 
 
 
@@ -41,7 +41,7 @@ t.test('can convert an aboleth to latex', (t) => {
 
       \\end{monsterstatistics}
 
-      \\monsterabilitiesheader<$Name>`);
+      \\monsterabilitiesheader{$Name}`);
   t.end();
 });
 
