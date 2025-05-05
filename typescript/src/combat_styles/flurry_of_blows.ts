@@ -12,6 +12,7 @@ export const flurryOfBlows: CombatStyle = {
         Make two \\glossterm{strikes} with a \\minus1 accuracy penalty.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
@@ -21,6 +22,7 @@ export const flurryOfBlows: CombatStyle = {
         Make three \\glossterm{strikes} with a \\minus1 accuracy penalty.
       `,
       rank: 7,
+      roles: ['burst'],
     },
 
     {
@@ -32,6 +34,7 @@ export const flurryOfBlows: CombatStyle = {
         You must still have a free hand that is not being used to make the strike to hold and drink the potion.
       `,
       rank: 3,
+      roles: ['healing'],
     },
 
     {
@@ -45,6 +48,7 @@ export const flurryOfBlows: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 1,
+      roles: ['burst', 'exertion'],
     },
 
     {
@@ -56,6 +60,7 @@ export const flurryOfBlows: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
       rank: 5,
+      roles: ['burst', 'exertion'],
     },
 
     {
@@ -66,6 +71,7 @@ export const flurryOfBlows: CombatStyle = {
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
       rank: 1,
+      roles: ['clear'],
     },
 
     {
@@ -78,6 +84,7 @@ export const flurryOfBlows: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 5,
+      roles: ['flash'],
     },
 
     {
@@ -88,6 +95,7 @@ export const flurryOfBlows: CombatStyle = {
         The strikes target all \\glossterm{enemies} adjacent to you.
       `,
       rank: 7,
+      roles: ['clear'],
     },
 
     {
@@ -98,7 +106,8 @@ export const flurryOfBlows: CombatStyle = {
         You take a -4 accuracy penalty with both strikes, and any \\glossterm{longshot penalty} that applies to the strikes is doubled.
         For each previous consecutive round that you used this ability in the same location, you reduce this accuracy penalty by 1.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['ramp'],
     },
 
     {
@@ -109,6 +118,7 @@ export const flurryOfBlows: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 1,
+      roles: ['clear'],
     },
 
     {
@@ -121,6 +131,7 @@ export const flurryOfBlows: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 5,
+      roles: ['clear'],
     },
 
     {
@@ -133,6 +144,7 @@ export const flurryOfBlows: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 3,
+      roles: ['clear'],
     },
 
     {
@@ -147,6 +159,7 @@ export const flurryOfBlows: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 7,
+      roles: ['clear'],
     },
 
     {
@@ -157,6 +170,7 @@ export const flurryOfBlows: CombatStyle = {
         Then, you can make a \\glossterm{strike} with a -1 accuracy penalty.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -167,6 +181,7 @@ export const flurryOfBlows: CombatStyle = {
         Then, you can make a \\glossterm{strike}.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -176,7 +191,8 @@ export const flurryOfBlows: CombatStyle = {
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
         You do not suffer the normal -4 accuracy penalty for using a Projectile weapon against a creature adjacent to you on this attack.
       `,
-      rank: 3,
+      rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -188,6 +204,7 @@ export const flurryOfBlows: CombatStyle = {
         The second strike cannot target any other creatures.
       `,
       rank: 3,
+      roles: ['execute'],
     },
 
     {
@@ -198,6 +215,7 @@ export const flurryOfBlows: CombatStyle = {
         If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
+      roles: ['maim'],
       tags: ['Electricity'],
     },
 
@@ -209,6 +227,7 @@ export const flurryOfBlows: CombatStyle = {
         If the target takes damage, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['maim'],
       tags: ['Electricity'],
     },
 
@@ -222,16 +241,18 @@ export const flurryOfBlows: CombatStyle = {
         If both strikes deal damage and also hit the target's Reflex defense, it becomes \\blinded as a \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['softener'],
     },
 
     {
       name: 'Dazzling Speed',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a melee \\glossterm{strike}.
         If the target takes damage and your attack result also hits its Reflex defense, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 1,
+      roles: ['softener'],
     },
   ],
 };
