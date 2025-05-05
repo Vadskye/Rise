@@ -424,8 +424,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
     vec![
-        // enemies in medium radius is a t3 area
-        // assuming -1ct for brief, stunned would be t1, for a total of a r2 effect??
+        // stun as a condition in a T3 area is a rank 6 effect
+        // -3r for brief AOE means this would normally be rank 3
         RankAbility {
             complexity: 1,
             name: "Denounce the Heathens",
