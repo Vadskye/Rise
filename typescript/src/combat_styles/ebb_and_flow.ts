@@ -54,7 +54,18 @@ export const ebbAndFlow: CombatStyle = {
         You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} last round.
       `,
       rank: 1,
-      roles: ['burst', 'payoff'],
+      roles: ['payoff'],
+    },
+
+    {
+      name: 'Redeeming Followup+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        You gain a +2 accuracy bonus with the strikes against all creatures that you missed with a \\glossterm{strike} last round.
+      `,
+      rank: 5,
+      roles: ['payoff'],
     },
 
     {
@@ -65,16 +76,7 @@ export const ebbAndFlow: CombatStyle = {
         The strike deals \\glossterm{extra damage} equal to your power against all creatures that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
-    },
-
-    {
-      name: 'Redeeming Flurry',
-
-      effect: `
-        Make two \\glossterm{strikes}.
-        You gain a +2 accuracy bonus with the strikes against all creatures that you missed with a \\glossterm{strike} last round.
-      `,
-      rank: 5,
+      roles: ['payoff'],
     },
 
     {
@@ -86,6 +88,7 @@ export const ebbAndFlow: CombatStyle = {
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -97,6 +100,7 @@ export const ebbAndFlow: CombatStyle = {
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
@@ -108,6 +112,7 @@ export const ebbAndFlow: CombatStyle = {
         If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -121,6 +126,7 @@ export const ebbAndFlow: CombatStyle = {
         It lasts until you finish a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
       `,
       rank: 3,
+      roles: ['ramp'],
     },
 
     {
@@ -132,6 +138,7 @@ export const ebbAndFlow: CombatStyle = {
         name: 'hunting strike',
       },
       rank: 7,
+      roles: ['ramp'],
     },
 
     {
@@ -144,6 +151,7 @@ export const ebbAndFlow: CombatStyle = {
         You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
       rank: 1,
+      roles: ['burst'],
       tags: ['Swift'],
     },
 
@@ -152,8 +160,9 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        It deals double \\glossterm{weapon damage} if you both regained \\glossterm{hit points} or \\glossterm{damage resistance} and did not make any attacks last round.
+        It deals double \\glossterm{weapon damage} if you did not make any attacks last round and regained either \\glossterm{hit points} or \\glossterm{damage resistance} last round.
       `,
+      roles: ['payoff'],
       rank: 3,
     },
 
@@ -165,6 +174,7 @@ export const ebbAndFlow: CombatStyle = {
         If the target takes damage, it takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
       rank: 3,
+      roles: ['trip'],
     },
 
     {
@@ -175,6 +185,7 @@ export const ebbAndFlow: CombatStyle = {
         If the target takes damage, it takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
       rank: 7,
+      roles: ['trip'],
     },
 
     {
@@ -182,9 +193,10 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        After making this strike, you \\glossterm{briefly} gain a +1 accuracy bonus with \\glossterm{dual strikes}.
+        If the target takes damage, you \\glossterm{briefly} gain a +1 accuracy bonus with \\glossterm{dual strikes} against that target.
       `,
       rank: 1,
+      roles: ['generator'],
     },
 
     {
@@ -195,6 +207,17 @@ export const ebbAndFlow: CombatStyle = {
         You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
       `,
       rank: 1,
+      roles: ['generator'],
+    },
+
+    {
+      name: 'Kata of Preparation',
+
+      effect: `
+        You \\glossterm{briefly} gain a \plus2 accuracy bonus with strikes.
+      `,
+      rank: 1,
+      roles: ['generator'],
     },
   ],
 };
