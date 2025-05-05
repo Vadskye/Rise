@@ -66,10 +66,9 @@ There are four comparative strength contexts. Note that htese specifically refer
 
 * Superiority + Swarm = Bug Swatting:
   * Preferred effects:
-    * Charge: Rush into melee and deal damage
     * Cleanse: Remove conditions to avoid debuffs that can bring you down to the swarm's level; they will eventually roll a 10 to hit with a debuff
     * Clear: Short to mid range AOE immediate damage to quickly kill enemies
-    * Dive: Move through enemies and make melee attacks to hit the most relevant targets in the swarm
+    * Dive: Move towards enemies and make melee attacks to hit the most relevant targets in the swarm
     * Goad
     * Flash: AOE brief debuffs to incapacitate enemies in bulk
     * Hazard: Creating an aoe battlefield hazard can affect enemies in bulk and constrain their mobility
