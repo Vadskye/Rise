@@ -297,7 +297,7 @@ export const bruteForce: CombatStyle = {
         This ability only increases your fatigue level if the strike hits.
       `,
       rank: 1,
-      roles: ['burst'],
+      roles: ['burst', 'exertion'],
     },
 
     {
@@ -312,7 +312,7 @@ export const bruteForce: CombatStyle = {
         This ability only increases your fatigue level if the strike hits.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'exertion'],
     },
 
     {

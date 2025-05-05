@@ -1,6 +1,6 @@
 import { CombatStyle } from '.';
 // TODO: move this to a more generally shared location
-import { CONDITION_CRIT } from '../mystic_spheres/constants';
+import { BRIEF_CRIT, CONDITION_CRIT } from '../mystic_spheres/constants';
 
 export const heraldOfWar: CombatStyle = {
   name: 'Herald of War',
@@ -16,6 +16,7 @@ export const heraldOfWar: CombatStyle = {
         You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
       `,
       rank: 1,
+      roles: ['focus'],
       tags: ['Auditory'],
     },
 
@@ -23,14 +24,14 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stunning Roar',
 
       attack: {
-        crit: CONDITION_CRIT,
-        hit: `Each target with no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.`,
+        hit: `Each target is \\glossterm{briefly} \\stunned.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
-      tags: ['Auditory', 'Compulsion'],
       rank: 3,
+      roles: ['flash'],
+      tags: ['Auditory', 'Compulsion'],
     },
 
     {
@@ -43,21 +44,79 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Auditory', 'Compulsion'],
       rank: 7,
+      roles: ['flash'],
+      tags: ['Auditory', 'Compulsion'],
     },
 
+    {
+      name: 'Faltering Roar',
+
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\slowed.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      rank: 3,
+      roles: ['flash'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Faltering Roar',
+
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\slowed.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      rank: 3,
+      roles: ['flash'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Faltering Roar+',
+
+      attack: {
+        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      rank: 7,
+      roles: ['flash'],
+      tags: ['Auditory'],
+    },
+
+    // Goad is relatively weak as a brief effect
     {
       name: 'Goading Roar',
 
       attack: {
-        crit: CONDITION_CRIT,
+        hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+        `,
+      },
+      tags: ['Auditory', 'Emotion'],
+      roles: ['goad'],
+      rank: 1,
+    },
+
+    {
+      name: 'Goading Roar+',
+
+      attack: {
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
+      roles: ['goad'],
       rank: 5,
     },
 
@@ -66,20 +125,53 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          Each target is \\enraged as a \\glossterm{condition}.
+          Each target is \\glossterm{briefly} \\enraged.
         `,
-        crit: CONDITION_CRIT,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Auditory', 'Emotion'],
       rank: 1,
+      roles: ['flash'],
+      tags: ['Auditory', 'Emotion'],
+    },
+
+    {
+      name: 'Enraging Roar+',
+
+      attack: {
+        hit: `
+          Each target is \\enraged as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
+      },
+      roles: ['flash'],
+      rank: 3,
+      tags: ['Auditory', 'Emotion'],
     },
 
     {
       name: 'Fearsome Roar',
 
+      // Frightened as a condition in a t3 area is a r4 effect.
+      // But frightened is relatively weak as a brief effect.
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\frightened by you.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+        `,
+      },
+      rank: 1,
+      roles: ['flash'],
+      tags: ['Auditory', 'Emotion'],
+    },
+
+    {
+      name: 'Fearsome Roar+',
+
+      // Frightened as a condition in a t4 area is a r5 effect
       attack: {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         crit: CONDITION_CRIT,
@@ -87,8 +179,9 @@ export const heraldOfWar: CombatStyle = {
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      tags: ['Auditory', 'Emotion'],
       rank: 5,
+      roles: ['flash'],
+      tags: ['Auditory', 'Emotion'],
     },
 
     {
