@@ -6,11 +6,33 @@ export const bruteForce: CombatStyle = {
 
   maneuvers: [
     {
+      name: 'Wild Swing',
+
+      effect: `
+        Make a \\glossterm{strike} with 50\\% miss chance.
+        The strike deals double damage.
+        However, you cannot get a \\glossterm{critical hit} with it.
+      `,
+      rank: 1,
+      roles: ['burst'],
+    },
+    {
+      name: 'Wild Swing+',
+
+      effect: `
+        Make a \\glossterm{strike} with 50\\% miss chance.
+        The strike deals quadruple damage.
+        However, you cannot get a \\glossterm{critical hit} with it.
+      `,
+      rank: 5,
+      roles: ['burst'],
+    },
+    {
       name: 'Pure Power',
 
       effect: `
-        Make a \\glossterm{strike} with a -4 accuracy penalty.
-        The strike deals double \\glossterm{weapon damage}.
+        You become \\empowered this round.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
       `,
       rank: 1,
       roles: ['burst'],
@@ -20,8 +42,8 @@ export const bruteForce: CombatStyle = {
       name: 'Pure Power+',
 
       effect: `
-        Make a \\glossterm{strike} with a -2 accuracy penalty.
-        The strike deals triple \\glossterm{weapon damage}.
+        You become \\maximized this round.
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double damage.
       `,
       rank: 5,
       roles: ['burst'],
@@ -32,9 +54,10 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         The attack is made against the target's Fortitude defense instead of its Armor defense.
+        If the target takes damage, it \\glossterm{briefly} takes a -2 penalty to its Armor defense.
       `,
       rank: 3,
-      roles: ['burst'],
+      roles: ['softener'],
     },
 
     {
@@ -98,8 +121,8 @@ export const bruteForce: CombatStyle = {
       name: 'Tenderize',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals double damage.
+        If the target loses hit points and your attack result beats its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 5,
@@ -109,7 +132,7 @@ export const bruteForce: CombatStyle = {
       name: 'Steady Slam',
 
       effect: `
-        Make a melee \\glossterm{strike} using a single weapon.
+        Make a melee \\glossterm{strike}.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
         However, you cannot get a \\glossterm{critical hit}.
       `,
@@ -121,7 +144,7 @@ export const bruteForce: CombatStyle = {
       name: 'Steady Slam+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} using a single weapon.
+        Make a melee \\glossterm{strike} that deals double damage using a single weapon.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
       `,
       roles: ['burst'],
@@ -143,7 +166,7 @@ export const bruteForce: CombatStyle = {
       name: 'Concussion+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals triple damage.
         If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\confused as a \\glossterm{condition}.
       `,
       roles: ['maim'],
@@ -183,7 +206,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ricochet',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to three creatures or objects in a \\smallarea radius within \\medrange of you.
+        Make a thrown \\glossterm{strike} against up to four creatures or objects in a \\smallarea radius within \\medrange of you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
@@ -195,9 +218,9 @@ export const bruteForce: CombatStyle = {
       name: 'Ricochet+',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to five creatures or objects within \\medrange of you.
-        You can choose the same target multiple times, but not twice in a row, and no more than twice total.
-        If you choose the same target twice, it takes double damage from the attack.
+        Make a thrown \\glossterm{strike} against up to six creatures or objects in a \\smallarea radius within \\medrange of you.
+        You can choose the same target multiple times, but not twice in a row, and no more than three times total.
+        Choosing the same target twice means it takes double damage, and three times means it takes triple damage.
 
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
@@ -227,7 +250,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
-      roles: ['maim'],
+      roles: ['trip'],
     },
 
     {
@@ -236,6 +259,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         If the target takes damage, you \\glossterm{knockback} it 15 feet.
+        If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -246,8 +270,9 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
         If the target takes damage, you \\glossterm{knockback} it 30 feet.
+        If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 7,
@@ -255,11 +280,77 @@ export const bruteForce: CombatStyle = {
     },
 
     {
+      name: 'Flex',
+
+      effect: `
+        You are \\glossterm{briefly} \\empowered.
+      `,
+      rank: 1,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Rejuvenating Flex',
+
+      cost: "One \\glossterm{fatigue level}.",
+      effect: `
+        You are \\glossterm{briefly} empowered.
+        In addition, you regain 1d6 hit points plus 1d6 per 3 power at the end of the round.
+      `,
+      rank: 3,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Steady Flex',
+
+      effect: `
+        You are \\glossterm{briefly} \\braced and \\empowered.
+      `,
+      rank: 5,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Flex+',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} \\maximized. 
+      `,
+      rank: 5,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Muscle Burst',
+
+      effect: `
+        You are \\glossterm{briefly} \\empowered.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
+      `,
+      rank: 3,
+      roles: ['generator'],
+    },
+
+    {
+      name: 'Muscle Burst+',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} \\maximized.
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double \\glossterm{weapon damage}.
+      `,
+      rank: 7,
+      roles: ['generator'],
+    },
+
+    {
       name: 'Press Forward',
 
       effect: `
         Make a melee \\glossterm{strike}.
-        After you make the strike, you can move up to 5 feet.
+        After you make the strike, you can move up to 10 feet.
         During this movement, you can move into space occupied by creatures that you damaged with the strike.
         When you do, you \\glossterm{push} that creature up to 5 feet away from you into an unoccupied space.
         This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
@@ -273,7 +364,7 @@ export const bruteForce: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 5 feet.',
+          'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 10 feet.',
         name: 'press forward',
       },
       rank: 5,
@@ -283,15 +374,10 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Desperate Smash',
 
-      // Expected high power is about 4.
-      // A normal strike would deal about 1d8+2 = 6.5 damage.
-      // A Heavy weapon would deal about 1d10+3 = 8.5 damage
-      // This would deal 8.5 damage normally or 10.5 with a Heavy weapon, so about 25%
-      // more damage than baseline.
       cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
+        You become \\maximized this round.
         Make a \\glossterm{strike}.
-        The strike deals \\glossterm{extra damage} equal to half your power.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
         This ability only increases your fatigue level if the strike hits.
@@ -305,8 +391,8 @@ export const bruteForce: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        The strike deals \\glossterm{extra damage} equal to your power.
+        You become \\maximized this round.
+        Make a \\glossterm{strike} that deals double damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
         This ability only increases your fatigue level if the strike hits.
@@ -319,10 +405,23 @@ export const bruteForce: CombatStyle = {
       name: 'Gutshot',
 
       effect: `
-        Make a strike with a -1 accuracy penalty.
-        If the target takes damage and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        Make a melee strike.
+        If you are \\empowered and the target takes damage, it is \\glossterm{briefly} \\stunned.
       `,
       rank: 3,
+      roles: ['softener'],
+    },
+
+    // Slightly behind rate (3 EA instead of 3.6 EA), but better to maintain consistency
+    // with regular Gutshot.
+    {
+      name: 'Gutshot+',
+
+      effect: `
+        Make a melee strike that deals triple \\glossterm{weapon damage}.
+        If you are \\empowered and the target takes damage, it is \\stunned as a \\glossterm{condition}.
+      `,
+      rank: 7,
       roles: ['softener'],
     },
 
@@ -331,7 +430,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If your attack result hits the target's Fortitude defense, the strike deals triple \\glossterm{weapon damage}.
+        If your attack result hits the target's Fortitude defense, the strike deals triple damage.
       `,
       rank: 5,
       roles: ['burst'],
@@ -340,10 +439,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Earsplitting Bonedrum',
 
-      // treat deafen as rank 0.5; self-deafen is almost no downside, so just narrative
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, you and the target are \\deafened as a \\glossterm{condition}.
+        If the target takes damage, you and the target are \\glossterm{briefly} \\deafened.
       `,
       rank: 1,
       roles: ['softener'],
@@ -355,7 +453,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        It deals double \\glossterm{weapon damage}, but you cannot get a \\glossterm{critical hit}.
+        It deals double damage, but you cannot get a \\glossterm{critical hit}.
         After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
@@ -368,7 +466,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        It deals quadruple \\glossterm{weapon damage}, but you cannot get a \\glossterm{critical hit}.
+        It deals quadruple damage, but you cannot get a \\glossterm{critical hit}.
         After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
@@ -388,6 +486,56 @@ export const bruteForce: CombatStyle = {
       rank: 3,
       roles: ['clear'],
       tags: [],
+    },
+
+    {
+      name: 'Shrapnel Blast',
+
+      effect: `
+        Make a melee \\glossterm{strike} against a stable surface.
+        Then, make an attack vs. Armor against everything in a cone from one corner of the target space.
+        The length of the cone is equal to one foot per point of damage you dealt to the surface, rounded down to 5 foot increments.
+        On a hit, each target takes \\damageranktwo. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        On a miss, each target takes half damage.
+      `,
+      rank: 3,
+      roles: ['flash'],
+    },
+
+    {
+      name: 'Shrapnel Blast+',
+
+      effect: `
+        Make a melee \\glossterm{strike} against a stable surface.
+        Then, make an attack vs. Armor against everything in a cone from one corner of the target space.
+        The length of the cone is equal to one foot per 2 points of damage you dealt to the surface, rounded down to 5 foot increments.
+        On a hit, each target takes \\damageranksix. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        On a miss, each target takes half damage.
+      `,
+      rank: 7,
+      roles: ['flash'],
+    },
+
+    {
+      name: 'Forceful Retreat',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        If you hit, you \\glossterm{push} yourself up to 10 feet in a straight line away from the target.
+      `,
+      rank: 1,
+      roles: ['retreat'],
+    },
+
+    {
+      name: 'Forceful Retreat+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        If you hit, you \\glossterm{push} yourself up to 20 feet in a straight line away from the target.
+      `,
+      rank: 5,
+      roles: ['retreat'],
     },
   ],
 };
