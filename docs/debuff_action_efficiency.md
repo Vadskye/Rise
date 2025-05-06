@@ -195,13 +195,16 @@ Possible damaging buff effects:
 A braced character gains a +2 bonus to all defenses.
 
 ### Empowered
-An empowered character deals maximum damage.
+An empowered character rolls damage twice and keeps the higher result.
 
 ### Focused
 A focused character rolls attacks rolls twice and keeps the higher result.
 
 ### Fortified
 A fortified character gains a +2 bonus to their Fortitude and Mental defenses.
+
+### Maximized
+A maximized character deals maximum damage.
 
 ### Primed
 A primed character automatically explodes on their attacks. 90% of the time, this provides +5.5 accuracy, so this is worth +5 accuracy overall.
@@ -226,15 +229,19 @@ This is higher than the baseline 25% assuming a 4 person party, but takes into a
 
 Braced applies 50% of the time, and it removes 40% of enemy actions when it applies. Therefore, it is worth 4 * 0.5 * 0.4 = 0.8 effective actions.
 
-### Empowered: 0.7
+### Empowered: 0.2
 
-Empowered is roughly 75% more damage, so it's worth 0.7 effective actions.
+Empowered is roughly 20% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
 
 ### Focused: 0.4
 Assume you have a 60% hit rate. 40% of the time, you reroll with Focused, and that hits 60% of the time. So your effective hit rate is 0.6 + 0.4 * 0.6 = 0.84. That's a 40% increase in your odds of hitting, so it's worth 0.4 effective actions.
 
 ### Fortified: 0.4
 Like Braced, but only affects 50% of enemy attacks.
+
+### Maximized: 0.9
+
+Maximized is roughly 70% more damage for spells, and about half that for strikes. Assume that players will use other combos or resources to take advantage of their state while maximized, so give it a 25% bonus.
 
 ### Primed: 0.8
 
@@ -462,52 +469,52 @@ If a debuff deals damage, the damage depends on the area affected by the debuff.
 
 ### Strike-based debuffs
 
-A strike with unrestricted weapon types uses "limited scope", so -1 rank. A melee-only strike uses melee-only, so -2 ranks. In either case, use the following scaling for damage:
+A strike with unrestricted weapon types uses "limited scope", so -1 rank. A melee-only strike uses melee-only, so -2 ranks.
 
-* Rank 1: Normal damage
-* Rank 3: +1 accuracy, normal damage
-* Rank 5: -1 accuracy, 2x damage
-* Rank 7: -1 accuracy, 3x damage
+* Rank 1: A normal damage strike takes up 1.2 of the 1.4 (unrestricted) or 1.6 (melee) EA available, so the baseline EA available for debuffs is only 0.2/0.4.
+* Rank 3: A normal damage strike takes up 1 EA of the 1.8 (unrestricted) or 2.0 (melee) EA available, so the baseline EA available for debuffs is 0.8/1.0.
+* Rank 5: 2x damage takes up 1 EA, so 1.5/1.8.
+* Rank 7: 3x damage takes up 1 EA, so 2.2/2.4.
 
 These accuracy modifiers are separate from the normal accuracy modifier calculation, and do not directly affect the resulting rank of the debuff.
 
 #### Specific strike-based effects
 * Rank 1:
   * Unrestricted:
-    * Strike and 0.6 EA debuff
-    * Strike, if beat Fort/Ment, 0.8 EA debuff
-    * Strike while affected by non-accuracy buff, 1 EA debuff
+    * Strike and 0.2 EA debuff
+    * Strike, if beat Fort/Ment, 0.4 EA debuff
+    * Strike while affected by non-accuracy buff, 0.6 EA debuff
   * Melee only:
-    * Strike and 0.8 EA debuff
-    * Strike, if beat Fort/Ment, 1 EA debuff
-    * Strike while affected by non-accuracy buff, 1.2 EA debuff
+    * Strike and 0.4 EA debuff
+    * Strike, if beat Fort/Ment, 0.6 EA debuff
+    * Strike while affected by non-accuracy buff, 0.8 EA debuff
 * Rank 3:
   * Unrestricted:
-    * +1a strike and 1 EA debuff
-    * +1a strike, if beat Fort/Ment, 1.2 EA debuff
-    * +1a strike while affected by non-accuracy buff, 1.5 EA debuff
+    * strike and 0.8 EA debuff
+    * strike, if beat Fort/Ment, 1.0 EA debuff
+    * strike while affected by non-accuracy buff, 1.2 EA debuff
   * Melee only:
-    * +1a strike and 1 EA debuff
-    * +1a strike, if beat Fort/Ment, 1.2 EA debuff
-    * +1a strike while affected by non-accuracy buff, 1.9 EA debuff
+    * strike and 1 EA debuff
+    * strike, if beat Fort/Ment, 1.2 EA debuff
+    * strike while affected by non-accuracy buff, 1.4 EA debuff
 * Rank 5:
   * Unrestricted:
-    * -1a double damage strike and 1.5 EA debuff
-    * -1a double damage strike, if beat Fort/Ment, 1.9 EA debuff
-    * -1a double damage strike while affected by non-accuracy buff, 2.2 EA debuff
+    * double damage strike and 1.5 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.9 EA debuff
+    * double damage strike while affected by non-accuracy buff, 2.2 EA debuff
   * Melee only:
-    * -1a double damage strike and 1.9 EA debuff
-    * -1a double damage strike, if beat Fort/Ment, 2.2 EA debuff
-    * -1a double damage strike while affected by non-accuracy buff, 2.6 EA debuff
+    * double damage strike and 1.9 EA debuff
+    * double damage strike, if beat Fort/Ment, 2.2 EA debuff
+    * double damage strike while affected by non-accuracy buff, 2.6 EA debuff
 * Rank 7:
   * Unrestricted:
-    * -1a triple damage strike and 2.2 EA debuff
-    * -1a triple damage strike, if beat Fort/Ment, 2.6 EA debuff
-    * -1a triple damage strike while affected by non-accuracy buff, 3.1 EA debuff
+    * triple damage strike and 2.2 EA debuff
+    * triple damage strike, if beat Fort/Ment, 2.6 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 3.1 EA debuff
   * Melee only:
-    * -1a triple damage strike and 2.6 EA debuff
-    * -1a triple damage strike, if beat Fort/Ment, 3.1 EA debuff
-    * -1a triple damage strike while affected by non-accuracy buff, 3.6 EA debuff
+    * triple damage strike and 2.6 EA debuff
+    * triple damage strike, if beat Fort/Ment, 3.1 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 3.6 EA debuff
 
 ### Rank modifiers
 
