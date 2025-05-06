@@ -110,6 +110,8 @@
   Assuming it does not have other methods of sight, it automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures.
   This makes it at least \partiallyunaware of all attacks, and it may be fully \unaware as normal.
 
+  \buffdef{braced} An braced creature gains a \plus2 bonus to all defenses.
+
   \debuffdef{charmed} A charmed creature is mentally influenced to like another creature.
   It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
   A charmed creature cannot be controlled like an automaton, but can be persuaded to take particular actions with the Persuasion skill (see \pcref{Persuasion}).
@@ -144,6 +146,10 @@
   If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
   A creature that is both dominated and \confused obeys its dominated orders, ignoring the confusion.
 
+  \buffdef{empowered} An empowered creature rolls damage twice whenever it deals damage and keeps the higher result.
+  This only affects damage dealt directly by the creature, including conditions it inflicts.
+  For example, an empowered creature that uses an ability which causes \glossterm{knockback} does not roll the falling damage from the knockback twice.
+
   \debuffdef{enraged} An enraged creature must spend a \glossterm{standard action} to make an attack during each round.
   It can still take other actions normally.
   The creature's attacks do not have to specifically target other creatures, so it can attack inanimate objects.
@@ -153,6 +159,11 @@
   An enraged creature automatically stops being enraged after ten minutes, even if it was unable to rest due to its rage.
 
   \debuffdef{flying} A creature that is flying takes a \minus4 penalty to its Armor and Reflex defenses (see \pcref{Aerial Movement}).
+
+  \buffdef{focused} A focused creature rolls attack rolls twice and keeps the higher result.
+  This only affects attack rolls, not \glossterm{miss chances} or \glossterm{checks}.
+
+  \buffdef{fortified} A fortified creature gains a \plus2 bonus to its Fortitude and Mental defenses.
 
   \debuffdef{frightened} A frightened creature takes a \minus2 penalty to its Mental defense.
   In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
@@ -188,6 +199,10 @@
   This can cause flying and gliding creatures to fall (see \pcref{Aerial Movement}).
   These penalties do not stack with the \slowed effect.
 
+  \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage.
+  This only affects damage dealt directly by the creature, including conditions it inflicts.
+  For example, a maximized creature that uses an ability which causes \glossterm{knockback} does not maximize the falling damage from the knockback.
+
   \debuffdef{panicked} A panicked creature takes a \minus4 penalty to its Mental defense.
   In addition, it is unable to make any attacks that include the source of its fear as a target.
   The penalty from this effect does not stack with the \frightened or \panicked effects.
@@ -203,6 +218,10 @@
   These penalties do not stack with the penalties for being \unaware.
   For details, see \pcref{Awareness and Surprise}.
 
+  \buffdef{primed} A primed creature automatically \glossterm{explodes} on the first die when making attack rolls (see \pcref{Exploding Dice}).
+  This only affects attack rolls, not \glossterm{miss chances} or \glossterm{checks}.
+  Since a 10 normally explodes, this has no effect if you roll a 10.
+
   \debuffdef{prone} A prone creature is lying on the ground, rather than standing normally.
   It takes a \minus2 penalty to Armor and Reflex defenses.
   However, it gains a \plus4 bonus to all defenses against ranged \glossterm{strikes} as long as the attacker is not adjacent to it.
@@ -217,12 +236,17 @@
   This generally requires one \glossterm{free hand}.
   Standing up from a prone position costs half of the creature's speed during that movement.
 
+  \buffdef{shielded} A shielded creature gains a \plus2 bonus to its Armor and Reflex defenses.
+
   \debuffdef{slowed} A slowed creature has a \minus10 foot penalty to its speed with all movement modes and takes a \minus2 penalty to its Armor and Reflex defenses.
   This does not stack with the \immobilized effect.
 
   \debuffdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
   While squeezing, a creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
   For details, see \pcref{Squeezing}.
+
+  \buffdef{steeled} A steeled creature cannot receive critical hits.
+  If an attack against it would be a critical hit, the attack is a normal hit instead.
 
   \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
   This does not stack with the \confused effect.

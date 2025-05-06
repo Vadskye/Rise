@@ -116,6 +116,15 @@
 \newcommand{\unaware}{\debuff{unaware} \reminder{\minus6 Armor and Ref}\xspace}
 \newcommand{\unconscious}{\debuff{unconscious}\xspace}
 
+\newcommand{\braced}{\buff{braced} \reminder{\plus2 defenses}\xspace}
+\newcommand{\empowered}{\buff{empowered} \reminder{roll damage twice}\xspace}
+\newcommand{\focused}{\buff{focused} \reminder{roll attacks twice}\xspace}
+\newcommand{\fortified}{\buff{fortified} \reminder{\plus2 Fort and Ment}\xspace}
+\newcommand{\maximized}{\buff{maximized} \reminder{deal max damage}\xspace}
+\newcommand{\primed}{\buff{primed} \reminder{always explode}\xspace}
+\newcommand{\shielded}{\buff{shielded} \reminder{\plus2 Armor and Ref}\xspace}
+\newcommand{\steeled}{\buff{steeled} \reminder{immune to crits}\xspace}
+
 \newcommand{\impervious}{\trait{impervious} \reminder{\plus4 defenses}\xspace}
 \newcommand{\vulnerable}{\trait{vulnerable} \reminder{\minus4 defenses}\xspace}
 
@@ -483,6 +492,18 @@
     {\termdef{#1}{debuff}}
 }
 
+\DeclareDocumentCommand{\buff}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{buff}}
+    {\termlink{#2}{buff}}
+}
+\DeclareDocumentCommand{\buffdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{buff}}
+    {\termdef{#1}{buff}}
+}
 
 \DeclareDocumentCommand{\abilitytag}{o m}
 {
