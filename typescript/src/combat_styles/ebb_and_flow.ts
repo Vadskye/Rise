@@ -61,8 +61,8 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Redeeming Followup+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        You gain a +2 accuracy bonus with the strikes against all creatures that you missed with a \\glossterm{strike} last round.
+        Make a \\glossterm{strike} that deals double damage.
+        You gain a +2 accuracy bonus with the strike against all creatures that you missed with a \\glossterm{strike} last round.
       `,
       rank: 5,
       roles: ['payoff'],
@@ -72,7 +72,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Victorious Followup',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} with a -2 accuracy penalty.
         The strike deals \\glossterm{extra damage} equal to your power against all creatures that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
@@ -104,18 +104,6 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Momentous Impact',
-
-      cost: 'You \\glossterm{briefly} cannot use this ability again.',
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
-      `,
-      rank: 3,
-      roles: ['burst'],
-    },
-
-    {
       name: 'Begin the Hunt',
 
       effect: `
@@ -123,7 +111,7 @@ export const ebbAndFlow: CombatStyle = {
         After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike.
         If the strike had multiple targets, you choose which target you gain the bonus against.
         This effect stacks with itself, up to a maximum of a +4 bonus.
-        It lasts until you finish a \\glossterm{short rest} or make a \\glossterm{strike} that does not include that creature as a target.
+        It lasts until you finish a \\glossterm{short rest} or make an attack that does not include that creature as a target.
       `,
       rank: 3,
       roles: ['ramp'],
@@ -134,8 +122,8 @@ export const ebbAndFlow: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the accuracy bonus from each strike increases to +2, and the strike deals double \\glossterm{weapon damage}. This bonus does not stack with the bonus from the \\maneuver{hunting strike} maneuver.',
-        name: 'hunting strike',
+          'the accuracy bonus from each strike increases to +2, and the strike deals double \\glossterm{weapon damage}. This bonus does not stack with the bonus from the \\maneuver{begin the hunt} maneuver.',
+        name: 'begin the hunt',
       },
       rank: 7,
       roles: ['ramp'],
@@ -160,7 +148,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        It deals double \\glossterm{weapon damage} if you did not make any attacks last round and regained either \\glossterm{hit points} or \\glossterm{damage resistance} last round.
+        It deals double damage if you did not make any attacks last round and regained either \\glossterm{hit points} or \\glossterm{damage resistance} last round.
       `,
       roles: ['payoff'],
       rank: 3,
@@ -181,7 +169,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Guardbreaker+',
 
       effect: `
-        Choose an \\glossterm{ally}, then make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Choose an \\glossterm{ally}, then make a \\glossterm{strike} that deals triple damage.
         If the target takes damage, it takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
       rank: 7,
@@ -200,6 +188,17 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
+      name: 'Two-Weapon Focus',
+
+      effect: `
+        Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
+        If the target takes damage, you \\glossterm{briefly} become \\focused.
+      `,
+      rank: 3,
+      roles: ['generator'],
+    },
+
+    {
       name: 'Tag-Team Followup',
 
       effect: `
@@ -207,17 +206,38 @@ export const ebbAndFlow: CombatStyle = {
         You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
       `,
       rank: 1,
-      roles: ['generator'],
+      roles: ['payoff'],
     },
 
     {
-      name: 'Kata of Preparation',
+      name: 'Tag-Team Followup+',
 
       effect: `
-        You \\glossterm{briefly} gain a \plus2 accuracy bonus with strikes.
+        Make a \\glossterm{strike} that deals double damage.
+        You get a +1 accuracy bonus with the strike if the target already took damage from one of your \\glossterm{allies} during the current round.
+      `,
+      rank: 5,
+      roles: ['payoff'],
+    },
+
+    {
+      name: 'Kata of Focus',
+
+      effect: `
+        You are \\glossterm{briefly} \\focused.
       `,
       rank: 1,
-      roles: ['generator'],
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Kata of Priming',
+
+      effect: `
+        You are \\glossterm{briefly} \\primed.
+      `,
+      rank: 5,
+      roles: ['focus'],
     },
   ],
 };
