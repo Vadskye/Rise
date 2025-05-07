@@ -98,7 +98,7 @@ As with all full action denial effects, this always comes with a "once per creat
 
 ### Blinded: 3.0
 
-Removing 50% of actions for a round is worth 50% of 4 = 2 effective actions. It doesn't affect AOE attacks, but it can also prevents normal targeting with even the 50% miss chance, so assume those cancel out.
+Removing 50% of actions for a round is worth 50% of 4 = 2 effective actions. It doesn't affect AOE attacks, but it can also prevent normal targeting with even the 50% miss chance, so assume those cancel out.
 
 In addition, a blinded creature is partially unaware of attacks. Using the same calculations as slowed, that's worth 1 effective action.
 
@@ -179,6 +179,14 @@ If you stun an enemy as the first action of the round, the party has 7 attacks t
 ### Time Skip: 2.5
 
 This refers to removing a creature from existence for a round. That gives the party time to prepare during the intervening round, but doesn't allow the target the same benefit. This is better than banishment. However, most bosses don't have anything particularly useful to do while they are banished, since they can't recover and generally don't have healing abilities. Assume that a boss acts at 10% effectiveness while banished, so removing that is worth 0.4 effective actions, or maybe 0.5 total since they also don't get a condition removal roll.
+
+### Treat as invisible: 1.2
+
+There are two components to being treated as invisible: the defense penalty and the miss chance.
+
+The defense penalty only applies to your own attacks, so the party has 1 attack that can take advantage of it, so it's worth 0.2 effective actions.
+
+The miss chance applies to roughly 25% of boss attacks. Since blindness is worse than a regular 50% miss chance due to needing to know the square, call it 75% action negation when it applies. That gives it an action effectiveness of 4 * 0.25 * 0.75 = 0.75 effective actions. As with panicked, this is a little low and doesn't take into account the edge case of multiple people using this ability, but a 50% miss chance is much less effective at completely debilitating a boss than panicked. Say that the action denial is 25% more effective, for a total of 0.94 effective actions.
 
 ### Vulnerable: 2.8
 
@@ -337,6 +345,12 @@ For the defense debuff, assume that 11 of the 15 party actions will take advanta
 
 ### Time Skip: 20
 
+### Treat as invisible: 4.6
+
+The defense penalty applies to 4 party attacks, so it provides 0.8 action effectiveness.
+
+The blindness is 16 * 0.25 * 0.75 * 1.25 = 3.8 effective actions.
+
 ### Vulnerable: 6
 Double stunned.
 
@@ -355,23 +369,24 @@ In general, most debuffs benefit to the same small degree with precision targeti
 ## Summary
 
 ```
-  Debuff      & Brief & HP Condition & Condition \\
-  Action skip & 2.0   & 8            & 24        \\
-  Banishment  & 2.0   & 5.3          & 16        \\
-  Blinded     & 3.0   & 4.7          & 14.2      \\
-  Confused    & 2.8   & 2.9          & 8.6       \\
-  Dazzled     & 0.6   & 0.8          & 2.4       \\
-  Deafened    & 0.3   & 0.5          & 1.6       \\
-  Enraged     & 0.2   & 0.3          & 0.8       \\
-  Frightened  & 0.8   & 0.7          & 2.0       \\
-  Goaded      & 0.8   & 0.8          & 2.3       \\
-  Immobilized & 5.0   & 6.5          & 19.4      \\
-  Panicked    & 2.3   & 2.5          & 7.6       \\
-  Prone       & 0.9   & 1.7          & 5.2       \\
-  Slowed      & 1.5   & 1.6          & 4.9       \\
-  Stunned     & 1.4   & 1.0          & 3.0       \\
-  Time skip   & 2.5   & 6.7          & 20        \\
-  Vulnerable  & 2.8   & 2.0          & 6.0       \\
+  Debuff          & Brief & HP Condition & Condition \\
+  Action skip     & 2.0   & 8            & 24        \\
+  Banishment      & 2.0   & 5.3          & 16        \\
+  Blinded         & 3.0   & 4.7          & 14.2      \\
+  Confused        & 2.8   & 2.9          & 8.6       \\
+  Dazzled         & 0.6   & 0.8          & 2.4       \\
+  Deafened        & 0.3   & 0.5          & 1.6       \\
+  Enraged         & 0.2   & 0.3          & 0.8       \\
+  Frightened      & 0.8   & 0.7          & 2.0       \\
+  Goaded          & 0.8   & 0.8          & 2.3       \\
+  Immobilized     & 5.0   & 6.5          & 19.4      \\
+  Panicked        & 2.3   & 2.5          & 7.6       \\
+  Prone           & 0.9   & 1.7          & 5.2       \\
+  Slowed          & 1.5   & 1.6          & 4.9       \\
+  Stunned         & 1.4   & 1.0          & 3.0       \\
+  Time skip       & 2.5   & 6.7          & 20        \\
+  Treat as invis: & 1.2   & 1.5          & 4.6       \\
+  Vulnerable      & 2.8   & 2.0          & 6.0       \\
 ```
 
 ## Effective Actions and Accuracy
@@ -465,7 +480,9 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
 
 ### Debuff + Damage
 
-If a debuff deals damage, the damage depends on the area affected by the debuff. A standard area debuff deals drX-2 damage, which is about 65% of drX damage. A single-target debuff deals drX-1 damage, which is about 80% of drX damage.
+If a debuff deals damage, the damage depends on the area affected by the debuff. A standard area debuff deals drX-2 damage, which is about 65% of drX damage, and 80% of the standard damage for an area attack.
+
+A 30' range single-target debuff deals drX-1 damage, since a normal 30' range single-target damage ability would deal drX+1 damage. Likewise, a melee range single-target debuff deals drX, since a normal melee single-target damage ability would deal drX+2.
 
 ### Strike-based debuffs
 
@@ -473,8 +490,8 @@ A strike with unrestricted weapon types uses "limited scope", so -1 rank. A mele
 
 * Rank 1: A normal damage strike takes up 1.2 of the 1.4 (unrestricted) or 1.6 (melee) EA available, so the baseline EA available for debuffs is only 0.2/0.4.
 * Rank 3: A normal damage strike takes up 1 EA of the 1.8 (unrestricted) or 2.0 (melee) EA available, so the baseline EA available for debuffs is 0.8/1.0.
-* Rank 5: 2x damage takes up 1 EA, so 1.5/1.8.
-* Rank 7: 3x damage takes up 1 EA, so 2.2/2.4.
+* Rank 5: 2x damage takes up 1.4 EA, so 1.1/1.4.
+* Rank 7: 3x damage takes up 1.4 EA, so 1.8/2.2.
 
 These accuracy modifiers are separate from the normal accuracy modifier calculation, and do not directly affect the resulting rank of the debuff.
 
@@ -499,22 +516,22 @@ These accuracy modifiers are separate from the normal accuracy modifier calculat
     * strike while affected by non-accuracy buff, 1.4 EA debuff
 * Rank 5:
   * Unrestricted:
-    * double damage strike and 1.5 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.9 EA debuff
-    * double damage strike while affected by non-accuracy buff, 2.2 EA debuff
+    * double damage strike and 1.1 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.5 EA debuff
+    * double damage strike while affected by non-accuracy buff, 1.8 EA debuff
   * Melee only:
-    * double damage strike and 1.9 EA debuff
-    * double damage strike, if beat Fort/Ment, 2.2 EA debuff
-    * double damage strike while affected by non-accuracy buff, 2.6 EA debuff
+    * double damage strike and 1.5 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.8 EA debuff
+    * double damage strike while affected by non-accuracy buff, 2.2 EA debuff
 * Rank 7:
   * Unrestricted:
-    * triple damage strike and 2.2 EA debuff
-    * triple damage strike, if beat Fort/Ment, 2.6 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 3.1 EA debuff
+    * triple damage strike and 1.8 EA debuff
+    * triple damage strike, if beat Fort/Ment, 2.2 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 2.7 EA debuff
   * Melee only:
-    * triple damage strike and 2.6 EA debuff
-    * triple damage strike, if beat Fort/Ment, 3.1 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 3.6 EA debuff
+    * triple damage strike and 2.2 EA debuff
+    * triple damage strike, if beat Fort/Ment, 2.7 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 3.2 EA debuff
 
 ### Rank modifiers
 
@@ -547,7 +564,7 @@ These rank modifiers apply after calculating area and damage:
 
 ## Debuff Area
 
-All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a Tier X+1 area (see Area Tiers, below).
+All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a rank X area (see Area Tiers, below).
 
 ### Limited Scope Debuffs
 
@@ -557,56 +574,103 @@ You can apply a stronger debuff if you are willing to affect fewer enemies. Ther
 
 ### Area Tiers
 
-Tier 0 areas:
+#### Default Area Limits
+
+Rank -1 areas (why would these exist?):
 * Tiny radius from self
 * Small line, 5' wide from self
 
-Tier 1 areas:
-* Small cone from self
-* Medium line, 5' wide from self
-* Small line, 10' wide from self
-* Small radius from self
-  * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-* Tiny radius in Short range
-  * This should be rare, since it's more flexible than other tier 1 ranges but is too weak for tier 2
+Rank 0 areas:
+* Cone:
+  * Small cone from self
+* Line:
+  * Medium line, 5' wide from self
+  * Small line, 10' wide from self
+* Radius:
+  * Small radius from self
+    * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
+  * Tiny radius in Short range
+    * This should be rare, since it's more flexible than other rank 0 areas but is too weak for rank 1
 
-Tier 2 areas:
-* Medium cone from self
-* Large line, 5' wide from self
-* Medium line, 10' wide from self
-* Medium radius from self
-* Tiny radius in Med range
-* Small radius in Short range
+Rank 1 areas:
+* Cone:
+  * Medium cone from self
+* Line:
+  * Medium line, 10' wide from self
+* Radius:
+  * Medium radius from self
+  * Small radius in Short range
 
-Tier 3 areas:
-* Large cone from self
-* Large line, 10' wide from self
-* Large radius from self
-* Small radius in Med range
+Rank 2 areas:
+* Cone:
+  * (no change) Medium cone from self
+* Line:
+  * (no change) Medium line, 10' wide from self
+  * Large line, 5' wide from self
+* Radius:
+  * (no change) Medium radius from self
+  * (no change) Small radius in Short range
+  * Tiny radius in Med range (discouraged)
 
-Tier 4 areas:
-* Huge line, 10' wide from self
-* Large line, 15' wide from self
-* Medium radius in Med range
-* Small radius in Long range
-* Tiny radius in Distant range
+Rank 3 areas:
+* Cone:
+  * Large cone from self
+  * Two r0 cones
+* Line:
+  * Large line, 10' wide from self
+  * Two r0 lines
+* Radius:
+  * Large radius from self
+  * Small radius in Medium range
 
-Tier 5 areas:
-* Huge cone from self
-* Huge radius from self
-* Huge line, 15' wide from self
-* Medium radius in Long range
-* Small radius in Distant range
-* Tiny radius in Long range
+After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
 
-Tier 6 areas:
-* Large radius in Long range
-* Medium radius in Distant range
-* Small radius in Extreme range
+Rank 4 areas:
+* Cone:
+  * Two r1 cones
+* Line:
+  * Two r1 lines
+* Radius:
+  * Medium radius in Medium range
 
-Tier 7 areas:
-* Huge radius in Long range
-* Medium radius in Extreme range
+Rank 5 areas:
+* Cone:
+  * Two r2 cones
+* Line:
+  * Two r2 lines
+* Radius:
+  * Two r2 radii
+
+Rank 6 areas:
+* Cone:
+  * Two r3 cones
+* Line:
+  * Two r3 lines
+* Radius:
+  * Two r3 radii
+
+#### With Range Costs
+
+To use areas that extend beyond 60', you have to pay a -1 rank cost. This reduces the damage dealt by the spell and the debuff tier (if any), but you still use the spell's normal rank for calculating its area. In exchange, you get access to the following additional rank scaling options:
+
+Rank 5 areas:
+* Cone:
+  * Huge cone from self
+* Line:
+  * Huge line, 15' wide from self
+* Radius:
+  * Huge radius from self
+  * Medium radius in Distant range
+
+Rank 7 areas:
+* Cone:
+  * Gargantuan cone from self
+* Line:
+  * Gargantuan line, 15' wide from self
+* Radius:
+  * Gargantuan radius from self
+  * Large radius in Distant range
+  * Medium radius in Extreme range
 
 ## Examples
 

@@ -13,7 +13,7 @@ export const dirtyFighting: CombatStyle = {
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['maim'],
     },
 
@@ -84,7 +84,7 @@ export const dirtyFighting: CombatStyle = {
         \\hit The target takes \\damagerankthree.
       `,
       rank: 1,
-      roles: ['burst'],
+      roles: ['burst', 'payoff'],
       tags: ['Brawling'],
     },
 
@@ -96,7 +96,7 @@ export const dirtyFighting: CombatStyle = {
         \\hit The target takes \\damagerankseven.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'payoff'],
       tags: ['Brawling'],
     },
 
@@ -109,20 +109,20 @@ export const dirtyFighting: CombatStyle = {
       // some amount.
       // Assume the Brawling accuracy bonus offsets the grapple requirement.
       //
-      // If you use a Medium creature, the baseline damage is 2d6 + 1.66dpp, which is
-      // roughly dr5, but with strong scaling based on the creature's size.
+      // If you use a Medium creature, the baseline damage is 2d6 + 1dpp, which is
+      // roughly dr4, but with strong scaling based on the creature's size.
       effect: `
         Make an \\glossterm{brawling attack} against the Fortitude defense of a Medium or larger creature you are \\glossterm{grappling}.
         If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
-        The strike deals double \\glossterm{weapon damage}.
-        Treat the creature as a weapon with the \\weapontag{Heavy} weapon tag that deals 1d6 damage per size category by which the creature is above Small.
-        This means you normally need two free hands to make the strike.
+        The strike deals double damage.
+        Treat the creature as a weapon that deals 1d6 damage per size category by which the creature is above Small.
+        You need to hold the creature with two free hands to make the strike, but you do not gain the bonus damage from the \\weapontag{Heavy} weapon tag.
         You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
 
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
       `,
       rank: 3,
-      roles: ['burst'],
+      roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
       tags: ['Brawling'],
@@ -131,14 +131,14 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Body Bludgeon+',
 
-      // Expected damage would be between dr8 and dr9, so about 4dpp plus some value.
+      // Expected damage would be about dr8 and dr9, so about 3.5dpp plus some value.
       //
-      // If you use a Medium creature, the baseline damage is 4d8 + 3.3dpp, which is
+      // If you use a Medium creature, the baseline damage is 4d8 + 2dpp, which is
       // roughly dr8, but with strong scaling based on the creature's size.
       functionsLike: {
         name: 'body bludgeon',
         exceptThat: `
-          the strike deals quadruple \\glossterm{weapon damage}, and the weapon deals 1d8 damage per size category by which the creature is above Small (minimum 1d8).
+          the strike deals quadruple damage, and the weapon deals 1d8 damage per size category by which the creature is above Small.
         `,
       },
       rank: 7,
@@ -156,10 +156,11 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
-        If it loses hit points from this damage, it becomes \\paralyzed as a \\glossterm{condition}.
+        If it loses hit points from this damage, it becomes \\slowed as a \\glossterm{condition}.
+        If it was already slowed with this ability, it becomes \\immobilized as a condition instead.
       `,
       rank: 7,
-      roles: ['maim'],
+      roles: ['maim', 'payoff'],
       tags: ['Brawling'],
     },
 
@@ -189,7 +190,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: 'grapple',
       },
-      rank: 1,
+      rank: 3,
       roles: ['softener'],
       tags: ['Brawling'],
     },
@@ -204,7 +205,7 @@ export const dirtyFighting: CombatStyle = {
         `,
         name: 'grapple',
       },
-      rank: 5,
+      rank: 7,
       roles: ['softener'],
       tags: ['Brawling'],
     },
@@ -212,15 +213,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Pin',
 
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          if the target has no remaining \\glossterm{damage resistance}, it is pinned completely instead of simply grappled.
-          It is effectively \\paralyzed, except that it can still use the \\textit{escape grapple} ability (see \\pcref{Escape Grapple}).
-        `,
-        name: 'grapple',
-      },
-      rank: 7,
+      effect: `
+        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        \\hit The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
+        In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
+        These penalties do not stack if you use this ability multiple times.
+      `,
+      rank: 5,
       roles: ['maim'],
       tags: ['Brawling'],
     },
@@ -232,7 +231,7 @@ export const dirtyFighting: CombatStyle = {
         Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
         \\hit You \\glossterm{knockback} the target 10 feet away from you.
-        \\crit Double knockback distance.
+        If you are \\empowered, this knockback distance is doubled.
       `,
       rank: 1,
       roles: ['combo'],
@@ -246,9 +245,9 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
-        \\hit \\damagerankthree.
+        \\hit \\damagerankfour.
         In addition, you \\glossterm{knockback} the target 20 feet away from you.
-        \\crit Double damage and double knockback distance.
+        If you are \\empowered, this knockback distance is doubled.
       `,
       rank: 5,
       roles: ['combo'],
@@ -258,6 +257,8 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Disarm',
 
+      // Normally a debuff strike would deal double damage, but it makes sense for this to
+      // be very low damage.
       effect: `
         Make a melee \\glossterm{strike}.
         \\hit If your attack also hits the target's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
@@ -288,8 +289,8 @@ export const dirtyFighting: CombatStyle = {
         // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
         exceptThat: `
           it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
-          % TODO: clarify that this doesn't work with "move through enemies freely" abilities
-          In addition, creatures cannot choose to avoid you, and all creatures that you move through takes \\damageranktwo.
+          In addition, creatures cannot choose to avoid you.
+          Whenever you beat a creature's defense with this ability, you deal it \\damageranktwo.
         `,
         name: 'overrun',
       },
@@ -325,57 +326,22 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Sweep the Leg',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result also hits its Fortitude defense, it falls \\prone.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures two or more size categories larger than you.
-      `,
-      rank: 1,
-      roles: ['trip'],
-    },
-
-    {
       name: 'Anklesprainer',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
-      `,
-      rank: 3,
-      roles: ['softener'],
-    },
-
-    {
-      name: 'Anklesprainer+',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target takes damage and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} that deals double damage.
+        If the target takes damage, it becomes \\glossterm{briefly} \\slowed.
       `,
       rank: 5,
       roles: ['softener'],
     },
 
     {
-      name: 'Switchstrike',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage, you may switch spaces with it, as long as this would not result in either of you entering a occupied space.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-      `,
-      rank: 1,
-      roles: ['dive'],
-    },
-
-    {
       name: 'Eyebite',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target takes damage and your attack result also hits its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
+        Make a melee \\glossterm{strike} that deals double damage.
+        If the target loses hit points, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
       roles: ['softener'],
@@ -385,22 +351,22 @@ export const dirtyFighting: CombatStyle = {
       name: 'Eye Poke',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike}.
+        If the target takes damage and your attack result beats its Fortitude defense, it is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
-      roles: ['maim'],
+      roles: ['softener'],
     },
 
     {
-      name: 'Eye Gouge',
+      name: 'Eye Poke+',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals triple damage.
+        If the target takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 5,
-      roles: ['maim'],
+      rank: 7,
+      roles: ['softener'],
     },
 
     {
@@ -408,8 +374,8 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your attack result also hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to your power.
-        If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
+        If your attack result also hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to half your power.
+        Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 3,
       roles: ['burst'],
@@ -419,9 +385,10 @@ export const dirtyFighting: CombatStyle = {
       name: 'Fake Out+',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If your attack result also hits the target's Reflex defense, the strike deals 1d10 \\glossterm{extra damage} per 2 power.
-        If this attack misses, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
+        Make a melee \\glossterm{strike} that deals double damage.
+        If your attack result also hits the target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 2 power.
+        This extra damage is not doubled by the base double damage of the strike.
+        Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 7,
       roles: ['burst'],
