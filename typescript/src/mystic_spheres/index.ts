@@ -112,7 +112,7 @@ export const ABILITY_ROLES = [
   'retaliate', // Attack that is stronger against creatures that attack you
   'retreat',   // Make a short range attack and move away from enemies
   'snipe',     // Long-range single-target damage
-  'softener',  // Debuff condition without prereqs
+  'softener',  // Debuff condition that works against max hp targets
   'stasis',    // Single-target single action trade, or as close as possible
   'trip',      // Single-target brief or one-round defensive debuff
   'turtle',    // One-round defense or protection effect on self
