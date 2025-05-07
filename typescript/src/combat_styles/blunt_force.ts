@@ -110,7 +110,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a -1 accuracy penalty against a stable surface.
         It targets everything supported by that surface in a \\medarea cone from one corner of the target space.
-        The strike deals double \\glossterm{weapon damage}.
+        The strike deals double damage.
       `,
       rank: 5,
       roles: ['clear'],
@@ -121,11 +121,11 @@ export const bruteForce: CombatStyle = {
       name: 'Tenderize',
 
       effect: `
-        Make a \\glossterm{strike} that deals double damage.
-        If the target loses hit points and your attack result beats its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals triple damage.
+        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       roles: ['maim'],
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -156,18 +156,18 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       roles: ['maim'],
-      rank: 1,
+      rank: 3,
     },
 
     {
-      name: 'Concussion+',
+      name: 'Brain Scrambler',
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        If the target loses hit points and your attack result also hits its Fortitude defense, it becomes \\confused as a \\glossterm{condition}.
+        If the target loses hit points and your attack result also hits its Fortitude and Mental defenses, it becomes \\confused as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 7,
@@ -263,27 +263,27 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
-      roles: ['burst', 'combo'],
+      roles: ['combo', 'payoff'],
     },
 
     {
       name: 'Forceful Smash+',
 
       effect: `
-        Make a \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals triple damage.
         If the target takes damage, you \\glossterm{knockback} it 30 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 7,
-      roles: ['burst', 'combo'],
+      roles: ['combo', 'payoff'],
     },
 
     {
       name: 'Flex',
 
       effect: `
-        You are \\glossterm{briefly} \\empowered.
+        You are \\glossterm{briefly} \\empowered and \\fortified.
       `,
       rank: 1,
       roles: ['focus'],
@@ -295,10 +295,10 @@ export const bruteForce: CombatStyle = {
       cost: "One \\glossterm{fatigue level}.",
       effect: `
         You are \\glossterm{briefly} empowered.
-        In addition, you regain 1d6 hit points plus 1d6 per 3 power at the end of the round.
+        In addition, you regain 1d6 hit points per 2 power at the end of the round.
       `,
       rank: 3,
-      roles: ['focus'],
+      roles: ['focus', 'healing'],
     },
 
     {
@@ -312,14 +312,14 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Flex+',
+      name: 'Maximum Flex',
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You are \\glossterm{briefly} \\maximized. 
       `,
-      rank: 5,
-      roles: ['focus'],
+      rank: 3,
+      roles: ['exertion', 'focus'],
     },
 
     {
@@ -334,15 +334,15 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Muscle Burst+',
+      name: 'Maximum Muscle Burst',
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You are \\glossterm{briefly} \\maximized.
-        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double damage.
       `,
       rank: 7,
-      roles: ['generator'],
+      roles: ['exertion', 'generator'],
     },
 
     {
@@ -364,7 +364,7 @@ export const bruteForce: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the strike deals double \\glossterm{weapon damage}, and you can move up to half your movement speed instead of only 10 feet.',
+          'the strike deals double damage, and you can move up to half your movement speed instead of only 10 feet.',
         name: 'press forward',
       },
       rank: 5,
@@ -409,20 +409,18 @@ export const bruteForce: CombatStyle = {
         If you are \\empowered and the target takes damage, it is \\glossterm{briefly} \\stunned.
       `,
       rank: 3,
-      roles: ['softener'],
+      roles: ['softener', 'payoff'],
     },
 
-    // Slightly behind rate (3 EA instead of 3.6 EA), but better to maintain consistency
-    // with regular Gutshot.
     {
       name: 'Gutshot+',
 
       effect: `
-        Make a melee strike that deals triple \\glossterm{weapon damage}.
+        Make a melee strike that deals triple damage.
         If you are \\empowered and the target takes damage, it is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
-      roles: ['softener'],
+      roles: ['softener', 'payoff'],
     },
 
     {
@@ -500,6 +498,7 @@ export const bruteForce: CombatStyle = {
       `,
       rank: 3,
       roles: ['flash'],
+      tags: ['Earth'],
     },
 
     {
@@ -514,6 +513,7 @@ export const bruteForce: CombatStyle = {
       `,
       rank: 7,
       roles: ['flash'],
+      tags: ['Earth'],
     },
 
     {
