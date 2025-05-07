@@ -777,7 +777,7 @@ export const astromancy: MysticSphere = {
 
         Once per phase, when a creature moves into one of the squares, it can choose to pass through the portal in that square.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
-        Objects can pass through the portals freely and maintain their speed, but moving objects have an unpredictable trajectory, so firing projectiles through a portal is ineffective.
+        Objects can pass through the portals freely and maintain their speed, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
 
         If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first person into the portal.
         A creature that attempts to pass through the portal in a phase where the portal was already activated stops its movement in the square with the portal.
