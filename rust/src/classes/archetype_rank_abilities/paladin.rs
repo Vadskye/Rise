@@ -268,9 +268,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.
                     The target regains 1d8 \glossterm{hit points} +1 per power.
-                    In addition, it removes all poisons and diseases affecting it, and it \glossterm{briefly} becomes immune to poisons and diseases.
+                    In addition, it removes one \glossterm{condition} or poison affecting it.
                     % TODO: wording
-                    This immunity and removal can only affect poisons and diseases with a rank no more than two ranks higher than your rank in this archetype.
+                    This removal can only affect conditions and poisons with a rank no more than two ranks higher than your rank in this archetype.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
@@ -294,7 +294,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                In addition to regaining hit points, you can cause the target to either remove a \glossterm{condition} or a \glossterm{vital wound}.
+                In addition to regaining hit points, you can cause the target to remove a \glossterm{vital wound}.
                 If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
             ",
             modifiers: None,
