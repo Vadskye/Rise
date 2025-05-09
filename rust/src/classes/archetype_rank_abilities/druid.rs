@@ -154,10 +154,10 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a benefit from each of the four elements.
                 \begin{itemize}
-                    \item Air: You gain a \glossterm{glide speed} 10 feet slower than the \glossterm{base speed} for your size.
+                    \item Air: You gain a slow \glossterm{glide speed} (see \pcref{Aerial Movement}).
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
                     \item Fire: You are \trait{impervious} to \atFire attacks.
-                    \item Water: You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
+                    \item Water: You gain a slow \glossterm{swim speed}.
                 \end{itemize}
             ",
             // TODO: represent movement speeds
@@ -171,11 +171,11 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your benefits from each element improve.
                 \begin{itemize}
-                    \item Air: You gain a \glossterm{fly speed} 10 feet slower than the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
+                    \item Air: You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: The Fortitude bonus increases to \plus2.
                     \item Fire: You are immune to \atFire attacks.
-                    \item Water: You gain a \plus10 foot bonus to your swim speed.
+                    \item Water: Your swim speed increases to average.
                 \end{itemize}
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
@@ -429,12 +429,12 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Fish}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
+                        You gain a slow \glossterm{swim speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
                         \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \rank{5} You gain a \plus10 foot bonus to your swim speed.
+                        \rank{5} Your swim speed increases to be average.
                         \rank{7} You are immune to \magical effects that restrict your mobility.
                     \end{magicalactiveability}
 
@@ -445,9 +445,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
 
                         \rankline
-                        \rank{3} You grow wings, granting your a glide speed equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
+                        \rank{3} You grow wings, granting you an average glide speed (see \pcref{Gliding}).
                         \rank{5} The skill bonus increases to \plus5.
-                        \rank{7} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 30 feet (see \pcref{Flight}).
+                        \rank{7} You gain an average \glossterm{fly speed} with a maximum height of 30 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{magicalactiveability}
 
@@ -473,12 +473,12 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Monkey}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \glossterm{climb speed} 10 feet slower than the \glossterm{base speed} for your size.
+                        You gain a slow \glossterm{climb speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
                         \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
-                        \rank{5} You gain a \plus10 foot bonus to your climb speed.
+                        \rank{5} Your climb speed increases to be average.
                         \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories larger than you.
                     \end{magicalactiveability}
 
