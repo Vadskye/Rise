@@ -130,19 +130,19 @@
     \begin{dtable}
       \lcaption{Vital Wound Effects}
       \begin{dtabularx}{\columnwidth}{l X}
-        \tb{Vital Roll}  & \tb{Effect} \tableheaderrule
-        \minus6 or less  & You immediately die                                                   \\
-        0--\minus5       & You are unconscious, and you die after one minute                     \\
-        1                & You are unconscious while you have less than half hit points          \\
-        2                & You take a \minus1 penalty to \glossterm{accuracy}                    \\
-        3                & You have a \minus5 foot penalty to your speed with all movement modes \\
-        4                & Your maximum \glossterm{damage resistance} is halved                  \\
-        5                & You take a \minus2 penalty to your \glossterm{fatigue tolerance}      \\
-        6                & You take a \minus1 penalty to all \glossterm{defenses}                \\
-        7                & You take a \minus2 penalty to your Fortitude defense                  \\
-        8                & You take a \minus2 penalty to your Reflex defense                     \\
-        9                & You take a \minus2 penalty to your Mental defense                     \\
-        10 or more       & No extra vital wound effect                                           \\
+        \tb{Vital Roll} & \tb{Effect} \tableheaderrule
+        \minus6 or less & You immediately die                                              \\
+        0--\minus5      & You are unconscious, and you die after one minute                \\
+        1               & You are unconscious while you have less than half hit points     \\
+        2               & You take a \minus1 penalty to \glossterm{accuracy}               \\
+        3               & You have a \minus5 foot penalty to your \glossterm{speed}        \\
+        4               & Your maximum \glossterm{damage resistance} is halved             \\
+        5               & You take a \minus2 penalty to your \glossterm{fatigue tolerance} \\
+        6               & You take a \minus1 penalty to all \glossterm{defenses}           \\
+        7               & You take a \minus2 penalty to your Fortitude defense             \\
+        8               & You take a \minus2 penalty to your Reflex defense                \\
+        9               & You take a \minus2 penalty to your Mental defense                \\
+        10 or more      & No extra vital wound effect                                      \\
       \end{dtabularx}
     \end{dtable}
 
@@ -171,20 +171,19 @@
     Phases are simply a useful abstraction to keep combat organized.
 
     \subsubsection{The Movement Phase}\label{The Movement Phase}
-      During the \glossterm{movement phase}, you can make one \glossterm{movement}.
+      During the \glossterm{movement phase}, you can use one \glossterm{move action}.
       The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
       For details, see \pcref{Movement and Positioning}.
 
     \subsubsection{The Action Phase}\label{The Action Phase}
-      During the \glossterm{action phase}, you can take one \glossterm{minor action} and one \glossterm{standard action}.
-      Alternately, you can make a \glossterm{movement} or take an additional \glossterm{minor action} in place of your standard action.
-      Most of the time, you will simply take a single standard action.
+      During the \glossterm{action phase}, you can use one \glossterm{minor action} and one \glossterm{standard action}.
+      Alternately, you can use a \glossterm{move action} or an an additional \glossterm{minor action} in place of your standard action.
+      Most of the time, you will simply use a single standard action.
 
   \subsection{Actions}\label{Actions}
 
     You can take actions in combat to defeat your foes.
-    There are three types of actions: \glossterm{standard actions}, \glossterm{minor actions}, and \glossterm{free actions}.
-    In addition, you can use \glossterm{movement} during the \glossterm{movement phase} (see \pcref{Movement and Positioning}).
+    There are four types of actions: \glossterm{standard actions}, \glossterm{move actions}, \glossterm{minor actions}, and \glossterm{free actions}.
     % TODO: define conflicting action limits (drawing a sword and sheathing a shield?)
 
     \subsubsection{Standard Actions}\label{Standard Actions}
@@ -193,6 +192,10 @@
       Using a standard action generally takes about three seconds of time within the game, and it requires most of your attention during that time.
 
       You can take one standard action during the \glossterm{action phase} of each round.
+
+    \subsubsection{Move Actions}\label{Move Actions}
+      Almost all move actions change your location on the battlefield.
+      For details, see \pcref{Movement and Positioning}.
 
     \subsubsection{Minor Actions}\label{Minor Actions}
       Some special abilities that take a small amount of time or attention require a \glossterm{minor action}.
@@ -313,7 +316,7 @@
     In general, directly conflicting actions are rare.
     Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
     In that case, no initiative check is necessary.
-    Both creatures simply move as far as they can, and the creatures' relative movement speeds determine who is more successful.
+    Both creatures simply move as far as they can, and the creatures' relative \glossterm{speeds} determine who is more successful.
 
     This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
     Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
@@ -325,17 +328,23 @@
       For example, you can't move your full speed onto a mount, and then have that mount move with you in the same phase.
       You also can't move and then have an ally pick you up or shove you to move you farther.
       Only the first effect which would change your location is applied, and all other effects are ignored.
+      % TODO: how do self-movements interact with forced movement imposed by enemies in the same phase?
 
 \section{Movement and Positioning}\label{Movement and Positioning}
   This section describes how creatures move and position themselves when time and location are important to measure precisely.
 
   \subsection{Movements}\label{Movements}
-    During each \glossterm{movement phase}, you can make one \glossterm{movement}.
-    You can spend your \glossterm{standard action} during the \glossterm{action phase} to make another movement.
-    Typically, if you move during the action phase, you would \ability{sprint} to move at double speed (see \pcref{Sprint}).
+    During each \glossterm{movement phase}, you can use one \glossterm{move action}.
+    You can also move during the \glossterm{action phase} with the \ability{sprint} ability (see \pcref{Sprint}), or by simply taking a \glossterm{move action} in place of your standard action.
 
-    When a creature makes a movement, it travels a distance in feet equal to its \glossterm{speed} with one \glossterm{movement mode}.
-    Almost all creatures have a land speed, which represents their ability to move across mostly flat terrain.
+    When a creature makes a movement, it travels a distance in feet equal to its \glossterm{movement speed}, assuming it has a relevant \glossterm{movement mode}.
+    If an ability references your ``speed'' without additional details, it is referring to your movement speed.
+    Your total movement speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
+    Some abilities can modify your movement speed.
+    At the start of each phase, your available movement speed becomes equal to your total movement speed.
+    Any movement you make during that phase subtracts from your available movement speed until it reaches 0.
+
+    Almost all creatures have a walking movement mode, which represents their ability to move across mostly flat terrain.
     For details about other forms of movement, such as flying and swimming, see \pcref{Movement Modes}.
 
     You can take \glossterm{free actions} and \glossterm{minor actions} in the middle of movement.
@@ -343,54 +352,65 @@
 
   \subsection{Movement Modes}\label{Movement Modes}
     A \glossterm{movement mode} is a method of moving from one location to another.
-    % TODO: terminology confusion mode vs. speed
-    The most common movement mode is a land speed, which allows creatures to move across the ground.
+    The most common movement mode is walking, which allows creatures to move across the ground.
     In addition, some abilities grant creatures the ability to move in unusual ways.
     These forms of movement are described here.
-
-    Unless otherwise noted, all creatures have a land speed equal to the \glossterm{base speed} for their size (see \pcref{Size Categories}).
-    Creatures that are \trait{multipedal} gain a \plus10 foot bonus to their land speed.
-
-    Some creatures have movement modes that are slower than their base speed for various reasons.
-    A creature's speed with any given movement mode can never be slower than 5 feet.
-    Some effects can still prevent a creature from using their movement modes at all, such as being \immobilized.
+    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Speed Categories}).
 
     \parhead{Burrowing}
-    A creature with a burrow speed can move through the ground at the indicated speed in any direction, even vertically.
-    Unless otherwise noted, the creature can only burrow through dirt and loose earth, not rock or harder substances.
+    A creature with a \glossterm{burrow speed} can move through solid dirt and loose earth in any direction, even vertically.
+    Unless otherwise noted, a burrow speed does not allow a creature to travel through rock or harder substances.
     It does not leave behind a usable tunnel for other creatures.
 
+    While burrowing, the earth and dirt around you usually blocks \glossterm{line of sight} and \glossterm{line of effect}, preventing you from using ranged attacks of any kind.
+    You can partially emerge from a surface while burrowing.
+    While partially emerged, you have \glossterm{cover} against all attacks but can otherwise fight normally.
+
     \parhead{Climbing}
-    A creature with a \glossterm{climb speed} can move a distance equal to its climb speed while climbing.
+    A creature with a \glossterm{climb speed} can move along vertical surfaces.
     It must still make a Climb check to move in challenging conditions, such as slippery walls (see \pcref{Climb}).
     A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
 
     \parhead{Flying}
-    A creature with a \glossterm{fly speed} can fly through the air at the indicated speed.
+    A creature with a \glossterm{fly speed} can fly through the air both horizontally and vertically.
     Flying is more complicated than some other movement modes.
     For details, see \pcref{Aerial Movement}.
 
     \parhead{Gliding}\nonsectionlabel{Gliding}
-    A creature with a glide speed can glide through the air at the indicated speed.
+    A creature with a glide speed can glide through the air in a strictly descending path.
     Gliding is more complicated than some other movement modes.
     For details, see \pcref{Aerial Movement}.
 
-    \parhead{Land}
-    A creature with a land speed can move across the ground at the indicated speed.
-
     \parhead{Swimming}
-    A creature with a \glossterm{swim speed} can move a distance equal to its swim speed while swimming.
+    A creature with a \glossterm{swim speed} can move through liquids like water.
     It must still make a Swim check to move in challenging conditions, such as stormy seas (see \pcref{Swim}).
     A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
     For details, see \pcref{Fighting In Water}.
 
+    \parhead{Walking}
+    A creature with a walking speed can move across mostly flat surfaces, like the ground.
+
+  \subsection{Speed Categories}\label{Speed Categories}
+    A creature may move particularly slowly with one movement mode and more quickly with a different movement mode.
+    There are three speed categories: fast, average, and slow.
+    If an ability gives you an alternate movement mode and doesn't specify a speed category, you move at average speed with that movement mode.
+    \begin{raggeditemize}
+      \item Fast: Moving 10 feet with this movement mode costs 5 feet from the creature's speed.
+        The first square costs 5 feet of speed, and then it gets the second square for free.
+        When moving on diagonals, the first two diagonals each cost 5 feet of speed and the third one is free.
+      \item Average: Moving 5 feet with this movement mode costs 5 feet from the creature's speed.
+        When moving on diagonals, the first diagonal costs 5 feet of movement and the second costs 10.
+      \item Slow: Moving 5 feet with this movement mode costs 10 feet from the creature's speed.
+        When moving on diagonals, each diagonal costs 15 feet of movement.
+    \end{raggeditemize}
+
   \subsection{Combining Movement Modes}
     You can move using multiple different movement modes in the same phase in any order.
-    For every 5 feet of speed that you use, you reduce your remaining speed with that movement mode and all movement modes that have an equal or greater remaining speed.
+    Each distance moved subtracts from your available speed during that phase, using the appropriate modifiers for fast or slow movement modes.
 
-    For example, assume you have a 10 foot climb speed, a 20 foot swim speed, and a 40 foot land speed.
-    If you swim 10 feet, you could still climb 10 feet, swim 10 feet, or walk 30 feet as part of the same movement.
-    Swimming an additional 10 feet would prevent you from climbing, but you could still walk 20 feet.
+    For example, assume you have a 40 foot base speed, a average walking speed, and a slow swim speed.
+    If you swim 10 feet, that would cost 20 feet of movement.
+    You could then use your remaining speed to walk 20 feet, for a total of 30 feet travelled.
 
   \subsection{Jumping}\label{Jumping}
     Creatures with legs can jump as part of movement.
@@ -434,30 +454,21 @@
   \subsection{Movement Abilities}\label{Movement Abilities}
 
     Almost all creatures can use these abilities to move around a battlefield.
-    Many movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
+    The most common movement ability is \ability{hustle}, which simply moves you to a location.
+    You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
+
+    Other movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
     For example, you can try to follow a creature wherever it goes that round.
     In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
 
-    The most common types of reactive movements are the \textit{block}, \textit{follow}, and \textit{withdraw} abilities, which are described below.
+    The \ability{block}, \ability{follow}, and \ability{withdraw} reactive abilities are specifically described below.
     However, you can can come up with other reactive movements.
     The main requirement is that a reactive movement must have a simple criteria for determining how you move based on easily observable events.
     Secondarily, reactive movements should be simple to resolve.
     If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
 
-    \parhead{Hustle}\nonsectionlabel{Hustle} As a \glossterm{movement}, you can use the \textit{hustle} ability to move.
-    This is the most common movement ability.
-
-    \begin{activeability}{Hustle}
-      \abilityusagetime Standard action.
-      \rankline
-      Choose a path that you want to travel.
-      You travel that path, up to the limit of your relevant movement speed.
-    \end{activeability}
-
-    \parhead{Block}\nonsectionlabel{Block} As a \glossterm{movement}, you can use the \textit{block} ability to prevent a creature from entering a particular area.
-
     \begin{activeability}{Block}[\abilitytag{Swift}]
-      \abilityusagetime Standard action.
+      \abilityusagetime Move action.
       \rankline
       When you use this ability, choose a creature you can see.
       During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
@@ -468,13 +479,21 @@
       This represents you automatically repositioning yourself to block its movement.
 
       If a creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it is unaffected by this additional movement cost.
-      If multiple creatures are able to block the same creature from moving, it must pay both additional movement costs, which generally keeps it stuck in place.
+      If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
     \end{activeability}
 
-    \parhead{Follow}\nonsectionlabel{Follow} As a \glossterm{movement}, you can use the \textit{follow} ability to follow a creature as it moves.
+    \begin{activeability}{Climb Forward}
+      \abilityusagetime Move action.
+      \rankline
+      This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
+      Make a Climb check to move along the surface.
+      The \glossterm{difficulty value} is based on the surface (see \pcref{Climb}).
+      Success means that you move along the surface to a location, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
+      Critical success means the maximum distance you can move is doubled.
+    \end{activeability}
 
     \begin{activeability}{Follow}
-      \abilityusagetime Standard action.
+      \abilityusagetime Move action.
       \rankline
       Choose a creature you can see, and the maximum distance you want to follow at.
       During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
@@ -485,10 +504,25 @@
       If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
     \end{activeability}
 
-    \parhead{Withdraw}\nonsectionlabel{Withdraw} As a \glossterm{movement}, you can use the \textit{withdraw} ability to keep away from creatures as they move.
+    \begin{activeability}{Hustle}
+      \abilityusagetime Move action.
+      \rankline
+      Choose a path that you want to travel.
+      You travel that path, up to the limit of your relevant movement speed.
+    \end{activeability}
+
+    \begin{activeability}{Swim Forward}
+      \abilityusagetime Move action.
+      \rankline
+      This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Swim check.
+      Make a Swim check to move through the liquid.
+      The \glossterm{difficulty value} is based on the turbulence of the liquid (see \pcref{Swim}).
+      Success means that you move through the liquid, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
+      Critical success means the maximum distance you can move increases to half of your base speed.
+    \end{activeability}
 
     \begin{activeability}{Withdraw}
-      \abilityusagetime Standard action.
+      \abilityusagetime Move action.
       \rankline
       This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
       In addition, you can specify multiple targets and try to keep away from all of them.
@@ -527,6 +561,9 @@
     You can squeeze through or into a space that is at least half as wide as your normal space.
     While \squeezing, you take a \minus2 penalty to your Armor and Reflex defenses.
     You can squeeze into tighter spaces with the Flexibility skill (see \pcref{Flexibility}).
+
+    Squeezing is only checked at the start of each phase.
+    If you temporarily enter a creature's space during a phase and leave it during that same phase, neither you nor that creature are ever squeezing.
 
     Creatures that take up multiple squares take up half their normal number of squares while squeezing.
     For example, a Large creature who normally takes up four spaces takes up two spaces while squeezing.
@@ -708,20 +745,20 @@
     \begin{dtable!*}
       \lcaption{Special Combat Abilities}
       \begin{dtabularx}{\textwidth}{l l X l}
-        \tb{Ability}       & \tb{Usage Time}      & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
-        Charge             & Standard             & Move and make a strike                        & \tdash                                         \\
-        Desperate Exertion & Non-action           & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-        Escape Grapple     & Standard             & Stop being grappled                           & \abilitytag{Brawling}                          \\
-        Grapple            & Standard             & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Maintain Grapple   & Free action          & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-        Overrun            & Movement or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Ready Reaction     & Standard             & Ready an action                               & \tdash                                         \\
-        Recover            & Standard             & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
-        Shove              & Movement or standard & Move a foe                                    & \abilitytag{Brawling} \\
-        Sprint             & Movement or standard & Move at double speed                          & \tdash                                         \\
-        Total Defense      & Standard             & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
-        Throw              & Standard             & Throw a held object                           & \tdash                                         \\
-        Trip               & Standard             & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        \tb{Ability}       & \tb{Usage Time}  & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
+        Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
+        Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
+        Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
+        Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+        Overrun            & Move or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+        Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
+        Recover            & Standard         & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
+        Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
+        Sprint             & Move or standard & Move at double speed                          & \tdash                                         \\
+        Total Defense      & Standard         & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
+        Throw              & Standard         & Throw a held object                           & \tdash                                         \\
+        Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       \end{dtabularx}
     \end{dtable!*}
 
@@ -780,7 +817,7 @@
     \end{activeability}
 
     \begin{activeability}*{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-      \abilityusagetime \glossterm{Movement} or standard action.
+      \abilityusagetime \glossterm{Move action} or standard action.
       \abilitycost One \glossterm{fatigue level} if used as a movement. No cost when used as a standard action.
       \rankline
       Move up to your movement speed in a straight line.
@@ -847,7 +884,7 @@
       You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
 
       You can immediately take another \glossterm{movement}.
-      For the duration of that movement, you double your speed with all movement modes.
+      For the duration of that movement, you double your speed.
     \end{activeability}
 
     % Is this a knockback effect? What happens if you throw someone into a wall?
@@ -871,7 +908,7 @@
     \begin{activeability}*{Total Defense}[\abilitytag{Swift}]
       \abilityusagetime Standard action.
       \rankline
-      You gain a \plus2 bonus to your \glossterm{defenses} this round.
+      You are \braced this round.
       Because this ability has the \abilitytag{Swift} tag, this improves your defenses against attacks made against you during the current round.
     \end{activeability}
 

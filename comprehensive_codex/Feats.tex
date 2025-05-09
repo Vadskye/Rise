@@ -490,7 +490,7 @@ They allow more distinct and unique character customization, but also increase g
     At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to half the hit points you regained with that \ability{recover} ability.
 
     \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
-    These wings grant you a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
+    These wings grant you an average \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
@@ -548,13 +548,12 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Specialization} You gain a \plus3 bonus to the Climb skill.
 
-    \ff[6]{Climb Speed} You gain a \glossterm{climb speed} 10 feet slower than the \glossterm{base speed} for your size.
-    If you already have a climb speed, you gain a \plus10 foot bonus to your climb speed.
-    A successful Climb check to move allows you to travel a distance equal to your climb speed.
+    \ff[6]{Climb Speed} You gain an average \glossterm{climb speed} (see \pcref{Movement Modes}).
 
     \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
-    \ff[18]{Rapid Climb} You gain a \plus10 foot bonus to your climb speed.
+    % TODO: wording
+    \ff[18]{Endless Creature Climb} You do not suffer a cumulative \minus2 penalty to your accuracy with the creature climb ability for each round you spend climbing (see \pcref{Creature Climb}).
   \end{feat}
 
   \begin{feat}{Combat Style Versatility}{Combat}
@@ -735,7 +734,7 @@ They allow more distinct and unique character customization, but also increase g
 
     % TODO: figure out a way to differentiate these from angel wings
     \ff[12]{Draconic Wings} You gain leathery wings that sprout from your back.
-    These wings grant you a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
+    These wings grant you an average \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
@@ -875,9 +874,10 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Fateweaver}{General, Magical}
     \featpre Perception 2.
 
-    \magicalff[1]{Inevitable Attack} Whenever you would make an attack roll, you can instead choose to treat your roll as a 5.
-    You must use this ability before rolling.
-    If this result does not cause you to hit the target, you roll the attack roll normally.
+    \magicalff[1]{Inevitable Attack} Whenever you would make an attack roll, you can instead determine if an attack result of 5 \add your \glossterm{accuracy} with the attack would result in a hit.
+    If it does, you hit the target without making an attack roll.
+    Otherwise, you roll the attack roll normally.
+    This does not allow you to bypass other effects that can cause you to miss without making an attack roll, such as a \glossterm{miss chance}.
 
     % Assume a 70% base hit rate, so 0.8x dpr with glances.
     % A -2 defenses debuff increases damage to 0.95x dpr.
@@ -891,7 +891,7 @@ They allow more distinct and unique character customization, but also increase g
       \rankline
       Make an attack vs. Mental against one creature within \medrange of you.
       \hit The target is fatesealed as a \glossterm{condition}.
-      Whenever you or one of your \glossterm{allies} make an attack roll against it, if the roll would be less than a 5, treat it as a 5 instead.
+      Whenever you or one of your \glossterm{allies} make an attack roll against it, if the attack result would be less than 5 \add their \glossterm{accuracy}, treat it as 5 \add their \glossterm{accuracy} instead.
       This does not affect extra dice from exploding attacks.
       \crit This condition must be removed an additional time before the effect ends.
 
@@ -899,11 +899,11 @@ They allow more distinct and unique character customization, but also increase g
       You gain a \plus2 accuracy bonus for every 3 levels beyond 6.
     \end{magicalactiveability}
 
-    \magicalff[12]{Inevitable Success} Whenever you would make a \glossterm{check}, you can instead choose to treat the result of your roll as a 5.
-    You must use this ability before rolling.
-    If this result does not cause you to succeed at the check, you roll the check normally.
+    \magicalff[12]{Inevitable Success} Whenever you would make a \glossterm{check}, you can instead determine if a check result of 5 \add your modifier with the check would result in a success.
+    If it does, you succeed a the check without making a roll.
+    Otherwise, you roll the check normally.
 
-    \magicalff[18]{Fated Victory} The fixed results from your \textit{inevitable attack} and \textit{inevitable success} abilities each increase to 7.
+    \magicalff[18]{Fated Victory} The fixed results from your \textit{inevitable attack} and \textit{inevitable success} abilities each increase to 7 \add your \glossterm{accuracy} or modifier.
   \end{feat}
 
   % \begin{feat}{Fatesealed}{General}
@@ -1795,7 +1795,7 @@ They allow more distinct and unique character customization, but also increase g
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-    \magicalff[12]{Airborne} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 15 feet (see \pcref{Flight}).
+    \magicalff[12]{Airborne} You gain an average \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
     In addition, you gain a \plus15 foot bonus to the height limit of any fly speed you gain from \sphere{Aeromancy} spells.
 
@@ -2357,16 +2357,11 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Specialization} You gain a \plus3 bonus to the Swim skill.
 
-    \ff[6]{Swim Speed} You gain a \glossterm{swim speed} 10 feet slower than the \glossterm{base speed} for your size.
-    If you already have a swim speed, you gain a \plus10 foot bonus to your swim speed.
-    A successful Swim check to move allows you to move a distance equal to your swim speed.
+    \ff[6]{Swim Speed} You gain an average \glossterm{swim speed} (see \pcref{Movement Modes}).
 
     \ff[12]{Specialization+} The bonus from your \textit{specialization} ability increases to \plus6.
 
-    \ff[18]{Earth Swimmer} You can swim through loose earth and dirt as if it were water.
-    Your swim speed in earth is 10 feet, regardless of any bonuses or penalties that would normally apply to your swim speed.
-    In addition, you take a \minus4 penalty to \glossterm{accuracy} and your Armor and Reflex defenses while swimming in this way.
-    The earth and dirt around you blocks line of sight and line of effect, so you usually cannot used ranged attacks of any kind.
+    \ff[18]{Earth Swimmer} You gain a slow \glossterm{burrow speed} (see \pcref{Movement Modes}).
   \end{feat}
 
   \begin{magicalfeat}{Telepath}{General, Magical}

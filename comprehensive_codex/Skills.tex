@@ -184,6 +184,7 @@ This chapter describes each skill, including common uses for those skills.
 \skill{Climb}{Str}
   The Climb skill represents your ability to climb obstacles.
   A creature that is climbing without a \glossterm{climb speed} takes a \minus4 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
+  Moving with the Climb skill requires using the \ability{climb forward} ability (see \pcref{Movement Abilities}).
 
   \subsection{Common Climb Tasks}
     \parhead{Creature Climb}\nonsectionlabel{Creature Climb} As a standard action, you can make a Climb vs. Reflex attack against a creature you touch.
@@ -198,11 +199,6 @@ This chapter describes each skill, including common uses for those skills.
     This does not prevent you from taking \glossterm{falling damage} appropriate for the distance you fell.
     \parhead{Maintain Hold} Whenever you take damage while climbing on a surface, suddenly acquire significantly more weight (such as by catching a falling character), or otherwise are significantly distracted, you must make a Climb check based on the surface.
     Failure means you fall off of the surface, and are \prone when you land.
-    \parhead{Move} You can make a Climb check as a \glossterm{movement} while you are touching a solid surface.
-    This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
-    The \glossterm{difficulty value} is based on the surface.
-    Success means that you move along the surface, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
-    Critical success means the maximum distance you can move is doubled.
     \parhead{Wall Jump} You can make a \glossterm{difficulty value} 10 Climb check as part of movement to jump off of a wall you are adjacent to.
     This difficulty value increases by 5 for each time you have used this ability since landing on solid ground.
     Success means you can jump off of the wall (see \pcref{Jumping}).
@@ -235,8 +231,8 @@ This chapter describes each skill, including common uses for those skills.
 
   \subsection{Climb Speed}\label{Climb Speed}
     Some creatures have a listed climb speed.
-    A creature with a passive climb speed must still make a Climb check to climb on surfaces.
-    However, the distance it can move if it succeeds on the Climb check is equal to its listed climb speed, regardless of its size or whether it gets a critical success.
+    A creature with a climb speed must still make a Climb check to climb on surfaces.
+    However, it can climb with its \glossterm{movement speed} as part of normal movement abilities rather than relying on the \ability{climb forward} ability.
 
 \newpage
 \skill{Craft}{Int}
@@ -1080,22 +1076,19 @@ This chapter describes each skill, including common uses for those skills.
 \newpage
 \skill{Swim}{Str}
   The Swim skill represents your ability to swim.
+  Moving with the Swim skill requires using the \ability{swim forward} ability (see \pcref{Movement Abilities}).
   A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses, even if it makes a successful Swim check.
   For details, see \pcref{Fighting In Water}.
 
   Creatures that are native to water, such as fish and monsters with a swim speed but no land speed, gain a \plus10 bonus to Swim checks.
 
-  \subsection{Common Swim Tasks}
-    \parhead{Move} You can make a Swim check as a \glossterm{movement} while you are in water or a similar liquid.
-    This requires two \glossterm{free hands}, or one free hand if you take a \minus5 penalty.
-    The \glossterm{difficulty value} is based on the turbulence of the liquid.
-    Success means that you move through the water, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
-    Critical success means the maximum distance you can move increases to half of your base speed.
+  % \subsection{Common Swim Tasks}
 
   \subsection{Swim Speed}\label{Swim Speed}
     Some creatures have a listed swim speed.
+    % TODO: when? how exactly? what are the consequences of failure?
     A creature with a passive swim speed must still make a Swim check to move in liquid.
-    However, the distance it can move if it succeeds on the Swim check is equal to its listed swim speed, regardless of its size or whether it gets a critical success.
+    However, it can swim with its \glossterm{movement speed} as part of normal movement abilities rather than relying on the \ability{swim forward} ability.
 
   \subsection{Swim Difficulty Values}
     \begin{columntable}
