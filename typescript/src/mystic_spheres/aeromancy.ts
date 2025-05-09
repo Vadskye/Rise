@@ -24,6 +24,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         4: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
         6: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
       },
+      roles: ['narrative'],
       type: 'Sustain (minor)',
     },
     {
@@ -36,6 +37,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The distance reduction increases to 50 feet.',
         4: 'The distance reduction increases to 100 feet.',

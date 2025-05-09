@@ -303,7 +303,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants a glide speed"),
         description: String::from(r"
-            You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Aerial Movement}).
+            You gain an average \glossterm{glide speed} (see \pcref{Aerial Movement}).
         "),
         ..Apparel::default()
     }));
@@ -313,7 +313,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from("Grants flight up to 15 feet high"),
         description: String::from(r"
-            You gain a \glossterm<fly speed> equal to the \glossterm<base speed> for your size with a maximum height of 15 feet (see \pcref<Flight>).
+            You gain an average \glossterm<fly speed> with a maximum height of 15 feet (see \pcref<Flight>).
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants flight up to 30 feet high", "

@@ -406,10 +406,10 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for its size.
+      Each target gains a slow \\glossterm{swim speed}.
     `,
     // narrative: '',
-    rank: 3,
+    rank: 2,
     type: 'Attune (target)',
     spheres: ['Aquamancy', 'Polymorph'],
   },
