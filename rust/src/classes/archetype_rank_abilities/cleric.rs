@@ -58,10 +58,32 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
+            name: "Benediction",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                \begin{magicalactiveability}{Turn Undead}
+                    \abilityusagetime Standard action.
+                    \rankline
+                    Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
+                    \hit Each target is turned by you as a \glossterm{condition}.
+                    This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
+                    Once this effect ends, the creature cannot be frightened in this way until it finishes a \glossterm{short rest}.
+                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes damage equal to half its maximum hit points.
+                    After taking this damage, it cannot take this damage again until it finishes a short rest.
+
+                    \rankline
+                    This attack's accuracy increases by \plus2 for each rank beyond 2.
+                \end{magicalactiveability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Metamagic",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
@@ -110,28 +132,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional metamagic abilities.
                 In addition, the extra damage from Smiting Spell increases to be equal to your magical power.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Turn Undead",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                \begin{magicalactiveability}{Turn Undead}
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
-                    \hit Each target is turned by you as a \glossterm{condition}.
-                    This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
-                    Once this effect ends, the creature cannot be frightened in this way until it finishes a \glossterm{short rest}.
-                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes damage equal to half its maximum hit points.
-                    After taking this damage, it cannot take this damage again until it finishes a short rest.
-
-                    \rankline
-                    This attack's accuracy increases by \plus2 for each rank beyond 2.
-                \end{magicalactiveability}
             ",
             modifiers: None,
         },
@@ -316,7 +316,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains 1d8 \glossterm{hit points} +1 per \glossterm{power}.
-                    In addition, if the target is an \glossterm{ally}, it gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
+                    In addition, if the target is an \glossterm{ally}, it becomes \braced this round.
 
                     Normally, this healing cannot increase the target's hit points above half its maximum hit points.
                     If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
