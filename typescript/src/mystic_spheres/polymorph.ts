@@ -106,10 +106,11 @@ export const polymorph: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
-        If the target is living and your attack result beats its Fortitude defense, it bleeds.
-        During your next action, it takes \\glossterm{extra damage} equal to half your power.
+        If the target takes damage and is living, it bleeds.
+        A bleeding creature takes damage equal to half your power during your next action.
+        This bleeding damage is doubled on a critical hit.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['burn'],
       scaling: 'accuracy',
     },
@@ -122,7 +123,8 @@ export const polymorph: MysticSphere = {
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         The attack is made against the target's Reflex defense instead of its Armor defense.
       `,
-      rank: 2,
+      rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -131,10 +133,11 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{mundane} melee \\glossterm{strike} with a -3 accuracy penalty using \\glossterm{natural weapons}.
-        The strike deals double \\glossterm{weapon damage}.
+        You become \\empowered this round.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -143,10 +146,12 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
+        You become \\maximized this round.
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
-        The strike deals triple \\glossterm{weapon damage}.
+        The strike deals double damage.
       `,
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -159,6 +164,7 @@ export const polymorph: MysticSphere = {
         The strike gains the \\weapontag{Long} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -167,28 +173,34 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
-        The strike targets everything in a \\tinyarea radius adjacent to you, and it deals double \\glossterm{weapon damage}.
+        Make a \\glossterm{mundane} melee \\glossterm{strike} that deals double damage using \\glossterm{natural weapons}.
+        The strike targets everything in a 10 ft.\\ long, 10 ft.\\ wide line from you.
+        If all spaces in that area are occupied by a single creature, you gain a \\plus3 accuracy bonus against that creature.
       `,
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Baleful Polymorph',
 
+      // Base r7, +2 from melee range, +2 from two defenses, +2 from removed on damage =
+      // r13, or 5.8 EA. That's close enough to allow this to work, probably.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
-          Squirrels have a 30 foot land speed, a 20 foot climb speed, and a bite natural weapon.
+          Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
+          If the target takes damage, this condition is removed.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against one Huge or smaller creature within \\shortrange.
+          Make an attack vs. Fortitude and Mental against one Huge or smaller creature you \\glossterm{touch}.
         `,
       },
-      rank: 5,
+      rank: 7,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
@@ -201,6 +213,7 @@ export const polymorph: MysticSphere = {
         It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -213,6 +226,7 @@ export const polymorph: MysticSphere = {
         It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -226,6 +240,7 @@ export const polymorph: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -233,32 +248,17 @@ export const polymorph: MysticSphere = {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
 
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Stoneskin',
-
-      functionsLike: {
-        mass: true,
-        name: 'Stoneskin',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
-      type: 'Attune (target)',
     },
 
     {
