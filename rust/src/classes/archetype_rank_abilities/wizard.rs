@@ -448,6 +448,16 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
+            name: "Expert Metamage",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                You can spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Intricate Spell",
             is_magical: true,
@@ -463,16 +473,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Armor, -2),
                 Modifier::Defense(Defense::Reflex, -2),
             ]),
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Expert Metamage",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You can spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
-            ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 0,

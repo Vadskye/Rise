@@ -106,10 +106,21 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
+            name: "Arcane Dynamo",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                You gain a \plus1 bonus to your \glossterm{magical power}.
+                If your Constitution is 4 or higher, you gain an additional \plus1 bonus.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Metamagic",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
@@ -159,17 +170,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional metamagic abilities.
                 In addition, the extra damage from Energetic Spell increases to be equal to your power.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Desperate Devastation",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                Whenever you use the \textit{desperate exertion} ability to affect a \magical attack, you also roll all damage dice for the attack twice and keep the higher result.
-                If you use that ability to affect an attack that already hit, and the reroll also hits, your damage dice are maximized instead.
             ",
             modifiers: None,
         },

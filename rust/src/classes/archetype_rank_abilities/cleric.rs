@@ -63,19 +63,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Turn Undead}
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make an attack vs. Mental against all undead creatures within a \largearea radius from you.
-                    \hit Each target is turned by you as a \glossterm{condition}.
-                    This functions as if the target is \frightened by you, but creatures that are immune to being frightened are still affected.
-                    Once this effect ends, the creature cannot be frightened in this way until it finishes a \glossterm{short rest}.
-                    \crit As above, and each target with no remaining \glossterm{damage resistance} takes damage equal to half its maximum hit points.
-                    After taking this damage, it cannot take this damage again until it finishes a short rest.
-
-                    \rankline
-                    This attack's accuracy increases by \plus2 for each rank beyond 2.
-                \end{magicalactiveability}
+                Whenever you cast a spell, you can choose one \glossterm{ally} that is either targeted by that spell or \glossterm{attuned} to a spell you cast.
+                During the next round, that ally is either \empowered or \steeled, as you choose.
             ",
             modifiers: None,
         },
