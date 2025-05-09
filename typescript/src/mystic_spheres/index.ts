@@ -89,6 +89,7 @@ export interface BaseSpellLike {
 
 export const ABILITY_ROLES = [
   'artillery', // Long-range AOE damage to contribute while staying out of danger
+  'attune',    // Attuned combat buff
   'barrier',   // Non-damaging walls to limit the swarm's mobility and set up choke points
   'boon',      // Brief or single-round effects on allies
   'burn',      // Single-target damage over time
