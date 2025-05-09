@@ -442,10 +442,25 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
+            name: "Desperate Pact",
+            is_magical: true,
+            rank: 1,
+            description: r"
+                You can use the \ability{desperate exertion} ability without increasing your fatigue level (see \pcref{Desperate Exertion}).
+                When you do, you suffer no immediate negative consequences.
+                After 10 minutes, your maximum \glossterm{hit points} are reduced to three-quarters of normal until you complete a \glossterm{long rest}.
+                Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
+                If your hit points would be reduced below 1 in this way, your body and soul are ripped through the planes directly into your soulkeeper's realm.
+                This is invariably lethal, and leaves no corpse behind.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Metamagic",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
@@ -495,21 +510,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain two additional metamagic abilities.
                 In addition, the extra damage from Powerful Spell increases to be equal to your magical power.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Desperate Pact",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You can use the \ability{desperate exertion} ability without increasing your fatigue level (see \pcref{Desperate Exertion}).
-                When you do, you suffer no immediate negative consequences.
-                After 10 minutes, your maximum \glossterm{hit points} are reduced to three-quarters of normal until you complete a \glossterm{long rest}.
-                Each time this penalty takes effect, your hit points are reduced by an additional quarter, so using it three times would reduce your maximum hit points to a quarter of their normal value.
-                If your hit points would be reduced below 1 in this way, your body is ripped through the planes directly into your soulkeeper's realm.
-                This is invariably lethal, and leaves no corpse behind.
             ",
             modifiers: None,
         },

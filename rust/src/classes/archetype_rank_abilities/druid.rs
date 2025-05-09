@@ -257,10 +257,21 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
 pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
+            complexity: 1,
+            name: "Plant Channeling",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                Whenever you cast a spell, you may use a Small or larger living plant within \medrange of you as a \glossterm{targeting proxy}.
+                This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Metamagic",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
@@ -281,11 +292,12 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It gains the \atEarth tag.
                         In addition, you gain a \plus2 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
                         You can choose this ability multiple times, choosing a different spell each time.
+                    % Assume 70% hit rate, so expected damage is 0.8x hit damage.
+                    % The repeat has expected damage of 0.4, for a total of 1.2x hit damage, or 50% more damage.
                     \parhead{Incendiary Spell} Choose a damaging nature \glossterm{spell} you know.
                         It gains the \atFire tag.
                         Whenever you hit a target with that spell, you repeat the spell's effects against that target during the next round.
-                        You must make a new attack roll for the repeat with a \minus2 accuracy penalty.
-                        The repeat only deals damage, and has no other special effects, such as inflicting \glossterm{conditions}.
+                        You must make a new attack roll for the repeat with a \minus4 accuracy penalty.
                         Even if you hit the same target multiple times, the spell only repeats once against that target.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).
@@ -314,17 +326,6 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Plant Channeling",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                Whenever you cast a spell, you may use a Small or larger living plant within \medrange of you as a \glossterm{targeting proxy}.
-                This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
             ",
             modifiers: None,
         },
