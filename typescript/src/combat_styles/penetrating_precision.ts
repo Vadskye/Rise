@@ -12,6 +12,7 @@ export const perfectPrecision: CombatStyle = {
         Make a \\glossterm{strike} with a +3 accuracy bonus.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
@@ -21,6 +22,7 @@ export const perfectPrecision: CombatStyle = {
         Make a \\glossterm{strike} with a +15 accuracy bonus.
       `,
       rank: 7,
+      roles: ['burst'],
     },
     {
       name: 'Armorpiercer',
@@ -28,8 +30,10 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         The attack is made against each target's Reflex defense instead of its Armor defense.
+        If the target takes damage, it \\glossterm{briefly} takes a -2 penalty to its Armor defense.
       `,
       rank: 3,
+      roles: ['softener'],
     },
 
     {
@@ -42,6 +46,7 @@ export const perfectPrecision: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
@@ -52,6 +57,18 @@ export const perfectPrecision: CombatStyle = {
         If it target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Injection+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        If it target takes damage, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+      `,
+      rank: 5,
+      roles: ['softener'],
     },
 
     {
@@ -60,19 +77,23 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a ranged \\glossterm{strike} against everything in a \\medarealong, 5 ft. wide line from you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
+        You also still take the normal -4 accuracy penalty for attacking an adjacent creature with a Projectile weapon (see \\pcref{Weapon Tags}).
       `,
       rank: 1,
+      roles: ['clear'],
     },
 
     {
       name: 'Penetrating Shot+',
 
       effect: `
-        Make a ranged \\glossterm{strike} with a -1 accuracy penalty against everything in a \\largearealong, 5 ft. wide line from you.
-        The strike deals double \\glossterm{weapon damage}.
+        Make a ranged \\glossterm{strike} against everything in a \\largearealong, 5 ft. wide line from you.
+        The strike deals double damage.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
+        You also still take the normal -4 accuracy penalty for attacking an adjacent creature with a Projectile weapon (see \\pcref{Weapon Tags}).
       `,
       rank: 5,
+      roles: ['clear'],
     },
 
     {
@@ -83,6 +104,7 @@ export const perfectPrecision: CombatStyle = {
         You reduce your \\glossterm{longshot penalty} with the strike by 4, which generally removes the penalty entirely.
       `,
       rank: 3,
+      roles: ['snipe'],
     },
 
     {
@@ -94,6 +116,20 @@ export const perfectPrecision: CombatStyle = {
         Only one of the spaces in the line can be adjacent to you.
       `,
       rank: 1,
+      roles: ['clear'],
+    },
+
+    {
+      name: 'Focusing Lunge',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double dmage against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
+        The line must point directly away from you.
+        Only one of the spaces in the line can be adjacent to you.
+        If you deal damage to two creatures in this way, you \\glossterm{briefly} become \\focused.
+      `,
+      rank: 5,
+      roles: ['clear'],
     },
 
     {
@@ -104,6 +140,7 @@ export const perfectPrecision: CombatStyle = {
         If the target takes damage and your attack hits its Reflex defense, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against it.
       `,
       rank: 1,
+      roles: ['generator'],
     },
 
     {
@@ -129,49 +166,52 @@ export const perfectPrecision: CombatStyle = {
         You strike directly for your foe's heart.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
       name: 'Heartpiercer+',
 
+      // Assume you hit 80% of the time normally (+0 vs AD 3).
+      // This has expected damage of 0.3 * 3 + 0.5 * 2 = 2x hit damage.
+      //
+      // Now assume you hit 130% of the time normally (+5 vs AD 3).
+      // Normal expected damage is 0.3 * 2 + 0.7 * 1 = 1.3x hit damage.
+      // With this, expected damage is 0.8 * 3 + 0.2 * 2 = 2.8x hit damage.
+      // That's still only slightly better than a double damage strike, so it seems safe.
       effect: `
         Make a \\glossterm{strike}.
-        You gain a +10 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        You gain a +15 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
+        However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
         You strike directly for your foe's heart.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
       name: 'Pinning Shot',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} that deals double damage.
         If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
       `,
-      rank: 3,
-    },
-
-    {
-      name: 'Pinning Shot+',
-
-      effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target takes damage, it becomes \\slowed as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      rank: 5,
+      roles: ['maim'],
     },
 
     {
       name: 'Chargebreaker',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        You gain a +2 accuracy bonus with the strike if you stayed in the same location while the target moved towards you during the movement phase.
+        You ready a reactive melee strike (see \\pcref{Ready Reaction}).
+        The strike triggers against any \\glossterm{enemy} that you couldn't already hit with a melee strike at the start of the phase, such as enemies already adjacent to you.
+        You gain a +2 accuracy bonus with the reactive strike.
       `,
       rank: 1,
+      roles: ['payoff'],
     },
 
     {
@@ -185,50 +225,55 @@ export const perfectPrecision: CombatStyle = {
         Effects which would replace your attack roll with a fixed value, such as a law paladin's \\ability{aligned aura} ability, do not apply to this strike.
       `,
       rank: 1,
+      roles: ['burst'],
     },
 
     {
       name: 'Called Shot+',
 
       effect: `
-        Choose a number from 1--10, then make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Choose a number from 1--10, then make a \\glossterm{strike} that deals double damage.
         If you roll that number on your attack roll, you gain a +5 accuracy bonus.
         Any die rolled as part of an attack that \\glossterm{explodes} counts for this purpose, and you use your final die result after applying any rerolls.
-        Effects which would replace your attack roll with a fixed value, such as a law paladin's \\ability{aligned aura} ability, do not apply to this strike.
+        Effects which would replace your attack result with a fixed value, such as a law paladin's \\ability{aligned aura} ability, do not apply to this strike.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
       name: 'Full-Body Thrust',
 
       effect: `
-        Make a melee \\glossterm{strike} with 1d4 \\glossterm{extra damage} +1 per two \\glossterm{power}.
+        Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
       name: 'Full-Body Thrust+',
 
       effect: `
-        Make a melee \\glossterm{strike} with \\damagerankseven extra damage.
+        Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
         However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
       `,
       rank: 7,
+      roles: ['burst'],
     },
 
     {
       name: 'Pressure Point Puncture',
 
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} that deals triple damage.
         If the target takes damage, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,
-      rank: 3,
+      rank: 7,
+      roles: ['softener'],
     },
   ],
 };

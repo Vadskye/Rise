@@ -109,7 +109,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Shrapnel Burst',
+      name: 'Fragmentary Burst',
 
       effect: `
         Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
@@ -121,7 +121,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Shrapnel Burst+',
+      name: 'Fragmentary Burst+',
 
       // Double damage with a heavy crossbow is 11 + 1dpp.
       // A standard rank 5 AOE damage spell would affect a Huge cone and deal 1.75dpp.

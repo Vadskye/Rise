@@ -22,6 +22,7 @@ export const unbreakableDefense: CombatStyle = {
         name: 'total defense',
       },
       rank: 1,
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
@@ -40,6 +41,7 @@ export const unbreakableDefense: CombatStyle = {
         name: 'total defense',
       },
       rank: 5,
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
@@ -59,6 +61,7 @@ export const unbreakableDefense: CombatStyle = {
         name: 'total defense',
       },
       rank: 3,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
@@ -76,6 +79,7 @@ export const unbreakableDefense: CombatStyle = {
         name: 'total defense',
       },
       rank: 7,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
@@ -87,6 +91,7 @@ export const unbreakableDefense: CombatStyle = {
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 3,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
@@ -94,14 +99,12 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Brace for Impact+',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-
-        You are \\trait{impervious} to all damage this round.
-        Becoming impervious in this way is a \\abilitytag{Swift} ability, so it affects attacks against you during the current phase.
-        The strike is not Swift.
+        You are \\braced and \\trait{impervious} to all damage this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 5,
-      tags: ['Swift (see text)'],
+      rank: 7,
+      roles: ['turtle'],
+      tags: ['Swift'],
     },
 
     {
@@ -113,6 +116,7 @@ export const unbreakableDefense: CombatStyle = {
         After you use this ability, you cannot use it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
+      roles: ['healing'],
       tags: ['Swift'],
     },
 
@@ -120,22 +124,25 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Shield Bash',
 
       effect: `
-        Make a \\glossterm{strike} using a shield.
-        In addition, you gain a +1 bonus to Armor defense this round.
+        Make a melee \\glossterm{strike} using a shield.
+        In addition, you are \\shielded this round.
         The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
+    // +0.4ea as a bonus for requiring shield
     {
       name: 'Stunning Shield Slam',
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        If the target takes damage, it is \\glossterm{briefly} \\stunned.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['softener'],
     },
 
     {
@@ -145,6 +152,7 @@ export const unbreakableDefense: CombatStyle = {
         You remove a \\glossterm{condition} affecting you.
       `,
       rank: 5,
+      roles: ['cleanse'],
     },
 
     {
@@ -156,6 +164,7 @@ export const unbreakableDefense: CombatStyle = {
         Then, make a \\glossterm{strike}.
       `,
       rank: 3,
+      roles: ['cleanse'],
     },
 
     {
@@ -164,9 +173,10 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a strike.
-        In addition, you regain 1d6 hit points plus 1d6 per 3 power at the end of the round.
+        In addition, you regain hit points equal to 1d6 \\add your \\glossterm{power} at the end of the round.
       `,
       rank: 3,
+      roles: ['healing'],
     },
 
     {
@@ -178,18 +188,27 @@ export const unbreakableDefense: CombatStyle = {
         In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.
       `,
       rank: 7,
+      roles: ['healing'],
     },
 
     {
-      name: 'Stand Fast',
+      name: 'Sinews of Steel',
 
       effect: `
-        Make a strike.
-        In addition, you gain a +4 bonus to \\glossterm{vital rolls} this round.
-        The vital roll bonus is a \\abilitytag{Swift} effect, but not the strike.
+        You are \\glossterm{briefly} \\empowered and \\steeled.
       `,
       rank: 1,
-      tags: ['Swift (see text)'],
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Sinews of Steel+',
+
+      effect: `
+        You are \\glossterm{briefly} \\empowered, \\fortified, and \\steeled.
+      `,
+      rank: 5,
+      roles: ['focus'],
     },
 
     {
@@ -197,33 +216,24 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
-        You \\glossterm{briefly} gain a +2 bonus to that defense.
+        In addition, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
-      rank: 1,
-    },
-
-    {
-      name: 'Prepared Defense+',
-
-      effect: `
-        Make a \\glossterm{strike}.
-        In addition, choose any one defense: Armor, Fortitude, Reflex, or Mental.
-        You \\glossterm{briefly} gain a +4 bonus to that defense.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
-      `,
-      rank: 5,
+      rank: 3,
+      roles: ['generator'],
     },
 
     {
       name: 'I Am Your Opponent',
 
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack reuslt also hits its Reflex defense, it becomes \\goaded by you as a \\glossterm{condition}.
-      `,
+      attack: {
+        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against one creature adjacent to you.
+        `,
+      },
       rank: 3,
+      roles: ['softener'],
       tags: ['Emotion'],
     },
 
@@ -231,10 +241,11 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals triple \\glossterm{weapon damage}.
-        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        Choose a creature within \\shortrange of you.
+        That creature is \\goaded by you as a \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['softener'],
       tags: ['Emotion'],
     },
   ],
