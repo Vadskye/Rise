@@ -157,7 +157,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 +1 per two \glossterm{power}.
+                    \subcf{Covenant of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     In exchange, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
@@ -170,9 +170,9 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }
             ",
-            // Assume covenant of bloodforging
+            // Assume covenant of bloodforging and already wearing light armor
             modifiers: Some(vec![
-                Modifier::Defense(Defense::Armor, 4),
+                Modifier::Defense(Defense::Armor, 2),
                 Modifier::DamageResistance(3),
             ]),
         },
