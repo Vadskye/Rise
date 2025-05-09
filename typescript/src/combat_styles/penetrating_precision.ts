@@ -29,8 +29,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        The attack is made against each target's Reflex defense instead of its Armor defense.
-        If the target takes damage, it \\glossterm{briefly} takes a -2 penalty to its Armor defense.
+        The attack is made against the target's Reflex defense instead of its Armor defense.
       `,
       rank: 3,
       roles: ['softener'],
@@ -246,7 +245,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
-        However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
+        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 3,
       roles: ['burst'],
@@ -257,7 +256,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
-        However, you \\glossterm{briefly} take a -2 accuracy penalty after making the strike.
+        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 7,
       roles: ['burst'],

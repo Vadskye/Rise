@@ -398,7 +398,7 @@ export const verdamancy: MysticSphere = {
       name: 'Barkskin',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -407,22 +407,6 @@ export const verdamancy: MysticSphere = {
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Barkskin',
-
-      functionsLike: {
-        mass: true,
-        name: 'Barkskin',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
-      type: 'Attune (target)',
     },
 
     {

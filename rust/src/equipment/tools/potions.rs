@@ -93,25 +93,84 @@ pub fn potions() -> Vec<Tool> {
         ..elixir()
     });
 
+    // Self-buff potion ranks:
+    // R0: 0.2 EA
+    // R1: 0.4 EA
+    // R2: 0.5 EA
+    // R3: 0.6 EA
+    // R4: 0.7 EA
+    // R5: 0.8 EA
+    // R6: 0.9 EA
+
     potions.push(Tool {
-        name: "Elixir of Resilience".to_string(),
+        name: "Potion of Power".to_string(),
         rank: 0,
-        short_description: "Grants +4 damage resistance".to_string(),
+        short_description: "Grants brief empowerment".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +4 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
-            This effect expires after 10 minutes.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\empowered.
         ".to_string(),
-        upgrades: vec![
-            ItemUpgrade::new(2, "Grants +8 damage resistance", r"
-                The damage resistance bonus increases to +8.
-            "),
-            ItemUpgrade::new(4, "Grants +16 damage resistance", r"
-                The damage resistance bonus increases to +16.
-            "),
-            ItemUpgrade::new(6, "Grants +32 damage resistance", r"
-                The damage resistance bonus increases to +32.
-            "),
-        ],
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Fortifying Potion".to_string(),
+        rank: 1,
+        short_description: "Grants brief fortification".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\fortified.
+        ".to_string(),
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Shielding Potion".to_string(),
+        rank: 3,
+        short_description: "Grants brief shielding".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\shielded.
+        ".to_string(),
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Focusing Potion".to_string(),
+        rank: 1,
+        short_description: "Grants brief focus".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\focused.
+        ".to_string(),
+        ..elixir()
+    });
+
+    // Theoretically 0.8, but drop to 0.7 - bracing is stronger when applied to allies, and this
+    // conflicts with total defense
+    potions.push(Tool {
+        name: "Bracing Potion".to_string(),
+        rank: 4,
+        short_description: "Grants brief shielding".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\braced.
+        ".to_string(),
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Potion of Potential".to_string(),
+        rank: 5,
+        short_description: "Grants brief priming".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\primed.
+        ".to_string(),
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Potion of Maximum Power".to_string(),
+        rank: 6,
+        short_description: "Grants brief maximization".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\maximized.
+        ".to_string(),
         ..elixir()
     });
 

@@ -341,7 +341,7 @@ export const toxicology: MysticSphere = {
       name: 'Fungal Armor',
 
       effect: `
-        You gain a +8 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
+        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
         However, you take a -4 penalty to your \\glossterm{hit points}.
       `,
       rank: 1,
@@ -563,7 +563,7 @@ export const toxicology: MysticSphere = {
       name: 'Mighty Devouring Fungus',
 
       functionsLike: {
-        name: 'fungal growth',
+        name: 'devouring fungus',
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 5,

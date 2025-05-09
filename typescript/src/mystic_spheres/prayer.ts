@@ -253,7 +253,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points} and \\glossterm{damage resistance}.
         In addition, each target gains a +1 \\glossterm{enhancement bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
@@ -273,7 +273,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to its \\glossterm{damage resistance}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{damage resistance}.
       `,
       rank: 2,
       scaling: {

@@ -64,7 +64,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    It also provides a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -254,7 +254,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
             ",
             modifiers: None,
         },
@@ -334,7 +334,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain an \glossterm{enhancement bonus} equal to twice your rank in this archetype to your \glossterm{hit points} and \glossterm{damage resistance}.
+                You gain an \glossterm{enhancement bonus} equal to twice your rank in this archetype to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
                 Because this is an enhancement bonus, it does not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so

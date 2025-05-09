@@ -25,7 +25,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
+                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
             ",
             // HP is handled by add_hp_scaling()
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
@@ -402,7 +402,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 

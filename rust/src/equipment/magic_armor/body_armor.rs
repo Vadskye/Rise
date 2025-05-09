@@ -147,8 +147,8 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Grants +16 damage resistance, but -8 hit points"),
         description: String::from(r"
-            You gain a +16 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
-            However, you take a -8 penalty to your \glossterm<hit points>.
+            You gain a +16 \glossterm<enhancement bonus> to your maximum \glossterm<damage resistance>.
+            However, you take a -8 penalty to your maximum \glossterm<hit points>.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +32 damage resistance, but -16 hit points", "
@@ -227,12 +227,12 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Grants HP instead of damage resistance"),
         description: String::from(r"
-            This armor does not increase your damage resistance.
-            Instead, you gain a bonus to your hit points equal to the damage resistance the armor would normally provide.
+            This armor does not increase your maximum damage resistance.
+            Instead, you gain a bonus to your maximum hit points equal to the damage resistance the armor would normally provide.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants bonus HP instead of damage resistance", r"
-                The armor also grants you a +8 \glossterm{enhancement bonus} to your hit points.
+                The armor also grants you a +8 \glossterm{enhancement bonus} to your maximum hit points.
             "),
             ItemUpgrade::new(6, "Grants bonus HP instead of damage resistance", r"
                 The hit point bonus increases to +16.

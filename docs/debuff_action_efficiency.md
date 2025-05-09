@@ -465,7 +465,7 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * Goaded as a condition
   * Panicked as a HP condition
   * Time skip
-* Rank 7 (2.9 EA):
+* Rank 7 (2.8 EA):
   * 1 EA of damage, action skip
   * 1 EA of damage, banishment
   * Briefly blinded
@@ -481,6 +481,9 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * 
 * Rank 11 (4.6 EA):
   * 
+* Rank 12 (5.1 EA):
+* Rank 13 (5.8 EA):
+* Rank 14 (6.6 EA):
 
 ### Debuff + Damage
 
