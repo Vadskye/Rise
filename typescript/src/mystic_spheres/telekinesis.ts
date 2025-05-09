@@ -471,7 +471,7 @@ export const telekinesis: MysticSphere = {
       name: 'Kinetic Shield',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -480,21 +480,6 @@ export const telekinesis: MysticSphere = {
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Kinetic Shield',
-
-      functionsLike: {
-        mass: true,
-        name: 'kinetic shield',
-      },
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
-      type: 'Attune (target)',
     },
 
     {

@@ -68,7 +68,7 @@ fn belts() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +4 hit points"),
         description: String::from(r"
-            You gain a +4 \glossterm<enhancement bonus> to your \glossterm<hit points>.
+            You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants +8 hit points", "

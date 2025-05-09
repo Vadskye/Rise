@@ -264,7 +264,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
                 This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your \glossterm{damage resistance} equal to four times your rank in this archetype.
+                It also provides a bonus to your maximum \glossterm{damage resistance} equal to four times your rank in this archetype.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -703,7 +703,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::VitalRoll(1)]),

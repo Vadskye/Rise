@@ -205,7 +205,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    It also provides a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor defense, except that you do not need to be proficient with light armor.
@@ -522,7 +522,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
-                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -553,7 +553,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school improves.
                 {
-                    \subcf{Abjuration} The bonus to damage resistance increases to four times your rank in this archetype.
+                    \subcf{Abjuration} The damage resistance bonus increases to four times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
@@ -577,7 +577,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 Your understanding of your chosen school reaches its full potential.
                 {
                     % TODO: this seems weaker than the other schools
-                    \subcf{Abjuration} The bonus to damage resistance increases to five times your rank in this archetype.
+                    \subcf{Abjuration} The damage resistance bonus increases to five times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus90 feet.
 

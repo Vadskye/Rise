@@ -92,7 +92,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 pact maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
 
                     \parhead{Mighty Maneuver} You take an accuracy penalty equal to 5 - your excess rank but the strike deals double \glossterm{weapon damage}.
                     If your excess rank is at least 6, this becomes an accuracy bonus.
@@ -154,7 +154,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
                     This functions like light body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your \glossterm{damage resistance}.
+                    It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your maximum \glossterm{damage resistance}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
                     \subcf{Covenant of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
@@ -184,7 +184,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of your chosen covenant improves.
                 {
-                    \subcf{Covenant of Bloodforging} The bonus to damage resistance from the armor increases to seven times your rank in this archetype.
+                    \subcf{Covenant of Bloodforging} The damage resistance bonus from the armor increases to seven times your rank in this archetype.
 
                     \subcf{Covenant of Bloodsharing} The healing increases to 1d6 +1 per \glossterm{power}.
 
@@ -201,7 +201,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen covenant reaches its full potential.
                 {
-                    \parhead{Covenant of Bloodforging} The bonus to damage resistance from the armor increases to ten times your rank in this archetype.
+                    \parhead{Covenant of Bloodforging} The damage resistance bonus from the armor increases to ten times your rank in this archetype.
                     In addition, the defense bonus increases to \plus5.
 
                     \parhead{Covenant of Bloodsharing} The healing increases to 1d6 plus 1d6 per 2 power.
@@ -410,7 +410,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain a bonus to your \glossterm{damage resistance} equal to your rank in this archetype.
+                You gain a bonus to your maximum \glossterm{damage resistance} equal to your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -566,7 +566,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 
                 \subcf{Moirai -- Fatebound} You gain a \plus2 bonus to your \glossterm{vital rolls}.
 
-                \subcf{Precursor -- Burgeoning} You gain a bonus equal to twice your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
+                \subcf{Precursor -- Burgeoning} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
@@ -692,7 +692,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your \glossterm{damage resistance}.
+                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,

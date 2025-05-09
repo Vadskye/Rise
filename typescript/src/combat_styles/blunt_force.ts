@@ -336,10 +336,11 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Maximum Muscle Burst',
 
+      // Unclear whether this deals the right damage
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You are \\glossterm{briefly} \\maximized.
-        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double damage.
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals triple damage.
       `,
       rank: 7,
       roles: ['exertion', 'generator'],
