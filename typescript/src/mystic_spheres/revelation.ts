@@ -186,7 +186,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Defense',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
       scaling: {
@@ -195,22 +195,6 @@ export const revelation: MysticSphere = {
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Precognitive Defense',
-
-      functionsLike: {
-        mass: true,
-        name: 'Precognitive Defense',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
-      type: 'Attune (target)',
     },
 
     {

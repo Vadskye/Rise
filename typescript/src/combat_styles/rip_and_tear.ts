@@ -21,7 +21,9 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        The strike deals \\glossterm{extra damage} equal to half your power if the target is not wearing metal body armor.
+        If the target takes damage and is not wearing metal body armor, it bleeds.
+        A bleeding creature takes damage equal to half your power during your next action.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 3,
       roles: ['burst'],
@@ -32,7 +34,9 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        The strike deals 1d6 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
+        If the target is not wearing metal body armor, it bleeds.
+        A bleeding creature takes 1d6 damage per 2 power during your next action.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 7,
       roles: ['burst'],
@@ -75,12 +79,12 @@ export const ripAndTear: CombatStyle = {
       name: 'Two-Weapon Rend',
 
       effect: `
-        Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
+        Make a \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
+        You roll accuracy twice and keep the lower result.
         If the target takes damage, it bleeds.
-        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        A bleeding creature takes damage equal to the damage it took from the strike during your next action.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['burn'],
     },
 
@@ -103,7 +107,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        If your attack also hits the target's Reflex defense, it takes damage equal to 1d4 \add half your power during your next action.
+        If the target takes damage, it burns.
+        A burning creature takes damage equal to half your power during your next action.
         On a critical hit, this burning damage is doubled.
       `,
       rank: 3,
@@ -116,7 +121,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike that deals double damage.
-        If your attack also hits the target's Reflex defense, it takes damage equal to 3d6 \add 1d6 damage per 2 power during your next action.
+        If the target takes damage, it burns.
+        A burning creature takes damage equal to 3d6 \add your power during your next action.
         On a critical hit, this burning damage is doubled.
       `,
       rank: 7,

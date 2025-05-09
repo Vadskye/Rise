@@ -97,7 +97,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Agent of the Divine',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to \\glossterm{hit points} and \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points} and \\glossterm{damage resistance}.
         In addition, you gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 1,

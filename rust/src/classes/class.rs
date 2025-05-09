@@ -1662,7 +1662,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You gain a \plus2 bonus to your Fortitude defense.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{damage resistance}.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{damage resistance}.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
@@ -1798,7 +1798,7 @@ impl Class {
 
                     \subsubsection{Life Domain}
                         \domainability{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your \glossterm{hit points}.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
                         \magicaldomainability{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
                         \domainability{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Mastery archetype.
@@ -1814,7 +1814,7 @@ impl Class {
                         In addition, the skill bonus from this domain's gift increases to \plus5.
 
                     \subsubsection{Protection Domain}
-                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.

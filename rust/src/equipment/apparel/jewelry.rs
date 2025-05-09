@@ -506,7 +506,7 @@ fn rings() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Grants many small defensive bonuses"),
         description: String::from(r"
-            You gain a +4 \glossterm<enhancement bonus> to your \glossterm<hit points> and \glossterm<damage resistance>.
+            You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points> and \glossterm<damage resistance>.
             In addition, you gain a \plus1 \glossterm<enhancement bonus> to \glossterm<vital rolls>.
         "),
         upgrades: vec![
