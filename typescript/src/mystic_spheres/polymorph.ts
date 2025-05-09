@@ -325,7 +325,7 @@ export const polymorph: MysticSphere = {
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
+          \\item You gain an average \\glossterm{climb speed} (see \\pcref{Climbing}).
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You take a -1 penalty to your Armor defense.
@@ -695,8 +695,7 @@ export const polymorph: MysticSphere = {
       name: 'Swimmer',
 
       effect: `
-        You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
+        You gain an average \\glossterm{swim speed} (see \\pcref{Swimming}).
       `,
       rank: 3,
       type: 'Attune',
@@ -706,8 +705,7 @@ export const polymorph: MysticSphere = {
       name: 'Climber',
 
       effect: `
-        You gain a \\glossterm{climb speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a climb speed, you gain a +10 foot \\glossterm{enhancement bonus} to your climb speed.
+        You gain an average \\glossterm{climb speed} (see \\pcref{Climbing}).
       `,
       rank: 3,
       type: 'Attune',
@@ -717,7 +715,7 @@ export const polymorph: MysticSphere = {
       name: 'Runner',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{land speed}.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
       `,
       rank: 4,
       type: 'Attune',

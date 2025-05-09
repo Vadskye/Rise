@@ -102,17 +102,17 @@ export const ABILITY_ROLES = [
   'flash',     // AOE brief debuff
   'focus',     // Brief offensive self-buff that doesn't require hitting with an attack
   'generator', // Attack and gain a brief offensive self-buff, inclulding payoff prep
-  'goad',      // Convince enemies to prioritize you as a target
   'hazard',    // Create a battlefield hazard
   'healing',   // Regain HP or DR
   'kite',      // Move away from enemies and make a ranged attack
   'maim',      // Single-target debuff that requires the target to be in HP
+  'narrative', // Non-combat effects
   'payoff',    // Ability with unusual prerequisites that generally require at least a round of prep
   'ramp',      // Self-buff for the rest of the fight
   'retaliate', // Attack that is stronger against creatures that attack you
   'retreat',   // Make a short range attack and move away from enemies
   'snipe',     // Long-range single-target damage
-  'softener',  // Debuff condition that works against max hp targets
+  'softener',  // Debuff that works against max hp targets
   'stasis',    // Single-target single action trade, or as close as possible
   'trip',      // Single-target brief or one-round defensive debuff
   'turtle',    // One-round defense or protection effect on self

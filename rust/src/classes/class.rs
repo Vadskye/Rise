@@ -1578,7 +1578,7 @@ impl Class {
                         \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
                         This increases your maximum vertical jump distance normally.
                         In addition, you take half damage from \glossterm{falling damage}.
-                        \magicaldomainability{Aspect} You gain a \glossterm{glide speed} equal to the \glossterm{base speed} for your size (see \pcref{Gliding}).
+                        \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
@@ -1593,7 +1593,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \magicaldomainability{Mastery} You gain a \glossterm{fly speed} equal to the \glossterm{base speed} for your size with a maximum height of 60 feet (see \pcref{Flight}).
+                        \magicaldomainability{Mastery} You gain an average \glossterm{fly speed} with a maximum height of 60 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
