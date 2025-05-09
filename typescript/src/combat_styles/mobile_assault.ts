@@ -8,24 +8,66 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Momentous Impact',
 
-      cost: 'You \\glossterm{briefly} cannot use this ability again.',
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to your power.
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to half your power.
       `,
       rank: 3,
-      roles: ['burst'],
+      roles: ['burst', 'payoff'],
+    },
+
+    {
+      name: 'Build Speed',
+
+      effect: `
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line, you are \\glossterm{briefly} \\primed.
+      `,
+      rank: 3,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Build Speed+',
+
+      effect: `
+        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line, you \\glossterm{briefly} gain a \plus20 foot bonus to your speed and are \\primed.
+      `,
+      rank: 7,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Adrenaline',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} \\primed.
+      `,
+      rank: 1,
+      roles: ['exertion', 'focus'],
+    },
+
+    {
+      name: 'Adrenaline+',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} \\primed and \\steeled.
+      `,
+      rank: 5,
+      roles: ['exertion', 'focus'],
     },
 
     {
       name: 'Reaping Harvest',
 
       effect: `
-        Move up to half your movement speed in a straight line.
+        Move up to your movement speed in a straight line.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
       rank: 3,
+      roles: ['clear'],
     },
 
     {
@@ -33,21 +75,11 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to your movement speed in a straight line.
-        You can also make a melee \\glossterm{strike}.
-        The strike deals double \\glossterm{weapon damage}, and it targets all \\glossterm{enemies} adjacent to you at any point during your movement.
+        You can also make a melee \\glossterm{strike} that deals triple damage.
+        The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
       rank: 7,
-    },
-
-    {
-      name: 'Spring Attack',
-
-      effect: `
-        Move up to half your movement speed and make a \\glossterm{strike}.
-        If the strike is a \\glossterm{melee} strike, you gain a \\plus2 accuracy bonus with it.
-        After making the strike, you can use the other half of your movement.
-      `,
-      rank: 5,
+      roles: ['clear'],
     },
 
     {
@@ -57,15 +89,7 @@ export const mobileHunter: CombatStyle = {
         You can move up to half your speed, then make a melee \\glossterm{strike}.
       `,
       rank: 1,
-    },
-
-    {
-      name: 'Rushdown+',
-
-      effect: `
-        You can move up to your speed, then make a melee \\glossterm{strike}.
-      `,
-      rank: 3,
+      roles: ['dive'],
     },
 
     {
@@ -73,11 +97,11 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle}.
-        This means you can move through its space freely.
-        If you end your movement in its space, this can cause you both to be \\squeezing (see \\pcref{Squeezing}).
+        If the target takes damage and is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle} when moving through its space.
+        You still cannot end your movement in its space.
       `,
       rank: 1,
+      roles: ['dive'],
     },
 
     {
@@ -92,6 +116,7 @@ export const mobileHunter: CombatStyle = {
         name: 'charge',
       },
       rank: 1,
+      roles: ['exertion', 'dive'],
     },
 
     {
@@ -102,6 +127,7 @@ export const mobileHunter: CombatStyle = {
         However, you cannot use the \\textit{sprint} ability during that time.
       `,
       rank: 1,
+      roles: ['focus'],
     },
 
     {
@@ -112,6 +138,7 @@ export const mobileHunter: CombatStyle = {
         Then, you can move up to half your movement speed.
       `,
       rank: 1,
+      roles: ['retreat'],
     },
     {
       name: 'Fall Back+',
@@ -121,6 +148,7 @@ export const mobileHunter: CombatStyle = {
         Then, you can move up to your movement speed.
       `,
       rank: 3,
+      roles: ['retreat'],
     },
 
     {
@@ -128,12 +156,16 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your land speed.
-        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
-        You reappear at your destination, and you can make a melee \\glossterm{strike} there.
+        During this movement, you move too quickly to be seen.
+        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
+        While still invisible, you can make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
+        After making the strike, you become visible at your destination.
+
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
+      roles: ['clear'],
     },
 
     {
@@ -141,13 +173,15 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your land speed.
-        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
-        You reappear at your destination, and you can make two melee \\glossterm{strikes} there.
-        Each strike targets one creature adjacent to you at any point during your movement.
-        You can target the same creature with both strikes.
+        During this movement, you move too quickly to be seen.
+        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
+        While still invisible, you can make two melee \\glossterm{strikes} at any point during your movement.
+        After making the strikes, you become visible at your destination.
+
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 7,
+      roles: ['dive'],
     },
 
     {
@@ -155,11 +189,14 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your land speed.
-        During this movement, you move too quickly to be seen, becoming \\trait{invisible}.
-        You reappear at your destination, and you can make a melee \\glossterm{strike} there.
+        During this movement, you move too quickly to be seen.
+        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
+        You become visible at your destination, and you can then make a melee \\glossterm{strike} there.
+
         You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 3,
+      roles: ['dive'],
     },
 
     {
@@ -167,9 +204,11 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} from any location you occupy during the motion, including both your initial leap and your fall afterwards (if any).
+        You can make a melee \\glossterm{strike} with a -2 accuracy penalty from any location you occupy during the motion.
+        This includes both your initial leap and any fall afterwards that happens during the current round.
       `,
-      rank: 3,
+      rank: 1,
+      roles: ['dive'],
     },
 
     {
@@ -177,21 +216,11 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} from your final location after jumping.
-        Your \\glossterm{weapon damage} with the strike is doubled.
+        You can make a melee \\glossterm{strike} that deals double damage from your final location after jumping.
         On a hit, the target takes half of the \\glossterm{falling damage} that you would normally take based on the height of the jump, ignoring any of your abilities that reduce that damage.
       `,
       rank: 7,
-    },
-
-    {
-      name: 'Passing Splitstrike',
-
-      effect: `
-        Make a melee \\glossterm{strike}, then move up to 10 feet and make another melee \\glossterm{strike}.
-        You cannot include the same creature or object as a target of both strikes.
-      `,
-      rank: 3,
+      roles: ['payoff'],
     },
 
     // TODO: higher rank version of this
@@ -201,14 +230,15 @@ export const mobileHunter: CombatStyle = {
       effect: `
         Choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        In addition, you gain a +2 bonus to your Armor and Reflex defenses this round.
+        In addition, you are \\shielded this round.
         Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
-        The defense bonus and reactive penalties are \\abilitytag{Swift} effects, but not the movement.
+        The defense bonus and reactive penalty trigger are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
       tags: ['Swift (see text)'],
+      roles: ['turtle'],
     },
 
     {
@@ -216,21 +246,23 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        If the target loses hit points, it becomes \\frightened by you as a \\glossterm{condition}.
+        If the target takes damage and your attack result beats its Mental defense, it is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 3,
       tags: ['Emotion'],
+      roles: ['dive', 'softener'],
     },
 
     {
       name: 'Fearsome Pounce+',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target takes damage, it becomes \\frightened by you as a \\glossterm{condition}.
+        Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
+        If the target takes damage and your attack result beats its Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,
       tags: ['Emotion'],
+      roles: ['dive', 'softener'],
     },
 
     {
@@ -239,12 +271,13 @@ export const mobileHunter: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
+          the strike deals double damage, and you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
           However, the penalty to your defenses increases to \\minus4.
         `,
         name: 'charge',
       },
-      rank: 3,
+      rank: 5,
+      roles: ['dive'],
     },
   ],
 };

@@ -9,10 +9,11 @@ export const ripAndTear: CombatStyle = {
       name: 'Strip the Flesh',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target loses hit points, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals triple damage.
+        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['maim'],
     },
 
     {
@@ -23,16 +24,18 @@ export const ripAndTear: CombatStyle = {
         The strike deals \\glossterm{extra damage} equal to half your power if the target is not wearing metal body armor.
       `,
       rank: 3,
+      roles: ['burst'],
     },
 
     {
       name: 'Rend the Hide+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double damage.
         The strike deals 1d6 \\glossterm{extra damage} per 2 power if the target is not wearing metal body armor.
       `,
       rank: 7,
+      roles: ['burst'],
     },
 
     {
@@ -42,36 +45,30 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike}.
         If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['maim'],
     },
 
     {
-      name: 'Blinding Brow Gash',
+      name: 'Painful Brow Gash',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target loses hit points, it becomes \\blinded as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals triple damage.
+        If the target loses hit points, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
       `,
       rank: 7,
+      roles: ['maim'],
     },
 
     {
       name: 'Hamstring',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target loses hit points and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
-      `,
-      rank: 1,
-    },
-    {
-      name: 'Hamstring+',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target loses hit points and your attack result also hits its Reflex defense, it becomes \\slowed as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} that deals double damage.
+        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
+      roles: ['maim'],
     },
 
     {
@@ -84,6 +81,7 @@ export const ripAndTear: CombatStyle = {
         On a critical hit, this bleeding damage is doubled.
       `,
       rank: 1,
+      roles: ['burn'],
     },
 
     {
@@ -93,10 +91,11 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         If the target takes damage, it bleeds.
-        A bleeding creature takes 1d6 damage per 2 \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
       rank: 5,
+      roles: ['burn'],
     },
 
     {
@@ -104,21 +103,25 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        If your attack also hits the target's Reflex defense, it takes damage equal to your power during your next action.
+        If your attack also hits the target's Reflex defense, it takes damage equal to 1d4 \add half your power during your next action.
+        On a critical hit, this burning damage is doubled.
       `,
       rank: 3,
       tags: ['Fire'],
+      roles: ['burn'],
     },
 
     {
       name: 'Flintspark+',
 
       effect: `
-        Make a strike that deals double \\glossterm{weapon damage}.
-        If your attack also hits the target's Reflex defense, it takes 1d8 damage per 2 power during your next action.
+        Make a strike that deals double damage.
+        If your attack also hits the target's Reflex defense, it takes damage equal to 3d6 \add 1d6 damage per 2 power during your next action.
+        On a critical hit, this burning damage is doubled.
       `,
       rank: 7,
       tags: ['Fire'],
+      roles: ['burn'],
     },
 
     {
@@ -130,6 +133,7 @@ export const ripAndTear: CombatStyle = {
         This allows the strike to hit an additional target (see \\pcref{Weapon Tags}).
       `,
       rank: 1,
+      roles: ['clear'],
     },
 
     {
@@ -140,31 +144,34 @@ export const ripAndTear: CombatStyle = {
         The strike also targets an additional creature or object within 10 feet of the strike's primary target.
       `,
       rank: 1,
+      roles: ['clear'],
     },
 
     {
       name: 'Ricochet',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to three creatures or objects in a \\smallarea radius within \\medrange of you.
+        Make a thrown \\glossterm{strike} against up to four creatures or objects in a \\smallarea radius within \\medrange of you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 3,
+      roles: ['clear'],
     },
 
     {
       name: 'Ricochet+',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to five creatures or objects within \\medrange of you.
-        You can choose the same target multiple times, but not twice in a row, and no more than twice total.
-        If you choose the same target twice, it takes double damage from the attack.
+        Make a thrown \\glossterm{strike} against up to six creatures or objects in a \\smallarea radius within \\medrange of you.
+        You can choose the same target multiple times, but not twice in a row, and no more than three times total.
+        Choosing the same target twice means it takes double damage, and three times means it takes triple damage.
 
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
       rank: 7,
+      roles: ['clear'],
     },
 
     {
@@ -175,9 +182,28 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
-        \\hit Each creature that loses \\glossterm{hit points} takes damage from the strike again during your next action.
+        Each creature damaged by the strike bleeds.
+        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 1,
+      roles: ['wildfire'],
+    },
+
+    {
+      name: 'Desperate Bloodwhirl+',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        The strike targets all \\glossterm{enemies} adjacent to you.
+        You cannot use the \\textit{desperate exertion} ability to affect this strike.
+        Each creature damaged by the strike bleeds.
+        A bleeding creature takes damage equal to your \\glossterm{power} during your next action.
+        On a critical hit, this bleeding damage is doubled.
+      `,
+      rank: 5,
+      roles: ['wildfire'],
     },
 
     {
@@ -185,29 +211,53 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it takes damage from the strike again during your next action.
+        If the target loses hit points, it bleeds.
+        A bleeding creature takes damage equal to 1d4 \add half your \\glossterm{power} during your next action.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 1,
+      roles: ['execute'],
     },
 
+    // If you include the bonus round, this is the highest damage ability in the game, but
+    // it seems like that would very rarely apply.
     {
       name: 'Bloodletter+',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target loses hit points, it takes damage from the strike again during each of your next two actions.
+        Make a \\glossterm{strike} that deals double damage.
+        If the target loses hit points, it bleeds profusely.
+        A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next two actions.
+        On a critical hit, this bleeding damage is doubled.
       `,
       rank: 5,
+      roles: ['execute'],
     },
 
     {
-      name: 'Spinning Slash',
+      name: 'Spinning Steel',
 
       effect: `
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
+        You are also \\steeled this round as a \\atSwift effect.
       `,
       rank: 3,
+      roles: ['clear', 'turtle'],
+      tags: ['Swift (see text)'],
+    },
+
+    {
+      name: 'Spinning Steel+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        The strike targets all \\glossterm{enemies} adjacent to you.
+        You are also \\steeled this round as a \\atSwift effect.
+      `,
+      rank: 7,
+      roles: ['clear', 'turtle'],
+      tags: ['Swift (see text)'],
     },
 
     {
@@ -215,9 +265,10 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make two \\glossterm{strikes}.
-        You gain a +1 accuracy bonus with the first strike, and a -3 accuracy penalty with the second strike.
+        You gain a +2 accuracy bonus with the first strike, and a -2 accuracy penalty with the second strike.
       `,
       rank: 5,
+      roles: ['burst'],
     },
 
     {
@@ -225,21 +276,23 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals double \\glossterm{weapon damage}.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals double damage.
       `,
       // narrative: '',
       rank: 3,
+      roles: ['execute'],
     },
 
     {
       name: 'Tear Exposed Flesh+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals triple \\glossterm{weapon damage}.
+        Make a \\glossterm{strike}.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals five times normal damage.
       `,
       // narrative: '',
-      rank: 5,
+      rank: 7,
+      roles: ['execute'],
     },
   ],
 };

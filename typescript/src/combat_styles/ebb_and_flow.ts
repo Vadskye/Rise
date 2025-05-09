@@ -122,7 +122,7 @@ export const ebbAndFlow: CombatStyle = {
 
       functionsLike: {
         exceptThat:
-          'the accuracy bonus from each strike increases to +2, and the strike deals double \\glossterm{weapon damage}. This bonus does not stack with the bonus from the \\maneuver{begin the hunt} maneuver.',
+          'the accuracy bonus from each strike increases to +2, and the strike deals double damage. This bonus does not stack with the bonus from the \\maneuver{begin the hunt} maneuver.',
         name: 'begin the hunt',
       },
       rank: 7,

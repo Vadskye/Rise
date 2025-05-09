@@ -5,15 +5,15 @@ export const dirtyFighting: CombatStyle = {
   shortDescription: 'Disable foes using freehanded attacks and tricks.',
 
   maneuvers: [
+    // +0.4EA as a bonus for requiring punch/kick
     {
       name: 'Stunning Fist',
 
-      // +2r for condition purposes due to unarmed limitation
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['maim'],
     },
 

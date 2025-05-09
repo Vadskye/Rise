@@ -1,6 +1,6 @@
 import { CombatStyle } from '.';
 // TODO: move this to a more generally shared location
-import { BRIEF_CRIT, CONDITION_CRIT } from '../mystic_spheres/constants';
+import { CONDITION_CRIT } from '../mystic_spheres/constants';
 
 export const heraldOfWar: CombatStyle = {
   name: 'Herald of War',
@@ -13,7 +13,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         This ability affects all \\glossterm{enemies} within a \\largearea radius from you.
-        You \\glossterm{briefly} gain a +4 bonus to \\glossterm{accuracy} with \\glossterm{strikes} against each target.
+        You \\glossterm{briefly} gain a +4 accuracy bonus with \\glossterm{strikes} against each target.
       `,
       rank: 1,
       roles: ['focus'],
@@ -26,10 +26,10 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `Each target is \\glossterm{briefly} \\stunned.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against everything in a \\medarea cone from you.
         `,
       },
-      rank: 3,
+      rank: 1,
       roles: ['flash'],
       tags: ['Auditory', 'Compulsion'],
     },
@@ -55,21 +55,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 3,
-      roles: ['flash'],
-      tags: ['Auditory'],
-    },
-
-    {
-      name: 'Faltering Roar',
-
-      attack: {
-        hit: `Each target is \\glossterm{briefly} \\slowed.`,
-        targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
         `,
       },
       rank: 3,
@@ -81,7 +67,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Faltering Roar+',
 
       attack: {
-        hit: `Each target is \\slowed as a \\glossterm{condition}.`,
+        hit: `\\damagerankfive, and each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -91,44 +77,45 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory'],
     },
 
-    // Goad is relatively weak as a brief effect
     {
       name: 'Goading Roar',
 
       attack: {
         hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
-      roles: ['goad'],
+      roles: ['flash'],
       rank: 1,
     },
 
+    // Normally goaded as a condition would be rank 6, but it seems reasonable for
+    // martials to be extra good at that specific debuff?
     {
       name: 'Goading Roar+',
 
       attack: {
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
-      roles: ['goad'],
+      roles: ['flash'],
       rank: 5,
     },
 
     {
-      name: 'Enraging Roar',
+      name: 'Provoking Roar',
 
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\enraged.
+          1d4 damage and each target is \\glossterm{briefly} \\enraged.
         `,
         targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against everything in a \\medarea cone from you.
         `,
       },
       rank: 1,
@@ -137,14 +124,14 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Enraging Roar+',
+      name: 'Enraging Roar',
 
       attack: {
         hit: `
           Each target is \\enraged as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against everything a \\largearea cone from you.
         `,
       },
       roles: ['flash'],
@@ -155,8 +142,6 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Roar',
 
-      // Frightened as a condition in a t3 area is a r4 effect.
-      // But frightened is relatively weak as a brief effect.
       attack: {
         hit: `Each target is \\glossterm{briefly} \\frightened by you.`,
         targeting: `
@@ -171,7 +156,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Roar+',
 
-      // Frightened as a condition in a t4 area is a r5 effect
+      // Frightened as a condition is theoretically r4, not sure why this is r5
       attack: {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         crit: CONDITION_CRIT,
@@ -191,10 +176,11 @@ export const heraldOfWar: CombatStyle = {
         hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
         `,
       },
       rank: 1,
+      roles: ['clear'],
       tags: ['Auditory'],
     },
 
@@ -202,45 +188,47 @@ export const heraldOfWar: CombatStyle = {
       name: 'Thunderous Shout+',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
         `,
       },
       rank: 5,
+      roles: ['clear'],
       tags: ['Auditory'],
     },
 
     {
-      name: 'Directed Shout',
+      name: 'Deafening Shout',
 
       attack: {
         hit: `
-          \\damagerankone.
-          If the target loses \\glossterm{hit points} from this damage, it becomes \\deafened as a \\glossterm{condition}.
+          \\damagerankone, and the target is \\glossterm{briefly} \\deafened.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange of you.
         `,
       },
       rank: 1,
+      roles: ['softener'],
       tags: ['Auditory'],
     },
 
     {
-      name: 'Directed Shout+',
+      name: 'Deafening Shout+',
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour.
           If the target takes damage, it becomes \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange of you.
         `,
       },
-      rank: 3,
+      rank: 5,
+      roles: ['softener'],
       tags: ['Auditory'],
     },
 
@@ -252,17 +240,53 @@ export const heraldOfWar: CombatStyle = {
         Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 3,
+      roles: ['cleanse'],
       tags: ['Auditory', 'Swift'],
+    },
+
+    {
+      name: 'Empowering Roar',
+
+      effect: `
+        Your \\glossterm{allies} within a \\largearea radius from you are \\empowered this round.
+      `,
+      rank: 3,
+      roles: ['boon'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Empowering Roar+',
+
+      effect: `
+        You and your \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\empowered.
+      `,
+      rank: 7,
+      roles: ['boon'],
+      tags: ['Auditory'],
     },
 
     {
       name: 'Challenge',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target takes damage, it becomes \\goaded by you as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike}.
+        If the target takes damage and your attack result hits its Mental defense, it is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 5,
+      rank: 1,
+      roles: ['softener'],
+      tags: ['Emotion'],
+    },
+
+    {
+      name: 'Challenge+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals triple damage.
+        If the target takes damage and your attack result hits its Mental defense, it is \\goaded by you as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      roles: ['softener'],
       tags: ['Emotion'],
     },
 
@@ -270,10 +294,11 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Blow',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target loses hit points, it becomes \\frightened by you as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target takes damage, it becomes \\glossterm{briefly} \\frightened by you.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['softener'],
       tags: ['Emotion'],
     },
 
@@ -281,25 +306,27 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Blow+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals triple damage.
         If the target takes damage, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
+      roles: ['softener'],
       tags: ['Emotion'],
     },
 
     // The rank here is pretty ambiguous. The baseline for a small radius enemies-only
-    // frighten would be r3. Making it conditional on a melee strike is maybe fine? This
+    // brief frighten would be r1. Making it conditional on a strike is maybe fine? This
     // can't frighten and deal damage to the same target, so it's pretty situational.
     {
       name: 'Inspire Awe',
 
       effect: `
-        Make a melee strike.
-        If the target takes damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\medarea radius from you.
-        On a hit, each target is \\frightened by you as a \\glossterm{condition}.
+        Make a strike that deals double damage.
+        If the target takes damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from the target.
+        On a hit, each secondary target is \\glossterm{briefly} \\frightened by you.
       `,
-      rank: 3,
+      rank: 5,
+      roles: ['flash'],
       tags: ['Emotion'],
     },
 
@@ -310,9 +337,10 @@ export const heraldOfWar: CombatStyle = {
       // this would fall behind quickly otherwise
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d6 per 3 power \\glossterm{damage resistance}.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain damage resistance equal to 1d6 \\add your \\glossterm{power}.
       `,
       rank: 3,
+      roles: ['healing'],
       tags: ['Auditory', 'Emotion', 'Swift'],
     },
 
@@ -324,6 +352,7 @@ export const heraldOfWar: CombatStyle = {
         You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
       `,
       rank: 7,
+      roles: ['healing'],
       tags: ['Auditory', 'Emotion', 'Swift'],
     },
   ],
