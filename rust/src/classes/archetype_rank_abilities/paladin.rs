@@ -33,7 +33,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 The target suffers any other effects of the attack normally.
 
                 % 10% chance of +4a, so 0.4a per ally
-                \subcf{Law} Whenever a target rolls a 1 on an attack roll, the attack roll is treated as a 5.
+                \subcf{Law} Whenever a target rolls a 1 on an attack roll, their attack result becomes equal to 5 \add their \glossterm{accuracy} with the attack.
                 This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
             ",
             // Most auras loosely correlate to +0.5 accuracy in an AOE? For power level purposes,
@@ -73,7 +73,6 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
                 \subparhead{Good} The \glossterm{vital roll} bonus increases to \plus10.
                 % 1a per ally (0.4+0.3+0.2+0.1)
                 \subparhead{Law} The effect triggers on rolling anything less than a 5.
-                In addition, it affects bonus dice rolled for exploding attacks.
             ",
             // Another awkward approximation
             modifiers: Some(vec![Modifier::Accuracy(1)]),
