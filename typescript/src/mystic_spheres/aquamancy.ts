@@ -77,9 +77,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Aquatic Agility',
 
       effect: `
-        You also gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-        If you already have a swim speed, you gain a +10 foot \\glossterm{enhancement bonus} to your swim speed.
-        While swimming, you gain a \\plus1 bonus to your Armor and Reflex defenses.
+        You gain an average \\glossterm{swim speed} (see \\pcref{Swimming}).
+        While swimming, you gain a \\plus1 \\glossterm{enhancement bonus} to your Armor and Reflex defenses.
       `,
       rank: 2,
       type: 'Attune',
@@ -495,8 +494,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
         \\begin{itemize}
           \\par
-          \\item You gain a \\glossterm{swim speed} 10 feet slower than the \\glossterm{base speed} for your size.
-            If you already have a swim speed, you gain a \\plus10 foot \\glossterm{enhancement bonus} to your swim speed.
+          \\item You gain an average \\glossterm{swim speed}.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
