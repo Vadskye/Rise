@@ -105,7 +105,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You gain a \glossterm{fly speed} equal to your \glossterm{base speed} with a \glossterm{height limit} of 30 feet (see \pcref{Flight}).
+                You gain an average \glossterm{fly speed} with a \glossterm{height limit} of 30 feet (see \pcref{Flight}).
                 While flying, you can jump as if you were on solid ground, allowing you to rapidly gain height and change directions unexpectedly.
             ",
             modifiers: None,
@@ -205,11 +205,9 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 5 - your excess rank but the strike deals double \glossterm{weapon damage}.
-                    If your excess rank is at least 6, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your speed.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
                     This movement is never \abilitytag{Swift}.
                     If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
