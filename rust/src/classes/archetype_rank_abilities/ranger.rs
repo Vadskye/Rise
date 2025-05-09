@@ -614,13 +614,11 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 wild maneuvers.
                 {
-                    \parhead{Distant Maneuver} The range of your chosen maneuver doubles.
+                    \parhead{Distant Maneuver} The range of your chosen maneuver doubles, and any \glossterm{longshot penalty} that would apply is reduced by an amount equal to your excess rank.
                     If your excess rank is at least 4, the range triples instead.
                     You can only apply this augment to maneuvers that have a listed range.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 5 - your excess rank but the strike deals double \glossterm{weapon damage}.
-                    If your excess rank is at least 6, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.

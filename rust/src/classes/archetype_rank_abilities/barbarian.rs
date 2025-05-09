@@ -9,11 +9,12 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
             complexity: 2,
-            name: "Instant Recovery",
+            name: "Vigorous Recovery",
             is_magical: false,
             rank: 1,
             description: r"
-                You can use the \ability{recover} ability as a \glossterm{minor action}.
+                When you use the \ability{recover} ability, you regain all of your hit points instead of only half of your hit points.
+                In addition, you can use the \ability{recover} ability as a \glossterm{minor action}.
                 When you do, you do not remove any \glossterm{conditions} affecting you.
             ",
             modifiers: None,
@@ -25,7 +26,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a bonus equal to three times your rank in this archetype to your \glossterm{hit points} (see \pcref{Hit Points}).
-                In addition, you gain a +1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             // HP is handled by add_hp_scaling()
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
@@ -40,26 +40,25 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // TODO: This doesn't pay enough of a damage penalty for its incredible defenses. Also it
-        // encourages high-defense barbarians, which is weird; barbarians should generally be more
-        // low-defense than fighters, but higher survivability.
+        // TODO: this has janky scaling
         RankAbility {
             complexity: 1,
             name: "Resilient Blow",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Resilient Blow}
+                \begin{activeability}{Resilient Blow}[\atSwift (see text)]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
-                    You also \glossterm{briefly} gain a \plus4 bonus to defenses against damaging attacks.
+                    Make a melee \glossterm{strike}.
+                    In addition, whenever you would reduce your \glossterm{hit points} this round, you lose half that many hit points instead (minimum 1).
+                    This effect is \atSwift, but the strike is not.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The extra damage increases to 3d6.
-                    \rank{6} The extra damage increases to 3d10.
-                    \rank{7} The extra damage increases to 5d10.
+                    \rank{4} If you are at your maximum hit points, the strike deals double damage.
+                    \rank{5} The strike always deals double damage.
+                    \rank{6} If you are at your maximum hit points, the strike deals triple damage.
+                    \rank{7} The strike always deals triple damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -81,7 +80,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use the \ability{recover} ability any number of times between short rests.
-                In addition, when you use it as a standard action, you only increase your \glossterm{fatigue level} by one.
+                In addition, when you use it as a standard action, you can also remove a \glossterm{vital wound}.
+                When you do, you increase your \glossterm{fatigue level} by two.
             ",
             modifiers: None,
         },
@@ -91,9 +91,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You cannot lose more than 100 hit points per round.
-                Any excess damage beyond that point does not reduce your hit points.
+                Your hit points cannot decrease by more than 100 during each round.
                 This includes hit point loss below 0 hit points.
+                Any excess damage beyond that point does not reduce your hit points, but it does offset any healing you receive during the same round.
                 Attacks with special effects, such as inflicting conditions on you, still treat you as if you lost hit points from the attack.
             ",
             modifiers: None,
@@ -155,13 +155,13 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a melee \glossterm{strike}.
-                    The strike deals double \glossterm{weapon damage} against any creature that dealt damage to you during the previous round.
+                    The strike deals double damage against any creature that dealt damage to you during the previous round.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
                     \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals triple weapon damage instead of double weapon damage.
+                    \rank{6} The strike deals triple damage instead of double damage.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
@@ -271,14 +271,14 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     Move up to your movement speed.
                     During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
                     You must still end your movement in an unoccupied space.
-                    At the end of this movement, you may make a melee \glossterm{strike}.
+                    At any two points during this movement, you may make a melee \glossterm{strike}.
+                    You cannot include the same creature or object as a target of both strikes.
 
                     \rankline
-                    \rank{4} You can make a second melee strike at any point during your movement.
-                    You cannot include the same creature or object as a target of both strikes.
-                    \rank{5} Your \glossterm{weapon damage} with both strikes is doubled.
+                    \rank{4} If you take a -2 accuracy penalty with a strike, it deals double damage.
+                    \rank{5} Both strikes deal double damage without any accuracy penalty.
                     \rank{6} You gain a \plus1 accuracy bonus with both strikes.
-                    \rank{7} Your weapon damage with both strikes is tripled.
+                    \rank{7} Both strikes deal triple damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -402,19 +402,19 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Devastating Maneuver} The maneuver deals double damage, but you take an accuracy penalty equal to 6 - your excess rank.
-
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
 
-                    \parhead{Mighty Maneuver} All strikes from the maneuver deal double \glossterm{weapon damage}, but you take an accuracy penalty equal to 5 - your excess rank.
-                    If your excess rank is at least 6, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
-                    \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
+                    \parhead{Reckless Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
+
+                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
+                    If your excess rank is at least 4, the area triples instead.
+                    You can only apply this augment to maneuvers that affect an area.
                 }
             ",
             modifiers: None,
