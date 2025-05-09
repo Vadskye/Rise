@@ -24,6 +24,7 @@ export const polymorph: MysticSphere = {
         % TODO: nerf all magical crafting times
         Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The amount of work you accomplish with the spell increases to five rounds.`,
         4: `The amount of work you accomplish with the spell increases to one minute.`,
@@ -45,6 +46,7 @@ export const polymorph: MysticSphere = {
         `,
         name: 'disguise creature',
       },
+      roles: ['narrative'],
       scaling: {
         2: `The bonus increases to +5.`,
         4: `The bonus increases to +6.`,
@@ -59,6 +61,7 @@ export const polymorph: MysticSphere = {
         You gain either one bite \\glossterm{natural weapon} or two claws.
         For details, see \\tref{Natural Weapons}.
       `,
+      roles: ['attune'],
       // no scaling; unclear what scaling could exist
       type: 'Attune',
     },
@@ -77,6 +80,7 @@ export const polymorph: MysticSphere = {
         name: 'disguise creature',
       },
       rank: 2,
+      roles: ['narrative'],
       tags: ['Sustain (attuneable, minor)'],
     },
 
@@ -91,6 +95,7 @@ export const polymorph: MysticSphere = {
         For example, you cannot create mithral hide armor with this spell.
       `,
       rank: 4,
+      roles: ['attune'],
       // TODO: weird that this is one of the few ways you can attune on behalf of an ally
       type: 'Attune',
     },
@@ -102,9 +107,10 @@ export const polymorph: MysticSphere = {
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         If the target is living and your attack result beats its Fortitude defense, it bleeds.
-        During your next action, it takes \\glossterm{extra damage} equal to your power.
+        During your next action, it takes \\glossterm{extra damage} equal to half your power.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
