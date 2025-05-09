@@ -138,11 +138,11 @@ The Mental defense penalty can apply to 7 party attacks (see Stunned). However, 
 
 That adds up to 0.75 effective actions for frighten, which we'll round up to 0.8.
 
-### Goaded: 1.2
+### Goaded: 0.6
 
 Assuming that the monster attacks all party members equally, goaded applies to 75% of its attacks. However, a brief goad doesn't generally apply to 75% of a monster's attacks. More often, it will shift priorities to the goading creature, or attacking a non-goaded creature is still obviously correct because their defense is so low, reducing the value of the goad. With those combined, assume that it's closer to 50% of the monster's attacks.
 
-Since goaded reduces the enemy's action effectiveness by 0.4 when it applies. That gives it 4 * 0.5 * 0.4 = 0.8 action effectiveness.
+Since goaded is 29% action denial when it applies, that gives it 4 * 0.5 * 0.29 = 0.6 action effectiveness.
 
 ### Immobilized: 5
 
@@ -215,7 +215,7 @@ A fortified character gains a +2 bonus to their Fortitude and Mental defenses.
 A maximized character deals maximum damage.
 
 ### Primed
-A primed character automatically explodes on their attacks. 90% of the time, this provides +5.5 accuracy, so this is worth +5 accuracy overall.
+A primed character automatically explodes on their attacks.
 
 ### Shielded
 A shielded character gains a +2 bonus to their Armor and Reflex defenses.
@@ -267,6 +267,8 @@ Assume you have a 60% hit rate, so you hit on a 5. Breaking down each die roll o
 
 So your effective hit rate increases by 0.1 * (0.7 + 0.8 + 0.9 + 1 + 0.1 + 0.2 + 0.3 + 0.4 + 0.5) = 0.5. That takes you from a 0.6 to 1.1, which is a 83% increase in your odds of hitting, so that's worth 0.8 effective actions.
 
+Now assume you have an 80% hit rate, so you hit on a 7. From before, this is worth 0.1 * (0.9 + 1 + 0.1..0.7) = 0.47. That takes you from a 0.8 to a 1.27, which is a 59% increase in your odds of hitting. So exploding is stronger when your normal hit rate is low, which makes sense.
+
 ### Shielded: 0.6
 Like Braced, but only affects 75% of enemy attacks
 
@@ -311,15 +313,15 @@ See Action Denial, above.
 ### Deafened: 1.6
 Deafened is roughly half as effective as dazzled because few monsters have verbal components. Basically, assume it functions as 10% action denial.
 
-### Enraged: 0.8
-Assume it functions as 5% action denial.
+### Enraged: 1.6
+Assume it functions as 10% action denial.
 
 ### Frightened: 2
 As with the brief effect, assume frightened applies 25% of the time, so it is worth 4.6 * 0.25 = 1.2 effective actions from action denial.
 
 Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 * 0.25 * 0.2 = 0.8 effective actions.
 
-### Goaded: 0.8
+### Goaded: 2.3
 Applies to 50% of actions with 29% action denial, so 16 * 0.5 * 0.29 = 2.32
 
 ### Immobilized: 19.4
@@ -378,7 +380,7 @@ In general, most debuffs benefit to the same small degree with precision targeti
   Deafened        & 0.3   & 0.5          & 1.6       \\
   Enraged         & 0.2   & 0.3          & 0.8       \\
   Frightened      & 0.8   & 0.7          & 2.0       \\
-  Goaded          & 0.8   & 0.8          & 2.3       \\
+  Goaded          & 0.6   & 0.6          & 2.3       \\
   Immobilized     & 5.0   & 6.5          & 19.4      \\
   Panicked        & 2.3   & 2.5          & 7.6       \\
   Prone           & 0.9   & 1.7          & 5.2       \\
@@ -430,7 +432,6 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
 
 * Rank 1 (1.4 EA):
   * Briefly stunned
-  * Briefly goaded, +1 accuracy
   * Goaded if in HP, +1 accuracy
   * Prone, +2 accuracy
   * Stunned as a HP condition, +2 accuracy
@@ -439,13 +440,14 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * Briefly confused, -3 accuracy
 * Rank 2 (1.6 EA):
   * 1 EA of damage, briefly dazzled
+  * 1 EA of damage, deafened if lose HP
+  * 1 EA of damage, goaded briefly / as a HP condition
   * Briefly slowed
   * Slowed as a HP condition
   * Deafened as a condition
 * Rank 3 (1.8 EA):
   * 1 EA of damage, briefly frightened
   * 1 EA of damage, frightened as a HP condition
-  * 1 EA of damage, goaded as a HP condition
   * Vulnerable as a HP condition
 * Rank 4 (2 EA):
   * Action skip
@@ -458,7 +460,9 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
 * Rank 6 (2.5 EA):
   * 1 EA of damage, briefly slowed
   * 1 EA of damage, briefly stunned
+  * 1 EA of damage, deafened as a condition
   * Dazzled as a condition
+  * Goaded as a condition
   * Panicked as a HP condition
   * Time skip
 * Rank 7 (2.9 EA):
@@ -539,6 +543,7 @@ All rank modifiers apply after calculating EA and the debuff to be applied.
 
 These rank modifiers apply before calculating area and damage:
 
+* -1 rank: +2 area ranks (net +1 area rank, -1 effect rank)
 * -1 rank: Must beat two defenses instead of one, one of which is Reflex
 * -1 rank: Damage requires one defense, debuff requires beating a separate non-Reflex defense
 * -1 rank: Effect is inescapably delayed by one round
@@ -569,12 +574,14 @@ All of the effective action calculations assume that every enemy in the fight is
 ### Limited Scope Debuffs
 
 You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
-* Rank - 1: Tier X / 2 area, to a minimum at Tier 0/1 of a single creature within 30' range
+* Rank - 1: Rank X / 2 area, to a minimum at Rank 0 of a single creature within 30' range
 * Rank - 2: Single target melee range
 
 ### Area Tiers
 
 #### Default Area Limits
+
+Converting an area to be "enemies only" increases its area rank by 1. That does not affect other aspects of the spell, such as the damage it deals.
 
 Rank -1 areas (why would these exist?):
 * Tiny radius from self
@@ -599,7 +606,6 @@ Rank 1 areas:
   * Medium line, 10' wide from self
 * Radius:
   * Medium radius from self
-  * Small radius in Short range
 
 Rank 2 areas:
 * Cone:
@@ -609,7 +615,7 @@ Rank 2 areas:
   * Large line, 5' wide from self
 * Radius:
   * (no change) Medium radius from self
-  * (no change) Small radius in Short range
+  * Small radius in Short range
   * Tiny radius in Med range (discouraged)
 
 Rank 3 areas:
@@ -671,13 +677,3 @@ Rank 7 areas:
   * Gargantuan radius from self
   * Large radius in Distant range
   * Medium radius in Extreme range
-
-## Examples
-
-### Maneuvers
-
-* Rank 1
-  * Unrestricted strike, briefly dazzle if it deals damage
-  * Melee strike, goaded as a HP condition
-  * Melee strike, briefly frightened
-  * Melee strike, frightened as a HP condition
