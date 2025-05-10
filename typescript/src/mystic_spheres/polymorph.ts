@@ -185,18 +185,20 @@ export const polymorph: MysticSphere = {
     {
       name: 'Baleful Polymorph',
 
-      // Base r7, +2 from melee range, +2 from two defenses, +2 from removed on damage =
-      // r13, or 5.8 EA. That's close enough to allow this to work, probably.
+      // Base r7, +1 from limited scope, +2 from two defenses, +2 from removed on damage =
+      // r12, or 3.6 EA. That's still not enough, so require a double application before
+      // it works.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
+          Each target is \\glossterm{briefly} \\confused.
+          If it has no remaining \\glossterm{damage resistance} and is already confused by this effect, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
           If the target takes damage, this condition is removed.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against one Huge or smaller creature you \\glossterm{touch}.
+          Make an attack vs. Fortitude and Mental against all Huge or smaller creatures in a \smallarea radius in \medrange.
         `,
       },
       rank: 7,
@@ -273,6 +275,7 @@ export const polymorph: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -288,6 +291,7 @@ export const polymorph: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -301,6 +305,7 @@ export const polymorph: MysticSphere = {
       },
       // narrative: '',
       rank: 5,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -309,18 +314,19 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankseven.
           This damage is doubled if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
+          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against something within \\shortrange.
         `,
       },
 
       rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -340,6 +346,7 @@ export const polymorph: MysticSphere = {
         You can suppress or resume this effect as a \\glossterm{free action}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -351,6 +358,7 @@ export const polymorph: MysticSphere = {
         exceptThat: EXCEPT_NOT_DEEP,
       },
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -367,6 +375,7 @@ export const polymorph: MysticSphere = {
         Your body grows large spikes that impale creatures who attack you.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -384,6 +393,7 @@ export const polymorph: MysticSphere = {
         Your body grows large spikes that impale creatures who attack you.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -401,6 +411,7 @@ export const polymorph: MysticSphere = {
         Your body grows small spikes that you can consciously extrude to impale nearby foes.
       `,
       rank: 6,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -420,6 +431,7 @@ export const polymorph: MysticSphere = {
         When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
       `,
       rank: 3,
+      roles: ['attune'],
       scaling: {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
@@ -435,6 +447,7 @@ export const polymorph: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -451,36 +464,13 @@ export const polymorph: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
         7: `The bonus increases to +6.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Sludgeform',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          If the target has no remaining \\glossterm{damage resistance}, its physical form loses coherence and partially collapses into a sludgelike mass as a \\glossterm{condition}.
-          This has the following effects:
-          \\begin{itemize}
-            \\item Its exposed flesh makes it \\vulnerable to all damage.
-            \\item It has no \\glossterm{free hands}, causing it to drop anything it is holding and making it unable to take any actions that require free hands.
-            \\item It is unable to speak normally or use \\glossterm{verbal components} or \\glossterm{somatic components}.
-          \\end{itemize}
-
-          % There must be text between an itemize block and the end of a mdframed env
-          \\hypertarget{itemizespace}{}
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 7,
     },
 
     {
@@ -494,6 +484,7 @@ export const polymorph: MysticSphere = {
         The target regains 1d8 \\glossterm{damage resistance} \\plus1 per \\glossterm{power} if it is a creature, or that many hit points if it is an object.
       `,
       rank: 2,
+      roles: ['healing'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
@@ -506,6 +497,7 @@ export const polymorph: MysticSphere = {
         exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
       },
       rank: 5,
+      roles: ['healing'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
@@ -522,6 +514,7 @@ export const polymorph: MysticSphere = {
         The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
       `,
       rank: 3,
+      roles: ['healing'],
       scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
     },
 
@@ -537,6 +530,7 @@ export const polymorph: MysticSphere = {
         The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
       `,
       rank: 6,
+      roles: ['healing'],
       scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
     },
 
@@ -550,6 +544,7 @@ export const polymorph: MysticSphere = {
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -561,6 +556,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 2,
+      roles: ['healing'],
       scaling: { special: 'The healing increases by +1 for each rank beyond 2.' },
       type: 'Sustain (attuneable, standard)',
     },
@@ -574,6 +570,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 5,
+      roles: ['healing'],
       scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
       type: 'Sustain (attuneable, standard)',
     },
@@ -587,6 +584,7 @@ export const polymorph: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 7,
+      roles: ['healing'],
       type: 'Sustain (attuneable, standard)',
     },
 
@@ -599,6 +597,7 @@ export const polymorph: MysticSphere = {
         In addition, if you choose Strength, you gain a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
       type: 'Attune',
     },
@@ -612,6 +611,7 @@ export const polymorph: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       scaling: {
         6: 'The bonus increases to +3.',
       },
@@ -625,6 +625,7 @@ export const polymorph: MysticSphere = {
         You gain the \\trait{scent} trait, which reduces the \\glossterm{difficulty value} of scent-based Awareness checks by 10 (see \\pcref{Awareness}).
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -642,6 +643,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
@@ -653,6 +655,7 @@ export const polymorph: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
     },
 
@@ -664,6 +667,7 @@ export const polymorph: MysticSphere = {
         If you already have darkvision, the range of that ability increases by this amount instead.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The radius increases to 60 feet.`,
         5: `The radius increases to 90 feet.`,
@@ -680,30 +684,19 @@ export const polymorph: MysticSphere = {
         If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
       `,
       rank: 4,
-      scaling: {
-        6: `The radius of both senses increases by 30 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
-    },
-    {
-      name: 'Mass Draconic Senses',
-
-      functionsLike: {
-        mass: true,
-        name: 'draconic senses',
-      },
-      // narrative: '',
-      rank: 6,
-      type: 'Attune (target)',
     },
 
     {
       name: 'Swimmer',
 
       effect: `
-        You gain an average \\glossterm{swim speed} (see \\pcref{Swimming}).
+        You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+        If you already have a slow swim speed, you gain an average swim speed instead.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -711,9 +704,11 @@ export const polymorph: MysticSphere = {
       name: 'Climber',
 
       effect: `
-        You gain an average \\glossterm{climb speed} (see \\pcref{Climbing}).
+        You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
+        If you already have a slow climb speed, you gain an average climb speed instead.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -724,15 +719,19 @@ export const polymorph: MysticSphere = {
         You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
+    // The sustain mechanic is designed to force you to be consistent about your choice of
+    // breath weapon within a single fight. It doesn't directly affect the power level of
+    // the breath, since it doesn't have to cost attunement.
     {
       name: 'Dragon Breath',
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo.
           The damage is of the chosen type.
         `,
         missGlance: true,
@@ -743,9 +742,10 @@ export const polymorph: MysticSphere = {
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
-      rank: 4,
+      rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -756,55 +756,64 @@ export const polymorph: MysticSphere = {
         This cannot remove conditions caused by \\abilitytag{Compulsion} or \\abilitytag{Emotion} abilities.
       `,
       rank: 4,
+      roles: ['cleanse'],
     },
 
     {
       name: 'Cripple',
 
+      // +1r for precast
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target's body deteriorates as a \\glossterm{condition}.
+          Each target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Intense Cripple',
+      name: 'Efficient Cripple',
 
+      // +1r for precast, +1r for extra area scaling, +2r for brief effect
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target's body deteriorates as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\immobilized.
+          Each target is \\glossterm{briefly} \\slowed.
+          In addition, its body deteriorates as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
       },
-      rank: 5,
+      rank: 6,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Flense',
 
+      // -1r for limited scope, -1r for Reflex extra gives 3 EA, or 2 after damage
       attack: {
         hit: `
           \\damagerankfive.
           If the target loses \\glossterm{hit points}, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
         `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude and Reflex against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
       rank: 7,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
@@ -825,6 +834,7 @@ export const polymorph: MysticSphere = {
         Your arm transforms into a hideous spike that you use to impale your enemy.
       `,
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -843,13 +853,14 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Impaling Fleshspike',
 
-      // like dX at Grasp range, but +1dr and -2ct.
+      // HP slow with damage requires 2.6 EA, or r7. Melee range allows that at r5.
       attack: {
         hit: `
           \\damageranksix.
@@ -862,6 +873,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
     {
