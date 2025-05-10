@@ -89,3 +89,25 @@ One solution to this problem is to make the maneuver scale the weapon damage die
 The scaling differences between large and small weapons work better if you multiply total strike damage, but that breaks the rule of always providing a benefit that is subject to diminishing returns.
 
 In general, tradeoff maneuvers work best if they have an easy way to directly multiply weapon damage dice. To avoid creating separate mechanics for "double weapon damage" and "double damage", that means tradeoff maneuvers should use empowered/maximized mechanics.
+
+### Spell Tradeoffs
+
+Spells can comfortably trade accuracy for damage since there is no "weapon" system that already makes the same tradeoff to conflict with.
+
+#### Power-scaling damage
+
+In general, using a drX+1 spell instead of drX is about 25% more damage, and using a drX+2 spell is worth about 40-60% more damage. The drX+2 scaling is not even across ranks, with a breakpoint at rank 4.
+
+However, most high damage spells will also be short or melee range. If you look at the difference between drX+1 and drX+2, you get different results, and dropping accuracy looks very weak at character ranks 1-2.
+
+#### Flat damage
+
+Flat damage spells work differently. They pretty consistently deal 40% more damage with each rank regardless of which rank you are currently at.
+
+#### Combined system
+
+* Power-scaling spells:
+  * In character ranks 1-2, you can trade -2 accuracy to go from dr1 to dr2. No other accuracy trade is acceptable.
+  * In character ranks 3-7, you can trade -2 accuracy for +1 DR, or -4 accuracy for +2 DR, to a maximum of drX+3.
+* Flat damage spells:
+  * You can trade -3 accuracy for +1 DR.

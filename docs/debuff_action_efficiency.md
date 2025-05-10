@@ -552,6 +552,10 @@ All rank modifiers apply after calculating EA and the debuff to be applied.
 
 These rank modifiers apply before calculating area and damage:
 
+* +1 rank: Can pre-apply an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
+* +1 rank: Condition becomes a Sustain (minor)
+* +2 ranks: Condition becomes a curse
+
 * -1 rank: +2 area ranks (net +1 area rank, -1 effect rank)
 * -1 rank: Must beat two defenses instead of one, one of which is Reflex
 * -1 rank: Damage requires one defense, debuff requires beating a separate non-Reflex defense
@@ -569,12 +573,6 @@ These rank modifiers apply before calculating area and damage:
 * -2 ranks: Melee range (see Debuff Area, below)
 * -2 ranks: Difficult combo condition:
   * You must be one of braced, empowered, fortified, shielded, or steeled (no accuracy buff)
-
-These rank modifiers apply after calculating area and damage:
-
-* +1 rank: Can pre-apply an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
-* +1 rank: Condition becomes a Sustain (minor)
-* +2 ranks: Condition becomes a curse
 
 ## Debuff Area
 
@@ -675,7 +673,12 @@ Rank 5 areas:
   * Huge line, 15' wide from self
 * Radius:
   * Huge radius from self
-  * Medium radius in Distant range
+  * Large radius in Medium range (a little odd, basically requires enemies-only)
+  * Medium radius in Long range
+
+Rank 6 areas:
+* Radius:
+  * Large radius in Long range
 
 Rank 7 areas:
 * Cone:
@@ -684,5 +687,4 @@ Rank 7 areas:
   * Gargantuan line, 15' wide from self
 * Radius:
   * Gargantuan radius from self
-  * Large radius in Distant range
-  * Medium radius in Extreme range
+  * Medium radius in Distant range
