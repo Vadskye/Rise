@@ -9,10 +9,10 @@ export const ripAndTear: CombatStyle = {
       name: 'Strip the Flesh',
 
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
-        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target loses hit points and is not wearing metal body armor, it becomes \\stunned as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 3,
       roles: ['maim'],
     },
 
@@ -56,6 +56,8 @@ export const ripAndTear: CombatStyle = {
     {
       name: 'Painful Brow Gash',
 
+      // Should be 1.8 EA and r7 only gets you 1.6, but the combo is less than the sum of
+      // its parts?
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
         If the target loses hit points, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
@@ -69,7 +71,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim'],

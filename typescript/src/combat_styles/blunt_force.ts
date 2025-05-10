@@ -121,7 +121,7 @@ export const bruteForce: CombatStyle = {
       name: 'Tenderize',
 
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
+        Make a melee \\glossterm{strike} that deals triple damage.
         If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
       `,
       roles: ['maim'],

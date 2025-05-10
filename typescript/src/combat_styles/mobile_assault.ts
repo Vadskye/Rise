@@ -256,6 +256,7 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Fearsome Pounce+',
 
+      // This gets the half movement for free, which is a little odd
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
         If the target takes damage and your attack result beats its Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
