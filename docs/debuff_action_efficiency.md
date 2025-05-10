@@ -391,6 +391,12 @@ In general, most debuffs benefit to the same small degree with precision targeti
   Vulnerable      & 2.8   & 2.0          & 6.0       \\
 ```
 
+### Effective Action Modifiers
+
+These modifiers apply to EA, as opposed to rank modifiers that apply after calculating EA and damage.
+
+At a cost of +0.4 EA, you can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
+
 ## Effective Actions and Accuracy
 
 A debuff's effective action count is measured assuming that the ability hits, but effective action count measures a value that does not assume a hit.
@@ -401,15 +407,15 @@ Put another way, in order to be worth using, a debuff has to provide more than 1
 
 ### Accuracy scaling
 
-Since a rank 1 debuff should provide 1.4 effective actions of value on hit, what happens when it is used at rank 4? Automatic rank scaling means that it should hit 100% of the time at rank 4. To be of comparable power, a rank 4 spell would need to provide 1.4 / 0.7 = about 2 effective actions of value. Likewise, a rank 4 spell used at rank 7 hits 100% of the time, so a rank 7 spell should provide about 2.9 effective actions of value.
+Since a rank 1 debuff should provide 1.4 effective actions of value on hit, what happens when it is used at rank 4? Automatic rank scaling means that it should hit 100% of the time at rank 4. To be of comparable power, a rank 4 spell would need to provide 1.4 / 0.7 = about 2 effective actions of value. That suggests that one rank is worth approximately 0.2 effective actions.
 
-At low ranks, you can generally assume that giving a spell +1 accuracy is worth 0.2 effective actions.
+In theory, we could extend this logic to rank 4 spells and multiply them to get rank 7 spells, generating a higher EA per rank than 0.2. However, it seems safer to keep effective actions on a linear scale, especially if we use a fixed EA of 1 to calculate how much damage a damage + debuff effect should do. Higher rank spells already get more area, and they have the ability to reach fully disabling debuffs. So we stick with 0.2 EA per rank, or roughly equivalently, 0.2 EA per accuracy.
 
 ### Accuracy penalties
 
 Spells can have accuracy penalties to get access to more powerful debuffs early. However, starting from a baseline hit rate of 0.7 would cause that to scale too quickly - most people who cast those spells don't actually have a baseline hit rate of 70% with a normal spell thanks to various character specializations. In addition, this category of spell is extremely powerful in combination with setup effects and Desperate Exertion. At the risk of being overly penalizing, start with an assumed hit rate of 100% when calculating power.
 
-For example, a rank 1 spell normally provides 1.4 EA of value on hit. A rank 1 spell with a -4 accuracy penalty would instead provide 1.4 / 0.7 = 2.2 EA of value on hit. This only affects debuff tier, not area. Although the rank 1 spell will have the same accuracy and debuff effect as a standard rank 5 spell when cast at rank 5, it will still be significantly behind a "normal" spell of the higher rank after rank scaling is applied.
+For example, a rank 1 spell normally provides 1.4 EA of value on hit. A rank 1 spell with a -4 accuracy penalty would instead provide 1.4 / 0.6 = 2.3 EA of value on hit. This only affects debuff tier, not area. Although the rank 1 spell will have the same accuracy and debuff effect as a standard rank 5 spell when cast at rank 5, it will still be significantly behind a "normal" spell of the higher rank after rank scaling is applied.
 
 Because this scaling balance requires the corresponding effect to have area scaling, this accuracy penalty cannot be applied to spells using limited scope (see Debuff Area).
 
@@ -456,34 +462,34 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * 1 EA of damage, briefly prone
   * 1 EA of damage, stunned as a HP condition
 * Rank 5 (2.2 EA):
-  * Briefly panicked
-* Rank 6 (2.5 EA):
-  * 1 EA of damage, briefly slowed
+  * 1 EA of damage, briefly treat as invisible
+* Rank 6 (2.4 EA):
   * 1 EA of damage, briefly stunned
-  * 1 EA of damage, deafened as a condition
+  * Briefly panicked
   * Dazzled as a condition
   * Goaded as a condition
+* Rank 7 (2.6 EA):
+  * 1 EA of damage, deafened as a condition
+  * 1 EA of damage, briefly slowed
+  * Brief time skip
   * Panicked as a HP condition
-  * Time skip
-* Rank 7 (2.8 EA):
-  * 1 EA of damage, action skip
-  * 1 EA of damage, banishment
-  * Briefly blinded
+* Rank 8 (2.8 EA):
   * Briefly confused
   * Briefly vulnerable
+* Rank 9 (3.0 EA):
+  * 1 EA of damage, action skip
+  * 1 EA of damage, banishment
+  * 1 EA of damage, frightened as a HP condition
+  * Briefly blinded
   * Confused as a HP condition
   * Stunned as a condition
-* Rank 8 (3.2 EA):
-  * 1 EA of damage, frightened as a HP condition
-* Rank 9 (3.6 EA):
+* Rank 10 (3.2 EA):
+  * 
+* Rank 11 (3.4 EA):
   * 1 EA of damage, dazzled as a condition
-* Rank 10 (4.1 EA):
-  * 
-* Rank 11 (4.6 EA):
-  * 
-* Rank 12 (5.1 EA):
-* Rank 13 (5.8 EA):
-* Rank 14 (6.6 EA):
+* Rank 12 (3.6 EA):
+* Rank 13 (3.8 EA):
+* Rank 14 (4 EA):
 
 ### Debuff + Damage
 
@@ -497,8 +503,8 @@ A strike with unrestricted weapon types uses "limited scope", so -1 rank. A mele
 
 * Rank 1: A normal damage strike takes up 1.2 of the 1.4 (unrestricted) or 1.6 (melee) EA available, so the baseline EA available for debuffs is only 0.2/0.4.
 * Rank 3: A normal damage strike takes up 1 EA of the 1.8 (unrestricted) or 2.0 (melee) EA available, so the baseline EA available for debuffs is 0.8/1.0.
-* Rank 5: 2x damage takes up 1.4 EA, so 1.1/1.4.
-* Rank 7: 3x damage takes up 1.4 EA, so 1.8/2.2.
+* Rank 5: 2x damage takes up 1.2 EA, so 1.2/1.4.
+* Rank 7: 3x damage takes up 1.2 EA, so 1.6/1.8.
 
 These accuracy modifiers are separate from the normal accuracy modifier calculation, and do not directly affect the resulting rank of the debuff.
 
@@ -523,22 +529,22 @@ These accuracy modifiers are separate from the normal accuracy modifier calculat
     * strike while affected by non-accuracy buff, 1.4 EA debuff
 * Rank 5:
   * Unrestricted:
-    * double damage strike and 1.1 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.5 EA debuff
-    * double damage strike while affected by non-accuracy buff, 1.8 EA debuff
+    * double damage strike and 1.2 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.4 EA debuff
+    * double damage strike while affected by non-accuracy buff, 1.6 EA debuff
   * Melee only:
-    * double damage strike and 1.5 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.8 EA debuff
-    * double damage strike while affected by non-accuracy buff, 2.2 EA debuff
+    * double damage strike and 1.4 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.6 EA debuff
+    * double damage strike while affected by non-accuracy buff, 1.8 EA debuff
 * Rank 7:
   * Unrestricted:
-    * triple damage strike and 1.8 EA debuff
-    * triple damage strike, if beat Fort/Ment, 2.2 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 2.7 EA debuff
+    * triple damage strike and 1.6 EA debuff
+    * triple damage strike, if beat Fort/Ment, 1.8 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 2.0 EA debuff
   * Melee only:
-    * triple damage strike and 2.2 EA debuff
-    * triple damage strike, if beat Fort/Ment, 2.7 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 3.2 EA debuff
+    * triple damage strike and 1.8 EA debuff
+    * triple damage strike, if beat Fort/Ment, 2.0 EA debuff
+    * triple damage strike while affected by non-accuracy buff, 2.2 EA debuff
 
 ### Rank modifiers
 

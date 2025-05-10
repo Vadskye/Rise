@@ -262,11 +262,11 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Blinding Flurry',
 
-      // Normally blind would be too strong, but requiring both strikes to hit and
-      // dealing 2x damage instead of 3x damage means this can just make it, probably.
+      // Normally blind would be too strong, but requiring all three strikes to hit
+      // means this is probably fine.
       effect: `
-        Make two \\glossterm{strikes}.
-        If both strikes deal damage and also hit the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
+        Make three melee \\glossterm{strikes} with a \minus1 accuracy penalty.
+        If all three strikes deal damage and also hit the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
       `,
       rank: 7,
       roles: ['softener'],

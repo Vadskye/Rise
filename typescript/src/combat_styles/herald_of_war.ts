@@ -37,14 +37,19 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Stunning Roar+',
 
+      // Brief + HP stun is worth 2 EA, so rank 4. That gives room to scale to a huge
+      // radius.
       attack: {
         crit: CONDITION_CRIT,
-        hit: `Each target is \\stunned as a \\glossterm{condition}.`,
+        hit: `
+          Each target is \\glossterm{briefly} \\stunned.
+          If it has no remaining \\glossterm{damage resistance}, it is stunned as a \\glossterm{condition} instead.
+        `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
         `,
       },
-      rank: 7,
+      rank: 5,
       roles: ['flash'],
       tags: ['Auditory', 'Compulsion'],
     },
@@ -220,7 +225,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
           If the target takes damage, it becomes \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
@@ -281,6 +286,8 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Challenge+',
 
+      // Goaded should be 2.3 EA and r7 is only 2.0, but ehhh martials should be good at
+      // goading?
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
         If the target takes damage and your attack result hits its Mental defense, it is \\goaded by you as a \\glossterm{condition}.
