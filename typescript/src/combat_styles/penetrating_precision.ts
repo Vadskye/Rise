@@ -194,10 +194,10 @@ export const perfectPrecision: CombatStyle = {
       name: 'Pinning Shot',
 
       effect: `
-        Make a \\glossterm{strike} that deals double damage.
+        Make a \\glossterm{strike} that deals triple damage.
         If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['maim'],
     },
 
@@ -265,9 +265,10 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Pressure Point Puncture',
 
+      // If you call this 2/3 of a stun, it's worth 2 EA.
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} that deals triple damage.
+        If the target takes damage and your attack result beats its Fortitude defense, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,

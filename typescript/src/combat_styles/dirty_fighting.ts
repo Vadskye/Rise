@@ -151,15 +151,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Backbreaker',
 
-      // A melee range spell would be rank 9, so it could get paralyzed on HP.
-      // Grapple requirement offsets the higher accuracy from the Brawling tag?
+      // A damage + debuff slow is 2.6 EA, so rank 7, or rank 5 if melee range.
       effect: `
         Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit The target takes \\damagerankseven.
+        \\hit The target takes \\damageranksix.
         If it loses hit points from this damage, it becomes \\slowed as a \\glossterm{condition}.
-        If it was already slowed with this ability, it becomes \\immobilized as a condition instead.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['maim', 'payoff'],
       tags: ['Brawling'],
     },
@@ -210,6 +208,8 @@ export const dirtyFighting: CombatStyle = {
       tags: ['Brawling'],
     },
 
+    // Price as "stunned as a condition" in melee range; grappled requirement offsets
+    // ability to use brawling accuracy
     {
       name: 'Pin',
 
@@ -219,7 +219,7 @@ export const dirtyFighting: CombatStyle = {
         In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
         These penalties do not stack if you use this ability multiple times.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['maim'],
       tags: ['Brawling'],
     },
@@ -241,7 +241,8 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Knock Flying+',
 
-      // TODO: what damage value makes sense here?
+      // TODO: what damage value and distance make sense here? Knockback isn't well
+      // studied.
       effect: `
         Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
@@ -257,15 +258,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Disarm',
 
-      // Normally a debuff strike would deal double damage, but it makes sense for this to
-      // be very low damage.
       effect: `
-        Make a melee \\glossterm{strike}.
-        \\hit If your attack also hits the target's Fortitude and Reflex defenses, it drops one item of your choice that it is holding in a single hand.
+        Make a \\glossterm{strike}.
+        If the target loses hit points and your attack also hits its Fortitude defense, it drops one item of your choice that it is holding in a single hand.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
-      rank: 5,
-      roles: ['softener'],
+      rank: 3,
+      roles: ['maim'],
     },
 
     {
@@ -274,11 +273,12 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         exceptThat: `
           you can immediately grab a disarmed object if you have a \\glossterm{free hand} available, including a hand you used for this ability.
+          If you take a weapon in this way, you can make a \\glossterm{strike} with it.
         `,
         name: 'disarm',
       },
-      rank: 7,
-      roles: ['softener'],
+      rank: 5,
+      roles: ['maim'],
     },
 
     {
@@ -329,10 +329,10 @@ export const dirtyFighting: CombatStyle = {
       name: 'Anklesprainer',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
+        Make a \\glossterm{strike} that deals triple damage.
         If the target takes damage, it becomes \\glossterm{briefly} \\slowed.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['softener'],
     },
 
@@ -341,10 +341,10 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses hit points, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
+        If the target loses hit points and your attack beats its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
-      roles: ['softener'],
+      roles: ['maim'],
     },
 
     {
@@ -359,14 +359,14 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Eye Poke+',
+      name: 'Eye Gouge',
 
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage and your attack result beats its Fortitude defense, it is \\dazzled as a \\glossterm{condition}.
+        Make a \\glossterm{strike}.
+        If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
       `,
-      rank: 7,
-      roles: ['softener'],
+      rank: 3,
+      roles: ['maim'],
     },
 
     {

@@ -92,10 +92,10 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'All-In Flurry',
+      name: 'All-In+',
 
       effect: `
-        Make two melee \\glossterm{strikes}.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
@@ -157,22 +157,27 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Guardbreaker',
 
+      // This is theoretically worth 0.2 EA, since the ally gets one attack to take
+      // advantage of it. That seems aggressively priced though? Arbitrarily double it to
+      // 0.4.
       effect: `
-        Choose an \\glossterm{ally}, then make a \\glossterm{strike}.
+        Choose an \\glossterm{ally}, then make a melee \\glossterm{strike}.
         If the target takes damage, it takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['trip'],
     },
 
     {
       name: 'Guardbreaker+',
 
+      // By math, this is 0.4 EA. That seems unreasonably low. For now, leave this as is
+      // and figure out why the math is wrong later.
       effect: `
-        Choose an \\glossterm{ally}, then make a \\glossterm{strike} that deals triple damage.
+        Choose an \\glossterm{ally}, then make a melee \\glossterm{strike} that deals double damage.
         If the target takes damage, it takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['trip'],
     },
 
