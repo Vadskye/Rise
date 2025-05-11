@@ -786,10 +786,26 @@ export const astromancy: MysticSphere = {
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 3,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Greater Twinned Portals',
+      name: 'Giant Twinned Portals',
+
+      functionsLike: {
+        name: 'twinned portals',
+        exceptThat:
+          'the portals are 20 feet in diameter.',
+      },
+      narrative: `
+        You create a pair of gigantic portals that allow instant passage from one to the other.
+      `,
+      rank: 5,
+      roles: ['narrative'],
+      type: 'Sustain (attuneable, minor)',
+    },
+    {
+      name: 'Rapid Twinned Portals',
 
       functionsLike: {
         name: 'twinned portals',
@@ -800,6 +816,7 @@ export const astromancy: MysticSphere = {
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 7,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
   ],
