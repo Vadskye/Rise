@@ -6,8 +6,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
   sources: ['arcane', 'domain', 'nature', 'pact'],
-  // Special: this sphere gets +1dr for large area attacks, but is bad at everything other
-  // than damage.
 
   cantrips: [
     {
@@ -18,14 +16,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
         At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius and shadowy illumination in an 60 foot radius.
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
-        On a hit, you deal the target 2 damage.
+        On a hit, you deal the target damage equal to your \\glossterm{power}.
         If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
-      scaling: {
-        2: `The damage increases to 5.`,
-        4: `The damage increases to 10.`,
-        6: `The damage increases to 20.`,
-      },
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -37,6 +31,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You cannot increase the temperature above 100 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The maximum temperature change increases to 25 degrees.',
         4: 'The area increases to a \\hugearea radius.',
@@ -59,6 +54,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 1,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -70,6 +66,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -85,18 +82,19 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         After you enhance an ability in this way, this ability ends.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
     {
       name: 'Burning Grasp',
 
-      // Baseline for melee range is dr4, which is 3.5 + 1.75dpp.
-      // Double dr2 is 7 + 2dpp.
+      // Baseline for melee range is dr3, which is 4.5 + 1dpp.
+      // Double dr1 is 9 + 1dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again during your next action.
+          \\damagerankone immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -104,19 +102,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
-      rank: 2,
+      rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Burning Grasp',
 
-      // Baseline for melee range is dr7, which is 5.5 + 2.75dpp.
-      // Double dr5 is 7 + 3.5dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive immediately, and again during your next action.
+          \\damagerankfour immediately, and again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -124,14 +121,38 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Immolating Grasp',
+
+      // For some reason double dr7 isn't that exciting compared to dr9 so we give it an
+      // extra bonus.
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          \\damagerankseven immediately, and again during your next action.
+          % TODO: wording
+          If the target loses hit points from either instance of this damage, it continues to burn for one additional round, taking damage again during your subsequent action.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Fortitude against something you \\glossterm{touch}.
+        `,
+      },
+      rank: 7,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Pyroclasm',
 
-      // +1dr for full self-targeting
+      // +1dr for self-targeting and ability to escape the second hit
       attack: {
         hit: `
           \\damageranktwo.
@@ -143,15 +164,15 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           This typically means you include yourself as a target.
         `,
       },
-
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Pyroclasm',
 
-      // +1dr for full self-targeting
+      // +1dr for self-targeting and ability to escape the second hit??
       attack: {
         hit: `
           \\damagerankfive.
@@ -163,8 +184,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           This typically means you include yourself as a target.
         `,
       },
-
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -175,43 +196,48 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
         `,
       },
 
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Massive Fireball',
+      name: 'Split Fireball',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius within \\medrange.
+          Make an attack vs. Reflex against everything in each of two separate \\smallarea radius areas within \\medrange.
+          If the areas overlap, you still only make one attack against creatures in the overlapping area.
         `,
       },
 
       rank: 5,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Delayed Fireball',
 
+      // +2dr for delay
       attack: {
         hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you create a Fine bead of fire in midair at a location in \\medrange.
+          When you cast this spell, you create a Fine bead of fire in midair at a location in \\shortrange.
           The bead sheds light like a torch.
-          It is immune to most forms of damage, but if it takes cold damage, it is destroyed and this spell has no further effect.
+          It is immune to most forms of damage, but if it takes damage from a \\atCold ability, it is destroyed and this spell has no further effect.
           At the end of the next round, the bead explodes, and you make an attack vs. Reflex against everything in a \\medarea radius of it.
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -230,8 +256,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
         `,
       },
-
       rank: 7,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 

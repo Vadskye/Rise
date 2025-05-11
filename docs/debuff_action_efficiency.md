@@ -605,22 +605,27 @@ These rank modifiers apply before calculating area and damage:
 * +2 ranks: Condition becomes a curse
 
 * -1 rank: +2 area ranks (net +1 area rank, -1 effect rank)
-* -1 rank: Must beat two defenses instead of one, one of which is Reflex
 * -1 rank: Damage requires one defense, debuff requires beating a separate non-Reflex defense
+* -1 rank: -2 accuracy (max -4; see Accuracy vs Damage doc)
+* -2 ranks: Condition is removed when the target takes damage
+* -2 ranks: Condition can be removed with movement (burning Dex check)
+
+These rank modifiers apply after calculating damage, but before calculating area.
+For pure damage effects, this is equivalent to directly modifying damage rank:
+* -1 rank: Must beat two defenses instead of one, one of which is Reflex
 * -1 rank: Effect is inescapably delayed by one round
-* -1 rank: -1 accuracy (max -4)
-* -1 rank: Limited scope (see Debuff Area, below)
 * -1 rank: Easy combo condition:
   * Target must have already taken damage this round
   * Target must have one of your allies adjacent to it
   * You must be focused or primed
 * -2 ranks: Effect is escapably delayed by one round (can leave area) - can't be combined with enemies-only area targeting
 * -2 ranks: Must beat two non-Reflex defenses instead of one
-* -2 ranks: Condition is removed when the target takes damage
-* -2 ranks: Condition can be removed with movement (burning Dex check)
-* -2 ranks: Melee range (see Debuff Area, below)
 * -2 ranks: Difficult combo condition:
   * You must be one of braced, empowered, fortified, shielded, or steeled (no accuracy buff)
+
+These rank modifiers apply after calculating both area and damage:
+* -1 rank: Limited scope (see Debuff Area, below)
+* -2 ranks: Melee range (see Debuff Area, below)
 
 ## Debuff Area
 
@@ -665,9 +670,11 @@ Rank 1 areas:
 Rank 2 areas:
 * Cone:
   * (no change) Medium cone from self
+  * Two r0 cones
 * Line:
   * (no change) Medium line, 10' wide from self
   * Large line, 5' wide from self
+  * Two r0 lines
 * Radius:
   * (no change) Medium radius from self
   * Small radius in Short range
@@ -676,10 +683,10 @@ Rank 2 areas:
 Rank 3 areas:
 * Cone:
   * Large cone from self
-  * Two r0 cones
+  * Two r1 cones
 * Line:
   * Large line, 10' wide from self
-  * Two r0 lines
+  * Two r1 lines
 * Radius:
   * Large radius from self
   * Small radius in Medium range
@@ -687,22 +694,13 @@ Rank 3 areas:
 After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
 
 Rank 4 areas:
-* Cone:
-  * Two r1 cones
-* Line:
-  * Two r1 lines
-* Radius:
-  * Medium radius in Medium range
-
-Rank 5 areas:
-* Cone:
-  * Two r2 cones
 * Line:
   * Two r2 lines
 * Radius:
   * Two r2 radii
+  * Medium radius in Short range (discouraged)
 
-Rank 6 areas:
+Rank 5 areas:
 * Cone:
   * Two r3 cones
 * Line:
@@ -713,6 +711,10 @@ Rank 6 areas:
 #### With Range Costs
 
 To use areas that extend beyond 60', you have to pay a -1 rank cost. This reduces the damage dealt by the spell and the debuff tier (if any), but you still use the spell's normal rank for calculating its area. In exchange, you get access to the following additional rank scaling options:
+
+Rank 4 areas:
+* Radius:
+  * Medium radius in Medium range
 
 Rank 5 areas:
 * Cone:
