@@ -126,17 +126,25 @@ Deafened is basically the same as dazzled, except that the restriction is "spell
 
 It's very hard to calculate the effectiveness of enrage. In a typical fight, enrage is basically worthless, but we can't penalize it too much for being rarely useful or else it would be overpowered whenever it actually mattered. Assume that an enraged enemy that is unable to use its preferred action because it is enraged has a replacement action that is 50% effective, and it would prefer to use that impossible action 10% of the time. That means enrage negates 5% of enemy actions, which is worth 0.2 effective actions to the party.
 
-### Frightened: 0.8
+### Frightened by you: 0.6
 
 Frightened is a more complicated and conditional effect than most debuffs. It has two components: a local accuracy penalty and a Mental defense debuff.
 
-Assuming that the enemy attacks all party members equally, the frightened accuracy penalty applies 25% of the time, and it removes 40% of enemy actions when it applies (see Accuracy Penalties, above). Therefore, it is worth 4 * 0.25 * 0.4 = 0.4 effective actions on average, with a maximum effectiveness of 1.6 assuming that the enemy always attacks the source of their fear.
+Assuming that the enemy attacks all party members equally, the frightened accuracy penalty applies 25% of the time, and it removes 29% of enemy actions when it applies (see Accuracy Penalties, above). Therefore, it is worth 4 * 0.25 * 0.4 = 0.29 effective actions on average, with a maximum effectiveness of 1.2 assuming that the enemy always attacks the source of their fear.
 
-The attack penalty is trickier to calculate because the enemy could choose to attack a different target in the party, meaning they take no accuracy penalty. On the other hand, convincing an enemy to redirect their attacks may actually be better than an accuracy penalty if it gets them to stop attacking the most vulnerable member of the party. Let's ignore that complexity here and stick with the 0.4 effective action estimate.
+The attack penalty is trickier to calculate because the enemy could choose to attack a different target in the party, meaning they take no accuracy penalty. On the other hand, convincing an enemy to redirect their attacks may actually be better than an accuracy penalty if it gets them to stop attacking the most vulnerable member of the party. Also, unlike most debuffs, frightened "stacks" its action denial, allowing the party to eventually make the enemy frightened of the entire party. That edge case doesn't really apply to "frightened by you", but it does apply to "frightened by a chosen target". say "frightened by you" gets no benefit, and "frightened by a chosen ally" gets a 25% effectiveness boost.
 
 The Mental defense penalty can apply to 7 party attacks (see Stunned). However, most party members can't take full advantage of a single-defense penalty like that, and even if they can attack Mental it may still be a relatively high defense for the monster. As a wild estimate, assume that half of the party's attacks can benefit from the defense penalty, and that this is still only relevant for half of monsters. When the penalty is relevant, it provides 0.2 effective actions per attack. That would be worth 7 * 0.5 * 0.5 * 0.2 = 0.35 effective actions on average, to a maximum of 1.4 effective actions assuming that every party member always attacks Mental defense.
 
-That adds up to 0.75 effective actions for frighten, which we'll round up to 0.8.
+That adds up to 0.79 effective actions for frighten.
+
+### Frightened by ally: 0.7
+
+As discussed above, this makes the frightened action denial 25% more effective.
+
+### Frightened by all: 1.5
+
+The normal frightened debuff assumes the target is only frightened by one creature. What if they are instead frightened by everything? In that case, it's a simple 29% action denial, which gives it 4 * 0.29 = 1.16 EA, plus the usual 0.35 EA from the defense penalty.
 
 ### Goaded: 0.6
 
@@ -320,10 +328,16 @@ Deafened is roughly half as effective as dazzled because few monsters have verba
 ### Enraged: 1.6
 Assume it functions as 10% action denial.
 
-### Frightened: 2
+### Frightened by you: 2.0
 As with the brief effect, assume frightened applies 25% of the time, so it is worth 4.6 * 0.25 = 1.2 effective actions from action denial.
 
 Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 * 0.25 * 0.2 = 0.8 effective actions.
+
+### Frightened by ally: 2.3
+
+### Frightened by all: 5.4
+
+29% action denial is worth 4.64 EA, plus the usual 0.8 EA from the defense penalty.
 
 ### Goaded: 2.3
 Applies to 50% of actions with 29% action denial, so 16 * 0.5 * 0.29 = 2.32
@@ -351,11 +365,11 @@ For the defense debuff, assume that 11 of the 15 party actions will take advanta
 
 ### Time Skip: 20
 
-### Treat as invisible: 4.6
+### Treat as invisible: 5.3
 
 The defense penalty applies to 4 party attacks, so it provides 0.8 action effectiveness.
 
-The blindness is 16 * 0.25 * 0.75 * 1.25 = 3.8 effective actions.
+The blindness is 16 * 0.25 * 0.75 = 3 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 4.5.
 
 ### Vulnerable: 6
 Double stunned.
@@ -374,25 +388,55 @@ In general, most debuffs benefit to the same small degree with precision targeti
 
 ## Summary
 
+By EA:
 ```
-  Debuff          & Brief & HP Condition & Condition \\
-  Action skip     & 2.0   & 8            & 24        \\
-  Banishment      & 2.0   & 5.3          & 16        \\
-  Blinded         & 3.0   & 4.7          & 14.2      \\
-  Confused        & 2.8   & 2.9          & 8.6       \\
-  Dazzled         & 0.6   & 0.8          & 2.4       \\
-  Deafened        & 0.3   & 0.5          & 1.6       \\
-  Enraged         & 0.2   & 0.3          & 0.8       \\
-  Frightened      & 0.8   & 0.7          & 2.0       \\
-  Goaded          & 0.6   & 0.6          & 2.3       \\
-  Immobilized     & 5.0   & 6.5          & 19.4      \\
-  Panicked        & 2.3   & 2.5          & 7.6       \\
-  Prone           & 0.9   & 1.7          & 5.2       \\
-  Slowed          & 1.5   & 1.6          & 4.9       \\
-  Stunned         & 1.4   & 1.0          & 3.0       \\
-  Time skip       & 2.5   & 6.7          & 20        \\
-  Treat as invis: & 1.2   & 1.5          & 4.6       \\
-  Vulnerable      & 2.8   & 2.0          & 6.0       \\
+  Debuff             & Brief & HP Condition & Condition \\
+  Action skip        & 2.0   & 8            & 24        \\
+  Banishment         & 2.0   & 5.3          & 16        \\
+  Blinded            & 3.0   & 4.7          & 14.2      \\
+  Confused           & 2.8   & 2.9          & 8.6       \\
+  Dazzled            & 0.6   & 0.8          & 2.4       \\
+  Deafened           & 0.3   & 0.5          & 1.6       \\
+  Enraged            & 0.2   & 0.3          & 0.8       \\
+  Frightened by you  & 0.6   & 0.7          & 2.0       \\
+  Frightened by ally & 0.7   & 0.8          & 2.3       \\
+  Frightened by all  & 1.5   & 1.8          & 5.4       \\
+  Goaded             & 0.6   & 0.6          & 2.3       \\
+  Immobilized        & 5.0   & 6.5          & 19.4      \\
+  Panicked           & 2.3   & 2.5          & 7.6       \\
+  Prone              & 0.9   & 1.7          & 5.2       \\
+  Slowed             & 1.5   & 1.6          & 4.9       \\
+  Stunned            & 1.4   & 1.0          & 3.0       \\
+  Time skip          & 2.5   & 6.7          & 20        \\
+  Treat as invis:    & 1.2   & 1.8          & 5.3       \\
+  Vulnerable         & 2.8   & 2.0          & 6.0       \\
+```
+
+By rank:
+"2d" means "rank 2 if combined with damage". It's used for effects that are too weak to ever appear as standalone spells.
+"inf" means the effect is too strong to ever appear as a spell without weird tricks.
+```
+  Debuff             & Brief & HP Condition & Condition \\
+  Action skip        & 4     & inf          & inf       \\
+  Banishment         & 5     & inf          & inf       \\
+  Blinded            & 9     & inf          & inf       \\
+  Confused           & 8     & 9            & inf       \\
+  Dazzled            & 2d    & 3d           & 6         \\
+  Deafened           & 1d    & 2d           & 2         \\
+  Enraged            & 0d    & 1d           & 3d        \\
+  Frightened         & 3d    & 3d           & 4         \\
+  Frightened by you  & 2d    & 3d           & 4         \\
+  Frightened by ally & 3d    & 3d           & 6         \\
+  Frightened by all  & 2     & 3            & inf       \\
+  Goaded             & 2d    & 2d           & 6         \\
+  Immobilized        & inf   & inf          & inf       \\
+  Panicked           & 6     & 7            & inf       \\
+  Prone              & 4d    & 3            & inf       \\
+  Slowed             & 2     & 2            & inf       \\
+  Stunned            & 1     & 4d           & 9         \\
+  Time skip          & 7     & inf          & inf       \\
+  Treat as invis:    & 0     & 3            & inf       \\
+  Vulnerable         & 8     & 4            & inf       \\
 ```
 
 ### Effective Action Modifiers
