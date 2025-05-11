@@ -888,6 +888,7 @@ export const polymorph: MysticSphere = {
         Each time, you must choose a different organ to copy.
       `,
       rank: 2,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
     {
@@ -902,6 +903,7 @@ export const polymorph: MysticSphere = {
         Second, you can treat it as a \\glossterm{natural weapon}, a \\glossterm{manufactured weapon}, or both, depending on what is more beneficial for you.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         2: `
           The weapon can be made of any special material other than cold iron and silver (see \\pcref{Weapon Special Materials}).
@@ -921,6 +923,7 @@ export const polymorph: MysticSphere = {
         You are \\glossterm{briefly} \\dazzled and \\stunned, and this ability ends.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -932,6 +935,7 @@ export const polymorph: MysticSphere = {
         You cannot speak and have no \\glossterm{free hands}, but you do not need hands to climb.
       `,
       rank: 2,
+      roles: ['narrative'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
     },
@@ -945,6 +949,7 @@ export const polymorph: MysticSphere = {
         You also gain the \\trait{scent} ability.
       `,
       rank: 3,
+      roles: ['narrative'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
     },
@@ -958,6 +963,7 @@ export const polymorph: MysticSphere = {
         You are also unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
+      roles: ['narrative'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
     },

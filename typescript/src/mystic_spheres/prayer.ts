@@ -11,16 +11,15 @@ export const prayer: MysticSphere = {
     {
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target gains a +1 bonus to its Armor and Reflex defenses this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves each target's defense against attacks made against it during the current phase.
+        The target is \\empowered this round.
       `,
-      name: 'Boon of Protection',
+      name: 'Empowering Boon',
+      roles: ['boon'],
       scaling: {
         2: 'You can target an additional \\glossterm{ally} within range.',
-        4: 'The bonus increases to +2.',
-        6: 'The maximum number of targets increases to three.',
+        4: 'You can increase your \\glossterm{fatigue level} by one. If you do, one target is \\maximized instead of empowered this round.',
+        6: 'If you increased your fatigue level, all targets are maximized instead of only one.',
       },
-      tags: ['Swift'],
     },
   ],
   spells: [
@@ -32,6 +31,7 @@ export const prayer: MysticSphere = {
         Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -43,6 +43,7 @@ export const prayer: MysticSphere = {
         Whenever each target finishes a \\glossterm{long rest}, it removes an additional \\glossterm{vital wound} (see \\pcref{Removing Vital Wounds}).
       `,
       rank: 4,
+      roles: ['attune'],
       scaling: {
         6: `Each target removes two additional vital wounds instead of only one.`,
       },
@@ -58,6 +59,7 @@ export const prayer: MysticSphere = {
         This healing cannot increase a target's hit points above half its maximum hit points.
       `,
       rank: 5,
+      roles: ['healing'],
       scaling: {
         special: `
           The healing increases by 1d6 for each rank beyond 5.
@@ -74,6 +76,7 @@ export const prayer: MysticSphere = {
         Each target becomes proficient with one additional weapon group, including exotic weapons from that weapon group.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -86,6 +89,7 @@ export const prayer: MysticSphere = {
         If it does, this ability ends for that creature.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -94,9 +98,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        The next time each target makes an attack this round, it rolls twice and takes the higher result.
+        Each target is \\focused this round.
       `,
       rank: 3,
+      roles: ['boon'],
       tags: [],
     },
 
@@ -108,6 +113,7 @@ export const prayer: MysticSphere = {
         Each target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
       `,
       rank: 1,
+      roles: ['boon'],
       tags: [],
     },
 
@@ -115,23 +121,25 @@ export const prayer: MysticSphere = {
       name: 'Boon of Invulnerability',
 
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target takes half damage from all sources this round.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
       `,
       rank: 7,
+      roles: ['boon'],
       tags: ['Swift'],
     },
 
     {
-      name: 'Boon of Avoidance',
+      name: 'Boon of Shielding',
 
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target gains a +2 bonus to Armor and Reflex defenses this round.
+        Each target is \\shielded this round.
         Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
       `,
       rank: 3,
+      roles: ['boon'],
       tags: ['Swift'],
     },
 
@@ -144,6 +152,7 @@ export const prayer: MysticSphere = {
         In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -156,6 +165,7 @@ export const prayer: MysticSphere = {
         In addition, at the end of each round, it automatically removes one \\glossterm{condition} from a Compulsion or Emotion effect that was not applied during that round.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -168,6 +178,7 @@ export const prayer: MysticSphere = {
         After a creature negates a condition in this way, this spell ends for that creature.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -179,6 +190,7 @@ export const prayer: MysticSphere = {
         Two \\glossterm{allies} within \\medrange can each remove a \\glossterm{condition}.
       `,
       rank: 4,
+      roles: ['cleanse'],
     },
 
     {
@@ -190,6 +202,7 @@ export const prayer: MysticSphere = {
         Each ally that removes a condition in this way increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
+      roles: ['cleanse'],
     },
 
     {
@@ -202,6 +215,7 @@ export const prayer: MysticSphere = {
         In addition, if you choose Strength, each target gains a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 3,
+      roles: ['attune'],
       scaling: {
         5: `The bonus increases to +3.`,
         7: `The bonus increases to +4.`,
@@ -217,6 +231,7 @@ export const prayer: MysticSphere = {
         Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +16.`,
@@ -232,6 +247,7 @@ export const prayer: MysticSphere = {
         Each target is never \\unaware or \\partiallyunaware.
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -245,6 +261,7 @@ export const prayer: MysticSphere = {
         Whenever it does, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -257,6 +274,7 @@ export const prayer: MysticSphere = {
         In addition, each target gains a +1 \\glossterm{enhancement bonus} to \\glossterm{vital rolls}.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: {
         4: `
           The bonuses to hit points and damage resistance increase to +8.
@@ -276,6 +294,7 @@ export const prayer: MysticSphere = {
         Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{damage resistance}.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: {
         4: `The bonus increases to +8.`,
         6: `The bonus increases to +16.`,
@@ -292,6 +311,7 @@ export const prayer: MysticSphere = {
         After negating a vital wound for a creature in this way, this spell ends for that creature.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune (deep, target)',
     },
 
@@ -306,6 +326,7 @@ export const prayer: MysticSphere = {
         In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
       `,
       rank: 2,
+      roles: ['healing'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
@@ -319,6 +340,7 @@ export const prayer: MysticSphere = {
         exceptThat: 'the recovery increases to 1d8 plus 1d8 per 2 power.',
       },
       rank: 5,
+      roles: ['healing'],
       scaling: { special: 'The recovery increases by 2d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
@@ -332,7 +354,8 @@ export const prayer: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         Whether you hit or miss, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -343,6 +366,7 @@ export const prayer: MysticSphere = {
         exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
       },
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -355,6 +379,7 @@ export const prayer: MysticSphere = {
         If this accuracy bonus would be +4 or higher, you may reduce it by 4 to make the strike deal double \\glossterm{weapon damage}.
       `,
       rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
