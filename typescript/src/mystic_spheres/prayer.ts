@@ -13,12 +13,12 @@ export const prayer: MysticSphere = {
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\empowered this round.
       `,
-      name: 'Empowering Boon',
+      name: 'Boon of Power',
       roles: ['boon'],
       scaling: {
         2: 'You can target an additional \\glossterm{ally} within range.',
         4: 'You can increase your \\glossterm{fatigue level} by one. If you do, one target is \\maximized instead of empowered this round.',
-        6: 'If you increased your fatigue level, all targets are maximized instead of only one.',
+        6: 'If you increased your fatigue level, each target is maximized instead of only one.',
       },
     },
   ],
@@ -106,6 +106,19 @@ export const prayer: MysticSphere = {
     },
 
     {
+      name: 'Boon of Supremacy',
+
+      effect: `
+        Choose one \\glossterm{ally} within \\medrange.
+        The target is \\braced and \\primed this round.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
+      `,
+      rank: 7,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
       name: 'Boon of Deadly Fortune',
 
       effect: `
@@ -118,14 +131,45 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Boon of Invulnerability',
+      name: 'Boon of Living Steel',
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target takes half damage from all sources this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
+        The target is \\glossterm{briefly} \\fortified and \\steeled.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
-      rank: 7,
+      rank: 2,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Boon of Invulnerability',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        Choose two \\glossterm{allies} within \\medrange.
+        Each target takes half damage from all sources this round.
+        Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
+
+        After you use this ability, you \\glossterm{briefly} cannot use it again.
+      `,
+      rank: 5,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Boon of Annihilation',
+
+      cost: 'Two \\glossterm{fatigue levels}.',
+      effect: `
+        Choose one \\glossterm{ally} within \\medrange.
+        The target is \\primed and \\maximized this round.
+
+        After you use this ability, you \\glossterm{briefly} cannot use it again.
+      `,
+      rank: 6,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -383,22 +427,25 @@ export const prayer: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // +1r for curse, -1r for limited scope
     {
       name: 'Curse of Blurred Vision',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target is \\dazzled until it finishes a \\glossterm{short rest}.
+          Each target is \\dazzled until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 6,
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },
+    // +1r for curse, +1r for prebuff, -1r for limited scope
     {
       name: 'Curse of Sloth',
 
@@ -412,26 +459,12 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse'],
     },
-    {
-      name: 'Efficient Curse of Sloth',
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `
-          The target is \\slowed until it finishes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Curse'],
-    },
+    // +1r for curse, -2r for damage requirement, -1r for limited scope
     {
       name: 'Curse of Anxiety',
 
@@ -439,51 +472,36 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target becomes anxious until it finishes a \\glossterm{short rest}.
-          Whenever a creature deals damage to the target, it becomes \\frightened by that creature until this effect ends.
+          Whenever a creature causes the target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
           As normal, it stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 1,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Emotion'],
     },
+    // +1r for curse, +1r for prebuff, -1r for limited scope
     {
-      name: 'Curse of Blindness',
+      name: 'Curse of Selective Sight',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          While the target is below its maximum \\glossterm{hit points}, it is \\blinded.
+          While each target is below its maximum \\glossterm{hit points}, it treats you as being \\invisible.
           This effect lasts until the target finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 4,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
-    },
-    {
-      name: 'Curse of Bewilderment',
-
-      attack: {
-        crit: `The effect lasts until the curse is removed.`,
-        hit: `
-          While the target is below its maximum \\glossterm{hit points}, it is \\confused.
-          Otherwise, it is \\stunned.
-          This effect lasts until the target finishes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Compulsion', 'Curse'],
     },
     // {
     //   name: 'Holy Blades',

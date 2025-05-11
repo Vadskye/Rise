@@ -241,6 +241,7 @@ export const mobileHunter: CombatStyle = {
       roles: ['turtle'],
     },
 
+    // assume movement is worth 0.6 EA or so
     {
       name: 'Fearsome Pounce',
 
@@ -254,12 +255,12 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Fearsome Pounce+',
+      name: 'Eyeflash Pounce',
 
-      // This gets the half movement for free, which is a little odd
+      // assume movement is worth 0.6 EA or so
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage and your attack result beats its Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
+        If the target takes damage, it \\glossterm{briefly} treats you as being \\invisible.
       `,
       rank: 7,
       tags: ['Emotion'],
