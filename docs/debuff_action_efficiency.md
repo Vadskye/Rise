@@ -237,6 +237,10 @@ This is higher than the baseline 25% assuming a 4 person party, but takes into a
 
 Braced applies 50% of the time, and it removes 40% of enemy actions when it applies. Therefore, it is worth 4 * 0.5 * 0.4 = 0.8 effective actions.
 
+### +4 for crits: 0.2
+
+Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9, so 0.2 damage from crit, so 1.18 total. That's 20% more damage, so it's roughly the same as Empowered, but better for strike-based people since it works for attacks with fewer dice.
+
 ### Empowered: 0.2
 
 Empowered is roughly 20% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
