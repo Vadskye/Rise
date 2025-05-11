@@ -148,7 +148,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Roar',
 
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\frightened by you.`,
+        hit: `
+          Each target is \\glossterm{briefly} \\frightened by you.
+          Each target with no remaining \\glossterm{damage resistance} also becomes frightened of you as a \\glossterm{condition}.
+        `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -161,7 +164,8 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Roar+',
 
-      // Frightened as a condition is theoretically r4, not sure why this is r5
+      // Frightened as a condition is theoretically r4, not sure why this is r5. No room
+      // to increase area because we'd need to spend two ranks on it
       attack: {
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         crit: CONDITION_CRIT,
@@ -301,10 +305,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Blow',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target takes damage, it becomes \\glossterm{briefly} \\frightened by you.
+        Make a melee \\glossterm{strike}.
+        If the target takes damage and your attack result hits its Mental defense, it becomes \\glossterm{briefly} \\frightened by you.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['softener'],
       tags: ['Emotion'],
     },
@@ -314,7 +318,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it becomes \\frightened by you as a \\glossterm{condition}.
+        If the target takes damage and your attack result hits its Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener'],
