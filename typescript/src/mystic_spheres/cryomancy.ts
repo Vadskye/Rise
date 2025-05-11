@@ -34,17 +34,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          2 damage.
+          The target takes damage equal to your \\glossterm{power}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
-      scaling: {
-        2: 'The damage increases to 5.',
-        4: 'The damage increases to 10.',
-        6: 'The damage increases to 20.',
-      },
+      roles: ['burst'],
     },
     {
       name: 'Chill Air',
@@ -54,6 +50,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         You cannot reduce the temperature below 0 degrees in this way.
         This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The maximum temperature change increases to 25 degrees.',
         4: 'The area increases to a \\hugearea radius.',
