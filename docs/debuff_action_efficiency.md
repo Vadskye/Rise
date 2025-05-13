@@ -532,7 +532,6 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * Confused as a HP condition
   * Stunned as a condition
 * Rank 10 (3.2 EA):
-  * 
 * Rank 11 (3.4 EA):
   * 1 EA of damage, dazzled as a condition
 * Rank 12 (3.6 EA):
@@ -637,11 +636,13 @@ You can apply a stronger debuff if you are willing to affect fewer enemies. Ther
 * Rank - 1: Rank X / 2 area, to a minimum at Rank 0 of a single creature within 30' range
 * Rank - 2: Single target melee range
 
-### Area Tiers
+## Area and Effect Rank
 
-#### Default Area Limits
+"Effect rank" refers to how strong the effect of an ability is. "Ability rank" refers to the minimum rank required to use the ability. A spell's ability rank is a combination of its effect rank and its targeting criteria.
 
-Converting an area to be "enemies only" increases its area rank by 1. That does not affect other aspects of the spell, such as the damage it deals.
+For example, a Medium range erX spell deals drX damage.
+
+### Standard Area Ranks
 
 Rank -1 areas (why would these exist?):
 * Tiny radius from self
@@ -651,13 +652,11 @@ Rank 0 areas:
 * Cone:
   * Small cone from self
 * Line:
-  * Medium line, 5' wide from self
   * Small line, 10' wide from self
+  * Medium line, 5' wide from self (only for splitting)
 * Radius:
   * Small radius from self
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-  * Tiny radius in Short range
-    * This should be rare, since it's more flexible than other rank 0 areas but is too weak for rank 1
 
 Rank 1 areas:
 * Cone:
@@ -670,51 +669,54 @@ Rank 1 areas:
 Rank 2 areas:
 * Cone:
   * (no change) Medium cone from self
-  * Two r0 cones
+  * Two Small cones from self
 * Line:
   * (no change) Medium line, 10' wide from self
-  * Large line, 5' wide from self
-  * Two r0 lines
+  * Large line, 5' wide from self (only for splitting)
+  * Two Small, 10' wide lines from self
+  * Two Medium, 5' wide lines from self
 * Radius:
   * (no change) Medium radius from self
-  * Small radius in Short range
-  * Tiny radius in Med range (discouraged)
+  * Tiny radius in Short range (rare, since Tiny radius is so close to single target)
 
 Rank 3 areas:
 * Cone:
   * Large cone from self
-  * Two r1 cones
+  * Two Medium cones from self
 * Line:
   * Large line, 10' wide from self
-  * Two r1 lines
+  * Two Medium, 10' wide lines from self
 * Radius:
   * Large radius from self
-  * Small radius in Medium range
+  * Small radius in Short range
+  * Tiny radius in Med range (only for splitting)
 
 After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
 
 Rank 4 areas:
+* Cone:
+  * (unchanged) Two Medium cones from self
 * Line:
-  * Two r2 lines
-* Radius:
-  * Two r2 radii
-  * Medium radius in Short range (discouraged)
+  * (unchanged) Two Medium, 10' wide lines from self
+* Radius
+  * Medium radius in Short range (discouraged due to self-inclusion)
 
 Rank 5 areas:
 * Cone:
-  * Two r3 cones
+  * Two Large cones from self
 * Line:
-  * Two r3 lines
+  * Two Large, 10' wide lines from self
 * Radius:
-  * Two r3 radii
+  * Two Small radii in Short range
+  * Two Tiny radii in Med range
 
-#### With Range Costs
+#### Extended Area Scaling
 
 To use areas that extend beyond 60', you have to pay a -1 rank cost. This reduces the damage dealt by the spell and the debuff tier (if any), but you still use the spell's normal rank for calculating its area. In exchange, you get access to the following additional rank scaling options:
 
 Rank 4 areas:
 * Radius:
-  * Medium radius in Medium range
+  * Small radius in Medium range
 
 Rank 5 areas:
 * Cone:
@@ -723,12 +725,12 @@ Rank 5 areas:
   * Huge line, 15' wide from self
 * Radius:
   * Huge radius from self
-  * Large radius in Medium range (a little odd, basically requires enemies-only)
-  * Medium radius in Long range
+  * Medium radius in Medium range
+  * Small radius in Long range
 
 Rank 6 areas:
 * Radius:
-  * Large radius in Long range
+  * Medium radius in Long range
 
 Rank 7 areas:
 * Cone:
@@ -737,4 +739,9 @@ Rank 7 areas:
   * Gargantuan line, 15' wide from self
 * Radius:
   * Gargantuan radius from self
-  * Medium radius in Distant range
+  * Large radius in Medium range (a little odd, basically requires enemies-only)
+  * Medium radius in Long range
+
+### Area Rank Modifiers
+
+* +2 area rank: Only affects enemies in the area.

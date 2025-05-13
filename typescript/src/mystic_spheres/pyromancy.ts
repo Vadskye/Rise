@@ -127,7 +127,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Immolating Grasp',
+      name: 'Everburning Grasp',
 
       // For some reason double dr7 isn't that exciting compared to dr9 so we give it an
       // extra bonus.
@@ -152,7 +152,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Pyroclasm',
 
-      // +1dr for self-targeting and ability to escape the second hit
+      // A normal r1 area would deal dr3 immediate damage, or dr2 damage over two rounds.
+      // This gets +1dr for self-targeting and ability to escape the second hit.
       attack: {
         hit: `
           \\damageranktwo.
@@ -165,17 +166,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
-      roles: ['clear'],
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Pyroclasm',
 
-      // +1dr for self-targeting and ability to escape the second hit??
+      // A normal R3 area would deal dr5 immediate damage, or dr3 over two rounds.
+      // This gets +1dr for self-targeting and ability to escape the second hit.
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
@@ -185,7 +187,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 6,
-      roles: ['clear'],
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
@@ -193,10 +195,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fireball',
 
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
         `,
       },
 
@@ -209,10 +211,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Split Fireball',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in each of two separate \\smallarea radius areas within \\medrange.
+          Make an attack vs. Reflex against everything in each of two separate \\smallarea radius areas within \\shortrange.
           If the areas overlap, you still only make one attack against creatures in the overlapping area.
         `,
       },
@@ -227,7 +229,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // +2dr for delay
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           When you cast this spell, you create a Fine bead of fire in midair at a location in \\shortrange.
@@ -246,7 +248,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damageranksix.
+          \\damagerankfour.
           If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
@@ -262,31 +264,35 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Burning Hands',
+      name: 'Fan of Flames',
 
       attack: {
-        hit: `\\damagerankone.`,
-        missGlance: true,
+        crit: MULTIHIT_CRIT,
+        hit: `\\damagerankone immediately, and again during your next action.`,
+        miss: "Half damage immediately, and no damage during your next action.",
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
       },
-
-      rank: 1,
+      rank: 2,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Mighty Burning Hands',
+      name: 'Mighty Fan of Flames',
 
+      // Normal immediate damage would be dr5 (3.5 + 1.75dpp)
       attack: {
-        hit: `\\damagerankthree.`,
-        missGlance: true,
+        crit: MULTIHIT_CRIT,
+        hit: `\\damagerankthree immediately, and again during your next action.`,
+        miss: "Half damage immediately, and no damage during your next action.",
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
         `,
       },
-      rank: 4,
+      rank: 5,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
@@ -301,12 +307,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
+          This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Reflex against one creature within \\medrange.
+          Make an attack vs. Fortitude and Reflex against one creature within \\shortrange.
         `,
       },
       rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
@@ -318,12 +326,26 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Inescapable Ignition',
+
+      functionsLike: {
+        name: 'ignition',
+        exceptThat: 'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to put out the flames increases to 15.',
+      },
+      rank: 6,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Flame Breath',
 
+      // +1dr for attuned ability with cooldown
       attack: {
         hit: `\\damageranktwo.`,
         missGlance: true,
@@ -334,6 +356,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -345,10 +368,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         name: 'flame breath',
         exceptThat: `
           the damage increases to \\damagerankfive.
-          In addition, the area increases to a \\gargarea cone.
         `,
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -356,31 +379,35 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Eyes of Flame',
 
-      // +1dr for brief cooldown
+      // +1 effective rank for attune with cooldown
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo, and the target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
-          You can set things on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Fortitude against something within \\shortrange from you.
+          You can set creatures on fire simply by staring at them as a standard action.
+          When you do, make an attack vs. Fortitude against a creature within \\shortrange of you.
           After you use this ability, you \\glossterm{briefly} cannot use it again.
         `,
       },
       rank: 1,
+      roles: ['burst', 'softener'],
       scaling: 'accuracy',
+      tags: ['Visual'],
       type: 'Attune',
     },
 
     {
-      name: 'Mighty Eyes of Flame',
+      name: 'Blinding Eyes of Flame',
 
       functionsLike: {
         name: 'eyes of flame',
-        exceptThat: 'the damage increases to \\damagerankseven.',
+        exceptThat: 'the damage increases to \\damageranksix, and the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
       },
       rank: 5,
+      roles: ['burst', 'softener'],
       scaling: 'accuracy',
+      tags: ['Visual'],
       type: 'Attune',
     },
 
@@ -399,6 +426,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
 
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -407,14 +435,20 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flame Serpent',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that starts within \\medrange.
+          When you cast this spell, an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that is entirely within \\medrange of you.
+          The line cannot intersect itself, and you must designate one end of the line as the head of the flame serpent and the other end as the tail of the flame serpent.
+
+          Whenever you sustain this spell, you can repeat this attack in a new line.
+          The tail of the new line must be adjacent to the head of the old line, and it cannot intersect any space occupied by the line in the previous round.
         `,
       },
       rank: 5,
+      roles: ['wildfire'],
       scaling: 'accuracy',
+      tags: ['Sustain (minor)'],
     },
 
     {

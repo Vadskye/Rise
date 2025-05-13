@@ -64,7 +64,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ground Stomp',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
@@ -79,7 +79,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ground Stomp+',
 
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damageranksix.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
@@ -176,6 +176,7 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Leap Slam',
 
+      // Basically tiny radius in short range, which is area rank 2
       attack: {
         hit: `\\damageranktwo.`,
         missGlance: true,
@@ -206,7 +207,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ricochet',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to four creatures or objects in a \\smallarea radius within \\medrange of you.
+        Make a thrown \\glossterm{strike} against up to three creatures or objects in a \\smallarea radius within \\medrange of you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
@@ -490,12 +491,13 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Shrapnel Blast',
 
+      // Expected line length is 10 feet
       effect: `
         Make a melee \\glossterm{strike} against a stable surface.
-        Then, make an attack vs. Armor against everything in a cone from one corner of the target space.
-        The length of the cone is equal to one foot per point of damage you dealt to the surface, rounded down to 5 foot increments.
+        Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
+        The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
         On a hit, each target takes \\damageranktwo. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
-        On a miss, each target takes half damage.
+        On a miss, you still deal half damage.
       `,
       rank: 3,
       roles: ['flash'],
@@ -505,12 +507,14 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Shrapnel Blast+',
 
+      // Expected line length is 4.5 + 8 + 3.5 = 15 feet, but it can be longer with
+      // adamantine weapons / etc.
       effect: `
         Make a melee \\glossterm{strike} against a stable surface.
-        Then, make an attack vs. Armor against everything in a cone from one corner of the target space.
-        The length of the cone is equal to one foot per 2 points of damage you dealt to the surface, rounded down to 5 foot increments.
+        Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
+        The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
         On a hit, each target takes \\damageranksix. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
-        On a miss, each target takes half damage.
+        On a miss, you still deal half damage.
       `,
       rank: 7,
       roles: ['flash'],

@@ -139,11 +139,15 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Rain of Arrows',
 
-      // A standard rank 3 AOE damage spell would affect a Med radius in Med range and
-      // deal 3.5 + 1pp. This strike using a longbow would deal 3.5 + 0.5dpp.
+      // A standard rank 5 AOE damage spell with extended area scaling would use dr2, so
+      // 3.5 + 1dpp. This strike using a longbow would deal 3.5 + 0.5dpp.
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\smallarea radius within \\longrange.
-        This requires shooting your weapon five times as part of the strike to cover the full area.
+        Choose a \\smallarea radius within \\longrange.
+        You shoot a volley of projectiles into their air that arc towards that area.
+        This requires shooting a \\weapontag{Projectile} weapon five times to cover the full area.
+        Creature can generally recognize the area that the arrows will land in with a DV 15 Awareness check.
+
+        During your next action, the arrows land, and you make a \\glossterm{strike} with your weapon from last round against all creatures in the area.
         On a miss, you still deal half damage.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
@@ -154,15 +158,12 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Rain of Arrows+',
 
-      // A standard rank 7 AOE damage spell with a range bonus would affect a Medium radius in Extreme range and
-      // deal 3.5 + 1.75dpp. This strike using a longbow would deal 7 + 1dpp.
-      effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against all creatures in a \\medarea radius within \\extrange.
-        The strike deals double damage.
-        This requires shooting your weapon five times as part of the strike to cover the full area.
-        On a miss, you still deal half damage.
-        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
-      `,
+      // A standard rank 9 AOE damage spell with extended area scaling would use dr6, so
+      // 4.5 + 2.75dpp. This strike using a longbow would deal 10.5 + 1.5dpp.
+      functionsLike: {
+        name: 'rain of arrows',
+        exceptThat: 'the area increases to a \\medarea radius, and the strike deals triple damage.',
+      },
       rank: 7,
       roles: ['artillery'],
     },
