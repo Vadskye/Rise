@@ -35,6 +35,7 @@ export const chronomancy: MysticSphere = {
         You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
         However, you must use it before using any other abilities or ending your turn.
       `,
+      roles: ['attune'],
       scaling: {
         2: 'You gain a +2 bonus to the reroll.',
         4: 'The bonus increases to +3.',
@@ -69,6 +70,7 @@ export const chronomancy: MysticSphere = {
         After you sprint in this way, this ability ends.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -80,6 +82,7 @@ export const chronomancy: MysticSphere = {
         After you rewind time in this way, this ability ends.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -93,6 +96,7 @@ export const chronomancy: MysticSphere = {
         After you rewind time in this way, this ability ends.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -340,6 +344,7 @@ export const chronomancy: MysticSphere = {
         You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -351,6 +356,7 @@ export const chronomancy: MysticSphere = {
         In addition, you can take two \\glossterm{minor actions} each round instead of one.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -363,6 +369,7 @@ export const chronomancy: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
       `,
       rank: 4,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -419,7 +426,7 @@ export const chronomancy: MysticSphere = {
 
       castingTime: 'minor action',
       effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
+        Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
         The target is placed into stasis, rendering it unconscious.
         While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
@@ -428,7 +435,7 @@ export const chronomancy: MysticSphere = {
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
       rank: 4,
-      scaling: { 6: `The maximum size of the target increases to Large.` },
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -476,6 +483,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -535,6 +543,7 @@ export const chronomancy: MysticSphere = {
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
     {
@@ -545,6 +554,7 @@ export const chronomancy: MysticSphere = {
         exceptThat: 'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).',
       },
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -618,6 +628,7 @@ export const chronomancy: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       narrative: `
         You speed up your fine motions, allowing you to lift pockets and perform subtle feats with ease.
       `,

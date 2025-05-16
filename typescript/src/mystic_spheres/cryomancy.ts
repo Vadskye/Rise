@@ -67,6 +67,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         All \\glossterm{icy terrain} created by your abilities must be damaged three times before it is destroyed, rather than only once.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -77,6 +78,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         The \\glossterm{difficulty value} to move or stay standing on \\glossterm{icy terrain} created by your abilities increases by 3.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -230,6 +232,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         In addition, you move at double speed on \\sphereterm{icy terrain}.
       `,
       rank: 2,
+    roles: ['attune'],
       type: 'Attune',
     },
 
@@ -242,6 +245,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -259,6 +263,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         However, most Large or larger creatures will break the ice trail if they step onto it, which may cause both of you to fall.
       `,
       rank: 4,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -276,6 +281,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The damage reduction increases to 10.`,
         5: `The damage reduction increases to 20.`,
@@ -411,6 +417,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         The items reappear at the end of the next round.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         2: `
           If you create body armor or a weapon, it can be created from any metallic special material other than cold iron and dragonscale.
@@ -467,6 +474,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
 
       rank: 3,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
       tags: ['Manifestation'],
@@ -483,6 +491,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
 
       rank: 6,
+      roles: ['attune'],
       // scaling: "accuracy",
       type: 'Attune (deep)',
       tags: ['Manifestation'],

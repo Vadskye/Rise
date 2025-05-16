@@ -158,20 +158,9 @@ export const telekinesis: MysticSphere = {
         Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
       `,
 
-      rank: 3,
+      rank: 2,
+      roles: ['attune'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Force Extension',
-
-      functionsLike: {
-        mass: true,
-        name: 'Force Extension',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
@@ -181,6 +170,7 @@ export const telekinesis: MysticSphere = {
         You can reload projectile weapons without requiring any \\glossterm{free hands}.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -358,6 +348,7 @@ export const telekinesis: MysticSphere = {
         Unlike normal, you can use this fly speed while you have \\glossterm{encumbrance}.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -440,6 +431,7 @@ export const telekinesis: MysticSphere = {
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -450,7 +442,8 @@ export const telekinesis: MysticSphere = {
         name: 'floating armament',
         exceptThat: EXCEPT_NOT_DEEP,
       },
-      rank: 6,
+      rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -462,7 +455,8 @@ export const telekinesis: MysticSphere = {
         It functions as if you were holding it in two hands if possible, or one hand otherwise.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
-      rank: 4,
+      rank: 3,
+      roles: ['attune'],
       tags: [],
       type: 'Attune (deep)',
     },
@@ -474,6 +468,7 @@ export const telekinesis: MysticSphere = {
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
@@ -496,6 +491,7 @@ export const telekinesis: MysticSphere = {
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The damage reduction increases to 10.`,
         5: `The damage reduction increases to 20.`,
@@ -589,6 +585,7 @@ export const telekinesis: MysticSphere = {
         At the end of the round, this ability ends, and you descend 20 feet without taking \\glossterm{falling damage}.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
   ],

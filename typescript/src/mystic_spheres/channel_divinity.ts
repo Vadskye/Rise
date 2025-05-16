@@ -85,6 +85,7 @@ export const channelDivinity: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -101,6 +102,7 @@ export const channelDivinity: MysticSphere = {
         In addition, you gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `
           The bonuses to hit points and damage resistance increase to +8.
@@ -252,6 +254,7 @@ export const channelDivinity: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -267,6 +270,7 @@ export const channelDivinity: MysticSphere = {
         You take a -10 foot penalty to your speed with all of your \\glossterm{movement modes}.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -284,6 +288,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Emotion'],
       type: 'Attune (deep)',
@@ -296,7 +301,7 @@ export const channelDivinity: MysticSphere = {
         You gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls} (see \\pcref{Vital Rolls}).
       `,
       rank: 2,
-      scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -309,6 +314,7 @@ export const channelDivinity: MysticSphere = {
         After you enhance an attack in this way, this effect ends.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The extra damage increases to 1d8.`,
         5: `The extra damage increases to 2d6.`,
@@ -356,6 +362,7 @@ export const channelDivinity: MysticSphere = {
         You are \\glossterm{immune} to \\abilitytag{Compulsion} and \\abilitytag{Emotion} attacks.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 
