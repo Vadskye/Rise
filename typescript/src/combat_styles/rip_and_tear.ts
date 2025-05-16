@@ -71,7 +71,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\slowed as a \\glossterm{condition}.
+        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim'],

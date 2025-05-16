@@ -233,6 +233,7 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Knockdown',
 
+      // We don't normally do brief effects on HP loss. Call it -0.4 EA, so 0.6 total?
       effect: `
         Make a melee \\glossterm{strike}.
         If the target loses hit points, it falls \\prone.

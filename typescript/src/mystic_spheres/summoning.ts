@@ -18,6 +18,7 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       scaling: 'accuracy',
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Sustain (standard)',
     },
@@ -72,6 +73,7 @@ export const summoning: MysticSphere = {
         name: 'summon monster',
       },
       rank: 1,
+      roles: ['narrative'],
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, standard)',
     },
@@ -152,7 +154,8 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
+          If the target loses \\glossterm{hit points}, this effect \\glossterm{pushes} it up to 15 feet horizontally away from you.
+          If this push is blocked by an obstacle, the target takes 1d6 damage.
         `,
         targeting: `
           Make an attack vs. Armor against something that is \\glossterm{grounded} within \\shortrange.
@@ -162,6 +165,7 @@ export const summoning: MysticSphere = {
           You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
       `,
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -172,7 +176,7 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target takes damage, you \\glossterm{knockback} it up to 15 feet horizontally away from you.
+          If the target takes damage, you \\glossterm{push} it up to 30 feet horizontally away from you.
         `,
         targeting: `
           Make an attack vs. Armor against something on solid ground within \\shortrange.

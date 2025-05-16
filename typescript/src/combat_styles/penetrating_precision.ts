@@ -195,7 +195,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
+        If you get a \\glossterm{critical hit} and the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['maim'],
