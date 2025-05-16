@@ -164,7 +164,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
                         However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
                         Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still halves it.
-                    \item Heavy: You gain a \plus1 bonus to your Armor, Fortitude, and Mental defenses.
+                    \item Heavy: You gain a \plus1 bonus to your Armor, Brawn, and Fortitude defenses.
                 \end{itemize}
             ",
             // Assume light armor, since it's the easiest to represent
@@ -225,7 +225,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
-                    \item Medium: You gain a \plus2 bonus to your Fortitude, Reflex, and Mental defenses, up to a maximum equal to your Armor defense.
+                    \item Medium: You gain a \plus2 bonus to your Brawn, Fortitude, and Reflex defenses, up to a maximum equal to your Armor defense.
                     \item Heavy: Your armor's bonus to your maximum damage resistance also applies to your maximum hit points.
                         This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
                 \end{itemize}
@@ -558,7 +558,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
-                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Fortitude defense.
+                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Brawn defense.
                         \rank{7} The bonuses increase to \plus2.
                     \end{sustainability}
                 }

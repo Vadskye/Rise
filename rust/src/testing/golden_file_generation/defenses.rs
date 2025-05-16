@@ -91,6 +91,7 @@ fn format_monsters_at_level(level: i32) -> String {
 
 fn format_defenses(creature: &Creature) -> String {
     let armor = creature.calc_defense(&Defense::Armor);
+    let brawn = creature.calc_defense(&Defense::Brawn);
     let fort = creature.calc_defense(&Defense::Fortitude);
     let reflex = creature.calc_defense(&Defense::Reflex);
     let ment = creature.calc_defense(&Defense::Mental);
@@ -98,12 +99,12 @@ fn format_defenses(creature: &Creature) -> String {
     let hp = creature.calc_hit_points();
     let dr = creature.calc_damage_resistance();
 
-    let points = armor * 2 + fort + reflex + ment;
+    let points = armor * 2 + brawn + fort + reflex + ment;
     let self_hit = (generic_attack_outcome(&creature, &creature).hit_probability * 100.0) as i32;
 
     format!(
         "### {name}
-A/F/R/M: {armor} / {fort} / {reflex} / {ment}
+A/B/F/R/M: {armor} / {brawn} / {fort} / {reflex} / {ment}
 HP/DR/Total: {hp} / {dr} / {hp_plus_dr}
 Points / Self-hit: {points} / {self_hit}%",
         name = creature.name.as_ref().unwrap(),

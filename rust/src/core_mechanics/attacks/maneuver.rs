@@ -151,14 +151,14 @@ impl Maneuver {
                 .attack()
                 .except_hit_damage(|d| {
                     d.extra_defense_effect =
-                        Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                        Some((Defense::Brawn, AttackTriggeredEffect::Grappled));
                 }),
             Self::GraspingStrikePlus => {
                 weapon
                     .attack()
                     .except_hit_damage(|d| {
                         d.extra_defense_effect =
-                            Some((Defense::Fortitude, AttackTriggeredEffect::Grappled));
+                            Some((Defense::Brawn, AttackTriggeredEffect::Grappled));
                         d.base_dice = d.base_dice.multiply(2)
                     })
             },

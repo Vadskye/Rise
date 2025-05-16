@@ -227,7 +227,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           The target is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Brawn against one creature within \\medrange.
         `,
       },
       // narrative: '',

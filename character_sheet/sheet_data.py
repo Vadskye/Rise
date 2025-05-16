@@ -1,7 +1,7 @@
 from cgi_simple import value_sum
 
 ATTRIBUTES = "Strength Dexterity Constitution Intelligence Perception Willpower".split()
-DEFENSES = "Armor Fortitude Reflex Mental".split()
+DEFENSES = "Armor Brawn Fortitude Reflex Mental".split()
 ATTRIBUTE_SHORTHAND = {
     "strength": "Str",
     "dexterity": "Dex",

@@ -54,13 +54,14 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory', 'Compulsion'],
     },
 
+    // Could be either Brawn or Fort?
     {
       name: 'Faltering Roar',
 
       attack: {
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Brawn against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       rank: 5,

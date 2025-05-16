@@ -35,6 +35,7 @@ impl CreatureType {
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
         match defense {
             Defense::Armor => 4,
+            Defense::Brawn => 4,
             Defense::Fortitude => 4,
             Defense::Reflex => 4,
             Defense::Mental => 4,
@@ -109,8 +110,9 @@ impl CreatureType {
 
     fn latex_defenses(&self) -> String {
         format!(
-            "\\textbf<Defenses:> {armor} Armor, {fort} Fortitude, {ref} Reflex, {ment} Mental",
+            "\\textbf<Defenses:> {armor} Armor, {brawn} brawn, {fort} Fortitude, {ref} Reflex, {ment} Mental",
             armor=latex_formatting::modifier(self.defense_bonus(&Defense::Armor)),
+            brawn=latex_formatting::modifier(self.defense_bonus(&Defense::Brawn)),
             fort=latex_formatting::modifier(self.defense_bonus(&Defense::Fortitude)),
             ref=latex_formatting::modifier(self.defense_bonus(&Defense::Reflex)),
             ment=latex_formatting::modifier(self.defense_bonus(&Defense::Mental)),

@@ -283,7 +283,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 You may spend \glossterm{insight points} to gain access to one additional scholastic insight per two insight points.
 
                 {
-                    \parhead{Arcane Tattoo} You gain a \plus3 bonus to your Fortitude defense, Reflex defense, or Mental defense.
+                    \parhead{Arcane Tattoo} You gain a \plus3 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
                     \par You can choose this insight multiple times, choosing a different defense each time.
 
                     \parhead{Esoteric Spell Knowledge} You learn a single spell from any arcane \glossterm{mystic sphere}.
@@ -535,7 +535,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
-                    If you specialize in this school, you gain a \plus2 bonus to your Fortitude, Reflex, or Mental defense.
+                    If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
                     This ability has the \abilitytag{Swift} tag, so it protects you from attacks during the current phase.
 

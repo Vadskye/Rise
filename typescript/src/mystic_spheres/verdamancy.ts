@@ -82,7 +82,7 @@ export const verdamancy: MysticSphere = {
           In addition, this condition is removed if the target takes damage from a \\atFire ability.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\medrange.
+          Make an attack vs. Brawn against one Large or smaller \\glossterm{grounded} creature within \\medrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
         `,
       },
@@ -119,7 +119,7 @@ export const verdamancy: MysticSphere = {
           The target falls \\glossterm{prone}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Brawn against one creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
           After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
         `,

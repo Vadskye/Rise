@@ -320,7 +320,7 @@ export const revelation: MysticSphere = {
           Each target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
         `,
         targeting: `
-          Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
+          Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Mental with a +2 accuracy bonus against up to two creatures within \\shortrange.
         `,
       },
@@ -340,7 +340,7 @@ export const revelation: MysticSphere = {
           Each target \\glossterm{briefly} takes a -4 penalty to the chosen defense.
         `,
         targeting: `
-          Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
+          Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Mental against up to three creatures within \\medrange.
         `,
       },
@@ -420,7 +420,7 @@ export const revelation: MysticSphere = {
       rank: 3,
       roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Sustain (minor)', 'Visual'],
+      tags: ['Sustain (attuneable, minor)', 'Visual'],
     },
 
     {

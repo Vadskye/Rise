@@ -213,7 +213,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
+          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
         `,
       },
       rank: 1,
@@ -229,7 +229,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\medarea radius from you.
+          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
         `,
       },
       rank: 5,

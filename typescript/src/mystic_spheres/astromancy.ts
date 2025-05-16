@@ -438,7 +438,7 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Air.
           When it returns, you deal it \\damageranktwo.
-          If it is Large or smaller and your attack result also beats its Fortitude defense, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If it is Large or smaller and your attack result also beats its Brawn defense, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `

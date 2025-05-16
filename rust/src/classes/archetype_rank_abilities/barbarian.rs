@@ -502,7 +502,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Bear} You gain a \plus1 bonus to your Constitution.
 
-                \subcf{Crocodile} If your attack hits the target's Fortitude defense, it does not have to lose hit points for you to knock it prone or grapple it.
+                \subcf{Crocodile} If your attack hits the target's Brawn defense, it does not have to lose hit points for you to knock it prone or grapple it.
 
                 % Too much?
                 \subcf{Eagle} The Perception bonus increases to \plus2.

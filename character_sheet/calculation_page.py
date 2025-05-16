@@ -110,6 +110,7 @@ def non_attribute():
             div({"class": "section-header"}, "Non-Attribute Statistics"),
             stat_row("Attunement points"),
             stat_row("damage_resistance_max", display_name="Damage resistance", explanation_key="damage_resistance_explanation"),
+            stat_row("Encumbrance"),
             stat_row("Land speed"),
             stat_row("Vital rolls"),
         ]
@@ -120,7 +121,7 @@ def strength_based():
         [
             div({"class": "section-header"}, "Strength-Based"),
             stat_row("Brawling accuracy"),
-            stat_row("Encumbrance"),
+            stat_row("Brawn"),
             stat_row("Mundane power"),
             stat_row("Horizontal jump distance"),
             stat_row("Carrying strength"),

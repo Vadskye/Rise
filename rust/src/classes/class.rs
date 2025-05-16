@@ -153,7 +153,7 @@ impl Class {
             // 2 points for all nonexotics
             + if self.weapon_proficiencies().non_exotic_weapons { 2 } else { 0 }
             // 2 points per non-Armor defense
-            + 2 * (self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental))
+            + 2 * (self.defense_bonus(&Defense::Brawn) + self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental))
             // 4 points per Armor defense
             + self.defense_bonus(&Defense::Armor) * 4
             // 6 points per mandatory attribute
@@ -1661,7 +1661,7 @@ impl Class {
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \domainability{Gift} You gain a \plus2 bonus to your Fortitude defense.
+                        \domainability{Gift} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
                         \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{damage resistance}.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}

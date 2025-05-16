@@ -117,7 +117,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             name: "Stunning Discharge".to_string(),
                             ability_type: AbilityType::Normal,
                             effect: r"
-                                The $name makes a $accuracy attack vs. Fortitude against all creatures in a \medarea radius from it.
+                                The $name makes a $accuracy attack vs. Mental against all creatures in a \medarea radius from it.
                                 \hit Each target that has no remaining \glossterm{damage resistance} is \stunned as a \glossterm{condition}.
                                 \critcondition
                             ".to_string(),
