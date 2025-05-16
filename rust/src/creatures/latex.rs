@@ -6,7 +6,7 @@ pub fn format_creature(creature: &Creature) -> String {
     format!(
         "
             HP {hit_points}, DR {damage_resistance}
-            AD {armor}, Fort {fortitude}, Ref {reflex}, Ment {mental}
+            AD {armor}, Brn {brawn}, Fort {fortitude}, Ref {reflex}, Ment {mental}
             {attacks}
             Attr: {attributes}
             Power: {magical_power}✨/{mundane_power}
@@ -19,6 +19,7 @@ pub fn format_creature(creature: &Creature) -> String {
             .join("; "),
         attributes = format_creature_attributes(creature).join(", "),
         armor = creature.calc_defense(&Defense::Armor),
+        brawn = creature.calc_defense(&Defense::Brawn),
         fortitude = creature.calc_defense(&Defense::Fortitude),
         damage_resistance = creature.calc_damage_resistance(),
         hit_points = creature.calc_hit_points(),

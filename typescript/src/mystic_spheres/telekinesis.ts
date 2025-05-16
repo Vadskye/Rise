@@ -71,7 +71,7 @@ export const telekinesis: MysticSphere = {
           Otherwise, it is unable to move towards you, and that part of its movement is wasted.
       `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Brawn against one creature within \\medrange.
         `,
       },
 
@@ -188,7 +188,7 @@ export const telekinesis: MysticSphere = {
           This spell has no immediate effect.
           Whenever you take damage during this spell's effect, you build up a kinetic charge.
           This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          When you stop sustaining this spell, make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+          When you stop sustaining this spell, make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +5.
         `,
       },
@@ -219,7 +219,7 @@ export const telekinesis: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex and Fortitude against everything in a \\smallarea cone from you.
+          Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
         `,
       },
       rank: 3,
@@ -236,7 +236,7 @@ export const telekinesis: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex and Fortitude against everything in a \\largearea cone from you.
+          Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.
         `,
       },
       rank: 6,
@@ -250,7 +250,7 @@ export const telekinesis: MysticSphere = {
           You \\glossterm{push} each target up to 30 feet in a straight line.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything that is Large or smaller in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\smallarea radius within \\medrange of you.
         `,
       },
       rank: 2,
@@ -263,7 +263,7 @@ export const telekinesis: MysticSphere = {
           You \\glossterm{push} each target up to 60 feet in a straight line.
         `,
         targeting: `
-          Make an attack vs. Fortitude against everything that is Huge or smaller in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Brawn against everything that is Huge or smaller in a \\smallarea radius within \\medrange of you.
         `,
       },
       rank: 6,
@@ -278,7 +278,7 @@ export const telekinesis: MysticSphere = {
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something Medium or smaller within \\medrange.
+          Make an attack vs. Brawn against something Medium or smaller within \\medrange.
         `,
       },
 
@@ -294,7 +294,7 @@ export const telekinesis: MysticSphere = {
           Moving the target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something Large or smaller within \\medrange.
+          Make an attack vs. Brawn against something Large or smaller within \\medrange.
         `,
       },
       // narrative: '',
@@ -485,7 +485,7 @@ export const telekinesis: MysticSphere = {
       // "Attacked your Armor or Reflex" is confusing against falling damage.
       effect: `
         You surround yourself with two layers of shielding that reduce the power of attacks against you.
-        Whenever you would take damage from an ability that attacked your Armor or Reflex defense, you reduce that damage by 5, and one layer of shielding is destroyed.
+        Whenever you would take damage from an ability that attacked your Armor, Brawn, or Reflex defense, you reduce that damage by 5, and one layer of shielding is destroyed.
         When the last layer is destroyed, this ability provides no further benefit.
 
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
@@ -512,7 +512,7 @@ export const telekinesis: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
-          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Fortitude against it.
+          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Brawn against it.
           Creatures in the area at the time that the spell is cast are unaffected by the spell.
         `,
       },
@@ -567,7 +567,7 @@ export const telekinesis: MysticSphere = {
           It suffers no ill effects beyond that range.
       `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Brawn against one creature within \\shortrange.
         `,
       },
 

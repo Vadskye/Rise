@@ -135,7 +135,7 @@ impl StandardAttack {
                 // +1 accuracy at ranks 3/5/7
                 accuracy: max(0, (rank - 1) / 2),
                 crit: None,
-                defense: Defense::Fortitude,
+                defense: Defense::Brawn,
                 extra_context: Some(AbilityExtraContext {
                     cooldown: None,
                     movement: Some(AbilityMovement {

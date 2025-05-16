@@ -9,6 +9,7 @@ use super::HasAttributes;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Defense {
     Armor,
+    Brawn,
     Fortitude,
     Mental,
     Reflex,
@@ -16,12 +17,13 @@ pub enum Defense {
 
 impl Defense {
     pub fn all() -> Vec<Self> {
-        vec![Self::Armor, Self::Fortitude, Self::Mental, Self::Reflex]
+        vec![Self::Armor, Self::Brawn, Self::Fortitude, Self::Mental, Self::Reflex]
     }
 
     pub fn name(&self) -> &str {
         match self {
             Self::Armor => "armor",
+            Self::Brawn => "brawn",
             Self::Fortitude => "fortitude",
             Self::Mental => "mental",
             Self::Reflex => "reflex",
@@ -31,6 +33,7 @@ impl Defense {
     pub fn title(&self) -> &str {
         match self {
             Self::Armor => "Armor",
+            Self::Brawn => "Brawn",
             Self::Fortitude => "Fortitude",
             Self::Mental => "Mental",
             Self::Reflex => "Reflex",
@@ -40,6 +43,7 @@ impl Defense {
     pub fn shorthand_name(&self) -> &str {
         match self {
             Self::Armor => "AD",
+            Self::Brawn => "Brn",
             Self::Fortitude => "Fort",
             Self::Mental => "Ment",
             Self::Reflex => "Ref",
@@ -50,6 +54,7 @@ impl Defense {
         match self {
             // Armor has a more complicated calculation
             Self::Armor => None,
+            Self::Brawn => Some(Attribute::Strength),
             Self::Fortitude => Some(Attribute::Constitution),
             Self::Mental => Some(Attribute::Willpower),
             Self::Reflex => Some(Attribute::Dexterity),
@@ -133,6 +138,7 @@ where
         if matches!(self.category, CreatureCategory::Monster(_, _)) {
             let base_attribute = match defense {
                 Defense::Armor => self.get_base_attribute(&Attribute::Dexterity),
+                Defense::Brawn => self.get_base_attribute(&Attribute::Strength),
                 Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
                 Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
                 Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
@@ -151,6 +157,7 @@ where
 
         match defense {
             Defense::Armor => armor_attribute_modifier,
+            Defense::Brawn => self.get_base_attribute(&Attribute::Strength),
             Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
             Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
             Defense::Mental => self.get_base_attribute(&Attribute::Willpower),

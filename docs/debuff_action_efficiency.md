@@ -231,7 +231,7 @@ An empowered character rolls damage twice and keeps the higher result.
 A focused character rolls attacks rolls twice and keeps the higher result.
 
 ### Fortified
-A fortified character gains a +2 bonus to their Fortitude and Mental defenses.
+A fortified character gains a +2 bonus to their Brawn, Fortitude, and Mental defenses.
 
 ### Maximized
 A maximized character deals maximum damage.

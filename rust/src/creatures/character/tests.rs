@@ -83,6 +83,15 @@ fn it_calculates_level_21_fighter_defenses() {
         "10 level scaling + 1 class",
     );
     assert_eq!(
+        "Brn b13 f14",
+        format!(
+            "Brn b{} f{}",
+            baseline.calc_defense(&Defense::Brawn),
+            fighter.calc_defense(&Defense::Brawn)
+        ),
+        "3 base + 10 level scaling + 1 str",
+    );
+    assert_eq!(
         "Fort b13 f14",
         format!(
             "Fort b{} f{}",

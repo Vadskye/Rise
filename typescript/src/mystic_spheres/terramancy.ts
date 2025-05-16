@@ -131,7 +131,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
+          Make an attack vs. Brawn against something within \\medrange.
           You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
           This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
@@ -153,7 +153,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           \\damagerankfive.
         `,
         targeting: `
-          Make an attack vs. Fortitude against a \\glossterm{grounded} creature or object within \\shortrange.
+          Make an attack vs. Brawn against a \\glossterm{grounded} creature or object within \\shortrange.
           You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
         `,
       },
@@ -326,7 +326,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses \\glossterm{hit points} from this damage and your attack also hits its Fortitude defense, it falls \\prone.
+          If the target loses \\glossterm{hit points} from this damage and your attack also hits its Brawn defense, it falls \\prone.
         `,
         missGlance: true,
         targeting: `
@@ -377,7 +377,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           Standing up from a prone position costs its full speed rather than only half its speed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
+          Make an attack vs. Brawn against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },

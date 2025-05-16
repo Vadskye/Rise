@@ -173,12 +173,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{itemize}
                     \item Air: You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                    \item Earth: The Fortitude bonus increases to \plus2.
+                    \item Earth: You gain a \plus1 bonus to your Brawn defense.
                     \item Fire: You are immune to \atFire attacks.
                     \item Water: Your swim speed increases to average.
                 \end{itemize}
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
+            modifiers: Some(vec![Modifier::Defense(Defense::Brawn, 1)]),
         },
         RankAbility {
             complexity: 1,

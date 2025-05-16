@@ -1,5 +1,5 @@
 use crate::core_mechanics::{Defense, HitPointProgression};
-use crate::core_mechanics::Defense::{Armor, Fortitude, Reflex, Mental};
+use crate::core_mechanics::Defense::{Armor, Brawn, Fortitude, Reflex, Mental};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Default, Hash)]
@@ -42,36 +42,42 @@ impl Role {
         match self {
             Role::Brute => match defense {
                 &Armor => 4,
-                &Fortitude => 2,
+                &Brawn => 2,
+                &Fortitude => 1,
                 &Reflex => 1,
                 &Mental => 0,
             },
             Role::Leader => match defense {
                 &Armor => 4,
+                &Brawn => 1,
                 &Fortitude => 1,
                 &Reflex => 1,
                 &Mental => 1,
             },
             Role::Mystic => match defense {
                 &Armor => 3,
+                &Brawn => 0,
                 &Fortitude => 1,
-                &Reflex => 1,
+                &Reflex => 2,
                 &Mental => 3,
             },
             Role::Skirmisher => match defense {
                 &Armor => 4,
+                &Brawn => 1,
                 &Fortitude => 0,
                 &Reflex => 2,
                 &Mental => 1,
             },
             Role::Sniper => match defense {
                 &Armor => 3,
+                &Brawn => 0,
                 &Fortitude => 0,
                 &Reflex => 2,
-                &Mental => 1,
+                &Mental => 2,
             },
             Role::Warrior => match defense {
                 &Armor => 5,
+                &Brawn => 1,
                 &Fortitude => 1,
                 &Reflex => 0,
                 &Mental => 0,

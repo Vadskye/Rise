@@ -64,6 +64,45 @@ def calc_brawling_accuracy():
         ]
     )
 
+def calc_brwan():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Brawn"),
+            equation(
+                [
+                    underlabel(
+                        "Lvl/2",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "brawn_scaling_display",
+                                "value": "(floor(@{level}/2))",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Str",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "brawn_strength_display",
+                                "value": "(@{strength})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("brawn", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "brawn_display",
+                    "value": "@{brawn}",
+                },
+            ),
+        ]
+    )
+
 def calc_encumbrance():
     return flex_row(
         [

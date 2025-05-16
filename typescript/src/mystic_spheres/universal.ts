@@ -20,6 +20,8 @@ export const universal: MysticSphere = {
     As with all other spells, you should feel free to rename them for your own character to make them more interesting and relevant for you.
     For example, a pyromancer might rename their \\spell{mystic bolt} spell to something more fire-themed, like \\textit{firebolt} or \\textit{flamelance}.
 
+    % TODO: should any of these hit Brawl? Check after going through the spheres in more
+    % detail.
     \\begin{dtable!*}
       \\lcaption{Universal Mystic Spheres}
       \\begin{dtabularx}{\\textwidth}{l >{\\lcol}X >{\\lcol}X >{\\lcol}X}

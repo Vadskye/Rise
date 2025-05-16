@@ -542,7 +542,7 @@ export const summoning: MysticSphere = {
           While it is below its maximum hit points, it is \\stunned.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       narrative: `
@@ -563,7 +563,7 @@ export const summoning: MysticSphere = {
           While it is below its maximum hit points, it is \\confused.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
       rank: 5,

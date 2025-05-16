@@ -235,7 +235,7 @@ impl CustomAbility {
     pub fn earthbind(rank: i32) -> Self {
         Self {
             effect: format!("
-                The $name makes a $accuracy attack vs. Fortitude against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
+                The $name makes a $accuracy attack vs. Brawn against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
                 It gains a +2 \\glossterm<accuracy> bonus if it is \\glossterm<grounded> on stone.
                 \\hit As a \\glossterm<condition>, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
                 It is unable to use any fly speed or glide speed, and its jump distance is halved.
