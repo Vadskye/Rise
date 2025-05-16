@@ -60,24 +60,10 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `Each target is \\glossterm{briefly} \\slowed.`,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-        `,
-      },
-      rank: 3,
-      roles: ['flash'],
-      tags: ['Auditory'],
-    },
-
-    {
-      name: 'Faltering Roar+',
-
-      attack: {
-        hit: `\\damagerankfive, and each target is \\glossterm{briefly} \\slowed.`,
-        targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 7,
+      rank: 5,
       roles: ['flash'],
       tags: ['Auditory'],
     },
