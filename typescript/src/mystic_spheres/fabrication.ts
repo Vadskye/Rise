@@ -60,6 +60,7 @@ export const fabrication: MysticSphere = {
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -74,6 +75,7 @@ export const fabrication: MysticSphere = {
         The shield automatically disappears at the end of the round, but you can summon it again in future rounds.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -89,6 +91,7 @@ export const fabrication: MysticSphere = {
         The copy lasts as long as you stay attuned to this effect.
       `,
       rank: 2,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -101,6 +104,7 @@ export const fabrication: MysticSphere = {
           'the copy can appear in your backpack, or some other small personal storage you are touching.',
       },
       rank: 5,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -449,6 +453,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },

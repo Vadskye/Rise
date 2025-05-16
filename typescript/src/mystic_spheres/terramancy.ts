@@ -205,6 +205,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -216,6 +217,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         name: 'earthen anchor',
       },
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -270,7 +272,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
-      type: 'Attune',
+      roles: ['narrative'],
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -443,22 +446,37 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Earthglide',
 
       effect: `
-        You can move through earth and unworked stone at a rate of 10 feet per round.
-        This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
+        You gain a slow \\glossterm{burrow speed}.
+        This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
       `,
-      rank: 5,
-      type: 'Attune',
+      rank: 3,
+      roles: ['narrative'],
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
       name: 'Rapid Earthglide',
 
       effect: `
-        You can move through earth and unworked stone at a rate equal to your \\glossterm{base speed}.
+        You gain an average \\glossterm{burrow speed}.
+        This does not allow you to breathe while inside the earth, so your ability to traverse long distances may be limited.
+      `,
+      rank: 6,
+      roles: ['attune'],
+      type: 'Sustain (attuneable, standard)',
+    },
+
+    {
+      name: 'Solid Earthglide',
+
+      effect: `
+        You gain a slow \\glossterm{burrow speed}.
+        Unlike most burrow speeds, this burrow speed also allows you to pass through solid stone.
         This does not allow you to breathe while inside the earth or stone, so your ability to traverse long distances may be limited.
       `,
-      rank: 7,
-      type: 'Attune (deep)',
+      rank: 5,
+      roles: ['narrative'],
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -473,6 +491,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The damage reduction increases to 10.`,
         5: `The damage reduction increases to 20.`,
@@ -509,38 +528,27 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
-        When you do, gravity pulls you towards that surface instead of in the normal direction.
+        When you do, gravity pulls you towards that object instead of in the normal direction.
         This allows you to walk normally on walls or even ceilings.
 
         Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty value} 10 Balance check to keep your feet.
         Failure means you fall \\prone and your movement for that phase ends.
       `,
       rank: 2,
-      scaling: {
-        4: `
-          The maximum distance increases to 15 feet.
-          This can allow you to pull yourself towards distant objects, though you may take falling damage if you fall too far.
-        `,
-        6: `The maximum distance increases to 30 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
 
     {
-      name: 'Mass Personal Gravitation',
+      name: 'Distant Personal Gravitation',
 
       functionsLike: {
-        mass: true,
-        name: 'earthen anchor',
+        name: 'personal gravitation',
+        exceptThat: 'the maximum distance from you to the object increases to 30 feet. This can cause you to take \\glossterm{falling damage}.',
       },
-      rank: 4,
-      scaling: {
-        6: `
-          The maximum distance increases to 15 feet.
-          This can allow the target to pull itself towards distant objects, though it may take falling damage if it falls too far.
-        `,
-      },
-      type: 'Attune (target)',
+      rank: 6,
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {
@@ -552,6 +560,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Impact} and \\weapontag{Resonating} weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 1,
+      roles: ['attune'],
       narrative: `
         You encase one of your arms in a mighty stone bulwark, empowering it to crush your foes with sheer brute force.
       `,
@@ -567,6 +576,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         name: 'stonefist',
       },
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -580,6 +590,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
       },
       rank: 6,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -615,6 +626,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -622,27 +634,22 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Tremorsense',
 
       effect: `
-        You gain \\trait{tremorsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Tremorsense}).
+        You gain \\trait{tremorsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Tremorsense}).
+        If you already have tremorsense, the range of your tremorsense increases by 60 feet.
       `,
-      rank: 1,
-      scaling: {
-        3: `The range increases to 45 feet.`,
-        5: `The range increases to 60 feet.`,
-        7: `The range increases to 90 feet.`,
-      },
+      rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
       name: 'Tremorsight',
 
       effect: `
-        You gain \\trait{tremorsight} with a 15 foot range, allowing you to see your surroundings without light (see \\pcref{Tremorsight}).
+        You gain \\trait{tremorsight} with a 30 foot range, allowing you to see your surroundings without light (see \\pcref{Tremorsight}).
+        If you already have tremorsight, the range of your tremorsight increases by 30 feet.
       `,
-      rank: 3,
-      scaling: {
-        5: `The range increases to 30 feet.`,
-        7: `The range increases to 45 feet.`,
-      },
+      rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -658,6 +665,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         The items appear in your hand or on the ground at your feet.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         2: `
           If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonfang (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).

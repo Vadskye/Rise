@@ -79,8 +79,9 @@ export const umbramancy: MysticSphere = {
         Darkvision and similar abilities which do not require light still function within the area.
       `,
       rank: 6,
+      roles: ['attune'],
       tags: ['Visual'],
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -134,13 +135,10 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         You gain \\trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \\pcref{Darkvision}).
+        If you already have darkvision, the range of your darkvision increases by 60 feet.
       `,
       rank: 1,
-      scaling: {
-        3: `The range increases to 75 feet.`,
-        5: `The range increases to 90 feet.`,
-        7: `The range increases to 120 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -153,10 +151,7 @@ export const umbramancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: `The range increases to 75 feet.`,
-        7: `The range increases to 90 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -322,7 +317,24 @@ export const umbramancy: MysticSphere = {
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 6,
+      rank: 4,
+      roles: ['attune'],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Efficient Shadow Mantle',
+
+      functionsLike: {
+        name: "shadow mantle",
+        exceptThat: EXCEPT_NOT_DEEP,
+      },
+      narrative: `
+        Your physical form becomes blurred and shifts in and out of existence.
+        This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
+      `,
+      rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -334,6 +346,7 @@ export const umbramancy: MysticSphere = {
         This invisibility ends after you take any action, or if you stop being shadowed.
       `,
       rank: 2,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -346,6 +359,7 @@ export const umbramancy: MysticSphere = {
         This invisibility ends after you take a standard action, or if you stop being shadowed.
       `,
       rank: 6,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -394,6 +408,7 @@ export const umbramancy: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -538,6 +553,7 @@ export const umbramancy: MysticSphere = {
         You can suppress or resume this ability as a \\glossterm{free action}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -550,6 +566,7 @@ export const umbramancy: MysticSphere = {
       },
       // narrative: '',
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -581,6 +598,7 @@ export const umbramancy: MysticSphere = {
         The dark area must be large enough to hold you if you were in that location.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
   ],

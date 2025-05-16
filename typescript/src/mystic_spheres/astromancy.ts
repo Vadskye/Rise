@@ -67,6 +67,7 @@ export const astromancy: MysticSphere = {
         If the source of the wound is unclear, the teleportation direction is chosen randomly.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -78,6 +79,7 @@ export const astromancy: MysticSphere = {
         Conjuring a shield in this way does not automatically strap it to your arm, so you must still spend the normal action to don it (see \\tref{Donning Armor}).
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -88,6 +90,7 @@ export const astromancy: MysticSphere = {
         Your destination must be adjacent to the target.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -521,6 +524,7 @@ export const astromancy: MysticSphere = {
         Will they ever learn?
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -535,6 +539,7 @@ export const astromancy: MysticSphere = {
         Why would you walk when you can teleport?
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -545,22 +550,13 @@ export const astromancy: MysticSphere = {
         You do not return until the end of the round.
         After you flicker in this way, you \\glossterm{briefly} cannot flicker with this ability again.
       `,
-      rank: 3,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
         Few people send themselves to another plane just to avoid danger, but it's a virtually unbeatable defense.
       `,
+      rank: 3,
+      roles: ['attune'],
       type: 'Attune',
-    },
-    {
-      name: 'Mass Astral Instability',
-
-      functionsLike: {
-        mass: true,
-        name: 'astral instability',
-      },
-      rank: 5,
-      type: 'Attune (target)',
     },
     {
       name: 'Hostile Transposition',
@@ -630,13 +626,10 @@ export const astromancy: MysticSphere = {
         It does not allow you to ignore armor, shields, or or similar items carried or worn by the targets of your attacks.
       `,
       rank: 3,
+      roles: ['attune'],
       narrative: `
         You augment your weapons with the ability to travel short distances through the Astral Plane to reach their targets.
       `,
-      scaling: {
-        5: 'Your strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.',
-        7: 'Your strikes can pass through any number of physical obstacles with a combined thickness of five feet or less.',
-      },
       type: 'Attune',
     },
     {
@@ -647,9 +640,7 @@ export const astromancy: MysticSphere = {
         name: 'phasing blade',
       },
       rank: 5,
-      scaling: {
-        7: "The target's strikes can pass through any number of physical obstacles with a combined thickness of two feet or less.",
-      },
+      roles: ['attune'],
       type: 'Attune (target)',
     },
     {
@@ -663,9 +654,7 @@ export const astromancy: MysticSphere = {
         You augment your spells with the ability to travel short distances through the Astral Plane to reach their targets.
       `,
       rank: 4,
-      scaling: {
-        6: 'Your spells can pass through any number of physical obstacles with a combined thickness of two feet or less.',
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -682,6 +671,7 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -692,6 +682,7 @@ export const astromancy: MysticSphere = {
         name: 'phasestep',
       },
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -708,6 +699,7 @@ export const astromancy: MysticSphere = {
         You augment your body with the ability to travel through the Astral Plane to reach your destination.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -755,6 +747,7 @@ export const astromancy: MysticSphere = {
         By channeling your spells through the Astral Plane, you can reach foes that are farther away than would normally be possible.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -765,6 +758,7 @@ export const astromancy: MysticSphere = {
         This does not affect spells that do not have a range listed in feet.
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
     {

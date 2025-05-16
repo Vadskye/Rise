@@ -102,18 +102,8 @@ export const photomancy: MysticSphere = {
         If you move at least 10 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Blurred Motion',
-
-      functionsLike: {
-        mass: true,
-        name: 'blurred motion',
-      },
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
@@ -123,6 +113,7 @@ export const photomancy: MysticSphere = {
         If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +2 bonus to Armor defense until the end of that round.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -339,6 +330,7 @@ export const photomancy: MysticSphere = {
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
       rank: 5,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -355,6 +347,7 @@ export const photomancy: MysticSphere = {
         It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -367,6 +360,7 @@ export const photomancy: MysticSphere = {
         This includes mundane equipment you carry, such as torches.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -385,6 +379,7 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -397,6 +392,7 @@ export const photomancy: MysticSphere = {
         exceptThat: 'the miss chance increases to 50\\%.',
       },
       rank: 6,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',
     },
@@ -584,6 +580,7 @@ export const photomancy: MysticSphere = {
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -596,6 +593,7 @@ export const photomancy: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
     {
@@ -608,6 +606,7 @@ export const photomancy: MysticSphere = {
         name: 'disguise image',
       },
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
   ],

@@ -225,9 +225,7 @@ export const vivimancy: MysticSphere = {
         You can make this choice after learning the \\glossterm{vital roll} for the new vital wound.
       `,
       rank: 4,
-      scaling: {
-        6: `You can ignore two vital wound effects.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -240,6 +238,7 @@ export const vivimancy: MysticSphere = {
       },
       // narrative: '',
       rank: 6,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -286,28 +285,13 @@ export const vivimancy: MysticSphere = {
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: 'The bonus increases to +8.',
         5: 'The bonus increases to +16.',
         7: 'The bonus increases to +32.',
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Lifegift',
-
-      functionsLike: {
-        mass: true,
-        name: 'Lifegift',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: 'The bonus increases to +8.',
-        7: 'The bonus increases to +16.',
-      },
-      type: 'Attune (target)',
     },
 
     {
@@ -319,6 +303,7 @@ export const vivimancy: MysticSphere = {
         Whenever you regain hit points, you regain the maximum possible number instead of rolling.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -329,6 +314,7 @@ export const vivimancy: MysticSphere = {
         name: 'wellspring of life',
       },
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -368,6 +354,7 @@ export const vivimancy: MysticSphere = {
         After you enhance a spell in this way, this effect ends.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The extra damage increases to 2d6, and the hit point loss increases to 4.`,
         5: `The extra damage increases to 4d6, and the hit point loss increases to 8.`,
@@ -462,6 +449,7 @@ export const vivimancy: MysticSphere = {
         However, you take a -4 penalty to your maximum \\glossterm{hit points}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +16, but the penalty increases to -8.`,
         5: `The bonus increases to +32, but the penalty increases to -16.`,
@@ -601,6 +589,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 1,
       scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -615,6 +604,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 4,
       scaling: { special: 'The damage increases by 1d6 for each rank beyond 4.' },
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -628,6 +618,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 7,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -639,6 +630,7 @@ export const vivimancy: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -652,13 +644,10 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         You gain \\trait{lifesense} with a 60 foot range, allowing you to sense the location of living things without light (see \\pcref{Lifesense}).
+        If you already have lifesense, the range of your lifesense increases by 60 feet.
       `,
       rank: 1,
-      scaling: {
-        3: `The range increases to 75 feet.`,
-        5: `The range increases to 90 feet.`,
-        7: `The range increases to 120 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -668,42 +657,8 @@ export const vivimancy: MysticSphere = {
         You gain \\trait{lifesight} with a 30 foot range, allowing you to see living things without light (see \\pcref{Lifesight}).
       `,
       rank: 2,
-      scaling: {
-        4: `The range increases to 45 feet.`,
-        6: `The range increases to 60 feet.`,
-      },
+      roles: ['attune'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Lifesense',
-
-      functionsLike: {
-        mass: true,
-        name: 'Lifesense',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: 'The range increases to 90 feet.',
-        7: 'The range increases to 120 feet.',
-      },
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Mass Lifesight',
-
-      functionsLike: {
-        mass: true,
-        name: 'Lifesight',
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: {
-        6: 'The range increases to 60 feet.',
-      },
-      type: 'Attune (target)',
     },
 
     {
