@@ -2290,7 +2290,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
-      const sizeModifier = defense === 'reflex' ? v.size_reflex_modifier : 0;
+      let sizeModifier = 0;
+      if (defense === 'reflex') {
+        sizeModifier = v.size_reflex_modifier;
+      } else if (defense === 'brawn') {
+        sizeModifier = -v.size_reflex_modifier;
+      }
       // Monsters only apply half attribute modifier
       const attributeModifier = v.challenge_rating ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue =
