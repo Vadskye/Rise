@@ -245,7 +245,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           This also typically prevents it from using a land speed, though it can potentially use other speeds if it can make contact with relevant objects (such as a wall for a climb speed).
         `,
         targeting: `
-          Make an attack vs. Fortitude against anyhthing within \\medrange.
+          Make an attack vs. Brawn against anyhthing within \\medrange.
         `,
       },
       // narrative: '',
@@ -265,7 +265,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
           It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Fortitude against something within \\medrange.',
+        targeting: 'Make an attack vs. Brawn against something within \\medrange.',
       },
       // narrative: '',
       rank: 2,
@@ -283,7 +283,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
           It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Fortitude against something within \\medrange.',
+        targeting: 'Make an attack vs. Brawn against something within \\medrange.',
       },
       // narrative: '',
       rank: 5,
@@ -336,7 +336,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           You create a continuous blast of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The wind blows either towards you or away from you.
           You choose the direction when you cast the spell.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn against everything in the area.
         `,
       },
       // effect: '',
@@ -464,7 +464,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       // narrative: '',
@@ -482,7 +482,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         targeting: `
           Make an attack vs. Reflex against one object within \\medrange.
           The object must have a \\glossterm{weight category} of Small or less.
-          If the object is attended by a creature, the attack must also beat the attending creature's Fortitude and Reflex defenses.
+          If the object is attended by a creature, the attack must also beat the attending creature's Brawn and Reflex defenses.
           If it is held in two hands or well secured, this attack automatically fails.
         `,
       },
