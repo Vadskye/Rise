@@ -238,6 +238,7 @@ export const thaumaturgy: MysticSphere = {
         You can use the higher of your \\glossterm{magical power} and \\glossterm{mundane power} to determine your damage with \\glossterm{strikes} using that weapon (see \\pcref{Power}).
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -252,6 +253,7 @@ export const thaumaturgy: MysticSphere = {
         After you absorb three spells in this way, this effect ends.
       `,
       rank: 7,
+    roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -264,6 +266,7 @@ export const thaumaturgy: MysticSphere = {
         After you enhance a spell in this way, this effect ends.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The extra damage increases to 1d8.`,
         5: `The extra damage increases to 3d6.`,
@@ -276,10 +279,11 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Precision',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to gain a +4 accuracy bonus when you make your first attack with it.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused for the rest of that round.
         After you enhance a spell in this way, this ability ends.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -292,6 +296,7 @@ export const thaumaturgy: MysticSphere = {
         After you echo a spell in this way, this effect ends.
       `,
       rank: 5,
+      roles: ['attune'],
       // Deep seems pretty punishing, but echoing is scary nova? Unclear who would
       // actually use this...
       type: 'Attune (deep)',
@@ -334,6 +339,7 @@ export const thaumaturgy: MysticSphere = {
         Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -341,11 +347,12 @@ export const thaumaturgy: MysticSphere = {
       name: 'Absorb Magic',
 
       effect: `
-        You gain a +1 bonus to your defenses against \\magical effects.
+        You gain a +1 \\glossterm{enhancement bonus} to your defenses against \\magical effects.
         In addition, the next time a \\magical attack beats your defenses, it has no effect on you.
         After you negate two attacks in this way, this spell's effect ends.
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -364,6 +371,7 @@ export const thaumaturgy: MysticSphere = {
         You can still manually sustain the ability to change your choices while this spell is active.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -410,6 +418,7 @@ export const thaumaturgy: MysticSphere = {
         This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -442,6 +451,7 @@ export const thaumaturgy: MysticSphere = {
         An observer who gets a \\glossterm{critical success} to identify the spell's effects can identify the true spell that you are casting (see \\pcref{Identify Magical Effect}).
       `,
       rank: 3,
+      roles: ['narrative'],
       type: 'Attune',
     },
 

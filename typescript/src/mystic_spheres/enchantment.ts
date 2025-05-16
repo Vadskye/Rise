@@ -70,6 +70,7 @@ export const enchantment: MysticSphere = {
         As long as you are not immune to the ability or any part of its effects, this grants you a \\plus2 accuracy bonus with that ability against its other targets.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -93,6 +94,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['attune'],
       tags: ['Emotion', 'Subtle'],
       // Probably complex enough to be deep? But it doesn't change combat math that much,
       // so deep for this would feel punishing.
@@ -518,6 +520,7 @@ export const enchantment: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -534,6 +537,7 @@ export const enchantment: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -572,6 +576,7 @@ export const enchantment: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,

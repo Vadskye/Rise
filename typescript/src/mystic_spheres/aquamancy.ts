@@ -22,6 +22,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         The desert air ripples with heat, scorching the group of adventurers.
         When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The volume created increases to five gallons.',
         // Small body of water is 2.5^3 = ~15.5 cubic feet = ~120 gallons
@@ -36,6 +37,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The bonus increases to +4.',
         4: 'The bonus increases to +5.',
@@ -59,6 +61,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d10 per rank beyond 1.' },
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -71,6 +74,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         If you are also attuned to the \\ability{restorative water} spell, you can both regain hit points and remove a condition from the same drink of water.
       `,
       rank: 3,
+    roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -81,6 +85,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         While swimming, you gain a \\plus1 \\glossterm{enhancement bonus} to your Armor and Reflex defenses.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -386,10 +391,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
       rank: 3,
-      scaling: {
-        5: 'When you cast this spell, you can choose to create a \\largearea radius instead.',
-        7: 'When you cast this spell, you can choose to create a \\hugearea radius instead.',
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -404,6 +406,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You grow a massive watery tentacle that extends from your body.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -418,6 +421,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 4,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -432,6 +436,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You grow a massive watery tentacle that extends from your body.
       `,
       rank: 6,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -449,6 +454,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         If you do, your attacks have \\weapontag{Sweeping} (3) instead of \\weapontag{Sweeping} (7).
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -505,6 +511,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\hypertarget{itemizespace}{}
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
     {
@@ -515,6 +522,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         exceptThat: EXCEPT_NOT_DEEP,
       },
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -562,6 +570,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         This usually causes you to die.
       `,
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -602,7 +611,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
-          \\item You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
@@ -612,10 +620,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       // narrative: '',
       rank: 3,
-      scaling: {
-        5: 'The damage resistance bonus increases to +8.',
-        7: 'The damage resistance bonus increases to +16.',
-      },
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -626,27 +631,13 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
 
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-    {
-      name: 'Mass Waterward',
-
-      functionsLike: {
-        mass: true,
-        name: 'Waterward',
-      },
-      // narrative: '',
-      rank: 3,
-      scaling: {
-        5: `The bonus increases to +8.`,
-        7: `The bonus increases to +16.`,
-      },
-      type: 'Attune (target)',
     },
     {
       name: 'Slippery Escapist',
@@ -656,6 +647,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,

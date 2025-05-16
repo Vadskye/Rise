@@ -247,18 +247,8 @@ export const toxicology: MysticSphere = {
         You become \\glossterm{immune} to \\glossterm{poisons}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
-    },
-    {
-      name: 'Mass Poison Immunity',
-
-      functionsLike: {
-        mass: true,
-        name: 'poison immunity',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
@@ -276,6 +266,7 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to anything nearby when you bleed.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Acid'],
       type: 'Attune (deep)',
@@ -296,6 +287,7 @@ export const toxicology: MysticSphere = {
         This does not harm you, but your blood can be dangerous to your enemies when you bleed.
       `,
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Acid'],
       type: 'Attune (deep)',
@@ -345,6 +337,7 @@ export const toxicology: MysticSphere = {
         However, you take a -4 penalty to your \\glossterm{hit points}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +16, but the penalty increases to -8.`,
         5: `The bonus increases to +32, but the penalty increases to -16.`,

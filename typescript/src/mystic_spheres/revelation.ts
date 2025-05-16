@@ -13,6 +13,7 @@ export const revelation: MysticSphere = {
       effect: `
         You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +5.`,
@@ -27,6 +28,7 @@ export const revelation: MysticSphere = {
         You may reroll one Knowledge check you made last round.
         You can only cast this spell once per hour.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `You also gain a +2 \\glossterm{enhancement bonus} to the Knowledge check.`,
         4: `The bonus increases to +3.`,
@@ -42,6 +44,7 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with all weapons from one weapon group of your choice, including exotic weapons from that weapon group.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -53,6 +56,7 @@ export const revelation: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -63,6 +67,7 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -74,6 +79,7 @@ export const revelation: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -84,6 +90,7 @@ export const revelation: MysticSphere = {
         You gain \\glossterm{proficiency} with all weapons and armor, including exotic weapons.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -100,6 +107,7 @@ export const revelation: MysticSphere = {
         4: 'You can choose to affect a \\hugearea radius instead.',
         6: 'You can choose to affect a \\gargarea radius instead.',
       },
+      roles: ['attune'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -133,14 +141,14 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Offense',
 
       effect: `
-        Whenever you would make an attack roll, you can see into the future to change your fate.
-        If you do, you roll the attack roll twice and take the higher result.
-        After you change your fate in this way, this effect ends.
+        At the start of each phase, you can choose to become \\focused during that phase.
+        After you do, this effect ends.
       `,
       narrative: `
         You intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -156,6 +164,7 @@ export const revelation: MysticSphere = {
         You intuitively perceive gaps in your foes' armor.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -167,7 +176,8 @@ export const revelation: MysticSphere = {
         exceptThat: EXCEPT_NOT_DEEP,
       },
       rank: 6,
-      type: 'Attune (deep)',
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {
@@ -179,6 +189,7 @@ export const revelation: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -189,6 +200,7 @@ export const revelation: MysticSphere = {
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
@@ -226,7 +238,18 @@ export const revelation: MysticSphere = {
         You gain a +2 \\glossterm{enhancement bonus} to all skills.
       `,
       rank: 3,
-      scaling: { 5: `The bonus increases to +3.`, 7: `The bonus increases to +4.` },
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Precognitive Competence',
+
+      effect: `
+        You gain a +3 \\glossterm{enhancement bonus} to all skills.
+      `,
+      rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -238,7 +261,7 @@ export const revelation: MysticSphere = {
         In addition, once per hour you may reroll one Knowledge check you make and take the higher result.
       `,
       rank: 4,
-      scaling: { 6: `The bonus increases to +4.` },
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -246,28 +269,22 @@ export const revelation: MysticSphere = {
       name: 'Blindsense',
 
       effect: `
-        You gain \\trait{blindsense} with a 30 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
+        You gain \\trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
+        If you already have blindsense, the range of your blindsense increases by 30 feet.
       `,
-      rank: 1,
-      scaling: {
-        3: `The range increases to 45 feet.`,
-        5: `The range increases to 60 feet.`,
-        7: `The range increases to 90 feet.`,
-      },
+      rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
       name: 'Blindsight',
 
       effect: `
-        You gain \\trait{blindsight} with a 15 foot range, allowing you to see without light (see \\pcref{Blindsight}).
-        If you already have blindsight, the range of your blindsight increases by 15 feet.
+        You gain \\trait{blindsight} with a 30 foot range, allowing you to see without light (see \\pcref{Blindsight}).
+        If you already have blindsight, the range of your blindsight increases by 30 feet.
       `,
-      rank: 3,
-      scaling: {
-        5: `The range increases to 30 feet.`,
-        7: `The range increases to 45 feet.`,
-      },
+      rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -279,11 +296,8 @@ export const revelation: MysticSphere = {
         name: 'Blindsense',
       },
       // narrative: '',
-      rank: 3,
-      scaling: {
-        5: 'The range increases to 45 feet.',
-        7: 'The range increases to 60 feet.',
-      },
+      rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -295,10 +309,8 @@ export const revelation: MysticSphere = {
         name: 'Blindsight',
       },
       // narrative: '',
-      rank: 5,
-      scaling: {
-        7: 'The range increases to 30 feet.',
-      },
+      rank: 6,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -310,20 +322,9 @@ export const revelation: MysticSphere = {
       `,
 
       rank: 5,
+      roles: ['attune'],
       type: 'Attune',
     },
-    {
-      name: 'Mass Foresight',
-
-      functionsLike: {
-        mass: true,
-        name: 'Foresight',
-      },
-      // narrative: '',
-      rank: 7,
-      type: 'Attune (target)',
-    },
-
     {
       name: 'Reveal Weakness',
 
@@ -476,6 +477,7 @@ export const revelation: MysticSphere = {
         If undisturbed, the sensor floats in the air in its position.
       `,
       rank: 5,
+      roles: ['narrative'],
       tags: ['Scrying'],
       // The use of attune instead of Sustain is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off.
       type: 'Attune',
@@ -505,6 +507,7 @@ export const revelation: MysticSphere = {
         You reduce your \\glossterm{longshot penalty} by 1.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -515,6 +518,7 @@ export const revelation: MysticSphere = {
         You reduce your \\glossterm{longshot penalty} by 2.
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -527,6 +531,7 @@ export const revelation: MysticSphere = {
       },
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -538,6 +543,7 @@ export const revelation: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -554,6 +560,7 @@ export const revelation: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,

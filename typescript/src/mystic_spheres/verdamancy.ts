@@ -201,6 +201,7 @@ export const verdamancy: MysticSphere = {
         Each time, you gain an additional vine tentacle, which can allow you to make \\glossterm{dual strikes} using your vine tentacles.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -216,6 +217,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 4,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -228,6 +230,7 @@ export const verdamancy: MysticSphere = {
         exceptThat: 'the damage dealt by the weapon increases to 1d10.',
       },
       rank: 6,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -242,6 +245,7 @@ export const verdamancy: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       rank: 2,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -257,6 +261,7 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
@@ -401,6 +406,7 @@ export const verdamancy: MysticSphere = {
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +8.`,
         5: `The bonus increases to +16.`,
@@ -611,6 +617,7 @@ export const verdamancy: MysticSphere = {
         Otherwise, you are treated as being trained in that skill.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         3: `The bonus increases to +4.`,
         5: `The bonus increases to +5.`,
@@ -632,19 +639,9 @@ export const verdamancy: MysticSphere = {
         You can extend the grass to surround you at a whim.
       `,
       rank: 1,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Flourishing Grass',
-
-      functionsLike: {
-        mass: true,
-        name: 'flourishing grass',
-      },
-      rank: 3,
-      type: 'Attune (target)',
     },
 
     {
@@ -659,6 +656,7 @@ export const verdamancy: MysticSphere = {
         You can extend the grass to surround you at a whim.
       `,
       rank: 5,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -678,6 +676,7 @@ export const verdamancy: MysticSphere = {
         You can extend the grass to surround you at a whim.
       `,
       rank: 7,
+      roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
     },
@@ -692,6 +691,7 @@ export const verdamancy: MysticSphere = {
         This spell has no effect if you are wearing other body armor.
       `,
       rank: 1,
+      roles: ['attune'],
       scaling: {
         2: `
           The armor can be created from any special material other than dragonhide (see \\pcref{Armor Special Materials}).

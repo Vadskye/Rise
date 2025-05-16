@@ -57,6 +57,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         The air rises beneath you and pushes you up, propelling you farther when you leap.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -67,6 +68,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         In addition, you become immune to \\glossterm{falling damage}.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
     },
     // Treat as t1 debuff
@@ -132,6 +134,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: "",
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -143,6 +146,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
     {
@@ -153,6 +157,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: "",
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -292,6 +297,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -303,6 +309,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -313,6 +320,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -358,18 +366,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
-    },
-    {
-      name: 'Mass Windblade',
-
-      functionsLike: {
-        mass: true,
-        name: 'windblade',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
     {
       name: 'Retributive Winds',
@@ -387,6 +385,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // effect: '',
       // narrative: '',
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -417,6 +416,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 4,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
     {
@@ -580,6 +580,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         This allows you to drift through enemies and even the air with ease.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -609,6 +610,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         The extra height is generally insufficient to change your \\glossterm{space} in battle.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
     {

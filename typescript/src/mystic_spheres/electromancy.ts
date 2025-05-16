@@ -18,15 +18,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Spark',
 
       attack: {
-        hit: `2 damage.`,
+        hit: `
+          The target takes damage equal to your \\glossterm{power}.
+        `,
         targeting: `
           Make an attack vs. Reflex against something within \\shortrange.
         `,
-      },
-      scaling: {
-        2: `The damage increases to 5.`,
-        4: `The damage increases to 10.`,
-        6: `The damage increases to 20.`,
       },
     },
 
@@ -55,6 +52,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         Your abilities that \\glossterm{chain} can travel an extra fifteen feet between each chain.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -67,6 +65,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         This does not affect abilities that do not already chain.
       `,
       rank: 2,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -78,6 +77,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         This does not affect abilities that do not already chain.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -360,19 +360,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
       rank: 3,
+      roles: ['attune'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Magnetic Blade',
-
-      functionsLike: {
-        mass: true,
-        name: 'magnetic blade',
-      },
-      // narrative: '',
-      rank: 5,
-      type: 'Attune (target)',
     },
 
     {
@@ -448,6 +437,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
       `,
       rank: 4,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -514,6 +504,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 3,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -529,6 +520,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 6,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
