@@ -32,6 +32,7 @@ export const rituals: Ritual[] = [
       Otherwise, it lasts for one year.
     `,
     rank: 1,
+    roles: ['attune'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
     type: 'Attune',
   },
@@ -75,6 +76,7 @@ export const rituals: Ritual[] = [
       name: 'fortification',
     },
     rank: 4,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
@@ -88,6 +90,7 @@ export const rituals: Ritual[] = [
       Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
       `,
     rank: 1,
+    roles: ['attune'],
     spheres: ['Channel Divinity', 'Prayer'],
     type: 'Attune',
   },
@@ -115,6 +118,7 @@ export const rituals: Ritual[] = [
       Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
       `,
     rank: 1,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Channel Divinity', 'Prayer'],
   },
@@ -143,6 +147,7 @@ export const rituals: Ritual[] = [
       This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
     `,
     rank: 2,
+    roles: ['attune'],
     spheres: ['Channel Divinity', 'Prayer'],
     type: 'Attune',
   },
@@ -239,6 +244,7 @@ export const rituals: Ritual[] = [
     },
     // narrative: '',
     rank: 1,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph'],
   },
@@ -256,6 +262,7 @@ export const rituals: Ritual[] = [
     },
     // narrative: '',
     rank: 3,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph'],
   },
@@ -269,6 +276,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 3,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
@@ -283,6 +291,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 4,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
@@ -297,6 +306,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 6,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],
   },
@@ -410,6 +420,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aquamancy', 'Polymorph'],
   },
@@ -683,6 +694,7 @@ export const rituals: Ritual[] = [
       % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
     `,
     rank: 1,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
   },
@@ -738,6 +750,7 @@ export const rituals: Ritual[] = [
       If the container is destroyed, this effect ends.
     `,
     rank: 3,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Chronomancy'],
   },
@@ -755,6 +768,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Overland Haste',
     rank: 3,
+    roles: ['attune'],
     // Worse than Overland Teleportation in rough terrain, but can be comparable on
     // smooth ground depending on party composition and size.
     effect: `
@@ -770,6 +784,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Rapid Overland Haste',
     rank: 5,
+    roles: ['attune'],
     functionsLike: {
       exceptThat: `
         the bonus increases to +60 feet.
@@ -830,6 +845,7 @@ export const rituals: Ritual[] = [
       This does not protect the target from \\atCold attacks.
     `,
     rank: 1,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Pyromancy'],
   },
@@ -845,6 +861,7 @@ export const rituals: Ritual[] = [
       Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
     `,
     rank: 4,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy'],
   },
@@ -860,6 +877,7 @@ export const rituals: Ritual[] = [
       name: 'cold snap',
     },
     rank: 7,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy'],
   },
@@ -903,6 +921,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 2,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Enchantment'],
   },
@@ -928,6 +947,7 @@ export const rituals: Ritual[] = [
     },
 
     rank: 4,
+    roles: ['attune'],
     tags: ['Emotion'],
     type: 'Attune',
     spheres: ['Enchantment'],
@@ -957,6 +977,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 4,
+    roles: ['attune'],
     tags: ['Emotion'],
     type: 'Attune',
     spheres: ['Enchantment'],
@@ -985,6 +1006,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 1,
+    roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune (target)',
     spheres: ['Cryomancy', 'Fabrication', 'Terramancy'],
@@ -1000,6 +1022,7 @@ export const rituals: Ritual[] = [
       It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
     `,
     rank: 3,
+    roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune',
     spheres: ['Fabrication'],
@@ -1086,6 +1109,7 @@ export const rituals: Ritual[] = [
       Any creature may take ammunition from the pile to use.
     `,
     rank: 3,
+    roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Fabrication', 'Verdamancy'],
@@ -1105,6 +1129,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
+    roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune',
     spheres: ['Telekinesis', 'Thaumaturgy'],
@@ -1202,6 +1227,7 @@ export const rituals: Ritual[] = [
       If it already has darkvision, the range of its darkvision increases by 60 feet instead.
     `,
     rank: 2,
+    roles: ['attune'],
     tags: ['Visual'],
     type: 'Attune (target)',
     spheres: ['Polymorph', 'Umbramancy'],
@@ -1216,6 +1242,7 @@ export const rituals: Ritual[] = [
       Each target gains \\trait{low-light vision}.
     `,
     rank: 1,
+    roles: ['attune'],
     tags: ['Visual'],
     type: 'Attune (target)',
     spheres: ['Photomancy', 'Polymorph', 'Umbramancy'],
@@ -1230,6 +1257,7 @@ export const rituals: Ritual[] = [
       Each target gains \\trait{scent}.
     `,
     rank: 3,
+    roles: ['attune'],
     tags: ['Visual'],
     type: 'Attune (target)',
     // Toxicology?
@@ -1247,6 +1275,7 @@ export const rituals: Ritual[] = [
       When this effect ends, the handholds disappear.
     `,
     rank: 1,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Polymorph', 'Telekinesis', 'Terramancy'],
   },
@@ -1340,6 +1369,7 @@ export const rituals: Ritual[] = [
       When the chosen key touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
     `,
     rank: 2,
+    roles: ['attune'],
     scaling: {
       special: `
         You can perform this ritual at a higher rank.
@@ -1362,6 +1392,7 @@ export const rituals: Ritual[] = [
       name: 'meld shut',
     },
     rank: 5,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Polymorph'],
   },
@@ -1376,6 +1407,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aquamancy', 'Polymorph'],
   },
@@ -1391,6 +1423,7 @@ export const rituals: Ritual[] = [
       This does not protect the target from \\atFire attacks.
     `,
     rank: 1,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Pyromancy'],
   },
@@ -1408,6 +1441,7 @@ export const rituals: Ritual[] = [
       Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
     `,
     rank: 4,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Pyromancy'],
   },
@@ -1424,6 +1458,7 @@ export const rituals: Ritual[] = [
       name: 'heat wave',
     },
     rank: 7,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Pyromancy'],
   },
@@ -1479,6 +1514,7 @@ export const rituals: Ritual[] = [
       \\miss Half damage.
     `,
     rank: 3,
+    roles: ['attune'],
     scaling: {
       special: `
         You can perform this ritual at a higher rank.
@@ -1501,6 +1537,7 @@ export const rituals: Ritual[] = [
       You can see the target's true form, regardless of any shapechanging or illusion effects.
     `,
     rank: 3,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Photomancy', 'Revelation'],
   },
@@ -1574,6 +1611,7 @@ export const rituals: Ritual[] = [
       The alarm is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
     `,
     rank: 1,
+    roles: ['attune'],
     tags: ['Scrying'],
     type: 'Attune',
     spheres: ['Photomancy', 'Revelation'],
@@ -1746,6 +1784,7 @@ export const rituals: Ritual[] = [
       If you \\glossterm{dismiss} the ritual, the effect ends for all targets.
     `,
     rank: 3,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Enchantment', 'Revelation'],
   },
@@ -1763,6 +1802,7 @@ export const rituals: Ritual[] = [
       name: 'telepathic bond',
     },
     rank: 5,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Enchantment', 'Revelation'],
   },
@@ -1779,6 +1819,7 @@ export const rituals: Ritual[] = [
       name: 'telepathic bond',
     },
     rank: 7,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Enchantment', 'Revelation'],
   },
@@ -1940,6 +1981,7 @@ export const rituals: Ritual[] = [
       It has the same statistics as a creature from the \\spell{summon defensive monster} spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
     `,
     rank: 2,
+    roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune',
     spheres: ['Summoning'],
@@ -1958,6 +2000,7 @@ export const rituals: Ritual[] = [
       When the chosen key touches the protected object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
     `,
     rank: 2,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
   },
@@ -1974,6 +2017,7 @@ export const rituals: Ritual[] = [
       name: 'force lock',
     },
     rank: 5,
+    roles: ['attune'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
   },
@@ -2085,6 +2129,7 @@ export const rituals: Ritual[] = [
       Powerful \\magical effects that mimic sunlight, such as \\spell{solar flare}, still affect the target normally.
     `,
     rank: 3,
+    roles: ['attune'],
     sphereEffects: {
       Terramancy: 'The target is also \\blinded by the earth covering their body.',
     },
@@ -2100,6 +2145,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the target is also protected from \\magical effects that mimic sunlight.',
     },
     rank: 6,
+    roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Photomancy', 'Umbramancy'],
   },
@@ -2115,6 +2161,7 @@ export const rituals: Ritual[] = [
       At the end of each round, if any target is outside of \\longrange from you, the effect is broken for that target and its trail is revealed.
     `,
     rank: 2,
+    roles: ['attune'],
     scaling: {
       special: `
         You can perform this ritual at a higher rank.
@@ -2398,6 +2445,7 @@ export const rituals: Ritual[] = [
     `,
     materialCost: true,
     rank: 3,
+    roles: ['attune'],
     type: 'Attune (deep)',
     spheres: ['Vivimancy'],
   },
@@ -2422,6 +2470,7 @@ export const rituals: Ritual[] = [
         `,
     },
     rank: 1,
+    roles: ['attune'],
     tags: ['Trap'],
     type: 'Attune',
     spheres: ['Universal'],
