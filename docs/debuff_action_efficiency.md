@@ -174,11 +174,15 @@ The movement penalty is about the same as a brief slow, but slightly more effect
 
 If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
 
-### Push 15': 0.5 (ranged) / 0.3 (melee)
+### Push 15': 0.9 (ranged) / 0.4 (melee)
 
 In many cases, a 15' push has no meaningful effect. Typically, forced movement is useful when combined with two things: kiting and battlefield hazards. In a kiting scenario, a 15' push will often force the target to sprint or charge, wasting a standard action. Triggering a battlefield hazard is generally worth half an action, since deployed hazards are generally less powerful than a full standard action attack. Assume that 75% of the time a push will be used for kiting and 25% of the time it will be used for battlefield hazards, and 25% of the time it will be irrelevant.
 
-When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of (1 + 0.5 + 0)/3 = 0.5.
+When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of 0.75 * 1 + 0.25 * 0.5 = 0.9.
+
+### Push 30': 2.0 (ranged) / 1.5 (melee)
+
+A 30' push will almost always cost a full action to get back in melee range. Treat this as 50% action denial, which is worth 2 EA. In melee, it can't generally be used for full kiting but still makes it easy to lock down a monster and only allow them to attack one party member, so it's 75% effective, or 1.5 EA.
 
 ### Single defense: 1.0
 
@@ -424,8 +428,10 @@ By EA:
   Panicked           & 2.3   & 2.5          & 7.6       \\
   Prone (ranged)     & 1.6   & 2.4          & 7.2       \\
   Prone (melee)      & 1.0   & 1.6          & 4.7       \\
-  Push 15' (ranged)  & 0.5   & N/A          & N/A       \\
-  Push 15' (melee)   & 0.3   & N/A          & N/A       \\
+  Push 15' (ranged)  & 0.9   & N/A          & N/A       \\
+  Push 15' (melee)   & 0.4   & N/A          & N/A       \\
+  Push 30' (ranged)  & 2.0   & N/A          & N/A       \\
+  Push 30' (melee)   & 1.5   & N/A          & N/A       \\
   Single defense     & 1.0   & 0.7          & 2.0       \\
   Slowed (ranged)    & 2.0   & 2.0          & 6.2       \\
   Slowed (melee)     & 1.5   & 1.4          & 4.2       \\
@@ -456,8 +462,10 @@ By rank:
   Panicked           & 6     & 7            & inf       \\
   Prone (ranged)     & 2     & 6            & inf       \\
   Prone (melee)      & 4d    & 2            & inf       \\
-  Push 15' (ranged)  & 2d    & N/A          & N/A       \\
+  Push 15' (ranged)  & 4d    & N/A          & N/A       \\
   Push 15' (melee)   & 1d    & N/A          & N/A       \\
+  Push 30' (ranged)  & 4     & N/A          & N/A       \\
+  Push 30' (melee)   & 2     & N/A          & N/A       \\
   Single defense     & 4d    & 3d           & 4         \\
   Slowed (ranged)    & 4     & 4            & inf       \\
   Slowed (melee)     & 2     & 1            & inf       \\

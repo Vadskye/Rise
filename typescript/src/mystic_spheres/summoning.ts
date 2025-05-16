@@ -151,6 +151,7 @@ export const summoning: MysticSphere = {
     {
       name: 'Ramming Summon',
 
+      // Treat push on HP loss as ~0.4 EA instead of 0.9 EA without the HP requirement
       attack: {
         hit: `
           \\damagerankone.
@@ -158,34 +159,38 @@ export const summoning: MysticSphere = {
           If this push is blocked by an obstacle, the target takes 1d6 damage.
         `,
         targeting: `
-          Make an attack vs. Armor against something that is \\glossterm{grounded} within \\shortrange.
+          Make an attack vs. Brawn against something that is \\glossterm{grounded} within \\shortrange.
         `,
       },
       narrative: `
           You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
       `,
       rank: 1,
-      roles: ['burst'],
+      roles: ['burst', 'combo'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Efficient Ramming Summon',
+      name: 'Ramming Horde',
 
+      // Push with damage is rank 4. Bump it to rank 5 to account for the damage on
+      // obstacle, then down to 4 for limited scope. By staying to a r1 area, a normal
+      // damaging area spell would be dr4, so we get dr3 with the debuff.
       attack: {
         hit: `
-          \\damagerankfive.
-          If the target takes damage, you \\glossterm{push} it up to 30 feet horizontally away from you.
+          \\damagerankthree.
+          You \\glossterm{push} each target that takes damage up to 15 feet horizontally away from you.
         `,
         targeting: `
-          Make an attack vs. Armor against something on solid ground within \\shortrange.
+          Make an attack vs. Brawn against everything that is \\glossterm{grounded} in a \\medarealong, 10 ft. wide line from you.
         `,
       },
       narrative: `
-          You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
+        You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
       `,
-      rank: 5,
+      rank: 4,
+      roles: ['burst', 'combo'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
