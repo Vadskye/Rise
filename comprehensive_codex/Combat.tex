@@ -6,7 +6,7 @@
   \subsection{Attack Rolls}\label{Attack Rolls}
     To make an attack, roll 1d10 and add your \glossterm{accuracy} with the attack.
     Each attack specifies one or more relevant \glossterm{defenses} which are used to avoid the attack.
-    There are four defenses: Armor, Fortitude, Reflex, and Mental.
+    There are five defenses: Armor, Brawn, Fortitude, Reflex, and Mental.
     Most attacks are made against exactly one defense, which is indicated in the attack's description.
 
   \subsection{Attack Results}
@@ -136,9 +136,9 @@
         1               & You are unconscious while you have less than half hit points     \\
         2               & You take a \minus1 penalty to \glossterm{accuracy}               \\
         3               & You have a \minus5 foot penalty to your \glossterm{speed}        \\
-        4               & Your maximum \glossterm{damage resistance} is halved             \\
-        5               & You take a \minus2 penalty to your \glossterm{fatigue tolerance} \\
-        6               & You take a \minus1 penalty to all \glossterm{defenses}           \\
+        4               & You take a \minus2 penalty to your \glossterm{fatigue tolerance} \\
+        5               & You take a \minus1 penalty to all \glossterm{defenses}           \\
+        6               & You take a \minus2 penalty to your Brawn defense                 \\
         7               & You take a \minus2 penalty to your Fortitude defense             \\
         8               & You take a \minus2 penalty to your Reflex defense                \\
         9               & You take a \minus2 penalty to your Mental defense                \\
@@ -675,6 +675,7 @@
       \hit You deal the target \glossterm{weapon damage} from the weapon.
     \end{activeability}
 
+  % TODO: move to section
   \subsection{Dual Strikes}\label{Dual Strikes}
     If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
     This is called a \glossterm{dual strike}.
@@ -801,7 +802,7 @@
     \begin{activeability}*{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime Standard action.
       \rankline
-      Make a \glossterm{brawling attack} with a free hand against the Fortitude and Reflex defenses of one creature you \glossterm{touch}.
+      Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
 
       \hit You and the target are \grappled by each other.
       For details, see \pcref{Grappling}.
@@ -824,7 +825,7 @@
       Move up to your movement speed in a straight line.
       You can try to move directly through creatures in your way during this movement.
       Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-      If a creature does not attempt to avoid you, you make a \glossterm{brawling attack} vs. Fortitude against it.
+      If a creature does not attempt to avoid you, you make a \glossterm{brawling attack} vs. Brawn against it.
 
       If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
@@ -862,7 +863,7 @@
       Otherwise, the target is something you \glossterm{touch}.
       You must be strong enough to push each target (see \pcref{Weight Categories}).
 
-      Make a \glossterm{brawling attack} vs. Fortitude against each target.
+      Make a \glossterm{brawling attack} vs. Brawn against each target.
       If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
       % Critical hit shove should be equivalent to moving without any limitation.
@@ -894,7 +895,7 @@
       \rankline
       You throw an object or creature you hold in at least one hand.
       The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
-      In order to throw an unwilling creature, it must already be \grappled by you, and you must hit it with a \glossterm{brawling attack} against its Fortitude defense.
+      In order to throw an unwilling creature, it must already be \grappled by you, and you must hit it with a \glossterm{brawling attack} against its Brawn defense.
 
       Weapons with the \weapontag{Thrown} weapon tag can be thrown up to their range limits.
       Your normal throwing distance for an arbitrary object is equal to 10 feet plus 5 feet per 2 Strength.
@@ -916,7 +917,7 @@
     \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime Standard action.
       \rankline
-      Make a \glossterm{brawling attack} vs. Fortitude using a free hand against a creature you \glossterm{touch}.
+      Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
       \hit The target becomes \prone.
     \end{activeability}
 

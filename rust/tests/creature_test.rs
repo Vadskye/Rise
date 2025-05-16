@@ -74,6 +74,11 @@ mod creature_tests {
         );
         assert_eq!(
             3,
+            creature.calc_defense(&Defense::Brawn),
+            "Should have 3 Brawn"
+        );
+        assert_eq!(
+            3,
             creature.calc_defense(&Defense::Fortitude),
             "Should have 3 Fort"
         );

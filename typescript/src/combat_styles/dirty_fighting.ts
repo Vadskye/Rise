@@ -80,7 +80,7 @@ export const dirtyFighting: CombatStyle = {
       // A melee range spell would deal dr3.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankthree.
       `,
       rank: 1,
@@ -92,7 +92,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Piledriver+',
 
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damagerankseven.
       `,
       rank: 5,
@@ -112,7 +112,7 @@ export const dirtyFighting: CombatStyle = {
       // If you use a Medium creature, the baseline damage is 2d6 + 1dpp, which is
       // roughly dr4, but with strong scaling based on the creature's size.
       effect: `
-        Make an \\glossterm{brawling attack} against the Fortitude defense of a Medium or larger creature you are \\glossterm{grappling}.
+        Make an \\glossterm{brawling attack} against the Brawn defense of a Medium or larger creature you are \\glossterm{grappling}.
         If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
         The strike deals double damage.
         Treat the creature as a weapon that deals 1d6 damage per size category by which the creature is above Small.
@@ -153,7 +153,7 @@ export const dirtyFighting: CombatStyle = {
 
       // A damage + debuff slow is 2.6 EA, so rank 7, or rank 5 if melee range.
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damageranksix.
         If it loses hit points from this damage, it becomes \\slowed as a \\glossterm{condition}.
       `,
@@ -214,7 +214,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Pin',
 
       effect: `
-        Make a \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
         In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
         These penalties do not stack if you use this ability multiple times.
@@ -228,7 +228,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Knock Flying',
 
       effect: `
-        Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+        Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
         \\hit You \\glossterm{knockback} the target 10 feet away from you.
         If you are \\empowered, this knockback distance is doubled.
@@ -244,7 +244,7 @@ export const dirtyFighting: CombatStyle = {
       // TODO: what damage value and distance make sense here? Knockback isn't well
       // studied.
       effect: `
-        Make an \\glossterm{brawling attack} vs. Fortitude using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+        Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         You must be strong enough to carry the target.
         \\hit \\damagerankfour.
         In addition, you \\glossterm{knockback} the target 20 feet away from you.
@@ -260,7 +260,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points and your attack also hits its Fortitude defense, it drops one item of your choice that it is holding in a single hand.
+        If the target loses hit points and your attack also hits its Brawn defense, it drops one item of your choice that it is holding in a single hand.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 3,

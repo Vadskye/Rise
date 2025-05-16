@@ -333,6 +333,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Brawn, 1),
                 Modifier::Defense(Defense::Fortitude, 1),
                 Modifier::Defense(Defense::Reflex, 1),
                 Modifier::Defense(Defense::Mental, 1),

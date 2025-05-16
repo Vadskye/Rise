@@ -42,12 +42,14 @@ impl VitalWound {
         }
     }
 
+    // TODO: update this to match modern vital wounds
     pub fn modifiers(&self) -> Option<Vec<Modifier>> {
         // TODO: add modifiers for halving values
         match self {
             Self::Three => Some(vec![Modifier::Accuracy(-2)]),
             Self::Four => Some(vec![
                 Modifier::Defense(Defense::Armor, -2),
+                Modifier::Defense(Defense::Brawn, -2),
                 Modifier::Defense(Defense::Fortitude, -2),
                 Modifier::Defense(Defense::Reflex, -2),
                 Modifier::Defense(Defense::Mental, -2),
@@ -56,6 +58,7 @@ impl VitalWound {
             Self::Eight => Some(vec![Modifier::Accuracy(-1)]),
             Self::Nine => Some(vec![
                 Modifier::Defense(Defense::Armor, -1),
+                Modifier::Defense(Defense::Brawn, -1),
                 Modifier::Defense(Defense::Fortitude, -1),
                 Modifier::Defense(Defense::Reflex, -1),
                 Modifier::Defense(Defense::Mental, -1),

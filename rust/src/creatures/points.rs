@@ -43,6 +43,7 @@ pub fn calculate_creature_points(creature: &Creature) -> i32 {
 
     hp_points
         + creature.calc_defense(&Defense::Armor) * 3
+        + creature.calc_defense(&Defense::Brawn)
         + creature.calc_defense(&Defense::Fortitude)
         + creature.calc_defense(&Defense::Reflex)
         + creature.calc_defense(&Defense::Mental)

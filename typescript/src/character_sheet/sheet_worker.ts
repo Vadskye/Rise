@@ -1572,20 +1572,18 @@ function handleEncumbrance() {
   onGet({
     variables: {
       miscName: 'encumbrance',
-      numeric: ['body_armor_encumbrance', 'shield_encumbrance', 'strength'],
+      numeric: ['body_armor_encumbrance', 'shield_encumbrance'],
     },
     callback: (v) => {
-      const strengthModifier = Math.max(0, v.strength);
       const totalValue = Math.max(
         0,
-        v.body_armor_encumbrance + v.shield_encumbrance - strengthModifier + v.misc,
+        v.body_armor_encumbrance + v.shield_encumbrance + v.misc,
       );
       setAttrs({
         encumbrance: totalValue,
         encumbrance_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'body armor', value: v.body_armor_encumbrance },
           { name: 'shield', value: v.shield_encumbrance },
-          { name: 'Str', value: -strengthModifier },
         ]),
       });
     },
@@ -2981,9 +2979,9 @@ function handleVitalWounds() {
       1: 'Unconscious below half HP',
       2: '-1 accuracy',
       3: '-5 foot speed',
-      4: 'Half max DR',
-      5: '-2 fatigue tolerance',
-      6: '-1 all defenses',
+      4: '-2 fatigue tolerance',
+      5: '-1 all defenses',
+      6: '-2 Brawn',
       7: '-2 Fortitude',
       8: '-2 Reflex',
       9: '-2 Mental',

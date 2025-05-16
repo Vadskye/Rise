@@ -245,7 +245,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
-          Then, make an attack vs. Fortitude against something you \\glossterm{touch}.
+          Then, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
       rank: 2,
@@ -262,7 +262,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
-          Then, make an attack vs. Fortitude against something you \\glossterm{touch}.
+          Then, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
       rank: 5,
@@ -339,7 +339,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn against everything in the area.
         `,
       },
       rank: 5,
@@ -464,7 +464,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           \\damagerankone.
-          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 15 feet.
+          If the target takes damage and your attack result beats its Brawn defense, you can \\glossterm{push} it up to 15 feet.
         `,
         targeting: `
           Make an attack vs. Armor against one creature within \\shortrange.
@@ -481,7 +481,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target takes damage and your attack result beats its Fortitude defense, you can \\glossterm{push} it up to 30 feet.
+          If the target takes damage and your attack result beats its Brawn defense, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
           Make an attack vs. Armor against one creature within \\shortrange.

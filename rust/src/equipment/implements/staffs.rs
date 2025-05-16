@@ -31,7 +31,7 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Agonizing Fear"),
-        rank: 2,
+        rank: 1,
         short_description: String::from(r"Fear effects also penalize Fortitude"),
         description: String::from(r"
             Creatures that are \frightened or \panicked by you suffer a penalty to their Fortitude defense equal to the penalty they suffer to their Mental defense.

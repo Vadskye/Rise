@@ -62,7 +62,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                This ability also protects you from area attacks against your Fortitude and Mental defenses.
+                This ability also protects you from area attacks against your Brawn, Fortitude, and Mental defenses.
             ",
             modifiers: None,
         },

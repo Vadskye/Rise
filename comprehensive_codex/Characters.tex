@@ -28,12 +28,13 @@ You can either skim past terms you don't yet understand or look them up as you g
       It has the following effects:
       \begin{raggeditemize}
         \item Strength determines how much you can carry (see \pcref{Weight Limits}).
-          You generally need a Strength of at least 1 to wear heavy body armor.
+          You generally need a Strength of at least 2 to wear heavy body armor.
+        \item You add your Strength to your Brawn defense.
         \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
         \item You add your Strength to your level to determine your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
-        \item A very high Strength can allow you to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
-        \item If your Strength is positive, you reduce your \glossterm{encumbrance} from \glossterm{armor} by an amount equal to your Strength (see \pcref{Encumbrance}).
-        \item You add your Strength to Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
+        \item You add your Strength to Strength-based \glossterm{skills}: Climb and Swim (see \pcref{Skills}).
+        \item Your Strength increases your jumping distance (see \pcref{Jumping}).
+        % \item You need at least 3 Strength to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
       \end{raggeditemize}
     }
 
@@ -44,9 +45,10 @@ You can either skim past terms you don't yet understand or look them up as you g
       It has the following effects:
       \begin{raggeditemize}
         \item You add your Dexterity to your Armor defense.
-          This bonus is halved if you use medium or heavy armor (see \tref{Armor and Shields}).
+          This bonus is halved if you use medium or heavy body armor or shields (see \tref{Armor and Shields}).
         \item You add your Dexterity to your Reflex defense.
         \item You add your Dexterity to Dexterity-based \glossterm{skills}: Balance, Flexibility, Ride, Sleight of Hand, and Stealth (see \pcref{Skills}).
+        \item You need at least 2 Dexterity to make \glossterm{dual strikes} (see \pcref{Dual Strikes}).
       \end{raggeditemize}
     }
 
@@ -129,18 +131,20 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   \subsection{Defenses}\label{Defenses}
     When you are attacked, your defenses determine the value that the attacker needs to get on the attack roll in order to hit you (see \pcref{Attack Rolls}).
-    The four defenses are described below.
+    The five defenses are described below.
     \begin{itemize}
       \item Armor defense (AD): Your Armor defense protects you from normal physical attacks, such as attempts to hit you with a sword.
         It is the most commonly used defense.
-      \item Reflex defense: Your Reflex protects you from physical attacks that armor does not help against, such as pit traps or bolts of lightning.
-      \item Fortitude defense: Your Fortitude defense protects you from attacks you have to physically endure or resist, such as poisons and life-draining spells.
-      \item Mental defense: Your Mental defense protects you from attacks you have to mentally endure or resist, such as terrifying creatures and magical mind manipulation.
+      \item Brawn defense: Your Brawn protects you from attacks that physically restrain or relocate you, such as grappling and shoving.
+      \item Reflex defense: Your Reflex protects you from attacks that you can dodge or evade, such as many area attacks.
+      \item Fortitude defense: Your Fortitude defense protects you from attacks against your body or life, such as poisons and life-draining magic.
+      \item Mental defense: Your Mental defense protects you from attacks against your mind, such as terrifying creatures and magical mind manipulation.
     \end{itemize}
 
     Your defenses are calculated in the following way:
     \begin{itemize}
       \itemhead{Armor} Half level \add Dexterity (modified depending on equipped armor) \add defense bonuses from equipped body armor and shield
+      \itemhead{Brawn} 3 \add Half level \add Strength \add class defense bonus
       \itemhead{Fortitude} 3 \add Half level \add Constitution \add class defense bonus
       \itemhead{Reflex} 3 \add Half level \add Dexterity \add class defense bonus
       \itemhead{Mental} 3 \add Half level \add Willpower \add class defense bonus
@@ -150,8 +154,6 @@ You can either skim past terms you don't yet understand or look them up as you g
   \subsection{Encumbrance}\label{Encumbrance}
     Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
     You apply your encumbrance as a penalty to all Strength-based and Dexterity-based checks you make.
-    If your Strength is positive, you reduce your encumbrance by an amount equal to your Strength.
-    This cannot reduce your encumbrance below 0.
 
   \subsection{Hit Points}\label{Hit Points}
     Your \glossterm{hit points} measure how hard you are to seriously injure or kill.

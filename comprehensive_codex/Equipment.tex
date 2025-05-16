@@ -207,7 +207,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       The \glossterm{power} of an item is equal to twice its rank.
       An item's power also affects its defenses.
       Its Fortitude and Mental defenses are equal to 5 \add its \glossterm{power}.
-      Its Armor defense and Reflex defense are not affected by its \glossterm{power}, and are solely determined by its size and shape.
+      % TODO: how are those determined?
+      Its Armor, Brawn, and Reflex defenses are not affected by its \glossterm{power}, and are solely determined by its size and shape.
 
   \subsection{Removing Magic Items}
     Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
@@ -896,28 +897,28 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         \tb{Armor}             & \tb{Armor}   & \tb{Reflex} & \tb{DR} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
         Light armor            &              &             &         &                  &                  &              &                &                &            \\
         % 6 Armor + 3 DR - 1 enc = 8 points
-        \tind Buff leather     & \plus2       & \tdash      & \plus3  & \tdash           & \plus1           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        \tind Buff leather     & \plus2       & \tdash      & \plus3  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         % 6 Armor + 4 DR - 1 enc - 2 rank = 8 points
         \tind Mail shirt       & \plus2       & \tdash      & \plus5  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
         % 3 Armor + 6 DR + 2 vit - 2 enc = 9 points
-        \tind Rawhide          & \plus1       & \tdash      & \plus6  & \plus1           & \plus2           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        \tind Rawhide          & \plus1       & \tdash      & \plus6  & \plus1           & \plus1           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         \tind Buckler          & \plus1       & \plus1      & \tdash  & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood  & 0 (1 gp)   \\
         Medium armor           &              &             &         &                  &                  &              &                &               \\
         % 12 Armor + 4 DR + 2 vit - 2 enc = 16 points
-        \tind Leather lamellar & \plus4       & \tdash      & \plus4  & \plus1           & \plus2           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
+        \tind Leather lamellar & \plus4       & \tdash      & \plus4  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
         % 12 Armor + 5 DR + 2 vit - 4 enc = 15 points
-        \tind Scale            & \plus4       & \tdash      & \plus5  & \plus1           & \plus4           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
+        \tind Scale            & \plus4       & \tdash      & \plus5  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
         % 12 Armor + 7 DR + 2 vit - 4 enc - 2 rank = 15 points
-        \tind Brigandine       & \plus4       & \tdash      & \plus7  & \plus1           & \plus4           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
+        \tind Brigandine       & \plus4       & \tdash      & \plus7  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
         \tind Standard shield  & \plus2       & \plus2      & \tdash  & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 0 (1 gp)   \\
         Heavy armor            &              &             &         &                  &                  &              &                &               \\
         % 12 Armor + 10 DR + 4 vit - 4 enc = 22 points
-        \tind Breastplate      & \plus4       & \tdash      & \plus10 & \plus2           & \plus4           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
+        \tind Breastplate      & \plus4       & \tdash      & \plus10 & \plus2           & \plus2           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
         % 15 Armor + 10 DR + 4 vit - 5 enc - 2 rank = 22 points
-        \tind Half plate       & \plus5       & \tdash      & \plus10 & \plus2           & \plus5           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
+        \tind Half plate       & \plus5       & \tdash      & \plus10 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
         % 15 Armor + 12 DR + 4 vit - 6 enc - 4 rank = 21 points
-        \tind Full plate       & \plus5       & \tdash      & \plus12 & \plus2           & \plus6           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
-        \tind Tower shield     & \plus3\fn{2} & \plus3      & \tdash  & \tdash           & \plus2\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 1 (4 gp)   \\
+        \tind Full plate       & \plus5       & \tdash      & \plus12 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
+        \tind Tower shield     & \plus3\fn{2} & \plus3      & \tdash  & \tdash           & \plus1\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 1 (4 gp)   \\
         Extras                 &              &             &         &                  &                  &              &                &               \\
         \tind Shield spikes    & \tdash       & \tdash      & \tdash  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 1 (4 gp)   \\
       \end{dtabularx}

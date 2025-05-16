@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT, TELEPORT_ATTACK_FATIGUE } from './constants';
 
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
@@ -269,7 +269,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `\\damagerankone immediately, and again during your next action.`,
-        miss: "Half damage immediately, and no damage during your next action.",
+        miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
         `,
@@ -286,7 +286,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `\\damagerankthree immediately, and again during your next action.`,
-        miss: "Half damage immediately, and no damage during your next action.",
+        miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
         `,
@@ -415,17 +415,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flaming Spheres',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        crit: MULTIHIT_CRIT,
+        hit: `\\damagerankone immediately, and again during your next action.`,
         targeting: `
           When you cast this spell, a cluster of flaming spheres appears over your head.
           Each sphere is approximately one foot in diameter.
           As a \\glossterm{minor action}, you can fire an orb at a creature or object within \\shortrange.
-          When you do, make an attack vs. Fortitude with a -2 accuracy penalty against that target.
+          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
           After the sphere deals damage, it disappears and another sphere appears in the cluster.
         `,
       },
 
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -438,7 +439,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide shapeable line that is entirely within \\medrange of you.
+          When you cast this spell, an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that is entirely within \\medrange of you.
           The line cannot intersect itself, and you must designate one end of the line as the head of the flame serpent and the other end as the tail of the flame serpent.
 
           Whenever you sustain this spell, you can repeat this attack in a new line.
@@ -467,6 +468,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -483,6 +485,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -500,6 +503,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 4,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -512,6 +516,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         exceptThat: 'the damage increases to \\damagerankfour. Extra damage is still not applied.',
       },
       rank: 7,
+      roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
@@ -524,6 +529,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         Their strikes with those weapons gain the \\atFire tag.
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Attune (target)',
     },
 
@@ -543,6 +549,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 2,
+      roles: ['hazard'],
       scaling: 'accuracy',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
@@ -560,6 +567,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 5,
+      roles: ['hazard'],
       scaling: 'accuracy',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
@@ -568,17 +576,21 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Pyrohemia',
 
+      // Normal damage for a medium cone is dr1, so dr0 with the HP clause, and dr1 with
+      // Reflex + Fort defenses.
       attack: {
         crit: MULTIHIT_CRIT,
+        miss: DELAYED_HALF,
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, it takes this damage again during your next action.
+          Each target that loses \\glossterm{hit points} takes this damage again during your next action.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
+          Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
         `,
       },
-      rank: 2,
+      rank: 1,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
@@ -589,40 +601,59 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         name: 'pyrohemia',
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
-      rank: 5,
+      rank: 4,
+      roles: ['wildfire'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Massive Pyrohemia',
+
+      functionsLike: {
+        name: 'pyrohemia',
+        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\largearea cone.',
+      },
+      rank: 7,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Kindled Fireburst',
 
+      // This is written as a rank 3 spell with an accuracy bonus built in.
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
-          Choose one Tiny or larger active fire within \\medrange.
+          Choose one Tiny or larger active fire within \\shortrange.
           Make an attack vs. Reflex against everything within an \\smallarea radius from it.
+          You gain a \\plus1 accuracy bonus for each size category by which the fire is larger than Tiny.
+          This extinguishes the fire if it was Medium or smaller.
         `,
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 2,
+      roles: ['burst', 'combo'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Kindled Fireburst',
 
+      // So this should be written as a rank 7 spell with the same accuracy bonus.
       functionsLike: {
         name: 'kindled fireburst',
         exceptThat:
-          'the damage increases to \\damageranksix, and the area increases to a \\medarea radius.',
+          'the damage increases to \\damagerankfive.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 6,
+      roles: ['burst', 'combo'],
       scaling: 'accuracy',
     },
 
@@ -633,6 +664,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       rank: 6,
+      roles: ['attune'],
       type: 'Attune',
     },
 
@@ -653,15 +685,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         After you are restored to life in this way, this spell ends.
       `,
       rank: 7,
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
     {
       name: 'Flame Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
+      // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
+      // teleportation.
+      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -669,13 +704,16 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
+      roles: ['clear', 'dive'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Distant Flame Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
+      // A Large line is about r3 normally, which would be dr5. Drop to dr4 for the
+      // teleportation.
+      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
         missGlance: true,
@@ -685,11 +723,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 6,
+      roles: ['clear', 'dive'],
       scaling: 'accuracy',
     },
     {
       name: 'Desperate Fireburst',
 
+      // If this were a standard action attack, it would deal dr2 damage.
       attack: {
         hit: `
           \\damageranktwo.
@@ -703,6 +743,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 1,
+      roles: ['attune'],
       type: 'Attune',
     },
   ],

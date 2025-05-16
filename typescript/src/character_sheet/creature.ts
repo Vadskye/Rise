@@ -107,7 +107,7 @@ type CreatureProperty =
 
 // These are the defenses as displayed in attacks, not the defense statistics on
 // characters
-export type RiseDefenseHumanReadable = 'Armor' | 'Fortitude' | 'Reflex' | 'Mental';
+export type RiseDefenseHumanReadable = 'Armor' | 'Brawn' | 'Fortitude' | 'Reflex' | 'Mental';
 
 export interface AutoAttackConfig {
   accuracy?: MonsterAttackAccuracy;
@@ -604,6 +604,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get armor_defense() {
     return this.getPropertyValue('armor_defense');
+  }
+
+  public get brawn() {
+    return this.getPropertyValue('brawn');
   }
 
   public get fortitude() {

@@ -681,6 +681,7 @@ impl Monster {
                     \\monsep \\textbf<DR> {dr}
                 \\pari \\textbf<Defenses>
                     Armor {armor}
+                    \\monsep Brn {brawn}
                     \\monsep Fort {fort}
                     \\monsep Ref {ref}
                     {ment_text}
@@ -688,6 +689,7 @@ impl Monster {
             hp = self.creature.calc_hit_points(),
             dr = self.creature.calc_damage_resistance(),
             armor = self.creature.calc_defense(&Defense::Armor),
+            brawn = self.creature.calc_defense(&Defense::Brawn),
             fort = self.creature.calc_defense(&Defense::Fortitude),
             ref = self.creature.calc_defense(&Defense::Reflex),
         )

@@ -113,16 +113,16 @@ These rules could also be used for other types of vehicles, such as flying ships
       \lcaption{Ship Vital Wound Effects}
       \begin{dtabularx}{\textwidth}{l X}
         \tb{Vital Roll} & \tb{Effect} \tableheaderrule
-        0 or less  & The ship gains a leak (see \pcref{Taking On Water})             \\
+        0 or less  & The ship gains a leak (see \pcref{Taking On Water})                       \\
         1          & The ship takes a \minus2 penalty to future vital rolls                    \\
         2          & The ship's weapons take a \minus1 penalty to \glossterm{accuracy}         \\
         3          & The ship has a \minus10 foot penalty to its speed with all movement modes \\
         4          & The ship's turning cost increases by 10 feet                              \\
-        5          & The ship's maximum \glossterm{damage resistance} is halved                \\
-        6          & The ship takes a \minus1 penalty to all \glossterm{defenses}              \\
-        7          & The ship takes a \minus2 penalty to its Fortitude defense                \\
-        8          & The ship takes a \minus2 penalty to its Reflex defense                   \\
-        9          & The ship takes a \minus2 penalty to its Mental defense                   \\
+        5          & The ship takes a \minus1 penalty to all \glossterm{defenses}              \\
+        6          & The ship takes a \minus2 penalty to its Brawn defense                     \\
+        7          & The ship takes a \minus2 penalty to its Fortitude defense                 \\
+        8          & The ship takes a \minus2 penalty to its Reflex defense                    \\
+        9          & The ship takes a \minus2 penalty to its Mental defense                    \\
         10 or more & No extra vital wound effect                                               \\
       \end{dtabularx}
     \end{dtable}
@@ -213,6 +213,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       \begin{raggeditemize}
         \item Ships add their Strength to their \glossterm{mundane power}.
         \item Ships add their Strength to their strain tolerance.
+        \item Ships add their Strength to their Brawn defense.
       \end{raggeditemize}
 
       Unlike characters, a ship's Strength does not affect its carrying capacity.
@@ -394,7 +395,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   The simplified ship weapons listed in the table normally attack Armor defense.
   Magical simplified ship weapons use the same statistics as regular ship weapons, except that that they have the \weapontag{Fixed} (200) and \weapontag{Mystic} tags instead of \weapontag{Projectile} (200/600).
-  In addition, they can attack Fortitude, Reflex, or Mental defense instead of Armor defense.
+  In addition, they can attack Brawn, Fortitude, Reflex, or Mental defense instead of Armor defense.
 
   % Baseline weapon is dr = rank - 1 with Projectile (200/600).
   \begin{dtable!*}
@@ -414,6 +415,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   % Removing Slow Reload (1) is -2dr.
   % Dropping to Projectile (60/180) gives +1dr.
   % Increasing to Projectile (120/360) gives -1dr. Progression is 90 -> 120 -> 200 -> 300 -> 400.
+  % TODO: add ship weapon that attacks brawn. Gravity cannon?
   \begin{dtable!*}
     \lcaption{Realistic Ship Weapons}
     \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
@@ -742,7 +744,7 @@ These rules could also be used for other types of vehicles, such as flying ships
         \item Desperate Fortification: Whenever the ship would take damage, that damage is halved.
           At the end of each round, if the ship took damage in excess of your rank in this crew role that round, it increases its strain level by two.
         \item Enhance Armor: The ship gains a \plus1 \glossterm{enhancement bonus} to its Armor defense.
-        \item Enhance Resilience: The ship gains a \plus2 \glossterm{enhancement bonus} to its Fortitude defense and \glossterm{vital rolls}.
+        \item Enhance Resilience: The ship gains a \plus2 \glossterm{enhancement bonus} to its Brawn and Fortitude defenses.
         \item Mystic Ward: The ship gains a \plus2 \glossterm{enhancement bonus} to all defenses against \magical attacks.
       \end{raggeditemize}
 

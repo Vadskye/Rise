@@ -652,7 +652,7 @@ def universal_abilities():
             universal_ability_button(
                 "Grapple",
                 """
-                    Make a brawling attack with a free hand against the Fortitude and Reflex defenses of an adjacent creature.
+                    Make a brawling attack with a free hand against the Brawn and Reflex defenses of an adjacent creature.
                     On a hit against both defenses, you and the target are grappled by each other.
                 """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort and Ref", "tags": ["Brawling", "Size-Based"]},
@@ -675,7 +675,7 @@ def universal_abilities():
                 "Overrun",
                 """
                     After you use this ability, you increase your fatigue level by one.
-                    Move up to your movement speed in a straight line, even through creatures. Make a brawling attack vs. Fortitude against each creature that you move through who does not choose to avoid you.
+                    Move up to your movement speed in a straight line, even through creatures. Make a brawling attack vs. Brawn against each creature that you move through who does not choose to avoid you.
                     On a hit, you move through each creature's space. On a miss, you end your movement immediately.
                  """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
@@ -725,13 +725,13 @@ def universal_abilities():
                     You throw a creature or object 15 feet plus 5 feet per 2 Strength.
                     Some objects are much easier or harder to throw than others.
                     If the object's weight category matches your maximum carrying capacity, this distance is halved.
-                    To throw an unwilling creature, it must already be grappled by you, and you must make a brawling attack vs. its Fortitude defense.
+                    To throw an unwilling creature, it must already be grappled by you, and you must make a brawling attack vs. its Brawn defense.
                 """,
             ),
             universal_ability_button(
                 "Trip",
                 """
-                    Make a brawling attack vs. Fortitude with a free hand against an adjacent creature.
+                    Make a brawling attack vs. Brawn with a free hand against an adjacent creature.
                     On a hit, the target becomes prone.
                  """,
                 attack={"accuracy": "@{accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
