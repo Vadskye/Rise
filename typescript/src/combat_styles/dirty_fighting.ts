@@ -326,11 +326,11 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Anklesprainer',
+      name: 'Anklebreaker',
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it becomes \\glossterm{briefly} \\slowed.
+        If you get a \\glossterm{critical hit}, the target is \\glossterm{briefly} \\slowed.
       `,
       rank: 7,
       roles: ['softener'],

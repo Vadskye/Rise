@@ -166,23 +166,33 @@ Being unable to attack the source of its panic is complicated to calculate. It's
 
 There is an important edge case with panicked, which is that it can make it easy to fully negate a fight by having only the source of its fear fight, or by having the monster be panicked by all party members. In that scenario, assuming that the monster still fights at 75% effectiveness is misleading. This is hard to calculate; assume it makes the overall action denial 50% more effective, for a total of 1.5 effective actions from action denial.
 
-### Prone: 0.9
+### Prone: 1.6 (ranged) / 1 (melee)
 
 A prone creature typically has a defense penalty against three attacks rather than the usual 7 from stun. Assume that 2 of the 3 attacks can take advantage of the defense penalty, giving it 0.4 action effectiveness from the defense penalty.
 
-The movement penalty is about the same as a brief slow, so call that 0.5 effective actions.
+The movement penalty is about the same as a brief slow, but slightly more effective, so call that 1.2 effective actions.
+
+If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
+
+### Push 15': 0.5 (ranged) / 0.3 (melee)
+
+In many cases, a 15' push has no meaningful effect. Typically, forced movement is useful when combined with two things: kiting and battlefield hazards. In a kiting scenario, a 15' push will often force the target to sprint or charge, wasting a standard action. Triggering a battlefield hazard is generally worth half an action, since deployed hazards are generally less powerful than a full standard action attack. Assume that 75% of the time a push will be used for kiting and 25% of the time it will be used for battlefield hazards, and 25% of the time it will be irrelevant.
+
+When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of (1 + 0.5 + 0)/3 = 0.5.
 
 ### Single defense: 1.0
 
 If you can freely choose a single defense to reduce, you can typically choose the best available defense. That probably affects 5 of the 7 possible allied attacks.
 
-### Slowed: 1.5
+### Slowed: 2.0 (ranged) / 1.5 (melee)
 
 Slowed has two effects: the movement speed debuff and the defense debuff.
 
-The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 25% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may charge or sprint instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 0.25 * 4 * 0.5 = 0.5 effective actions.
+The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 50% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may charge or sprint instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 4 * 0.5 * 0.5 = 1 effective action.
 
 The defense debuff is mostly the same as stunned, except that not all party members will be able to take advantage of it. Armor + Reflex is still fairly common, so assume that 5 of the 7 attacks will benefit from the defense debuff, for a total of 1 action effectiveness.
+
+If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
 
 ### Stunned: 1.4
 
@@ -355,16 +365,16 @@ The defense penalty is twice the Frightened penalty, so 1.6 effective actions.
 
 As with the brief effect, assume 37.5% action denial over 4 rounds, so 6 effective actions.
 
-### Prone: 5.2
+### Prone: 7.2 (ranged) / 4.7 (melee)
 
-Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's worth an extra effective action.
+Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's 25% more effective, so +1 EA (ranged) or +0.5 EA (melee).
 
 ### Single defense: 2.0
 
 Choosing a single defense probably affects 10 of the 15 available player actions.
 
-### Slowed: 4.9
-Unlike the brief effect, it's easier for a party to coordinate to waste the actions of a creature that is slowed as a condition. That increases the action denial to roughly 33% frequency with 50% replacement effect value, or 17% action denial over 4 rounds, so 2.7 effective actions.
+### Slowed: 6.2 (ranged) / 4.2 (melee)
+We calculated the action denial from the speed debuff as 25% action denial, which is 4 effective actions. In melee, that would be 2 effective actions.
 For the defense debuff, assume that 11 of the 15 party actions will take advantage of it, so it's worth 2.2 effective actions.
 
 ### Stunned: 3
@@ -412,9 +422,13 @@ By EA:
   Goaded             & 0.6   & 0.6          & 2.3       \\
   Immobilized        & 5.0   & 6.5          & 19.4      \\
   Panicked           & 2.3   & 2.5          & 7.6       \\
-  Prone              & 0.9   & 1.7          & 5.2       \\
+  Prone (ranged)     & 1.6   & 2.4          & 7.2       \\
+  Prone (melee)      & 1.0   & 1.6          & 4.7       \\
+  Push 15' (ranged)  & 0.5   & N/A          & N/A       \\
+  Push 15' (melee)   & 0.3   & N/A          & N/A       \\
   Single defense     & 1.0   & 0.7          & 2.0       \\
-  Slowed             & 1.5   & 1.6          & 4.9       \\
+  Slowed (ranged)    & 2.0   & 2.0          & 6.2       \\
+  Slowed (melee)     & 1.5   & 1.4          & 4.2       \\
   Stunned            & 1.4   & 1.0          & 3.0       \\
   Time skip          & 2.5   & 6.7          & 20        \\
   Treat as invis:    & 1.2   & 1.8          & 5.3       \\
@@ -440,9 +454,13 @@ By rank:
   Goaded             & 2d    & 2d           & 6         \\
   Immobilized        & inf   & inf          & inf       \\
   Panicked           & 6     & 7            & inf       \\
-  Prone              & 4d    & 3            & inf       \\
+  Prone (ranged)     & 2     & 6            & inf       \\
+  Prone (melee)      & 4d    & 2            & inf       \\
+  Push 15' (ranged)  & 2d    & N/A          & N/A       \\
+  Push 15' (melee)   & 1d    & N/A          & N/A       \\
   Single defense     & 4d    & 3d           & 4         \\
-  Slowed             & 2     & 2            & inf       \\
+  Slowed (ranged)    & 4     & 4            & inf       \\
+  Slowed (melee)     & 2     & 1            & inf       \\
   Stunned            & 1     & 4d           & 9         \\
   Time skip          & 7     & inf          & inf       \\
   Treat as invis:    & 0     & 3            & inf       \\
@@ -572,38 +590,38 @@ These accuracy modifiers are separate from the normal accuracy modifier calculat
   * Unrestricted:
     * Strike and 0.2 EA debuff
     * Strike, if beat Fort/Ment, 0.4 EA debuff
-    * Strike while affected by non-accuracy buff, 0.6 EA debuff
+    * Strike and crit, 0.6 EA debuff
   * Melee only:
     * Strike and 0.4 EA debuff
     * Strike, if beat Fort/Ment, 0.6 EA debuff
-    * Strike while affected by non-accuracy buff, 0.8 EA debuff
+    * Strike and crit, 0.8 EA debuff
 * Rank 3:
   * Unrestricted:
     * strike and 0.8 EA debuff
     * strike, if beat Fort/Ment, 1.0 EA debuff
-    * strike while affected by non-accuracy buff, 1.2 EA debuff
+    * strike and crit, 1.2 EA debuff
   * Melee only:
     * strike and 1 EA debuff
     * strike, if beat Fort/Ment, 1.2 EA debuff
-    * strike while affected by non-accuracy buff, 1.4 EA debuff
+    * strike and crit, 1.4 EA debuff
 * Rank 5:
   * Unrestricted:
     * double damage strike and 1.2 EA debuff
     * double damage strike, if beat Fort/Ment, 1.4 EA debuff
-    * double damage strike while affected by non-accuracy buff, 1.6 EA debuff
+    * double damage strike and crit, 1.6 EA debuff
   * Melee only:
     * double damage strike and 1.4 EA debuff
     * double damage strike, if beat Fort/Ment, 1.6 EA debuff
-    * double damage strike while affected by non-accuracy buff, 1.8 EA debuff
+    * double damage strike and crit, 1.8 EA debuff
 * Rank 7:
   * Unrestricted:
     * triple damage strike and 1.6 EA debuff
     * triple damage strike, if beat Fort/Ment, 1.8 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 2.0 EA debuff
+    * triple damage strike and crit, 2.0 EA debuff
   * Melee only:
     * triple damage strike and 1.8 EA debuff
     * triple damage strike, if beat Fort/Ment, 2.0 EA debuff
-    * triple damage strike while affected by non-accuracy buff, 2.2 EA debuff
+    * triple damage strike and crit, 2.2 EA debuff
 
 ### Rank modifiers
 
