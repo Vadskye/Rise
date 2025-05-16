@@ -172,6 +172,10 @@ A prone creature typically has a defense penalty against three attacks rather th
 
 The movement penalty is about the same as a brief slow, so call that 0.5 effective actions.
 
+### Single defense: 1.0
+
+If you can freely choose a single defense to reduce, you can typically choose the best available defense. That probably affects 5 of the 7 possible allied attacks.
+
 ### Slowed: 1.5
 
 Slowed has two effects: the movement speed debuff and the defense debuff.
@@ -355,6 +359,10 @@ As with the brief effect, assume 37.5% action denial over 4 rounds, so 6 effecti
 
 Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's worth an extra effective action.
 
+### Single defense: 2.0
+
+Choosing a single defense probably affects 10 of the 15 available player actions.
+
 ### Slowed: 4.9
 Unlike the brief effect, it's easier for a party to coordinate to waste the actions of a creature that is slowed as a condition. That increases the action denial to roughly 33% frequency with 50% replacement effect value, or 17% action denial over 4 rounds, so 2.7 effective actions.
 For the defense debuff, assume that 11 of the 15 party actions will take advantage of it, so it's worth 2.2 effective actions.
@@ -405,6 +413,7 @@ By EA:
   Immobilized        & 5.0   & 6.5          & 19.4      \\
   Panicked           & 2.3   & 2.5          & 7.6       \\
   Prone              & 0.9   & 1.7          & 5.2       \\
+  Single defense     & 1.0   & 0.7          & 2.0       \\
   Slowed             & 1.5   & 1.6          & 4.9       \\
   Stunned            & 1.4   & 1.0          & 3.0       \\
   Time skip          & 2.5   & 6.7          & 20        \\
@@ -432,6 +441,7 @@ By rank:
   Immobilized        & inf   & inf          & inf       \\
   Panicked           & 6     & 7            & inf       \\
   Prone              & 4d    & 3            & inf       \\
+  Single defense     & 4d    & 3d           & 4         \\
   Slowed             & 2     & 2            & inf       \\
   Stunned            & 1     & 4d           & 9         \\
   Time skip          & 7     & inf          & inf       \\
@@ -443,7 +453,9 @@ By rank:
 
 These modifiers apply to EA, as opposed to rank modifiers that apply after calculating EA and damage.
 
-At a cost of +0.4 EA, you can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
+* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
+* +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round.
+* +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
 
 ## Effective Actions and Accuracy
 
@@ -611,6 +623,7 @@ These rank modifiers apply before calculating area and damage:
 
 These rank modifiers apply after calculating damage, but before calculating area.
 For pure damage effects, this is equivalent to directly modifying damage rank:
+
 * -1 rank: Must beat two defenses instead of one, one of which is Reflex
 * -1 rank: Effect is inescapably delayed by one round
 * -1 rank: Easy combo condition:
@@ -665,6 +678,8 @@ Rank 1 areas:
   * Medium line, 10' wide from self
 * Radius:
   * Medium radius from self
+* Targets:
+  * Up to two creatures in Short range
 
 Rank 2 areas:
 * Cone:
@@ -678,6 +693,9 @@ Rank 2 areas:
 * Radius:
   * (no change) Medium radius from self
   * Tiny radius in Short range (rare, since Tiny radius is so close to single target)
+* Targets:
+  * Up to three creatures in Short range
+  * Up to two creatures in Medium range
 
 Rank 3 areas:
 * Cone:
@@ -690,6 +708,9 @@ Rank 3 areas:
   * Large radius from self
   * Small radius in Short range
   * Tiny radius in Med range (only for splitting)
+* Targets:
+  * Up to four creatures in Short range
+  * (unchanged) Up to two creatures in Medium range
 
 After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
 
@@ -700,6 +721,9 @@ Rank 4 areas:
   * (unchanged) Two Medium, 10' wide lines from self
 * Radius
   * Medium radius in Short range (discouraged due to self-inclusion)
+* Targets:
+  * Any number of creatures in Short range (equivalent to enemies-only Medium radius)
+  * Up to three creatures in Medium range
 
 Rank 5 areas:
 * Cone:
@@ -709,6 +733,8 @@ Rank 5 areas:
 * Radius:
   * Two Small radii in Short range
   * Two Tiny radii in Med range
+* Targets:
+  * Any number of creatures in Medium range (equivalent to enemies-only Large radius)
 
 #### Extended Area Scaling
 
