@@ -35,6 +35,10 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
     console.error(
       `Attack from ${effectName} should have explicit crit effect for removing immunity`,
     );
+  } else if (attack.crit && attack.crit.includes('condition') && !attack.hit.includes('condition')) {
+    console.error(
+      `Attack from ${effectName} has crit condition effect but does not inflict a condition`,
+    );
   }
 }
 
