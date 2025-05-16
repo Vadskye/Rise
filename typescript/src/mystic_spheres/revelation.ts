@@ -116,24 +116,11 @@ export const revelation: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the target makes a \\glossterm{strike} this round,
-          it gains a +1 \\glossterm{accuracy} bonus and rolls twice and takes the higher result.
-        If you cast this spell on yourself, it affects the first strike you make before the end of the next round.
+        If you choose an ally, they are \\focused and gain a \\plus1 accuracy bonus this round.
+        If you choose yourself, the effect applies to you next round instead.
       `,
       rank: 1,
-      tags: [],
-    },
-
-    {
-      name: 'True Cast',
-
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The first time the target casts a spell this round,
-          it gains a +1 \\glossterm{accuracy} bonus and rolls twice and takes the higher result.
-        If you cast this spell on yourself, it affects the first spell you cast before the end of the next round.
-      `,
-      rank: 2,
+      roles: ['boon'],
       tags: [],
     },
 
@@ -224,8 +211,8 @@ export const revelation: MysticSphere = {
           Whether you hit or miss, the target becomes immune to this effect until it takes a \\glossterm{short rest}.
         `,
       },
-
       rank: 3,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Subtle'],
       type: 'Sustain (attuneable, minor)',
@@ -328,31 +315,37 @@ export const revelation: MysticSphere = {
     {
       name: 'Reveal Weakness',
 
-      // TODO: unclear rank (1??)
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target's weaknesses are highlighted, and openings in its defenses are revealed to attackers moments before they exist.
-          It takes a -2 penalty to the chosen defense.
+          Each target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
         `,
         targeting: `
           Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 accuracy bonus against up to two creatures within \\shortrange.
         `,
       },
-
+      narrative: `
+        You expose your enemy's weaknesses, revealing openings in its defenses moments before they exist.
+      `,
       rank: 1,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Intense Reveal Weakness',
 
-      functionsLike: {
-        name: 'reveal weakness',
-        exceptThat: 'the penalty increases to -4.',
+      attack: {
+        hit: `
+          Each target \\glossterm{briefly} takes a -4 penalty to the chosen defense.
+        `,
+        targeting: `
+          Choose one of the four defenses: Armor, Fortitude, Reflex, or Mental.
+          Make an attack vs. Mental against up to three creatures within \\medrange.
+        `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
@@ -364,18 +357,8 @@ export const revelation: MysticSphere = {
         exceptThat:
           'the accuracy bonus increases to +4. However, after you cast this spell, you \\glossterm{briefly} cannot cast it again.',
       },
+      roles: ['boon'],
       rank: 6,
-    },
-
-    {
-      name: 'Empowered True Cast',
-
-      functionsLike: {
-        name: 'True Cast',
-        exceptThat:
-          'the accuracy bonus increases to +4. However, after you cast this spell, you \\glossterm{briefly} cannot cast it again.',
-      },
-      rank: 7,
     },
 
     {
@@ -394,23 +377,29 @@ export const revelation: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['softener'],
       scaling: 'double_accuracy',
     },
 
     {
       name: 'Myriad Visions',
 
+      // HP dazzle is 0.8 EA. +0.2 EA for area tier, +0.4 for HP condition alt
       attack: {
         crit: CONDITION_CRIT,
-        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
+        hit: `
+          Each target is \\glossterm{briefly} \\dazzled.
+          If it has no remaining \\glossterm{damage resistance}, it is also dazzled as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to two creature within \\medrange.
         `,
       },
       narrative: `
         Your foe sees visions of possible futures that confuse its ability to determine reality.
       `,
       rank: 1,
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -420,17 +409,18 @@ export const revelation: MysticSphere = {
     {
       name: 'Field of Visions',
 
+      // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
-        crit: CONDITION_CRIT,
-        hit: `Each target is \\dazzled as a \\glossterm{condition}.`,
+        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
-          You create a field of hallucinatory visions in a \\medarea radius \\glossterm{zone} within \\medrange.
+          You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
-      rank: 4,
+      rank: 3,
+      roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Sustain (attuneable, standard)', 'Visual'],
+      tags: ['Sustain (minor)', 'Visual'],
     },
 
     {
@@ -445,18 +435,11 @@ export const revelation: MysticSphere = {
 
         If undisturbed, the sensor floats in the air in its position.
         As a \\glossterm{movement}, you can move the sensor up to 30 feet in any direction, even vertically.
-        At the end of each round, if the sensor is not within \\distrange from you, it is destroyed.
+        At the end of each round, if the sensor is not within 120 feet from you, it is destroyed.
+        This distance check ignores \\glossterm{line of sight} and \\glossterm{line of effect}.
       `,
       rank: 2,
-      scaling: {
-        4: `
-          The sensor is not destroyed if you do not have \\glossterm{line of effect} to it.
-          If it gets farther than 240 feet from you, ignoring all obstacles, it is still destroyed.
-        `,
-        6: `
-          The maximum distance before the sensor is destroyed increases to 480 feet.
-        `,
-      },
+      roles: ['narrative'],
       tags: ['Scrying'],
       type: 'Sustain (minor)',
     },
@@ -496,6 +479,7 @@ export const revelation: MysticSphere = {
         If undisturbed, the sensor floats in the air in its position.
       `,
       rank: 3,
+      roles: ['narrative'],
       tags: ['Scrying'],
       type: 'Sustain (minor)',
     },
@@ -591,6 +575,7 @@ export const revelation: MysticSphere = {
       },
 
       rank: 4,
+      roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (standard)',
     },
@@ -612,6 +597,7 @@ export const revelation: MysticSphere = {
       },
 
       rank: 2,
+      roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (standard)',
     },
