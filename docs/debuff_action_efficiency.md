@@ -174,9 +174,23 @@ The movement penalty is about the same as a brief slow, but slightly more effect
 
 If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
 
+### Pull 15': 0.5
+
+A pull is hard to use for kiting, though it can be useful for locking an enemy down on the tank. It can also be used to trigger battlefield hazards. Assume that 75% of the time a pull will be used to control enemy attacks and 25% of the time it will be used for battlefield hazards.
+
+When used to control enemy targeting, assume that the post-pull action is 25% action denial, and a 15' pull meaningfully changes enemy actions 50% of the time. That means it's worth 4 * 0.25 * 0.5 = 0.5 EA. The overall value is 0.75 * 0.5 + 0.25 * 0.5 = 0.5 EA.
+
+### Pull 30': 1.5
+
+Assume that a post-pull action is 33% action denial, and a 30' pull meaningfull changes enemy actions 75% of the time. That means it's worth 4 * 0.33 * 0.75 = 1 EA.
+
+### Pull 60': 2.5
+
+This seems like 50% action denial, so 2 EA.
+
 ### Push 15': 0.9 (ranged) / 0.4 (melee)
 
-In many cases, a 15' push has no meaningful effect. Typically, forced movement is useful when combined with two things: kiting and battlefield hazards. In a kiting scenario, a 15' push will often force the target to sprint or charge, wasting a standard action. Triggering a battlefield hazard is generally worth half an action, since deployed hazards are generally less powerful than a full standard action attack. Assume that 75% of the time a push will be used for kiting and 25% of the time it will be used for battlefield hazards, and 25% of the time it will be irrelevant.
+In many cases, a 15' push has no meaningful effect. Typically, forced movement is useful when combined with two things: kiting and battlefield hazards. In a kiting scenario, a 15' push will often force the target to sprint or charge, wasting a standard action. Triggering a battlefield hazard is generally worth half an action, since deployed hazards are generally less powerful than a full standard action attack. Assume that 75% of the time a push will be used for kiting and 25% of the time it will be used for battlefield hazards.
 
 When used for kiting, a 15' push is basically the same EA as prone or slow, which we estimate as 1 effective action. Triggering a battlefield hazard is worth 0.5 EA. That gives a total EA value of 0.75 * 1 + 0.25 * 0.5 = 0.9.
 
@@ -428,6 +442,9 @@ By EA:
   Panicked           & 2.3   & 2.5          & 7.6       \\
   Prone (ranged)     & 1.6   & 2.4          & 7.2       \\
   Prone (melee)      & 1.0   & 1.6          & 4.7       \\
+  Pull 15'           & 0.5   & N/A          & N/A       \\
+  Pull 30'           & 1.5   & N/A          & N/A       \\
+  Pull 60'           & 2.5   & N/A          & N/A       \\
   Push 15' (ranged)  & 0.9   & N/A          & N/A       \\
   Push 15' (melee)   & 0.4   & N/A          & N/A       \\
   Push 30' (ranged)  & 2.0   & N/A          & N/A       \\
@@ -462,6 +479,9 @@ By rank:
   Panicked           & 6     & 7            & inf       \\
   Prone (ranged)     & 2     & 6            & inf       \\
   Prone (melee)      & 4d    & 2            & inf       \\
+  Pull 15'           & 2d    & N/A          & N/A       \\
+  Pull 30'           & 2     & N/A          & N/A       \\
+  Pull 60'           & 7     & N/A          & N/A       \\
   Push 15' (ranged)  & 4d    & N/A          & N/A       \\
   Push 15' (melee)   & 1d    & N/A          & N/A       \\
   Push 30' (ranged)  & 4     & N/A          & N/A       \\
