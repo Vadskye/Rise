@@ -259,12 +259,12 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash',
 
       effect: `
-        Make a \\glossterm{strike}.
-        If the target takes damage, you \\glossterm{knockback} it 15 feet.
+        Make a melee \\glossterm{strike}.
+        If the target loses \\glossterm{hit points} and your attack result hits its Brawn defense, you \\glossterm{knockback} it 15 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['combo', 'payoff'],
     },
 
@@ -272,12 +272,12 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash+',
 
       effect: `
-        Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage, you \\glossterm{knockback} it 30 feet.
+        Make a melee \\glossterm{strike} that deals double damage.
+        If the target loses \\glossterm{hit points} and your attack result hits its Brawn defense, you \\glossterm{knockback} it 30 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['combo', 'payoff'],
     },
 

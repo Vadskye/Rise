@@ -225,32 +225,29 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Knock Flying',
+      name: 'Fling',
 
+      // -1r for using brawling accuracy? A 30' knockback would normally be r2.
       effect: `
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
-        You must be strong enough to carry the target.
-        \\hit You \\glossterm{knockback} the target 10 feet away from you.
-        If you are \\empowered, this knockback distance is doubled.
+        The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
+        \\hit If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['combo'],
       tags: ['Brawling'],
     },
 
     {
-      name: 'Knock Flying+',
+      name: 'Fling+',
 
-      // TODO: what damage value and distance make sense here? Knockback isn't well
-      // studied.
       effect: `
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
-        You must be strong enough to carry the target.
-        \\hit \\damagerankfour.
-        In addition, you \\glossterm{knockback} the target 20 feet away from you.
-        If you are \\empowered, this knockback distance is doubled.
+        The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
+        \\hit \\damagerankeight.
+        If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 30 feet.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['combo'],
       tags: ['Brawling'],
     },

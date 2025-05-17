@@ -158,6 +158,10 @@ The -4 defense penalty is worth 2 action effectiveness, following the same logic
 
 Being unable to use movement speeds is hard to calculate, but it can effectively make fights trivial. Assume that it negates 75% of enemy actions, so it's worth 3 action effectiveness.
 
+### Knockback 15': 0.9 (ranged) / 0.4 (melee)
+
+Knockback is dangerous compared to push because it can send enemies into bottomless pits and cliffs. Treat knockback 15' as being the same EA as push 15', except that knockback requires HP loss.
+
 ### Panicked: 2.3
 
 Using the same logic as being frightened, the -4 Mental defense penalty is worth 0.7 effective actions on average, to a maximum of 2.8 effective actions.
@@ -817,3 +821,20 @@ Rank 7 areas:
 ### Area Rank Modifiers
 
 * +2 area rank: Only affects enemies in the area.
+
+## Walls and Barriers
+
+Barriers are most effective in tunnel and constrained movement situations. They generally don't work as well on open battlefields. What is the correct size for a standard "you cannot pass" barrier? How should it scale with level?
+
+* Rank 1: Small wall in Short range
+* +1 rank: Short -> Med -> Long range
+* +1 rank: +1x power HP
+* +1 rank: Small -> Med wall
+* +2 ranks: Med -> Large wall
+* Wall HP:
+  * Rank 1-2: 2x power
+  * Rank 3-5: 3x power
+  * Rank 6-8: 4x power
+  * Rank 9: 5x power
+
+Standard rank scaling is +1x power HP per 2 ranks.

@@ -587,13 +587,13 @@
       When a creature would fall while being pushed, it automatically makes a \glossterm{reactive check} with the Climb skill to avoid falling.
       The Climb check is made against the closest available stable object, such as the edge of a cliff.
       Success means that the creature does not fall, but is now \climbing.
-
       This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
 
     \subsubsection{Knockback Effects}\label{Knockback Effects}
       A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
       If it encounters an \glossterm{obstacle}, the knockback ends.
       Both the creature and the obstacle take 1d6 damage per 10 feet of movement remaining.
+
       A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
       This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
 
@@ -1282,24 +1282,26 @@
     Cylinders also have a specific height.
     Unless otherwise specified, a cylinder's height is the same as its radius.
 
-    \parhead{Line} A line extends from the point of origin in a straight line, up to the given length.
-    Lines also have a specific width and height.
-    Unless otherwise specified, a line-shaped ability affects an area 5 feet wide and 5 feet high.
+    \parhead{Line} A line extends from the point of origin in a straight line, up to the given length and width.
+    Unless otherwise specified, the height of a line-shaped ability is equal to its width.
     The affected squares are chosen such that they stay close to the chosen line as possible.
-    All squares affected by a line must be contiguous, so every square is adjacent to another affected square, disregarding diagonals.
+    All squares affected by a line must be contiguous, so every square is adjacent to another affected square, treating diagonals as adjacent.
 
     If a line-shaped effect has its area increased, only the length of the line increases unless otherwise noted.
+    Its width and height are not affected.
+    Vertical lines use ``length'' to refer to the vertical dimension, and ``width'' and ``height'' to refer to the two horizontal dimensions.
 
     \parhead{Sphere} A sphere extends from the point of origin in all directions.
     Any ability which only specifies a radius for its area is sphere-shaped.
 
-    \parhead{Wall} A wall is like a line, except that its width is not defined in squares.
+    \parhead{Wall} A wall extends out from the point of origin in two dimensions equally, up to the given total length and height.
+    A wall's height is equal to half its length, to a minimum of 5 feet high.
     Narratively, all walls have a nonzero width.
     Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
+
+    All squares affected by a wall must by contiguous, so every square is adjacent to another affected square, treating diagonals as adjacent.
     Like lines, some walls are shapeable.
 
-    All walls share the following common properties unless their description says otherwise.
-    A wall's height is equal to half its length for straight walls, or half its radius for circular walls, to a minimum of 5 feet high.
     The entire wall is considered to be a single object, and is attacked and destroyed as a single unit.
     All of a wall's defenses are 0, but like other objects, they are immune to \glossterm{critical hits}.
     Most abilities that create walls indicate how many hit points the wall has.
@@ -1310,6 +1312,7 @@
 
     Walls can normally be created within or adjacent to occupied squares, but not within solid objects.
     If a wall has hit points, it cannot be created inside the space of a single creature, but it can be created between two adjacent creatures.
+    Walls without hit points can be created within the space occupied by a single creature, since they do not have physical substance.
 
     \subsubsection{Area Types}\label{Area Types}
       There are three common area types.
