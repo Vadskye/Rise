@@ -32,7 +32,7 @@ export const rituals: Ritual[] = [
       Otherwise, it lasts for one year.
     `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
     type: 'Attune',
   },
@@ -48,6 +48,7 @@ export const rituals: Ritual[] = [
       name: 'blessing of fortification',
     },
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
 
@@ -62,6 +63,7 @@ export const rituals: Ritual[] = [
       name: 'immutability',
     },
     rank: 6,
+    roles: ['narrative'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
 
@@ -76,7 +78,7 @@ export const rituals: Ritual[] = [
       name: 'fortification',
     },
     rank: 4,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
@@ -90,7 +92,7 @@ export const rituals: Ritual[] = [
       Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
       `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
     type: 'Attune',
   },
@@ -106,6 +108,7 @@ export const rituals: Ritual[] = [
       name: 'bless water',
     },
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
   },
 
@@ -118,7 +121,7 @@ export const rituals: Ritual[] = [
       Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
       `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Channel Divinity', 'Prayer'],
   },
@@ -134,6 +137,7 @@ export const rituals: Ritual[] = [
       name: 'curse water',
     },
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
   },
 
@@ -147,7 +151,7 @@ export const rituals: Ritual[] = [
       This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
     `,
     rank: 2,
-    roles: ['attune'],
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
     type: 'Attune',
   },
@@ -162,6 +166,7 @@ export const rituals: Ritual[] = [
       name: 'consecrated ground',
     },
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
   },
   {
@@ -179,6 +184,7 @@ export const rituals: Ritual[] = [
       For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
     `,
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer', 'Revelation'],
   },
   {
@@ -192,6 +198,7 @@ export const rituals: Ritual[] = [
       name: 'commune',
     },
     rank: 7,
+    roles: ['narrative'],
     tags: [],
     castingTime: '24 hours',
     spheres: ['Channel Divinity', 'Prayer', 'Revelation'],
@@ -211,6 +218,7 @@ export const rituals: Ritual[] = [
       In cases where a one-word answer would be misleading or contrary to the creature's interests, a short phrase may be given as an answer instead.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
   },
   {
@@ -224,6 +232,7 @@ export const rituals: Ritual[] = [
       name: 'commune',
     },
     rank: 6,
+    roles: ['narrative'],
     tags: [],
     castingTime: '24 hours',
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
@@ -323,6 +332,7 @@ export const rituals: Ritual[] = [
       Generally, moving water uphill costs at least 5 miles per hour of speed for every foot of elevation that you are trying to climb, which can limit your ability to move water up large distances.
     `,
     rank: 2,
+    roles: ['narrative'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Aquamancy'],
   },
@@ -335,6 +345,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the maximum speed change increases to 20 miles per hour.',
     },
     rank: 6,
+    roles: ['narrative'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Aquamancy'],
   },
@@ -349,6 +360,7 @@ export const rituals: Ritual[] = [
       Everything in the area is \\trait{impervious} to \\atFire attacks.
     `,
     rank: 1,
+    roles: ['narrative'],
     tags: ['Manifestation'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Aquamancy'],
@@ -368,6 +380,7 @@ export const rituals: Ritual[] = [
     // narrative: '',
     type: 'Sustain (attuneable, minor)',
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Aquamancy', 'Prayer', 'Toxicology'],
   },
   {
@@ -378,6 +391,7 @@ export const rituals: Ritual[] = [
       name: 'purify water',
     },
     rank: 4,
+    roles: ['narrative'],
     tags: [],
     castingTime: 'one minute',
     spheres: ['Aquamancy', 'Prayer', 'Toxicology'],
@@ -393,6 +407,7 @@ export const rituals: Ritual[] = [
         This ritual can sense water as small as a gallon, but no smaller.
     `,
     rank: 2,
+    roles: ['narrative'],
     tags: ['Detection'],
     spheres: ['Aquamancy', 'Revelation'],
   },
@@ -406,6 +421,7 @@ export const rituals: Ritual[] = [
       name: 'sense water',
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Detection'],
     castingTime: 'one hour',
     spheres: ['Aquamancy', 'Revelation'],
@@ -417,6 +433,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a slow \\glossterm{swim speed}.
+      If it already has a slow swim speed, it gains an average swim speed instead.
     `,
     // narrative: '',
     rank: 2,
@@ -427,6 +444,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Interplanar Gate',
     rank: 7,
+    roles: ['narrative'],
     effect: `
       Choose a plane that connects to your current plane, and a location within that plane.
       This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
@@ -449,6 +467,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Plane Shift',
     rank: 4,
+    roles: ['narrative'],
     effect: `
       Choose a \\glossterm{planar rift} within \\medrange and up to six Medium or smaller ritual participants.
       Each creature \\glossterm{teleports} to the unoccupied spaces closest to the other side of the planar rift.
@@ -477,6 +496,7 @@ export const rituals: Ritual[] = [
       It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
     `,
     rank: 5,
+    roles: ['narrative'],
     tags: [],
     castingTime: '24 hours',
     spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
@@ -492,6 +512,7 @@ export const rituals: Ritual[] = [
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
     `,
     rank: 4,
+    roles: ['narrative'],
     tags: [],
     castingTime: 'one hour',
     spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
@@ -526,6 +547,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Forge Astral Beacon',
     rank: 3,
+    roles: ['narrative'],
     effect: `
       You draw a magic circle in a \\smallarea radius during this ritual.
       The circle creates an \\glossterm{astral beacon}, making it easier for creatures to teleport into the circle.
@@ -550,6 +572,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Guided Translocation',
     rank: 3,
+    roles: ['narrative'],
     effect: `
       Choose an \\glossterm{astral beacon} up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
       Each target is teleported to the area defined by the beacon.
@@ -574,6 +597,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Distant Translocation',
     rank: 4,
+    roles: ['narrative'],
     effect: `
       Choose a destination up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
       Each target is teleported to the chosen destination.
@@ -612,6 +636,7 @@ export const rituals: Ritual[] = [
     },
     sphereEffects: teleportSphereEffects,
     rank: 7,
+    roles: ['narrative'],
     tags: [],
     castingTime: 'one hour',
     spheres: [
@@ -633,6 +658,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Astromancy', 'Summoning'],
   },
   {
@@ -651,6 +677,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Astromancy', 'Summoning'],
   },
   {
@@ -662,6 +689,7 @@ export const rituals: Ritual[] = [
       However, the mental effort imposes a -2 penalty to your Mental defense.
     `,
     rank: 1,
+    roles: ['narrative'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Chronomancy', 'Revelation'],
   },
@@ -674,6 +702,7 @@ export const rituals: Ritual[] = [
       However, the mental effort imposes a -4 penalty to your Mental defense.
     `,
     rank: 5,
+    roles: ['narrative'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Chronomancy', 'Revelation'],
   },
@@ -694,7 +723,7 @@ export const rituals: Ritual[] = [
       % Does this need to explicitly clarify that it doesn't stop time from passing for the creature's soul?
     `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
   },
@@ -707,6 +736,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the effect lasts for one year.',
     },
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
   },
   {
@@ -724,6 +754,7 @@ export const rituals: Ritual[] = [
       The future is variable and chaotic, so making the same decisions does not guarantee the same results as your future self, but it should be likely to have a similar outcome.
     `,
     rank: 2,
+    roles: ['narrative'],
     materialCost: true,
     spheres: ['Chronomancy'],
   },
@@ -736,6 +767,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the duplicate can answer up to three yes or no questions before disappearing.',
     },
     rank: 5,
+    roles: ['narrative'],
     materialCost: true,
     spheres: ['Chronomancy'],
   },
@@ -750,7 +782,7 @@ export const rituals: Ritual[] = [
       If the container is destroyed, this effect ends.
     `,
     rank: 3,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Chronomancy'],
   },
@@ -763,6 +795,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the effect lasts for one year.',
     },
     rank: 5,
+    roles: ['narrative'],
     spheres: ['Chronomancy'],
   },
   {
@@ -805,6 +838,7 @@ export const rituals: Ritual[] = [
       The object is repaired as if it had never been broken.
     `,
     rank: 1,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Fabrication', 'Polymorph'],
   },
   {
@@ -816,6 +850,7 @@ export const rituals: Ritual[] = [
       The object is repaired as if it had never been destroyed.
     `,
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Fabrication', 'Polymorph'],
   },
   {
@@ -831,6 +866,7 @@ export const rituals: Ritual[] = [
     `,
     materialCost: true,
     rank: 6,
+    roles: ['narrative'],
     spheres: ['Chronomancy'],
   },
   {
@@ -861,7 +897,7 @@ export const rituals: Ritual[] = [
       Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
     `,
     rank: 4,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Cryomancy'],
   },
@@ -877,7 +913,7 @@ export const rituals: Ritual[] = [
       name: 'cold snap',
     },
     rank: 7,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Cryomancy'],
   },
@@ -893,6 +929,7 @@ export const rituals: Ritual[] = [
       It also gains the normal benefits of a \\glossterm{short rest}.
     `,
     rank: 2,
+    roles: ['healing'],
     tags: ['Compulsion'],
     spheres: ['Enchantment', 'Prayer', 'Thaumaturgy'],
   },
@@ -921,7 +958,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 2,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Enchantment'],
   },
@@ -947,7 +984,7 @@ export const rituals: Ritual[] = [
     },
 
     rank: 4,
-    roles: ['attune'],
+    roles: ['hazard'],
     tags: ['Emotion'],
     type: 'Attune',
     spheres: ['Enchantment'],
@@ -977,7 +1014,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 4,
-    roles: ['attune'],
+    roles: ['hazard'],
     tags: ['Emotion'],
     type: 'Attune',
     spheres: ['Enchantment'],
@@ -1037,6 +1074,7 @@ export const rituals: Ritual[] = [
       You must create a minimum of one ounce of water in each location.
     `,
     rank: 1,
+    roles: ['narrative'],
     tags: ['Creation', 'Water'],
     spheres: ['Aquamancy', 'Fabrication'],
   },
@@ -1051,6 +1089,7 @@ export const rituals: Ritual[] = [
       The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
     `,
     rank: 2,
+    roles: ['narrative'],
     tags: ['Creation'],
     spheres: ['Fabrication', 'Verdamancy'],
   },
@@ -1065,6 +1104,7 @@ export const rituals: Ritual[] = [
       The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
     `,
     rank: 4,
+    roles: ['narrative'],
     tags: ['Creation'],
     spheres: ['Fabrication', 'Verdamancy'],
   },
@@ -1080,6 +1120,7 @@ export const rituals: Ritual[] = [
       It requires one \\glossterm{fatigue level} from its participants.
     `,
     rank: 1,
+    roles: ['narrative'],
     spheres: ['Aquamancy', 'Fabrication', 'Polymorph'],
   },
 
@@ -1096,6 +1137,7 @@ export const rituals: Ritual[] = [
       name: 'copy writing',
     },
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Aquamancy', 'Fabrication', 'Polymorph'],
   },
 
@@ -1108,7 +1150,7 @@ export const rituals: Ritual[] = [
       You can choose to create blunted ammunition, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
       Any creature may take ammunition from the pile to use.
     `,
-    rank: 3,
+    rank: 2,
     roles: ['attune'],
     tags: ['Manifestation'],
     type: 'Attune',
@@ -1129,10 +1171,39 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
-    roles: ['attune'],
+    roles: ['narrative'],
     tags: ['Manifestation'],
     type: 'Attune',
     spheres: ['Telekinesis', 'Thaumaturgy'],
+  },
+
+  {
+    name: 'Mystic Cage',
+
+    castingTime: 'one hour',
+    effect: `
+      You create a cube of magical energy within \\medrange.
+      Each wall of the cube is 20 feet wide and tall.
+      Nothing can pass through the wall until it is destroyed.
+      The corners of the cube have tiny gaps that allow air to pass through, but not even a Fine creature can fit through the gaps.
+
+      Each wall has both \\glossterm{hit points} and \\glossterm{damage resistance} equal to three times your \\glossterm{power}.
+      The walls track their hit points individually.
+      They treat all damage as \\glossterm{environmental damage}, so attacks that deal less damage than the wall's damage resistance have no effect (see \\pcref{Environmental Damage}).
+      Any damage to a wall causes visible cracks or scars, making it easy to recognize the health of the walls.
+    `,
+    // narrative: '',
+    rank: 3,
+    roles: ['narrative'],
+    sphereEffects: {
+      Cryomancy: 'The walls are made of clear ice that does not block sight. They take double damage from \\atFire abilities.',
+      Fabrication: 'The walls are made of a solid substance like metal or stone, and are completely opaque.',
+      Telekinesis: 'The walls are visible as a shimmering magical field that does not block sight.',
+      Terramancy: 'The walls are made of stone, and are completely opaque.',
+    },
+    tags: ['Manifestation'],
+    type: 'Attune',
+    spheres: ['Cryomancy', 'Fabrication', 'Telekinesis', 'Terramancy'],
   },
 
   {
@@ -1144,6 +1215,7 @@ export const rituals: Ritual[] = [
       The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius.
     `,
     rank: 1,
+    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1158,6 +1230,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the area increases to a \\largearea radius.',
     },
     rank: 3,
+    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1172,6 +1245,7 @@ export const rituals: Ritual[] = [
       The target glows like a torch, emitting \\glossterm{brilliant illumination} in a \\smallarea radius.
     `,
     rank: 5,
+    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1186,6 +1260,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the area increases to a \\largearea radius.',
     },
     rank: 7,
+    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1200,6 +1275,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the effect lasts for one year.',
     },
     rank: 2,
+    roles: ['narrative'],
     tags: ['Visual'],
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
   },
@@ -1213,6 +1289,7 @@ export const rituals: Ritual[] = [
       exceptThat: 'the area increases to a \\largearea radius, and the effect lasts for one year.',
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Visual'],
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
   },
@@ -1275,7 +1352,7 @@ export const rituals: Ritual[] = [
       When this effect ends, the handholds disappear.
     `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Polymorph', 'Telekinesis', 'Terramancy'],
   },
@@ -1293,6 +1370,7 @@ export const rituals: Ritual[] = [
       This ritual takes time equal to one tenth of the time that would normally be required to craft the object, to a minimum of one hour.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Polymorph', 'Telekinesis'],
   },
 
@@ -1307,6 +1385,7 @@ export const rituals: Ritual[] = [
       name: 'Craft Object',
     },
     rank: 5,
+    roles: ['narrative'],
     spheres: ['Polymorph', 'Telekinesis'],
   },
 
@@ -1321,6 +1400,7 @@ export const rituals: Ritual[] = [
       name: 'craft object',
     },
     rank: 7,
+    roles: ['narrative'],
     spheres: ['Polymorph', 'Telekinesis'],
   },
 
@@ -1334,6 +1414,7 @@ export const rituals: Ritual[] = [
       This does not prevent subsequent natural decay or spoiling.
     `,
     rank: 1,
+    roles: ['narrative'],
     spheres: ['Prayer', 'Toxicology'],
   },
 
@@ -1369,7 +1450,7 @@ export const rituals: Ritual[] = [
       When the chosen key touches the sealed object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
     `,
     rank: 2,
-    roles: ['attune'],
+    roles: ['narrative'],
     scaling: {
       special: `
         You can perform this ritual at a higher rank.
@@ -1392,7 +1473,7 @@ export const rituals: Ritual[] = [
       name: 'meld shut',
     },
     rank: 5,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Polymorph'],
   },
@@ -1423,7 +1504,7 @@ export const rituals: Ritual[] = [
       This does not protect the target from \\atFire attacks.
     `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Pyromancy'],
   },
@@ -1441,7 +1522,7 @@ export const rituals: Ritual[] = [
       Even a thin barrier, such as a tent, is enough to protect locations from the effect of this ritual.
     `,
     rank: 4,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Pyromancy'],
   },
@@ -1458,7 +1539,7 @@ export const rituals: Ritual[] = [
       name: 'heat wave',
     },
     rank: 7,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Pyromancy'],
   },
@@ -1474,6 +1555,7 @@ export const rituals: Ritual[] = [
         This ritual can sense fires as small as a candle flame, but no smaller.
     `,
     rank: 2,
+    roles: ['narrative'],
     tags: ['Detection'],
     spheres: ['Revelation', 'Pyromancy'],
   },
@@ -1489,6 +1571,7 @@ export const rituals: Ritual[] = [
       name: 'sense flame',
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Detection'],
     spheres: ['Revelation', 'Pyromancy'],
   },
@@ -1537,8 +1620,8 @@ export const rituals: Ritual[] = [
       You can see the target's true form, regardless of any shapechanging or illusion effects.
     `,
     rank: 3,
-    roles: ['attune'],
-    type: 'Attune',
+    roles: ['narrative'],
+    type: 'Sustain (attuneable, free)',
     spheres: ['Photomancy', 'Revelation'],
   },
 
@@ -1564,6 +1647,7 @@ export const rituals: Ritual[] = [
       For example, if you are presented with seven doorways, with one doorway leading to a magnificent treasure and all other doorways leading to certain death, you cannot simply perform this ritual six times to determine the correct doorway.
     `,
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1579,6 +1663,7 @@ export const rituals: Ritual[] = [
       name: 'augury',
     },
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1594,6 +1679,7 @@ export const rituals: Ritual[] = [
       name: 'augury',
     },
     rank: 6,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1611,7 +1697,7 @@ export const rituals: Ritual[] = [
       The alarm is strong enough to wake you from normal sleep, but does not otherwise disturb concentration.
     `,
     rank: 1,
-    roles: ['attune'],
+    roles: ['narrative'],
     tags: ['Scrying'],
     type: 'Attune',
     spheres: ['Photomancy', 'Revelation'],
@@ -1631,6 +1717,7 @@ export const rituals: Ritual[] = [
     `,
 
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1645,6 +1732,7 @@ export const rituals: Ritual[] = [
       name: 'locate creature',
     },
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1665,6 +1753,7 @@ export const rituals: Ritual[] = [
     `,
 
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1681,6 +1770,7 @@ export const rituals: Ritual[] = [
       name: 'discern location',
     },
     rank: 4,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1697,6 +1787,7 @@ export const rituals: Ritual[] = [
       name: 'discern location',
     },
     rank: 6,
+    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1719,6 +1810,7 @@ export const rituals: Ritual[] = [
       `,
 
     rank: 2,
+    roles: ['narrative'],
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1734,6 +1826,7 @@ export const rituals: Ritual[] = [
       name: 'sending',
     },
     rank: 4,
+    roles: ['narrative'],
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1750,6 +1843,7 @@ export const rituals: Ritual[] = [
       name: 'sending',
     },
     rank: 4,
+    roles: ['narrative'],
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1765,6 +1859,7 @@ export const rituals: Ritual[] = [
       name: 'sending',
     },
     rank: 6,
+    roles: ['narrative'],
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1833,6 +1928,7 @@ export const rituals: Ritual[] = [
       They learn the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
     `,
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Prayer', 'Revelation', 'Thaumaturgy'],
   },
 
@@ -1855,6 +1951,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 3,
+    roles: ['narrative'],
     tags: ['Scrying'],
     spheres: ['Photomancy', 'Revelation'],
   },
@@ -1870,6 +1967,7 @@ export const rituals: Ritual[] = [
       name: 'scry creature',
     },
     rank: 5,
+    roles: ['narrative'],
     tags: ['Scrying'],
     spheres: ['Photomancy', 'Revelation'],
   },
@@ -1885,6 +1983,7 @@ export const rituals: Ritual[] = [
       name: 'scry creature',
     },
     rank: 7,
+    roles: ['narrative'],
     tags: ['Scrying'],
     spheres: ['Photomancy', 'Revelation'],
   },
@@ -1901,6 +2000,7 @@ export const rituals: Ritual[] = [
       This can happen as if your actions prevent the event from coming to pass.
     `,
     rank: 4,
+    roles: ['narrative'],
     tags: ['Scrying'],
     spheres: ['Revelation', 'Umbramancy'],
   },
@@ -1917,6 +2017,7 @@ export const rituals: Ritual[] = [
       Creatures inside the area can see within the area and outside of it without any difficulty.
     `,
     rank: 5,
+    roles: ['narrative'],
     spheres: ['Umbramancy'],
   },
   {
@@ -1929,6 +2030,7 @@ export const rituals: Ritual[] = [
       This effect lasts for one year.
     `,
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Revelation', 'Thaumaturgy', 'Umbramancy'],
   },
   {
@@ -1946,7 +2048,8 @@ export const rituals: Ritual[] = [
       It also does not consider movement impediments or dangers, including hostile creatures or treacherous terrain, which may endanger or slow progress without rendering it impossible.
     `,
     rank: 3,
-    tags: ['Attune'],
+    roles: ['narrative'],
+    type: 'Attune',
     sphereEffects: {
       Terramancy:
         'The guidance does not consider non-grounded forms of movement, such as jumping or flying.',
@@ -1966,7 +2069,8 @@ export const rituals: Ritual[] = [
       name: 'find the path',
     },
     rank: 6,
-    tags: ['Attune'],
+    roles: ['attune'],
+    type: 'Attune',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
   {
@@ -2000,13 +2104,13 @@ export const rituals: Ritual[] = [
       When the chosen key touches the protected object, this ritual is \\glossterm{suppressed} for one minute, allowing the object to be opened normally.
     `,
     rank: 2,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
   },
 
   {
-    name: 'Empowered Force Lock',
+    name: 'Empowered Seal Shut',
 
     castingTime: 'one minute',
     functionsLike: {
@@ -2014,10 +2118,10 @@ export const rituals: Ritual[] = [
         the maximum size increases to Huge, and the Devices DV to unlock it increases to 30.
         In addition, the damage resistance bonus increases to +20.
       `,
-      name: 'force lock',
+      name: 'seal shut',
     },
     rank: 5,
-    roles: ['attune'],
+    roles: ['narrative'],
     type: 'Attune',
     spheres: ['Cryomancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
   },
@@ -2032,6 +2136,7 @@ export const rituals: Ritual[] = [
       However, it can allow the target to remove any cursed items it has equipped.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Prayer', 'Thaumaturgy'],
   },
   // {
@@ -2095,6 +2200,7 @@ export const rituals: Ritual[] = [
     `,
     // narrative: '',
     rank: 2,
+    roles: ['narrative'],
     tags: [],
     spheres: ['Enchantment', 'Toxicology'],
   },
@@ -2116,6 +2222,7 @@ export const rituals: Ritual[] = [
     },
     // narrative: '',
     rank: 1,
+    roles: ['narrative'],
     tags: ['Poison'],
     spheres: ['Fabrication', 'Toxicology'],
   },
@@ -2182,6 +2289,7 @@ export const rituals: Ritual[] = [
       This effect lasts for one year.
     `,
     rank: 1,
+    roles: ['narrative'],
     spheres: ['Terramancy', 'Toxicology', 'Verdamancy'],
   },
   {
@@ -2196,6 +2304,7 @@ export const rituals: Ritual[] = [
       If the \\ritual{infertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Terramancy', 'Toxicology', 'Verdamancy'],
   },
 
@@ -2211,6 +2320,7 @@ export const rituals: Ritual[] = [
       If the \\ritual{fertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Terramancy', 'Toxicology', 'Verdamancy'],
   },
 
@@ -2225,6 +2335,7 @@ export const rituals: Ritual[] = [
       This ritual can only sense plants that are Small or larger, or closely packed clusters of smaller plants that reach a similar  combined size (such as dense grass).
     `,
     rank: 2,
+    roles: ['narrative'],
     tags: ['Detection'],
     spheres: ['Revelation', 'Verdamancy'],
   },
@@ -2236,6 +2347,7 @@ export const rituals: Ritual[] = [
       name: 'sense plants',
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Detection'],
     castingTime: 'one hour',
     spheres: ['Revelation', 'Verdamancy'],
@@ -2249,6 +2361,7 @@ export const rituals: Ritual[] = [
         All diseases affecting yourself or one \\glossterm{ally} within \\medrange are removed.
     `,
     rank: 2,
+    roles: ['narrative'],
     spheres: ['Toxicology', 'Vivimancy'],
   },
 
@@ -2262,6 +2375,7 @@ export const rituals: Ritual[] = [
       This can heal both magical and mundane effects, but it cannot completely replace missing body parts required for a sense to function (such as missing eyes).
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Polymorph', 'Toxicology', 'Vivimancy'],
   },
 
@@ -2277,6 +2391,7 @@ export const rituals: Ritual[] = [
       This requires a corpse with an intact mouth or other speaking apparatus.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
   },
 
@@ -2293,6 +2408,7 @@ export const rituals: Ritual[] = [
       `,
     },
     rank: 6,
+    roles: ['narrative'],
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
   },
 
@@ -2306,6 +2422,7 @@ export const rituals: Ritual[] = [
       In addition, any of the target's severed body parts or missing organs grow back by the end of the next round.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Polymorph', 'Toxicology', 'Vivimancy'],
   },
 
@@ -2320,6 +2437,7 @@ export const rituals: Ritual[] = [
     sphereEffects: resurrectionSphereEffects,
     materialCost: true,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Electromancy', 'Prayer', 'Toxicology', 'Vivimancy'],
   },
 
@@ -2335,6 +2453,7 @@ export const rituals: Ritual[] = [
     sphereEffects: resurrectionSphereEffects,
     materialCost: true,
     rank: 5,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Prayer', 'Toxicology', 'Vivimancy'],
   },
 
@@ -2350,6 +2469,7 @@ export const rituals: Ritual[] = [
     sphereEffects: resurrectionSphereEffects,
     materialCost: true,
     rank: 7,
+    roles: ['narrative'],
     spheres: ['Chronomancy', 'Prayer', 'Vivimancy'],
   },
 
@@ -2373,6 +2493,7 @@ export const rituals: Ritual[] = [
     sphereEffects: resurrectionSphereEffects,
     materialCost: true,
     rank: 4,
+    roles: ['narrative'],
     tableText: `
       \\begin{dtable}
           \\lcaption{Humanoid Reincarnations}
@@ -2407,6 +2528,7 @@ export const rituals: Ritual[] = [
       If the gem is shattered, the creature's soul becomes whole.
     `,
     rank: 3,
+    roles: ['narrative'],
     spheres: ['Prayer', 'Thaumaturgy', 'Vivimancy'],
   },
 
@@ -2420,6 +2542,7 @@ export const rituals: Ritual[] = [
         "the creature's soul is removed from its intended afterlife and fully trapped within the gem. In addition, the gem must be at least rank 5 (2,500 gp).",
     },
     rank: 5,
+    roles: ['narrative'],
     spheres: ['Prayer', 'Thaumaturgy', 'Vivimancy'],
   },
 
@@ -2487,6 +2610,7 @@ export const rituals: Ritual[] = [
         `,
     },
     rank: 1,
+    roles: ['narrative'],
     tags: ['Trap'],
     spheres: ['Universal'],
   },
@@ -2502,6 +2626,7 @@ export const rituals: Ritual[] = [
         `,
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Trap'],
     spheres: ['Universal'],
   },
@@ -2517,6 +2642,7 @@ export const rituals: Ritual[] = [
         `,
     },
     rank: 4,
+    roles: ['narrative'],
     tags: ['Trap'],
     spheres: ['Universal'],
   },

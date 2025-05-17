@@ -147,13 +147,13 @@ pub fn objects() -> Vec<Tool> {
             You can extinguish the lantern to preserve its remaining oil.
 
             The lantern is \glossterm{loose equipment}, making it vulnerable to damage and being attacked directly.
-            It has 10 hit points and no damage resistance.
+            It has 10 hit points and 2 damage resistance.
+            It treats all damage as \glossterm{environmental damage}, but it takes double damage from \atCold abilities (see \pcref{Environmental Damage}).
             For details about repairing a damaged or broken belt lantern, see \pcref{Common Craft Tasks}.
         ".to_string(),
         upgrades: vec![
             ItemUpgrade::new(3, "Emits light without being held", r"
-                The lantern's hit points increase to 15, and it has 5 damage resistance.
-                It treats all damage as \glossterm{environmental damage} (See \pcref{Environmental Damage}).
+                The lantern's hit points increase to 15, and its damage resistance increases to 5.
             "),
         ],
         ..Tool::permanent("metal")
