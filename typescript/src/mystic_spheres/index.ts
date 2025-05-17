@@ -105,7 +105,7 @@ export const ABILITY_ROLES = [
   'generator', // Attack and gain a brief offensive self-buff, inclulding payoff prep
   'hazard',    // Create a battlefield hazard
   'healing',   // Regain HP or DR
-  'kite',      // Move away from enemies and make a ranged attack
+  'kite',      // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
   'maim',      // Single-target debuff that requires the target to be in HP
   'narrative', // Non-combat effects
   'payoff',    // Ability with unusual prerequisites that generally require at least a round of prep

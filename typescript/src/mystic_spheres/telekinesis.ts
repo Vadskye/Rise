@@ -27,8 +27,8 @@ export const telekinesis: MysticSphere = {
 
         Although you can control the object's motion, you do not have it equipped.
         This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
-
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The maximum distance moved increases to 15 feet.`,
         4: `The maximum distance moved increases to 20 feet.`,
@@ -36,57 +36,58 @@ export const telekinesis: MysticSphere = {
       },
       type: 'Sustain (minor)',
     },
-
-    {
-      name: 'Gentle Force',
-
-      effect: `
-        You can exert minor force on objects and creatures around you.
-        When you cast this spell, and during each of your subsequent actions, you may choose any object or creature within \\shortrange of you.
-        That object or creature feels a push in a direction of your choice.
-        The force is sufficient to lift an \\glossterm{unattended} object with a Diminutive \\glossterm{weight category}, or to push an object with a Tiny weight category across the ground.
-        This ability cannot physically move or even meaningfully impede any creature, but it can be perceived.
-      `,
-      scaling: {
-        2: `The range increases to \\medrange`,
-        4: `The force increases to be able to lift a Tiny weight, or to push a Small weight.`,
-        6: `The range increases to \\longrange`,
-      },
-      type: 'Sustain (minor)',
-    },
   ],
   spells: [
     {
+      name: 'Mighty Mage Hand',
+
+      functionsLike: {
+        name: 'mage hand',
+        exceptThat: 'the \\glossterm{weight limits} of the hand are calculated as if your Strength was equal to 2.',
+      },
+      rank: 2,
+      roles: ['narrative'],
+      scaling: {
+        special: "For each rank beyond 2, the hand's effective Strength increases by 1.",
+      },
+      type: 'Sustain (minor)',
+    },
+    {
       name: 'Interposing Force',
 
-      // price as one rank cheaper than slowed; it's better against low-Strength targets, but worse in
-      // general
+      // The most dangerous scenario for this spell is that you are in the front line, and
+      // suceeding on this attack prevents the target from reaching the party at all.
+      // Being unable to move towards you is roughly the same as a 30' push; it's worse if
+      // they are already in melee, but better if they have more than 30' of movement, so
+      // call it 2 EA. The Strength check is worth -2 ranks, probably.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target is unable to move closer to you without effort.
+          The target is \\glossterm{briefly} unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
-          As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 5.
-          If it succeeds, it can move normally.
+          As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 6.
+          If it succeeds, its movement towards you costs double the normal movement speed.
           Otherwise, it is unable to move towards you, and that part of its movement is wasted.
       `,
         targeting: `
           Make an attack vs. Brawn against one creature within \\medrange.
         `,
       },
-
-      rank: 4,
+      rank: 2,
+      roles: ['kite'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Intense Interposing Force',
 
+      // At this rank, monsters are more likely to have more than 30' of movement, so this
+      // is stronger than a 30' push when kiting.
       functionsLike: {
         name: 'interposing force',
-        exceptThat: 'the \\glossterm{difficulty value} of the Strength check increases to 10.',
+        exceptThat: 'the \\glossterm{difficulty value} of the Strength check increases to 12.',
       },
-      rank: 7,
+      rank: 5,
+      roles: ['kite'],
       scaling: 'accuracy',
     },
 
@@ -98,56 +99,49 @@ export const telekinesis: MysticSphere = {
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 3,
+      roles: ['turtle'],
       // narrative: '',
       tags: ['Swift'],
     },
 
+    // This is slightly above rate because requiring objects is annoying. 
     {
       name: 'Fling Object',
 
       attack: {
         hit: `
-          The target and the thrown object each take 1d6 damage.
-          If you fling a Small object, the damage increases by +1 per 2 \\glossterm{power}.
+          The target and the thrown object each take \\damagerankone.
+          If you fling a Small object, you deal \\glossterm{extra damage} equal to half your \\glossterm{power}.
         `,
         targeting: `
-          Choose a Tiny or Small unattended object within \\medrange of you.
-          You fling that object at another creature or object within \\medrange of you.
+          Choose a Tiny or Small \\glossterm{unattended} object within \\shortrange of you.
+          You fling that object at another creature or object within \\shortrange of you.
+          When you do, make an attack vs. Armor against the target.
           You gain a +2 accuracy bonus if you fling a Tiny object.
         `,
       },
-
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
-    {
-      name: 'Multifling',
-
-      functionsLike: {
-        name: 'fling object',
-        exceptThat:
-          'you can fling two objects, each at a different target within range. In addition, the base damage increases to 1d8.',
-      },
-      rank: 3,
-      scaling: 'accuracy',
-    },
-
+    // This is slightly above rate because requiring objects is annoying.
     {
       name: 'Mighty Fling Object',
 
       attack: {
         hit: `
-          The target and the thrown object each take 2d8 bludgeoning damage.
-          If you fling a Medium object, the damage increases by an amount equal to your \\glossterm{power}.
+          The target and the thrown object each take \\damagerankfour.
+          If you fling a Medium object, you deal 2d6 \\glossterm{extra damage}.
         `,
         targeting: `
-          Choose a Small or Medium unattended object within \\medrange of you.
-          You fling that object at another creature or object within \\medrange of you.
+          Choose a Small or Medium \\glossterm{unattended} object within \\shortrange of you.
+          You fling that object at another creature or object within \\shortrange of you.
           You gain a +2 accuracy bonus if you fling a Small object.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -157,7 +151,6 @@ export const telekinesis: MysticSphere = {
       effect: `
         Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
       `,
-
       rank: 2,
       roles: ['attune'],
       type: 'Attune',
@@ -177,8 +170,8 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Discharge',
 
-      // Baseline would be dr2 for enemies-only delayed Med radius. Drop to dr1 for
-      // kinetic charge mechanic.
+      // Baseline would be dr2 for enemies-only Small radius. Drop to dr1 for kinetic
+      // charge mechanic and delay, which functionally makes it a non-action.
       attack: {
         hit: `
           \\damagerankone.
@@ -186,13 +179,16 @@ export const telekinesis: MysticSphere = {
         missGlance: true,
         targeting: `
           This spell has no immediate effect.
-          Whenever you take damage during this spell's effect, you build up a kinetic charge.
+          Whenever you take damage during this spell's effect, you gain a kinetic charge.
           This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          When you stop sustaining this spell, make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
-          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +5.
+          During your next action after you stop sustaining this spell, make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
+          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
+
+          If you build up 8 kinetic charges, you immediately stop sustaining this spell, and the attack targets you and all creatures in a \\medarea radius from you.
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Sustain (minor)', 'Swift (see text)'],
     },
@@ -202,37 +198,64 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'kinetic discharge',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
+    // Baseline for a double defense r0 area is drX+2, or crX+1 with drX+1. A 15' cone
+    // feels partway between ranged and melee, so call a 15' push 0.8 EA. That would
+    // require a rank 3 spell to get damage + debuff.
     {
       name: 'Blastwave',
 
       attack: {
         hit: `
           \\damagerankthree.
-          You \\glossterm{knockback} each Huge or smaller target that loses \\glossterm{hit points} up to 30 feet in a straight line away from you.
+          You \\glossterm{knockback} each Large or smaller target that loses \\glossterm{hit points} up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
         `,
       },
-      rank: 3,
+      rank: 2,
+      roles: ['clear', 'kite'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Blastwave',
+
+      // We don't calculate the size limitation into knockback officially, but removing
+      // the limitation here has some value added.
+      attack: {
+        hit: `
+          \\damagerankfive.
+          You \\glossterm{knockback} each target that loses \\glossterm{hit points} up to 15 feet away from you.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
+        `,
+      },
+      rank: 4,
+      roles: ['clear', 'kite'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Massive Blastwave',
 
+      // Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value with just a 15' knockback. Add the size-based doubling to compensate.
       attack: {
         hit: `
           \\damageranksix.
-          You \\glossterm{knockback} each creature that loses \\glossterm{hit points} up to 30 feet horizontally away from you.
+          You \\glossterm{knockback} each target that loses \\glossterm{hit points} up to 15 feet away from you.
+          This knockback distance is doubled if the target is Medium or smaller.
         `,
         missGlance: true,
         targeting: `
@@ -240,65 +263,77 @@ export const telekinesis: MysticSphere = {
         `,
       },
       rank: 6,
+      roles: ['clear', 'kite'],
       scaling: 'accuracy',
     },
 
+    // Baseline for 15' ranged push is 0.9 EA, or R-1. Increase to R0 for distance
+    // extension and spend 2 ranks on pure area increase to get a R6 area.
     {
       name: 'Mind Shove',
       attack: {
         hit: `
-          You \\glossterm{push} each target up to 30 feet in a straight line.
+          You \\glossterm{push} each target up to 15 feet.
+          Each target can be pushed in a different direction of your choice.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Large or smaller in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
         `,
       },
       rank: 2,
+      roles: ['kite'],
     },
 
+    // Baseline for 30' ranged push is r4, or r5 if we pay for extended area scaling.
     {
       name: 'Intense Mind Shove',
       attack: {
         hit: `
-          You \\glossterm{push} each target up to 60 feet in a straight line.
+          You \\glossterm{push} each target up to 30 feet.
+          Each target can be pushed in a different direction of your choice.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Huge or smaller in a \\smallarea radius within \\medrange of you.
+          Make an attack vs. Brawn against everything that is Huge or smaller in a \\medarea radius within \\medrange of you.
         `,
       },
-      rank: 6,
+      rank: 5,
+      roles: ['kite'],
     },
 
+    // Baseline for 15' ranged push is r-1. If we pay 2 ranks for area scaling, we get a
+    // R3 area.
     {
-      name: 'Toss Foe',
+      name: 'Mind Fling',
 
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          If each target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
+          Moving a target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Brawn against something Medium or smaller within \\medrange.
+          Make an attack vs. Brawn against up to two Large or smaller creatures within \\medrange.
         `,
       },
-
       rank: 1,
+      roles: ['kite'],
       scaling: 'accuracy',
     },
+
+    // Baseline for a 30' ranged push is r4.
     {
-      name: 'Intense Toss Foe',
+      name: 'Intense Mind Fling',
 
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 60 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          If each target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
+          Moving a target upwards costs twice the normal movement cost.
         `,
         targeting: `
-          Make an attack vs. Brawn against something Large or smaller within \\medrange.
+          Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.
         `,
       },
-      // narrative: '',
-      rank: 5,
+      rank: 4,
+      roles: ['kite'],
       scaling: 'accuracy',
     },
     {
@@ -311,6 +346,7 @@ export const telekinesis: MysticSphere = {
         This increases the target's maximum vertical jump distance normally.
       `,
       rank: 1,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -324,6 +360,7 @@ export const telekinesis: MysticSphere = {
         This increases the target's maximum vertical jump distance normally.
       `,
       rank: 4,
+      roles: ['narrative'],
       type: 'Sustain (standard)',
     },
 
@@ -337,6 +374,7 @@ export const telekinesis: MysticSphere = {
         This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,
       rank: 2,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
@@ -357,37 +395,54 @@ export const telekinesis: MysticSphere = {
 
       cost: BARRIER_COOLDOWN,
       effect: `
-        You create a \\smallarealong \\glossterm{wall} of magical energy within \\medrange.
+        You create a \\smallarealong \\glossterm{wall} of magical energy within \\shortrange.
         The wall is visible as a shimmering magical field that does not block sight.
         Nothing can pass through the wall until it is destroyed.
-        It has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
+        It has \\glossterm{hit points} equal to twice your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
+      roles: ['hazard'],
       scaling: {
-        3: 'You can choose to create a \\medarealong wall instead.',
-        5: 'You can choose to create a \\largearealong wall instead.',
-        7: 'You can choose to create a \\hugearealong wall instead.',
+        3: "The wall's hit points increase to three times your power.",
+        5: "The wall's hit points increase to four times your power.",
+        7: "The wall's hit points increase to five times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
 
     {
-      name: 'Forcecage',
+      name: 'Sturdy Wall of Force',
 
+      // +1r for small -> med, +1r for 3x -> 4x
       cost: BARRIER_COOLDOWN,
-      effect: `
-        You slowly create a 10 ft.\\ cube of telekinetic force within \\medrange.
-        The cage appears at the end of the next round after you cast this spell.
-        Before that time, there is no visible indication of where the cage will appear.
-        Any physical obstacles in the way of the cage at the time that it forms prevent it from appearing.
-        You can create the cube around a sufficiently small creature to trap it inside.
-        Each wall is transparent, but it blocks physical passage and \\glossterm{line of effect}.
-        The cube as a whole has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
-      `,
-      rank: 7,
-      tags: ['Barrier'],
-      type: 'Sustain (minor)',
+      functionsLike: {
+        name: 'wall of force',
+        exceptThat: 'the area increases to a \\medarealong wall, and its hit points increase to four times your \\glossterm{power}.',
+      },
+      rank: 3,
+      roles: ['hazard'],
+      scaling: {
+        5: "The wall's hit points increase to five times your power.",
+        7: "The wall's hit points increase to six times your power.",
+      },
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
+    },
+
+    {
+      name: 'Massive Wall of Force',
+
+      // +3r for small -> large, +2r for short -> long
+      cost: BARRIER_COOLDOWN,
+      functionsLike: {
+        name: 'wall of force',
+        exceptThat: 'the area increases to a \\largearealong wall within \\longrange, and its hit points increase to four times your \\glossterm{power}.',
+      },
+      rank: 6,
+      roles: ['hazard'],
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -398,10 +453,11 @@ export const telekinesis: MysticSphere = {
 
         Make a melee \\glossterm{strike} using one weapon you hold in a single hand.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
-        The weapon flies out of your hand to strike multiple enemies, granting this strike the \\weapontag{Long} and \\weapontag{Sweeping} (1) tags (see \\pcref{Weapon Tags}).
+        The weapon flies out of your hand to strike at range, granting this strike the \\weapontag{Long} tag (see \\pcref{Weapon Tags}).
         It flies back into your hand after making the strike.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -419,6 +475,7 @@ export const telekinesis: MysticSphere = {
         You do not have to be proficient with bows, and you do not have to manually draw the arrow.
       `,
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -459,6 +516,18 @@ export const telekinesis: MysticSphere = {
       roles: ['attune'],
       tags: [],
       type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Efficient Heavy Floating Armament',
+
+      functionsLike: {
+        name: 'heavy floating armament',
+        exceptThat: EXCEPT_NOT_DEEP,
+      },
+      rank: 7,
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {
@@ -504,7 +573,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Repulsion Field',
 
-      // TODO: correct rank
+      // TODO: correct rank, clarify whether this triggers damage from knockback
       attack: {
         hit: `
           Each target is unable to enter the spell's area for the rest of the round.
@@ -512,11 +581,12 @@ export const telekinesis: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.
-          Whenever an enemy makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Brawn against it.
+          Whenever an \\glossterm{enemy} makes physical contact with the spell's area, you make a \\glossterm{reactive attack} vs. Brawn against it.
           Creatures in the area at the time that the spell is cast are unaffected by the spell.
         `,
       },
       rank: 4,
+      roles: ['hazard'],
       scaling: 'accuracy',
       type: 'Sustain (minor)',
     },
@@ -530,10 +600,28 @@ export const telekinesis: MysticSphere = {
           \\damagerankone immediately, and again during your next action.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange from you.
+          Make an attack vs. Brawn against something within \\shortrange from you.
         `,
       },
       rank: 2,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Compression',
+
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          \\damagerankthree immediately, and again during your next action.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against something within \\shortrange from you.
+        `,
+      },
+      rank: 4,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
@@ -544,14 +632,15 @@ export const telekinesis: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfive immediately, and again during your next action.
-          If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
+          If the target takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange from you.
+          Make an attack vs. Brawn against something within \\shortrange from you.
         `,
       },
       rank: 6,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
