@@ -516,6 +516,8 @@ These modifiers apply to EA, as opposed to rank modifiers that apply after calcu
 
 * +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
+* -1 EA: The effect only works if you hit the creature with it twice.
+* -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
 
 ## Effective Actions and Accuracy
 
