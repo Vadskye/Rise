@@ -70,17 +70,6 @@ impl StandardAttack {
                 tags: None,
                 targeting: Targeting::Creature(Range::Adjacent),
             },
-            Self::FrostwebSpiderBite => {
-                let mut frostweb_spider_bite = StandardWeapon::MonsterBite.weapon().attack();
-                if let Some(e) = frostweb_spider_bite.damage_effect_mut() {
-                    e.lose_hp_effect = Some(AttackTriggeredEffect::Poison(PoisonEffect {
-                        stage1: vec![Debuff::Slowed],
-                        stage3_debuff: Some(vec![Debuff::Immobilized]),
-                        stage3_vital: None,
-                    }));
-                }
-                frostweb_spider_bite
-            }
             Self::GibberingMoutherGibber => Attack {
                 accuracy: 0,
                 crit: Some(AttackEffect::Debuff(DebuffEffect {

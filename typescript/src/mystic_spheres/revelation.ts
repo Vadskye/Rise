@@ -384,28 +384,24 @@ export const revelation: MysticSphere = {
     {
       name: 'Myriad Visions',
 
-      // HP dazzle is 0.8 EA. +0.2 EA for area tier, +0.4 for HP condition alt
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\dazzled.
-          If it has no remaining \\glossterm{damage resistance}, it is also dazzled as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creature within \\medrange.
         `,
       },
       narrative: `
-        Your foe sees visions of possible futures that confuse its ability to determine reality.
+        Your foes see visions of possible futures that confuse their ability to determine reality.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
 
-    // TODO: should spells be penalized for being sustain (standard) instead of immediate?
-    // This is the same rank as an immediate-only spell.
     {
       name: 'Field of Visions',
 

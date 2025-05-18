@@ -168,7 +168,6 @@ def debuffs():
             ),
             flex_col(
                 [
-                    debuff("immobilized"),
                     debuff("panicked"),
                     debuff("slowed"),
                     debuff("stunned"),
@@ -209,7 +208,6 @@ def debuff_explanation(debuff):
         "goaded": "-2 accuracy vs. non-goading creatures",
         "grappled": "limited mobility and actions",
         "helpless": "-6 Armor and Ref",
-        "immobilized": "-4 Ref, cannot use movement speeds",
         "panicked": "-4 Mental, cannot attack source",
         "paralyzed": "cannot move",
         "partially unaware": "-2 Armor and Ref",

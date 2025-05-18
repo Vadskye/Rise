@@ -360,7 +360,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{4} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                        \rank{6} You can use this ability to move even if you are \immobilized or \grappled.
+                        \rank{6} You can use this ability to move even if you are \grappled.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}
@@ -621,7 +621,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                While you have no \glossterm{encumbrance}, you are immune to being \slowed, \immobilized, and \paralyzed.
+                While you have no \glossterm{encumbrance}, you are immune to being \slowed and \paralyzed.
             ",
             modifiers: None,
         },
