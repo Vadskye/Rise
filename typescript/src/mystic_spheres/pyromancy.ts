@@ -87,6 +87,22 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
+      name: 'Building Flame',
+
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\empowered.
+        `,
+      },
+      rank: 1,
+      roles: ['generator'],
+    },
+
+    {
       name: 'Burning Grasp',
 
       // Baseline for melee range is dr3, which is 4.5 + 1dpp.
