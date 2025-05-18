@@ -72,19 +72,22 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Goading Roar',
 
+      // baseline for a brief + HP goad is r1. We can spend two ranks on area to get a r5
+      // area.
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
+        hit: `
+          Each target is \\glossterm{briefly} \\goaded by you.
+          If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
       roles: ['flash'],
-      rank: 1,
+      rank: 3,
     },
 
-    // Normally goaded as a condition would be rank 6, but it seems reasonable for
-    // martials to be extra good at that specific debuff?
     {
       name: 'Goading Roar+',
 
@@ -96,7 +99,7 @@ export const heraldOfWar: CombatStyle = {
       },
       tags: ['Auditory', 'Emotion'],
       roles: ['flash'],
-      rank: 5,
+      rank: 7,
     },
 
     {
@@ -266,10 +269,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenge',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result hits its Mental defense, it is \\glossterm{briefly} \\goaded by you.
+        Make a \\glossterm{strike}.
+        If your attack result hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['softener'],
       tags: ['Emotion'],
     },
@@ -277,13 +280,12 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Challenge+',
 
-      // Goaded should be 2.3 EA and r7 is only 2.0, but ehhh martials should be good at
-      // goading?
       effect: `
-        Make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage and your attack result hits its Mental defense, it is \\goaded by you as a \\glossterm{condition}.
+        Make a \\glossterm{strike} that deals double damage.
+        If your attack result hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
+        If it loses hit points from the strike, it is also goaded by you as a \\glossterm{condition}.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['softener'],
       tags: ['Emotion'],
     },
