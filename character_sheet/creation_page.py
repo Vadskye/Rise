@@ -611,7 +611,6 @@ def monster_attack():
                     option({"value": "frightened"}, "T2 Debuff (Frightened)"),
                     option({"value": "stunned"}, "T3 Debuff (Stunned)"),
                     option({"value": "confused"}, "T4 Debuff (Confused)"),
-                    option({"value": "immobilized"}, "T5 Debuff (Immobilized)"),
                 ]
             ),
         ),
