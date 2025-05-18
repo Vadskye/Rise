@@ -318,22 +318,22 @@ export const chronomancy: MysticSphere = {
       type: 'Sustain (minor)',
     },
 
-    // -2 levels for 50% chance of activation
+    // -3 ranks for 50% chance of activation, +1 rank for preapply.
     {
       name: 'Stutterstop',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target is \\slowed and randomly immobilized.
-          At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\immobilized during that round.
+          As a \\glossterm{condition}, each target randomly slows down.
+          At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against everything in a \\smallarea radius within \\shortrange.
         `,
       },
-
-      rank: 7,
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 

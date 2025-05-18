@@ -73,14 +73,15 @@ fn boots() -> Vec<Apparel> {
 
     apparel.push(Boots(StandardItem {
         name: String::from("Boots of Freedom"),
-        rank: 4,
+        rank: 3,
         short_description: String::from("Grants immunity to common mobility restrictions"),
         description: String::from(r"
-            You are immune to being \slowed, \immobilized, and \paralyzed.
+            You are immune to being \slowed and \paralyzed.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants immunity to almost all mobility restrictions", r"
-                    You are also unaffected by \glossterm<difficult terrain> and immune to being \grappled or knocked \prone.
+                    You are also unaffected by \glossterm<difficult terrain> and cannot be knocked \prone.
+                    Enemy attacks cannot cause you to be \grappled, but you can still be grappled if you initiate the grapple.
             "),
         ],
         ..Apparel::default()

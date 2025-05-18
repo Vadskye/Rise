@@ -117,7 +117,7 @@ export const toxicology: MysticSphere = {
         Choose one living creature within \\shortrange.
         If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
         The stage 1 effect makes the target \\slowed while the poison lasts.
-        The stage 3 effect makes the target \\immobilized while the poison lasts.
+        The stage 3 effect also deals \damagerankthreelow.
       `,
       rank: 2,
       scaling: 'poison',

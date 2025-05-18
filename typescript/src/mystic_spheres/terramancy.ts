@@ -226,31 +226,32 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       attack: {
         hit: `
-          \\damagerankone.
-          If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
+          \\damagerankfour.
         `,
         targeting: `
-          Make an attack vs. Armor and Reflex against something within \\medrange that is \\glossterm{grounded}.
+          Make an attack vs. Armor and Reflex against one creature in \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
+    // TODO
     {
-      name: 'Penetrating Earthspike',
+      name: 'Spikefield',
 
       attack: {
         hit: `
           \\damagerankfour.
-          If the target loses \\glossterm{hit points}, it becomes \\immobilized as a \\glossterm{condition}.
+          If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against something within \\medrange that is \\glossterm{grounded}.
         `,
       },
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -367,35 +368,64 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Earthbind',
 
-      // treat as r1 condition.
+      // This is relevant for maybe 20% of fights, and in those fights it's roughly 40%
+      // action denial. That's 12 * 0.4 * 0.2 = 1 EA. That gives 2 ranks to spend on AOE
+      // and 1 rank to spend on the accuracy bonus, for a total of a r3 area.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          As a \\glossterm{condition}, each target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is unable to use any fly speed or glide speed, and its jump distance is halved.
           All \\glossterm{falling damage} that it takes is doubled.
           Standing up from a prone position costs its full speed rather than only half its speed.
         `,
         targeting: `
-          Make an attack vs. Brawn against one creature within \\medrange that is no more than 60 feet above a stable surface that could support its weight.
+          Make an attack vs. Brawn against up to two creatures within \\medrange that are no more than 60 feet above a stable surface that could support their weight.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Intense Earthbind',
 
+      // 1 EA from earthbind + 2.1 EA from slowed = rank 10. Add the check to
+      // drop this to rank 7.
       functionsLike: {
         name: 'earthbind',
         exceptThat: `
-          the target is also \\slowed as part of the same condition.
+          as part of the same condition, each target is also \\slowed while it is below its maximum \\glossterm{hit points}.
+          At the start of each round, a target can make a DV 10 Strength check.
+          Success means that it stops being slowed during that round.
         `,
       },
-      rank: 6,
+      rank: 7,
+      roles: ['maim', 'softener'],
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Gravity Well',
+
+      // Brief ranged slow is 2 EA. However, ranged slow is penalized for its kiting
+      // potential, and a zone can't be used for kiting, so drop it to 1.6 EA, or
+      // 2.6 EA as sustain (minor). That's a rank 7 effect.
+      attack: {
+        hit: `
+          Each target is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          You create an area of intense gravity in a \\medarea radius \\glossterm{zone} within \\medrange.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn against all \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 7,
+      roles: ['hazard', 'softener'],
+      scaling: 'accuracy',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
