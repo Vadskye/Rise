@@ -178,32 +178,6 @@ export const astromancy: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    // treat this as t3 debuff; it's similar to immobilized, but harder to cheese with Long weapons
-    {
-      name: 'Dimensional Anchor',
-
-      attack: {
-        hit: `
-          If the target has no remaining damage resistance, it becomes anchored to its location as long as you sustain this spell.
-          At the end of each round, the target \\glossterm{teleports} back to the location it was in when this spell was cast.
-          This teleportation does not require \\glossterm{line of sight} or \\glossterm{line of effect}, but it does not function across planes.
-
-          Alternately, you can cast this spell on an \\glossterm{ally}.
-          In that case, the ally does not take damage, but is still anchored in place as long as you sustain this spell.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      narrative: `
-        There is no escape.
-        Nothing prevents your foe from moving, yet it is trapped more perfectly than any net could achieve.
-      `,
-      rank: 6,
-      scaling: 'accuracy',
-      tags: ['Sustain (minor)'],
-    },
-    // TODO: target wording is awkward
     {
       name: 'Translocation',
 

@@ -216,7 +216,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         mass: true,
         name: 'earthen anchor',
       },
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -226,32 +226,31 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against one creature in \\shortrange.
         `,
       },
       rank: 3,
-      roles: ['maim'],
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
-    // TODO
     {
-      name: 'Spikefield',
+      name: 'Mighty Earthspike',
 
       attack: {
         hit: `
-          \\damagerankfour.
-          If the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
+          \\damagerankeight.
         `,
         targeting: `
-          Make an attack vs. Reflex against something within \\medrange that is \\glossterm{grounded}.
+          Make an attack vs. Armor and Reflex against one creature in \\shortrange.
         `,
       },
       rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },

@@ -22,3 +22,9 @@ If it's a damage plus debuff spell, reduce the listed damage rank by 1.
   * drX-2 in RX area, ignoring extreme areas
 * Rank X, where X >= 5:
   * drX-3 in RX area, including extreme areas
+
+## Damage for Sustain (minor) zones
+
+A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a radius, or -1dr as a wall.
+
+Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.

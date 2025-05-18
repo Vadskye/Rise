@@ -510,24 +510,32 @@ export const umbramancy: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // Controlling movement is roughly 100% action denial for the turn, so 4 EA. Double
+    // application is -2 EA, so 2 EA. Damage is 3 EA, or r9, which drops to r7 with melee
+    // only. Drop to r6 for the extra defense, then r7 again from shadowed accuracy. This
+    // is all getting a bit silly, but it's plausibly within rate.
     {
       name: 'Shadow Puppet',
 
       // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          \\damagerankfive.
-          If the target loses \\glossterm{hit points} from this damage, you steal its shadow as a \\glossterm{condition}.
-          It cannot move on its own.
-          As a \\glossterm{movement}, you can control its movement instead of your own.
+          \\damagerankseven.
+          If the target loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+          If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
+          It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
+          During this movement, its movement is not reduced by being slowed.
+          After this effect ends, you cannot control its movement again until it takes a \\glossterm{short rest}.
 
-          If the target enters \\glossterm{brilliant illumination}, the condition automatically ends.
+          If the target enters \\glossterm{brilliant illumination}, the effect automatically ends.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature you \glossterm{touch}.
+          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
       rank: 7,
+      roles: ['burst', 'maim'],
       tags: ['Cold'],
     },
 
