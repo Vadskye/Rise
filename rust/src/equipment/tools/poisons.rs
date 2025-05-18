@@ -245,7 +245,7 @@ fn injury_poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 Its stage 1 effect makes the target \slowed while the poison lasts.
-                Its stage 3 effect makes the target \immobilized while the poison lasts.
+                Its stage 3 effect also deals \damagerankthreelow.
             ",
         ),
         ..poison()

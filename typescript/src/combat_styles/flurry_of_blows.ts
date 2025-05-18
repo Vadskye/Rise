@@ -285,6 +285,18 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
+      name: 'Dazzling Speed+',
+
+      // Should be r8, but eh
+      effect: `
+        Make a \\glossterm{strike} that deals triple damage.
+        If the target takes damage, it is \\dazzled as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      roles: ['softener'],
+    },
+
+    {
       name: 'Guardweave',
 
       effect: `

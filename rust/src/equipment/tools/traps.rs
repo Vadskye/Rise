@@ -34,7 +34,7 @@ pub fn traps() -> Vec<Tool> {
 
             When the trap is activated, it makes a $accuracy \\glossterm<reactive attack> vs. Reflex against the source of that activation.
             After the trap triggers, it must be manually deployed again.
-            \\hit The target is \\immobilized until it breaks free of the trap.
+            \\hit The target is \\slowed until it breaks free of the trap.
             Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
         ", ground_deployment(1)),
         upgrades: vec![
@@ -55,7 +55,7 @@ pub fn traps() -> Vec<Tool> {
             When the trap is activated, it makes a $accuracy \\glossterm<reactive attack> vs. Armor and Reflex against the source of that activation.
             After the trap triggers, it must be manually deployed again.
             \\hit $dr4l piercing damage.
-            If the target takes damage, it is \\immobilized until it breaks free of the trap.
+            If the target takes damage, it is \\slowed until it breaks free of the trap.
             Breaking free of the trap requires making a DV 10 Strength or Devices check as a standard action.
         ", ground_deployment(2)),
         upgrades: vec![

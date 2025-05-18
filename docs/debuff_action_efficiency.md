@@ -515,7 +515,6 @@ By rank:
 These modifiers apply to EA, as opposed to rank modifiers that apply after calculating EA and damage.
 
 * +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
-* +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round.
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
 
 ## Effective Actions and Accuracy
@@ -545,15 +544,17 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
 ### Effective actions by rank
 
 * Rank 1: 1.4
-* Rank 2: 1.6 (1.55)
-* Rank 3: 1.8 (1.75)
+* Rank 2: 1.6
+* Rank 3: 1.8
 * Rank 4: 2
-* Rank 5: 2.2 (2.21)
-* Rank 6: 2.5
-* Rank 7: 2.9 (2.86)
-* Rank 8: 3.2 (3.16)
-* Rank 9: 3.6 (3.57)
-* Rank 10: 4.1 (4.09)
+* Rank 5: 2.2
+* Rank 6: 2.4
+* Rank 7: 2.6
+* Rank 8: 2.8
+* Rank 9: 3.0
+* Rank 10: 3.2
+* Rank 11: 3.4
+* Rank 12: 3.6
 
 ## Standard effects by rank
 
@@ -729,6 +730,7 @@ Rank 0 areas:
   * Small line, 10' wide from self
   * Medium line, 5' wide from self (only for splitting)
 * Radius:
+  * All adjacent enemies
   * Small radius from self
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
 
@@ -849,3 +851,17 @@ Barriers are most effective in tunnel and constrained movement situations. They 
   * Rank 9: 5x power
 
 Standard rank scaling is +1x power HP per 2 ranks.
+
+## Stock effects
+
+### Naming prefixes
+THIS IS AN ORDERED LIST.
+If a spell improves in multiple ways, use the first name in this list that applies.
+* Efficient: lower requirements (on damage instead of on HP loss)
+* Intense: a stronger (non-damaging) hostile effect, like dazed -> stunned
+* Certain: more accuracy
+* Massive: more AOE
+* Empowered: a strong non-hostile numeric effect, like healing
+* Greater: a stronger non-hostile, non-numeric effect, like phasestep -> greater phasestep
+* Distant: more range
+* Mighty: more damage

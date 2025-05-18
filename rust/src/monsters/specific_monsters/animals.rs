@@ -291,7 +291,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                         Giant wasp venom is an injury-based liquid \glossterm{poison}.
                         The poison's accuracy is $accuracy+1.
                         Its stage 1 effect makes the target \slowed while the poison lasts.
-                        Its stage 3 effect makes the target \immobilized while the poison lasts.
+                        Its stage 3 effect also deals \damagerankthreelow.
                     ".to_string(),
                     tags: vec![AbilityTag::Poison],
                     usage_time: UsageTime::Triggered,

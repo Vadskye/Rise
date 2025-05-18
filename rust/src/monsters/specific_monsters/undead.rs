@@ -220,9 +220,9 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     \parhead{Garlic} Whenever a vampire smells or touches garlic, it takes 10 damage and becomes \frightened by any creatures bearing garlic as a condition.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends exposed to garlic.
                     \parhead{Holy Water} Whenever a vampire takes damage from holy water, it becomes \stunned as a condition.
-                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 damage and \glossterm{briefly} becomes \immobilized.
+                    \parhead{Running Water} Whenever a vampire touches or flies over running water, it takes 10 damage and \glossterm{briefly} becomes \paralyzed.
                     This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
-                    It can use the \ability{struggle} ability to move despite being immobilized, but only towards the closest shore.
+                    It can use the \ability{struggle} ability to move despite being paralyzed, but only towards the closest shore.
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends touching or flying over running water.
                     \parhead{Silver} Vampires are \vulnerable to strikes using silvered weapons.
                     \parhead{Sunlight} Whenever a vampire is exposed to sunlight, it takes 10 damage and becomes \stunned as a condition.
