@@ -118,17 +118,6 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Tenderize',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals triple damage.
-        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
-      `,
-      roles: ['maim'],
-      rank: 7,
-    },
-
-    {
       name: 'Steady Slam',
 
       effect: `
@@ -492,12 +481,13 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Shrapnel Blast',
 
-      // Expected line length is 10 feet
+      // Expected line length is 10 feet, making this a r0 area. Normal damage in an r0
+      // area would be dr4, so dr3 with the debuff.
       effect: `
-        Make a melee \\glossterm{strike} against a stable surface.
+        Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        On a hit, each target takes \\damageranktwo. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        On a hit, each target takes \\damagerankthree. If your attack result also hits a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
         On a miss, you still deal half damage.
       `,
       rank: 3,
@@ -509,12 +499,13 @@ export const bruteForce: CombatStyle = {
       name: 'Shrapnel Blast+',
 
       // Expected line length is 4.5 + 8 + 3.5 = 15 feet, but it can be longer with
-      // adamantine weapons / etc.
+      // adamantine weapons and weird stuff. It still won't get much past 20 feet, so we
+      // can still score this as a r0 area.
       effect: `
-        Make a melee \\glossterm{strike} against a stable surface.
+        Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        On a hit, each target takes \\damageranksix. If you also beat a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        On a hit, each target takes \\damagerankseven. If your attack result also hits a target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
         On a miss, you still deal half damage.
       `,
       rank: 7,

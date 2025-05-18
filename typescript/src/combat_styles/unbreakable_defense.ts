@@ -72,7 +72,7 @@ export const unbreakableDefense: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
-          In addition, choose a creature you can see.
+          In addition, choose one creature you can see.
           Whenever that creature misses or \\glossterm{glances} you with a \\glossterm{targeted} attack this round, it treats itself as a target of that attack in addition to any other targets.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
@@ -227,12 +227,15 @@ export const unbreakableDefense: CombatStyle = {
       name: 'I Am Your Opponent',
 
       attack: {
-        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
+        hit: `
+          Each target is \\glossterm{briefly} \\goaded by you.
+          If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature adjacent to you.
+          Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
         `,
       },
-      rank: 3,
+      rank: 1,
       roles: ['softener'],
       tags: ['Emotion'],
     },
@@ -240,11 +243,15 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'I Am Your Opponent+',
 
-      effect: `
-        Choose a creature within \\shortrange of you.
-        That creature is \\goaded by you as a \\glossterm{condition}.
-      `,
-      rank: 7,
+      attack: {
+        hit: `
+          Each target is \\goaded by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
+        `,
+      },
+      rank: 5,
       roles: ['softener'],
       tags: ['Emotion'],
     },
