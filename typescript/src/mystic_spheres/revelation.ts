@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MINOR_FATIGUE } from './constants';
+import { CONDITION_CRIT, MINOR_FATIGUE } from './constants';
 
 export const revelation: MysticSphere = {
   name: 'Revelation',
@@ -112,16 +112,120 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'True Strike',
+      name: 'Learn from Failure',
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        If you choose an ally, they are \\focused and gain a \\plus1 accuracy bonus this round.
-        If you choose yourself, the effect applies to you next round instead.
+        If the target missed a creature with an attack last round, they become \\focused and gain a \\plus1 accuracy bonus this round.
+        If you target yourself, this effect lasts \\glossterm{briefly} instead of only this round.
       `,
       rank: 1,
       roles: ['boon'],
       tags: [],
+    },
+
+    {
+      name: 'Foresee Safety',
+
+      effect: `
+        At the end of the next round, you become \\braced during the following round.
+      `,
+      rank: 1,
+      roles: ['focus'],
+      tags: [],
+    },
+
+    {
+      name: 'Foresee Imminent Safety',
+
+      effect: `
+        You become \\glossterm{briefly} \\braced.
+        You can increase your \\glossterm{fatigue level} by one.
+        If you do, you also become \\glossterm{briefly} \\steeled.
+        Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+      `,
+      rank: 4,
+      roles: ['focus'],
+      tags: [],
+    },
+
+    {
+      name: 'Foresee Victory',
+
+      effect: `
+        At the end of the next round, you become \\primed during the following round.
+      `,
+      rank: 2,
+      roles: ['focus'],
+      tags: [],
+    },
+
+    {
+      name: 'Foresee Imminent Victory',
+
+      effect: `
+        You become \\glossterm{briefly} \\primed.
+        You can increase your \\glossterm{fatigue level} by one.
+        If you do, you also become \\glossterm{briefly} \\honed.
+      `,
+      rank: 5,
+      roles: ['focus'],
+      tags: [],
+    },
+
+    {
+      name: 'True Strike',
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target becomes \\focused this round.
+        If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
+      `,
+      rank: 4,
+      roles: ['boon'],
+      tags: [],
+    },
+
+    // Brief frighten is 0.6 EA. If we spend two ranks on area, we get a r0 spell with a
+    // r2 area. That's enough for 0.4 EA of buff.
+    {
+      name: 'Visions of Focusing Fear',
+
+      attack: {
+        hit: `
+          Each target is \\glossterm{briefly} \\frightened of you.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Then, you are \\glossterm{briefly} \\focused.
+        `,
+      },
+      narrative: `
+        The same visions that terrify your foes inspire you to victory.
+      `,
+      rank: 2,
+      roles: ['generator'],
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Visual'],
+    },
+
+    // Brief panic is r6. Drop to limited scope for r5, then 2 ranks of buff.
+    {
+      name: 'Visions of Sharp Panic',
+
+      attack: {
+        hit: `
+          Each target is \\glossterm{briefly} \\panicked by you.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Then, you are \\glossterm{briefly} \\honed.
+        `,
+      },
+      rank: 7,
+      roles: ['generator'],
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Visual'],
     },
 
     {
@@ -135,34 +239,6 @@ export const revelation: MysticSphere = {
         You intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Armorbreak Sight',
-
-      effect: `
-        Whenever you would make a \\glossterm{strike} that would attack a creature's Armor defense, you may instead attack that creature's Reflex defense.
-        If you do, you \\glossterm{briefly} cannot apply this effect again.
-        You must make this choice before rolling the attack roll.
-      `,
-      narrative: `
-        You intuitively perceive gaps in your foes' armor.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Armorbreak Sight',
-
-      functionsLike: {
-        name: 'armorbreak sight',
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      rank: 6,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -313,52 +389,47 @@ export const revelation: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Reveal Weakness',
+      name: 'Visions of Weakness',
 
+      // Single defense is 1.0 EA. One rank of area gives a r0 spell with r1 area, which
+      // is enough for 0.4 ranks of buff.
       attack: {
         hit: `
           Each target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
         `,
         targeting: `
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental with a +2 accuracy bonus against up to two creatures within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
+          Then, you \\glossterm{briefly} gain a +2 bonus to that defense.
+          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
       },
       narrative: `
         You expose your enemy's weaknesses, revealing openings in its defenses moments before they exist.
+        This insight helps you bolster your own defenses.
       `,
       rank: 1,
-      roles: ['softener'],
+      roles: ['generator', 'softener'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Intense Reveal Weakness',
+      name: 'Intense Visions of Weakness',
 
+      // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks.
       attack: {
         hit: `
-          Each target \\glossterm{briefly} takes a -4 penalty to the chosen defense.
+          Each target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
-          Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
-          Make an attack vs. Mental against up to three creatures within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
+          Then, you are \\glossterm{briefly} \\braced.
+          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
       },
-      rank: 4,
-      roles: ['softener'],
+      rank: 5,
+      roles: ['generator', 'softener'],
       scaling: 'accuracy',
-    },
-
-    {
-      name: 'Empowered True Strike',
-
-      functionsLike: {
-        name: 'True Strike',
-        exceptThat:
-          'the accuracy bonus increases to +4. However, after you cast this spell, you \\glossterm{briefly} cannot cast it again.',
-      },
-      roles: ['boon'],
-      rank: 6,
     },
 
     {
@@ -390,7 +461,7 @@ export const revelation: MysticSphere = {
           Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against up to two creature within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
       narrative: `
