@@ -71,10 +71,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
-                    \abilityusagetime Standard action. You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action} instead.
+                    \abilityusagetime Standard action. You can increase your \glossterm{fatigue level} by two to use this ability as a \glossterm{minor action} instead.
                     \rankline
                     Remove all \glossterm{conditions} affecting you.
-                    Because this ability has the \abilitytag{Swift} tag, the removed condition does not affect you during the current phase.
+                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
                     In addition, you \glossterm{briefly} become immune to all conditions.
                 \end{activeability}
             ",

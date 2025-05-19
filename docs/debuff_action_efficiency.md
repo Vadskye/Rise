@@ -244,11 +244,6 @@ Following the logic of being stunned, being vulnerable to all damage would be wo
 
 ## Named Buffs
 
-Possible damaging buff effects:
-* Roll damage twice, keep the higher result (~25% more for spells, ~10% more for strikes)
-* Maximum damage (~75% more for spells, ~33% more for strikes)
-* Double damage
-
 ### Braced
 A braced character gains a +2 bonus to all defenses.
 
@@ -260,6 +255,9 @@ A focused character rolls attacks rolls twice and keeps the higher result.
 
 ### Fortified
 A fortified character gains a +2 bonus to their Brawn, Fortitude, and Mental defenses.
+
+### Honed
+A honed character gains a +4 accuracy bonus with critical hits.
 
 ### Maximized
 A maximized character deals maximum damage.
@@ -287,23 +285,57 @@ This is higher than the baseline 25% assuming a 4 person party, but takes into a
 
 Braced applies 50% of the time, and it removes 40% of enemy actions when it applies. Therefore, it is worth 4 * 0.5 * 0.4 = 0.8 effective actions.
 
-### +4 for crits: 0.2
-
-Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9, so 0.2 damage from crit, so 1.18 total. That's 20% more damage, so it's roughly the same as Empowered, but better for strike-based people since it works for attacks with fewer dice.
-
 ### Empowered: 0.2
 
 Empowered is roughly 20% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
 
+### Extra damage: 0.4
+
+Standard extra damage values provide 25-30% more damage than "standard high damage":
+
+* Rank 1: 2 flat
+* Rank 2: 1d4
+* Rank 3: 1d6
+* Rank 4: 1d8
+* Rank 5: 2d6
+* Rank 6: 2d8
+* Rank 7: 3d8
+* Rank 8: 4d8
+* Rank 9: 6d8
+
+Extra damage like this tends to be better on low damage / high accuracy characters, or characters using large AOE attacks or making multiple attacks in a round.
+
 ### Focused: 0.4
-Assume you have a 60% hit rate. 40% of the time, you reroll with Focused, and that hits 60% of the time. So your effective hit rate is 0.6 + 0.4 * 0.6 = 0.84. That's a 40% increase in your odds of hitting, so it's worth 0.4 effective actions.
+Assume you have a 60% hit rate, so you hit on a 5. Your expected damage per round is 0.6 + 0.1 from hit/glance + 0.06 from crits, or 0.76.
 
-### Fortified: 0.4
-Like Braced, but only affects 50% of enemy attacks.
+From Anydice, with a reroll:
+* Odds of missing (1/2) are 4%
+* Odds of glancing (3/4) are 5%+7% = 12%
+* Odds of hitting (5/6/7/8/9/10) are 84%
+* Odds of critting (15+) are 11.6%
 
-### Maximized: 0.9
+That means total damage dealt is 0.12 * 0.5 + 0.84 + 0.12 = 1.02, which is 34% better. If we just think about debuffs that don't care much about glancing or critting, it's 84% vs 60%, which is 40% better.
 
-Maximized is roughly 70% more damage for spells, and about half that for strikes. Assume that players will use other combos or resources to take advantage of their state while maximized, so give it a 25% bonus.
+Now assume you have a 120% hit rate (+1 vs AD 0), so you crit on a 9/10. Expected dpr is 1 + 0.2 + 0.1 * 0.2 = 1.22.
+
+With a reroll, your odds of getting a single crit become 36% and a double crit is 4%, so expected dpr is 1 + 0.36 + 0.04 = 1.4, which is only 15% better. So focused is better on low accuracy targets, which makes sense.
+
+### Fortified: 0.6
+Same logic as Shielded.
+
+### Honed: 0.4
+
+Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9 and double crit on a 10 -> 9, so 0.22 damage from crit, so 1.2 total. That's 22% more damage.
+
+Assume you have a 120% hit rate (+1 vs AD 0). Expected DPR is 1 from hit and 0.22 from crit + double crit, so 1.22 total. With Deadly Fortune, expected DPR gains 0.6 from crit and 0.06 from double crit, so 1.66 total, which is 38% more damage.
+
+Assume you have a 150% hit rate (+4 vs AD 0). Expected DPR is 1.55. With Deadly Fortune, expected DPR is 1.99, which is 28% more damage.
+
+0.4 EA is a bit high for honed since that's only true in its best case scenario, but it's risky to treat it as any lower EA than that.
+
+### Maximized: 0.7
+
+Maximized is roughly 70% more damage for spells, and about half that for strikes. Use the spell modifier, not the strike modifier.
 
 ### Primed: 0.8
 
@@ -324,7 +356,10 @@ So your effective hit rate increases by 0.1 * (0.7 + 0.8 + 0.9 + 1 + 0.1 + 0.2 +
 Now assume you have an 80% hit rate, so you hit on a 7. From before, this is worth 0.1 * (0.9 + 1 + 0.1..0.7) = 0.47. That takes you from a 0.8 to a 1.27, which is a 59% increase in your odds of hitting. So exploding is stronger when your normal hit rate is low, which makes sense.
 
 ### Shielded: 0.6
-Like Braced, but only affects 75% of enemy attacks
+Like Braced, but only affects 50% of enemy attacks. However, we can assume that you only use it when it provides the same value that braced would, so it's more like 0.6 EA.
+
+### Single defense: 0.4
+You can probably choose the best defense here, so it's pretty close in power to the other defense abilities.
 
 ### Steeled: 0.4
 Assume that 5% of enemy attacks would get a critical hit, and they deal double damage on a crit, so this negates 10% of enemy actions when relevant. That means it's worth 4 * 0.5 * 0.1 = 0.2 effective actions. However, this is tricky, because critical hits are inordinately likely to make the difference between winning and losing a fight. Arbitrarily double the effectiveness, making it worth 0.4 effective actions.
@@ -722,7 +757,6 @@ For example, a Medium range erX spell deals drX damage.
 ### Standard Area Ranks
 
 Rank -1 areas (why would these exist?):
-* Tiny radius from self
 * Small line, 5' wide from self
 
 Rank 0 areas:
@@ -735,6 +769,8 @@ Rank 0 areas:
   * All adjacent enemies
   * Small radius from self
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
+  * Tiny radius from self
+    * This is easier to scope to enemies-only than a Small radius
 
 Rank 1 areas:
 * Cone:
@@ -743,6 +779,8 @@ Rank 1 areas:
   * Medium line, 10' wide from self
 * Radius:
   * Medium radius from self
+  * Enemies in a Tiny radius from self
+    * This breaks the normal "enemies-only" pattern
 * Targets:
   * Up to two creatures in Short range
 
@@ -867,3 +905,86 @@ If a spell improves in multiple ways, use the first name in this list that appli
 * Greater: a stronger non-hostile, non-numeric effect, like phasestep -> greater phasestep
 * Distant: more range
 * Mighty: more damage
+
+## Buff effect scaling
+
+Buff effects should have fairly weak rank scaling. The danger with having strong rank scaling for buff effects is that they become useless at low levels and mandatory at high levels, since they have fairly consistent value.
+
+### Maintaining diminishing returns
+Debuffs have diminishing returns at higher levels in two ways: condition removal effects have rank scaling, and not being able to stack debuffs means it's more likely that monsters will already be affected by a debuff. We can't recreate the first effect on buffs, but we can use the second way to gain diminishing returns.
+
+For example, assume that low rank abilities can only grant short-term buffs, such as brief duration effects. Low rank effects should never grant long-term empowerment, because that would devalue empowerment.
+
+At high ranks, there could be more effect that grant long-term empowerment, which devalues the existence of brief empowerment effects. It would become more common to assume empowerment, which devalues low rank empowerment effects without technically making them action-inefficient.
+
+Also, low-rank buff effects could be tied to damage or other benefits which don't scale well, and pure buff effects could be exclusive to high level characters.
+
+### Stacking buffs
+
+Buff-stacking is fairly dangerous. If it's easy to make one person primed + maximized, that will simply be better than using those abilities independently on anyone else, because they are both separately multiplicative. To a lesser extent, it's also easier to optimize targeted buffs with splitting, chaining, and so on. This has two main effects:
+
+* Self-buffs use their listed EA, while buffs used on other creatures cost +50% EA.
+* All buffs worth 0.7 EA or higher must be self-only in all cases.
+  * This specifically affects braced, maximized, and primed
+
+### Cleansing conditions
+
+Removing conditions isn't exactly a buff, but it occupies a similar narrative space and can be useful to combine with abilities that grant buffs. The trick with condition removal is that, unlike most buffs, its EA scales with rank:
+
+* Cleanse one:
+  * Ranks 1-2: 1.2 EA
+  * Ranks 3-4: 1 EA
+  * Ranks 5-4: 0.8 EA
+  * Ranks 7-8: 0.6 EA
+* Cleanse all: +0.2 EA over cleanse one
+
+### Buff and damage effects
+
+Consider a standard damage effect to be 1 EA. For each damage rank you drop, you lose about 20% damage, so you can get 0.2 EA for self-buffs. That you can get some standard effects:
+
+Rank X:
+* rX-1 damage:
+  * Then briefly self-empowered
+* rX-2 damage:
+  * First briefly self-empowered
+  * Then briefly focused
+  * Then briefly steeled / and steeled this round
+  * Then briefly extra damage
+  * Then briefly honed
+* rX-3 damage:
+  * First briefly focused
+  * Then briefly shielded / and shielded this round
+
+You can pay one fatigue level to get either +1dr or +0.2EA, but not both. This allows granting braced / maximized / primed with rX-3 damage attached.
+
+### Buff and debuff effects
+
+Much like with damage spells, you start with a standard debuff spell. For every rank you drop the debuff by, including area, you gain 0.2 EA of buff. There should never be buff + debuff + damage effects, because that's just too much going on in one spell.
+
+### Pure buff effects
+
+Since we can't scale pure buff power much with rank, we use preconditions instead. At low ranks, pure buffs always have preconditions that you must meet to gain the full buff effect. The value of the buff when the precondition is met must always be about 1 EA, so you're never wasting an action to use the buff, but you might not always be able to use the buff when you want to.
+After rank 4, pure buffs no longer have preconditions to meet their basic effects, and meeting a difficult precondition can give +0.2 EA. A low rank buff can also spend -0.2 EA to remove 50% of its precondition.
+
+As a rough guide:
+* Rank 1:
+  * 0.8 EA
+  * 1 EA, usable 25% of the time
+* Rank 2:
+  * 1 EA, usable 50% of the time
+  * 0.6 EA, with +0.4 EA usable 25% of the time
+* Rank 3:
+  * 1 EA, usable 75% of the time
+  * 0.6 EA, with +0.4 EA usable 50% of the time
+* Rank 4:
+  * 1 EA
+* Rank 5:
+  * 1.2 EA, usable 25% of the time
+* Rank 6:
+  * 1.2 EA, usable 50% of the time
+  * 0.8 EA, with +0.4 EA usable 25% of the time
+* Rank 7:
+  * 1.2 EA, usable 75% of the time
+  * 0.8 EA, with +0.4 EA usable 50% of the time
+
+You can pay one fatigue level to get +0.2 EA.
