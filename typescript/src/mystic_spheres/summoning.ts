@@ -196,37 +196,36 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Trampling Summon',
+      name: 'Plague of Rats',
 
+      // r1 area allows drX. We give this spell drX+1 because it both attacks Armor and
+      // has difficult terrain issues.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\medarealong, 5 ft. wide line from you.
-          You summon a Medium creature that tramples through the area before disappearing.
+          You summon a swarm of rats that run through and bite everything in a \\medarealong, 10 ft. wide line from you before disappearing.
+          Make an attack vs. Armor against everything in the area.
           The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Massive Trampling Summon',
+      name: 'Mighty Rushing Horde',
 
-      attack: {
-        hit: `\\damageranktwo.`,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Reflex against everything that is \\glossterm{grounded} in a \\hugearealong, 10 ft. wide line from you.
-          You summon a Large creature that tramples through the area before disappearing.
-          The length of this spell's area is affected by \\glossterm{difficult terrain} and similar movement impediments.
-        `,
+      functionsLike: {
+        name: "rushing horde",
+        exceptThat: "the damage increases to \\damageranksix.",
       },
-      rank: 4,
+      rank: 5,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -261,6 +260,7 @@ export const summoning: MysticSphere = {
         This damage is improved by your \\glossterm{magical power} as normal for \\magical attacks.
       `,
       rank: 3,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -277,6 +277,7 @@ export const summoning: MysticSphere = {
         name: 'summon weapon',
       },
       rank: 5,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -297,6 +298,7 @@ export const summoning: MysticSphere = {
         name: 'summon weapon',
       },
       rank: 4,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
@@ -308,7 +310,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature appears to be an earth elemental.
-          Its attacks deal \\damagerankfour, and have that \\atEarth tag.
+          Its attacks deal \\damagerankfour, and have the \\atEarth tag.
           It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
           In addition, it is immune to \\atEarth attacks.
         `,
@@ -398,63 +400,67 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Summon Horde -- Bees',
+      name: 'Colony of Bees',
 
+      // r0 area deals drX, or drX+1 for double defense
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
-          A horde of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
+          A colony of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from you.
           The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies.
 
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Fortitude against everything in the area.
+          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
         `,
       },
       rank: 1,
+      roles: ['clear', 'hazard'],
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
-      name: 'Summon Horde -- Dogs',
+      name: 'Pack of Wolves',
 
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
-          A horde of dogs appears in a \\medarea radius \\glossterm{zone} from your location.
-          The dogs disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
-
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
-        `,
-      },
-      rank: 3,
-      tags: ['Manifestation', 'Sustain (standard)'],
-    },
-
-    {
-      name: 'Summon Horde -- Wolves',
-
-      attack: {
-        hit: `
-          \\damagerankthree.
-          Each Large or smaller creature that loses \\glossterm{hit points} from this damage falls \\prone.
-        `,
-        missGlance: true,
-        targeting: `
-          A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
+          A pack of wolves appears in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
 
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{grounded} \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
+        `,
+      },
+      rank: 4,
+      roles: ['clear', 'hazard'],
+      tags: ['Manifestation', 'Sustain (standard)'],
+    },
+
+    {
+      name: 'Quiver of Cobras',
+
+      // drX-2 for full area, +1dr for double defense
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          A swarm of cobras appears in a \\medarea radius \\glossterm{zone} within \\shortrange.
+          The cobras disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Fortitude against all \\glossterm{grounded} \\glossterm{enemies} in the area.
           You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
         `,
       },
       rank: 5,
+      roles: ['clear', 'hazard'],
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
