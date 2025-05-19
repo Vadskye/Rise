@@ -71,15 +71,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       type: 'Attune',
     },
     {
-      name: 'Siphon Flame',
+      name: 'Channel Flame',
 
       effect: `
-        Whenever you use a \\atFire ability, you can siphon \\glossterm{mundane} flames within \\longrange to fuel it.
-        This extinguishes each siphoned flame that is Medium or smaller.
-        You gain a \\plus2 accuracy bonus with that ability this round for drawing in a Small flame, such as a campfire.
-        For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \\plus7 bonus from a Colossal flame.
-        As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a campfire.
+        Whenever you use a \\atFire ability, you can draw power from one Small or larger \\glossterm{mundane} fire within \\medrange.
+        When you do, you gain a \\plus2 accuracy bonus with that ability this round.
+        % Med +3, Large +4, Huge +5, Garg +6, Colossal +7
+        For each size category above Small that you siphon in this way, this accuracy bonus increases by 1, to a maximum of a \\plus7 bonus from a Colossal flame.
+        Then, if that fire was Medium or smaller, it is extinguished.
         After you enhance an ability in this way, this ability ends.
+        
+        As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a Small campfire.
+        When you combine sources of fire in this way, they use their true size for determining whether they are extinguished.
       `,
       rank: 1,
       roles: ['attune'],
@@ -87,19 +90,109 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
+      name: 'Consume Flame',
+
+      effect: `
+        Choose a Small or larger \\glossterm{mundane} fire within \\medrange.
+        You draw power from the fire, causing you to be \\glossterm{briefly} \\maximized.
+        Then, if that fire is Medium or smaller, it is extinguished.
+
+        As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a Small campfire.
+        When you combine sources of fire in this way, they use their true size for determining whether they are extinguished.
+      `,
+      rank: 2,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Consume Bonfire',
+
+      functionsLike: {
+        name: "consume flame",
+        exceptThat: "if the fire was Large or larger, your damaging attacks also \\glossterm{briefly} deal 2d8 \\glossterm{extra damage}.",
+      },
+      rank: 6,
+      roles: ['focus'],
+    },
+
+    {
       name: 'Building Flame',
 
+      // This has the damage of a r0 spell because of the buff
       attack: {
         hit: `
           \\damagerankone.
         `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Reflex against everything adjacent to you.
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
       rank: 1,
       roles: ['generator'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Intense Building Flame',
+
+      // This has the damage of a r4 spell because of the pre-damage buff
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          You are \\glossterm{briefly} \\empowered.
+          Then, make an attack vs. Reflex against everything adjacent to you.
+        `,
+      },
+      rank: 5,
+      roles: ['generator'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Desperate Kindling',
+
+      // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
+      // self-targeting.
+      cost: 'One \\glossterm{fatigue level}.',
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against yourself and everything adjacent to you.
+          Then, you are \\glossterm{briefly} \\maximized.
+        `,
+      },
+      rank: 3,
+      roles: ['generator'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Desperate Pyre',
+
+      // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
+      // self-targeting.
+      cost: 'One \\glossterm{fatigue level}.',
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against yourself and everything adjacent to you.
+          Then, you are \\glossterm{briefly} \\maximized.
+        `,
+      },
+      rank: 6,
+      roles: ['generator'],
+      scaling: 'accuracy',
     },
 
     {
