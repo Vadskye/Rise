@@ -873,6 +873,7 @@ Rank 7 areas:
 
 ### Area Rank Modifiers
 
+* +1 area rank: Only affects enemies in the area (ranged radius only)
 * +2 area rank: Only affects enemies in the area.
 
 ## Walls and Barriers
@@ -940,7 +941,7 @@ Removing conditions isn't exactly a buff, but it occupies a similar narrative sp
 
 ### Buff and damage effects
 
-Consider a standard damage effect to be 1 EA. For each damage rank you drop, you lose about 20% damage, so you can get 0.2 EA for self-buffs. That you can get some standard effects:
+Consider a standard damage effect to be 1 EA. For each damage rank you drop, you lose about 20% damage, so you can get 0.2 EA for self-buffs, to a maximum of 0.8 EA. That you can get some standard effects:
 
 Rank X:
 * rX-1 damage:
@@ -959,7 +960,7 @@ You can pay one fatigue level to get either +1dr or +0.2EA, but not both. This a
 
 ### Buff and debuff effects
 
-Much like with damage spells, you start with a standard debuff spell. For every rank you drop the debuff by, including area, you gain 0.2 EA of buff. There should never be buff + debuff + damage effects, because that's just too much going on in one spell.
+Much like with damage spells, you start with a standard debuff spell. For every rank you drop the debuff by, including area, you gain 0.2 EA of buff, to a maximum of 0.8 EA. There should never be buff + debuff + damage effects, because that's just too much going on in one spell.
 
 ### Pure buff effects
 
