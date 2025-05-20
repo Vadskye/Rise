@@ -103,15 +103,32 @@ export const ebbAndFlow: CombatStyle = {
       roles: ['burst'],
     },
 
+    // We normally assume a boss fight lasts 20 player actions, or 5 personal actions, so
+    // using this on round 1 would affect your next 4 actions. That's about 0.4 EA. If you
+    // used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
+    // value, but your first round buff would also have been spent on one round of a
+    // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
     {
       name: 'Begin the Hunt',
 
       effect: `
-        Make a strike.
-        Then, choose one target of the strike.
-        During the next round, if you hit that target with a strike, you become \\glossterm{briefly} \\focused.
+        Make a strike with a -1 accuracy penalty.
+        Then, you gain a +1 accuracy bonus against one creature targeted by the strike.
+        If the strike had multiple targets, you choose which target you gain the bonus against.
+        It lasts until you finish a \\glossterm{short rest} or make an attack that does not include that creature as a target.
       `,
       rank: 3,
+      roles: ['ramp'],
+    },
+
+    {
+      name: 'Begin the Hunt+',
+
+      functionsLike: {
+        name: 'begin the hunt',
+        exceptThat: 'the accuracy bonus stacks with itself, up to a maximum of a +4 bonus. This accuracy bonus does not stack with the accuracy bonus from \\ability{begin the hunt}.',
+      },
+      rank: 5,
       roles: ['ramp'],
     },
 
