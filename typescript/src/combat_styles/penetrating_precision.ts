@@ -53,7 +53,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If it target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+        \\hit If it target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
       roles: ['softener'],
@@ -64,7 +64,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        If it target takes damage, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
+        \\hit You gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 5,
       roles: ['softener'],
@@ -122,9 +122,9 @@ export const perfectPrecision: CombatStyle = {
       name: 'Focusing Lunge',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double dmage against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
-        The line must point directly away from you.
-        Only one of the spaces in the line can be adjacent to you.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
+        The line must point directly away from you, and only one of the spaces in the line can be adjacent to you.
+        The strike deals double damage.
         If you deal damage to two creatures in this way, you \\glossterm{briefly} become \\focused.
       `,
       rank: 5,
@@ -134,9 +134,10 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Arrowguide',
 
+      // Treat the local +2 accuracy as a 0.2 EA buff
       effect: `
-        Make a ranged \\glossterm{strike}.
-        If the target takes damage and your attack hits its Reflex defense, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against it.
+        Make a ranged \\glossterm{strike} with a -2 accuracy penalty.
+        Then, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against the target.
       `,
       rank: 1,
       roles: ['generator'],
@@ -268,7 +269,7 @@ export const perfectPrecision: CombatStyle = {
       // If you call this 2/3 of a stun, it's worth 2 EA.
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage and your attack result beats its Fortitude defense, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
+        \\hit If your attack result also hits the target's Fortitude defense, it takes a \\minus1 penalty to all defenses as a \\glossterm{condition}.
         A creature can have up to four instances of this condition on it at once, and the penalty from each instance stacks.
         Any individual creature can only gain one instance of this condition per round, even if multiple creatures use this ability on it.
       `,

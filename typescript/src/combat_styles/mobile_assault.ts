@@ -97,7 +97,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle} when moving through its space.
+        \\hit If the target is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle} when moving through its space.
         You still cannot end your movement in its space.
       `,
       rank: 1,
@@ -247,7 +247,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Mental defense, it is \\glossterm{briefly} \\frightened by you.
+        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 3,
       tags: ['Emotion'],
@@ -260,7 +260,7 @@ export const mobileHunter: CombatStyle = {
       // assume movement is worth 0.6 EA or so
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it \\glossterm{briefly} treats you as being \\invisible.
+        \\hit The target \\glossterm{briefly} treats you as being \\invisible.
       `,
       rank: 7,
       tags: ['Emotion'],
