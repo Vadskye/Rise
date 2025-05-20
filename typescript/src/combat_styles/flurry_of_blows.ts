@@ -293,6 +293,7 @@ export const flurryOfBlows: CombatStyle = {
     {
       name: 'Dazzling Speed',
 
+      // Missing 0.2 EA from the debuff
       effect: `
         Make a \\glossterm{strike}.
         \\hit The target is \\glossterm{briefly} \\dazzled.
@@ -318,24 +319,24 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You are \\shielded this round.
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} with a -1 accuracy penalty.
         The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 3,
-      roles: ['softener'],
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
     {
-      name: 'Guardweave',
+      name: 'Guardweave Flurry',
 
       effect: `
         You are \\shielded this round.
-        Make a \\glossterm{strike}.
-        The shielding is a \\atSwift effect, but the strike is not.
+        Make two \\glossterm{strikes} with a +1 accuracy bonus.
+        The shielding is a \\atSwift effect, but the strikes are not.
       `,
-      rank: 3,
-      roles: ['softener'],
+      rank: 7,
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
@@ -367,7 +368,7 @@ export const flurryOfBlows: CombatStyle = {
       effect: `
         If you hit with a strike last round, you are \\glossterm{briefly} \\primed.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['focus'],
     },
 
@@ -378,7 +379,7 @@ export const flurryOfBlows: CombatStyle = {
         You are \\glossterm{briefly} \\primed.
         If you hit with at least two strikes last round, you are also briefly \\focused.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['focus'],
     },
   ],
