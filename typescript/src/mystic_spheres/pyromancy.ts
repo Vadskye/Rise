@@ -170,7 +170,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 3,
-      roles: ['generator'],
+      roles: ['exertion', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -191,7 +191,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
       },
       rank: 6,
-      roles: ['generator'],
+      roles: ['exertion', 'generator'],
       scaling: 'accuracy',
     },
 
