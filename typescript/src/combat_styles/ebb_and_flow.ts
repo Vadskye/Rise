@@ -108,24 +108,10 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a strike.
-        After making the strike, you gain a +1 bonus to \\glossterm{accuracy} against one target of the strike.
-        If the strike had multiple targets, you choose which target you gain the bonus against.
-        This effect stacks with itself, up to a maximum of a +4 bonus.
-        It lasts until you finish a \\glossterm{short rest} or make an attack that does not include that creature as a target.
+        Then, choose one target of the strike.
+        During the next round, if you hit that target with a strike, you become \\glossterm{briefly} \\focused.
       `,
       rank: 3,
-      roles: ['ramp'],
-    },
-
-    {
-      name: 'Begin the Hunt+',
-
-      functionsLike: {
-        exceptThat:
-          'the accuracy bonus from each strike increases to +2, and the strike deals double damage. This bonus does not stack with the bonus from the \\maneuver{begin the hunt} maneuver.',
-        name: 'begin the hunt',
-      },
-      rank: 7,
       roles: ['ramp'],
     },
 

@@ -17,31 +17,12 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Build Speed',
-
-      effect: `
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line, you are \\glossterm{briefly} \\primed.
-      `,
-      rank: 3,
-      roles: ['focus'],
-    },
-
-    {
-      name: 'Build Speed+',
-
-      effect: `
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line, you \\glossterm{briefly} gain a \plus20 foot bonus to your speed and are \\primed.
-      `,
-      rank: 7,
-      roles: ['focus'],
-    },
-
-    {
       name: 'Adrenaline',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
-        You are \\glossterm{briefly} \\primed.
+        You \\glossterm{briefly} gain a \plus10 foot bonus to your speed and are \\primed.
+        If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 1,
       roles: ['exertion', 'focus'],
@@ -52,7 +33,8 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} \\primed and \\steeled.
+        You \\glossterm{briefly} gain a \plus10 foot bonus to your speed and are \\primed and \\steeled.
+        If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 5,
       roles: ['exertion', 'focus'],

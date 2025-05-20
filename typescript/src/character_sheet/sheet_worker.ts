@@ -681,9 +681,9 @@ function handleCoreStatistics() {
   handleFatiguePenalty();
   handleHitPoints();
   handleJumpDistance();
-  handleLandSpeed();
   handleMagicalPower();
   handleMundanePower();
+  handleSpeed();
   handleUniversalAbilities();
   handleUnknownStatistic();
   handleVitalRolls();
@@ -1452,7 +1452,6 @@ function handleDebuffs() {
         // rank 3 debuffs
         'confused',
         'blinded',
-        'immobilized',
         'panicked',
         // rank 4 debuffs
         'asleep',
@@ -1503,6 +1502,7 @@ function handleDebuffs() {
         minus2('swimming', 'armor_defense');
         minus2('swimming', 'reflex');
       }
+      // TODO: figure out how to add "half speed" modifier
       if (v.prone) {
         minus2('prone', 'armor_defense');
         minus2('prone', 'reflex');
@@ -1526,7 +1526,8 @@ function handleDebuffs() {
         debuffHeaders.push('{{Goaded=+2 accuracy vs source}}');
         minus2('goaded', 'accuracy');
       }
-      if (v.slowed && !v.immobilized) {
+      if (v.slowed) {
+        namedModifierMap.addNamedModifier("speed", "slowed", -10);
         minus2('slowed', 'armor_defense');
         minus2('slowed', 'reflex');
       }
@@ -1785,7 +1786,7 @@ function handleJumpDistance() {
   });
 }
 
-function handleLandSpeed() {
+function handleSpeed() {
   onGet({
     variables: {
       miscName: 'speed',
@@ -1796,8 +1797,8 @@ function handleLandSpeed() {
       const base_speed = v.base_speed || 30;
       const totalValue = base_speed + v.body_armor_speed + v.misc;
       setAttrs({
-        land_speed: totalValue,
-        land_speed_explanation: formatCombinedExplanation(v.miscExplanation, [
+        speed: totalValue,
+        speed_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base speed', value: v.base_speed },
           { name: 'body armor', value: v.body_armor_speed },
         ]),

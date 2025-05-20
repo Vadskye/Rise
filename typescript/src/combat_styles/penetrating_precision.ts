@@ -128,7 +128,7 @@ export const perfectPrecision: CombatStyle = {
         If you deal damage to two creatures in this way, you \\glossterm{briefly} become \\focused.
       `,
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'generator'],
     },
 
     {
@@ -173,12 +173,17 @@ export const perfectPrecision: CombatStyle = {
       name: 'Heartpiercer+',
 
       // Assume you hit 80% of the time normally (+0 vs AD 3).
-      // This has expected damage of 0.3 * 3 + 0.5 * 2 = 2x hit damage.
+      // Your normal hit damage is 0.8 + 0.1 + 0.08 = 0.98.
+      // With this, every hit is a crit and you double crit on a 8/9/10,
+      // so expected damage is 0.8 + 0.8 + 0.3 + 0.03 = 1.93 hit damage, or roughly 2x
+      // damage.
       //
       // Now assume you hit 130% of the time normally (+5 vs AD 3).
-      // Normal expected damage is 0.3 * 2 + 0.7 * 1 = 1.3x hit damage.
-      // With this, expected damage is 0.8 * 3 + 0.2 * 2 = 2.8x hit damage.
-      // That's still only slightly better than a double damage strike, so it seems safe.
+      // Normal expected damage is 0.3 * 2 + 0.7 * 1 + 0.03 = 1.33x hit damage.
+      // With this, every roll is a crit and you double crit on a 3+,
+      // so expected damage is 1 + 1 + 0.8 + 0.08 = 2.88x hit damage.
+      // That's about 17% more damage than a normal double damage strike, but doesn't
+      // scale as well with increasing accuracy farther, so it seems safe.
       effect: `
         Make a \\glossterm{strike}.
         You gain a +15 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
@@ -275,6 +280,63 @@ export const perfectPrecision: CombatStyle = {
       `,
       rank: 7,
       roles: ['softener'],
+    },
+
+    {
+      name: 'Full-Body Thrust',
+
+      effect: `
+        Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
+        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+      `,
+      rank: 3,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'The Sharpest Blade',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        \\hit You become \\glossterm{briefly} \\honed.
+      `,
+      rank: 3,
+      roles: ['generator'],
+    },
+
+    {
+      name: 'The Sharpest Blade+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals triple damage.
+        \\hit You become \\glossterm{briefly} \\honed.
+      `,
+      rank: 7,
+      roles: ['generator'],
+    },
+
+    // Two actions affected by focus is 0.8 EA.
+    {
+      name: 'Maintain Focus',
+
+      effect: `
+        You become \\glossterm{briefly} \\focused.
+        During the next round, if you hit with a strike, you become \\glossterm{briefly} focused again.
+      `,
+      rank: 1,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Maintain Edge',
+
+      // 0.8 EA baseline, 1.2 EA if you hit the condition
+      effect: `
+        You become \\glossterm{briefly} \\focused and \\honed.
+        During the next round, if you get a critical hit with a strike, you become \\glossterm{briefly} honed again.
+      `,
+      rank: 5,
+      roles: ['focus'],
     },
   ],
 };

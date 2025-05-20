@@ -341,7 +341,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Focusing Frenzy',
+      name: 'Building Frenzy',
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty.
@@ -352,7 +352,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Focusing Frenzy+',
+      name: 'Building Frenzy+',
 
       effect: `
         You are \\glossterm{briefly} \\focused.
