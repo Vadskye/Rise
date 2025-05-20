@@ -302,5 +302,41 @@ export const ripAndTear: CombatStyle = {
       rank: 7,
       roles: ['execute'],
     },
+
+    {
+      name: 'Bloodreap',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        If a creature loses \\glossterm{hit points} from the strike, you are \\glossterm{briefly} \\empowered.
+      `,
+      // narrative: '',
+      rank: 1,
+      roles: ['generator'],
+    },
+
+    {
+      name: 'Bloodreap+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        If a creature loses \\glossterm{hit points} from the strike, or if you are below your maximum hit points, you are \\glossterm{briefly} \\empowered.
+      `,
+      // narrative: '',
+      rank: 5,
+      roles: ['generator'],
+    },
+
+    {
+      name: 'Blood Trance',
+
+      effect: `
+        You may choose to lose a quarter of your maximum hit points.
+        Then, if you are below your maximum \\glossterm{hit points}, you become \\glossterm{briefly} \\primed and \\empowered.
+      `,
+      // narrative: '',
+      rank: 3,
+      roles: ['focus'],
+    },
   ],
 };

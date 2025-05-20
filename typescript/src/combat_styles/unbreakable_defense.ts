@@ -226,6 +226,18 @@ export const unbreakableDefense: CombatStyle = {
     },
 
     {
+      name: 'Prepared Defense+',
+
+      effect: `
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals triple damage.
+        Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+      `,
+      rank: 7,
+      roles: ['generator'],
+    },
+
+    {
       name: 'I Am Your Opponent',
 
       attack: {
@@ -256,6 +268,18 @@ export const unbreakableDefense: CombatStyle = {
       rank: 5,
       roles: ['softener'],
       tags: ['Emotion'],
+    },
+
+    {
+      name: 'Defensive Stance',
+
+      effect: `
+        You become \\glossterm{briefly} \\shielded.
+        At the end of next round, if you took damage that round, you are \\glossterm{briefly} \\shielded again.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+      `,
+      rank: 1,
+      roles: ['focus'],
     },
   ],
 };

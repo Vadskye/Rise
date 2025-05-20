@@ -342,13 +342,13 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Maximum Flex',
+      name: 'Compounding Might',
 
       effect: `
-        You are \\glossterm{briefly} \\maximized. 
+        If you are currently \\empowered, you are \\glossterm{briefly} \\maximized and \\fortified.
       `,
       rank: 3,
-      roles: ['focus'],
+      roles: ['focus', 'combo'],
     },
 
     {
@@ -408,13 +408,12 @@ export const bruteForce: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
-        You become \\maximized this round.
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} that deals double damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
         This ability only increases your fatigue level if the strike hits.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['burst', 'exertion'],
     },
 
@@ -423,13 +422,12 @@ export const bruteForce: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You become \\maximized this round.
-        Make a \\glossterm{strike} that deals double damage.
+        Make a \\glossterm{strike} that deals quadruple damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
         This ability only increases your fatigue level if the strike hits.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['burst', 'exertion'],
     },
 
