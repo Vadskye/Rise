@@ -10,7 +10,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points and is not wearing metal body armor, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points and is not wearing metal body armor, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],
@@ -21,7 +21,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target takes damage and is not wearing metal body armor, it bleeds.
+        \\hit If the target is not wearing metal body armor, it bleeds.
         A bleeding creature takes damage equal to half your power during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
@@ -47,7 +47,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\dazzled as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],
@@ -60,7 +60,7 @@ export const ripAndTear: CombatStyle = {
       // its parts?
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If the target loses hit points, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\dazzled and \\stunned as a single \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['maim'],
@@ -71,7 +71,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim'],
@@ -83,7 +83,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         You roll accuracy twice and keep the lower result.
-        If the target takes damage, it bleeds.
+        \\hit The target bleeds.
         A bleeding creature takes damage equal to the damage it took from the strike during your next action.
       `,
       rank: 3,
@@ -96,7 +96,7 @@ export const ripAndTear: CombatStyle = {
       // Currently dr4; unclear if correct damage
       effect: `
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
-        If the target takes damage, it bleeds.
+        \\hit The target bleeds.
         A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
@@ -109,7 +109,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike.
-        If the target takes damage, it burns.
+        \\hit The target burns.
         A burning creature takes damage equal to half your power during your next action.
         On a critical hit, this burning damage is doubled.
       `,
@@ -123,7 +123,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a strike that deals double damage.
-        If the target takes damage, it burns.
+        \\hit The target burns.
         A burning creature takes damage equal to 3d6 \add your power during your next action.
         On a critical hit, this burning damage is doubled.
       `,
@@ -190,7 +190,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
-        Each creature damaged by the strike bleeds.
+        Each creature hit by the strike bleeds.
         A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
@@ -206,7 +206,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
-        Each creature damaged by the strike bleeds.
+        Each creature hit by the strike bleeds.
         A bleeding creature takes damage equal to your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
@@ -219,7 +219,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it bleeds.
+        \\hit If the target loses hit points, it bleeds.
         A bleeding creature takes damage equal to 1d4 \add half your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
@@ -234,7 +234,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        If the target loses hit points, it bleeds profusely.
+        \\hit If the target loses hit points, it bleeds profusely.
         A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next two actions.
         On a critical hit, this bleeding damage is doubled.
       `,
