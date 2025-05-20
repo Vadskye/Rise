@@ -176,12 +176,42 @@ export const revelation: MysticSphere = {
     {
       name: 'True Strike',
 
+      // Ally focus is 0.6 EA, self focus + hone is 0.8 EA
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The target becomes \\focused this round.
         If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
       `,
+      rank: 1,
+      roles: ['boon'],
+      tags: [],
+    },
+
+    {
+      name: 'Mighty True Strike',
+
+      // Ally focus + empower is 0.9 EA, self focus + empower + hone is 1 EA
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target becomes \\focused and \\empowered this round.
+        If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
+      `,
       rank: 4,
+      roles: ['boon'],
+      tags: [],
+    },
+
+    {
+      name: 'Enduring True Strike',
+
+      cost: "One \\glossterm{fatigue level}.",
+      // Ally double focus is 1.2 EA, self triple focus is 1.2 EA
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\longrange.
+        The target becomes \\glossterm{briefly} \\focused.
+        If you target yourself, the effect lasts for an additional round.
+      `,
+      rank: 6,
       roles: ['boon'],
       tags: [],
     },
