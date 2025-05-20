@@ -220,7 +220,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target takes damage, it becomes \\deafened as a \\glossterm{condition}.
+          \\hit The target becomes \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange of you.
@@ -270,7 +270,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If your attack result hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
+        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
       `,
       rank: 3,
       roles: ['softener'],
@@ -282,7 +282,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        If your attack result hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
+        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
         If it loses hit points from the strike, it is also goaded by you as a \\glossterm{condition}.
       `,
       rank: 5,
@@ -295,7 +295,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result hits its Mental defense, it becomes \\glossterm{briefly} \\frightened by you.
+        \\hit If your attack result also hits the target's Mental defense, it becomes \\glossterm{briefly} \\frightened by you.
       `,
       rank: 1,
       roles: ['softener'],
@@ -307,7 +307,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        If the target takes damage and your attack result hits its Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
+        \\hit If your attack result also hits the target's Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener'],
@@ -322,7 +322,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a strike that deals double damage.
-        If the target takes damage, compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from the target.
+        \\hit Compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from the target.
         On a hit, each secondary target is \\glossterm{briefly} \\frightened by you.
       `,
       rank: 5,

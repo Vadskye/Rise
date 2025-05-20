@@ -121,7 +121,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
-                        \item You are unaffected by all \glossterm{conditions}.
+                        \item You are \glossterm{unaffected} by all \glossterm{conditions}.
                         \item You are \enraged.
                     \end{itemize}
 

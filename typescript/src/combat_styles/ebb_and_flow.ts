@@ -162,7 +162,7 @@ export const ebbAndFlow: CombatStyle = {
       // 0.4.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike}.
-        If the target takes damage, it takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
+        \\hit The target takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
       rank: 1,
       roles: ['trip'],
@@ -175,7 +175,7 @@ export const ebbAndFlow: CombatStyle = {
       // and figure out why the math is wrong later.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike} that deals double damage.
-        If the target takes damage, it takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
+        \\hit The target takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
       `,
       rank: 5,
       roles: ['trip'],
@@ -184,20 +184,10 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Two-Weapon Rhythm',
 
+      // Normally would need -1 accuracy; instead, link the buff to hitting
       effect: `
         Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        If the target takes damage, you \\glossterm{briefly} gain a +1 accuracy bonus with \\glossterm{dual strikes} against that target.
-      `,
-      rank: 1,
-      roles: ['generator'],
-    },
-
-    {
-      name: 'Two-Weapon Focus',
-
-      effect: `
-        Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        If the target takes damage, you \\glossterm{briefly} become \\focused.
+        \\hit You are \\glossterm{briefly} \\focused.
       `,
       rank: 3,
       roles: ['generator'],
@@ -226,23 +216,56 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Kata of Focus',
+      name: 'Tranquil Kata',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\glossterm{briefly} \\braced.
+        If your location did not change since the start of the round, you are also briefly \\focused.
+      `,
+      rank: 3,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Sharpening Kata',
+
+      effect: `
+        If you did not attack last round, you are \\glossterm{briefly} \\focused and \\honed.
       `,
       rank: 1,
       roles: ['focus'],
     },
 
     {
-      name: 'Kata of Priming',
+      name: 'Sharpening Kata+',
 
       effect: `
-        You are \\glossterm{briefly} \\primed.
+        If you did not attack last round, you are \\glossterm{briefly} \\primed and \\honed.
       `,
       rank: 5,
       roles: ['focus'],
+    },
+
+    {
+      name: 'Dance of Death',
+
+      effect: `
+        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\steeled.
+      `,
+      rank: 3,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Dance of Death+',
+
+      effect: `
+        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\steeled.
+        Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
+      `,
+      rank: 7,
+      roles: ['focus'],
+      tags: ['Swift'],
     },
   ],
 };

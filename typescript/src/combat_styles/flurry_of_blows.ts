@@ -241,7 +241,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],
@@ -253,7 +253,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\glossterm{briefly} \\stunned.
       `,
       rank: 7,
       roles: ['softener'],
@@ -274,11 +274,28 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
+      name: 'Dazzling Kata',
+
+      // Dazzled is 0.6 EA and we have 1.0 EA to work with. Spending two ranks on area
+      // tier gets us back to a r1 area, since we start from r-1.
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\focused.
+        `,
+      },
+      rank: 1,
+      roles: ['flash', 'generator'],
+    },
+
+    {
       name: 'Dazzling Speed',
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target takes damage, it is \\glossterm{briefly} \\dazzled.
+        \\hit The target is \\glossterm{briefly} \\dazzled.
       `,
       rank: 3,
       roles: ['softener'],
@@ -290,7 +307,7 @@ export const flurryOfBlows: CombatStyle = {
       // Should be r8, but eh
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If the target takes damage, it is \\dazzled as a \\glossterm{condition}.
+        \\hit The target is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener'],
@@ -326,7 +343,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Focusing Frenzy',
 
       effect: `
-        Make a \\glossterm{strike} with a -2 accuracy penalty.
+        Make a \\glossterm{strike} with a -1 accuracy penalty.
         Then, you are \\glossterm{briefly} \\focused.
       `,
       rank: 3,
@@ -334,23 +351,34 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
+      name: 'Focusing Frenzy+',
+
+      effect: `
+        You are \\glossterm{briefly} \\focused.
+        Then, make a \\glossterm{strike} with a -1 accuracy penalty that deals double damage.
+      `,
+      rank: 7,
+      roles: ['generator'],
+    },
+
+    {
       name: 'Building Storm',
 
       effect: `
-        You \\glossterm{briefly} become \\focused and gain a \plus10 foot bonus to your speed.
+        If you hit with a strike last round, you are \\glossterm{briefly} \\primed.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['focus'],
     },
 
     {
       name: 'Building Storm+',
 
-      cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You \\glossterm{briefly} become \\primed and gain a \plus20 foot bonus to your speed.
+        You are \\glossterm{briefly} \\primed.
+        If you hit with at least two strikes last round, you are also briefly \\focused.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['focus'],
     },
   ],

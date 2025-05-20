@@ -139,7 +139,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        If the target takes damage, it is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\glossterm{briefly} \\stunned.
       `,
       rank: 3,
       roles: ['softener'],
@@ -195,7 +195,8 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Sinews of Steel',
 
       effect: `
-        You are \\glossterm{briefly} \\empowered and \\steeled.
+        You are \\glossterm{briefly} \\fortified and \\steeled.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 1,
       roles: ['focus'],
@@ -206,6 +207,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You are \\glossterm{briefly} \\empowered, \\fortified, and \\steeled.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 5,
       roles: ['focus'],
@@ -215,8 +217,8 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Prepared Defense',
 
       effect: `
-        Make a \\glossterm{strike}.
-        In addition, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
+        Make a \\glossterm{strike} with a -1 accuracy penalty.
+        Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
         This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
       rank: 3,

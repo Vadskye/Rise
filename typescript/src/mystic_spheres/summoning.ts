@@ -402,22 +402,24 @@ export const summoning: MysticSphere = {
     {
       name: 'Colony of Bees',
 
-      // r0 area deals drX, or drX+1 for double defense
+      // r0 area deals drX, -1dr for debuff, +1dr for double defense.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankone.
+          Each creature that loses \\glossterm{hit points} is \\stunned as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
-          A colony of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from you.
-          The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies.
+          A swarm of bees appears in a \\smallarea cone-shaped \\glossterm{zone} from you.
+          The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting.
 
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Fortitude against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Fortitude against all creatures in the area.
           You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
         `,
       },
       rank: 1,
       roles: ['clear', 'hazard'],
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
@@ -426,83 +428,66 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankone.
+          If the target is Large or smaller, it is knocked \\prone.
         `,
         missGlance: true,
         targeting: `
-          A pack of wolves appears in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-          The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
+          A horde of wolves appears in a \\medarea radius \\glossterm{zone} from your location.
+          The wolves disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite and trip your enemies.
 
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{grounded} \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Brawn against all \\glossterm{grounded} \\glossterm{enemies} in the area.
           You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
         `,
       },
-      rank: 4,
+      rank: 3,
       roles: ['clear', 'hazard'],
+      scaling: 'accuracy',
+      tags: ['Manifestation', 'Sustain (standard)'],
+    },
+
+    {
+      name: 'Murder of Crows',
+
+      attack: {
+        hit: `
+          \\damagerankthree, and each target is \\dazzled as a \\glossterm{condition}.
+        `,
+        missGlance: true,
+        targeting: `
+          A swarm of crows appears in a \\largearea radius \\glossterm{zone} from your location.
+          The crows disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to peck your enemies.
+
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Reflex against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
+        `,
+      },
+      rank: 5,
+      roles: ['clear', 'hazard'],
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {
       name: 'Quiver of Cobras',
 
-      // drX-2 for full area, +1dr for double defense
+      // drX-1 for half area, -1dr for debuff, +1dr for double defense
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damageranksix, and each target is \\glossterm{briefly} \\slowed.
+          Each target that loses hit points is also slowed as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
-          A swarm of cobras appears in a \\medarea radius \\glossterm{zone} within \\shortrange.
+          A swarm of cobras appears in a \\largearea long, 10 ft.\\ wide line-shaped \\glossterm{zone} from you.
           The cobras disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to bite your enemies.
 
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor and Fortitude against all \\glossterm{grounded} \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
-        `,
-      },
-      rank: 5,
-      roles: ['clear', 'hazard'],
-      tags: ['Manifestation', 'Sustain (standard)'],
-    },
-
-    {
-      name: 'Summon Horde -- Ravens',
-
-      attack: {
-        hit: `
-          \\damagerankfour
-          Each damaged creature is \\dazzled as a \\glossterm{condition}.
-        `,
-        missGlance: true,
-        targeting: `
-          A swarm of bees appears in a \\smallarea radius \\glossterm{zone} from your location.
-          The bees disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to sting your enemies in the eyes.
-
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
-        `,
-      },
-      rank: 6,
-      tags: ['Manifestation', 'Sustain (standard)'],
-    },
-
-    {
-      name: 'Summon Horde -- Bears',
-
-      // +2r for large, +2r for +1dr?
-      attack: {
-        hit: `
-          \\damageranksix.
-        `,
-        missGlance: true,
-        targeting: `
-          A horde of bears appears in a \\largearea radius \\glossterm{zone} from your location.
-          The bears disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to maul your enemies.
-
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against all \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus each time that you sustain this spell, to a maximum of +4.
+          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
         `,
       },
       rank: 7,
+      roles: ['clear', 'hazard'],
       tags: ['Manifestation', 'Sustain (standard)'],
     },
 
@@ -543,43 +528,27 @@ export const summoning: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Attune (deep)',
     },
-    {
-      name: 'Summon Annoying Insects',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          A swarm of insects surround the target as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\stunned.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      narrative: `
-        It's hard to concentrate on a fight when you keep being distracted by a swarm of mosquitoes that buzz right into your ears.
-      `,
-      rank: 1,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
 
     {
-      name: 'Intense Summon Annoying Insects',
+      name: 'Cloud of Mosquitoes',
 
+      // Enraged as a condition is r0, so we can use a r4 area.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          A swarm of insects surround the target as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\confused.
+          Each target is \\enraged as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          A swarm of mosquitoes appears in a \\smallarea radius \\glossterm{zone} within \\shortrange.
+          The mosquitoes disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to annoy your enemies.
+
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
+          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
         `,
       },
-      rank: 5,
+      rank: 2,
+      roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Manifestation'],
+      tags: ['Manifestation', 'Sustain (standard)'],
     },
   ],
 };

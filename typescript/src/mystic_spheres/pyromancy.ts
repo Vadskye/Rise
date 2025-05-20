@@ -651,9 +651,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of fire within \\medrange.
-          Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
+          In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },

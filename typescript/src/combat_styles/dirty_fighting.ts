@@ -11,7 +11,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
       roles: ['maim'],
@@ -22,7 +22,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        If the target loses hit points, it takes \\damagerankseven.
+        \\hit If the target loses hit points, it takes \\damagerankseven.
       `,
       rank: 5,
       roles: ['execute'],
@@ -257,7 +257,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points and your attack also hits its Brawn defense, it drops one item of your choice that it is holding in a single hand.
+        \\hit If the target loses hit points and your attack also hits its Brawn defense, it drops one item of your choice that it is holding in a single hand.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 3,
@@ -338,7 +338,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses hit points and your attack beats its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
+        \\hit If the target loses hit points and your attack also hits its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
       roles: ['maim'],
@@ -349,7 +349,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage and your attack result beats its Fortitude defense, it is \\glossterm{briefly} \\dazzled.
+        \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
       roles: ['softener'],
@@ -360,7 +360,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],
@@ -371,7 +371,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your attack result also hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to half your power.
+        If your attack result hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to half your power.
         Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 3,
@@ -383,12 +383,43 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If your attack result also hits the target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 2 power.
+        If your attack result hits the target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 2 power.
         This extra damage is not doubled by the base double damage of the strike.
         Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
       `,
       rank: 7,
       roles: ['burst'],
+    },
+
+    {
+      name: 'Disappearing Act',
+
+      // This gets r0 area instead of r1 because Reflex defense is easy to hit.
+      attack: {
+        hit: `Each target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        targeting: `
+          Make an attack vs. Reflex against everything adjacent to you.
+        `,
+      },
+      rank: 1,
+      roles: ['flash'],
+    },
+
+    {
+      name: 'Disappearing Act+',
+
+      // Brief invis is r0. Enemies in Med radius is a r3 area. We drop to r3 for focus.
+      // This seems like a strong combo, so we don't layer any other benefits on it. Maybe
+      // Reflex defense is too easy to hit for such a strong debuff?
+      attack: {
+        hit: `Each target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
+          Then, you are \\glossterm{briefly} \\focused.
+        `,
+      },
+      rank: 5,
+      roles: ['generator', 'flash'],
     },
   ],
 };

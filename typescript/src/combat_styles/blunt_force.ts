@@ -54,7 +54,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         The attack is made against the target's Fortitude defense instead of its Armor defense.
-        If the target takes damage, it \\glossterm{briefly} takes a -2 penalty to its Armor defense.
+        \\hit The target \\glossterm{briefly} takes a -2 penalty to its Armor defense.
       `,
       rank: 3,
       roles: ['softener'],
@@ -67,7 +67,7 @@ export const bruteForce: CombatStyle = {
         hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
+          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
         `,
       },
       rank: 1,
@@ -82,7 +82,7 @@ export const bruteForce: CombatStyle = {
         hit: `\\damageranksix.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
+          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
         `,
       },
       rank: 5,
@@ -99,6 +99,23 @@ export const bruteForce: CombatStyle = {
         The strike targets everything supported by that surface in a \\smallarea cone from one corner of the target space.
       `,
       rank: 1,
+      roles: ['clear'],
+      tags: ['Earth'],
+    },
+
+    {
+      name: 'Mighty Stomp',
+
+      // Start from r2 due to 0.2 EA buff. With an r0 area, we get r3 damage.
+      attack: {
+        hit: `\\damagerankthree.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
+          Then, you are \\glossterm{briefly} \\empowered.
+        `,
+      },
+      rank: 3,
       roles: ['clear'],
       tags: ['Earth'],
     },
@@ -145,7 +162,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 3,
@@ -156,7 +173,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        If the target loses hit points and your attack result also hits its Fortitude and Mental defenses, it becomes \\confused as a \\glossterm{condition}.
+        \\hit If the target loses hit points and your attack result also hits its Fortitude and Mental defenses, it becomes \\confused as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 7,
@@ -219,25 +236,24 @@ export const bruteForce: CombatStyle = {
       roles: ['clear'],
     },
 
-    {
-      name: 'Knockdown',
+    // {
+    //   name: 'Knockdown',
 
-      // We don't normally do brief effects on HP loss. Call it -0.4 EA, so 0.6 total?
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If the target loses hit points, it falls \\prone.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-      `,
-      rank: 1,
-      roles: ['maim'],
-    },
+    //   // We don't normally do brief effects on HP loss. Call it -0.4 EA, so 0.6 total?
+    //   effect: `
+    //     Make a melee \\glossterm{strike}.
+    //     \\hit If the target loses hit points and your attack result also hits its Brawn defense, it falls \\prone.
+    //     This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+    //   `,
+    //   rank: 1,
+    //   roles: ['maim'],
+    // },
 
     {
       name: 'Knockdown+',
-
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, it falls \\prone.
+        \\hit If your attack result also hits the target's Brawn defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -249,7 +265,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target loses \\glossterm{hit points} and your attack result hits its Brawn defense, you \\glossterm{knockback} it 15 feet.
+        \\hit If the target loses \\glossterm{hit points} and your attack result also hits its Brawn defense, you \\glossterm{knockback} it 15 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -262,7 +278,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        If the target loses \\glossterm{hit points} and your attack result hits its Brawn defense, you \\glossterm{knockback} it 30 feet.
+        \\hit If the target loses \\glossterm{hit points} and your attack result also hits its Brawn defense, you \\glossterm{knockback} it 30 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -270,26 +286,49 @@ export const bruteForce: CombatStyle = {
       roles: ['combo', 'payoff'],
     },
 
+    // Start from r0 due to 0.2 EA buff. Brief goad is r-1 normally, so we can get a r1
+    // area by spending one rank on area size.
     {
-      name: 'Flex',
+      name: 'Ostentatious Flex',
 
-      effect: `
-        You are \\glossterm{briefly} \\empowered and \\fortified.
-      `,
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\empowered.
+        `,
+      },
       rank: 1,
-      roles: ['focus'],
+      roles: ['generator'],
+    },
+
+    {
+      name: 'Ostentatious Flex+',
+
+      // Start from r6 due to 0.2 EA buff, limited scope gets us back to r7
+      attack: {
+        hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Then, you are \\glossterm{briefly} \\empowered.
+        `,
+      },
+      rank: 7,
+      roles: ['generator'],
     },
 
     {
       name: 'Rejuvenating Flex',
 
+      // Pure healing would be dr5, so dr4 for empower
       cost: "One \\glossterm{fatigue level}.",
       effect: `
         You are \\glossterm{briefly} empowered.
-        In addition, you regain 1d6 hit points per 2 power at the end of the round.
+        In addition, you regain 1d6 hit points per 2 power.
       `,
       rank: 3,
       roles: ['focus', 'healing'],
+      tags: ['Swift'],
     },
 
     {
@@ -305,33 +344,34 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Maximum Flex',
 
-      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You are \\glossterm{briefly} \\maximized. 
       `,
       rank: 3,
-      roles: ['exertion', 'focus'],
+      roles: ['focus'],
     },
 
     {
       name: 'Muscle Burst',
 
+      // Standard effect for r3 would be brief empower -> dr1, which is basically what
+      // this is.
       effect: `
         You are \\glossterm{briefly} \\empowered.
-        Make a \\glossterm{strike} with a -2 accuracy penalty.
+        Then, make a \\glossterm{strike}.
       `,
       rank: 3,
       roles: ['generator'],
     },
 
     {
-      name: 'Maximum Muscle Burst',
+      name: 'Desperate Muscle Burst',
 
-      // Unclear whether this deals the right damage
+      // With a fatigue, expected damage is drX-3 = dr4.
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} \\maximized.
-        Make a \\glossterm{strike} with a -2 accuracy penalty that deals triple damage.
+        Make a \\glossterm{strike} with that deals double damage.
+        Then, you are \\glossterm{briefly} \\maximized.
       `,
       rank: 7,
       roles: ['exertion', 'generator'],
@@ -343,7 +383,7 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         After you make the strike, you can move up to 10 feet.
-        During this movement, you can move into space occupied by creatures that you damaged with the strike.
+        During this movement, you can move into space occupied by creatures that you hit with the strike.
         When you do, you \\glossterm{push} that creature up to 5 feet away from you into an unoccupied space.
         This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -398,7 +438,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        If you are \\empowered and the target takes damage, it is \\glossterm{briefly} \\stunned.
+        If you are \\empowered and the strike hits, the target is \\glossterm{briefly} \\stunned.
       `,
       rank: 3,
       roles: ['softener', 'payoff'],
@@ -409,7 +449,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee strike that deals triple damage.
-        If you are \\empowered and the target takes damage, it is \\stunned as a \\glossterm{condition}.
+        If you are \\empowered and the strike hits, the target is \\stunned as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['softener', 'payoff'],
@@ -431,7 +471,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, you and the target are \\glossterm{briefly} \\deafened.
+        On a hit, you and the target are \\glossterm{briefly} \\deafened.
       `,
       rank: 1,
       roles: ['softener'],
@@ -469,7 +509,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If the target takes damage, compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
+        \\hit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
         This is an \\atAuditory effect.
         On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
       `,
@@ -487,8 +527,8 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        On a hit, each target takes \\damagerankthree. If your attack result also hits a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
-        On a miss, you still deal half damage.
+        \\hit Each target takes \\damagerankthree. If your attack result also hits a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        \\miss Half damage.
       `,
       rank: 3,
       roles: ['flash'],
@@ -505,8 +545,8 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        On a hit, each target takes \\damagerankseven. If your attack result also hits a target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
-        On a miss, you still deal half damage.
+        \\hit each target takes \\damagerankseven. If your attack result also hits a target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
+        \\miss Half damage.
       `,
       rank: 7,
       roles: ['flash'],

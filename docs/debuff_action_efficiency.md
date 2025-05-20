@@ -236,7 +236,7 @@ There are two components to being treated as invisible: the defense penalty and 
 
 The defense penalty only applies to your own attacks, so the party has 1 attack that can take advantage of it, so it's worth 0.2 effective actions.
 
-The miss chance applies to roughly 25% of boss attacks. Since blindness is worse than a regular 50% miss chance due to needing to know the square, call it 75% action negation when it applies. That gives it an action effectiveness of 4 * 0.25 * 0.75 = 0.75 effective actions. As with panicked, this is a little low and doesn't take into account the edge case of multiple people using this ability, but a 50% miss chance is much less effective at completely debilitating a boss than panicked. Say that the action denial is 25% more effective, for a total of 0.94 effective actions.
+The miss chance applies to roughly 25% of boss attacks. Since blindness is worse than a regular 50% miss chance due to needing to know the square, call it 75% action negation when it applies. In particular, if they treat you as briefly being invisible, they often can't follow you if you move away during the movement phase. That gives it an action effectiveness of 4 * 0.25 * 0.75 = 0.75 effective actions. As with panicked, this is a little low and doesn't take into account the edge case of multiple people using this ability, but a 50% miss chance is much less effective at completely debilitating a boss than panicked. Say that the action denial is 25% more effective, for a total of 0.94 effective actions.
 
 ### Vulnerable: 3.5
 
@@ -281,9 +281,9 @@ For this section, assume that all buffs only affect you for a single action.
 For defensive buffs, assume that 50% of enemy attacks are targeting the recipient of the buff.
 This is higher than the baseline 25% assuming a 4 person party, but takes into account both AOE attacks and the assumption that defensive buffs are generally applied to characters who are more in the front line and expect to be hit more often.
 
-### Braced: 0.8
+### Braced: 0.6
 
-Braced applies 50% of the time, and it removes 40% of enemy actions when it applies. Therefore, it is worth 4 * 0.5 * 0.4 = 0.8 effective actions.
+Braced applies 50% of the time, and it is 29% action denial when it applies. Therefore, it is worth 4 * 0.5 * 0.29 = 0.6 effective actions.
 
 ### Empowered: 0.2
 
@@ -320,7 +320,7 @@ Now assume you have a 120% hit rate (+1 vs AD 0), so you crit on a 9/10. Expecte
 
 With a reroll, your odds of getting a single crit become 36% and a double crit is 4%, so expected dpr is 1 + 0.36 + 0.04 = 1.4, which is only 15% better. So focused is better on low accuracy targets, which makes sense.
 
-### Fortified: 0.6
+### Fortified: 0.4
 Same logic as Shielded.
 
 ### Honed: 0.4
@@ -355,11 +355,11 @@ So your effective hit rate increases by 0.1 * (0.7 + 0.8 + 0.9 + 1 + 0.1 + 0.2 +
 
 Now assume you have an 80% hit rate, so you hit on a 7. From before, this is worth 0.1 * (0.9 + 1 + 0.1..0.7) = 0.47. That takes you from a 0.8 to a 1.27, which is a 59% increase in your odds of hitting. So exploding is stronger when your normal hit rate is low, which makes sense.
 
-### Shielded: 0.6
-Like Braced, but only affects 50% of enemy attacks. However, we can assume that you only use it when it provides the same value that braced would, so it's more like 0.6 EA.
+### Shielded: 0.4
+Like Braced, but only affects ~75% of enemy attacks, assuming you use it when it's relevant.
 
 ### Single defense: 0.4
-You can probably choose the best defense here, so it's pretty close in power to the other defense abilities.
+You can probably choose the best defense here, so it's pretty close in power to the other defense abilities. If you can't choose the defense optimally, 0.2 EA.
 
 ### Steeled: 0.4
 Assume that 5% of enemy attacks would get a critical hit, and they deal double damage on a crit, so this negates 10% of enemy actions when relevant. That means it's worth 4 * 0.5 * 0.1 = 0.2 effective actions. However, this is tricky, because critical hits are inordinately likely to make the difference between winning and losing a fight. Arbitrarily double the effectiveness, making it worth 0.4 effective actions.
@@ -547,9 +547,12 @@ By rank:
 
 ### Effective Action Modifiers
 
-These modifiers apply to EA, as opposed to rank modifiers that apply after calculating EA and damage.
+These are EA modifiers, as opposed to rank modifiers that apply after calculating EA and damage.
 
+* +0.2 EA: Condition becomes a Sustain (minor)
+* +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
 * +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
+* +0.4 EA: Condition becomes a curse
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
 * -1 EA: The effect only works if you hit the creature with it twice.
 * -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
@@ -710,7 +713,6 @@ All rank modifiers apply after calculating EA and the debuff to be applied.
 
 These rank modifiers apply before calculating area and damage:
 
-* +1 rank: Can pre-apply an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
 * +1 rank: Condition becomes a Sustain (minor)
 * +2 ranks: Condition becomes a curse
 
@@ -873,8 +875,8 @@ Rank 7 areas:
 
 ### Area Rank Modifiers
 
-* +1 area rank: Only affects enemies in the area (ranged radius only)
-* +2 area rank: Only affects enemies in the area.
+* +1 area rank: Only affects enemies in the area (except radius from self)
+* +2 area rank: Only affects enemies in the area (radius from self).
 
 ## Walls and Barriers
 
@@ -955,6 +957,22 @@ Rank X:
 * rX-3 damage:
   * First briefly focused
   * Then briefly shielded / and shielded this round
+
+Maneuvers:
+* Rank 1:
+  * -2 accuracy strike, then brief 0.2 EA buff
+  * -1 accuracy strike, then brief 0.2 EA buff on hit?
+* Rank 3:
+  * -1 accuracy strike, then brief 0.4 EA buff
+  * Strike, then 0.4 EA buff on hit
+  * Brief 0.2 EA buff, then strike
+* Rank 5:
+  * double damage strike, then brief 0.2 EA buff
+  * strike, then 0.6 EA buff
+* Rank 7:
+  * triple damage strike, then brief 0.2 EA buff
+  * +2 accuracy double damage strike, then brief 0.4 EA buff
+  * -1 accuracy double damage strike, then brief 0.6 EA buff
 
 You can pay one fatigue level to get either +1dr or +0.2EA, but not both. This allows granting braced / maximized / primed with rX-3 damage attached.
 
