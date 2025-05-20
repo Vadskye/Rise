@@ -971,6 +971,7 @@ Maneuvers:
   * strike, then 0.6 EA buff
 * Rank 7:
   * triple damage strike, then brief 0.2 EA buff
+  * -2 accuracy triple damage strike, then brief 0.4 EA buff
   * +2 accuracy double damage strike, then brief 0.4 EA buff
   * -1 accuracy double damage strike, then brief 0.6 EA buff
 
