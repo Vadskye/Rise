@@ -8,6 +8,8 @@ export const heraldOfWar: CombatStyle = {
     'Demoralize foes and inspire allies with battlecries and a commanding presence.',
 
   maneuvers: [
+    // +4 accuracy is 0.8 EA, which is basically on rate. It's unusual to have a fully
+    // stacking buff like this, though.
     {
       name: 'Boastful Battlecry',
 
@@ -265,28 +267,40 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory'],
     },
 
+    // Shielded is 0.4 EA and brief goad is 0.9 EA, so the minimum rank is 1. If we
+    // increase to rank 3, we can get a r3 area.
     {
       name: 'Challenge',
 
-      effect: `
-        Make a \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
-      `,
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
+        targeting: `
+          Make an attack vs. Mental against up to four creatures in \\shortrange.
+          Then, you are \\glossterm{briefly} \\glossterm{shielded}.
+        `,
+      },
       rank: 3,
-      roles: ['softener'],
+      roles: ['generator', 'softener'],
       tags: ['Emotion'],
     },
 
+    // Braced is 0.8 EA, so we start from a rank 3 debuff. That's enough for brief + hp
+    // goad in a r3 area.
     {
       name: 'Challenge+',
 
-      effect: `
-        Make a \\glossterm{strike} that deals double damage.
-        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\goaded by you.
-        If it loses hit points from the strike, it is also goaded by you as a \\glossterm{condition}.
-      `,
-      rank: 5,
-      roles: ['softener'],
+      attack: {
+        hit: `
+          Each target is \\glossterm{briefly} \\goaded by you.
+          Each target with no remaining \\glossterm{damage resistance} is also goaded as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against up to four creatures in \\shortrange.
+          Then, you are \\glossterm{briefly} \\glossterm{braced}.
+        `,
+      },
+      rank: 7,
+      roles: ['generator', 'softener'],
       tags: ['Emotion'],
     },
 
@@ -354,6 +368,42 @@ export const heraldOfWar: CombatStyle = {
       rank: 7,
       roles: ['healing'],
       tags: ['Auditory', 'Emotion', 'Swift'],
+    },
+
+    {
+      name: 'Mighty Roar',
+
+      // Empowered + fortified is 0.6 EA, so we get 0.8 EA of debuff and a starting area
+      // rank of -2. Brief deafened is 0.3 EA, so we get about two ranks of +area, which
+      // we round up to three ranks. That allows a r1 area.
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\deafened.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
+        `,
+      },
+      rank: 1,
+      roles: ['generator'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Mighty Roar+',
+
+      // Empowered + fortified is 0.6 EA, so we get 1.6 EA of debuff and a starting area
+      // rank of 2. Deafened as a condition is 1.2 EA so we get two ranks of +area, which
+      // brings us to an area rank of 4.
+      attack: {
+        hit: `Each target is \\deafened as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
+          Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
+        `,
+      },
+      rank: 5,
+      roles: ['generator'],
+      tags: ['Auditory'],
     },
   ],
 };
