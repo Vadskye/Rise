@@ -128,7 +128,8 @@ export const revelation: MysticSphere = {
       name: 'Foresee Safety',
 
       effect: `
-        At the end of the next round, you become \\braced during the following round.
+        You become \\glossterm{briefly} \\braced.
+        Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['focus'],
@@ -136,13 +137,11 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Foresee Imminent Safety',
+      name: 'Foresee Distant Safety',
 
       effect: `
-        You become \\glossterm{briefly} \\braced.
-        You can increase your \\glossterm{fatigue level} by one.
-        If you do, you also become \\glossterm{briefly} \\steeled.
-        Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+        At the end of the next round, you become \\braced during the following round.
+        If you took no damage that round, you also become \\steeled during the following round.
       `,
       rank: 4,
       roles: ['focus'],
@@ -153,7 +152,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Victory',
 
       effect: `
-        At the end of the next round, you become \\primed during the following round.
+        You become \\glossterm{briefly} \\primed.
       `,
       rank: 2,
       roles: ['focus'],
@@ -161,12 +160,11 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Foresee Imminent Victory',
+      name: 'Foresee Distant Victory',
 
       effect: `
-        You become \\glossterm{briefly} \\primed.
-        You can increase your \\glossterm{fatigue level} by one.
-        If you do, you also become \\glossterm{briefly} \\honed.
+        At the end of the next round, you become \\primed during the following round.
+        If you dealt no damage that round, you also become \\glossterm{empowered} during the following round.
       `,
       rank: 5,
       roles: ['focus'],

@@ -534,6 +534,7 @@ export const summoning: MysticSphere = {
 
       // Enraged as a condition is r0, so we can use a r4 area.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\enraged as a \\glossterm{condition}.
         `,

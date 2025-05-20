@@ -9,17 +9,21 @@ export const prayer: MysticSphere = {
 
   cantrips: [
     {
+      // fortified + empowered is 0.6 EA, or 0.9 EA on an ally.
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target is \\empowered this round.
+        Choose one \\glossterm{ally} you \\glossterm{touch}.
+        The target is \\fortified this round.
+        If it is currently \\glossterm{attuned} to one of your spells from this mystic sphere, it is also \\empowered this round.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
-      name: 'Boon of Power',
+      name: 'Fortifying Boon',
       roles: ['boon'],
       scaling: {
-        2: 'You can target an additional \\glossterm{ally} within range.',
-        4: 'You can increase your \\glossterm{fatigue level} by one. If you do, one target is \\maximized instead of empowered this round.',
-        6: 'If you increased your fatigue level, each target is maximized instead of only one.',
+        2: 'The range increases to \\shortrange.',
+        4: 'The range increases to \\medrange.',
+        6: 'If the target is currently attuned to one of your spells from this mystic sphere, it is also \\steeled this round.',
       },
+      tags: ['Swift'],
     },
   ],
   spells: [
@@ -44,9 +48,6 @@ export const prayer: MysticSphere = {
       `,
       rank: 4,
       roles: ['attune'],
-      scaling: {
-        6: `Each target removes two additional vital wounds instead of only one.`,
-      },
       type: 'Attune (target)',
     },
 
