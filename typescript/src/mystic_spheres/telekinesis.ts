@@ -647,20 +647,20 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Impedance',
 
-      // -2r from regular slowed since it doesn't block escaping
+      // -2r from regular slowed since it doesn't block escaping, -1r for limited scope
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is impeded as a \\glossterm{condition}.
+          Each target is impeded as a \\glossterm{condition}.
           While it is within \\shortrange of you, it is \\slowed.
           It suffers no ill effects beyond that range.
       `,
         targeting: `
-          Make an attack vs. Brawn against one creature within \\shortrange.
+          Make an attack vs. Brawn against up to two creatures within \\shortrange.
         `,
       },
-
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
     {
