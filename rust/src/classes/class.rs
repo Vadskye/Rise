@@ -1641,7 +1641,7 @@ impl Class {
 
                             \rankline
                             \rank{4} If you miss, the target still takes the extra damage.
-                            \rank{5} Your \glossterm{weapon damage} is doubled.
+                            \rank{5} The strike deals double \glossterm{weapon damage}.
                             \rank{6} The extra damage increases to be equal to your power.
                             \rank{7} The extra damage increases to twice your power.
                         \end{magicalactiveability}

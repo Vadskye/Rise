@@ -186,7 +186,7 @@ export const chronomancy: MysticSphere = {
 
       functionsLike: {
         name: 'quicksilver ambush',
-        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
+        exceptThat: 'the strike deals double damage.',
       },
       rank: 7,
     },

@@ -44,13 +44,14 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{itemize}
                     % There must be text between an itemize block and the end of a mdframed env
 
+                    % TODO: awkward scaling
                     \rankline
                     \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{power}.
                     \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The accuracy bonus increases to +4.
-                    \rank{7} The animal's \glossterm{weapon damage} is doubled.
+                    \rank{7} The animal's strikes deal double damage.
                     However, the accuracy bonus is reduced to +2.
                 \end{magicalattuneability}
 
@@ -97,7 +98,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
                     \rank{5} The extra damage increases to 3d6.
-                    \rank{6} The \glossterm{weapon damage} is doubled.
+                    \rank{6} The strike deals double \glossterm{weapon damage}.
                     \rank{7} The extra damage increases to 4d8.
                 \end{activeability}
             ",
@@ -233,12 +234,12 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double \glossterm{weapon damage}.
+                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double damage.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The strike deals triple weapon damage instead of double weapon damage.
+                    \rank{5} The strike deals triple damage instead of double damage.
                     \rank{6} The accuracy bonus increases to +2.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
@@ -513,7 +514,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The extra damage increases to 1d10.
                     \rank{5} The extra damage increases to 2d10.
                     \rank{6} The extra damage increases to 4d8.
-                    \rank{7} The \glossterm{weapon damage} is doubled.
+                    \rank{7} The strike deals double \glossterm{weapon damage}.
                 \end{activeability}
             ",
             modifiers: None,
