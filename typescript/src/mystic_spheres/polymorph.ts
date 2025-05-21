@@ -192,13 +192,13 @@ export const polymorph: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\confused.
-          If it has no remaining \\glossterm{damage resistance} and is already confused by this effect, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
+          If it has no remaining \\glossterm{damage resistance} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
           If the target takes damage, this condition is removed.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Mental against all Huge or smaller creatures in a \smallarea radius in \medrange.
+          Make an attack vs. Fortitude and Mental against all Huge or smaller \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
       rank: 7,

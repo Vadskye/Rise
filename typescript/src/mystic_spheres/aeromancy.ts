@@ -12,7 +12,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Manipulate Air',
 
       effect: `
-        You change the wind speed within a \\medarea radius \\glossterm{emanation} from you by up to 10 miles per hour.
+        You change the wind speed within a \\largearea radius \\glossterm{emanation} from you by up to 10 miles per hour.
         If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
         You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
       `,
@@ -20,9 +20,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
       `,
       scaling: {
-        2: 'You can choose to affect a \\largearea radius instead, and the maximum speed change increases to 20 miles per hour.',
-        4: 'You can choose to affect a \\hugearea radius instead, and the maximum speed change increases to 40 miles per hour.',
-        6: 'You can choose to affect a \\gargarea radius instead, and the maximum speed change increases to 60 miles per hour.',
+        2: 'The maximum speed change increases to 15 miles per hour.',
+        4: 'The maximum speed change increases to 20 miles per hour.',
+        6: 'The maximum speed change increases to 30 miles per hour.',
       },
       roles: ['narrative'],
       type: 'Sustain (minor)',
@@ -50,7 +50,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Windborne Leap',
 
       effect: `
-        You gain a +10 foot bonus to your maximum horizontal jump distance (see \\pcref{Jumping}).
+        You gain a +10 foot \\glossterm{enhancement bonus} to your maximum horizontal jump distance (see \\pcref{Jumping}).
         This increases your maximum vertical jump distance normally.
       `,
       narrative: `
@@ -64,7 +64,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Cushion of Air',
 
       effect: `
-        You gain a 30 foot \\glossterm{glide speed}.
+        You gain an average \\glossterm{glide speed}.
         In addition, you become immune to \\glossterm{falling damage}.
       `,
       rank: 3,
