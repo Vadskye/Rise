@@ -109,14 +109,15 @@ export const dirtyFighting: CombatStyle = {
       // some amount.
       // Assume the Brawling accuracy bonus offsets the grapple requirement.
       //
-      // If you use a Medium creature, the baseline damage is 1d10 + 0.83dpp, which is
-      // roughly dr3, but with strong scaling based on the creature's size.
+      // If you use a Medium creature, the baseline damage is 2d6 + 0.83dpp, which is
+      // roughly dr4, but with strong scaling based on the creature's size.
       effect: `
         Make an \\glossterm{brawling attack} against the Brawn defense of a Medium or larger creature you are \\glossterm{grappling}.
         If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
-        Treat the creature as a \\weapontag{Heavy} weapon that deals 1d10 damage per size category by which the creature is above Small.
+        Treat the creature as a \\weapontag{Heavy} weapon that deals 2d6 damage per size category by which the creature is above Small.
         You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
 
+        % TODO: clarify how this interacts with Sweeping
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
       `,
       rank: 3,
@@ -129,18 +130,18 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Body Bludgeon+',
 
-      // Expected damage would be about dr8 and dr9, so about 3.5dpp plus some value.
+      // Expected damage would be about dr8, so about 3.5dpp plus some value.
       //
-      // If you use a Medium creature, the baseline damage is 4d8 + 2dpp, which is
+      // If you use a Medium creature, the baseline damage is 6d6 + 2dpp, which is
       // roughly dr8, but with strong scaling based on the creature's size.
       functionsLike: {
         name: 'body bludgeon',
         exceptThat: `
-          the strike deals quadruple damage, and the weapon deals 1d8 damage per size category by which the creature is above Small.
+          the strike deals triple damage.
         `,
       },
       rank: 7,
-      roles: ['burst'],
+      roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
       // If you can grapple above your size, we don't need to block this maneuver.
       tags: ['Brawling'],

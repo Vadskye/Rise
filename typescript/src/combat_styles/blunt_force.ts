@@ -9,22 +9,22 @@ export const bruteForce: CombatStyle = {
       name: 'Wild Swing',
 
       effect: `
-        Make a \\glossterm{strike} with 50\\% miss chance.
+        Make a \\glossterm{strike} with a 50\\% miss chance.
         The strike deals double damage.
         However, you cannot get a \\glossterm{critical hit} with it.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['burst'],
     },
     {
       name: 'Wild Swing+',
 
       effect: `
-        Make a \\glossterm{strike} with 50\\% miss chance.
-        The strike deals quadruple damage.
+        Make a \\glossterm{strike} with a 50\\% miss chance that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+        The strike deals triple damage.
         However, you cannot get a \\glossterm{critical hit} with it.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['burst'],
     },
     {
@@ -422,7 +422,8 @@ export const bruteForce: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        Make a \\glossterm{strike} that deals quadruple damage.
+        Make a \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+        The strike deals triple damage.
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
 
         This ability only increases your fatigue level if the strike hits.
@@ -493,8 +494,8 @@ export const bruteForce: CombatStyle = {
       name: 'Overhand Smash+',
 
       effect: `
-        Make a melee \\glossterm{strike}.
-        It deals quadruple damage, but you cannot get a \\glossterm{critical hit}.
+        Make a melee \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+        It deals triple damage, but you cannot get a \\glossterm{critical hit}.
         After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
         This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
       `,
