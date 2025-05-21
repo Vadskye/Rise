@@ -39,7 +39,7 @@ export const summoning: MysticSphere = {
           \\item Its maximum \\glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
-          \\item Its \\glossterm{land speed} is 30 feet, regardless of the number of legs it appears to have.
+          \\item Its \\glossterm{movement speed} is 30 feet, regardless of the number of legs it appears to have.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
@@ -246,7 +246,8 @@ export const summoning: MysticSphere = {
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception, plus any accuracy modifier for the chosen weapon.
-          \\item It has a 30 foot \\glossterm{fly speed} and no \\glossterm{land speed}, with a maximum height of 5 feet.
+          \\item It has an average \\glossterm{fly speed} with a maximum height of 5 feet and no \\glossterm{walk speed}.
+          \\item Its \\glossterm{movement speed} is 30 feet.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 

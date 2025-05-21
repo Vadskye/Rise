@@ -931,7 +931,8 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You \\glossterm{shapeshift} into a Small snake.
-        As a snake, you have a 20 foot land speed, a 20 foot climb speed, and a bite natural weapon.
+        This reduces your \\glossterm{base speed} to 20 feet, among other effects (see \\pcref{Size Categories}).
+        As a snake, you have an average climb speed and a bite natural weapon.
         You cannot speak and have no \\glossterm{free hands}, but you do not need hands to climb.
       `,
       rank: 2,
@@ -944,7 +945,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You \\glossterm{shapeshift} into a Medium wolf.
-        As a wolf, you have a 40 foot land speed, are \\trait{multipedal}, and have a bite natural weapon.
+        As a wolf, you are \\trait{multipedal} and have a bite natural weapon.
         You cannot speak and have no \\glossterm{free hands}.
         You also gain the \\trait{scent} ability.
       `,

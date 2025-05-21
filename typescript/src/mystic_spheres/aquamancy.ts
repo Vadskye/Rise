@@ -98,7 +98,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          You gain a +2 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no land speed.
+          You gain a +2 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no walk speed.
         `,
       },
       rank: 2,
@@ -114,7 +114,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
-          You gain a +4 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no land speed.
+          You gain a +4 accuracy bonus if the target is native to water, which is typically true for creatures with a swim speed and no walk speed.
         `,
       },
       rank: 6,
@@ -244,7 +244,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\damagerankthree.
         `,
         targeting: `
-          Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
+          Move up to your speed with your \\glossterm{walk speed} or \\glossterm{swim speed}.
           Then, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
@@ -261,7 +261,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\damageranksix.
         `,
         targeting: `
-          Move up to your speed with your \\glossterm{land speed} or \\glossterm{swim speed}.
+          Move up to your speed with your \\glossterm{walk speed} or \\glossterm{swim speed}.
           Then, make an attack vs. Armor against something you \\glossterm{touch}.
         `,
       },
@@ -607,7 +607,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You surround yourself in a bubble of water.
         This has the following effects:
         \\begin{itemize}
-          \\item Your land speed is halved.
+          \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.

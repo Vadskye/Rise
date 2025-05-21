@@ -562,7 +562,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus2 Endurance and \plus1 to \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus2 Stealth and you can hold your breath ten times as long as normal (see \pcref{Endurance}).
                     \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
-                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your land speed while you are affected by the \ability{sprint} ability.
+                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{movement speed} while you are affected by the \ability{sprint} ability.
                         This speed bonus is doubled as normal for that ability.
                     \itemhead{Shark} \plus2 Swim and you gain the \trait{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
@@ -583,7 +583,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus4 Endurance and \plus2 to \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
                     \itemhead{Eagle} \plus4 Awareness and \plus20 feet to your maximum horizontal jump distance.
-                    \itemhead{Lion} \plus4 Intimidate and the land speed bonus applies at all times, not only while sprinting.
+                    \itemhead{Lion} \plus4 Intimidate and the movement speed bonus applies at all times, not only while sprinting.
                     \itemhead{Shark} \plus4 Swim, \plus2 Survival, and \plus2 Awareness.
                 \end{raggeditemize}
             ",

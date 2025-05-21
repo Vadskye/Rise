@@ -278,7 +278,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You gain a \\plus2 bonus to your Armor and Reflex defenses this round.
-        In addition, you can move up to half your land speed.
+        In addition, you can move up to half your \\glossterm{movement speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 1,
@@ -289,7 +289,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         You gain a \\plus3 bonus to your Armor and Reflex defenses this round.
-        In addition, you can move up to your land speed.
+        In addition, you can move up to your \\glossterm{movement speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 5,

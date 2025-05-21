@@ -505,7 +505,7 @@ export const astromancy: MysticSphere = {
       name: 'Dimension Walk',
 
       effect: `
-        Once per round, you can teleport horizontally instead of moving using your \\glossterm{land speed}.
+        Once per round, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
         Teleporting a given distance costs movement equal to that distance.
         If this teleportation fails for any reason, you still expend that movement.
       `,

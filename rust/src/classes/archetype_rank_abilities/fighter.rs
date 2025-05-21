@@ -544,7 +544,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Rush}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus5 foot bonus to its land speed during any phase that it uses the \textit{sprint} ability.
+                        Each target gains a \plus5 foot bonus to its \glossterm{movement speed} during any phase that it uses the \textit{sprint} ability.
                         This bonus is doubled as normal by the sprint ability.
 
                         \rankline
@@ -615,13 +615,13 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Coordinated Charge}
                     \abilityusagetime Standard action.
                     \rankline
-                    You can move up to half your land speed.
+                    You can move up to half your \glossterm{movement speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     Then, you can make a \glossterm{strike}.
-                    You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
+                    If you have at least two \glossterm{allies} adjacent to you, the strike deals double \glossterm{weapon damage}.
 
                     \rankline
-                    \rank{4} If you have at least two \glossterm{allies} adjacent to you, the strike deals double \glossterm{weapon damage}.
+                    \rank{4} You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
                     \rank{5} The strike always deals double weapon damage.
                     \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple \glossterm{weapon damage}.
                     \rank{7} The strike always deals triple \glossterm{weapon damage}.

@@ -350,7 +350,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Flash Step}
                         \abilityusagetime See text.
                         \rankline
-                        You can use this ability as part of movement with your land speed.
+                        You can use this ability as part of movement with your walk speed.
                         % TODO: is 'horizontally' the correct word?
                         You \glossterm{teleport} horizontally instead of moving normally.
                         If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
