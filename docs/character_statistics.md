@@ -33,7 +33,7 @@ It's useful as a reminder of what kinds of bonuses can be granted by classes and
 * Reduce enemy speed
 * Reduce / remove speed reduction from body armor
 * Size bonus
-* Speed bonus (land speed or all speeds)
+* Speed bonus
 * Sprint multiplier
 * Triggered movement or teleportation
 

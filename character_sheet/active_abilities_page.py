@@ -661,7 +661,7 @@ def universal_abilities():
                 "Jump",
                 f"""
                     As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
-                    You cannot jump farther than your land speed.
+                    You cannot jump farther than your speed.
                 """,
             ),
             universal_ability_button(
@@ -707,7 +707,7 @@ def universal_abilities():
             universal_ability_button(
                 "Sprint",
                 """
-                    You move up to double your normal land speed.
+                    You move up to double your normal speed.
                     After you use this ability during the movement phase, you increase your fatigue level by one.
                     Using this ability during the action phase does not cost fatigue.
                 """,

@@ -242,7 +242,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           If the target has no remaining \\glossterm{damage resistance} and has a \\glossterm{weight category} of Large or less, it is borne aloft by heavy winds as a \\glossterm{condition}.
           It floats five feet above the ground in \\glossterm{midair}, which normally means it suffers a \\minus4 penalty to its Armor and Reflex defenses.
-          This also typically prevents it from using a land speed, though it can potentially use other speeds if it can make contact with relevant objects (such as a wall for a climb speed).
+          This also typically prevents it from using a \\glossterm{walk speed}, though it can potentially use other speeds if it can make contact with relevant objects (such as a wall for a climb speed).
         `,
         targeting: `
           Make an attack vs. Brawn against anyhthing within \\medrange.
@@ -652,8 +652,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         You \\glossterm{shapeshift} into a cloud of mist.
         This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
-        All of your normal movement modes are replaced with a 20 foot \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        Since you have no land speed, flying in this way does not penalize your Armor or Reflex defenses.
+        All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
+        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your Armor or Reflex defenses.
         While you are in this form, you are unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,

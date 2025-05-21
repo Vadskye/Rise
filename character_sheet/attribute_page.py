@@ -273,10 +273,9 @@ def calc_non_attribute():
             flex_col(
                 {"class": "sidebar"},
                 [
-            calc_attunement_points(),
-            calc_damage_resistance(),
-            calc_vital_rolls(),
-            # calc_land_speed(),
+                    calc_attunement_points(),
+                    calc_damage_resistance(),
+                    calc_vital_rolls(),
                 ],
             ),
             flex_col(
@@ -357,29 +356,6 @@ def calc_vital_rolls():
                     "disabled": True,
                     "name": "vital_rolls_display",
                     "value": "@{vital_rolls}",
-                },
-            ),
-        ]
-    )
-
-
-def calc_land_speed():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Land speed"),
-            equation(
-                [
-                    # These are never actually used in sheet_worker
-                    underlabel("Size", number_input({"name": "speed_size"})),
-                    minus(),
-                    underlabel("Armor", number_input({"name": "speed_armor"})),
-                    plus(),
-                    equation_misc_repeat("speed", 2),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "land_speed_display",
-                    "value": "@{land_speed}",
                 },
             ),
         ]
