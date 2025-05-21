@@ -642,7 +642,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
         Make a \\glossterm{strike} using a \\glossterm{metallic} weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        The strike's deals double \\glossterm{weapon damage} against \\glossterm{metallic} targets.
+        The strike deals double damage against \\glossterm{metallic} targets.
       `,
       rank: 4,
       scaling: 'accuracy',
@@ -665,7 +665,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Blow',
       functionsLike: {
         name: 'arcing blow',
-        exceptThat: 'the strike deals double \\glossterm{weapon damage}.',
+        exceptThat: 'the strike deals double damage.'
       },
       rank: 6,
       scaling: 'accuracy',
