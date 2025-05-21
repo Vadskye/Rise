@@ -8,17 +8,24 @@ export const heraldOfWar: CombatStyle = {
     'Demoralize foes and inspire allies with battlecries and a commanding presence.',
 
   maneuvers: [
-    // +4 accuracy is 0.8 EA, which is basically on rate. It's unusual to have a fully
-    // stacking buff like this, though.
+    // +4 accuracy is 0.6 EA. That leaves 0.8 EA of debuff. Brief enrage is 0.2 EA, so we
+    // have 3 ranks of +area, which gets us back to a r1 area. Then, for no reason at all,
+    // we increase to a r4 area because it's annoying to have different areas for the
+    // debuff and the buff.
     {
       name: 'Boastful Battlecry',
 
-      effect: `
-        This ability affects all \\glossterm{enemies} within a \\largearea radius from you.
-        You \\glossterm{briefly} gain a +4 accuracy bonus with \\glossterm{strikes} against each target.
-      `,
+      attack: {
+        hit: `
+          Each target is \\glossterm{briefly} \\enraged.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
+          Whether you hit or miss, you \\glossterm{briefly} gain a +4 accuracy bonus with \\glossterm{strikes} against each target.
+        `,
+      },
       rank: 1,
-      roles: ['focus'],
+      roles: ['generator'],
       tags: ['Auditory'],
     },
 

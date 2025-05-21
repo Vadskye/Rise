@@ -104,10 +104,9 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     // We normally assume a boss fight lasts 20 player actions, or 5 personal actions, so
-    // using this on round 1 would affect your next 4 actions. That's about 0.4 EA. If you
-    // used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
-    // value, but your first round buff would also have been spent on one round of a
-    // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
+    // using this on round 1 would affect your next 4 actions. We normally consider +4
+    // accuracy to be worth 0.6 EA, but it's hard to get the full value out of this and
+    // you can't combo it with a big swing, so it's fine to treat it as 0.4 EA or so.
     {
       name: 'Begin the Hunt',
 
@@ -121,6 +120,9 @@ export const ebbAndFlow: CombatStyle = {
       roles: ['ramp'],
     },
 
+    // If you used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
+    // value, but your first round buff would also have been spent on one round of a
+    // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
     {
       name: 'Begin the Hunt+',
 
