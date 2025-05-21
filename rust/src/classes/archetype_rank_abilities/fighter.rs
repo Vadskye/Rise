@@ -59,7 +59,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The extra damage increases to 1d6 \add half your power.
                     \rank{5} The extra damage increases to 1d6 \add your power.
                     \rank{6} The extra damage increases to 3d6 \add your power.
-                    \rank{7} The \glossterm{weapon damage} is doubled.
+                    \rank{7} The strike deals double \glossterm{weapon damage}.
                 \end{activeability}
             ",
             modifiers: None,
@@ -182,14 +182,14 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} with a \minus1 accuracy penalty.
-                    If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double \glossterm{weapon damage}.
+                    If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
                     Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
 
                     \rankline
                     \rank{4} The accuracy penalty is removed.
                     \rank{5} You gain a \plus2 accuracy bonus with the strike.
-                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple weapon damage. Otherwise, the extra damage increases to be equal to your power.
-                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple weapon damage. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
+                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
+                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple damage. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,
@@ -416,10 +416,11 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     Make a \glossterm{strike}.
                     If the target takes damage, it becomes \goaded by you as a \glossterm{condition}.
 
+                    % TODO: boring scaling, needs math in the spreadsheet
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The strike deals double damage.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{activeability}
             ",
@@ -618,13 +619,13 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     You can move up to half your \glossterm{movement speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     Then, you can make a \glossterm{strike}.
-                    If you have at least two \glossterm{allies} adjacent to you, the strike deals double \glossterm{weapon damage}.
+                    If you have at least two \glossterm{allies} adjacent to you, the strike deals double damage.
 
                     \rankline
                     \rank{4} You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
-                    \rank{5} The strike always deals double weapon damage.
-                    \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple \glossterm{weapon damage}.
-                    \rank{7} The strike always deals triple \glossterm{weapon damage}.
+                    \rank{5} The strike always deals double damage.
+                    \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple damage.
+                    \rank{7} The strike always deals triple damage.
                 \end{activeability}
             ",
             modifiers: None,

@@ -50,8 +50,9 @@
       That means you roll it again and add both values to determine your total.
       If you roll a 10 on the extra roll, you keep rolling until it stops exploding and add all of the rolls together.
 
+% TODO: wording, and does this need to be a full section
 \section{Calculating Damage}
-  Normally, dealing damage is fairly simple.
+  Normally, the abilities you use will tell you how to calculate your damage.
   This section explains some special circumstances which can change how your damage is calculated.
 
   \subsection{Weapon Damage}\label{Weapon Damage}
@@ -68,13 +69,12 @@
     Extra damage generally works in the same way as damage that is inherently part of the attack.
     It is halved on a glancing blow, doubled on critical hits, and so on.
 
-    There are two main differences between extra damage and an attack's base damage.
-    First, extra damage is not \glossterm{weapon damage}.
-    Second, each individual source of extra damage only applies once per attack to any individual creature.
-
+    Extra damage only applies once per attack roll to any individual creature.
     For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
     Because both of those damage instances are caused by a single attack roll, extra damage only applies to the first damage instance.
     However, a \spell{wall of fire} would apply extra damage each time a creature passes through it, since a separate attack is made for each instance of damage.
+
+    In addition, extra damage never applies to \glossterm{poisons}.
 
 \section{Taking Damage}\label{Taking Damage}
   Hit points and damage resistance function in essentially the same way.

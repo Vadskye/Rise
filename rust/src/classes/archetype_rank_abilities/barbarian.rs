@@ -530,11 +530,12 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     Make a melee or thrown \glossterm{strike}.
                     Then, you can spend three frenzy points to make an additional melee or thrown strike.
 
+                    % TODO: wonky scaling, but nothing too insane after the initial rank 3 power spike
                     \rankline
                     \rank{4} You gain a +2 accuracy bonus with the first strike you make with this ability each round.
-                    \rank{5} Your \glossterm{weapon damage} is doubled with the second strike you make with this ability each round.
+                    \rank{5} The second strike you make with this ability each round deals double damage.
                     \rank{6} The accuracy bonus applies to both strikes.
-                    \rank{7} Your weapon damage is doubled with both strikes.
+                    \rank{7} Both strikes deal double damage.
                 \end{activeability}
             ",
             modifiers: None,
