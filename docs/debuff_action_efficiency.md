@@ -300,17 +300,18 @@ Empowered is roughly 20% more damage, averaging arbitrarily between strikes and 
 
 ### Extra damage: 0.4
 
-Standard extra damage values provide 25-30% more damage than "standard high damage":
+Extra damage has to be scaled assuming roughly double damage at r5 and triple damage at r7.
+That makes a smooth curve quite difficult, but these values should generally provided about 25% more damage, with high variance:
 
-* Rank 1: 2 flat
+* Rank 1: 1 flat
 * Rank 2: 1d4
-* Rank 3: 1d6
-* Rank 4: 1d8
-* Rank 5: 2d6
-* Rank 6: 2d8
-* Rank 7: 3d8
-* Rank 8: 4d8
-* Rank 9: 6d8
+* Rank 3: 1d4
+* Rank 4: 1d6
+* Rank 5: 1d8
+* Rank 6: 1d10
+* Rank 7: 2d6
+* Rank 8: 2d8
+* Rank 9: 2d10
 
 Extra damage like this tends to be better on low damage / high accuracy characters, or characters using large AOE attacks or making multiple attacks in a round.
 

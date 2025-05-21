@@ -109,8 +109,8 @@ pub fn melee() -> Vec<MagicWeapon> {
         rank: 7,
         short_description: String::from(r"Can decapitate foes"),
         description: String::from(r"
-            As a standard action, you can make a mundane melee \glossterm<strike> using this weapon that can decapitate enemies.
-            If the target has no remaining \glossterm{damage resistance}, the strike deals five times normal damage.
+            As a standard action, you can make a mundane melee \glossterm<strike> that deals 2d10 \glossterm{extra damage}.
+            If the target has no remaining \glossterm{damage resistance}, the strike deals triple damage.
             If the damage dealt by this strike is at least half the creature's maximum hit points, it immediately dies.
             Creatures that do not have a head are immune to this death effect.
         "),
