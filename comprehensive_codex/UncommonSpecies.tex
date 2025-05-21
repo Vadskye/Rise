@@ -205,7 +205,7 @@
     \begin{itemize}
       \itemhead{Claws} A cat's paws end in claws, which it can use to attack (see \pcref{Natural Weapons}). A cat's claws have a \plus2 accuracy bonus and deal 1d4 damage.
       \itemhead{Low-light Vision} A cat has \trait{low-light vision}, allowing it to see clearly in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
-      \itemhead{Multipedal} A cat is \trait{multipedal}, which gives it a \plus10 foot bonus to its \glossterm{land speed} and a \plus5 bonus to Balance.
+      \itemhead{Multipedal} A cat is \trait{multipedal}, which gives it a \plus10 foot bonus to its \glossterm{movement speed} and a \plus5 bonus to Balance.
       \itemhead{Scent} A cat has the scent ability (see \pcref{Scent}).
     \end{itemize}
 
@@ -253,7 +253,7 @@
       They are immune to attacks with their associated ability tag.
     \itemhead{Limited Equipment} A dragon's claws are not able to effectively wield shields or manufactured weapons.
       They can wear armor, but it is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
-    \itemhead{Multipedal} Dragons are \trait{multipedal}, which grants them a \plus10 foot bonus to their \glossterm{land speed} and a \plus5 bonus to the Balance skill.
+    \itemhead{Multipedal} Dragons are \trait{multipedal}, which grants them a \plus10 foot bonus to their \glossterm{movement speed} and a \plus5 bonus to the Balance skill.
   \end{itemize}
   \parhead{Automatic Languages} Common, Draconic, any one \glossterm{common language}.
 
@@ -446,7 +446,7 @@
       Plants do not have complex thought processes, but can provide information about events that have happened near them.
       In general, plants can remember events that happened within the most recent quarter of their lifespan.
 
-    \magicalcf{Dry}[3]{Tree Stride+} You can \glossterm{teleport} between living trees instead of moving using your \glossterm{land speed}.
+    \magicalcf{Dry}[3]{Tree Stride+} You can \glossterm{teleport} between living trees instead of moving using your \glossterm{walk speed}.
       Teleporting a given distance costs movement equal to half that distance.
       If this teleportation fails for any reason, you still expend that movement.
 
@@ -716,7 +716,7 @@
     \itemhead{Esoteric Body} The incarnation has no arms, legs, or \glossterm{free hands}.
       This means it is unable to use manufactured weapons or \glossterm{somatic components}.
       It can wear armor, but the armor is treated as \glossterm{barding} instead of normal armor, reducing its effectiveness (see \pcref{Barding}).
-      It has no land speed.
+      It has no \glossterm{walk speed}.
       Since it has no legs, it is immune to being \prone, but it also cannot jump.
     \magicalitemhead{Flight} The incarnation's only movement mode is an average \glossterm{fly speed} with a 5 foot height limit (see \pcref{Aerial Movement}).
       Since it is native to the air, flying does not penalize its Armor or Reflex defenses.
@@ -1010,7 +1010,7 @@
   \begin{itemize}
     \itemhead{Acidic Body} Ooozeborn are \trait{impervious} to \atAcid and \atPoison attacks. However, they are \trait{vulnerable} to \atEarth attacks.
     \itemhead{Amorphous Form} An oozeborn's natural form is a loosely spherical blob.
-      They have a \minus10 foot penalty to their \glossterm{land speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
+      They have a \minus10 foot penalty to their \glossterm{movement speed}, but they gain a \plus5 bonus to the Flexibility skill (see \pcref{Flexibility}).
       Since they have no legs, they are immune to being \prone.
       Most legless creatures cannot jump, but oozeborn can jump without penalty.
       They can also use the \ability{mold body} ability to adopt a particular shape.
@@ -1140,9 +1140,8 @@
         \abilityusagetime \glossterm{Minor action}.
         \rankline
         This ability can only be used if the sapling is \glossterm{grounded}.
-        The sapling's land speed becomes 5 feet, regardless of any modifiers that normally apply.
+        The sapling becomes \braced, and its \glossterm{movement speed} becomes 5 feet, regardless of any modifiers that normally apply.
         It cannot voluntarily stop being \glossterm{grounded} while this ability lasts.
-        It gains a \plus2 bonus to its Armor, Brawn, and Fortitude defenses.
 
         If the sapling finishes a \glossterm{long rest} with this ability active for the duration of the rest, it acquires nutrients sufficient to replace a day's worth of food and water.
         This ability lasts until the sapling ends it as a standard action, or until it stops being \glossterm{grounded}.
@@ -1153,10 +1152,8 @@
       Instead, they treat the Treant archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
     \itemhead{Tree Appearance} When a sapling stays perfectly still, observers must make a DV 15 Awareness check to recognize that it is not an ordinary tree.
       Careful observers may still notice that the ordinary tree has appeared where no tree used to be, so they may be suspicious of a sapling even if they do not pass this check.
-    \itemhead{Unhurried and Unfaltering} Saplings have a \minus10 penalty to speed with all \glossterm{movement modes}.
-      However, saplings are unaffected by all flat penalties to their land speed, such as from wearing heavy armor.
-      Those penalties still apply to any other movement modes normally, and a sapling's land speed is still reduced while it is \slowed or under similar effects.
-      This also does not change effects that completely replace the sapling's land speed, such as the \ability{ingrain} ability.
+    \itemhead{Unhurried and Unfaltering} Saplings have a \minus10 penalty to their \glossterm{movement speed}.
+      However, a sapling's movement speed cannot be more than 10 feet slower than its \glossterm{base speed}, even while \slowed or under similar effects, except with the \ability{ingrain} ability.
       In addition, saplings are unaffected by \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
   \end{itemize}
   \parhead{Automatic Languages} Common, Sylvan.
@@ -1649,14 +1646,14 @@
         \begin{raggeditemize}
           \item Bat: While in your bat form, you gain \trait{blindsense} (120 ft.) and \trait{blindsight} (30 ft.).
             You cannot speak and have no \glossterm{free hands}.
-            All of your normal movement modes are replaced with a 40 foot fly speed with a 60 ft. height limit.
+            All of your normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
           \item Mist: While in your mist form, you become \trait{floating}, \trait{intangible}, and \trait{legless}.
             You cannot speak and have no \glossterm{free hands}.
-            All of your normal movement modes are replaced with a 20 foot \glossterm{fly speed} with a 30 foot \glossterm{height limit} (see \pcref{Flight}).
+            All of your normal movement modes are replaced with a slow \glossterm{fly speed} with a 30 foot \glossterm{height limit} (see \pcref{Flight}).
         \end{raggeditemize}
 
         In either non-humanoid form, you are unable to take any standard action other than \glossterm{movement}.
-        Since you have no land speed in those forms, flying does not penalize your Armor or Reflex defenses.
+        Since you have no walk speed in those forms, flying does not penalize your Armor or Reflex defenses.
         You cannot use this ability while \paralyzed.
       \end{magicalattuneability}
 

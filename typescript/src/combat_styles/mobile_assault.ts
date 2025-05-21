@@ -137,7 +137,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Sweep',
 
       effect: `
-        You can move in a straight line up to your land speed.
+        You can move in a straight line up to your \\glossterm{movement speed}.
         During this movement, you move too quickly to be seen.
         This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
         While still invisible, you can make a melee \\glossterm{strike}.
@@ -154,7 +154,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Flurry',
 
       effect: `
-        You can move in a straight line up to your land speed.
+        You can move in a straight line up to your \\glossterm{movement speed}.
         During this movement, you move too quickly to be seen.
         This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
         While still invisible, you can make two melee \\glossterm{strikes} at any point during your movement.
@@ -170,7 +170,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Charge',
 
       effect: `
-        You can move in a straight line up to your land speed.
+        You can move in a straight line up to your \\glossterm{movement speed}.
         During this movement, you move too quickly to be seen.
         This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
         You become visible at your destination, and you can then make a melee \\glossterm{strike} there.

@@ -458,7 +458,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         In addition, you have the ability to move on all four limbs.
                         When doing so, you become \trait{multipedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
-                        This gives you a \plus10 foot bonus to your \glossterm{land speed} and a \plus5 bonus to the Balance skill.
+                        This gives you a \plus10 foot bonus to your \glossterm{movement speed} and a \plus5 bonus to the Balance skill.
                         Your bite also gains the \weapontag{Heavy} weapon tag while you are multipedal in this way.
 
                         When not using your hands to move, your ability to use your hands is unchanged.
@@ -724,22 +724,22 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 For example, your \textit{natural servant} in an aquatic environment may be a dolphin or seal instead of a shark.
                 Unusual environments may have different animals than the standard animals listed below.
                 \begin{itemize}
-                    \item Aquatic: A shark appears that has a 30 foot \glossterm{swim speed} and no land speed.
-                        It has a bite \glossterm{natural weapon}, and it is trained with the Swim skill.
+                    \item Aquatic: A shark appears that has an average \glossterm{swim speed} and no walk speed.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Swim skills.
                     \item Arctic: An arctic fox appears that has no penalties for being in cold environments.
-                        It has a bite \glossterm{natural weapon}.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skills.
                     \item Desert: A hyena appears that has no penalties for being in hot environments.
                         It has a bite \glossterm{natural weapon}.
                     \item Mountain: A goat appears that can move up or down steep slopes without slowing its movement.
                         It has a ram \glossterm{natural weapon}.
                     \item Forest: A wolverine appears that calculates its hit points as a barbarian of your level, rather than as a druid of your level.
                         It has a bite \glossterm{natural weapon}.
-                    \item Plains: A wolf appears that has the \trait{scent} ability and is trained with the Awareness skill.
-                        It has a bite \glossterm{natural weapon}.
-                    \item Swamp: A crocodile appears that has a 20 foot \glossterm{land speed} and a 30 foot \glossterm{swim speed}.
-                        It has a bite \glossterm{natural weapon}, and it is trained with the Swim skill.
-                    \item Underground: A dire rat appears that has \trait{low-light vision} and is trained with the Awareness skill.
-                        It has a bite \glossterm{natural weapon}.
+                    \item Plains: A wolf appears that has the \trait{scent} ability.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skills.
+                    \item Swamp: A crocodile appears that has a slow \glossterm{walk speed} and an average \glossterm{swim speed}.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Swim and Stealth skills.
+                    \item Underground: A dire rat appears that has \trait{low-light vision}.
+                        It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skill.
                 \end{itemize}
             ",
             // TODO: represent a whole extra creature???

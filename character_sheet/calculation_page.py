@@ -111,7 +111,7 @@ def non_attribute():
             stat_row("Attunement points"),
             stat_row("damage_resistance_max", display_name="Damage resistance", explanation_key="damage_resistance_explanation"),
             stat_row("Encumbrance"),
-            stat_row("Land speed"),
+            stat_row("Speed"),
             stat_row("Vital rolls"),
         ]
     )

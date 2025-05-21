@@ -620,7 +620,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{movement speed}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
                     This movement is never \abilitytag{Swift}.
                     If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
