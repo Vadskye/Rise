@@ -293,7 +293,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
+        You gain an average \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 4,
@@ -304,7 +304,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Agile Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
+        You gain an average \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
         Unlike normal, flying with this fly speed does not penalize your Armor and Reflex defenses.
       `,
       // narrative: '',
@@ -316,7 +316,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Soaring Flight',
 
       effect: `
-        You gain a 30 foot \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
+        You gain an average \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 7,
@@ -573,7 +573,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       effect: `
         You can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        In addition, you gain a 30 foot \\glossterm{glide speed}.
+        In addition, you gain an average \\glossterm{glide speed}.
       `,
       narrative: `
         Your body is partially transformed into mist.

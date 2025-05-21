@@ -114,7 +114,7 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Increases speed by 10 feet"),
         description: String::from(
             r"
-            You gain a +10 foot \glossterm<enhancement bonus> to your land speed.
+            You gain a +10 foot \glossterm{enhancement bonus} to your \glossterm{movement speed}.
         ",
         ),
         ..Apparel::default()
