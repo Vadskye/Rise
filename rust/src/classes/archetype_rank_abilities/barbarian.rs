@@ -535,7 +535,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} You gain a +2 accuracy bonus with the first strike you make with this ability each round.
                     \rank{5} The second strike you make with this ability each round deals double damage.
                     \rank{6} The accuracy bonus applies to both strikes.
-                    \rank{7} Both strikes deal double damage.
+                    \rank{7} Both strikes deal 1d8 \glossterm{extra damage}.
                 \end{activeability}
             ",
             modifiers: None,
