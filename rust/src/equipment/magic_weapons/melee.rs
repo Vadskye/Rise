@@ -56,7 +56,9 @@ pub fn melee() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // Half damage on miss means this may be too strong?
+    // r1 area is normally drX. Balance this assuming you use it for 2 rounds, so average the
+    // first and second round for effectiveness. This is roughly dr2 area in a r1 area, which is on
+    // rate.
     weapons.push(Melee(StandardItem {
         name: String::from("Blade Barrage"),
         rank: 2,
@@ -64,16 +66,16 @@ pub fn melee() -> Vec<MagicWeapon> {
         description: String::from(r"
             You can activate this weapon as a standard action.
             When you do, you make a mundane melee \glossterm<strike> using this weapon that spawns a swarm of blades.
-            The strike targets all creatures in a \smallarea cone from you.
+            The strike targets all \glossterm{enemies} in a \smallarea cone from you.
             For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
             On a miss, you deal half damage.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Can deal escalating damage in a cone", r"
-                If you used this ability during the previous round, the strike deals double \glossterm<weapon damage>.
+            ItemUpgrade::new(5, "Can deal high damage in a cone", r"
+                The strike deals double damage.
             "),
-            ItemUpgrade::new(6, "Can deal escalating damage in a cone", r"
-                The strike always deals double \glossterm<weapon damage>.
+            ItemUpgrade::new(7, "Can deal massive damage in a cone", r"
+                The strike deals triple damage.
             "),
         ],
         tags: vec![AbilityTag::Manifestation],
@@ -108,8 +110,8 @@ pub fn melee() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can decapitate foes"),
         description: String::from(r"
             As a standard action, you can make a mundane melee \glossterm<strike> using this weapon that can decapitate enemies.
-            The strike deals triple \glossterm<weapon damage>.
-            If you get a critical hit against a creature and it loses hit points, it immediately dies.
+            If the target has no remaining \glossterm{damage resistance}, the strike deals five times normal damage.
+            If the damage dealt by this strike is at least half the creature's maximum hit points, it immediately dies.
             Creatures that do not have a head are immune to this death effect.
         "),
         ..MagicWeapon::default()
@@ -129,10 +131,10 @@ pub fn melee() -> Vec<MagicWeapon> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can silently teleport and strike", r"
-                The strike deals double \glossterm{weapon damage} against creatures that are at least \partiallyunaware.
+                The strike deals double damage against creatures that are at least \partiallyunaware.
             "),
             ItemUpgrade::new(7, "Can silently teleport and strike", r"
-                The damage multiplier increases to triple weapon damage.
+                The damage multiplier increases to triple damage.
             "),
         ],
         ..MagicWeapon::default()

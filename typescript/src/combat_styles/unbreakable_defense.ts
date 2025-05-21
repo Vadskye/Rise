@@ -184,7 +184,7 @@ export const unbreakableDefense: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        Make a \\glossterm{strike} that deals double damage.
         In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.
       `,
       rank: 7,

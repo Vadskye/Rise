@@ -464,11 +464,12 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mind Arrow',
 
+      // dr1 in long range, but a little better because it can go up to 270
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a \\glossterm{strike} using an arrow as if you were shooting it from a longbow.
-        As normal for a longbow, the strike's base \\glossterm{weapon damage} is 1d6, and your \\glossterm{range limits} with this strike are 90/270.
+        As normal for a longbow, the strike's \\glossterm{weapon damage} is 1d6 \\add half your \\glossterm{power}, and your \\glossterm{range limits} with this strike are 90/270.
         You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
 
         The arrow must be easily accessible on your person, such as in a quiver.

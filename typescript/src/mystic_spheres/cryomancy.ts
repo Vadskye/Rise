@@ -615,7 +615,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       functionsLike: {
         name: 'cryostrike',
         exceptThat: `
-          the strike deals double \\glossterm{weapon damage}.
+          the strike deals double damage.
           In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d8 per 2 power.
         `,
       },
@@ -629,7 +629,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} that deals double weapon damage.
+        Make a melee \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If the target takes damage and your attack also hits its Fortitude defense, it becomes \\slowed as a condition.
       `,

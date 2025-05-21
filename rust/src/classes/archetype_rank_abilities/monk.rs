@@ -84,7 +84,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} This extra damage is doubled against each creature that you are directly above when you make the strike.
                     \rank{5} The extra damage increases to 2d6.
                     \rank{6} The extra damage increases to 2d10.
-                    \rank{7} The \glossterm{weapon damage} is doubled.
+                    \rank{7} The strike deals double \glossterm{weapon damage}.
                 \end{activeability}
             ",
             modifiers: None,
@@ -494,7 +494,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level} (see text).
                     \rankline
-                    Make a \glossterm{strike} that deals double \glossterm{weapon damage}.
+                    Make a \glossterm{strike} that deals double damage.
                     The strike must target a single creature within \shortrange, with no secondary targets.
 
                     Whether or not the target takes damage, it becomes invested with your ki.
@@ -505,7 +505,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
                     \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals triple \glossterm{weapon damage} instead of double weapon damage.
+                    \rank{6} The strike deals triple damage instead of double damage.
                     \rank{7} The accuracy bonus increases to +4.
                 \end{magicalactiveability}
             ",
