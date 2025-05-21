@@ -46,7 +46,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rank{2} You add half your Strength to your \glossterm{magical power} to determine your total power with this strike.
                     \rank{3} You deal \glossterm{extra damage} equal to half your power.
                     \rank{4} If you miss, the target still takes the extra damage.
-                    \rank{5} Your \glossterm{weapon damage} is doubled.
+                    \rank{5} The strike deals double \glossterm{weapon damage}.
                     \rank{6} The extra damage increases to be equal to your power.
                     \rank{7} The extra damage increases to twice your power.
                 \end{magicalactiveability}
@@ -617,9 +617,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     If you chose all three defenses, the strike deals double damage.
 
                     \rankline
-                    % Roughly double weapon damage with -1 accuracy
+                    % Roughly double damage with -1 accuracy
                     \rank{4} You gain a +2 accuracy bonus with the strike.
-                    % Roughly double weapon damage with +1 accuracy
+                    % Roughly double damage with +1 accuracy
                     \rank{5} The accuracy bonus increases to +4.
                     \rank{6} You can choose any two defenses instead of all three defenses to deal double damage.
                     \rank{7} You deal double damage by default, or triple damage if you attack two defenses.

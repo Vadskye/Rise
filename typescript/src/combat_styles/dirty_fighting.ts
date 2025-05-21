@@ -109,14 +109,12 @@ export const dirtyFighting: CombatStyle = {
       // some amount.
       // Assume the Brawling accuracy bonus offsets the grapple requirement.
       //
-      // If you use a Medium creature, the baseline damage is 2d6 + 1dpp, which is
-      // roughly dr4, but with strong scaling based on the creature's size.
+      // If you use a Medium creature, the baseline damage is 1d10 + 0.83dpp, which is
+      // roughly dr3, but with strong scaling based on the creature's size.
       effect: `
         Make an \\glossterm{brawling attack} against the Brawn defense of a Medium or larger creature you are \\glossterm{grappling}.
         If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
-        The strike deals double damage.
-        Treat the creature as a weapon that deals 1d6 damage per size category by which the creature is above Small.
-        You need to hold the creature with two free hands to make the strike, but you do not gain the bonus damage from the \\weapontag{Heavy} weapon tag.
+        Treat the creature as a \\weapontag{Heavy} weapon that deals 1d10 damage per size category by which the creature is above Small.
         You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
 
         The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.

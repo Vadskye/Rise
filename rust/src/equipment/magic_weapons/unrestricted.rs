@@ -483,13 +483,13 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             In addition, it sheds gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
 
             As a standard action, you can make a mundane \glossterm<strike> using this weapon that intensifies the energy.
-            The strike deals double \glossterm{weapon damage}.
+            The strike deals double damage.
         "),
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
         upgrades: vec![
             ItemUpgrade::new(6, "Is infused with cold, electricity, and fire", r"
                 The extra damage increases to 1d8.
-                In addition, the transformed attack deals triple weapon damage.
+                In addition, the transformed attack deals triple damage.
             "),
         ],
         ..MagicWeapon::default()

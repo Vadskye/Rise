@@ -39,7 +39,7 @@ pub fn ranged() -> Vec<MagicWeapon> {
             "),
             // This is slightly over rate
             ItemUpgrade::new(7, "Can be thrown to accurately strike three nearby foes", r"
-                The spinning arc strike deals double \glossterm{weapon damage}.
+                The spinning arc strike deals double damage.
             "),
         ],
         ..MagicWeapon::default()
