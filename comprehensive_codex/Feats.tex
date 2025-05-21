@@ -984,7 +984,7 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
       \featlevel{12} The extra damage increases to 1d6 \plus1 per 2 power.
       \featlevel{15} The extra damage increases to 1d6 \plus1 per power.
-      \featlevel{18} The \glossterm{weapon damage} is doubled.
+      \featlevel{18} The strike deals double \glossterm{weapon damage}.
     \end{magicalactiveability}
 
     \magicalff[12]{Ghost Step+} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
@@ -1728,11 +1728,12 @@ They allow more distinct and unique character customization, but also increase g
       The spell and the strike must affect completely different targets, with no overlap between their targets or areas (if any).
       You cannot use the \ability{desperate exertion} ability to affect the strike or the spell.
 
+      % TODO: lame scaling
       \rankline
       \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
       \featlevel{12} The accuracy bonus increases to \plus2.
       \featlevel{15} The accuracy bonus increases to \plus4.
-      \featlevel{18} The strike deals double \glossterm{weapon damage}.
+      \featlevel{18} The strike deals double damage.
     \end{magicalactiveability}
 
     \magicalff[12]{Spellsword Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus2 accuracy bonus with spells against each damaged creature.
@@ -2155,12 +2156,12 @@ They allow more distinct and unique character customization, but also increase g
       The strike comes from the weapon's location, not your location.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
-      % TODO: it would be nice if this scaled more strongly with the chosen weapon's stats?
+      % TODO: it would be nice if this scaled more strongly with the chosen weapon's stats? This is generally awkward scaling.
       \rankline
       \rank{9} The extra damage increases to 1d6 \add half your power.
       \rank{12} The extra damage increases to 1d6 \add your power.
       \rank{15} The extra damage increases to 3d6 \add your power.
-      \rank{18} The \glossterm{weapon damage} is doubled.
+      \rank{18} The strike deals double \glossterm{weapon damage}.
     \end{magicalactiveability}
 
     \magicalff[12]{Kinetic Spell} You learn an additional spell.

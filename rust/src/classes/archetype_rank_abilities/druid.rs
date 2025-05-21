@@ -410,6 +410,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
                         \rank{5} The accuracy bonus increases to \plus4.
+                        % TODO: Low damage for such a high rank ability, and also complicated
                         \rank{7} When you push a creature with the \textit{shove} ability, the pushed creature also takes \glossterm{weapon damage} from your gore natural weapon.
                         This damage cannot be combined with other effects that deal damage with a shove.
                     \end{magicalactiveability}
@@ -422,6 +423,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
+                        % TODO: seems like this should scale, since a single strike of damage falls off at high levels
                         \rank{3} When you grapple a creature with the \ability{grapple} ability, they also take \glossterm{weapon damage} from your bite natural weapon.
                         \rank{5} The accuracy bonus increases to \plus4.
                         \rank{7} When you grapple a creature with the \ability{grapple} ability, you automatically take control of the grapple (see \pcref{Controlling a Grapple}).
@@ -606,20 +608,21 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 % Assume that choosing defense is worth about +3 accuracy, and that hitting all three defenses is about -3 accuracy.
+                % TODO: put this in the spreadsheet
                 \begin{magicalactiveability}{Shifting Claw}
                     \abilityusagetime Standard action.
                     \rankline
                     Choose Armor, Reflex, or Fortitude defense, or all three defenses.
                     Make a \glossterm{strike} against your chosen defenses with a \glossterm{natural weapon}.
-                    If you chose all three defenses, the strike deals double \glossterm{weapon damage}.
+                    If you chose all three defenses, the strike deals double damage.
 
                     \rankline
                     % Roughly double weapon damage with -1 accuracy
                     \rank{4} You gain a +2 accuracy bonus with the strike.
                     % Roughly double weapon damage with +1 accuracy
                     \rank{5} The accuracy bonus increases to +4.
-                    \rank{6} You can choose any two defenses instead of all three defenses to deal double weapon damage.
-                    \rank{7} You deal double \glossterm{weapon damage} by default, or triple weapon damage if you attack two defenses.
+                    \rank{6} You can choose any two defenses instead of all three defenses to deal double damage.
+                    \rank{7} You deal double damage by default, or triple damage if you attack two defenses.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -709,13 +712,14 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \end{itemize}
                     % There must be text between an itemize block and the end of a mdframed env
 
+                    % TODO: awkward scaling
                     \rankline
                     \rank{2} The animal gains a \plus1 bonus to all of its defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your power.
                     \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The accuracy bonus increases to +4.
-                    \rank{7} The animal's \glossterm{weapon damage} is doubled.
+                    \rank{7} The animal's strikes deal double damage.
                     However, the accuracy bonus is reduced to +2.
                 \end{magicalattuneability}
 

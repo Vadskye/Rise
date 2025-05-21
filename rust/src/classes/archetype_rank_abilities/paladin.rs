@@ -378,7 +378,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rank{2} You add your full Strength instead of half your Strength.
                     \rank{3} You deal \glossterm{extra damage} equal to half your power.
                     \rank{4} If you miss, the target still takes the extra damage.
-                    \rank{5} Your \glossterm{weapon damage} is doubled.
+                    \rank{5} The strike deals double \glossterm{weapon damage}.
                     \rank{6} The extra damage increases to be equal to your power.
                     \rank{7} The extra damage increases to twice your power.
                 \end{magicalactiveability}
