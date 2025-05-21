@@ -29,6 +29,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         % TODO: nerf all magical crafting times
         Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
       `,
+        roles: ['narrative'],
       scaling: {
         2: `The amount of work you accomplish with the spell increases to one minute.`,
         4: `The amount of work you accomplish with the spell increases to two minutes.`,
@@ -40,7 +41,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rock Throw',
 
-      // +1r for +1acc
+      // +1r for +2acc
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
@@ -48,6 +49,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
         `,
       },
+      roles: ['burst'],
       rank: 1,
       scaling: 'accuracy',
       tags: ['Manifestation'],
@@ -56,6 +58,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Rock Throw',
 
+      // +1r for +2acc
       attack: {
         hit: `\\damagerankfour.`,
         targeting: `
@@ -64,6 +67,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -81,6 +85,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -88,19 +93,21 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Meteor',
 
-      // +2r for delay, +1r for open area requirement, so effective rank 7.
-      // That allows a t3.5 area and dr6; this uses a t4 area.
+      // -2r for avoidable delay, so effective rank 6. That allows a t3 area and dr5.
+      // Bump to a r4 area due to the open area requirement.
       attack: {
-        hit: `\\damageranksix.`,
+        hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you choose a \\medarea radius within \\medrange.
+          When you cast this spell, you choose a \\medarea radius within \\shortrange.
           A meteor appears high in the sky over that area, falling down towards it.
+          Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
           During your next action, the meteor crashes into your chosen area, and you make an attack vs. Armor against everything in the area.
           If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -108,56 +115,51 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Meteor Swarm',
 
+      // -2r for avoidable delay, +1r for extended range, so effective rank 8. That allows
+      // a t8 area and dr6.
       functionsLike: {
         name: 'meteor',
         exceptThat: `
-          you can choose up to four separate areas within \\distrange, creating one meteor per area.
-          In addition, the damage increases to \\damageranknine.
+          you can choose up to four separate areas within \\longrange, creating one meteor per area.
+          In addition, the damage increases to \\damageranksix.
           Any individual creature can only be attacked by one meteor, even if it occupies multiple areas, and overlapping the areas has no benefit.
         `,
       },
       rank: 7,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
     {
-      name: 'Fall to Earth',
+      name: 'Crushing Gravity',
 
-      // +1r for acc and very circumstantial HP effect
+      // This doesn't pay a cost for its accuracy bonus because it's just offsetting the
+      // intrinsic bonus that larger creatures get to their Brawn.
       attack: {
         hit: `
-          \\damageranktwo.
-          If the target loses \\glossterm{hit points}, it cannot use any \\glossterm{fly speed} or \\glossterm{glide speed} as a \\glossterm{condition}.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Brawn against something within \\medrange.
+          Make an attack vs. Brawn against a \\glossterm{grounded} creature or object within \\medrange.
           You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
-          This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
       },
-      narrative: `
-        The bigger they are, the more heavily gravity pulls them to the ground.
-      `,
       rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: [],
     },
 
     {
-      name: 'Crushing Gravity',
+      name: 'Mighty Crushing Gravity',
 
-      // +1r for acc alone, which is more powerful at higher levels
-      attack: {
-        hit: `
-          \\damagerankfive.
-        `,
-        targeting: `
-          Make an attack vs. Brawn against a \\glossterm{grounded} creature or object within \\shortrange.
-          You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
-        `,
+      functionsLike: {
+        name: 'crushing gravity',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
-      rank: 5,
+      rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -165,6 +167,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rockshard Blast',
 
+      // A r0 area is drX+1, and this gets drX+2 for double defense, then -1dr for the
+      // accuracy bonus
       attack: {
         hit: `\\damageranktwo.`,
         missGlance: true,
@@ -174,6 +178,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 1,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -190,6 +195,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -279,85 +285,135 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rippling Earthwave',
 
+      // r1 area is about halfway between "ranged" and "melee"; call it 1.4 EA. That gives
+      // 0.2 EA for empowerment.
       attack: {
         hit: `Each target is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in in a \\medarea cone from you.
+          Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
-      rank: 3,
+      rank: 2,
+      roles: ['generator', 'flash'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Massive Rippling Earthwave',
+      name: 'Stoneward',
 
-      functionsLike: {
-        name: 'rippling earthwave',
-        exceptThat: 'the area increases to a \\hugearea cone.',
-      },
-      rank: 6,
-      scaling: 'accuracy',
+      effect: `
+         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\steeled.
+      `,
+      rank: 2,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Draw Upon The Deepest Earth',
+
+      effect: `
+         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\maximized.
+         However, your movement speed is also \\glossterm{briefly} halved.
+      `,
+      rank: 5,
+      roles: ['focus'],
     },
 
     {
       name: 'Tremor',
 
+      // r1 area of immediate damage is normally dr2, or dr3 with double defense. The
+      // second half of the damage is escapable and includes yourself, so -2dr seems
+      // reasonable.
       attack: {
         hit: `
           \\damagerankone.
         `,
         missGlance: true,
         targeting: `
-          The earth shakes in a \\medarea radius \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\glossterm{grounded}.
+          The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
+          When you cast this spell, and during your next action, make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
         `,
       },
       narrative: `
         You crack the earth around you, shaking everyone violently.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['wildfire'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Tremor',
+
+      // Prone is normally about 1.4 EA, but it's hard to calculate the double prone here,
+      // especially since the first prone makes the second one more likely to hit. Just
+      // assume it's a reasonable debuff level.
+      attack: {
+        hit: `
+          \\damagerankthree, and each target falls \\prone.
+        `,
+        missGlance: true,
+        targeting: `
+          The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
+          When you cast this spell, and during your next action, make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+        `,
+      },
+      narrative: `
+        You crack the earth around you, shaking everyone violently.
+      `,
+      rank: 5,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Earthquake',
 
+      // Increasing to a large area puts us into limited scope, so normal damage would be
+      // dr6, +1dr for double defense, -1dr for debuff, -2dr for repeat attack = dr4.
       attack: {
         hit: `
-          \\damagerankfive.
-          If the target loses \\glossterm{hit points} from this damage and your attack also hits its Brawn defense, it falls \\prone.
+          \\damagerankfour, and each target falls \\prone.
         `,
         missGlance: true,
         targeting: `
-          The earth shakes in a \\largearea radius \\glossterm{zone} around you.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area that is \\glossterm{grounded}.
+          The earth shakes in a \\largearea radius \\glossterm{zone} from your location.
+          When you cast this spell, and during your next action, make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
         `,
       },
       narrative: `
         You crack the earth around you, shaking everyone violently.
       `,
       rank: 7,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Swallowed by Earth',
 
-      // Price as r3.75 condition??, -1r for grounded, -1r for range, +1r for acc
+      // Limited scope r7 can just barely get away with a brief slow + damage, especially
+      // considering the size + grounded limitation. We drop the damage by a tier to allow
+      // the silly double effect.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is swallowed by the earth as a \\glossterm{condition}.
-          While it is swallowed by the earth, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+          \\damagerankfive, and each target is \\glossterm{briefly} \\slowed.
+          If a target loses \\glossterm{hit points} and it was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
+          While it is swallowed by the earth, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive as the earth grinds it into paste.
+
+          A creature swallowed by the arth can remove this condition by making a \\glossterm{difficulty value} 12 Strength check as a standard action.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
-          Special movement abilities such as teleportation can also remove the target from the fissure.
+          When the effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
+          Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller \\glossterm{grounded} creature within \\shortrange.
-          You gain a +2 \\glossterm{accuracy} bonus if the target is grounded on stone.
+          Make an attack vs. Reflex and Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
+      roles: ['maim'],
       narrative: `
         You open up a rift in the ground that swallows and traps a foe.
       `,
@@ -386,6 +442,26 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 2,
       roles: ['softener'],
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Fall to Earth',
+
+      // Same as scaled r2 vs Large, +2a relative diff vs Huge, amazing vs larger
+      functionsLike: {
+        name: 'earthbind',
+        exceptThat: `
+          you gain a +2 accuracy bonus for each weight category by which each target is heavier than Medium. 
+          This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
+        `,
+      },
+      narrative: `
+        The heavier they are, the harder they fall.
+      `,
+      rank: 4,
+      roles: ['softener'],
+      scaling: 'accuracy',
+      tags: [],
     },
 
     {
@@ -428,26 +504,6 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     },
 
     {
-      name: 'Quagmire',
-
-      // TODO: define correct rank
-      effect: `
-        Choose a \\smallarea radius \\glossterm{zone} within \\medrange.
-        All earth and stone in the area is softened into a thick sludge, creating a quagmire that is difficult to move through.
-        The area becomes \\glossterm{difficult terrain}.
-
-        This does not affect objects under structural stress, such as walls and support columns.
-        Affected objects retain their own fundamental structural integrity and do not blend with other objects.
-        When the spell ends, affected objects regain their original shape, suffering no damage from their time spent softened.
-      `,
-      rank: 4,
-      scaling: {
-        6: 'You can choose to affect a \\medarea radius instead.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
       name: 'Earthen Fortification',
 
       effect: `
@@ -455,18 +511,21 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
         The squares can be placed at any angle and used to form any structure as long as that structure is stable.
         Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
-        % TODO: define hit points and resistances of earth
+        A typical Large wall made of earth has 50 hit points, 5 damage resistance, and a Sunder DV of 15.
 
         The fortifications form slowly, rather than instantly.
         The structure becomes complete at the end of the next round after this spell is cast.
         This makes it difficult to trap creatures within structures formed.
       `,
       rank: 4,
-      // TODO: define hit points and resistances of stone
       scaling: {
-        6: `You can also construct fortifications from stone.
-            This makes them more resistant to attack and allows the construction of more complex structures.`,
+        6: `
+          You can also construct fortifications from stone.
+          This makes them more resistant to attack and allows the construction of more complex structures.
+          A typical Large wall made of stone has 50 hit points, 10 damage resistance, and a Sunder DV of 20.
+        `,
       },
+      roles: ['hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -535,7 +594,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // treat as short range med radius, which is a t3 area
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
@@ -547,8 +606,25 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       narrative: `
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
-      rank: 5,
+      rank: 3,
       scaling: 'accuracy',
+      roles: ['wildfire'],
+      tags: ['Manifestation', 'Sustain (minor)'],
+    },
+
+    {
+      name: 'Mighty Volcano',
+
+      functionsLike: {
+        name: 'volcano',
+        exceptThat: 'the damage increases to \\damagerankfour.',
+      },
+      narrative: `
+        You create a small volcano that showers everything nearby in burning shrapnel.
+      `,
+      rank: 6,
+      scaling: 'accuracy',
+      roles: ['wildfire'],
       tags: ['Manifestation', 'Sustain (minor)'],
     },
 
@@ -627,31 +703,48 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Wall of Stone',
 
+      // +1r for double HP
       cost: BARRIER_COOLDOWN,
       effect: `
-        You create a \\smallarealong \\glossterm{wall} of stone within \\medrange.
+        You create a \\smallarealong \\glossterm{wall} of stone within \\shortrange.
         Every square of the wall must be \\glossterm{grounded}.
         Nothing can pass through the wall until it is destroyed.
 
         The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
         If the entire wall is directly supported by stone, its hit points are doubled.
       `,
-      rank: 1,
+      rank: 2,
+      roles: ['hazard'],
       scaling: {
-        3: 'You can choose to create a \\medarealong wall instead.',
-        5: 'You can choose to create a \\largearealong wall instead.',
-        7: 'You can choose to create a \\hugearealong wall instead.',
+        4: "The wall's hit points increase to four times your power.",
+        6: "The wall's hit points increase to five times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
+
+    {
+      name: 'Massive Wall of Stone',
+
+      // +3r for small -> large, +1r for short -> med
+      cost: BARRIER_COOLDOWN,
+      functionsLike: {
+        name: 'wall of force',
+        exceptThat: 'the area increases to a \\largearealong wall within \\medrange, and its hit points increase to five times your \\glossterm{power}.',
+      },
+      rank: 6,
+      roles: ['hazard'],
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
+    },
+
     {
       name: 'Desperate Stoneskin',
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, your body becomes covered in stone for the rest of the round, and this ability ends.
-        Whenever you would take damage while covered in this stone, you reduce that damage by an amount equal to your \\glossterm{power}.
+        This makes you \\fortified and \\steeled.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
