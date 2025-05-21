@@ -95,7 +95,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You gain a \plus10 foot bonus to your \glossterm{land speed}.
+                You gain a \plus10 foot bonus to your \glossterm{movement speed}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
@@ -320,7 +320,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Burst of Blinding Speed}
                         \abilityusagetime Free action.
                         \rankline
-                        You gain a \plus10 foot bonus to your land speed this phase.
+                        You gain a \plus10 foot bonus to your \glossterm{movement speed} this phase.
 
                         \rankline
                         \rank{4} You can also ignore \glossterm{difficult terrain} this phase.

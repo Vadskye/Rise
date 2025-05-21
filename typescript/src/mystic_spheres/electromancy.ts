@@ -434,7 +434,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Speed',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
       `,
       rank: 4,
       roles: ['attune'],

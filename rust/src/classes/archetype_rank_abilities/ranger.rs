@@ -524,7 +524,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You gain a \plus10 foot bonus to your land speed.
+                You gain a \plus10 foot bonus to your \glossterm{movement speed}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },

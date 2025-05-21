@@ -1850,7 +1850,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus10 foot bonus to your \glossterm{land speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
+                        \domainability{Gift} You gain a \plus10 foot bonus to your \glossterm{movement speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
                         This speed bonus is doubled as normal from sprinting.
                         \magicaldomainability{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
                         \magicaldomainability{Essence}
