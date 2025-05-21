@@ -189,7 +189,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} The accuracy penalty is removed.
                     \rank{5} You gain a \plus2 accuracy bonus with the strike.
                     \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
-                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals quadruple damage. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
+                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals 1d8 \glossterm{extra damage}. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,

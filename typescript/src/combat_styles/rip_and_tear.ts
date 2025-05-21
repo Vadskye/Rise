@@ -295,8 +295,8 @@ export const ripAndTear: CombatStyle = {
       name: 'Tear Exposed Flesh+',
 
       effect: `
-        Make a \\glossterm{strike} with a -1 accuracy penalty.
-        If the target has no remaining \\glossterm{damage resistance}, the strike deals five times normal damage.
+        Make a \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+        If the target has no remaining \\glossterm{damage resistance}, the strike deals triple damage.
       `,
       // narrative: '',
       rank: 7,
