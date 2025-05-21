@@ -286,6 +286,10 @@ Assume you have a 70% hit rate, so you hit on a 4. Your expected damage per roun
 
 With +1a, you deal 0.8 + 0.1 + 0.08 = 0.98, which is ~13% more.
 
+### +4 accuracy: 0.6
+
+This is like honed, but it works all the time instead of only in specific circumstances, and the incremental degree by which each +1 accuracy is a little better than 0.1 adds up over time. Direct accuracy bonuses also stack with everything else, so they should be rare.
+
 ### Braced: 0.6
 
 Braced applies 50% of the time, and it is 29% action denial when it applies. Therefore, it is worth 4 * 0.5 * 0.29 = 0.6 effective actions.
