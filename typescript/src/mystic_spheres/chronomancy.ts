@@ -341,7 +341,7 @@ export const chronomancy: MysticSphere = {
       name: 'Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your land speed.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
       `,
       rank: 3,
       roles: ['attune'],
@@ -352,7 +352,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to speed with all movement modes.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
         In addition, you can take two \\glossterm{minor actions} each round instead of one.
       `,
       rank: 7,

@@ -281,7 +281,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains a 30 foot \\glossterm{glide speed}.
+      Each target gains an average \\glossterm{glide speed}.
     `,
     // narrative: '',
     rank: 3,
@@ -295,7 +295,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains a 30 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
+      Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
       If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
     `,
     // narrative: '',
@@ -310,7 +310,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one hour',
     effect: `
       Choose up to six ritual participants.
-      Each target gains a 60 foot \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
+      Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
       If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
     `,
     // narrative: '',
@@ -806,7 +806,7 @@ export const rituals: Ritual[] = [
     // smooth ground depending on party composition and size.
     effect: `
       Choose up to six ritual participants.
-      Each target gains a +30 foot \\glossterm{enhancement bonus} to its land speed.
+      Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{movement speed}.
       If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
     `,
     tags: [],

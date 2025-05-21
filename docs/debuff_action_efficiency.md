@@ -281,6 +281,11 @@ For this section, assume that all buffs only affect you for a single action.
 For defensive buffs, assume that 50% of enemy attacks are targeting the recipient of the buff.
 This is higher than the baseline 25% assuming a 4 person party, but takes into account both AOE attacks and the assumption that defensive buffs are generally applied to characters who are more in the front line and expect to be hit more often.
 
+### +1 accuracy: 0.1
+Assume you have a 70% hit rate, so you hit on a 4. Your expected damage per round is 0.7 + 0.1 from hit/glance + 0.07 from crits, or 0.87.
+
+With +1a, you deal 0.8 + 0.1 + 0.08 = 0.98, which is ~13% more.
+
 ### Braced: 0.6
 
 Braced applies 50% of the time, and it is 29% action denial when it applies. Therefore, it is worth 4 * 0.5 * 0.29 = 0.6 effective actions.
@@ -947,13 +952,11 @@ Consider a standard damage effect to be 1 EA. For each damage rank you drop, you
 
 Rank X:
 * rX-1 damage:
-  * Then briefly self-empowered
+  * Then brief 0.2 EA (empowered)
 * rX-2 damage:
-  * First briefly self-empowered
-  * Then briefly focused
-  * Then briefly steeled / and steeled this round
-  * Then briefly extra damage
-  * Then briefly honed
+  * First brief 0.2 EA (empowered)
+  * Then brief 0.4 EA (focused, honed, steeled...)
+  * And 0.4 EA this round (focused, honed, steeled...)
 * rX-3 damage:
   * First briefly focused
   * Then briefly shielded / and shielded this round
