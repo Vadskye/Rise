@@ -374,12 +374,12 @@ Power+       : 24.03 = (55.5 dph * 0.30 hpr) + (55.5 dpc * 0.03 cpr) + (27.8 dpg
 Best attack: Certain Strike+ -- Greatmace
 
 #### Detailed attack results
-Accuracy     : 18.28 = (18.5 dph * 0.80 hpr) + (18.5 dpc * 0.09 cpr) + (9.2 dpg * 0.20 gpr) = 14.80 hdpr + 1.63 cdpr + 1.85 gdpr
-Certain      : 13.32 = (12.0 dph * 1.00 hpr) + (12.0 dpc * 0.11 cpr) + (6.0 dpg * 0.00 gpr) = 12.00 hdpr + 1.32 cdpr + 0.00 gdpr
-Extra        : 19.58 = (36.0 dph * 0.40 hpr) + (36.0 dpc * 0.04 cpr) + (18.0 dpg * 0.20 gpr) = 14.40 hdpr + 1.58 cdpr + 3.60 gdpr
-Power        : 20.13 = (37.0 dph * 0.40 hpr) + (37.0 dpc * 0.04 cpr) + (18.5 dpg * 0.20 gpr) = 14.80 hdpr + 1.63 cdpr + 3.70 gdpr
-Certain+     : 20.54 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.04 cdpr + 0.00 gdpr
-Power+       : 11.71 = (55.5 dph * 0.10 hpr) + (55.5 dpc * 0.01 cpr) + (27.8 dpg * 0.20 gpr) = 5.55 hdpr + 0.61 cdpr + 5.55 gdpr
+Accuracy     : 16.22 = (18.5 dph * 0.70 hpr) + (18.5 dpc * 0.08 cpr) + (9.2 dpg * 0.20 gpr) = 12.95 hdpr + 1.42 cdpr + 1.85 gdpr
+Certain      : 12.59 = (12.0 dph * 0.90 hpr) + (12.0 dpc * 0.10 cpr) + (6.0 dpg * 0.10 gpr) = 10.80 hdpr + 1.19 cdpr + 0.60 gdpr
+Extra        : 15.59 = (36.0 dph * 0.30 hpr) + (36.0 dpc * 0.03 cpr) + (18.0 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 3.60 gdpr
+Power        : 16.02 = (37.0 dph * 0.30 hpr) + (37.0 dpc * 0.03 cpr) + (18.5 dpg * 0.20 gpr) = 11.10 hdpr + 1.22 cdpr + 3.70 gdpr
+Certain+     : 19.41 = (18.5 dph * 0.90 hpr) + (18.5 dpc * 0.10 cpr) + (9.2 dpg * 0.10 gpr) = 16.65 hdpr + 1.83 cdpr + 0.92 gdpr
+Power+       : 8.88 = (55.5 dph * 0.10 hpr) + (55.5 dpc * 0.01 cpr) + (27.8 dpg * 0.10 gpr) = 5.55 hdpr + 0.56 cdpr + 2.78 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Certain Strike+ -- Greatmace
@@ -498,16 +498,16 @@ Power+       : 44.21 = (67.5 dph * 0.50 hpr) + (67.5 dpc * 0.06 cpr) + (33.8 dpg
 Triple       : 51.70 = (67.5 dph * 0.60 hpr) + (67.5 dpc * 0.07 cpr) + (33.8 dpg * 0.20 gpr) = 40.50 hdpr + 4.46 cdpr + 6.75 gdpr
 
 ### Defender: Ranger Longbow
-Best attack: Generic Triple Damage -- Greatmace
+Best attack: Powerful Greatmace
 
 #### Detailed attack results
-Accuracy     : 24.98 = (22.5 dph * 1.00 hpr) + (22.5 dpc * 0.11 cpr) + (11.2 dpg * 0.00 gpr) = 22.50 hdpr + 2.48 cdpr + 0.00 gdpr
-Certain      : 17.11 = (14.0 dph * 1.00 hpr) + (14.0 dpc * 0.22 cpr) + (7.0 dpg * 0.00 gpr) = 14.00 hdpr + 3.11 cdpr + 0.00 gdpr
-Extra        : 34.27 = (63.0 dph * 0.40 hpr) + (63.0 dpc * 0.04 cpr) + (31.5 dpg * 0.20 gpr) = 25.20 hdpr + 2.77 cdpr + 6.30 gdpr
-Power        : 34.47 = (45.0 dph * 0.60 hpr) + (45.0 dpc * 0.07 cpr) + (22.5 dpg * 0.20 gpr) = 27.00 hdpr + 2.97 cdpr + 4.50 gdpr
-Certain+     : 27.50 = (22.5 dph * 1.00 hpr) + (22.5 dpc * 0.22 cpr) + (11.2 dpg * 0.00 gpr) = 22.50 hdpr + 5.00 cdpr + 0.00 gdpr
-Power+       : 29.23 = (67.5 dph * 0.30 hpr) + (67.5 dpc * 0.03 cpr) + (33.8 dpg * 0.20 gpr) = 20.25 hdpr + 2.23 cdpr + 6.75 gdpr
-Triple       : 36.72 = (67.5 dph * 0.40 hpr) + (67.5 dpc * 0.04 cpr) + (33.8 dpg * 0.20 gpr) = 27.00 hdpr + 2.97 cdpr + 6.75 gdpr
+Accuracy     : 23.60 = (22.5 dph * 0.90 hpr) + (22.5 dpc * 0.10 cpr) + (11.2 dpg * 0.10 gpr) = 20.25 hdpr + 2.23 cdpr + 1.12 gdpr
+Certain      : 15.55 = (14.0 dph * 1.00 hpr) + (14.0 dpc * 0.11 cpr) + (7.0 dpg * 0.00 gpr) = 14.00 hdpr + 1.55 cdpr + 0.00 gdpr
+Extra        : 27.28 = (63.0 dph * 0.30 hpr) + (63.0 dpc * 0.03 cpr) + (31.5 dpg * 0.20 gpr) = 18.90 hdpr + 2.08 cdpr + 6.30 gdpr
+Power        : 29.48 = (45.0 dph * 0.50 hpr) + (45.0 dpc * 0.06 cpr) + (22.5 dpg * 0.20 gpr) = 22.50 hdpr + 2.48 cdpr + 4.50 gdpr
+Certain+     : 25.00 = (22.5 dph * 1.00 hpr) + (22.5 dpc * 0.11 cpr) + (11.2 dpg * 0.00 gpr) = 22.50 hdpr + 2.50 cdpr + 0.00 gdpr
+Power+       : 21.73 = (67.5 dph * 0.20 hpr) + (67.5 dpc * 0.02 cpr) + (33.8 dpg * 0.20 gpr) = 13.50 hdpr + 1.49 cdpr + 6.75 gdpr
+Triple       : 29.23 = (67.5 dph * 0.30 hpr) + (67.5 dpc * 0.03 cpr) + (33.8 dpg * 0.20 gpr) = 20.25 hdpr + 2.23 cdpr + 6.75 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Certain Strike+ -- Greatmace

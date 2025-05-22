@@ -246,7 +246,6 @@ fn add_bugbears(monsters: &mut Vec<MonsterEntry>) {
                     active_abilities: vec![
                         ActiveAbility::Strike(StrikeAbility::enraging_strike(1, Weapon::flail())),
                         ActiveAbility::Strike(StrikeAbility::enraging_strike(1, Weapon::sling())),
-                        ActiveAbility::Strike(StrikeAbility::trip(Weapon::flail())),
                     ],
                     senses: vec![Sense::Scent],
                     ..Default::default()
