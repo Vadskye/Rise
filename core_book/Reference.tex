@@ -147,9 +147,9 @@
   If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
   A creature that is both dominated and \confused obeys its dominated orders, ignoring the confusion.
 
-  \buffdef{empowered} An empowered creature rolls damage twice whenever it deals damage and keeps the higher result.
-  This only affects damage dealt directly by the creature, including conditions it inflicts.
-  For example, an empowered creature that uses an ability which causes \glossterm{knockback} does not roll the falling damage from the knockback twice.
+  \buffdef{empowered} An empowered creature rolls twice and keeps the higher result whenever it deals damage or causes hit point or damage resistance recovery.
+  This only affects damage and healing caused directly by the creature, excluding conditions it inflicts.
+  For example, an empowered creature that uses an ability which causes \glossterm{knockback} does not roll the damage from the knockback twice.
 
   \debuffdef{enraged} An enraged creature must spend a \glossterm{standard action} to make an attack during each round.
   It can still take other actions normally.
@@ -199,9 +199,9 @@
   \buffdef{honed} A honed creature gains a \plus4 accuracy bonus for the purpose of determining whether it gets a \glossterm{critical hit}.
   As normal, a miss or glancing blow cannot also get a critical hit.
 
-  \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage.
-  This only affects damage dealt directly by the creature, including conditions it inflicts.
-  For example, a maximized creature that uses an ability which causes \glossterm{knockback} does not maximize the falling damage from the knockback.
+  \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage, and causes the target to regain the maximum amount of hit points or damage resistance whenever it heals a target.
+  This only affects damage and healing caused directly by the creature, excluding conditions it inflicts.
+  For example, a maximized creature that uses an ability which causes \glossterm{knockback} does not maximize the damage from the knockback.
 
   \debuffdef{panicked} A panicked creature takes a \minus4 penalty to its Mental defense.
   In addition, it is unable to make any attacks that include the source of its fear as a target.
