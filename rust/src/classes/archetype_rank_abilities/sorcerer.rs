@@ -126,7 +126,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You cannot choose the same spell with more than two metamagic abilities.
+                Each individual spell can normally have one metamagic applied.
+                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
@@ -169,7 +170,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
-                In addition, the extra damage from Energetic Spell increases to be equal to your power.
             ",
             modifiers: None,
         },
@@ -451,12 +451,11 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 The extra damage increases as your rank in this archetype increases:
                 % Use a slightly slower progression than normal for extra damage.
                 % At higher levels, a sorcerer has more tools to mitigate the downsides of wildspell, and the extra damage is strong.
-                \rank{2} The extra damage increases to 1d6.   % +38% damage
-                \rank{3} The extra damage increases to 1d8.   % +35% damage
-                \rank{4} The extra damage increases to 1d10.  % +30% damage
-                \rank{5} The extra damage increases to 2d6.   % +27% damage
-                \rank{6} The extra damage increases to 3d6.   % +29% damage
-                \rank{7} The extra damage increases to 4d6.   % +27% damage
+                \rank{3} The extra damage increases to 1d6.   % +27% damage
+                \rank{4} The extra damage increases to 1d8.   % +25% damage
+                \rank{5} The extra damage increases to 1d10.  % +42% damage, assuming double extra damage
+                \rank{6} The extra damage increases to 2d6.   % +39% damage, assuming double extra damage
+                \rank{7} The extra damage increases to 2d8.   % +52% damage, assuming double extra damage
             ",
             // TODO: define extra damage modifier for scaling
             modifiers: Some(vec![Modifier::Power(2)]),
