@@ -38,34 +38,41 @@
 .weapons-explanation {
     margin-bottom: 0.5em;
 }
-.weapon {
-    margin-top: 1em;
 
-    .weapon-input, .weapon-calcs {
-        gap: 0.5em;
+.weapons {
+    .weapon:nth-child(1) {
+        margin-top: 0em;
     }
 
-    .weapon-calcs {
-        justify-content: space-between;
-    }
+    .weapon {
+        margin-top: 1em;
 
-    .calculated-weapon-damage input {
-        box-shadow: none;
-    }
-
-    .weapon-damage-dice {
-        width: 10em;
-
-        input {
-            text-align: center;
+        .weapon-input, .weapon-calcs {
+            gap: 0.5em;
         }
-    }
 
-    .weapon-name {
-        flex-grow: 1;
-    }
-    .weapon-tags {
-        width: 18em;
+        .weapon-calcs {
+            justify-content: space-between;
+        }
+
+        .calculated-weapon-damage input {
+            box-shadow: none;
+        }
+
+        .weapon-damage-dice {
+            width: 10em;
+
+            input {
+                text-align: center;
+            }
+        }
+
+        .weapon-name {
+            flex-grow: 1;
+        }
+        .weapon-tags {
+            width: 18em;
+        }
     }
 }
 
@@ -130,9 +137,23 @@
 }
 
 .paper {
-    .usage-class {
-        flex-basis: 8em;
+    .armor-definition {
+        > div {
+            flex-basis: 4em;
+        }
+        .name {
+            flex-basis: 18em;
+        }
+        .usage-class {
+            flex-basis: 8em;
+        }
+
+        /* TODO: should this be part of the roll20 sheet too? */
+        .armor-defense, .armor-damage-resistance, .shield-reflex, .armor-vital-rolls, .armor-speed, .armor-encumbrance {
+            align-items: center;
+        }
     }
+
 
     textarea {
         width: calc(100% - 0.5em);
@@ -142,7 +163,7 @@
     }
 
     .inventory {
-        height: 14em;
+        height: 13em;
     }
 
     .repeating_legacymodifiers {
@@ -151,6 +172,24 @@
 
     .legacy-item-effect {
         height: 6em;
+    }
+
+    .weapons {
+        .weapon:nth-child(1) {
+            margin-top: 0;
+        }
+        .weapon {
+            margin-top: 0.5em;
+            gap: 1em;
+
+            .weapon-damage-dice {
+                width: 6em;
+            }
+
+            .weapon-tags {
+                width: 14em;
+            }
+        }
     }
 
     .weapons-explanation {

@@ -70,7 +70,8 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
-  roles: AbilityRole[];
+  // TODO: make this mandatory
+  roles?: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'poison' | Record<string, string>;
   tableText?: string;
   tags?: string[];

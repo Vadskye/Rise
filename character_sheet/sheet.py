@@ -41,8 +41,8 @@ def main(destination):
             [
                 ["first_page", first_page],
                 ["paper_creation_page", paper_creation_page],
-                ["attribute_page", attribute_page],
                 ["items_page", items_page],
+                ["attribute_page", attribute_page],
             ]
         ):
             page = i + 1

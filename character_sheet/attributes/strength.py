@@ -64,7 +64,7 @@ def calc_brawling_accuracy():
         ]
     )
 
-def calc_brwan():
+def calc_brawn():
     return flex_row(
         [
             div({"class": "calc-header"}, "Brawn"),
@@ -103,39 +103,6 @@ def calc_brwan():
         ]
     )
 
-def calc_encumbrance():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Encumbrance"),
-            equation(
-                [
-                    underlabel(
-                        "Armor", number_input({"name": "body_armor_encumbrance"})
-                    ),
-                    minus(),
-                    underlabel(
-                        "Str",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "encumbrance_strength",
-                                "value": "(@{strength})",
-                            }
-                        ),
-                    ),
-                    minus(),
-                    equation_misc("encumbrance", 0),
-                    minus(),
-                    equation_misc("encumbrance", 1),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "encumbrance_display",
-                    "value": "@{encumbrance}",
-                },
-            ),
-        ]
-    )
 
 def calc_mundane_power():
     return flex_row(

@@ -88,7 +88,7 @@ export type RiseAttributeModifier =
   | 'willpower_at_creation'
   | 'willpower_level_scaling';
 // TODO: make these consistent; it's weird that only armor has the '_defense' suffix
-export type RiseDefense = 'armor_defense' | 'fortitude' | 'reflex' | 'mental';
+export type RiseDefense = 'armor_defense' | 'brawn' | 'fortitude' | 'reflex' | 'mental';
 
 export type RiseJumpDistance =
   | 'combined_jump_distance'

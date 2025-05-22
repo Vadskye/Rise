@@ -82,12 +82,6 @@
     width: 45em;
 }
 
-.paper .main-body {
-    margin-left: 0.5em;
-    width: 25em;
-    margin-right: 0.25em;
-}
-
 .defenses {
     flex-grow: 1;
     .defenses-row {
@@ -96,7 +90,7 @@
             flex-grow: 1;
             margin-left: 4px;
             margin-right: 2px;
-            height: 120px;
+            height: 140px;
             width: 10em;
         }
     }
@@ -159,9 +153,6 @@
             width: 5em;
         }
     }
-}
-.paper .defenses .defenses-row .special-defenses {
-    width: 8em;
 }
 
 .first-page > div, .all-statistics > div, .boring-row div {
@@ -385,21 +376,6 @@
     }
 }
 
-.paper-ability {
-    .ability-name {
-        width: 12em;
-        margin-right: 0.25em;
-        margin-top: 0.25em;
-    }
-    .ability-effect {
-        flex-grow: 1;
-    }
-    textarea {
-        height: 3em;
-        width: calc(100% - 0.5em);
-    }
-}
-
 .challenge-rating {
     width: 5em;
 }
@@ -416,7 +392,36 @@
     display: none;
 }
 
+.paper-ability {
+    .ability-name {
+        width: 12em;
+        margin-right: 0.25em;
+        margin-top: 0.25em;
+    }
+    .ability-effect {
+        flex-grow: 1;
+    }
+    textarea {
+        height: 3em;
+        width: calc(100% - 0.5em);
+    }
+}
+
 .paper {
+    .main-body {
+        margin-left: 0.5em;
+        width: 25em;
+        margin-right: 0.25em;
+    }
+
+    .useful-notes, .useful-notes-header {
+        display: none;
+    }
+
+    .attribute-section {
+        margin-bottom: 1em;
+    }
+
     /* Shrink the attributes and skills so they can fit on one page */
     .attributes-and-skills {
         font-size: 10pt;
