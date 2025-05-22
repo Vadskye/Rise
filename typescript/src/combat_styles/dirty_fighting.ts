@@ -20,11 +20,28 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Quivering Palm',
 
+      // We normally target about 1.2x for "no dr" maneuver effects. Since this requires
+      // unarmed, we give it an extra 20% or so, so this comes out to 1.4x.
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit If the target loses hit points, it takes \\damagerankseven.
+        \\hit If the target loses hit points, it takes \\damagerankfive.
+        On a critical hit, this damage is doubled.
       `,
       rank: 5,
+      roles: ['execute'],
+    },
+
+    {
+      name: 'Quivering Palm+',
+
+      // This is 1.49x, which is a bit high, but it's tricky to scale all parts of the
+      // damge here equally.
+      effect: `
+        Make a strike that deals double damage using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
+        \\hit If the target loses hit points, it takes \\damagerankseven.
+        On a critical hit, this damage is doubled.
+      `,
+      rank: 7,
       roles: ['execute'],
     },
 
