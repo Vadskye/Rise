@@ -94,82 +94,89 @@ pub fn potions() -> Vec<Tool> {
     });
 
     // Self-buff potion ranks:
-    // R0: 0.2 EA
-    // R1: 0.4 EA
-    // R2: 0.5 EA
-    // R3: 0.6 EA
-    // R4: 0.7 EA
-    // R5: 0.8 EA
-    // R6: 0.9 EA
+    // R0: 0.6 EA
+    // R1: 0.7 EA
+    // R2: 0.8 EA
+    // R4: 0.9 EA
+    // R6: 1.0 EA
+    // R8: 1.1 EA
 
     potions.push(Tool {
-        name: "Potion of Power".to_string(),
+        name: "Invigorating Potion".to_string(),
         rank: 0,
-        short_description: "Grants brief empowerment".to_string(),
+        short_description: "Grants power and fortification".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\empowered.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \fortified.
         ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Grants brief power and fortification", r"
+                This gains the \atSwift tag, so it protects you against attacks during the current phase.
+            "),
+        ],
         ..elixir()
     });
 
     potions.push(Tool {
         name: "Fortifying Potion".to_string(),
-        rank: 1,
+        rank: 2,
         short_description: "Grants brief fortification".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\fortified.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \fortified.
+            This has the \atSwift tag, so it protects you against attacks during the current phase.
         ".to_string(),
+        tags: vec![AbilityTag::Swift],
         ..elixir()
     });
 
     potions.push(Tool {
         name: "Shielding Potion".to_string(),
-        rank: 3,
+        rank: 2,
         short_description: "Grants brief shielding".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\shielded.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \shielded.
+            This has the \atSwift tag, so it protects you against attacks during the current phase.
         ".to_string(),
+        tags: vec![AbilityTag::Swift],
         ..elixir()
     });
 
     potions.push(Tool {
-        name: "Focusing Potion".to_string(),
-        rank: 1,
-        short_description: "Grants brief focus".to_string(),
-        description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\focused.
-        ".to_string(),
-        ..elixir()
-    });
-
-    // Theoretically 0.8, but drop to 0.7 - bracing is stronger when applied to allies, and this
-    // conflicts with total defense
-    potions.push(Tool {
-        name: "Bracing Potion".to_string(),
+        name: "Potion of Impending Violence".to_string(),
         rank: 4,
-        short_description: "Grants brief shielding".to_string(),
+        short_description: "Grants priming".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\braced.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \primed and \enraged.
         ".to_string(),
         ..elixir()
     });
 
     potions.push(Tool {
-        name: "Potion of Potential".to_string(),
-        rank: 5,
-        short_description: "Grants brief priming".to_string(),
+        name: "Potion of Sharpened Steel".to_string(),
+        rank: 1,
+        short_description: "Grants critical benefits".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\primed.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \honed and \steeled.
         ".to_string(),
         ..elixir()
     });
 
     potions.push(Tool {
         name: "Potion of Maximum Power".to_string(),
-        rank: 6,
+        rank: 3,
         short_description: "Grants brief maximization".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \\maximized.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \maximized.
+        ".to_string(),
+        ..elixir()
+    });
+
+    // 1.4 EA, but confusion is a big downside.
+    potions.push(Tool {
+        name: "Potion of Supremacy".to_string(),
+        rank: 6,
+        short_description: "Grants many benefits and confusion".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered, \primed, \braced, and \confused.
         ".to_string(),
         ..elixir()
     });

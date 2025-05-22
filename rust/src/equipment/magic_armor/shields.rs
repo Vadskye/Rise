@@ -144,7 +144,7 @@ pub fn shields() -> Vec<MagicArmor> {
                 Your minimum accuracy increases to $accuracy, and the condition also causes each target to take $dr5l damage during each of your subsequent actions.
             "),
         ],
-        tags: vec![AbilityTag::Visual],
+        tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         ..MagicArmor::default()
     }));
 

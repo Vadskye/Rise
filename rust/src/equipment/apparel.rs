@@ -48,6 +48,10 @@ impl Apparel {
     }
 
     pub fn to_latex(&self) -> String {
+        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+            eprintln!("Apparel {} must require attunement", self.item().name);
+        }
+
         item_latex(
             self.item().clone(),
             &format!("{} -- Craft ({})", self.category(), self.craft_materials()),

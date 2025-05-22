@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::{item_latex, latex_table, StandardItem};
 use crate::equipment::latex_table::{TableRow, ToTableRows};
 mod rods;
@@ -24,12 +24,16 @@ impl Implement {
     pub fn default() -> StandardItem {
         return StandardItem {
             magical: true,
-            tags: vec![AbilityTag::Attune(AttuneType::Personal)],
+            tags: vec![AbilityTag::personal_attunement()],
             ..Default::default()
         };
     }
 
     pub fn to_latex(&self) -> String {
+        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+            eprintln!("Implement {} must require attunement", self.item().name);
+        }
+
         item_latex(
             self.item().clone(),
             &format!("{} -- {}", self.category(), self.crafting_latex()),

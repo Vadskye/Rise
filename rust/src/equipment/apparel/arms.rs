@@ -74,7 +74,7 @@ fn bracers() -> Vec<Apparel> {
             When you do, you increase your \glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
             After you activate this item, you \glossterm{briefly} cannot do so again.
         "),
-        tags: vec![AbilityTag::Swift],
+        tags: vec![AbilityTag::Swift, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(4, "Can exert to gain instant +4 Armor defense", "
                 The defense bonus increases to +4.
@@ -323,7 +323,7 @@ fn gloves() -> Vec<Apparel> {
                 You can create an adamantine, pure diamondsteel, mithral, or silvered dagger (see \pcref<Weapon Special Materials>).
             "),
         ],
-        tags: vec![AbilityTag::Manifestation],
+        tags: vec![AbilityTag::Manifestation, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
