@@ -243,9 +243,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankseven immediately, and again during your next action.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankseven again.
           % TODO: wording
-          If the target loses hit points from either instance of this damage, it continues to burn for one additional round, taking damage again during your subsequent action.
+          If the target loses hit points from either instance of this damage, it continues to burn for one additional round, taking \\damagerankseven again during your subsequent action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -511,7 +512,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'eyes of flame',
-        exceptThat: 'the damage increases to \\damageranksix, and the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
+        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
       },
       rank: 5,
       roles: ['burst', 'softener'],

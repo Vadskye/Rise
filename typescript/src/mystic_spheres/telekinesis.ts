@@ -632,8 +632,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive immediately, and again during your next action.
-          If the target takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          During your during your next action, the target takes \\damagerankfive.
+          If the target takes a \\glossterm{vital wound} from either instance of damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,
         targeting: `
