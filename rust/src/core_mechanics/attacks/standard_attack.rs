@@ -3,13 +3,12 @@ use crate::core_mechanics::abilities::{
     Range, Targeting,
 };
 use crate::core_mechanics::attacks::attack_effect::{
-    AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect, PoisonEffect,
+    AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
 };
 use crate::core_mechanics::attacks::{
     Attack, AttackEffect, SimpleDamageEffect,
 };
 use crate::core_mechanics::{Debuff, Defense, SpeedCategory, Tag};
-use crate::equipment::StandardWeapon;
 use std::cmp::max;
 
 use super::attack::SimpleSpell;
@@ -18,7 +17,6 @@ pub enum StandardAttack {
     // Monster abilities
     AnkhegDrag,
     GibberingMoutherGibber,
-    FrostwebSpiderBite,
     MonsterSpikes(i32),
     OozeDissolve(i32),
     OozeEngulf(i32),
