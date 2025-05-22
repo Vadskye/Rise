@@ -45,7 +45,7 @@ def create_page(destination):
             div({"class": "weapons-explanation"}, f"""
                 As a reminder, your magical✨ power is {number_reminder("magical_power")}and your mundane power is {number_reminder("mundane_power")}.
             """),
-            *weapons(),
+            weapons(destination),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attunement Abilities and Equipment"),
@@ -196,6 +196,27 @@ def legacy_item(destination):
 def armor(destination, armor_type):
     parseable_type = armor_type.lower().replace(" ", "_")
 
+    body_armor_dr = labeled_number_input(
+        "DR",
+        {
+            "class": "armor-damage-resistance",
+            "title": "Not including any attuned effects",
+        },
+        input_attributes={"name": parseable_type + "_damage_resistance"},
+    )
+    shield_reflex = labeled_number_input(
+        "Ref",
+        {
+            "class": "shield-reflex",
+        },
+        input_attributes={"name": parseable_type + "_reflex"},
+    )
+    body_armor_vitals = labeled_number_input(
+        "Vital rolls",
+        {"class": "armor-vital-rolls"},
+        input_attributes={"name": parseable_type + "_vital_rolls"},
+    )
+
     return flex_row(
         {"class": "armor-definition"},
         [
@@ -205,31 +226,23 @@ def armor(destination, armor_type):
                 {"name": parseable_type + "_name"},
             ),
             labeled_number_input(
-                "+AD",
+                "AD",
                 {"class": "armor-defense"},
                 input_attributes={"name": parseable_type + "_defense"},
             ),
             (
+                body_armor_dr
+                if armor_type == "Body armor"
+                else shield_reflex
+            ),
+            (
                 labeled_number_input(
-                    "+DR",
-                    {
-                        "class": "armor-damage-resistance",
-                        "title": "Not including any attuned effects",
-                    },
-                    input_attributes={"name": parseable_type + "_damage_resistance"},
+                    "Encumbrance",
+                    {"class": "armor-encumbrance"},
+                    input_attributes={"name": parseable_type + "_encumbrance"},
                 )
                 if armor_type == "Body armor"
                 else div()
-            ),
-            labeled_number_input(
-                "Vital rolls",
-                {"class": "armor-vital-rolls"},
-                input_attributes={"name": parseable_type + "_vital_rolls"},
-            ),
-            labeled_number_input(
-                "Encumbrance",
-                {"class": "armor-encumbrance"},
-                input_attributes={"name": parseable_type + "_encumbrance"},
             ),
             (
                 labeled_number_input(
@@ -261,12 +274,17 @@ def armor(destination, armor_type):
     )
 
 
-def weapons():
-    return [weapon(i) for i in range(4)]
+def weapons(destination):
+    return div({"class": "weapons"}, [weapon(str(i), destination) for i in range(4)])
 
 
-def weapon(i):
-    i = str(i)
+def weapon(i, destination):
+    if destination == "paper":
+        return paper_weapon()
+    else:
+        return roll20_weapon(i)
+
+def roll20_weapon(i):
     return flex_col(
         {"class": "weapon"},
         [
@@ -310,18 +328,43 @@ def weapon(i):
                 ),
                 flex_row({"class": "calculated-weapon-damage"}, [
                     labeled_text_input(
-                        "Magical weapon damage",
+                        "Magical damage",
                         {"class": "weapon-damage-dice"},
                         input_attributes={"readonly": True, "name": f"weapon_{i}_magical_damage_total"},
                     ),
                     labeled_text_input(
-                        "Mundane weapon damage",
+                        "Mundane damage",
                         {"class": "weapon-damage-dice"},
                         input_attributes={"readonly": True, "name": f"weapon_{i}_mundane_damage_total"},
                     ),
                 ]),
             ]),
         ]
+    )
+
+def paper_weapon():
+    return flex_row(
+        {"class": "weapon"},
+        [
+            labeled_text_input(
+                "Name", {"class": "weapon-name"},
+            ),
+            labeled_number_input(
+                "Accuracy",
+                {"class": "weapon-accuracy"},
+            ),
+            labeled_text_input(
+                "Magical damage",
+                {"class": "weapon-damage-dice"},
+            ),
+            labeled_text_input(
+                "Mundane damage",
+                {"class": "weapon-damage-dice"},
+            ),
+            labeled_text_input(
+                "Tags", {"class": "weapon-tags"},
+            ),
+        ],
     )
 
 def wealth_items():

@@ -18,8 +18,8 @@ def prune_irrelevant_lines(lines):
     # We think we know which lines to remove. Remove them, then assert that they
     # had the correct shape, so we know if this assumption becomes out of sync
     # with the current state of sheet_worker.js.
-    removed_lines = lines[0:9]
-    lines = lines[9:]
+    removed_lines = lines[0:8]
+    lines = lines[8:]
 
     if "".join(removed_lines) != """"use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
@@ -28,8 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.handleEverything = handleEverything;
 const roll20_shim_1 = __importDefault(require("./roll20_shim"));
-const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow, } = roll20_shim_1.default;
-;
+const { on, getAttrs, setAttrs, getSectionIDs, generateRowID, removeRepeatingRow } = roll20_shim_1.default;
 """:
         raise Exception(f"Removal did not match expectation: |{''.join(removed_lines)}|")
 

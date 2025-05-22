@@ -49,7 +49,7 @@ def create_page(destination):
                     flex_col(
                         {"class": "sidebar"},
                         [
-                            attributes_and_skills(),
+                            attributes_and_skills(destination),
                         ],
                     ),
                     flex_col(
@@ -58,9 +58,9 @@ def create_page(destination):
                             statistics_header(destination),
                             div({"class": "section-header"}, "Movement and Senses"),
                             movement(destination),
-                            div({"class": "section-header"}, "Useful Notes"),
+                            div({"class": "section-header useful-notes-header"}, "Useful Notes"),
                             textarea(
-                                {"class": "special-defenses", "name": f"special_defenses"}
+                                {"class": "special-defenses useful-notes", "name": f"special_defenses"}
                             ),
                             *(
                                 roll20_abilities()
@@ -78,7 +78,7 @@ def create_page(destination):
 def paper_abilities():
     return [
         div({"class": "section-header"}, "Attacks and Abilities"),
-        *[paper_ability() for i in range(9)],
+        *[paper_ability() for i in range(8)],
     ]
 
 
@@ -137,12 +137,12 @@ def roll20_abilities():
     ])
 
 
-def attributes_and_skills():
+def attributes_and_skills(destination):
     return flex_col(
         {"class": "attributes-and-skills"},
         [
             flex_wrapper(div({"class": "section-header"}, "Attributes and Skills")),
-            "".join([attribute_section(attribute.lower()) for attribute in ATTRIBUTES]),
+            "".join([attribute_section(attribute.lower(), destination) for attribute in ATTRIBUTES]),
             flex_col(
                 {"class": "other-skills attribute-section"},
                 [
@@ -152,14 +152,14 @@ def attributes_and_skills():
                             div({"class": "other-skills"}, "Other Skills"),
                         ],
                     ),
-                    "".join([skill_box(skill) for skill in ATTRIBUTE_SKILLS["other"]]),
+                    "".join([skill_box(skill, destination) for skill in ATTRIBUTE_SKILLS["other"]]),
                 ],
             ),
         ],
     )
 
 
-def attribute_section(attribute):
+def attribute_section(attribute, destination):
     attribute_modifier = (
         f"(@{{{attribute}}} - @{{encumbrance}})"
         if attribute in ["strength", "dexterity"]
@@ -191,14 +191,14 @@ def attribute_section(attribute):
                     ),
                 ],
             ),
-            "".join([skill_box(skill) for skill in ATTRIBUTE_SKILLS[attribute]]),
+            "".join([skill_box(skill, destination) for skill in ATTRIBUTE_SKILLS[attribute]]),
         ],
     )
 
 
-def skill_box(name):
+def skill_box(name, destination):
     if name in SUBSKILLS:
-        return subskill_section(name)
+        return subskill_section(name, destination)
 
     modifier_key = get_modifier_key(name)
     return flex_row(
@@ -223,18 +223,53 @@ def skill_box(name):
     )
 
 
-def subskill_section(name):
+def subskill_section(name, destination):
     modifier_key = get_modifier_key(name)
-    return div({"class": "subskill-section"},
-        [
-            div({"class": "subskill-header"}, name),
-            untrained_subskill_box(name, modifier_key),
-            fieldset(
-                {"class": f"repeating_{modifier_key}subskills"},
-                subskill_box(name, modifier_key),
+
+    if destination == "paper":
+        return div({"class": "subskill-section"}, [
+            flex_row(
+                {"class": "skill-box"},
+                [
+                    subtlebutton(
+                        {},
+                        name + "________",
+                    ),
+                    number_input(
+                        {
+                            "readonly": True,
+                            "name": modifier_key,
+                        }
+                    ),
+                ],
             ),
-        ]
-    )
+            flex_row(
+                {"class": "skill-box"},
+                [
+                    subtlebutton(
+                        {},
+                        "__________________",
+                    ),
+                    number_input(
+                        {
+                            "readonly": True,
+                            "name": modifier_key,
+                        }
+                    ),
+                ],
+            )
+        ])
+    else:
+        return div({"class": "subskill-section"},
+            [
+                div({"class": "subskill-header"}, name),
+                untrained_subskill_box(name, modifier_key),
+                fieldset(
+                    {"class": f"repeating_{modifier_key}subskills"},
+                    subskill_box(name, modifier_key),
+                ),
+            ]
+        )
 
 
 def subskill_box(display_name, parseable_name):
@@ -461,6 +496,14 @@ def core_statistics(destination):
                     "value": "@{accuracy}",
                 },
             ),
+            sidelabeled_number_input(
+                "Speed",
+                input_attributes={
+                    "disabled": True,
+                    "name": f"speed_display",
+                    "value": "@{speed}",
+                },
+            ),
         ],
     )
 
@@ -470,14 +513,6 @@ def movement(destination):
         {"class": "movement"},
         [
             flex_row({"class": "standard-movements"}, [
-                sidelabeled_number_input(
-                    "Land",
-                    input_attributes={
-                        "disabled": True,
-                        "name": f"land_speed_display",
-                        "value": "@{land_speed}",
-                    },
-                ),
                 sidelabel(
                     "Jump",
                     text_input({
@@ -491,7 +526,7 @@ def movement(destination):
             ]),
             flex_row({"class": "blank-movements"}, [
                 text_input({"class": "movement-speed-name", "name": f"movement_speed_{i}_name"})
-                for i in range(4)
+                for i in range(5)
             ]),
         ],
     )
