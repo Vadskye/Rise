@@ -409,6 +409,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           When the effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
           Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
