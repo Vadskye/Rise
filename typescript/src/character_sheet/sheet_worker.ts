@@ -2316,9 +2316,6 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       ],
     },
     callback: (v) => {
-      if (defense === 'brawn') {
-        console.log("v", v);
-      }
       const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
