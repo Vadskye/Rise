@@ -302,27 +302,27 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    implements.push(Amulet(StandardItem {
+    apparel.push(Amulet(StandardItem {
         name: String::from("Collar of Imbuement (2)"),
         rank: 2,
         short_description: String::from(r"Grants a rank 2 magic weapon property to natural weapons"),
         description: String::from(r"
             This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 2.
         "),
-        ..Implement::default()
+        ..Apparel::default()
     }));
 
-    implements.push(Amulet(StandardItem {
+    apparel.push(Amulet(StandardItem {
         name: String::from("Collar of Imbuement (3)"),
         rank: 3,
         short_description: String::from(r"Grants a rank 3 magic weapon property to natural weapons"),
         description: String::from(r"
             This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 3.
         "),
-        ..Implement::default()
+        ..Apparel::default()
     }));
 
-    fn nth_collar(rank: i32) -> Implement {
+    fn nth_collar(rank: i32) -> Apparel {
         Amulet(StandardItem {
             name: format!("Collar of Imbuement ({})", rank),
             rank,
@@ -330,14 +330,14 @@ fn amulets() -> Vec<Apparel> {
             description: format!("
                 This item functions like a \\mitem<collar of imbuement>, except that the magic weapon property is rank {}.
             ", rank),
-            ..Implement::default()
+            ..Apparel::default()
         })
     }
 
-    implements.push(nth_collar(4));
-    implements.push(nth_collar(5));
-    implements.push(nth_collar(6));
-    implements.push(nth_collar(7));
+    apparel.push(nth_collar(4));
+    apparel.push(nth_collar(5));
+    apparel.push(nth_collar(6));
+    apparel.push(nth_collar(7));
 
     apparel
 }
@@ -349,6 +349,25 @@ fn rings() -> Vec<Apparel> {
     let mut apparel = vec![];
 
     apparel.push(Ring(StandardItem {
+        name: String::from("Baneswallow Ring"),
+        rank: 2,
+        short_description: String::from(r"Can exert and remove a condition to gain power"),
+        description: String::from(r"
+            You can activate this ring as a standard action.
+            When you do, you may remove a \glossterm{condition} affecting you.
+            If you remove a condition in this way, you are \glossterm{briefly} \empowered.
+
+            After you activate this item, you increase your \glossterm<fatigue level> by one.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Can remove a condition to gain power", r"
+                Activating this ring does not increase your fatigue level.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Ring(StandardItem {
         name: String::from("Ring of Desperate Breath"),
         rank: 1,
         short_description: String::from("Can exert to breathe briefly"),
@@ -357,7 +376,7 @@ fn rings() -> Vec<Apparel> {
             When you do, you increase your \glossterm<fatigue level> by one, and you can breathe in clean, fresh air regardless of your environment for one minute.
             This can be used in emergencies to save yourself from drowning or other perils.
         "),
-        tags: vec![AbilityTag::Air],
+        tags: vec![AbilityTag::Air, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -371,7 +390,7 @@ fn rings() -> Vec<Apparel> {
             This does not grant you the ability to breathe other liquids.
         ",
         ),
-        tags: vec![AbilityTag::Water],
+        tags: vec![AbilityTag::Water, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -406,7 +425,7 @@ fn rings() -> Vec<Apparel> {
                 You also need only a quarter of your normal amount of sleep (or similar activity, such as elven trance) each day.
             "),
         ],
-        tags: vec![AbilityTag::Creation],
+        tags: vec![AbilityTag::Creation, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 

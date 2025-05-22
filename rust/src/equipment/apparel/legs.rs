@@ -109,6 +109,25 @@ fn boots() -> Vec<Apparel> {
     }));
 
     apparel.push(Boots(StandardItem {
+        name: String::from("Bonded Boots"),
+        rank: 2,
+        short_description: String::from(r"Can teleport next to nearby bonded ally"),
+        description: String::from(r"
+            You can bond these boots to an \glossterm{ally} you \glossterm{touch} as a standard action.
+            While the bond lasts, you can activate the boots as a standard action.
+            When you do, you \glossterm{teleport} into the closest unoccupied square adjacent to that ally, if such a space exists within \medrange.
+
+            All bonds are removed if you remove or deattune from the boots and when you bond the boots to a new ally.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Can teleport next to distant bonded ally", r"
+                The teleportation range increases to \longrange.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Boots(StandardItem {
         name: String::from("Boots of Speed"),
         rank: 5,
         short_description: String::from("Increases speed by 10 feet"),
@@ -142,7 +161,7 @@ fn boots() -> Vec<Apparel> {
             If you are below the surface of the liquid, you rise towards the surface at a rate of 60 feet per round.
             Thick liquids, such as mud and lava, may cause you to rise more slowly.
         "),
-        tags: vec![AbilityTag::Water],
+        tags: vec![AbilityTag::Water, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -153,7 +172,7 @@ fn boots() -> Vec<Apparel> {
         description: String::from(r"
             You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
         "),
-        tags: vec![AbilityTag::Cold],
+        tags: vec![AbilityTag::Cold, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(3, "Greatly eases travel in cold areas", "
                 % TODO: degree symbol?

@@ -115,7 +115,7 @@ fn belts() -> Vec<Apparel> {
                 The healing increases to $dr7l.
             "),
         ],
-        tags: vec![AbilityTag::Swift],
+        tags: vec![AbilityTag::Swift, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -334,7 +334,7 @@ fn cloaks() -> Vec<Apparel> {
             \hit \damagerankthreelow.
             \miss Half damage.
         "),
-        tags: vec![AbilityTag::Fire],
+        tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(6, "Deals $dr6l damage when you recover", r"
                 The damage increases to $dr6l, and the area increases to a \medarea radius.

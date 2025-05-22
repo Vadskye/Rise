@@ -9,6 +9,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     let mut weapons = vec![];
 
     weapons.append(&mut energy_weapons());
+    weapons.append(&mut utility_weapons());
+    weapons.append(&mut composite_weapons());
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfrenzy"),
@@ -19,6 +21,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
+            ItemUpgrade::new(5, "Grants +3 accuracy when you injure a foe", r"
+                The accuracy bonus increases to +3.
+            "),
             ItemUpgrade::new(7, "Grants +4 accuracy when you injure a foe", r"
                 The accuracy bonus increases to +4.
             "),
@@ -73,21 +78,20 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // Int-based fighting is a pretty meaningful cost, so this gets +1dr.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Educated"),
-        rank: 2,
-        short_description: String::from(r"Deals +1d4 damage if you have 3 Int"),
+        rank: 3,
+        short_description: String::from(r"Deals +1d6 damage if you have 3 Int"),
         description: String::from(r"
-            If your Intelligence is at least 3, this weapon deals 1d4 \glossterm{extra damage}.
+            If your Intelligence is at least 3, this weapon deals 1d6 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Deals +1d6 damage if you have 4 Int", r"
-                If your Intelligence is at least 4, the extra damage increases to 1d6.
+            ItemUpgrade::new(5, "Deals +1d10 damage if you have 4 Int", r"
+                If your Intelligence is at least 4, the extra damage increases to 1d10.
             "),
-            // This gets to deal r7 extra damage because 5 Int is an unusually large sacrifice for
-            // a weapon effect.
-            ItemUpgrade::new(6, "Deals +1d10 damage if you have 5 Int", r"
-                If your Intelligence is at least 5, the extra damage increases to 1d10.
+            ItemUpgrade::new(7, "Deals +2d8 damage if you have 5 Int", r"
+                If your Intelligence is at least 5, the extra damage increases to 2d8.
             "),
         ],
         ..MagicWeapon::default()
@@ -146,14 +150,17 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             However, you gain a \plus3 bonus to your \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         "),
         upgrades: vec![
-            // Start with the first scenario.
-            // With an Unbalanced+ weapon, you hit on a 6+ and crit on a 6+.
-            // That means 0.5 + 0.2*0.5 + 0.5 = 1.1x hit damage per round.
-            //
-            // In the second scenario, you hit 100%, crit 60%, and double crit 6% = 1.66 dpr.
-            // That's 36% more damage than baseline, which is about right for r6.
-            ItemUpgrade::new(6, "-2 accuracy, but +6 for criticals", r"
+            // In the second scenario, you hit 100%, crit 50%, and double crit 5% = 1.55 dpr.
+            // That's 27% more damage than baseline, but with very high requirements, so r4 is
+            // fine.
+            ItemUpgrade::new(4, "-2 accuracy, but +5 for criticals", r"
                 The accuracy penalty increases to -2, but the critical hit accuracy bonus increases to +6.
+            "),
+            // Start from 130%, so 1.33 DPR. With this, you hit 100%, crit 70%, and double crit 7% = 1.77 dpr.
+            // That's 33% more damage than baseline, which is fine for r7 with such high
+            // requirements.
+            ItemUpgrade::new(7, "-3 accuracy, but +8 for criticals", r"
+                The accuracy penalty increases to -3, but the critical hit accuracy bonus increases to +8.
             "),
         ],
         ..MagicWeapon::default()
@@ -171,11 +178,11 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             In exchange, you deal 1d6 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can spend 8 HP for +1d8 damage", r"
-                The HP loss increases to 8, and the extra damage increases to 1d8.
+            ItemUpgrade::new(5, "Can spend 8 HP for +1d10 damage", r"
+                The HP loss increases to 8, and the extra damage increases to 1d10.
             "),
-            ItemUpgrade::new(7, "Can spend 16 HP for +2d6 damage", r"
-                The HP loss increases to 16, and the extra damage increases to 2d6.
+            ItemUpgrade::new(7, "Can spend 16 HP for +2d8 damage", r"
+                The HP loss increases to 16, and the extra damage increases to 2d8.
             "),
         ],
         ..MagicWeapon::default()
@@ -190,6 +197,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You gain a +1 bonus to \glossterm<accuracy> with \glossterm<strikes> using this weapon against creatures that are suffering penalties for being \frightened or \panicked.
         "),
         upgrades: vec![
+            // This is -3r, which is starting to push it, but it's still very situational
             ItemUpgrade::new(4, "Grants +2 accuracy vs scared foes", r"
                 The accuracy bonus increases to +2.
             "),
@@ -197,24 +205,130 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // Roughly focused, which is 0.4 EA, but the cooldown makes it closer to 0.3 EA
     weapons.push(Unrestricted(StandardItem {
-        name: String::from("Baneswallow"),
-        rank: 2,
-        short_description: String::from(r"Can exert and remove a condition to gain +2 accuracy"),
+        name: String::from("Fated"),
+        rank: 7,
+        short_description: String::from(r"Rerolls missed attacks"),
         description: String::from(r"
-            You can activate this weapon as a standard action.
-            When you do, you may remove a \glossterm{condition} affecting you.
-            If you remove a condition in this way, you \glossterm{briefly} gain a +2 accuracy bonus with this weapon.
+            Whenever you miss with an attack using this weapon, you can reroll the attack and take the higher result.
+            After you reroll an attack in this way, you \glossterm<briefly> cannot do so again.
+        "),
+        ..MagicWeapon::default()
+    }));
 
-            After you activate this item, you increase your \glossterm<fatigue level> by one.
+    // Same damage scaling as Resilient Blow
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Vampiric"),
+        rank: 4,
+        short_description: String::from(r"Deals +1d4 damage and steals HP"),
+        description: String::from(r"
+            This weapon deals 1d4 \glossterm{extra damage} to living creatures.
+            At the end of each round, if you caused a living creature to lose \glossterm{hit points} with a \glossterm{strike} using this weapon that round, you regain 1d4 hit points.
+            This healing cannot increase your hit points above half your maximum hit points.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can remove a condition to gain +2 accuracy", r"
-                Activating this weapon does not increase your fatigue level.
+            ItemUpgrade::new(6, "Deals +1d8 damage and steals HP", r"
+                The extra damage and healing increases to 1d8.
             "),
         ],
         ..MagicWeapon::default()
     }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Grounded"),
+        rank: 2,
+        short_description: String::from(r"Grants +1 accuracy while stationary"),
+        description: String::from(r"
+            Whenever you make a \glossterm{strike}, if you have not changed location since start of the round, you gain a \plus1 accuracy bonus with that strike.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(6, "Grants +2 accuracy while stationary", r"
+                The accuracy bonus increases to +2.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Psionic Burst"),
+        rank: 1,
+        short_description: String::from(r"Can attack Mental defense"),
+        description: String::from(r"
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
+            The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atCompulsion tag.
+        "),
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Psionic"),
+        rank: 3,
+        short_description: String::from(r"Is psychic, +1d4 damage"),
+        description: String::from(r"
+            This weapon's striking surface is ephemeral, and it echoes the thoughts of anyone touching it back into their head.
+            You can suppress or resume its psionic nature as a \glossterm{free action}.
+            While the weapon is psionic:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atCompulsion tag. This means that it is unable to damage most objects.
+                \item It deals 1d4 \glossterm{extra damage}.
+                \item Creatures take a -2 penalty to Mental defense against your strikes with it.
+            \end{raggeditemize}
+        "),
+        tags: vec![AbilityTag::Compulsion, AbilityTag::personal_attunement()],
+        upgrades: vec![
+            ItemUpgrade::new(5, "Is psychic, +1d8 damage", r"
+                The extra damage increases to 1d8.
+            "),
+            ItemUpgrade::new(7, "Is psychic, +2d6 damage", r"
+                The extra damage increases to 1d8.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Toxic Burst"),
+        rank: 1,
+        short_description: String::from(r"Can attack Fortitude defense"),
+        description: String::from(r"
+            As a standard action, you can make a mundane \glossterm<strike> using this weapon that transforms the striking surface to poison.
+            The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \atPoison tag.
+        "),
+        tags: vec![AbilityTag::Poison, AbilityTag::personal_attunement()],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Toxic"),
+        rank: 4,
+        short_description: String::from(r"Is poisonous, +1d6 damage"),
+        description: String::from(r"
+            This weapon's striking surface is liquified into a sinister poison.
+            You can suppress or resume its poisonous nature as a \glossterm{free action}.
+            While the weapon is poisonous:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atPoison tag. This means that it is unable to damage most objects.
+                \item It deals 1d6 \glossterm{extra damage}.
+                \item Poisons delivered with strikes using it gain a +2 accuracy bonus.
+            \end{raggeditemize}
+        "),
+        tags: vec![AbilityTag::Poison, AbilityTag::personal_attunement()],
+        upgrades: vec![
+            ItemUpgrade::new(6, "Is poisonous, +1d10 damage", r"
+                The extra damage increases to 1d10.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons
+}
+
+// These weapons aren't expected to be primary damage dealers. They have weird utility options that
+// make them useful for applying unique debuffs or other effects.
+fn utility_weapons() -> Vec<MagicWeapon> {
+    let mut weapons = vec![];
 
     // TODO: weird rank, unclear scaling? Can't make the range too long or else you can
     // teleport to allies / bags of rats with a dimensional trace longbow.
@@ -224,9 +338,9 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can briefly teleport next to struck creature"),
         description: String::from(r"
             As a standard action, you can make a \glossterm{strike} using this weapon.
-            If the target takes damage, you can apply a dimensional trace on it that lasts \glossterm{briefly}.
+            Each creature you hit with the strike \glossterm{briefly} has a dimensional trace applied to it.
             While the dimensional trace lasts, you can activate this weapon as a \glossterm{minor action}.
-            When you do, you \glossterm{teleport} into the closest unoccupied square adjacent to that creature, if such a space exists within \medrange.
+            When you do, you \glossterm{teleport} into the closest unoccupied square adjacent to a traced creature, if such a space exists within \medrange.
         "),
         ..MagicWeapon::default()
     }));
@@ -283,7 +397,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Cursebite"),
-        rank: 3,
+        rank: 4,
         short_description: String::from(r"Can inflict a curse"),
         description: String::from(r"
             Whenever you would inflict a \glossterm{condition} on a non-cursed creature with a strike using this weapon, that condition becomes a curse instead.
@@ -291,7 +405,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             If the effect has a special method of being removed, such as the \spell{entangle} spell, that removal method still functions normally.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Can inflict multiple curses", r"
+            ItemUpgrade::new(7, "Can inflict multiple curses", r"
                 The target does not have to be non-cursed, allowing you to apply multiple curses to the same creature.
             "),
         ],
@@ -301,15 +415,14 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Seeking"),
         rank: 2,
-        short_description: String::from(r"Reduces miss chances"),
+        short_description: String::from(r"Ignores cover and concealment"),
         description: String::from(r"
             This weapon automatically veers towards its intended target.
-            Any \glossterm<miss chance> the strike would normally have is reduced.
-            A 50\% miss chance is reduced to a 20\% miss chance, and a 20\% miss chance is removed entirely.
+            Your \glossterm{strikes} with the weapon are unaffected by \glossterm{cover} and 20\% \glossterm{miss chances}, such as from \glossterm{concealment}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Removes miss chances", r"
-                Any \glossterm<miss chance> the strike would normally have is removed completely instead of only being reduced.
+            ItemUpgrade::new(5, "Ignores cover and miss chances", r"
+                Your strikes with the weapon are also unaffected by 50\% miss chances.
             "),
         ],
         ..MagicWeapon::default()
@@ -321,7 +434,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals delayed damage"),
         description: String::from(r"
             This weapon is transluscent and has no physical presence for anyone except you.
-            It has no effect on objects or constructs, and creatures do not feel any pain or even notice attacks from it.
+            It has no effect on anything without a soul, such as an object or construct.
+            Creatures with a soul cannot be \trait{impervious} or \trait{immune} to damage from this weapon.
 
             Attacks with this weapon deal no damage immediately.
             This means that any effects which trigger when you deal damage with the attack, such as conditions, do not happen.
@@ -331,140 +445,10 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
             As a \glossterm<minor action>, you can hurt yourself with this weapon to activate it.
             This deals a single point of damage to you.
-            When you do, each creature with delayed damage from this weapon takes untyped damage equal to the total delayed damage built up by the weapon for that target.
+            When you do, each creature with delayed damage from this weapon takes damage equal to the total delayed damage built up by the weapon for that target.
             Creatures farther than one mile away from the weapon are unaffected by this damage.
             This ability expends all delayed damage built up by the weapon for all targets, including targets farther than one mile from the weapon.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Deals delayed damage", r"
-                You gain a +1 accuracy bonus with strikes using this weapon against creatures that have delayed damage from this weapon.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Fated"),
-        rank: 7,
-        short_description: String::from(r"Rerolls missed attacks"),
-        description: String::from(r"
-            Whenever you miss with an attack using this weapon, you can reroll the attack and take the higher result.
-            After you reroll an attack in this way, you \glossterm<briefly> cannot do so again.
-        "),
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        ..MagicWeapon::default()
-    }));
-
-    // Same damage scaling as Resilient Blow
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Vampiric"),
-        rank: 3,
-        short_description: String::from(r"Can attack with +1d4 damage to steal HP"),
-        description: String::from(r"
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon.
-            The strike deals 1d4 \glossterm{extra damage}.
-            If a living creature loses \glossterm{hit points} from this strike, you can increase your \glossterm{fatigue level} by one.
-            When you do, you regain $dr3l hit points at the end of the round.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Can attack with +2d8 damage to steal HP", r"
-                The extra damage increases to 2d8, and the healing increases to $dr5l.
-            "),
-            ItemUpgrade::new(7, "Can attack with +5d10 damage to steal HP", r"
-                The extra damage increases to 5d10, and the healing increases to $dr7l.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Grounded"),
-        rank: 2,
-        short_description: String::from(r"Grants +1 accuracy while stationary"),
-        description: String::from(r"
-            At the start of each \glossterm{action phase}, if you are in the same location you were in at the start of the round, you gain a \plus1 accuracy bonus during that round.
-            You immediately lose this accuracy bonus if you leave that location.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Grants +2 accuracy while stationary", r"
-                The accuracy bonus increases to +2.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Psionic Burst"),
-        rank: 2,
-        short_description: String::from(r"Can attack Mental defense"),
-        description: String::from(r"
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
-            The strike is made against the target's Mental defense instead of its Armor defense, and it gains the \atCompulsion tag.
-        "),
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Psionic"),
-        rank: 4,
-        short_description: String::from(r"Is psychic, can attack Mental defense"),
-        description: String::from(r"
-            This weapon's striking surface is ephemeral, and it echoes the thoughts of anyone touching it back into their head.
-            You can suppress or resume its psionic nature as a \glossterm{free action}.
-            While psionic, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCompulsion tag.
-            This means that it is unable to damage most objects.
-
-            As a standard action while this weapon is psionic, you can make a mundane \glossterm<strike> using this weapon that is imbued with psychic power.
-            The strike is made against the target's Mental defense instead of its Armor defense.
-            If the target takes damage, it becomes \stunned as a \glossterm{condition}.
-            If it was already stunned, it takes double damage from this attack instead.
-        "),
-        tags: vec![AbilityTag::Poison],
-        upgrades: vec![
-            ItemUpgrade::new(6, "Is psychic, can attack Mental defense", r"
-                The extra damage increases to 1d8.
-                In addition, the psychic attack deals triple damage to stunned creatures.
-            "),
-        ],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Toxic Burst"),
-        rank: 2,
-        short_description: String::from(r"Can attack Fortitude defense"),
-        description: String::from(r"
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon that transforms the striking surface to poison.
-            The strike is made against the target's Fortitude defense instead of its Armor defense, and it gains the \atPoison tag.
-        "),
-        tags: vec![AbilityTag::Poison],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
-        name: String::from("Toxic"),
-        rank: 4,
-        short_description: String::from(r"Is poisonous, can attack Fortitude defense"),
-        description: String::from(r"
-            This weapon's striking surface is liquified into a sinister poison.
-            You can suppress or resume its poisonous nature as a \glossterm{free action}.
-            While poisonous, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atPoison tag.
-            This means that it is unable to damage most objects.
-
-            As a standard action while this weapon is poisonous, you can make a mundane \glossterm<strike> using this weapon that fully transforms the striking surface to poison.
-            The strike is made against the target's Fortitude defense instead of its Armor defense.
-            If the target loses hit points from this strike, it becomes poisoned by the weapon.
-            The poison's accuracy is equal to the original strike's accuracy.
-            It inflicts 2d10 damage per poison stage.
-            Its stage 3 effect also ends the poison.
-        "),
-        tags: vec![AbilityTag::Poison],
-        upgrades: vec![
-            ItemUpgrade::new(6, "Is poisonous, can attack Fortitude defense", r"
-                The extra damage increases to 1d8.
-                In addition, the poison's damage increases to 6d10.
-            "),
-        ],
         ..MagicWeapon::default()
     }));
 
@@ -477,21 +461,21 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Prismatic"),
         rank: 4,
-        short_description: String::from(r"Is infused with cold, electricity, and fire"),
+        short_description: String::from(r"+1d6 damage, is energetic"),
         description: String::from(r"
             This weapon is infused with prismatic energy.
             You can suppress or resume this infusion as a \glossterm{free action}.
-            While infused, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCold, \atElectricity, and \atFire tags.
-            In addition, it sheds gradually shifting red, blue, and yellow light in a 15 foot radius of \glossterm{bright illumination}.
-
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon that intensifies the energy.
-            The strike deals double damage.
+            While the weapon is infused:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atCold, \atElectricity, and \atFire tags.
+                \item It deals 1d6 \glossterm{extra damage}.
+                \item It sheds light in a 15 foot radius of \glossterm{bright illumination}.
+            \end{raggeditemize}
         "),
-        tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire],
+        tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(6, "Is infused with cold, electricity, and fire", r"
-                The extra damage increases to 1d8.
-                In addition, the transformed attack deals triple damage.
+            ItemUpgrade::new(6, "+1d10 damage, is energetic", r"
+                The extra damage increases to 1d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -499,15 +483,19 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
-        rank: 4,
-        short_description: String::from(r"Deals 1d6 extra damage"),
+        rank: 3,
+        short_description: String::from(r"+1d4 damage, -10 Stealth"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-            Strikes with it deal 1d6 \glossterm{extra damage}.
+            Strikes with it deal 1d4 \glossterm{extra damage}.
+            However, you take a -10 penalty to Stealth checks.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Deals 2d8 extra damage", r"
-                The extra damage increases to 2d8.
+            ItemUpgrade::new(5, "+1d8 damage, -10 Stealth", r"
+                The extra damage increases to 1d8.
+            "),
+            ItemUpgrade::new(7, "+2d6 damage, -10 Stealth", r"
+                The extra damage increases to 2d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -518,59 +506,52 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Flaming"),
         rank: 3,
-        short_description: String::from(r"Is on fire and can ignite"),
+        short_description: String::from(r"Is burning and ignites"),
         description: String::from(r"
             This weapon constantly burns.
             You can suppress or resume this fire as a \glossterm{free action}.
-            While burning, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atFire tag.
-            It also sheds light in a 15 foot radius of \glossterm{bright illumination}.
-
-            As a standard action while the weapon is burning, you can make a mundane \glossterm<strike> using this weapon that is imbued with fiery energy.
-            If the target takes damage and your attack result also beats its Reflex defense, the target burns.
-            A burning creature takes 2d6 damage during your next action.
+            While the weapon is burning:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atFire tag.
+                \item Whenever you hit a creature with a strike using it, the creature burns.
+                    It takes 1d6 damage during your next action.
+                    This damage is doubled by critical hits and attacks that deal double damage.
+                \item It sheds red light in a 15 foot radius of \glossterm{bright illumination}.
+            \end{raggeditemize}
         "),
-        tags: vec![AbilityTag::Fire],
+        tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(5, "Is on fire and can ignite", r"
-                The extra damage increases to 1d8.
-                In addition, the burning damage increases to 4d10.
+            ItemUpgrade::new(5, "Is burning and ignites", r"
+                The damage increases to 1d10.
             "),
-            ItemUpgrade::new(7, "Is on fire and can ignite", r"
-                The extra damage increases to 3d6.
-                In addition, the burning damage increases to 10d10.
+            ItemUpgrade::new(7, "Is burning and ignites", r"
+                The damage increases to 2d8.
             "),
         ],
         ..MagicWeapon::default()
     }));
 
+    // How strong is chaining once? Electromancy spells treat chain (1) as being worth -1dr, which
+    // is about a 20% damage loss, but that's a bit cheating since it's sphere-specific. Say that
+    // this is a bit stronger than that, so it's rank 4.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Arcing"),
-        rank: 3,
-        short_description: String::from(r"Is electrically charged and can chain"),
+        rank: 4,
+        short_description: String::from(r"Is charged and chains"),
         description: String::from(r"
             This weapon continuously crackles with electricity.
             You can suppress or resume this charge as a \glossterm{free action}.
-            While charged, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atElectricity tag.
-            It also sheds light in a 5 foot radius of \glossterm{bright illumination}.
-
-            As a standard action while the weapon is charged, you can make a mundane \glossterm<strike> using this weapon that is imbued with electrical energy.
-            It \glossterm<chains> once.
+            While the weapon is charged:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atElectricity tag.
+                \item Your strikes using it \glossterm{chain} once.
+                \item It sheds yellow light in a 5 foot radius of \glossterm{bright illumination}.
+            \end{raggeditemize}
         "),
-        tags: vec![AbilityTag::Electricity],
-        // The baseline r3 strike deals (71%/69%) single-target damage.
-        // At higher levels, the multi-target becomes slightly less exciting since people have
-        // better AOE access, so we can scale that up, but it should still be less than 100%
-        // single-target damage for a character with a reasonably high power.
+        tags: vec![AbilityTag::Electricity, AbilityTag::personal_attunement()],
         upgrades: vec![
-            // 2d6 extra gives (13.6/16.8) damage, or (97%/75%)
-            ItemUpgrade::new(5, "Is electrically charged and can chain", r"
-                The extra damage increases to 1d8.
-                In addition, the chaining attack deals 2d6 \glossterm{extra damage}.
-            "),
-            // 4d10 extra gives (30.2/34.5) damage, or (108%/77%)
-            ItemUpgrade::new(7, "Is electrically charged and can chain", r"
-                The extra damage increases to 3d6.
-                In addition, the chaining attack's extra damage increases to 4d10.
+            ItemUpgrade::new(7, "+1d4 damage, is charged and chains", r"
+                While the weapon is charged, it also deals 1d4 \glossterm{extra damage}.
             "),
         ],
         ..MagicWeapon::default()
@@ -579,26 +560,45 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Freezing"),
         rank: 3,
-        short_description: String::from(r"Is cold and can slow"),
+        short_description: String::from(r"+1d4 damage, is chilled"),
         description: String::from(r"
             This weapon is bitterly cold to the touch.
             You can suppress or resume this chill as a \glossterm{free action}.
-            While chilled, the weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atCold tag.
-
-            As a standard action, you can make a mundane \glossterm<strike> using this weapon that is imbued with frigid energy.
-            If the target loses hit points from the strike, it becomes \slowed as a \glossterm{condition}.
+            While the weapon is chilled:
+            \begin{raggeditemize}
+                \item All strikes with it have the \atCold tag.
+                \item Your strikes using it deal 1d4 \glossterm{extra damage}.
+                \item It sheds blue light in a 5 foot radius of \glossterm{bright illumination}.
+            \end{raggeditemize}
         "),
-        tags: vec![AbilityTag::Cold],
+        tags: vec![AbilityTag::Cold, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(5, "Is cold and can slow", r"
+            ItemUpgrade::new(5, "+1d8 damage, is chilled", r"
                 The extra damage increases to 1d8.
-                In addition, the slowing attack deals 2d6 \glossterm{extra damage}.
             "),
-            ItemUpgrade::new(7, "Is cold and can slow", r"
-                The extra damage increases to 3d6.
-                In addition, the slowing attack's extra damage increases to 4d10.
+            ItemUpgrade::new(7, "+2d6 damage, is chilled", r"
+                The extra damage increases to 2d6.
             "),
         ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons
+}
+
+fn composite_weapons() -> Vec<MagicWeapon> {
+    let mut weapons = vec![];
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Composite Weapon, 1st"),
+        rank: 2,
+        short_description: String::from(r"Has two rank 1 properties"),
+        description: String::from(r"
+            This weapon has two different rank 1 magic weapon properties.
+            Each property must not already require a \glossterm{deep attunement}.
+            You cannot choose a composite weapon as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicWeapon::default()
     }));
 
