@@ -189,11 +189,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{elemental influence} ability, you can also command the elements to move as you desire.
                 Each element has different limitations on its ability to move, as described below.
                 \begin{itemize}
-                    \item Air: You can change the wind speed of air by up to 50 miles per hour.
+                    \item Air: You can change the wind speed of air by up to 30 miles per hour.
                         If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
+                    % TODO: clarify how this works
                     \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
-                    \item Fire: You can make fire leap up to 30 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
-                    \item Water: You can change the speed of water by up to 30 feet per round.
+                    \item Fire: You can make fire leap up to 60 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
+                    \item Water: You can change the speed of water by up to 20 feet per round.
                         If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
                 \end{itemize}
             ",
@@ -260,7 +261,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Plant Channeling",
             is_magical: true,
-            rank: 2,
+            rank: 1,
             description: r"
                 Whenever you cast a spell, you may use a Small or larger living plant within \medrange of you as a \glossterm{targeting proxy}.
                 This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
@@ -277,7 +278,8 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You cannot choose the same spell with more than two metamagic abilities.
+                Each individual spell can normally have one metamagic applied.
+                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Airborne Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.

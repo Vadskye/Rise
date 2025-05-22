@@ -63,7 +63,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Whenever you cast a spell, you can choose one \glossterm{ally} that is either targeted by that spell or \glossterm{attuned} to a spell you cast.
+                Once per round, when you cast a spell, you can choose one \glossterm{ally} that is either targeted by that spell or \glossterm{attuned} to a spell you cast.
                 During the next round, that ally is either \empowered or \steeled, as you choose.
             ",
             modifiers: None,
@@ -78,7 +78,8 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You cannot choose the same spell with more than two metamagic abilities.
+                Each individual spell can normally have one metamagic applied.
+                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Distant Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
@@ -120,7 +121,6 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
-                In addition, the extra damage from Smiting Spell increases to be equal to your magical power.
             ",
             modifiers: None,
         },
@@ -414,8 +414,8 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
     vec![
-        // stun as a condition in a T3 area is a rank 6 effect
-        // -3r for brief AOE means this would normally be rank 3
+        // Brief stun is 1.4 EA, so we would normally get a r1 area.
+        // As a class feature, this can get +1 rank, so it can affect a r3 area.
         RankAbility {
             complexity: 1,
             name: "Denounce the Heathens",
@@ -426,7 +426,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-                    Your \glossterm{accuracy} is equal to your Persuasion skill.
+                    For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
                     \hit Each target is \glossterm{briefly} \stunned.
 
                     \rankline
@@ -489,17 +489,18 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Inspiring Oration",
+            name: "Steady Oration",
             is_magical: false,
             rank: 4,
             description: r"
-                Your \glossterm{allies} who can hear you in a fight are immune to being \stunned and \confused.
+                Your \glossterm{allies} who can hear you in a fight are immune to being \stunned.
                 You must say inspiring words every few rounds to grant your allies this effect, though they can be brief, so this does not take an action.
             ",
             // TODO: figure out allies-only buffs
             modifiers: None,
         },
-        // t1.5 debuff in t5 area is a r6 effect
+        // Brief panic is r6, and frightened as a condition is r3. Smashing them together is
+        // tricky, but we can just call that the magic of a class ability.
         RankAbility {
             complexity: 1,
             name: "Condemn the Fearful",
@@ -509,12 +510,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Condemn the Fearful}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \hugearea radius from you.
-                    Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \frightened of you as a \glossterm{condition}.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                    For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
+                    \hit Each target is \glossterm{briefly} \panicked by you, and is \frightened of you as a \glossterm{condition}.
 
                     \rankline
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \panicked by you instead of frightened.
+                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \panicked by you as a condition instead of frightened.
                 \end{activeability}
             ",
             modifiers: None,
@@ -528,9 +529,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make an attack vs. Mental against one creature within \rngmed range.
-                    Your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The target is \stunned until it finishes a \glossterm{long rest}.
+                    Make an attack vs. Mental against one creature within \shortrange.
+                    If this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
+                    \hit The target is \glossterm{briefly} confused, and it is \stunned until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{activeability}
             ",

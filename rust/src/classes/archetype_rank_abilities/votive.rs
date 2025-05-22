@@ -464,12 +464,13 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You cannot choose the same spell with more than two metamagic abilities.
+                Each individual spell can normally have one metamagic applied.
+                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Desperate Spell} Choose a pact \glossterm{spell} you know.
                         When you cast the spell, you may choose to increase your \glossterm{fatigue level} by one.
-                        If you do, you gain a +2 accuracy bonus with the spell that round and roll accuracy twice, keeping the higher result.
+                        If you do, you become \empowered and \focused that round.
                         However, you cannot use the \ability{desperate exertion} ability to affect the spell that round.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
@@ -507,7 +508,6 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain two additional metamagic abilities.
-                In addition, the extra damage from Powerful Spell increases to be equal to your magical power.
             ",
             modifiers: None,
         },
@@ -558,7 +558,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 Your body is shaped by your soulkeeper's influence.
 
                 \subcf{Devil -- Calculating} You can use your Intelligence in place of your Dexterity to determine your Armor defense.
-                Your Intelligence is still halved by armor, just like your Dexterity would be.
+                Your Intelligence is still halved by armor just like your Dexterity would be.
 
                 \subcf{Fae -- Alluring} You gain a \plus3 \glossterm{enhancement bonus} to the Deception, Perform, and Persuasion skills.
                 
@@ -629,9 +629,10 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Fae -- Hidden Spell} The spell does not have \glossterm{verbal components} or \glossterm{somatic components}.
                     In addition, if it does not deal damage, it gains the \atSubtle tag.
 
-                    \subcf{Moirai -- Inevitable Spell} Whenever you make an attack roll with the spell, if the roll would be less than a 5, treat it as a 5 instead.
-                    This does not affect extra dice from exploding attacks.
-                    If any other effect would set the minimum roll result of the spell, increase that minimum roll result by 2.
+                    \subcf{Moirai -- Inevitable Spell} Whenever you would make an attack roll, you can instead determine if an attack result of 5 \add your \glossterm{accuracy} with the spell would result in a hit.
+                    If it does, you hit the target without making an attack roll.
+                    Otherwise, you roll the attack roll normally.
+                    This does not allow you to bypass other effects that can cause you to miss without making an attack roll, such as a \glossterm{miss chance}.
 
                     \subcf{Precursor -- Eldritch Spell} You gain a \plus2 accuracy bonus with the spell.
                     However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to your Fortitude and Reflex defenses.

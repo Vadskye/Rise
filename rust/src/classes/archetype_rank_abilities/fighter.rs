@@ -12,7 +12,9 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you gain a \glossterm{condition}, you \glossterm{briefly} ignore its effects.
+                You halve all penalties to your \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{movement speed} from temporary debuffs on you.
+                This includes the defense and speed penalties from being \slowed, the accuracy and Mental defense penalty from being \frightened, and so on.
+                It does not include permanent effects, such as if you are intrinsically \vulnerable to attacks.
             ",
             modifiers: None,
         },
@@ -404,6 +406,8 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // Goaded as a condition is 2.6 EA, and a r3 strike should only give 0.8 EA. The double
+        // attack is kind of enough, plus the class ability benefit.
         RankAbility {
             complexity: 1,
             name: "Sentinel's Challenge",
@@ -414,14 +418,15 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target takes damage, it becomes \goaded by you as a \glossterm{condition}.
+                    \hit The target is \glossterm{briefly} \goaded by you.
+                    If it was already briefly goaded by you, it becomes goaded by you until it finishes a \glossterm{short rest}.
 
                     % TODO: boring scaling, needs math in the spreadsheet
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
-                    \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals double damage.
-                    \rank{7} The accuracy bonus increases to +4.
+                    \rank{5} The strike deals double damage.
+                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{7} The strike deals triple damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -616,13 +621,14 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Coordinated Charge}
                     \abilityusagetime Standard action.
                     \rankline
-                    You can move up to half your \glossterm{movement speed}.
+                    You can move up to your \glossterm{movement speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
-                    Then, you can make a \glossterm{strike}.
-                    If you have at least two \glossterm{allies} adjacent to you, the strike deals double damage.
+                    After you stop moving, you can make a melee \glossterm{strike}.
+                    You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
+                    
 
                     \rankline
-                    \rank{4} You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
+                    \rank{4} If you have at least two \glossterm{allies} adjacent to you, the strike deals double damage.
                     \rank{5} The strike always deals double damage.
                     \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple damage.
                     \rank{7} The strike always deals triple damage.
