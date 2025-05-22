@@ -11,74 +11,63 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.append(&mut energy_weapons());
 
     weapons.push(Unrestricted(StandardItem {
-        name: String::from("Frenzy"),
-        rank: 3,
-        short_description: String::from("Grants +1 accuracy with continuous strikes"),
-        description: String::from(
-            r"
-                Whenever you make a \glossterm<strike> with this weapon, you \glossterm<briefly> gain a +1 bonus to \glossterm<accuracy> with all \glossterm<strikes>.
-                As normal, this bonus does not stack with itself.
-            ",
-        ),
-        upgrades: vec![ItemUpgrade::new(
-            6,
-            "Grants +2 accuracy with continuous strikes",
-            "The bonus increases to +2.",
-        )],
-        ..MagicWeapon::default()
-    }));
-
-    weapons.push(Unrestricted(StandardItem {
         name: String::from("Bloodfrenzy"),
-        rank: 2,
+        rank: 3,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
             Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
             As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +4 accuracy when you injure a foe", r"
+            ItemUpgrade::new(7, "Grants +4 accuracy when you injure a foe", r"
                 The accuracy bonus increases to +4.
             "),
         ],
         ..MagicWeapon::default()
     }));
 
-    // 20% chance of +5.5a = +1.1 accuracy with crits only
+    // Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is normally 0.98.
+    // With Lucky, on an 8, you have a 60% chance to crit on the explosion (crit on 5). On a 9, you
+    // have a 70% chance to crit on the explosion. Those simply add to the regular dpr, so it's
+    // 0.98 + 0.1 * 0.6 + 0.1 * 0.7 = 1.11, which is 13% more damage than baseline.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Lucky"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Attack rolls explode on 8+"),
         description: String::from(r"
             When you roll an 8 or 9 on your first die for an attack roll, the attack roll \glossterm{explodes} (see \pcref{Exploding Attacks}).
             This does not affect bonus dice from explosions.
         "),
-        // +2.2 accuracy with crits only
+        // This adds 0.1 * 0.5 + 0.1 * 0.4 + 0.1 * 0.3 = 1.23, which is 26% more damage than baseline.
         upgrades: vec![
-            ItemUpgrade::new(6, "Attack rolls explode on 6+", r"
-                The die also explodes if you roll an 6 or 7.
+            ItemUpgrade::new(5, "Attack rolls explode on 5+", r"
+                The die also explodes if you roll an 5, 6, or 7.
             "),
         ],
         ..MagicWeapon::default()
     }));
 
     weapons.push(Unrestricted(StandardItem {
-        // +1.5 damage
+        // +2.5 damage, which is a normal value for this rank. This doesn't get any extra damage from the strength 
+        // requirement because you probably want Strength anyway, probably want Strength anyway, and increasing
+        // your die variance makes you benefit more from being empowered/maximized. Also,
+        // increasing weapon damage instead of granting extra damage is situationally useful,
+        // though not generally a big power swing.
         name: String::from("Brutish"),
         rank: 3,
-        short_description: String::from(r"Deals +1d6-2 damage if you have 3 Str"),
+        short_description: String::from(r"Deals +1d6-1 damage if you have 3 Str"),
         description: String::from(r"
-            If your Strength is at least 3, this weapon deals +1d6 damage, but the damage is also reduced by 2.
+            If your Strength is at least 3, this weapon deals +1d6 damage, but the damage is also reduced by 1.
             This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
         "),
         upgrades: vec![
-            // +2.5 damage
-            ItemUpgrade::new(5, "Deals +1d8-2 damage if you have 4 Str", r"
+            // +3.5 damage
+            ItemUpgrade::new(5, "Deals +1d8-1 damage if you have 4 Str", r"
                 If your Strength is at least 4, the damage die increases to 1d8.
             "),
-            // +3.5 damage
-            ItemUpgrade::new(7, "Deals +1d10-2 damage if you have 5 Str", r"
-                If your Strength is at least 5, the damage die increases to 1d10.
+            // +6 damage
+            ItemUpgrade::new(7, "Deals +2d6-1 damage if you have 5 Str", r"
+                If your Strength is at least 5, the damage die increases to 2d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -92,11 +81,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             If your Intelligence is at least 3, this weapon deals 1d4 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Deals +1d8 damage if you have 4 Int", r"
-                If your Intelligence is at least 4, the extra damage increases to 1d8.
+            ItemUpgrade::new(4, "Deals +1d6 damage if you have 4 Int", r"
+                If your Intelligence is at least 4, the extra damage increases to 1d6.
             "),
-            ItemUpgrade::new(6, "Deals +3d6 damage if you have 5 Int", r"
-                If your Intelligence is at least 5, the extra damage increases to 3d6.
+            // This gets to deal r7 extra damage because 5 Int is an unusually large sacrifice for
+            // a weapon effect.
+            ItemUpgrade::new(6, "Deals +1d10 damage if you have 5 Int", r"
+                If your Intelligence is at least 5, the extra damage increases to 1d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -104,10 +95,10 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Finesse"),
-        rank: 4,
-        short_description: String::from(r"Grants +1 accuracy if you have 4 Dex"),
+        rank: 3,
+        short_description: String::from(r"Grants +1 accuracy if you have 3 Dex"),
         description: String::from(r"
-            If your Dexterity is at least 4, you gain a +1 accuracy bonus with this weapon.
+            If your Dexterity is at least 3, you gain a +1 accuracy bonus with \glossterm{strikes} using this weapon.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants +2 accuracy if you have 5 Dex", r"
@@ -125,8 +116,12 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You reduce your \glossterm<fatigue penalty> by 2 when determining your \glossterm<accuracy> with \glossterm<strikes> using this weapon.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Ignore fatigue with strikes", r"
+            // This is maybe a little weak, but rank 3 is overloaded and it's circumstantially
+            // strong, since the non-accuracy penalties from fatigue don't really matter in combat.
+            // With this weapon, you can pretty reasonably go up to -4 fatigue penalty.
+            ItemUpgrade::new(4, "Gain power while fatigued", r"
                 You ignore your \glossterm<fatigue penalty> when determining your \glossterm<accuracy> with \glossterm<strikes> using this weapon.
+                In addition, you are \empowered you have a \glossterm{fatigue penalty}.
             "),
         ],
         ..MagicWeapon::default()
@@ -137,6 +132,11 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     // You normally have 0.7 + 0.2*0.5 + 0.1 = 0.9x hit damage per round.
     // With an Unbalanced weapon, you hit on a 5+ and crit on a 8+.
     // That means 0.6 + 0.2*0.5 + 0.3 = 1x hit damage per round.
+    //
+    // Assume you have a 120% hit chance (+1 vs AD 0, so you crit on 9/10).
+    // Hit 100%, crit 20%, double crit 0.02 = 1.22 dpr.
+    // With unbalanced you hit 100%, crit 40%, double crit 4% = 1.44 dpr.
+    // That's 18% more damage, making this strong but reasonable.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Unbalanced"),
         rank: 2,
@@ -146,10 +146,13 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             However, you gain a \plus3 bonus to your \glossterm{accuracy} with \glossterm{strikes} using this weapon for the purpose of determining whether you get a \glossterm{critical hit}.
         "),
         upgrades: vec![
-            // Start with the above scenario.
+            // Start with the first scenario.
             // With an Unbalanced+ weapon, you hit on a 6+ and crit on a 6+.
             // That means 0.5 + 0.2*0.5 + 0.5 = 1.1x hit damage per round.
-            ItemUpgrade::new(5, "-2 accuracy, but +6 for criticals", r"
+            //
+            // In the second scenario, you hit 100%, crit 60%, and double crit 6% = 1.66 dpr.
+            // That's 36% more damage than baseline, which is about right for r6.
+            ItemUpgrade::new(6, "-2 accuracy, but +6 for criticals", r"
                 The accuracy penalty increases to -2, but the critical hit accuracy bonus increases to +6.
             "),
         ],
@@ -160,23 +163,25 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         name: String::from("Bloodfuel"),
         rank: 3,
         // Expected HP at rank 3 is approximately 25.
-        short_description: String::from(r"Can spend 4 HP for +1d8 damage"),
+        // This gets +1r of extra damage for the HP cost.
+        short_description: String::from(r"Can spend 4 HP for +1d6 damage"),
         description: String::from(r"
-            You can feed this weapon your blood as a \glossterm{minor action}.
+            You can feed this weapon your blood as a \glossterm{free action}.
             When you do, you lose 4 \glossterm{hit points}.
-            In exchange, you deal 1d8 \glossterm{extra damage} with strikes using this weapon during the current round.
+            In exchange, you deal 1d6 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can spend 8 HP for +2d8 damage", r"
-                The HP loss increases to 8, and the extra damage increases to 2d8.
+            ItemUpgrade::new(5, "Can spend 8 HP for +1d8 damage", r"
+                The HP loss increases to 8, and the extra damage increases to 1d8.
             "),
-            ItemUpgrade::new(7, "Can spend 16 HP for +4d8 damage", r"
-                The HP loss increases to 16, and the extra damage increases to 4d8.
+            ItemUpgrade::new(7, "Can spend 16 HP for +2d6 damage", r"
+                The HP loss increases to 16, and the extra damage increases to 2d6.
             "),
         ],
         ..MagicWeapon::default()
     }));
 
+    // This gets -2r for the unusual circumstances
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Routing"),
         rank: 1,
@@ -185,11 +190,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             You gain a +1 bonus to \glossterm<accuracy> with \glossterm<strikes> using this weapon against creatures that are suffering penalties for being \frightened or \panicked.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +2 accuracy vs scared foes", r"
+            ItemUpgrade::new(4, "Grants +2 accuracy vs scared foes", r"
                 The accuracy bonus increases to +2.
-            "),
-            ItemUpgrade::new(5, "Grants +3 accuracy vs scared foes", r"
-                The accuracy bonus increases to +3.
             "),
         ],
         ..MagicWeapon::default()
