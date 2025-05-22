@@ -30,6 +30,10 @@ impl MagicWeapon {
     }
 
     pub fn to_latex(&self) -> String {
+        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+            eprintln!("Weapon {} must require attunement", self.item().name);
+        }
+
         item_latex(
             self.item().clone(),
             // TODO: is it useful to subdivide weapons into categories here?

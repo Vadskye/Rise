@@ -18,7 +18,7 @@ pub fn rods() -> Vec<Implement> {
             \miss Half damage.
         ",
         ),
-        tags: vec![AbilityTag::Fire],
+        tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![ItemUpgrade::new(
             4,
             "Deals $dr4l damage in a cone",
@@ -42,7 +42,7 @@ pub fn rods() -> Vec<Implement> {
             \miss Half damage.
         ",
         ),
-        tags: vec![AbilityTag::Fire],
+        tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         ..Implement::default()
     }));
 
@@ -89,7 +89,7 @@ pub fn rods() -> Vec<Implement> {
             \hit $dr2l damage.
             If this attack beats a creature's Fortitude defense, it deals maximum damage.
         "),
-        tags: vec![AbilityTag::Visual],
+        tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(4, "Can deal $dr4l damage", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr4l.

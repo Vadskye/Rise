@@ -61,7 +61,7 @@ fn circlets() -> Vec<Apparel> {
                 except that it does not share the benefits of any \magical effects that improve your vision.
             You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \blinded.
         "),
-        tags: vec![AbilityTag::Scrying],
+        tags: vec![AbilityTag::Scrying, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(4, "Can allow you to quickly see at distance", r"
                 You can activate the item and sustain its effect as a \glossterm{minor action}.
@@ -120,7 +120,7 @@ fn crowns() -> Vec<Apparel> {
             This crown sheds \glossterm{bright illumination} in a \smallarea radius.
             You can touch the crown as a \glossterm{minor action} to suppress or resume the light.
         "),
-        tags: vec![AbilityTag::Visual],
+        tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(3, "Sheds great light", r"
                 The area increases to a \largearea radius.
@@ -137,7 +137,7 @@ fn crowns() -> Vec<Apparel> {
             This crown sheds \glossterm{brilliant illumination} in a \medarea radius.
             You can touch the crown as a \glossterm{minor action} to suppress or resume the light.
         "),
-        tags: vec![AbilityTag::Visual],
+        tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(6, "Sheds brilliant light", r"
                 The area increases to a \hugearea radius.
@@ -159,7 +159,7 @@ fn crowns() -> Vec<Apparel> {
             \hit $dr3l damage.
             \miss Half damage.
         "),
-        tags: vec![AbilityTag::Fire],
+        tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(5, "Can deal $dr5l damage around you", r"
                 The minimum accuracy increases to $accuracy, and the damage increases to $dr5l.
@@ -181,7 +181,7 @@ fn crowns() -> Vec<Apparel> {
             However, all other creatures within a \medarea radius \glossterm<emanation> from you hear the sound as a deafening, continuous roll of thunder.
             The noise blocks out all other sounds quieter than thunder, causing them to be \deafened while they remain in the area.
         "),
-        tags: vec![AbilityTag::Visual],
+        tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -192,7 +192,7 @@ fn crowns() -> Vec<Apparel> {
         description: String::from(r"
             Each creature suffering penalties for being \goaded by you takes an additional -1 \glossterm<accuracy> penalty against creatures other than you.
         "),
-        tags: vec![AbilityTag::Compulsion],
+        tags: vec![AbilityTag::Compulsion, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(6, "Increases accuracy penalty on goaded foes by 2", r"
                 The penalty increases to -2.
