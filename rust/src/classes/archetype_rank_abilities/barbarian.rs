@@ -50,15 +50,15 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Blow}[\atSwift (see text)]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike}.
+                    Make a melee \glossterm{strike} with a -2 accuracy penalty.
                     In addition, whenever you would reduce your \glossterm{hit points} this round, you lose half that many hit points instead (minimum 1).
                     This effect is \atSwift, but the strike is not.
 
                     \rankline
-                    \rank{4} If you are at your maximum hit points, the strike deals double damage.
-                    \rank{5} The strike always deals double damage.
-                    \rank{6} If you are at your maximum hit points, the strike deals triple damage.
-                    \rank{7} The strike always deals triple damage.
+                    \rank{4} The accuracy penalty is removed.
+                    \rank{5} If you are at your maximum hit points, the strike deals double damage.
+                    \rank{6} The strike always deals double damage.
+                    \rank{7} If you are at your maximum hit points, the strike deals triple damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -207,9 +207,9 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 When you use your \textit{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
-                Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+                Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a +1 bonus to your Brawn defense, a -1 penalty to your Reflex defense, and a -5 penalty to the Stealth skill.
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
-                Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects.
+                Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects (see \pcref{Stacking Rules}).
             ",
             // TODO: fully represent an increased size category
             modifiers: Some(vec![Modifier::BaseSpeed(10)]),

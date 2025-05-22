@@ -37,16 +37,6 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        RankAbility{
-            complexity: 0,
-            name: "Alchemical Toxins",
-            is_magical: true,
-            rank: 1,
-            description: r"
-                If you have access to arcane magic, you add the \sphere{toxicology} mystic sphere to your list of arcane mystic spheres (see \pcref{Mystic Spheres}).
-            ",
-            modifiers: None,
-        },
         RankAbility {
             complexity: 2,
             name: "Alchemical Discovery",
@@ -400,7 +390,8 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                You cannot choose the same spell with more than two metamagic abilities.
+                Each individual spell can normally have one metamagic applied.
+                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Calculated Spell} Choose an arcane \glossterm{spell} you know.
