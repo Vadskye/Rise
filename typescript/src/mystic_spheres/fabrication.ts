@@ -518,16 +518,14 @@ export const fabrication: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You create a nonmagical weapon that you are proficient with your hand or hands.
-        The weapon can be made of any special material other than cold iron (see \\pcref{Weapon Special Materials}.
-        Its rank cannot exceed your spellcasting rank with this spell.
+        You create an ordinary nonmagical weapon that you are proficient with your hand or hands.
 
         After the weapon appears, you can immediately make a \\glossterm{strike} with that weapon.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you create a \\weapontag{Projectile} weapon that is not from the crossbow weapon group, you also create ammunition necessary for you to attack with.
         After you make the strike, the weapon disappears.
       `,
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -544,7 +542,38 @@ export const fabrication: MysticSphere = {
           Whenever your spellcasting rank with this spell increases, you can choose a new magic weapon property.
         `,
       },
-      rank: 4,
+      rank: 3,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    // r1 area is normally drX. Balance this assuming you use it for 2 rounds, so average the
+    // first and second round for effectiveness. This is roughly dr2 area in a r1 area, which is on
+    // rate.
+    {
+      name: 'Blade Barrage',
+
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a \\magical melee \\glossterm{strike}.
+        The strike targets all \\glossterm{enemies} in a \\smallarea cone from you.
+        For each previous consecutive round in which you used this ability, you gain a +2 accuracy bonus with the strike, up to a maximum of +4.
+        \\miss Half damage.
+      `,
+      rank: 2,
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Blade Barrage',
+
+      functionsLike: {
+        name: 'blade barrage',
+        exceptThat: 'the strike deals double damage.',
+      },
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },

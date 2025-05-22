@@ -314,8 +314,8 @@ export const polymorph: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven.
-          This damage is doubled if the target is an object.
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          This damage is \\maximized if the target is an object.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
@@ -636,7 +636,7 @@ export const polymorph: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, it takes this damage again during your next action.
+          If the target loses \\glossterm{hit points}, it takes \\damagerankone during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -652,9 +652,9 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'bleed',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'both damage instances increase to \\damagerankfive.',
       },
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       scaling: 'accuracy',
     },
@@ -804,7 +804,7 @@ export const polymorph: MysticSphere = {
       // -1r for limited scope, -1r for Reflex extra gives 3 EA, or 2 after damage
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
           If the target loses \\glossterm{hit points}, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         missGlance: true,
@@ -863,7 +863,7 @@ export const polymorph: MysticSphere = {
       // HP slow with damage requires 2.6 EA, or r7. Melee range allows that at r5.
       attack: {
         hit: `
-          \\damageranksix.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
           If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `

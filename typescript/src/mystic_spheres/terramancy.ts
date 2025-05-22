@@ -156,7 +156,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       functionsLike: {
         name: 'crushing gravity',
-        exceptThat: 'the damage increases to \\damageranksix.',
+        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['burst'],
@@ -232,7 +232,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against one creature in \\shortrange.
@@ -249,7 +249,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       attack: {
         hit: `
-          \\damagerankeight.
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Armor and Reflex against one creature in \\shortrange.
