@@ -374,12 +374,12 @@ Power+       : 48.67 = (55.5 dph * 0.70 hpr) + (55.5 dpc * 0.08 cpr) + (27.8 dpg
 Best attack: Powerful Greataxe
 
 #### Detailed attack results
-Accuracy     : 22.61 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.22 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 4.11 cdpr + 0.00 gdpr
-Certain      : 16.61 = (11.5 dph * 1.00 hpr) + (11.5 dpc * 0.44 cpr) + (5.8 dpg * 0.00 gpr) = 11.50 hdpr + 5.11 cdpr + 0.00 gdpr
-Extra        : 35.57 = (36.0 dph * 0.80 hpr) + (36.0 dpc * 0.09 cpr) + (18.0 dpg * 0.20 gpr) = 28.80 hdpr + 3.17 cdpr + 3.60 gdpr
-Power        : 36.56 = (37.0 dph * 0.80 hpr) + (37.0 dpc * 0.09 cpr) + (18.5 dpg * 0.20 gpr) = 29.60 hdpr + 3.26 cdpr + 3.70 gdpr
-Certain+     : 26.71 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.44 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 8.21 cdpr + 0.00 gdpr
-Power+       : 36.35 = (55.5 dph * 0.50 hpr) + (55.5 dpc * 0.06 cpr) + (27.8 dpg * 0.20 gpr) = 27.75 hdpr + 3.05 cdpr + 5.55 gdpr
+Accuracy     : 20.55 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.05 cdpr + 0.00 gdpr
+Certain      : 15.33 = (11.5 dph * 1.00 hpr) + (11.5 dpc * 0.33 cpr) + (5.8 dpg * 0.00 gpr) = 11.50 hdpr + 3.83 cdpr + 0.00 gdpr
+Extra        : 31.57 = (36.0 dph * 0.70 hpr) + (36.0 dpc * 0.08 cpr) + (18.0 dpg * 0.20 gpr) = 25.20 hdpr + 2.77 cdpr + 3.60 gdpr
+Power        : 32.45 = (37.0 dph * 0.70 hpr) + (37.0 dpc * 0.08 cpr) + (18.5 dpg * 0.20 gpr) = 25.90 hdpr + 2.85 cdpr + 3.70 gdpr
+Certain+     : 24.66 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.33 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 6.16 cdpr + 0.00 gdpr
+Power+       : 30.19 = (55.5 dph * 0.40 hpr) + (55.5 dpc * 0.04 cpr) + (27.8 dpg * 0.20 gpr) = 22.20 hdpr + 2.44 cdpr + 5.55 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Powerful Greataxe
@@ -501,13 +501,13 @@ Triple       : 67.66 = (64.5 dph * 0.90 hpr) + (64.5 dpc * 0.10 cpr) + (32.2 dpg
 Best attack: Generic Triple Damage -- Greataxe
 
 #### Detailed attack results
-Accuracy     : 28.66 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.33 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 7.16 cdpr + 0.00 gdpr
-Certain      : 20.21 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 0.56 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 7.22 cdpr + 0.00 gdpr
-Extra        : 54.37 = (62.0 dph * 0.70 hpr) + (62.0 dpc * 0.08 cpr) + (31.0 dpg * 0.20 gpr) = 43.40 hdpr + 4.77 cdpr + 6.20 gdpr
-Power        : 45.11 = (43.0 dph * 0.90 hpr) + (43.0 dpc * 0.10 cpr) + (21.5 dpg * 0.10 gpr) = 38.70 hdpr + 4.26 cdpr + 2.15 gdpr
-Certain+     : 33.43 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.56 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 11.93 cdpr + 0.00 gdpr
-Power+       : 49.41 = (64.5 dph * 0.60 hpr) + (64.5 dpc * 0.07 cpr) + (32.2 dpg * 0.20 gpr) = 38.70 hdpr + 4.26 cdpr + 6.45 gdpr
-Triple       : 56.57 = (64.5 dph * 0.70 hpr) + (64.5 dpc * 0.08 cpr) + (32.2 dpg * 0.20 gpr) = 45.15 hdpr + 4.97 cdpr + 6.45 gdpr
+Accuracy     : 26.27 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.22 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 4.77 cdpr + 0.00 gdpr
+Certain      : 18.77 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 0.44 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 5.77 cdpr + 0.00 gdpr
+Extra        : 47.49 = (62.0 dph * 0.60 hpr) + (62.0 dpc * 0.07 cpr) + (31.0 dpg * 0.20 gpr) = 37.20 hdpr + 4.09 cdpr + 6.20 gdpr
+Power        : 42.48 = (43.0 dph * 0.80 hpr) + (43.0 dpc * 0.09 cpr) + (21.5 dpg * 0.20 gpr) = 34.40 hdpr + 3.78 cdpr + 4.30 gdpr
+Certain+     : 31.05 = (21.5 dph * 1.00 hpr) + (21.5 dpc * 0.44 cpr) + (10.8 dpg * 0.00 gpr) = 21.50 hdpr + 9.55 cdpr + 0.00 gdpr
+Power+       : 42.25 = (64.5 dph * 0.50 hpr) + (64.5 dpc * 0.06 cpr) + (32.2 dpg * 0.20 gpr) = 32.25 hdpr + 3.55 cdpr + 6.45 gdpr
+Triple       : 49.41 = (64.5 dph * 0.60 hpr) + (64.5 dpc * 0.07 cpr) + (32.2 dpg * 0.20 gpr) = 38.70 hdpr + 4.26 cdpr + 6.45 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Generic Triple Damage -- Greataxe

@@ -17,10 +17,10 @@ Complexity is calculated at (rank 3 / rank 7).
 * Healer: 3 / 6
 * Preacher: 3 / 8
             
-## druid: 24 / 43
+## druid: 23 / 42
 * Elementalist: 6 / 10
 * Nature Magic: 5 / 6
-* Nature Spell Mastery: 4 / 8
+* Nature Spell Mastery: 3 / 7
 * Shifter: 5 / 11
 * Wildspeaker: 4 / 8
             
@@ -45,10 +45,10 @@ Complexity is calculated at (rank 3 / rank 7).
 * Stalwart Guardian: 1 / 3
 * Zealous Warrior: 3 / 8
             
-## ranger: 21 / 27
+## ranger: 21 / 26
 * Beastmaster: 3 / 6
 * Boundary Warden: 5 / 6
-* Huntmaster: 4 / 5
+* Huntmaster: 4 / 4
 * Scout: 3 / 4
 * Wilderness Warrior: 6 / 6
             
