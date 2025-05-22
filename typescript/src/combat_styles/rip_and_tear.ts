@@ -97,7 +97,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         \\hit The target bleeds.
-        A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
       rank: 5,
@@ -124,7 +124,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike that deals double damage.
         \\hit The target burns.
-        A burning creature takes damage equal to 3d6 \add your power during your next action.
+        A burning creature takes damage equal to 3d6 \\add your power during your next action.
         On a critical hit, this burning damage is doubled.
       `,
       rank: 7,
@@ -220,7 +220,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         \\hit If the target loses hit points, it bleeds.
-        A bleeding creature takes damage equal to 1d4 \add half your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to 1d4 \\add half your \\glossterm{power} during your next action.
         On a critical hit, this bleeding damage is doubled.
       `,
       rank: 1,
@@ -235,7 +235,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} that deals double damage.
         \\hit If the target loses hit points, it bleeds profusely.
-        A bleeding creature takes damage equal to 2d6 \add your \\glossterm{power} during your next two actions.
+        A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next two actions.
         On a critical hit, this bleeding damage is doubled.
       `,
       rank: 5,

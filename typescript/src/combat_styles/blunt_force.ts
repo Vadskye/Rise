@@ -1,4 +1,5 @@
 import { CombatStyle } from '.';
+import { CONDITION_CRIT } from '../mystic_spheres/constants';
 
 export const bruteForce: CombatStyle = {
   name: 'Brute Force',
@@ -307,6 +308,7 @@ export const bruteForce: CombatStyle = {
 
       // Start from r6 due to 0.2 EA buff, limited scope gets us back to r7
       attack: {
+        crit: CONDITION_CRIT,
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.

@@ -84,6 +84,7 @@ export const heraldOfWar: CombatStyle = {
       // baseline for a brief + HP goad is r1. We can spend two ranks on area to get a r5
       // area.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\goaded by you.
           If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
@@ -101,6 +102,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Goading Roar+',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -131,6 +133,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Enraging Roar',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\enraged as a \\glossterm{condition}.
         `,
@@ -147,6 +150,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Fearsome Roar',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\frightened by you.
           Each target with no remaining \\glossterm{damage resistance} also becomes frightened of you as a \\glossterm{condition}.
@@ -166,8 +170,8 @@ export const heraldOfWar: CombatStyle = {
       // Frightened as a condition is theoretically r4, not sure why this is r5. No room
       // to increase area because we'd need to spend two ranks on it
       attack: {
-        hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         crit: CONDITION_CRIT,
+        hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -297,6 +301,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenge+',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\goaded by you.
           Each target with no remaining \\glossterm{damage resistance} is also goaded as a \\glossterm{condition}.
@@ -402,6 +407,7 @@ export const heraldOfWar: CombatStyle = {
       // rank of 2. Deafened as a condition is 1.2 EA so we get two ranks of +area, which
       // brings us to an area rank of 4.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `Each target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.

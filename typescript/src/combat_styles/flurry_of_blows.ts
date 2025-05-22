@@ -266,7 +266,7 @@ export const flurryOfBlows: CombatStyle = {
       // Normally blind would be too strong, but requiring all three strikes to hit
       // means this is probably fine.
       effect: `
-        Make three melee \\glossterm{strikes} with a \minus1 accuracy penalty.
+        Make three melee \\glossterm{strikes} with a \\minus1 accuracy penalty.
         If all three strikes deal damage and also hit the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
       `,
       rank: 7,

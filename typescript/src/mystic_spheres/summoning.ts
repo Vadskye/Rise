@@ -182,6 +182,7 @@ export const summoning: MysticSphere = {
           \\damagerankthree.
           You \\glossterm{push} each target that takes damage up to 15 feet horizontally away from you.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Brawn against everything that is \\glossterm{grounded} in a \\medarealong, 10 ft. wide line from you.
         `,

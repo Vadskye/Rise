@@ -21,7 +21,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
-        You \\glossterm{briefly} gain a \plus10 foot bonus to your \\glossterm{movement speed} and are \\primed.
+        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{movement speed} and are \\primed.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 1,
@@ -33,7 +33,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You \\glossterm{briefly} gain a \plus10 foot bonus to your \\glossterm{movement speed} and are \\primed and \\steeled.
+        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{movement speed} and are \\primed and \\steeled.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 5,

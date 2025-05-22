@@ -530,7 +530,7 @@ export const umbramancy: MysticSphere = {
           If the target enters \\glossterm{brilliant illumination}, the effect automatically ends.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature you \glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
           You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
