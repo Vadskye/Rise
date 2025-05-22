@@ -470,7 +470,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 3,
         short_description: String::from(r"Empowers you"),
         description: String::from(r"
-            You are \\empowered.
+            You are \empowered.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "+1d4 damage, empowers you", r"
