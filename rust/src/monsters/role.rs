@@ -77,8 +77,8 @@ impl Role {
             },
             Role::Warrior => match defense {
                 &Armor => 5,
-                &Brawn => 1,
-                &Fortitude => 1,
+                &Brawn => 0,
+                &Fortitude => 2,
                 &Reflex => 0,
                 &Mental => 0,
             },
