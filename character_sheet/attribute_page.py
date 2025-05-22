@@ -24,7 +24,7 @@ from sheet_data import (
     SUBSKILLS,
 )
 from sheet_worker import standard_damage_at_power
-from attributes.strength import calc_brawling_accuracy, calc_encumbrance, calc_mundane_power, calc_jump_distance
+from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
 from attributes.dexterity import calc_armor, calc_reflex
 from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
 from attributes.intelligence import calc_insight_points, calc_trained_skills
@@ -202,7 +202,7 @@ def calc_strength_based():
         [
             calc_attribute("Strength"),
             calc_brawling_accuracy(),
-            calc_encumbrance(),
+            calc_brawn(),
             calc_mundane_power(),
             calc_jump_distance(),
             display_skills_for_attribute("Strength", calc_skill),
@@ -275,12 +275,13 @@ def calc_non_attribute():
                 [
                     calc_attunement_points(),
                     calc_damage_resistance(),
-                    calc_vital_rolls(),
+                    calc_encumbrance(),
                 ],
             ),
             flex_col(
                 {"class": "main-body"},
                 [
+                    calc_vital_rolls(),
                     display_skills_for_attribute("Other", calc_skill),
                 ],
             )
@@ -343,6 +344,40 @@ def calc_attunement_points():
         ]
     )
 
+
+def calc_encumbrance():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Encumbrance"),
+            equation(
+                [
+                    underlabel(
+                        "Armor", number_input({"name": "body_armor_encumbrance"})
+                    ),
+                    minus(),
+                    underlabel(
+                        "Str",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "encumbrance_strength",
+                                "value": "(@{strength})",
+                            }
+                        ),
+                    ),
+                    minus(),
+                    equation_misc("encumbrance", 0),
+                    minus(),
+                    equation_misc("encumbrance", 1),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "encumbrance_display",
+                    "value": "@{encumbrance}",
+                },
+            ),
+        ]
+    )
 
 def calc_vital_rolls():
     return flex_row(

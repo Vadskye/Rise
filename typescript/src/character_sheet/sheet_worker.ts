@@ -31,6 +31,7 @@ interface BaseClassModifier {
   armor_usage_class?: 'light' | 'medium' | 'heavy';
   damage_resistance?: ProgressionName;
   hit_points: ProgressionName;
+  brawn: number;
   fortitude: number;
   reflex: number;
   mental: number;
@@ -50,7 +51,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_usage_class: 'medium',
     damage_resistance: 'medium',
     hit_points: 'extreme',
-    fortitude: 2,
+    brawn: 2,
+    fortitude: 1,
     reflex: 1,
     mental: 0,
   },
@@ -59,6 +61,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_usage_class: 'medium',
     damage_resistance: 'high',
     hit_points: 'very high',
+    brawn: 1,
     fortitude: 1,
     reflex: 1,
     mental: 1,
@@ -68,8 +71,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_usage_class: 'medium',
     damage_resistance: 'very high',
     hit_points: 'high',
+    brawn: 0,
     fortitude: 1,
-    reflex: 1,
+    reflex: 2,
     mental: 3,
   },
   skirmisher: {
@@ -77,6 +81,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_usage_class: 'medium',
     damage_resistance: 'medium',
     hit_points: 'very high',
+    brawn: 1,
     fortitude: 0,
     reflex: 2,
     mental: 1,
@@ -86,16 +91,18 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_usage_class: 'medium',
     damage_resistance: 'medium',
     hit_points: 'high',
+    brawn: 0,
     fortitude: 0,
     reflex: 2,
-    mental: 1,
+    mental: 2,
   },
   warrior: {
     armor_defense: 5,
     armor_usage_class: 'heavy',
     damage_resistance: 'very high',
     hit_points: 'high',
-    fortitude: 1,
+    brawn: 0,
+    fortitude: 2,
     reflex: 0,
     mental: 0,
   },
@@ -103,6 +110,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // CLASSES
   barbarian: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -114,6 +122,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   cleric: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -125,6 +134,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   druid: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -137,6 +147,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   fighter: {
     armor_defense: 1,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -148,6 +159,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   monk: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -159,6 +171,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   paladin: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -170,6 +183,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   ranger: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -181,6 +195,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   rogue: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -192,6 +207,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   sorcerer: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -203,6 +219,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   votive: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -214,6 +231,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   wizard: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -227,6 +245,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // OPTIONAL CLASSES
   automaton: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -238,6 +257,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dragon: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -249,6 +269,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dryad: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 2,
@@ -260,6 +281,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   harpy: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -271,6 +293,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   naiad: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 1,
     mental: 1,
@@ -282,6 +305,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   oozeborn: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -293,6 +317,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   treant: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 2,
     reflex: 0,
     mental: 0,
@@ -304,6 +329,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   troll: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -315,6 +341,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   vampire: {
     armor_defense: 0,
+    brawn: 0,
     fortitude: 0,
     reflex: 0,
     mental: 0,
@@ -529,6 +556,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'armor_defense',
     'attunement_points',
     'brawling_accuracy',
+    'brawn',
     'constitution',
     'damage_resistance',
     'dexterity',
@@ -561,6 +589,7 @@ const VARIABLES_WITH_CREATION_MODIFIERS = new Set([
   'attunement_points',
   'class_skill_count',
   'dexterity',
+  'brawn',
   'fortitude',
   'insight_points',
   'intelligence',
@@ -576,6 +605,7 @@ const VARIABLES_WITH_DEBUFF_MODIFIERS = new Set([
   'accuracy',
   'armor_defense',
   'brawling_accuracy',
+  'brawn',
   'fortitude',
   'reflex',
   'mental',
@@ -588,6 +618,7 @@ const VARIABLES_WITH_VITAL_WOUND_MODIFIERS = new Set([
   'brawling_accuracy',
   'all_defenses',
   'fatigue_tolerance',
+  'brawn',
   'fortitude',
   'reflex',
   'mental',
@@ -693,6 +724,7 @@ function handleCoreStatistics() {
 
 function handleDefenses() {
   handleArmorDefense();
+  handleNonArmorDefense('brawn', 'strength');
   handleNonArmorDefense('fortitude', 'constitution');
   handleNonArmorDefense('reflex', 'dexterity');
   handleNonArmorDefense('mental', 'willpower');
@@ -1019,6 +1051,8 @@ function calcAttackTargeting(isTargeted: boolean, rawDefense: string, tags: stri
     // in
     if (['armor', 'a'].includes(rawDefense)) {
       actualDefense = 'armor_defense';
+    } else if (['brawn', 'brn', 'bra', 'b'].includes(rawDefense)) {
+      actualDefense = 'brawn';
     } else if (['fortitude', 'fort', 'f'].includes(rawDefense)) {
       actualDefense = 'fortitude';
     } else if (['reflex', 'ref', 'r'].includes(rawDefense)) {
@@ -1133,6 +1167,7 @@ function handleCreationModifiers() {
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
         'armor_defense' as const,
+        'brawn' as const,
         'fortitude' as const,
         'reflex' as const,
         'mental' as const,
@@ -1271,7 +1306,7 @@ class NamedModifierMap {
 
   addNamedModifier(statisticKey: string, name: string, value: number) {
     if (statisticKey === 'all_defenses') {
-      for (const defenseKey of ['armor_defense', 'fortitude', 'reflex', 'mental']) {
+      for (const defenseKey of ['armor_defense', 'brawn', 'fortitude', 'reflex', 'mental']) {
         this.addNamedModifier(defenseKey, name, value);
       }
     } else if (statisticKey === 'knowledge_all') {
@@ -1358,7 +1393,6 @@ function handleDamageResistance() {
         'level',
         'challenge_rating',
         'body_armor_damage_resistance',
-        'damage_resistance_vital_wound_multiplier',
       ],
       string: ['base_class'],
     },
@@ -1380,19 +1414,13 @@ function handleDamageResistance() {
           1: 1,
           4: 4,
         }[v.challenge_rating!] || 1;
-      const crMultipliedValue = Math.floor(playerTotalDr * crMultiplier);
-      // use math.max as a dumb hack so we can use negative values to mean "really zero,
-      // don't || into 1"
-      const monsterTotalDr = Math.floor(
-        crMultipliedValue * Math.max(0, v.damage_resistance_vital_wound_multiplier || 1),
-      );
+      const monsterTotalDr = Math.floor(playerTotalDr * crMultiplier);
 
       const attrs: Attrs = {
         damage_resistance_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'body armor', value: v.body_armor_damage_resistance },
           { name: 'Progression', value: drFromLevel },
-          { name: 'CR', value: crMultipliedValue - playerTotalDr },
-          { name: 'vital', value: monsterTotalDr - crMultipliedValue },
+          { name: 'CR', value: monsterTotalDr - playerTotalDr },
         ]),
         damage_resistance: undefined,
         damage_resistance_max: monsterTotalDr,
@@ -1556,7 +1584,7 @@ function handleDebuffs() {
 
       // The semicolon is replaced in handleAttackHeaders()
       const attrs: Attrs = { debuff_headers: debuffHeaders.join(';') };
-      for (const statistic of ['accuracy', 'armor_defense', 'fortitude', 'mental', 'reflex']) {
+      for (const statistic of ['accuracy', 'armor_defense', 'brawn', 'fortitude', 'mental', 'reflex']) {
         attrs[`${statistic}_debuff_explanation`] = namedModifierMap.generateExplanation(
           statistic,
           true,
@@ -2288,6 +2316,9 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       ],
     },
     callback: (v) => {
+      if (defense === 'brawn') {
+        console.log("v", v);
+      }
       const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
@@ -3012,6 +3043,9 @@ function handleVitalWounds() {
     'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds',
     function (eventInfo) {
       getSectionIDs('repeating_vitalwounds', (repeatingSectionIds) => {
+        // Not sure if this is necessary
+        repeatingSectionIds = repeatingSectionIds || [];
+
         const vitalWoundRollIds = repeatingSectionIds.map(
           (id) => `repeating_vitalwounds_${id}_vital_wound_roll`,
         );
@@ -3019,9 +3053,9 @@ function handleVitalWounds() {
           let rolls = Object.values(values);
           let accuracy_penalty = -countRolls(rolls, 2);
           let speed_penalty = countRolls(rolls, 3) * -5;
-          let resistance_multiplier = 0.5 ** countRolls(rolls, 4);
-          let fatigue_tolerance_penalty = -countRolls(rolls, 5) * 2;
-          let all_defenses_penalty = -countRolls(rolls, 6);
+          let fatigue_tolerance_penalty = -countRolls(rolls, 4) * 2;
+          let all_defenses_penalty = -countRolls(rolls, 5);
+          let brawn_penalty = -countRolls(rolls, 6) * 2;
           let fortitude_penalty = -countRolls(rolls, 7) * 2;
           let reflex_penalty = -countRolls(rolls, 8) * 2;
           let mental_penalty = -countRolls(rolls, 9) * 2;
@@ -3051,6 +3085,12 @@ function handleVitalWounds() {
               value: fatigue_tolerance_penalty,
             }),
 
+            brawn_vital_wound_modifier: brawn_penalty,
+            brawn_vital_wound_explanation: formatNamedModifierExplanation({
+              name: 'vital',
+              value: brawn_penalty,
+            }),
+
             // fortitude
             fortitude_vital_wound_modifier: fortitude_penalty,
             fortitude_vital_wound_explanation: formatNamedModifierExplanation({
@@ -3078,9 +3118,6 @@ function handleVitalWounds() {
               name: 'vital',
               value: speed_penalty,
             }),
-
-            // DR - no explanation
-            damage_resistance_vital_wound_multiplier: resistance_multiplier,
           };
           if (eventInfo.triggerName != 'remove:repeating_vitalwounds') {
             let effect_id = eventInfo.sourceAttribute.replaceAll('_roll', '_effect');
