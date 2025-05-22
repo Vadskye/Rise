@@ -3,73 +3,73 @@
 ## Brief
 
 ### Level 1: Class/Character
- * Barbarian:  38 /  96
- *    Cleric:  38 /  92
- *     Druid:  37 /  90
- *   Fighter:  37 /  96
- *      Monk:  38 /  91
- *   Paladin:  38 /  97
- *    Ranger:  37 /  92
- *     Rogue:  38 /  89
- *  Sorcerer:  36 /  89
- *    Votive:  37 /  91
- *    Wizard:  37 /  88
- * Automaton:  39 /  98
- *    Dragon:  39 /  91
- *   Dryaidi:  39 /  89
- *     Harpy:  40 /  90
- * Incarnation:  40 /  93
- *     Naiad:  39 /  89
- *  Oozeborn:  39 /  93
- *     Troll:  38 /  93
- *    Treant:  39 /  96
- *   Vampire:  39 /  91
+ * Barbarian:  38 / 102
+ *    Cleric:  38 /  97
+ *     Druid:  37 /  95
+ *   Fighter:  37 / 102
+ *      Monk:  38 /  96
+ *   Paladin:  38 / 102
+ *    Ranger:  37 /  97
+ *     Rogue:  38 /  94
+ *  Sorcerer:  36 /  94
+ *    Votive:  37 /  96
+ *    Wizard:  37 /  93
+ * Automaton:  39 / 103
+ *    Dragon:  39 /  97
+ *   Dryaidi:  39 /  94
+ *     Harpy:  40 /  96
+ * Incarnation:  40 /  99
+ *     Naiad:  39 /  94
+ *  Oozeborn:  39 /  99
+ *     Troll:  38 /  99
+ *    Treant:  39 / 102
+ *   Vampire:  39 /  97
 
 ### Level 10: Class/Character
- * Barbarian:  38 / 166
- *    Cleric:  38 / 157
- *     Druid:  37 / 155
- *   Fighter:  37 / 164
- *      Monk:  38 / 156
- *   Paladin:  38 / 165
- *    Ranger:  37 / 157
- *     Rogue:  38 / 158
- *  Sorcerer:  36 / 158
- *    Votive:  37 / 160
- *    Wizard:  37 / 154
- * Automaton:  39 / 166
- *    Dragon:  39 / 159
- *   Dryaidi:  39 / 155
- *     Harpy:  40 / 155
- * Incarnation:  40 / 161
- *     Naiad:  39 / 155
- *  Oozeborn:  39 / 163
- *     Troll:  38 / 163
- *    Treant:  39 / 166
- *   Vampire:  39 / 160
+ * Barbarian:  38 / 177
+ *    Cleric:  38 / 167
+ *     Druid:  37 / 165
+ *   Fighter:  37 / 175
+ *      Monk:  38 / 166
+ *   Paladin:  38 / 175
+ *    Ranger:  37 / 167
+ *     Rogue:  38 / 168
+ *  Sorcerer:  36 / 168
+ *    Votive:  37 / 170
+ *    Wizard:  37 / 164
+ * Automaton:  39 / 176
+ *    Dragon:  39 / 170
+ *   Dryaidi:  39 / 165
+ *     Harpy:  40 / 166
+ * Incarnation:  40 / 172
+ *     Naiad:  39 / 165
+ *  Oozeborn:  39 / 174
+ *     Troll:  38 / 174
+ *    Treant:  39 / 177
+ *   Vampire:  39 / 171
 
 ### Level 20: Class/Character
- * Barbarian:  38 / 225
- *    Cleric:  38 / 218
- *     Druid:  37 / 216
- *   Fighter:  37 / 223
- *      Monk:  38 / 216
- *   Paladin:  38 / 224
- *    Ranger:  37 / 217
- *     Rogue:  38 / 219
- *  Sorcerer:  36 / 219
- *    Votive:  37 / 221
- *    Wizard:  37 / 215
- * Automaton:  39 / 225
- *    Dragon:  39 / 218
- *   Dryaidi:  39 / 216
- *     Harpy:  40 / 216
- * Incarnation:  40 / 220
- *     Naiad:  39 / 216
- *  Oozeborn:  39 / 222
- *     Troll:  38 / 222
- *    Treant:  39 / 225
- *   Vampire:  39 / 220
+ * Barbarian:  38 / 241
+ *    Cleric:  38 / 233
+ *     Druid:  37 / 231
+ *   Fighter:  37 / 239
+ *      Monk:  38 / 231
+ *   Paladin:  38 / 239
+ *    Ranger:  37 / 232
+ *     Rogue:  38 / 234
+ *  Sorcerer:  36 / 234
+ *    Votive:  37 / 236
+ *    Wizard:  37 / 230
+ * Automaton:  39 / 240
+ *    Dragon:  39 / 234
+ *   Dryaidi:  39 / 231
+ *     Harpy:  40 / 232
+ * Incarnation:  40 / 236
+ *     Naiad:  39 / 231
+ *  Oozeborn:  39 / 238
+ *     Troll:  38 / 238
+ *    Treant:  39 / 241
+ *   Vampire:  39 / 236
 
 ## Detailed
 
@@ -79,7 +79,7 @@
             Barbarian 1
             AP 2, FT 7, IP 3, Skills 6
             HP 16, DR 5
-            AD 5, Fort 6, Ref 5, Ment 5
+            AD 5, Brn 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -88,7 +88,7 @@
             Cleric 1
             AP 3, FT 6, IP 4, Skills 5
             HP 10, DR 5
-            AD 5, Fort 5, Ref 5, Ment 8
+            AD 5, Brn 5, Fort 5, Ref 5, Ment 8
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 3✨/2
@@ -97,7 +97,7 @@
             Druid 1
             AP 3, FT 6, IP 4, Skills 6
             HP 10, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Brn 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
@@ -106,7 +106,7 @@
             Fighter 1
             AP 2, FT 7, IP 3, Skills 5
             HP 14, DR 5
-            AD 6, Fort 6, Ref 5, Ment 5
+            AD 6, Brn 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -115,7 +115,7 @@
             Monk 1
             AP 2, FT 6, IP 3, Skills 6
             HP 12, DR 4
-            AD 5, Fort 5, Ref 6, Ment 6
+            AD 5, Brn 5, Fort 5, Ref 6, Ment 6
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 3✨/2
@@ -124,7 +124,7 @@
             Paladin 1
             AP 3, FT 7, IP 3, Skills 5
             HP 14, DR 5
-            AD 5, Fort 6, Ref 5, Ment 6
+            AD 5, Brn 5, Fort 6, Ref 5, Ment 6
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
@@ -133,7 +133,7 @@
             Ranger 1
             AP 2, FT 6, IP 3, Skills 8
             HP 12, DR 5
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Brn 5, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/2
@@ -142,7 +142,7 @@
             Rogue 1
             AP 3, FT 6, IP 4, Skills 9
             HP 10, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Brn 5, Fort 5, Ref 6, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 2✨/2
@@ -151,7 +151,7 @@
             Sorcerer 1
             AP 4, FT 7, IP 3, Skills 5
             HP 11, DR 4
-            AD 4, Fort 6, Ref 5, Ment 6
+            AD 4, Brn 5, Fort 6, Ref 5, Ment 6
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 3✨/2
@@ -160,7 +160,7 @@
             Votive 1
             AP 3, FT 6, IP 4, Skills 6
             HP 10, DR 5
-            AD 5, Fort 5, Ref 5, Ment 8
+            AD 5, Brn 5, Fort 5, Ref 5, Ment 8
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 3✨/2
@@ -169,7 +169,7 @@
             Wizard 1
             AP 4, FT 6, IP 5, Skills 7
             HP 8, DR 4
-            AD 4, Fort 5, Ref 5, Ment 5
+            AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
@@ -178,7 +178,7 @@
             Automaton 1
             AP 3, FT 7, IP 4, Skills 7
             HP 14, DR 5
-            AD 5, Fort 6, Ref 5, Ment 5
+            AD 5, Brn 5, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/2
@@ -187,7 +187,7 @@
             Dragon 1
             AP 2, FT 7, IP 4, Skills 8
             HP 14, DR 4
-            AD 4, Fort 6, Ref 5, Ment 5
+            AD 4, Brn 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 2✨/3
@@ -196,7 +196,7 @@
             Dryaidi 1
             AP 3, FT 6, IP 4, Skills 7
             HP 8, DR 4
-            AD 5, Fort 5, Ref 6, Ment 7
+            AD 5, Brn 5, Fort 5, Ref 6, Ment 7
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
@@ -205,7 +205,7 @@
             Harpy 1
             AP 3, FT 6, IP 3, Skills 7
             HP 10, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Brn 6, Fort 5, Ref 6, Ment 5
             Club +2 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 2✨/3
@@ -214,7 +214,7 @@
             Incarnation 1
             AP 4, FT 7, IP 3, Skills 5
             HP 14, DR 4
-            AD 4, Fort 6, Ref 5, Ment 5
+            AD 4, Brn 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -223,7 +223,7 @@
             Naiad 1
             AP 3, FT 6, IP 4, Skills 7
             HP 8, DR 4
-            AD 5, Fort 5, Ref 7, Ment 6
+            AD 5, Brn 5, Fort 5, Ref 7, Ment 6
             Club +2 (1d8+1 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 2✨/2
@@ -232,7 +232,7 @@
             Oozeborn 1
             AP 2, FT 7, IP 3, Skills 6
             HP 16, DR 4
-            AD 5, Fort 6, Ref 6, Ment 5
+            AD 5, Brn 6, Fort 6, Ref 6, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -241,7 +241,7 @@
             Troll 1
             AP 3, FT 7, IP 3, Skills 5
             HP 16, DR 4
-            AD 4, Fort 6, Ref 5, Ment 5
+            AD 4, Brn 6, Fort 6, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -250,7 +250,7 @@
             Treant 1
             AP 2, FT 7, IP 3, Skills 5
             HP 16, DR 5
-            AD 5, Fort 8, Ref 5, Ment 5
+            AD 5, Brn 6, Fort 8, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -259,7 +259,7 @@
             Vampire 1
             AP 3, FT 6, IP 3, Skills 6
             HP 12, DR 4
-            AD 5, Fort 5, Ref 6, Ment 5
+            AD 5, Brn 6, Fort 5, Ref 6, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/3
@@ -270,7 +270,7 @@
             Barbarian 10
             AP 4, FT 7, IP 5, Skills 6
             HP 48, DR 18
-            AD 10, Fort 11, Ref 10, Ment 10
+            AD 10, Brn 11, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -279,7 +279,7 @@
             Cleric 10
             AP 5, FT 6, IP 6, Skills 5
             HP 28, DR 18
-            AD 10, Fort 10, Ref 10, Ment 13
+            AD 10, Brn 10, Fort 10, Ref 10, Ment 13
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 8✨/7
@@ -288,7 +288,7 @@
             Druid 10
             AP 5, FT 6, IP 6, Skills 6
             HP 28, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Brn 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
@@ -297,7 +297,7 @@
             Fighter 10
             AP 4, FT 7, IP 5, Skills 5
             HP 38, DR 18
-            AD 11, Fort 11, Ref 10, Ment 10
+            AD 11, Brn 11, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -306,7 +306,7 @@
             Monk 10
             AP 4, FT 6, IP 5, Skills 6
             HP 35, DR 12
-            AD 10, Fort 10, Ref 11, Ment 11
+            AD 10, Brn 10, Fort 10, Ref 11, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 8✨/7
@@ -315,7 +315,7 @@
             Paladin 10
             AP 5, FT 7, IP 5, Skills 5
             HP 38, DR 18
-            AD 10, Fort 11, Ref 10, Ment 11
+            AD 10, Brn 10, Fort 11, Ref 10, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
@@ -324,7 +324,7 @@
             Ranger 10
             AP 4, FT 6, IP 5, Skills 8
             HP 35, DR 18
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Brn 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/7
@@ -333,7 +333,7 @@
             Rogue 10
             AP 5, FT 6, IP 6, Skills 9
             HP 28, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Brn 10, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 7✨/7
@@ -342,7 +342,7 @@
             Sorcerer 10
             AP 6, FT 7, IP 5, Skills 5
             HP 30, DR 12
-            AD 9, Fort 11, Ref 10, Ment 11
+            AD 9, Brn 10, Fort 11, Ref 10, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 8✨/7
@@ -351,7 +351,7 @@
             Votive 10
             AP 5, FT 6, IP 6, Skills 6
             HP 28, DR 18
-            AD 10, Fort 10, Ref 10, Ment 13
+            AD 10, Brn 10, Fort 10, Ref 10, Ment 13
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 8✨/7
@@ -360,7 +360,7 @@
             Wizard 10
             AP 6, FT 6, IP 7, Skills 7
             HP 24, DR 12
-            AD 9, Fort 10, Ref 10, Ment 10
+            AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
@@ -369,7 +369,7 @@
             Automaton 10
             AP 5, FT 7, IP 6, Skills 7
             HP 38, DR 18
-            AD 10, Fort 11, Ref 10, Ment 10
+            AD 10, Brn 10, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/7
@@ -378,7 +378,7 @@
             Dragon 10
             AP 4, FT 7, IP 6, Skills 8
             HP 38, DR 12
-            AD 9, Fort 11, Ref 10, Ment 10
+            AD 9, Brn 11, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 7✨/8
@@ -387,7 +387,7 @@
             Dryaidi 10
             AP 5, FT 6, IP 6, Skills 7
             HP 24, DR 12
-            AD 10, Fort 10, Ref 11, Ment 12
+            AD 10, Brn 10, Fort 10, Ref 11, Ment 12
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
@@ -396,7 +396,7 @@
             Harpy 10
             AP 5, FT 6, IP 5, Skills 7
             HP 28, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Brn 11, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 7✨/8
@@ -405,7 +405,7 @@
             Incarnation 10
             AP 6, FT 7, IP 5, Skills 5
             HP 38, DR 12
-            AD 9, Fort 11, Ref 10, Ment 10
+            AD 9, Brn 11, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -414,7 +414,7 @@
             Naiad 10
             AP 5, FT 6, IP 6, Skills 7
             HP 24, DR 12
-            AD 10, Fort 10, Ref 12, Ment 11
+            AD 10, Brn 10, Fort 10, Ref 12, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 7✨/7
@@ -423,7 +423,7 @@
             Oozeborn 10
             AP 4, FT 7, IP 5, Skills 6
             HP 48, DR 12
-            AD 10, Fort 11, Ref 11, Ment 10
+            AD 10, Brn 11, Fort 11, Ref 11, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -432,7 +432,7 @@
             Troll 10
             AP 5, FT 7, IP 5, Skills 5
             HP 48, DR 12
-            AD 9, Fort 11, Ref 10, Ment 10
+            AD 9, Brn 11, Fort 11, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -441,7 +441,7 @@
             Treant 10
             AP 4, FT 7, IP 5, Skills 5
             HP 48, DR 18
-            AD 10, Fort 13, Ref 10, Ment 10
+            AD 10, Brn 11, Fort 13, Ref 10, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -450,7 +450,7 @@
             Vampire 10
             AP 5, FT 6, IP 5, Skills 6
             HP 35, DR 12
-            AD 10, Fort 10, Ref 11, Ment 10
+            AD 10, Brn 11, Fort 10, Ref 11, Ment 10
             Club +6 (1d8+4 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/8
@@ -461,7 +461,7 @@
             Barbarian 20
             AP 4, FT 7, IP 5, Skills 6
             HP 160, DR 48
-            AD 15, Fort 16, Ref 15, Ment 15
+            AD 15, Brn 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -470,7 +470,7 @@
             Cleric 20
             AP 5, FT 6, IP 6, Skills 5
             HP 100, DR 48
-            AD 15, Fort 15, Ref 15, Ment 18
+            AD 15, Brn 15, Fort 15, Ref 15, Ment 18
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 3, Wil 3
             Power: 13✨/12
@@ -479,7 +479,7 @@
             Druid 20
             AP 5, FT 6, IP 6, Skills 6
             HP 100, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Brn 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
@@ -488,7 +488,7 @@
             Fighter 20
             AP 4, FT 7, IP 5, Skills 5
             HP 128, DR 48
-            AD 16, Fort 16, Ref 15, Ment 15
+            AD 16, Brn 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -497,7 +497,7 @@
             Monk 20
             AP 4, FT 6, IP 5, Skills 6
             HP 116, DR 32
-            AD 15, Fort 15, Ref 16, Ment 16
+            AD 15, Brn 15, Fort 15, Ref 16, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 3
             Power: 13✨/12
@@ -506,7 +506,7 @@
             Paladin 20
             AP 5, FT 7, IP 5, Skills 5
             HP 128, DR 48
-            AD 15, Fort 16, Ref 15, Ment 16
+            AD 15, Brn 15, Fort 16, Ref 15, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
@@ -515,7 +515,7 @@
             Ranger 20
             AP 4, FT 6, IP 5, Skills 8
             HP 116, DR 48
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Brn 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/12
@@ -524,7 +524,7 @@
             Rogue 20
             AP 5, FT 6, IP 6, Skills 9
             HP 100, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Brn 15, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 2, Wil 2
             Power: 12✨/12
@@ -533,7 +533,7 @@
             Sorcerer 20
             AP 6, FT 7, IP 5, Skills 5
             HP 110, DR 32
-            AD 14, Fort 16, Ref 15, Ment 16
+            AD 14, Brn 15, Fort 16, Ref 15, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 2, Per 2, Wil 3
             Power: 13✨/12
@@ -542,7 +542,7 @@
             Votive 20
             AP 5, FT 6, IP 6, Skills 6
             HP 100, DR 48
-            AD 15, Fort 15, Ref 15, Ment 18
+            AD 15, Brn 15, Fort 15, Ref 15, Ment 18
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 2, Wil 3
             Power: 13✨/12
@@ -551,7 +551,7 @@
             Wizard 20
             AP 6, FT 6, IP 7, Skills 7
             HP 84, DR 32
-            AD 14, Fort 15, Ref 15, Ment 15
+            AD 14, Brn 15, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
@@ -560,7 +560,7 @@
             Automaton 20
             AP 5, FT 7, IP 6, Skills 7
             HP 128, DR 48
-            AD 15, Fort 16, Ref 15, Ment 15
+            AD 15, Brn 15, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/12
@@ -569,7 +569,7 @@
             Dragon 20
             AP 4, FT 7, IP 6, Skills 8
             HP 128, DR 32
-            AD 14, Fort 16, Ref 15, Ment 15
+            AD 14, Brn 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 3, Per 2, Wil 2
             Power: 12✨/13
@@ -578,7 +578,7 @@
             Dryaidi 20
             AP 5, FT 6, IP 6, Skills 7
             HP 84, DR 32
-            AD 15, Fort 15, Ref 16, Ment 17
+            AD 15, Brn 15, Fort 15, Ref 16, Ment 17
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
@@ -587,7 +587,7 @@
             Harpy 20
             AP 5, FT 6, IP 5, Skills 7
             HP 100, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Brn 16, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 3, Wil 2
             Power: 12✨/13
@@ -596,7 +596,7 @@
             Incarnation 20
             AP 6, FT 7, IP 5, Skills 5
             HP 128, DR 32
-            AD 14, Fort 16, Ref 15, Ment 15
+            AD 14, Brn 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -605,7 +605,7 @@
             Naiad 20
             AP 5, FT 6, IP 6, Skills 7
             HP 84, DR 32
-            AD 15, Fort 15, Ref 17, Ment 16
+            AD 15, Brn 15, Fort 15, Ref 17, Ment 16
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 3, Con 2, Int 3, Per 3, Wil 2
             Power: 12✨/12
@@ -614,7 +614,7 @@
             Oozeborn 20
             AP 4, FT 7, IP 5, Skills 6
             HP 160, DR 32
-            AD 15, Fort 16, Ref 16, Ment 15
+            AD 15, Brn 16, Fort 16, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -623,7 +623,7 @@
             Troll 20
             AP 5, FT 7, IP 5, Skills 5
             HP 160, DR 32
-            AD 14, Fort 16, Ref 15, Ment 15
+            AD 14, Brn 16, Fort 16, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -632,7 +632,7 @@
             Treant 20
             AP 4, FT 7, IP 5, Skills 5
             HP 160, DR 48
-            AD 15, Fort 18, Ref 15, Ment 15
+            AD 15, Brn 16, Fort 18, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 2, Con 3, Int 2, Per 2, Wil 2
             Power: 12✨/13
@@ -641,7 +641,7 @@
             Vampire 20
             AP 5, FT 6, IP 5, Skills 6
             HP 116, DR 32
-            AD 15, Fort 15, Ref 16, Ment 15
+            AD 15, Brn 16, Fort 15, Ref 16, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 3, Dex 3, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/13

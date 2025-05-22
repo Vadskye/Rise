@@ -14,6 +14,7 @@
                     \monsep \textbf{DR} 8
                 \pari \textbf{Defenses}
                     Armor 5
+                    \monsep Brn 6
                     \monsep Fort 5
                     \monsep Ref 5
                     \monsep Ment 6
@@ -164,6 +165,7 @@
                     \monsep \textbf{DR} 32
                 \pari \textbf{Defenses}
                     Armor 7
+                    \monsep Brn 9
                     \monsep Fort 7
                     \monsep Ref 7
                     \monsep Ment 9
@@ -318,6 +320,7 @@
                     \monsep \textbf{DR} 29
                 \pari \textbf{Defenses}
                     Armor 11
+                    \monsep Brn 13
                     \monsep Fort 11
                     \monsep Ref 11
                     \monsep Ment 13
@@ -482,6 +485,7 @@
                     \monsep \textbf{DR} 116
                 \pari \textbf{Defenses}
                     Armor 14
+                    \monsep Brn 17
                     \monsep Fort 14
                     \monsep Ref 14
                     \monsep Ment 17

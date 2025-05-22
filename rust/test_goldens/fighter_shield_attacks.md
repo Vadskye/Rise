@@ -374,12 +374,12 @@ Power+       : 14.94 = (34.5 dph * 0.30 hpr) + (34.5 dpc * 0.03 cpr) + (17.2 dpg
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
-Accuracy     : 11.36 = (11.5 dph * 0.80 hpr) + (11.5 dpc * 0.09 cpr) + (5.8 dpg * 0.20 gpr) = 9.20 hdpr + 1.01 cdpr + 1.15 gdpr
-Certain      : 8.32 = (7.5 dph * 1.00 hpr) + (7.5 dpc * 0.11 cpr) + (3.8 dpg * 0.00 gpr) = 7.50 hdpr + 0.83 cdpr + 0.00 gdpr
-Extra        : 15.78 = (29.0 dph * 0.40 hpr) + (29.0 dpc * 0.04 cpr) + (14.5 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 2.90 gdpr
-Power        : 12.51 = (23.0 dph * 0.40 hpr) + (23.0 dpc * 0.04 cpr) + (11.5 dpg * 0.20 gpr) = 9.20 hdpr + 1.01 cdpr + 2.30 gdpr
-Certain+     : 12.77 = (11.5 dph * 1.00 hpr) + (11.5 dpc * 0.11 cpr) + (5.8 dpg * 0.00 gpr) = 11.50 hdpr + 1.27 cdpr + 0.00 gdpr
-Power+       : 7.28 = (34.5 dph * 0.10 hpr) + (34.5 dpc * 0.01 cpr) + (17.2 dpg * 0.20 gpr) = 3.45 hdpr + 0.38 cdpr + 3.45 gdpr
+Accuracy     : 10.09 = (11.5 dph * 0.70 hpr) + (11.5 dpc * 0.08 cpr) + (5.8 dpg * 0.20 gpr) = 8.05 hdpr + 0.89 cdpr + 1.15 gdpr
+Certain      : 7.87 = (7.5 dph * 0.90 hpr) + (7.5 dpc * 0.10 cpr) + (3.8 dpg * 0.10 gpr) = 6.75 hdpr + 0.74 cdpr + 0.37 gdpr
+Extra        : 12.56 = (29.0 dph * 0.30 hpr) + (29.0 dpc * 0.03 cpr) + (14.5 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 2.90 gdpr
+Power        : 9.96 = (23.0 dph * 0.30 hpr) + (23.0 dpc * 0.03 cpr) + (11.5 dpg * 0.20 gpr) = 6.90 hdpr + 0.76 cdpr + 2.30 gdpr
+Certain+     : 12.06 = (11.5 dph * 0.90 hpr) + (11.5 dpc * 0.10 cpr) + (5.8 dpg * 0.10 gpr) = 10.35 hdpr + 1.14 cdpr + 0.57 gdpr
+Power+       : 5.52 = (34.5 dph * 0.10 hpr) + (34.5 dpc * 0.01 cpr) + (17.2 dpg * 0.10 gpr) = 3.45 hdpr + 0.35 cdpr + 1.73 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Certain Strike+ -- Broadsword
@@ -501,13 +501,13 @@ Triple       : 33.32 = (43.5 dph * 0.60 hpr) + (43.5 dpc * 0.07 cpr) + (21.8 dpg
 Best attack: Extra Damage Broadsword
 
 #### Detailed attack results
-Accuracy     : 16.09 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.60 cdpr + 0.00 gdpr
-Certain      : 11.00 = (9.0 dph * 1.00 hpr) + (9.0 dpc * 0.22 cpr) + (4.5 dpg * 0.00 gpr) = 9.00 hdpr + 2.00 cdpr + 0.00 gdpr
-Extra        : 29.92 = (55.0 dph * 0.40 hpr) + (55.0 dpc * 0.04 cpr) + (27.5 dpg * 0.20 gpr) = 22.00 hdpr + 2.42 cdpr + 5.50 gdpr
-Power        : 22.21 = (29.0 dph * 0.60 hpr) + (29.0 dpc * 0.07 cpr) + (14.5 dpg * 0.20 gpr) = 17.40 hdpr + 1.91 cdpr + 2.90 gdpr
-Certain+     : 17.72 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.22 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 3.22 cdpr + 0.00 gdpr
-Power+       : 18.84 = (43.5 dph * 0.30 hpr) + (43.5 dpc * 0.03 cpr) + (21.8 dpg * 0.20 gpr) = 13.05 hdpr + 1.44 cdpr + 4.35 gdpr
-Triple       : 23.66 = (43.5 dph * 0.40 hpr) + (43.5 dpc * 0.04 cpr) + (21.8 dpg * 0.20 gpr) = 17.40 hdpr + 1.91 cdpr + 4.35 gdpr
+Accuracy     : 15.21 = (14.5 dph * 0.90 hpr) + (14.5 dpc * 0.10 cpr) + (7.2 dpg * 0.10 gpr) = 13.05 hdpr + 1.44 cdpr + 0.72 gdpr
+Certain      : 10.00 = (9.0 dph * 1.00 hpr) + (9.0 dpc * 0.11 cpr) + (4.5 dpg * 0.00 gpr) = 9.00 hdpr + 1.00 cdpr + 0.00 gdpr
+Extra        : 23.82 = (55.0 dph * 0.30 hpr) + (55.0 dpc * 0.03 cpr) + (27.5 dpg * 0.20 gpr) = 16.50 hdpr + 1.82 cdpr + 5.50 gdpr
+Power        : 18.99 = (29.0 dph * 0.50 hpr) + (29.0 dpc * 0.06 cpr) + (14.5 dpg * 0.20 gpr) = 14.50 hdpr + 1.60 cdpr + 2.90 gdpr
+Certain+     : 16.11 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.61 cdpr + 0.00 gdpr
+Power+       : 14.01 = (43.5 dph * 0.20 hpr) + (43.5 dpc * 0.02 cpr) + (21.8 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 4.35 gdpr
+Triple       : 18.84 = (43.5 dph * 0.30 hpr) + (43.5 dpc * 0.03 cpr) + (21.8 dpg * 0.20 gpr) = 13.05 hdpr + 1.44 cdpr + 4.35 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Extra Damage Broadsword

@@ -67,7 +67,7 @@ Fighter Greatmace   : 8.50
 Fighter Shield      : 11.75
 Monk Kama           : 14.00
 Paladin Shield      : 11.00
-Ranger Longbow      : 8.25
+Ranger Longbow      : 8.75
 Rogue Smallsword    : 7.75
 Sorcerer Dexterity  : 8.75
 Wizard Perception   : 3.25
@@ -86,7 +86,7 @@ Fighter Greatmace   : 8.25
 Fighter Shield      : 11.00
 Monk Kama           : 17.25
 Paladin Shield      : 10.50
-Ranger Longbow      : 8.50
+Ranger Longbow      : 10.75
 Rogue Smallsword    : 10.00
 Sorcerer Dexterity  : 7.00
 Wizard Perception   : 4.00
@@ -358,7 +358,7 @@ Fighter Greatmace   : 7.75
 Fighter Shield      : 10.00
 Monk Kama           : 12.50
 Paladin Shield      : 9.75
-Ranger Longbow      : 7.75
+Ranger Longbow      : 9.00
 Rogue Smallsword    : 8.25
 Sorcerer Dexterity  : 7.75
 Wizard Perception   : 3.50
@@ -377,7 +377,7 @@ Fighter Greatmace   : 8.50
 Fighter Shield      : 10.25
 Monk Kama           : 17.50
 Paladin Shield      : 10.00
-Ranger Longbow      : 7.50
+Ranger Longbow      : 8.75
 Rogue Smallsword    : 8.25
 Sorcerer Dexterity  : 6.75
 Wizard Perception   : 4.50
@@ -455,7 +455,7 @@ Fighter Greatmace   : 7.75
 Fighter Shield      : 8.75
 Monk Kama           : 14.00
 Paladin Shield      : 9.00
-Ranger Longbow      : 6.50
+Ranger Longbow      : 7.50
 Rogue Smallsword    : 7.00
 Sorcerer Dexterity  : 7.25
 Wizard Perception   : 4.00
@@ -474,7 +474,7 @@ Fighter Greatmace   : 8.25
 Fighter Shield      : 9.25
 Monk Kama           : 19.50
 Paladin Shield      : 9.75
-Ranger Longbow      : 6.75
+Ranger Longbow      : 7.75
 Rogue Smallsword    : 7.25
 Sorcerer Dexterity  : 6.50
 Wizard Perception   : 4.25
@@ -552,7 +552,7 @@ Fighter Greatmace   : 9.25
 Fighter Shield      : 12.50
 Monk Kama           : 15.00
 Paladin Shield      : 11.75
-Ranger Longbow      : 8.75
+Ranger Longbow      : 9.50
 Rogue Smallsword    : 8.25
 Sorcerer Dexterity  : 9.50
 Wizard Perception   : 3.50
@@ -571,7 +571,7 @@ Fighter Greatmace   : 9.00
 Fighter Shield      : 12.00
 Monk Kama           : 18.25
 Paladin Shield      : 11.25
-Ranger Longbow      : 9.25
+Ranger Longbow      : 11.50
 Rogue Smallsword    : 10.75
 Sorcerer Dexterity  : 7.50
 Wizard Perception   : 4.50
