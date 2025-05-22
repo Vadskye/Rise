@@ -56,6 +56,10 @@ impl AbilityTag {
         }
     }
 
+    pub fn personal_attunement() -> Self {
+        Self::Attune(AttuneType::Personal)
+    }
+
     pub fn latex(&self) -> String {
         match self {
             Self::Attune(attune_type) => {
