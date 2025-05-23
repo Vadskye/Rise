@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 
 // Normally, curses would be +0.4 EA, because immunity to condition removal is powerful.
 // This sphere is limited and has few attacks, so it gets curses at only +0.2 EA.
+// Likewise, ally buff are normally 1.5x EA, but this sphere gets them at only 1.25x EA.
 export const prayer: MysticSphere = {
   name: 'Prayer',
   shortDescription: 'Grant divine blessings to aid allies and improve combat prowess.',
@@ -32,7 +33,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each target is immune to being \\slowed, \\immobilized, and \\paralyzed.
+        Each target is immune to being \\slowed and \\paralyzed.
       `,
       rank: 4,
       roles: ['attune'],
@@ -97,27 +98,27 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Precision',
 
-      // 0.8 EA, or 1.2 EA on allies
+      // 0.8 EA, or 1 EA on allies
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target is \\focused this round.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['boon'],
       tags: [],
     },
 
     {
-      name: 'Boon of Sharpened Steel',
+      name: 'Boon of Tempered Steel',
 
-      // 0.8 EA, or 1.2 EA on an ally. But these don't synergize very well, so call it 1
-      // EA.
+      // 0.6 EA, or 0.9 EA on an ally. Say it's r2 because these don't have obvious
+      // synergy, but don't work against each other either.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\honed and \\steeled this round.
+        The target is \\empowered and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
-      rank: 4,
+      rank: 2,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -125,18 +126,18 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Deadly Fortune',
 
-      // 0.8 EA, or 1.2 EA on allies. But what are the odds that both allies get full
-      // value from honed? Seems closer to 1 EA.
+      // 0.8 EA, or 1 EA on allies. But what are the odds that both allies get full
+      // value from honed? Seems closer to 0.9 EA.
       effect: `
-        Choose two \\glossterm{allies} within \\shortrange.
+        Choose two \\glossterm{allies} within \\medrange.
         Each target is \\honed this round.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['boon'],
       tags: [],
     },
 
-    // 0.8 EA, or 1.2 EA on an ally.
+    // 0.8 EA, or 1 EA on an ally.
     {
       name: 'Boon of Living Steel',
 

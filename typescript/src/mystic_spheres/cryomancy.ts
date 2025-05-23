@@ -153,24 +153,24 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       scaling: 'accuracy',
     },
 
-    {
-      name: 'Frozen Legs',
+    // {
+    //   name: 'Frozen Legs',
 
-      // -3r for removed if damaged, for a total of r+5
-      attack: {
-        hit: `
-          \\damagerankfive.
-          If the target loses \\glossterm{hit points}, it becomes \\immobilized as a \\glossterm{condition}.
-          This condition is automatically removed if the target takes damage.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-          You gain a +2 accuracy bonus if the target is standing or swimming in water.
-        `,
-      },
-      rank: 6,
-      scaling: 'accuracy',
-    },
+    //   // -3r for removed if damaged, for a total of r+5
+    //   attack: {
+    //     hit: `
+    //       \\damagerankfive.
+    //       If the target loses \\glossterm{hit points}, it becomes \\immobilized as a \\glossterm{condition}.
+    //       This condition is automatically removed if the target takes damage.
+    //     `,
+    //     targeting: `
+    //       Make an attack vs. Fortitude against one creature within \\shortrange.
+    //       You gain a +2 accuracy bonus if the target is standing or swimming in water.
+    //     `,
+    //   },
+    //   rank: 6,
+    //   scaling: 'accuracy',
+    // },
 
     {
       name: 'Icicle',
@@ -512,20 +512,20 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
     },
 
-    {
-      name: 'Bonechill',
+    // {
+    //   name: 'Bonechill',
 
-      attack: {
-        hit: `
-          \\damageranksix.
-          If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-        `,
-      },
-      rank: 7,
-    },
+    //   attack: {
+    //     hit: `
+    //       \\damageranksix.
+    //       If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
+    //     `,
+    //     targeting: `
+    //       Make an attack vs. Fortitude against one creature within \\shortrange.
+    //     `,
+    //   },
+    //   rank: 7,
+    // },
 
     {
       name: 'Icefield',

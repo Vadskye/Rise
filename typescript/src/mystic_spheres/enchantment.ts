@@ -27,16 +27,15 @@ export const enchantment: MysticSphere = {
     {
       name: 'Repeat',
 
-      // Treat as a t1.5 debuff. Short range because it's a cantrip.
       attack: {
         crit: IMMUNITY_CRIT,
         hit: `
-          During the next round, the target must repeat all actions that it took this round.
+          During the next round, the target must repeat the same standard action that it took this round.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-          If it is unable to take the same action, it unable to take any action of that action type.
-          For example, if a creature moved during the round that you cast this spell and was \\immobilized or knocked \\prone, it cannot move at all during the following round.
+          If it is unable to take the same standard action, it unable to take a standard action.
+          For example, if a creature used the \\ability{recover} ability this round, which can only be used once per short rest, it would not be able to take a standard action during the following round.
 
-          After the target stops repeating its actions, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
+          After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -603,23 +602,23 @@ export const enchantment: MysticSphere = {
       tags: ['Emotion'],
     },
 
-    {
-      name: 'Crippling Agony',
+    // {
+    //   name: 'Crippling Agony',
 
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          As a \\glossterm{condition}, the target feels crippling pain from even minor injuries.
-          While it is at less than its maximum \\glossterm{hit points}, it is \\immobilized.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-    },
+    //   attack: {
+    //     crit: CONDITION_CRIT,
+    //     hit: `
+    //       As a \\glossterm{condition}, the target feels crippling pain from even minor injuries.
+    //       While it is at less than its maximum \\glossterm{hit points}, it is \\immobilized.
+    //     `,
+    //     targeting: `
+    //       Make an attack vs. Mental against one creature within \\medrange.
+    //     `,
+    //   },
+    //   rank: 7,
+    //   scaling: 'accuracy',
+    //   tags: ['Emotion'],
+    // },
 
     {
       name: 'Friend to Foe',
