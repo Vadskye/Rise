@@ -739,7 +739,7 @@ export const polymorph: MysticSphere = {
           Choose one of the following tags: \\atAcid, \\atCold, \\atElectricity, or \\atFire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you use this ability, you \\glossterm{briefly} cannot use it again.
+          After you breathe energy, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,

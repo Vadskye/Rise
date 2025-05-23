@@ -202,6 +202,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Water Hammer',
 
+      cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
       attack: {
         hit: `
           \\damageranktwo.
@@ -210,7 +211,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
           This attack automatically fails unless you hit the target with a \\atWater ability last round.
-          After you make this attack, you are \\glossterm{briefly} \\stunned and cannot use this ability again.
         `,
       },
       rank: 1,
@@ -220,6 +220,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Water Hammer',
 
+      cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
       attack: {
         hit: `
           \\damagerankfive.
@@ -228,7 +229,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
           This attack automatically fails unless you hit the target with a \\atWater ability last round.
-          After you make this attack, you are \\glossterm{briefly} \\stunned and cannot use this ability again.
         `,
       },
       rank: 4,

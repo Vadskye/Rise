@@ -462,7 +462,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you use this ability, you \\glossterm{briefly} cannot use it again.
+          After you breathe fire, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,
@@ -497,7 +497,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against a creature within \\shortrange of you.
-          After you use this ability, you \\glossterm{briefly} cannot use it again.
+          After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 1,

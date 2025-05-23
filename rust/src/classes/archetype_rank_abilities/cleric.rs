@@ -400,11 +400,10 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{magicalactiveability}{Revivify}
                     \abilityusagetime Standard action.
-                    \abilitycost Four \glossterm{fatigue levels}.
+                    \abilitycost Four \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{long rest}.
                     \rankline
                     Choose one intact corpse within \shortrange.
                     If it belongs to a creature that has been dead for no more than 1 minute, that creature is \glossterm{resurrected} (see \pcref{Resurrection}).
-                    After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                 \end{magicalactiveability}
             ",
             modifiers: None,
