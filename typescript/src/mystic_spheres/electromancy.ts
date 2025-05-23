@@ -572,7 +572,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         targeting: `
           You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
           It lasts as long as you sustain this spell.
-          As a \\glossterm{movement}, you can move the duplicate up to your \\glossterm{movement speed} as long as you can see it.
+          As a \\glossterm{move action}, you can move the duplicate up to your \\glossterm{movement speed} as long as you can see it.
           It can move freely through spaces occupied by creatures, but it cannot pass through solid objects.
           When you stop sustaining this spell, you make an attack vs. Reflex against everything in the path it took that round, and you \\glossterm{teleport} to its final location.
           You do not need \\glossterm{line of sight} or \\glossterm{line of effect} for this teleportation.

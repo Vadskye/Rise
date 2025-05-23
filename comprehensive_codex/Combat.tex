@@ -174,7 +174,7 @@
 
     \subsubsection{The Movement Phase}\label{The Movement Phase}
       During the \glossterm{movement phase}, you can use one \glossterm{move action}.
-      The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{speed}.
+      The most common movement is the \textit{hustle} ability, which allows you to move a distance equal to your \glossterm{movement speed}.
       For details, see \pcref{Movement and Positioning}.
 
     \subsubsection{The Action Phase}\label{The Action Phase}
@@ -318,7 +318,7 @@
     In general, directly conflicting actions are rare.
     Most movements do not conflict - even reactive movements, such as when one creature attempts to follow a withdrawing creature.
     In that case, no initiative check is necessary.
-    Both creatures simply move as far as they can, and the creatures' relative \glossterm{speeds} determine who is more successful.
+    Both creatures simply move as far as they can, and the creatures' relative \glossterm{movement speeds} determine who is more successful.
 
     This does make it possible for creatures to be ``stranded'' out of melee range of any attackers.
     Player characters are normally allowed to break this symmetry by reactively using the \textit{sprint} ability, while monsters cannot sprint.
@@ -332,14 +332,16 @@
       Only the first effect which would change your location is applied, and all other effects are ignored.
       % TODO: how do self-movements interact with forced movement imposed by enemies in the same phase?
 
+% TODO: Clean up this wording, this whole section is awkward with the movement -> move action change
 \section{Movement and Positioning}\label{Movement and Positioning}
   This section describes how creatures move and position themselves when time and location are important to measure precisely.
 
-  \subsection{Movements}\label{Movements}
+  \subsection{Move Actions}\label{Move Actions}
     During each \glossterm{movement phase}, you can use one \glossterm{move action}.
-    You can also move during the \glossterm{action phase} with the \ability{sprint} ability (see \pcref{Sprint}), or by simply taking a \glossterm{move action} in place of your standard action.
+    You can also move during the \glossterm{action phase} with the \ability{sprint} ability (see \pcref{Sprint}), or by taking a \glossterm{move action} in place of your standard action.
+    Most move actions change your location on the battlefield.
 
-    When a creature makes a movement, it travels a distance in feet equal to its \glossterm{movement speed}, assuming it has a relevant \glossterm{movement mode}.
+  \subsection{Movement Speed}\label{Movement Speed}
     If an ability references your ``speed'' without additional details, it is referring to your movement speed.
     Your total movement speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
     Some abilities can modify your movement speed.
@@ -352,12 +354,89 @@
     You can take \glossterm{free actions} and \glossterm{minor actions} in the middle of movement.
     For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
 
+  \subsection{Movement Abilities}\label{Movement Abilities}
+
+    Almost all creatures can use these abilities to move around a battlefield.
+    The most common movement ability is \ability{hustle}, which simply moves you to a location.
+    You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
+
+    Other movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
+    For example, you can try to follow a creature wherever it goes that round.
+    In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
+
+    The \ability{block}, \ability{follow}, and \ability{withdraw} reactive abilities are specifically described below.
+    However, you can can come up with other reactive movements.
+    The main requirement is that a reactive movement must have a simple criteria for determining how you move based on easily observable events.
+    Secondarily, reactive movements should be simple to resolve.
+    If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
+
+    \begin{activeability}{Block}[\abilitytag{Swift}]
+      \abilityusagetime Move action.
+      \rankline
+      When you use this ability, choose a creature you can see.
+      During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
+      This includes a creature whose path takes it through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
+      When you do, make an opposed \glossterm{initiative} check against the target.
+      If you beat it on the initiative check, it must spend additional movement equal to one of your relevant movement speeds to move from its space.
+      If it cannot, it stops moving.
+      This represents you automatically repositioning yourself to block its movement.
+
+      If a creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it is unaffected by this additional movement cost.
+      If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
+    \end{activeability}
+
+    \begin{activeability}{Climb Forward}
+      \abilityusagetime Move action.
+      \rankline
+      This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
+      Make a Climb check to move along the surface.
+      The \glossterm{difficulty value} is based on the surface (see \pcref{Climb}).
+      Success means that you move along the surface to a location, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
+      Critical success means the maximum distance you can move is doubled.
+    \end{activeability}
+
+    \begin{activeability}{Follow}
+      \abilityusagetime Move action.
+      \rankline
+      Choose a creature you can see, and the maximum distance you want to follow at.
+      During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
+
+      If the target uses an ability that makes it impossible for you to follow its movement, such as teleporting or disappearing from your sight, it is harder for you to follow its movement.
+      If you can see its destination, such as if it teleported to a different location within your \glossterm{line of sight}, you must beat the target on an opposed \glossterm{initiative} check.
+      Success means that you can follow its movement normally.
+      If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
+    \end{activeability}
+
+    \begin{activeability}{Hustle}
+      \abilityusagetime Move action.
+      \rankline
+      Choose a path that you want to travel.
+      You travel that path, up to the limit of your relevant movement speed.
+    \end{activeability}
+
+    \begin{activeability}{Swim Forward}
+      \abilityusagetime Move action.
+      \rankline
+      This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Swim check.
+      Make a Swim check to move through the liquid.
+      The \glossterm{difficulty value} is based on the turbulence of the liquid (see \pcref{Swim}).
+      Success means that you move through the liquid, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
+      Critical success means the maximum distance you can move increases to half of your base speed.
+    \end{activeability}
+
+    \begin{activeability}{Withdraw}
+      \abilityusagetime Move action.
+      \rankline
+      This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
+      In addition, you can specify multiple targets and try to keep away from all of them.
+    \end{activeability}
+
   \subsection{Movement Modes}\label{Movement Modes}
     A \glossterm{movement mode} is a method of moving from one location to another.
     The most common movement mode is walking, which allows creatures to move across the ground.
     In addition, some abilities grant creatures the ability to move in unusual ways.
     These forms of movement are described here.
-    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Speed Categories}).
+    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Movement Speed}).
 
     \parhead{Burrowing}
     A creature with a \glossterm{burrow speed} can move through solid dirt and loose earth in any direction, even vertically.
@@ -452,83 +531,6 @@
     \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
     The third costs five feet, the fourth costs ten feet, and so on.
     You can move diagonally past corners and enemies.
-
-  \subsection{Movement Abilities}\label{Movement Abilities}
-
-    Almost all creatures can use these abilities to move around a battlefield.
-    The most common movement ability is \ability{hustle}, which simply moves you to a location.
-    You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
-
-    Other movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
-    For example, you can try to follow a creature wherever it goes that round.
-    In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
-
-    The \ability{block}, \ability{follow}, and \ability{withdraw} reactive abilities are specifically described below.
-    However, you can can come up with other reactive movements.
-    The main requirement is that a reactive movement must have a simple criteria for determining how you move based on easily observable events.
-    Secondarily, reactive movements should be simple to resolve.
-    If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
-
-    \begin{activeability}{Block}[\abilitytag{Swift}]
-      \abilityusagetime Move action.
-      \rankline
-      When you use this ability, choose a creature you can see.
-      During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
-      This includes a creature whose path takes it through two consecutive spaces adjacent to you, even if neither the creature's location at the start of the phase nor its intended location at the end of the phase are adjacent to you.
-      When you do, make an opposed \glossterm{initiative} check against the target.
-      If you beat it on the initiative check, it must spend additional movement equal to one of your relevant movement speeds to move from its space.
-      If it cannot, it stops moving.
-      This represents you automatically repositioning yourself to block its movement.
-
-      If a creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it is unaffected by this additional movement cost.
-      If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
-    \end{activeability}
-
-    \begin{activeability}{Climb Forward}
-      \abilityusagetime Move action.
-      \rankline
-      This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
-      Make a Climb check to move along the surface.
-      The \glossterm{difficulty value} is based on the surface (see \pcref{Climb}).
-      Success means that you move along the surface to a location, up to a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
-      Critical success means the maximum distance you can move is doubled.
-    \end{activeability}
-
-    \begin{activeability}{Follow}
-      \abilityusagetime Move action.
-      \rankline
-      Choose a creature you can see, and the maximum distance you want to follow at.
-      During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
-
-      If the target uses an ability that makes it impossible for you to follow its movement, such as teleporting or disappearing from your sight, it is harder for you to follow its movement.
-      If you can see its destination, such as if it teleported to a different location within your \glossterm{line of sight}, you must beat the target on an opposed \glossterm{initiative} check.
-      Success means that you can follow its movement normally.
-      If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
-    \end{activeability}
-
-    \begin{activeability}{Hustle}
-      \abilityusagetime Move action.
-      \rankline
-      Choose a path that you want to travel.
-      You travel that path, up to the limit of your relevant movement speed.
-    \end{activeability}
-
-    \begin{activeability}{Swim Forward}
-      \abilityusagetime Move action.
-      \rankline
-      This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Swim check.
-      Make a Swim check to move through the liquid.
-      The \glossterm{difficulty value} is based on the turbulence of the liquid (see \pcref{Swim}).
-      Success means that you move through the liquid, up to a maximum distance equal to a quarter of the \glossterm{base speed} for your size (see \pcref{Size Categories}).
-      Critical success means the maximum distance you can move increases to half of your base speed.
-    \end{activeability}
-
-    \begin{activeability}{Withdraw}
-      \abilityusagetime Move action.
-      \rankline
-      This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
-      In addition, you can specify multiple targets and try to keep away from all of them.
-    \end{activeability}
 
   \subsection{Movement Impediments}
 
@@ -831,7 +833,7 @@
 
     \begin{activeability}*{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime \glossterm{Move action} or standard action.
-      \abilitycost One \glossterm{fatigue level} if used as a movement. No cost when used as a standard action.
+      \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
       \rankline
       Move up to your movement speed in a straight line.
       You can try to move directly through creatures in your way during this movement.
@@ -890,7 +892,7 @@
       % to prevent it from being abused with abilities like Shove?
       % Is that clear in the text?
       \abilityusagetime \glossterm{Movement} or standard action.
-      \abilitycost One \glossterm{fatigue level} if used as a movement. No cost when used as a standard action.
+      \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
       \rankline
       You cannot use this ability while you are carrying or moving another creature in any way.
       You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
@@ -943,7 +945,7 @@
         This penalty is removed if you control the grapple (see below).
       \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
         In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
-        However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{movement} instead of as a standard action.
+        However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{move action} instead of as a standard action.
       \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
     \end{itemize}
 

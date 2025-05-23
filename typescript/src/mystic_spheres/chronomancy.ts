@@ -66,7 +66,7 @@ export const chronomancy: MysticSphere = {
       name: 'Burst of Speed',
 
       effect: `
-        When you use the \\ability{sprint} ability as a \\glossterm{movement}, you can choose not to increase your \\glossterm{fatigue level}.
+        When you use the \\ability{sprint} ability as a \\glossterm{move action}, you can choose not to increase your \\glossterm{fatigue level}.
         After you sprint in this way, this ability ends.
       `,
       rank: 1,
