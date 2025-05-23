@@ -242,7 +242,7 @@ export const mobileHunter: CombatStyle = {
       // assume movement is worth 0.6 EA or so
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
-        \\hit The target \\glossterm{briefly} treats you as being \\invisible.
+        \\hit The target \\glossterm{briefly} treats you as being \\trait{invisible}.
       `,
       rank: 7,
       tags: ['Emotion'],
