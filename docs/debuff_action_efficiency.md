@@ -1030,3 +1030,7 @@ As a rough guide:
   * 0.8 EA, with +0.4 EA usable 50% of the time
 
 You can pay one fatigue level to get +0.2 EA.
+
+## Attuned effects
+
+It should be possible to calculate the effective action value of combat-relevant attunements.

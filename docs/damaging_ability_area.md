@@ -23,6 +23,15 @@ If it's a damage plus debuff spell, reduce the listed damage rank by 1.
 * Rank X, where X >= 5:
   * drX-3 in RX area, including extreme areas
 
+### Flat damage
+
+Flat damage effects suffer more for using lower rank damage scaling. Halve all modifiers to relative damage rank for flat damage effects, rounded down. That means:
+
+* drX in Short range (so don't use Short range without special stuff)
+* drX+1 in melee range
+* drX-1 in Distant range
+* drX-1 in RX area, ignoring extreme areas
+
 ## Damage for Sustain (minor) zones
 
 A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a radius, or -1dr as a wall.
