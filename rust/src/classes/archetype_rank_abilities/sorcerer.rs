@@ -432,14 +432,14 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell fails with no effect \\
-                        2 & On your first attack with the spell, you roll twice and take the lower result \\
+                        2 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the lower result \\
                         3 & On your first attack with the spell, you are a target of the attack in addition to any other targets \\
                         4 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
                         5 & The spell's area is halved this round \\
                         6 & The spell's area is doubled this round \\
                         7 & On your first attack with the spell, it \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
-                        9 & On your first attack with the spell, you roll twice for the attack roll and keep the higher result \\
+                        8 & When you first deal damage with the spell, you \glossterm{reroll} once and keep the higher result \\
+                        9 & On your first attack roll with the spell, you \glossterm{reroll} once keep the higher result \\
                         10 & During your next action, the spell \glossterm{repeats} \\
                     \end{dtabularx}
                 \end{columntable}
@@ -482,13 +482,13 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell has no immediate effect, but takes effect at the start of your next action \\
-                        2 & Your first attack roll with the spell \glossterm{explodes} on a 1 instead of on a 10 \\
+                        2 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
                         3 & On your first attack with the spell, you are a target of the attack in addition to any other targets, but with a \minus4 accuracy penalty \\
                         4 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
                         5 & The spell's area is doubled this round \\
                         6 & The spell's area is tripled this round \\
                         7 & On your first attack with the spell, it \glossterm{chains} twice to the unaffected creatures that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you roll twice for damage and keep the higher result \\
+                        8 & When you first deal damage with the spell, you \glossterm{reroll} once and keep the higher result \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         10 & During your next action, the spell \glossterm{repeats} \\
                     \end{dtabularx}

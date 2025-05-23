@@ -82,7 +82,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
-        You roll accuracy twice and keep the lower result.
+        You \\glossterm{reroll} the attack roll once and keep the lower result.
         \\hit The target bleeds.
         A bleeding creature takes damage equal to the damage it took from the strike during your next action.
       `,
