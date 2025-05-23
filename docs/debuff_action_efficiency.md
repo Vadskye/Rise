@@ -52,6 +52,10 @@ As a baseline, assume the enemy has a 30% chance to hit. Expected hits with 4 ac
 
 If they have a -2 accuracy penalty, they drop to a 10% chance to hit, so expected hits is 0.4 hits. 67% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 * 0.67 = 2.7 effective actions.
 
+#### -4 with lowish defenses
+
+Baseline is 2.8 hits. With -4 accuracy, 30% chance to hit, so expected hits is 1.2 hits. 57% of enemy actions were removed, which is worth 2.28 effective actions.
+
 ### Roll twice, keep lower with lowish defenses
 
 Assume 70% hit rate, with 2.8 expected hits over 4 actions.
@@ -334,6 +338,14 @@ With a reroll, your odds of getting a single crit become 36% and a double crit i
 
 ### Fortified: 0.4
 Same logic as Shielded.
+
+### Impervious: 1.1
+
+Applies 50% of the time and is 57% action denial, so 1.1 EA.
+
+### Half damage: 1.0
+
+Applies 50% of the time, and is 50% action denial when it applies. Therefore, it is worth 4 * 0.5 * 0.5 = 1 EA.
 
 ### Honed: 0.4
 

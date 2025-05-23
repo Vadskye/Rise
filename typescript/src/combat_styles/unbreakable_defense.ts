@@ -91,19 +91,19 @@ export const unbreakableDefense: CombatStyle = {
         You are \\trait{impervious} to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 3,
+      rank: 5,
       roles: ['turtle'],
       tags: ['Swift'],
     },
 
     {
-      name: 'Brace for Impact+',
+      name: 'Weather the Storm',
 
       effect: `
-        You are \\braced and \\trait{impervious} to all damage this round.
+        You take half damage from all sources this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 7,
+      rank: 3,
       roles: ['turtle'],
       tags: ['Swift'],
     },
