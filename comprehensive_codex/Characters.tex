@@ -444,18 +444,17 @@ You can either skim past terms you don't yet understand or look them up as you g
     The minimum is applied after all other modifiers.
 
   \subsection{Doubling and Halving}\label{Doubling and Halving}
-    If you double any in-game value twice, it becomes three times as large.
-    An additional doubling would make it four times as large, and so on.
-    Likewise, if you halve any in-game value twice, it becomes one-third as large.
-    For example, if you have two different abilities that double your \glossterm{power} with an attack, you triple your power with that attack.
+    Normally, doubling something twice makes it four times the original value, and halving something twice makes it one quarter of the original value.
+    However, if an individual effect would double something twice, it instead just adds an additional increment of the original value, making it three times as large.
 
-    This also applies to calculations using real-world values, such as movement and distance, as long as you're calculating the effects of abilities.
-    For example, if you have two different abilities that double your range with a spell, your total range with that spell is three times the spell's normal range.
-
-    \subsubsection{Doubling Damage}
-      If you double your damage with a dice pool, you roll the same number of dice and modify the result.
-      This is different from a \glossterm{critical hit}, which changes the number of dice you roll.
-      As a result, if you get a \glossterm{critical hit} with a double-damage attack, you roll twice as many dice and then double the result, which typically means you deal 4x your normal damage.
+    To clarify, here are some examples, assuming you're making using a weapon that normally deals 10 damage:
+    \begin{raggeditemize}
+      \item Normal hit: 10 damage.
+      \item Critical hit: 20 damage.
+      \item Double damage maneuver: 20 damage.
+      \item Double critical hit: 30 damage (since it's two doublings from the same effect)
+      \item Critical hit with a double damage maneuver: 40 damage.
+    \nd{raggeditemize}
 
   \subsection{Changing Statistics}
 
