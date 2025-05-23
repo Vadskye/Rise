@@ -81,7 +81,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Aquatic Agility',
 
       effect: `
-        You gain an average \\glossterm{swim speed} (see \\pcref{Swimming}).
+        You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+        If you already have a slow swim speed, your swim speed becomes average instead.
         While swimming, you gain a \\plus1 \\glossterm{enhancement bonus} to your Armor and Reflex defenses.
       `,
       rank: 2,
@@ -500,7 +501,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
         \\begin{itemize}
           \\par
-          \\item You gain an average \\glossterm{swim speed}.
+          \\item You gain an slow \\glossterm{swim speed}.
+            If you already have a slow swim speed, your swim speed becomes average instead.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
@@ -610,7 +612,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
-          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{movement}.
+          \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
           \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
           \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}

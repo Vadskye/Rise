@@ -343,7 +343,7 @@ fn thrown_attacks() -> Vec<Tool> {
             When you do, make an attack vs. Reflex against one Large or smaller creature within \shortrange.
             On a hit, the target is \slowed as a \glossterm<condition>.
 
-            This condition can be removed if the target makes a \glossterm{difficulty value} 8 Strength check as a \glossterm{movement} to break the entangling glue.
+            This condition can be removed if the target makes a \glossterm{difficulty value} 8 Strength check as a \glossterm{move action} to break the entangling glue.
             If the target makes this check as a standard action, it gains a +5 bonus.
             In addition, this condition is removed if the target takes damage from a \atAcid or \atFire ability.
         ".to_string(),
