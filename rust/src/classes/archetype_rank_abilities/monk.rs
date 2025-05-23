@@ -313,18 +313,17 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
 
                         \rankline
-                        \rank{4} The defense penalty is reduced to \minus1.
-                        \rank{6} The defense penalty is removed.
+                        \rank{5} The defense penalty is reduced to \minus1.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Burst of Blinding Speed}
                         \abilityusagetime Free action.
                         \rankline
                         You gain a \plus10 foot bonus to your \glossterm{movement speed} this phase.
+                        In exchange, you cannot use the \ability{sprint} ability this phase.
 
                         \rankline
-                        \rank{4} You can also ignore \glossterm{difficult terrain} this phase.
-                        \rank{6} The speed bonus increases to \plus20 feet.
+                        \rank{5} The speed bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Calm the Inner Tempest}
@@ -333,8 +332,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus6.
-                        \rank{6} The bonus increases to \plus8.
+                        \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}
@@ -343,8 +341,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
-                        \rank{4} You can attack enemies up to 15 feet away from you.
-                        \rank{6} You can attack enemies up to 20 feet away from you.
+                        \rank{5} You can attack enemies up to 15 feet away from you.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flash Step}
@@ -357,21 +354,20 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                         Teleporting a given distance costs movement equal to twice that distance.
                         For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
+                        If you are unable to use your walk speed, such as if you are \paralyzed, you also cannot move with this ability.
 
                         \rankline
-                        \rank{4} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                        \rank{6} You can use this ability to move even if you are \grappled.
+                        \rank{5} The movement cost to teleport is reduced to be equal to the distance you teleport.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}
                         \abilityusagetime Free action.
                         \rankline
-                        When you make a \glossterm{strike} this round, you roll the attack roll twice and take the higher result.
+                        When you make a \glossterm{strike} this round, you \glossterm{reroll} the attack roll once and take the higher result.
                         However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
 
                         \rankline
-                        \rank{4} You also gain a +1 \glossterm{accuracy} bonus with strikes.
-                        \rank{6} The accuracy bonus increases to +2.
+                        \rank{5} You also gain a +1 \glossterm{accuracy} bonus with strikes.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}
@@ -380,8 +376,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus6.
-                        \rank{6} The bonus increases to \plus8.
+                        \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Kindle the Living Flame}
@@ -390,8 +385,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         Your \glossterm{strikes} have the \atFire tag this round.
 
                         \rankline
-                        \rank{4} You also gain +1d4 extra damage with strikes.
-                        \rank{6} The extra damage increases to +1d6.
+                        \rank{5} This effect lasts \glossterm{briefly}.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Leap of the Heavens}
@@ -401,8 +395,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         This increases your maximum vertical jump distance normally.
 
                         \rankline
-                        \rank{4} The bonus increases to \plus20 feet.
-                        \rank{6} The bonus increases to \plus30 feet.
+                        \rank{5} The bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}
@@ -411,8 +404,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
                         \rankline
-                        \rank{4} The bonus increases to \plus6.
-                        \rank{6} The bonus increases to \plus8.
+                        \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Scale the Highest Tower}
@@ -422,8 +414,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         % TODO: is this wording correct?
 
                         \rankline
-                        \rank{4} The bonus increases to \plus6.
-                        \rank{6} The bonus increases to \plus8.
+                        \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]
@@ -433,8 +424,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you take a -2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
-                        \rank{4} The bonus increases to +3.
-                        \rank{6} The bonus increases to +4.
+                        \rank{5} The bonus increases to +3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
@@ -444,18 +434,16 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, your attacks also have a 20\% failure chance this round.
 
                         \rankline
-                        \rank{4} The failure chance for attacks against you increases to 25\%.
-                        \rank{6} The failure chance for attacks against you increases to 30\%.
+                        \rank{5} The failure chance for attacks against you increases to 30\%.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Thread the Eye of the Storm}
                         \abilityusagetime Free action.
                         \rankline
-                        You reduce your \glossterm{longshot penalty} with thrown weapons by 1 this round (see \pcref{Weapon Range Limits}).
+                        You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this round (see \pcref{Weapon Range Limits}).
 
                         \rankline
-                        \rank{4} The penalty reduction increases to 2.
-                        \rank{6} The penalty reduction increases to 3.
+                        \rank{5} The penalty reduction increases to 3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
@@ -465,8 +453,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
 
                         \rankline
-                        \rank{4} You also gain a \plus2 bonus to those checks while this effect lasts.
-                        \rank{6} The penalty during the next round is removed.
+                        \rank{5} The penalty during the next round is removed.
                     \end{magicalactiveability}
 
                     % TODO: add more
