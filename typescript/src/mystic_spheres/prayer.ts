@@ -20,9 +20,8 @@ export const prayer: MysticSphere = {
       roles: ['boon'],
       scaling: {
         2: 'The range increases to \\medrange.',
-        // 1 EA, or 1.3 EA on allies
-        4: 'One target is also \\empowered this round.',
-        6: 'Each target is also empowered this round.',
+        4: 'The range increases to \\longrange.',
+        6: 'You can choose a third target within range.',
       },
       tags: ['Swift'],
     },
@@ -96,6 +95,19 @@ export const prayer: MysticSphere = {
     },
 
     {
+      name: 'Boon of Aggression',
+
+      // 0.6 EA, or 0.8 EA on allies
+      effect: `
+        Choose one \\glossterm{ally} within \\medrange.
+        The target is \\focused and \\empowered this round.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: [],
+    },
+
+    {
       name: 'Boon of Precision',
 
       // 0.8 EA, or 1 EA on allies
@@ -137,7 +149,8 @@ export const prayer: MysticSphere = {
       tags: [],
     },
 
-    // 0.8 EA, or 1 EA on an ally.
+    // 0.8 EA, or 1 EA on an ally. These have some slight antisynergy because you are less
+    // likely to be crit while fortified, so call it r3.
     {
       name: 'Boon of Living Steel',
 
@@ -146,7 +159,7 @@ export const prayer: MysticSphere = {
         The target is \\fortified and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -154,13 +167,14 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Invulnerability',
 
-      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefy} cannot use this ability again.',
+      // 1 EA, or 1.3 EA on an ally
+      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot use this ability again.',
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -168,23 +182,26 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Annihilation',
 
-      cost: 'Two \\glossterm{fatigue levels}, and you \\glossterm{briefly} cannot use this ability again.',
+      // 1.5 EA, or 1.9 EA on an ally. Losing the next round is maybe -0.5 EA?
+      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot use this ability again.',
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\primed and \\maximized this round.
+        During the next round, it are unable to take \\glossterm{standard actions}.
       `,
       rank: 7,
       roles: ['boon'],
-      tags: ['Swift'],
+      tags: [],
     },
 
     {
       name: 'Boon of Shielding',
 
+      // 0.8 EA, or 1 EA on allies
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target is \\shielded this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
       rank: 3,
       roles: ['boon'],
@@ -222,8 +239,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each target would gain a \\glossterm{condition}, it can choose to negate that condition.
-        After a creature negates a condition in this way, this spell ends for that creature.
+        Whenever each target would gain a \\glossterm{condition}, that condition is automatically removed, and this spell ends for that creature.
       `,
       rank: 1,
       roles: ['attune'],
@@ -441,9 +457,31 @@ export const prayer: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    // +1r for curse, -1r for limited scope
+    // dazzled hp condition is 0.7 EA. +0.2 EA for curse, +0.4 EA for prebuff = 1.3 EA.
+    // Drop it to 1.2 EA since prebuff is lame for such a low rank effect. That gives room
+    // for +1 area tier, so r3 area.
     {
       name: 'Curse of Blurred Vision',
+
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          Each target has difficulty seeing until it finishes a \\glossterm{short rest}.
+          While a target is below its maximum \\glossterm{hit points}, it is \\dazzled.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+        `,
+      },
+      rank: 1,
+      roles: ['softener'],
+      scaling: 'accuracy',
+      tags: ['Curse', 'Visual'],
+    },
+
+    // +0.2 EA for curse makes this a 2 EA debuff.
+    {
+      name: 'Efficient Curse of Blurred Vision',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
@@ -451,68 +489,94 @@ export const prayer: MysticSphere = {
           Each target is \\dazzled until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 4,
       roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
     },
-    // +1r for curse, +1r for prebuff, -1r for limited scope
+    // +0.2 EA for curse, +0.4 EA for prebuff makes this a 2.7 EA debuff. Maybe drop to
+    // 2.6 EA for short range, which is closer to melee.
+    // -1r for limited scope
     {
       name: 'Curse of Sloth',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          While the target is below its maximum \\glossterm{hit points}, it is \\slowed.
-          This effect lasts until the target finishes a \\glossterm{short rest}.
+          Each target becomes slothful until it finishes a \\glossterm{short rest}.
+          While a slothful creature is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 6,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse'],
     },
-    // +1r for curse, -2r for damage requirement, -1r for limited scope
+
+    {
+      name: 'Nemesis Curse',
+
+      // Frightened and goaded together are a simple 29% action denial, or 3.5 EA, plus
+      // the 0.8 EA from Mental defense. That's 4.3 EA, or 1.7 EA as a HP condition. +0.2
+      // EA for curse and 0.4 EA for prebuff to get 2.3 EA. -1r for limited scope.
+      attack: {
+        crit: `The effect lasts until the curse is removed.`,
+        hit: `
+          Each target perceives you as its nemesis until it finishes a \\glossterm{short rest}.
+          While it is below its maximum hit points, it is \\goaded by you and \\frightened by you.
+        `,
+        targeting: `
+          Make an attack vs. Mental against up to two creatures in \\medrange.
+        `,
+      },
+      rank: 5,
+      roles: ['maim'],
+      scaling: 'accuracy',
+      tags: ['Curse', 'Emotion'],
+    },
+
+    // Frightened by all HP condition is 1.7 EA, +0.2 EA for curse, -0.4 EA for damage
+    // requirement, +0.4 EA for prebuff = 1.9 EA. -1r for limited scope.
     {
       name: 'Curse of Anxiety',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          The target becomes anxious until it finishes a \\glossterm{short rest}.
-          Whenever a creature causes the target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
+          Each target becomes anxious until it finishes a \\glossterm{short rest}.
+          Whenever a creature causes a target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
           As normal, it stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 3,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Emotion'],
     },
-    // +1r for curse, +1r for prebuff, -1r for limited scope
+    // Invisible HP condition is 1.6 EA. +0.2 EA for curse, +0.4 EA for prebuff = 2.2 EA.
     {
       name: 'Curse of Selective Sight',
 
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          While each target is below its maximum \\glossterm{hit points}, it treats you as being \\invisible.
-          This effect lasts until the target finishes a \\glossterm{short rest}.
+          Each target has difficulty looking at you until it finishes a \\glossterm{short rest}.
+          While a target is below its maximum \\glossterm{hit points}, it treats you as being \\trait{invisible}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 4,
+      rank: 5,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Visual'],
