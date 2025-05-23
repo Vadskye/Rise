@@ -196,27 +196,32 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     %
                     % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
                     % For now, they're just ranked in the same way as conditions.
+
+                    % enraged as a condition is 1.2 EA, so we can get r3 area
                     \begin{magicalsustainability}{Ballad of Belligerence}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the target is \enraged.
+                        Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
+                        \hit For the duration of your performance, each target is \enraged.
                         Every round, it must spend a \glossterm{standard action} to make an attack.
 
                         \rankline
                         The attack gains a \plus2 accuracy bonus for each rank beyond 1.
                     \end{magicalsustainability}
 
+                    % +4 accuracy is 0.6 EA
                     \begin{magicalactiveability}{Boastful Bravura}
                         \abilityusagetime Standard action.
                         \rankline
                         This ability affects all \glossterm{enemies} within a \largearea radius from you.
                         You \glossterm{briefly} gain a \plus4 accuracy bonus against each target.
+                        You are also briefly \empowered.
 
                         \rankline
                         \rank{3} The area increases to a \hugearea radius.
-                        \rank{5} The area increases to a \gargarea radius.
-                        \rank{7} The ability affects all enemies who can see or hear you.
+                        \rank{5} The ability affects all enemies who can see or hear you, regardless of distance.
+                        % This is 0.9 EA from accuracy and 0.2 EA from empowered
+                        \rank{7} The accuracy bonus increases to \plus5.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard)}
@@ -254,7 +259,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} You can target an additional \glossterm{ally} within range.
                         \rank{5} If a target increases its \glossterm{fatigue level} by one, it can remove the chosen effect permanently.
-                        \rank{7} This ability affects two conditions instead of one.
+                        \rank{7} This ability can affect two conditions instead of one.
                         A target must increase its fatigue level by two to remove both conditions.
                     \end{magicalsustainability}
 
@@ -276,19 +281,17 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The area increases to a \largearea radius, and the damage increases to \damageranksixlow.
                     \end{magicalactiveability}
 
+                    % Dazzled is 1.8 EA, so we can get away with it with limited scope
                     \begin{magicalsustainability}{Dazzling Discordance}{\abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \smallarea radius from you.
+                        Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
                         \hit For the duration of your performance, each target is \dazzled.
 
                         \rankline
+                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+
                         \rank{2} The area increases to a \medarea radius.
-                        \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
-                        \rank{4} The area increases to a \largearea radius.
-                        \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{6} The area increases to a \hugearea radius.
-                        \rank{7} The accuracy bonus increases to \plus3.
                     \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Emotion}]
@@ -306,31 +309,36 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The damage increases to \damageranksevenlow.
                     \end{magicalactiveability}
 
+                    % Stunned in HP is 1.2 EA, +0.4 for prefire = 1.6 EA. We can do that with limited scope.
                     \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
-                        \hit For the duration of your performance, the target is \stunned while it has no remaining \glossterm{damage resistance}.
-                        \crit The target is stunned even if it has damage resistance remaining.
+                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
+                        \hit For the duration of your performance, each target is \stunned while it has no remaining \glossterm{damage resistance}.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+
+                        \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
 
+                    % Frightened by you is 1.7 EA, we can get away with it using limited scope
                     \begin{magicalsustainability}{Frightening Fugue}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against one creature within \shortrange.
-                        \hit The target is \frightened by you for the duration of your performance.
+                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
+                        \hit For the duration of your performance, each target is \frightened by you.
 
                         \rankline
-                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
+
+                        \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Hypnotic Hymn}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against one creature within \medrange.
+                        Make an attack vs. Mental against up to two creatures within \shortrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                         \hit For the duration of your performance, the target is \charmed by you.
                         This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced either during this effect or after it ends.
@@ -347,8 +355,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} The bonus increases to \plus2.
-                        \rank{5} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
+                        \rank{5} You can choose an additional target within range.
+                        \rank{7} The bonus increases to \plus3.
                     \end{magicalsustainability}
 
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Swift}]
@@ -367,11 +375,13 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The recovery increases to 10d10.
                     \end{magicalactiveability}
 
-                    \begin{magicalsustainability}{Partita of Provocation}[\abilitytag{Emotion}, \abilitytag{Sustain} (minor)]
+                    % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
+                    \begin{magicalsustainability}{Partita of Provocation}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Mental against one \glossterm{enemy} adjacent to you.
-                        \hit The target is \goaded by you for the duration of your performance.
+                        Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
+                        \hit Each target is \glossterm{briefly} \goaded by you.
+                        \hit In addition, each target is \glossterm{goaded} by you for the duration of your performance.
 
                         \rankline
                         You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
@@ -389,25 +399,26 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target is \trait{immune} to Compulsion and Emotion attacks.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Stutterstep Staccato}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
-                        \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
-                        \hit For the duration of your performance, each target is \slowed while it has no remaining \glossterm{damage resistance}.
-                        \crit The target is slowed even if it has damage resistance remaining.
-
-                        \rankline
-                        \rank{2} The area increases to a \medarea radius.
-                        \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
-                        \rank{4} The area increases to a \largearea radius.
-                        \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{6} The area increases to a \hugearea radius.
-                        \rank{7} The accuracy bonus increases to \plus3.
-                    \end{magicalsustainability}
                 }
             ",
             modifiers: None,
         },
+        // TODO
+                    // \begin{magicalsustainability}{Stutterstep Staccato}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
+                    //     \abilityusagetime Standard action.
+                    //     \rankline
+                    //     Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
+                    //     \hit For the duration of your performance, each target is \slowed while it has no remaining \glossterm{damage resistance}.
+                    //     \crit The target is slowed even if it has damage resistance remaining.
+
+                    //     \rankline
+                    //     \rank{2} The area increases to a \medarea radius.
+                    //     \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
+                    //     \rank{4} The area increases to a \largearea radius.
+                    //     \rank{5} The accuracy bonus increases to \plus2.
+                    //     \rank{6} The area increases to a \hugearea radius.
+                    //     \rank{7} The accuracy bonus increases to \plus3.
+                    // \end{magicalsustainability}
         RankAbility {
             complexity: 1,
             name: "Bardic Performances+",

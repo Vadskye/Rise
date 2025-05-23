@@ -382,9 +382,26 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             complexity: 2,
-            name: "Metamagic",
+            name: "Intricate Spell",
             is_magical: true,
             rank: 1,
+            description: r"
+                Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
+                If you do, you gain a \plus1 accuracy bonus with the spell this round.
+                However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
+                This defense penalty is \abilitytag{Swift}.
+            ",
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Armor, -2),
+                Modifier::Defense(Defense::Reflex, -2),
+            ]),
+        },
+        RankAbility {
+            complexity: 2,
+            name: "Metamagic",
+            is_magical: true,
+            rank: 2,
             description: r"
                 You learn how to further refine your spellcasting abilities.
                 Choose two metamagic abilities from the list below.
@@ -447,23 +464,6 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 You can spend \glossterm{insight points} to learn one additional metamagic ability per insight point.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Intricate Spell",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
-                If you do, you gain a \plus1 accuracy bonus with the spell this round.
-                However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
-                This defense penalty is \abilitytag{Swift}.
-            ",
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-                Modifier::Defense(Defense::Armor, -2),
-                Modifier::Defense(Defense::Reflex, -2),
-            ]),
         },
         RankAbility {
             complexity: 0,

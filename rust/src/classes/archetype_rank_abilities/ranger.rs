@@ -415,7 +415,17 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Supreme Tracker",
+            name: "Agile Hunter",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain a \plus1 bonus to your Dexterity.
+            ",
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Tracking Expert",
             is_magical: false,
             rank: 6,
             description: r"
@@ -424,16 +434,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 If you are following their tracks, you can track where they teleported to in the same way.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Agile Hunter",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You gain a \plus1 bonus to your Dexterity.
-            ",
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
     ]
 }
