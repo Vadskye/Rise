@@ -1825,7 +1825,7 @@ impl Class {
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot be affected by other creatures using this ability on you.
                         \end{magicalactiveability}
-                        \magicaldomainability{Essence} The target of your \textit{divine protection} ability also takes no extra damage from \glossterm{critical hits}.
+                        \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
 
