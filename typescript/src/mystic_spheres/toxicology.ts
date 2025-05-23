@@ -521,7 +521,7 @@ export const toxicology: MysticSphere = {
           The target becomes covered in fear-inducing fungus as a \\glossterm{condition}.
           It becomes \\frightened of you and all other sources of fungus as a \\glossterm{condition}.
 
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move actoin} to scrape off the fungus.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `
@@ -541,7 +541,7 @@ export const toxicology: MysticSphere = {
           The target becomes covered in devouring fungus as a \\glossterm{condition}.
           It takes \\damagerankone immediately and during each of your subsequent actions.
 
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to scrape off the fungus.
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the fungus.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
         `,
         targeting: `

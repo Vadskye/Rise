@@ -415,7 +415,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           The target catches on fire as a \\glossterm{condition}.
           It takes \\damagerankone immediately and during each of your subsequent actions.
 
-          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{movement} to put out the flames.
+          The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to put out the flames.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
           This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
         `,
