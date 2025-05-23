@@ -927,7 +927,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Whenever you make a Deception attack or check, you can roll twice and keep the higher result.
+                Whenever you make a Deception attack roll or check, you can \glossterm{reroll} once and keep the higher result.
             ",
             modifiers: None,
         },
