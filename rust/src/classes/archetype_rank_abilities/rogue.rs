@@ -258,6 +258,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         A target must increase its fatigue level by two to remove both conditions.
                     \end{magicalsustainability}
 
+                    % r1 area gets drX
                     \begin{magicalactiveability}{Crashing Cacaphony}
                         \abilityusagetime Standard action.
                         \rankline
@@ -267,11 +268,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{2} The damage increases to \damageranktwolow.
-                        \rank{3} The area increases to a \smallarea radius.
+                        % r2 area gets drX-1. However, flat damage attacks have poor scaling, so being one rank behind is generally equivalent to being two ranks behind for a normal damage, so increase to a medarea radius.
+                        \rank{3} The area increases to a \medarea radius.
                         \rank{4} The damage increases to \damagerankthreelow.
-                        \rank{5} The area increases to a \medarea radius.
+                        \rank{5} The damage increases to \damagerankfourlow.
                         \rank{6} The damage increases to \damagerankfivelow.
-                        \rank{7} The area increases to a \largearea radius.
+                        \rank{7} The area increases to a \largearea radius, and the damage increases to \damageranksixlow.
                     \end{magicalactiveability}
 
                     \begin{magicalsustainability}{Dazzling Discordance}{\abilitytag{Sustain} (minor)}
