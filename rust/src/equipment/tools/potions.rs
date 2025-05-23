@@ -161,7 +161,7 @@ pub fn potions() -> Vec<Tool> {
     });
 
     potions.push(Tool {
-        name: "Potion of Maximum Power".to_string(),
+        name: "Potion of Overwhelming Power".to_string(),
         rank: 3,
         short_description: "Grants brief maximization".to_string(),
         description: r"
