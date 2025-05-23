@@ -699,7 +699,7 @@ export const astromancy: MysticSphere = {
       effect: `
         All attacks against you this round have a 20\\% \\glossterm{failure chance}.
         In addition, you gain a +2 bonus to all defenses.
-        This ability has the \\abilitytag{Swift} tag, so it protects you from attacks against you during the current phase.
+        This ability has the \\abilitytag{Swift} tag, so it protects you from attacks during the current phase.
       `,
       narrative: `You quickly blink into the Astral Plane, leaving a dangerous battlefield behind.`,
       rank: 1,
