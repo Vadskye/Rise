@@ -154,7 +154,7 @@ impl Monster {
         }
 
         // Add scaling from level, just like PCs use. Note that the order affects rounding.
-        expected_attribute_sum += ((self.creature.level + 3) / 6) * 2;
+        expected_attribute_sum += ((self.creature.level + 1) / 6) * 2;
 
         let mut actual_attribute_sum = 0;
         for attribute in Attribute::monster_validation() {
