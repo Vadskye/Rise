@@ -280,13 +280,13 @@ fn amulets() -> Vec<Apparel> {
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Haranguing Amulet"),
-        rank: 3,
+        rank: 1,
         short_description: String::from(r"Goad with \ability{denounce the heathens}"),
         description: String::from(r"
             You can use the Intimidate skill in place of the Persuasion skill for the \ability{denounce the heathens} cleric ability.
             When you do, each target is \goaded by you instead of stunned.
         "),
-        tags: vec![AbilityTag::Emotion],
+        tags: vec![AbilityTag::Emotion, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
