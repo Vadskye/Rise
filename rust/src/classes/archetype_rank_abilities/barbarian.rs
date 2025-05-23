@@ -41,6 +41,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         // TODO: this has janky scaling
+        // Half HP damage is roughly half as effective as half damage, so 0.5 EA. A strike can
+        // normally get 0.4 EA with -1 accuracy, so a class ability can get 0.5 EA with no accuracy
+        // penalty.
         RankAbility {
             complexity: 1,
             name: "Resilient Blow",
@@ -50,12 +53,12 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Resilient Blow}[\atSwift (see text)]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make a melee \glossterm{strike} with a -2 accuracy penalty.
+                    Make a melee \glossterm{strike}.
                     In addition, whenever you would reduce your \glossterm{hit points} this round, you lose half that many hit points instead (minimum 1).
                     This effect is \atSwift, but the strike is not.
 
                     \rankline
-                    \rank{4} The accuracy penalty is removed.
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
                     \rank{5} If you are at your maximum hit points, the strike deals double damage.
                     \rank{6} The strike always deals double damage.
                     \rank{7} If you are at your maximum hit points, the strike deals triple damage.

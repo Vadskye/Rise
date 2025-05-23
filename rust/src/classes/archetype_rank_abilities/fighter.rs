@@ -1,8 +1,7 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, Resource};
+use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
-use crate::skills::Skill;
 
 pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -24,10 +23,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus2 bonus to the Endurance skill and to your \glossterm{fatigue tolerance}.
+                You gain a \plus2 bonus to your Mental defense and \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
-                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Defense(Defense::Mental, 2),
                 Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
@@ -40,7 +39,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                 The bonuses increase to \plus4.
             ",
             modifiers: Some(vec![
-                Modifier::Skill(Skill::Endurance, 2),
+                Modifier::Defense(Defense::Mental, 2),
                 Modifier::Resource(Resource::FatigueTolerance, 2),
             ]),
         },
@@ -73,7 +72,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{activeability}{Cleansing Discipline}[\abilitytag{Swift}]
-                    \abilityusagetime Standard action. You can increase your \glossterm{fatigue level} by two to use this ability as a \glossterm{minor action} instead.
+                    \abilityusagetime Standard action. You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action} instead.
                     \rankline
                     Remove all \glossterm{conditions} affecting you.
                     Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
