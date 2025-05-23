@@ -1602,7 +1602,7 @@ impl Class {
                         \domainability{Aspect} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Twist of Fate}
-                            \abilityusagecost You cannot use this ability again until you finish a \glossterm{long rest}.
+                            \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
                             \abilityusagetime Standard action.
                             \rankline
                             An improbable event occurs within \distrange.
