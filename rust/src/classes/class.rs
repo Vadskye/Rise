@@ -1602,12 +1602,12 @@ impl Class {
                         \domainability{Aspect} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Twist of Fate}
+                            \abilityusagecost You cannot use this ability again until you finish a \glossterm{long rest}.
                             \abilityusagetime Standard action.
                             \rankline
                             An improbable event occurs within \distrange.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
-                            After using this ability, you cannot use it again until you finish a \glossterm{long rest}.
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} All of your checks can explode once, not just skill checks.
                         Your checks also explode on a 9 or 10, not just a 10.

@@ -174,9 +174,10 @@ export const revelation: MysticSphere = {
     {
       name: 'True Strike',
 
-      // Ally focus is 0.6 EA, self focus + hone is 0.8 EA
+      // Ally focus is 0.6 EA, self focus + hone is 0.8 EA. Increasing ally range makes
+      // the two outcomes more similar.
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose yourself or one \\glossterm{ally} within \\longrange.
         The target becomes \\focused this round.
         If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
       `,
@@ -190,7 +191,7 @@ export const revelation: MysticSphere = {
 
       // Ally focus + empower is 0.9 EA, self focus + empower + hone is 1 EA
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
+        Choose yourself or one \\glossterm{ally} within \\longrange.
         The target becomes \\focused and \\empowered this round.
         If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
       `,

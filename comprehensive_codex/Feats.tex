@@ -1185,24 +1185,34 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Leadership}{Combat}
     \featpre Either Intelligence 2 or Willpower 2.
 
+    % Focused and +1 accuracy is base 0.5 EA, or 0.8 EA on an ally.
     \ff[1]{Battle Command}
     \begin{activeability}{Battle Command}
       \abilityusagetime Standard action.
       \rankline
-      Choose an \glossterm{ally} within \rngmed range.
-      The target is \focused and has a \plus2 accuracy bonus this round.
+      Choose an \glossterm{ally} within \medrange.
+      The target becomes \focused and gains a \plus1 accuracy bonus this round.
+
+      \rankline
+      % 0.7 base EA, or 1.1 on an ally.
+      \featlevel{9} The accuracy bonus increases to \plus2.
+      % 0.8 base EA, or 1.2 on an ally.
+      \featlevel{18} The accuracy bonus increases to \plus3.
     \end{activeability}
 
     \ff[6]{Encouraging Presence} As long as you are conscious, your \glossterm{allies} who can see or hear you are immune to being \frightened and \panicked.
 
     \ff[12]{Bolster}
+    % Assume empower affects 3 ally actions, so it's 0.6 EA.
+    % Steeled affects all allies, so it's theoretically huge EA, but in practice most people aren't crit every round.
+    % We add a brief cooldown to make it more reasonable.
     \begin{activeability}{Bolster}[\abilitytag{Emotion}, \abilitytag{Swift}]
+      \abilityusagecost You \glossterm{briefly} cannot use this ability again.
       \abilityusagetime Standard action.
       \rankline
-      One \glossterm{ally} who can see or hear you gains a \plus2 bonus to \glossterm{vital rolls} and all defenses this round.
-
+      Each \glossterm{ally} within a \largearea radius from you is \empowered and \steeled this round.
       \rankline
-      \featlevel{18} The bonus increases to \plus3.
+      \featlevel{18} This ability affect each ally who can see or hear you, regardless of distance.
     \end{activeability}
 
     \ff[18]{Unyielding Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
@@ -1723,8 +1733,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}
-      \abilityusagetime Standard action.
       \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
+      \abilityusagetime Standard action.
       \rankline
       You cast a spell and make a melee \glossterm{strike}, in either order.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
@@ -2211,12 +2221,11 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[12]{Countermagic}
     \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
       \abilityusagetime Standard action.
-      \abilitycost See text.
+      \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
       Choose a creature within \rngmed range of you.
       If the target uses a \magical ability as a standard action this round, that ability has no effect.
       When you negate an ability in this way, if that ability's rank was higher than your maximum rank, you increase your \glossterm{fatigue level} by one.
-      After you use this ability, you \glossterm{briefly} cannot use it again, whether or not it actually negated a magical effect.
 
       If a creature is capable of using multiple abilities during a single phase, only the first ability it uses can be countered.
       This is common for \glossterm{elite} monsters.

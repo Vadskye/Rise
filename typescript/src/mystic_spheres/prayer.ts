@@ -1,7 +1,7 @@
 import { MysticSphere } from '.';
 
-// Normally, curses would be +2 rank, because immunity to condition removal is powerful.
-// This sphere is limited and has few attacks, so it gets curses at only +1 rank.
+// Normally, curses would be +0.4 EA, because immunity to condition removal is powerful.
+// This sphere is limited and has few attacks, so it gets curses at only +0.2 EA.
 export const prayer: MysticSphere = {
   name: 'Prayer',
   shortDescription: 'Grant divine blessings to aid allies and improve combat prowess.',
@@ -107,14 +107,15 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Boon of Supremacy',
+      name: 'Boon of Steel',
 
+      // 0.8 EA, or 1.2 EA on an ally.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\braced and \\primed this round.
+        The target is \\honed and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
-      rank: 7,
+      rank: 6,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -122,9 +123,11 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Deadly Fortune',
 
+      // 0.8 EA, or 1.2 EA on allies. But what are the odds that both allies get full
+      // value from honed? Seems closer to 1 EA.
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target gains a +4 bonus to \\glossterm{accuracy} this round for the purpose of determining if its attacks get a \\glossterm{critical hit}.
+        Choose two \\glossterm{allies} within \\shortrange.
+        Each target is \\honed this round.
       `,
       rank: 1,
       roles: ['boon'],
@@ -147,15 +150,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Invulnerability',
 
-      cost: 'One \\glossterm{fatigue level}.',
+      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefy} cannot use this ability again.',
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target takes half damage from all sources this round.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target takes half damage from all sources this round.
         Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
-
-        After you use this ability, you \\glossterm{briefly} cannot use it again.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -163,14 +164,12 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Annihilation',
 
-      cost: 'Two \\glossterm{fatigue levels}.',
+      cost: 'Two \\glossterm{fatigue levels}, and you \\glossterm{briefly} cannot use this ability again.',
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\primed and \\maximized this round.
-
-        After you use this ability, you \\glossterm{briefly} cannot use it again.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['boon'],
       tags: ['Swift'],
     },
