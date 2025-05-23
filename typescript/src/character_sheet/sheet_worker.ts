@@ -1768,9 +1768,7 @@ function handleInsightPoints() {
     callback: (v) => {
       const base = 1;
       let fromLevel = 0;
-      if (v.level >= 7) {
-        fromLevel = 2;
-      } else if (v.level >= 4) {
+      if (v.level >= 4) {
         fromLevel = 1;
       }
       const totalValue = base + v.intelligence + v.misc + fromLevel;
