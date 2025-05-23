@@ -21,6 +21,7 @@ export const umbramancy: MysticSphere = {
 
         You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The bonus increases to +4.`,
         4: `The bonus increases to +5.`,
@@ -29,105 +30,85 @@ export const umbramancy: MysticSphere = {
     },
 
     {
+      name: 'Passing Shadow',
+
+      effect: `
+        This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
+
+        Choose one creature within \\medrange.
+        The target is \\glossterm{briefly} \\glossterm{shadowed}, regardless of the light surrounding it.
+        This normally means it has \\glossterm{concealment} from attacks against it.
+      `,
+      roles: ['narrative'],
+      scaling: {
+        2: `You can choose an additional target within range.`,
+        4: `The maximum range increases to \\longrange.`,
+        6: `The maximum range increases to \\distrange.`,
+      },
+    },
+
+  ],
+  spells: [
+    {
       name: 'Suppress Light',
 
+      // Treat this as an AOE brief dazzle with Sustain (minor). That's 1.6 EA. But how do
+      // you deal with this not making an attack? In theory, enemies can move out of the
+      // area to avoid being affected, but if you create the area on your party then it
+      // affects all enemies regardless of how spread out they are. That sounds like it's
+      // worth at least 0.4 EA, for a total of 2 EA.
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        \\glossterm{Bright illumination} within or passing through the one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} within through one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{shadowy illumination}.
         \\glossterm{Brilliant illumination} is undimmed.
         You can choose this spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
+      rank: 4,
+      roles: ['flash', 'hazard'],
       scaling: {
-        2: `The maximum area increases to a \\medarea radius.`,
-        4: `The range increases to \\longrange.`,
-        6: `The maximum area increases to a \\largearea radius.`,
+        6: `The maximum area increases to a \\medarea radius.`,
       },
       tags: ['Visual'],
       type: 'Sustain (minor)',
     },
-  ],
-  spells: [
+    // TODO: proper EA calc
     {
       name: 'Banish Light',
 
       effect: `
         All light within one \\glossterm{zone} within \\medrange is suppressed.
-        You can choose this spell's radius, up to a maximum of a \\medarea radius.
-        Light within or passing through the area is snuffed out.
+        You can choose this spell's radius, up to a maximum of a \\smallarea radius.
+        Light within the area is snuffed out.
         Any object or effect which blocks light also blocks this spell's effect.
         Darkvision and similar abilities which do not require light still function within the area.
       `,
-      rank: 3,
-      scaling: {
-        5: `The maximum area increases to a \\largearea radius.`,
-        7: `The maximum area increases to a \\hugearea radius.`,
-      },
+      rank: 7,
+      roles: ['flash', 'hazard'],
       tags: ['Visual'],
       type: 'Sustain (minor)',
     },
 
-    {
-      name: 'Beacon of Darkness',
-
-      effect: `
-        All light within an \\glossterm{emanation} around you is suppressed.
-        You can choose this spell's radius, up to a maximum of a \\largearea radius.
-        Light within or passing through the area is snuffed out.
-        Any object or effect which blocks light also blocks this spell's effect.
-        Darkvision and similar abilities which do not require light still function within the area.
-      `,
-      rank: 6,
-      roles: ['attune'],
-      tags: ['Visual'],
-      type: 'Sustain (attuneable, standard)',
-    },
-
+    // basically the same as Suppress Light, but slightly more restrictive area generally
     {
       name: 'Darklantern',
 
       effect: `
         Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        \\glossterm{Bright illumination} within or passing through an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} within an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
         \\glossterm{Brilliant illumination} is undimmed.
         You can choose the spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['attune'],
       scaling: {
-        3: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
-        5: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
-        7: `The maximum area increases to a \\hugearea radius \\glossterm{emanation}.`,
+        5: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
+        7: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
       },
       tags: ['Visual'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Deep Darkness',
-
-      effect: `
-        You create a void of darkness in a \\medarea radius \\glossterm{zone} within \\medrange.
-        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through that area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
-        Any object or effect which blocks light also blocks this spell's effect.
-      `,
-      rank: 4,
-      tags: [],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Absolute Darkness',
-
-      effect: `
-        You create a void of darkness in a \\medarea radius \\glossterm{zone} within \\medrange.
-        \\glossterm{Bright illumination} and \\glossterm{brilliant illumination} within or passing through an \\glossterm{emanation} from that object are removed, making no light possible in the area.
-        Any object or effect which blocks light also blocks this spell's effect.
-      `,
-      rank: 7,
-      tags: ['Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Attune',
     },
 
     {
@@ -156,153 +137,163 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Dark Miasma',
+      name: 'Reaching Shadows',
 
-      // -2r for shadowed requirement
+      // r0 gives drX+1, drop to drX for the accuracy bonus
       attack: {
         hit: `\\damagerankonelow.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Mental against everything a \\smallarea cone from you.
+          You gain a +2 accuracy bonus against each \\glossterm{shadowed} target.
         `,
       },
+      roles: ['clear'],
       rank: 1,
-      tags: ['Cold'],
-      scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
+      scaling: { special: 'The damage increases by +2 for each rank beyond 1.' },
+    },
+
+    {
+      name: 'Mighty Reaching Shadows',
+
+      // r0 gives drX+1, drop to drX for the accuracy bonus
+      attack: {
+        hit: `\\damagerankfourlow.`,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against everything a \\smallarea cone from you.
+          You gain a +2 accuracy bonus against each \\glossterm{shadowed} target.
+        `,
+      },
+      roles: ['clear'],
+      rank: 4,
+      scaling: { special: 'The damage increases by 1d10 for each rank beyond 4.' },
+    },
+
+    {
+      name: 'Dark Miasma',
+
+      // area rank X is normally drX-2, or drX-1 for flat damage. Add +1dr for shadowed requirement,
+      // keeping in mind that +1dr is very strong for flat damage effects. Then, drop by
+      // dr1 for the double attack.
+      attack: {
+        hit: `\\damageranktwolow.`,
+        missGlance: true,
+        targeting: `
+          You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
+          When you cast this spell, and during your next action, make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+        `,
+      },
+      rank: 3,
+      roles: ['wildfire'],
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
     },
 
     {
       name: 'Spreading Dark Miasma',
 
-      // -2r for shadowed requirement. Enemies-only large radius is t4. Spend the 2r on
-      // damage instead of area.
+      // All the same calcs as dark miasma, except that we calculate this as a large
+      // radius for area purposes, and it doesn't drop by a damage rank for double attack
+      // because you have to sustain it.
       attack: {
-        hit: `\\damagerankfourlow.`,
+        hit: `\\damagerankfivelow.`,
         missGlance: true,
         targeting: `
-          You create a field of miasma centered on your location.
-          The area affected by the miasma increases over time.
+          You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
-      rank: 4,
-      // 1d10 is too low, 2d10 is too high, and mixed dice are awkward. We use mixed dice
-      // here grudgingly.
-      scaling: { special: 'The damage increases by 2d6 for each rank beyond 4.' },
-      tags: ['Cold', 'Sustain (standard)'],
+      rank: 5,
+      roles: ['wildfire'],
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
+      tags: ['Sustain (standard)'],
     },
 
-    {
-      name: 'Mighty Dark Miasma',
-
-      // Spend the 2r from shadowed on damage instead of area
-      attack: {
-        hit: `\\damagerankeightlow.`,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 7,
-      tags: ['Cold'],
-      scaling: 'accuracy',
-    },
 
     {
       name: 'Dark Grasp',
 
       attack: {
-        // +1r for shadowed
+        // Assume this is 50% action denial in 25% of fights, which would be 0.6 EA as a
+        // condition. You can get 0.6 EA on a melee debuff at r1.
+        // Melee range is drX+2, and debuff is drX+1, but we want to avoid X+1 with flat
+        // damage. The shadowed accuracy compensates for that, so we get drX.
         hit: `
-          \\damageranktwolow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damagerankonelow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Mental against something you \\glossterm{touch}.
           You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
-      rank: 2,
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 2.' },
-      tags: ['Cold'],
+      rank: 1,
+      roles: ['burst', 'maim'],
+      scaling: { special: 'The damage increases by +2 for each rank beyond 1.' },
     },
 
     {
       name: 'Efficient Dark Grasp',
 
       attack: {
-        // +1r for shadowed
+        // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
+        // condition.
         hit: `
-          \\damageranksixlow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damagerankfivelow, and the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Reflex against something you \\glossterm{touch}.
+          Make an attack vs. Mental against something you \\glossterm{touch}.
           You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
         `,
       },
-      rank: 6,
-      tags: ['Cold'],
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 6.' },
+      rank: 5,
+      roles: ['burst', 'maim'],
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
     },
 
+    // -2r compared to Suppress Light because it has to start from shadowy illumination,
+    // then +1r for the size scaling
     {
       name: 'Creeping Darkness',
 
-      // treat as short range med radius, which is a t3 area
-      attack: {
-        hit: `\\damagerankthreelow.`,
-        missGlance: true,
-        targeting: `
-          You create a field of darkness at a \\glossterm{shadowed} location within \\shortrange.
-          The area affected by the field increases over time.
-          It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
-          Light in the area is dimmed to be no brighter than \\glossterm{shadowy illumination}.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
-        `,
-      },
-      rank: 5,
-      scaling: { special: 'The damage increases by 1d10 for each rank beyond 5.' },
-      tags: ['Cold', 'Sustain (minor)'],
+      effect: `
+        This spell has no \\glossterm{verbal components}.
+
+        Choose a \\glossterm{shadowed} location within \\medrange.
+        \\glossterm{Bright illumination} within a \\glossterm{zone} from that location is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        The area of darkness increases over time.
+        It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+
+        \\glossterm{Brilliant illumination} is undimmed.
+        Any object or effect which blocks light also blocks this spell's effect.
+      `,
+      rank: 3,
+      roles: ['flash', 'hazard'],
+      // TODO: unclear how this could scale
+      tags: ['Sustain (minor)'],
     },
 
     {
-      name: 'Heed the Dark Call',
+      name: 'Nyctophobia',
 
+      // Frightened by all is a 1.7 EA debuff. Creatures are usually shadowed... maybe 75%
+      // of the time, so call that 1.3 EA.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target feels the call of darkness as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\frightened by you.
+          If the target is below its maximum \\glossterm{hit points}, it becomes afraid of the dark as a \\glossterm{condition}.
+          While it is \\glossterm{shadowed}, it is \\frightened of all creatures.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +4 accuracy bonus if the target is \\glossterm{shadowed}.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
-      tags: ['Emotion', 'Visual'],
-    },
-
-    {
-      name: 'Intense Heed the Dark Call',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target feels the call of darkness as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\panicked by you.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +4 accuracy bonus if the target is \\glossterm{shadowed}.
-        `,
-      },
-      rank: 5,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Visual'],
     },
@@ -310,6 +301,8 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadow Mantle',
 
+      // Say that this applies 50% of the time and is 20% action denial when it applies,
+      // so it's worth 1.2 EA, plus 1 EA for being a precombat buff = 2.2 EA.
       effect: `
         All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
@@ -367,19 +360,19 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Dark Shroud',
 
-      // +1r for shadowed
+      // Dazzled is 1.8 EA, so r3. +1r for shadowed accuracy.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target's eyesight is darkened as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\blinded as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +2 bonus to \\glossterm{accuracy} with the attack against each \\glossterm{shadowed} creature.
+          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+          You gain a +2 \\glossterm{accuracy} bonus with the attack against each \\glossterm{shadowed} creature.
         `,
       },
-      rank: 6,
+      rank: 4,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -389,15 +382,15 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
-        The attack is made against each target's Reflex defense instead of its Armor defense.
+        The attack is made against each target's Mental defense instead of its Armor defense.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       narrative: `
-        You strike your foe's shadow instead of hitting it directly, but it takes damage all the same.
+        You strike your foe's shadow instead of hitting it directly, but it takes damage just the same.
       `,
       rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
-      tags: ['Cold'],
     },
 
     {
@@ -430,6 +423,7 @@ export const umbramancy: MysticSphere = {
         If you are in \\glossterm{bright illumination} or \\glossterm{brilliant illumination} and are not touching your shadow, this spell fails without effect.
       `,
       rank: 1,
+      roles: ['dive'],
       scaling: {
         3: `The teleportation range increases to \\medrange.`,
         5: `The teleportation range increases to \\longrange.`,
@@ -449,6 +443,7 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'shadowstep',
       },
+      roles: ['dive'],
       rank: 3,
       scaling: 'accuracy',
     },
@@ -467,7 +462,8 @@ export const umbramancy: MysticSphere = {
         `,
         name: 'shadowstep',
       },
-      rank: 7,
+      roles: ['dive'],
+      rank: 6,
     },
 
     // Silent move action teleportation invalidates HiPS
@@ -485,30 +481,6 @@ export const umbramancy: MysticSphere = {
     //   scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
     //   type: "Attune",
     // },
-
-    {
-      name: 'Bind Shadow',
-
-      // TODO: very ambiguous rank. It's currently scaled as r3.5, since it can provide
-      // immunity to melee attackers.
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target's shadow is bound to the light as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it treats areas of \\glossterm{shadowy illumination} and unlit areas as solid barriers.
-          This means that it cannot move into them voluntarily or with forced movement effects.
-          However, this condition has no effect if it enters those areas by other means, such as by \\glossterm{teleportation} or if the light around it is suddenly extinguished.
-        `,
-        targeting: `
-          Make an attack vs. Mental against a creature within \\shortrange that is not \\glossterm{shadowed}.
-        `,
-      },
-      narrative: `
-        You bind your foe's shadow to the light, preventing it from entering shadowed areas.
-      `,
-      rank: 6,
-      scaling: 'accuracy',
-    },
 
     // Controlling movement is roughly 100% action denial for the turn, so 4 EA. Double
     // application is -2 EA, so 2 EA. Damage is 3 EA, or r9, which drops to r7 with melee
@@ -583,15 +555,16 @@ export const umbramancy: MysticSphere = {
 
       cost: BARRIER_COOLDOWN,
       effect: `
-        You create a \\medarealong \\glossterm{wall} of darkness within \\medrange.
+        You create a \\smallarealong \\glossterm{wall} of darkness within \\medrange.
         The wall is visible as a solid block of darkness.
         It blocks ordinary vision and \\trait{low-light vision}, but creatures with \\trait{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 2,
+      roles: ['hazard'],
       scaling: {
-        4: 'You can choose to create a \\largearealong wall instead.',
-        6: 'You can choose to create a \\hugearealong wall instead.',
+        4: 'You can choose to create a \\medarealong wall instead.',
+        6: 'You can choose to create a \\largearealong wall instead.',
       },
       tags: ['Barrier', 'Visual'],
       type: 'Sustain (attuneable, minor)',
@@ -605,9 +578,72 @@ export const umbramancy: MysticSphere = {
         You are considered to be \\glossterm{shadowed} if there is \\glossterm{shadowy illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
         The dark area must be large enough to hold you if you were in that location.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
+    },
+
+    // 20% failure chance is 20% action denial, and two targets would plausibly affect 75%
+    // of enemy actions. So this is worth about 0.6 EA. Throw in empower to get it to 0.8
+    // EA.
+    {
+      name: 'Shared Shadow Cloak',
+
+      effect: `
+        Choose one ally within \\medrange.
+        All attacks against you and the target have a 20\\% \\glossterm{failure chance} this round.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Enduring Shadow Cloak',
+
+      // If this affects you twice, it's about 50% in round 1 and 50% in round 2, so 4 *
+      // 0.2 = 0.8 EA. Empowerment gets this a bit higher.
+      effect: `
+        All attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
+      `,
+      rank: 3,
+      roles: ['focus'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Become One With Shadow',
+
+      // 50% action denial against 50% of enemy attacks = 1 EA.
+      effect: `
+        All attacks against you have a 50\\% \\glossterm{failure chance} this round.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
+      `,
+      rank: 6,
+      roles: ['focus'],
+      tags: ['Swift'],
+    },
+
+    {
+      // Personal 20% failure is about 0.4 EA. That gives room for 1 EA of debuff at a
+      // base area rank of r0. Brief frighten is 0.6 EA, so we have +3 area ranks to
+      // spend, reaching r3 area. 
+      name: 'Fearsome Shadow Cloak',
+      attack: {
+        hit: `Each target is \\glossterm{briefly} \\frightened of you.`,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          In addition, all attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+          Since this ability does not have the \\abilitytag{Swift} tag, it does not affect attacks against you during the current phase.
+        `,
+      },
+      rank: 2,
+      roles: ['generator'],
     },
   ],
 };
