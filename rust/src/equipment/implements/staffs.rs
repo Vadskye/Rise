@@ -320,6 +320,7 @@ pub fn staffs() -> Vec<Implement> {
         ..Implement::default()
     }));
 
+    // TODO: add "when you inflict a condition, deal damage immediately" staff?
     // implements.push(Staff(StandardItem {
     //     name: String::from("Hexbite Staff"),
     //     rank: 2,
@@ -481,7 +482,7 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Flaming"),
+        name: String::from("Flaming Staff"),
         rank: 3,
         short_description: String::from(r"Is burning and ignites"),
         description: String::from(r"
@@ -509,7 +510,7 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Arcing"),
+        name: String::from("Arcing Staff"),
         rank: 4,
         short_description: String::from(r"Is charged and chains"),
         description: String::from(r"
@@ -534,7 +535,7 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Freezing"),
+        name: String::from("Freezing Staff"),
         rank: 3,
         short_description: String::from(r"+1d4 damage, is chilled"),
         description: String::from(r"
