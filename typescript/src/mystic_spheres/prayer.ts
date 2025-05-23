@@ -10,19 +10,19 @@ export const prayer: MysticSphere = {
 
   cantrips: [
     {
-      // fortified + empowered is 0.6 EA, or 0.9 EA on an ally.
+      // Double fortify is 0.8 EA, or 1 EA on allies
       effect: `
-        Choose one \\glossterm{ally} you \\glossterm{touch}.
-        The target is \\fortified this round.
-        If it is currently \\glossterm{attuned} to one of your spells from this mystic sphere, it is also \\empowered this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
+        Choose two \\glossterm{allies} within \\shortrange.
+        Each target is \\fortified this round.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
       name: 'Fortifying Boon',
       roles: ['boon'],
       scaling: {
-        2: 'The range increases to \\shortrange.',
-        4: 'The range increases to \\medrange.',
-        6: 'If the target is currently attuned to one of your spells from this mystic sphere, it is also \\steeled this round.',
+        2: 'The range increases to \\medrange.',
+        // 1 EA, or 1.3 EA on allies
+        4: 'One target is also \\empowered this round.',
+        6: 'Each target is also empowered this round.',
       },
       tags: ['Swift'],
     },
@@ -116,7 +116,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\empowered and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
       rank: 2,
       roles: ['boon'],
@@ -144,7 +144,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\fortified and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
       rank: 2,
       roles: ['boon'],
@@ -184,7 +184,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target is \\shielded this round.
-        Because this ability has the \\abilitytag{Swift} tag, this improves the target's defenses against attacks made against it during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
       rank: 3,
       roles: ['boon'],
