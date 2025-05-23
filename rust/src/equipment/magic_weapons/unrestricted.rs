@@ -211,7 +211,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 7,
         short_description: String::from(r"Rerolls missed attacks"),
         description: String::from(r"
-            Whenever you miss with an attack using this weapon, you can reroll the attack and take the higher result.
+            Whenever you miss with an attack using this weapon, you can reroll the attack and keep the higher result.
             After you reroll an attack in this way, you \glossterm<briefly> cannot do so again.
         "),
         ..MagicWeapon::default()
