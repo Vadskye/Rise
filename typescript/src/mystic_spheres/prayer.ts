@@ -97,6 +97,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Precision',
 
+      // 0.8 EA, or 1.2 EA on allies
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target is \\focused this round.
@@ -107,15 +108,16 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Boon of Steel',
+      name: 'Boon of Sharpened Steel',
 
-      // 0.8 EA, or 1.2 EA on an ally.
+      // 0.8 EA, or 1.2 EA on an ally. But these don't synergize very well, so call it 1
+      // EA.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target is \\honed and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
-      rank: 6,
+      rank: 4,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -134,12 +136,13 @@ export const prayer: MysticSphere = {
       tags: [],
     },
 
+    // 0.8 EA, or 1.2 EA on an ally.
     {
       name: 'Boon of Living Steel',
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} \\fortified and \\steeled.
+        The target is \\fortified and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target against attacks made against it during the current phase.
       `,
       rank: 2,

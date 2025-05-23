@@ -75,7 +75,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    Whenever the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and rolls twice, keeping the higher result.
+                    Whenever the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +2, r3: +3, etc.
                 accuracy_modifier = 1 + ((rank + 1) / 2),
@@ -399,7 +399,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    The first time the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and rolls twice, keeping the higher result.
+                    The first time the target makes a strike this round, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +1, r3: +2, etc.
                 accuracy_modifier = ((rank + 1) / 2),
