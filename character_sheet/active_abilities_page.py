@@ -715,7 +715,7 @@ def universal_abilities():
             universal_ability_button(
                 "Total Defense",
                 """
-                    You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this improves your defenses against attacks made against you during the current phase.
+                    You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this protects you from attacks during the current phase.
                 """,
                 tags=["Swift"],
             ),
