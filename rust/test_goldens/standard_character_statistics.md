@@ -35,7 +35,7 @@ DR: 44 = (36 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multip
 Fighter 10
 AP 4, FT 10, IP 3, Skills 3
 HP 48, DR 44
-AD 13, Brn 15, Fort 13, Ref 8, Ment 8
+AD 13, Brn 15, Fort 13, Ref 8, Ment 10
 Generic Accuracy Broadsword +10 (1d6+7 damage.); Certain Broadsword +12 (1d6+3 damage.); Powerful Broadsword +6 (2d6+14 damage.); Extra Damage Broadsword +8 (1d6+13 damage.); Broadsword +7 (1d6+7 damage.)
 Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
 Power: 5✨/12
@@ -46,7 +46,7 @@ Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Weapon Training: accuracy 1
 Armor Expertise: base speed 10
-Enduring Discipline: skill endurance by 2
+Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 fighter: defense armor by 1
@@ -69,7 +69,7 @@ DR: 112 = (96 <armor> + 16 <modifier> + 0 <monster progression>) * 0 <elite mult
 Fighter 20
 AP 5, FT 13, IP 3, Skills 3
 HP 180, DR 112
-AD 18, Brn 21, Fort 19, Ref 13, Ment 13
+AD 18, Brn 21, Fort 19, Ref 13, Ment 17
 Generic Accuracy Broadsword +18 (1d6+11 damage.); Certain Broadsword +20 (1d6+5 damage.); Powerful Broadsword +14 (2d6+22 damage.); Certain Strike+ -- Broadsword +20 (1d6+11 damage.); Power Strike+ -- Broadsword +11 (3d6+33 damage.); Extra Damage Broadsword +12 (1d6+9d8+11 damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 damage.); Broadsword +12 (1d6+11 damage.)
 Attr: Str 8, Dex 0, Con 6, Int 0, Per 2, Wil 0
 Power: 10✨/18
@@ -80,12 +80,12 @@ Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Weapon Training: accuracy 1
 Armor Expertise: base speed 10
-Enduring Discipline: skill endurance by 2
+Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Equipment Efficiency: resource attunement point by 1
 Maneuvers: maneuver Certain Strike+
 Maneuvers: maneuver Power Strike+
-Enduring Discipline+: skill endurance by 2
+Enduring Discipline+: defense mental by 2
 Enduring Discipline+: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Generic Triple Damage
