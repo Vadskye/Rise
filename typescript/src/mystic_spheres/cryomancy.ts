@@ -440,7 +440,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
           In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
-          After you use this ability, you \\glossterm{briefly} cannot use it again.
+          After you breathe cold, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,

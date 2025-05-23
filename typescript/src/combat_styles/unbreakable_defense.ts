@@ -111,10 +111,9 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Second Wind',
 
-      cost: 'Two \\glossterm{fatigue levels}.',
+      cost: 'Two \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{short rest}.',
       effect: `
         You regain all of your hit points.
-        After you use this ability, you cannot use it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
       roles: ['healing'],
