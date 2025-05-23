@@ -528,9 +528,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make an attack vs. Mental against one creature within \shortrange.
+                    Make an attack vs. Mental against up to two creatures within \shortrange.
                     If this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The target is \glossterm{briefly} confused, and it is \stunned until it finishes a \glossterm{long rest}.
+                    \hit The target is \stunned until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{activeability}
             ",
