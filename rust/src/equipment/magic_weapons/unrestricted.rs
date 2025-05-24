@@ -261,6 +261,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    // A little sketchy at 3, but how often do you make Mental defense strikes? Compulsion is more
+    // often a downside than an upside.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Psionic"),
         rank: 3,
