@@ -780,7 +780,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Minor Timetheft',
 
-      castingTime: "One \\glossterm{free action}.",
+      castingTime: "One \\glossterm{free action}",
       cost: BRIEF_COOLDOWN,
       effect: `
         You can take an additional \\glossterm{minor action} this round.
