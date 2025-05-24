@@ -12,7 +12,6 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a 50\\% miss chance.
         The strike deals double damage.
-        However, you cannot get a \\glossterm{critical hit} with it.
       `,
       rank: 3,
       roles: ['burst'],
@@ -23,7 +22,6 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a 50\\% miss chance that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
         The strike deals triple damage.
-        However, you cannot get a \\glossterm{critical hit} with it.
       `,
       rank: 7,
       roles: ['burst'],
