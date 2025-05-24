@@ -732,7 +732,7 @@
       \begin{magicalactiveability}{Essence Spike}
         \abilityusagetime Standard action.
         \rankline
-        Make an attack against all \glossterm{enemies} within a \smallarea radius from you.
+        Make an attack against something within \medrange.
         The defense against this attack depends on your \textit{essence infusion}.
         \begin{raggeditemize}
           \item Armor defense: \atWater.
@@ -741,29 +741,32 @@
           \item Reflex defense: \atElectricity, \atFire, \atVisual.
           \item Mental defense: \atCompulsion, \atEmotion.
         \end{raggeditemize}
-        \hit Each target takes \damagerankone.
-        \miss Half damage.
+        \hit \damageranktwo.
 
         \rankline
-        \rank{2} The damage increases to \damageranktwo.
-        \rank{3} The damage increases to \damagerankthree.
-        \rank{4} The damage increases to \damagerankfour.
-        \rank{5} The damage increases to \damagerankfive.
-        \rank{6} The damage increases to \damageranksix.
-        \rank{7} The damage increases to \damagerankseven.
+        \rank{2} The damage increases to \damagerankthree.
+        \rank{3} The damage increases to \damagerankfour.
+        \rank{4} The damage increases to \damagerankfive.
+        \rank{5} The damage increases to \damageranksix.
+        \rank{6} The damage increases to \damagerankseven.
+        \rank{7} The damage increases to \damagerankeight.
       \end{magicalactiveability}
 
-    \cf{Inc}[2]{Essence Flare} Whenever you use the \ability{total defense} or \ability{recover} abilities, you \glossterm{briefly} become \impervious to damaging attacks.
-      This effect has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+    \cf{Inc}[2]{Essence Flare}
+      \begin{magicalactiveability}{Essence Flare}
+        \abilityusagetime Standard action.
+        \rankline
+        You are \glossterm{briefly} \focused.
+        At the end of the next round, if you hit with an attack that has your \textit{essence infusion} tag during that round, you repeat the full effect of this ability.
+        Otherwise, you are \glossterm{briefly} \maximized.
+      \end{magicalactiveability}
 
     \cf{Inc}[3]{Deep Tether} You gain a special ability depending on whether you are tethered or untethered.
       \begin{raggeditemize}
-        \item Tethered: You gain a \plus1 bonus to your \glossterm{fatigue tolerance}.
-          In addition, whenever you use the \ability{sprint} ability, you leave a damaging wall in the path you traveled.
-          Whenever a creature or object passes through the wall, you make an attack against its Reflex defense.
-          You can only attack a given target with this ability once per \glossterm{phase}.
-          On a hit, the target takes damage as if you hit it with your \ability{essence pulse} ability.
-          On a miss, the target takes half damage.
+        \item Tethered: Choose an \atAttune spell of rank 3 or lower from any \glossterm{mystic sphere}.
+          The spell must have your \textit{essence infusion} tag, and it must not be a \glossterm{deep attunement}.
+          You gain the effect of that spell on you permanently.
+          If the spell disables itself, you gain its benefit again after 5 minutes.
         \item Untethered: The height limit of your fly speed increases to 10 feet.
           In addition, whenever you use the \ability{sprint} ability, you can become \trait{intangible} during that phase.
           This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
@@ -771,17 +774,15 @@
 
     \cf{Inc}[4]{Essence Exemplar} The bonus to an attribute that you gain from being an incarnate increases to \plus2.
 
-    \cf{Inc}[5]{Essence Infusion+} You become \glossterm{immune} instead of impervious to attacks with the tag from your \textit{essence infusion} ability.
+    \cf{Inc}[5]{Essence Infusion+} You become \glossterm{immune} instead of impervious to attacks with your \textit{essence infusion} tag.
       In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
 
     \cf{Inc}[6]{Deep Tether+} You gain a special ability depending on whether you are tethered or untethered.
       \begin{raggeditemize}
-        \item Tethered: The fatigue tolerance bonus increases to \plus2.
-          In addition, when you use the \ability{desperate exertion} ability to affect an attack with your \textit{essential infusion} tag, you can use this ability.
-          If you do, you only increase your fatigue level by one instead of by two.
-          After using this ability, you \glossterm{briefly} cannot use it again.
+        \item Tethered: You can choose up two spells with a combined rank of 6 or lower.
         % TODO: weak?
         \item Untethered: The height limit of your fly speed increases to 20 feet.
+          In addition, you gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
       \end{raggeditemize}
 
     \cf{Inc}[7]{Essence Incarnate}
@@ -791,7 +792,7 @@
         \rankline
         You gain a benefit depending on whether you are tethered or untethered:
         \begin{raggeditemize}
-          \item Tethered: You \glossterm{briefly} \focused and \empowered with abilities that have your \textit{essence infusion} tag.
+          \item Tethered: You \glossterm{briefly} \primed with abilities that have your \textit{essence infusion} tag.
           \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
             If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
             You take 5d10 damage for every 5 feet that you are pushed in this way.
