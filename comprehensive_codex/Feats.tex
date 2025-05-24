@@ -485,9 +485,16 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Non-evil alignment.
     \parhead{Special} You can only have one Ancestry feat.
 
-    \magicalff[1]{Celestial Benevolence} Whenever an adjacent \glossterm{ally} is attacked by a \glossterm{targeted} ability, the attack is made against you instead.
-    If that ability would already target you, it affects you twice, rolling separately for each attack.
-    You can suppress or resume this ability as a \glossterm{free action} with the \abilitytag{Swift} ability tag.
+    \magicalff[1]{Celestial Benevolence}
+    \begin{activeability}{Celestial Benevolence}[\abilitytag{Swift}]
+        \abilityusagetime \glossterm{Free action} once per round.
+        \rankline
+        Choose an \glossterm{ally} adjacent to you.
+        Whenever that ally would be attacked by a \glossterm{targeted} ability this round, the attack is made against you instead.
+
+        A creature that sees an attack against an ally redirected in this way can observe that you are the cause of the redirection with a \glossterm{difficulty value} 5 Awareness check.
+        While this ability is active, you cannot be affected by other creatures using this ability on you.
+    \end{activeability}
 
     \magicalff[6]{Healing Radiance} When you use the \ability{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you.
     % TODO: unclear scaling
@@ -498,7 +505,7 @@ They allow more distinct and unique character customization, but also increase g
     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
-    \magicalff[12]{Celestial Benevolence\plus} This ability affects all allies within a \medarea radius \glossterm{emanation} from you.
+    \magicalff[12]{Celestial Benevolence\plus} When you use this ability, you can choose either one ally within \shortrange or two allies adjacent to you.
 
     \magicalff[18]{Angel Wings\plus} The height limit increases to 30 feet.
   \end{magicalfeat}
@@ -1114,7 +1121,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Specialization} You gain a \plus3 bonus to the Intimidate skill.
 
-    % r3 debuff is allowed to inflict frightened as a condition
+    % 
     \ff[6]{Greater Demoralize} When you use the \textit{demoralize} ability, the target is frightened by you even if it has damage resistance remaining.
     For details, see \pcref{Demoralize}.
 
