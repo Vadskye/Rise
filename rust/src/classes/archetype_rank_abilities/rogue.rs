@@ -377,22 +377,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The recovery increases to 10d10.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Swift}]
-                        \abilityusagetime Standard action.
-                        \rankline
-                        Choose one living \glossterm{ally} within \medrange.
-                        The target regains 2d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
-                        In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
-
-                        \rankline
-                        \rank{2} The recovery increases to 2d10.
-                        \rank{3} The recovery increases to 4d6.
-                        \rank{4} The recovery increases to 6d6.
-                        \rank{5} The recovery increases to 5d10.
-                        \rank{6} The recovery increases to 7d10.
-                        \rank{7} The recovery increases to 10d10.
-                    \end{magicalactiveability}
-
                     % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
                     \begin{magicalsustainability}{Partita of Provocation}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
