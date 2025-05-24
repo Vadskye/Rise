@@ -236,6 +236,11 @@ def armor(destination, armor_type):
                 else shield_reflex
             ),
             (
+                body_armor_vitals
+                if armor_type == "Body armor"
+                else div()
+            ),
+            (
                 labeled_number_input(
                     "Encumbrance",
                     {"class": "armor-encumbrance"},
