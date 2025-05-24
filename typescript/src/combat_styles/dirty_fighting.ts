@@ -135,7 +135,7 @@ export const dirtyFighting: CombatStyle = {
         You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
 
         % TODO: clarify how this interacts with Sweeping
-        The weapon creature takes damage equal to the damage dealt by the strike, ignoring any extra damage from critical hits.
+        The weapon creature takes damage equal to the damage dealt by the strike, ignoring any damage increase from critical hits.
       `,
       rank: 3,
       roles: ['burst', 'payoff'],
