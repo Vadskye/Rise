@@ -1675,7 +1675,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \domainability{Mastery} The defense bonus increases to \plus3, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
+                        \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
 
                     \subsubsection{Evil Domain}
                         \magicaldomainability{Gift}
