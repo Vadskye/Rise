@@ -240,14 +240,10 @@ def armor(destination, armor_type):
                 if armor_type == "Body armor"
                 else div()
             ),
-            (
-                labeled_number_input(
-                    "Encumbrance",
-                    {"class": "armor-encumbrance"},
-                    input_attributes={"name": parseable_type + "_encumbrance"},
-                )
-                if armor_type == "Body armor"
-                else div()
+            labeled_number_input(
+                "Encumbrance",
+                {"class": "armor-encumbrance"},
+                input_attributes={"name": parseable_type + "_encumbrance"},
             ),
             (
                 labeled_number_input(
