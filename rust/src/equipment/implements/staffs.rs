@@ -5,7 +5,7 @@ use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 pub fn staffs() -> Vec<Implement> {
     let mut implements = vec![];
 
-    implements.append(&mut composite_staffs(implements));
+    implements.append(&mut composite_staffs());
 
     // implements.push(Staff(StandardItem {
     //     name: String::from("Interplanar Staff"),
@@ -591,9 +591,9 @@ fn composite_staffs() -> Vec<Implement> {
         rank: 2,
         short_description: String::from(r"Has two rank 1 properties"),
         description: String::from(r"
-            This weapon has two different rank 1 magic weapon properties.
+            This staff has two different rank 1 magic implement properties.
             Each property must not already require a \glossterm{deep attunement}.
-            You cannot choose a composite weapon as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+            You cannot choose a composite staff as your \glossterm{legacy item} (see \pcref{Legacy Items}).
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
@@ -604,9 +604,22 @@ fn composite_staffs() -> Vec<Implement> {
         rank: 3,
         short_description: String::from(r"Has two rank 2 or lower properties"),
         description: String::from(r"
-            This weapon has two different magic weapon properties that are rank 2 or lower.
+            This staff has two different magic implement properties that are rank 2 or lower.
             Each property must not already require a \glossterm{deep attunement}.
-            You cannot choose a composite weapon as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+            You cannot choose a composite staff as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..Implement::default()
+    }));
+
+    implements.push(Staff(StandardItem {
+        name: String::from("Composite Staff, 3rd"),
+        rank: 4,
+        short_description: String::from(r"Has two rank 3 or lower properties"),
+        description: String::from(r"
+            This staff has two different magic implement properties that are rank 2 or lower.
+            Each property must not already require a \glossterm{deep attunement}.
+            You cannot choose a composite staff as your \glossterm{legacy item} (see \pcref{Legacy Items}).
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
@@ -618,16 +631,15 @@ fn composite_staffs() -> Vec<Implement> {
             rank: n+1,
             short_description: format!("Has two rank {} or lower properties", n),
             description: String::from(r"
-                This weapon has two different magic weapon properties that are rank 2 or lower.
+                This staff has two different magic implement properties that are rank 2 or lower.
                 Each property must not already require a \glossterm{deep attunement}.
-                You cannot choose a composite weapon as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+                You cannot choose a composite staff as your \glossterm{legacy item} (see \pcref{Legacy Items}).
             "),
             tags: vec![AbilityTag::Attune(AttuneType::Deep)],
             ..Implement::default()
         }));
     }
 
-    nth(&mut implements, 3);
     nth(&mut implements, 4);
     nth(&mut implements, 5);
     nth(&mut implements, 6);
