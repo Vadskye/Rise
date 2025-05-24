@@ -75,13 +75,13 @@ pub fn ranged() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Can pass through small obstacles"),
         description: String::from(r"
-            All \glossterm<strikes> with this weapon, including projectiles fired by this weapon, can pass through a single solid obstacle of up to one foot thick on the way to their target.
+            All \glossterm<strikes> with this weapon, including projectiles fired by this weapon, can pass through a single solid \glossterm{unattended} obstacle of up to one foot thick on the way to their target.
             This can allow you to ignore \glossterm<cover>, or even attack without \glossterm{line of effect}.
             It does not allow you to ignore any equipment used by the target of your attack.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can pass through obstacles", r"
-                Your strikes can penetrate through any number of solid objects with a combined thickness of five feet or less.
+                Your strikes can penetrate through any number of solid \glossterm{unattended} objects with a combined thickness of five feet or less.
             "),
         ],
         ..MagicWeapon::default()
