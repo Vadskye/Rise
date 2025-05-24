@@ -37,9 +37,9 @@ export const chronomancy: MysticSphere = {
       `,
       roles: ['attune'],
       scaling: {
-        2: 'You gain a +2 bonus to the reroll.',
-        4: 'The bonus increases to +3.',
-        6: 'The bonus increases to +4.',
+        2: 'You gain a +1 bonus to the reroll.',
+        4: 'The bonus increases to +2.',
+        6: 'This ability becomes a regular attunement instead of a \\glossterm{deep attunement}',
       },
       type: 'Attune (deep)',
     },
@@ -54,6 +54,7 @@ export const chronomancy: MysticSphere = {
         At the end of the next round, it returns to normal, with no awareness of the intervening time.
         After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
       `,
+      roles: ['boon'],
       scaling: {
         2: 'The maximum size increases to Large.',
         4: 'The maximum size increases to Huge.',
@@ -101,7 +102,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Quicksilver Flurry',
+      name: 'Quicksilver Slash',
 
       // Rerolling is about +2 accuracy
       effect: `
@@ -111,17 +112,19 @@ export const chronomancy: MysticSphere = {
         You may reroll the accuracy roll and take the highest result.
       `,
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
-      name: 'Quicksilver Double Flurry',
+      name: 'Quicksilver Flurry',
 
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make two \\glossterm{mundane} \\glossterm{strikes} with a \\minus1 accuracy penalty using a single weapon.
+        Make two \\glossterm{mundane} \\glossterm{strikes}.
       `,
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
@@ -136,6 +139,7 @@ export const chronomancy: MysticSphere = {
         Otherwise, you take a \\minus2 accuracy penalty.
       `,
       rank: 4,
+      roles: ['dive'],
       scaling: 'accuracy',
     },
     {
@@ -148,6 +152,7 @@ export const chronomancy: MysticSphere = {
         The strike gains the \\weapontag{Sweeping} (8) \\glossterm{weapon tag}, allowing you to hit up to 8 additional targets (see \\pcref{Weapon Tags}).
       `,
       rank: 2,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
@@ -164,6 +169,7 @@ export const chronomancy: MysticSphere = {
         When you finish rolling, you gain an accuracy bonus with the strike equal to the number of unused rerolls.
       `,
       rank: 6,
+      roles: ['burst'],
       scaling: {
         7: 'You can reroll six times instead of five.',
       },
@@ -174,11 +180,12 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Move up to half your speed, then make a \\glossterm{mundane} melee strike.
+        Move up to your speed, then make a \\glossterm{mundane} melee strike.
         If the target was \\partiallyunaware or \\unaware of you before your movement, they remain so until after your strike.
         From an observer's perspective, the movement and the strike happen simultaneously in a blur of motion.
       `,
       rank: 3,
+      roles: ['dive'],
       scaling: 'accuracy',
     },
     {
@@ -188,12 +195,16 @@ export const chronomancy: MysticSphere = {
         name: 'quicksilver ambush',
         exceptThat: 'the strike deals double damage.',
       },
-      rank: 7,
+      roles: ['dive'],
+      rank: 6,
     },
 
+    // TODO: greater version
     {
       name: 'Hostile Timeseal',
 
+      // Time skip is normally 2.5 EA. Assume that it's 75% effectiveness with the HP
+      // condition, so 1.9 EA, which is about rank 4.
       attack: {
         hit: `
           If the target has no remaining damage resistance, it becomes \\glossterm{briefly} frozen in time.
@@ -203,16 +214,38 @@ export const chronomancy: MysticSphere = {
           After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: [],
     },
 
+    // Brief slow is r2, so melee is r0. We can get HP with r2
     {
       name: 'Slowing Grasp',
+
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          The target \\glossterm{briefly} \\slowed.
+          If it has no remaining \\glossterm{damage resistance}, is also slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Mental against one creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 2,
+      roles: ['softener', 'maim'],
+      // scaling: 'accuracy',
+    },
+
+    {
+      name: 'Efficient Slowing Grasp',
 
       attack: {
         crit: CONDITION_CRIT,
@@ -225,100 +258,72 @@ export const chronomancy: MysticSphere = {
           Make an attack vs. Mental against one creature you \\glossterm{touch}.
         `,
       },
-      rank: 3,
-      scaling: 'accuracy',
+      rank: 7,
+      roles: ['softener'],
+      // scaling: 'accuracy',
     },
 
+    // Slow HP is 2.1 EA, so r5
     {
       name: 'Slow',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target's local time stream is disturbed as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
+          Each target with no remaining \\glossterm{damage resistance} is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Efficient Slow',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 5,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Mass Slow',
-
-      functionsLike: {
-        name: 'slow',
-        exceptThat: 'it affects all creatures in a \\medarea radius within \\medrange.',
-      },
-      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Accelerated Dodge',
 
+      cost: BRIEF_COOLDOWN,
       effect: `
-        You gain a \\plus2 bonus to your Armor and Reflex defenses this round.
+        You are \\braced this round.
         In addition, you can move up to half your \\glossterm{movement speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 1,
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
     {
       name: 'Distant Accelerated Dodge',
 
+      // TODO: full EA math
       effect: `
-        You gain a \\plus3 bonus to your Armor and Reflex defenses this round.
+        You are \\braced this round.
         In addition, you can move up to your \\glossterm{movement speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
-      rank: 5,
+      rank: 4,
+      roles: ['turtle', 'retreat'],
       tags: ['Swift (see text)'],
     },
 
     {
       name: 'Slowtime Field',
 
+      // Brief slow is 2 EA, so a field would be 3 EA. HP condition is 75% Ea, so 2.2 EA,
+      // which is r5.
       effect: `
         You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
         All creatures with no remaining \\glossterm{damage resistance} are \\slowed while they are in the area.
       `,
-      rank: 2,
+      rank: 5,
+      roles: ['flash', 'hazard'],
       type: 'Sustain (minor)',
     },
 
-    {
-      name: 'Efficient Slowtime Field',
-
-      effect: `
-        You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-        All creatures are \\slowed while they are in the area.
-      `,
-      rank: 6,
-      type: 'Sustain (minor)',
-    },
-
-    // -3 ranks for 50% chance of activation, +1 rank for preapply.
+    // Treat this as 60% of the effectiveness of a regular slow. Normal HP slow is 2.1 EA,
+    // 2.5 EA with preapply, so this would be 1.5 EA.
     {
       name: 'Stutterstop',
 
@@ -329,10 +334,10 @@ export const chronomancy: MysticSphere = {
           At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
-          Make an attack vs. Mental against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against up to two creatures in \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 2,
       roles: ['maim'],
       scaling: 'accuracy',
     },
@@ -377,6 +382,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Temporal Duplicate',
 
+      // TODO: EA math
       castingTime: 'minor action',
       cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.',
       effect: `
@@ -397,7 +403,8 @@ export const chronomancy: MysticSphere = {
         It cannot use abilities that would increase its \\glossterm{fatigue level}, cause it to lose hit points, or otherwise directly suffer negative consequences as a cost of the action.
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
-      rank: 6,
+      rank: 7,
+      roles: ['focus'],
     },
 
     {
@@ -415,6 +422,7 @@ export const chronomancy: MysticSphere = {
         For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
       `,
       rank: 2,
+      roles: ['boon'],
       scaling: {
         4: `The maximum size of the target increases to Large.`,
         6: `The maximum size of the target increases to Huge.`,
@@ -452,6 +460,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
+      roles: ['boon'],
       type: 'Sustain (minor)',
     },
 
@@ -468,6 +477,7 @@ export const chronomancy: MysticSphere = {
         If the locked location is occupied, the creature reappears in the closest open space.
       `,
       rank: 1,
+      roles: ['boon'],
       type: 'Sustain (minor)',
     },
 
@@ -496,9 +506,10 @@ export const chronomancy: MysticSphere = {
         You can unseal the time lock as a standard action.
 
         Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
-        In addition, the creature increases its \\glossterm{fatigue level} by two.
+        In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
+      roles: ['healing'],
       type: 'Sustain (minor)',
     },
 
@@ -512,15 +523,18 @@ export const chronomancy: MysticSphere = {
 
         Unsealing the time lock causes the creature's vital wounds to become identical to the locked vital wounds.
         This removes any excess vital wounds and reapplies any missing vital wounds.
-        In addition, the creature increases its \\glossterm{fatigue level} by four.
+        The creature increases its \\glossterm{fatigue level} by three for each vital wound removed in this way.
       `,
       rank: 7,
+      roles: ['healing'],
       type: 'Sustain (minor)',
     },
 
     {
       name: 'Time Stop',
 
+      // TODO: EA math
+      cost: "One \\glossterm{fatigue level}, and you are \\stunned as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.",
       effect: `
         You can take two full rounds of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -532,6 +546,7 @@ export const chronomancy: MysticSphere = {
 
         After you cast this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
+      roles: ['focus'],
       rank: 7,
     },
 
@@ -573,6 +588,7 @@ export const chronomancy: MysticSphere = {
         After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
       rank: 3,
+      roles: ['focus'],
     },
 
     {
@@ -582,13 +598,13 @@ export const chronomancy: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         You draw one or two weapons into your \\glossterm{free hands}.
-        Then, you can make a \\glossterm{strike}.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+        Then, you can make a \\glossterm{mundane} \\glossterm{strike}.
       `,
       narrative: `
         This spell seeks to mimic with time-altering magic what some skilled warriors can do naturally.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -614,6 +630,7 @@ export const chronomancy: MysticSphere = {
         You become a blur of motion as you quickly don your armor, readying yourself against an unexpected attack.
       `,
       rank: 2,
+      roles: ['narrative'],
       scaling: {
         4: 'You can perform any two of the listed actions.',
         6: 'You can perform any combination of the listed actions.',
@@ -650,6 +667,7 @@ export const chronomancy: MysticSphere = {
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 2,
+      roles: ['healing'],
       // At rank 3, expected power is about 6. dr3 is 4.5+6 = 10.5 healing, and dr4 would
       // be 5.5+7 = 12.5 healing.
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
@@ -664,76 +682,78 @@ export const chronomancy: MysticSphere = {
         exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
       },
       rank: 5,
+      roles: ['healing'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
 
-    // small cone instead of med cone because you can choose the condition and it has the
-    // weird accuracy bonus
+    // Deafened hp is 0.5 EA. dazzled hp is 0.7 EA. Combined is 1.2 EA, plus brief is 1.6
+    // EA. Total is rank 2.
+    // weird accuracy bonus doesn't get a rank value
     {
       name: 'Wave of Senescence',
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is \\dazzled if you focused on sight or \\deafened if you focused on hearing.
+          Each target is \\glossterm{briefly} \\deafened and \\dazzled.
+          If it is below its maximum hit points, it is also deafened and dazzled as a single \\glossterm{condition].
         `,
         targeting: `
-          Make an attack vs. Fortitude against each creature in a \\smallarea cone.
-          In addition, you choose to focus the aging effects of the cone on either sight or hearing.
-          This ability has the \\atVisual tag if you focus on sight, and the \\atAuditory tag if you focus on hearing.
+          Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\medarea cone.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['flash', 'maim'],
       scaling: 'accuracy',
+      tags: ['Auditory', 'Visual'],
     },
 
-    // +1 rank to combine dazzled and deafened
+    // Sum is 3.0 EA. Limited scope is rank 8, then drop to rank 7 for lack of synergy.
     {
       name: 'Massive Wave of Senescence',
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is \\dazzled and \\deafened.
+          Each target is \\dazzled and \\deafened as a single \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\largearea cone.
-          This ability has the \\atVisual tag if you focus on sight, and the \\atAuditory tag if you focus on hearing.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 4,
+      rank: 7,
+      roles: ['flash'],
       scaling: 'accuracy',
+      tags: ['Auditory', 'Visual'],
     },
-    // d2l instead of d2 for accuracy
     {
       name: 'Unstable Aging',
       attack: {
         hit: `
-          \\damageranktwolow.
+          \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against one living creature within \\medrange.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 2,
-      scaling: { special: 'The damage increases by 1d8 for each rank beyond 2.' },
+      rank: 1,
+      roles: ['burst'],
     },
-    // d6l instead of d6 for accuracy
     {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          \\damageranksixlow.
+          \\damageranksix.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
-          You gain a +4 accuracy bonus against creatures that are too young or too old to be ordinary adults.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against one living creature within \\medrange.
+          You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 6,
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 6.' },
+      rank: 4,
+      roles: ['burst'],
     },
 
     {
@@ -743,6 +763,32 @@ export const chronomancy: MysticSphere = {
         You remove a \\glossterm{condition} of your choice.
       `,
       rank: 4,
+      roles: ['cleanse'],
+    },
+
+    {
+      name: 'Pour Time Sideways',
+
+      effect: `
+        You skip the next standard action you could take.
+        Then, in the following round, you can take two standard actions.
+      `,
+      rank: 2,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Minor Timetheft',
+
+      castingTime: "One \\glossterm{free action}.",
+      cost: BRIEF_COOLDOWN,
+      effect: `
+        You can take an additional \\glossterm{minor action} this round.
+        Then, in subsequent rounds, you skip the next two minor actions you could take.
+        You can choose whether to convert a standard action to a minor action for this purpose.
+      `,
+      rank: 3,
+      roles: ['focus'],
     },
   ],
 };
