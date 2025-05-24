@@ -1617,16 +1617,18 @@ They allow more distinct and unique character customization, but also increase g
       \abilityusagetime Standard action.
       \abilitycost One \glossterm{fatigue level}.
       \rankline
-      You regain 3d6 \glossterm{hit points}.
+      You regain \damagerankthreelow \glossterm{hit points}.
       If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
+      If this would heal you above your maximum hit points, any excess healing applies at the end of the next round.
+      Any excess healing at that point is lost.
 
       \rankline
-      \featlevel{3} The healing increases to 4d6.
-      \featlevel{6} The healing increases to 6d6.
-      \featlevel{9} The healing increases to 5d10.
-      \featlevel{12} The healing increases to 7d10.
-      \featlevel{15} The healing increases to 10d10.
-      \featlevel{18} The healing increases to 14d10.
+      \featlevel{3} The healing increases to \damagerankfourlow.
+      \featlevel{6} The healing increases to \damagerankfivelow.
+      \featlevel{9} The healing increases to \damageranksixlow.
+      \featlevel{12} The healing increases to \damageranksevenlow.
+      \featlevel{15} The healing increases to \damagerankeightlow.
+      \featlevel{18} The healing increases to \damagerankninelow.
     \end{activeability}
 
     \ff[6]{Diehard} You gain a \plus3 bonus to \glossterm{vital rolls}.
