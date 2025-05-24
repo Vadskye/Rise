@@ -192,7 +192,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points} from this damage, it takes the damage again.
+          If the target loses \\glossterm{hit points} from this damage, you deal it an additional \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -207,7 +207,7 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'inflict wound',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applied to the first instance of damage is doubled.',
       },
       rank: 5,
       scaling: 'accuracy',
