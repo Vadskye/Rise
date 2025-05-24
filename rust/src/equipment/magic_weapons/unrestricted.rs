@@ -615,6 +615,19 @@ fn composite_weapons() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Composite Weapon, 3rd"),
+        rank: 4,
+        short_description: String::from(r"Has two rank 3 or lower properties"),
+        description: String::from(r"
+            This weapon has two different magic weapon properties that are rank 3 or lower.
+            Each property must not already require a \glossterm{deep attunement}.
+            You cannot choose a composite weapon as your \glossterm{legacy item} (see \pcref{Legacy Items}).
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..MagicWeapon::default()
+    }));
+
     fn nth(weapons: &mut Vec<MagicWeapon>, n: i32) {
         weapons.push(Unrestricted(StandardItem {
             name: format!("Composite Weapon, {}th", n),
@@ -630,10 +643,10 @@ fn composite_weapons() -> Vec<MagicWeapon> {
         }));
     }
 
-    nth(&mut weapons, 3);
     nth(&mut weapons, 4);
     nth(&mut weapons, 5);
     nth(&mut weapons, 6);
+    nth(&mut weapons, 7);
 
     weapons
 }
