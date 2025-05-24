@@ -583,7 +583,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Unarmed Warrior+",
+            name: "Unarmed Warrior++",
             is_magical: false,
             rank: 7,
             description: r"
