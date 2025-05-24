@@ -554,5 +554,42 @@ export const summoning: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (standard)'],
     },
+
+    {
+      name: 'Drop Bear',
+
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        targeting: `
+          Make an attack vs. Armor with a -4 accuracy penalty against something in \\shortrange.
+        `,
+      },
+      narrative: `
+        You summon a bear in midair that crashes down on your foe.
+      `,
+      rank: 1,
+      roles: ['burst'],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Drop Bear',
+
+      attack: {
+        hit: `
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Armor with a -4 accuracy penalty against something in \\shortrange.
+        `,
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
   ],
 };
