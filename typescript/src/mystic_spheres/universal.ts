@@ -69,44 +69,57 @@ export const universal: MysticSphere = {
       scaling: 'accuracy',
     },
     {
+      name: 'Chaotic Mystic Bolt',
+
+      attack: {
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        targeting: `
+          Make an attack with a -4 accuracy penalty against something within \\medrange.
+          The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
+        `,
+      },
+      rank: 3,
+      scaling: 'accuracy',
+    },
+    {
       name: 'Mighty Mystic Bolt',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           Make an attack against something within \\medrange.
           The valid targets for this spell, and the defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
     },
     {
-      name: 'Mystic Discharge',
+      name: 'Mystic Blast',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius from you.
-          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
+          Make an attack vs. Reflex and one other defense against everything in a \\medarea cone from you.
+          The valid targets for this spell, and the extra defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
       rank: 1,
       scaling: 'accuracy',
     },
     {
-      name: 'Massive Mystic Discharge',
+      name: 'Massive Mystic Blast',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius from you.
-          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
+          Make an attack vs. Reflex and one other defense against everything in a \\largearea cone from you.
+          The valid targets for this spell, and the extra defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
         `,
       },
-      rank: 5,
+      rank: 3,
       scaling: 'accuracy',
     },
   ],
