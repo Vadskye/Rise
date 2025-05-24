@@ -351,7 +351,7 @@ fn rings() -> Vec<Apparel> {
 
     apparel.push(Ring(StandardItem {
         name: String::from("Baneswallow Ring"),
-        rank: 2,
+        rank: 3,
         short_description: String::from(r"Can exert and remove a condition to gain power"),
         description: String::from(r"
             You can activate this ring as a standard action.
@@ -490,7 +490,7 @@ fn rings() -> Vec<Apparel> {
         ",
         ),
         upgrades: vec![ItemUpgrade::new(
-            5,
+            4,
             "Can remove a condition",
             r"
                 Activating this item does not increase your fatigue level.
