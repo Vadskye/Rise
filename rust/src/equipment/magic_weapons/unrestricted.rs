@@ -173,7 +173,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         // This gets +1r of extra damage for the HP cost.
         short_description: String::from(r"Can spend 4 HP for +1d6 damage"),
         description: String::from(r"
-            You can feed this weapon your blood as a \glossterm{free action}.
+            Once per round, you can feed this weapon your blood as a \glossterm{free action}.
             When you do, you lose 4 \glossterm{hit points}.
             In exchange, you deal 1d6 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
