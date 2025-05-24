@@ -7,6 +7,7 @@ export const universal: MysticSphere = {
   specialRules: `
     The universal mystic sphere does not work in the same way as other mystic spheres.
     Every spellcaster has access to this mystic sphere without needing to spend insight points.
+    You cannot lose or sacrifice your access to this mystic sphere in any way.
     It contains a variety of simple magical effects that all spellcasters can manage to replicate, though the details can change based on their individual fields of specialization.
 
     Whenever you learn a spell or ritual from the universal mystic sphere, you must choose a different mystic sphere that you have access to.
