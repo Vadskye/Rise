@@ -151,7 +151,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Your melee \\glossterm{strikes} gain the \\weapontag{Long} weapon tag, allowing you to attack targets up to 10 feet away from you (see \\pcref{Weapon Tags}).
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -598,10 +598,11 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damagerankone.
+          During your next action, the target takes \\damagerankone again.
         `,
         targeting: `
-          Make an attack vs. Brawn against something within \\shortrange from you.
+          Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 2,
@@ -615,10 +616,11 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree immediately, and again during your next action.
+          \\damagerankthree, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankone again.
         `,
         targeting: `
-          Make an attack vs. Brawn against something within \\shortrange from you.
+          Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 4,
@@ -638,7 +640,7 @@ export const telekinesis: MysticSphere = {
           The sphere left behind is three size categories smaller than the original creature.
         `,
         targeting: `
-          Make an attack vs. Brawn against something within \\shortrange from you.
+          Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
       rank: 6,
@@ -678,6 +680,22 @@ export const telekinesis: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
+    },
+
+    {
+      name: 'Neck Snap',
+
+      attack: {
+        hit: `
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Brawn with a -4 accuracy penalty against something within \\medrange.
+        `,
+      },
+      rank: 5,
+      roles: ['burst'],
+      scaling: 'accuracy',
     },
   ],
 };
