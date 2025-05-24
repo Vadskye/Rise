@@ -280,19 +280,19 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Nyctophobia',
 
-      // Frightened by all is a 1.7 EA debuff. Creatures are usually shadowed... maybe 75%
-      // of the time, so call that 1.3 EA.
+      // Frightened by all is a 1.7 EA debuff. Creatures are usually shadowed... maybe 75% of the time,
+      // so call that 1.3 EA. With prefire, that's 1.7 EA again.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target is below its maximum \\glossterm{hit points}, it becomes afraid of the dark as a \\glossterm{condition}.
-          While it is \\glossterm{shadowed}, it is \\frightened of all creatures.
+          The target becomes afraid of the dark as a \\glossterm{condition}.
+          While it is \\glossterm{shadowed} and below its maximum \\glossterm{hit points}, it is \\frightened of all creatures.
         `,
         targeting: `
-          Make an attack vs. Mental against up to two creatures within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 3,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Visual'],
