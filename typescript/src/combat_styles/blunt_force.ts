@@ -510,7 +510,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike}.
         \\hit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
         This is an \\atAuditory effect.
-        On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike.
+        On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike, ignoring any damage increase from \\glossterm{critical hits} with the strike.
       `,
       rank: 3,
       roles: ['clear'],
