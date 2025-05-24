@@ -26,7 +26,7 @@ export const universal: MysticSphere = {
       \\lcaption{Universal Mystic Spheres}
       \\begin{dtabularx}{\\textwidth}{l >{\\lcol}X >{\\lcol}X >{\\lcol}X}
         \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Tag} \\tableheaderrule
-        Aeromancy       & Creatures and objects & Armor     & \\atAir \\\\
+        Aeromancy       & Creatures and objects & Brawn     & \\atAir \\\\
         Aquamancy       & Creatures and objects & Armor     & \\atWater \\\\
         Astromancy      & Creatures and objects & Mental    & \\tdash    \\\\
         Channel Divinity & Creatures            & Mental    & \\tdash      \\\\
@@ -41,7 +41,7 @@ export const universal: MysticSphere = {
         Pyromancy       & Creatures and objects & Fortitude & \\atFire        \\\\
         Revelation      & Creatures             & Mental    & \\tdash \\\\
         Summoning       & Creatures and objects & Armor     & \\atManifestation    \\\\
-        Telekinesis     & Creatures and objects & Fortitude & \\tdash \\\\
+        Telekinesis     & Creatures and objects & Brawn     & \\tdash \\\\
         Terramancy      & Creatures and objects & Armor     & \\atEarth \\\\
         Thaumaturgy     & Creatures and objects & Fortitude & \\tdash      \\\\
         Toxicology      & Creatures and objects & Fortitude & \\atPoison        \\\\
@@ -69,7 +69,7 @@ export const universal: MysticSphere = {
       scaling: 'accuracy',
     },
     {
-      name: 'Chaotic Mystic Bolt',
+      name: 'Chaotic Bolt',
 
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
