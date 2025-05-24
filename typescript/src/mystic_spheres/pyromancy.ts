@@ -2,6 +2,7 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT, TELEPORT_ATTACK_FATIGUE } from './constants';
 
+// TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
   name: 'Pyromancy',
   shortDescription: 'Create fire to incinerate foes.',
@@ -568,7 +569,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are currently \\grappled by.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,

@@ -696,7 +696,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\deafened and \\dazzled.
-          If it is below its maximum hit points, it is also deafened and dazzled as a single \\glossterm{condition].
+          If it is below its maximum hit points, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\medarea cone.

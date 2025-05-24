@@ -977,8 +977,6 @@ export const rituals: Ritual[] = [
       If the target is moved, this effect ends.
 
       Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make a \\glossterm{reactive attack} vs. Mental against it.
-      Your accuracy with this attack is equal to half the sum of your level and Perception.
-      This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
       After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
       `,
     },
@@ -1008,8 +1006,6 @@ export const rituals: Ritual[] = [
       If the target is moved, this effect ends.
 
       Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make a \\glossterm{reactive attack} vs. Mental against it.
-      Your accuracy with this attack is equal to half the sum of your level and Perception.
-      This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
       After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
       `,
     },
@@ -1591,8 +1587,6 @@ export const rituals: Ritual[] = [
       If the object is destroyed or rendered illegible, the ritual is dismissed without exploding.
 
       When the object explodes, make an attack vs. Reflex against everything within a \\medarea radius from the object.
-      Your accuracy with this attack is equal to half the sum of your level and Perception.
-      This accuracy is calculated at the time that you perform this ritual and does not change afterwards.
       \\hit \\damagerankthree.
       \\miss Half damage.
     `,

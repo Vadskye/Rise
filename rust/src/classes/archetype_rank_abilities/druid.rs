@@ -707,7 +707,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item Its maximum \glossterm{hit points} are equal to the standard value for a druid of your level (see Base Class Abilities, above).
                         \item Its maximum \glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
-                        \item Its \glossterm{accuracy} is equal to half the sum of your level and Perception.
+                        \item Its \glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
                         \item Its \glossterm{power} is equal to half your power.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
