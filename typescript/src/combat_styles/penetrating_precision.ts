@@ -283,17 +283,6 @@ export const perfectPrecision: CombatStyle = {
     },
 
     {
-      name: 'Full-Body Thrust',
-
-      effect: `
-        Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
-      `,
-      rank: 3,
-      roles: ['burst'],
-    },
-
-    {
       name: 'The Sharpest Blade',
 
       effect: `
