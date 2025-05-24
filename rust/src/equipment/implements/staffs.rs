@@ -560,5 +560,23 @@ pub fn staffs() -> Vec<Implement> {
         ..Implement::default()
     }));
 
+    implements.push(Staff(StandardItem {
+        name: String::from("Shattered Staff"),
+        rank: 3,
+        short_description: String::from(r"Grants +1d8 damage and -2 accuracy"),
+        description: String::from(r"
+            All damaging \magical abilities you use deal 1d8 \glossterm{extra damage}, but have a \minus2 \glossterm{accuracy} penalty.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Grants +2d6 damage and -2 accuracy", r"
+                The extra damage increases to 2d6.
+            "),
+            ItemUpgrade::new(7, "Grants +2d10 damage and -2 accuracy", r"
+                The extra damage increases to 2d10.
+            "),
+        ],
+        ..Implement::default()
+    }));
+
     implements
 }
