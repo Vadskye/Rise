@@ -659,6 +659,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 If you do not have access to pact magic, choose a magic weapon property with a rank no higher than your rank in this archetype (see \pcref{Magic Weapons}).
+                It must not be a \glossterm{deep attunement}.
                 You can \glossterm{attune} to that magic weapon property.
                 If you do, you treat all of your weapons, including \glossterm{natural weapons}, as if they had that property.
                 This applies in addition to any other special material or magical properties.
