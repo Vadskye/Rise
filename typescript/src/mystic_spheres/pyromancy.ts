@@ -861,7 +861,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Inferno Bolt',
+      name: 'Combustion',
 
       // Normally, -4 accuracy touch range would be dr6, but we drop to dr5 because it's
       // Reflex and because that's just silly.
@@ -879,7 +879,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Mighty Inferno Bolt',
+      name: 'Mighty Combustion',
 
       // Normally, -4 accuracy touch range would be dr8, but we drop to dr5 because it's
       // Reflex and because that's just silly.
