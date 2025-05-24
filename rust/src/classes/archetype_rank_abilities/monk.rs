@@ -587,10 +587,10 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Your punch/kick damage increases to 1d10.
+                Your punch/kick damage increases to 1d8.
             ",
             // TODO: At this point, you're probably using unarmed? This is weird.
-            modifiers: Some(vec![Modifier::StrikeDamageDice(1)]),
+            modifiers: None,
         },
         RankAbility {
             complexity: 1,
