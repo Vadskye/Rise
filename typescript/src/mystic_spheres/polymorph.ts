@@ -1,8 +1,7 @@
 import { MysticSphere } from '.';
 import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
 
-// This sphere gets maneuvers at -1 rank from combat styles. However, the cost is that they are
-// strictly mundane and require natural weapons, forcing a gish-style caster or Spellsword.
+// This is a very broad sphere, but it is relatively weak with AOE.
 export const polymorph: MysticSphere = {
   name: 'Polymorph',
   shortDescription: 'Change the physical shape or outward form of objects and creatures.',

@@ -197,6 +197,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     % Bardsong debuffs are interesting, since they can't be removed like conditions, but also can't be stacked.
                     % For now, they're just ranked in the same way as conditions.
 
+                    % Bards don't pay any EA cost for ally buffs
+
                     % enraged as a condition is 1.2 EA, so we can get r3 area
                     \begin{magicalsustainability}{Ballad of Belligerence}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
@@ -375,6 +377,22 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The recovery increases to 10d10.
                     \end{magicalactiveability}
 
+                    \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Swift}]
+                        \abilityusagetime Standard action.
+                        \rankline
+                        Choose one living \glossterm{ally} within \medrange.
+                        The target regains 2d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
+
+                        \rankline
+                        \rank{2} The recovery increases to 2d10.
+                        \rank{3} The recovery increases to 4d6.
+                        \rank{4} The recovery increases to 6d6.
+                        \rank{5} The recovery increases to 5d10.
+                        \rank{6} The recovery increases to 7d10.
+                        \rank{7} The recovery increases to 10d10.
+                    \end{magicalactiveability}
+
                     % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
                     \begin{magicalsustainability}{Partita of Provocation}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
                         \abilityusagetime Standard action.
@@ -398,27 +416,10 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The range increases to a \distrange.
                         \rank{7} Each target is \trait{immune} to Compulsion and Emotion attacks.
                     \end{magicalsustainability}
-
                 }
             ",
             modifiers: None,
         },
-        // TODO
-                    // \begin{magicalsustainability}{Stutterstep Staccato}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
-                    //     \abilityusagetime Standard action.
-                    //     \rankline
-                    //     Make an attack vs. Fortitude against all \glossterm{enemies} within a \smallarea radius from you.
-                    //     \hit For the duration of your performance, each target is \slowed while it has no remaining \glossterm{damage resistance}.
-                    //     \crit The target is slowed even if it has damage resistance remaining.
-
-                    //     \rankline
-                    //     \rank{2} The area increases to a \medarea radius.
-                    //     \rank{3} You gain a \plus1 \glossterm{accuracy} bonus with the attack.
-                    //     \rank{4} The area increases to a \largearea radius.
-                    //     \rank{5} The accuracy bonus increases to \plus2.
-                    //     \rank{6} The area increases to a \hugearea radius.
-                    //     \rank{7} The accuracy bonus increases to \plus3.
-                    // \end{magicalsustainability}
         RankAbility {
             complexity: 1,
             name: "Bardic Performances+",

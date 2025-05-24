@@ -38,7 +38,7 @@ export const summoning: MysticSphere = {
           \\item Its maximum \\glossterm{hit points} are equal to the standard value for a cleric of your level.
           \\item Its maximum \\glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception.
+          \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item Its \\glossterm{movement speed} is 30 feet, regardless of the number of legs it appears to have.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
@@ -246,9 +246,9 @@ export const summoning: MysticSphere = {
           \\item Its \\glossterm{hit points} are equal to the standard value for a wizard of your level.
           \\item It has no \\glossterm{damage resistance}.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
-          \\item Its \\glossterm{accuracy} is equal to half the sum of your level and Perception, plus any accuracy modifier for the chosen weapon.
+          \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item It has an average \\glossterm{fly speed} with a maximum height of 5 feet and no \\glossterm{walk speed}.
-          \\item Its \\glossterm{movement speed} is 30 feet.
+          \\item Its \\glossterm{movement speed} is 30 feet normally, or 20 feet if the weapon is \\weapontag{Heavy}.
           \\item It has no \\glossterm{attunement points}.
         \\end{itemize}
 
@@ -260,6 +260,7 @@ export const summoning: MysticSphere = {
 
         When the weapon hits, it deals damage appropriate for your chosen weapon.
         This damage is improved by your \\glossterm{magical power} as normal for \\magical attacks.
+        You decide whether the weapon functions as if it was being held in either one or two hands.
       `,
       rank: 3,
       roles: ['attune'],
