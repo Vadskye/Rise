@@ -274,7 +274,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} each target up to 15 feet.
-          Each target can be pushed in a different direction of your choice.
+          Each target must be pushed in the same direction.
         `,
         targeting: `
           Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
@@ -290,13 +290,28 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} each target up to 30 feet.
-          Each target can be pushed in a different direction of your choice.
+          Each target must be pushed in the same direction.
         `,
         targeting: `
           Make an attack vs. Brawn against everything that is Huge or smaller in a \\medarea radius within \\medrange of you.
         `,
       },
       rank: 5,
+      roles: ['kite'],
+    },
+
+    {
+      name: 'Versatile Mind Shove',
+      attack: {
+        hit: `
+          You \\glossterm{push} each target up to 15 feet.
+          Each target can be pushed in a different direction of your choice.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
+        `,
+      },
+      rank: 6,
       roles: ['kite'],
     },
 
