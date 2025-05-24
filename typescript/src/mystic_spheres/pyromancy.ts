@@ -857,5 +857,41 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       roles: ['attune'],
       type: 'Attune',
     },
+
+    {
+      name: 'Inferno Bolt',
+
+      // Normally, -4 accuracy touch range would be dr6, but we drop to dr5 because it's
+      // Reflex and because that's just silly.
+      attack: {
+        hit: `
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Reflex with a -4 accuracy penalty against something you \\glossterm{touch}.
+        `,
+      },
+      rank: 2,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Inferno Bolt',
+
+      // Normally, -4 accuracy touch range would be dr8, but we drop to dr5 because it's
+      // Reflex and because that's just silly.
+      attack: {
+        hit: `
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Reflex with a -4 accuracy penalty against something you \\glossterm{touch}.
+        `,
+      },
+      rank: 5,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
   ],
 });
