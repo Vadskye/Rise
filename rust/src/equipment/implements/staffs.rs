@@ -219,7 +219,7 @@ pub fn staffs() -> Vec<Implement> {
             In addition, you increase your \glossterm<fatigue level> by one.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Can cast spells without verbal components", r"
+            ItemUpgrade::new(3, "Can cast spells without somatic components", r"
                 The staff no longer needs to be activated.
                 You can passively cast spells without using \glossterm<somatic components>.
             "),
