@@ -113,7 +113,18 @@ pub fn potions() -> Vec<Tool> {
                 This gains the \atSwift tag, so it protects you against attacks during the current phase.
             "),
         ],
-        ..elixir()
+        ..potion()
+    });
+
+    // TODO: upgrade
+    potions.push(Tool {
+        name: "Mind-Whetting Potion".to_string(),
+        rank: 1,
+        short_description: "Grants focus".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \focused.
+        ".to_string(),
+        ..potion()
     });
 
     potions.push(Tool {
@@ -125,7 +136,7 @@ pub fn potions() -> Vec<Tool> {
             This has the \atSwift tag, so it protects you against attacks during the current phase.
         ".to_string(),
         tags: vec![AbilityTag::Swift],
-        ..elixir()
+        ..potion()
     });
 
     potions.push(Tool {
@@ -137,7 +148,7 @@ pub fn potions() -> Vec<Tool> {
             This has the \atSwift tag, so it protects you against attacks during the current phase.
         ".to_string(),
         tags: vec![AbilityTag::Swift],
-        ..elixir()
+        ..potion()
     });
 
     potions.push(Tool {
@@ -147,7 +158,7 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \primed and \enraged.
         ".to_string(),
-        ..elixir()
+        ..potion()
     });
 
     potions.push(Tool {
@@ -157,7 +168,7 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \honed and \steeled.
         ".to_string(),
-        ..elixir()
+        ..potion()
     });
 
     potions.push(Tool {
@@ -167,7 +178,7 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \maximized.
         ".to_string(),
-        ..elixir()
+        ..potion()
     });
 
     // 1.4 EA, but confusion is a big downside.
@@ -178,7 +189,7 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered, \primed, \braced, and \confused.
         ".to_string(),
-        ..elixir()
+        ..potion()
     });
 
     potions.push(Tool {
