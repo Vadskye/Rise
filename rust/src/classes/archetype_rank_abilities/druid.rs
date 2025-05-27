@@ -398,9 +398,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} The Fortitude defense bonus increases to \plus2.
-                        \rank{5} The vital roll bonus increases to \plus2.
-                        \rank{7} The Fortitude defense bonus increases to \plus3.
+                        \rank{4} The Fortitude defense bonus increases to \plus2.
+                        \rank{7} The vital roll bonus increases to \plus2.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Bull}
@@ -410,11 +409,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
-                        \rank{5} The accuracy bonus increases to \plus4.
-                        % TODO: Low damage for such a high rank ability, and also complicated
-                        \rank{7} When you push a creature with the \textit{shove} ability, the pushed creature also takes \glossterm{weapon damage} from your gore natural weapon.
-                        This damage cannot be combined with other effects that deal damage with a shove.
+                        \rank{4} You gain a \plus2 accuracy bonus with the \ability{shove} ability.
+                        \rank{7} The accuracy bonus increases to \plus4.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Constrictor}
@@ -425,21 +421,18 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        % TODO: seems like this should scale, since a single strike of damage falls off at high levels
-                        \rank{3} When you grapple a creature with the \ability{grapple} ability, they also take \glossterm{weapon damage} from your bite natural weapon.
-                        \rank{5} The accuracy bonus increases to \plus4.
+                        \rank{4} The accuracy bonus increases to \plus4.
                         \rank{7} When you grapple a creature with the \ability{grapple} ability, you automatically take control of the grapple (see \pcref{Controlling a Grapple}).
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Fish}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a slow \glossterm{swim speed}.
+                        You gain an average \glossterm{swim speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \rank{5} Your swim speed increases to be average.
+                        \rank{4} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
                         \rank{7} You are immune to \magical effects that restrict your mobility.
                     \end{magicalactiveability}
 
@@ -450,8 +443,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
 
                         \rankline
-                        \rank{3} You grow wings, granting you an average glide speed (see \pcref{Gliding}).
-                        \rank{5} The skill bonus increases to \plus5.
+                        \rank{4} You grow wings, granting you an average glide speed (see \pcref{Gliding}).
                         \rank{7} You gain an average \glossterm{fly speed} with a maximum height of 30 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{magicalactiveability}
@@ -469,8 +461,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
 
                         \rankline
-                        \rank{3} You gain the \trait{scent} ability.
-                        \rank{5} You gain an additional \plus10 bonus to scent-based Awareness checks (see \pcref{Awareness}).
+                        \rank{4} You gain the \trait{scent} ability.
                         \rank{7} You can run on three limbs instead of four, allowing you to retain one free hand while multipedal.
                     \end{magicalactiveability}
 
@@ -478,12 +469,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Monkey}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a slow \glossterm{climb speed}.
+                        You gain an average \glossterm{climb speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You grow a tail that you can use as a free hand for the purpose of climbing.
-                        \rank{5} Your climb speed increases to be average.
+                        \rank{4} You grow a tail that you can use as a free hand for the purpose of climbing.
                         \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories larger than you.
                     \end{magicalactiveability}
 
@@ -494,9 +484,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
-                        \rank{3} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
+                        \rank{4} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
                         In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one.
-                        \rank{5} The skill bonuses increase to \plus4.
                         \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
@@ -510,47 +499,44 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         Its stage 3 effect makes the target stunned while the poison lasts.
 
                         \rankline
-                        \rank{3} You gain a \plus1 accuracy bonus with all poisons.
-                        \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{7} The accuracy bonus increases to \plus3.
+                        \rank{4} You gain a \plus1 accuracy bonus with all poisons.
+                        \rank{7} The accuracy bonus increases to \plus2.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Wolf}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are adjacent to both you and one of your \glossterm{allies}.
+                        You gain a \plus1 \glossterm{accuracy} bonus against creatures that are adjacent to both you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{3} You gain the \trait{scent} ability.
-                        \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{7} The accuracy bonus applies even if you are not adjacent to a creature, as long as one of your allies is adjacent to the creature.
+                        \rank{4} You gain the \trait{scent} ability.
+                        \rank{7} The accuracy bonus increases to \plus2.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Myriad Form}
                         \abilityusagetime Standard action.
                         \rankline
-                        If you have Disguise as a \glossterm{trained skill}, you gain a +3 bonus to it.
+                        If you have Disguise as a \glossterm{trained skill}, you gain a +3 \glossterm{enhancement bonus} to it.
                         Otherwise, you are treated as being trained in that skill.
 
                         \rankline
                         % No maximum because the ability is magical
-                        \rank{3} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
+                        \rank{4} When you use this wild aspect, you can choose to grow or shrink by one \glossterm{size category} (see \pcref{Size Categories}).
                             If you increase your size, you are slightly clumsy in your new size, and you take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
-                        \rank{5} You can disguise yourself as a \glossterm{standard action} (see \pcref{Disguise}).
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Photosynthesis}
                         \abilityusagetime Standard action.
                         \rankline
+                        You do not gain hunger or thirst while in natural sunlight.
+                        When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
                         % Weird to use non-rolled hp value, but the scaling is fine?
-                        As long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
                         This cannot heal you above half your maximum \glossterm{hit points}.
                         \rankline
-                        \rank{3} You do not gain hunger or thirst while in natural sunlight.
-                        When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        \rank{5} The healing from this wild aspect increases to be equal to your \glossterm{power}.
+                        \rank{4} The healing increases to be equal to your \glossterm{power}.
                         \rank{7} When you finish a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{magicalactiveability}
@@ -563,9 +549,8 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         This prevents you from suffering penalties on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
                         \rankline
-                        \rank{3} You gain a \plus1 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
-                        \rank{5} All \glossterm{light undergrowth} within a \medarea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
-                        \rank{7} The radius of difficult terrain increases to \largearea.
+                        \rank{4} You gain a \plus2 bonus to your Armor and Reflex defenses while standing in \glossterm{undergrowth}.
+                        \rank{7} All \glossterm{light undergrowth} within a \medarea radius from you is treated as \glossterm{difficult terrain} for your \glossterm{enemies}.
                     \end{magicalactiveability}
                 }
             ",
