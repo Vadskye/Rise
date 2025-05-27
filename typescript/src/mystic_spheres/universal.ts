@@ -46,7 +46,7 @@ export const universal: MysticSphere = {
         Terramancy      & Creatures and objects & Armor     & \\atEarth \\\\
         Thaumaturgy     & Creatures and objects & Fortitude & \\tdash      \\\\
         Toxicology      & Creatures and objects & Fortitude & \\atPoison        \\\\
-        Umbramancy      & Creatures and objects & Fortitude & \\atCold, \\atVisual        \\\\
+        Umbramancy      & Creatures and objects & Mental & \\atVisual        \\\\
         Verdamancy      & Creatures and objects & Armor     & \\tdash    \\\\
         Vivimancy       & Living creatures      & Fortitude & \\tdash      \\\\
       \\end{dtabularx}
