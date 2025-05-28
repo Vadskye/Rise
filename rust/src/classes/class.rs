@@ -486,11 +486,7 @@ impl Class {
                 Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Jump,
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Dungeoneering,
-                    KnowledgeSubskill::Items,
-                    KnowledgeSubskill::Nature,
-                ]),
+                Skill::Knowledge(KnowledgeSubskill::all()),
                 Skill::Medicine,
                 Skill::Persuasion,
                 Skill::Ride,
@@ -1613,9 +1609,9 @@ impl Class {
                         Your checks also explode on a 9 or 10, not just a 10.
 
                     \subsubsection{Death Domain}
-                        \domainability{Gift} You gain a \plus1 bonus to \glossterm{accuracy} against creatures that are below their maximum hit points.
+                        \domainability{Gift} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are below their maximum hit points.
                         You can also automatically identify whether creatures you see are below their maximum hit points.
-                        \domainability{Aspect} The bonus from this domain's gift increases to \plus2.
+                        \domainability{Aspect} You gain a \plus1 bonus to your \glossterm{vital rolls}.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Dead}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
@@ -1627,7 +1623,7 @@ impl Class {
                             The corpse must have an intact mouth to be able to speak.
                             This ability ends if 24 hours have passed since the creature died.
                         \end{magicalattuneability}
-                        \domainability{Mastery} The bonus from this domain's gift increases to \plus3.
+                        \domainability{Mastery} The bonus from this domain's gift increases to \plus2.
 
                     \subsubsection{Destruction Domain}
                         \domainability{Gift} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
@@ -1662,7 +1658,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{damage resistance}.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance}.
                         \magicaldomainability{Essence}
                         \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
                             \abilityusagetime Standard action.
@@ -1675,7 +1671,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Mastery archetype.
+                        \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Evil Domain}
                         \magicaldomainability{Gift}
@@ -1699,7 +1695,7 @@ impl Class {
                             After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
                         You must make an attack vs. Mental against that creature to redirect damage to it in this way.
@@ -1748,7 +1744,7 @@ impl Class {
                             After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
                         The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
@@ -1771,7 +1767,7 @@ impl Class {
                             \rankline
                             \rank{6} You gain a \plus3 bonus to the Knowledge check.
                         \end{magicalactiveability}
-                        \domainability{Mastery} You gain a \plus1 bonus to \glossterm{accuracy} with all attacks.
+                        \domainability{Mastery} You gain a \plus1 \glossterm{accuracy} bonus with all attacks.
                         In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
 
                     \subsubsection{Law Domain}
@@ -1792,16 +1788,16 @@ impl Class {
                             In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus1 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
                         \domainability{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Mastery archetype to your maximum \glossterm{hit points}.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
                         \magicaldomainability{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
                         You cannot affect any other creatures with this ability.
-                        \domainability{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Mastery archetype.
+                        \domainability{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1814,7 +1810,7 @@ impl Class {
                         In addition, the skill bonus from this domain's gift increases to \plus5.
 
                     \subsubsection{Protection Domain}
-                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Mastery archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
                             \abilityusagetime \glossterm{Free action} once per round.
@@ -1827,7 +1823,7 @@ impl Class {
                         \end{magicalactiveability}
                         \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
-                        In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Mastery archetype.
+                        In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Strength Domain}
                         If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
@@ -1892,7 +1888,7 @@ impl Class {
                             After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
 
                             \rankline
-                            You gain a \plus1 bonus to \glossterm{accuracy} with the attack for each rank beyond 4.
+                            You gain a \plus1 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
                         \end{magicalsustainability}
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
                         \magicaldomainability{Mastery} You are undetectable to all \magical abilities.
@@ -1902,9 +1898,12 @@ impl Class {
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.
-                        \domainability{Aspect} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                        \domainability{Aspect} You learn one rank 1 \glossterm{maneuver} from any \glossterm{combat style} (see \pcref{Combat Styles}).
+                        You gain an accuracy bonus with that maneuver equal to the amount by which your rank in the Domain Influence archetype exceeds the maneuver's rank.
+                        When you gain access to a new \glossterm{rank} in the Domain Influence archetype,
+                            you can exchange that maneuver for another maneuver with a rank that does not exceed your rank in the Domain Influence archetype.
                         \domainability{Essence} You gain a \plus1 bonus to your Armor defense.
-                        \domainability{Mastery} The bonus from this domain's aspect increases to \plus2.
+                        \domainability{Mastery} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
 
                     \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1937,7 +1936,7 @@ impl Class {
                         \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
                         \magicaldomainability{Aspect} You gain one \textit{wild aspect}, as the druid ability from the Shifter archetype (see \pcref{Shifter}).
                         You cannot spend \glossterm{insight points} to learn additional wild aspects.
-                        The aspect's effect improves based on your rank in the Domain Mastery archetype.
+                        The aspect's effect improves based on your rank in the Domain Influence archetype.
                         If you already have that ability, you simply learn an additional wild aspect, and the aspect's effect continues to scale with your Shifter archetype rank.
                         \magicaldomainability{Essence} You learn an additional \textit{wild aspect}.
                         \magicaldomainability{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.

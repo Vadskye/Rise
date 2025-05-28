@@ -455,7 +455,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{accuracy}.
+                You gain a \plus1 \glossterm{accuracy} bonus.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },

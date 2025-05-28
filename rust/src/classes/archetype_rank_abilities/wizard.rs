@@ -292,7 +292,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \par You cannot choose this insight multiple times.
 
                     \parhead{Sphere Specialization}\nonsectionlabel{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
-                    You gain \plus2 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
+                    You gain \plus1 \glossterm{accuracy} bonus with abilities from that \glossterm{mystic sphere}.
                     You also memorize all rituals from that \glossterm{mystic sphere} that your spellcasting rank gives you access to.
                     In exchange, you must lose access to another \glossterm{mystic sphere} you have.
                     You must exchange all spells you know from that \glossterm{mystic sphere} with spells from other \glossterm{mystic spheres} you have access to.
@@ -388,7 +388,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
                 If you do, you gain a \plus1 accuracy bonus with the spell this round.
-                However, you take a \minus2 penalty to your Armor and Reflex defenses this round.
+                However, you take a \minus2 penalty to all defenses this round.
                 This defense penalty is \abilitytag{Swift}.
             ",
             modifiers: Some(vec![
@@ -516,14 +516,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
-                    If you specialize in this school, you gain a \plus30 foot bonus to the \glossterm{range} of arcane spells you cast.
+                    If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your \glossterm{magical power}.
 
-                % TODO: this shouldn't scale to +3 accuracy
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
-                    If you specialize in this school, you gain a \plus1 bonus to your \glossterm{accuracy}.
+                    If you specialize in this school, you gain a \plus1 \glossterm{accuracy} bonus.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
@@ -546,11 +545,11 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Abjuration} The damage resistance bonus increases to four times your rank in this archetype.
 
-                    \subcf{Conjuration} The range improvement increases to \plus60 feet.
+                    \subcf{Conjuration} The range improvement increases to \plus30 feet.
 
                     \subcf{Evocation} The power bonus increases to \plus3.
 
-                    \subcf{Illusion} The accuracy bonus increases to \plus2.
+                    \subcf{Illusion} You gain a \plus2 \glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
 
@@ -570,11 +569,11 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     % TODO: this seems weaker than the other schools
                     \subcf{Abjuration} The damage resistance bonus increases to five times your rank in this archetype.
 
-                    \subcf{Conjuration} The range improvement increases to \plus90 feet.
+                    \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
                     \subcf{Evocation} The power bonus increases to \plus4.
 
-                    \subcf{Illusion} The accuracy bonus increases to \plus3.
+                    \subcf{Illusion} The accuracy bonus increases to \plus2.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                     In addition, you can change which defense the bonus applies to as a \glossterm{free action} instead of as a minor action.
