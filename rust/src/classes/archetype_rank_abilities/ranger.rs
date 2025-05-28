@@ -148,15 +148,8 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                Whenever you finish a \glossterm{short rest}, you can choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
-                Whenever you recognize a creature of that type, you gain a \plus1 accuracy bonus against it, and you intuitively know what effects it is \vulnerable to.
-                This may require an Awareness check if the target is disguised as a different creature type.
-                This benefit lasts until you choose a different creature type with this ability.
-
-                You can invest any number of \glossterm{insight points} into this ability.
-                Unlike normal for insight points, this does not directly grant you any additional abilities known.
-                Instead, for each insight point invested, the number of creature types you can choose with this ability increases by one.
-
+                You gain a \plus1 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
+                In addition, you can spend insight points to gain one additional Knowledge \glossterm{trained skill} per insight point.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -178,21 +171,21 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You also gain a \plus1 bonus to all defenses against creatures of your chosen types.
-                In addition, you can choose an additional creature type.
+                You also gain a \plus1 \glossterm{accuracy} bonus against creatures associated with Knowledge skills that you are trained with.
             ",
             modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             complexity: 0,
-            name: "Know Your Enemy+",
+            name: "Know Your Enemy++",
             is_magical: false,
             rank: 7,
             description: r"
-                The accuracy bonus increases to \plus2.
+                The defense bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
+        // TODO: buff to be more combat relevant, or give an extra ability?
         RankAbility {
             complexity: 1,
             name: "Experienced Guide",

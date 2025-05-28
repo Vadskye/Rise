@@ -598,9 +598,12 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +1 bonus to your Armor defense while you have no \glossterm{encumbrance}.
+                You gain a +1 bonus to your Armor and Reflex defense while you have no \glossterm{encumbrance}.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
         },
         RankAbility {
             complexity: 1,
@@ -608,7 +611,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                While you have no \glossterm{encumbrance}, you are immune to being \slowed and \paralyzed.
+                While you have no \glossterm{encumbrance}, you are immune to being \slowed and \paralyzed, and your movement is not slowed by \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },
@@ -624,22 +627,22 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Perfect Precision",
+            name: "Perfected Power",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a \plus1 bonus to \glossterm{accuracy} with attacks using weapons from the monk weapons \glossterm{weapon group}, natural weapons, and \atBrawling abilities.
-                In addition, you can use your Dexterity instead of your Strength to determine your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
+                You gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
+                If each of your Strength, Dexterity, and Constitution are 3 or higher, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
-            name: "Brawling Precision",
+            name: "Perfected Power+",
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{brawling accuracy}.
+                The bonus increases to \plus2, or to \plus3 if you meet the attribute requirement.
             ",
             modifiers: None,
         },

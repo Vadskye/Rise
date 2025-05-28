@@ -395,7 +395,7 @@ They allow more distinct and unique character customization, but also increase g
     In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
     If you already have blindsight, the range of your blindsight increases by 30 feet.
 
-    \ff[12]{Unseeing Precision} You gain a \plus1 bonus to \glossterm{accuracy}.
+    \ff[12]{Unseeing Precision} You gain a \plus1 \glossterm{accuracy} bonus.
 
     \ff[12]{Unerring\plus} You are unaffected by all miss chances.
 
@@ -1147,15 +1147,20 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Juggernaut}{Combat}
     \featpre Strength 1, Constitution 2.
 
-    \ff[1]{Unstoppable} You are immune to being \slowed and \paralyzed.
-    In addition, you are unaffected by \glossterm{difficult terrain}.
+    \ff[1]{Unstoppable} You are immune to being \slowed and \paralyzed, and your movement speed is not reduced by \glossterm{difficult terrain}.
+    You can move through spaces occupied by enemies, but you must still end your movement in an unoccupied space.
 
     \ff[6]{Brute Force} You gain a \plus1 bonus to your \glossterm{mundane power}.
 
+    % 
     \ff[6]{Trample}
     \begin{activeability}{Trample}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
       \abilityusagetime Standard action.
       \rankline
+      Move up to your movement speed in a straight line.
+      Then, make a \glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way.
+      \hit Each target takes \damageranktwo.
+
       This ability functions like the \textit{overrun} ability, except that creatures may not choose to avoid you.
       In addition, the attack deals \damageranktwo.
       % TODO: wording
@@ -1299,7 +1304,7 @@ They allow more distinct and unique character customization, but also increase g
         You can choose this ability multiple times, choosing a different weapon group each time.
       \item You reduce the \glossterm{encumbrance} of \glossterm{body armor} you wear by 1.
         You can choose this ability multiple times, and its effects stack.
-      \item You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
+      \item You gain a \plus1 bonus to your \glossterm{vital rolls}.
       \item You gain a \plus1 bonus to your \glossterm{mundane power}.
     \end{itemize}
 
@@ -1450,19 +1455,25 @@ They allow more distinct and unique character customization, but also increase g
     You cannot use \glossterm{potions} or other similar magic items or abilities that affect you personally, even if they do not require attunement.
     In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
 
-    \ff[6]{Sever Attunement}
-    \begin{activeability}{Sever Attunement}
+    \ff[6]{Shred Magic}
+    \begin{activeability}{Shred Magic}
       \abilityusagetime Standard action.
       \rankline
-      Make a \glossterm{strike}.
-      If the target takes damage from the strike, it stops being \glossterm{attuned} to one effect of its choice that it is currently attuned to.
-      If it has any magical abilities, but has no remaining attuned effects, it becomes \stunned as a \glossterm{condition} instead.
-      On a \glossterm{critical hit}, the strike deals double damage and the target stops being attuned to two abilities of its choice that it is currently attuned to.
-      In addition, as a \glossterm{condition}, it stops being able to attune to abilities.
+      Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
+      You gain a \plus2 accuracy bonus with the strike for each of the following conditions that is true:
+      \begin{raggeditemize}
+        \item The target has any \magical abilities.
+        \item The target is currently \glossterm{attuned} to any effects.
+        \item The target used a \magical ability as a \glossterm{standard action} or \glossterm{elite action} during the previous round.
+      \end{raggeditemize}
+    \end{activeability}
 
       \rankline
-      You gain a \plus2 accuracy bonus with the strike for every 3 levels beyond 6.
-    \end{activeability}
+      \featlevel{9} The extra damage increases to 1d6 \add half your \glossterm{power}.
+      \featlevel{12} The extra damage is reduced to 1d6, but the strike deals double damage.
+      \featlevel{15} The extra damage increases to 2d6.
+      \featlevel{18} The strike deals triple damage.
+  \end{activeability}
 
     \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
     Instead, you gain a \plus1 bonus to your \glossterm{accuracy} and all \glossterm{defenses}.
@@ -1483,7 +1494,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[18]{Mundane Resilience\plus} The bonuses from your \textit{mundane resilience} ability increase to twice your level.
 
-    \ff[18]{True Null} You are unaffected by all \magical abilities.
+    \ff[18]{True Null} You are \glossterm{unaffected} by all \magical abilities.
   \end{feat}
 
   \begin{feat}{Perform Specialization}{Skill}
@@ -1551,7 +1562,7 @@ They allow more distinct and unique character customization, but also increase g
     \begin{sustainability}{Combat Prediction}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
       \abilityusagetime Standard action.
       \rankline
-      Choose a creature within \medrange of you.
+      Choose a creature within \longrange of you.
       That creature's intentions become obvious to you as long as you sustain this ability.
       This gives you a \plus1 bonus to \glossterm{accuracy} and \glossterm{defenses} against that creature.
 
@@ -2166,7 +2177,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilityusagetime \glossterm{Minor action}.
       \rankline
       Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
-      That creature gains a \plus2 bonus to its \glossterm{accuracy} and \glossterm{defenses} this round.
+      That creature becomes \focused and \braced this round.
     \end{magicalactiveability}
 
     \magicalff[6]{Resummon}
@@ -2542,7 +2553,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Twin-Weapon Fighting}{Combat}
     \featpre Dexterity 2.
 
-    \ff[1]{Twin-Wielding} You are considered to be twin-wielding while two of your hands are each wielding an identical weapon that you are proficient with.
+    \ff[1]{Twin-Wielding} You are considered to be twin-wielding while two of your hands are each wielding an weapon of the same type, such as a smallsword or handaxe.
     Each hand must hold a different weapon, rather than simply holding a heavy weapon in two hands.
     You can use \glossterm{natural weapons} to meet this condition, such as claws, as long as your hand is exclusively dedicated to using the natural weapon and not holding or being used for anything else.
     Several abilities from this feat only function while you are twin-wielding.
@@ -2561,12 +2572,13 @@ They allow more distinct and unique character customization, but also increase g
         However, you cannot get \glossterm{critical hits} with dual strikes.
     \end{itemize}
 
-    \magicalff[6]{Paired Legacy} If you would choose a weapon as your \glossterm{legacy item}, you can instead choose two identical weapons.
-    Both weapons share the same properties from your legacy item.
+    \magicalff[6]{Twinned Enhancement} If you are twin-wielding with one \magical weapon and one \glossterm{mundane} weapon that is not made of a special property, you can attune to the magical weapon multiple times.
+    For each additional time you attune to the magical weapon, you can copy one of its magical properties that does not require a \glossterm{deep attunement} to your \glossterm{mundane} weapon.
+    Normally, weapons can only have one magical property, but this can allow you to copy multiple properties from a \glossterm{legacy item} or \magicitem{composite} weapon.
 
     \ff[12]{Paired Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} using weapons that you are twin-wielding.
 
-    \ff[18]{Paired Precision\plus} The accuracy bonus increases to \plus2.
+    \ff[18]{Twinned Enhancement\plus} You gain an additional \glossterm{attunement point}.
   \end{feat}
 
   \begin{magicalfeat}{Wardweaver}{Casting, Magical}
