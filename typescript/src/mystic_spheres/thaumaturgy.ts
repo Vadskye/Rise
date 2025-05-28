@@ -387,7 +387,7 @@ export const thaumaturgy: MysticSphere = {
           When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
+          Make an attack vs. Fortitude with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,
       },
       rank: 1,

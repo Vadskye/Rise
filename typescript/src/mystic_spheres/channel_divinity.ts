@@ -58,7 +58,7 @@ export const channelDivinity: MysticSphere = {
         This healing cannot increase your hit points above half your maximum hit points.
         Second, you may remove one \\glossterm{condition} affecting you.
         This cannot remove an effect applied during that round.
-        Third, you gain a +2 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
+        Third, you gain a +2 \\glossterm{accuracy} bonus during the round after you become infused with divine power.
       `,
       rank: 4,
       scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
@@ -71,7 +71,7 @@ export const channelDivinity: MysticSphere = {
       // Compare with Boastful Battlecry
       effect: `
         At the end of the next round, you become infused with divine power.
-        You gain a +4 bonus to \\glossterm{accuracy} during the round after you become infused with divine power.
+        You gain a +4 \\glossterm{accuracy} bonus during the round after you become infused with divine power.
       `,
       rank: 1,
       tags: [],

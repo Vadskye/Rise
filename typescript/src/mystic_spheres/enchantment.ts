@@ -483,7 +483,7 @@ export const enchantment: MysticSphere = {
           Every round, it must spend a \\glossterm{standard action} to make an attack.
         `,
         targeting: `
-          Make an attack vs. Mental with a +2 bonus to \\glossterm{accuracy} against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
         `,
       },
       rank: 1,

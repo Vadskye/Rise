@@ -226,29 +226,36 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus5.
                     \end{magicalactiveability}
 
-                    \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard)}
+                    % Two allies fortified is 0.8 EA
+                    \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
                         \abilityusagetime Standard action.
                         \rankline
-                        Choose any number of \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target gains a \plus1 \glossterm{accuracy} bonus and a \plus1 bonus to its Mental defense.
-
-                        \rankline
-                        \rank{3} The Mental defense bonus increases to \plus2.
-                        \rank{5} The accuracy bonus increases to \plus2.
-                        \rank{7} The Mental defense bonus increases to \plus3.
-                    \end{magicalsustainability}
-
-                    \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
-                        \abilityusagetime Standard action.
-                        \rankline
-                        Choose any number of \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target gains a \plus1 bonus to its Armor and Reflex defenses.
+                        Choose up to two \glossterm{allies} within \medrange.
+                        For the duration of your performance, each target is \fortified.
                         Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
-                        \rank{3} The Reflex defense bonus increases to \plus2.
-                        \rank{5} The Armor defense bonus increases to \plus2.
-                        \rank{7} The Reflex defense bonus increases to \plus3.
+                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
+                        % 1.2 EA
+                        \rank{5} You can choose a third ally.
+                        % 1.6 EA, bard nonsense
+                        \rank{7} You can choose a fourth ally.
+                    \end{magicalsustainability}
+
+                    % Two allies shielded is 0.8 EA
+                    \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
+                        \abilityusagetime Standard action.
+                        \rankline
+                        Choose up to two \glossterm{allies} within \medrange.
+                        For the duration of your performance, each target is \shielded.
+                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
+
+                        \rankline
+                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
+                        % 1.2 EA
+                        \rank{5} You can choose a third ally.
+                        % 1.6 EA, bard nonsense
+                        \rank{7} You can choose a fourth ally.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Sustain} (minor)}
@@ -291,7 +298,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \hit For the duration of your performance, each target is \dazzled.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
 
                         \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
@@ -319,7 +326,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \hit For the duration of your performance, each target is \stunned while it has no remaining \glossterm{damage resistance}.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 2.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
 
                         \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
@@ -346,7 +353,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced either during this effect or after it ends.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Intonation of Ingenuity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -386,7 +393,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \hit In addition, each target is \glossterm{goaded} by you for the duration of your performance.
 
                         \rankline
-                        You gain a \plus2 bonus to \glossterm{accuracy} with the attack for each rank beyond 1.
+                        You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Serenade of Serenity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
@@ -857,8 +864,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
-                In addition, you gain a \plus2 bonus to \glossterm{accuracy} with abilities granted to you by magic items.
-                This includes spells cast from wands, the special standard action strike you can make with a \mitem{flaming} weapon, and other similar abilities.
+                In addition, you gain a \plus1 \glossterm{accuracy} bonus with abilities granted to you by magic items.
+                This includes spells cast from wands.
                 However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
             ",
             modifiers: None,

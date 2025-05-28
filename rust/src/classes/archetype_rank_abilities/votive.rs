@@ -634,7 +634,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                     Otherwise, you roll the attack roll normally.
                     This does not allow you to bypass other effects that can cause you to miss without making an attack roll, such as a \glossterm{miss chance}.
 
-                    \subcf{Precursor -- Eldritch Spell} You gain a \plus2 accuracy bonus with the spell.
+                    \subcf{Precursor -- Eldritch Spell} You gain a \plus1 accuracy bonus with the spell.
                     However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to your Fortitude and Reflex defenses.
                 }
             ",

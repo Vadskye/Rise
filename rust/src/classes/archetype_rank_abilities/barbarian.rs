@@ -124,7 +124,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \begin{itemize}
                         \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
-                        \item You are \glossterm{unaffected} by all \glossterm{conditions}.
                         \item You are \enraged.
                     \end{itemize}
 
@@ -468,7 +467,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.
 
-                \subcf{Shark} You gain a \plus2 \glossterm{accuracy} bonus against creatures within \shortrange of you that are below their maximum hit points.
+                \subcf{Shark} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are below their maximum hit points.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
@@ -491,7 +490,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Lion} You add half your Willpower to your accuracy with \atAuditory attacks.
 
-                \subcf{Shark} The accuracy bonus increases to \plus3.
+                \subcf{Shark} The accuracy bonus increases to \plus2.
             ",
             modifiers: None,
         },
@@ -512,7 +511,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Lion} You gain a \plus1 bonus to your Willpower.
 
-                \subcf{Shark} The accuracy bonus increases to \plus4.
+                \subcf{Shark} The accuracy bonus increases to \plus3.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
