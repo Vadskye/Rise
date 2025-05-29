@@ -59,9 +59,9 @@ pub fn melee() -> Vec<MagicWeapon> {
     weapons.push(Melee(StandardItem {
         name: String::from("Vorpal"),
         rank: 7,
-        short_description: String::from(r"+2d6 damage, can decapitate foes"),
+        short_description: String::from(r"+1d10 damage, can decapitate foes"),
         description: String::from(r"
-            Strikes with this weapon deal 2d6 \glossterm{extra damage}.
+            Strikes with this weapon deal 1d10 \glossterm{extra damage}.
 
             As a standard action, you can make a mundane melee \glossterm<strike>.
             If the target has no remaining \glossterm{damage resistance} and your attack result hits its Reflex defense, the strike deals quadruple damage.
