@@ -135,7 +135,7 @@ export const unbreakableDefense: CombatStyle = {
 
     // +0.4ea as a bonus for requiring shield
     {
-      name: 'Stunning Shield Slam',
+      name: 'Stunning Shield Bash',
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
