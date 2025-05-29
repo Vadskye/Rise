@@ -279,24 +279,24 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
-            complexity: 1,
-            name: "Draconic Precision",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
             complexity: 0,
             name: "Energy Immunity",
             is_magical: false,
-            rank: 5,
+            rank: 4,
             description: r"
                 You become immune to attacks that have your dragon's associated ability tag.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Draconic Precision",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
