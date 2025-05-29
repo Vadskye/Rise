@@ -1698,6 +1698,35 @@ export const rituals: Ritual[] = [
   },
 
   {
+    name: 'Track Item',
+
+    castingTime: 'one hour',
+    effect: `
+      When you perform this ritual, choose a Tiny or larger object you \\glossterm{touch}.
+      You constantly know the exact distance and direction to the object, even if it is \\glossterm{attended}, as long as it is within 200 miles of you.
+      This connection ignores \\glossterm{line of sight} and \\glossterm{line of effect}.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    spheres: ['Revelation'],
+    type: 'Attune',
+  },
+
+  {
+    name: 'Track Fine Item',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      name: "track item",
+      exceptThat: "the item can be of any size category.",
+    },
+    rank: 4,
+    roles: ['narrative'],
+    spheres: ['Revelation'],
+    type: 'Attune',
+  },
+
+  {
     name: 'Locate Creature',
 
     castingTime: 'one hour',
