@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{item_latex, latex_table, StandardItem};
 use crate::equipment::latex_table::{TableRow, ToTableRows};
+use crate::equipment::{item_latex, latex_table, StandardItem};
 mod body_armor;
 mod shields;
 
@@ -27,7 +27,12 @@ impl MagicArmor {
     }
 
     pub fn to_latex(&self) -> String {
-        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+        if !self
+            .item()
+            .tags
+            .iter()
+            .any(|item| matches!(item, AbilityTag::Attune(_)))
+        {
             eprintln!("Armor {} must require attunement", self.item().name);
         }
 
@@ -72,16 +77,27 @@ impl ToTableRows for MagicArmor {
 pub fn magic_armor_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<TableRow> = all_magic_armor()
+    let mut body_armor = body_armor::body_armor();
+    body_armor.sort_by(|a, b| a.item().name.cmp(&b.item().name));
+    let mut body_armor_rows: Vec<TableRow> = body_armor
         .iter()
         .map(|a| a.to_table_rows())
         .flatten()
         .collect();
-    latex_table::standard_sort(&mut rows);
+    latex_table::standard_sort(&mut body_armor_rows);
 
-    latex_table::longtable(
-        "Magic Armor",
-        rows,
-        with_category,
+    let mut shields = shields::shields();
+    shields.sort_by(|a, b| a.item().name.cmp(&b.item().name));
+    let mut shield_rows: Vec<TableRow> = shields
+        .iter()
+        .map(|a| a.to_table_rows())
+        .flatten()
+        .collect();
+    latex_table::standard_sort(&mut shield_rows);
+
+    format!(
+        "{} {}",
+        latex_table::longtable("Magic Body Armor", body_armor_rows, with_category,),
+        latex_table::longtable("Magic Shields", shield_rows, with_category,),
     )
 }
