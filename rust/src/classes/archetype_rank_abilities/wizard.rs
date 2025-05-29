@@ -524,13 +524,13 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Illusion} The \sphere{enchantment}, \sphere{photomancy}, and \sphere{umbramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus1 \glossterm{accuracy} bonus.
 
+                \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
+                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
                     This ability has the \abilitytag{Swift} tag, so it protects you from attacks during the current phase.
-
-                \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
-                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
             ",
             // Assume evocation
             modifiers: Some(vec![Modifier::Power(2)]),
@@ -551,9 +551,9 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} You gain a \plus2 \glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
-                    \subcf{Transmutation} The defense bonus increases to \plus3.
-
                     \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
+
+                    \subcf{Transmutation} The defense bonus increases to \plus3.
                 }
             ",
             modifiers: Some(vec![Modifier::Power(3)]),
@@ -575,10 +575,9 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
-                    \subcf{Transmutation} The defense bonus increases to \plus4.
-                    In addition, you can change which defense the bonus applies to as a \glossterm{free action} instead of as a minor action.
-
                     \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+
+                    \subcf{Transmutation} The defense bonus increases to \plus4.
                 }
             ",
             modifiers: Some(vec![Modifier::Power(4)]),
