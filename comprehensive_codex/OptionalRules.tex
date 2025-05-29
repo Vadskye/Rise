@@ -205,10 +205,11 @@ They can also provide more detailed character customization options, increasing 
       \parhead{Rank 1 -- Worthy Hero} You and all \glossterm{allies} who can see or hear you are immune to being frightened and panicked.
       In addition, you gain a \plus100 bonus to your maximum \glossterm{hit points}.
 
-      \parhead{Rank 2 -- Heroic Intervention} As a \glossterm{free action}, you may choose any number of \glossterm{allies} within \shortrange of you.
-      Whenever a chosen creature would be attacked that round, that attack is made against you instead.
+      % TODO: should this be a full activeability environment?
+      \parhead{Rank 2 -- Heroic Intervention} As a \glossterm{standard action}, you may choose any number of \glossterm{allies} within \longrange.
+      Whenever a chosen creature would be attacked, that attack is made against you instead.
       If the attack would have targeted both you and that ally, the attack only targets you once, not twice.
-      This ability has the \abilitytag{Swift} tag.
+      This ability has the \abilitytag{Swift} tag, and it lasts until you dismiss it as a \glossterm{free action}.
 
       \parhead{Rank 3 -- Invincible Hero} You gain a \plus4 bonus to all defenses.
       In addition, you cannot be \vulnerable for any reason.

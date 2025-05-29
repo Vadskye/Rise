@@ -1675,13 +1675,13 @@ impl Class {
 
                     \subsubsection{Evil Domain}
                         \magicaldomainability{Gift}
-                        \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
-                            \abilityusagetime \glossterm{Free action} once per round.
+                        \begin{magicalsustainability}{Willing Sacrifice}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                            \abilityusagetime Standard action.
                             \rankline
-                            Choose an \glossterm{ally} adjacent to you.
-                            Whenever you lose \glossterm{hit points} this round, that ally loses half of those hit points in place of you.
+                            Choose an \glossterm{ally} you \glossterm{touch}.
+                            Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
                             You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
-                        \end{magicalactiveability}
+                        \end{magicalsustainability}
                         \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
@@ -1812,15 +1812,19 @@ impl Class {
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \magicaldomainability{Aspect}
-                        \begin{magicalactiveability}{Divine Protection}[\abilitytag{Swift}]
-                            \abilityusagetime \glossterm{Free action} once per round.
+                        \begin{magicalsustainability}{Divine Protection}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                            \abilityusagetime Standard action.
                             \rankline
-                            Choose an \glossterm{ally} adjacent to you.
-                            It gains a \plus1 bonus to all defenses this round.
+                            Choose an \glossterm{ally} you \glossterm{touch}.
+                            It gains a \plus1 bonus to all defenses while it is adjacent to you.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot be affected by other creatures using this ability on you.
-                        \end{magicalactiveability}
+
+                            Choose an \glossterm{ally} you \glossterm{touch}.
+                            Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
+                            You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
+                        \end{magicalsustainability}
                         \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Influence archetype.

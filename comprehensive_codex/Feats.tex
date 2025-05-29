@@ -368,19 +368,23 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Battle Armory}{Combat}
     \featpre Strength 1, Dexterity 2.
 
+    \ff[1]{Mobile Armory} You can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
+
     \ff[1]{Overburdened Quickdraw} Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
     This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
-    In addition, you can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
 
     \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
-    Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all nonmagical weapons you wield, excluding \glossterm{natural weapons}.
-    If you attune to a magical weapon, it keeps its own magical effects instead of your chosen legacy item properties.
+    Instead, if you choose weapons as your legacy item category, you always treat one weapon you wield as your legacy item.
+    You cannot choose a magical weapon or a weapon made of special materials as your legacy item in this way.
+    If you wield more than one weapon at a time, you can choose which of your weapons is your legacy item as a \glossterm{free action} once per round.
 
-    \ff[6]{Rapid Attunement} You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
+    \magicalff[6]{Rapid Attunement} You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
 
     \ff[12]{Versatile Force} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
 
-    \ff[18]{Fast Hands} You get two free action object manipulations each round, rather than only one (see \pcref{Manipulating Objects}).
+    \magicalff[18]{Magic Armory} You gain an additional \glossterm{attunement point}.
+
+    \ff[18]{Versatile Force\plus} The power bonus increases to \plus2.
   \end{feat}
 
   \begin{feat}{Blindfighter}{Combat}
@@ -485,15 +489,15 @@ They allow more distinct and unique character customization, but also increase g
     \parhead{Special} You can only have one Ancestry feat.
 
     \magicalff[1]{Celestial Benevolence}
-    \begin{activeability}{Celestial Benevolence}[\abilitytag{Swift}]
-        \abilityusagetime \glossterm{Free action} once per round.
+    \begin{sustainability}{Celestial Benevolence}[\abilitytag{Sustain} (free), \abilitytag{Swift}]
+        \abilityusagetime Standard action.
         \rankline
-        Choose an \glossterm{ally} adjacent to you.
-        Whenever that ally would be attacked by a \glossterm{targeted} ability this round, the attack is made against you instead.
+        Choose an \glossterm{ally} you \glossterm{touch}.
+        Whenever that ally would be attacked by a \glossterm{targeted} ability while it is adjacent to you, the attack is made against you instead.
 
         A creature that sees an attack against an ally redirected in this way can observe that you are the cause of the redirection with a \glossterm{difficulty value} 5 Awareness check.
         While this ability is active, you cannot be affected by other creatures using this ability on you.
-    \end{activeability}
+    \end{sustainability}
 
     \magicalff[6]{Healing Radiance} When you use the \ability{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you.
     % TODO: unclear scaling
@@ -1230,7 +1234,7 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{18} This ability affect each ally who can see or hear you, regardless of distance.
     \end{activeability}
 
-    \ff[18]{Unyielding Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
+    \ff[18]{Stabilizing Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
   \end{feat}
 
   \begin{feat}{Living Weapon}{Combat}
