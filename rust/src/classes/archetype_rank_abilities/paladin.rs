@@ -361,6 +361,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
     vec![
+        // Normally we would want some accuracy scaling for a solo attack like this.
+        // Here, we rely on the rest of the archetype to compensate for the raw power of smite,
+        // with Zealous Fixation particularly helping low-accuracy paladins.
         RankAbility {
             complexity: 1,
             name: "Smite",
@@ -374,13 +377,14 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this ability (see \pcref{Power}).
                     If the target has your devoted alignment, you take damage equal to half your power (minimum 1).
 
+                    % This has a scaling dip at rank 4 which lines up with the powerful Zealous Offense ability
                     \rankline
                     \rank{2} You add your full Strength instead of half your Strength.
                     \rank{3} You deal \glossterm{extra damage} equal to half your power.
-                    \rank{4} If you miss, the target still takes the extra damage.
+                    \rank{4} If you miss, the target still takes half damage.
                     \rank{5} The strike deals double \glossterm{weapon damage}.
                     \rank{6} The extra damage increases to be equal to your power.
-                    \rank{7} The extra damage increases to twice your power.
+                    \rank{7} The strike deals triple \glossterm{weapon damage}.
                 \end{magicalactiveability}
             ",
             // TODO: represent special attacks
@@ -423,7 +427,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                Whenever you deal damage to a creature, you ignore all \glossterm{miss chances} against that creature with your attacks until you finish a \glossterm{short rest}.
+                Whenever you miss a creature with a \glossterm{strike}, you become \glossterm{briefly} \focused.
             ",
             modifiers: None,
         },

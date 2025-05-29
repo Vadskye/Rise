@@ -207,7 +207,7 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Living Weapon}                         & Str \add Con is 3                & Fight better with natural weapons          & \tdash            & \featpref{Living Weapon}                    \\
           \featref{Maneuverist}                           & Int 2                            & Gain limited maneuver access               & \tdash            & \featpref{Maneuverist}                      \\
           \featref{Martial Training}                      & \tdash                           & Improve combat abilities                   & \tdash            & \featpref{Martial Training}                 \\
-          \featref{Shieldbearer}                          & Str 2                            & Defend better with shields                 & \tdash            & \featpref{Shieldbearer}                     \\
+          \featref{Shieldbearer}                          & Str 2, Dex 1                     & Attack and defend better with shields      & \tdash            & \featpref{Shieldbearer}                     \\
           \featref{Sniper}                                & Per 2                            & Aim precisely at distant foes              & \tdash            & \featpref{Sniper}                           \\
           \featref{Trickshot}                             & Dex 2, Int 1                     & Use alchemical items with arrows           & \tdash            & \featpref{Trickshot}                        \\
           \featref{Twin-Weapon Fighting}                  & Dex 2                            & Fight better with two weapons at once      & \tdash            & \featpref{Twin-Weapon Fighting}             \\
@@ -368,8 +368,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Battle Armory}{Combat}
     \featpre Strength 1, Dexterity 2.
 
-    \ff[1]{Overburdened Quickdraw} You can draw or sheathe any weapon or shield other than a tower shield as a \glossterm{free action}.
-    This still counts against your one free action object manipulation per round (see \pcref{Manipulating Objects}).
+    \ff[1]{Overburdened Quickdraw} Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
+    This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
     In addition, you can store up to ten items for easy access on your body, rather than five (see \pcref{Storing Items}).
 
     \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
@@ -412,27 +412,26 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to a \glossterm{mystic sphere}, Constitution 2.
 
     \magicalff[1]{Bloodspell} Whenever you cast a spell, you may use this ability.
-    When you do, you gain a \plus2 accuracy bonus with the spell.
+    When you do, you gain a \plus1 accuracy bonus with the spell.
     In exchange, you lose two \glossterm{hit points}.
     This hit point loss increases to four hit points at level 7, eight hit points at level 13, and sixteen hit points at level 19.
 
-    \magicalff[6]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
-    While the target is bound, you are always considered to have \glossterm{line of sight} to it.
-    You can see it through all forms of \glossterm{concealment} and \glossterm{cover}, even if it is \trait{invisible} or fully behind a solid object.
-    This binding lasts until you finish a \glossterm{long rest}.
-
     % TODO: how do you remove a blood-sworn allegiance? remove curse?
-    \magicalff[12]{Blood-Sworn Allegiance} You can swear a blood oath to your allies in a ritual.
+    \magicalff[6]{Blood-Sworn Allegiance} You can swear a blood oath to your allies in a ritual.
     You automatically fail any attack rolls you make against a creature that you have sworn this blood oath with.
     Any missed attacks against those creatures have no effect, even if the attack would normally deal damage on a miss.
     Those creatures have the same effects if they try to attack you.
     This allows you to safely use area spells that include your allies as targets, since they will suffer no ill effect from the attack.
 
-    \magicalff[18]{Bloodbind\plus} You are always considered to have \glossterm{line of effect} with \magical abilities to a creature bound by your \textit{bloodbind} ability, regardless of intervening obstacles.
-    This allows you to cast spells on them through solid walls.
+    \magicalff[12]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
+    As a standard action, you can also forge this bond with any creature that you have sworn \ability{blood-sworn allegiance} with.
+    While the target is bound, you are always considered to have \glossterm{line of sight} and \glossterm{line of effect} to it.
+    You can see and target it regardless of all forms of \glossterm{concealment} and \glossterm{cover}, even if it is \trait{invisible} or fully behind a solid object.
+    You must still be close enough to the target to be within \glossterm{range} with your abilities.
+    This binding lasts until you finish a \glossterm{long rest}.
 
-    \magicalff[18]{Bloodspell\plus} You can choose to increase the accuracy bonus to \plus5.
-    When you do, the hit point loss is doubled.
+    \magicalff[18]{Bloodspell\plus} You can choose to increase the accuracy bonus to \plus2.
+    If you do, the hit point loss is doubled.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Boongiver}{Casting, Magical}
@@ -870,7 +869,6 @@ They allow more distinct and unique character customization, but also increase g
     You can automatically identify whether creatures you see are marked for execution.
 
     \ff[1]{Finishing Blow} You gain a \plus1 accuracy bonus against creatures that are marked for execution.
-    This bonus increases to \plus2 if you are adjacent to the creature.
 
     \ff[6]{Blood Sense} You gain \trait{lifesense} with a 60 foot range, allowing you to sense the location of living things without light (see \pcref{Lifesense}).
     Your lifesense functions like \trait{lifesight} against creatures who are marked for execution, allowing you to see them perfectly.
@@ -879,7 +877,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Death is Coming} Whenever you deal damage to a creature that is marked for execution, you are \glossterm{briefly} \empowered.
 
-    \ff[18]{Finishing Blow\plus} The accuracy bonus increases to \plus2, or to \plus3 if you are adjacent.
+    \ff[18]{Finishing Blow\plus} The accuracy bonus increases to \plus2.
   \end{feat}
 
   \begin{feat}{Fateweaver}{General, Magical}
@@ -1057,7 +1055,7 @@ They allow more distinct and unique character customization, but also increase g
       As a reminder, land-based creatures typically suffer a \minus4 penalty to Armor and Reflex defenses while \glossterm{midair}.
 
       % Necessary to avoid giving allies a chance to attack while the target has the massive -4 Armor/Reflex penalties
-      Once you finish using this ability, the target immediately falls to the ground, causing it to take \glossterm{falling damage} (see \pcref{Falling Damage}).
+      Once you finish using this ability, the target immediately falls to the ground, which typically causes it to take \glossterm{falling damage} (see \pcref{Falling Damage}).
       \rankline
       \rank{4} The maximum knockback distance increases to 20 feet.
       \rank{5} If you hit with either the knockback or the strike, you deal \glossterm{extra damage} equal to half your \glossterm{power}.
@@ -1070,7 +1068,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Heavenly Domain} You gain a \plus1 accuracy bonus against \glossterm{midair} creatures adjacent to you while you are jumping.
 
-    \ff[12]{Featherlight Landing\plus} You are immune to \glossterm{falling damage}.
+    % TODO: kind of lame 18th level abilities
+    \ff[18]{Featherlight Landing\plus} You are immune to \glossterm{falling damage}.
 
     \ff[18]{Heavenly Domain\plus} The accuracy bonus increases to \plus2.
   \end{feat}
@@ -1466,7 +1465,6 @@ They allow more distinct and unique character customization, but also increase g
         \item The target is currently \glossterm{attuned} to any effects.
         \item The target used a \magical ability as a \glossterm{standard action} or \glossterm{elite action} during the previous round.
       \end{raggeditemize}
-    \end{activeability}
 
       \rankline
       \featlevel{9} The extra damage increases to 1d6 \add half your \glossterm{power}.
@@ -1670,31 +1668,42 @@ They allow more distinct and unique character customization, but also increase g
     \ff[6]{Mounted Defense} Your mount gains a \plus3 bonus to all defenses, up to a maximum of your own corresponding defense.
 
     \ff[6]{Mounted Warrior} The penalty you take for making \glossterm{strikes} with \weapontag{Projectile} weapons while riding a moving mount is reduced by 2.
-    In addition, while you are mounted, you gain a \plus1 \glossterm{accuracy} bonus with \weapontag{Mounted} weapons (see \pcref{Weapon Tags}).
 
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus5.
 
     \ff[18]{Mounted Defense\plus} The defense bonus from your \textit{mounted defense} ability increases to \plus5.
 
     \ff[18]{Mounted Warrior\plus} The penalty reduction from your \textit{mounted warrior} ability increases to 4.
-    In addition, the accuracy bonus increases to \plus2.
+    In addition, while you are mounted, you gain a \plus1 \glossterm{accuracy} bonus with \weapontag{Mounted} weapons (see \pcref{Weapon Tags}).
   \end{feat}
 
   \begin{feat}{Shieldbearer}{Combat}
-    \featpre Strength 2.
+    \featpre Strength 2, Dexterity 1.
 
     \ff[1]{Shield Expertise} You gain a \plus1 bonus to Armor defense while you wield a shield.
-    This bonus increases to \plus3 while you benefit from the \ability{total defense} ability, or any ability which functions like \ability{total defense}.
+    You gain an additional \plus1 bonus while you are \braced or \shielded.
 
-    \ff[6]{Forceful Block} Whenever a creature misses or \glossterm{glances} you with a melee \glossterm{strike}, if you are wielding a shield, that creature \glossterm{briefly} takes a \minus2 penalty to Armor defense.
+    \ff[1]{Shield Proficiency} You become \glossterm{proficient} with using all shields as both armor and weapons, including tower shields.
+
+    \ff[6]{Shield Slam}
+    \begin{activeability}{Shield Slam}
+        \abilityusagetime Standard action.
+        \rankline
+        Make a \glossterm{strike} using a shield.
+        If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
+        Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
+
+        \rankline
+        \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
+        \featlevel{12} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
+        \featlevel{15} The accuracy bonus increases to \plus2.
+        \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals 1d8 \glossterm{extra damage}. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
+    \end{activeability}
+
+    \ff[12]{Forceful Block} Whenever a creature misses or \glossterm{glances} you with a melee \glossterm{strike}, if you are wielding a shield, that creature \glossterm{briefly} takes a \minus2 penalty to Armor defense.
     As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
-    \ff[12]{Arrow Deflection} While you wield a shield, you and each \glossterm{ally} adjacent to you gain a \plus2 bonus to Armor defense against ranged \glossterm{strikes}.
-    This bonus is doubled for the current round when you use the \ability{total defense} ability, or any ability which functions like \ability{total defense}.
-
-    \ff[18]{Forceful Block\plus} The penalty from your \textit{forceful block} ability increases to \minus4.
-
-    \ff[18]{Shield Expertise\plus} The Armor defense bonus from your \textit{shield expertise} ability increases to \plus2, and to \plus6 while you are affected by \ability{total defense} and related abilities.
+    \ff[18]{Shield Expertise\plus} Both Armor defense bonuses from this ability increase to \plus2.
   \end{feat}
 
   \begin{feat}{Sleight of Hand Specialization}{Skill}
@@ -1728,7 +1737,7 @@ They allow more distinct and unique character customization, but also increase g
       \rankline
       You are \glossterm{briefly} \focused.
       In addition, choose a creature or object you can see.
-      You gain a \plus1 accuracy bonus against the target.
+      You gain a \plus1 accuracy bonus against the target as long as you sustain this ability.
 
       If you lose sight of the target for a full round, this effect ends.
     \end{sustainability}
@@ -1921,13 +1930,14 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Channel Divinity}{Casting, Magical}
     \featpre Access to the \sphere{Channel Divinity} \glossterm{mystic sphere}.
 
+    % TODO: too strong?
     \magicalff[1]{Divine Retribution} Whenever a creature attacks you, you \glossterm{briefly} gain a \plus2 accuracy bonus against that creature.
     As normal, this bonus does not stack with itself.
 
     \magicalff[6]{Judging Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you cast the spell, each non-\glossterm{ally} affected by it \glossterm{briefly} takes a \minus1 bonus to all defenses.
-    This penalty also affect any attacks made by the spell itself.
+    After the spell resolves, each non-\glossterm{ally} targeted by it \glossterm{briefly} takes a \minus1 bonus to all defenses.
+    This penalty does not affect any attacks made by the spell itself.
     If the spell did not affect any non-ally creatures, you \glossterm{briefly} gain a \plus1 bonus to all defenses.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
@@ -1995,7 +2005,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Electricity Immunity} You are \trait{immune} to \atElectricity attacks.
 
-    \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus2 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
+    \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
     This bonus disappears if not used before the end of the next round.
 
     \magicalff[18]{Extra Chain} All of your \glossterm{targeted} \sphere{Electromancy} spells \glossterm{chain} one additional time, even if they did not originally chain.
@@ -2005,7 +2015,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Enchantment}{Casting, Magical}
     \featpre Access to the \sphere{Enchantment} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Hidden Influence} You gain a \plus4 accuracy bonus with spells from the Enchantment mystic sphere against \unaware creatures.
+    \magicalff[1]{Hidden Influence} You gain a \plus2 accuracy bonus with spells from the Enchantment mystic sphere against \unaware creatures.
     In addition, the \glossterm{difficulty value} to observe the effects of your \abilitytag{Emotion} abilities with the Awareness and Social Insight skills increases by 10.
 
     \magicalff[6]{Mind Fragments} When you use a \magical ability that has the \abilitytag{Emotion} tag, you can affect creatures that are immune to that ability due to being \trait{mindless} or \trait{simple-minded}.

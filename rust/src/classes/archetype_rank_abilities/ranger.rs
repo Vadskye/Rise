@@ -273,16 +273,17 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 You can use this ability as a \glossterm{minor action}.
+                When you do, you increase your \glossterm{fatigue level} by one.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 0,
-            name: "Quarry+",
+            name: "Quarry++",
             is_magical: false,
             rank: 7,
             description: r"
-                The accuracy bonus increases to \plus2.
+                You can use this ability as a \glossterm{free action} without increasing your fatigue level.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
@@ -375,7 +376,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Wolfpack}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
-                        While your quarry is adjacent to at least three members of your hunting party, each adjacent member gain an additional \plus1 accuracy bonus against it.
+                        While your quarry is adjacent to at least three members of your hunting party, each adjacent member gains an additional \plus1 accuracy bonus against it.
 
                         \rankline
                         \rank{5} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
@@ -396,6 +397,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a strike.
                     If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, the strike deals double damage.
+                    This applies even if you followed the target to remain adjacent to it, so long as it tried to move away from your original location.
 
                     \rankline
                     \rank{4} On a hit, the target is \glossterm{briefly} \slowed.

@@ -121,43 +121,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Weapon Training",
-            is_magical: false,
-            rank: 1,
-            description: r"
-                \begin{activeability}{Weapon Training}
-                    \abilityusagetime One hour of training with a weapon.
-                    \rankline
-                    You become proficient with the specific item you trained with.
-                    This does not grant you proficiency with any other similar weapons.
-
-                    If you would already be proficient with that weapon without this ability, you gain a \plus1 accuracy bonus with it.
-                    If the weapon is an exotic weapon that you are not already proficient with, you take a \minus1 accuracy penalty with it.
-
-                    This ability's effect is permanent.
-                \end{activeability}
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Weapon Training+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                Whenever you use your \textit{weapon training} ability, you can choose one of the following weapon tags: \weapontag{Impact}, \weapontag{Keen}, \weapontag{Long}, \weapontag{Parrying}, \weapontag{Resonating}, or \weapontag{Sweeping} (1).
-                You treat the weapon you trained with as if it had the chosen weapon tag.
-
-                If you use this ability to train with the same weapon again, you can change its weapon tag, but it loses the previous weapon tag.
-                If you would add Sweeping (1) to a weapon that already has the Sweeping weapon tag, you increase its Sweeping value by one instead.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
             name: "Armor Expertise",
             is_magical: false,
-            rank: 2,
+            rank: 1,
             description: r"
                 You gain a special ability based on the \glossterm{usage class} of your body armor.
                 \begin{itemize}
@@ -174,37 +140,59 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            complexity: 1,
-            name: "Armored Crush",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                \begin{activeability}{Armored Crush}
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make a \glossterm{strike} with a \minus1 accuracy penalty.
-                    If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
-                    Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
-
-                    \rankline
-                    \rank{4} The accuracy penalty is removed.
-                    \rank{5} You gain a \plus2 accuracy bonus with the strike.
-                    \rank{6} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
-                    \rank{7} If your Armor defense is higher than the target's Armor defense, the strike deals 1d8 \glossterm{extra damage}. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
-                \end{activeability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Equipment Efficiency",
             is_magical: false,
-            rank: 4,
+            rank: 2,
             description: r"
                 You gain an additional \glossterm{attunement point}.
                 You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Versatile Blow",
+            is_magical: false,
+            rank: 3,
+            description: r"
+                \begin{activeability}{Versatile Blow}
+                    \abilityusagetime Standard action.
+                    \rankline
+                    Make a \glossterm{strike} with a \plus3 \glossterm{accuracy} bonus.
+                    In addition, choose one of the following \glossterm{weapon tags}: \weapontag{Keen}, \weapontag{Maneuverable}, \weapontag{Parrying}, or \weapontag{Resonating} (see \pcref{Weapon Tags}).
+                    If the strike is a \glossterm{melee} strike, you can alternately choose the \weapontag{Long} or \weapontag{Sweeping} (1) weapon tags.
+                    The strike gains the benefit of your chosen weapon tag if it did not already have that tag.
+
+                    \rankline
+                    \rank{4} The accuracy bonus increases to \plus5.
+                    \rank{5} The accuracy bonus increases to \plus10.
+                    \rank{6} The accuracy bonus increases to \plus15.
+                    \rank{7} The accuracy bonus increases to \plus20.
+                \end{activeability}
+            ",
+            modifiers: None,
+        },
+        // TODO: better name?
+        RankAbility {
+            complexity: 0,
+            name: "Second Skin",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You reduce your \glossterm{encumbrance} by 2.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Weapon Expertise",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 2,
