@@ -67,17 +67,17 @@ Points / Self-hit: 49 / 60%
 ### Fighter Greatmace
 A/B/F/R/M: 8 / 11 / 9 / 5 / 5
 HP/DR/Total: 28 / 14 / 42
-Points / Self-hit: 46 / 70%
+Points / Self-hit: 46 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 10 / 11 / 9 / 5 / 5
 HP/DR/Total: 28 / 14 / 42
-Points / Self-hit: 50 / 50%
+Points / Self-hit: 50 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 11 / 8 / 7 / 11 / 6
+A/B/F/R/M: 11 / 8 / 7 / 12 / 6
 HP/DR/Total: 24 / 8 / 32
-Points / Self-hit: 54 / 50%
+Points / Self-hit: 55 / 50%
 
 ### Paladin Shield
 A/B/F/R/M: 9 / 10 / 9 / 5 / 8
@@ -119,17 +119,17 @@ Points / Self-hit: 69 / 60%
 ### Fighter Greatmace
 A/B/F/R/M: 11 / 15 / 13 / 8 / 10
 HP/DR/Total: 48 / 44 / 92
-Points / Self-hit: 68 / 70%
+Points / Self-hit: 68 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 13 / 15 / 13 / 8 / 10
 HP/DR/Total: 48 / 44 / 92
-Points / Self-hit: 72 / 50%
+Points / Self-hit: 72 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 16 / 12 / 10 / 16 / 9
+A/B/F/R/M: 16 / 12 / 10 / 17 / 9
 HP/DR/Total: 39 / 20 / 59
-Points / Self-hit: 79 / 20%
+Points / Self-hit: 80 / 20%
 
 ### Paladin Shield
 A/B/F/R/M: 12 / 14 / 13 / 8 / 12
@@ -179,9 +179,9 @@ HP/DR/Total: 96 / 56 / 152
 Points / Self-hit: 88 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 20 / 15 / 12 / 19 / 11
+A/B/F/R/M: 20 / 15 / 12 / 20 / 11
 HP/DR/Total: 72 / 33 / 105
-Points / Self-hit: 97 / 10%
+Points / Self-hit: 98 / 10%
 
 ### Paladin Shield
 A/B/F/R/M: 14 / 17 / 16 / 10 / 14
@@ -231,9 +231,9 @@ HP/DR/Total: 180 / 112 / 292
 Points / Self-hit: 106 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 24 / 19 / 16 / 22 / 15
+A/B/F/R/M: 24 / 19 / 16 / 23 / 15
 HP/DR/Total: 144 / 46 / 190
-Points / Self-hit: 120 / 9%
+Points / Self-hit: 121 / 9%
 
 ### Paladin Shield
 A/B/F/R/M: 17 / 20 / 19 / 13 / 17
