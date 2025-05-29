@@ -567,7 +567,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `As a \\glossterm{condition}, the target's body withers.
-        It takes a -2 penalty to its Fortitude defense, and it cannot regain \\glossterm{hit points} or \\glossterm{damage resistance}.
+        It takes a -2 penalty to its Fortitude defense.
         Whenever it loses \\glossterm{hit points}, this penalty increases by 2.
         This stacks up to a maximum total penalty of -10.`,
         targeting: `
