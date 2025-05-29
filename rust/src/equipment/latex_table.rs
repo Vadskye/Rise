@@ -63,12 +63,16 @@ impl TableRow {
     }
 }
 
-pub fn table_header(caption: &str, with_category: bool, with_percentile: bool) -> String {
+fn table_caption(caption: &str) -> String {
+    format!("\\lcaption<{caption}> \\\\")
+}
+
+pub fn table_header(name_text: &str, with_category: bool, with_percentile: bool) -> String {
     format!(
         "
-            \\lcaption<{caption}> \\\\
-            \\tb<Name>{category_separator} {category_column_name} & \\tb<Description> & \\tb<Rank (Cost)> & {page_or_percentile} \\tableheaderrule
+            \\tb<{name}>{category_separator} {category_column_name} & \\tb<Description> & \\tb<Rank (Cost)> & {page_or_percentile} \\tableheaderrule
         ",
+        name = name_text,
         category_separator = if with_category { "&" } else { "" },
         // TODO: are there other reasonable category column names?
         category_column_name = if with_category { r"\tb{Type}" } else {""},
@@ -91,6 +95,7 @@ pub fn longtable(caption: &str, rows: Vec<TableRow>, with_category: bool) -> Str
         "
             \\begin<longtablewrapper>
             \\begin<longtable><p<17em> {category_and_effects} p<6em> p<3em>>
+                {caption}
                 {header}
                 {rows}
             \\end<longtable>
@@ -101,7 +106,8 @@ pub fn longtable(caption: &str, rows: Vec<TableRow>, with_category: bool) -> Str
         } else {
             "p{26em}"
         },
-        header = table_header(caption, with_category, false),
+        caption = table_caption(caption),
+        header = table_header("Name", with_category, false),
         rows = rows
             .iter()
             .map(|r| r.to_latex(None))
@@ -160,6 +166,7 @@ pub fn longtable_percentile(caption: &str, rows: Vec<TableRow>, with_category: b
         "
             \\begin<longtablewrapper>
             \\begin<longtable><p<17em> {category_and_effects} p<6em> p<3em>>
+                {caption}
                 {header}
                 {rows}
             \\end<longtable>
@@ -170,7 +177,8 @@ pub fn longtable_percentile(caption: &str, rows: Vec<TableRow>, with_category: b
         } else {
             "p{26em}"
         },
-        header = table_header(caption, with_category, true),
+        caption = table_caption(caption),
+        header = table_header("Name", with_category, true),
         rows = percentile_rows
             .iter()
             .map(|r| r.to_latex())
