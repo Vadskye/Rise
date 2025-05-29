@@ -24,11 +24,11 @@ Complexity is calculated at (rank 3 / rank 7).
 * Shifter: 5 / 11
 * Wildspeaker: 4 / 8
             
-## fighter: 23 / 35
+## fighter: 22 / 31
 * Combat Discipline: 2 / 4
-* Equipment Training: 4 / 10
+* Equipment Training: 5 / 8
 * Martial Mastery: 6 / 6
-* Sentinel: 5 / 6
+* Sentinel: 3 / 4
 * Tactician: 6 / 9
             
 ## monk: 19 / 30
