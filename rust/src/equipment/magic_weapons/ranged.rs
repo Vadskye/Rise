@@ -32,10 +32,10 @@ pub fn ranged() -> Vec<MagicWeapon> {
             The strike also targets that creature in addition to any other targets.
         "),
         upgrades: vec![
+            // -1dr for the full boomerang effect is suspicious
             ItemUpgrade::new(5, "+1d4 damage, hits an extra target while returning", r"
-                The weapon also deals 1d4 \glossterm{extra damage}.
+                The weapon also deals 1d4 \glossterm{extra damage} when thrown.
             "),
-            // This is slightly over rate
             ItemUpgrade::new(7, "+1d8 damage, hits an extra target while returning", r"
                 The extra damage increases to 1d8.
             "),
