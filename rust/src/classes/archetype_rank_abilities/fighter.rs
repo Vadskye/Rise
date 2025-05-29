@@ -343,31 +343,22 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 2,
-            name: "Protect",
+            complexity: 0,
+            name: "Bulwark",
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{activeability}{Protect}[\abilitytag{Swift}]
-                    \abilityusagetime \glossterm{Free action} once per round.
-                    \rankline
-                    Choose yourself or an \glossterm{ally} adjacent to you.
-                    The target gains a bonus to its Armor defense this round.
-                    If you choose yourself, the bonus is \plus1. Otherwise, the bonus is \plus2.
-
-                    A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
-                    While this ability is active, you cannot be affected by other creatures using this ability on you.
-                \end{activeability}
+                You gain a \plus1 bonus to all defenses.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 0,
-            name: "Protect+",
+            name: "Specialized Bulwark",
             is_magical: false,
             rank: 5,
             description: r"
-                The Armor defense bonus increases to \plus3 on an ally, or \plus2 on yourself.
+                You gain a \plus1 bonus to your Armor defense and one other defense of your choice.
             ",
             modifiers: None,
         },
