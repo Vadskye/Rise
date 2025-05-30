@@ -329,7 +329,7 @@ export const channelDivinity: MysticSphere = {
       castingTime: 'minor action',
       effect: `
         When you cast this spell, you gain a \\glossterm{vital wound} that has no vital wound effect.
-        In exchange, you gain a +4 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
+        In exchange, you gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
       `,
       rank: 6,
       type: 'Sustain (free)',
