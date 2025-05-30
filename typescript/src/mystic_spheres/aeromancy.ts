@@ -523,6 +523,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           You create a dust storm at a location within \\longrange.
           The area affected by the storm increases over time.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
         `,
       },

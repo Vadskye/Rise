@@ -601,6 +601,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.
           It affects a \\smallarea radius \\glossterm{zone} in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
         `,
       },
