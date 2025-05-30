@@ -201,6 +201,7 @@ export const umbramancy: MysticSphere = {
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
@@ -267,6 +268,7 @@ export const umbramancy: MysticSphere = {
         \\glossterm{Bright illumination} within a \\glossterm{zone} from that location is dimmed to be no brighter than \\glossterm{shadowy illumination}.
         The area of darkness increases over time.
         It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
+        Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
 
         \\glossterm{Brilliant illumination} is undimmed.
         Any object or effect which blocks light also blocks this spell's effect.
