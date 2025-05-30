@@ -89,7 +89,6 @@ pub enum HitPointProgression {
     VeryHigh, // Barbarian
     High,     // Fighter
     Medium,   // Cleric
-    Low,      // Sorcerer
 }
 
 impl HitPointProgression {
@@ -99,7 +98,6 @@ impl HitPointProgression {
     // 12 points for 75% more HP
     pub fn creation_point_cost(&self) -> i32 {
         match self {
-            Self::Low => 0,
             Self::Medium => 4,
             Self::High => 8,
             Self::VeryHigh => 12,
@@ -127,13 +125,24 @@ impl HitPointProgression {
         incremental_hp * con
     }
 
+    // This calculates base HP from level, but not Con
     fn complete_progression(&self) -> [[i32; 2]; 4] {
         match self {
-            Self::Low => [[6, 1], [14, 2], [30, 4], [60, 8]],
-            Self::Medium => [[8, 1], [18, 2], [35, 5], [70, 10]],
+            Self::Medium => [[8, 1], [16, 2], [32, 5], [65, 10]],
             Self::High => [[8, 2], [20, 3], [40, 6], [80, 12]],
             Self::VeryHigh => [[10, 2], [24, 4], [50, 8], [100, 15]],
             Self::Extreme => [[14, 2], [28, 5], [60, 10], [120, 20]],
+        }
+    }
+
+    // For most progressions, this is the same as incremental HP from level.
+    // However, that's too low for Medium progression, so we break that curve slightly.
+    fn con_progression(&self) -> [i32; 4] {
+        match self {
+            Self::Medium => [2, 3, 5, 10],
+            Self::High => [2, 3, 6, 12],
+            Self::VeryHigh => [2, 4, 8, 15],
+            Self::Extreme => [2, 5, 10, 20],
         }
     }
 
@@ -143,7 +152,6 @@ impl HitPointProgression {
             Self::VeryHigh => "Very High",
             Self::High => "High",
             Self::Medium => "Medium",
-            Self::Low => "Low",
         }
     }
 
@@ -161,6 +169,21 @@ impl HitPointProgression {
             3
         };
         self.complete_progression()[i]
+    }
+
+    fn con_hp_at_level(&self, level: i32) -> i32 {
+        // We have to use this awkward `if` structure instead of `%` so Rust recognizes
+        // that we are within the bounds of the array.
+        let i = if level <= 6 {
+            0
+        } else if level <= 12 {
+            1
+        } else if level <= 18 {
+            2
+        } else {
+            3
+        };
+        self.con_progression()[i]
     }
 
     pub fn to_class_text(&self) -> String {
@@ -183,7 +206,8 @@ impl HitPointProgression {
 
     fn hit_points_at_level_text(&self, level: i32) -> String {
         let [base_hp, incremental_hp] = self.progression_at_level(level);
-        let constitution_multiplier_text = match incremental_hp {
+        let con_hp = self.con_hp_at_level(level);
+        let constitution_multiplier_text = match con_hp {
             1 => "",
             2 => "twice",
             3 => "three times",
@@ -194,7 +218,7 @@ impl HitPointProgression {
             10 => "ten times",
             12 => "twelve times",
             15 => "fifteen times",
-            _ => panic!("Unsupported constitution multiplier {}", incremental_hp),
+            _ => panic!("Unsupported constitution multiplier {}", con_hp),
         };
         return format!(
             "{} hit points \\add {} your Constitution, plus {} hit points per level beyond {}.",

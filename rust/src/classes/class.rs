@@ -236,10 +236,10 @@ impl Class {
             Self::Rogue => 1,
             Self::Sorcerer => 2,
             Self::Treant => 0,
-            Self::Troll => 1,
+            Self::Troll => 0,
             Self::Vampire => 1,
             Self::Votive => 1,
-            Self::Wizard => 2,
+            Self::Wizard => 1,
         }
     }
 
@@ -608,7 +608,6 @@ impl Class {
                 _ => 0,
             },
             Self::Dryaidi => match defense {
-                Defense::Mental => 2,
                 _ => 0,
             },
             Self::Fighter => match defense {
@@ -616,12 +615,17 @@ impl Class {
                 _ => 0,
             },
             Self::Naiad => match defense {
-                Defense::Reflex => 1,
-                Defense::Mental => 1,
                 _ => 0,
             },
             Self::Treant => match defense {
                 Defense::Fortitude => 2,
+                _ => 0,
+            },
+            Self::Troll => match defense {
+                Defense::Fortitude => 2,
+                // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
+                // build that into the point calc system.
+                Defense::Reflex => 2,
                 _ => 0,
             },
             Self::Votive => match defense {
@@ -639,12 +643,12 @@ impl Class {
             Self::Cleric => HitPointProgression::Medium,
             Self::Dragon => HitPointProgression::High,
             Self::Druid => HitPointProgression::Medium,
-            Self::Dryaidi => HitPointProgression::Low,
+            Self::Dryaidi => HitPointProgression::Medium,
             Self::Fighter => HitPointProgression::High,
             Self::Harpy => HitPointProgression::Medium,
             Self::Incarnation => HitPointProgression::High,
             Self::Monk => HitPointProgression::High,
-            Self::Naiad => HitPointProgression::Low,
+            Self::Naiad => HitPointProgression::Medium,
             Self::Oozeborn => HitPointProgression::VeryHigh,
             Self::Paladin => HitPointProgression::High,
             Self::Ranger => HitPointProgression::High,
@@ -654,7 +658,7 @@ impl Class {
             Self::Troll => HitPointProgression::VeryHigh,
             Self::Vampire => HitPointProgression::High,
             Self::Votive => HitPointProgression::Medium,
-            Self::Wizard => HitPointProgression::Low,
+            Self::Wizard => HitPointProgression::Medium,
         }
     }
 
@@ -745,12 +749,12 @@ impl Class {
             Self::Paladin => 3,
             Self::Ranger => 6,
             Self::Rogue => 6,
-            Self::Sorcerer => 3,
+            Self::Sorcerer => 4,
             Self::Treant => 3,
             Self::Troll => 3,
             Self::Vampire => 4,
             Self::Votive => 3,
-            Self::Wizard => 4,
+            Self::Wizard => 5,
         }
     }
 

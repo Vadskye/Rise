@@ -50,7 +50,7 @@ impl Creature {
             base_attributes: HashMap::<Attribute, i32>::new(),
             category,
             damage_resistance_lost: 0,
-            hit_point_progression: HitPointProgression::Low,
+            hit_point_progression: HitPointProgression::Medium,
             hit_points_lost: 0,
             identified_modifiers: vec![],
             level,

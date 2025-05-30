@@ -49,7 +49,7 @@ Points / Self-hit: 28 / 80%
 
 ### Wizard Perception
 A/B/F/R/M: 4 / 3 / 3 / 5 / 7
-HP/DR/Total: 9 / 6 / 15
+HP/DR/Total: 11 / 6 / 17
 Points / Self-hit: 26 / 90%
 
 ## Level 5
@@ -101,7 +101,7 @@ Points / Self-hit: 44 / 70%
 
 ### Wizard Perception
 A/B/F/R/M: 4 / 5 / 5 / 5 / 10
-HP/DR/Total: 20 / 6 / 26
+HP/DR/Total: 22 / 6 / 28
 Points / Self-hit: 33 / 100%
 
 ## Level 10
@@ -143,17 +143,17 @@ Points / Self-hit: 67 / 70%
 
 ### Rogue Smallsword
 A/B/F/R/M: 15 / 8 / 8 / 16 / 8
-HP/DR/Total: 28 / 20 / 48
+HP/DR/Total: 26 / 20 / 46
 Points / Self-hit: 70 / 40%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 11 / 8 / 10 / 12 / 16
-HP/DR/Total: 52 / 8 / 60
+HP/DR/Total: 50 / 8 / 58
 Points / Self-hit: 68 / 60%
 
 ### Wizard Perception
 A/B/F/R/M: 7 / 8 / 8 / 8 / 14
-HP/DR/Total: 44 / 10 / 54
+HP/DR/Total: 46 / 10 / 56
 Points / Self-hit: 52 / 100%
 
 ## Level 15
@@ -195,17 +195,17 @@ Points / Self-hit: 85 / 60%
 
 ### Rogue Smallsword
 A/B/F/R/M: 18 / 10 / 10 / 19 / 10
-HP/DR/Total: 53 / 24 / 77
+HP/DR/Total: 50 / 24 / 74
 Points / Self-hit: 85 / 40%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 14 / 10 / 12 / 15 / 19
-HP/DR/Total: 106 / 16 / 122
+HP/DR/Total: 103 / 16 / 119
 Points / Self-hit: 84 / 60%
 
 ### Wizard Perception
 A/B/F/R/M: 9 / 10 / 10 / 10 / 17
-HP/DR/Total: 74 / 18 / 92
+HP/DR/Total: 78 / 18 / 96
 Points / Self-hit: 65 / 100%
 
 ## Level 20
@@ -247,15 +247,15 @@ Points / Self-hit: 103 / 60%
 
 ### Rogue Smallsword
 A/B/F/R/M: 21 / 13 / 13 / 22 / 13
-HP/DR/Total: 96 / 48 / 144
+HP/DR/Total: 91 / 48 / 139
 Points / Self-hit: 103 / 40%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 17 / 13 / 15 / 18 / 22
-HP/DR/Total: 167 / 32 / 199
+HP/DR/Total: 162 / 32 / 194
 Points / Self-hit: 102 / 70%
 
 ### Wizard Perception
 A/B/F/R/M: 13 / 13 / 13 / 13 / 20
-HP/DR/Total: 135 / 34 / 169
+HP/DR/Total: 142 / 34 / 176
 Points / Self-hit: 85 / 100%
