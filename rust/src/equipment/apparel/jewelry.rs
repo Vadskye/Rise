@@ -290,56 +290,6 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Amulet(StandardItem {
-        name: String::from("Collar of Imbuement (1)"),
-        rank: 2,
-        short_description: String::from(r"Grants a rank 1 magic weapon property to natural weapons"),
-        description: String::from(r"
-            This item has a specific rank 1 magic weapon property which is not a \glossterm{deep attunement}.
-            It provides that weapon property to all of your \glossterm{natural weapons} that do not require a free hand to use, such as a bite.
-            If that natural weapon would already be affected by a magic weapon property, this item has no effect on it.
-            Different versions of this item exist for each rank 1 magic weapon property.
-        "),
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
-        name: String::from("Collar of Imbuement (2)"),
-        rank: 3,
-        short_description: String::from(r"Grants a rank 2 magic weapon property to natural weapons"),
-        description: String::from(r"
-            This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 2.
-        "),
-        ..Apparel::default()
-    }));
-
-    apparel.push(Amulet(StandardItem {
-        name: String::from("Collar of Imbuement (3)"),
-        rank: 4,
-        short_description: String::from(r"Grants a rank 3 magic weapon property to natural weapons"),
-        description: String::from(r"
-            This item functions like a \mitem<collar of imbuement>, except that the magic weapon property is rank 3.
-        "),
-        ..Apparel::default()
-    }));
-
-    fn nth_collar(rank: i32) -> Apparel {
-        Amulet(StandardItem {
-            name: format!("Collar of Imbuement ({})", rank),
-            rank: rank + 1,
-            short_description: format!(r"Grants a rank {} magic weapon property to natural weapons", rank),
-            description: format!("
-                This item functions like a \\mitem<collar of imbuement>, except that the magic weapon property is rank {}.
-            ", rank),
-            ..Apparel::default()
-        })
-    }
-
-    apparel.push(nth_collar(4));
-    apparel.push(nth_collar(5));
-    apparel.push(nth_collar(6));
-    apparel.push(nth_collar(7));
-
     apparel
 }
 

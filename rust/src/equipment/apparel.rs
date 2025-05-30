@@ -20,6 +20,7 @@ pub enum Apparel {
     Gauntlets(StandardItem),
     Gloves(StandardItem),
     Ring(StandardItem),
+    Tattoo(StandardItem),
 }
 
 impl Apparel {
@@ -36,6 +37,7 @@ impl Apparel {
             Self::Gauntlets(item) => item,
             Self::Gloves(item) => item,
             Self::Ring(item) => item,
+            Self::Tattoo(item) => item,
         }
     }
 
@@ -71,6 +73,7 @@ impl Apparel {
             Self::Gauntlets(_) => "bone, metal, or wood",
             Self::Gloves(_) => "leather or textiles",
             Self::Ring(_) => "bone, metal, or wood",
+            Self::Tattoo(_) => "manuscripts or textiles",
         }
     }
 
@@ -87,6 +90,7 @@ impl Apparel {
             Self::Gauntlets(_) => "Gauntlets",
             Self::Gloves(_) => "Gloves",
             Self::Ring(_) => "Ring",
+            Self::Tattoo(_) => "Tattoo",
         }
     }
 }
