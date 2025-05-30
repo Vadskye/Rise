@@ -1906,7 +1906,8 @@ impl Class {
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.
-                        \domainability{Aspect} You learn one rank 1 \glossterm{maneuver} from any \glossterm{combat style} (see \pcref{Combat Styles}).
+                        \domainability{Aspect} You learn one \glossterm{maneuver} from any \glossterm{combat style} (see \pcref{Combat Styles}).
+                        Its rank must not exceed your rank in the Domain Influence archetype.
                         You gain an accuracy bonus with that maneuver equal to the amount by which your rank in the Domain Influence archetype exceeds the maneuver's rank.
                         When you gain access to a new \glossterm{rank} in the Domain Influence archetype,
                             you can exchange that maneuver for another maneuver with a rank that does not exceed your rank in the Domain Influence archetype.
