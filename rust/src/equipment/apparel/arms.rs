@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::core_mechanics::Attribute;
-use crate::equipment::Apparel::{Bracers, Gauntlets, Gloves};
+use crate::equipment::Apparel::{Bracers, Gauntlets, Gloves, Tattoo};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
 // Effects of items worn on the arms:
@@ -13,6 +13,7 @@ pub fn arms() -> Vec<Apparel> {
     apparel.append(&mut bracers());
     apparel.append(&mut gauntlets());
     apparel.append(&mut gloves());
+    apparel.append(&mut tattoos());
 
     apparel
 }
@@ -326,6 +327,64 @@ fn gloves() -> Vec<Apparel> {
         tags: vec![AbilityTag::Manifestation, AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
+
+    apparel
+}
+
+fn tattoos() -> Vec<Apparel> {
+    let mut apparel = vec![];
+
+    apparel.push(Tattoo(StandardItem {
+        name: String::from("Tattoo of Imbuement (1)"),
+        rank: 1,
+        short_description: String::from(r"Grants a rank 1 weapon property to a natural weapon"),
+        description: String::from(r"
+            This tattoo must be applied to one of your \glossterm{natural weapons} that do not require a free hand to use, such as a bite.
+            It provides that natural weapon with a specific rank 1 magic weapon property which is not a \glossterm{deep attunement}.
+
+            % TODO: what if you tattoo the same one twice? Can you swap between them? No, but how to word that.
+            If that natural weapon would already be affected by a magic weapon property, this tattoo has no effect on it.
+            Different versions of this item exist for each rank 1 magic weapon property.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Tattoo(StandardItem {
+        name: String::from("Tattoo of Imbuement (2)"),
+        rank: 2,
+        short_description: String::from(r"Grants a rank 2 weapon property to a natural weapon"),
+        description: String::from(r"
+            This item functions like a \mitem<tattoo of imbuement>, except that the magic weapon property is rank 2.
+        "),
+        ..Apparel::default()
+    }));
+
+    apparel.push(Tattoo(StandardItem {
+        name: String::from("Tattoo of Imbuement (3)"),
+        rank: 3,
+        short_description: String::from(r"Grants a rank 3 weapon property to a natural weapon"),
+        description: String::from(r"
+            This item functions like a \mitem<tattoo of imbuement>, except that the magic weapon property is rank 3.
+        "),
+        ..Apparel::default()
+    }));
+
+    fn nth_imbuement(rank: i32) -> Apparel {
+        Tattoo(StandardItem {
+            name: format!("Tattoo of Imbuement ({})", rank),
+            rank,
+            short_description: format!(r"Grants a rank {} weapon property to a natural weapon", rank),
+            description: format!("
+                This item functions like a \\mitem<tattoo of imbuement>, except that the magic weapon property is rank {}.
+            ", rank),
+            ..Apparel::default()
+        })
+    }
+
+    apparel.push(nth_imbuement(4));
+    apparel.push(nth_imbuement(5));
+    apparel.push(nth_imbuement(6));
+    apparel.push(nth_imbuement(7));
 
     apparel
 }
