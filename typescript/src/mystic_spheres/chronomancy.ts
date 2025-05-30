@@ -576,7 +576,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Instant Analysis',
 
-      castingTime: 'One \\glossterm{minor action}.',
+      castingTime: 'minor action',
       effect: `
         You accelerate your mind to incredible speed, allowing you to process information quickly.
         From your perspective, you freeze time for five rounds.
