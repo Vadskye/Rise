@@ -1,6 +1,5 @@
 use crate::equipment::{MagicArmor, ItemUpgrade, StandardItem};
 use crate::equipment::MagicArmor::Body;
-use crate::core_mechanics::abilities::{AttuneType, AbilityTag};
 
 pub fn body_armor() -> Vec<MagicArmor> {
     let mut armor = vec![];
@@ -188,26 +187,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
             This armor does not penalize your movement speed for being heavy (see \pcref<Armor Usage Classes>).
             If the armor is not heavy armor, this has no effect.
         "),
-        ..MagicArmor::default()
-    }));
-
-    armor.push(Body(StandardItem {
-        name: String::from("Crumpling Armor"),
-        rank: 3,
-        short_description: String::from("Reduces damage from two attacks by 10"),
-        description: String::from(r"
-            Whenever you would take \glossterm<damage> from an ability that attacked your Armor or Reflex defense, your armor crumples under the attack, reducing that damage by 10.
-            After damage is reduced twice in this way, this has no effect until you finish a \glossterm<short rest>.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Reduces damage from two attacks by 20", "
-                The damage reduction improves to 20.
-            "),
-            ItemUpgrade::new(7, "Reduces damage from two attacks by 40", "
-                The damage reduction improves to 40.
-            "),
-        ],
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicArmor::default()
     }));
 

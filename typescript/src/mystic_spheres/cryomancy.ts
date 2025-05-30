@@ -272,23 +272,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icy Shell',
 
       effect: `
-        You cover your body with two layers of ice that crumple when they take damage.
-        The ice does not cover your joints, allowing you to move freely.
-        Whenever you would take damage from a non-\\atFire ability, you reduce that damage by 5, and one layer of ice is destroyed.
-        If you take damage from a \\atFire ability, you do not reduce that damage, and all layers of ice are destroyed.
-        When the last layer of ice is destroyed, this ability ends.
-
-        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
+        At the start of each round, if you are at your maximum \\glossterm{damage resistance}, you become \\steeled during that round.
       `,
-      rank: 1,
+      narrative: 'Layers of ice form around you, crumpling to protect you from catastrophic injury.',
+      rank: 2,
       roles: ['attune'],
-      scaling: {
-        3: `The damage reduction increases to 10.`,
-        5: `The damage reduction increases to 20.`,
-        7: `The damage reduction increases to 40.`,
-      },
       tags: ['Manifestation'],
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
 
     {

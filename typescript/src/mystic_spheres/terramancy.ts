@@ -569,25 +569,33 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     },
 
     {
-      name: 'Rocky Shell',
+      name: 'Stoneskin',
 
       effect: `
-        You cover your body with two layers of rock that crumple when they take damage.
-        The rock does not cover your joints, allowing you to move, though the shell increases your \\glossterm{encumbrance} by 2.
-        Whenever you would take damage, you reduce that damage by 5, and one layer of rock is destroyed.
-        When the last layer is destroyed, this ability ends.
-
-        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
+        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        However, you also increase your \\glossterm{encumbrance} by 2.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The damage reduction increases to 10.`,
-        5: `The damage reduction increases to 20.`,
-        7: `The damage reduction increases to 40.`,
+        3: `The bonus increases to +12.`,
+        5: `The bonus increases to +24.`,
+        7: `The bonus increases to +48.`,
       },
       tags: ['Manifestation'],
-      type: 'Attune (deep)',
+      type: 'Attune',
+    },
+
+    {
+      name: 'Steelskin',
+
+      effect: `
+        At the start of each round, if you are at your maximum \\glossterm{damage resistance}, you become \\steeled during that round.
+      `,
+      rank: 2,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune',
     },
 
     {
