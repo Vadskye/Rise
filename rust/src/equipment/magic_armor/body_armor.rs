@@ -22,15 +22,15 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Resistant Armor"),
         rank: 2,
-        short_description: String::from("Grants +6 damage resistance"),
+        short_description: String::from("Grants +6 DR"),
         description: String::from(r"
             You gain a +6 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +12 damage resistance", "
+            ItemUpgrade::new(4, "Grants +12 DR", "
                 The bonus increases to +12.
             "),
-            ItemUpgrade::new(6, "Grants +24 damage resistance", "
+            ItemUpgrade::new(6, "Grants +24 DR", "
                 The bonus increases to +24.
             "),
         ],
@@ -93,17 +93,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Stonebody Armor"),
         rank: 2,
-        short_description: String::from("Grants +12 damage resistance, but slower and heavier"),
+        short_description: String::from("Grants +12 DR, but slower and heavier"),
         description: String::from(r"
             You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             However, you take a -10 foot penalty to your speed with all movement modes.
             In addition, this armor's \glossterm{encumbrance} is increased by 2.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +24 damage resistance, but slower and heavier", "
+            ItemUpgrade::new(4, "Grants +24 DR, but slower and heavier", "
                 The bonus increases to +24.
             "),
-            ItemUpgrade::new(6, "Grants +48 damage resistance, but slower and heavier", "
+            ItemUpgrade::new(6, "Grants +48 DR, but slower and heavier", "
                 The bonus increases to +48.
             "),
         ],
@@ -144,16 +144,16 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Lifeweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +16 damage resistance, but -8 hit points"),
+        short_description: String::from("Grants +16 DR, but -8 hit points"),
         description: String::from(r"
             You gain a +16 \glossterm<enhancement bonus> to your maximum \glossterm<damage resistance>.
             However, you take a -8 penalty to your maximum \glossterm<hit points>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +32 damage resistance, but -16 hit points", "
+            ItemUpgrade::new(5, "Grants +32 DR, but -16 hit points", "
                 The damage resistance bonus increases to +32, but the hit point penalty increases to -16.
             "),
-            ItemUpgrade::new(7, "Grants +64 damage resistance, but -32 hit points", "
+            ItemUpgrade::new(7, "Grants +64 DR, but -32 hit points", "
                 The damage resistance bonus increases to +64, but the hit point penalty increases to -32.
             "),
         ],
@@ -163,16 +163,16 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Soulweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +12 damage resistance, but -2 power"),
+        short_description: String::from("Grants +12 DR, but -2 power"),
         description: String::from(r"
             You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +24 damage resistance, but -3 power", "
+            ItemUpgrade::new(5, "Grants +24 DR, but -3 power", "
                 The damage resistance bonus increases to +24, but the power penalty increases to -3.
             "),
-            ItemUpgrade::new(7, "Grants +48 damage resistance, but -4 power", "
+            ItemUpgrade::new(7, "Grants +48 DR, but -4 power", "
                 The damage resistance bonus increases to +48, but the power penalty increases to -4.
             "),
         ],
@@ -204,16 +204,16 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Grafted Armor"),
         rank: 2,
-        short_description: String::from("Grants HP instead of damage resistance"),
+        short_description: String::from("Grants HP instead of DR"),
         description: String::from(r"
             This armor does not increase your maximum damage resistance.
             Instead, you gain a bonus to your maximum hit points equal to the damage resistance the armor would normally provide.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants bonus HP instead of damage resistance", r"
+            ItemUpgrade::new(4, "Grants bonus HP instead of DR", r"
                 The armor also grants you a +8 \glossterm{enhancement bonus} to your maximum hit points.
             "),
-            ItemUpgrade::new(6, "Grants bonus HP instead of damage resistance", r"
+            ItemUpgrade::new(6, "Grants bonus HP instead of DR", r"
                 The hit point bonus increases to +16.
             "),
         ],
