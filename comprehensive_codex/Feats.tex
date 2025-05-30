@@ -1365,7 +1365,6 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[1]{Mental Casting} You connect to the magical essence of the universe differently from other spellcasters, allowing you to cast spells with purely mental effort.
     None of your spells have \glossterm{somatic components} or \glossterm{verbal components}.
-    However, you cannot use magic implements such as staffs to affect spells you cast.
 
     \magicalff[6]{Fractured Mind} Once per round, you can sustain an ability with the \abilitytag{Sustain} (minor) tag as a \glossterm{free action}.
 
@@ -2541,18 +2540,14 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Dexterity 2.
 
     \magicalff[1]{Twinhand Precision} You can always choose to use \glossterm{somatic components} to cast your spells (see \pcref{Ability Usage Components}).
-    As long as you have two \glossterm{free hands}, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
+    As long as you have two \glossterm{free hands} and are not using a magic implement, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
 
-    \magicalff[6]{Freehand Implement} You can gain the benefits of up to two magical implements, such as staves or wands, without having to hold them in your hands.
-    You must still have them on your person, such as in a pocket or strapped to your back, and you must still be attuned to them to gain their benefits.
-    In addition, if your legacy item is an apparel item, you may choose both apparel and implement magic item effects for it.
-
-    \magicalff[12]{Twinspell}
+    \magicalff[6]{Twinspell}
     \begin{magicalactiveability}{Twinspell}
       \abilityusagetime Standard action.
-      \abilitycost Two \glossterm{fatigue levels}.
+      \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
       \rankline
-      You can only use this ability if you have two \glossterm{free hands}.
+      You can only use this ability if you have two \glossterm{free hands} and are not using a magic implement.
 
       Choose two spells that you know.
       You cast both spells simultaneously, one with each hand.
@@ -2560,6 +2555,8 @@ They allow more distinct and unique character customization, but also increase g
       Both spells must affect completely different targets, with no overlap between their targets or areas (if any).
       You cannot use the \ability{desperate exertion} ability to affect either spell.
     \end{magicalactiveability}
+
+    \ff[12]{Twinned Power} You gain a \plus2 bonus to your \glossterm{magical power}.
 
     \magicalff[18]{Twinhand Precision\plus} The bonus from your \textit{twinhand precision} ability increases to \plus2.
   \end{magicalfeat}
