@@ -730,9 +730,9 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Mithral, pure       & \plus1 accuracy, lighter                                                     & 7 (12,500 gp) \\
           % just vulnerabilities  
           \tind Silvered            & Common vulnerabilities                                                       & 2 (20 gp)     \\
-          % extra damage
-          \tind Starmetal           & \plus1d4 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 3 (100 gp)     \\
-          \tind Starmetal, pure     & \plus1d8 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 5 (2,500 gp)   \\
+          % +2dr for -1a
+          \tind Starmetal           & \plus1 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 2 (20 gp)     \\
+          \tind Starmetal, pure     & \plus1d4 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 4 (500 gp)   \\
         \end{dtabularx}
       \end{dtable!*}
 
@@ -907,33 +907,38 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \tablebookmark{Armor and Shields}{armor}
       \lcaption{Armor and Shields}
       \begin{dtabularx}{\textwidth}{l c c c c c c c >{\lcol}X c}
-        \tb{Armor}             & \tb{Armor}   & \tb{Reflex} & \tb{DR} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
-        Light armor            &              &             &         &                  &                  &              &                &                &            \\
+        \tb{Armor}                 & \tb{Armor}   & \tb{Reflex} & \tb{DR} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
+        Light armor                &              &             &         &                  &                  &              &                &                &            \\
         % 6 Armor + 3 DR - 1 enc = 8 points
-        \tind Buff leather     & \plus2       & \tdash      & \plus3  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        \tind Buff leather         & \plus2       & \tdash      & \plus3  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         % 6 Armor + 4 DR - 1 enc - 2 rank = 8 points
-        \tind Mail shirt       & \plus2       & \tdash      & \plus5  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
+        \tind Mail shirt           & \plus2       & \tdash      & \plus5  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
         % 3 Armor + 6 DR + 2 vit - 2 enc = 9 points
-        \tind Rawhide          & \plus1       & \tdash      & \plus6  & \plus1           & \plus1           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
-        \tind Buckler          & \plus1       & \plus1      & \tdash  & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood  & 0 (1 gp)   \\
-        Medium armor           &              &             &         &                  &                  &              &                &               \\
+        \tind Rawhide              & \plus1       & \tdash      & \plus6  & \plus1           & \plus1           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        \tind Buckler              & \plus1       & \plus1      & \tdash  & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood  & 0 (1 gp)   \\
+        Medium armor               &              &             &         &                  &                  &              &                &               \\
         % 12 Armor + 4 DR + 2 vit - 2 enc = 16 points
-        \tind Leather lamellar & \plus4       & \tdash      & \plus4  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
+        \tind Leather lamellar     & \plus4       & \tdash      & \plus4  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
         % 12 Armor + 5 DR + 2 vit - 4 enc = 15 points
-        \tind Scale            & \plus4       & \tdash      & \plus5  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
+        \tind Scale                & \plus4       & \tdash      & \plus5  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
         % 12 Armor + 7 DR + 2 vit - 4 enc - 2 rank = 15 points
-        \tind Brigandine       & \plus4       & \tdash      & \plus7  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
-        \tind Standard shield  & \plus2       & \plus2      & \tdash  & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 0 (1 gp)   \\
-        Heavy armor            &              &             &         &                  &                  &              &                &                &            \\
+        \tind Brigandine           & \plus4       & \tdash      & \plus7  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
+        \tind Standard shield      & \plus2       & \plus2      & \tdash  & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 0 (1 gp)   \\
+        Heavy armor                &              &             &         &                  &                  &              &                &                &            \\
         % 12 Armor + 10 DR + 4 vit - 4 enc = 22 points
-        \tind Breastplate      & \plus4       & \tdash      & \plus10 & \plus2           & \plus2           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
+        \tind Breastplate          & \plus4       & \tdash      & \plus10 & \plus2           & \plus2           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
         % 15 Armor + 10 DR + 4 vit - 5 enc - 2 rank = 22 points
-        \tind Half plate       & \plus5       & \tdash      & \plus10 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
+        \tind Half plate           & \plus5       & \tdash      & \plus10 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
         % 15 Armor + 12 DR + 4 vit - 6 enc - 4 rank = 21 points
-        \tind Full plate       & \plus5       & \tdash      & \plus12 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
-        \tind Tower shield     & \plus3\fn{2} & \plus3      & \tdash  & \tdash           & \plus1\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 1 (4 gp)   \\
-        Extras                 &              &             &         &                  &                  &              &                &               \\
-        \tind Shield spikes    & \tdash       & \tdash      & \tdash  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 1 (4 gp)   \\
+        \tind Full plate           & \plus5       & \tdash      & \plus12 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
+        \tind Tower shield         & \plus3\fn{2} & \plus3      & \tdash  & \tdash           & \plus1\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 1 (4 gp)   \\
+        Extras                     &              &             &         &                  &                  &              &                &               \\
+        \tind Shield spikes        & \tdash       & \tdash      & \tdash  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 1 (4 gp)   \\
+        \tind \mult2 reinforcement & \tdash       & \tdash      & \mult2  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 3 (100 gp)   \\
+        \tind \mult3 reinforcement & \tdash       & \tdash      & \mult3  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 4 (500 gp)   \\
+        \tind \mult4 reinforcement & \tdash       & \tdash      & \mult4  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 5 (2,500 gp)   \\
+        \tind \mult6 reinforcement & \tdash       & \tdash      & \mult6  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 6 (12,500 gp)   \\
+        \tind \mult8 reinforcement & \tdash       & \tdash      & \mult8  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 7 (62,500 gp)   \\
       \end{dtabularx}
       1 The hand holding the shield is not free, which may limit your actions. \\
       2 Tower shields improve your ability to use the \textit{total defense} ability. See the description.
@@ -948,6 +953,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \parhead{Full Plate} Each suit of full plate must be individually fitted to its owner by an armorsmith.
     A captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check.
     The new owner must still be of the same size category as the size category and general body shape, such as humanoid, that the suit was originally designed for.
+    \parhead{Reinforcement} Body armor can be reinforced to be more protective.
+    The narrative cause of this reinforcement can be either \magical or mundane, but it never requires \glossterm{attunement}.
+    Any individual suit of body armor can only have one type of reinforcement at a time.
+    If a body armor's local damage resistance is modified, such as by special materials, that modifier applies before the multiplier from reinforcement.
     \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand.
     A standard shield is so cumbersome that you can't use your shield hand for anything else.
     You can use a standard shield as a weapon (see \tref{Weapons}).
@@ -987,36 +996,37 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         \lcaption{Armor Special Materials}
         \begin{dtabularx}{\textwidth}{l l l l >{\ccol}X l}
           \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                     & \tb{Material} & \tb{Item Rank (Cost)} \tableheaderrule
-          % metal high resistance, encumbrance
-          Adamantine\fn{1}           & \mult6                 & \plus2           & Very heavy                              & Metal         & 5 (2,500 gp)  \\
-          Adamantine, pure\fn{1}     & \mult12                & \plus2           & Very heavy                              & Metal         & 7 (62,500 gp) \\
+          % This is about 12 resist at r5 and 24 resist at r7, which is ~1 rank behind an enhancement bonus.
+          % That's probably okay given the encumbrance and Strength costs.
+          Adamantine\fn{1}           & \plus3                 & \plus2           & Very heavy                              & Metal         & 5 (2,500 gp)  \\
+          Adamantine, pure\fn{1}     & \plus5                 & \plus2           & Very heavy                              & Metal         & 8 (312,500 gp) \\
           % magic defense                                                                                                                  
           Cold iron\fn{1}            & \tdash                 & \tdash           & \minus1 Armor, \plus1 defenses vs magic & Metal         & 2 (20 gp)     \\
-          Cold iron, pure\fn{1}      & \mult2                 & \tdash           & \minus1 Armor, \plus2 defenses vs magic & Metal         & 4 (500 gp)   \\
+          Cold iron, pure\fn{1}      & \tdash                 & \tdash           & \minus1 Armor, \plus2 defenses vs magic & Metal         & 5 (2,500 gp)   \\
           % metal crit resistance                                                  
-          Diamondsteel\fn{1}         & \mult2                 & \tdash           & \plus2 defenses vs strike crits         & Metal         & 3 (100 gp)   \\
-          Diamondsteel, pure\fn{1}   & \mult4                 & \tdash           & \plus2 defenses vs crits                & Metal         & 5 (2,500 gp)  \\
+          Diamondsteel\fn{1}         & \tdash                 & \tdash           & \plus2 defenses vs strike crits         & Metal         & 3 (100 gp)   \\
+          Diamondsteel, pure\fn{1}   & \tdash                 & \tdash           & \plus2 defenses vs crits                & Metal         & 5 (2,500 gp)  \\
           % offset leather resistance, energy defense bonus                        
-          Dragonhide\fn{1}           & \mult3                 & \tdash           & Impervious to specific energy type      & Leather       & 4 (500 gp)   \\
-          Dragonhide, ancient\fn{1}  & \mult6                 & \tdash           & Immune to specific energy type          & Leather       & 6 (12,500 gp) \\
+          Dragonhide\fn{1}           & \tdash                 & \tdash           & Impervious to specific energy type      & Leather       & 4 (500 gp)   \\
+          Dragonhide, ancient\fn{1}  & \tdash                 & \tdash           & Immune to specific energy type          & Leather       & 6 (12,500 gp) \\
           % offset metal resistance, energy defense bonus                          
-          Dragonscale\fn{1}          & \mult3                 & \tdash           & Impervious to specific energy type      & Metal         & 4 (500 gp)   \\
-          Dragonscale, ancient\fn{1} & \mult6                 & \tdash           & Immune to specific energy type          & Metal         & 6 (12,500 gp) \\
+          Dragonscale\fn{1}          & \tdash                 & \tdash           & Impervious to specific energy type      & Metal         & 4 (500 gp)   \\
+          Dragonscale, ancient\fn{1} & \tdash                 & \tdash           & Immune to specific energy type          & Metal         & 6 (12,500 gp) \\
           % leather encumbrance reduction                                                             
-          Elvenweave                 & \mult2                 & \minus1          & \tdash                                  & Leather       & 3 (100 gp)   \\
-          Elvenweave, pure           & \mult4                 & \minus2          & \tdash                                  & Leather       & 5 (2,500 gp)  \\
+          Elvenweave                 & \tdash                 & \minus1          & \tdash                                  & Leather       & 3 (100 gp)   \\
+          Elvenweave, pure           & \tdash                 & \minus2          & \tdash                                  & Leather       & 5 (2,500 gp)  \\
           % metal encumbrance reduction                                            
-          Mithral                    & \mult2                 & \minus1          & \tdash                                  & Metal         & 3 (100 gp)   \\
-          Mithral, pure              & \mult4                 & \minus2          & \tdash                                  & Metal         & 5 (2,500 gp)  \\
+          Mithral                    & \plus1                 & \minus1          & \tdash                                  & Metal         & 4 (500 gp)   \\
+          Mithral, pure              & \plus2                 & \minus2          & \tdash                                  & Metal         & 7 (62,500 gp)  \\
           % stealth leather
-          Shadowweave                & \mult3                 & \tdash          & \tdash                                  & Leather       & 4 (500 gp)   \\
-          Shadowweave, umbral        & \mult6                 & \tdash          & \tdash                                  & Leather       & 6 (12,500 gp) \\
+          Shadeweave                & \minus1                 & \minus1          & \plus3 Stealth                                  & Leather       & 4 (500 gp)   \\
+          Shadeweave, umbral        & \minus1                 & \minus2          & \plus5 Stealth                                  & Leather       & 6 (12,500 gp) \\
           % early metal resistance, encumbrance                                                                                                               
-          Starmetal\fn{1}            & \mult2                 & \plus2           & Very heavy                              & Metal         & 2 (20 gp)     \\
-          Starmetal, pure\fn{1}      & \mult4                 & \plus2           & Very heavy                              & Metal         & 4 (500 gp)   \\
+          Starmetal\fn{1}            & \plus1                 & \plus1           & Very heavy                              & Metal         & 2 (20 gp)     \\
+          Starmetal, pure\fn{1}      & \plus2                 & \plus1           & Very heavy                              & Metal         & 4 (500 gp)   \\
           % early leather resistance, fire vulnerability
-          Vineweave                  & \mult2                 & \tdash          & Fire vulnerability                      & Leather       & 2 (20 gp)   \\
-          Vineweave, braided         & \mult4                 & \tdash          & Fire vulnerability                      & Leather       & 4 (500 gp) \\
+          Vineweave                  & \plus1                 & \tdash          & Fire vulnerability                      & Leather       & 3 (100 gp)   \\
+          Vineweave, braided         & \plus2                 & \tdash          & Fire vulnerability                      & Leather       & 5 (2,500 gp) \\
         \end{dtabularx}
         1. This armor has special rules explained below. \\
       \end{dtable!*}
@@ -1025,10 +1035,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       Light and medium body armor weighs as much as a normal item of its size category.
       Heavy body armor is a \glossterm{heavyweight} item of its size category.
       For Medium creatures, light and medium adamantine armor requires a minimum Strength of 2 to wear, and heavy adamantine requires a minimum Strength of 5.
-      In addition, it provides \mult6 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      It also provides \plus2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
       \parhead{Adamantine, Pure} Pure adamantine body armor is heavier than other armor, as described by adamantine armor.
-      In addition, it provides \mult12 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      It also provides \plus4 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
       \parhead{Cold Iron} Cold iron armor grants you a \plus1 bonus to your defenses against \magical abilities.
       However, its Armor defense bonus is reduced by 1.
@@ -1037,47 +1047,41 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       However, its Armor defense bonus is reduced by 1.
 
       \parhead{Diamondsteel} Diamondsteel body armor grants you a \plus2 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
-      In addition, it provides \mult2 \glossterm{damage resistance}.
 
       \parhead{Diamondsteel, Pure} Pure diamondsteel body armor grants you a \plus2 bonus to your defenses when determining whether any attack gets a \glossterm{critical hit} against you instead of a normal hit.
-      In addition, it provides \mult4 \glossterm{damage resistance}.
 
       \parhead{Dragonhide} Each dragonhide body armor is made from the hide of a particular type of dragon.
       You are \trait{impervious} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult3 \glossterm{damage resistance}.
 
       \parhead{Dragonhide, Ancient} Each ancient dragonhide body armor is made from the hide of a particular type of dragon.
       You are \trait{immune} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult6 \glossterm{damage resistance}.
 
       \parhead{Dragonscale} Each dragonscale body armor is made from the scales of a particular type of dragon.
       You are \trait{impervious} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult3 \glossterm{damage resistance}.
       Dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
       \parhead{Dragonscale, Ancient} Each ancient dragonscale body armor is made from the scales of a particular type of dragon.
       You are \trait{immune} to attacks with that dragon's ability tag (see \tref{Dragon Types}).
-      In addition, it provides \mult6 \glossterm{damage resistance}.
       Dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
-      \parhead{Shadowweave} Shadowweave body armor is exceptionally stealthy.
-      You gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing shadowweave armor.
-      In addition, it provides \mult3 \glossterm{damage resistance}.
+      \parhead{Shadeweave} Shadeweave body armor is exceptionally stealthy.
+      It reduces the \glossterm{encumbrance} and damage resistance from the armor by 1.
+      In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Stealth skill while wearing it.
 
-      \parhead{Shadowweave, Umbral} Umbral shadowweave body armor is exceptionally stealthy.
-      You gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing umbral shadowweave armor.
-      In addition, it provides \mult6 \glossterm{damage resistance}.
+      \parhead{Shadeweave, Umbral} Umbral shadeweave body armor is exceptionally stealthy.
+      It reduces the damage resistance from the armor by 1, and the \glossterm{encumbrance} by 2.
+      In addition, you gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing it.
 
       \parhead{Starmetal} Starmetal body armor is heavier than other armor, as described by adamantine armor.
-      In addition, it provides \mult2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      In addition, it provides \plus1 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 1.
 
       \parhead{Starmetal, Pure} Pure starmetal body armor is heavier than other armor, as described by adamantine armor.
-      In addition, it provides \mult4 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      In addition, it provides \plus2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
 
-      \parhead{Vineweave} Vineweave body armor provides \mult2 \glossterm{damage resistance}.
+      \parhead{Vineweave} Vineweave body armor provides \plus1 \glossterm{damage resistance}.
       However, it makes you \vulnerable to \atFire attacks.
 
-      \parhead{Vineweave, Braided} Braided vineweave body armor provides \mult4 \glossterm{damage resistance}.
+      \parhead{Vineweave, Braided} Braided vineweave body armor provides \plus2 \glossterm{damage resistance}.
       However, it makes you \vulnerable to \atFire attacks.
 
       % Magic armor is a highly limited slot.
@@ -1087,25 +1091,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \begin{longtablepreface}
             Magic body armor must be worn to gain its effects, while magic shields must be wielded.
             You cannot imbue magic body armor effects on ordinary clothing, even if that clothing is worn on the body instead of armor.
-
-            \subsection{Magic Armor Damage Resistance}\label{Magic Armor Damage Resistance}
-              While you are attuned to magical body armor, that armor gains a multiplier to the damage resistance it provides.
-              This multiplier does not apply to any special properties the armor might have, such as an enhancement bonus to your maximum damage resistance.
-              It only applies to the normal damage resistance normally provided by body armor of that type.
-              The magnitude of the multiplier is based on the magic item's rank, as listed below.
-
-              Normally, it is impossible for body armor to have multiple properties, or for body armor made from a special material to have a magical property.
-              If that happens, use the highest applicable damage resistance multiplier rather than applying both multipliers.
-              This multiplier to damage resistance still applies even if the armor's magical properties are \glossterm{suppressed}, such as with the \spell{suppress item} spell, as long as you are still attuned to the body armor.
-
-              \begin{itemize}
-                \item Rank 0--2: \mult1
-                \item Rank 3: \mult2
-                \item Rank 4: \mult3
-                \item Rank 5: \mult4
-                \item Rank 6: \mult6
-                \item Rank 7: \mult8
-              \end{itemize}
           \end{longtablepreface}
 
           \input{generated/magic_armor_table.tex}
@@ -1122,7 +1107,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
             \includegraphics[width=\columnwidth]{equipment/magic apparel}
             Magic apparel items must be worn to gain their effects.
 
-            \subsection{Body Slots}
+            \subsection{Body Slots}\label{Body Slots}
               The main limiting factor on how many items you can have equipped is your attunement points, not the physical location of your items on your body.
               However, there are limits to how many items you can wear of the same type, as described below.
               For item types not listed here, use reasonable judgment about what would be plausible.
