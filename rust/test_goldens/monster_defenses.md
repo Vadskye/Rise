@@ -68,7 +68,7 @@ Points / Self-hit: 46 / 50%
 
 ### Brute
 A/B/F/R/M: 11 / 14 / 12 / 11 / 9
-HP/DR/Total: 63 / 24 / 87
+HP/DR/Total: 63 / 22 / 85
 Points / Self-hit: 68 / 60%
 
 ### Leader
@@ -83,12 +83,12 @@ Points / Self-hit: 64 / 100%
 
 ### Skirmisher
 A/B/F/R/M: 13 / 11 / 9 / 14 / 10
-HP/DR/Total: 36 / 24 / 60
+HP/DR/Total: 36 / 22 / 58
 Points / Self-hit: 70 / 60%
 
 ### Sniper
 A/B/F/R/M: 10 / 11 / 9 / 12 / 11
-HP/DR/Total: 29 / 24 / 53
+HP/DR/Total: 29 / 22 / 51
 Points / Self-hit: 63 / 100%
 
 ### Warrior
@@ -100,7 +100,7 @@ Points / Self-hit: 66 / 60%
 
 ### Brute
 A/B/F/R/M: 14 / 17 / 15 / 14 / 12
-HP/DR/Total: 130 / 45 / 175
+HP/DR/Total: 130 / 42 / 172
 Points / Self-hit: 86 / 50%
 
 ### Leader
@@ -115,12 +115,12 @@ Points / Self-hit: 82 / 100%
 
 ### Skirmisher
 A/B/F/R/M: 16 / 14 / 12 / 17 / 13
-HP/DR/Total: 66 / 45 / 111
+HP/DR/Total: 66 / 42 / 108
 Points / Self-hit: 88 / 60%
 
 ### Sniper
 A/B/F/R/M: 13 / 14 / 12 / 15 / 14
-HP/DR/Total: 52 / 45 / 97
+HP/DR/Total: 52 / 42 / 94
 Points / Self-hit: 81 / 100%
 
 ### Warrior
@@ -132,7 +132,7 @@ Points / Self-hit: 84 / 50%
 
 ### Brute
 A/B/F/R/M: 18 / 21 / 19 / 18 / 16
-HP/DR/Total: 240 / 80 / 320
+HP/DR/Total: 240 / 75 / 315
 Points / Self-hit: 110 / 50%
 
 ### Leader
@@ -147,12 +147,12 @@ Points / Self-hit: 106 / 90%
 
 ### Skirmisher
 A/B/F/R/M: 20 / 18 / 16 / 21 / 17
-HP/DR/Total: 115 / 80 / 195
+HP/DR/Total: 115 / 75 / 190
 Points / Self-hit: 112 / 50%
 
 ### Sniper
 A/B/F/R/M: 17 / 18 / 16 / 19 / 18
-HP/DR/Total: 92 / 80 / 172
+HP/DR/Total: 92 / 75 / 167
 Points / Self-hit: 105 / 90%
 
 ### Warrior
