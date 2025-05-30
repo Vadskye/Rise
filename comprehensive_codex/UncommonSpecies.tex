@@ -75,13 +75,30 @@
       To gain the full benefits of your carapace, you must have proficiency with armor of the appropriate usage class.
       The benefits from this ability are considered to come from body armor, and do not stack with actual body armor.
 
+      You can use magic armor to build your carapace.
+      If you do, the magic armor becomes embedded in your body.
+      You can attune to it to benefit from its effects.
+      If you use light modular carapace, this can allow you to benefit from two different magic armor effects.
+o
+      % Normal magic armor expected resistance, light/med/heavy (light rank mult / med rank mult / heavy rank mult):
+      % Rank 1: 3/5/10 (3/5/10)
+      % Rank 2: 5/7/10 (3/4/5)
+      % Rank 3: 10/14/20 (3/5/7)
+      % Rank 4: 15/21/36 (4/5/9)
+      % Rank 5: 20/28/48 (4/6/10)
+      % Rank 6: 30/42/72 (5/7/12)
+      % Rank 7: 40/56/96 (6/8/14)
+
+      % We want the modular armor to generally be better than regular armor, and we only have one scaling increase at rank 5.
+      % So we start at 4/6/10 and scale to 6/8/14.
+
       \begin{itemize}
-        \item Light armor: You gain a \plus3 bonus to your Armor defense, and a bonus to your maximum damage resistance bonus to three times your rank in this archetype.
+        \item Light armor: You gain a \plus3 bonus to your Armor defense, and a bonus to your maximum damage resistance bonus to four times your rank in this archetype.
           You can wear body armor on top of this carapace.
           Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and damage resistance bonus from either armor.
-        \item Medium armor: You gain a \plus5 bonus to your Armor defense, a \plus1 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to four times your rank in this archetype.
+        \item Medium armor: You gain a \plus5 bonus to your Armor defense, a \plus1 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to six times your rank in this archetype.
           However, your Dexterity bonus to your Armor defense is halved, and you cannot wear body armor.
-        \item Heavy armor: You gain a \plus6 bonus to your Armor defense, a \plus2 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to six times your rank in this archetype.
+        \item Heavy armor: You gain a \plus6 bonus to your Armor defense, a \plus2 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to ten times your rank in this archetype.
           However, your Dexterity bonus to your Armor defense is halved, you take a \minus10 foot penalty to your speed with all movement modes, and you cannot wear body armor.
           Unlike normal for heavy body armor, you do not need a minimum Strength to use this armor.
       \end{itemize}
@@ -89,47 +106,54 @@
       If you lose your original armor parts, you can create or buy new parts that are suited to your body.
       These parts are considered a Rank 1 (40 gp) item.
 
-    \cf{Aut}[2]{Modular Weaponry} You can customize your arms to augment your combat prowess.
-      Changing your configuration in this way requires 10 minutes of work, and spare arm and weapon parts that you generally keep with you.
-      You can combine multiple customizations with this ability.
-      However, your arms cannot be both fortified and slim, and any individual arm cannot be both bladed and bulky.
+    \cf{Aut}[2]{Modular Armaments} You can customize your arms.
+      Changing your arm configuration in this way requires 10 minutes of work, and spare arm and weapon parts that you generally keep with you.
+      It also requires at least one \glossterm{free hand}.
+      You can combine any number of different customizations with this ability.
+      Some customizations apply to both of your arms, but others apply to only one arm, as indicated.
       \begin{itemize}
-        % Two improvements over baseline
-        \item Bladed: You convert one of your arms into a blade natural weapon.
-          It has a \plus1 accuracy bonus, deals 1d8 damage, and has the \weapontag{Keen} and \weapontag{Sweeping} (1) weapon tags (see \pcref{Weapon Tags}).
-          However, that arm no longer has a \glossterm{free hand}.
-          % Two improvements over baseline
-        \item Bulky: You convert one of your arms into a bulky, overburdened slam natural weapon.
-          It deals 1d10 damage and has the \weapontag{Impact} and \weapontag{Resonating} weapon tags.
-          However, that arm no longer has a \glossterm{free hand}.
+        \item Bulky: You augment both of your arms with additional strength.
+          You gain a \plus1 bonus to your \glossterm{mundane power}, and to your Strength for the purpose of determining your \glossterm{weight limits}.
+          However, you increase your \glossterm{encumbrance} by 2.
         \item Fortified: You add additional protective plating to both of your arms.
-          You gain a \plus1 bonus to your Armor defense.
+          You gain a \plus1 bonus to your Armor defense, but you increase your \glossterm{encumbrance} by 1.
           This does not require a \glossterm{free hand}, but it is still considered to come from a shield, and it does not stack with the benefit from using a shield.
-        \item Slim: You trim away the excess protection from both of your arms to make their movements more precise.
-          You gain a \plus1 accuracy bonus with \glossterm{strikes} and \atBrawling abilities.
-          However, you take a \minus1 penalty to your Armor defense.
+        \item Slim: You trim away excess muscle from both of your arms to make their movements more precise.
+          You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
+          However, you take a \minus1 penalty to your \glossterm{mundane power}.
+        \item Weapon: You convert one of your arms into a manufactured weapon of your choice that you are \glossterm{proficient} with.
+          It is considered either a \glossterm{natural weapon}, a manufactured weapon, or both whenever it would be beneficial for you.
+          However, that arm no longer has a \glossterm{free hand}.
+          You can incorporate a magic weapon into this process or find a smith to imbue your arm parts as if they were a magic weapon.
+          If you do, you can attune to the magic weapon property, and it affects this weapon.
       \end{itemize}
 
       If you lose your original arm and weapon parts, you can create or buy new parts that are suited to your body.
       These parts are considered a Rank 1 (40 gp) item.
 
-    \magicalcf{Aut}[3]{Imbued Carapace} When you gain this ability, choose one magic body armor property for each of your three \ability{modular carapace} types (see \tref{Magic Body Armor}).
-      The property must be rank 3 or lower.
-      Whenever you use a carapace type, you can gain the benefit of its magic armor property, though you must still \glossterm{attune} to the property.
-      Each carapace can have a unique property, or you can choose the same property for multiple carapace types.
-      If you are using a light carapace, you can gain the benefit of its magic armor property in addition to any magic armor you wear on top of the carapace.
+    \magicalcf{Aut}[3]{Steeling Slash}
+    \begin{activeability}{Steeling Slash}
+        \abilityusagetime Standard action.
+        \rankline
+        Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
+        Then, you are \glossterm{briefly} \steeled.
 
-      Whenever you gain a rank in this archetype, you can choose a different property for each of your carapace types.
-      Each property's rank must be no higher than your rank in this archetype.
-      Magic armor of rank 3 or higher does not multiply the damage resistance provided by your carapace, as magic armor normally does (see \pcref{Magic Armor Damage Resistance}).
+        \rankline
+        \rank{4} The extra damage increases to 1d6 \add half your power.
+        \rank{5} The extra damage increases to 1d6 \add your power.
+        \rank{6} The extra damage increases to 3d6 \add your power.
+        \rank{7} The strike deals double \glossterm{weapon damage}.
+    \end{activeability}
 
-    \magicalcf{Aut}[4]{Embedded Armory} Whenever you use your \ability{modular weaponry} ability to change your configuration, you can also embed one magic weapon, implement, glove, gauntlet, or bracer into one of your arms.
-      You can attune to that item without having it physically present on your arm.
-      If you attune to a weapon embedded this way, you apply its magical properties to any nonmagical weapons you use with that arm, including natural weapons and weapons made from special materials.
+    \magicalcf{Aut}[4]{Embedded Apparel} You can embed magic apparel into your body with an hour of work.
+      The item becomes a part of your body, and would require another hour of work to remove.
+      This allows you to use one additional apparel item from each body slot.
+      For example, you could embed one set of magic boots into your feet and then wear another pair of magic boots over them.
+      You also gain an additional \glossterm{attunement point} that you can only use to attune to items embedded into your body.
       You cannot embed a \glossterm{legacy item} in this way.
 
     \cf{Aut}[5]{Modular Carapace+} The damage resistance from your \textit{modular carapace} armor increases.
-      Light carapace increases to five times your rank in this archetype, medium carapace increases to six times your rank, and heavy carapace increases to eight times your rank.
+      Light carapace increases to six times your rank in this archetype, medium carapace increases to eight times your rank, and heavy carapace increases to fourteen times your rank.
 
     \cf{Aut}[5]{Reassembly} You can recover from vital wounds more easily by simply replacing broken parts.
       You can remove a vital wound with ten minutes of work.
@@ -144,11 +168,8 @@
 
     \cf{Aut}[6]{Artificial Mind} You become immune to \abilitytag{Compulsion} and \abilitytag{Emotion} attacks.
 
-    \cf{Aut}[7]{Hypercognition} You can take an additional \glossterm{minor action} each round, as long as that minor action is purely mental.
-      As normal, you cannot use the same ability twice in the same round.
-
-      Alternately, you can take an additional purely mental standard action instead of a minor action.
-      When you do, you increase your \glossterm{fatigue level} by one and you \glossterm{briefly} cannot take any additional actions with this ability.
+    \cf{Aut}[7]{Steel To The Core} You are always \steeled.
+    When an ability would cause you to become steeled, such as your \ability{steeling slash} ability, you become \braced instead.
 
   \subsection{Base Class Effects}
     If you choose automaton as your base class, you gain the following benefits.
