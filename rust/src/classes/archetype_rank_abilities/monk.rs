@@ -290,7 +290,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The damage resistance bonus increases to seven times your rank in this archetype.
+                The damage resistance bonus increases to eight times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -550,7 +550,7 @@ fn add_ki_barrier(abilities: &mut Vec<RankAbility<'_>>) {
         abilities.append(&mut vec![RankAbility {
             name: "Ki Barrier Scaling",
             rank,
-            modifiers: Some(vec![Modifier::DamageResistance(rank * 7)]),
+            modifiers: Some(vec![Modifier::DamageResistance(rank * 8)]),
             ..Default::default()
         }]);
     }
