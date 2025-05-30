@@ -228,7 +228,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The damage resistance bonus increases to five times your rank in this archetype.
+                The damage resistance bonus increases to six times your rank in this archetype.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
