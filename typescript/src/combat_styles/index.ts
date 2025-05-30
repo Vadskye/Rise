@@ -1,11 +1,11 @@
 import { BaseSpellLike } from '@src/mystic_spheres';
-import { bruteForce } from './blunt_force';
+import { bruteForce } from './brute_force';
 import { dirtyFighting } from './dirty_fighting';
 import { ebbAndFlow } from './ebb_and_flow';
 import { flurryOfBlows } from './flurry_of_blows';
 import { heraldOfWar } from './herald_of_war';
 import { mobileHunter } from './mobile_assault';
-import { perfectPrecision } from './penetrating_precision';
+import { perfectPrecision } from './perfect_precision';
 import { ripAndTear } from './rip_and_tear';
 import { unbreakableDefense } from './unbreakable_defense';
 
