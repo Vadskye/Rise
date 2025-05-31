@@ -414,7 +414,7 @@ export const dirtyFighting: CombatStyle = {
       attack: {
         hit: `Each target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
       rank: 1,

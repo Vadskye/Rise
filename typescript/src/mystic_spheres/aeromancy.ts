@@ -71,39 +71,50 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
-    // Treat as t1 debuff
+    // Of the 7 possible attacks against the target, assume that 4 can benefit, so this is
+    // 0.8 EA. That allows room to increase to distrange.
     {
-      name: 'Arrow Attraction',
+      name: 'Guiding Winds',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target takes a -2 penalty to defenses against projectile \\glossterm{strikes}.
+          Each target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\distrange.
+          Make an attack vs. Reflex against up to two creatures within \\distrange.
         `,
       },
       narrative: `
         The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
+    // Of the 15 possible attacks, assume that 8 can benefit, so this is 1.6 EA.
+    // Increasing to distrange takes us to rank 4.
     {
-      name: 'Intense Arrow Attraction',
+      name: 'Intense Guiding Winds',
 
-      functionsLike: {
-        name: 'arrow attraction',
-        exceptThat: 'the penalty increases to -4.',
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          Each target takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes} as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against up to two creatures within \\distrange.
+        `,
       },
       narrative: `
-        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows with extreme precision.
+        The air around your foe ripples with hidden air currents that seem to guide the flight of arrows.
       `,
-      rank: 6,
+      rank: 4,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
+
     {
       name: 'Propulsion',
 
@@ -120,11 +131,18 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
-      scaling: {
-        3: 'The maximum distance increases to 90 feet.',
-        5: 'The maximum distance increases to 120 feet.',
-        7: 'The maximum distance increases to 150 feet.',
+      roles: ['dive'],
+    },
+    {
+      name: 'Intense Propulsion',
+
+      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.',
+      functionsLike: {
+        name: 'propulsion',
+        exceptThat: "the maximum distance increases to 120 feet.",
       },
+      rank: 6,
+      roles: ['dive'],
     },
     {
       name: 'Wind Screen',
@@ -160,28 +178,14 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
+    // Normally, long range single target would be dr2, or two targets at med range would
+    // be dr2. This is better than normal for distrange, but long range damage is rare.
     {
       name: 'Windslash',
 
       attack: {
         hit: `
-          \\damagerankone.
-        `,
-        targeting: `
-          Make an attack vs. Armor against up to two targets within \\medrange.
-          If you choose two targets, they must be adjacent to each other.
-        `,
-      },
-      // narrative: '',
-      rank: 2,
-      scaling: 'accuracy',
-    },
-    {
-      name: 'Mighty Windslash',
-
-      attack: {
-        hit: `
-          \\damagerankfour.
+          \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Armor against up to two targets within \\longrange.
@@ -189,7 +193,25 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 3,
+      roles: ['snipe'],
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Mighty Windslash',
+
+      attack: {
+        hit: `
+          \\damagerankfive.
+        `,
+        targeting: `
+          Make an attack vs. Armor against up to two targets within \\longrange.
+          If you choose two targets, they must be adjacent to each other.
+        `,
+      },
+      // narrative: '',
+      rank: 6,
+      roles: ['snipe'],
       scaling: 'accuracy',
     },
     {
@@ -197,96 +219,94 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          \\damageranktwolow.
+          \\damageranktwo.
         `,
         targeting: 'Make an attack vs. Armor against something within \\distrange.',
       },
       // narrative: '',
-      rank: 3,
-      scaling: { special: 'The damage increases by 1d8 for each rank beyond 3.' },
-    },
-    {
-      name: 'Distant Windsnipe',
-
-      attack: {
-        hit: `
-          \\damagerankfourlow.
-        `,
-        targeting: 'Make an attack vs. Armor against something within \\extrange.',
-      },
-      // narrative: '',
-      rank: 6,
-      scaling: { special: 'The damage increases by 2d10 for each rank beyond 6.' },
+      rank: 4,
+      roles: ['snipe'],
+      scaling: 'accuracy',
     },
     {
       name: 'Windseal',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          The target is \\slowed as a \\glossterm{condition}.
+          Each target is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          Make an attack vs. Brawn against one creature within \\medrange.
+          Make an attack vs. Brawn against up to three creatures within \\medrange.
         `,
       },
       // narrative: '',
-      rank: 5,
+      rank: 4,
+      roles: ['flash'],
       scaling: 'accuracy',
     },
+    // -4 Armor/Brawn/Reflex will probably apply to 6 of the 7 attacks, so it's worth 2.4
+    // EA, which is R6. Adding the grounded requirement means this can't be chained
+    // indefinitely.
     {
-      name: 'Skyseal',
+      name: 'Skyward',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance} and has a \\glossterm{weight category} of Large or less, it is borne aloft by heavy winds as a \\glossterm{condition}.
-          It floats five feet above the ground in \\glossterm{midair}, which normally means it suffers a \\minus4 penalty to its Armor and Reflex defenses.
-          This also typically prevents it from using a \\glossterm{walk speed}, though it can potentially use other speeds if it can make contact with relevant objects (such as a wall for a climb speed).
+          Each target is \\glossterm{briefly} borne aloft by heavy winds.
+          It floats five feet above the ground in \\debuff{midair}, which normally means it suffers a \\minus4 penalty to its Armor, Brawn, and Reflex defenses.
+          Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
         `,
         targeting: `
-          Make an attack vs. Brawn against anyhthing within \\medrange.
+          Make an attack vs. Brawn against all Huge or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
       // narrative: '',
       rank: 6,
+      roles: ['flash'],
       scaling: 'accuracy',
     },
+    // Alternate design: push, or knockback if no remaining DR. More useful, but would
+    // have to be higher rank and have more complicated text.
     {
       name: 'Buffet',
 
-      // weight category limit offsets outdoor doubling
+      // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          If the target has a \\glossterm{weight category} of Medium or less, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
+          You \\glossterm{knockback} each target that has no remaining \\glossterm{damage resistance} up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
+          Each target must be knocked back in the same direction.
 
-          If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
-          It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+          You can leave the target \\midair after the knockback.
+          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Brawn against something within \\medrange.',
+        targeting: 'Make an attack vs. Brawn against up to two creatures within \\medrange that each have a \\glossterm{weight category} of Medium or lighter.',
       },
       // narrative: '',
       rank: 2,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
     {
       name: 'Intense Buffet',
 
+      // A 30' vertical push is 2.6 EA, which is r7. Drop to r6 for limited scope. We
+      // sneak into three targets by keeping a relatively low weight category.
       attack: {
         hit: `
-          If the target has a \\glossterm{weight category} of Large or less, you can \\glossterm{knockback} it up to 30 feet upwards or horizontally, to a maximum of a 60 foot \\glossterm{height limit} (see \\pcref{Knockback Effects}).
-          The knockback distance increases to 30 feet if the target has no remaining \\glossterm{damage resistance}, or if it is outside in open air.
+          You \\glossterm{knockback} each target that has no remaining \\glossterm{damage resistance} up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving the target upwards costs twice the normal movement cost.
+          Each target must be knocked back in the same direction.
 
-          If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
-          It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
+          You can leave the target \\midair after the knockback.
+          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Brawn against something within \\medrange.',
+        targeting: 'Make an attack vs. Brawn against up to three creatures within \\medrange that each have a \\glossterm{weight category} of Large or lighter.',
       },
       // narrative: '',
-      rank: 5,
+      rank: 6,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
     {
@@ -323,10 +343,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
+    // 15' push is about 0.8 since this can't be used for full kiting, then 1.8 EA for
+    // sustain (minor).
     {
       name: 'Wind Tunnel',
 
-      // t0.5 in t2 area is normally rank -1, then +2 for sustain minor
       attack: {
         hit: `
           Each target is \\glossterm{pushed} 15 feet in the direction the wind blows.
@@ -341,21 +362,25 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // effect: '',
       // narrative: '',
-      rank: 2,
+      rank: 3,
+      roles: ['hazard'],
       scaling: 'accuracy',
       tags: ['Sustain (minor)'],
     },
+    // 30' push is 2.0 at range, then 3.0 from sustain (minor). Drop to limited scope is
+    // -1r, and also gets us closer to "melee" range push, so say we can get away with
+    // that at r7.
     {
       name: 'Intense Wind Tunnel',
 
       functionsLike: {
         name: 'wind tunnel',
         exceptThat:
-          "the push distance increases to 30 feet, and the area's length increases to \\hugearealong.",
+          "the push distance increases to 30 feet.",
       },
       // narrative: '',
-      rank: 5,
-      scaling: 'accuracy',
+      rank: 7,
+      roles: ['hazard'],
       tags: ['Sustain (minor)'],
     },
     {
@@ -420,23 +445,36 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       type: 'Attune (deep)',
     },
     {
-      name: 'Cyclone',
+      name: 'Call Dust Devil',
 
+      // Rank 3 spell would normally have dr1 and r3 area.
+      // Then add +2dr for avoidable delay and +1dr for double defense.
+      // The open area requirement is a cost for stacking this much +damage.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarea radius within \\medrange.
+          When you cast this spell, you choose a \\smallarea radius within \\shortrange.
+          A dust devil begins forming in that area.
+          Creatures can generally identify what area the dust devil will form in with a DV 10 Awareness check.
+
+          During your next action, the dust devil forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          If there is not at least thirty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
       // narrative: '',
-      rank: 4,
+      rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
+
+    // Rank 5 spell would normally have dr3 and r5 area, or dr2 and r5 area with extended
+    // area. Then add +2dr for avoidable delay and +1dr for double defense.
+    // The open area requirement is a cost for stacking this much +damage.
     {
-      name: 'Massive Cyclone',
+      name: 'Call Tornado',
 
       attack: {
         hit: `
@@ -444,31 +482,77 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\largearea radius within \\distrange.
+          When you cast this spell, you choose a \\medarea radius within \\medrange.
+          A tornado begins forming in that area.
+          Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
+
+          During your next action, the tornado forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
+        `,
+      },
+      // narrative: '',
+      rank: 5,
+      roles: ['clear'],
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Call Massive Tornado',
+
+      // We only get +1dr from the "avoidable" delay because it really isn't that
+      // avoidable anymore
+      attack: {
+        hit: `
+          \\damageranksix.
+        `,
+        missGlance: true,
+        targeting: `
+          When you cast this spell, you choose a \\largearea radius within \\medrange.
+          A tornado begins forming in that area.
+          Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
+
+          During your next action, the tornado forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
       // narrative: '',
       rank: 7,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
-    // 2 levels for push; normally, 30' push is r1, but clockwise is much worse than
-    // towards/away, so it's closer to r0.5
+    // A standard debuff + damage r4 spell would deal dr1 with a r4 area. Increase to dr2
+    // for double defense.
+    // Standard debuff rank for a r4 damage + debuff spell would be 1.0. Push is a little
+    // weak for that, so we also add empowered.
     {
       name: 'Hurricane',
 
       attack: {
         hit: `
           \\damageranktwo.
-          In addition, each target is \\glossterm{pushed} 30 feet clockwise around you.
+          In addition, each target is \\glossterm{pushed} 15 feet clockwise around you.
           Each target's final position should be the same distance from you as its starting position.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
+          Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
       // narrative: '',
       rank: 4,
+      roles: ['clear'],
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Massive Hurricane',
+
+      functionsLike: {
+        name: 'hurricane',
+        exceptThat: 'the damage increases to \\damagerankfour, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
+      },
+      // narrative: '',
+      rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
@@ -488,8 +572,10 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 5,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
+    // Dazzle is 1.8 EA, so r3.
     {
       name: 'Dust Cloud',
 
@@ -499,74 +585,39 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against each creature in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against each creature in a \\smallarea radius within \\shortrange.
         `,
       },
       // narrative: '',
-      rank: 2,
+      rank: 3,
+      roles: ['flash'],
       tags: [],
       scaling: 'accuracy',
     },
     {
       name: 'Dust Storm',
 
-      // Treat as large area in long range, a t6 area
-      // The blinding imposes no extra rank penalty since slowly growing is already a
-      // little odd.
+      // Start from standard dazzle, +1r for extended area, +1r for larger area, total is
+      // r5 with r6 area. Huge radius from self would be r7 area, which seems fine with
+      // Sustain (standard).
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
-          If it was already dazzled by this effect, and it has no remaining \\glossterm{damage resistance}, this condition makes it \\blinded instead.
         `,
         targeting: `
-          You create a dust storm at a location within \\longrange.
+          You create a dust storm in a \\glossterm{zone} around you.
           The area affected by the storm increases over time.
-          It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
+          It affects a \\largearea radius in the first round, a \\hugearea radius in the second round, and a \\gargarea radius in all subsequent rounds.
           Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
+
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against all \\glossterm{enemies} in the area.
         `,
       },
       // narrative: '',
       rank: 5,
+      roles: ['flash'],
       scaling: 'accuracy',
       type: 'Sustain (standard)',
-    },
-    {
-      name: 'Dust In The Eyes',
-
-      // +1 rank for +2 accuracy
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\dazzled as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against one creature within \\shortrange.
-          If there is dirt, dust, or a collection of loose objects of similar size within 30 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
-        `,
-      },
-      // narrative: '',
-      rank: 1,
-      scaling: 'accuracy',
-    },
-    {
-      name: 'Dustblind',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is surrounded by swirling dust as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\blinded.
-        `,
-        targeting: `
-          Make an attack vs. Reflex against one creature within \\shortrange.
-          If there is dirt, dust, or a collection of loose objects of similar size within 30 feet of the target's eyes, you gain a +2 accuracy bonus with this attack.
-        `,
-      },
-      // narrative: '',
-      rank: 4,
-      scaling: 'accuracy',
     },
     {
       name: 'Misty Step',
@@ -584,6 +635,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
+    // TODO: higher rank version
     {
       name: 'Wall of Wind',
 
@@ -594,11 +646,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         However, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
       `,
       rank: 1,
-      scaling: {
-        3: `You can increase the area to a \\medarealong wall.`,
-        5: `You can increase the area to a \\largearealong wall.`,
-        7: `You can increase the area to a \\hugearealong wall.`,
-      },
+      roles: ['hazard'],
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -615,23 +663,24 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       type: 'Attune',
     },
     {
-      name: 'Windburst',
+      name: 'Windblast',
 
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
         `,
       },
       // narrative: '',
-      rank: 3,
+      rank: 1,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
-      name: 'Massive Windburst',
+      name: 'Mighty Windblast',
 
       attack: {
         hit: `
@@ -639,11 +688,31 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
         `,
       },
       // narrative: '',
-      rank: 7,
+      rank: 4,
+      roles: ['clear'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Massive Windblast',
+
+      attack: {
+        hit: `
+          \\damageranksix.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
+        `,
+      },
+      // narrative: '',
+      rank: 6,
+      roles: ['clear'],
+      scaling: 'accuracy',
     },
 
     {
@@ -654,12 +723,86 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your Armor or Reflex defenses.
-        While you are in this form, you are unable to take any standard action other than \\glossterm{movement}.
+        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your defenses.
+        You are unable to take any standard actions other than sustaining this effect, but you can still take \glossterm{move actions} in place of standard actions.
       `,
-      rank: 5,
+      rank: 4,
+      roles: ['narrative'],
       tags: [],
-      type: 'Sustain (standard)',
+      type: 'Sustain (attuneable, standard)',
+    },
+
+    {
+      name: 'Shielding Windblast',
+
+      // dr-2 for buff effect. Tiny radius from self is r0, so that would normally be
+      // drX+1.
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\shielded.
+        `,
+      },
+      // narrative: '',
+      rank: 2,
+      roles: ['clear'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Shielding Windblast',
+
+      // dr-2 for buff effect. Tiny radius from self is r0, so that would normally be
+      // drX+1.
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\shielded.
+        `,
+      },
+      // narrative: '',
+      rank: 5,
+      roles: ['clear'],
+      scaling: 'accuracy',
+    },
+
+    // Shield on other is 0.6 EA, shield on self is 0.4 EA
+    {
+      name: 'Zephyr Shield',
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\distrange.
+        This round, the target is \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
+      `,
+      // narrative: '',
+      rank: 1,
+      roles: ['turtle'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Zephyr Guide',
+
+      // +2 accuracy is 0.3 EA, so total EA is 0.7 on self or 1.1 on ally. But it doesn't
+      // work all the time, so it's okay at r3.
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\distrange.
+        This round, the target is \\focused and gains a \\plus2 bonus accuracy bonus with ranged \\glossterm{strikes}.
+        If you choose yourself, the effect lasts \\glossterm{briefly}.
+      `,
+      // narrative: '',
+      rank: 3,
+      roles: ['focus'],
+      scaling: 'accuracy',
     },
   ],
 });

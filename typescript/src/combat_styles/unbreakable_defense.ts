@@ -99,6 +99,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Weather the Storm',
 
+      // 1 EA is very slightly above rate for r3
       effect: `
         You take half damage from all sources this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
