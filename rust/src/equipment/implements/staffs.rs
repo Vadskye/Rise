@@ -89,17 +89,17 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Giants"),
         rank: 2,
-        short_description: String::from(r"Increases maximum size category of abilities"),
+        short_description: String::from(r"Increases maximum size or weight with abilities"),
         description: String::from(r"
-            Whenever you use a \magical ability that has a maximum size category for its targets or any objects it creates, you increase that maximum by one size category.
-            This cannot increase the maximum size category above Gargantuan.
+            Whenever you use a \magical ability that has a maximum size category or weight category for its targets or any objects it creates, you increase that maximum by one size category or weight category.
+            This cannot increase the maximum size category or weight category above Gargantuan.
             This does not affect abilities that create creatures of a particular size.
 
             If you use two Staffs of Giants, their effects stack.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Greatly increases maximum size category of abilities", r"
-                The bonus increases to two size categories, and this effect can increase the maximum size category to Colossal.
+            ItemUpgrade::new(6, "Greatly increases maximum size or weight with abilities", r"
+                The bonus increases to two size or weight categories, and this effect can increase the maximum size or weight category to Colossal.
             "),
         ],
         ..Implement::default()
