@@ -160,9 +160,21 @@ Since goaded is 29% action denial when it applies, that gives it 4 * 0.75 * 0.29
 
 Fully removing a creature's ability to move is too strong to exist; it would be too rare to define as an explicit debuff.
 
-### Knockback 15': 0.9 (ranged) / 0.4 (melee)
+### Knockback 15' (horizontal): 0.9 (ranged) / 0.4 (melee)
 
 Knockback is dangerous compared to push because it can send enemies into bottomless pits and cliffs. Treat knockback 15' as being the same EA as push 15', except that knockback requires HP loss.
+
+### Knockback 15' (vertical): 1.6 (ranged) / 1.4 (melee)
+
+In addition to the utility from pushing into hazards, a vertical knockback can leave enemies in midair. A -4 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth 1.2 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both.
+
+### Knockback 30' (horizontal): 2.0 (ranged) / 1.5 (melee)
+
+Same as push 30', but this always requires the target to have no remaining DR.
+
+### Knockback 30' (vertical): 2.6 (ranged) / 2.1 (melee)
+
+This time the push is a larger part of the EA contribution, so we'll start from the push and add half the defense effect, which is 0.6 EA extra.
 
 ### Panicked by self: 2.3
 
@@ -382,6 +394,10 @@ Now assume you have an 80% hit rate, so you hit on a 7. From before, this is wor
 ### Shielded: 0.4
 Like Braced, but only affects ~75% of enemy attacks, assuming you use it when it's relevant.
 
+### +4 defenses: 1.1
+
+From the -4 accuracy calculation, +4 defenses is 56% action denial when relevant. That's 4 * 0.56 * 0.5 = 1.1 EA.
+
 ### Single defense: 0.4
 You can probably choose the best defense here, so it's pretty close in power to the other defense abilities. If you can't choose the defense optimally, 0.2 EA.
 
@@ -548,7 +564,6 @@ By rank:
   Frightened by ally & 3d    & 4d           & 5         \\
   Frightened by all  & 2     & 3            & inf       \\
   Goaded             & 4d    & 4d           & 7         \\
-  Immobilized        & inf   & inf          & inf       \\
   Panicked by self   & 6     & 6            & inf       \\
   Panicked by ally   & 8     & 9            & inf       \\
   Prone (ranged)     & 2     & 6            & inf       \\
@@ -792,11 +807,10 @@ Rank 0 areas:
   * Small line, 10' wide from self
   * Medium line, 5' wide from self (only for splitting)
 * Radius:
-  * All adjacent enemies
   * Small radius from self
     * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-  * Tiny radius from self
-    * This is easier to scope to enemies-only than a Small radius
+  * Enemies in Tiny radius from self
+    * There is no such thing as "everything adjacent to you", because it's easy to make that functionally enemies-only on a grid system, but that's really annoying in practice.
 
 Rank 1 areas:
 * Cone:
@@ -805,8 +819,6 @@ Rank 1 areas:
   * Medium line, 10' wide from self
 * Radius:
   * Medium radius from self
-  * Enemies in a Tiny radius from self
-    * This breaks the normal "enemies-only" pattern
 * Targets:
   * Up to two creatures in Short range
 
@@ -895,7 +907,7 @@ Rank 7 areas:
 * Radius:
   * Gargantuan radius from self
   * Large radius in Medium range (a little odd, basically requires enemies-only)
-  * Medium radius in Long range
+  * Medium radius in Distant range
 
 ### Area Rank Modifiers
 
