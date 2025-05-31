@@ -210,13 +210,13 @@ def debuff_explanation(debuff):
         "helpless": "-6 Armor and Ref",
         "panicked": "-4 Mental, cannot attack source",
         "paralyzed": "cannot move",
-        "partially unaware": "-2 Armor and Ref",
+        "partially unaware": "-2 defenses",
         "prone": "half speed, -2 Armor and Ref",
         "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
         "stunned": "-2 defenses",
         "swimming": "-2 accuracy, defenses",
-        "unaware": "-6 Armor and Ref",
+        "unaware": "-5 defenses",
         "unconscious": "unable to act",
     }[debuff]
 
