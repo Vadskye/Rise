@@ -25,7 +25,7 @@ import { universal } from './universal';
 export { rituals } from './rituals';
 
 export const mysticSpheres: MysticSphere[] = [
-  // aeromancy,
+  aeromancy,
   // aquamancy,
   // astromancy,
   // channelDivinity,

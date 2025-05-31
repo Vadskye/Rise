@@ -387,7 +387,7 @@ export const heraldOfWar: CombatStyle = {
 
       // Empowered + fortified is 0.6 EA, so we get 0.8 EA of debuff and a starting area
       // rank of -2. Brief deafened is 0.3 EA, so we get about two ranks of +area, which
-      // we round up to three ranks. That allows a r1 area.
+      // we round up to three ranks. That allows a r1 area. We only use a r0 area though.
       attack: {
         hit: `Each target is \\glossterm{briefly} \\deafened.`,
         targeting: `

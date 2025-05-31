@@ -78,7 +78,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Whirlwind+',
 
       effect: `
-        Make a melee \\glossterm{strike} with a -1 accuracy penalty that deals double damage.
+        Make a melee \\glossterm{strike} that deals double damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
       rank: 5,
@@ -89,7 +89,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Whirlwind Flurry',
 
       effect: `
-        Make three melee \\glossterm{strikes} with a -2 accuracy penalty.
+        Make three melee \\glossterm{strikes} with a -1 accuracy penalty.
         The strikes target all \\glossterm{enemies} adjacent to you.
       `,
       rank: 7,
@@ -277,7 +277,8 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Dazzling Kata',
 
       // Dazzled is 0.6 EA and we have 1.0 EA to work with. Spending two ranks on area
-      // tier gets us back to a r1 area, since we start from r-1.
+      // tier gets us back to a r1 area, since we start from r-1. We only actually use a
+      // r0 area.
       attack: {
         hit: `Each target is \\glossterm{briefly} \\dazzled.`,
         missGlance: true,

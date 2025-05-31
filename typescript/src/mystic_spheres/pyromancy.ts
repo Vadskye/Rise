@@ -126,7 +126,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
@@ -146,7 +146,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         missGlance: true,
         targeting: `
           You are \\glossterm{briefly} \\empowered.
-          Then, make an attack vs. Reflex against everything adjacent to you.
+          Then, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
       rank: 5,
@@ -166,7 +166,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against yourself and everything adjacent to you.
+          Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\maximized.
         `,
       },
@@ -187,7 +187,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against yourself and everything adjacent to you.
+          Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\maximized.
         `,
       },

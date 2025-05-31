@@ -92,13 +92,14 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Personal Ward',
+      name: 'Kinetic Ablation',
 
+      // 1 EA
       effect: `
-        You gain a \\plus4 bonus to your defenses against damaging attacks this round.
+        You take half damage from all sources this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 3,
+      rank: 4,
       roles: ['turtle'],
       // narrative: '',
       tags: ['Swift'],
@@ -383,7 +384,7 @@ export const telekinesis: MysticSphere = {
       name: 'Kinetic Redirection',
 
       effect: `
-        You gain a +2 bonus to your Armor and Reflex defenses this round.
+        You are \\shielded this round.
         In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
         This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.

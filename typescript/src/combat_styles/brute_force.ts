@@ -66,7 +66,7 @@ export const bruteForce: CombatStyle = {
         hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
         `,
       },
       rank: 1,
@@ -81,7 +81,7 @@ export const bruteForce: CombatStyle = {
         hit: `\\damageranksix.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
         `,
       },
       rank: 5,
@@ -110,7 +110,7 @@ export const bruteForce: CombatStyle = {
         hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything adjacent to you that is \\glossterm{grounded} on the same stable surface as you.
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
@@ -188,7 +188,7 @@ export const bruteForce: CombatStyle = {
         targeting: `
           You jump and move as normal for the jump (see \\pcref{Jumping}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
-          If you do, make an attack vs. Reflex against everything adjacent to you that is on the same stable surface as you.
+          If you do, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
         `,
       },
       rank: 3,
@@ -286,7 +286,7 @@ export const bruteForce: CombatStyle = {
     },
 
     // Start from r0 due to 0.2 EA buff. Brief goad is r-1 normally, so we can get a r1
-    // area by spending one rank on area size.
+    // area by spending one rank on area size. We only use a r0 area though.
     {
       name: 'Ostentatious Flex',
 

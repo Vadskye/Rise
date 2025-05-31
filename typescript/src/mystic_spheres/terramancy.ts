@@ -93,8 +93,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Meteor',
 
-      // -2r for avoidable delay, so effective rank 6. That allows a t3 area and dr5.
-      // Bump to a r4 area due to the open area requirement.
+      // Rank 4 spell would normally have dr2 and r4 area. Add +2dr for avoidable delay
+      // and +1dr for double defense.
+    // The open area requirement is a cost for stacking this much +damage.
       attack: {
         hit: `\\damagerankfive.`,
         missGlance: true,
@@ -102,8 +103,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           When you cast this spell, you choose a \\medarea radius within \\shortrange.
           A meteor appears high in the sky over that area, falling down towards it.
           Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
-          During your next action, the meteor crashes into your chosen area, and you make an attack vs. Armor against everything in the area.
-          If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
+
+          During your next action, the meteor crashes into your chosen area, and you make an attack vs. Armor and Reflex against everything in the area.
+          If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
       rank: 4,
