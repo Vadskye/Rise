@@ -1505,12 +1505,10 @@ function handleDebuffs() {
         v.partially_unaware &&
         !(v.unaware || v.asleep || v.helpless || v.paralyzed || v.blinded)
       ) {
-        minus2('partially unaware', 'armor_defense');
-        minus2('partially unaware', 'reflex');
+        minus2('partially unaware', 'all_defenses');
       }
       if (v.unaware || v.asleep || v.helpless || v.paralyzed) {
-        namedModifierMap.addNamedModifier('armor_defense', 'unaware', -6);
-        namedModifierMap.addNamedModifier('reflex', 'unaware', -6);
+        namedModifierMap.addNamedModifier('all_defenses', 'unaware', -5);
       }
       if (v.squeezing) {
         minus2('squeezing', 'armor_defense');
@@ -1518,6 +1516,7 @@ function handleDebuffs() {
       }
       if (v.midair) {
         minus4('midair', 'armor_defense');
+        minus4('midair', 'brawn');
         minus4('midair', 'reflex');
       }
       if (v.climbing) {
