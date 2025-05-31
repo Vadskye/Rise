@@ -159,8 +159,6 @@
   % Kind of an awkward hack
   An enraged creature automatically stops being enraged after ten minutes, even if it was unable to rest due to its rage.
 
-  \debuffdef{flying} A creature that is flying takes a \minus4 penalty to its Armor and Reflex defenses (see \pcref{Aerial Movement}).
-
   \buffdef{focused} A focused creature \glossterm{rerolls} attack rolls once and keeps the higher result.
   This only affects attack rolls, not \glossterm{miss chances} or \glossterm{checks}.
 
@@ -202,6 +200,9 @@
   \buffdef{maximized} A maximized creature deals maximum damage whenever it deals damage, and causes the target to regain the maximum amount of hit points or damage resistance whenever it heals a target.
   This only affects damage and healing caused directly by the creature, excluding conditions it inflicts.
   For example, a maximized creature that uses an ability which causes \glossterm{knockback} does not maximize the damage from the knockback.
+
+  \debuffdef{midair} A creature that is midair takes a \minus4 penalty to its Armor, Brawn, and Reflex defenses (see \pcref{Aerial Movement}).
+  In addition, most movement modes require touching a surface, so they do not function while midair without access to any nearby surfaces.
 
   \debuffdef{panicked} A panicked creature takes a \minus4 penalty to its Mental defense.
   In addition, it is unable to make any attacks that include the source of its fear as a target.
