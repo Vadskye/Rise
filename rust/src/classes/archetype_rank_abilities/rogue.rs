@@ -156,6 +156,41 @@ fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
     }
 }
 
+// Reasonable music terms to use:
+// * Aria
+// * Ballad
+// * Bridge
+// * Bravura
+// * Cabaletta
+// * Cadenza
+// * Canon
+// * Cantata
+// * Capriccio
+// * Chorus
+// * Coda
+// * Concerto
+// * Duet
+// * Elegy
+// * Etude
+// * Fantasia
+// * Finale
+// * Fugue
+// * Interlude
+// * March
+// * Medley
+// * Minuet
+// * Nocturne
+// * Overture
+// * Prelude
+// * Requiem
+// * Rhapsody
+// * Scherzo
+// * Sonata
+// * Song
+// * Threnody
+// * Toccata
+// * Waltz
+
 pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
@@ -211,51 +246,44 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         The attack gains a \plus2 accuracy bonus for each rank beyond 1.
                     \end{magicalsustainability}
 
-                    % +4 accuracy is 0.6 EA
+                    % Primed is 0.8 EA
                     \begin{magicalactiveability}{Boastful Bravura}
                         \abilityusagetime Standard action.
                         \rankline
-                        This ability affects all \glossterm{enemies} within a \largearea radius from you.
-                        You \glossterm{briefly} gain a \plus4 accuracy bonus against each target.
-                        You are also briefly \empowered.
+                        You are \glossterm{briefly} \primed.
 
                         \rankline
-                        \rank{3} The area increases to a \hugearea radius.
-                        \rank{5} The ability affects all enemies who can see or hear you, regardless of distance.
-                        % This is 0.9 EA from accuracy and 0.2 EA from empowered
-                        \rank{7} The accuracy bonus increases to \plus5.
+                        % +0.2 EA
+                        \rank{3} You are also \glossterm{briefly} \empowered.
+                        \rank{5} You are also \glossterm{briefly} immune to being \frightened.
+                        \rank{7} You are also \glossterm{briefly} immune to being \panicked.
                     \end{magicalactiveability}
 
-                    % Two allies fortified is 0.8 EA
+                    % Everyone fortified is 1 EA
                     \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
                         \abilityusagetime Standard action.
                         \rankline
-                        Choose up to two \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target is \fortified.
+                        All \glossterm{allies} who can see or hear your performance are \fortified.
                         Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
-                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
-                        % 1.2 EA
-                        \rank{5} You can choose a third ally.
-                        % 1.6 EA, bard nonsense
-                        \rank{7} You can choose a fourth ally.
+                        \rank{3} This ability also affects you.
+                        \rank{5} Each target is also immune to being \frightened.
+                        \rank{7} Each target is also immune to being \panicked.
                     \end{magicalsustainability}
 
-                    % Two allies shielded is 0.8 EA
+                    % Everyone shielded is 1 EA
                     \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
                         \abilityusagetime Standard action.
                         \rankline
-                        Choose up to two \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target is \shielded.
+                        All \glossterm{allies} who can see or hear your performance are \shielded.
                         Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
-                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
-                        % 1.2 EA
-                        \rank{5} You can choose a third ally.
-                        % 1.6 EA, bard nonsense
-                        \rank{7} You can choose a fourth ally.
+                        \rank{3} This ability also affects you.
+                        % TODO: awkward wording
+                        \rank{5} Each target is also immune to being \enraged by attacks.
+                        \rank{7} Each target is also immune to being \goaded.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Sustain} (minor)}
@@ -329,6 +357,22 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
 
                         \rank{2} The area increases to a \medarea radius.
+                    \end{magicalsustainability}
+
+                    % Any two focused is 1 EA
+                    \begin{magicalsustainability}{Focusing Fantasia}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard)}
+                        \abilityusagetime Standard action.
+                        \rankline
+                        Choose up to two \glossterm{allies} within \shortrange.
+                        For the duration of your performance, each target is \focused.
+
+                        \rankline
+                        % Full 1 EA
+                        \rank{3} You can choose any two allies who can see or hear you, regardless of distance.
+                        % Closer to 1.4 EA from 'all allies'
+                        \rank{5} You can choose a third ally.
+                        % Basically 1.4 EA, bard nonsense
+                        \rank{7} You can choose a fourth ally.
                     \end{magicalsustainability}
 
                     % Frightened by you is 1.7 EA, we can get away with it using limited scope
