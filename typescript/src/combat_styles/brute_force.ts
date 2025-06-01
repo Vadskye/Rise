@@ -331,24 +331,26 @@ export const bruteForce: CombatStyle = {
       tags: ['Swift'],
     },
 
+    // This is 0.7 EA + 0.3 EA, but if you're a maneuver martial you generally
+    // aren't doing 100% dice damage, so it can sneak in here at r3 instead of r4.
     {
       name: 'Steady Flex',
 
       effect: `
-        You are \\glossterm{briefly} \\braced and \\empowered.
+        You are \\glossterm{briefly} \\fortified and \\maximized.
       `,
-      rank: 5,
+      rank: 3,
       roles: ['focus'],
     },
 
     {
-      name: 'Compounding Might',
+      name: 'Devastating Flex',
 
       effect: `
-        If you are currently \\empowered, you are \\glossterm{briefly} \\maximized and \\fortified.
+        You \\glossterm{briefly} are \\maximized and deal 1d8 \\glossterm{extra damage} with \\glossterm{strikes}.
       `,
-      rank: 3,
-      roles: ['focus', 'combo'],
+      rank: 7,
+      roles: ['focus'],
     },
 
     {

@@ -8,10 +8,8 @@ export const heraldOfWar: CombatStyle = {
     'Demoralize foes and inspire allies with battlecries and a commanding presence.',
 
   maneuvers: [
-    // +4 accuracy is 0.6 EA. That leaves 0.8 EA of debuff. Brief enrage is 0.2 EA, so we
-    // have 3 ranks of +area, which gets us back to a r1 area. Then, for no reason at all,
-    // we increase to a r4 area because it's annoying to have different areas for the
-    // debuff and the buff.
+    // +4 accuracy is 0.6 EA. That leaves 1.4 * 0.4 = 0.6 EA of debuff.
+    // Brief enrage is 0.2 EA, so we have 2 ranks of +area, which gets us to a r3 area.
     {
       name: 'Boastful Battlecry',
 
@@ -25,6 +23,21 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 1,
+      roles: ['generator'],
+      tags: ['Auditory'],
+    },
+
+    // Enraged as a condition is 1.2 EA, and we only get 40% EA with a 0.6 EA buff, so we
+    // would need a base debuff rank of 3 EA. With limited scope and cheating, we can
+    // squeeze it into a r7 effect.
+    {
+      name: 'Boastful Battlecry+',
+
+      functionsLike: {
+        name: 'boastful battlecry',
+        exceptThat: 'each target is enraged as a \\glossterm{condition} instead of only briefly.',
+      },
+      rank: 7,
       roles: ['generator'],
       tags: ['Auditory'],
     },
@@ -278,25 +291,25 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory'],
     },
 
-    // Shielded is 0.4 EA and brief goad is 0.9 EA, so the minimum rank is 1. If we
-    // increase to rank 3, we can get a r3 area.
+    // Shielded is 0.3 EA and brief goad is 1.0 EA, so we need 1 / 0.7 = 1.4 EA of base
+    // debuff, which is a standard r1 debuff.
     {
       name: 'Challenge',
 
       attack: {
         hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
-          Make an attack vs. Mental against up to four creatures in \\shortrange.
+          Make an attack vs. Mental against up to two creatures in \\shortrange.
           Then, you are \\glossterm{briefly} \\glossterm{shielded}.
         `,
       },
-      rank: 3,
+      rank: 1,
       roles: ['generator', 'softener'],
       tags: ['Emotion'],
     },
 
-    // Braced is 0.8 EA, so we start from a rank 3 debuff. That's enough for brief + hp
-    // goad in a r3 area.
+    // Braced is 0.4 EA and brief goad + hp goad is 1.6 EA, so we need 1.6 / 0.6 = 2.7 EA
+    // of base debuff, which is r8. Limited scope lets us get that at r7.
     {
       name: 'Challenge+',
 
@@ -385,13 +398,13 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Mighty Roar',
 
-      // Empowered + fortified is 0.6 EA, so we get 0.8 EA of debuff and a starting area
-      // rank of -2. Brief deafened is 0.3 EA, so we get about two ranks of +area, which
-      // we round up to three ranks. That allows a r1 area. We only use a r0 area though.
+      // Empowered + fortified is 0.5 EA, so we get 1.4 / 2 = 0.7 EA of debuff.
+      // Brief deafened is 0.3 EA, so we get two ranks of +area, which gets us to area
+      // rank 3.
       attack: {
         hit: `Each target is \\glossterm{briefly} \\deafened.`,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
         `,
       },
@@ -403,14 +416,13 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Mighty Roar+',
 
-      // Empowered + fortified is 0.6 EA, so we get 1.6 EA of debuff and a starting area
-      // rank of 2. Deafened as a condition is 1.2 EA so we get two ranks of +area, which
-      // brings us to an area rank of 4.
+      // To get deafened as a condition, we need 2.4 EA, which is r6.
+      // Limited scope allows r5, though we cheat to keep r3 area.
       attack: {
         crit: CONDITION_CRIT,
         hit: `Each target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
         `,
       },
