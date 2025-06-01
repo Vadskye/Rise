@@ -189,7 +189,6 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Two-Weapon Rhythm',
 
-      // Normally would need -1 accuracy; instead, link the buff to hitting
       effect: `
         Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
         \\hit You are \\glossterm{briefly} \\focused.
@@ -251,21 +250,23 @@ export const ebbAndFlow: CombatStyle = {
       roles: ['focus'],
     },
 
+    // 0.7 + 0.3 = 1.0
     {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\steeled.
+        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
     },
 
+    // 0.7 + 0.3 + 0.3 = 1.3
     {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\steeled.
+        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
         Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
       `,
       rank: 7,
