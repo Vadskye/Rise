@@ -310,42 +310,6 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: 'Discordant Song',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target is \\debuff{enraged} as a \\glossterm{condition}.
-          Every round, it must spend a \\glossterm{standard action} to make an attack.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-        `,
-      },
-      rank: 2,
-      scaling: 'accuracy',
-      tags: ['Compulsion'],
-    },
-
-    {
-      name: 'Discordant Symphony',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target is \\debuff{enraged} as a \\glossterm{condition}.
-          Every round, it must spend a \\glossterm{standard action} to make an attack.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Compulsion'],
-    },
-
-    {
       name: 'Cause Fear',
 
       attack: {
@@ -471,24 +435,6 @@ export const enchantment: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Emotion'],
       type: 'Sustain (standard)',
-    },
-
-    {
-      name: 'Enrage',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\debuff{enraged} as a \\glossterm{condition}.
-          Every round, it must spend a \\glossterm{standard action} to make an attack.
-        `,
-        targeting: `
-          Make an attack vs. Mental with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
     },
 
     {

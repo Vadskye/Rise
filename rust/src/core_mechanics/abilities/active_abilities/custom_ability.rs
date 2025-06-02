@@ -102,25 +102,6 @@ impl CustomAbility {
         }.plus_accuracy(rank - 1)
     }
 
-    pub fn enrage(rank: i32) -> Self {
-        Self {
-            ability_type: AbilityType::Normal,
-            effect: format!(
-                "
-                    The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
-                    \\hit The target is \\enraged as a \\glossterm<condition>.
-                    Every round, it must spend a \\glossterm<standard action> to make an attack.
-                ",
-                // +2 base modifier, plus normal rank scaling
-                accuracy_modifier = 2 + (rank - 1),
-            ),
-            is_magical: true,
-            name: "Enrage".to_string(),
-            tags: vec![AbilityTag::Emotion],
-            usage_time: UsageTime::Standard,
-        }
-    }
-
     pub fn shove() -> Self {
         Self {
             effect: format!(
