@@ -1,5 +1,4 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT } from './constants';
 
 export const summoning: MysticSphere = {
   name: 'Summoning',
@@ -530,29 +529,6 @@ export const summoning: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Manifestation'],
       type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Cloud of Mosquitoes',
-
-      // Enraged as a condition is r0, so we can use a r4 area.
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target is \\enraged as a \\glossterm{condition}.
-        `,
-        targeting: `
-          A swarm of mosquitoes appears in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-          The mosquitoes disappear shortly after they reappear, so they do not block movement and attacking them is pointless, but they last long enough to annoy your enemies.
-
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
-          You gain a stacking +1 accuracy bonus with this spell each time that you sustain it, to a maximum of +4.
-        `,
-      },
-      rank: 2,
-      roles: ['flash', 'hazard'],
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (standard)'],
     },
 
     {

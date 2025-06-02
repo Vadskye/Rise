@@ -602,24 +602,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Overcharge',
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target is \\debuff{enraged} as a \\glossterm{condition}.
-          Every round, it must spend a \\glossterm{standard action} to make an attack.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          This attack \\glossterm{chains} once.
-          You gain a +2 accuracy bonus against \\glossterm{metallic} targets.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-    },
-
-    {
       name: 'Short-Circuit',
       attack: {
         crit: CONDITION_CRIT,
