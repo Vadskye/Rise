@@ -141,22 +141,6 @@ impl StrikeAbility {
         }
     }
 
-    pub fn enraging_strike(rank: i32, weapon: Weapon) -> Self {
-        Self {
-            effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                \hit $fullweapondamage.
-                If the target loses hit points, it becomes \enraged as a \glossterm{condition}.
-                Every round, it must spend a \glossterm{standard action} to make an attack.
-            "
-            .to_string(),
-            name: strike_prefix("Enraging", &weapon),
-            weapon,
-            ..Default::default()
-        }
-        .plus_accuracy(rank - 1)
-    }
-
     // 2x at rank 5, 3x at rank 7
     pub fn generic_weapon_damage(rank: i32, weapon: Weapon) -> Self {
         let damage_multiplier;

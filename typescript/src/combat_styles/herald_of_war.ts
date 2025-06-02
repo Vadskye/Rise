@@ -2,48 +2,39 @@ import { CombatStyle } from '.';
 // TODO: move this to a more generally shared location
 import { CONDITION_CRIT } from '../mystic_spheres/constants';
 
+// Naming conventions:
+// "Shout" is directed, so single-target or cone
+// "Roar" is omnidirectional, so radius
 export const heraldOfWar: CombatStyle = {
   name: 'Herald of War',
   shortDescription:
     'Demoralize foes and inspire allies with battlecries and a commanding presence.',
 
   maneuvers: [
-    // +4 accuracy is 0.6 EA. That leaves 1.4 * 0.4 = 0.6 EA of debuff.
-    // Brief enrage is 0.2 EA, so we have 2 ranks of +area, which gets us to a r3 area.
     {
-      name: 'Boastful Battlecry',
+      name: 'Cry of Rage',
 
-      attack: {
-        hit: `
-          Each target is \\glossterm{briefly} \\enraged.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-          Whether you hit or miss, you \\glossterm{briefly} gain a +4 accuracy bonus with \\glossterm{strikes} against each target.
-        `,
-      },
+      effect: `
+        You are \\glossterm{briefly} \\primed and \\enraged.
+      `,
       rank: 1,
-      roles: ['generator'],
-      tags: ['Auditory'],
-    },
-
-    // Enraged as a condition is 1.2 EA, and we only get 40% EA with a 0.6 EA buff, so we
-    // would need a base debuff rank of 3 EA. With limited scope and cheating, we can
-    // squeeze it into a r7 effect.
-    {
-      name: 'Boastful Battlecry+',
-
-      functionsLike: {
-        name: 'boastful battlecry',
-        exceptThat: 'each target is enraged as a \\glossterm{condition} instead of only briefly.',
-      },
-      rank: 7,
-      roles: ['generator'],
+      roles: ['focus'],
       tags: ['Auditory'],
     },
 
     {
-      name: 'Stunning Roar',
+      name: 'Cry of Rage+',
+
+      effect: `
+        You are \\glossterm{briefly} \\primed, \\empowered, and \\enraged.
+      `,
+      rank: 5,
+      roles: ['focus'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Stunning Shout',
 
       attack: {
         hit: `Each target is \\glossterm{briefly} \\stunned.`,
@@ -57,10 +48,10 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Stunning Roar+',
+      name: 'Stunning Shout+',
 
-      // Brief + HP stun is worth 2 EA, so rank 4. That gives room to scale to a huge
-      // radius.
+      // Brief + HP stun is worth 2 EA, so rank 4. That gives +1r for area rank, for a
+      // total of ar6. But we only use ar5 here...
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -68,7 +59,7 @@ export const heraldOfWar: CombatStyle = {
           If it has no remaining \\glossterm{damage resistance}, it is stunned as a \\glossterm{condition} instead.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\hugearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
         `,
       },
       rank: 5,
@@ -92,10 +83,9 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Goading Roar',
+      name: 'Goading Shout',
 
-      // baseline for a brief + HP goad is r1. We can spend two ranks on area to get a r5
-      // area.
+      // Brief + HP goad is 1.6 EA, or r3.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -103,7 +93,7 @@ export const heraldOfWar: CombatStyle = {
           If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
@@ -112,51 +102,20 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
-      name: 'Goading Roar+',
+      name: 'Goading Shout+',
 
+      // Condition goad is 3 EA, or r9. If we drop to limited scope and then cheat for no
+      // reason, we can get in at r7.
       attack: {
         crit: CONDITION_CRIT,
         hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
         `,
       },
       tags: ['Auditory', 'Emotion'],
       roles: ['flash'],
       rank: 7,
-    },
-
-    {
-      name: 'Provoking Roar',
-
-      attack: {
-        hit: `
-          1d4 damage and each target is \\glossterm{briefly} \\enraged.
-        `,
-        targeting: `
-          Make an attack vs. Mental against everything in a \\medarea cone from you.
-        `,
-      },
-      rank: 1,
-      roles: ['flash'],
-      tags: ['Auditory', 'Emotion'],
-    },
-
-    {
-      name: 'Enraging Roar',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target is \\enraged as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against everything a \\largearea cone from you.
-        `,
-      },
-      roles: ['flash'],
-      rank: 3,
-      tags: ['Auditory', 'Emotion'],
     },
 
     {

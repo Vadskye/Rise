@@ -234,18 +234,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     % Bards don't pay any EA cost for ally buffs
 
-                    % enraged as a condition is 1.2 EA, so we can get r3 area
-                    \begin{magicalsustainability}{Ballad of Belligerence}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
-                        \rankline
-                        Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-                        \hit For the duration of your performance, each target is \enraged.
-                        Every round, it must spend a \glossterm{standard action} to make an attack.
-
-                        \rankline
-                        The attack gains a \plus2 accuracy bonus for each rank beyond 1.
-                    \end{magicalsustainability}
-
                     % Primed is 0.8 EA
                     \begin{magicalactiveability}{Boastful Bravura}
                         \abilityusagetime Standard action.
@@ -282,8 +270,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         \rank{3} This ability also affects you.
                         % TODO: awkward wording
-                        \rank{5} Each target is also immune to being \enraged by attacks.
-                        \rank{7} Each target is also immune to being \goaded.
+                        \rank{5} Each target is also immune to being \goaded.
+                        \rank{7} Each target is also immune to being \partiallyunaware.
                     \end{magicalsustainability}
 
                     \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Sustain} (minor)}

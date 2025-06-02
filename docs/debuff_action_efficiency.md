@@ -133,11 +133,7 @@ In practice, it's a little lower than this, because dazzled doesn't affect AOE a
 
 ### Deafened: 0.3
 
-Deafened is basically the same as dazzled, except that the restriction is "spell with verbal components" rather than "targeted ability". It gets the same rare circumstance modifier as enraged, so call it 0.3.
-
-### Enraged: 0.2
-
-It's very hard to calculate the effectiveness of enrage. In a typical fight, enrage is basically worthless, but we can't penalize it too much for being rarely useful or else it would be overpowered whenever it actually mattered. Assume that an enraged enemy that is unable to use its preferred action because it is enraged has a replacement action that is 50% effective, and it would prefer to use that impossible action 10% of the time. That means enrage negates 5% of enemy actions, which is worth 0.2 effective actions to the party.
+Deafened is basically the same as dazzled, except that the restriction is "spell with verbal components" rather than "targeted ability". That's less than half as common, so call it 0.3 EA.
 
 ### Frightened by you: 0.8
 
@@ -273,6 +269,10 @@ A braced character gains a +2 bonus to all defenses.
 ### Empowered
 An empowered character rolls damage twice and keeps the higher result.
 
+### Enraged
+An enraged character must spend a standard action each round to attack.
+Enraged is never inflicted on enemies as a debuff, but can be inflicted on characters as a downside along with other benefits.
+
 ### Focused
 A focused character rolls attacks rolls twice and keeps the higher result.
 
@@ -343,6 +343,8 @@ Applies 100% of the time
 ### Empowered: 0.2
 
 Empowered is roughly 20% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
+
+### Enraged: -0.2
 
 ### Extra damage: 0.4
 
@@ -525,9 +527,6 @@ Partially unaware is worth 2.2 effective actions using the same logic as being s
 ### Deafened: 1.2
 Assume this is 10% action denial.
 
-### Enraged: 1.2
-Assume this is 10% action denial.
-
 ### Frightened by you: 2.1
 -2 accuracy applies 33% of the time, which is 1.3 EA.
 
@@ -630,7 +629,6 @@ By EA:
   Confused           & 2.8   & 2.9          & 7.2       \\
   Dazzled            & 0.6   & 0.7          & 1.8       \\
   Deafened           & 0.3   & 0.5          & 1.2       \\
-  Enraged            & 0.2   & 0.5          & 1.2       \\
   Frightened by you  & 0.8   & 0.8          & 2.1       \\
   Frightened by ally & 1.1   & 1.1          & 2.8       \\
   Frightened by all  & 1.7   & 1.9          & 4.8       \\
@@ -666,7 +664,6 @@ By rank:
   Confused           & 8     & 9            & inf       \\
   Dazzled            & 2d    & 3d           & 3         \\
   Deafened           & 1d    & 2d           & 0         \\
-  Enraged            & 0d    & 2d           & 0         \\
   Frightened by you  & 3d    & 3d           & 5         \\
   Frightened by ally & 0     & 0            & 8         \\
   Frightened by all  & 3     & 4            & inf       \\
@@ -749,7 +746,6 @@ Essentially, -4 accuracy at rank X is equivalent to a standard effect of rank X+
   * Goaded if in HP, +1 accuracy
   * Prone, +2 accuracy
   * Stunned as a HP condition, +2 accuracy
-  * 1 EA of damage, briefly enraged
   * 1 EA of damage, briefly deafened
   * Briefly confused, -3 accuracy
 * Rank 2 (1.6 EA):
@@ -1132,6 +1128,8 @@ Every 0.1 EA of buff removes 10% of the EA from the debuff, but does not reduce 
   * 0.3 EA buff, 2.0 * 0.7 = 1.4 EA debuff, r4 area
 
 Much like with damage spells, you start with a standard debuff spell. For every rank you drop the debuff by, including area, you gain 0.2 EA of buff, to a maximum of 0.8 EA. There should never be buff + debuff + damage effects, because that's just too much going on in one spell.
+
+Note that this is somewhat unfair, since you normally get 0.8 EA of buff at r1 and 1.2 EA of buff at r7. We could use a more nuanced calculation, such as saying that a r7 effect with 0.4 EA of buff gets 2/3 debuff effectiveness instead of 0.6 debuff effectiveness. However, this isn't really worth the complexity, and debuffs already have strong scaling with level, so a simpler approximation is fine.
 
 ### Pure buff effects
 
