@@ -228,10 +228,10 @@ export const mobileHunter: CombatStyle = {
       name: 'Fearsome Pounce',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike}.
+        Move up to half your movement speed and make a melee \\glossterm{strike} that deals double damage.
         \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\frightened by you.
       `,
-      rank: 3,
+      rank: 5,
       tags: ['Emotion'],
       roles: ['dive', 'softener'],
     },

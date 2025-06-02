@@ -121,6 +121,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Roar',
 
+      // Brief + HP frighten is 1.2 EA, so we can spend one EA on area for ar3.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -139,8 +140,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Roar+',
 
-      // Frightened as a condition is theoretically r4, not sure why this is r5. No room
-      // to increase area because we'd need to spend two ranks on it
+      // Frightened as a condition is r5.
       attack: {
         crit: CONDITION_CRIT,
         hit: `Each target is \\frightened by you as a \\glossterm{condition}.`,
@@ -291,11 +291,12 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Blow',
 
+      // Brief frighten is 0.8 EA
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         \\hit If your attack result also hits the target's Mental defense, it becomes \\glossterm{briefly} \\frightened by you.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['softener'],
       tags: ['Emotion'],
     },
@@ -303,6 +304,7 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Fearsome Blow+',
 
+      // Condition frighten is 1.7 EA
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
         \\hit If your attack result also hits the target's Mental defense, it becomes \\frightened by you as a \\glossterm{condition}.
@@ -312,8 +314,8 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Emotion'],
     },
 
-    // The rank here is pretty ambiguous. The baseline for a small radius enemies-only
-    // brief frighten would be r1. Making it conditional on a strike is maybe fine? This
+    // The rank here is pretty ambiguous. Brief frighten is normally 0.8 EA, so we have
+    // two ranks to spend on area. Making it conditional on a strike is maybe fine? This
     // can't frighten and deal damage to the same target, so it's pretty situational.
     {
       name: 'Inspire Awe',
