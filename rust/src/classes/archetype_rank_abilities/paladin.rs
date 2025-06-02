@@ -427,7 +427,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                Whenever you miss a creature with a \glossterm{strike}, you become \glossterm{briefly} \focused.
+                Whenever you miss a creature with a \glossterm{strike}, you \glossterm{briefly} reroll your attack rolls against that creature once and keep the higher result.
+                This does not affect your attack rolls against other creatures.
             ",
             modifiers: None,
         },
