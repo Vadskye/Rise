@@ -114,12 +114,13 @@ export const revelation: MysticSphere = {
     {
       name: 'Learn from Failure',
 
+      // Any two focused is 1 EA. Drop to r2 for the condition.
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        If the target missed a creature with an attack last round, they become \\focused and gain a \\plus1 accuracy bonus this round.
-        If you target yourself, this effect lasts \\glossterm{briefly} instead of only this round.
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target that missed a creature with an attack becomes \\focused this round.
+        If you target yourself, this effect lasts \\glossterm{briefly} on you instead of only this round.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['boon'],
       tags: [],
     },
@@ -129,23 +130,22 @@ export const revelation: MysticSphere = {
 
       effect: `
         You become \\glossterm{briefly} \\braced.
-        Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+        Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['focus'],
-      tags: [],
+      tags: ['Subtle', 'Swift'],
     },
 
     {
       name: 'Foresee Distant Safety',
 
       effect: `
-        At the end of the next round, you become \\braced during the following round.
-        If you took no damage that round, you also become \\steeled during the following round.
+        At the start of the next round, you become \\glossterm{briefly} \\braced.
       `,
       rank: 4,
       roles: ['focus'],
-      tags: [],
+      tags: ['Subtle'],
     },
 
     {
@@ -154,9 +154,9 @@ export const revelation: MysticSphere = {
       effect: `
         You become \\glossterm{briefly} \\primed.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
-      tags: [],
+      tags: ['Subtle'],
     },
 
     {
@@ -164,22 +164,19 @@ export const revelation: MysticSphere = {
 
       effect: `
         At the end of the next round, you become \\primed during the following round.
-        If you dealt no damage that round, you also become \\glossterm{empowered} during the following round.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['focus'],
-      tags: [],
+      tags: ['Subtle'],
     },
 
     {
-      name: 'True Strike',
+      name: 'Reveal Victory',
 
-      // Ally focus is 0.6 EA, self focus + hone is 0.8 EA. Increasing ally range makes
-      // the two outcomes more similar.
+      // Ally focus and +1 accuracy is 0.8 EA.
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\longrange.
-        The target becomes \\focused this round.
-        If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target becomes \\focused and gains a \\plus1 accuracy bonus this round.
       `,
       rank: 1,
       roles: ['boon'],
@@ -187,45 +184,29 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Mighty True Strike',
+      name: 'Empowered Reveal Victory',
 
-      // Ally focus + empower is 0.9 EA, self focus + empower + hone is 1 EA
+      // Ally focus and +2 accuracy is 1.1 EA.
       effect: `
-        Choose yourself or one \\glossterm{ally} within \\longrange.
-        The target becomes \\focused and \\empowered this round.
-        If you target yourself, the effect lasts \\glossterm{briefly} instead of only this round, and you also become briefly \\honed.
-      `,
-      rank: 4,
-      roles: ['boon'],
-      tags: [],
-    },
-
-    {
-      name: 'Enduring True Strike',
-
-      cost: "One \\glossterm{fatigue level}.",
-      // Ally double focus is 1.2 EA, self triple focus is 1.2 EA
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\longrange.
-        The target becomes \\glossterm{briefly} \\focused.
-        If you target yourself, the effect lasts for an additional round.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target becomes \\focused and gains a \\plus2 accuracy bonus this round.
       `,
       rank: 6,
       roles: ['boon'],
       tags: [],
     },
 
-    // Brief frighten is 0.6 EA. If we spend two ranks on area, we get a r0 spell with a
-    // r2 area. That's enough for 0.4 EA of buff.
+    // Focus is 0.4 EA, so r1 gives 0.8 EA of debuff, which is just enough for brief
+    // frighten. We can increase to r2 to get a r3 area.
     {
-      name: 'Visions of Focusing Fear',
+      name: 'Visions of Certain Doom',
 
       attack: {
         hit: `
           Each target is \\glossterm{briefly} \\frightened of you.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\focused.
         `,
       },
@@ -238,18 +219,14 @@ export const revelation: MysticSphere = {
       tags: ['Emotion', 'Visual'],
     },
 
-    // Brief panic is r6. Drop to limited scope for r5, then 2 ranks of buff.
+    // Brief focus is 0.4 EA. To get brief frightened by all, we would need 1.7 / 0.6 = 2.8
+    // EA, which we can get at r7 with limited scope.
     {
-      name: 'Visions of Sharp Panic',
+      name: 'Visions of Omnipresent Doom',
 
-      attack: {
-        hit: `
-          Each target is \\glossterm{briefly} \\panicked by you.
-        `,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          Then, you are \\glossterm{briefly} \\honed.
-        `,
+      functionsLike: {
+        name: 'visions of certain doom',
+        exceptThat: 'each target is frightened of all creatures, not just you.',
       },
       rank: 7,
       roles: ['generator'],
@@ -530,7 +507,7 @@ export const revelation: MysticSphere = {
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
         If undisturbed, the sensor floats in the air in its position.
-        As a \\glossterm{move action}, you can move the sensor up to 30 feet in any direction, even vertically.
+        As a \\glossterm{movement}, you can move the sensor up to 30 feet in any direction, even vertically.
         At the end of each round, if the sensor is not within 120 feet from you, it is destroyed.
         This distance check ignores \\glossterm{line of sight} and \\glossterm{line of effect}.
       `,
