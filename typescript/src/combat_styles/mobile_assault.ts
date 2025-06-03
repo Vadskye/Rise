@@ -210,9 +210,9 @@ export const mobileHunter: CombatStyle = {
       name: 'Unbalancing Backstep',
 
       effect: `
-        Choose a creature you can see.
+        You are \\braced this round.
+        In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        In addition, you are \\shielded this round.
         Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
