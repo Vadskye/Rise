@@ -16,6 +16,7 @@ export const thaumaturgy: MysticSphere = {
         This does not provide any information about passive magical effects, such as attuned spells.
         It also does not provide any information about the number or location of those magical effects.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `
           You also learn if any passive magical effects existed in the area.
@@ -34,6 +35,7 @@ export const thaumaturgy: MysticSphere = {
         You discern whether one creature within \\shortrange has any \\magical abilities.
         This does not give you any information about the nature of those magical abilities.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `You can also discern whether the target has the ability to cast spells of any kind.`,
         4: `You can also discern which \\glossterm{magic sources} the target has access to, if they have access to any.`,
@@ -60,6 +62,7 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting damage unavoidably.
       `,
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -68,7 +71,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
         `,
         missGlance: true,
         targeting: `
@@ -79,7 +82,8 @@ export const thaumaturgy: MysticSphere = {
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 5,
+      rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -89,7 +93,7 @@ export const thaumaturgy: MysticSphere = {
       // -1 range for miss effect and cover/concealment effect
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
         `,
         missGlance: true,
         targeting: `
@@ -101,9 +105,13 @@ export const thaumaturgy: MysticSphere = {
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting massive damage unavoidably.
       `,
       rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
+    // treat rank as 1 lower for determining area, but not damage. Ignoring cover and miss
+    // chances is less exciting for AOE than single target, since single target also gets
+    // the half damage on miss effect.
     {
       name: 'Magic Missile Storm',
 
