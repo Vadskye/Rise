@@ -158,11 +158,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Desperate Kindling',
 
       // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
-      // self-targeting.
+      // self-targeting, and R-1 from the fatigue level.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -179,11 +179,11 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Desperate Pyre',
 
       // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
-      // self-targeting.
+      // self-targeting, and R-1 from the fatigue level.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
@@ -201,6 +201,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Baseline for melee range is dr3, which is 4.5 + 1dpp.
       // Double dr1 is 9 + 1dpp.
+      // This gets -1dr for being a single-target Reflex attack.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -210,10 +211,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Fortitude against something you \\glossterm{touch}.
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['burn'],
       scaling: 'accuracy',
     },
@@ -230,34 +231,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Fortitude against something you \\glossterm{touch}.
+          Make an attack vs. Reflex against something you \\glossterm{touch}.
         `,
       },
-      rank: 4,
-      roles: ['burn'],
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Everburning Grasp',
-
-      // For some reason double dr7 isn't that exciting compared to dr9 so we give it an
-      // extra bonus.
-      attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `
-          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankseven again.
-          % TODO: wording
-          If the target loses hit points from either instance of this damage, it continues to burn for one additional round, taking \\damagerankseven again during your subsequent action.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Fortitude against something you \\glossterm{touch}.
-        `,
-      },
-      rank: 7,
+      rank: 5,
       roles: ['burn'],
       scaling: 'accuracy',
     },
@@ -412,6 +389,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Ignition',
 
+      // -1dr for being single-target Reflex
       attack: {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
@@ -423,10 +401,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
         `,
         targeting: `
-          Make an attack vs. Fortitude and Reflex against one creature within \\shortrange.
+          Make an attack vs. Reflex against one creature within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['burn'],
       scaling: 'accuracy',
     },
@@ -492,14 +470,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Eyes of Flame',
 
-      // +1 effective rank for attune with cooldown
+      // +1 effective rank for attune with cooldown, -1dr for single-target Reflex
       attack: {
         hit: `
-          \\damageranktwo, and the target is \\glossterm{briefly} \\dazzled.
+          \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Fortitude against a creature within \\shortrange of you.
+          When you do, make an attack vs. Reflex against a creature within \\shortrange of you.
           After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
         `,
       },
@@ -522,27 +500,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       scaling: 'accuracy',
       tags: ['Visual'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Flaming Spheres',
-
-      attack: {
-        crit: MULTIHIT_CRIT,
-        hit: `\\damagerankone immediately, and again during your next action.`,
-        targeting: `
-          When you cast this spell, a cluster of flaming spheres appears over your head.
-          Each sphere is approximately one foot in diameter.
-          As a \\glossterm{minor action}, you can fire an orb at a creature or object within \\shortrange.
-          When you do, make an attack vs. Armor with a -2 accuracy penalty against that target.
-          After the sphere deals damage, it disappears and another sphere appears in the cluster.
-        `,
-      },
-
-      rank: 4,
-      roles: ['attune'],
-      scaling: 'accuracy',
-      type: 'Attune (deep)',
     },
 
     {
@@ -571,8 +528,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature that you are either grappling or are \\grappled by.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Reflex against them.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },
@@ -612,7 +569,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
-          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Fortitude against everything in the area.
+          As a \\glossterm{minor action}, you can intensify the flames to make an attack vs. Reflex against everything in the area.
         `,
       },
       rank: 4,
