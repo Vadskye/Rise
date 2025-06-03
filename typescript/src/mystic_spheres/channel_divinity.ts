@@ -16,7 +16,7 @@ export const channelDivinity: MysticSphere = {
         If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
         This can allow you to identify other followers of your deity or alignment with certainty.
 
-        This spell lasts until you use it again or until you \\glossterm{dismiss} it.
+        This ability lasts until you \glossterm{dismiss} it or until you use it again.
       `,
       name: 'Testament',
       scaling: {

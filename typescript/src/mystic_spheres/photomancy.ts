@@ -18,7 +18,7 @@ export const photomancy: MysticSphere = {
           You cannot make significant changes to your facial structure, equipment, and so on.
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
-          This ability lasts until you use it again or until you \\glossterm{dismiss} it.
+          This ability lasts until you \glossterm{dismiss} it or until you use it again.
         `,
         name: 'change appearance',
       },
@@ -33,7 +33,7 @@ export const photomancy: MysticSphere = {
         It creates \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
         You can freely choose the color of the light, but it is unchanging once created.
 
-        This effect lasts until you use it again or until you \\glossterm{dismiss} it.
+        This ability lasts until you \glossterm{dismiss} it or until you use it again.
       `,
       scaling: {
         2: `The maximum radius of bright illumination increases to 30 feet.`,

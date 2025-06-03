@@ -1816,19 +1816,16 @@ impl Class {
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
                         \magicaldomainability{Aspect}
-                        \begin{magicalsustainability}{Divine Protection}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \begin{magicalactiveability}{Divine Protection}{\abilitytag{Swift}}
                             \abilityusagetime Standard action.
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             It gains a \plus1 bonus to all defenses while it is adjacent to you.
+                            This ability lasts until you \glossterm{dismiss} it or until you use it again.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot be affected by other creatures using this ability on you.
-
-                            Choose an \glossterm{ally} you \glossterm{touch}.
-                            Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
-                            You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
-                        \end{magicalsustainability}
+                        \end{magicalactiveability}
                         \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Influence archetype.
