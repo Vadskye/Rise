@@ -2,7 +2,6 @@ import { MysticSphere } from '.';
 
 // Normally, curses would be +0.4 EA, because immunity to condition removal is powerful.
 // This sphere is limited and has few attacks, so it gets curses at only +0.2 EA.
-// Likewise, ally buff are normally 1.5x EA, but this sphere gets them at only 1.25x EA.
 export const prayer: MysticSphere = {
   name: 'Prayer',
   shortDescription: 'Grant divine blessings to aid allies and improve combat prowess.',
@@ -97,10 +96,10 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Aggression',
 
-      // 0.6 EA, or 0.8 EA on allies
+      // Ally focused + empowered is 0.9 EA
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\focused and \\empowered this round.
+        The target is \\focused, \\empowered, and \\enraged this round.
       `,
       rank: 1,
       roles: ['boon'],
@@ -110,9 +109,9 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Precision',
 
-      // 0.8 EA, or 1 EA on allies
+      // "any two" is 1.0 EA
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
+        Choose up to two \\glossterm{allies} within \\medrange.
         Each target is \\focused this round.
       `,
       rank: 4,
@@ -123,14 +122,14 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Tempered Steel',
 
-      // 0.6 EA, or 0.9 EA on an ally. Say it's r2 because these don't have obvious
-      // synergy, but don't work against each other either.
+      // Steeled + empowered any two is 1 EA; one rank early for not hitting self, which
+      // is a more meaningful cost on a defensive effect
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target is \\empowered and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
+        Choose up to two \\glossterm{allies} within \\medrange.
+        Each target is \\empowered and \\steeled this round.
+        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -138,19 +137,19 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Deadly Fortune',
 
-      // 0.8 EA, or 1 EA on allies. But what are the odds that both allies get full
-      // value from honed? Seems closer to 0.9 EA.
+      // Any two honed is 1 EA, though it seems unlikely that two party members can gain
+      // the full benefit from honed which has a high accuracy requirement, so r3 is
+      // reasonable.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
         Each target is \\honed this round.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['boon'],
       tags: [],
     },
 
-    // 0.8 EA, or 1 EA on an ally. These have some slight antisynergy because you are less
-    // likely to be crit while fortified, so call it r3.
+    // Steeled + fortified is 0.8 EA on an ally
     {
       name: 'Boon of Living Steel',
 
@@ -159,7 +158,7 @@ export const prayer: MysticSphere = {
         The target is \\fortified and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -167,14 +166,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Invulnerability',
 
-      // 1 EA, or 1.3 EA on an ally
-      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot use this ability again.',
+      // 1 EA on an ally
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
         The target takes half damage from all sources this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects all damage each target takes during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -182,28 +180,43 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Annihilation',
 
-      // 1.5 EA, or 1.9 EA on an ally. Losing the next round is maybe -0.5 EA?
-      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot use this ability again.',
+      // 0.6 from focused, 1.0 from maximized, for 1.6 total. Losing the next round is
+      // maybe -0.5 EA?
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\primed and \\maximized this round.
-        During the next round, it are unable to take \\glossterm{standard actions}.
+        The target is \\focused and \\maximized this round.
+        After this round, it must spend its next available standard action doing nothing.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['boon'],
       tags: [],
     },
 
     {
-      name: 'Boon of Shielding',
+      name: 'Boon of Protection',
 
-      // 0.8 EA, or 1 EA on allies
+      // Choosing between shielded and fortified is almost as good as braced, which is 1
+      // EA for any two. But you can't target yourself with this.
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round.
+        Choose up to two \\glossterm{allies} within \\medrange.
+        Each target is either \\fortified or \\shielded this round.
+        You must make the same choice for each target.
         Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
-      rank: 3,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Mass Boon of Protection',
+
+      // All braced is 1.3 EA, but you can't target yourself with this.
+      functionsLike: {
+        name: 'boon of protection',
+        exceptThat: 'you can target up to five \\glossterm{allies}.',
+      },
+      rank: 5,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -382,12 +395,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
+      // Any two shielded is 0.5 EA, so we reduce the healing to dr2.
+      // TODO: more clear guidelines on how healing interacts with buffs.
       cost: 'One \\glossterm{fatigue level} from each target.',
       // dr3
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target regains 1d8 \\glossterm{damage resistance} +1 per \\glossterm{power}.
-        In addition, it gains a +1 bonus to all \\glossterm{defenses} this round.
+        Each target is \\shielded this round and regains 1d4 \\glossterm{damage resistance} +1 per \\glossterm{power}.
       `,
       rank: 2,
       roles: ['healing'],
@@ -401,7 +415,7 @@ export const prayer: MysticSphere = {
       // dr6
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to 1d8 plus 1d8 per 2 power.',
+        exceptThat: 'the recovery increases to 1d6 plus 1d6 per 2 power.',
       },
       rank: 5,
       roles: ['healing'],
@@ -522,9 +536,9 @@ export const prayer: MysticSphere = {
     {
       name: 'Nemesis Curse',
 
-      // Frightened and goaded together are a simple 29% action denial, or 3.5 EA, plus
-      // the 0.8 EA from Mental defense. That's 4.3 EA, or 1.7 EA as a HP condition. +0.2
-      // EA for curse and 0.4 EA for prebuff to get 2.3 EA. -1r for limited scope.
+      // Frightened and goaded together are a simple 33% action denial, or 4 EA, plus
+      // the 0.8 EA from Mental defense. That's 4.8 EA, or 1.9 EA as a HP condition. +0.2
+      // EA for curse and 0.4 EA for prebuff to get 2.5 EA. -1r for limited scope.
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
@@ -535,14 +549,14 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against up to two creatures in \\medrange.
         `,
       },
-      rank: 5,
+      rank: 6,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Emotion'],
     },
 
-    // Frightened by all HP condition is 1.7 EA, +0.2 EA for curse, -0.4 EA for damage
-    // requirement, +0.4 EA for prebuff = 1.9 EA. -1r for limited scope.
+    // Frightened by all HP condition is 1.9 EA, +0.2 EA for curse, -0.4 EA for damage
+    // requirement, +0.4 EA for prebuff = 2.1 EA. -1r for limited scope.
     {
       name: 'Curse of Anxiety',
 
@@ -557,7 +571,7 @@ export const prayer: MysticSphere = {
           Make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Curse', 'Emotion'],
