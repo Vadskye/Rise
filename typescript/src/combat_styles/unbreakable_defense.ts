@@ -87,6 +87,7 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Brace for Impact',
 
+      // 1.1 EA
       effect: `
         You are \\trait{impervious} to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
@@ -99,12 +100,12 @@ export const unbreakableDefense: CombatStyle = {
     {
       name: 'Weather the Storm',
 
-      // 1 EA is very slightly above rate for r3
+      // 0.7 EA
       effect: `
         You take half damage from all sources this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['turtle'],
       tags: ['Swift'],
     },
@@ -113,11 +114,11 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Shield Bash',
 
       effect: `
-        Make a melee \\glossterm{strike} using a shield.
-        In addition, you are \\shielded this round.
-        The defense bonus is a \\abilitytag{Swift} effect, but not the strike.
+        You are \\shielded this round.
+        Make a melee \\glossterm{strike} with a -2 accuracy penalty using a shield.
+        The shielding is a \\atSwift effect, but the strike is not.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['turtle'],
       tags: ['Swift (see text)'],
     },

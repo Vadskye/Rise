@@ -320,7 +320,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You are \\shielded this round.
-        Make a \\glossterm{strike} with a -1 accuracy penalty.
+        Make a \\glossterm{strike}.
         The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 3,
@@ -333,7 +333,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         You are \\shielded this round.
-        Make two \\glossterm{strikes} with a +1 accuracy bonus.
+        Make three \\glossterm{strikes} with a -2 accuracy penalty.
         The shielding is a \\atSwift effect, but the strikes are not.
       `,
       rank: 7,
