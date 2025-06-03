@@ -263,7 +263,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Whenever you cast a spell, you may use a Small or larger living plant within \medrange of you as a \glossterm{targeting proxy}.
+                Whenever you cast a spell, you may use a Small or larger living plant within \shortrange of you as a \glossterm{targeting proxy}.
                 This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
             ",
             modifiers: None,
