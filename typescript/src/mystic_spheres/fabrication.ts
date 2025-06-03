@@ -477,7 +477,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target falls \\prone, and is \\glossterm{briefly} \\glossterm{vulnerable} to \\atFire attacks.
+          Each target falls \\prone, and is \\glossterm{briefly} \\vulnerable to \\atFire attacks.
           This vulnerability ends for a target if it takes damage from a \\atFire attack.
         `,
         targeting: `
