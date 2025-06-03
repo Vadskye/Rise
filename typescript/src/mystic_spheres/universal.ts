@@ -67,6 +67,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
@@ -80,6 +81,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
@@ -93,6 +95,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
@@ -107,6 +110,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
@@ -121,6 +125,7 @@ export const universal: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
   ],
