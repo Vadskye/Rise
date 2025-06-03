@@ -157,7 +157,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Kindling',
 
-      // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
+      // Normally, a maximizing spell would require R-3 damage. This gets R-2 because of the
       // self-targeting, and R-1 from the fatigue level.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
@@ -178,7 +178,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Pyre',
 
-      // Normally, a maximizing spell would requre R-3 damage. This gets R-2 because of the
+      // Normally, a maximizing spell would require R-3 damage. This gets R-2 because of the
       // self-targeting, and R-1 from the fatigue level.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
