@@ -97,7 +97,7 @@ In this context, we assume that each debuff is applied as a brief effect.
 
 Skipping a standard action is tricky, since that removes 50% of a boss's action and 100% of a regular enemy's action. Against a boss, removing 50% of their actions is worth 2 effective actions. Against a normal enemy, removing 100% of their actions is worth 4 effective actions. But if you assume there are as many normal enemies as party members, using a single target action skip is worth only 1 effective action.
 
-Overall, AOE action skip abilities have to be treated as stronger than single target action skip abilities, and they maybe shouldn't exist.
+Overall, AOE action skip abilities have to be treated as stronger than single target action skip abilities, and they maybe shouldn't exist. For now, assume that action skip must always be combined with the "limited scope" modifier.
 
 As with all full action denial effects, this always comes with a "once per creature" restriction.
 

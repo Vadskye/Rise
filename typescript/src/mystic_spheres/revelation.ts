@@ -239,7 +239,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         At the start of each phase, you can choose to become \\focused during that phase.
-        After you do, this effect ends.
+        After you stop being focused in this way, this effect ends.
       `,
       narrative: `
         You intuitively perceive your foes' weaknesses.
