@@ -9,13 +9,16 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
             complexity: 2,
-            name: "Vigorous Recovery",
+            name: "Second Wind",
             is_magical: false,
             rank: 1,
             description: r"
-                When you use the \ability{recover} ability, you regain all of your hit points instead of only half of your hit points.
-                In addition, you can use the \ability{recover} ability as a \glossterm{minor action}.
-                When you do, you do not remove any \glossterm{conditions} affecting you.
+                \begin{activeability}{Second Wind}[\atSwift]
+                    \abilitycost Two \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{short rest}.
+                    \abilityusagetime \glossterm{Minor action}.
+                    \rankline
+                    You regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
+                \end{activeability}
             ",
             modifiers: None,
         },
@@ -82,8 +85,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You can use the \ability{recover} ability any number of times between short rests.
-                In addition, when you use it as a standard action, you can also remove a \glossterm{vital wound}.
+                You can use the \ability{recover} and \ability{second wind} abilities any number of times between short rests.
+                In addition, when you use the \ability{recover} ability, you can also remove a \glossterm{vital wound}.
                 When you do, you increase your \glossterm{fatigue level} by two.
             ",
             modifiers: None,
