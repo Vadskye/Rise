@@ -477,7 +477,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Powerful Spell} Choose a damaging pact \glossterm{spell} you know.
-                        It deals \glossterm{extra damage} equal to half your \glossterm{magical power}.
+                        It deals \glossterm{extra damage} equal to your rank in this archetype.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform pact rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).
                         The maximum \glossterm{rank} of pact ritual you can learn or perform is equal to the maximum \glossterm{rank} of pact spell that you can cast.
