@@ -272,7 +272,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Icy Shell',
 
       effect: `
-        At the start of each round, if you are at your maximum \\glossterm{damage resistance}, you become \\steeled during that round.
+        You are \\steeled.
+        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect ends.
       `,
       narrative: 'Layers of ice form around you, crumpling to protect you from catastrophic injury.',
       rank: 2,

@@ -591,10 +591,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Steelskin',
 
-      // TODO: find a wording that makes this work if you recover, but which doesn't mean
-      // you lose steel from enemy attacks
       effect: `
-        At the start of each phase, if you are at your maximum \\glossterm{damage resistance}, you become \\steeled during that phase.
+        You are \\steeled.
+        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect ends.
       `,
       rank: 2,
       roles: ['attune'],
