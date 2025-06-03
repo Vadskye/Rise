@@ -54,7 +54,7 @@ They allow more distinct and unique character customization, but also increase g
 
       \parhead{Dryaidi} Mental Magic, Regenerator, Sphere Focus: Toxicology, Sphere Focus: Verdamancy, or Toughness.
 
-      \parhead{Eladrin} Boongiver, Chameleon, Combat Style Versatility, Deception Specialization and Persuasion Specialization, or Spellwarped.
+      \parhead{Eladrin} Boongiver, Chameleon, Deception Specialization and Persuasion Specialization, Maneuver Versatility, or Spellwarped.
 
       \parhead{Kit} Balance Specialization and Stealth Specialization, Deception Specialization and Social Insight Specialization, or Swiftrunner.
 
@@ -196,7 +196,6 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Battle Armory}                         & Str 1, Dex 2                     & Switch between different weapons easily    & \tdash            & \featpref{Battle Armory}                    \\
           \featref{Blindfighter}                          & Per 2                            & Fight unseen foes better                   & \tdash            & \featpref{Blindfighter}                     \\
           \featref{Brawler}                               & Str 1, Dex 1                     & Fight better unarmed and in close quarters & \tdash            & \featpref{Brawler}                          \\
-          \featref{Combat Style Versatility}              & Int 2, combat style              & Use highly varied combat styles            & \tdash            & \featpref{Combat Style Versatility}         \\
           \featref{Duelist}                               & Dex 2, Per 1                     & Fight one-on-one better                    & \tdash            & \featpref{Duelist}                          \\
           \featref{Executioner}                           & Per 2                            & Kill weakened foes more easily             & \tdash            & \featpref{Executioner}                      \\
           \featref{Greatweapon Warrior}                   & Str 3                            & Fight better with two-handed weapons       & \tdash            & \featpref{Greatweapon Warrior}              \\
@@ -205,6 +204,7 @@ They allow more distinct and unique character customization, but also increase g
           \featref{Juggernaut}                            & Str 1, Con 2                     & Become unstoppable and trample foes        & \tdash            & \featpref{Juggernaut}                       \\
           \featref{Leadership}                            & Int 2 or Wil 2                   & Inspire nearby allies                      & \tdash            & \featpref{Leadership}                       \\
           \featref{Living Weapon}                         & Str \add Con is 3                & Fight better with natural weapons          & \tdash            & \featpref{Living Weapon}                    \\
+          \featref{Maneuver Versatility}              & Int 2, two combat styles              & Use highly varied maneuvers            & \tdash            & \featpref{Maneuver Versatility}         \\
           \featref{Maneuverist}                           & Int 2                            & Gain limited maneuver access               & \tdash            & \featpref{Maneuverist}                      \\
           \featref{Martial Training}                      & \tdash                           & Improve combat abilities                   & \tdash            & \featpref{Martial Training}                 \\
           \featref{Shieldbearer}                          & Str 2, Dex 1                     & Attack and defend better with shields      & \tdash            & \featpref{Shieldbearer}                     \\
@@ -568,31 +568,6 @@ They allow more distinct and unique character customization, but also increase g
 
     % TODO: wording
     \ff[18]{Endless Creature Climb} You do not suffer a cumulative \minus2 penalty to your accuracy with the creature climb ability for each round you spend climbing (see \pcref{Creature Climb}).
-  \end{feat}
-
-  \begin{feat}{Combat Style Versatility}{Combat}
-    \featpre Intelligence 2, access to at least one \glossterm{combat style}.
-
-    \ff[1]{Combat Styles} You gain access to all \glossterm{combat styles}.
-
-    \ff[6]{Maneuvers} You learn two additional \glossterm{maneuvers}.
-    When you gain access to new maneuver ranks, you can change which maneuvers you know.
-
-    \ff[12]{Maneuver Fusion}
-    \begin{activeability}{Maneuver Fusion}
-      \abilityusagetime Standard action.
-      \abilitycost You are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
-      \rankline
-      Choose two maneuvers that you know.
-      You use both maneuvers simultaneously.
-      Roll the attack roll and damage for each strike separately.
-      You cannot use the \ability{desperate exertion} ability to affect either strike.
-    \end{activeability}
-
-    % \ff[18]{Combat Styles\plus} You can treat all weapons you wield as dealing slashing, piercing, and bludgeoning damage for the purpose of determining their eligibility for maneuvers.
-    % This does not change the damage type that your attacks actually deal.
-
-    \ff[18]{Maneuvers\plus} The number of additional maneuvers you learn increases to four.
   \end{feat}
 
   \begin{feat}{Craft Specialization}{Skill}
@@ -1254,6 +1229,27 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Flesh Surpassing Steel\plus} You are always \steeled.
 
     \ff[18]{My Body Is My Weapon\plus\plus} The damage increases to 2d6.
+  \end{feat}
+
+  \begin{feat}{Maneuver Versatility}{Combat}
+    \featpre Intelligence 2, access to at least two \glossterm{combat styles}.
+
+    \ff[1]{Maneuvers} You learn two additional \glossterm{maneuvers}.
+    When you gain access to new maneuver ranks, you can change which maneuvers you know.
+
+    \ff[6]{Maneuver Fusion}
+    \begin{activeability}{Maneuver Fusion}
+      \abilityusagetime Standard action.
+      \abilitycost One \glossterm{fatigue level}, and you are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
+      \rankline
+      Choose two maneuvers that you know that do not increase your \glossterm{fatigue level} when used.
+      You use both maneuvers.
+      You cannot use the \ability{desperate exertion} ability to affect either maneuver.
+    \end{activeability}
+
+    \ff[12]{Maneuvers\plus} The number of additional maneuvers you learn increases to four.
+
+    \ff[18]{Maneuver Fusion\plus} This ability does not increase your \glossterm{fatigue level} when used.
   \end{feat}
 
   \begin{feat}{Maneuverist}{Combat}
