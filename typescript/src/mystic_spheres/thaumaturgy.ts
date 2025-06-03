@@ -71,7 +71,7 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         missGlance: true,
         targeting: `
@@ -82,7 +82,7 @@ export const thaumaturgy: MysticSphere = {
       narrative: `
         An unerring projectile made of pure magical energy streaks towards your foe, inflicting severe damage unavoidably.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['burst'],
       scaling: 'accuracy',
     },
@@ -115,42 +115,22 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Magic Missile Storm',
 
-      // -1 range for ignoring cover
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
         `,
       },
       narrative: `
         A barrage of unerring projectiles made of pure magical energy streak towards an area, inflicting damage unavoidably.
       `,
-      rank: 3,
+      rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
-    },
-
-    {
-      name: 'Mighty Magic Missile Storm',
-
-      // -1 range for ignoring cover
-      attack: {
-        hit: `
-          \\damageranksix.
-        `,
-        missGlance: true,
-        targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
-          This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
-        `,
-      },
-      narrative: `
-        A massive barrage of unerring projectiles made of pure magical energy streak towards your foes, inflicting damage unavoidably.
-      `,
-      rank: 7,
     },
 
     {
@@ -164,6 +144,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
       type: 'Sustain (minor)',
     },
@@ -182,6 +163,7 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
@@ -207,6 +189,7 @@ export const thaumaturgy: MysticSphere = {
       },
 
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
       type: 'Sustain (minor)',
     },
@@ -221,6 +204,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['softener'],
       scaling: 'accuracy',
       type: 'Sustain (minor)',
     },
@@ -235,6 +219,7 @@ export const thaumaturgy: MysticSphere = {
         name: 'suppress magic',
       },
       rank: 4,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
@@ -261,7 +246,7 @@ export const thaumaturgy: MysticSphere = {
         After you absorb three spells in this way, this effect ends.
       `,
       rank: 7,
-    roles: ['attune'],
+      roles: ['attune'],
       type: 'Attune (deep)',
     },
 
@@ -276,9 +261,9 @@ export const thaumaturgy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The extra damage increases to 1d8.`,
-        5: `The extra damage increases to 3d6.`,
-        7: `The extra damage increases to 6d6.`,
+        3: `The extra damage increases to 1d6.`,
+        5: `The extra damage increases to 2d6.`,
+        7: `The extra damage increases to 3d6.`,
       },
       type: 'Attune',
     },
@@ -290,7 +275,7 @@ export const thaumaturgy: MysticSphere = {
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused for the rest of that round.
         After you enhance a spell in this way, this ability ends.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -322,8 +307,8 @@ export const thaumaturgy: MysticSphere = {
           Make an attack vs. Mental with a +2 accuracy bonus against something within \\medrange.
         `,
       },
-
       rank: 2,
+      roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
     },
@@ -337,18 +322,8 @@ export const thaumaturgy: MysticSphere = {
         This prevents all \\abilitytag{Manifestation} effects and effects teleport targets or move them between planes.
       `,
       rank: 4,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Teleportation Ward',
-
-      effect: `
-        Teleportation into and out of a \\largearea radius \\glossterm{emanation} from you is impossible.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -386,30 +361,20 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Spellseal',
 
-      // -2r relative to mind blank's effect because it doesn't always work
+      // Action skip is 2 EA and must be combined with limited scope, so we get r3. Drop
+      // to r1 because it only works on spellcasters.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           The target's magic is partially sealed as a \\glossterm{condition}.
-          The first time it tries to cast a spell while it is below its maximum \\glossterm{hit points}, the spell automatically fails with no effect instead.
+          The first time it tries to cast a spell, the spell automatically fails with no effect instead.
           When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a +2 \\glossterm{accuracy} bonus against one creature within \\medrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Efficient Spellseal',
-
-      functionsLike: {
-        name: 'spellseal',
-        exceptThat: 'it works even if the target is at full hit points.',
-      },
-      rank: 5,
+      roles: ['stasis'],
       scaling: 'accuracy',
     },
 
@@ -417,32 +382,17 @@ export const thaumaturgy: MysticSphere = {
       name: 'Delay Teleportation',
 
       effect: `
-        Whenever a creature or object would teleport into a \\largearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
+        Whenever a creature or object would teleport into a \\hugearea radius \\glossterm{emanation} from you from outside of that area, that teleportation is delayed by a round.
         The teleporting creature or object remains stuck in the Astral Plane and can take no actions during that time.
         Creatures delayed in this way do not experience a delay, though they may be able to deduce that they were delayed based on observable evidence.
 
         Whenever something is delayed in this way, you learn its approximate size and location within the area, allowing you to know which space or spaces it will occupy when it arrives.
         Creatures and objects delayed by this effect remain delayed even if you move such that their destination is no longer within the area of this effect.
-        This does not affect teleportation away from the area unless that teleportation's destination lies within the area.
-      `,
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Dead Magic Zone',
-
-      effect: `
-        Choose a \\glossterm{zone} within \\medrange.
-        You can choose this spell's radius, up to a maximum of a \\medarea radius.
-        Whenever a creature casts a spell in the area, that spell has a 50\\% chance to fail with no effect.
-      `,
-      narrative: `
-        You break an area's connection to magic.
+        This does not affect teleportation away from or within the area.
       `,
       rank: 5,
-      type: 'Sustain (minor)',
+      roles: ['attune'],
+      type: 'Attune',
     },
 
     {
@@ -467,24 +417,25 @@ export const thaumaturgy: MysticSphere = {
       name: 'Reflect Magic',
 
       effect: `
-        You gain a +2 bonus to all defenses this round.
-        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+        You are \\braced this round.
+        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
     {
-      name: 'Reflect Targeted Magic',
+      name: 'Empowered Reflect Magic',
 
       effect: `
-        You gain a +2 bonus to all defenses this round.
-        In addition, any \\glossterm{targeted} \\magical abilities that would target you this round also target the creature using that ability in addition to you.
-        It cannot choose to reduce its accuracy or damage against itself.
-        Any other targets of the ability are affected normally.
+        You are \\braced this round.
+        In addition, whenever a creature within \\medrange of you makes a \\magical attack against you this round, that creature treats itself as a target of that attack in addition to any other targets.
+        The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 5,
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
@@ -499,11 +450,48 @@ export const thaumaturgy: MysticSphere = {
         Objects, creatures, and \\glossterm{mundane} abilities can pass through the wall freely, but any \\magical ability treats the wall as an impassable barrier.
       `,
       rank: 5,
+      roles: ['hazard'],
       scaling: {
-        7: 'You can choose to create a \\largearealong wall instead.',
+        7: "The wall's hit points increase to four times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
+    },
+    
+    {
+      name: 'Font of Power',
+
+      // Treat "yourself and adjacent allies who used a magical ability" as being roughly
+      // "any two", so 0.5 EA. That requires a -2dr drop.
+      // r0 area gives drX+1, drop to drX-1 for buff effect.
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you and all adjacent \\glossterm{allies} who used a \magical ability this round are \\glossterm{briefly} \\empowered.
+        `,
+      },
+      rank: 2,
+      roles: ['generator'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Mighty Font of Power',
+
+      // Treat "yourself and adjacent allies who used a magical ability" as being slightly
+      // weaker than "any two", so 0.4 EA. That requires a -2dr drop.
+      // r0 area gives drX+1, drop to drX-1 for buff effect.
+      functionsLike: {
+        name: "font of power",
+        exceptThat: "the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.",
+      },
+      rank: 6,
+      roles: ['generator'],
+      tags: ['Swift'],
     },
   ],
 };
