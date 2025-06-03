@@ -94,9 +94,23 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Ablation',
 
-      // 1 EA
+      // 0.7 EA
       effect: `
         You take half damage from all sources this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+      `,
+      rank: 1,
+      roles: ['turtle'],
+      // narrative: '',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Empowered Kinetic Ablation',
+
+      // 0.3 + 0.7 EA
+      effect: `
+        You are \\shielded and take half damage from all sources this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 4,
@@ -561,30 +575,6 @@ export const telekinesis: MysticSphere = {
         7: `The bonus increases to +32.`,
       },
       type: 'Attune',
-    },
-
-    {
-      name: 'Kinetic Shell',
-
-      // "Did not attack Fortitude or Reflex" is confusing against abilities that
-      // make a strike and also attack a secondary defense.
-      // "Attacked your Armor or Reflex" is confusing against falling damage.
-      effect: `
-        You surround yourself with two layers of shielding that reduce the power of attacks against you.
-        Whenever you would take damage from an ability that attacked your Armor, Brawn, or Reflex defense, you reduce that damage by 5, and one layer of shielding is destroyed.
-        When the last layer is destroyed, this ability provides no further benefit.
-
-        If you take simultaneous damage from more sources than you have remaining layers, the remaining layers apply to the largest damage sources, and you take full damage from any lower damage values.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        3: `The damage reduction increases to 10.`,
-        5: `The damage reduction increases to 20.`,
-        7: `The damage reduction increases to 40.`,
-      },
-      tags: ['Manifestation'],
-      type: 'Attune (deep)',
     },
 
     {
