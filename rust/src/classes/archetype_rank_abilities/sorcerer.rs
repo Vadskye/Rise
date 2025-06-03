@@ -140,10 +140,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Energetic Spell} Choose an arcane \glossterm{spell} you know.
                         You add any one of the following tags to that spell: \atCold, \atFire, or \atElectricity.
-                        In addition, if it deals damage, it gains \glossterm{extra damage} equal to half your \glossterm{magical power}.
+                        In addition, if it deals damage, it gains \glossterm{extra damage} equal to your rank in this archetype.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
-                        You gain a \plus2 accuracy bonus with that spell.
+                        You gain a \plus1 accuracy bonus with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         The spell cannot also be affected by the Dragonbreath Spell metamagic.
