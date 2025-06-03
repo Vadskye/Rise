@@ -259,7 +259,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
-          Then, you are \\glossterm{briefly} \\glossterm{shielded}.
+          Then, you are \\glossterm{briefly} shielded.
         `,
       },
       rank: 1,
@@ -366,7 +366,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `Each target is \\glossterm{briefly} \\deafened.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
+          Then, you are \\glossterm{briefly} \\fortified and \\empowered.
         `,
       },
       rank: 1,
@@ -384,7 +384,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `Each target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\glossterm{empowered} and \\glossterm{fortified}.
+          Then, you are \\glossterm{briefly} \\fortified and \\empowered.
         `,
       },
       rank: 5,

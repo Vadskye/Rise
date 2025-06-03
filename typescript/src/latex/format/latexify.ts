@@ -16,6 +16,8 @@ export function latexify(text: string): string {
 
   warnIfPattern(text, /[^\\]damagerank\{.*/, 'contains unprefixed damagerank');
 
+  warnIfPattern(text, /glossterm.(braced|empowered|focused|fortified|honed|maximized|primed|shielded|steeled|impervious|vulnerable)/, 'contains glossterm{buff}')
+
   return text
     .replace(/ \+ /g, ' \\add ')
     .replace(/\+(\d)/g, '\\plus$1')

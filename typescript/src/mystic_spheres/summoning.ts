@@ -334,7 +334,7 @@ export const summoning: MysticSphere = {
           Its attacks deal \\damagerankone, and have the \\atWater tag.
           It has a 30 foot \\glossterm{swim speed}.
           In addition, it is immune to \\atWater attacks.
-          However, it is \\glossterm{vulnerable} to \\atElectricity attacks.
+          However, it is \\vulnerable to \\atElectricity attacks.
         `,
         name: 'summon monster',
       },

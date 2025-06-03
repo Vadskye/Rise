@@ -244,7 +244,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d8 \\glossterm{damage resistance} plus 1d8 per 3 power.
-        In addition, it is \\glossterm{impervious} to \\atElectricity attacks this round.
+        In addition, it is \\impervious to \\atElectricity attacks this round.
       `,
       rank: 3,
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
