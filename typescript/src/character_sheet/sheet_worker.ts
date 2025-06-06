@@ -1759,17 +1759,12 @@ function handleInsightPoints() {
     },
     callback: (v) => {
       const base = 1;
-      let fromLevel = 0;
-      if (v.level >= 4) {
-        fromLevel = 1;
-      }
-      const totalValue = base + v.intelligence + v.misc + fromLevel;
+      const totalValue = base + v.intelligence + v.misc;
       setAttrs({
         insight_points: totalValue,
         insight_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: base },
           { name: 'Int', value: v.intelligence },
-          { name: 'level', value: fromLevel },
         ]),
       });
     },
