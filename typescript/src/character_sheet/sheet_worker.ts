@@ -1128,19 +1128,12 @@ function handleAttunementPoints() {
       numeric: ['level'],
     },
     callback: (v) => {
-      const base = 2;
-      let fromLevel = 0;
-      if (v.level >= 8) {
-        fromLevel = 2;
-      } else if (v.level >= 3) {
-        fromLevel = 1;
-      }
-      const ap = base + v.misc + fromLevel;
+      const base = 3;
+      const ap = base + v.misc;
       setAttrs({
         attunement_points: ap,
         attunement_points_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'base', value: base },
-          { name: 'level', value: fromLevel },
         ]),
         attunement_points_max: ap,
         attunement_points_maximum: ap,
