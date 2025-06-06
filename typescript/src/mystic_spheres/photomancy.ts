@@ -22,6 +22,7 @@ export const photomancy: MysticSphere = {
         `,
         name: 'change appearance',
       },
+      roles: ['narrative'],
       tags: ['Visual'],
     },
 
@@ -35,6 +36,7 @@ export const photomancy: MysticSphere = {
 
         This ability lasts until you \glossterm{dismiss} it or until you use it again.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The maximum radius of bright illumination increases to 30 feet.`,
         4: `The maximum radius of bright illumination increases to 60 feet.`,
@@ -47,17 +49,19 @@ export const photomancy: MysticSphere = {
     {
       name: 'Color Spray',
 
+      // Dazzled as a condition is 1.8 EA, so r3. Limited scope and double defense means
+      // this is r1.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
-          If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a separate condition.
         `,
         targeting: `
-          Make an attack vs. Reflex and Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Reflex and Mental against each creature within a \\smallarea cone from you.
         `,
       },
       rank: 1,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -65,18 +69,18 @@ export const photomancy: MysticSphere = {
     {
       name: 'Prismatic Spray',
 
+      // dazzled is 0.6, stunned is 1.4, so 2.0 total. Double defense means r3.
+      // The area is rank 2, which is a little awkward.
       attack: {
-        crit: `
-          Each condition must be removed an additional time before the effect ends.
-        `,
         hit: `
-          Each target is \\dazzled and \\stunned as two separate conditions.
+          Each target is \\glossterm{briefly} \\dazzled and \\stunned.
         `,
         targeting: `
-          Make an attack vs. Reflex and Mental against each creature within a \\medarea cone from you.
+          Make an attack vs. Reflex and Mental against each \\glossterm{enemy} within a \\medarea cone from you.
         `,
       },
-      rank: 5,
+      rank: 3,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -91,30 +95,9 @@ export const photomancy: MysticSphere = {
         You gain a +4 bonus on the check, and you can freely alter the visual appearance of each target's clothes and equipment, regardless of their original form.
       `,
       rank: 3,
+      roles: ['narrative'],
       tags: ['Visual'],
       type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Blurred Motion',
-
-      effect: `
-        If you move at least 10 feet during the \\glossterm{movement phase}, you gain a +1 bonus to Armor defense until the end of that round.
-      `,
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Greater Blurred Motion',
-
-      effect: `
-        If you move at least 30 feet during the \\glossterm{movement phase}, you gain a +2 bonus to Armor defense until the end of that round.
-      `,
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -122,17 +105,27 @@ export const photomancy: MysticSphere = {
 
       cost: BARRIER_COOLDOWN,
       effect: `
-        You create a \\medarealong \\glossterm{wall} of light within \\longrange.
+        You create a \\medarealong \\glossterm{wall} of light within \\medrange.
         The wall is visible as a solid block of light.
         It blocks all forms of vision, including \\trait{darkvision}, but does not block senses like \\trait{blindsight} that do not require the use of eyes.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 1,
-      scaling: {
-        3: 'You can choose to create a \\largearealong wall instead.',
-        5: 'You can choose to create a \\hugearealong wall instead.',
-        7: 'You can choose to create a \\gargarealong wall instead.',
+      roles: ['hazard'],
+      tags: ['Barrier', 'Visual'],
+      type: 'Sustain (attuneable, minor)',
+    },
+
+    {
+      name: 'Massive Wall of Light',
+
+      cost: BARRIER_COOLDOWN,
+      functionsLike: {
+        name: 'wall of light',
+        exceptThat: 'it creates a \\largearealong wall of light within \\longrange.',
       },
+      rank: 5,
+      roles: ['hazard'],
       tags: ['Barrier', 'Visual'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -329,7 +322,7 @@ export const photomancy: MysticSphere = {
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       narrative: `Your physical outline is distorted so it appears blurred, shifting, and wavering.`,
-      rank: 5,
+      rank: 3,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
