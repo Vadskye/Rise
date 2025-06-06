@@ -152,11 +152,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Versatile Blow",
+            name: "Adaptive Blow",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Versatile Blow}
+                \begin{activeability}{Adaptive Blow}
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} with a \plus3 \glossterm{accuracy} bonus.

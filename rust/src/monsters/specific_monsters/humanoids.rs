@@ -474,7 +474,7 @@ pub fn add_lizardfolk(monsters: &mut Vec<MonsterEntry>) {
             "),
             (5, "
                 Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
-                They prefer frontal assaults and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+                They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
                 If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
                 Advanced tribes use more sophisticated tactics and have better traps and ambushes.
             "),
