@@ -48,6 +48,10 @@ If they have a -2 accuracy penalty, they drop to a 50% chance to hit, so expecte
 
 Expected hits with 4 actions is 2 hits + 0.4 glance = 2.4. With -2 accuracy, that's 30% chance to hit, so 1.2 hits + 0.4 glance = 1.6. 1/3 of enemy actions were removed. That's worth 1.3 effective actions.
 
+#### -1 with 50% hit rate:
+
+2.4 normal, 40% chance to hit with -1, so 1.6 hits + 0.4 glance = 2.0. ~17% of enemy actions were removed, which is worth 0.7 effective actions.
+
 #### -2 with high defenses: 2.0
 As a baseline, assume the enemy has a 30% chance to hit. Expected hits with 4 actions is 1.2 hits + 0.4 glance = 1.6.
 
@@ -889,7 +893,7 @@ All of the effective action calculations assume that every enemy in the fight is
 ### Limited Scope Debuffs
 
 You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
-* Rank - 1: Rank X / 2 area, to a minimum at Rank 0 of a single creature within 30' range
+* Rank - 1: Rank X / 2 area, to a minimum of rank 0
 * Rank - 2: Single target melee range
 
 ## Area and Effect Rank
@@ -1162,3 +1166,96 @@ You can pay one fatigue level to get +0.2 EA.
 ## Attuned effects
 
 It should be possible to calculate the effective action value of combat-relevant attunements.
+Since they start the combat active and aren't removed like enemy conditions, an attunement functions for all 5 rounds of a typical combat. Therefore, action denial buffs start from a baseline of 20 EA, and offensive buffs affect 5 player actions.
+
+As with active buffs, assume that a self-buff works 33% of the time for normal buffs, or 25% of the time for buffs that only affect targeted attacks, like a miss chance.
+
+Self-buff spells should have the same EA target as weapons and armor, which is a higher target than apparel with less limited slots. That means:
+
+* Rank 1: 15% boost, so ~0.75 EA
+* Rank 3: 20% boost, so 1 EA
+* Rank 5: 25% boost, so ~1.25 EA
+* Rank 7: 30% boost, so 1.5 EA
+
+Apparel is 5% lower, so:
+* Rank 1: 10% boost, so 0.5 EA
+* Rank 3: 15% boost, so ~0.75 EA
+* Rank 5: 20% boost, so 1 EA
+* Rank 7: 25% boost, so ~1.25 EA
+
+### +1 Accuracy: 1.0
+
+As with weapons, we treat +1 accuracy as 0.2 EA per hit, and this applies to 5 actions, so 1 EA.
+
+### +2 accuracy: 1.5
+
+As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
+
+### Braced: 2.2
+
+If you could be braced as an attunement, it would be 33% action denial that works 33% of the time, so 20 / 3 / 3 = 2.2 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
+
+### Empowered: 1.0
+
+0.2 EA * 5 actions = 1 EA
+
+### 25% extra damage: 1.25 EA
+
+0.25 EA * 5 actions = 1.25
+
+### Focused: 2.0
+
+0.4 EA * 5 actions = 2 EA
+
+### 50% damage minor action attack: 2.5
+
+Assume the minor action attack deals drX-3 damage, so it deals about 50% damage.
+That's 0.5 EA * 5 attacks = 2.5, which is valid for a rank 5 deep attunement.
+
+### 65% damage minor action attack: 3.25
+
+This is drX-2. That's 0.65 EA * 5 attacks = 3.25, which is too strong even for rank 7 deep attunement.
+
+### Honed: 2.0
+
+0.4 EA * 5 actions = 2 EA
+
+### +4/8/16/32 HP: 0.7
+
+Assuming 2 Con and fighter hp:
+
+* Rank 1: +4 HP is 33% more
+* Rank 2: +4 HP is 22% more
+* Rank 3: +8 HP is 30% more
+* Rank 4: +8 HP is 23% more
+* Rank 5: +16 HP is 31% more
+* Rank 6: +16 HP is 23% more
+* Rank 7: +32 HP is 31% more
+
+Assuming that HP is 50% of your total EHP, the HP buff is worth about 15% survivability. Raw EHP is less effective than defenses and other methods of increasing survivability, so call it 10% survivability instead. That's 10% action denial that works 1/3 of the time, so 20 * 0.1 / 3 = 0.7 EA, so rank 1.
+
+### +64 HP: 1.5 EA
+
+### +1 Armor: 0.75
+
+Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 17% action denial that works 2/3 of the time and you are attacked 1/3 of the time, so 20 * .17 * 2 / 3 / 3 = 0.75 EA, so rank 1.
+
+### +2 Armor: 1.5
+
+Twice as good as +1 Armor
+
+### +2 Fort/Ref/Ment: 0.75
+
+Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial that works 1/3 of the time and you are attacked 1/3 of the time, so 20 / 3 / 3 / 3 = 0.75 EA, so rank 1.
+
+### 20% miss chance: 1.0
+
+20% miss chance is 20% action denial that works 25% of the time, so 20 * 0.25 * 0.2 = 1 EA. That's about rank 3.
+
+### 20% failure chance: 1.3
+
+20% failure chance is 20% action denial that works 33% of the time, so 1.3 EA. That's about rank 6.
+
+### Steeled: 0.9
+
+14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9 

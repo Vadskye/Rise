@@ -303,32 +303,14 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadow Mantle',
 
-      // Say that this applies 50% of the time and is 20% action denial when it applies,
-      // so it's worth 1.2 EA, plus 1 EA for being a precombat buff = 2.2 EA.
       effect: `
-        All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{failure chance}.
+        All attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
       narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
       `,
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Shadow Mantle',
-
-      functionsLike: {
-        name: "shadow mantle",
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      narrative: `
-        Your physical form becomes blurred and shifts in and out of existence.
-        This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
-      `,
-      rank: 7,
+      rank: 6,
       roles: ['attune'],
       type: 'Attune',
     },
