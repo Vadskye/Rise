@@ -1286,8 +1286,9 @@ They allow more distinct and unique character customization, but also increase g
   \end{feat}
 
   \begin{feat}{Martial Training}{Combat}
-    \ff[1]{Equipment Training} You choose one of the following benefits.
+    \ff[1]{Equipment Expertise} You choose one of the following benefits.
     Unless otherwise noted in its description, you can only choose each benefit once.
+    In addition, you can spend \glossterm{insight points} to gain one additional benefit per \glossterm{insight point}.
     \begin{itemize}
       \item You gain proficiency with a \glossterm{usage class} of \glossterm{armor} (light, medium, or heavy).
         You can choose this ability multiple times, choosing a different usage class each time.
@@ -1303,8 +1304,8 @@ They allow more distinct and unique character customization, but also increase g
       \item You gain a \plus1 bonus to your \glossterm{mundane power}.
     \end{itemize}
 
-    \ff[6]{Applied Training}
-    \begin{activeability}{Applied Training}
+    \ff[6]{Versatile Blow}
+    \begin{activeability}{Versatile Blow}
       \abilityusagetime Standard action.
       \rankline
       Make a \glossterm{strike} and choose either precision or power.
@@ -1315,12 +1316,12 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{9} \plus5 accuracy, or 1d4 \add half power extra damage.
       \featlevel{12} \plus10 accuracy, or 1d4 \add power extra damage
       \featlevel{15} \plus15 accuracy, or 2d8 \add power extra damage.
-      \featlevel{18} \plus20 accuracy, or 4d10 \add power extra damage.
+      \featlevel{18} \plus20 accuracy, or 3d6 \add 1d6 per 2 power extra damage.
     \end{activeability}
 
     \ff[12]{Equipment Training\plus} You gain two additional \textit{equipment training} abilities of your choice.
 
-    \ff[18]{Equipment Training\plus} You gain two additional \textit{equipment training} abilities of your choice.
+    \ff[18]{Martial Expert} You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
   \end{feat}
 
   \begin{feat}{Medicine Specialization}{Skill}
@@ -2339,20 +2340,20 @@ They allow more distinct and unique character customization, but also increase g
     In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
     This prevents you from suffering a miss chance on your attacks, and also prevents creatures from using cover or concealment from plants to hide from you.
 
-    \magicalff[6]{Residual Undergrowth} Whenever you cast a spell from the \textit{verdamancy} sphere, you may create undergrowth on the ground in the area of the spell.
-    It appears as \glossterm{light undergrowth} normally, and \glossterm{heavy undergrowth} in areas that already have light undergrowth (including as a result of the spell's effect).
-    % TODO: weird wording
-    The undergrowth appears after your action, and it persists \glossterm{briefly}.
-    It appears on the ground within the area for area spells, or in all spaces occupied by each target of the spell for targeted spells.
-
-    \magicalff[12]{Lifeweb Spell} You learn an additional spell.
-    The spell can be up to rank 5, even if you do not have access to rank 5 spells.
-    Whenever you cast that spell, you can use a Small or larger plant or living creature within \medrange of you as a \glossterm{targeting proxy}.
-    This means the spell determines its targets as if you were in the plant's location, which can allow you to affect targets outside your normal range.
+    \magicalff[6]{Sprouting Spell} You learn an additional spell.
+    The spell can be up to rank 3, even if you do not have access to rank 3 spells.
+    Whenever you cast that spell, plants \glossterm{briefly} grow on the ground where the spell takes effect.
+    They appear within the area for area spells, or in all spaces occupied by each target of the spell for targeted spells.
+    Bare ground creates \glossterm{light undergrowth}, and existing light undergrowth becomes \glossterm{heavy undergrowth}.
+    The plants grow before the spell takes effect, so they can improve the effectiveness of some \sphere{verdamancy} spells.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-    \magicalff[18]{Verdant Army} Your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you also gain the benefit of your \textit{verdant allies} ability.
+    \magicalff[12]{Verdant Army} Your \glossterm{allies} who can see or hear you also gain the benefit of your \textit{verdant allies} ability.
+
+    \magicalff[18]{Sprouting Step} At the start of each phase, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
+    The undergrowth lasts until you leave that space.
+
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Vivimancy}{Casting, Magical}
