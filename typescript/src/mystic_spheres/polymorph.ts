@@ -368,20 +368,22 @@ export const polymorph: MysticSphere = {
       type: 'Attune (deep)',
     },
 
+    // Minor action attack is drX-3.
+    // All adjacent enemies is r0, so drX+1, so total damage is dr3.
     {
       name: 'Extruding Spikes',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
-          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor with a -2 accuracy penalty against all \\glossterm{enemies} adjacent to you.
+          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
         `,
       },
       narrative: `
         Your body grows small spikes that you can consciously extrude to impale nearby foes.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
