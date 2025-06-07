@@ -735,5 +735,19 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 4,
       scaling: 'accuracy',
     },
+    {
+      name: 'Sudden Liquification',
+
+      // Full steeled is r2 or r3, but one-round strike steeled is fine for r1.
+      effect: `
+        When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
+        When it does, your body liquifies in an instant, limiting the damage to vital areas.
+        This causes the critical hit to become only a regular hit, and you remain \steeled for the rest of the round.
+        Then, this ability ends.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      type: 'Attune',
+    },
   ],
 });

@@ -301,7 +301,7 @@ export const polymorph: MysticSphere = {
         \\begin{itemize}
           \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
             If you already have a slow climb speed, your climb speed becomes average instead.
-          \\item You can climb without using any \\glossterm{free hands}.
+          \\item You do not need hands to climb.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
         \\end{itemize}
@@ -861,20 +861,6 @@ export const polymorph: MysticSphere = {
           Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },
-      type: 'Attune',
-    },
-    {
-      name: 'Sudden Liquification',
-
-      // Full steeled is r2 or r3, but one-round strike steeled is fine for r1.
-      effect: `
-        When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
-        When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \steeled for the rest of the round.
-        Then, this ability ends.
-      `,
-      rank: 1,
-      roles: ['attune'],
       type: 'Attune',
     },
     {
