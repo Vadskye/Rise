@@ -532,11 +532,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        % Weird to use non-rolled hp value, but the scaling is fine?
                         In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
-                        % TODO: replace all 'half maximum hit point' effects
-                        This cannot heal you above half your maximum \glossterm{hit points}.
                         \rankline
+                        % This is about as strong as a r3 deep attunement - class feature plus natural sunlight requirement is probably enough?
                         \rank{4} The healing increases to be equal to your \glossterm{power}.
                         \rank{7} When you finish a \glossterm{short rest} while you are in natural sunlight, you can remove a \glossterm{vital wound}.
                         When you do, you increase your \glossterm{fatigue level} by four.
@@ -691,7 +689,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item All of its attributes are 0 except for Intelligence, which it does not have.
                         \item It has no \glossterm{resources}, and it cannot use abilities that increase its fatigue level.
                         \item Its maximum \glossterm{hit points} are equal to the standard value for a druid of your level (see Base Class Abilities, above).
-                        \item Its maximum \glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
+                        \item Its maximum \glossterm{damage resistance} is equal to its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
                         \item Its \glossterm{power} is equal to half your power.

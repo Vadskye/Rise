@@ -321,7 +321,7 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Avasculate',
 
-      // HP loss is treated as t3.5 debuff
+      // TODO: math
       attack: {
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it takes damage equal to half its maximum hit points.
@@ -662,14 +662,14 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Wall of Death',
+      name: 'Enervating Wall',
 
       cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
-          You create a \\medarealong \\glossterm{wall} of death within \\medrange.
+          You create a \\medarealong \\glossterm{wall} within \\medrange.
           Whenever a living creature passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
           In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Fortitude against any creature currently sharing space with it.
           Generally, this is only possible for Large or larger creatures.
@@ -683,7 +683,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Massive Wall of Death',
+      name: 'Massive Enervating Wall',
 
       cost: BARRIER_COOLDOWN,
       functionsLike: {

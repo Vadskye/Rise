@@ -692,7 +692,7 @@ def universal_abilities():
                 "Recover",
                 """
                     After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
-                    You regain half your maximum hit points and all of your damage resistance. In addition, you remove all conditions affecting you.
+                    You regain all of your hit points and damage resistance. In addition, you remove all conditions affecting you.
                 """,
                 tags=["Swift"],
             ),
