@@ -349,13 +349,13 @@ export const polymorph: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Minor action attack is drX-3.
-    // All adjacent enemies is r0, so drX+1, so total damage is dr3.
+    // r4 minor action attack is normally dr0.
+    // All adjacent enemies is r0, so drX+1, so total damage is dr1.
     {
       name: 'Extruding Spikes',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
           As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
@@ -364,7 +364,7 @@ export const polymorph: MysticSphere = {
       narrative: `
         Your body grows small spikes that you can consciously extrude to impale nearby foes.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -402,6 +402,11 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
       type: 'Attune',
     },
 
@@ -414,6 +419,11 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
+      scaling: {
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
+      },
       type: 'Attune',
     },
 
@@ -539,7 +549,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      scaling: { 4: `The bonus increases to +3.`, 6: `The bonus increases to +4.` },
+      scaling: { 4: `The bonus to checks increases to +3.`, 6: `The bonus to checks increases to +4.` },
       type: 'Attune',
     },
 
@@ -554,7 +564,7 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['attune'],
       scaling: {
-        6: 'The bonus increases to +3.',
+        6: 'The bonus to checks increases to +3.',
       },
       type: 'Attune (target)',
     },
@@ -596,7 +606,7 @@ export const polymorph: MysticSphere = {
         exceptThat: 'both damage instances increase to \\damagerankfive.',
       },
       rank: 4,
-      roles: ['attune'],
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 

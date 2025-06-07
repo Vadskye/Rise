@@ -36,7 +36,7 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.2 EA * 5 actions = 1 EA
 
-### 25% extra damage: 1.25 EA
+### 25% extra damage: 1.25
 
 0.25 EA * 5 actions = 1.25
 
@@ -44,11 +44,9 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.4 EA * 5 actions = 2 EA
 
-### 50% damage reactive attack: 
+### Reactive attack: 1.75-3.0
 
-Assume the minor action attack deals drX-3 damage, so it deals about 50% damage.
-If the reactive attack triggers on melee attacks, it's roughly a r0 area that triggers 50% of the time.
-That's 0.5 EA * 2.5 attacks = 1.2 EA. However, reactive attacks are complicated, and we want to keep them as deep attunements for action economy reasons, so they must deal more damage.
+Assume that the trigger for a reactive attack happens 50% of the time, so it makes a total of 2.5 attacks per fight. That means the correct damage multiplier is (rank EA) / 2.5.
 
 * Rank 2: 70% damage (0.7 EA * 2.5 attacks = 1.75 EA)
 * Rank 3: 80% damage (0.8 EA * 2.5 attacks = 2 EA)
@@ -65,14 +63,23 @@ Translating that into usable scaling:
 * Rank 6: ???
 * Rank 7: dr8 (120% damage)
 
-### 50% damage minor action attack: 2.5
+### Minor action attack:
 
-Assume the minor action attack deals drX-3 damage, so it deals about 50% damage.
-That's 0.5 EA * 5 attacks = 2.5, which is valid for a rank 5 deep attunement.
+A minor action attack makes 5 attacks per combat, so the correct damage multiplier is (rank EA) / 5.
 
-### 65% damage minor action attack: 3.25
+* Rank 2: 35% damage
+* Rank 3: 40% damage = 2 EA / 5
+* Rank 4: 45% damage
+* Rank 5: 50% damage = 2.5 EA / 5
+* Rank 6: 55% damage
+* Rank 7: 60% damage = 3 EA / 5
 
-This is drX-2. That's 0.65 EA * 5 attacks = 3.25, which is too strong even for rank 7 deep attunement.
+Translating that into usable scaling:
+* Rank 3: 1d10 (43%; dr1l, with normal +2 per rank scaling)
+* Rank 4: dr0, 1d4 + half power (45%)
+* Rank 5: power, not a real scaling (49%)
+* Rank 6: dr3, 1d8 + power (55%)
+* Rank 7: dr4, 1d6 per 2 (56%)
 
 ### Honed: 2.0
 
