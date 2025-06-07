@@ -313,7 +313,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature appears to be an earth elemental.
           Its attacks deal \\damagerankfour, and have the \\atEarth tag.
-          It has \\glossterm{damage resistance} equal to half its maximum \\glossterm{hit points}.
+          Its \\glossterm{damage resistance} is equal to its maximum \\glossterm{hit points}, ignoring enhancement bonuses to hit points.
           In addition, it is immune to \\atEarth attacks.
         `,
         name: 'summon monster',

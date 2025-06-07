@@ -51,6 +51,7 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Deliverance of the Faithful',
 
+      // TODO: modernize
       effect: `
         At the end of the next round, you become infused with divine power, which has three effects.
         % d3

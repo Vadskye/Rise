@@ -51,24 +51,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Regeneration',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        At the end of each round, each target regains 2d6 \\glossterm{hit points}.
-        This healing cannot increase a target's hit points above half its maximum hit points.
-      `,
-      rank: 5,
-      roles: ['healing'],
-      scaling: {
-        special: `
-          The healing increases by 1d6 for each rank beyond 5.
-        `,
-      },
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Blessing of Proficiency',
 
       effect: `

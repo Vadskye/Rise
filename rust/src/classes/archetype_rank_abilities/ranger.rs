@@ -35,7 +35,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item Its level is equal to your level if that would be higher than the animal's normal level.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
                         \item Its maximum \glossterm{hit points} are equal to the standard value for a ranger of your level and Constitution (see Base Class Abilities, above).
-                        \item Its maximum \glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
+                        \item Its maximum \glossterm{damage resistance} is equal to its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
                         \item Its \glossterm{power} is equal to half your power. You can use the higher of your \glossterm{mundane power} and \glossterm{magical power} for this ability.

@@ -217,22 +217,23 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // TODO: unclear rank
+    // It would make more sense if the healing was limited by the HP remaining, but that's
+    // complicated to track.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vampiric"),
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            At the end of each round, if you caused a living creature to lose \glossterm{hit points} with a \glossterm{strike} using this weapon that round, you regain 1d6 hit points.
-            This healing cannot increase your hit points above half your maximum hit points.
+            At the end of each round, if you caused a living creature other than yourself to lose \glossterm{hit points} with a \glossterm{strike} using this weapon that round, you regain 1d10 hit points.
         "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             // -1dr for no downsides or requirements and the healing effect
             ItemUpgrade::new(4, "Deals +1 damage and steals HP", r"
-                The weapon also deals 1 \glossterm{extra damage} to living creatures, and the healing increases to 2d6.
+                The weapon also deals 1 \glossterm{extra damage} to living creatures, and the healing increases to 3d8.
             "),
             ItemUpgrade::new(6, "Deals +1d6 damage and steals HP", r"
-                The \glossterm{extra damage} increases to 1d6, and the healing increases to 4d6.
+                The \glossterm{extra damage} increases to 1d6, and the healing increases to 5d10.
             "),
         ],
         ..MagicWeapon::default()
