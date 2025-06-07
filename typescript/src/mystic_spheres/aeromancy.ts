@@ -77,7 +77,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Guiding Winds',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           Each target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
@@ -251,7 +250,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Skyward',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} borne aloft by heavy winds.
           It floats five feet above the ground in \\debuff{midair}, which normally means it suffers a \\minus4 penalty to its Armor, Brawn, and Reflex defenses.
@@ -601,6 +599,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // r5 with r6 area. Huge radius from self would be r7 area, which seems fine with
       // Sustain (standard).
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\dazzled as a \\glossterm{condition}.
         `,
@@ -724,7 +723,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
         Since you have no \\glossterm{walk speed}, flying in this way does not penalize your defenses.
-        You are unable to take any standard actions other than sustaining this effect, but you can still take \glossterm{move actions} in place of standard actions.
+        You are unable to take any standard actions other than sustaining this effect, but you can still take \\glossterm{move actions} in place of standard actions.
       `,
       rank: 4,
       roles: ['narrative'],

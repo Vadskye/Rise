@@ -297,6 +297,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 2,
       roles: ['kite'],
+      scaling: 'accuracy',
     },
 
     // Baseline for 30' ranged push is r4, or r5 if we pay for extended area scaling.
@@ -313,6 +314,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 5,
       roles: ['kite'],
+      scaling: 'accuracy',
     },
 
     {
@@ -328,6 +330,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 6,
       roles: ['kite'],
+      scaling: 'accuracy',
     },
 
     // Baseline for 15' ranged push is r-1. If we pay 2 ranks for area scaling, we get a

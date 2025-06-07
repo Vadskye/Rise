@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
 export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
   name: 'Aquamancy',
@@ -492,6 +492,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Aqueous Form',
 
+      // Strike crit immune alone is about right for rank 2.
+      // The deep attunement gives the other bonuses.
       effect: `
         You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
@@ -501,28 +503,15 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\item You gain an slow \\glossterm{swim speed}.
             If you already have a slow swim speed, your swim speed becomes average instead.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
-          \\item You gain a +4 bonus to your defenses when determining whether a \\glossterm{strike} gets a \\glossterm{critical hit} against you instead of a normal hit.
+          \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
           \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
-          \\item You take a -1 penalty to your Armor defense.
         \\end{itemize}
 
-        % There must be text between an itemize block and the end of a mdframed env
-        \\hypertarget{itemizespace}{}
+        You can suppress or resume this effect as a \\glossterm{free action} once per round.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune (deep)',
-    },
-    {
-      name: 'Efficient Aqueous Form',
-
-      functionsLike: {
-        name: 'aqueous form',
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      rank: 6,
-      roles: ['attune'],
-      type: 'Attune',
     },
     {
       name: 'Fog Cloud',

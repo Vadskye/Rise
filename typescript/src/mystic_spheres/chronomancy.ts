@@ -241,7 +241,7 @@ export const chronomancy: MysticSphere = {
       },
       rank: 2,
       roles: ['softener', 'maim'],
-      // scaling: 'accuracy',
+      scaling: 'accuracy',
     },
 
     {
@@ -741,6 +741,7 @@ export const chronomancy: MysticSphere = {
       },
       rank: 1,
       roles: ['burst'],
+      scaling: 'accuracy',
     },
     {
       name: 'Mighty Unstable Aging',
@@ -755,6 +756,7 @@ export const chronomancy: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
+      scaling: 'accuracy',
     },
 
     {

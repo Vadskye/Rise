@@ -54,6 +54,10 @@ export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
 }
 
 function convertSpellToLatex(spell: SpellLike): string {
+  if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
+    console.error(`Spell ${spell.name} is probably missing scaling`);
+  }
+
   const abilityType = determineAbilityType(spell);
   const internalComponents = [
     format.spellEffect(spell, 'spell'),
