@@ -44,6 +44,27 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.4 EA * 5 actions = 2 EA
 
+### 50% damage reactive attack: 
+
+Assume the minor action attack deals drX-3 damage, so it deals about 50% damage.
+If the reactive attack triggers on melee attacks, it's roughly a r0 area that triggers 50% of the time.
+That's 0.5 EA * 2.5 attacks = 1.2 EA. However, reactive attacks are complicated, and we want to keep them as deep attunements for action economy reasons, so they must deal more damage.
+
+* Rank 2: 70% damage (0.7 EA * 2.5 attacks = 1.75 EA)
+* Rank 3: 80% damage (0.8 EA * 2.5 attacks = 2 EA)
+* Rank 4: 90% damage
+* Rank 5: 100% damage (1 EA * 2.5 attacks = 2.5 EA)
+* Rank 6: 110% damage
+* Rank 7: 120% damage (1.2 EA * 2.5 attacks = 3 EA)
+
+Translating that into usable scaling:
+* Rank 2: dr1 (80% damage, but weak scaling)
+* Rank 3: ???
+* Rank 4: dr3 (86% damage)
+* Rank 5: dr5 (100% damage)
+* Rank 6: ???
+* Rank 7: dr8 (120% damage)
+
 ### 50% damage minor action attack: 2.5
 
 Assume the minor action attack deals drX-3 damage, so it deals about 50% damage.

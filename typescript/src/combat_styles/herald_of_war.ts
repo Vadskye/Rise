@@ -280,7 +280,7 @@ export const heraldOfWar: CombatStyle = {
         `,
         targeting: `
           Make an attack vs. Mental against up to four creatures in \\shortrange.
-          Then, you are \\glossterm{briefly} \\glossterm{braced}.
+          Then, you are \\glossterm{briefly} \\braced.
         `,
       },
       rank: 7,

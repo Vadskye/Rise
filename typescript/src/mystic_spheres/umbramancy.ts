@@ -628,6 +628,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 2,
       roles: ['generator'],
+      scaling: 'accuracy',
     },
   ],
 };
