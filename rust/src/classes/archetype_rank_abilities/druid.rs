@@ -534,6 +534,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
                         % Weird to use non-rolled hp value, but the scaling is fine?
                         In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        % TODO: replace all 'half maximum hit point' effects
                         This cannot heal you above half your maximum \glossterm{hit points}.
                         \rankline
                         \rank{4} The healing increases to be equal to your \glossterm{power}.
