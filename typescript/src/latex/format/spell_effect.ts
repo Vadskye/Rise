@@ -43,7 +43,7 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
 }
 
 function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
-  const isArea = /(\bwall\b|against all|ach target|verything)/.test(attack.targeting);
+  const isArea = /(\bwall\b|against all|ach target|verything|and all)/.test(attack.targeting);
   const dealsDamage = /damagerank/.test(attack.hit);
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
   // false, which probably means the omission is intentional.

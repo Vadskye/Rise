@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
+import { CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 // This is a very broad sphere, but it is relatively weak with AOE.
 export const polymorph: MysticSphere = {
@@ -20,14 +20,13 @@ export const polymorph: MysticSphere = {
         You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
         The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
-        % TODO: nerf all magical crafting times
-        Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
+        Each time you cast this spell, you can accomplish work that would take up to one round with a normal Craft check.
       `,
       roles: ['narrative'],
       scaling: {
-        2: `The amount of work you accomplish with the spell increases to five rounds.`,
-        4: `The amount of work you accomplish with the spell increases to one minute.`,
-        6: `The amount of work you accomplish with the spell increases to two minutes.`,
+        2: `The amount of work you accomplish with the spell increases to two rounds.`,
+        4: `The amount of work you accomplish with the spell increases to three rounds.`,
+        6: `The amount of work you accomplish with the spell increases to five rounds.`,
       },
     },
 
@@ -46,11 +45,6 @@ export const polymorph: MysticSphere = {
         name: 'disguise creature',
       },
       roles: ['narrative'],
-      scaling: {
-        2: `The bonus increases to +5.`,
-        4: `The bonus increases to +6.`,
-        6: `The bonus increases to +8.`,
-      },
     },
 
     {
@@ -62,7 +56,7 @@ export const polymorph: MysticSphere = {
       `,
       roles: ['attune'],
       // no scaling; unclear what scaling could exist
-      type: 'Attune',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [
@@ -81,22 +75,6 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['narrative'],
       tags: ['Sustain (attuneable, minor)'],
-    },
-
-    {
-      name: 'Reforge Armor',
-
-      effect: `
-        Choose one nonmagical suit of body armor you \\glossterm{touch}.
-        The armor becomes composed of a special material of your choice other than cold iron (see \\tref{Armor Special Materials}).
-        The special material chosen must not cause the item's total rank to exceed your spellcasting rank with this spell.
-        You can only change the target into a special material appropriate for its base composition of either leather or metal.
-        For example, you cannot create mithral hide armor with this spell.
-      `,
-      rank: 4,
-      roles: ['attune'],
-      // TODO: weird that this is one of the few ways you can attune on behalf of an ally
-      type: 'Attune',
     },
 
     {
@@ -315,18 +293,20 @@ export const polymorph: MysticSphere = {
     {
       name: 'Malleable Body',
 
-      // Strike crit immuune alone is about right for rank 2.
+      // Strike crit immune alone is about right for rank 2.
       // The deep attunement gives the other bonuses.
       effect: `
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{itemize}
-          \\item You gain an average \\glossterm{climb speed} (see \\pcref{Climbing}).
+          \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
+            If you already have a slow climb speed, your climb speed becomes average instead.
+          \\item You can climb without using any \\glossterm{free hands}.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
         \\end{itemize}
 
-        You can suppress or resume this effect as a \\glossterm{free action}.
+        You can suppress or resume this effect as a \\glossterm{free action} once per round.
       `,
       rank: 3,
       roles: ['attune'],
@@ -339,7 +319,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       narrative: `
@@ -355,9 +335,9 @@ export const polymorph: MysticSphere = {
       name: 'Mighty Spikeform',
 
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfive.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       narrative: `
@@ -365,6 +345,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
+      scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
@@ -875,12 +856,12 @@ export const polymorph: MysticSphere = {
     {
       name: 'Sudden Liquification',
 
+      // Full steeled is r2 or r3, but one-round strike steeled is fine for r1.
       effect: `
         When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit.
-        However, this rapid liquification also interferes with your own bodily functions.
-        You are \\glossterm{briefly} \\dazzled and \\stunned, and this ability ends.
+        This causes the critical hit to become only a regular hit, and you remain \steeled for the rest of the round.
+        Then, this ability ends.
       `,
       rank: 1,
       roles: ['attune'],

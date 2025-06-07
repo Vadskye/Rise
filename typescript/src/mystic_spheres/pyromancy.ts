@@ -814,6 +814,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['attune'],
+      scaling: 'accuracy',
       type: 'Attune',
     },
 
