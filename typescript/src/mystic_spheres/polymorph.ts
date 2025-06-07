@@ -421,11 +421,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
       type: 'Attune',
     },
 
@@ -438,11 +433,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
       type: 'Attune',
     },
 
@@ -525,40 +515,37 @@ export const polymorph: MysticSphere = {
       name: 'Regeneration',
 
       effect: `
-        At the end of each round, you regain 1d6 \\glossterm{hit points}.
-        This healing cannot increase your hit points above half your maximum hit points.
+        At the end of each round, you regain hit points equal to your \\glossterm{power}.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by +1 for each rank beyond 2.' },
-      type: 'Sustain (attuneable, standard)',
+      scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
+      type: 'Attune (deep)',
     },
 
     {
       name: 'Empowered Regeneration',
 
+      // -1d6 for double healing on vital wounds
       effect: `
-        At the end of each round, you regain 2d8 \\glossterm{hit points}.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d6 \add your \\glossterm{power}
         If you gained a vital wound this round, this healing is doubled.
-        This healing cannot increase your hit points above half your maximum hit points.
       `,
       rank: 5,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
-      type: 'Sustain (attuneable, standard)',
+      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
+      type: 'Attune (deep)'
     },
 
     {
       name: 'Efficient Regeneration',
 
       effect: `
-        At the end of each round, you regain 2d10 \\glossterm{hit points}.
-        If you lost \\glossterm{hit points} this round, this healing is doubled.
-        This healing cannot increase your hit points above half your maximum hit points.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d10 \add 1d10 per 2 \\glossterm{power}.
       `,
       rank: 7,
       roles: ['healing'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Attune (deep)',
     },
 
     {
