@@ -121,6 +121,10 @@ Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial t
 
 20% failure chance is 20% action denial that works 33% of the time, so 1.3 EA. That's about rank 6.
 
+### 50% miss chance
+
+50% miss chance is 50% action denial that works 25% of the time, so 20 * 0.5 * 0.25 = 2.5 EA, which is a rank 5 deep attunement.
+
 ### Steeled: 0.9
 
 14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9 

@@ -140,15 +140,25 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            complexity: 2,
-            name: "Equipment Efficiency",
+            complexity: 1,
+            name: "Weapon Expertise",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to magic weapons and magic armor.
+                The damage die of all weapons you use increases by one step in the order below:
+                \begin{raggeditemize}
+                  \item 1d3
+                  \item 1d4
+                  \item 1d6
+                  \item 1d8
+                  \item 1d10
+                  \item 2d6
+                  \item 2d8
+                  \item 2d10
+                  \item 4d6 % Maximum possible, since highest base weapon is 2d6 and weapon focus provides +2
+                \end{raggeditemize}
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: None,
         },
         RankAbility {
             complexity: 1,
@@ -186,7 +196,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Weapon Expertise",
+            name: "Weapon Precision",
             is_magical: false,
             rank: 5,
             description: r"
@@ -196,11 +206,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Equipment Efficiency+",
+            name: "Equipment Efficiency",
             is_magical: false,
             rank: 6,
             description: r"
-                You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
+                Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
             ",
             modifiers: None,
         },

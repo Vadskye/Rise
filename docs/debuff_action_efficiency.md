@@ -113,11 +113,11 @@ Note that this refers to the variation of banishment where the target also gets 
 
 As with all full action denial effects, this always comes with a "once per creature" restriction.
 
-### Blinded: 3.0
+### Blinded: 3.4
 
 Removing 50% of actions for a round is worth 50% of 4 = 2 effective actions. It doesn't affect AOE attacks, but it can also prevent normal targeting with even the 50% miss chance, so assume those cancel out.
 
-In addition, a blinded creature is partially unaware of attacks. Using the same calculations as slowed, that's worth 1 effective action.
+In addition, a blinded creature is partially unaware of attacks. Using the same calculations as stunned, that's worth 1.4 effective action.
 
 ### Confused: 2.8
 
@@ -517,10 +517,10 @@ In short, X% action denial is worth X% of 12 EA.
 ### Banishment: 9
 Say that this is 75% of the effectiveness of a full action skip.
 
-### Blinded: 8.2
+### Blinded: 9
 Removing 50% of enemy actions is worth 12 * 0.5 = 6 effective actions.
 
-Partially unaware is worth 2.2 effective actions using the same logic as being slowed.
+Partially unaware is worth 3 effective actions using the same logic as being stunned.
 
 ### Confused: 7.2
 35% action denial is worth 4.2 EA. The defense debuff is worth 3 effective actions, just like stunned.
@@ -629,7 +629,7 @@ By EA:
   Debuff             & Brief & HP Condition & Condition \\
   Action skip        & 2.0   & 4.8          & 12        \\
   Banishment         & 2.0   & 3.6          & 9         \\
-  Blinded            & 3.0   & 3.3          & 8.2       \\
+  Blinded            & 3.4   & 3.6          & 9.0       \\
   Confused           & 2.8   & 2.9          & 7.2       \\
   Dazzled            & 0.6   & 0.7          & 1.8       \\
   Deafened           & 0.3   & 0.5          & 1.2       \\
@@ -664,7 +664,7 @@ By rank:
   Debuff             & Brief & HP Condition & Condition \\
   Action skip        & 4     & inf          & inf       \\
   Banishment         & 4     & inf          & inf       \\
-  Blinded            & 9     & 11           & inf       \\
+  Blinded            & 11    & inf           & inf       \\
   Confused           & 8     & 9            & inf       \\
   Dazzled            & 2d    & 3d           & 3         \\
   Deafened           & 1d    & 2d           & 0         \\
