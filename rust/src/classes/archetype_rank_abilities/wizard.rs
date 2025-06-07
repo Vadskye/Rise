@@ -285,10 +285,12 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Expanded Sphere Access} You gain access to a new \glossterm{mystic sphere}.
                     \par You can choose this insight multiple times, gaining access to an additional mystic sphere each time.
 
-                    \parhead{Soulwoven Spell} Choose a spell you know with the \atAttune tag that is not a \glossterm{deep attunement}.
+                    \parhead{Soulwoven Spell} Choose a rank 1 spell you know with the \atAttune tag that is not a \glossterm{deep attunement}.
                     That spell becomes permanently active on you without requiring an \glossterm{attunement point}.
                     No outside force can remove it, and you cannot consciously suppress its effects.
                     If the spell would normally release its own attunement or otherwise end as part of its own effect, it is automatically applied to you again after one minute.
+                    Whenever your rank in this archetype increases, you can change which spell you have soulwoven with this ability.
+                    The spell's maximum rank is equal to half your rank in this archetype.
                     \par You cannot choose this insight multiple times.
 
                     \parhead{Sphere Specialization}\nonsectionlabel{Sphere Specialization} Choose a a \glossterm{mystic sphere} you have access to.
@@ -331,12 +333,14 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalattuneability}{Contingency}{\atAttune}
                     % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
                     % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
+                    \abilitycost Two \glossterm{fatigue levels} (see text).
                     \abilityusagetime One minute.
                     \rankline
                     When you use this ability, you choose a spell that you know.
                     The spell has no immediate effect.
                     Instead, you specify circumstances that will automatically cause the spell to take effect.
                     You cannot consciously control the spell after setting the circumstances, and any attacks made as part of the spell's resolution are \glossterm{reactive attacks}.
+                    When the spell takes effect, you increase your \glossterm{fatigue level} by two.
 
                     The spell can be set to trigger in response to any circumstances that a typical human observing you and your situation could detect.
                     For example, you could specify ``when I fall at least 50 feet'' or ``when I take a \glossterm{vital wound}'', but not ``when there is an invisible creature within 50 feet of me'' or ``when I have only one \glossterm{hit point} remaining.''
@@ -345,7 +349,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
 
                     If the spell needs to be targeted, the trigger condition can specify a simple rule for identifying how to target the spell, such as ``the closest enemy''.
                     If the rule is poorly worded or imprecise, the spell may target incorrectly or fail to activate at all.
-                    Any spells which require decisions, such as the \spell{dimension door} spell, must have those decisions made when this ability is used.
+                    Any spells which require decisions other than targeting, such as the \spell{dimension door} spell, must have those decisions made when this ability is used.
                     You cannot alter those decisions when the contingency takes effect.
                 \end{magicalattuneability}
             ",
@@ -357,7 +361,7 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                You gain an additional \glossterm{attunement point} that can only be used to attune to the \ability{contingency} ability.
+                When your \ability{contingency} activates, you only increase your fatigue level by one.
                 In addition, you can attune to the \ability{contingency} ability up to three times.
                 Each contingency must have a different associated spell and triggering condition.
                 Only one contigency can trigger each round.
@@ -589,8 +593,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You learn an additional spell from any mystic sphere within your chosen school, even if you do not have access to that mystic sphere.
-                If you already know at least one spell from all mystic spheres within your chosen school, you can instead gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
             ",
             modifiers: None,
         },
@@ -602,7 +604,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You learn an additional spell from any mystic sphere within your chosen school, even if you do not have access to that mystic sphere.
                 If you already know at least three spells from all mystic spheres within your chosen school, you can instead gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to a spell from your chosen school.
+                You can only use this attunement point to \glossterm{attune} to spells from your chosen school.
             ",
             modifiers: None,
         },

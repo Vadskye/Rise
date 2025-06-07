@@ -347,7 +347,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The enhancement bonuses increase to three times your rank in this archetype.
+                The enhancement bonuses increase to four times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -392,15 +392,13 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Implement Freedom+",
+            name: "Innate Power",
             is_magical: true,
             rank: 6,
             description: r"
-                You can gain the benefits of an additional magical implement with this ability.
-                In addition, you gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to magic implements.
+                You gain a \plus2 bonus to your \glossterm{magical power}.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
+            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -409,7 +407,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Whenever you absorb an attack with your \textit{magic absorption} ability, if you have no stored abilities, that attack has no effect on you.
-                Whenever you use a stored ability, you gain a +2 accuracy bonus with it for each other ability that you have stored.
+                Whenever you use a stored ability, you gain a +2 accuracy bonus with it.
             ",
             modifiers: None,
         },
