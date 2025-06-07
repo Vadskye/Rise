@@ -358,14 +358,16 @@ export const photomancy: MysticSphere = {
       type: 'Attune',
     },
 
+    // Rank 5 version is unlimited. It's not obvious how to downscale that correctly to
+    // rank 1, but 3 images seems about right.
     {
       name: 'Mirror Image',
 
       effect: `
         Three illusory duplicates appear around you that mirror your every move.
-        The duplicates shift chaotically in your space, making it difficult to identify your real location.
+        The duplicates shift chaotically in your space, making it difficult to hit you.
 
-        All \\glossterm{targeted} attacks against you have a 20\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance}.
         Like other miss chances, this miss chance is rolled before determining whether the attack beats your defenses.
         When an attack misses in this way, it affects an image, destroying it.
         When the last image is destroyed, this ability provides no further benefit.
@@ -382,9 +384,9 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'mirror image',
-        exceptThat: 'the miss chance increases to 50\\%.',
+        exceptThat: 'the images are recreated immediately after being destroyed, so they never run out.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune (deep)',

@@ -2109,6 +2109,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Malleable Flesh\plus} The bonuses increase to \plus10.
   \end{magicalfeat}
 
+  % TODO: redesign
   \begin{magicalfeat}{Sphere Focus: Prayer}{Casting, Magical}
     \featpre Access to the \sphere{Prayer} \glossterm{mystic sphere}.
 
@@ -2582,7 +2583,14 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Paired Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} using weapons that you are twin-wielding.
 
-    \ff[18]{Twinned Enhancement\plus} You gain an additional \glossterm{attunement point}.
+    \ff[18]{Twin-Weapon Stance\plus} The bonus from this ability improves:
+    \begin{itemize}
+      \item Balanced: The bonus increases to \plus2.
+      \item Deflecting Offhand: The bonus increases to \plus4.
+        % TODO: math
+      \item Overburdened Offhand: You also deal 1d6 \glossterm{extra damage} with dual strikes.
+      \item Steady Hands: The accuracy bonus increases to \plus3.
+    \end{itemize}
   \end{feat}
 
   \begin{magicalfeat}{Wardweaver}{Casting, Magical}
@@ -2618,6 +2626,7 @@ They allow more distinct and unique character customization, but also increase g
       \item 2d6
       \item 2d8
       \item 2d10
+      \item 4d6
     \end{raggeditemize}
 
     \ff[6]{Enhanced Legacy} If you choose your focused weapon as your \glossterm{legacy item}, you can choose an additional magic item property with a maximum rank of 3.
