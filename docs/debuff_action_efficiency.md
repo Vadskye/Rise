@@ -1259,3 +1259,33 @@ Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial t
 ### Steeled: 0.9
 
 14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9 
+
+### Regen: 2.0-3.3
+
+Assume that you heal drX at the end of each action phase. How much does that help?
+
+Assume that monsters spend one round your DR and four rounds doing some amount of HP damage. The healing on the first round is limited - assume that you only lose 1/4 of your max HP to the attack. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 2 full triggers and a third trigger that is capped at 1/4 of max HP.
+
+However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. To be safer, calculate the value of regeneration using a full 3 rounds of healing, even though a typical combat won't trigger all 3 rounds.
+
+drX is about half of a typical character's HP pool, so drX healing twice is like having 100% more HP, or 125% extra HP counting the second round healing. If your HP pool is half your EHP, that's +60% survivability, or 40% action denial following the same 2/3 logic as the 4/8/16/32 calc. 40% action denial on you is 20 * 0.4 / 3 = 2.7 EA.
+
+To simplify, since drX is half character HP, it's worth:
+* +150% HP -> +75% survivability -> 50% action denial -> 20 / 3 * 0.5 = 3.3 EA
+
+What about drX-1? That's:
+* +120% HP -> +60% survivability -> 40% action denial -> 20 / 3 * 0.4 = 2.7 EA (rank 6 deep)
+
+What about drX-2? That's:
+* +98% HP -> +49% survivability -> 33% action denial -> 20 / 3 * 0.3 = 2 EA (rank 3 deep)
+
+Note that drX-2 is extremely spiky. At rank 4, drX-2 is actually 80% healing, which is too strong. So we use slightly different scaling values:
+
+* Rank 3: equal to power (66%)
+  * Scaling: +2 per rank
+* Rank 4: ???
+* Rank 5: 2d6 + power (76%)
+  * Scaling: +1d6 per rank
+* Rank 6: 1d6 + 1d6 per 2 power (83%)
+  * Scaling: +2d6 per rank
+* Rank 7: 1d10 + 1d10 per 2 power (81%)
