@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::AbilityTag;
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::core_mechanics::Attribute;
 use crate::equipment::Apparel::{Belt, Cloak};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
@@ -20,17 +20,17 @@ fn belts() -> Vec<Apparel> {
     apparel.push(Belt(StandardItem {
         name: String::from("Belt of Regeneration"),
         rank: 3,
-        short_description: String::from("Regain 1d8 hit points while below half hit points"),
+        short_description: String::from("Regain 2d6 hit points per round"),
         description: String::from(r"
-            At the end of each round, you regain 1d8 \glossterm{hit points}.
-            This healing cannot increase your hit points above half your maximum hit points.
+            At the end of each round, you regain 2d6 \glossterm{hit points}.
         "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
-            ItemUpgrade::new(5, "Regain 2d8 hit points while below half hit points", "
-                The healing increases to 2d8.
+            ItemUpgrade::new(5, "Regain 3d10 hit points per round", "
+                The healing increases to 3d10.
             "),
-            ItemUpgrade::new(7, "Regain 4d8 hit points while below half hit points", "
-                The healing increases to 4d8.
+            ItemUpgrade::new(7, "Regain 6d10 hit points per round", "
+                The healing increases to 6d10.
             "),
         ],
         ..Apparel::default()
@@ -38,7 +38,7 @@ fn belts() -> Vec<Apparel> {
 
     apparel.push(Belt(StandardItem {
         name: String::from("Belt of Vital Regeneration"),
-        rank: 5,
+        rank: 6,
         short_description: String::from("Automatically exert to remove vital wounds"),
         description: String::from(r"
             At the end of each round, if your \glossterm<fatigue level> does not exceed your \glossterm<fatigue tolerance>, you automatically remove one of your \glossterm<vital wounds>.
@@ -248,19 +248,19 @@ fn cloaks() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    // "while at or below half max HP" applies approximately 1/3 of the time. Braced is
+    // normally 2.2 EA, or 0.7 EA with that condition. That's in scope for a rank 3 item.
+    // If you add in steeled for 0.9 EA, it's 1 EA, or rank 5.
     apparel.push(Cloak(StandardItem {
         name: String::from("Cloak of Death's Door"),
-        rank: 1,
-        short_description: String::from("Grants +1 Armor at low health"),
+        rank: 3,
+        short_description: String::from("Braced at low health"),
         description: String::from(r"
-            While you are at or below half your maximum \glossterm<hit points>, you gain a +1 bonus to your Armor defense.
+            While you are at or below half your maximum \glossterm<hit points>, you are \\braced.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +1 defenses at low health", "
-                The bonus applies to all defenses.
-            "),
-            ItemUpgrade::new(6, "Grants +2 defenses at low health", "
-                The bonus increases to +2.
+            ItemUpgrade::new(5, "Braced and steeled at low health", "
+                While you are at or below half your maximum hit points, you are also \\steeled.
             "),
         ],
         ..Apparel::default()

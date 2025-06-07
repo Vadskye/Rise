@@ -624,7 +624,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Transmutation} You gain a \plus1 bonus to \glossterm{vital rolls}.
 
-                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with less than half of their maximum hit points remaining.
+                    \subcf{Necromancy} You are \trait{impervious} to attacks from creatures with no more than half of their maximum hit points remaining.
                 }
             ",
             // TODO: represent this somehow?

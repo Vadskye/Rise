@@ -73,6 +73,7 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    // TODO: document why these values were chosen
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Divine Healing"),
         rank: 2,
