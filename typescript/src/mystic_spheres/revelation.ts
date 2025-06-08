@@ -527,24 +527,11 @@ export const revelation: MysticSphere = {
       name: 'Empowered Precognitive Precision',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy}.
+        You gain a +2 \\glossterm{enhancement bonus} to \\glossterm{accuracy}.
       `,
       rank: 7,
       roles: ['attune'],
       type: 'Attune',
-    },
-
-    {
-      name: 'Mass Distant Sight',
-
-      functionsLike: {
-        mass: true,
-        name: 'Distant Sight',
-      },
-      // narrative: '',
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune (target)',
     },
 
     {

@@ -177,7 +177,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         You can reload projectile weapons without requiring any \\glossterm{free hands}.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -513,6 +513,10 @@ export const telekinesis: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // Assume that you are using a Heavy weapon, and this gives you a shield.
+    // That's +2 Armor and +2 Ref, which is the same as shielded. However, it doesn't
+    // stack with actually using a shield, so it's a little weaker. Rank 1 is probably
+    // okay.
     {
       name: 'Floating Armament',
 
@@ -527,22 +531,10 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Efficient Floating Armament',
-
-      functionsLike: {
-        name: 'floating armament',
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
       name: 'Heavy Floating Armament',
 
       effect: `
-        You can hold any weapon or shield other than a tower shield without using a free hand.
+        You can hold any weapon or shield without using a free hand.
         It functions as if you were holding it in two hands if possible, or one hand otherwise.
         You still suffer the normal penalties if you are not proficient with it, or if it is not sized appropriately for you.
       `,
@@ -550,18 +542,6 @@ export const telekinesis: MysticSphere = {
       roles: ['attune'],
       tags: [],
       type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Heavy Floating Armament',
-
-      functionsLike: {
-        name: 'heavy floating armament',
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -684,7 +664,7 @@ export const telekinesis: MysticSphere = {
         If you do, you move 20 feet up into the air and levitate there.
         This movement is \\atSwift, so it can help you avoid attacks during the current phase.
         While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you do not suffer penalties for being \\glossterm{midair}.
-        At the end of the round, this ability is \\glossterm{dismissed}, and you descend 20 feet without taking \\glossterm{falling damage}.
+        At the end of the round, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],

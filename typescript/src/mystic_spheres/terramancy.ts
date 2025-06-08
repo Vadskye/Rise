@@ -202,6 +202,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       tags: ['Manifestation'],
     },
 
+    // TODO: calculate EA of immunities
     {
       name: 'Earthen Anchor',
 
@@ -533,6 +534,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Sustain (attuneable, minor)',
     },
 
+    // TODO: calculate EA of movement effects
     {
       name: 'Earthglide',
 
@@ -588,14 +590,18 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune',
     },
 
+    // Permanent steeled is 0.9 EA.
+    // Assume that you have some DR in 3 of the 5 rounds, maybe because you recovered.
+    // That makes this worth 0.5 EA?
     {
       name: 'Steelskin',
 
       effect: `
         You are \\steeled.
-        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect ends.
+        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect is \\glossterm{suppressed}.
+        Whenever you regain damage resistance, this effect is immediately resumed.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -641,6 +647,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       tags: ['Manifestation', 'Sustain (minor)'],
     },
 
+    // TODO: calculate EA for movement effects
     {
       name: 'Personal Gravitation',
 
