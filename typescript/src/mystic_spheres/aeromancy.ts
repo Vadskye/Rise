@@ -324,10 +324,10 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       type: 'Attune',
     },
     {
-      name: 'Soaring Flight',
+      name: 'Rapid Flight',
 
       effect: `
-        You gain a slow \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
+        You gain an average \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 7,
