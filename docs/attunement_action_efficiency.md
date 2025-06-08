@@ -44,7 +44,7 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.4 EA * 5 actions = 2 EA
 
-### Reactive attack: 1.75-3.0
+### Reactive damage: 1.75-3.0
 
 Assume that the trigger for a reactive attack happens 50% of the time, so it makes a total of 2.5 attacks per fight. That means the correct damage multiplier is (rank EA) / 2.5.
 
@@ -63,7 +63,17 @@ Translating that into usable scaling:
 * Rank 6: ???
 * Rank 7: dr8 (120% damage)
 
-### Minor action attack:
+### Reactive debuff: ???
+
+Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that brief
+debuffs often have additional effect:
+* Briefly stunned: 1.6 EA, since it affects your first attack too
+* Briefly dazzled: 1.2 EA, since it affects two rounds of enemy attacks instead of one
+* Briefly frightened by you: 1.2 EA, since 0.8 EA from double action denial and 0.4 EA from Mental debuff
+
+This all counts EA *assuming a hit*, which is different from how we normally count buff/attunement effects. For now, let's test ignoring this discrepancy since auto-attacks are scary from an action economy perspective.
+
+### Minor action attack: 1.75-3.0 EA
 
 A minor action attack makes 5 attacks per combat, so the correct damage multiplier is (rank EA) / 5.
 
