@@ -28,6 +28,8 @@ As with weapons, we treat +1 accuracy as 0.2 EA per hit, and this applies to 5 a
 
 As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
+### Singleton +5 accuracy: 0.7
+
 ### Braced: 2.2
 
 If you could be braced as an attunement, it would be 33% action denial that works 33% of the time, so 20 / 3 / 3 = 2.2 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
@@ -47,6 +49,10 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 ### Focused: 2.0
 
 0.4 EA * 5 actions = 2 EA
+
+### Singleton focused: 0.4
+
+This is weak, but we 
 
 ### Uncommon reactive damage: 1.75-3.0
 
@@ -84,7 +90,20 @@ Translating that into usable scaling:
 * Rank 6: dr4 (73%)
 * Rank 7: dr6 (81%)
 
-### Reactive debuff: ???
+### Singleton reactive damage:
+
+Assume that the trigger for the damage will happen exactly once per fight and is generally easy to trigger, so it will happen on round 1 or 2. As with the singleton reactive debuff, we use the EA value *assuming a hit*, because this sort of effect is scary from an action economy perspective. So:
+
+* Rank 1: dr0 (75%)
+* Rank 2: 1d8 + half power (89%)
+* Rank 3: dr3 (100%)
+* Rank 4: dr4 (107%)
+* Rank 5: dr6 (127%)
+* Rank 7: 1d8 + 1d8 per power (154%)
+
+If the reaction is hard to trigger, such as requiring total defense or recover, it gets +1 rank on the above scale.
+
+### Singleton reactive debuff: ???
 
 Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that brief
 debuffs often have additional effect:
@@ -105,7 +124,7 @@ A minor action attack makes 5 attacks per combat, so the correct damage multipli
 * Rank 6: 55% damage
 * Rank 7: 60% damage = 3 EA / 5
 
-Translating that into usable scaling:
+Translating that into usable scaling, assuming medium range:
 * Rank 3: 1d10 (43%; dr1l, with normal +2 per rank scaling)
 * Rank 4:
   * dr0, 1d4 + half power (45%)
@@ -116,7 +135,7 @@ Translating that into usable scaling:
 * Rank 6: dr3, 1d8 + power (55%)
 * Rank 7:
   * dr4, 1d6 per 2 (56%)
-  * double damage strike (50%) - only double weapon damage, not double damage, because doubling extra damage on a minor action is wrong
+  * double damage strike (50%) - only double weapon damage, not double damage, because doubling extra damage on a minor action is scary
 
 ### Honed: 2.0
 
@@ -212,3 +231,24 @@ Apparel has weaker scaling:
 ### Weapon tag: 1.0
 
 Assume that all weapons are similar in power to +1 accuracy, so 1.0 EA.
+
+### Standard action attack
+
+Assume that you use an attunement which grants you a special standard action attack. The attack should always have a brief cooldown because otherwise we'd have to balance it assuming you used that special attack every round, which would be weak and also boring.
+
+Assume you use the attack 3 times in a combat (rounds 1/3/5). That attack would need to be some amount better than a "regular" attack of that level:
+
+* Rank 1: 0.75 / 3 = +25% damage
+* Rank 2: +29% damage
+* Rank 3: 1 / 3 = +33% damage
+* Rank 4: +37% damage
+* Rank 5: 1.25 / 3 = +42% damage
+* Rank 6: +46% damage
+* Rank 7: 1.5 / 3 = +50% damage
+
+Translating this into direct scaling values is difficult because attacks can have widely varying range and area. We can provide some examples:
+
+* Rank 1, Short range single target: normal damage is dr2 (109%), attuned damage is dr3 (141%, +29%)
+* Rank 3, Large cone: normal damage is dr1 (53%), attuned damage is dr2 (86%, +62% but dr1 cone is just bad)
+* Rank 3, Medium cone: normal damage is dr3 (102%), attuned damage is dr4 (116%, but high scaling)
+* Rank 6, Large cone: normal damage is dr5 (83%), attuned damage is dr7 (130%, +57%)

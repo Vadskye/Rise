@@ -370,7 +370,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 2,
         short_description: String::from(r"Grants +1 accuracy in brilliant light"),
         description: String::from(r"
-            You gain a +1 \glossterm<accuracy> bonus against targets that are in \glossterm<brilliant illumination>.
+            You gain a +1 \glossterm{enhancement bonus} to accuracy while you are in \glossterm<brilliant illumination>.
             In addition, you can activate this staff as a standard action.
             When you do, you create a \medarea radius \glossterm{emanation} of brilliant illumination from you that lasts \glossterm{briefly}.
         "),
@@ -385,15 +385,30 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Bushwalker's Staff"),
         rank: 2,
-        short_description: String::from(r"Grants +1 accuracy vs targets in undergrowth"),
+        short_description: String::from(r"Grants +1 accuracy in undergrowth"),
         description: String::from(r"
-            You gain a +1 \glossterm<accuracy> bonus against targets that are in \glossterm<undergrowth>.
+            You gain a +1 \glossterm{enhancement bonus} to accuracy while you are in \glossterm{undergrowth}.
             In addition, you can activate this staff as a standard action.
             When you do, you create a \medarea radius \glossterm{zone} of \glossterm{light undergrowth} from your location that lasts \glossterm{briefly}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, "Grants +2 accuracy vs targets in undergrowth", r"
+            ItemUpgrade::new(6, "Grants +2 accuracy vs targets in undergrowth", r"
                 The accuracy bonus increases to +2, and the area increases to \medarea.
+            "),
+        ],
+        ..Implement::default()
+    }));
+
+    implements.push(Staff(StandardItem {
+        name: String::from("Perceptive Staff"),
+        rank: 3,
+        short_description: String::from(r"Grants +1 accuracy if you have 3 Per"),
+        description: String::from(r"
+            If your Perception is at least 3, you gain a +1 \glossterm{enhancement bonus} to \glossterm{accuracy}.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, "Grants +2 accuracy if you have 5 Per", r"
+                The accuracy bonus increases to +2 if your Perception is at least 5.
             "),
         ],
         ..Implement::default()

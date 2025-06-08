@@ -59,8 +59,8 @@ pub fn ranged() -> Vec<MagicWeapon> {
         rank: 5,
         short_description: String::from(r"Teleports when thrown"),
         description: String::from(r"
-            When you throw this weapon, it teleports directly from your hand to your intended target.
-            This gives you a +1 accuracy bonus and allows you to ignore any intervening \glossterm<cover> with the attack, as long as you still have \glossterm{line of effect}.
+            When you make a thrown \glossterm{strike} using this weapon, it teleports directly from your hand to your intended target.
+            This gives you a +1 \glossterm{enhancement bonus} to \glossterm{accuracy} with the strike and allows you to ignore any intervening \glossterm<cover> with the attack, as long as you still have \glossterm{line of effect}.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Teleports long distances when thrown", r"
