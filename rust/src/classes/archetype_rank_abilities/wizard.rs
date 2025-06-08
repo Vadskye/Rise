@@ -359,9 +359,19 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Contingency+",
             is_magical: true,
-            rank: 7,
+            rank: 5,
             description: r"
                 When your \ability{contingency} activates, you only increase your fatigue level by one.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Contingency++",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                You gain an additional \glossterm{attunement point} that can only be used to attune to the \ability{contingency} ability.
                 In addition, you can attune to the \ability{contingency} ability up to three times.
                 Each contingency must have a different associated spell and triggering condition.
                 Only one contigency can trigger each round.
