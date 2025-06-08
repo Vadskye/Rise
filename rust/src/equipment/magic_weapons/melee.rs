@@ -25,7 +25,7 @@ pub fn melee() -> Vec<MagicWeapon> {
         description: String::from(
             r"
                 You can draw this weapon as a \glossterm{free action} that does not count as an object manipulation (see \pcref{Manipulating Objects}).
-                When you draw this weapon, if you did not also sheathe it this round, you gain a \plus1 accuracy bonus to strikes using it this round.
+                When you draw this weapon, if you did not also sheathe it this round, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with strikes using it this round.
             ",
         ),
         upgrades: vec![
@@ -44,13 +44,13 @@ pub fn melee() -> Vec<MagicWeapon> {
         ),
         description: String::from(
             r"
-                You gain a +1 accuracy bonus against creatures adjacent to you.
+                You gain a +1 \glossterm{enhancement bonus} to \glossterm{accuracy} with \glossterm{melee} strikes using this weapon.
                 However, you also take a -1 penalty to all defenses against creatures adjacent to you.
             ",
         ),
         upgrades: vec![
-            ItemUpgrade::new(6, "Grants +2 accuracy and -2 defenses in melee",
-                "The bonus and penalty both increase to +2.",
+            ItemUpgrade::new(6, "Grants +2 accuracy and -1 defenses in melee",
+                "The bonus increases to +2.",
             ),
         ],
         ..MagicWeapon::default()

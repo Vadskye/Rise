@@ -619,11 +619,6 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      scaling: {
-        3: `The radius increases to 60 feet.`,
-        5: `The radius increases to 90 feet.`,
-        7: `The radius increases to 120 feet.`,
-      },
       type: 'Attune',
     },
 

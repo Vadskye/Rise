@@ -102,11 +102,26 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Grants +1 accuracy if you have 3 Dex"),
         description: String::from(r"
-            If your Dexterity is at least 3, you gain a +1 accuracy bonus with \glossterm{strikes} using this weapon.
+            If your Dexterity is at least 3, you gain a +1 \glossterm{enhancement bonus} to accuracy with \glossterm{strikes} using this weapon.
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants +2 accuracy if you have 5 Dex", r"
                 The accuracy bonus increases to +2 if your Dexterity is at least 5.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
+        name: String::from("Perceptive"),
+        rank: 3,
+        short_description: String::from(r"Grants +1 accuracy if you have 3 Per"),
+        description: String::from(r"
+            If your Perception is at least 3, you gain a +1 \glossterm{enhancement bonus} to accuracy with \glossterm{strikes} using this weapon.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(7, "Grants +2 accuracy if you have 5 Per", r"
+                The accuracy bonus increases to +2 if your Perception is at least 5.
             "),
         ],
         ..MagicWeapon::default()
@@ -191,15 +206,14 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     // This gets -2r for the unusual circumstances
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Routing"),
-        rank: 1,
-        short_description: String::from(r"Grants +1 accuracy vs scared foes"),
+        rank: 2,
+        short_description: String::from(r"Grants +1d4 damage vs scared foes"),
         description: String::from(r"
-            You gain a +1 bonus to \glossterm<accuracy> with \glossterm<strikes> using this weapon against creatures that are suffering penalties for being \frightened or \panicked.
+            You deal 1d4 \glossterm{extra damage} with \glossterm<strikes> using this weapon against creatures that are suffering penalties for being \frightened or \panicked.
         "),
         upgrades: vec![
-            // This is -3r, which is starting to push it, but it's still very situational
-            ItemUpgrade::new(4, "Grants +2 accuracy vs scared foes", r"
-                The accuracy bonus increases to +2.
+            ItemUpgrade::new(5, "Grants +1d10 damage vs scared foes", r"
+                The extra damage increases to 1d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -244,7 +258,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Grants +1 accuracy while stationary"),
         description: String::from(r"
-            Whenever you make a \glossterm{strike}, if you have not changed location since start of the round, you gain a \plus1 accuracy bonus with that strike.
+            Whenever you make a \glossterm{strike}, if you have not changed location since start of the round, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with that strike.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Grants +2 accuracy while stationary", r"
@@ -270,7 +284,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Psionic"),
         rank: 3,
-        short_description: String::from(r"Is psychic, +1d4 damage"),
+        short_description: String::from(r"Is psychic, +1 damage"),
         description: String::from(r"
             This weapon's striking surface is ephemeral, and it echoes the thoughts of anyone touching it back into their head.
             You can suppress or resume its psionic nature as a \glossterm{free action}.

@@ -47,7 +47,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankzero.
         `,
         targeting: `
           Whenever you hit a creature with a \\atBrawling attack or a creature hits you with a \\atBrawling attack, make an attack vs. Reflex against that creature.
@@ -74,11 +74,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Channel Flame',
 
+      // +5 accuracy bonus is reasonable for a one-off attunement
       effect: `
         Whenever you use a \\atFire ability, you can draw power from one Small or larger \\glossterm{mundane} fire within \\medrange.
         When you do, you gain a \\plus2 accuracy bonus with that ability this round.
-        % Med +3, Large +4, Huge +5, Garg +6, Colossal +7
-        For each size category above Small that you siphon in this way, this accuracy bonus increases by 1, to a maximum of a \\plus7 bonus from a Colossal flame.
+        % Med +4, Large +6, Huge +8, Garg +10
+        For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \\plus10 bonus from a Gargantuan flame.
         Then, if that fire was Medium or smaller, it is extinguished.
         After you enhance an ability in this way, this ability is \\glossterm{dismissed}.
         
@@ -436,13 +437,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Breath',
 
-      // +1dr for attuned ability with cooldown
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
+          When you do, make an attack vs. Reflex against everything within a \\medarea cone from you.
           After you breathe fire, you \\glossterm{briefly} cannot do so again.
         `,
       },
@@ -458,7 +458,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankfive.
+          the damage increases to \\damagerankseven and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,
@@ -522,11 +522,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       tags: ['Sustain (minor)'],
     },
 
+    // Common reactive damage
     {
       name: 'Personal Ignition',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `1d4 damage \\add half power.`,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Reflex against them.
@@ -537,18 +538,19 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         You catch on fire.
         This does not cause you any harm, as the flames burn around your body without burning you.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
     },
 
+    // Common reactive damage
     {
       name: 'Mighty Personal Ignition',
 
       functionsLike: {
         name: 'personal ignition',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankthree.',
       },
       narrative: `
         You catch on fire.
@@ -560,12 +562,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       type: 'Attune (deep)',
     },
 
+    // Minor action attack should deal 40% damage at r4.
+    // Normal damage for r1 area would be dr4 (107%), so we want 43% damage.
+    // dr0 is 45% damage at rank 4.
     {
       name: 'Flame Aura',
 
       attack: {
-        // TODO: is this damage correct?
-        hit: `\\damagerankone. All sources of \\glossterm{extra damage} do not apply to this attack.`,
+        hit: `\\damagerankzero.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
@@ -578,12 +582,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       type: 'Attune (deep)',
     },
 
+    // Minor action attack should deal 60% damage at r7.
+    // Normal damage for r1 area would be r7 (99%), so we want dr5 (63%)
     {
       name: 'Mighty Flame Aura',
 
       functionsLike: {
         name: 'flame aura',
-        exceptThat: 'the damage increases to \\damagerankfour. Extra damage is still not applied.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 7,
       roles: ['attune'],
@@ -594,11 +600,26 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Flame Blade',
 
+      // One rank behind weapon / ahead of apparel?
       effect: `
-        The target's \\glossterm{manufactured weapons} shed light like a torch.
-        Their strikes with those weapons gain the \\atFire tag.
+        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target's \\glossterm{manufactured weapons} shed light like a torch.
+        Their strikes with those weapons gain the \\atFire tag and deal 1 \\glossterm{extra damage}.
       `,
-      rank: 1,
+      rank: 3,
+      roles: ['attune'],
+      type: 'Attune (target)',
+    },
+
+    {
+      name: 'Mighty Flame Blade',
+
+      // One rank behind weapon / ahead of apparel?
+      functionsLike: {
+        name: "flame blade",
+        exceptThat: "the extra damage increases to 1d6.",
+      },
+      rank: 6,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -799,10 +820,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Fireburst',
 
-      // If this were a standard action attack, it would deal dr2 damage.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -812,7 +832,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Unlike the \\ability{total defense} and \\ability{recover} abilities, this attack is not \\atSwift, so it takes effect during your normal action in the action phase.
         `,
       },
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune',
