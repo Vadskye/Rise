@@ -313,7 +313,7 @@ fn cloaks() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from("Grants flight up to 15 feet high"),
         description: String::from(r"
-            You gain an average \glossterm<fly speed> with a maximum height of 15 feet (see \pcref<Flight>).
+            You gain a slow \glossterm<fly speed> with a maximum height of 15 feet (see \pcref<Flight>).
         "),
         upgrades: vec![
             ItemUpgrade::new(7, "Grants flight up to 30 feet high", "

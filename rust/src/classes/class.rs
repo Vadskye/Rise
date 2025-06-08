@@ -1593,7 +1593,7 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \areagarg radius.
                         \end{magicalattuneability}
-                        \magicaldomainability{Mastery} You gain an average \glossterm{fly speed} with a maximum height of 60 feet (see \pcref{Flight}).
+                        \magicaldomainability{Mastery} You gain an average \glossterm{fly speed} with a maximum height of 30 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
 
                     \subsubsection{Chaos Domain}
