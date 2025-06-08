@@ -57,10 +57,6 @@ export const revelation: MysticSphere = {
         Any effects that would cause them to be invisible are \\glossterm{suppressed}.
       `,
       rank: 2,
-      scaling: {
-        4: 'You can choose to affect a \\hugearea radius instead.',
-        6: 'You can choose to affect a \\gargarea radius instead.',
-      },
       roles: ['attune'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -191,18 +187,21 @@ export const revelation: MysticSphere = {
     {
       name: 'Precognitive Offense',
 
+      // 0.8 EA in theory, but focused and honed aren't optimal together since focused is
+      // better on low accuracy and honed is better on high accuracy
       effect: `
-        At the start of each phase, you can choose to become \\focused during that phase.
-        After you stop being focused in this way, this effect ends.
+        At the start of each phase, you can choose to become \\focused and \\honed during that phase.
+        At the end of that phase, this ability is \\glossterm{dismissed}.
       `,
       narrative: `
-        You intuitively perceive your foes' weaknesses.
+        You can intuitively perceive your foes' weaknesses.
       `,
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
 
+    // 1.2 EA on allies
     {
       name: 'Mass Precognitive Offense',
 
@@ -211,7 +210,7 @@ export const revelation: MysticSphere = {
         name: 'Precognitive Offense',
       },
       // narrative: '',
-      rank: 3,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -254,6 +253,7 @@ export const revelation: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
 
+    // TODO: calculate EA for skills
     {
       name: 'Precognitive Competence',
 
@@ -288,6 +288,7 @@ export const revelation: MysticSphere = {
       type: 'Attune',
     },
 
+    // TODO: calculate EA of sense abilities
     {
       name: 'Blindsense',
 
@@ -337,6 +338,7 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
+    // TODO: calculate EA of immunities
     {
       name: 'Foresight',
 
@@ -344,7 +346,7 @@ export const revelation: MysticSphere = {
         You are never \\unaware or \\partiallyunaware.
       `,
 
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -489,8 +491,7 @@ export const revelation: MysticSphere = {
       rank: 5,
       roles: ['narrative'],
       tags: ['Scrying'],
-      // The use of attune instead of Sustain is intentional to make the "scout the dungeon exclusively using clairvoyance" plan improbably difficult to pull off.
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
 
     {
@@ -512,23 +513,23 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Distant Sight',
+      name: 'Precognitive Precision',
 
       effect: `
-        You reduce your \\glossterm{longshot penalty} by 1.
+        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy}.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune',
     },
 
     {
-      name: 'Empowered Distant Sight',
+      name: 'Empowered Precognitive Precision',
 
       effect: `
-        You reduce your \\glossterm{longshot penalty} by 2.
+        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy}.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune',
     },

@@ -310,7 +310,7 @@ export const prayer: MysticSphere = {
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target is never \\unaware or \\partiallyunaware.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune (target)',
     },
