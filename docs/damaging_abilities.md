@@ -1,8 +1,10 @@
-# Damaging Ability Area
+# Damaging Abilities
+
+## Damaging Ability Area
 
 Because area size scales strongly with rank, at low ranks, a single-target ability may be more versatile than an area ability. What is the crossover point?
 
-## Damage by ability rank
+### Damage by ability rank
 
 If it's a damage plus debuff spell, reduce the listed damage rank by 1.
 
@@ -23,7 +25,7 @@ If it's a damage plus debuff spell, reduce the listed damage rank by 1.
 * Rank X, where X >= 5:
   * drX-3 in RX area, including extreme areas
 
-### Flat damage
+#### Flat damage
 
 Flat damage effects suffer more for using lower rank damage scaling. Halve all modifiers to relative damage rank for flat damage effects, rounded down. That means:
 
@@ -32,8 +34,10 @@ Flat damage effects suffer more for using lower rank damage scaling. Halve all m
 * drX-1 in Distant range
 * drX-1 in RX area, ignoring extreme areas
 
-## Damage for Sustain (minor) zones
+### Damage for Sustain (minor) zones
 
 A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a radius, or -1dr as a wall.
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
+
+##
