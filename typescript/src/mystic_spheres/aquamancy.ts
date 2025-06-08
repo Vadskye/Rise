@@ -743,7 +743,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
         This causes the critical hit to become only a regular hit, and you remain \steeled for the rest of the round.
-        Then, this ability ends.
+        Then, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],

@@ -23,7 +23,7 @@ export const telekinesis: MysticSphere = {
 
         During the movement phase, you can move the target up to 10 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
         Your \\glossterm{weight limits} are calculated as if your Strength was \\minus1, so you can carry a Small object normally or push a Medium object at half speed.
-        At the end of each round, if the target is outside of this ability's range, this ability ends.
+        At the end of each round, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
 
         Although you can control the object's motion, you do not have it equipped.
         This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
@@ -684,7 +684,7 @@ export const telekinesis: MysticSphere = {
         If you do, you move 20 feet up into the air and levitate there.
         This movement is \\atSwift, so it can help you avoid attacks during the current phase.
         While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you do not suffer penalties for being \\glossterm{midair}.
-        At the end of the round, this ability ends, and you descend 20 feet without taking \\glossterm{falling damage}.
+        At the end of the round, this ability is \\glossterm{dismissed}, and you descend 20 feet without taking \\glossterm{falling damage}.
       `,
       rank: 1,
       roles: ['attune'],

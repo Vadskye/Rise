@@ -51,7 +51,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         targeting: `
           Whenever you hit a creature with a \\atBrawling attack or a creature hits you with a \\atBrawling attack, make an attack vs. Reflex against that creature.
-          After you make this attack, this ability ends.
+          After you make this attack, this ability is \\glossterm{dismissed}.
         `,
       },
       rank: 1,
@@ -80,7 +80,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         % Med +3, Large +4, Huge +5, Garg +6, Colossal +7
         For each size category above Small that you siphon in this way, this accuracy bonus increases by 1, to a maximum of a \\plus7 bonus from a Colossal flame.
         Then, if that fire was Medium or smaller, it is extinguished.
-        After you enhance an ability in this way, this ability ends.
+        After you enhance an ability in this way, this ability is \\glossterm{dismissed}.
         
         As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a Small campfire.
         When you combine sources of fire in this way, they use their true size for determining whether they are extinguished.
@@ -752,7 +752,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\item You increase your \\glossterm{fatigue level} by three.
         \\end{itemize}
 
-        After you are restored to life in this way, this spell ends.
+        After you are restored to life in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 7,
       roles: ['attune'],
@@ -808,7 +808,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
           If you do, make an attack vs. Reflex against everything within a \\smallarea radius from you.
-          Then, this ability ends.
+          Then, this ability is \\glossterm{dismissed}.
           Unlike the \\ability{total defense} and \\ability{recover} abilities, this attack is not \\atSwift, so it takes effect during your normal action in the action phase.
         `,
       },

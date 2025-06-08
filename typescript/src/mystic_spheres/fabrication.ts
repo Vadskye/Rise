@@ -15,7 +15,7 @@ export const fabrication: MysticSphere = {
         You make a Craft check to create an object of Tiny size or smaller.
         The object appears in your hand or at your feet.
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
-        At the end of each round, this spell ends if you are not within \\medrange of the item.
+        At the end of each round, this ability is \\glossterm{dismissed} if you are not within \\medrange of the item.
       `,
       scaling: {
         2: `The maximum size of the object increases to Small.`,
@@ -56,7 +56,7 @@ export const fabrication: MysticSphere = {
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, you create a wall of indestructible shields around you.
         This grants you a \\plus2 bonus to your Armor defense and \\glossterm{cover} for the rest of the round.
-        After that time, this ability ends.
+        After that time, this ability is \\glossterm{dismissed}.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,

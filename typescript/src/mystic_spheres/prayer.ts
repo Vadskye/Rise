@@ -70,7 +70,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever a target misses or gets a \\glossterm{glancing blow} with an \\glossterm{attack}, it can \\glossterm{reroll} that attack and keep the higher result.
-        If it hits or critically hits with the reroll, this ability ends for that creature.
+        If it hits or critically hits with the reroll, this ability is \\glossterm{dismissed} for that creature.
       `,
       rank: 1,
       roles: ['attune'],
@@ -237,7 +237,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever each target would gain a \\glossterm{condition}, that condition is automatically removed, and this spell ends for that creature.
+        Whenever each target would gain a \\glossterm{condition}, that condition is automatically removed, and this ability is \\glossterm{dismissed} for that creature.
       `,
       rank: 1,
       roles: ['attune'],
@@ -373,7 +373,7 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever each target would gain a \\glossterm{vital wound}, that vital wound is automatically negated.
-        After negating a vital wound for a creature in this way, this spell ends for that creature.
+        After negating a vital wound for a creature in this way, this ability is \\glossterm{dismissed} for that creature.
       `,
       rank: 5,
       roles: ['attune'],

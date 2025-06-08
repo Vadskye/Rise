@@ -374,7 +374,7 @@ export const photomancy: MysticSphere = {
         You can activate this spell as a \\glossterm{free action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
         All \\glossterm{targeted} attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{miss chance}.
-        After that time, this spell ends.
+        After that time, this ability is \\glossterm{dismissed}.
 
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
         It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
