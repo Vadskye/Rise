@@ -212,7 +212,7 @@ Now assume you have an 80% hit rate, so you hit on a 7. From before, this is wor
 
 ### Shielded (self): 0.3
 
-You are attacked 1/3 of the time, and shielded protects from 75% of enemy attacks, so 1.3 / 3 * .75 = 0.4
+You are attacked 1/3 of the time, and shielded protects from 75% of enemy attacks, so 1.3 / 3 * .75 = 0.3
 
 ### Shielded (ally): 0.5
 

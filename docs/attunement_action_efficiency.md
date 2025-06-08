@@ -42,6 +42,10 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss or glance, and this protects you from the 50% damage that you would take from the miss / glance. That's 20 / 3 * 0.75 * 0.5 * 0.5 * 0.5 = 0.6 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
 
+### Fortified: 1.6
+
+0.325 EA * 5 actions = 1.6 EA
+
 ### 25% extra damage: 1.25
 
 0.25 EA * 5 actions = 1.25
@@ -50,13 +54,27 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.4 EA * 5 actions = 2 EA
 
-### Shielded: 2.0
+### Shielded: 1.6
 
-0.4 EA * 5 actions = 2 EA
+0.325 EA * 5 actions = 1.6 EA
 
 ### Singleton focused: 0.4
 
 This is weak, but we 
+
+### Uncommon reactive debuff
+
+Assume that the trigger for uncommon reactive debuff happens 50% of the time, so it makes a total of 2.5 attacks per fight. That means the correct EA value is (rank EA) / 2.5.
+
+So the EA of the debuff is:
+* Rank 2: 0.7 EA (1.75 / 2.5)
+* Rank 3: 0.8 EA (2 / 2.5)
+* Rank 4: 0.9 EA
+* Rank 5: 1 EA
+* Rank 6: 1.1 EA
+* Rank 7: 1.2 EA
+
+As an example, assume that the debuff is a brief stun. Each time it triggers on an enemy turn, it affects 4 party attacks, so 0.8 EA. It triggers 2.5 times during the fight, so it's worth 2 EA overall. That matches up with a rank 3 deep attunement.
 
 ### Uncommon reactive damage: 1.75-3.0
 
@@ -236,7 +254,7 @@ Apparel has weaker scaling:
 
 Assume that all weapons are similar in power to +1 accuracy, so 1.0 EA.
 
-### Standard action attack
+### Standard action damaging attack
 
 Assume that you use an attunement which grants you a special standard action attack. The attack should always have a brief cooldown because otherwise we'd have to balance it assuming you used that special attack every round, which would be weak and also boring.
 
@@ -257,6 +275,30 @@ Translating this into direct scaling values is difficult because attacks can hav
 * Rank 3, Medium cone: normal damage is dr3 (102%), attuned damage is dr4 (116%, but high scaling)
 * Rank 6, Large cone: normal damage is dr5 (83%), attuned damage is dr7 (130%, +57%)
 
+This type of effect should never be a deep attunement because the standard action granted would have to be too strong to be reasonable.
+
+### Standard action debuff
+
+Using the rank multiplication logic above:
+* Rank 1: 1.75 = 1.4 * 1.25
+* Rank 2: 2.1 = 1.6 * 1.29
+* Rank 3: 2.4 = 1.8 * 1.33
+* Rank 4: 2.75 = 2.0 * 1.37
+* Rank 5: 3.1 = 2.2 * 1.42
+* Rank 6: 3.5 = 2.4 * 1.46
+* Rank 7: 3.9 = 2.6 * 1.5
+
 ### Special weapon
 
 Assume that you have attunement that grants you an unusual weapon. The weapon's power would have to be comparable to a magic weapon of the same rank?
+
+### 25% condition avoidance
+
+Assume that 2/3 of incoming attacks deal damage, 1/3 have brief debuffs, and 1/3 inflict conditions. This adds to over 1 because some damaging attacks also inflict debuffs. A 25% chance to avoid conditions is 20 / 3 / 3 * 0.25 = 0.55 EA.
+
+### 50% condition avoidance
+20 / 3 / 3 * 0.5 = 1.1 EA
+
+### 100% condition avoidance
+
+20 / 3 / 3 = 2.2 EA
