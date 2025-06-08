@@ -109,7 +109,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                You can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you.
+                You can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you (see \pcref{Stealth}).
                 This does not remove the bonus that observers receive if you have no cover or concealment at all.
                 After you hide in this way, you \glossterm{briefly} cannot do so again.
             ",

@@ -1,15 +1,27 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP, SWIFT_FATIGUE } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
-  shortDescription: 'Manipulate shadows and darkness to conceal allies and inhibit foes.',
+  shortDescription: 'Manipulate shadows to conceal allies and inhibit foes.',
   sources: ['arcane', 'nature'],
-  // Spells that only work vs shadowed targets have +2r. (so dr5 damage at r3)
-  // Alternately, a spell can pay -1r to get +2a vs shadowed targets, or -2r for +4a
+  // Spells that manipulate your shadow to attack enemies target Brawn/Fortitude.
+  // Spells that manipulate the shadows of enemies target Mental.
+  // Umbramancy spells deal flat damage, like photomancy spells.
+  // To avoid excess overlap with photomancy, avoid Reflex attacks. Both umbramancy and
+  // photomancy hit Fortitude, which makes sense.
+
+  // Spells that only work vs shadowed targets have +0.5dr. Since we're dealing with flat
+  // damage values, that means we can turn a +1dr modifier for normally scaling damage
+  // into a full damage increment with a shadowed requirement.
+  // Likewise, a spell can pay -1dr (flat) for +4a with a requirement that you are shadowed.
+  // Debuffs gain -0.2 EA if they only work on shadowed enemies.
+  // Alternately, debuffs can pay 1 rank to gain +2 accuracy vs shadowed creatures.
   specialRules: `
-    Many spells from this sphere are particularly effective on \\glossterm{shadowed} targets.
-    A creature or object is shadowed if it is not in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+    Many spells from this sphere are particularly effective if you or the target are \\glossterm{shadowed}.
+    A creature or object is shadowed if it is touching its shadow.
+    That typically means it is in \\glossterm{shadowy illumination} or \\glossterm{bright illumination}, but not \\glossterm{brilliant illumination} or complete darkness.
+    In addition, it must be \\glossterm{grounded} or otherwise touching a surface.
   `,
 
   cantrips: [
@@ -30,21 +42,22 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Passing Shadow',
+      name: 'Darklantern',
 
       effect: `
-        This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
-
-        Choose one creature within \\medrange.
-        The target is \\glossterm{briefly} \\glossterm{shadowed}, regardless of the light surrounding it.
-        This normally means it has \\glossterm{concealment} from attacks against it.
+        You emit \\glossterm{shadowy illumination} in a \\smallarea radius.
+        This illuminates dark areas, but does not suppress brighter light.
       `,
       roles: ['narrative'],
       scaling: {
-        2: `You can choose an additional target within range.`,
-        4: `The maximum range increases to \\longrange.`,
-        6: `The maximum range increases to \\distrange.`,
+        2: `You can increase the radius to a \\medarea radius.`,
+        4: `You can increase the radius to a \\largearea radius.`,
+        6: `
+          This spell loses the Sustain (attuneable, minor) tag.
+          Instead, it lasts until you \\glossterm{dismiss} it as a \\glossterm{free action}.
+        `,
       },
+      tags: ['Sustain (attuneable, minor)'],
     },
 
   ],
@@ -73,115 +86,53 @@ export const umbramancy: MysticSphere = {
       tags: ['Visual'],
       type: 'Sustain (minor)',
     },
-    // TODO: proper EA calc
-    {
-      name: 'Banish Light',
-
-      effect: `
-        All light within one \\glossterm{zone} within \\medrange is suppressed.
-        You can choose this spell's radius, up to a maximum of a \\smallarea radius.
-        Light within the area is snuffed out.
-        Any object or effect which blocks light also blocks this spell's effect.
-        Darkvision and similar abilities which do not require light still function within the area.
-      `,
-      rank: 7,
-      roles: ['flash', 'hazard'],
-      tags: ['Visual'],
-      type: 'Sustain (minor)',
-    },
-
-    // basically the same as Suppress Light, but slightly more restrictive area generally
-    {
-      name: 'Darklantern',
-
-      effect: `
-        Choose one Medium or smaller \\glossterm{unattended} object within \\shortrange.
-        \\glossterm{Bright illumination} within an \\glossterm{emanation} from that object is dimmed to be no brighter than \\glossterm{shadowy illumination}.
-        \\glossterm{Brilliant illumination} is undimmed.
-        You can choose the spell's radius, up to a maximum of a \\smallarea radius.
-        Any object or effect which blocks light also blocks this spell's effect.
-      `,
-      rank: 3,
-      roles: ['attune'],
-      scaling: {
-        5: `The maximum area increases to a \\medarea radius \\glossterm{emanation}.`,
-        7: `The maximum area increases to a \\largearea radius \\glossterm{emanation}.`,
-      },
-      tags: ['Visual'],
-      type: 'Attune',
-    },
 
     {
-      name: 'Darkvision',
+      name: 'My Shadow Looms Large',
 
-      effect: `
-        You gain \\trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \\pcref{Darkvision}).
-        If you already have darkvision, the range of your darkvision increases by 60 feet.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Darkvision',
-
-      functionsLike: {
-        mass: true,
-        name: 'Darkvision',
-      },
-      // narrative: '',
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Reaching Shadows',
-
-      // r0 gives drX+1, drop to drX for the accuracy bonus
+      // r0 gives drX+1 with shadowed requirement
       attack: {
-        hit: `\\damagerankonelow.`,
+        hit: `\\damageranktwolow.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against everything a \\smallarea cone from you.
-          You gain a +2 accuracy bonus against each \\glossterm{shadowed} target.
+          Make an attack vs. Fortitude against each \\glossterm{shadowed} creature in a \\smallarea cone from you.
         `,
       },
       roles: ['clear'],
       rank: 1,
-      scaling: { special: 'The damage increases by +2 for each rank beyond 1.' },
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 1.' },
     },
 
     {
-      name: 'Mighty Reaching Shadows',
+      name: 'My Mighty Shadow Looms Large',
 
-      // r0 gives drX+1, drop to drX for the accuracy bonus
+      // r0 gives drX+1 with shadowed requirement
       attack: {
-        hit: `\\damagerankfourlow.`,
+        hit: `\\damagerankfivelow.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against everything a \\smallarea cone from you.
-          You gain a +2 accuracy bonus against each \\glossterm{shadowed} target.
+          Make an attack vs. Fortitude against each \\glossterm{shadowed} creature in a \\smallarea cone from you.
         `,
       },
       roles: ['clear'],
       rank: 4,
-      scaling: { special: 'The damage increases by 1d10 for each rank beyond 4.' },
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.' },
     },
 
     {
-      name: 'Dark Miasma',
+      name: 'My Shadow Hungers',
 
-      // area rank X is normally drX-2, or drX-1 for flat damage. Add +1dr for shadowed requirement,
-      // keeping in mind that +1dr is very strong for flat damage effects. Then, drop by
-      // dr1 for the double attack.
+      // For power scaling damage, a rank 3 spell that makes a single attack in a r3 area
+      // would deal dr1, though that's known to be suspiciously weak. Converting that to a
+      // double attack that deals dr0 is... probably fine. That means the base hit damage
+      // for each tick would be 53% of dr3. dr2 flat damage is 63% of dr3, which is fine
+      // with a shadowed requirement.
       attack: {
         hit: `\\damageranktwolow.`,
         missGlance: true,
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
-          When you cast this spell, and during your next action, make an attack vs. Mental against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+          When you cast this spell, and during your next action, make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
         `,
       },
       rank: 3,
@@ -190,104 +141,98 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Spreading Dark Miasma',
+      name: 'My Growing Shadow Hungers',
 
-      // All the same calcs as dark miasma, except that we calculate this as a large
-      // radius for area purposes, and it doesn't drop by a damage rank for double attack
-      // because you have to sustain it.
+      // For power scaling damage, a rank 6 spell that makes a single attack in a rank 3
+      // area would deal dr5 (83%). That's fairly close to this spell, since you have to
+      // sustain it to get a larger area. With a shadowed requirement, that's enough to
+      // justify dr6l here.
       attack: {
-        hit: `\\damagerankfivelow.`,
+        hit: `\\damageranksixlow.`,
         missGlance: true,
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
           Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
         `,
       },
-      rank: 5,
+      rank: 6,
       roles: ['wildfire'],
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
+      scaling: { special: 'The damage increases by 3d10 for each rank beyond 6.' },
       tags: ['Sustain (standard)'],
     },
 
 
     {
-      name: 'Dark Grasp',
+      name: 'Shadowgrasp',
 
       attack: {
         // Assume this is 50% action denial in 25% of fights, which would be 0.6 EA as a
         // condition. You can get 0.6 EA on a melee debuff at r1.
-        // Melee range is drX+2, and debuff is drX+1, but we want to avoid X+1 with flat
-        // damage. The shadowed accuracy compensates for that, so we get drX.
+        // Melee range is drX+2, and debuff is drX+1, so shadowed lets us keep drX+1.
         hit: `
-          \\damagerankonelow. If the target loses hit points, it treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranktwolow. If the target loses hit points, it treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Mental against something you \\glossterm{touch}.
-          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
+          You must be \\glossterm{shadowed} to cast this spell.
+          % Normally grasp spells would require touch and a free hand, but your shadow touches
+          % the target, not you.
+          Make an attack vs. Brawn against something adjacent to you.
         `,
       },
       rank: 1,
       roles: ['burst', 'maim'],
-      scaling: { special: 'The damage increases by +2 for each rank beyond 1.' },
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 1.' },
     },
 
     {
-      name: 'Efficient Dark Grasp',
+      name: 'Efficient Shadowgrasp',
 
       attack: {
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `
-          \\damagerankfivelow, and the target treats all \\glossterm{shadowed} areas as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranksixlow, and the target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Mental against something you \\glossterm{touch}.
-          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
+          You must be \\glossterm{shadowed} to cast this spell.
+          Make an attack vs. Brawn against something adjacent to you.
         `,
       },
       rank: 5,
       roles: ['burst', 'maim'],
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
+      scaling: { special: 'The damage increases by 3d8 for each rank beyond 5.' },
     },
 
-    // -2r compared to Suppress Light because it has to start from shadowy illumination,
-    // then +1r for the size scaling
     {
-      name: 'Creeping Darkness',
+      name: 'Still the Dancing Shadows',
 
-      effect: `
-        This spell has no \\glossterm{verbal components}.
-
-        Choose a \\glossterm{shadowed} location within \\medrange.
-        \\glossterm{Bright illumination} within a \\glossterm{zone} from that location is dimmed to be no brighter than \\glossterm{shadowy illumination}.
-        The area of darkness increases over time.
-        It affects a \\smallarea radius in the first round, a \\medarea radius in the second round, and a \\largearea radius in all subsequent rounds.
-        Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
-
-        \\glossterm{Brilliant illumination} is undimmed.
-        Any object or effect which blocks light also blocks this spell's effect.
-      `,
+      // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          Each target is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Mental against each \\glossterm{shadowed} creature in a \\smallarea radius within \\shortrange.
+        `,
+      },
       rank: 3,
-      roles: ['flash', 'hazard'],
-      // TODO: unclear how this could scale
-      tags: ['Sustain (minor)'],
+      roles: ['maim'],
+      scaling: 'accuracy',
+      tags: [],
     },
 
     {
       name: 'Nyctophobia',
 
-      // Frightened by all is a 1.7 EA debuff. Creatures are usually shadowed... maybe 75% of the time,
-      // so call that 1.3 EA. With prefire, that's 1.7 EA again.
+      // Frightened by all is a 1.7 EA debuff, or 1.5 EA with the shadowed requirement, up
+      // to 1.9 EA with prefire. We can drop to rank 3 with limited scope.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target becomes afraid of the dark as a \\glossterm{condition}.
+          Each target becomes afraid of the dark as a \\glossterm{condition}.
           While it is \\glossterm{shadowed} and below its maximum \\glossterm{hit points}, it is \\frightened of all creatures.
         `,
         targeting: `
@@ -316,32 +261,6 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Fade Into Darkness',
-
-      effect: `
-        At the end of each round, if you took no actions that round and are \\glossterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
-        This invisibility ends after you take any action, or if you stop being shadowed.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Greater Fade Into Darkness',
-
-      effect: `
-        At the end of each round, if you did not take a standard action that round and are \\glossterm{shadowed}, you become \\trait{invisible} (see \\pcref{Invisible}).
-        This invisibility ends after you take a standard action, or if you stop being shadowed.
-      `,
-      rank: 6,
-      roles: ['attune'],
-      tags: ['Visual'],
-      type: 'Attune (deep)',
-    },
-
-    {
       name: 'Dark Shroud',
 
       // Dazzled is 1.8 EA, so r3. +1r for shadowed accuracy.
@@ -366,13 +285,31 @@ export const umbramancy: MysticSphere = {
 
       effect: `
         Make a \\glossterm{strike}.
+        It can only deal damage to \\glossterm{shadowed} creatures.
         The attack is made against each target's Mental defense instead of its Armor defense.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       narrative: `
         You strike your foe's shadow instead of hitting it directly, but it takes damage just the same.
       `,
-      rank: 3,
+      rank: 2,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Shadowstrike',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        It can only deal damage to \\glossterm{shadowed} creatures.
+        The attack is made against each target's Mental defense instead of its Armor defense.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+      `,
+      narrative: `
+        You strike your foe's shadow instead of hitting it directly, but it takes damage just the same.
+      `,
+      rank: 5,
       roles: ['burst'],
       scaling: 'accuracy',
     },
@@ -400,11 +337,12 @@ export const umbramancy: MysticSphere = {
 
       cost: SWIFT_FATIGUE,
       effect: `
-        This spell has no \\glossterm{verbal components}.
+        You must be \\glossterm{shadowed} to cast this spell.
+        It has no \\glossterm{verbal components}.
 
         You teleport into an unoccupied location within \\shortrange on a stable surface that can support your weight.
+        If you would not be shadowed in that location, this teleportation fails without effect.
         Unlike most teleportation effects, both your departure and arrival with this spell are silent.
-        If you are in \\glossterm{bright illumination} or \\glossterm{brilliant illumination} and are not touching your shadow, this spell fails without effect.
       `,
       rank: 1,
       roles: ['dive'],
@@ -449,34 +387,16 @@ export const umbramancy: MysticSphere = {
       roles: ['dive'],
       rank: 6,
     },
-
-    // Silent move action teleportation invalidates HiPS
-    // {
-    //   name: "Walk the Shadow Roads",
-
-    //   effect: `
-    //     Whenever you would use your land speed to move, you can teleport horizontally between shadows instead.
-    //     Teleporting a given distance costs movement equal that distance.
-    //     Your destination must be on a stable surface that can support your weight.
-    //     If your \\glossterm{line of sight} or \\glossterm{line of effect} to your destination are blocked, or if this teleportation would somehow otherwise place you inside a solid object, your teleportation is cancelled and you remain where you were.
-    //     Areas with \\glossterm{bright illumination} block line of effect for this spell, so you are unable to teleport into or past areas of bright illumination.
-    //   `,
-    //   rank: 4,
-    //   scaling: { 6: `You can teleport in any direction instead of just horizontally.` },
-    //   type: "Attune",
-    // },
-
     // Controlling movement is roughly 100% action denial for the turn, so 4 EA. Double
-    // application is -2 EA, so 2 EA. Damage is 3 EA, or r9, which drops to r7 with melee
+    // application is -2 EA??, so 2 EA. Damage is 3 EA, or r9, which drops to r7 with melee
     // only. Drop to r6 for the extra defense, then r7 again from shadowed accuracy. This
     // is all getting a bit silly, but it's plausibly within rate.
     {
       name: 'Shadow Puppet',
 
-      // basically t3? better control than immobilized, but no defense penalties
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damageranksevenlow.
           If the target loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
           If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
           It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
@@ -486,8 +406,7 @@ export const umbramancy: MysticSphere = {
           If the target enters \\glossterm{brilliant illumination}, the effect automatically ends.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
-          You gain a +2 accuracy bonus if the target is \\glossterm{shadowed}.
+          Make an attack vs. Fortitude against one \\glossterm{shadowed} creature adjacent to you.
         `,
       },
       rank: 7,
@@ -505,9 +424,9 @@ export const umbramancy: MysticSphere = {
           \\item You are nearly flat, allowing you to pass under doors and through other narrow passages.
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
+          \\item While you in a space occupied by an \\glossterm{shadowed} \\glossterm{ally}, you have \\glossterm{concealment}, and you can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you (see \pcref{Stealth}).
           \\item You gain a slow \\glossterm{climb speed}, and you can climb without using any hands.
           \\item You are always treated as being \\prone, though your movement speed is not reduced.
-          \\item You gain a +4 \\glossterm{enhancement bonus} to the Stealth skill.
         \\end{itemize}
 
         At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
@@ -519,19 +438,6 @@ export const umbramancy: MysticSphere = {
       rank: 3,
       roles: ['attune'],
       type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Shadowform',
-
-      functionsLike: {
-        name: 'Shadowform',
-        exceptThat: EXCEPT_NOT_DEEP,
-      },
-      // narrative: '',
-      rank: 6,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -554,18 +460,19 @@ export const umbramancy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
 
-    {
-      name: 'Bend Shadow',
+    // TODO: maybe combine with a different more useful buff?
+    // {
+    //   name: 'Bend Shadow',
 
-      effect: `
-        Your shadow is naturally cast in the wrong direction, pointing towards light instead of away from it.
-        You are considered to be \\glossterm{shadowed} if there is \\glossterm{shadowy illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
-        The dark area must be large enough to hold you if you were in that location.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune',
-    },
+    //   effect: `
+    //     Your shadow is naturally cast in the wrong direction, pointing towards light instead of away from it.
+    //     You are considered to be \\glossterm{shadowed} if there is \\glossterm{shadowy illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+    //     The dark area must be large enough to hold you if you were in that location.
+    //   `,
+    //   rank: 2,
+    //   roles: ['attune'],
+    //   type: 'Attune',
+    // },
 
     // 20% failure chance is 20% action denial, and two targets would plausibly affect 75%
     // of enemy actions. So this is worth about 0.6 EA. Throw in empower to get it to 0.8
@@ -616,7 +523,7 @@ export const umbramancy: MysticSphere = {
     {
       // Personal 20% failure is about 0.4 EA. That gives room for 1 EA of debuff at a
       // base area rank of r0. Brief frighten is 0.6 EA, so we have +3 area ranks to
-      // spend, reaching r3 area. 
+      // spend, reaching r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
         hit: `Each target is \\glossterm{briefly} \\frightened of you.`,
