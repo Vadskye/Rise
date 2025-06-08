@@ -661,9 +661,10 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 If you do not have access to pact magic, choose a magic weapon property with a rank no higher than your rank in this archetype (see \pcref{Magic Weapons}).
                 It must not be a \glossterm{deep attunement}.
                 You can \glossterm{attune} to that magic weapon property.
-                If you do, you treat all of your weapons, including \glossterm{natural weapons}, as if they had that property.
+                If you do, you always treat one weapon you wield as having that property.
                 This applies in addition to any other special material or magical properties.
                 However, it does not stack if the item would already have that property normally.
+                If you wield more than one weapon at a time, you can choose which of your weapons gains this effect as a \glossterm{free action} once per round.
 
                 Whenever you increase your rank in this archetype, you can change which magic weapon property you have with this ability.
             ",
@@ -678,7 +679,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 If you do not have access to pact magic, choose a magic body armor property with a rank no higher than your rank in this archetype (see \pcref{Magic Armor}).
                 You can \glossterm{attune} to that magic body armor property.
-                If you do, you treat your body armor as if it had that property, which changes its \glossterm{damage resistance} appropriately.
+                If you do, you treat your body armor as if it had that property.
                 This applies in addition to any other special material or magical properties.
                 However, it does not stack if the item would already have that property normally.
 
