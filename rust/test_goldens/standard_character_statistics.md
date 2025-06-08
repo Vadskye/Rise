@@ -33,7 +33,7 @@ DR: 44 = (36 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multip
 
 ### Description
 Fighter 10
-AP 5, FT 10, IP 3, Skills 3
+AP 4, FT 10, IP 3, Skills 3
 HP 48, DR 44
 AD 13, Brn 15, Fort 13, Ref 8, Ment 10
 Generic Accuracy Broadsword +9 (1d6+7 damage.); Certain Broadsword +11 (1d6+3 damage.); Powerful Broadsword +5 (2d6+14 damage.); Extra Damage Broadsword +7 (1d6+13 damage.); Broadsword +6 (1d6+7 damage.)
@@ -45,7 +45,6 @@ Maneuvers: maneuver Generic Accuracy
 Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Armor Expertise: base speed 10
-Equipment Efficiency: resource attunement point by 1
 Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
@@ -67,7 +66,7 @@ DR: 112 = (96 <armor> + 16 <modifier> + 0 <monster progression>) * 0 <elite mult
 
 ### Description
 Fighter 20
-AP 5, FT 13, IP 3, Skills 3
+AP 4, FT 13, IP 3, Skills 3
 HP 180, DR 112
 AD 18, Brn 21, Fort 19, Ref 13, Ment 17
 Generic Accuracy Broadsword +18 (1d6+11 damage.); Certain Broadsword +20 (1d6+5 damage.); Powerful Broadsword +14 (2d6+22 damage.); Certain Strike+ -- Broadsword +20 (1d6+11 damage.); Power Strike+ -- Broadsword +11 (3d6+33 damage.); Extra Damage Broadsword +12 (1d6+9d8+11 damage.); Generic Triple Damage -- Broadsword +12 (3d6+33 damage.); Broadsword +12 (1d6+11 damage.)
@@ -79,12 +78,11 @@ Maneuvers: maneuver Generic Accuracy
 Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Power Strike
 Armor Expertise: base speed 10
-Equipment Efficiency: resource attunement point by 1
 Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Certain Strike+
 Maneuvers: maneuver Power Strike+
-Weapon Expertise: accuracy 1
+Weapon Precision: accuracy 1
 Enduring Discipline+: defense mental by 2
 Enduring Discipline+: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
