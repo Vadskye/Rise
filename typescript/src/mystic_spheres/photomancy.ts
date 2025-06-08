@@ -18,7 +18,7 @@ export const photomancy: MysticSphere = {
           You cannot make significant changes to your facial structure, equipment, and so on.
           This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
 
-          This ability lasts until you \glossterm{dismiss} it or until you use it again.
+          This ability lasts until you \\glossterm{dismiss} it or until you use it again.
         `,
         name: 'change appearance',
       },
@@ -34,7 +34,7 @@ export const photomancy: MysticSphere = {
         It creates \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
         You can freely choose the color of the light, but it is unchanging once created.
 
-        This ability lasts until you \glossterm{dismiss} it or until you use it again.
+        This ability lasts until you \\glossterm{dismiss} it or until you use it again.
       `,
       roles: ['narrative'],
       scaling: {
@@ -133,35 +133,39 @@ export const photomancy: MysticSphere = {
     {
       name: 'Flash',
 
+      // Condition dazzle is 1.8 EA, so r3. Limited scope is r2.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\dazzled as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
+          Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
+          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around you.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
 
     {
-      name: 'Blinding Flash',
+      name: 'Massive Flash',
 
+      // Condition dazzle is 1.8 EA, so r3. +1 rank of area gives a r5 area.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it becomes \\blinded as a \\glossterm{condition}.
+          Each target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange of you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
+          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -184,6 +188,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Subtle', 'Sustain (minor)', 'Visual'],
     },
@@ -191,18 +196,21 @@ export const photomancy: MysticSphere = {
     {
       name: 'Searing Light',
 
+      // 
       attack: {
         hit: `
-          1d10 damage.
-          If this attack beats a creature's Fortitude defense, you deal it \\glossterm{extra damage} equal to your power.
+          \\damageranktwolow.
         `,
         targeting: `
-          Make an attack vs. Reflex against something within \\shortrange.
+          Make an attack vs. Reflex and Fortitude against something within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
-      rank: 2,
-      scaling: 'accuracy',
+      rank: 1,
+      roles: ['burst'],
+      scaling: {
+        special: "The damage increases by 1d6 per rank above 1.",
+      },
     },
 
     {
@@ -211,29 +219,48 @@ export const photomancy: MysticSphere = {
       // No rank modifier for true sunlight
       attack: {
         hit: `
-          \\damagerankfivelow.
-          If this attack beats a creature's Fortitude defense, it deals maximum damage.
+          \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
           If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
         `,
         targeting: `
-          Make an attack vs. Reflex against something within \\shortrange.
+          Make an attack vs. Reflex and Fortitude against something within \\shortrange.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
-      rank: 5,
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
+      rank: 4,
+      roles: ['burst'],
+      scaling: { special: 'The damage increases by 1d10 for each rank beyond 4.' },
+    },
+
+    {
+      name: 'Mighty Solar Ray',
+
+      // No rank modifier for true sunlight
+      attack: {
+        hit: `
+          \\damagerankeightlow, and any \\glossterm{extra damage} is tripled.
+          If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
+          This can be deadly for some creatures.
+        `,
+        targeting: `
+          Make an attack vs. Reflex and Fortitude against something within \\shortrange.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+        `,
+      },
+      rank: 7,
+      roles: ['burst'],
     },
 
     {
       name: 'Solar Flare',
 
-      // +2r for delay, +2r for Fortitude and Reflex. Base rank is 8? But the delay is
-      // less of a penalty when the area is so large, so call it +1r, total rank 7.
-      // That allows a t4 area and dr6 damage.
+      // +1dr for not really escapable delay, +1dr for Fortitude and Reflex. Since this
+      // deals flat damage, that adds up to +1 flat damage rank. The base damage rank for
+      // a full area flat damage spell is -1dr, so this is just drX total.
       attack: {
         hit: `
-          \\damageranksixlow.
+          \\damagerankfivelow.
           Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         missGlance: true,
@@ -242,16 +269,19 @@ export const photomancy: MysticSphere = {
           During your next action, make an attack vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
         `,
       },
-      rank: 4,
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 4.' },
+      rank: 5,
+      roles: ['clear'],
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
     },
 
     {
       name: 'Radiant Field',
 
+      // Enemies in medium radius from self is r3 area, which would have base dr2.
+      // Damage each round is -1dr.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankonelow.
         `,
         missGlance: true,
         targeting: `
@@ -260,17 +290,20 @@ export const photomancy: MysticSphere = {
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
         `,
       },
-      rank: 4,
-      scaling: 'accuracy',
+      rank: 3,
+      scaling: {
+        special: 'The damage increases by 2 for each rank beyond 3.',
+      },
     },
 
     {
       name: 'Massive Radiant Field',
 
+      // -1dr for expanded area, which also makes it non-escapable.
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfour.',
+          'the area increases to a \\hugearea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
       },
       rank: 7,
     },
@@ -278,38 +311,43 @@ export const photomancy: MysticSphere = {
     {
       name: 'Pillars of Light',
 
+      // This is basically an enemies-only large radius, but a
+      // little worse, so call it a r4 area.
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankthreelow.
         `,
         missGlance: true,
         targeting: `
-          Choose up to five \\tinyarea radius areas within \\longrange of you.
-          Make an attack vs. Reflex and Fortitude against all creatures in any of those areas.
+          Choose up to five \\tinyarea radius cylinder-shaped areas within \\medrange of you.
+          Each cylinder is 30 feet high.
+          Make an attack vs. Reflex against all creatures in any of those areas.
           The areas can overlap, but this does not allow you to make multiple attacks against the same creature.
           Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from each area.
         `,
       },
-      rank: 5,
-      scaling: 'accuracy',
+      rank: 4,
+      scaling: {
+        special: "The damage increases by 1d10 per rank above 4",
+      },
     },
 
     {
       name: 'Kaleidoscopic Pattern',
 
-      // t3 area, -2r for delay + sustain
+      // Brief stun is 1.4 EA, or 2.4 EA as a sustain (minor). That's r6, though we only
+      // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
+          Each target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.
           This has no immediate effect other than creating \\glossterm{bright illumination} in the area.
-          During each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
+          During each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
         `,
       },
-      rank: 4,
+      rank: 5,
       scaling: 'accuracy',
       tags: ['Compulsion', 'Sustain (minor)', 'Visual'],
     },
@@ -329,17 +367,19 @@ export const photomancy: MysticSphere = {
     },
 
     {
-      name: 'Desperate Mirrorswarm',
+      name: 'Sudden Mirrorswarm',
 
+      // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.25 = 1 EA.
       effect: `
-        Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
+        You can activate this spell as a \\glossterm{free action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
-        All \\glossterm{targeted} attacks against you have a 50\\% \\glossterm{miss chance} for the rest of the round.
-        After that time, this ability ends.
+        All \\glossterm{targeted} attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{miss chance}.
+        After that time, this spell ends.
+
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
         It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['attune'],
       tags: ['Visual'],
       type: 'Attune',
@@ -355,7 +395,7 @@ export const photomancy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       tags: ['Visual'],
-      type: 'Attune',
+      type: 'Sustain (attuneable, free)',
     },
 
     // Rank 5 version is unlimited. It's not obvious how to downscale that correctly to
@@ -459,6 +499,7 @@ export const photomancy: MysticSphere = {
         hit: `
           \\damageranktwo, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
@@ -506,6 +547,12 @@ export const photomancy: MysticSphere = {
     {
       name: 'Faerie Fire',
 
+      // There are 15 player actions affected. Assume that this only affects concealment,
+      // since invisibility is extremely rare, so that's 0.2 action effectiveness per
+      // action assuming the enemy always has concealment. Assume that the enemy has
+      // concealment in 20% of fights. That means this is worth 15 * 0.2 * 0.2 = 0.6 EA.
+      // That gives 3 ranks of bonus area and 1 rank of extended range, so we have a rank
+      // 6 extended area spell.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -514,10 +561,10 @@ export const photomancy: MysticSphere = {
           Other miss chances, such as the miss chance from attacking it while dazzled, are unaffected.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\medarea radius within \\longrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: [],
     },
@@ -525,16 +572,17 @@ export const photomancy: MysticSphere = {
     {
       name: 'Radiant Aura',
 
+      // Reactive brief dazzle is 1.2 EA, and r1 deep attunement is 1.5 EA.
+      // That gives us some vague ranks to increase to medarea radius?
       attack: {
-        crit: CONDITION_CRIT,
-        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
+        hit: `The target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.
           Whenever an \\glossterm{enemy} enters that area, make a \\glossterm{reactive attack} vs. Fortitude against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
         `,
       },
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Visual'],
       type: 'Attune (deep)',
@@ -544,7 +592,7 @@ export const photomancy: MysticSphere = {
       name: 'Reflective Lightbeam',
 
       attack: {
-        hit: `\\damagerankonelow.`,
+        hit: `\\damageranktwolow.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
@@ -553,7 +601,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
-      scaling: { special: 'The damage increases by +2 for each rank beyond 3.' },
+      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
     },
 
     {
@@ -561,7 +609,7 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'reflective lightbeam',
-        exceptThat: 'the damage increases to \\damagerankfivelow.',
+        exceptThat: 'the damage increases to \\damagerankfivelow, and it only targets \\glossterm{enemies} in the area.',
       },
       rank: 6,
       scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
