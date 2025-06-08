@@ -2097,7 +2097,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Fleshbending Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you attack with the spell, if your attack beats a living creature's Fortitude defense, it takes a \minus4 penalty to its other defenses against that spell.
+    When you attack with the spell, compare your attack result to the Fortitude defense of each living target.
+    On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
@@ -2113,17 +2114,22 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Prayer}{Casting, Magical}
     \featpre Access to the \sphere{Prayer} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Personal Blessing} You gain an additional \glossterm{attunement point}.
-    You can only use that attunement point to attune to spells from the \sphere{Prayer} mystic sphere.
-
-    \magicalff[6]{Sustained Blessing} Whenever you cast a spell from the \sphere{Prayer} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
-    When you do, you must cast the spell as a \glossterm{standard action}, even if it could normally be cast as a \glossterm{minor action}.
+    \magicalff[1]{Sustained Blessing} Whenever you cast a spell from the \sphere{Prayer} mystic sphere with the \abilitytag{Attune} (target) tag that is not a \glossterm{deep attunement}, you can choose to replace that tag with the \abilitytag{Sustain} (minor) tag.
     You can only apply this ability to one spell at a time.
 
-    \magicalff[12]{Sustained Blessing\plus} When you used your \textit{sustained blessing} ability, you can replace the tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
-    You can still only sustain one spell in this way at a time.
+    \magicalff[6]{Blessed Boon} You learn an additional spell from the \sphere{Prayer} mystic sphere.
+    The spell can be up to rank 3, even if you do not have access to rank 3 spells.
+    It must not have the \atAttune tag.
+    Whenever you cast that spell, you can target an additional \glossterm{ally} within \medrange.
+    That ally must be attuned to at least one \sphere{Prayer} spell that you cast.
 
-    \magicalff[18]{Shared Boon\plus} When you use your \textit{shared boon} ability, you can also target yourself or a third ally within range.
+    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+
+    \magicalff[12]{Sustained Blessing\plus} You can replace the \atAttune tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
+    You can still only sustain one spell with this ability at a time.
+
+    % Kind of random...
+    \magicalff[18]{Vital Blessing} Each creature that is attuned to at least one of your \sphere{Prayer} spells gains a \plus2 \glossterm{enhancement bonus} to its \glossterm{vital rolls}.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Pyromancy}{Casting, Magical}
