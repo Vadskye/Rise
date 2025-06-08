@@ -27,13 +27,13 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
         % should be longer than polymorph's alter object ability
         % TODO: nerf all magical crafting times
-        Each time you cast this spell, you can accomplish work that would take up to five rounds with a normal Craft check.
+        Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
       `,
         roles: ['narrative'],
       scaling: {
-        2: `The amount of work you accomplish with the spell increases to one minute.`,
-        4: `The amount of work you accomplish with the spell increases to two minutes.`,
-        6: `The amount of work you accomplish with the spell increases to five minutes.`,
+        2: `The amount of work you accomplish with the spell increases to three rounds.`,
+        4: `The amount of work you accomplish with the spell increases to five rounds.`,
+        6: `The amount of work you accomplish with the spell increases to one minute.`,
       },
     },
   ],
