@@ -50,6 +50,10 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.4 EA * 5 actions = 2 EA
 
+### Shielded: 2.0
+
+0.4 EA * 5 actions = 2 EA
+
 ### Singleton focused: 0.4
 
 This is weak, but we 
@@ -252,3 +256,7 @@ Translating this into direct scaling values is difficult because attacks can hav
 * Rank 3, Large cone: normal damage is dr1 (53%), attuned damage is dr2 (86%, +62% but dr1 cone is just bad)
 * Rank 3, Medium cone: normal damage is dr3 (102%), attuned damage is dr4 (116%, but high scaling)
 * Rank 6, Large cone: normal damage is dr5 (83%), attuned damage is dr7 (130%, +57%)
+
+### Special weapon
+
+Assume that you have attunement that grants you an unusual weapon. The weapon's power would have to be comparable to a magic weapon of the same rank?

@@ -271,12 +271,31 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icy Shell',
 
+      // Permanent shielded is 2 EA.
+      // Assume that you have DR for ~50% of rounds, so this is worth 1 EA.
       effect: `
-        You are \\steeled.
-        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect ends.
+        You are \\shielded.
+        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, this ability is \\glossterm{dismisssed}.
       `,
-      narrative: 'Layers of ice form around you, crumpling to protect you from catastrophic injury.',
+      narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
       rank: 2,
+      roles: ['attune'],
+      tags: ['Manifestation'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Enduring Icy Shell',
+
+      // Permanent shielded is 2 EA.
+      // Assume that you have DR for 3/5 of rounds, so this is worth 1.2 EA.
+      effect: `
+        You are \\shielded.
+        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, this effect is \\glossterm{suppressed}.
+        Whenever you regain damage resistance, this effect is immediately resumed.
+      `,
+      narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
+      rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
