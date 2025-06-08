@@ -139,7 +139,7 @@ export const photomancy: MysticSphere = {
           The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange of you.
+          Make an attack vs. Fortitude against one creature within \\medrange.
           In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the target.
         `,
       },
@@ -179,7 +179,7 @@ export const photomancy: MysticSphere = {
           If you cannot see yourself, you are \\blinded for combat purposes.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange of you.
+          Make an attack vs. Mental against one creature within \\medrange.
           If you target an \\glossterm{ally}, this attack automatically succeeds.
         `,
       },
@@ -398,12 +398,13 @@ export const photomancy: MysticSphere = {
       effect: `
         You create an illusory duplicate of yourself overlayed on your body.
         Whenever you move using one of your movement speeds, you may also move the illusory duplicate the same distance in any direction.
-        If the duplicate was sharing a space with you before this movement, onlookers cannot tell which is the real you and which is the duplicate.
+        If the duplicate was sharing a space with you before this movement, onlookers must make a DV 20 Awareness check to identify which is the real you and which is the duplicate.
         When the duplicate is attacked by a \\glossterm{targeted} attack, it is destroyed.
         At the end of each round, if the duplicate is outside of \\medrange from you, it is destroyed.
-        This effect ends when there are no duplicates remaining.
+        This effect ends when you have no duplicate remaining.
       `,
       rank: 2,
+      roles: ['attune'],
       scaling: {
         4: `The maximum range increases to \\longrange.`,
         6: `The maximum range increases to \\distrange.`,
@@ -416,57 +417,54 @@ export const photomancy: MysticSphere = {
 
       effect: `
         This spell has no \\glossterm{verbal components}.
-        After you cast it, you \\glossterm{briefly} cannot cast it again.
-
-        You briefly become \\trait{invisible} (see \\pcref{Invisible}).
-      `,
-      rank: 3,
-    },
-
-    {
-      name: 'Enduring Invisibility',
-
-      effect: `
-        This spell has no \\glossterm{verbal components}.
 
         You become \\trait{invisible}.
         This invisibility ends if you attack or take damage.
         If you spend one minute without attacking or taking damage, this invisibility is reapplied.
       `,
       rank: 6,
+      roles: ['attune'],
       tags: ['Attune (deep)'],
     },
 
     {
       name: 'Chromatic Orb',
 
+      // Use 0.8 EA, which allows dazzled / frightened / goaded / single defense, with
+      // goaded being the strongest since the single hit is Reflex.
+      // Random effect is bad, but the sphere can't normally do most of those and you
+      // can stack debuffs by repeatedly casting this spell, so no rank modifier.
+      // Limited scope drops from r3 to r2. r1 area is normally drX, so with debuff it's
+      // drX-1.
       attack: {
-        // random effect is bad, but the sphere can't normally do most of those and you
-        // can stack debuffs by repeatedly casting this spell, so no rank modifier
         hit: `
-          \\damagerankone.
-          If the target loses \\glossterm{hit points} from this damage, it suffers one of the following effects as a \\glossterm{condition}, chosen randomly: \\frightened by you, \\goaded by you, \\slowed, or \\stunned.
+          \\damagerankone, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         targeting: `
-          Make an attack vs. Reflex against something within \\medrange.
+          Make an attack vs. Reflex against up to two creatures within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 2,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
       // Should this have the Emotion tag?
     },
 
     {
-      name: 'Efficient Chromatic Orb',
+      name: 'Chromatic Sphere',
 
-      functionsLike: {
-        name: 'chromatic orb',
-        exceptThat: `
-          the damage increases to \\damagerankfive, and damaged creatures suffer a condition even if they did not lose hit points.
+      // Baseline would be r3, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
+      attack: {
+        hit: `
+          \\damageranktwo, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+        `,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
         `,
       },
-      rank: 7,
+      rank: 5,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Visual'],
     },
@@ -485,6 +483,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['clear', 'dive'],
       scaling: 'accuracy',
     },
 
