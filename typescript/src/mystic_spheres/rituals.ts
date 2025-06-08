@@ -314,7 +314,7 @@ export const rituals: Ritual[] = [
       If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
     `,
     // narrative: '',
-    rank: 6,
+    rank: 7,
     roles: ['attune'],
     type: 'Attune (target)',
     spheres: ['Aeromancy', 'Polymorph', 'Telekinesis'],

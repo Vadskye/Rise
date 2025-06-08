@@ -246,6 +246,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Each target is \\glossterm{briefly} borne aloft by heavy winds.
           It floats five feet above the ground in \\debuff{midair}, which normally means it suffers a \\minus4 penalty to its Armor, Brawn, and Reflex defenses.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
+          Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
         `,
         targeting: `
           Make an attack vs. Brawn against all Huge or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\largearea radius from you.
@@ -303,7 +304,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Flight',
 
       effect: `
-        You gain an average \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
+        You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 4,
@@ -314,8 +315,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Agile Flight',
 
       effect: `
-        You gain an average \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
-        Unlike normal, flying with this fly speed does not penalize your Armor and Reflex defenses.
+        You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
+        Flying with this fly speed does not cause you to suffer penalties for being \midair.
       `,
       // narrative: '',
       rank: 6,
@@ -326,7 +327,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Soaring Flight',
 
       effect: `
-        You gain an average \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
+        You gain a slow \\glossterm{fly speed} with a maximum height of 60 feet (see \\pcref{Flight}).
       `,
       // narrative: '',
       rank: 7,
