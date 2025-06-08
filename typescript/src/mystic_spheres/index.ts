@@ -34,7 +34,7 @@ export const mysticSpheres: MysticSphere[] = [
   // electromancy,
   // enchantment,
   // fabrication,
-  // photomancy,
+  photomancy,
   polymorph,
   prayer,
   pyromancy,
