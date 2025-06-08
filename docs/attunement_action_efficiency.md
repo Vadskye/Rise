@@ -44,9 +44,9 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.4 EA * 5 actions = 2 EA
 
-### Reactive damage: 1.75-3.0
+### Uncommon reactive damage: 1.75-3.0
 
-Assume that the trigger for a reactive attack happens 50% of the time, so it makes a total of 2.5 attacks per fight. That means the correct damage multiplier is (rank EA) / 2.5.
+Assume that the trigger for uncommon reactive damage happens 50% of the time, so it makes a total of 2.5 attacks per fight. That means the correct damage multiplier is (rank EA) / 2.5.
 
 * Rank 2: 70% damage (0.7 EA * 2.5 attacks = 1.75 EA)
 * Rank 3: 80% damage (0.8 EA * 2.5 attacks = 2 EA)
@@ -62,6 +62,23 @@ Translating that into usable scaling:
 * Rank 5: dr5 (100% damage)
 * Rank 6: ???
 * Rank 7: dr8 (120% damage)
+
+### Common reactive damage: 
+
+Assume that the trigger for common reactive damage happens 75% of the time, so it makes a total of 3.75 attacks per fight. So the damage multiplier is (rank EA) / 3.75.
+
+* Rank 3: (2 EA / 3.75 = 53% damage)
+* Rank 4: (2.25 EA / 3.75 = 60% damage)
+* Rank 5: (2.5 EA / 3.75 = 67% damage)
+* Rank 6: (2.75 EA / 3.75 = 73% damage)
+* Rank 7: (3 EA / 3.75 = 80% damage)
+
+Translating that into usable scaling:
+* Rank 3: 1d4 + half power (53%)
+* Rank 4: full power (61%)
+* Rank 5: dr3 (66%)
+* Rank 6: dr4 (73%)
+* Rank 7: dr6 (81%)
 
 ### Reactive debuff: ???
 
@@ -181,3 +198,7 @@ Apparel has weaker scaling:
 * Rank 3: 0.15 / 0.2 = 75% power, so 25% of 2con fighter HP, so 6.5 healing = 2d6
 * Rank 5: 0.2 / 0.25 = 80% power, so 30% of 2con fighter HP, so 15.5 healing = 3d10
 * Rank 7: 0.25 / 0.3 = 83% power, so 1/3 of 2con fighter HP, so 35 healing = 6d10
+
+### Weapon tag: 1.0
+
+Assume that all weapons are similar in power to +1 accuracy, so 1.0 EA.

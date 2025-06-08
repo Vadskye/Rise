@@ -273,7 +273,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused for the rest of that round.
-        After you enhance a spell in this way, this ability ends.
+        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 2,
       roles: ['attune'],

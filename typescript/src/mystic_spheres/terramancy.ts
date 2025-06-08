@@ -274,7 +274,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         However, at least part of you must remain within one foot of the place you originally melded with the stone.
         You gain no special ability to breathe or see while embedded the stone, and you cannot speak if your mouth is within the stone.
         The stone muffles sound, but very loud noises may reach your ears within it.
-        If you fully exit the stone, this spell ends.
+        If you fully exit the stone, this ability is \\glossterm{dismissed}.
 
         If this spell ends before you exit the stone, or if the stone stops being a valid target for the spell (such as if it is broken into pieces), you are forcibly expelled from the stone.
         When you are forcibly expelled from the stone, you take 4d8 bludgeoning damage and become \\stunned as a \\glossterm{condition}.
@@ -756,7 +756,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes covered in stone for the rest of the round, and this ability ends.
+        If you do, your body becomes covered in stone for the rest of the round, and this ability is \\glossterm{dismissed}.
         This makes you \\fortified and \\steeled.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
