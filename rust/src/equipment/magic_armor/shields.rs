@@ -1,10 +1,11 @@
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::{MagicArmor, ItemUpgrade, StandardItem};
 use crate::equipment::MagicArmor::Shield;
-use crate::core_mechanics::abilities::AbilityTag;
 
 pub fn shields() -> Vec<MagicArmor> {
     let mut armor = vec![];
 
+    // TODO: unclear EA
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Arrow Catching"),
         rank: 1,
@@ -26,19 +27,23 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Arrow Deflection"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Grants +2 defenses vs ranged strikes"),
         description: String::from(r"
-            You gain a +2 \glossterm{enhancement bonus} to your defenses against ranged \glossterm<strikes>.
+            You gain a +2 bonus to your defenses against ranged \glossterm<strikes>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, "Grants +4 defenses vs ranged strikes", "
+            ItemUpgrade::new(4, "Grants +3 defenses vs ranged strikes", "
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, "Grants +4 defenses vs ranged strikes", "
                 The bonus increases to +4.
             "),
         ],
         ..MagicArmor::default()
     }));
 
+    // TODO: unclear EA
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Arrow Reflection"),
         rank: 2,
@@ -54,9 +59,10 @@ pub fn shields() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
+    // +2 Armor is 1.5 EA. This is active less than half the time, so r1 is fine.
     armor.push(Shield(StandardItem {
         name: String::from("Covering Shield"),
-        rank: 3,
+        rank: 1,
         short_description: String::from("Grants +2 Armor during total defense"),
         description: String::from(r"
             When you use the \textit<total defense> ability, you gain a +2 bonus to Armor defense in addition to the normal bonuses from taking that action (see \pcref<Total Defense>).
@@ -65,16 +71,21 @@ pub fn shields() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
+    // There are four attacks that can take advantage of this penalty. Assume 3/4 can because it's
+    // Armor, so this is a 0.3 EA debuff. Unlike other debuffs, this has no attack or defense, so
+    // it's 50% stronger, so 0.45 EA. That's a little weak for rank 1, but rank 1 doesn't have much
+    // wiggle room so it's fine.
     armor.push(Shield(StandardItem {
         name: String::from("Hardblock Shield"),
-        rank: 3,
-        short_description: String::from("Imposes -1 Armor penalty when creatures miss you"),
+        rank: 1,
+        short_description: String::from("Imposes -1 Armor penalty when creatures strike you"),
         description: String::from(r"
-            Whenever a creature misses or \glossterm<glances> you with a melee \glossterm<strike>, it \glossterm<briefly> takes a -1 penalty to Armor defense.
+            Whenever a creature makes a \glossterm{melee} \glossterm{strike} against you, it \glossterm<briefly> takes a -1 penalty to its Armor defense.
             As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
         "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
-            ItemUpgrade::new(6, "Imposes -1 Armor penalty when creatures miss you", "
+            ItemUpgrade::new(4, "Imposes -2 Armor penalty when creatures strike you", "
                 The penalty increases to -2.
             "),
         ],
@@ -83,30 +94,49 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Defender's Shield"),
-        rank: 5,
+        rank: 1,
         short_description: String::from("Grants +1 Armor defense"),
         description: String::from(r"
             You gain a +1 \glossterm<enhancement bonus> to your Armor defense.
         "),
-        ..MagicArmor::default()
-    }));
-
-    armor.push(Shield(StandardItem {
-        name: String::from("Soulguard Shield"),
-        rank: 3,
-        short_description: String::from(r"Grants 25\% chance to avoid conditions"),
-        description: String::from(r"
-            Whenever you would be affected by a \glossterm<condition>, you have a 25\% chance to avoid gaining that condition.
-            This does not prevent any other effects of the attack.
-        "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Grants 50\% chance to avoid conditions", r"
-                The chance increases to 50\%.
+            ItemUpgrade::new(7, "Grants +2 Armor defense", "
+                The bonus increases to +2.
             "),
         ],
         ..MagicArmor::default()
     }));
 
+    armor.push(Shield(StandardItem {
+        name: String::from("Psychic Shield"),
+        rank: 1,
+        short_description: String::from("Grants +2 Mental defense"),
+        description: String::from(r"
+            You gain a +2 \glossterm<enhancement bonus> to your Mental defense.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants +3 Mental defense", "
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, "Grants +4 Mental defense", "
+                The bonus increases to +4.
+            "),
+        ],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Shield(StandardItem {
+        name: String::from("Soulguard Shield"),
+        rank: 4,
+        short_description: String::from(r"Grants 50\% chance to avoid conditions"),
+        description: String::from(r"
+            Whenever you would be affected by a \glossterm<condition>, you have a 50\% chance to avoid gaining that condition.
+            This does not prevent any other effects of the attack.
+        "),
+        ..MagicArmor::default()
+    }));
+
+    // TODO: unclear EA
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Mystic Reflection"),
         rank: 4,
@@ -120,7 +150,10 @@ pub fn shields() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
-    // t2 condition in t2 area is rank 5 base. rank 3 from immunity effect.
+    // Slowed as a HP condition is about 2 EA given the relatively short range, or 2.4 EA with
+    // prebuff. The vital wound effect is mostly fluff, so ignore it. Limited scope allows 2.2 EA, or r5.
+    // This fits into a r3 standard action attack effect, since r3 normally has 1.8 EA, and
+    // 1.8 EA * 1.33 = 2.4.
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Medusa"),
         rank: 3,
@@ -132,19 +165,38 @@ pub fn shields() -> Vec<MagicArmor> {
 
             When you activate the shield, make an attack vs. Fortitude against all creatures within a \medarea cone.
             Your minimum accuracy is $accuracy.
-            Whether you hit or miss, each creature who can see the face is immune to this ability until it finishes a \glossterm<short rest>.
+            After you use this ability, you \glossterm{briefly} cannot use it again.
 
-            \hit Each target is \slowed as a \glossterm{condition}.
+            \hit Each target is slowly turning to stone as a \glossterm{condition}.
+            While it is below its maximum \glossterm{hit points}, it is \slowed.
             During this condition, if it takes a \glossterm{vital wound} that leaves it unconscious, it immediately dies.
             When a creature dies in this way, its body is petrified in the form of a stone statue.
             \critcondition
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, r"Can slow and deal $dr5l damage over time to viewers", r"
-                Your minimum accuracy increases to $accuracy, and the condition also causes each target to take $dr5l damage during each of your subsequent actions.
+            // Adding in stunned to the HP condition is +1.2 EA, so 3.4 EA total. That makes it a
+            // rank 6 item.
+            ItemUpgrade::new(6, r"Can slow and stun viewers", r"
+                Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \stunned while it is below its maximum hit points.
             "),
         ],
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Shield(StandardItem {
+        name: String::from("Shield of Shielding"),
+        rank: 1,
+        short_description: String::from("Shields you"),
+        description: String::from(r"
+            You are \shielded.
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        upgrades: vec![
+            ItemUpgrade::new(7, "Shields you", r"
+                This item does not require \glossterm{deep attunement}.
+            "),
+        ],
         ..MagicArmor::default()
     }));
 

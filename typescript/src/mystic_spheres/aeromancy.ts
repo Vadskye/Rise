@@ -144,8 +144,10 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 6,
       roles: ['dive'],
     },
-    // Braced is 2.2 EA. Assume that ranged strikes are about 25% of all attacks, so this
-    // is 0.55 EA, which is about right for a rank 1.
+    // Braced is 2.2 EA. Assume that ranged strikes are about 33% of all attacks, so this
+    // is 0.73 EA, which is about right for a rank 1. They aren't actually 33% of attacks,
+    // but it's dangerous to undervalue rare modifiers. Doubled would be 1.5 EA for the
+    // empowered version.
     {
       name: 'Wind Screen',
 
@@ -168,6 +170,17 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 3,
       roles: ['attune'],
       type: 'Attune (target)',
+    },
+    {
+      name: 'Empowered Wind Screen',
+
+      effect: `
+        You gain a +4 bonus to your defenses against ranged \\glossterm{strikes}.
+      `,
+      // narrative: "",
+      rank: 7,
+      roles: ['attune'],
+      type: 'Attune',
     },
     // Normally, long range single target would be dr2, or two targets at med range would
     // be dr2. This is better than normal for distrange, but long range damage is rare.

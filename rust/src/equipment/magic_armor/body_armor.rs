@@ -123,24 +123,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
     }));
 
     armor.push(Body(StandardItem {
-        name: String::from("Fortified Armor"),
-        rank: 1,
-        short_description: String::from("Grants +2 Fortitude"),
-        description: String::from(r"
-            You gain a +2 \glossterm<enhancement bonus> to your Fortitude defense.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(4, "Grants +3 Fortitude", "
-                The bonus increases to +3.
-            "),
-            ItemUpgrade::new(7, "Grants +4 Fortitude", "
-                The bonus increases to +4.
-            "),
-        ],
-        ..MagicArmor::default()
-    }));
-
-    armor.push(Body(StandardItem {
         name: String::from("Hefty Armor"),
         rank: 1,
         short_description: String::from("Grants +2 Brawn"),
@@ -285,6 +267,22 @@ pub fn body_armor() -> Vec<MagicArmor> {
             "),
         ],
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Body(StandardItem {
+        name: String::from("Fortifying Armor"),
+        rank: 1,
+        short_description: String::from("Fortifies you if you have 3 Con"),
+        description: String::from(r"
+            If your Constitution is at least 3, you are \\fortified.
+        "),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        upgrades: vec![
+            ItemUpgrade::new(7, "Fortifies you if you have 5 Con", r"
+                This item does not require \glossterm{deep attunement}, but it requires 5 Constitution.
+            "),
+        ],
         ..MagicArmor::default()
     }));
     
