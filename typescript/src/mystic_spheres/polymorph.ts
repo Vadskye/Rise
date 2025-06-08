@@ -853,7 +853,7 @@ export const polymorph: MysticSphere = {
       scaling: {
         2: `
           The weapon can be made of any special material other than cold iron and silver (see \\pcref{Weapon Special Materials}).
-          Its rank cannot exceed your spellcasting rank with this spell.
+          The rank of the special material cannot exceed your spellcasting rank with this spell.
         `,
       },
       type: 'Attune',
