@@ -45,7 +45,7 @@ export const prayer: MysticSphere = {
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Whenever each target finishes a \\glossterm{long rest}, it removes an additional \\glossterm{vital wound} (see \\pcref{Removing Vital Wounds}).
       `,
-      rank: 4,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -55,7 +55,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target becomes proficient with one additional weapon group, including exotic weapons from that weapon group.
+        Each target becomes proficient with all armor and non-exotic weapons.
       `,
       rank: 1,
       roles: ['attune'],
@@ -65,10 +65,12 @@ export const prayer: MysticSphere = {
     {
       name: 'Blessing of Precision',
 
+      // Focused once is 0.4 EA, which is too low for a rank 1 attunement. Only removing
+      // the attunement on a hit makes it more reasonable.
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever a target misses or gets a \\glossterm{glancing blow} with an \\glossterm{attack}, it can \\glossterm{reroll} that attack.
-        If it does, this ability ends for that creature.
+        Whenever a target misses or gets a \\glossterm{glancing blow} with an \\glossterm{attack}, it can \\glossterm{reroll} that attack and keep the higher result.
+        If it hits or critically hits with the reroll, this ability ends for that creature.
       `,
       rank: 1,
       roles: ['attune'],
@@ -229,6 +231,7 @@ export const prayer: MysticSphere = {
       type: 'Attune (target)',
     },
 
+    // TODO: EA math
     {
       name: 'Blessing of Perseverance',
 
@@ -241,6 +244,7 @@ export const prayer: MysticSphere = {
       type: 'Attune (target)',
     },
 
+    // TODO: EA math
     {
       name: 'Boon of Cleansing',
 
@@ -252,6 +256,7 @@ export const prayer: MysticSphere = {
       roles: ['cleanse'],
     },
 
+    // TODO: EA math
     {
       name: 'Cleansing Benediction',
 
@@ -361,6 +366,7 @@ export const prayer: MysticSphere = {
       type: 'Attune (target)',
     },
 
+    // TODO: EA math
     {
       name: 'Blessing of Vitality',
 
@@ -378,8 +384,9 @@ export const prayer: MysticSphere = {
       name: 'Boon of Shielding',
 
       // Any two shielded is 0.5 EA, so we reduce the healing to dr2.
-      // TODO: more clear guidelines on how healing interacts with buffs.
-      cost: 'One \\glossterm{fatigue level} from each target.',
+      // TODO: more clear guidelines on how healing interacts with buffs, and who pays the
+      // fatigue for this sort of effect.
+      cost: 'One \\glossterm{fatigue level}.',
       // dr3
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
@@ -421,10 +428,11 @@ export const prayer: MysticSphere = {
 
     {
       name: 'Mighty Consecrated Blow',
-      functionsLike: {
-        name: 'consecrated blow',
-        exceptThat: 'the strike deals double damage.',
-      },
+      effect: `
+        Make a \\glossterm{strike}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        Then, you are \\glossterm{briefly} \\fortified.
+      `,
       rank: 5,
       roles: ['burst'],
       scaling: 'accuracy',
@@ -442,6 +450,8 @@ export const prayer: MysticSphere = {
       scaling: 'accuracy',
     },
 
+    // May be too weak? Don't want to move to r5 since that conflicts with mighty
+    // consecrated blow.
     {
       name: 'Mighty Exalted Excision',
       functionsLike: {
