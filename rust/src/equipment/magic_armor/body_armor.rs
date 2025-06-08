@@ -1,21 +1,19 @@
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::{MagicArmor, ItemUpgrade, StandardItem};
 use crate::equipment::MagicArmor::Body;
 
 pub fn body_armor() -> Vec<MagicArmor> {
     let mut armor = vec![];
 
+    // This is kind of like Wind Screen, but it also helps protect you when enemies knock you
+    // prone, which is rare
     armor.push(Body(StandardItem {
         name: String::from("Armor of Scuttling"),
-        rank: 1,
-        short_description: String::from("Move at full speed while prone"),
+        rank: 2,
+        short_description: String::from("Act normally while prone"),
         description: String::from(r"
-            Being \prone does not reduce your movement speed.
+            Being \prone does not reduce your movement speed or defenses.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(3, "Move at full speed and defend normally while prone", "
-                Being prone also does not reduce your defenses.
-            "),
-        ],
         ..MagicArmor::default()
     }));
 
@@ -55,18 +53,14 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
+    // Steeled is 0.9 EA
     armor.push(Body(StandardItem {
-        name: String::from("Fortified Armor"),
+        name: String::from("Steeling Armor"),
         rank: 3,
-        short_description: String::from("Reduces critical hits from strikes"),
+        short_description: String::from("Immune to critical hits"),
         description: String::from(r"
-            You gain a +4 bonus to your defenses when determining whether a \glossterm<strike> gets a \glossterm<critical hit> against you instead of a normal hit.
+            You are \\steeled.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(6, "Reduces critical hits from strikes", "
-                The bonus applies against all attacks, not just strikes.
-            "),
-        ],
         ..MagicArmor::default()
     }));
 
@@ -80,11 +74,13 @@ pub fn body_armor() -> Vec<MagicArmor> {
              You may choose the design of the clothing.
              The item retains all of its properties, including weight and sound, while disguised in this way.
              Only its visual appearance is altered.
-             This effect lasts until you revert it as a standard action.
+             An observer can recognize the armor's true nature with a \glossterm{difficulty value} 15 Awareness check.
+
+             You can suppress or resume this effect as a \glossterm{free action} once per round.
         "),
         upgrades: vec![
             ItemUpgrade::new(3, "Can look and sound like normal clothing", "
-                The armor also makes sound appropriate to its disguised form while disguised.
+                The sound and texture of the armor are also appropriate to its disguised form while disguised, and the Awareness DV increases to 25.
             "),
         ],
         ..MagicArmor::default()
@@ -112,13 +108,14 @@ pub fn body_armor() -> Vec<MagicArmor> {
 
     armor.push(Body(StandardItem {
         name: String::from("Lithe Armor"),
-        rank: 4,
+        rank: 1,
         short_description: String::from("Grants +1 AD if you have 3 Dex"),
         description: String::from(r"
             If your Dexterity is at least 3, you gain a +1 \glossterm<enhancement bonus> to your Armor defense.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, "Grants +2 AD if you have 5 Dex", "
+            // -1 rank for Dex requirement
+            ItemUpgrade::new(6, "Grants +2 AD if you have 5 Dex", "
                 The bonus increases to +2 if your Dexterity is at least 5.
             "),
         ],
@@ -126,18 +123,68 @@ pub fn body_armor() -> Vec<MagicArmor> {
     }));
 
     armor.push(Body(StandardItem {
-        name: String::from("Trimmed Armor"),
-        rank: 2,
-        short_description: String::from("Reduces Dex penalty from non-light armor"),
+        name: String::from("Fortified Armor"),
+        rank: 1,
+        short_description: String::from("Grants +2 Fortitude"),
         description: String::from(r"
-            If your Dexterity bonus to your Armor is reduced by at least 2 due to your body armor, you gain a \plus1 \glossterm{enhancement bonus} to your Armor defense.
-            This typically requires a Dexterity of 3.
+            You gain a +2 \glossterm<enhancement bonus> to your Fortitude defense.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Greatly reduces Dex penalty from non-light armor", "
-                The Armor defense bonus increases to +2 if your Dexterity bonus to Armor is reduced by at least 3.
+            ItemUpgrade::new(4, "Grants +3 Fortitude", "
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, "Grants +4 Fortitude", "
+                The bonus increases to +4.
             "),
         ],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Body(StandardItem {
+        name: String::from("Hefty Armor"),
+        rank: 1,
+        short_description: String::from("Grants +2 Brawn"),
+        description: String::from(r"
+            You gain a +2 \glossterm<enhancement bonus> to your Brawn defense.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants +3 Brawn", "
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, "Grants +4 Brawn", "
+                The bonus increases to +4.
+            "),
+        ],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Body(StandardItem {
+        name: String::from("Evasive Armor"),
+        rank: 1,
+        short_description: String::from("Grants +2 Reflex"),
+        description: String::from(r"
+            You gain a +2 \glossterm<enhancement bonus> to your Reflex defense.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants +3 Reflex", "
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, "Grants +4 Reflex", "
+                The bonus increases to +4.
+            "),
+        ],
+        ..MagicArmor::default()
+    }));
+    // No Mental defense from armor
+
+    armor.push(Body(StandardItem {
+        name: String::from("Trimmed Armor"),
+        rank: 5,
+        short_description: String::from("Reduces Dex penalty from non-light armor"),
+        description: String::from(r"
+            If your Dexterity bonus to your Armor is reduced by at least 2 due to your armor, you gain a \plus2 \glossterm{enhancement bonus} to your Armor defense.
+            This typically requires a Dexterity of 4.
+        "),
         ..MagicArmor::default()
     }));
 
@@ -179,9 +226,10 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
     
+    // TODO: calculate EA for movement effects
     armor.push(Body(StandardItem {
         name: String::from("Swiftstep Armor"),
-        rank: 4,
+        rank: 5,
         short_description: String::from("Removes armor speed penalty"),
         description: String::from(r"
             This armor does not penalize your movement speed for being heavy (see \pcref<Armor Usage Classes>).
@@ -208,15 +256,35 @@ pub fn body_armor() -> Vec<MagicArmor> {
         description: String::from(r"
             This armor does not increase your maximum damage resistance.
             Instead, you gain a bonus to your maximum hit points equal to the damage resistance the armor would normally provide.
+            In addition, the armor grants you a +6 \glossterm{enhancement bonus} to your maximum hit points.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Grants bonus HP instead of DR", r"
-                The armor also grants you a +8 \glossterm{enhancement bonus} to your maximum hit points.
+                The hit point bonus increases to +12.
             "),
             ItemUpgrade::new(6, "Grants bonus HP instead of DR", r"
-                The hit point bonus increases to +16.
+                The hit point bonus increases to +24.
             "),
         ],
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Body(StandardItem {
+        name: String::from("Armor of Transfusion"),
+        rank: 3,
+        short_description: String::from("Regain 2d8 HP per round"),
+        description: String::from(r"
+            At the end of each round, you regain 2d8 \glossterm{hit points}.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Regain 4d10 HP per round", "
+                The healing increases to 2d8.
+            "),
+            ItemUpgrade::new(7, "Regain 8d10 HP per round", "
+                The healing increases to 8d10.
+            "),
+        ],
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicArmor::default()
     }));
     
