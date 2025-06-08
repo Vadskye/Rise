@@ -492,15 +492,16 @@ They allow more distinct and unique character customization, but also increase g
     \parhead{Special} You can only have one Ancestry feat.
 
     \magicalff[1]{Celestial Benevolence}
-    \begin{sustainability}{Celestial Benevolence}[\abilitytag{Sustain} (free), \abilitytag{Swift}]
+    \begin{magicalactiveability}{Celestial Benevolence}[\abilitytag{Swift}]
         \abilityusagetime Standard action.
         \rankline
         Choose an \glossterm{ally} you \glossterm{touch}.
         Whenever that ally would be attacked by a \glossterm{targeted} ability while it is adjacent to you, the attack is made against you instead.
+        This ability lasts until you \glossterm{dismiss} it or until you use it again.
 
         A creature that sees an attack against an ally redirected in this way can observe that you are the cause of the redirection with a \glossterm{difficulty value} 5 Awareness check.
         While this ability is active, you cannot be affected by other creatures using this ability on you.
-    \end{sustainability}
+    \end{magicalactiveability}
 
     \magicalff[6]{Healing Radiance} When you use the \ability{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you.
     % TODO: unclear scaling
