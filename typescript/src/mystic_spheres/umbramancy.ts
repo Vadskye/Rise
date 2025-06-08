@@ -95,7 +95,7 @@ export const umbramancy: MysticSphere = {
         hit: `\\damageranktwolow.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against each \\glossterm{shadowed} creature in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
       },
       roles: ['clear'],
@@ -111,7 +111,7 @@ export const umbramancy: MysticSphere = {
         hit: `\\damagerankfivelow.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against each \\glossterm{shadowed} creature in a \\smallarea cone from you.
+          Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
       },
       roles: ['clear'],
@@ -210,12 +210,11 @@ export const umbramancy: MysticSphere = {
 
       // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           Each target is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          Make an attack vs. Mental against each \\glossterm{shadowed} creature in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all \\glossterm{shadowed} creatures in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 3,
@@ -424,7 +423,7 @@ export const umbramancy: MysticSphere = {
           \\item You are nearly flat, allowing you to pass under doors and through other narrow passages.
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
-          \\item While you in a space occupied by an \\glossterm{shadowed} \\glossterm{ally}, you have \\glossterm{concealment}, and you can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you (see \pcref{Stealth}).
+          \\item While you in a space occupied by an \\glossterm{shadowed} \\glossterm{ally}, you have \\glossterm{concealment}, and you can use the \\textit{hide} ability without moving in a way that causes observers to lose sight of you (see \\pcref{Stealth}).
           \\item You gain a slow \\glossterm{climb speed}, and you can climb without using any hands.
           \\item You are always treated as being \\prone, though your movement speed is not reduced.
         \\end{itemize}

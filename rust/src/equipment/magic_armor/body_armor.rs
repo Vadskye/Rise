@@ -59,7 +59,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 3,
         short_description: String::from("Immune to critical hits"),
         description: String::from(r"
-            You are \\steeled.
+            You are \steeled.
         "),
         ..MagicArmor::default()
     }));
@@ -275,7 +275,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         rank: 1,
         short_description: String::from("Fortifies you if you have 3 Con"),
         description: String::from(r"
-            If your Constitution is at least 3, you are \\fortified.
+            If your Constitution is at least 3, you are \fortified.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
