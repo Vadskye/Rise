@@ -169,7 +169,7 @@ Assuming that 2/3 of enemy attacks target Armor, +1 Armor is 17% action denial t
 
 Twice as good as +1 Armor
 
-### +2 Fort/Ref/Ment: 0.75
+### +2 Brawn/Fort/Ref/Ment: 0.75
 
 Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial that works 1/3 of the time and you are attacked 1/3 of the time, so 20 / 3 / 3 / 3 = 0.75 EA, so rank 1.
 
