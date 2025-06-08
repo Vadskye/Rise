@@ -40,61 +40,26 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
 // Generate the Resources section of the basic class abilities.
 fn generate_latex_resources(class: &Class) -> String {
-    let mut modifiers = vec![];
-    if class.attunement_points() > 0 {
-        modifiers.push(format!(
-            "{modifier} additional \\glossterm<attunement point{s}>",
-            modifier = if class.attunement_points() == 1 {
-                "an"
-            } else if class.attunement_points() == 2 {
-                "two"
-            } else {
-                panic!(
-                    "Confusing attunement point count: {}",
-                    class.attunement_points()
-                )
-            },
-            s = if class.attunement_points() > 1 {
-                "s"
-            } else {
-                ""
-            },
-        ));
-    }
-    if class.insight_points() > 0 {
-        modifiers.push(format!(
-            "{modifier} additional \\glossterm<insight point{s}>",
-            modifier = if class.insight_points() == 1 {
-                "an"
-            } else if class.insight_points() == 2 {
-                "two"
-            } else {
-                panic!(
-                    "Confusing attunement point count: {}",
-                    class.insight_points()
-                )
-            },
-            s = if class.insight_points() > 1 { "s" } else { "" },
-        ));
-    }
-    let maybe_modifier_text = latex_formatting::join_string_list(&modifiers);
-    let modifier_text = if let Some(t) = maybe_modifier_text {
-        format!("You also gain {t}.")
-    } else {
-        "".to_string()
-    };
+    let attunement_points = 3 + class.attunement_points();
+    let fatigue_tolerance = 2;
+    let insight_points = 1 + class.insight_points();
+    let trained_skills = class.trained_skills();
 
     format!(
         "
             \\cf<{shorthand_name}><Resources>
-            You learn {trained_skills} from among your \\glossterm<class skills> (see \\pcref<Skills>). {modifier_text}
+            \\begin<raggeditemize>
+                \\item \\glossterm<Attunement points>: {attunement_points} (see \\pcref<Attunement Points>).
+                \\item \\glossterm<Fatigue tolerance>: {fatigue_tolerance} \\add your Constitution (see \\pcref<Fatigue>).
+                \\item \\glossterm<Insight points>: {insight_points} \\add your Intelligence (see \\pcref<Insight Points>).
+                \\item \\glossterm<Trained skills>: {trained_skills} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref<Skills>).
+            \\end<raggeditemize>
         ",
+        attunement_points = attunement_points,
+        fatigue_tolerance = fatigue_tolerance,
+        insight_points = insight_points,
         shorthand_name = class.shorthand_name(),
-        trained_skills = generate_labeled_english_number(
-            class.trained_skills(),
-            "\\glossterm<trained skill>",
-            "\\glossterm<trained skills>",
-        )
+        trained_skills = trained_skills,
     )
 }
 
@@ -195,7 +160,14 @@ fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> St
     let converter = Numerics::builder().build();
     let english_number = converter.convert_number(val).unwrap();
     let suffix = if val == 1 { singular } else { plural };
+
     format!("{} {}", english_number[0], suffix)
+}
+
+fn singular_or_plural(val: i32, singular: &str, plural: &str) -> String {
+    let suffix = if val == 1 { singular } else { plural };
+
+    format!("{} {}", val, suffix)
 }
 
 fn generate_latex_armor_proficiencies(class: &Class) -> String {
