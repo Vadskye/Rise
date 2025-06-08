@@ -36,6 +36,10 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 0.2 EA * 5 actions = 1 EA
 
+### Evasion
+
+Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss or glance, and this protects you from the 50% damage that you would take from the miss / glance. That's 20 / 3 * 0.75 * 0.5 * 0.5 * 0.5 = 0.6 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
+
 ### 25% extra damage: 1.25
 
 0.25 EA * 5 actions = 1.25
@@ -103,10 +107,16 @@ A minor action attack makes 5 attacks per combat, so the correct damage multipli
 
 Translating that into usable scaling:
 * Rank 3: 1d10 (43%; dr1l, with normal +2 per rank scaling)
-* Rank 4: dr0, 1d4 + half power (45%)
-* Rank 5: power, not a real scaling (49%)
+* Rank 4:
+  * dr0, 1d4 + half power (45%)
+  * Strike with -2 accuracy penalty (45%)
+* Rank 5:
+  * full power, not a real scaling (49%)
+  * strike? (42%)
 * Rank 6: dr3, 1d8 + power (55%)
-* Rank 7: dr4, 1d6 per 2 (56%)
+* Rank 7:
+  * dr4, 1d6 per 2 (56%)
+  * double damage strike (50%) - only double weapon damage, not double damage, because doubling extra damage on a minor action is wrong
 
 ### Honed: 2.0
 
