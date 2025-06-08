@@ -85,29 +85,21 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                         \item \abilitytag{Scrying} abilities
                         \item \trait{Tremorsense} and \trait{tremorsight}
                     \end{itemize}
-                    If you have access to any other more unusual senses, such as the \textit{blood sense} ability from the Executioner feat, you may also choose one of those senses as a separate sense group.
+                    If you have access to any other more unusual senses, such as the \textit{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
+
+                    You can attune to this ability multiple times.
+                    Each time, you can choose a different sense group.
                 \end{attuneability}
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 0,
-            name: "Darkstalker+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You can attune to this ability multiple times.
-                Each time, you can choose a different sense group.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 1,
-            name: "Darkstalker++",
+            name: "Darkstalker+",
             is_magical: false,
             rank: 7,
             description: r"
-                When you use this ability, you become undetectable by up to three of the possible sense groups rather than only one.
+                Each time you attune to this ability, you can choose up to three of the possible sense groups rather than only one.
             ",
             modifiers: None,
         },

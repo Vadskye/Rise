@@ -370,11 +370,21 @@ export const chronomancy: MysticSphere = {
       name: 'Weapon Haste',
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{strike} with a -2 accuracy penalty using a single weapon.
-        This strike cannot be a \\glossterm{dual strike}.
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this ability (see \\pcref{Power}).
+        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} with a \\minus2 accuracy penalty.
       `,
       rank: 4,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Weapon Haste',
+
+      effect: `
+        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+      `,
+      rank: 7,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -440,12 +450,13 @@ export const chronomancy: MysticSphere = {
         While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
 
         % TODO: wording
-        This effect normally lasts as long as you \\glossterm{attune} to it, and until the end of the round when you release the attunement.
+        This effect normally lasts as long as you \\glossterm{sustain} it.
+        Since releasing sustained effects is \\atSwift, it can attack and be attacked during the action phase when you release it from stasis.
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
       rank: 4,
       roles: ['attune'],
-      type: 'Attune',
+      type: 'Sustain (minor)',
     },
 
     {
@@ -482,6 +493,7 @@ export const chronomancy: MysticSphere = {
       type: 'Sustain (minor)',
     },
 
+    // TODO: unclear rank
     {
       name: 'Efficient Time Lock -- Location',
 
@@ -560,16 +572,17 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
-    {
-      name: 'Efficient Accelerated Evasion',
 
-      functionsLike: {
-        name: 'accelerated evasion',
-        exceptThat: 'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).',
-      },
-      rank: 6,
+    {
+      name: 'Greater Accelerated Evasion',
+
+      effect: `
+        You take no damage from \\glossterm{glancing blows} or misses caused by abilities that affect an area.
+        This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
+      `,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
