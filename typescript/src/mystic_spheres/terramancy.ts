@@ -95,7 +95,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // Rank 4 spell would normally have dr2 and r4 area. Add +2dr for avoidable delay
       // and +1dr for double defense.
-    // The open area requirement is a cost for stacking this much +damage.
+      // The open area requirement is a cost for stacking this much +damage.
       attack: {
         hit: `\\damagerankfive.`,
         missGlance: true,
