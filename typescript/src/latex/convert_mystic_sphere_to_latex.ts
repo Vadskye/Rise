@@ -53,9 +53,32 @@ export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
   }
 }
 
+// The types make this kind of annoying
+function getSpecialScaling(spell: SpellLike): string | null {
+  if (spell.scaling && (typeof spell.scaling) === "object" && (spell.scaling as any)['special']) {
+    return (spell.scaling as any)['special'];
+  } else {
+    return null;
+  }
+}
+
 function convertSpellToLatex(spell: SpellLike): string {
+  const specialScaling = getSpecialScaling(spell);
   if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
     console.error(`Spell ${spell.name} is probably missing scaling`);
+  }
+  if ((spell.rank || Infinity) <= 6 && spell.attack && spell.attack.hit && spell.attack.hit.match(/damagerank\w+low/) && !specialScaling) {
+    console.error(`Spell ${spell.name} deals low damage but does not have special scaling`);
+  }
+  if (spell.rank && specialScaling) {
+    const forEachRankMatch = specialScaling.match(/for each rank [^b]/);
+    if (forEachRankMatch) {
+      console.error(`Spell ${spell.name} uses wrong wording for its special scaling`);
+    }
+    const rankMatch = specialScaling.match(/for each rank beyond (\d)/);
+    if (rankMatch && rankMatch[1] && rankMatch[1] !== spell.rank.toString()) {
+      console.error(`Spell ${spell.name} has scaling from wrong rank ${rankMatch[1]}`);
+    }
   }
 
   const abilityType = determineAbilityType(spell);
