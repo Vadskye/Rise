@@ -14,7 +14,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{activeability}{Second Wind}[\atSwift]
-                    \abilitycost Two \\glossterm{fatigue levels}, and you cannot use this ability again until you finish a \\glossterm{short rest}.
+                    \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
