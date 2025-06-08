@@ -385,6 +385,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
+    // dr3 is standard for 75% common reactive damage
     {
       name: 'Retributive Winds',
 
@@ -611,6 +612,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       scaling: 'accuracy',
       type: 'Sustain (standard)',
     },
+    // TODO: standardize EA for movement speeds and moving through enemies
     {
       name: 'Misty Step',
 
@@ -627,7 +629,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['attune'],
       type: 'Attune',
     },
-    // TODO: higher rank version
+    // TODO: higher rank version?
     {
       name: 'Wall of Wind',
 
@@ -648,7 +650,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       effect: `
         You can walk on air up to a foot above the ground.
         This allows you to ignore \\glossterm{difficult terrain} from all sources other than creature abilities.
-        The extra height is generally insufficient to change your \\glossterm{space} in battle.
+        The extra height is insufficient to change your \\glossterm{space} in battle.
       `,
       rank: 2,
       roles: ['attune'],
@@ -715,7 +717,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your defenses.
+        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your defenses for being \\midair.
         You are unable to take any standard actions other than sustaining this effect, but you can still take \\glossterm{move actions} in place of standard actions.
       `,
       rank: 4,
