@@ -73,9 +73,9 @@ Complexity is calculated at (rank 3 / rank 7).
 * Pactbound Warrior: 7 / 7
 * Soulforged: 4 / 6
             
-## wizard: 27 / 41
+## wizard: 27 / 42
 * Arcane Magic: 6 / 7
 * Arcane Spell Mastery: 5 / 9
 * Alchemist: 7 / 10
-* Arcane Scholar: 6 / 10
+* Arcane Scholar: 6 / 11
 * School Specialist: 3 / 5
