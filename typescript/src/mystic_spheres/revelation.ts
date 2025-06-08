@@ -38,58 +38,12 @@ export const revelation: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Weapon Proficiency',
+      name: 'Reveal Proficiency',
 
       effect: `
-        You gain \\glossterm{proficiency} with all weapons from one weapon group of your choice, including exotic weapons from that weapon group.
+        You become \\glossterm{proficient} with all armor and weapons, including exotic weapons.
       `,
       rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-    {
-      name: 'Mass Weapon Proficiency',
-
-      functionsLike: {
-        mass: true,
-        name: 'weapon proficiency',
-      },
-      // narrative: '',
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Armor Proficiency',
-
-      effect: `
-        You gain \\glossterm{proficiency} with all armor \\glossterm{usage classes}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-    {
-      name: 'Mass Armor Proficiency',
-
-      functionsLike: {
-        mass: true,
-        name: 'armor proficiency',
-      },
-      // narrative: '',
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Greater Proficiency',
-
-      effect: `
-        You gain \\glossterm{proficiency} with all weapons and armor, including exotic weapons.
-      `,
-      rank: 4,
       roles: ['attune'],
       type: 'Attune',
     },
