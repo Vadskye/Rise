@@ -94,6 +94,10 @@ In general, tradeoff maneuvers work best if they have an easy way to directly mu
 
 Spells can comfortably trade accuracy for damage since there is no "weapon" system that already makes the same tradeoff to conflict with.
 
+#### Extra Defenses
+
+Requiring any two defenses is +1dr, since that's roughly similar to -2 accuracy.
+
 #### Power-scaling damage
 
 In general, using a drX+1 spell instead of drX is about 25% more damage, and using a drX+2 spell is worth about 40-60% more damage. The drX+2 scaling is not even across ranks, with a breakpoint at rank 4.
@@ -104,10 +108,14 @@ However, most high damage spells will also be short or melee range. If you look 
 
 Flat damage spells work differently. They pretty consistently deal 40% more damage with each rank regardless of which rank you are currently at.
 
-#### Combined system
+## Combined system
 
 * Power-scaling spells:
-  * In character ranks 1-2, you can trade -2 accuracy to go from dr1 to dr2. No other accuracy trade is acceptable.
-  * In character ranks 3-7, you can trade -2 accuracy for +1 DR, or -4 accuracy for +2 DR, to a maximum of drX+3.
+  * You can trade -2 accuracy for +1 DR, or -4 accuracy for +2 DR, to a maximum of drX+3.
+  * Requiring two defenses is worth +1 DR.
 * Flat damage spells:
   * You can trade -3 accuracy for +1 DR.
+  * Requiring two defenses with -1 accuracy is worth +1 DR.
+  * Short range with -1 accuracy is worth +1 DR.
+  * Short range with double defenses is worth +1 DR?
+  * Melee range is worth +1 DR.
