@@ -399,19 +399,19 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Devastating Maneuver} The maneuver deals double damage, but you take an accuracy penalty equal to 6 - your excess rank.
-
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
 
-                    \parhead{Mighty Maneuver} All strikes from the maneuver deal double \glossterm{weapon damage}, but you take an accuracy penalty equal to 5 - your excess rank.
-                    If your excess rank is at least 6, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You deal extra damage equal to twice your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
                     \parhead{Reckless Maneuver} You gain an accuracy bonus equal to twice your excess rank.
                     However, you \glossterm{briefly} take a \minus4 penalty to your defenses after you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}.
+
+                    \parhead{Widened Maneuver} The area affected by your chosen maneuver doubles.
+                    If your excess rank is at least 4, the area triples instead.
+                    You can only apply this augment to maneuvers that affect an area.
                 }
             ",
             modifiers: None,
