@@ -584,9 +584,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are at less than their maximum \glossterm{hit points}.
 
-                    \parhead{Mighty Maneuver} You take an accuracy penalty equal to 5 - your excess rank but the strike deals double \glossterm{weapon damage}.
-                    If your excess rank is at least 6, this becomes an accuracy bonus.
-                    You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
+                    \parhead{Mighty Maneuver} You deal extra damage equal to twice your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your land speed.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
