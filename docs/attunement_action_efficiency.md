@@ -125,6 +125,8 @@ Assume that the trigger for the damage will happen exactly once per fight and is
 
 If the reaction is hard to trigger, such as requiring total defense or recover, it gets +1 rank on the above scale.
 
+Singleton echo/repeat is rank 5 / 125% on this scale because it's more versatile than a simple damage value.
+
 ### Singleton reactive debuff: ???
 
 Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that brief
