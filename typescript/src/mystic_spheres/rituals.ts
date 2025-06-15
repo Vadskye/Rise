@@ -2575,98 +2575,113 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      Choose up to four corpses within \\shortrange.
-      The combined levels of all targets cannot exceed your level.
+      Choose up to five corpses within \\shortrange.
+      The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
       Each target becomes an undead creature that obeys your mental commands.
 
       You choose whether to create a skeleton or a zombie from each corpse.
       Creating a zombie require a mostly intact corpse, including most of the flesh.
       Creating a skeleton only requires a mostly intact skeleton.
-      If a skeleton is made from an intact corpse, the flesh quickly falls off the animated bones.
+      If a skeleton is made from an intact corpse, the flesh falls off the animated bones over the next few minutes as it moves around.
 
-      As a \\glossterm{minor action}, you can mentally command your undead.
-      The command must be no more than 10 words, and overly complex commands may cause strange and unintended behavior.
-      It affects any undead you created with this ability that are within \\distrange of you.
-      Undead will obey their most recent command indefinitely.
+      This ritual does not give you any specific control over the newly awakened undead.
+      They may attack you once they become fully active, which typically happens one minute after the ritual is complete.
+      If you also know how to perform the \ritual{command undead} ritual, you can combine that ritual with this one.
+      Doing so doubles the time required to complete the ritual, but it applies the effects of \ritual{command undead} to each creature you created.
     `,
     materialCost: true,
     rank: 3,
+    roles: ['narrative'],
+    spheres: ['Vivimancy'],
+  },
+  {
+    name: 'Animate Dreadhorde',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      name: 'animate dead',
+      exceptThat: 'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
+    },
+    materialCost: true,
+    rank: 6,
+    roles: ['narrative'],
+    spheres: ['Vivimancy'],
+  },
+  {
+    name: 'Command Undead',
+
+    castingTime: 'one hour',
+    effect: `
+      Choose up to five \\trait{mindless} \\creaturetag{undead} creatures within \\medrange.
+      The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
+      Each target become your servant, and will obey your commands.
+
+      As a \\glossterm{minor action}, you can mentally command any number of undead you control using this ritual.
+      The command must be no more than 10 words, and overly complex commands may cause strange and unintended behavior.
+      Each target of the command must be within \\distrange of you.
+      Undead commanded in this way will obey their most recent command indefinitely, even if it causes them great danger.
+    `,
+    rank: 2,
+    roles: ['attune'],
+    type: 'Attune (deep)',
+    spheres: ['Vivimancy'],
+  },
+
+  {
+    name: 'One Who Lives in Death',
+
+    castingTime: 'one minute',
+    effect: `
+      All \\trait{mindless} \\creaturetag{undead} perceive you to be another undead similar to themselves.
+      This generally means that they will not attack you or interfere with you, though they may still retaliate if provoked.
+    `,
+    rank: 3,
+    roles: ['attune'],
+    type: 'Attune',
+    spheres: ['Vivimancy'],
+  },
+
+  {
+    name: 'Those Who Live in Death',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      name: 'one who lives in death',
+      mass: true,
+    },
+    rank: 6,
+    roles: ['attune'],
+    type: 'Attune (target)',
+    spheres: ['Vivimancy'],
+  },
+
+  // TODO: math, consider whether Willpower or power should be involved
+  {
+    name: 'Command Undead Horde',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      name: 'command undead',
+      exceptThat: 'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
+    },
+    rank: 5,
     roles: ['attune'],
     type: 'Attune (deep)',
     spheres: ['Vivimancy'],
   },
   {
-    name: 'Mystic Trap',
+    name: 'Arboreal Communion',
 
     castingTime: 'one hour',
-    attack: {
-      hit: `\\damagerankone.`,
-      missGlance: true,
-      targeting: `
-          When you perform this ritual, choose a point in space within \\shortrange.
-          You can choose a point within an \\glossterm{unattended} container as long as the container is currently open.
-          One minute after the ritual is completed, that point becomes a trap.
-
-          When a creature moves within a \\smallarea radius from the chosen point, the trap activates.
-          The trap's Awareness bonus to notice creatures moving is +10.
-          You can choose the minimum size category of creature required to activate the trap.
-          When the trap activates, make an attack vs. Reflex against everything within a \\smallarea radius from the trap.
-          The valid targets for this spell depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
-          After the trap activates, this effect is \\glossterm{dismissed}.
-        `,
-    },
-    rank: 1,
-    roles: ['attune'],
-    tags: ['Trap'],
-    type: 'Attune',
-    spheres: ['Universal'],
-  },
-  {
-    name: 'Enduring Mystic Trap',
-
-    castingTime: '24 hours',
-    functionsLike: {
-      name: 'mystic trap',
-      exceptThat: `
-          the trap persists for one year.
-          Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
-        `,
-    },
-    rank: 1,
+    effect: `
+      You ask the trees within a \gargarea radius from you for information.
+      Trees are not highly aware of their surroundings, and generally ignore complex questions.
+      However, they have long memories of any injuries they suffered or obvious danger that they faced, such as nearby fires.
+      They can only track time to the day until about a month into the past, at which point they simply refer to events by their season.
+      You could use this spell to determine if any campfires were in the area recently, if any rot or infestation is present in the area, or other similar issues that are of concern to trees.
+    `,
+    rank: 3,
     roles: ['narrative'],
-    tags: ['Trap'],
-    spheres: ['Universal'],
-  },
-  {
-    name: 'Massive Mystic Trap',
-
-    castingTime: '24 hours',
-    functionsLike: {
-      name: 'mystic trap',
-      exceptThat: `
-          the damage increases to \\damageranktwo.
-          In addition, the area of both the activation and the attack increases to a \\medarea radius.
-        `,
-    },
-    rank: 4,
-    roles: ['narrative'],
-    tags: ['Trap'],
-    spheres: ['Universal'],
-  },
-  {
-    name: 'Massive Enduring Mystic Trap',
-
-    castingTime: '24 hours',
-    functionsLike: {
-      name: 'massive mystic trap',
-      exceptThat: `
-          the trap persists for one year.
-          Whenever it is activated, it is temporarily \\glossterm{suppressed} for 10 minutes.
-        `,
-    },
-    rank: 4,
-    roles: ['narrative'],
-    tags: ['Trap'],
-    spheres: ['Universal'],
+    spheres: ['Revelation', 'Verdamancy'],
   },
 ];
