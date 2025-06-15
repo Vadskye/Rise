@@ -250,6 +250,8 @@ export const thaumaturgy: MysticSphere = {
       type: 'Attune (deep)',
     },
 
+    // TODO: math, probably increase this rank to avoid conflicting with the other
+    // enhance magic
     {
       name: 'Enhance Magic -- Might',
 
@@ -272,10 +274,10 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Precision',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused for the rest of that round.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused and \\honed for the rest of that round.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -290,9 +292,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
-      // Deep seems pretty punishing, but echoing is scary nova? Unclear who would
-      // actually use this...
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
 
     {
