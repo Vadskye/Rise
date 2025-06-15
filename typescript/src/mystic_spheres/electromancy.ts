@@ -25,6 +25,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           Make an attack vs. Reflex against something within \\shortrange.
         `,
       },
+      roles: ['burst'],
     },
 
     {
@@ -36,6 +37,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
         Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `The maximum size increases to Medium.`,
         4: `The maximum size increases to Large.`,
@@ -48,27 +50,18 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Distant Chain',
 
+      // TODO: EA math, may be too weak
       effect: `
         Your abilities that \\glossterm{chain} can travel an extra fifteen feet between each chain.
+        Whenever you use an ability that chains, you can enhance it to travel an extra thirty feet between each chain instead of an extra fifteen feet.
+        If you do, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
 
-    {
-      name: 'Magnetic Chain',
-
-      effect: `
-        Your abilities that \\glossterm{chain} can chain one additional time, but only to a \\glossterm{metallic} creature or object.
-        The bonus chain can travel an extra fifteen feet.
-        This does not affect abilities that do not already chain.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
+    // TODO: EA math, may be too weak
     {
       name: 'Extra Chain',
 
@@ -76,7 +69,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         Your abilities that \\glossterm{chain} can chain one additional time.
         This does not affect abilities that do not already chain.
       `,
-      rank: 4,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -85,61 +78,53 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Magnetic Pull',
 
       effect: `
-        Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\shortrange.
+        Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
         It flies into your hands.
         If you are unable to catch it, it drops to the ground adjacent to your space without harming you.
       `,
       rank: 1,
+      roles: ['narrative'],
       scaling: {
         3: `The maximum size increases to Medium.`,
-        5: `The range increases to \\medrange.`,
+        5: `The range increases to \\longrange.`,
         7: `The maximum size increases to Large.`,
       },
     },
     {
       name: 'Lightning Rod',
 
+      // Assume 1/3 of attacks can benefit from the vulnerability, so 3.0 / 3 = 1 EA, or
+      // 1.4 from prebuff. The chaining is ambiguous but not super strong, so call it 0.2 EA.
+      // That's r2, or r1 with limited scope. Then, pay one rank for accuracy, so r2.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target becomes a lightning rod as a \\glossterm{condition}.
-          Abilities which \\glossterm{chain} can reach up to 60 feet to affect the target instead of the normal 15 feet.
+          Each target becomes a lightning rod as a \\glossterm{condition}.
+          Abilities which \\glossterm{chain} can travel an extra 30 feet to affect it.
           In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to lightning damage.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-          You gain a +2 accuracy bonus with this attack if the target is at least one size category larger than all other creatures and objects within 15 feet of it.
+          Make an attack vs. Fortitude against up one creature within \\shortrange.
+          This attack \\glossterm{chains} once.
+          You gain a +2 accuracy bonus with this attack against each target that is at least one size category larger than all other creatures and objects within 15 feet of it.
         `,
       },
       rank: 2,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mass Lightning Rod',
 
+      // Pay +1 rank for larger area. Ignoring accuracy, the base is r3, so we have r4
+      // area. That's enough for a 5x chain probably.
       functionsLike: {
         name: 'lightning rod',
-        exceptThat: 'the attack \\glossterm{chains} five times.',
+        exceptThat: 'the attack \\glossterm{chains} five times, and the range increases to \\medrange.',
       },
       rank: 4,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Efficient Lightning Rod',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\vulnerable to lightning damage as a \\glossterm{condition}.
-          In addition, abilities which \\glossterm{chain} can reach up to 60 feet to affect the target instead of the normal 15 feet.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
-      },
-      rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -147,35 +132,38 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Bolt',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
         `,
       },
-      rank: 2,
+      rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
+    // -1dr for extended area
     {
       name: 'Massive Lightning Bolt',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\hugearealong, 10 ft. wide line from you.
+          Make an attack vs. Reflex against everything in a \\hugearealong, 15 ft. wide line from you.
         `,
       },
       rank: 5,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Arcing Grasp',
 
-      // Baseline for grasp is dr4, dr3 for one chain
+      // Baseline for grasp is dr3, dr2 for one chain
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damageranktwo.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
@@ -183,56 +171,63 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           This attack \\glossterm{chains} once.
         `,
       },
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Arcing Grasp',
 
-      // Baseline for grasp is dr7, dr5 for two chains
+      // Baseline for grasp is dr6, dr5 for one chain
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
-          This attack \\glossterm{chains} twice.
+          This attack \\glossterm{chains} once.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Stunning Discharge',
 
+      // stun is 1.2 EA, +1r for area gives r3 area
       attack: {
         crit: CONDITION_CRIT,
         hit: `
           Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
       },
       rank: 1,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
+    // brief + hp stun is 1.8 EA, so r3. +1r for area gives r5 area.
     {
-      name: 'Brain-Scrambling Discharge',
+      name: 'Massive Stunning Discharge',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
+          Each target is \\glossterm{briefly} \\stunned.
+          If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\medarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
@@ -243,11 +238,13 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} plus 1d8 per 3 power.
+        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 2 power.
         In addition, it is \\impervious to \\atElectricity attacks this round.
       `,
       rank: 3,
-      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
+      roles: ['healing'],
+      // Slightly weaker scaling than dr5l, but better to keep with d6
+      scaling: { special: 'The recovery increases by 2d6 for each rank beyond 3.' },
       tags: ['Swift'],
     },
 
@@ -258,11 +255,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 4d8 \\glossterm{damage resistance} plus 1d8 per 2 power.
+        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per power.
         In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
       `,
       rank: 6,
-      scaling: { special: 'The recovery increases by 2d8 for each rank beyond 6.' },
+      roles: ['healing'],
+      scaling: { special: 'The recovery increases by 6d6 for each rank beyond 6.' },
       tags: ['Swift'],
     },
 
@@ -281,13 +279,15 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Multiarc',
 
-      // short range for one chain
+      // Short range, chain twice is kind of like 3 creatures in short range, so treat
+      // this as r2 area.
       attack: {
         hit: `
           \\damageranktwo.
@@ -299,6 +299,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -307,7 +308,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       // short range for one chain
       attack: {
-        hit: `\\damagerankfive.`,
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
         missGlance: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -315,41 +316,39 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Electromagnetic Arc',
 
-      // Bunch of nonsense almost makes it as low as full AOE scaling?
+      // +1r/-1dr for metallic effects
       attack: {
         hit: `\\damagerankthree.`,
         missGlance: false,
         targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
+          Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} twice.
           You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
-          In addition, the attack can chain up to 30 feet to reach a metallic target instead of only 15 feet.
+          In addition, the chain can travel an additional 15 feet to reach metallic targets.
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Electromagnetic Arc',
 
-      attack: {
-        hit: `\\damageranksix.`,
-        missGlance: false,
-        targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
-          This attack \\glossterm{chains} twice.
-          You gain a +2 accuracy bonus against each \\glossterm{metallic} target.
-          In addition, the attack can chain up to 30 feet to reach a metallic target.
-        `,
+      // +1r/-1dr for metallic effects
+      functionsLike: {
+        name: 'electromagnetic arc',
+        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 7,
+      roles: ['clear'],
       // scaling: 'accuracy',
     },
 
@@ -357,9 +356,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Magnetic Blade',
 
       effect: `
-        You gain a +1 accuracy bonus with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
+        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -367,42 +366,47 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Chain Lightning',
 
-      // Not obvious what correct damage scaling would be.
+      // Roughly a r4 area, since chains can reach beyond Medium technically
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damageranktwo.`,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\shortrange.
           This attack can \\glossterm{chain} five times.
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
+    // Stunned as a condition is r9. Limited scope is r8, and assume metallic only is
+    // worth -2r.
     {
-      name: 'Electroshock',
+      name: 'Short-Circuit',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
           Each target is \\stunned as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\confused instead of stunned.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one \\glossterm{metallic} creature within \\medrange.
           This attack \\glossterm{chains} once.
         `,
       },
-      rank: 7,
-      // scaling: 'accuracy',
+      rank: 6,
+      roles: ['softener'],
+      scaling: 'accuracy',
     },
 
     {
       name: 'Call Lightning',
 
+      // -1dr for extended range sustain / single target reflex
+      // TODO: redesign as attunement?
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -411,7 +415,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
         `,
       },
-      rank: 2,
+      rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Sustain (standard)'],
     },
@@ -421,9 +426,10 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'call lightning',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Sustain (standard)'],
     },
@@ -445,16 +451,16 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Lightning Breath',
 
       attack: {
-        // d2 instead of d1 for attune + every other round
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\hugearealong, 10 ft. wide line from you.
+          When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
           After you use breathe electricity, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -465,10 +471,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       functionsLike: {
         name: 'lightning breath',
         exceptThat: `
-          the damage increases to \\damagerankfive.
+          the damage increases to \\damagerankseven, and the area increases to a \\largearealong, 10 ft. wide line.
         `,
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -476,21 +483,25 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Ball Lightning',
 
+      // TODO: clean up wording
       attack: {
-        hit: `\\damageranktwo.`,
+        hit: `\\damagerankzero.`,
         missGlance: true,
         targeting: `
           You create a Medium size ball of lightning in one space within \\medrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
-          Once during each \\glossterm{movement phase}, you can move the ball up to 30 feet in any direction, even vertically, as a \\glossterm{free action}.
-          When you create the ball, and during each of your subsequent actions, make an attack vs. Reflex with a -2 accuracy penalty against everything in its space.
-          Then, if the ball is more than 120 feet from you, it disappears and this effect ends.
+          You can move the ball up to 30 feet in any direction, even vertically, as a \\glossterm{minor action}.
+          When you create the ball, and once during each of your actions, make an attack vs. Reflex against everything in its space.
+
+          At the end of each round, if the ball is more than 120 feet from you, it disappears.
+          You can recreate it in an unoccupied space within \\medrange as a minor action.
         `,
         // missGlance: true,
       },
       rank: 4,
+      roles: ['attune'],
       scaling: 'accuracy',
-      type: 'Sustain (minor)',
+      type: 'Attune (deep)',
     },
 
     {
@@ -503,7 +514,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -512,14 +523,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Mighty Personal Conduction',
 
-      attack: {
-        hit: `\\damagerankfour.`,
-        targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
-        `,
+      functionsLike: {
+        name: 'personal conduction',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -530,15 +538,28 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         // add trivial extra benefit for fun
         hit: `
-          \\damagerankfour.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
+          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\medrange.
         `,
       },
 
-      rank: 4,
+      rank: 3,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Mighty Electrocute',
+
+      functionsLike: {
+        name: 'electrocute',
+        exceptThat: 'the damage increases to \\damagerankeight.',
+      },
+      rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -547,7 +568,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       cost: SWIFT_FATIGUE,
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -556,6 +577,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 3,
+      roles: ['clear', 'dive'],
       scaling: 'accuracy',
     },
 
@@ -578,6 +600,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           You do not need \\glossterm{line of sight} or \\glossterm{line of effect} for this teleportation.
         `,
       },
+      roles: ['clear', 'dive'],
       rank: 4,
       scaling: 'accuracy',
       type: 'Sustain (minor)',
@@ -596,24 +619,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
-
       rank: 6,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Short-Circuit',
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          Each target with no remaining \\glossterm{damage resistance} becomes \\confused as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against something within \\medrange.
-          This attack \\glossterm{chains} once.
-        `,
-      },
-      rank: 6,
+      roles: ['clear', 'dive'],
       scaling: 'accuracy',
     },
 
@@ -627,6 +634,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         The strike deals double damage against \\glossterm{metallic} targets.
       `,
       rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -640,9 +648,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         The strike \\glossterm{chains} once.
       `,
       rank: 3,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
+    // TODO: too weak?
     {
       name: 'Mighty Arcing Blow',
       functionsLike: {
@@ -650,6 +660,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         exceptThat: 'the strike deals double damage.'
       },
       rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
   ],
