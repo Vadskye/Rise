@@ -742,7 +742,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You may choose to have a Large natural servant appear instead of a Medium natural servant.
-                Increasing its size gives it a +1 Brawn defense bonus, a +1 bonus to Strength for the purpose of determining its \\glossterm{weight limits}, a -1 Reflex defense penalty, and a -5 penalty to Stealth.
+                Increasing its size gives it a +1 Brawn defense bonus, a +1 bonus to Strength for the purpose of determining its \glossterm{weight limits}, a -1 Reflex defense penalty, and a -5 penalty to Stealth.
                 It also increases its \glossterm{base speed} (see \pcref{Size Categories}).
             ",
             modifiers: None,
