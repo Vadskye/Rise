@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { IMMUNITY_CRIT, CONDITION_CRIT } from './constants';
+import { CONDITION_CRIT } from './constants';
 
 export const enchantment: MysticSphere = {
   name: 'Enchantment',
@@ -15,6 +15,7 @@ export const enchantment: MysticSphere = {
         Choose yourself or one \\glossterm{ally} within \\medrange.
         The target's mood improves and it feels more cheerful.
       `,
+      roles: ['narrative'],
       scaling: {
         2: `You may target an additional ally within range.`,
         4: `You may target an additional ally within range.`,
@@ -24,11 +25,13 @@ export const enchantment: MysticSphere = {
       type: 'Sustain (free)',
     },
 
+    // 25% of the time this is an action skip, 50% of the time it is 50% action denial, so
+    // 2 * 0.25 + 2 * 0.5 * 0.5 = 1 EA. That's unusually strong for a cantrip, but not
+    // crazy.
     {
       name: 'Repeat',
 
       attack: {
-        crit: IMMUNITY_CRIT,
         hit: `
           During the next round, the target must repeat the same standard action that it took this round.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
@@ -41,38 +44,27 @@ export const enchantment: MysticSphere = {
           Make an attack vs. Mental against one creature within \\shortrange.
         `,
       },
+      roles: ['stasis'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
   ],
   spells: [
-    {
-      name: 'Mass Repeat',
-
-      functionsLike: {
-        exceptThat: `
-          it affects all creatures in a \\smallarea radius within \\medrange.
-        `,
-        name: 'repeat',
-      },
-      rank: 2,
-      scaling: 'accuracy',
-      tags: ['Compulsion'],
-    },
-
+    // TODO: too strong now that accuracy is nerfed?
     {
       name: 'Sympathetic Link',
 
       effect: `
         Whenever you use a \\atCompulsion or \\atEmotion ability that makes an attack, you can choose to include yourself as a target.
         If you do, the attack automatically hits you.
-        As long as you are not immune to the ability or any part of its effects, this grants you a \\plus2 accuracy bonus with that ability against its other targets.
+        As long as you are not immune to the ability or any part of its effects, this grants you a \\plus2 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with that ability against its other targets.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune',
     },
 
+    // TODO: EA math, this is weird and not terribly strong
     {
       name: 'Curated Threat',
 
@@ -115,6 +107,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Compulsion', 'Subtle'],
     },
@@ -122,55 +115,69 @@ export const enchantment: MysticSphere = {
     {
       name: 'Dance',
 
-      // This is T1; it is a weird hybrid of immobilized and a minor T1 effect
+      // Assuming they never dance, this is roughly stunned, which is 3 EA.
+      // Assuming they dance every other round, this is 0.75 EA from defense debuff and 25%
+      // action denial from anti-movement, which is 0.75 EA + 3 EA = 3.75 EA??
+      // But letting the target choose between those two options makes it weaker than
+      // stunned with a slower ramp time, so call it 2.6 EA. That's r7, or r6 limited
+      // scope.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target is compelled to dance.
-          It can spend a \\glossterm{movement} to dance, if it is physically capable of dancing.
-          At the end of each movement phase, if the target did not dance during that phase, it takes a -2 penalty to its defenses as the compulsion intensifies.
-          This penalty stacks each round up to a maximum of -5.
+          As a \\glossterm{condition}, each target is compelled to dance.
+          It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
+          At the end of each movement phase, if the target did not dance during that phase, it takes a -1 penalty to its defenses as the compulsion intensifies.
+          This penalty stacks each round up to a maximum of -4.
           When the target dances, it resets its penalties to 0.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
 
-      rank: 1,
+      rank: 6,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
 
+    // Ranged prone is 1.6 EA, or r2 +1r for area rank gives a r4 area.
     {
       name: 'Collapse',
 
       attack: {
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Mental against all Large or smaller creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all Large or smaller \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 3,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
 
+    // Brief + HP goad is 1.6 EA, or r2.
     {
       name: 'Taunt',
 
       attack: {
         crit: CONDITION_CRIT,
-        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
+        hit: `
+          The target is \\glossterm{briefly} \\goaded by you.
+          If it below its maximum \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+        `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
 
+    // HP confusion is 2.9 EA. Limited scope lets us sneak in at r7.
     {
       name: 'Confusion',
 
@@ -180,99 +187,94 @@ export const enchantment: MysticSphere = {
           Each target with no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\medrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 7,
+      roles: ['maim'],
       tags: ['Compulsion'],
     },
 
     {
       name: 'Dominate Person',
 
-      // +1 level for special crit and super attunement
+      // Stunned as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
+      // is r6.
       attack: {
-        crit: `
-          The target is \\confused instead of stunned.
-          In addition, if the target is humanoid and was already confused from a previous casting of this spell, you may \\glossterm{attune} to this ability.
-          If you do, it becomes \\dominated by you for the duration of that attunement.
-          As normal, you can only attune to this effect once.
+        hit: `
+          Each target is \\stunned as a \\glossterm{condition}.
+          If a target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
+          When you do, that target becomes \\dominated by you for the duration of that attunement.
+          This attunement only allows you to control one creature, not each target of this spell, and you can only attune to this effect once.
         `,
-        hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against up to three humanoid creatures within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 6,
+      roles: ['softener'],
       scaling: 'accuracy',
-      tags: ['Compulsion'],
-    },
-
-    {
-      name: 'Dominate Monster',
-
-      functionsLike: {
-        exceptThat: `
-          you are also able to dominate non-humanoid creatures with its critical hit effect.
-          You cannot be attuned to this effect and \\spell{dominate person} at the same time.
-        `,
-        name: 'dominate person',
-      },
-      rank: 7,
       tags: ['Compulsion'],
     },
 
     {
       name: 'Sleep',
 
-      // +1 level over normal med range r2 debuff due to sleep effect
+      // prebuff ranged slow is 2.5 EA, and add 0.2 EA for the narrative effect. With
+      // limited scope, we can get away with r6.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\slowed as a \\glossterm{condition}.
-          This condition is automatically removed if the target loses \\glossterm{hit points}.
-          During this condition, if it is not in combat or otherwise exerting itself, it falls asleep.
-          It cannot be awakened while this effect lasts unless it loses \\glossterm{hit points}, which causes it to wake up.
-          After the effect ends by any means, the target can wake up normally, though it continues to sleep until it awakens for any reason.
+          Each target feels sleepy as a \\glossterm{condition}.
+          While it is below its maximum hit points, it is \\slowed.
+
+          In addition, if a target can find a convenient opportunity to go to sleep, it will do so.
+          This generally will not remove it from combat or high pressure social situations, and it will generally take the time to find a convenient place to sleep rather than simply dropping asleep in the middle of a room.
+          While asleep, it can be awakened normally, such as by taking damage.
         `,
         targeting: `
           This spell has no \\glossterm{verbal components}.
 
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to three creatures within \\medrange.
         `,
       },
 
       rank: 6,
+      roles: ['maim'],
       scaling: 'accuracy',
-      tags: ['Compulsion'],
+      tags: ['Emotion'],
     },
 
     {
       name: 'Mind Blank',
 
+      // action skip is r3 with limited scope
       attack: {
-        crit: IMMUNITY_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
+          Each target is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 3,
+      roles: ['stasis'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
 
+    // r4 base, +1r for extended range, +1r because large area mind blank is scary?
     {
-      name: 'Efficient Mind Blank',
+      name: 'Mass Mind Blank',
 
       functionsLike: {
         name: 'mind blank',
-        exceptThat: 'it works even if the target has damage resistance remaining.',
+        // TODO: awkward wording
+        exceptThat: 'the attack affects all \\glossterm{enemies} in a \\smallarea within \\medrange. If the target would be immune to \\spell{mind blank}, it is also immune to this spell, and vice versa.',
       },
-      rank: 5,
+      rank: 6,
+      roles: ['stasis'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -280,104 +282,81 @@ export const enchantment: MysticSphere = {
     {
       name: 'Selfstrike',
 
+      // Action denial is 2 EA. Attacking yourself is roughly one action? so 3 EA. Only
+      // working in HP is 75%, so 2.2 EA. That's r4 with limited scope.
+      // TODO: better EA math. Only 1 EA for a self-strike is probably wrong, and HP brief
+      // is not well defined.
       attack: {
-        crit: IMMUNITY_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
+          Each target that has no remaining \\glossterm{damage resistance} is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
           After it makes this attack against itself, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 3,
+      roles: ['maim', 'stasis'],
+      rank: 4,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
 
-    {
-      name: 'Efficient Selfstrike',
-
-      functionsLike: {
-        name: 'selfstrike',
-        exceptThat: 'it works even if the target has damage resistance remaining.',
-      },
-      rank: 7,
-      tags: ['Compulsion'],
-    },
-
+    // Frightened by you as a condition is 2.1 EA.
     {
       name: 'Cause Fear',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is \\frightened by the chosen creature.
+          Each target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\medrange.
-          In addition, choose a creature within range.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
       },
-      rank: 4,
+      rank: 5,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
 
-    {
-      name: 'Cause Panic',
+    // TODO: update
+    // {
+    //   name: 'Fearsome Aura',
 
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          As a \\glossterm{condition}, the target is \\panicked by the chosen creature.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          In addition, choose a creature within range.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-    },
+    //   attack: {
+    //     crit: CONDITION_CRIT,
+    //     hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
+    //     targeting: `
+    //       Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+    //       After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+    //     `,
+    //   },
+    //   rank: 4,
+    //   scaling: 'accuracy',
+    //   tags: ['Emotion'],
+    //   type: 'Attune (deep)',
+    // },
 
-    {
-      name: 'Fearsome Aura',
+    // {
+    //   name: 'Intense Fearsome Aura',
 
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
-        targeting: `
-          Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 4,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Intense Fearsome Aura',
-
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `The target is \\panicked by you as a \\glossterm{condition}.`,
-        targeting: `
-          Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 7,
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-      type: 'Attune (deep)',
-    },
+    //   attack: {
+    //     crit: CONDITION_CRIT,
+    //     hit: `The target is \\panicked by you as a \\glossterm{condition}.`,
+    //     targeting: `
+    //       Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+    //       After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+    //     `,
+    //   },
+    //   rank: 7,
+    //   scaling: 'accuracy',
+    //   tags: ['Emotion'],
+    //   type: 'Attune (deep)',
+    // },
 
     {
       name: 'Charm',
@@ -392,6 +371,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Subtle'],
       type: 'Sustain (minor)',
@@ -409,6 +389,7 @@ export const enchantment: MysticSphere = {
         name: 'charm',
       },
       rank: 6,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Subtle'],
       type: 'Sustain (minor)',
@@ -432,6 +413,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['narrative'],
       scaling: 'accuracy',
       tags: ['Emotion'],
       type: 'Sustain (standard)',
@@ -440,19 +422,22 @@ export const enchantment: MysticSphere = {
     {
       name: 'Demotivate',
 
+      // Assume this affects 5 of the 15 actions, so it's 1 EA by default. Add 0.4 EA for
+      // stacking and +1r for the accuracy bonus.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target takes a -2 penalty to Mental defense.
+          Each target takes a -2 penalty to Mental defense as a \\glossterm{condition}.
           Unlike normal conditions, this effect stacks with itself if applied multiple times, up to a maximum of -10.
         `,
         targeting: `
           This spell has no \\glossterm{verbal components}.
 
-          Make an attack vs. Mental with a +2 bonus against one creature within \\medrange.
+          Make an attack vs. Mental with a +2 bonus against up to two creatures within \\medrange.
         `,
       },
-      rank: 1,
+      roles: ['softener'],
+      rank: 2,
       scaling: 'accuracy',
       tags: ['Emotion', 'Subtle'],
     },
@@ -494,22 +479,26 @@ export const enchantment: MysticSphere = {
     {
       name: 'Solipsism',
 
+      // TODO: EA calc. This is kind of a permanent action denial, but easily removed so
+      // it's hard to abuse?
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target believes that it is the only real creature, and the rest of the world is an illusion.
-          It may wander aimlessly, but generally takes no action to defend itself and does not perceive itself to be in danger from other creatures.
+          If the target has no remaining \\glossterm{damage resistance}, it becomes deluded as a \\glossterm{condition}.
+          It believes that it is the only real creature, and the rest of the world is an illusion.
+          It may wander aimlessly, but generally takes no action to defend itself or attack others.
+          This generally means it is at least \\partiallyunaware of any attacks against it.
           It still avoids obvious environmental hazards, such as cliff edges or fires.
           If it takes any damage or is otherwise harmed, including significant subjective discomfort, this effect is automatically broken.
 
           After this effect ends, the target becomes immune to it until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-        Make an attack vs. Mental against one creature within \\shortrange.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
       rank: 7,
+      roles: ['maim'],
       tags: ['Emotion', 'Subtle'],
     },
 
@@ -530,20 +519,22 @@ export const enchantment: MysticSphere = {
       type: 'Attune',
     },
 
+    // HP prebuff stun is 1.6 EA
     {
       name: 'Agony',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
-          While it is at less than its maximum \\glossterm{hit points}, it is \\stunned.
+          As a \\glossterm{condition}, each target feels excruciating pain from even minor injuries.
+          While it is below its maximum \\glossterm{hit points}, it is \\stunned.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
@@ -569,20 +560,20 @@ export const enchantment: MysticSphere = {
     {
       name: 'Friend to Foe',
 
-      // Same as "skip standard action" because it is sometimes detrimental. Higher level
-      // because it's more complicated to use, and to balance level progression.
+      // +0.4 EA over mind blank because attacking allies can be strong?
+      // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
-        crit: IMMUNITY_CRIT,
         hit: `
-          The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+          Each target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
-          After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
+          After this effect ends, a target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
-      rank: 4,
+      rank: 5,
+      roles: ['stasis'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -590,18 +581,19 @@ export const enchantment: MysticSphere = {
     {
       name: 'Mind Crush',
 
-      // +1 level for conditional +2 accuracy
+      // -1dr for conditional +4 accuracy
       attack: {
         hit: `
           % damagerankone
           1d6 \\glossterm{subdual damage} \\plus1 per 2 power.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +2 accuracy bonus if the target has a negative Intelligence.
+          Make an attack vs. Mental against one creature within \\shortrange.
+          You gain a +4 accuracy bonus if the target has a negative Intelligence.
         `,
       },
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -611,14 +603,15 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           % damagerankfive
-          1d8 \\glossterm{subdual damage} plus 1d8 per 3 power.
+          1d6 \\glossterm{subdual damage} plus 1d6 per 2 power, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one creature within \\shortrange.
           You gain a +4 accuracy bonus if the target has a negative Intelligence.
         `,
       },
-      rank: 6,
+      rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -626,42 +619,54 @@ export const enchantment: MysticSphere = {
     {
       name: 'Restore Bravado',
 
+      // TODO: EA math on healing + buff
       cost: 'One \\glossterm{fatigue level} from the target.',
-      // dr3l
+      // dr3
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 3d6 \\glossterm{damage resistance}.
+        The target regains \\glossterm{damage resistance} equal to 1d8 \\add your power.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
-      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 2.' },
+      roles: ['healing'],
+      // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
+      // math.
+      scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
 
     {
       name: 'Empowered Restore Bravado',
 
+      // TODO: EA math on healing + buff
       cost: 'One \\glossterm{fatigue level} from the target.',
-      // dr7l
+      // dr7
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains 7d10 \\glossterm{damage resistance}.
+        The target regains \\glossterm{damage resistance} equal to 1d10 plus 1d10 per 2 power.
         In addition, it gains a +4 bonus to its Mental defense this round.
       `,
       rank: 6,
-      scaling: { special: 'The recovery increases by 2d10 for each rank beyond 6.' },
+      roles: ['healing'],
+      // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
+      // math.
+      scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
       tags: ['Swift'],
     },
     {
-      name: 'Tell the Truth',
+      name: 'Speak Only Truth',
 
       attack: {
-        hit: `Each target is unable to say things it knows to be untrue.`,
+        hit: `
+          Each target is unable to say things it knows to be untrue.
+          It can still remain silent, say misleading truths, and so on.
+        `,
         targeting: `
           Make an attack vs. Mental against up to five creatures within \\medrange.
         `,
       },
       rank: 3,
+      roles: ['narrative'],
       type: 'Sustain (attuneable, standard)',
     },
   ],
