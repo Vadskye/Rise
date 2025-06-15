@@ -230,7 +230,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: { special: 'The damage increases by 1d10 for each rank beyond 4.' },
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.' },
     },
 
     {
@@ -278,10 +278,10 @@ export const photomancy: MysticSphere = {
       name: 'Radiant Field',
 
       // Enemies in medium radius from self is r3 area, which would have base dr2.
-      // Damage each round is -1dr.
+      // Damage each round is -1dr. But since we're using flat damage, -2dr is -1dr flat.
       attack: {
         hit: `
-          \\damagerankonelow.
+          \\damageranktwolow.
         `,
         missGlance: true,
         targeting: `
@@ -291,21 +291,22 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['wildfire'],
       scaling: {
-        special: 'The damage increases by 2 for each rank beyond 3.',
+        special: 'The damage increases by 1d6 for each rank beyond 3.',
       },
     },
 
     {
       name: 'Massive Radiant Field',
 
-      // -1dr for expanded area, which also makes it non-escapable.
       functionsLike: {
         name: 'radiant field',
         exceptThat:
-          'the area increases to a \\hugearea radius \\glossterm{zone}, and the damage increases to \\damagerankfourlow.',
+          'the area increases to a \\largearea radius \\glossterm{zone}, and the damage increases to \\damagerankfivelow.',
       },
-      rank: 7,
+      rank: 6,
+      roles: ['wildfire'],
     },
 
     {
@@ -327,6 +328,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: {
         special: "The damage increases by 1d10 per rank above 4",
       },
@@ -348,6 +350,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 5,
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: ['Compulsion', 'Sustain (minor)', 'Visual'],
     },
@@ -472,36 +475,36 @@ export const photomancy: MysticSphere = {
 
       // Use 0.8 EA, which allows dazzled / frightened / goaded / single defense, with
       // goaded being the strongest since the single hit is Reflex.
-      // Random effect is bad, but the sphere can't normally do most of those and you
-      // can stack debuffs by repeatedly casting this spell, so no rank modifier.
-      // Limited scope drops from r3 to r2. r1 area is normally drX, so with debuff it's
-      // drX-1.
+      // Random effect is pretty punishing for such situational conditions, so call that
+      // -0.2 EA, or 0.6 total, so r2 total with damage.
       attack: {
         hit: `
-          \\damagerankone, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damageranktwolow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         targeting: `
-          Make an attack vs. Reflex against up to two creatures within \\shortrange.
+          Make an attack vs. Reflex against one creature within \\shortrange.
         `,
       },
       rank: 2,
       roles: ['flash'],
-      scaling: 'accuracy',
+      scaling: {
+        special: 'The damage increases by 1d6 for each rank beyond 2.',
+      },
       tags: ['Visual'],
       // Should this have the Emotion tag?
     },
 
     {
-      name: 'Chromatic Sphere',
+      name: 'Massive Chromatic Orb',
 
-      // Baseline would be r3, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
+      // Baseline would be r2, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
       attack: {
         hit: `
-          \\damageranktwo, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damagerankfourlow, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
+          Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
       },
       rank: 5,
@@ -515,7 +518,8 @@ export const photomancy: MysticSphere = {
 
       cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
-        hit: `\\damagerankone.`,
+        // TODO: dr2 or dr3?
+        hit: `\\damagerankthreelow.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
@@ -525,7 +529,9 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      scaling: 'accuracy',
+      scaling: {
+        special: 'the damage increases by 1d10 for each rank beyond 3.',
+      },
     },
 
     {
@@ -533,7 +539,7 @@ export const photomancy: MysticSphere = {
 
       cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankfivelow.`,
         missGlance: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\distrange.
@@ -541,7 +547,10 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 6,
-      scaling: 'accuracy',
+      roles: ['clear', 'dive'],
+      scaling: {
+        special: 'the damage increases by 1d6 for each rank beyond 3.',
+      },
     },
 
     {
@@ -565,6 +574,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -583,6 +593,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['attune'],
       scaling: 'accuracy',
       tags: ['Visual'],
       type: 'Attune (deep)',
@@ -601,6 +612,7 @@ export const photomancy: MysticSphere = {
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
     },
 
@@ -612,6 +624,7 @@ export const photomancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfivelow, and it only targets \\glossterm{enemies} in the area.',
       },
       rank: 6,
+      roles: ['clear'],
       scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
     },
     {

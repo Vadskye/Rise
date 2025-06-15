@@ -391,7 +391,7 @@ export const toxicology: MysticSphere = {
           After you use breathe acid, you \\glossterm{briefly} cannot do so again.
         `,
       },
-      rank: 4,
+      rank: 3,
       scaling: 'accuracy',
       tags: ['Acid'],
       type: 'Attune',
@@ -406,7 +406,7 @@ export const toxicology: MysticSphere = {
           the damage increases to \\damagerankfive.
         `,
       },
-      rank: 7,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Acid'],
       type: 'Attune',

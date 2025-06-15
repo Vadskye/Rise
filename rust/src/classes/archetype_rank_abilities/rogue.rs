@@ -280,22 +280,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         A target must increase its fatigue level by two to remove both conditions.
                     \end{magicalsustainability}
 
-                    % r1 area gets drX
+                    % r1 area gets drX. Normally, small radius would be r2, but idk bard.
                     \begin{magicalactiveability}{Crashing Cacaphony}
                         \abilityusagetime Standard action.
                         \rankline
-                        Make an attack vs. Fortitude against all \glossterm{enemies} in a \tinyarea radius from you.
+                        Make an attack vs. Fortitude against all \glossterm{enemies} in a \smallarea radius from you.
                         \hit \damagerankonelow.
                         \miss Half damage.
 
                         \rankline
                         \rank{2} The damage increases to \damageranktwolow.
-                        % r2 area gets drX-1. However, flat damage attacks have poor scaling, so being one rank behind is generally equivalent to being two ranks behind for a normal damage, so increase to a medarea radius.
-                        \rank{3} The area increases to a \medarea radius.
-                        \rank{4} The damage increases to \damagerankthreelow.
-                        \rank{5} The damage increases to \damagerankfourlow.
-                        \rank{6} The damage increases to \damagerankfivelow.
-                        \rank{7} The area increases to a \largearea radius, and the damage increases to \damageranksixlow.
+                        \rank{3} The damage increases to \damagerankthreelow.
+                        \rank{4} The damage increases to \damagerankfourlow.
+                        \rank{5} The damage increases to \damagerankfivelow.
+                        \rank{6} The damage increases to \damageranksixlow.
+                        \rank{7} The damage increases to \damageranksevenlow.
                     \end{magicalactiveability}
 
                     % Dazzled is 1.8 EA, so we can get away with it with limited scope
