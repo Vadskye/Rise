@@ -296,7 +296,8 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
     rank: 4,
@@ -311,7 +312,8 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
     rank: 7,
@@ -807,7 +809,8 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{movement speed}.
-      If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     tags: [],
     castingTime: 'one minute',
