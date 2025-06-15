@@ -273,6 +273,7 @@ Translating this into direct scaling values is difficult because attacks can hav
 * Rank 1, Short range single target: normal damage is dr2 (109%), attuned damage is dr3 (141%, +29%)
 * Rank 3, Large cone: normal damage is dr1 (53%), attuned damage is dr2 (86%, +62% but dr1 cone is just bad)
 * Rank 3, Medium cone: normal damage is dr3 (102%), attuned damage is dr4 (116%, but high scaling)
+* Rank 4, Large cone: normal damage is dr2 (75%), attuned damage is dr4 (107%)
 * Rank 6, Large cone: normal damage is dr5 (83%), attuned damage is dr7 (130%, +57%)
 
 This type of effect should never be a deep attunement because the standard action granted would have to be too strong to be reasonable.
