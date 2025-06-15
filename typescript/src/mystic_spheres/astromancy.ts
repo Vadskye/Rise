@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { IMMUNITY_CRIT, MULTIHIT_CRIT, SWIFT_FATIGUE } from './constants';
+import { MULTIHIT_CRIT, SWIFT_FATIGUE } from './constants';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
@@ -137,7 +137,6 @@ export const astromancy: MysticSphere = {
       name: 'Banishment',
 
       attack: {
-        crit: IMMUNITY_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
