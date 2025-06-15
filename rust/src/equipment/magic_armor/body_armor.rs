@@ -260,7 +260,7 @@ pub fn body_armor() -> Vec<MagicArmor> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Regain 4d10 HP per round", "
-                The healing increases to 2d8.
+                The healing increases to 4d10.
             "),
             ItemUpgrade::new(7, "Regain 8d10 HP per round", "
                 The healing increases to 8d10.
