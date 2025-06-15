@@ -256,11 +256,11 @@ fn cloaks() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Braced at low health"),
         description: String::from(r"
-            While you are at or below half your maximum \glossterm<hit points>, you are \\braced.
+            While you are at or below half your maximum \glossterm<hit points>, you are \braced.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Braced and steeled at low health", "
-                While you are at or below half your maximum hit points, you are also \\steeled.
+            ItemUpgrade::new(5, "Braced and steeled at low health", r"
+                While you are at or below half your maximum hit points, you are also \steeled.
             "),
         ],
         ..Apparel::default()

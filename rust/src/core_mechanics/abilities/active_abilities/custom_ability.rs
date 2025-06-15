@@ -6,9 +6,6 @@ use crate::creatures::Creature;
 const CONDITION_CRIT: &str = r"
     \crit The condition must be removed an additional time before the effect ends.
 ";
-const IMMUNITY_CRIT: &str = r"
-    \crit The target does not become immune to this effect.
-";
 
 #[derive(Clone, Debug, Default)]
 pub struct CustomAbility {
@@ -122,7 +119,6 @@ impl CustomAbility {
                 The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
                 \\hit If the target has no remaining damage resistance, it is compelled to spend its next standard action doing nothing but groveling before the $name.
                 After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
-                {IMMUNITY_CRIT}
             "),
             is_magical: true,
             name: "Demand Obeisance".to_string(),
