@@ -230,7 +230,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: { special: 'The damage increases by 1d10 for each rank beyond 4.' },
+      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.' },
     },
 
     {
