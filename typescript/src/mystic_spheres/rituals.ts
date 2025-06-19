@@ -485,7 +485,7 @@ export const rituals: Ritual[] = [
     spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
   },
   {
-    name: 'Astral Projection',
+    name: 'Astral Rift',
 
     effect: `
       Choose up to six Medium or smaller ritual participants.
