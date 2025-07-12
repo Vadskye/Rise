@@ -223,6 +223,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Burning Grasp',
 
+      // Baseline for melee range is dr7, or dr6 for single target reflex.
+      // We drop to dr4 for damage over time.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -841,14 +843,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Combustion',
 
-      // Normally, -4 accuracy touch range would be dr6, but we drop to dr5 because it's
-      // Reflex and because that's just silly.
+      // Normally, -4 accuracy touch range would be dr6, so dr5 for single target Reflex.
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex with a -4 accuracy penalty against something you \\glossterm{touch}.
+          Make an attack vs. Reflex with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 2,
@@ -859,14 +860,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Combustion',
 
-      // Normally, -4 accuracy touch range would be dr8, but we drop to dr5 because it's
-      // Reflex and because that's just silly.
+      // Normally, -4 accuracy touch range would be dr9, so dr8 for single target Reflex.
       attack: {
         hit: `
           \\damagerankeight, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex with a -4 accuracy penalty against something you \\glossterm{touch}.
+          Make an attack vs. Reflex with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 5,
