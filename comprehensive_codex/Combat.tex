@@ -645,48 +645,47 @@
       Some creatures that are native to the air or unusually powerful can sustain this ability indefinitely, such albatrosses.
     \end{sustainability}
 
-\section{Universal Abilities}\label{Universal Abilities}
-  All creatures can use the following abilities.
+\section{Strikes}\label{Strikes}
+  A \glossterm{strike} is the most common type of attack.
+  There are three kinds of strikes: melee, projectile, and thrown.
+  Many abilities allow you to make one or more strikes.
+  Whenever you make a strike, you can choose which kind of strike to make.
 
-  \subsection{Strikes}\label{Strikes}
-    A \glossterm{strike} is the most common type of attack.
-    There are three kinds of strikes: melee, projectile, and thrown.
-    Many abilities allow you to make one or more strikes.
-    Whenever you make a strike, you can choose which kind of strike to make.
+  Your \glossterm{accuracy} with a strike adds the accuracy modifier from the weapon you are attacking with.
+  Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
 
-    Your \glossterm{accuracy} with a strike adds the accuracy modifier from the weapon you are attacking with.
-    Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
+  There are many special rules that can modify how you make strikes.
+  For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
+  The rules for strikes listed here simply define the normal behavior.
 
-    There are many special rules that can modify how you make strikes.
-    For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
-    The rules for strikes listed here simply define the normal behavior.
+  \begin{activeability}*{Basic Strike -- Melee}
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
+    You must have \glossterm{line of effect} to the target.
+    \hit You deal the target \glossterm{weapon damage} from the weapon.
+  \end{activeability}
 
-    \begin{activeability}*{Basic Strike -- Melee}
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
-      You must have \glossterm{line of effect} to the target.
-      \hit You deal the target \glossterm{weapon damage} from the weapon.
-    \end{activeability}
+  \begin{activeability}*{Basic Strike -- Projectile}
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
+    If the target is adjacent to you, you take a \minus4 accuracy penalty.
+    If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
+    \hit You deal the target \glossterm{weapon damage} from the weapon.
+  \end{activeability}
 
-    \begin{activeability}*{Basic Strike -- Projectile}
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
-      If the target is adjacent to you, you take a \minus4 accuracy penalty.
-      If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-      \hit You deal the target \glossterm{weapon damage} from the weapon.
-    \end{activeability}
+  \begin{activeability}*{Basic Strike -- Thrown}
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
+    If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
+    Otherwise, your range limits are 10/20, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
+    If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
+    \hit You deal the target \glossterm{weapon damage} from the weapon.
+  \end{activeability}
 
-    \begin{activeability}*{Basic Strike -- Thrown}
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
-      If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
-      Otherwise, your range limits are 10/20, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
-      If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-      \hit You deal the target \glossterm{weapon damage} from the weapon.
-    \end{activeability}
+  \subsection{Strike Damage}
 
   % TODO: move to section
   \subsection{Dual Strikes}\label{Dual Strikes}
@@ -749,194 +748,191 @@
       Unlike the \weapontag{Sweeping} weapon tag, this works with both melee and ranged attacks.
       Narratively, this represents you hitting one creature with one weapon and a different creature with your other weapon.
 
-  \subsection{Special Combat Abilities}\label{Special Combat Abilities}
+\section{Universal Combat Abilities}\label{Universal Combat Abilities}
+  This section lists combat abilities that all characters can use.
 
-    This section lists combat abilities that all characters can use.
-    Many of these abilities are \abilitytag{Brawling} abilities.
-    You use your Strength instead of your Perception to determine your accuracy with Brawling abilities (see \pcref{Brawling Accuracy}).
+  % Keep in sync with BasicCombat.tex
+  \begin{dtable!*}
+    \lcaption{Universal Combat Abilities}
+    \begin{dtabularx}{\textwidth}{l l X l}
+      \tb{Ability}       & \tb{Usage Time}  & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
+      Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
+      Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
+      Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
+      Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+      Overrun            & Move or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+      Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
+      Recover            & Standard         & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
+      Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
+      Sprint             & Move or standard & Move at double speed                          & \tdash                                         \\
+      Total Defense      & Standard         & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
+      Throw              & Standard         & Throw a held object                           & \tdash                                         \\
+      Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
+    \end{dtabularx}
+  \end{dtable!*}
 
-    % Keep in sync with BasicCombat.tex
-    \begin{dtable!*}
-      \lcaption{Special Combat Abilities}
-      \begin{dtabularx}{\textwidth}{l l X l}
-        \tb{Ability}       & \tb{Usage Time}  & \tb{Brief Description}                        & \tb{Tags}                                      \tableheaderrule
-        Charge             & Standard         & Move and make a strike                        & \tdash                                         \\
-        Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
-        Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
-        Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-        Overrun            & Move or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-        Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
-        Recover            & Standard         & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
-        Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
-        Sprint             & Move or standard & Move at double speed                          & \tdash                                         \\
-        Total Defense      & Standard         & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
-        Throw              & Standard         & Throw a held object                           & \tdash                                         \\
-        Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      \end{dtabularx}
-    \end{dtable!*}
+  \begin{activeability}*{Charge}
+    \abilityusagetime Standard action.
+    \rankline
+    After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
+    Since this ability does not have the \abilitytag{Swift} tag, it does not affect attacks made against you during the current phase.
 
-    \begin{activeability}*{Charge}
-      \abilityusagetime Standard action.
-      \rankline
-      After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
-      This ability does not have the \abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+    Move up to your speed in a single straight line.
+    At the end of your movement, you can make a melee \glossterm{strike}.
+  \end{activeability}
 
-      Move up to your speed in a single straight line.
-      At the end of your movement, you can make a melee \glossterm{strike}.
-    \end{activeability}
+  \begin{activeability}*{Desperate Exertion}
+    \abilityusagetime Triggered (see text).
+    \par \noindent Cost: Two \glossterm{fatigue levels}.
+    \rankline
+    You \glossterm{reroll} any \glossterm{attack roll}, \glossterm{check}, or \glossterm{miss chance} you just rolled, keeping the better result.
+    If you use this ability to affect an attack roll or check, you also gain a \plus2 bonus with this reroll.
 
-    \begin{activeability}*{Desperate Exertion}
-      \abilityusagetime Triggered (see text).
-      \par \noindent Cost: Two \glossterm{fatigue levels}.
-      \rankline
-      You \glossterm{reroll} any \glossterm{attack roll}, \glossterm{check}, or \glossterm{miss chance} you just rolled, keeping the better result.
-      If you use this ability to affect an attack roll or check, you also gain a \plus2 bonus with this reroll.
+    You can decide to use this ability after you learn whether the original roll succeeded or failed.
+    You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+    However, you must use it before using any other abilities or ending your turn.
+    Since this rerolls the full attack or check and not just an attack roll, you must reroll any \glossterm{miss chance} or \glossterm{failure chance}.
 
-      You can decide to use this ability after you learn whether the original roll succeeded or failed.
-      You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
-      However, you must use it before using any other abilities or ending your turn.
-      Since this rerolls the full attack or check and not just an attack roll, you must reroll any \glossterm{miss chance} or \glossterm{failure chance}.
+    You cannot use this to affect other types of rolls, such as \glossterm{vital rolls}.
+    You cannot use this ability multiple times to affect the same roll.
+    Finally, you cannot use this ability to affect actions that take one minute or longer to complete, such as \glossterm{rituals}.
+  \end{activeability}
 
-      You cannot use this to affect other types of rolls, such as \glossterm{vital rolls}.
-      You cannot use this ability multiple times to affect the same roll.
-      Finally, you cannot use this ability to affect actions that take one minute or longer to complete, such as \glossterm{rituals}.
-    \end{activeability}
+  \begin{activeability}*{Escape Grapple}[\abilitytag{Brawling}]
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
+    You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
 
-    \begin{activeability}*{Escape Grapple}[\abilitytag{Brawling}]
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
-      You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
+    The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
+    % TODO: awkward wording
+    For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
+  \end{activeability}
 
-      The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
-      % TODO: awkward wording
-      For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
-    \end{activeability}
+  \begin{activeability}*{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
 
-    \begin{activeability}*{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
+    \hit You and the target are \grappled by each other.
+    For details, see \pcref{Grappling}.
+    \crit You also control the grapple (see \pcref{Controlling a Grapple}).
+  \end{activeability}
 
-      \hit You and the target are \grappled by each other.
-      For details, see \pcref{Grappling}.
-      \crit You also control the grapple (see \pcref{Controlling a Grapple}).
-    \end{activeability}
+  \begin{activeability}*{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
+    \abilityusagetime \glossterm{Free action} once per round while you are grappling another creature.
+    \rankline
+    Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
+    This attack has no immediate effect.
+    The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+    If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
+  \end{activeability}
 
-    \begin{activeability}*{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
-      \abilityusagetime \glossterm{Free action} once per round while you are grappling another creature.
-      \rankline
-      Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
-      This attack has no immediate effect.
-      The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
-      If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-    \end{activeability}
+  \begin{activeability}*{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
+    \abilityusagetime \glossterm{Move action} or standard action.
+    \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
+    \rankline
+    Move up to your movement speed in a straight line.
+    You can try to move directly through creatures in your way during this movement.
+    Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
+    If a creature does not attempt to avoid you, you make a \glossterm{brawling attack} vs. Brawn against it.
 
-    \begin{activeability}*{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-      \abilityusagetime \glossterm{Move action} or standard action.
-      \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
-      \rankline
-      Move up to your movement speed in a straight line.
-      You can try to move directly through creatures in your way during this movement.
-      Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-      If a creature does not attempt to avoid you, you make a \glossterm{brawling attack} vs. Brawn against it.
+    If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
 
-      If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
+    \hit You can continue your movement through the target's space.
+    \miss You end your movement before entering the target's space.
+  \end{activeability}
 
-      \hit You can continue your movement through the target's space.
-      \miss You end your movement before entering the target's space.
-    \end{activeability}
+  \begin{activeability}*{Ready Reaction}[\atSwift]
+    \abilityusagetime Standard action.
+    \rankline
+    When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
+    For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
 
-    \begin{activeability}*{Ready Reaction}[\atSwift]
-      \abilityusagetime Standard action.
-      \rankline
-      When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
-      For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
+    While your enemies are resolving their actions, if your intended action ever becomes possible, it happens.
+    Otherwise, you do nothing.
+    Any attacks you make in this way are \glossterm{reactive attacks}, so you can't use the \ability{desperate exertion} ability or similar effects.
+    Your reaction resolves after the enemy has fully completed their action, even if the completion of that action would make your ability impossible again.
+    This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
+  \end{activeability}
 
-      While your enemies are resolving their actions, if your intended action ever becomes possible, it happens.
-      Otherwise, you do nothing.
-      Any attacks you make in this way are \glossterm{reactive attacks}, so you can't use the \ability{desperate exertion} ability or similar effects.
-      Your reaction resolves after the enemy has fully completed their action, even if the completion of that action would make your ability impossible again.
-      This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
-    \end{activeability}
+  \begin{activeability}*{Recover}[\abilitytag{Swift}]
+    \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
+    \abilityusagetime Standard action.
+    \rankline
+    You remove all \glossterm{conditions} affecting you.
+    Then, you regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
+    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
+  \end{activeability}
 
-    \begin{activeability}*{Recover}[\abilitytag{Swift}]
-      \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
-      \abilityusagetime Standard action.
-      \rankline
-      You remove all \glossterm{conditions} affecting you.
-      Then, you regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
-      Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
-    \end{activeability}
+  \begin{activeability}*{Shove}[\abilitytag{Brawling}]
+    \abilityusagetime Standard action normally, or \glossterm{move action} while grappling.
+    \rankline
+    If you are grappling or being grappled by a creature, this ability affects all creatures grappling with you (see \pcref{Grappling}).
+    Otherwise, the target is something you \glossterm{touch}.
+    You must be strong enough to push each target (see \pcref{Weight Categories}).
 
-    \begin{activeability}*{Shove}[\abilitytag{Brawling}]
-      \abilityusagetime Standard action normally, or \glossterm{move action} while grappling.
-      \rankline
-      If you are grappling or being grappled by a creature, this ability affects all creatures grappling with you (see \pcref{Grappling}).
-      Otherwise, the target is something you \glossterm{touch}.
-      You must be strong enough to push each target (see \pcref{Weight Categories}).
+    Make a \glossterm{brawling attack} vs. Brawn against each target.
+    If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
-      Make a \glossterm{brawling attack} vs. Brawn against each target.
-      If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
+    % Critical hit shove should be equivalent to moving without any limitation.
+    % This represents 
+    \hit You can move up to half your movement speed.
+    During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
+    If you push a target so it stops being adjacent to you, you stop being able to push it further.
+    When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
+    \crit If you are strong enough to carry the target, you can move up to your full movement speed.
+  \end{activeability}
 
-      % Critical hit shove should be equivalent to moving without any limitation.
-      % This represents 
-      \hit You can move up to half your movement speed.
-      During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
-      If you push a target so it stops being adjacent to you, you stop being able to push it further.
-      When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
-      \crit If you are strong enough to carry the target, you can move up to your full movement speed.
-    \end{activeability}
+  \begin{activeability}*{Sprint}
+    % It's important that this can only be used with movements
+    % to prevent it from being abused with abilities like Shove?
+    % Is that clear in the text?
+    \abilityusagetime \glossterm{Move action} or standard action.
+    \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
+    \rankline
+    % TODO: figure out how to say you can't sprint twice
+    You can immediately take another \glossterm{move action}.
+    For the duration of that movement, you double your speed.
 
-    \begin{activeability}*{Sprint}
-      % It's important that this can only be used with movements
-      % to prevent it from being abused with abilities like Shove?
-      % Is that clear in the text?
-      \abilityusagetime \glossterm{Move action} or standard action.
-      \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
-      \rankline
-      % TODO: figure out how to say you can't sprint twice
-      You can immediately take another \glossterm{move action}.
-      For the duration of that movement, you double your speed.
+    % TODO: flip this to penaltize the carried creature? But then it allows the old grapple nonsense
+    Normally, you cannot carry or move another creature in any way while using this ability.
+    If you use this ability, you must leave those creatures behind without moving them unless they spend a standard action to cling to you.
+    You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
+  \end{activeability}
 
-      % TODO: flip this to penaltize the carried creature? But then it allows the old grapple nonsense
-      Normally, you cannot carry or move another creature in any way while using this ability.
-      If you use this ability, you must leave those creatures behind without moving them unless they spend a standard action to cling to you.
-      You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
-    \end{activeability}
+  % Is this a knockback effect? What happens if you throw someone into a wall?
+  \begin{activeability}*{Throw}[\abilitytag{Brawling}]
+    \abilityusagetime Standard action.
+    \rankline
+    You throw an object or creature you hold in at least one hand.
+    The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
+    In order to throw an unwilling creature, it must already be \grappled by you, and you must hit it with a \glossterm{brawling attack} against its Brawn defense.
 
-    % Is this a knockback effect? What happens if you throw someone into a wall?
-    \begin{activeability}*{Throw}[\abilitytag{Brawling}]
-      \abilityusagetime Standard action.
-      \rankline
-      You throw an object or creature you hold in at least one hand.
-      The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
-      In order to throw an unwilling creature, it must already be \grappled by you, and you must hit it with a \glossterm{brawling attack} against its Brawn defense.
+    Weapons with the \weapontag{Thrown} weapon tag can be thrown up to their range limits.
+    Your normal throwing distance for an arbitrary object is equal to 10 feet plus 5 feet per 2 Strength.
+    Some objects are much easier or harder to throw than others, at the GM's discretion.
+    If an object is particularly easy to throw, such as a small dense sphere, you can throw it up to ten times your normal throwing distance.
+    Likewise, a feather or extremely fragile object may be difficult to throw more than a few feet.
 
-      Weapons with the \weapontag{Thrown} weapon tag can be thrown up to their range limits.
-      Your normal throwing distance for an arbitrary object is equal to 10 feet plus 5 feet per 2 Strength.
-      Some objects are much easier or harder to throw than others, at the GM's discretion.
-      If an object is particularly easy to throw, such as a small dense sphere, you can throw it up to ten times your normal throwing distance.
-      Likewise, a feather or extremely fragile object may be difficult to throw more than a few feet.
+    If you throw the target at a creature or object, you can make an attack roll to hit with it, as the \textit{basic strike -- thrown} ability (see \pcref{Strikes}).
+    That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
+  \end{activeability}
 
-      If you throw the target at a creature or object, you can make an attack roll to hit with it, as the \textit{basic strike -- thrown} ability (see \pcref{Strikes}).
-      That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
-    \end{activeability}
+  \begin{activeability}*{Total Defense}[\abilitytag{Swift}]
+    \abilityusagetime Standard action.
+    \rankline
+    You are \braced this round.
+    Because this ability has the \abilitytag{Swift} tag, this protects you from attacks during the current phase.
+  \end{activeability}
 
-    \begin{activeability}*{Total Defense}[\abilitytag{Swift}]
-      \abilityusagetime Standard action.
-      \rankline
-      You are \braced this round.
-      Because this ability has the \abilitytag{Swift} tag, this protects you from attacks during the current phase.
-    \end{activeability}
-
-    \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-      \abilityusagetime Standard action.
-      \rankline
-      Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
-      \hit The target becomes \prone.
-    \end{activeability}
+  \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
+    \abilityusagetime Standard action.
+    \rankline
+    Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
+    \hit The target becomes \prone.
+  \end{activeability}
 
   \subsection{Grappling}\label{Grappling}
     A grappling creature is physically struggling with at least one other creature.
@@ -951,7 +947,7 @@
       \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
         In addition, you cannot \glossterm{push} a creature grappling with you so it stops being adjacent to you.
         However, you can use the \ability{shove} ability to affect creatures you are grappling with as a \glossterm{move action} instead of as a standard action.
-      \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Special Combat Abilities}).
+      \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Universal Combat Abilities}).
     \end{itemize}
 
     \subsubsection{Controlling a Grapple}\label{Controlling a Grapple}
