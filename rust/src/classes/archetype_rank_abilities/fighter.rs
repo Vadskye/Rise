@@ -467,7 +467,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Break Through}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus2 accuracy bonus with the \textit{overrun} and \textit{shove} abilities (see \pcref{Special Combat Abilities}).
+                        Each target gains a \plus2 accuracy bonus with the \textit{overrun} and \textit{shove} abilities (see \pcref{Universal Combat Abilities}).
 
                         \rankline
                         \rank{4} The bonus increases to \plus3.
@@ -477,7 +477,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Special Combat Abilities}).
+                        Each target gains a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
 
                         \rankline
                         \rank{4} The bonus increases to \plus3.
