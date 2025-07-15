@@ -484,9 +484,9 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         
                         \rankline
-                        \rank{4} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Tiny.
-                        In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one.
-                        \rank{7} When you use this wild aspect, you can choose to shrink by up to two \glossterm{size categories} instead of only one.
+                        \rank{4} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Small.
+                        In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one, to a minimum of Tiny.
+                        \rank{7} The enhancement bonuses increase to \plus4.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Form of the Viper}
