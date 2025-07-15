@@ -295,38 +295,6 @@ export const dirtyFighting: CombatStyle = {
     },
 
     {
-      name: 'Battering Ram',
-
-      functionsLike: {
-        abilityType: 'ability',
-        // This is basically a 30' line of standard AOE damage, -1d because it's easier to optimize
-        exceptThat: `
-          it requires a standard action to use and does not increase your \\glossterm{fatigue level}.
-          In addition, creatures cannot choose to avoid you.
-          Whenever you beat a creature's defense with this ability, you deal it \\damageranktwo.
-        `,
-        name: 'overrun',
-      },
-      rank: 3,
-      roles: ['clear', 'dive'],
-      tags: ['Brawling'],
-    },
-
-    {
-      name: 'Battering Ram+',
-
-      functionsLike: {
-        abilityType: 'maneuver',
-        exceptThat: `
-          the damage increases to \\damageranksix.
-        `,
-        name: 'battering ram',
-      },
-      rank: 7,
-      roles: ['clear', 'dive'],
-    },
-
-    {
       name: 'Alchemical Admixture',
 
       effect: `
