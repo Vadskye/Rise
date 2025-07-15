@@ -152,197 +152,197 @@ Fort Bolt    : 11.66 = (10.5 dph * 1.00 hpr) + (10.5 dpc * 0.11 cpr) + (5.2 dpg 
 
 ## Level 10
 
-Armor Bolt +8 (5d6 damage.)
-Fort Bolt +8 (5d6 damage.)
-Armor Bolt- +10 (1d6+11 damage.)
-Fort Bolt- +10 (1d6+11 damage.)
+Armor Bolt +7 (5d6 damage.)
+Fort Bolt +7 (5d6 damage.)
+Armor Bolt- +9 (1d6+10 damage.)
+Fort Bolt- +9 (1d6+10 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 21.39 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.22 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 3.89 cdpr + 0.00 gdpr
-Fort Bolt    : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
-Armor Bolt-  : 20.94 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.44 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 6.44 cdpr + 0.00 gdpr
-Fort Bolt-   : 16.09 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.60 cdpr + 0.00 gdpr
+Armor Bolt   : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
+Fort Bolt    : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
+Armor Bolt-  : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Fort Bolt-   : 14.16 = (13.5 dph * 0.90 hpr) + (13.5 dpc * 0.10 cpr) + (6.8 dpg * 0.10 gpr) = 12.15 hdpr + 1.34 cdpr + 0.67 gdpr
 
 ### Defender: Barbarian Shield
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
+Armor Bolt   : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
 Fort Bolt    : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
-Armor Bolt-  : 15.21 = (14.5 dph * 0.90 hpr) + (14.5 dpc * 0.10 cpr) + (7.2 dpg * 0.10 gpr) = 13.05 hdpr + 1.44 cdpr + 0.72 gdpr
-Fort Bolt-   : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
+Armor Bolt-  : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
+Fort Bolt-   : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
 
 ### Defender: Fighter Greatmace
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Armor Bolt   : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
 Fort Bolt    : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
-Armor Bolt-  : 16.09 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.60 cdpr + 0.00 gdpr
-Fort Bolt-   : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
+Armor Bolt-  : 14.16 = (13.5 dph * 0.90 hpr) + (13.5 dpc * 0.10 cpr) + (6.8 dpg * 0.10 gpr) = 12.15 hdpr + 1.34 cdpr + 0.67 gdpr
+Fort Bolt-   : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
 
 ### Defender: Fighter Shield
-Best attack: Armor Bolt-
+Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
+Armor Bolt   : 11.46 = (17.5 dph * 0.50 hpr) + (17.5 dpc * 0.06 cpr) + (8.8 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.75 gdpr
 Fort Bolt    : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
-Armor Bolt-  : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
-Fort Bolt-   : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
+Armor Bolt-  : 11.84 = (13.5 dph * 0.70 hpr) + (13.5 dpc * 0.08 cpr) + (6.8 dpg * 0.20 gpr) = 9.45 hdpr + 1.04 cdpr + 1.35 gdpr
+Fort Bolt-   : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
 
 ### Defender: Monk Kama
 Best attack: Fort Bolt
 
 #### Detailed attack results
 Armor Bolt   : 7.58 = (17.5 dph * 0.30 hpr) + (17.5 dpc * 0.03 cpr) + (8.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 1.75 gdpr
-Fort Bolt    : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
-Armor Bolt-  : 9.50 = (14.5 dph * 0.50 hpr) + (14.5 dpc * 0.06 cpr) + (7.2 dpg * 0.20 gpr) = 7.25 hdpr + 0.80 cdpr + 1.45 gdpr
-Fort Bolt-   : 16.11 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.61 cdpr + 0.00 gdpr
+Fort Bolt    : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Armor Bolt-  : 8.84 = (13.5 dph * 0.50 hpr) + (13.5 dpc * 0.06 cpr) + (6.8 dpg * 0.20 gpr) = 6.75 hdpr + 0.74 cdpr + 1.35 gdpr
+Fort Bolt-   : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.49 cdpr + 0.00 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
+Armor Bolt   : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
 Fort Bolt    : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
-Armor Bolt-  : 15.21 = (14.5 dph * 0.90 hpr) + (14.5 dpc * 0.10 cpr) + (7.2 dpg * 0.10 gpr) = 13.05 hdpr + 1.44 cdpr + 0.72 gdpr
-Fort Bolt-   : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
+Armor Bolt-  : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
+Fort Bolt-   : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
 
 ### Defender: Ranger Longbow
 Best attack: Fort Bolt
 
 #### Detailed attack results
 Armor Bolt   : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
-Fort Bolt    : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
-Armor Bolt-  : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
-Fort Bolt-   : 16.11 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.61 cdpr + 0.00 gdpr
+Fort Bolt    : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Armor Bolt-  : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
+Fort Bolt-   : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.49 cdpr + 0.00 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Fort Bolt
 
 #### Detailed attack results
 Armor Bolt   : 9.52 = (17.5 dph * 0.40 hpr) + (17.5 dpc * 0.04 cpr) + (8.8 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 1.75 gdpr
-Fort Bolt    : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
-Armor Bolt-  : 11.11 = (14.5 dph * 0.60 hpr) + (14.5 dpc * 0.07 cpr) + (7.2 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 1.45 gdpr
-Fort Bolt-   : 19.33 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.33 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 4.83 cdpr + 0.00 gdpr
+Fort Bolt    : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
+Armor Bolt-  : 10.34 = (13.5 dph * 0.60 hpr) + (13.5 dpc * 0.07 cpr) + (6.8 dpg * 0.20 gpr) = 8.10 hdpr + 0.89 cdpr + 1.35 gdpr
+Fort Bolt-   : 16.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.22 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 3.00 cdpr + 0.00 gdpr
 
 ### Defender: Sorcerer Dexterity
-Best attack: Fort Bolt
+Best attack: Armor Bolt
 
 #### Detailed attack results
 Armor Bolt   : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
-Fort Bolt    : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
-Armor Bolt-  : 16.09 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.60 cdpr + 0.00 gdpr
-Fort Bolt-   : 16.11 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.61 cdpr + 0.00 gdpr
+Fort Bolt    : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Armor Bolt-  : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.49 cdpr + 0.00 gdpr
+Fort Bolt-   : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 1.49 cdpr + 0.00 gdpr
 
 ### Defender: Wizard Perception
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 21.39 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.22 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 3.89 cdpr + 0.00 gdpr
-Fort Bolt    : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
-Armor Bolt-  : 20.94 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.44 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 6.44 cdpr + 0.00 gdpr
-Fort Bolt-   : 19.33 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.33 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 4.83 cdpr + 0.00 gdpr
+Armor Bolt   : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
+Fort Bolt    : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
+Armor Bolt-  : 18.00 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.33 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 4.50 cdpr + 0.00 gdpr
+Fort Bolt-   : 16.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.22 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 3.00 cdpr + 0.00 gdpr
 
 ## Level 15
 
-Armor Bolt +11 (8d6 damage.)
-Fort Bolt +11 (8d6 damage.)
-Armor Bolt- +13 (1d8+14 damage.)
-Fort Bolt- +13 (1d8+14 damage.)
+Armor Bolt +10 (7d6 damage.)
+Fort Bolt +10 (7d6 damage.)
+Armor Bolt- +12 (1d8+13 damage.)
+Fort Bolt- +12 (1d8+13 damage.)
 
 ### Defender: Barbarian Glass
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 37.32 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.33 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 9.32 cdpr + 0.00 gdpr
-Fort Bolt    : 29.37 = (28.0 dph * 0.90 hpr) + (28.0 dpc * 0.10 cpr) + (14.0 dpg * 0.10 gpr) = 25.20 hdpr + 2.77 cdpr + 1.40 gdpr
-Armor Bolt-  : 28.77 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.56 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 10.27 cdpr + 0.00 gdpr
-Fort Bolt-   : 20.55 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.05 cdpr + 0.00 gdpr
+Armor Bolt   : 29.94 = (24.5 dph * 1.00 hpr) + (24.5 dpc * 0.22 cpr) + (12.2 dpg * 0.00 gpr) = 24.50 hdpr + 5.44 cdpr + 0.00 gdpr
+Fort Bolt    : 24.21 = (24.5 dph * 0.80 hpr) + (24.5 dpc * 0.09 cpr) + (12.2 dpg * 0.20 gpr) = 19.60 hdpr + 2.16 cdpr + 2.45 gdpr
+Armor Bolt-  : 25.27 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.44 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 7.77 cdpr + 0.00 gdpr
+Fort Bolt-   : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
 
 ### Defender: Barbarian Shield
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 27.66 = (28.0 dph * 0.80 hpr) + (28.0 dpc * 0.09 cpr) + (14.0 dpg * 0.20 gpr) = 22.40 hdpr + 2.46 cdpr + 2.80 gdpr
-Fort Bolt    : 18.34 = (28.0 dph * 0.50 hpr) + (28.0 dpc * 0.06 cpr) + (14.0 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 2.80 gdpr
-Armor Bolt-  : 20.54 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.04 cdpr + 0.00 gdpr
-Fort Bolt-   : 16.22 = (18.5 dph * 0.70 hpr) + (18.5 dpc * 0.08 cpr) + (9.2 dpg * 0.20 gpr) = 12.95 hdpr + 1.42 cdpr + 1.85 gdpr
+Armor Bolt   : 21.49 = (24.5 dph * 0.70 hpr) + (24.5 dpc * 0.08 cpr) + (12.2 dpg * 0.20 gpr) = 17.15 hdpr + 1.89 cdpr + 2.45 gdpr
+Fort Bolt    : 16.05 = (24.5 dph * 0.50 hpr) + (24.5 dpc * 0.06 cpr) + (12.2 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 2.45 gdpr
+Armor Bolt-  : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
+Fort Bolt-   : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
 
 ### Defender: Fighter Greatmace
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 29.37 = (28.0 dph * 0.90 hpr) + (28.0 dpc * 0.10 cpr) + (14.0 dpg * 0.10 gpr) = 25.20 hdpr + 2.77 cdpr + 1.40 gdpr
-Fort Bolt    : 21.45 = (28.0 dph * 0.60 hpr) + (28.0 dpc * 0.07 cpr) + (14.0 dpg * 0.20 gpr) = 16.80 hdpr + 1.85 cdpr + 2.80 gdpr
-Armor Bolt-  : 20.55 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.05 cdpr + 0.00 gdpr
-Fort Bolt-   : 18.28 = (18.5 dph * 0.80 hpr) + (18.5 dpc * 0.09 cpr) + (9.2 dpg * 0.20 gpr) = 14.80 hdpr + 1.63 cdpr + 1.85 gdpr
+Armor Bolt   : 24.21 = (24.5 dph * 0.80 hpr) + (24.5 dpc * 0.09 cpr) + (12.2 dpg * 0.20 gpr) = 19.60 hdpr + 2.16 cdpr + 2.45 gdpr
+Fort Bolt    : 18.77 = (24.5 dph * 0.60 hpr) + (24.5 dpc * 0.07 cpr) + (12.2 dpg * 0.20 gpr) = 14.70 hdpr + 1.62 cdpr + 2.45 gdpr
+Armor Bolt-  : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
+Fort Bolt-   : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
 
 ### Defender: Fighter Shield
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 24.56 = (28.0 dph * 0.70 hpr) + (28.0 dpc * 0.08 cpr) + (14.0 dpg * 0.20 gpr) = 19.60 hdpr + 2.16 cdpr + 2.80 gdpr
-Fort Bolt    : 21.45 = (28.0 dph * 0.60 hpr) + (28.0 dpc * 0.07 cpr) + (14.0 dpg * 0.20 gpr) = 16.80 hdpr + 1.85 cdpr + 2.80 gdpr
-Armor Bolt-  : 19.41 = (18.5 dph * 0.90 hpr) + (18.5 dpc * 0.10 cpr) + (9.2 dpg * 0.10 gpr) = 16.65 hdpr + 1.83 cdpr + 0.92 gdpr
-Fort Bolt-   : 18.28 = (18.5 dph * 0.80 hpr) + (18.5 dpc * 0.09 cpr) + (9.2 dpg * 0.20 gpr) = 14.80 hdpr + 1.63 cdpr + 1.85 gdpr
+Armor Bolt   : 18.77 = (24.5 dph * 0.60 hpr) + (24.5 dpc * 0.07 cpr) + (12.2 dpg * 0.20 gpr) = 14.70 hdpr + 1.62 cdpr + 2.45 gdpr
+Fort Bolt    : 18.77 = (24.5 dph * 0.60 hpr) + (24.5 dpc * 0.07 cpr) + (12.2 dpg * 0.20 gpr) = 14.70 hdpr + 1.62 cdpr + 2.45 gdpr
+Armor Bolt-  : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Fort Bolt-   : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
 
 ### Defender: Monk Kama
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 9.02 = (28.0 dph * 0.20 hpr) + (28.0 dpc * 0.02 cpr) + (14.0 dpg * 0.20 gpr) = 5.60 hdpr + 0.62 cdpr + 2.80 gdpr
-Fort Bolt    : 31.08 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.11 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 3.08 cdpr + 0.00 gdpr
-Armor Bolt-  : 10.06 = (18.5 dph * 0.40 hpr) + (18.5 dpc * 0.04 cpr) + (9.2 dpg * 0.20 gpr) = 7.40 hdpr + 0.81 cdpr + 1.85 gdpr
-Fort Bolt-   : 22.61 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.22 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 4.11 cdpr + 0.00 gdpr
+Armor Bolt   : 7.89 = (24.5 dph * 0.20 hpr) + (24.5 dpc * 0.02 cpr) + (12.2 dpg * 0.20 gpr) = 4.90 hdpr + 0.54 cdpr + 2.45 gdpr
+Fort Bolt    : 25.70 = (24.5 dph * 0.90 hpr) + (24.5 dpc * 0.10 cpr) + (12.2 dpg * 0.10 gpr) = 22.05 hdpr + 2.43 cdpr + 1.22 gdpr
+Armor Bolt-  : 9.52 = (17.5 dph * 0.40 hpr) + (17.5 dpc * 0.04 cpr) + (8.8 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 1.75 gdpr
+Fort Bolt-   : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 27.66 = (28.0 dph * 0.80 hpr) + (28.0 dpc * 0.09 cpr) + (14.0 dpg * 0.20 gpr) = 22.40 hdpr + 2.46 cdpr + 2.80 gdpr
-Fort Bolt    : 21.45 = (28.0 dph * 0.60 hpr) + (28.0 dpc * 0.07 cpr) + (14.0 dpg * 0.20 gpr) = 16.80 hdpr + 1.85 cdpr + 2.80 gdpr
-Armor Bolt-  : 20.54 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.04 cdpr + 0.00 gdpr
-Fort Bolt-   : 18.28 = (18.5 dph * 0.80 hpr) + (18.5 dpc * 0.09 cpr) + (9.2 dpg * 0.20 gpr) = 14.80 hdpr + 1.63 cdpr + 1.85 gdpr
+Armor Bolt   : 21.49 = (24.5 dph * 0.70 hpr) + (24.5 dpc * 0.08 cpr) + (12.2 dpg * 0.20 gpr) = 17.15 hdpr + 1.89 cdpr + 2.45 gdpr
+Fort Bolt    : 18.77 = (24.5 dph * 0.60 hpr) + (24.5 dpc * 0.07 cpr) + (12.2 dpg * 0.20 gpr) = 14.70 hdpr + 1.62 cdpr + 2.45 gdpr
+Armor Bolt-  : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
+Fort Bolt-   : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
 
 ### Defender: Ranger Longbow
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 18.34 = (28.0 dph * 0.50 hpr) + (28.0 dpc * 0.06 cpr) + (14.0 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 2.80 gdpr
-Fort Bolt    : 31.08 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.11 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 3.08 cdpr + 0.00 gdpr
-Armor Bolt-  : 16.22 = (18.5 dph * 0.70 hpr) + (18.5 dpc * 0.08 cpr) + (9.2 dpg * 0.20 gpr) = 12.95 hdpr + 1.42 cdpr + 1.85 gdpr
-Fort Bolt-   : 22.61 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.22 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 4.11 cdpr + 0.00 gdpr
+Armor Bolt   : 16.05 = (24.5 dph * 0.50 hpr) + (24.5 dpc * 0.06 cpr) + (12.2 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 2.45 gdpr
+Fort Bolt    : 25.70 = (24.5 dph * 0.90 hpr) + (24.5 dpc * 0.10 cpr) + (12.2 dpg * 0.10 gpr) = 22.05 hdpr + 2.43 cdpr + 1.22 gdpr
+Armor Bolt-  : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
+Fort Bolt-   : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 15.23 = (28.0 dph * 0.40 hpr) + (28.0 dpc * 0.04 cpr) + (14.0 dpg * 0.20 gpr) = 11.20 hdpr + 1.23 cdpr + 2.80 gdpr
-Fort Bolt    : 34.22 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.22 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 6.22 cdpr + 0.00 gdpr
-Armor Bolt-  : 14.17 = (18.5 dph * 0.60 hpr) + (18.5 dpc * 0.07 cpr) + (9.2 dpg * 0.20 gpr) = 11.10 hdpr + 1.22 cdpr + 1.85 gdpr
-Fort Bolt-   : 26.71 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.44 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 8.21 cdpr + 0.00 gdpr
+Armor Bolt   : 13.33 = (24.5 dph * 0.40 hpr) + (24.5 dpc * 0.04 cpr) + (12.2 dpg * 0.20 gpr) = 9.80 hdpr + 1.08 cdpr + 2.45 gdpr
+Fort Bolt    : 27.22 = (24.5 dph * 1.00 hpr) + (24.5 dpc * 0.11 cpr) + (12.2 dpg * 0.00 gpr) = 24.50 hdpr + 2.72 cdpr + 0.00 gdpr
+Armor Bolt-  : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
+Fort Bolt-   : 23.33 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.33 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 5.83 cdpr + 0.00 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 27.66 = (28.0 dph * 0.80 hpr) + (28.0 dpc * 0.09 cpr) + (14.0 dpg * 0.20 gpr) = 22.40 hdpr + 2.46 cdpr + 2.80 gdpr
-Fort Bolt    : 31.08 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.11 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 3.08 cdpr + 0.00 gdpr
-Armor Bolt-  : 20.54 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.11 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 2.04 cdpr + 0.00 gdpr
-Fort Bolt-   : 22.61 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.22 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 4.11 cdpr + 0.00 gdpr
+Armor Bolt   : 24.21 = (24.5 dph * 0.80 hpr) + (24.5 dpc * 0.09 cpr) + (12.2 dpg * 0.20 gpr) = 19.60 hdpr + 2.16 cdpr + 2.45 gdpr
+Fort Bolt    : 25.70 = (24.5 dph * 0.90 hpr) + (24.5 dpc * 0.10 cpr) + (12.2 dpg * 0.10 gpr) = 22.05 hdpr + 2.43 cdpr + 1.22 gdpr
+Armor Bolt-  : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
+Fort Bolt-   : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
 
 ### Defender: Wizard Perception
 Best attack: Armor Bolt
 
 #### Detailed attack results
-Armor Bolt   : 37.32 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.33 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 9.32 cdpr + 0.00 gdpr
-Fort Bolt    : 34.22 = (28.0 dph * 1.00 hpr) + (28.0 dpc * 0.22 cpr) + (14.0 dpg * 0.00 gpr) = 28.00 hdpr + 6.22 cdpr + 0.00 gdpr
-Armor Bolt-  : 28.77 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.56 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 10.27 cdpr + 0.00 gdpr
-Fort Bolt-   : 26.71 = (18.5 dph * 1.00 hpr) + (18.5 dpc * 0.44 cpr) + (9.2 dpg * 0.00 gpr) = 18.50 hdpr + 8.21 cdpr + 0.00 gdpr
+Armor Bolt   : 29.94 = (24.5 dph * 1.00 hpr) + (24.5 dpc * 0.22 cpr) + (12.2 dpg * 0.00 gpr) = 24.50 hdpr + 5.44 cdpr + 0.00 gdpr
+Fort Bolt    : 27.22 = (24.5 dph * 1.00 hpr) + (24.5 dpc * 0.11 cpr) + (12.2 dpg * 0.00 gpr) = 24.50 hdpr + 2.72 cdpr + 0.00 gdpr
+Armor Bolt-  : 25.27 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.44 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 7.77 cdpr + 0.00 gdpr
+Fort Bolt-   : 23.33 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.33 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 5.83 cdpr + 0.00 gdpr
 
 ## Level 20
 
