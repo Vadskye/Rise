@@ -28,17 +28,17 @@ fighter: attribute strength by 1
 ## Level 10
 
 ### Damage Absorption
-HP: 48 = (High progression: 29 <level> + 15 <con> + 4 <modifier>) * 0 <elite multiplier>
+HP: 45 = (High progression: 29 <level> + 12 <con> + 4 <modifier>) * 0 <elite multiplier>
 DR: 44 = (36 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 10
-AP 4, FT 10, IP 3, Skills 3
-HP 48, DR 44
-AD 13, Brn 15, Fort 13, Ref 8, Ment 10
-Generic Accuracy Broadsword +9 (1d6+7 damage.); Certain Broadsword +11 (1d6+3 damage.); Powerful Broadsword +5 (2d6+14 damage.); Extra Damage Broadsword +7 (1d6+13 damage.); Broadsword +6 (1d6+7 damage.)
-Attr: Str 7, Dex 0, Con 5, Int 0, Per 2, Wil 0
-Power: 5✨/12
+AP 4, FT 9, IP 3, Skills 3
+HP 45, DR 44
+AD 13, Brn 14, Fort 12, Ref 8, Ment 10
+Generic Accuracy Broadsword +9 (1d6+6 damage.); Certain Broadsword +11 (1d6+3 damage.); Powerful Broadsword +5 (2d6+12 damage.); Extra Damage Broadsword +7 (1d6+11 damage.); Broadsword +6 (1d6+6 damage.)
+Attr: Str 6, Dex 0, Con 4, Int 0, Per 2, Wil 0
+Power: 5✨/11
 
 ### Modifiers
 Maneuvers: maneuver Generic Accuracy
@@ -52,8 +52,8 @@ fighter: defense armor by 1
 fighter: resource trained skill by 3
 fighter: attribute constitution by 1
 fighter: attribute strength by 1
-attribute scaling with level: attribute strength by 2
-attribute scaling with level: attribute constitution by 2
+attribute scaling with level: attribute strength by 1
+attribute scaling with level: attribute constitution by 1
 magic: strike damage dice 1
 magic: DR 8
 magic: HP 4
