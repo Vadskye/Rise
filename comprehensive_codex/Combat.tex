@@ -381,7 +381,7 @@
       If it cannot, it stops moving.
       This represents you automatically repositioning yourself to block its movement.
 
-      If a creature has the ability to move through your space, such as if it uses the \ability{overrun} ability, it is unaffected by this additional movement cost.
+      If a creature has the ability to move through your space, it is unaffected by this additional movement cost.
       If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
     \end{activeability}
 
@@ -502,7 +502,7 @@
     % Human with 2 strength jumps 15 feet.
     % Human with 4 strength jumps 25 feet, which is almost a world record.
     A jump's maximum horizontal distance is normally equal to a quarter of your \glossterm{base speed} plus 5 feet per 2 Strength.
-    If you are trained with the Jump skill, the distance you add from your Strength is instead of equal to 5 feet per Strength, to a minimum of \plus5 feet.
+    If you are trained with the Jump skill, the distance you add from your Strength is instead equal to 5 feet per Strength, to a minimum of \plus5 feet.
     A jump's maximum vertical height is equal to half your maximum horizontal distance.
     % TODO: minimum jump height? too complicated?
 
@@ -685,9 +685,6 @@
     \hit You deal the target \glossterm{weapon damage} from the weapon.
   \end{activeability}
 
-  \subsection{Strike Damage}
-
-  % TODO: move to section
   \subsection{Dual Strikes}\label{Dual Strikes}
     If you are wielding two weapons, you can attack with both at the same time whenever you make a \glossterm{strike}.
     This is called a \glossterm{dual strike}.
@@ -761,7 +758,6 @@
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-      Overrun            & Move or standard & Move through enemy spaces                     & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
@@ -827,21 +823,6 @@
     This attack has no immediate effect.
     The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
     If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
-  \end{activeability}
-
-  \begin{activeability}*{Overrun}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-    \abilityusagetime \glossterm{Move action} or standard action.
-    \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
-    \rankline
-    Move up to your movement speed in a straight line.
-    You can try to move directly through creatures in your way during this movement.
-    Each creature in your way can choose to avoid you, allowing you to pass through its square unhindered.
-    If a creature does not attempt to avoid you, you make a \glossterm{brawling attack} vs. Brawn against it.
-
-    If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \squeezing as long as you continue sharing space (see \pcref{Squeezing}).
-
-    \hit You can continue your movement through the target's space.
-    \miss You end your movement before entering the target's space.
   \end{activeability}
 
   \begin{activeability}*{Ready Reaction}[\atSwift]
