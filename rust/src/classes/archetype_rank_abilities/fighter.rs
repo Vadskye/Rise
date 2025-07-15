@@ -464,16 +464,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
                 {
-                    \begin{sustainability}{Break Through}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
-                        \abilityusagetime \glossterm{Minor action}.
-                        \rankline
-                        Each target gains a \plus2 accuracy bonus with the \textit{overrun} and \textit{shove} abilities (see \pcref{Universal Combat Abilities}).
-
-                        \rankline
-                        \rank{4} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
-                    \end{sustainability}
-
                     \begin{sustainability}{Dogpile}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
