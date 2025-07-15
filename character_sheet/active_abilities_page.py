@@ -672,15 +672,6 @@ def universal_abilities():
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling", "Swift"]},
             ),
             universal_ability_button(
-                "Overrun",
-                """
-                    After you use this ability, you increase your fatigue level by one.
-                    Move up to your movement speed in a straight line, even through creatures. Make a brawling attack vs. Brawn against each creature that you move through who does not choose to avoid you.
-                    On a hit, you move through each creature's space. On a miss, you end your movement immediately.
-                 """,
-                attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
-            ),
-            universal_ability_button(
                 "Ready Reaction",
                 """
                     When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
