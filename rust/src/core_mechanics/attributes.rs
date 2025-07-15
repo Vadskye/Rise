@@ -89,7 +89,8 @@ where
     }
 
     fn set_attribute_scaling(&mut self, level: i32, attributes: Vec<Attribute>) {
-        let value = (level + 3) / 6;
+        // 5/11/17
+        let value = (level + 1) / 6;
         if value > 0 {
             for attribute in attributes.iter() {
                 self.add_modifier(
