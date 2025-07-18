@@ -71,24 +71,14 @@ pub fn shields() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
-    // There are four attacks that can take advantage of this penalty. Assume 3/4 can because it's
-    // Armor, so this is a 0.3 EA debuff. Unlike other debuffs, this has no attack or defense, so
-    // it's 50% stronger, so 0.45 EA. That's a little weak for rank 1, but rank 1 doesn't have much
-    // wiggle room so it's fine.
+    // Normally, +1 tag would be rank 4. Since this only works on shields, it can be rank 3.
     armor.push(Shield(StandardItem {
-        name: String::from("Hardblock Shield"),
-        rank: 1,
-        short_description: String::from("Imposes -1 Armor penalty when creatures strike you"),
+        name: String::from("Resonating Shield"),
+        rank: 3,
+        short_description: String::from("Is \\weapontag{Resonating}"),
         description: String::from(r"
-            Whenever a creature makes a \glossterm{melee} \glossterm{strike} against you, it \glossterm<briefly> takes a -1 penalty to its Armor defense.
-            As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
+            This shield gains the \\weapontag{Resonating} tag when used as a weapon.
         "),
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        upgrades: vec![
-            ItemUpgrade::new(4, "Imposes -2 Armor penalty when creatures strike you", "
-                The penalty increases to -2.
-            "),
-        ],
         ..MagicArmor::default()
     }));
 
