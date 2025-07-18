@@ -371,7 +371,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
+            complexity: 1,
             name: "Detect Anathema",
             is_magical: true,
             rank: 2,
@@ -384,9 +384,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     Since this is a \abilitytag{Detection} ability, it can penetrate some solid obstacles (see \pcref{Detection}).
 
                     \rankline
-                    \rank{3} You also learn the location of all creatures with that alignment.
-                    \rank{5} The area changes to a \largearea radius instead of a cone.
-                    \rank{7} The area increases to a \gargarea radius.
+                    \rank{4} You also learn the location of all creatures with that alignment.
+                    \rank{6} The area changes to a \largearea radius instead of a cone.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -402,7 +401,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
+            complexity: 3,
             name: "Zealous Fixation",
             is_magical: true,
             rank: 4,
@@ -413,10 +412,30 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
+            name: "Zealous Offense",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain a \plus1 \glossterm{accuracy} bonus.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Unwavering Zeal",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You are immune to being \stunned and \confused.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "Pass Judgment",
             is_magical: true,
-            rank: 5,
+            rank: 7,
             description: r"
                 \begin{magicalactiveability}{Pass Judgment}[\atSubtle]
                     \abilityusagetime \glossterm{Minor action}.
@@ -430,34 +449,6 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     You can use this ability to do battle against foes who share your alignment, but you should exercise caution in doing so.
                     Persecution of those who share your ideals can lead you to fall and become an ex-paladin.
-                \end{magicalactiveability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Zealous Offense",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You gain a \plus1 \glossterm{accuracy} bonus.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            complexity: 3,
-            name: "Zealous Pursuit",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                \begin{magicalactiveability}{Zealous Pursuit}
-                    \abilityusagetime \glossterm{Minor action}.
-                    \abilitycost You \glossterm{briefly} cannot use this ability again.
-                    \rankline
-                    You \glossterm{teleport} up to \distrange into an unoccupied space on solid ground adjacent to one creature of your choice affected by your \textit{zealous fixation} ability.
-                    You do not need \glossterm{line of sight} or \glossterm{line of effect} to the creature.
-                    If multiple valid destination spaces exist, you teleport into the one closest to your original location.
-                    If no valid destination spaces exist, this ability fails with no effect.
                 \end{magicalactiveability}
             ",
             modifiers: None,
