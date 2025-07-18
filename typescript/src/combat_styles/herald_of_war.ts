@@ -259,7 +259,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
-          Then, you are \\glossterm{briefly} shielded.
+          Then, you are \\glossterm{briefly} \\shielded.
         `,
       },
       rank: 1,
