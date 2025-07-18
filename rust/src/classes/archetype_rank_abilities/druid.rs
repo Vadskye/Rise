@@ -347,7 +347,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 4,
+            complexity: 3,
             name: "Wild Aspects",
             is_magical: true,
             rank: 1,
@@ -602,28 +602,19 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you activate a \ability{wild aspect} that represents a specific animal, you can fully \glossterm{shapeshift} to match that animal's shape.
                 This cannot increase your \glossterm{size category}, but you can shrink by one size category if it is appropriate for that animal.
                 You may choose to reshape any body armor you wear as \glossterm{barding} to fit the animal instead of melding it into your form.
+                This means it continues to function, but its bonus to Armor defense is reduced by 2.
                 The armor regains its normal shape if you take it off.
                 For details about shapeshifting, see \pcref{Shapeshifting}.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Cleansing Shift",
+            complexity: 0,
+            name: "Transformative Toughness",
             is_magical: true,
             rank: 6,
             description: r"
-                Whenever you activate a new \ability{wild aspect}, you can also remove one \glossterm{condition}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Animal Shape+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You may either grow or shrink by one \glossterm{size category} when you shapeshift with this ability, regardless of whether it would normally be appropriate for that animal.
+                You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your \glossterm{vital rolls}.
             ",
             modifiers: None,
         },
