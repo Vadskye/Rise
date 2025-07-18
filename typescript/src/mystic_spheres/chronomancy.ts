@@ -296,12 +296,13 @@ export const chronomancy: MysticSphere = {
       name: 'Slowtime Field',
 
       // Brief slow is 2 EA, so a field would be 3 EA. HP condition is 75% Ea, so 2.2 EA,
-      // which is r5.
+      // which is r5. Add +1r for area, so Medium in Medium range? Not sure how the area
+      // calculations work here.
       effect: `
-        You create a field of slowed time in a \\smallarea radius \\glossterm{zone} within \\shortrange.
+        You create a field of slowed time in a \\medarea radius \\glossterm{zone} within \\medrange.
         All creatures with no remaining \\glossterm{damage resistance} are \\slowed while they are in the area.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['flash', 'hazard'],
       type: 'Sustain (minor)',
     },
