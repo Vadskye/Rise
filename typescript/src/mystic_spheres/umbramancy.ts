@@ -32,6 +32,7 @@ export const umbramancy: MysticSphere = {
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
         You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
+        If you stop being \\glossterm{shadowed} at any point, this effect immediately ends.
       `,
       roles: ['narrative'],
       scaling: {
