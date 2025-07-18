@@ -161,15 +161,13 @@ export const prayer: MysticSphere = {
       tags: ['Swift'],
     },
 
+    // No reason why this is rank 5 instead of rank 4 except that maximized seems scary
     {
       name: 'Boon of Annihilation',
 
-      // 0.6 from focused, 1.0 from maximized, for 1.6 total. Losing the next round is
-      // maybe -0.5 EA?
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\focused and \\maximized this round.
-        After this round, it must spend its next available standard action doing nothing.
+        The target is \\maximized this round.
       `,
       rank: 5,
       roles: ['boon'],
