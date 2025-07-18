@@ -17,19 +17,19 @@ Complexity is calculated at (rank 3 / rank 7).
 * Healer: 5 / 9
 * Preacher: 5 / 12
             
-## druid: 24 / 42
+## druid: 23 / 38
 * Elementalist: 6 / 10
 * Nature Magic: 4 / 4
 * Nature Spell Mastery: 3 / 7
-* Shifter: 7 / 13
+* Shifter: 6 / 9
 * Wildspeaker: 4 / 8
             
-## fighter: 25 / 35
+## fighter: 24 / 34
 * Combat Discipline: 3 / 6
 * Equipment Training: 5 / 8
 * Martial Mastery: 6 / 6
 * Sentinel: 4 / 5
-* Tactician: 7 / 10
+* Tactician: 6 / 9
             
 ## monk: 22 / 33
 * Airdancer: 4 / 8
@@ -38,12 +38,12 @@ Complexity is calculated at (rank 3 / rank 7).
 * Perfected Form: 2 / 4
 * Transcendent Sage: 2 / 5
             
-## paladin: 18 / 33
+## paladin: 17 / 31
 * Devoted Paragon: 3 / 5
 * Divine Magic: 4 / 4
 * Divine Spell Expertise: 4 / 8
 * Stalwart Guardian: 2 / 4
-* Zealous Warrior: 5 / 12
+* Zealous Warrior: 4 / 10
             
 ## ranger: 27 / 32
 * Beastmaster: 4 / 7

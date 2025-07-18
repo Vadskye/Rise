@@ -37,12 +37,12 @@ Sniper            : 60% (7)
 Warrior           : 50% (8)
 
 ### Medium accuracy
-Brute             : 70% (8)
-Leader            : 70% (8)
-Mystic            : 90% (6)
-Skirmisher        : 60% (9)
-Sniper            : 80% (7)
-Warrior           : 70% (8)
+Brute             : 60% (8)
+Leader            : 60% (8)
+Mystic            : 80% (6)
+Skirmisher        : 50% (9)
+Sniper            : 70% (7)
+Warrior           : 60% (8)
 
 ### High accuracy
 Brute             : 100% (8)
@@ -63,12 +63,12 @@ Sniper            : 60% (10)
 Warrior           : 50% (11)
 
 ### Medium accuracy
-Brute             : 70% (11)
-Leader            : 70% (11)
-Mystic            : 90% (9)
-Skirmisher        : 60% (12)
-Sniper            : 80% (10)
-Warrior           : 70% (11)
+Brute             : 60% (11)
+Leader            : 60% (11)
+Mystic            : 80% (9)
+Skirmisher        : 50% (12)
+Sniper            : 70% (10)
+Warrior           : 60% (11)
 
 ### High accuracy
 Brute             : 90% (11)
@@ -89,12 +89,12 @@ Sniper            : 50% (13)
 Warrior           : 40% (14)
 
 ### Medium accuracy
-Brute             : 70% (14)
-Leader            : 70% (14)
-Mystic            : 90% (12)
-Skirmisher        : 50% (16)
-Sniper            : 80% (13)
-Warrior           : 70% (14)
+Brute             : 60% (14)
+Leader            : 60% (14)
+Mystic            : 80% (12)
+Skirmisher        : 40% (16)
+Sniper            : 70% (13)
+Warrior           : 60% (14)
 
 ### High accuracy
 Brute             : 90% (14)
