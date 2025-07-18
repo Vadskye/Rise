@@ -357,7 +357,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this ability (see \pcref{Power}).
                     If the target has your devoted alignment, you take damage equal to half your power (minimum 1).
 
-                    % This has a scaling dip at rank 4 which lines up with the powerful Zealous Offense ability
+                    % This has a scaling dip at rank 4 which lines up with the powerful Zealous Fixation ability
                     \rankline
                     \rank{2} You add your full Strength instead of half your Strength.
                     \rank{3} You deal \glossterm{extra damage} equal to half your power.
