@@ -476,11 +476,22 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Duck and Cover}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target gains a \plus1 bonus to its Armor defense against ranged \glossterm{strikes}.
+                        Each target gains a \plus1 bonus to its defenses against ranged \glossterm{strikes}.
 
                         \rankline
                         \rank{4} The bonus also applies against any attacks that a target has \glossterm{cover} from.
                         \rank{7} The bonus increases to \plus2.
+                    \end{sustainability}
+
+                    \begin{sustainability}{Follow My Lead}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \abilityusagetime \glossterm{Minor action}.
+                        \rankline
+                        Whenever you hit a creature with a \glossterm{strike}, you mark that creature.
+                        Each \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus against creatures that you marked this round.
+
+                        \rankline
+                        \rank{4} The bonus applies to \glossterm{allies} within 15 feet of you.
+                        \rank{7} The bonus applies to all targets other than you.
                     \end{sustainability}
 
                     \begin{sustainability}{Group Up}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
@@ -517,11 +528,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Lead From the Front}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
                         \abilityusagetime \glossterm{Minor action}.
                         \rankline
-                        Each target other than you gains a \plus1 accuracy bonus against creatures that you are adjacent to.
+                        Each target other than you gains a \plus1 bonus to Armor defense against \glossterm{enemies} that you are adjacent to.
 
                         \rankline
-                        \rank{4} The bonus also applies against creatures within \shortrange of you.
-                        \rank{7} The bonus increases to \plus2.
+                        \rank{4} The bonus also applies against \glossterm{enemies} within 10 feet of you.
+                        \rank{7} The bonus applies to all defenses.
                     \end{sustainability}
 
                     \begin{sustainability}{Rush}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
@@ -549,35 +560,15 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Shifting Stance",
+            complexity: 1,
+            name: "Reposition",
             is_magical: false,
             rank: 2,
             description: r"
-                \begin{sustainability}{Shifting Stance}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
-                    \abilityusagetime \glossterm{Minor action}.
-                    \rankline
-                    You gain one of the following benefits:
-                    \begin{itemize}
-                        \item Offense: You gain a \plus1 accuracy bonus against adjacent enemies.
-                        \item Defense: You gain a \plus1 bonus to your Armor defense.
-                        \item Support: One adjacent \glossterm{ally} gains a \plus1 accuracy bonus.
-                    \end{itemize}
-
-                    This effect immediately ends if you use this ability again.
-                \end{sustainability}
+                If you have \glossterm{movement speed} remaining after the \glossterm{movement phase}, you may use that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
+                You cannot carry over more than five feet of movement in this way.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Shifting Stance+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The bonus for each stance increases to \plus2.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: None,
         },
         RankAbility {
             complexity: 2,
@@ -588,42 +579,71 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Coordinated Charge}
                     \abilityusagetime Standard action.
                     \rankline
-                    You can move up to your \glossterm{movement speed}.
+                    You can move up to half your \glossterm{movement speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     After you stop moving, you can make a melee \glossterm{strike}.
-                    You gain a +1 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +3.
+                    You gain a +3 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +6.
                     
 
                     \rankline
-                    \rank{4} If you have at least two \glossterm{allies} adjacent to you, the strike deals double damage.
-                    \rank{5} The strike always deals double damage.
-                    \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple damage.
-                    \rank{7} The strike always deals triple damage.
+                    \rank{4} The accuracy bonus per ally increases to +5, to a maximum of +10.
+                    \rank{5} The strike deals 1d8 \glossterm{extra damage}.
+                    \rank{6} The extra damage increases to 1d8 \add your \glossterm{power}.
+                    \rank{6} The extra damage increases to 3d8 \add your \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
+            name: "Shifting Stance",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                \begin{sustainability}{Shifting Stance}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                    \abilityusagetime \glossterm{Minor action}.
+                    \rankline
+                    You gain one of the following benefits:
+                    \begin{itemize}
+                        \item Offense: You gain a \plus1 accuracy bonus against adjacent \glossterm{enemies}.
+                        \item Defense: You gain a \plus1 bonus to your defenses.
+                        \item Support: Each \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus.
+                    \end{itemize}
+
+                    This effect immediately ends if you use this ability again.
+                \end{sustainability}
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
             complexity: 1,
             name: "Strategist",
             is_magical: false,
-            rank: 4,
+            rank: 5,
             description: r"
                 You gain a \plus1 bonus to your Intelligence.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Hybrid Battle Tactics",
+            complexity: 0,
+            name: "Reposition+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The maximum movement speed that you can carry over with this ability increases to fifteen feet.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Shifting Stance+",
             is_magical: false,
             rank: 7,
             description: r"
-                You can activate and sustain two different battle tactics simultaneously as part of the same action.
-                Bonuses from multiple battle tactics, such as the bonus to Armor defense from the \textit{duck and cover} and \textit{group up} abilities, do not stack.
-                However, each creature can benefit from both battle tactics at once.
+                The bonus for each stance increases to \plus2.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
     ]
 }
