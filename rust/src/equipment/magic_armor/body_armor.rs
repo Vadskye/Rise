@@ -53,17 +53,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ..MagicArmor::default()
     }));
 
-    // Steeled is 0.9 EA
-    armor.push(Body(StandardItem {
-        name: String::from("Steeling Armor"),
-        rank: 3,
-        short_description: String::from("Immune to critical hits"),
-        description: String::from(r"
-            You are \steeled.
-        "),
-        ..MagicArmor::default()
-    }));
-
     armor.push(Body(StandardItem {
         name: String::from("Hidden Armor"),
         rank: 1,
