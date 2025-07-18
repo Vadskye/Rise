@@ -34,7 +34,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankzero.
         `,
         targeting: `
-          Whenever you hit a creature with a \\atBrawling attack or a creature hits you with a \\atBrawling attack, make an attack vs. Reflex against that creature.
+          Whenever you hit a creature with a \\atBrawling attack or a creature hits you with a \\atBrawling attack, make an attack vs. Fortitude against that creature.
           After you make this attack, this ability is \\glossterm{dismissed}.
         `,
       },
@@ -376,7 +376,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Ignition',
 
-      // -1dr for being single-target Reflex
       attack: {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
@@ -388,7 +387,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           This condition is automatically removed if the target takes damage from a \\atCold or \\atWater ability.
         `,
         targeting: `
-          Make an attack vs. Reflex against one creature within \\shortrange.
+          Make an attack vs. Fortitude against one creature within \\medrange.
         `,
       },
       rank: 2,
@@ -456,14 +455,14 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Eyes of Flame',
 
-      // +1 effective rank for attune with cooldown, -1dr for single-target Reflex
+      // +1 effective rank for attune with cooldown
       attack: {
         hit: `
-          \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
+          \\damageranktwo, and the target is \\glossterm{briefly} \\dazzled.
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Reflex against a creature within \\shortrange of you.
+          When you do, make an attack vs. Fortitude against a creature within \\shortrange of you.
           After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
         `,
       },
@@ -515,8 +514,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `1d4 damage \\add half power.`,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature that you are either grappling or are \\grappled by.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Reflex against them.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
           You can only attack a given target with this spell once per \\glossterm{phase}.
         `,
       },
@@ -827,13 +826,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Combustion',
 
-      // Normally, -4 accuracy touch range would be dr6, so dr5 for single target Reflex.
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex with a -4 accuracy penalty against something adjacent to you.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 2,
@@ -844,13 +842,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Combustion',
 
-      // Normally, -4 accuracy touch range would be dr9, so dr8 for single target Reflex.
       attack: {
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+          \\damageranknine, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
-          Make an attack vs. Reflex with a -4 accuracy penalty against something adjacent to you.
+          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 5,
