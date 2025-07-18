@@ -20,21 +20,6 @@ export const vivimancy: MysticSphere = {
         6: `The minimum \\glossterm{vital roll} you can mitigate decreases to -2.`,
       },
     },
-
-    {
-      name: 'Minor Life Infusion',
-
-      effect: `
-        You regain two \\glossterm{hit points}.
-        This healing cannot increase your hit points above half your maximum hit points.
-      `,
-      scaling: {
-        2: `The healing increases to four \\glossterm{hit points}.`,
-        4: `The healing increases to eight \\glossterm{hit points}.`,
-        6: `The healing increases to sixteen \\glossterm{hit points}.`,
-      },
-      tags: ['Swift'],
-    },
   ],
   spells: [
     {

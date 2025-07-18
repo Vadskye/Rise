@@ -13,41 +13,6 @@ export const polymorph: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Alter Object',
-
-      effect: `
-        Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
-        You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
-        The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
-
-        Each time you cast this spell, you can accomplish work that would take up to one round with a normal Craft check.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: `The amount of work you accomplish with the spell increases to two rounds.`,
-        4: `The amount of work you accomplish with the spell increases to three rounds.`,
-        6: `The amount of work you accomplish with the spell increases to five rounds.`,
-      },
-    },
-
-    {
-      name: 'Alter Appearance',
-
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment, species, creature type, or number of limbs (see \\pcref{Change Appearance}).
-          This is a physical change to your body, so no amount of inspection will reveal your true form.
-          A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
-
-          This ability lasts until you use it again.
-        `,
-        name: 'disguise creature',
-      },
-      roles: ['narrative'],
-    },
-
-    {
       name: 'Natural Weapon',
 
       effect: `
@@ -60,23 +25,6 @@ export const polymorph: MysticSphere = {
     },
   ],
   spells: [
-    {
-      name: 'Alter Self',
-
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          that you gain a +4 bonus and you cannot change the appearance of your equipment (see \\pcref{Change Appearance}).
-          This is a physical change to your body, so no amount of inspection will reveal your true form.
-          A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
-        `,
-        name: 'disguise creature',
-      },
-      rank: 2,
-      roles: ['narrative'],
-      tags: ['Sustain (attuneable, minor)'],
-    },
-
     {
       name: 'Flesh-Rending Claw',
       effect: `

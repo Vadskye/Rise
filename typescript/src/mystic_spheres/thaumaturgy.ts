@@ -27,21 +27,6 @@ export const thaumaturgy: MysticSphere = {
       },
       tags: ['Detection'],
     },
-
-    {
-      name: 'Sense Magical Potential',
-
-      effect: `
-        You discern whether one creature within \\shortrange has any \\magical abilities.
-        This does not give you any information about the nature of those magical abilities.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: `You can also discern whether the target has the ability to cast spells of any kind.`,
-        4: `You can also discern which \\glossterm{magic sources} the target has access to, if they have access to any.`,
-        6: `You can also discern which \\glossterm{mystic spheres} the target has access to, if they have access to any.`,
-      },
-    },
   ],
   spells: [
     {

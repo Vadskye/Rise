@@ -10,28 +10,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
   cantrips: [
     {
-      name: 'Create Water',
-
-      effect: `
-        You create up to two gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
-        You must create a minimum of one ounce of water in each location.
-        % Tiny body of water is 1 cubic foot = 7.5 gallons
-        This generally means that you can create a Tiny body of water with one minute of work.
-      `,
-      narrative: `
-        The desert air ripples with heat, scorching the group of adventurers.
-        When they finally stop to rest, you conjure water from thin air, giving them all the strength to press on.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: 'The volume created increases to five gallons.',
-        // Small body of water is 2.5^3 = ~15.5 cubic feet = ~120 gallons
-        4: 'The volume created increases to ten gallons. This generally means that you can create a Small body of water with one minute of work.',
-        6: 'The volume created increases to twenty gallons.',
-      },
-      tags: ['Creation'],
-    },
-    {
       name: 'Aquatic Freedom',
 
       effect: `

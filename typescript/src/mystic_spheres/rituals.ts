@@ -2687,4 +2687,212 @@ export const rituals: Ritual[] = [
     roles: ['narrative'],
     spheres: ['Revelation', 'Verdamancy'],
   },
+  {
+    name: 'Manipulate Air',
+
+    castingTime: 'one minute',
+    effect: `
+      You change the wind speed within a \\largearea radius \\glossterm{emanation} from you by up to 10 miles per hour.
+      If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
+      You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
+    `,
+    narrative: `
+      The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
+    `,
+    scaling: {
+      3: 'The maximum speed change increases to 15 miles per hour.',
+      5: 'The maximum speed change increases to 20 miles per hour.',
+      7: 'The maximum speed change increases to 30 miles per hour.',
+    },
+    rank: 1,
+    roles: ['narrative'],
+    spheres: ['Aeromancy'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Create Water',
+
+    castingTime: "one minute",
+    effect: `
+      You create up to ten gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
+      You must create a minimum of one ounce of water in each location.
+      % Tiny body of water is 1 cubic foot = 7.5 gallons
+      This generally means that you can create a single Tiny body of water.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      3: 'The volume created increases to twenty gallons.',
+      // Small body of water is 2.5^3 = ~15.5 cubic feet = ~120 gallons
+      4: 'The volume created increases to fifty gallons. This generally means that you can create a Small body of water by performing the ritual twice.',
+      6: 'The volume created increases to one hundred gallons.',
+    },
+    spheres: ['Aquamancy', 'Fabrication'],
+    tags: ['Creation'],
+  },
+  {
+    name: 'Chill Air',
+
+    castingTime: "one minute",
+    effect: `
+      The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
+      You cannot reduce the temperature below 0 degrees in this way.
+      This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
+    `,
+    roles: ['narrative'],
+    scaling: {
+      3: 'The maximum temperature change increases to 25 degrees.',
+      5: 'The area increases to a \\hugearea radius.',
+      7: 'The maximum temperature change increases to 30 degrees.',
+    },
+    rank: 1,
+    spheres: ['Cryomancy'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Magnetize',
+
+    castingTime: "one minute",
+    effect: `
+      Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
+      It pulls itself toward metal objects within 1 foot of it.
+      Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
+      Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      3: `The maximum size increases to Medium.`,
+      5: `The maximum size increases to Large.`,
+      7: `The maximum size increases to Huge.`,
+    },
+    spheres: ['Electromancy'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Sculpt Appearance',
+
+    castingTime: "one minute",
+    functionsLike: {
+      abilityType: 'ability',
+      exceptThat: `
+        you gain a +4 bonus to the Disguise check (see \\pcref{Disguise}).
+      `,
+      name: 'change appearance',
+    },
+    rank: 1,
+    roles: ['narrative'],
+    sphereEffects: {
+      Photomancy: `
+        You can only accomplish changes that would be possible with makeup, paint, and dye.
+        You cannot make structural changes to your face, equipment, and so on.
+        The ritual gains the \\atVisual tag.
+      `,
+      Polymorph: `
+        You cannot change the appearance of your equipment.
+        This is a physical change to your body, so no amount of inspection will reveal your true form.
+        A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
+      `,
+    },
+    tags: ['Sustain (attuneable, minor)'],
+    spheres: ['Photomancy', 'Polymorph'],
+  },
+  {
+    name: 'Malleable Sculpt Appearance',
+
+    castingTime: "one minute",
+    functionsLike: {
+      exceptThat: `
+        you can change the nature of the disguise as a \\glossterm{minor action}.
+      `,
+      name: 'sculpt appearance',
+    },
+    rank: 4,
+    roles: ['narrative'],
+    tags: ['Sustain (attuneable, minor)'],
+    spheres: ['Photomancy', 'Polymorph'],
+  },
+  {
+    name: 'Alter Object',
+
+    castingTime: "one minute",
+    effect: `
+      Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
+      You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
+      The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
+
+      Each time you perform this ritual, you can accomplish work that would take up to one minute with a normal Craft check.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      3: `The amount of work you accomplish with the spell increases to two minutes.`,
+      5: `The amount of work you accomplish with the spell increases to three minutes.`,
+      7: `The amount of work you accomplish with the spell increases to five minutes.`,
+    },
+    sphereEffects: {
+      Cryomancy: `
+        The target must be ice or water.
+        If you choose water, it becomes ice during the ritual.
+      `,
+      Terramancy: "The target must be a body of earth or unworked stone.",
+      Verdamancy: `
+        The target must be a living plant rather than an object.
+        As long as the plant's new shape is structurally sound and conducive to life, this reshaping does not harm the plant.
+        It will continue growing as if it had always had its new shape.
+      `,
+    },
+    spheres: ['Cryomancy', 'Polymorph', 'Terramancy'],
+  },
+  {
+    name: 'Heat Air',
+
+    castingTime: "one minute",
+    effect: `
+      The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
+      You cannot increase the temperature above 100 degrees in this way.
+      This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      3: 'The maximum temperature change increases to 25 degrees.',
+      5: 'The area increases to a \\hugearea radius.',
+      7: 'The maximum temperature change increases to 30 degrees.',
+    },
+    type: 'Attune',
+    spheres: ['Pyromancy'],
+  },
+  {
+    name: 'Reveal Truth',
+
+    castingTime: "one minute",
+    effect: `
+      You may reroll one Knowledge check you made within the past ten minutes.
+      You can only reroll any individual Knowledge check once with this ritual.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    spheres: ['Revelation'],
+  },
+  {
+    name: 'Darklantern',
+
+    castingTime: "one minute",
+    effect: `
+      Choose one \\glossterm{unattended}, nonmagical object that is Small or smaller within \\shortrange.
+      The object emits \\glossterm{shadowy illumination} in a \\smallarea radius.
+      It illuminates dark areas, but does not suppress brighter light.
+      Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      3: `You can increase the radius to a \\medarea radius.`,
+      5: `You can increase the radius to a \\largearea radius.`,
+      7: `You can increase the radius to a \\hugearea radius.`,
+    },
+    tags: ['Sustain (attuneable, minor)'],
+    spheres: ['Umbramancy'],
+  },
 ];
