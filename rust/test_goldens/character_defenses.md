@@ -142,9 +142,9 @@ HP/DR/Total: 39 / 20 / 59
 Points / Self-hit: 64 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 14 / 8 / 8 / 15 / 8
+A/B/F/R/M: 13 / 8 / 8 / 14 / 8
 HP/DR/Total: 26 / 20 / 46
-Points / Self-hit: 67 / 50%
+Points / Self-hit: 64 / 60%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 10 / 8 / 10 / 11 / 15

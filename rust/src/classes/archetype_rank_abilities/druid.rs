@@ -232,26 +232,6 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        RankAbility {
-            complexity: 1,
-            name: "Nature Spells+",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional nature spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Nature Spells+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional nature spell.
-            ",
-            modifiers: None,
-        },
     ]
 }
 
@@ -367,7 +347,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 3,
+            complexity: 4,
             name: "Wild Aspects",
             is_magical: true,
             rank: 1,
@@ -588,7 +568,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
         },
         // TODO: damage math
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Shifting Claw",
             is_magical: false,
             rank: 3,

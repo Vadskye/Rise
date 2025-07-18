@@ -32,26 +32,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        RankAbility {
-            complexity: 1,
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
     ]
 }
 
@@ -233,7 +213,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Miracle",
             is_magical: true,
             rank: 5,
@@ -294,7 +274,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
 pub fn healer<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Divine Aid",
             is_magical: true,
             rank: 1,
@@ -350,7 +330,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Vital Restoration",
             is_magical: true,
             rank: 3,
@@ -393,7 +373,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Revivify",
             is_magical: true,
             rank: 6,
@@ -416,7 +396,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         // Brief stun is 1.4 EA, so we would normally get a r1 area.
         // As a class feature, this can get +1 rank, so it can affect a r3 area.
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Denounce the Heathens",
             is_magical: false,
             rank: 1,
@@ -465,7 +445,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         // Assume that it typically affects two people, and anything more than that is a
         // bonus. Normal healing ability would be dr4, so use half of that (where possible).
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Bless the Worthy",
             is_magical: false,
             rank: 3,
@@ -501,7 +481,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         // Brief panic is r6, and frightened as a condition is r3. Smashing them together is
         // tricky, but we can just call that the magic of a class ability.
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Condemn the Fearful",
             is_magical: false,
             rank: 5,
@@ -520,7 +500,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Convert the Irresolute",
             is_magical: false,
             rank: 7,

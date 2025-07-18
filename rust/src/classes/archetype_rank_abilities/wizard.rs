@@ -166,26 +166,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Arcane Spells+",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional arcane spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Arcane Spells+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional arcane spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
             name: "Mage Armor",
             is_magical: true,
             rank: 1,
