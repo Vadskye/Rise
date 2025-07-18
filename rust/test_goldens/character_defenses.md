@@ -186,7 +186,7 @@ Points / Self-hit: 94 / 20%
 ### Paladin Shield
 A/B/F/R/M: 14 / 16 / 15 / 10 / 14
 HP/DR/Total: 98 / 64 / 162
-Points / Self-hit: 83 / 40%
+Points / Self-hit: 83 / 50%
 
 ### Ranger Longbow
 A/B/F/R/M: 16 / 11 / 12 / 17 / 10
