@@ -49,7 +49,7 @@ Fighter Shield      : 6.00
 Monk Kama           : 6.25
 Paladin Shield      : 5.50
 Ranger Longbow      : 3.75
-Rogue Smallsword    : 4.00
+Rogue Smallsword    : 3.25
 Sorcerer Dexterity  : 3.00
 Wizard Perception   : 2.50
 Brute               : 3.25
@@ -146,7 +146,7 @@ Fighter Shield      : 9.00
 Monk Kama           : 8.50
 Paladin Shield      : 7.50
 Ranger Longbow      : 5.25
-Rogue Smallsword    : 5.50
+Rogue Smallsword    : 4.75
 Sorcerer Dexterity  : 4.00
 Wizard Perception   : 2.75
 Brute               : 4.50
@@ -243,7 +243,7 @@ Fighter Shield      : 12.00
 Monk Kama           : 12.75
 Paladin Shield      : 10.75
 Ranger Longbow      : 7.25
-Rogue Smallsword    : 7.75
+Rogue Smallsword    : 6.50
 Sorcerer Dexterity  : 6.00
 Wizard Perception   : 4.25
 Brute               : 6.50
@@ -340,7 +340,7 @@ Fighter Shield      : 10.25
 Monk Kama           : 10.25
 Paladin Shield      : 9.50
 Ranger Longbow      : 6.25
-Rogue Smallsword    : 6.50
+Rogue Smallsword    : 5.50
 Sorcerer Dexterity  : 5.75
 Wizard Perception   : 4.75
 Brute               : 5.75
@@ -534,7 +534,7 @@ Fighter Shield      : 7.00
 Monk Kama           : 7.00
 Paladin Shield      : 6.50
 Ranger Longbow      : 4.50
-Rogue Smallsword    : 4.50
+Rogue Smallsword    : 3.75
 Sorcerer Dexterity  : 4.00
 Wizard Perception   : 3.25
 Brute               : 4.00

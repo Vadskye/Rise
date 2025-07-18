@@ -8,7 +8,7 @@ use crate::skills::{KnowledgeSubskill, Skill};
 pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Sneak Attack",
             is_magical: false,
             rank: 1,
@@ -105,18 +105,16 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Hide in Plain Sight",
+            name: "Assassin's Grace",
             is_magical: false,
             rank: 4,
             description: r"
-                You can use the \textit{hide} ability without moving in a way that causes observers to lose sight of you (see \pcref{Stealth}).
-                This does not remove the bonus that observers receive if you have no cover or concealment at all.
-                After you hide in this way, you \glossterm{briefly} cannot do so again.
+                You gain a \plus1 bonus to your Dexterity.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Assassination",
             is_magical: false,
             rank: 5,
@@ -435,16 +433,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Bardic Performances+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional bardic performance.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 0,
             name: "Bardic Lore",
             is_magical: false,
@@ -477,34 +465,15 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             )]),
         },
         RankAbility {
-            complexity: 1,
-            name: "Musical Tolerance",
-            is_magical: false,
-            rank: 2,
-            description: r"
-                You are \impervious to \abilitytag{Auditory} attacks.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 0,
-            name: "Musical Tolerance+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                You are \glossterm{immune} to \abilitytag{Auditory} attacks.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Bardic Training",
+            name: "Rhythm of War",
             is_magical: false,
             rank: 3,
             description: r"
-                You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                You gain a \plus1 bonus to your \glossterm{power}.
+                If you know at least five bardic performances, this bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Resource(Resource::TrainedSkill, 1)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 2,
@@ -517,6 +486,26 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Once per round, you can \glossterm{sustain} one bardic performance as a \glossterm{free action} if it would normally require a \glossterm{minor action}.
                 You cannot sustain multiple instances of the same performance, but you can sustain two different performances.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Critical Eye",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You are \impervious to \abilitytag{Visual} attacks.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Steady Beat",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You are \trait{immune} to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },
@@ -567,8 +556,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional trick maneuver.
-                In addition, you gain access to rank 3 trick maneuvers.
+                You gain access to rank 3 trick maneuvers.
             ",
             modifiers: None,
         },
@@ -667,21 +655,81 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Dabbler+",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain an additional \glossterm{insight point}.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::InsightPoint, 1)]),
-        },
-        RankAbility {
-            complexity: 1,
             name: "Skill Exemplar",
             is_magical: false,
             rank: 2,
             description: r"
                 You gain a \plus1 bonus to all skills.
+            ",
+            modifiers: Some(vec![
+                Modifier::Resource(Resource::TrainedSkill, 1),
+                Modifier::Skill(Skill::Awareness, 1),
+                Modifier::Skill(Skill::Balance, 1),
+                Modifier::Skill(Skill::Climb, 1),
+                Modifier::Skill(Skill::Craft, 1),
+                Modifier::Skill(Skill::CreatureHandling, 1),
+                Modifier::Skill(Skill::Deception, 1),
+                Modifier::Skill(Skill::Deduction, 1),
+                Modifier::Skill(Skill::Devices, 1),
+                Modifier::Skill(Skill::Disguise, 1),
+                Modifier::Skill(Skill::Endurance, 1),
+                Modifier::Skill(Skill::Flexibility, 1),
+                Modifier::Skill(Skill::Intimidate, 1),
+                Modifier::Skill(
+                    Skill::Knowledge(vec![
+                        KnowledgeSubskill::Arcana,
+                        KnowledgeSubskill::Dungeoneering,
+                        KnowledgeSubskill::Engineering,
+                        KnowledgeSubskill::Items,
+                        KnowledgeSubskill::Local,
+                        KnowledgeSubskill::Nature,
+                        KnowledgeSubskill::Planes,
+                        KnowledgeSubskill::Religion,
+                    ]),
+                    1,
+                ),
+                Modifier::Skill(Skill::Medicine, 1),
+                Modifier::Skill(Skill::Perform, 1),
+                Modifier::Skill(Skill::Persuasion, 1),
+                Modifier::Skill(Skill::Profession, 1),
+                Modifier::Skill(Skill::Ride, 1),
+                Modifier::Skill(Skill::SleightOfHand, 1),
+                Modifier::Skill(Skill::SocialInsight, 1),
+                Modifier::Skill(Skill::Stealth, 1),
+                Modifier::Skill(Skill::Survival, 1),
+                Modifier::Skill(Skill::Swim, 1),
+            ]),
+        },
+        RankAbility {
+            complexity: 2,
+            name: "Arcane Dilettante",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You can use wands as if you were able to cast arcane spells.
+                Your maximum spell rank is equal to your rank in this archetype.
+                In addition, you gain an additional \glossterm{attunement point}.
+                You can only use this attunement point to \glossterm{attune} to magic wands.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 2,
+            name: "Well Rounded",
+            is_magical: true,
+            rank: 6,
+            description: r"
+                You gain a \plus1 bonus to all of your defenses that are lower than your highest defense.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Skill Exemplar+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                The skill bonus increases to \plus2.
                 In addition, using the \ability{desperate exertion} ability to affect a skill check only increases your \glossterm{fatigue level} by one.
             ",
             modifiers: Some(vec![
@@ -725,104 +773,9 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Skill Exemplar+",
-            is_magical: false,
-            rank: 5,
-            description: r"
-                The skill bonus increases to \plus3.
-            ",
-            modifiers: Some(vec![
-                Modifier::Resource(Resource::TrainedSkill, 2),
-                Modifier::Skill(Skill::Awareness, 2),
-                Modifier::Skill(Skill::Balance, 2),
-                Modifier::Skill(Skill::Climb, 2),
-                Modifier::Skill(Skill::Craft, 2),
-                Modifier::Skill(Skill::CreatureHandling, 2),
-                Modifier::Skill(Skill::Deception, 2),
-                Modifier::Skill(Skill::Deduction, 2),
-                Modifier::Skill(Skill::Devices, 2),
-                Modifier::Skill(Skill::Disguise, 2),
-                Modifier::Skill(Skill::Endurance, 2),
-                Modifier::Skill(Skill::Flexibility, 2),
-                Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(
-                    Skill::Knowledge(vec![
-                        KnowledgeSubskill::Arcana,
-                        KnowledgeSubskill::Dungeoneering,
-                        KnowledgeSubskill::Engineering,
-                        KnowledgeSubskill::Items,
-                        KnowledgeSubskill::Local,
-                        KnowledgeSubskill::Nature,
-                        KnowledgeSubskill::Planes,
-                        KnowledgeSubskill::Religion,
-                    ]),
-                    2,
-                ),
-                Modifier::Skill(Skill::Medicine, 2),
-                Modifier::Skill(Skill::Perform, 2),
-                Modifier::Skill(Skill::Persuasion, 2),
-                Modifier::Skill(Skill::Profession, 2),
-                Modifier::Skill(Skill::Ride, 2),
-                Modifier::Skill(Skill::SleightOfHand, 2),
-                Modifier::Skill(Skill::SocialInsight, 2),
-                Modifier::Skill(Skill::Stealth, 2),
-                Modifier::Skill(Skill::Survival, 2),
-                Modifier::Skill(Skill::Swim, 2),
-            ]),
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Skill Exemplar+",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                The skill bonus increases to \plus5.
-                In addition, once per \glossterm{short rest} you can use the \ability{desperate exertion} ability to affect a skill check without increasing your fatigue level.
-            ",
-            modifiers: Some(vec![
-                Modifier::Resource(Resource::TrainedSkill, 2),
-                Modifier::Skill(Skill::Awareness, 2),
-                Modifier::Skill(Skill::Balance, 2),
-                Modifier::Skill(Skill::Climb, 2),
-                Modifier::Skill(Skill::Craft, 2),
-                Modifier::Skill(Skill::CreatureHandling, 2),
-                Modifier::Skill(Skill::Deception, 2),
-                Modifier::Skill(Skill::Deduction, 2),
-                Modifier::Skill(Skill::Devices, 2),
-                Modifier::Skill(Skill::Disguise, 2),
-                Modifier::Skill(Skill::Endurance, 2),
-                Modifier::Skill(Skill::Flexibility, 2),
-                Modifier::Skill(Skill::Intimidate, 2),
-                Modifier::Skill(
-                    Skill::Knowledge(vec![
-                        KnowledgeSubskill::Arcana,
-                        KnowledgeSubskill::Dungeoneering,
-                        KnowledgeSubskill::Engineering,
-                        KnowledgeSubskill::Items,
-                        KnowledgeSubskill::Local,
-                        KnowledgeSubskill::Nature,
-                        KnowledgeSubskill::Planes,
-                        KnowledgeSubskill::Religion,
-                    ]),
-                    2,
-                ),
-                Modifier::Skill(Skill::Medicine, 2),
-                Modifier::Skill(Skill::Perform, 2),
-                Modifier::Skill(Skill::Persuasion, 2),
-                Modifier::Skill(Skill::Profession, 2),
-                Modifier::Skill(Skill::Ride, 2),
-                Modifier::Skill(Skill::SleightOfHand, 2),
-                Modifier::Skill(Skill::SocialInsight, 2),
-                Modifier::Skill(Skill::Stealth, 2),
-                Modifier::Skill(Skill::Survival, 2),
-                Modifier::Skill(Skill::Swim, 2),
-            ]),
-        },
-        RankAbility {
-            complexity: 0,
             name: "Versatile Expertise",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to an attribute of your choice.
             ",
@@ -833,12 +786,15 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Versatile Expertise+",
             is_magical: false,
-            rank: 6,
+            rank: 7,
             description: r"
-                You gain a \plus1 bonus to a different attribute of your choice.
+                You gain a \plus1 bonus to two attributes of your choice.
             ",
             // Arbitrarily choose Intelligence
-            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
+            modifiers: Some(vec![
+                Modifier::Attribute(Attribute::Intelligence, 1),
+                Modifier::Attribute(Attribute::Perception, 1),
+            ]),
         },
     ]
 }
@@ -846,95 +802,36 @@ pub fn jack_of_all_trades<'a>() -> Vec<RankAbility<'a>> {
 pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
-            complexity: 1,
-            name: "Confound",
-            is_magical: false,
+            complexity: 2,
+            name: "Fool Them Once",
+            is_magical: true,
             rank: 1,
             description: r"
-                \begin{activeability}{Confound}[\abilitytag{Compulsion}]
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make an attack vs. Mental against a creature within \shortrange.
-                    Your \glossterm{accuracy} is equal to your Deception skill.
-                    \hit The target it is compelled to spend its next \glossterm{standard action} doing nothing at all.
-                    After it takes this standard action, it becomes immune to this effect until it finishes a \glossterm{short rest}.
-
-                    \rankline
-                    \rank{3} You can target an additional creature within range.
-                    \rank{5} The range increases to \longrange.
-                    \rank{7} The maximum number of targets increases to 3.
-                \end{activeability}
+                Once per \glossterm{short rest}, when you make an attack or check against a creature, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against that creature.
+                You must use this ability before making the attack or check.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Silver Tongue",
+            is_magical: true,
+            rank: 2,
+            description: r"
+                You gain a \plus2 bonus to your Deception, Persuasion, and Social Insight skills.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 2,
-            name: "Trick Magic Device",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You can use wands as if you were able to cast arcane spells.
-                Your maximum spell rank is equal to your rank in this archetype.
-                In addition, you gain an additional \glossterm{attunement point}.
-                You can only use this attunement point to \glossterm{attune} to magic wands or apparel items.
-            ",
-            modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Trick Magic Device+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You can use wands as if you were able to cast spells from all \glossterm{magic sources}, not just arcane spells.
-                In addition, you gain a \plus1 \glossterm{accuracy} bonus with abilities granted to you by magic items.
-                This includes spells cast from wands.
-                However, it does not include ordinary strikes or maneuvers that simply use a magic weapon.
-            ",
-            modifiers: None,
-        },
-        // Same extra damage as Sneak Attack, but with different restrictions.
-        RankAbility {
-            complexity: 1,
-            name: "Exploit Distraction",
-            is_magical: false,
-            rank: 3,
-            description: r"
-                \begin{activeability}{Exploit Distraction}
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make a \glossterm{strike}.
-                    For each of the following conditions that are met, the strike deals 1d10 \glossterm{extra damage}.
-                    \begin{raggeditemize}
-                        \item The target suffered a \glossterm{critical hit} from one of your \glossterm{allies} this round.
-                        \item The target gained a new \glossterm{condition} or \abilitytag{Curse} from one of your \glossterm{allies} this round.
-                            This does not apply if the creature was already suffering an identical condition or curse when it gained the new effect.
-                        \item The target is currently affected by your \ability{confound}, \ability{what's that over there}, or \ability{nothing is real} abilities.
-                    \end{raggeditemize}
-
-                    This extra damage stacks if multiple conditions are met.
-                    After you use this ability on a creature, you cannot deal it extra damage with this ability until it takes a \glossterm{short rest}.
-
-                    \rankline
-                    \rank{4} The extra damage increases to 2d8.
-                    \rank{5} The extra damage increases to 4d8.
-                    \rank{6} The extra damage increases to 6d8.
-                    \rank{7} The extra damage increases to 8d10.
-                \end{activeability}
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            complexity: 1,
             name: "What's That Over There",
             is_magical: false,
-            rank: 4,
+            rank: 3,
             description: r"
                 \begin{activeability}{What's That Over There}[\abilitytag{Compulsion}]
                     \abilityusagetime Standard action.
                     \rankline
                     Make a attack vs. Mental against a creature within \medrange.
-                    Your \glossterm{accuracy} is equal to your Deception skill.
                     In addition, choose a location on stable ground within range.
                     \hit As a \glossterm{brief} effect, the target is compelled to move to the location you chose if it can do so safely.
                     It must spend its \glossterm{movement} and \glossterm{standard action} to move to that location, or if it is already there, to do nothing except observe the location carefully.
@@ -942,23 +839,44 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
 
                     \rankline
-                    \rank{6} You can target an additional creature within range.
+                    You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 3.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Master of Deceit",
-            is_magical: false,
-            rank: 6,
+            complexity: 0,
+            name: "Slippery Mind",
+            is_magical: true,
+            rank: 4,
             description: r"
-                Whenever you make a Deception attack roll or check, you can \glossterm{reroll} once and keep the higher result.
+                You gain a \plus2 bonus to your Mental defense, and you are \impervious to \atEmotion attacks.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 1,
+            name: "Fool Them Twice",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You can use your \textit{fool them once} ability twice per \glossterm{short rest}.
+                However, after using that ability, you \glossterm{briefly} cannot use it again.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Silver Tongue+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus increases to \plus4.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 2,
             name: "Nothing Is Real",
             is_magical: false,
             rank: 7,
@@ -967,7 +885,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
-                    Your \glossterm{accuracy} is equal to your Deception skill.
                     \hit The target is \glossterm{briefly} convinced that nothing is real.
                     It is unable to take any actions and is \unaware of all attacks against it.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.

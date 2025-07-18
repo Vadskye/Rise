@@ -22,18 +22,18 @@ pub struct RankAbility<'a> {
     //  * universal statistical benefit (hp, global accuracy/power, attribute)
     //  * numerical upgrade to existing ability
     // 1:
-    //  * new standard action active ability
     //  * removal of a universal limitation (recover limit)
     //  * conditional defense (impervious)
     //  * statistical benefit with limited scope (Brawling, exotic weapons, accuracy with crits)
     //  * attunement point
     // 2:
-    //  * new minor action
-    //  * new optional triggered ability
+    //  * new standard action active ability
     //  * new stance (rage, possession)
     //  * new complex category of limited scope statistical benefits (metamagic, maneuver augments)
     //  * new spell from outside your mystic spheres, due to book diving
     // 3:
+    //  * new minor action
+    //  * new optional triggered ability
     //  * maneuvers
     // 4:
     //  * spells

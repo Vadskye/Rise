@@ -271,10 +271,10 @@ Power        : 13.60 = (25.0 dph * 0.40 hpr) + (25.0 dpc * 0.04 cpr) + (12.5 dpg
 Best attack: Generic Accuracy Bite
 
 #### Detailed attack results
-Accuracy     : 9.57 = (12.5 dph * 0.60 hpr) + (12.5 dpc * 0.07 cpr) + (6.2 dpg * 0.20 gpr) = 7.50 hdpr + 0.83 cdpr + 1.25 gdpr
-Certain      : 8.40 = (8.5 dph * 0.80 hpr) + (8.5 dpc * 0.09 cpr) + (4.2 dpg * 0.20 gpr) = 6.80 hdpr + 0.75 cdpr + 0.85 gdpr
-Extra        : 8.66 = (20.0 dph * 0.30 hpr) + (20.0 dpc * 0.03 cpr) + (10.0 dpg * 0.20 gpr) = 6.00 hdpr + 0.66 cdpr + 2.00 gdpr
-Power        : 8.05 = (25.0 dph * 0.20 hpr) + (25.0 dpc * 0.02 cpr) + (12.5 dpg * 0.20 gpr) = 5.00 hdpr + 0.55 cdpr + 2.50 gdpr
+Accuracy     : 10.96 = (12.5 dph * 0.70 hpr) + (12.5 dpc * 0.08 cpr) + (6.2 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.25 gdpr
+Certain      : 8.92 = (8.5 dph * 0.90 hpr) + (8.5 dpc * 0.10 cpr) + (4.2 dpg * 0.10 gpr) = 7.65 hdpr + 0.84 cdpr + 0.42 gdpr
+Extra        : 10.88 = (20.0 dph * 0.40 hpr) + (20.0 dpc * 0.04 cpr) + (10.0 dpg * 0.20 gpr) = 8.00 hdpr + 0.88 cdpr + 2.00 gdpr
+Power        : 10.82 = (25.0 dph * 0.30 hpr) + (25.0 dpc * 0.03 cpr) + (12.5 dpg * 0.20 gpr) = 7.50 hdpr + 0.83 cdpr + 2.50 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Powerful Bite

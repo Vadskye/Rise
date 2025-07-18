@@ -154,26 +154,6 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        RankAbility {
-            complexity: 1,
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Divine Spells+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional divine spell.
-            ",
-            modifiers: None,
-        },
     ]
 }
 
@@ -257,7 +237,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Lay on Hands",
             is_magical: true,
             rank: 1,
@@ -365,7 +345,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
         // Here, we rely on the rest of the archetype to compensate for the raw power of smite,
         // with Zealous Fixation particularly helping low-accuracy paladins.
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Smite",
             is_magical: true,
             rank: 1,
@@ -391,7 +371,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Detect Anathema",
             is_magical: true,
             rank: 2,
@@ -433,7 +413,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Pass Judgment",
             is_magical: true,
             rank: 5,
@@ -465,7 +445,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            complexity: 2,
+            complexity: 3,
             name: "Zealous Pursuit",
             is_magical: true,
             rank: 7,

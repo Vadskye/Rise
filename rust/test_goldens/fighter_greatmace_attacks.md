@@ -268,13 +268,13 @@ Extra        : 14.94 = (19.5 dph * 0.60 hpr) + (19.5 dpc * 0.07 cpr) + (9.8 dpg 
 Power        : 15.78 = (29.0 dph * 0.40 hpr) + (29.0 dpc * 0.04 cpr) + (14.5 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 2.90 gdpr
 
 ### Defender: Rogue Smallsword
-Best attack: Generic Accuracy Greatmace
+Best attack: Extra Damage Greatmace
 
 #### Detailed attack results
-Accuracy     : 11.11 = (14.5 dph * 0.60 hpr) + (14.5 dpc * 0.07 cpr) + (7.2 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 1.45 gdpr
-Certain      : 9.88 = (10.0 dph * 0.80 hpr) + (10.0 dpc * 0.09 cpr) + (5.0 dpg * 0.20 gpr) = 8.00 hdpr + 0.88 cdpr + 1.00 gdpr
-Extra        : 10.61 = (19.5 dph * 0.40 hpr) + (19.5 dpc * 0.04 cpr) + (9.8 dpg * 0.20 gpr) = 7.80 hdpr + 0.86 cdpr + 1.95 gdpr
-Power        : 9.34 = (29.0 dph * 0.20 hpr) + (29.0 dpc * 0.02 cpr) + (14.5 dpg * 0.20 gpr) = 5.80 hdpr + 0.64 cdpr + 2.90 gdpr
+Accuracy     : 12.72 = (14.5 dph * 0.70 hpr) + (14.5 dpc * 0.08 cpr) + (7.2 dpg * 0.20 gpr) = 10.15 hdpr + 1.12 cdpr + 1.45 gdpr
+Certain      : 10.49 = (10.0 dph * 0.90 hpr) + (10.0 dpc * 0.10 cpr) + (5.0 dpg * 0.10 gpr) = 9.00 hdpr + 0.99 cdpr + 0.50 gdpr
+Extra        : 12.77 = (19.5 dph * 0.50 hpr) + (19.5 dpc * 0.06 cpr) + (9.8 dpg * 0.20 gpr) = 9.75 hdpr + 1.07 cdpr + 1.95 gdpr
+Power        : 12.56 = (29.0 dph * 0.30 hpr) + (29.0 dpc * 0.03 cpr) + (14.5 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 2.90 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Powerful Greatmace

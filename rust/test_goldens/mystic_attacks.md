@@ -224,9 +224,9 @@ Fort Bolt-   : 14.98 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.11 cpr) + (6.8 dpg 
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 9.52 = (17.5 dph * 0.40 hpr) + (17.5 dpc * 0.04 cpr) + (8.8 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 1.75 gdpr
+Armor Bolt   : 11.46 = (17.5 dph * 0.50 hpr) + (17.5 dpc * 0.06 cpr) + (8.8 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.75 gdpr
 Fort Bolt    : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
-Armor Bolt-  : 10.34 = (13.5 dph * 0.60 hpr) + (13.5 dpc * 0.07 cpr) + (6.8 dpg * 0.20 gpr) = 8.10 hdpr + 0.89 cdpr + 1.35 gdpr
+Armor Bolt-  : 11.84 = (13.5 dph * 0.70 hpr) + (13.5 dpc * 0.08 cpr) + (6.8 dpg * 0.20 gpr) = 9.45 hdpr + 1.04 cdpr + 1.35 gdpr
 Fort Bolt-   : 16.50 = (13.5 dph * 1.00 hpr) + (13.5 dpc * 0.22 cpr) + (6.8 dpg * 0.00 gpr) = 13.50 hdpr + 3.00 cdpr + 0.00 gdpr
 
 ### Defender: Sorcerer Dexterity
