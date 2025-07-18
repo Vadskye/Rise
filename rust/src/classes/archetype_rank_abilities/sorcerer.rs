@@ -438,7 +438,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         7 & On your first attack with the spell, it \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & When you first deal damage with the spell, you \glossterm{reroll} once and keep the higher result \\
                         9 & On your first attack roll with the spell, you \glossterm{reroll} once keep the higher result \\
-                        10 & During your next action, the spell \glossterm{repeats} \\
+                        10 & The extra damage from this ability is doubled this round \\
                     \end{dtabularx}
                 \end{columntable}
 
@@ -450,10 +450,9 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 % Use a slightly slower progression than normal for extra damage.
                 % At higher levels, a sorcerer has more tools to mitigate the downsides of wildspell, and the extra damage is strong.
                 \rank{3} The extra damage increases to 1d6.   % +27% damage
-                \rank{4} The extra damage increases to 1d8.   % +25% damage
-                \rank{5} The extra damage increases to 1d10.  % +42% damage, assuming double extra damage
-                \rank{6} The extra damage increases to 2d6.   % +39% damage, assuming double extra damage
-                \rank{7} The extra damage increases to 2d8.   % +52% damage, assuming double extra damage
+                \rank{5} The extra damage increases to 1d8.   % +35% damage, assuming double extra damage
+                \rank{6} The extra damage increases to 1d10.  % +30% damage, assuming double extra damage
+                \rank{7} The extra damage increases to 2d6.   % +27% damage, assuming double extra damage
             ",
             // TODO: define extra damage modifier for scaling
             modifiers: Some(vec![Modifier::Power(2)]),
@@ -485,8 +484,8 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         4 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
                         5 & The spell's area is doubled this round \\
                         6 & The spell's area is tripled this round \\
-                        7 & On your first attack with the spell, it \glossterm{chains} twice to the unaffected creatures that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you \glossterm{reroll} once and keep the higher result \\
+                        7 & On your first attack with the spell, it \glossterm{chains} once to the \glossterm{enemies} that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
+                        8 & The extra damage from this ability is doubled this round \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
                         10 & During your next action, the spell \glossterm{repeats} \\
                     \end{dtabularx}
