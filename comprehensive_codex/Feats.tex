@@ -162,8 +162,8 @@ They allow more distinct and unique character customization, but also increase g
           \magicalfeatref{Boongiver}                      & Spellcasting                     & Improve ability to cast spells on allies   & Magical           & \featpref{Boongiver}                        \\
           \magicalfeatref{Blood Magic}                    & Spellcasting, Con 2              & Spend hit points to improve magic          & Magical           & \featpref{Blood Magic}                      \\
           \magicalfeatref{Mental Magic}                   & Spellcasting, Wil 3              & Cast spells without words or gestures      & Magical           & \featpref{Mental Magic}                     \\
-          \magicalfeatref{Metacaster}                     & Spellcasting, Int 2              & Manipulate spell effects in creative ways  & Magical           & \featpref{Metacaster}                       \\
           \magicalfeatref{Mystic Archer}                  & Spellcasting                     & Imbue projectiles with magic               & Magical           & \featpref{Mystic Archer}                    \\
+          \magicalfeatref{Mystic Synthesist}              & Spellcasting, Int 3              & Manipulate spell effects in creative ways  & Magical           & \featpref{Mystic Synthesist}                       \\
           \magicalfeatref{Prepared Spellcasting}          & Spellcasting, Int 3              & Prepare additional spells each day         & Magical           & \featpref{Prepared Spellcasting}            \\
           \magicalfeatref{Spellsword}                     & Spellcasting                     & Fight with sword and spell together        & Magical           & \featpref{Spellsword}                       \\
           \magicalfeatref{Sphere Focus: Aeromancy}        & \sphere{Aeromancy} sphere        & Improve casting with chosen sphere         & Magical           & \featpref{Sphere Focus: Aeromancy}          \\
@@ -1373,38 +1373,6 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[18]{Potent Mind\plus} The magical power bonus from your \textit{potent mind} ability increases to \plus2.
   \end{magicalfeat}
 
-  \begin{magicalfeat}{Metacaster}{Casting, Magical}
-    \featpre \ability{Metamagic} ability, Intelligence 2.
-
-    \magicalff[1]{Sphere Access} You gain access to an additional \glossterm{mystic sphere}.
-    Each \glossterm{mystic sphere} has a set of \glossterm{spells} associated with it.
-    You automatically learn all \glossterm{cantrips} from any mystic sphere you have access to.
-    % TODO: wording
-    If you have multiple \glossterm{magic sources}, you can cast spells from that sphere with any magic source that the mystic sphere belongs to.
-    w
-    \magicalff[6]{Adaptive Metamagic} Choose one spell you know.
-    Whenever you cast that spell, you may apply one \textit{metamagic} ability of your choice to that spell.
-    You can choose any of the metamagic abilities offered by your class which are valid for that spell.
-    This does not allow you to exceed the normal maximum of two metamagic abilities on a single spell.
-
-    \magicalff[12]{Spell Fusion}
-    \begin{magicalactiveability}{Spell Fusion}
-      \abilityusagetime Standard action.
-      \abilitycost You are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
-      \rankline
-      Choose two spells that you know which do not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
-      You cast both spells simultaneously.
-      Both spells that you fuse in this way must have the same area shape, such as a cone or sphere, and targeting restrictions, such as affecting only enemies or living creatures.
-      If one spell affects a strictly larger area or a strictly larger number of targets than the other, you must use the smaller of the two areas or target counts.
-      You must choose the same targets and area for both spells, if applicable.
-      Roll the attack roll and damage for each spell separately.
-      You cannot use the \ability{desperate exertion} ability to affect either spell.
-    \end{magicalactiveability}
-
-    \magicalff[18]{Adaptive Metamagic\plus} You can choose an additional spell you know with your \textit{adaptive metamagic} ability.
-    In addition, you can apply two metamagic abilities to your chosen spells, rather than only one.
-  \end{magicalfeat}
-
   \begin{magicalfeat}{Mystic Archer}{Casting, Magical}
     \featpre Access to a \glossterm{mystic sphere}.
 
@@ -1435,11 +1403,49 @@ They allow more distinct and unique character customization, but also increase g
     This does not prevent your attacks from failing for other reasons.
 
     \magicalff[12]{Imbue Projectile\plus} Each time you attune to your \textit{imbue projectile} ability, you can imbue two different projectiles with two different spells.
-    Your attunement to the ability ends when either spell takes effect.
+    Your attunement to the ability ends when both spells have taken effect.
 
     \magicalff[18]{Phasing Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons are unaffected by \glossterm{cover}.
     In addition, you can ignore all physical obstacles in single one-foot span.
     This can allow you to fire projectiles through creatures or solid walls, though it does not grant you the ability to see through a wall.
+  \end{magicalfeat}
+
+  \begin{magicalfeat}{Mystic Synthesist}{Casting, Magical}
+    \featpre Access to a \glossterm{mystic sphere}, Intelligence 3.
+
+    \magicalff[1]{Invented Spells} Choose one spell you know.
+    That spell becomes permanently altered by one of the following inventions.
+    You can alter an additional spell you know by spending one \glossterm{insight point} per spell.
+    Each spell can only have one invention.
+    Whenever you learn a new spell, you may change which specific spells your inventions affect.
+    \begin{raggeditemize}
+      \item Brutish: You use your Strength in place of your Willpower to determine your \glossterm{magical power} with the spell.
+      \item Chaining: The spell \glossterm{chains} once.
+        You can only apply this augment to \glossterm{targeted} damaging spells.
+      \item Delayed: The spell does not take effect immediately.
+        Instead, it \glossterm{repeats} during your next action.
+      \item Dominating: You use your Willpower in place of your Perception to determine your \glossterm{accuracy} with the spell.
+        However, when you cast the spell, you take a \minus2 penalty to your Mental defense that round as a \atSwift effect.
+        You can only apply this augment to spells that make an attack against Mental defense.
+      \item Finesse: You use your Dexterity in place of your Perception to determine your \glossterm{accuracy} with the spell.
+        However, when you cast the spell, you take a \minus1 penalty to your Armor and Reflex defenses that round as a \atSwift effect.
+      \item Point Blank: You gain a \plus1 \glossterm{enhancement bonus} to accuracy with the spell against each target that is within half the spell's maximum \glossterm{range} from you.
+        You can only apply this augment to \glossterm{targeted} spells with a defined range.
+      \item Sanguine: You use your Constitution in place of your Willpower to determine your \glossterm{magical power} with the spell.
+        However, when you cast the spell, you lose hit points equal to the spell's rank.
+      \item Seeking: The spell ignores \glossterm{cover} and \glossterm{concealment}.
+      \item Sympathetic: The spell includes you as a target, and you gain a \plus2 \glossterm{enhancement bonus} to accuracy with the spell.
+        You can only apply this augment to \glossterm{targeted} damaging spells.
+    \end{raggeditemize}
+
+    \magicalff[6]{Prolific Inventor} You gain an additional \glossterm{insight point}.
+
+    \magicalff[12]{Prolific Inventor\plus} You gain an additional \glossterm{insight point}.
+
+    \magicalff[18]{Magnum Opus} Choose one \textit{invented spell} you know.
+    You can apply an additional invention to that spell.
+    You cannot apply the same invention to that spell twice.
+    Whenever you learn a new spell, you may change which spell is your magnum opus.
   \end{magicalfeat}
 
   \begin{feat}{Null}{General}
@@ -1478,7 +1484,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \smallarea radius from you uses a \magical ability as a standard action, the ability has a 20\% chance to fail with no effect.
     If that enemy's maximum rank is less than your maximum rank, this failure chance increases to 50\%.
-    This cannot cause passive or triggered abilities to fail.
+    This cannot cause passive abilities, triggered abilities, or \glossterm{elite actions} to fail.
+    Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
 
     \ff[12]{Purge Magic}
     \begin{activeability}{Purge Magic}
@@ -1782,33 +1789,33 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Spellsword}{Magical, Spell}
     \featpre Access to a \glossterm{mystic sphere}.
 
-    % TODO: it would be nice if spellswords didn't dump Strength
-    \magicalff[1]{Magical Strikes} Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
+    \magicalff[1]{Magical Strikes} 
+    Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
     When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
+    % TODO: wording / placement is a little janky, but so is giving this feat three separate level 1 abilities
+    In addition, if your Strength is positive, you add half your Strength to your \glossterm{magical power} to determine your total power with all magical \glossterm{strikes}.
 
-    \ff[1]{Martial Implement} You can cast spells using a non-\weapontag{Projectile} weapon as if it were an implement (see \pcref{Magic Implements}).
+    \ff[1]{Martial Implement} You can cast spells using a non-\weapontag{Projectile} weapon you hold in at least one hand as if it was an implement (see \pcref{Magic Implements}).
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}
-      \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
+      \abilitycost You \glossterm{briefly} cannot use this ability again.
       \abilityusagetime Standard action.
       \rankline
       You cast a spell and make a melee \glossterm{strike}, in either order.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
       The spell and the strike must affect completely different targets, with no overlap between their targets or areas (if any).
-      You cannot use the \ability{desperate exertion} ability to affect the strike or the spell.
 
-      % TODO: lame scaling
       \rankline
-      \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
-      \featlevel{12} The accuracy bonus increases to \plus2.
-      \featlevel{15} The accuracy bonus increases to \plus4.
-      \featlevel{18} The strike deals double damage.
+      \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
+      \featlevel{12} The extra damage increases to 1d6 \add half your \glossterm{power}.
+      \featlevel{15} The extra damage increases to 2d6 \add half your \glossterm{power}.
+      \featlevel{18} The extra damage increases to 3d6 \add your \glossterm{power}.
     \end{magicalactiveability}
 
-    \magicalff[12]{Spellsword Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus2 accuracy bonus with spells against each damaged creature.
+    \magicalff[12]{Martial Conduit} Whenever you deal damage with a melee \glossterm{strike}, you \glossterm{briefly} gain a \plus1 accuracy bonus with spells against each damaged creature.
 
-    \magicalff[18]{Spellsword Conduit\plus} The accuracy bonus increases to \plus4.
+    \magicalff[18]{Martial Conduit\plus} The accuracy bonus increases to \plus2.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Spellwarped}{General, Magical}
@@ -2064,9 +2071,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Photomancy}{Casting, Magical}
     \featpre Access to the \sphere{Photomancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Scour Vision} Whenever you cause a creature to become \dazzled with a spell from the \sphere{Photomancy} \glossterm{mystic sphere}, you \glossterm{briefly} become \trait{invisible} to that creature.
-    This works even if the creature was already dazzled.
-    The creature can still see everything other than you normally.
+    \magicalff[1]{The Light Reveals All} You gain a \plus2 bonus to your Awareness and Social Insight skills.
+    In addition, you gain a \plus1 bonus to your Reflex defense.
 
     \magicalff[6]{Hardlight Photomancy} You learn an additional spell from the \sphere{Photomancy} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
@@ -2079,10 +2085,8 @@ They allow more distinct and unique character customization, but also increase g
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
-    \magicalff[12]{Solar Beacon} Whenever you make a creature lose \glossterm{hit points} with a spell from the \sphere{Photomancy} mystic sphere, that creature suffers consequences as if it had been struck by a beam of natural sunlight.
-    This can be deadly for some creatures.
-
-    \magicalff[12]{Unwavering Sight} You are immune to being \dazzled and \blinded.
+    \magicalff[12]{Luminous Precision} You gain a \plus1 accuracy bonus against creatures that are in \glossterm{brilliant illumination}.
+    This only applies against creatures that were in brilliant illumination before you used your ability, so simply using an ability that provides brilliant illumination does not grant this bonus.
 
     \magicalff[18]{Piercing Sight} You can see through solid objects and spell effects up to one inch thick.
     You can perceive the existence of obstacles thinner than that, but they do not inhibit your sight.
@@ -2275,7 +2279,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[1]{Mystic Power} You gain a \plus1 bonus to your \glossterm{magical power}.
 
-    \magicalff[6]{Invented Spell} You learn an additional spell from any mystic sphere, even a mystic sphere you do not have access to.
+    \magicalff[6]{Thaumatic Spell} You learn an additional spell from any mystic sphere, even a mystic sphere you do not have access to.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     When you learn the spell, you can remove one of the following tags from that spell: \atAcid, \atAuditory, \atCold, \atCompulsion, \atEmotion, \atElectricity, \atFire, or \atVisual.
     You can also add one of those tags to the spell.
@@ -2329,20 +2333,25 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Umbramancy}{Casting, Magical}
     \featpre Access to the \sphere{Umbramancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Lightbane} You can cast the \spell{passing shadow} \glossterm{cantrip} from the Umbramancy mystic sphere as a \glossterm{minor action}.
-    When you do, you ignore all of its rank upgrades.
+    \magicalff[1]{The Dark Conceals Me} You gain a \plus2 bonus to your Sleight of Hand and Stealth skills.
+    In addition, you gain a \plus1 bonus to your Reflex defense.
 
     \magicalff[6]{Shadowspell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    You gain a \plus2 accuracy bonus with that spell against \glossterm{shadowed} targets.
+    You gain a \plus1 accuracy bonus with that spell against \glossterm{shadowed} targets.
     This stacks with any existing bonus the spell has against shadowed targets.
 
     When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
 
     \magicalff[12]{Shadow Jumper} While you are \glossterm{shadowed}, the distance you can teleport with spells from the \sphere{Umbramancy} mystic sphere is doubled.
 
-    \magicalff[18]{Lightbane\plus} When you cast your \textit{suppress light} cantrip, you can choose to completely block all light in the area instead of dimming it to be \glossterm{shadowy illumination}.
-    If you do, the maximum area is reduced to a \medarea radius, and you \glossterm{briefly} cannot cast it in this way again.
+    \magicalff[18]{Dark Soul} You suppress \glossterm{brilliant illumination} in a \medarea radius around you.
+    Light suppressed in this way becomes no brighter than \glossterm{bright illumination}.
+    You can suppress or resume this effect as a \glossterm{free action} once per round.
+
+    \magicalff[18]{Evasive Shade} While you are \glossterm{shadowed}, you take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
+    This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
+    If you have the \textit{evasion} monk or rogue ability with the same effect as this ability, you also gain a \plus2 bonus to your Armor and Reflex defenses against area attacks.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Verdamancy}{Casting, Magical}
