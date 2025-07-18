@@ -328,13 +328,18 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // Normal / infused progression:
+        // R1: +4 / +3
+        // R3: +8 / +9
+        // R5: +16 / +15
+        // R7: +32 / +35
         RankAbility {
             complexity: 1,
             name: "Arcane Infusion",
             is_magical: true,
-            rank: 1,
+            rank: 2,
             description: r"
-                You gain an \glossterm{enhancement bonus} equal to twice your rank in this archetype to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
+                You gain an \glossterm{enhancement bonus} equal to three times your rank in this archetype to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
                 Because this is an enhancement bonus, it does not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
@@ -345,9 +350,9 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Arcane Infusion+",
             is_magical: true,
-            rank: 4,
+            rank: 6,
             description: r"
-                The enhancement bonuses increase to four times your rank in this archetype.
+                The enhancement bonuses increase to five times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -355,16 +360,19 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 2,
             name: "Magic Absorption",
             is_magical: true,
-            rank: 2,
+            rank: 3,
             description: r"
-                Whenever another creature uses a \magical ability to attack you, if that ability does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you can choose to absorb its energy.
-                This does not reduce the ability's effect on you, but it allows you to use that ability as a standard action.
-                When you use the ability, you choose the area and targets affected by it.
+                Whenever another creature uses a \magical ability to attack you, if that ability does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you \glossterm{briefly} absorb that ability.
+                This does not reduce the ability's effect on you.
+
+                As a standard action, you can use any ability that you have absorbed.
+                When you use an absorbed ability, you choose the area and targets affected by it.
                 In all other ways, the ability functions in the same way as when it was used on you, including its \glossterm{accuracy} and \glossterm{power}.
                 You cannot change its effects with your other abilities, including \ability{desperate exertion}.
 
-                Whenever you are attacked by a new magical ability, if you already have a stored ability, you choose whether to absorb the new ability or retain your currently absorbed ability.
-                When you finish a \glossterm{long rest}, you lose all stored abilities.
+                As a \glossterm{minor action}, you can reserve one ability that you have absorbed so you can use it later.
+                This removes any other reserved abilities that you have absorbed.
+                When you finish a \glossterm{long rest}, you lose all reserved abilities.
             ",
             modifiers: None,
         },
@@ -374,7 +382,9 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                You can store up to three magical abilities.
+                You can reserve up to three magical abilities that you have absorbed.
+                If you reserve a fourth ability, you choose which reserved ability to remove.
+                You still lose all reserved abilities when you finish a long rest.
             ",
             modifiers: None,
         },
@@ -382,7 +392,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Implement Freedom",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"
                 You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
                 You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
@@ -392,22 +402,12 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Innate Power",
-            is_magical: true,
-            rank: 6,
-            description: r"
-                You gain a \plus2 bonus to your \glossterm{magical power}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Magic Absorption++",
+            name: "Mystic Supremacy",
             is_magical: true,
             rank: 7,
             description: r"
-                Whenever you absorb an attack with your \textit{magic absorption} ability, if you have no stored abilities, that attack has no effect on you.
-                Whenever you use a stored ability, you gain a +2 accuracy bonus with it.
+                You gain a \plus2 bonus to your defenses against \magical attacks.
+                In addition, you are immune to magical attacks from creatures that are rank 5 or lower.
             ",
             modifiers: None,
         },
