@@ -2895,4 +2895,32 @@ export const rituals: Ritual[] = [
     tags: ['Sustain (attuneable, minor)'],
     spheres: ['Umbramancy'],
   },
+
+  {
+    name: 'Beacon of Darkness',
+
+    castingTime: "one minute",
+    effect: `
+      You constantly emit \\glossterm{shadowy illumination} in a \\medarea radius.
+      This illuminates dark areas, but does not suppress brighter light.
+      Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
+
+      Once per round, you can adjust the illumination you provide as a \\glossterm{free action} with the \\atSwift tag.
+      You can choose one of the following effects:
+      \\begin{raggeditemize}
+        \\item Suppress the light
+        \\item Resume the light
+        \\item Change the area to a \\smallarea radius
+        \\item Change the area to a \\medarea radius
+      \\end{raggeditemize}
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    scaling: {
+      4: `You can also change the area to a \\largearea radius.`,
+      6: `You can also change the area to a \\hugearea radius.`,
+    },
+    tags: ['Sustain (attuneable, minor)'],
+    spheres: ['Umbramancy'],
+  },
 ];
