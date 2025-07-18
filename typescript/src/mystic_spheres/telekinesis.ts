@@ -39,10 +39,10 @@ export const telekinesis: MysticSphere = {
   ],
   spells: [
     {
-      name: 'Mighty Mage Hand',
+      name: 'Mighty Distant Hand',
 
       functionsLike: {
-        name: 'mage hand',
+        name: 'distant hand',
         exceptThat: 'the \\glossterm{weight limits} of the hand are calculated as if your Strength was equal to 2.',
       },
       rank: 2,

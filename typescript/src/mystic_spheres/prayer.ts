@@ -69,7 +69,7 @@ export const prayer: MysticSphere = {
       // the attunement on a hit makes it more reasonable.
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Whenever a target misses or gets a \\glossterm{glancing blow} with an \\glossterm{attack}, it can \\glossterm{reroll} that attack and keep the higher result.
+        Whenever a target misses or gets a \\glossterm{glancing blow} with an \\glossterm{attack}, it can choose to \\glossterm{reroll} that attack and keep the higher result.
         If it hits or critically hits with the reroll, this ability is \\glossterm{dismissed} for that creature.
       `,
       rank: 1,

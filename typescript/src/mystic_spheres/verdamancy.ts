@@ -29,44 +29,6 @@ export const verdamancy: MysticSphere = {
       type: 'Sustain (minor)',
       tags: ['Manifestation'],
     },
-    {
-      name: 'Rapid Growth',
-
-      effect: `
-        Choose one Larger or smaller inanimate, \\glossterm{unattended} plant within \\shortrange.
-        In addition, choose any number of days up to a week.
-        The target grows as if much time had passed, assuming that it received adequate nutrition during that time.
-        When this spell ends, the plant returns to its original state.
-      `,
-      scaling: {
-        2: `You can choose up to a month of time to grow.`,
-        4: `You can choose up to three months of time to grow.`,
-        6: `You can choose up to a year of time to grow.`,
-      },
-      type: 'Sustain (minor)',
-    },
-    {
-      name: 'Shape Plant',
-
-      effect: `
-        Choose one unattended, nonmagical living plant you \\glossterm{touch}.
-        You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as an axe or pruning shears.
-        As long as the plant's new shape is structurally sound and conducive to life, this reshaping does not harm the plant.
-        It will continue growing as if it had always had its new shape.
-
-        The maximum \\glossterm{damage resistance} of a plant you can affect with this ability is equal to your \\glossterm{power}.
-        A typical solid wood object has five damage resistance.
-        Softer plants, like grasses and bushes, might have anywhere from zero to three damage resistance.
-
-        % TODO: nerf all magical crafting times
-        Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
-      `,
-      scaling: {
-        2: `The amount of work you accomplish with the spell increases to five rounds.`,
-        4: `The amount of work you accomplish with the spell increases to one minute.`,
-        6: `The amount of work you accomplish with the spell increases to two minutes.`,
-      },
-    },
   ],
   spells: [
     {

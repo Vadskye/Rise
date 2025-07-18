@@ -9,25 +9,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   sources: ['nature', 'domain'],
   cantrips: [
     {
-      name: 'Manipulate Air',
-
-      effect: `
-        You change the wind speed within a \\largearea radius \\glossterm{emanation} from you by up to 10 miles per hour.
-        If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
-        You choose the speed change and direction when you cast this spell, and that choice persists for the duration of this effect.
-      `,
-      narrative: `
-        The wind around you waxes and wanes at your command, softening the force of a tempest or creating one to harass your foes.
-      `,
-      scaling: {
-        2: 'The maximum speed change increases to 15 miles per hour.',
-        4: 'The maximum speed change increases to 20 miles per hour.',
-        6: 'The maximum speed change increases to 30 miles per hour.',
-      },
-      roles: ['narrative'],
-      type: 'Sustain (minor)',
-    },
-    {
       name: 'Feather Fall',
 
       effect: `

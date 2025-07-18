@@ -25,21 +25,6 @@ export const astromancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Dimension Hop',
-
-      effect: `
-        You \\glossterm{teleport} horizontally to a location within 5 foot \\glossterm{range}.
-      `,
-      narrative: `
-        You disappear with an audible pop, appearing only a few feet away - but now on the other side of the cell bars.
-      `,
-      scaling: {
-        2: 'The range increases to 15 feet.',
-        4: 'The range increases to \\rngshort.',
-        6: 'The range increases to \\rngmed.',
-      },
-    },
-    {
       name: 'Translocate Object',
 
       effect: `

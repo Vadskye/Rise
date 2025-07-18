@@ -18,16 +18,16 @@ export const enchantment: MysticSphere = {
       roles: ['narrative'],
       scaling: {
         2: `You may target an additional ally within range.`,
-        4: `You may target an additional ally within range.`,
-        6: `You may target an additional ally within range.`,
+        4: `The number of additional targets increases to two.`,
+        6: `The number of additional targets increases to three.`,
       },
       tags: ['Emotion'],
       type: 'Sustain (free)',
     },
-
+  ],
+  spells: [
     // 25% of the time this is an action skip, 50% of the time it is 50% action denial, so
-    // 2 * 0.25 + 2 * 0.5 * 0.5 = 1 EA. That's unusually strong for a cantrip, but not
-    // crazy.
+    // 2 * 0.25 + 2 * 0.5 * 0.5 = 1 EA. TODO: calculate nerf to action denial effects
     {
       name: 'Repeat',
 
@@ -45,11 +45,10 @@ export const enchantment: MysticSphere = {
         `,
       },
       roles: ['stasis'],
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
-  ],
-  spells: [
     // TODO: too strong now that accuracy is nerfed?
     {
       name: 'Sympathetic Link',

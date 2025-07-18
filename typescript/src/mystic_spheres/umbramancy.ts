@@ -40,26 +40,6 @@ export const umbramancy: MysticSphere = {
         6: `The bonus increases to +6.`,
       },
     },
-
-    {
-      name: 'Darklantern',
-
-      effect: `
-        You emit \\glossterm{shadowy illumination} in a \\smallarea radius.
-        This illuminates dark areas, but does not suppress brighter light.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: `You can increase the radius to a \\medarea radius.`,
-        4: `You can increase the radius to a \\largearea radius.`,
-        6: `
-          This spell loses the Sustain (attuneable, minor) tag.
-          Instead, it lasts until you \\glossterm{dismiss} it as a \\glossterm{free action}.
-        `,
-      },
-      tags: ['Sustain (attuneable, minor)'],
-    },
-
   ],
   spells: [
     {

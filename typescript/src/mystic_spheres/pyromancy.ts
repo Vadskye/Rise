@@ -21,24 +21,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
       roles: ['narrative'],
+      scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Heat Air',
-
-      effect: `
-        The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
-        You cannot increase the temperature above 100 degrees in this way.
-        This typically imposes no direct penalties on other creatures, but it may make them more or less comfortable depending on their preferred temperature.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: 'The maximum temperature change increases to 25 degrees.',
-        4: 'The area increases to a \\hugearea radius.',
-        6: 'The maximum temperature change increases to 30 degrees.',
-      },
-      type: 'Attune',
     },
   ],
   spells: [
