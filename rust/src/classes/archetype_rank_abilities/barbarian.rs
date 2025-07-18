@@ -48,7 +48,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
         // normally get 0.4 EA with -1 accuracy, so a class ability can get 0.5 EA with no accuracy
         // penalty.
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Resilient Blow",
             is_magical: false,
             rank: 3,
@@ -151,7 +151,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Aggravated Violence",
             is_magical: false,
             rank: 3,
@@ -265,7 +265,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Savage Rush",
             is_magical: false,
             rank: 3,
@@ -360,13 +360,12 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 0,
             name: "Primal Maneuvers+",
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional primal maneuver.
-                In addition, you gain access to rank 3 primal maneuvers.
+                You gain access to rank 3 primal maneuvers.
             ",
             modifiers: None,
         },

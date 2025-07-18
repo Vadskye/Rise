@@ -284,7 +284,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Exchange Soul Fragment",
             is_magical: true,
             rank: 3,
@@ -307,7 +307,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Exchange Vitality",
             is_magical: true,
             rank: 6,

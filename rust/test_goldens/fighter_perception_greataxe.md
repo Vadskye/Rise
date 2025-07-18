@@ -271,10 +271,10 @@ Power        : 20.68 = (27.0 dph * 0.60 hpr) + (27.0 dpc * 0.07 cpr) + (13.5 dpg
 Best attack: Powerful Greataxe
 
 #### Detailed attack results
-Accuracy     : 13.34 = (13.5 dph * 0.80 hpr) + (13.5 dpc * 0.09 cpr) + (6.8 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 1.35 gdpr
-Certain      : 9.99 = (9.0 dph * 1.00 hpr) + (9.0 dpc * 0.11 cpr) + (4.5 dpg * 0.00 gpr) = 9.00 hdpr + 0.99 cdpr + 0.00 gdpr
-Extra        : 14.17 = (18.5 dph * 0.60 hpr) + (18.5 dpc * 0.07 cpr) + (9.2 dpg * 0.20 gpr) = 11.10 hdpr + 1.22 cdpr + 1.85 gdpr
-Power        : 14.69 = (27.0 dph * 0.40 hpr) + (27.0 dpc * 0.04 cpr) + (13.5 dpg * 0.20 gpr) = 10.80 hdpr + 1.19 cdpr + 2.70 gdpr
+Accuracy     : 14.16 = (13.5 dph * 0.90 hpr) + (13.5 dpc * 0.10 cpr) + (6.8 dpg * 0.10 gpr) = 12.15 hdpr + 1.34 cdpr + 0.67 gdpr
+Certain      : 10.00 = (9.0 dph * 1.00 hpr) + (9.0 dpc * 0.11 cpr) + (4.5 dpg * 0.00 gpr) = 9.00 hdpr + 1.00 cdpr + 0.00 gdpr
+Extra        : 16.22 = (18.5 dph * 0.70 hpr) + (18.5 dpc * 0.08 cpr) + (9.2 dpg * 0.20 gpr) = 12.95 hdpr + 1.42 cdpr + 1.85 gdpr
+Power        : 17.68 = (27.0 dph * 0.50 hpr) + (27.0 dpc * 0.06 cpr) + (13.5 dpg * 0.20 gpr) = 13.50 hdpr + 1.49 cdpr + 2.70 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Powerful Greataxe

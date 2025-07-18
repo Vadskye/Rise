@@ -65,7 +65,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Death From Above",
             is_magical: false,
             rank: 3,
@@ -157,8 +157,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional esoteric maneuver.
-                In addition, you gain access to rank 3 esoteric maneuvers.
+                You gain access to rank 3 esoteric maneuvers.
             ",
             modifiers: None,
         },
@@ -296,7 +295,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
+            complexity: 3,
             name: "Ki Manifestations",
             is_magical: true,
             rank: 2,
@@ -463,17 +462,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Ki Manifestation",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional \textit{ki manifestation}.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Invested Blow",
             is_magical: true,
             rank: 3,
@@ -500,6 +489,19 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 1,
+            name: "Ki Energy+",
+            is_magical: true,
+            rank: 5,
+            description: r"
+                Choose one type of energy: \atCold, \atElectricity, or \atFire.
+                You become \impervious to attacks with that ability tag.
+                If you are already impervious to attacks with that ability tag, you become immune instead.
+                Whenever you make a strike \magical with this ability, you can choose to give it that tag.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 0,
             name: "Ki-Focused Mind",
             is_magical: true,
@@ -515,7 +517,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} after the end of the current round.
+                After using a \textit{ki manifestation}, you can use a different \textit{ki manifestation} next round.
                 You still cannot use the same \textit{ki manifestation} in two consecutive rounds.
             ",
             modifiers: None,

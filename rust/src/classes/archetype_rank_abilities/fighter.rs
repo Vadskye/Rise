@@ -44,7 +44,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Disciplined Blow",
             is_magical: false,
             rank: 3,
@@ -66,7 +66,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Cleansing Discipline",
             is_magical: false,
             rank: 4,
@@ -161,7 +161,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Adaptive Blow",
             is_magical: false,
             rank: 3,
@@ -264,8 +264,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional martial maneuver.
-                In addition, you gain access to rank 3 martial maneuvers.
+                You gain access to rank 3 martial maneuvers.
             ",
             modifiers: None,
         },
@@ -397,7 +396,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
         // Goaded as a condition is 2.6 EA, and a r3 strike should only give 0.8 EA. The double
         // attack is kind of enough, plus the class ability benefit.
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Sentinel's Challenge",
             is_magical: false,
             rank: 3,
@@ -550,16 +549,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Battle Tactics+",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You learn an additional battle tactic.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 2,
             name: "Shifting Stance",
             is_magical: false,
@@ -591,7 +580,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Coordinated Charge",
             is_magical: false,
             rank: 3,
@@ -611,6 +600,16 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} If you have at least two \glossterm{allies} adjacent to you, the strike deals triple damage.
                     \rank{7} The strike always deals triple damage.
                 \end{activeability}
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Strategist",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                You gain a \plus1 bonus to your Intelligence.
             ",
             modifiers: None,
         },

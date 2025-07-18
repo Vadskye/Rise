@@ -82,7 +82,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Tag-Team Takedown",
             is_magical: false,
             rank: 3,
@@ -218,7 +218,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Banestrike",
             is_magical: false,
             rank: 3,
@@ -288,7 +288,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
-            complexity: 2,
+            complexity: 3,
             name: "Hunting Styles",
             is_magical: false,
             rank: 2,
@@ -387,7 +387,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
         },
         // TODO: EA and damage math
         RankAbility {
-            complexity: 0,
+            complexity: 2,
             name: "No Escape",
             is_magical: false,
             rank: 3,
@@ -486,7 +486,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Ambush",
             is_magical: false,
             rank: 3,
@@ -560,8 +560,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional wild maneuver.
-                In addition, you gain access to rank 3 wild maneuvers.
+                You gain access to rank 3 wild maneuvers.
             ",
             modifiers: None,
         },
