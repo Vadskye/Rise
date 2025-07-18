@@ -12,4 +12,4 @@ export const EXCEPT_NOT_DEEP =
 export const BARRIER_COOLDOWN =
   'After you use this ability, you \\glossterm{briefly} cannot use it or any other \\atBarrier ability.';
 export const BRIEF_COOLDOWN =
-  'You \\glossterm{briefly} cannot use this ability again.';
+  'You \\glossterm{briefly} cannot cast this spell again.';
