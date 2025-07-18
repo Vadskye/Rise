@@ -666,6 +666,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 3,
       roles: ['narrative'],
+      scaling: 'accuracy',
       type: 'Sustain (attuneable, standard)',
     },
   ],
