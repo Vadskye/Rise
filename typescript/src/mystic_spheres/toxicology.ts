@@ -10,24 +10,6 @@ export const toxicology: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Detect Poison',
-
-      castingTime: 'one minute',
-      effect: `
-          Choose a \\arealarge cone from you.
-          You identify the presence or absence of any poisoned, poisonous, or venomous creatures and objects in the area.
-          This does not provide any other information, such as location or type of poison.
-      `,
-      scaling: {
-        2: `
-          You also learn the number of poisons in the area.
-        `,
-        4: 'You also learn the location of each poison in the area.',
-        6: `This ability can be used as a \\glossterm{minor action}.`,
-      },
-      tags: ['Detection'],
-    },
-    {
       name: 'Neutralize Poison',
 
       effect: `

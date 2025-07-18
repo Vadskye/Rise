@@ -26,24 +26,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       roles: ['burst'],
-    },
-
-    {
-      name: 'Magnetize',
-
-      effect: `
-        Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
-        It pulls itself toward metal objects within 1 foot of it.
-        Smaller objects are typically pulled towards the target, while it moves itself towards larger objects.
-        Once it becomes affixed to another metal object, it takes a \\glossterm{difficulty value} 10 Strength check to separate the two objects.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: `The maximum size increases to Medium.`,
-        4: `The maximum size increases to Large.`,
-        6: `The maximum size increases to Huge.`,
-      },
-      type: 'Sustain (attuneable, minor)',
+      scaling: 'accuracy',
     },
   ],
   spells: [

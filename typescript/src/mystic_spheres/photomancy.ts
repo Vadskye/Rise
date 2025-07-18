@@ -9,24 +9,6 @@ export const photomancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Beautify',
-
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          you gain a +4 bonus to the Disguise check, but you can only accomplish changes that would be possible with makeup, paint, and dye.
-          You cannot make significant changes to your facial structure, equipment, and so on.
-          This ability is commonly used to hide blemishes or to appear younger or older than one's true age.
-
-          This ability lasts until you \\glossterm{dismiss} it or until you use it again.
-        `,
-        name: 'change appearance',
-      },
-      roles: ['narrative'],
-      tags: ['Visual'],
-    },
-
-    {
       name: 'Illuminate',
 
       effect: `
@@ -626,43 +608,6 @@ export const photomancy: MysticSphere = {
       rank: 6,
       roles: ['clear'],
       scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
-    },
-    {
-      name: 'Disguise Image',
-
-      effect: `
-        You make a Disguise check to alter your appearance (see \\pcref{Change Appearance}).
-        You gain a +4 bonus on the check, and you can freely alter the visual appearance of your clothes and equipment, regardless of their original form.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      tags: ['Visual'],
-      type: 'Attune',
-    },
-    {
-      name: 'Mass Disguise Image',
-
-      functionsLike: {
-        mass: true,
-        name: 'Disguise Image',
-      },
-      // narrative: '',
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-    {
-      name: 'Malleable Disguise Image',
-
-      functionsLike: {
-        exceptThat: `
-        you can change the nature of the disguise as a \\glossterm{minor action}.
-      `,
-        name: 'disguise image',
-      },
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune',
     },
   ],
 };

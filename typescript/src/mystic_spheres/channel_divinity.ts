@@ -28,24 +28,6 @@ export const channelDivinity: MysticSphere = {
         6: 'The range increases to \\rnglong.',
       },
     },
-    {
-      effect: `
-        You emit \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
-        The color of the light depends on the nature of your deity or alignment.
-        Each deity has their own color or color combination.
-        Typically, good is yellow, evil is purple, law is white, and chaos is a myriad of ever-changing colors.
-      `,
-      name: 'Divine Radiance',
-      narrative: `
-        You call on the majesty of your deity or alignment to radiate into the world.
-      `,
-      scaling: {
-        2: 'The maximum radius of bright illumination increases to 30 feet.',
-        4: 'The maximum radius of bright illumination increases to 60 feet.',
-        6: 'The maximum radius of bright illumination increases to 120 feet.',
-      },
-      type: 'Sustain (attuneable, minor)',
-    },
   ],
   spells: [
     {

@@ -20,21 +20,6 @@ export const revelation: MysticSphere = {
         6: `The bonus increases to +6.`,
       },
     },
-
-    {
-      name: 'Reveal Truth',
-
-      effect: `
-        You may reroll one Knowledge check you made last round.
-        You can only cast this spell once per hour.
-      `,
-      roles: ['narrative'],
-      scaling: {
-        2: `You also gain a +2 \\glossterm{enhancement bonus} to the Knowledge check.`,
-        4: `The bonus increases to +3.`,
-        6: `The bonus increases to +4.`,
-      },
-    },
   ],
   spells: [
     {

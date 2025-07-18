@@ -15,27 +15,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   `,
 
   cantrips: [
-    {
-      name: 'Shape Earth',
-
-      // TODO: nerf crafting efficiency, clarify how long it typically takes to dig
-      // through dirt
-      effect: `
-        Choose one unattended, nonmagical body of earth or unworked stone you \\glossterm{touch}.
-        You make a Craft check to alter the target (see \\pcref{Craft}), except that you do not need any special tools to make the check, such as a shovel or hammer and chisel.
-        The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
-
-        % should be longer than polymorph's alter object ability
-        % TODO: nerf all magical crafting times
-        Each time you cast this spell, you can accomplish work that would take up to two rounds with a normal Craft check.
-      `,
-        roles: ['narrative'],
-      scaling: {
-        2: `The amount of work you accomplish with the spell increases to three rounds.`,
-        4: `The amount of work you accomplish with the spell increases to five rounds.`,
-        6: `The amount of work you accomplish with the spell increases to one minute.`,
-      },
-    },
+    // TODO: add a cantrip
   ],
   spells: [
     {

@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BRIEF_COOLDOWN, CONDITION_CRIT } from './constants';
+import { BRIEF_COOLDOWN, CONDITION_CRIT, MINOR_FATIGUE } from './constants';
 
 // This sphere gets maneuvers at equal rank to combat styles.
 // However, they are strictly mundane and limited in scope.
@@ -27,39 +27,22 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Instant Reversal -- Attack',
 
+      // Focused once is 0.4 EA, which is too low for a rank 1 attunement, but fine for a
+      // cantrip.
       effect: `
-        Whenever you make an \\glossterm{attack} or \\glossterm{check}, you can \\glossterm{reroll} it.
+        Whenever you make an \\glossterm{attack roll}, you can \\glossterm{reroll} it.
         After you do, this ability is \\glossterm{dismissed}.
 
-        You can decide to activate this effect after you learn whether the original roll succeeded or failed.
-        You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
-        However, you must use it before using any other abilities or ending your turn.
+        You can decide to activate this effect after you learn whether the original roll hit or missed.
+        However, you must use it before you learn what the effects of a hit would be, such as the damage it would deal on a hit.
       `,
       roles: ['attune'],
       scaling: {
-        2: 'You gain a +1 bonus to the reroll.',
+        2: 'You gain a +1 accuracy bonus with the reroll.',
         4: 'The bonus increases to +2.',
-        6: 'This ability becomes a regular attunement instead of a \\glossterm{deep attunement}',
+        6: 'The bonus increases to +2.',
       },
-      type: 'Attune (deep)',
-    },
-    {
-      name: 'Timeseal',
-
-      effect: `
-        Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
-        The target becomes \\glossterm{briefly} frozen in time.
-        It becomes completely immune to all damage, attacks, and effects of any kind.
-        In addition, it cannot act in any way, and the duration of other effects on it does not expire.
-        At the end of the next round, it returns to normal, with no awareness of the intervening time.
-        After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
-      `,
-      roles: ['boon'],
-      scaling: {
-        2: 'The maximum size increases to Large.',
-        4: 'The maximum size increases to Huge.',
-        6: 'The maximum size increases to Gargantuan.',
-      },
+      type: 'Attune',
     },
   ],
   spells: [
@@ -806,6 +789,25 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 3,
       roles: ['focus'],
+    },
+    {
+      name: 'Timeseal',
+
+      cost: MINOR_FATIGUE,
+      effect: `
+        Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
+        The target becomes \\glossterm{briefly} frozen in time.
+        It becomes completely immune to all damage, attacks, and effects of any kind.
+        In addition, it cannot act in any way, and the duration of other effects on it does not expire.
+        At the end of the next round, it returns to normal, with no awareness of the intervening time.
+        After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+      `,
+      roles: ['boon'],
+      rank: 2,
+      scaling: {
+        4: 'The maximum size increases to Large.',
+        6: 'The maximum size increases to Huge.',
+      },
     },
   ],
 };
