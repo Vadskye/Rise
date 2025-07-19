@@ -807,7 +807,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Once per \glossterm{short rest}, when you make an attack or check against a creature, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against that creature.
+                Once per \glossterm{short rest}, you can use this ability as a \glossterm{minor action}.
+                The next time this round that you make an attack or check against a creature that it is aware of, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against that creature.
                 You must use this ability before making the attack or check.
             ",
             modifiers: None,
