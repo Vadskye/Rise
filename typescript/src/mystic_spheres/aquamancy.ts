@@ -35,7 +35,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you do, you regain 2d10 hit points and increase your \\glossterm{fatigue level} by one.
       `,
       rank: 1,
-      scaling: { special: 'The healing increases by 1d10 per rank beyond 1.' },
+      scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },
       roles: ['attune'],
       type: 'Attune',
     },
