@@ -26,26 +26,27 @@ export const enchantment: MysticSphere = {
     },
   ],
   spells: [
-    // 25% of the time this is an action skip, 50% of the time it is 50% action denial, so
-    // 2 * 0.25 + 2 * 0.5 * 0.5 = 1 EA. TODO: calculate nerf to action denial effects
+    // A full action skip is 3 EA. This is roughly 50% as strong, so 1.5 EA? That's pretty
+    // generous, but Repeat is an interesting concept, so we'll test it.
     {
       name: 'Repeat',
 
       attack: {
         hit: `
-          During the next round, the target must repeat the same standard action that it took this round.
+          During the next round, each target must repeat the same standard action that it took this round if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
-          If it is unable to take the same standard action, it unable to take a standard action.
-          For example, if a creature used the \\ability{recover} ability this round, which can only be used once per short rest, it would not be able to take a standard action during the following round.
+          This does not affect its other actions, such as movement.
+          If it is unable to take the same standard action, it can act normally.
+          For example, if a creature used the \\ability{recover} ability this round, which can only be used once per short rest, its actions would not be restricted next round.
 
           After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\shortrange.
+          Make an attack vs. Mental against up to two creatures within \\shortrange.
         `,
       },
       roles: ['stasis'],
-      rank: 1,
+      rank: 2,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -250,7 +251,7 @@ export const enchantment: MysticSphere = {
       // action skip is r3 with limited scope
       attack: {
         hit: `
-          Each target is compelled to spend its next \\glossterm{standard action} doing nothing at all.
+          Each target with no remaining \\glossterm{damage resistance} is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -281,8 +282,8 @@ export const enchantment: MysticSphere = {
     {
       name: 'Selfstrike',
 
-      // Action denial is 2 EA. Attacking yourself is roughly one action? so 3 EA. Only
-      // working in HP is 75%, so 2.2 EA. That's r4 with limited scope.
+      // Action denial is 3 EA. Attacking yourself is roughly one action? so 4 EA. Only
+      // working in HP is 66%, so 2.8 EA. That's r7 with limited scope.
       // TODO: better EA math. Only 1 EA for a self-strike is probably wrong, and HP brief
       // is not well defined.
       attack: {
@@ -294,11 +295,11 @@ export const enchantment: MysticSphere = {
           After it makes this attack against itself, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against up to two creatures within \\medrange.
+          Make an attack vs. Mental against up to three creatures within \\medrange.
         `,
       },
       roles: ['maim', 'stasis'],
-      rank: 4,
+      rank: 7,
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
