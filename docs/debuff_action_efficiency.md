@@ -7,8 +7,9 @@ Debuffs can be grouped according to their action efficiency. Essentially, making
 By EA:
 ```
   Debuff             & Brief & HP Condition & Condition \\
-  Action skip        & 2.0   & 4.8          & 12        \\
-  Banishment         & 2.0   & 3.6          & 9         \\
+  Action skip        & 3.0   & 4.8          & 12        \\
+  Action skip (HP)   & 2.0   & 4.8          & N/A        \\
+  Banishment         & 3.0   & 3.6          & 9         \\
   Blinded            & 3.4   & 3.6          & 9.0       \\
   Confused           & 2.8   & 2.9          & 7.2       \\
   Dazzled            & 0.6   & 0.7          & 1.8       \\
@@ -32,7 +33,7 @@ By EA:
   Slowed (ranged)    & 2.0   & 2.1          & 5.2       \\
   Slowed (melee)     & 1.5   & 1.5          & 3.7       \\
   Stunned            & 1.4   & 1.2          & 3.0       \\
-  Time skip          & 2.5   & 4.3          & 10.8      \\
+  Time skip          & 3.5   & 4.3          & 10.8      \\
   Treat as invis:    & 1.2   & 1.6          & 4.0       \\
   Vulnerable         & 3.5   & 3.0          & 7.5       \\
 ```
@@ -42,8 +43,9 @@ By rank:
 "inf" means the effect is too strong to ever appear as a spell without weird tricks.
 ```
   Debuff             & Brief & HP Condition & Condition \\
-  Action skip        & 4     & inf          & inf       \\
-  Banishment         & 4     & inf          & inf       \\
+  Action skip        & 9     & inf          & inf       \\
+  Action skip (HP)   & 4     & inf          & N/A       \\
+  Banishment         & 9     & inf          & inf       \\
   Blinded            & 11    & inf           & inf       \\
   Confused           & 8     & 9            & inf       \\
   Dazzled            & 2d    & 3d           & 3         \\
@@ -67,7 +69,7 @@ By rank:
   Slowed (ranged)    & 4     & 5            & inf       \\
   Slowed (melee)     & 2     & 2            & inf       \\
   Stunned            & 1     & 0            & 9         \\
-  Time skip          & 7     & inf          & inf       \\
+  Time skip          & inf   & inf          & inf       \\
   Treat as invis:    & 0     & 2            & inf       \\
   Vulnerable         & 8     & 9            & inf       \\
 ```
@@ -194,17 +196,23 @@ Assume that a brief debuff doesn't give the monsters time to intelligently adjus
 
 In this context, we assume that each debuff is applied as a brief effect.
 
-### Action skip: 2.0
+### Action skip: 3.0
 
 Skipping a standard action is tricky, since that removes 50% of a boss's action and 100% of a regular enemy's action. Against a boss, removing 50% of their actions is worth 2 effective actions. Against a normal enemy, removing 100% of their actions is worth 4 effective actions. But if you assume there are as many normal enemies as party members, using a single target action skip is worth only 1 effective action.
+
+However, this understates the power of a full action skip. Many EA calculations make some mitigating assumptions, such as assuming that the party coordinates to take advantage of the debuff, or that you use it early enough in the fight to get its full benefit. Action skips are unconditionally powerful, and are an easy way to turn a fight into a non-fight. For no specific reason, give them a 50% EA bonus.
 
 Overall, AOE action skip abilities have to be treated as stronger than single target action skip abilities, and they maybe shouldn't exist. For now, assume that action skip must always be combined with the "limited scope" modifier.
 
 As with all full action denial effects, this always comes with a "once per creature" restriction.
 
-### Banishment: 2.0
+### Action skip (HP only): 2.0
 
-Fully removing a creature from combat is tricky. Against a boss, it removes both their standard action and their elite action, so it should theoretically be worth 4 effective actions. However, the party can't attack the boss, so it should be worth 0 effective actions. As a kind of lazy middle ground, we call this 2 effective actions; the party can spend some time to prepare for the boss, but their actions while the boss is gone are generally going to be less than 100% effective.
+Say that requiring HP makes this 2/3 as effective?
+
+### Banishment: 3.0
+
+Fully removing a creature from combat is tricky. Against a boss, it removes both their standard action and their elite action, so it should theoretically be worth 4 effective actions. However, the party can't attack the boss, so it should be worth 0 effective actions. As a kind of lazy middle ground, we call this 2 effective actions; the party can spend some time to prepare for the boss, but their actions while the boss is gone are generally going to be less than 100% effective. This gets the usual 50% total action skip multiplier.
 
 Note that this refers to the variation of banishment where the target also gets to take actions while it is in limbo. If they don't get to take actions, but are still invulnerable during the skipped round, see Time Skip.
 
@@ -346,7 +354,7 @@ If a prone or slow is applied by a melee ability, halve the EA contribution from
 
 If you stun an enemy as the first action of the round, the party has 7 attacks that can take advantage of the stun debuff: your three party members during the first round, and the full party during the second round.
 
-### Time Skip: 2.5
+### Time Skip: 3.5
 
 This refers to removing a creature from existence for a round. That gives the party time to prepare during the intervening round, but doesn't allow the target the same benefit. This is better than banishment. However, most bosses don't have anything particularly useful to do while they are banished, since they can't recover and generally don't have healing abilities. Assume that a boss acts at 10% effectiveness while banished, so removing that is worth 0.4 effective actions, or maybe 0.5 total since they also don't get a condition removal roll.
 
