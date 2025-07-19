@@ -461,6 +461,7 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 2,
       roles: ['generator'],
+      scaling: 'accuracy',
       tags: ['Swift'],
     },
 
