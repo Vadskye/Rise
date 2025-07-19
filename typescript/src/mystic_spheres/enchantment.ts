@@ -85,6 +85,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 1,
+      scaling: 'accuracy',
       roles: ['attune'],
       tags: ['Emotion', 'Subtle'],
       // Probably complex enough to be deep? But it doesn't change combat math that much,
@@ -201,6 +202,7 @@ export const enchantment: MysticSphere = {
       // Stunned as a condition is 3 EA. Humanoid only is about -0.4 EA, and limited scope
       // is r6.
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           Each target is \\stunned as a \\glossterm{condition}.
           If a target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
@@ -482,7 +484,6 @@ export const enchantment: MysticSphere = {
       // TODO: EA calc. This is kind of a permanent action denial, but easily removed so
       // it's hard to abuse?
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           If the target has no remaining \\glossterm{damage resistance}, it becomes deluded as a \\glossterm{condition}.
           It believes that it is the only real creature, and the rest of the world is an illusion.

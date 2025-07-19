@@ -69,7 +69,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
-          If you spent an ice crystal, you gain a \plus2 accuracy bonus with the attack.
+          If you spent an ice crystal, you gain a \\plus2 accuracy bonus with the attack.
         `,
       },
       rank: 5,
@@ -316,7 +316,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       name: 'Freezing Wind',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           Each target becomes \\glossterm{briefly} \\slowed.
           If any Medium or larger creatures become slowed in this way and were not already slowed, you gain a \\glossterm{ice crystal}.

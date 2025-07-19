@@ -491,7 +491,9 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       roles: ['flash'],
-      scaling: 'accuracy',
+      scaling: {
+        special: 'The damage increases by 1d10 for each rank beyond 5.',
+      },
       tags: ['Visual'],
     },
 
@@ -531,7 +533,7 @@ export const photomancy: MysticSphere = {
       rank: 6,
       roles: ['clear', 'dive'],
       scaling: {
-        special: 'the damage increases by 1d6 for each rank beyond 3.',
+        special: 'the damage increases by 2d8 for each rank beyond 6.',
       },
     },
 
