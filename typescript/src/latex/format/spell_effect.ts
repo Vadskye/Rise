@@ -27,13 +27,15 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
   const inflictsCondition = /condition/.test(attack.hit);
   const dealsDamage = /\\damage/.test(attack.hit);
   const grantsImmunity = /immun.*short rest/.test(attack.hit);
-  if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
+  if (grantsImmunity) {
+    if (!dealsDamage && attack.crit) {
+      console.error(
+        `Attack from ${effectName} should not have crit effect because it grants immunity`,
+      );
+    }
+  } else if (inflictsCondition && !dealsDamage && attack.crit === undefined) {
     console.error(
       `Attack from ${effectName} should have explicit crit effect for condition removal`,
-    );
-  } else if (grantsImmunity && !dealsDamage && attack.crit === undefined) {
-    console.error(
-      `Attack from ${effectName} should have explicit crit effect for removing immunity`,
     );
   } else if (attack.crit && attack.crit.includes('condition') && !attack.hit.includes('condition')) {
     console.error(
