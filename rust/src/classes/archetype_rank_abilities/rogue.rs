@@ -888,6 +888,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                     Make an attack vs. Mental against a creature within \shortrange.
                     \hit The target is \glossterm{briefly} convinced that nothing is real.
                     It is unable to take any actions and is \unaware of all attacks against it.
+                    If it loses \glossterm{hit points}, this effect immediately ends.
                     After this effect ends, the target becomes immune to it until it finishes a \glossterm{short rest}.
                 \end{activeability}
             ",
