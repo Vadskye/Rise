@@ -438,6 +438,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 \begin{magicalactiveability}{Pass Judgment}[\atSubtle]
+                    \abilitycost One \glossterm{fatigue level}.
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
