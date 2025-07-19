@@ -119,7 +119,6 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes a $accuracy attack vs. Reflex against something within \medrange.
-                        Whether the attack hits or misses, the target's space and all squares adjacent to it \glossterm{briefly} become \glossterm{icy terrain}. 
                         \hit $dr1 damage.
                         If the attack result beats the target's Fortitude defense, it becomes \slowed as a \glossterm{condition}.
                     ".to_string(),
@@ -132,7 +131,6 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Custom(CustomAbility {
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against everything within in a \largearea cone from it.
-                        In addition, the area \glossterm{briefly} becomes \sphereterm{icy terrain}.
                         After it uses this ability, it \glossterm{briefly} cannot use it again.
                         \hit $dr3 damage.
                         \miss Half damage.
@@ -147,7 +145,6 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
             // terrain. Since its Balance bonus is so high, this isn't really necessary.
             modifiers: ModifierBundle::Multipedal.modifiers(),
             movement_speeds: None,
-            // Should this be tremorsense on icy terrain specifically?
             senses: vec![Sense::Tremorsense(90)],
             trained_skills: vec![Skill::Awareness, Skill::Balance, Skill::Climb],
         },

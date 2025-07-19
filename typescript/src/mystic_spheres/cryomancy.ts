@@ -2,81 +2,48 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from './constants';
 
+const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
+
 export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
   name: 'Cryomancy',
   hasImage: true,
   shortDescription: 'Drain heat to injure and freeze foes.',
   sources: ['arcane', 'nature', 'pact'],
-  // In general, creating icy terrain is treated as having an area tier that is one
-  // higher for area spells.
-  // For single target spells, target's space + adjacent spaces is a t0.5 condition.
+  // Two modes for ice crystal spenders:
+  // * Base spell is normal rank, ice crystal makes it +1 rank stronger (+2 accuracy)
+  // * Base spell is -1 rank, ice crystal makes it +2 ranks stronger
+  // Generating an ice crystal reduces a spell's rank by 1.
   specialRules: `
-    Some spells from this mystic sphere can create icy terrain.
-    \\spheredef{icy terrain} Icy terrain is covered in ice, making it hard to traverse.
-    When an area becomes icy terrain, all water and solid ground in the area becomes covered in a layer of solid ice.
-
-    Creatures with a Large or lighter weight category can walk on ice-covered water.
-    At the GM's discretion, water-like liquids may also become icy terrain, or they may be unaffected.
-    The ice is similar to natural ice, but since it was created recently by a spell, the effects of icy terrain do not have as much variance as natural terrain.
-
-    Icy terrain requires a DV 5 Balance check to move at full speed, so most creatures can move at half speed even if they are untrained (see \\pcref{Balance}).
-    When a Large or smaller creature takes damage from a non-\\atCold ability while on icy terrain, it must make a DV 5 Balance check to avoid falling \\prone.
-    Any individual creature only has to make this check once per \\glossterm{phase}.
-    At the GM's discretion, icy terrain may have additional effects in specific circumstances, such as on steep slopes.
-
-    If a 5-foot square of icy terrain takes any damage from a \\atFire ability, it is destroyed and becomes normal ground or water again.
-    Ice covering solid ground can't be damaged by non-Fire abilities, but ice covering water is destroyed if it takes any damage.
+    Many spells from this mystic sphere become stronger if you spend ice crystals, and some spells generate ice crystals.
+    You can normally have a maximum of three ice crystals.
+    They grow on your body, but do not impede your movements or actions in any way.
+    At the end of each round, if you did not gain or spend any ice crystals that round, one of your ice crystals melts.
   `,
-
   cantrips: [
     {
-      name: 'Chill',
+      name: 'Crystal Growth',
 
-      attack: {
-        hit: `
-          The target takes damage equal to your \\glossterm{power}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against something within \\shortrange.
-        `,
-      },
-      roles: ['burst'],
-      scaling: 'accuracy',
+      effect: `
+        If you have no \\glossterm{ice crystals}, you gain one ice crystal.
+        If you have exactly one ice crystal, it does not melt this round.
+      `,
+      roles: ['ramp'],
     },
   ],
   spells: [
     {
-      name: 'Thick Ice',
-
-      effect: `
-        All \\glossterm{icy terrain} created by your abilities must be damaged three times before it is destroyed, rather than only once.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Slick Ice',
-
-      effect: `
-        The \\glossterm{difficulty value} to move or stay standing on \\glossterm{icy terrain} created by your abilities increases by 3.
-      `,
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
       name: 'Freezing Grasp',
 
-      // -2 ranks for delayed onset, which is particularly punishing if they already have
-      // to lose HP.
+      // Melee HP slow is normally 1.5 EA. Drop to 1.0 EA for delay, since delay is
+      // particularly punishing if they already have to lose HP. With damage, that's 2
+      // EA, so rank 4, or rank 2 in melee.
+      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
           If the target loses hit points, it slowly begins freezing as a \\glossterm{condition}.
           After your action next round, it becomes \\slowed.
+          If you spent an ice crystal, it becomes \\slowed immediately.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -84,57 +51,61 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
         `,
       },
-      rank: 1,
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Intense Freezing Grasp',
+      name: 'Rapid Freezing Grasp',
 
+      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankfour.
-          If the target takes damage, it becomes \\slowed as a \\glossterm{condition}.
+          \\damagerankfive.
+          If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Fortitude against something you \\glossterm{touch}.
+          If you spent an ice crystal, you gain a \plus2 accuracy bonus with the attack.
         `,
       },
       rank: 5,
+      roles: ['maim'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Cone of Cold',
 
-      // This is cheating a bit to get icy terrain
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
-          The area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          If you have no \\glossterm{ice crystals}, you gain an ice crystal.
         `,
       },
-      rank: 2,
+      rank: 1,
+      roles: ['clear', 'generator'],
       scaling: 'accuracy',
     },
 
     {
-      name: 'Massive Cone of Cold',
+      name: 'Mighty Cone of Cold',
 
-      // 2 ranks for larger area, 1 rank for icy terrain
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against everything in a \\largearea cone from you.
-          The area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          Make an attack vs. Fortitude against everything in a \\medarea cone from you.
+          If you have no \\glossterm{ice crystals}, you gain an ice crystal.
         `,
       },
       rank: 5,
+      roles: ['clear', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -160,16 +131,18 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icicle',
 
+      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankthree.
-          If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
+          \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Armor and Fortitude against something within \\medrange.
+          If you spent an \\glossterm{ice crystal}, you only need to hit the target's Armor defense.
         `,
       },
       rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -177,35 +150,20 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Mighty Icicle',
 
+      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damageranksix.
-          If the target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
+          \\damagerankfive.
         `,
         targeting: `
           Make an attack vs. Armor and Fortitude against something within \\medrange.
+          If you spent an \\glossterm{ice crystal}, you only need to hit the target's Armor defense.
         `,
       },
       rank: 4,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Freeze Poison',
-
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        1 damage.
-        In addition, it gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
-      `,
-      rank: 1,
-      scaling: {
-        3: `The number of additional successes increases to two.
-            The target can split these successes among any number of different poisons affecting it.`,
-        5: `The number of additional successes increases to three.`,
-        7: `The number of additional successes increases to four.`,
-      },
     },
 
     {
@@ -214,24 +172,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       effect: `
         You can move on top of water as if it were land.
         This also works on other liquids that can be frozen like water.
-        In addition, you move at double speed on \\sphereterm{icy terrain}.
+        At the end of each round, if you are standing on a Medium or larger freezable liquid and have no \\glossterm{ice crystals}, you gain an ice crystal.
       `,
       rank: 2,
-    roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Skate',
-
-      functionsLike: {
-        mass: true,
-        name: 'Skate',
-      },
-      // narrative: '',
-      rank: 4,
       roles: ['attune'],
-      type: 'Attune (target)',
+      type: 'Attune',
     },
 
     {
@@ -260,10 +205,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for ~50% of rounds, so this is worth 1 EA.
       effect: `
         You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, this ability is \\glossterm{dismisssed}.
+        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, you can spend an \\glossterm{ice crystal}.
+        If you do not, this ability is \\glossterm{dismisssed}.
       `,
       narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -276,11 +222,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for 3/5 of rounds, so this is worth 1.2 EA.
       effect: `
         You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, this effect is \\glossterm{suppressed}.
+        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, you can spend an \\glossterm{ice crystal}.
+        If you do not, this effect is \\glossterm{suppressed}.
         Whenever you regain damage resistance, this effect is immediately resumed.
       `,
       narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
-      rank: 5,
+      rank: 6,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -289,17 +236,19 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frostbite',
 
+      // +1dr for delay, +1dr for short range
       attack: {
         hit: `
-          \\damagerankthree.
-          If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          The target feels a growing chill.
+          During your next action, it takes \\damagerankfour.
+          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
-
-      rank: 3,
+      rank: 2,
+      roles: ['burn', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -308,90 +257,96 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          \\damagerankseven.
-          If the target takes damage, its \\glossterm{space} and all squares adjacent to it \\glossterm{briefly} become \\sphereterm{icy terrain}.
+          The target feels a growing chill.
+          During your next action, it takes \\damagerankeight.
+          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
         `,
       },
-      rank: 7,
+      rank: 6,
+      roles: ['burn', 'generator'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Hailstorm',
 
+      // -2dr for large area, -1dr for repeated damage, +1dr for double defense
+      cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankthree.
-          If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
+          \\damageranktwo.
         `,
-        miss: `
-          Half damage, and the target is not knocked prone.
-        `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Armor and Fortitude against everything in a \\smallarea radius within \\medrange.
+          Choose a \\smallarea radius within \\shortrange.
+          When you cast this spell, and during your next action, make an attack vs. Armor and Fortitude against everything in the area.
+          If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
         `,
       },
-
-      rank: 3,
+      rank: 4,
+      roles: ['wildfire'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Massive Hailstorm',
 
+      // -2dr for large area, -1dr for repeated damage, +1dr for double defense
       attack: {
         hit: `
-          \\damageranksix.
-          If a target loses \\glossterm{hit points}, is Large or smaller, and is on \\sphereterm{icy terrain}, it falls \\prone.
+          \\damagerankfive.
         `,
-        miss: `
-          Half damage, and the target is not knocked prone.
-        `,
+        missGlance: true,
         targeting: `
-          Make an attack vs. Armor and Fortitude against everything in a \\largearea radius within \\longrange.
+          Choose a \\medarea radius within \\longrange.
+          When you cast this spell, and during your next action, make an attack vs. Armor and Fortitude against everything in the area.
+          If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
         `,
       },
-
-      rank: 6,
+      roles: ['wildfire'],
+      rank: 7,
       // scaling: 'accuracy',
     },
 
+    // A medium cone is somewhere between ranged and melee slow - call it 1.8 EA, so r3.
     {
-      name: 'Frigid Nova',
+      name: 'Freezing Wind',
 
-      // +1r for icy terrain
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} becomes \\slowed as a \\glossterm{condition}.
+          Each target becomes \\glossterm{briefly} \\slowed.
+          If any Medium or larger creatures become slowed in this way and were not already slowed, you gain a \\glossterm{ice crystal}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\smallarea radius from you.
-          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
         `,
       },
-      rank: 2,
+      rank: 3,
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 
+    // HP + brief is 2.5 EA, so r7. Drop area slightly to get to r6.
     {
-      name: 'Massive Frigid Nova',
+      name: 'Massive Freezing Wind',
 
-      // +1r for icy terrain
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} becomes \\slowed as a \\glossterm{condition}.
+          Each target becomes \\glossterm{briefly} \\slowed.
+          Each creature with no remaining \\glossterm{damage resistance} is also slowed as a \\glossterm{condition}.
+          If any Medium or larger creatures become slowed in this way and were not already slowed, you gain a \\glossterm{ice crystal}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all creatures in a \\hugearea radius from you.
-          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.
         `,
       },
-      rank: 5,
+      rank: 6,
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 
@@ -425,20 +380,22 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Frost Breath',
 
+      // +1dr for delay
       attack: {
-        // icy terrain for attune + every other round
         hit: `
-          \\damagerankone.
+          Each target feels a growing chill.
+          During your next action, it takes \\damagerankfive.
+          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
-          When you do, make an attack vs. Fortitude against everything in a \\largearea cone from you.
-          In addition, the area \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+          When you do, make an attack vs. Fortitude against everything in a \\medarea cone from you.
           After you breathe cold, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,
+      roles: ['wildfire', 'generator'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -449,10 +406,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       functionsLike: {
         name: 'frost breath',
         exceptThat: `
-          the damage increases to \\damagerankfive.
+          the damage increases to \\damagerankeight, and the area increases to a \\largearea cone.
         `,
       },
       rank: 6,
+      roles: ['wildfire', 'generator'],
       scaling: 'accuracy',
       type: 'Attune',
     },
@@ -460,15 +418,15 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Icicle Carapace',
 
-      // original targets: ['Yourself', 'See text']
+      // Common reactive damage
       attack: {
-        hit: `\\damagerankfour.`,
+        hit: `\\damagerankthree.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
       },
 
-      rank: 3,
+      rank: 4,
       roles: ['attune'],
       scaling: 'accuracy',
       type: 'Attune (deep)',
@@ -481,11 +439,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `\\damagerankseven.`,
         targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-Long weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor and Fortitude against them.
         `,
       },
 
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       // scaling: "accuracy",
       type: 'Attune (deep)',
@@ -498,9 +456,10 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       cost: SWIFT_FATIGUE,
       effect: `
         You teleport into an unoccupied destination on a stable surface within \\shortrange.
-        In addition, everything in a 5 ft.\\ wide line between your starting location and your ending location \\glossterm{briefly} becomes \\sphereterm{icy terrain}.
+        If you have no \\glossterm{ice crystals}, you gain an ice crystal.
       `,
       rank: 3,
+      roles: ['dive'],
       scaling: {
         5: 'The range increases to \\medrange.',
         7: 'The range increases to \\distrange.',
@@ -523,21 +482,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     // },
 
     {
-      name: 'Icefield',
-
-      // treat persistent icy terrain as a r1 debuff
-      effect: `
-        A \\medarea radius \\glossterm{zone} centered on you becomes \\sphereterm{icy terrain}.
-      `,
-      rank: 1,
-      scaling: {
-        3: 'You can choose to create a \\largearea radius instead.',
-        5: 'You can choose to create a \\hugearea radius instead.',
-        7: 'You can choose to create a \\gargarea radius instead.',
-      },
-      tags: ['Sustain (attuneable, minor)'],
-    },
-    {
       name: 'Wall of Ice',
 
       cost: BARRIER_COOLDOWN,
@@ -555,6 +499,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         5: 'You can choose to create a \\largearealong wall instead.',
         7: 'You can choose to create a \\hugearealong wall instead.',
       },
+      roles: ['hazard'],
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -573,97 +518,100 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
       `,
       rank: 4,
+      roles: ['hazard'],
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Cryostrike',
+      name: 'Frostblade',
 
+      cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a melee \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
       `,
-      rank: 2,
+      rank: 1,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Mighty Cryostrike',
+      name: 'Chilling Slash',
 
-      // TODO: damage math
-      functionsLike: {
-        name: 'cryostrike',
-        exceptThat: `
-          if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to your \\glossterm{power}.
-        `,
+      cost: OPTIONAL_ICE_CRYSTAL,
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        \\hit The target feels a growing chill.
+        During your next action, it takes 1d8 damage.
+      `,
+      rank: 3,
+      roles: ['burn'],
+      scaling: {
+        'special': 'The delayed damage increases by 1d8 for each rank beyond 3.',
       },
-      rank: 4,
-      scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Mighty Cryostrike+',
+      name: 'Mighty Chilling Slash',
 
-      functionsLike: {
-        name: 'cryostrike',
-        exceptThat: `
-          the strike deals double damage.
-          In addition, if your attack result beats the target's Fortitude defense, the strike deals \\glossterm{extra damage} equal to 1d8 per 2 power.
-        `,
+      cost: OPTIONAL_ICE_CRYSTAL,
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike}.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        \\hit The target feels a growing chill.
+        During your next action, it takes 1d6 damage per 2 \\glossterm{magical power}.
+      `,
+      rank: 6,
+      roles: ['burn'],
+      scaling: {
+        'special': 'The delayed damage increases by 3d6 for each rank beyond 6.',
       },
-      rank: 7,
-      // scaling: 'accuracy',
       tags: [],
     },
     {
-      name: 'Efficient Cryostrike',
+      name: 'Freezing Slash',
 
+      cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a melee \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        If the target takes damage and your attack also hits its Fortitude defense, it becomes \\slowed as a condition.
+        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
       `,
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: [],
     },
-
     {
-      name: 'Chilling Aura',
+      name: 'Mighty Freezing Slash',
 
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is chilled as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\slowed.
-        `,
-        targeting: `
-          Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 2,
+      cost: OPTIONAL_ICE_CRYSTAL,
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        Make a melee \\glossterm{strike} that deals triple damage.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
+        If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
+        \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
+        If it also loses \\glossterm{hit points} from the strike, it is also slowed as a \\glossterm{condition}.
+      `,
+      rank: 7,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
       tags: [],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Freezing Aura',
-
-      functionsLike: {
-        name: 'chilling aura',
-        exceptThat: 'affected creatures become slowed even if they are at full hit points.',
-      },
-      rank: 6,
-      scaling: 'accuracy',
-      tags: [],
-      type: 'Attune (deep)',
     },
   ],
 });
