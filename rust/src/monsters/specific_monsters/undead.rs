@@ -17,7 +17,8 @@ use std::cmp::{max, min};
 
 use super::humanoids::{add_humans, add_orcs};
 
-fn undead(def: MonsterDef) -> Monster {
+fn undead(mut def: MonsterDef) -> Monster {
+    def.abilities.modifiers.push(Modifier::immune_tag(AbilityTag::Poison));
     def.monster(CreatureType::Undead)
 }
 
