@@ -411,6 +411,23 @@ export const prayer: MysticSphere = {
     },
 
     {
+      name: 'Bless the Worthy',
+
+      // Assume that it typically affects two people, and anything more than that is a
+      // bonus. Normal healing ability would be dr4, so use half of that (where possible).
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You and all \glossterm{allies} within a \largearea radius from you each regain 2d8 \glossterm{damage resistance}.
+      `,
+      rank: 3,
+      roles: ['healing'],
+      // This is very strong scaling because of the AOE nature of the spell; no need for
+      // an empowered version of the spell.
+      scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
+      tags: ['Swift'],
+    },
+
+    {
       name: 'Consecrated Blow',
       // No need to say "no somatic components" because no one who has somatic components
       // can get access to this sphere.
