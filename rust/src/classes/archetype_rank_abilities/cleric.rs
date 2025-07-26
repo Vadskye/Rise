@@ -440,14 +440,12 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Name the Faithful",
+            name: "Spread the Word",
             is_magical: false,
             rank: 3,
             description: r"
-                Whenever you use a \magical or \atAuditory ability to target an \glossterm{ally} within a \glossterm{range}, you can double your range with that ability.
-                If you do, you also do not need \glossterm{line of sight} or \glossterm{line of effect} to that ally.
-                Instead, they must only be able to hear you, and you must be able to designate your intended target using their name.
-                This does not affect abilities that do not have a defined range measured in feet, such as abilities that require \glossterm{touch}.
+                Whenever you use a \magical or \atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
+                The standard areas are \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
             ",
             modifiers: None,
         },
@@ -467,27 +465,31 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Spread the Word",
+            name: "Name the Faithful",
             is_magical: false,
             rank: 6,
             description: r"
-                Whenever you use a \magical or \atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
-                The standard areas are \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
+                Whenever you use a \magical or \atAuditory ability to target one or more \glossterm{allies} within a \glossterm{range}, you can call each target by their name instead of choosing your targets normally.
+                If you do, you double your range with that ability, and you do not need \glossterm{line of sight} or \glossterm{line of effect} to the named targets.
+                Instead, they must only be able to hear you.
+                This does not affect abilities that do not have a defined range measured in feet, such as abilities that require \glossterm{touch}.
             ",
             modifiers: None,
         },
+        // Frightened by you as a curse is 2.4 EA, so r7.
+        // The extra conversion and accuracy effect comes from being a class feature.
         RankAbility {
             complexity: 2,
             name: "Convert the Irresolute",
             is_magical: false,
             rank: 7,
             description: r"
-                \begin{activeability}{Convert the Irresolute}[\abilitytag{Emotion}]
+                \begin{activeability}{Convert the Irresolute}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
-                    Make an attack vs. Mental against up to two creatures within \shortrange.
-                    If this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The target is \stunned until it finishes a \glossterm{long rest}.
+                    Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius.
+                    If this is your first time using this ability against a target since you finished a \glossterm{short rest}, your \glossterm{accuracy} against that target is equal to your Persuasion skill.
+                    \hit The target is \frightened by you and anything associated with your deity until it finishes a \glossterm{long rest}.
                     At the end of that time, if its Willpower is 0 or lower and it is at least 3 levels lower than you, it changes its mind and begins worshipping your deity permanently if it is capable of doing so.
                 \end{activeability}
             ",
