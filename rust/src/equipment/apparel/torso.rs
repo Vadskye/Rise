@@ -142,17 +142,12 @@ fn belts() -> Vec<Apparel> {
         short_description: String::from("Reduces your size"),
         description: String::from(r"
             You can activate this belt as a standard action.
-            When you do, your size decreases by one \glossterm<size category>, to a minimum of Tiny.
+            When you do, your size decreases by one \glossterm<size category>, to a minimum of Small.
             This effect lasts until you \glossterm{dismiss} it.
 
             Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
             It also reduces your \glossterm<base speed> (see \pcref<Size Categories>).
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Greatly reduces your size", "
-                You can choose to decrease your size by two size categories instead of one.
-            "),
-        ],
         ..Apparel::default()
     }));
 
