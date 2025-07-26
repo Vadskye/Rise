@@ -1679,13 +1679,14 @@ impl Class {
 
                     \subsubsection{Evil Domain}
                         \magicaldomainability{Gift}
-                        \begin{magicalsustainability}{Willing Sacrifice}{\abilitytag{Sustain} (free), \abilitytag{Swift}}
+                        \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
                             You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
-                        \end{magicalsustainability}
+                            This ability lasts until you \glossterm{dismiss} it or until you use it again.
+                        \end{magicalactiveability}
                         \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
