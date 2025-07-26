@@ -116,7 +116,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\confused.
+          The target is \\glossterm{briefly} \\confused.
           If it has no remaining \\glossterm{damage resistance} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
@@ -660,7 +660,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target's body deteriorates as a \\glossterm{condition}.
+          The target's body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
@@ -679,7 +679,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\slowed.
+          The target is \\glossterm{briefly} \\slowed.
           In addition, its body deteriorates as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,

@@ -138,7 +138,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\frightened of you.
+          The target is \\glossterm{briefly} \\frightened of you.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -342,7 +342,7 @@ export const revelation: MysticSphere = {
       // is enough for 0.4 ranks of buff.
       attack: {
         hit: `
-          Each target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
+          The target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
         `,
         targeting: `
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
@@ -366,7 +366,7 @@ export const revelation: MysticSphere = {
       // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks.
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\stunned.
+          The target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\shortrange.
@@ -405,7 +405,7 @@ export const revelation: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -425,7 +425,7 @@ export const revelation: MysticSphere = {
 
       // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\glossterm{briefly} \\dazzled.`,
         targeting: `
           You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.

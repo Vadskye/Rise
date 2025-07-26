@@ -60,7 +60,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          Each target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
+          The target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
         targeting: `
           Make an attack vs. Reflex against up to two creatures within \\distrange.
@@ -82,7 +82,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes} as a \\glossterm{condition}.
+          The target takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes} as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against up to two creatures within \\distrange.
@@ -218,7 +218,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\slowed.
+          The target is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           Make an attack vs. Brawn against up to three creatures within \\medrange.
@@ -237,7 +237,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} borne aloft by heavy winds.
+          The target is \\glossterm{briefly} borne aloft by heavy winds.
           It floats five feet above the ground in \\debuff{midair}, which normally means it suffers a \\minus4 penalty to its Armor, Brawn, and Reflex defenses.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
           Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
@@ -259,14 +259,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          You \\glossterm{knockback} each target that has no remaining \\glossterm{damage resistance} up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
-          Each target must be knocked back in the same direction.
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving it upwards costs twice the normal movement cost.
+          Each target of this spell must be knocked back in the same direction.
 
           You can leave the target \\midair after the knockback.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Brawn against up to two creatures within \\medrange that each have a \\glossterm{weight category} of Medium or lighter.',
+        targeting: `
+          Make an attack vs. Brawn against up to two creatures within \\medrange that each have a \\glossterm{weight category} of Medium or lighter.
+        `,
       },
       // narrative: '',
       rank: 2,
@@ -280,14 +282,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // sneak into three targets by keeping a relatively low weight category.
       attack: {
         hit: `
-          You \\glossterm{knockback} each target that has no remaining \\glossterm{damage resistance} up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
-          Each target must be knocked back in the same direction.
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving it upwards costs twice the normal movement cost.
+          Each target of this spell must be knocked back in the same direction.
 
           You can leave the target \\midair after the knockback.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
-        targeting: 'Make an attack vs. Brawn against up to three creatures within \\medrange that each have a \\glossterm{weight category} of Large or lighter.',
+        targeting: `
+          Make an attack vs. Brawn against up to three creatures within \\medrange that each have a \\glossterm{weight category} of Large or lighter.
+        `,
       },
       // narrative: '',
       rank: 6,
@@ -335,8 +339,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          Each target is \\glossterm{pushed} 15 feet in the direction the wind blows.
-          Once a target leaves the area, it stops being pushed and blocks any other targets from being pushed.
+          The target is \\glossterm{pushed} 15 feet in the direction the wind blows.
+          Once it leaves the area, it stops being pushed and blocks any other targets from being pushed.
         `,
         targeting: `
           You create a continuous blast of wind in a \\largearealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
@@ -515,8 +519,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         hit: `
           \\damageranktwo.
-          In addition, each target is \\glossterm{pushed} 15 feet clockwise around you.
-          Each target's final position should be the same distance from you as its starting position.
+          In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
+          Its final position should be the same distance from you as its starting position.
         `,
         missGlance: true,
         targeting: `
@@ -568,7 +572,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex against each creature in a \\smallarea radius within \\shortrange.
@@ -589,7 +593,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           You create a dust storm in a \\glossterm{zone} around you.

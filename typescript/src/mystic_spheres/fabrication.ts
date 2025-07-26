@@ -462,7 +462,7 @@ export const fabrication: MysticSphere = {
       name: 'Grease',
 
       attack: {
-        hit: `Each target falls \\prone.`,
+        hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in a \\smallarea radius within \\shortrange.
         `,
@@ -477,8 +477,8 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          Each target falls \\prone, and is \\glossterm{briefly} \\vulnerable to \\atFire attacks.
-          This vulnerability ends for a target if it takes damage from a \\atFire attack.
+          The target falls \\prone, and is \\glossterm{briefly} \\vulnerable to \\atFire attacks.
+          This vulnerability ends if it takes damage from a \\atFire attack.
         `,
         targeting: `
           Make an attack vs. Reflex against everything that is Large or smaller and \\glossterm{grounded} in a \\smallarea radius within \\shortrange.

@@ -280,7 +280,7 @@ export const flurryOfBlows: CombatStyle = {
       // tier gets us back to a r1 area, since we start from r-1. We only actually use a
       // r0 area.
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\glossterm{briefly} \\dazzled.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.

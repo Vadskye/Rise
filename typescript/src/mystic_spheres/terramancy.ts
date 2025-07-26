@@ -271,7 +271,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // r1 area is about halfway between "ranged" and "melee"; call it 1.4 EA. That gives
       // 0.2 EA for empowerment.
       attack: {
-        hit: `Each target is knocked \\prone.`,
+        hit: `The target is knocked \\prone.`,
         targeting: `
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in in a \\medarea cone from you.
           Then, you are \\glossterm{briefly} \\empowered.
@@ -335,7 +335,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // assume it's a reasonable debuff level.
       attack: {
         hit: `
-          \\damagerankthree, and each target falls \\prone.
+          \\damagerankthree, and the target falls \\prone.
         `,
         missGlance: true,
         targeting: `
@@ -358,7 +358,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // dr6, +1dr for double defense, -1dr for debuff, -2dr for repeat attack = dr4.
       attack: {
         hit: `
-          \\damagerankfour, and each target falls \\prone.
+          \\damagerankfour, and the target falls \\prone.
         `,
         missGlance: true,
         targeting: `
@@ -382,12 +382,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // the silly double effect.
       attack: {
         hit: `
-          \\damagerankfive, and each target is \\glossterm{briefly} \\slowed.
-          If a target loses \\glossterm{hit points} and it was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
+          \\damagerankfive, and the target is \\glossterm{briefly} \\slowed.
+          If the target loses \\glossterm{hit points} and it was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive as the earth grinds it into paste.
 
-          A creature swallowed by the arth can remove this condition by making a \\glossterm{difficulty value} 12 Strength check as a standard action.
+          The target can remove this condition by making a \\glossterm{difficulty value} 12 Strength check as a standard action.
           If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
           When the effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
           Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
@@ -413,7 +413,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
+          As a \\glossterm{condition}, the target is pulled towards the ground with great force, approximately doubling the gravity it experiences.
           It is unable to use any fly speed or glide speed, and its jump distance is halved.
           All \\glossterm{falling damage} that it takes is doubled.
           Standing up from a prone position costs its full speed rather than only half its speed.
@@ -435,7 +435,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'earthbind',
         exceptThat: `
-          you gain a +2 accuracy bonus for each weight category by which each target is heavier than Medium. 
+          you gain a +2 accuracy bonus for each weight category by which the target is heavier than Medium. 
           This accuracy bonus is doubled if the target is not \\glossterm{grounded}.
         `,
       },
@@ -456,8 +456,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'earthbind',
         exceptThat: `
-          as part of the same condition, each target is also \\slowed while it is below its maximum \\glossterm{hit points}.
-          At the start of each round, a target can make a DV 10 Strength check.
+          as part of the same condition, the target is also \\slowed while it is below its maximum \\glossterm{hit points}.
+          At the start of each round, the target can make a DV 10 Strength check.
           Success means that it stops being slowed during that round.
         `,
       },
@@ -474,7 +474,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // 2.6 EA as sustain (minor). That's a rank 7 effect.
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\slowed.
+          The target is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           You create an area of intense gravity in a \\medarea radius \\glossterm{zone} within \\medrange.

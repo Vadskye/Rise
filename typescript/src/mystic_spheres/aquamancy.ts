@@ -123,7 +123,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Huge or smaller offsets the bonus "cannot fly or glide".
       // -1 rank for limited scope
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} surrounded by a bubble of water.
           It cannot breathe air and is \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
@@ -136,6 +135,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 6,
       roles: ['softener'],
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
@@ -146,9 +146,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is surrounded by a bubble of water.
-          It cannot breathe air and is \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
-          It cannot fly or glide, but can use its other movement modes normally.
+          If the target has no remaining \\glossterm{damage resistance}, it is surrounded by a bubble of water as a \\glossterm{condition}.
+          It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
+          It is also \\submerged, which causes it to suffer penalties if it does not have a is \\glossterm{swim speed}.
         `,
         targeting: `
           Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.
@@ -743,6 +743,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 3,
       roles: ['maim'],
+      scaling: 'accuracy',
     },
     {
       name: 'Liquify',
@@ -759,7 +760,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // +1r for area
       attack: {
-        hit: `Each target falls \\prone.`,
+        hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\smallarea radius within \\shortrange.
         `,

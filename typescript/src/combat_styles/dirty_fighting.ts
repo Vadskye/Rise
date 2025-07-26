@@ -380,7 +380,7 @@ export const dirtyFighting: CombatStyle = {
 
       // This gets r0 area instead of r1 because Reflex defense is easy to hit.
       attack: {
-        hit: `Each target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        hit: `The target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
@@ -396,7 +396,7 @@ export const dirtyFighting: CombatStyle = {
       // This seems like a strong combo, so we don't layer any other benefits on it. Maybe
       // Reflex defense is too easy to hit for such a strong debuff?
       attack: {
-        hit: `Each target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        hit: `The target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\focused.

@@ -250,7 +250,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive.
-          You \\glossterm{knockback} each target that loses \\glossterm{hit points} up to 15 feet away from you.
+          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
@@ -269,7 +269,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix.
-          You \\glossterm{knockback} each target that loses \\glossterm{hit points} up to 15 feet away from you.
+          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet away from you.
           This knockback distance is doubled if the target is Medium or smaller.
         `,
         missGlance: true,
@@ -289,7 +289,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           You \\glossterm{push} each target up to 15 feet.
-          Each target must be pushed in the same direction.
+          Each target of this spell must be pushed in the same direction.
         `,
         targeting: `
           Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
@@ -305,8 +305,8 @@ export const telekinesis: MysticSphere = {
       name: 'Intense Mind Shove',
       attack: {
         hit: `
-          You \\glossterm{push} each target up to 30 feet.
-          Each target must be pushed in the same direction.
+          You \\glossterm{push} the target up to 30 feet.
+          Each target of this spell must be pushed in the same direction.
         `,
         targeting: `
           Make an attack vs. Brawn against everything that is Huge or smaller in a \\medarea radius within \\medrange of you.
@@ -321,8 +321,8 @@ export const telekinesis: MysticSphere = {
       name: 'Versatile Mind Shove',
       attack: {
         hit: `
-          You \\glossterm{push} each target up to 15 feet.
-          Each target can be pushed in a different direction of your choice.
+          You \\glossterm{push} the target up to 15 feet.
+          Each target of this spell can be pushed in a different direction of your choice.
         `,
         targeting: `
           Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
@@ -340,8 +340,8 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If each target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
-          Moving a target upwards costs twice the normal movement cost.
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
+          Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two Large or smaller creatures within \\medrange.
@@ -358,8 +358,8 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If each target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
-          Moving a target upwards costs twice the normal movement cost.
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
+          Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
           Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.
@@ -566,7 +566,7 @@ export const telekinesis: MysticSphere = {
       // TODO: correct rank, clarify whether this triggers damage from knockback
       attack: {
         hit: `
-          Each target is unable to enter the spell's area for the rest of the round.
+          The target is unable to enter the spell's area for the rest of the round.
           The rest of its movement in the current phase is cancelled.
         `,
         targeting: `
@@ -644,7 +644,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is impeded as a \\glossterm{condition}.
+          The target is impeded as a \\glossterm{condition}.
           While it is within \\shortrange of you, it is \\slowed.
           It suffers no ill effects beyond that range.
       `,

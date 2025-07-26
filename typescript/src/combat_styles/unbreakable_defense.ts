@@ -236,7 +236,7 @@ export const unbreakableDefense: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\goaded by you.
+          The target is \\glossterm{briefly} \\goaded by you.
           If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -254,7 +254,7 @@ export const unbreakableDefense: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\goaded by you as a \\glossterm{condition}.
+          The target is \\goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
