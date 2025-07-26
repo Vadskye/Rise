@@ -135,7 +135,7 @@ export const polymorph: MysticSphere = {
       name: 'Shrink',
 
       effect: `
-        Your size decreases by one \\glossterm{size category}, to a minimum of Tiny.
+        Your size decreases by one \\glossterm{size category}, to a minimum of Small.
         Reducing your size gives you a -1 Brawn defense penalty, -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 Reflex defense bonus, and a +5 bonus to Stealth.
         It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
@@ -144,6 +144,7 @@ export const polymorph: MysticSphere = {
       type: 'Attune',
     },
 
+    // Unclear how to do proper EV calc, but Tiny is a scary high stealth bonus
     {
       name: 'Greater Shrink',
 
@@ -152,7 +153,7 @@ export const polymorph: MysticSphere = {
         This gives you a -2 Brawn defense penalty, a -2 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +2 Reflex defense bonus, and a +10 bonus to Stealth.
         It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
-      rank: 6,
+      rank: 7,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -162,7 +163,7 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         exceptThat:
-          'it affects up to five creatures of your choice from among yourself and your Small or larger \\glossterm{allies} within \\medrange.',
+          'it affects up to five creatures of your choice from among yourself and your Medium or larger \\glossterm{allies} within \\medrange.',
         name: 'Shrink',
       },
       // narrative: '',
