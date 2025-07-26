@@ -29,7 +29,8 @@ By EA:
   Push 15' (melee)   & 0.4   & N/A          & N/A       \\
   Push 30' (ranged)  & 2.0   & N/A          & N/A       \\
   Push 30' (melee)   & 1.5   & N/A          & N/A       \\
-  Single defense     & 1.0   & 0.7          & 2.0       \\
+  Submerged          & 2.5   & 2.6          & 6.6       \\
+  Single defense     & 1.0   & 0.8          & 2.0       \\
   Slowed (ranged)    & 2.0   & 2.1          & 5.2       \\
   Slowed (melee)     & 1.5   & 1.5          & 3.7       \\
   Stunned            & 1.4   & 1.2          & 3.0       \\
@@ -69,6 +70,7 @@ By rank:
   Slowed (ranged)    & 4     & 5            & inf       \\
   Slowed (melee)     & 2     & 2            & inf       \\
   Stunned            & 1     & 0            & 9         \\
+  Submerged          & 7     & 7            & inf       \\
   Time skip          & inf   & inf          & inf       \\
   Treat as invis:    & 0     & 2            & inf       \\
   Vulnerable         & 8     & 9            & inf       \\
@@ -93,6 +95,9 @@ By rank:
 
 These are EA modifiers, as opposed to rank modifiers that apply after calculating EA and damage.
 
+* +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, minor)
+* -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, standard)
+* x0.4 EA: Condition becomes a HP-only condition
 * +0.2 EA: Condition becomes a Sustain (minor)
 * +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
 * +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
@@ -350,6 +355,10 @@ The defense debuff is mostly the same as stunned, except that not all party memb
 
 If a prone or slow is applied by a melee ability, halve the EA contribution from the movement penalty, since that generally means it's not being used for full kiting.
 
+### Submerged: 2.5
+
+1.3 from Braced (all) 1.2 from Armor/Ref defense penalty = 2.5.
+
 ### Stunned: 1.4
 
 If you stun an enemy as the first action of the round, the party has 7 attacks that can take advantage of the stun debuff: your three party members during the first round, and the full party during the second round.
@@ -450,6 +459,10 @@ For the defense debuff, assume that 11 of the 15 party actions will take advanta
 ### Stunned: 3
 
 15 affected player actions * 0.2 action effectiveness per action = 3 effective actions.
+
+### Submerged: 6.6
+
+4 EA from accuracy penalty plus 2.6 EA from Armor/Reflex penalty = 6.6 EA
 
 ### Time Skip: 10.8
 
@@ -650,153 +663,12 @@ You can apply a stronger debuff if you are willing to affect fewer enemies. Ther
 * Rank - 1: Rank X / 2 area, to a minimum of rank 0
 * Rank - 2: Single target melee range
 
-## Area and Effect Rank
-
-"Effect rank" refers to how strong the effect of an ability is. "Ability rank" refers to the minimum rank required to use the ability. A spell's ability rank is a combination of its effect rank and its targeting criteria.
-
-For example, a Medium range erX spell deals drX damage.
-
-### Standard Area Ranks
-
-Rank -1 areas (why would these exist?):
-* Small line, 5' wide from self
-
-Rank 0 areas:
-* Cone:
-  * Small cone from self
-* Line:
-  * Small line, 10' wide from self
-  * Medium line, 5' wide from self (only for splitting)
-* Radius:
-  * Small radius from self
-    * This is obviously a larger area than a cone or line, but is also much harder to aim to only hit enemies
-  * Enemies in Tiny radius from self
-    * There is no such thing as "everything adjacent to you", because it's easy to make that functionally enemies-only on a grid system, but that's really annoying in practice.
-
-Rank 1 areas:
-* Cone:
-  * Medium cone from self
-* Line:
-  * Medium line, 10' wide from self
-* Radius:
-  * Medium radius from self
-* Targets:
-  * Up to two creatures in Short range
-
-Rank 2 areas:
-* Cone:
-  * (no change) Medium cone from self
-  * Two Small cones from self
-* Line:
-  * (no change) Medium line, 10' wide from self
-  * Large line, 5' wide from self (only for splitting)
-  * Two Small, 10' wide lines from self
-  * Two Medium, 5' wide lines from self
-* Radius:
-  * (no change) Medium radius from self
-  * Tiny radius in Short range (rare, since Tiny radius is so close to single target)
-* Targets:
-  * Up to three creatures in Short range
-  * Up to two creatures in Medium range
-
-Rank 3 areas:
-* Cone:
-  * Large cone from self
-  * Two Medium cones from self
-* Line:
-  * Large line, 10' wide from self
-  * Two Medium, 10' wide lines from self
-* Radius:
-  * Large radius from self
-  * Small radius in Short range
-  * Tiny radius in Med range (only for splitting)
-* Targets:
-  * Up to four creatures in Short range
-  * (unchanged) Up to two creatures in Medium range
-
-After rank 3, spells have mostly reached their maximum range, since they are not allowed to go past 60 feet by default. Instead, area scaling comes from splitting areas.
-
-Rank 4 areas:
-* Cone:
-  * (unchanged) Two Medium cones from self
-* Line:
-  * (unchanged) Two Medium, 10' wide lines from self
-* Radius
-  * Medium radius in Short range (discouraged due to self-inclusion)
-* Targets:
-  * Any number of creatures in Short range (equivalent to enemies-only Medium radius)
-  * Up to three creatures in Medium range
-
-Rank 5 areas:
-* Cone:
-  * Two Large cones from self
-* Line:
-  * Two Large, 10' wide lines from self
-* Radius:
-  * Two Small radii in Short range
-  * Two Tiny radii in Med range
-* Targets:
-  * Any number of creatures in Medium range (equivalent to enemies-only Large radius)
-
-#### Extended Area Scaling
-
-To use areas that extend beyond 60', you have to pay a -1 rank cost. This reduces the damage dealt by the spell and the debuff tier (if any), but you still use the spell's normal rank for calculating its area. In exchange, you get access to the following additional rank scaling options:
-
-Rank 4 areas:
-* Radius:
-  * Small radius in Medium range
-
-Rank 5 areas:
-* Cone:
-  * Huge cone from self
-* Line:
-  * Huge line, 15' wide from self
-* Radius:
-  * Huge radius from self
-  * Medium radius in Medium range
-  * Small radius in Long range
-
-Rank 6 areas:
-* Radius:
-  * Medium radius in Long range
-
-Rank 7 areas:
-* Cone:
-  * Gargantuan cone from self
-* Line:
-  * Gargantuan line, 15' wide from self
-* Radius:
-  * Gargantuan radius from self
-  * Large radius in Medium range (a little odd, basically requires enemies-only)
-  * Medium radius in Distant range
-
-### Area Rank Modifiers
-
-* +1 area rank: Only affects enemies in the area (except radius from self)
-* +2 area rank: Only affects enemies in the area (radius from self).
-
-## Walls and Barriers
-
-Barriers are most effective in tunnel and constrained movement situations. They generally don't work as well on open battlefields. What is the correct size for a standard "you cannot pass" barrier? How should it scale with level?
-
-* Rank 1: Small wall in Short range
-* +1 rank: Short -> Med -> Long range
-* +1 rank: +1x power HP
-* +1 rank: Small -> Med wall
-* +2 ranks: Med -> Large wall
-* Wall HP:
-  * Rank 1-2: 2x power
-  * Rank 3-5: 3x power
-  * Rank 6-8: 4x power
-  * Rank 9: 5x power
-
-Standard rank scaling is +1x power HP per 2 ranks.
-
 ## Stock effects
 
 ### Naming prefixes
 THIS IS AN ORDERED LIST.
 If a spell improves in multiple ways, use the first name in this list that applies.
+
 * Efficient: lower requirements (on damage instead of on HP loss)
 * Intense: a stronger (non-damaging) hostile effect, like dazed -> stunned
 * Certain: more accuracy
