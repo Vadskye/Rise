@@ -199,7 +199,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} becomes \\frightened by you as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it becomes \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -215,7 +215,7 @@ export const channelDivinity: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\frightened by you as a \\glossterm{condition}.
+          The target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.

@@ -593,6 +593,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 3,
       roles: ['attune'],
+      scaling: {
+        special: "The extra damage increases by 1 for each rank beyond 3.",
+      },
       type: 'Attune (target)',
     },
 
@@ -659,7 +662,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         miss: DELAYED_HALF,
         hit: `
           \\damagerankone.
-          Each target that loses \\glossterm{hit points} takes this damage again during your next action.
+          If the target \\glossterm{hit points}, it takes this damage again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.

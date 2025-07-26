@@ -192,7 +192,7 @@ export const umbramancy: MysticSphere = {
       // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\slowed.
+          The target is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} creatures in a \\smallarea radius within \\shortrange.
@@ -212,7 +212,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target becomes afraid of the dark as a \\glossterm{condition}.
+          The target becomes afraid of the dark as a \\glossterm{condition}.
           While it is \\glossterm{shadowed} and below its maximum \\glossterm{hit points}, it is \\frightened of all creatures.
         `,
         targeting: `
@@ -247,7 +247,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
@@ -506,7 +506,7 @@ export const umbramancy: MysticSphere = {
       // spend, reaching r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\frightened of you.`,
+        hit: `The target is \\glossterm{briefly} \\frightened of you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
           In addition, all attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.

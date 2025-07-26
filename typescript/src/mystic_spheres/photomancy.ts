@@ -36,7 +36,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Reflex and Mental against each creature within a \\smallarea cone from you.
@@ -55,7 +55,7 @@ export const photomancy: MysticSphere = {
       // The area is rank 2, which is a little awkward.
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\dazzled and \\stunned.
+          The target is \\glossterm{briefly} \\dazzled and \\stunned.
         `,
         targeting: `
           Make an attack vs. Reflex and Mental against each \\glossterm{enemy} within a \\medarea cone from you.
@@ -119,7 +119,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
@@ -139,7 +139,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled as a \\glossterm{condition}.
+          The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -323,7 +323,7 @@ export const photomancy: MysticSphere = {
       // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
         hit: `
-          Each target is \\glossterm{briefly} \\stunned.
+          The target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.
@@ -482,7 +482,7 @@ export const photomancy: MysticSphere = {
       // Baseline would be r2, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
       attack: {
         hit: `
-          \\damagerankfourlow, and each target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damagerankfourlow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         missGlance: true,
         targeting: `
@@ -549,7 +549,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
+          The target becomes surrounded by glowing lights that highlight its outline as a \\glossterm{condition}.
           This gives it a -10 penalty to the Stealth skill, and it gains no benefit from \\glossterm{concealment} or being \\trait{invisible}.
           Other miss chances, such as the miss chance from attacking it while dazzled, are unaffected.
         `,

@@ -241,10 +241,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         hit: `
           The target feels a growing chill.
           During your next action, it takes \\damagerankfour.
-          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
+
+          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 2,
@@ -259,10 +260,11 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         hit: `
           The target feels a growing chill.
           During your next action, it takes \\damagerankeight.
-          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
+
+          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 6,
@@ -317,11 +319,12 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `
-          Each target becomes \\glossterm{briefly} \\slowed.
-          If any Medium or larger creatures become slowed in this way and were not already slowed, you gain a \\glossterm{ice crystal}.
+          The target becomes \\glossterm{briefly} \\slowed.
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea cone from you.
+
+          If any Medium or larger creatures become slowed by this spell and were not already slowed, you gain a \\glossterm{ice crystal}.
         `,
       },
       rank: 3,
@@ -336,12 +339,13 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target becomes \\glossterm{briefly} \\slowed.
-          Each creature with no remaining \\glossterm{damage resistance} is also slowed as a \\glossterm{condition}.
-          If any Medium or larger creatures become slowed in this way and were not already slowed, you gain a \\glossterm{ice crystal}.
+          The target becomes \\glossterm{briefly} \\slowed.
+          If it has no remaining \\glossterm{damage resistance}, it is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.
+
+          If any Medium or larger creatures become slowed by this spell and were not already slowed, you gain a \\glossterm{ice crystal}.
         `,
       },
       rank: 6,
@@ -382,15 +386,16 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // +1dr for delay
       attack: {
         hit: `
-          Each target feels a growing chill.
+          The target feels a growing chill.
           During your next action, it takes \\damagerankfive.
-          If any Medium or larger creatures lose \\glossterm{hit points} from this damage, you gain an \\glossterm{ice crystal}.
         `,
         missGlance: true,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\medarea cone from you.
           After you breathe cold, you \\glossterm{briefly} cannot do so again.
+
+          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 3,

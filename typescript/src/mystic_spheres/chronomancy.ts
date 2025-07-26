@@ -247,20 +247,20 @@ export const chronomancy: MysticSphere = {
       // scaling: 'accuracy',
     },
 
-    // Slow HP is 2.1 EA, so r5
+    // Slow HP is 2.1 EA. Short range is a little closer to melee, so call it 2 EA, or r4.
     {
       name: 'Slow',
 
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\slowed as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['maim'],
       scaling: 'accuracy',
     },
@@ -315,7 +315,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target randomly slows down.
+          As a \\glossterm{condition}, the target randomly slows down.
           At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
@@ -694,7 +694,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\deafened and \\dazzled.
+          The target is \\glossterm{briefly} \\deafened and \\dazzled.
           If it is below its maximum hit points, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
@@ -714,7 +714,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\dazzled and \\deafened as a single \\glossterm{condition}.
+          The target is \\dazzled and \\deafened as a single \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against each creature in a \\largearea cone.

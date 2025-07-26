@@ -291,7 +291,7 @@ export const bruteForce: CombatStyle = {
       name: 'Ostentatious Flex',
 
       attack: {
-        hit: `Each target is \\glossterm{briefly} \\goaded by you.`,
+        hit: `The target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\empowered.
@@ -307,7 +307,7 @@ export const bruteForce: CombatStyle = {
       // Start from r6 due to 0.2 EA buff, limited scope gets us back to r7
       attack: {
         crit: CONDITION_CRIT,
-        hit: `Each target is \\goaded by you as a \\glossterm{condition}.`,
+        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\empowered.

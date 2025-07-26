@@ -470,8 +470,8 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target has difficulty seeing until it finishes a \\glossterm{short rest}.
-          While a target is below its maximum \\glossterm{hit points}, it is \\dazzled.
+          The target has difficulty seeing until it finishes a \\glossterm{short rest}.
+          While it is below its maximum \\glossterm{hit points}, it is \\dazzled.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
@@ -490,7 +490,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target is \\dazzled until it finishes a \\glossterm{short rest}.
+          The target is \\dazzled until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -510,7 +510,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target becomes slothful until it finishes a \\glossterm{short rest}.
+          The target becomes slothful until it finishes a \\glossterm{short rest}.
           While a slothful creature is below its maximum \\glossterm{hit points}, it is \\slowed.
         `,
         targeting: `
@@ -532,7 +532,7 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target perceives you as its nemesis until it finishes a \\glossterm{short rest}.
+          The target perceives you as its nemesis until it finishes a \\glossterm{short rest}.
           While it is below its maximum hit points, it is \\goaded by you and \\frightened by you.
         `,
         targeting: `
@@ -553,9 +553,9 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target becomes anxious until it finishes a \\glossterm{short rest}.
-          Whenever a creature causes a target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
-          As normal, it stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
+          The target becomes anxious until it finishes a \\glossterm{short rest}.
+          Whenever a creature causes the target to lose \\glossterm{hit points}, it becomes \\frightened by that creature until this effect ends.
+          As normal, the target stops being frightened if the source of its fear is \\glossterm{defeated}, but this does not remove the anxiety.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\shortrange.
@@ -573,8 +573,8 @@ export const prayer: MysticSphere = {
       attack: {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
-          Each target has difficulty looking at you until it finishes a \\glossterm{short rest}.
-          While a target is below its maximum \\glossterm{hit points}, it treats you as being \\trait{invisible}.
+          The target has difficulty looking at you until it finishes a \\glossterm{short rest}.
+          While it is below its maximum \\glossterm{hit points}, it treats you as being \\trait{invisible}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
