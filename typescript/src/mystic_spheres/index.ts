@@ -26,7 +26,7 @@ export { rituals } from './rituals';
 
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
-  // aquamancy,
+  aquamancy,
   // astromancy,
   // channelDivinity,
   chronomancy,
