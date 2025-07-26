@@ -46,7 +46,10 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
 
 function assertDoesNotUseEachTarget(attack: StandardAttack, effectName: string): void {
   const hasEachTarget = /ach target/.test(attack.hit);
-  if (hasEachTarget) {
+  // Some spells, like Buffet, have more specific wording that does explicitly apply to
+  // each target of the spell, even if its baseline effects correctly use "the target".
+  const hasEachTargetOfThisSpell = /ach target of this spell/.test(attack.hit);
+  if (hasEachTarget && !hasEachTargetOfThisSpell) {
     console.error(`Hit effect from ${effectName} should use 'the target' instead of 'each target'`);
   }
 }

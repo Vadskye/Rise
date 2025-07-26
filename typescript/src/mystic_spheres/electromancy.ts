@@ -82,9 +82,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target becomes a lightning rod as a \\glossterm{condition}.
+          The target becomes a lightning rod as a \\glossterm{condition}.
           Abilities which \\glossterm{chain} can travel an extra 30 feet to affect it.
-          In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to lightning damage.
+          In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to \\atLightning abilities.
         `,
         targeting: `
           Make an attack vs. Fortitude against up one creature within \\shortrange.
@@ -184,7 +184,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is \\stunned as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -202,7 +202,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\glossterm{briefly} \\stunned.
+          The target is \\glossterm{briefly} \\stunned.
           If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
@@ -370,7 +370,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\stunned as a \\glossterm{condition}.
+          The target is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one \\glossterm{metallic} creature within \\medrange.

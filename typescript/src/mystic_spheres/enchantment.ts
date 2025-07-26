@@ -33,11 +33,11 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          During the next round, each target must repeat the same standard action that it took this round if possible.
+          During the next round, the target must repeat the same standard action that it took this round if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
           This does not affect its other actions, such as movement.
           If it is unable to take the same standard action, it can act normally.
-          For example, if a creature used the \\ability{recover} ability this round, which can only be used once per short rest, its actions would not be restricted next round.
+          For example, if the target used the \\ability{recover} ability this round, which can only be used once per short rest, its actions would not be restricted next round.
 
           After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
@@ -125,7 +125,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target is compelled to dance.
+          As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
           At the end of each movement phase, if the target did not dance during that phase, it takes a -1 penalty to its defenses as the compulsion intensifies.
           This penalty stacks each round up to a maximum of -4.
@@ -147,7 +147,7 @@ export const enchantment: MysticSphere = {
       name: 'Collapse',
 
       attack: {
-        hit: `Each target falls \\prone.`,
+        hit: `The target falls \\prone.`,
         targeting: `
           Make an attack vs. Mental against all Large or smaller \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
@@ -185,7 +185,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is \\confused as a \\glossterm{condition}.
+          If the target has no remaining \\glossterm{damage resistance}, it is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -204,9 +204,9 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\stunned as a \\glossterm{condition}.
-          If a target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
-          When you do, that target becomes \\dominated by you for the duration of that attunement.
+          The target is \\stunned as a \\glossterm{condition}.
+          If the target is currently unconscious due to \\glossterm{vital wounds} and is not \\glossterm{elite}, you can choose to \\glossterm{attune} to this ability.
+          When you do, it becomes \\dominated by you for the duration of that attunement.
           This attunement only allows you to control one creature, not each target of this spell, and you can only attune to this effect once.
         `,
         targeting: `
@@ -227,12 +227,12 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target feels sleepy as a \\glossterm{condition}.
-          While it is below its maximum hit points, it is \\slowed.
-
-          In addition, if a target can find a convenient opportunity to go to sleep, it will do so.
+          The target feels sleepy as a \\glossterm{condition}.
+          If it can find a convenient opportunity to go to sleep, it will do so.
           This generally will not remove it from combat or high pressure social situations, and it will generally take the time to find a convenient place to sleep rather than simply dropping asleep in the middle of a room.
-          While asleep, it can be awakened normally, such as by taking damage.
+          In addition, while the target is below its maximum hit points, it is \\slowed.
+
+          While asleep, the target can be awakened normally, such as by taking damage.
         `,
         targeting: `
           This spell has no \\glossterm{verbal components}.
@@ -253,7 +253,7 @@ export const enchantment: MysticSphere = {
       // action skip is r3 with limited scope
       attack: {
         hit: `
-          Each target with no remaining \\glossterm{damage resistance} is compelled to spend its next \\glossterm{standard action} doing nothing at all.
+          If the target has no remaining \\glossterm{damage resistance}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -290,7 +290,7 @@ export const enchantment: MysticSphere = {
       // is not well defined.
       attack: {
         hit: `
-          Each target that has no remaining \\glossterm{damage resistance} is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
+          If the target has no remaining \\glossterm{damage resistance}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
@@ -313,7 +313,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target is \\frightened by you as a \\glossterm{condition}.
+          The target is \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -403,8 +403,8 @@ export const enchantment: MysticSphere = {
       // TODO: unclear rank
       attack: {
         hit: `
-          Each target has its emotions calmed.
-          The effects of all other \\abilitytag{Emotion} abilities on that target are \\glossterm{suppressed}.
+          The target has its emotions calmed.
+          The effects of all other \\abilitytag{Emotion} abilities on it are \\glossterm{suppressed}.
           It cannot take violent actions (although it can defend itself) or do anything destructive.
           If the target is harmed or feels that it is in danger, this effect is \\glossterm{dismissed}.
           Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
@@ -429,7 +429,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          Each target takes a -2 penalty to Mental defense as a \\glossterm{condition}.
+          The target takes a -2 penalty to Mental defense as a \\glossterm{condition}.
           Unlike normal conditions, this effect stacks with itself if applied multiple times, up to a maximum of -10.
         `,
         targeting: `
@@ -527,7 +527,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, each target feels excruciating pain from even minor injuries.
+          As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
           While it is below its maximum \\glossterm{hit points}, it is \\stunned.
         `,
         targeting: `
@@ -565,9 +565,9 @@ export const enchantment: MysticSphere = {
       // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
         hit: `
-          Each target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+          The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
-          After this effect ends, a target becomes immune to this spell until it finishes a \\glossterm{short rest}.
+          After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -659,7 +659,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          Each target is unable to say things it knows to be untrue.
+          The target is unable to say things it knows to be untrue.
           It can still remain silent, say misleading truths, and so on.
         `,
         targeting: `

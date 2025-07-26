@@ -178,8 +178,7 @@ export const summoning: MysticSphere = {
       // damaging area spell would be dr4, so we get dr3 with the debuff.
       attack: {
         hit: `
-          \\damagerankthree.
-          You \\glossterm{push} each target that takes damage up to 15 feet horizontally away from you.
+          \\damagerankthree, and you \\glossterm{push} the target up to 15 feet horizontally away from you.
         `,
         missGlance: true,
         targeting: `
@@ -453,7 +452,7 @@ export const summoning: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankthree, and each target is \\dazzled as a \\glossterm{condition}.
+          \\damagerankthree, and the target is \\dazzled as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
@@ -476,8 +475,8 @@ export const summoning: MysticSphere = {
       // drX-1 for half area, -1dr for debuff, +1dr for double defense
       attack: {
         hit: `
-          \\damageranksix, and each target is \\glossterm{briefly} \\slowed.
-          Each target that loses hit points is also slowed as a \\glossterm{condition}.
+          \\damageranksix, and the target is \\glossterm{briefly} \\slowed.
+          If the target loses \\glossterm{hit points}, it is also slowed as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
