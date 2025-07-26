@@ -44,6 +44,13 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
   }
 }
 
+function assertDoesNotUseEachTarget(attack: StandardAttack, effectName: string): void {
+  const hasEachTarget = /ach target/.test(attack.hit);
+  if (hasEachTarget) {
+    console.error(`Hit effect from ${effectName} should use 'the target' instead of 'each target'`);
+  }
+}
+
 function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
   const isArea = /(\bwall\b|against all|ach target|verything|and all)/.test(attack.targeting);
   const dealsDamage = /damagerank/.test(attack.hit);
@@ -86,6 +93,7 @@ export function spellEffect(
       assertEndsWithPeriod(spell.attack.crit, spell.name);
       assertHasCorrectGlance(spell.attack, spell.name);
       assertHasCorrectCrit(spell.attack, spell.name);
+      assertDoesNotUseEachTarget(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
       return `
         ${spell.attack.targeting.trim() + fatiguePointsText}%
