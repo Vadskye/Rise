@@ -528,7 +528,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        \\hit Each target takes \\damagerankthree. If your attack result also hits a target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        \\hit \\damagerankthree. If your attack result also hits the target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
         \\miss Half damage.
       `,
       rank: 3,
@@ -546,7 +546,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        \\hit each target takes \\damagerankseven. If your attack result also hits a target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
+        \\hit \\damagerankseven. If your attack result also hits the target's Reflex defense, it is \\dazzled as a \\glossterm{condition}.
         \\miss Half damage.
       `,
       rank: 7,
