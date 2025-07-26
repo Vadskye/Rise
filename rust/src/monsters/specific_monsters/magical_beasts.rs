@@ -268,7 +268,7 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Fortitude against all creatures in a \medarea cone from it.
                         After it uses this ability, it \glossterm{briefly} cannot use it again.
-                        \hit Each target is \glossterm{briefly} \stunned.
+                        \hit The target is \glossterm{briefly} \stunned.
                     ".to_string(),
                     is_magical: true,
                     name: "Maggot Breath".to_string(),

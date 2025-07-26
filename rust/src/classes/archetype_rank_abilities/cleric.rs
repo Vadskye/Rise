@@ -406,7 +406,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \glossterm{briefly} \stunned.
+                    \hit The target is \glossterm{briefly} \stunned.
 
                     \rankline
                     \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
@@ -491,7 +491,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit Each target is \glossterm{briefly} \panicked by you, and is \frightened of you as a \glossterm{condition}.
+                    \hit The target is \glossterm{briefly} \panicked by you, and is \frightened of you as a \glossterm{condition}.
 
                     \rankline
                     \rank{7} Each target with no remaining \glossterm{damage resistance} is \panicked by you as a condition instead of frightened.

@@ -1651,7 +1651,7 @@ impl Class {
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
-                            \hit For each target, if its \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
+                            \hit If the target's \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
@@ -1783,10 +1783,10 @@ impl Class {
                             \abilityusagetime Standard action.
                             \rankline
                             Make an attack vs. Mental against all creatures within a \arealarge radius from you.
-                            \hit Each target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
+                            \hit The target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
                             The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
 
-                            % Sufficiently clear that this isn't part of the hit effect?
+                            % TODO: Sufficiently clear that this isn't part of the hit effect?
                             When you use this ability, you also gain the condition.
                             If this condition is removed from you, it is also removed from all other affected creatures.
                             In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.

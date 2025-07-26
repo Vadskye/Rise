@@ -63,7 +63,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-                        \hit $dr2l damage. If it loses hit points, each target is poisoned by aboleth slime.
+                        \hit $dr2l damage. If the target loses hit points, it is poisoned by aboleth slime.
                     ".to_string(),
                     is_magical: true,
                     name: "Slime-Covered Body".to_string(),
