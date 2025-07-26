@@ -279,25 +279,21 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                % dr2 for close range, +1dr for touch or healing bonus idk, free defense bonus because class feature
+                % dr3 for touch range, +1dr for healing bonus, free defense bonus because class feature
                 \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
+                    \abilitycost One \glossterm{fatigue level}.
                     \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
-                    The target regains 1d8 \glossterm{hit points} +1 per \glossterm{power}.
+                    The target regains 1d6 \glossterm{hit points} plus 1d6 per 2 \glossterm{power}.
                     In addition, if the target is an \glossterm{ally}, it becomes \braced this round.
 
-                    Normally, this healing cannot increase the target's hit points above half its maximum hit points.
-                    If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
-                    You can make this decision after seeing how much the target would heal.
-
                     \rankline
-                    \rank{2} The bonus healing increases to 1d6 per 3 power.
-                    \rank{3} The bonus healing increases to 1d6 per 2 power.
-                    \rank{4} The bonus healing increases to 1d8 per 2 power.
-                    \rank{5} The bonus healing increases to 1d10 per 2 power.
-                    \rank{6} The bonus healing increases to 1d6 per power.
-                    \rank{7} The bonus healing increases to 1d10 per power.
+                    \rank{3} The bonus healing increases to 1d8 per 2 power.
+                    \rank{4} The bonus healing increases to 1d6 per power.
+                    \rank{5} The base healing increases to 2d6.
+                    \rank{6} The bonus healing increases to 1d8 per power.
+                    \rank{7} The base healing increases to 2d10, and the bonus healing increases to 1d10 per power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
