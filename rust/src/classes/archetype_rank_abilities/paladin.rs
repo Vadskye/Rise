@@ -242,12 +242,12 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                % dr2 for close range, +1dr for touch or healing bonus idk, free poison/disease because class feature
+                % dr3 for touch range, free poison/disease because class feature
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.
-                    The target regains 1d8 \glossterm{hit points} +1 per power.
+                    The target regains 2d6 \glossterm{hit points} +1 per power.
                     In addition, it removes one \glossterm{condition} or poison affecting it.
                     % TODO: wording
                     This removal can only affect conditions and poisons with a rank no more than two ranks higher than your rank in this archetype.
@@ -257,12 +257,11 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     You can make this decision after seeing how much the target would heal.
 
                     \rankline
-                    \rank{2} The base healing increases to 2d8.
-                    \rank{3} The bonus healing increases to 1d6 per 3 power.
-                    \rank{4} The base healing increases to 4d8.
-                    \rank{5} The bonus healing increases to 1d8 per 3 power.
-                    \rank{6} The base healing increases to 6d8.
-                    \rank{7} The bonus healing increases to 1d8 per 2 power.
+                    \rank{3} The bonus healing increases to 1d6 per 2 power.
+                    \rank{4} The base healing increases to 4d6.
+                    \rank{5} The bonus healing increases to 1d10 per 2 power.
+                    \rank{6} The bonus healing increases to 1d6 per power.
+                    \rank{7} The base healing increases to 4d8, and the bonus healing increases to 1d8 per power.
                 \end{magicalactiveability}
 
             ",
