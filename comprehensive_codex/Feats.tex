@@ -124,6 +124,7 @@ They allow more distinct and unique character customization, but also increase g
           \magicalfeatref{Entropist}                      & Wil 2                            & Master chaos and entropy                   & Magical           & \featpref{Entropist}                        \\
           \magicalfeatref{Fateweaver}                     & Per 2                            & Ensure success for you and allies          & \tdash            & \featpref{Fateweaver}                       \\
           \featref{Fortune's Friend}                      & \tdash                           & Get lucky                                  & \tdash            & \featpref{Fortune's Friend}                 \\
+          \featref{Gestalt}                               & \tdash                           & Combine archetypes in unusual ways         & \tdash            & \featpref{Gestalt}                 \\
           % \featref{Herbalist}                             & Trained Knowledge (nature)       & Brew potions with natural ingredients      & \tdash            & \featpref{Herbalist}                        \\
           \featref{Iron Will}                             & Wil 2                            & Increase mental resilience                 & \tdash            & \featpref{Iron Will}                        \\
           \featref{Null}                                  & Wil 2                            & Become immune to magic                     & \tdash            & \featpref{Null}                             \\
@@ -233,8 +234,9 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Steady Bolts} You reduce your \glossterm{longshot penalty} with crossbows by 1.
 
     \ff[6]{Multiload} Whenever you load a non-repeating crossbow, you can load it with two bolts instead of one.
-    When you fire a multiloaded crossbow, you take a \minus1 accuracy penalty, but the strike has an additional \glossterm{secondary target} within 15 feet of the primary target.
+    When you shoot a multiloaded crossbow, you take a \minus1 accuracy penalty, but the strike has an additional \glossterm{secondary target} within 15 feet of the primary target.
     That extra target cannot already be a target of the strike.
+    If the two bolts have different properties, you choose which target is affected by which bolt when you shoot the crossbow.
 
     \ff[12]{Rapid Reload\plus} Once per round, you can reload a crossbow that would normally require a standard action to reload as a \glossterm{free action}.
     When you do, you increase your \glossterm{fatigue level} by one.
@@ -341,28 +343,12 @@ They allow more distinct and unique character customization, but also increase g
       When all of the spirits have disappeared, this effect ends.
     \end{magicalactiveability}
 
-    \magicalff[6]{Ancestral Totem}
-    \begin{magicalsustainability}{Ancestral Totem}{\abilitytag{Manifestation}, \abilitytag{Sustain} (free)}
-      \abilityusagetime Standard action or \glossterm{minor action}.
-      \abilitycost One \glossterm{fatigue level} if used as a minor action.
-      \rankline
-      Choose an unoccupied location on solid ground within \longrange of you.
-      A Small totem representing your ancestors appears from the ground in that location.
-      The totem is a creature that cannot take actions of any kind, including \glossterm{movement}.
-      Its \glossterm{hit points} are equal to the standard value for your level and base class.
-      Its \glossterm{damage resistance} is equal to half its hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
-      Each of its defenses is equal to 5 \add half your level.
-      The totem does not block movement for any creatures.
-      It cannot be moved without being destroyed.
-
-      While you are within a \largearea radius \glossterm{emanation} from the totem, you gain a \plus2 accuracy bonus with melee strikes.
-    \end{magicalsustainability}
+    \magicalff[6]{Blood of My Ancestors} You gain a \plus1 bonus to \glossterm{vital rolls} and a bonus equal to your level to your maximum \glossterm{hit points}.
 
     \magicalff[12]{Ancestral Protectors} While you have ghostly spirits active from your \ability{ancestral battlecry} ability, you gain a \plus1 bonus to your Armor defense.
     In addition, you create four spirits when you use that ability rather than three.
 
-    \magicalff[18]{Ancestral Warchief} The range of secondary strikes from your \ability{ancestral battlecry} ability increases to \shortrange.
-    In addition, while you are within the emanation of your \ability{ancestral totem}, it counts as an extra spirit for \ability{ancestral battlecry} that does not disappear.
+    \magicalff[18]{Blood of My Ancestors\plus} The vital roll bonus increases to \plus2, and the hit points bonus increases to twice your level.
   \end{magicalfeat}
 
   \begin{feat}{Battle Armory}{Combat}
@@ -427,15 +413,9 @@ They allow more distinct and unique character customization, but also increase g
     Those creatures have the same effects if they try to attack you.
     This allows you to safely use area spells that include your allies as targets, since they will suffer no ill effect from the attack.
 
-    \magicalff[12]{Bloodbind} Whenever you make a living creature lose \glossterm{hit points} using a spell, you can choose to bind the target's blood to yours.
-    As a standard action, you can also forge this bond with any creature that you have sworn \ability{blood-sworn allegiance} with.
-    While the target is bound, you are always considered to have \glossterm{line of sight} and \glossterm{line of effect} to it.
-    You can see and target it regardless of all forms of \glossterm{concealment} and \glossterm{cover}, even if it is \trait{invisible} or fully behind a solid object.
-    You must still be close enough to the target to be within \glossterm{range} with your abilities.
-    This binding lasts until you finish a \glossterm{long rest}.
+    \magicalff[12]{Fountain of Blood} At the end of each round, if you did not use your \ability{bloodspell} ability that round, you regain hit points equal to your \glossterm{magical power}.
 
-    \magicalff[18]{Bloodspell\plus} You can choose to increase the accuracy bonus to \plus2.
-    If you do, the hit point loss is doubled.
+    \magicalff[18]{Bloodspell\plus} The accuracy bonus increases to \plus2.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Boongiver}{Casting, Magical}
@@ -520,37 +500,31 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Chameleon}{General}
     \featpre Disguise as a trained skill, Intelligence 2.
 
-    \ff[1]{Adaptive Archetype} Choose one archetype that you currently have, and two archetypes you do not have from among any of your classes.
-    You cannot choose an archetype that you have which is a prerequisite for another archetype that you have.
-    Whenever you finish a \glossterm{short rest}, you can choose which one of those three archetypes you actually have access to.
-    You gain all benefits of your chosen archetype, and temporarily lose all benefits from the archetypes you did not choose in this way.
-
-    You must track which choices you made for archetypes that you lose access to in this way, such as which spells and maneuvers you learned.
-    When you regain access to that archetype, you must make the same choices.
-
-    \ff[6]{Adaptive Specialty} Whenever you finish a \glossterm{short rest}, you may choose an effect from the list below.
-    Each effect lasts until you finish a short rest.
+    \ff[1]{Adaptive Specialty} As a \glossterm{free action}, if you do not already have an adaptive specialty active, you can choose an adaptive specialty from the list below.
+    You immediately gain the benefits of that adaptive specialty as a \atSwift effect.
+    Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive specialty, losing all of its benefits.
     \begin{itemize}
-      \item Martial: You become proficient with an additional \glossterm{weapon group} and an additional armor \glossterm{usage class} of your choice.
+      \item Martial: You become proficient with all non-exotic weapons and an additional armor \glossterm{usage class} of your choice.
         You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-      \item Mystic \sparkle: You gain the ability to use wands as if you were able to cast arcane spells.
-        Your maximum spell rank for this purpose is 2.
-        This spell rank increases by 1 at 9th level, and every 3 levels thereafter.
+      \item Mystic \sparkle: You gain the ability to use wands as if you were able to cast arcane spells (see \pcref{Magic Implements}).
+        Your maximum spell rank for this purpose is 1.
+        This spell rank increases by 1 at 6th level, and every 3 levels thereafter.
       \item Primal: You gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
       \item Skilled: You gain a \plus1 bonus to all skills.
     \end{itemize}
 
-    \ff[12]{Archetype Fusion} Instead of choosing a single archetype to activate with your \textit{adaptive archetype}, you may choose a combination of two archetypes simultaneously.
-    First, choose two archetypes to combine from among the three archetypes you chose with your \textit{adaptive archetype} ability.
-    For each rank you have access to, you choose one archetype and gain all abilities of that rank from that archetype and no abilities of that rank from the other archetype.
-    You cannot choose abilities from an archetype that reference or improve abilities from that same archetype which you do not have.
-    For example, you cannot choose the \textit{wildspell\plus} ability unless you also have the \textit{wildspell} ability.
+    \ff[6]{Adaptive Archetype} Choose one archetype that you currently have, and two archetypes you do not have from among any of your classes.
+    You cannot choose an archetype that you have which is a prerequisite for another archetype that you have.
+    These three archetypes are your adaptive archetypes.
 
-    When you gain this ability, you create one archetype fusion.
-    Whenever you increase your rank in the archetype you chose with your \textit{adaptive archetype} ability, you can change this archetype fusion.
-    When you finish a short rest, you can choose that fusion, or any of the three normal archetypes you would choose with your \textit{adaptive archetype} ability.
+    As a \glossterm{free action}, if you do not already have an adaptive archetype active, you can choose one of your adaptive archetypes.
+    You immediately gain all benefits of that archetype as a \atSwift effect.
+    Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive archetype, losing all of its benefits.
+    You must track which choices you made for each archetype that you lose access to in this way, such as which spells and maneuvers you learned.
+    When you regain access to that archetype, you must make the same choices.
 
-    \ff[18]{Archetype Fusion\plus} You can create an additional archetype fusion that you can change between with your \textit{adaptive archetype} ability.
+    \ff[12]{Universal Adaptation} You gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
+    You also gain a bonus to your maximum hit points and damage resistance equal to half your \glossterm{level}.
 
     \ff[18]{Adaptive Specialty\plus} The effects of your \textit{adaptive specialty} ability improve, as described below.
     \begin{itemize}
@@ -949,6 +923,28 @@ They allow more distinct and unique character customization, but also increase g
     If they would already have a miss chance, that miss chance instead increases by 10\%.
   \end{feat}
 
+  \begin{feat}{Gestalt}{General}
+    \ff[1]{Archetype Fusion} Choose one archetype from your \glossterm{base class} that you do not already have any ranks in.
+    When you gain this ability, you become rank 1 in that archetype, and gain the appropriate abilities.
+    Whenever you gain an additional archetype rank, you can choose to increase your rank in any of the archetypes you have access to, up to your normal maximum rank for your level.
+    Since you have access to more archetypes than normal, you can split your archetype ranks between all of your archetypes, so they will not all have the same rank.
+
+    You must still increase your rank in each archetype in order.
+    For example, you cannot choose the rank 1 and rank 3 abilities from an archetype without also gaining its rank 2 ability.
+
+    \ff[6]{Skill Fusion} Choose any two skills that have the same key attribute.
+    You treat those skills as being the same for you.
+    If you are trained in one skill, you are trained in both, but you gain no special benefit for being separately trained in both skills.
+    Any other modifiers that you have which apply to one skill also apply to the other skill.
+    Multiple \glossterm{enhancement bonuses} do not stack, even if you have one enhancement bonus for one skill and another enhancement bonus for the other skill.
+    The only exception is that size modifiers to the Stealth skill cannot be applied to other skills in this way (see \pcref{Size and Weight}).
+
+    \ff[12]{Archetype Fusion\plus} You can choose a second archetype from your \glossterm{base class} that you do not already have ranks in.
+    This does not increase your rank in that archetype, but you become eligible to increase your rank in that archetype when you level up.
+
+    \ff[18]{Archetype Rank} You gain an additional archetype rank.
+  \end{feat}
+
   \begin{magicalfeat}{Ghostblade}{Combat, Magical}
     \featpre Dexterity 1, Willpower 2.
 
@@ -1180,7 +1176,7 @@ They allow more distinct and unique character customization, but also increase g
 
     % Focused and +1 accuracy is base 0.5 EA, or 0.8 EA on an ally.
     \ff[1]{Battle Command}
-    \begin{activeability}{Battle Command}
+    \begin{activeability}{Battle Command}[\atAuditory]
       \abilityusagetime Standard action.
       \rankline
       Choose an \glossterm{ally} within \medrange.
@@ -1199,7 +1195,7 @@ They allow more distinct and unique character customization, but also increase g
     % Assume empower affects 3 ally actions, so it's 0.6 EA.
     % Steeled affects all allies, so it's theoretically huge EA, but in practice most people aren't crit every round.
     % We add a brief cooldown to make it more reasonable.
-    \begin{activeability}{Bolster}[\abilitytag{Emotion}, \abilitytag{Swift}]
+    \begin{activeability}{Bolster}[\atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}]
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \abilityusagetime Standard action.
       \rankline
