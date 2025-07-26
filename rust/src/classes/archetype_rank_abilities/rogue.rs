@@ -389,20 +389,21 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The bonus increases to \plus3.
                     \end{magicalsustainability}
 
+                    % Healing bonus is normally +1dr. That's stronger on a non-scaling effect, but keep it because it's a class feature.
                     \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Swift}]
                         \abilityusagetime Standard action.
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 2d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d8+1d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a +2 bonus to its Mental defense.
 
                         \rankline
                         \rank{2} The recovery increases to 2d10.
-                        \rank{3} The recovery increases to 4d6.
-                        \rank{4} The recovery increases to 6d6.
-                        \rank{5} The recovery increases to 5d10.
-                        \rank{6} The recovery increases to 7d10.
-                        \rank{7} The recovery increases to 10d10.
+                        \rank{3} The recovery increases to 3d10.
+                        \rank{4} The recovery increases to 5d8.
+                        \rank{5} The recovery increases to 7d8.
+                        \rank{6} The recovery increases to 8d10.
+                        \rank{7} The recovery increases to 11d10.
                     \end{magicalactiveability}
 
                     % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
