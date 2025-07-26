@@ -2,6 +2,8 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
 
+const WATER_ACCURACY_BONUS = 'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.';
+
 export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
   name: 'Aquamancy',
   hasImage: true,
@@ -28,28 +30,42 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Restorative Water',
 
+      castingTime: 'minor action',
       effect: `
-        While this spell is active, water can heal you.
-        As a standard action, you can draw restorative power from water by drinking at least one ounce of clean water.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        The target is \\glossterm{briefly} healed by water.
+        During this spell's effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
-        When you do, you regain 2d10 hit points and increase your \\glossterm{fatigue level} by one.
+        When it does, it regains 2d10 hit points and increases its \\glossterm{fatigue level} by one.
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },
-      roles: ['attune'],
-      type: 'Attune',
+      roles: ['healing'],
+    },
+    {
+      name: 'Empowered Restorative Water',
+
+      castingTime: 'minor action',
+      functionsLike: {
+        name: 'restorative water',
+        exceptThat: 'the healing increases to 7d8.',
+      },
+      rank: 4,
+      scaling: { special: 'The healing increases by 3d8 for each rank beyond 4.' },
+      roles: ['healing'],
     },
     {
       name: 'Cleansing Water',
 
+      castingTime: 'minor action',
       effect: `
-        While this spell is active, water can purify you.
-        As a standard action, you can cleanse yourself by drinking at least one ounce of clean water.
-        When you do, you remove one \\glossterm{condition} affecting you.
-        If you are also attuned to the \\ability{restorative water} spell, you can both regain hit points and remove a condition from the same drink of water.
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        The target is \\glossterm{briefly} purified by water.
+        During this spell's effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
+        When it does, it removes one \\glossterm{condition} affecting it.
       `,
       rank: 3,
-    roles: ['attune'],
+      roles: ['attune'],
       type: 'Attune',
     },
     {
@@ -78,6 +94,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
@@ -94,52 +111,52 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
     {
-      name: 'Aquarium',
-
-      // Don't use a standard area since this scales in scary ways with area
-      // doubling.
-      effect: `
-        You create a self-contained pool of water in a 10 foot radius cylinder-shaped \\glossterm{zone} within \\shortrange.
-        Everything inside the area is \\submerged (see \\pcref{Fighting In Water}).
-      `,
-      rank: 2,
-      tags: ['Manifestation'],
-      type: 'Sustain (minor)',
-    },
-
-    {
-      name: 'Massive Aquarium',
-
-      effect: `
-        You create a self-contained body of water in a 20 foot radius cylinder-shaped \\glossterm{zone} within \\medrange.
-        Everything inside the area is \\submerged (see \\pcref{Fighting In Water}).
-      `,
-      rank: 6,
-      tags: ['Manifestation'],
-      type: 'Sustain (minor)',
-    },
-
-    // swimming is r2.5
-    {
       name: 'Constraining Bubble',
 
-      // -2 ranks for one round delay
+      // Submerged is basically frightened by all, but with a much more common defense penalty.
+      // Assume 1.2 EA from the defense penalty instead of the 0.35 from frightened by
+      // all, so 2.5 EA total.
+      // Huge or smaller offsets the bonus "cannot fly or glide".
+      // -1 rank for limited scope
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          As a \\glossterm{condition}, the majority of the target's body is surrounded by a layer of water.
-          This does not restrict its ability to breathe, and has no immediate negative effects.
-          However, after your action next round, the water expands to impede the target's movements.
-          It is treated as \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}. 
+          The target is \\glossterm{briefly} surrounded by a bubble of water.
+          It cannot breathe air and is \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
+          It cannot fly or glide, but can use its other movement modes normally.
         `,
         targeting: `
-          Make an attack vs. Reflex against one Large or smaller creature within \\medrange.
+          Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.
+          You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.
         `,
       },
-      rank: 5,
+      rank: 6,
+      roles: ['softener'],
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Drowning Bubble',
+
+      // Huge or smaller offsets the bonus "cannot fly or glide".
+      // -1 rank for limited scope
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          If the target has no remaining \\glossterm{damage resistance}, it is surrounded by a bubble of water.
+          It cannot breathe air and is \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
+          It cannot fly or glide, but can use its other movement modes normally.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.
+          ${WATER_ACCURACY_BONUS}
+        `,
+      },
+      rank: 7,
+      roles: ['softener'],
       tags: ['Manifestation'],
     },
 
@@ -148,14 +165,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarealong, 10 ft. wide line from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\medarealong, 10 ft. wide line from you.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
       rank: 1,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -164,32 +183,38 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\medarealong, 10 ft. wide line from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\medarealong, 10 ft. wide line from you.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
       rank: 4,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
       name: 'Water Hammer',
 
+      // No standard calculation for either the self-stun or the "must have previously
+      // hit" requirement. Assume those combine to give about +2 ranks of power, which are
+      // split between +1dr and +2a.
       cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
       attack: {
         hit: `
-          \\damageranktwo.
-          If the target loses \\glossterm{hit points}, it is \\stunned as a \\glossterm{condition}.
+          \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
-          This attack automatically fails unless you hit the target with a \\atWater ability last round.
+          This attack automatically fails unless you hit the target with a \\atWater attack last round.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['burst', 'payoff'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -199,15 +224,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
       attack: {
         hit: `
-          \\damagerankfive.
-          If the target loses \\glossterm{hit points}, it is \\stunned as a \\glossterm{condition}.
+          \\damagerankseven.
         `,
         targeting: `
           Make an attack vs. Fortitude with a \\plus2 accuracy bonus against something within \\shortrange.
-          This attack automatically fails unless you hit the target with a \\atWater ability last round.
+          This attack automatically fails unless you hit the target with a \\atWater attack last round.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 4,
+      rank: 5,
+      roles: ['burst', 'payoff'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -225,6 +251,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 2,
+      roles: ['dive', 'burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -242,6 +269,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 5,
+      roles: ['dive', 'burst'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -250,14 +278,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          If there is a Large or larger source of water within \\shortrange of you, this area increases to a \\medarea radius.
         `,
       },
-      rank: 2,
+      rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -266,14 +296,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
+          If there is a Large or larger source of water within \\shortrange of you, this area increases to a \\medarea radius.
         `,
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -290,13 +322,34 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           In addition, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
           Creatures can pass through the wall unharmed, though it costs five extra feet of movement to move through the wall.
 
-          The wall has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
+          The wall has \\glossterm{hit points} equal to twice times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
+      roles: ['hazard'],
       scaling: {
-        3: `You can increase the area to a \\largearealong wall.`,
-        5: `You can increase the area to a \\hugearealong wall.`,
-        7: `The range increases to \\longrange.`,
+        3: `The wall's hit points increase to three times your \\glossterm{power}.`,
+        5: `The wall's hit points increase to four times your \\glossterm{power}.`,
+        7: `The wall's hit points increase to five times your \\glossterm{power}.`,
+      },
+      tags: ['Barrier', 'Manifestation'],
+      type: 'Sustain (attuneable, minor)',
+    },
+    {
+      name: 'Massive Wall of Water',
+
+      // targeting: None,
+      cost: BARRIER_COOLDOWN,
+      functionsLike: {
+        name: 'wall of water',
+        exceptThat: `
+          the area increases to a \\largearealong \\glossterm{wall} of water within \\longrange.
+          In addition, the hit points of the wall increase to three times your \\glossterm{power}.
+        `,
+      },
+      rank: 4,
+      roles: ['hazard'],
+      scaling: {
+        6: `The wall's hit points increase to four times your \\glossterm{power}.`,
       },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
@@ -304,23 +357,26 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Raging River',
 
-      // +2 ranks for sustain, +1 for Large or smaller push
+      // Ranged push is 0.9 EA, so damaging ranged push is 1.9 EA. Round down to 1.8 since
+      // this is less than Medium range. +1 rank for Sustain (attuneable, standard)?
       attack: {
         hit: `
           \\damageranktwo.
-          In addition, each Large or smaller target damaged by the attack is \\glossterm{pushed} 15 feet in the direction the water flows.
-          Once a target leaves the area, it stops being moved and blocks any other targets from being pushed.
+          In addition, if the target is Large or smaller, it is \\glossterm{pushed} 15 feet in the direction the water flows.
+          Once the target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
         missGlance: true,
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Brawn against everything in the area.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Manifestation', 'Sustain (minor)'],
+      tags: ['Manifestation', 'Sustain (attuneable, standard)'],
     },
     {
       name: 'Geyser',
@@ -334,19 +390,24 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
       rank: 2,
+      roles: ['burn', 'hazard'],
       scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
       name: 'Mighty Geyser',
 
+      // Treat the knockback plus larger area as +1 rank. The knockback is not a ton of
+      // damage, and it doesn't meaningfully restrain movement, but this should pay some
+      // rank cost relative to geyser.
       attack: {
         hit: `
-          \\damagerankfour.
-          You \\glossterm{knockback} each Large or smaller target that loses \\glossterm{hit points} from this damage 10 feet vertically.
+          \\damagerankthree.
+          If the target is Huge or smaller, you \\glossterm{knockback} it 20 feet vertically.
         `,
         missGlance: true,
         targeting: `
@@ -355,6 +416,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 5,
+      roles: ['burn', 'hazard'],
       scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
@@ -375,7 +437,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       effect: `
         You gain an aqueous \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        The weapon deals 1d8 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Resonating} tags (see \\pcref{Weapon Tags}).
+        The weapon deals 1d8 damage and has the \\atWater and \\weapontag{Long} \\glossterm{weapon tags} (see \\pcref{Weapon Tags}).
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
       `,
       narrative: `
@@ -401,6 +463,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
       type: 'Attune (target)',
     },
+    // TODO: EA math for weapon replacement
     {
       name: 'Mighty Aqueous Tentacle',
 
@@ -416,6 +479,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
       type: 'Attune',
     },
+    // TODO: EA math for weapon replacement
     {
       name: 'Octopus Tentacles',
 
@@ -437,6 +501,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Water Whip',
 
+      // -1dr for push
       attack: {
         hit: `
           \\damagerankone.
@@ -444,9 +509,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Armor against one creature within \\shortrange.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
       rank: 1,
+      roles: ['burst', 'softener'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -454,16 +521,19 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Intense Water Whip',
 
+      // -1dr for push
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
           If the target takes damage and your attack result beats its Brawn defense, you can \\glossterm{push} it up to 30 feet.
         `,
         targeting: `
           Make an attack vs. Armor against one creature within \\shortrange.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 5,
+      rank: 4,
+      roles: ['burst', 'softener'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -472,6 +542,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // Strike crit immune alone is about right for rank 2.
       // The deep attunement gives the other bonuses.
+      // TODO: proper EA math
       effect: `
         You transform your body and equipment into water, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
@@ -494,15 +565,29 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Fog Cloud',
 
+      // r2 base, +1r for +1 area rank
+      effect: `
+        A cloud of fog appears in a \\smallarea radius within \\medrange.
+        The fog provides \\glossterm{concealment} for anything within or seen through the area.
+      `,
+      rank: 3,
+      scaling: {
+        5: 'You can choose to create a \\medarea radius instead.',
+        7: 'You can choose to create a \\largearea radius instead.',
+      },
+      roles: ['flash', 'hazard'],
+      tags: ['Manifestation'],
+      type: 'Sustain (attuneable, standard)',
+    },
+    {
+      name: 'Persistent Fog Cloud',
+
       effect: `
         A cloud of fog appears in a \\medarea radius within \\medrange.
-        The fog provides \\glossterm{concealment} for everything in the area.
+        The fog provides \\glossterm{concealment} for anything within or seen through the area.
       `,
-      rank: 2,
-      scaling: {
-        4: 'You can choose to create a \\largearea radius instead.',
-        6: 'You can choose to create a \\hugearea radius instead.',
-      },
+      rank: 6,
+      roles: ['flash', 'hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -510,62 +595,73 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Solid Fog Cloud',
 
       effect: `
-        A cloud of fog appears in a \\medarea radius within \\medrange.
-        The fog provides \\glossterm{concealment} for everything in the area.
+        A cloud of fog appears in a \\smallarea radius within \\medrange.
+        The fog provides \\glossterm{concealment} for anything within or seen through the area.
         In addition, the fog's area is \\glossterm{difficult terrain}.
       `,
-      rank: 6,
+      rank: 7,
+      roles: ['flash', 'hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attuneable, standard)',
     },
     {
       name: 'Fluid Motion',
 
+      // TODO: proper EA calculation
       effect: `
-        When you move using one of your movement speeds, you can transform yourself into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
+        When you move using one of your movement speeds, you can \\glossterm{shapeshift} into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
         You can only transform into water in this way once during your movement, and you return to your normal form at the end of the movement.
-        In this form, you may move wherever water could go, you cannot take other actions, such as jumping, attacking, or casting spells.
-        You may move through squares occupied by enemies without penalty.
-        Being \\grappled or otherwise physically constrained does not prevent you from transforming into water in this way.
 
-        Your speed is halved when moving uphill and doubled when moving downhill.
-        Unusually steep inclines may cause greater movement differences while in this form.
+        While transformed into water, you may move wherever water could go.
+        However, you cannot take other actions, such as jumping, attacking, or casting spells.
+        Your speed is halved when moving up a steep slope and doubled when moving down a steep slope.
+        You may move through squares occupied by enemies without penalty.
+        % TODO: timing is slightly wrong
+        When you transform into water, you stop being \\grappled.
 
         If the water is split, you may reform from anywhere the water has reached, to as little as a single ounce of water.
         If not even an ounce of water exists contiguously, your body reforms from all of the largest available sections of water, cut into pieces of appropriate size.
         This usually causes you to die.
       `,
-      rank: 5,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune',
     },
     {
-      name: 'Forceful Aquajet',
+      name: 'Aquajet Grasp',
 
       attack: {
         hit: `
-          \\damagerankone.
-          If the target is Medium or smaller and it takes damage, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          \\damageranktwo.
+          If the target is Large or smaller and loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is \\submerged, this distance is doubled and you can also move it vertically.
         `,
-        targeting: 'Make an attack vs. Armor against something within \\medrange.',
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Brawn against something you \\glossterm{touch}.
+          ${WATER_ACCURACY_BONUS}
+        `,
       },
       // narrative: '',
-      rank: 3,
+      rank: 1,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
     },
     {
-      name: 'Intense Forceful Aquajet',
+      name: 'Intense Aquajet Grasp',
 
       functionsLike: {
-        name: 'forceful aquajet',
+        name: 'aquajet grasp',
         exceptThat:
-          'the damage increases to \\damagerankfive, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankseven, and the knockback distance increases to 30 feet.',
       },
       // narrative: '',
-      rank: 7,
+      rank: 6,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
     },
+    // TODO: proper EA math
     {
       name: 'Personal Aquarium',
 
@@ -595,7 +691,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
       `,
-
       rank: 1,
       roles: ['attune'],
       scaling: {
@@ -624,17 +719,16 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Liquifying Grasp',
 
-      // Permanent prone is essentially the same as slowed, which is a t2 debuff.
-      // Vulnerability makes up the other part of the ability's power, with damage as a
-      // smaller upside.
+      // Permanent prone is essentially the same as slowed, which is 1.5 EA.
+      // Add +0.3 EA for the melting damage, so 1.8 EA. Then +0.4 for prefire, so 2.2 EA.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, its lower body is transformed into a puddle of water as a \\glossterm{condition}.
+          The target's body starts to liquify as a \\glossterm{condition}.
+          While it is below its maximum \\glossterm{hit points}, its lower body \\glossterm{shapeshifts} into a puddle of water.
           This has the following effects:
           \\begin{itemize}
             \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.
-            \\item It is \\vulnerable to \\atCold and \\atWater abilities.
-            \\item During each of your subsequent actions, if it is \\debuff{submerged} or not \\glossterm{grounded}, it takes \\damagerankfive as its body melts away.
+            \\item During each of your subsequent actions, if it is \\debuff{submerged} or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
           \\end{itemize}
 
           % There must be text between an itemize block and the end of a mdframed env
@@ -644,44 +738,46 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
+          ${WATER_ACCURACY_BONUS}
         `,
       },
-      rank: 5,
+      rank: 3,
+      roles: ['maim'],
     },
     {
       name: 'Liquify',
 
-      attack: {
-        hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is transformed into a puddle of water.
-          This functions like the effect of the \\spell{liquifying grasp} spell, except that the damage increases to \\damagerankseven.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\medrange.
-        `,
+      functionsLike: {
+        name: 'liquifying grasp',
+        exceptThat: 'it does not require a \\glossterm{free hand}, and it targets one creature within \\medrange.',
       },
-      rank: 7,
+      rank: 5,
+      roles: ['maim'],
     },
     {
       name: 'Slippery Puddle',
 
+      // +1r for area
       attack: {
         hit: `Each target falls \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against each Large or smaller \\glossterm{grounded} \\glossterm{enemy} in a \\smallarea radius within \\shortrange.
         `,
       },
       rank: 3,
+      roles: ['flash'],
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
     {
       name: 'Drowning Grasp',
 
-      // The +2 accuracy basically always applies
+      // The +2 accuracy basically always applies, so assume it's factored in.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
+          If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
+          It can remove this condition by making a \\glossterm{difficulty value} 8 Constitution check as a \\glossterm{standard action}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -691,7 +787,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       // narrative: '',
-      rank: 1,
+      rank: 2,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
     },
     {
@@ -700,27 +797,30 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       //
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
+          If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
+          It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
 
-          Make an attack vs. Fortitude against one creature \\glossterm{touch}.
+          Make an attack vs. Fortitude against one creature you \\glossterm{touch}.
           You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
       // narrative: '',
-      rank: 4,
+      rank: 5,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
     },
     {
       name: 'Sudden Liquification',
 
-      // Full steeled is r2 or r3, but one-round strike steeled is fine for r1.
+      // TODO: steeled is weird
       effect: `
-        When you would suffer a \\glossterm{critical hit} from a \\glossterm{strike}, this spell automatically activates.
+        When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \steeled for the rest of the round.
+        This causes the critical hit to become only a regular hit, and you remain \\glossterm{briefly} \steeled.
         Then, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
