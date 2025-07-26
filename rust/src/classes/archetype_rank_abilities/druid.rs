@@ -457,7 +457,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories larger than you.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Mouse}
+                    \begin{magicalactiveability}{Form of the Rat}
                         \abilityusagetime Standard action.
                         \rankline
                         You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Stealth skills.
@@ -465,7 +465,6 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         
                         \rankline
                         \rank{4} When you use this wild aspect, you can choose to shrink by one \glossterm{size category}, to a minimum of Small.
-                        In addition, if you shapeshift into this form with the \textit{animal shape} ability, you can shrink by two size categories instead of only one, to a minimum of Tiny.
                         \rank{7} The enhancement bonuses increase to \plus4.
                     \end{magicalactiveability}
 
