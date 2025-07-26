@@ -397,7 +397,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{activeability}{Denounce the Heathens}[\abilitytag{Emotion}]
+                \begin{activeability}{Denounce the Heathens}[\abilitytag{Auditory}, \abilitytag{Emotion}]
                     \abilityusagetime Standard action.
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
@@ -406,7 +406,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
-                    \rank{5} The area increases to a \largearea radius.
+                    \rank{5} You always use your Persuasion skill to determine your accuracy with this attack.
                     \rank{7} Each target is stunned as a condition regardless of whether it has remaining damage resistance.
                 \end{activeability}
             ",
@@ -429,7 +429,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Persuasive Certainty+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 The Persuasion bonus increases to \plus4.
                 In addition, you are immune to being \confused.
@@ -438,30 +438,21 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Skill(Skill::Persuasion, 2),
             ]),
         },
-        // Assume that it typically affects two people, and anything more than that is a
-        // bonus. Normal healing ability would be dr4, so use half of that (where possible).
         RankAbility {
             complexity: 2,
-            name: "Bless the Worthy",
+            name: "Name the Faithful",
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Bless the Worthy}[\abilitytag{Emotion}, \abilitytag{Swift}]
-                    \abilityusagetime Standard action.
-                    \abilitycost One \glossterm{fatigue level}.
-                    \rankline
-                    You and all \glossterm{allies} within a \largearea radius from you each regain 2d8 \glossterm{damage resistance}.
-                    In addition, each ally affected by more than one \glossterm{condition} can remove one of those conditions.
-
-                    \rankline
-                    \rank{4} The recovery increases to 2d10.
-                    \rank{5} The recovery increases to 3d10.
-                    \rank{6} The recovery increases to 4d10.
-                    \rank{7} The recovery increases to 6d10.
-                \end{activeability}
+                Whenever you use a \magical or \atAuditory ability to target an \glossterm{ally} within a \glossterm{range}, you can double your range with that ability.
+                If you do, you also do not need \glossterm{line of sight} or \glossterm{line of effect} to that ally.
+                Instead, they must only be able to hear you, and you must be able to designate your intended target using their name.
+                This does not affect abilities that do not have a defined range measured in feet, such as abilities that require \glossterm{touch}.
             ",
             modifiers: None,
         },
+        // Assume that it typically affects two people, and anything more than that is a
+        // bonus. Normal healing ability would be dr4, so use half of that (where possible).
         RankAbility {
             complexity: 2,
             name: "Steady Oration",
@@ -474,24 +465,14 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             // TODO: figure out allies-only buffs
             modifiers: None,
         },
-        // Brief panic is r6, and frightened as a condition is r3. Smashing them together is
-        // tricky, but we can just call that the magic of a class ability.
         RankAbility {
             complexity: 2,
-            name: "Condemn the Fearful",
+            name: "Spread the Word",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
-                \begin{activeability}{Condemn the Fearful}[\abilitytag{Emotion}]
-                    \abilityusagetime Standard action.
-                    \rankline
-                    Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
-                    For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
-                    \hit The target is \glossterm{briefly} \panicked by you, and is \frightened of you as a \glossterm{condition}.
-
-                    \rankline
-                    \rank{7} Each target with no remaining \glossterm{damage resistance} is \panicked by you as a condition instead of frightened.
-                \end{activeability}
+                Whenever you use a \magical or \atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
+                The standard areas are \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
             ",
             modifiers: None,
         },
