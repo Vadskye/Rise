@@ -157,10 +157,10 @@ pub fn shields() -> Vec<MagicArmor> {
             Your minimum accuracy is $accuracy.
             After you use this ability, you \glossterm{briefly} cannot use it again.
 
-            \hit Each target is slowly turning to stone as a \glossterm{condition}.
+            \hit The target slowly turns to stone as a \glossterm{condition}.
             While it is below its maximum \glossterm{hit points}, it is \slowed.
             During this condition, if it takes a \glossterm{vital wound} that leaves it unconscious, it immediately dies.
-            When a creature dies in this way, its body is petrified in the form of a stone statue.
+            If the target dies in this way, its body is petrified in the form of a stone statue.
             \critcondition
         "),
         upgrades: vec![

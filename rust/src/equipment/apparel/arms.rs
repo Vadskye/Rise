@@ -93,7 +93,7 @@ fn bracers() -> Vec<Apparel> {
             When you do, they emit a telekinetic burst of force.
             Make an attack vs. Brawn against everything within a \areasmall radius burst from you.
             Your minimum accuracy is $accuracy.
-            \hit You \glossterm<knockback> each target up to 10 feet away from you.
+            \hit You \glossterm<knockback> the target up to 10 feet away from you.
             \crit The knockback distance is doubled.
         "),
         upgrades: vec![

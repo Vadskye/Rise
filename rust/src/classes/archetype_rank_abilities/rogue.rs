@@ -300,7 +300,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
-                        \hit For the duration of your performance, each target is \dazzled.
+                        \hit For the duration of your performance, the target is \dazzled.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
@@ -328,7 +328,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit For the duration of your performance, each target is \stunned while it has no remaining \glossterm{damage resistance}.
+                        \hit For the duration of your performance, the target is \stunned while it has no remaining \glossterm{damage resistance}.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
@@ -357,7 +357,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit For the duration of your performance, each target is \frightened by you.
+                        \hit For the duration of your performance, the target is \frightened by you.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
@@ -410,8 +410,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit Each target is \glossterm{briefly} \goaded by you.
-                        \hit In addition, each target is \glossterm{goaded} by you for the duration of your performance.
+                        \hit The target is \glossterm{briefly} \goaded by you.
+                        \crit The target is also \glossterm{goaded} by you for the duration of your performance.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
