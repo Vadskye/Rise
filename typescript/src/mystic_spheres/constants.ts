@@ -4,6 +4,7 @@ export const MULTIHIT_CRIT = 'All instances of damage are doubled, not just the 
 export const DELAYED_HALF = 'Half damage immediately, and no damage during your next action.';
 export const SWIFT_FATIGUE =
   'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.';
+export const SWIFT_FATIGUE_SELF = 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.';
 export const MINOR_FATIGUE =
   'One optional \\glossterm{fatigue level}. If you pay this cost, using spell only requires a \\glossterm{minor action}.';
 export const TELEPORT_ATTACK_FATIGUE = 'One optional \\glossterm{fatigue level}. If you pay this cost, the teleportation becomes \\abilitytag{Swift}, though the attack is not.';

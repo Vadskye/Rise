@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from './constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
@@ -99,13 +99,12 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Propulsion',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.',
+      cost: SWIFT_FATIGUE_SELF,
       effect: `
-        Choose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\medrange.
-        The target must have a \\glossterm{weight category} of Medium or less.
+        Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
+        If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
 
-        You \\glossterm{knockback} the target up to 60 feet in any direction, to a maximum of a 60 foot \\glossterm{height limit}.
-        You cannot change the direction of the movement partway through.
+        You \\glossterm{knockback} the target up to 30 feet in any direction, to a maximum of a 30 foot \\glossterm{height limit}.
         Moving the target upwards costs twice the normal movement cost.
 
         If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
@@ -117,12 +116,12 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Intense Propulsion',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}, and you can only target yourself with it.',
+      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'propulsion',
-        exceptThat: "the maximum distance increases to 120 feet.",
+        exceptThat: "the maximum knockback distance increases to 60 feet.",
       },
-      rank: 6,
+      rank: 4,
       roles: ['dive'],
     },
     // Braced is 2.2 EA. Assume that ranged strikes are about 33% of all attacks, so this
@@ -139,18 +138,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
-    },
-    {
-      name: 'Mass Wind Screen',
-
-      functionsLike: {
-        mass: true,
-        name: 'wind screen',
-      },
-      // narrative: '',
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
     },
     {
       name: 'Empowered Wind Screen',
