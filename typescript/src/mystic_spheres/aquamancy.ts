@@ -866,9 +866,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: "Waterward",
 
       // Shielded alone is on the weaker side, so add impervious to fire
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -879,7 +879,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // Cover is basically shielded, but also prevents half on miss and glancing blows.
       // Call that equal to braced.
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
         In addition, you can move up to your movement speed during your action.
@@ -893,13 +892,49 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: "Expanded Waterward",
 
       // You and all adjacent isn't as flexible as "any two", but it's similarly strong.
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         This round, you and all \\glossterm{allies} adjacent to you are \\impervious to \\atFire attacks and \\shielded.
+        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
       `,
       rank: 4,
       roles: ['turtle'],
       tags: ['Manifestation', 'Swift'],
+    },
+    {
+      name: "Rising Tide",
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \begin{raggeditemize}
+          \item Never: You are \\focused this round.
+          \item Once: You are \\primed this round.
+          \item Two or more times: You are primed and \\shielded this round.
+        \end{raggeditemize}
+
+        % There must be text between an itemize block and the end of a mdframed env
+        \hypertarget{itemizespace}{}
+      `,
+      rank: 1,
+      roles: ['focus'],
+    },
+    {
+      name: "Empowered Rising Tide",
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \begin{raggeditemize}
+          \item Never: You are \\primed this round.
+          \item Once: You are \\primed and \\shielded this round.
+          \item Two or more times: You are primed this round and \\glossterm{briefly} shielded.
+        \end{raggeditemize}
+
+        % There must be text between an itemize block and the end of a mdframed env
+        \hypertarget{itemizespace}{}
+      `,
+      rank: 6,
+      roles: ['focus'],
     },
   ],
 });
