@@ -31,23 +31,16 @@ fn boots() -> Vec<Apparel> {
     apparel.push(Boots(StandardItem {
         name: String::from("Phasestep Boots"),
         rank: 2,
-        short_description: String::from("Can exert to move through creatures"),
+        short_description: String::from("Can move through creatures"),
         description: String::from(r"
-            You can activate these boots as a free action.
-            When you do, you increase your \glossterm<fatigue level> by one, and you may move through creatures freely when you move using one of your movement speeds this round.
+            When you move using one of your movement speeds, you can move through creatures freely.
             This does not allow you to move through inanimate objects.
             You must still end your movement in an unoccupied space.
             If you are not able to move normally, such as if you are \grappled, these boots do not help you.
-
-            After you activate these boots, you \glossterm<briefly> cannot do so again.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Can sometimes move through creatures", "
-                Activating the effect does not increase your fatigue level.
-            "),
-            ItemUpgrade::new(6, "Allows moving through creatures", "
-                The boots do not require activation.
-                Instead, the effect is constantly active.
+            ItemUpgrade::new(5, "Can move through creatures and objects", "
+                You can also move through \\glossterm{mundane}, \\glossterm{inanimate} objects that are no more than six inches thick.
             "),
         ],
         ..Apparel::default()
