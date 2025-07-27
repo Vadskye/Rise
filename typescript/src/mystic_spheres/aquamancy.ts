@@ -773,7 +773,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Drowning Grasp',
 
-      // The +2 accuracy basically always applies, so assume it's factored in.
+      // Touch range would normally be dr4.
+      // Drop to dr3 for accuracy and rarely releavnt condition.
       attack: {
         hit: `
           \\damageranktwo.
@@ -795,10 +796,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Drowning Grasp',
 
-      //
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
           If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
           It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
         `,
