@@ -27,7 +27,7 @@ export { rituals } from './rituals';
 export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
-  // astromancy,
+  astromancy,
   // channelDivinity,
   chronomancy,
   cryomancy,
@@ -71,7 +71,7 @@ export interface BaseSpellLike {
   name: string;
   narrative?: string;
   // TODO: make this mandatory
-  roles?: AbilityRole[];
+  roles: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'poison' | Record<string, string>;
   tableText?: string;
   tags?: string[];

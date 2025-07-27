@@ -7,15 +7,16 @@ export const astromancy: MysticSphere = {
   shortDescription: 'Transport creatures and objects instantly through space.',
   sources: ['arcane', 'domain', 'soulkeeper'],
   specialRules: `
-    Many abilities from this mystic sphere cause creature to \\glossterm{teleport}.
+    Many abilities from this mystic sphere cause creatures or objects to \\glossterm{teleport}.
     Unless otherwise specified, teleporation requires \\glossterm{line of sight}, \\glossterm{line of effect}, and an unoccupied destination on stable ground.
     For details, see \\pcref{Teleportation}.
 
     \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
+    This is called flickering.
     If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
-    Flickering works even if the target is not stable ground that can support its weight.
+    Flickering works even if the target is not on stable ground.
 
-    When a creature or object flickers, it returns at the end of the current turn unless the ability specifies a different duration.
+    When a creature or object flickers, it returns at the end of your current turn unless the ability specifies a different duration.
     That means that you can't make any additional attacks against it during your turn.
     If one of your allies takes a turn after you, they will be able to attack the flickered target normally, since it will have returned by then.
 
@@ -35,6 +36,7 @@ export const astromancy: MysticSphere = {
         A tankard of ale disappears from the counter, appearing directly in your hand.
         The barkeep frowns, about to say something, before a gold coin suddenly appears in the tankard's place.
       `,
+      roles: ['narrative'],
       scaling: {
         2: 'The range increases to \\rngmed.',
         4: 'The maximum size increases to Medium.',
@@ -43,18 +45,6 @@ export const astromancy: MysticSphere = {
     },
   ],
   spells: [
-    {
-      name: 'Panic Translocation',
-
-      effect: `
-        At the end of each round, if you gained a \\glossterm{vital wound} that round, you \\glossterm{teleport} up to 60 feet away from the source of the wound to the most distant valid destination.
-        This teleportation functions even if you are unconscious, but you cannot consciously control the direction.
-        If the source of the wound is unclear, the teleportation direction is chosen randomly.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
     {
       name: 'Instant Retrieval',
 
@@ -78,13 +68,15 @@ export const astromancy: MysticSphere = {
       roles: ['attune'],
       type: 'Attune',
     },
+    // Melee 15' teleport is 0.6 EA, or 1.6 EA with damage. That's easily enough for a
+    // melee spell.
     {
       name: 'Splicing Grasp',
 
       attack: {
         hit: `
-          \\damagerankone.
-          If the target is Large or smaller and loses \\glossterm{hit points}, you may \\glossterm{teleport} it up to 30 feet.
+          \\damageranktwo.
+          If the target is Large or smaller, you may \\glossterm{teleport} it up to 15 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -96,17 +88,20 @@ export const astromancy: MysticSphere = {
         Your touch makes your foe disappear.
         Most of it reappears intact elsewhere, but something important - and painful - was lost in transit.
       `,
+      roles: ['burst', 'kite'],
       rank: 1,
       scaling: 'accuracy',
     },
 
+    // 30' melee teleport is 1.7 EA, or 2.7 EA with damage. Melee takes that down to 2.3,
+    // which is rank 6.
     {
       name: 'Distant Splicing Grasp',
 
       attack: {
         hit: `
-          \\damageranksix.
-          If the target is Huge or smaller and loses hit points, you \\glossterm{teleport} it up to 90 feet.
+          \\damagerankseven.
+          If the target is Huge or smaller, you \\glossterm{teleport} it up to 30 feet.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -114,6 +109,7 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against a creature you \\glossterm{touch}.
         `,
       },
+      roles: ['burst', 'kite'],
       rank: 6,
       scaling: 'accuracy',
     },
@@ -128,37 +124,38 @@ export const astromancy: MysticSphere = {
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Mental against one Large or smaller creature within \\medrange.
+          Make an attack vs. Mental against up to three Large or smaller creatures within \\medrange.
+          You gain a +2 accuracy bonus against \\creaturetag{planeforged} creatures.
         `,
       },
       narrative: `
         The dire wolf about to eat your allies disappears with an audible pop.
         If they run quickly, they can escape before it returns.
       `,
-      rank: 1,
+      rank: 4,
+      roles: ['stasis'],
       scaling: 'accuracy',
     },
 
+    // Banishment is r9, which is just enough for a grasp spell
     {
-      name: 'Banishing Rift',
+      name: 'Banishing Grasp',
 
-      functionsLike: {
-        name: 'banishment',
-        exceptThat:
-          'it affects all Large or smaller creatures in a \\medarea radius within \\medrange.',
+      attack: {
+        hit: `
+          The target \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          It does not return until the end of the next round.
+          After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Mental against a creature you \\glossterm{touch}.
+          You gain a +2 accuracy bonus against \\creaturetag{planeforged} creatures.
+        `,
       },
-      rank: 3,
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Efficient Banishment',
-
-      functionsLike: {
-        name: 'banishment',
-        exceptThat: 'it works even if the target has damage resistance remaining.',
-      },
-      rank: 5,
+      rank: 7,
+      roles: ['stasis'],
       scaling: 'accuracy',
     },
 
@@ -169,49 +166,82 @@ export const astromancy: MysticSphere = {
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium or smaller.
-        The target \\glossterm{teleports} into a location within the same range.
+        The target \\glossterm{teleports} up to 30 feet.
       `,
       rank: 1,
       narrative: `
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
       `,
-      scaling: {
-        3: 'The range increases to \\longrange.',
-        5: 'The range increases to \\distrange.',
-        7: 'The range increases to \\extrange.',
-      },
+      roles: ['narrative'],
     },
+    {
+      name: 'Distant Translocation',
+
+      cost: SWIFT_FATIGUE,
+      functionsLike: {
+        name: 'translocation',
+        exceptThat: 'the range increases to \\distrange, and the teleportation distance increases to 60 feet.',
+      },
+      rank: 4,
+      narrative: `
+        One by one, you teleport your allies across the chasm.
+        The orcs tracking you will never be able to follow your trail now.
+      `,
+      roles: ['narrative'],
+    },
+    {
+      name: 'Giant Translocation',
+
+      cost: SWIFT_FATIGUE,
+      functionsLike: {
+        name: 'translocation',
+        exceptThat: 'the maximum size increases to Huge.',
+      },
+      rank: 5,
+      narrative: `
+        One by one, you teleport your allies across the chasm.
+        The orcs tracking you will never be able to follow your trail now.
+      `,
+      roles: ['narrative'],
+    },
+    // 30' ranged teleportation is r4. Limited scope drops to r3. Adding extra targets is
+    // sketchy here because adding allies makes this extremely powerful for kiting, so
+    // keep it as single target.
     {
       name: 'Hostile Translocation',
 
       attack: {
         hit: `
-          If the target is Large or smaller, you \\glossterm{teleport} it up to 30 feet.
+          You \\glossterm{teleport} the target up to 30 feet.
         `,
         targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
+          Make an attack vs. Mental against one Large or smaller creature within \\medrange.
         `,
       },
-      rank: 1,
+      rank: 3,
       narrative: `
         You teleport your foe across the chasm.
         The orc will never be able to reach you now.
       `,
+      roles: ['kite'],
       scaling: 'accuracy',
     },
+    // 60' teleport is at least as strong as an action skip. It's hard to calculate this
+    // EA accurately, but it seems dangerous to make it lower level than this.
     {
       name: 'Intense Hostile Translocation',
 
       attack: {
         hit: `
-          If the target is Large or smaller, you \\glossterm{teleport} it up to 60 feet.
+          If the target is Large or smaller and has no remaining \\glossterm{damage resistance}, you \\glossterm{teleport} it up to 60 feet.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
         `,
       },
-      rank: 5,
+      rank: 7,
+      roles: ['kite', 'maim'],
       narrative: `
         You teleport your foe across the chasm.
         The ogre will never be able to reach you now.
@@ -233,10 +263,7 @@ export const astromancy: MysticSphere = {
         It took some effort to convince the dwarven paladin to try a surprise attack, but the results will be worth it.
       `,
       rank: 3,
-      scaling: {
-        5: 'The range increases to \\rngmed.',
-        7: 'The range increases to \\rnglong.',
-      },
+      roles: ['kite'],
     },
     {
       name: 'Dimension Door',
@@ -252,9 +279,7 @@ export const astromancy: MysticSphere = {
         Now, you can return whenever you want, no matter how many guards and locks the usurper tries to deploy against you.
       `,
       rank: 4,
-      scaling: {
-        6: 'The maximum distance increases to 600 feet.',
-      },
+      roles: ['kite'],
     },
     {
       name: 'Astral Rupture',
@@ -271,7 +296,8 @@ export const astromancy: MysticSphere = {
       narrative: `
         Your foes are caught by a sudden rift that shunts them painfully through dimensions.
       `,
-      rank: 2,
+      rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
@@ -279,64 +305,74 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankseven.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\largearea radius from you.
+          Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\medarea radius from you.
         `,
       },
       narrative: `
         Your foes are caught by a sudden massive rift that shunts them painfully through dimensions.
       `,
-      rank: 7,
+      rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
     {
-      name: 'Persistent Planar Rift',
+      name: 'Persistent Astral Rupture',
 
+      // Normal damage for limited scope area would be drX-1. With sustain (minor), drX-3.
+      // This should really be rank 6 to get small radius in short range, but that
+      // conflicts with massive astral rupture, so this cheats a bit
       attack: {
         hit: `
-          \\damagerankthree.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
-          You create a rift in a \\smallarea radius \\glossterm{zone} within \\medrange.
+          You create a chaotic planar rupture in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
         `,
       },
       rank: 5,
+      roles: ['wildfire'],
       scaling: 'accuracy',
       type: 'Sustain (attuneable, minor)',
     },
+    // Since this is sustain (standard), it doesn't have to pay the steep damage cost of
+    // Persistent Astral Rupture. It still pays a cost for extended range.
     {
-      name: 'Growing Planar Rift',
+      name: 'Growing Astral Rupture',
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
-          You create a rift at a location within \\longrange.
-          The area affected by the rift increases over time.
+          You create a chaotic planar rupture at a location within \\longrange.
+          Its area increases over time.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.
           Any effect which increases or changes this spell's area affects all of its areas equally, not just the area in the first round.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against everything in the area.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
         `,
       },
       rank: 7,
-      type: 'Sustain (attuneable, minor)',
+      roles: ['wildfire'],
+      type: 'Sustain (attuneable, standard)',
     },
     {
       name: 'Planar Jaunt -- Plane of Fire',
 
+      // Normal damage for short range would be dr2, which is 2.5 + 1dpp.
+      // Double dr0 is 5 + 1dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
           The target \\sphereterm{flickers} to the Plane of Fire.
-          When it returns, you deal it \\damagerankone.
-          If the target loses \\glossterm{hit points}, you deal it this damage again during your next action.
+          When it returns, you deal it \\damagerankzero.
+          During your next action, the target takes \\damagerankzero again.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
@@ -346,6 +382,7 @@ export const astromancy: MysticSphere = {
         Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
       `,
       rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
       tags: ['Fire'],
     },
@@ -366,75 +403,86 @@ export const astromancy: MysticSphere = {
         Though its destination is peaceful, the rough transit is jarring by itself.
       `,
       rank: 2,
+      roles: ['snipe'],
       scaling: 'accuracy',
-    },
-    {
-      name: 'Planar Jaunt -- Plane of Earth',
-
-      attack: {
-        hit: `
-          The target \\sphereterm{flickers} to the Plane of Earth.
-          When it returns, you deal it \\damagerankone.
-          If it loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against something within \\medrange.
-        `,
-      },
-      narrative: `
-        Your foe disappears for a second into the Plane of Earth, where it is crushed by the weight of stone.
-      `,
-      rank: 3,
-      scaling: 'accuracy',
-      tags: ['Earth'],
     },
     {
       name: 'Planar Jaunt -- Plane of Air',
 
-      // Baseline tier for determining debuffs is 3, since it's long range.
-      // 15' knockback is a t1 debuff
+      // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Air.
-          When it returns, you deal it \\damageranktwo.
-          If it is Large or smaller and your attack result also beats its Brawn defense, you can \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
-          Moving the target upwards costs twice the normal movement cost.
+          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          Moving it upwards costs twice the normal movement cost.
+          Each target of this spell must be knocked back in the same direction.
+
+          You can leave the target \\midair after the knockback.
+          It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
-          Make an attack vs. Mental against something within \\longrange.
+          Make an attack vs. Mental against up to two creatures within \\longrange that each have a \\glossterm{weight category} of Medium or lighter.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of Air, where it is knocked flying by powerful winds.
+        Your foes disappear for a second into the Plane of Air, where they are knocked flying by powerful winds.
       `,
-      rank: 4,
+      // narrative: '',
+      rank: 3,
+      roles: ['maim'],
       scaling: 'accuracy',
       tags: ['Air'],
     },
     {
+      name: 'Planar Jaunt -- Plane of Earth',
+
+      // Ranged slow is 2 EA, so r4.
+      attack: {
+        hit: `
+          The target \\sphereterm{flickers} to the Plane of Earth.
+          When it returns, it is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+        `,
+      },
+      narrative: `
+        Your foes disappear for a second into the Plane of Earth.
+        When they return, they are encumbered by the weight of earth.
+      `,
+      rank: 4,
+      roles: ['flash'],
+      scaling: 'accuracy',
+      tags: ['Earth'],
+    },
+
+    {
       name: 'Planar Jaunt -- Plane of Water',
 
+      // -1dr for the accuracy and weird debuff
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
           When it returns, it you deal it \\damagerankfour.
-          If it is a creature that breathes air and not water, and your attack result beats its Reflex defense, this attack deals maximum damage.
+          If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
+          It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
+          You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
       narrative: `
         Your foe disappears for a second into the Plane of Water, where it suddenly begins drowning.
       `,
       rank: 5,
+      roles: ['burst', 'maim'],
       scaling: 'accuracy',
       tags: ['Water'],
     },
     {
       name: 'Planar Jaunt -- Myriad',
 
-      // -1r for multi-tag stuff
+      // -1dr for multi-tag stuff
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a random assortment of planes.
@@ -450,17 +498,19 @@ export const astromancy: MysticSphere = {
         No matter what its weaknesses are, one of those planes probably held the key.
       `,
       rank: 6,
+      roles: ['burst'],
       scaling: 'accuracy',
       tags: ['Air', 'Cold', 'Earth', 'Electricity', 'Fire', 'Water'],
     },
     {
       name: 'Planar Jaunt -- Eternal Void',
 
+      // Briefly stunned is r1, so r5 with damage, or r7 with damage + hp condition
       attack: {
         hit: `
           The target \\sphereterm{flickers} to the Eternal Void.
-          When it returns, you deal it \\damagerankfive.
-          If it loses \\glossterm{hit points} from this damage, it becomes \\confused as a condition.
+          When it returns, you deal it \\damageranksix, and it is \\glossterm{briefly} \\stunned.
+          If it loses \\glossterm{hit points} from this damage, it also becomes \\stunned as a condition.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -470,8 +520,10 @@ export const astromancy: MysticSphere = {
         Your foe briefly teleports into the Eternal Void.
         The distance of the journey, combined with the bizarre destination, is deeply unsettling.
       `,
+      roles: ['burst', 'maim'],
       rank: 7,
     },
+    // Scary against melee enemies, hard to calculate EA
     {
       name: 'Dimensional Jitter',
 
@@ -490,14 +542,14 @@ export const astromancy: MysticSphere = {
       name: 'Dimension Walk',
 
       effect: `
-        Once per round, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
+        Once per phase, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
         Teleporting a given distance costs movement equal to that distance.
         If this teleportation fails for any reason, you still expend that movement.
       `,
       narrative: `
         Why would you walk when you can teleport?
       `,
-      rank: 4,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -520,48 +572,36 @@ export const astromancy: MysticSphere = {
     {
       name: 'Hostile Transposition',
 
+      // Like hostile translocation, but +1r for double target?
       attack: {
         hit: `
-          If you hit both subjects, they each \\glossterm{teleport} into each other's location.
+          If you hit both targets, they each \\glossterm{teleport} into each other's location.
           If the teleportation is invalid for either target, it fails for both targets.
         `,
         targeting: `
           Make an attack vs. Mental against two Large or smaller creatures within \\medrange.
+          Both targets must be within \\shortrange of each other.
+          The number of targets affected by this spell cannot by modified by abilities.
         `,
       },
       narrative: `
         The cultists were confident that they were safe behind their defensive wall of zombies.
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
-      rank: 2,
+      rank: 4,
+      roles: ['dive'],
       scaling: 'accuracy',
     },
-    // Strong scaling with range
-    {
-      name: 'Distant Hostile Transposition',
-
-      attack: {
-        hit: `
-          If you hit both subjects, they each \\glossterm{teleport} into each other's location.
-          If the teleportation is invalid for either target, it fails for both targets.
-        `,
-        targeting: `
-          Make an attack vs. Mental against two Huge or smaller creatures within \\distrange.
-        `,
-      },
-      narrative: `
-        The cultists were confident that they were safe behind their defensive wall of demonic warriors.
-        When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
-      `,
-      rank: 6,
-      scaling: 'accuracy',
-    },
+    // Hard to calculate EA, assume it's the same as Translocation
     {
       name: 'Transposition',
 
       cost: SWIFT_FATIGUE,
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
+        Choose two creatures from among yourself and your Medium or smaller \\glossterm{allies} within \\medrange.
+        Both targets must be within \\shortrange of each other.
+        The number of targets affected by this spell cannot by modified by abilities.
+
         Each target \\glossterm{teleports} into the other's location.
         If the teleportation is invalid for either target, it fails for both targets.
       `,
@@ -570,11 +610,18 @@ export const astromancy: MysticSphere = {
         When you were unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 1,
-      scaling: {
-        3: 'The range increases to \\longrange.',
-        5: 'The range increases to \\distrange.',
-        7: 'The range increases to \\extrange.',
+      roles: ['dive'],
+    },
+    {
+      name: 'Giant Transposition',
+
+      cost: SWIFT_FATIGUE,
+      functionsLike: {
+        name: 'transposition',
+        exceptThat: 'the maximum size increases to Huge.',
       },
+      rank: 5,
+      roles: ['narrative'],
     },
     {
       name: 'Phasing Blade',
@@ -582,7 +629,7 @@ export const astromancy: MysticSphere = {
       effect: `
         Whenever you make a \\glossterm{strike}, your weapon or projectile can pass through a single physical obstacle up to one foot thick on its way to the strike's target.
         This can allow your attacks to ignore \\glossterm{cover}, or even attack through solid walls.
-        It does not allow you to ignore armor, shields, or or similar items carried or worn by the targets of your attacks.
+        It does not allow you to ignore armor, shields, or similar items carried or worn by the targets of your attacks.
       `,
       rank: 3,
       roles: ['attune'],
@@ -620,10 +667,9 @@ export const astromancy: MysticSphere = {
       name: 'Phasestep',
 
       effect: `
-        When you move using one of your movement speeds, you can move through a single creature freely.
-        After you finish moving through one creature in this way, other \\glossterm{enemies} block your movement as normal.
+        When you move using one of your movement speeds, you can move through creatures freely.
         This does not allow you to move through inanimate objects.
-        If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \\squeezing as long as you continue sharing space (see \\pcref{Squeezing}).
+        You must still end your movement in an unoccupied space.
         If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
       `,
       narrative: `
@@ -634,30 +680,16 @@ export const astromancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Mass Phasestep',
-
-      functionsLike: {
-        mass: true,
-        name: 'phasestep',
-      },
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Greater Phasestep',
 
-      effect: `
-        When you move using one of your movement speeds, you can move through creatures freely.
-        You can also move through inanimate objects that are no more than six inches thick.
-        If you move into a creature's space with this ability, but you do not move out of it, you and the creature are usually considered \\squeezing as long as you continue sharing space (see \\pcref{Squeezing}).
-        If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
-      `,
+      functionsLike: {
+        name: 'phasestep',
+        exceptThat: 'you can also move through \\glossterm{mundane}, \\glossterm{inanimate} objects that are no more than six inches thick.',
+      },
       narrative: `
         You augment your body with the ability to travel through the Astral Plane to reach your destination.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -673,10 +705,7 @@ export const astromancy: MysticSphere = {
         It returns at the end of the last round.
       `,
       rank: 2,
-      scaling: {
-        4: `The maximum size of the target increases to Large.`,
-        6: `The maximum size of the target increases to Huge.`,
-      },
+      roles: ['stasis'],
     },
     {
       name: 'Blink',
@@ -686,13 +715,9 @@ export const astromancy: MysticSphere = {
         In addition, you gain a +2 bonus to all defenses.
         This ability has the \\abilitytag{Swift} tag, so it protects you from attacks during the current phase.
       `,
-      narrative: `You quickly blink into the Astral Plane, leaving a dangerous battlefield behind.`,
+      narrative: `You jump into the Astral Plane the instant before a sword slashes through the space you left behind.`,
       rank: 1,
-      scaling: {
-        3: `The failure chance increases to 30\\%.`,
-        5: `The failure chance increases to 40\\%.`,
-        7: `The failure chance increases to 50\\%.`,
-      },
+      roles: ['turtle'],
       tags: ['Swift'],
     },
     {
@@ -728,11 +753,11 @@ export const astromancy: MysticSphere = {
         A shimmering portal appears in each of the two squares.
         Each portal appears as an opaque colored disc five feet in diameter.
 
-        Once per phase, when a creature moves into one of the squares, it can choose to pass through the portal in that square.
+        Once per phase, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
-        Objects can pass through the portals freely and maintain their speed, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
+        Objects maintain their speed when passing through the portal, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
 
-        If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first person into the portal.
+        If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first creature into the portal.
         A creature that attempts to pass through the portal in a phase where the portal was already activated stops its movement in the square with the portal.
       `,
       narrative: `
@@ -748,12 +773,12 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         name: 'twinned portals',
         exceptThat:
-          'the portals are 20 feet in diameter.',
+          'the portals are 20 feet in diameter, and the maximum size of creatures or objects passing through the portal increases to Huge.',
       },
       narrative: `
         You create a pair of gigantic portals that allow instant passage from one to the other.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['narrative'],
       type: 'Sustain (attuneable, minor)',
     },
