@@ -65,8 +65,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When it does, it removes one \\glossterm{condition} affecting it.
       `,
       rank: 3,
-      roles: ['attune'],
-      type: 'Attune',
+      roles: ['healing'],
     },
     {
       name: 'Aquatic Agility',
@@ -420,17 +419,20 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       scaling: 'accuracy',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
+    // 20% miss chance is about rank 3. But globally providing concealment that could
+    // affect you and your allies seems stronger than that, even with the risk of
+    // protecting your enemies, so call this a deep attunement.
     {
       name: 'Misty Shroud',
 
       effect: `
-        At the end of each round, fog \\glossterm{briefly} fills a \\medarea radius zone from you.
+        At the end of each round, fog \\glossterm{briefly} fills a \\smallarea radius \\glossterm{zone} from you.
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
       rank: 3,
       roles: ['attune'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
     {
       name: 'Aqueous Tentacle',
@@ -665,25 +667,29 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Personal Aquarium',
 
+      // The last four effects basically do nothing unless you have a fast swim speed,
+      // which is extremely unlikely. All of the "power" of the ability is in the first
+      // effect, and the other effects are basically the cost you pay to get that
+      // bonus.
       effect: `
         You surround yourself in a bubble of water.
         This has the following effects:
         \\begin{itemize}
+          \\item You are \\shielded.
+          \\item You are \\impervious to \\atFire attacks.
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
-          \\item You gain a +2 bonus to your defenses against ranged \\glossterm{strikes}.
-          \\item You gain a +2 bonus to your defenses against the \\ability{grapple} ability.
         \\end{itemize}
 
         % There must be text between an itemize block and the end of a mdframed env
         \\hypertarget{itemizespace}{}
       `,
       // narrative: '',
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
-      type: 'Attune',
+      type: 'Attune (deep)',
     },
     {
       name: 'Waterward',
@@ -829,7 +835,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       type: 'Attune',
     },
     {
-      name: 'Guiding Current',
+      name: "River's Passage",
 
       cost: SWIFT_FATIGUE_SELF,
       effect: `
@@ -838,21 +844,62 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
         You \\glossterm{push} the target up to 30 feet horizontally.
         You can change the direction of the push partway through the movement, allowing you to push the target around obstacles.
-        Pushing the target down a steep slope costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
+        Pushing the target down a steep slope or through water costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
       `,
       rank: 1,
       roles: ['dive'],
+      tags: ['Manifestation'],
     },
     {
-      name: 'Intense Guiding Current',
+      name: "Intense River's Passage",
 
       cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
-        name: 'guiding current',
+        name: "River's Passage",
         exceptThat: "the maximum push distance increases to 60 feet.",
       },
       rank: 4,
       roles: ['dive'],
+      tags: ['Manifestation'],
+    },
+    {
+      name: "Waterward",
+
+      // Shielded alone is on the weaker side, so add impervious to fire
+      cost: SWIFT_FATIGUE_SELF,
+      effect: `
+        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
+      `,
+      rank: 1,
+      roles: ['turtle'],
+      tags: ['Manifestation', 'Swift'],
+    },
+    {
+      name: "Waterward Dash",
+
+      // Cover is basically shielded, but also prevents half on miss and glancing blows.
+      // Call that equal to braced.
+      cost: SWIFT_FATIGUE_SELF,
+      effect: `
+        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
+        In addition, you can move up to your movement speed during your action.
+        The protection is \\atSwift, but the movement is not.
+      `,
+      rank: 5,
+      roles: ['dive', 'turtle'],
+      tags: ['Manifestation', 'Swift (see text)'],
+    },
+    {
+      name: "Expanded Waterward",
+
+      // You and all adjacent isn't as flexible as "any two", but it's similarly strong.
+      cost: SWIFT_FATIGUE_SELF,
+      effect: `
+        This round, you and all \\glossterm{allies} adjacent to you are \\impervious to \\atFire attacks and \\shielded.
+      `,
+      rank: 4,
+      roles: ['turtle'],
+      tags: ['Manifestation', 'Swift'],
     },
   ],
 });
