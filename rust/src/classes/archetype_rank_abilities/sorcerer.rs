@@ -126,8 +126,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                 Choose two metamagic abilities from the list below.
 
                 Some metamagic abilities affect specific spells.
-                Each individual spell can normally have one metamagic applied.
-                If the spell's rank is lower than your maximum spellcasting rank, you can apply two metamagic effects to it.
+                Each individual spell can only have one metamagic applied.
                 Whenever you learn a new spell, you may change which specific spells your metamagic abilities affect.
                 {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
