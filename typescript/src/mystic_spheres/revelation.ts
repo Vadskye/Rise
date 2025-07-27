@@ -65,7 +65,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You become \\glossterm{briefly} \\braced.
-        Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['focus'],
