@@ -168,7 +168,8 @@
   \debuffdef{frightened} A frightened creature takes a \minus2 penalty to its Mental defense.
   In addition, it takes a \minus2 penalty to \glossterm{accuracy} against the source of its fear.
   This does not stack with the \panicked effect.
-  If the source of a frightened creature's fear is \glossterm{defeated}, this effect is broken.
+  If the source of a frightened creature's fear is \glossterm{defeated} or otherwise stops being relevant to the creature, this effect is broken.
+  % TODO: why is this necessary? can this be removed? it seems surprising
   Being frightened is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
   \debuffdef{gliding} A creature that is gliding takes a \minus4 penalty to its Armor and Reflex defenses (see \pcref{Aerial Movement}).
