@@ -10,6 +10,7 @@ By EA:
   Action skip        & 3.0   & 4.8          & 12        \\
   Action skip (HP)   & 2.0   & 4.8          & N/A        \\
   Banishment         & 3.0   & 3.6          & 9         \\
+  Banishment (HP)    & 2.0   & 3.6          & N/A         \\
   Blinded            & 3.4   & 3.6          & 9.0       \\
   Confused           & 2.8   & 2.9          & 7.2       \\
   Dazzled            & 0.6   & 0.7          & 1.8       \\
@@ -47,6 +48,7 @@ By rank:
   Action skip        & 9     & inf          & inf       \\
   Action skip (HP)   & 4     & inf          & N/A       \\
   Banishment         & 9     & inf          & inf       \\
+  Banishment (HP)    & 4     & inf          & N/A       \\
   Blinded            & 11    & inf           & inf       \\
   Confused           & 8     & 9            & inf       \\
   Dazzled            & 2d    & 3d           & 3         \\
@@ -362,6 +364,14 @@ If a prone or slow is applied by a melee ability, halve the EA contribution from
 ### Stunned: 1.4
 
 If you stun an enemy as the first action of the round, the party has 7 attacks that can take advantage of the stun debuff: your three party members during the first round, and the full party during the second round.
+
+### Teleport 15': 1.1 (ranged) / 0.6 (melee)
+
+Teleportation is often the same as a push. It's slightly more effective at navigating odd obstacles, so give it +0.2 EA over a push, so call it 1.1 / 0.6.
+
+### Teleport 30': 2.2 (ranged) / 1.7 (melee)
+
++0.2 EA over push
 
 ### Time Skip: 3.5
 
