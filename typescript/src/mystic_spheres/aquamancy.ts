@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from './constants';
 
 const WATER_ACCURACY_BONUS = 'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.';
 
@@ -827,6 +827,32 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 1,
       roles: ['attune'],
       type: 'Attune',
+    },
+    {
+      name: 'Guiding Current',
+
+      cost: SWIFT_FATIGUE_SELF,
+      effect: `
+        Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
+        If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
+
+        You \\glossterm{push} the target up to 30 feet horizontally.
+        You can change the direction of the push partway through the movement, allowing you to push the target around obstacles.
+        Pushing the target down a steep slope costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
+      `,
+      rank: 1,
+      roles: ['dive'],
+    },
+    {
+      name: 'Intense Guiding Current',
+
+      cost: SWIFT_FATIGUE_SELF,
+      functionsLike: {
+        name: 'guiding current',
+        exceptThat: "the maximum push distance increases to 60 feet.",
+      },
+      rank: 4,
+      roles: ['dive'],
     },
   ],
 });
