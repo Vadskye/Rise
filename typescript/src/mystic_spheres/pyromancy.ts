@@ -184,9 +184,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Burning Grasp',
 
-      // Baseline for melee range is dr3, which is 4.5 + 1dpp.
-      // Double dr1 is 9 + 1dpp.
       // This gets -1dr for being a single-target Reflex attack.
+      // Baseline for Reflex melee range is dr3, which is 4.5 + 1dpp.
+      // Double dr1 is 9 + 1dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
@@ -829,32 +829,40 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Combustion',
 
+      // Baseline for melee range is dr3.
+      // With -4 accuracy, dr5, which is 3.5 + 1.75dpp.
+      // Double dr2 is 5 + 2dpp.
       attack: {
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          \\damageranktwo.
+          During your next action, the target takes \\damageranktwo again.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
-      rank: 2,
-      roles: ['burst'],
+      rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Mighty Combustion',
 
+      // Baseline for melee range is dr6.
+      // With -4 accuracy, dr8, which is 3.5 + 3.5dpp.
+      // Double dr5 is 7 + 3.5dpp.
       attack: {
         hit: `
-          \\damageranknine, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankfive again.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
-      rank: 5,
-      roles: ['burst'],
+      rank: 4,
+      roles: ['burn'],
       scaling: 'accuracy',
     },
   ],
