@@ -23,6 +23,7 @@ By EA:
   Single defense & 0.3  & 0.5  & 0.7     & 1.0 \\
   Steeled        & 0.2  & 0.3  & 0.5     & 0.6 \\
 ```
+"You and all adjacent" can be used instead of "any two in Medium range".
 
 ## Named Buffs
 
