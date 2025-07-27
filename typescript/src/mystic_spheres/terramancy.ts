@@ -80,12 +80,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you choose a \\medarea radius within \\shortrange.
+          When you cast this spell, you choose a \\glossterm{grounded} location within \\shortrange.
           A meteor appears high in the sky over that area, falling down towards it.
           Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
 
-          During your next action, the meteor crashes into your chosen area, and you make an attack vs. Armor and Reflex against everything in the area.
-          If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
+          During your next action, the meteor crashes into the ground, and you make an attack vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
+          If there is not at least sixty feet of open space above your chosen location, this spell fails with no effect.
         `,
       },
       rank: 4,
@@ -97,13 +97,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Meteor Swarm',
 
-      // -2r for avoidable delay, +1r for extended range, so effective rank 8. That allows
-      // a t8 area and dr6.
+      // -1dr for extended range
       functionsLike: {
         name: 'meteor',
         exceptThat: `
-          you can choose up to four separate areas within \\longrange, creating one meteor per area.
-          In addition, the damage increases to \\damageranksix.
+          you can choose up to four separate \\glossterm{grounded} locations within \\longrange, creating one meteor per area.
+          In addition, the damage increases to \\damagerankseven.
           Any individual creature can only be attacked by one meteor, even if it occupies multiple areas, and overlapping the areas has no benefit.
         `,
       },
