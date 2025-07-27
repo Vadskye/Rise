@@ -84,7 +84,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `
           The target becomes a lightning rod as a \\glossterm{condition}.
           Abilities which \\glossterm{chain} can travel an extra 30 feet to affect it.
-          In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to \\atLightning abilities.
+          In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to \\atElectricity abilities.
         `,
         targeting: `
           Make an attack vs. Fortitude against up one creature within \\shortrange.
