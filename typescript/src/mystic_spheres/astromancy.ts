@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { MULTIHIT_CRIT, SWIFT_FATIGUE } from './constants';
+import { MULTIHIT_CRIT, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from './constants';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
@@ -162,7 +162,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Translocation',
 
-      cost: SWIFT_FATIGUE,
+      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium or smaller.
@@ -178,12 +178,12 @@ export const astromancy: MysticSphere = {
     {
       name: 'Distant Translocation',
 
-      cost: SWIFT_FATIGUE,
+      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat: 'the range increases to \\distrange, and the teleportation distance increases to 60 feet.',
       },
-      rank: 4,
+      rank: 5,
       narrative: `
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
@@ -193,12 +193,12 @@ export const astromancy: MysticSphere = {
     {
       name: 'Giant Translocation',
 
-      cost: SWIFT_FATIGUE,
+      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat: 'the maximum size increases to Huge.',
       },
-      rank: 5,
+      rank: 6,
       narrative: `
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
