@@ -835,7 +835,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `
           \\damageranktwo.
-          During your next action, the target takes \\damageranktwo again.
+          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -854,14 +854,70 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Double dr5 is 7 + 3.5dpp.
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfive again.
+          \\damagerankfive.
+          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
         `,
       },
       rank: 4,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Immolate',
+
+      // Baseline for melee range is dr9.
+      // With -4 accuracy, dr11, which is undefined.
+      // Combustion and Mighty Combustion ended up at drX+1, so this can probably do the
+      // same.
+      attack: {
+        hit: `
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankeight again, and any \\glossterm{extra damage} also applies to this damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
+        `,
+      },
+      rank: 7,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Living Pyre',
+
+      // Same damage calcs as combustion
+      attack: {
+        hit: `
+          \\damageranktwo.
+          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+        `,
+      },
+      rank: 3,
+      roles: ['burn'],
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Mighty Living Pyre',
+
+      // Same damage calcs as mighty combustion
+      attack: {
+        hit: `
+          \\damagerankfive.
+          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
+        `,
+      },
+      rank: 6,
       roles: ['burn'],
       scaling: 'accuracy',
     },
