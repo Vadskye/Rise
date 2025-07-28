@@ -1332,6 +1332,8 @@
   \parhead{Automatic Languages} Abyssal, Common, any one \glossterm{common language}.
 
   \subsection{Tiefling Archetype}
+    % A normal short range damage spell would deal drX+1.
+    % Drop to drX for the teleport, and drX-1 for the AOE.
     \magicalcf{Tif}[1]{Abyssal Hop}
       \begin{magicalactiveability}{Abyssal Hop}[\atFire]
         \abilityusagetime Standard action.
@@ -1343,102 +1345,65 @@
         \miss Half damage.
 
         \rankline
-        % Stay at 1 rank lower than par
+        % Stay at drX-1, approximately
         \rank{2} The base damage increases to 1d6.
         \rank{3} The damage bonus from your power increases to be equal to your power.
         \rank{4} The base damage increases to 1d8.
-        \rank{5} The damage bonus increases to 1d6 per 3 power.
+        \rank{5} The base damage increases to 2d6.
         \rank{6} The damage bonus increases to 1d6 per 2 power.
         \rank{7} The damage bonus increases to 1d8 per 2 power.
       \end{magicalactiveability}
-
-    \cf{Tif}[1]{Infernal Resilience} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{damage resistance}.
 
     \magicalcf{Tif}[2]{Infernal Ancestry} You deepen your connection to a particular aspect of your demonic ancestry.
       Choose one of the following infernal ancestries: hellfire conduit, tempting allure, or unholy might.
       You gain a benefit based on your chosen ancestry.
       \begin{itemize}
-        \item Infernal Rebuke: You can set fire to your foes.
-          \begin{magicalactiveability}{Infernal Rebuke}[\atFire]
-            \abilityusagetime Standard action.
-            \rankline
-            Make an attack vs. Fortitude against one creature within \shortrange.
-            You gain a \plus2 \glossterm{accuracy} bonus with this attack if the target attacked you during the previous round.
-            \hit \damagerankthree.
-
-            \rankline
-            % Stay at rank+1 damage
-            \rank{3} The damage bonus from your power increases to 1d6 per 3 power.
-            \rank{4} The damage bonus increases to 1d6 per 2 power.
-            \rank{5} The damage bonus increases to 1d8 per 2 power.
-            \rank{6} The damage bonus increases to 1d10 per 2 power.
-            \rank{7} The damage bonus increases to 1d6 per power.
-          \end{magicalactiveability}
+        \item Hellfire Conduit: You gain a \plus1 bonus to your \glossterm{magical power}.
+          In addition, when you use your \ability{abyssal hop} ability, it deals damage to each enemy in a \smallarea radius from your arrival location.
         \item Tempting Allure: You gain a \plus2 bonus to the Deception, Disguise, and Persuasion skills.
-          In addition, you can charm creatures.
-          \begin{magicalsustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
+        \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
+          In addition, you gain a \plus1 bonus to your \glossterm{mundane power}.
+      \end{itemize}
+
+    \magicalcf{Tif}[3]{Abysswalker} Once per phase, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
+    Teleporting a given distance costs movement equal to twice that distance.
+    If this teleportation fails for any reason, you still expend that movement.
+
+    \magicalcf{Tif}[4]{Infernal Ancestry\plus} The benefits of your \textit{infernal ancestry} ability improve.
+      \begin{itemize}
+        % Normally, double defense is +1dr and burn is +1dr. This is more damage than that, but it's also a class feature, so it's probably fine?
+        \item Hellfire Conduit: If your \ability{abyssal hop} ability also hits a target's Fortitude defense, you can repeat the attack against that during your next action.
+        \item Tempting Allure: You can charm creatures.
+          \begin{magicalsustainability}{Charming Temptation}{\abilitytag{Emotion}, \abilitytag{Subtle}}
             \abilityusagetime Standard action.
             \rankline
             Make an attack vs. Mental against a humanoid creature within \medrange.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
-            \hit The target is \charmed by you.
+            \hit The target is \charmed by you until it takes a \glossterm{long rest}.
             Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
             Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
             An observant target may interpret overt threats to its allies as a threat to itself.
 
             \rankline
-            The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 2.
+            The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 4.
           \end{magicalsustainability}
-        \item Unholy Might: You gain two claw natural weapons and one bite natural weapon (see \pcref{Natural Weapons}).
-          In addition, you gain a \plus1 bonus to your \glossterm{mundane power}.
+        \item Unholy Might: When you use your \ability{abyssal hop} ability as a standard action, you can also make a \glossterm{mundane} \glossterm{strike} at your destination.
       \end{itemize}
 
-    \magicalcf{Tif}[3]{Abysswalker} You can use your \ability{abyssal hop} ability to teleport as a \glossterm{move action} instead of as a standard action.
-      When you do, you do not deal damage at your destination, and you \glossterm{briefly} cannot use that ability as a move action again.
+    \cf{Tif}[5]{Infernal Resilience} You gain a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
 
-    \magicalcf{Tif}[4]{Greater Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability improve.
+    \magicalcf{Tif}[6]{Abysswalker\plus} Teleporting a given distance only costs movement equal to that distance.
+    In addition, you can teleport in this way any number of times per phase.
+
+    \magicalcf{Tif}[7]{Infernal Ancestry\plus\plus} The benefits of your \textit{infernal ancestry} ability reach their peak.
       \begin{itemize}
-        \item Infernal Conduit: You gain a \plus1 bonus to your \glossterm{magical power}.
-          In addition, the area affected by your \textit{abyssal hop} ability increases to a \smallarea radius from your destination.
-        \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus3.
-          In addition, you can dominate creatures.
-          \begin{magicalactiveability}{Dominating Temptation}[\abilitytag{Emotion}]
-            \abilityusagetime Standard action.
-            \rankline
-            Make an attack vs. Mental against a humanoid creature within \shortrange.
-            \hit The target is \stunned as a \glossterm{condition}.
-            \crit The target is \confused instead of stunned.
-            In addition, if the target is humanoid and was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
-            When you do, the target becomes \dominated by you for the duration of that attunement.
-
-            \rankline
-            \noindent The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 4.
-          \end{magicalactiveability}
-        \item Unholy Might: You can increase your strength.
-          \begin{magicalattuneability}{Unholy Strength}{\abilitytag{Attune}}
-            \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
-            \rankline
-            You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
-          \end{magicalattuneability}
-      \end{itemize}
-
-    \cf{Tif}[5]{Greater Hellfire Tolerance} You become \trait{immune} to \atFire attacks.
-
-    \cf{Tif}[5]{Greater Infernal Resilience}  The bonus from your \ability{infernal resilience} ability increases to three times your rank in this archetype.
-
-    \magicalcf{Tif}[6]{Supreme Infernal Ancestry} The benefits of your \textit{infernal ancestry} ability reach their peak.
-      \begin{itemize}
-        \item Infernal Conduit: The magical power bonus from your \textit{greater infernal ancestry} ability increases to \plus2.
-          In addition, the area affected by your \textit{abyssal hop} ability increases to a \medarea radius from your destination.
+        \item Hellfire Conduit: The magical power bonus increases to \plus2.
+          In addition, your \ability{abyssal hop} ability also affects \glossterm{enemies} in a \smallarea radius from your starting point.
+          Creatures in both areas are still only affected by the ability once.
         \item Tempting Allure: The skill bonuses from your \textit{infernal ancestry} ability increase to \plus4.
-          In addition, your \textit{tempting domination} ability can dominate non-humanoid creatures.
-        \item Unholy Might: The power bonus from your \textit{infernal ancestry} ability increases to \plus2.
-          In addition, your \textit{unholy surge} ability loses the \abilitytag{Attune} tag.
-          Instead, it lasts until you \glossterm{dismiss} it or until you use it again.
+        \item Unholy Might: The mundane power bonus increases to \plus2.
+          In addition, the damage dealt by the strike after you use \ability{abyssal hop} is doubled.
       \end{itemize}
-
-    \magicalcf{Tif}[7]{Greater Abyssal Hop} When you use your \ability{abyssal hop} ability, you no longer require \glossterm{line of sight} or \glossterm{line of effect} to your destination.
-      In addition, when you use it to teleport as a standard action, the range increases to \distrange.
 
       % \subsection{Base Class Effects}
       %     If you choose tiefling as your base class, you gain the following benefits.
@@ -1537,7 +1502,7 @@
       Whenever you remove a vital wound in this way, you increase your \glossterm{fatigue level} by three.
 
     \cf{Trl}[5]{Hulking Size} Your size category increases to Large.
-      This increases your \glossterm{base speed} to 40 feet.
+    This increases your \glossterm{base speed} to 40 feet, among other effects (see \pcref{Size and Weight}).
 
     \cf{Trl}[6]{Subspecies Specialization+} Your bonus based on your troll subspecies improves.
       \begin{raggeditemize}
@@ -1639,7 +1604,7 @@
       Since they are not living, they are immune to \atPoison effects.
     \itemhead{Unnatural Life} Unlike most undead creatures, vampires share some aspects of living creatures.
       They must breathe air, and they must sleep as much as humans do.
-    \itemhead{Unnatural Charm} Vampires gain a \plus3 bonus to the Persuasion skill.
+    \itemhead{Unnatural Charm} Vampires gain a \plus2 bonus to the Persuasion skill.
     \itemhead{Vampire Archetype} Vampires only gain two class archetypes instead of three.
       Instead, they treat the Vampire archetype as one of their archetypes, and they gain ranks in it just like they gain ranks in class archetypes.
   \end{itemize}
@@ -1693,7 +1658,7 @@
       \begin{magicalsustainability}{Charming Gaze}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}}
         \abilityusagetime Standard action.
         \rankline
-        Make an attack vs. Mental against all humanoid creatures in a \largearea cone from you.
+        Make an attack vs. Mental against all humanoid creatures in a \medarea cone from you.
         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
         \hit The target is \charmed by you.
         Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
