@@ -238,13 +238,13 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It gains the \atEarth tag.
                         In addition, you gain a \plus2 accuracy bonus with that spell if you are \glossterm{grounded} while casting it.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    % Assume 70% hit rate, so expected damage is 0.8x hit damage.
-                    % The repeat has expected damage of 0.4, for a total of 1.2x hit damage, or 50% more damage.
+                    % +50% damage assuming the targets stay in the same area, more like +25% assuming they try to escape
                     \parhead{Incendiary Spell} Choose a damaging nature \glossterm{spell} you know.
                         It gains the \atFire tag.
-                        Whenever you hit a target with that spell, you repeat the spell's effects against that target during the next round.
-                        You must make a new attack roll for the repeat with a \minus4 accuracy penalty.
-                        Even if you hit the same target multiple times, the spell only repeats once against that target.
+                        When you cast the spell, it \glossterm{briefly} creates a \glossterm{zone} of flames in its area. 
+                        If the spell does not normally affect an area, the flames appear in the space of each target.
+                        During the next round, the spell's effect \glossterm{repeats} in that area.
+                        The repeat deals half damage.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Rituals} You gain the ability to perform nature rituals to create unique magical effects (see \pcref{Spell and Ritual Mechanics}).
                         The maximum \glossterm{rank} of nature ritual you can learn or perform is equal to the maximum \glossterm{rank} of nature spell that you can cast.
