@@ -1596,21 +1596,20 @@ impl Class {
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
                             You cannot control the exact nature of the event, though it always beneficial for you in some way.
                         \end{magicalactiveability}
-                        \magicaldomainability{Mastery} All of your checks can explode once, not just skill checks.
-                        Your checks also explode on a 9 or 10, not just a 10.
+                        \magicaldomainability{Mastery} Your skill checks explode on a 9 or 10, not just a 10.
 
                     % TODO: actual math
                     \subsubsection{Death Domain}
                         % This tracks staff extra damage fairly closely
-                        \magicaldomainability{Gift} When you get a critical hit with a damaging ability, it deals \glossterm{extra damage} equal to your rank in this archetype.
+                        \magicaldomainability{Gift} When you get a critical hit with a damaging ability, it deals \glossterm{extra damage} equal to your rank in the Domain Influence archetype.
                         This extra damage is multiplied as normal by the critical hit.
-                        \magicaldomainability{Aspect} You gain a \plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
-                        \domainability{Essence} Whenever you kill a Small or larger living creature, you are \glossterm{briefly} \honed.
-                        \domainability{Mastery} The bonus from this domain's essence increases to \plus3.
+                        \domainability{Aspect} You gain a \plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
+                        \magicaldomainability{Essence} Whenever you kill a Small or larger living creature, you are \glossterm{briefly} \honed.
+                        \domainability{Mastery} The accuracy bonus with critical hits increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \domainability{Gift} Your damaging attacks deal double damage to objects.
-                        \magicaldomainability{Aspect} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
+                        \magicaldomainability{Gift} Your damaging attacks deal double damage to objects.
+                        \domainability{Aspect} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Lay Waste}
                             \abilityusagetime Standard action.
@@ -1622,19 +1621,19 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \domainability{Mastery} The bonus from this domain's aspect increases to \plus3.
+                        \domainability{Mastery} The power bonuses increase to \plus3.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You are \impervious to Earth attacks.
                         \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance}.
-                        \magicaldomainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
+                        \domainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
                         \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Evil Domain}
-                        \magicaldomainability{Gift} You are immune to being \charmed and \goaded.
-                        \magicaldomainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
+                        \domainability{Gift} You are immune to being \charmed and \goaded.
+                        \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Blood Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
@@ -1650,75 +1649,40 @@ impl Class {
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You are \trait{impervious} to \atFire attacks.
-                        \magicaldomainability{Aspect} Your \atFire abilities cannot deal damage to your \glossterm{allies}.
-                        \magicaldomainability{Essence}
-                        \begin{magicalattuneability}{Speak with Fire}{\abilitytag{Attune}}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            You can speak with and command fire within a \areahuge radius \glossterm{zone} from your location.
-                            You can ask the fire simple questions and understand its responses.
-                            If you command the fire to perform a task, it will do so do the best of its ability until this effect ends.
-                            You cannot compel the fire to move farther than 30 feet in a single round.
-                            Fire that ends the round on non-combustible materials usually goes out, depending on the circumstances.
-
-                            After you use this ability on a particular area of fire, you cannot use it again on that same area for 24 hours.
-                            % TODO: What does an ``area of fire'' mean?
-
-                            \rankline
-                            \rank{6} The area increases to a \areagarg radius.
-                        \end{magicalattuneability}
-                        \magicaldomainability{Mastery} You are immune to \atFire attacks.
-                        In addition, whenever you hit a creature with a \atFire attack, you repeat that ability's effects against that target during the next round.
-                        You must make a new attack roll for the repeat with a \minus4 accuracy penalty.
-                        Hitting with the repeated attack causes another repeat during the next round, though the accuracy penalty increases by \minus4 with each repeat.
+                        \magicaldomainability{Aspect} Your \glossterm{allies} are immune to damage from your \atFire abilities.
+                        % TODO: wording
+                        \magicaldomainability{Essence} Whenever you use a damaging \atFire ability, all \glossterm{enemies} adjacent to you that were not already targeted by that ability are also \glossterm{secondary targets} of it.
+                        They take half damage from the ability.
+                        \magicaldomainability{Mastery} The secondary targets do not take half damage.
 
                     \subsubsection{Good Domain}
-                        \magicaldomainability{Gift} Whenever an adjacent \glossterm{ally} suffers a \glossterm{vital wound}, you may gain a \glossterm{vital wound} instead.
-                        You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
-                        The original target suffers any other effects of the attack normally.
-                        \magicaldomainability{Aspect} This domain's domain gift affects any \glossterm{ally} within a \areamed radius \glossterm{emanation} from you.
-                        \magicaldomainability{Essence}
-                        \begin{magicalactiveability}{Compel Good}[\abilitytag{Compulsion}]
+                        \domainability{Gift} You are immune to \atCurse attacks and being \dominated.
+                        \magicaldomainability{Aspect} 
+                        \begin{magicalactiveability}{Sacrificial Bond}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
                             \rankline
-                            Make an attack vs. Mental against a creature within \rngmed range.
-                            Creatures who have strict codes prohibiting them from taking good actions, such as paladins devoted to evil, are immune to this ability.
-                            \hit The target takes a good action as soon as it can.
-                            Once it takes the good action, this effect ends.
-                            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
-
-                            \rankline
-                            You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
+                            Choose an \glossterm{ally} within \medrange.
+                            Whenever that ally would gain a \glossterm{vital round} while they are within a \largearea radius \glossterm{emanation} from you, you gain that \glossterm{vital wound} instead.
+                            You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
+                            This ability lasts until you \glossterm{dismiss} it.
+                            You can use it multiple times on different allies to redirect all of their vital wounds to you.
                         \end{magicalactiveability}
-                        \magicaldomainability{Mastery} Once per round, when an \glossterm{ally} within a \areamed radius \glossterm{emanation} from you would lose \glossterm{hit points}, you may lose those hit points instead.
-                        The target suffers any other effects of the attack normally, though it is not treated as if it lost hit points from the attack for the purpose of special attack effects.
+                        \magicaldomainability{Essence} You suffer no penalty for being \glossterm{resurrected}, and any rituals to resurrect you do not require material components.
+                        \magicaldomainability{Mastery} When you use your \ability{sacrifical bond} ability, you can choose whether it also redirects all \glossterm{hit point} loss from the target to you.
 
                     \subsubsection{Knowledge Domain}
                         If you choose this domain, you add all Knowledge skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
-                        \domainability{Aspect} Your extensive knowledge of all methods of attack and defense grants you a \plus1 bonus to your Fortitude, Reflex, and Mental defenses.
-                        \magicaldomainability{Essence}
-                        \begin{magicalactiveability}{Share Knowledge}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            Make a Knowledge check of any kind.
-                            Your \glossterm{allies} within a \arealarge radius learn the results of your check.
-                            Creatures believe the information gained in this way to be true as if they it had seen it with their own eyes.
-
-                            You cannot alter the knowledge you share with this check in any way, such as by adding or withholding information.
-
-                            \rankline
-                            \rank{6} You gain a \plus3 bonus to the Knowledge check.
-                        \end{magicalactiveability}
-                        \domainability{Mastery} You gain a \plus1 \glossterm{accuracy} bonus with all attacks.
-                        In addition, you can use your \textit{share knowledge} ability to affect all creatures, not just your allies.
+                        \magicaldomainability{Aspect} You are proficient with any tool or weapon you are currently touching.
+                        This includes \glossterm{exotic weapons} and improvised weapons.
+                        \domainability{Essence} You gain an additional \glossterm{insight point}.
+                        \domainability{Mastery} You gain a \plus1 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
 
                     \subsubsection{Law Domain}
-                        \magicaldomainability{Gift} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
+                        \domainability{Gift} You are \impervious to \atEmotion attacks.
+                        \magicaldomainability{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
-                        \domainability{Aspect} You are \impervious to \atEmotion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \abilitycost One \glossterm{fatigue level}.
@@ -1737,21 +1701,21 @@ impl Class {
                         \magicaldomainability{Mastery} When you roll a 1 or a 2 on an \glossterm{attack roll} or \glossterm{check}, it is treated as if you had rolled a 6.
 
                     \subsubsection{Life Domain}
-                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+                        \magicaldomainability{Gift} Whenever you cause a creature to regain hit points, they regain additional hit points equal to your rank in the Domain Influence archetype.
+                        % TODO: wording
+                        This additional healing applies once per ability.
                         \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
-                        \magicaldomainability{Essence} At the end of each round, if you became \unconscious from a \glossterm{vital wound} during that round, you can use one \magical ability that removes \glossterm{vital wounds} on yourself without taking an action.
-                        You cannot affect any other creatures with this ability.
-                        \domainability{Mastery} The vital roll bonus increases to \plus2, and the hit point bonus increases to four times your rank in the Domain Influence archetype.
+                        \magicaldomainability{Essence} The additional healing increases to twice your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The hit point bonus increases to five times your rank in the Domain Influence archetype.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
-                        \domainability{Gift} You gain a \plus3 \glossterm{enhancement bonus} to the Knowledge (arcana) skill (see \pcref{Knowledge}).
+                        \domainability{Gift} You gain a \plus2 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \magicaldomainability{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power}.
-                        \magicaldomainability{Mastery} The power bonus from this domain's essence increases to \plus2.
-                        In addition, the skill bonus from this domain's gift increases to \plus5.
+                        \magicaldomainability{Mastery} The power bonus increases to \plus2, and the skill bonus increases to \plus5.
 
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
