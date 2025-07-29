@@ -918,31 +918,31 @@ impl Class {
                 \lcaption{Deities}
                 \begin{dtabularx}{\textwidth}{X l X}
                 \tb{Deity} & \tb{Alignment} & \tb{Domains} \tableheaderrule
-                    Gregory, warrior god of mundanity     & Lawful good     & Law, Protection, Strength, War         \\
-                    Guftas, horse god of justice          & Lawful good     & Good, Law, Strength, Travel            \\
-                    Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Protection, War     \\
-                    Simor, fighter god of protection      & Lawful good     & Good, Protection, Strength, War        \\
-                    Ayala, naiad god of water             & Neutral good    & Life, Magic, Water, Wild               \\
-                    Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Life, Strength, Wild             \\
+                    Gregory, warrior god of mundanity     & Lawful good     & Good, Law, Protection, War         \\
+                    Guftas, horse god of justice          & Lawful good     & Good, Law, Life, Travel            \\
+                    Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Law, War     \\
+                    Simor, fighter god of protection      & Lawful good     & Good, Law, Protection, War        \\
+                    Ayala, naiad god of water             & Neutral good    & Good, Magic, Water, Wild               \\
+                    Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Earth, Life, Wild             \\
                     Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel          \\
-                    Vanya, centaur god of nature          & Neutral good    & Good, Strength, Travel, Wild           \\
+                    Vanya, centaur god of nature          & Neutral good    & Good, Travel, Wild, War           \\
                     Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild            \\
                     Camilla, tiefling god of fire         & Chaotic good    & Fire, Good, Magic, Protection          \\
                     Chavi, wandering god of stories       & Chaotic good    & Chaos, Knowledge, Trickery             \\
                     Chort, dwarf god of optimism          & Chaotic good    & Good, Life, Travel, Wild               \\
-                    Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Strength, War, Wild             \\
-                    Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Good, Strength, War       \\
-                    Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Strength                  \\
+                    Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Good, War, Wild             \\
+                    Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Chaos, Good, War       \\
+                    Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Earth, Travel                  \\
                     Mikolash, scholar god of knowledge    & Lawful neutral  & Knowledge, Law, Magic, Protection      \\
                     Raphael, monk god of retribution      & Lawful neutral  & Death, Law, Protection, Travel         \\
                     Declan, god of fire                   & True neutral    & Destruction, Fire, Knowledge, Magic    \\
-                    Mammon, golem god of endurance        & True neutral    & Knowledge, Magic, Protection, Strength \\
+                    Mammon, golem god of endurance        & True neutral    & Earth, Knowledge, Magic, Protection \\
                     Kurai, shaman god of nature           & True neutral    & Air, Earth, Fire, Water                \\
                     Amanita, druid god of decay           & Chaotic neutral & Chaos, Destruction, Life, Wild         \\
                     Antimony, elf god of necromancy       & Chaotic neutral & Death, Knowledge, Life, Magic          \\
                     Clockwork, elf god of time            & Chaotic neutral & Chaos, Magic, Trickery, Travel         \\
-                    Diplo, doll god of destruction        & Chaotic neutral & Chaos, Destruction, Strength, War      \\
-                    Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Strength, War                   \\
+                    Diplo, doll god of destruction        & Chaotic neutral & Chaos, Destruction, Trickery, War      \\
+                    Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Protection, War                   \\
                     Celeano, sorcerer god of deception    & Chaotic neutral & Chaos, Magic, Protection, Trickery     \\
                     Murdoc, god of mercenaries            & Chaotic neutral & Destruction, Knowledge, Travel, War    \\
                     Ribo, halfling god of trickery        & Chaotic neutral & Chaos, Trickery, Water                 \\
@@ -1577,29 +1577,16 @@ impl Class {
 
                         \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
                         This increases your maximum vertical jump distance normally.
-                        In addition, you take half damage from \glossterm{falling damage}.
                         \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
-                        \magicaldomainability{Essence}
-                        \begin{magicalattuneability}{Speak with Air}{\abilitytag{Attune}}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            You can speak with and command air within a \areahuge radius \glossterm{zone} from your location.
-                            You can ask the air simple questions and understand its responses.
-                            If you command the air to perform a task, it will do so do the best of its ability until this effect ends.
-                            You cannot compel the air to move faster than 50 mph.
-
-                            After you use this ability on a particular area of air, you cannot use it again on that same area for 24 hours.
-
-                            \rankline
-                            \rank{6} The area increases to a \areagarg radius.
-                        \end{magicalattuneability}
-                        \magicaldomainability{Mastery} You gain an average \glossterm{fly speed} with a maximum height of 30 feet (see \pcref{Flight}).
+                        In addition, you take half damage from \glossterm{falling damage}.
+                        \magicaldomainability{Essence} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        \magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
 
                     \subsubsection{Chaos Domain}
-                        \magicaldomainability{Gift} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
+                        \domainability{Gift} You are \impervious to \atCompulsion attacks.
+                        \magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
                         Unlike attacks, your skill checks can only explode once.
-                        \domainability{Aspect} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Twist of Fate}
                             \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
@@ -1612,74 +1599,44 @@ impl Class {
                         \magicaldomainability{Mastery} All of your checks can explode once, not just skill checks.
                         Your checks also explode on a 9 or 10, not just a 10.
 
+                    % TODO: actual math
                     \subsubsection{Death Domain}
-                        \domainability{Gift} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are below their maximum hit points.
-                        You can also automatically identify whether creatures you see are below their maximum hit points.
-                        \domainability{Aspect} You gain a \plus1 bonus to your \glossterm{vital rolls}.
-                        \magicaldomainability{Essence}
-                        \begin{magicalattuneability}{Speak with Dead}{\abilitytag{Attune}}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            Choose a corpse within \rngshort range.
-                            The corpse must have died no more than 24 hours ago.
-                            It regains a semblance of life, allowing you to speak with it as if it were the creature the corpse belonged to.
-                            The creature is able to refuse to speak with you, though you can attempt to persuade it to speak normally, and some creatures may be more willing to talk if they know they are already dead.
-                            The corpse must have an intact mouth to be able to speak.
-                            This ability ends if 24 hours have passed since the creature died.
-                        \end{magicalattuneability}
-                        \domainability{Mastery} The bonus from this domain's gift increases to \plus2.
+                        % This tracks staff extra damage fairly closely
+                        \magicaldomainability{Gift} When you get a critical hit with a damaging ability, it deals \glossterm{extra damage} equal to your rank in this archetype.
+                        This extra damage is multiplied as normal by the critical hit.
+                        \magicaldomainability{Aspect} You gain a \plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
+                        \domainability{Essence} Whenever you kill a Small or larger living creature, you are \glossterm{briefly} \honed.
+                        \domainability{Mastery} The bonus from this domain's essence increases to \plus3.
 
                     \subsubsection{Destruction Domain}
-                        \domainability{Gift} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
-                        \magicaldomainability{Aspect}
-                        \begin{magicalactiveability}{Demolish}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your power.
-                            You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
-                            This strike deals double damage to objects.
-
-                            \rankline
-                            \rank{4} If you miss, the target still takes the extra damage.
-                            \rank{5} The strike deals double \glossterm{weapon damage}.
-                            \rank{6} The extra damage increases to be equal to your power.
-                            \rank{7} The extra damage increases to twice your power.
-                        \end{magicalactiveability}
+                        \domainability{Gift} Your damaging attacks deal double damage to objects.
+                        \magicaldomainability{Aspect} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Lay Waste}
                             \abilityusagetime Standard action.
                             \rankline
-                            Make an attack vs. Fortitude against all \glossterm{unattended} objects in a \areamed radius.
+                            Make an attack vs. Fortitude against all \glossterm{unattended} \glossterm{mundane} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
                             \hit If the target's \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \domainability{Mastery} The bonus from this domain's gift increases to \plus2.
+                        \domainability{Mastery} The bonus from this domain's aspect increases to \plus3.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
-                        \domainability{Gift} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
+                        \domainability{Gift} You are \impervious to Earth attacks.
                         \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance}.
-                        \magicaldomainability{Essence}
-                        \begin{magicalattuneability}{Speak with Earth}{\abilitytag{Attune}}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            You can speak with earth within a \areahuge radius \glossterm{zone} from your location.
-                            You can ask the earth simple questions and understand its responses.
-
-                            After you use this ability on a particular area of earth, you cannot use it again on that same area for 24 hours.
-
-                            \rankline
-                            \rank{6} The area increases to a \areagarg radius.
-                        \end{magicalattuneability}
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
                         \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Evil Domain}
-                        \magicaldomainability{Gift}
-                        \begin{magicalactiveability}{Willing Sacrifice}[\abilitytag{Swift}]
+                        \magicaldomainability{Gift} You are immune to being \charmed and \goaded.
+                        \magicaldomainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
+                        \magicaldomainability{Essence}
+                        \begin{magicalactiveability}{Blood Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
@@ -1687,24 +1644,7 @@ impl Class {
                             You are both considered to have lost hit points from the attack for the purpose of any special effects from the attack.
                             This ability lasts until you \glossterm{dismiss} it or until you use it again.
                         \end{magicalactiveability}
-                        \magicaldomainability{Aspect} You can use this domain's domain gift to target any \glossterm{ally} within \rngmed range.
-                        \magicaldomainability{Essence}
-                        \begin{magicalactiveability}{Compel Evil}[\abilitytag{Compulsion}]
-                            \abilityusagetime Standard action.
-                            \rankline
-                            Make an attack vs. Mental against a creature within \rngmed range.
-                            Creatures who have strict codes prohibiting them from taking evil actions, such as paladins devoted to good, are immune to this ability.
-                            \hit The target takes an evil action as soon as it can.
-                            Once it takes the evil action, this effect ends.
-                            You have no control over the act the creature takes, but circumstances can make the target more likely to take an action you desire.
-                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
-
-                            \rankline
-                            You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
-                        \end{magicalactiveability}
-                        \magicaldomainability{Mastery} You can use your domain gift to redirect your hit point loss to an adjacent unwilling creature.
-                        You must make an attack vs. Mental against that creature to redirect damage to it in this way.
-                        You cannot target the same unwilling creature more than once with this ability between \glossterm{short rests}.
+                        \magicaldomainability{Mastery} Whenever you inflict a \glossterm{condition} on a creature, that condition must be removed an additional time before the effect ends.
 
                     \subsubsection{Fire Domain}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1781,15 +1721,14 @@ impl Class {
                         \domainability{Aspect} You are \impervious to \atEmotion attacks.
                         \magicaldomainability{Essence}
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
+                            \abilitycost One \glossterm{fatigue level}.
                             \abilityusagetime Standard action.
                             \rankline
-                            Make an attack vs. Mental against all creatures within a \arealarge radius from you.
+                            Make an attack vs. Mental against all creatures within a \largearea radius from you.
+                            This attack also automatically succeeds against you, ignoring all forms of immunity.
+                            If the condition from this ability is removed from you, it is also removed from all other targets.
                             \hit The target is unable to break the laws that apply in the area, and any attempt to do so simply fails.
-                            The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other creature know those laws.
-
-                            % TODO: Sufficiently clear that this isn't part of the hit effect?
-                            When you use this ability, you also gain the condition.
-                            If this condition is removed from you, it is also removed from all other affected creatures.
+                            The laws which are applied are those which are most appropriate for the area, regardless of whether you or any other target know those laws.
                             In areas under ambiguous or nonexistent government, this ability may have unexpected effects, or it may have no effect at all.
 
                             \rankline
@@ -1830,23 +1769,6 @@ impl Class {
                         \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
                         In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Influence archetype.
-
-                    \subsubsection{Strength Domain}
-                        If you choose this domain, you add the Climb and Swim skills to your cleric \glossterm{class skill} list.
-
-                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Climb and Swim skills.
-                        \magicaldomainability{Aspect} You can increase your Strength.
-                        \begin{magicalattuneability}{Divine Strength}{\abilitytag{Attune}}
-                            \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
-                            \rankline
-                            You gain a \plus1 \glossterm{enhancement bonus} to your Strength.
-                        \end{magicalattuneability}
-                        \magicaldomainability{Essence} You gain a \plus1 bonus to your Strength for the purpose of determining your weight limits (see \pcref{Weight Limits}).
-                        In addition, when you use at least two \glossterm{free hands} to carry burdens, you can carry implausibly cumbersome loads without worrying about volume limits, and without incurring damage to the carried objects as a side effect of transportation.
-                        For example, you could pick up an entire house if your Strength was high enough, even though a house would normally fall apart under the strain if you tried to pick it up.
-                        \domainability{Mastery} You lose access to the \textit{divine strength} ability.
-                        Instead, you simply gain a \plus1 bonus to your Strength.
-                        In addition, the skill bonuses from this domain's gift increase to \plus4.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
