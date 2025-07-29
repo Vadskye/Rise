@@ -42,7 +42,6 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
                     \end{itemize}
-                    % There must be text between an itemize block and the end of a mdframed env
 
                     % TODO: awkward scaling
                     \rankline
