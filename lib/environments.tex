@@ -292,6 +292,16 @@
   {\begin{itemize}\RaggedRight}
       {\end{itemize}}
 
+  % There must be text between an itemize block and the end of a mdframed env
+  \DeclareDocumentEnvironment{mdframeditemize}{}
+  {\begin{itemize}}
+  {\end{itemize} \hypertarget{itemizespace}{}}
+
+  % There must be text between an itemize block and the end of a mdframed env
+  \DeclareDocumentEnvironment{mdframedraggeditemize}{}
+  {\begin{itemize}\RaggedRight}
+  {\end{itemize} \hypertarget{itemizespace}{}}
+
   \definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
   \newmdenv[
     backgroundcolor=floralwhite,

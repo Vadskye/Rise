@@ -417,7 +417,7 @@ export const prayer: MysticSphere = {
       // bonus. Normal healing ability would be dr4, so use half of that (where possible).
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and all \glossterm{allies} within a \largearea radius from you each regain 2d8 \glossterm{damage resistance}.
+        You and all \\glossterm{allies} within a \largearea radius from you each regain 2d8 \\glossterm{damage resistance}.
       `,
       rank: 3,
       roles: ['healing'],
