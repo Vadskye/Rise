@@ -2923,4 +2923,45 @@ export const rituals: Ritual[] = [
     tags: ['Sustain (attuneable, minor)'],
     spheres: ['Umbramancy'],
   },
+  {
+    name: 'Commune with Elements',
+
+    castingTime: "one minute",
+    effect: `
+      You can speak with air, earth, fire, or water within a \areahuge \glossterm{zone} from your location.
+      You can ask it simple questions and understand its responses.
+      In general, elements are only able to give information about what they touch.
+      This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
+
+      The element you can speak with, and the scope of its memory and awareness, depends on the mystic sphere you use to perform this ritual.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    sphereEffects: {
+      Aeromancy: `
+        You speak with air.
+        Air can remember events up to an hour ago on a very calm day or only a few minutes ago on a windy day.
+        Moving air is aware of events near where it blew through, not necessarily in your current location.
+      `,
+      Aquamancy: `
+        You speak with water.
+        Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a turbulent river.
+        Moving water is aware of events near where it moved through, not necessarily in your current location.
+      `,
+      Pyromancy: `
+        You speak with fire.
+        Fire can remember everything it touched and consumed since it started burning.
+        Individual pieces of a very large fire, such as a particular burning tree in a forest fire, are not aware of the current status of the entirety of the fire.
+        However, the fire on that tree could tell you how it got to the tree and everything it burned along the way, including the source of the forest fire.
+      `,
+      Terramancy: `
+        You speak with earth.
+        Earth can remember events up to a year ago, but its awareness is extremely limited.
+        It can only remember very large events, such as giant creatures tearing up the terrain, earthquakes, or major construction.
+        Earth can tell you whether there exist underground tunnels within the area, but any sort of detailed mapping is beyond its ability to communicate.
+      `,
+    },
+    tags: ['Sustain (attuneable, minor)'],
+    spheres: ['Umbramancy'],
+  },
 ];
