@@ -674,17 +674,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         You surround yourself in a bubble of water.
         This has the following effects:
-        \\begin{itemize}
+        \\begin{mdframeditemize}
           \\item You are \\shielded.
           \\item You are \\impervious to \\atFire attacks.
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
           \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
-        \\end{itemize}
-
-        % There must be text between an itemize block and the end of a mdframed env
-        \\hypertarget{itemizespace}{}
+        \\end{mdframeditemize}
       `,
       // narrative: '',
       rank: 2,
@@ -732,13 +729,10 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           The target's body starts to liquify as a \\glossterm{condition}.
           While it is below its maximum \\glossterm{hit points}, its lower body \\glossterm{shapeshifts} into a puddle of water.
           This has the following effects:
-          \\begin{itemize}
+          \\begin{mdframeditemize}
             \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.
             \\item During each of your subsequent actions, if it is \\debuff{submerged} or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
-          \\end{itemize}
-
-          % There must be text between an itemize block and the end of a mdframed env
-          \\hypertarget{itemizespace}{}
+          \\end{mdframeditemize}
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -906,14 +900,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
-        \begin{raggeditemize}
-          \item Never: You are \\focused this round.
-          \item Once: You are \\primed this round.
-          \item Two or more times: You are primed and \\shielded this round.
-        \end{raggeditemize}
-
-        % There must be text between an itemize block and the end of a mdframed env
-        \hypertarget{itemizespace}{}
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\focused this round.
+          \\item Once: You are \\primed this round.
+          \\item Two or more times: You are primed and \\shielded this round.
+        \\end{mdframedraggeditemize}
       `,
       rank: 1,
       roles: ['focus'],
@@ -924,14 +915,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
-        \begin{raggeditemize}
-          \item Never: You are \\primed this round.
-          \item Once: You are \\primed and \\shielded this round.
-          \item Two or more times: You are primed this round and \\glossterm{briefly} shielded.
-        \end{raggeditemize}
-
-        % There must be text between an itemize block and the end of a mdframed env
-        \hypertarget{itemizespace}{}
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\primed this round.
+          \\item Once: You are \\primed and \\shielded this round.
+          \\item Two or more times: You are primed this round and \\glossterm{briefly} shielded.
+        \\end{mdframedraggeditemize}
       `,
       rank: 6,
       roles: ['focus'],
