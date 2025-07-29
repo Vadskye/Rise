@@ -37,6 +37,7 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
 
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
     vec![
+        // TODO: redesign / simplify
         RankAbility {
             complexity: 1,
             name: "Benediction",
@@ -202,12 +203,22 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Domain Essences",
+            name: "Domain Essence",
             is_magical: false,
             rank: 4,
             description: r"
                 Each domain has a corresponding domain essence.
-                You gain the domain essence for both of your domains (see \pcref{Cleric Domain Abilities}).
+                You gain the domain essence for one of your domains (see \pcref{Cleric Domain Abilities}).
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Domain Essence+",
+            is_magical: false,
+            rank: 5,
+            description: r"
+                You gain the domain essence for another one of your domains.
             ",
             modifiers: None,
         },
@@ -215,15 +226,16 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             complexity: 2,
             name: "Miracle",
             is_magical: true,
-            rank: 5,
+            rank: 6,
             description: r"
                 You can request a \textit{miracle} as a standard action.
                 \begin{magicalactiveability}{Miracle}
                     \abilityusagetime Standard action.
-                    \abilitycost Three \glossterm{fatigue levels}, and you cannot use it again for a week.
+                    \abilitycost Two \glossterm{fatigue levels}, and you cannot use it again for a week.
                     You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
                     At your deity's discretion, this can emulate the effects of any divine spell, or have any other effect of a similar power level.
-                    A miracle can also mimic the effects of many rituals, but rituals that require 24 hours or expensive material components may require a similar time or material investment from you for the miracle to succeed.
+                    A miracle can also mimic the effects of many rituals.
+                    However, rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
 
                     Miracles are most effective when your request is directly related to your domains, and more generally your deity's domains and purview.
                     They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
@@ -236,34 +248,13 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 0,
-            name: "Miracle+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                Your \ability{miracle} ability does not increase your fatigue level.
-                In addition, you can perform two miracles per week instead of only one.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 1,
             name: "Domain Mastery",
             is_magical: false,
-            rank: 6,
-            description: r"
-                Each domain has a corresponding \textit{domain mastery}.
-                You gain the \textit{domain mastery} for one of your domains (see \pcref{Cleric Domain Abilities}).
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Domain Mastery+",
-            is_magical: false,
             rank: 7,
             description: r"
-                You gain the domain mastery for another one of your domains.
+                Each domain has a corresponding \textit{domain mastery}.
+                You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             modifiers: None,
         },
