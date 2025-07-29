@@ -1,7 +1,7 @@
 import { Rank, SpellLike, StandardAttack, FunctionsLike, Ritual } from '@src/mystic_spheres';
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
-  if (text && !(text.trim().endsWith('.') || text.trim().endsWith('{itemizespace}{}'))) {
+  if (text && !(text.trim().endsWith('.') || text.trim().endsWith('end{mdframeditemize}'))) {
     console.error(`Text from ${effectName} should end with period: ${text}`);
   }
 }

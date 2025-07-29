@@ -614,16 +614,13 @@ export const chronomancy: MysticSphere = {
         You can change your appearance or equipment with superhuman speed.
         This has no effect on any creatures other than yourself.
         This can have any one of the following effects, which are completed at the end of the current round regardless of the time they would normally take:
-        \\begin{itemize}
+        \\begin{mdframeditemize}
           \\item You can take off your body armor or clothing, along with any weapons or shields you have equipped.
             You can leave the items on the ground in your square or stow them in an available location, such as in a backpack you wear.
           \\item You can don a new set of body armor or clothing and equip any weapons or shields.
             All of the items you equip this way must be unattended and in your square, but they can be in a hidden location, such as in a backpack.
           \\item You can use the \\textit{change appearance} ability to affect yourself with a \\minus2 penalty (see \\pcref{Change Appearance}.
-        \\end{itemize}
-
-        % There must be text between an itemize block and the end of a mdframed env
-        \\hypertarget{itemizespace}{}
+        \\end{mdframeditemize}
       `,
       narrative: `
         You become a blur of motion as you quickly don your armor, readying yourself against an unexpected attack.
