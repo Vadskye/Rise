@@ -2962,6 +2962,6 @@ export const rituals: Ritual[] = [
       `,
     },
     tags: ['Sustain (attuneable, minor)'],
-    spheres: ['Umbramancy'],
+    spheres: ['Aeromancy', 'Aquamancy', 'Pyromancy', 'Terramancy'],
   },
 ];
