@@ -89,44 +89,6 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(7))]),
         },
         RankAbility {
-            // so much text
-            complexity: 2,
-            name: "Elemental Influence",
-            is_magical: true,
-            rank: 3,
-            description: r"
-                \begin{magicalsustainability}{Elemental Influence}{\abilitytag{Sustain} (standard)}
-                    \abilityusagetime Standard action.
-                    \rankline
-                    You can speak with air, earth, fire, and water within a \areahuge \glossterm{zone} from your location.
-                    You can ask the elements simple questions and understand their responses.
-                    Each element has different limitations on its memory and awareness, as described below.
-
-                    Air, earth, and water are only able to give information about what they touch.
-                    This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.
-                    Fire is also able to give information about anything illuminated by its light, allowing it to report more detailed information like color.
-                    It is still unable to make meaningful subjective judgments like a creature would.
-
-                    \begin{itemize}
-                        \item Air: Air can remember events up to an hour ago on a very calm day or only a few minutes ago on a windy day.
-                            Moving air is aware of events near where it blew through, not necessarily in your current location.
-                        \item Earth: Earth can remember events up to a year ago, but its awareness is extremely limited.
-                            It can only remember very large events, such as giant creatures tearing up the terrain, earthquakes, or major construction.
-                            Earth can tell you whether there exist underground tunnels within the area, but any sort of detailed mapping is beyond its ability to communicate.
-                        \item Fire: Fire can remember everything it touched and consumed since it started burning.
-                            Individual pieces of a very large fire, such as a particular burning tree in a forest fire, are not aware of the behavior of the entirety of the fire.
-                            However, the fire on burning tree could tell you how it got to the tree and everything it burned along the way, including the event that started the forest fire.
-                        \item Water: Water can remember events up to a day ago in a very calm pool or only a few minutes ago in a turbulent river.
-                            Moving water is aware of events near where it moved through, not necessarily in your current location.
-                    \end{itemize}
-
-                    % There must be text between an itemize block and the end of a mdframed env
-                    \hypertarget{itemizespace}{}
-                \end{magicalsustainability}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 0,
             name: "Elemental Power",
             is_magical: true,
@@ -181,22 +143,25 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Defense(Defense::Brawn, 1)]),
         },
         RankAbility {
-            complexity: 1,
+            complexity: 2,
             name: "Elemental Control",
             is_magical: true,
             rank: 5,
             description: r"
-                When you use your \textit{elemental influence} ability, you can also command the elements to move as you desire.
-                Each element has different limitations on its ability to move, as described below.
-                \begin{itemize}
-                    \item Air: You can change the wind speed of air by up to 30 miles per hour.
-                        If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
-                    % TODO: clarify how this works
-                    \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
-                    \item Fire: You can make fire leap up to 60 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
-                    \item Water: You can change the speed of water by up to 20 feet per round.
-                        If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
-                \end{itemize}
+                \begin{magicalsustainability}{Elemental Control}{\abilitytag{Sustain} (attuneable, minor)}
+                    You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
+                    Each element has different limitations on its ability to move, as described below.
+                    Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
+                    \begin{itemize}
+                        \item Air: You can change the wind speed of air by up to 30 miles per hour, to a maximum total speed of 40 miles per hour.
+                            If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
+                        % TODO: clarify how this works
+                        \item Earth: You can reshape earth or unworked stone at a rate of up to one foot per round.
+                        \item Fire: You can make fire leap up to 60 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
+                        \item Water: You can change the speed of water by up to 30 feet per round, to a maximum total speed of 40 feet per round.
+                            If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
+                    \end{itemize}
+                \end{magicalsustainability}
             ",
             modifiers: None,
         },
@@ -665,7 +630,6 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
                     \end{itemize}
-                    % There must be text between an itemize block and the end of a mdframed env
 
                     % TODO: awkward scaling
                     \rankline
