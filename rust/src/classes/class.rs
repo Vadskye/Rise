@@ -1718,75 +1718,46 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2, and the skill bonus increases to \plus5.
 
                     \subsubsection{Protection Domain}
-                        \domainability{Gift} You gain a bonus equal to twice your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance} (see \pcref{Damage Resistance}).
+                        \domainability{Gift} You become proficient in an additional \glossterm{usage class} of armor (light, medium, or heavy).
+                            You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
                         \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Divine Protection}{\abilitytag{Swift}}
                             \abilityusagetime Standard action.
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
-                            It gains a \plus1 bonus to all defenses while it is adjacent to you.
+                            It gains a \plus1 \glossterm{enhancement bonus} to all defenses while it is adjacent to you.
                             This ability lasts until you \glossterm{dismiss} it or until you use it again.
 
                             A creature that sees an attack against an ally protected in this way can observe that you are the cause of the protection with a \glossterm{difficulty value} 5 Awareness check.
                             While this ability is active, you cannot be affected by other creatures using this ability on you.
                         \end{magicalactiveability}
-                        \magicaldomainability{Essence} The target of your \textit{divine protection} ability is also \steeled.
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your Armor defense.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
-                        In addition, the damage resistance bonus from this domain's gift increases to four times your rank in the Domain Influence archetype.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Knowledge (nature), Survival, and Swim skills to your cleric \glossterm{class skill} list.
+                        In addition, you add the Knowledge (nature) and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus10 foot bonus to your \glossterm{movement speed} while you use the \ability{sprint} ability (see \pcref{Sprint}).
-                        This speed bonus is doubled as normal from sprinting.
+                        \domainability{Gift} You gain a \plus1 bonus to the Knowledge (nature) and Survival skills.
                         \magicaldomainability{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-                        \magicaldomainability{Essence}
-                        \begin{magicalactiveability}{Dimensional Travel}
-                            \abilityusagetime Standard action.
-                            \abilitycost One optional \glossterm{fatigue level}. If you pay this cost, the ability becomes \abilitytag{Swift}.
-                            \rankline
-                            You teleport up to 1 mile in any direction.
-                            You do not need \glossterm{line of sight} or \glossterm{line of effect} to your destination, but you must be able to clearly visualize it.
-
-                            \rankline
-                            \rank{6} The maximum distance increases to 5 miles.
-                        \end{magicalactiveability}
-                        \magicaldomainability{Mastery} When you would move using one of your movement speeds, you can teleport the same distance instead.
-                        This does not change the total distance you can move, but you can teleport in any direction, including vertically.
-                        Being \grappled or otherwise physically constrained does not prevent you from teleporting in this way.
-
-                        You can even attempt to move to locations outside of \glossterm{line of sight} and \glossterm{line of effect}, up to the limit of your remaining movement speed.
-                        If your intended destination is invalid, the distance you tried to teleport is taken from your remaining movement, but you suffer no other ill effects.
+                        \magicaldomainability{Essence} Once per phase, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
+                            Teleporting a given distance costs movement equal to twice that distance.
+                            If this teleportation fails for any reason, you still expend that movement.
+                        \magicaldomainability{Mastery} Teleporting a given distance only costs movement equal to that distance.
 
                     \subsubsection{Trickery Domain}
                         If you choose this domain, you add the Deception, Disguise, and Stealth skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Deception, Disguise, and Stealth skills.
-                        \magicaldomainability{Aspect} Any \magical abilities which detect lies are unable to detect lies you speak.
-                        In addition, \magical \abilitytag{Compulsion} effects cannot affect your speech in any way.
-                        This means you can still talk and lie normally even while \dominated, though you cannot control the rest of your body.
-                        \magicaldomainability{Essence}
-                        \begin{magicalsustainability}{Compel Belief}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            Make an attack vs. Mental against a creature within \rngmed range.
-                            You must also choose a belief that the target has.
-                            The belief may be a lie that you told it, or even a simple misunderstanding (such as believing a hidden creature is not present in a room).
-                            If the creature does not already hold the chosen belief, this ability automatically fails.
-                            \hit The target continues to maintain the chosen belief, regardless of any evidence to the contrary.
-                            It will interpret any evidence that the falsehood is incorrect to be somehow wrong -- an illusion, a conspiracy to decieve it, or any other reason it can think of to continue believing the falsehood.
-                            At the end of the effect, the creature can decide whether it believes the falsehood or not, as normal.
-                            After this effect ends, the target becomes immune to this effect until it finishes a \glossterm{short rest}.
-
-                            \rankline
-                            You gain a \plus1 \glossterm{accuracy} bonus with the attack for each rank beyond 4.
-                        \end{magicalsustainability}
+                        \domainability{Gift} You gain a \plus1 bonus to the Deception, Disguise, and Stealth skills.
+                        \magicaldomainability{Aspect} Whenever a \atCompulsion or \atEmotion attack misses you, you learn the effect it would have had if it had succeeded.
+                        Creatures that miss you in this way believe that their attack hit, though they may realize the truth if you do not act appropriately.
+                        \magicaldomainability{Essence} You are \impervious to \atCompulsion and \atEmotion attacks.
+                        If you would already be impervious to either tag, you become immune to attacks with that tag instead.
                         % This seems like it's a complicated muddle of weird and possibly hilarious edge cases
-                        \magicaldomainability{Mastery} You are undetectable to all \magical abilities.
+                        \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
+                        In addition, you are undetectable to all \magical abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
                         For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \trait{darkvision} would not be able to see you without light.
-                        In addition, the skill bonuses from this domain's gift increase to \plus4.
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.
@@ -1795,46 +1766,31 @@ impl Class {
                         You gain an accuracy bonus with that maneuver equal to the amount by which your rank in the Domain Influence archetype exceeds the maneuver's rank.
                         When you gain access to a new \glossterm{rank} in the Domain Influence archetype,
                             you can exchange that maneuver for another maneuver with a rank that does not exceed your rank in the Domain Influence archetype.
-                        \domainability{Essence} You gain a \plus1 bonus to your Armor defense.
+                        \domainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \domainability{Mastery} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
 
                     \subsubsection{Water Domain}
                         If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Swim skills.
+                        \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
                         \magicaldomainability{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \magicaldomainability{Essence}
-                        \begin{magicalattuneability}{Speak with Water}{\abilitytag{Attune}}
-                            \abilityusagetime Standard action.
-                            \rankline
-                            You can speak with and command water within a \areahuge \glossterm{zone} from your location.
-                            You can ask the water simple questions and understand its responses.
-                            If you command the water to perform a task, it will do so do the best of its ability until this effect ends.
-                            You cannot compel the water to move faster than 30 feet per round.
-
-                            After you use this ability on a particular area of water, you cannot use it again on that same area for 24 hours.
-
-                            \rankline
-                            \rank{6} The area increases to a \areagarg radius.
-                        \end{magicalattuneability}
-                        \magicaldomainability{Mastery} Your body becomes partially aquatic, allowing you to manipulate it more easily.
-                        The skill bonuses from this domain's gift increase to \plus4.
-                        In addition, you gain a \plus1 bonus to your Armor and Reflex defenses.
+                        \magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+                        If you already have a slow swim speed, your swim speed becomes average instead.
+                        \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
+                        In addition, you gain a \plus1 bonus to your Brawn and Reflex defenses.
 
                     \subsubsection{Wild Domain}
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
-                        \domainability{Gift} You gain an additional \glossterm{trained skill} (see \pcref{Trained Skills}).
+                        \domainability{Gift} You gain a \plus1 bonus to the Creature Handling, Knowledge (nature), and Survival skills.
                         \magicaldomainability{Aspect} You gain one \textit{wild aspect}, as the druid ability from the Shifter archetype (see \pcref{Shifter}).
                         You cannot spend \glossterm{insight points} to learn additional wild aspects.
                         The aspect's effect improves based on your rank in the Domain Influence archetype.
                         If you already have that ability, you simply learn an additional wild aspect, and the aspect's effect continues to scale with your Shifter archetype rank.
-                        \magicaldomainability{Essence} You learn an additional \textit{wild aspect}.
-                        \magicaldomainability{Mastery} When you use your aspect ability from this domain, you can take on two wild aspects at once, gaining the full benefits of both.
-                        When you do, you increase your \glossterm{fatigue level} by two.
-                        This hybrid wild aspect only lasts for ten minutes, at which point you choose which single wild aspect remains active.
+                        \magicaldomainability{Essence} The skill bonuses increase to \plus2.
+                        \magicaldomainability{Mastery} You learn an additional \textit{wild aspect}.
 
                 \subsection{Ex-Clerics}
                     If you grossly violate the code of conduct required by your deity, you lose all spells and magical cleric class abilities.
