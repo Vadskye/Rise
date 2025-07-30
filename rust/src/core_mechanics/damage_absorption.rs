@@ -109,7 +109,7 @@ impl HitPointProgression {
         self.hp_from_level(level) + self.hp_from_con(level, con)
     }
 
-    fn hp_from_level(&self, level: i32) -> i32 {
+    pub fn hp_from_level(&self, level: i32) -> i32 {
         let [base_hp, incremental_hp] = self.progression_at_level(level);
 
         // This is the number of levels since the last breakpoint jump. Each breakpoint jump
@@ -119,7 +119,7 @@ impl HitPointProgression {
         base_hp + incremental_hp * incremental_level
     }
 
-    fn hp_from_con(&self, level: i32, con: i32) -> i32 {
+    pub fn hp_from_con(&self, level: i32, con: i32) -> i32 {
         let [_, incremental_hp] = self.progression_at_level(level);
 
         incremental_hp * con
@@ -221,8 +221,8 @@ impl HitPointProgression {
             _ => panic!("Unsupported constitution multiplier {}", con_hp),
         };
         return format!(
-            "{} hit points \\add {} your Constitution, plus {} hit points per level beyond {}.",
-            base_hp, constitution_multiplier_text, incremental_hp, level,
+            "{base_hp} hit points \\add {constitution_multiplier_text} your Constitution, plus {incremental_hp} {hit_points_text} per level beyond {level}.",
+            hit_points_text = if incremental_hp == 1 { "hit point" } else { "hit points" },
         );
     }
 }
