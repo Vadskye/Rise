@@ -1323,9 +1323,9 @@ impl Class {
         format!(
             "
                 \\begin<dtable!*>
-                    \\lcaption<{class_name} Progression>
+                    \\lcaption<{class_name} Archetypes>
                     \\begin<dtabularx><\\textwidth><l {archetype_columns}>
-                        \\tb<Rank (Level)> & {archetype_headers} \\tableheaderrule
+                        \\tb<Rank> & {archetype_headers} \\tableheaderrule
                         {rank_rows}
                     \\end<dtabularx>
                 \\end<dtable!*>
@@ -1346,20 +1346,51 @@ impl Class {
         )
     }
 
+    pub fn latex_base_class_table(&self) -> String {
+        format!(
+            "
+                \\begin<columntable>
+                    \\begin<dtabularx><\\columnwidth><l l l l {xcol}>
+                        \\tb<Level> & \\tb<Rank> & \\tb<HP> & \\tb<HP Per Con> & \\tb<Universal Benefits> \\tableheaderrule
+                        {level_rows}
+                    \\end<dtabularx>
+                \\end<columntable>
+            ",
+            xcol = r">{\lcol}X",
+            level_rows = self.latex_base_class_table_rows(),
+        )
+    }
+
+    fn latex_base_class_table_rows(&self) -> String {
+        let mut level_rows = Vec::new();
+        for level in 1..22 {
+            level_rows.push(format!(
+                "
+                    {level} & {rank} & {base_hp} & {hp_per_con} & {special} \\\\
+                ",
+                level = level,
+                rank = (level + 2) / 3,
+                base_hp = self.hit_point_progression().hp_from_level(level),
+                hp_per_con = self.hit_point_progression().hp_from_con(level, 1),
+                special = universal_character_progression_at_level(level),
+            ))
+        }
+        return level_rows
+            .iter()
+            .map(|s| s.trim())
+            .collect::<Vec<&str>>()
+            .join("\n");
+    }
+
     fn latex_archetype_rank_table_rows(&self) -> String {
         let mut rank_rows = Vec::new();
         let abilities_by_archetype_rank = self.generate_ability_names_by_archetype_rank();
         for rank in 1..abilities_by_archetype_rank.len() {
             rank_rows.push(format!(
                 "
-                    {rank} ({minimum_level}) & {archetype_abilities} \\\\
+                    {rank} & {archetype_abilities} \\\\
                 ",
                 rank = rank,
-                minimum_level = if rank == 0 {
-                    "\\tdash".to_string()
-                } else {
-                    format!("{}", rank * 3 - 2)
-                },
                 archetype_abilities = abilities_by_archetype_rank[rank],
             ))
         }
@@ -1792,4 +1823,20 @@ impl Class {
             _ => "",
         }
     }
+}
+
+// This should match the Character Advancement and Gaining Levels table
+fn universal_character_progression_at_level(level: i32) -> String {
+    match level {
+        5 => "+1 to two attributes",
+        6 => "Legacy item: rank 3",
+        9 => "Legacy item: ranks 3 and 3",
+        11 => "+1 to two attributes",
+        12 => "Legacy item: ranks 5 and 3",
+        15 => "Legacy item: ranks 5 and 5",
+        17 => "+1 to two attributes",
+        18 => "Legacy item: ranks 7 and 5",
+        21 => "Legacy item: ranks 7 and 7",
+        _ => r"\tdash",
+    }.to_string()
 }

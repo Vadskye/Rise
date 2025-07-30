@@ -9,6 +9,9 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
     latex_formatting::latexify(format!(
         "
             \\subsection<Base Class Effects>
+
+            {base_class_table}
+
             If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
 
             {hit_points}
@@ -23,6 +26,7 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
             {class_skills}
         ",
+        base_class_table = class.latex_base_class_table().trim(),
         hit_points = generate_latex_hit_points(class).trim(),
         defenses = generate_latex_defenses(class)
             .unwrap_or("".to_string())
