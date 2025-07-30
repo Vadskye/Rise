@@ -922,33 +922,32 @@ impl Class {
                     Guftas, horse god of justice          & Lawful good     & Good, Law, Life, Travel            \\
                     Lucied, paladin god of justice        & Lawful good     & Destruction, Good, Law, War     \\
                     Simor, fighter god of protection      & Lawful good     & Good, Law, Protection, War        \\
-                    Ayala, naiad god of water             & Neutral good    & Good, Magic, Water, Wild               \\
-                    Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Earth, Life, Wild             \\
+                    Ayala, naiad god of water             & Neutral good    & Good, Magic, Ocean, Wild               \\
+                    Pabs Beerbeard, dwarf god of drink    & Neutral good    & Good, Earth, Forge, Life             \\
                     Rucks, monk god of pragmatism         & Neutral good    & Good, Law, Protection, Travel          \\
-                    Vanya, centaur god of nature          & Neutral good    & Good, Travel, Wild, War           \\
+                    Vanya, centaur god of nature          & Neutral good    & Good, Travel, War, Wild           \\
                     Brushtwig, pixie god of creativity    & Chaotic good    & Chaos, Good, Trickery, Wild            \\
-                    Camilla, tiefling god of fire         & Chaotic good    & Fire, Good, Magic, Protection          \\
-                    Chavi, wandering god of stories       & Chaotic good    & Chaos, Knowledge, Trickery             \\
-                    Chort, dwarf god of optimism          & Chaotic good    & Good, Life, Travel, Wild               \\
+                    Camilla, tiefling god of fire         & Chaotic good    & Chaos, Good, Magic, Sun          \\
+                    Chavi, wandering god of stories       & Chaotic good    & Chaos, Good, Knowledge, Trickery             \\
+                    Chort, dwarf god of optimism          & Chaotic good    & Chaos, Good, Life, Travel, Wild               \\
                     Ivan Ivanovitch, bear god of strength & Chaotic good    & Chaos, Good, War, Wild             \\
-                    Krunch, barbarian god of destruction  & Chaotic good    & Destruction, Chaos, Good, War       \\
-                    Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Earth, Travel                  \\
+                    Krunch, barbarian god of destruction  & Chaotic good    & Chaos, Destruction, Good, War       \\
+                    Sir Cakes, dwarf god of freedom       & Chaotic good    & Chaos, Good, Earth, Forge                  \\
                     Mikolash, scholar god of knowledge    & Lawful neutral  & Knowledge, Law, Magic, Protection      \\
-                    Raphael, monk god of retribution      & Lawful neutral  & Death, Law, Protection, Travel         \\
-                    Declan, god of fire                   & True neutral    & Destruction, Fire, Knowledge, Magic    \\
-                    Mammon, golem god of endurance        & True neutral    & Earth, Knowledge, Magic, Protection \\
-                    Kurai, shaman god of nature           & True neutral    & Air, Earth, Fire, Water                \\
+                    Raphael, monk god of retribution      & Lawful neutral  & Death, Destiny, Law, Protection         \\
+                    Declan, god of fire                   & True neutral    & Destruction, Knowledge, Magic, Sun    \\
+                    Mammon, golem god of endurance        & True neutral    & Destiny, Knowledge, Magic, Protection \\
+                    Kurai, shaman god of nature           & True neutral    & Earth, Ocean, Sky, Sun                \\
                     Amanita, druid god of decay           & Chaotic neutral & Chaos, Destruction, Life, Wild         \\
-                    Antimony, elf god of necromancy       & Chaotic neutral & Death, Knowledge, Life, Magic          \\
+                    Antimony, elf god of necromancy       & Chaotic neutral & Chaos, Death, Knowledge, Life          \\
                     Clockwork, elf god of time            & Chaotic neutral & Chaos, Magic, Trickery, Travel         \\
                     Diplo, doll god of destruction        & Chaotic neutral & Chaos, Destruction, Trickery, War      \\
-                    Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Protection, War                   \\
+                    Lord Khallus, fighter god of pride    & Chaotic neutral & Chaos, Forge, Protection, War                   \\
                     Celeano, sorcerer god of deception    & Chaotic neutral & Chaos, Magic, Protection, Trickery     \\
                     Murdoc, god of mercenaries            & Chaotic neutral & Destruction, Knowledge, Travel, War    \\
-                    Ribo, halfling god of trickery        & Chaotic neutral & Chaos, Trickery, Water                 \\
-                    Tak, orc god of war                   & Lawful evil     & Law, Strength, Trickery, War           \\
+                    Tak, orc god of war                   & Lawful evil     & Forge, Evil, Law, War           \\
                     Theodolus, sorcerer god of ambition   & Neutral evil    & Evil, Knowledge, Magic, Trickery       \\
-                    Daeghul, demon god of slaughter       & Chaotic evil    & Destruction, Evil, Magic, War          \\
+                    Daeghul, demon god of slaughter       & Chaotic evil    & Chaos, Destruction, Evil, War          \\
                 \end{dtabularx}
                 \end{dtable!*}
             ".to_string(),
@@ -1571,18 +1570,6 @@ impl Class {
                 \subsection{Cleric Domain Abilities}\label{Cleric Domain Abilities}
                     These domain abilities can be granted by the \textit{domain influence} cleric archetype.
 
-                    \subsubsection{Air Domain}
-                        If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Jump skill to your list of class skills.
-
-                        \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
-                        This increases your maximum vertical jump distance normally.
-                        \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
-                        In addition, you take half damage from \glossterm{falling damage}.
-                        \magicaldomainability{Essence} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
-                        \magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
-
                     \subsubsection{Chaos Domain}
                         \domainability{Gift} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
@@ -1606,6 +1593,12 @@ impl Class {
                         \domainability{Aspect} You gain a \plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
                         \magicaldomainability{Essence} Whenever you kill a Small or larger living creature, you are \glossterm{briefly} \honed.
                         \domainability{Mastery} The accuracy bonus with critical hits increases to \plus3.
+
+                    \subsubsection{Destiny Domain}
+                        \domainability{Gift} You are immune to being \partiallyunaware.
+                        \domainability{Aspect} When you use the \ability{desperate exertion} ability, if your attack result still does not hit, the ability \glossterm{repeats} during your next action on each target that it did not hit.
+                        \domainability{Essence} Your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you also gain the benefit of this domain's aspect.
+                        \domainability{Mastery} You gain a \plus1 bonus to your \glossterm{accuracy}.
 
                     \subsubsection{Destruction Domain}
                         \magicaldomainability{Gift} Your damaging attacks deal double damage to objects.
@@ -1645,15 +1638,14 @@ impl Class {
                         \end{magicalactiveability}
                         \magicaldomainability{Mastery} Whenever you inflict a \glossterm{condition} on a creature, that condition must be removed an additional time before the effect ends.
 
-                    \subsubsection{Fire Domain}
-                        If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-
-                        \domainability{Gift} You are \trait{impervious} to \atFire attacks.
-                        \magicaldomainability{Aspect} Your \glossterm{allies} are immune to damage from your \atFire abilities.
-                        % TODO: wording
-                        \magicaldomainability{Essence} Whenever you use a damaging \atFire ability, all \glossterm{enemies} adjacent to you that were not already targeted by that ability are also \glossterm{secondary targets} of it.
-                        They take half damage from the ability.
-                        \magicaldomainability{Mastery} The secondary targets do not take half damage.
+                    \subsubsection{Forge Domain}
+                        \domainability{Gift} You gain a \plus2 bonus to all Craft skills.
+                        \domainability{Aspect} You are proficient with all non-exotic weapons.
+                            In addition, you become proficient with an additional \glossterm{usage class} of armor (light, medium, or heavy).
+                            You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
+                        \magicaldomainability{Essence} Crafting items takes you half the normal amount of time, and you do not require appropriate tools to craft items.
+                        \domainability{Mastery} The Craft skill bonus increases to \plus4.
+                        In addition, you gain a \plus1 bonus to your Armor defense.
 
                     \subsubsection{Good Domain}
                         \domainability{Gift} You are immune to \atCurse attacks and being \dominated.
@@ -1715,10 +1707,22 @@ impl Class {
                         \domainability{Gift} You gain a \plus2 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
                         \magicaldomainability{Aspect} You learn an additional divine \glossterm{spell} from a \glossterm{mystic sphere} you have access to.
                         \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power}.
-                        \magicaldomainability{Mastery} The power bonus increases to \plus2, and the skill bonus increases to \plus5.
+                        \magicaldomainability{Mastery} The power bonus increases to \plus2, and the skill bonus increases to \plus4.
+
+                    \subsubsection{Ocean Domain}
+                        If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
+
+                        \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
+                        \magicaldomainability{Aspect} You increase the distance of your \glossterm{push} and \glossterm{knockback} abilities by 10 feet.
+                        This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \ability{shove} ability.
+                        \magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+                        If you already have a slow swim speed, your swim speed becomes average instead.
+                        \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
+                        In addition, the push and knockback distance bonus increases to 20 feet.
 
                     \subsubsection{Protection Domain}
-                        \domainability{Gift} You become proficient in an additional \glossterm{usage class} of armor (light, medium, or heavy).
+                        \domainability{Gift} You become proficient with an additional \glossterm{usage class} of armor (light, medium, or heavy).
                             You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
                         \magicaldomainability{Aspect}
                         \begin{magicalactiveability}{Divine Protection}{\abilitytag{Swift}}
@@ -1733,6 +1737,41 @@ impl Class {
                         \end{magicalactiveability}
                         \magicaldomainability{Essence} You gain a \plus1 bonus to your Armor defense.
                         \domainability{Mastery} The defense bonus from your \textit{divine protection} ability increases to \plus2.
+
+                    % TODO: revelry / celebration domain? Nothing for Dionysus currently
+
+                    \subsubsection{Sky Domain}
+                        If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        In addition, you add the Jump skill to your list of class skills.
+
+                        \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
+                        This increases your maximum vertical jump distance normally.
+                        \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
+                        In addition, you take half damage from \glossterm{falling damage}.
+                        \magicaldomainability{Essence} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        \magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
+
+                    \subsubsection{Storm Domain}
+                        If you choose this domain, you add the \sphere{electromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+
+                        \magicaldomainability{Gift} You are \impervious to \atElectricity attacks.
+                        \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability during your next action.
+                        The repeat has the \atAuditory tag instead of the \atElectricity tag, deals half damage, and affects each \glossterm{enemy} adjacent to you instead of its normal targets.
+                        \magicaldomainability{Aspect} You also cause a \glossterm{repeat} when you \glossterm{chain} to yourself with a damaging \atElectricity ability.
+                        The repeat has the \atAuditory tag instead of the \atElectricity tag and deals half damage.
+                        \magicaldomainability{Mastery} Whenever you inflict a \glossterm{condition} on a creature with a \atAuditory or \atElectricity ability, that condition must be removed twice before the effect ends.
+
+                    \subsubsection{Sun Domain}
+                        If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+
+                        \domainability{Gift} You radiate \glossterm{bright illumination} in a \medarea radius.
+                        You can suppress or resume this illumination as a \glossterm{free action} once per round.
+                        \magicaldomainability{Aspect} Whenever you use an ability that creates illumination, you can give it the \atFire \glossterm{ability tag}.
+                        In addition, your \glossterm{allies} are immune to damage from your \atFire abilities.
+                        % TODO: wording
+                        \magicaldomainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power}.
+                        \magicaldomainability{Mastery} The power bonus increases to \plus2, and you radiate \glossterm{brilliant illumination} instead of bright illumination.
 
                     \subsubsection{Travel Domain}
                         If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
@@ -1768,17 +1807,6 @@ impl Class {
                             you can exchange that maneuver for another maneuver with a rank that does not exceed your rank in the Domain Influence archetype.
                         \domainability{Essence} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \domainability{Mastery} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-
-                    \subsubsection{Water Domain}
-                        If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
-                        In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
-
-                        \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
-                        \magicaldomainability{Aspect} You can breathe water as easily as a human breathes air, preventing you from drowning or suffocating underwater.
-                        \magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
-                        If you already have a slow swim speed, your swim speed becomes average instead.
-                        \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
-                        In addition, you gain a \plus1 bonus to your Brawn and Reflex defenses.
 
                     \subsubsection{Wild Domain}
                         If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
