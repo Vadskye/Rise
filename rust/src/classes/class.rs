@@ -1,9 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::Attribute::{
-    Constitution, Dexterity, Intelligence, Perception, Strength, Willpower,
-};
-use crate::core_mechanics::{Attribute, Defense, HitPointProgression, Resource};
+use crate::core_mechanics::{Defense, HitPointProgression, Resource};
 use crate::equipment::{Armor, ArmorUsageClass};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -99,7 +96,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 37;
+        let expected_points = 24;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -156,65 +153,6 @@ impl Class {
             + 2 * (self.defense_bonus(&Defense::Brawn) + self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental))
             // 4 points per Armor defense
             + self.defense_bonus(&Defense::Armor) * 4
-            // 6 points per mandatory attribute
-            + self.mandatory_attributes().len() as i32 * 6
-            // 7 points if optional attributes exist
-            + if self.optional_attributes().len() == 0 { 0 } else { 7 }
-    }
-
-    pub fn mandatory_attributes(&self) -> Vec<Attribute> {
-        match self {
-            Self::Automaton => vec![Constitution, Intelligence],
-            Self::Barbarian => vec![Strength],
-            Self::Cleric => vec![Willpower],
-            Self::Dragon => vec![Strength, Constitution],
-            Self::Druid => vec![Perception],
-            Self::Dryaidi => vec![Dexterity, Perception],
-            Self::Fighter => vec![Constitution],
-            Self::Harpy => vec![Strength, Dexterity, Perception],
-            Self::Monk => vec![Dexterity, Willpower],
-            // Assume tethered
-            Self::Incarnation => vec![Constitution],
-            Self::Oozeborn => vec![Strength, Dexterity, Constitution],
-            Self::Naiad => vec![Dexterity, Perception],
-            Self::Paladin => vec![Willpower],
-            Self::Ranger => vec![Dexterity, Perception],
-            Self::Rogue => vec![Dexterity],
-            Self::Sorcerer => vec![Constitution],
-            Self::Treant => vec![Constitution],
-            Self::Troll => vec![Strength, Constitution],
-            Self::Votive => vec![Willpower],
-            Self::Wizard => vec![Intelligence],
-            Self::Vampire => vec![Dexterity],
-        }
-    }
-
-    // Put the "expected" attribute first, since we use that for statistics calculations
-    pub fn optional_attributes(&self) -> Vec<Attribute> {
-        match self {
-            Self::Automaton => vec![],
-            Self::Barbarian => vec![Constitution, Dexterity],
-            Self::Cleric => vec![Perception, Intelligence],
-            Self::Dragon => vec![Intelligence, Willpower],
-            Self::Druid => vec![Dexterity, Strength, Constitution, Intelligence, Willpower],
-            Self::Dryaidi => vec![Intelligence, Willpower],
-            Self::Fighter => vec![Strength, Dexterity],
-            Self::Harpy => vec![],
-            // Assume tethered
-            Self::Incarnation => vec![Strength, Dexterity],
-            Self::Monk => vec![Perception, Intelligence],
-            Self::Naiad => vec![Intelligence, Willpower],
-            Self::Oozeborn => vec![],
-            Self::Paladin => vec![Constitution, Strength],
-            Self::Ranger => vec![],
-            Self::Rogue => vec![Intelligence, Perception],
-            Self::Sorcerer => vec![Willpower, Perception],
-            Self::Treant => vec![Strength, Willpower],
-            Self::Troll => vec![],
-            Self::Votive => vec![Intelligence, Perception],
-            Self::Vampire => vec![Strength, Intelligence],
-            Self::Wizard => vec![Perception, Willpower],
-        }
     }
 
     pub fn attunement_points(&self) -> i32 {
@@ -222,13 +160,13 @@ impl Class {
             Self::Automaton => 1,
             Self::Barbarian => 0,
             Self::Cleric => 1,
-            Self::Dragon => 0,
+            Self::Dragon => 1,
             Self::Druid => 1,
             Self::Dryaidi => 1,
             Self::Fighter => 0,
             Self::Harpy => 1,
             Self::Incarnation => 2,
-            Self::Monk => 0,
+            Self::Monk => 1,
             Self::Naiad => 1,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
@@ -608,13 +546,24 @@ impl Class {
                 _ => 0,
             },
             Self::Dryaidi => match defense {
+                Defense::Fortitude => 1,
+                Defense::Mental => 1,
                 _ => 0,
             },
             Self::Fighter => match defense {
                 Defense::Armor => 1,
                 _ => 0,
             },
+            Self::Harpy => match defense {
+                Defense::Reflex => 2,
+                _ => 0,
+            },
             Self::Naiad => match defense {
+                Defense::Mental => 2,
+                _ => 0,
+            },
+            Self::Oozeborn => match defense {
+                Defense::Fortitude => 2,
                 _ => 0,
             },
             Self::Treant => match defense {
@@ -622,7 +571,7 @@ impl Class {
                 _ => 0,
             },
             Self::Troll => match defense {
-                Defense::Fortitude => 2,
+                Defense::Fortitude => 1,
                 // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
                 // build that into the point calc system.
                 Defense::Reflex => 2,
@@ -666,6 +615,7 @@ impl Class {
         match self {
             Self::Cleric => 1,
             Self::Druid => 1,
+            Self::Dryaidi => 1,
             Self::Wizard => 1,
             _ => 0,
         }
@@ -744,7 +694,7 @@ impl Class {
             Self::Harpy => 5,
             Self::Incarnation => 3,
             Self::Monk => 4,
-            Self::Naiad => 4,
+            Self::Naiad => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
             Self::Ranger => 6,
@@ -1716,7 +1666,7 @@ impl Class {
                         \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
                         \magicaldomainability{Aspect} You increase the distance of your \glossterm{push} and \glossterm{knockback} abilities by 10 feet.
                         This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \ability{shove} ability.
-                        \magicaldomainability{Essence} You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
+                        \magicaldomainability{Essence} You gain a slow \glossterm{swim speed} (see \pcref{Swimming}).
                         If you already have a slow swim speed, your swim speed becomes average instead.
                         \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
                         In addition, the push and knockback distance bonus increases to 20 feet.
