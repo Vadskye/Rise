@@ -73,11 +73,11 @@ pub fn shields() -> Vec<MagicArmor> {
 
     // Normally, +1 tag would be rank 4. Since this only works on shields, it can be rank 3.
     armor.push(Shield(StandardItem {
-        name: String::from("Resonating Shield"),
+        name: String::from("Impact Shield"),
         rank: 3,
-        short_description: String::from("Is \\weapontag{Resonating}"),
+        short_description: String::from(r"Is \weapontag{Impact}"),
         description: String::from(r"
-            This shield gains the \\weapontag{Resonating} tag when used as a weapon.
+            This shield gains the \weapontag{Impact} tag when used as a weapon.
         "),
         ..MagicArmor::default()
     }));
