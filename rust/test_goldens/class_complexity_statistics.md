@@ -17,8 +17,8 @@ Complexity is calculated at (rank 3 / rank 7).
 * Healer: 5 / 9
 * Preacher: 5 / 12
             
-## druid: 23 / 38
-* Elementalist: 6 / 10
+## druid: 21 / 37
+* Elementalist: 4 / 9
 * Nature Magic: 4 / 4
 * Nature Spell Mastery: 3 / 7
 * Shifter: 6 / 9

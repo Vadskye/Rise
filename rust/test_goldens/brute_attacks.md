@@ -45,13 +45,13 @@ Extra        : 4.08 = (7.5 dph * 0.40 hpr) + (7.5 dpc * 0.04 cpr) + (3.8 dpg * 0
 Power        : 2.40 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.10 gpr) = 1.50 hdpr + 0.15 cdpr + 0.75 gdpr
 
 ### Defender: Monk Kama
-Best attack: Certain Bite
+Best attack: Extra Damage Bite
 
 #### Detailed attack results
-Accuracy     : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
-Certain      : 5.93 = (6.0 dph * 0.80 hpr) + (6.0 dpc * 0.09 cpr) + (3.0 dpg * 0.20 gpr) = 4.80 hdpr + 0.53 cdpr + 0.60 gdpr
-Extra        : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
-Power        : 4.83 = (15.0 dph * 0.20 hpr) + (15.0 dpc * 0.02 cpr) + (7.5 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 1.50 gdpr
+Accuracy     : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
+Certain      : 6.29 = (6.0 dph * 0.90 hpr) + (6.0 dpc * 0.10 cpr) + (3.0 dpg * 0.10 gpr) = 5.40 hdpr + 0.59 cdpr + 0.30 gdpr
+Extra        : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
+Power        : 6.50 = (15.0 dph * 0.30 hpr) + (15.0 dpc * 0.03 cpr) + (7.5 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 1.50 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Certain Bite
@@ -66,19 +66,19 @@ Power        : 3.17 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg *
 Best attack: Certain Bite
 
 #### Detailed attack results
-Accuracy     : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
-Certain      : 5.26 = (6.0 dph * 0.70 hpr) + (6.0 dpc * 0.08 cpr) + (3.0 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.60 gdpr
-Extra        : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
-Power        : 3.17 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.20 gpr) = 1.50 hdpr + 0.17 cdpr + 1.50 gdpr
+Accuracy     : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Certain      : 5.93 = (6.0 dph * 0.80 hpr) + (6.0 dpc * 0.09 cpr) + (3.0 dpg * 0.20 gpr) = 4.80 hdpr + 0.53 cdpr + 0.60 gdpr
+Extra        : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Power        : 4.83 = (15.0 dph * 0.20 hpr) + (15.0 dpc * 0.02 cpr) + (7.5 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 1.50 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Certain Bite
 
 #### Detailed attack results
-Accuracy     : 4.08 = (7.5 dph * 0.40 hpr) + (7.5 dpc * 0.04 cpr) + (3.8 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 0.75 gdpr
-Certain      : 4.60 = (6.0 dph * 0.60 hpr) + (6.0 dpc * 0.07 cpr) + (3.0 dpg * 0.20 gpr) = 3.60 hdpr + 0.40 cdpr + 0.60 gdpr
-Extra        : 4.08 = (7.5 dph * 0.40 hpr) + (7.5 dpc * 0.04 cpr) + (3.8 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 0.75 gdpr
-Power        : 2.40 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.10 gpr) = 1.50 hdpr + 0.15 cdpr + 0.75 gdpr
+Accuracy     : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
+Certain      : 5.26 = (6.0 dph * 0.70 hpr) + (6.0 dpc * 0.08 cpr) + (3.0 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.60 gdpr
+Extra        : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
+Power        : 3.17 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.20 gpr) = 1.50 hdpr + 0.17 cdpr + 1.50 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Extra Damage Bite
@@ -146,10 +146,10 @@ Power        : 3.04 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg *
 Best attack: Certain Bite
 
 #### Detailed attack results
-Accuracy     : 4.11 = (9.5 dph * 0.30 hpr) + (9.5 dpc * 0.03 cpr) + (4.8 dpg * 0.20 gpr) = 2.85 hdpr + 0.31 cdpr + 0.95 gdpr
-Certain      : 4.58 = (7.0 dph * 0.50 hpr) + (7.0 dpc * 0.06 cpr) + (3.5 dpg * 0.20 gpr) = 3.50 hdpr + 0.39 cdpr + 0.70 gdpr
-Extra        : 3.38 = (10.5 dph * 0.20 hpr) + (10.5 dpc * 0.02 cpr) + (5.2 dpg * 0.20 gpr) = 2.10 hdpr + 0.23 cdpr + 1.05 gdpr
-Power        : 1.98 = (19.0 dph * 0.09 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.01 gpr) = 1.71 hdpr + 0.17 cdpr + 0.09 gdpr
+Accuracy     : 5.17 = (9.5 dph * 0.40 hpr) + (9.5 dpc * 0.04 cpr) + (4.8 dpg * 0.20 gpr) = 3.80 hdpr + 0.42 cdpr + 0.95 gdpr
+Certain      : 5.36 = (7.0 dph * 0.60 hpr) + (7.0 dpc * 0.07 cpr) + (3.5 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.70 gdpr
+Extra        : 4.55 = (10.5 dph * 0.30 hpr) + (10.5 dpc * 0.03 cpr) + (5.2 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 1.05 gdpr
+Power        : 3.04 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.10 gpr) = 1.90 hdpr + 0.19 cdpr + 0.95 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Generic Accuracy Bite
@@ -164,19 +164,19 @@ Power        : 4.01 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg *
 Best attack: Generic Accuracy Bite
 
 #### Detailed attack results
+Accuracy     : 7.28 = (9.5 dph * 0.60 hpr) + (9.5 dpc * 0.07 cpr) + (4.8 dpg * 0.20 gpr) = 5.70 hdpr + 0.63 cdpr + 0.95 gdpr
+Certain      : 6.92 = (7.0 dph * 0.80 hpr) + (7.0 dpc * 0.09 cpr) + (3.5 dpg * 0.20 gpr) = 5.60 hdpr + 0.62 cdpr + 0.70 gdpr
+Extra        : 6.88 = (10.5 dph * 0.50 hpr) + (10.5 dpc * 0.06 cpr) + (5.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 1.05 gdpr
+Power        : 6.12 = (19.0 dph * 0.20 hpr) + (19.0 dpc * 0.02 cpr) + (9.5 dpg * 0.20 gpr) = 3.80 hdpr + 0.42 cdpr + 1.90 gdpr
+
+### Defender: Rogue Smallsword
+Best attack: Generic Accuracy Bite
+
+#### Detailed attack results
 Accuracy     : 6.22 = (9.5 dph * 0.50 hpr) + (9.5 dpc * 0.06 cpr) + (4.8 dpg * 0.20 gpr) = 4.75 hdpr + 0.52 cdpr + 0.95 gdpr
 Certain      : 6.14 = (7.0 dph * 0.70 hpr) + (7.0 dpc * 0.08 cpr) + (3.5 dpg * 0.20 gpr) = 4.90 hdpr + 0.54 cdpr + 0.70 gdpr
 Extra        : 5.71 = (10.5 dph * 0.40 hpr) + (10.5 dpc * 0.04 cpr) + (5.2 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 1.05 gdpr
 Power        : 4.01 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.20 gpr) = 1.90 hdpr + 0.21 cdpr + 1.90 gdpr
-
-### Defender: Rogue Smallsword
-Best attack: Certain Bite
-
-#### Detailed attack results
-Accuracy     : 5.17 = (9.5 dph * 0.40 hpr) + (9.5 dpc * 0.04 cpr) + (4.8 dpg * 0.20 gpr) = 3.80 hdpr + 0.42 cdpr + 0.95 gdpr
-Certain      : 5.36 = (7.0 dph * 0.60 hpr) + (7.0 dpc * 0.07 cpr) + (3.5 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.70 gdpr
-Extra        : 4.55 = (10.5 dph * 0.30 hpr) + (10.5 dpc * 0.03 cpr) + (5.2 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 1.05 gdpr
-Power        : 3.04 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.10 gpr) = 1.90 hdpr + 0.19 cdpr + 0.95 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Generic Accuracy Bite
@@ -244,10 +244,10 @@ Power        : 10.82 = (25.0 dph * 0.30 hpr) + (25.0 dpc * 0.03 cpr) + (12.5 dpg
 Best attack: Generic Accuracy Bite
 
 #### Detailed attack results
-Accuracy     : 8.19 = (12.5 dph * 0.50 hpr) + (12.5 dpc * 0.06 cpr) + (6.2 dpg * 0.20 gpr) = 6.25 hdpr + 0.69 cdpr + 1.25 gdpr
-Certain      : 7.45 = (8.5 dph * 0.70 hpr) + (8.5 dpc * 0.08 cpr) + (4.2 dpg * 0.20 gpr) = 5.95 hdpr + 0.65 cdpr + 0.85 gdpr
-Extra        : 6.44 = (20.0 dph * 0.20 hpr) + (20.0 dpc * 0.02 cpr) + (10.0 dpg * 0.20 gpr) = 4.00 hdpr + 0.44 cdpr + 2.00 gdpr
-Power        : 5.28 = (25.0 dph * 0.10 hpr) + (25.0 dpc * 0.01 cpr) + (12.5 dpg * 0.20 gpr) = 2.50 hdpr + 0.28 cdpr + 2.50 gdpr
+Accuracy     : 9.57 = (12.5 dph * 0.60 hpr) + (12.5 dpc * 0.07 cpr) + (6.2 dpg * 0.20 gpr) = 7.50 hdpr + 0.83 cdpr + 1.25 gdpr
+Certain      : 8.40 = (8.5 dph * 0.80 hpr) + (8.5 dpc * 0.09 cpr) + (4.2 dpg * 0.20 gpr) = 6.80 hdpr + 0.75 cdpr + 0.85 gdpr
+Extra        : 8.66 = (20.0 dph * 0.30 hpr) + (20.0 dpc * 0.03 cpr) + (10.0 dpg * 0.20 gpr) = 6.00 hdpr + 0.66 cdpr + 2.00 gdpr
+Power        : 8.05 = (25.0 dph * 0.20 hpr) + (25.0 dpc * 0.02 cpr) + (12.5 dpg * 0.20 gpr) = 5.00 hdpr + 0.55 cdpr + 2.50 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Powerful Bite
@@ -262,19 +262,19 @@ Power        : 13.60 = (25.0 dph * 0.40 hpr) + (25.0 dpc * 0.04 cpr) + (12.5 dpg
 Best attack: Powerful Bite
 
 #### Detailed attack results
+Accuracy     : 13.11 = (12.5 dph * 0.90 hpr) + (12.5 dpc * 0.10 cpr) + (6.2 dpg * 0.10 gpr) = 11.25 hdpr + 1.24 cdpr + 0.62 gdpr
+Certain      : 9.44 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.11 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 0.94 cdpr + 0.00 gdpr
+Extra        : 15.32 = (20.0 dph * 0.60 hpr) + (20.0 dpc * 0.07 cpr) + (10.0 dpg * 0.20 gpr) = 12.00 hdpr + 1.32 cdpr + 2.00 gdpr
+Power        : 16.38 = (25.0 dph * 0.50 hpr) + (25.0 dpc * 0.06 cpr) + (12.5 dpg * 0.20 gpr) = 12.50 hdpr + 1.38 cdpr + 2.50 gdpr
+
+### Defender: Rogue Smallsword
+Best attack: Powerful Bite
+
+#### Detailed attack results
 Accuracy     : 12.35 = (12.5 dph * 0.80 hpr) + (12.5 dpc * 0.09 cpr) + (6.2 dpg * 0.20 gpr) = 10.00 hdpr + 1.10 cdpr + 1.25 gdpr
 Certain      : 9.44 = (8.5 dph * 1.00 hpr) + (8.5 dpc * 0.11 cpr) + (4.2 dpg * 0.00 gpr) = 8.50 hdpr + 0.94 cdpr + 0.00 gdpr
 Extra        : 13.10 = (20.0 dph * 0.50 hpr) + (20.0 dpc * 0.06 cpr) + (10.0 dpg * 0.20 gpr) = 10.00 hdpr + 1.10 cdpr + 2.00 gdpr
 Power        : 13.60 = (25.0 dph * 0.40 hpr) + (25.0 dpc * 0.04 cpr) + (12.5 dpg * 0.20 gpr) = 10.00 hdpr + 1.10 cdpr + 2.50 gdpr
-
-### Defender: Rogue Smallsword
-Best attack: Generic Accuracy Bite
-
-#### Detailed attack results
-Accuracy     : 10.96 = (12.5 dph * 0.70 hpr) + (12.5 dpc * 0.08 cpr) + (6.2 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.25 gdpr
-Certain      : 8.92 = (8.5 dph * 0.90 hpr) + (8.5 dpc * 0.10 cpr) + (4.2 dpg * 0.10 gpr) = 7.65 hdpr + 0.84 cdpr + 0.42 gdpr
-Extra        : 10.88 = (20.0 dph * 0.40 hpr) + (20.0 dpc * 0.04 cpr) + (10.0 dpg * 0.20 gpr) = 8.00 hdpr + 0.88 cdpr + 2.00 gdpr
-Power        : 10.82 = (25.0 dph * 0.30 hpr) + (25.0 dpc * 0.03 cpr) + (12.5 dpg * 0.20 gpr) = 7.50 hdpr + 0.83 cdpr + 2.50 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Powerful Bite
@@ -352,12 +352,12 @@ Power+       : 9.18 = (43.5 dph * 0.10 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg 
 Best attack: Certain Strike+ -- Bite
 
 #### Detailed attack results
-Accuracy     : 7.89 = (14.5 dph * 0.40 hpr) + (14.5 dpc * 0.04 cpr) + (7.2 dpg * 0.20 gpr) = 5.80 hdpr + 0.64 cdpr + 1.45 gdpr
-Certain      : 7.28 = (9.5 dph * 0.60 hpr) + (9.5 dpc * 0.07 cpr) + (4.8 dpg * 0.20 gpr) = 5.70 hdpr + 0.63 cdpr + 0.95 gdpr
-Extra        : 4.56 = (28.5 dph * 0.10 hpr) + (28.5 dpc * 0.01 cpr) + (14.2 dpg * 0.10 gpr) = 2.85 hdpr + 0.29 cdpr + 1.43 gdpr
-Power        : 4.64 = (29.0 dph * 0.10 hpr) + (29.0 dpc * 0.01 cpr) + (14.5 dpg * 0.10 gpr) = 2.90 hdpr + 0.29 cdpr + 1.45 gdpr
-Certain+     : 11.11 = (14.5 dph * 0.60 hpr) + (14.5 dpc * 0.07 cpr) + (7.2 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 1.45 gdpr
-Power+       : 3.78 = (43.5 dph * 0.07 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg * 0.02 gpr) = 3.04 hdpr + 0.30 cdpr + 0.44 gdpr
+Accuracy     : 9.50 = (14.5 dph * 0.50 hpr) + (14.5 dpc * 0.06 cpr) + (7.2 dpg * 0.20 gpr) = 7.25 hdpr + 0.80 cdpr + 1.45 gdpr
+Certain      : 8.33 = (9.5 dph * 0.70 hpr) + (9.5 dpc * 0.08 cpr) + (4.8 dpg * 0.20 gpr) = 6.65 hdpr + 0.73 cdpr + 0.95 gdpr
+Extra        : 6.01 = (28.5 dph * 0.10 hpr) + (28.5 dpc * 0.01 cpr) + (14.2 dpg * 0.20 gpr) = 2.85 hdpr + 0.31 cdpr + 2.85 gdpr
+Power        : 6.12 = (29.0 dph * 0.10 hpr) + (29.0 dpc * 0.01 cpr) + (14.5 dpg * 0.20 gpr) = 2.90 hdpr + 0.32 cdpr + 2.90 gdpr
+Certain+     : 12.72 = (14.5 dph * 0.70 hpr) + (14.5 dpc * 0.08 cpr) + (7.2 dpg * 0.20 gpr) = 10.15 hdpr + 1.12 cdpr + 1.45 gdpr
+Power+       : 4.26 = (43.5 dph * 0.08 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg * 0.02 gpr) = 3.48 hdpr + 0.35 cdpr + 0.43 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Powerful Bite
@@ -374,23 +374,23 @@ Power+       : 14.01 = (43.5 dph * 0.20 hpr) + (43.5 dpc * 0.02 cpr) + (21.8 dpg
 Best attack: Certain Strike+ -- Bite
 
 #### Detailed attack results
+Accuracy     : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
+Certain      : 10.54 = (9.5 dph * 1.00 hpr) + (9.5 dpc * 0.11 cpr) + (4.8 dpg * 0.00 gpr) = 9.50 hdpr + 1.05 cdpr + 0.00 gdpr
+Extra        : 15.50 = (28.5 dph * 0.40 hpr) + (28.5 dpc * 0.04 cpr) + (14.2 dpg * 0.20 gpr) = 11.40 hdpr + 1.25 cdpr + 2.85 gdpr
+Power        : 15.78 = (29.0 dph * 0.40 hpr) + (29.0 dpc * 0.04 cpr) + (14.5 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 2.90 gdpr
+Certain+     : 16.09 = (14.5 dph * 1.00 hpr) + (14.5 dpc * 0.11 cpr) + (7.2 dpg * 0.00 gpr) = 14.50 hdpr + 1.60 cdpr + 0.00 gdpr
+Power+       : 9.18 = (43.5 dph * 0.10 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg * 0.20 gpr) = 4.35 hdpr + 0.48 cdpr + 4.35 gdpr
+
+### Defender: Rogue Smallsword
+Best attack: Certain Strike+ -- Bite
+
+#### Detailed attack results
 Accuracy     : 12.72 = (14.5 dph * 0.70 hpr) + (14.5 dpc * 0.08 cpr) + (7.2 dpg * 0.20 gpr) = 10.15 hdpr + 1.12 cdpr + 1.45 gdpr
 Certain      : 9.97 = (9.5 dph * 0.90 hpr) + (9.5 dpc * 0.10 cpr) + (4.8 dpg * 0.10 gpr) = 8.55 hdpr + 0.94 cdpr + 0.47 gdpr
 Extra        : 12.34 = (28.5 dph * 0.30 hpr) + (28.5 dpc * 0.03 cpr) + (14.2 dpg * 0.20 gpr) = 8.55 hdpr + 0.94 cdpr + 2.85 gdpr
 Power        : 12.56 = (29.0 dph * 0.30 hpr) + (29.0 dpc * 0.03 cpr) + (14.5 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 2.90 gdpr
 Certain+     : 15.21 = (14.5 dph * 0.90 hpr) + (14.5 dpc * 0.10 cpr) + (7.2 dpg * 0.10 gpr) = 13.05 hdpr + 1.44 cdpr + 0.72 gdpr
 Power+       : 6.96 = (43.5 dph * 0.10 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg * 0.10 gpr) = 4.35 hdpr + 0.44 cdpr + 2.18 gdpr
-
-### Defender: Rogue Smallsword
-Best attack: Certain Strike+ -- Bite
-
-#### Detailed attack results
-Accuracy     : 11.11 = (14.5 dph * 0.60 hpr) + (14.5 dpc * 0.07 cpr) + (7.2 dpg * 0.20 gpr) = 8.70 hdpr + 0.96 cdpr + 1.45 gdpr
-Certain      : 9.39 = (9.5 dph * 0.80 hpr) + (9.5 dpc * 0.09 cpr) + (4.8 dpg * 0.20 gpr) = 7.60 hdpr + 0.84 cdpr + 0.95 gdpr
-Extra        : 9.18 = (28.5 dph * 0.20 hpr) + (28.5 dpc * 0.02 cpr) + (14.2 dpg * 0.20 gpr) = 5.70 hdpr + 0.63 cdpr + 2.85 gdpr
-Power        : 9.34 = (29.0 dph * 0.20 hpr) + (29.0 dpc * 0.02 cpr) + (14.5 dpg * 0.20 gpr) = 5.80 hdpr + 0.64 cdpr + 2.90 gdpr
-Certain+     : 14.33 = (14.5 dph * 0.80 hpr) + (14.5 dpc * 0.09 cpr) + (7.2 dpg * 0.20 gpr) = 11.60 hdpr + 1.28 cdpr + 1.45 gdpr
-Power+       : 4.52 = (43.5 dph * 0.09 hpr) + (43.5 dpc * 0.01 cpr) + (21.8 dpg * 0.01 gpr) = 3.92 hdpr + 0.39 cdpr + 0.22 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Powerful Bite
@@ -477,13 +477,13 @@ Triple       : 34.39 = (52.5 dph * 0.50 hpr) + (52.5 dpc * 0.06 cpr) + (26.2 dpg
 Best attack: Certain Strike+ -- Bite
 
 #### Detailed attack results
-Accuracy     : 11.46 = (17.5 dph * 0.50 hpr) + (17.5 dpc * 0.06 cpr) + (8.8 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.75 gdpr
-Certain      : 9.65 = (11.0 dph * 0.70 hpr) + (11.0 dpc * 0.08 cpr) + (5.5 dpg * 0.20 gpr) = 7.70 hdpr + 0.85 cdpr + 1.10 gdpr
-Extra        : 5.56 = (53.5 dph * 0.09 hpr) + (53.5 dpc * 0.01 cpr) + (26.8 dpg * 0.01 gpr) = 4.82 hdpr + 0.48 cdpr + 0.27 gdpr
-Power        : 7.38 = (35.0 dph * 0.10 hpr) + (35.0 dpc * 0.01 cpr) + (17.5 dpg * 0.20 gpr) = 3.50 hdpr + 0.39 cdpr + 3.50 gdpr
-Certain+     : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
-Power+       : 5.15 = (52.5 dph * 0.08 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.02 gpr) = 4.20 hdpr + 0.42 cdpr + 0.52 gdpr
-Triple       : 5.46 = (52.5 dph * 0.09 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.01 gpr) = 4.73 hdpr + 0.47 cdpr + 0.26 gdpr
+Accuracy     : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
+Certain      : 10.87 = (11.0 dph * 0.80 hpr) + (11.0 dpc * 0.09 cpr) + (5.5 dpg * 0.20 gpr) = 8.80 hdpr + 0.97 cdpr + 1.10 gdpr
+Extra        : 8.56 = (53.5 dph * 0.10 hpr) + (53.5 dpc * 0.01 cpr) + (26.8 dpg * 0.10 gpr) = 5.35 hdpr + 0.54 cdpr + 2.68 gdpr
+Power        : 11.27 = (35.0 dph * 0.20 hpr) + (35.0 dpc * 0.02 cpr) + (17.5 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 3.50 gdpr
+Certain+     : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Power+       : 5.46 = (52.5 dph * 0.09 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.01 gpr) = 4.73 hdpr + 0.47 cdpr + 0.26 gdpr
+Triple       : 8.40 = (52.5 dph * 0.10 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.10 gpr) = 5.25 hdpr + 0.53 cdpr + 2.62 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Extra Damage Bite
@@ -501,6 +501,18 @@ Triple       : 40.22 = (52.5 dph * 0.60 hpr) + (52.5 dpc * 0.07 cpr) + (26.2 dpg
 Best attack: Extra Damage Bite
 
 #### Detailed attack results
+Accuracy     : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
+Certain      : 13.44 = (11.0 dph * 1.00 hpr) + (11.0 dpc * 0.22 cpr) + (5.5 dpg * 0.00 gpr) = 11.00 hdpr + 2.44 cdpr + 0.00 gdpr
+Extra        : 29.10 = (53.5 dph * 0.40 hpr) + (53.5 dpc * 0.04 cpr) + (26.8 dpg * 0.20 gpr) = 21.40 hdpr + 2.35 cdpr + 5.35 gdpr
+Power        : 26.81 = (35.0 dph * 0.60 hpr) + (35.0 dpc * 0.07 cpr) + (17.5 dpg * 0.20 gpr) = 21.00 hdpr + 2.31 cdpr + 3.50 gdpr
+Certain+     : 21.39 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.22 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 3.89 cdpr + 0.00 gdpr
+Power+       : 22.73 = (52.5 dph * 0.30 hpr) + (52.5 dpc * 0.03 cpr) + (26.2 dpg * 0.20 gpr) = 15.75 hdpr + 1.73 cdpr + 5.25 gdpr
+Triple       : 28.56 = (52.5 dph * 0.40 hpr) + (52.5 dpc * 0.04 cpr) + (26.2 dpg * 0.20 gpr) = 21.00 hdpr + 2.31 cdpr + 5.25 gdpr
+
+### Defender: Rogue Smallsword
+Best attack: Extra Damage Bite
+
+#### Detailed attack results
 Accuracy     : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
 Certain      : 12.22 = (11.0 dph * 1.00 hpr) + (11.0 dpc * 0.11 cpr) + (5.5 dpg * 0.00 gpr) = 11.00 hdpr + 1.22 cdpr + 0.00 gdpr
 Extra        : 23.17 = (53.5 dph * 0.30 hpr) + (53.5 dpc * 0.03 cpr) + (26.8 dpg * 0.20 gpr) = 16.05 hdpr + 1.77 cdpr + 5.35 gdpr
@@ -508,18 +520,6 @@ Power        : 22.93 = (35.0 dph * 0.50 hpr) + (35.0 dpc * 0.06 cpr) + (17.5 dpg
 Certain+     : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
 Power+       : 16.91 = (52.5 dph * 0.20 hpr) + (52.5 dpc * 0.02 cpr) + (26.2 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 5.25 gdpr
 Triple       : 22.73 = (52.5 dph * 0.30 hpr) + (52.5 dpc * 0.03 cpr) + (26.2 dpg * 0.20 gpr) = 15.75 hdpr + 1.73 cdpr + 5.25 gdpr
-
-### Defender: Rogue Smallsword
-Best attack: Certain Strike+ -- Bite
-
-#### Detailed attack results
-Accuracy     : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
-Certain      : 12.21 = (11.0 dph * 1.00 hpr) + (11.0 dpc * 0.11 cpr) + (5.5 dpg * 0.00 gpr) = 11.00 hdpr + 1.21 cdpr + 0.00 gdpr
-Extra        : 17.23 = (53.5 dph * 0.20 hpr) + (53.5 dpc * 0.02 cpr) + (26.8 dpg * 0.20 gpr) = 10.70 hdpr + 1.18 cdpr + 5.35 gdpr
-Power        : 19.04 = (35.0 dph * 0.40 hpr) + (35.0 dpc * 0.04 cpr) + (17.5 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 3.50 gdpr
-Certain+     : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
-Power+       : 11.08 = (52.5 dph * 0.10 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 5.25 gdpr
-Triple       : 16.91 = (52.5 dph * 0.20 hpr) + (52.5 dpc * 0.02 cpr) + (26.2 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 5.25 gdpr
 
 ### Defender: Sorcerer Dexterity
 Best attack: Extra Damage Bite
