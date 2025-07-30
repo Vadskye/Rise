@@ -556,12 +556,14 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your body is shaped by your soulkeeper's influence.
 
-                \subcf{Devil -- Calculating} You can use your Intelligence in place of your Dexterity to determine your Armor defense.
-                Your Intelligence is still halved by armor just like your Dexterity would be.
+                \subcf{Devil -- Calculating} You gain a bonus to your \glossterm{mundane power} and \glossterm{magical power} equal to half your Intelligence.
 
-                \subcf{Fae -- Alluring} You gain a \plus3 \glossterm{enhancement bonus} to the Deception, Perform, and Persuasion skills.
-                
-                \subcf{Moirai -- Fatebound} You gain a \plus2 bonus to your \glossterm{vital rolls}.
+                \subcf{Fae -- Unconcerned} You gain a \plus1 bonus to \glossterm{accuracy} and all \glossterm{checks}.
+                However, you cannot use the \ability{desperate exertion} ability.
+
+                % 1d10! is about 6.1 accuracy, and 1d8+2 is 6.5 accuracy.
+                \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.
+                However, you roll 1d8 instead of 1d10 for attack rolls, and your attack rolls cannot \glossterm{explode}.
 
                 \subcf{Precursor -- Burgeoning} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
@@ -577,15 +579,16 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your body continues to be shaped by your soulkeeper's influence.
 
-                \subcf{Devil} You gain a \plus1 bonus to your Intelligence.
+                \subcf{Devil -- Specialized Torment} You gain a \plus4 accuracy bonus for the purpose of determining whether your attack gets a \glossterm{critical hit} against creatures that are \vulnerable to your attack.
 
-                \subcf{Fae} You gain a \plus1 bonus to your Perception.
+                \subcf{Fae -- Free Spirit} At the end of each round, you have a 50\% chance to remove a random \glossterm{poison} or \glossterm{condition} affecting you.
+                This ability is \glossterm{briefly} disabled whenever you take damage from a cold iron weapon.
                 
-                \subcf{Moirai} You gain a \plus1 bonus to your two lowest attributes.
-                You can choose between equally low attributes.
+                \subcf{Moirai -- Inexorable} You gain a \plus2 bonus to all \glossterm{checks}.
+                However, you roll 1d8 instead of 1d10 for checks, and your checks cannot \glossterm{explode} even if another ability would cause them to explode.
 
-                \subcf{Precursor} You gain a \plus1 bonus to your Constitution.
-                In addition, your tentacle now deals 1d8 damage and gains the \weapontag{Clinch} \glossterm{weapon tag} (see \pcref{Weapon Tags}).
+                \subcf{Precursor -- Grotesque} You gain a \plus1 bonus to your Constitution.
+                In addition, your tentacle gains the \weapontag{Sweeping} (1) \glossterm{weapon tag} (see \pcref{Weapon Tags}).
             ",
             modifiers: None,
         },
@@ -597,16 +600,14 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your body continues to be shaped by your soulkeeper's influence.
 
-                \subcf{Devil} You gain a bonus to your Mental defense equal to half your Intelligence.
+                \subcf{Devil -- Calculating\plus} You gain a bonus to your Mental defense equal to half your Intelligence.
 
-                \subcf{Fae} The skill bonuses increase to \plus5.
-                In addition, the Perception bonus increases to \plus2.
+                \subcf{Fae -- Unconcerned\plus} The bonus to accuracy and checks increases to 1d4.
                 
-                \subcf{Moirai} The vital roll bonus increases to \plus5.
-                In addition, the attribute bonus also applies to your third lowest attribute.
+                \subcf{Moirai -- Inevitable\plus} The bonus to accuracy and checks increases to \plus3.
 
-                \subcf{Precursor} The hit point bonus increases to four times your rank in this archetype.
-                In addition, your tentacle now deals 1d10 damage and gains the \weapontag{Long} \glossterm{weapon tag}.
+                \subcf{Precursor -- Burgeoning\plus} The hit point bonus increases to four times your rank in this archetype.
+                In addition, your tentacle now deals 1d10 damage.
             ",
             modifiers: None,
         },
