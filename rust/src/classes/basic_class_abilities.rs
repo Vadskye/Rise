@@ -11,8 +11,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
             \\subsection<Base Class Effects>
             If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
 
-            {attributes}
-
             {hit_points}
 
             {defenses}
@@ -25,7 +23,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
             {class_skills}
         ",
-        attributes = generate_latex_attributes(class).trim(),
         hit_points = generate_latex_hit_points(class).trim(),
         defenses = generate_latex_defenses(class)
             .unwrap_or("".to_string())
@@ -99,50 +96,6 @@ fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
     } else {
         None
     }
-}
-
-fn generate_latex_attributes(class: &Class) -> String {
-    let optional_count = class.optional_attributes().len();
-    let optional = if optional_count == 0 {
-        "".to_string()
-    } else {
-        let suffix = if optional_count == 5 {
-            "any other attribute".to_string()
-        } else if optional_count == 2 {
-            format!(
-                "either your {} or your {}",
-                class.optional_attributes()[0].title(),
-                class.optional_attributes()[1].title()
-            )
-        } else {
-            panic!(
-                "Confusing optional attribute count: {}",
-                join_attributes(class.optional_attributes(), "and")
-                    .unwrap_or("no attributes".to_string()),
-            )
-        };
-
-        format!("In addition, you gain a +1 bonus to {}.", suffix)
-    };
-    format!(
-        "
-            \\cf<{shorthand_name}><Attributes>
-            You gain a +1 bonus to your {mandatory}. {optional}
-        ",
-        shorthand_name = class.shorthand_name(),
-        mandatory = join_attributes(class.mandatory_attributes(), "and").unwrap(),
-        optional = optional
-    )
-}
-
-fn join_attributes(attributes: Vec<Attribute>, conjunction: &str) -> Option<String> {
-    latex_formatting::join_string_list_custom(
-        &attributes
-            .into_iter()
-            .map(|a| a.title())
-            .collect::<Vec<String>>(),
-        conjunction,
-    )
 }
 
 fn generate_latex_hit_points(class: &Class) -> String {

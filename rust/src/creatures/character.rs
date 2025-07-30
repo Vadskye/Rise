@@ -50,17 +50,6 @@ impl Character {
                 );
             }
         }
-        for attribute in class.mandatory_attributes() {
-            creature.add_modifier(Modifier::Attribute(attribute, 1), Some(class.name()), None);
-        }
-        // Arbitrarily take the first attribute option
-        if class.optional_attributes().len() > 0 {
-            creature.add_modifier(
-                Modifier::Attribute(class.optional_attributes()[0], 1),
-                Some(class.name()),
-                None,
-            );
-        }
 
         Character {
             // archetypes,
