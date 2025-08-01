@@ -12,21 +12,14 @@ export const channelDivinity: MysticSphere = {
       effect: `
         The magical essence of your deity or alignment is overlayed on your body as an aura.
         This represents your deity if you are a cleric, or your alignment if you are a paladin.
-        In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\rngshort range.
+        In either case, you gain the ability to see the auras of other creatures using this spell if they are within \\medrange.
         If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
         This can allow you to identify other followers of your deity or alignment with certainty.
 
         This ability lasts until you \glossterm{dismiss} it or until you use it again.
       `,
+      roles: ['narrative'],
       name: 'Testament',
-      scaling: {
-        2: 'The range increases to \\rngmed.',
-        4: `
-          If you are a cleric, you can also unerringly see an aura around creatures who worship your deity.
-          If you are a paladin, you can also unerringly see an aura around creatures who share your devoted alignment.
-        `,
-        6: 'The range increases to \\rnglong.',
-      },
     },
   ],
   spells: [
@@ -312,10 +305,10 @@ export const channelDivinity: MysticSphere = {
       castingTime: 'minor action',
       effect: `
         When you cast this spell, you gain a \\glossterm{vital wound} that has no vital wound effect.
-        In exchange, you gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and become immune to \\glossterm{conditions}.
+        In exchange, you gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and are \\glossterm{unaffected} by \\glossterm{conditions}.
       `,
       rank: 6,
-      type: 'Sustain (free)',
+      type: 'Sustain (minor)',
     },
 
     {

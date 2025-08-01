@@ -1618,7 +1618,7 @@ export const rituals: Ritual[] = [
     `,
     rank: 3,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, free)',
+    type: 'Sustain (attuneable, minor)',
     spheres: ['Photomancy', 'Revelation'],
   },
 
