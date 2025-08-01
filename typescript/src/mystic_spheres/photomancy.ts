@@ -15,8 +15,6 @@ export const photomancy: MysticSphere = {
         A glowing light appears in midair in any location within \\medrange.
         It creates \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 15 feet, and \\glossterm{shadowy illumination} in twice that radius.
         You can freely choose the color of the light, but it is unchanging once created.
-
-        This ability lasts until you \\glossterm{dismiss} it or until you use it again.
       `,
       roles: ['narrative'],
       scaling: {
@@ -25,6 +23,7 @@ export const photomancy: MysticSphere = {
         6: `The maximum radius of bright illumination increases to 120 feet.`,
       },
       tags: ['Visual'],
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [
@@ -386,7 +385,7 @@ export const photomancy: MysticSphere = {
       rank: 1,
       roles: ['attune'],
       tags: ['Visual'],
-      type: 'Sustain (attuneable, free)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     // Rank 5 version is unlimited. It's not obvious how to downscale that correctly to

@@ -22,7 +22,7 @@ export const enchantment: MysticSphere = {
         6: `The number of additional targets increases to three.`,
       },
       tags: ['Emotion'],
-      type: 'Sustain (free)',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [

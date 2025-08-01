@@ -13,16 +13,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
-        The target treats all falls as if they were 20 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
+        The target treats all falls as if they were 30 feet shorter for the purpose of determining \\glossterm{falling damage} this round.
       `,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,
       roles: ['narrative'],
       scaling: {
-        2: 'The distance reduction increases to 50 feet.',
-        4: 'The distance reduction increases to 100 feet.',
-        6: 'The distance reduction increases to 200 feet.',
+        2: 'The distance reduction increases to 60 feet.',
+        4: 'The distance reduction increases to 90 feet.',
+        6: 'The distance reduction increases to 120 feet.',
       },
     },
   ],
