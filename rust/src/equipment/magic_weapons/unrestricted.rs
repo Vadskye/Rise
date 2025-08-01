@@ -17,8 +17,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Grants +2 accuracy when you injure a foe"),
         description: String::from(r"
-            Whenever you cause a creature to lose \glossterm{hit points} with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
-            As normal, this bonus does not stack with itself, even if you make the same creature lose hit points multiple times.
+            Whenever you \glossterm{injure} a living creature with a strike using this weapon, you \glossterm{briefly} gain a +2 accuracy bonus with \glossterm{strikes} against that creature.
+            As normal, this bonus does not stack with itself, even if you injure the same creature multiple times.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +3 accuracy when you injure a foe", r"
@@ -238,7 +238,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            At the end of each round, if you caused a living creature other than yourself to lose \glossterm{hit points} with a \glossterm{strike} using this weapon that round, you regain 1d10 hit points.
+            At the end of each round, if you \glossterm{injured} a living creature other than yourself with a \glossterm{strike} using this weapon that round, you regain 1d10 hit points.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![

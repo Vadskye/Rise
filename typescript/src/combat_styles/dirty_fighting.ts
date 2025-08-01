@@ -11,7 +11,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\injury The target becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 1,
       roles: ['maim'],
@@ -24,8 +24,9 @@ export const dirtyFighting: CombatStyle = {
       // unarmed, we give it an extra 20% or so, so this comes out to 1.4x.
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit If the target loses hit points, it takes \\damagerankfive.
-        On a critical hit, this damage is doubled.
+        \\injury The target takes \\damagerankfive.
+        % TODO: wording
+        \\crit Damage is doubled for both the initial strike and the injury effect.
       `,
       rank: 5,
       roles: ['execute'],
@@ -38,8 +39,8 @@ export const dirtyFighting: CombatStyle = {
       // damge here equally.
       effect: `
         Make a strike that deals double damage using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit If the target loses hit points, it takes \\damagerankseven.
-        On a critical hit, this damage is doubled.
+        \\injury The target takes \\damagerankseven.
+        \\crit Damage is doubled for both the initial strike and the injury effect.
       `,
       rank: 7,
       roles: ['execute'],
@@ -171,7 +172,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
         \\hit The target takes \\damageranksix.
-        If it loses hit points from this damage, it becomes \\slowed as a \\glossterm{condition}.
+        \\injury The target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 5,
       roles: ['maim', 'payoff'],
@@ -261,7 +262,7 @@ export const dirtyFighting: CombatStyle = {
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
         \\hit \\damagerankeight.
-        If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 30 feet.
+        \\injury You \\glossterm{knockback} the target up to 30 feet.
       `,
       rank: 7,
       roles: ['combo'],
@@ -273,7 +274,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If the target loses hit points and your attack also hits its Brawn defense, it drops one item of your choice that it is holding in a single hand.
+        \\injury If your attack hits the target's Brawn defense, it drops one item of your choice that it is holding in a single hand.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures that are two or more size categories larger than you.
       `,
       rank: 3,
@@ -322,7 +323,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\hit If the target loses hit points and your attack also hits its Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
+        \\injury If your attack hits the target's Reflex defense, it treats you as being \\trait{invisible} as a \\glossterm{condition} (see \\pcref{Invisible}).
       `,
       rank: 5,
       roles: ['maim'],
@@ -344,7 +345,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If the target loses hit points, it is \\dazzled as a \\glossterm{condition}.
+        \\injury The target is \\dazzled as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],

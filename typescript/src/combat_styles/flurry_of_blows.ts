@@ -241,7 +241,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If the target loses hit points and your attack result hits its Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
+        \\injury If your attack result hits the target's Fortitude defense, it becomes \\stunned as a \\glossterm{condition}.
       `,
       rank: 3,
       roles: ['maim'],

@@ -463,7 +463,9 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Plane of Water.
           When it returns, it you deal it \\damagerankfour.
-          If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes unable to breathe air as a \\glossterm{condition}.
           It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
         `,
         targeting: `
@@ -510,7 +512,9 @@ export const astromancy: MysticSphere = {
         hit: `
           The target \\sphereterm{flickers} to the Eternal Void.
           When it returns, you deal it \\damageranksix, and it is \\glossterm{briefly} \\stunned.
-          If it loses \\glossterm{hit points} from this damage, it also becomes \\stunned as a condition.
+        `,
+        injury: `
+          The target becomes \\stunned as a condition.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.

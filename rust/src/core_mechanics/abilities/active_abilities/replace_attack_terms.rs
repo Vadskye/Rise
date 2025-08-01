@@ -587,17 +587,17 @@ mod tests {
         #[test]
         fn replaces_mind_crush() {
             assert_multiline_eq(
-                // dr4 is 1d10 + (1d6 per 3 power)
+                // dr4 is 1d6 + (1d6 per 2 power)
                 r"
                     The $name makes a +5 attack vs. Mental against one creature within \medrange.
-                    \hit 1d6+1d10 damage.
-                    Each creature that loses hit points from this damage is \stunned as a condition.
+                    \hit 2d6 damage.
+                    \injury The target is \stunned as a condition.
                 ",
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
                     \hit $dr4 damage.
-                    Each creature that loses hit points from this damage is \stunned as a condition.
+                    \injury The target is \stunned as a condition.
                 ",
                     &sample_creature(),
                     true,

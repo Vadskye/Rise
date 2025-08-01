@@ -117,7 +117,7 @@
 \newcommand{\unconscious}{\debuff{unconscious}\xspace}
 
 \newcommand{\braced}{\buff{braced} \reminder{\plus2 defenses}\xspace}
-\newcommand{\empowered}{\buff{empowered} \reminder{roll damage twice}\xspace}
+\newcommand{\empowered}{\buff{empowered} \reminder{add rank to damage}\xspace}
 \newcommand{\focused}{\buff{focused} \reminder{roll attacks twice}\xspace}
 \newcommand{\fortified}{\buff{fortified} \reminder{\plus2 Brawn, Fort, Ment}\xspace}
 \newcommand{\honed}{\buff{honed} \reminder{\plus4 accuracy with crits}\xspace}
@@ -567,6 +567,11 @@
 {
     % Adding a vspace increases the spacing. Although this looks negative, it still increases the spacing relative to the previous line compared to not including a vspace at all.
     \par \vspace{-0.1em} \textbf{Hit}:\xspace
+}
+
+\DeclareDocumentCommand{\injury}{}
+{
+    \par \vspace{-0.1em} \textbf{Injury}:\xspace
 }
 
 \DeclareDocumentCommand{\glance}{}

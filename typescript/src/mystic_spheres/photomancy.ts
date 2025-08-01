@@ -202,7 +202,9 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfivelow, and any \\glossterm{extra damage} is doubled.
-          If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
+        `,
+        injury: `
+          The target suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
         `,
         targeting: `
@@ -222,7 +224,9 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankeightlow, and any \\glossterm{extra damage} is tripled.
-          If the target loses \\glossterm{hit points}, it suffers consequences as if it had been struck by a beam of natural sunlight.
+        `,
+        injury: `
+          The target suffers consequences as if it had been struck by a beam of natural sunlight.
           This can be deadly for some creatures.
         `,
         targeting: `
@@ -243,7 +247,9 @@ export const photomancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfivelow.
-          Each creature that loses \\glossterm{hit points} also suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
+        `,
+        injury: `
+          The target suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
         missGlance: true,
         targeting: `

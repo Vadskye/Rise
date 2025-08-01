@@ -635,7 +635,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           \\damageranktwo.
-          If the target is Large or smaller and loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+        `,
+        injury: `
+          If the target is Large or smaller, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
           If the target is \\submerged, this distance is doubled and you can also move it vertically.
         `,
         targeting: `
@@ -778,7 +780,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           \\damageranktwo.
-          If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes unable to breathe air as a \\glossterm{condition}.
           It can remove this condition by making a \\glossterm{difficulty value} 8 Constitution check as a \\glossterm{standard action}.
         `,
         targeting: `
@@ -799,6 +803,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           \\damageranksix.
+        `,
+        injury: `
           If the target loses hit points, it becomes unable to breathe air as a \\glossterm{condition}.
           It can remove this condition by making a \\glossterm{difficulty value} 10 Constitution check as a \\glossterm{standard action}.
         `,

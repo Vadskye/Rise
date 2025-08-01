@@ -536,7 +536,9 @@ export const polymorph: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, it takes \\damagerankone during your next action.
+        `,
+        injury: `
+          The target takes \\damagerankone during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -700,7 +702,9 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
-          If the target loses \\glossterm{hit points}, it becomes \\vulnerable to all damage as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes \\vulnerable to all damage as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
@@ -739,7 +743,9 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfour.
-          If the target loses hit points, it takes this damage again during your next action.
+        `,
+        injury: `
+          The target takes this damage again during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -759,7 +765,9 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.

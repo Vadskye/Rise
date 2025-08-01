@@ -31,7 +31,7 @@ By EA:
 A braced character gains a +2 bonus to all defenses.
 
 ### Empowered
-An empowered character rolls damage twice and keeps the higher result.
+An empowered character deals extra damage equal to its character rank.
 
 ### Enraged
 An enraged character must spend a standard action each round to attack.
