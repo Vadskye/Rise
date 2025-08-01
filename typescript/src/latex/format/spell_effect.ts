@@ -93,6 +93,7 @@ export function spellEffect(
     if (spell.attack) {
       assertEndsWithPeriod(spell.attack.targeting, spell.name);
       assertEndsWithPeriod(spell.attack.hit, spell.name);
+      assertEndsWithPeriod(spell.attack.injury, spell.name);
       assertEndsWithPeriod(spell.attack.crit, spell.name);
       assertHasCorrectGlance(spell.attack, spell.name);
       assertHasCorrectCrit(spell.attack, spell.name);
@@ -102,6 +103,7 @@ export function spellEffect(
         ${spell.attack.targeting.trim() + fatiguePointsText}%
         \\vspace{0.25em}
         \\hit ${spell.attack.hit.trim()}
+        ${spell.attack.injury ? `\\injury ${spell.attack.injury.trim()}` : ''}
         ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ''}
         ${spell.attack.missGlance ? '\\miss Half damage.' : ''}
         ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ''}
