@@ -208,7 +208,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 Many bardic performances require you to sustain the performance as a \glossterm{minor action}.
                 When you use a bardic performance ability again while you are already sustaining that same ability, you can increase the number of targets affected by your existing performance rather than starting a separate performance.
                 Sustaining that single performance allows the effect to continue on any number of targets.
-                Using a different bardic performance ability still requires a separate performance and a separate action to sustain that performance.
+                Using a different bardic performance ability would require starting a separate performance.
+                You can only sustain one bardic performance per round, even if you have multiple minor actions available.
 
                 If a target of a sustained bardic performance ability stop being able to see or hear you, depending on the nature of your performance, the effect ends for them as if you had stopped sustaining the performance.
                 However, targets do not stop being affected by your performance simply by travelling beyond the initial range of the bardic performance ability.
@@ -471,7 +472,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You gain a \plus1 bonus to your \glossterm{power}.
+                You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                 If you know at least five bardic performances, this bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
@@ -485,8 +486,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             // to active a second performance as a minor action while sustaining their previous
             // performance as a free action.
             description: r"
-                Once per round, you can \glossterm{sustain} one bardic performance as a \glossterm{free action} if it would normally require a \glossterm{minor action}.
-                You cannot sustain multiple instances of the same performance, but you can sustain two different performances.
+                Your bardic performances with the Sustain (minor) tag instead have the Sustain (free) tag.
+                You can still only sustain one bardic performance per round.
             ",
             modifiers: None,
         },
