@@ -501,13 +501,13 @@ Triple       : 40.22 = (52.5 dph * 0.60 hpr) + (52.5 dpc * 0.07 cpr) + (26.2 dpg
 Best attack: Extra Damage Bite
 
 #### Detailed attack results
-Accuracy     : 19.43 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.93 cdpr + 0.00 gdpr
-Certain      : 13.44 = (11.0 dph * 1.00 hpr) + (11.0 dpc * 0.22 cpr) + (5.5 dpg * 0.00 gpr) = 11.00 hdpr + 2.44 cdpr + 0.00 gdpr
-Extra        : 29.10 = (53.5 dph * 0.40 hpr) + (53.5 dpc * 0.04 cpr) + (26.8 dpg * 0.20 gpr) = 21.40 hdpr + 2.35 cdpr + 5.35 gdpr
-Power        : 26.81 = (35.0 dph * 0.60 hpr) + (35.0 dpc * 0.07 cpr) + (17.5 dpg * 0.20 gpr) = 21.00 hdpr + 2.31 cdpr + 3.50 gdpr
-Certain+     : 21.39 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.22 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 3.89 cdpr + 0.00 gdpr
-Power+       : 22.73 = (52.5 dph * 0.30 hpr) + (52.5 dpc * 0.03 cpr) + (26.2 dpg * 0.20 gpr) = 15.75 hdpr + 1.73 cdpr + 5.25 gdpr
-Triple       : 28.56 = (52.5 dph * 0.40 hpr) + (52.5 dpc * 0.04 cpr) + (26.2 dpg * 0.20 gpr) = 21.00 hdpr + 2.31 cdpr + 5.25 gdpr
+Accuracy     : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
+Certain      : 12.22 = (11.0 dph * 1.00 hpr) + (11.0 dpc * 0.11 cpr) + (5.5 dpg * 0.00 gpr) = 11.00 hdpr + 1.22 cdpr + 0.00 gdpr
+Extra        : 23.17 = (53.5 dph * 0.30 hpr) + (53.5 dpc * 0.03 cpr) + (26.8 dpg * 0.20 gpr) = 16.05 hdpr + 1.77 cdpr + 5.35 gdpr
+Power        : 22.93 = (35.0 dph * 0.50 hpr) + (35.0 dpc * 0.06 cpr) + (17.5 dpg * 0.20 gpr) = 17.50 hdpr + 1.93 cdpr + 3.50 gdpr
+Certain+     : 19.44 = (17.5 dph * 1.00 hpr) + (17.5 dpc * 0.11 cpr) + (8.8 dpg * 0.00 gpr) = 17.50 hdpr + 1.94 cdpr + 0.00 gdpr
+Power+       : 16.91 = (52.5 dph * 0.20 hpr) + (52.5 dpc * 0.02 cpr) + (26.2 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 5.25 gdpr
+Triple       : 22.73 = (52.5 dph * 0.30 hpr) + (52.5 dpc * 0.03 cpr) + (26.2 dpg * 0.20 gpr) = 15.75 hdpr + 1.73 cdpr + 5.25 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Extra Damage Bite
