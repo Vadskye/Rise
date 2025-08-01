@@ -241,9 +241,9 @@ HP/DR/Total: 184 / 128 / 312
 Points / Self-hit: 101 / 60%
 
 ### Ranger Longbow
-A/B/F/R/M: 19 / 14 / 15 / 20 / 13
+A/B/F/R/M: 20 / 15 / 16 / 21 / 14
 HP/DR/Total: 132 / 48 / 180
-Points / Self-hit: 100 / 60%
+Points / Self-hit: 106 / 50%
 
 ### Rogue Smallsword
 A/B/F/R/M: 20 / 13 / 13 / 21 / 13
