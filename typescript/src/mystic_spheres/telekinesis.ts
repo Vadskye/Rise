@@ -230,7 +230,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          You \\glossterm{knockback} each Large or smaller target that loses \\glossterm{hit points} up to 15 feet away from you.
+        `,
+        injury: `
+          If the target is Large or smaller, you \\glossterm{knockback} it up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
@@ -250,7 +252,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet away from you.
+        `,
+        injury: `
+          You \\glossterm{knockback} the target up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
@@ -269,7 +273,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix.
-          If the target loses \\glossterm{hit points}, you \\glossterm{knockback} it up to 15 feet away from you.
+        `,
+        injury: `
+          You \\glossterm{knockback} the target up to 15 feet away from you.
           This knockback distance is doubled if the target is Medium or smaller.
         `,
         missGlance: true,

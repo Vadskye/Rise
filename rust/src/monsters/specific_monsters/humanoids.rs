@@ -212,7 +212,8 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Fortitude against one creature within \medrange.
-                                \hit $dr1 damage. If the target loses hit points, it takes $dr1 damage again during the $name's next action.
+                                \hit $dr1 damage.
+                                \injury The target takes $dr1 damage again during the $name's next action.
                             ".to_string(),
                             is_magical: true,
                             name: "Pyrohemia".to_string(),

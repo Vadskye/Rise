@@ -185,7 +185,7 @@ impl StrikeAbility {
 
     fn ichor_infestation_details() -> String {
         r"
-            If the target loses hit points, it becomes infested with ichor as a \glossterm{condition}.
+            If the target is \glossterm{injured}, it becomes infested with ichor as a \glossterm{condition}.
             While infested with ichor, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
         ".to_string()
     }
@@ -285,7 +285,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
-                If the target loses hit points, it falls \prone.
+                \injury The target falls \prone.
                 This is a \abilitytag{Size-Based} effect.
             "
             .to_string(),
@@ -542,7 +542,7 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
-                If the target loses hit points, it takes damage from the strike again during the $name's next action.
+                \injury The target takes damage from the strike again during the $name's next action.
             "
             .to_string(),
             name: strike_prefix("Bloodletting", &weapon),
@@ -571,8 +571,8 @@ impl StrikeAbility {
         Self {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
-                Each creature that loses hit points from the strike is \slowed as a \glossterm{condition}.
                 \hit $fullweapondamage.
+                \injury The target becomes \slowed as a \glossterm{condition}.
             ".to_string(),
             name: strike_prefix("Hamstring --", &weapon),
             weapon,

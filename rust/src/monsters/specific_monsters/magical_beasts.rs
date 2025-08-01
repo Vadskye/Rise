@@ -90,7 +90,8 @@ pub fn magical_beasts() -> Vec<MonsterEntry> {
                 ActiveAbility::Strike(StrikeAbility {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
-                        \hit $fullweapondamage*2. If the target loses hit points, it becomes poisoned by frostweb spider venom.
+                        \hit $fullweapondamage*2.
+                        \injury The target becomes poisoned by frostweb spider venom.
                     ".to_string(),
                     is_magical: false,
                     name: "Venomous Bite".to_string(),

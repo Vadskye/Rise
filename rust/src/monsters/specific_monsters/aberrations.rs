@@ -39,7 +39,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
                         \hit $dr2 damage.
-                        Each creature that loses hit points from this damage is \stunned as a condition.
+                        \injury The target is \stunned as a condition.
                         \miss Half damage.
                     ".to_string(),
                     is_magical: true,
@@ -51,7 +51,8 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     ability_type: AbilityType::Normal,
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-                        \hit $dr4 damage. If the target loses hit points, it becomes \stunned as a \glossterm{condition}.
+                        \hit $dr4 damage.
+                        \injury The target becomes \stunned as a \glossterm{condition}.
                     ".to_string(),
                     is_magical: true,
                     name: "Mind Crush".to_string(),
@@ -63,7 +64,8 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
                         The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-                        \hit $dr2l damage. If the target loses hit points, it is poisoned by aboleth slime.
+                        \hit $dr2l damage.
+                        \injury The target is poisoned by aboleth slime.
                     ".to_string(),
                     is_magical: true,
                     name: "Slime-Covered Body".to_string(),
@@ -93,7 +95,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy melee strike with a tentacle.
                         \hit $fullweapondamage.
-                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
+                        \injury The target is poisoned by aboleth slime.
                     ".to_string(),
                     name: "Slimy Tentacle".to_string(),
                     weapon: Weapon::tentacle(),
@@ -156,7 +158,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy attack vs. Mental against all creatures within a \largearea radius.
                         \hit $dr1 damage.
-                        Each creature that loses hit points is \stunned as a condition.
+                        \injury The target is \stunned as a condition.
                     ".to_string(),
                     is_magical: true,
                     name: "Gibber".to_string(),

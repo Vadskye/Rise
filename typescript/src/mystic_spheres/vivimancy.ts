@@ -30,7 +30,9 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           \\damageranktwo.
-          If the target loses \\glossterm{hit points}, you can increase your \\glossterm{fatigue level} by one. 
+        `,
+        injury: `
+          You can increase your \\glossterm{fatigue level} by one. 
           % dr1
           When you do, you regain 1d6 hit points +1 per 2 power at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
@@ -68,7 +70,9 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points} from this damage, you can increase your \\glossterm{fatigue level} by one. 
+        `,
+        injury: `
+          You can increase your \\glossterm{fatigue level} by one. 
           % dr2
           When you do, you regain 1d8 hit points +1 per 2 power at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
@@ -177,7 +181,9 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points} from this damage, you deal it an additional \\damagerankone.
+        `,
+        injury: `
+          You deal the target an additional \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.

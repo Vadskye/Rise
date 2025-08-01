@@ -131,7 +131,9 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `
           \\damageranktwo.
-          If the target is Large or smaller and loses \\glossterm{hit points} from this damage, it is knocked \\prone.
+        `,
+        injury: `
+          If the target is Large or smaller, it is knocked \\prone.
         `,
         targeting: `
           Make an attack vs. Armor against something within \\longrange.

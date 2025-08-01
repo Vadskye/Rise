@@ -222,7 +222,7 @@ fn thrown_attacks() -> Vec<Tool> {
             When you do, make an attack vs. Fortitude against everything in a \smallarea radius within \shortrange.
             Your minimum accuracy is $consumableaccuracy.
             \hit $dr1l damage.
-            Each creature that loses \glossterm<hit points> is \stunned as a \glossterm<condition>.
+            \injury The target is \stunned as a \glossterm<condition>.
             \miss Half damage, and creatures are not stunned.
         ".to_string(),
         tags: vec![AbilityTag::Electricity],
@@ -235,7 +235,7 @@ fn thrown_attacks() -> Vec<Tool> {
             // add +1 rank for t2 area instead of t1, so rank 7 item
             ItemUpgrade::new(6, "Throw to deal $dr5l damage in an area", r"
                 The minimum accuracy increases to $consumableaccuracy, and the damage increases to $dr5l.
-                In addition, each creature that takes damage from the hit is stunned, even if it does not lose hit points.
+                In addition, each creature that takes damage from the hit is stunned, even if it was not injured.
             "),
         ],
         ..alchemical_item()
@@ -306,7 +306,7 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr2l damage.
-            If the target loses \glossterm{hit points}, it becomes \slowed as a \glossterm{condition}.
+            \injury The target becomes \slowed as a \glossterm{condition}.
         ".to_string(),
         tags: vec![AbilityTag::Cold],
         upgrades: vec![

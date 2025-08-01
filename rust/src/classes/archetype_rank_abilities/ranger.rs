@@ -401,7 +401,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{4} On a hit, the target is \glossterm{briefly} \slowed.
                     \rank{5} The double damage applies if it moved away from you since the start of the previous round.
-                    \rank{6} If it loses hit points, the target is also slowed as a \glossterm{condition}.
+                    \rank{6} If the target is \glossterm{injured} by the strike, it is also slowed as a \glossterm{condition}.
                     \rank{7} The strike always deals double damage, and it deals triple damage if the target moved away from you since the start of the previous round.
                 \end{activeability}
             ",

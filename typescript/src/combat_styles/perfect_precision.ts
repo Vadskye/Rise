@@ -53,7 +53,6 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If it target loses hit points, you gain a +4 accuracy bonus with contact-based and injury-based poisons delivered with the strike.
       `,
       rank: 1,
       roles: ['softener'],
@@ -201,7 +200,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If you get a \\glossterm{critical hit} and the target loses \\glossterm{hit points}, it becomes \\slowed as a \\glossterm{condition}.
+        \\injury If you get a \\glossterm{critical hit}, the target becomes \\slowed as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['maim'],

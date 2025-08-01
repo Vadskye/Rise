@@ -161,7 +161,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target loses hit points, it becomes \\stunned as a \\glossterm{condition}.
+        \\injury The target becomes \\stunned as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 3,
@@ -172,7 +172,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        \\hit If the target loses hit points and your attack result also hits its Fortitude and Mental defenses, it becomes \\confused as a \\glossterm{condition}.
+        \\injury If your attack result hits the target's Fortitude and Mental defenses, it becomes \\confused as a \\glossterm{condition}.
       `,
       roles: ['maim'],
       rank: 7,
@@ -264,7 +264,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target loses \\glossterm{hit points} and your attack result also hits its Brawn defense, you \\glossterm{knockback} it 15 feet.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{knockback} it 15 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
@@ -277,7 +277,7 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\hit If the target loses \\glossterm{hit points} and your attack result also hits its Brawn defense, you \\glossterm{knockback} it 30 feet.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{knockback} it 30 feet.
         If you are \\empowered, this knockback distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,

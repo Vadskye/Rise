@@ -155,7 +155,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your maximum \glossterm{damage resistance}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} At the end of each round, if you dealt damage to a creature that caused it to lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
+                    \subcf{Covenant of Bloodsharing} At the end of each round, if you \glossterm{injured} a creature during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
                     In exchange, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
 
@@ -623,7 +623,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
                 {
                     \subcf{Devil -- Tormenting Spell} Each creature hit by the spell becomes tormented by the spell as a \glossterm{condition}.
-                    If it loses hit points while it is tormented, the spell \glossterm{repeats} on that creature, and all instances of the condition are removed.
+                    If it is \glossterm{injured} while it is tormented, the spell \glossterm{repeats} on that creature, and all instances of the condition are removed.
                     You gain a \plus2 accuracy bonus with the repeat for each additional instance of this condition, but the spell still only repeats once.
 
                     \subcf{Fae -- Hidden Spell} The spell does not have \glossterm{verbal components} or \glossterm{somatic components}.
