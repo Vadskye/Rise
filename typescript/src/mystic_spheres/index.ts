@@ -71,7 +71,7 @@ export interface BaseSpellLike {
   name: string;
   narrative?: string;
   // TODO: make this mandatory
-  roles?: AbilityRole[];
+  roles: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'poison' | Record<string, string>;
   tableText?: string;
   tags?: string[];
@@ -80,10 +80,8 @@ export interface BaseSpellLike {
     | 'Attune (deep)'
     | 'Attune (deep, target)'
     | 'Attune (target)'
-    | 'Sustain (free)'
     | 'Sustain (minor)'
     | 'Sustain (standard)'
-    | 'Sustain (attuneable, free)'
     | 'Sustain (attuneable, minor)'
     | 'Sustain (attuneable, standard)';
 }

@@ -47,7 +47,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, free)',
+      type: 'Sustain (attuneable, minor)',
     },
     {
       name: 'Desperate Shieldwall',
@@ -334,11 +334,11 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: 'forge',
         exceptThat:
-          'you can only create a weapon, and this spell has the \\atSustain (free) tag instead of the \\atAttune tag.',
+          'you can only create a weapon, and this spell has the \\atSustain (attuneable, minor) tag instead of the \\atAttune tag.',
       },
       rank: 1,
       tags: ['Manifestation'],
-      type: 'Sustain (free)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {

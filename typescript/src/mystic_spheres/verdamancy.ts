@@ -568,7 +568,7 @@ export const verdamancy: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the weapon (see \\pcref{Power}).
       `,
       rank: 1,
-      type: 'Sustain (attuneable, free)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {
