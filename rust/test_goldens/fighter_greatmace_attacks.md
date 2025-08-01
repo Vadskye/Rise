@@ -498,16 +498,16 @@ Power+       : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg
 Triple       : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg * 0.20 gpr) = 36.90 hdpr + 4.06 cdpr + 6.15 gdpr
 
 ### Defender: Ranger Longbow
-Best attack: Generic Triple Damage -- Greatmace
+Best attack: Powerful Greatmace
 
 #### Detailed attack results
-Accuracy     : 22.75 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.11 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 2.26 cdpr + 0.00 gdpr
-Certain      : 15.89 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 0.22 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 2.89 cdpr + 0.00 gdpr
-Extra        : 30.74 = (56.5 dph * 0.40 hpr) + (56.5 dpc * 0.04 cpr) + (28.2 dpg * 0.20 gpr) = 22.60 hdpr + 2.49 cdpr + 5.65 gdpr
-Power        : 31.41 = (41.0 dph * 0.60 hpr) + (41.0 dpc * 0.07 cpr) + (20.5 dpg * 0.20 gpr) = 24.60 hdpr + 2.71 cdpr + 4.10 gdpr
-Certain+     : 25.05 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.22 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 4.55 cdpr + 0.00 gdpr
-Power+       : 26.63 = (61.5 dph * 0.30 hpr) + (61.5 dpc * 0.03 cpr) + (30.8 dpg * 0.20 gpr) = 18.45 hdpr + 2.03 cdpr + 6.15 gdpr
-Triple       : 33.46 = (61.5 dph * 0.40 hpr) + (61.5 dpc * 0.04 cpr) + (30.8 dpg * 0.20 gpr) = 24.60 hdpr + 2.71 cdpr + 6.15 gdpr
+Accuracy     : 21.50 = (20.5 dph * 0.90 hpr) + (20.5 dpc * 0.10 cpr) + (10.2 dpg * 0.10 gpr) = 18.45 hdpr + 2.03 cdpr + 1.02 gdpr
+Certain      : 14.44 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 0.11 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 1.44 cdpr + 0.00 gdpr
+Extra        : 24.46 = (56.5 dph * 0.30 hpr) + (56.5 dpc * 0.03 cpr) + (28.2 dpg * 0.20 gpr) = 16.95 hdpr + 1.86 cdpr + 5.65 gdpr
+Power        : 26.85 = (41.0 dph * 0.50 hpr) + (41.0 dpc * 0.06 cpr) + (20.5 dpg * 0.20 gpr) = 20.50 hdpr + 2.26 cdpr + 4.10 gdpr
+Certain+     : 22.78 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.11 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 2.28 cdpr + 0.00 gdpr
+Power+       : 19.80 = (61.5 dph * 0.20 hpr) + (61.5 dpc * 0.02 cpr) + (30.8 dpg * 0.20 gpr) = 12.30 hdpr + 1.35 cdpr + 6.15 gdpr
+Triple       : 26.63 = (61.5 dph * 0.30 hpr) + (61.5 dpc * 0.03 cpr) + (30.8 dpg * 0.20 gpr) = 18.45 hdpr + 2.03 cdpr + 6.15 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Powerful Greatmace

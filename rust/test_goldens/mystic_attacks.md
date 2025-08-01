@@ -409,10 +409,10 @@ Fort Bolt-   : 33.04 = (31.5 dph * 0.90 hpr) + (31.5 dpc * 0.10 cpr) + (15.8 dpg
 Best attack: Fort Bolt
 
 #### Detailed attack results
-Armor Bolt   : 37.92 = (49.5 dph * 0.60 hpr) + (49.5 dpc * 0.07 cpr) + (24.8 dpg * 0.20 gpr) = 29.70 hdpr + 3.27 cdpr + 4.95 gdpr
-Fort Bolt    : 54.95 = (49.5 dph * 1.00 hpr) + (49.5 dpc * 0.11 cpr) + (24.8 dpg * 0.00 gpr) = 49.50 hdpr + 5.45 cdpr + 0.00 gdpr
-Armor Bolt-  : 31.12 = (31.5 dph * 0.80 hpr) + (31.5 dpc * 0.09 cpr) + (15.8 dpg * 0.20 gpr) = 25.20 hdpr + 2.77 cdpr + 3.15 gdpr
-Fort Bolt-   : 38.49 = (31.5 dph * 1.00 hpr) + (31.5 dpc * 0.22 cpr) + (15.8 dpg * 0.00 gpr) = 31.50 hdpr + 6.99 cdpr + 0.00 gdpr
+Armor Bolt   : 32.42 = (49.5 dph * 0.50 hpr) + (49.5 dpc * 0.06 cpr) + (24.8 dpg * 0.20 gpr) = 24.75 hdpr + 2.72 cdpr + 4.95 gdpr
+Fort Bolt    : 51.93 = (49.5 dph * 0.90 hpr) + (49.5 dpc * 0.10 cpr) + (24.8 dpg * 0.10 gpr) = 44.55 hdpr + 4.90 cdpr + 2.47 gdpr
+Armor Bolt-  : 27.63 = (31.5 dph * 0.70 hpr) + (31.5 dpc * 0.08 cpr) + (15.8 dpg * 0.20 gpr) = 22.05 hdpr + 2.43 cdpr + 3.15 gdpr
+Fort Bolt-   : 35.00 = (31.5 dph * 1.00 hpr) + (31.5 dpc * 0.11 cpr) + (15.8 dpg * 0.00 gpr) = 31.50 hdpr + 3.50 cdpr + 0.00 gdpr
 
 ### Defender: Rogue Smallsword
 Best attack: Fort Bolt
