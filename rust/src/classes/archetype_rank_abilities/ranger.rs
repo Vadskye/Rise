@@ -251,13 +251,11 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{attuneability}*{Quarry}{\abilitytag{Sustain} (attuneable, free), \abilitytag{Subtle}, \atSwift}
-                    \abilityusagetime \glossterm{Standard action}.
+                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
-                    You and your \glossterm{allies} within the same range are called your hunting party.
-                    Your hunting party gains a \plus1 \glossterm{accuracy} bonus against your quarry.
-                    In addition, you gain a \plus5 bonus to checks you make to follow tracks left by your quarry.
+                    You gain a \plus1 \glossterm{accuracy} bonus against your quarry, and you gain a \plus5 bonus to checks you make to follow tracks left by your quarry.
                 \end{attuneability}
             ",
             // TODO: this also affects allies
@@ -266,33 +264,15 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ]),
         },
         RankAbility {
-            complexity: 0,
-            name: "Quarry+",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You can use this ability as a \glossterm{minor action}.
-                When you do, you increase your \glossterm{fatigue level} by one.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Quarry++",
-            is_magical: false,
-            rank: 7,
-            description: r"
-                You can use this ability as a \glossterm{free action} without increasing your fatigue level.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
             complexity: 3,
             name: "Hunting Styles",
             is_magical: false,
             rank: 2,
             description: r"
-                You learn specific hunting styles to defeat particular quarries.
+                You learn specific hunting styles to defeat specific quarries.
+                While your \ability{quarry} ability is active, you and your \glossterm{allies} who can see or hear you are called your hunting party.
+                Hunting styles improve your hunting party's ability to fight your quarry.
+
                 Choose two hunting styles from the list below.
                 You can also spend \glossterm{insight points} to learn one additional \textit{hunting style} per \glossterm{insight point}.
                 When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
@@ -308,22 +288,22 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
                     \end{magicalactiveability}
 
+                    \begin{magicalactiveability}{Bring Down}
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                        \rankline
+                        If your quarry is \glossterm{midair}, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party.
+
+                        \rankline
+                        \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point this round, even if it is currently grounded.
+                    \end{magicalactiveability}
+
                     \begin{activeability}{Coordinated Stealth}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                         \rankline
-                        \rank{5} The Awareness penalty increases to \minus6.
-                    \end{activeability}
-
-                    \begin{activeability}{Cover Weaknesses}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
-                        \rankline
-                        The accuracy bonus against your quarry is replaced with a \plus1 bonus to Armor and Reflex defenses against your quarry's attacks.
-
-                        \rankline
-                        \rank{5} The defense bonus applies to all defenses.
+                        \rank{5} The penalty increases to \minus6.
                     \end{activeability}
 
                     \begin{activeability}{Decoy}
@@ -332,44 +312,44 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         If you are adjacent to your quarry, it is \goaded by you.
 
                         \rankline
-                        \rank{5} This effect instead applies if your quarry is within \medrange of you.
+                        \rank{5} This effect instead applies if your quarry is within \shortrange of you.
                     \end{activeability}
 
-                    \begin{activeability}{Martial Suppression}
+                    \begin{magicalactiveability}{Distraction}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
-                        As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 accuracy penalty with \glossterm{mundane} attacks.
+                        You do not gain the normal accuracy bonus against your quarry.
+                        If you are adjacent to your quarry, the rest of your hunting party gains a \plus1 accuracy bonus against it.
 
                         \rankline
-                        \rank{5} The effect instead applies if your quarry is adjacent to any member of your hunting party.
-                    \end{activeability}
-
-                    \begin{activeability}{Mystic Suppression}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
-                        \rankline
-                        As long as your quarry is adjacent to at least two members of your hunting party, it takes a \minus1 penalty to \glossterm{accuracy} with \magical attacks.
-
-                        \rankline
-                        \rank{5} The effect instead applies if your quarry is adjacent to any member of your hunting party.
-                    \end{activeability}
-
-                    \begin{activeability}{Solo Hunter}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
-                        \rankline
-                        Your hunting party other than you gains no benefit from your \textit{quarry} ability.
-                        In exchange, you gain a \plus1 bonus to your defenses against your quarry.
-
-                        \rankline
-                        \rank{5} The defense bonus increases to \plus2.
-                    \end{activeability}
+                        \rank{5} The accuracy bonus applies as long as you are within \medrange of your quarry.
+                    \end{magicalactiveability}
 
                     \begin{activeability}{Swarm Hunter}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
-                        When you use your \textit{quarry} ability, you can choose an additional target as your quarry.
+                        When you use your \textit{quarry} ability, you can choose two additional targets as your quarry.
 
                         \rankline
                         \rank{5} The number of additional targets increases to four.
+                    \end{activeability}
+
+                    \begin{magicalactiveability}{Titanslayer}
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                        \rankline
+                        If your quarry is Gargantuan or larger, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party that are adjacent to it.
+
+                        \rankline
+                        \rank{5} The accuracy bonus applies regardless of distance from your quarry.
+                    \end{magicalactiveability}
+
+                    \begin{activeability}{Vigilant}
+                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                        \rankline
+                        Your quarry takes a \minus4 penalty to Sleight of Hand and Stealth checks against members of your hunting party.
+
+                        \rankline
+                        \rank{5} The penalty increases to \minus6.
                     \end{activeability}
 
                     \begin{activeability}{Wolfpack}
@@ -411,7 +391,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Agile Hunter",
             is_magical: false,
-            rank: 5,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
@@ -421,11 +401,32 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Tracking Expert",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 The bonus from your \ability{quarry} ability to follow tracks from your quarry increases to \plus20.
                 In addition, whenever your quarry \glossterm{teleports}, you automatically know the distance and direction of the teleport if you can see them.
                 If you are following their tracks, you can track where they teleported to in the same way.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Experienced Hunter",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                You also gain a \plus1 bonus to your \glossterm{accuracy}.
+            ",
+            modifiers: Some(vec![Modifier::AllDefenses(1)]),
+        },
+        RankAbility {
+            complexity: 0,
+            name: "Apex Hunter",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                While your \ability{quarry} ability is active, if your quarry is aware of you, it is \frightened of you.
+                This is an \atEmotion effect.
             ",
             modifiers: None,
         },
