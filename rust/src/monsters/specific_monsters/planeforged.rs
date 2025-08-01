@@ -913,7 +913,8 @@ fn add_formians(monsters: &mut Vec<MonsterEntry>) {
                         ActiveAbility::Strike(StrikeAbility {
                             effect: r"
                                 The $name makes a $accuracy attack vs. Armor with its $weapon.
-                                \hit $fullweapondamage. If the target loses hit points, it becomes poisoned by drone venom.
+                                \hit $fullweapondamage.
+                                \injury The target becomes poisoned by drone venom.
                             ".to_string(),
                             is_magical: false,
                             name: "Poisonous Stinger".to_string(),

@@ -105,7 +105,7 @@ pub fn add_ghouls(monsters: &mut Vec<MonsterEntry>) {
                             effect: r"
                                 The $name makes a $accuracy melee strike with its bite.
                                 \hit $fullweapondamage.
-                                If the target loses hit points and the attack result beats its Fortitude defense, the target becomes \vulnerable to all damage as a condition.
+                                \injury If the attack result beats the target's Fortitude defense, the target becomes \vulnerable to all damage as a condition.
                             ".to_string(),
                             name: "Flesh-Rending Bite".to_string(),
                             weapon: Weapon::bite(),
@@ -230,7 +230,7 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                     This damage is repeated at the during each subsequent \glossterm{action phase} that the vampire spends in true sunlight.
                     \parhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
                       This can allow careful observers to identify vampires.
-                    \parhead{Wooden Stakes} If a vampire loses hit points from a critical strike using a wooden stake, the stake becomes impaled in its heart.
+                    \parhead{Wooden Stakes} If a vampire is \glossterm{injured} by a critical strike using a wooden stake, the stake becomes impaled in its heart.
                     The vampire becomes \paralyzed until the stake is removed.
                     A wooden stake is a \weapontag{Light} improvised weapon that deals 1d4 damage.
                 ".to_string(),

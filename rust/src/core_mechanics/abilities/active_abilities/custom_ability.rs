@@ -420,7 +420,7 @@ impl CustomAbility {
             effect: "
                 The $name makes a $accuracy attack vs. Fortitude against one living creature within \\shortrange.
                 \\hit $dr1 damage.
-                If the target loses hit points from this damage, it takes the damage again.
+                \\injury The target takes an additional $dr1 damage.
             ".to_string(),
             is_magical: true,
             name: "Inflict Wound".to_string(),

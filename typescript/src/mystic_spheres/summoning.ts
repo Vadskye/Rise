@@ -154,7 +154,9 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          If the target loses \\glossterm{hit points}, this effect \\glossterm{pushes} it up to 15 feet horizontally away from you.
+        `,
+        injury: `
+          You \\glossterm{push} the target up to 15 feet horizontally away from you.
           If this push is blocked by an obstacle, the target takes 1d6 damage.
         `,
         targeting: `
@@ -407,7 +409,9 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damagerankone.
-          Each creature that loses \\glossterm{hit points} is \\stunned as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target is \\stunned as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
@@ -476,7 +480,9 @@ export const summoning: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix, and the target is \\glossterm{briefly} \\slowed.
-          If the target loses \\glossterm{hit points}, it is also slowed as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target is also slowed as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `

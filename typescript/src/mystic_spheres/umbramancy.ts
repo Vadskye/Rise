@@ -153,7 +153,10 @@ export const umbramancy: MysticSphere = {
         // condition. You can get 0.6 EA on a melee debuff at r1.
         // Melee range is drX+2, and debuff is drX+1, so shadowed lets us keep drX+1.
         hit: `
-          \\damageranktwolow. If the target loses hit points, it treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranktwolow.
+        `,
+        injury: `
+          The target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -377,7 +380,9 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksevenlow.
-          If the target loses \\glossterm{hit points} from this damage, it is \\glossterm{briefly} \\slowed.
+        `,
+        injury: `
+          The target becomes \\glossterm{briefly} \\slowed.
           If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
           It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
           During this movement, its movement is not reduced by being slowed.

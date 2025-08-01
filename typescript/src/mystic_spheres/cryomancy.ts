@@ -41,7 +41,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           \\damagerankthree.
-          If the target loses hit points, it slowly begins freezing as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target slowly begins freezing as a \\glossterm{condition}.
           After your action next round, it becomes \\slowed.
           If you spent an ice crystal, it becomes \\slowed immediately.
         `,
@@ -63,7 +65,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           \\damagerankfive.
-          If the target loses hit points, it becomes \\slowed as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -245,7 +249,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
 
-          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
+          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 2,
@@ -264,7 +268,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
 
-          If any Medium or larger creatures lose \\glossterm{hit points} from this spell, you gain an \\glossterm{ice crystal}.
+          If you \\glossterm{injure} any Medium or larger creatures with this spell, you gain an \\glossterm{ice crystal}.
         `,
       },
       rank: 6,
@@ -610,7 +614,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
         \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
-        If it also loses \\glossterm{hit points} from the strike, it is also slowed as a \\glossterm{condition}.
+        \\injury The target is also slowed as a \\glossterm{condition}.
       `,
       rank: 7,
       roles: ['burst', 'maim'],

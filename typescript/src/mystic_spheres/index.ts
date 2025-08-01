@@ -172,6 +172,7 @@ export interface SpellLike extends BaseSpellLike {
 export interface StandardAttack {
   crit?: string;
   hit: string;
+  injury?: string;
   missGlance?: boolean;
   miss?: string;
   targeting: string;

@@ -90,7 +90,7 @@ impl DamageEffect {
         let lose_hp_effect = if let Some(ref effect) = self.lose_hp_effect {
             format!(
                 "
-                    Each creature that loses \\glossterm<hit points> from this attack is {effect}
+                    \\injury The target is {effect}
                 ",
                 effect = effect.description(),
             )
@@ -101,7 +101,7 @@ impl DamageEffect {
         let vampiric_healing = if let Some(ref effect) = self.vampiric_healing {
             format!(
                 "
-                    If any creature loses \\glossterm<hit points> from this attack, {regain} {effect}
+                    If any creature is \\glossterm<injured> by this attack, {regain} {effect}
                     This ability does not have the \\abilitytag<Swift> tag, so it resolves after attacks during the current phase.
                 ",
                 effect = effect.description(attacker),
@@ -111,10 +111,12 @@ impl DamageEffect {
             "".to_string()
         };
 
+        // TODO: Convert lose_hp_effect to use \\injury style
         return format!(
             "
                 {dice_pool} damage.
-                {take_damage_effect} {lose_hp_effect} {extra_defense_effect} {vampiric_healing}
+                {take_damage_effect} {extra_defense_effect} {vampiric_healing}
+                {lose_hp_effect} 
             ",
             dice_pool = self
                 .calc_damage_dice(attacker, is_magical, is_strike)

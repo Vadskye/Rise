@@ -382,7 +382,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       attack: {
         hit: `
           \\damagerankfive, and the target is \\glossterm{briefly} \\slowed.
-          If the target loses \\glossterm{hit points} and it was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
+        `,
+        injury: `
+          If the target was already slowed by this ability, it is also swallowed by the earth as a \\glossterm{condition}.
           While it is swallowed by the earth, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
           During each of your subsequent actions, it takes \\damagerankfive as the earth grinds it into paste.
 

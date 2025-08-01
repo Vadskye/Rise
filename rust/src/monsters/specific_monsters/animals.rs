@@ -279,7 +279,7 @@ pub fn animals() -> Vec<MonsterEntry> {
                     effect: r"
                         The $name makes a $accuracy strike vs. Armor with its $weapon.
                         \hit $damage damage.
-                        Each creature that loses hit points from this damage is poisoned by giant wasp venom.
+                        \injury The target is poisoned by giant wasp venom.
                     ".to_string(),
                     name: "Venomous Stinger".to_string(),
                     weapon: StandardWeapon::MonsterStinger.weapon(),

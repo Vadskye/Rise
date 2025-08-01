@@ -325,7 +325,9 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damageranktwo.
-          If the target loses \\glossterm{hit points} from this damage, it is \\glossterm{teleported} to a random safe place in the Astral Plane.
+        `,
+        injury: `
+          The target is \\glossterm{teleported} to a random safe place in the Astral Plane.
           At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
           After it returns, it becomes immune to being teleported in this way until it finishes a \\glossterm{short rest}.
         `,
@@ -355,7 +357,9 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          If the target loses hit points, it becomes \\frightened by you as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes \\frightened by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
@@ -371,7 +375,9 @@ export const channelDivinity: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven.
-          If the target loses hit points, it becomes \\panicked by you as a \\glossterm{condition}.
+        `,
+        injury: `
+          The target becomes \\panicked by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\shortrange.
