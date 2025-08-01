@@ -904,7 +904,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: "Rising Tide",
 
       effect: `
-        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
+        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\focused this round.
@@ -919,7 +919,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: "Empowered Rising Tide",
 
       effect: `
-        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you as it builds up speed.
+        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\primed this round.
