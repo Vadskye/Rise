@@ -2964,4 +2964,29 @@ export const rituals: Ritual[] = [
     tags: ['Sustain (attuneable, minor)'],
     spheres: ['Aeromancy', 'Aquamancy', 'Pyromancy', 'Terramancy'],
   },
+
+  {
+    name: 'Disenchant',
+
+    castingTime: "one hour",
+    effect: `
+      Choose one \\glossterm{unattended} \\magical item you \\glossterm{touch}.
+      If the item is \\glossterm{item rank} 1 (4 gp), it disintegrates into magical dust, which permanently \\glossterm{destroys} the item.
+      The dust has a value of \\glossterm{item rank} 0 (1 gp), and is suitable for use in powerful rituals.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    scaling: {
+      2: 'The item must be rank 2 (20 gp), and it leaves behind magical dust with a value of rank 1 (4 gp).',
+      3: 'The item must be rank 3 (100 gp), and it leaves behind magical dust with a value of rank 2 (20 gp).',
+      4: 'The item must be rank 4 (500 gp), and it leaves behind magical dust with a value of rank 3 (100 gp).',
+      5: 'The item must be rank 5 (2,500 gp), and it leaves behind magical dust with a value of rank 4 (500 gp).',
+      6: 'The item must be rank 6 (12,500 gp), and it leaves behind magical dust with a value of rank 5 (2,500 gp).',
+      7: 'The item must be rank 7 (62,500 gp), and it leaves behind magical dust with a value of rank 6 (12,500 gp).',
+    },
+    sphereEffects: {
+      Thaumaturgy: 'The amount of dust left behind is doubled.',
+    },
+    spheres: ['Thaumaturgy', 'Universal'],
+  },
 ];
