@@ -26,17 +26,17 @@ fighter: resource trained skill by 3
 ## Level 10
 
 ### Damage Absorption
-HP: 42 = (High progression: 29 <level> + 9 <con> + 4 <modifier>) * 0 <elite multiplier>
+HP: 45 = (High progression: 29 <level> + 12 <con> + 4 <modifier>) * 0 <elite multiplier>
 DR: 44 = (36 <armor> + 8 <modifier> + 0 <monster progression>) * 0 <elite multiplier>
 
 ### Description
 Fighter 10
-AP 4, FT 8, IP 3, Skills 3
-HP 42, DR 44
-AD 13, Brn 13, Fort 11, Ref 8, Ment 10
+AP 4, FT 9, IP 3, Skills 3
+HP 45, DR 44
+AD 13, Brn 14, Fort 12, Ref 8, Ment 10
 Generic Accuracy Broadsword +9 (1d6+6 damage.); Certain Broadsword +11 (1d6+3 damage.); Powerful Broadsword +5 (2d6+12 damage.); Extra Damage Broadsword +7 (1d6+11 damage.); Broadsword +6 (1d6+6 damage.)
-Attr: Str 5, Dex 0, Con 3, Int 0, Per 2, Wil 0
-Power: 5✨/10
+Attr: Str 6, Dex 0, Con 4, Int 0, Per 2, Wil 0
+Power: 5✨/11
 
 ### Modifiers
 Maneuvers: maneuver Generic Accuracy
@@ -48,8 +48,8 @@ Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 fighter: defense armor by 1
 fighter: resource trained skill by 3
-attribute scaling with level: attribute strength by 1
-attribute scaling with level: attribute constitution by 1
+attribute scaling with level: attribute strength by 2
+attribute scaling with level: attribute constitution by 2
 magic: strike damage dice 1
 magic: DR 8
 magic: HP 4

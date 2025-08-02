@@ -67,65 +67,65 @@ Points / Self-hit: 46 / 50%
 ## Level 10
 
 ### Brute
-A/B/F/R/M: 11 / 13 / 11 / 11 / 9
-HP/DR/Total: 58 / 22 / 80
-Points / Self-hit: 66 / 60%
+A/B/F/R/M: 11 / 14 / 12 / 11 / 9
+HP/DR/Total: 63 / 22 / 85
+Points / Self-hit: 68 / 60%
 
 ### Leader
-A/B/F/R/M: 11 / 11 / 11 / 11 / 11
-HP/DR/Total: 48 / 29 / 77
-Points / Self-hit: 66 / 70%
+A/B/F/R/M: 11 / 11 / 12 / 11 / 12
+HP/DR/Total: 52 / 29 / 81
+Points / Self-hit: 68 / 70%
 
 ### Mystic
-A/B/F/R/M: 9 / 9 / 11 / 11 / 14
+A/B/F/R/M: 9 / 9 / 11 / 11 / 15
 HP/DR/Total: 35 / 36 / 71
-Points / Self-hit: 63 / 90%
+Points / Self-hit: 64 / 100%
 
 ### Skirmisher
-A/B/F/R/M: 12 / 11 / 9 / 13 / 10
+A/B/F/R/M: 13 / 11 / 9 / 14 / 10
 HP/DR/Total: 36 / 22 / 58
-Points / Self-hit: 67 / 60%
+Points / Self-hit: 70 / 60%
 
 ### Sniper
-A/B/F/R/M: 10 / 10 / 9 / 12 / 11
+A/B/F/R/M: 10 / 11 / 9 / 12 / 11
 HP/DR/Total: 29 / 22 / 51
-Points / Self-hit: 62 / 90%
+Points / Self-hit: 63 / 100%
 
 ### Warrior
-A/B/F/R/M: 11 / 10 / 13 / 9 / 10
-HP/DR/Total: 56 / 43 / 99
-Points / Self-hit: 64 / 60%
+A/B/F/R/M: 11 / 11 / 14 / 9 / 10
+HP/DR/Total: 60 / 43 / 103
+Points / Self-hit: 66 / 60%
 
 ## Level 15
 
 ### Brute
 A/B/F/R/M: 14 / 17 / 15 / 14 / 12
-HP/DR/Total: 120 / 42 / 162
+HP/DR/Total: 130 / 42 / 172
 Points / Self-hit: 86 / 50%
 
 ### Leader
 A/B/F/R/M: 14 / 14 / 15 / 14 / 15
-HP/DR/Total: 98 / 52 / 150
+HP/DR/Total: 106 / 52 / 158
 Points / Self-hit: 86 / 60%
 
 ### Mystic
 A/B/F/R/M: 12 / 12 / 14 / 14 / 18
 HP/DR/Total: 64 / 66 / 130
-Points / Self-hit: 82 / 90%
+Points / Self-hit: 82 / 100%
 
 ### Skirmisher
 A/B/F/R/M: 16 / 14 / 12 / 17 / 13
 HP/DR/Total: 66 / 42 / 108
-Points / Self-hit: 88 / 50%
+Points / Self-hit: 88 / 60%
 
 ### Sniper
 A/B/F/R/M: 13 / 14 / 12 / 15 / 14
 HP/DR/Total: 52 / 42 / 94
-Points / Self-hit: 81 / 90%
+Points / Self-hit: 81 / 100%
 
 ### Warrior
 A/B/F/R/M: 14 / 14 / 17 / 12 / 13
-HP/DR/Total: 114 / 80 / 194
+HP/DR/Total: 122 / 80 / 202
 Points / Self-hit: 84 / 50%
 
 ## Level 20
