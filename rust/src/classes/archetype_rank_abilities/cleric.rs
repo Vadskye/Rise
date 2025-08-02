@@ -433,6 +433,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Whenever you use a \magical or \atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
+                If you do, it gains the \atAuditory tag.
                 The standard areas are \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
             ",
             modifiers: None,
