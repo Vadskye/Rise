@@ -1828,15 +1828,13 @@ impl Class {
 // This should match the Character Advancement and Gaining Levels table
 fn universal_character_progression_at_level(level: i32) -> String {
     match level {
-        5 => "+1 to two attributes",
+        3 => "+1 to two attributes",
         6 => "Legacy item: rank 3",
-        9 => "Legacy item: ranks 3 and 3",
-        11 => "+1 to two attributes",
-        12 => "Legacy item: ranks 5 and 3",
-        15 => "Legacy item: ranks 5 and 5",
-        17 => "+1 to two attributes",
-        18 => "Legacy item: ranks 7 and 5",
-        21 => "Legacy item: ranks 7 and 7",
+        9 => "+1 to two attributes",
+        12 => "Legacy item: rank 5",
+        15 => "+1 to two attributes",
+        18 => "Legacy item: ranks 7",
+        21 => "+1 to two attributes",
         _ => r"\tdash",
     }.to_string()
 }
