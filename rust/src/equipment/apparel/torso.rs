@@ -128,7 +128,7 @@ fn belts() -> Vec<Apparel> {
             When you do, your size increases by one \glossterm<size category>, to a maximum of Huge.
             This effect lasts until you \glossterm{dismiss} it.
 
-            Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -5 penalty to Stealth.
+            Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm<weight limits>, a -1 penalty to your Reflex defense, and a -4 penalty to your Stealth skill.
             It also increases your \glossterm<base speed> (see \pcref<Size Categories>).
             This item makes you slightly clumsy in your new size.
             You take a -10 foot penalty to your speed with all of your \glossterm{movement modes}.
@@ -145,7 +145,7 @@ fn belts() -> Vec<Apparel> {
             When you do, your size decreases by one \glossterm<size category>, to a minimum of Small.
             This effect lasts until you \glossterm{dismiss} it.
 
-            Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +5 bonus to Stealth.
+            Reducing your size gives you a -1 penalty to Strength for the purpose of determining your \glossterm<weight limits>, a +1 bonus to your Reflex defense, and a +4 bonus to your Stealth skill.
             It also reduces your \glossterm<base speed> (see \pcref<Size Categories>).
         "),
         ..Apparel::default()

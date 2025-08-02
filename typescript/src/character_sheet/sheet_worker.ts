@@ -2505,7 +2505,7 @@ function handleSize() {
       }
 
       const reflexDefense = -stepsFromMedium;
-      const stealth = -stepsFromMedium * 5;
+      const stealth = -stepsFromMedium * 4;
 
       setAttrs({
         base_speed: baseSpeed,

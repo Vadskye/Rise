@@ -136,7 +136,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Your size decreases by one \\glossterm{size category}, to a minimum of Small.
-        Reducing your size gives you a -1 Brawn defense penalty, -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 Reflex defense bonus, and a +5 bonus to Stealth.
+        Reducing your size gives you a -1 Brawn defense penalty, -1 penalty to Strength for the purpose of determining your \\glossterm{weight limits}, a +1 Reflex defense bonus, and a +4 bonus to your Stealth skill.
         It also reduces your \\glossterm{base speed} (see \\pcref{Size Categories}).
       `,
       rank: 2,
@@ -177,7 +177,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Your size increases by one \\glossterm{size category}, to a maximum of Huge.
-        Increasing your size gives you a +1 Brawn defense bonus, a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 Reflex defense penalty, and a -5 penalty to Stealth.
+        Increasing your size gives you a +1 Brawn defense bonus, a +1 bonus to Strength for the purpose of determining your \\glossterm{weight limits}, a -1 Reflex defense penalty, and a -4 penalty to your Stealth skill.
         It also increases your \\glossterm{base speed} (see \\pcref{Size Categories}).
 
         This spell makes you slightly clumsy in your new size.
