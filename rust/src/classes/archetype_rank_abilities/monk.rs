@@ -469,21 +469,21 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{magicalactiveability}{Invested Blow}
                     \abilityusagetime Standard action.
-                    \abilitycost One \glossterm{fatigue level} (see text).
+                    \abilitycost Two \glossterm{fatigue levels} (see text).
                     \rankline
                     Make a \glossterm{strike} that deals double damage.
                     The strike must target a single creature within \shortrange, with no secondary targets.
 
                     Whether or not the target takes damage, it becomes invested with your ki.
                     This does not cause it any ill effects.
-                    If it dies or falls unconscious, or you take a \glossterm{short rest}, your ki returns to you.
+                    If it dies or falls unconscious, or you finish a \glossterm{short rest}, your ki returns to you.
                     When it does, you reduce your \glossterm{fatigue level} by one.
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
-                    \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The strike deals triple damage instead of double damage.
-                    \rank{7} The accuracy bonus increases to +4.
+                    \rank{5} The strike deals 1d6 \glossterm{extra damage}.
+                    \rank{6} The extra damage increases to 2d6.
+                    \rank{7} The strike deals triple damage.
                 \end{magicalactiveability}
             ",
             modifiers: None,
