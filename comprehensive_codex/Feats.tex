@@ -275,7 +275,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[6]{Open Mind} You gain an additional \glossterm{insight point}.
 
     \magicalff[6]{Renounce Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-    Instead, you gain a \plus1 bonus to all \glossterm{defenses}.
+    Instead, you gain a \plus1 bonus to your non-Armor \glossterm{defenses}.
 
     \magicalff[12]{Renounce Legacy\plus} The defense bonus increases to \plus2.
 
@@ -361,7 +361,6 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
     Instead, if you choose weapons as your legacy item category, you always treat one weapon you wield as your legacy item.
-    You cannot choose a magical weapon or a weapon made of special materials as your legacy item in this way.
     If you wield more than one weapon at a time, you can choose which of your weapons is your legacy item as a \glossterm{free action} once per round.
 
     \magicalff[6]{Rapid Attunement} You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
@@ -959,7 +958,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
     If you chose a weapon, it is treated as cold iron, and you can choose to give attacks with it the \atCold tag.
-    If you chose body armor or a shield, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
+    If you chose an implement, you can choose to give all \magical abilities you use the \atCold tag.
+    Otherwise, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
@@ -983,12 +983,10 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: wording
     If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
 
-    \magicalff[12]{Ghostly Vitality} Your negative hit points must match the sum of your maximum \glossterm{hit points} and \glossterm{damage resistance} to inflict additional \glossterm{vital wounds} on you, rather than only matching your maximum hit points (see \pcref{Negative Hit Points}).
+    \magicalff[18]{Half Spirit} Your maximum hit points that you gain from your base class are halved.
+    You gain a bonus to your maximum damage resistance equal to the maximum hit points you lost in this way.
 
-    \magicalff[18]{Spectral Armament\plus} The effect of your \glossterm{legacy item} improves.
-    If you chose a weapon, whenever you make a melee \glossterm{strike}, you can make the strike against each target's Reflex defense in place of its Armor defense.
-    This has no effect on strikes that are not made against Armor defense.
-    If you chose body armor or a shield, you may use your Armor defense in place of your Reflex defense against all attacks.
+    \magicalff[18]{Ghostly Vitality} When your hit points become negative, your negative hit points must match the sum of your maximum \glossterm{hit points} and \glossterm{damage resistance} to inflict additional \glossterm{vital wounds} on you, rather than only matching your maximum hit points (see \pcref{Negative Hit Points}).
   \end{magicalfeat}
 
   \begin{feat}{Greatweapon Warrior}{Combat}
@@ -1218,7 +1216,6 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[6]{Legacy Written In Bone} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
     Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all \glossterm{natural weapons} you use.
-    If you attune to a magical weapon, it keeps its own magical effects instead of your chosen legacy item properties.
 
     \ff[12]{Forged in the Flame of Life} You gain a \plus1 bonus to your Constitution.
 
@@ -1474,23 +1471,17 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
     Instead, you gain a \plus1 bonus to your non-Armor \glossterm{defenses}.
-    This bonus increases to \plus2 at level 12 and to \plus3 at level 18.
 
     \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \smallarea radius from you uses a \magical ability as a standard action, the ability has a 20\% chance to fail with no effect.
     If that enemy's maximum rank is less than your maximum rank, this failure chance increases to 50\%.
     This cannot cause passive abilities, triggered abilities, or \glossterm{elite actions} to fail.
     Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
 
-    \ff[12]{Purge Magic}
-    \begin{activeability}{Purge Magic}
-      \abilityusagetime Standard action.
-      \rankline
-      Choose yourself or an \glossterm{ally} you \glossterm{touch}.
-      The target removes all \magical conditions affecting it.
-      If the target does not have the Null feat, it increases its \glossterm{fatigue level} by one.
-    \end{activeability}
+    \ff[12]{Personal Legacy\plus} The defense bonus increases to \plus2.
 
     \ff[18]{Mundane Resilience\plus} The bonuses from your \textit{mundane resilience} ability increase to twice your level.
+
+    \ff[18]{Personal Legacy\plus\plus} The defense bonus increases to \plus3.
 
     \ff[18]{True Null} You are immune to all \magical abilities.
   \end{feat}

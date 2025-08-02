@@ -1550,10 +1550,10 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   In addition, some irregular advancements happen at specific levels:
   \begin{raggeditemize}
+    \item At 3rd level, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
     \item At 4th level, and every 3 levels thereafter, your \glossterm{character rank} increases (see \pcref{Character Rank}).
-    \item At 5th, and every 6 levels thereafter, you increase any two of your \glossterm{attributes} by 1 (see \pcref{Attributes}).
     \item At 6th level, you gain a \glossterm{legacy item} (see \pcref{Legacy Items}).
-      Every 3 levels thereafter, your legacy item improves, as shown in \trefnp{Character Advancement and Gaining Levels}.
+      Every 6 levels thereafter, your legacy item improves, as shown in \trefnp{Character Advancement and Gaining Levels}.
   \end{raggeditemize}
 
   These effects are summarized in \trefnp{Character Advancement and Gaining Levels}, which also defines the experience required to gain each level.
@@ -1562,28 +1562,28 @@ You can either skim past terms you don't yet understand or look them up as you g
   \begin{dtable}
     \lcaption{Character Advancement and Gaining Levels}
     \begin{compresseddtabularx}{\columnwidth}{l l l X l}
-      \tb{Level} & \tb{Rank} & \tb{Bonus}\fn{2} & \tb{Special}               & \tb{XP} \tableheaderrule
-      1st        & 1         & \tdash           & \tdash                     & 0      \\
-      2nd        & 1         & \plus1           & \tdash                     & 10     \\ % +10 xp
-      3rd        & 1         & \plus1           & \tdash                     & 25     \\ % +15 xp
-      4th        & 2         & \plus2           & \tdash                     & 45     \\ % +20 xp
-      5th        & 2         & \plus2           & \plus1 to two attributes   & 70     \\ % +25 xp
-      6th        & 2         & \plus3           & Legacy item: rank 3        & 100    \\ % +30 xp
-      7th        & 3         & \plus3           & \tdash                     & 140    \\ % +40 xp
-      8th        & 3         & \plus4           & \tdash                     & 200    \\ % +60 xp
-      9th        & 3         & \plus4           & Legacy item: ranks 3 and 3 & 300    \\ % +100 xp
-      10th       & 4         & \plus5           & \tdash                     & 450    \\ % +150 xp
-      11th       & 4         & \plus5           & \plus1 to two attributes   & 700    \\ % +250 xp
-      12th       & 4         & \plus6           & Legacy item: ranks 5 and 3 & 1,000  \\ % +300 xp
-      13th       & 5         & \plus6           & \tdash                     & 1,400  \\ % +400 xp
-      14th       & 5         & \plus7           & \tdash                     & 2,000  \\ % +600 xp
-      15th       & 5         & \plus7           & Legacy item: ranks 5 and 5 & 3,000  \\ % +1000 xp
-      16th       & 6         & \plus8           & \tdash                     & 4,500  \\ % +1,500 xp
-      17th       & 6         & \plus8           & \plus1 to two attributes   & 7,000  \\ % +2,500 xp
-      18th       & 6         & \plus9           & Legacy item: ranks 7 and 5 & 10,000 \\ % +3,000 xp
-      19th       & 7         & \plus9           & \tdash                     & 14,000 \\
-      20th       & 7         & \plus10          & \tdash                     & 20,000 \\
-      21st       & 7         & \plus10          & Legacy item: ranks 7 and 7 & 30,000 \\
+      \tb{Level} & \tb{Rank} & \tb{Bonus}\fn{2} & \tb{Special}             & \tb{XP} \tableheaderrule
+      1st        & 1         & \tdash           & \tdash                   & 0      \\
+      2nd        & 1         & \plus1           & \tdash                   & 10     \\ % +10 xp
+      3rd        & 1         & \plus1           & \plus1 to two attributes & 25     \\ % +15 xp
+      4th        & 2         & \plus2           & \tdash                   & 45     \\ % +20 xp
+      5th        & 2         & \plus2           & \tdash                   & 70     \\ % +25 xp
+      6th        & 2         & \plus3           & Legacy item: rank 3      & 100    \\ % +30 xp
+      7th        & 3         & \plus3           & \tdash                   & 140    \\ % +40 xp
+      8th        & 3         & \plus4           & \tdash                   & 200    \\ % +60 xp
+      9th        & 3         & \plus4           & \plus1 to two attributes & 300    \\ % +100 xp
+      10th       & 4         & \plus5           & \tdash                   & 450    \\ % +150 xp
+      11th       & 4         & \plus5           & \tdash                   & 700    \\ % +250 xp
+      12th       & 4         & \plus6           & Legacy item: rank 5      & 1,000  \\ % +300 xp
+      13th       & 5         & \plus6           & \tdash                   & 1,400  \\ % +400 xp
+      14th       & 5         & \plus7           & \tdash                   & 2,000  \\ % +600 xp
+      15th       & 5         & \plus7           & \plus1 to two attributes & 3,000  \\ % +1000 xp
+      16th       & 6         & \plus8           & \tdash                   & 4,500  \\ % +1,500 xp
+      17th       & 6         & \plus8           & \tdash                   & 7,000  \\ % +2,500 xp
+      18th       & 6         & \plus9           & Legacy item: rank 7      & 10,000 \\ % +3,000 xp
+      19th       & 7         & \plus9           & \tdash                   & 14,000 \\
+      20th       & 7         & \plus10          & \tdash                   & 20,000 \\
+      21st       & 7         & \plus10          & \plus1 to two attributes & 30,000 \\
     \end{compresseddtabularx}
     1. This bonus applies to your \magical power, mundane power, trained skills, and defenses. \\
   \end{dtable}
@@ -1604,11 +1604,15 @@ You can either skim past terms you don't yet understand or look them up as you g
     Over time, items associated with places and people of great power gain magical properties.
     This process takes place for you as you gain levels in addition to in the world as a whole.
 
-    At 6th level, you choose a nonmagical weapon, body armor, shield, apparel item, or implement you own.
+    At 6th level, you choose a weapon, body armor, shield, apparel item, or implement you own.
     That item becomes a \glossterm{legacy item}.
     You choose a single magic item property of rank 3 or lower, and your legacy item gains that property.
     You do not have to \glossterm{attune} to your legacy item to gain its benefits.
     However, for each \glossterm{deep attunement} property that your legacy item has, you reduce your maximum \glossterm{attunement points} by one.
+
+    Being a legacy item does not interfere with an item's normal properties, including magical ones.
+    If it was already a magic item or made of a special material, it still has those properties in addition to being your legacy item.
+    Otherwise, you can imbue it with magic or reforge it to be made of a special material just you could with a mundane item of the same type.
 
     The property must be appropriate for the category of item you chose: weapon, armor, apparel, or implement.
     You do not have to precisely match the location of an apparel item, just the category.
@@ -1617,18 +1621,15 @@ You can either skim past terms you don't yet understand or look them up as you g
     \parhead{Legacy Item Scaling}
     Your legacy item increases in power as you gain levels, as described below.
     \begin{raggeditemize}
-      \item 6th level: You gain a property with max rank 3.
-      \item 9th level: You gain a second property with max rank 3.
-      \item 12th level: You can change one of your properties with a new max rank of 5.
-      \item 15th level: You can change your other property with a new max rank of 5.
-      \item 18th level: You can change one of your properties with a new max rank of 7.
-      \item 21th level: You can change your other property with a new max rank of 7.
+      \item 6th level: You gain a property with a maximum rank of 3.
+      \item 12th level: You can change its property, up to a maximum rank of 5.
+      \item 18th level: You can change its property, up to a maximum rank of 7.
     \end{raggeditemize}
 
     \parhead{Losing Your Legacy Item}
     If you lose your legacy item, you must retrieve it to regain its power.
     There are rituals to facilitate this retrieval such as \ritual{seek legacy} and \ritual{retrieve legacy}.
-    If your legacy item is \glossterm{destroyed}, you can designate a new item of the same type to be your legacy item, causing it to gain all of your legacy item abilities.
+    If your legacy item is \glossterm{destroyed}, you can designate a new item of the same type to be your legacy item, causing it to gain the effect of your legacy item.
     Designating a new item in this way requires taking a \glossterm{long rest} while holding or wearing the replacement item.
 
     \parhead{Unique Legacy Items}
