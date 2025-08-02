@@ -343,29 +343,6 @@ pub fn staffs() -> Vec<Implement> {
     // }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Staff of Stored Attunement"),
-        rank: 4,
-        short_description: String::from(r"Change easily between two stored attunements"),
-        description: String::from(r"
-            When you cast a \glossterm<targeted> spell that has the \abilitytag<Attune> tag, but is not a \glossterm<deep attunement>, you can invest the magic of the spell in this staff.
-            If you do, the spell does not have its normal effect.
-            Up to two spells can be stored this way.
-            If there are already spells invested in the staff, you can choose which spell to replace to make room for the new spell.
-
-            You can activate this staff as a \glossterm{minor action}.
-            When you do, you choose one of the spells that you personally stored in the staff and gain its effects, with yourself as the only target.
-            As long as you are attuned to this staff, you do not have to invest an additional attunement point to gain the benefit of a spell in this way, and this does not remove the spell from the staff's storage.
-            This effect lasts until you activate the staff again, which can allow you to easily change which benefit you gain.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(6, "Change easily between four stored attunements", r"
-                You can store up to four spells in the staff.
-            "),
-        ],
-        ..Implement::default()
-    }));
-
-    implements.push(Staff(StandardItem {
         name: String::from("Lightbearer's Staff"),
         rank: 2,
         short_description: String::from(r"Grants +1 accuracy in brilliant light"),
