@@ -165,7 +165,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may also target yourself or a creature adjacent to you with the spell.
+                Whenever you cast a \glossterm{targeted} spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may add yourself or a creature adjacent to you as a \glossterm{secondary target} of the spell.
             ",
             modifiers: None,
         },
@@ -195,9 +195,9 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Divine Conduit+",
             is_magical: true,
-            rank: 7,
+            rank: 6,
             description: r"
-                You can target any number of creatures within 10 feet of you with this ability instead of only one adjacent creature.
+                You can add a second \glossterm{secondary target}, and each additional target can be within 10 feet instead of adjacent to you.
             ",
             modifiers: None,
         },
@@ -225,11 +225,11 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
-                You gain a \plus1 accuracy bonus.
+                You gain a \plus1 bonus to your \glossterm{accuracy} and Armor defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1), Modifier::Defense(Defense::Armor, 1)]),
         },
     ]
 }

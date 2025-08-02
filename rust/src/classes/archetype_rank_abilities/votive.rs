@@ -470,7 +470,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Desperate Spell} Choose a pact \glossterm{spell} you know.
                         When you cast the spell, you may choose to increase your \glossterm{fatigue level} by one.
                         If you do, you become \empowered and \focused that round.
-                        However, you cannot use the \ability{desperate exertion} ability to affect the spell that round.
+                        However, you cannot use the \ability{desperate exertion} ability to affect the spell.
                         You can choose this ability multiple times, choosing a different spell each time.
                     \parhead{Distant Spell} Choose a pact \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
@@ -494,19 +494,19 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Metamagic+",
             is_magical: true,
-            rank: 4,
+            rank: 5,
             description: r"
                 You gain an additional metamagic ability.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Metamagic+",
+            complexity: 2,
+            name: "Spell Knowledge",
             is_magical: true,
-            rank: 7,
+            rank: 3,
             description: r"
-                You gain two additional metamagic abilities.
+                You learn an additional pact spell.
             ",
             modifiers: None,
         },
@@ -514,7 +514,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Spell-Trained Mind",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Willpower.
             ",
@@ -524,7 +524,7 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Attunement Point",
             is_magical: true,
-            rank: 5,
+            rank: 6,
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
@@ -534,9 +534,9 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
-                You gain a \plus1 accuracy bonus.
+                You gain a \plus1 bonus to your \glossterm{accuracy} and \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
