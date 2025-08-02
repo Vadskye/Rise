@@ -244,6 +244,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 % dr3 for touch range, free poison/disease because class feature
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
+                    \abilitycost One \glossterm{fatigue level}.
                     \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.
@@ -251,10 +252,6 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     In addition, it removes one \glossterm{condition} or poison affecting it.
                     % TODO: wording
                     This removal can only affect conditions and poisons with a rank no more than two ranks higher than your rank in this archetype.
-
-                    Normally, this healing cannot increase the target's hit points above half its maximum hit points.
-                    If you increase your \glossterm{fatigue level} by one, you can ignore this limitation.
-                    You can make this decision after seeing how much the target would heal.
 
                     \rankline
                     \rank{3} The bonus healing increases to 1d6 per 2 power.
