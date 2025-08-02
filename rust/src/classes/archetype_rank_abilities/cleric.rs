@@ -247,7 +247,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Domain Mastery",
+            name: "Domain Masteries",
             is_magical: false,
             rank: 7,
             description: r"
