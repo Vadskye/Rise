@@ -58,7 +58,7 @@ Warrior           : 100% (8)
 Brute             : 50% (11)
 Leader            : 50% (11)
 Mystic            : 70% (9)
-Skirmisher        : 40% (12)
+Skirmisher        : 30% (13)
 Sniper            : 60% (10)
 Warrior           : 50% (11)
 
@@ -66,17 +66,17 @@ Warrior           : 50% (11)
 Brute             : 60% (11)
 Leader            : 60% (11)
 Mystic            : 80% (9)
-Skirmisher        : 50% (12)
+Skirmisher        : 40% (13)
 Sniper            : 70% (10)
 Warrior           : 60% (11)
 
 ### High accuracy
-Brute             : 90% (11)
-Leader            : 90% (11)
+Brute             : 100% (11)
+Leader            : 100% (11)
 Mystic            : 100% (9)
-Skirmisher        : 80% (12)
+Skirmisher        : 80% (13)
 Sniper            : 100% (10)
-Warrior           : 90% (11)
+Warrior           : 100% (11)
 
 ## Level 15
 
@@ -97,12 +97,12 @@ Sniper            : 70% (13)
 Warrior           : 60% (14)
 
 ### High accuracy
-Brute             : 90% (14)
-Leader            : 90% (14)
+Brute             : 100% (14)
+Leader            : 100% (14)
 Mystic            : 100% (12)
-Skirmisher        : 70% (16)
+Skirmisher        : 80% (16)
 Sniper            : 100% (13)
-Warrior           : 90% (14)
+Warrior           : 100% (14)
 
 ## Level 20
 

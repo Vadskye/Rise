@@ -11,12 +11,12 @@
 
 ## Level 10: Attribute
  *     Baseline: 132
- *     Strength: 147
- *    Dexterity: 146
- * Constitution: 154
- * Intelligence: 147
- *   Perception: 140
- *    Willpower: 151
+ *     Strength: 150
+ *    Dexterity: 150
+ * Constitution: 158
+ * Intelligence: 150
+ *   Perception: 144
+ *    Willpower: 156
 
 ## Level 20: Attribute
  *     Baseline: 196

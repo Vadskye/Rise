@@ -107,106 +107,106 @@ Points / Self-hit: 33 / 100%
 ## Level 10
 
 ### Barbarian Glass
-A/B/F/R/M: 7 / 14 / 10 / 6 / 8
+A/B/F/R/M: 7 / 15 / 10 / 6 / 8
 HP/DR/Total: 48 / 26 / 74
-Points / Self-hit: 52 / 100%
+Points / Self-hit: 53 / 100%
 
 ### Barbarian Shield
-A/B/F/R/M: 12 / 12 / 11 / 10 / 8
-HP/DR/Total: 61 / 26 / 87
-Points / Self-hit: 65 / 60%
+A/B/F/R/M: 12 / 13 / 12 / 10 / 8
+HP/DR/Total: 65 / 26 / 91
+Points / Self-hit: 67 / 60%
 
 ### Fighter Greatmace
-A/B/F/R/M: 11 / 13 / 11 / 8 / 10
-HP/DR/Total: 42 / 44 / 86
-Points / Self-hit: 64 / 60%
+A/B/F/R/M: 11 / 14 / 12 / 8 / 10
+HP/DR/Total: 45 / 44 / 89
+Points / Self-hit: 66 / 60%
 
 ### Fighter Shield
-A/B/F/R/M: 13 / 13 / 11 / 8 / 10
-HP/DR/Total: 42 / 44 / 86
-Points / Self-hit: 68 / 40%
+A/B/F/R/M: 13 / 14 / 12 / 8 / 10
+HP/DR/Total: 45 / 44 / 89
+Points / Self-hit: 70 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 14 / 11 / 10 / 15 / 8
+A/B/F/R/M: 15 / 12 / 10 / 16 / 8
 HP/DR/Total: 39 / 20 / 59
-Points / Self-hit: 72 / 40%
+Points / Self-hit: 76 / 30%
 
 ### Paladin Shield
-A/B/F/R/M: 12 / 13 / 11 / 8 / 11
-HP/DR/Total: 46 / 44 / 90
-Points / Self-hit: 67 / 40%
+A/B/F/R/M: 12 / 14 / 12 / 8 / 11
+HP/DR/Total: 49 / 44 / 93
+Points / Self-hit: 69 / 40%
 
 ### Ranger Longbow
-A/B/F/R/M: 11 / 9 / 10 / 12 / 8
+A/B/F/R/M: 12 / 9 / 10 / 13 / 8
 HP/DR/Total: 39 / 20 / 59
-Points / Self-hit: 61 / 80%
+Points / Self-hit: 64 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 12 / 8 / 8 / 13 / 8
+A/B/F/R/M: 13 / 8 / 8 / 14 / 8
 HP/DR/Total: 26 / 20 / 46
-Points / Self-hit: 61 / 70%
+Points / Self-hit: 64 / 60%
 
 ### Sorcerer Dexterity
-A/B/F/R/M: 10 / 8 / 9 / 11 / 13
+A/B/F/R/M: 11 / 8 / 9 / 12 / 14
 HP/DR/Total: 48 / 8 / 56
-Points / Self-hit: 61 / 70%
+Points / Self-hit: 65 / 60%
 
 ### Wizard Perception
-A/B/F/R/M: 7 / 8 / 8 / 8 / 13
+A/B/F/R/M: 7 / 8 / 8 / 8 / 14
 HP/DR/Total: 46 / 10 / 56
-Points / Self-hit: 51 / 100%
+Points / Self-hit: 52 / 100%
 
 ## Level 15
 
 ### Barbarian Glass
-A/B/F/R/M: 9 / 17 / 12 / 8 / 10
+A/B/F/R/M: 9 / 18 / 12 / 8 / 10
 HP/DR/Total: 90 / 32 / 122
-Points / Self-hit: 65 / 100%
+Points / Self-hit: 66 / 100%
 
 ### Barbarian Shield
-A/B/F/R/M: 14 / 15 / 15 / 12 / 10
-HP/DR/Total: 129 / 32 / 161
-Points / Self-hit: 80 / 60%
+A/B/F/R/M: 14 / 16 / 16 / 12 / 10
+HP/DR/Total: 137 / 32 / 169
+Points / Self-hit: 82 / 60%
 
 ### Fighter Greatmace
-A/B/F/R/M: 13 / 16 / 14 / 10 / 14
-HP/DR/Total: 84 / 56 / 140
-Points / Self-hit: 80 / 70%
+A/B/F/R/M: 13 / 17 / 15 / 10 / 14
+HP/DR/Total: 90 / 56 / 146
+Points / Self-hit: 82 / 70%
 
 ### Fighter Shield
-A/B/F/R/M: 15 / 16 / 14 / 10 / 14
-HP/DR/Total: 84 / 56 / 140
-Points / Self-hit: 84 / 50%
+A/B/F/R/M: 15 / 17 / 15 / 10 / 14
+HP/DR/Total: 90 / 56 / 146
+Points / Self-hit: 86 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 18 / 14 / 12 / 18 / 10
+A/B/F/R/M: 19 / 15 / 12 / 19 / 10
 HP/DR/Total: 72 / 33 / 105
-Points / Self-hit: 90 / 20%
+Points / Self-hit: 94 / 10%
 
 ### Paladin Shield
-A/B/F/R/M: 14 / 16 / 14 / 10 / 13
-HP/DR/Total: 92 / 64 / 156
-Points / Self-hit: 81 / 50%
+A/B/F/R/M: 14 / 17 / 15 / 10 / 13
+HP/DR/Total: 98 / 64 / 162
+Points / Self-hit: 83 / 50%
 
 ### Ranger Longbow
-A/B/F/R/M: 15 / 11 / 12 / 16 / 10
+A/B/F/R/M: 16 / 11 / 12 / 17 / 10
 HP/DR/Total: 72 / 24 / 96
-Points / Self-hit: 79 / 70%
+Points / Self-hit: 82 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 16 / 10 / 10 / 17 / 10
+A/B/F/R/M: 17 / 10 / 10 / 18 / 10
 HP/DR/Total: 50 / 24 / 74
-Points / Self-hit: 79 / 60%
+Points / Self-hit: 82 / 50%
 
 ### Sorcerer Dexterity
-A/B/F/R/M: 13 / 10 / 11 / 14 / 17
+A/B/F/R/M: 14 / 10 / 11 / 15 / 18
 HP/DR/Total: 98 / 16 / 114
-Points / Self-hit: 78 / 70%
+Points / Self-hit: 82 / 60%
 
 ### Wizard Perception
-A/B/F/R/M: 9 / 10 / 10 / 10 / 16
+A/B/F/R/M: 9 / 10 / 10 / 10 / 17
 HP/DR/Total: 78 / 18 / 96
-Points / Self-hit: 64 / 100%
+Points / Self-hit: 65 / 100%
 
 ## Level 20
 
