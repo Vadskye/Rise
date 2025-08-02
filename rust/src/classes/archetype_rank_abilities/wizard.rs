@@ -432,19 +432,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Metamagic+",
             is_magical: true,
-            rank: 4,
+            rank: 5,
             description: r"
                 You gain an additional metamagic ability.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Metamagic+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                You gain two additional metamagic abilities.
             ",
             modifiers: None,
         },
@@ -459,10 +449,20 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 2,
+            name: "Spell Knowledge",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You learn an additional arcane spell.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 0,
             name: "Spell-Trained Understanding",
             is_magical: true,
-            rank: 3,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Intelligence.
             ",
@@ -472,7 +472,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Attunement Point",
             is_magical: true,
-            rank: 5,
+            rank: 6,
             description: r"
                 You gain an additional \glossterm{attunement point}.
             ",
@@ -482,9 +482,9 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Experienced Spellcaster",
             is_magical: true,
-            rank: 6,
+            rank: 7,
             description: r"
-                You gain a \plus1 accuracy bonus.
+                You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
