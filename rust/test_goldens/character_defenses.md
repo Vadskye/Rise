@@ -147,9 +147,9 @@ HP/DR/Total: 26 / 20 / 46
 Points / Self-hit: 61 / 70%
 
 ### Sorcerer Dexterity
-A/B/F/R/M: 10 / 8 / 9 / 11 / 14
+A/B/F/R/M: 10 / 8 / 9 / 11 / 13
 HP/DR/Total: 48 / 8 / 56
-Points / Self-hit: 62 / 70%
+Points / Self-hit: 61 / 70%
 
 ### Wizard Perception
 A/B/F/R/M: 7 / 8 / 8 / 8 / 13
@@ -238,7 +238,7 @@ Points / Self-hit: 117 / 10%
 ### Paladin Shield
 A/B/F/R/M: 17 / 20 / 18 / 13 / 16
 HP/DR/Total: 184 / 128 / 312
-Points / Self-hit: 101 / 60%
+Points / Self-hit: 101 / 50%
 
 ### Ranger Longbow
 A/B/F/R/M: 20 / 15 / 16 / 21 / 14
