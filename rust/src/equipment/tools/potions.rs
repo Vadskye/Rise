@@ -109,14 +109,15 @@ pub fn potions() -> Vec<Tool> {
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \fortified.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(6, "Grants brief power and fortification", r"
+            // Double fortify is 0.6
+            ItemUpgrade::new(4, "Grants brief power and fortification", r"
                 This gains the \atSwift tag, so it protects you against attacks during the current phase.
             "),
         ],
         ..potion()
     });
 
-    // TODO: upgrade
+    // 0.4 + 0.3
     potions.push(Tool {
         name: "Mind-Whetting Potion".to_string(),
         rank: 1,
@@ -129,7 +130,7 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Fortifying Potion".to_string(),
-        rank: 2,
+        rank: 1,
         short_description: "Grants brief fortification".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \fortified.
@@ -141,7 +142,7 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Shielding Potion".to_string(),
-        rank: 2,
+        rank: 1,
         short_description: "Grants brief shielding".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \shielded.
@@ -172,7 +173,7 @@ pub fn potions() -> Vec<Tool> {
     });
 
     potions.push(Tool {
-        name: "Potion of Overwhelming Power".to_string(),
+        name: "Potion of Maximal Might".to_string(),
         rank: 3,
         short_description: "Grants brief maximization".to_string(),
         description: r"
@@ -181,33 +182,62 @@ pub fn potions() -> Vec<Tool> {
         ..potion()
     });
 
-    // 1.4 EA, but confusion is a big downside.
     potions.push(Tool {
-        name: "Potion of Supremacy".to_string(),
+        name: "Potion of Pure Power".to_string(),
         rank: 6,
         short_description: "Grants many benefits and confusion".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered, \primed, \braced, and \confused.
+            When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \maximized.
         ".to_string(),
         ..potion()
     });
 
     potions.push(Tool {
-        name: "Elixir of Hardiness".to_string(),
-        rank: 1,
-        short_description: "Grants +2 to vital rolls".to_string(),
+        name: "Elixir of the Silver Tongue".to_string(),
+        rank: 2,
+        short_description: "Grants +2 to Creature Handling, Deception, and Persuasion".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<enhancement bonus> to your \glossterm<vital rolls>.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<enhancement bonus> to your Creature Handling, Deception, and Persuasion skills.
             This effect expires after 10 minutes.
         ".to_string(),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +3 vital rolls", r"
+            ItemUpgrade::new(4, "Grants +3 to Creature Handling, Deception, and Persuasion", r"
                 The bonus increases to +3.
             "),
-            ItemUpgrade::new(5, "Grants +4 vital rolls", r"
+            ItemUpgrade::new(6, "Grants +4 to Creature Handling, Deception, and Persuasion", r"
                 The bonus increases to +4.
             "),
         ],
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Elixir of Grace".to_string(),
+        rank: 2,
+        short_description: "Grants +2 to Balance, Flexibility, and Stealth".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +2 \glossterm<enhancement bonus> to your Balance, Flexibility, and Stealth skills.
+            This effect expires after 10 minutes.
+        ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Grants +3 to Balance, Flexibility, and Stealth", r"
+                The bonus increases to +3.
+            "),
+            ItemUpgrade::new(6, "Grants +4 to Balance, Flexibility, and Stealth", r"
+                The bonus increases to +4.
+            "),
+        ],
+        ..elixir()
+    });
+
+    potions.push(Tool {
+        name: "Elixir of Power".to_string(),
+        rank: 6,
+        short_description: "Empowers you".to_string(),
+        description: r"
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you are \empowered.
+            This effect expires after 10 minutes.
+        ".to_string(),
         ..elixir()
     });
 
