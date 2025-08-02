@@ -10,17 +10,17 @@ Complexity is calculated at (rank 3 / rank 7).
 * Primal Warrior: 5 / 5
 * Totemist: 5 / 6
             
-## cleric: 21 / 42
+## cleric: 23 / 43
 * Divine Magic: 4 / 4
-* Divine Spell Mastery: 3 / 7
+* Divine Spell Mastery: 5 / 8
 * Domain Influence: 4 / 10
 * Healer: 5 / 9
 * Preacher: 5 / 12
             
-## druid: 21 / 37
+## druid: 23 / 38
 * Elementalist: 4 / 9
 * Nature Magic: 4 / 4
-* Nature Spell Mastery: 3 / 7
+* Nature Spell Mastery: 5 / 8
 * Shifter: 6 / 9
 * Wildspeaker: 4 / 8
             
@@ -59,23 +59,23 @@ Complexity is calculated at (rank 3 / rank 7).
 * Jack of All Trades: 5 / 7
 * Suave Scoundrel: 4 / 7
             
-## sorcerer: 22 / 34
+## sorcerer: 24 / 35
 * Arcane Magic: 6 / 7
-* Arcane Spell Mastery: 3 / 7
+* Arcane Spell Mastery: 5 / 8
 * Draconic Magic: 4 / 5
 * Innate Arcanist: 4 / 7
 * Wild Magic: 5 / 8
             
-## votive: 24 / 33
+## votive: 26 / 34
 * Covenant Keeper: 5 / 7
 * Pact Magic: 5 / 6
-* Pact Spell Mastery: 3 / 7
+* Pact Spell Mastery: 5 / 8
 * Pactbound Warrior: 7 / 7
 * Soulforged: 4 / 6
             
-## wizard: 26 / 40
+## wizard: 28 / 41
 * Arcane Magic: 5 / 5
-* Arcane Spell Mastery: 5 / 9
+* Arcane Spell Mastery: 7 / 10
 * Alchemist: 7 / 10
 * Arcane Scholar: 6 / 11
 * School Specialist: 3 / 5
