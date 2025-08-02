@@ -1,7 +1,6 @@
 use crate::classes::Class;
 use crate::core_mechanics::{Attribute, Defense};
 use crate::latex_formatting;
-use numerics::Numerics;
 
 // Generate the whole "Base Class Abilities" subsection used to explain a class in the
 // Classes chapter.
@@ -113,19 +112,19 @@ fn generate_latex_hit_points(class: &Class) -> String {
     )
 }
 
-fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
-    let converter = Numerics::builder().build();
-    let english_number = converter.convert_number(val).unwrap();
-    let suffix = if val == 1 { singular } else { plural };
+// fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
+//     let converter = Numerics::builder().build();
+//     let english_number = converter.convert_number(val).unwrap();
+//     let suffix = if val == 1 { singular } else { plural };
 
-    format!("{} {}", english_number[0], suffix)
-}
+//     format!("{} {}", english_number[0], suffix)
+// }
 
-fn singular_or_plural(val: i32, singular: &str, plural: &str) -> String {
-    let suffix = if val == 1 { singular } else { plural };
+// fn singular_or_plural(val: i32, singular: &str, plural: &str) -> String {
+//     let suffix = if val == 1 { singular } else { plural };
 
-    format!("{} {}", val, suffix)
-}
+//     format!("{} {}", val, suffix)
+// }
 
 fn generate_latex_armor_proficiencies(class: &Class) -> String {
     let armor_proficiencies = class.armor_proficiencies();
