@@ -54,9 +54,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         // +1.5 damage, which is a normal value for this rank. This doesn't get any extra damage from the strength 
-        // requirement because you probably want Strength anyway, probably want Strength anyway, and increasing
-        // your die variance makes you benefit more from being empowered/maximized. Also,
-        // increasing weapon damage instead of granting extra damage is situationally useful,
+        // requirement because you probably want Strength anyway.
+        // Also, increasing weapon damage instead of granting extra damage is situationally useful,
         // though not generally a big power swing.
         name: String::from("Brutish"),
         rank: 3,
@@ -140,7 +139,6 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
             // With this weapon, you can pretty reasonably go up to -4 fatigue penalty.
             ItemUpgrade::new(4, "Gain power while fatigued", r"
                 You ignore your \glossterm<fatigue penalty> when determining your \glossterm<accuracy> with \glossterm<strikes> using this weapon.
-                In addition, you are \empowered you have a \glossterm{fatigue penalty}.
             "),
         ],
         ..MagicWeapon::default()

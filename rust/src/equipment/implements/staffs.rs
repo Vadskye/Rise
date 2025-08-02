@@ -490,16 +490,22 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Power"),
-        rank: 3,
+        rank: 2,
         short_description: String::from(r"Empowers you"),
         description: String::from(r"
             You are \empowered.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "+1d4 damage, empowers you", r"
-                Your damaging \magical abilities also deal 1d4 \glossterm{extra damage}.
-            "),
-        ],
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+        ..Implement::default()
+    }));
+
+    implements.push(Staff(StandardItem {
+        name: String::from("Greater Staff of Power"),
+        rank: 7,
+        short_description: String::from(r"Empowers you"),
+        description: String::from(r"
+            You are \empowered.
+        "),
         ..Implement::default()
     }));
 

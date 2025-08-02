@@ -985,7 +985,7 @@ impl Class {
             Self::Naiad => r"".to_string(),
             Self::Oozeborn => r"".to_string(),
             Self::Paladin => r"
-                Paladins are divinely empowered warriors who exemplify a particular alignment.
+                Paladins are divinely imbued warriors who exemplify a particular alignment.
                 They can shift easily between physical combat and spellcasting depending on the situation.
                 Many paladins can heal themselves and their allies, and can share their divine connection with those nearby, making them a beacon on a battlefield.
 
