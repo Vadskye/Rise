@@ -1595,7 +1595,8 @@ impl Class {
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
                         \end{magicalactiveability}
-                        \domainability{Mastery} The power bonuses increase to \plus3.
+                        \domainability{Mastery} The power bonuses increase to \plus2.
+                        In addition, your damaging attacks now deal triple damage to objects.
 
                     \subsubsection{Earth Domain}
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
