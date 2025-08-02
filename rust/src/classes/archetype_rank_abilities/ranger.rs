@@ -230,10 +230,9 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} You gain a +1 accuracy bonus with the strike.
-                    % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The strike deals triple damage instead of double damage.
-                    \rank{6} The accuracy bonus increases to +2.
-                    \rank{7} The accuracy bonus increases to +4.
+                    \rank{5} The strike deals 1d6 \glossterm{extra damage}.
+                    \rank{6} The extra damage increases to 2d6.
+                    \rank{7} The strike deals triple damage.
                 \end{activeability}
             ",
             modifiers: None,
@@ -364,7 +363,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // TODO: EA and damage math
+        // Brief ranged slow is 2 EA. Normal rank 3 would be strike and 0.8 EA. That's enough of a
+        // buff to justify the class feature + movement trigger.
         RankAbility {
             complexity: 2,
             name: "No Escape",
@@ -376,13 +376,13 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a strike.
                     If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, the strike deals double damage.
-                    This applies even if you followed the target to remain adjacent to it, so long as it tried to move away from your original location.
+                    This applies even if you moved closer to the target, so long as it tried to move away from your original location.
 
                     \rankline
-                    \rank{4} On a hit, the target is \glossterm{briefly} \slowed.
-                    \rank{5} The double damage applies if it moved away from you since the start of the previous round.
-                    \rank{6} If the target is \glossterm{injured} by the strike, it is also slowed as a \glossterm{condition}.
-                    \rank{7} The strike always deals double damage, and it deals triple damage if the target moved away from you since the start of the previous round.
+                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{5} The strike deals 1d6 \glossterm{extra damage}.
+                    \rank{6} The extra damage increases to 2d6.
+                    \rank{7} The strike deals triple damage instead of double damage.
                 \end{activeability}
             ",
             modifiers: None,

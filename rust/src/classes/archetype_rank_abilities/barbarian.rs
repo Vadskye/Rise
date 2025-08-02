@@ -280,10 +280,10 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     You cannot include the same creature or object as a target of both strikes.
 
                     \rankline
-                    \rank{4} If you take a -2 accuracy penalty with a strike, it deals double damage.
-                    \rank{5} Both strikes deal double damage without any accuracy penalty.
-                    \rank{6} You gain a \plus1 accuracy bonus with both strikes.
-                    \rank{7} Both strikes deal triple damage.
+                    \rank{4} If you take a -3 accuracy penalty with a strike, it deals double damage.
+                    \rank{5} The accuracy penalty is reduced to -1.
+                    \rank{6} You gain a \plus1 accuracy bonus with both strikes, and they always deal double damage.
+                    \rank{7} You can deal triple damage instead of double damage with one of the two strikes.
                 \end{activeability}
             ",
             modifiers: None,
