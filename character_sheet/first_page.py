@@ -77,7 +77,7 @@ def create_page(destination):
 
 def paper_abilities():
     return [
-        div({"class": "section-header"}, "Attacks and Abilities"),
+        div({"class": "section-header"}, "Attacks and Active Abilities"),
         *[paper_ability() for i in range(8)],
     ]
 

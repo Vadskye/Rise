@@ -517,6 +517,16 @@ def equation_misc(name, i=0):
         ]
     )
 
+def equation_fraction(numerator, denominator):
+    return div({"class": "calc-fraction"}, [
+        div({"class": "calc-numerator"}, f"{numerator}"),
+        div({"class": "calc-denominator"}, f"{denominator}"),
+    ])
+
+
+def bold(text):
+    return html_tag("b", text)
+
 
 def equation_misc_repeat(name, count=1, joiner=plus):
     return joiner().join([equation_misc(name, i) for i in range(count)])

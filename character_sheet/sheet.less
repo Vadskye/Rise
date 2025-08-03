@@ -105,6 +105,30 @@ div.full-sheet {
             margin-bottom: 0.08em;
         }
     }
+
+    .equation {
+        > .calc-fraction {
+            display: flex;
+            font-size: 75%;
+            flex-direction: column;
+            width: 10px;
+
+            .calc-numerator {
+                border-bottom: 1px solid black;
+                width: 0.6em;
+            }
+        }
+
+        > .flex-col.calc-fractional-value {
+            // seems to line up the fractional value with two regular width
+            // inputs
+            width: 65px;
+
+            input {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .hidden {

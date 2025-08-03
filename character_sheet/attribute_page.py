@@ -36,40 +36,97 @@ def create_page(destination):
     return flex_col(
         {"class": "page attribute-page"},
         [
-            div(
-                {"class": "page-explanation"},
-                """
-                    This page is used to track your core character statistics.
-                    There are open spaces in each equation so you can add custom modifiers for each statistic.
-                    Each custom modifier has a small text box underneath it that you can use to remind yourself why that modifier exists.
-                """,
-            ),
-            flex_col(
-                {"class": "header"},
-                [
-                    calc_non_attribute(),
-                ],
-            ),
             flex_row(
+                {"class": "header"},
                 [
                     flex_col(
                         {"class": "sidebar"},
                         [
-                            calc_strength_based(),
-                            calc_dexterity_based(),
-                            calc_constitution_based(),
+                            calc_combat(),
                         ],
                     ),
                     flex_col(
                         {"class": "main-body"},
                         [
-                            calc_intelligence_based(),
-                            calc_perception_based(),
-                            calc_willpower_based(),
+                            calc_defenses(),
+                        ],
+                    ),
+                ]
+            ),
+            div({"class": "section-header"}, "Attributes and Skills"),
+            flex_row(
+                [
+                    flex_col(
+                        {"class": "sidebar"},
+                        [
+                            calc_encumbrance(),
+                            display_skills_for_attribute("Other", calc_skill),
+                            calc_attribute("Strength"),
+                            calc_jump_distance(),
+                            display_skills_for_attribute("Strength", calc_skill),
+                            calc_attribute("Dexterity"),
+                            display_skills_for_attribute("Dexterity", calc_skill),
+                            calc_attribute("Constitution"),
+                            display_skills_for_attribute("Constitution", calc_skill),
+                        ],
+                    ),
+                    flex_col(
+                        {"class": "main-body"},
+                        [
+                            calc_attribute("Intelligence"),
+                            display_skills_for_attribute("Intelligence", calc_skill),
+                            calc_attribute("Perception"),
+                            display_skills_for_attribute("Perception", calc_skill),
+                            calc_attribute("Willpower"),
                         ],
                     ),
                 ],
             ),
+        ],
+    )
+
+def calc_combat():
+    return flex_col(
+        {"class": "calc-combat"},
+        [
+            div({"class": "section-header"}, "Offensive Statistics"),
+            calc_accuracy(),
+            calc_brawling_accuracy(),
+            calc_blank_accuracy(),
+            calc_extra_damage(),
+            calc_magical_power(),
+            calc_mundane_power(),
+            calc_speed(),
+        ],
+    )
+
+def calc_defenses():
+    return flex_col(
+        {"class": "calc-defenses"},
+        [
+            div({"class": "section-header"}, "Defensive Statistics"),
+            calc_hit_points(),
+            calc_damage_resistance(),
+            calc_armor(),
+            calc_brawn(),
+            calc_fortitude(),
+            calc_mental(),
+            calc_reflex(),
+        ],
+    )
+
+def calc_resources():
+    return flex_col(
+        {"class": "calc-resources"},
+        [
+            div({"class": "section-header"}, "Resources"),
+            calc_attunement_points(),
+            calc_fatigue_tolerance(),
+            calc_insight_points(),
+            calc_trained_skills(),
+            calc_combat_styles(),
+            calc_mystic_spheres(),
+            calc_blank_resource(),
         ],
     )
 
@@ -86,12 +143,12 @@ def calc_attribute(attribute_name):
                         [
                             underlabel(
                                 "Base",
-                                number_input(
-                                    {
-                                        "name": attribute_lower + "_point_buy",
-                                    }
-                                ),
+                                number_input(),
                             ),
+                            plus(),
+                            underlabel("Species", number_input()),
+                            plus(),
+                            underlabel("Leveling", number_input()),
                             plus(),
                             equation_misc_repeat(attribute_lower, 2),
                         ],
@@ -113,31 +170,26 @@ def calc_skill(skill_name, attribute=None):
     attribute_shorthand = ATTRIBUTE_SHORTHAND[attribute] if attribute else None
 
     skill_row = flex_row(
-        {"class": "skill-row"},
+        {"class": f"skill-row {skill_parsable}-row"},
         [
             div(
-                {"class": "calc-header"},
+                {"class": f"calc-header {skill_parsable}-header"},
                 [
                     visible_skill_name,
                 ],
             ),
             equation(
                 calc_skill_equation_components(skill_parsable, attribute),
-                result_attributes={
-                    "disabled": True,
-                    "name": f"{skill_parsable}_display",
-                    "value": f"@{{{skill_parsable}_total}}",
-                },
             ),
             flex_row(
                 {"class": "class-skill-container"},
                 [
                     underlabel(
-                        "Class?",
+                        "Trained?",
                         checkbox(
                             {
-                                "class": "is-class-skill",
-                                "name": skill_parsable + "_class_skill",
+                                "class": "is-trained",
+                                "name": skill_parsable + "_trained",
                             }
                         ),
                     ),
@@ -158,6 +210,8 @@ def calc_skill(skill_name, attribute=None):
 def calc_skill_equation_components(skill_parsable, attribute):
     if attribute == "other":
         return [
+            underlabel("Attr", number_input()),
+            plus(),
             underlabel(
                 "Train",
                 number_input(
@@ -172,7 +226,9 @@ def calc_skill_equation_components(skill_parsable, attribute):
             equation_misc_repeat(skill_parsable, 2),
         ]
     else:
-        return [
+        standard_prefix = [
+            underlabel(ATTRIBUTE_SHORTHAND[attribute], number_input()),
+            plus(),
             underlabel(
                 "Train",
                 number_input(
@@ -183,9 +239,22 @@ def calc_skill_equation_components(skill_parsable, attribute):
                     }
                 ),
             ),
-            plus(),
-            equation_misc_repeat(skill_parsable, 2),
         ]
+
+        if attribute == "strength" or attribute == "dexterity":
+            return [
+                *standard_prefix,
+                minus(),
+                underlabel("Encumb", number_input()),
+                plus(),
+                equation_misc_repeat(skill_parsable, 1),
+            ]
+        else:
+            return [
+                *standard_prefix,
+                plus(),
+                equation_misc_repeat(skill_parsable, 2)
+            ]
 
 
 def display_skills_for_attribute(attribute, display_function):
@@ -355,17 +424,6 @@ def calc_encumbrance():
                         "Armor", number_input({"name": "body_armor_encumbrance"})
                     ),
                     minus(),
-                    underlabel(
-                        "Str",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "encumbrance_strength",
-                                "value": "(@{strength})",
-                            }
-                        ),
-                    ),
-                    minus(),
                     equation_misc("encumbrance", 0),
                     minus(),
                     equation_misc("encumbrance", 1),
@@ -374,6 +432,34 @@ def calc_encumbrance():
                     "disabled": True,
                     "name": "encumbrance_display",
                     "value": "@{encumbrance}",
+                },
+            ),
+        ]
+    )
+
+def calc_speed():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Speed"),
+            equation(
+                [
+                    underlabel(
+                        "Base",
+                        number_input({"name": "base_speed"}),
+                    ),
+                    minus(),
+                    underlabel(
+                        "Armor", number_input({"name": "body_armor_speed"})
+                    ),
+                    plus(),
+                    equation_misc("speed", 0),
+                    plus(),
+                    equation_misc("speed", 1),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "speed_display",
+                    "value": "@{speed}",
                 },
             ),
         ]
@@ -392,6 +478,84 @@ def calc_vital_rolls():
                     "name": "vital_rolls_display",
                     "value": "@{vital_rolls}",
                 },
+            ),
+        ]
+    )
+
+def calc_combat_styles():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Combat styles"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Insight",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("combat_styles", 2),
+                ],
+            ),
+        ]
+    )
+
+def calc_mystic_spheres():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Mystic spheres"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Insight",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("mystic_spheres", 2),
+                ],
+            ),
+        ]
+    )
+
+def calc_blank_resource():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, div({"class": "calc-blank-header"}, "")),
+            equation(
+                [
+                    underlabel(
+                        "Base",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Insight",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("blank_resource", 2),
+                ],
+            ),
+        ]
+    )
+
+def calc_extra_damage():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Extra damage"),
+            equation(
+                [
+                    equation_misc_repeat("extra_damage", 4),
+                ],
             ),
         ]
     )
