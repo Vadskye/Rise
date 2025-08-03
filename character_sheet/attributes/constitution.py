@@ -126,7 +126,18 @@ def calc_hit_points():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("hit_points", 4),
+                    underlabel(
+                        "Con",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "hit_points_constitution",
+                                "value": "(@{hit_points_from_constitution})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("hit_points", 3),
                 ],
                 result_attributes={
                     "disabled": True,
