@@ -8,7 +8,6 @@ import rolltemplate
 import re
 import identity_page
 import attribute_page
-import paper_calculation_page
 import paper_creation_page
 import creation_page
 import header_bar
