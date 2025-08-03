@@ -2,6 +2,7 @@ from cgi_simple import (
     checkbox,
     div,
     equation,
+    equation_fraction,
     equation_misc,
     equation_misc_repeat,
     fieldset,
@@ -31,26 +32,17 @@ def calc_brawling_accuracy():
             div({"class": "calc-header"}, "Brawl accuracy"),
             equation(
                 [
+                    equation_fraction(1, 2),
                     underlabel(
-                        "Lvl/2",
+                        "Lvl+Str",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "brawling_accuracy_scaling_display",
-                                "value": "(floor(@{level}/2))",
+                                "name": "brawling_accuracy_level_plus_strength",
+                                "value": "(@{level}+@{strength})",
                             }
                         ),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Str/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "brawling_accuracy_strength_display",
-                                "value": "(floor(@{strength} / 2))",
-                            }
-                        ),
+                        {"class": "calc-fractional-value"},
                     ),
                     plus(),
                     equation_misc_repeat("accuracy", 3),
@@ -178,6 +170,20 @@ def calc_jump_distance():
                     "name": "horizontal_jump_distance_display",
                     "value": "@{horizontal_jump_distance}",
                 },
+            ),
+            flex_row(
+                {"class": "class-skill-container"},
+                [
+                    underlabel(
+                        "Trained?",
+                        checkbox(
+                            {
+                                "class": "is-trained",
+                                "name": "jump_trained",
+                            }
+                        ),
+                    ),
+                ],
             ),
         ],
     )

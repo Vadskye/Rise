@@ -2,6 +2,7 @@ from cgi_simple import (
     checkbox,
     div,
     equation,
+    equation_fraction,
     equation_misc,
     equation_misc_repeat,
     fieldset,
@@ -31,26 +32,17 @@ def calc_accuracy():
             div({"class": "calc-header"}, "Accuracy"),
             equation(
                 [
+                    equation_fraction(1, 2),
                     underlabel(
-                        "Lvl/2",
+                        "Lvl+Per",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "accuracy_scaling_display",
-                                "value": "(floor(@{level}/2))",
+                                "name": "accuracy_level_plus_perception",
+                                "value": "(@{level}+@{perception})",
                             }
                         ),
-                    ),
-                    plus(),
-                    underlabel(
-                        "Per/2",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "accuracy_perception_display",
-                                "value": "(floor(@{perception} / 2))",
-                            }
-                        ),
+                        {"class": "calc-fractional-value"},
                     ),
                     plus(),
                     equation_misc_repeat("accuracy", 3),

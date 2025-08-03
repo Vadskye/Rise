@@ -9,6 +9,7 @@ import re
 import identity_page
 import attribute_page
 import paper_creation_page
+import paper_creation_reference
 import creation_page
 import header_bar
 import sheet_worker
@@ -42,6 +43,7 @@ def main(destination):
                 ["paper_creation_page", paper_creation_page],
                 ["items_page", items_page],
                 ["attribute_page", attribute_page],
+                ["paper_creation_reference", paper_creation_reference],
             ]
         ):
             page = i + 1

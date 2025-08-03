@@ -4,18 +4,16 @@ div.full-sheet .attribute-page .equation {
 }
 
 .trained-skills {
-    margin-top: 0.25em;
-
     .subskills-trained {
         padding-left: 4em;
         padding-right: 2em;
     }
+}
 
-    // Necessary because the edge of "Class?" sticks out past the edge of the
-    // box.
-    .class-skill-container {
-        padding-right: 0.5em;
-    }
+// Necessary because the edge of "Class?" sticks out past the edge of the
+// box.
+.class-skill-container {
+    padding-right: 0.5em;
 }
 
 .calc-non-attribute .trained-skills {
@@ -102,5 +100,20 @@ div.full-sheet .attribute-page .equation {
 
 /* TODO: We should show this, but it messes up the spacing right now. */
 .calc-non-attribute .subskills-trained {
+    display: none;
+}
+
+.class-skill-container .under-label {
+    margin-bottom: 2px;
+    // Hacky fix for centering
+    left: -35%;
+}
+
+.creature_handling-header {
+    font-size: 90%;
+}
+
+// No room on the sheet right now. Would be better to have this back.
+.profession-row + .subskills-trained {
     display: none;
 }

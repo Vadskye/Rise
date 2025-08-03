@@ -32,6 +32,9 @@ from sheet_data import (
     ATTRIBUTES,
     SUBSKILLS,
 )
+from attribute_page import (
+    calc_resources
+)
 import re
 
 
@@ -54,11 +57,12 @@ def creation_guidance():
             self_class_textarea("Motivation and goals"),
             labeled_text_input("Species"),
             labeled_text_input("Size"),
-            self_class_textarea("Starting attributes"),
             labeled_text_input("Base class"),
             self_class_textarea("Equipment proficiencies"),
-            self_class_textarea("Trained skills"),
             self_class_textarea("Archetypes"),
+            self_class_textarea("Combat styles and mystic spheres"),
+            self_class_textarea("Other chosen abilities"),
+            self_class_textarea("Background"),
             self_class_textarea("Description"),
             labeled_text_input("Alignment"),
             self_class_textarea("Feats"),
@@ -72,12 +76,11 @@ def abilities():
     return div(
         {"class": "abilities"},
         [
-            div({"class": "section-header"}, "Passive Abilities"),
+            div({"class": "section-header"}, "Passive Abilities and Traits"),
             *[passive_ability() for i in range(14)],
+            calc_resources(),
             div({"class": "section-header"}, "Insight Point Allocation"),
             textarea({"class": "insight-point-allocation"}),
-            div({"class": "section-header"}, "Active Abilities Known"),
-            textarea({"class": "active-abilities-known"}),
         ],
     )
 
