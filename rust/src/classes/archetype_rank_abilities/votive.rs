@@ -20,8 +20,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \item Moirai: Ebb and Flow or Perfect Precision
                     \item Precursor: Brute Force or Unbreakable Defense
                 \end{raggeditemize}
-                In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
-                You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
+                You may spend \glossterm{insight points} to gain access to one additional combat style per insight point, including combat styles other than those from your soulkeeper.
                 You can only learn pact \glossterm{maneuvers} from pact combat styles that you have access to.
 
                 You learn two rank 1 pact \glossterm{maneuvers}.

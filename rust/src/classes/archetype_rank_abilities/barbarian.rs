@@ -344,8 +344,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can channel your primal energy into ferocious attacks.
                 You gain access to one of the following \glossterm{combat styles}: \combatstyle{brute force}, \combatstyle{dirty fighting}, or \combatstyle{herald of war}.
-                In addition, you gain access to any combat style of your choice (see \pcref{Combat Styles}).
-                You may spend \glossterm{insight points} to gain access to one additional combat style per insight point.
+                You may spend \glossterm{insight points} to gain access to one additional combat style per insight point, including combat styles other than those three.
                 You can only learn primal \glossterm{maneuvers} from primal combat styles that you have access to.
 
                 You learn two rank 1 primal \glossterm{maneuvers}.
