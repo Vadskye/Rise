@@ -40,8 +40,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                You learn an additional pact maneuver.
-                In addition, you gain access to rank 3 pact maneuvers.
+                You gain access to rank 3 pact maneuvers.
             ",
             modifiers: None,
         },
@@ -378,26 +377,6 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Moirai} Fabrication, Revelation
                     \itemhead{Precursor} Chronomancy, Polymorph
                 \end{raggeditemize}
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Pact Spells+",
-            is_magical: true,
-            rank: 2,
-            description: r"
-                You learn an additional pact spell.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Pact Spells+",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You learn an additional pact spell.
             ",
             modifiers: None,
         },
