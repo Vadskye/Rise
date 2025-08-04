@@ -82,6 +82,7 @@ def create_page(destination):
                     ),
                 ],
             ),
+            div({"class": "page-number"}, "Page 4"),
         ],
     )
 

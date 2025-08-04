@@ -44,6 +44,7 @@ def create_page(destination):
         flex_row([
             creation_guidance(),
             abilities(),
+            div({"class": "page-number"}, "Page 2"),
         ]),
     )
 
