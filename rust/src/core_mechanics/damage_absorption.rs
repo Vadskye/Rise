@@ -120,9 +120,7 @@ impl HitPointProgression {
     }
 
     pub fn hp_from_con(&self, level: i32, con: i32) -> i32 {
-        let [_, incremental_hp] = self.progression_at_level(level);
-
-        incremental_hp * con
+        con * self.hp_per_con_at_level(level)
     }
 
     // This calculates base HP from level, but not Con
@@ -171,7 +169,7 @@ impl HitPointProgression {
         self.complete_progression()[i]
     }
 
-    fn con_hp_at_level(&self, level: i32) -> i32 {
+    fn hp_per_con_at_level(&self, level: i32) -> i32 {
         // We have to use this awkward `if` structure instead of `%` so Rust recognizes
         // that we are within the bounds of the array.
         let i = if level <= 6 {
@@ -206,7 +204,7 @@ impl HitPointProgression {
 
     fn hit_points_at_level_text(&self, level: i32) -> String {
         let [base_hp, incremental_hp] = self.progression_at_level(level);
-        let con_hp = self.con_hp_at_level(level);
+        let con_hp = self.hp_per_con_at_level(level);
         let constitution_multiplier_text = match con_hp {
             1 => "",
             2 => "twice",

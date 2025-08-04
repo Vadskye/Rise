@@ -148,7 +148,7 @@ Points / Self-hit: 64 / 60%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 11 / 8 / 9 / 12 / 14
-HP/DR/Total: 48 / 8 / 56
+HP/DR/Total: 49 / 8 / 57
 Points / Self-hit: 65 / 60%
 
 ### Wizard Perception
