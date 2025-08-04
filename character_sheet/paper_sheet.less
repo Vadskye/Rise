@@ -1,11 +1,16 @@
 body {
   height: 10.5in;
   width: 8in;
-  padding: 0;
   -webkit-print-color-adjust: exact;
+  // Can disable this and use Chrome default margins. This is intended for use
+  // with disabling margins in Chrome.
+  margin: 0;
+  padding-left: 0.4in;
+  padding-right: 0.4in;
+  padding-top: 0.4in;
+  padding-bottom: 0;
   // Enable or disable this to get an idea of how the pages fit into paper
   // sheets
-  // margin: 0.1in;
   // box-shadow: 0 0 2px 1px inset;
 }
 
@@ -114,5 +119,11 @@ div.paper {
     > input[type="number"] {
       width: 35px !important;
     }
+  }
+
+  // TODO: push this fully to the bottom
+  .page-number {
+      width: 100%;
+      text-align: right;
   }
 }

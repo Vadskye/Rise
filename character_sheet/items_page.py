@@ -70,6 +70,7 @@ def create_page(destination):
             div({"class": "section-header"}, "Inventory"),
             wealth_items(),
             textarea({"class": "inventory", "name": "inventory"}),
+            div({"class": "page-number"}, "Page 3"),
         ],
     )
 
@@ -180,8 +181,8 @@ def legacy_item(destination):
                 {"class": "name"},
                 {"name": "legacy_item_name"},
             ),
-            text_shape(
-                "Effects",
+            labeled_text_input(
+                "Effect",
                 {"class": "attunement-effect"},
                 {"class": "legacy-item-effect", "name": "legacy_item_effect"},
             ),

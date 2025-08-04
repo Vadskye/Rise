@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 g utransfer
 cd paper_sheet
-pdftk page1.html.pdf page2.html.pdf page3.html.pdf page4.html.pdf cat output ../character_sheet.pdf
+pdftk page1.html.pdf page2.html.pdf page3.html.pdf page4.html.pdf page5.html.pdf cat output ../character_sheet.pdf
 g rise
 cp (p utransfer)/character_sheet.pdf character_sheet.pdf
