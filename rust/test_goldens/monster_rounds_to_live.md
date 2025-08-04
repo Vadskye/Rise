@@ -50,7 +50,7 @@ Monk Kama           : 9.75
 Paladin Shield      : 8.75
 Ranger Longbow      : 6.00
 Rogue Smallsword    : 5.50
-Sorcerer Dexterity  : 5.00
+Sorcerer Dexterity  : 5.25
 Wizard Perception   : 3.25
 Brute               : 5.50
 Leader              : 5.25

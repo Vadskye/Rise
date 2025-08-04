@@ -66,9 +66,9 @@ Complexity is calculated at (rank 3 / rank 7).
 * Innate Arcanist: 4 / 7
 * Wild Magic: 5 / 8
             
-## votive: 26 / 34
+## votive: 25 / 32
 * Covenant Keeper: 5 / 7
-* Pact Magic: 5 / 6
+* Pact Magic: 4 / 4
 * Pact Spell Mastery: 5 / 8
 * Pactbound Warrior: 7 / 7
 * Soulforged: 4 / 6

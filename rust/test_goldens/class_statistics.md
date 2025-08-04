@@ -4,22 +4,22 @@
 
 ### Level 1: Class/Character
  * Barbarian:  25 /  87
- *    Cleric:  25 /  86
- *     Druid:  24 /  83
+ *    Cleric:  25 /  89
+ *     Druid:  24 /  86
  *   Fighter:  24 /  88
  *      Monk:  25 /  84
  *   Paladin:  25 /  88
  *    Ranger:  25 /  87
- *     Rogue:  25 /  83
- *  Sorcerer:  25 /  83
- *    Votive:  24 /  86
- *    Wizard:  24 /  82
+ *     Rogue:  25 /  86
+ *  Sorcerer:  25 /  86
+ *    Votive:  24 /  89
+ *    Wizard:  24 /  85
  * Automaton:  27 /  89
  *    Dragon:  26 /  84
- *   Dryaidi:  27 /  84
- *     Harpy:  26 /  83
+ *   Dryaidi:  27 /  87
+ *     Harpy:  26 /  86
  * Incarnation:  27 /  85
- *     Naiad:  26 /  83
+ *     Naiad:  26 /  86
  *  Oozeborn:  25 /  82
  *     Troll:  26 /  83
  *    Treant:  26 /  87
@@ -27,22 +27,22 @@
 
 ### Level 10: Class/Character
  * Barbarian:  25 / 167
- *    Cleric:  25 / 162
- *     Druid:  24 / 159
+ *    Cleric:  25 / 163
+ *     Druid:  24 / 160
  *   Fighter:  24 / 165
  *      Monk:  25 / 161
  *   Paladin:  25 / 165
  *    Ranger:  25 / 164
- *     Rogue:  25 / 159
- *  Sorcerer:  25 / 159
- *    Votive:  24 / 162
- *    Wizard:  24 / 158
+ *     Rogue:  25 / 160
+ *  Sorcerer:  25 / 160
+ *    Votive:  24 / 163
+ *    Wizard:  24 / 159
  * Automaton:  27 / 166
  *    Dragon:  26 / 161
- *   Dryaidi:  27 / 160
- *     Harpy:  26 / 159
+ *   Dryaidi:  27 / 161
+ *     Harpy:  26 / 160
  * Incarnation:  27 / 162
- *     Naiad:  26 / 159
+ *     Naiad:  26 / 160
  *  Oozeborn:  25 / 162
  *     Troll:  26 / 163
  *    Treant:  26 / 167
@@ -87,7 +87,7 @@
 #### Cleric
             Cleric 1
             AP 3, FT 6, IP 4, Skills 5
-            HP 10, DR 5
+            HP 12, DR 5
             AD 5, Brn 5, Fort 5, Ref 5, Ment 7
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -96,7 +96,7 @@
 #### Druid
             Druid 1
             AP 3, FT 6, IP 4, Skills 6
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -141,7 +141,7 @@
 #### Rogue
             Rogue 1
             AP 3, FT 6, IP 3, Skills 8
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -150,7 +150,7 @@
 #### Sorcerer
             Sorcerer 1
             AP 4, FT 6, IP 3, Skills 6
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -159,7 +159,7 @@
 #### Votive
             Votive 1
             AP 3, FT 6, IP 3, Skills 5
-            HP 10, DR 5
+            HP 12, DR 5
             AD 5, Brn 5, Fort 5, Ref 5, Ment 7
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -168,7 +168,7 @@
 #### Wizard
             Wizard 1
             AP 3, FT 6, IP 4, Skills 7
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -195,7 +195,7 @@
 #### Dryaidi
             Dryaidi 1
             AP 3, FT 6, IP 4, Skills 6
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 6, Ref 5, Ment 6
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -204,7 +204,7 @@
 #### Harpy
             Harpy 1
             AP 3, FT 6, IP 3, Skills 7
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 7, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -222,7 +222,7 @@
 #### Naiad
             Naiad 1
             AP 3, FT 6, IP 3, Skills 7
-            HP 10, DR 4
+            HP 12, DR 4
             AD 4, Brn 5, Fort 5, Ref 5, Ment 7
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -278,7 +278,7 @@
 #### Cleric
             Cleric 10
             AP 5, FT 6, IP 6, Skills 5
-            HP 26, DR 18
+            HP 28, DR 18
             AD 10, Brn 10, Fort 10, Ref 10, Ment 12
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -287,7 +287,7 @@
 #### Druid
             Druid 10
             AP 5, FT 6, IP 6, Skills 6
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -332,7 +332,7 @@
 #### Rogue
             Rogue 10
             AP 5, FT 6, IP 5, Skills 8
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -341,7 +341,7 @@
 #### Sorcerer
             Sorcerer 10
             AP 6, FT 6, IP 5, Skills 6
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -350,7 +350,7 @@
 #### Votive
             Votive 10
             AP 5, FT 6, IP 5, Skills 5
-            HP 26, DR 18
+            HP 28, DR 18
             AD 10, Brn 10, Fort 10, Ref 10, Ment 12
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -359,7 +359,7 @@
 #### Wizard
             Wizard 10
             AP 5, FT 6, IP 6, Skills 7
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -386,7 +386,7 @@
 #### Dryaidi
             Dryaidi 10
             AP 5, FT 6, IP 6, Skills 6
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 11, Ref 10, Ment 11
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -395,7 +395,7 @@
 #### Harpy
             Harpy 10
             AP 5, FT 6, IP 5, Skills 7
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 12, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
@@ -413,7 +413,7 @@
 #### Naiad
             Naiad 10
             AP 5, FT 6, IP 5, Skills 7
-            HP 26, DR 12
+            HP 28, DR 12
             AD 9, Brn 10, Fort 10, Ref 10, Ment 12
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
