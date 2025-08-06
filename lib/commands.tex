@@ -843,8 +843,11 @@
 
 \newcommand{\critcondition}{\crit The condition must be removed an additional time before the effect ends.}
 
-\newcommand{\domainability}[1]{\parhead{#1}}
-\newcommand{\magicaldomainability}[1]{\par \textbf{#1}\sparkle: }
+% Because latex is confusing, the preceding noindent actually guarantees that the paragraph *will* be
+% indented. That still looks fine, and it solves the problem where the first parhead would be unindented
+% while every following one would be indented.
+\newcommand{\domainability}[1]{\noindent\parhead{#1}}
+\newcommand{\magicaldomainability}[1]{\noindent\par \textbf{#1}\sparkle: }
 
 \newcommand{\mediumhpprogressiontable}{
   \begin{columntable}
