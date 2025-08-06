@@ -28,7 +28,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
         base_class_table = class.latex_base_class_table().trim(),
         hit_points = generate_latex_hit_points(class).trim(),
         defenses = generate_latex_defenses(class)
-            .unwrap_or("".to_string())
             .trim(),
         name = class.name(),
         resources = generate_latex_resources(class).trim(),
@@ -63,26 +62,33 @@ fn generate_latex_resources(class: &Class) -> String {
     )
 }
 
-fn generate_latex_defenses(class: &Class) -> Option<String> {
-    let modifiers = Defense::all()
+fn generate_latex_defenses(class: &Class) -> String {
+    let plus3_defense_names = Defense::all()
         .iter()
+        .filter(|d| class.defense_bonus(d) == 3)
+        .map(|d| d.title().to_string())
+        .collect::<Vec<String>>();
+    let plus3_defense_text = latex_formatting::join_string_list(&plus3_defense_names).unwrap();
+
+    let custom_modifiers = Defense::all()
+        .iter()
+        .filter(|d| class.defense_bonus(d) != 3)
         .map(|d| format_defense(d, class.defense_bonus(d)))
         .filter(|t| t.is_some())
         .map(|t| t.unwrap())
         .collect::<Vec<String>>();
-    let maybe_modifier_text = latex_formatting::join_string_list(&modifiers);
-    if let Some(modifier_text) = maybe_modifier_text {
-        Some(latex_formatting::latexify(format!(
-            "
-                \\cf<{shorthand_name}><Defenses>
-                You gain {defenses}.
-            ",
-            defenses = modifier_text,
-            shorthand_name = class.shorthand_name(),
-        )))
-    } else {
-        None
-    }
+    let custom_modifier_text = if let Some(modifier_text) = latex_formatting::join_string_list(&custom_modifiers) {
+        format!("In addition, you gain {modifier_text}.")
+    } else { "".to_string() };
+
+    latex_formatting::latexify(format!(
+        "
+            \\cf<{shorthand_name}><Defenses>
+            You gain a \\plus3 bonus to your {plus3_defense_text} defenses.
+            {custom_modifier_text}
+        ",
+        shorthand_name = class.shorthand_name(),
+    ))
 }
 
 fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
