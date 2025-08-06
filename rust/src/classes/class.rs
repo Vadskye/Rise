@@ -96,7 +96,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 24;
+        let expected_points = 48;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -375,9 +375,7 @@ impl Class {
                 Skill::Deduction,
                 Skill::Flexibility,
                 Skill::Intimidate,
-                Skill::Knowledge(vec![
-                    KnowledgeSubskill::Nature
-                ]),
+                Skill::Knowledge(vec![KnowledgeSubskill::Nature]),
                 Skill::Medicine,
                 Skill::Perform,
                 Skill::Persuasion,
@@ -540,7 +538,14 @@ impl Class {
     }
 
     pub fn defense_bonus(&self, defense: &Defense) -> i32 {
-        match self {
+        // Every non-Armor defense starts with a class bonus of 3 to make combat math work out
+        let base_bonus = if matches!(defense, Defense::Armor) {
+            0
+        } else {
+            3
+        };
+
+        let class_bonus = match self {
             Self::Cleric => match defense {
                 Defense::Mental => 2,
                 _ => 0,
@@ -582,7 +587,9 @@ impl Class {
                 _ => 0,
             },
             _ => 0,
-        }
+        };
+
+        base_bonus + class_bonus
     }
 
     pub fn hit_point_progression(&self) -> HitPointProgression {
@@ -783,7 +790,11 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Troll => ArmorProficiencies {
-                specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::LayeredHide(None), Armor::StandardShield]),
+                specific_armors: Some(vec![
+                    Armor::LeatherLamellar(None),
+                    Armor::LayeredHide(None),
+                    Armor::StandardShield,
+                ]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Vampire => ArmorProficiencies {
@@ -1837,5 +1848,6 @@ fn universal_character_progression_at_level(level: i32) -> String {
         18 => "Legacy item: ranks 7",
         21 => "+1 to two attributes",
         _ => r"\tdash",
-    }.to_string()
+    }
+    .to_string()
 }
