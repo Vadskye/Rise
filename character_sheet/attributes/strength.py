@@ -84,7 +84,11 @@ def calc_brawn():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("brawn", 3),
+                    underlabel(
+                        "Class", number_input({"name": "brawn_class"})
+                    ),
+                    plus(),
+                    equation_misc_repeat("brawn", 2),
                 ],
                 result_attributes={
                     "disabled": True,
