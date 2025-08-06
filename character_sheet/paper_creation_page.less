@@ -3,7 +3,23 @@ div.full-sheet {
     .creation-guidance {
         width: 16em;
 
-        .description, .archetypes, .combat-styles-and-mystic-spheres, .other-ability-groups, .feats {
+        > div {
+            padding-right: 0.2em;
+        }
+
+        textarea {
+            width: 17.2em;
+        }
+
+        .species-and-size {
+            gap: 1em;
+
+            .species, .size {
+                flex-grow: 1;
+            }
+        }
+
+        .description, .equipment-proficiencies, .archetypes, .combat-styles-and-mystic-spheres, .background, .other-ability-groups, .feats {
             height: 7em;
         }
     }
@@ -18,13 +34,17 @@ div.full-sheet {
             margin-left: 0.25em;
             flex-grow: 1;
         }
+    }
 
-        .insight-point-allocation {
-            height: 7em;
-        }
-        .active-abilities-known {
-            // This odd height helps sync up the bottom of the page
-            height: 14.56em;
+    .resources {
+        gap: 1em;
+
+        .abilities-chosen-wrapper {
+            flex-grow: 1;
+
+            .abilities-chosen {
+                height: 340px;
+            }
         }
     }
 
