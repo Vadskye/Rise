@@ -120,13 +120,15 @@ def calc_resources():
     return flex_col(
         {"class": "calc-resources"},
         [
-            div({"class": "section-header"}, "Resources"),
             calc_attunement_points(),
             calc_fatigue_tolerance(),
             calc_insight_points(),
             calc_trained_skills(),
             calc_combat_styles(),
+            calc_maneuvers(),
             calc_mystic_spheres(),
+            calc_spells(),
+            calc_blank_resource(),
             calc_blank_resource(),
         ],
     )
@@ -505,6 +507,28 @@ def calc_combat_styles():
         ]
     )
 
+def calc_maneuvers():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Maneuvers"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Insight",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("maneuvers", 2),
+                ],
+            ),
+        ]
+    )
+
 def calc_mystic_spheres():
     return flex_row(
         [
@@ -526,6 +550,29 @@ def calc_mystic_spheres():
             ),
         ]
     )
+
+def calc_spells():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Spells"),
+            equation(
+                [
+                    underlabel(
+                        "Class",
+                        number_input(),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Insight",
+                        number_input(),
+                    ),
+                    plus(),
+                    equation_misc_repeat("spells", 2),
+                ],
+            ),
+        ]
+    )
+
 
 def calc_blank_resource():
     return flex_row(
