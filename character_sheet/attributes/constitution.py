@@ -53,7 +53,7 @@ def calc_fortitude():
                     ),
                     plus(),
                     underlabel(
-                        "Class", number_input({"name": "fortitude_class", "value": "5"})
+                        "Class", number_input({"name": "fortitude_class"})
                     ),
                     plus(),
                     equation_misc_repeat("fortitude", 2),
