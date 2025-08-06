@@ -21,6 +21,10 @@ Maneuvers: maneuver Certain Strike
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Power Strike
 fighter: defense armor by 1
+fighter: defense brawn by 3
+fighter: defense fortitude by 3
+fighter: defense mental by 3
+fighter: defense reflex by 3
 fighter: resource trained skill by 3
 
 ## Level 10
@@ -47,6 +51,10 @@ Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 fighter: defense armor by 1
+fighter: defense brawn by 3
+fighter: defense fortitude by 3
+fighter: defense mental by 3
+fighter: defense reflex by 3
 fighter: resource trained skill by 3
 attribute scaling with level: attribute strength by 2
 attribute scaling with level: attribute constitution by 2
@@ -84,6 +92,10 @@ Enduring Discipline+: resource fatigue tolerance by 2
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Generic Triple Damage
 fighter: defense armor by 1
+fighter: defense brawn by 3
+fighter: defense fortitude by 3
+fighter: defense mental by 3
+fighter: defense reflex by 3
 fighter: resource trained skill by 3
 attribute scaling with level: attribute strength by 3
 attribute scaling with level: attribute constitution by 3

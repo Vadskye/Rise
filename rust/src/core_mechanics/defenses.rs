@@ -185,10 +185,7 @@ where
             return self.calc_defense(&Defense::Fortitude);
         }
 
-        let base_defense = if defense == &Defense::Armor { 0 } else { 3 };
-
-        base_defense
-            + self.level / 2
+        self.level / 2
             + self.calc_defense_modifier_attribute(defense)
             + self.calc_defense_modifier_armor(defense)
             + self.calc_defense_modifier_size(defense)

@@ -2301,7 +2301,6 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       ],
     },
     callback: (v) => {
-      const base = 3;
       const levelModifier = Math.floor(v.level / 2);
       const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
       let sizeModifier = 0;
@@ -2313,7 +2312,6 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       // Monsters only apply half attribute modifier
       const attributeModifier = v.challenge_rating ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue =
-        base +
         levelModifier +
         crModifier +
         sizeModifier +
@@ -2324,7 +2322,6 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       setAttrs({
         [defense]: totalValue,
         [`${defense}_explanation`]: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'base', value: base },
           { name: 'level', value: levelModifier },
           { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
           { name: 'size', value: sizeModifier },
