@@ -1555,7 +1555,7 @@ impl Class {
                         \domainability{Gift} You are \impervious to \atCompulsion attacks.
                         \magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
                         Unlike attacks, your skill checks can only explode once.
-                        \magicaldomainability{Essence}
+                        \magicaldomainability{Essence} You gain the \ability{twist of fate} ability.
                         \begin{magicalactiveability}{Twist of Fate}
                             \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
                             \abilityusagetime Standard action.
@@ -1584,7 +1584,7 @@ impl Class {
                     \subsubsection{Destruction Domain}
                         \magicaldomainability{Gift} Your damaging attacks deal double damage to objects.
                         \domainability{Aspect} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
-                        \magicaldomainability{Essence}
+                        \magicaldomainability{Essence} You gain the \ability{lay waste} ability.
                         \begin{magicalactiveability}{Lay Waste}
                             \abilityusagetime Standard action.
                             \rankline
@@ -1609,7 +1609,7 @@ impl Class {
                     \subsubsection{Evil Domain}
                         \domainability{Gift} You are immune to being \charmed and \goaded.
                         \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
-                        \magicaldomainability{Essence}
+                        \magicaldomainability{Essence} You gain the \ability{blood sacrifice} ability.
                         \begin{magicalactiveability}{Blood Sacrifice}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
                             \rankline
@@ -1631,7 +1631,7 @@ impl Class {
 
                     \subsubsection{Good Domain}
                         \domainability{Gift} You are immune to \atCurse attacks and being \dominated.
-                        \magicaldomainability{Aspect} 
+                        \magicaldomainability{Aspect} You gain the \ability{sacrificial bond} ability.
                         \begin{magicalactiveability}{Sacrificial Bond}[\abilitytag{Swift}]
                             \abilityusagetime Standard action.
                             \rankline
@@ -1657,7 +1657,7 @@ impl Class {
                         \domainability{Gift} You are \impervious to \atEmotion attacks.
                         \magicaldomainability{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
-                        \magicaldomainability{Essence}
+                        \magicaldomainability{Essence} You gain the \ability{compel law} ability.
                         \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
                             \abilitycost One \glossterm{fatigue level}.
                             \abilityusagetime Standard action.
@@ -1706,7 +1706,7 @@ impl Class {
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You become proficient with an additional \glossterm{usage class} of armor (light, medium, or heavy).
                             You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
-                        \magicaldomainability{Aspect}
+                        \magicaldomainability{Aspect} You gain the \ability{divine protection} ability.
                         \begin{magicalactiveability}{Divine Protection}{\abilitytag{Swift}}
                             \abilityusagetime Standard action.
                             \rankline
