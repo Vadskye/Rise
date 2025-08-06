@@ -5,9 +5,13 @@ import {
 } from '@src/latex/convert_mystic_sphere_to_latex';
 import * as format from '@src/latex/format';
 import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
+import _ from 'lodash';
 
 export function convertCombatStyleToLatex(style: CombatStyle): string {
   assertEndsWithPeriod(style.shortDescription, style.name);
+  const ranks = [1, 3, 5, 7];
+  const maneuversByRank = _.groupBy(sortByRankAndLevel(style.maneuvers), (s) => s.rank);
+
   return format.latexify(`
     \\section{{${style.name}}}
       \\hypertargetraised{style:${style.name.toLowerCase()}}{}%
@@ -16,8 +20,14 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
       \\textit{${style.shortDescription}}
       ${style.specialRules ? `\\parhead{Special Rules} ${style.specialRules}` : ``}
 
-      \\subsection{Maneuvers}
-        ${sortByRankAndLevel(style.maneuvers).map(convertManeuverToLatex).join('\n')}
+      ${ranks
+        .map((rank) =>
+          maneuversByRank[rank]
+            ? `\\subsection{Rank ${rank} Maneuvers}
+          ${maneuversByRank[rank].map(convertManeuverToLatex).join('\n')}`
+            : '',
+        )
+        .join('\n')}
   `);
 }
 
