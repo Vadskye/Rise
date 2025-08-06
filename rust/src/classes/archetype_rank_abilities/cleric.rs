@@ -152,24 +152,26 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 You gain the domain gift for both of your domains (see \pcref{Cleric Domain Abilities}).
 
                 \begin{itemize}
-                    \item{Air}
                     \item{Chaos}
                     \item{Death}
+                    \item{Destiny}
                     \item{Destruction}
                     \item{Earth}
                     \item{Evil}
-                    \item{Fire}
+                    \item{Forge}
                     \item{Good}
                     \item{Knowledge}
                     \item{Law}
                     \item{Life}
                     \item{Magic}
+                    \item{Ocean}
                     \item{Protection}
-                    \item{Strength}
+                    \item{Sky}
+                    \item{Storm}
+                    \item{Sun}
                     \item{Travel}
                     \item{Trickery}
                     \item{War}
-                    \item{Water}
                     \item{Wild}
                 \end{itemize}
             ",
