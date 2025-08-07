@@ -763,27 +763,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       However, it also has a \minus1 accuracy penalty.
       Unlike other weapons, pure starmetal weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 2 to wield.
 
-      % Magic weapons are a highly limited slot.
-      % They have the same power level as self-attune spells.
-      \begin{longcolumn}
-        \section{Magic Weapons}\label{Magic Weapons}
-          \begin{longtablepreface}
-
-            Magic weapons improve a character's combat abilities.
-            They must be wielded to gain their effects.
-
-            \parhead{Ranged Weapons and Ammunition} Any magical properties of a \weapontag{Projectile} weapon also apply to all ammunition fired from that weapon.
-
-            \parhead{Craft Skills} The craft skills used to create and repair items are listed in parentheses before the item's description.
-            All magic weapons simply use the same materials as the original, nonmagical weapon.
-          \end{longtablepreface}
-
-          \input{generated/magic_weapons_table.tex}
-
-      \end{longcolumn}
-
-      \input{generated/magic_weapons.tex}
-
 \newpage
 \sectiongraphic*{Armor}{width=\columnwidth}{equipment/armor}
 
@@ -1062,52 +1041,119 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \parhead{Vineweave, Braided} Braided vineweave body armor provides \plus2 \glossterm{damage resistance}.
       However, it makes you \vulnerable to \atFire attacks.
 
-      % Magic armor is a highly limited slot.
-      % They have the same power level as self-attune spells.
-      \begin{longcolumn}
-        \section{Magic Armor}\label{Magic Armor}
-          \begin{longtablepreface}
-            Magic body armor must be worn to gain its effects, while magic shields must be wielded.
-            You cannot imbue magic body armor effects on ordinary clothing, even if that clothing is worn on the body instead of armor.
-          \end{longtablepreface}
 
-          \input{generated/magic_armor_table.tex}
+  % Permanent tools like this generally have no clear relationship to spells.
+  \begin{longcolumn}
+    \section{Tools, Goods, and Mounts}
+      \begin{longtablepreface}
+        % \includegraphics[width=\columnwidth]{equipment/tools goods and mounts}
 
-      \end{longcolumn}
+        The world of Rise has a wide range of minor items like backpacks, blankets, and ten-foot poles.
+        In general, the cost of those items is so insignificant from the perspective of an adventuring party that it's not worth the effort to track their cost in detail.
+        A subset of particularly expensive items is included in \tref{Permanent Tools, Goods, and Mounts}.
 
-      \input{generated/magic_armor.tex}
+        \subsection{Standard Adventuring Kit}\label{Standard Adventuring Kit}
+          % Technically 15.2 gp and 50.5 pounds
+          A standard adventuring kit is a rank 0 item (1 gp), weighs 50 pounds, and contains the following items:
+          \begin{raggeditemize}
+            \item Backpack
+            \item Bedroll
+            \item Flint and steel
+            \item Rations, trail (8 days)
+            \item Rope, hempen (60 ft.)
+            \item Sack (empty)
+            \item Tent
+            \item Torch
+            \item Waterskin
+          \end{raggeditemize}
+      \end{longtablepreface}
 
-      % Magic apparel is a loosely limited slot.
-      % They are one rank behind self-attune spells.
-      \begin{longcolumn}
-        \section{Magic Apparel}
-          \begin{longtablepreface}
-            \includegraphics[width=\columnwidth]{equipment/magic apparel}
-            Magic apparel items must be worn to gain their effects.
+      \input{generated/permanent_tools_table.tex}
+  \end{longcolumn}
 
-            \subsection{Body Slots}\label{Body Slots}
-              The main limiting factor on how many items you can have equipped is your attunement points, not the physical location of your items on your body.
-              However, there are limits to how many items you can wear of the same type, as described below.
-              For item types not listed here, use reasonable judgment about what would be plausible.
-              \begin{raggeditemize}
-                \item Amulet: Up to 2
-                \item Belt: Up to 2
-                \item Boots: Up to 1
-                \item Circlet: Up to 2
-                \item Cloak: Up to 2
-                \item Gauntlets: Up to 1 (separate from gloves)
-                \item Gloves: Up to 1 (separate from gauntlets)
-                \item Rings: Up to 5 per hand
-                \item Tattoo: Any number, but only 1 per specific tattoo location
-              \end{raggeditemize}
-          \end{longtablepreface}
+  \input{generated/permanent_tools.tex}
 
-          \input{generated/apparel_table.tex}
+  % Magic consumables are a loosely limited slot, but being consumable is a big downside.
+  % They have the same power level as spells.
+  \begin{longcolumn}
+    \section{Consumables}\label{Consumables}
 
-      \end{longcolumn}
-\section{Magic Apparel Descriptions}
+      \subsection{Potions}
+        A potion is a magical liquid that is typically contained in a Fine vial.
+        Drinking a potion, or administering a potion to an unconscious creature, requires a standard action.
+        Potions cannot be safely mixed together without diluting their magic, so you cannot consume two potions with the same action.
 
-  \input{generated/apparel.tex}
+        \input{generated/consumable_tools_table.tex}
+  \end{longcolumn}
+
+  \input{generated/consumable_tools.tex}
+
+% Magic weapons are a highly limited slot.
+% They have the same power level as self-attune spells.
+\begin{longcolumn}
+    \section{Magic Weapons}\label{Magic Weapons}
+    \begin{longtablepreface}
+
+      Magic weapons improve a character's combat abilities.
+      They must be wielded to gain their effects.
+
+      \parhead{Ranged Weapons and Ammunition} Any magical properties of a \weapontag{Projectile} weapon also apply to all ammunition fired from that weapon.
+
+      \parhead{Craft Skills} The craft skills used to create and repair items are listed in parentheses before the item's description.
+      All magic weapons simply use the same materials as the original, nonmagical weapon.
+    \end{longtablepreface}
+
+    \input{generated/magic_weapons_table.tex}
+
+\end{longcolumn}
+
+\input{generated/magic_weapons.tex}
+
+% Magic armor is a highly limited slot.
+% They have the same power level as self-attune spells.
+\begin{longcolumn}
+  \section{Magic Armor}\label{Magic Armor}
+    \begin{longtablepreface}
+      Magic body armor must be worn to gain its effects, while magic shields must be wielded.
+      You cannot imbue magic body armor effects on ordinary clothing, even if that clothing is worn on the body instead of armor.
+    \end{longtablepreface}
+
+    \input{generated/magic_armor_table.tex}
+
+\end{longcolumn}
+
+\input{generated/magic_armor.tex}
+
+% Magic apparel is a loosely limited slot.
+% They are one rank behind self-attune spells.
+\begin{longcolumn}
+  \section{Magic Apparel}
+    \begin{longtablepreface}
+      \includegraphics[width=\columnwidth]{equipment/magic apparel}
+      Magic apparel items must be worn to gain their effects.
+
+      \subsection{Body Slots}\label{Body Slots}
+        The main limiting factor on how many items you can have equipped is your attunement points, not the physical location of your items on your body.
+        However, there are limits to how many items you can wear of the same type, as described below.
+        For item types not listed here, use reasonable judgment about what would be plausible.
+        \begin{raggeditemize}
+          \item Amulet: Up to 2
+          \item Belt: Up to 2
+          \item Boots: Up to 1
+          \item Circlet: Up to 2
+          \item Cloak: Up to 2
+          \item Gauntlets: Up to 1 (separate from gloves)
+          \item Gloves: Up to 1 (separate from gauntlets)
+          \item Rings: Up to 5 per hand
+          \item Tattoo: Any number, but only 1 per specific tattoo location
+        \end{raggeditemize}
+    \end{longtablepreface}
+
+    \input{generated/apparel_table.tex}
+
+\end{longcolumn}
+
+\input{generated/apparel.tex}
 
   % Magic implements are a highly limited slot.
   % They have the same power level as self-attune spells.
@@ -1140,49 +1186,3 @@ This chapter defines the items and equipment that exist in the universe of Rise,
   \end{longcolumn}
 
   \input{generated/implements.tex}
-
-  % Magic consumables are a loosely limited slot, but being consumable is a big downside.
-  % They have the same power level as spells.
-  \begin{longcolumn}
-    \section{Consumables}\label{Consumables}
-
-      \subsection{Potions}
-        A potion is a magical liquid that is typically contained in a Fine vial.
-        Drinking a potion, or administering a potion to an unconscious creature, requires a standard action.
-        Potions cannot be safely mixed together without diluting their magic, so you cannot consume two potions with the same action.
-
-        \input{generated/consumable_tools_table.tex}
-  \end{longcolumn}
-
-  \input{generated/consumable_tools.tex}
-
-  % Permanent tools like this generally have no clear relationship to spells.
-  \begin{longcolumn}
-    \section{Tools, Goods, and Mounts}
-      \begin{longtablepreface}
-        % \includegraphics[width=\columnwidth]{equipment/tools goods and mounts}
-
-        The world of Rise has a wide range of minor items like backpacks, blankets, and ten-foot poles.
-        In general, the cost of those items is so insignificant from the perspective of an adventuring party that it's not worth the effort to track their cost in detail.
-        A subset of particularly expensive items is included in \tref{Permanent Tools, Goods, and Mounts}.
-
-        \subsection{Standard Adventuring Kit}\label{Standard Adventuring Kit}
-          % Technically 15.2 gp and 50.5 pounds
-          A standard adventuring kit is a rank 0 item (1 gp), weighs 50 pounds, and contains the following items:
-          \begin{raggeditemize}
-            \item Backpack
-            \item Bedroll
-            \item Flint and steel
-            \item Rations, trail (8 days)
-            \item Rope, hempen (60 ft.)
-            \item Sack (empty)
-            \item Tent
-            \item Torch
-            \item Waterskin
-          \end{raggeditemize}
-      \end{longtablepreface}
-
-      \input{generated/permanent_tools_table.tex}
-  \end{longcolumn}
-
-  \input{generated/permanent_tools.tex}
