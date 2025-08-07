@@ -363,6 +363,7 @@ fn generate_latex_starting_items(class: &Class) -> String {
                 {weapon_text}
                 {shield_text}
                 \\item A standard adventuring kit (see \\pcref<Standard Adventuring Kit>).
+                \\item A rank 0 wealth item (1 gp)
             \\end<raggeditemize>
         ",
         shorthand_name = class.shorthand_name(),
