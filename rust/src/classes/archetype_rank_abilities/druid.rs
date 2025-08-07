@@ -115,12 +115,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a benefit from each of the four elements.
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item Air: You gain a slow \glossterm{glide speed} (see \pcref{Aerial Movement}).
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
                     \item Fire: You are \trait{impervious} to \atFire attacks.
                     \item Water: You gain a slow \glossterm{swim speed}.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             // TODO: represent movement speeds
             modifiers: Some(vec![Modifier::Defense(Defense::Fortitude, 1)]),
@@ -132,13 +132,13 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 Your benefits from each element improve.
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item Air: You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
                     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \item Earth: You gain a \plus1 bonus to your Brawn defense.
                     \item Fire: You are immune to \atFire attacks.
                     \item Water: Your swim speed increases to average.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Brawn, 1)]),
         },
@@ -152,7 +152,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
                     Each element has different limitations on its ability to move, as described below.
                     Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item Air: You can change the wind speed of air by up to 30 miles per hour, to a maximum total speed of 40 miles per hour.
                             If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
                         % TODO: clarify how this works
@@ -160,7 +160,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                         \item Fire: You can make fire leap up to 60 feet between combustible materials, suppress fire so it smolders without being extinguished, or snuff out fire entirely.
                         \item Water: You can change the speed of water by up to 30 feet per round, to a maximum total speed of 40 feet per round.
                             If you reduce the water's speed to 0 and then increase it again, you can change the direction the water flows.
-                    \end{itemize}
+                    \end{raggeditemize}
                 \end{magicalsustainability}
             ",
             modifiers: None,
@@ -615,7 +615,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     The animal's statistics use the values below, except that each animal also gains a special ability based on the environment you are in.
                     Animals are unable to understand complex concepts, so their ability to obey convoluted instructions is limited.
 
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item Its level is equal to your level.
                         \item All of its attributes are 0 except for Intelligence, which it does not have.
@@ -627,7 +627,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item Its \glossterm{power} is equal to half your power.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
-                    \end{itemize}
+                    \end{raggeditemize}
 
                     % TODO: awkward scaling
                     \rankline
@@ -644,7 +644,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                 You may choose a different animal native to that environment that is similar in size and type, but that does not change the animal's statistics.
                 For example, your \textit{natural servant} in an aquatic environment may be a dolphin or seal instead of a shark.
                 Unusual environments may have different animals than the standard animals listed below.
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item Aquatic: A shark appears that has an average \glossterm{swim speed} and no walk speed.
                         It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Swim skills.
                     \item Arctic: An arctic fox appears that has no penalties for being in cold environments.
@@ -661,7 +661,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a bite \glossterm{natural weapon}, and it is trained with the Swim and Stealth skills.
                     \item Underground: A dire rat appears that has \trait{low-light vision}.
                         It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skill.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             // TODO: represent a whole extra creature???
             modifiers: None,

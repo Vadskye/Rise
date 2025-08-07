@@ -169,14 +169,14 @@ pub fn generate_module() -> Module {
 
             Most of the storage chests in this room contain food, pots, pans, and various other cooking implements.
             One of the chests near the north of the room contains all of the party's equipment, as well as the following additional items:
-            \\begin<itemize>
+            \\begin<raggeditemize>
                 \\item Three sets of body armor with signs of battle damage: brigandine, leather lamellar, and a chain shirt
                 \\item Five weapons: two smallswords, one longbow (with arrows), one warhammer, and a dagger
                 \\item One standard shield
                 \\item Three standard adventuring kits, with some of the rations eaten
                 \\item One sapphire necklace (worth 10 gp)
                 \\item One silver ring (worth 2 gp) with the Dwarven runes for ``Ironbeard'' engraved on the inside
-            \\end<itemize>
+            \\end<raggeditemize>
 
             There is a secret door hidden on the east wall that leads to Room 5.
             The party can notice it with a DV 18 Awareness check.

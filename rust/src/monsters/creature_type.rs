@@ -97,9 +97,9 @@ impl CreatureType {
                 \\section<{plural_name_title}>
 
                 All {plural_name} have the following properties unless noted otherwise in their description:
-                \\begin<itemize>
+                \\begin<raggeditemize>
                     \\item {defenses}
-                \\end<itemize>
+                \\end<raggeditemize>
                 \\vspace<0.5em>
             ",
             plural_name_title = titlecase(self.plural_name().as_str()),

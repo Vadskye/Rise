@@ -271,9 +271,9 @@ fn generate_latex_class_skills(class: &Class) -> String {
             \\cf<{shorthand_name}><Class Skills>
             You have the following \\glossterm<class skills>:
 
-            \\begin<itemize>
+            \\begin<raggeditemize>
                 {attribute_texts}
-            \\end<itemize>
+            \\end<raggeditemize>
         ",
         attribute_texts = attribute_texts.join("\n"),
         shorthand_name = class.shorthand_name(),
@@ -353,12 +353,12 @@ fn generate_latex_starting_items(class: &Class) -> String {
             \\cf<{shorthand_name}><Starting Items and Equipment>
             You can start with the following items and equipment:
 
-            \\begin<itemize>
+            \\begin<raggeditemize>
                 {rank1_item_text}
                 {weapon_text}
                 {shield_text}
                 \\item A standard adventuring kit (see \\pcref<Standard Adventuring Kit>).
-            \\end<itemize>
+            \\end<raggeditemize>
         ",
         shorthand_name = class.shorthand_name(),
     )
