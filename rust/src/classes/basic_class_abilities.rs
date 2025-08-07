@@ -1,5 +1,6 @@
 use crate::classes::Class;
 use crate::core_mechanics::{Attribute, Defense};
+use crate::equipment::ArmorUsageClass;
 use crate::latex_formatting;
 
 // Generate the whole "Base Class Abilities" subsection used to explain a class in the
@@ -23,16 +24,18 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
             {armor_proficiencies}
 
+            {starting_items}
+
             {class_skills}
         ",
         base_class_table = class.latex_base_class_table().trim(),
         hit_points = generate_latex_hit_points(class).trim(),
-        defenses = generate_latex_defenses(class)
-            .trim(),
+        defenses = generate_latex_defenses(class).trim(),
         name = class.name(),
         resources = generate_latex_resources(class).trim(),
         armor_proficiencies = generate_latex_armor_proficiencies(class).trim(),
         class_skills = generate_latex_class_skills(class).trim(),
+        starting_items = generate_latex_starting_items(class).trim(),
         weapon_proficiencies = generate_latex_weapon_proficiencies(class).trim(),
     ))
 }
@@ -77,9 +80,12 @@ fn generate_latex_defenses(class: &Class) -> String {
         .filter(|t| t.is_some())
         .map(|t| t.unwrap())
         .collect::<Vec<String>>();
-    let custom_modifier_text = if let Some(modifier_text) = latex_formatting::join_string_list(&custom_modifiers) {
-        format!("In addition, you gain {modifier_text}.")
-    } else { "".to_string() };
+    let custom_modifier_text =
+        if let Some(modifier_text) = latex_formatting::join_string_list(&custom_modifiers) {
+            format!("In addition, you gain {modifier_text}.")
+        } else {
+            "".to_string()
+        };
 
     latex_formatting::latexify(format!(
         "
@@ -270,6 +276,90 @@ fn generate_latex_class_skills(class: &Class) -> String {
             \\end<itemize>
         ",
         attribute_texts = attribute_texts.join("\n"),
+        shorthand_name = class.shorthand_name(),
+    )
+}
+
+fn generate_latex_starting_items(class: &Class) -> String {
+    let mut armor_options = vec![];
+    for usage_class in class.armor_proficiencies().usage_classes {
+        let armor_name = match usage_class {
+            ArmorUsageClass::Light => "Buff leather",
+            ArmorUsageClass::Medium => "Leather lamellar",
+            ArmorUsageClass::Heavy => "Breastplate",
+        };
+
+        armor_options.push(armor_name.to_string());
+    }
+
+    let rank1_item_text = if armor_options.len() > 0 {
+        format!(
+            "
+                \\item {}
+            ",
+            latex_formatting::join_string_list(&armor_options).unwrap()
+        )
+    } else {
+        "\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to".to_string()
+    };
+
+    let mut weapon_options: Vec<String> = vec![];
+    if let Some(custom_weapons) = class.weapon_proficiencies().custom_weapons {
+        // TODO: fix formatting here; we might need to convert this to a vec
+        weapon_options.push(custom_weapons.replace(" and ", " "));
+    }
+    if class.weapon_proficiencies().simple_weapons {
+        weapon_options.push("club".to_string());
+        weapon_options.push("dagger".to_string());
+    }
+    if class.weapon_proficiencies().non_exotic_weapons {
+        weapon_options.push("broadsword".to_string());
+        weapon_options.push("two handaxes".to_string());
+        weapon_options.push("spear".to_string());
+    }
+    let weapon_text = if weapon_options.len() == 0 {
+        "\\item Two \\magicitem{potions of healing}".to_string()
+    } else if weapon_options.len() > 2 {
+        format!(
+            "\\item Any two of the following: {}",
+            latex_formatting::join_string_list(&weapon_options).unwrap()
+        )
+    } else {
+        format!(
+            "\\item Any one of the following: {}",
+            latex_formatting::join_string_list(&weapon_options).unwrap()
+        )
+    }
+    .replace(" and ", " or ");
+
+    let shield_text = if class
+        .armor_proficiencies()
+        .usage_classes
+        .contains(&ArmorUsageClass::Medium)
+    {
+        "\\item A buckler or standard shield"
+    } else if class
+        .armor_proficiencies()
+        .usage_classes
+        .contains(&ArmorUsageClass::Light)
+    {
+        "\\item A buckler"
+    } else {
+        "\\item A vial of \\magicitem{alchemist's fire}"
+    };
+
+    format!(
+        "
+            \\cf<{shorthand_name}><Starting Items and Equipment>
+            You can start with the following items and equipment:
+
+            \\begin<itemize>
+                {rank1_item_text}
+                {weapon_text}
+                {shield_text}
+                \\item A standard adventuring kit (see \\pcref<Standard Adventuring Kit>).
+            \\end<itemize>
+        ",
         shorthand_name = class.shorthand_name(),
     )
 }
