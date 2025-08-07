@@ -292,12 +292,14 @@ fn generate_latex_starting_items(class: &Class) -> String {
         armor_options.push(armor_name.to_string());
     }
 
-    let rank1_item_text = if armor_options.len() > 0 {
+    let rank1_item_text = if armor_options.len() == 1 {
+        format!("\\item {}", armor_options[0])
+    } else if armor_options.len() > 0 {
         format!(
             "
-                \\item {}
+                \\item Any one of the following: {}
             ",
-            latex_formatting::join_string_list(&armor_options).unwrap()
+            latex_formatting::join_string_list(&armor_options).unwrap().replace(" and ", " or ").to_lowercase()
         )
     } else {
         "\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to".to_string()
