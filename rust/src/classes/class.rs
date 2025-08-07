@@ -1236,7 +1236,7 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Rogue => WeaponProficiencies {
-                custom_weapons: Some(r"weapons with the \weapontag{Compact} and \weapontag{Light} weapon tags (see \pcref{Weapon Tags})".to_string()),
+                custom_weapons: Some(r"weapons with the \weapontag{Compact} or \weapontag{Light} weapon tags (see \pcref{Weapon Tags})".to_string()),
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
