@@ -501,7 +501,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
-        rank: 2,
+        rank: 1,
         short_description: String::from(r"+1 damage, -10 Stealth"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
@@ -509,11 +509,11 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             However, you take a -10 penalty to Stealth checks.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "+1d4 damage, -10 Stealth", r"
-                The extra damage increases to 1d4.
+            ItemUpgrade::new(3, "+2 damage, -10 Stealth", r"
+                The extra damage increases to 2.
             "),
-            ItemUpgrade::new(6, "+1d8 damage, -10 Stealth", r"
-                The extra damage increases to 1d8.
+            ItemUpgrade::new(5, "+1d6 damage, -10 Stealth", r"
+                The extra damage increases to 1d6.
             "),
         ],
         ..MagicWeapon::default()
