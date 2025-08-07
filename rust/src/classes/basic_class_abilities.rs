@@ -321,14 +321,17 @@ fn generate_latex_starting_items(class: &Class) -> String {
     }
     let weapon_text = if weapon_options.len() == 0 {
         "\\item Two \\magicitem{potions of healing}".to_string()
-    } else if weapon_options.len() > 2 {
-        format!(
-            "\\item Any two of the following: {}",
-            latex_formatting::join_string_list(&weapon_options).unwrap()
-        )
-    } else {
+    } else if weapon_options.len() == 1 {
+        // Only possible with custom weapons only??
         format!(
             "\\item Any one of the following: {}",
+            latex_formatting::join_string_list(&weapon_options).unwrap()
+        )
+    } else if weapon_options.len() == 2 {
+        format!("\\item A {}", latex_formatting::join_string_list(&weapon_options).unwrap())
+    } else {
+        format!(
+            "\\item Any two of the following: {}",
             latex_formatting::join_string_list(&weapon_options).unwrap()
         )
     }
