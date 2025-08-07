@@ -405,14 +405,14 @@ export const umbramancy: MysticSphere = {
       effect: `
         You collapse to the ground, taking the appearance and shape of a shadow.
         This has a number of effects, as described below.
-        \\begin{itemize}
+        \\begin{raggeditemize}
           \\item You are nearly flat, allowing you to pass under doors and through other narrow passages.
           Your horizontal dimensions are unchanged, and you cannot enter spaces that are more narrow than you can normally fit through.
           \\item You can freely move through space occupied by other creatures, and other creatures can freely move through your space.
           \\item While you in a space occupied by an \\glossterm{shadowed} \\glossterm{ally}, you have \\glossterm{concealment}, and you can use the \\textit{hide} ability without moving in a way that causes observers to lose sight of you (see \\pcref{Stealth}).
           \\item You gain a slow \\glossterm{climb speed}, and you can climb without using any hands.
           \\item You are always treated as being \\prone, though your movement speed is not reduced.
-        \\end{itemize}
+        \\end{raggeditemize}
 
         At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
         If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.

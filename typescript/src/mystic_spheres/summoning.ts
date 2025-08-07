@@ -32,7 +32,7 @@ export const summoning: MysticSphere = {
         If a summoned creature gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
         Regardless of the appearance and size chosen, the creature's statistics use the values below.
 
-        \\begin{itemize}
+        \\begin{raggeditemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
           \\item Its maximum \\glossterm{hit points} are equal to the standard value for a cleric of your level.
           \\item Its maximum \\glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
@@ -40,7 +40,7 @@ export const summoning: MysticSphere = {
           \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item Its \\glossterm{movement speed} is 30 feet, regardless of the number of legs it appears to have.
           \\item It has no \\glossterm{attunement points}.
-        \\end{itemize}
+        \\end{raggeditemize}
 
         Each round, you can choose the creature's actions by mentally commanding it as a \\glossterm{free action}.
         There are only two actions it can take: movement and attacking.
@@ -241,7 +241,7 @@ export const summoning: MysticSphere = {
         If a summoned weapon gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
         The summoned weapon's statistics use the values below.
 
-        \\begin{itemize}
+        \\begin{raggeditemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
           \\item Its \\glossterm{hit points} are equal to the standard value for a wizard of your level.
           \\item It has no \\glossterm{damage resistance}.
@@ -250,7 +250,7 @@ export const summoning: MysticSphere = {
           \\item It has an average \\glossterm{fly speed} with a maximum height of 5 feet and no \\glossterm{walk speed}.
           \\item Its \\glossterm{movement speed} is 30 feet normally, or 20 feet if the weapon is \\weapontag{Heavy}.
           \\item It has no \\glossterm{attunement points}.
-        \\end{itemize}
+        \\end{raggeditemize}
 
         You cannot control the summoned weapon's actions.
         Each round, the weapon automatically moves towards the creature closest to it during the \\glossterm{movement phase}, following that creature to the best of its abilities.

@@ -1632,12 +1632,12 @@ export const rituals: Ritual[] = [
       You can be as broad or as detailed as you want in your description of your plan, though more specific and plausible plans generally yield more accurate results.
       The GM specifies one of four possible outcomes for the augury based on what is most likely to occur if you follow your plan.
       This is not a guarantee of success or failure, especially for plans that have some intrinsic randomness or chance of failure (such as planning to defeat a monster in combat).
-      \\begin{itemize}
+      \\begin{raggeditemize}
       \\itemhead{Weal} The plan is likely to yield good outcomes for you.
       \\itemhead{Woe} The plan is likely to yield bad outcomes for you.
       \\itemhead{Weal and Woe} The plan is likely to yield a mixture of good and bad outcomes for you.
       \\itemhead{None} Either plan is unlikely to to have any significant outcomes, or the outcomes of the plan are too vague to accurately predict.
-      \\end{itemize}
+      \\end{raggeditemize}
 
       This ritual only yields accurate results once for any given situation.
       If you perform the ritual again in a situation that has not meaningfully changed, the augury always has no outcome regardless of the plan you specify.

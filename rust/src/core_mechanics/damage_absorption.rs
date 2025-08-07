@@ -189,11 +189,11 @@ impl HitPointProgression {
             "
                 You have {level_one}
                 This increases as your level increases, as indicated below.
-                \\begin<itemize>
+                \\begin<raggeditemize>
                     \\itemhead<Level 7> {level_seven}
                     \\itemhead<Level 13> {level_thirteen}
                     \\itemhead<Level 19> {level_nineteen}
-                \\end<itemize>
+                \\end<raggeditemize>
             ",
             level_one = self.hit_points_at_level_text(1),
             level_seven = self.hit_points_at_level_text(7),
