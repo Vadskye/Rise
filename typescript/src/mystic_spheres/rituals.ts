@@ -2528,10 +2528,10 @@ export const rituals: Ritual[] = [
               01--13 & Dwarf \\\\
               14--26 & Elf \\\\
               27--40 & Gnome \\\\
-              41--52 & Half-elf \\\\
-              53--62 & Half-orc \\\\
-              63--74 & Halfling \\\\
-              75--100 & Human \\\\
+              41--52 & Halfling \\\\
+              53--62 & Human \\\\
+              63--74 & Orc \\\\
+              75--100 & Mixed \\\\
           \\end{dtabularx}
       \\end{dtable}
     `,
