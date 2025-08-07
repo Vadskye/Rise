@@ -351,7 +351,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     Make a \glossterm{strike}.
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this ability (see \pcref{Power}).
-                    If the target has your devoted alignment, you take damage equal to half your power (minimum 1).
+                    If the target has your devoted alignment, you take damage equal to half your power (minimum 1), even if you miss with the strike.
 
                     % This has a scaling dip at rank 4 which lines up with the powerful Zealous Fixation ability
                     \rankline
