@@ -1797,15 +1797,17 @@
     \cf{Vmp}[5]{Unholy Resilience} You gain a \plus1 bonus to your Armor, Brawn, Reflex, and Mental defenses.
       However, you take a \minus2 penalty to your Fortitude defense.
 
+    % TODO: proper EA math, this is probably too strong
     \magicalcf{Vmp}[6]{Dominating Gaze}
       \begin{magicalactiveability}{Dominating Gaze}[\abilitytag{Emotion}, \abilitytag{Visual}]
         \abilityusagetime Standard action.
         \rankline
-        Make an attack vs. Mental against a humanoid creature within \shortrange.
+        Make an attack vs. Mental against all \glossterm{enemies} within a \medarea \glossterm{cone} from you.
         \hit The target is \stunned as a \glossterm{condition}.
         While it has no remaining \glossterm{damage resistance}, it is \confused instead of stunned.
-        \crit If the target is humanoid and was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
+        \crit If the target was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
         When you do, the target becomes \dominated by you for the duration of that attunement.
+        This attunement only allows you to control one creature, not each target of this spell, and you can only attune to this effect once.
 
         \rankline
         The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 6.
