@@ -124,11 +124,11 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
-                    \end{itemize}
+                    \end{raggeditemize}
 
                     Because this ability has the \atSwift tag, the defense penalties apply to attacks against you during the current phase.
                 \end{sustainability}

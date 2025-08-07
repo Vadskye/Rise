@@ -126,13 +126,13 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You gain a special ability based on the \glossterm{usage class} of your body armor.
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item Light: You gain a \plus10 foot bonus to your \glossterm{movement speed}.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
                         However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
                         Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still halves it.
                     \item Heavy: You gain a \plus1 bonus to your Armor, Brawn, and Fortitude defenses.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             // Assume light armor, since it's the easiest to represent
             modifiers: Some(vec![
@@ -221,13 +221,13 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain an additional special ability based on the usage class of your body armor.
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                     \item Medium: You gain a \plus2 bonus to your Brawn, Fortitude, and Reflex defenses, up to a maximum equal to your Armor defense.
                     \item Heavy: Your armor's bonus to your maximum damage resistance also applies to your maximum hit points.
                         This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             modifiers: None,
         },
@@ -604,11 +604,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You gain one of the following benefits:
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item Offense: You gain a \plus1 accuracy bonus against adjacent \glossterm{enemies}.
                         \item Defense: You gain a \plus1 bonus to your defenses.
                         \item Support: Each \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus.
-                    \end{itemize}
+                    \end{raggeditemize}
 
                     This effect immediately ends if you use this ability again.
                 \end{sustainability}

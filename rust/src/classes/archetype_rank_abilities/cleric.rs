@@ -151,7 +151,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 A domain gift is a passive ability that reinforces your ability to embody your domain.
                 You gain the domain gift for both of your domains (see \pcref{Cleric Domain Abilities}).
 
-                \begin{itemize}
+                \begin{raggeditemize}
                     \item{Chaos}
                     \item{Death}
                     \item{Destiny}
@@ -173,7 +173,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                     \item{Trickery}
                     \item{War}
                     \item{Wild}
-                \end{itemize}
+                \end{raggeditemize}
             ",
             // Domain gifts are weird; most don't have direct statistical benefits, so this is
             // mostly irrelevant.

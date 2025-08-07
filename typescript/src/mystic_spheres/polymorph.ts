@@ -247,13 +247,13 @@ export const polymorph: MysticSphere = {
       effect: `
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
-        \\begin{itemize}
+        \\begin{raggeditemize}
           \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
             If you already have a slow climb speed, your climb speed becomes average instead.
           \\item You do not need hands to climb.
           \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
           \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
-        \\end{itemize}
+        \\end{raggeditemize}
 
         You can suppress or resume this effect as a \\glossterm{free action} once per round.
       `,

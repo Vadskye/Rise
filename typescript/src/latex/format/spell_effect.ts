@@ -145,14 +145,14 @@ export function ritualSphereEffects(ritual: Ritual): string | null {
 
   return `
     Mystic sphere effects:
-    \\begin{itemize}
+    \\begin{raggeditemize}
       ${Object.entries(ritual.sphereEffects)
         .map(([sphereName, effect]) => {
           assertEndsWithPeriod(effect, ritual.name);
           return `\\item ${sphereName}: ${effect}`;
         })
         .join('\n')}
-    \\end{itemize}
+    \\end{raggeditemize}
   `;
 }
 

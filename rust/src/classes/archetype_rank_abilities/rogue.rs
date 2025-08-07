@@ -76,7 +76,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item \trait{Blindsense} and \trait{blindsight}
                         \item \trait{Darkvision}
                         \item \abilitytag{Detection} abilities
@@ -84,7 +84,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                         \item \trait{Scent}
                         \item \abilitytag{Scrying} abilities
                         \item \trait{Tremorsense} and \trait{tremorsight}
-                    \end{itemize}
+                    \end{raggeditemize}
                     If you have access to any other more unusual senses, such as the \textit{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
 
                     You can attune to this ability multiple times.

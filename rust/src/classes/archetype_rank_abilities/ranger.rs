@@ -30,7 +30,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     Generally, your animal companion acts immediately before or after your action in combat, though the GM may decide that it acts separately in specific circumstances.
 
                     % Same as Natural Servant except that it gains more resistance since having the animal die is more problematic
-                    \begin{itemize}
+                    \begin{raggeditemize}
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item Its level is equal to your level if that would be higher than the animal's normal level.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
@@ -41,7 +41,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item Its \glossterm{power} is equal to half your power. You can use the higher of your \glossterm{mundane power} and \glossterm{magical power} for this ability.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                         \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
-                    \end{itemize}
+                    \end{raggeditemize}
 
                     % TODO: awkward scaling
                     \rankline
