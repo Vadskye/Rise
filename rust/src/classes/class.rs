@@ -1251,8 +1251,8 @@ impl Class {
                 simple_weapons: true,
             },
             Self::Troll => WeaponProficiencies {
-                custom_weapons: Some(r"club-like weapons".to_string()),
-                non_exotic_weapons: false,
+                custom_weapons: None,
+                non_exotic_weapons: true,
                 simple_weapons: true,
             },
             Self::Vampire => WeaponProficiencies {

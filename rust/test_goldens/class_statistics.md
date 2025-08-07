@@ -21,7 +21,7 @@
  * Incarnation:  51 /  85
  *     Naiad:  50 /  86
  *  Oozeborn:  49 /  82
- *     Troll:  50 /  83
+ *     Troll:  51 /  84
  *    Treant:  50 /  87
  *   Vampire:  50 /  85
 
@@ -44,7 +44,7 @@
  * Incarnation:  51 / 162
  *     Naiad:  50 / 160
  *  Oozeborn:  49 / 162
- *     Troll:  50 / 163
+ *     Troll:  51 / 164
  *    Treant:  50 / 167
  *   Vampire:  50 / 162
 
@@ -67,7 +67,7 @@
  * Incarnation:  51 / 227
  *     Naiad:  50 / 225
  *  Oozeborn:  49 / 226
- *     Troll:  50 / 227
+ *     Troll:  51 / 228
  *    Treant:  50 / 231
  *   Vampire:  50 / 227
 
