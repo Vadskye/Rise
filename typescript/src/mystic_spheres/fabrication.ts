@@ -153,7 +153,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
-          During your next action, if that target is still within \\longrange, make an attack vs. Armor against it.
+          During your next action, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor against it.
           Otherwise, the bolt disappears and this spell is wasted.
         `,
       },
@@ -186,7 +186,7 @@ export const fabrication: MysticSphere = {
         missGlance: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          During your next action, make an attack vs. Armor with the axe against up to two targets adjacent to you.
+          During your next action, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 2,
@@ -244,8 +244,9 @@ export const fabrication: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a rain of arrows in a \\smallarea radius \\glossterm{zone} within \\medrange.
-          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
+          Make an attack vs. Armor against everything in the area.
           This attack does not damage thin \\glossterm{walls} in the area.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 4,
@@ -263,8 +264,9 @@ export const fabrication: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a rain of arrows in a \\medarea radius \\glossterm{zone} within \\longrange.
-          When you cast this spell, and during your next action, make an attack vs. Armor against everything in the area.
+          Make an attack vs. Armor against everything in the area.
           This attack does not damage thin \\glossterm{walls} in the area.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 7,

@@ -476,7 +476,7 @@ export const vivimancy: MysticSphere = {
         missGlance: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
-          During your next action, make an attack vs. Fortitude against all living \\glossterm{enemies} within a \\medarea radius from you.
+          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\medarea radius from you.
           If you are at full hit points, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },

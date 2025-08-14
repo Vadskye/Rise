@@ -407,7 +407,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           When you cast this spell, you choose a \\medarea radius within \\shortrange.
           Acid rain appears high in the sky over that area, falling down towards it.
-          During your next action, the rain falls in your chosen area, and you make an attack vs. Fortitude against everything in the area.
+          During your next action, the rain falls in your chosen area, and you make a \\glossterm{reactive attack} vs. Fortitude against everything in the area.
           If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
           This attack does not damage thin \\glossterm{walls} in the area.
         `,
