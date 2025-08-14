@@ -60,7 +60,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         targeting: `
           When you cast this spell, you create a boulder in midair above your space and choose a target within \\medrange.
           If the area above you is occupied, this spell fails without effect.
-          During your next action, if that target is still within \\medrange, make an attack vs. Armor against it.
+          During your next action, if that target is still within \\medrange, make a \\glossterm{reactive attack} vs. Armor against it.
           Otherwise, the boulder disappears and this spell is wasted.
         `,
       },
@@ -84,7 +84,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           A meteor appears high in the sky over that area, falling down towards it.
           Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
 
-          During your next action, the meteor crashes into the ground, and you make an attack vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
+          During your next action, the meteor crashes into the ground, and you make a \\glossterm{reactive attack} vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
           If there is not at least sixty feet of open space above your chosen location, this spell fails with no effect.
         `,
       },
@@ -315,7 +315,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         missGlance: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during your next action, make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
+          Make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `
@@ -339,7 +340,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         missGlance: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during your next action, make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `
@@ -362,7 +364,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         missGlance: true,
         targeting: `
           The earth shakes in a \\largearea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during your next action, make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       narrative: `

@@ -238,8 +238,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         missGlance: true,
         targeting: `
           Fire consumes a \\medarea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area.
+          Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
@@ -259,8 +260,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         missGlance: true,
         targeting: `
           Fire consumes a \\largearea radius \\glossterm{zone} from your location.
-          When you cast this spell, and during your next action, make an attack vs. Reflex against everything in the area.
+          Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 6,

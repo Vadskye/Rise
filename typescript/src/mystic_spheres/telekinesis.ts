@@ -196,7 +196,7 @@ export const telekinesis: MysticSphere = {
           This spell has no immediate effect.
           Whenever you take damage during this spell's effect, you gain a kinetic charge.
           This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          During your next action after you stop sustaining this spell, make an attack vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
+          During your next action after you stop sustaining this spell, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
 
           If you build up 8 kinetic charges, you immediately stop sustaining this spell, and the attack targets you and all creatures in a \\medarea radius from you.

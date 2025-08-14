@@ -288,8 +288,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         missGlance: true,
         targeting: `
           Choose a \\smallarea radius within \\shortrange.
-          When you cast this spell, and during your next action, make an attack vs. Armor and Fortitude against everything in the area.
+          Make an attack vs. Armor and Fortitude against everything in the area.
           If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 4,
@@ -308,8 +309,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         missGlance: true,
         targeting: `
           Choose a \\medarea radius within \\longrange.
-          When you cast this spell, and during your next action, make an attack vs. Armor and Fortitude against everything in the area.
+          Make an attack vs. Armor and Fortitude against everything in the area.
           If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['wildfire'],
