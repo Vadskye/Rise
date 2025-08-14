@@ -437,7 +437,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A dust devil begins forming in that area.
           Creatures can generally identify what area the dust devil will form in with a DV 10 Awareness check.
 
-          During your next action, the dust devil forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          During your next action, the dust devil forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least thirty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
@@ -463,7 +463,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A tornado begins forming in that area.
           Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
 
-          During your next action, the tornado forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          During your next action, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },
@@ -487,7 +487,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           A tornado begins forming in that area.
           Creatures can generally identify what area the tornado will form in with a DV 10 Awareness check.
 
-          During your next action, the tornado forms in your chosen area, and you make an attack vs. Brawn and Reflex against everything in the area.
+          During your next action, the tornado forms in your chosen area, and you make a \\glossterm{reactive attack} vs. Brawn and Reflex against everything in the area.
           If there is not at least sixty feet of open space above your chosen area, this spell fails with no effect.
         `,
       },

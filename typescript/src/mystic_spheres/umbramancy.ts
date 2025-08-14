@@ -113,7 +113,8 @@ export const umbramancy: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
-          When you cast this spell, and during your next action, make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+          Make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
+          During your next action, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
