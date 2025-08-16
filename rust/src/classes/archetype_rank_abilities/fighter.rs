@@ -582,7 +582,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     You can move up to half your \glossterm{movement speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     After you stop moving, you can make a melee \glossterm{strike}.
-                    You gain a +3 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of +6.
+                    You gain a \plus3 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of \plus6.
                     
 
                     \rankline
