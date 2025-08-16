@@ -248,7 +248,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.
-                    The target regains 2d6 \glossterm{hit points} +1 per power.
+                    The target regains \glossterm{hit points} equal to 2d6 \add your \glossterm{magical power}.
                     In addition, it removes one \glossterm{condition} or poison affecting it.
                     % TODO: wording
                     This removal can only affect conditions and poisons with a rank no more than two ranks higher than your rank in this archetype.

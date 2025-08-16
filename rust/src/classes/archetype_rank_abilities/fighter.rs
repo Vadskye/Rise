@@ -410,9 +410,9 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: boring scaling, needs math in the spreadsheet
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals double damage.
-                    \rank{6} The accuracy bonus increases to +2.
+                    \rank{6} The accuracy bonus increases to \plus2.
                     \rank{7} The strike deals triple damage.
                 \end{activeability}
             ",
@@ -436,7 +436,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Each creature that is suffering penalties for being \goaded by you takes an additional -2 \glossterm{accuracy} penalty against creatures other than you.
+                Each creature that is suffering penalties for being \goaded by you takes an additional \minus2 \glossterm{accuracy} penalty against creatures other than you.
             ",
             modifiers: None,
         },

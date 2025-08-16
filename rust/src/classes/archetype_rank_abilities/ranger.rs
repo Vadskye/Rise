@@ -229,7 +229,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                     If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double damage.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals 1d6 \glossterm{extra damage}.
                     \rank{6} The extra damage increases to 2d6.
                     \rank{7} The strike deals triple damage.

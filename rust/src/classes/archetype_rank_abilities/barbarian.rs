@@ -28,7 +28,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
+                You gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype (see \pcref{Hit Points}).
             ",
             // HP is handled by add_hp_scaling()
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
@@ -125,7 +125,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{raggeditemize}
-                        \item You gain a +2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
+                        \item You gain a \plus2 accuracy bonus with \glossterm{mundane} abilities that are not \weapontag{Projectile} strikes.
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
                     \end{raggeditemize}
@@ -163,9 +163,9 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     The strike deals double damage against any creature that dealt damage to you during the previous round.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The accuracy bonus increases to +2.
+                    \rank{5} The accuracy bonus increases to \plus2.
                     \rank{6} The strike deals triple damage instead of double damage.
                     \rank{7} The accuracy bonus increases to \plus4.
                 \end{activeability}
@@ -200,7 +200,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonus increases to +2.
+                The power bonus increases to \plus2.
                 If your Willpower is 6 or higher, you gain an additional \plus1 bonus.
             ",
             modifiers: None,
@@ -212,7 +212,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 When you use your \ability{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
-                Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a +1 bonus to your Brawn defense, a -1 penalty to your Reflex defense, and a -4 penalty to the Stealth skill.
+                Increasing your size gives you a \plus1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a \plus1 bonus to your Brawn defense, a \minus1 penalty to your Reflex defense, and a \minus4 penalty to the Stealth skill.
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
                 Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects (see \pcref{Stacking Rules}).
             ",
@@ -242,7 +242,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +1 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
+                You gain a \plus1 bonus to your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
             ",
             modifiers: None,
         },

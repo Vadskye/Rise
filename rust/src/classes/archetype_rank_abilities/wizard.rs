@@ -506,7 +506,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
-                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
+                    If you specialize in this school, you gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -518,7 +518,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus1 \glossterm{accuracy} bonus.
 
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
-                    If you specialize in this school, you gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+                    If you specialize in this school, you gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
