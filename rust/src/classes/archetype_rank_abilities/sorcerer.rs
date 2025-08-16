@@ -477,16 +477,16 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 \begin{columntable}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & The spell has no immediate effect, but takes effect at the start of your next action \\
+                        1 & You are a target of the spell in addition to any other targets \\
                         2 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
-                        3 & On your first attack with the spell, you are a target of the attack in addition to any other targets, but with a \minus4 accuracy penalty \\
-                        4 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
-                        5 & The spell's area is doubled this round \\
-                        6 & The spell's area is tripled this round \\
-                        7 & On your first attack with the spell, it \glossterm{chains} once to the \glossterm{enemies} that are closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & The extra damage from this ability is doubled this round \\
+                        3 & The spell has no immediate effect, but it \glossterm{repeats} during your next action \\
+                        4 & The spell also treats all \glossterm{enemies} adjacent to you as \glossterm{secondary targets} \\
+                        5 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
+                        6 & The spell's area is tripled \\
+                        7 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
+                        8 & The extra damage from the \ability{wildspell} ability is doubled \\
                         9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
-                        10 & During your next action, the spell \glossterm{repeats} \\
+                        10 & The spell \glossterm{repeats} during your next action \\
                     \end{dtabularx}
                 \end{columntable}
             ",
