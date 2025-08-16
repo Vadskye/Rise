@@ -436,7 +436,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         6 & The spell's area is doubled \\
                         7 & The spell \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
                         8 & The spell gains the \abilitytag{Impact} tag \\
-                        9 & The extra damage from the \ability{wildspell} ability is doubled this round \\
+                        9 & The extra damage from the \ability{wildspell} ability is doubled \\
                         10 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the higher result \\
                     \end{dtabularx}
                 \end{columntable}
