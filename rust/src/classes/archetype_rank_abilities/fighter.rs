@@ -170,7 +170,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike} with a \plus3 \glossterm{accuracy} bonus.
-                    In addition, choose one of the following \glossterm{weapon tags}: \weapontag{Keen}, \weapontag{Maneuverable}, \weapontag{Parrying}, or \weapontag{Resonating} (see \pcref{Weapon Tags}).
+                    In addition, choose one of the following tags: \abilitytag{Keen}, \weapontag{Maneuverable}, or \weapontag{Parrying} (see \pcref{Weapon Tags}).
                     If the strike is a \glossterm{melee} strike, you can alternately choose the \weapontag{Long} or \weapontag{Sweeping} (1) weapon tags.
                     The strike gains the benefit of your chosen weapon tag if it did not already have that tag.
 

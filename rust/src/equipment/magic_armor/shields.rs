@@ -75,9 +75,9 @@ pub fn shields() -> Vec<MagicArmor> {
     armor.push(Shield(StandardItem {
         name: String::from("Impact Shield"),
         rank: 3,
-        short_description: String::from(r"Is \weapontag{Impact}"),
+        short_description: String::from(r"Is \abilitytag{Impact}"),
         description: String::from(r"
-            This shield gains the \weapontag{Impact} tag when used as a weapon.
+            This shield gains the \abilitytag{Impact} tag when used as a weapon.
         "),
         ..MagicArmor::default()
     }));

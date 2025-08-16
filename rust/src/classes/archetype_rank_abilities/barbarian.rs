@@ -314,8 +314,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Choose one of the following \glossterm{weapon tags} (see \pcref{Weapon Tags}): \weapontag{Clinch}, \weapontag{Impact}, \weapontag{Maneuverable}, or \weapontag{Thrown} (30/60).
-                You may treat all non-projectile weapons you use as if they had the chosen weapon tag.
+                Choose one of the following tags: \abilitytag{Clinch}, \abilitytag{Impact}, \weapontag{Maneuverable}, or \weapontag{Thrown} (30/60).
+                You may treat all non-projectile weapons you use as if they had the chosen tag.
                 If you choose the Thrown weapon tag, it does not affect your \glossterm{natural weapons}.
             ",
             modifiers: None,
