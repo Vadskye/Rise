@@ -392,8 +392,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           During each of your subsequent actions, it takes \\damagerankfive as the earth grinds it into paste.
 
           The target can remove this condition by making a \\glossterm{difficulty value} 12 Strength check as a standard action.
-          If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this effect ends.
-          When the effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
+          If the earth or stone it is swallowed by is destroyed or otherwise rendered unable to contain the creature, this ability is \\glossterm{dismissed}.
+          When this effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
           Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
         `,
         missGlance: true,
