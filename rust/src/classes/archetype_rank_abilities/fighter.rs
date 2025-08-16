@@ -531,7 +531,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         Each target other than you gains a \plus1 bonus to Armor defense against \glossterm{enemies} that you are adjacent to.
 
                         \rankline
-                        \rank{4} The bonus also applies against \glossterm{enemies} within 10 feet of you.
+                        \rank{4} The bonus also applies against \glossterm{enemies} within 15 feet of you.
                         \rank{7} The bonus applies to all defenses.
                     \end{sustainability}
 
