@@ -253,7 +253,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
+                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
             ",
             modifiers: None,
         },

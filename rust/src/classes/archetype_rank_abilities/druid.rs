@@ -104,7 +104,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The power bonuses increase to +2.
+                The power bonuses increase to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },
@@ -460,7 +460,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Myriad Form}
                         \abilityusagetime Standard action.
                         \rankline
-                        If you have Disguise as a \glossterm{trained skill}, you gain a +3 \glossterm{enhancement bonus} to it.
+                        If you have Disguise as a \glossterm{trained skill}, you gain a \plus3 \glossterm{enhancement bonus} to it.
                         Otherwise, you are treated as being trained in that skill.
 
                         \rankline
@@ -633,11 +633,11 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} The animal gains a \plus1 bonus to all of its defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your power.
-                    \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-                    \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{4} The animal gains a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{5} The accuracy bonus increases to \plus2.
+                    \rank{6} The accuracy bonus increases to \plus4.
                     \rank{7} The animal's strikes deal double damage.
-                    However, the accuracy bonus is reduced to +2.
+                    However, the accuracy bonus is reduced to \plus2.
                 \end{magicalattuneability}
 
                 The special ability of the animal that appears depends on your environment, as described below.
@@ -673,7 +673,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You may choose to have a Large natural servant appear instead of a Medium natural servant.
-                Increasing its size gives it a +1 Brawn defense bonus, a +1 bonus to Strength for the purpose of determining its \glossterm{weight limits}, a -1 Reflex defense penalty, and a -4 penalty to the Stealth skill.
+                Increasing its size gives it a \plus1 Brawn defense bonus, a \plus1 bonus to Strength for the purpose of determining its \glossterm{weight limits}, a \minus1 Reflex defense penalty, and a \minus4 penalty to the Stealth skill.
                 It also increases its \glossterm{base speed} (see \pcref{Size Categories}).
             ",
             modifiers: None,

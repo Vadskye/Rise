@@ -149,8 +149,8 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 Each covenant grants great power at a cost.
                 {
                     \subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
-                    This functions like light body armor that provides a \plus4 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a \plus1 bonus to your vital rolls and a bonus equal to five times your rank in this archetype to your maximum \glossterm{damage resistance}.
+                    This functions like light body armor that has no \glossterm{encumbrance}.
+                    It provides a \plus4 bonus to your Armor defense, a \plus1 bonus to your \glossterm{vital rolls}, and a bonus to your maximum \glossterm{damage resistance} equal to five times your rank in this archetype.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
 
                     \subcf{Covenant of Bloodsharing} At the end of each round, if you \glossterm{injured} a creature during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
@@ -263,7 +263,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can choose to gain a \plus2 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                 If you do, you take a \minus1 penalty to your \glossterm{fatigue tolerance}.
-                Otherwise, you gain a +2 bonus to your \glossterm{fatigue tolerance}.
+                Otherwise, you gain a \plus2 bonus to your \glossterm{fatigue tolerance}.
             ",
             modifiers: Some(vec![
                 Modifier::Power(2),
@@ -292,14 +292,14 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain 1d10 \glossterm{damage resistance} plus 1d6 per 3 \glossterm{power}.
+                    You regain 1d6 \glossterm{damage resistance} \add 1d6 per 2 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
-                    \rank{4} The bonus recovery increases to 1d8 per 3 power.
-                    \rank{5} The base recovery increases to 2d8.
-                    \rank{6} The bonus recovery increases to 1d8 per 2 power.
-                    \rank{7} The base recovery increases to 4d8.
+                    \rank{4} The recovery increases to 1d8 \add 1d8 per 2 power.
+                    \rank{5} The recovery increases to 1d10 \add 1d10 per 2 power.
+                    \rank{6} The recovery increases to 1d6 \add 1d6 per power.
+                    \rank{7} The recovery increases to 1d8 \add 1d8 per power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -543,7 +543,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.
                 However, you roll 1d8 instead of 1d10 for attack rolls, and your attack rolls cannot \glossterm{explode}.
 
-                \subcf{Precursor -- Burgeoning} You gain a bonus equal to twice your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
+                \subcf{Precursor -- Burgeoning} You gain a bonus to your maximum \glossterm{hit points} equal to twice your rank in this archetype (see \pcref{Hit Points}).
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
@@ -584,7 +584,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 
                 \subcf{Moirai -- Inevitable\plus} The bonus to accuracy and checks increases to \plus3.
 
-                \subcf{Precursor -- Burgeoning\plus} The hit point bonus increases to four times your rank in this archetype.
+                \subcf{Precursor -- Burgeoning\plus} The bonus to your maximum \glossterm{hit points} increases to four times your rank in this archetype.
                 In addition, your tentacle now deals 1d10 damage.
             ",
             modifiers: None,
@@ -671,7 +671,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{damage resistance}.
+                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,
