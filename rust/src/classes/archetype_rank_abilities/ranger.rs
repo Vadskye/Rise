@@ -327,10 +327,10 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \begin{activeability}{Swarm Hunter}
                         \abilityusagetime Can be triggered when you use \ability{quarry}.
                         \rankline
-                        When you use your \textit{quarry} ability, you can choose two additional targets as your quarry.
+                        When you use your \textit{quarry} ability, you can choose five additional targets as your quarry.
 
                         \rankline
-                        \rank{5} The number of additional targets increases to four.
+                        \rank{5} The number of additional targets is unlimited.
                     \end{activeability}
 
                     \begin{magicalactiveability}{Titanslayer}
