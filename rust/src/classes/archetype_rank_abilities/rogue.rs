@@ -825,6 +825,16 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
+            complexity: 0,
+            name: "Silver Tongue+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The bonus increases to \plus4.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
             complexity: 2,
             name: "What's That Over There",
             is_magical: false,
@@ -864,16 +874,6 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use your \textit{fool them once} ability twice per \glossterm{short rest}.
                 However, after using that ability, you \glossterm{briefly} cannot use it again.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Silver Tongue+",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                The bonus increases to \plus4.
             ",
             modifiers: None,
         },

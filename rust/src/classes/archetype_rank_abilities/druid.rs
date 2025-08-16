@@ -546,7 +546,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     If you chose all three defenses, the strike deals double damage.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals 1d6 \glossterm{extra damage}.
                     \rank{6} The extra damage increases to 2d6.
                     \rank{7} You deal double damage by default, or triple damage if you attack three defenses.

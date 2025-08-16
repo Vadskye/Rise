@@ -61,7 +61,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     This effect is \atSwift, but the strike is not.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} If you are at your maximum hit points, the strike deals double damage.
                     \rank{6} The strike always deals double damage.
                     \rank{7} If you are at your maximum hit points, the strike deals triple damage.
@@ -167,7 +167,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
                     \rank{5} The accuracy bonus increases to +2.
                     \rank{6} The strike deals triple damage instead of double damage.
-                    \rank{7} The accuracy bonus increases to +4.
+                    \rank{7} The accuracy bonus increases to \plus4.
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
@@ -280,8 +280,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     You cannot include the same creature or object as a target of both strikes.
 
                     \rankline
-                    \rank{4} If you take a -3 accuracy penalty with a strike, it deals double damage.
-                    \rank{5} The accuracy penalty is reduced to -1.
+                    \rank{4} If you take a \minus3 accuracy penalty with a strike, it deals double damage.
+                    \rank{5} The accuracy penalty is reduced to \minus1.
                     \rank{6} You gain a \plus1 accuracy bonus with both strikes, and they always deal double damage.
                     \rank{7} You can deal triple damage instead of double damage with one of the two strikes.
                 \end{activeability}
@@ -535,7 +535,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                     % TODO: wonky scaling, but nothing too insane after the initial rank 3 power spike
                     \rankline
-                    \rank{4} You gain a +2 accuracy bonus with the first strike you make with this ability each round.
+                    \rank{4} You gain a \plus2 accuracy bonus with the first strike you make with this ability each round.
                     \rank{5} The second strike you make with this ability each round deals double damage.
                     \rank{6} The accuracy bonus applies to both strikes.
                     \rank{7} Both strikes deal 1d8 \glossterm{extra damage}.
@@ -563,7 +563,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain benefits based on your totem animal:
                 \begin{raggeditemize}
-                    \itemhead{Bear} \plus2 Endurance and \plus1 to \glossterm{vital rolls}.
+                    \itemhead{Bear} \plus2 Endurance and \plus1 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus2 Stealth and you can hold your breath ten times as long as normal (see \pcref{Endurance}).
                     \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
                     \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{movement speed} while you are affected by the \ability{sprint} ability.
@@ -584,7 +584,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The benefits based on your totem animal improve:
                 \begin{raggeditemize}
-                    \itemhead{Bear} \plus4 Endurance and \plus2 to \glossterm{vital rolls}.
+                    \itemhead{Bear} \plus4 Endurance and \plus2 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus4 Stealth and you can hold your breath indefinitely, though you cannot rest while holding your breath.
                     \itemhead{Eagle} \plus4 Awareness and \plus20 feet to your maximum horizontal jump distance.
                     \itemhead{Lion} \plus4 Intimidate and the movement speed bonus applies at all times, not only while sprinting.
