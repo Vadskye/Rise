@@ -12,7 +12,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{animal companion} ability.
+                You can use the \ability{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can convince a wild animal to undergo this training with the Creature Handling skill (see \pcref{Creature Handling}).
                 \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
@@ -121,7 +121,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus3 bonus to the Creature Handling skill.
-                In addition, you gain a \plus1 bonus to \glossterm{vital rolls}, and your \textit{animal companion} can remain conscious after suffering a single vital wound (see \pcref{Vital Wounds}).
+                In addition, you gain a \plus1 bonus to \glossterm{vital rolls}, and your \ability{animal companion} can remain conscious after suffering a single vital wound (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::Skill(Skill::CreatureHandling, 3)]),
         },

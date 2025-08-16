@@ -585,7 +585,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                When you use your \textit{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
+                When you use your \ability{wild aspect} ability, you can take on two aspects at once, gaining the full benefits of both.
                 When you do, you increase your \glossterm{fatigue level} by two.
                 This hybrid aspect only lasts for ten minutes, at which point you choose which single aspect remains active.
             ",
@@ -602,7 +602,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You can use the \textit{natural servant} ability.
+                You can use the \ability{natural servant} ability.
                 This ability requires spending one hour performing rituals in a natural area.
                 \begin{magicalattuneability}{Natural Servant}{\abilitytag{Attune}}
                     \abilityusagetime One hour of rituals in a natural area.
@@ -642,7 +642,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
 
                 The special ability of the animal that appears depends on your environment, as described below.
                 You may choose a different animal native to that environment that is similar in size and type, but that does not change the animal's statistics.
-                For example, your \textit{natural servant} in an aquatic environment may be a dolphin or seal instead of a shark.
+                For example, your \ability{natural servant} in an aquatic environment may be a dolphin or seal instead of a shark.
                 Unusual environments may have different animals than the standard animals listed below.
                 \begin{raggeditemize}
                     \item Aquatic: A shark appears that has an average \glossterm{swim speed} and no walk speed.
@@ -737,9 +737,9 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                Your \textit{natural servant} gains an \glossterm{attunement point}.
-                This attunement point is shared among any creatures you summon with your \textit{natural servant} ability.
-                In addition, you can cast \abilitytag{Attune} spells on your \textit{natural servant} if it is within \shortrange of you.
+                Your \ability{natural servant} gains an \glossterm{attunement point}.
+                This attunement point is shared among any creatures you summon with your \ability{natural servant} ability.
+                In addition, you can cast \abilitytag{Attune} spells on your \ability{natural servant} if it is within \shortrange of you.
                 When you do, the natural servant attunes to the spell intead of you, as if the spell was an \abilitytag{Attune} (target) spell.
             ",
             modifiers: None,

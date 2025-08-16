@@ -520,7 +520,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a \plus2 bonus to the roll when you use the \textit{desperate exertion} ability.
+                You gain a \plus2 bonus to the roll when you use the \ability{desperate exertion} ability.
                 This bonus stacks with the normal \plus2 bonus provided by that ability.
             ",
             modifiers: None,

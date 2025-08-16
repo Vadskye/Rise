@@ -211,7 +211,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                When you use your \textit{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
+                When you use your \ability{rage} ability, you can grow by one \glossterm{size category}, to a maximum of Huge.
                 Increasing your size gives you a +1 bonus to Strength for the purpose of determining your \glossterm{weight limits}, a +1 bonus to your Brawn defense, a -1 penalty to your Reflex defense, and a -4 penalty to the Stealth skill.
                 It also increases your \glossterm{base speed} (see \pcref{Size Categories}).
                 Since this is a \glossterm{mundane} ability, it stacks with other size-increasing effects (see \pcref{Stacking Rules}).
@@ -326,7 +326,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \textit{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
+                You can use the \ability{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
                 After you use this ability, you \glossterm{briefly} cannot use it again.
             ",
             modifiers: None,

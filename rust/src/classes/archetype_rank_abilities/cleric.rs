@@ -253,8 +253,8 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                Each domain has a corresponding \textit{domain mastery}.
-                You gain the \textit{domain mastery} for both of your domains (see \pcref{Cleric Domain Abilities}).
+                Each domain has a corresponding \ability{domain mastery}.
+                You gain the domain mastery for both of your domains (see \pcref{Cleric Domain Abilities}).
             ",
             modifiers: None,
         },
