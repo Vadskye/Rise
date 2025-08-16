@@ -1,3 +1,11 @@
+% These paths have to be defined relative to the *compilation* file path,
+% not the file path of lib/commands. Fortunately, all compilation files
+% are one level up from the root directory, so this should work.
+\input{../lib/buffs_and_debuffs.tex}
+\input{../lib/damage.tex}
+\input{../lib/links.tex}
+\input{../lib/tags.tex}
+
 \newcommand{\lcaption}[1]{\caption[]{#1}\label{cap:#1}}
 
 % Create a \fsize length which represents the current font size. Used for \sparkle
@@ -11,16 +19,6 @@
 \newcommand{\sub}{\texttt{-}\xspace}
 \newcommand{\mult}{x}
 \newcommand{\x}{x\xspace}
-%NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
-\newcommand{\combatstyle}[1]{\emph{\mbox{\hyperlink{style:#1}{#1}}}}    %Italicize combat styles
-\newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{sphere:#1}{#1}}}}    %Italicize mystic spheres
-\newcommand{\ability}[1]{\mbox{\hyperlink{ability:#1}{#1}}}
-\newcommand{\spell}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
-\newcommand{\cantrip}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
-\newcommand{\maneuver}[1]{\mbox{\hyperlink{maneuver:#1}{#1}}}
-\newcommand{\stance}[1]{\mbox{\hyperlink{stance:#1}{#1}}}
-\newcommand{\spellindirect}[2]{\hyperlink{spell:#1}{#2}}
-\newcommand{\ritual}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
 \newcommand{\subcf}[1]{\parhead{#1}}    %Bold sub-class-feature headers
 \newcommand{\subsk}[1]{\par \emph{#1}:}    %Italicize sub-skill headers
 
@@ -84,50 +82,6 @@
 \newcommand{\skill}[2]{\section{#1 (#2)}\label{#1}}
 
 \newcommand{\reminder}[1]{\textcolor{darkgray}{\textit{(#1)}}}
-
-\newcommand{\blinded}{\debuff{blinded} \reminder{50\% miss chance, \minus2 Armor and Ref}\xspace}
-\newcommand{\charmed}{\debuff{charmed} \reminder{friendly with charmer}\xspace}
-\newcommand{\climbing}{\debuff{climbing} \reminder{\minus2 accuracy, Armor, Ref}\xspace}
-\newcommand{\confused}{\debuff{confused} \reminder{\minus2 defenses, randomly attack or defend}\xspace}
-% Assume 60% hit chance, so 0.6 dpr.
-% with -1 accuracy, 0.5 dpr.
-% with 20% miss chance, 0.48 dpr.
-% Assume 40% base hit chance; 0.3 dpr vs 0.32 dpr.
-% So dazzled is about equal to -1 accuracy in common circumstances,
-% but better against high-accuracy targets and worse against low-accuracy targets.
-\newcommand{\dazzled}{\debuff{dazzled} \reminder{20\% miss chance, no special vision}\xspace}
-\newcommand{\deafened}{\debuff{deafened} \reminder{20\% verbal spell failure}\xspace}
-\newcommand{\dominated}{\debuff{dominated} \reminder{must obey commands}\xspace}
-\newcommand{\enraged}{\debuff{enraged} \reminder{must attack}\xspace}
-\newcommand{\frightened}{\debuff{frightened} \reminder{\minus2 Mental, -2 accuracy vs. source}\xspace}
-\newcommand{\goaded}{\debuff{goaded} \reminder{\minus2 accuracy vs. non-goading creatures}\xspace}
-% Too complicated to try to summarize :/
-\newcommand{\grappled}{\debuff{grappled}\xspace}
-\newcommand{\helpless}{\debuff{helpless} \reminder{\minus6 Armor and Ref}\xspace}
-\newcommand{\midair}{\debuff{midair} \reminder{\minus4 Armor, Brawn, Ref}\xspace}
-\newcommand{\panicked}{\debuff{panicked} \reminder{\minus4 Mental, cannot attack source}\xspace}
-\newcommand{\paralyzed}{\debuff{paralyzed} \reminder{cannot move}\xspace}
-\newcommand{\partiallyunaware}{\debuff{partially unaware} \reminder{\minus2 defenses}\xspace}
-\newcommand{\prone}{\debuff{prone} \reminder{half speed, \minus2 Armor and Ref}\xspace}
-\newcommand{\slowed}{\debuff{slowed} \reminder{\minus10 speed, \minus2 Armor and Ref}\xspace}
-\newcommand{\squeezing}{\debuff{squeezing} \reminder{\minus2 Armor and Ref}\xspace}
-\newcommand{\stunned}{\debuff{stunned} \reminder{\minus2 defenses}\xspace}
-\newcommand{\submerged}{\debuff{submerged} \reminder{\minus2 accuracy, Armor, Ref}\xspace}
-\newcommand{\unaware}{\debuff{unaware} \reminder{\minus5 defenses}\xspace}
-\newcommand{\unconscious}{\debuff{unconscious}\xspace}
-
-\newcommand{\braced}{\buff{braced} \reminder{\plus2 defenses}\xspace}
-\newcommand{\empowered}{\buff{empowered} \reminder{add rank to damage}\xspace}
-\newcommand{\focused}{\buff{focused} \reminder{roll attacks twice}\xspace}
-\newcommand{\fortified}{\buff{fortified} \reminder{\plus2 Brawn, Fort, Ment}\xspace}
-\newcommand{\honed}{\buff{honed} \reminder{\plus4 accuracy with crits}\xspace}
-\newcommand{\maximized}{\buff{maximized} \reminder{deal max damage}\xspace}
-\newcommand{\primed}{\buff{primed} \reminder{always explode}\xspace}
-\newcommand{\shielded}{\buff{shielded} \reminder{\plus2 Armor and Ref}\xspace}
-\newcommand{\steeled}{\buff{steeled} \reminder{immune to crits}\xspace}
-
-\newcommand{\impervious}{\trait{impervious} \reminder{\plus4 defenses}\xspace}
-\newcommand{\vulnerable}{\trait{vulnerable} \reminder{\minus4 defenses}\xspace}
 
 \newcommand{\spelltablecolumns}{>{\lcol}X l}
 \newcommand{\spelllevelschool}[2]{\spelllvl{#1} & #2 \\}
@@ -341,226 +295,6 @@
             \itemhead{#2 \sparkle}
         }
     }
-}
-
-\DeclareDocumentCommand{\featref}{s m}
-{
-    \hyperlink{feat:#2}{#2}
-    \IfBooleanF{#1}
-    {
-        \hypertargetraised{ft:#2}{}
-    }
-}
-
-\DeclareDocumentCommand{\magicalfeatref}{s m}
-{
-    \IfBooleanTF{#1}{
-        \featref*{#2}\sparkle
-    }{
-        \featref{#2}\sparkle
-    }
-}
-
-\DeclareDocumentCommand{\itemref}{s m}
-{
-    \hyperlink{item:#2}{#2}
-    \IfBooleanF{#1}
-    {
-        \hypertargetraised{itemtable:#2}{}
-    }
-}
-
-% #1: if provided, add a magic sparkle
-% #2: class shorthand name
-% #3: archetype name
-\DeclareDocumentCommand{\archetyperef}{s m m}
-{
-    \hyperlink{archetype:#2:#3}{
-        #3
-        \IfBooleanT{#1}{\sparkle}
-    }
-    \hypertargetraised{archetypetable:#2:#3}{}
-}
-
-% #1: class shorthand name
-% #2: archetype name
-\DeclareDocumentCommand{\archetypedef}{s m m}
-{
-    \newpage
-    \subsection{
-        \protect
-        \hypertargetraised{archetype:#2:#3}{
-            \protect
-            \hyperlink{archetypetable:#2:#3}{
-                #3
-                \IfBooleanT{#1}{\sparkle}
-            }
-        }
-    }
-    \label{#3}
-}
-
-% args:
-%   #1: name of term
-%   #2: alternate name of term, only used for labels/targets
-%   #3: hyperlink prefix
-\DeclareDocumentCommand{\termdef}{m o m}
-{
-    \IfValueT{#2}
-    {
-        \termlinks{#2}{#3}
-    }
-    \termlinks{#1}{#3}
-    \parhead{#1}
-}
-
-% args:
-%   #1: name of term
-%   #2: hyperlink prefix
-\DeclareDocumentCommand{\termlinks}{m m}
-{
-    \label{#1}\label{#1s}
-    % Enable this to test for unnecessary glossary entries.
-    % If you do, you have to disable the above labels, which should normally be present.
-    % \pref{#1}
-
-    \hypertargetraised{#2:#1}{}
-    \hypertargetraised{#2:#1s}{}
-}
-
-\DeclareDocumentCommand{\trait}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{trait}}
-    {\termlink{#2}{trait}}
-}
-\DeclareDocumentCommand{\traitdef}{m m}
-{
-    \termdef{#1}[#2]{trait}
-    \label{#1}
-}
-
-\DeclareDocumentCommand{\creaturetag}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{creaturetag}}
-    {\termlink{#2}{creaturetag}}
-}
-\DeclareDocumentCommand{\creaturetagdef}{m m}
-{
-    \termdef{#1}[#2]{creaturetag}
-    \label{#1}
-}
-
-\DeclareDocumentCommand{\glossterm}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{gloss}}
-    {\termlink{#2}{gloss}}
-}
-\DeclareDocumentCommand{\glossdef}{m o}
-{
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{gloss}}
-    {\termdef{#1}{gloss}}
-}
-\DeclareDocumentCommand{\glosssynonym}{m}
-{\termlinks{#1}{gloss}}
-
-\DeclareDocumentCommand{\sphereterm}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{sphere}}
-    {\termlink{#2}{sphere}}
-}
-\DeclareDocumentCommand{\spheredef}{m o}
-{
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{sphere}}
-    {\termdef{#1}{sphere}}
-}
-
-\DeclareDocumentCommand{\debuff}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{debuff}}
-    {\termlink{#2}{debuff}}
-}
-\DeclareDocumentCommand{\debuffdef}{m o}
-{
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{debuff}}
-    {\termdef{#1}{debuff}}
-}
-
-\DeclareDocumentCommand{\buff}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{buff}}
-    {\termlink{#2}{buff}}
-}
-\DeclareDocumentCommand{\buffdef}{m o}
-{
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{buff}}
-    {\termdef{#1}{buff}}
-}
-
-\DeclareDocumentCommand{\abilitytag}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{abilitytag}}
-    {\termlink{#2}{abilitytag}}
-}
-\DeclareDocumentCommand{\abilitytagdef}{m o}
-{
-    \label{#1}
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{abilitytag}}
-    {\termdef{#1}{abilitytag}}
-}
-
-\DeclareDocumentCommand{\atAttune}{}{\abilitytag{Attune}\xspace}
-\DeclareDocumentCommand{\atAuditory}{}{\abilitytag{Auditory}\xspace}
-\DeclareDocumentCommand{\atBrawling}{}{\abilitytag{Brawling}\xspace}
-\DeclareDocumentCommand{\atCompulsion}{}{\abilitytag{Compulsion}\xspace}
-\DeclareDocumentCommand{\atCreation}{}{\abilitytag{Creation}\xspace}
-\DeclareDocumentCommand{\atCurse}{}{\abilitytag{Curse}\xspace}
-\DeclareDocumentCommand{\atDetection}{}{\abilitytag{Detection}\xspace}
-\DeclareDocumentCommand{\atEmotion}{}{\abilitytag{Emotion}\xspace}
-\DeclareDocumentCommand{\atManifestation}{}{\abilitytag{Manifestation}\xspace}
-\DeclareDocumentCommand{\atRitual}{}{\abilitytag{Ritual}\xspace}
-\DeclareDocumentCommand{\atScrying}{}{\abilitytag{Scrying}\xspace}
-\DeclareDocumentCommand{\atSizeBased}{}{\abilitytag{Size-Based}\xspace}
-\DeclareDocumentCommand{\atSpeech}{}{\abilitytag{Speech}\xspace}
-\DeclareDocumentCommand{\atSpell}{}{\abilitytag{Spell}\xspace}
-\DeclareDocumentCommand{\atSubtle}{}{\abilitytag{Subtle}\xspace}
-\DeclareDocumentCommand{\atSustain}{}{\abilitytag{Sustain}\xspace}
-\DeclareDocumentCommand{\atSwift}{}{\abilitytag{Swift}\xspace}
-\DeclareDocumentCommand{\atTrap}{}{\abilitytag{Trap}\xspace}
-\DeclareDocumentCommand{\atVisual}{}{\abilitytag{Visual}\xspace}
-\DeclareDocumentCommand{\atBarrier}{}{\abilitytag{Barrier}\xspace}
-
-\DeclareDocumentCommand{\atAcid}{}{\abilitytag{Acid}\xspace}
-\DeclareDocumentCommand{\atAir}{}{\abilitytag{Air}\xspace}
-\DeclareDocumentCommand{\atCold}{}{\abilitytag{Cold}\xspace}
-\DeclareDocumentCommand{\atEarth}{}{\abilitytag{Earth}\xspace}
-\DeclareDocumentCommand{\atElectricity}{}{\abilitytag{Electricity}\xspace}
-\DeclareDocumentCommand{\atFire}{}{\abilitytag{Fire}\xspace}
-\DeclareDocumentCommand{\atPoison}{}{\abilitytag{Poison}\xspace}
-\DeclareDocumentCommand{\atWater}{}{\abilitytag{Water}\xspace}
-
-\DeclareDocumentCommand{\weapontag}{o m}
-{
-    \IfValueTF{#1}
-    {\termlink[#1]{#2}{weapontag}}
-    {\termlink{#2}{weapontag}}
-}
-\DeclareDocumentCommand{\weapontagdef}{m o}
-{
-    \IfValueTF{#2}
-    {\termdef{#1}[#2]{weapontag}}
-    {\termdef{#1}{weapontag}}
 }
 
 \DeclareDocumentCommand{\hit}{}
@@ -789,57 +523,6 @@
 
 \newcommand{\abilitycost}{\par\noindent Cost:\xspace}
 \newcommand{\abilityusagetime}{\par\noindent Usage time:\xspace}
-
-% See Damage Scaling Calculations spreadsheet
-\newcommand{\damagerankzero}
-{1d4 damage \add half power\xspace}
-\newcommand{\damagerankzerolow}
-{1d6 damage\xspace} % Scaling: +1 per extra rank
-
-\newcommand{\damagerankone}
-{1d6 damage \add half power\xspace}
-\newcommand{\damagerankonelow}
-{1d10 damage\xspace} % Scaling: +2 per extra rank
-
-\newcommand{\damageranktwo}
-{1d4 damage \add power\xspace}
-\newcommand{\damageranktwolow}
-{1d8+1d6 damage\xspace} % Scaling: +1d6 per extra rank
-
-\newcommand{\damagerankthree}
-{1d8 damage \add power\xspace}
-\newcommand{\damagerankthreelow}
-{2d10 damage\xspace} % Scaling: +1d10 per extra rank
-
-\newcommand{\damagerankfour}
-{1d6 damage per 2 power\xspace}
-\newcommand{\damagerankfourlow}
-{3d10 damage\xspace} % Scaling: +1d10 per extra rank
-
-\newcommand{\damagerankfive}
-{1d6 damage plus 1d6 per 2 power\xspace}
-\newcommand{\damagerankfivelow}
-{5d8 damage\xspace} % Scaling: +2d8 per extra rank
-
-\newcommand{\damageranksix}
-{1d8 damage plus 1d8 per 2 power\xspace}
-\newcommand{\damageranksixlow}
-{7d8 damage\xspace} % Scaling: +3d8 per extra rank
-
-\newcommand{\damagerankseven}
-{1d10 damage plus 1d10 per 2 power\xspace}
-\newcommand{\damageranksevenlow}
-{8d10 damage\xspace} % Scaling: +3d10 per extra rank
-
-\newcommand{\damagerankeight}
-{1d6 damage plus 1d6 per power\xspace}
-\newcommand{\damagerankeightlow}
-{11d10 damage\xspace} % Scaling: +5d10 per extra rank
-
-\newcommand{\damageranknine}
-{2d8 damage plus 1d8 per power\xspace}
-\newcommand{\damagerankninelow}
-{16d10 damage\xspace} % Scaling: no
 
 \newcommand{\critcondition}{\crit The condition must be removed an additional time before the effect ends.}
 
