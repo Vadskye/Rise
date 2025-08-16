@@ -241,7 +241,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Might',
 
       effect: `
-        Whenever you cast a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
         After you enhance a spell in this way, this effect ends.
       `,
@@ -259,7 +259,8 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Precision',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to become \\focused and \\honed for the rest of that round.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
+        If you do, you become \\focused and \\honed for the rest of that round.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -271,7 +272,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Enhance Magic -- Echo',
 
       effect: `
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to echo it.
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell \\glossterm{repeats} during your next action.
         After you echo a spell in this way, this effect ends.
       `,
