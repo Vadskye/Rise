@@ -1751,9 +1751,8 @@ impl Class {
                         \magicaldomainability{Gift} You are \impervious to \atElectricity attacks.
                         \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability during your next action.
                         The repeat has the \atAuditory tag instead of the \atElectricity tag, deals half damage, and affects each \glossterm{enemy} adjacent to you instead of its normal targets.
-                        \magicaldomainability{Aspect} You also cause a \glossterm{repeat} when you \glossterm{chain} to yourself with a damaging \atElectricity ability.
-                        The repeat has the \atAuditory tag instead of the \atElectricity tag and deals half damage.
-                        \magicaldomainability{Mastery} Whenever you inflict a \glossterm{condition} on a creature with a \atAuditory or \atElectricity ability, that condition must be removed twice before the effect ends.
+                        \magicaldomainability{Aspect} The repeat from this domain's essence also triggers when you \glossterm{chain} to yourself with a damaging \atElectricity ability.
+                        \magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \glossterm{enemies} within a \smallarea radius from you.
 
                     \subsubsection{Sun Domain}
                         If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
