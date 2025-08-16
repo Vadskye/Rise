@@ -342,7 +342,7 @@ export const vivimancy: MysticSphere = {
         If you do, you gain a +5 accuracy bonus with the attack.
         Since you can choose to apply this enhancement after seeing the attack roll result, you can cause a missed attack to hit in this way.
 
-        After you enhance a spell in this way, this effect ends.
+        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],

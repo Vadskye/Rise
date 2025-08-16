@@ -285,9 +285,9 @@ export const channelDivinity: MysticSphere = {
       name: 'Divine Power',
 
       effect: `
-        Whenever you make a damaging attack, you can infuse that attack with divine power.
+        Whenever you make a damaging attack, you can infuse that attack with divine power as a \\glossterm{minor action}.
         If you do, the attack deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
-        After you enhance an attack in this way, this effect ends.
+        After you enhance an attack in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
