@@ -666,7 +666,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // +2 over a normal weapon
       effect: `
         You gain a stonefist \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Impact} and \\weapontag{Resonating} weapon tags (see \\pcref{Weapon Tags}).
+        The weapon deals 1d10 bludgeoning damage and has the \\abilitytag{Impact} and \\weapontag{Resonating} weapon tags (see \\pcref{Weapon Tags}).
       `,
       rank: 1,
       roles: ['attune'],
@@ -696,7 +696,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'stonefist',
         exceptThat:
-          'the damage dealt by the weapon increases to 2d6, and it gains the \\weapontag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
+          'the damage dealt by the weapon increases to 2d6, and it gains the \\abilitytag{Impact} weapon tag (see \\pcref{Weapon Tags}).',
       },
       rank: 6,
       roles: ['attune'],

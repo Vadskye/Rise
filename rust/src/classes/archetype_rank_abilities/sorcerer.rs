@@ -421,7 +421,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                Whenever you cast a spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
+                Whenever you cast a damaging spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
                 When you do, the spell deals 1d4 \glossterm{extra damage}.
                 In addition, roll 1d10 and apply the corresponding wild magic effect from the table below.
 
@@ -430,14 +430,14 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell fails with no effect \\
                         2 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the lower result \\
-                        3 & On your first attack with the spell, you are a target of the attack in addition to any other targets \\
-                        4 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
-                        5 & The spell's area is halved this round \\
-                        6 & The spell's area is doubled this round \\
-                        7 & On your first attack with the spell, it \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & When you first deal damage with the spell, you \glossterm{reroll} once and keep the higher result \\
-                        9 & On your first attack roll with the spell, you \glossterm{reroll} once keep the higher result \\
-                        10 & The extra damage from this ability is doubled this round \\
+                        3 & You are a target of the spell in addition to any other targets \\
+                        4 & The spell also treats all creatures adjacent to you as \glossterm{secondary targets} \\
+                        5 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
+                        6 & The spell's area is doubled \\
+                        7 & The spell \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
+                        8 & The spell gains the \abilitytag{Impact} tag \\
+                        9 & The extra damage from the \ability{wildspell} ability is doubled this round \\
+                        10 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the higher result \\
                     \end{dtabularx}
                 \end{columntable}
 

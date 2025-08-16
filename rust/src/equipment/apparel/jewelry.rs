@@ -250,12 +250,12 @@ fn amulets() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from(r"Increases damage and chaos with \ability{wild magic}"),
         description: String::from(r"
-            The extra damage you gain from the \ability{wildspell} sorcerer ability is calculated as if your rank in that archetype was one higher, to a maximum of 7.
+            The extra damage you gain from the \ability{wildspell} sorcerer ability increases by 1d6.
             However, you take a -2 penalty to your wild magic rolls.
             If your result is 0 or less, you are the only target of the spell.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Increases damage and chaos with \ability{wild magic}", r"
+            ItemUpgrade::new(5, r"Increases damage and chaos with \ability{wild magic}", r"
                 The extra damage is doubled, rather than calculated as if you were one rank higher.
             "),
         ],

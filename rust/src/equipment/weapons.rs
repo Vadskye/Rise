@@ -225,11 +225,11 @@ impl WeaponTag {
     pub fn latex(&self) -> String {
         match self {
             Self::Ammunition => r"\weapontag{Ammunition}".to_string(),
-            Self::Clinch => r"\weapontag{Clinch}".to_string(),
+            Self::Clinch => r"\abilitytag{Clinch}".to_string(),
             Self::Compact => r"\weapontag{Compact}".to_string(),
             Self::Heavy => r"\weapontag{Heavy}".to_string(),
-            Self::Impact => r"\weapontag{Impact}".to_string(),
-            Self::Keen => r"\weapontag{Keen}".to_string(),
+            Self::Impact => r"\abilitytag{Impact}".to_string(),
+            Self::Keen => r"\abilitytag{Keen}".to_string(),
             Self::Light => r"\weapontag{Light}".to_string(),
             Self::Long => r"\weapontag{Long}".to_string(),
             Self::Maneuverable => r"\weapontag{Maneuverable}".to_string(),
@@ -240,7 +240,7 @@ impl WeaponTag {
             }
             Self::Resonating => r"\weapontag{Resonating}".to_string(),
             Self::Sweeping(count) => format!("\\weapontag{{Sweeping}} ({})", count),
-            Self::Subdual => r"\weapontag{Subdual}".to_string(),
+            Self::Subdual => r"\abilitytag{Subdual}".to_string(),
             Self::Thrown(close, long) => format!("\\weapontag{{Thrown}} ({}/{})", close, long),
             Self::VersatileGrip => r"\weapontag{Versatile Grip}".to_string(),
         }
