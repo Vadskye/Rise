@@ -430,9 +430,13 @@ export const photomancy: MysticSphere = {
         You create an illusory duplicate of yourself overlayed on your body.
         Whenever you move using one of your movement speeds, you may also move the illusory duplicate the same distance in any direction.
         If the duplicate was sharing a space with you before this movement, onlookers must make a DV 20 Awareness check to identify which is the real you and which is the duplicate.
-        When the duplicate is attacked by a \\glossterm{targeted} attack, it is destroyed.
+
+        All of your duplicate's defenses are 0.
+        It has all of the same properties as you do when considering whether it is a valid target for attacks.
+        For example, if you are living, your duplicate can also be affected by abilities that only work on living creatures.
+        When it is hit by a \\glossterm{targeted} attack, it is destroyed.
         At the end of each round, if the duplicate is outside of \\medrange from you, it is destroyed.
-        This effect ends when you have no duplicate remaining.
+        This ability is \\glossterm{dismissed} when your duplicate is destroyed.
       `,
       rank: 2,
       roles: ['attune'],
