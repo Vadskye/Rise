@@ -560,7 +560,7 @@ export const revelation: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
-          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.
           If you cannot see yourself, you are \\blinded for combat purposes.
 
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
@@ -587,7 +587,7 @@ export const revelation: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, you can see and hear out of the target's eyes and ears instead of your own.
-          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this effect ends.
+          If the target stops being within 1 mile from you, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}, this ability is \\glossterm{dismissed}.
           If you cannot see yourself, you are \\blinded for combat purposes.
         `,
         targeting: `

@@ -228,7 +228,7 @@ export const thaumaturgy: MysticSphere = {
         It has no effect on you.
         This does not prevent the spell from affecting other creatures.
         You cannot voluntarily allow spells cast by other creatures to affect you while this effect lasts.
-        After you absorb three spells in this way, this effect ends.
+        After you absorb three spells in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 7,
       roles: ['attune'],
@@ -243,7 +243,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
-        After you enhance a spell in this way, this effect ends.
+        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
@@ -274,7 +274,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell \\glossterm{repeats} during your next action.
-        After you echo a spell in this way, this effect ends.
+        After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 5,
       roles: ['attune'],
@@ -353,7 +353,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           The target's magic is partially sealed as a \\glossterm{condition}.
           The first time it tries to cast a spell, the spell automatically fails with no effect instead.
-          When the target fails to cast a spell in this way, this effect ends, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
+          When the target fails to cast a spell in this way, this ability is \\glossterm{dismissed}, and the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Fortitude against one creature within \\medrange.

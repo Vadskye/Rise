@@ -28,7 +28,7 @@ export const rituals: Ritual[] = [
 
       % How should this affect Strength break difficulty value?
       The target gains a +10 \\glossterm{enhancement bonus} to its maximum \\glossterm{damage resistance}.
-      If the target is moved, this effect ends.
+      If the target is moved, this ability is \\glossterm{dismissed}.
       Otherwise, it lasts for one year.
     `,
     rank: 1,
@@ -296,7 +296,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
@@ -312,7 +312,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
@@ -525,7 +525,7 @@ export const rituals: Ritual[] = [
   //   effect: `
   //     Choose any number of Medium or smaller ritual participants.
   //     Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
-  //     If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+  //     If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
   //   castingTime: 'one hour',
@@ -781,7 +781,7 @@ export const rituals: Ritual[] = [
       Choose one Medium or smaller container.
       Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis at the end of the round.
       While in stasis, an object cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
-      If the container is destroyed, this effect ends.
+      If the container is destroyed, this ability is \\glossterm{dismissed}.
     `,
     rank: 3,
     roles: ['narrative'],
@@ -809,7 +809,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{movement speed}.
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this effect ends.
+      If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     tags: [],
@@ -953,7 +953,7 @@ export const rituals: Ritual[] = [
       The animal will attempt to travel to that destination to the best of its ability, following the directions you have given it.
       It will not willingly part with its message until it reaches its destination.
       Once it reaches its destination, it will wait until it observes a valid recipient, leaving the destination only briefly as necessary to sustain itself.
-      When the animal has delivered its message, this effect ends, allowing you to know that the message has been delivered.
+      When the animal has delivered its message, this ability is \\glossterm{dismissed}, allowing you to know that the message has been delivered.
       `,
       targeting: `
         Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
@@ -977,7 +977,7 @@ export const rituals: Ritual[] = [
       targeting: `
       Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
       In addition, choose one Large or smaller object within \\medrange.
-      If the target is moved, this effect ends.
+      If the target is moved, this ability is \\glossterm{dismissed}.
 
       Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the chosen object, make a \\glossterm{reactive attack} vs. Mental against it.
       After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
@@ -1006,7 +1006,7 @@ export const rituals: Ritual[] = [
       targeting: `
       Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
       In addition, choose one Large or smaller object within \\medrange.
-      If the target is moved, this effect ends.
+      If the target is moved, this ability is \\glossterm{dismissed}.
 
       Whenever a creature of the chosen type enters a \\largearea radius \\glossterm{emanation} from the target, make a \\glossterm{reactive attack} vs. Mental against it.
       After you make this attack against a particular creature, you do not make this attack against it again until it finishes a \\glossterm{short rest}.
@@ -1166,7 +1166,7 @@ export const rituals: Ritual[] = [
       However, the hut blocks \\glossterm{line of effect} for all other purposes.
       The barrier has \\glossterm{hit points} equal to three times your \\glossterm{power}, and is destroyed when its hit points become negative.
 
-      If you leave the zone, this effect ends.
+      If you leave the zone, this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 2,
