@@ -531,7 +531,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                Once per \glossterm{short rest}, you can use the \textit{desperate exertion} ability without increasing your \glossterm{fatigue level}.
+                Once per \glossterm{short rest}, you can use the \ability{desperate exertion} ability without increasing your \glossterm{fatigue level}.
             ",
             modifiers: None,
         },

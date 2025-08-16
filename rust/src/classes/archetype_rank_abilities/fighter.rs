@@ -586,7 +586,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     
 
                     \rankline
-                    \rank{4} The accuracy bonus per ally increases to +5, to a maximum of +10.
+                    \rank{4} The accuracy bonus per ally increases to \plus5, to a maximum of \plus10.
                     \rank{5} The strike deals 1d8 \glossterm{extra damage}.
                     \rank{6} The extra damage increases to 1d8 \add your \glossterm{power}.
                     \rank{6} The extra damage increases to 3d8 \add your \glossterm{power}.

@@ -182,7 +182,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} The damage resistance bonus from the armor increases to seven times your rank in this archetype.
 
-                    \subcf{Covenant of Bloodsharing} The healing increases to 1d6 +1 per \glossterm{power}.
+                    \subcf{Covenant of Bloodsharing} The healing increases to 1d6 \add your \glossterm{magical power}.
 
                     \subcf{Covenant of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -200,7 +200,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Covenant of Bloodforging} The damage resistance bonus from the armor increases to ten times your rank in this archetype.
                     In addition, the defense bonus increases to \plus5.
 
-                    \parhead{Covenant of Bloodsharing} The healing increases to 1d6 plus 1d6 per 2 power.
+                    \parhead{Covenant of Bloodsharing} The healing increases to 1d6 \add 1d6 per 2 \glossterm{magical power}.
 
                     \parhead{Covenant of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }

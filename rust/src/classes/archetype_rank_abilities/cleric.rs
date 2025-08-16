@@ -228,7 +228,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You can request a \textit{miracle} as a standard action.
+                You can request a \ability{miracle} as a standard action.
                 \begin{magicalactiveability}{Miracle}
                     \abilityusagetime Standard action.
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use it again for a week.
@@ -397,7 +397,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
                     \rank{5} You always use your Persuasion skill to determine your accuracy with this attack.
-                    \rank{7} Each target is stunned as a condition regardless of whether it has remaining damage resistance.
+                    \rank{7} Each target is stunned as a condition regardless of whether it has remaining \glossterm{damage resistance}.
                 \end{activeability}
             ",
             modifiers: None,
