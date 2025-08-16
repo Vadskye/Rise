@@ -25,7 +25,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \item Items created with this ability deteriorate and become useless after 24 hours or after you finish a long rest, whichever comes first.
                     \item You can only maintain the existence of four items with this ability at once.
                         If you try to create an item beyond this limit, you must first dismiss another item created.
-                        This removes any lingering effects from the removed item, such as the protective qualities of an \textit{antitoxin elixir}.
+                        This removes any lingering effects from the removed item, such as the protective qualities of an \magicitem{antitoxin elixir}.
                     \item Items you create with this ability still have a lingering magic tied to you when destroyed or consumed.
                         With five minutes of work, you can recreate all of those items.
                         This removes any lingering effects from the recreated item.

@@ -118,7 +118,7 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The power bonuses increase to +2.
+                The power bonuses increase to \plus2.
             ",
             modifiers: Some(vec![Modifier::Power(1)]),
         },

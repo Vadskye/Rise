@@ -85,7 +85,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                         \item \abilitytag{Scrying} abilities
                         \item \trait{Tremorsense} and \trait{tremorsight}
                     \end{raggeditemize}
-                    If you have access to any other more unusual senses, such as the \textit{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
+                    If you have access to any other more unusual senses, such as the \ability{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
 
                     You can attune to this ability multiple times.
                     Each time, you can choose a different sense group.
@@ -872,7 +872,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You can use your \textit{fool them once} ability twice per \glossterm{short rest}.
+                You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
                 However, after using that ability, you \glossterm{briefly} cannot use it again.
             ",
             modifiers: None,

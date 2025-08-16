@@ -479,7 +479,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     When it does, you reduce your \glossterm{fatigue level} by one.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals 1d6 \glossterm{extra damage}.
                     \rank{6} The extra damage increases to 2d6.
                     \rank{7} The strike deals triple damage.
@@ -623,7 +623,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                The defense bonus increases to +2.
+                The defense bonus increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
