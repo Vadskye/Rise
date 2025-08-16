@@ -438,7 +438,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
-                    You always gain the benefit of your \textit{zealous fixation} ability against that creature.
+                    You always gain the benefit of your \ability{zealous fixation} ability against that creature.
                     In addition, the target is treated as if it had the alignment opposed to your devoted alignment for the purpose of all abilities, not just your own.
                     This only affects its alignment along the alignment axis your devoted alignment is on.
                     For example, if your devoted alignment was evil, a chaotic neutral target would be treated as chaotic good.

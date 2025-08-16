@@ -52,7 +52,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                 For example, if you had both the Aerodynamic Construction and Expanded Construction discoveries, you could not create an item with both double throwing range and double area.
                 You would have to choose which alchemical discovery to apply when creating the item.
                 {
-                    \parhead{Advanced Workshop} You can use your \textit{portable workshop} ability to create items with a rank equal to your rank in this archetype.
+                    \parhead{Advanced Workshop} You can use your \ability{portable workshop} ability to create items with a rank equal to your rank in this archetype.
                     \parhead{Aerodynamic Construction} You double the range of thrown alchemical items you create.
                         This does not affect alchemical items that are not designed to be thrown.
                     \parhead{Efficient Crafting} You do not need an alchemist's lab to craft alchemical items (see \pcref{Crafting Items}).
@@ -64,7 +64,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
                     Attacks with the item gain a \plus2 accuracy bonus.
                     However, if the attacker rolls a 1 or 2 on the attack roll, ignoring dice rolled for \glossterm{explosions}, they suffer a \glossterm{glancing blow} from the attack.
-                    \parhead{Repetitive Construction} Whenever you use your \textit{portable workshop} ability, you can create two copies of the same alchemical item.
+                    \parhead{Repetitive Construction} Whenever you use your \ability{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }
             ",
@@ -76,7 +76,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You gain an additional \textit{alchemical discovery} ability.
+                You gain an additional alchemical discovery ability.
             ",
             modifiers: None,
         },
@@ -86,7 +86,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                You gain an additional \textit{alchemical discovery} ability.
+                You gain an additional alchemical discovery ability.
             ",
             modifiers: None,
         },
@@ -96,7 +96,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a +1 \glossterm{accuracy} bonus with alchemical items.
+                You gain a \plus1 \glossterm{accuracy} bonus with alchemical items.
             ",
             modifiers: None,
         },

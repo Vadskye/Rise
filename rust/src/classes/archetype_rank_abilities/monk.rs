@@ -419,11 +419,11 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]
                         \abilityusagetime Free action.
                         \rankline
-                        You gain a +2 bonus to your defenses against ranged \glossterm{strikes}.
-                        However, you take a -2 penalty to your defenses against melee \glossterm{strikes}.
+                        You gain a \plus2 bonus to your defenses against ranged \glossterm{strikes}.
+                        However, you take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
-                        \rank{5} The bonus increases to +3.
+                        \rank{5} The bonus increases to \plus3.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]

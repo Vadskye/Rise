@@ -47,11 +47,11 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your \glossterm{power}.
-                    \rank{4} The animal gains a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-                    \rank{5} The accuracy bonus increases to +2.
-                    \rank{6} The accuracy bonus increases to +4.
+                    \rank{4} The animal gains a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
+                    \rank{5} The accuracy bonus increases to \plus2.
+                    \rank{6} The accuracy bonus increases to \plus4.
                     \rank{7} The animal's strikes deal double damage.
-                    However, the accuracy bonus is reduced to +2.
+                    However, the accuracy bonus is reduced to \plus2.
                 \end{magicalattuneability}
 
             ",
@@ -379,7 +379,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     This applies even if you moved closer to the target, so long as it tried to move away from your original location.
 
                     \rankline
-                    \rank{4} You gain a +1 accuracy bonus with the strike.
+                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals 1d6 \glossterm{extra damage}.
                     \rank{6} The extra damage increases to 2d6.
                     \rank{7} The strike deals triple damage instead of double damage.
