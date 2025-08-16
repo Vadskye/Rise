@@ -366,7 +366,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
 
                         \rankline
-                        \rank{5} You also gain a +1 \glossterm{accuracy} bonus with strikes.
+                        \rank{5} You also gain a \plus1 \glossterm{accuracy} bonus with strikes.
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}
@@ -566,7 +566,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
+                You gain a \plus2 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
                 In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
@@ -600,7 +600,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a +1 bonus to your Armor and Reflex defense while you have no \glossterm{encumbrance}.
+                You gain a \plus1 bonus to your Armor and Reflex defense while you have no \glossterm{encumbrance}.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
