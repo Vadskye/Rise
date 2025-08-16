@@ -18,19 +18,19 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Undead Control"),
         rank: 3,
-        short_description: String::from(r"Can control undead with \ability{turn undead}"),
+        short_description: String::from(r"Can control undead"),
         description: String::from(r"
-            Whenever you would instantly kill a non-\glossterm{elite} undead creature with the \ability{turn undead} cleric ability, you may activate this amulet.
-            When you do, that creature becomes \dominated by you instead of dying.
+            Whenever you would kill an undead creature with a healing ability, you may activate this amulet.
+            If the creature has a \glossterm{rank} less than or equal to your rank, and it is not \glossterm{elite}, it becomes \dominated by you instead of dying.
 
-            This effect lasts for one hour.
+            This effect lasts for 24 hours.
             You can only control one undead at a time in this way.
             If you activate this amulet again, the effect ends on any previously dominated undead.
             % Necessary to prevent reapplying this every 10 minutes to keep a permanent minion
             Whenever this effect ends for any reason, the previously dominated creature immediately dies.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Can permanently control undead with \ability{turn undead}", r"
+            ItemUpgrade::new(6, r"Can permanently control undead", r"
                 The effect is permanent.
                 It is still removed if you dominate a different undead. 
             "),
@@ -41,23 +41,27 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of the Undead Horde"),
         rank: 5,
-        short_description: String::from(r"Can control undead with \ability{turn undead}"),
+        short_description: String::from(r"Can control many undead"),
         description: String::from(r"
-            This item functions like a \mitem{amulet of undead control}, except that there is no limit to the number of undead you can control simultaneously.
+            This item functions like a \mitem{amulet of undead control}, except that you can control up to five different undead creatures.
+            Each individual undead creature must have a \glossterm{rank} lower than yours.
         "),
         ..Apparel::default()
     }));
 
+    // +1 Armor and Reflex is half of Shielded, so 0.8 EA.
+    // But rage requirement means it's about 75% effective, so about 0.6 EA.
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Controlled Rage"),
-        rank: 3,
-        short_description: String::from(r"Reduces penalties from \ability{rage} with high Willpower"),
+        rank: 2,
+        short_description: String::from(r"Reduces defense penalties from \ability{rage}"),
         description: String::from(r"
-            If you have at least 2 Willpower, your penalties to Armor and Reflex defense from using the \ability{rage} barbarian ability are reduced by 1.
+            Your penalties to Armor and Reflex defense from using the \ability{rage} barbarian ability are reduced by 1.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Reduces penalties from \ability{rage} with high Willpower", r"
-                The penalty reduction increases to 2 if your Willpower is at least 4.
+            // Shielded is normally 1.6 EA, or 1.2 with rage requirement.
+            ItemUpgrade::new(7, r"Removes defense penalties from \ability{rage}", r"
+                The penalty reduction increases to 2, which normally removes the defense penalty entirely.
             "),
         ],
         ..Apparel::default()
