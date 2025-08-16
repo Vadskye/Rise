@@ -72,14 +72,14 @@ fn circlets() -> Vec<Apparel> {
 
     apparel.push(Circlet(StandardItem {
         name: String::from("Circlet of Desperate Visions"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Grants lingering benefits from \\ability{desperate exertion}"),
         description: String::from(r"
             Whenever you use the \ability{desperate exertion} ability, you become \glossterm{briefly} \focused.
             This does not affect the initial roll that you used \ability{desperate exertion} to change.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants lingering benefits from \\ability{desperate exertion}", r"
+            ItemUpgrade::new(3, "Grants lingering benefits from \\ability{desperate exertion}", r"
                 You are also \glossterm{briefly} \empowered.
             "),
         ],
@@ -115,9 +115,9 @@ fn crowns() -> Vec<Apparel> {
     apparel.push(Crown(StandardItem {
         name: String::from("Radiant Crown"),
         rank: 1,
-        short_description: String::from("Sheds light as a torch"),
+        short_description: String::from("Sheds light"),
         description: String::from(r"
-            This crown sheds \glossterm{bright illumination} in a \smallarea radius.
+            This crown sheds \glossterm{bright illumination} in a \medarea radius.
             You can touch the crown as a \glossterm{minor action} to suppress or resume the light.
         "),
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],

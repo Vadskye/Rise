@@ -14,15 +14,17 @@ pub fn legs() -> Vec<Apparel> {
 fn boots() -> Vec<Apparel> {
     let mut apparel = vec![];
 
+    // At rank 3, standard short range 15' radius aoe would be dr1.
     apparel.push(Boots(StandardItem {
         name: String::from("Crater Boots"),
-        rank: 4,
+        rank: 3,
         short_description: String::from("Deals your falling damage to enemies"),
         description: String::from(r"
-            Whenever you take \glossterm<falling damage>, make an attack vs. Reflex against everything within a \areasmall radius from you.
-            \hit You deal the target bludgeoning damage equal to half the damage you took from falling.
+            As a standard action, you can jump as normal while activating these boots (see \pcref{Jumping}).
+            When you land from the jump, make an attack vs. Reflex against everything within a \smallarea radius from you.
+            \hit You deal the target bludgeoning damage equal to the damage you took from falling.
             If you reduce or avoid the falling damage, that also affects you damage you deal with these boots.
-            \crit Each target is also knocked \prone.
+            \crit Each target also falls \prone.
             This attack does not deal increased damage on a critical hit.
         "),
         ..Apparel::default()
