@@ -1,0 +1,205 @@
+%NOTED BUG: Spell names with mixed capitalization (Dispel magic) will not work properly.
+\newcommand{\combatstyle}[1]{\emph{\mbox{\hyperlink{style:#1}{#1}}}}    %Italicize combat styles
+\newcommand{\sphere}[1]{\emph{\mbox{\hyperlink{sphere:#1}{#1}}}}    %Italicize mystic spheres
+\newcommand{\ability}[1]{\mbox{\hyperlink{ability:#1}{#1}}}
+\newcommand{\spell}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
+\newcommand{\cantrip}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
+\newcommand{\maneuver}[1]{\mbox{\hyperlink{maneuver:#1}{#1}}}
+\newcommand{\stance}[1]{\mbox{\hyperlink{stance:#1}{#1}}}
+\newcommand{\spellindirect}[2]{\hyperlink{spell:#1}{#2}}
+\newcommand{\ritual}[1]{\mbox{\hyperlink{spell:#1}{#1}}}
+
+\ExplSyntaxOn
+
+\DeclareDocumentCommand{\featref}{s m}
+{
+    \hyperlink{feat:#2}{#2}
+    \IfBooleanF{#1}
+    {
+        \hypertargetraised{ft:#2}{}
+    }
+}
+
+\DeclareDocumentCommand{\magicalfeatref}{s m}
+{
+    \IfBooleanTF{#1}{
+        \featref*{#2}\sparkle
+    }{
+        \featref{#2}\sparkle
+    }
+}
+
+\DeclareDocumentCommand{\itemref}{s m}
+{
+    \hyperlink{item:#2}{#2}
+    \IfBooleanF{#1}
+    {
+        \hypertargetraised{itemtable:#2}{}
+    }
+}
+
+% #1: if provided, add a magic sparkle
+% #2: class shorthand name
+% #3: archetype name
+\DeclareDocumentCommand{\archetyperef}{s m m}
+{
+    \hyperlink{archetype:#2:#3}{
+        #3
+        \IfBooleanT{#1}{\sparkle}
+    }
+    \hypertargetraised{archetypetable:#2:#3}{}
+}
+
+% #1: class shorthand name
+% #2: archetype name
+\DeclareDocumentCommand{\archetypedef}{s m m}
+{
+    \newpage
+    \subsection{
+        \protect
+        \hypertargetraised{archetype:#2:#3}{
+            \protect
+            \hyperlink{archetypetable:#2:#3}{
+                #3
+                \IfBooleanT{#1}{\sparkle}
+            }
+        }
+    }
+    \label{#3}
+}
+
+% args:
+%   #1: name of term
+%   #2: alternate name of term, only used for labels/targets
+%   #3: hyperlink prefix
+\DeclareDocumentCommand{\termdef}{m o m}
+{
+    \IfValueT{#2}
+    {
+        \termlinks{#2}{#3}
+    }
+    \termlinks{#1}{#3}
+    \parhead{#1}
+}
+
+% args:
+%   #1: name of term
+%   #2: hyperlink prefix
+\DeclareDocumentCommand{\termlinks}{m m}
+{
+    \label{#1}\label{#1s}
+    % Enable this to test for unnecessary glossary entries.
+    % If you do, you have to disable the above labels, which should normally be present.
+    % \pref{#1}
+
+    \hypertargetraised{#2:#1}{}
+    \hypertargetraised{#2:#1s}{}
+}
+
+\DeclareDocumentCommand{\trait}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{trait}}
+    {\termlink{#2}{trait}}
+}
+\DeclareDocumentCommand{\traitdef}{m m}
+{
+    \termdef{#1}[#2]{trait}
+    \label{#1}
+}
+
+\DeclareDocumentCommand{\creaturetag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{creaturetag}}
+    {\termlink{#2}{creaturetag}}
+}
+\DeclareDocumentCommand{\creaturetagdef}{m m}
+{
+    \termdef{#1}[#2]{creaturetag}
+    \label{#1}
+}
+
+\DeclareDocumentCommand{\glossterm}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{gloss}}
+    {\termlink{#2}{gloss}}
+}
+\DeclareDocumentCommand{\glossdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{gloss}}
+    {\termdef{#1}{gloss}}
+}
+\DeclareDocumentCommand{\glosssynonym}{m}
+{\termlinks{#1}{gloss}}
+
+\DeclareDocumentCommand{\sphereterm}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{sphere}}
+    {\termlink{#2}{sphere}}
+}
+\DeclareDocumentCommand{\spheredef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{sphere}}
+    {\termdef{#1}{sphere}}
+}
+
+\DeclareDocumentCommand{\debuff}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{debuff}}
+    {\termlink{#2}{debuff}}
+}
+\DeclareDocumentCommand{\debuffdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{debuff}}
+    {\termdef{#1}{debuff}}
+}
+
+\DeclareDocumentCommand{\buff}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{buff}}
+    {\termlink{#2}{buff}}
+}
+\DeclareDocumentCommand{\buffdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{buff}}
+    {\termdef{#1}{buff}}
+}
+
+\DeclareDocumentCommand{\abilitytag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{abilitytag}}
+    {\termlink{#2}{abilitytag}}
+}
+\DeclareDocumentCommand{\abilitytagdef}{m o}
+{
+    \label{#1}
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{abilitytag}}
+    {\termdef{#1}{abilitytag}}
+}
+
+
+\DeclareDocumentCommand{\weapontag}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{weapontag}}
+    {\termlink{#2}{weapontag}}
+}
+\DeclareDocumentCommand{\weapontagdef}{m o}
+{
+    \IfValueTF{#2}
+    {\termdef{#1}[#2]{weapontag}}
+    {\termdef{#1}{weapontag}}
+}
+
+\ExplSyntaxOff
