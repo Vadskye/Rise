@@ -34,9 +34,9 @@ As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
 If you could be braced as an attunement, it would be 33% action denial that works 33% of the time, so 20 / 3 / 3 = 2.2 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
 
-### Empowered: 1.5
+### Empowered: 2.0
 
-0.3 EA * 5 actions = 1.5 EA
+0.4 EA * 5 actions = 2.0 EA
 
 ### Evasion
 
