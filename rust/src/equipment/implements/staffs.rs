@@ -412,16 +412,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Energy Conversion"),
         rank: 4,
-        short_description: String::from(r"+1d4 damage, changes energy type"),
+        short_description: String::from(r"+2 damage, changes energy type"),
         description: String::from(r"
             Whenever you use a \magical ability that has a \abilitytag{Cold}, \abilitytag{Electricity}, or \abilitytag{Fire} tag, you can remove that tag.
-            If you do, you must add a different one of those tags to the ability, and the ability deals 1d4 \glossterm{extra damage} if it deals damage.
+            If you do, you must add a different one of those tags to the ability, and the ability deals 2 \glossterm{extra damage} if it deals damage.
             All of the attack's effects are unchanged.
         "),
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(6, "+1d8 damage, changes energy type", r"
-                The extra damage increases to 1d8.
+            ItemUpgrade::new(6, "+1d6 damage, changes energy type", r"
+                The extra damage increases to 1d6.
             "),
         ],
         ..Implement::default()
@@ -431,16 +431,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Brutish Staff"),
         rank: 3,
-        short_description: String::from(r"Grants +1d4 damage if you have 3 Str"),
+        short_description: String::from(r"Grants +2 damage if you have 3 Str"),
         description: String::from(r"
-            If your Strength is at least 3, you deal 1d4 \glossterm<extra damage> with damaging \magical abilities.
+            If your Strength is at least 3, you deal 2 \glossterm<extra damage> with damaging \magical abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1d8 damage if you have 4 Str", r"
-                The extra damage increases to 1d8 if your Strength is at least 4.
+            ItemUpgrade::new(5, "Grants +1d6 damage if you have 4 Str", r"
+                The extra damage increases to 1d6 if your Strength is at least 4.
             "),
-            ItemUpgrade::new(7, "Grants +2d6 damage if you have 5 Str", r"
-                The extra damage increases to 2d6 if your Strength is at least 5.
+            ItemUpgrade::new(7, "Grants +1d10 damage if you have 5 Str", r"
+                The extra damage increases to 1d10 if your Strength is at least 5.
             "),
         ],
         ..Implement::default()
@@ -450,16 +450,16 @@ pub fn staffs() -> Vec<Implement> {
     implements.push(Staff(StandardItem {
         name: String::from("Educated Staff"),
         rank: 3,
-        short_description: String::from(r"Grants +1d4 damage if you have 3 Int"),
+        short_description: String::from(r"Grants +2 damage if you have 3 Int"),
         description: String::from(r"
-            If your Intelligence is at least 3, you deal 1d4 \glossterm<extra damage> with damaging \magical abilities.
+            If your Intelligence is at least 3, you deal 2 \glossterm<extra damage> with damaging \magical abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1d8 damage if you have 4 Int", r"
-                The extra damage increases to 1d8 if your Intelligence is at least 4.
+            ItemUpgrade::new(5, "Grants +1d6 damage if you have 4 Int", r"
+                The extra damage increases to 1d6 if your Intelligence is at least 4.
             "),
-            ItemUpgrade::new(7, "Grants +2d6 damage if you have 5 Int", r"
-                The extra damage increases to 2d6 if your Intelligence is at least 5.
+            ItemUpgrade::new(7, "Grants +1d10 damage if you have 5 Int", r"
+                The extra damage increases to 1d10 if your Intelligence is at least 5.
             "),
         ],
         ..Implement::default()
@@ -467,7 +467,7 @@ pub fn staffs() -> Vec<Implement> {
 
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Power"),
-        rank: 2,
+        rank: 4,
         short_description: String::from(r"Empowers you"),
         description: String::from(r"
             You are \empowered.
@@ -477,11 +477,12 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Greater Staff of Power"),
+        name: String::from("Staff of Overwhelming Power"),
         rank: 7,
-        short_description: String::from(r"Empowers you"),
+        short_description: String::from(r"Empowers you, but with \minus1 accuracy"),
         description: String::from(r"
             You are \empowered.
+            However, you take a \minus1 accuracy penalty.
         "),
         ..Implement::default()
     }));
@@ -532,6 +533,7 @@ pub fn staffs() -> Vec<Implement> {
         "),
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
+            // TODO: unclear damage
             ItemUpgrade::new(7, "+1d4 damage, is charged and chains", r"
                 While the staff is charged, your damaging \magical abilities also deal 1d4 \glossterm{extra damage}.
             "),
@@ -555,17 +557,20 @@ pub fn staffs() -> Vec<Implement> {
         "),
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(4, "+1d4 damage, is chilled", r"
-                The extra damage increases to 1d4.
+            ItemUpgrade::new(4, "+2 damage, is chilled", r"
+                The extra damage increases to 2.
             "),
-            ItemUpgrade::new(6, "+1d8 damage, is chilled", r"
-                The extra damage increases to 1d8.
+            ItemUpgrade::new(6, "+1d6 damage, is chilled", r"
+                The extra damage increases to 1d6.
             "),
         ],
         ..Implement::default()
     }));
 
-    // +2dr
+    // Rank 3 ideal high damage is 13.
+    // This is 27% more damage ignoring "double extra damage".
+    // Assume you're dropping a 100% accuracy to 80%.
+    // 13 vs 16.5 * .8 = 13.2 is reasonable given the opportunity to nova.
     implements.push(Staff(StandardItem {
         name: String::from("Shattered Staff"),
         rank: 3,
@@ -574,11 +579,17 @@ pub fn staffs() -> Vec<Implement> {
             All damaging \magical abilities you use deal 1d6 \glossterm{extra damage}, but have a \minus2 \glossterm{accuracy} penalty.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1d10 damage and -2 accuracy", r"
-                The extra damage increases to 1d10.
+            // Rank 5 ideal high damage is 26.
+            // Assuming double extra damage, this is 35 damage, so 35% more damage.
+            // 26 vs 37 * .8 = 28, which is still relatively fine.
+            ItemUpgrade::new(5, "Grants +1d8 damage and -2 accuracy", r"
+                The extra damage increases to 1d8.
             "),
-            ItemUpgrade::new(7, "Grants +2d8 damage and -2 accuracy", r"
-                The extra damage increases to 2d8.
+            // Rank 7 ideal high damage is 51.
+            // Assuming double extra damage, this is 68 damage, so 33% more damage.
+            // 51 vs 68 * .8 = 54, which is still relatively fine.
+            ItemUpgrade::new(7, "Grants +2d6 damage and -2 accuracy", r"
+                The extra damage increases to 2d6.
             "),
         ],
         ..Implement::default()
