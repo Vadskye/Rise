@@ -53,10 +53,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     }));
 
     weapons.push(Unrestricted(StandardItem {
-        // +1.5 damage, which is a normal value for this rank. This doesn't get any extra damage from the strength 
-        // requirement because you probably want Strength anyway.
-        // Also, increasing weapon damage instead of granting extra damage is situationally useful,
-        // though not generally a big power swing.
+        // +1.5 damage instead of +2, but it increases weapon damage instead of extra damage,
+        // which is sometimes relevant.
         name: String::from("Brutish"),
         rank: 3,
         short_description: String::from(r"Deals +1d6-2 damage if you have 3 Str"),
@@ -77,20 +75,19 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // Int-based fighting is a pretty meaningful cost, so this gets +1dr.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Educated"),
         rank: 3,
-        short_description: String::from(r"Deals +1d6 damage if you have 3 Int"),
+        short_description: String::from(r"Deals +2 damage if you have 3 Int"),
         description: String::from(r"
-            If your Intelligence is at least 3, this weapon deals 1d4 \glossterm{extra damage}.
+            If your Intelligence is at least 3, this weapon deals 2 \glossterm{extra damage}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Deals +1d8 damage if you have 4 Int", r"
-                If your Intelligence is at least 4, the extra damage increases to 1d8.
+            ItemUpgrade::new(5, "Deals +1d6 damage if you have 4 Int", r"
+                If your Intelligence is at least 4, the extra damage increases to 1d6.
             "),
-            ItemUpgrade::new(7, "Deals +2d6 damage if you have 5 Int", r"
-                If your Intelligence is at least 5, the extra damage increases to 2d6.
+            ItemUpgrade::new(7, "Deals +1d10 damage if you have 5 Int", r"
+                If your Intelligence is at least 5, the extra damage increases to 1d10.
             "),
         ],
         ..MagicWeapon::default()
@@ -241,8 +238,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             // -1dr for no downsides or requirements and the healing effect
-            ItemUpgrade::new(4, "Deals +1 damage and steals HP", r"
-                The weapon also deals 1 \glossterm{extra damage} to living creatures, and the healing increases to 3d8.
+            ItemUpgrade::new(4, "Deals +2 damage and steals HP", r"
+                The weapon also deals 2 \glossterm{extra damage} to living creatures, and the healing increases to 3d8.
             "),
             ItemUpgrade::new(6, "Deals +1d6 damage and steals HP", r"
                 The \glossterm{extra damage} increases to 1d6, and the healing increases to 5d10.
@@ -295,11 +292,11 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         "),
         tags: vec![AbilityTag::Compulsion, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(5, "Is psychic, +1d6 damage", r"
-                The extra damage increases to 1d6.
+            ItemUpgrade::new(5, "Is psychic, +1d4 damage", r"
+                The extra damage increases to 1d4.
             "),
-            ItemUpgrade::new(7, "Is psychic, +1d10 damage", r"
-                The extra damage increases to 1d10.
+            ItemUpgrade::new(7, "Is psychic, +1d8 damage", r"
+                The extra damage increases to 1d8.
             "),
         ],
         ..MagicWeapon::default()
@@ -320,21 +317,21 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Toxic"),
         rank: 4,
-        short_description: String::from(r"Is poisonous, +1d4 damage"),
+        short_description: String::from(r"Is poisonous, +2 damage"),
         description: String::from(r"
             This weapon's striking surface is liquified into a sinister poison.
             You can suppress or resume its poisonous nature as a \glossterm{free action}.
             While the weapon is poisonous:
             \begin{raggeditemize}
-                \item All strikes with it have the \atPoison tag. This means that it is unable to damage most objects.
-                \item It deals 1d4 \glossterm{extra damage}.
+                \item All strikes with it have the \atPoison tag. This means that it is usually unable to damage objects and nonliving creatures.
+                \item It deals 2 \glossterm{extra damage}.
                 \item Poisons delivered with strikes using it gain a +2 accuracy bonus.
             \end{raggeditemize}
         "),
         tags: vec![AbilityTag::Poison, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(6, "Is poisonous, +1d8 damage", r"
-                The extra damage increases to 1d8.
+            ItemUpgrade::new(6, "Is poisonous, +1d6 damage", r"
+                The extra damage increases to 1d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -479,21 +476,21 @@ fn energy_weapons() -> Vec<MagicWeapon> {
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Prismatic"),
         rank: 4,
-        short_description: String::from(r"+1d4 damage, is energetic"),
+        short_description: String::from(r"+2 damage, is energetic"),
         description: String::from(r"
             This weapon is infused with prismatic energy.
             You can suppress or resume this infusion as a \glossterm{free action}.
             While the weapon is infused:
             \begin{raggeditemize}
                 \item All strikes with it have the \atCold, \atElectricity, and \atFire tags.
-                \item It deals 1d4 \glossterm{extra damage}.
+                \item It deals 2 \glossterm{extra damage}.
                 \item It sheds light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
         "),
         tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(6, "+1d8 damage, is energetic", r"
-                The extra damage increases to 1d8.
+            ItemUpgrade::new(6, "+1d6 damage, is energetic", r"
+                The extra damage increases to 1d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -501,19 +498,20 @@ fn energy_weapons() -> Vec<MagicWeapon> {
 
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vibrating"),
-        rank: 1,
+        rank: 2,
         short_description: String::from(r"+1 damage, -10 Stealth"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-            Strikes with it deal 1 \glossterm{extra damage}.
+            Strikes with it gain a \plus1 damage bonus.
+            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
             However, you take a -10 penalty to Stealth checks.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "+2 damage, -10 Stealth", r"
-                The extra damage increases to 2.
+            ItemUpgrade::new(4, "+2 damage, -10 Stealth", r"
+                The damage bonus increases to 2.
             "),
-            ItemUpgrade::new(5, "+1d6 damage, -10 Stealth", r"
-                The extra damage increases to 1d6.
+            ItemUpgrade::new(6, "+1d6 damage, -10 Stealth", r"
+                The damage bonus increases to 1d6.
             "),
         ],
         ..MagicWeapon::default()
@@ -532,7 +530,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             \begin{raggeditemize}
                 \item All strikes with it have the \atFire tag.
                 \item Whenever you hit a creature with a strike using it, the creature burns.
-                    It takes 1d6 damage during your next action.
+                    It takes 1d4 damage during your next action.
                     This damage is doubled by critical hits and attacks that deal double damage.
                 \item It sheds red light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
@@ -540,10 +538,10 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(5, "Is burning and ignites", r"
-                The damage increases to 1d10.
+                The damage increases to 1d8.
             "),
             ItemUpgrade::new(7, "Is burning and ignites", r"
-                The damage increases to 2d8.
+                The damage increases to 2d6.
             "),
         ],
         ..MagicWeapon::default()

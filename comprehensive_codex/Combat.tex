@@ -16,7 +16,7 @@
 
     \subsubsection{Glancing Blows}\label{Glancing Blows}
       If you make a damaging attack with an attack result is 1 or 2 lower than the target's defense, you get a \glossterm{glancing blow} against that target.
-      Unless otherwise specified, all damaging attacks deal half damage on a glancing blow.
+      Damaging attacks deal half damage on a glancing blow unless otherwise specified.
       They also do not have any special effects other than immediate damage, unless those effects would also happen on a miss.
       Non-damaging attacks cannot cause glancing blows.
 
@@ -30,7 +30,7 @@
 
     \subsubsection{Critical Hits}\label{Critical Hits}
       If your attack result is at least 10 higher than the target's defense, your attack is a \glossterm{critical hit} against that target.
-      Unless otherwise specified, all damaging attacks deal double damage on a critical hit.
+      Damaging attacks deal double damage on a critical hit unless otherwise specified.
       Some non-damaging attacks also have special effects on a critical hit.
 
       For every additional increment of 10 by which you beat the target's defense, the effect of a critical hit is repeated, if applicable.
@@ -52,24 +52,20 @@
 
 % TODO: wording, and does this need to be a full section
 \section{Calculating Damage}
-  Normally, the abilities you use will tell you how to calculate your damage.
-  This section explains some special circumstances which can change how your damage is calculated.
+  This section details how damage is calculated, including special circumstances.
 
   \subsection{Weapon Damage}\label{Weapon Damage}
     Some abilities deal damage based on the weapon you use the ability with.
     Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
 
     Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-    You gain a bonus to your weapon damage equal to half your relevant \glossterm{power} see (see \pcref{Power}).
+    You gain a bonus to your weapon damage equal to half your relevant \glossterm{power} (see \pcref{Power}).
     Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
     However, you might use your \glossterm{magical power} instead for \magical strikes.
 
   \subsection{Extra Damage}\label{Extra Damage}
     Some abilities add \glossterm{extra damage} to your damaging attacks.
-    Extra damage generally works in the same way as damage that is inherently part of the attack.
-    It is halved on a glancing blow, doubled on critical hits, and so on.
-    Attacks that deal double damage also double their extra damage.
-    Some attacks specifically double any extra damage that applies to them.
+    Extra damage functions like inherent attack damage: it's halved on a glancing blow, doubled on critical hits, and so on. Attacks that deal double damage also double their extra damage, and some attacks specifically double any extra damage that applies to them.
 
     Extra damage only applies once per attack roll to any individual creature.
     For example, the \spell{corrosive grasp} spell deals damage immediately, and again during your next action.
@@ -96,13 +92,12 @@
     If you would regain \glossterm{hit points} while you have negative hit points, you first reset your hit points to 0 before applying the healing.
     In addition, your hit points are reset to 0 at the end of the round if they are still negative.
     This is checked after applying all healing and damage that takes place at the end of the round.
-    This also resets the vital wound thresholds that you have suffered, so you will immediately suffer a vital wound if your hit points go negative during the next round.
+    This also resets vital wound thresholds, meaning you'll suffer a vital wound if your hit points go negative again in the next round.
 
   \subsection{Environmental Damage}\label{Environmental Damage}
     Some abilities and environmental effects deal environmental damage.
     Environmental damage is never dealt as the result of a successful attack roll.
-    Environmental damage works in the same way as normal damage, except that environmental damage is reduced by your \glossterm{damage resistance} without subtracting from its remaining value.
-    Any environmental damage in excess of a creature's damage resistance is causes the creature to lose hit points just like normal damage.
+    Environmental damage functions like normal damage, but your \glossterm{damage resistance} reduces it without being consumed. Any excess environmental damage reduces your \glossterm{hit points}.
 
   \subsection{Subdual Damage}\label{Subdual Damage}
     Some attacks and environmental effects deal subdual damage.
@@ -124,7 +119,7 @@
   \subsection{Vital Rolls}\label{Vital Rolls}
     To make a \glossterm{vital roll}, roll 1d10.
     You take a penalty to this roll equal to twice the number of \glossterm{vital wounds} you already have, not counting the vital wound you are rolling for.
-    This includes vital wounds that have no specific vital wound effect.
+    This includes vital wounds that do not have an additional specific effect.
     The result determines the effect of the \glossterm{vital wound}, as listed in \tref{Vital Wound Effects}.
     Vital wound effects from vital rolls below 1 are lethal if untreated, but the Medicine skill can be used to prevent you from dying (see \pcref{Medicine}).
     This roll is not a \glossterm{check}, so you can't affect it with abilities like \ability{desperate exertion}.
@@ -154,7 +149,7 @@
     If you have multiple vital wounds, you may choose the order in which your vital wounds are removed.
 
 \section{Combat Time}\label{Combat Time}
-  This section explains how time passes in combat.
+  This section details how time passes in combat.
 
   \subsection{Rounds}\label{Rounds}
 
@@ -179,7 +174,7 @@
 
     \subsubsection{The Action Phase}\label{The Action Phase}
       During the \glossterm{action phase}, you can use one \glossterm{minor action} and one \glossterm{standard action}.
-      Alternately, you can use a \glossterm{move action} or an an additional \glossterm{minor action} in place of your standard action.
+      Alternately, you can use a \glossterm{move action} or an additional \glossterm{minor action} in place of your standard action.
       Most of the time, you will simply use a single standard action.
 
   \subsection{Actions}\label{Actions}
@@ -212,8 +207,8 @@
       Some activities that take very little time or attention require a \glossterm{free action}.
       You can take a free action during any phase, and between other actions on your turn.
 
-      You can take any number of free actions per round, within reason.
-      There is no intrinsic distinction between a free action and something that isn't listed as requiring an action at all.
+      You can take any number of free actions per round.
+      
       However, some free action abilities specify a limit on how often they can be used.
       For example, manipulating objects is a free action, but you can only manipulate an object as a free action once per round (see \pcref{Manipulating Objects}).
 
@@ -229,10 +224,7 @@
     Although your actions resolve sequentially within your allied group, they resolve simultaneously with the actions of anyone outside your allied group.
     Essentially, you locally resolve the effects of your actions within your allied group, but those actions do not globally resolve until later.
     This means that you cannot interrupt enemy actions, even by killing them.
-    Generally, you won't know what actions your enemies will take until after you have already resolved your action.
-    However, their actions will resolve as if they had acted before you, not after you.
-    This goes both ways, of course.
-    You can freely decide your actions without knowing what your enemy is doing because their actions cannot interrupt yours.
+    You resolve your actions without knowing enemy actions, as enemy actions resolve as if they occurred before yours. This means your actions cannot be interrupted by enemies, and vice-versa.
 
     Once all allied groups have locally resolved their actions, the results of all of those actions is announced.
     Then, each allied group updates their own status to reflect the actions that all of the other allied groups took during the same phase.
@@ -244,9 +236,7 @@
     Once all of the actions have been globally resolved, the phase ends.
     In a typical combat, this just means that the GM will tell you what the monsters did to you after you tell the GM what you did to them.
 
-    With this system, it's possible for two combatants to kill each other during the same phase, leaving both dead!
-    This might seem strange if you're used to other games which always resolve one action at a time.
-    However, this situation is not uncommon in fantasty fiction, and it's certainly possible in real life.
+        With this system, it's possible for two combatants to kill each other during the same phase, leaving both dead! This system allows for simultaneous mutual destruction, a common trope in fantasy fiction.
 
     \subsubsection{Delayed and Repeated Effects}
       Some abilities cause additional attacks or effects ``during your next action'' or ``during each of your subsequent actions''.
@@ -268,7 +258,7 @@
       For example, the \textit{reckless attack} ability immediately reduces your defenses, which affects attacks made against you during the current phase, and makes a \glossterm{strike} with the normal timing.
 
     \subsubsection{Action Resolution Summary}
-      This is a comprehensive list of of all possible action timings in case it is particularly important.
+      This is a comprehensive list of all possible action timings in case it is particularly important.
       In practice, you should almost never need to care about this detail, and doing things slightly out of order generally doesn't matter.
 
       \begin{enumerate*}
@@ -334,7 +324,7 @@
 
 % TODO: Clean up this wording, this whole section is awkward with the movement -> move action change
 \section{Movement and Positioning}\label{Movement and Positioning}
-  This section describes how creatures move and position themselves when time and location are important to measure precisely.
+  This section details how creatures move and position themselves.
 
   \subsection{Move Actions}\label{Move Actions}
     During each \glossterm{movement phase}, you can use one \glossterm{move action}.
@@ -358,14 +348,14 @@
 
     Almost all creatures can use these abilities to move around a battlefield.
     The most common movement ability is \ability{hustle}, which simply moves you to a location.
-    You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
+    
 
     Other movement abilities are reactive, allowing you to move automatically in response to the movement of other creatures.
     For example, you can try to follow a creature wherever it goes that round.
     In all cases, if you run out of movement speed before accomplishing your intended task, you simply stop where you ran out of movement.
 
     The \ability{block}, \ability{follow}, and \ability{withdraw} reactive abilities are specifically described below.
-    However, you can can come up with other reactive movements.
+    However, you can come up with other reactive movements.
     The main requirement is that a reactive movement must have a simple criteria for determining how you move based on easily observable events.
     Secondarily, reactive movements should be simple to resolve.
     If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
@@ -477,7 +467,7 @@
     If an ability gives you an alternate movement mode and doesn't specify a speed category, you move at average speed with that movement mode.
     \begin{raggeditemize}
       \item Fast: Moving 10 feet with this movement mode costs 5 feet from the creature's speed.
-        The first square costs 5 feet of speed, and then it gets the second square for free.
+        The first 5 feet of movement costs 5 feet of speed, and the next 5 feet are free.
         When moving on diagonals, the first two diagonals each cost 5 feet of speed and the third one is free.
       \item Average: Moving 5 feet with this movement mode costs 5 feet from the creature's speed.
         When moving on diagonals, the first diagonal costs 5 feet of movement and the second costs 10.
@@ -528,7 +518,7 @@
     Sometimes, movement and distance are represented by the number of squares travelled.
     A 30-ft.\ movement is the same thing as moving six squares.
 
-    \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counds as ten feet of movement.
+    \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counts as ten feet of movement.
     The third costs five feet, the fourth costs ten feet, and so on.
     You can move diagonally past corners and enemies.
 
@@ -550,8 +540,7 @@
     Enemies and large solid objects like walls completely block your movement, preventing you from entering space they occupy.
     Some abilities can allow you to move through spaces occupied by enemies, which means you do not treat them as obstacles.
 
-    \parhead{Undergrowth}\nonsectionlabel{Undergrowth} Vines, roots, bushes, and similar plants that can obstruct sight are common in forested areas.
-    These small plants can impede movement in large quantities.
+    \parhead{Undergrowth}\nonsectionlabel{Undergrowth} Vines, roots, bushes, and similar plants can obstruct sight and impede movement.
     There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
 
     \subparhead{Light Undergrowth}\nonsectionlabel{Light Undergrowth}
@@ -605,8 +594,7 @@
 
 \section{Aerial Movement}\label{Aerial Movement}
   Creatures with a fly speed or glide speed can move in midair to some degree.
-  In order to use a fly speed or glide speed, a creature must not be carrying weight in excess of its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}).
-  In addition, it must not have any \glossterm{encumbrance} (see \pcref{Encumbrance}).
+  To use a fly or glide speed, a creature must not exceed its maximum \glossterm{carrying capacity} (see \pcref{Weight Limits}) or have any \glossterm{encumbrance} (see \pcref{Encumbrance}).
 
   While \glossterm{midair}, land-based creatures cannot move to defend themselves effectively.
   Any land-based creature takes a \minus4 penalty to its Armor and Reflex defenses while it is \glossterm{midair}, even if it has a fly speed or glide speed.
@@ -617,7 +605,7 @@
   \trait{Floating} creatures do not fall in this way.
 
   \subsection{Gliding}\label{Gliding}
-    A creature with a glide speed use a \glossterm{movement} to fall slowly while controlling its direction.
+    A creature with a glide speed uses a \glossterm{movement} to fall slowly while controlling its direction.
     When it glides, it moves up to its glide speed in any horizontal direction.
     It also must descend 10 feet.
     This descent does not count against its distance moved during the movement.
@@ -776,7 +764,7 @@
     \abilityusagetime Standard action.
     \rankline
     After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
-    Since this ability does not have the \abilitytag{Swift} tag, it does not affect attacks made against you during the current phase.
+    As this ability lacks the \abilitytag{Swift} tag, it does not affect attacks made against you during the current phase.
 
     Move up to your speed in a single straight line.
     At the end of your movement, you can make a melee \glossterm{strike}.
@@ -789,8 +777,7 @@
     You \glossterm{reroll} any \glossterm{attack roll}, \glossterm{check}, or \glossterm{miss chance} you just rolled, keeping the better result.
     If you use this ability to affect an attack roll or check, you also gain a \plus2 bonus with this reroll.
 
-    You can decide to use this ability after you learn whether the original roll succeeded or failed.
-    You can even use it after you learn what the effects of a successful attack or check would be, if that is information you could normally learn if it succeeded.
+    You can use this ability after learning the outcome of the original roll, or even its effects if normally discernible.
     However, you must use it before using any other abilities or ending your turn.
     Since this rerolls the full attack or check and not just an attack roll, you must reroll any \glossterm{miss chance} or \glossterm{failure chance}.
 
@@ -805,7 +792,7 @@
     Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
 
-    The defense of each creature is equal to the result of the attack it made with its \textit{maintain grapple} ability, or 0 if it did not use that ability.
+    The defense of each creature is equal to the result of its last \textit{maintain grapple} attack, or 0 if it didn\'t use that ability.
     % TODO: awkward wording
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
@@ -871,9 +858,7 @@
   \end{activeability}
 
   \begin{activeability}*{Sprint}
-    % It's important that this can only be used with movements
-    % to prevent it from being abused with abilities like Shove?
-    % Is that clear in the text?
+    
     \abilityusagetime \glossterm{Move action} or standard action.
     \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
     \rankline
@@ -887,7 +872,7 @@
     You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
   \end{activeability}
 
-  % Is this a knockback effect? What happens if you throw someone into a wall?
+  
   \begin{activeability}*{Throw}[\abilitytag{Brawling}]
     \abilityusagetime Standard action.
     \rankline
@@ -957,7 +942,7 @@
   This allows creatures in the area to make Stealth checks to hide even if they don't have \glossterm{cover} (see \pcref{Stealth}).
 
   In an area with \glossterm{brilliant illumination}, creatures can see clearly just like an area with bright illumination.
-  In addition, no shadows exist within an an area of brilliant illumination.
+  In addition, no shadows exist within an area of brilliant illumination.
   This makes many effects from the \sphere{umbramancy} mystic sphere difficult or impossible to use.
 
   In areas of total darkness, creatures without \trait{darkvision} or some other form of supernatural vision are \blinded.
@@ -990,11 +975,7 @@
     Otherwise, it does not.
 
 \section{Obstacles and Cover}\label{Obstacles and Cover}
-  In a battle, you may not be able to perfectly see all of your opponents.
-  When obstacles get in the way, they may make some attacks impossible.
-  Almost all abilities, including \glossterm{strikes}, must have \glossterm{line of sight} and \glossterm{line of effect}.
-  Smaller obstacles may simply provide \glossterm{cover} instead of making attacks impossible.
-  This section explains how to deal with obstacles and related limitations.
+  Obstacles can impede attacks by blocking \glossterm{line of sight} or \glossterm{line of effect}, or by providing \glossterm{cover}. This section explains how to deal with these limitations.
 
   \subsection{Point of Origin}\label{Point of Origin}
     When you make an attack, you have to determine the \glossterm{point of origin}.
@@ -1004,9 +985,7 @@
     If an area attack has a defined range, the point of origin is a single grid intersection of your choice within that range.
     Cones, lines, and walls without a range use a grid intersection of your choice that is touching your space, just like targeted attacks.
     % TODO: this should probably be unique to emanations, not just rangeless
-    Cylinders and spheres without a range are unusual, since they radiate from your whole body instead of a single point.
-    When determining their total size, treat every grid intersection touching your space as a point of origin.
-    When determining cover and similar effects, only use the grid intersection that is closest to the target.
+    Cylinders and spheres without a range radiate from your entire space. For total size, treat every grid intersection touching your space as a point of origin. For cover and similar effects, use the grid intersection closest to the target.
 
   \subsection{Cover}\label{Cover}
 
@@ -1095,7 +1074,7 @@
     If a surprise attack begins a combat, the creatures who initiate the attack can choose which phase to start in.
     Generally, they should start in \glossterm{action phase}, though sometimes the \glossterm{movement phase} is more advantageous for the attackers.
 
-    % TODO: This is a bad name; organize these better
+    
 \section{Special Combat Rules}
 
   \subsection{Fighting In Water}\label{Fighting In Water}
@@ -1165,7 +1144,7 @@
     You treat all creatures you have not declared an opinion of as neutral parties.
     Neutral parties can move through your \glossterm{space}.
 
-    % These also want to be organized in some way that makes sense
+    
 \section{Using Abilities}\label{Using Abilities}
 
   \subsection{Magical and Mundane Abilities}\label{Magical and Mundane Abilities}
@@ -1335,8 +1314,7 @@
     An ability's duration determines how long its effect lasts.
     Abilities can have one of several different kinds of durations.
 
-    % TODO: Is this necessary?
-    % Should this clarify interactions with bursts/zones/emanations?
+    
     If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
     If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
     Such effects can sometimes be destroyed prior to when their duration ends.
@@ -1375,7 +1353,7 @@
       You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
       There are several other abilities that can also remove conditions.
 
-      % TODO: clean up wording
+      
     \subsubsection{Sustained Abilities}\label{Sustained Abilities}
       Sustained abilities have the \abilitytag{Sustain} tag.
       They last as long as you take an action to sustain them each round.

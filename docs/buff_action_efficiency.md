@@ -9,7 +9,7 @@ By EA:
   Accuracy (+2)  & 0.3  & 0.5  & 0.8     & 1.1 \\
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
   Braced         & 0.4  & 0.7  & 1.0     & 1.3 \\
-  Empowered      & 0.3  & 0.5  & 0.7     & 1.0 \\
+  Empowered      & 0.4  & 0.5  & 0.7     & 1.0 \\
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
@@ -104,9 +104,9 @@ Applies 75% of the time
 
 Applies 100% of the time
 
-### Empowered: 0.2
+### Empowered: 0.4
 
-Empowered is roughly 20% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
+Empowered is roughly 40% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
 
 ### Enraged: -0.2
 
@@ -290,9 +290,9 @@ Consider a standard damage effect to be 1 EA. For each damage rank you drop, you
 
 Rank X:
 * rX-1 damage:
-  * Then brief 0.2 EA (empowered)
+  * Then brief 0.2 EA
 * rX-2 damage:
-  * First brief 0.2 EA (empowered)
+  * First brief 0.2 EA
   * Then brief 0.4 EA (focused, honed, steeled...)
   * And 0.4 EA this round (focused, honed, steeled...)
 * rX-3 damage:
