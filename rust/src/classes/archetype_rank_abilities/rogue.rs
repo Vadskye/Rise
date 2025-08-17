@@ -233,9 +233,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{3} You are also \glossterm{briefly} immune to being \frightened.
-                        % +0.3 EA
-                        \rank{5} You are also \glossterm{briefly} \empowered.
-                        \rank{7} You are also \glossterm{briefly} immune to being \panicked.
+                        \rank{5} You are also \glossterm{briefly} immune to being \panicked.
+                        % +0.4 EA
+                        \rank{7} You are also \glossterm{briefly} \empowered.
                     \end{magicalactiveability}
 
                     % Everyone fortified is 1 EA
