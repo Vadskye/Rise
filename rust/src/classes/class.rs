@@ -1567,7 +1567,7 @@ impl Class {
                         \magicaldomainability{Aspect} Your skill checks can explode, like attacks (see \pcref{Exploding Attacks}).
                         Unlike attacks, your skill checks can only explode once.
                         \magicaldomainability{Essence} You gain the \ability{twist of fate} ability.
-                        \begin{magicalactiveability}{Twist of Fate}
+                        \begin{magicalactiveability}{Twist of Fate}[\abilitytag{Subtle}]
                             \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
                             \abilityusagetime Standard action.
                             \rankline
