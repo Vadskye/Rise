@@ -79,7 +79,7 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Antitoxin Elixir".to_string(),
-        rank: 0,
+        rank: 1,
         short_description: "Impervious to poison".to_string(),
         description: String::from(r"
             When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \impervious to poisons.
@@ -103,24 +103,24 @@ pub fn potions() -> Vec<Tool> {
 
     potions.push(Tool {
         name: "Invigorating Potion".to_string(),
-        rank: 0,
+        rank: 1,
         short_description: "Grants power and fortification".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \fortified.
         ".to_string(),
         upgrades: vec![
             // Double fortify is 0.6
-            ItemUpgrade::new(4, "Grants brief power and fortification", r"
+            ItemUpgrade::new(6, "Grants brief power and fortification", r"
                 This gains the \atSwift tag, so it protects you against attacks during the current phase.
             "),
         ],
         ..potion()
     });
 
-    // 0.4 + 0.3
+    // 0.4 + 0.4
     potions.push(Tool {
         name: "Mind-Whetting Potion".to_string(),
-        rank: 1,
+        rank: 2,
         short_description: "Grants focus".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \focused.
@@ -182,9 +182,11 @@ pub fn potions() -> Vec<Tool> {
         ..potion()
     });
 
+    // This should be 1.1 EA, but empowered and maximized don't stack super well, so 7 is
+    // okay.
     potions.push(Tool {
         name: "Potion of Pure Power".to_string(),
-        rank: 6,
+        rank: 7,
         short_description: "Grants many benefits and confusion".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \maximized.
@@ -231,13 +233,18 @@ pub fn potions() -> Vec<Tool> {
     });
 
     potions.push(Tool {
-        name: "Elixir of Power".to_string(),
-        rank: 6,
-        short_description: "Empowers you".to_string(),
+        name: "Fireproof Elixir".to_string(),
+        rank: 1,
+        short_description: "Impervious to fire".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you are \empowered.
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you become \impervious to \atFire abilities.
             This effect expires after 10 minutes.
         ".to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Immune to fire", r"
+                You become immune instead of impervious.
+            "),
+        ],
         ..elixir()
     });
 
