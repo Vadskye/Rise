@@ -353,7 +353,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Sweeping weapons have a number that indicates the number of targets you can add, such as Sweeping (2).
     \weapontagdef{Thrown} This weapon is designed to be thrown to deal damage at range.
     Thrown weapons have two \glossterm{range limits} listed in their description (see \pcref{Weapon Range Limits}).
-    Unless otherwise noted in a weapon's description, a throwing weapon can be used to attack in melee without penalty.
+    Thrown weapons can normally be used in melee without penalty.
     % Doesn't cost an improvement slot; very situational
     \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
     While holding a Versatile Grip weapon in two hands, you gain a \plus1 bonus per 3 \glossterm{power} to your \glossterm{weapon damage} with the weapon, with a minimum bonus of \plus1.
@@ -382,7 +382,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         \tablebookmark{Weapons}{weapons}
         \RaggedRight
         \begin{longtable}{p{12em} l l l >{\lcol}p{24em}}
-          \lcaption{Weapons}                                                                                                                                         \\
+          \lcaption{Weapons}                                                                                                                                                                           \\
           \tb{Name}                          & \tb{Accuracy} & \tb{Damage} & \tb{Item Rank (Cost)}\fn{1} & \tb{Tags}                          \tableheaderrule
           Armor weapons                      &               &             &                             &                                                                                             \\
           \tind Standard shield              & \plus0        & 1d4         & 0 (1 gp)                    & \tdash                                                                                      \\
@@ -401,7 +401,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           % Thrown is standard one extra improvement, 1d6 -> 1d4 for Light, 1d4 -> 1d3 for Compact
           \tind Dagger                       & \plus0        & 1d3         & 0 (1 gp)                    & \weapontag{Compact}, \weapontag{Light}, \weapontag{Thrown} (30/60)                          \\
           \tind Greatsword                   & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Heavy}, \weapontag{Sweeping} (1)                                                 \\
-          \tind Rapier                       & \plus0        & 1d6         & 0 (1 gp)                    & \abilitytag{Keen}                                                                            \\
+          \tind Rapier                       & \plus0        & 1d6         & 0 (1 gp)                    & \abilitytag{Keen}                                                                           \\
           \tind Scimitar                     & \plus0        & 1d6         & 0 (1 gp)                    & \weapontag{Mounted}                                                                         \\
           \tind Smallsword                   & \plus1        & 1d4         & 0 (1 gp)                    & \weapontag{Light}                                                                           \\
 
@@ -409,7 +409,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Longbow\fn{2}                & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Bow}, \weapontag{Projectile} (90/270)                                            \\
           \tind Shortbow\fn{2}               & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Bow}, \weapontag{Projectile} (60/180)                                            \\
           \tind Arrows (20)                  & \plus0        & \tdash      & \tdash                      & \weapontag{Ammunition}                                                                      \\
-          \tind Blunted arrows (20)          & \minus1       & \tdash      & \tdash                      & \weapontag{Ammunition}, \abilitytag{Subdual}                                                 \\
+          \tind Blunted arrows (20)          & \minus1       & \tdash      & \tdash                      & \weapontag{Ammunition}, \abilitytag{Subdual}                                                \\
           \tind Fire arrows (20)\fn{2}       & \tdash        & \tdash      & 1 (4 gp)                    & \weapontag{Ammunition}, \atFire                                                             \\
           \tind Lightning arrows (20)\fn{2}  & \tdash        & \tdash      & 2 (20 gp)                   & \weapontag{Ammunition}, \atElectricity                                                      \\
           \tind Longflight arrows (20)\fn{2} & \minus1       & \tdash      & 4 (500 gp)                  & \weapontag{Ammunition}                                                                      \\
@@ -418,19 +418,19 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \tind Cavalry mace                 & \plus0        & 1d6         & 0 (1 gp)                    & \weapontag{Mounted}, \weapontag{Versatile Grip}                                             \\
           % No improvements because simple
           \tind Club                         & \plus0        & 1d6         & \tdash                      & \weapontag{Versatile Grip}                                                                  \\
-          \tind Greatmace                    & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                                       \\
-          \tind Morning star                 & \plus0        & 1d6         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Versatile Grip}                                              \\
+          \tind Greatmace                    & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                                      \\
+          \tind Morning star                 & \plus0        & 1d6         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Versatile Grip}                                             \\
           % -1d for an extra improvement
-          \tind Sap                          & \plus0        & 1d3         & 0 (1 gp)                    & \weapontag{Compact}, \weapontag{Light}, \abilitytag{Subdual}                                 \\
+          \tind Sap                          & \plus0        & 1d3         & 0 (1 gp)                    & \weapontag{Compact}, \weapontag{Light}, \abilitytag{Subdual}                                \\
           % -1d because Fire is unusual and counts as two improvements
           \tind Torch\fn{2}                  & \plus0        & 1d4         & \tdash                      & \atFire                                                                                     \\
 
           Crossbows                          &               &             &                             &                                                                                             \\
           \tind Heavy crossbow\fn{2}         & \plus0        & 1d10        & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Projectile} (90/270)                                          \\
           \tind Light crossbow\fn{2}         & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Projectile} (60/180)                                                             \\
-          \tind Pellet crossbow\fn{2}        & \plus2        & 1d3         & 1 (4 gp)                    & \weapontag{Projectile} (60/180), \abilitytag{Subdual}                                        \\
+          \tind Pellet crossbow\fn{2}        & \plus2        & 1d3         & 1 (4 gp)                    & \weapontag{Projectile} (60/180), \abilitytag{Subdual}                                       \\
           \tind Bolts (20)                   & \plus0        & \tdash      & \tdash                      & \weapontag{Ammunition}                                                                      \\
-          \tind Blunted bolts (20)           & \minus1       & \tdash      & \tdash                      & \weapontag{Ammunition}, \abilitytag{Subdual}                                                 \\
+          \tind Blunted bolts (20)           & \minus1       & \tdash      & \tdash                      & \weapontag{Ammunition}, \abilitytag{Subdual}                                                \\
           \tind Round bullets (20)           & \tdash        & \tdash      & \tdash                      & \weapontag{Ammunition}                                                                      \\
 
           Flexible weapons                   &               &             &                             &                                                                                             \\
@@ -445,18 +445,18 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
           Headed weapons                     &               &             &                             &                                                                                             \\
           \tind Dart (5)                     & \plus1        & 1d3         & \tdash                      & \weapontag{Ammunition}, \weapontag{Compact}, \weapontag{Light}, \weapontag{Thrown} (60/120) \\
-          \tind Light hammer                 & \plus0        & 1d4         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Light}                                                       \\
+          \tind Light hammer                 & \plus0        & 1d4         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Light}                                                      \\
           % -1a for an extra improvement
-          \tind Pick                         & \minus1       & 1d8         & 0 (1 gp)                    & \abilitytag{Keen}, \weapontag{Versatile Grip}                                                \\
+          \tind Pick                         & \minus1       & 1d8         & 0 (1 gp)                    & \abilitytag{Keen}, \weapontag{Versatile Grip}                                               \\
           % Only one improvement because simple
           \tind Sickle                       & \plus0        & 1d4         & 0 (1 gp)                    & \weapontag{Light}                                                                           \\
-          \tind Sledgehammer                 & \minus1       & 1d10        & 0 (1 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                                       \\
-          \tind Warhammer                    & \minus1       & 1d8         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Versatile Grip}                                              \\
+          \tind Sledgehammer                 & \minus1       & 1d10        & 0 (1 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                                      \\
+          \tind Warhammer                    & \minus1       & 1d8         & 0 (1 gp)                    & \abilitytag{Impact}, \weapontag{Versatile Grip}                                             \\
 
           Monk weapons                       &               &             &                             &                                                                                             \\
           % -1d for an extra improvement
-          \tind Jitte                        & \plus1        & 1d3         & 0 (1 gp)                    & \weapontag{Light}, \abilitytag{Subdual}                                                      \\
-          \tind Kama                         & \plus0        & 1d4         & 0 (1 gp)                    & \abilitytag{Keen}, \weapontag{Light}                                                         \\
+          \tind Jitte                        & \plus1        & 1d3         & 0 (1 gp)                    & \weapontag{Light}, \abilitytag{Subdual}                                                     \\
+          \tind Kama                         & \plus0        & 1d4         & 0 (1 gp)                    & \abilitytag{Keen}, \weapontag{Light}                                                        \\
           % -1d for extra throwing range
           \tind Kunai                        & \plus0        & 1d3         & 0 (1 gp)                    & \weapontag{Light}, \weapontag{Thrown} (60/120)                                              \\
           \tind Nunchaku                     & \plus0        & 1d4         & 0 (1 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                                                 \\
@@ -501,65 +501,65 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           \lcaption{Exotic Weapons}      \\
           \tb{Exotic Weapons}
           \label{cap:Exotic Weapons}      & \tb{Accuracy} & \tb{Damage} & \tb{Item Rank (Cost)}\fn{1} & \tb{Weapon Tags} \tableheaderrule
-          Armor                           &               &             &                             &                                                                        \\
-          \tind Armblade\fn{2}            & \plus0        & 1d4         & 1 (4 gp)                    & \abilitytag{Clinch}, \abilitytag{Keen}, \weapontag{Light}                \\
-          \tind Spiked knee\fn{2}         & \minus1       & 1d4         & 1 (4 gp)                    & \abilitytag{Clinch}, \abilitytag{Impact}, \weapontag{Light}              \\
+          Armor                           &               &             &                             &                                                                         \\
+          \tind Armblade\fn{2}            & \plus0        & 1d4         & 1 (4 gp)                    & \abilitytag{Clinch}, \abilitytag{Keen}, \weapontag{Light}               \\
+          \tind Spiked knee\fn{2}         & \minus1       & 1d4         & 1 (4 gp)                    & \abilitytag{Clinch}, \abilitytag{Impact}, \weapontag{Light}             \\
           \tind Tower shield              & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                  \\
           \tind Spiked tower shield       & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}                                  \\
-          Axes                            &               &             &                             &                                                                        \\
+          Axes                            &               &             &                             &                                                                         \\
           % Long range counts as two improvements
-          \tind Dwarven throwing axe      & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Thrown} (60/120)                                            \\
-          \tind Dwarven waraxe            & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Thrown} (30/60), \weapontag{Versatile Grip}                 \\
+          \tind Dwarven throwing axe      & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Thrown} (60/120)                                             \\
+          \tind Dwarven waraxe            & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Thrown} (30/60), \weapontag{Versatile Grip}                  \\
           \tind Orcish greataxe           & \minus1       & 1d10        & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}, \weapontag{Sweeping} (1)        \\
-          Blades                          &               &             &                             &                                                                        \\
-          \tind Boot dagger\fn{2}         & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Compact}, \weapontag{Light}                                 \\
-          \tind Epee                      & \plus1        & 1d6         & 0 (1 gp)                    & \abilitytag{Keen}                                                                            \\
-          \tind Falchion                  & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Sweeping} (2), \weapontag{Versatile Grip}                   \\
+          Blades                          &               &             &                             &                                                                         \\
+          \tind Boot dagger\fn{2}         & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Compact}, \weapontag{Light}                                  \\
+          \tind Epee                      & \plus1        & 1d6         & 0 (1 gp)                    & \abilitytag{Keen}                                                       \\
+          \tind Falchion                  & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Sweeping} (2), \weapontag{Versatile Grip}                    \\
           \tind Katana                    & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Keen}, \weapontag{Sweeping} (1)          \\
-          \tind Kukri                     & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Sweeping} (1)                            \\
-          Bows                            &               &             &                             &                                                                        \\
-          \tind Flatbow\fn{2}             & \plus1        & 1d6         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270)                       \\
+          \tind Kukri                     & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Sweeping} (1)                             \\
+          Bows                            &               &             &                             &                                                                         \\
+          \tind Flatbow\fn{2}             & \plus1        & 1d6         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270)                        \\
           \tind Heartseeker arrows (20)   & \plus0        & \tdash      & 2 (20 gp)                   & \weapontag{Ammunition}, \abilitytag{Keen}                               \\
-          \tind Recurve bow\fn{2}         & \plus0        & 1d8         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270)                       \\
-          \tind Takedown bow\fn{2}        & \plus0        & 1d6/1d4     & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270 or 60/180)             \\
-          \tind Titanbow\fn{2}            & \minus1       & 1d8         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Heavy}, \weapontag{Projectile} (60/180)    \\
-          Club-like weapons               &               &             &                             &                                                                        \\
+          \tind Recurve bow\fn{2}         & \plus0        & 1d8         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270)                        \\
+          \tind Takedown bow\fn{2}        & \plus0        & 1d6/1d4     & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Projectile} (90/270 or 60/180)              \\
+          \tind Titanbow\fn{2}            & \minus1       & 1d8         & 2 (20 gp)                   & \weapontag{Bow}, \weapontag{Heavy}, \weapontag{Projectile} (60/180)     \\
+          Club-like weapons               &               &             &                             &                                                                         \\
           \tind Culacula\fn{1}            & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}, \weapontag{Parrying}            \\
-          \tind Gnomish trick mace        & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                            \\
+          \tind Gnomish trick mace        & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                             \\
           \tind Knobkerrie                & \plus0        & 1d6         & 1 (4 gp)                    & \abilitytag{Impact}, Throwing (30/60)                                   \\
           \tind Totokia                   & \minus1       & 1d10        & 1 (4 gp)                    & \abilitytag{Impact}, \weapontag{Versatile Grip}                         \\
-          Crossbows                       &               &             &                             &                                                                        \\
+          Crossbows                       &               &             &                             &                                                                         \\
           \tind Arbalest\fn{2}            & \plus1        & 1d10        & 2 (20 gp)                   & \weapontag{Heavy}, \abilitytag{Impact}, \weapontag{Projectile} (90/270) \\
-          \tind Pistol crossbow\fn{2}     & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Projectile} (30/90)                      \\
-          \tind Repeating crossbow\fn{2}  & \plus0        & 1d8         & 2 (20 gp)                   & \weapontag{Projectile} (90/270)                                        \\
-          \tind Repeating bolts (5)       & \plus0        & \tdash      & 0 (1 gp)                    & \weapontag{Ammunition}                                                 \\
-          Flexible weapons                &               &             &                             &                                                                        \\
-          \tind Bladed whip\fn{2}         & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Sweeping} (1)                             \\
-          \tind Chain whip                & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Maneuverable}                             \\
-          \tind Meteor hammer             & \minus1       & 2d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                    \\
-          \tind Net\fn{2}                 & \plus0        & \tdash      & 1 (4 gp)                    & \weapontag{Thrown} (10/20)                                             \\
-          \tind Three-section staff       & \plus1        & 1d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Parrying}              \\
-          Headed weapons                  &               &             &                             &                                                                        \\
-          \tind Dwarven shorthammer       & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Thrown} (60/120)                         \\
+          \tind Pistol crossbow\fn{2}     & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Projectile} (30/90)                       \\
+          \tind Repeating crossbow\fn{2}  & \plus0        & 1d8         & 2 (20 gp)                   & \weapontag{Projectile} (90/270)                                         \\
+          \tind Repeating bolts (5)       & \plus0        & \tdash      & 0 (1 gp)                    & \weapontag{Ammunition}                                                  \\
+          Flexible weapons                &               &             &                             &                                                                         \\
+          \tind Bladed whip\fn{2}         & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Sweeping} (1)                              \\
+          \tind Chain whip                & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Maneuverable}                              \\
+          \tind Meteor hammer             & \minus1       & 2d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                     \\
+          \tind Net\fn{2}                 & \plus0        & \tdash      & 1 (4 gp)                    & \weapontag{Thrown} (10/20)                                              \\
+          \tind Three-section staff       & \plus1        & 1d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Parrying}               \\
+          Headed weapons                  &               &             &                             &                                                                         \\
+          \tind Dwarven shorthammer       & \plus0        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Thrown} (60/120)                          \\
           \tind Heavy pick                & \minus1       & 2d6         & 1 (4 gp)                    & \weapontag{Heavy}, \abilitytag{Keen}                                    \\
           \tind Longhammer                & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Heavy}, \abilitytag{Impact}, \weapontag{Long}                \\
-          \tind Obuch                     & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Mounted}, \weapontag{Versatile Grip}      \\
-          Monk weapons                    &               &             &                             &                                                                        \\
-          \tind Hook sword                & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                            \\
-          \tind Sai                       & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                            \\
-          \tind Three-section staff       & \plus1        & 1d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Parrying}              \\
-          \tind War fan                   & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Parrying}                                \\
-          Polearms                        &               &             &                             &                                                                        \\
+          \tind Obuch                     & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Long}, \weapontag{Mounted}, \weapontag{Versatile Grip}       \\
+          Monk weapons                    &               &             &                             &                                                                         \\
+          \tind Hook sword                & \plus0        & 1d6         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                             \\
+          \tind Sai                       & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Maneuverable}                             \\
+          \tind Three-section staff       & \plus1        & 1d6         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Parrying}               \\
+          \tind War fan                   & \plus1        & 1d4         & 1 (4 gp)                    & \weapontag{Light}, \weapontag{Parrying}                                 \\
+          Polearms                        &               &             &                             &                                                                         \\
           % +1 improvement for mounted only and weird ammunition, which restricts magic weaponry
-          \tind Cavalry lance (5)\fn{2}   & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Ammunition}, \weapontag{Long}, \weapontag{Mounted}          \\
-          \tind Fauchard                  & \minus1       & 1d10        & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Sweeping} (1)          \\
-          \tind Glaive                    & \plus1        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                    \\
-          \tind Longhammer                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Resonating}            \\
+          \tind Cavalry lance (5)\fn{2}   & \plus0        & 1d8         & 0 (1 gp)                    & \weapontag{Ammunition}, \weapontag{Long}, \weapontag{Mounted}           \\
+          \tind Fauchard                  & \minus1       & 1d10        & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Sweeping} (1)           \\
+          \tind Glaive                    & \plus1        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                     \\
+          \tind Longhammer                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}, \weapontag{Resonating}             \\
           % The extra range counts as one improvement
-          \tind Pike\fn{2}                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                    \\
-          \tind War scythe                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Sweeping} (2)                            \\
-          Simple weapons                  &               &             &                             &                                                                        \\
-          Thrown weapons                  &               &             &                             &                                                                        \\
+          \tind Pike\fn{2}                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Long}                                     \\
+          \tind War scythe                & \plus0        & 1d8         & 1 (4 gp)                    & \weapontag{Heavy}, \weapontag{Sweeping} (2)                             \\
+          Simple weapons                  &               &             &                             &                                                                         \\
+          Thrown weapons                  &               &             &                             &                                                                         \\
         \end{longtable}
         1 See \pcref{Item Ranks}. \\
         2 This weapon has special rules. \\
@@ -1039,7 +1039,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
       \parhead{Vineweave, Braided} Braided vineweave body armor provides \plus2 \glossterm{damage resistance}.
       However, it makes you \vulnerable to \atFire attacks.
-
 
   % Permanent tools like this generally have no clear relationship to spells.
   \begin{longcolumn}
