@@ -3,8 +3,8 @@
 \glossdef{ability} An ability is a generic term for any unusual property a creature has or any special actions it can take to cause particular effects.
 Spells, racial traits, and the benefits from class \glossterm{archetypes} can all be called abilities.
 
-\glossdef{ability rank} Every ability has a \glossterm{rank}.
-An ability's rank is typically equal to the minimum \glossterm{character rank} you would need to have learn or use the ability.
+\glossdef{ability rank} An ability's \glossterm{rank} is typically the minimum \glossterm{character rank} required to learn or use the ability.
+If this is unclear, such as for unique monster abilities, use the creature's character rank.
 
 \glossdef{ability tag} An ability tag describes the effects of an ability.
 For details, see \pcref{Ability Tags}.
@@ -25,8 +25,7 @@ For details, see \pcref{Alignment}.
 This group resolves its actions together, separately from other combatants.
 For details, see \pcref{Resolving Actions}.
 
-\glossdef{ally}[allies] Some beneficial abilities affect allies.
-An ally is any creature you consider an ally, and who also considers you an ally, excluding yourself.
+\glossdef{ally}[allies] An ally is any creature you consider an ally, and who also considers you an ally, excluding yourself.
 For details, see \pcref{Allies and Enemies}.
 
 \glossdef{archetype}[archetypes] An archetype is a collection of related abilities from a particular class.
@@ -37,11 +36,9 @@ For details, see \pcref{Archetypes}.
 Your rank in any given archetype cannot exceed your \glossterm{character rank}.
 For details, see \pcref{Archetype Ranks}.
 
-\glossdef{area} An area ability affects multiple targets within an area.
-Some area abilities are \glossterm{ranged}, while others are centered around their user.
+\glossdef{area} An area ability has a \glossterm{point of origin} and affects all valid targets within some distance from that location.
 There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 For details, see \pcref{Area Shapes}, and \pcref{Area Types}.
-If an ability is not an area ability, it is either a \glossterm{melee} ability or a \glossterm{ranged} ability.
 
 \glossdef{armor} Armor is a form of equipment that protects your body from harm.
 There are two kinds of armor: \glossterm{body armor}, which you wear on your body, and \glossterm{shields}, which you wield in a hand.
@@ -50,22 +47,20 @@ For details, see \pcref{Armor}.
 \glossdef{astral beacon} An area with an astral beacon is easier to \glossterm{teleport} to using long-distance teleportation abilities.
 For details, see \pcref{Astral Beacons}.
 
-\glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
-All attacks require an \glossterm{attack roll}.
-An ability that requires an attack roll is an attack, even if used in a non-harmful way.
+\glossdef{attack}[attacks] Any ability that requires an \glossterm{attack roll} is an attack, even if it is used in a non-harmful way.
 
 \glossdef{attack result} An attack result is the total you get on an \glossterm{attack roll}, after taking into account any bonuses or penalties that apply to the roll.
 
-\glossdef{attack roll}[attack rolls] A roll required to succeed with an attack.
-To make an attack roll, roll 1d10 \add your \glossterm{accuracy} with the attack.
-If the result of the attack roll equals or exceeds the target's \glossterm{defense}, the attack succeeds.
-Some attacks, especially magical attacks, have effects even if the attack roll fails.
+\glossdef{attack roll}[attack rolls] To make an attack roll, roll 1d10 \add your \glossterm{accuracy} with the attack.
+If the result equals or exceeds the target's \glossterm{defense}, the attack succeeds.
+Some attacks, especially damaging area abilities, have effects even on a failed roll.
 For details, see \pcref{Attack Rolls}.
 
 \glossdef{attended} An attended item is an item currently being held or carried by a creature.
 Some abilities can only affect \glossterm{unattended} items.
 
-\glossdef{attribute} A core representation of a character's capacity in a wide range of areas. There are six attributes: \glossterm{Strength}, \glossterm{Dexterity}, \glossterm{Constitution}, \glossterm{Intelligence}, \glossterm{Perception}, and \glossterm{Willpower}.
+\glossdef{attribute} An attribute represents a character's capacity in a wide range of areas.
+There are six attributes: \glossterm{Strength}, \glossterm{Dexterity}, \glossterm{Constitution}, \glossterm{Intelligence}, \glossterm{Perception}, and \glossterm{Willpower}.
 
 \glossdef{attune}[attunement] Some abilities last as long as you attune to them.
 Attuning to an ability costs an \glossterm{attunement point} that you cannot recover as long as you maintain that attunement.
@@ -95,7 +90,8 @@ For details, see \pcref{Brawling Accuracy}.
 \glossdef{brawling attack} A brawling attack uses your \glossterm{brawling accuracy} instead of your normal accuracy.
 For details, see \pcref{Brawling Accuracy}.
 
-\glossdef{briefly}[brief] An effect that lasts briefly, or a brief effect, lasts through the end of the next round after the effect was applied.
+\glossdef{briefly}[brief] An effect that lasts briefly is called a brief effect.
+A brief effect lasts through the end of the next round after the effect was applied.
 
 \glosssynonym{Bright illumination}
 \glossdef{bright illumination} In an area with bright illumination, creatures can see clearly.
@@ -129,9 +125,9 @@ For details, see \pcref{Weight Limits}.
 \glossdef{character level} Your character level is your total level, including levels from all of your classes.
 Whenever text refers to your ``level'', without specifying a particular kind of level, it means your character level.
 
-\glossdef{character rank} Your character rank is a general categorization of your character's power.
-It is based on your level, as defined in \tref{Character Advancement and Gaining Levels}.
-Your character rank is also listed in the base class table for each class, since it determines your maximum \glossterm{archetype rank} (see \pcref{Archetype Ranks}).
+\glossdef{character rank} A character's rank is a broad categorization of its capabilities, ranging from 0 to 7.
+Character rank is based on level, as defined in \tref{Character Advancement and Gaining Levels}.
+It is also listed in the base class table for each class, since it determines a character's maximum \glossterm{archetype rank} (see \pcref{Archetype Ranks}).
 
 % TODO: clarify that you can chain from objects even if a spell only affects creatures
 \glossdef{chain} An ability can specify that it chains a certain number of times.
@@ -149,13 +145,11 @@ If the result of your roll, including your modifier, is high enough, you succeed
 Otherwise, you fail.
 For details, see \pcref{Making Checks}.
 
-\glossdef{class}[classes] Your class represents your fundamental source of power and the type of abilities you have.
-For example, barbarians draw power from the primal energy found deep within all living things, while clerics draw power from their worship of mighty deities.
+\glossdef{class}[classes] A character's class determines their fundamental source of power and many of their abilities.
 For details, see \pcref{Classes}.
 
-\glossdef{class skill}[class skills] Each \glossterm{class} has an associated set of skills that members of that class often know.
-These are called class skills.
-Your \glossterm{base class} automatically grants you training with a specific number of skills from among your class skills.
+\glossdef{class skill}[class skills] Each \glossterm{class} has an associated set of class skills that members of that class often know.
+Your \glossterm{base class} automatically grants you training with a specific number of skills from this list.
 For details, see \pcref{Skills}.
 
 \glossdef{climb speed} A creature with a climb speed can move at that speed while climbing, and does not suffer penalties while doing so.
@@ -176,8 +170,8 @@ All \glossterm{targeted} attacks against a creature or object with concealment f
 For details, see \pcref{Concealment}.
 
 \glossdef{condition}[conditions] A condition is an effect that lasts on a creature until it is removed.
-All conditions are detrimental, and most are standard \glossterm{debuffs}.
-Player characters can remove conditions with the \ability{recover} ability or by taking a \glossterm{short rest}, as well as with various special abilities (see \pcref{Recover}).
+Most conditions are standard \glossterm{debuffs}.
+Player characters can remove conditions with a \glossterm{short rest}, or with special abilities like \ability{recover} (see \pcref{Recover}).
 For details, see \pcref{Ability Durations}.
 
 \glossdef{Constitution} Constitution is an \glossterm{attribute} that measures your health and stamina.
@@ -190,21 +184,18 @@ If a corpse is \glossterm{destroyed}, it can no longer be treated as a corpse.
 It grants a \plus2 bonus to Armor, Brawn, and Reflex defenses.
 For details, see \pcref{Cover}.
 
-\glossdef{critical hit}[critical hits] When you make an attack, if your result beat the target's defense by 10 or more, you get a critical hit.
-Unless otherwise noted, damaging attacks roll twice as many damage dice on a critical hit and double all flat modifiers.
+\glossdef{critical hit}[critical hits] An attack that beats the target's defense by 10 or more gets a critical hit.
+On a critical hit, a damaging attack rolls twice as many damage dice and doubles all flat damage modifiers, unless otherwise noted.
 For details, see \pcref{Critical Hits}.
 
-\glossdef{critical success} When you make a check, if your result beat the \glossterm{difficulty value} by 10 or more, you get a critical success.
-Some abilities have special effects on critical successes.
+\glossdef{critical success} A \glossterm{check} that beats the \glossterm{difficulty value} by 10 or more gets a critical success.
+Some abilities have special effects on a critical success.
 
-\glossdef{damage} Many attacks deal damage to you when they hit.
+\glossdef{damage} Taking damage reduces a creature's \glossterm{damage resistance}, then its \glossterm{hit points}.
 For details, see \pcref{Taking Damage}.
 
 \glossdef{damage resistance} Whenever you take damage, you first apply that damage to your damage resistance before it reduces your \glossterm{hit points}.
 For details, see \pcref{Damage Resistance}.
-
-\glossdef{damaging hit} Some abilities have special effects if they get a damaging hit.
-If you miss, glance, or hit but fail to deal damage, you do not get a damaging hit.
 
 \glossdef{darkvision}[Darkvision] A creature with darkvision can see perfectly in complete darkness.
 For details, see \pcref{Darkvision}.
@@ -220,7 +211,7 @@ First, it costs an extra \glossterm{attunement point} to \glossterm{attune} to.
 Second, these attunement points are not recovered until you take a \glossterm{short rest}, even if the attunement is released.
 For details, see \pcref{Deep Attunement}.
 
-\glossdef{defeat} You defeat a creature if you kill it or incapacitate it, causing it to be \glossterm{defeated}.
+\glossdef{defeat} A creature is defeated when it stops being able to continue fighting, such as when it is killed.
 
 \glossdef{defeated} A creature is defeated if it dies or is incapacitated for an extended period of time (such as by being knocked unconscious).
 Defeating a creature generally requires inflicting a \glossterm{vital wound} on it.
@@ -243,15 +234,13 @@ For details, see \pcref{Difficult Terrain}.
 
 \glossdef{difficulty value} The difficulty value of a \glossterm{check} is the check result required to succeed.
 It can be abbreviated as ``DV''.
-In general, attacks are rolled to beat \glossterm{defenses}, and checks are rolled to beat a given difficulty value.
 
 \glossdef{disease} An affliction of the body, causing a steady deterioration over time.
 
 \glosssynonym{dismisses}
-\glossdef{dismiss}[dismissed] When you dismiss an ability, it ends, and all of its lingering effects are removed.
-Unless otherwise noted, all \magical abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
-You can dismiss abilities as a \glossterm{free action} (see \pcref{Dismissal}).
+\glossdef{dismiss}[dismissed] When an ability is dismissed, it ends and all of its lingering effects are removed.
+Any \magical ability with a duration can normally be dismissed as a \glossterm{free action}, but \glossterm{mundane} abilities cannot be dismissed.
+For details, see \pcref{Dismissal}.
 
 \glossdef{dual strike} A dual strike is a \glossterm{strike} made with two weapons at once.
 You treat both weapons as a single combined weapon, adding together most of their statistics.
@@ -273,16 +262,13 @@ If that creature or object moves, the emanation moves with it.
 \glossdef{encumbrance} Your encumbrance is a value that represents how much you are burdened by armor and weight.
 For details, see \pcref{Encumbrance}.
 
-\glossdef{enemy}[enemies] Some harmful abilities affect enemies.
-An enemy is any creature you consider to be an enemy.
+\glossdef{enemy}[enemies] An enemy is any creature you consider to be an enemy, excluding yourself.
 For details, see \pcref{Allies and Enemies}.
 
-\glossdef{enhancement bonus}[enhancement bonuses] Some abilities provide an enhancement bonus instead of a regular bonus.
-Enhancement bonuses function like normal bonuses except that they do not stack with each other, even if the enhancement bonuses come from different sources.
+\glossdef{enhancement bonus}[enhancement bonuses] Enhancement bonuses do not stack with other enhancement bonuses, even if they are from different sources.
 For details, see \pcref{Stacking Rules}.
 
-\glossdef{environmental damage}[environmental] Environmental damage is a type of damage.
-Environmental damage does not reduce the \glossterm{damage resistance} of creatures or objects, making small amounts of environmental damage irrelevant to healthy creatures.
+\glossdef{environmental damage}[environmental] Environmental damage does not reduce \glossterm{damage resistance}.
 For details, see \pcref{Environmental Damage}.
 
 \glossdef{exclude} Some effects allow you to exclude specific targets that would normally be affected by your abilities.
@@ -300,8 +286,7 @@ For details, see \pcref{Exploding Attacks}.
 You cannot use abilities like \ability{desperate exertion} to modify the results of an extended check.
 If your modifier changes over the course of the task, use your lowest modifier at any point during the task.
 
-\glossdef{extra damage} Some attacks deal extra damage.
-This damage is added on top of the normal damage from that attack.
+\glossdef{extra damage} Extra damage is additional damage added on top of an attack's normal damage.
 For details, see \pcref{Extra Damage}.
 
 \glossdef{failure chance}[failure chance] If you have a failure chance with an ability, you have a random chance to fail.
@@ -309,13 +294,12 @@ Failure chances are rolled before \glossterm{miss chances} and \glossterm{attack
 An ability that fails on a target has no effect on that target, even if the ability would normally deal damage on a miss.
 If you have multiple failure chances, only the highest one applies.
 
-\glossdef{falling damage} If you fall at least 10 feet, you and the object you land on take damage.
-This damage is called falling damage.
-A creature with a Medium \glossterm{weight category} takes 1d8 falling damage per 10 feet, to a maximum of 30d8.
+\glossdef{falling damage} When a creature or object falls 10 or more feet, it takes falling damage based on its \glossterm{weight category}.
+This falling damage is also dealt to the surface it lands on, but not to any other creature.
+A Medium weight creature takes 1d8 falling damage per 10 feet fallen (maximum 30d8).
 For details, see \pcref{Falling Damage}.
 
-\glossdef{fatigue level} Your fatigue level measures how fatigued you are.
-You take a \glossterm{fatigue penalty} if your fatigue level exceeds your \glossterm{fatigue tolerance}.
+\glossdef{fatigue level} A creature takes a \glossterm{fatigue penalty} if its fatigue level exceeds your \glossterm{fatigue tolerance}.
 For details, see \pcref{Fatigue}.
 
 % Does "fatigued" need to exist as a term?
@@ -344,8 +328,6 @@ For details, see \pcref{Free Actions}.
 Many abilities require a free hand to use.
 You cannot use the same hand for two different purposes in the same \glossterm{phase}.
 
-\glossdef{glance} When a creature glances another creature with an attack, it means that the attacker scored a \glossterm{glancing blow}.
-
 \glossdef{glancing blow}[Glancing blow] When you miss on any attack by 2 or less, it is called a glancing blow.
 Whenever you get a glancing blow with a damaging attack, you deal half damage.
 For details, see \pcref{Glancing Blows}.
@@ -368,8 +350,7 @@ Heavy undergrowth provides \glossterm{concealment} and is considered \glossterm{
 \glossdef{heavyweight} A heavyweight object has a \glossterm{weight category} that is one category larger than the object's \glossterm{size category}.
 For details, see \pcref{Weight Categories}.
 
-\glossdef{height limit} Some abilities have a height limit.
-A height limit defines your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
+\glossdef{height limit} A height limit defines your maximum distance directly above an object at least two size categories larger than you that is free-standing and capable of supporting your weight.
 This is common for flying creatures (see \pcref{Flight}).
 
 \glossdef{hit point} Your hit points measure how hard you are to seriously injure or kill.
@@ -377,16 +358,14 @@ You lose hit points when you take damage.
 If you run out of hit points, you gain \glossterm{vital wounds} when you take damage instead, which can cause you to die quickly.
 For details, see \pcref{Hit Points}.
 
-\glossdef{icy crystal} Ice crystals improve the effects of some spells from the \sphere{Cryomancy} spells.
+\glossdef{ice crystal} Ice crystals improve the effects of some spells from the \sphere{Cryomancy} mystic sphere.
 You can normally have a maximum of three ice crystals.
 At the end of each round, if you did not gain or spend any ice crystals that round, one of your ice crystals melts.
 For details, see \pcref{Cryomancy}.
 
-\glossdef{immune} A creature that is immune to an effect treats it as if the effect did not exist.
-% TODO: wording
-An immune creature cannot gain \glossterm{conditions} or similar effects like \glossterm{poison} if it is immune to them, or if the only effect of that condition would be to apply a specific debuff that it is immune to.
-In addition, a creature that temporarily becomes immune to an effect immediately removes all instances of that effect.
-For example, a creature that suddenly becomes immune to poison would remove all poisons currently affecting it, and those poisons would not return once the immunity ends.
+\glossdef{immune} Creatures treat effects they are immune to as if they did not exist.
+An creature cannot have or gain \glossterm{conditions} or similar effects from sources it is immune to.
+For example, a creature that becomes immune to poison would remove all poisons affecting it.
 
 \glossdef{improvised weapon}[improvised weapons] An improvised weapon is an object which could conceivably be used as a weapon, but which was not designed for that purpose.
 Common examples include doors and wine bottles.
@@ -400,7 +379,7 @@ For details, see \pcref{Conflicting Actions}.
 \glossdef{injury}[injuries] When a creature loses \glossterm{hit points} from an effect, it is injured by that effect.
 This has no permanent effect on the creature, and creatures do not track whether they are injured or how many injuries they have gained.
 However, many abilities have stronger effects when they inflict injuries.
-For more long-term consequences of receiving damage in combat, see \pcref{Vital Wounds}.
+For more long-term consequences of taking damage, see \pcref{Vital Wounds}.
 
 \glossdef{insight point}[Insight points] Insight points can be spent to gain additional abilities or proficiencies.
 For details, see \pcref{Insight Points}.
@@ -484,7 +463,6 @@ Some abilities affect or require manufactured weapons instead of natural weapons
 \glossdef{melee}[Melee] A melee ability affects targets in physical contact with its source.
 Typically, this involves touching a target or using a weapon that never leaves your grasp.
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
-If an ability is not melee, it is either a \glossterm{ranged} ability or an \glossterm{area} ability.
 
 \glossdef{metallic} A creature is metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
 This includes any \glossterm{body armor} with a metal material type.
@@ -492,7 +470,7 @@ It also includes exposed metal objects or parts of objects that are no more than
 This includes most weapons with any metallic components.
 It does not include creatures who have small amounts of metal safely stowed in larger containers, such as a common amount of coins or metallic tools stowed in a coin purse or backpack.
 
-Similarly, an object is generally considered metallic if it has an exposed piece made of metal that is no more than two size categories larger than the object as a whole.
+Similarly, an object is generally considered metallic if it has an exposed piece made of metal that is no more than two size categories smaller than the object as a whole.
 
 \glossdef{midair} A land-based creature typically suffers a \minus4 penalty to its Armor and Reflex defenses while it is in the air and unable to touch the ground and move normally.
 This applies even if the creature has a fly speed or glide speed.
@@ -521,16 +499,15 @@ The most common mode is a \glossterm{walk speed}.
 For details, see \pcref{Movement Modes}.
 
 \glossdef{movement phase} The movement phase is the first of two \glossterm{phases} in a combat \glossterm{round}.
-During the movement phase, creatures can make \glossterm{movements} (see \pcref{Movement and Positioning}.
+During the movement phase, creatures can take \glossterm{move actions} (see \pcref{Movement and Positioning}).
 The movement phase is followed by the \glossterm{action phase}.
 
 \glossdef{multiclass} A multiclass character can gain access to \glossterm{archetypes} and other abilities from multiple classes.
 For details, see \pcref{Multiclass Characters}.
 
-\glossdef{mundane}[Mundane] Most abilities are considered mundane abilities.
-Mundane abilities have some form of natural explanation and do not fundamentally originate from a magical source.
-Examples include weapon attacks, a dragon's frightful presence, and a barbarian's rage.
-Unless otherwise indicated, all abilities are mundane in nature.
+\glossdef{mundane}[Mundane] A mundane ability does not originate from a magical source.
+Mundane abilities have a natural explanation, such as a weapon attack or a barbarian's rage.
+Unless otherwise indicated, all abilities are mundane.
 
 \glossdef{mundane power} Your mundane power is your \glossterm{power} with \glossterm{mundane} abilities.
 It is typically equal to half your level \add your Strength.
@@ -568,7 +545,8 @@ For details, see the Tome of Guidance.
 For details, see \pcref{Point of Origin}.
 
 % TODO: better short description
-\glossdef{poison}[poisoned] For a description of poisons and how they work, see \pcref{Poison}.
+\glossdef{poison}[poisoned] Poisons attack Fortitude defense each round to cause debilitating effects or damage.
+For details, see \pcref{Poison}.
 
 \glossdef{poison stage} Each \glossterm{poison} progresses in a series of stages.
 Each stage inflicts a particular negative effect on the poisoned creature according to the poison's description.
@@ -578,23 +556,22 @@ For details, see \pcref{Poison}.
 In general, drinking a potion requires a standard action.
 Potions cannot be safely mixed together without diluting their magic, so you cannot consume two potions with the same action.
 
-\glossdef{power} The power of an \glossterm{ability} represents how strong the ability is.
+\glossdef{power} Your power increases your damage, and can have other effects on specific abilities.
 For details, see \pcref{Power}.
 
 \glossdef{primary target} Some abilities that affect multiple targets distinguish between their primary and secondary targets.
 For details, see \pcref{Primary and Secondary Targets}.
 
-\glossdef{proficient}[proficiency] A creature can be proficient with weapons and armor.
-You take a \minus2 accuracy penalty with weapons you are not proficient with.
-If you wear or use armor you are not proficient with, it provides half its normal defense bonus.
-In addition, you apply that armor's \glossterm{encumbrance} as a penalty to your \glossterm{accuracy}.
+\glossdef{proficient}[proficiency] A creature must be proficient with weapons and armor to use them effectively.
+Using a weapon without proficiency imposes a \minus2 accuracy penalty.
+Wearing armor without proficiency halves its defense bonus and applies its \glossterm{encumbrance} as a penalty to \glossterm{accuracy}.
 
 \glossdef{projectile} A projectile is an object fired from a weapon at a target.
 Arrows and bolts are projectiles.
 
-\glossdef{push}[pushed] A push is a type of \glossterm{forced movement}.
+\glossdef{push}[pushed] Push is a type of \glossterm{forced movement}.
 It represents being pushed by a constant force.
-If a creature being pushed encounters an obstacle, it stops moving with no negative consequences.
+If a pushed creature encounters an obstacle, it stops moving with no negative consequences.
 For details, see \pcref{Push Effects}.
 
 \glossdef{range} The range of an ability determines how far away it can be used.
@@ -609,7 +586,6 @@ For details, see \pcref{Weapon Range Limits}.
 
 \glossdef{ranged} A ranged ability affects targets at a distance from its source.
 Ranged abilities always have a \glossterm{range} at which they function.
-If an ability is not ranged, it is either a \glossterm{melee} ability or an \glossterm{area} ability.
 
 \glossdef{rank} A rank is a general categorization of how powerful something is.
 There are several specific types of rank: \glossterm{ability rank}, \glossterm{archetype rank}, \glossterm{character rank}, and \glossterm{item rank}.
@@ -749,11 +725,7 @@ For details, see \pcref{Strikes}.
 If you would gain a \glossterm{vital wound} from subdual damage, you increase your \glossterm{fatigue level} by three instead.
 For details, see \pcref{Subdual Damage}.
 
-\glossdef{suppressed}[suppress] A suppressed ability has temporarily ceased to function.
-It has no effect while suppressed.
-% TODO: This seems designed to support antimagic fields. Is that meaningful?
-% Only \magical abilities can be suppressed.
-% Mundane results of magical abilities (e.g., water from \ritual{create water}) cannot be suppressed and do not disappear in suppression areas.
+\glossdef{suppressed}[suppress] Abilities have no effect while they are suppressed.
 
 \glossdef{sustain}[sustained] Some abilities last as long as you sustain them.
 Each ability specifies a particular action that is required to sustain the ability, such as a \glossterm{minor action}.
@@ -813,12 +785,9 @@ Unlike being \glossterm{immune}, you do not automatically remove persistent effe
 This means you may still need to track that the effect is on you in case you stop being unaffected by it.
 For example, a barbarian is unaffected by conditions while raging, but those conditions have their full effects when the barbarian stops raging.
 
-\glossdef{unattended} An unattended item is an item not being held or carried by a creature, or that is being held or carried by an \glossterm{ally}.
+% TODO: do you need to be able to target items carried by allies as if they were unattended? Seems complicated
+\glossdef{unattended} An unattended item is an item not being held or carried by a creature.
 Some abilities can only affect unattended items.
-
-\glossdef{unaware} See \pcref{Circumstances and Debuffs}.
-
-\glossdef{unconscious} See \pcref{Circumstances and Debuffs}.
 
 \glossdef{undergrowth} The presence of a significant amount of roots, bushes, and similar plants that can obstruct movement is called undergrowth.
 There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
@@ -830,8 +799,6 @@ For details, see \pcref{Armor Usage Classes}.
 
 \glossdef{verbal components}[verbal] Verbal components are words required to cast most spells.
 For details, see \pcref{Ability Usage Components}.
-
-\glossdef{Visual} See \pcref{Ability Tags}.
 
 \glossdef{vital wound} A \glossterm{vital wound} is a serious injury that inflicts negative effects on you.
 You gain one or more \glossterm{vital wounds} when you take damage in excess of your hit points (see \pcref{Negative Hit Points}).
