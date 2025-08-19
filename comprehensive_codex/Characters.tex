@@ -9,10 +9,10 @@ You can either skim past terms you don't yet understand or look them up as you g
 
 \section{Attributes}\label{Attributes}
 
+  Attributes represent raw talent in a particular area.
   Each character has six \glossterm{attributes}: Strength (Str), Dexterity (Dex), Constitution (Con), Intelligence (Int), Perception (Per), and Willpower (Wil).
   These attributes have a wide range of effects on a character's core statistics.
 
-  Each attribute represents a character's raw talent in that area.
   A 0 in an attribute represents average human capability.
   That doesn't mean that every commoner has a 0 in every attribute; not everyone is average, after all.
   Player characters have an average attribute higher than 0 because they are exceptional individuals.
@@ -171,7 +171,8 @@ You can either skim past terms you don't yet understand or look them up as you g
     Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
   \subsection{Power}\label{Power}
-    Your \glossterm{power} is a general representation of how strong your abilities are.
+    Your \glossterm{power} affects how much damage you deal.
+    Some abilities also use it for other effects, such as healing.
     You have two types of power: your \glossterm{magical power}, which affects your \magical abilities, and your \glossterm{mundane power}, which affects your \glossterm{mundane} abilities (see \pcref{Magical and Mundane Abilities}).
     If you gain a bonus to your \glossterm{power}, and it does not specify which type of power it affects, it affects both your \glossterm{magical power} and your \glossterm{mundane power}.
 
@@ -198,10 +199,8 @@ You can either skim past terms you don't yet understand or look them up as you g
     Fatigue is still easier to recover from than \glossterm{vital wounds}.
 
     \subsubsection{Fatigue Level}\label{Fatigue Level}
-      Your \glossterm{fatigue level} measures how fatigued you are.
-      A number of abilities and attacks can cause you to increase your fatigue level.
-      The most common abilities that increase your fatigue level are the \textit{desperate exertion}, \textit{recover}, and \textit{sprint} abilities.
-      All of those abilities are described in \pcref{Universal Abilities}.
+      Your \glossterm{fatigue level} measures how tired you are.
+      Some abilities increase your fatigue level when used, such as the \ability{desperate exertion} ability (see \pcref{Univrsal Abilities}).
 
     \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
       Becoming slightly fatigued is not immediately detrimental.
@@ -285,25 +284,18 @@ You can either skim past terms you don't yet understand or look them up as you g
     \end{dtable*}
 
     \subsubsection{Space}\label{Space}
-      A creature's \glossterm{space} is the area its body occupies while fighting.
-      All humanoid species take up a 5-ft.\ by 5-ft.\ space in combat, which is a single \glossterm{square}.
-      Normally, other creatures can't be in the space you occupy.
-      Most creatures have a space significantly larger than the physical space their body occupies because they need room to maneuver in combat.
-
-      Exceptionally large creatures can often attack at some distance from their core body thanks to long arms or other appendages.
-      This is represented by making their space larger than their body alone would require.
-      Even Colossal creatures can still only make melee attacks against adjacent foes - or more often, against smaller creatures sharing space with them.
+      A creature's \glossterm{space} is the area it occupies in combat.
+      Humanoids typically occupy a 5-ft. by 5-ft. \glossterm{square}.
+      A creature's space is generally larger than its physical body, especially for large creatures.
 
     \subsubsection{Base Speed}\label{Base Speed}
       Each size category has a \glossterm{base speed} that indicates how far creatures of that size category can generally move.
       For details about movement in combat, see \pcref{Movement and Positioning}.
 
     \subsubsection{Other Effects}
-      % TODO: record all of these and add them here
       A creature's size affects some additional skills and abilities.
       For example, larger creatures are immune to \atSizeBased abilities used by creatures two or more size categories smaller than them.
-      The effects of unusual size are described in those skills and abilities.
-      Unusually large or small creatures also have other special rules apply to them, as described below.
+      Some special cases are mentioned below.
 
     \subsubsection{Very Small Creatures}
       \parhead{Space} If a creature takes up less than a single square of space, you can fit multiple creatures in that square.
@@ -319,7 +311,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
       \parhead{Sweeping Weapons} Weapons used by creatures that are Huge or larger are automatically \weapontag{Sweeping}, as shown in \trefnp{Size Categories}.
       If the creature's weapons would already be Sweeping, add that value to the normal Sweeping value for that weapon.
-      For example, a greatsword used by a Gargantuan creature would have Sweeping (4).
+      For example, a greatsword used by a Gargantuan creature would have Sweeping (3).
 
   \subsection{Weight Limits}\label{Weight Limits}
 
@@ -427,7 +419,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     \begin{raggeditemize}
       \item Effects from abilities with the same name do not stack.
       \item Enhancement bonuses do not stack with each other.
-      \item If a creature gains the same condition multiple times, the effects do not stack, but each instance of the condition is tracked separately.
+      \item If a creature gains the same condition multiple times, the effects do not stack, but each instance is tracked separately.
         The creature must remove all instances of the condition before the effects are removed.
       \item Multiple \magical effects that change a creature's \glossterm{size category} do not stack.
         If multiple magical effects both increase and decrease size, size increases offset size decreases on a one-for-one basis to determine the creature's final size.
@@ -444,8 +436,8 @@ You can either skim past terms you don't yet understand or look them up as you g
     The minimum is applied after all other modifiers.
 
   \subsection{Doubling and Halving}\label{Doubling and Halving}
-    Normally, doubling something twice makes it four times the original value, and halving something twice makes it one quarter of the original value.
-    However, if an individual effect would double something twice, it instead just adds an additional increment of the original value, making it three times as large.
+    Normally, doubling twice results in four times the original value, and halving twice results in one quarter of the original value.
+    However, if a single effect doubles something twice, it only adds an additional increment of the original value, making it three times as large.
 
     To clarify, here are some examples, assuming you're making using a weapon that normally deals 10 damage:
     \begin{raggeditemize}
