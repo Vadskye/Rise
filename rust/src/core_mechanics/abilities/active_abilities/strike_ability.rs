@@ -525,8 +525,8 @@ impl StrikeAbility {
             effect: r"
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
+                However, it cannot get a \\glossterm{glancing blow} with this strike.
                 \hit $fullweapondamage.
-                \glance No effect.
             ".to_string(),
             name: strike_prefix("Heartpiercing", &weapon),
             weapon,
