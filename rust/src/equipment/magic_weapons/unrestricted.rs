@@ -391,7 +391,7 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"Can prevent teleportation"),
         description: String::from(r"
             As a standard action, you can make a mundane \glossterm<strike> using this weapon.
-            On a damaging hit, the target \glossterm{briefly} cannot be \glossterm{teleported}.
+            On a hit, the target \glossterm{briefly} cannot be \glossterm{teleported}.
             An object subject to this effect is left behind if it is carried by a creature that teleports.
         "),
         ..MagicWeapon::default()
@@ -402,7 +402,7 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         rank: 5,
         short_description: String::from(r"Prevent teleportation"),
         description: String::from(r"
-            Whenever you get a damaging hit with this weapon, that target becomes dimensionally anchored.
+            Whenever you hit with this weapon, that target becomes dimensionally anchored.
             Creatures are anchored as a \glossterm{condition}, and objects are anchored \glossterm{briefly}.
             While dimensionally anchored, the target cannot be \glossterm{teleported}.
             An object subject to this effect is left behind if it is carried by a creature that teleports.
