@@ -22,11 +22,11 @@ This includes firebombs, potions, and many other items.
 For details, see \pcref{Alignment}.
 
 \glossdef{allied group} Your allied group is the set of allies that you can coordinate your actions with.
-Your whole allied group resolves their actions together, separately from other combatants.
+This group resolves its actions together, separately from other combatants.
 For details, see \pcref{Resolving Actions}.
 
 \glossdef{ally}[allies] Some beneficial abilities affect allies.
-An ally is any creature you consider an ally who also considers you an ally, not including yourself.
+An ally is any creature you consider an ally, and who also considers you an ally, excluding yourself.
 For details, see \pcref{Allies and Enemies}.
 
 \glossdef{archetype}[archetypes] An archetype is a collection of related abilities from a particular class.
@@ -37,7 +37,7 @@ For details, see \pcref{Archetypes}.
 Your rank in any given archetype cannot exceed your \glossterm{character rank}.
 For details, see \pcref{Archetype Ranks}.
 
-\glossdef{area} A area ability affects multiple targets within an area.
+\glossdef{area} An area ability affects multiple targets within an area.
 Some area abilities are \glossterm{ranged}, while others are centered around their user.
 There are five standard area sizes: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 For details, see \pcref{Area Shapes}, and \pcref{Area Types}.
@@ -51,10 +51,10 @@ For details, see \pcref{Armor}.
 For details, see \pcref{Astral Beacons}.
 
 \glossdef{attack}[attacks] Anything that affects another creature in a potentially harmful way, such as striking a creature with a sword, is an attack.
-All attacks require making an \glossterm{attack roll}.
-If an ability requires an attack roll, it is considered to be an attack, even if you use them in a way that you believe is not harmful.
+All attacks require an \glossterm{attack roll}.
+An ability that requires an attack roll is an attack, even if used in a non-harmful way.
 
-\glossdef{attack result} An attack result is the total you get on an \glossterm{attack roll}, after taking to account any bonuses or penalties that apply to the roll.
+\glossdef{attack result} An attack result is the total you get on an \glossterm{attack roll}, after taking into account any bonuses or penalties that apply to the roll.
 
 \glossdef{attack roll}[attack rolls] A roll required to succeed with an attack.
 To make an attack roll, roll 1d10 \add your \glossterm{accuracy} with the attack.
@@ -68,7 +68,7 @@ Some abilities can only affect \glossterm{unattended} items.
 \glossdef{attribute} A core representation of a character's capacity in a wide range of areas. There are six attributes: \glossterm{Strength}, \glossterm{Dexterity}, \glossterm{Constitution}, \glossterm{Intelligence}, \glossterm{Perception}, and \glossterm{Willpower}.
 
 \glossdef{attune}[attunement] Some abilities last as long as you attune to them.
-Attuning to an ability costs an \glossterm{attunement point} that you cannot recover as long as you maintain your attunement to that ability.
+Attuning to an ability costs an \glossterm{attunement point} that you cannot recover as long as you maintain that attunement.
 For details, see \pcref{Attuned Abilities}.
 
 \glossdef{attuned} If you are attuned to an ability, you have invested an \glossterm{attunement point} in it to maintain its effect.
@@ -95,7 +95,7 @@ For details, see \pcref{Brawling Accuracy}.
 \glossdef{brawling attack} A brawling attack uses your \glossterm{brawling accuracy} instead of your normal accuracy.
 For details, see \pcref{Brawling Accuracy}.
 
-\glossdef{briefly}[brief] An effect that lasts briefly, or a brief effect, lasts until after the end of the next round after the effect was applied.
+\glossdef{briefly}[brief] An effect that lasts briefly, or a brief effect, lasts through the end of the next round after the effect was applied.
 
 \glosssynonym{Bright illumination}
 \glossdef{bright illumination} In an area with bright illumination, creatures can see clearly.
@@ -135,16 +135,14 @@ Your character rank is also listed in the base class table for each class, since
 
 % TODO: clarify that you can chain from objects even if a spell only affects creatures
 \glossdef{chain} An ability can specify that it chains a certain number of times.
-For each time that the ability chains, you may choose an additional secondary target for the ability.
-You can't chain back to a creature or object that is already a target of the ability.
-Each additional target must be within 15 feet of the previous target in the chain.
-The chain starts from one of the ability's primary targets.
-These additional targets must have \glossterm{line of sight} to you and \glossterm{line of effect} to the previous target in the chain.
-However, they do not need \glossterm{line of effect} to you, and they can be beyond the ability's original range.
+The chain starts from any primary target of the ability.
+Each chain allows you to choose an additional secondary target for the ability.
+That target must be within 15 foot \glossterm{range} of the previous target in the chain, it must not already be a target of the ability.
+You must have \glossterm{line of sight} to each chained target.
+However, you do not need \glossterm{line of effect} to them, and they can be beyond the ability's original range.
 
-Unless otherwise noted in a spell's description, the secondary targets from chaining are affected by the ability in the exact same way as the primary target.
-Both creatures and objects are valid targets for chaining, but they have to be reasonably sized.
-You can't chain off of the ground.
+You can chain to objects if the ability can normally affect objects.
+However, they must be well-defined objects that are Gargantuan or smaller, so you can't chain off of the ground.
 
 \glossdef{check}[checks] A check is a roll that you make to try to accomplish a task.
 If the result of your roll, including your modifier, is high enough, you succeed.
@@ -160,7 +158,7 @@ These are called class skills.
 Your \glossterm{base class} automatically grants you training with a specific number of skills from among your class skills.
 For details, see \pcref{Skills}.
 
-\glossdef{climb speed} A creature with a climb speed can move that at that speed while climbing, and does not suffer penalties while doing so.
+\glossdef{climb speed} A creature with a climb speed can move at that speed while climbing, and does not suffer penalties while doing so.
 For details, see \pcref{Movement Modes}.
 
 \glossdef{close range} Weapons have two \glossterm{range limits}: close range and \glossterm{long range}.
@@ -177,7 +175,7 @@ They are described in \tref{Common Languages}.
 All \glossterm{targeted} attacks against a creature or object with concealment from you have a 20\% \glossterm{miss chance}.
 For details, see \pcref{Concealment}.
 
-\glossdef{condition}[conditions] A condition is an effect that lasts on a creature until it is removed by effects that remove conditions.
+\glossdef{condition}[conditions] A condition is an effect that lasts on a creature until it is removed.
 All conditions are detrimental, and most are standard \glossterm{debuffs}.
 Player characters can remove conditions with the \ability{recover} ability or by taking a \glossterm{short rest}, as well as with various special abilities (see \pcref{Recover}).
 For details, see \pcref{Ability Durations}.
@@ -202,7 +200,7 @@ Some abilities have special effects on critical successes.
 \glossdef{damage} Many attacks deal damage to you when they hit.
 For details, see \pcref{Taking Damage}.
 
-\glossdef{damage resistance} Whenever you take damage, you first apply that damage to your damage resistance applying it to your \glossterm{hit points}.
+\glossdef{damage resistance} Whenever you take damage, you first apply that damage to your damage resistance before it reduces your \glossterm{hit points}.
 For details, see \pcref{Damage Resistance}.
 
 \glossdef{damaging hit} Some abilities have special effects if they get a damaging hit.
@@ -217,9 +215,9 @@ For details, see \pcref{Darkvision}.
 Many debuffs are applied as \glossterm{conditions}, but some last for longer or shorter times.
 For a list of debuffs, see \pcref{Circumstances and Debuffs}.
 
-\glossdef{deep attunement} Deep attunement abilities are \abilitytag{Attune} abilities with two additional restrictions.
-First, they cost extra \glossterm{attunement point} to \glossterm{attune} to.
-Second, you can't get back those attunement points until you take a \glossterm{short rest}, even if you release the attunement.
+\glossdef{deep attunement} A deep attunement ability is an \abilitytag{Attune} ability with two additional restrictions.
+First, it costs an extra \glossterm{attunement point} to \glossterm{attune} to.
+Second, these attunement points are not recovered until you take a \glossterm{short rest}, even if the attunement is released.
 For details, see \pcref{Deep Attunement}.
 
 \glossdef{defeat} You defeat a creature if you kill it or incapacitate it, causing it to be \glossterm{defeated}.
@@ -238,7 +236,7 @@ For details, see \pcref{Destroyed Objects}.
 For details, see \pcref{Dexterity}.
 
 \glossdef{dice pool}[dice pools] A dice pool is a collection of dice that are all rolled together and summed to find a result.
-Damage typically uses dice pool.
+Damage typically uses a dice pool.
 
 \glossdef{difficult terrain} Difficult terrain costs an additional 5 feet of movement to move out of.
 For details, see \pcref{Difficult Terrain}.
@@ -306,10 +304,10 @@ If your modifier changes over the course of the task, use your lowest modifier a
 This damage is added on top of the normal damage from that attack.
 For details, see \pcref{Extra Damage}.
 
-\glossdef{failure chance}[failure chance] If you have a failure chance with an \glossterm{attack}, you have a random chance to miss with the attack regardless of the result of your attack roll.
+\glossdef{failure chance}[failure chance] If you have a failure chance with an ability, you have a random chance to fail.
+Failure chances are rolled before \glossterm{miss chances} and \glossterm{attack rolls}.
+An ability that fails on a target has no effect on that target, even if the ability would normally deal damage on a miss.
 If you have multiple failure chances, only the highest one applies.
-Failure chances are rolled independently from \glossterm{miss chances}, and they are not affected by abilities that mitigate miss chances.
-They are less common than a miss chance, and reflect circumstances that no amount of skill can mitigate.
 
 \glossdef{falling damage} If you fall at least 10 feet, you and the object you land on take damage.
 This damage is called falling damage.
@@ -338,7 +336,7 @@ There are two types of forced movement: \glossterm{knockback} and \glossterm{pus
 Although \glossterm{teleportation} can cause a creature's location to change unwillingly, it is not considered a type of forced movement.
 
 \glossdef{free action}[Free action] A free action is one of the four action types (see \pcref{Actions}).
-Each round, you take can any number of free actions.
+Each round, you can take any number of free actions.
 Free actions can be taken in any phase.
 For details, see \pcref{Free Actions}.
 
@@ -384,7 +382,7 @@ You can normally have a maximum of three ice crystals.
 At the end of each round, if you did not gain or spend any ice crystals that round, one of your ice crystals melts.
 For details, see \pcref{Cryomancy}.
 
-\glossdef{immune} A creature that is immune to a particular effect treats that effect as if it did not exist.
+\glossdef{immune} A creature that is immune to an effect treats it as if the effect did not exist.
 % TODO: wording
 An immune creature cannot gain \glossterm{conditions} or similar effects like \glossterm{poison} if it is immune to them, or if the only effect of that condition would be to apply a specific debuff that it is immune to.
 In addition, a creature that temporarily becomes immune to an effect immediately removes all instances of that effect.
@@ -476,7 +474,7 @@ For details, see \pcref{Magical and Mundane Abilities}.
 It is typically equal to half your level \add your Willpower.
 For details, see \pcref{Power}.
 
-\glossdef{maneuver} A maneuver is a type \glossterm{mundane} ability that some classes grant access to through particular combat styles.
+\glossdef{maneuver} A maneuver is a type of \glossterm{mundane} ability that some classes grant access to through particular combat styles.
 For details, see \pcref{Combat Styles}.
 
 \glossdef{manufactured weapon} A manufactured weapon is a \glossterm{weapon} that is external to its user's body.
@@ -488,7 +486,7 @@ Typically, this involves touching a target or using a weapon that never leaves y
 Unless you are using a \weapontag{Long} weapon, you can only make melee attacks against targets adjacent to you.
 If an ability is not melee, it is either a \glossterm{ranged} ability or an \glossterm{area} ability.
 
-\glossdef{metallic} A creature is considered metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
+\glossdef{metallic} A creature is metallic if it is wearing metal armor or otherwise carrying a significant amount of exposed metal.
 This includes any \glossterm{body armor} with a metal material type.
 It also includes exposed metal objects or parts of objects that are no more than two size categories smaller than the creature.
 This includes most weapons with any metallic components.
@@ -619,10 +617,9 @@ There are several specific types of rank: \glossterm{ability rank}, \glossterm{a
 \glossdef{rare language}[rare languages] Rare languages are languages that are only spoken by rare or distant creatures or cultures.
 They are described in \tref{Rare Languages}.
 
-\glossdef{reactive attack} A reactive attack is an \glossterm{attack} that you make during the resolution of another creature's actions.
-You cannot modify a reactive attack in any way - it happens entirely outside of your control.
+\glossdef{reactive attack} A reactive attack is an \glossterm{attack} that happens outside of your control.
+You cannot modify it in any way, and it is not improved if you are \empowered, \focused, \maximized, or \primed.
 For example, you cannot use the \ability{desperate exertion} ability to reroll a reactive attack, or add an extra target with a \weapontag{Sweeping} weapon.
-Reactive attacks are also not improved if you are \empowered, \focused, \maximized, or \primed.
 
 If you would make multiple reactive attacks during the same phase with the same ability against different targets, use the same attack roll for each target.
 A reactive attack can never be triggered by a reactive attack or reactive check.
@@ -632,9 +629,8 @@ Just like a \glossterm{reactive attack}, you cannot modify a reactive check in a
 
 % TODO: move this detail to a core book section
 \glossdef{repeat} Some effects can repeat abilities at a later time.
-When an ability repeats, it retains all choices for all decisions as the original ability usage, such as targets and affected area.
-Some effects say that an ability only repeats on specific targets.
-In that case, the ability does not affect any other targets.
+When an ability repeats, it normally keeps the same choices as the original ability, such as targets and affected area.
+Some effects change the choices for a repeated ability, such as only affecting a subset of targets.
 
 All attacks made for a repeated ability are \glossterm{reactive attacks}.
 They are made using the creature's statistics when it used the ability originally, not its current state.
@@ -642,21 +638,23 @@ They are made using the creature's statistics when it used the ability originall
 For example, imagine a creature had a \plus2 accuracy bonus when it initially used a repeating ability and then was knocked unconscious before the repeat occurs.
 Although the creature is unconscious and unable to attack, the repeat would still occur, and its accuracy bonus would still apply.
 
+% TODO: It seems like there are two concepts here:
+% * repeating the ability *usage* from the original creature
+% * repeating the ability *effect* on specific targets
 Some repeats specify their targets, such as repeating only for a particular creature.
 Other repeats affect the entire ability.
 If a repeat specifies a target, it works on that target regardless of the ability's original targeting restrictions.
-Otherwise, the repeat originates from the creature that originally used the ability, so targeting restrictions and range limits still apply.
 
 \glossdef{reroll} Some abilities allow you to reroll a roll you just made.
 The most common ability that allows rerolling is \ability{desperate exertion} (see \pcref{Desperate Exertion}).
 You must reroll the entire roll, not just one die from the roll (such as if the original roll \glossterm{explodes}).
-It is possible to reroll the same same roll multiple times with different abilities.
+It is possible to reroll the same roll multiple times with different abilities.
 Each reroll only grants one extra roll.
 
 \glossdef{resource} A resource is something that a character can lose during play or expend to gain a benefit.
 Most resources are shared between all types of characters, though different characters can use them differently.
 There are two resources that are used during the character creation and leveling process: \glossterm{insight points} and \glossterm{trained skills}.
-In addition, there are are five resources that are used during gameplay: \glossterm{attunement points}, \glossterm{damage resistance}, \glossterm{fatigue level}, \glossterm{hit points}, and \glossterm{vital wounds}.
+In addition, there are five resources that are used during gameplay: \glossterm{attunement points}, \glossterm{damage resistance}, \glossterm{fatigue level}, \glossterm{hit points}, and \glossterm{vital wounds}.
 
 \glosssynonym{resurrect}
 \glossdef{resurrection}[resurrected] When a creature is resurrected, it comes back to life after being dead.
@@ -724,7 +722,7 @@ For details, see \pcref{Size Categories}.
 
 \glossdef{speed} Your speed represents the number of feet you can move with a single movement (see \pcref{Movement and Positioning}).
 
-\glossdef{spell}[Spell] A spell is a disrete \magical ability with combat-relevant effects.
+\glossdef{spell}[Spell] A spell is a discrete \magical ability with combat-relevant effects.
 For details, see \pcref{Spells}.
 
 \glossdef{spell list} The list of spells you can cast from a particular \glossterm{magic source}.
@@ -752,10 +750,10 @@ If you would gain a \glossterm{vital wound} from subdual damage, you increase yo
 For details, see \pcref{Subdual Damage}.
 
 \glossdef{suppressed}[suppress] A suppressed ability has temporarily ceased to function.
-It has no effect for as long as it remains suppressed.
-Time spent while suppressed counts against the ability's duration, and it may expire while suppressed if it lasts for a specific amount of time.
-Only \magical abilities can be suppressed.
-Mundane results of magical abilities that have already occured, such as the water created by a \ritual{create water} ritual, cannot themselves be suppressed, and do not disappear if they enter an area that suppresses magical abilities.
+It has no effect while suppressed.
+% TODO: This seems designed to support antimagic fields. Is that meaningful?
+% Only \magical abilities can be suppressed.
+% Mundane results of magical abilities (e.g., water from \ritual{create water}) cannot be suppressed and do not disappear in suppression areas.
 
 \glossdef{sustain}[sustained] Some abilities last as long as you sustain them.
 Each ability specifies a particular action that is required to sustain the ability, such as a \glossterm{minor action}.
@@ -775,9 +773,10 @@ For details, see \pcref{Ability Targeting}.
 \glossdef{target square} A target square is a particular \glossterm{square} that an attack is made against.
 A target square is chosen to determine \glossterm{cover} and \glossterm{concealment} (see \pcref{Cover}).
 
-\glossdef{targeted}[Targeted] A targeted ability is an ability that allows you to directly choose which targets the ability affects.
-A spell that affects an area is not a targeted ability, because you choose the area affected instead of choosing the targets directly.
-A \glossterm{strike} is a targeted ability, and so is a spell or other special ability that causes you to immediately make a single strike.
+\glossdef{targeted}[Targeted] A targeted ability allows you to individually choose which creatures or objects are affected.
+Area abilities are not targeted, since you choose the area rather than individual targets.
+A \glossterm{strike} is a targeted ability, as is any ability that causes you to immediately make a strike.
+% TODO: It seems like this means you can chain strike abilities, which is confusing. Should strike abilities not be targeted?
 Adding an extra target to an ability that causes you to make a strike means you hit an extra creature with the strike, not that the extra target also makes a strike.
 
 \glossdef{targeting proxy} When you use an ability through a targeting proxy, you determine its targets as if you were in the targeting proxy's location instead of your own.
@@ -790,16 +789,16 @@ For details, see \pcref{Telepathy}.
 \glosssynonym{teleports}
 \glosssynonym{teleported}
 \glossdef{teleportation}[teleport] A creature or object that is teleported instantly leaves one location and arrives at another.
-Unless otherwise specified, teleporation requires \glossterm{line of sight}, \glossterm{line of effect}, and an unoccupied destination on stable ground.
+Unless otherwise specified, teleportation requires \glossterm{line of sight}, \glossterm{line of effect}, and an unoccupied destination on stable ground.
 For details, see \pcref{Teleportation}.
 
 \glossdef{thrown weapon}[thrown weapons] A thrown weapon is a weapon designed to be thrown at a target.
 For details about attacking with thrown weapons, see \pcref{Basic Strike -- Thrown}.
 
 \glosssynonym{touched}
-\glossdef{touch}[touches] Some abilities function on creatures you touch, rather than having a range away from you.
-You can generally touch an adjacent creature as long as you have a \glossterm{free hand}, even if it is an enemy, though this has no mechanical effect unless an ability says it does.
-Hitting someone with a \glossterm{natural weapon} does count as touching them, but it still requires an action, so you can't make a strike as part of using another ability unless it says explicitly that you can.
+\glossdef{touch}[touches] You can generally touch an adjacent creature with a \glossterm{free hand} as a \glossterm{free action}, even an enemy.
+This has no mechanical effect by itself.
+Some abilities function on creatures you touch, so you can touch them as part of using those abilities.
 Some creatures cannot be touched, such as \trait{intangible} creatures.
 
 % TODO: define standard trap rules
