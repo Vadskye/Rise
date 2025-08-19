@@ -214,7 +214,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \subsubsection{Magic Item Defenses}\label{Magic Item Defenses}
       An item's Fortitude and Mental defenses are equal to 5 \add its \glossterm{item rank}.
       % TODO: how are those determined?
-      Its Armor, Brawn, and Reflex defenses are not affected by its \glossterm{power}, and are solely determined by its size and shape.
+      Its Armor, Brawn, and Reflex defenses are not affected by its rank, and are solely determined by its size and shape.
+      This rarely matters, since \glossterm{attended} items can't generally be attacked directly.
 
   \subsection{Removing Magic Items}
     Unless otherwise noted, magic items that have effects on the creature using the item must continue to be worn or held as long as the effect lasts.
@@ -315,6 +316,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
     You normally need two hands to use a Heavy weapon, whether you are throwing it or using it in melee.
     Drawing a Heavy item from a sheath, or returning it to a sheath, requires a \glossterm{standard action}.
+    Unlike most items, Heavy weapons can have two magic item properties (see \pcref{Magic Weapons}).
 
     If you have a Strength of 3 or higher, you draw or sheathe a Heavy item at the same speed as non-Heavy items.
     In addition, you can wield a Heavy weapon in one hand, but you take a \minus1 accuracy penalty with the weapon while doing so.
@@ -688,6 +690,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
       % The baseline scaling for weapon special materials should be about 1-2 ranks behind an equivalent attuned magic weapon property.
       % That should make them valuable without replacing magic weapons.
+      % Note that Heavy special material weapons are weaker, since Heavy weapons have the special benefit of allowing two magic item properties.
       \begin{dtable!*}
         \lcaption{Weapon Special Materials}
         \begin{dtabularx}{\textwidth}{l >{\lcol}X l}
@@ -1101,6 +1104,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
       \parhead{Craft Skills} The craft skills used to create and repair items are listed in parentheses before the item's description.
       All magic weapons simply use the same materials as the original, nonmagical weapon.
+
+      \parhead{Heavy Weapons} Unlike most items, \weapontag{Heavy} items can have two magic item properties instead of only one.
     \end{longtablepreface}
 
     \input{generated/magic_weapons_table.tex}
@@ -1178,8 +1183,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
   \parhead{Staff Types}
   There are two types of staffs that you can find.
-  Long staffs function like a quarterstaff weapon, but they require two hands to wield, even when used to cast spells.
-  Short staffs only require one hand, but they are not suitable for combat.
+  A short staff only requires one hand, but it is not suitable as a weapon.
+  A long staff functions like a quarterstaff weapon.
+  It can have two magic properties instead of one, and you can freely mix weapon properties and implement properties.
+  However, it must be held in two hands to grant its benefits.
 
   \begin{longcolumn}
     \input{generated/implements_table.tex}
