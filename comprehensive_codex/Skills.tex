@@ -803,30 +803,68 @@ This chapter describes each skill, including common uses for those skills.
     This generally requires spending a few hours to meet a variety of people and learn what they know.
 
   \subsection{Common Persuasion Modifiers}
-    The difficulty value for all Persuasion checks is modified based on the relationship between characters in a conversation, as listed in \tref{Persuasion Relationship Modifiers}.
-    Regardless of what you are saying, you are more likely to succeed when talking to a close friend than a sworn enemy.
+    The Persuasion skill has unusually large circumstantial modifiers compared to other skills.
+    This is because the social context surrounding any given persuasion attempt is of critical importance, and only a GM can reliably determine that.
+    Note that these modifiers apply regardless of whether you are telling the truth (see \pcref{Deception}).
 
-    \begin{dtable}
-      \lcaption{Persuasion Relationship Modifiers}
-      \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
-        \tb{Relationship}                                                                                                                                                                 & \tb{Difficulty Modifier} \tableheaderrule
-        Intimate: Someone who with whom you have an implicit trust.
-        Example: A lover or spouse.                                                                                                                                                       & \minus15 \\
-        Friend: Someone with whom you have a regularly positive personal relationship.
-        Example: A long-time buddy or a sibling.                                                                                                                                          & \minus10 \\
-        Ally: Someone on the same team, but with whom you have no personal relationship.
-        Example: A cleric of the same religion or a knight serving the same king.                                                                                                         & \minus5  \\
-        Acquaintance (Positive): Someone you have met several times with no particularly negative experiences. Example: The blacksmith that buys your looted equipment regularly.         & \minus2  \\
-        Just Met: No relationship whatsoever.
-        Example: A guard at a castle or a traveler on a road.                                                                                                                             & \plus0   \\
-        Acquaintance (Negative): Someone you have met several times with no particularly positive experiences. Example: A town guard that has arrested you for drunkenness once or twice. & \plus2   \\
-        Opposition: Someone who is part of a group that consistently works against your interests, with whom you have no personal relationship.
-        Example: An outlaw (to a law-abiding person), a paladin of law (to an outlaw), or a soldier who fights for a country at war with your country.                                                                                      & \plus5   \\
-        Enemy: Someone with whom you have a specifically antagonistic relationship.
-        Example: An evil warlord whom you are attempting to thwart, a bounty hunter who is tracking you down for your crimes, or a bandit currently robbing you.                                                          & \plus10  \\
-        Nemesis: Someone who has sworn to do you, personally, harm, or vice versa. Example: The brother of a man you murdered in cold blood, or the person who murdered your brother in cold blood.                                                             & \plus15  \\
-      \end{dtabularx}
-    \end{dtable}
+    % TODO: make these tables look less dumb
+    \subsubsection{Relationship Modifiers}
+      All Persuasion checks are affected by your relationship with the target.
+
+      \begin{columntable}
+        \begin{dtabularx}{\columnwidth}{>{\lcol}X r}
+          \tb{Relationship}                                                                                                                                                                 & \tb{DV Modifier} \tableheaderrule
+          Intimate: Someone who with whom you have an implicit trust.
+          Example: A lover or spouse.                                                                                                                                                       & \minus15 \\
+          Friend: Someone with whom you have a regularly positive personal relationship.
+          Example: A long-time buddy or a sibling.                                                                                                                                          & \minus10 \\
+          Ally: Someone on the same team, but with whom you have no personal relationship.
+          Example: A cleric of the same religion or a knight serving the same king.                                                                                                         & \minus5  \\
+          Acquaintance (Positive): Someone you have met several times with no particularly negative experiences. Example: The blacksmith that buys your looted equipment regularly.         & \minus2  \\
+          Just Met: No relationship whatsoever.
+          Example: A guard at a castle or a traveler on a road.                                                                                                                             & \plus0   \\
+          Acquaintance (Negative): Someone you have met several times with no particularly positive experiences. Example: A town guard that has arrested you for drunkenness once or twice. & \plus2   \\
+          Opposition: Someone who is part of a group that consistently works against your interests, with whom you have no personal relationship.
+          Example: An outlaw (to a law-abiding person), a paladin of law (to an outlaw), or a soldier who fights for a country at war with your country.                                                                                      & \plus5   \\
+          Enemy: Someone with whom you have a specifically antagonistic relationship.
+          Example: An evil warlord whom you are attempting to thwart, a bounty hunter who is tracking you down for your crimes, or a bandit currently robbing you.                                                          & \plus10  \\
+          Nemesis: Someone who has sworn to do you, personally, harm, or vice versa. Example: The brother of a man you murdered in cold blood, or the person who murdered your brother in cold blood.                                                             & \plus15  \\
+        \end{dtabularx}
+      \end{columntable}
+
+    \subsubsection{Compel Belief Modifiers}
+
+      \begin{columntable}
+        \begin{dtabularx}{\columnwidth}{X l}
+          \tb{Believability}                                                           & \tb{DV Modifier}  \tableheaderrule
+          Expected to be true (``Nothing interesting happened while I was on patrol'') & \minus5         \\
+          Plausible (``The mayor is too busy to see you now.'')                        & \plus0          \\
+          Unlikely (``That bloodstain was just an accident I had with a razor.'')                               & \plus5          \\
+          Extremely unlikely (``Your neighbor is secretly a werewolf.'')                   & \plus10         \\
+          Virtually impossible (``That crime was committed by my identical twin, not me.'')              & \plus15 or more \\
+          \tb{Incentive}                                                           & \tb{DV Modifier} \tableheaderrule
+          Extremely beneficial (``You have an uncle who died and left you his inheritance.'')              & \minus5 \\
+          Somewhat beneficial (``That dress looks lovely on you.'')              & \minus2 \\
+          No particular impact (``I really like bananas.'')                       & \plus0  \\
+          Somewhat detrimental (``You can't come with us to the party.'') & \plus5  \\
+          Extremely detrimental (``Your brother is a murderer.'') & \plus10 or more  \\
+        \end{dtabularx}
+      \end{columntable}
+
+    \subsubsection{Form Agreement Modifiers}
+
+      \begin{columntable}
+        \begin{dtabularx}{\columnwidth}{X l}
+          \tb{Risk vs. Reward}                                                           & \tb{DV Modifier}  \tableheaderrule
+          Fantastic: The reward for accepting the deal is very worthwhile; the risk is either acceptable or extremely unlikely. The best-case scenario is a virtual guarantee. Example: An offer to pay 10gp for directions to the well-known local tavern.                                                  & \minus10 or more                                                   \\
+          Good: The reward is good and the risk is minimal. The target is very likely to profit from the deal. Example: An offer to pay someone twice their normal daily wage to spend their evening in a seedy tavern and later report on everyone they saw there.                  & \minus5                                                           \\
+          Favorable: The reward is appealing, but there's risk involved. If all goes according to plan, though, the deal will end up benefiting the target. Example: A request for a mercenary to aid the party in battle against a weak goblin tribe in return for a cut of the money and first pick of the magic items. & \minus2                                                            \\
+          Even: The reward and risk more of less even out; or the deal involves neither reward nor risk. Example: A request for directions to a place that isn't a secret.                                                                                                                                                                     & \plus0 \\
+          Unfavorable: The reward is not enough compared to the risk involved. Even if all goes according to plan, chances are it will end badly for the target. Example: A request to free a prisoner the target is guarding for a small amount of money.                                                                 & \plus5                                                             \\
+          Bad: The reward is poor and the risk is high. The target is very likely to get the raw end of the deal. Example: A request for a mercenary to aid the party in battle against an fearsome dragon for a small cut of any non-magical treasure.                                                                    & \plus10                                                            \\
+          Horrible: There is no conceivable way that the proposed plan could end up with the target ahead or the worst-case scenario is guaranteed to occur. Example: An offer to trade a broken sword hilt for a shiny new longsword.                                                                                      & \plus15 or more                                                    \\
+        \end{dtabularx}
+      \end{columntable}
 
 \newpage
 \skill{Profession}{Varies}
