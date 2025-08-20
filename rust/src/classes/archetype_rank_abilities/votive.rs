@@ -90,7 +90,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 pact maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
@@ -386,27 +386,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain a bonus to your maximum \glossterm{hit points} equal to twice your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Survival Pact+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The bonus increases to three times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Survival Pact+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The bonus increases to five times your rank in this archetype.
+                You gain a \plus1 bonus to your \glossterm{durability}.
             ",
             modifiers: None,
         },
@@ -543,7 +523,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.
                 However, you roll 1d8 instead of 1d10 for attack rolls, and your attack rolls cannot \glossterm{explode}.
 
-                \subcf{Precursor -- Burgeoning} You gain a bonus to your maximum \glossterm{hit points} equal to twice your rank in this archetype (see \pcref{Hit Points}).
+                \subcf{Precursor -- Burgeoning} You gain a \plus2 bonus to your \glossterm{durability} (see \pcref{Durability}).
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
@@ -584,7 +564,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 
                 \subcf{Moirai -- Inevitable\plus} The bonus to accuracy and checks increases to \plus3.
 
-                \subcf{Precursor -- Burgeoning\plus} The bonus to your maximum \glossterm{hit points} increases to four times your rank in this archetype.
+                \subcf{Precursor -- Burgeoning\plus} The durability bonus increases to \plus4.
                 In addition, your tentacle now deals 1d10 damage.
             ",
             modifiers: None,
@@ -671,7 +651,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a bonus to your maximum \glossterm{hit points} equal to four times your rank in this archetype.
+                You gain a \plus3 bonus to your \glossterm{durability}.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,
@@ -682,7 +662,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus increases to six times your rank in this archetype.
+                The durability bonus increases to \plus5.
                 In addition, you take no penalties for being \glossterm{resurrected}.
             ",
             modifiers: None,

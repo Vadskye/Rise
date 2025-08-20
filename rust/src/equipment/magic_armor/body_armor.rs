@@ -162,17 +162,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Lifeweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +16 DR, but -8 hit points"),
+        short_description: String::from("Grants +12 HP, but +12 IP"),
         description: String::from(r"
-            You gain a +16 \glossterm<enhancement bonus> to your maximum \glossterm<damage resistance>.
-            However, you take a -8 penalty to your maximum \glossterm<hit points>.
+            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
+            However, you also gain a +12 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +32 DR, but -16 hit points", "
-                The damage resistance bonus increases to +32, but the hit point penalty increases to -16.
+            ItemUpgrade::new(5, "Grants +24 HP, but +24 IP", "
+                Both bonuses increase to +24.
             "),
-            ItemUpgrade::new(7, "Grants +64 DR, but -32 hit points", "
-                The damage resistance bonus increases to +64, but the hit point penalty increases to -32.
+            ItemUpgrade::new(7, "Grants +48 HP, but +48 IP", "
+                Both bonuses increase to +48.
             "),
         ],
         ..MagicArmor::default()
@@ -181,17 +181,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Soulweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +12 DR, but -2 power"),
+        short_description: String::from("Grants +12 HP, but -2 power"),
         description: String::from(r"
-            You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
+            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +24 DR, but -3 power", "
-                The damage resistance bonus increases to +24, but the power penalty increases to -3.
+            ItemUpgrade::new(5, "Grants +24 HP, but -3 power", "
+                The hit point bonus increases to +24, but the power penalty increases to -3.
             "),
-            ItemUpgrade::new(7, "Grants +48 DR, but -4 power", "
-                The damage resistance bonus increases to +48, but the power penalty increases to -4.
+            ItemUpgrade::new(7, "Grants +48 HP, but -4 power", "
+                The hit point bonus increases to +48, but the power penalty increases to -4.
             "),
         ],
         ..MagicArmor::default()
@@ -223,17 +223,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Grafted Armor"),
         rank: 2,
-        short_description: String::from("Grants HP instead of DR"),
+        short_description: String::from("Grants HP instead of Armor defense"),
         description: String::from(r"
-            This armor does not increase your maximum damage resistance.
-            Instead, you gain a bonus to your maximum hit points equal to the damage resistance the armor would normally provide.
+            This armor does not increase your Armor defense.
+            Instead, you gain a bonus to your \glossterm{durability} equal to the Armor defense bonus the armor would normally provide.
             In addition, the armor grants you a +6 \glossterm{enhancement bonus} to your maximum hit points.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants bonus HP instead of DR", r"
+            ItemUpgrade::new(4, "Grants bonus HP instead of Armor defense", r"
                 The hit point bonus increases to +12.
             "),
-            ItemUpgrade::new(6, "Grants bonus HP instead of DR", r"
+            ItemUpgrade::new(6, "Grants bonus HP instead of Armor defense", r"
                 The hit point bonus increases to +24.
             "),
         ],

@@ -144,16 +144,36 @@ You can either skim past terms you don't yet understand or look them up as you g
     \end{raggeditemize}
     Each defense may also have various bonuses or penalties applied by special abilities.
 
+  \subsection{Durability}\label{Durability}
+    Your \glossterm{durability} is used to calculate your \glossterm{hit points}, as described below in Hit Points.
+    It is equal to your Constitution \add \glossterm{base class} durability bonus \add body armor durability bonus.
+    As your level increases, you gain a bonus to your durability (see \tref{Character Advancement and Gaining Levels}).
+
   \subsection{Encumbrance}\label{Encumbrance}
     Your encumbrance is a value that represents how much you are burdened by your armor (see \pcref{Armor}).
     You apply your encumbrance as a penalty to all Dexterity-based checks and Strength-based skill checks you make.
     It does not affect direct Strength checks.
 
   \subsection{Hit Points}\label{Hit Points}
-    Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
+    Your \glossterm{hit points} measure how much damage you can take before you die.
+    They are often abbreviated as HP.
     When you take damage, it reduces your hit points (see \pcref{Taking Damage}).
+    When your hit points drop below 0, you gain \glossterm{vital wounds}, which can eventually kill you (see \pcref{Vital Wounds}).
 
-    Your hit points are equal to your \glossterm{character rank} \mult your \glossterm{durability}, plus 10 additional hit points.
+    Your hit points depend on your \glossterm{character rank}, as shown below.
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l l X}
+        \tb{Rank} & \tb{Flat HP} & \tb{Bonus HP} \\
+        1 & 10 & 1 \x \glossterm{durability} \\
+        2 & 10 & 2 \x \glossterm{durability} \\
+        3 & 10 & 3 \x \glossterm{durability} \\
+        4 & 10 & 4 \x \glossterm{durability} \\
+        5 & 10 & 6 \x \glossterm{durability} \\
+        6 & 10 & 8 \x \glossterm{durability} \\
+        7 & 10 & 10 \x \glossterm{durability} \\
+      \end{dtabularx}
+    \end{columntable}
+
     Your maximum hit points can never be less than 1.
     If your maximum hit points would be reduced to 0 or less, you immediately die.
 
@@ -161,10 +181,26 @@ You can either skim past terms you don't yet understand or look them up as you g
     When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
     Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
 
-  \subsection{Durability}\label{Durability}
-    Your \glossterm{durability} is used to calculate your \glossterm{hit points}, as described above in Hit Points.
-    It is equal to your Constitution \add \glossterm{base class} durability bonus \add body armor durability bonus.
-    As your level increases, you gain a bonus to your durability (see \tref{Character Advancement and Gaining Levels}).
+  \subsection{Injury Point}\label{Injury Point}
+    While your \glossterm{hit points} are at or below your \glossterm{injury point}, you are \glossterm{injured}.
+    Being injured does not directly penalize you, but some attacks are much more effective if you are injured.
+    Your injury point can be abbreviated as IP.
+
+    Your injury point depends on your \glossterm{character rank}, as shown below.
+    \begin{columntable}
+      \begin{dtabularx}{\columnwidth}{l l X}
+        \tb{Rank} & \tb{Flat IP} & \tb{Bonus IP}                                           \\
+        1         & 5            & Half \glossterm{durability}                             \\
+        2         & 5            & 1 \x \glossterm{durability}                             \\
+        3         & 5            & \glossterm{durability} \add half \glossterm{durability} \\
+        4         & 5            & 2 \x \glossterm{durability}                             \\
+        5         & 5            & 3 \x \glossterm{durability}                             \\
+        6         & 5            & 4 \x \glossterm{durability}                             \\
+        7         & 5            & 5 \x \glossterm{durability}                             \\
+      \end{dtabularx}
+    \end{columntable}
+
+    Some special abilities can also modify your injury point.
 
   \subsection{Power}\label{Power}
     Your \glossterm{power} affects how much damage you deal.
@@ -196,7 +232,7 @@ You can either skim past terms you don't yet understand or look them up as you g
 
     \subsubsection{Fatigue Level}\label{Fatigue Level}
       Your \glossterm{fatigue level} measures how tired you are.
-      Some abilities increase your fatigue level when used, such as the \ability{desperate exertion} ability (see \pcref{Univrsal Abilities}).
+      Some abilities increase your fatigue level when used, such as the \ability{desperate exertion} ability (see \pcref{Universal Abilities}).
 
     \subsubsection{Fatigue Tolerance}\label{Fatigue Tolerance}
       Becoming slightly fatigued is not immediately detrimental.

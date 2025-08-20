@@ -476,25 +476,5 @@ fn rings() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    apparel.push(Ring(StandardItem {
-        name: String::from("Ring of Protection"),
-        rank: 3,
-        short_description: String::from("Grants many small defensive bonuses"),
-        description: String::from(r"
-            You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points> and \glossterm<damage resistance>.
-            In addition, you gain a \plus1 \glossterm<enhancement bonus> to \glossterm<vital rolls>.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Grants many defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +8.
-            "),
-            ItemUpgrade::new(7, "Grants many large defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +16.
-            "),
-        ],
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        ..Apparel::default()
-    }));
-
     apparel
 }

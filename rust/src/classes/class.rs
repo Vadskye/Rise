@@ -1613,9 +1613,9 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You are \impervious to Earth attacks.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
+                        \domainability{Aspect} You gain a \plus3 bonus to your \glossterm{durability}.
                         \domainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
-                        \domainability{Mastery} The defense bonuses increase to \plus2, and the hit point bonus increases to five times your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The defense bonuses increase to \plus2, and the durability bonus increases to \plus4.
 
                     \subsubsection{Evil Domain}
                         \domainability{Gift} You are immune to being \charmed and \goaded.
@@ -1689,9 +1689,9 @@ impl Class {
                         \magicaldomainability{Gift} Whenever you cause a creature to regain hit points, they regain additional hit points equal to your rank in the Domain Influence archetype.
                         % TODO: wording
                         This additional healing applies once per ability.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
+                        \domainability{Aspect} You gain a \plus3 bonus to your \glossterm{durability}.
                         \magicaldomainability{Essence} The additional healing increases to twice your rank in the Domain Influence archetype.
-                        \domainability{Mastery} The hit point bonus increases to five times your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The durability bonus increases to \plus5.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
