@@ -485,7 +485,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
-                    If you specialize in this school, you gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
+                    If you specialize in this school, you a \plus1 bonus to your Armor and Reflex defenses.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -497,7 +497,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus1 \glossterm{accuracy} bonus.
 
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
-                    If you specialize in this school, you gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
+                    If you specialize in this school, you gain a \plus3 bonus to your \glossterm{durability}.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
@@ -515,7 +515,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school improves.
                 {
-                    \subcf{Abjuration} The hit point bonus increases to five times your rank in this archetype.
+                    \subcf{Abjuration} You also reduce your \glossterm{injury threshold} by three times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus30 feet.
 
@@ -523,7 +523,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} You gain a \plus2 \glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
-                    \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
+                    % Also 16 HP at rank 4, but stronger scaling at ranks 5+
+                    \subcf{Necromancy} The durability bonus increases to \plus4.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
                 }
@@ -538,7 +539,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school reaches its full potential.
                 {
-                    \subcf{Abjuration} The hit point bonus increases to seven times your rank in this archetype.
+                    \subcf{Abjuration} The defense bonus increases to \plus2.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
@@ -546,7 +547,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
-                    \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+                    % 50 HP at rank 7
+                    \subcf{Necromancy} The durability bonus increases to \plus5.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                 }

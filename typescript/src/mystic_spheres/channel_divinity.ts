@@ -71,29 +71,6 @@ export const channelDivinity: MysticSphere = {
     },
 
     {
-      name: 'Agent of the Divine',
-
-      effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, you gain a +1 \\glossterm{enhancement bonus} to your \\glossterm{vital rolls}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        3: `
-          The bonuses to hit points and damage resistance increase to +8.
-        `,
-        5: `
-          The bonuses to hit points and damage resistance increase to +16.
-        `,
-        7: `
-          The bonuses to hit points and damage resistance increase to +32.
-        `,
-      },
-      type: 'Attune (deep)',
-    },
-
-    {
       name: 'Endure Tribulation',
 
       effect: `

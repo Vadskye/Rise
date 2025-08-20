@@ -620,7 +620,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item Its level is equal to your level.
                         \item All of its attributes are 0 except for Intelligence, which it does not have.
                         \item It has no \glossterm{resources}, and it cannot use abilities that increase its fatigue level.
-                        \item Its maximum \glossterm{hit points} are equal to your \glossterm{character rank} \mult your level, plus 10 additional hit points.
+                        \item Its maximum \glossterm{hit points} are equal to your level \x your rank in this archetype, plus 10 additional hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
                         \item Its \glossterm{power} is equal to half your power.
