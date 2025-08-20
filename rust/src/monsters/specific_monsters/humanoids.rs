@@ -118,7 +118,7 @@ pub fn humanoids() -> Vec<MonsterEntry> {
                             ability_type: AbilityType::Normal,
                             effect: r"
                                 The $name makes a $accuracy attack vs. Mental against all creatures in a \medarea radius from it.
-                                \hit If the target has no remaining \glossterm{damage resistance}, it is \stunned as a \glossterm{condition}.
+                                \hit If the target is \glossterm{injured}, it is \stunned as a \glossterm{condition}.
                                 \critcondition
                             ".to_string(),
                             is_magical: true,

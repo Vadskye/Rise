@@ -262,8 +262,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
-                This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                It also provides a bonus to your maximum \glossterm{damage resistance} equal to four times your rank in this archetype.
+                This functions like body armor that provides a \plus2 bonus to your Armor defense and a \plus3 bonus to your \glossterm{durability}.
+                It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
@@ -272,26 +272,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Ki Barrier+",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                The damage resistance bonus increases to five times your rank in this archetype, and the Armor defense bonus increases to \plus3.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Ki Barrier++",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to eight times your rank in this archetype.
-            ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 3,

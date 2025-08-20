@@ -150,12 +150,12 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
                     This functions like light body armor that has no \glossterm{encumbrance}.
-                    It provides a \plus4 bonus to your Armor defense, a \plus1 bonus to your \glossterm{vital rolls}, and a bonus to your maximum \glossterm{damage resistance} equal to five times your rank in this archetype.
-                    In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
+                    It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
+                    In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
                     \subcf{Covenant of Bloodsharing} At the end of each round, if you \glossterm{injured} a creature during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
                     You cannot regain more hit points in this way than the target lost from your attack.
-                    In exchange, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
+                    In exchange, you are \glossterm{injured} whenever you are below your maximum hit points.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature finishes a \glossterm{short rest}.
@@ -180,7 +180,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of your chosen covenant improves.
                 {
-                    \subcf{Covenant of Bloodforging} The damage resistance bonus from the armor increases to seven times your rank in this archetype.
+                    \subcf{Covenant of Bloodforging} The vital roll bonus from the armor increases to \plus2.
 
                     \subcf{Covenant of Bloodsharing} The healing increases to 1d6 \add your \glossterm{magical power}.
 
@@ -197,7 +197,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen covenant reaches its full potential.
                 {
-                    \parhead{Covenant of Bloodforging} The damage resistance bonus from the armor increases to ten times your rank in this archetype.
+                    \parhead{Covenant of Bloodforging} The durability bonus from the armor increases to \plus5.
                     In addition, the defense bonus increases to \plus5.
 
                     \parhead{Covenant of Bloodsharing} The healing increases to 1d6 \add 1d6 per 2 \glossterm{magical power}.
@@ -292,7 +292,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain 1d6 \glossterm{damage resistance} \add 1d6 per 2 \glossterm{power}.
+                    You regain 1d6 \glossterm{hit points} \add 1d6 per 2 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
@@ -386,7 +386,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to your rank in this archetype.
+                You gain a bonus to your maximum \glossterm{hit points} equal to twice your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -396,7 +396,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"        
-                The bonus increases to twice your rank in this archetype.
+                The bonus increases to three times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -406,7 +406,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                The bonus increases to three times your rank in this archetype.
+                The bonus increases to five times your rank in this archetype.
             ",
             modifiers: None,
         },
@@ -671,7 +671,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a bonus to your maximum \glossterm{hit points} equal to four times your rank in this archetype.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,
@@ -682,7 +682,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus increases to four times your rank in this archetype.
+                The bonus increases to six times your rank in this archetype.
                 In addition, you take no penalties for being \glossterm{resurrected}.
             ",
             modifiers: None,

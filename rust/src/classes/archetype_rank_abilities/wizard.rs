@@ -174,8 +174,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
-                    This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
+                    It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
@@ -190,27 +190,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Defense(Defense::Armor, 2),
                 Modifier::DamageResistance(2),
             ]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The damage resistance bonus increases to four times your rank in this archetype.
-            ",
-            // Rank 2: 4. Rank 3: 9.
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to six times your rank in this archetype.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -506,7 +485,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
-                    If you specialize in this school, you gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    If you specialize in this school, you gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -536,7 +515,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school improves.
                 {
-                    \subcf{Abjuration} The damage resistance bonus increases to four times your rank in this archetype.
+                    \subcf{Abjuration} The hit point bonus increases to five times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus30 feet.
 
@@ -559,8 +538,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school reaches its full potential.
                 {
-                    % TODO: this seems weaker than the other schools
-                    \subcf{Abjuration} The damage resistance bonus increases to five times your rank in this archetype.
+                    \subcf{Abjuration} The hit point bonus increases to seven times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
