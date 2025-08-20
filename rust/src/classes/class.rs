@@ -1601,7 +1601,7 @@ impl Class {
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} \glossterm{mundane} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
-                            \hit If the target's \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
+                            \hit If the target's \glossterm{hardness} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
@@ -1613,9 +1613,9 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You are \impervious to Earth attacks.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance}.
+                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
                         \domainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
-                        \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The defense bonuses increase to \plus2, and the hit point bonus increases to five times your rank in the Domain Influence archetype.
 
                     \subsubsection{Evil Domain}
                         \domainability{Gift} You are immune to being \charmed and \goaded.
