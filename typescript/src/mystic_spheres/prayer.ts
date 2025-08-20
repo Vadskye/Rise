@@ -328,27 +328,6 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Indomitable Blessing',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points} and \\glossterm{damage resistance}.
-        In addition, each target gains a +1 \\glossterm{enhancement bonus} to \\glossterm{vital rolls}.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      scaling: {
-        4: `
-          The bonuses to hit points and damage resistance increase to +8.
-        `,
-        6: `
-          The bonuses to hit points and damage resistance increase to +16.
-        `,
-      },
-      type: 'Attune (deep, target)',
-    },
-
-    {
       name: 'Blessing of Resilience',
 
       effect: `

@@ -77,26 +77,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
         },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The damage resistance bonus increases to four times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to six times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
     ];
     add_standard_spell_modifiers(&mut abilities);
     add_dr_scaling(&mut abilities, 1, 3, Some(6));
@@ -338,8 +318,9 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You gain an \glossterm{enhancement bonus} equal to three times your rank in this archetype to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
-                Because this is an enhancement bonus, it does not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
+                You gain an \glossterm{enhancement bonus} to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
+                In addition, you gain a \plus1 \glossterm{enhancement bonus} to your \glossterm{vital rolls}.
+                Because these are enhancement bonuses, they do not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -351,7 +332,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The enhancement bonuses increase to five times your rank in this archetype.
+                The hit point bonus increases to five times your rank in this archetype, and the vital roll bonus increases to \plus2.
             ",
             modifiers: None,
         },
