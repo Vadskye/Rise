@@ -122,14 +122,6 @@ You can either skim past terms you don't yet understand or look them up as you g
       Abilities that make brawling attacks generally have the \atBrawling tag.
       Commonly used Brawling abilities are listed in \pcref{Universal Combat Abilities}.
 
-  \subsection{Damage Resistance}\label{Damage Resistance}
-    Your \glossterm{damage resistance} measures how much damage you can shrug off without any effects.
-    For details about how damage resistance is used, see \pcref{Taking Damage}.
-
-    You do not intrinsically have any damage resistance.
-    Wearing armor can significantly increase your damage resistance (see \pcref{Armor}).
-    In addition, some class abilities and magic items can also increase it.
-
   \subsection{Defenses}\label{Defenses}
     When you are attacked, your defenses determine the value that the attacker needs to get on the attack roll in order to hit you (see \pcref{Attack Rolls}).
     The five defenses are described below.
@@ -159,16 +151,20 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   \subsection{Hit Points}\label{Hit Points}
     Your \glossterm{hit points} measure how hard you are to seriously injure or kill.
-    For details about how hit points are used, see \pcref{Taking Damage}.
+    When you take damage, it reduces your hit points (see \pcref{Taking Damage}).
 
-    The way you calculate your hit points is defined by your class (see \pcref{Classes}).
-    Increasing your level and Constitution will increase your hit points.
+    Your hit points are equal to your \glossterm{character rank} \mult your \glossterm{durability}, plus 10 additional hit points.
     Your maximum hit points can never be less than 1.
     If your maximum hit points would be reduced to 0 or less, you immediately die.
 
     \parhead{What Hit Points Represent} Hit points represent a combination of durability, luck, divine providence, and sheer determination, depending on the nature of the creature being damaged.
     When lose hit points from an orc with a greataxe, the axe did not literally carve into your skin without affecting your ability to fight.
     Instead, you avoided the worst of the blow, but it bruised you through your armor, the effort to dodge the blow fatigued you, or it barely nicked you through sheer luck -- and everyone's luck runs out eventually.
+
+  \subsection{Durability}\label{Durability}
+    Your \glossterm{durability} is used to calculate your \glossterm{hit points}, as described above in Hit Points.
+    It is equal to your Constitution \add \glossterm{base class} durability bonus \add body armor durability bonus.
+    As your level increases, you gain a bonus to your durability (see \tref{Character Advancement and Gaining Levels}).
 
   \subsection{Power}\label{Power}
     Your \glossterm{power} affects how much damage you deal.
@@ -1514,7 +1510,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     %             \parhead{Suggested Feats} Greatweapon Warrior, Spellsword, Celestial Ancestry
     %             \parhead{Combat Tactics} You are an extremely dangerous martial combatant.
     %             Thanks to your \ability{smite} ability, you have high damage and devastatingly powerful critical hits.
-    %             Your defenses are unimpressive, but you have enough damage resistance from heavy armor to avoid being too squishy.
+    %             Your defenses are unimpressive, but you have enough durability from heavy armor to avoid being too squishy.
     %             The biggest weakness you have is your slow speed and vulnerability to debilitating conditions.
     %             Make sure you take some ranged spells like \spell{retributive judgment} to deal with foes who try to avoid your greatmace.
 
@@ -1550,29 +1546,29 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   \begin{dtable}
     \lcaption{Character Advancement and Gaining Levels}
-    \begin{compresseddtabularx}{\columnwidth}{l l l X l}
-      \tb{Level} & \tb{Rank} & \tb{Bonus}\fn{1} & \tb{Special}             & \tb{XP} \tableheaderrule
-      1st        & 1         & \tdash           & \tdash                   & 0      \\
-      2nd        & 1         & \plus1           & \tdash                   & 10     \\ % +10 xp
-      3rd        & 1         & \plus1           & \plus1 to two attributes & 25     \\ % +15 xp
-      4th        & 2         & \plus2           & \tdash                   & 45     \\ % +20 xp
-      5th        & 2         & \plus2           & \tdash                   & 70     \\ % +25 xp
-      6th        & 2         & \plus3           & Legacy item: rank 3      & 100    \\ % +30 xp
-      7th        & 3         & \plus3           & \tdash                   & 140    \\ % +40 xp
-      8th        & 3         & \plus4           & \tdash                   & 200    \\ % +60 xp
-      9th        & 3         & \plus4           & \plus1 to two attributes & 300    \\ % +100 xp
-      10th       & 4         & \plus5           & \tdash                   & 450    \\ % +150 xp
-      11th       & 4         & \plus5           & \tdash                   & 700    \\ % +250 xp
-      12th       & 4         & \plus6           & Legacy item: rank 5      & 1,000  \\ % +300 xp
-      13th       & 5         & \plus6           & \tdash                   & 1,400  \\ % +400 xp
-      14th       & 5         & \plus7           & \tdash                   & 2,000  \\ % +600 xp
-      15th       & 5         & \plus7           & \plus1 to two attributes & 3,000  \\ % +1000 xp
-      16th       & 6         & \plus8           & \tdash                   & 4,500  \\ % +1,500 xp
-      17th       & 6         & \plus8           & \tdash                   & 7,000  \\ % +2,500 xp
-      18th       & 6         & \plus9           & Legacy item: rank 7      & 10,000 \\ % +3,000 xp
-      19th       & 7         & \plus9           & \tdash                   & 14,000 \\
-      20th       & 7         & \plus10          & \tdash                   & 20,000 \\
-      21st       & 7         & \plus10          & \plus1 to two attributes & 30,000 \\
+    \begin{compresseddtabularx}{\columnwidth}{l l l l X l}
+      \tb{Level} & \tb{Rank} & \tb{Durability} & \tb{Bonus}\fn{1} & \tb{Special}             & \tb{XP} \tableheaderrule
+      1st        & 1         & \plus0          & \tdash           & \tdash                   & 0      \\
+      2nd        & 1         & \plus1          & \plus1           & \tdash                   & 10     \\ % +10 xp
+      3rd        & 1         & \plus2          & \plus1           & \plus1 to two attributes & 25     \\ % +15 xp
+      4th        & 2         & \plus2          & \plus2           & \tdash                   & 45     \\ % +20 xp
+      5th        & 2         & \plus3          & \plus2           & \tdash                   & 70     \\ % +25 xp
+      6th        & 2         & \plus4          & \plus3           & Legacy item: rank 3      & 100    \\ % +30 xp
+      7th        & 3         & \plus4          & \plus3           & \tdash                   & 140    \\ % +40 xp
+      8th        & 3         & \plus5          & \plus4           & \tdash                   & 200    \\ % +60 xp
+      9th        & 3         & \plus6          & \plus4           & \plus1 to two attributes & 300    \\ % +100 xp
+      10th       & 4         & \plus6          & \plus5           & \tdash                   & 450    \\ % +150 xp
+      11th       & 4         & \plus7          & \plus5           & \tdash                   & 700    \\ % +250 xp
+      12th       & 4         & \plus8          & \plus6           & Legacy item: rank 5      & 1,000  \\ % +300 xp
+      13th       & 5         & \plus8          & \plus6           & \tdash                   & 1,400  \\ % +400 xp
+      14th       & 5         & \plus9          & \plus7           & \tdash                   & 2,000  \\ % +600 xp
+      15th       & 5         & \plus10         & \plus7           & \plus1 to two attributes & 3,000  \\ % +1000 xp
+      16th       & 6         & \plus10         & \plus8           & \tdash                   & 4,500  \\ % +1,500 xp
+      17th       & 6         & \plus11         & \plus8           & \tdash                   & 7,000  \\ % +2,500 xp
+      18th       & 6         & \plus12         & \plus9           & Legacy item: rank 7      & 10,000 \\ % +3,000 xp
+      19th       & 7         & \plus12         & \plus9           & \tdash                   & 14,000 \\
+      20th       & 7         & \plus13         & \plus10          & \tdash                   & 20,000 \\
+      21st       & 7         & \plus14         & \plus10          & \plus1 to two attributes & 30,000 \\
     \end{compresseddtabularx}
     1. This bonus applies to your \magical power, mundane power, trained skills, and defenses. \\
   \end{dtable}
