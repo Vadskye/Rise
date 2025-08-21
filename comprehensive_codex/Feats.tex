@@ -343,7 +343,7 @@ They allow more distinct and unique character customization, but also increase g
       When all of the spirits have disappeared, this effect ends.
     \end{magicalactiveability}
 
-    \magicalff[6]{Blood of My Ancestors} You gain a \plus1 bonus to \glossterm{vital rolls} and a \plus3 bonus to your \glossterm{durability}.
+    \magicalff[6]{Blood of My Ancestors} You gain a \plus1 bonus to \glossterm{vital rolls} and a \plus2 bonus to your \glossterm{durability}.
 
     \magicalff[12]{Ancestral Protectors} While you have ghostly spirits active from your \ability{ancestral battlecry} ability, you gain a \plus1 bonus to your Armor defense.
     In addition, you create four spirits when you use that ability rather than three.
@@ -948,9 +948,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Ghostblade}{Combat, Magical}
     \featpre Dexterity 1, Willpower 2.
 
-    \magicalff[1]{Ghost Shroud} Your Constitution does not increase your \glossterm{hit points}.
-    Instead, you gain \glossterm{damage resistance} equal to the hit points you would normally gain that way.
-    You can also use the lower of your Dexterity and Willpower in place of your Constitution for this purpose.
+    \magicalff[1]{Ghost Shroud} Your Constitution does not increase your \glossterm{injury point} (see \pcref{Injury Point}).
+    You can also use the lower of your Dexterity and Willpower in place of your Constitution to determine your \glossterm{hit points}.
 
     \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} during that phase (see \pcref{Invisible}, and \pcref{Sprint}).
     This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
@@ -984,10 +983,7 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: wording
     If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
 
-    \magicalff[18]{Half Spirit} Your maximum hit points that you gain from your base class are halved.
-    You gain a bonus to your maximum damage resistance equal to the maximum hit points you lost in this way.
-
-    \magicalff[18]{Ghostly Vitality} When your hit points become negative, your negative hit points must match the sum of your maximum \glossterm{hit points} and \glossterm{damage resistance} to inflict additional \glossterm{vital wounds} on you, rather than only matching your maximum hit points (see \pcref{Negative Hit Points}).
+    \magicalff[18]{Half Spirit} Your \glossterm{injury point} is set to 0, so you are only \glossterm{injured} while you have no remaining hit points.
   \end{magicalfeat}
 
   \begin{feat}{Greatweapon Warrior}{Combat}
@@ -1442,7 +1438,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Null}{General}
     \featpre Willpower 2.
 
-    \ff[1]{Mundane Resilience} You gain a bonus to your maximum \glossterm{hit points} and \glossterm{damage resistance} equal to your level.
+    \ff[1]{Mundane Resilience} You gain a \plus3 bonus to your \glossterm{durability}.
 
     \ff[1]{Nullify Magic} You gain a \plus4 bonus to your \glossterm{defenses} against \magical abilities.
     In exchange, you lose the benefits of all magical abilities you possess.
@@ -1478,8 +1474,6 @@ They allow more distinct and unique character customization, but also increase g
     Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
 
     \ff[12]{Personal Legacy\plus} The defense bonus increases to \plus2.
-
-    \ff[18]{Mundane Resilience\plus} The bonuses from your \textit{mundane resilience} ability increase to twice your level.
 
     \ff[18]{Personal Legacy\plus\plus} The defense bonus increases to \plus3.
 
@@ -2370,7 +2364,7 @@ They allow more distinct and unique character customization, but also increase g
     % Should this be more specific, like "animates"?
     \magicalff[1]{Hidden Life} You can treat nonliving creatures other than undead as if they were living creatures for the purpose of your abilities from the \sphere{Vivimancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Personal Vitality} You gain a bonus equal to your level to your maximum \glossterm{hit points}.
+    \magicalff[1]{Personal Vitality} You gain a \plus2 bonus to your \glossterm{durability}.
 
     \magicalff[6]{Soulscar Spell} You learn an additional spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
@@ -2382,7 +2376,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
     This means that attacks which only affect living creatures have no effect against you.
 
-    \magicalff[18]{Personal Vitality\plus} The hit point bonus increases to twice your level.
+    \magicalff[18]{Personal Vitality\plus} The durability bonus increases to \plus5.
   \end{magicalfeat}
 
   \begin{feat}{Stealth Specialization}{Skill}
@@ -2506,12 +2500,12 @@ They allow more distinct and unique character customization, but also increase g
     For example, a human would only need four hours of sleep per night.
     This does not reduce the time required for you to take a \glossterm{long rest}.
 
-    \ff[6]{Durable} You gain a bonus equal to your level to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
+    \ff[6]{Durable} You gain a \plus3 bonus to your \glossterm{durability}.
 
     \ff[12]{Fortified Body\plus} The defense bonus from your \textit{fortified body} ability increases to \plus4.
     In addition, you also only need half the normal amount of time to complete a \glossterm{long rest}.
 
-    \ff[18]{Durable\plus} The bonuses increase to twice your level.
+    \ff[18]{Durable\plus} The durability bonus increases to \plus6.
   \end{feat}
 
   \begin{feat}{Trickshot}{Combat}
