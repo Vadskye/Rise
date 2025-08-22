@@ -858,46 +858,41 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     For each size category larger than Medium or smaller than Small, the item's rank increases by one, which increases its price.
 
     % Armor defense is +3 point
-    % Durability is +2 points?
+    % Durability is +1 point
     % Vital rolls are +2 points
     % Encumbrance is -1 point
-    % Item rank is +2 points
+    % Item rank is +1 point
     \begin{dtable!*}
       \tablebookmark{Armor and Shields}{armor}
       \lcaption{Armor and Shields}
       \begin{dtabularx}{\textwidth}{l c c c c c c c >{\lcol}X c}
         \tb{Armor}                 & \tb{Armor}   & \tb{Reflex} & \tb{Durability} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
         Light armor                &              &             &         &                  &                  &              &                &                &            \\
-        % 6 Armor + 1 dur - 1 enc = 8 points
+        % 6 Armor + 1 dur = 7 points
         \tind Buff leather         & \plus2       & \tdash      & \plus1  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
-        % 6 Armor + 4 DR - 1 enc - 2 rank = 8 points
-        \tind Mail shirt           & \plus2       & \tdash      & \plus2  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
-        % 3 Armor + 6 DR + 2 vit - 2 enc = 9 points
-        \tind Rawhide              & \plus2       & \tdash      & \plus1  & \plus1           & \plus2           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        % 6 Armor + 2 dur - 1 rank = 7 points
+        \tind Mail shirt           & \plus2       & \tdash      & \plus2  & \tdash           & \tdash           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
+        % 6 Armor + 2 vit - 1 enc = 7 points
+        \tind Rawhide              & \plus2       & \tdash      & \tdash  & \plus1           & \plus1           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         \tind Buckler              & \plus1       & \plus1      & \tdash  & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood  & 0 (1 gp)   \\
         Medium armor               &              &             &         &                  &                  &              &                &               \\
-        % 12 Armor + 4 DR + 2 vit - 2 enc = 16 points
-        \tind Leather lamellar     & \plus4       & \tdash      & \plus3  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
-        % 12 Armor + 5 DR + 2 vit - 4 enc = 15 points
+        % 12 Armor + 2 dur + 2 vit - 1 enc = 15 points
+        \tind Leather lamellar     & \plus4       & \tdash      & \plus2  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
+        % 12 Armor + 3 dur + 2 vit - 2 enc = 15 points
         \tind Scale                & \plus4       & \tdash      & \plus3  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
-        % 12 Armor + 7 DR + 2 vit - 4 enc - 2 rank = 15 points
+        % 12 Armor + 4 dur + 2 vit - 2 enc - 1 rank = 15 points
         \tind Brigandine           & \plus4       & \tdash      & \plus4  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
         \tind Standard shield      & \plus2       & \plus2      & \tdash  & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 0 (1 gp)   \\
         Heavy armor                &              &             &         &                  &                  &              &                &                &            \\
-        % 12 Armor + 10 DR + 4 vit - 4 enc = 22 points
-        \tind Breastplate          & \plus4       & \tdash      & \plus10 & \plus2           & \plus2           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
-        % 15 Armor + 10 DR + 4 vit - 5 enc - 2 rank = 22 points
-        \tind Half plate           & \plus5       & \tdash      & \plus10 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
-        % 15 Armor + 12 DR + 4 vit - 6 enc - 4 rank = 21 points
-        \tind Full plate           & \plus5       & \tdash      & \plus12 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
+        % 15 Armor + 4 dur + 4 vit - 2 enc = 21 points
+        \tind Breastplate          & \plus5       & \tdash      & \plus4 & \plus2           & \plus2           & \minus10 ft. & \mult1/2       & Metal          & 1 (4 gp)   \\
+        % 15 Armor + 6 dur + 4 vit - 3 enc - 1 rank = 21 points
+        \tind Half plate           & \plus5       & \tdash      & \plus6 & \plus2           & \plus3           & \minus10 ft. & \mult1/2       & Metal          & 2 (20 gp)  \\
+        % 15 Armor + 6 dur + 6 vit - 4 enc - 2 rank = 21 points
+        \tind Full plate           & \plus5       & \tdash      & \plus6 & \plus3           & \plus4           & \minus10 ft. & \mult1/2       & Metal          & 3 (100 gp) \\
         \tind Tower shield         & \plus3\fn{2} & \plus3      & \tdash  & \tdash           & \plus1\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 1 (4 gp)   \\
         Extras                     &              &             &         &                  &                  &              &                &               \\
         \tind Shield spikes        & \tdash       & \tdash      & \tdash  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 1 (4 gp)   \\
-        \tind \mult2 reinforcement & \tdash       & \tdash      & \mult2  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 3 (100 gp)   \\
-        \tind \mult3 reinforcement & \tdash       & \tdash      & \mult3  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 4 (500 gp)   \\
-        \tind \mult4 reinforcement & \tdash       & \tdash      & \mult4  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 5 (2,500 gp)   \\
-        \tind \mult6 reinforcement & \tdash       & \tdash      & \mult6  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 6 (12,500 gp)   \\
-        \tind \mult8 reinforcement & \tdash       & \tdash      & \mult8  & \tdash           & \tdash           & \tdash       & \tdash         & Any          & 7 (62,500 gp)   \\
       \end{dtabularx}
       1 The hand holding the shield is not free, which may limit your actions. \\
       2 Tower shields improve your ability to use the \textit{total defense} ability. See the description.
@@ -912,11 +907,6 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     \parhead{Full Plate} Each suit of full plate must be individually fitted to its owner by an armorsmith.
     A captured suit can be resized to fit a new owner with a day of work and a \glossterm{difficulty value} 10 Craft (metalworking) check.
     The new owner must still be of the same size category as the size category and general body shape, such as humanoid, that the suit was originally designed for.
-    \parhead{Reinforcement}\label{Reinforcement} Body armor can be reinforced to be more protective.
-    The narrative cause of this reinforcement can be either \magical or mundane, but it never requires \glossterm{attunement}.
-    Any individual suit of body armor can only have one type of reinforcement at a time.
-    If a body armor's local damage resistance is modified, such as by special materials, that modifier applies before the multiplier from reinforcement.
-    Body armor that is also a \glossterm{legacy item} can be reinforced as normal.
     \parhead{Shield, Standard, Wooden or Steel} You strap a shield to your forearm and grip it with your hand.
     A standard shield is so cumbersome that you can't use your shield hand for anything else.
     You can use a standard shield as a weapon (see \tref{Weapons}).
