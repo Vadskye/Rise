@@ -59,13 +59,6 @@ pub fn write_brute_attacks_golden() -> io::Result<()> {
     )
 }
 
-pub fn write_mystic_attacks_golden() -> io::Result<()> {
-    write_golden_file(
-        "mystic_attacks",
-        format_character_dpr_vs_monster(&|level| Monster::standard_mystic(level).creature),
-    )
-}
-
 pub fn write_fighter_shield_attacks_golden() -> io::Result<()> {
     write_golden_file(
         "fighter_shield_attacks",

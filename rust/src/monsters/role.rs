@@ -8,7 +8,6 @@ pub enum Role {
     Skirmisher, // high mobility mixed range, like rogue/monk/ranger
     Warrior, // melee or short range defense tank, like a typical sword and board fighter/paladin
     Sniper,  // low mobility long range, like an archer
-    Mystic,  // low HP, high DR, typically a caster
     #[default]
     Leader,  // average in all respects
 }
@@ -21,7 +20,6 @@ impl Role {
             Self::Skirmisher,
             Self::Warrior,
             Self::Sniper,
-            Self::Mystic,
             Self::Leader,
         ]
     }
@@ -54,13 +52,6 @@ impl Role {
                 &Reflex => 4,
                 &Mental => 4,
             },
-            Role::Mystic => match defense {
-                &Armor => 3,
-                &Brawn => 3,
-                &Fortitude => 4,
-                &Reflex => 5,
-                &Mental => 6,
-            },
             Role::Skirmisher => match defense {
                 &Armor => 4,
                 &Brawn => 4,
@@ -72,13 +63,13 @@ impl Role {
                 &Armor => 3,
                 &Brawn => 3,
                 &Fortitude => 3,
-                &Reflex => 5,
-                &Mental => 5,
+                &Reflex => 4,
+                &Mental => 4,
             },
             Role::Warrior => match defense {
                 &Armor => 5,
                 &Brawn => 3,
-                &Fortitude => 5,
+                &Fortitude => 4,
                 &Reflex => 3,
                 &Mental => 3,
             },
@@ -89,7 +80,6 @@ impl Role {
         match self {
             Role::Brute => HitPointProgression::Medium,
             Role::Leader => HitPointProgression::High,
-            Role::Mystic => HitPointProgression::VeryHigh,
             Role::Skirmisher => HitPointProgression::Medium,
             Role::Sniper => HitPointProgression::Medium,
             Role::Warrior => HitPointProgression::Extreme,
@@ -100,7 +90,6 @@ impl Role {
         match self {
             Role::Brute => HitPointProgression::Extreme,
             Role::Leader => HitPointProgression::VeryHigh,
-            Role::Mystic => HitPointProgression::High,
             Role::Skirmisher => HitPointProgression::VeryHigh,
             Role::Sniper => HitPointProgression::High,
             Role::Warrior => HitPointProgression::VeryHigh,
@@ -113,7 +102,6 @@ impl Role {
             Role::Skirmisher => "Skirmisher",
             Role::Warrior => "Warrior",
             Role::Sniper => "Sniper",
-            Role::Mystic => "Mystic",
             Role::Leader => "Leader",
         }
     }
