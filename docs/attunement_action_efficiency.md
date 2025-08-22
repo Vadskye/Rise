@@ -165,21 +165,23 @@ Translating that into usable scaling, assuming medium range:
 
 0.4 EA * 5 actions = 2 EA
 
-### +4/8/16/32 HP: 0.7
+### +4/8/16/32 HP: 0.9
 
-Assuming 2 Con and fighter hp:
+Compared to a Med HP progression:
 
-* Rank 1: +4 HP is 33% more
-* Rank 2: +4 HP is 22% more
-* Rank 3: +8 HP is 30% more
-* Rank 4: +8 HP is 23% more
-* Rank 5: +16 HP is 31% more
-* Rank 6: +16 HP is 23% more
-* Rank 7: +32 HP is 31% more
+* Rank 1: +4 HP is 24% more
+* Rank 2: +4 HP is 14% more
+* Rank 3: +8 HP is 18% more
+* Rank 4: +8 HP is 12% more
+* Rank 5: +16 HP is 17% more
+* Rank 6: +16 HP is 13% more
+* Rank 7: +32 HP is 20% more
 
-Assuming that HP is 50% of your total EHP, the HP buff is worth about 15% survivability. Raw EHP is less effective than defenses and other methods of increasing survivability, so call it 10% survivability instead. That's 10% action denial that works 1/3 of the time, so 20 * 0.1 / 3 = 0.7 EA, so rank 1.
+Call that about 15% more HP on average. That's 1/1.15 = 87% action efficiency, or 13% action denial. Since you get attacked 1/3 of the time, 20 * 0.13 / 3 = 0.9 EA, so about rank 3.
 
-### +64 HP: 1.5 EA
+### +64 HP: 1.9 EA (at rank 7)
+
+40% more HP, so 71% action efficiency, or 29% action denial, so 20 * 0.29 / 3 = 1.9 EA at rank 7, which would require 0.4 EA of detriment to be balanced.
 
 ### +1 Armor: 0.75
 
@@ -211,46 +213,56 @@ Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial t
 
 ### Regen: 2.0-3.3
 
-Assume that you heal drX at the end of each action phase. How much does that help?
+Assume that you heal drX-2 at the end of each action phase. How much does that help?
 
-The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to the attack. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
+The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to attacks. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
 
 However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. To be safer, calculate the value of regeneration using a full 4 rounds of healing, even though a typical combat won't trigger all 4 rounds.
 
-drX is about half of a typical character's HP pool, so drX healing twice is like having 100% more HP, or 125% extra HP counting the second round healing. If your HP pool is half your EHP, that's +60% survivability, or 40% action denial following the same 2/3 logic as the 4/8/16/32 calc. 40% action denial on you is 20 * 0.4 / 3 = 2.7 EA.
+drX is about a third of a typical character's HP pool, so 4 rounds of drX healing twice is like having 133% more HP, or 125% extra HP counting the first round healing limit. That's too much to exist.
 
-To simplify, since drX is half character HP, it's worth:
-* +150% HP -> +75% survivability -> 50% action denial -> 20 / 3 * 0.5 = 3.3 EA
+drX-3 is about 50% as strong, so about 66% more HP. Having 66% more HP is 1/1.66 = 60% action efficiency, or 40% action denial. (100% more HP is 1/2 = 50% action efficiency, so 50% action denial). 40% action denial that works 1/3 of the time, since you are attacked 1/3 of the time, is 20 * 0.4 / 3 = 2.7 EA.
 
-What about drX-1? That's:
-* +120% HP -> +60% survivability -> 40% action denial -> 20 / 3 * 0.4 = 2.7 EA (rank 6 deep)
+Put another way, since drX-2 is about a quarter of character HP, it's worth:
+* +100% HP -> 50% action denial -> 20 * 0.5 / 3 = 3.3 EA
 
-What about drX-2? That's:
-* +98% HP -> +49% survivability -> 33% action denial -> 20 / 3 * 0.3 = 2 EA (rank 3 deep)
+What about drX-3? That's:
+* +66% HP -> 40% action denial -> 20 * 0.4 / 3 = 2.6 EA (rank 6 deep)
 
-Note that drX-2 is extremely spiky. At rank 4, drX-2 is actually 80% healing, which is too strong. So we use slightly different scaling values:
+These values are all too high. Instead, let's try recovering 10% of a typical HP pool.
+* +40% HP -> 29% action denial -> 20 * 0.29 / 3 = 1.9 EA (rank 3 deep)
+* +50% HP -> 33% action denial -> 20 * 0.33 / 3 = 2.2 EA (rank 4 deep)
+* +60% HP -> 38% action denial -> 20 * 0.38 / 3 = 2.5 EA (rank 5 deep)
+* +70% HP -> 41% action denial -> 20 * 0.41 / 3 = 2.75 EA (rank 6 deep)
+* +80% HP -> 44% action denial -> 20 * 0.41 / 3 = 3 EA (rank 7 deep)
 
-* Rank 3: equal to power (66% of drX, 33% of 2con fighter HP)
-  * Scaling: +2 per rank
-* Rank 4: ???
-* Rank 5: 2d6 + power (76% of drX, 38% of 2con fighter HP)
-  * Scaling: +1d6 per rank
-* Rank 6: 1d6 + 1d6 per 2 power (83% of drX, 43% of 2con fighter HP)
-  * Scaling: +2d6 per rank
-* Rank 7: 1d8 + 1d8 per 2 power (88% of drX, 40% of 2con fighter HP)
+Correct numeric values:
+* Rank 3: 3 HP (10%)
+* Rank 4: 8 HP (12%)
+* Rank 5: 16 HP (15%)
+* Rank 6: 28 HP (17%)
+* Rank 7: 44 HP (20%)
 
-Weapons and armor need fixed values instead of power scaling:
-* Rank 2: 18 * 0.3 = 5.5 = 1d10
-* Rank 3: 26 / 3 = 8.6 = 2d8
-* Rank 4: 35 * 0.35 = 12 = 3d8
-* Rank 5: 52 * 0.38 = 20 = 4d10
-* Rank 6: 70 * 0.4 = 28 = 5d10
-* Rank 7: 104 * 0.43 = 45 = 8d10
+As dice:
+* Rank 3: 1d6
+* Rank 4: 2d6
+* Rank 5: 4d6
+* Rank 6: 6d8
+* Rank 7: 8d10
 
-Apparel has weaker scaling:
-* Rank 3: 0.15 / 0.2 = 75% power, so 25% of 2con fighter HP, so 6.5 healing = 2d6
-* Rank 5: 0.2 / 0.25 = 80% power, so 30% of 2con fighter HP, so 15.5 healing = 3d10
-* Rank 7: 0.25 / 0.3 = 83% power, so 1/3 of 2con fighter HP, so 35 healing = 6d10
+As power scaling:
+* Rank 3: Half power (= 4)
+* Rank 4: dr1 (1d6 + half power = 3.5 + 5 = 8.5)
+* Rank 5: dr3 (1d8 + power = 4.5 + 12.5 = 17)
+* Rank 6: dr4 (1d6 per 2 power = 3.5 * 15 / 2 = 26)
+* Rank 7: dr6 (1d8 + 1d8 per 2 power = 4.5 + 4.5 * 16 / 2 = 40.5)
+
+As rank multiplier:
+* Rank 3: 1x
+* Rank 4: 2x
+* Rank 5: 3x
+* Rank 6: 4x
+* Rank 7: 6x
 
 ### Weapon tag: 1.0
 
