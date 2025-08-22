@@ -279,7 +279,7 @@ fn gloves() -> Vec<Apparel> {
             You can activate these gloves as a standard action using a \glossterm{free hand}.
             When you do, make an attack vs. Fortitude against a creature you touch with either glove.
             Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
-            \hit If the target has no remaining \glossterm<damage resistance>, it becomes \glossterm{briefly} \paralyzed.
+            \hit If the target is \glossterm{injured}, it becomes \glossterm{briefly} \paralyzed.
         "),
         ..Apparel::default()
     }));

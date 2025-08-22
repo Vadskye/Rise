@@ -1186,9 +1186,8 @@ export const rituals: Ritual[] = [
       Nothing can pass through the wall until it is destroyed.
       The corners of the cube have tiny gaps that allow air to pass through, but not even a Fine creature can fit through the gaps.
 
-      Each wall has both \\glossterm{hit points} and \\glossterm{damage resistance} equal to three times your \\glossterm{power}.
+      Each wall has \\glossterm{hit points} equal to three times your \\glossterm{power} and \\glossterm{hardness} equal to your \\glossterm{power}.
       The walls track their hit points individually.
-      They treat all damage as \\glossterm{environmental damage}, so attacks that deal less damage than the wall's damage resistance have no effect (see \\pcref{Environmental Damage}).
       Any damage to a wall causes visible cracks or scars, making it easy to recognize the health of the walls.
     `,
     // narrative: '',
@@ -2142,7 +2141,7 @@ export const rituals: Ritual[] = [
     functionsLike: {
       exceptThat: `
         the maximum size increases to Huge, and the Devices DV to unlock it increases to 30.
-        In addition, the damage resistance bonus increases to +20.
+        In addition, the hardness bonus increases to +20.
       `,
       name: 'seal shut',
     },
@@ -2819,7 +2818,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
       You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
-      The maximum \\glossterm{damage resistance} of a material you can affect with this ability is equal to your \\glossterm{power}.
+      The maximum \\glossterm{hardness} of a material you can affect with this ability is equal to your \\glossterm{power}.
 
       Each time you perform this ritual, you can accomplish work that would take up to one minute with a normal Craft check.
     `,

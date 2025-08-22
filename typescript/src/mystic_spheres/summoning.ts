@@ -84,7 +84,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranktwo.
-          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -102,7 +102,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranksix.
-          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -243,8 +243,7 @@ export const summoning: MysticSphere = {
 
         \\begin{raggeditemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its \\glossterm{hit points} are equal to the standard value for a wizard of your level.
-          \\item It has no \\glossterm{damage resistance}.
+          \\item Its maximum \\glossterm{hit points} are equal to your level \\x your rank with this spell, plus 5 additional hit points.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item It has an average \\glossterm{fly speed} with a maximum height of 5 feet and no \\glossterm{walk speed}.

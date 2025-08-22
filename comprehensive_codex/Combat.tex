@@ -79,11 +79,8 @@
     In addition, extra damage never applies to \glossterm{poisons}.
 
 \section{Taking Damage}\label{Taking Damage}
-  Hit points and damage resistance function in essentially the same way.
-  When you take damage, the damage first reduces your \glossterm{damage resistance}.
-  Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points}.
-  The main difference between hit points and damage resistance is that many abilities are more effective against creatures that have no remaining damage resistance.
-
+  When you take damage, the damage reduces your \glossterm{hit points}.
+  If your remaining hit points are at or below your \glossterm{injury point}, you are \glossterm{injured}.
   If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
   Monsters typically do not gain vital wounds like player characters do.
   Instead, they simply die or fall unconscious when they reach 0 hit points.
@@ -97,12 +94,6 @@
     In addition, your hit points are reset to 0 at the end of the round if they are still negative.
     This is checked after applying all healing and damage that takes place at the end of the round.
     This also resets vital wound thresholds, which means you'll suffer a vital wound if your hit points go negative again in the next round.
-
-  \subsection{Environmental Damage}\label{Environmental Damage}
-    Some abilities and environmental effects deal environmental damage.
-    Environmental damage is never dealt as the result of a successful attack roll.
-    Unlike normal damage, environmental damage cannot reduce your \glossterm{damage resistance}.
-    Any environmental damage excess of your damage resistance still causes you to lose \glossterm{hit points} as normal.
 
   \subsection{Subdual Damage}\label{Subdual Damage}
     Some attacks and environmental effects deal subdual damage.
