@@ -148,7 +148,7 @@ pub fn objects() -> Vec<Tool> {
 
             The lantern is \glossterm{loose equipment}, making it vulnerable to damage and being attacked directly.
             It has 10 hit points and 2 \glossterm{hardness}.
-            It takes double damage from \atCold abilities (see \pcref{Environmental Damage}).
+            It takes double damage from \atCold abilities.
             For details about repairing a damaged or broken belt lantern, see \pcref{Common Craft Tasks}.
         ".to_string(),
         upgrades: vec![
