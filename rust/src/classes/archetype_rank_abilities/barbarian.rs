@@ -22,6 +22,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // A normal rank 2 ability would give +3 durability. This gives +2HP for +4 IP.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred",
@@ -29,17 +30,18 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
-                However, you also gain a \plus5 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
+                However, you also gain a \plus4 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
             ",
             modifiers: None,
         },
+        // A normal rank 6 ability would give +5 durability. This gives +18 HP for +20 IP.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred+",
             is_magical: false,
             rank: 6,
             description: r"
-                The durability bonus increases to \plus6, and the injury point bonus increases to \plus15.
+                The durability bonus increases to \plus8, and the injury point bonus increases to \plus20.
             ",
             modifiers: None,
         },

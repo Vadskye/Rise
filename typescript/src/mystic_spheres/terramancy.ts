@@ -560,7 +560,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
         However, you also increase your \\glossterm{encumbrance} by 2.
       `,
       rank: 1,

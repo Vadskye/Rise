@@ -27,7 +27,7 @@ export const rituals: Ritual[] = [
       Unlike most abilities, this ritual can affect individual parts of a whole object.
 
       % How should this affect Strength break difficulty value?
-      The target gains a +10 \\glossterm{enhancement bonus} to its maximum \\glossterm{damage resistance}.
+      The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{hardness}.
       If the target is moved, this ability is \\glossterm{dismissed}.
       Otherwise, it lasts for one year.
     `,
@@ -73,7 +73,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one hour',
     functionsLike: {
       exceptThat: `
-        the bonus to \\glossterm{damage resistance} increases to +20.
+        the bonus to \\glossterm{hardness} increases to +20.
       `,
       name: 'fortification',
     },
@@ -2123,7 +2123,7 @@ export const rituals: Ritual[] = [
     effect: `
       Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
       The target becomes impossible to open and more difficult to break.
-      It gains a +10 bonus to its maximum \\glossterm{damage resistance}.
+      It gains a +10 bonus to its \\glossterm{hardness}.
       Opening the object without breaking it requires a DV 20 Devices check.
 
       When you perform this ritual, you may choose a Fine object within \\shortrange to function as a key.
