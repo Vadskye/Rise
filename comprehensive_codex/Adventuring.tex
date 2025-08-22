@@ -305,9 +305,9 @@
   Alternately, you can attempt to sunder the object with sheer strength.
 
   \subsection{Damaging Objects}
-    Objects have \glossterm{hit points} and \glossterm{damage resistance} like creatures.
-    However, non-creature objects treat all damage they take as \glossterm{environmental damage} (see \pcref{Environmental Damage}).
-    That means that all damage they take is reduced by their \glossterm{damage resistance} without subtracting from the remaining value of their damage resistance.
+    Objects have \glossterm{hit points} like creatures.
+    They can also have \glossterm{hardness}, which reduces damage they take.
+    Whenever an object takes damage, it first subtracts it hardness from that damage before applying that damage to its hit points.
     Objects are not normally subject to \glossterm{critical hits}.
     When object lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
 
@@ -355,7 +355,7 @@
     \begin{dtable}
       \lcaption{Object Statistics By Material}
       \begin{dtabularx}{\textwidth}{l X X X}
-        \tb{Material}   & \tb{DR}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
+        \tb{Material}   & \tb{Hardness}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
         Adamantine      & 30            & \mult3   \\
         Glass           & 5             & \mult1/2 \\
         Ice             & 0             & \mult1/2 \\
@@ -368,7 +368,7 @@
         Stone           & 10            & \mult2   \\
         Wood            & 5             & \tdash   \\
       \end{dtabularx}
-      1. An object's \glossterm{damage resistance} also increases the difficulty value of checks to sunder it with raw Strength. \\
+      1. An object's \glossterm{hardness} also increases the difficulty value of checks to sunder it with raw Strength. \\
       2. Any value here modifies the number of hit points the object would normally have based on its size.
     \end{dtable}
 

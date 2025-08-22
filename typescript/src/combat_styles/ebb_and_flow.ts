@@ -153,7 +153,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        It deals double damage if you did not make any attacks last round and regained either \\glossterm{hit points} or \\glossterm{damage resistance} last round.
+        It deals double damage if you did not make any attacks last round and regained \\glossterm{hit points} last round.
       `,
       roles: ['payoff'],
       rank: 3,

@@ -17,7 +17,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
-                    You regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
+                    You regain all of your \glossterm{hit points}.
                 \end{activeability}
             ",
             modifiers: None,

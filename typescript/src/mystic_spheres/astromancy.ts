@@ -119,7 +119,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          If the target is \\glossterm{injured}, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
           It does not return until the end of the next round.
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
@@ -234,7 +234,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is Large or smaller and has no remaining \\glossterm{damage resistance}, you \\glossterm{teleport} it up to 60 feet.
+          If the target is Large or smaller and is \\glossterm{injured}, you \\glossterm{teleport} it up to 60 feet.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
@@ -412,7 +412,7 @@ export const astromancy: MysticSphere = {
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 

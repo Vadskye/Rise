@@ -107,7 +107,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Whenever you regain \glossterm{hit points} or \glossterm{damage resistance}, your animal companion also regains that many hit points or damage resistance.
+                Whenever you regain \glossterm{hit points}, your animal companion also regains that many hit points.
                 If the healing ability had any limit, such as only healing up to half your maximum hit points, that limit also applies to your animal companion.
             ",
             modifiers: None,
@@ -224,7 +224,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double damage.
+                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and is \glossterm{injured}, the strike deals double damage.
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.

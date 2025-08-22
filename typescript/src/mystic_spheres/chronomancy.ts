@@ -191,7 +191,7 @@ export const chronomancy: MysticSphere = {
       // condition, so 1.9 EA, which is about rank 4.
       attack: {
         hit: `
-          If the target has no remaining damage resistance, it becomes \\glossterm{briefly} frozen in time.
+          If the target is \\glossterm{injured}, it becomes \\glossterm{briefly} frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
@@ -215,7 +215,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target \\glossterm{briefly} \\slowed.
-          If it has no remaining \\glossterm{damage resistance}, is also slowed as a \\glossterm{condition}.
+          If it is \\glossterm{injured}, is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -254,7 +254,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is \\slowed as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it is \\slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -300,7 +300,7 @@ export const chronomancy: MysticSphere = {
       // calculations work here.
       effect: `
         You create a field of slowed time in a \\medarea radius \\glossterm{zone} within \\medrange.
-        All creatures with no remaining \\glossterm{damage resistance} are \\slowed while they are in the area.
+        All \\glossterm{injured} creatures are \\slowed while they are in the area.
       `,
       rank: 6,
       roles: ['flash', 'hazard'],
@@ -659,7 +659,7 @@ export const chronomancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level} from the target.',
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per power.
+        The target regains 1d8 \\glossterm{hit points} \\plus1 per power.
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 2,

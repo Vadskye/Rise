@@ -186,7 +186,7 @@ impl StrikeAbility {
     fn ichor_infestation_details() -> String {
         r"
             If the target is \glossterm{injured}, it becomes infested with ichor as a \glossterm{condition}.
-            While infested with ichor, it cannot regain \glossterm{hit points} or \glossterm{damage resistance}.
+            While infested with ichor, it cannot regain \glossterm{hit points}.
         ".to_string()
     }
 

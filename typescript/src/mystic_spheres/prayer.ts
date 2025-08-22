@@ -367,7 +367,7 @@ export const prayer: MysticSphere = {
       // dr3
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round and regains 1d4 \\glossterm{damage resistance} +1 per \\glossterm{power}.
+        Each target is \\shielded this round and regains 1d4 \\glossterm{hit points} +1 per \\glossterm{power}.
       `,
       rank: 2,
       roles: ['healing'],
@@ -396,7 +396,7 @@ export const prayer: MysticSphere = {
       // bonus. Normal healing ability would be dr4, so use half of that (where possible).
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and all \\glossterm{allies} within a \largearea radius from you each regain 2d8 \\glossterm{damage resistance}.
+        You and all \\glossterm{allies} within a \largearea radius from you each regain 2d8 \\glossterm{hit points}.
       `,
       rank: 3,
       roles: ['healing'],
