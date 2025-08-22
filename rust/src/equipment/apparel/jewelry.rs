@@ -140,15 +140,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Sturdy Companionship"),
         rank: 2,
-        short_description: String::from(r"Grants +8 damage resistance to animal allies"),
+        short_description: String::from(r"Grants +8 hit points to animal allies"),
         description: String::from(r"
-            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<damage resistance>.
+            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<hit points>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, r"Grants +16 damage resistance to animal allies", r"
+            ItemUpgrade::new(4, r"Grants +16 hit points to animal allies", r"
                 The bonus increases to +16.
             "),
-            ItemUpgrade::new(6, r"Grants +32 damage resistance to animal allies", r"
+            ItemUpgrade::new(6, r"Grants +32 hit points to animal allies", r"
                 The bonus increases to +32.
             "),
         ],

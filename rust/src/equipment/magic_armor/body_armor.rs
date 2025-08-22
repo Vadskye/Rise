@@ -18,17 +18,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     }));
 
     armor.push(Body(StandardItem {
-        name: String::from("Resistant Armor"),
+        name: String::from("Armor of Life"),
         rank: 2,
-        short_description: String::from("Grants +6 DR"),
+        short_description: String::from("Grants +6 HP"),
         description: String::from(r"
-            You gain a +6 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
+            You gain a +6 \glossterm<enhancement bonus> to your \glossterm<hit points>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +12 DR", "
+            ItemUpgrade::new(4, "Grants +12 HP", "
                 The bonus increases to +12.
             "),
-            ItemUpgrade::new(6, "Grants +24 DR", "
+            ItemUpgrade::new(6, "Grants +24 HP", "
                 The bonus increases to +24.
             "),
         ],
@@ -78,17 +78,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Stonebody Armor"),
         rank: 2,
-        short_description: String::from("Grants +12 DR, but slower and heavier"),
+        short_description: String::from("Grants +12 HP, but slower and heavier"),
         description: String::from(r"
-            You gain a +12 \glossterm<enhancement bonus> to your \glossterm<damage resistance>.
+            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
             However, you take a -10 foot penalty to your speed with all movement modes.
             In addition, this armor's \glossterm{encumbrance} is increased by 2.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +24 DR, but slower and heavier", "
+            ItemUpgrade::new(4, "Grants +24 HP, but slower and heavier", "
                 The bonus increases to +24.
             "),
-            ItemUpgrade::new(6, "Grants +48 DR, but slower and heavier", "
+            ItemUpgrade::new(6, "Grants +48 HP, but slower and heavier", "
                 The bonus increases to +48.
             "),
         ],

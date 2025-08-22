@@ -218,12 +218,11 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Draconic Spells",
+            name: "Draconic Spell",
             is_magical: true,
             rank: 1,
             description: r"
-                If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
-                Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+                You learn a spell from your dragon's \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
             ",
             modifiers: None,
         },
@@ -233,7 +232,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a +3 bonus to your \glossterm{durability}.
             ",
             modifiers: None,
         },
@@ -243,15 +242,25 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to four times your rank in this archetype.
+                The durability bonus increases to +5.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Draconic Precision",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
             name: "Draconic Body",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
@@ -261,21 +270,11 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Energy Immunity",
             is_magical: false,
-            rank: 4,
+            rank: 5,
             description: r"
                 You become immune to attacks that have your dragon's associated ability tag.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Draconic Precision",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,

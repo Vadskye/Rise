@@ -332,7 +332,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{damage resistance}.
+        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
       `,
       rank: 2,
       roles: ['attune'],

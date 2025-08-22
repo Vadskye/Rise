@@ -675,7 +675,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
@@ -686,7 +686,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to four times your rank in this archetype.
+                The durability bonus increases to +4.
             ",
             // TODO: represent DR
             modifiers: None,
