@@ -1298,11 +1298,12 @@
     % * R7, 21 HP - 26% (80)
 
     % This intentionally can bring you above half max
-    \cf{Tre}[1]{Nourishing Ingrain} At the end of each round while you are \ability{ingrained}, you regain hit points equal to twice your rank in this archetype, and you may choose to remove a \glossterm{condition}.
+    \cf{Tre}[1]{Nourishing Ingrain} At the end of each round while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
       If you do, you increase your \glossterm{fatigue level} by one.
 
     \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a \plus3 bonus to your \glossterm{durability}.
 
+    % TODO: proper EA / damage calc
     \magicalcf{Tre}[3]{Animate Plants}
       \begin{magicalactiveability}{Animate Plants}[\abilitytag{Manifestation}]
         \abilityusagetime Standard action.
@@ -1310,8 +1311,9 @@
         Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
         You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
 
-        \hit The target is \slowed as a \glossterm{condition}.
-        In addition, it takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
+        \hit The target is \glossterm{briefly} \slowed.
+        In addition, it is attacked by plants as a \glossterm{condition}.
+        It takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
 
         This condition can be removed if the target makes a \glossterm{difficulty value} 10 Strength check as a \glossterm{move action} to break the plants.
         If the target makes this check as a standard action, it gains a \plus5 bonus.
@@ -1564,7 +1566,7 @@
 
   \subsection{Troll Archetype}
 
-    \cf{Trl}[1]{Regeneration} At the end of each round, if you did not take damage from a \atAcid or \atFire ability that round, you regain hit points equal to twice your rank in this archetype.
+    \cf{Trl}[1]{Regeneration} At the end of each round, if you did not take damage from a \atAcid or \atFire ability that round, you regain hit points equal to your rank in this archetype.
 
     \cf{Trl}[2]{Tough Hide} You gain a \plus2 bonus to your \glossterm{durability}.
       In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
@@ -1599,7 +1601,7 @@
 
     \cf{Trl}[6]{Tusks+} Your bite natural weapon deals 2d6 damage instead of the normal 1d8.
 
-    \cf{Trl}[7]{Regeneration++} The recovery increases to four times your rank in this archetype.
+    \cf{Trl}[7]{Regeneration++} The recovery increases to six times your rank in this archetype.
       In addition, removing a vital wound with this ability only increases your fatigue level by two.
 
   \subsection{Base Class Effects}
