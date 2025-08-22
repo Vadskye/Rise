@@ -15,7 +15,7 @@ pub use attribute_statistics::write_attribute_statistics_golden;
 pub use character_attacks::{
     write_attack_comparison_golden, write_brute_attacks_golden,
     write_fighter_greatmace_attacks_golden, write_fighter_shield_attacks_golden,
-    write_mystic_attacks_golden, write_perception_greataxe_attacks_golden,
+    write_perception_greataxe_attacks_golden,
 };
 pub use character_statistics::write_standard_character_statistics_golden;
 pub use class_statistics::{write_class_complexity_golden, write_class_statistics_golden};

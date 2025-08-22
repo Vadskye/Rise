@@ -104,10 +104,6 @@ pub fn write_monster_rounds_to_live_golden() -> io::Result<()> {
 
 {leader_rtl}
 
-## Mystic
-
-{mystic_rtl}
-
 ## Skirmisher
 
 {skirmisher_rtl}
@@ -121,7 +117,6 @@ pub fn write_monster_rounds_to_live_golden() -> io::Result<()> {
 {warrior_rtl}",
         brute_rtl = rtl_by_level(&brute),
         leader_rtl = rtl_by_level(&leader),
-        mystic_rtl = rtl_by_level(&mystic),
         skirmisher_rtl = rtl_by_level(&skirmisher),
         sniper_rtl = rtl_by_level(&sniper),
         warrior_rtl = rtl_by_level(&warrior),

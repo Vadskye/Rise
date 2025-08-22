@@ -213,9 +213,9 @@ Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial t
 
 Assume that you heal drX at the end of each action phase. How much does that help?
 
-Assume that monsters spend one round your DR and four rounds doing some amount of HP damage. The healing on the first round is limited - assume that you only lose 1/4 of your max HP to the attack. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 2 full triggers and a third trigger that is capped at 1/4 of max HP.
+The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to the attack. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
 
-However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. To be safer, calculate the value of regeneration using a full 3 rounds of healing, even though a typical combat won't trigger all 3 rounds.
+However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. To be safer, calculate the value of regeneration using a full 4 rounds of healing, even though a typical combat won't trigger all 4 rounds.
 
 drX is about half of a typical character's HP pool, so drX healing twice is like having 100% more HP, or 125% extra HP counting the second round healing. If your HP pool is half your EHP, that's +60% survivability, or 40% action denial following the same 2/3 logic as the 4/8/16/32 calc. 40% action denial on you is 20 * 0.4 / 3 = 2.7 EA.
 
