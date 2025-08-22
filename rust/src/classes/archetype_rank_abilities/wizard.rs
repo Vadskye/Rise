@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
+use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -193,7 +193,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    add_dr_scaling(&mut abilities, 1, 3, Some(6));
     abilities
 }
 

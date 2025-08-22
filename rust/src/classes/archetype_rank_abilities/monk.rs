@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_dr_scaling, add_standard_maneuver_modifiers};
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -656,7 +656,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 1,
             name: "Feel the Flow of Life",
@@ -746,7 +746,5 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
-    add_dr_scaling(&mut abilities, 2, 6, None);
-    abilities
+    ]
 }

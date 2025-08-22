@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
+use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
@@ -79,7 +79,6 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    add_dr_scaling(&mut abilities, 1, 3, Some(6));
     abilities
 }
 
@@ -186,7 +185,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 1,
             name: "Draconic Bloodline",
@@ -289,9 +288,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Attribute(Attribute::Willpower, 1),
             ]),
         },
-    ];
-    add_dr_scaling(&mut abilities, 2, 6, None);
-    abilities
+    ]
 }
 
 pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
