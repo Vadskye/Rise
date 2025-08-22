@@ -59,10 +59,10 @@ Complexity is calculated at (rank 3 / rank 7).
 * Jack of All Trades: 5 / 7
 * Suave Scoundrel: 4 / 7
             
-## sorcerer: 24 / 35
+## sorcerer: 25 / 35
 * Arcane Magic: 6 / 7
 * Arcane Spell Mastery: 5 / 8
-* Draconic Magic: 4 / 5
+* Draconic Magic: 5 / 5
 * Innate Arcanist: 4 / 7
 * Wild Magic: 5 / 8
             

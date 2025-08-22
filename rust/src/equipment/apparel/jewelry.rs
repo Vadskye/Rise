@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::Apparel::{Amulet, Ring};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
@@ -308,18 +308,22 @@ fn rings() -> Vec<Apparel> {
         name: String::from("Baneswallow Ring"),
         rank: 3,
         short_description: String::from(r"Can exert and remove a condition to gain power"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can activate this ring as a standard action.
             When you do, you may remove a \glossterm{condition} affecting you.
             If you remove a condition in this way, you are \glossterm{briefly} \empowered.
 
             After you activate this item, you increase your \glossterm<fatigue level> by one.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Can remove a condition to gain power", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Can remove a condition to gain power",
+            r"
                 Activating this ring does not increase your fatigue level.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
