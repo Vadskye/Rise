@@ -352,12 +352,12 @@ Power+       : 16.91 = (52.5 dph * 0.20 hpr) + (52.5 dpc * 0.02 cpr) + (26.2 dpg
 Best attack: Certain Strike+ -- Greatmace
 
 #### Detailed attack results
-Accuracy     : 11.46 = (17.5 dph * 0.50 hpr) + (17.5 dpc * 0.06 cpr) + (8.8 dpg * 0.20 gpr) = 8.75 hdpr + 0.96 cdpr + 1.75 gdpr
-Certain      : 10.09 = (11.5 dph * 0.70 hpr) + (11.5 dpc * 0.08 cpr) + (5.8 dpg * 0.20 gpr) = 8.05 hdpr + 0.89 cdpr + 1.15 gdpr
-Extra        : 6.65 = (31.5 dph * 0.10 hpr) + (31.5 dpc * 0.01 cpr) + (15.8 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 3.15 gdpr
-Power        : 7.38 = (35.0 dph * 0.10 hpr) + (35.0 dpc * 0.01 cpr) + (17.5 dpg * 0.20 gpr) = 3.50 hdpr + 0.39 cdpr + 3.50 gdpr
-Certain+     : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
-Power+       : 5.15 = (52.5 dph * 0.08 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.02 gpr) = 4.20 hdpr + 0.42 cdpr + 0.52 gdpr
+Accuracy     : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
+Certain      : 11.36 = (11.5 dph * 0.80 hpr) + (11.5 dpc * 0.09 cpr) + (5.8 dpg * 0.20 gpr) = 9.20 hdpr + 1.01 cdpr + 1.15 gdpr
+Extra        : 10.14 = (31.5 dph * 0.20 hpr) + (31.5 dpc * 0.02 cpr) + (15.8 dpg * 0.20 gpr) = 6.30 hdpr + 0.69 cdpr + 3.15 gdpr
+Power        : 11.27 = (35.0 dph * 0.20 hpr) + (35.0 dpc * 0.02 cpr) + (17.5 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 3.50 gdpr
+Certain+     : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Power+       : 5.46 = (52.5 dph * 0.09 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.01 gpr) = 4.73 hdpr + 0.47 cdpr + 0.26 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Powerful Greatmace
@@ -477,13 +477,13 @@ Triple       : 40.28 = (61.5 dph * 0.50 hpr) + (61.5 dpc * 0.06 cpr) + (30.8 dpg
 Best attack: Certain Strike+ -- Greatmace
 
 #### Detailed attack results
-Accuracy     : 15.70 = (20.5 dph * 0.60 hpr) + (20.5 dpc * 0.07 cpr) + (10.2 dpg * 0.20 gpr) = 12.30 hdpr + 1.35 cdpr + 2.05 gdpr
-Certain      : 12.84 = (13.0 dph * 0.80 hpr) + (13.0 dpc * 0.09 cpr) + (6.5 dpg * 0.20 gpr) = 10.40 hdpr + 1.14 cdpr + 1.30 gdpr
-Extra        : 9.04 = (56.5 dph * 0.10 hpr) + (56.5 dpc * 0.01 cpr) + (28.2 dpg * 0.10 gpr) = 5.65 hdpr + 0.57 cdpr + 2.83 gdpr
-Power        : 13.20 = (41.0 dph * 0.20 hpr) + (41.0 dpc * 0.02 cpr) + (20.5 dpg * 0.20 gpr) = 8.20 hdpr + 0.90 cdpr + 4.10 gdpr
-Certain+     : 20.25 = (20.5 dph * 0.80 hpr) + (20.5 dpc * 0.09 cpr) + (10.2 dpg * 0.20 gpr) = 16.40 hdpr + 1.80 cdpr + 2.05 gdpr
-Power+       : 6.40 = (61.5 dph * 0.09 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.01 gpr) = 5.54 hdpr + 0.55 cdpr + 0.31 gdpr
-Triple       : 9.84 = (61.5 dph * 0.10 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.10 gpr) = 6.15 hdpr + 0.62 cdpr + 3.08 gdpr
+Accuracy     : 17.98 = (20.5 dph * 0.70 hpr) + (20.5 dpc * 0.08 cpr) + (10.2 dpg * 0.20 gpr) = 14.35 hdpr + 1.58 cdpr + 2.05 gdpr
+Certain      : 13.64 = (13.0 dph * 0.90 hpr) + (13.0 dpc * 0.10 cpr) + (6.5 dpg * 0.10 gpr) = 11.70 hdpr + 1.29 cdpr + 0.65 gdpr
+Extra        : 11.92 = (56.5 dph * 0.10 hpr) + (56.5 dpc * 0.01 cpr) + (28.2 dpg * 0.20 gpr) = 5.65 hdpr + 0.62 cdpr + 5.65 gdpr
+Power        : 17.75 = (41.0 dph * 0.30 hpr) + (41.0 dpc * 0.03 cpr) + (20.5 dpg * 0.20 gpr) = 12.30 hdpr + 1.35 cdpr + 4.10 gdpr
+Certain+     : 21.50 = (20.5 dph * 0.90 hpr) + (20.5 dpc * 0.10 cpr) + (10.2 dpg * 0.10 gpr) = 18.45 hdpr + 2.03 cdpr + 1.02 gdpr
+Power+       : 9.84 = (61.5 dph * 0.10 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.10 gpr) = 6.15 hdpr + 0.62 cdpr + 3.08 gdpr
+Triple       : 12.98 = (61.5 dph * 0.10 hpr) + (61.5 dpc * 0.01 cpr) + (30.8 dpg * 0.20 gpr) = 6.15 hdpr + 0.68 cdpr + 6.15 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Generic Triple Damage -- Greatmace
@@ -537,10 +537,10 @@ Triple       : 47.11 = (61.5 dph * 0.60 hpr) + (61.5 dpc * 0.07 cpr) + (30.8 dpg
 Best attack: Generic Triple Damage -- Greatmace
 
 #### Detailed attack results
-Accuracy     : 34.15 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.67 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 13.65 cdpr + 0.00 gdpr
-Certain      : 24.54 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 0.89 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 11.54 cdpr + 0.00 gdpr
-Extra        : 62.72 = (56.5 dph * 1.00 hpr) + (56.5 dpc * 0.11 cpr) + (28.2 dpg * 0.00 gpr) = 56.50 hdpr + 6.22 cdpr + 0.00 gdpr
-Power        : 50.10 = (41.0 dph * 1.00 hpr) + (41.0 dpc * 0.22 cpr) + (20.5 dpg * 0.00 gpr) = 41.00 hdpr + 9.10 cdpr + 0.00 gdpr
-Certain+     : 38.70 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.89 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 18.20 cdpr + 0.00 gdpr
-Power+       : 64.51 = (61.5 dph * 0.90 hpr) + (61.5 dpc * 0.10 cpr) + (30.8 dpg * 0.10 gpr) = 55.35 hdpr + 6.09 cdpr + 3.07 gdpr
-Triple       : 68.27 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.77 cdpr + 0.00 gdpr
+Accuracy     : 36.43 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 0.78 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 15.93 cdpr + 0.00 gdpr
+Certain      : 25.99 = (13.0 dph * 1.00 hpr) + (13.0 dpc * 1.00 cpr) + (6.5 dpg * 0.00 gpr) = 13.00 hdpr + 12.99 cdpr + 0.00 gdpr
+Extra        : 62.77 = (56.5 dph * 1.00 hpr) + (56.5 dpc * 0.11 cpr) + (28.2 dpg * 0.00 gpr) = 56.50 hdpr + 6.27 cdpr + 0.00 gdpr
+Power        : 54.65 = (41.0 dph * 1.00 hpr) + (41.0 dpc * 0.33 cpr) + (20.5 dpg * 0.00 gpr) = 41.00 hdpr + 13.65 cdpr + 0.00 gdpr
+Certain+     : 40.98 = (20.5 dph * 1.00 hpr) + (20.5 dpc * 1.00 cpr) + (10.2 dpg * 0.00 gpr) = 20.50 hdpr + 20.48 cdpr + 0.00 gdpr
+Power+       : 68.27 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.77 cdpr + 0.00 gdpr
+Triple       : 68.33 = (61.5 dph * 1.00 hpr) + (61.5 dpc * 0.11 cpr) + (30.8 dpg * 0.00 gpr) = 61.50 hdpr + 6.83 cdpr + 0.00 gdpr

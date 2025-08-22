@@ -44,12 +44,12 @@ Points / Self-hit: 28 / 80%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 4 / 3 / 3 / 5 / 7
-HP/DR/Total: 11 / 4 / 15
+HP/DR/Total: 8 / 4 / 12
 Points / Self-hit: 26 / 80%
 
 ### Wizard Perception
 A/B/F/R/M: 4 / 3 / 3 / 5 / 7
-HP/DR/Total: 11 / 6 / 17
+HP/DR/Total: 8 / 6 / 14
 Points / Self-hit: 26 / 80%
 
 ## Level 5
@@ -96,12 +96,12 @@ Points / Self-hit: 43 / 70%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 7 / 5 / 5 / 8 / 10
-HP/DR/Total: 22 / 4 / 26
+HP/DR/Total: 16 / 4 / 20
 Points / Self-hit: 42 / 70%
 
 ### Wizard Perception
 A/B/F/R/M: 4 / 5 / 5 / 5 / 10
-HP/DR/Total: 22 / 6 / 28
+HP/DR/Total: 16 / 6 / 22
 Points / Self-hit: 33 / 100%
 
 ## Level 10
@@ -147,13 +147,13 @@ HP/DR/Total: 26 / 20 / 46
 Points / Self-hit: 64 / 60%
 
 ### Sorcerer Dexterity
-A/B/F/R/M: 11 / 8 / 9 / 12 / 14
-HP/DR/Total: 49 / 8 / 57
-Points / Self-hit: 65 / 60%
+A/B/F/R/M: 11 / 8 / 8 / 12 / 14
+HP/DR/Total: 30 / 8 / 38
+Points / Self-hit: 64 / 70%
 
 ### Wizard Perception
 A/B/F/R/M: 7 / 8 / 8 / 8 / 14
-HP/DR/Total: 46 / 10 / 56
+HP/DR/Total: 30 / 10 / 40
 Points / Self-hit: 52 / 100%
 
 ## Level 15
@@ -179,9 +179,9 @@ HP/DR/Total: 90 / 56 / 146
 Points / Self-hit: 86 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 19 / 15 / 12 / 19 / 10
+A/B/F/R/M: 18 / 15 / 12 / 19 / 10
 HP/DR/Total: 72 / 33 / 105
-Points / Self-hit: 94 / 10%
+Points / Self-hit: 92 / 20%
 
 ### Paladin Shield
 A/B/F/R/M: 14 / 17 / 15 / 10 / 13
@@ -200,12 +200,12 @@ Points / Self-hit: 82 / 50%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 14 / 10 / 11 / 15 / 18
-HP/DR/Total: 98 / 16 / 114
+HP/DR/Total: 63 / 16 / 79
 Points / Self-hit: 82 / 60%
 
 ### Wizard Perception
 A/B/F/R/M: 9 / 10 / 10 / 10 / 17
-HP/DR/Total: 78 / 18 / 96
+HP/DR/Total: 58 / 18 / 76
 Points / Self-hit: 65 / 100%
 
 ## Level 20
@@ -231,9 +231,9 @@ HP/DR/Total: 168 / 112 / 280
 Points / Self-hit: 104 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 23 / 19 / 16 / 22 / 14
+A/B/F/R/M: 22 / 19 / 16 / 22 / 14
 HP/DR/Total: 144 / 46 / 190
-Points / Self-hit: 117 / 10%
+Points / Self-hit: 115 / 10%
 
 ### Paladin Shield
 A/B/F/R/M: 17 / 20 / 18 / 13 / 16
@@ -252,10 +252,10 @@ Points / Self-hit: 100 / 50%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 17 / 13 / 14 / 18 / 21
-HP/DR/Total: 152 / 32 / 184
+HP/DR/Total: 117 / 32 / 149
 Points / Self-hit: 100 / 70%
 
 ### Wizard Perception
-A/B/F/R/M: 13 / 13 / 13 / 13 / 20
-HP/DR/Total: 142 / 34 / 176
-Points / Self-hit: 85 / 100%
+A/B/F/R/M: 12 / 13 / 13 / 13 / 20
+HP/DR/Total: 107 / 34 / 141
+Points / Self-hit: 83 / 100%
