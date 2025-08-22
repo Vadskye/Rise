@@ -837,8 +837,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 
     \parhead{Reflex} This value indicates how much the armor increases your Reflex defense.
 
-    \parhead{DR} This value indicates how much the armor increases your \glossterm{damage resistance} (see \pcref{Damage Resistance}).
-    Note that magic armor and armor made from special materials provides significantly more damage resistance (see \pcref{Magic Armor}).
+    \parhead{Durability} This value indicates how much the armor increases your \glossterm{durability} (see \pcref{Durability}).
 
     \parhead{Vital Rolls} This value indicates how much the armor increases your \glossterm{vital rolls} (see \pcref{Vital Rolls}).
 
@@ -859,7 +858,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     For each size category larger than Medium or smaller than Small, the item's rank increases by one, which increases its price.
 
     % Armor defense is +3 point
-    % DR is +1 point
+    % Durability is +2 points?
     % Vital rolls are +2 points
     % Encumbrance is -1 point
     % Item rank is +2 points
@@ -867,22 +866,22 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \tablebookmark{Armor and Shields}{armor}
       \lcaption{Armor and Shields}
       \begin{dtabularx}{\textwidth}{l c c c c c c c >{\lcol}X c}
-        \tb{Armor}                 & \tb{Armor}   & \tb{Reflex} & \tb{DR} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
+        \tb{Armor}                 & \tb{Armor}   & \tb{Reflex} & \tb{Durability} & \tb{Vital Rolls} & \tb{Encumbrance} & \tb{Speed}   & \tb{Dex Bonus} & \tb{Material}  & \tb{Item Rank (Cost)}  \tableheaderrule
         Light armor                &              &             &         &                  &                  &              &                &                &            \\
-        % 6 Armor + 3 DR - 1 enc = 8 points
-        \tind Buff leather         & \plus2       & \tdash      & \plus3  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        % 6 Armor + 1 dur - 1 enc = 8 points
+        \tind Buff leather         & \plus2       & \tdash      & \plus1  & \tdash           & \tdash           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         % 6 Armor + 4 DR - 1 enc - 2 rank = 8 points
-        \tind Mail shirt           & \plus2       & \tdash      & \plus5  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
+        \tind Mail shirt           & \plus2       & \tdash      & \plus2  & \tdash           & \plus1           & \tdash       & \tdash         & Metal          & 2 (20 gp)  \\
         % 3 Armor + 6 DR + 2 vit - 2 enc = 9 points
-        \tind Rawhide              & \plus2       & \tdash      & \plus3  & \plus1           & \plus2           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
+        \tind Rawhide              & \plus2       & \tdash      & \plus1  & \plus1           & \plus2           & \tdash       & \tdash         & Leather        & 1 (4 gp)   \\
         \tind Buckler              & \plus1       & \plus1      & \tdash  & \tdash           & \tdash           & \tdash       & \tdash         & Metal or wood  & 0 (1 gp)   \\
         Medium armor               &              &             &         &                  &                  &              &                &               \\
         % 12 Armor + 4 DR + 2 vit - 2 enc = 16 points
-        \tind Leather lamellar     & \plus4       & \tdash      & \plus4  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
+        \tind Leather lamellar     & \plus4       & \tdash      & \plus3  & \plus1           & \plus1           & \tdash       & \mult1/2       & Leather        & 1 (4 gp)   \\
         % 12 Armor + 5 DR + 2 vit - 4 enc = 15 points
-        \tind Scale                & \plus4       & \tdash      & \plus5  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
+        \tind Scale                & \plus4       & \tdash      & \plus3  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 1 (4 gp)   \\
         % 12 Armor + 7 DR + 2 vit - 4 enc - 2 rank = 15 points
-        \tind Brigandine           & \plus4       & \tdash      & \plus7  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
+        \tind Brigandine           & \plus4       & \tdash      & \plus4  & \plus1           & \plus2           & \tdash       & \mult1/2       & Metal          & 2 (20 gp)  \\
         \tind Standard shield      & \plus2       & \plus2      & \tdash  & \tdash           & \tdash\fn{1}     & \tdash       & \mult1/2       & Metal or wood  & 0 (1 gp)   \\
         Heavy armor                &              &             &         &                  &                  &              &                &                &            \\
         % 12 Armor + 10 DR + 4 vit - 4 enc = 22 points
