@@ -64,7 +64,7 @@ pub fn melee() -> Vec<MagicWeapon> {
             Strikes with this weapon deal 1d8 \glossterm{extra damage}.
 
             As a standard action, you can make a mundane melee \glossterm<strike>.
-            If the target has no remaining \glossterm{damage resistance} and your attack result hits its Reflex defense, the strike deals quadruple damage.
+            If the target is \glossterm{injured} and your attack result hits its Reflex defense, the strike deals quadruple damage.
             If the damage dealt by this strike is at least half the creature's maximum hit points, it immediately dies.
             Creatures that do not have a head are immune to this death effect.
         "),

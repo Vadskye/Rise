@@ -249,7 +249,7 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Fortitude against everything in a \smallarea radius within \shortrange.
             Your minimum accuracy is $consumableaccuracy.
-            \hit Each creature with no remaining damage resistance is \stunned as a \glossterm<condition>.
+            \hit Each \glossterm{injured} creature is \stunned as a \glossterm<condition>.
         ".to_string(),
         tags: vec![AbilityTag::Electricity],
         upgrades: vec![

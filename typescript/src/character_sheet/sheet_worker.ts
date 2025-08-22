@@ -2145,7 +2145,7 @@ function createMonsterDebuff({
     const range = calcTargetedText(targeting);
 
     const hitEffect = requiresNoDamageResistance
-      ? `If the target has no remaining damage resistance, it is ${debuff} as a condition.`
+      ? `If the target is \\glossterm{injured}, it is ${debuff} as a condition.`
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
 Hit: ${hitEffect}`;
@@ -2160,7 +2160,7 @@ Hit: ${hitEffect}`;
     }
 
     const hitEffect = requiresNoDamageResistance
-      ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
+      ? `Each \\glossterm{injured} target is ${debuff} as a condition.`
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
 Hit: ${hitEffect}`;

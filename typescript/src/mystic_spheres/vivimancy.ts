@@ -315,7 +315,7 @@ export const vivimancy: MysticSphere = {
       // TODO: math
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it takes damage equal to half its maximum hit points.
+          If the target is \\glossterm{injured}, it takes damage equal to half its maximum hit points.
           The damage dealt this way cannot exceed your own maximum hit points.
         `,
         targeting: `
@@ -505,7 +505,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix.
-          If the target has no remaining damage resistance, this damage is maximized.
+          If the target is \\glossterm{injured}, this damage is maximized.
           When you kill a creature with this ability, you \\glossterm{briefly} gain a \\plus2 accuracy bonus.
         `,
         targeting: `
