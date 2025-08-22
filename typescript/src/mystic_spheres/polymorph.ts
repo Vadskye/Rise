@@ -455,33 +455,31 @@ export const polymorph: MysticSphere = {
       name: 'Regeneration',
 
       effect: `
-        At the end of each round, you regain hit points equal to your \\glossterm{power}.
+        At the end of each round, you regain hit points equal to half your \\glossterm{power}.
       `,
       rank: 3,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
+      scaling: { special: 'The healing increases by 2 for each rank beyond 3.' },
       type: 'Attune (deep)',
     },
 
     {
       name: 'Empowered Regeneration',
 
-      // -1d6 for double healing on vital wounds
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d6 \add your \\glossterm{power}
-        If you gained a vital wound this round, this healing is doubled.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add your \\glossterm{power}.
       `,
       rank: 5,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
       type: 'Attune (deep)'
     },
 
     {
-      name: 'Efficient Regeneration',
+      name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d10 \add 1d10 per 2 \\glossterm{power}.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add 1d8 per 2 \\glossterm{power}.
       `,
       rank: 7,
       roles: ['healing'],

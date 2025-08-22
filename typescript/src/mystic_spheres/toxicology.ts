@@ -548,10 +548,10 @@ export const toxicology: MysticSphere = {
     {
       name: 'Regenerative Fungus',
 
-      // -1r relative to normal regeneration for the Fort penalty
+      // -1 rank for vital roll penalty
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain hit points equal to your \\glossterm{power}.
-        Whenever you regain hit points in this way, you \\glossterm{briefly} take a \\minus2 penalty to your Fortitude defense.
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain hit points equal to half your \\glossterm{power}.
+        Whenever you regain hit points in this way, you \\glossterm{briefly} take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 2,
       roles: ['attune', 'healing'],
