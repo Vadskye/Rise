@@ -436,15 +436,15 @@ export const vivimancy: MysticSphere = {
       name: 'Lifetap Ward',
 
       effect: `
-        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
-        However, you take a -4 penalty to your maximum \\glossterm{hit points}.
+        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        However, you also gain a +8 bonus to your \glossterm{injury point}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +16, but the penalty increases to -8.`,
-        5: `The bonus increases to +32, but the penalty increases to -16.`,
-        7: `The bonus increases to +64, but the penalty increases to -32.`,
+        3: `Both bonuses increase to +16.`,
+        5: `Both bonuses increase to +32.`,
+        7: `Both bonuses increase to +64.`,
       },
       type: 'Attune',
     },

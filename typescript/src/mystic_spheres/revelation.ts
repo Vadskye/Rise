@@ -204,7 +204,7 @@ export const revelation: MysticSphere = {
       name: 'Precognitive Defense',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
       `,
       rank: 1,
       roles: ['attune'],
