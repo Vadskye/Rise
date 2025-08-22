@@ -117,7 +117,7 @@ impl CustomAbility {
         Self {
             effect: format!("
                 The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
-                \\hit If the target is \\glossterm{injured}, it is compelled to spend its next standard action doing nothing but groveling before the $name.
+                \\hit If the target is \\glossterm<injured>, it is compelled to spend its next standard action doing nothing but groveling before the $name.
                 After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
             "),
             is_magical: true,

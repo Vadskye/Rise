@@ -144,7 +144,7 @@ pub fn aberrations() -> Vec<MonsterEntry> {
             attributes: vec![4, 0, 6, 4, 4, 6],
             elite: true,
             level: 12,
-            role: Role::Mystic,
+            role: Role::Leader,
             size: Size::Huge,
         },
         name: "Aboleth".to_string(),

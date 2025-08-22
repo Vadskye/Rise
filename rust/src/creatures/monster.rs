@@ -273,7 +273,6 @@ impl Monster {
         vec![
             Self::standard_brute(level),
             Self::standard_leader(level),
-            Self::standard_mystic(level),
             Self::standard_skirmisher(level),
             Self::standard_sniper(level),
             Self::standard_warrior(level),
@@ -304,19 +303,6 @@ impl Monster {
         monster.creature.add_standard_spells();
         monster.creature.weapons = vec![Weapon::bite()];
         monster.creature.set_name("Leader");
-
-        monster
-    }
-
-    pub fn standard_mystic(level: i32) -> Self {
-        let mut monster = Self::new(false, CreatureType::Planeforged, Role::Mystic, level);
-        monster.creature.set_base_attributes([0, 0, 2, 0, 2, 4]);
-        monster
-            .creature
-            .set_attribute_scaling(level, vec![Attribute::Perception, Attribute::Willpower]);
-        monster.creature.add_standard_spells();
-        monster.creature.weapons = vec![];
-        monster.creature.set_name("Mystic");
 
         monster
     }
