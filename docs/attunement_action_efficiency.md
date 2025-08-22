@@ -264,6 +264,8 @@ As rank multiplier:
 * Rank 6: 4x
 * Rank 7: 6x
 
+TODO: calculate apparel value, since apparel is 0.5 EA worse than self-cast spells
+
 ### Weapon tag: 1.0
 
 Assume that all weapons are similar in power to +1 accuracy, so 1.0 EA.
