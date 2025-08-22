@@ -945,11 +945,11 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \begin{dtable!*}
         \lcaption{Armor Special Materials}
         \begin{dtabularx}{\textwidth}{l l l l >{\ccol}X l}
-          \tb{Material}              & \tb{Damage Resistance} & \tb{Encumbrance} & \tb{Special Effect}                     & \tb{Material} & \tb{Item Rank (Cost)} \tableheaderrule
-          % This is about 12 resist at r5 and 24 resist at r7, which is ~1 rank behind an enhancement bonus.
+          \tb{Material}              & \tb{Durability} & \tb{Encumbrance} & \tb{Special Effect}                     & \tb{Material} & \tb{Item Rank (Cost)} \tableheaderrule
+          % This is about 10 HP at r5 and 32 resist at r8.
           % That's probably okay given the encumbrance and Strength costs.
-          Adamantine\fn{1}           & \plus3                 & \plus2           & Very heavy                              & Metal         & 5 (2,500 gp)  \\
-          Adamantine, pure\fn{1}     & \plus5                 & \plus2           & Very heavy                              & Metal         & 8 (312,500 gp) \\
+          Adamantine\fn{1}           & \plus2                 & \plus2           & Very heavy                              & Metal         & 5 (2,500 gp)  \\
+          Adamantine, pure\fn{1}     & \plus4                 & \plus2           & Very heavy                              & Metal         & 8 (312,500 gp) \\
           % magic defense                                                                                                                  
           Cold iron\fn{1}            & \tdash                 & \tdash           & \minus1 Armor, \plus1 defenses vs magic & Metal         & 2 (20 gp)     \\
           Cold iron, pure\fn{1}      & \tdash                 & \tdash           & \minus1 Armor, \plus2 defenses vs magic & Metal         & 5 (2,500 gp)   \\
@@ -967,7 +967,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           Elvenweave, pure           & \tdash                 & \minus2          & \tdash                                  & Leather       & 5 (2,500 gp)  \\
           % metal encumbrance reduction                                            
           Mithral                    & \plus1                 & \minus1          & \tdash                                  & Metal         & 4 (500 gp)   \\
-          Mithral, pure              & \plus2                 & \minus2          & \tdash                                  & Metal         & 7 (62,500 gp)  \\
+          Mithral, pure              & \plus1                 & \minus2          & \tdash                                  & Metal         & 7 (62,500 gp)  \\
           % stealth leather
           Shadeweave                & \minus1                 & \minus1          & \plus3 Stealth                                  & Leather       & 4 (500 gp)   \\
           Shadeweave, umbral        & \minus1                 & \minus2          & \plus5 Stealth                                  & Leather       & 6 (12,500 gp) \\
@@ -985,10 +985,10 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       Light and medium body armor weighs as much as a normal item of its size category.
       Heavy body armor is a \glossterm{heavyweight} item of its size category.
       For Medium creatures, light and medium adamantine armor requires a minimum Strength of 2 to wear, and heavy adamantine requires a minimum Strength of 5.
-      It also provides \plus2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      It also provides a \plus2 \glossterm{durability} bonus and increases your \glossterm{encumbrance} by 2.
 
       \parhead{Adamantine, Pure} Pure adamantine body armor is heavier than other armor, as described by adamantine armor.
-      It also provides \plus4 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      It also provides a \plus4 \glossterm{durability} bonus and increases your \glossterm{encumbrance} by 2.
 
       \parhead{Cold Iron} Cold iron armor grants you a \plus1 bonus to your defenses against \magical abilities.
       However, its Armor defense bonus is reduced by 1.
@@ -1015,23 +1015,23 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       Dragonscale is not considered to be metal, which may affect abilities like the \spell{heat metal} spell.
 
       \parhead{Shadeweave} Shadeweave body armor is exceptionally stealthy.
-      It reduces the \glossterm{encumbrance} and damage resistance from the armor by 1.
+      It reduces the \glossterm{encumbrance} and \glossterm{durability} from the armor by 1 (minimum 0).
       In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Stealth skill while wearing it.
 
       \parhead{Shadeweave, Umbral} Umbral shadeweave body armor is exceptionally stealthy.
-      It reduces the damage resistance from the armor by 1, and the \glossterm{encumbrance} by 2.
+      It reduces the \glossterm{durability} from the armor by 1 (minimum 0), and the \glossterm{encumbrance} by 2.
       In addition, you gain a \plus5 \glossterm{enhancement bonus} to the Stealth skill while wearing it.
 
       \parhead{Starmetal} Starmetal body armor is heavier than other armor, as described by adamantine armor.
-      In addition, it provides \plus1 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 1.
+      In addition, it provides a \plus1 \glossterm{durability} bonus and increases your \glossterm{encumbrance} by 1.
 
       \parhead{Starmetal, Pure} Pure starmetal body armor is heavier than other armor, as described by adamantine armor.
-      In addition, it provides \plus2 \glossterm{damage resistance} and increases your \glossterm{encumbrance} by 2.
+      In addition, it provides a \plus2 \glossterm{durability} bonus and increases your \glossterm{encumbrance} by 2.
 
-      \parhead{Vineweave} Vineweave body armor provides \plus1 \glossterm{damage resistance}.
+      \parhead{Vineweave} Vineweave body armor provides a \plus1 \glossterm{durability} bonus.
       However, it makes you \vulnerable to \atFire attacks.
 
-      \parhead{Vineweave, Braided} Braided vineweave body armor provides \plus2 \glossterm{damage resistance}.
+      \parhead{Vineweave, Braided} Braided vineweave body armor provides a \plus2 \glossterm{durability} bonus.
       However, it makes you \vulnerable to \atFire attacks.
 
   % Permanent tools like this generally have no clear relationship to spells.

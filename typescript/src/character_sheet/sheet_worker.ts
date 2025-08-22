@@ -770,13 +770,6 @@ function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) 
   }
   if (challengeRating === 4) {
     levelScaling += 2;
-
-    let levels_with_defense_bonuses = [8, 14];
-    for (const bonus_level of levels_with_defense_bonuses) {
-      if (level >= bonus_level) {
-        levelScaling += 1;
-      }
-    }
   }
   return levelScaling;
 }
