@@ -225,28 +225,27 @@ def calc_injury_point():
                 },
                 [
                     underlabel(
-                        "Level",
+                        "Rank mult",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "injury_point_level",
-                                "value": "(@{injury_point_level})",
+                                "name": "injury_point_rank_modifier",
                             }
                         ),
                     ),
-                    plus(),
+                    times(),
                     underlabel(
-                        "Con",
+                        "Lvl+Con",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "injury_point_constitution",
-                                "value": "(@{constitution})",
+                                "name": "injury_point_level_plus_con",
                             }
                         ),
+                        {"class": "calc-double-wide-value"},
                     ),
                     plus(),
-                    equation_misc_repeat("injury_point", 3),
+                    equation_misc_repeat("injury_point", 2),
                 ],
                 result_attributes={
                     "disabled": True,

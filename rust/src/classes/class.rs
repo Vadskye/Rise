@@ -118,20 +118,6 @@ impl Class {
         return !Self::core_classes().contains(self);
     }
 
-    // At level 10, one attunement is worth 8 HP generically, or about 11 to a caster.
-    // Assume 2 Con
-    // Low HP is (14 + 6 + 4) = 24 HP
-    // Med HP is (18 + 6 + 4) = 28 HP
-    // High HP is (20 + 9 + 6) = 35 HP
-    // Very high HP is (24 + 12 + 8) = 44 HP
-    // Conclusion: HP gap is slightly less valuable than attunement, or similar? Seems weird.
-    // Assume that a third of the value of Con comes from the HP modifier (+1 Fort, +1 fatigue, HP)
-    // So 2 points of Con should be similar to 2 points of HP progression.
-    // Low HP is (14 + 6 + 8) = 28 HP
-    // Med HP is (18 + 6 + 8) = 32 HP
-    // High HP is (20 + 9 + 12) = 41 HP
-    // Very high HP is (24 + 12 + 16) = 49 HP
-    // Conclusion: HP progression advancement should be 4 points
     pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 6
             // 3 points per insight point. Int gives (insight + trained + skill bonuses), but
