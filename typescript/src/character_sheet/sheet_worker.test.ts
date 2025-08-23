@@ -13,6 +13,7 @@ function setStandardFighter() {
     armor_usage_class: 'heavy',
     base_class: 'fighter',
     body_armor_defense: 5,
+    body_armor_durability: 6,
     body_armor_speed: -10,
     constitution_at_creation: 2,
     dexterity_at_creation: 2,
@@ -29,6 +30,7 @@ function setStandardWizard() {
     armor_usage_class: 'light',
     base_class: 'wizard',
     body_armor_defense: 2,
+    body_armor_durability: 2,
     constitution_at_creation: 0,
     dexterity_at_creation: 1,
     intelligence_at_creation: 3,
@@ -65,14 +67,40 @@ t.test('can calculate armor defense', (t) => {
   t.end();
 });
 
+t.test('can calculate durability', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['durability', 'durability_explanation'], (attrs) => {
+      t.match(attrs, {
+        durability: 16,
+        durability_explanation: '+6 (level scaling)  +2 (fighter)  +2 (Con)  +6 (body armor)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['durability', 'durability_explanation'], (attrs) => {
+      t.match(attrs, {
+        durability: 8,
+        durability_explanation: '+6 (level scaling)  +2 (body armor)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
 
 t.test('can calculate hit points', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
     getAttrs(['hit_points_max', 'hit_points_explanation'], (attrs) => {
       t.match(attrs, {
-        hit_points_max: 35,
-        hit_points_explanation: '+29 (level)  +6 (Con)',
+        hit_points_max: 74,
+        hit_points_explanation: '+10 (base)  +64 (4 * durability)',
       });
       t.end();
     });
@@ -82,8 +110,34 @@ t.test('can calculate hit points', (t) => {
     setStandardWizard();
     getAttrs(['hit_points_max', 'hit_points_explanation'], (attrs) => {
       t.match(attrs, {
-        hit_points_max: 20,
-        hit_points_explanation: '+20 (level)',
+        hit_points_max: 42,
+        hit_points_explanation: '+10 (base)  +32 (4 * durability)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate injury point', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['injury_point', 'injury_point_explanation'], (attrs) => {
+      t.match(attrs, {
+        injury_point: 34,
+        injury_point_explanation: '+10 (base)  +20 (2 * level)  +4 (2 * Con)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['injury_point', 'injury_point_explanation'], (attrs) => {
+      t.match(attrs, {
+        injury_point: 30,
+        injury_point_explanation: '+10 (base)  +20 (2 * level)',
       });
       t.end();
     });
@@ -292,32 +346,6 @@ t.test('can calculate mental defense', (t) => {
       t.match(attrs, {
         mental: 10,
         mental_explanation: '+5 (level)  +2 (Wil)  +3 (wizard)',
-      });
-      t.end();
-    });
-  });
-
-  t.end();
-});
-
-t.test('can calculate damage resistance', (t) => {
-  t.test('for fighter', (t) => {
-    setStandardFighter();
-    getAttrs(['damage_resistance', 'damage_resistance_explanation'], (attrs) => {
-      t.match(attrs, {
-        damage_resistance: 0,
-        damage_resistance_explanation: '',
-      });
-      t.end();
-    });
-  });
-
-  t.test('for wizard', (t) => {
-    setStandardWizard();
-    getAttrs(['damage_resistance', 'damage_resistance_explanation'], (attrs) => {
-      t.match(attrs, {
-        damage_resistance: 0,
-        damage_resistance_explanation: '',
       });
       t.end();
     });
