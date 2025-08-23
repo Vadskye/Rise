@@ -443,29 +443,13 @@ def core_statistics(destination):
                     ],
                 ),
             ),
-            sidelabel(
-                "DR" if destination == "roll20" else "Damage resistance",
-                flex_row(
-                    {"class": "core-statistics-split"},
-                    [
-                        number_input(
-                            {
-                                "class": "large-number-input",
-                                "name": "damage_resistance",
-                                "value": "@{damage_resistance}",
-                            }
-                        ),
-                        span({"class": "core-statistics-separator"}, "/"),
-                        number_input(
-                            {
-                                "class": "large-number-input",
-                                "disabled": True,
-                                "name": "damage_resistance_maximum_display",
-                                "value": "@{damage_resistance_maximum}",
-                            }
-                        ),
-                    ],
-                ),
+            sidelabeled_number_input(
+                "Injury point",
+                input_attributes={
+                    "disabled": True,
+                    "name": f"injury_point_display",
+                    "value": "@{injury_point}",
+                },
             ),
             sidelabel(
                 "Fatigue level" if destination == "roll20" else "Fatigue tolerance",
