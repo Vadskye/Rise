@@ -14,6 +14,7 @@ from cgi_simple import (
     plus,
     span,
     text_input,
+    times,
     underlabel,
 )
 from sheet_data import (
@@ -106,6 +107,71 @@ def calc_fatigue_tolerance():
     )
 
 
+def calc_durability():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Durability"),
+            equation(
+                {
+                    "class": "large-number-equation",
+                },
+                [
+                    underlabel(
+                        "Level",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "durability_level",
+                                "value": "(@{durability_level})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Class",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "durability_base_class",
+                                "value": "(@{durability_base_class})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Con",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "durability_constitution",
+                                "value": "(@{constitution})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Armor",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "durability_armor",
+                                "value": "(@{body_armor_durability})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("durability", 1),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "durability_display",
+                    "value": "@{durability_maximum}",
+                },
+            ),
+        ]
+    )
+
+
 def calc_hit_points():
     return flex_row(
         [
@@ -116,23 +182,23 @@ def calc_hit_points():
                 },
                 [
                     underlabel(
-                        "Class",
+                        "Rank mult",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "hit_points_class",
-                                "value": "(@{hit_points_from_class})",
+                                "name": "hit_points_rank_multiplier",
+                                "value": "(@{hit_points_rank_multiplier})",
                             }
                         ),
                     ),
-                    plus(),
+                    times(),
                     underlabel(
-                        "Con",
+                        "Durability",
                         number_input(
                             {
                                 "disabled": True,
-                                "name": "hit_points_constitution",
-                                "value": "(@{hit_points_from_constitution})",
+                                "name": "hit_points_durability",
+                                "value": "(@{hit_points_durability})",
                             }
                         ),
                     ),
@@ -148,3 +214,45 @@ def calc_hit_points():
         ]
     )
 
+
+def calc_injury_point():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Injury point"),
+            equation(
+                {
+                    "class": "large-number-equation",
+                },
+                [
+                    underlabel(
+                        "Level",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "injury_point_level",
+                                "value": "(@{injury_point_level})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    underlabel(
+                        "Con",
+                        number_input(
+                            {
+                                "disabled": True,
+                                "name": "injury_point_constitution",
+                                "value": "(@{constitution})",
+                            }
+                        ),
+                    ),
+                    plus(),
+                    equation_misc_repeat("injury_point", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "injury_point_display",
+                    "value": "@{injury_point_maximum}",
+                },
+            ),
+        ]
+    )

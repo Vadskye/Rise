@@ -1532,6 +1532,7 @@ function handleDurability() {
 
       setAttrs({
         durability: durability,
+        durability_base_class: durabilityFromClass,
         durability_explanation: formatCombinedExplanation(v.miscExplanation, [
           { name: 'level scaling', value: durabilityFromLevel },
           { name: v.base_class, value: durabilityFromClass },
