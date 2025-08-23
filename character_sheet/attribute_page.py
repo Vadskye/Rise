@@ -347,7 +347,6 @@ def calc_non_attribute():
                 {"class": "sidebar"},
                 [
                     calc_attunement_points(),
-                    calc_damage_resistance(),
                     calc_encumbrance(),
                 ],
             ),
@@ -359,35 +358,6 @@ def calc_non_attribute():
                 ],
             )
         ]
-    )
-
-def calc_damage_resistance():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Damage resist"),
-            equation(
-                {
-                    "class": "large-number-equation",
-                },
-                [
-                    underlabel(
-                        "Armor",
-                        number_input(
-                            {
-                                "name": "damage_resistance_armor",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("damage_resistance", 3),
-                ],
-                result_attributes={
-                    "disabled": "true",
-                    "name": "damage_resistance_display",
-                    "value": "(@{damage_resistance_maximum})",
-                },
-            ),
-        ],
     )
 
 

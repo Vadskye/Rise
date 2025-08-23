@@ -96,7 +96,7 @@ fn format_defenses(creature: &Creature) -> String {
     let ment = creature.calc_defense(&Defense::Mental);
 
     let hp = creature.calc_hit_points();
-    let dr = creature.calc_damage_resistance();
+    let ip = creature.calc_injury_point();
 
     let points = armor * 2 + brawn + fort + reflex + ment;
     let self_hit = (generic_attack_outcome(&creature, &creature).hit_probability * 100.0) as i32;
@@ -104,9 +104,8 @@ fn format_defenses(creature: &Creature) -> String {
     format!(
         "### {name}
 A/B/F/R/M: {armor} / {brawn} / {fort} / {reflex} / {ment}
-HP/DR/Total: {hp} / {dr} / {hp_plus_dr}
+HP/IP: {hp} / {ip}
 Points / Self-hit: {points} / {self_hit}%",
         name = creature.name.as_ref().unwrap(),
-        hp_plus_dr = hp + dr,
     )
 }

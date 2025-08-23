@@ -1,15 +1,15 @@
-use crate::core_mechanics::{Defense, HitPointProgression};
-use crate::core_mechanics::Defense::{Armor, Brawn, Fortitude, Reflex, Mental};
+use crate::core_mechanics::Defense;
+use crate::core_mechanics::Defense::{Armor, Brawn, Fortitude, Mental, Reflex};
 use crate::creatures::{Creature, HasModifiers, Modifier};
 
 #[derive(Copy, Clone, Debug, Default, Hash)]
 pub enum Role {
     Brute,      // melee HP-heavy damage sponge, like barbarian or any heavy weapon user
     Skirmisher, // high mobility mixed range, like rogue/monk/ranger
-    Warrior, // melee or short range defense tank, like a typical sword and board fighter/paladin
-    Sniper,  // low mobility long range, like an archer
+    Warrior,    // melee or short range defense tank, like a typical sword and board fighter/paladin
+    Sniper,     // low mobility long range, like an archer
     #[default]
-    Leader,  // average in all respects
+    Leader, // average in all respects
 }
 
 // No clear balancing. Hoping that the role differentiation makes them hard to directly compare.
@@ -33,7 +33,6 @@ impl Role {
         for defense in Defense::all() {
             self.add_modifier(creature, Modifier::Defense(defense, self.defense(&defense)))
         }
-        creature.hit_point_progression = self.hit_point_progression()
     }
 
     pub fn defense(&self, defense: &Defense) -> i32 {
@@ -76,23 +75,13 @@ impl Role {
         }
     }
 
-    pub fn damage_resistance_progression(self) -> HitPointProgression {
+    pub fn injury_point_multiplier(&self) -> f64 {
         match self {
-            Role::Brute => HitPointProgression::Medium,
-            Role::Leader => HitPointProgression::High,
-            Role::Skirmisher => HitPointProgression::Medium,
-            Role::Sniper => HitPointProgression::Medium,
-            Role::Warrior => HitPointProgression::Extreme,
-        }
-    }
-
-    pub fn hit_point_progression(&self) -> HitPointProgression {
-        match self {
-            Role::Brute => HitPointProgression::Extreme,
-            Role::Leader => HitPointProgression::VeryHigh,
-            Role::Skirmisher => HitPointProgression::VeryHigh,
-            Role::Sniper => HitPointProgression::High,
-            Role::Warrior => HitPointProgression::VeryHigh,
+            Role::Brute => 0.75,
+            Role::Leader => 0.5,
+            Role::Skirmisher => 0.5,
+            Role::Sniper => 0.5,
+            Role::Warrior => 0.25,
         }
     }
 

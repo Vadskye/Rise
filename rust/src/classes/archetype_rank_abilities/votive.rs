@@ -170,7 +170,8 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             // Assume covenant of bloodforging and already wearing light armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::DamageResistance(3),
+                Modifier::Durability(2),
+                Modifier::VitalRoll(1),
             ]),
         },
         RankAbility {
@@ -207,54 +208,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(20)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(49)]),
         },
         RankAbility {
             complexity: 1,

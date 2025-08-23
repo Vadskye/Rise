@@ -242,7 +242,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn ki<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 1,
             name: "Ki Energy",
@@ -501,41 +501,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
-    add_ki_barrier(&mut abilities);
-    abilities
-}
-
-fn add_ki_barrier(abilities: &mut Vec<RankAbility<'_>>) {
-    // 4x rank
-    for rank in 1..4 {
-        abilities.append(&mut vec![RankAbility {
-            name: "Ki Barrier Scaling",
-            rank,
-            modifiers: Some(vec![Modifier::DamageResistance(rank * 4)]),
-            ..Default::default()
-        }]);
-    }
-
-    // 5x rank
-    for rank in 4..7 {
-        abilities.append(&mut vec![RankAbility {
-            name: "Ki Barrier Scaling",
-            rank,
-            modifiers: Some(vec![Modifier::DamageResistance(rank * 5)]),
-            ..Default::default()
-        }]);
-    }
-
-    // 7x rank
-    for rank in 7..8 {
-        abilities.append(&mut vec![RankAbility {
-            name: "Ki Barrier Scaling",
-            rank,
-            modifiers: Some(vec![Modifier::DamageResistance(rank * 8)]),
-            ..Default::default()
-        }]);
-    }
+    ]
 }
 
 pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
