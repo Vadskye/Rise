@@ -664,7 +664,7 @@ impl Monster {
         format!(
             "
                 \\pari \\textbf<HP> {hp}
-                    \\monsep \\textbf<DR> {dr}
+                    \\monsep \\textbf<IP> {ip}
                 \\pari \\textbf<Defenses>
                     Armor {armor}
                     \\monsep Brn {brawn}
@@ -673,7 +673,7 @@ impl Monster {
                     {ment_text}
             ",
             hp = self.creature.calc_hit_points(),
-            dr = self.creature.calc_damage_resistance(),
+            ip = self.creature.calc_injury_point(),
             armor = self.creature.calc_defense(&Defense::Armor),
             brawn = self.creature.calc_defense(&Defense::Brawn),
             fort = self.creature.calc_defense(&Defense::Fortitude),

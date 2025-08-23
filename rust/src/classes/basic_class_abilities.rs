@@ -14,8 +14,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
             If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
 
-            {hit_points}
-
             {defenses}
 
             {resources}
@@ -29,7 +27,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
             {class_skills}
         ",
         base_class_table = class.latex_base_class_table().trim(),
-        hit_points = generate_latex_hit_points(class).trim(),
         defenses = generate_latex_defenses(class).trim(),
         name = class.name(),
         resources = generate_latex_resources(class).trim(),
@@ -111,17 +108,6 @@ fn format_defense(defense: &Defense, modifier: i32) -> Option<String> {
     } else {
         None
     }
-}
-
-fn generate_latex_hit_points(class: &Class) -> String {
-    format!(
-        "
-            \\cf<{shorthand_name}><Hit Points>
-            {hp_text}
-        ",
-        shorthand_name = class.shorthand_name(),
-        hp_text = class.hit_point_progression().to_class_text(),
-    )
 }
 
 // fn generate_labeled_english_number(val: i32, singular: &str, plural: &str) -> String {
