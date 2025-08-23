@@ -221,3 +221,211 @@ t.test('can calculate speed', (t) => {
 
   t.end();
 });
+
+t.test('can calculate brawn defense', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['brawn', 'brawn_explanation'], (attrs) => {
+      t.match(attrs, {
+        brawn: 11,
+        brawn_explanation: '+5 (level)  +3 (Str)  +3 (fighter)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['brawn', 'brawn_explanation'], (attrs) => {
+      t.match(attrs, {
+        brawn: 8,
+        brawn_explanation: '+5 (level)  +3 (wizard)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate reflex defense', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['reflex', 'reflex_explanation'], (attrs) => {
+      t.match(attrs, {
+        reflex: 10,
+        reflex_explanation: '+5 (level)  +2 (Dex)  +3 (fighter)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['reflex', 'reflex_explanation'], (attrs) => {
+      t.match(attrs, {
+        reflex: 9,
+        reflex_explanation: '+5 (level)  +1 (Dex)  +3 (wizard)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate mental defense', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['mental', 'mental_explanation'], (attrs) => {
+      t.match(attrs, {
+        mental: 9,
+        mental_explanation: '+5 (level)  +1 (Wil)  +3 (fighter)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['mental', 'mental_explanation'], (attrs) => {
+      t.match(attrs, {
+        mental: 10,
+        mental_explanation: '+5 (level)  +2 (Wil)  +3 (wizard)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate damage resistance', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['damage_resistance', 'damage_resistance_explanation'], (attrs) => {
+      t.match(attrs, {
+        damage_resistance: 0,
+        damage_resistance_explanation: '',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['damage_resistance', 'damage_resistance_explanation'], (attrs) => {
+      t.match(attrs, {
+        damage_resistance: 0,
+        damage_resistance_explanation: '',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate jump distance', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'vertical_jump_distance'], (attrs) => {
+      t.match(attrs, {
+        horizontal_jump_distance: 10,
+        horizontal_jump_distance_explanation: '+5 (base speed / 4)  +5 (strength)',
+        vertical_jump_distance: 5,
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'vertical_jump_distance'], (attrs) => {
+      t.match(attrs, {
+        horizontal_jump_distance: 5,
+        horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+        vertical_jump_distance: 0,
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate magical power', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['magical_power', 'magical_power_explanation'], (attrs) => {
+      t.match(attrs, {
+        magical_power: 6,
+        magical_power_explanation: '+5 (half level)  +1 (Wil)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['magical_power', 'magical_power_explanation'], (attrs) => {
+      t.match(attrs, {
+        magical_power: 7,
+        magical_power_explanation: '+5 (half level)  +2 (Wil)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate mundane power', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['mundane_power', 'mundane_power_explanation'], (attrs) => {
+      t.match(attrs, {
+        mundane_power: 8,
+        mundane_power_explanation: '+5 (half level)  +3 (Str)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['mundane_power', 'mundane_power_explanation'], (attrs) => {
+      t.match(attrs, {
+        mundane_power: 5,
+        mundane_power_explanation: '+5 (half level)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate fatigue penalty', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['fatigue_penalty'], (attrs) => {
+      t.match(attrs, {
+        fatigue_penalty: 0,
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['fatigue_penalty'], (attrs) => {
+      t.match(attrs, {
+        fatigue_penalty: 0,
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
