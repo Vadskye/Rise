@@ -188,7 +188,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::DamageResistance(2),
+                Modifier::Durability(2),
             ]),
         },
     ];

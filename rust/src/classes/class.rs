@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::{Defense, HitPointProgression, Resource};
+use crate::core_mechanics::{Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -134,7 +134,6 @@ impl Class {
     // Conclusion: HP progression advancement should be 4 points
     pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 6
-            + self.hit_point_progression().creation_point_cost()
             // 3 points per insight point. Int gives (insight + trained + skill bonuses), but
             //   insight is the strongest of those, so assume it's half the value of Int.
             + self.insight_points() * 3
@@ -590,32 +589,6 @@ impl Class {
         };
 
         base_bonus + class_bonus
-    }
-
-    pub fn hit_point_progression(&self) -> HitPointProgression {
-        match self {
-            Self::Automaton => HitPointProgression::High,
-            Self::Barbarian => HitPointProgression::VeryHigh,
-            Self::Cleric => HitPointProgression::Medium,
-            Self::Dragon => HitPointProgression::High,
-            Self::Druid => HitPointProgression::Medium,
-            Self::Dryaidi => HitPointProgression::Medium,
-            Self::Fighter => HitPointProgression::High,
-            Self::Harpy => HitPointProgression::Medium,
-            Self::Incarnation => HitPointProgression::High,
-            Self::Monk => HitPointProgression::High,
-            Self::Naiad => HitPointProgression::Medium,
-            Self::Oozeborn => HitPointProgression::VeryHigh,
-            Self::Paladin => HitPointProgression::High,
-            Self::Ranger => HitPointProgression::High,
-            Self::Rogue => HitPointProgression::Medium,
-            Self::Sorcerer => HitPointProgression::Medium,
-            Self::Treant => HitPointProgression::VeryHigh,
-            Self::Troll => HitPointProgression::VeryHigh,
-            Self::Vampire => HitPointProgression::High,
-            Self::Votive => HitPointProgression::Medium,
-            Self::Wizard => HitPointProgression::Medium,
-        }
     }
 
     pub fn insight_points(&self) -> i32 {
@@ -1362,7 +1335,7 @@ impl Class {
             "
                 \\begin<columntable>
                     \\begin<dtabularx><\\columnwidth><l l l l {xcol}>
-                        \\tb<Level> & \\tb<Rank> & \\tb<HP> & \\tb<HP Per Con> & \\tb<Universal Benefits> \\tableheaderrule
+                        \\tb<Level> & \\tb<Rank> & \\tb<HP Mult> & \\tb<Durability> & \\tb<Universal Benefits> \\tableheaderrule
                         {level_rows}
                     \\end<dtabularx>
                 \\end<columntable>
@@ -1375,14 +1348,26 @@ impl Class {
     fn latex_base_class_table_rows(&self) -> String {
         let mut level_rows = Vec::new();
         for level in 1..22 {
+            let rank = (level + 2) / 3;
+            let hp_multiplier = match rank {
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 6,
+                6 => 8,
+                7 => 10,
+                _ => panic!("impossible")
+            };
+            // TODO: should this include injury point?
             level_rows.push(format!(
                 "
-                    {level} & {rank} & {base_hp} & {hp_per_con} & {special} \\\\
+                    {level} & {rank} & {hp_multiplier} & {durability_bonus} & {special} \\\\
                 ",
                 level = level,
-                rank = (level + 2) / 3,
-                base_hp = self.hit_point_progression().hp_from_level(level),
-                hp_per_con = self.hit_point_progression().hp_from_con(level, 1),
+                rank = rank,
+                hp_multiplier = format!("\\mult{}", hp_multiplier),
+                durability_bonus = level - rank,
                 special = universal_character_progression_at_level(level),
             ))
         }

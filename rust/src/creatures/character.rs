@@ -16,8 +16,6 @@ impl Character {
     pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
         let mut creature = creature::Creature::new(level, CreatureCategory::Character);
 
-        creature.hit_point_progression = class.hit_point_progression();
-
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {
                 for modifier in rank_modifiers {
@@ -490,20 +488,8 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
         modifiers.push(Modifier::StrikeDamageDice(strike_damage));
     }
 
-    let dr = if level >= 22 {
-        32
-    } else if level >= 16 {
-        16
-    } else if level >= 10 {
-        8
-    } else if level >= 4 {
-        4
-    } else {
-        0
-    };
-    if dr > 0 {
-        modifiers.push(Modifier::DamageResistance(dr));
-    }
+    // TODO: should any magic modifier replace the old DR modifier that used to go here? Maybe
+    // vital rolls?
 
     let hp = if level >= 23 {
         32
