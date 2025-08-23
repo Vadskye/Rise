@@ -123,7 +123,7 @@ Hit: The target is dazzled as a condition.`,
       attack_name: 'Flashy Light',
       is_magical: true,
       is_targeted: true,
-      monster_effect: `The $name makes an attack against something within 60 feet.
+      monster_effect: `The $name makes a $accuracy+4 attack vs. $defense against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
       tags: '',
       usage_time: 'standard',
@@ -157,7 +157,7 @@ Miss: Half damage.`,
       attack_name: 'Fireball',
       is_magical: true,
       is_targeted: false,
-      monster_effect: `The $name makes an attack against everything in a 15 foot radius within 30 feet.
+      monster_effect: `The $name makes a $accuracy-2 attack vs. $defense against everything in a 15 foot radius within 30 feet.
 Hit: 1d8+3 damage.
 Miss: Half damage.`,
       tags: '',

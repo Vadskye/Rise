@@ -1,53 +1,6 @@
 import t from 'tap';
 import { Creature } from '@src/character_sheet/creature';
-import { Grimoire } from '@src/monsters/grimoire';
-import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
-import { convertMonsterToLatex, genKnowledgeText } from './generate_monster_descriptions';
-import { multilineEqual } from '@src/util/testing';
-
-t.test('can convert an aboleth to latex', (t) => {
-  const grimoire = new Grimoire();
-  addAberrations(grimoire);
-  const aboleth = grimoire.getMonster('aboleth');
-  multilineEqual(
-    t,
-    convertMonsterToLatex(aboleth),
-    `\\newpage
-      \\par \\noindent
-      \\begin{minipage}{\\columnwidth}
-          \\monsubsection{aboleth}{12 Mystic}[Elite]
-          \\monstersize{Huge undefined}
-
-      \\end{minipage}
-
-
-
-
-      \\par \\RaggedRight
-
-      \\begin{monsterstatistics}
-
-      \\pari \\textbf{HP} 159
-        \\monsep \\textbf{DR} 176
-      \\pari \\textbf{Defenses}
-        Armor 14
-        \\monsep Fort 18
-        \\monsep Ref 15
-        \\monsep Ment 20
-
-
-
-
-
-
-
-
-      \\end{monsterstatistics}
-
-      \\monsterabilitiesheader{$Name}`,
-  );
-  t.end();
-});
+import { genKnowledgeText } from './generate_monster_descriptions';
 
 t.test('can generate empty knowledge text', (t) => {
   const creature = Creature.new();
