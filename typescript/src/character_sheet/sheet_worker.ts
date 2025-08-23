@@ -24,13 +24,13 @@ type CreatureSize =
   | 'huge'
   | 'gargantuan'
   | 'colossal';
-type ProgressionName = 'low' | 'medium' | 'high' | 'very high' | 'extreme';
+type MonsterIpMultiplier = 0.75 | 0.5 | 0.25;
 
 interface BaseClassModifier {
   armor_defense: number;
   armor_usage_class?: 'light' | 'medium' | 'heavy';
-  damage_resistance?: ProgressionName;
-  hit_points: ProgressionName;
+  injury_point_multiplier?: MonsterIpMultiplier;
+  durability: number;
   brawn: number;
   fortitude: number;
   reflex: number;
@@ -49,8 +49,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   brute: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'extreme',
+    durability: 6,
+    injury_point_multiplier: 0.75,
     brawn: 5,
     fortitude: 4,
     reflex: 4,
@@ -59,28 +59,18 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   leader: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'high',
-    hit_points: 'very high',
+    durability: 6,
+    injury_point_multiplier: 0.5,
     brawn: 4,
     fortitude: 4,
     reflex: 4,
     mental: 4,
   },
-  mystic: {
-    armor_defense: 3,
-    armor_usage_class: 'medium',
-    damage_resistance: 'very high',
-    hit_points: 'high',
-    brawn: 3,
-    fortitude: 4,
-    reflex: 5,
-    mental: 6,
-  },
   skirmisher: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'very high',
+    durability: 2,
+    injury_point_multiplier: 0.5,
     brawn: 4,
     fortitude: 3,
     reflex: 5,
@@ -89,8 +79,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   sniper: {
     armor_defense: 3,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'high',
+    durability: 2,
+    injury_point_multiplier: 0.5,
     brawn: 3,
     fortitude: 3,
     reflex: 5,
@@ -99,8 +89,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   warrior: {
     armor_defense: 5,
     armor_usage_class: 'medium',
-    damage_resistance: 'very high',
-    hit_points: 'high',
+    durability: 4,
+    injury_point_multiplier: 0.25,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
@@ -110,11 +100,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // CLASSES
   barbarian: {
     armor_defense: 0,
+    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
@@ -122,11 +112,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   cleric: {
     armor_defense: 0,
+    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 5,
-    hit_points: 'medium',
     attunement_points: 1,
     insight_points: 1,
     class_skill_count: 3,
@@ -134,11 +124,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   druid: {
     armor_defense: 0,
+    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 1,
     insight_points: 1,
     class_skill_count: 4,
@@ -147,11 +137,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   fighter: {
     armor_defense: 1,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 3,
@@ -159,11 +149,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   monk: {
     armor_defense: 0,
+    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
@@ -171,11 +161,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   paladin: {
     armor_defense: 0,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 3,
@@ -183,11 +173,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   ranger: {
     armor_defense: 0,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 6,
@@ -195,11 +185,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   rogue: {
     armor_defense: 0,
+    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 6,
@@ -207,11 +197,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   sorcerer: {
     armor_defense: 0,
+    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 2,
     insight_points: 0,
     class_skill_count: 3,
@@ -219,11 +209,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   votive: {
     armor_defense: 0,
+    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 5,
-    hit_points: 'medium',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 3,
@@ -231,11 +221,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   wizard: {
     armor_defense: 0,
+    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'low',
     attunement_points: 2,
     insight_points: 2,
     class_skill_count: 4,
@@ -245,11 +235,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // OPTIONAL CLASSES
   automaton: {
     armor_defense: 0,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 4,
@@ -257,11 +247,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dragon: {
     armor_defense: 0,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 5,
@@ -269,11 +259,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dryad: {
     armor_defense: 0,
+    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 5,
-    hit_points: 'low',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 4,
@@ -281,11 +271,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   harpy: {
     armor_defense: 0,
+    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 4,
@@ -293,11 +283,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   naiad: {
     armor_defense: 0,
+    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 4,
     mental: 4,
-    hit_points: 'low',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 4,
@@ -305,11 +295,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   oozeborn: {
     armor_defense: 0,
+    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 3,
@@ -317,11 +307,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   treant: {
     armor_defense: 0,
+    durability: 3,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
@@ -329,11 +319,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   troll: {
     armor_defense: 0,
+    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
     insight_points: 0,
     class_skill_count: 4,
@@ -341,11 +331,11 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   vampire: {
     armor_defense: 0,
+    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
     insight_points: 0,
     class_skill_count: 4,
@@ -558,7 +548,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'brawling_accuracy',
     'brawn',
     'constitution',
-    'damage_resistance',
     'dexterity',
     'encumbrance',
     'fatigue_tolerance',
@@ -707,10 +696,11 @@ function handleCoreStatistics() {
   handleCharacterNameSanitization();
   handleDefenses();
   handleDamageDice();
-  handleDamageResistance();
+  handleDurability();
   handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
+  handleInjuryPoint();
   handleJumpDistance();
   handleMagicalPower();
   handleMundanePower();
@@ -1370,60 +1360,6 @@ function handleDamageDice() {
   handleStrikeAttacks();
 }
 
-function handleDamageResistance() {
-  onGet({
-    variables: {
-      miscName: 'damage_resistance',
-      numeric: [
-        'hit_points_maximum',
-        'level',
-        'challenge_rating',
-        'body_armor_damage_resistance',
-      ],
-      string: ['base_class'],
-    },
-    options: {
-      variablesWithoutListen: {
-        numeric: ['damage_resistance', 'damage_resistance_maximum'],
-      },
-    },
-    callback: (v) => {
-      let drFromLevel = 0;
-      const drProgression = v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance;
-      if (drProgression) {
-        drFromLevel = calcHpBonuses(drProgression, v.level, 0).hpFromLevel;
-      }
-      const playerTotalDr = v.body_armor_damage_resistance + drFromLevel + v.misc;
-
-      var crMultiplier =
-        {
-          1: 1,
-          4: 4,
-        }[v.challenge_rating!] || 1;
-      const monsterTotalDr = Math.floor(playerTotalDr * crMultiplier);
-
-      const attrs: Attrs = {
-        damage_resistance_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'body armor', value: v.body_armor_damage_resistance },
-          { name: 'Progression', value: drFromLevel },
-          { name: 'CR', value: monsterTotalDr - playerTotalDr },
-        ]),
-        damage_resistance: undefined,
-        damage_resistance_max: monsterTotalDr,
-        damage_resistance_maximum: monsterTotalDr,
-      };
-      let should_set_current_dr =
-        monsterTotalDr < v.damage_resistance ||
-        v.damage_resistance === v.damage_resistance_maximum ||
-        !v.damage_resistance_maximum;
-      if (should_set_current_dr) {
-        attrs.damage_resistance = monsterTotalDr;
-      }
-      setAttrs(attrs);
-    },
-  });
-}
-
 function sanitizeText(text: string) {
   if (!text) {
     return text;
@@ -1582,6 +1518,31 @@ function handleDebuffs() {
   });
 }
 
+function handleDurability() {
+  onGet({
+    variables: {
+      miscName: 'durability',
+      numeric: ['level', 'constitution', 'body_armor_durability'],
+      string: ['base_class'],
+    },
+    callback: (v) => {
+      const durabilityFromLevel = v.level - calculateStandardRank(v.level);
+      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class].durability;
+      const durability = durabilityFromLevel + durabilityFromClass + v.constitution + v.body_armor_durability + v.misc;
+
+      setAttrs({
+        durability: durability,
+        durability_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: 'level scaling', value: durabilityFromLevel },
+          { name: v.base_class, value: durabilityFromClass },
+          { name: 'Con', value: v.constitution },
+          { name: 'body armor', value: v.body_armor_durability },
+        ]),
+      });
+    },
+  });
+}
+
 function handleEncumbrance() {
   onGet({
     variables: {
@@ -1645,8 +1606,7 @@ function handleHitPoints() {
   onGet({
     variables: {
       miscName: 'hit_points',
-      numeric: ['level', 'constitution', 'challenge_rating'],
-      string: ['base_class'],
+      numeric: ['level', 'durability', 'challenge_rating'],
     },
     options: {
       variablesWithoutListen: {
@@ -1654,14 +1614,29 @@ function handleHitPoints() {
       },
     },
     callback: (v) => {
-      const progressionName: ProgressionName = v.base_class
-        ? BASE_CLASS_MODIFIERS[v.base_class].hit_points
-        : 'low';
-      const { hpFromLevel, hpFromConstitution } = calcHpBonuses(
-        progressionName,
-        v.level,
-        v.constitution,
-      );
+      const rank = calculateStandardRank(v.level);
+      const rankMultiplier = {
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 6,
+        6: 8,
+        7: 10,
+        // Past this point, it's more or less arbitrarily extrapolated. It would be better
+        // to eventually scale past +2 per rank, but it doesn't matter enough to
+        // calculate, and odd multipliers make injury point calculation annoyingly
+        // fractional.
+        8: 12,
+        9: 14,
+        10: 16,
+      }[rank];
+      if (rankMultiplier === undefined) {
+        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
+      }
+
+      const hpFromDurability = v.durability * rankMultiplier;
 
       let crMultiplier =
         {
@@ -1669,14 +1644,15 @@ function handleHitPoints() {
           4: 3,
         }[v.challenge_rating!] || 1;
 
-      const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
+      const flatHp = 10;
+      const playerTotalHp = flatHp + hpFromDurability + v.misc;
       const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       const attrs: Attrs = {
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'level', value: hpFromLevel },
-          { name: 'Con', value: hpFromConstitution },
+          { name: 'base', value: flatHp },
+          { name: rankMultiplier + ' * durability', value: hpFromDurability },
           { name: 'CR', value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1694,54 +1670,50 @@ function handleHitPoints() {
   });
 }
 
-function calcHpComponents(progressionName: ProgressionName, level: number) {
-  const progressionIndex = Math.max(0, Math.floor((level - 1) / 6));
-  const [baseHp, incrementalHp] = {
-    low: [
-      [6, 1],
-      [14, 2],
-      [30, 4],
-      [60, 8],
-    ],
-    medium: [
-      [8, 1],
-      [18, 2],
-      [35, 5],
-      [70, 10],
-    ],
-    high: [
-      [8, 2],
-      [20, 3],
-      [40, 6],
-      [80, 12],
-    ],
-    ['very high']: [
-      [10, 2],
-      [24, 4],
-      [50, 8],
-      [100, 15],
-    ],
-    extreme: [
-      [14, 2],
-      [28, 5],
-      [60, 10],
-      [120, 20],
-    ],
-  }[progressionName][progressionIndex];
+function handleInjuryPoint() {
+  onGet({
+    variables: {
+      miscName: 'injury_point',
+      numeric: ['level', 'constitution'],
+      string: ['base_class'],
+    },
+    callback: (v) => {
+      const rank = calculateStandardRank(v.level);
+      const rankMultiplier = {
+        0: 0,
+        1: 0.5,
+        2: 1,
+        3: 1.5,
+        4: 2,
+        5: 3,
+        6: 4,
+        7: 5,
+        // Past this point, it's more or less arbitrarily extrapolated. It would be better
+        // to eventually scale past +2 per rank, but it doesn't matter enough to
+        // calculate, and odd multipliers make injury point calculation annoyingly
+        // fractional.
+        8: 6,
+        9: 7,
+        10: 8,
+      }[rank];
+      if (rankMultiplier === undefined) {
+        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
+      }
+      const flatIp = 10;
+      const ipFromLevel = rankMultiplier * v.level;
+      const ipFromCon = rankMultiplier * v.constitution;
+      const injury_point = flatIp + Math.floor((v.level + v.constitution) * rankMultiplier) + v.misc;
 
-  return { baseHp, incrementalHp };
-}
-
-function calcHpBonuses(progressionName: ProgressionName, level: number, constitution: number) {
-  const { baseHp, incrementalHp } = calcHpComponents(progressionName, level);
-  // This is the number of levels since the last breakpoint jump. Each breakpoint jump
-  // increases base HP and incremental level count ("X HP per level above 7th").
-  const incrementalLevel = (level - 1) % 6;
-
-  const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
-  const hpFromConstitution = incrementalHp * constitution;
-
-  return { hpFromLevel, hpFromConstitution };
+      setAttrs({
+        injury_point: injury_point,
+        injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: 'base', value: flatIp },
+          { name: rankMultiplier + ' * level', value: ipFromLevel },
+          { name: rankMultiplier + ' * Con', value: ipFromCon },
+        ]),
+      });
+    },
+  });
 }
 
 function handleInsightPoints() {
@@ -1816,7 +1788,6 @@ function handleSpeed() {
 // function handleModifierExplanations() {
 //   let modifierNames = [
 //     "hit_points",
-//     "damage_resistance",
 //     "armor_defense",
 //     "fortitude",
 //     "reflex",
@@ -2113,10 +2084,10 @@ function createMonsterDebuff({
     immobilized: 11,
     paralyzed: 13,
   }[debuff];
-  let requiresNoDamageResistance = false;
+  let requiresInjury = false;
   if (availableRank < debuffRank) {
     availableRank += 4;
-    requiresNoDamageResistance = true;
+    requiresInjury = true;
   }
   if (availableRank >= debuffRank) {
     // Targeted effects get +2a per excess rank.
@@ -2137,7 +2108,7 @@ function createMonsterDebuff({
   if (isTargeted) {
     const range = calcTargetedText(targeting);
 
-    const hitEffect = requiresNoDamageResistance
+    const hitEffect = requiresInjury
       ? `If the target is \\glossterm{injured}, it is ${debuff} as a condition.`
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
@@ -2152,7 +2123,7 @@ Hit: ${hitEffect}`;
       );
     }
 
-    const hitEffect = requiresNoDamageResistance
+    const hitEffect = requiresInjury
       ? `Each \\glossterm{injured} target is ${debuff} as a condition.`
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
