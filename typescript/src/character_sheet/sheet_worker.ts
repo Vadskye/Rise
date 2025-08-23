@@ -98,7 +98,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   warrior: {
     armor_defense: 5,
-    armor_usage_class: 'heavy',
+    armor_usage_class: 'medium',
     damage_resistance: 'very high',
     hit_points: 'high',
     brawn: 3,
