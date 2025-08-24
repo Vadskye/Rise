@@ -96,7 +96,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 48;
+        let expected_points = 44;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -120,6 +120,7 @@ impl Class {
 
     pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 6
+            + self.fatigue_tolerance() * 2
             // 3 points per insight point. Int gives (insight + trained + skill bonuses), but
             //   insight is the strongest of those, so assume it's half the value of Int.
             + self.insight_points() * 3
@@ -156,8 +157,8 @@ impl Class {
             Self::Oozeborn => 0,
             Self::Paladin => 1,
             Self::Ranger => 0,
-            Self::Rogue => 1,
-            Self::Sorcerer => 2,
+            Self::Rogue => 0,
+            Self::Sorcerer => 1,
             Self::Treant => 0,
             Self::Troll => 0,
             Self::Vampire => 1,
@@ -531,33 +532,28 @@ impl Class {
         };
 
         let class_bonus = match self {
-            Self::Cleric => match defense {
-                Defense::Mental => 2,
-                _ => 0,
-            },
-            Self::Dryaidi => match defense {
-                Defense::Fortitude => 1,
-                Defense::Mental => 1,
+            Self::Barbarian => match defense {
+                Defense::Fortitude => 2,
                 _ => 0,
             },
             Self::Fighter => match defense {
                 Defense::Armor => 1,
                 _ => 0,
             },
-            Self::Harpy => match defense {
+            Self::Oozeborn => match defense {
+                Defense::Fortitude => 2,
+                // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
+                // build that into the point calc system.
                 Defense::Reflex => 2,
                 _ => 0,
             },
-            Self::Naiad => match defense {
-                Defense::Mental => 2,
-                _ => 0,
-            },
-            Self::Oozeborn => match defense {
-                Defense::Fortitude => 2,
+            Self::Sorcerer => match defense {
+                Defense::Fortitude => 1,
                 _ => 0,
             },
             Self::Treant => match defense {
                 Defense::Fortitude => 2,
+                Defense::Mental => 1,
                 _ => 0,
             },
             Self::Troll => match defense {
@@ -567,21 +563,33 @@ impl Class {
                 Defense::Reflex => 2,
                 _ => 0,
             },
-            Self::Votive => match defense {
-                Defense::Mental => 2,
-                _ => 0,
-            },
             _ => 0,
         };
 
         base_bonus + class_bonus
     }
 
+    pub fn fatigue_tolerance(&self) -> i32 {
+        let base_bonus = 2;
+
+        base_bonus + match self {
+            Self::Barbarian => 1,
+            Self::Dragon => 1,
+            Self::Fighter => 1,
+            Self::Ranger => 1,
+            Self::Oozeborn => 1,
+            Self::Sorcerer => 1,
+            Self::Treant => 1,
+            Self::Troll => 2,
+            _ => 0,
+        }
+    }
+
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Cleric => 1,
-            Self::Druid => 1,
             Self::Dryaidi => 1,
+            Self::Rogue => 1,
             Self::Wizard => 1,
             _ => 0,
         }
@@ -616,7 +624,7 @@ impl Class {
     pub fn resource_bonus(&self, resource: &Resource) -> i32 {
         match resource {
             Resource::AttunementPoint => self.attunement_points(),
-            Resource::FatigueTolerance => 0,
+            Resource::FatigueTolerance => self.fatigue_tolerance(),
             Resource::InsightPoint => self.insight_points(),
             Resource::TrainedSkill => self.trained_skills(),
         }
@@ -651,9 +659,9 @@ impl Class {
     pub fn trained_skills(&self) -> i32 {
         match self {
             Self::Automaton => 4,
-            Self::Barbarian => 4,
+            Self::Barbarian => 3,
             Self::Cleric => 3,
-            Self::Dragon => 5,
+            Self::Dragon => 4,
             Self::Druid => 4,
             Self::Dryaidi => 4,
             Self::Fighter => 3,
@@ -663,14 +671,14 @@ impl Class {
             Self::Naiad => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
-            Self::Ranger => 6,
+            Self::Ranger => 5,
             Self::Rogue => 6,
-            Self::Sorcerer => 4,
+            Self::Sorcerer => 3,
             Self::Treant => 3,
             Self::Troll => 3,
             Self::Vampire => 4,
             Self::Votive => 3,
-            Self::Wizard => 5,
+            Self::Wizard => 3,
         }
     }
 
@@ -749,11 +757,7 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Troll => ArmorProficiencies {
-                specific_armors: Some(vec![
-                    Armor::LeatherLamellar(None),
-                    Armor::LayeredHide(None),
-                    Armor::StandardShield,
-                ]),
+                specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
             Self::Vampire => ArmorProficiencies {

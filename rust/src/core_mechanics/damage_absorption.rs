@@ -18,8 +18,9 @@ where
     fn calc_durability(&self) -> i32 {
         let rank = (self.level + 2) / 3;
         let durability_from_level = self.level - rank;
+        let durability_from_armor: i32 = self.get_armor().iter().map(|a| a.durability()).sum();
         // TODO: include body armor durability and base class durability
-        let durability = durability_from_level + self.get_base_attribute(&Attribute::Constitution);
+        let durability = durability_from_level + durability_from_armor + self.get_base_attribute(&Attribute::Constitution);
 
         durability
     }

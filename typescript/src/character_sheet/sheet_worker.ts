@@ -30,7 +30,7 @@ interface BaseClassModifier {
   armor_defense: number;
   armor_usage_class?: 'light' | 'medium' | 'heavy';
   injury_point_multiplier?: MonsterIpMultiplier;
-  durability: number;
+  durability?: number;
   brawn: number;
   fortitude: number;
   reflex: number;
@@ -39,6 +39,7 @@ interface BaseClassModifier {
   insight_points?: number;
   class_skill_count?: number;
   proficiencies?: string;
+  vital_rolls?: number;
 }
 
 // Treat roles as classes too.
@@ -100,7 +101,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // CLASSES
   barbarian: {
     armor_defense: 0,
-    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -112,7 +112,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   cleric: {
     armor_defense: 0,
-    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -124,7 +123,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   druid: {
     armor_defense: 0,
-    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -137,7 +135,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   fighter: {
     armor_defense: 1,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -149,7 +146,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   monk: {
     armor_defense: 0,
-    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -161,7 +157,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   paladin: {
     armor_defense: 0,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -173,7 +168,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   ranger: {
     armor_defense: 0,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -185,7 +179,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   rogue: {
     armor_defense: 0,
-    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -197,7 +190,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   sorcerer: {
     armor_defense: 0,
-    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -209,7 +201,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   votive: {
     armor_defense: 0,
-    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -221,7 +212,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   wizard: {
     armor_defense: 0,
-    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -235,7 +225,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // OPTIONAL CLASSES
   automaton: {
     armor_defense: 0,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -247,7 +236,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dragon: {
     armor_defense: 0,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -259,7 +247,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   dryad: {
     armor_defense: 0,
-    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -271,7 +258,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   harpy: {
     armor_defense: 0,
-    durability: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -283,7 +269,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   naiad: {
     armor_defense: 0,
-    durability: 0,
     brawn: 3,
     fortitude: 3,
     reflex: 4,
@@ -295,7 +280,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   oozeborn: {
     armor_defense: 0,
-    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -304,10 +288,10 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     insight_points: 0,
     class_skill_count: 3,
     proficiencies: 'Light armor',
+    vital_rolls: 1,
   },
   treant: {
     armor_defense: 0,
-    durability: 3,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
@@ -319,7 +303,6 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   },
   troll: {
     armor_defense: 0,
-    durability: 3,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -328,10 +311,10 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     insight_points: 0,
     class_skill_count: 4,
     proficiencies: 'Light armor, leather lamellar, standard shields, and club-like weapons',
+    vital_rolls: 1,
   },
   vampire: {
     armor_defense: 0,
-    durability: 2,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
@@ -1527,7 +1510,7 @@ function handleDurability() {
     },
     callback: (v) => {
       const durabilityFromLevel = v.level - calculateStandardRank(v.level);
-      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class].durability;
+      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class].durability || 0;
       const durability = durabilityFromLevel + durabilityFromClass + v.constitution + v.body_armor_durability + v.misc;
 
       setAttrs({
@@ -2927,12 +2910,15 @@ function handleVitalRolls() {
     variables: {
       miscName: 'vital_rolls',
       numeric: ['vital_wound_count', 'body_armor_vital_rolls'],
+      string: ['base_class'],
     },
     callback: (v) => {
-      const totalValue = v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
+      const classBonus = BASE_CLASS_MODIFIERS[v.base_class].vital_rolls || 0;
+      const totalValue = classBonus + v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
       setAttrs({
         vital_rolls: totalValue,
         vital_rolls_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: v.base_class, value: classBonus },
           { name: 'body armor', value: v.body_armor_vital_rolls },
           { name: '2x vital wound count', value: -v.vital_wound_count * 2 },
         ]),
