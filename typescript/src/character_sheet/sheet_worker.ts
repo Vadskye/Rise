@@ -288,6 +288,18 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     class_skill_count: 5,
     proficiencies: 'Light armor',
   },
+  incarnation: {
+    armor_defense: 0,
+    brawn: 3,
+    fortitude: 3,
+    reflex: 3,
+    mental: 3,
+    attunement_points: 1,
+    fatigue_tolerance: 2,
+    insight_points: 0,
+    class_skill_count: 4,
+    proficiencies: 'Light armor',
+  },
   naiad: {
     armor_defense: 0,
     brawn: 3,
