@@ -1334,9 +1334,10 @@ impl Class {
             "
                 \\begin<columntable>
                     \\begin<dtabularx><\\columnwidth><l l l l {xcol}>
-                        \\tb<Level> & \\tb<Rank> & \\tb<HP Mult> & \\tb<Durability> & \\tb<Universal Benefits> \\tableheaderrule
+                        \\tb<Level> & \\tb<Rank> & \\tb<Durability> & \\tb<HP Mult>\\fn<1> &\\tb<Universal Benefits> \\tableheaderrule
                         {level_rows}
                     \\end<dtabularx>
+                    1. You multiply your \\glossterm<durability> by this value to get your total hit points.
                 \\end<columntable>
             ",
             xcol = r">{\lcol}X",
@@ -1358,10 +1359,9 @@ impl Class {
                 7 => 10,
                 _ => panic!("impossible")
             };
-            // TODO: should this include injury point?
             level_rows.push(format!(
                 "
-                    {level} & {rank} & {hp_multiplier} & {durability_bonus} & {special} \\\\
+                    {level} & {rank} & \\plus{durability_bonus} & {hp_multiplier} & {special} \\\\
                 ",
                 level = level,
                 rank = rank,
