@@ -246,14 +246,15 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain 1d6 \glossterm{hit points} \add 1d6 per 2 \glossterm{power}.
+                    You regain 1d8 \glossterm{hit points} \add \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
+                    This effect \glossterm{repeats} at the end of the current round.
 
                     \rankline
-                    \rank{4} The recovery increases to 1d8 \add 1d8 per 2 power.
-                    \rank{5} The recovery increases to 1d10 \add 1d10 per 2 power.
-                    \rank{6} The recovery increases to 1d6 \add 1d6 per power.
-                    \rank{7} The recovery increases to 1d8 \add 1d8 per power.
+                    \rank{4} The recovery increases to 1d6 per 2 power.
+                    \rank{5} The recovery increases to 1d6 \add 1d6 per 2 power.
+                    \rank{6} The recovery increases to 1d8 \add 1d8 per 2 power.
+                    \rank{7} The recovery increases to 1d10 \add 1d10 per power.
                 \end{magicalactiveability}
             ",
             modifiers: None,
@@ -267,9 +268,11 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
                 \begin{magicalactiveability}{Exchange Vitality}
                     \abilityusagetime Standard action.
-                    \abilitycost Two \glossterm{fatigue levels}.
+                    \abilitycost See text.
                     \rankline
                     Remove one of your \glossterm{vital wounds}.
+                    If you remove a vital wound in this way, you increase your \glossterm{fatigue level} by 2.
+                    This effect \glossterm{repeats} at the end of the current round.
                 \end{magicalactiveability}
             ",
             modifiers: None,
