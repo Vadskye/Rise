@@ -38,6 +38,7 @@ export type RiseBaseClass =
   | 'dryad'
   | 'eladrin'
   | 'harpy'
+  | 'incarnation'
   | 'kit'
   | 'naiad'
   | 'oozeborn'
