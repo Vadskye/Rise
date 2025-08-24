@@ -80,10 +80,18 @@
 
 \section{Taking Damage}\label{Taking Damage}
   When you take damage, the damage reduces your \glossterm{hit points}.
-  If your remaining hit points are at or below your \glossterm{injury point}, you are \glossterm{injured}.
   If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
   Monsters typically do not gain vital wounds like player characters do.
   Instead, they simply die or fall unconscious when they reach 0 hit points.
+
+  \subsection{Injury}\label{Injury}
+    If your remaining hit points are at or below your \glossterm{injury point}, you are \glossterm{injured}.
+    Some attacks require you to be injured to have their full effects.
+
+    When you take damage from an attack, if you are injured, the attack inflicted an \glossterm{injury} on you.
+    This also applies if you only become injured after resolving the attack's damage.
+    Some damaging attacks have extra effects when they injure you.
+    This is usually indicated by ``Injury:'' text in their descriptions.
 
   \subsection{Negative Hit Points}\label{Negative Hit Points}
     You can have negative hit points, but only briefly.
