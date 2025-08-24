@@ -8,13 +8,18 @@ t.beforeEach(() => {
   handleEverything();
 });
 
+// Full plate and tower shield
 function setStandardFighter() {
   setAttrs({
     armor_usage_class: 'heavy',
     base_class: 'fighter',
     body_armor_defense: 5,
-    body_armor_durability: 6,
+    body_armor_durability: 8,
     body_armor_speed: -10,
+    body_armor_encumbrance: 4,
+    body_armor_vital_rolls: 2,
+    shield_encumbrance: 1,
+    shield_armor_defense: 3,
     constitution_at_creation: 2,
     dexterity_at_creation: 2,
     intelligence_at_creation: 0,
@@ -25,6 +30,7 @@ function setStandardFighter() {
   });
 }
 
+// Mage armor
 function setStandardWizard() {
   setAttrs({
     armor_usage_class: 'light',
@@ -72,8 +78,8 @@ t.test('can calculate durability', (t) => {
     setStandardFighter();
     getAttrs(['durability', 'durability_explanation'], (attrs) => {
       t.match(attrs, {
-        durability: 14,
-        durability_explanation: '+6 (level scaling)  +2 (Con)  +6 (body armor)',
+        durability: 16,
+        durability_explanation: '+6 (level scaling)  +2 (Con)  +8 (body armor)',
       });
       t.end();
     });
@@ -99,8 +105,8 @@ t.test('can calculate hit points', (t) => {
     setStandardFighter();
     getAttrs(['hit_points_max', 'hit_points_explanation'], (attrs) => {
       t.match(attrs, {
-        hit_points_max: 66,
-        hit_points_explanation: '+10 (base)  +56 (4 * durability)',
+        hit_points_max: 74,
+        hit_points_explanation: '+10 (base)  +64 (4 * durability)',
       });
       t.end();
     });
@@ -214,8 +220,8 @@ t.test('can calculate insight points', (t) => {
     setStandardWizard();
     getAttrs(['insight_points', 'insight_points_explanation'], (attrs) => {
       t.match(attrs, {
-        insight_points: 6,
-        insight_points_explanation: '+1 (base)  +3 (Int)  +2 (wizard)',
+        insight_points: 5,
+        insight_points_explanation: '+1 (base)  +3 (Int)  +1 (wizard)',
       });
       t.end();
     });
@@ -230,7 +236,7 @@ t.test('can calculate fatigue tolerance', (t) => {
     getAttrs(['fatigue_tolerance', 'fatigue_tolerance_explanation'], (attrs) => {
       t.match(attrs, {
         fatigue_tolerance: 5,
-        fatigue_tolerance_explanation: '+3 (base)  +2 (Con)',
+        fatigue_tolerance_explanation: '+3 (fighter)  +2 (Con)',
       });
       t.end();
     });
@@ -240,8 +246,8 @@ t.test('can calculate fatigue tolerance', (t) => {
     setStandardWizard();
     getAttrs(['fatigue_tolerance', 'fatigue_tolerance_explanation'], (attrs) => {
       t.match(attrs, {
-        fatigue_tolerance: 3,
-        fatigue_tolerance_explanation: '+3 (base)',
+        fatigue_tolerance: 2,
+        fatigue_tolerance_explanation: '+2 (wizard)',
       });
       t.end();
     });
@@ -450,6 +456,136 @@ t.test('can calculate fatigue penalty', (t) => {
     getAttrs(['fatigue_penalty'], (attrs) => {
       t.match(attrs, {
         fatigue_penalty: 0,
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate accuracy', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['accuracy', 'accuracy_explanation'], (attrs) => {
+      t.match(attrs, {
+        accuracy: 5,
+        accuracy_explanation: '+5 (level)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['accuracy', 'accuracy_explanation'], (attrs) => {
+      t.match(attrs, {
+        accuracy: 6,
+        accuracy_explanation: '+5 (level)  +1 (Per)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate brawling accuracy', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['brawling_accuracy', 'brawling_accuracy_explanation'], (attrs) => {
+      t.match(attrs, {
+        brawling_accuracy: 6,
+        brawling_accuracy_explanation: '+5 (level)  +1.5 (Str)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['brawling_accuracy', 'brawling_accuracy_explanation'], (attrs) => {
+      t.match(attrs, {
+        brawling_accuracy: 5,
+        brawling_accuracy_explanation: '+5 (level)',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate encumbrance', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['encumbrance', 'encumbrance_explanation'], (attrs) => {
+      t.match(attrs, {
+        encumbrance: 5,
+        encumbrance_explanation: '+4 (body armor)  +1 (shield)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['encumbrance', 'encumbrance_explanation'], (attrs) => {
+      t.match(attrs, {
+        encumbrance: 0,
+        encumbrance_explanation: '',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate weight limits', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['carrying_strength', 'carrying_strength_explanation'], (attrs) => {
+      t.match(attrs, {
+        carrying_strength: 3,
+        carrying_strength_explanation: '+3 (strength)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['carrying_strength', 'carrying_strength_explanation'], (attrs) => {
+      t.match(attrs, {
+        carrying_strength: 0,
+        carrying_strength_explanation: '',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
+t.test('can calculate vital rolls', (t) => {
+  t.test('for fighter', (t) => {
+    setStandardFighter();
+    getAttrs(['vital_rolls', 'vital_rolls_explanation'], (attrs) => {
+      t.match(attrs, {
+        vital_rolls: 2,
+        vital_rolls_explanation: '+2 (body armor)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard', (t) => {
+    setStandardWizard();
+    getAttrs(['vital_rolls', 'vital_rolls_explanation'], (attrs) => {
+      t.match(attrs, {
+        vital_rolls: 0,
+        vital_rolls_explanation: '',
       });
       t.end();
     });
