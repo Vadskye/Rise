@@ -143,7 +143,7 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
-            Self::Automaton => 1,
+            Self::Automaton => 0,
             Self::Barbarian => 0,
             Self::Cleric => 1,
             Self::Dragon => 1,
@@ -151,8 +151,8 @@ impl Class {
             Self::Dryaidi => 1,
             Self::Fighter => 0,
             Self::Harpy => 1,
-            Self::Incarnation => 2,
-            Self::Monk => 1,
+            Self::Incarnation => 1,
+            Self::Monk => 0,
             Self::Naiad => 1,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
@@ -540,6 +540,15 @@ impl Class {
                 Defense::Armor => 1,
                 _ => 0,
             },
+            Self::Incarnation => match defense {
+                // Actually changes defense to match their element
+                Defense::Fortitude => 2,
+                _ => 0,
+            },
+            Self::Monk => match defense {
+                Defense::Armor => 1,
+                _ => 0,
+            },
             Self::Oozeborn => match defense {
                 Defense::Fortitude => 2,
                 // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
@@ -557,7 +566,6 @@ impl Class {
                 _ => 0,
             },
             Self::Troll => match defense {
-                Defense::Fortitude => 1,
                 // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
                 // build that into the point calc system.
                 Defense::Reflex => 2,
@@ -573,6 +581,7 @@ impl Class {
         let base_bonus = 2;
 
         base_bonus + match self {
+            Self::Automaton => 3,
             Self::Barbarian => 1,
             Self::Dragon => 1,
             Self::Fighter => 1,
@@ -666,8 +675,8 @@ impl Class {
             Self::Dryaidi => 4,
             Self::Fighter => 3,
             Self::Harpy => 5,
-            Self::Incarnation => 3,
-            Self::Monk => 4,
+            Self::Incarnation => 4,
+            Self::Monk => 5,
             Self::Naiad => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
@@ -758,7 +767,7 @@ impl Class {
             },
             Self::Troll => ArmorProficiencies {
                 specific_armors: None,
-                usage_classes: vec![ArmorUsageClass::Light],
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Vampire => ArmorProficiencies {
                 specific_armors: None,
