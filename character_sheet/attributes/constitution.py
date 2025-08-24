@@ -128,17 +128,6 @@ def calc_durability():
                     ),
                     plus(),
                     underlabel(
-                        "Class",
-                        number_input(
-                            {
-                                "disabled": True,
-                                "name": "durability_base_class",
-                                "value": "(@{durability_base_class})",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    underlabel(
                         "Con",
                         number_input(
                             {
@@ -160,7 +149,7 @@ def calc_durability():
                         ),
                     ),
                     plus(),
-                    equation_misc_repeat("durability", 1),
+                    equation_misc_repeat("durability", 2),
                 ],
                 result_attributes={
                     "disabled": True,
