@@ -522,8 +522,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} You gain a \plus2 \glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
-                    % Also 16 HP at rank 4, but stronger scaling at ranks 5+
-                    \subcf{Necromancy} The durability bonus increases to \plus4.
+                    \subcf{Necromancy} The durability bonus increases to \plus5.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
                 }
@@ -546,8 +545,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
-                    % 50 HP at rank 7
-                    \subcf{Necromancy} The durability bonus increases to \plus5.
+                    \subcf{Necromancy} The durability bonus increases to \plus7.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                 }
