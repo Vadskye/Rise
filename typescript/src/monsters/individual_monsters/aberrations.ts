@@ -5,7 +5,7 @@ export function addAberrations(grimoire: Grimoire) {
   grimoire.addMonster('aboleth', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
-      base_class: 'mystic',
+      base_class: 'leader',
       challenge_rating: 4,
       creature_type: 'planeforged',
       level: 12,
