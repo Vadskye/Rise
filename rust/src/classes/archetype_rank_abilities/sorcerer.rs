@@ -370,7 +370,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                You can gain the benefits of one magical implement, such as a staff or wand, without having to hold it in your hands.
+                You can gain the benefits of one magical implement that requires a single free hand, such as a short staff or wand, without having to hold it in your hands.
                 You must still have it on your person, such as in a pocket or strapped to your back, and you must still be attuned to it to gain its benefits.
                 This ability only affects one implement at a time.
             ",
