@@ -16,7 +16,7 @@ t.test('can create an aboleth', (t) => {
   ]);
   t.match(vals, {
     awareness: 13,
-    hit_points: 198,
+    hit_points: 270,
     level: 12,
     name: 'aboleth',
     perception: 4,

@@ -1141,13 +1141,13 @@ function handleCreationModifiers() {
       string: ['base_class', 'species'],
     },
     callback: (v) => {
-      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
+      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class] || {};
 
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs: Attrs = {
-        base_class_proficiencies: (classModifiers && classModifiers.proficiencies) || '',
-        class_skill_count: (classModifiers && classModifiers.class_skill_count) || 0,
+        base_class_proficiencies: classModifiers.proficiencies || '',
+        class_skill_count: classModifiers.class_skill_count || 0,
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
@@ -1159,7 +1159,7 @@ function handleCreationModifiers() {
         'attunement_points' as const,
         'insight_points' as const,
       ]) {
-        const modifierValue = (classModifiers && classModifiers[modifierKey]) || 0;
+        const modifierValue = classModifiers[modifierKey] || 0;
         attrs[`${modifierKey}_creation_explanation`] = formatNamedModifierExplanation({
           name: v.base_class,
           value: modifierValue,
@@ -1536,7 +1536,7 @@ function handleDurability() {
     },
     callback: (v) => {
       const durabilityFromLevel = v.level - calculateStandardRank(v.level);
-      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class].durability || 0;
+      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class]?.durability || 0;
       const durability = durabilityFromLevel + durabilityFromClass + v.constitution + v.body_armor_durability + v.misc;
 
       setAttrs({
@@ -1597,7 +1597,7 @@ function handleFatigueTolerance() {
       string: ['base_class'],
     },
     callback: (v) => {
-      const fromClass = BASE_CLASS_MODIFIERS[v.base_class].fatigue_tolerance;
+      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.fatigue_tolerance || 0;
       const totalValue = Math.max(0, fromClass + v.constitution + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: v.constitution,
@@ -2940,7 +2940,7 @@ function handleVitalRolls() {
       string: ['base_class'],
     },
     callback: (v) => {
-      const classBonus = BASE_CLASS_MODIFIERS[v.base_class].vital_rolls || 0;
+      const classBonus = BASE_CLASS_MODIFIERS[v.base_class]?.vital_rolls || 0;
       const totalValue = classBonus + v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
       setAttrs({
         vital_rolls: totalValue,
