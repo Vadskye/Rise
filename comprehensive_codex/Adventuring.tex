@@ -15,7 +15,6 @@
     When you finish a short rest, you gain the following benefits.
     \begin{raggeditemize}
       \item Your \glossterm{hit points} become equal to your maximum hit points.
-      \item Your current \glossterm{damage resistance} becomes equal to your maximum damage resistance.
       \item You regain any \glossterm{attunement points} you released from \glossterm{deep attunement} effects (see \pcref{Deep Attunement}).
       \item You remove all \glossterm{conditions} affecting you.
       \item Some other abilities have specific effects that last until you finish a short rest.
@@ -178,7 +177,7 @@
     This process is enforced by the Nature, who guides souls to ensure they reach their intended destinations.
     Bringing a creature back from the dead means retrieving their soul and returning it to their body.
 
-    A creature has no hit points or damage resistance when it returns to life.
+    A creature has no hit points when it returns to life.
     It is cured of all \glossterm{vital wounds}, \glossterm{conditions}, and other negative effects, but the body's shape is unchanged.
     Any missing or irreparably damaged limbs or organs remain missing or damaged.
     The creature may therefore die shortly after being resurrected if its body is excessively damaged.
@@ -231,7 +230,7 @@
     This does not break \glossterm{attunement}, and the creature still gains the benefit of any magical properties of melded items.
     However, it does not gain the benefit of nonmagical properties from melded items.
     For example, a creature that shapeshifts into an amorphous gas would still benefit from all attuned effects from its equipped items, such as \mitem{boots of speed}.
-    However, it would gain no benefit to its Armor defense or damage resistance from any melded body armor, and it would not be able to attack with any of its melded weapons.
+    However, it would gain no benefit to its Armor defense or durability from any melded body armor, and it would not be able to attack with any of its melded weapons.
     Items exceeding a creature's \glossterm{carrying capacity} are not melded, and simply fall to the ground in place.
 
     When a shapeshifted creature dies, it returns to its original form.
@@ -305,9 +304,9 @@
   Alternately, you can attempt to sunder the object with sheer strength.
 
   \subsection{Damaging Objects}
-    Objects have \glossterm{hit points} and \glossterm{damage resistance} like creatures.
-    However, non-creature objects treat all damage they take as \glossterm{environmental damage} (see \pcref{Environmental Damage}).
-    That means that all damage they take is reduced by their \glossterm{damage resistance} without subtracting from the remaining value of their damage resistance.
+    Objects have \glossterm{hit points} like creatures.
+    They can also have \glossterm{hardness}, which reduces damage they take.
+    Whenever an object takes damage, it first subtracts it hardness from that damage before applying that damage to its hit points.
     Objects are not normally subject to \glossterm{critical hits}.
     When object lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
 
@@ -315,13 +314,13 @@
     As a standard action, you can attempt to break an object with raw strength instead of damage.
     This requires two hands.
     When you sunder an object, make a Strength check.
-    The \glossterm{difficulty value} of the check is equal to the object's \glossterm{damage resistance}, \plus5 for each \glossterm{weight category} above Tiny.
+    The \glossterm{difficulty value} of the check is equal to the object's \glossterm{hardness}, \plus5 for each \glossterm{weight category} above Tiny.
     Success means the object becomes \glossterm{broken}.
     Critical success means the object becomes \glossterm{destroyed}.
 
   \subsection{Object Statistics}
     An object's size primarily influences the number of \glossterm{hit points} it has.
-    The primary material it is constructed from determines its \glossterm{damage resistance}, and can modify the number of hit points it has.
+    The primary material it is constructed from determines its \glossterm{hardness}, and can modify the number of hit points it has.
     Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
 
     For objects that have two large dimensions and one small dimension, treat their size as being one size category smaller than the bulk of their larger dimensions.
@@ -343,19 +342,19 @@
         Fine       & 2               & 0  \\
         Diminutive & 5               & 0  \\
         Tiny       & 10              & 0  \\
-        Small      & 25              & 5  \\
-        Medium     & 50              & 10 \\
-        Large      & 100             & 15 \\
-        Huge       & 250             & 20 \\
-        Gargantuan & 500             & 25 \\
-        Colossal   & 1000            & 30 \\
+        Small      & 25              & \plus5  \\
+        Medium     & 50              & \plus10 \\
+        Large      & 100             & \plus15 \\
+        Huge       & 250             & \plus20 \\
+        Gargantuan & 500             & \plus25 \\
+        Colossal   & 1000            & \plus30 \\
       \end{dtabularx}
     \end{dtable}
 
     \begin{dtable}
       \lcaption{Object Statistics By Material}
       \begin{dtabularx}{\textwidth}{l X X X}
-        \tb{Material}   & \tb{DR}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
+        \tb{Material}   & \tb{Hardness}\fn{1} & \tb{HP Multiplier}\fn{2} \tableheaderrule
         Adamantine      & 30            & \mult3   \\
         Glass           & 5             & \mult1/2 \\
         Ice             & 0             & \mult1/2 \\
@@ -368,7 +367,7 @@
         Stone           & 10            & \mult2   \\
         Wood            & 5             & \tdash   \\
       \end{dtabularx}
-      1. An object's \glossterm{damage resistance} also increases the difficulty value of checks to sunder it with raw Strength. \\
+      1. An object's \glossterm{hardness} also increases the difficulty value of checks to sunder it with raw Strength. \\
       2. Any value here modifies the number of hit points the object would normally have based on its size.
     \end{dtable}
 
@@ -392,11 +391,6 @@
     Magic items that are destroyed irrevocably lose their magical properties.
     The remains of a destroyed object generally occupy a space one size category smaller than the original object.
     Destroyed objects can be rebuilt with the Craft skill, but it requires significant time and investment.
-
-  \subsection{Relative Damage Resistance}\label{Relative Damage Resistance}
-    When an object would take damage from a \glossterm{strike}, if the \glossterm{damage resistance} of the attacking object or creature is lower than the damage resistance of the defender, the attacking object or creature takes the damage instead.
-    For example, if you try to break a stone wall with a wooden club, the club will break instead of the wall.
-    % TODO: define hardness for creatures and their natural weapons; natural weapons should generally have higher hardness than creatures to avoid hardness reflection being common
 
   \subsection{Breaking Equipment}\label{Breaking Equipment}
     Normally, a character's equipment cannot be damaged or otherwise affected by attacks.

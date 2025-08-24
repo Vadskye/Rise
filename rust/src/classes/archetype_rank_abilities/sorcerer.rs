@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
+use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
     let mut abilities = vec![
@@ -63,8 +63,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
-                    This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
+                    It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
@@ -77,29 +77,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
         },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The damage resistance bonus increases to four times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to six times your rank in this archetype.
-            ",
-            modifiers: None,
-        },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    add_dr_scaling(&mut abilities, 1, 3, Some(6));
     abilities
 }
 
@@ -206,7 +185,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 1,
             name: "Draconic Bloodline",
@@ -238,12 +217,11 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 2,
-            name: "Draconic Spells",
+            name: "Draconic Spell",
             is_magical: true,
             rank: 1,
             description: r"
-                If you already have access to your dragon's mystic sphere, you learn two spells from that sphere.
-                Otherwise, you gain access to that mystic sphere, including all \glossterm{cantrips} from that sphere.
+                You learn a spell from your dragon's \glossterm{mystic sphere}, even if you do not have access to that mystic sphere.
             ",
             modifiers: None,
         },
@@ -253,7 +231,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a +3 bonus to your \glossterm{durability}.
             ",
             modifiers: None,
         },
@@ -263,15 +241,25 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The damage resistance bonus increases to four times your rank in this archetype.
+                The durability bonus increases to +5.
             ",
             modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Draconic Precision",
+            is_magical: true,
+            rank: 3,
+            description: r"
+                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
             name: "Draconic Body",
             is_magical: false,
-            rank: 3,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
@@ -281,21 +269,11 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Energy Immunity",
             is_magical: false,
-            rank: 4,
+            rank: 5,
             description: r"
                 You become immune to attacks that have your dragon's associated ability tag.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Draconic Precision",
-            is_magical: true,
-            rank: 5,
-            description: r"
-                You gain a \plus1 accuracy bonus with any ability that has your dragon's associated ability tag.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -310,9 +288,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 Modifier::Attribute(Attribute::Willpower, 1),
             ]),
         },
-    ];
-    add_dr_scaling(&mut abilities, 2, 6, None);
-    abilities
+    ]
 }
 
 pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
@@ -338,8 +314,9 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You gain an \glossterm{enhancement bonus} equal to three times your rank in this archetype to your maximum \glossterm{hit points} and \glossterm{damage resistance}.
-                Because this is an enhancement bonus, it does not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
+                You gain an \glossterm{enhancement bonus} to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
+                In addition, you gain a \plus1 \glossterm{enhancement bonus} to your \glossterm{vital rolls}.
+                Because these are enhancement bonuses, they do not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -351,7 +328,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The enhancement bonuses increase to five times your rank in this archetype.
+                The hit point bonus increases to five times your rank in this archetype, and the vital roll bonus increases to \plus2.
             ",
             modifiers: None,
         },

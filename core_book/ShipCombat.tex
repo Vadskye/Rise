@@ -13,71 +13,72 @@ These rules could also be used for other types of vehicles, such as flying ships
   Ships use the same basic framework for calculating their statistics as characters and monsters.
   A ship has a level that indicates its general power.
   This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
-  A ship's level determines its hit points, damage resistance, accuracy, defenses, and power, as indicated in the table below.
+  A ship's level determines its hit points, accuracy, defenses, and power, as indicated in the table below.
   These values change based on the ship's attributes, as indicated in \pcref{Ship Attributes}.
 
   % NOTE: Keep in sync with Monster Advancement in Monsters
   \begin{dtable}
     \lcaption{Ship Statistics}
-    \begin{compresseddtabularx}{\columnwidth}{l l l l l >{\lcol}X}
-      \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy, Power} & \tb{Item Rank (Cost)} \tableheaderrule
-      1st        & 8       & 4       & 3             & \tdash               & 1 (40 gp)      \\
-      2nd        & 10      & 5       & 4             & \plus1               & 1 (40 gp)      \\
-      3rd        & 12      & 6       & 4             & \plus1               & 1 (40 gp)      \\
-      4th        & 14      & 7       & 5             & \plus2               & 2 (200 gp)     \\
-      5th        & 16      & 8       & 5             & \plus2               & 2 (200 gp)     \\
-      6th        & 18      & 9       & 6             & \plus3               & 2 (200 gp)     \\
-      7th        & 20      & 10      & 6             & \plus3               & 3 (1,000 gp)   \\
-      8th        & 23      & 11      & 7             & \plus4               & 3 (1,000 gp)   \\
-      9th        & 26      & 13      & 7             & \plus4               & 3 (1,000 gp)   \\
-      10th       & 29      & 14      & 8             & \plus5               & 4 (5,000 gp)   \\
-      11th       & 32      & 16      & 8             & \plus5               & 4 (5,000 gp)   \\
-      12th       & 35      & 17      & 9             & \plus6               & 4 (5,000 gp)   \\
-      13th       & 40      & 20      & 9             & \plus6               & 5 (25,000 gp)  \\
-      14th       & 46      & 23      & 10            & \plus7               & 5 (25,000 gp)  \\
-      15th       & 52      & 26      & 10            & \plus7               & 5 (25,000 gp)  \\
-      16th       & 58      & 29      & 11            & \plus8               & 6 (125,000 gp) \\
-      17th       & 64      & 32      & 11            & \plus8               & 6 (125,000 gp) \\
-      18th       & 70      & 35      & 12            & \plus9               & 6 (125,000 gp) \\
-      19th       & 80      & 40      & 12            & \plus9               & 7 (625,000 gp) \\
-      20th       & 92      & 46      & 13            & \plus10              & 7 (625,000 gp) \\
-      21st       & 104     & 52      & 13            & \plus10              & 7 (625,000 gp) \\
+    \begin{compresseddtabularx}{\columnwidth}{l l l l >{\lcol}X}
+      \tb{Level} & \tb{HP} & \tb{Defenses} & \tb{Accuracy, Power} & \tb{Item Rank (Cost)} \tableheaderrule
+      1st        & 8       & 3             & \tdash               & 1 (40 gp)      \\
+      2nd        & 10      & 4             & \plus1               & 1 (40 gp)      \\
+      3rd        & 12      & 4             & \plus1               & 1 (40 gp)      \\
+      4th        & 14      & 5             & \plus2               & 2 (200 gp)     \\
+      5th        & 16      & 5             & \plus2               & 2 (200 gp)     \\
+      6th        & 18      & 6             & \plus3               & 2 (200 gp)     \\
+      7th        & 20      & 6             & \plus3               & 3 (1,000 gp)   \\
+      8th        & 23      & 7             & \plus4               & 3 (1,000 gp)   \\
+      9th        & 26      & 7             & \plus4               & 3 (1,000 gp)   \\
+      10th       & 29      & 8             & \plus5               & 4 (5,000 gp)   \\
+      11th       & 32      & 8             & \plus5               & 4 (5,000 gp)   \\
+      12th       & 35      & 9             & \plus6               & 4 (5,000 gp)   \\
+      13th       & 40      & 9             & \plus6               & 5 (25,000 gp)  \\
+      14th       & 46      & 10            & \plus7               & 5 (25,000 gp)  \\
+      15th       & 52      & 10            & \plus7               & 5 (25,000 gp)  \\
+      16th       & 58      & 11            & \plus8               & 6 (125,000 gp) \\
+      17th       & 64      & 11            & \plus8               & 6 (125,000 gp) \\
+      18th       & 70      & 12            & \plus9               & 6 (125,000 gp) \\
+      19th       & 80      & 12            & \plus9               & 7 (625,000 gp) \\
+      20th       & 92      & 13            & \plus10              & 7 (625,000 gp) \\
+      21st       & 104     & 13            & \plus10              & 7 (625,000 gp) \\
     \end{compresseddtabularx}
   \end{dtable}
 
   \begin{dtable}
     \lcaption{Elite Ship Statistics}
-    \begin{compresseddtabularx}{\columnwidth}{l l l l l l >{\lcol}X}
-      \tb{Level} & \tb{HP} & \tb{DR} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} & \tb{Item Rank (Cost)} \tableheaderrule
-      1st        & 24      & 12      & 5             & \tdash        & \plus2     & 1 (40 gp)      \\
-      2nd        & 30      & 15      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-      3rd        & 36      & 18      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-      4th        & 42      & 21      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-      5th        & 48      & 24      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-      6th        & 54      & 27      & 8             & \plus3        & \plus5     & 2 (200 gp)     \\
-      7th        & 60      & 30      & 8             & \plus3        & \plus5     & 3 (1,000 gp)   \\
-      8th        & 69      & 34      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-      9th        & 78      & 39      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-      10th       & 87      & 43      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-      11th       & 96      & 48      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-      12th       & 105     & 52      & 11            & \plus6        & \plus8     & 4 (5,000 gp)   \\
-      13th       & 120     & 60      & 11            & \plus6        & \plus8     & 5 (25,000 gp)  \\
-      14th       & 138     & 69      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-      15th       & 156     & 78      & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-      16th       & 174     & 87      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-      17th       & 192     & 96      & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-      18th       & 210     & 105     & 14            & \plus9        & \plus11    & 6 (125,000 gp) \\
-      19th       & 240     & 120     & 14            & \plus9        & \plus11    & 7 (625,000 gp) \\
-      20th       & 276     & 138     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
-      21st       & 312     & 156     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
+    \begin{compresseddtabularx}{\columnwidth}{l l l l l >{\lcol}X}
+      \tb{Level} & \tb{HP} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} & \tb{Item Rank (Cost)} \tableheaderrule
+      1st        & 24      & 5             & \tdash        & \plus2     & 1 (40 gp)      \\
+      2nd        & 30      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
+      3rd        & 36      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
+      4th        & 42      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
+      5th        & 48      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
+      6th        & 54      & 8             & \plus3        & \plus5     & 2 (200 gp)     \\
+      7th        & 60      & 8             & \plus3        & \plus5     & 3 (1,000 gp)   \\
+      8th        & 69      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
+      9th        & 78      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
+      10th       & 87      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
+      11th       & 96      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
+      12th       & 105     & 11            & \plus6        & \plus8     & 4 (5,000 gp)   \\
+      13th       & 120     & 11            & \plus6        & \plus8     & 5 (25,000 gp)  \\
+      14th       & 138     & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
+      15th       & 156     & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
+      16th       & 174     & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
+      17th       & 192     & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
+      18th       & 210     & 14            & \plus9        & \plus11    & 6 (125,000 gp) \\
+      19th       & 240     & 14            & \plus9        & \plus11    & 7 (625,000 gp) \\
+      20th       & 276     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
+      21st       & 312     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
     \end{compresseddtabularx}
   \end{dtable}
 
-  \subsection{Ship HP and DR}
-    Ships have hit points and damage resistance, just like characters.
-    A ship's base hit points and damage resistance are based on its level, as listed in \tref{Ship Statistics}.
+  \subsection{Ship Hit Points}
+    Ships have hit points, just like characters.
+    A ship's base hit points are based on its level, as listed in \tref{Ship Statistics}.
     In addition, a ship gains a bonus based on its Constitution, as listed in \pcref{Ship Attributes}.
-    Armor can also give ships a bonus to their damage resistance, as listed in \pcref{Ship Armor}.
+    Armor can also increase a ship's hit points as listed in \pcref{Ship Armor}.
+    Ships do not have an \glossterm{injury point} and cannot be \glossterm{injured}.
 
   \subsection{Elite Ships}\label{Elite Ships}
     Some ships are designated ``elite'' ships.
@@ -86,11 +87,11 @@ These rules could also be used for other types of vehicles, such as flying ships
     % NOTE: Keep in sync with elite monsters
     \begin{raggeditemize}
       \item Elite ships gain a \plus2 bonus to their \glossterm{power} and all \glossterm{defenses}.
-      \item Elite ships have three times the \glossterm{hit points} and \glossterm{damage resistance} of standard ships.
-        % \item Elite ships have 50\% more \glossterm{damage resistance} than standard ships. This is applied after the bonus they get from having higher hit points, since ship damage resistance is based on their hit points.
+      \item Elite ships have three times the \glossterm{hit points} of standard ships.
         % \item Elite ships can have a maximum starting attribute of 6 (see \pcref{Ship Attributes}).
         % elite actions should be about as strong as regular actions, so 2x more damage
       \item Elite ships can take an additional \glossterm{elite action} each round, just like elite monsters.
+      \item Elite ships automatically remove \glossterm{conditions}, just like elite monsters (see \pcref{Monster Conditions}).
     \end{raggeditemize}
 
 \section{Ship Resources and Strain}
@@ -168,13 +169,13 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   \subsection{Short Repair}
     The repair crew of a ship can execute a short repair with one hour of work and no significant material cost.
-    This fully restores the ship's damage resistance and sets its strain level to zero.
+    This sets the ship's strain level to zero.
 
   \subsection{Long Repair}
     The repair crew of a ship can execute a long repair with eight hours of work.
     This requires a relevant Craft \glossterm{extended check} with a difficulty value equal to 5 \add the ship's item rank.
     If the ship is docked for repair, the repair crew automatically rolls a 10 on this check.
-    A successful long repair fully restores the ship's hit points and damage resistance, and sets its strain level to zero.
+    A successful long repair fully restores the ship's hit points and sets its strain level to zero.
 
     A long repair costs materials worth one consumable item with a rank that is two ranks lower than the ship's item rank.
     If you are using gold pieces, this roughly translates to a repair cost equal to one hundredth of the ship's total value.
@@ -233,15 +234,19 @@ These rules could also be used for other types of vehicles, such as flying ships
       As with characters, a ship's Dexterity does not affect its overall speed, simply its combat maneuverability.
 
     \subsubsection{Constitution}
-      Constitution measures a ship's durability.
+      Constitution measures a ship's general toughness.
       Ships with a high Constitution are heavily reinforced and well crafted from sturdy materials.
       Ships with a low Constitution fall apart more easily, either because their construction is poor or because they were made from weak materials.
       Constitution has the following effects on ships:
+      % TODO: reformat to be more similar to character durability chart?
       \begin{raggeditemize}
-        \item Ships add twice their Constitution to their hit points.
+        \item Ships add their Constitution to their hit points.
+          At level 4, this bonus increases to twice the ship's Constitution.
           At level 7, this bonus increases to three times the ship's Constitution.
+          At level 10, this bonus increases to four times the ship's Constitution.
           At level 13, this bonus increases to six times the ship's Constitution.
-          At level 19, this bonus increases to twelve times the ship's Constitution.
+          At level 16, this bonus increases to eight times the ship's Constitution.
+          At level 19, this bonus increases to ten times the ship's Constitution.
         \item Ships add their Constitution to their Fortitude defense.
       \end{raggeditemize}
 
@@ -364,12 +369,12 @@ These rules could also be used for other types of vehicles, such as flying ships
   \begin{raggeditemize}
     \item Light armor: Lightly armored ships are the default. They gain no special benefits or penalties.
     \item Medium armor: Ships with medium armor gain a \plus2 bonus to Armor defense.
-      In addition, they have 50\% more damage resistance than a normal ship.
+      In addition, they have 50\% more hit points than a normal ship.
       However, they add only half their Dexterity bonus to their Armor defense.
       In addition, their movement speed is calculated as if they were one size category smaller (see \pcref{Ship Size}).
       Only Huge and larger ships can have medium armor.
     \item Heavy armor: Ships with heavy armor gain a \plus3 bonus to Armor defense.
-      In addition, they have twice the damage resistance of a normal ship.
+      In addition, they have twice the hit points of a normal ship.
       % Note that this doesn't perfectly match character heavy armor
       However, they do not add their Dexterity bonus to their armor defense.
       In addition, their movement speed is calculated as if they were two size categories smaller (see \pcref{Ship Size}).
@@ -611,7 +616,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     \cf{Fix}[1]{Quick Patch} As a standard action, you can attempt to patch the ship's defenses.
       This requires a Craft check relevant to the ship.
       The difficulty value is equal to 5 \add 5 for each time that you have used that same Craft skill with this ability since the ship's last short repair.
-      Success means that the ship regains damage resistance equal to three times your rank in this crew role.
+      Success means that the ship regains hit points equal to three times your rank in this crew role.
 
     \cf{Fix}[2]{Temporary Seal} You can make a Craft check relevant to the ship to temporarily stop a leak in a ship without expensive materials.
       The difficulty value is equal to 10 \add 10 for each time that you have used that same Craft skill with this ability since the ship's last vital repair.
@@ -625,7 +630,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
     \cf{Fix}[4]{Sturdy Reinforcement} The ship gains a \plus1 bonus to its Constitution.
 
-    \cf{Fix}[5]{Quick Patch+} The damage resistance regained increases to four times your rank in this crew role.
+    \cf{Fix}[5]{Quick Patch+} The hit points regained increases to four times your rank in this crew role.
 
     \cf{Fix}[6]{Temporary Seal+} You can use this ability to affect two leaks on the ship, rather than only one.
 
@@ -752,7 +757,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       In addition, whenever you participate in a ritual on the ship, you can increase the ship's strain level by one.
       If you do, the fatigue cost required to perform the ritual is reduced by an amount equal to twice your rank in this crew role.
 
-    \cf{Wrd}[4]{Permanent Ward} The ship gains a bonus to its maximum damage resistance equal to four times your rank in this crew role.
+    \cf{Wrd}[4]{Permanent Ward} The ship gains a bonus to its maximum \glossterm{hit points} equal to four times your rank in this crew role.
 
     \cf{Wrd}[5]{Active Defense+} The defense bonus increases to \plus3.
 

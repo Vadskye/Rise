@@ -209,7 +209,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for ~50% of rounds, so this is worth 1 EA.
       effect: `
         You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, you can spend an \\glossterm{ice crystal}.
+        At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
         If you do not, this ability is \\glossterm{dismisssed}.
       `,
       narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
@@ -226,9 +226,9 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       // Assume that you have DR for 3/5 of rounds, so this is worth 1.2 EA.
       effect: `
         You are \\shielded.
-        At the end of each round, if you took damage from a \\atFire ability that round or have no remaining \\glossterm{damage resistance}, you can spend an \\glossterm{ice crystal}.
+        At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
         If you do not, this effect is \\glossterm{suppressed}.
-        Whenever you regain damage resistance, this effect is immediately resumed.
+        When you stop being \\glossterm{injured}, this effect is immediately resumed.
       `,
       narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
       rank: 6,
@@ -346,7 +346,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         crit: CONDITION_CRIT,
         hit: `
           The target becomes \\glossterm{briefly} \\slowed.
-          If it has no remaining \\glossterm{damage resistance}, it is also slowed as a \\glossterm{condition}.
+          If it is \\glossterm{injured}, it is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.

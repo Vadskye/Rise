@@ -17,7 +17,6 @@ It's useful as a reminder of what kinds of bonuses can be granted by classes and
   * Removal
 * Defenses (Armor/Fort/Ref/Ment)
 * Hit points
-* Damage resistance
 * Recovery (active or triggered)
 * Redirect attacks to/from self
 * Vital rolls

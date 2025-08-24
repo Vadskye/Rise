@@ -248,7 +248,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
-        \\hit If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet.
+        \\hit If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet.
       `,
       rank: 3,
       roles: ['combo'],

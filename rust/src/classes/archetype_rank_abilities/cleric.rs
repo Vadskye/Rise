@@ -395,9 +395,9 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                     \hit The target is \glossterm{briefly} \stunned.
 
                     \rankline
-                    \rank{3} Each target with no remaining \glossterm{damage resistance} is stunned as a \glossterm{condition} instead of only briefly.
+                    \rank{3} Each \glossterm{injured} target is stunned as a \glossterm{condition} instead of only briefly.
                     \rank{5} You always use your Persuasion skill to determine your accuracy with this attack.
-                    \rank{7} Each target is stunned as a condition regardless of whether it has remaining \glossterm{damage resistance}.
+                    \rank{7} Each target is stunned as a condition regardless of whether it is injured.
                 \end{activeability}
             ",
             modifiers: None,

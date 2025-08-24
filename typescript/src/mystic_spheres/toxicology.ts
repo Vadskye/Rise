@@ -84,7 +84,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
         The stage 1 effect makes the target \\stunned while the poison lasts.
       `,
       rank: 1,
@@ -97,7 +97,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
         The stage 1 effect makes the target \\slowed while the poison lasts.
         The stage 3 effect also deals \damagerankthreelow.
       `,
@@ -111,7 +111,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
         The poison inflicts \\damagerankfourlow damage per \\glossterm{poison stage}.
       `,
       rank: 2,
@@ -124,7 +124,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
         You gain a +1 accuracy bonus with the poison.
         The poison inflicts \\damagerankfivelow damage per \\glossterm{poison stage}.
         The stage 3 effect also ends the poison.
@@ -139,7 +139,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
         The poison's stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
       `,
       rank: 5,
@@ -152,7 +152,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
         The poison inflicts \\damageranksevenlow damage per \\glossterm{poison stage}.
       `,
       rank: 5,
@@ -165,7 +165,7 @@ export const toxicology: MysticSphere = {
 
       effect: `
         Choose one living creature within \\shortrange.
-        If the target has no remaining \\glossterm{damage resistance}, it becomes \\glossterm{poisoned} by cockatrice venom (see \\pcref{Poison}).
+        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by cockatrice venom (see \\pcref{Poison}).
         You gain a +1 accuracy bonus with the poison.
         The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
         The stage 3 effect makes the target petrified while the poison lasts.
@@ -315,15 +315,15 @@ export const toxicology: MysticSphere = {
       name: 'Fungal Armor',
 
       effect: `
-        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
-        However, you take a -4 penalty to your \\glossterm{hit points}.
+        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        However, you also take a -1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +16, but the penalty increases to -8.`,
-        5: `The bonus increases to +32, but the penalty increases to -16.`,
-        7: `The bonus increases to +64, but the penalty increases to -32.`,
+        3: `The bonus increases to +16.`,
+        5: `The bonus increases to +32.`,
+        7: `The bonus increases to +64.`,
       },
       type: 'Attune',
     },
@@ -548,10 +548,10 @@ export const toxicology: MysticSphere = {
     {
       name: 'Regenerative Fungus',
 
-      // -1r relative to normal regeneration for the Fort penalty
+      // -1 rank for vital roll penalty
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain hit points equal to your \\glossterm{power}.
-        Whenever you regain hit points in this way, you \\glossterm{briefly} take a \\minus2 penalty to your Fortitude defense.
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain hit points equal to half your \\glossterm{power}.
+        Whenever you regain hit points in this way, you \\glossterm{briefly} take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 2,
       roles: ['attune', 'healing'],

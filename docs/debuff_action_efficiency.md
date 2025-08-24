@@ -102,7 +102,7 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 * x0.4 EA: Condition becomes a HP-only condition
 * +0.2 EA: Condition becomes a Sustain (minor)
 * +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
-* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if out of DR" is a 2.0 EA effect.
+* +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if injured" is a 2.0 EA effect.
 * +0.4 EA: Condition becomes a curse
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
 * -1 EA: The effect only works if you hit the creature with it twice.
@@ -289,7 +289,7 @@ In addition to the utility from pushing into hazards, a vertical knockback can l
 
 ### Knockback 30' (horizontal): 2.0 (ranged) / 1.5 (melee)
 
-Same as push 30', but this always requires the target to have no remaining DR.
+Same as push 30', but this always requires the target to be injured.
 
 ### Knockback 30' (vertical): 2.6 (ranged) / 2.1 (melee)
 
@@ -487,9 +487,9 @@ Double stunned, plus 25% effectiveness for negating impervious/immune.
 
 ## HP-Only Condition Effectiveness
 
-A condition that you can only apply after the target has entered HP is roughly the same power level as a brief effect. It has the upside of being able to last longer in boss fights or to fully remove non-elite enemies from the fight if they are in HP, but the downside of not working at all if the target has DR remaining.
+A condition that you can only apply after the target has entered HP is roughly the same power level as a brief effect. It has the upside of being able to last longer in boss fights or to fully remove non-elite enemies from the fight if they are in HP, but the downside of not working at all if the target is uninjured.
 
-In general, a monster will enter HP about halfway through the fight. Most enemies have more HP than DR, but enemies lose HP faster than DR. In group fights, individual enemies can easily enter HP after round 1, but it's rare for all enemies to enter HP simultaneously, making HP conditions difficult to use effectively unless you apply an AOE pre-fire debuff that works while they are at full HP. For bosses, assume that 10 of our standard 20 player actions are required to get the boss into HP. This means that defense debuffs are about 50% effective. Action denial debuffs only have 2 boss attack actions to negate with instead of the usual 4, which is also 50% effective.
+In general, a monster will be injured about halfway through the fight. In group fights, individual enemies can easily be injured after round 1, but it's rare for all enemies to be injured simultaneously, making injury conditions difficult to use effectively unless you apply an AOE pre-fire debuff that works while they are uninjured. For bosses, assume that 10 of our standard 20 player actions are required to injure the boss. This means that defense debuffs are about 50% effective. Action denial debuffs only have 2 boss attack actions to negate with instead of the usual 4, which is also 50% effective.
 
 Those are both best-case scenarios though. In practice, it's hard for an HP condition to reach that full 50% effectiveness, especially in a group fight. It seems reasonable to estimate HP-only conditions as being 40% of the effectiveness of a condition without prerequisites.
 

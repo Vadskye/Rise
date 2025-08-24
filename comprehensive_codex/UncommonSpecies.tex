@@ -81,25 +81,13 @@
       You can attune to it to benefit from its effects.
       If you use light modular carapace, this can allow you to benefit from two different magic armor effects.
 
-      % Normal magic armor expected resistance, light/med/heavy (light rank mult / med rank mult / heavy rank mult):
-      % Rank 1: 3/5/10 (3/5/10)
-      % Rank 2: 5/7/10 (3/4/5)
-      % Rank 3: 10/14/20 (3/5/7)
-      % Rank 4: 15/21/36 (4/5/9)
-      % Rank 5: 20/28/48 (4/6/10)
-      % Rank 6: 30/42/72 (5/7/12)
-      % Rank 7: 40/56/96 (6/8/14)
-
-      % We want the modular armor to generally be better than regular armor, and we only have one scaling increase at rank 5.
-      % So we start at 4/6/10 and scale to 6/8/14.
-
       \begin{raggeditemize}
-        \item Light armor: You gain a \plus3 bonus to your Armor defense, and a bonus to your maximum damage resistance bonus to four times your rank in this archetype.
+        \item Light armor: You gain a \plus3 bonus to your Armor defense and a \plus2 bonus to your \glossterm{durability}.
           You can wear body armor on top of this carapace.
-          Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and damage resistance bonus from either armor.
-        \item Medium armor: You gain a \plus5 bonus to your Armor defense, a \plus1 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to six times your rank in this archetype.
+          Although the benefits of that armor do not stack with the carapace, you can use the higher Armor defense value and durability bonus from either armor.
+        \item Medium armor: You gain a \plus5 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to \glossterm{vital rolls}.
           However, your Dexterity bonus to your Armor defense is halved, and you cannot wear body armor.
-        \item Heavy armor: You gain a \plus6 bonus to your Armor defense, a \plus2 bonus to \glossterm{vital rolls}, and a bonus to your maximum damage resistance equal to ten times your rank in this archetype.
+        \item Heavy armor: You gain a \plus6 bonus to your Armor defense, a \plus6 bonus to your \glossterm{durability}, and a \plus2 bonus to \glossterm{vital rolls}.
           However, your Dexterity bonus to your Armor defense is halved, you take a \minus10 foot penalty to your speed with all movement modes, and you cannot wear body armor.
           Unlike normal for heavy body armor, you do not need a minimum Strength to use this armor.
       \end{raggeditemize}
@@ -153,9 +141,6 @@
       You also gain an additional \glossterm{attunement point} that you can only use to attune to items embedded into your body.
       You cannot embed a \glossterm{legacy item} in this way.
 
-    \cf{Aut}[5]{Modular Carapace+} The damage resistance from your \textit{modular carapace} armor increases.
-      Light carapace increases to six times your rank in this archetype, medium carapace increases to eight times your rank, and heavy carapace increases to fourteen times your rank.
-
     \cf{Aut}[5]{Reassembly} You can recover from vital wounds more easily by simply replacing broken parts.
       You can remove a vital wound with ten minutes of work.
       This increases your \glossterm{fatigue level} by three, and it requires replacement parts that you generally keep with you.
@@ -191,8 +176,8 @@
 
     \cf{Aut}{Resources}
       \begin{raggeditemize}
-          \item \glossterm{Attunement points}: 4 (see \pcref{Attunement Points}).
-          \item \glossterm{Fatigue tolerance}: 2 \add your Constitution (see \pcref{Fatigue}).
+          \item \glossterm{Attunement points}: 3 (see \pcref{Attunement Points}).
+          \item \glossterm{Fatigue tolerance}: 5 \add your Constitution (see \pcref{Fatigue}).
           \item \glossterm{Insight points}: 1 \add your Intelligence (see \pcref{Insight Points}).
           \item \glossterm{Trained skills}: 4 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
       \end{raggeditemize}
@@ -386,9 +371,9 @@
     \cf{Drg}{Resources}
       \begin{raggeditemize}
           \item \glossterm{Attunement points}: 4 (see \pcref{Attunement Points}).
-          \item \glossterm{Fatigue tolerance}: 2 \add your Constitution (see \pcref{Fatigue}).
+          \item \glossterm{Fatigue tolerance}: 3 \add your Constitution (see \pcref{Fatigue}).
           \item \glossterm{Insight points}: 1 \add your Intelligence (see \pcref{Insight Points}).
-          \item \glossterm{Trained skills}: 5 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
+          \item \glossterm{Trained skills}: 4 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
       \end{raggeditemize}
 
     \cf{Drg}{Weapon Proficiencies}
@@ -556,8 +541,7 @@
       \end{raggeditemize}
 
     \cf{Dry}{Defenses}
-      You gain a \plus3 bonus to your Brawn and Reflex defenses.
-      In addition, you gain a \plus4 bonus to your Fortitude and Mental defenses.
+      You gain a \plus3 bonus to your Brawn, Fortitude, Reflex, and Mental defenses.
 
     \cf{Dry}{Resources}
       \begin{raggeditemize}
@@ -736,8 +720,7 @@
       \end{raggeditemize}
 
     \cf{Hrp}{Defenses}
-      You gain a \plus3 bonus to your Brawn, Fortitude, and Mental defenses.
-      In addition, you gain a \plus5 bonus to your Reflex defense.
+      You gain a \plus3 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
 
     \cf{Hrp}{Resources}
       \begin{raggeditemize}
@@ -1027,7 +1010,7 @@
     \begin{raggeditemize}
       \itemhead{Geyser or spring} You gain a \plus2 accuracy bonus against creatures that are at \unaware or \partiallyunaware of your attacks.
         In addition, when you use the \ability{desperate exertion} ability to affect an attack, the target is considered \partiallyunaware of that attack.
-      \itemhead{Lake} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+      \itemhead{Lake} You gain a \plus3 bonus to your \glossterm{durability}.
       \itemhead{River or stream} You gain a \plus2 bonus to your Reflex defense.
         In addition, when you \ability{sprint} downhill, you gain a \plus10 foot bonus to your \glossterm{movement speed}.
         This bonus is doubled as normal by the sprint ability.
@@ -1081,8 +1064,7 @@
       \end{raggeditemize}
 
     \cf{Nai}{Defenses}
-      You gain a \plus3 bonus to your Brawn, Fortitude, and Reflex defenses.
-      In addition, you gain a \plus5 bonus to your Mental defense.
+      You gain a \plus3 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
 
     \cf{Nai}{Resources}
       \begin{raggeditemize}
@@ -1230,12 +1212,12 @@
 
     \cf{Ooz}{Defenses}
       You gain a \plus3 bonus to your Brawn, Mental, and Reflex defenses.
-      In addition, you gain a \plus5 bonus to your Fortitude defense.
+      In addition, you gain a \plus5 bonus to your Fortitude defense and a \plus1 bonus to your \glossterm{vital rolls}.
 
     \cf{Ooz}{Resources}
       \begin{raggeditemize}
           \item \glossterm{Attunement points}: 3 (see \pcref{Attunement Points}).
-          \item \glossterm{Fatigue tolerance}: 2 \add your Constitution (see \pcref{Fatigue}).
+          \item \glossterm{Fatigue tolerance}: 3 \add your Constitution (see \pcref{Fatigue}).
           \item \glossterm{Insight points}: 1 \add your Intelligence (see \pcref{Insight Points}).
           \item \glossterm{Trained skills}: 3 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
       \end{raggeditemize}
@@ -1313,12 +1295,12 @@
     % * R7, 21 HP - 26% (80)
 
     % This intentionally can bring you above half max
-    \cf{Tre}[1]{Nourishing Ingrain} At the end of each round while you are \ability{ingrained}, you regain hit points equal to twice your rank in this archetype, and you may choose to remove a \glossterm{condition}.
+    \cf{Tre}[1]{Nourishing Ingrain} At the end of each round while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
       If you do, you increase your \glossterm{fatigue level} by one.
 
-    \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points} (see \pcref{Hit Points}).
-      In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
+    \cf{Tre}[2]{Sturdy as the Mighty Oak} You gain a \plus3 bonus to your \glossterm{durability}.
 
+    % TODO: proper EA / damage calc
     \magicalcf{Tre}[3]{Animate Plants}
       \begin{magicalactiveability}{Animate Plants}[\abilitytag{Manifestation}]
         \abilityusagetime Standard action.
@@ -1326,8 +1308,9 @@
         Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
         You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.
 
-        \hit The target is \slowed as a \glossterm{condition}.
-        In addition, it takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
+        \hit The target is \glossterm{briefly} \slowed.
+        In addition, it is attacked by plants as a \glossterm{condition}.
+        It takes 1d8 damage immediately, and during each of your subsequent actions while this condition lasts.
 
         This condition can be removed if the target makes a \glossterm{difficulty value} 10 Strength check as a \glossterm{move action} to break the plants.
         If the target makes this check as a standard action, it gains a \plus5 bonus.
@@ -1349,7 +1332,7 @@
     \cf{Tre}[5]{Nourishing Ingrain+} The healing from your \textit{nourishing ingrain} ability increases to three times your rank in this archetype.
       In addition, removing a condition with that ability no longer increases your fatigue level.
 
-    \cf{Tre}[6]{Sturdy as the Mighty Oak+} The hit point bonus increases to four times your rank in this archetype.
+    \cf{Tre}[6]{Sturdy as the Mighty Oak+} The durability bonus increases to \plus5.
 
     \cf{Tre}[7]{Tall as the Noble Pine+} Your size category increases to Huge.
       This increases your \glossterm{base speed} to 40 feet.
@@ -1371,13 +1354,13 @@
       \end{raggeditemize}
 
     \cf{Tre}{Defenses}
-      You gain a \plus3 bonus to your Brawn, Mental, and Reflex defenses.
-      In addition, you gain a \plus5 bonus to your Fortitude defense.
+      You gain a \plus3 bonus to your Brawn and Reflex defenses.
+      In addition, you gain a \plus5 bonus to your Fortitude defense and a \plus4 bonus to your Mental defense.
 
     \cf{Tre}{Resources}
       \begin{raggeditemize}
           \item \glossterm{Attunement points}: 3 (see \pcref{Attunement Points}).
-          \item \glossterm{Fatigue tolerance}: 2 \add your Constitution (see \pcref{Fatigue}).
+          \item \glossterm{Fatigue tolerance}: 3 \add your Constitution (see \pcref{Fatigue}).
           \item \glossterm{Insight points}: 1 \add your Intelligence (see \pcref{Insight Points}).
           \item \glossterm{Trained skills}: 3 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
       \end{raggeditemize}
@@ -1580,9 +1563,9 @@
 
   \subsection{Troll Archetype}
 
-    \cf{Trl}[1]{Regeneration} At the end of each round, if you did not take damage from a \atAcid or \atFire ability that round, you regain hit points equal to twice your rank in this archetype.
+    \cf{Trl}[1]{Regeneration} At the end of each round, if you did not take damage from a \atAcid or \atFire ability that round, you regain hit points equal to your rank in this archetype.
 
-    \cf{Trl}[2]{Tough Hide} You gain a bonus equal to three times your rank in this archetype to your maximum \glossterm{hit points}.
+    \cf{Trl}[2]{Tough Hide} You gain a \plus2 bonus to your \glossterm{durability}.
       In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
 
     \cf{Trl}[3]{Subspecies Specialization} You gain a bonus based on your troll subspecies.
@@ -1615,7 +1598,7 @@
 
     \cf{Trl}[6]{Tusks+} Your bite natural weapon deals 2d6 damage instead of the normal 1d8.
 
-    \cf{Trl}[7]{Regeneration++} The recovery increases to four times your rank in this archetype.
+    \cf{Trl}[7]{Regeneration++} The recovery increases to six times your rank in this archetype.
       In addition, removing a vital wound with this ability only increases your fatigue level by two.
 
   \subsection{Base Class Effects}
@@ -1633,13 +1616,13 @@
       \end{raggeditemize}
 
     \cf{Trl}{Defenses}
-      You gain a \plus3 bonus to your Brawn, Mental, and Reflex defenses.
-      In addition, you gain a \plus4 bonus to your Fortitude defense and a \plus1 bonus to your \glossterm{vital rolls}.
+      You gain a \plus3 bonus to your Brawn, Fortitude, Mental, and Reflex defenses.
+      In addition, you gain a \plus1 bonus to your \glossterm{vital rolls}.
 
     \cf{Trl}{Resources}
       \begin{raggeditemize}
           \item \glossterm{Attunement points}: 3 (see \pcref{Attunement Points}).
-          \item \glossterm{Fatigue tolerance}: 2 \add your Constitution (see \pcref{Fatigue}).
+          \item \glossterm{Fatigue tolerance}: 4 \add your Constitution (see \pcref{Fatigue}).
           \item \glossterm{Insight points}: 1 \add your Intelligence (see \pcref{Insight Points}).
           \item \glossterm{Trained skills}: 4 from among your \glossterm{class skills}, plus additional trained skills equal to your Intelligence if it is positive (see \pcref{Skills}).
       \end{raggeditemize}
@@ -1648,7 +1631,7 @@
       You are proficient with simple weapons and club-like weapons.
 
     \cf{Trl}{Armor Proficiencies}
-      You are proficient with light armor, leather lamellar, and standard shields.
+      You are proficient with light and medium armor.
 
     \cf{Trl}{Starting Items and Equipment}
     You can start with the following items and equipment:
@@ -1751,7 +1734,7 @@
   \subsection{Vampire Archetype}
 
     \cf{Vmp}[1]{Blood Drain} Whenever a living creature with blood loses hit points from a \glossterm{strike} using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
-      When you do, you regain \glossterm{damage resistance} and \glossterm{hit points} at the end of the round.
+      When you do, you regain \glossterm{hit points} at the end of the round.
       The recovery is equal to the hit points the target lost from the attack, ignoring negative hit points and any damage increase from critical hits.
 
     \cf{Vmp}[2]{Gentle Fangs} Whenever you deal damage using your bite natural weapon, you can choose not to reduce the target's hit points below 0, or you can treat the damage as \glossterm{subdual damage}.
@@ -1813,7 +1796,7 @@
         \rankline
         Make an attack vs. Mental against all humanoid \glossterm{enemies} within a \medarea \glossterm{cone} from you.
         \hit The target is \stunned as a \glossterm{condition}.
-        While it has no remaining \glossterm{damage resistance}, it is \confused instead of stunned.
+        While it is \glossterm{injured}, it is \confused instead of stunned.
         \crit If the target was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
         When you do, the target becomes \dominated by you for the duration of that attunement.
         This attunement only allows you to control one creature, not each target of this spell, and you can only attune to this effect once.

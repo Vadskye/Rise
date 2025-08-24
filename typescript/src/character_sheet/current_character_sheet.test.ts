@@ -43,7 +43,7 @@ t.test('triggers work for inactive sheets', (t) => {
 
   appleSheet.getAttrs(['hit_points', 'level', 'name'], (attrs) => {
     t.matchOnly(attrs, {
-      hit_points: 6,
+      hit_points: 10,
       level: 1,
       name: 'apple',
     });

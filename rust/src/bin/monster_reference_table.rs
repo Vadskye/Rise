@@ -32,9 +32,9 @@ fn main() {
 fn calc_cell(role: Role, level: i32) -> String {
     let monster = Monster::new(false, CreatureType::Planeforged, role, level);
     format!(
-        "{hp}/{dr}; {armor}/{brawn}/{fort}/{ment}/{ref}",
+        "{hp}/{ip}; {armor}/{brawn}/{fort}/{ment}/{ref}",
         hp = monster.creature.calc_hit_points(),
-        dr = monster.creature.calc_damage_resistance(),
+        ip = monster.creature.calc_injury_point(),
         armor = monster.creature.calc_defense(&Defense::Armor),
         brawn = monster.creature.calc_defense(&Defense::Brawn),
         fort = monster.creature.calc_defense(&Defense::Fortitude),

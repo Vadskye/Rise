@@ -26,7 +26,7 @@ from sheet_data import (
 from sheet_worker import standard_damage_at_power
 from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
 from attributes.dexterity import calc_armor, calc_reflex
-from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points
+from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_durability, calc_injury_point
 from attributes.intelligence import calc_insight_points, calc_trained_skills
 from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
@@ -106,8 +106,9 @@ def calc_defenses():
         {"class": "calc-defenses"},
         [
             div({"class": "section-header"}, "Defensive Statistics"),
+            calc_durability(),
             calc_hit_points(),
-            calc_damage_resistance(),
+            calc_injury_point(),
             calc_armor(),
             calc_brawn(),
             calc_fortitude(),
@@ -346,7 +347,6 @@ def calc_non_attribute():
                 {"class": "sidebar"},
                 [
                     calc_attunement_points(),
-                    calc_damage_resistance(),
                     calc_encumbrance(),
                 ],
             ),
@@ -358,35 +358,6 @@ def calc_non_attribute():
                 ],
             )
         ]
-    )
-
-def calc_damage_resistance():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Damage resist"),
-            equation(
-                {
-                    "class": "large-number-equation",
-                },
-                [
-                    underlabel(
-                        "Armor",
-                        number_input(
-                            {
-                                "name": "damage_resistance_armor",
-                            }
-                        ),
-                    ),
-                    plus(),
-                    equation_misc_repeat("damage_resistance", 3),
-                ],
-                result_attributes={
-                    "disabled": "true",
-                    "name": "damage_resistance_display",
-                    "value": "(@{damage_resistance_maximum})",
-                },
-            ),
-        ],
     )
 
 

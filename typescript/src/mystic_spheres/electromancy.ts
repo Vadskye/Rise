@@ -84,7 +84,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `
           The target becomes a lightning rod as a \\glossterm{condition}.
           Abilities which \\glossterm{chain} can travel an extra 30 feet to affect it.
-          In addition, while it has no remaining \\glossterm{damage resistance}, it is \\vulnerable to \\atElectricity abilities.
+          In addition, while it is \\glossterm{injured}, it is \\vulnerable to \\atElectricity abilities.
         `,
         targeting: `
           Make an attack vs. Fortitude against up one creature within \\shortrange.
@@ -184,7 +184,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is \\stunned as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -203,7 +203,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\stunned.
-          If it has no remaining \\glossterm{damage resistance}, it is also \\stunned as a \\glossterm{condition}.
+          If it is \\glossterm{injured}, it is also \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
@@ -221,7 +221,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // dr4 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per 2 power.
+        The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
         In addition, it is \\impervious to \\atElectricity attacks this round.
       `,
       rank: 3,
@@ -238,7 +238,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // dr7 from short range, +1dr for healing buff
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
-        The target regains 1d6 \\glossterm{damage resistance} plus 1d6 per power.
+        The target regains 1d6 \\glossterm{hit points} plus 1d6 per power.
         In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
       `,
       rank: 6,

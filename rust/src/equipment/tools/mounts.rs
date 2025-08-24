@@ -30,7 +30,8 @@ pub fn mounts() -> Vec<Tool> {
         description: String::from(r"
             This is a Large light horse intended for riding.
             It is not trained to be effectively ridden in battle.
-            It has 9 hit points and 6 damage resistance.
+            % TODO: calculate horse as a monster
+            It has 12 hit points.
         "),
         ..mount()
     });
@@ -42,7 +43,8 @@ pub fn mounts() -> Vec<Tool> {
         description: String::from(r"
             This is a Large draft horse intended for working a farm or similar labor.
             It is not trained to be effectively ridden in battle.
-            It has 16 hit points and 2 damage resistance.
+            % TODO: calculate horse as a monster
+            It has 16 hit points.
         "),
         ..mount()
     });
@@ -54,7 +56,8 @@ pub fn mounts() -> Vec<Tool> {
         description: String::from(r"
             This is a Large warhorse.
             It is trained to be effectively ridden in battle.
-            It has 12 hit points and 8 damage resistance.
+            % TODO: calculate horse as a monster
+            It has 20 hit points.
         "),
         ..mount()
     });

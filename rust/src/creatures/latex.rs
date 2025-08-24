@@ -5,7 +5,7 @@ use crate::creatures::Creature;
 pub fn format_creature(creature: &Creature) -> String {
     format!(
         "
-            HP {hit_points}, DR {damage_resistance}
+            HP {hit_points}, IP {injury_point}
             AD {armor}, Brn {brawn}, Fort {fortitude}, Ref {reflex}, Ment {mental}
             {attacks}
             Attr: {attributes}
@@ -21,7 +21,7 @@ pub fn format_creature(creature: &Creature) -> String {
         armor = creature.calc_defense(&Defense::Armor),
         brawn = creature.calc_defense(&Defense::Brawn),
         fortitude = creature.calc_defense(&Defense::Fortitude),
-        damage_resistance = creature.calc_damage_resistance(),
+        injury_point = creature.calc_injury_point(),
         hit_points = creature.calc_hit_points(),
         mental = creature.calc_defense(&Defense::Mental),
         reflex = creature.calc_defense(&Defense::Reflex),

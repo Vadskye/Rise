@@ -17,33 +17,35 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
-                    You regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
+                    You regain all of your \glossterm{hit points}.
                 \end{activeability}
             ",
             modifiers: None,
         },
+        // A normal rank 2 ability would give +3 durability. This gives +2HP for +4 IP.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred",
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype (see \pcref{Hit Points}).
+                You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
+                However, you also gain a \plus4 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
             ",
-            // HP is handled by add_hp_scaling()
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: None,
         },
+        // A normal rank 6 ability would give +5 durability. This gives +18 HP for +20 IP.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred+",
             is_magical: false,
             rank: 6,
             description: r"
-                The hit point bonus increases to four times your rank in this archetype.
+                The durability bonus increases to \plus8, and the injury point bonus increases to \plus20.
             ",
             modifiers: None,
         },
-        // TODO: this has janky scaling
+        // TODO: this has janky scaling, and is weird now that DR is gone.
         // Half HP damage is roughly half as effective as half damage, so 0.5 EA. A strike can
         // normally get 0.4 EA with -1 accuracy, so a class ability can get 0.5 EA with no accuracy
         // penalty.
@@ -405,7 +407,7 @@ pub fn primal_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 primal maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
@@ -468,7 +470,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
 
                 \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.
 
-                \subcf{Shark} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are below their maximum hit points.
+                \subcf{Shark} You gain a \plus1 \glossterm{accuracy} bonus against creatures that are \glossterm{injured}.
             ",
             // For convenience in balancing, assume lion totem instead of representing each totem
             modifiers: Some(vec![Modifier::Accuracy(1)]),
