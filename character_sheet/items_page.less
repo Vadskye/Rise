@@ -152,6 +152,12 @@
         .armor-defense, .body-armor-durability, .shield-reflex, .armor-vital-rolls, .armor-speed, .armor-encumbrance {
             align-items: center;
         }
+
+        // Fix the label stretching the box to the right, which would normally
+        // be fine but looks silly since Durability matches visually with Ref.
+        .body-armor-durability .under-label {
+            width: 3em;
+        }
     }
 
 
