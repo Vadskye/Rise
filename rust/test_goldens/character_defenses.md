@@ -14,22 +14,22 @@ Points / Self-hit: 35 / 50%
 
 ### Fighter Greatmace
 A/B/F/R/M: 6 / 7 / 5 / 3 / 3
-HP/IP: 16 / 1
+HP/IP: 17 / 1
 Points / Self-hit: 30 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 8 / 7 / 5 / 3 / 3
-HP/IP: 16 / 1
+HP/IP: 17 / 1
 Points / Self-hit: 34 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 4 / 5 / 5 / 7 / 3
+A/B/F/R/M: 5 / 5 / 5 / 7 / 3
 HP/IP: 12 / 1
-Points / Self-hit: 28 / 80%
+Points / Self-hit: 30 / 70%
 
 ### Paladin Shield
 A/B/F/R/M: 7 / 7 / 5 / 3 / 5
-HP/IP: 16 / 1
+HP/IP: 17 / 1
 Points / Self-hit: 34 / 40%
 
 ### Ranger Longbow
@@ -66,22 +66,22 @@ Points / Self-hit: 49 / 60%
 
 ### Fighter Greatmace
 A/B/F/R/M: 8 / 10 / 8 / 5 / 5
-HP/IP: 38 / 8
+HP/IP: 40 / 8
 Points / Self-hit: 44 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 10 / 10 / 8 / 5 / 5
-HP/IP: 38 / 8
+HP/IP: 40 / 8
 Points / Self-hit: 48 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 10 / 8 / 7 / 11 / 5
+A/B/F/R/M: 11 / 8 / 7 / 11 / 5
 HP/IP: 24 / 7
-Points / Self-hit: 51 / 50%
+Points / Self-hit: 53 / 40%
 
 ### Paladin Shield
 A/B/F/R/M: 9 / 10 / 8 / 5 / 7
-HP/IP: 38 / 8
+HP/IP: 40 / 8
 Points / Self-hit: 48 / 40%
 
 ### Ranger Longbow
@@ -118,22 +118,22 @@ Points / Self-hit: 69 / 60%
 
 ### Fighter Greatmace
 A/B/F/R/M: 11 / 14 / 12 / 8 / 10
-HP/IP: 78 / 28
+HP/IP: 86 / 28
 Points / Self-hit: 66 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 13 / 14 / 12 / 8 / 10
-HP/IP: 78 / 28
+HP/IP: 86 / 28
 Points / Self-hit: 70 / 40%
 
 ### Monk Kama
-A/B/F/R/M: 15 / 12 / 10 / 16 / 8
+A/B/F/R/M: 16 / 12 / 10 / 16 / 8
 HP/IP: 46 / 24
-Points / Self-hit: 76 / 30%
+Points / Self-hit: 78 / 20%
 
 ### Paladin Shield
 A/B/F/R/M: 12 / 14 / 12 / 8 / 11
-HP/IP: 82 / 28
+HP/IP: 90 / 28
 Points / Self-hit: 69 / 40%
 
 ### Ranger Longbow
@@ -170,22 +170,22 @@ Points / Self-hit: 84 / 60%
 
 ### Fighter Greatmace
 A/B/F/R/M: 13 / 17 / 15 / 10 / 14
-HP/IP: 144 / 60
+HP/IP: 156 / 60
 Points / Self-hit: 82 / 70%
 
 ### Fighter Shield
 A/B/F/R/M: 15 / 17 / 15 / 10 / 14
-HP/IP: 144 / 60
+HP/IP: 156 / 60
 Points / Self-hit: 86 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 18 / 15 / 12 / 19 / 10
+A/B/F/R/M: 19 / 15 / 12 / 19 / 10
 HP/IP: 90 / 51
-Points / Self-hit: 92 / 20%
+Points / Self-hit: 94 / 10%
 
 ### Paladin Shield
 A/B/F/R/M: 14 / 17 / 15 / 10 / 13
-HP/IP: 152 / 60
+HP/IP: 164 / 60
 Points / Self-hit: 83 / 50%
 
 ### Ranger Longbow
@@ -222,22 +222,22 @@ Points / Self-hit: 102 / 70%
 
 ### Fighter Greatmace
 A/B/F/R/M: 16 / 20 / 18 / 13 / 17
-HP/IP: 266 / 125
+HP/IP: 286 / 125
 Points / Self-hit: 100 / 70%
 
 ### Fighter Shield
 A/B/F/R/M: 18 / 20 / 18 / 13 / 17
-HP/IP: 266 / 125
+HP/IP: 286 / 125
 Points / Self-hit: 104 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 22 / 19 / 16 / 22 / 14
+A/B/F/R/M: 23 / 19 / 16 / 22 / 14
 HP/IP: 186 / 115
-Points / Self-hit: 115 / 10%
+Points / Self-hit: 117 / 10%
 
 ### Paladin Shield
 A/B/F/R/M: 17 / 20 / 18 / 13 / 16
-HP/IP: 282 / 125
+HP/IP: 302 / 125
 Points / Self-hit: 101 / 50%
 
 ### Ranger Longbow
