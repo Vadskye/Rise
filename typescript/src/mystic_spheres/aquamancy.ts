@@ -145,7 +145,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is surrounded by a bubble of water as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it is surrounded by a bubble of water as a \\glossterm{condition}.
           It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
           It is also \\submerged, which causes it to suffer penalties if it does not have a is \\glossterm{swim speed}.
         `,
@@ -694,7 +694,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Waterward',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
       `,
       rank: 1,
       roles: ['attune'],

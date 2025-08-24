@@ -34,13 +34,11 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                         \item Its size category is Medium, and its \glossterm{base speed} is 30 feet.
                         \item Its level is equal to your level if that would be higher than the animal's normal level.
                         \item It has no \glossterm{resources}, and it cannot use abilities that would increase its fatigue level.
-                        \item Its maximum \glossterm{hit points} are equal to the standard value for a ranger of your level and Constitution (see Base Class Abilities, above).
-                        \item Its maximum \glossterm{damage resistance} is equal to its maximum hit points, ignoring any \glossterm{enhancement bonuses} to hit points.
+                        \item Its maximum \glossterm{hit points} are equal to your level \x your rank in this archetype, plus 10 additional hit points.
                         \item Each of its \glossterm{defenses} is equal to 4 \add half your level.
                         \item Its \glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
                         \item Its \glossterm{power} is equal to half your power. You can use the higher of your \glossterm{mundane power} and \glossterm{magical power} for this ability.
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
-                        \item It automatically shares the benefits of all of your \glossterm{enhancement bonuses} to maximum hit points and damage resistance.
                     \end{raggeditemize}
 
                     % TODO: awkward scaling
@@ -109,7 +107,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                Whenever you regain \glossterm{hit points} or \glossterm{damage resistance}, your animal companion also regains that many hit points or damage resistance.
+                Whenever you regain \glossterm{hit points}, your animal companion also regains that many hit points.
                 If the healing ability had any limit, such as only healing up to half your maximum hit points, that limit also applies to your animal companion.
             ",
             modifiers: None,
@@ -226,7 +224,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and has no remaining \glossterm{damage resistance}, the strike deals double damage.
+                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and is \glossterm{injured}, the strike deals double damage.
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.

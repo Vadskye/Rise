@@ -329,7 +329,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
-                        \hit For the duration of your performance, the target is \stunned while it has no remaining \glossterm{damage resistance}.
+                        \hit For the duration of your performance, the target is \stunned while it is \glossterm{injured}.
 
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
@@ -395,7 +395,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilityusagetime Standard action.
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
-                        The target regains 1d8+1d6 \glossterm{damage resistance} and increases its \glossterm{fatigue level} by one.
+                        The target regains 1d8+1d6 \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
                         In addition, it \glossterm{briefly} gains a \plus2 bonus to its Mental defense.
 
                         \rankline
@@ -602,7 +602,7 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 

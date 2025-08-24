@@ -65,8 +65,6 @@ mod creature_tests {
         );
 
         creature.add_modifier(Modifier::Defense(Defense::Armor, 2), None, None);
-        creature.add_modifier(Modifier::DamageResistance(1), None, None);
-        creature.add_modifier(Modifier::DamageResistance(2), None, None);
         assert_eq!(
             2,
             creature.calc_defense(&Defense::Armor),
@@ -82,7 +80,6 @@ mod creature_tests {
             creature.calc_defense(&Defense::Fortitude),
             "Should have 3 Fort"
         );
-        assert_eq!(3, creature.calc_damage_resistance(), "Should have 3 DR");
     }
 
     #[test]

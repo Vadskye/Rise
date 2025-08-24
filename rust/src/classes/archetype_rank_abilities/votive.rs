@@ -90,7 +90,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                 Whenever you increase your rank in this archetype, you can change your augments.
                 However, you must still apply them to rank 1 pact maneuvers.
                 {
-                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are below their maximum \glossterm{hit points}.
+                    \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
                     \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
 
@@ -150,12 +150,13 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
                     This functions like light body armor that has no \glossterm{encumbrance}.
-                    It provides a \plus4 bonus to your Armor defense, a \plus1 bonus to your \glossterm{vital rolls}, and a bonus to your maximum \glossterm{damage resistance} equal to five times your rank in this archetype.
-                    In exchange, the \ability{recover} ability no longer causes you to recover hit points or damage resistance (see \pcref{Recover}).
+                    It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
+                    In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} At the end of each round, if you \glossterm{injured} a creature during that round, you regain \glossterm{hit points} equal to 1d4 \add half your \glossterm{power}.
+                    \subcf{Covenant of Bloodsharing} At the end of each round, if you made a living \glossterm{enemy} lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to half your \glossterm{power}.
+                    % TODO: do multiple targets sum their HP loss?
                     You cannot regain more hit points in this way than the target lost from your attack.
-                    In exchange, whenever you take damage, half of that damage is applied to your \glossterm{hit points} directly, ignoring your \glossterm{damage resistance}.
+                    In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
                     It is removed when the creature finishes a \glossterm{short rest}.
@@ -169,7 +170,8 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             // Assume covenant of bloodforging and already wearing light armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::DamageResistance(3),
+                Modifier::Durability(2),
+                Modifier::VitalRoll(1),
             ]),
         },
         RankAbility {
@@ -180,7 +182,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The effect of your chosen covenant improves.
                 {
-                    \subcf{Covenant of Bloodforging} The damage resistance bonus from the armor increases to seven times your rank in this archetype.
+                    \subcf{Covenant of Bloodforging} The vital roll bonus from the armor increases to \plus2.
 
                     \subcf{Covenant of Bloodsharing} The healing increases to 1d6 \add your \glossterm{magical power}.
 
@@ -197,7 +199,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen covenant reaches its full potential.
                 {
-                    \parhead{Covenant of Bloodforging} The damage resistance bonus from the armor increases to ten times your rank in this archetype.
+                    \parhead{Covenant of Bloodforging} The durability bonus from the armor increases to \plus5.
                     In addition, the defense bonus increases to \plus5.
 
                     \parhead{Covenant of Bloodsharing} The healing increases to 1d6 \add 1d6 per 2 \glossterm{magical power}.
@@ -206,54 +208,6 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 }
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 2,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(6)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 3,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(9)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 4,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(20)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 5,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(25)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 6,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(30)]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Sacrificial Covenant",
-            is_magical: true,
-            rank: 7,
-            description: "",
-            modifiers: Some(vec![Modifier::DamageResistance(49)]),
         },
         RankAbility {
             complexity: 1,
@@ -292,7 +246,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain 1d6 \glossterm{damage resistance} \add 1d6 per 2 \glossterm{power}.
+                    You regain 1d6 \glossterm{hit points} \add 1d6 per 2 \glossterm{power}.
                     In addition, you may remove a \glossterm{condition} affecting you.
 
                     \rankline
@@ -386,27 +340,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Survival Pact+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The bonus increases to twice your rank in this archetype.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Survival Pact+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The bonus increases to three times your rank in this archetype.
+                You gain a \plus1 bonus to your \glossterm{durability}.
             ",
             modifiers: None,
         },
@@ -543,7 +477,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Moirai -- Inevitable} You gain a \plus2 \glossterm{accuracy} bonus.
                 However, you roll 1d8 instead of 1d10 for attack rolls, and your attack rolls cannot \glossterm{explode}.
 
-                \subcf{Precursor -- Burgeoning} You gain a bonus to your maximum \glossterm{hit points} equal to twice your rank in this archetype (see \pcref{Hit Points}).
+                \subcf{Precursor -- Burgeoning} You gain a \plus2 bonus to your \glossterm{durability} (see \pcref{Durability}).
                 In addition, you gain a tentacle \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 It deals 1d6 damage, has the \weapontag{Maneuverable} weapon tag, and does not require a \glossterm{free hand}.
             ",
@@ -584,7 +518,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 
                 \subcf{Moirai -- Inevitable\plus} The bonus to accuracy and checks increases to \plus3.
 
-                \subcf{Precursor -- Burgeoning\plus} The bonus to your maximum \glossterm{hit points} increases to four times your rank in this archetype.
+                \subcf{Precursor -- Burgeoning\plus} The durability bonus increases to \plus4.
                 In addition, your tentacle now deals 1d10 damage.
             ",
             modifiers: None,
@@ -671,7 +605,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a \plus3 bonus to your \glossterm{durability}.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
             modifiers: None,
@@ -682,7 +616,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                The bonus increases to four times your rank in this archetype.
+                The durability bonus increases to \plus5.
                 In addition, you take no penalties for being \glossterm{resurrected}.
             ",
             modifiers: None,

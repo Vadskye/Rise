@@ -89,7 +89,6 @@ pub fn write_character_rounds_to_live_golden() -> io::Result<()> {
 pub fn write_monster_rounds_to_live_golden() -> io::Result<()> {
     let brute = |level: i32| Monster::standard_brute(level).creature;
     let leader = |level: i32| Monster::standard_leader(level).creature;
-    let mystic = |level: i32| Monster::standard_mystic(level).creature;
     let skirmisher = |level: i32| Monster::standard_skirmisher(level).creature;
     let sniper = |level: i32| Monster::standard_sniper(level).creature;
     let warrior = |level: i32| Monster::standard_warrior(level).creature;
@@ -105,10 +104,6 @@ pub fn write_monster_rounds_to_live_golden() -> io::Result<()> {
 
 {leader_rtl}
 
-## Mystic
-
-{mystic_rtl}
-
 ## Skirmisher
 
 {skirmisher_rtl}
@@ -122,7 +117,6 @@ pub fn write_monster_rounds_to_live_golden() -> io::Result<()> {
 {warrior_rtl}",
         brute_rtl = rtl_by_level(&brute),
         leader_rtl = rtl_by_level(&leader),
-        mystic_rtl = rtl_by_level(&mystic),
         skirmisher_rtl = rtl_by_level(&skirmisher),
         sniper_rtl = rtl_by_level(&sniper),
         warrior_rtl = rtl_by_level(&warrior),

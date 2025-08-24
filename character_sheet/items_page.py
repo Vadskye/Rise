@@ -198,12 +198,12 @@ def armor(destination, armor_type):
     parseable_type = armor_type.lower().replace(" ", "_")
 
     body_armor_dr = labeled_number_input(
-        "DR",
+        "Durability",
         {
-            "class": "armor-damage-resistance",
+            "class": "body-armor-durability",
             "title": "Not including any attuned effects",
         },
-        input_attributes={"name": parseable_type + "_damage_resistance"},
+        input_attributes={"name": parseable_type + "_durability"},
     )
     shield_reflex = labeled_number_input(
         "Ref",

@@ -185,7 +185,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is \\confused as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it is \\confused as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -253,7 +253,7 @@ export const enchantment: MysticSphere = {
       // action skip is r3 with limited scope
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
+          If the target is \\glossterm{injured}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
           After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
@@ -290,7 +290,7 @@ export const enchantment: MysticSphere = {
       // is not well defined.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
+          If the target is \\glossterm{injured}, it is compelled to make a \\glossterm{strike} against itself using its next \\glossterm{standard action}.
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
@@ -485,7 +485,7 @@ export const enchantment: MysticSphere = {
       // it's hard to abuse?
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, it becomes deluded as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it becomes deluded as a \\glossterm{condition}.
           It believes that it is the only real creature, and the rest of the world is an illusion.
           It may wander aimlessly, but generally takes no action to defend itself or attack others.
           This generally means it is at least \\partiallyunaware of any attacks against it.
@@ -625,7 +625,7 @@ export const enchantment: MysticSphere = {
       // dr3
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains \\glossterm{damage resistance} equal to 1d8 \\add your power.
+        The target regains \\glossterm{hit points} equal to 1d8 \\add your power.
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
@@ -644,7 +644,7 @@ export const enchantment: MysticSphere = {
       // dr7
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
-        The target regains \\glossterm{damage resistance} equal to 1d10 plus 1d10 per 2 power.
+        The target regains \\glossterm{hit points} equal to 1d10 plus 1d10 per 2 power.
         In addition, it gains a +4 bonus to its Mental defense this round.
       `,
       rank: 6,

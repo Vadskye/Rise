@@ -135,13 +135,10 @@ pub fn run_combat_at_standard_levels(
 }
 
 fn survival_percent(creatures: &Vec<Creature>) -> f64 {
-    let remaining_damage_absorption: i32 = creatures
-        .iter()
-        .map(|d| d.remaining_damage_resistance() + d.remaining_hit_points())
-        .sum();
+    let remaining_damage_absorption: i32 = creatures.iter().map(|d| d.remaining_hit_points()).sum();
     let max_damage_absorption: i32 = creatures
         .iter()
-        .map(|d| d.calc_damage_resistance() + d.calc_effective_combat_hit_points())
+        .map(|d| d.calc_effective_combat_hit_points())
         .sum();
     max(0, remaining_damage_absorption) as f64 / max_damage_absorption as f64
 }
@@ -160,8 +157,7 @@ pub fn calc_rounds_to_live(attackers: &Vec<&Creature>, defenders: &Vec<&Creature
         // Divide to average the dpr across all defenders
         damage_per_round += calc_damage_per_round(attackers, defender) / (defenders.len() as f64);
         // Add 1 HP since creatures need to drop below 0 to die, not just go to 0
-        damage_absorption +=
-            defender.remaining_damage_resistance() + defender.remaining_hit_points() + 1;
+        damage_absorption += defender.remaining_hit_points() + 1;
     }
 
     let rounds_to_survive = damage_absorption as f64 / damage_per_round;

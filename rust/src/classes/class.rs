@@ -1,6 +1,6 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::classes::{generate_latex_basic_class_abilities, ClassArchetype};
-use crate::core_mechanics::{Defense, HitPointProgression, Resource};
+use crate::core_mechanics::{Defense, Resource};
 use crate::equipment::{Armor, ArmorUsageClass};
 use crate::latex_formatting;
 use crate::skills::{KnowledgeSubskill, Skill};
@@ -96,7 +96,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 48;
+        let expected_points = 44;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -118,23 +118,9 @@ impl Class {
         return !Self::core_classes().contains(self);
     }
 
-    // At level 10, one attunement is worth 8 HP generically, or about 11 to a caster.
-    // Assume 2 Con
-    // Low HP is (14 + 6 + 4) = 24 HP
-    // Med HP is (18 + 6 + 4) = 28 HP
-    // High HP is (20 + 9 + 6) = 35 HP
-    // Very high HP is (24 + 12 + 8) = 44 HP
-    // Conclusion: HP gap is slightly less valuable than attunement, or similar? Seems weird.
-    // Assume that a third of the value of Con comes from the HP modifier (+1 Fort, +1 fatigue, HP)
-    // So 2 points of Con should be similar to 2 points of HP progression.
-    // Low HP is (14 + 6 + 8) = 28 HP
-    // Med HP is (18 + 6 + 8) = 32 HP
-    // High HP is (20 + 9 + 12) = 41 HP
-    // Very high HP is (24 + 12 + 16) = 49 HP
-    // Conclusion: HP progression advancement should be 4 points
     pub fn calculate_point_total(&self) -> i32 {
         self.attunement_points() * 6
-            + self.hit_point_progression().creation_point_cost()
+            + self.fatigue_tolerance() * 2
             // 3 points per insight point. Int gives (insight + trained + skill bonuses), but
             //   insight is the strongest of those, so assume it's half the value of Int.
             + self.insight_points() * 3
@@ -157,7 +143,7 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
-            Self::Automaton => 1,
+            Self::Automaton => 0,
             Self::Barbarian => 0,
             Self::Cleric => 1,
             Self::Dragon => 1,
@@ -165,14 +151,14 @@ impl Class {
             Self::Dryaidi => 1,
             Self::Fighter => 0,
             Self::Harpy => 1,
-            Self::Incarnation => 2,
-            Self::Monk => 1,
+            Self::Incarnation => 1,
+            Self::Monk => 0,
             Self::Naiad => 1,
             Self::Oozeborn => 0,
             Self::Paladin => 1,
             Self::Ranger => 0,
-            Self::Rogue => 1,
-            Self::Sorcerer => 2,
+            Self::Rogue => 0,
+            Self::Sorcerer => 1,
             Self::Treant => 0,
             Self::Troll => 0,
             Self::Vampire => 1,
@@ -546,44 +532,43 @@ impl Class {
         };
 
         let class_bonus = match self {
-            Self::Cleric => match defense {
-                Defense::Mental => 2,
-                _ => 0,
-            },
-            Self::Dryaidi => match defense {
-                Defense::Fortitude => 1,
-                Defense::Mental => 1,
+            Self::Barbarian => match defense {
+                Defense::Fortitude => 2,
                 _ => 0,
             },
             Self::Fighter => match defense {
                 Defense::Armor => 1,
                 _ => 0,
             },
-            Self::Harpy => match defense {
-                Defense::Reflex => 2,
+            Self::Incarnation => match defense {
+                // Actually changes defense to match their element
+                Defense::Fortitude => 2,
                 _ => 0,
             },
-            Self::Naiad => match defense {
-                Defense::Mental => 2,
+            Self::Monk => match defense {
+                Defense::Armor => 1,
                 _ => 0,
             },
             Self::Oozeborn => match defense {
                 Defense::Fortitude => 2,
-                _ => 0,
-            },
-            Self::Treant => match defense {
-                Defense::Fortitude => 2,
-                _ => 0,
-            },
-            Self::Troll => match defense {
-                Defense::Fortitude => 1,
                 // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
                 // build that into the point calc system.
                 Defense::Reflex => 2,
                 _ => 0,
             },
-            Self::Votive => match defense {
-                Defense::Mental => 2,
+            Self::Sorcerer => match defense {
+                Defense::Fortitude => 1,
+                _ => 0,
+            },
+            Self::Treant => match defense {
+                Defense::Fortitude => 2,
+                Defense::Mental => 1,
+                _ => 0,
+            },
+            Self::Troll => match defense {
+                // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
+                // build that into the point calc system.
+                Defense::Reflex => 2,
                 _ => 0,
             },
             _ => 0,
@@ -592,37 +577,28 @@ impl Class {
         base_bonus + class_bonus
     }
 
-    pub fn hit_point_progression(&self) -> HitPointProgression {
-        match self {
-            Self::Automaton => HitPointProgression::High,
-            Self::Barbarian => HitPointProgression::VeryHigh,
-            Self::Cleric => HitPointProgression::Medium,
-            Self::Dragon => HitPointProgression::High,
-            Self::Druid => HitPointProgression::Medium,
-            Self::Dryaidi => HitPointProgression::Medium,
-            Self::Fighter => HitPointProgression::High,
-            Self::Harpy => HitPointProgression::Medium,
-            Self::Incarnation => HitPointProgression::High,
-            Self::Monk => HitPointProgression::High,
-            Self::Naiad => HitPointProgression::Medium,
-            Self::Oozeborn => HitPointProgression::VeryHigh,
-            Self::Paladin => HitPointProgression::High,
-            Self::Ranger => HitPointProgression::High,
-            Self::Rogue => HitPointProgression::Medium,
-            Self::Sorcerer => HitPointProgression::Medium,
-            Self::Treant => HitPointProgression::VeryHigh,
-            Self::Troll => HitPointProgression::VeryHigh,
-            Self::Vampire => HitPointProgression::High,
-            Self::Votive => HitPointProgression::Medium,
-            Self::Wizard => HitPointProgression::Medium,
+    pub fn fatigue_tolerance(&self) -> i32 {
+        let base_bonus = 2;
+
+        base_bonus + match self {
+            Self::Automaton => 3,
+            Self::Barbarian => 1,
+            Self::Dragon => 1,
+            Self::Fighter => 1,
+            Self::Ranger => 1,
+            Self::Oozeborn => 1,
+            Self::Sorcerer => 1,
+            Self::Treant => 1,
+            Self::Troll => 2,
+            _ => 0,
         }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Cleric => 1,
-            Self::Druid => 1,
             Self::Dryaidi => 1,
+            Self::Rogue => 1,
             Self::Wizard => 1,
             _ => 0,
         }
@@ -657,7 +633,7 @@ impl Class {
     pub fn resource_bonus(&self, resource: &Resource) -> i32 {
         match resource {
             Resource::AttunementPoint => self.attunement_points(),
-            Resource::FatigueTolerance => 0,
+            Resource::FatigueTolerance => self.fatigue_tolerance(),
             Resource::InsightPoint => self.insight_points(),
             Resource::TrainedSkill => self.trained_skills(),
         }
@@ -692,26 +668,26 @@ impl Class {
     pub fn trained_skills(&self) -> i32 {
         match self {
             Self::Automaton => 4,
-            Self::Barbarian => 4,
+            Self::Barbarian => 3,
             Self::Cleric => 3,
-            Self::Dragon => 5,
+            Self::Dragon => 4,
             Self::Druid => 4,
             Self::Dryaidi => 4,
             Self::Fighter => 3,
             Self::Harpy => 5,
-            Self::Incarnation => 3,
-            Self::Monk => 4,
+            Self::Incarnation => 4,
+            Self::Monk => 5,
             Self::Naiad => 5,
             Self::Oozeborn => 4,
             Self::Paladin => 3,
-            Self::Ranger => 6,
+            Self::Ranger => 5,
             Self::Rogue => 6,
-            Self::Sorcerer => 4,
+            Self::Sorcerer => 3,
             Self::Treant => 3,
             Self::Troll => 3,
             Self::Vampire => 4,
             Self::Votive => 3,
-            Self::Wizard => 5,
+            Self::Wizard => 3,
         }
     }
 
@@ -790,12 +766,8 @@ impl Class {
                 usage_classes: ArmorUsageClass::all(),
             },
             Self::Troll => ArmorProficiencies {
-                specific_armors: Some(vec![
-                    Armor::LeatherLamellar(None),
-                    Armor::LayeredHide(None),
-                    Armor::StandardShield,
-                ]),
-                usage_classes: vec![ArmorUsageClass::Light],
+                specific_armors: None,
+                usage_classes: vec![ArmorUsageClass::Light, ArmorUsageClass::Medium],
             },
             Self::Vampire => ArmorProficiencies {
                 specific_armors: None,
@@ -1362,7 +1334,7 @@ impl Class {
             "
                 \\begin<columntable>
                     \\begin<dtabularx><\\columnwidth><l l l l {xcol}>
-                        \\tb<Level> & \\tb<Rank> & \\tb<HP> & \\tb<HP Per Con> & \\tb<Universal Benefits> \\tableheaderrule
+                        \\tb<Level> & \\tb<Rank> & \\tb<HP Mult> & \\tb<Durability> & \\tb<Universal Benefits> \\tableheaderrule
                         {level_rows}
                     \\end<dtabularx>
                 \\end<columntable>
@@ -1375,14 +1347,26 @@ impl Class {
     fn latex_base_class_table_rows(&self) -> String {
         let mut level_rows = Vec::new();
         for level in 1..22 {
+            let rank = (level + 2) / 3;
+            let hp_multiplier = match rank {
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 6,
+                6 => 8,
+                7 => 10,
+                _ => panic!("impossible")
+            };
+            // TODO: should this include injury point?
             level_rows.push(format!(
                 "
-                    {level} & {rank} & {base_hp} & {hp_per_con} & {special} \\\\
+                    {level} & {rank} & {hp_multiplier} & {durability_bonus} & {special} \\\\
                 ",
                 level = level,
-                rank = (level + 2) / 3,
-                base_hp = self.hit_point_progression().hp_from_level(level),
-                hp_per_con = self.hit_point_progression().hp_from_con(level, 1),
+                rank = rank,
+                hp_multiplier = format!("\\mult{}", hp_multiplier),
+                durability_bonus = level - rank,
                 special = universal_character_progression_at_level(level),
             ))
         }
@@ -1601,7 +1585,7 @@ impl Class {
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} \glossterm{mundane} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
-                            \hit If the target's \glossterm{damage resistance} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
+                            \hit If the target's \glossterm{hardness} is lower than your \glossterm{power}, it crumbles into a fine power and is irreparably \glossterm{destroyed}.
 
                             \rankline
                             \rank{6} The area increases to a \arealarge radius.
@@ -1613,9 +1597,9 @@ impl Class {
                         If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
 
                         \domainability{Gift} You are \impervious to Earth attacks.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{damage resistance}.
+                        \domainability{Aspect} You gain a \plus3 bonus to your \glossterm{durability}.
                         \domainability{Essence} You gain a \plus1 bonus to your Brawn and Fortitude defenses.
-                        \domainability{Mastery} The defense bonuses increase to \plus2, and the damage resistance bonus increases to four times your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The defense bonuses increase to \plus2, and the durability bonus increases to \plus4.
 
                     \subsubsection{Evil Domain}
                         \domainability{Gift} You are immune to being \charmed and \goaded.
@@ -1689,9 +1673,9 @@ impl Class {
                         \magicaldomainability{Gift} Whenever you cause a creature to regain hit points, they regain additional hit points equal to your rank in the Domain Influence archetype.
                         % TODO: wording
                         This additional healing applies once per ability.
-                        \domainability{Aspect} You gain a bonus equal to three times your rank in the Domain Influence archetype to your maximum \glossterm{hit points}.
+                        \domainability{Aspect} You gain a \plus3 bonus to your \glossterm{durability}.
                         \magicaldomainability{Essence} The additional healing increases to twice your rank in the Domain Influence archetype.
-                        \domainability{Mastery} The hit point bonus increases to five times your rank in the Domain Influence archetype.
+                        \domainability{Mastery} The durability bonus increases to \plus5.
 
                     \subsubsection{Magic Domain}
                         If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).

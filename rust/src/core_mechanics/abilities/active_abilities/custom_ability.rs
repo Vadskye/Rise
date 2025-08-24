@@ -117,7 +117,7 @@ impl CustomAbility {
         Self {
             effect: format!("
                 The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
-                \\hit If the target has no remaining damage resistance, it is compelled to spend its next standard action doing nothing but groveling before the $name.
+                \\hit If the target is \\glossterm<injured>, it is compelled to spend its next standard action doing nothing but groveling before the $name.
                 After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
             "),
             is_magical: true,
@@ -178,7 +178,7 @@ impl CustomAbility {
             ability_type: AbilityType::Normal,
             effect: "
                 The $name makes a $accuracy attack vs. Mental against one creature within \\medrange.
-                \\hit If the target has no remaining \\glossterm<damage resistance>, it is compelled to spend its next \\glossterm<standard action> doing nothing at all.
+                \\hit If the target is \\glossterm{injured}, it is compelled to spend its next \\glossterm<standard action> doing nothing at all.
                 After it takes this standard action, it becomes \\trait<immune> to this effect until it finishes a \\glossterm<short rest>.
             ".to_string(),
             is_magical: true,
