@@ -72,8 +72,8 @@ t.test('can calculate durability', (t) => {
     setStandardFighter();
     getAttrs(['durability', 'durability_explanation'], (attrs) => {
       t.match(attrs, {
-        durability: 16,
-        durability_explanation: '+6 (level scaling)  +2 (fighter)  +2 (Con)  +6 (body armor)',
+        durability: 14,
+        durability_explanation: '+6 (level scaling)  +2 (Con)  +6 (body armor)',
       });
       t.end();
     });
@@ -99,8 +99,8 @@ t.test('can calculate hit points', (t) => {
     setStandardFighter();
     getAttrs(['hit_points_max', 'hit_points_explanation'], (attrs) => {
       t.match(attrs, {
-        hit_points_max: 74,
-        hit_points_explanation: '+10 (base)  +64 (4 * durability)',
+        hit_points_max: 66,
+        hit_points_explanation: '+10 (base)  +56 (4 * durability)',
       });
       t.end();
     });

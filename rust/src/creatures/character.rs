@@ -519,7 +519,7 @@ pub fn standard_body_armor_for_level(level: i32, max_usage_class: ArmorUsageClas
             } else if level >= 4 {
                 return Armor::HalfPlate(None);
             } else {
-                return Armor::LayeredHide(None);
+                return Armor::Breastplate(None);
             }
         }
         ArmorUsageClass::Medium => {

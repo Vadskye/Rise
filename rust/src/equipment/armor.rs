@@ -5,9 +5,9 @@ use std::{cmp::max, fmt};
 #[derive(Clone, Debug)]
 pub enum Armor {
     // Light armor
-    Padded(Option<ArmorMaterial>),
     BuffLeather(Option<ArmorMaterial>),
     MailShirt(Option<ArmorMaterial>),
+    Rawhide(Option<ArmorMaterial>),
     Buckler,
 
     // Medium armor
@@ -17,7 +17,7 @@ pub enum Armor {
     StandardShield,
 
     // Heavy armor
-    LayeredHide(Option<ArmorMaterial>),
+    Breastplate(Option<ArmorMaterial>),
     HalfPlate(Option<ArmorMaterial>),
     FullPlate(Option<ArmorMaterial>),
     TowerShield,
@@ -43,10 +43,12 @@ pub enum ArmorMaterial {
     Normal,
     Starmetal,
     PureStarmetal,
+    Vineweave,
+    BraidedVineweave,
 }
 
 struct ArmorMaterialDefinition {
-    dr_multiplier: f64,
+    durability_modifier: i32,
     encumbrance_modifier: i32,
     item_rank: i32,
     name: String,
@@ -56,126 +58,130 @@ impl ArmorMaterial {
     fn definition(&self) -> ArmorMaterialDefinition {
         match self {
             Self::Normal => ArmorMaterialDefinition {
-                dr_multiplier: 1.0,
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "normal".to_string(),
                 item_rank: 0,
             },
-            Self::Magic(rank) => ArmorMaterialDefinition {
-                dr_multiplier: match rank {
-                    3 => 2.0,
-                    4 => 3.0,
-                    5 => 4.0,
-                    6 => 6.0,
-                    7 => 8.0,
-                    8 => 12.0,
-                    _ => 1.0,
-                },
+            Self::Magic(_) => ArmorMaterialDefinition {
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "magic".to_string(),
                 item_rank: 0,
             },
             Self::Adamantine => ArmorMaterialDefinition {
-                dr_multiplier: 6.0,
+                durability_modifier: 2,
                 encumbrance_modifier: 2,
                 name: "adamantine".to_string(),
                 item_rank: 5,
             },
             Self::PureAdamantine => ArmorMaterialDefinition {
-                dr_multiplier: 12.0,
+                durability_modifier: 4,
                 encumbrance_modifier: 2,
                 name: "pure adamantine".to_string(),
                 item_rank: 7,
             },
             Self::ColdIron => ArmorMaterialDefinition {
-                dr_multiplier: 1.0,
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "cold iron".to_string(),
                 item_rank: 2,
             },
             Self::PureColdIron => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "pure cold iron".to_string(),
                 item_rank: 4,
             },
             Self::Diamondsteel => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "diamondsteel".to_string(),
                 item_rank: 3,
             },
             Self::PureDiamondsteel => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
+                durability_modifier: 0,
                 encumbrance_modifier: 0,
                 name: "pure diamondsteel".to_string(),
                 item_rank: 5,
             },
             Self::Dragonhide(t) => ArmorMaterialDefinition {
-                dr_multiplier: 3.0,
+                durability_modifier: 1,
                 encumbrance_modifier: 0,
                 name: format!("{} dragonhide", t),
                 item_rank: 4,
             },
             Self::AncientDragonhide(t) => ArmorMaterialDefinition {
-                dr_multiplier: 6.0,
+                durability_modifier: 1,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonhide", t),
                 item_rank: 6,
             },
             Self::Dragonscale(t) => ArmorMaterialDefinition {
-                dr_multiplier: 3.0,
+                durability_modifier: 1,
                 encumbrance_modifier: 0,
                 name: format!("{} dragonscale", t),
                 item_rank: 4,
             },
             Self::AncientDragonscale(t) => ArmorMaterialDefinition {
-                dr_multiplier: 6.0,
+                durability_modifier: 1,
                 encumbrance_modifier: 0,
                 name: format!("pure {} dragonscale", t),
                 item_rank: 6,
             },
             Self::Elvenweave => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
+                durability_modifier: 0,
                 encumbrance_modifier: -1,
                 name: "elvenweave".to_string(),
                 item_rank: 3,
             },
             Self::PureElvenweave => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
+                durability_modifier: 0,
                 encumbrance_modifier: -2,
                 name: "pure elvenweave".to_string(),
                 item_rank: 5,
             },
             Self::Mithral => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
+                durability_modifier: 1,
                 encumbrance_modifier: -1,
                 name: "mithral".to_string(),
                 item_rank: 3,
             },
             Self::PureMithral => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
+                durability_modifier: 2,
                 encumbrance_modifier: -2,
                 name: "pure mithral".to_string(),
                 item_rank: 5,
             },
             Self::Starmetal => ArmorMaterialDefinition {
-                dr_multiplier: 2.0,
+                durability_modifier: 1,
                 encumbrance_modifier: 2,
                 name: "starmetal".to_string(),
                 item_rank: 2,
             },
             Self::PureStarmetal => ArmorMaterialDefinition {
-                dr_multiplier: 4.0,
+                durability_modifier: 2,
                 encumbrance_modifier: 2,
                 name: "pure starmetal".to_string(),
                 item_rank: 4,
             },
+            Self::Vineweave => ArmorMaterialDefinition {
+                durability_modifier: 1,
+                encumbrance_modifier: 0,
+                name: "vineweave".to_string(),
+                item_rank: 3,
+            },
+            Self::BraidedVineweave => ArmorMaterialDefinition {
+                durability_modifier: 2,
+                encumbrance_modifier: 0,
+                name: "pure starmetal".to_string(),
+                item_rank: 5,
+            },
         }
     }
 
-    fn dr_multiplier(&self) -> f64 {
-        self.definition().dr_multiplier
+    fn durability_modifier(&self) -> i32 {
+        self.definition().durability_modifier
     }
 
     fn encumbrance_modifier(&self) -> i32 {
@@ -193,7 +199,7 @@ impl ArmorMaterial {
 
 struct ArmorDefinition {
     accuracy_modifier: i32,
-    damage_resistance: i32,
+    durability: i32,
     defense: i32,
     dex_multiplier: f64,
     encumbrance: i32,
@@ -207,39 +213,40 @@ impl Armor {
     fn definition(&self) -> ArmorDefinition {
         match self {
             // Light armor
-            Self::Padded(m) => ArmorDefinition {
+            Self::BuffLeather(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(3, m),
+                durability: calc_durability(1, m),
                 defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 0,
-                item_rank: 1,
-                name: "Padded".to_string(),
-                speed_modifier: 0,
-            },
-            Self::BuffLeather(m) => ArmorDefinition {
-                accuracy_modifier: 0,
-                damage_resistance: calc_dr(4, m),
-                defense: 2,
-                dex_multiplier: 1.0,
-                encumbrance: 1,
                 item_rank: 1,
                 name: "buff leather".to_string(),
                 speed_modifier: 0,
             },
             Self::MailShirt(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(4, m),
+                durability: calc_durability(2, m),
+                defense: 2,
+                dex_multiplier: 1.0,
+                encumbrance: 0,
+                item_rank: 2,
+                name: "chain shirt".to_string(),
+                speed_modifier: 0,
+            },
+            Self::Rawhide(m) => ArmorDefinition {
+                accuracy_modifier: 0,
+                durability: calc_durability(0, m),
                 defense: 2,
                 dex_multiplier: 1.0,
                 encumbrance: 1,
                 item_rank: 1,
-                name: "chain shirt".to_string(),
+                name: "Rawhide".to_string(),
                 speed_modifier: 0,
+                // TODO: add vital roll modifier
             },
             Self::Buckler => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: 0,
+                durability: 0,
                 defense: 1,
                 dex_multiplier: 1.0,
                 encumbrance: 0,
@@ -251,7 +258,7 @@ impl Armor {
             // Medium armor
             Self::LeatherLamellar(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(4, m),
+                durability: calc_durability(2, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 2,
@@ -261,7 +268,7 @@ impl Armor {
             },
             Self::Scale(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(5, m),
+                durability: calc_durability(3, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -271,7 +278,7 @@ impl Armor {
             },
             Self::Brigandine(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(6, m),
+                durability: calc_durability(4, m),
                 defense: 4,
                 dex_multiplier: 0.5,
                 encumbrance: 4,
@@ -281,7 +288,7 @@ impl Armor {
             },
             Self::StandardShield => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: 0,
+                durability: 0,
                 defense: 2,
                 dex_multiplier: 0.5,
                 encumbrance: 0,
@@ -291,39 +298,39 @@ impl Armor {
             },
 
             // Heavy armor
-            Self::LayeredHide(m) => ArmorDefinition {
+            Self::Breastplate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
-                defense: 4,
+                durability: calc_durability(4, m),
+                defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 4,
+                encumbrance: 2,
                 item_rank: 1,
                 name: "breastplate".to_string(),
                 speed_modifier: -10,
             },
             Self::HalfPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(10, m),
+                durability: calc_durability(6, m),
                 defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 6,
+                encumbrance: 3,
                 item_rank: 2,
                 name: "half plate".to_string(),
                 speed_modifier: -10,
             },
             Self::FullPlate(m) => ArmorDefinition {
                 accuracy_modifier: 0,
-                damage_resistance: calc_dr(12, m),
+                durability: calc_durability(6, m),
                 defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 6,
+                encumbrance: 4,
                 item_rank: 3,
                 name: "full plate".to_string(),
                 speed_modifier: -10,
             },
             Self::TowerShield => ArmorDefinition {
                 accuracy_modifier: -1,
-                damage_resistance: 0,
+                durability: 0,
                 defense: 3,
                 dex_multiplier: 0.5,
                 encumbrance: 2,
@@ -336,15 +343,16 @@ impl Armor {
 
     fn is_body_armor(&self) -> bool {
         // This is a bit of a hack; we could identify this with a name match instead.
-        self.definition().damage_resistance > 0
+        // TODO: This breaks for rawhide.
+        self.definition().durability > 0
     }
 
     fn material(&self) -> &Option<ArmorMaterial> {
         match self {
             // Light armor
-            Self::Padded(m) => m,
             Self::BuffLeather(m) => m,
             Self::MailShirt(m) => m,
+            Self::Rawhide(m) => m,
             Self::Buckler => &None,
 
             // Medium armor
@@ -354,7 +362,7 @@ impl Armor {
             Self::StandardShield => &None,
 
             // Heavy armor
-            Self::LayeredHide(m) => m,
+            Self::Breastplate(m) => m,
             Self::HalfPlate(m) => m,
             Self::FullPlate(m) => m,
             Self::TowerShield => &None,
@@ -365,8 +373,8 @@ impl Armor {
         self.definition().accuracy_modifier
     }
 
-    pub fn damage_resistance(&self) -> i32 {
-        self.definition().damage_resistance
+    pub fn durability(&self) -> i32 {
+        self.definition().durability
     }
 
     pub fn dex_multiplier(&self) -> f64 {
@@ -406,12 +414,12 @@ impl Armor {
     }
 }
 
-fn calc_dr(base_dr: i32, material: &Option<ArmorMaterial>) -> i32 {
-    return ((base_dr as f64)
-        * material
+fn calc_durability(base_durability: i32, material: &Option<ArmorMaterial>) -> i32 {
+    base_durability
+        + material
             .as_ref()
             .unwrap_or(&ArmorMaterial::Normal)
-            .dr_multiplier()) as i32;
+            .durability_modifier()
 }
 
 #[derive(Eq, PartialEq)]
@@ -499,27 +507,27 @@ mod tests {
     use super::*;
 
     #[test]
-    fn calc_special_material_damage_resistance() {
+    fn calc_special_material_durability() {
         assert_eq!(
-            10,
-            Armor::FullPlate(None).damage_resistance(),
+            6,
+            Armor::FullPlate(None).durability(),
             "Should be 10 with no material"
         );
         assert_eq!(
-            20,
-            Armor::FullPlate(Some(ArmorMaterial::Starmetal)).damage_resistance(),
-            "Should be 2x with starmetal"
+            7,
+            Armor::FullPlate(Some(ArmorMaterial::Starmetal)).durability(),
+            "Should be +1 with starmetal"
         );
         assert_eq!(
-            30,
+            7,
             Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
-                .damage_resistance(),
-            "Should be 3x with dragonhide"
+                .durability(),
+            "Should be +1 with dragonhide"
         );
         assert_eq!(
-            60,
-            Armor::FullPlate(Some(ArmorMaterial::Adamantine)).damage_resistance(),
-            "Should be 6x with pure adamantine"
+            8,
+            Armor::FullPlate(Some(ArmorMaterial::Adamantine)).durability(),
+            "Should be +2 with adamantine"
         );
     }
 }
