@@ -14,14 +14,14 @@
  *  Sorcerer:  45 /  86
  *    Votive:  44 /  91
  *    Wizard:  44 /  85
- * Automaton:  47 /  93
+ * Automaton:  47 /  95
  *    Dragon:  46 /  87
  *   Dryaidi:  47 /  87
  *     Harpy:  46 /  86
- * Incarnation:  47 /  87
+ * Incarnation:  47 /  86
  *     Naiad:  46 /  86
  *  Oozeborn:  47 /  86
- *     Troll:  47 /  88
+ *     Troll:  46 /  93
  *    Treant:  46 /  92
  *   Vampire:  46 /  87
 
@@ -37,14 +37,14 @@
  *  Sorcerer:  45 / 164
  *    Votive:  44 / 170
  *    Wizard:  44 / 163
- * Automaton:  47 / 172
+ * Automaton:  47 / 174
  *    Dragon:  46 / 165
  *   Dryaidi:  47 / 165
  *     Harpy:  46 / 164
- * Incarnation:  47 / 165
+ * Incarnation:  47 / 164
  *     Naiad:  46 / 164
  *  Oozeborn:  47 / 164
- *     Troll:  47 / 166
+ *     Troll:  46 / 172
  *    Treant:  46 / 171
  *   Vampire:  46 / 165
 
@@ -60,14 +60,14 @@
  *  Sorcerer:  45 / 227
  *    Votive:  44 / 232
  *    Wizard:  44 / 226
- * Automaton:  47 / 234
+ * Automaton:  47 / 236
  *    Dragon:  46 / 228
  *   Dryaidi:  47 / 228
  *     Harpy:  46 / 227
- * Incarnation:  47 / 228
+ * Incarnation:  47 / 227
  *     Naiad:  46 / 227
  *  Oozeborn:  47 / 227
- *     Troll:  47 / 229
+ *     Troll:  46 / 234
  *    Treant:  46 / 233
  *   Vampire:  46 / 228
 
@@ -113,9 +113,9 @@
 
 #### Monk
             Monk 1
-            AP 3, FT 8, IP 3, Skills 6
+            AP 2, FT 8, IP 3, Skills 7
             HP 14, IP 1
-            AD 4, Brn 5, Fort 5, Ref 5, Ment 5
+            AD 5, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -176,7 +176,7 @@
 
 #### Automaton
             Automaton 1
-            AP 3, FT 8, IP 3, Skills 6
+            AP 2, FT 11, IP 3, Skills 6
             HP 15, IP 1
             AD 5, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
@@ -212,9 +212,9 @@
 
 #### Incarnation
             Incarnation 1
-            AP 4, FT 8, IP 3, Skills 5
+            AP 3, FT 8, IP 3, Skills 6
             HP 14, IP 1
-            AD 4, Brn 5, Fort 5, Ref 5, Ment 5
+            AD 4, Brn 5, Fort 7, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -240,8 +240,8 @@
 #### Troll
             Troll 1
             AP 2, FT 10, IP 3, Skills 5
-            HP 14, IP 1
-            AD 4, Brn 5, Fort 6, Ref 7, Ment 5
+            HP 15, IP 1
+            AD 5, Brn 5, Fort 5, Ref 7, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -304,9 +304,9 @@
 
 #### Monk
             Monk 10
-            AP 5, FT 8, IP 5, Skills 6
+            AP 4, FT 8, IP 5, Skills 7
             HP 50, IP 24
-            AD 9, Brn 10, Fort 10, Ref 10, Ment 10
+            AD 10, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -367,7 +367,7 @@
 
 #### Automaton
             Automaton 10
-            AP 5, FT 8, IP 5, Skills 6
+            AP 4, FT 11, IP 5, Skills 6
             HP 58, IP 24
             AD 10, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
@@ -403,9 +403,9 @@
 
 #### Incarnation
             Incarnation 10
-            AP 6, FT 8, IP 5, Skills 5
+            AP 5, FT 8, IP 5, Skills 6
             HP 50, IP 24
-            AD 9, Brn 10, Fort 10, Ref 10, Ment 10
+            AD 9, Brn 10, Fort 12, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -431,8 +431,8 @@
 #### Troll
             Troll 10
             AP 4, FT 10, IP 5, Skills 5
-            HP 50, IP 24
-            AD 9, Brn 10, Fort 11, Ref 12, Ment 10
+            HP 58, IP 24
+            AD 10, Brn 10, Fort 10, Ref 12, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -495,9 +495,9 @@
 
 #### Monk
             Monk 20
-            AP 5, FT 8, IP 5, Skills 6
+            AP 4, FT 8, IP 5, Skills 7
             HP 180, IP 110
-            AD 14, Brn 15, Fort 15, Ref 15, Ment 15
+            AD 15, Brn 15, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12
@@ -558,7 +558,7 @@
 
 #### Automaton
             Automaton 20
-            AP 5, FT 8, IP 5, Skills 6
+            AP 4, FT 11, IP 5, Skills 6
             HP 200, IP 110
             AD 15, Brn 15, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
@@ -594,9 +594,9 @@
 
 #### Incarnation
             Incarnation 20
-            AP 6, FT 8, IP 5, Skills 5
+            AP 5, FT 8, IP 5, Skills 6
             HP 180, IP 110
-            AD 14, Brn 15, Fort 15, Ref 15, Ment 15
+            AD 14, Brn 15, Fort 17, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12
@@ -622,8 +622,8 @@
 #### Troll
             Troll 20
             AP 4, FT 10, IP 5, Skills 5
-            HP 180, IP 110
-            AD 14, Brn 15, Fort 16, Ref 17, Ment 15
+            HP 200, IP 110
+            AD 15, Brn 15, Fort 15, Ref 17, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12
