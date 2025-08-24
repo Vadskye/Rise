@@ -45,13 +45,13 @@ Extra        : 3.25 = (7.5 dph * 0.30 hpr) + (7.5 dpc * 0.03 cpr) + (3.8 dpg * 0
 Power        : 1.56 = (15.0 dph * 0.09 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.01 gpr) = 1.35 hdpr + 0.14 cdpr + 0.07 gdpr
 
 ### Defender: Monk Kama
-Best attack: Extra Damage Bite
+Best attack: Certain Bite
 
 #### Detailed attack results
-Accuracy     : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
-Certain      : 6.29 = (6.0 dph * 0.90 hpr) + (6.0 dpc * 0.10 cpr) + (3.0 dpg * 0.10 gpr) = 5.40 hdpr + 0.59 cdpr + 0.30 gdpr
-Extra        : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
-Power        : 6.50 = (15.0 dph * 0.30 hpr) + (15.0 dpc * 0.03 cpr) + (7.5 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 1.50 gdpr
+Accuracy     : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Certain      : 5.93 = (6.0 dph * 0.80 hpr) + (6.0 dpc * 0.09 cpr) + (3.0 dpg * 0.20 gpr) = 4.80 hdpr + 0.53 cdpr + 0.60 gdpr
+Extra        : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Power        : 4.83 = (15.0 dph * 0.20 hpr) + (15.0 dpc * 0.02 cpr) + (7.5 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 1.50 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Certain Bite
@@ -146,10 +146,10 @@ Power        : 3.04 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg *
 Best attack: Certain Bite
 
 #### Detailed attack results
-Accuracy     : 5.17 = (9.5 dph * 0.40 hpr) + (9.5 dpc * 0.04 cpr) + (4.8 dpg * 0.20 gpr) = 3.80 hdpr + 0.42 cdpr + 0.95 gdpr
-Certain      : 5.36 = (7.0 dph * 0.60 hpr) + (7.0 dpc * 0.07 cpr) + (3.5 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.70 gdpr
-Extra        : 4.55 = (10.5 dph * 0.30 hpr) + (10.5 dpc * 0.03 cpr) + (5.2 dpg * 0.20 gpr) = 3.15 hdpr + 0.35 cdpr + 1.05 gdpr
-Power        : 3.04 = (19.0 dph * 0.10 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.10 gpr) = 1.90 hdpr + 0.19 cdpr + 0.95 gdpr
+Accuracy     : 4.11 = (9.5 dph * 0.30 hpr) + (9.5 dpc * 0.03 cpr) + (4.8 dpg * 0.20 gpr) = 2.85 hdpr + 0.31 cdpr + 0.95 gdpr
+Certain      : 4.58 = (7.0 dph * 0.50 hpr) + (7.0 dpc * 0.06 cpr) + (3.5 dpg * 0.20 gpr) = 3.50 hdpr + 0.39 cdpr + 0.70 gdpr
+Extra        : 3.38 = (10.5 dph * 0.20 hpr) + (10.5 dpc * 0.02 cpr) + (5.2 dpg * 0.20 gpr) = 2.10 hdpr + 0.23 cdpr + 1.05 gdpr
+Power        : 1.98 = (19.0 dph * 0.09 hpr) + (19.0 dpc * 0.01 cpr) + (9.5 dpg * 0.01 gpr) = 1.71 hdpr + 0.17 cdpr + 0.09 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Generic Accuracy Bite
@@ -244,10 +244,10 @@ Power        : 10.82 = (25.0 dph * 0.30 hpr) + (25.0 dpc * 0.03 cpr) + (12.5 dpg
 Best attack: Generic Accuracy Bite
 
 #### Detailed attack results
-Accuracy     : 8.19 = (12.5 dph * 0.50 hpr) + (12.5 dpc * 0.06 cpr) + (6.2 dpg * 0.20 gpr) = 6.25 hdpr + 0.69 cdpr + 1.25 gdpr
-Certain      : 7.45 = (8.5 dph * 0.70 hpr) + (8.5 dpc * 0.08 cpr) + (4.2 dpg * 0.20 gpr) = 5.95 hdpr + 0.65 cdpr + 0.85 gdpr
-Extra        : 6.44 = (20.0 dph * 0.20 hpr) + (20.0 dpc * 0.02 cpr) + (10.0 dpg * 0.20 gpr) = 4.00 hdpr + 0.44 cdpr + 2.00 gdpr
-Power        : 5.28 = (25.0 dph * 0.10 hpr) + (25.0 dpc * 0.01 cpr) + (12.5 dpg * 0.20 gpr) = 2.50 hdpr + 0.28 cdpr + 2.50 gdpr
+Accuracy     : 6.80 = (12.5 dph * 0.40 hpr) + (12.5 dpc * 0.04 cpr) + (6.2 dpg * 0.20 gpr) = 5.00 hdpr + 0.55 cdpr + 1.25 gdpr
+Certain      : 6.51 = (8.5 dph * 0.60 hpr) + (8.5 dpc * 0.07 cpr) + (4.2 dpg * 0.20 gpr) = 5.10 hdpr + 0.56 cdpr + 0.85 gdpr
+Extra        : 4.22 = (20.0 dph * 0.10 hpr) + (20.0 dpc * 0.01 cpr) + (10.0 dpg * 0.20 gpr) = 2.00 hdpr + 0.22 cdpr + 2.00 gdpr
+Power        : 4.00 = (25.0 dph * 0.10 hpr) + (25.0 dpc * 0.01 cpr) + (12.5 dpg * 0.10 gpr) = 2.50 hdpr + 0.25 cdpr + 1.25 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Powerful Bite
@@ -352,12 +352,12 @@ Power+       : 9.81 = (46.5 dph * 0.10 hpr) + (46.5 dpc * 0.01 cpr) + (23.2 dpg 
 Best attack: Certain Strike+ -- Bite
 
 #### Detailed attack results
-Accuracy     : 10.15 = (15.5 dph * 0.50 hpr) + (15.5 dpc * 0.06 cpr) + (7.8 dpg * 0.20 gpr) = 7.75 hdpr + 0.85 cdpr + 1.55 gdpr
-Certain      : 8.77 = (10.0 dph * 0.70 hpr) + (10.0 dpc * 0.08 cpr) + (5.0 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 1.00 gdpr
-Extra        : 6.22 = (29.5 dph * 0.10 hpr) + (29.5 dpc * 0.01 cpr) + (14.8 dpg * 0.20 gpr) = 2.95 hdpr + 0.32 cdpr + 2.95 gdpr
-Power        : 6.54 = (31.0 dph * 0.10 hpr) + (31.0 dpc * 0.01 cpr) + (15.5 dpg * 0.20 gpr) = 3.10 hdpr + 0.34 cdpr + 3.10 gdpr
-Certain+     : 13.59 = (15.5 dph * 0.70 hpr) + (15.5 dpc * 0.08 cpr) + (7.8 dpg * 0.20 gpr) = 10.85 hdpr + 1.19 cdpr + 1.55 gdpr
-Power+       : 4.56 = (46.5 dph * 0.08 hpr) + (46.5 dpc * 0.01 cpr) + (23.2 dpg * 0.02 gpr) = 3.72 hdpr + 0.37 cdpr + 0.46 gdpr
+Accuracy     : 8.43 = (15.5 dph * 0.40 hpr) + (15.5 dpc * 0.04 cpr) + (7.8 dpg * 0.20 gpr) = 6.20 hdpr + 0.68 cdpr + 1.55 gdpr
+Certain      : 7.66 = (10.0 dph * 0.60 hpr) + (10.0 dpc * 0.07 cpr) + (5.0 dpg * 0.20 gpr) = 6.00 hdpr + 0.66 cdpr + 1.00 gdpr
+Extra        : 4.72 = (29.5 dph * 0.10 hpr) + (29.5 dpc * 0.01 cpr) + (14.8 dpg * 0.10 gpr) = 2.95 hdpr + 0.30 cdpr + 1.48 gdpr
+Power        : 4.96 = (31.0 dph * 0.10 hpr) + (31.0 dpc * 0.01 cpr) + (15.5 dpg * 0.10 gpr) = 3.10 hdpr + 0.31 cdpr + 1.55 gdpr
+Certain+     : 11.87 = (15.5 dph * 0.60 hpr) + (15.5 dpc * 0.07 cpr) + (7.8 dpg * 0.20 gpr) = 9.30 hdpr + 1.02 cdpr + 1.55 gdpr
+Power+       : 4.05 = (46.5 dph * 0.07 hpr) + (46.5 dpc * 0.01 cpr) + (23.2 dpg * 0.02 gpr) = 3.25 hdpr + 0.33 cdpr + 0.47 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Powerful Bite
@@ -477,13 +477,13 @@ Triple       : 34.39 = (52.5 dph * 0.50 hpr) + (52.5 dpc * 0.06 cpr) + (26.2 dpg
 Best attack: Certain Strike+ -- Bite
 
 #### Detailed attack results
-Accuracy     : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg * 0.20 gpr) = 12.25 hdpr + 1.35 cdpr + 1.75 gdpr
-Certain      : 11.54 = (11.0 dph * 0.90 hpr) + (11.0 dpc * 0.10 cpr) + (5.5 dpg * 0.10 gpr) = 9.90 hdpr + 1.09 cdpr + 0.55 gdpr
-Extra        : 11.29 = (53.5 dph * 0.10 hpr) + (53.5 dpc * 0.01 cpr) + (26.8 dpg * 0.20 gpr) = 5.35 hdpr + 0.59 cdpr + 5.35 gdpr
-Power        : 15.15 = (35.0 dph * 0.30 hpr) + (35.0 dpc * 0.03 cpr) + (17.5 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 3.50 gdpr
-Certain+     : 18.36 = (17.5 dph * 0.90 hpr) + (17.5 dpc * 0.10 cpr) + (8.8 dpg * 0.10 gpr) = 15.75 hdpr + 1.73 cdpr + 0.87 gdpr
-Power+       : 8.40 = (52.5 dph * 0.10 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.10 gpr) = 5.25 hdpr + 0.53 cdpr + 2.62 gdpr
-Triple       : 11.08 = (52.5 dph * 0.10 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 5.25 gdpr
+Accuracy     : 13.40 = (17.5 dph * 0.60 hpr) + (17.5 dpc * 0.07 cpr) + (8.8 dpg * 0.20 gpr) = 10.50 hdpr + 1.16 cdpr + 1.75 gdpr
+Certain      : 10.87 = (11.0 dph * 0.80 hpr) + (11.0 dpc * 0.09 cpr) + (5.5 dpg * 0.20 gpr) = 8.80 hdpr + 0.97 cdpr + 1.10 gdpr
+Extra        : 8.56 = (53.5 dph * 0.10 hpr) + (53.5 dpc * 0.01 cpr) + (26.8 dpg * 0.10 gpr) = 5.35 hdpr + 0.54 cdpr + 2.68 gdpr
+Power        : 11.27 = (35.0 dph * 0.20 hpr) + (35.0 dpc * 0.02 cpr) + (17.5 dpg * 0.20 gpr) = 7.00 hdpr + 0.77 cdpr + 3.50 gdpr
+Certain+     : 17.29 = (17.5 dph * 0.80 hpr) + (17.5 dpc * 0.09 cpr) + (8.8 dpg * 0.20 gpr) = 14.00 hdpr + 1.54 cdpr + 1.75 gdpr
+Power+       : 5.46 = (52.5 dph * 0.09 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.01 gpr) = 4.73 hdpr + 0.47 cdpr + 0.26 gdpr
+Triple       : 8.40 = (52.5 dph * 0.10 hpr) + (52.5 dpc * 0.01 cpr) + (26.2 dpg * 0.10 gpr) = 5.25 hdpr + 0.53 cdpr + 2.62 gdpr
 
 ### Defender: Paladin Shield
 Best attack: Extra Damage Bite
