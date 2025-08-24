@@ -1,22 +1,22 @@
 # Run Player vs Player Combat
 
 ## Barbarian greataxe vs barbarian greataxe
-Rounds  9.50/B 4.00/R 4.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds  8.50/B 3.50/R 3.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds  7.00/B 2.75/R 2.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 10.25/B 4.00/R 4.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 12.25/B 4.75/R 4.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 15.75/B 6.50/R 6.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds  9.00/B 3.75/R 3.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 10.50/B 4.50/R 4.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 14.50/B 6.25/R 6.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 
 ## Fighter shield vs fighter greataxe
-Rounds  7.25/B 4.50/R 7.00 Blue 0 ( 0.00%) Red 2 ( 0.40%)
-Rounds 11.50/B 6.75/R 7.75 Blue 0 ( 0.00%) Red 1 ( 0.22%)
-Rounds 14.25/B 8.00/R 7.75 Blue 1 ( 0.15%) Red 0 ( 0.00%)
-Rounds 18.00/B 9.00/R 9.00 Blue 1 ( 0.07%) Red 0 ( 0.00%)
-Rounds 11.50/B 9.25/R 7.50 Blue 2 ( 0.38%) Red 0 ( 0.00%)
+Rounds  5.50/B 3.75/R 6.75 Blue 0 ( 0.00%) Red 3 ( 0.54%)
+Rounds 10.25/B 6.50/R 8.75 Blue 0 ( 0.00%) Red 2 ( 0.36%)
+Rounds 12.75/B 7.75/R 9.00 Blue 0 ( 0.00%) Red 1 ( 0.24%)
+Rounds 13.75/B 8.75/R11.00 Blue 0 ( 0.00%) Red 2 ( 0.34%)
+Rounds 19.75/B 9.00/R 9.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 
 ### Fighter shield vs fighter shield
-Rounds 17.75/B 7.75/R 7.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 15.50/B 6.75/R 6.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 20.75/B 9.25/R 9.25 Blue 0 ( 0.00%) Red 0 ( 0.00%)
 Rounds 21.00/B 9.50/R 9.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 23.00/B10.00/R10.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 28.75/B12.75/R12.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)
-Rounds 23.00/B10.00/R10.00 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 27.25/B12.50/R12.50 Blue 0 ( 0.00%) Red 0 ( 0.00%)
+Rounds 21.50/B 9.75/R 9.75 Blue 0 ( 0.00%) Red 0 ( 0.00%)

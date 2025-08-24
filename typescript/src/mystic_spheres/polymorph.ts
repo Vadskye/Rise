@@ -117,7 +117,7 @@ export const polymorph: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\confused.
-          If it has no remaining \\glossterm{damage resistance} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
+          If it is \\glossterm{injured} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
           If the target takes damage, this condition is removed.
@@ -384,7 +384,7 @@ export const polymorph: MysticSphere = {
       // sphere for healing.
       effect: `
         Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
-        The target regains 1d8 \\glossterm{damage resistance} \\plus1 per \\glossterm{power} if it is a creature, or that many hit points if it is an object.
+        The target regains 1d8 \\glossterm{hit points} \\plus1 per \\glossterm{power}.
       `,
       rank: 2,
       roles: ['healing'],
@@ -455,33 +455,31 @@ export const polymorph: MysticSphere = {
       name: 'Regeneration',
 
       effect: `
-        At the end of each round, you regain hit points equal to your \\glossterm{power}.
+        At the end of each round, you regain hit points equal to half your \\glossterm{power}.
       `,
       rank: 3,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
+      scaling: { special: 'The healing increases by 2 for each rank beyond 3.' },
       type: 'Attune (deep)',
     },
 
     {
       name: 'Empowered Regeneration',
 
-      // -1d6 for double healing on vital wounds
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d6 \add your \\glossterm{power}
-        If you gained a vital wound this round, this healing is doubled.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add your \\glossterm{power}.
       `,
       rank: 5,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by 1d6 for each rank beyond 5.' },
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
       type: 'Attune (deep)'
     },
 
     {
-      name: 'Efficient Regeneration',
+      name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d10 \add 1d10 per 2 \\glossterm{power}.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add 1d8 per 2 \\glossterm{power}.
       `,
       rank: 7,
       roles: ['healing'],

@@ -8,13 +8,13 @@
 Armor Bolt +1 (1d6+2 damage.), Fort Bolt +1 (1d6+2 damage.), Extra Damage Bite +1 (1d8+3 damage.), Generic Accuracy Bite +1 (1d8+3 damage.), Certain Bite +3 (1d8+1 damage.), Powerful Bite -3 (2d8+6 damage.), Bite +1 (1d8+3 damage.)
 
 ### Results
-Armor Bolt   : 4.21 = (5.5 dph * 0.60 hpr) + (5.5 dpc * 0.07 cpr) + (2.8 dpg * 0.20 gpr) = 3.30 hdpr + 0.36 cdpr + 0.55 gdpr
+Armor Bolt   : 3.60 = (5.5 dph * 0.50 hpr) + (5.5 dpc * 0.06 cpr) + (2.8 dpg * 0.20 gpr) = 2.75 hdpr + 0.30 cdpr + 0.55 gdpr
 Fort Bolt    : 4.82 = (5.5 dph * 0.70 hpr) + (5.5 dpc * 0.08 cpr) + (2.8 dpg * 0.20 gpr) = 3.85 hdpr + 0.42 cdpr + 0.55 gdpr
-Extra Damage Bite: 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
-Generic Accuracy Bite: 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
-Certain Bite : 5.93 = (6.0 dph * 0.80 hpr) + (6.0 dpc * 0.09 cpr) + (3.0 dpg * 0.20 gpr) = 4.80 hdpr + 0.53 cdpr + 0.60 gdpr
-Powerful Bite: 4.83 = (15.0 dph * 0.20 hpr) + (15.0 dpc * 0.02 cpr) + (7.5 dpg * 0.20 gpr) = 3.00 hdpr + 0.33 cdpr + 1.50 gdpr
-Bite         : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Extra Damage Bite: 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
+Generic Accuracy Bite: 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
+Certain Bite : 5.26 = (6.0 dph * 0.70 hpr) + (6.0 dpc * 0.08 cpr) + (3.0 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 0.60 gdpr
+Powerful Bite: 3.17 = (15.0 dph * 0.10 hpr) + (15.0 dpc * 0.01 cpr) + (7.5 dpg * 0.20 gpr) = 1.50 hdpr + 0.17 cdpr + 1.50 gdpr
+Bite         : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
 
 ### Level 5
 
@@ -91,13 +91,13 @@ Bite         : 15.35 = (17.5 dph * 0.70 hpr) + (17.5 dpc * 0.08 cpr) + (8.8 dpg 
 Armor Bolt +1 (1d6+4 damage.), Fort Bolt +1 (1d6+4 damage.), Extra Damage Bite +1 (1d8+6 damage.), Generic Accuracy Bite +1 (1d8+6 damage.), Certain Bite +3 (1d8+3 damage.), Powerful Bite -3 (2d8+12 damage.), Bite +1 (1d8+6 damage.)
 
 ### Results
-Armor Bolt   : 5.75 = (7.5 dph * 0.60 hpr) + (7.5 dpc * 0.07 cpr) + (3.8 dpg * 0.20 gpr) = 4.50 hdpr + 0.49 cdpr + 0.75 gdpr
+Armor Bolt   : 4.91 = (7.5 dph * 0.50 hpr) + (7.5 dpc * 0.06 cpr) + (3.8 dpg * 0.20 gpr) = 3.75 hdpr + 0.41 cdpr + 0.75 gdpr
 Fort Bolt    : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
-Extra Damage Bite: 8.04 = (10.5 dph * 0.60 hpr) + (10.5 dpc * 0.07 cpr) + (5.2 dpg * 0.20 gpr) = 6.30 hdpr + 0.69 cdpr + 1.05 gdpr
-Generic Accuracy Bite: 8.04 = (10.5 dph * 0.60 hpr) + (10.5 dpc * 0.07 cpr) + (5.2 dpg * 0.20 gpr) = 6.30 hdpr + 0.69 cdpr + 1.05 gdpr
-Certain Bite : 7.41 = (7.5 dph * 0.80 hpr) + (7.5 dpc * 0.09 cpr) + (3.8 dpg * 0.20 gpr) = 6.00 hdpr + 0.66 cdpr + 0.75 gdpr
-Powerful Bite: 6.76 = (21.0 dph * 0.20 hpr) + (21.0 dpc * 0.02 cpr) + (10.5 dpg * 0.20 gpr) = 4.20 hdpr + 0.46 cdpr + 2.10 gdpr
-Bite         : 8.04 = (10.5 dph * 0.60 hpr) + (10.5 dpc * 0.07 cpr) + (5.2 dpg * 0.20 gpr) = 6.30 hdpr + 0.69 cdpr + 1.05 gdpr
+Extra Damage Bite: 6.88 = (10.5 dph * 0.50 hpr) + (10.5 dpc * 0.06 cpr) + (5.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 1.05 gdpr
+Generic Accuracy Bite: 6.88 = (10.5 dph * 0.50 hpr) + (10.5 dpc * 0.06 cpr) + (5.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 1.05 gdpr
+Certain Bite : 6.58 = (7.5 dph * 0.70 hpr) + (7.5 dpc * 0.08 cpr) + (3.8 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 0.75 gdpr
+Powerful Bite: 4.43 = (21.0 dph * 0.10 hpr) + (21.0 dpc * 0.01 cpr) + (10.5 dpg * 0.20 gpr) = 2.10 hdpr + 0.23 cdpr + 2.10 gdpr
+Bite         : 6.88 = (10.5 dph * 0.50 hpr) + (10.5 dpc * 0.06 cpr) + (5.2 dpg * 0.20 gpr) = 5.25 hdpr + 0.58 cdpr + 1.05 gdpr
 
 ### Level 5
 

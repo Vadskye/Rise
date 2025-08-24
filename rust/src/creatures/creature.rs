@@ -3,7 +3,7 @@ use std::cmp::max;
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    Attribute, HitPointProgression, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
+    Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
 };
 use crate::creatures::{latex, Character, IdentifiedModifier, Modifier, Monster};
 use crate::equipment::{Armor, Weapon};
@@ -20,7 +20,6 @@ pub struct Creature {
     pub base_attributes: HashMap<Attribute, i32>,
     pub category: CreatureCategory,
     pub damage_resistance_lost: i32,
-    pub hit_point_progression: HitPointProgression,
     pub hit_points_lost: i32,
     pub identified_modifiers: Vec<IdentifiedModifier>,
     pub level: i32,
@@ -50,7 +49,6 @@ impl Creature {
             base_attributes: HashMap::<Attribute, i32>::new(),
             category,
             damage_resistance_lost: 0,
-            hit_point_progression: HitPointProgression::Medium,
             hit_points_lost: 0,
             identified_modifiers: vec![],
             level,

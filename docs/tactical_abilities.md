@@ -155,7 +155,7 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Goad
     * Hazard
     * Healing
-    * Maim: Powerful debuff that requires the target to be out of DR / in HP
+    * Maim: Powerful debuff that requires the target to be injured
     * Ramp
     * Retaliate
     * Stasis

@@ -346,7 +346,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
+          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
@@ -364,7 +364,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
+          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
@@ -554,7 +554,7 @@ export const telekinesis: MysticSphere = {
       name: 'Kinetic Shield',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
       `,
       rank: 1,
       roles: ['attune'],

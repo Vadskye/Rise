@@ -34,8 +34,8 @@ export const summoning: MysticSphere = {
 
         \\begin{raggeditemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its maximum \\glossterm{hit points} are equal to the standard value for a cleric of your level.
-          \\item Its maximum \\glossterm{damage resistance} is equal to half its maximum hit points, ignoring any \\glossterm{enhancement bonuses} to hit points.
+          % TODO: "Your rank with this spell" is weird. Should that be listed in scaling?
+          \\item Its maximum \\glossterm{hit points} are equal to your level \\x your rank with this spell, plus 5 additional hit points.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item Its \\glossterm{movement speed} is 30 feet, regardless of the number of legs it appears to have.
@@ -84,7 +84,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranktwo.
-          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -102,7 +102,7 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature is more offensively inclined.
           Its strikes deal \\damageranksix.
-          However, its \\glossterm{hit points} are halved, which also halves its damage resistance.
+          However, its \\glossterm{hit points} are halved.
         `,
         name: 'summon monster',
       },
@@ -136,7 +136,7 @@ export const summoning: MysticSphere = {
       functionsLike: {
         exceptThat: `
           the summoned creature is much more defensively inclined.
-          It gains a +2 bonus to all defenses, and its maximum \\glossterm{hit points} are doubled, which also doubles its maximum damage resistance.
+          It gains a +2 bonus to all defenses, and its maximum \\glossterm{hit points} are doubled.
         `,
         name: 'summon monster',
       },
@@ -243,8 +243,7 @@ export const summoning: MysticSphere = {
 
         \\begin{raggeditemize}
           \\item It has no \\glossterm{resources}, and it cannot use abilities that would cause it to increase its \\glossterm{fatigue level}.
-          \\item Its \\glossterm{hit points} are equal to the standard value for a wizard of your level.
-          \\item It has no \\glossterm{damage resistance}.
+          \\item Its maximum \\glossterm{hit points} are equal to your level \\x your rank with this spell, plus 5 additional hit points.
           \\item Each of its \\glossterm{defenses} is equal to 4 \\add half your level.
           \\item Its \\glossterm{accuracy} is equal to your accuracy, but it makes its own attack rolls.
           \\item It has an average \\glossterm{fly speed} with a maximum height of 5 feet and no \\glossterm{walk speed}.
@@ -314,7 +313,6 @@ export const summoning: MysticSphere = {
         exceptThat: `
           the summoned creature appears to be an earth elemental.
           Its attacks deal \\damagerankfour, and have the \\atEarth tag.
-          Its \\glossterm{damage resistance} is equal to its maximum \\glossterm{hit points}, ignoring enhancement bonuses to hit points.
           In addition, it is immune to \\atEarth attacks.
         `,
         name: 'summon monster',

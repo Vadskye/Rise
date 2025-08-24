@@ -246,7 +246,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
@@ -269,7 +269,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // sneak into three targets by keeping a relatively low weight category.
       attack: {
         hit: `
-          If the target has no remaining \\glossterm{damage resistance}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 

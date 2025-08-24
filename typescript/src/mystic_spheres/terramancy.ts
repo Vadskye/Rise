@@ -499,7 +499,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This takes the form of up to ten contiguous 5-foot squares, each of which is four inches thick.
         The squares can be placed at any angle and used to form any structure as long as that structure is stable.
         Since the fortifications are made of packed earth, their maximum weight is limited, and structures taller than ten feet high are usually impossible.
-        A typical Large wall made of earth has 50 hit points, 5 damage resistance, and a Sunder DV of 15.
+        A typical Large wall made of earth has 50 hit points, 5 \\glossterm{hardness}, and a Sunder DV of 20.
 
         The fortifications form slowly, rather than instantly.
         The structure becomes complete at the end of the next round after this spell is cast.
@@ -510,7 +510,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         6: `
           You can also construct fortifications from stone.
           This makes them more resistant to attack and allows the construction of more complex structures.
-          A typical Large wall made of stone has 50 hit points, 10 damage resistance, and a Sunder DV of 20.
+          A typical Large wall made of stone has 50 hit points, 10 \\glossterm{hardness}, and a Sunder DV of 25.
         `,
       },
       roles: ['hazard'],
@@ -560,7 +560,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{damage resistance}.
+        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
         However, you also increase your \\glossterm{encumbrance} by 2.
       `,
       rank: 1,
@@ -582,8 +582,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         You are \\steeled.
-        At the end of each round, if you have no remaining \\glossterm{damage resistance}, this effect is \\glossterm{suppressed}.
-        Whenever you regain damage resistance, this effect is immediately resumed.
+        At the end of each round, if you are \\glossterm{injured}, this effect is \\glossterm{suppressed}.
+        When you stop being injured, this effect is immediately resumed.
       `,
       rank: 1,
       roles: ['attune'],

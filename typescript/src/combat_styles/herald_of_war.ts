@@ -56,7 +56,7 @@ export const heraldOfWar: CombatStyle = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\stunned.
-          If it has no remaining \\glossterm{damage resistance}, it is stunned as a \\glossterm{condition} instead.
+          If it is \\glossterm{injured}, it is stunned as a \\glossterm{condition} instead.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
@@ -126,7 +126,7 @@ export const heraldOfWar: CombatStyle = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\frightened by you.
-          If the target has no remaining \\glossterm{damage resistance}, it also becomes frightened of you as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it also becomes frightened of you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
@@ -276,7 +276,7 @@ export const heraldOfWar: CombatStyle = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\goaded by you.
-          If the target has no remaining \\glossterm{damage resistance}, it also goaded as a \\glossterm{condition}.
+          If the target is \\glossterm{injured}, it also goaded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against up to four creatures in \\shortrange.
@@ -337,7 +337,7 @@ export const heraldOfWar: CombatStyle = {
       // this would fall behind quickly otherwise
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and each \\glossterm{ally} in a \\medarea radius from you each regain damage resistance equal to 1d6 \\add your \\glossterm{power}.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain \\glossterm{hit points} equal to 1d6 \\add your \\glossterm{power}.
       `,
       rank: 3,
       roles: ['healing'],
@@ -349,7 +349,7 @@ export const heraldOfWar: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and each \\glossterm{ally} in a \\medarea radius from you each regain 1d8 per 2 power \\glossterm{damage resistance}.
+        You and each \\glossterm{ally} in a \\medarea radius from you each regain \\glossterm{hit points} equal to 1d8 per 2 power.
       `,
       rank: 7,
       roles: ['healing'],

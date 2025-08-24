@@ -24,21 +24,23 @@ type CreatureSize =
   | 'huge'
   | 'gargantuan'
   | 'colossal';
-type ProgressionName = 'low' | 'medium' | 'high' | 'very high' | 'extreme';
+type MonsterIpMultiplier = 0.75 | 0.5 | 0.25;
 
 interface BaseClassModifier {
   armor_defense: number;
   armor_usage_class?: 'light' | 'medium' | 'heavy';
-  damage_resistance?: ProgressionName;
-  hit_points: ProgressionName;
+  injury_point_multiplier?: MonsterIpMultiplier;
+  durability?: number;
   brawn: number;
   fortitude: number;
   reflex: number;
   mental: number;
   attunement_points?: number;
-  insight_points?: number;
   class_skill_count?: number;
+  fatigue_tolerance: number;
+  insight_points?: number;
   proficiencies?: string;
+  vital_rolls?: number;
 }
 
 // Treat roles as classes too.
@@ -49,75 +51,70 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   brute: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'extreme',
+    durability: 6,
+    injury_point_multiplier: 0.75,
     brawn: 5,
     fortitude: 4,
     reflex: 4,
     mental: 3,
+    fatigue_tolerance: 0,
   },
   leader: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'high',
-    hit_points: 'very high',
+    durability: 6,
+    injury_point_multiplier: 0.5,
     brawn: 4,
     fortitude: 4,
     reflex: 4,
     mental: 4,
-  },
-  mystic: {
-    armor_defense: 3,
-    armor_usage_class: 'medium',
-    damage_resistance: 'very high',
-    hit_points: 'high',
-    brawn: 3,
-    fortitude: 4,
-    reflex: 5,
-    mental: 6,
+    fatigue_tolerance: 0,
   },
   skirmisher: {
     armor_defense: 4,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'very high',
+    durability: 2,
+    injury_point_multiplier: 0.5,
     brawn: 4,
     fortitude: 3,
     reflex: 5,
     mental: 4,
+    fatigue_tolerance: 0,
   },
   sniper: {
     armor_defense: 3,
     armor_usage_class: 'medium',
-    damage_resistance: 'medium',
-    hit_points: 'high',
+    durability: 2,
+    injury_point_multiplier: 0.5,
     brawn: 3,
     fortitude: 3,
     reflex: 5,
     mental: 5,
+    fatigue_tolerance: 0,
   },
   warrior: {
     armor_defense: 5,
-    armor_usage_class: 'heavy',
-    damage_resistance: 'very high',
-    hit_points: 'high',
+    armor_usage_class: 'medium',
+    durability: 4,
+    injury_point_multiplier: 0.25,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
     mental: 3,
+    fatigue_tolerance: 0,
   },
 
   // CLASSES
   barbarian: {
     armor_defense: 0,
     brawn: 3,
-    fortitude: 3,
+    fortitude: 5,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 3,
+    fatigue_tolerance: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
   },
   cleric: {
@@ -125,9 +122,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     brawn: 3,
     fortitude: 3,
     reflex: 3,
-    mental: 5,
-    hit_points: 'medium',
+    mental: 3,
     attunement_points: 1,
+    fatigue_tolerance: 2,
     insight_points: 1,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor',
@@ -138,9 +135,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 1,
-    insight_points: 1,
+    fatigue_tolerance: 2,
+    insight_points: 0,
     class_skill_count: 4,
     proficiencies:
       "Light armor, leather lamellar armor, standard shields, shepherd's axe, scimitars, and sickles",
@@ -151,22 +148,22 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 0,
+    fatigue_tolerance: 3,
     insight_points: 0,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
   },
   monk: {
-    armor_defense: 0,
+    armor_defense: 1,
     brawn: 3,
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 0,
+    fatigue_tolerance: 2,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 5,
     proficiencies: 'Light armor and monk weapons',
   },
   paladin: {
@@ -175,8 +172,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
+    fatigue_tolerance: 3,
     insight_points: 0,
     class_skill_count: 3,
     proficiencies: 'All armor and non-exotic weapons',
@@ -187,8 +184,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
+    fatigue_tolerance: 3,
     insight_points: 0,
     class_skill_count: 6,
     proficiencies: 'Light and medium armor, leather lamellar armor, and non-exotic weapons',
@@ -199,20 +196,20 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
-    attunement_points: 1,
-    insight_points: 0,
+    attunement_points: 0,
+    fatigue_tolerance: 2,
+    insight_points: 1,
     class_skill_count: 6,
     proficiencies: 'Light armor, Compact weapons, and Light weapons',
   },
   sorcerer: {
     armor_defense: 0,
     brawn: 3,
-    fortitude: 3,
+    fortitude: 4,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
-    attunement_points: 2,
+    attunement_points: 1,
+    fatigue_tolerance: 3,
     insight_points: 0,
     class_skill_count: 3,
     proficiencies: 'None',
@@ -222,9 +219,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     brawn: 3,
     fortitude: 3,
     reflex: 3,
-    mental: 5,
-    hit_points: 'medium',
+    mental: 3,
     attunement_points: 1,
+    fatigue_tolerance: 2,
     insight_points: 0,
     class_skill_count: 3,
     proficiencies: 'Light and medium armor, and non-exotic weapons',
@@ -235,10 +232,10 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'low',
     attunement_points: 2,
-    insight_points: 2,
-    class_skill_count: 4,
+    fatigue_tolerance: 2,
+    insight_points: 1,
+    class_skill_count: 3,
     proficiencies: 'None',
   },
 
@@ -249,8 +246,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
-    attunement_points: 1,
+    attunement_points: 0,
+    fatigue_tolerance: 5,
     insight_points: 0,
     class_skill_count: 4,
     proficiencies: 'All armor and non-exotic weapons',
@@ -261,10 +258,10 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
-    attunement_points: 0,
+    attunement_points: 1,
+    fatigue_tolerance: 3,
     insight_points: 0,
-    class_skill_count: 5,
+    class_skill_count: 4,
     proficiencies: 'Light armor',
   },
   dryad: {
@@ -273,9 +270,9 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 5,
-    hit_points: 'low',
     attunement_points: 1,
-    insight_points: 0,
+    fatigue_tolerance: 2,
+    insight_points: 1,
     class_skill_count: 4,
     proficiencies: 'Light armor',
   },
@@ -285,59 +282,61 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'medium',
     attunement_points: 1,
+    fatigue_tolerance: 2,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 5,
     proficiencies: 'Light armor',
   },
   naiad: {
     armor_defense: 0,
     brawn: 3,
     fortitude: 3,
-    reflex: 4,
-    mental: 4,
-    hit_points: 'low',
+    reflex: 3,
+    mental: 3,
     attunement_points: 1,
+    fatigue_tolerance: 2,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 5,
     proficiencies: 'Light armor',
   },
   oozeborn: {
     armor_defense: 0,
     brawn: 3,
-    fortitude: 3,
+    fortitude: 5,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
+    fatigue_tolerance: 3,
     insight_points: 0,
-    class_skill_count: 3,
+    class_skill_count: 4,
     proficiencies: 'Light armor',
+    vital_rolls: 1,
   },
   treant: {
     armor_defense: 0,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
-    mental: 3,
-    hit_points: 'very high',
+    mental: 4,
     attunement_points: 0,
+    fatigue_tolerance: 3,
     insight_points: 0,
-    class_skill_count: 4,
+    class_skill_count: 3,
     proficiencies: 'All armor and club-like weapons',
   },
   troll: {
     armor_defense: 0,
     brawn: 3,
-    fortitude: 3,
+    fortitude: 4,
     reflex: 3,
     mental: 3,
-    hit_points: 'very high',
     attunement_points: 0,
+    fatigue_tolerance: 4,
     insight_points: 0,
-    class_skill_count: 4,
-    proficiencies: 'Light armor, leather lamellar, standard shields, and club-like weapons',
+    class_skill_count: 3,
+    proficiencies: 'Light and medium armor, and non-exotic weapons',
+    vital_rolls: 1,
   },
   vampire: {
     armor_defense: 0,
@@ -345,8 +344,8 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     fortitude: 3,
     reflex: 3,
     mental: 3,
-    hit_points: 'high',
     attunement_points: 1,
+    fatigue_tolerance: 2,
     insight_points: 0,
     class_skill_count: 4,
     proficiencies: 'Light armor and non-exotic weapons',
@@ -558,7 +557,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'brawling_accuracy',
     'brawn',
     'constitution',
-    'damage_resistance',
     'dexterity',
     'encumbrance',
     'fatigue_tolerance',
@@ -707,10 +705,11 @@ function handleCoreStatistics() {
   handleCharacterNameSanitization();
   handleDefenses();
   handleDamageDice();
-  handleDamageResistance();
+  handleDurability();
   handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
+  handleInjuryPoint();
   handleJumpDistance();
   handleMagicalPower();
   handleMundanePower();
@@ -770,13 +769,6 @@ function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) 
   }
   if (challengeRating === 4) {
     levelScaling += 2;
-
-    let levels_with_defense_bonuses = [8, 14];
-    for (const bonus_level of levels_with_defense_bonuses) {
-      if (level >= bonus_level) {
-        levelScaling += 1;
-      }
-    }
   }
   return levelScaling;
 }
@@ -1149,13 +1141,13 @@ function handleCreationModifiers() {
       string: ['base_class', 'species'],
     },
     callback: (v) => {
-      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class];
+      const classModifiers = BASE_CLASS_MODIFIERS[v.base_class] || {};
 
       // Class proficiencies and class skill count aren't modifiers. They are simply
       // directly set, since nothing else can modify them.
       const attrs: Attrs = {
-        base_class_proficiencies: (classModifiers && classModifiers.proficiencies) || '',
-        class_skill_count: (classModifiers && classModifiers.class_skill_count) || 0,
+        base_class_proficiencies: classModifiers.proficiencies || '',
+        class_skill_count: classModifiers.class_skill_count || 0,
       };
       // The simple modifier keys can simply be directly translated
       for (const modifierKey of [
@@ -1167,7 +1159,7 @@ function handleCreationModifiers() {
         'attunement_points' as const,
         'insight_points' as const,
       ]) {
-        const modifierValue = (classModifiers && classModifiers[modifierKey]) || 0;
+        const modifierValue = classModifiers[modifierKey] || 0;
         attrs[`${modifierKey}_creation_explanation`] = formatNamedModifierExplanation({
           name: v.base_class,
           value: modifierValue,
@@ -1377,60 +1369,6 @@ function handleDamageDice() {
   handleStrikeAttacks();
 }
 
-function handleDamageResistance() {
-  onGet({
-    variables: {
-      miscName: 'damage_resistance',
-      numeric: [
-        'hit_points_maximum',
-        'level',
-        'challenge_rating',
-        'body_armor_damage_resistance',
-      ],
-      string: ['base_class'],
-    },
-    options: {
-      variablesWithoutListen: {
-        numeric: ['damage_resistance', 'damage_resistance_maximum'],
-      },
-    },
-    callback: (v) => {
-      let drFromLevel = 0;
-      const drProgression = v.base_class && BASE_CLASS_MODIFIERS[v.base_class].damage_resistance;
-      if (drProgression) {
-        drFromLevel = calcHpBonuses(drProgression, v.level, 0).hpFromLevel;
-      }
-      const playerTotalDr = v.body_armor_damage_resistance + drFromLevel + v.misc;
-
-      var crMultiplier =
-        {
-          1: 1,
-          4: 4,
-        }[v.challenge_rating!] || 1;
-      const monsterTotalDr = Math.floor(playerTotalDr * crMultiplier);
-
-      const attrs: Attrs = {
-        damage_resistance_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'body armor', value: v.body_armor_damage_resistance },
-          { name: 'Progression', value: drFromLevel },
-          { name: 'CR', value: monsterTotalDr - playerTotalDr },
-        ]),
-        damage_resistance: undefined,
-        damage_resistance_max: monsterTotalDr,
-        damage_resistance_maximum: monsterTotalDr,
-      };
-      let should_set_current_dr =
-        monsterTotalDr < v.damage_resistance ||
-        v.damage_resistance === v.damage_resistance_maximum ||
-        !v.damage_resistance_maximum;
-      if (should_set_current_dr) {
-        attrs.damage_resistance = monsterTotalDr;
-      }
-      setAttrs(attrs);
-    },
-  });
-}
-
 function sanitizeText(text: string) {
   if (!text) {
     return text;
@@ -1589,6 +1527,32 @@ function handleDebuffs() {
   });
 }
 
+function handleDurability() {
+  onGet({
+    variables: {
+      miscName: 'durability',
+      numeric: ['level', 'constitution', 'body_armor_durability'],
+      string: ['base_class'],
+    },
+    callback: (v) => {
+      const durabilityFromLevel = v.level - calculateStandardRank(v.level);
+      const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class]?.durability || 0;
+      const durability = durabilityFromLevel + durabilityFromClass + v.constitution + v.body_armor_durability + v.misc;
+
+      setAttrs({
+        durability: durability,
+        durability_base_class: durabilityFromClass,
+        durability_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: 'level scaling', value: durabilityFromLevel },
+          { name: v.base_class, value: durabilityFromClass },
+          { name: 'Con', value: v.constitution },
+          { name: 'body armor', value: v.body_armor_durability },
+        ]),
+      });
+    },
+  });
+}
+
 function handleEncumbrance() {
   onGet({
     variables: {
@@ -1630,15 +1594,16 @@ function handleFatigueTolerance() {
     variables: {
       miscName: 'fatigue_tolerance',
       numeric: ['constitution'],
+      string: ['base_class'],
     },
     callback: (v) => {
-      const base = 3;
-      const totalValue = base + Math.max(0, v.constitution + v.misc);
+      const fromClass = BASE_CLASS_MODIFIERS[v.base_class]?.fatigue_tolerance || 0;
+      const totalValue = Math.max(0, fromClass + v.constitution + v.misc);
       setAttrs({
         fatigue_tolerance_attributes: v.constitution,
         fatigue_tolerance: totalValue,
         fatigue_tolerance_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'base', value: base },
+          { name: v.base_class, value: fromClass },
           { name: 'Con', value: v.constitution },
         ]),
         // for red bars
@@ -1652,8 +1617,7 @@ function handleHitPoints() {
   onGet({
     variables: {
       miscName: 'hit_points',
-      numeric: ['level', 'constitution', 'challenge_rating'],
-      string: ['base_class'],
+      numeric: ['level', 'durability', 'challenge_rating'],
     },
     options: {
       variablesWithoutListen: {
@@ -1661,14 +1625,29 @@ function handleHitPoints() {
       },
     },
     callback: (v) => {
-      const progressionName: ProgressionName = v.base_class
-        ? BASE_CLASS_MODIFIERS[v.base_class].hit_points
-        : 'low';
-      const { hpFromLevel, hpFromConstitution } = calcHpBonuses(
-        progressionName,
-        v.level,
-        v.constitution,
-      );
+      const rank = calculateStandardRank(v.level);
+      const rankMultiplier = {
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 6,
+        6: 8,
+        7: 10,
+        // Past this point, it's more or less arbitrarily extrapolated. It would be better
+        // to eventually scale past +2 per rank, but it doesn't matter enough to
+        // calculate, and odd multipliers make injury point calculation annoyingly
+        // fractional.
+        8: 12,
+        9: 14,
+        10: 16,
+      }[rank];
+      if (rankMultiplier === undefined) {
+        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
+      }
+
+      const hpFromDurability = v.durability * rankMultiplier;
 
       let crMultiplier =
         {
@@ -1676,14 +1655,15 @@ function handleHitPoints() {
           4: 3,
         }[v.challenge_rating!] || 1;
 
-      const playerTotalHp = hpFromLevel + hpFromConstitution + v.misc;
+      const flatHp = 10;
+      const playerTotalHp = flatHp + hpFromDurability + v.misc;
       const monsterTotalHp = Math.floor(playerTotalHp * crMultiplier);
 
       const attrs: Attrs = {
         hit_points: undefined,
         hit_points_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'level', value: hpFromLevel },
-          { name: 'Con', value: hpFromConstitution },
+          { name: 'base', value: flatHp },
+          { name: rankMultiplier + ' * durability', value: hpFromDurability },
           { name: 'CR', value: monsterTotalHp - playerTotalHp },
         ]),
         hit_points_max: monsterTotalHp,
@@ -1701,54 +1681,50 @@ function handleHitPoints() {
   });
 }
 
-function calcHpComponents(progressionName: ProgressionName, level: number) {
-  const progressionIndex = Math.max(0, Math.floor((level - 1) / 6));
-  const [baseHp, incrementalHp] = {
-    low: [
-      [6, 1],
-      [14, 2],
-      [30, 4],
-      [60, 8],
-    ],
-    medium: [
-      [8, 1],
-      [18, 2],
-      [35, 5],
-      [70, 10],
-    ],
-    high: [
-      [8, 2],
-      [20, 3],
-      [40, 6],
-      [80, 12],
-    ],
-    ['very high']: [
-      [10, 2],
-      [24, 4],
-      [50, 8],
-      [100, 15],
-    ],
-    extreme: [
-      [14, 2],
-      [28, 5],
-      [60, 10],
-      [120, 20],
-    ],
-  }[progressionName][progressionIndex];
+function handleInjuryPoint() {
+  onGet({
+    variables: {
+      miscName: 'injury_point',
+      numeric: ['level', 'constitution'],
+      string: ['base_class'],
+    },
+    callback: (v) => {
+      const rank = calculateStandardRank(v.level);
+      const rankMultiplier = {
+        0: 0,
+        1: 0.5,
+        2: 1,
+        3: 1.5,
+        4: 2,
+        5: 3,
+        6: 4,
+        7: 5,
+        // Past this point, it's more or less arbitrarily extrapolated. It would be better
+        // to eventually scale past +2 per rank, but it doesn't matter enough to
+        // calculate, and odd multipliers make injury point calculation annoyingly
+        // fractional.
+        8: 6,
+        9: 7,
+        10: 8,
+      }[rank];
+      if (rankMultiplier === undefined) {
+        throw new Error(`Unable to calculate multiplier for rank ${rank}`);
+      }
+      const flatIp = 10;
+      const ipFromLevel = rankMultiplier * v.level;
+      const ipFromCon = rankMultiplier * v.constitution;
+      const injury_point = flatIp + Math.floor((v.level + v.constitution) * rankMultiplier) + v.misc;
 
-  return { baseHp, incrementalHp };
-}
-
-function calcHpBonuses(progressionName: ProgressionName, level: number, constitution: number) {
-  const { baseHp, incrementalHp } = calcHpComponents(progressionName, level);
-  // This is the number of levels since the last breakpoint jump. Each breakpoint jump
-  // increases base HP and incremental level count ("X HP per level above 7th").
-  const incrementalLevel = (level - 1) % 6;
-
-  const hpFromLevel = baseHp + incrementalHp * incrementalLevel;
-  const hpFromConstitution = incrementalHp * constitution;
-
-  return { hpFromLevel, hpFromConstitution };
+      setAttrs({
+        injury_point: injury_point,
+        injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: 'base', value: flatIp },
+          { name: rankMultiplier + ' * level', value: ipFromLevel },
+          { name: rankMultiplier + ' * Con', value: ipFromCon },
+        ]),
+      });
+    },
+  });
 }
 
 function handleInsightPoints() {
@@ -1823,7 +1799,6 @@ function handleSpeed() {
 // function handleModifierExplanations() {
 //   let modifierNames = [
 //     "hit_points",
-//     "damage_resistance",
 //     "armor_defense",
 //     "fortitude",
 //     "reflex",
@@ -2120,10 +2095,10 @@ function createMonsterDebuff({
     immobilized: 11,
     paralyzed: 13,
   }[debuff];
-  let requiresNoDamageResistance = false;
+  let requiresInjury = false;
   if (availableRank < debuffRank) {
     availableRank += 4;
-    requiresNoDamageResistance = true;
+    requiresInjury = true;
   }
   if (availableRank >= debuffRank) {
     // Targeted effects get +2a per excess rank.
@@ -2144,8 +2119,8 @@ function createMonsterDebuff({
   if (isTargeted) {
     const range = calcTargetedText(targeting);
 
-    const hitEffect = requiresNoDamageResistance
-      ? `If the target has no remaining damage resistance, it is ${debuff} as a condition.`
+    const hitEffect = requiresInjury
+      ? `If the target is \\glossterm{injured}, it is ${debuff} as a condition.`
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
 Hit: ${hitEffect}`;
@@ -2159,8 +2134,8 @@ Hit: ${hitEffect}`;
       );
     }
 
-    const hitEffect = requiresNoDamageResistance
-      ? `Each target with no remaining damage resistance is ${debuff} as a condition.`
+    const hitEffect = requiresInjury
+      ? `Each \\glossterm{injured} target is ${debuff} as a condition.`
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
 Hit: ${hitEffect}`;
@@ -2962,12 +2937,15 @@ function handleVitalRolls() {
     variables: {
       miscName: 'vital_rolls',
       numeric: ['vital_wound_count', 'body_armor_vital_rolls'],
+      string: ['base_class'],
     },
     callback: (v) => {
-      const totalValue = v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
+      const classBonus = BASE_CLASS_MODIFIERS[v.base_class]?.vital_rolls || 0;
+      const totalValue = classBonus + v.misc + v.body_armor_vital_rolls - v.vital_wound_count * 2;
       setAttrs({
         vital_rolls: totalValue,
         vital_rolls_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: v.base_class, value: classBonus },
           { name: 'body armor', value: v.body_armor_vital_rolls },
           { name: '2x vital wound count', value: -v.vital_wound_count * 2 },
         ]),

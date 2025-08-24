@@ -1,4 +1,4 @@
-use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::Apparel::{Amulet, Ring};
 use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
@@ -140,15 +140,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Sturdy Companionship"),
         rank: 2,
-        short_description: String::from(r"Grants +8 damage resistance to animal allies"),
+        short_description: String::from(r"Grants +8 hit points to animal allies"),
         description: String::from(r"
-            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<damage resistance>.
+            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<hit points>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, r"Grants +16 damage resistance to animal allies", r"
+            ItemUpgrade::new(4, r"Grants +16 hit points to animal allies", r"
                 The bonus increases to +16.
             "),
-            ItemUpgrade::new(6, r"Grants +32 damage resistance to animal allies", r"
+            ItemUpgrade::new(6, r"Grants +32 hit points to animal allies", r"
                 The bonus increases to +32.
             "),
         ],
@@ -308,18 +308,22 @@ fn rings() -> Vec<Apparel> {
         name: String::from("Baneswallow Ring"),
         rank: 3,
         short_description: String::from(r"Can exert and remove a condition to gain power"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can activate this ring as a standard action.
             When you do, you may remove a \glossterm{condition} affecting you.
             If you remove a condition in this way, you are \glossterm{briefly} \empowered.
 
             After you activate this item, you increase your \glossterm<fatigue level> by one.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Can remove a condition to gain power", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Can remove a condition to gain power",
+            r"
                 Activating this ring does not increase your fatigue level.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -473,26 +477,6 @@ fn rings() -> Vec<Apparel> {
                 Activating this item only increases your fatigue level by one.
             ",
         )],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Ring(StandardItem {
-        name: String::from("Ring of Protection"),
-        rank: 3,
-        short_description: String::from("Grants many small defensive bonuses"),
-        description: String::from(r"
-            You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points> and \glossterm<damage resistance>.
-            In addition, you gain a \plus1 \glossterm<enhancement bonus> to \glossterm<vital rolls>.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Grants many defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +8.
-            "),
-            ItemUpgrade::new(7, "Grants many large defensive bonuses", r"
-                The bonuses to hit points and damage resistance increase to +16.
-            "),
-        ],
-        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Apparel::default()
     }));
 

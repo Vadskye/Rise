@@ -79,14 +79,19 @@
     In addition, extra damage never applies to \glossterm{poisons}.
 
 \section{Taking Damage}\label{Taking Damage}
-  Hit points and damage resistance function in essentially the same way.
-  When you take damage, the damage first reduces your \glossterm{damage resistance}.
-  Any damage in excess of your remaining damage resistance causes you to lose that many \glossterm{hit points}.
-  The main difference between hit points and damage resistance is that many abilities are more effective against creatures that have no remaining damage resistance.
-
+  When you take damage, the damage reduces your \glossterm{hit points}.
   If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
   Monsters typically do not gain vital wounds like player characters do.
   Instead, they simply die or fall unconscious when they reach 0 hit points.
+
+  \subsection{Injury}\label{Injury}
+    If your remaining hit points are at or below your \glossterm{injury point}, you are \glossterm{injured}.
+    Some attacks require you to be injured to have their full effects.
+
+    When you take damage from an attack, if you are injured, the attack inflicted an \glossterm{injury} on you.
+    This also applies if you only become injured after resolving the attack's damage.
+    Some damaging attacks have extra effects when they injure you.
+    This is usually indicated by ``Injury:'' text in their descriptions.
 
   \subsection{Negative Hit Points}\label{Negative Hit Points}
     You can have negative hit points, but only briefly.
@@ -97,12 +102,6 @@
     In addition, your hit points are reset to 0 at the end of the round if they are still negative.
     This is checked after applying all healing and damage that takes place at the end of the round.
     This also resets vital wound thresholds, which means you'll suffer a vital wound if your hit points go negative again in the next round.
-
-  \subsection{Environmental Damage}\label{Environmental Damage}
-    Some abilities and environmental effects deal environmental damage.
-    Environmental damage is never dealt as the result of a successful attack roll.
-    Unlike normal damage, environmental damage cannot reduce your \glossterm{damage resistance}.
-    Any environmental damage excess of your damage resistance still causes you to lose \glossterm{hit points} as normal.
 
   \subsection{Subdual Damage}\label{Subdual Damage}
     Some attacks and environmental effects deal subdual damage.
@@ -255,7 +254,6 @@
       Abilities with the \abilitytag{Swift} tag resolve differently from most actions.
       Swift abilities resolve before all non-Swift abilities, so they can change the results of your enemy's actions.
       However, Swift abilities are always simple, and cannot interrupt actions or make attack rolls.
-      Generally, they change defenses or recover \glossterm{hit points} or \glossterm{damage resistance}.
       You declare Swift abilities during your normal turn within your allied group, and you don't have to go first within your group or do anything special to use them.
 
       For example, the \ability{total defense} ability gives you a bonus to your defenses during the current phase.
@@ -295,7 +293,7 @@
       That's a natural consequence of not coordinating effectively.
 
   \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
-    If you regain hit points or damage resistance and take damage simultaneously, apply all damaging effects before applying any healing effects.
+    If you regain hit points and take damage simultaneously, apply all damaging effects before applying any healing effects.
     This means you gain and apply the effects of any vital wounds before you are healed.
     Most healing abilities are \abilitytag{Swift}, so this situation should be uncommon.
 
@@ -757,7 +755,7 @@
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
-      Recover            & Standard         & Regain HP and DR, remove conditions           & \abilitytag{Swift}                             \\
+      Recover            & Standard         & Regain HP, remove conditions                  & \abilitytag{Swift}                             \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
       Sprint             & Move or standard & Move at double speed                          & \tdash                                         \\
       Total Defense      & Standard         & Gain \plus2 to all defenses                   & \abilitytag{Swift}                             \\
@@ -839,7 +837,7 @@
     \abilityusagetime Standard action.
     \rankline
     You remove all \glossterm{conditions} affecting you.
-    Then, you regain all of your \glossterm{hit points} and \glossterm{damage resistance}.
+    Then, you regain all of your \glossterm{hit points}.
     Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
   \end{activeability}
 

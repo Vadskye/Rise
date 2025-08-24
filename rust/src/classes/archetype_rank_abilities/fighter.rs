@@ -225,8 +225,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                     \item Medium: You gain a \plus2 bonus to your Brawn, Fortitude, and Reflex defenses, up to a maximum equal to your Armor defense.
-                    \item Heavy: Your armor's bonus to your maximum damage resistance also applies to your maximum hit points.
-                        This includes the multiplier from special materials or magic armor, but does not include any \glossterm{enhancement bonuses} provided by the armor's special effects.
+                    \item Heavy: You double your armor's \glossterm{durability} bonus.
                 \end{raggeditemize}
             ",
             modifiers: None,

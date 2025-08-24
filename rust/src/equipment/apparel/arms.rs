@@ -29,38 +29,18 @@ fn bracers() -> Vec<Apparel> {
         short_description: String::from("Grants encumbrance-free medium armor"),
         description: String::from(r"
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a +3 bonus to Armor defense and has no \glossterm<encumbrance>.
-            It also provides a +7 bonus to your \glossterm{damage resistance} and a +1 bonus to \glossterm{vital rolls}.
+            This functions like body armor that provides a +3 bonus to Armor defense, a +4 bonus to your \glossterm{durability}, and a +1 bonus to your \glossterm{vital rolls}.
+            It has no \glossterm{encumbrance} and does not reduce your Armor defense bonus from Dexterity.
+            However, you must be \glossterm{proficient} with medium body armor to use it effectively.
 
-            The armor provided by this ability is dismissed if you have other body armor of any kind.
+            The armor provided by this effect is dismissed if you have other body armor of any kind.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +14.
-            "),
-            ItemUpgrade::new(5, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +28.
+            ItemUpgrade::new(4, "Grants encumbrance-free medium armor", "
+                The durability bonus increases to +5.
             "),
             ItemUpgrade::new(7, "Grants encumbrance-free medium armor", "
-                The damage resistance bonus increases to +56.
-            "),
-        ],
-        ..Apparel::default()
-    }));
-
-    apparel.push(Bracers(StandardItem {
-        name: String::from("Bracers of Resistance"),
-        rank: 2,
-        short_description: String::from("Grants +4 damage resistance"),
-        description: String::from(r"
-            You gain a +4 \glossterm{enhancement bonus} to your \glossterm{damage resistance}.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(4, "Grants +8 damage resistance", "
-                The damage resistance bonus increases to +8.
-            "),
-            ItemUpgrade::new(6, "Grants +16 damage resistance", "
-                The damage resistance bonus increases to +16.
+                The Armor defense bonus increases to +4.
             "),
         ],
         ..Apparel::default()
@@ -299,7 +279,7 @@ fn gloves() -> Vec<Apparel> {
             You can activate these gloves as a standard action using a \glossterm{free hand}.
             When you do, make an attack vs. Fortitude against a creature you touch with either glove.
             Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
-            \hit If the target has no remaining \glossterm<damage resistance>, it becomes \glossterm{briefly} \paralyzed.
+            \hit If the target is \glossterm{injured}, it becomes \glossterm{briefly} \paralyzed.
         "),
         ..Apparel::default()
     }));

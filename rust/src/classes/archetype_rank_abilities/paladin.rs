@@ -2,8 +2,6 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::add_dr_scaling;
-
 pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
@@ -235,7 +233,7 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 2,
             name: "Lay on Hands",
@@ -291,10 +289,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                You gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            // DR is handled by add_dr_scaling
             modifiers: Some(vec![Modifier::VitalRoll(1)]),
         },
         RankAbility {
@@ -330,9 +327,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
-    ];
-    add_dr_scaling(&mut abilities, 2, 6, None);
-    abilities
+    ]
 }
 
 pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {

@@ -20,11 +20,11 @@ fn main() {
             ];
             let blue_damage_absorption: i32 = blue
                 .iter()
-                .map(|c| c.calc_hit_points() + c.calc_damage_resistance())
+                .map(|c| c.calc_hit_points())
                 .sum();
             let red_damage_absorption: i32 = red
                 .iter()
-                .map(|c| c.calc_hit_points() + c.calc_damage_resistance())
+                .map(|c| c.calc_hit_points())
                 .sum();
             let red_count = red.len();
             let results = run_combat(blue, red);

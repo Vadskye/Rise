@@ -2,7 +2,7 @@ use crate::classes::archetype_rank_abilities::RankAbility;
 use crate::core_mechanics::{Attribute, Defense, Resource};
 use crate::creatures::Modifier;
 
-use super::standard_modifiers::{add_dr_scaling, add_standard_spell_modifiers};
+use super::standard_modifiers::add_standard_spell_modifiers;
 
 pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
     vec![
@@ -174,8 +174,8 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
-                    This functions like body armor that provides a \plus2 bonus to your Armor defense and has no \glossterm{encumbrance}.
-                    It also provides a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
+                    It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
@@ -188,33 +188,11 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             // Assuming no other armor
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 2),
-                Modifier::DamageResistance(2),
+                Modifier::Durability(2),
             ]),
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 4,
-            description: r"        
-                The damage resistance bonus increases to four times your rank in this archetype.
-            ",
-            // Rank 2: 4. Rank 3: 9.
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Mage Armor+",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                The damage resistance bonus increases to six times your rank in this archetype.
-            ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
-    add_dr_scaling(&mut abilities, 1, 3, Some(6));
     abilities
 }
 
@@ -506,7 +484,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 In exchange, you gain a benefit based on your specialized school.
 
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
-                    If you specialize in this school, you gain a bonus to your maximum \glossterm{damage resistance} equal to three times your rank in this archetype.
+                    If you specialize in this school, you a \plus1 bonus to your Armor and Reflex defenses.
 
                 \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
                     If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
@@ -518,7 +496,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                     If you specialize in this school, you gain a \plus1 \glossterm{accuracy} bonus.
 
                 \subcf{Necromancy} The \sphere{revelation} and \sphere{vivimancy} mystic spheres.
-                    If you specialize in this school, you gain a bonus to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
+                    If you specialize in this school, you gain a \plus3 bonus to your \glossterm{durability}.
 
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
@@ -536,7 +514,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school improves.
                 {
-                    \subcf{Abjuration} The damage resistance bonus increases to four times your rank in this archetype.
+                    \subcf{Abjuration} You also reduce your \glossterm{injury threshold} by three times your rank in this archetype.
 
                     \subcf{Conjuration} The range improvement increases to \plus30 feet.
 
@@ -544,7 +522,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} You gain a \plus2 \glossterm{enhancement bonus} to the Disguise, Stealth, and Sleight of Hand skills.
 
-                    \subcf{Necromancy} The hit point bonus increases to four times your rank in this archetype.
+                    % Also 16 HP at rank 4, but stronger scaling at ranks 5+
+                    \subcf{Necromancy} The durability bonus increases to \plus4.
 
                     \subcf{Transmutation} The defense bonus increases to \plus3.
                 }
@@ -559,8 +538,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your understanding of your chosen school reaches its full potential.
                 {
-                    % TODO: this seems weaker than the other schools
-                    \subcf{Abjuration} The damage resistance bonus increases to five times your rank in this archetype.
+                    \subcf{Abjuration} The defense bonus increases to \plus2.
 
                     \subcf{Conjuration} The range improvement increases to \plus60 feet.
 
@@ -568,7 +546,8 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
 
                     \subcf{Illusion} The accuracy bonus increases to \plus2.
 
-                    \subcf{Necromancy} The hit point bonus increases to five times your rank in this archetype.
+                    % 50 HP at rank 7
+                    \subcf{Necromancy} The durability bonus increases to \plus5.
 
                     \subcf{Transmutation} The defense bonus increases to \plus4.
                 }
