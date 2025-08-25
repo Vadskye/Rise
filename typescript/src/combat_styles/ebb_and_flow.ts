@@ -128,7 +128,8 @@ export const ebbAndFlow: CombatStyle = {
 
       functionsLike: {
         name: 'begin the hunt',
-        exceptThat: 'the accuracy bonus stacks with itself, up to a maximum of a +4 bonus. This accuracy bonus does not stack with the accuracy bonus from \\ability{begin the hunt}.',
+        exceptThat:
+          'the accuracy bonus stacks with itself, up to a maximum of a +4 bonus. This accuracy bonus does not stack with the accuracy bonus from \\ability{begin the hunt}.',
       },
       rank: 5,
       roles: ['ramp'],

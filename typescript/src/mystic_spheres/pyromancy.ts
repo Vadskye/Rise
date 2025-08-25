@@ -1,6 +1,11 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT, TELEPORT_ATTACK_FATIGUE } from './constants';
+import {
+  BARRIER_COOLDOWN,
+  DELAYED_HALF,
+  MULTIHIT_CRIT,
+  TELEPORT_ATTACK_FATIGUE,
+} from './constants';
 
 // TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
@@ -94,8 +99,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Consume Bonfire',
 
       functionsLike: {
-        name: "consume flame",
-        exceptThat: "if the fire was Large or larger, your damaging attacks also \\glossterm{briefly} deal 2d8 \\glossterm{extra damage}.",
+        name: 'consume flame',
+        exceptThat:
+          'if the fire was Large or larger, your damaging attacks also \\glossterm{briefly} deal 2d8 \\glossterm{extra damage}.',
       },
       rank: 6,
       roles: ['focus'],
@@ -414,7 +420,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'ignition',
-        exceptThat: 'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to put out the flames increases to 15.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and the difficulty value of the Dexterity check to put out the flames increases to 15.',
       },
       rank: 6,
       roles: ['burn'],
@@ -480,7 +487,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'eyes of flame',
-        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
       },
       rank: 5,
       roles: ['burst', 'softener'],
@@ -596,7 +604,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       rank: 3,
       roles: ['attune'],
       scaling: {
-        special: "The extra damage increases by 1 for each rank beyond 3.",
+        special: 'The extra damage increases by 1 for each rank beyond 3.',
       },
       type: 'Attune (target)',
     },
@@ -606,8 +614,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // One rank behind weapon / ahead of apparel?
       functionsLike: {
-        name: "flame blade",
-        exceptThat: "the extra damage increases to 1d6.",
+        name: 'flame blade',
+        exceptThat: 'the extra damage increases to 1d6.',
       },
       rank: 6,
       roles: ['attune'],
@@ -692,7 +700,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       functionsLike: {
         name: 'pyrohemia',
-        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\largearea cone.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and the area increases to a \\largearea cone.',
       },
       rank: 7,
       roles: ['wildfire'],
@@ -727,8 +736,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // So this should be written as a rank 7 spell with the same accuracy bonus.
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat:
-          'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.

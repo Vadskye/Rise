@@ -321,7 +321,7 @@ export const bruteForce: CombatStyle = {
       name: 'Rejuvenating Flex',
 
       // Pure healing would be dr5, so dr4 for empower
-      cost: "One \\glossterm{fatigue level}.",
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You are \\glossterm{briefly} empowered.
         In addition, you regain 1d6 hit points per 2 power.

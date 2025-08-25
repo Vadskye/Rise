@@ -443,7 +443,7 @@ export const thaumaturgy: MysticSphere = {
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
-    
+
     {
       name: 'Font of Power',
 
@@ -473,8 +473,9 @@ export const thaumaturgy: MysticSphere = {
       // weaker than "any two", so 0.4 EA. That requires a -2dr drop.
       // r0 area gives drX+1, drop to drX-1 for buff effect.
       functionsLike: {
-        name: "font of power",
-        exceptThat: "the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.",
+        name: 'font of power',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['generator'],

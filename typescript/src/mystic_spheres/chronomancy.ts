@@ -531,7 +531,7 @@ export const chronomancy: MysticSphere = {
       name: 'Time Stop',
 
       // TODO: EA math
-      cost: "One \\glossterm{fatigue level}, and you are \\stunned as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.",
+      cost: 'One \\glossterm{fatigue level}, and you are \\stunned as a \\glossterm{condition}. You also cannot cast this spell again until you finish a \\glossterm{short rest}.',
       effect: `
         You can take two full rounds of actions immediately.
         During this time, all other creatures and objects are fixed in time, and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
@@ -778,7 +778,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Minor Timetheft',
 
-      castingTime: "One \\glossterm{free action}",
+      castingTime: 'One \\glossterm{free action}',
       cost: BRIEF_COOLDOWN,
       effect: `
         You can take an additional \\glossterm{minor action} this round.

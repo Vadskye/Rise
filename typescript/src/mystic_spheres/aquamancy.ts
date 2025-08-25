@@ -2,7 +2,8 @@ import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from './constants';
 
-const WATER_ACCURACY_BONUS = 'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.';
+const WATER_ACCURACY_BONUS =
+  'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.';
 
 export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
   name: 'Aquamancy',
@@ -201,7 +202,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // No standard calculation for either the self-stun or the "must have previously
       // hit" requirement. Assume those combine to give about +2 ranks of power, which are
       // split between +1dr and +2a.
-      cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
+      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
       attack: {
         hit: `
           \\damagerankfour.
@@ -220,7 +221,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Water Hammer',
 
-      cost: "You \\glossterm{briefly} cannot use this ability and are \\stunned.",
+      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
       attack: {
         hit: `
           \\damagerankseven.
@@ -752,7 +753,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       functionsLike: {
         name: 'liquifying grasp',
-        exceptThat: 'it does not require a \\glossterm{free hand}, and it targets one creature within \\medrange.',
+        exceptThat:
+          'it does not require a \\glossterm{free hand}, and it targets one creature within \\medrange.',
       },
       rank: 5,
       roles: ['maim'],
@@ -856,14 +858,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: "River's Passage",
-        exceptThat: "the maximum push distance increases to 60 feet.",
+        exceptThat: 'the maximum push distance increases to 60 feet.',
       },
       rank: 4,
       roles: ['dive'],
       tags: ['Manifestation'],
     },
     {
-      name: "Waterward",
+      name: 'Waterward',
 
       // Shielded alone is on the weaker side, so add impervious to fire
       effect: `
@@ -875,7 +877,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation', 'Swift'],
     },
     {
-      name: "Waterward Dash",
+      name: 'Waterward Dash',
 
       // Cover is basically shielded, but also prevents half on miss and glancing blows.
       // Call that equal to braced.
@@ -889,7 +891,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation', 'Swift (see text)'],
     },
     {
-      name: "Expanded Waterward",
+      name: 'Expanded Waterward',
 
       // You and all adjacent isn't as flexible as "any two", but it's similarly strong.
       effect: `
@@ -901,7 +903,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation', 'Swift'],
     },
     {
-      name: "Rising Tide",
+      name: 'Rising Tide',
 
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
@@ -916,7 +918,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       roles: ['focus'],
     },
     {
-      name: "Empowered Rising Tide",
+      name: 'Empowered Rising Tide',
 
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
