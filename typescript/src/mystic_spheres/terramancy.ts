@@ -137,7 +137,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       functionsLike: {
         name: 'crushing gravity',
-        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['burst'],
@@ -653,7 +654,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       functionsLike: {
         name: 'personal gravitation',
-        exceptThat: 'the maximum distance from you to the object increases to 30 feet. This can cause you to take \\glossterm{falling damage}.',
+        exceptThat:
+          'the maximum distance from you to the object increases to 30 feet. This can cause you to take \\glossterm{falling damage}.',
       },
       rank: 6,
       roles: ['attune'],
@@ -734,7 +736,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of force',
-        exceptThat: 'the area increases to a \\largearealong wall within \\medrange, and its hit points increase to five times your \\glossterm{power}.',
+        exceptThat:
+          'the area increases to a \\largearealong wall within \\medrange, and its hit points increase to five times your \\glossterm{power}.',
       },
       rank: 6,
       roles: ['hazard'],

@@ -222,8 +222,8 @@ export const summoning: MysticSphere = {
       name: 'Mighty Rushing Horde',
 
       functionsLike: {
-        name: "rushing horde",
-        exceptThat: "the damage increases to \\damageranksix.",
+        name: 'rushing horde',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 5,
       roles: ['clear'],

@@ -212,7 +212,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         At the end of each round, if you took damage from a \\atFire ability that round or are \\glossterm{injured}, you can spend an \\glossterm{ice crystal}.
         If you do not, this ability is \\glossterm{dismisssed}.
       `,
-      narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
+      narrative:
+        'Layers of ice form around you, shielding you from attacks until they are destroyed.',
       rank: 3,
       roles: ['attune'],
       tags: ['Manifestation'],
@@ -230,7 +231,8 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If you do not, this effect is \\glossterm{suppressed}.
         When you stop being \\glossterm{injured}, this effect is immediately resumed.
       `,
-      narrative: 'Layers of ice form around you, shielding you from attacks until they are destroyed.',
+      narrative:
+        'Layers of ice form around you, shielding you from attacks until they are destroyed.',
       rank: 6,
       roles: ['attune'],
       tags: ['Manifestation'],
@@ -564,7 +566,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 3,
       roles: ['burn'],
       scaling: {
-        'special': 'The delayed damage increases by 1d8 for each rank beyond 3.',
+        special: 'The delayed damage increases by 1d8 for each rank beyond 3.',
       },
       tags: [],
     },
@@ -584,7 +586,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 6,
       roles: ['burn'],
       scaling: {
-        'special': 'The delayed damage increases by 3d6 for each rank beyond 6.',
+        special: 'The delayed damage increases by 3d6 for each rank beyond 6.',
       },
       tags: [],
     },

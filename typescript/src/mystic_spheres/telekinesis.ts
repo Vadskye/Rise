@@ -43,7 +43,8 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'distant hand',
-        exceptThat: 'the \\glossterm{weight limits} of the hand are calculated as if your Strength was equal to 2.',
+        exceptThat:
+          'the \\glossterm{weight limits} of the hand are calculated as if your Strength was equal to 2.',
       },
       rank: 2,
       roles: ['narrative'],
@@ -119,7 +120,7 @@ export const telekinesis: MysticSphere = {
       tags: ['Swift'],
     },
 
-    // This is slightly above rate because requiring objects is annoying. 
+    // This is slightly above rate because requiring objects is annoying.
     {
       name: 'Fling Object',
 
@@ -457,7 +458,8 @@ export const telekinesis: MysticSphere = {
       cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of force',
-        exceptThat: 'the area increases to a \\medarealong wall, and its hit points increase to four times your \\glossterm{power}.',
+        exceptThat:
+          'the area increases to a \\medarealong wall, and its hit points increase to four times your \\glossterm{power}.',
       },
       rank: 3,
       roles: ['hazard'],
@@ -476,7 +478,8 @@ export const telekinesis: MysticSphere = {
       cost: BARRIER_COOLDOWN,
       functionsLike: {
         name: 'wall of force',
-        exceptThat: 'the area increases to a \\largearealong wall within \\longrange, and its hit points increase to four times your \\glossterm{power}.',
+        exceptThat:
+          'the area increases to a \\largearealong wall within \\longrange, and its hit points increase to four times your \\glossterm{power}.',
       },
       rank: 6,
       roles: ['hazard'],

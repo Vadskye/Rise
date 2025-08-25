@@ -472,7 +472,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['healing'],
       scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
-      type: 'Attune (deep)'
+      type: 'Attune (deep)',
     },
 
     {
@@ -496,7 +496,10 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      scaling: { 4: `The bonus to checks increases to +3.`, 6: `The bonus to checks increases to +4.` },
+      scaling: {
+        4: `The bonus to checks increases to +3.`,
+        6: `The bonus to checks increases to +4.`,
+      },
       type: 'Attune',
     },
 

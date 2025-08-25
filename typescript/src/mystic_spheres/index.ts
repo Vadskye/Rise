@@ -88,37 +88,37 @@ export interface BaseSpellLike {
 
 export const ABILITY_ROLES = [
   'artillery', // Long-range AOE damage to contribute while staying out of danger
-  'attune',    // Attuned combat buff
-  'barrier',   // Non-damaging walls to limit the swarm's mobility and set up choke points
-  'boon',      // Brief or single-round effects on allies
-  'burn',      // Single-target damage over time
-  'burst',     // Single-target immediate damage
-  'cleanse',   // Remove conditions
-  'clear',     // AOE immediate damage
-  'combo',     // Has an effect that requires other abilities to be useful
-  'dive',      // Move towards or through enemies and attack at short range
-  'execute',   // Single-target immediate damage that requires the target to be in HP
-  'exertion',  // Spend fatigue for more powerful effects
-  'flash',     // AOE brief debuff
-  'focus',     // Brief offensive self-buff that doesn't require hitting with an attack
+  'attune', // Attuned combat buff
+  'barrier', // Non-damaging walls to limit the swarm's mobility and set up choke points
+  'boon', // Brief or single-round effects on allies
+  'burn', // Single-target damage over time
+  'burst', // Single-target immediate damage
+  'cleanse', // Remove conditions
+  'clear', // AOE immediate damage
+  'combo', // Has an effect that requires other abilities to be useful
+  'dive', // Move towards or through enemies and attack at short range
+  'execute', // Single-target immediate damage that requires the target to be in HP
+  'exertion', // Spend fatigue for more powerful effects
+  'flash', // AOE brief debuff
+  'focus', // Brief offensive self-buff that doesn't require hitting with an attack
   'generator', // Attack and gain a brief offensive self-buff, inclulding payoff prep
-  'hazard',    // Create a battlefield hazard
-  'healing',   // Regain HP or DR
-  'kite',      // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
-  'maim',      // Single-target debuff that requires the target to be in HP
+  'hazard', // Create a battlefield hazard
+  'healing', // Regain HP or DR
+  'kite', // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
+  'maim', // Single-target debuff that requires the target to be in HP
   'narrative', // Non-combat effects
-  'payoff',    // Ability with unusual prerequisites that generally require at least a round of prep
-  'ramp',      // Self-buff for the rest of the fight
+  'payoff', // Ability with unusual prerequisites that generally require at least a round of prep
+  'ramp', // Self-buff for the rest of the fight
   'retaliate', // Attack that is stronger against creatures that attack you
-  'retreat',   // Make a short range attack and move away from enemies
-  'snipe',     // Long-range single-target damage
-  'softener',  // Debuff that works against max hp targets
-  'stasis',    // Single-target single action trade, or as close as possible
-  'trip',      // Single-target brief or one-round defensive debuff
-  'turtle',    // One-round defense or protection effect on self
-  'wildfire',  // AOE damage over time
+  'retreat', // Make a short range attack and move away from enemies
+  'snipe', // Long-range single-target damage
+  'softener', // Debuff that works against max hp targets
+  'stasis', // Single-target single action trade, or as close as possible
+  'trip', // Single-target brief or one-round defensive debuff
+  'turtle', // One-round defense or protection effect on self
+  'wildfire', // AOE damage over time
 ] as const;
-export type AbilityRole = (typeof ABILITY_ROLES)[number]; 
+export type AbilityRole = (typeof ABILITY_ROLES)[number];
 
 export type Cantrip = BaseSpellLike;
 

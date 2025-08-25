@@ -99,7 +99,6 @@ t.test('can calculate durability', (t) => {
   t.end();
 });
 
-
 t.test('can calculate hit points', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
@@ -363,26 +362,40 @@ t.test('can calculate mental defense', (t) => {
 t.test('can calculate jump distance', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
-    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'vertical_jump_distance'], (attrs) => {
-      t.match(attrs, {
-        horizontal_jump_distance: 10,
-        horizontal_jump_distance_explanation: '+5 (base speed / 4)  +5 (strength)',
-        vertical_jump_distance: 5,
-      });
-      t.end();
-    });
+    getAttrs(
+      [
+        'horizontal_jump_distance',
+        'horizontal_jump_distance_explanation',
+        'vertical_jump_distance',
+      ],
+      (attrs) => {
+        t.match(attrs, {
+          horizontal_jump_distance: 10,
+          horizontal_jump_distance_explanation: '+5 (base speed / 4)  +5 (strength)',
+          vertical_jump_distance: 5,
+        });
+        t.end();
+      },
+    );
   });
 
   t.test('for wizard', (t) => {
     setStandardWizard();
-    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'vertical_jump_distance'], (attrs) => {
-      t.match(attrs, {
-        horizontal_jump_distance: 5,
-        horizontal_jump_distance_explanation: '+5 (base speed / 4)',
-        vertical_jump_distance: 0,
-      });
-      t.end();
-    });
+    getAttrs(
+      [
+        'horizontal_jump_distance',
+        'horizontal_jump_distance_explanation',
+        'vertical_jump_distance',
+      ],
+      (attrs) => {
+        t.match(attrs, {
+          horizontal_jump_distance: 5,
+          horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+          vertical_jump_distance: 0,
+        });
+        t.end();
+      },
+    );
   });
 
   t.end();

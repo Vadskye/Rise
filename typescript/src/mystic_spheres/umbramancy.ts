@@ -145,7 +145,6 @@ export const umbramancy: MysticSphere = {
       tags: ['Sustain (standard)'],
     },
 
-
     {
       name: 'Shadowgrasp',
 

@@ -198,7 +198,8 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'inflict wound',
-        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applied to the first instance of damage is doubled.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applied to the first instance of damage is doubled.',
       },
       rank: 5,
       scaling: 'accuracy',
