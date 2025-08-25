@@ -181,7 +181,8 @@ export const astromancy: MysticSphere = {
       cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
-        exceptThat: 'the range increases to \\distrange, and the teleportation distance increases to 60 feet.',
+        exceptThat:
+          'the range increases to \\distrange, and the teleportation distance increases to 60 feet.',
       },
       rank: 5,
       narrative: `
@@ -688,7 +689,8 @@ export const astromancy: MysticSphere = {
 
       functionsLike: {
         name: 'phasestep',
-        exceptThat: 'you can also move through \\glossterm{mundane}, \\glossterm{inanimate} objects that are no more than six inches thick.',
+        exceptThat:
+          'you can also move through \\glossterm{mundane}, \\glossterm{inanimate} objects that are no more than six inches thick.',
       },
       narrative: `
         You augment your body with the ability to travel through the Astral Plane to reach your destination.

@@ -919,7 +919,7 @@ function handleActiveAbilityDice() {
   // Local change
   on(
     'change:repeating_abilities:dice_pool' + ' change:repeating_abilities:is_magical',
-    function() {
+    function () {
       const keyPrefix = 'repeating_abilities';
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
         const diceText = parsed.dicePool ? '{{Value=[[@{calculated_dice_pool}]]}}' : '';
@@ -1103,7 +1103,7 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function() {
+  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function () {
     getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
       const isActiveIds = repeatingSectionIds.map(
         (id) => `repeating_attunedmodifiers_${id}_is_active`,
@@ -1190,7 +1190,7 @@ function handleCustomModifiers() {
   for (const modifierType of CUSTOM_MODIFIER_TYPES) {
     on(
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
-      function() {
+      function () {
         const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
@@ -1215,7 +1215,7 @@ function handleCustomModifiers() {
           `${modifierName}_${modifierType}_explanation`;
 
         getSectionIDs(`repeating_${modifierType}modifiers`, (repeatingSectionIds) => {
-          const fullAttributeIds = ["legacy_item_name"];
+          const fullAttributeIds = ['legacy_item_name'];
           for (const id of repeatingSectionIds) {
             fullAttributeIds.push(formatIsActiveId(id));
             fullAttributeIds.push(formatNameId(id));
@@ -1246,9 +1246,10 @@ function handleCustomModifiers() {
                 ? '1'
                 : values[formatIsActiveId(id)];
               if (boolifySheetValue(isActive)) {
-                const modifierName = modifierType === "legacy"
-                  ? values.legacy_item_name
-                  : (values[formatNameId(id)] || 'Unknown');
+                const modifierName =
+                  modifierType === 'legacy'
+                    ? values.legacy_item_name
+                    : values[formatNameId(id)] || 'Unknown';
                 // Handle numeric statistic modifiers
                 for (let i = 0; i < nestedCustomStatisticCount; i++) {
                   const modifiedStatistic = values[formatStatisticId(id, i)];
@@ -1499,7 +1500,7 @@ function handleDebuffs() {
         minus2('goaded', 'accuracy');
       }
       if (v.slowed) {
-        namedModifierMap.addNamedModifier("speed", "slowed", -10);
+        namedModifierMap.addNamedModifier('speed', 'slowed', -10);
         minus2('slowed', 'armor_defense');
         minus2('slowed', 'reflex');
       }
@@ -1528,7 +1529,14 @@ function handleDebuffs() {
 
       // The semicolon is replaced in handleAttackHeaders()
       const attrs: Attrs = { debuff_headers: debuffHeaders.join(';') };
-      for (const statistic of ['accuracy', 'armor_defense', 'brawn', 'fortitude', 'mental', 'reflex']) {
+      for (const statistic of [
+        'accuracy',
+        'armor_defense',
+        'brawn',
+        'fortitude',
+        'mental',
+        'reflex',
+      ]) {
         attrs[`${statistic}_debuff_explanation`] = namedModifierMap.generateExplanation(
           statistic,
           true,
@@ -1551,7 +1559,12 @@ function handleDurability() {
     callback: (v) => {
       const durabilityFromLevel = v.level - calculateStandardRank(v.level);
       const durabilityFromClass = BASE_CLASS_MODIFIERS[v.base_class]?.durability || 0;
-      const durability = durabilityFromLevel + durabilityFromClass + v.constitution + v.body_armor_durability + v.misc;
+      const durability =
+        durabilityFromLevel +
+        durabilityFromClass +
+        v.constitution +
+        v.body_armor_durability +
+        v.misc;
 
       setAttrs({
         durability: durability,
@@ -1574,10 +1587,7 @@ function handleEncumbrance() {
       numeric: ['body_armor_encumbrance', 'shield_encumbrance'],
     },
     callback: (v) => {
-      const totalValue = Math.max(
-        0,
-        v.body_armor_encumbrance + v.shield_encumbrance + v.misc,
-      );
+      const totalValue = Math.max(0, v.body_armor_encumbrance + v.shield_encumbrance + v.misc);
       setAttrs({
         encumbrance: totalValue,
         encumbrance_explanation: formatCombinedExplanation(v.miscExplanation, [
@@ -1727,7 +1737,8 @@ function handleInjuryPoint() {
       const flatIp = 10;
       const ipFromLevel = rankMultiplier * v.level;
       const ipFromCon = rankMultiplier * v.constitution;
-      const injury_point = flatIp + Math.floor((v.level + v.constitution) * rankMultiplier) + v.misc;
+      const injury_point =
+        flatIp + Math.floor((v.level + v.constitution) * rankMultiplier) + v.misc;
 
       setAttrs({
         injury_point: injury_point,
@@ -2528,7 +2539,7 @@ function handleSkillPoints() {
 }
 
 function handleTrainedSkills() {
-  on(`change:repeating_trainedskills`, function(eventInfo) {
+  on(`change:repeating_trainedskills`, function (eventInfo) {
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
@@ -2578,7 +2589,7 @@ function handleTrainedSkills() {
     }
   });
 
-  on(`remove:repeating_trainedskills`, function(eventInfo) {
+  on(`remove:repeating_trainedskills`, function (eventInfo) {
     const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
       k.endsWith('trained_skill'),
     );
@@ -2726,7 +2737,7 @@ function uppercaseFirstLetter(str: string) {
 function getDicePoolAttrs(keyPrefix: string, dicePoolKey: string, callback: DicePoolCallback) {
   dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
   const isMagicalKey = `${keyPrefix}_is_magical`;
-  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function(attrs) {
+  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function (attrs) {
     callback(
       calculateDicePoolModifier({
         dicePool: attrs[dicePoolKey],
@@ -2766,8 +2777,8 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-    ' change:repeating_otherdamagingattacks:is_magical',
-    function() {
+      ' change:repeating_otherdamagingattacks:is_magical',
+    function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
       });
@@ -2775,7 +2786,7 @@ function handleOtherDamagingAttacks() {
   );
 
   // Global other damaging attack change
-  on('change:magical_power change:mundane_power change:level', function() {
+  on('change:magical_power change:mundane_power change:level', function () {
     getSectionIDs('repeating_otherdamagingattacks', (repeatingSectionIds) => {
       for (const sectionId of repeatingSectionIds) {
         getOdaDamageDiceAttrs(`repeating_otherdamagingattacks_${sectionId}`, (parsed) => {
@@ -2819,7 +2830,7 @@ function handleStrikeAttacks() {
         'magical_power',
         'mundane_power',
       ],
-      function(v) {
+      function (v) {
         const dice_type = v[is_magical_key] === '1' ? 'magical' : 'mundane';
 
         // We need to copy the weapon_exists keys into the local repeating section.
@@ -2869,7 +2880,7 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     'change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier',
-    function() {
+    function () {
       getStrikeAttrs('', (parsed: StrikeAttackAttrs) => {
         setStrikeTotalDamage('', parsed);
       });
@@ -2886,7 +2897,7 @@ function handleStrikeAttacks() {
   // Global strike attack change
   on(
     weaponChangeKeys.join(' ') + ' change:level change:magical_power change:mundane_power',
-    function() {
+    function () {
       getSectionIDs('repeating_strikeattacks', (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
           getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
@@ -3012,7 +3023,7 @@ function handleVitalWounds() {
 
   on(
     'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds',
-    function(eventInfo) {
+    function (eventInfo) {
       getSectionIDs('repeating_vitalwounds', (repeatingSectionIds) => {
         // Not sure if this is necessary
         repeatingSectionIds = repeatingSectionIds || [];

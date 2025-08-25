@@ -119,7 +119,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'propulsion',
-        exceptThat: "the maximum knockback distance increases to 60 feet.",
+        exceptThat: 'the maximum knockback distance increases to 60 feet.',
       },
       rank: 4,
       roles: ['dive'],
@@ -351,8 +351,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       functionsLike: {
         name: 'wind tunnel',
-        exceptThat:
-          "the push distance increases to 30 feet.",
+        exceptThat: 'the push distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 7,
@@ -525,7 +524,8 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       functionsLike: {
         name: 'hurricane',
-        exceptThat: 'the damage increases to \\damagerankfour, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
+        exceptThat:
+          'the damage increases to \\damagerankfour, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
       },
       // narrative: '',
       rank: 6,

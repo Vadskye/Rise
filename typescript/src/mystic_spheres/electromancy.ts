@@ -104,7 +104,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // area. That's enough for a 5x chain probably.
       functionsLike: {
         name: 'lightning rod',
-        exceptThat: 'the attack \\glossterm{chains} five times, and the range increases to \\medrange.',
+        exceptThat:
+          'the attack \\glossterm{chains} five times, and the range increases to \\medrange.',
       },
       rank: 4,
       roles: ['clear'],
@@ -328,7 +329,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // +1r/-1dr for metallic effects
       functionsLike: {
         name: 'electromagnetic arc',
-        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 7,
       roles: ['clear'],
@@ -409,7 +411,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       functionsLike: {
         name: 'call lightning',
-        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 6,
       roles: ['burst'],
@@ -640,7 +643,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Mighty Arcing Blow',
       functionsLike: {
         name: 'arcing blow',
-        exceptThat: 'the strike deals double damage.'
+        exceptThat: 'the strike deals double damage.',
       },
       rank: 6,
       roles: ['burst'],

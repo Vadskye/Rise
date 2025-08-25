@@ -273,7 +273,8 @@ export const enchantment: MysticSphere = {
       functionsLike: {
         name: 'mind blank',
         // TODO: awkward wording
-        exceptThat: 'the attack affects all \\glossterm{enemies} in a \\smallarea within \\medrange. If the target would be immune to \\spell{mind blank}, it is also immune to this spell, and vice versa.',
+        exceptThat:
+          'the attack affects all \\glossterm{enemies} in a \\smallarea within \\medrange. If the target would be immune to \\spell{mind blank}, it is also immune to this spell, and vice versa.',
       },
       rank: 6,
       roles: ['stasis'],

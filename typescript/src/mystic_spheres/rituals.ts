@@ -1194,8 +1194,10 @@ export const rituals: Ritual[] = [
     rank: 3,
     roles: ['narrative'],
     sphereEffects: {
-      Cryomancy: 'The walls are made of clear ice that does not block sight. They take double damage from \\atFire abilities.',
-      Fabrication: 'The walls are made of a solid substance like metal or stone, and are completely opaque.',
+      Cryomancy:
+        'The walls are made of clear ice that does not block sight. They take double damage from \\atFire abilities.',
+      Fabrication:
+        'The walls are made of a solid substance like metal or stone, and are completely opaque.',
       Telekinesis: 'The walls are visible as a shimmering magical field that does not block sight.',
       Terramancy: 'The walls are made of stone, and are completely opaque.',
     },
@@ -1719,8 +1721,8 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     functionsLike: {
-      name: "track item",
-      exceptThat: "the item can be of any size category.",
+      name: 'track item',
+      exceptThat: 'the item can be of any size category.',
     },
     rank: 4,
     roles: ['narrative'],
@@ -2602,7 +2604,8 @@ export const rituals: Ritual[] = [
     castingTime: 'one hour',
     functionsLike: {
       name: 'animate dead',
-      exceptThat: 'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
+      exceptThat:
+        'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
     },
     materialCost: true,
     rank: 6,
@@ -2664,7 +2667,8 @@ export const rituals: Ritual[] = [
     castingTime: 'one hour',
     functionsLike: {
       name: 'command undead',
-      exceptThat: 'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
+      exceptThat:
+        'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
     },
     rank: 5,
     roles: ['attune'],
@@ -2711,7 +2715,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Create Water',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You create up to ten gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
       You must create a minimum of one ounce of water in each location.
@@ -2732,7 +2736,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Chill Air',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
       You cannot reduce the temperature below 0 degrees in this way.
@@ -2751,7 +2755,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Magnetize',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
       It pulls itself toward metal objects within 1 foot of it.
@@ -2771,7 +2775,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sculpt Appearance',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     functionsLike: {
       abilityType: 'ability',
       exceptThat: `
@@ -2799,7 +2803,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Malleable Sculpt Appearance',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     functionsLike: {
       exceptThat: `
         you can change the nature of the disguise as a \\glossterm{minor action}.
@@ -2814,7 +2818,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Alter Object',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
       You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
@@ -2834,7 +2838,7 @@ export const rituals: Ritual[] = [
         The target must be ice or water.
         If you choose water, it becomes ice during the ritual.
       `,
-      Terramancy: "The target must be a body of earth or unworked stone.",
+      Terramancy: 'The target must be a body of earth or unworked stone.',
       Verdamancy: `
         The target must be a living plant rather than an object.
         As long as the plant's new shape is structurally sound and conducive to life, this reshaping does not harm the plant.
@@ -2846,7 +2850,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Heat Air',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
       You cannot increase the temperature above 100 degrees in this way.
@@ -2865,7 +2869,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reveal Truth',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You may reroll one Knowledge check you made within the past ten minutes.
       You can only reroll any individual Knowledge check once with this ritual.
@@ -2877,7 +2881,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Darklantern',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object that is Small or smaller within \\shortrange.
       The object emits \\glossterm{shadowy illumination} in a \\smallarea radius.
@@ -2898,7 +2902,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Beacon of Darkness',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You constantly emit \\glossterm{shadowy illumination} in a \\medarea radius.
       This illuminates dark areas, but does not suppress brighter light.
@@ -2925,7 +2929,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Commune with Elements',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You can speak with air, earth, fire, or water within a \areahuge \glossterm{zone} from your location.
       You can ask it simple questions and understand its responses.
@@ -2967,7 +2971,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Disenchant',
 
-    castingTime: "one hour",
+    castingTime: 'one hour',
     effect: `
       Choose one \\glossterm{unattended} \\magical item you \\glossterm{touch}.
       If the item is \\glossterm{item rank} 1 (4 gp), it disintegrates into magical dust, which permanently \\glossterm{destroys} the item.

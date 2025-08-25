@@ -177,7 +177,7 @@ export const photomancy: MysticSphere = {
     {
       name: 'Searing Light',
 
-      // 
+      //
       attack: {
         hit: `
           \\damageranktwolow.
@@ -190,7 +190,7 @@ export const photomancy: MysticSphere = {
       rank: 1,
       roles: ['burst'],
       scaling: {
-        special: "The damage increases by 1d6 per rank above 1.",
+        special: 'The damage increases by 1d6 per rank above 1.',
       },
     },
 
@@ -318,7 +318,7 @@ export const photomancy: MysticSphere = {
       rank: 4,
       roles: ['clear'],
       scaling: {
-        special: "The damage increases by 1d10 per rank above 4",
+        special: 'The damage increases by 1d10 per rank above 4',
       },
     },
 
@@ -415,7 +415,8 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'mirror image',
-        exceptThat: 'the images are recreated immediately after being destroyed, so they never run out.',
+        exceptThat:
+          'the images are recreated immediately after being destroyed, so they never run out.',
       },
       rank: 5,
       roles: ['attune'],
@@ -615,7 +616,8 @@ export const photomancy: MysticSphere = {
 
       functionsLike: {
         name: 'reflective lightbeam',
-        exceptThat: 'the damage increases to \\damagerankfivelow, and it only targets \\glossterm{enemies} in the area.',
+        exceptThat:
+          'the damage increases to \\damagerankfivelow, and it only targets \\glossterm{enemies} in the area.',
       },
       rank: 6,
       roles: ['clear'],
