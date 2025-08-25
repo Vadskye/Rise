@@ -250,17 +250,20 @@ fn amulets() -> Vec<Apparel> {
     }));
 
     apparel.push(Amulet(StandardItem {
-        name: String::from("Wild Magic Amulet"),
+        name: String::from("Amulet of Wild Might"),
         rank: 3,
-        short_description: String::from(r"Increases damage and chaos with \ability{wild magic}"),
+        short_description: String::from(r"+1d4 damage, but increased chaos with \ability{wildspell}"),
         description: String::from(r"
-            The extra damage you gain from the \ability{wildspell} sorcerer ability increases by 1d6.
-            However, you take a -2 penalty to your wild magic rolls.
+            When you use your \ability{wildspell} sorcerer ability, the spell deals 1d4 \glossterm{extra damage}.
+            However, you take a -1 penalty to your wild magic rolls.
             If your result is 0 or less, you are the only target of the spell.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, r"Increases damage and chaos with \ability{wild magic}", r"
-                The extra damage is doubled, rather than calculated as if you were one rank higher.
+            ItemUpgrade::new(5, r"+1d8 damage, but increased chaos with \ability{wildspell}", r"
+                The extra damage increases to 1d8.
+            "),
+            ItemUpgrade::new(7, r"+2d6 damage, but increased chaos with \ability{wildspell}", r"
+                The extra damage increases to 2d6.
             "),
         ],
         ..Apparel::default()
@@ -269,15 +272,13 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Wild Control"),
         rank: 3,
-        short_description: String::from(r"Reduces damage and chaos with \ability{wild magic}"),
+        short_description: String::from(r"Reduces chaos with \ability{wildspell}"),
         description: String::from(r"
-            The extra damage you gain from the \ability{wildspell} sorcerer ability is calculated as if your rank in that archetype was one lower, to a minimum of 1.
-            However, you gain a +1 bonus to your wild magic rolls.
-            A result of 11 or more is treated as a 10.
+            When you use the \ability{wildspell} ability, instead of rolling 1d10 for your wild magic effect, you roll 2d6\minus1.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Reduces power and chaos with \ability{wild magic}", r"
-                The rank penalty for calculating extra damage increases to two ranks, but the wild magic roll bonus increases to +2.
+            ItemUpgrade::new(6, r"Reduces and improves chaos with \ability{wildspell}", r"
+                The wild magic roll improves to 2d6.
             "),
         ],
         ..Apparel::default()

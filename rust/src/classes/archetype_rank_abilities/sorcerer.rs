@@ -399,73 +399,41 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a damaging spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you may use this ability after making all other decisions for the spell (such as targets, intended area, and so on).
-                When you do, the spell deals 1d4 \glossterm{extra damage}.
-                In addition, roll 1d10 and apply the corresponding wild magic effect from the table below.
+                When you do, roll 1d10 and apply the corresponding wild magic effect from the table below.
 
+                % 1 and 2 are bad. 3, 4 and 5, and 6 are mixed upside/downside.
+                % 6 and above are strictly positive.
                 \begin{columntable}
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & The spell fails with no effect \\
-                        2 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the lower result \\
-                        3 & You are a target of the spell in addition to any other targets \\
-                        4 & The spell also treats all creatures adjacent to you as \glossterm{secondary targets} \\
-                        5 & The spell leaves an unpleasant but harmless magical sludge on you, with the color and texture based on the spell you cast \\
+                        1 & The spell has no immediate effect, but it \glossterm{repeats} during your next action \\
+                        2 & You are a target of the spell in addition to any other targets \\
+                        3 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
+                        4 & You gain a \plus10 \glossterm{accuracy} bonus with the spell, but cannot get a \glossterm{critical hit} \\
+                        5 & The spell gains the \atCold, \atElectricity, and \atFire ability tags \\
                         6 & The spell's area is doubled \\
-                        7 & The spell \glossterm{chains} once to the unaffected creature that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & The spell gains the \abilitytag{Impact} tag \\
-                        9 & The extra damage from the \ability{wildspell} ability is doubled \\
-                        10 & On your first attack roll with the spell, you \glossterm{reroll} once and keep the higher result \\
+                        7 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's \glossterm{primary targets}, choosing randomly between equally close creatures \\
+                        8 & The spell deals \glossterm{extra damage} equal to your rank in this archetype \\
+                        9 & Each target hit by the spell is \glossterm{briefly} \confused, \braced, and \focused \\
+                        10 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
+                        11\plus & The spell \glossterm{repeats} during your next action \\
                     \end{dtabularx}
                 \end{columntable}
 
                 Some wild magic effects cannot be meaningfully applied to all spells.
-                For example, changing the damage dealt by a spell does not affect spells that do not deal damage.
+                For example, doubling the area of a spell does not affect spells that do not deal damage.
                 Any wildspell effects that do not make sense for a particular spell have no effect.
-
-                The extra damage increases as your rank in this archetype increases:
-                % Use a slightly slower progression than normal for extra damage.
-                % At higher levels, a sorcerer has more tools to mitigate the downsides of wildspell, and the extra damage is strong.
-                \rank{3} The extra damage increases to 1d6.   % +27% damage
-                \rank{5} The extra damage increases to 1d8.   % +35% damage, assuming double extra damage
-                \rank{6} The extra damage increases to 1d10.  % +30% damage, assuming double extra damage
-                \rank{7} The extra damage increases to 2d6.   % +27% damage, assuming double extra damage
             ",
             // TODO: define extra damage modifier for scaling
             modifiers: Some(vec![Modifier::Power(2)]),
         },
         RankAbility {
-            complexity: 1,
-            name: "Wildspell+",
-            is_magical: true,
-            rank: 4,
-            description: r"
-                If you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
-                You do not gain any bonus to the wild magic reroll.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
             complexity: 0,
-            name: "Wildspell++",
+            name: "Wildspell+",
             is_magical: true,
             rank: 7,
             description: r"
-                You replace your normal wild magic effects with the effects from the table below.
-                \begin{columntable}
-                    \begin{dtabularx}{\textwidth}{l X}
-                        \tb{Roll} & \tb{Effect} \tableheaderrule
-                        1 & You are a target of the spell in addition to any other targets \\
-                        2 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
-                        3 & The spell has no immediate effect, but it \glossterm{repeats} during your next action \\
-                        4 & The spell also treats all \glossterm{enemies} adjacent to you as \glossterm{secondary targets} \\
-                        5 & The spell leaves an pleasant fragrance on you, with the smell based on the spell you cast \\
-                        6 & The spell's area is tripled \\
-                        7 & The spell \glossterm{chains} once to the unaffected \glossterm{enemy} that is closest to one of the spell's targets, choosing randomly between equally close creatures \\
-                        8 & The extra damage from the \ability{wildspell} ability is doubled \\
-                        9 & Your first attack roll with the spell \glossterm{explodes} on any value, not just on a 10 \\
-                        10 & The spell \glossterm{repeats} during your next action \\
-                    \end{dtabularx}
-                \end{columntable}
+                You gain a \plus2 bonus to the wild magic roll.
             ",
             modifiers: None,
         },
@@ -499,6 +467,17 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to the roll when you use the \ability{desperate exertion} ability.
                 This bonus stacks with the normal \plus2 bonus provided by that ability.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Desperate Wildspell",
+            is_magical: true,
+            rank: 4,
+            description: r"
+                If you use the \textit{desperate exertion} ability on a spell affected by this ability, you can reroll the wild magic roll for that spell in addition to the normal effects of the \textit{desperate exertion} ability.
+                You do not gain any bonus to the wild magic reroll.
             ",
             modifiers: None,
         },
