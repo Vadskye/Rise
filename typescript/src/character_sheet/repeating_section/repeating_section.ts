@@ -26,6 +26,7 @@ const ABILITY_SECTION_NAMES = [
   'strikeattacks',
   'otherdamagingattacks',
   'nondamagingattacks',
+  'monsterattacks',
 ] as const;
 
 type OtherSectionName = (typeof OTHER_SECTION_NAMES)[number];
