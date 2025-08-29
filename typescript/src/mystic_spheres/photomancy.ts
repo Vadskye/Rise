@@ -623,5 +623,30 @@ export const photomancy: MysticSphere = {
       roles: ['clear'],
       scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
     },
+    {
+      name: 'Visual Illusion',
+      effect: `
+        You create a simple visual image within a single 5 ft.\\ square \\glossterm{zone}.
+        While this spell's effect lasts, you can change the image whenever you sustain it.
+        It can have any shape you imagine, though it cannot create light, and you may need a Craft check to create particularly complex illusions.
+
+        The image is obviously unreal and partially transparent.
+        Even an unintelligent observer can recognize the image to be an illusion with a \\glossterm{difficulty value} 5 Awareness check.
+        It can provide \\glossterm{concealment} to anything on the other side of the illusion, but does not completely block sight.
+      `,
+      rank: 2,
+      roles: ['narrative'],
+      type: 'Sustain (standard)',
+    },
+    {
+      name: 'Illusory Field',
+      functionsLike: {
+        name: 'visual illusion',
+        exceptThat: 'the area of the illusion increases to a \\smallarea radius \\glossterm{zone}.',
+      },
+      rank: 5,
+      roles: ['narrative'],
+      type: 'Sustain (standard)',
+    },
   ],
 };

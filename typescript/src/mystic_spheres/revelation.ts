@@ -216,28 +216,6 @@ export const revelation: MysticSphere = {
       type: 'Attune',
     },
 
-    {
-      name: 'Discern Lies',
-
-      attack: {
-        hit: `
-          When you hear the target deliberately and knowingly speaks a lie, you know that the target was lying.
-          This ability does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-        `,
-        targeting: `
-          This spell has no \\glossterm{verbal components}.
-
-          Make an attack vs. Mental against one creature within \\medrange.
-          Whether you hit or miss, the target becomes immune to this effect until it takes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 3,
-      roles: ['narrative'],
-      scaling: 'accuracy',
-      tags: ['Subtle'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
     // TODO: calculate EA for skills
     {
       name: 'Precognitive Competence',
