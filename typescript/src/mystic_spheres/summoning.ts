@@ -29,7 +29,7 @@ export const summoning: MysticSphere = {
       effect: `
         You summon a creature in an unoccupied square on stable ground within \\medrange.
         It visually appears to be a common Small or Medium animal of your choice, though in reality it is a manifestation of magical energy.
-        If a summoned creature gains a \\glossterm{vital wound} or has no hit points remaining at the end of a phase, it disappears.
+        If a summoned creature gains a \\glossterm{vital wound}, it disappears.
         Regardless of the appearance and size chosen, the creature's statistics use the values below.
 
         \\begin{raggeditemize}
