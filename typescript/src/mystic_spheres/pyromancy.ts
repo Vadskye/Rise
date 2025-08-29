@@ -504,7 +504,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide shapeable line that is entirely within \\medrange of you.
+          When you cast this spell, an attack vs. Reflex against everything in a \\medarealong, 5 ft. wide \\glossterm{shapeable} line that is entirely within \\medrange of you.
           The line cannot intersect itself, and you must designate one end of the line as the head of the flame serpent and the other end as the tail of the flame serpent.
 
           Whenever you sustain this spell, you can repeat this attack in a new line.

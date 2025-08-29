@@ -1287,7 +1287,6 @@
     Mechanically, walls are considered to have no width and simply occupy the boundary between squares.
 
     All squares affected by a wall must by contiguous, so every square is adjacent to another affected square, treating diagonals as adjacent.
-    Like lines, some walls are shapeable.
 
     The entire wall is considered to be a single object, and is attacked and destroyed as a single unit.
     All of a wall's defenses are 0, but like other objects, they are immune to \glossterm{critical hits}.
@@ -1312,6 +1311,20 @@
 
       If a burst or emanation is centered on a creature, it normally includes that creature.
       However, if it is centered on the creature using the ability, that creature can choose whether they are included when they use the ability.
+
+    \subsubsection{Shapeable Areas}\label{Shapeable Areas}
+      Some areas are shapeable, which means that you can change their shape within some constraints.
+      What exactly it means for an area to be shapeable depends on the area's original shape.
+      In all cases, a shapeable area must still be a single contiguous shape that includes the area's \glossterm{point of origin}.
+      \begin{raggeditemize}
+        \item Cone: You can exclude any number of squares within the area.
+        \item Cylinder: You can exclude any number of squares within the area.
+        \item Line: The line can bend at 45 degree or 90 degree angles at any number of point during its path.
+        \item Sphere: You can exclude any number of squares within the area.
+        \item Walla: The wall can bend at 45 degree or 90 degree angles at any number of points during its path.
+      \end{raggeditemize}
+
+      For example, you could convert a shapeable sphere into a cube or square, as long as the cube or square would fit entirely within the original area affected by the sphere.
 
   \subsection{Impossible Abilities}
     When you try to use an ability in an impossible way, it simply fails with no effect.
