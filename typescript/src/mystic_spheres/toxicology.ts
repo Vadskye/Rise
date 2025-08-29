@@ -9,6 +9,7 @@ export const toxicology: MysticSphere = {
   // spell, because you can keep attacking until they are eventually affectd.
 
   cantrips: [
+    // TODO: convert this to a ritual and replace it with a different cantrip
     {
       name: 'Neutralize Poison',
 

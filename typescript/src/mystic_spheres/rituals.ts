@@ -19,67 +19,66 @@ const teleportSphereEffects = {
 // narrative tropes, and they undercut the idea that this is the "life" sphere.
 export const rituals: Ritual[] = [
   {
-    name: 'Fortification',
+    name: 'Reinforcement',
 
     castingTime: 'one hour',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
       Unlike most abilities, this ritual can affect individual parts of a whole object.
 
-      % How should this affect Strength break difficulty value?
-      The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{hardness}.
+      The target gains a +4 \\glossterm{enhancement bonus} to its \\glossterm{hardness}.
       If the target is moved, this ability is \\glossterm{dismissed}.
       Otherwise, it lasts for one year.
     `,
     rank: 1,
     roles: ['narrative'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
-    type: 'Attune',
+    scaling: {
+      special: `
+        You can perform this ritual at a higher rank.
+        The hardness bonus increases by 4 per rank above 1.
+      `,
+    },
   },
 
   {
-    name: 'Enduring Fortification',
+    name: 'Temporary Reinforcement',
+
+    castingTime: 'one minute',
+    effect: `
+      You create an area of reinforcement within a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from you.
+      All \\glossterm{unattended}, nonmagical objects or parts of objects within the area gain a \\plus5 \\glossterm{enhancement bonus} to their \\glossterm{hardness}.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    scaling: {
+      special: `
+        You can perform this ritual at a higher rank.
+        The hardness bonus increases by 1 per rank above 1.
+      `,
+    },
+    spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
+    type: 'Sustain (attuneable, standard)',
+  },
+
+  {
+    name: 'Enduring Reinforcement',
 
     castingTime: '24 hours',
     functionsLike: {
       exceptThat: `
         the effect lasts for one hundred years.
       `,
-      name: 'blessing of fortification',
+      name: 'reinforcement',
     },
     rank: 3,
     roles: ['narrative'],
-    spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
-  },
-
-  {
-    name: 'Enduring Immutability',
-
-    castingTime: '24 hours',
-    functionsLike: {
-      exceptThat: `
-        the effect lasts for one hundred years.
+    scaling: {
+      special: `
+        You can perform this ritual at a higher rank.
+        The hardness bonus increases by 4 per rank above 3.
       `,
-      name: 'immutability',
     },
-    rank: 6,
-    roles: ['narrative'],
-    spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
-  },
-
-  {
-    name: 'Immutability',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-        the bonus to \\glossterm{hardness} increases to +20.
-      `,
-      name: 'fortification',
-    },
-    rank: 4,
-    roles: ['narrative'],
-    type: 'Attune',
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
 
@@ -1151,7 +1150,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     effect: `
-      You create a permeable barrier around a \\smallarea radius \\glossterm{zone} from your location.
+      You create a permeable barrier around a \\glossterm{shapeable} \\smallarea radius \\glossterm{zone} from your location.
       The barrier is visible as a shimmering magical membrane that does not block sight.
       As a standard action, a creature can move five feet from outside the hut to inside the hut, or vice versa.
       However, the hut blocks \\glossterm{line of effect} for all other purposes.
@@ -2926,7 +2925,7 @@ export const rituals: Ritual[] = [
   },
 
   {
-    name: 'Tidy Sanctuary',
+    name: 'Tidy',
     castingTime: 'one minute',
     effect: `
       You create a tidy area in a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from your location.
@@ -2942,7 +2941,7 @@ export const rituals: Ritual[] = [
       `,
     },
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph', 'Telekinesis'],
-    type: 'Attune',
+    type: 'Sustain (attuneable, minor)',
   },
   {
     name: 'Enduring Time Lock -- Location',
@@ -2983,5 +2982,113 @@ export const rituals: Ritual[] = [
     rank: 3,
     roles: ['boon'],
     spheres: ['Astromancy', 'Chronomancy'],
+  },
+  {
+    name: 'Memory Palace',
+
+    castingTime: "one minute",
+    effect: `
+      You can perfectly recall anything you learned or experienced since 24 hours before this ritual finished, including anything you learn during this effect.
+      When this effect ends, your memory returns to normal, though you can write things down to remind you of what you knew.
+    `,
+    rank: 4,
+    roles: ['narrative'],
+    spheres: ['Enchantment', 'Revelation'],
+    type: 'Sustain (attuneable, standard)',
+  },
+  {
+    name: 'Soothing Presence',
+
+    castingTime: "one minute",
+    effect: `
+      All creatures within a \\largearea radius \\glossterm{emanation} from you are soothed.
+      They feel pain and discomfort less intensely, and perceive themselves to be less tired.
+      This does not actually remove injuries or restore fatigue.
+    `,
+    rank: 1,
+    roles: ['narrative'],
+    sphereEffects: {
+      Enchantment: "This effect gains the \\atEmotion tag.",
+    },
+    spheres: ['Enchantment', 'Prayer'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Sanctuary',
+
+    castingTime: "one hour",
+    attack: {
+      hit: `
+        While the target is in the area, it is unable to attack any creatures or objects.
+        This effect lasts until the target finishes a \\glossterm{short rest}.
+      `,
+      targeting: `
+        The area within an \\largearea radius \\glossterm{shapeable} \\glossterm{zone} from your location becomes a sanctuary.
+        Whenever a creature enters the area, make a \\glossterm{reactive attack} vs. Mental with a \\plus10 accuracy bonus against that creature.
+        At the end of each round, this attack is repeated against each unaffected creature in the area.
+      `,
+    },
+    rank: 3,
+    roles: ['narrative'],
+    sphereEffects: {
+      Enchantment: "This effect gains the \\atEmotion tag.",
+    },
+    spheres: ['Enchantment', 'Prayer'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Persistent Sanctuary',
+
+    castingTime: '24 hours',
+    functionsLike: {
+      exceptThat: `
+        the effect lasts for one hundred years.
+      `,
+      name: 'sanctuary',
+    },
+    rank: 5,
+    roles: ['narrative'],
+    spheres: ['Enchantment', 'Prayer'],
+  },
+  {
+    name: 'Reveal Deception',
+
+    castingTime: "one minute",
+    effect: `
+      Whenever a creature within a \\largearea radius \\glossterm{emanation} from you deliberately and knowingly speaks a lie, you know that the target was lying.
+      This does not reveal the truth, and unintentional inaccuracies do not trigger this effect.
+    `,
+    rank: 3,
+    roles: ['narrative'],
+    spheres: ['Enchantment', 'Revelation'],
+    tags: ['Subtle'],
+    type: 'Sustain (attuneable, minor)',
+  },
+  {
+    name: 'Bind Object',
+    castingTime: 'one hour',
+    effect: `
+      Choose a Small or smaller \\glossterm{unattended} object that must be placed at the center of the ritual.
+      You bind that object to its current location or to a \\glossterm{ritual participant}.
+      If you choose a location, you must attune to the spell.
+      Otherwise, the target creature must attune to the spell.
+
+      The object cannot be moved from the location or separated from the creature by more than 5 feet without breaking the bond.
+      Breaking the bond requires a standard action and a \\glossterm{difficulty value} 15 Strength check.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    scaling: {
+      special: `
+        You can perform this ritual at a higher rank.
+        The difficulty value of the Strength check increases by 2 per rank above 2.
+      `,
+    },
+    sphereEffects: {
+      Electromancy: 'The object must be \\glossterm{metallic}.',
+      Terramancy: 'You can only choose a location, not a ritual participant.',
+    },
+    spheres: ['Electromancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
+    type: 'Attune (target)',
   },
 ];
