@@ -383,7 +383,7 @@ export const polymorph: MysticSphere = {
       // dr3 from short range. No healing buff since this is more versatile and in an odd
       // sphere for healing.
       effect: `
-        Chose yourself, one \\glossterm{ally}, or one \\glossterm{unattended} object within \\shortrange.
+        Chose yourself, or one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
         The target regains 1d8 \\glossterm{hit points} \\plus1 per \\glossterm{power}.
       `,
       rank: 2,

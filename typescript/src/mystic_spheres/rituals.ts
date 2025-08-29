@@ -146,7 +146,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      The area within an \\largearea radius \\glossterm{zone} from your location becomes sacred to your deity.
+      The area within an \\largearea radius \\glossterm{shapeable} \\glossterm{zone} from your location becomes sacred to your deity.
       % TODO: what cares about consecration?
       This has no tangible effects by itself, but some special abilities and monsters behave differently in consecrated areas.
     `,
@@ -356,8 +356,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     effect: `
-      Torrential rain begins falling out of thin air within a \\glossterm{zone} within \\longrange.
-      You choose the radius of the zone, up to a maximum of a \\largearea radius.
+      Torrential rain begins falling out of thin air within a \\glossterm{shapeable} \\largearea radius \\glossterm{zone} within \\longrange.
       The rain extinguishes minor fires such as campfires and torches on contact.
       Everything in the area is \\trait{impervious} to \\atFire attacks.
     `,
@@ -373,7 +372,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       You can separate out dirt, sand, salt, poison, and similar minor pollutants from up to one thousand gallons of water within \\shortrange.
-      That roughly corresponds to a single 5-ft\. square of water.
+      That roughly corresponds to a single 5-ft\. cube of water.
       The waste material moves to the edge of the water so it falls out or can be easily removed.
       It remains separated until this ritual's effect ends.
       This does not remove magical effects or contaminants heavier than half a pound.
@@ -383,19 +382,10 @@ export const rituals: Ritual[] = [
     type: 'Sustain (attuneable, minor)',
     rank: 2,
     roles: ['narrative'],
-    spheres: ['Aquamancy', 'Prayer', 'Toxicology'],
-  },
-  {
-    name: 'Massive Purify Water',
-
-    functionsLike: {
-      exceptThat: 'the affected volume increases to a 5-foot cube, or a little over 900 gallons.',
-      name: 'purify water',
+    scaling: {
+      4: "The volume increases to two thousand gallons of water, or two 5-ft. cubes.",
+      6: "The volume increases to four thousand gallons of water, or four 5-ft. cubes.",
     },
-    rank: 4,
-    roles: ['narrative'],
-    tags: [],
-    castingTime: 'one minute',
     spheres: ['Aquamancy', 'Prayer', 'Toxicology'],
   },
   {
@@ -410,26 +400,15 @@ export const rituals: Ritual[] = [
     `,
     rank: 2,
     roles: ['narrative'],
-    tags: ['Detection'],
-    spheres: ['Aquamancy', 'Revelation'],
-  },
-  {
-    name: 'Distant Sense Water',
-
-    functionsLike: {
-      exceptThat: `
-        the range increases to a ten mile radius from your location.
-      `,
-      name: 'sense water',
+    scaling: {
+      4: 'The area increases to a five mile radius from your location.',
+      6: 'The area increases to a ten mile radius from your location.',
     },
-    rank: 4,
-    roles: ['narrative'],
     tags: ['Detection'],
-    castingTime: 'one hour',
     spheres: ['Aquamancy', 'Revelation'],
   },
   {
-    name: 'Swimmers',
+    name: 'Learn to Swim',
 
     castingTime: 'one minute',
     effect: `
@@ -582,7 +561,7 @@ export const rituals: Ritual[] = [
 
       If the astral beacon does not have enough open space to contain your group, the ritual has no immediate effect.
       You can continue the ritual for any length of time.
-      At the end of each round during this continuation, if the anchor has room for your group, the teleportation succeeds and the ritual ends.
+      At the end of each round during this continuation, if the astral beacon has room for your group, the teleportation succeeds and the ritual ends.
     `,
     sphereEffects: teleportSphereEffects,
     tags: [],
@@ -709,11 +688,11 @@ export const rituals: Ritual[] = [
     spheres: ['Chronomancy', 'Revelation'],
   },
   {
-    name: 'Gentle Repose',
+    name: 'Preservation',
 
     castingTime: 'one minute',
     effect: `
-      Choose one \\glossterm{unattended}, nonmagical object within \\shortrange.
+      Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\shortrange.
       It does not decay or spoil with the passage of time.
       This can extend the time a poison or similar item lasts before becoming inert.
       The target can still be attacked and damaged normally.
@@ -730,13 +709,14 @@ export const rituals: Ritual[] = [
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
   },
   {
-    name: 'Persistent Gentle Repose',
+    name: 'Persistent Preservation',
 
     castingTime: 'one minute',
     functionsLike: {
       name: 'gentle repose',
       exceptThat: 'the effect lasts for one year.',
     },
+    materialCost: true,
     rank: 3,
     roles: ['narrative'],
     spheres: ['Chronomancy', 'Cryomancy', 'Toxicology', 'Vivimancy'],
@@ -1065,21 +1045,32 @@ export const rituals: Ritual[] = [
   },
 
   {
-    name: 'Fabricate Water',
+    name: 'Create Water',
 
     castingTime: 'one minute',
     effect: `
-      You create up to two gallons of wholesome, drinkable water at any number of locations within \\shortrange, allowing you to fill multiple small water containers.
+      You create up to ten gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
       You must create a minimum of one ounce of water in each location.
+      % Tiny body of water is 1 cubic foot = 7.5 gallons
+      This generally means that you can create a single Tiny body of water.
     `,
     rank: 1,
     roles: ['narrative'],
+    scaling: {
+      3: 'The volume created increases to twenty gallons.',
+      // Small body of water is 2.5^3 = ~15.5 cubic feet = ~120 gallons
+      4: 'The volume created increases to fifty gallons. This generally means that you can create a Small body of water by performing the ritual twice.',
+      6: 'The volume created increases to one hundred gallons.',
+    },
+    sphereEffects: {
+      Terramancy: 'The locations must be \\glossterm{grounded}, and the ritual takes one hour to perform instead of one minute.',
+    },
+    spheres: ['Aquamancy', 'Fabrication', 'Terramancy'],
     tags: ['Creation', 'Water'],
-    spheres: ['Aquamancy', 'Fabrication'],
   },
 
   {
-    name: 'Fabricate Sustenance',
+    name: 'Create Food',
 
     castingTime: 'one hour',
     effect: `
@@ -1216,21 +1207,11 @@ export const rituals: Ritual[] = [
     `,
     rank: 1,
     roles: ['narrative'],
-    tags: ['Visual'],
-    type: 'Sustain (attuneable, minor)',
-    spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
-  },
-
-  {
-    name: 'Massive Continuous Light',
-
-    castingTime: 'one minute',
-    functionsLike: {
-      name: 'continuous light',
-      exceptThat: 'the area increases to a \\largearea radius.',
+    scaling: {
+      3: 'The area increases to a \\largearea radius.',
+      5: 'The area increases to a \\hugearea radius.',
+      7: 'The area increases to a \\gargarea radius.',
     },
-    rank: 3,
-    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1246,21 +1227,9 @@ export const rituals: Ritual[] = [
     `,
     rank: 5,
     roles: ['narrative'],
-    tags: ['Visual'],
-    type: 'Sustain (attuneable, minor)',
-    spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
-  },
-
-  {
-    name: 'Massive Brilliant Light',
-
-    castingTime: 'one minute',
-    functionsLike: {
-      name: 'brilliant light',
-      exceptThat: 'the area increases to a \\largearea radius.',
+    scaling: {
+      7: 'The area increases to a \\medarea radius.',
     },
-    rank: 7,
-    roles: ['narrative'],
     tags: ['Visual'],
     type: 'Sustain (attuneable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
@@ -1274,22 +1243,13 @@ export const rituals: Ritual[] = [
       name: 'continuous light',
       exceptThat: 'the effect lasts for one year.',
     },
+    materialCost: true,
     rank: 2,
     roles: ['narrative'],
-    tags: ['Visual'],
-    spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
-  },
-
-  {
-    name: 'Massive Permanent Light',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      name: 'continuous light',
-      exceptThat: 'the area increases to a \\largearea radius, and the effect lasts for one year.',
+    scaling: {
+      4: 'The area increases to a \\largearea radius.',
+      6: 'The area increases to a \\hugearea radius.',
     },
-    rank: 4,
-    roles: ['narrative'],
     tags: ['Visual'],
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
   },
@@ -1371,36 +1331,10 @@ export const rituals: Ritual[] = [
     `,
     rank: 3,
     roles: ['narrative'],
-    spheres: ['Polymorph', 'Telekinesis'],
-  },
-
-  {
-    name: 'Craft Large Object',
-
-    castingTime: 'special',
-    functionsLike: {
-      exceptThat: `
-        the maximum combined size of all targets increases to Large.
-      `,
-      name: 'Craft Object',
+    scaling: {
+      5: 'the maximum combined size of all targets increases to Large.',
+      7: 'the maximum combined size of all targets increases to Huge.',
     },
-    rank: 5,
-    roles: ['narrative'],
-    spheres: ['Polymorph', 'Telekinesis'],
-  },
-
-  {
-    name: 'Craft Huge Object',
-
-    castingTime: 'special',
-    functionsLike: {
-      exceptThat: `
-        the maximum combined size of all targets increases to Huge.
-      `,
-      name: 'craft object',
-    },
-    rank: 7,
-    roles: ['narrative'],
     spheres: ['Polymorph', 'Telekinesis'],
   },
 
@@ -1409,11 +1343,11 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      All food in one cubic foot within \\shortrange is purified.
-      Spoiled, rotten, poisonous, or otherwise contaminated food becomes pure and suitable for eating and drinking.
+      All food in a \\smallarea radius within within \\shortrange is purified.
+      Spoiled, rotten, poisonous, or otherwise contaminated food becomes pure and suitable for eating.
       This does not prevent subsequent natural decay or spoiling.
     `,
-    rank: 1,
+    rank: 2,
     roles: ['narrative'],
     spheres: ['Prayer', 'Toxicology'],
   },
@@ -1555,22 +1489,10 @@ export const rituals: Ritual[] = [
         This ritual can sense fires as small as a candle flame, but no smaller.
     `,
     rank: 2,
-    roles: ['narrative'],
-    tags: ['Detection'],
-    spheres: ['Revelation', 'Pyromancy'],
-  },
-
-  {
-    name: 'Distant Sense Flame',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-        the range increases to a ten mile radius from your location.
-      `,
-      name: 'sense flame',
+    scaling: {
+      4: 'The area increases to a five mile radius from your location.',
+      6: 'The area increases to a ten mile radius from your location.',
     },
-    rank: 4,
     roles: ['narrative'],
     tags: ['Detection'],
     spheres: ['Revelation', 'Pyromancy'],
@@ -1781,40 +1703,15 @@ export const rituals: Ritual[] = [
 
     rank: 2,
     roles: ['narrative'],
-    spheres: ['Revelation'],
-  },
-
-  {
-    name: 'Distant Discern Location',
-
-    castingTime: '24 hours',
-
-    functionsLike: {
-      exceptThat: `
-      there is no distance limitation.
-      The creature or object must simply be on the same plane as you.
+    scaling: {
+      4: `
+        There is no distance limitation. 
+        The target must simply be on the same plane as you.
       `,
-      name: 'discern location',
-    },
-    rank: 4,
-    roles: ['narrative'],
-    spheres: ['Revelation'],
-  },
-
-  {
-    name: 'Interplanar Discern Location',
-
-    // original targets: any creature or object on the same plane as you
-    castingTime: '24 hours',
-
-    functionsLike: {
-      exceptThat: `
-      the target does not have to be on the same plane as you.
+      6: `
+        The target does not have to be on the same plane as you.
       `,
-      name: 'discern location',
     },
-    rank: 6,
-    roles: ['narrative'],
     spheres: ['Revelation'],
   },
 
@@ -1838,6 +1735,15 @@ export const rituals: Ritual[] = [
 
     rank: 2,
     roles: ['narrative'],
+    scaling: {
+      4: `
+        There is no distance limitation. 
+        The target must simply be on the same plane as you.
+      `,
+      6: `
+        The target does not have to be on the same plane as you.
+      `,
+    },
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1854,39 +1760,12 @@ export const rituals: Ritual[] = [
     },
     rank: 4,
     roles: ['narrative'],
-    type: 'Sustain (standard)',
-    spheres: ['Aeromancy', 'Prayer', 'Revelation'],
-  },
-
-  {
-    name: 'Distant Sending',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-      there is no distance limitation.
-      The target must simply be on the same plane as you.
+    scaling: {
+      6: `
+        There is no distance limitation. 
+        The target must simply be on the same plane as you.
       `,
-      name: 'sending',
     },
-    rank: 4,
-    roles: ['narrative'],
-    type: 'Sustain (standard)',
-    spheres: ['Aeromancy', 'Prayer', 'Revelation'],
-  },
-
-  {
-    name: 'Interplanar Sending',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-        there is no distance limitation, and the target does not have to be on the same plane as you.
-      `,
-      name: 'sending',
-    },
-    rank: 6,
-    roles: ['narrative'],
     type: 'Sustain (standard)',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
   },
@@ -1907,41 +1786,15 @@ export const rituals: Ritual[] = [
     `,
     rank: 3,
     roles: ['attune'],
-    type: 'Attune',
-    spheres: ['Enchantment', 'Revelation'],
-  },
-
-  {
-    name: 'Distant Telepathic Bond',
-
-    castingTime: 'one minute',
-
-    functionsLike: {
-      exceptThat: `
-        the effect works at any distance.
+    scaling: {
+      5: `
+        There is no distance limitation. 
         The communication still does not function across planes.
       `,
-      name: 'telepathic bond',
-    },
-    rank: 5,
-    roles: ['attune'],
-    type: 'Attune',
-    spheres: ['Enchantment', 'Revelation'],
-  },
-
-  {
-    name: 'Interplanar Telepathic Bond',
-
-    castingTime: 'one minute',
-
-    functionsLike: {
-      exceptThat: `
-        the effect works at any distance and across planes.
+      7: `
+        The communication also functions across planes.
       `,
-      name: 'telepathic bond',
     },
-    rank: 7,
-    roles: ['attune'],
     type: 'Attune',
     spheres: ['Enchantment', 'Revelation'],
   },
@@ -1979,41 +1832,19 @@ export const rituals: Ritual[] = [
     },
     rank: 3,
     roles: ['narrative'],
-    tags: ['Scrying'],
-    spheres: ['Photomancy', 'Revelation'],
-  },
-
-  {
-    name: 'Distant Scry Creature',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-        there is no distance limit.
+    scaling: {
+      5: `
+        There is no distance limitation. 
+        The target must simply be on the same plane as you.
       `,
-      name: 'scry creature',
-    },
-    rank: 5,
-    roles: ['narrative'],
-    tags: ['Scrying'],
-    spheres: ['Photomancy', 'Revelation'],
-  },
-
-  {
-    name: 'Interplanar Scry Creature',
-
-    castingTime: 'one hour',
-    functionsLike: {
-      exceptThat: `
-        there is no distance limit, and the target does not have to be on the same plane as you.
+      7: `
+        The target does not have to be on the same plane as you.
       `,
-      name: 'scry creature',
     },
-    rank: 7,
-    roles: ['narrative'],
     tags: ['Scrying'],
     spheres: ['Photomancy', 'Revelation'],
   },
+
   {
     name: 'Prophetic Dream',
 
@@ -2036,10 +1867,10 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     effect: `
-      This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{zone} centered on your location.
+      This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{shapeable} \\glossterm{zone} centered on your location.
       This effect lasts for one year.
       Everything in the area is completely imperceptible from outside the area.
-      Anyone observing the area from outside sees only a dark, silent void, regardless of darkvision and similar abilities.
+      Anyone observing the area from outside sees only a dark, silent void, regardless of \\trait{darkvision} and similar abilities.
       In addition, all \\abilitytag{Scrying} effects fail to function in the area.
       Creatures inside the area can see within the area and outside of it without any difficulty.
     `,
@@ -2052,7 +1883,7 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     effect: `
-      This ritual creates a ward against scrying in a \\medarea radius \\glossterm{zone} centered on your location.
+      This ritual creates a ward against scrying in a \\medarea radius \\glossterm{shapeable} \\glossterm{zone} centered on your location.
       All \\abilitytag{Scrying} effects fail to function in the area.
       This effect lasts for one year.
     `,
@@ -2083,6 +1914,24 @@ export const rituals: Ritual[] = [
       Verdamancy:
         'You only receive guidance while both your destination and current location have a Huge or larger living plant.',
     },
+    spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
+  },
+  {
+    name: 'Find the Lost',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      exceptThat: `
+        the casting time is shorter, and the ritual is much less exhausting.
+        However, instead of choosing a location, you must choose an \\glossterm{ally} that you have seen before.
+        This effect guides you to their location at the time that the ritual was completed.
+        It does not update its guidance as the ally moves.
+      `,
+      name: 'find the path',
+    },
+    rank: 4,
+    roles: ['narrative'],
+    type: 'Attune',
     spheres: ['Aeromancy', 'Prayer', 'Revelation', 'Terramancy', 'Verdamancy'],
   },
   {
@@ -2324,8 +2173,7 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     effect: `
-      This ritual creates an area of bountiful growth in a \\glossterm{zone} from your location.
-      You can choose an arbitrarily shaped contiguous area that fits within a one mile radius from you.
+      This ritual creates an area of bountiful growth in a \\glossterm{shapeable} one mile radius \\glossterm{zone} from your location.
       Normal plants within the area become twice as productive as normal for the next year.
       This ritual does not stack with itself.
       If the \\ritual{infertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
@@ -2340,8 +2188,7 @@ export const rituals: Ritual[] = [
 
     castingTime: '24 hours',
     effect: `
-      This ritual creates an area of death and decay in a \\glossterm{zone} from your location.
-      You can choose an arbitrarily shaped contiguous area that fits within a one mile radius from you.
+      This ritual creates an area of death and decay in a \\glossterm{shapeable} one mile radius \\glossterm{zone} from your location.
       Normal plants within the area become half as productive as normal for the next year.
       This ritual does not stack with itself.
       If the \\ritual{fertility} ritual is also applied to the same area, the most recently performed ritual takes precedence.
@@ -2363,20 +2210,11 @@ export const rituals: Ritual[] = [
     `,
     rank: 2,
     roles: ['narrative'],
-    tags: ['Detection'],
-    spheres: ['Revelation', 'Verdamancy'],
-  },
-  {
-    name: 'Distant Sense Plants',
-
-    functionsLike: {
-      exceptThat: 'the range increases to ten miles.',
-      name: 'sense plants',
+    scaling: {
+      4: 'The area increases to a five mile radius from your location.',
+      6: 'The area increases to a ten mile radius from your location.',
     },
-    rank: 4,
-    roles: ['narrative'],
     tags: ['Detection'],
-    castingTime: 'one hour',
     spheres: ['Revelation', 'Verdamancy'],
   },
 
@@ -2713,27 +2551,6 @@ export const rituals: Ritual[] = [
     type: 'Sustain (attuneable, minor)',
   },
   {
-    name: 'Create Water',
-
-    castingTime: 'one minute',
-    effect: `
-      You create up to ten gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
-      You must create a minimum of one ounce of water in each location.
-      % Tiny body of water is 1 cubic foot = 7.5 gallons
-      This generally means that you can create a single Tiny body of water.
-    `,
-    rank: 1,
-    roles: ['narrative'],
-    scaling: {
-      3: 'The volume created increases to twenty gallons.',
-      // Small body of water is 2.5^3 = ~15.5 cubic feet = ~120 gallons
-      4: 'The volume created increases to fifty gallons. This generally means that you can create a Small body of water by performing the ritual twice.',
-      6: 'The volume created increases to one hundred gallons.',
-    },
-    spheres: ['Aquamancy', 'Fabrication'],
-    tags: ['Creation'],
-  },
-  {
     name: 'Chill Air',
 
     castingTime: 'one minute',
@@ -2991,5 +2808,180 @@ export const rituals: Ritual[] = [
       Thaumaturgy: 'The amount of dust left behind is doubled.',
     },
     spheres: ['Thaumaturgy', 'Universal'],
+  },
+  {
+    name: 'Comprehend Languages',
+    castingTime: 'one minute',
+    effect: `
+      Choose up to six ritual participants.
+      Each target can understand all \\glossterm{common languages} (see \\pcref{Communication and Languages}).
+      This does not grant it the ability to speak or write in those languages.
+    `,
+    rank: 3,
+    roles: ['narrative'],
+    type: 'Attune (target)',
+    spheres: ['Enchantment', 'Revelation'],
+  },
+  {
+    name: 'Comprehend Rare Languages',
+    castingTime: 'one minute',
+    effect: `
+      Choose up to six ritual participants.
+      Each target can understand all \\glossterm{common languages} and \\glossterm{rare languages} (see \\pcref{Communication and Languages}).
+      This does not grant it the ability to speak or write in those languages.
+      Exceptionally rare languages, such as dead languages, are beyond this spell's ability to translate.
+    `,
+    rank: 6,
+    roles: ['narrative'],
+    type: 'Attune (target)',
+    spheres: ['Enchantment', 'Revelation'],
+  },
+  {
+    name: 'Memory Echo',
+    castingTime: 'one hour',
+    effect: `
+      You see a vision of the single most significant event that occurred in your location within the last 24 hours.
+      The vision lasts for one minute, and shows events as they appeared from wherever you currently stand.
+      This allows you to walk around to view the vision from different angles.
+      The vision is blurry and indistinct, so the maximum check result you can get on Awareness or similar checks to understand details of the vision is limited to 5.
+      It is only visual, so you cannot hear anything said, and it is generally not clear enough to lip-read exact words.
+    `,
+    rank: 3,
+    roles: ['narrative'],
+    spheres: ['Chronomancy', 'Revelation'],
+  },
+  {
+    name: 'Greater Memory Echo',
+    castingTime: 'one hour',
+    functionsLike: {
+      name: 'memory echo',
+      exceptThat: `
+        the vision is more clear, so the maximum check result you can get on Awareness or similar checks increases to 10.
+        In addition, it includes sound.
+      `,
+    },
+    rank: 6,
+    roles: ['narrative'],
+    spheres: ['Chronomancy', 'Revelation'],
+  },
+  {
+    name: 'Prophetic Dream',
+    castingTime: 'one hour',
+    effect: `
+      When you next fall asleep, you have a vivid dream.
+      The dream is relevant to your future within the next week.
+      It may show you a nightmare of what will happen if you make a poor choice, a warning of unavoidable danger, or a grand vision of tantalizing success if you make the right choices.
+      If any powerful entities such as deities have a particular interest in you, they may also influence the dream to communicate with you.
+      Your dream generally does not literally come true, especially if you change your actions based on the dream, but its general guidance is true.
+
+      After you perform this ritual, it has no effect until the circumstances foretold by your dream come to pass.
+    `,
+    rank: 4,
+    roles: ['narrative'],
+    spheres: ['Chronomancy', 'Revelation'],
+  },
+  {
+    name: 'Nightmare',
+    castingTime: 'one minute',
+    effect: `
+      This ritual has no \\glossterm{verbal components}.
+
+      Choose one sleeping creature within \\medrange.
+      The target has a nightmare within the next hour of its sleep.
+      You can choose the general structure or theme of the nightmare, but not its exact details.
+      For example, you could specify that the nightmare is related to drowning or spiders.
+      This nightmare prevents the target from getting a restful night's sleep.
+      Some people will change their behavior based on their nightmare, especially superstitious people.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    spheres: ['Enchantment', 'Revelation'],
+  },
+  // TODO: add higher rank versions that can hold more or take more varied actions?
+  {
+    name: 'Animated Attendant',
+    castingTime: 'one minute',
+    effect: `
+      You create a Small creature that follows your instructions.
+      Its \\glossterm{movement speed} is 20 feet, and it can carry one object that is neither larger nor heavier than Tiny.
+      It cannot take any actions other picking up objects, putting them down, and moving.
+      % TODO: wording, standard summoned creature combat stats? 
+      Its combat statistics are the same as \\spell{summon monster}, except that it is destroyed if it takes any damage rather than if it gains a vital wound.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    sphereEffects: {
+      Fabrication: 'The ritual gains the \\atManifestation tag.',
+      Polymorph: `
+        The ritual requires a Small object or collection of objects, which are animated by the ritual, bending as necessary to support the creature's motion.
+        When the effect ends, the objects are unharmed unless the creature was damaged during the effect.
+      `,
+      Telekinesis: `
+        The creature is \\trait{invisible} and shapeless.
+        It gains an average \\glossterm{fly speed} with a \\glossterm{height limit} of 5 feet.
+      `,
+    },
+    spheres: ['Fabrication', 'Polymorph', 'Telekinesis'],
+    type: 'Attune',
+  },
+
+  {
+    name: 'Tidy Sanctuary',
+    castingTime: 'one minute',
+    effect: `
+      You create a tidy area in a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from your location.
+      At the end of each round, all dirt, grime, and other blemishes on \\glossterm{unattended} objects within the area are cleansed.
+    `,
+    rank: 2,
+    roles: ['narrative'],
+    sphereEffects: {
+      Polymorph: `
+        All unattended objects in the area also regain one hit point at the end of each round.
+        This can remove nicks, scratches, and similar damage.
+        It does not restore \\glossterm{broken} or \\glossterm{destroyed} objects.
+      `,
+    },
+    spheres: ['Aeromancy', 'Aquamancy', 'Polymorph', 'Telekinesis'],
+    type: 'Attune',
+  },
+  {
+    name: 'Enduring Time Lock -- Location',
+
+    castingTime: "one minute",
+    effect: `
+      Choose yourself or an \\glossterm{ally} within \\medrange.
+      You create a \\sphereterm{time lock} for the target's current location.
+      You can unseal the time lock as a standard action.
+
+      Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
+      This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
+      If the locked location is occupied, the creature reappears in the closest open space.
+      When the time lock is unsealed, this effect ends.
+
+      This effect lasts for 24 hours, or until you unseal the time lock.
+    `,
+    rank: 3,
+    roles: ['boon'],
+    spheres: ['Astromancy', 'Chronomancy'],
+  },
+  {
+    name: 'Preservation',
+
+    castingTime: "one minute",
+    effect: `
+      Choose yourself or an \\glossterm{ally} within \\medrange.
+      You create a \\sphereterm{time lock} for the target's current location.
+      You can unseal the time lock as a standard action.
+
+      Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
+      This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
+      If the locked location is occupied, the creature reappears in the closest open space.
+      When the time lock is unsealed, this effect ends.
+
+      This effect lasts for 24 hours, or until you unseal the time lock.
+    `,
+    rank: 3,
+    roles: ['boon'],
+    spheres: ['Astromancy', 'Chronomancy'],
   },
 ];

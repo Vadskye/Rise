@@ -471,27 +471,11 @@ export const chronomancy: MysticSphere = {
         Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
         This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
         If the locked location is occupied, the creature reappears in the closest open space.
+        When the time lock is unsealed, this effect ends.
       `,
       rank: 1,
       roles: ['boon'],
       type: 'Sustain (minor)',
-    },
-
-    // TODO: unclear rank
-    {
-      name: 'Efficient Time Lock -- Location',
-
-      functionsLike: {
-        name: 'time lock -- location',
-        exceptThat: `
-          the target attunes to the effect, so you don't have to sustain it.
-          When you cast this spell, you can choose whether the lock unseals automatically when the target ends its attunement.
-          If you do, you can still \\glossterm{dismiss} the effect to end it without unsealing the lock.
-        `,
-      },
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune (target)',
     },
 
     {
