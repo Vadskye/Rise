@@ -3091,4 +3091,73 @@ export const rituals: Ritual[] = [
     spheres: ['Electromancy', 'Polymorph', 'Telekinesis', 'Terramancy'],
     type: 'Attune (target)',
   },
+  {
+    name: 'Control Weather',
+
+    castingTime: 'one minute',
+    effect: `
+      Choose a new weather pattern.
+      You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
+      For example, you can normally create a thunderstorm, but not if you are in a desert.
+      % TODO: define weather intensities??
+      The change in the weather's intensity also cannot exceed what would be possible in an hour without magic in the current location and season.
+      For example, you can change a clear sky into a light thunderstorm, but you cannot create a hurricane or tornado from untroubled air.
+
+      When you complete the ritual, the weather begins to take effect in a cylinder-shaped \\glossterm{zone} from your location with a two mile radius.
+      After ten minutes, your chosen weather pattern fully takes effect.
+
+      At any time during this effect, any creature attuned to it can choose a new weather pattern as a \\glossterm{standard action}.
+      When they do, the weather transitions from the original pattern to the new pattern over a ten minute period.
+
+      This effect can control the general tendencies of the weather, such as the direction and intensity of the wind.
+      It cannot control specific applications of the weather, such as the location of lightning strikes.
+      Contradictory weather conditions are not possible simultaneously, such as rain and lightning without clouds.
+
+      After the effect ends, the weather continues on its natural course, which typically causes your chosen weather pattern to end.
+      % TODO: This should be redundant with generic spell mechanics
+      If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
+    `,
+    // narrative: '',
+    rank: 4,
+    roles: ['attune'],
+    spheres: ['Aeromancy', 'Aquamancy'],
+
+    type: 'Attune (deep)',
+  },
+  {
+    name: 'Aura of Weather Control',
+
+    castingTime: 'one hour',
+    functionsLike: {
+      name: 'control weather',
+      // 30 feet/round = 5 feet / second = 300 feet/min = 3,000 feet / 10 min,
+      // which is less than the 10,000 foot radius.
+      exceptThat: `
+        the area becomes a cylinder-shaped \\glossterm{emanation} from you with a two mile radius.
+        As new terrain enters the area, it takes ten minutes for it to be fully affected by the new weather.
+        If you move at a normal walking pace, this means you will always experience the full effect of your chosen weather condition.
+      `,
+    },
+    // narrative: '',
+    rank: 6,
+    roles: ['attune'],
+    spheres: ['Aeromancy', 'Aquamancy'],
+
+    type: 'Attune (deep)',
+  },
+  {
+    name: 'Massive Control Weather',
+
+    castingTime: 'one minute',
+    functionsLike: {
+      name: 'control weather',
+      exceptThat: 'the area increases to a ten mile radius, and the weather changes take effect after only one minute rather than ten minutes.'
+    },
+    // narrative: '',
+    rank: 7,
+    roles: ['attune'],
+    spheres: ['Aeromancy', 'Aquamancy'],
+
+    type: 'Attune (deep)',
+  },
 ];
