@@ -391,36 +391,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       type: 'Attune (deep)',
     },
     {
-      name: 'Control Weather',
-
-      effect: `
-        When you cast this spell, you choose a new weather pattern.
-        You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
-        For example, you can normally create a thunderstorm, but not if you are in a desert.
-
-        When you complete the spell, the weather begins to take effect in a two mile radius cylinder-shaped \\glossterm{zone} from your location.
-        After five minutes, your chosen weather pattern fully takes effect.
-        % TODO: define weather intensities
-        You cannot change the intensity of the weather beyond what would be possible without magic during this time frame.
-        For example, you can change a clear sky into a light thunderstorm, but you cannot create a hurricane or tornado from untroubled air.
-
-        At any time during this spell's effect, you can choose a new weather pattern as a \\glossterm{standard action}.
-        When you do, the weather transitions from your original pattern to your new pattern over a five minute period.
-
-        You can control the general tendencies of the weather, such as the direction and intensity of the wind.
-        You cannot control specific applications of the weather, such as the location of lightning strikes.
-        Contradictory weather conditions are not possible simultaneously.
-
-        After the spell's effect ends, the weather continues on its natural course, which typically causes your chosen weather pattern to end.
-        % TODO: This should be redundant with generic spell mechanics
-        If another ability would magically manipulate the weather in the same area, the most recently used ability takes precedence.
-      `,
-      // narrative: '',
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-    {
       name: 'Call Dust Devil',
 
       // Rank 3 spell would normally have dr1 and r3 area.
