@@ -3139,12 +3139,12 @@ function handleWeaponDamageDice() {
           return;
         }
 
-        let magicalPowerBonus = Math.floor(v.magical_power / 2);
-        let mundanePowerBonus = Math.floor(v.mundane_power / 2);
-        if (v[heavyKey]) {
-          magicalPowerBonus += Math.max(0, Math.floor(v.magical_power / 3));
-          mundanePowerBonus += Math.max(0, Math.floor(v.mundane_power / 3));
-        }
+        let magicalPowerBonus = v[heavyKey]
+          ? v.magical_power
+          : Math.floor(v.magical_power / 2);
+        let mundanePowerBonus = v[heavyKey]
+          ? v.mundane_power
+          : Math.floor(v.mundane_power / 2);
 
         let magicalTotal = v[damageDiceKey];
         let mundaneTotal = v[damageDiceKey];
