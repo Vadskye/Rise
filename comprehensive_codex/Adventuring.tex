@@ -413,9 +413,18 @@
   You can use the Craft (poison) skill to create poisons (see \pcref{Crafting Items}).
 
   \subsection{Poison Effects}\label{Poison Effects}
-    When you come in contact with a poison, you become \glossterm{poisoned}.
-    As soon as you become poisoned, and at the end of each subsequent round, the poison makes an attack against your Fortitude defense.
-    On a hit, the poison progresses to its next stage.
+    When you come in contact with a poison, it makes a \glossterm{reactive attack} against your Fortitude defense.
+    On a hit, you become \glossterm{poisoned} by the poison.
+    On a miss, the poison has no effect on you.
+
+    While you are poisoned, the poison makes an attack against your Fortitude at the end of each subsequent round.
+    On a hit, the poison escalates.
+    Some poisons have stronger effect after they escalate a certain number of times.
+    On a miss, the creature makes progress towards removing the poison.
+    If the poison misses three times, the creature stops being poisoned.
+
+    As soon as you become poisoned, and at the end of each subsequent round, the poison 
+    On a hit, you suffer the poi
     On a critical hit, the poison progresses by two stages at once, to a maximum of the third stage.
     On a miss, you make progress towards removing the poison entirely.
     Once the poison misses you three times, you stop being poisoned.

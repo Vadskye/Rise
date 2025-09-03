@@ -104,6 +104,7 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 * +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
 * +0.4 EA: You can combine a brief effect with an HP condition effect, starting from the higher EA of the two. For example, "briefly stunned, or stunned as a condition if injured" is a 2.0 EA effect.
 * +0.4 EA: Condition becomes a curse
+* +0.2 EA: Condition becomes a poison
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
 * -1 EA: The effect only works if you hit the creature with it twice.
 * -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.

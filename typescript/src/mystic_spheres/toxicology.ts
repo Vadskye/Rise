@@ -11,18 +11,23 @@ export const toxicology: MysticSphere = {
   cantrips: [
     // TODO: convert this to a ritual and replace it with a different cantrip
     {
-      name: 'Neutralize Poison',
+      name: 'Intensify Poison',
 
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\shortrange.
-        The target gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
-      `,
-      scaling: {
-        2: `The number of additional successes increases to two.
-            The target can split these successes among any number of different poisons affecting it.`,
-        4: `The number of additional successes increases to three.`,
-        6: `The range increases to \\medrange.`,
+      attack: {
+        crit: `The poison progresses by an additional stage.`,
+        hit: `
+          Choose a poison affecting the target.
+          The poison immediately progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref{Poison}).
+          In addition, the target removes one of its successes to remove the poison, if any.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+          If the target is not currently poisoned, this ability has no effect.
+        `,
       },
+      roles: ['combo'],
+      scaling: 'double_accuracy',
+      tags: ['Poison'],
     },
   ],
   spells: [
@@ -34,7 +39,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone damage immediately, and again during your next action.
+          \\damagerankone immediately, and again during your next action.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -44,6 +49,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       rank: 1,
+      roles: ['burn'],
       scaling: 'accuracy',
       tags: ['Acid'],
     },
@@ -56,39 +62,28 @@ export const toxicology: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 4,
+      roles: ['burn'],
       scaling: 'accuracy',
       tags: ['Acid'],
     },
 
-    {
-      name: 'Intensify Poison',
-
-      attack: {
-        crit: `As above, except that the poison progresses by two stages instead of one.`,
-        hit: `
-          Choose a poison affecting the target.
-          The poison immediately progresses by one stage against the target, which can have varying effects depending on the poison (see \\pcref{Poison}).
-          In addition, that poison gains a +4 accuracy bonus on all of its future attack rolls against the target until it is removed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude with a +4 \\glossterm{accuracy} bonus against one living creature within \\medrange.
-          If the target is not currently poisoned, this ability has no effect.
-        `,
-      },
-      rank: 1,
-      scaling: 'accuracy',
-      tags: ['Poison'],
-    },
-
+    // HP stun is 1.4 EA, so r1. Short range allows the extra damage.
     {
       name: 'Poison -- Asp Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
-        The stage 1 effect makes the target \\stunned while the poison lasts.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+          This makes it \\stunned while the poison lasts.
+          The second escalation also inflicts \\damageranktwolow.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
       rank: 1,
+      roles: ['maim'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -96,13 +91,19 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Giant Wasp Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
-        The stage 1 effect makes the target \\slowed while the poison lasts.
-        The stage 3 effect also deals \damagerankthreelow.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+          This makes it \\slowed while the poison lasts.
+          The second escalation also inflicts \\damagerankthreelow.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\plus2 accuracy bonus against one living creature within \\shortrange.
+        `,
+      },
       rank: 2,
+      roles: ['maim'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -110,12 +111,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Black Adder Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
-        The poison inflicts \\damagerankfourlow damage per \\glossterm{poison stage}.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by black adder venom (see \\pcref{Poison}).
+          The poison inflicts \\damagerankthreelow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
       rank: 2,
+      roles: ['execute'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -123,14 +130,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Wyvern Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-        You gain a +1 accuracy bonus with the poison.
-        The poison inflicts \\damagerankfivelow damage per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+          The poison inflicts \\damagerankfourlow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one living creature within \\shortrange.
+        `,
+      },
       rank: 3,
+      roles: ['execute'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -138,12 +149,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Blood Leech Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by blood leech venom (see \\pcref{Poison}).
-        The poison's stage 1 effect makes the target \\vulnerable to all damage while the poison lasts.
-      `,
-      rank: 5,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
+          The poison inflicts \\damagerankfivelow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
+      rank: 4,
+      roles: ['execute'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -151,28 +168,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Purple Worm Venom',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by wyvern venom (see \\pcref{Poison}).
-        The poison inflicts \\damageranksevenlow damage per \\glossterm{poison stage}.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by purple worm venom (see \\pcref{Poison}).
+          The poison inflicts \\damageranksixlow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
       rank: 5,
-      scaling: 'poison',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Poison -- Cockatrice Venom',
-
-      effect: `
-        Choose one living creature within \\shortrange.
-        If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by cockatrice venom (see \\pcref{Poison}).
-        You gain a +1 accuracy bonus with the poison.
-        The stage 1 effect makes the target \\slowed and \\stunned while the poison lasts.
-        The stage 3 effect makes the target petrified while the poison lasts.
-        This makes the target \\paralyzed, except that they remain standing in the form of a statue.
-      `,
-      rank: 7,
+      roles: ['execute'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -180,13 +187,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Jellyfish Extract',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        It becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
-        The poison inflicts \\damagerankzerolow damage per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
+          The poison inflicts \\damagerankzerolow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
       rank: 1,
+      roles: ['burn'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -194,13 +206,18 @@ export const toxicology: MysticSphere = {
     {
       name: 'Poison -- Dragon Bile',
 
-      effect: `
-        Choose one living creature within \\shortrange.
-        It becomes \\glossterm{poisoned} by dragon bile (see \\pcref{Poison}).
-        The poison inflicts \\damagerankthreelow damage per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
+      attack: {
+        crit: MULTIHIT_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by dragon bile (see \\pcref{Poison}).
+          The poison inflicts \\damagerankthreelow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
       rank: 4,
+      roles: ['burn'],
       scaling: 'poison',
       tags: ['Manifestation', 'Poison'],
     },
@@ -435,11 +452,12 @@ export const toxicology: MysticSphere = {
       name: 'Healing Salve',
 
       cost: 'One \\glossterm{fatigue level} from the target.',
-      // Stronger secondary effect due to touch range
+      // +1dr for short range, +1dr for healing bonus, so dr3.
+      // Since flat damage scales better, dr2.
       effect: `
-        Choose yourself or a living \\glossterm{ally} you \\glossterm{touch}.
-        The target regains 2d6 hit points.
-        In addition, it gains a +2 bonus to its Fortitude defense and \\glossterm{vital rolls} this round.
+        Choose yourself or a living \\glossterm{ally} within \\shortrange.
+        The target regains 1d8+1d6 hit points.
+        In addition, it removes all \\glossterm{poisons} affecting it and becomes \\glossterm{briefly} \\glossterm{immune} to poisons.
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d6 for each rank beyond 1.' },
