@@ -48,7 +48,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -69,7 +69,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 7,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -91,7 +91,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // treat rank as 1 lower for determining area, but not damage. Ignoring cover and miss
@@ -115,7 +115,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -462,7 +462,7 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 2,
       roles: ['generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Swift'],
     },
 
@@ -479,6 +479,7 @@ export const thaumaturgy: MysticSphere = {
       },
       rank: 6,
       roles: ['generator'],
+      scaling: 'damage',
       tags: ['Swift'],
     },
   ],

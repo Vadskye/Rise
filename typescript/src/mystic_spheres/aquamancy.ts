@@ -95,7 +95,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Desiccate',
@@ -112,7 +112,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Constraining Bubble',
@@ -175,7 +175,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 1,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -193,7 +193,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -215,7 +215,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 2,
       roles: ['burst', 'payoff'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -234,7 +234,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 5,
       roles: ['burst', 'payoff'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -252,7 +252,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 2,
       roles: ['dive', 'burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -270,7 +270,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 5,
       roles: ['dive', 'burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -288,7 +288,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -306,7 +306,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -375,7 +375,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 4,
       roles: ['flash', 'hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (attuneable, standard)'],
     },
     {
@@ -395,7 +395,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 2,
       roles: ['burn', 'hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     {
@@ -417,7 +417,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 5,
       roles: ['burn', 'hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
     // 20% miss chance is about rank 3. But globally providing concealment that could
@@ -517,7 +517,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 1,
       roles: ['burst', 'softener'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -537,7 +537,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 4,
       roles: ['burst', 'softener'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -651,7 +651,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // narrative: '',
       rank: 1,
       roles: ['burst', 'maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Intense Aquajet Grasp',
@@ -664,7 +664,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // narrative: '',
       rank: 6,
       roles: ['burst', 'maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     // TODO: proper EA math
     {
@@ -746,7 +746,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 3,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Liquify',
@@ -797,7 +797,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // narrative: '',
       rank: 2,
       roles: ['burst', 'maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Drowning Grasp',
@@ -820,7 +820,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // narrative: '',
       rank: 5,
       roles: ['burst', 'maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Sudden Liquification',

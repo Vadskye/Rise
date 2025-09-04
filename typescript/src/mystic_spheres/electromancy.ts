@@ -124,7 +124,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     // -1dr for extended area
     {
@@ -139,7 +139,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -157,7 +157,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -175,7 +175,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -264,7 +264,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -284,7 +284,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -301,7 +301,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -320,7 +320,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -361,7 +361,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Stunned as a condition is r9. Limited scope is r8, and assume metallic only is
@@ -402,7 +402,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Sustain (standard)'],
     },
 
@@ -416,7 +416,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Sustain (standard)'],
     },
 
@@ -447,7 +447,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -462,7 +462,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -486,7 +486,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -502,7 +502,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 2,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -534,7 +534,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -546,7 +546,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -564,7 +564,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -588,7 +588,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       roles: ['clear', 'dive'],
       rank: 4,
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Sustain (minor)',
     },
 
@@ -607,7 +607,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       },
       rank: 6,
       roles: ['clear', 'dive'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {

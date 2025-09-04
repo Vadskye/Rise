@@ -236,7 +236,7 @@ export const polymorph: MysticSphere = {
 
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -276,7 +276,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -294,7 +294,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -315,7 +315,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -547,7 +547,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 1,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -559,7 +559,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 4,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -642,7 +642,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -714,7 +714,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 7,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -735,7 +735,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -756,7 +756,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 3,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -778,7 +778,7 @@ export const polymorph: MysticSphere = {
       },
       rank: 5,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Duplicate Organ',

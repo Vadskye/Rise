@@ -138,7 +138,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // This is slightly above rate because requiring objects is annoying.
@@ -158,7 +158,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -205,7 +205,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
@@ -218,7 +218,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
@@ -242,7 +242,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 2,
       roles: ['clear', 'kite'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -264,7 +264,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 4,
       roles: ['clear', 'kite'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -286,7 +286,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 6,
       roles: ['clear', 'kite'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Baseline for 15' ranged push is 0.9 EA, or R-1. Increase to R0 for distance
@@ -605,7 +605,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 2,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -623,7 +623,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 4,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -643,7 +643,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 6,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -693,7 +693,7 @@ export const telekinesis: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
   ],
 };

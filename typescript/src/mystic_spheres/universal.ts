@@ -66,7 +66,7 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Chaotic Bolt',
@@ -80,7 +80,7 @@ export const universal: MysticSphere = {
       },
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Mystic Bolt',
@@ -94,7 +94,7 @@ export const universal: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mystic Blast',
@@ -109,7 +109,7 @@ export const universal: MysticSphere = {
       },
       rank: 1,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Massive Mystic Blast',
@@ -124,7 +124,7 @@ export const universal: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
   ],
 };

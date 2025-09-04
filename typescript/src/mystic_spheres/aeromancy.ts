@@ -167,7 +167,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 3,
       roles: ['snipe'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Windslash',
@@ -184,7 +184,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 6,
       roles: ['snipe'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Windsnipe',
@@ -198,7 +198,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 4,
       roles: ['snipe'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Windseal',
@@ -387,7 +387,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 5,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
     {
@@ -413,7 +413,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Rank 5 spell would normally have dr3 and r5 area, or dr2 and r5 area with extended
@@ -439,7 +439,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Call Massive Tornado',
@@ -487,7 +487,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Massive Hurricane',
@@ -500,7 +500,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Windtheft',
@@ -626,7 +626,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 1,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Windblast',
@@ -643,7 +643,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -651,17 +651,17 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          \\damageranksix.
+          \damageranksix.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \largearea cone from you.
         `,
       },
       // narrative: '',
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -699,7 +699,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 2,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -720,7 +720,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Shield on other is 0.6 EA, shield on self is 0.4 EA
