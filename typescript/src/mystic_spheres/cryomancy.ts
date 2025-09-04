@@ -55,7 +55,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 3,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -78,7 +78,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 5,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -94,7 +94,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 1,
       roles: ['clear', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -110,7 +110,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 5,
       roles: ['clear', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // {
@@ -147,7 +147,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -166,7 +166,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -256,7 +256,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 2,
       roles: ['burn', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -275,7 +275,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 6,
       roles: ['burn', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -297,7 +297,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 4,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -408,7 +408,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 3,
       roles: ['wildfire', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -423,7 +423,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 6,
       roles: ['wildfire', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -440,7 +440,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
       tags: ['Manifestation'],
     },

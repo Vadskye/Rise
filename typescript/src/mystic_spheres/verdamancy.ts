@@ -237,7 +237,7 @@ export const verdamancy: MysticSphere = {
         The poison's stage 1 effect makes the target \stunned while the poison lasts.
       `,
       rank: 4,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation'],
     },
 
@@ -286,7 +286,7 @@ export const verdamancy: MysticSphere = {
         The stage 3 effect also ends the poison.
       `,
       rank: 2,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -300,7 +300,7 @@ export const verdamancy: MysticSphere = {
         The stage 3 effect also ends the poison.
       `,
       rank: 3,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -314,7 +314,7 @@ export const verdamancy: MysticSphere = {
         The stage 3 effect also ends the poison.
       `,
       rank: 4,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -327,7 +327,7 @@ export const verdamancy: MysticSphere = {
         The poison inflicts \\damagerankfivelow per \\glossterm{poison stage}.
       `,
       rank: 6,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -341,7 +341,7 @@ export const verdamancy: MysticSphere = {
         The poison's stage 1 effect makes the target \slowed while the poison lasts.
       `,
       rank: 5,
-      scaling: 'poison',
+      scaling: 'accuracy',
       tags: ['Manifestation', 'Poison'],
     },
 

@@ -31,7 +31,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       roles: ['burst'],
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -48,7 +48,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -66,7 +66,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -81,7 +81,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         missGlance: true,
         targeting: `
           When you cast this spell, you choose a \\glossterm{grounded} location within \\shortrange.
-          A meteor appears high in the sky over that area, falling down towards it.
+          A meteor appears in the sky over that area, falling down towards it.
           Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
 
           During your next action, the meteor crashes into the ground, and you make a \\glossterm{reactive attack} vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
@@ -90,10 +90,11 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
+    // Technically this should be medium range, but it feels like it should be long range?
     {
       name: 'Meteor Swarm',
 
@@ -108,7 +109,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 7,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -128,7 +129,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: [],
     },
 
@@ -142,7 +143,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: [],
     },
 
@@ -161,7 +162,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 1,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -178,7 +179,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -223,7 +224,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 3,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -240,7 +241,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -325,7 +326,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 2,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -350,7 +351,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 5,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -611,7 +612,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 3,
-      scaling: 'accuracy',
+      scaling: 'damage',
       roles: ['wildfire'],
       tags: ['Manifestation', 'Sustain (minor)'],
     },
@@ -627,7 +628,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         You create a small volcano that showers everything nearby in burning shrapnel.
       `,
       rank: 6,
-      scaling: 'accuracy',
+      scaling: 'damage',
       roles: ['wildfire'],
       tags: ['Manifestation', 'Sustain (minor)'],
     },
