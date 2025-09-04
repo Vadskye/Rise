@@ -596,7 +596,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Compulsion'],
     },
     {
@@ -614,7 +614,7 @@ export const enchantment: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Compulsion'],
     },
 

@@ -26,7 +26,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
       roles: ['narrative'],
-      scaling: 'accuracy',
+      scaling: {
+        special: "The damage increases by 2 for each rank beyond 1.",
+      },
       type: 'Sustain (attuneable, minor)',
     },
   ],
@@ -45,7 +47,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
     {
@@ -57,7 +59,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
     {
@@ -123,7 +125,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -142,7 +144,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -163,7 +165,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 3,
       roles: ['exertion', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -184,7 +186,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       roles: ['exertion', 'generator'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -207,7 +209,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 2,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -229,7 +231,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -251,7 +253,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 3,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -273,7 +275,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -289,7 +291,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -306,7 +308,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -325,7 +327,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -345,7 +347,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 7,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -361,7 +363,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 2,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -378,7 +380,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -400,7 +402,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 2,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -412,7 +414,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -425,7 +427,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -442,7 +444,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -452,12 +454,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'flame breath',
         exceptThat: `
-          the damage increases to \\damagerankseven and the area increases to a \\largearea cone from you.
+          the damage increases to \\damagerankseven, and the area increases to a \\largearea cone from you.
         `,
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -477,7 +479,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['burst', 'softener'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -492,7 +494,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['burst', 'softener'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Visual'],
       type: 'Attune',
     },
@@ -513,7 +515,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Sustain (minor)'],
     },
 
@@ -535,7 +537,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 3,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: {
+        'special': 'The damage increases by 2 for each rank beyond 3.',
+      },
       type: 'Attune (deep)',
     },
 
@@ -553,7 +557,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 5,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -573,7 +577,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -588,7 +592,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 7,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 
@@ -639,7 +643,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 2,
       roles: ['hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -657,7 +661,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 5,
       roles: ['hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -680,7 +684,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -692,7 +696,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -705,7 +709,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 7,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -727,7 +731,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 2,
       roles: ['burst', 'combo'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -743,7 +747,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 6,
       roles: ['burst', 'combo'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -794,7 +798,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -813,7 +817,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       roles: ['clear', 'dive'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Desperate Fireburst',
@@ -832,7 +836,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 2,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune',
     },
 
@@ -853,7 +857,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 1,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -873,7 +877,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 4,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -894,7 +898,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 7,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -912,7 +916,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 3,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Mighty Living Pyre',
@@ -929,7 +933,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       },
       rank: 6,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
   ],
 });

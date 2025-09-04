@@ -90,7 +90,7 @@ export const astromancy: MysticSphere = {
       `,
       roles: ['burst', 'kite'],
       rank: 1,
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // 30' melee teleport is 1.7 EA, or 2.7 EA with damage. Melee takes that down to 2.3,
@@ -111,7 +111,7 @@ export const astromancy: MysticSphere = {
       },
       roles: ['burst', 'kite'],
       rank: 6,
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -299,7 +299,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Massive Astral Rupture',
@@ -318,7 +318,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Persistent Astral Rupture',
@@ -338,7 +338,7 @@ export const astromancy: MysticSphere = {
       },
       rank: 5,
       roles: ['wildfire'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Sustain (attuneable, minor)',
     },
     // Since this is sustain (standard), it doesn't have to pay the steep damage cost of
@@ -384,7 +384,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Fire'],
     },
     {
@@ -405,7 +405,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 2,
       roles: ['snipe'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
     {
       name: 'Planar Jaunt -- Plane of Air',
@@ -479,7 +479,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst', 'maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Water'],
     },
     {
@@ -502,7 +502,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Air', 'Cold', 'Earth', 'Electricity', 'Fire', 'Water'],
     },
     {
