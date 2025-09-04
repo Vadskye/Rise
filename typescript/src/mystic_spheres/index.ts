@@ -43,7 +43,7 @@ export const mysticSpheres: MysticSphere[] = [
   telekinesis,
   terramancy,
   thaumaturgy,
-  // toxicology,
+  toxicology,
   umbramancy,
   // verdamancy,
   // vivimancy,

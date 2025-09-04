@@ -21,6 +21,11 @@ fn poison() -> Tool {
 // Since poison deals flat damage, that translates to drX-1.
 // Apply -1dr if the poison is not removed at the second escalation.
 //
+// Damage that only applies against injured targets is weak as a concept, and will rarely reach a
+// very high escalation count, so it is not removed on second escalation like normal poison damage.
+// Applying this as a separate modifier instead of increasing the effective rank of injury poisons
+// means that injury-only debuffs don't get too strong.
+//
 // Pure debuff "debuff while poisoned" poisons are +1 rank over a regular spell.
 // Although they can be removed eventually, that's generally less important than getting three
 // tries to succeed from a single usage, especially on elites.
@@ -33,10 +38,9 @@ fn poison() -> Tool {
 // from flat)
 //
 // A liquid contact poison typically requires a non-action to apply with a weapon.
-// Its effective spell rank is X+1 for contact, X+4 for ingestion, X+5 for injury.
-// As a reminder, that means drX-1 is the standard damage value, or drX+1 for injury.
-// That's an awkward half-level off of expected due to the flat damage weirdness, so liquids aren't
-// removed on second escalation.
+// Its effective spell rank is X for contact, X+2 for ingestion, X+4 for injury.
+// As a reminder, that means drX-1 is the standard damage value, drX for ingestion, and drX+1 for
+// injury.
 //
 // A gas poison typically requires a standard action to apply to a Tiny radius zone within Short range.
 // Its effective spell rank is X+1 for contact and ingestion (which can be blocked by holding
@@ -105,13 +109,31 @@ pub fn poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Jellyfish Extract".to_string(),
         rank: 1,
-        short_description: "Endlessly deals $dr0l damage".to_string(),
+        short_description: "Repeatedly deals $dr0l damage".to_string(),
         description: poison_description(
             Contact,
             Liquid,
             r"
                 The poison's accuracy is $consumableaccuracy.
                 It inflicts $dr0l damage immediately and with each escalation.
+                The second escalation also ends the poison.
+            ",
+        ),
+        ..poison()
+    });
+
+    // -3a for +1dr on flat damage
+    poisons.push(Tool {
+        name: "Poison, Tree Frog Coating".to_string(),
+        rank: 2,
+        short_description: "Repeatedly deals $dr2l damage".to_string(),
+        description: poison_description(
+            Contact,
+            Liquid,
+            r"
+                The poison's accuracy is $consumableaccuracy-3.
+                It inflicts $dr2l damage immediately and with each escalation.
+                The second escalation also ends the poison.
             ",
         ),
         ..poison()
@@ -221,7 +243,7 @@ fn injury_poisons() -> Vec<Tool> {
             r"
                 The poison's accuracy is $consumableaccuracy.
                 A poisoned creature is \stunned while the poison lasts.
-                The second escalation also inflicts \damageranktwolow.
+                The second escalation also inflicts $dr2l damage.
             ",
         ),
         ..poison()
@@ -230,14 +252,14 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Giant Wasp Venom".to_string(),
         rank: 2,
-        short_description: "Slows and eventually immobilizes".to_string(),
+        short_description: "Slows".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
                 The poison's accuracy is $consumableaccuracy+2.
                 A poisoned creature is \slowed while the poison lasts.
-                The second escalation also inflicts \damagerankthreelow.
+                The second escalation also inflicts $dr3l damage.
             ",
         ),
         ..poison()
@@ -261,14 +283,13 @@ fn injury_poisons() -> Vec<Tool> {
     poisons.push(Tool {
         name: "Poison, Wyvern Venom".to_string(),
         rank: 3,
-        short_description: "Repeatedly deals $dr4l damage".to_string(),
+        short_description: "Endlessly deals $dr3l damage".to_string(),
         description: poison_description(
             Injury,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy+1.
-                It inflicts $dr4l damage immediately and with each escalation.
-                The second escalation also ends the poison.
+                The poison's accuracy is $consumableaccuracy+4.
+                It inflicts $dr3l damage immediately and with each escalation.
             ",
         ),
         ..poison()
