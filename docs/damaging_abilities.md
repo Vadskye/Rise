@@ -40,4 +40,8 @@ A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as 
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
-##
+### Damage over time
+
+* "Immediately and next round" is drX-2
+* "As a condition" is drX-2 if it has move action DV 10 removal
+* "As a condition" is drX-3 if it has standard action DV 10 removal

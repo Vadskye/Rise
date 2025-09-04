@@ -99,6 +99,7 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 
 * +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, minor)
 * -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, standard)
+* -0.4 EA: Condition can be removed with a DV 10 check as a move action, with +5 bonus for dropping prone.
 * x0.4 EA: Condition becomes a HP-only condition
 * +0.2 EA: Condition becomes a Sustain (minor)
 * +0.4 EA: Can prefire an HP condition (instead of only applying the condition if the target is already in HP, the condition automatically has its full effect as soon as the target is in HP)
