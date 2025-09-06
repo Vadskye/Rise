@@ -651,11 +651,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          \damageranksix.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Brawn and Reflex against everything in a \largearea cone from you.
+          Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
         `,
       },
       // narrative: '',
