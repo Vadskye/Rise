@@ -2964,26 +2964,6 @@ export const rituals: Ritual[] = [
     spheres: ['Astromancy', 'Chronomancy'],
   },
   {
-    name: 'Preservation',
-
-    castingTime: "one minute",
-    effect: `
-      Choose yourself or an \\glossterm{ally} within \\medrange.
-      You create a \\sphereterm{time lock} for the target's current location.
-      You can unseal the time lock as a standard action.
-
-      Unsealing the time lock causes the creature to disappear from its current location and reappear in the locked location.
-      This looks and behaves similarly to \\glossterm{teleportation}, but it is not a teleportation effect and does not require \\glossterm{line of sight} or \\glossterm{line of effect}.
-      If the locked location is occupied, the creature reappears in the closest open space.
-      When the time lock is unsealed, this effect ends.
-
-      This effect lasts for 24 hours, or until you unseal the time lock.
-    `,
-    rank: 3,
-    roles: ['boon'],
-    spheres: ['Astromancy', 'Chronomancy'],
-  },
-  {
     name: 'Memory Palace',
 
     castingTime: "one minute",
