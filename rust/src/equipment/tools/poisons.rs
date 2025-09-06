@@ -56,7 +56,7 @@ pub fn poisons() -> Vec<Tool> {
 
     // Contact powder means this is effective spell rank 4
     poisons.push(Tool {
-        name: "Poison, Nightshade".to_string(),
+        name: "Poison, Snakeroot".to_string(),
         rank: 0,
         short_description: "Repeatedly deals $dr1l damage".to_string(),
         description: poison_description(
@@ -73,15 +73,15 @@ pub fn poisons() -> Vec<Tool> {
 
     // Contact powder means this is effective spell rank 6, or 5 for a pure debuff.
     poisons.push(Tool {
-        name: "Poison, Nitharit".to_string(),
+        name: "Poison, Nightshade".to_string(),
         rank: 2,
         short_description: "Repeatedly deals $dr3l damage".to_string(),
         description: poison_description(
-            Contact,
+            Ingestion,
             Powder,
             r"
-                The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr3l damage immediately and with each escalation.
+                The poison's accuracy is $consumableaccuracy-3.
+                It inflicts $dr4l damage immediately and with each escalation.
                 The second escalation also ends the poison.
             ",
         ),
@@ -89,16 +89,17 @@ pub fn poisons() -> Vec<Tool> {
     });
 
     // Contact powder means this is effective spell rank 5
+    // +4a for -1 flat dr
     poisons.push(Tool {
-        name: "Poison, Sassone Leaf".to_string(),
+        name: "Poison, Wolfsbane".to_string(),
         rank: 1,
-        short_description: "Repeatedly deals $dr2l damage".to_string(),
+        short_description: "Repeatedly deals $dr1l damage".to_string(),
         description: poison_description(
             Contact,
             Powder,
             r"
-                The poison's accuracy is $consumableaccuracy.
-                It inflicts $dr2l damage immediately and with each escalation.
+                The poison's accuracy is $consumableaccuracy+4.
+                It inflicts $dr1l damage immediately and with each escalation.
                 The second escalation also ends the poison.
             ",
         ),
@@ -122,6 +123,23 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
+    // Ingestion liquid is drX
+    poisons.push(Tool {
+        name: "Poison, Baneberry".to_string(),
+        rank: 1,
+        short_description: "Repeatedly deals $dr1l damage".to_string(),
+        description: poison_description(
+            Ingestion,
+            Liquid,
+            r"
+                The poison's accuracy is $consumableaccuracy.
+                It inflicts $dr1l damage immediately and with each escalation.
+                The second escalation also ends the poison.
+            ",
+        ),
+        ..poison()
+    });
+
     // -3a for +1dr on flat damage
     poisons.push(Tool {
         name: "Poison, Tree Frog Coating".to_string(),
@@ -139,8 +157,6 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
-    // Contact powder means this is effective spell rank 6.
-    // +1 rank for +4 accuracy, since -1dr is a big deal on flat damage.
     poisons.push(Tool {
         name: "Poison, Bloodroot".to_string(),
         rank: 3,
@@ -149,8 +165,8 @@ pub fn poisons() -> Vec<Tool> {
             Contact,
             Powder,
             r"
-                The poison's accuracy is $consumableaccuracy+4.
-                It inflicts $dr3l damage immediately and with each escalation.
+                The poison's accuracy is $consumableaccuracy.
+                It inflicts $dr4l damage immediately and with each escalation.
                 The second escalation also ends the poison.
             ",
         ),
@@ -206,7 +222,7 @@ pub fn poisons() -> Vec<Tool> {
         ..poison()
     });
 
-    // Contact liquid means this is effective spell rank 7
+    // -1dr for +1a, endless damage
     poisons.push(Tool {
         name: "Poison, Black Lotus".to_string(),
         rank: 6,
@@ -215,7 +231,7 @@ pub fn poisons() -> Vec<Tool> {
             Contact,
             Liquid,
             r"
-                The poison's accuracy is $consumableaccuracy.
+                The poison's accuracy is $consumableaccuracy+1.
                 It inflicts $dr5l damage per \glossterm<poison stage>.
             ",
         ),
