@@ -18,7 +18,7 @@ pub fn mounts() -> Vec<Tool> {
         short_description: "Medium dog trained for battle or riding".to_string(),
         description: String::from(r"
             This is a Medium dog that knows the Guard and Heel tricks (see \pcref<Creature Handling>).
-            It is trained to be effective in battle, and is a suitable mount for creatures with the \textit<short stature> ability, such as gnomes and halflings.
+            It is trained to be effective in battle, and is a suitable mount for creatures with the \textit<short stature> ability, such as kobolds and halflings.
         "),
         ..mount()
     });
@@ -69,7 +69,7 @@ pub fn mounts() -> Vec<Tool> {
         description: String::from(r"
             This is a Medium pony.
             It is not trained to be effectively ridden in battle.
-            However, it is an appropriate mount outside of battle for creatures with the \textit<short stature> ability, such as gnomes and halflings.
+            However, it is an appropriate mount outside of battle for creatures with the \textit<short stature> ability, such as kobolds and halflings.
         "),
         ..mount()
     });
@@ -80,7 +80,7 @@ pub fn mounts() -> Vec<Tool> {
         short_description: "Medium pony trained for battle".to_string(),
         description: String::from(r"
             This is a Medium horse.
-            It is trained to be effectively ridden in battle, and it is an appropriate mount for creatures with the \textit<short stature> ability, such as gnomes and halflings.
+            It is trained to be effectively ridden in battle, and it is an appropriate mount for creatures with the \textit<short stature> ability, such as kobolds and halflings.
         "),
         ..mount()
     });

@@ -257,7 +257,7 @@ pub fn animals() -> Vec<MonsterEntry> {
             art: false,
             knowledge: Some(Knowledge::new(vec![
                 (0, "
-                    Some dogs are trained to serve as steeds for halflings and gnomes.
+                    Some dogs are trained to serve as steeds for halflings and kobolds.
                     Such riding dogs may be trained for combat, or may be only used for travel.
                 "),
             ])),
