@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT, POISON_CRIT } from './constants';
 
 export const verdamancy: MysticSphere = {
   name: 'Verdamancy',
@@ -21,6 +21,7 @@ export const verdamancy: MysticSphere = {
         Brambles and similar small plants grow in the area, making it \\glossterm{light undergrowth}.
         If it was already light undergrowth, it becomes \\glossterm{heavy undergrowth} instead.
       `,
+      roles: ['hazard'],
       scaling: {
         2: `The area increases to a \\tinyarea radius.`,
         4: `The area increases to a \\smallarea radius.`,
@@ -34,7 +35,31 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Entangle',
 
-      // -2r for removal mechanic
+      // Ranged slow is 2.1 EA, or r5, or r4 with limited scope.
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `
+          The target is \\glossterm{briefly} \\slowed.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
+          You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
+        `,
+      },
+      narrative: `
+        Plants grow from nowhere to trap your foe.
+      `,
+      rank: 4,
+      roles: ['trip'],
+      scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Entangling Field',
+
+      // Ranged slow is 5.2 EA, or 2.6 EA with move action removal. That's r7, or r6 with
+      // limited scope.
       attack: {
         crit: CONDITION_CRIT,
         hit: `
@@ -44,29 +69,15 @@ export const verdamancy: MysticSphere = {
           In addition, this condition is removed if the target takes damage from a \\atFire ability.
         `,
         targeting: `
-          Make an attack vs. Brawn against one Large or smaller \\glossterm{grounded} creature within \\medrange.
-          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
+          Make an attack vs. Brawn against each \\glossterm{grounded} creature in a \\smallarea radius within \\shortrange.
+          You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
         `,
       },
+      roles: ['softener'],
       narrative: `
         Plants grow from nowhere to trap your foe.
       `,
-      rank: 3,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Mass Entangle',
-
-      functionsLike: {
-        name: 'entangle',
-        exceptThat: 'it affects all creatures in a \\medarea radius within \\medrange.',
-      },
-      narrative: `
-        Plants grow from nowhere to trap your foe.
-      `,
-      rank: 5,
+      rank: 6,
       scaling: 'accuracy',
       tags: ['Manifestation'],
     },
@@ -74,27 +85,48 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Tripping Vine',
 
-      // Prone is a r1 debuff, like dazzled.
-      // Short range allows brief undergrowth.
+      // Brief ranged slow is 1.6 EA. Short range both drops the rank and makes it less
+      // ranged, so call it 1.4 EA, which is r0 with short range. That allows the
+      // undergrowth.
       attack: {
         hit: `
-          The target falls \\glossterm{prone}.
+          The target falls \\prone.
         `,
         targeting: `
-          Make an attack vs. Brawn against one creature within \\shortrange.
+          Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
           After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
         `,
       },
       rank: 1,
+      roles: ['trip'],
       scaling: 'accuracy',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Tripping Vine Slam',
+
+      // 2.4 EA for damage, so r6.
+      attack: {
+        hit: `
+          \\damageranksix, and the target falls \\prone.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
+          You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
+          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
+        `,
+      },
+      rank: 6,
+      roles: ['trip'],
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Vinestorm',
 
-      // +1 area tier for undergrowth
       attack: {
         hit: `
           \\damagerankone.
@@ -102,50 +134,50 @@ export const verdamancy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against all creatures within a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
+          You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
         `,
       },
-      rank: 2,
-      scaling: 'accuracy',
+      rank: 1,
+      roles: ['clear'],
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Mighty Vinestorm',
 
-      // with +1t from undergrowth, t3 area
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\smallarea radius from you.
-          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
+          Make an attack vs. Armor against all creatures within a \\smallarea radius from you.
+          You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
         `,
       },
-      rank: 6,
-      scaling: 'accuracy',
+      roles: ['clear'],
+      rank: 4,
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Massive Vinestorm',
 
-      // with +2t from undergrowth, t5 area
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `
+          \\damageranksix.
+        `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
-          You gain a +2 accuracy bonus against each target in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the area.
+          Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
+          You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
         `,
       },
-      rank: 5,
-      scaling: 'accuracy',
+      roles: ['clear'],
+      rank: 7,
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
@@ -169,82 +201,128 @@ export const verdamancy: MysticSphere = {
     },
 
     {
-      name: 'Mass Vine Tentacle',
-
-      functionsLike: {
-        name: 'vine tentacle',
-        exceptThat: `
-          it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
-          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
-        `,
-      },
-      rank: 4,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Mighty Vine Tentacle',
 
       functionsLike: {
         name: 'vine tentacle',
         exceptThat: 'the damage dealt by the weapon increases to 1d10.',
       },
-      rank: 6,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Braided Vine Tentacle',
-
-      // +2 over normal
-      effect: `
-        You gain a vine \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        The weapon deals 1d10 bludgeoning damage and has the \\weapontag{Maneuverable} and \\weapontag{Sweeping} (1) weapon tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
-      `,
-      rank: 2,
-      roles: ['attune'],
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Braided Vine Tentacle',
-
-      functionsLike: {
-        name: 'braided vine tentacle',
-        exceptThat: `
-          it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
-          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
-        `,
-      },
       rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Attune (target)',
+      type: 'Attune',
+    },
+
+    // Touch range is drX+2, then drX for damage over time.
+    {
+      name: 'Poison -- Snakeroot',
+
+      attack: {
+        crit: POISON_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The poison's accuracy is equal to your accuracy with this spell.
+          It deals \\damagerankonelow immediately and with each escalation.
+          The second escalation also ends the poison.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 1,
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
-      name: 'Poison -- Nitharit',
+      name: 'Poison -- Wolfsbane',
 
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by nitharit (see \\pcref{Poison}).
-        The poison's stage 1 effect makes the target \stunned while the poison lasts.
-      `,
+      attack: {
+        crit: POISON_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The poison's accuracy is equal to your accuracy with this spell.
+          It deals \\damagerankonelow immediately and with each escalation.
+          The second escalation also ends the poison.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\plus4 accuracy bonus against one living creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 2,
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Poison'],
+    },
+
+    {
+      name: 'Poison -- Nightshade',
+
+      attack: {
+        crit: POISON_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The poison's accuracy is equal to your accuracy with this spell.
+          It deals \\damagerankfourlow immediately and with each escalation.
+          The second escalation also ends the poison.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\minus3 accuracy bonus against one living creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 3,
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Poison'],
+    },
+
+    {
+      name: 'Poison -- Bloodroot',
+
+      attack: {
+        crit: POISON_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The poison's accuracy is equal to your accuracy with this spell.
+          It deals \\damagerankfourlow immediately and with each escalation.
+          The second escalation also ends the poison.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature you \\glossterm{touch}.
+        `,
+      },
       rank: 4,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Poison'],
+    },
+
+    {
+      name: 'Poison -- Black Lotus',
+
+      attack: {
+        crit: POISON_CRIT,
+        hit: `
+          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The poison's accuracy is equal to your accuracy with this spell.
+          It deals \\damagerankfivelow immediately and with each escalation.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\plus1 accuracy bonus against one living creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 6,
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Poison'],
     },
 
     {
       name: 'Erupting Spikefruit',
 
-      // -1dr from undergrowth effect
+      // Damage in area rank 3 would normally be dr1. +2dr from escapable delay, -1dr for
+      // undergrowth.
       attack: {
         hit: `
           \\damageranktwo.
@@ -257,108 +335,24 @@ export const verdamancy: MysticSphere = {
           When the fruits explode, the undergrowth disappears.
         `,
       },
-      rank: 2,
-      scaling: 'accuracy',
+      rank: 3,
+      roles: ['clear', 'hazard'],
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
 
     {
       name: 'Massive Erupting Spikefruit',
 
-      // -1dr from undergrowth effect
       functionsLike: {
         name: 'erupting spikefruit',
         exceptThat:
-          'the damage increases to \\damagerankfive, and the area increases to a \\medarea radius within \\longrange.',
+          'the damage increases to \\damagerankfour, and the area increases to a \\medarea radius within \\longrange.',
       },
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Manifestation'],
-    },
-
-    {
-      name: 'Poison -- Nightshade',
-
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by nightshade (see \\pcref{Poison}).
-        The poison inflicts \\damageranktwolow per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
-      rank: 2,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Poison -- Sassone Leaf',
-
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        The poison inflicts \\damagerankthreelow per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
-      rank: 3,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Poison -- Arsenic',
-
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by arsenic (see \\pcref{Poison}).
-        The poison inflicts \\damagerankfourlow per \\glossterm{poison stage}.
-        The stage 3 effect also ends the poison.
-      `,
-      rank: 4,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Poison -- Black Lotus',
-
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by black lotus extract (see \\pcref{Poison}).
-        The poison inflicts \\damagerankfivelow per \\glossterm{poison stage}.
-      `,
       rank: 6,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Poison -- Bloodroot',
-
-      effect: `
-        Choose one living creature you \\glossterm{touch}.
-        It becomes \\glossterm{poisoned} by sassone leaf (see \\pcref{Poison}).
-        You gain a +1 accuracy bonus with the poison.
-        The poison's stage 1 effect makes the target \slowed while the poison lasts.
-      `,
-      rank: 5,
-      scaling: 'accuracy',
-      tags: ['Manifestation', 'Poison'],
-    },
-
-    {
-      name: 'Herbal Antidote',
-
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target gains an additional success to resist a poison currently affecting it (see \\pcref{Poison}).
-      `,
-      rank: 1,
-      scaling: {
-        3: `The number of additional successes increases to two.
-            The target can split these successes among any number of different poisons affecting it.`,
-        5: `The number of additional successes increases to three.`,
-        7: `The number of additional successes increases to four.`,
-      },
+      roles: ['clear', 'hazard'],
+      scaling: 'damage',
+      tags: ['Manifestation'],
     },
 
     {
@@ -377,14 +371,15 @@ export const verdamancy: MysticSphere = {
       type: 'Attune',
     },
 
+    // Normal short range damage would be dr3, or dr1 from damage over time, up to dr2
+    // from double defense. No penalty for undergrowth.
     {
       name: 'Embedded Growth',
 
-      // +1r for light undergrowth
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone damage immediately, and again during your next action.
+          \\damageranktwo damage immediately, and again during your next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
         `,
         targeting: `
@@ -394,8 +389,9 @@ export const verdamancy: MysticSphere = {
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 1,
-      scaling: 'accuracy',
+      rank: 2,
+      roles: ['burn', 'hazard'],
+      scaling: 'damage',
     },
 
     {
@@ -403,48 +399,35 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'embedded growth',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       narrative: `
         You throw a seed that embeds itself in a foe and grows painfully.
       `,
-      rank: 4,
-      scaling: 'accuracy',
+      rank: 5,
+      roles: ['burn', 'hazard'],
+      scaling: 'damage',
     },
 
     {
       name: 'Fire Seeds',
 
-      // +1r for sharing
+      // This allows sharing, but also requires an extra standard action to cast, so no
+      // penalty for the weird effect.
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           % Does "seed structure" make sense?
           You transform up to three \\glossterm{unattended} acorns or similar seed structures you \\glossterm{touch} into small bombs.
-          As a standard action, you or another creature can throw the acorn up to 30 feet.
-          % More accurate version: the acorn has a range increment of 10 feet to hit its target, but that accuracy roll is completely independent of the explosion.
-          % Doesn't seem worth the complexity, and implicitly gives the fire seed surprisingly long range since objects are easy to hit.
-          When thrown individually in this way, the acorn detonates, and you make an attack vs. Reflex against everything within a \\smallarea radius of the struck creature or object.
-          If the acorn is destroyed in any other way, it has no effect.
+          As a standard action, you or another creature can throw the seed up to 30 feet.
+          When thrown individually in this way, the seed detonates, and you make an attack vs. Reflex against everything within a \\tinyarea radius of the impact location.
+          If the seed is destroyed in any other way, it has no effect.
         `,
       },
       rank: 3,
-      scaling: 'accuracy',
-      tags: ['Fire'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Fire Seed Swarm',
-
-      functionsLike: {
-        name: 'fire seeds',
-        exceptThat:
-          'the damage increases to \\damagerankthree. In addition, you can create up to six seeds at once instead of only three.',
-      },
-      rank: 5,
-      scaling: 'accuracy',
+      roles: ['attune', 'clear'],
+      scaling: 'damage',
       tags: ['Fire'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -457,7 +440,8 @@ export const verdamancy: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
-      scaling: 'accuracy',
+      roles: ['attune', 'clear'],
+      scaling: 'damage',
       tags: ['Fire'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -479,13 +463,13 @@ export const verdamancy: MysticSphere = {
           Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
           Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
-
         `,
         missGlance: true,
       },
 
       rank: 1,
-      scaling: 'accuracy',
+      roles: ['clear', 'hazard'],
+      scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -502,11 +486,13 @@ export const verdamancy: MysticSphere = {
         `,
       },
       rank: 4,
+      roles: ['hazard'],
       scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
 
+    // TODO: unclear EA
     {
       name: 'Plant Growth',
 
@@ -520,11 +506,8 @@ export const verdamancy: MysticSphere = {
 
         When this spell's duration ends, the plants return to their original size.
       `,
-      rank: 2,
-      scaling: {
-        4: 'You can choose to affect a \\medarea radius instead.',
-        6: 'You can choose to affect a \\largearea radius instead.',
-      },
+      rank: 4,
+      roles: ['hazard'],
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -534,15 +517,16 @@ export const verdamancy: MysticSphere = {
 
       // Short range instead of med range for the two weird effects
       attack: {
-        hit: '\\damagerankone.',
+        hit: '\\damageranktwo.',
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
-          If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with this attack.
           In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\glossterm{briefly}.
           All \\glossterm{undergrowth} in that area shrivels away into the ground, reemerging when the effect ends.
+          If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with the attack.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -551,9 +535,10 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
-      rank: 5,
+      roles: ['burst'],
+      rank: 6,
       scaling: 'accuracy',
     },
 
@@ -568,6 +553,7 @@ export const verdamancy: MysticSphere = {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the weapon (see \\pcref{Power}).
       `,
       rank: 1,
+      roles: ['attune'],
       type: 'Sustain (attuneable, minor)',
     },
 
@@ -663,25 +649,26 @@ export const verdamancy: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Attune',
     },
+    // Brief banishment is 3.0. Limited scope drops to r8, then cheat to get it to r7.
     {
       name: 'Treeseal',
 
-      // Basically "stop existing", so t2.5? Should probably be t3, add immunity
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          A Huge grove of trees grows around the target, trapping it inside the wood as a \\glossterm{condition}.
-          While it is trapped in the trees, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+          A Huge grove of trees grows around the target, \\glossterm{briefly} trapping it inside the grove.
+          While it is trapped, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
 
           The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, all of its defenses are 5, and it is destroyed when its hit points become negative.
-          If the grove is destroyed, this condition ends.
+          If the grove is destroyed, this effect ends early.
           Special movement abilities such as teleportation can also remove the target from the trees, ending this effect.
-          Once this condition ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
+          Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one Large or smaller \\glossterm{grounded} creature within \\medrange.
+          Make an attack vs. Brawn against up to two Large or smaller \\glossterm{grounded} creatures within \\medrange.
         `,
       },
+      roles: ['trip'],
       rank: 7,
     },
   ],

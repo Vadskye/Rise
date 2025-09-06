@@ -207,10 +207,10 @@ export const toxicology: MysticSphere = {
           The target becomes \\glossterm{poisoned} by jellyfish extract (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankzerolow immediately and with each escalation.
+          The second escalation also ends the poison.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
-          The second escalation also ends the poison.
         `,
       },
       rank: 1,
@@ -559,8 +559,7 @@ export const toxicology: MysticSphere = {
       roles: ['healing'],
     },
 
-    // Frightened by you is 2.1 EA, so r5. Move action removal drops that to r3. Limited
-    // scope drops that to r2.
+    // Frightened by you is 2.1 EA, or 1.4 EA with move action removal, which is r1.
     {
       name: 'Terrifying Fungus',
 
@@ -578,7 +577,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       roles: ['softener'],
-      rank: 2,
+      rank: 1,
       scaling: 'accuracy',
       tags: ['Emotion', 'Manifestation'],
     },
