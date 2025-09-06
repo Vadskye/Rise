@@ -193,6 +193,12 @@ Assume you have a 150% hit rate (+4 vs AD 0). Expected DPR is 1.55. With Deadly 
 
 Maximized is roughly 70% more damage for spells, and about half that for strikes. Use the spell modifier, not the strike modifier.
 
+### Reactive damage: 
+
+Uncommon reactive damage works 50% of the time. Therefore, dealing drX reactive damage with an uncommon trigger (being attacked in melee) takes up half the EA budget for the level.
+
+Common reactive damage works 75% of the time, so it takes up 75% of the EA budget for the level.
+
 ### Primed: 0.8
 
 Assume you have a 60% hit rate, so you hit on a 5. Breaking down each die roll outcome:
