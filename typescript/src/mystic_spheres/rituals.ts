@@ -2363,13 +2363,13 @@ export const rituals: Ritual[] = [
           \\lcaption{Humanoid Reincarnations}
           \\begin{dtabularx}{\\columnwidth}{l X}
               \\tb{d\\%} & \\tb{Incarnation} \\tableheaderrule
-              01--13 & Dwarf \\\\
-              14--26 & Elf \\\\
-              27--40 & Gnome \\\\
-              41--52 & Halfling \\\\
-              53--62 & Human \\\\
-              63--74 & Orc \\\\
-              75--100 & Mixed \\\\
+              01--10 & Dwarf \\\\
+              11--20 & Elf \\\\
+              21--30 & Halfling \\\\
+              31--40 & Kobold \\\\
+              41--60 & Human \\\\
+              61--70 & Orc \\\\
+              71--100 & Mixed \\\\
           \\end{dtabularx}
       \\end{dtable}
     `,
