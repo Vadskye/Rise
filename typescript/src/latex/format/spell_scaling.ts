@@ -1,7 +1,7 @@
 import { SpellLike } from '@src/mystic_spheres';
 
 const damageRankPattern = /damagerank(\w+)\b/;
-const damageRankLowPattern = /damageranklow(\w+)\b/;
+const damageRankLowPattern = /damagerank(\w+)low\b/;
 
 export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>): string | null {
   if (!spell.scaling) {
