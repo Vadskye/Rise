@@ -653,7 +653,7 @@ export const verdamancy: MysticSphere = {
       name: 'Healing Bloom',
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        Choose a \\tinyradius \\glossterm{zone} within \\medrange.
+        Choose a \\tinyarea \\glossterm{zone} within \\medrange.
         A flower begins to grow in the center of the area.
         At the end of the next round, each living \\glossterm{ally} within the area regains \\damageranktwo \\glossterm{hit points}.
       `,
