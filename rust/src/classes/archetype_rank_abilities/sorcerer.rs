@@ -407,7 +407,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                     \begin{dtabularx}{\textwidth}{l X}
                         \tb{Roll} & \tb{Effect} \tableheaderrule
                         1 & The spell has no immediate effect, but it \glossterm{repeats} during your next action \\
-                        2 & You are a target of the spell in addition to any other targets \\
+                        2 & You are a target of the spell in addition to any other targets, but with a -4 accuracy penalty against yourself \\
                         3 & Your first attack roll with the spell only \glossterm{explodes} on a 1 or 2 \\
                         4 & You gain a \plus10 \glossterm{accuracy} bonus with the spell, but cannot get a \glossterm{critical hit} \\
                         5 & The spell gains the \atCold, \atElectricity, and \atFire ability tags \\
