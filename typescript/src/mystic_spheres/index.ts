@@ -71,7 +71,7 @@ export interface BaseSpellLike {
   name: string;
   narrative?: string;
   // TODO: make this mandatory
-  roles?: AbilityRole[];
+  roles: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'damage' | 'healing' | Record<string, string>;
   tableText?: string;
   tags?: string[];
