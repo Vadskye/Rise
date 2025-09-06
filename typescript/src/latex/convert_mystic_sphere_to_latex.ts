@@ -67,15 +67,6 @@ function convertSpellToLatex(spell: SpellLike): string {
   if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
     console.error(`Spell ${spell.name} is probably missing scaling`);
   }
-  if (
-    (spell.rank || Infinity) <= 6 &&
-    spell.attack &&
-    spell.attack.hit &&
-    spell.attack.hit.match(/damagerank\w+low/) &&
-    !specialScaling
-  ) {
-    console.error(`Spell ${spell.name} deals low damage but does not have special scaling`);
-  }
   if (spell.rank && specialScaling) {
     const forEachRankMatch = specialScaling.match(/for each rank [^b]/);
     if (forEachRankMatch) {

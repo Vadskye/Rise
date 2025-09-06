@@ -37,7 +37,6 @@ export const verdamancy: MysticSphere = {
 
       // Ranged slow is 2.1 EA, or r5, or r4 with limited scope.
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\slowed.
         `,
@@ -487,7 +486,7 @@ export const verdamancy: MysticSphere = {
       },
       rank: 4,
       roles: ['hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -527,7 +526,7 @@ export const verdamancy: MysticSphere = {
       },
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -539,7 +538,7 @@ export const verdamancy: MysticSphere = {
       },
       roles: ['burst'],
       rank: 6,
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -649,12 +648,37 @@ export const verdamancy: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Attune',
     },
+    // AOE healing has a poorly defined healing value. For now, this seems fine??
+    {
+      name: 'Healing Bloom',
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        Choose a \\tinyradius \\glossterm{zone} within \\medrange.
+        A flower begins to grow in the center of the area.
+        At the end of the next round, each living \\glossterm{ally} within the area regains \\damageranktwo \\glossterm{hit points}.
+      `,
+      rank: 1,
+      scaling: 'healing',
+      roles: ['healing'],
+      tags: ['Manifestation'],
+    },
+    {
+      name: 'Empowered Healing Bloom',
+      cost: 'One \\glossterm{fatigue level}.',
+      functionsLike: {
+        name: 'healing bloom',
+        exceptThat: 'the healing increases to \\damagerankfive.',
+      },
+      rank: 4,
+      scaling: 'healing',
+      roles: ['healing'],
+      tags: ['Manifestation'],
+    },
     // Brief banishment is 3.0. Limited scope drops to r8, then cheat to get it to r7.
     {
       name: 'Treeseal',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           A Huge grove of trees grows around the target, \\glossterm{briefly} trapping it inside the grove.
           While it is trapped, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
@@ -670,6 +694,124 @@ export const verdamancy: MysticSphere = {
       },
       roles: ['trip'],
       rank: 7,
+    },
+
+    // Any two shielded is 0.7, any two 0.4 EA is 1 EA.
+    {
+      name: 'Vineward',
+
+      effect: `
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target has \\glossterm{cover} from all attacks this round.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Manifestation', 'Swift'],
+    },
+
+    {
+      name: 'Mass Vineward',
+
+      effect: `
+        You and all \\glossterm{allies} within a \\largearea \\glossterm{radius} from you have \\glossterm{cover} from all attacks this round.
+      `,
+      rank: 4,
+      roles: ['boon'],
+      tags: ['Manifestation', 'Swift'],
+    },
+
+    // Shielded is 0.3 EA.
+    // Reactive damage takes up half the EA budget, so ~0.4 EA here.
+    {
+      name: 'Thorns',
+
+      attack: {
+        hit: `\\damageranktwo.`,
+        targeting: `
+          You have \\glossterm{cover} from all attacks this round.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against them.
+        `,
+      },
+      rank: 2,
+      roles: ['focus'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Swift'],
+    },
+
+    {
+      name: 'Mighty Thorns',
+
+      functionsLike: {
+        name: 'shielding thorns',
+        exceptThat: 'the damage increases to \\damagerankfive.',
+      },
+      rank: 5,
+      roles: ['focus'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Swift'],
+    },
+
+    {
+      name: 'Shared Thorns',
+
+      // Ally cover is 0.5 EA. Common damage trigger is 75% of EA, so we drop to drX-2 for 40% less damage, so 45% of EA.
+      attack: {
+        hit: `\\damagerankone.`,
+        targeting: `
+          Choose one creature from among yourself and your \\glossterm{allies} within \\medrange.
+          The target has \\glossterm{cover} from all attacks this round.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
+        `,
+      },
+      rank: 3,
+      roles: ['boon'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Swift'],
+    },
+
+    {
+      name: 'Mighty Shared Thorns',
+
+      functionsLike: {
+        name: 'shielding thorns',
+        exceptThat: 'the damage increases to \\damagerankfour.',
+      },
+      rank: 6,
+      roles: ['boon'],
+      scaling: 'damage',
+      tags: ['Manifestation', 'Swift'],
+    },
+    {
+      name: 'Treeclub',
+
+      // Melee range is +2dr, -4 accuracy is +2dr, -1dr for Impact tag.
+      attack: {
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        targeting: `
+          Make an attack vs. Armor with a \\minus4 accuracy penalty against anything adjacent to you.
+          You gain a +2 accuracy bonus if you or the target is adjacent to a Huge or larger tree.
+        `,
+      },
+      rank: 2,
+      roles: ['burst'],
+      scaling: 'damage',
+      tags: ['Impact', 'Manifestation'],
+    },
+    {
+      name: 'Mighty Treeclub',
+
+      // Melee range is +2dr, -4 accuracy is +2dr, -1dr for Impact tag.
+      attack: {
+        hit: `\\damagerankeight, and any \\glossterm{extra damage} is doubled.`,
+        targeting: `
+          Make an attack vs. Armor with a \\minus4 accuracy penalty against anything adjacent to you.
+          You gain a +2 accuracy bonus if you or the target is adjacent to a Huge or larger tree.
+        `,
+      },
+      rank: 5,
+      roles: ['burst'],
+      scaling: 'damage',
+      tags: ['Impact', 'Manifestation'],
     },
   ],
 };

@@ -85,7 +85,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 1,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -107,7 +107,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 2,
       roles: ['maim'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation', 'Poison'],
     },
 
@@ -612,7 +612,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 5,
       roles: ['burn'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
     },
     {
@@ -651,7 +651,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\glossterm{braced} for the next two rounds.
+        When a living creature drinks the potion, it becomes \\braced for the next two rounds.
       `,
       rank: 1,
       roles: ['boon'],
@@ -666,7 +666,7 @@ export const toxicology: MysticSphere = {
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
         A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\glossterm{empowered} for the next two rounds.
+        When a living creature drinks the potion, it becomes \\empowered for the next two rounds.
       `,
       rank: 2,
       roles: ['boon'],
@@ -728,9 +728,9 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone.
-          In addition, each target is \\glossterm{briefly} \\dazzled.
+          \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
         `,
+        missGlance: true,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\medarea radius \\glossterm{zone} within \\medrange.
         `,
