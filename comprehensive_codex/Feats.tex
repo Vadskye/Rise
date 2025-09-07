@@ -1838,7 +1838,8 @@ They allow more distinct and unique character customization, but also increase g
     When you cast that spell, choose a location within \shortrange of you to act as a \glossterm{targeting proxy}.
     This means the spell determines its targets as if you were in that location, which can allow you to affect targets outside your normal range.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Airborne} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
     As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
@@ -1857,18 +1858,16 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: it would be nice if this could be applied to spells you know from unusual sources, such as Elemental Spell.
     \magicalff[6]{Bubble Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you cast that spell, you can imbue it in a Small bubble of water that appears in your space.
-    If you do, the spell does not take effect immediately, and you choose a location within \medrange of you.
-    The bubble floats 15 feet through the air towards your chosen destination during each subsequent phase.
-    It pops when it reaches its destination or hits an intervening obstacle.
-    As normal for simultaneous actions, creatures cannot dodge the bubble by moving away in the same phase that it would reach them.
+    It gains the \atWater tag.
+    When you miss an attack with the spell, a film of water forms over the target's body in a thin bubble.
+    At the end of the next round, the attack \glossterm{repeats} on the target if the bubble remains.
+    If you miss with this repeat, the bubble does not reform.
 
-    When the bubble pops, the spell takes effect at the bubble's location as if you were there.
-    A targeted spell only targets the creature or object that the bubble popped on.
-    Area spells must have their point of origin where the bubble popped, but you can otherwise control their direction normally.
-    This affects your \glossterm{line of effect} for the ability, but not your \glossterm{line of sight} (since you still see from your normal location).
+    The bubble can be removed early if the target drops \prone and rolls around on the ground as a \glossterm{move action}.
+    It is also removed if the target takes damage from a \atCold or \atFire ability.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Partially Liquid} You gain a \plus3 \glossterm{enhancement bonus} to the Flexibility skill.
     In addition, you gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
@@ -1888,7 +1887,8 @@ They allow more distinct and unique character customization, but also increase g
     When you switch places, you \glossterm{teleport} into the target's location, and it teleports into your location.
     If the teleportation is invalid for either target, it fails for both targets.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Efficient Transit} You learn how to transport creatures and objects more smoothly between planes.
     The \glossterm{difficulty value} to hear noise caused by creatures and objects you \glossterm{teleport} increases by 10 (see \pcref{Teleportation Noise}).
@@ -1902,19 +1902,16 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Channel Divinity}{Casting, Magical}
     \featpre Access to the \sphere{Channel Divinity} \glossterm{mystic sphere}.
 
-    % TODO: too strong?
-    \magicalff[1]{Divine Retribution} Whenever a creature attacks you, you \glossterm{briefly} gain a \plus2 accuracy bonus against that creature.
-    As normal, this bonus does not stack with itself.
+    \magicalff[1]{Aspect of Divinity} You gain a \plus1 \glossterm{enhancement bonus} to all non-Armor defenses.
 
-    \magicalff[6]{Judging Spell} You learn an additional spell.
+    \magicalff[6]{Sanctified Spell} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    After the spell resolves, each non-\glossterm{ally} targeted by it \glossterm{briefly} takes a \minus1 bonus to all defenses.
-    This penalty does not affect any attacks made by the spell itself.
-    If the spell did not affect any non-ally creatures, you \glossterm{briefly} gain a \plus1 bonus to all defenses.
+    It loses all of the following tags, if it had them: \atAir, \atAuditory, \atCompulsion, \atCold, \atEarth, \atEmotion, \atElectricity, \atFire, \atVisual, and \atWater.
+    In addition, you gain a \plus1 accuracy bonus with the spell.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Font of Divinity} Choose a spell you know with the \abilitytag{Attune} tag from the \sphere{channel divinity} mystic sphere.
     When you attune to that spell, you may also choose one \glossterm{ally} within \medrange.
     That ally can also choose to attune to the spell, and you both gain its benefits.
     When you stop attuning to that spell, your ally is also forced to stop attuning to the spell.
@@ -1922,7 +1919,10 @@ They allow more distinct and unique character customization, but also increase g
     Since you cannot attune to the same spell more than once, you cannot share the effects of the spell with more than one ally at a time in this way.
     You can change which spell you choose with this ability whenever you learn a new spell or gain access to a new spell rank.
 
-    \magicalff[18]{Divine Retribution\plus} The bonus also applies against creatures that attack any of your \glossterm{allies}, not just you.
+    \magicalff[12]{Aspect of Divinity\plus} The bonus increases to \plus2.
+
+    \magicalff[18]{Sanctified Soul} You gain a \plus1 bonus to your \glossterm{accuracy}, \glossterm{magical power}, and \glossterm{mundane power}.
+    In addition, you take no penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Chronomancy}{Casting, Magical}
@@ -1939,7 +1939,8 @@ They allow more distinct and unique character customization, but also increase g
     You can cast the spell as a \glossterm{minor action} if you have not already cast a spell that round.
     When you do, you \glossterm{briefly} become \slowed and cannot take standard actions.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Thief of Time} Whenever you cast a spell from the \sphere{Chronomancy} mystic sphere that deals damage to another creature or causes another creature to be \slowed, you \glossterm{briefly} gain a \plus10 foot bonus to your \glossterm{movement speed}.
 
@@ -1968,13 +1969,14 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[1]{Electricity Tolerance} You are \trait{impervious} to \atElectricity attacks.
 
-    \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} is increased to 30 feet instead of 15 feet.
+    \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} increases by 15 feet.
 
     \magicalff[6]{Chaining Spell} You learn an additional \glossterm{targeted} spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     It \glossterm{chains} one additional time, even if it did not originally chain.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Electricity Immunity} You are \trait{immune} to \atElectricity attacks.
 
@@ -1995,13 +1997,16 @@ They allow more distinct and unique character customization, but also increase g
     You treat those creatures as being \impervious instead of immune.
     This does not allow you to affect creatures who are immune to those abilities for other reasons.
 
-    \magicalff[12]{Sympathetic Enchantment} You learn an additional \glossterm{targeted} spell from the \sphere{Enchantment} mystic sphere.
+    \magicalff[12]{Implanted Spell} You learn an additional \glossterm{targeted} spell with the \atCompulsion or \atEmotion tags.
     The spell can be up to rank 5, even if you do not have access to rank 5 spells.
-    When you cast that spell, you can spend a \glossterm{minor action} to sympathetically link yourself to the spell's targets.
-    If you do, you are target of that spell in addition to any other targets.
-    In exchange, you \glossterm{reroll} all attack rolls for that spell once, keeping the higher result.
+    When you hit with an attack from that spell, it has no immediate effect.
+    Instead, the effect is implanted deep in the target's mind.
+    You can trigger any number of implanted spells as a \glossterm{minor action}.
+    When you do, each implanted spell has its full effect on each of its targets.
+    The implanted spell effect is removed after the target finishes a \glossterm{short rest} if it has not already triggered.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[18]{Hidden Influence\plus} The accuracy bonus from your \textit{hidden influence} ability also applies against \partiallyunaware creatures.
     In addition, the \glossterm{difficulty value} increase from that ability increases to \plus20.
@@ -2026,7 +2031,8 @@ They allow more distinct and unique character customization, but also increase g
     When you cast the spell, you can spend a \glossterm{minor action} to expand its construction.
     If you do, the spell's area is doubled, and the hit points of any objects the spell creates are also doubled.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[18]{Fabricate Trinket\plus} The size increase from your \textit{fabricate trinket\plus} ability increases to two size categories.
 
@@ -2039,19 +2045,15 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{The Light Reveals All} You gain a \plus2 bonus to your Awareness and Social Insight skills.
     In addition, you gain a \plus1 bonus to your Reflex defense.
 
-    \magicalff[6]{Hardlight Photomancy} You learn an additional spell from the \sphere{Photomancy} mystic sphere that does not have the \abilitytag{Sustain} or \abilitytag{Attune} tags.
+    \magicalff[6]{Lensed Spell} You learn an additional area spell with one of the following area sizes: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you cast the spell, you can spend a \glossterm{minor action} to solidify the spell's light.
+    The size of the area is reduced by one step, to a minimum of a \tinyarea.
+    However, you gain a \plus4 accuracy bonus with the spell.
 
-    If you do, the edges of any areas of \glossterm{brilliant illumination} created by the spell become physical barriers.
-    These barriers provide \glossterm{cover} against attacks made across them, though they cannot be destroyed by damage.
-    Moving through the barriers costs an additional ten feet of movement.
-    The barriers are only at the edges of the brilliant illumination, so this does not affect movement or attacks entirely within or entirely outside of the illuminated area.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
-
-    \magicalff[12]{Luminous Precision} You gain a \plus1 accuracy bonus against creatures that are in \glossterm{brilliant illumination}.
-    This only applies against creatures that were in brilliant illumination before you used your ability, so simply using an ability that provides brilliant illumination does not grant this bonus.
+    \magicalff[12]{Luminous Precision} You gain a \plus1 accuracy bonus.
 
     \magicalff[18]{Piercing Sight} You can see through solid objects and spell effects up to one inch thick.
     You can perceive the existence of obstacles thinner than that, but they do not inhibit your sight.
@@ -2074,7 +2076,8 @@ They allow more distinct and unique character customization, but also increase g
     When you attack with the spell, compare your attack result to the Fortitude defense of each living target.
     On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Augmented Body\plus} This loses the \abilitytag{Attune} (deep) tag and gains the \abilitytag{Attune} tag.
 
@@ -2097,7 +2100,8 @@ They allow more distinct and unique character customization, but also increase g
     Whenever you cast that spell, you can target an additional \glossterm{ally} within \medrange.
     That ally must be attuned to at least one \sphere{Prayer} spell that you cast.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Sustained Blessing\plus} You can replace the \atAttune tag with \abilitytag{Sustain} (free) instead of \abilitytag{Sustain} (minor).
     You can still only sustain one spell with this ability at a time.
@@ -2109,25 +2113,27 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Pyromancy}{Casting, Magical}
     \featpre Access to the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
+    \magicalff[1]{Fire Tolerance} You are \trait{impervious} to \atFire attacks.
+
     \magicalff[1]{Spreading Flame} Whenever you cast a spell from the \sphere{Pyromancy} \glossterm{mystic sphere} with a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
     If you do, the spell deals no damage against targets that it misses, even if it would normally deal half damage.
-    The standard area categories are: \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
-
-    \magicalff[1]{Fire Tolerance} You are \trait{impervious} to \atFire attacks.
+    The standard area categories are: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
 
     \magicalff[6]{Overheated Pyromancy} You learn an additional spell from the \sphere{Pyromancy} mystic sphere.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    When you cast the spell, you can spend a \glossterm{minor action} to \glossterm{briefly} overheat the spell.
-    You \glossterm{reroll} all attack rolls for an overheated spell once, keeping the higher result.
-    After using this ability, you \glossterm{briefly} cannot use it again and are \vulnerable to \atCold attacks.
+    You gain a \plus1 accuracy bonus with the spell, and it deals \glossterm{extra damage} equal to your \glossterm{character rank}.
+    However, after you cast the spell, you become \glossterm{briefly} \vulnerable to \atCold attacks.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Friendly Fire} Whenever you deal damage to your \glossterm{allies} with a \atFire ability, you deal half damage.
 
     \magicalff[12]{Fire Immunity} You are \trait{immune} to \atFire attacks.
 
-    \magicalff[18]{Spreading Flame\plus} When you use your \textit{spreading flame} ability, you can still get a glancing blow with the spell.
+    \magicalff[18]{Burning Heart} You gain a \plus1 bonus to your \glossterm{magical power}.
+
+    \magicalff[18]{Friendly Fire\plus} Your \atFire abilities cannot damage your allies.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Revelation}{Casting, Magical}
@@ -2146,7 +2152,8 @@ They allow more distinct and unique character customization, but also increase g
     If you don't like the result, you can simply choose not to cast the spell this round, and the die result is ignored.
     Either way, you \glossterm{briefly} cannot use this ability again.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Blind Seer} You gain \trait{blindsense} with a 90 foot range (see \pcref{Blindsense}).
     If you already have blindsense, you increase its range by 90 feet.
@@ -2159,13 +2166,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Summoning}{Casting, Magical}
     \featpre Access to the \sphere{Summoning} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Empower Summon}
-    \begin{magicalactiveability}{Empower Summon}[\abilitytag{Swift}]
-      \abilityusagetime \glossterm{Minor action}.
-      \rankline
-      Choose one creature within \medrange that you created with a spell from the \sphere{Summoning} \glossterm{mystic sphere}.
-      That creature becomes \focused and \braced this round.
-    \end{magicalactiveability}
+    \magicalff[1]{Empowered Summon} Whenever you create a creature with a spell, you can choose to make it \empowered.
+    You can only empower one creature at a time in this way.
 
     \magicalff[6]{Resummon}
     \begin{magicalactiveability}{Resummon}
@@ -2175,17 +2177,20 @@ They allow more distinct and unique character customization, but also increase g
       Choose a spell from the \sphere{Summoning} mystic sphere that you are still \glossterm{attuned} to, even if all creatures created by that spell are dead.
       All effects of that spell, including any active creatures, immediately end.
       Then, you recreate all creatures from that spell as if you had just cast it.
-      Those creatures do not act until the next round.
+      % TODO: wording
+      Those creatures can immediately act if no creatures created by that spell already acted this round.
     \end{magicalactiveability}
 
-    \magicalff[12]{Generosity} Whenever you \glossterm{attune} to an item or spell that is not a \glossterm{deep attunement}, you may use this ability.
-    If you do, all creatures you create with the \sphere{Summoning} mystic sphere gain the benefit of all \glossterm{enhancement bonuses} from the chosen item or spell.
-    It still affects you normally.
+    \magicalff[12]{Braced Summon} Whenever you create a creature with a spell, you can choose to make it \braced.
+    You can only protect one creature at a time in this way.
+
+    \magicalff[18]{Generosity} Whenever you \glossterm{attune} to an item or spell that is not a \glossterm{deep attunement}, you may use this ability.
+    When you do, all creatures you create with spells gain the benefit of all effects of the chosen item or spell.
+    If the item is a weapon, they benefit from its effects as if their natural weapons were that weapon.
+    Summoned creatures cannot make choices or use active abilities granted by items, so they generally only benefit from passive or automatically triggered effects.
+
+    The attunement still affects you normally.
     You may only choose one attunement with this ability at a time.
-
-    \magicalff[12]{Resummon\plus} You can use your \textit{resummon} ability as a \glossterm{minor action}.
-
-    \magicalff[18]{Empower Summon\plus} The bonuses from your \textit{empower summon} ability increase to \plus4.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Telekinesis}{Casting, Magical}
@@ -2211,14 +2216,13 @@ They allow more distinct and unique character customization, but also increase g
       \rank{18} The strike deals double \glossterm{weapon damage}.
     \end{magicalactiveability}
 
-    \magicalff[12]{Kinetic Spell} You learn an additional spell.
+    \magicalff[12]{Crushing Spell} You learn an additional spell.
     The spell can be up to rank 5, even if you do not have access to rank 5 spells.
-    Whenever you cast that spell, you can spend a \glossterm{minor action} to \glossterm{briefly} imbue it with kinetic force.
-    When the spell deals damage to a Huge or smaller target, you \glossterm{knockback} that target 15 feet away from you.
-    You can only knockback any individual creature or object once per round.
-    After using this ability, you \glossterm{briefly} cannot use it again.
+    When you attack with the spell, compare your attack result to the Brawn defense of each Huge or smaller target.
+    On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[18]{Multiple Hands} When you use the \spell{distant hand} cantrip, you can create two hands instead of one.
     This can allow you to hold multiple objects simultaneously, though you must still take separate actions to manipulate those objects in any way more complicated than simple movement.
@@ -2229,14 +2233,21 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Terramancy}{Casting, Magical}
     \featpre Access to the \sphere{Terramancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Earthen Alloys} You may treat iron, steel, and worked stone as if they were unworked stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+    \magicalff[1]{Earthen Shell} You gain a \plus1 \glossterm{enhancement bonus} to your Armor defense.
 
-    \magicalff[6]{Rocky Carapace} You learn the \spell{rocky shell} spell, or another spell from the \sphere{Terramancy} mystic sphere if you already know that spell.
-    In addition, the number of layers you can create with that spell increases by one.
+    \magicalff[6]{Gravitic Spell} You learn an additional spell.
+    The spell can be up to rank 3, even if you do not have access to rank 3 spells.
+    When you attack with the spell, you gain a \plus1 accuracy bonus against each target for each \glossterm{size category} by which it is larger than Small: \plus1 for Medium, \plus2 for Large, \plus3 for Huge, \plus4 for Gargantuan, and \plus5 for Colossal.
 
-    \magicalff[12]{Earthen Alloys\plus} You may treat dirt, sand, glass, and all kinds of metal except for cold iron and adamantine as if they were unworked stone for the purpose of spells from the \sphere{Terramancy} \glossterm{mystic sphere}.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[18]{Rocky Carapace\plus} The number of bonus layers you gain from your \textit{rocky carapace} ability increases to two.
+    \magicalff[12]{Stable as a Rock} You are immune to \glossterm{knockback}, \glossterm{push}, \glossterm{teleport}, and \prone effects from attacks.
+
+    \magicalff[18]{Earthen Shell\plus} The bonus increases to \plus2.
+
+    \magicalff[18]{Stonewalker} Whenever you are \glossterm{grounded}, rocks rise up from the ground under your step, then disappear when you walk away.
+    This means that you are always grounded on stone while you are grounded.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Thaumaturgy}{Casting, Magical}
@@ -2250,7 +2261,8 @@ They allow more distinct and unique character customization, but also increase g
     You can also add one of those tags to the spell.
     In addition, you can replace one defense that the spell attacks with any one other defense not already referenced by the spell.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Countermagic}
     \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
@@ -2287,12 +2299,13 @@ They allow more distinct and unique character customization, but also increase g
     This expends the dose of that poison.
     You can poison multiple creatures simultaneously in this way, but it costs one poison dose per creature affected.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Poisonous Blood\plus} You can store up to 6 poison doses with your \textit{poisonous blood} ability.
     In addition, you become immune to all poisons that you do not absorb with that ability.
 
-    \magicalff[18]{Bloodstream Corruption} Whenever you make a living creature lose hit points with a \sphere{Toxicology} spell or your \textit{venomous spell}, that creature becomes \vulnerable to all poisons as a \glossterm{condition}.
+    \magicalff[18]{Bloodstream Corruption} Whenever you \glossterm{injure} a living creature with a \sphere{Toxicology} spell or your \textit{venomous spell}, that creature becomes \vulnerable to all poisons as a \glossterm{condition}.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Umbramancy}{Casting, Magical}
@@ -2301,18 +2314,15 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{The Dark Conceals Me} You gain a \plus2 bonus to your Sleight of Hand and Stealth skills.
     In addition, you gain a \plus1 bonus to your Reflex defense.
 
-    \magicalff[6]{Shadowspell} You learn an additional spell.
+    \magicalff[6]{Call of the Void} You learn an additional spell.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    You gain a \plus1 accuracy bonus with that spell against \glossterm{shadowed} targets.
-    This stacks with any existing bonus the spell has against shadowed targets.
+    When you attack with the spell, compare your attack result to the Mental defense of each \glossterm{shadowed} target.
+    On a hit, that target takes a \minus4 penalty to its other defenses against that spell.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Shadow Jumper} While you are \glossterm{shadowed}, the distance you can teleport with spells from the \sphere{Umbramancy} mystic sphere is doubled.
-
-    \magicalff[18]{Dark Soul} You suppress \glossterm{brilliant illumination} in a \medarea radius around you.
-    Light suppressed in this way becomes no brighter than \glossterm{bright illumination}.
-    You can suppress or resume this effect as a \glossterm{free action} once per round.
 
     \magicalff[18]{Evasive Shade} While you are \glossterm{shadowed}, you take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
     This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
@@ -2333,13 +2343,13 @@ They allow more distinct and unique character customization, but also increase g
     Bare ground creates \glossterm{light undergrowth}, and existing light undergrowth becomes \glossterm{heavy undergrowth}.
     The plants grow before the spell takes effect, so they can improve the effectiveness of some \sphere{verdamancy} spells.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Verdant Army} Your \glossterm{allies} who can see or hear you also gain the benefit of your \textit{verdant allies} ability.
 
     \magicalff[18]{Sprouting Step} At the start of each phase, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
     The undergrowth lasts until you leave that space.
-
   \end{magicalfeat}
 
   \begin{magicalfeat}{Sphere Focus: Vivimancy}{Casting, Magical}
@@ -2352,10 +2362,10 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Soulscar Spell} You learn an additional spell that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
-    Any hit point loss that would be inflicted on a living creature by the spell is doubled.
-    However, whenever you cast the spell, you lose hit points equal to its rank.
+    It gains a \plus5 \glossterm{accuracy} bonus against \glossterm{injured} creatures.
 
-    When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
+    This is a metamagic effect, so you cannot apply another metamagic to the same spell.
+    When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Life Suppression} You are no longer considered a living creature for the purpose of attacks against you.
     This means that attacks which only affect living creatures have no effect against you.
