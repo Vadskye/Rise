@@ -1073,7 +1073,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      This ritual creates food in one unoccupied square within \\shortrange that is sufficient to sustain five Medium creatures for 24 hours.
+      This ritual creates food and water in one unoccupied square within \\shortrange that is sufficient to sustain five Medium creatures for 24 hours.
       It also creates basic receptacles to hold the food.
       The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
     `,
@@ -1088,7 +1088,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      This ritual creates food in any number of unoccupied squares within \\shortrange that is sufficient to sustain one hundred Medium creatures for 24 hours.
+      This ritual creates food and water in any number of unoccupied squares within \\shortrange that is sufficient to sustain one hundred Medium creatures for 24 hours.
       It also creates basic receptacles to hold the food.
       The food that this ritual creates is simple fare of your choice -- highly nourishing, if rather bland.
     `,
