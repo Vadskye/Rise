@@ -399,7 +399,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         When you gain this ability, you can memorize a rank 1 arcane ritual from any arcane mystic sphere you have access to.
                         Whenever you gain access to a new spellcasting rank, you can memorize an additional ritual of that rank or lower.
                         You cannot choose this ability multiple times.
-                    \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                    \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
