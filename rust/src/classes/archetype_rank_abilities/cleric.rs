@@ -75,7 +75,7 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It deals \glossterm{extra damage} equal to your rank in this archetype.
                         In addition, your \glossterm{allies} are immune to damage from that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Widened Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                    \parhead{Widened Spell} Choose a divine \glossterm{spell} you know with a standard \glossterm{area}: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
                 }
@@ -436,7 +436,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you use a \magical or \atAuditory ability that affects a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
                 If you do, it gains the \atAuditory tag.
-                The standard areas are \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
+                The standard areas are \tinyarea, \smallarea, \medarea, \largearea, \hugearea, and \gargarea.
             ",
             modifiers: None,
         },

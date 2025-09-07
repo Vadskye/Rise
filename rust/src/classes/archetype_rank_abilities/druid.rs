@@ -230,7 +230,7 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                         It gains the \atAir tag.
                         In addition, you increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Flooding Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                    \parhead{Flooding Spell} Choose a nature \glossterm{spell} you know with a standard \glossterm{area}: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         It gains the \atWater tag.
                         In addition, you increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
