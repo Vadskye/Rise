@@ -15,6 +15,7 @@ if [ "$has_art" -eq "1" ]
     # Copy images
     cp -r (p utransfer)/Rise\ Art/introduction lib/images/
     cp -r (p utransfer)/Rise\ Art/characters lib/images/
+    cp -r (p utransfer)/Rise\ Art/common\ species lib/images/
     cp -r (p utransfer)/Rise\ Art/classes lib/images/
     cp -r (p utransfer)/Rise\ Art/combat lib/images/
     cp -r (p utransfer)/Rise\ Art/core\ mechanics lib/images/
