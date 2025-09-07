@@ -111,7 +111,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Distant Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{range}: \shortrangeless, \medrangeless, \longrangeless, \distrangeless, or \extrangeless.
                         You increase that spell's range to the next standard range category, to a maximum of Extreme range.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Dragonbreath Spell} Choose an arcane \glossterm{spell} you know that has a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                    \parhead{Dragonbreath Spell} Choose an arcane \glossterm{spell} you know that has a standard \glossterm{area}: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         It must not have a \glossterm{range}, and it must not create an \glossterm{emanation}.
                         The spell's area becomes a cone instead of its normal shape.
                         In addition, if the area was not originally a line, the area increases to to the next standard area category, to a maximum of a Gargantuan area.
@@ -123,7 +123,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Precise Spell} Choose an arcane \glossterm{spell} you know.
                         You gain a \plus1 accuracy bonus with that spell.
                         You can choose this ability multiple times, choosing a different spell each time.
-                    \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
+                    \parhead{Widened Spell} Choose an arcane \glossterm{spell} you know with a standard \glossterm{area}: \tinyarea, \smallarea, \medarea, \largearea, \hugearea, or \gargarea.
                         The spell cannot also be affected by the Dragonbreath Spell metamagic.
                         You increase that spell's area to the next standard area category, to a maximum of a Gargantuan area.
                         You can choose this ability multiple times, choosing a different spell each time.
