@@ -483,11 +483,12 @@
 %   graphicspath: Path to the graphic
 \DeclareDocumentCommand{\sectiongraphic}{s m m m}
 {
-  \begin{forcesamepage}
+  \begin{minipage}{\columnwidth}
   \section{#2}
   \IfBooleanT{#1}{\label{#2}}
   \includegraphics[#3]{#4}
-  \end{forcesamepage}
+  \vspace{0.25em}
+  \end{minipage}
 }
 
 \DeclareDocumentCommand{\subsectiongraphic}{s m m m}
