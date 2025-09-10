@@ -275,7 +275,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
-                    The target regains 1d6 \glossterm{hit points} plus 1d6 per 2 \glossterm{power}.
+                    The target regains \\hprankfour.
                     In addition, if the target is an \glossterm{ally}, it becomes \braced this round.
 
                     \rankline

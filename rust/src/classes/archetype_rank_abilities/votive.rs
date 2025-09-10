@@ -246,15 +246,15 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain 1d8 \glossterm{hit points} \add \glossterm{power}.
+                    You regain \\hprankthree.
                     In addition, you may remove a \glossterm{condition} affecting you.
                     This effect \glossterm{repeats} at the end of the current round.
 
                     \rankline
-                    \rank{4} The recovery increases to 1d6 per 2 power.
-                    \rank{5} The recovery increases to 1d6 \add 1d6 per 2 power.
-                    \rank{6} The recovery increases to 1d8 \add 1d8 per 2 power.
-                    \rank{7} The recovery increases to 1d10 \add 1d10 per power.
+                    \rank{4} The recovery increases to \\hprankfour.
+                    \rank{5} The recovery increases to \\hprankfive.
+                    \rank{6} The recovery increases to \\hpranksix.
+                    \rank{7} The recovery increases to \\hprankseven.
                 \end{magicalactiveability}
             ",
             modifiers: None,
