@@ -495,7 +495,7 @@ export const toxicology: MysticSphere = {
       // +1dr for short range, +1dr for healing bonus, so dr3.
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains \\damagerankthree hit points.
+        The target regains \\hprankthree.
         In addition, it removes all \\glossterm{poisons} affecting it and becomes \\glossterm{briefly} \\glossterm{immune} to poisons.
       `,
       rank: 1,
@@ -510,7 +510,7 @@ export const toxicology: MysticSphere = {
       cost: 'One \\glossterm{fatigue level} from the target.',
       functionsLike: {
         name: 'healing salve',
-        exceptThat: 'the healing increases to \\damageranksix.',
+        exceptThat: 'the healing increases to \\hpranksix.',
       },
       rank: 4,
       scaling: 'healing',
@@ -634,7 +634,7 @@ export const toxicology: MysticSphere = {
       name: 'Empowered Regenerative Fungus',
 
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\damagerankfour hit points.
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankfour.
         However, you take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 5,

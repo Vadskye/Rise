@@ -2,6 +2,8 @@ import { SpellLike } from '@src/mystic_spheres';
 
 const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;
+const healingRankPattern = /hprank(\w+)\b/;
+const healingRankLowPattern = /hprank(\w+)low\b/;
 
 export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>): string | null {
   if (!spell.scaling) {
@@ -26,13 +28,13 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
     }
     return `The attack's \\glossterm{accuracy} increases by +2 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'damage') {
-    const scaling = calculateDieScaling(spell.attack?.hit || spell.functionsLike?.exceptThat || spell.effect);
+    const scaling = calculateDieScaling(spell.attack?.hit || spell.functionsLike?.exceptThat || spell.effect, 'damage');
     if (!scaling) {
       console.warn(`Unable to calculate damage scaling for ${spell.name}`);
     }
     return `The damage increases by ${scaling} for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'healing') {
-    const scaling = calculateDieScaling(spell.effect || spell.functionsLike?.exceptThat);
+    const scaling = calculateDieScaling(spell.effect || spell.functionsLike?.exceptThat, 'healing');
     if (!scaling) {
       console.warn(`Unable to calculate healing scaling for ${spell.name}`);
     }
@@ -52,9 +54,10 @@ function containsDamageValue(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
   return damageRankPattern.test(spell.effect || '') || damageRankPattern.test(spell.attack?.hit || '') || damageRankPattern.test(spell.functionsLike?.exceptThat || '');
 }
 
-function calculateDieScaling(effect: string | undefined): string | undefined {
+function calculateDieScaling(effect: string | undefined, damageOrHealing: 'damage' | 'healing'): string | undefined {
+  const lowPattern = damageOrHealing === 'damage' ? damageRankLowPattern : healingRankLowPattern;
   // First, check for damageranklow, which uses different scaling.
-  const drLowMatches = effect?.match(damageRankLowPattern);
+  const drLowMatches = effect?.match(lowPattern);
   if (drLowMatches && drLowMatches[1]) {
     const damageBonusByRank = {
       'zero': '1',
@@ -72,7 +75,8 @@ function calculateDieScaling(effect: string | undefined): string | undefined {
     return damageBonusByRank;
   }
 
-  const drMatches = effect?.match(damageRankPattern);
+  const normalPattern = damageOrHealing === 'damage' ? damageRankPattern : healingRankPattern;
+  const drMatches = effect?.match(normalPattern);
   if (drMatches && drMatches[1]) {
     const damageBonusByRank = {
       'zero': '1',
