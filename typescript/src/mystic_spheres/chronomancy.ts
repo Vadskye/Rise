@@ -37,11 +37,6 @@ export const chronomancy: MysticSphere = {
         However, you must use it before you learn what the effects of a hit would be, such as the damage it would deal on a hit.
       `,
       roles: ['attune'],
-      scaling: {
-        2: 'You gain a +1 accuracy bonus with the reroll.',
-        4: 'The bonus increases to +2.',
-        6: 'The bonus increases to +2.',
-      },
       type: 'Attune',
     },
   ],

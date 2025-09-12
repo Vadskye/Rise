@@ -17,11 +17,6 @@ export const fabrication: MysticSphere = {
         It must be made of nonliving, nonmagical, nonreactive vegetable matter, such as wood or cloth.
         At the end of each round, this ability is \\glossterm{dismissed} if you are not within \\medrange of the item.
       `,
-      scaling: {
-        2: `The maximum size of the object increases to Small.`,
-        4: `The maximum size of the object increases to Medium.`,
-        6: `The maximum size of the object increases to Large.`,
-      },
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },

@@ -21,20 +21,15 @@ export const telekinesis: MysticSphere = {
         You can telekinetically control the target object as if you were holding it in a single extra hand.
         Your maximum modifier to \\glossterm{accuracy} and checks using the object is equal to your rank with this cantrip.
 
-        During the movement phase, you can move the target up to 10 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
+        During the movement phase, you can move the target up to 15 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
         Your \\glossterm{weight limits} are calculated as if your Strength was \\minus1, so you can carry a Small object normally or push a Medium object at half speed.
         At the end of each round, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
 
         Although you can control the object's motion, you do not have it equipped.
-        This means that you cannot gain a defense bonus from shields, magic apparel items do not grant their benefits to you, and so on.
+        This means that a shield does not grant you its defense bonus, a magic ring does not grant its benefits to you, and so on.
       `,
       roles: ['narrative'],
-      scaling: {
-        2: `The maximum distance moved increases to 15 feet.`,
-        4: `The maximum distance moved increases to 20 feet.`,
-        6: `The maximum distance moved increases to 30 feet.`,
-      },
-      type: 'Sustain (minor)',
+      type: 'Sustain (attuneable, minor)',
     },
   ],
   spells: [
@@ -51,7 +46,7 @@ export const telekinesis: MysticSphere = {
       scaling: {
         special: "For each rank beyond 2, the hand's effective Strength increases by 1.",
       },
-      type: 'Sustain (minor)',
+      type: 'Sustain (attuneable, minor)',
     },
     {
       name: 'Interposing Force',
