@@ -376,7 +376,7 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Empowered Boon of Shielding',
+      name: 'Greater Boon of Shielding',
 
       // dr6
       functionsLike: {

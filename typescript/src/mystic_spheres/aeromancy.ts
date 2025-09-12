@@ -140,7 +140,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       type: 'Attune',
     },
     {
-      name: 'Empowered Wind Screen',
+      name: 'Greater Wind Screen',
 
       effect: `
         You gain a +4 bonus to your defenses against ranged \\glossterm{strikes}.

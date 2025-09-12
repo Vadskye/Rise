@@ -505,7 +505,7 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Empowered Healing Salve',
+      name: 'Greater Healing Salve',
 
       cost: 'One \\glossterm{fatigue level} from the target.',
       functionsLike: {
@@ -631,7 +631,7 @@ export const toxicology: MysticSphere = {
     },
 
     {
-      name: 'Empowered Regenerative Fungus',
+      name: 'Greater Regenerative Fungus',
 
       effect: `
         At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankfour.

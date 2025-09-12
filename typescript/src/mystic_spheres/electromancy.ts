@@ -233,7 +233,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     },
 
     {
-      name: 'Empowered Energize',
+      name: 'Greater Energize',
 
       cost: 'One \\glossterm{fatigue level} from the target.',
       // dr7 from short range, +1dr for healing buff

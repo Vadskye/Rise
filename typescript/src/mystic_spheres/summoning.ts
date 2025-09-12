@@ -98,7 +98,7 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Empowered Summon Offensive Monster',
+      name: 'Greater Summon Offensive Monster',
 
       functionsLike: {
         exceptThat: `
@@ -135,7 +135,7 @@ export const summoning: MysticSphere = {
     },
 
     {
-      name: 'Empowered Summon Defensive Monster',
+      name: 'Greater Summon Defensive Monster',
 
       functionsLike: {
         exceptThat: `
