@@ -8,8 +8,8 @@ By EA:
   Accuracy (+1)  & 0.1  & 0.2  & 0.3     & 0.4 \\
   Accuracy (+2)  & 0.3  & 0.5  & 0.8     & 1.1 \\
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
-  Braced         & 0.4  & 0.7  & 1.0     & 1.3 \\
-  Empowered      & 0.4  & 0.5  & 0.7     & 1.0 \\
+  Braced         & 0.4  & 0.6  & 1.0     & 1.3 \\
+  Empowered      & 0.4  & 0.6  & 1.0     & 1.4 \\
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
@@ -24,6 +24,8 @@ By EA:
   Steeled        & 0.2  & 0.3  & 0.5     & 0.6 \\
 ```
 "You and all adjacent" can be used instead of "any two in Medium range".
+
+Delaying a defensive buff upgrades it to the "ally" column since it can be combined with other effects or prebuffed before a fight.
 
 ## Named Buffs
 

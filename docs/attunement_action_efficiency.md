@@ -58,9 +58,17 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.325 EA * 5 actions = 1.6 EA
 
-### Singleton focused: 0.4
+### Singleton focused: 0.6
 
-This is weak, but we 
+A non-action focus is comparable in power to an "ally" buff, since you can combine it fully with other setup effects and it doesn't cost an action by itself.
+
+### Vital rolls: ???
+
+Tricky to calculate in terms of EA. In most fights, this won't do anything, even if you do take a vital wound. However, this also makes you *much* less likely to die. Without making any actual EA calculation, use arbitrary values to make reasonable ranks:
+
+* +1: 0.5 EA
+* +2: 1.0 EA
+* +3: 1.5 EA
 
 ### Uncommon reactive debuff
 
@@ -114,18 +122,35 @@ Translating that into usable scaling:
 
 ### Singleton reactive damage:
 
-Assume that the trigger for the damage will happen exactly once per fight and is generally easy to trigger, so it will happen on round 1 or 2. As with the singleton reactive debuff, we use the EA value *assuming a hit*, because this sort of effect is scary from an action economy perspective. So:
+Assume that the trigger for the damage will happen exactly once per fight and is generally easy to trigger, so it will happen on round 1 or 2. As with the singleton reactive debuff, we use the EA value *assuming a hit*, because this sort of effect is scary from an action economy perspective. Also, this sort of effect can "double dip" from other attunements and bonuses, so the scaling needs to drop off at higher levels. So:
 
 * Rank 1: dr0 (75%)
 * Rank 2: 1d8 + half power (89%)
 * Rank 3: dr3 (100%)
 * Rank 4: dr4 (107%)
-* Rank 5: dr6 (127%)
-* Rank 7: 1d8 + 1d8 per power (154%)
+* Rank 5: dr5
+* Rank 6: dr6
+* Rank 7: dr7
 
 If the reaction is hard to trigger, such as requiring total defense or recover, it gets +1 rank on the above scale.
 
 Singleton echo/repeat is rank 5 / 125% on this scale because it's more versatile than a simple damage value.
+
+Note that this assumes single-target damage. AOE damage would be lower as normal based on AOE relative to drX.
+
+### Singleton extra damage:
+
+Extra damage is tricky because it can be attached to any spell, including AOE spells, spells with unusually high accuracy, or spells that double extra damage multipliers. At low ranks, none of those shenanigans are possible, so it should have a greater discount at higher ranks. Calculate damage relative to singleton reactive damage, except that it doesn't power scale.
+
+Note that this requires a minor action to activate to avoid stacking multiple attunements on the same attack.
+
+* Rank 1: 1d6 (78% of dr0)
+* Rank 2: 1d10 (69% of 1d8 + half power)
+* Rank 3: 2d6 (54% of dr3)
+* Rank 4: 2d8 (50% of dr4)
+* Rank 5: 2d10 (44% of dr6)
+* Rank 6: 4d6 (40% of dr6)
+* Rank 7: 4d10 (43% of dr7)
 
 ### Singleton reactive debuff: ???
 
