@@ -9,19 +9,14 @@ export const prayer: MysticSphere = {
 
   cantrips: [
     {
-      // Double fortify is 0.8 EA, or 1 EA on allies
+      // "Any two" fortify is 0.7 EA.
       effect: `
-        Choose two \\glossterm{allies} within \\shortrange.
+        Choose two \\glossterm{allies} within \\medrange.
         Each target is \\fortified this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
+        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
       name: 'Fortifying Boon',
       roles: ['boon'],
-      scaling: {
-        2: 'The range increases to \\medrange.',
-        4: 'The range increases to \\longrange.',
-        6: 'You can choose a third target within range.',
-      },
       tags: ['Swift'],
     },
   ],

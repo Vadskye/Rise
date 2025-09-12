@@ -26,7 +26,7 @@ export const toxicology: MysticSphere = {
         `,
       },
       roles: ['combo'],
-      scaling: 'double_accuracy',
+      scaling: 'accuracy',
       tags: ['Poison'],
     },
   ],

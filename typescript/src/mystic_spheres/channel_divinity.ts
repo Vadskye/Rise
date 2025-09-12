@@ -18,8 +18,8 @@ export const channelDivinity: MysticSphere = {
 
         This ability lasts until you \glossterm{dismiss} it or until you use it again.
       `,
-      roles: ['narrative'],
       name: 'Testament',
+      roles: ['narrative'],
     },
   ],
   spells: [

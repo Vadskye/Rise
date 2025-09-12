@@ -29,7 +29,7 @@ export const astromancy: MysticSphere = {
       name: 'Translocate Object',
 
       effect: `
-        Choose one Small or smaller \\glossterm{unattended} object within \\shortrange.
+        Choose one Tiny or smaller \\glossterm{unattended} object within \\medrange.
         It teleports into your hand or into an unoccupied location within the same range.
       `,
       narrative: `
@@ -37,11 +37,6 @@ export const astromancy: MysticSphere = {
         The barkeep frowns, about to say something, before a gold coin suddenly appears in the tankard's place.
       `,
       roles: ['narrative'],
-      scaling: {
-        2: 'The range increases to \\rngmed.',
-        4: 'The maximum size increases to Medium.',
-        6: 'The range increases to \\rnglong.',
-      },
     },
   ],
   spells: [

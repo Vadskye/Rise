@@ -8,16 +8,16 @@ export const vivimancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Ablate Vital Wound',
+      name: 'Arbiter of Life',
 
       effect: `
-        Choose a living \\glossterm{ally} you \\glossterm{touch}.
-        If the target has a \\glossterm{vital wound} with a \\glossterm{vital roll} of 0, it treats that \\glossterm{vital roll} as a 1, preventing it from dying (see \\pcref{Vital Wounds}).
+        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Medicine skill.
       `,
+      roles: ['focus'],
       scaling: {
-        2: `The target can be any ally within \\shortrange.`,
-        4: `The minimum \\glossterm{vital roll} you can mitigate decreases to -1.`,
-        6: `The minimum \\glossterm{vital roll} you can mitigate decreases to -2.`,
+        2: `The bonus increases to +4.`,
+        4: `The bonus increases to +5.`,
+        6: `The bonus increases to +6.`,
       },
     },
   ],
