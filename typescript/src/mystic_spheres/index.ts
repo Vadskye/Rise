@@ -28,7 +28,7 @@ export const mysticSpheres: MysticSphere[] = [
   aeromancy,
   aquamancy,
   astromancy,
-  // channelDivinity,
+  channelDivinity,
   chronomancy,
   cryomancy,
   electromancy,
