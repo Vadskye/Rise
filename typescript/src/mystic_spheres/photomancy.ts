@@ -17,11 +17,6 @@ export const photomancy: MysticSphere = {
         You can freely choose the color of the light, but it is unchanging once created.
       `,
       roles: ['narrative'],
-      scaling: {
-        2: `The maximum radius of bright illumination increases to 30 feet.`,
-        4: `The maximum radius of bright illumination increases to 60 feet.`,
-        6: `The maximum radius of bright illumination increases to 120 feet.`,
-      },
       tags: ['Visual'],
       type: 'Sustain (attuneable, minor)',
     },

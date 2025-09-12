@@ -16,11 +16,6 @@ export const enchantment: MysticSphere = {
         The target's mood improves and it feels more cheerful.
       `,
       roles: ['narrative'],
-      scaling: {
-        2: `You may target an additional ally within range.`,
-        4: `The number of additional targets increases to two.`,
-        6: `The number of additional targets increases to three.`,
-      },
       tags: ['Emotion'],
       type: 'Sustain (attuneable, minor)',
     },

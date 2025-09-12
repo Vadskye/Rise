@@ -12,19 +12,12 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Choose a \\arealarge cone from you.
-        You know whether any \\magical abilities were activated in that area since the start of the last round.
-        This does not provide any information about passive magical effects, such as attuned spells.
+        You know whether any \\magical effects exist in the area.
+        This includes active spell effects, magical items, and any other magic that is currently affecting the area or creatures in the area.
+        It does not include passive magical abilities on creatures in the area, such as the ability to cast spells.
         It also does not provide any information about the number or location of those magical effects.
       `,
       roles: ['narrative'],
-      scaling: {
-        2: `
-          You also learn if any passive magical effects existed in the area.
-          This is separate from your knowledge of active magical effects.
-        `,
-        4: 'You can choose to create a \\hugearea cone instead.',
-        6: `You also learn the number of magical effects in the area.`,
-      },
       tags: ['Detection'],
     },
   ],

@@ -24,7 +24,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         4: 'The bonus increases to +5.',
         6: 'The bonus increases to +6.',
       },
-      type: 'Attune',
+      type: 'Sustain (attuneable, standard)',
     },
   ],
   spells: [

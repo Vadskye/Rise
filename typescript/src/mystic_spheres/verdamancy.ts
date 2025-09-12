@@ -17,17 +17,12 @@ export const verdamancy: MysticSphere = {
       name: 'Bramblepatch',
 
       effect: `
-        Choose one \\glossterm{unattended}, nonmagical 5-ft.\\ square of earth within \\medrange.
+        Choose one \\glossterm{unattended}, nonmagical \\tinyarea radius \\glossterm{zone} of earth within \\medrange.
         Brambles and similar small plants grow in the area, making it \\glossterm{light undergrowth}.
         If it was already light undergrowth, it becomes \\glossterm{heavy undergrowth} instead.
       `,
       roles: ['hazard'],
-      scaling: {
-        2: `The area increases to a \\tinyarea radius.`,
-        4: `The area increases to a \\smallarea radius.`,
-        6: `The area increases to a \\medarea radius.`,
-      },
-      type: 'Sustain (minor)',
+      type: 'Sustain (attuneable, minor)',
       tags: ['Manifestation'],
     },
   ],

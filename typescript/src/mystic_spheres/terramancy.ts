@@ -15,6 +15,17 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   `,
 
   cantrips: [
+    {
+      name: 'Rocky Shell',
+
+      // Double steeled + single defense would be 1 EA, but steeled and defense bonuses
+      // are slightly awkward together?
+      effect: `
+        You \\glossterm{briefly} are \\steeled and gain a +2 bonus to your Armor defense.
+      `,
+      roles: ['turtle'],
+      tags: ['Manifestation', 'Swift'],
+    },
     // TODO: add a cantrip
   ],
   spells: [
