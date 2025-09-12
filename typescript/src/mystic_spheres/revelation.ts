@@ -78,7 +78,7 @@ export const revelation: MysticSphere = {
       effect: `
         At the start of the next round, you become \\glossterm{briefly} \\braced.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -100,7 +100,7 @@ export const revelation: MysticSphere = {
       effect: `
         At the end of the next round, you become \\primed during the following round.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -119,7 +119,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Empowered Reveal Victory',
+      name: 'Greater Reveal Victory',
 
       // Ally focus and +2 accuracy is 1.1 EA.
       effect: `
@@ -487,7 +487,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Empowered Precognitive Precision',
+      name: 'Greater Precognitive Precision',
 
       effect: `
         You gain a +2 \\glossterm{enhancement bonus} to \\glossterm{accuracy}.

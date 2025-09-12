@@ -107,7 +107,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Empowered Kinetic Ablation',
+      name: 'Greater Kinetic Ablation',
 
       // 0.3 + 0.7 EA
       effect: `
@@ -391,7 +391,7 @@ export const telekinesis: MysticSphere = {
     },
 
     {
-      name: 'Empowered Telekinetic Lift',
+      name: 'Greater Telekinetic Lift',
 
       effect: `
         Choose yourself or one Large or smaller \\glossterm{unattended} object within \\medrange.

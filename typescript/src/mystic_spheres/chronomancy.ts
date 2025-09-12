@@ -655,7 +655,7 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Empowered Rewind Damage',
+      name: 'Greater Rewind Damage',
 
       functionsLike: {
         name: 'rewind damage',

@@ -44,7 +44,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       roles: ['healing'],
     },
     {
-      name: 'Empowered Restorative Water',
+      name: 'Greater Restorative Water',
 
       castingTime: 'minor action',
       functionsLike: {
@@ -918,7 +918,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       roles: ['focus'],
     },
     {
-      name: 'Empowered Rising Tide',
+      name: 'Greater Rising Tide',
 
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.

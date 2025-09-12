@@ -235,22 +235,20 @@ export const thaumaturgy: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // TODO: math, probably increase this rank to avoid conflicting with the other
-    // enhance magic
     {
       name: 'Enhance Magic -- Might',
 
       effect: `
         Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the spell deals 1d4 \\glossterm{extra damage} when it deals damage for the first time.
+        If you do, the spell deals 1d6 \\glossterm{extra damage} when it deals damage for the first time.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The extra damage increases to 1d6.`,
-        5: `The extra damage increases to 2d6.`,
-        7: `The extra damage increases to 3d6.`,
+        3: `The extra damage increases to 2d6.`,
+        5: `The extra damage increases to 2d10.`,
+        7: `The extra damage increases to 4d10.`,
       },
       type: 'Attune',
     },
@@ -413,7 +411,7 @@ export const thaumaturgy: MysticSphere = {
     },
 
     {
-      name: 'Empowered Reflect Magic',
+      name: 'Greater Reflect Magic',
 
       effect: `
         You are \\braced this round.

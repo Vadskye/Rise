@@ -1985,7 +1985,7 @@ export const rituals: Ritual[] = [
   },
 
   {
-    name: 'Empowered Seal Shut',
+    name: 'Greater Seal Shut',
 
     castingTime: 'one minute',
     functionsLike: {
