@@ -741,7 +741,7 @@ export const astromancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Empowered Distant Spells',
+      name: 'Greater Distant Spells',
 
       effect: `
         You gain a +60 foot \\glossterm{enhancement bonus} to the \\glossterm{range} of all of your ranged spells.

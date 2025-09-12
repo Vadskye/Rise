@@ -393,7 +393,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Empowered Mending',
+      name: 'Greater Mending',
 
       functionsLike: {
         name: 'mending',
@@ -422,7 +422,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Empowered Brief Regeneration',
+      name: 'Greater Brief Regeneration',
 
       cost: 'One \\glossterm{fatigue level} from the target.',
       // At rank 6, expected power is about 12. Normal healing would be dr8, which is
@@ -464,7 +464,7 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Empowered Regeneration',
+      name: 'Greater Regeneration',
 
       effect: `
         At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add your \\glossterm{power}.

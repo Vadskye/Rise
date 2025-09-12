@@ -116,7 +116,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Empowered Restoration',
+      name: 'Greater Restoration',
 
       cost: 'One \\glossterm{fatigue level} from the target.',
       // dr5 for short range, +1dr from healing bonus

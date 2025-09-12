@@ -638,7 +638,7 @@ export const enchantment: MysticSphere = {
     },
 
     {
-      name: 'Empowered Restore Bravado',
+      name: 'Greater Restore Bravado',
 
       // TODO: EA math on healing + buff
       cost: 'One \\glossterm{fatigue level} from the target.',

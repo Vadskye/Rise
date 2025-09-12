@@ -663,7 +663,7 @@ export const verdamancy: MysticSphere = {
       tags: ['Manifestation'],
     },
     {
-      name: 'Empowered Healing Bloom',
+      name: 'Greater Healing Bloom',
       cost: 'One \\glossterm{fatigue level}.',
       functionsLike: {
         name: 'healing bloom',
