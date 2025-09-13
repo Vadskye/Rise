@@ -46,7 +46,7 @@ export const mysticSpheres: MysticSphere[] = [
   toxicology,
   umbramancy,
   verdamancy,
-  // vivimancy,
+  vivimancy,
   universal,
 ];
 
@@ -70,8 +70,7 @@ export interface BaseSpellLike {
   functionsLike?: FunctionsLike;
   name: string;
   narrative?: string;
-  // TODO: make this mandatory
-  roles?: AbilityRole[];
+  roles: AbilityRole[];
   scaling?: 'accuracy' | 'double_accuracy' | 'damage' | 'healing' | Record<string, string>;
   tableText?: string;
   // TODO: define the set of allowable tags
