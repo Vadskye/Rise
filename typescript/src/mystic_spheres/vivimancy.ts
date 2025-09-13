@@ -26,15 +26,17 @@ export const vivimancy: MysticSphere = {
       name: 'Lifesteal Grasp',
 
       cost: 'One optional \\glossterm{fatigue level} (see text).',
-      // baseline for melee range is dr3, drop to dr2 for healing
+      // baseline for melee range is dr3, drop to dr2 for healing.
+      // Baseline for self-only healing would be drX+3. Although this is combined with
+      // damage, the healing is also conditional, so it's not as safe as full healing, so
+      // it can keep its full healing value.
       attack: {
         hit: `
           \\damageranktwo.
         `,
         injury: `
           You can increase your \\glossterm{fatigue level} by one. 
-          % dr1
-          When you do, you regain 1d6 hit points +1 per 2 power at the end of the round.
+          If you do, you regain \\hprankfour at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
@@ -44,7 +46,10 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 1,
-      scaling: 'accuracy',
+      roles: ['burst', 'healing'],
+      scaling: {
+        special: 'For each rank beyond 1, the damage increases by 2 and the healing increases by 1d6.',
+      },
       tags: [],
     },
 
@@ -53,12 +58,16 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal grasp',
-        // healing is dr4
-        exceptThat:
-          'the damage increases to \\damageranksix, and the healing increases to 1d6 per 2 power.',
+        exceptThat: `
+          the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          In addition, the healing increases to \\hprankseven.
+        `,
       },
       rank: 4,
-      scaling: 'accuracy',
+      roles: ['burst', 'healing'],
+      scaling: {
+        special: 'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 2d10.',
+      },
       tags: [],
     },
 
@@ -66,7 +75,7 @@ export const vivimancy: MysticSphere = {
       name: 'Lifesteal',
 
       cost: 'One optional \\glossterm{fatigue level} (see text).',
-      // +1r for HP theft
+      // -1dr for healing. Healing is drX+3, as lifesteal grasp.
       attack: {
         hit: `
           \\damagerankone.
@@ -74,7 +83,7 @@ export const vivimancy: MysticSphere = {
         injury: `
           You can increase your \\glossterm{fatigue level} by one. 
           % dr2
-          When you do, you regain 1d8 hit points +1 per 2 power at the end of the round.
+          If you do, you regain \\hprankfive at the end of the round.
           This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
@@ -82,7 +91,10 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 2,
-      scaling: 'accuracy',
+      roles: ['burst', 'healing'],
+      scaling: {
+        special: 'For each rank beyond 2, the damage increases by 1 and the healing increases by 2d6.',
+      },
       tags: [],
     },
 
@@ -91,11 +103,16 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'lifesteal',
-        // healing is dr6
-        exceptThat:
-          'the damage increases to \\damagerankfive, and the healing increases to 1d8 plus 1d8 per 2 power.',
+        exceptThat: `
+          the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          In addition, the healing increases to \\hpranknine.
+        `,
       },
+      roles: ['burst', 'healing'],
       rank: 6,
+      scaling: {
+        special: 'For each rank beyond 6, the damage increases by 2d8 and the healing increases by 4d8.',
+      },
       tags: [],
     },
 
@@ -107,11 +124,11 @@ export const vivimancy: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         % dr1
-        The target regains 1d8 \\glossterm{hit points} +1 per power.
+        The target regains \\hprankthree.
       `,
       rank: 1,
-      // standard rank 2 power would be 3, so 7.5 at dr3 or 9 at dr4
-      scaling: { special: 'The healing increases by +2 for each rank beyond 1.' },
+      roles: ['healing'],
+      scaling: 'healing',
       tags: ['Swift'],
     },
 
@@ -122,10 +139,11 @@ export const vivimancy: MysticSphere = {
       // dr5 for short range, +1dr from healing bonus
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        The target regains 2d8 hit points plus 1d8 per 3 power.
+        The target regains \\hpranksix.
       `,
       rank: 4,
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 4.' },
+      roles: ['healing'],
+      scaling: 'healing',
       tags: ['Swift'],
     },
 
@@ -137,25 +155,40 @@ export const vivimancy: MysticSphere = {
       // investment.
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
-        % dr7
-        The target regains 1d10 \\glossterm{hit points} plus 1d10 per power.
+        The target regains \\hpranknine.
       `,
       rank: 7,
+      roles: ['healing'],
       tags: ['Swift'],
     },
 
     {
       name: 'Circle of Life',
 
-      // TODO: unclear rank. Currently using dr4.
+      // TODO: unclear healing rank. Short range healing would be dr5.
+      // Assume that this hits two allies, so dr2. This can hit enemies mainly for
+      // symmetry with circle of death; that's rarely a huge weakness in practice.
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You create a zone of life energy in a \\smallarea radius around your location.
-        When you cast this spell, and during each of your subsequent actions, each living creature in the area regains 1d10 hit points plus 1d6 per 3 power.
-        This cannot increase a target's hit points above half its maximum hit points.
+        You and all living creatures within a \\medarea radius from you each regain \\hpranktwo.
       `,
-      rank: 4,
-      scaling: { special: 'The healing increases by 1d6 for each rank beyond 4.' },
-      tags: ['Sustain (standard)', 'Swift'],
+      rank: 3,
+      roles: ['healing'],
+      scaling: 'healing',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Circle of Life',
+
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You and all living \\glossterm{allies} within a \\medarea radius from you each regain \\hprankfive.
+      `,
+      rank: 6,
+      roles: ['healing'],
+      scaling: 'healing',
+      tags: ['Swift'],
     },
 
     {
@@ -164,32 +197,30 @@ export const vivimancy: MysticSphere = {
       cost: 'Three \\glossterm{fatigue levels} from the target.',
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target removes one \\glossterm{vital wound}.
+        The target regains \\hpranksix and removes one of its \\glossterm{vital wounds}.
       `,
       rank: 5,
-      scaling: {
-        7: `
-        The target can remove two \\glossterm{vital wounds}.
-        If it does, the cost increases to six fatigue levels from the target.
-      `,
-      },
+      roles: ['healing'],
+      scaling: 'healing',
     },
 
     {
       name: 'Inflict Wound',
 
+      // Normal short range would be dr3. Drop by -2dr for the injury effect.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         injury: `
-          You deal the target an additional \\damagerankone.
+          You deal the target an additional \\damageranktwo.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-      rank: 1,
+      rank: 2,
+      roles: ['execute'],
       scaling: 'accuracy',
     },
 
@@ -199,12 +230,14 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'inflict wound',
         exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applied to the first instance of damage is doubled.',
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applies to both the initial damage and the injury damage.',
       },
       rank: 5,
+      roles: ['execute'],
       scaling: 'accuracy',
     },
 
+    // TODO: unclear EA
     {
       name: 'Vital Endurance',
 
@@ -222,51 +255,45 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Mass Vital Endurance',
-
-      functionsLike: {
-        mass: true,
-        name: 'Vital Endurance',
-      },
-      // narrative: '',
-      rank: 6,
-      roles: ['attune'],
-      type: 'Attune (target)',
-    },
-
-    {
       name: 'Circle of Death',
 
+      // r1 area is drX normally. Drop by -1dr for injury effect.
       attack: {
         hit: `
           \\damageranktwo.
         `,
+        injury: `
+          You deal the target an additional \\damageranktwo.
+        `,
         missGlance: true,
         targeting: `
-          You create a zone of death in a \\smallarea radius \\glossterm{zone} within \\shortrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living creatures in the area.
+          Make an attack vs. Fortitude against all living creatures within a \\medarea radius from you.
         `,
       },
-      rank: 4,
-      scaling: 'accuracy',
+      rank: 3,
+      roles: ['clear', 'execute'],
+      scaling: 'damage',
       tags: ['Sustain (minor)'],
     },
 
     {
-      name: 'Massive Circle of Death',
+      name: 'Mighty Circle of Death',
 
       attack: {
         hit: `
           \\damagerankfive.
         `,
+        injury: `
+          You deal the target an additional \\damagerankfive.
+        `,
         missGlance: true,
         targeting: `
-          You create a zone of death in a \\largearea radius \\glossterm{zone} within \\medrange.
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against all living creatures in the area.
+          Make an attack vs. Fortitude against all living creatures within a \\medarea radius from you.
         `,
       },
-      rank: 7,
-      scaling: 'accuracy',
+      rank: 6,
+      roles: ['clear', 'execute'],
+      scaling: 'damage',
       tags: ['Sustain (minor)'],
     },
 
@@ -286,6 +313,7 @@ export const vivimancy: MysticSphere = {
       type: 'Attune',
     },
 
+    // TODO: unclear EA
     {
       name: 'Wellspring of Life',
 
@@ -298,32 +326,43 @@ export const vivimancy: MysticSphere = {
       roles: ['attune'],
       type: 'Attune',
     },
-    {
-      name: 'Mass Wellspring of Life',
 
-      functionsLike: {
-        mass: true,
-        name: 'wellspring of life',
+    {
+      name: 'Blood Calls to Blood',
+
+      // Rank 3:
+      // Normal injury-only damage would be dr5, which is ~19 damage
+      // Normal medium HP is ~45
+      // Rank 7:
+      // Normal injury-only damage would be dr9, which is usually ~90 damage.
+      // Normal medium HP is ~200, so these values are pretty close
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, if takes \\damageranksix, up to a maximum total damage equal to half your maximum hit points.
+          Any \\glossterm{extra damage} is not limited by your hit points.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
       },
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune (target)',
+      roles: ['execute'],
+      rank: 3,
+      scaling: 'damage',
     },
 
     {
-      name: 'Avasculate',
+      name: 'Exsanguinate',
 
-      // TODO: math
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it takes damage equal to half its maximum hit points.
-          The damage dealt this way cannot exceed your own maximum hit points.
+          If the target is \\glossterm{injured}, it takes damage equal to half your maximum hit points.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 7,
+      roles: ['execute'],
     },
 
     {
@@ -332,23 +371,21 @@ export const vivimancy: MysticSphere = {
       effect: `
         You must be alive to cast this spell.
 
-        Whenever you cast or attack with with a damaging spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can choose to enhance it.
-        You can choose to apply this enhancement after seeing the attack roll result, but before rolling damage.
-        If you do, the spell deals 1d6 energy \\glossterm{extra damage} when it deals damage for the first time.
-        % TODO: the timing here is very weird
+        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
+        If you do, the spell deals 1d8 \\glossterm{extra damage} when it deals damage for the first time.
         In addition, the spell can target objects and nonliving creatures as if they were living creatures.
         However, you also lose 2 hit points.
 
-        You can increase this hit point loss to be equal to your maximum hit points.
-        If you do, you gain a +5 accuracy bonus with the attack.
-        Since you can choose to apply this enhancement after seeing the attack roll result, you can cause a missed attack to hit in this way.
+        You can increase this hit point loss to be equal to half your maximum hit points.
+        If you do, you gain a +4 accuracy bonus with the attack.
 
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
       roles: ['attune'],
+      // This is +1d over Enhance Magic -- Might in exchange for the HP loss
       scaling: {
-        3: `The extra damage increases to 2d6, and the hit point loss increases to 4.`,
+        3: `The extra damage increases to 2d8, and the hit point loss increases to 4.`,
         5: `The extra damage increases to 4d6, and the hit point loss increases to 8.`,
         7: `The extra damage increases to 8d6, and the hit point loss increases to 16.`,
       },
@@ -366,11 +403,12 @@ export const vivimancy: MysticSphere = {
 
           Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
-          Alternately, you can choose to gain a \\glossterm{vital wound} instead.
-          If you do, you gain a +5 accuracy bonus with the attack.
+          You can increase this hit point loss to be equal to half your maximum hit points.
+          If you do, you gain a +4 accuracy bonus with the attack.
         `,
       },
       rank: 2,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -379,37 +417,39 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damageranksix.`,
+        hit: `\\damageranksix, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           You must be alive to cast this spell.
 
           Make an attack vs. Armor against something within \\medrange.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
-          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
-          If you do, you gain a +5 accuracy bonus with the attack.
+          You can increase this hit point loss to be equal to half your maximum hit points.
+          If you do, you gain a +4 accuracy bonus with the attack.
         `,
       },
       rank: 5,
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
     {
       name: 'Lifetap Blast',
 
-      // +1dr due to self damage
+      // r1 area is normally drX. Add +1dr due to self damage.
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
           You must be alive to cast this spell.
 
           Make an attack vs. Reflex against everything within a \\medarea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to half your \\glossterm{power}.
-          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
-          If you do, you gain a +5 accuracy bonus with the attack.
+          You can increase this hit point loss to be equal to half your maximum hit points.
+          If you do, you gain a +4 accuracy bonus with the attack.
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -418,7 +458,7 @@ export const vivimancy: MysticSphere = {
 
       // +1dr due to self damage
       attack: {
-        hit: `\\damageranksix.`,
+        hit: `\\damagerankseven.`,
         missGlance: true,
         targeting: `
           You must be alive to cast this spell.
@@ -430,6 +470,7 @@ export const vivimancy: MysticSphere = {
         `,
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -453,35 +494,67 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Sanguine Bond',
 
+      // Assume the total damage dealt is doubled. It might trigger 2-3 times, and with a
+      // delay, so overall multiplying the damage by 2 seems reasonable.
+      // dr3 is 4.5 + 1dpp.
+      // Double dr1 is 5 + 1dpp.
       attack: {
         hit: `
-          \\damageranktwo. If it takes damage, the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damageranktwo.
+          \\damagerankone, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 3,
-      scaling: 'accuracy',
+      roles: ['burn'],
+      scaling: {
+        special: "Both instances of damage increase by 1 for each rank beyond 3.",
+      },
+    },
+
+    {
+      name: 'Mighty Sanguine Bond',
+
+      // Assume the total damage dealt is doubled. It might trigger 2-3 times, and with a
+      // delay, so overall multiplying the damage by 2 seems reasonable.
+      // dr6 is 4.5 + 2.25dpp.
+      // Double dr3 is 9 + 2dpp.
+      attack: {
+        hit: `
+          \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\medrange.
+        `,
+      },
+      rank: 6,
+      roles: ['burn'],
+      scaling: {
+        special: "Both instances of damage increase by 3 for each rank beyond 6.",
+      },
     },
 
     {
       name: 'Lifebomb',
 
-      // TODO: figure out optimal damage / radius.
+      // r2 area is drX-1.
+      // +1dr for barely avoidable delay.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\medarea radius from you.
-          If you are at full hit points, you gain a \\plus2 accuracy bonus with this attack.
+          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
+          If you are at full hit points at that time, you gain a \\plus4 accuracy bonus with this attack.
         `,
       },
       rank: 3,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -491,9 +564,10 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'Lifebomb',
         exceptThat:
-          'the radius increases to a \\largearea radius from you, and the damage increases to \\damagerankfive.',
+          'the radius increases to a \\medarea radius from you, and the damage increases to \\damageranksix.',
       },
       rank: 6,
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
