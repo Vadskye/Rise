@@ -20,11 +20,13 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Quivering Palm',
 
-      // We normally target about 1.2x for "no dr" maneuver effects. Since this requires
-      // unarmed, we give it an extra 20% or so, so this comes out to 1.4x.
+      // A melee range injury-only spell would be dr9, or 9 + 4.5dpp.
+      // Punch/kick has +2a, so -1dr, so 3.5 + 3.5dpp.
+      // dr6 plus strike is about 4.5 + 2.25dpp + 3.5 + 0.5dpp = 8 + 2.75dpp.
+      // That seems like a reasonable discount for the extra scaling you get with strikes.
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\injury The target takes \\damagerankfive.
+        \\injury The target takes \\damageranksix.
         % TODO: wording
         \\crit Damage is doubled for both the initial strike and the injury effect.
       `,
@@ -35,11 +37,11 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Quivering Palm+',
 
-      // This is 1.49x, which is a bit high, but it's tricky to scale all parts of the
-      // damge here equally.
+      // Spell would be dr10, or 11 + 5.5dpp.
+      // This is (4.5 + 0.5dpp) * 2 + 3.5 + 3.5dpp = 12.5 + 4.5dpp.
       effect: `
         Make a strike that deals double damage using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\injury The target takes \\damagerankseven.
+        \\injury The target takes \\damagerankeight.
         \\crit Damage is doubled for both the initial strike and the injury effect.
       `,
       rank: 7,
