@@ -399,7 +399,7 @@ impl CustomAbility {
                     The $name makes a $accuracy+{accuracy_modifier} attack vs. Mental against one creature within \\medrange.
                     It gains a +4 accuracy bonus if the target is \\glossterm<shadowed>.
                     \\hit The target feels the call of darkness as a \\glossterm<condition>.
-                    While it is below its maximum \\glossterm<hit points>, it is \\frightened by the $name.
+                    While it is \\glossterm<injured>, it is \\frightened by the $name.
                     {CONDITION_CRIT}
                 ",
                 accuracy_modifier = rank - 1,
