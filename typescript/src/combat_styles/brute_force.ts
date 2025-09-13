@@ -562,7 +562,7 @@ export const bruteForce: CombatStyle = {
         If you hit, you \\glossterm{push} yourself up to 10 feet in a straight line away from the target.
       `,
       rank: 1,
-      roles: ['retreat'],
+      roles: ['mobility', 'burst'],
     },
 
     {
@@ -573,7 +573,7 @@ export const bruteForce: CombatStyle = {
         If you hit, you \\glossterm{push} yourself up to 20 feet in a straight line away from the target.
       `,
       rank: 5,
-      roles: ['retreat'],
+      roles: ['mobility', 'burst'],
     },
   ],
 };
