@@ -370,7 +370,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 1,
-      roles: ['generator'],
+      roles: ['generator', 'flash'],
       tags: ['Auditory'],
     },
 
@@ -388,7 +388,7 @@ export const heraldOfWar: CombatStyle = {
         `,
       },
       rank: 5,
-      roles: ['generator'],
+      roles: ['generator', 'flash'],
       tags: ['Auditory'],
     },
   ],
