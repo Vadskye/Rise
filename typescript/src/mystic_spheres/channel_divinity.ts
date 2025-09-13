@@ -16,7 +16,7 @@ export const channelDivinity: MysticSphere = {
         If you see another creature with the same aura as you, this spell grants you the unerring knowledge of that similarity.
         This can allow you to identify other followers of your deity or alignment with certainty.
 
-        This ability lasts until you \glossterm{dismiss} it or until you use it again.
+        This ability lasts until you \\glossterm{dismiss} it or until you use it again.
       `,
       name: 'Testament',
       roles: ['narrative'],
@@ -173,7 +173,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 5,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -190,7 +190,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // Briefly frightened by you is 0.8 EA. Enemies in a large area is r5 area,
@@ -287,7 +287,6 @@ export const channelDivinity: MysticSphere = {
       name: 'Daunting Presence',
 
       attack: {
-        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\frightened by you.
         `,
@@ -453,7 +452,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // dr7 is 5.5 + 2.75dpp.
@@ -471,7 +470,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 7,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // 0.4 EA, so -40% debuff EA. Brief stun is normally 1.4 EA, so 2.3 EA = rank 6 with
@@ -498,6 +497,7 @@ export const channelDivinity: MysticSphere = {
       name: 'Word of Power',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\deafened.
           If it is \\glossterm{injured}, it is also deafened as a \\glossterm{condition}.
