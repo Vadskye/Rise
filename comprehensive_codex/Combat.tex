@@ -1338,103 +1338,107 @@
     An ability that has a mixture of valid and invalid targets will generally affect the valid targets normally while ignoring the invalid targets.
     However, if the ability changes its effects based on the number of targets or otherwise would rely on the invalid targets for its choices, such as a spell that swaps the positions of multiple creatures, the entire ability fails.
 
-  \subsection{Ability Durations}\label{Ability Durations}
+\section{Ability Durations}\label{Ability Durations}
 
-    An ability's duration determines how long its effect lasts.
-    Abilities can have one of several different kinds of durations.
+  An ability's duration determines how long its effect lasts.
+  Abilities can have one of several different kinds of durations.
 
-    % TODO: Is this necessary?
-    % Should this clarify interactions with bursts/zones/emanations?
-    If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
-    If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
-    Such effects can sometimes be destroyed prior to when their duration ends.
+  % TODO: Is this necessary?
+  % Should this clarify interactions with bursts/zones/emanations?
+  If an ability targets creatures or objects directly, the effects travel with the subjects for the ability's duration, even if the subjects go outside the ability's initial range.
+  If an ability creates or summons objects or creatures, they last for the duration of the ability, and are capable of moving outside the ability's initial range.
+  Such effects can sometimes be destroyed prior to when their duration ends.
 
-    \subsubsection{Attuned Abilities}\label{Attuned Abilities}
-      Many abilities last as long as a creature \glossterm{attunes} to them.
-      Abilities that require attunement to function have the \abilitytag{Attune} tag.
-      Attuning to an ability typically require investing a single \glossterm{attunement point}.
-      Most abilities that require attunement require a standard action to use, such as the \ability{item attunement} ability (see \pcref{Item Attunement}).
+  \subsection{Attuned Abilities}\label{Attuned Abilities}
+    Many abilities last as long as a creature \glossterm{attunes} to them.
+    Abilities that require attunement to function have the \abilitytag{Attune} tag.
+    Attuning to an ability typically require investing a single \glossterm{attunement point}.
+    Most abilities that require attunement require a standard action to use, such as the \ability{item attunement} ability (see \pcref{Item Attunement}).
 
-      You can release your attunement to an effect as a \glossterm{free action}, which typically ends the effect completely.
-      This allows you to use that attunement point to attune to a different effect.
-      You can never attune to the same ability more than once.
-      Two abilities are considered the same if they have the same name.
+    You can release your attunement to an effect as a \glossterm{free action}, which typically ends the effect completely.
+    This allows you to use that attunement point to attune to a different effect.
+    You can never attune to the same ability more than once.
+    Two abilities are considered the same if they have the same name.
 
-      Normally, the creature using the attuned ability must attune to it.
-      In the special case of \glossterm{rituals}, any number of ritual participants can attune to the ability, and the ability lasts as long as any participant is still attuned to it.
-      There are two special subtypes of attunement abilities: deep attunements and targeted attunements.
+    Normally, the creature using the attuned ability must attune to it.
+    In the special case of \glossterm{rituals}, any number of ritual participants can attune to the ability, and the ability lasts as long as any participant is still attuned to it.
+    There are two special subtypes of attunement abilities: deep attunements and targeted attunements.
 
-      \parhead{Deep Attunement}\nonsectionlabel{Deep Attunement} This ability require investing two attunement points instead of only one.
-      In addition, releasing a deep attunement does not immediately return the invested attunement points.
-      Instead, they only return after you finish a \glossterm{short rest}.
-      Deep attunements are identified as \abilitytag{Attune} (deep).
+    \parhead{Deep Attunement}\nonsectionlabel{Deep Attunement} This ability require investing two attunement points instead of only one.
+    In addition, releasing a deep attunement does not immediately return the invested attunement points.
+    Instead, they only return after you finish a \glossterm{short rest}.
+    Deep attunements are identified as \abilitytag{Attune} (deep).
 
-      \parhead{Targeted Attunement} This ability requires attunement from the target instead of the creature using the ability.
-      If it targets multiple creatures, each target must attune to its own version of the effect.
-      When a target releases its attunement, the effect only ends for it, not for any other targets.
-      Targeted attunements are identified as \abilitytag{Attune} (target).
+    \parhead{Targeted Attunement} This ability requires attunement from the target instead of the creature using the ability.
+    If it targets multiple creatures, each target must attune to its own version of the effect.
+    When a target releases its attunement, the effect only ends for it, not for any other targets.
+    Targeted attunements are identified as \abilitytag{Attune} (target).
 
-      If you target a creature with an Attune (target) ability that does not have attunement points, such as an allied animal, you can attune on the target's behalf.
-      The target intuitively knows how to \glossterm{dismiss} the effect if it wants to remove it.
+    If you target a creature with an Attune (target) ability that does not have attunement points, such as an allied animal, you can attune on the target's behalf.
+    The target intuitively knows how to \glossterm{dismiss} the effect if it wants to remove it.
 
-    \subsubsection{Conditions}\label{Conditions}
-      Many abilities impose \glossterm{conditions} on their targets.
-      A condition lasts until it is removed.
-      You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
-      There are several other abilities that can also remove conditions.
+    \parhead{Attunement Time Limits} After you spend a week attuned to an effect, that effect ends on you.
+    You can immediately reattune to the same effect with no consequences, so this typically does not matter for permanent items that you keep with you.
+    However, it limits your ability to benefit from spells or rituals from by spellcasters who do not stay with your group.
 
-      % TODO: clean up wording
-    \subsubsection{Sustained Abilities}\label{Sustained Abilities}
-      Sustained abilities have the \abilitytag{Sustain} tag.
-      They last as long as you take an action to sustain them each round.
-      The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
-      Sustaining an ability is a \atSwift effect.
+  \subsection{Conditions}\label{Conditions}
+    Many abilities impose \glossterm{conditions} on their targets.
+    A condition lasts until it is removed.
+    You can remove conditions by taking a \glossterm{short rest} or using the \textit{recover} ability (see \pcref{Recover}).
+    There are several other abilities that can also remove conditions.
 
-      At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
-      This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
+    % TODO: clean up wording
+  \subsection{Sustained Abilities}\label{Sustained Abilities}
+    Sustained abilities have the \abilitytag{Sustain} tag.
+    They last as long as you take an action to sustain them each round.
+    The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
+    Sustaining an ability is a \atSwift effect.
 
-      Taking an action to sustain an ability only allows you to sustain a single use of that ability.
-      While you have a sustained ability active, you can't sustain that same ability again, so using the ability twice does not allow you to sustain two instances of it.
-      However, you can sustain multiple separate abilities at once if you have available actions.
+    At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
+    This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
 
-      Some sustained abilities include ``attuneable'' in the tag before the action type.
-      When you use or sustain that ability, you can choose to \glossterm{attune} to it.
-      If you do, it gains the \abilitytag{Attune} tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
-      While you are attuned to that ability, you are still able to sustain a different instance of the ability, so this allows you to have two instances of the ability active at once.
+    Taking an action to sustain an ability only allows you to sustain a single use of that ability.
+    While you have a sustained ability active, you can't sustain that same ability again, so using the ability twice does not allow you to sustain two instances of it.
+    However, you can sustain multiple separate abilities at once if you have available actions.
 
-      You can normally only sustain an ability for up to 5 minutes.
-      Sustaining an ability beyond that point is strenuous, and requires an Endurance check (see \pcref{Endurance}).
+    Some sustained abilities include ``attuneable'' in the tag before the action type.
+    When you use or sustain that ability, you can choose to \glossterm{attune} to it.
+    If you do, it gains the \abilitytag{Attune} tag and loses the \abilitytag{Sustain} tag, so it stays active as long as you stay attuned to it.
+    While you are attuned to that ability, you are still able to sustain a different instance of the ability, so this allows you to have two instances of the ability active at once.
 
-    \subsubsection{Permanent Abilities}
-      Some abilities last permanently.
-      Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
+    You can normally only sustain an ability for up to 5 minutes.
+    Sustaining an ability beyond that point is strenuous, and requires an Endurance check (see \pcref{Endurance}).
 
-  \subsection{Combining Effects}
-    Abilities do not generally affect the way another abilities function.
-    However, sometimes multiple effects can be in conflict on a creature.
-    If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
-    If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
-    Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+  \subsection{Permanent Abilities}
+    Some abilities last permanently.
+    Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
 
-    All abilities will still have as much of their effect as possible.
-    It is possible for an ability to be partially effective in this way.
+\subsection{Combining Effects}
+  Abilities do not generally affect the way another abilities function.
+  However, sometimes multiple effects can be in conflict on a creature.
+  If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+  If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+  Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
 
-  \subsection{Suppressing Abilities}\label{Suppressing Abilities}
-    Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
-    While an ability is suppressed, it has no effect.
-    However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+  All abilities will still have as much of their effect as possible.
+  It is possible for an ability to be partially effective in this way.
 
-  \subsection{Ability Tags}
-    Many abilities have tags that describe the nature of the ability.
-    Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
-    For a list of ability tags, see \pcref{Ability Tags}.
+\subsection{Suppressing Abilities}\label{Suppressing Abilities}
+  Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
+  While an ability is suppressed, it has no effect.
+  However, if it stops being suppressed, its effects continue as if they had not been interrupted.
 
-  \subsection{Dismissal}\label{Dismissal}
-    When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
-    Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-    You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
+\subsection{Ability Tags}
+  Many abilities have tags that describe the nature of the ability.
+  Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+  For a list of ability tags, see \pcref{Ability Tags}.
 
-  \subsection{Rank Upgrades}
-    Many abilities automatically become more effective as your rank with a relevant archetype increases.
-    Some abilities from feats have similar wording, but increase their power based on your level rather than your rank.
-    Rank upgrades and level upgrades are always optional, so you can choose to use the ability as if your rank or level was lower.
+\subsection{Dismissal}\label{Dismissal}
+  When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
+  Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+  You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
+
+\subsection{Rank Upgrades}
+  Many abilities automatically become more effective as your rank with a relevant archetype increases.
+  Some abilities from feats have similar wording, but increase their power based on your level rather than your rank.
+  Rank upgrades and level upgrades are always optional, so you can choose to use the ability as if your rank or level was lower.
