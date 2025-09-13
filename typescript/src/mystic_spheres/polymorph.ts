@@ -467,7 +467,7 @@ export const polymorph: MysticSphere = {
       name: 'Greater Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add your \\glossterm{power}.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add your \\glossterm{power}.
       `,
       rank: 5,
       roles: ['healing'],
@@ -479,7 +479,7 @@ export const polymorph: MysticSphere = {
       name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \add 1d8 per 2 \\glossterm{power}.
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add 1d8 per 2 \\glossterm{power}.
       `,
       rank: 7,
       roles: ['healing'],
