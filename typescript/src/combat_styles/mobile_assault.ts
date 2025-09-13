@@ -120,7 +120,7 @@ export const mobileHunter: CombatStyle = {
         Then, you can move up to half your movement speed.
       `,
       rank: 1,
-      roles: ['retreat'],
+      roles: ['mobility', 'burst'],
     },
     {
       name: 'Fall Back+',
@@ -130,7 +130,7 @@ export const mobileHunter: CombatStyle = {
         Then, you can move up to your movement speed.
       `,
       rank: 3,
-      roles: ['retreat'],
+      roles: ['mobility', 'burst'],
     },
 
     {
