@@ -1338,6 +1338,36 @@
     An ability that has a mixture of valid and invalid targets will generally affect the valid targets normally while ignoring the invalid targets.
     However, if the ability changes its effects based on the number of targets or otherwise would rely on the invalid targets for its choices, such as a spell that swaps the positions of multiple creatures, the entire ability fails.
 
+  \subsection{Combining Effects}
+    Abilities do not generally affect the way another abilities function.
+    However, sometimes multiple effects can be in conflict on a creature.
+    If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
+    If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
+    Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
+
+    All abilities will still have as much of their effect as possible.
+    It is possible for an ability to be partially effective in this way.
+
+  \subsection{Suppressing Abilities}\label{Suppressing Abilities}
+    Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
+    While an ability is suppressed, it has no effect.
+    However, if it stops being suppressed, its effects continue as if they had not been interrupted.
+
+  \subsection{Ability Tags}
+    Many abilities have tags that describe the nature of the ability.
+    Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
+    For a list of ability tags, see \pcref{Ability Tags}.
+
+  \subsection{Dismissal}\label{Dismissal}
+    When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
+    Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
+    You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
+
+  \subsection{Rank Upgrades}
+    Many abilities automatically become more effective as your rank with a relevant archetype increases.
+    Some abilities from feats have similar wording, but increase their power based on your level rather than your rank.
+    Rank upgrades and level upgrades are always optional, so you can choose to use the ability as if your rank or level was lower.
+
 \section{Ability Durations}\label{Ability Durations}
 
   An ability's duration determines how long its effect lasts.
@@ -1412,33 +1442,3 @@
   \subsection{Permanent Abilities}
     Some abilities last permanently.
     Such abilities never expire on their own, but can be \glossterm{dismissed} or removed by other abilities appropriately.
-
-\subsection{Combining Effects}
-  Abilities do not generally affect the way another abilities function.
-  However, sometimes multiple effects can be in conflict on a creature.
-  If one effect makes another effect irrelevant or impossible, the latter effect is ignored.
-  If two effects both conflict with each other, the most recent effect takes precedence, and the other is ignored.
-  Unless otherwise noted, two different uses of the same ability are always considered to be conflicting with each other.
-
-  All abilities will still have as much of their effect as possible.
-  It is possible for an ability to be partially effective in this way.
-
-\subsection{Suppressing Abilities}\label{Suppressing Abilities}
-  Abilities can be \glossterm{suppressed} by effects such as the \spell{suppress magic} spell.
-  While an ability is suppressed, it has no effect.
-  However, if it stops being suppressed, its effects continue as if they had not been interrupted.
-
-\subsection{Ability Tags}
-  Many abilities have tags that describe the nature of the ability.
-  Many of these tags have no game effect by themselves, but they govern how the ability interacts with spells, other abilities, unusual creatures, and so on.
-  For a list of ability tags, see \pcref{Ability Tags}.
-
-\subsection{Dismissal}\label{Dismissal}
-  When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
-  Any \magical ability with a duration can normally be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-  You can dismiss an ability as a \glossterm{free action} that requires only mental effort.
-
-\subsection{Rank Upgrades}
-  Many abilities automatically become more effective as your rank with a relevant archetype increases.
-  Some abilities from feats have similar wording, but increase their power based on your level rather than your rank.
-  Rank upgrades and level upgrades are always optional, so you can choose to use the ability as if your rank or level was lower.
