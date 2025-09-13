@@ -2,17 +2,30 @@ import { mysticSpheres, AbilityRole, ABILITY_ROLES, MysticSphere } from '../myst
 import * as process from 'process';
 
 function printTable(tableData: (string | number)[][]) {
+  // Format numbers to be more readable
+  const formattedData = tableData.map(row => {
+    return row.map(cell => {
+      if (typeof cell === 'number') {
+        if (cell > 1) {
+            return String(Math.round(cell));
+        }
+        return cell % 1 === 0 ? String(cell) : cell.toFixed(1);
+      }
+      return cell;
+    });
+  });
+
   // Calculate column widths
-  const columnWidths: number[] = tableData[0].map((_, i) => {
-    return Math.max(...tableData.map(row => String(row[i]).length));
+  const columnWidths: number[] = formattedData[0].map((_, i) => {
+    return Math.max(...formattedData.map(row => String(row[i]).length));
   });
 
   // Add separator row for markdown
   const separator = columnWidths.map(w => '-'.repeat(w));
-  tableData.splice(1, 0, separator);
+  formattedData.splice(1, 0, separator);
 
   // Format and print table
-  const formattedTable = tableData.map(row => {
+  const formattedTable = formattedData.map(row => {
     return row
       .map((cell, i) => String(cell).padEnd(columnWidths[i]))
       .join(' | ');
@@ -21,26 +34,40 @@ function printTable(tableData: (string | number)[][]) {
   console.log(formattedTable.join('\n'));
 }
 
-function printBarChart(title: string, roleCounts: Record<string, number>) {
+function printBarChart(title: string, roleCounts: Record<string, number>, averageCounts: Record<string, number>) {
   const sortedRoles = Object.entries(roleCounts).filter(([, count]) => count > 0).sort(([, a], [, b]) => b - a);
 
   if (sortedRoles.length === 0) {
+    console.log(`\n--- ${title} ---`);
+    console.log('No roles to display for this sphere with the current filters.');
     return;
   }
 
   const maxRoleNameLength = Math.max(...sortedRoles.map(([name]) => name.length));
-  const maxValue = Math.max(...sortedRoles.map(([, value]) => value));
-  const maxBarWidth = 50;
+  const maxValue = Math.max(...Object.values(roleCounts), ...Object.values(averageCounts));
+  const maxBarWidth = 40;
 
   console.log(`\n--- ${title} ---`);
-  console.log('Role'.padEnd(maxRoleNameLength) + ' | Count | Chart');
-  console.log('-'.repeat(maxRoleNameLength) + ' | ----- | ' + '-'.repeat(maxBarWidth));
+  const header = `${ 'Role'.padEnd(maxRoleNameLength)} | Count | Avg   | Chart`;
+  console.log(header);
+  console.log('-'.repeat(maxRoleNameLength) + ' | ----- | ----- | ' + '-'.repeat(maxBarWidth));
 
   for (const [role, count] of sortedRoles) {
+    const avg = averageCounts[role] || 0;
+    const formattedAvg = avg > 1 ? String(Math.round(avg)) : avg.toFixed(1);
+
     const barWidth = Math.round((count / maxValue) * maxBarWidth);
-    const bar = '█'.repeat(barWidth);
+    const avgMarkerPos = Math.round((avg / maxValue) * maxBarWidth);
+    
+    let bar = '█'.repeat(barWidth);
+    if (bar.length >= avgMarkerPos) {
+        bar = bar.substring(0, avgMarkerPos) + '│' + bar.substring(avgMarkerPos + 1);
+    } else {
+        bar = bar + ' '.repeat(avgMarkerPos - bar.length) + '│';
+    }
+
     console.log(
-      `${role.padEnd(maxRoleNameLength)} | ${String(count).padEnd(5)} | ${bar}`
+      `${role.padEnd(maxRoleNameLength)} | ${String(count).padEnd(5)} | ${formattedAvg.padEnd(5)} | ${bar}`
     );
   }
 }
@@ -56,36 +83,18 @@ function analyzeMysticSpheres() {
     selectedSphereNames = args[spheresIndex + 1].split(',');
   }
 
-
-  const roleBreakdown: Record<string, Record<AbilityRole, number>> = {};
   let allRoles = [...ABILITY_ROLES].sort();
-
   if (filterAttune) {
     allRoles = allRoles.filter(role => role !== 'attune');
   }
 
-  let spheres: MysticSphere[] = [...mysticSpheres].sort((a, b) => a.name.localeCompare(b.name));
+  const allMysticSpheres = [...mysticSpheres].sort((a, b) => a.name.localeCompare(b.name));
+  const fullRoleBreakdown: Record<string, Record<string, number>> = {};
 
-  if (selectedSphereNames.length > 0) {
-    spheres = spheres.filter(s => selectedSphereNames.includes(s.name));
-  }
-
-  for (const sphere of spheres) {
-    const sphereRoles: Record<AbilityRole, number> = {} as Record<AbilityRole, number>;
-
-    if (sphere.cantrips) {
-      for (const cantrip of sphere.cantrips) {
-        if (cantrip.roles) {
-          for (const role of cantrip.roles) {
-            if (allRoles.includes(role)) {
-              sphereRoles[role] = (sphereRoles[role] || 0) + 1;
-            }
-          }
-        }
-      }
-    }
-
-    for (const spell of sphere.spells) {
+  for (const sphere of allMysticSpheres) {
+    const sphereRoles: Record<string, number> = {};
+    const spellsAndCantrips = [...(sphere.spells || []), ...(sphere.cantrips || [])];
+    for (const spell of spellsAndCantrips) {
       if (spell.roles) {
         for (const role of spell.roles) {
           if (allRoles.includes(role)) {
@@ -94,46 +103,58 @@ function analyzeMysticSpheres() {
         }
       }
     }
-    roleBreakdown[sphere.name] = sphereRoles;
+    fullRoleBreakdown[sphere.name] = sphereRoles;
   }
 
+  const roleTotals: Record<string, number> = {};
+  const averageRoleCounts: Record<string, number> = {};
+  const numSpheres = allMysticSpheres.length;
+  for (const role of allRoles) {
+    let total = 0;
+    for (const sphere of allMysticSpheres) {
+      total += fullRoleBreakdown[sphere.name][role] || 0;
+    }
+    roleTotals[role] = total;
+    averageRoleCounts[role] = total / numSpheres;
+  }
+  fullRoleBreakdown['Average'] = averageRoleCounts;
+
+
+  let spheresToShowNames: string[];
+  if (selectedSphereNames.length > 0) {
+    spheresToShowNames = selectedSphereNames;
+  } else {
+    spheresToShowNames = showChart ? allMysticSpheres.map(s => s.name) : [...allMysticSpheres.map(s => s.name), 'Average'];
+  }
+
+
   if (showChart) {
-    for (const sphere of spheres) {
-        printBarChart(sphere.name, roleBreakdown[sphere.name]);
+    for (const sphereName of spheresToShowNames) {
+      if (fullRoleBreakdown[sphereName]) {
+        printBarChart(sphereName, fullRoleBreakdown[sphereName], averageRoleCounts);
+      }
     }
   } else {
-    const roleTotals: Record<string, number> = {};
-    for (const role of allRoles) {
-        let roleTotal = 0;
-        for (const sphere of spheres) {
-            roleTotal += roleBreakdown[sphere.name][role] || 0;
-        }
-        roleTotals[role] = roleTotal;
-    }
-
-    const sphereNames = spheres.map(s => s.name);
+    const sphereNames = spheresToShowNames;
     const header = ['Role', ...sphereNames, 'Total'];
     const tableData: (string | number)[][] = [header];
 
     for (const role of allRoles) {
       const row: (string | number)[] = [role];
-      for (const sphere of spheres) {
-        const count = roleBreakdown[sphere.name][role] || 0;
+      for (const sphereName of sphereNames) {
+        const count = fullRoleBreakdown[sphereName][role] || 0;
         row.push(count);
       }
-      row.push(roleTotals[role]);
+      row.push(roleTotals[role] || 0);
       tableData.push(row);
     }
 
-    // Add total row
     const totalRow: (string | number)[] = ['**Total**'];
-    let grandTotal = 0;
-    for (const sphere of spheres) {
-      const sphereTotal = Object.values(roleBreakdown[sphere.name]).reduce((a, b) => a + b, 0);
+    for (const sphereName of sphereNames) {
+      const sphereTotal = Object.values(fullRoleBreakdown[sphereName]).reduce((a, b) => a + b, 0);
       totalRow.push(sphereTotal);
-      grandTotal += sphereTotal;
     }
-    totalRow.push(grandTotal);
+    totalRow.push(Object.values(roleTotals).reduce((a, b) => a + b, 0));
     tableData.push(totalRow);
     printTable(tableData);
   }
