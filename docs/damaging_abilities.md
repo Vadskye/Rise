@@ -36,7 +36,7 @@ Flat damage effects suffer more for using lower rank damage scaling. Halve all m
 
 ### Damage for Sustain (minor) zones
 
-A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a radius, or -1dr as a wall.
+A sustain (minor) zone must be a ranged radius effect or wall. It deals -2dr as a full size radius, or -1dr as a wall or limited scope (half area level to minimum of r2) area.
 
 Reasoning: A typical sustain (minor) radius will hit the same target about twice, which makes -2dr a reasonable penalty, though it has significant possible upside for long fights.
 
