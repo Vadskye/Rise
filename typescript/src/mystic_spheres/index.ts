@@ -33,7 +33,7 @@ export const mysticSpheres: MysticSphere[] = [
   cryomancy,
   electromancy,
   enchantment,
-  // fabrication,
+  fabrication,
   photomancy,
   polymorph,
   prayer,
@@ -131,7 +131,7 @@ export type AbilityRole = (typeof ABILITY_ROLES)[number];
 export type Cantrip = BaseSpellLike;
 
 export interface Spell extends BaseSpellLike {
-  rank: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  rank: Rank;
 }
 
 export type SphereName =
