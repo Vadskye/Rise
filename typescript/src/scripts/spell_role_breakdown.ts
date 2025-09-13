@@ -1,5 +1,5 @@
 import { mysticSpheres, AbilityRole, ABILITY_ROLES, BaseSpellLike, MysticSphere } from '../mystic_spheres';
-import * as process from 'process';
+import cli from 'commander';
 
 type RoleCounts = Record<string, number>;
 type RoleBreakdown = Record<string, RoleCounts>;
@@ -25,7 +25,7 @@ function printTable(tableData: (string | number)[][]): void {
   formattedData.splice(1, 0, separator);
 
   const formattedTable: string = formattedData
-    .map(row => row.map((cell, i) => cell.padEnd(columnWidths[i])).join(' | חיצוני'))
+    .map(row => row.map((cell, i) => cell.padEnd(columnWidths[i])).join(' | '))
     .join('\n');
 
   console.log(formattedTable);
@@ -83,26 +83,6 @@ function printBarChart(
   }
 }
 
-interface CliArgs {
-  filterAttune: boolean;
-  showChart: boolean;
-  selectedSphereNames: string[];
-}
-
-function parseCliArgs(): CliArgs {
-  const args: string[] = process.argv.slice(2);
-  const filterAttune: boolean = args.includes('--no-attune');
-  const showChart: boolean = args.includes('--chart');
-
-  let selectedSphereNames: string[] = [];
-  const spheresIndex: number = args.indexOf('--spheres');
-  if (spheresIndex !== -1 && spheresIndex + 1 < args.length) {
-    selectedSphereNames = args[spheresIndex + 1].split(',');
-  }
-
-  return { filterAttune, showChart, selectedSphereNames };
-}
-
 function calculateRoleBreakdowns(
   spheres: MysticSphere[],
   roles: AbilityRole[]
@@ -134,23 +114,22 @@ function calculateRoleBreakdowns(
 
   const roleTotals: RoleCounts = {};
   const averageRoleCounts: RoleCounts = {};
-  const numSpheres: number = spheres.length;
+  const spheresForAverage = spheres.filter(sphere => sphere.name !== 'Universal');
+  const numSpheresForAverage: number = spheresForAverage.length;
 
   for (const role of roles) {
     let total = 0;
-    for (const sphere of spheres) {
+    for (const sphere of spheresForAverage) {
       total += fullRoleBreakdown[sphere.name]?.[role] || 0;
     }
     roleTotals[role] = total;
-    averageRoleCounts[role] = total / numSpheres;
+    averageRoleCounts[role] = total / numSpheresForAverage;
   }
 
   return { fullRoleBreakdown, roleTotals, averageRoleCounts };
 }
 
-function analyzeMysticSpheres(): void {
-  const { filterAttune, showChart, selectedSphereNames } = parseCliArgs();
-
+function analyzeMysticSpheres(filterAttune: boolean, showChart: boolean, selectedSphereNames: string[]): void {
   let allRoles: AbilityRole[] = [...ABILITY_ROLES].sort();
   if (filterAttune) {
     allRoles = allRoles.filter(role => role !== 'attune');
@@ -209,10 +188,20 @@ function analyzeMysticSpheres(): void {
   }
 }
 
-function main(): void {
-  analyzeMysticSpheres();
+function main(filterAttune: boolean, showChart: boolean, selectedSphereNames: string[]): void {
+  analyzeMysticSpheres(filterAttune, showChart, selectedSphereNames);
 }
 
 if (require.main === module) {
-  main();
+  cli
+    .option('--no-attune', 'Filter out "attune" role from the breakdown')
+    .option('--chart', 'Display data as a bar chart')
+    .option(
+      '--spheres <sphereNames>',
+      'Comma-separated list of mystic sphere names to display'
+    )
+    .parse(process.argv);
+
+  const options = cli.opts();
+  main(options.noAttune, options.chart, options.spheres ? options.spheres.split(',') : []);
 }

@@ -1,5 +1,5 @@
 import { mysticSpheres, Spell, MysticSphere } from '../mystic_spheres';
-import * as process from 'process';
+import cli from 'commander';
 
 const RANKS = [1, 2, 3, 4, 5, 6, 7] as const;
 type Rank = (typeof RANKS)[number];
@@ -86,32 +86,6 @@ function printBarChart(
   }
 }
 
-interface CliArgs {
-  showChart: boolean;
-  selectedSphereNames: string[];
-}
-
-function parseCliArgs(): CliArgs {
-  const args: string[] = process.argv.slice(2);
-  const showChart: boolean = args.includes('--chart');
-
-  let selectedSphereNames: string[] = [];
-  const spheresArg: string | undefined = args.find(arg => arg.startsWith('--spheres'));
-
-  if (spheresArg) {
-    if (spheresArg.includes('=')) {
-      selectedSphereNames = spheresArg.split('=')[1].split(',');
-    } else {
-      const spheresIndex: number = args.indexOf('--spheres');
-      if (spheresIndex !== -1 && spheresIndex + 1 < args.length) {
-        selectedSphereNames = args[spheresIndex + 1].split(',');
-      }
-    }
-  }
-
-  return { showChart, selectedSphereNames };
-}
-
 function calculateRankBreakdowns(
   spheres: MysticSphere[],
   ranks: readonly Rank[]
@@ -140,23 +114,22 @@ function calculateRankBreakdowns(
 
   const rankTotals: RankCounts = {};
   const averageRankCounts: RankCounts = {};
-  const numSpheres: number = spheres.length;
+  const spheresForAverage = spheres.filter(sphere => sphere.name !== 'Universal');
+  const numSpheresForAverage: number = spheresForAverage.length;
 
   for (const rank of ranks) {
     let total = 0;
-    for (const sphere of spheres) {
+    for (const sphere of spheresForAverage) {
       total += fullRankBreakdown[sphere.name]?.[String(rank)] || 0;
     }
     rankTotals[String(rank)] = total;
-    averageRankCounts[String(rank)] = total / numSpheres;
+    averageRankCounts[String(rank)] = total / numSpheresForAverage;
   }
 
   return { fullRankBreakdown, rankTotals, averageRankCounts };
 }
 
-function analyzeMysticSpheres(): void {
-  const { showChart, selectedSphereNames } = parseCliArgs();
-
+function analyzeMysticSpheres(showChart: boolean, selectedSphereNames: string[]): void {
   const allRanks: Rank[] = [...RANKS];
 
   const allMysticSpheres: MysticSphere[] = [...mysticSpheres].sort((a, b) =>
@@ -211,10 +184,19 @@ function analyzeMysticSpheres(): void {
   }
 }
 
-function main(): void {
-  analyzeMysticSpheres();
+function main(showChart: boolean, selectedSphereNames: string[]): void {
+  analyzeMysticSpheres(showChart, selectedSphereNames);
 }
 
 if (require.main === module) {
-  main();
+  cli
+    .option('--chart', 'Display data as a bar chart')
+    .option(
+      '--spheres <sphereNames>',
+      'Comma-separated list of mystic sphere names to display'
+    )
+    .parse(process.argv);
+
+  const options = cli.opts();
+  main(options.chart, options.spheres ? options.spheres.split(',') : []);
 }
