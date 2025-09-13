@@ -49,4 +49,4 @@ Reasoning: A typical sustain (minor) radius will hit the same target about twice
 ### Injury-only damage
 
 Damage that only works on injured targets should be about +40% damage, which is roughly +2dr.
-If it deals one tick of damage then checks for double damage on injury, the combined package should be roughly +30%. That translates to drX-2 on each hit.
+If it deals one tick of damage then checks for another damage tick on injury, it scales poorly with extra damage, so it can get only -1dr (expected damage: 2x -1dr = 1.6x baseline)
