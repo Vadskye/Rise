@@ -243,19 +243,17 @@ fn cloaks() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
-    // "while at or below half max HP" applies approximately 1/3 of the time. Braced is
-    // normally 2.2 EA, or 0.7 EA with that condition. That's in scope for a rank 3 item.
-    // If you add in steeled for 0.9 EA, it's 1 EA, or rank 5.
+    // Unclear EA, probably bad, but sometimes will save your life?
     apparel.push(Cloak(StandardItem {
         name: String::from("Cloak of Death's Door"),
-        rank: 3,
-        short_description: String::from("Braced at low health"),
+        rank: 1,
+        short_description: String::from("Braced while at zero HP"),
         description: String::from(r"
-            While you are at or below half your maximum \glossterm<hit points>, you are \braced.
+            While you have no remaining \glossterm{hit points}, you are \braced.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Braced and steeled at low health", r"
-                While you are at or below half your maximum hit points, you are also \steeled.
+            ItemUpgrade::new(4, "Braced and steeled while at zero HP", r"
+                While you have no remaining \glossterm{hit points}, you are also \steeled.
             "),
         ],
         ..Apparel::default()
