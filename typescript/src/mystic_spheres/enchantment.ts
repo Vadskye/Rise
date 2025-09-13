@@ -161,14 +161,14 @@ export const enchantment: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\goaded by you.
-          If it below its maximum \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+          If it \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
         `,
       },
       rank: 2,
-      roles: ['softener'],
+      roles: ['trip', 'maim'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
@@ -225,7 +225,7 @@ export const enchantment: MysticSphere = {
           The target feels sleepy as a \\glossterm{condition}.
           If it can find a convenient opportunity to go to sleep, it will do so.
           This generally will not remove it from combat or high pressure social situations, and it will generally take the time to find a convenient place to sleep rather than simply dropping asleep in the middle of a room.
-          In addition, while the target is below its maximum hit points, it is \\slowed.
+          In addition, while the target is \\glossterm{injured}, it is \\slowed.
 
           While asleep, the target can be awakened normally, such as by taking damage.
         `,
@@ -237,7 +237,7 @@ export const enchantment: MysticSphere = {
       },
 
       rank: 6,
-      roles: ['maim'],
+      roles: ['maim', 'softener'],
       scaling: 'accuracy',
       tags: ['Emotion'],
     },
@@ -256,7 +256,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['stasis'],
+      roles: ['stasis', 'maim'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -272,7 +272,7 @@ export const enchantment: MysticSphere = {
           'the attack affects all \\glossterm{enemies} in a \\smallarea within \\medrange. If the target would be immune to \\spell{mind blank}, it is also immune to this spell, and vice versa.',
       },
       rank: 6,
-      roles: ['stasis'],
+      roles: ['stasis', 'maim'],
       scaling: 'accuracy',
       tags: ['Compulsion'],
     },
@@ -369,7 +369,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['narrative'],
+      roles: ['narrative', 'softener'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Subtle'],
       type: 'Sustain (minor)',
@@ -387,7 +387,7 @@ export const enchantment: MysticSphere = {
         name: 'charm',
       },
       rank: 6,
-      roles: ['narrative'],
+      roles: ['narrative', 'softener'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Subtle'],
       type: 'Sustain (minor)',
@@ -411,7 +411,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 3,
-      roles: ['narrative'],
+      roles: ['cleanse', 'softener'],
       scaling: 'accuracy',
       tags: ['Emotion'],
       type: 'Sustain (standard)',
@@ -495,7 +495,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['maim'],
+      roles: ['maim', 'stasis'],
       tags: ['Emotion', 'Subtle'],
     },
 
@@ -524,7 +524,7 @@ export const enchantment: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target feels excruciating pain from even minor injuries.
-          While it is below its maximum \\glossterm{hit points}, it is \\stunned.
+          While it is \\glossterm{injured}, it is \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -625,7 +625,7 @@ export const enchantment: MysticSphere = {
         In addition, it gains a +2 bonus to its Mental defense this round.
       `,
       rank: 2,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
@@ -644,7 +644,7 @@ export const enchantment: MysticSphere = {
         In addition, it gains a +4 bonus to its Mental defense this round.
       `,
       rank: 6,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },

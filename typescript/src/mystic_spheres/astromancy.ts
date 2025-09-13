@@ -168,7 +168,7 @@ export const astromancy: MysticSphere = {
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
       `,
-      roles: ['narrative'],
+      roles: ['mobility'],
     },
     {
       name: 'Distant Translocation',
@@ -184,7 +184,7 @@ export const astromancy: MysticSphere = {
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
       `,
-      roles: ['narrative'],
+      roles: ['mobility'],
     },
     {
       name: 'Giant Translocation',
@@ -199,7 +199,7 @@ export const astromancy: MysticSphere = {
         One by one, you teleport your allies across the chasm.
         The orcs tracking you will never be able to follow your trail now.
       `,
-      roles: ['narrative'],
+      roles: ['mobility'],
     },
     // 30' ranged teleportation is r4. Limited scope drops to r3. Adding extra targets is
     // sketchy here because adding allies makes this extremely powerful for kiting, so
@@ -259,7 +259,7 @@ export const astromancy: MysticSphere = {
         It took some effort to convince the dwarven paladin to try a surprise attack, but the results will be worth it.
       `,
       rank: 3,
-      roles: ['kite'],
+      roles: ['mobility'],
     },
     {
       name: 'Dimension Door',
@@ -275,7 +275,7 @@ export const astromancy: MysticSphere = {
         Now, you can return whenever you want, no matter how many guards and locks the usurper tries to deploy against you.
       `,
       rank: 4,
-      roles: ['kite'],
+      roles: ['mobility'],
     },
     {
       name: 'Astral Rupture',
@@ -589,7 +589,7 @@ export const astromancy: MysticSphere = {
         When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 4,
-      roles: ['dive'],
+      roles: ['mobility'],
       scaling: 'accuracy',
     },
     // Hard to calculate EA, assume it's the same as Translocation
@@ -610,7 +610,7 @@ export const astromancy: MysticSphere = {
         When you were unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
       `,
       rank: 1,
-      roles: ['dive'],
+      roles: ['mobility'],
     },
     {
       name: 'Giant Transposition',
@@ -621,7 +621,7 @@ export const astromancy: MysticSphere = {
         exceptThat: 'the maximum size increases to Huge.',
       },
       rank: 5,
-      roles: ['narrative'],
+      roles: ['mobility'],
     },
     {
       name: 'Phasing Blade',
@@ -706,7 +706,7 @@ export const astromancy: MysticSphere = {
         It returns at the end of the last round.
       `,
       rank: 2,
-      roles: ['stasis'],
+      roles: ['boon'],
     },
     {
       name: 'Blink',
@@ -765,7 +765,7 @@ export const astromancy: MysticSphere = {
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 3,
-      roles: ['narrative'],
+      roles: ['mobility'],
       type: 'Sustain (attuneable, minor)',
     },
     {
@@ -780,7 +780,7 @@ export const astromancy: MysticSphere = {
         You create a pair of gigantic portals that allow instant passage from one to the other.
       `,
       rank: 6,
-      roles: ['narrative'],
+      roles: ['mobility'],
       type: 'Sustain (attuneable, minor)',
     },
     {
@@ -795,7 +795,7 @@ export const astromancy: MysticSphere = {
         You create a pair of portals that allow instant passage from one to the other.
       `,
       rank: 7,
-      roles: ['narrative'],
+      roles: ['mobility'],
       type: 'Sustain (attuneable, minor)',
     },
   ],

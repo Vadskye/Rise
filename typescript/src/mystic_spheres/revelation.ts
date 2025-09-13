@@ -149,7 +149,7 @@ export const revelation: MysticSphere = {
         The same visions that terrify your foes inspire you to victory.
       `,
       rank: 2,
-      roles: ['generator'],
+      roles: ['generator', 'flash'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Visual'],
     },
@@ -164,7 +164,7 @@ export const revelation: MysticSphere = {
         exceptThat: 'each target is frightened of all creatures, not just you.',
       },
       rank: 7,
-      roles: ['generator'],
+      roles: ['generator', 'flash'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Visual'],
     },

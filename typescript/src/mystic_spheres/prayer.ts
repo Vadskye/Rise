@@ -365,7 +365,7 @@ export const prayer: MysticSphere = {
         Each target is \\shielded this round and regains 1d4 \\glossterm{hit points} +1 per \\glossterm{power}.
       `,
       rank: 2,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
@@ -379,7 +379,7 @@ export const prayer: MysticSphere = {
         exceptThat: 'the recovery increases to 1d6 plus 1d6 per 2 power.',
       },
       rank: 5,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       scaling: { special: 'The recovery increases by 2d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
@@ -391,7 +391,7 @@ export const prayer: MysticSphere = {
       // bonus. Normal healing ability would be dr4, so use half of that (where possible).
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and all \\glossterm{allies} within a \largearea radius from you each regain 2d8 \\glossterm{hit points}.
+        You and all \\glossterm{allies} within a \\largearea radius from you each regain 2d8 \\glossterm{hit points}.
       `,
       rank: 3,
       roles: ['healing'],

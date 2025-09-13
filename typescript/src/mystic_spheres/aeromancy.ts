@@ -18,7 +18,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,
-      roles: ['narrative'],
+      roles: ['boon'],
     },
   ],
   spells: [
@@ -106,7 +106,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
-      roles: ['dive'],
+      roles: ['mobility'],
     },
     {
       name: 'Intense Propulsion',
@@ -117,7 +117,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         exceptThat: 'the maximum knockback distance increases to 60 feet.',
       },
       rank: 4,
-      roles: ['dive'],
+      roles: ['mobility'],
     },
     // Braced is 2.2 EA. Assume that ranged strikes are about 33% of all attacks, so this
     // is 0.73 EA, which is about right for a rank 1. They aren't actually 33% of attacks,
@@ -161,7 +161,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 3,
-      roles: ['snipe'],
+      roles: ['clear', 'snipe'],
       scaling: 'damage',
     },
     {
@@ -178,7 +178,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 6,
-      roles: ['snipe'],
+      roles: ['clear', 'snipe'],
       scaling: 'damage',
     },
     {
@@ -590,7 +590,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         However, ranged \\glossterm{strikes} that pass through the wall take a -4 accuracy penalty.
       `,
       rank: 1,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -671,7 +671,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         You are unable to take any standard actions other than sustaining this effect, but you can still take \\glossterm{move actions} in place of standard actions.
       `,
       rank: 4,
-      roles: ['narrative'],
+      roles: ['attune'],
       tags: [],
       type: 'Sustain (attuneable, standard)',
     },
@@ -693,7 +693,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 2,
-      roles: ['clear'],
+      roles: ['clear', 'turtle'],
       scaling: 'damage',
     },
 
@@ -714,7 +714,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       },
       // narrative: '',
       rank: 5,
-      roles: ['clear'],
+      roles: ['clear', 'turtle'],
       scaling: 'damage',
     },
 
@@ -745,7 +745,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       `,
       // narrative: '',
       rank: 3,
-      roles: ['focus'],
+      roles: ['boon', 'focus'],
       scaling: 'accuracy',
     },
   ],

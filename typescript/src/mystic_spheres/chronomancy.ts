@@ -138,20 +138,46 @@ export const chronomancy: MysticSphere = {
       name: 'Quicksilver Perfection',
 
       cost: BRIEF_COOLDOWN,
-      // TODO: figure out how to do math??
+      // `output [highest 1 of 5d[explode 1d10]]` has a mean of 11.5, or +6 accuracy.
+      // Assuming a 6 hits, it gets a crit (16 or higher) 22% of the time.
+      // Expected damage is 0.96 + 0.22 + 0.25 = 1.43x hit damage.
+      // A normal strike is 0.6 + 0.2 + 0.02 = 0.82x hit damage, but double damage, so
+      // 1.64x hit damage.
       effect: `
         This spell has no \\glossterm{somatic components}.
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using a single weapon.
-        You can reroll the attack roll up to five times, keeping the highest result.
+        You can reroll the attack roll up to four times, keeping the highest result.
         Before rerolling, you can learn whether your result would be a hit or critical hit, but not the damage you would deal.
-        When you finish rolling, you gain an accuracy bonus with the strike equal to the number of unused rerolls.
       `,
-      rank: 6,
+      rank: 4,
       roles: ['burst'],
-      scaling: {
-        7: 'You can reroll six times instead of five.',
-      },
+      scaling: 'accuracy',
+    },
+    {
+      name: 'Quicksilver Infinity',
+
+      // `output [highest 1 of 5d[explode 1d10]]` has a mean of 11.5, or +6 accuracy.
+      // Assuming a 6 hits, it gets a crit (16 or higher) 22% of the time.
+      // Expected damage is 0.96 + 0.22 + 0.25 = 1.43x hit damage, x2 from double damage,
+      // x2 from reroll = 5.72x hit damage.
+      // A normal strike is 0.6 + 0.2 + 0.02 = 0.82x hit damage, but doubled (two standard
+      // actions) and tripled (normal rank 7 strike) and x1.25 (delayed effect) = 6.15x
+      // hit damage.
+      // That seems like a reasonable downgrade given that this combines better with
+      // buffs.
+      effect: `
+        This spell has no \\glossterm{somatic components}.
+
+        When you cast this spell, it has no immediate effect.
+        Next round, you can spend a \\glossterm{standard action} to make two \\glossterm{mundane} melee \\glossterm{strikes} using a single weapon.
+        Each strike deals double damage.
+        You can reroll the attack roll for each strike up to four times, keeping the highest result.
+        Before rerolling, you can learn whether your result would be a hit or critical hit, but not the damage you would deal.
+      `,
+      rank: 7,
+      roles: ['burst'],
+      scaling: 'accuracy',
     },
     {
       name: 'Quicksilver Ambush',
@@ -197,7 +223,7 @@ export const chronomancy: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['maim'],
+      roles: ['maim', 'stasis'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -270,7 +296,7 @@ export const chronomancy: MysticSphere = {
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 1,
-      roles: ['turtle'],
+      roles: ['turtle', 'mobility'],
       tags: ['Swift (see text)'],
     },
     {
@@ -283,7 +309,7 @@ export const chronomancy: MysticSphere = {
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 4,
-      roles: ['turtle', 'retreat'],
+      roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
 
@@ -394,7 +420,7 @@ export const chronomancy: MysticSphere = {
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 7,
-      roles: ['focus'],
+      roles: ['boon'],
     },
 
     {
@@ -451,7 +477,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
-      roles: ['boon'],
+      roles: ['cleanse'],
       type: 'Sustain (minor)',
     },
 
@@ -469,7 +495,7 @@ export const chronomancy: MysticSphere = {
         When the time lock is unsealed, this effect ends.
       `,
       rank: 1,
-      roles: ['boon'],
+      roles: ['mobility'],
       type: 'Sustain (minor)',
     },
 

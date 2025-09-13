@@ -336,7 +336,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
       },
       rank: 3,
-      roles: ['flash'],
+      roles: ['flash', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -357,7 +357,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         `,
       },
       rank: 6,
-      roles: ['flash'],
+      roles: ['flash', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -471,7 +471,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If you have no \\glossterm{ice crystals}, you gain an ice crystal.
       `,
       rank: 3,
-      roles: ['dive'],
+      roles: ['mobility', 'generator'],
       scaling: {
         5: 'The range increases to \\medrange.',
         7: 'The range increases to \\distrange.',
@@ -511,7 +511,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         5: 'You can choose to create a \\largearealong wall instead.',
         7: 'You can choose to create a \\hugearealong wall instead.',
       },
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -530,7 +530,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If it is destroyed, it automatically reforms at the end of the next round, ignoring any occupied spaces that would block the wall from reforming.
       `,
       rank: 4,
-      roles: ['hazard'],
+      roles: ['barrier'],
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -603,7 +603,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
       `,
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'trip'],
       scaling: 'accuracy',
       tags: [],
     },
@@ -621,7 +621,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         \\injury The target is also slowed as a \\glossterm{condition}.
       `,
       rank: 7,
-      roles: ['burst', 'maim'],
+      roles: ['burst', 'maim', 'trip'],
       scaling: 'accuracy',
       tags: [],
     },

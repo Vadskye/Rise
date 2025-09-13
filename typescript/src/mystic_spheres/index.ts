@@ -87,37 +87,44 @@ export interface BaseSpellLike {
     | 'Sustain (attuneable, standard)';
 }
 
+// A spell can have multiple roles if it has multiple effects, or if its effect is
+// intrinsically versatile.
+// Roles refer to how you spend your standard action in combat.
+// For that reason, most attunement effects only have the 'attune' role, since they
+// do not change how you spend standard actions in combat. If an attunement effect grants
+// a unique ability that you can use as a standard action, it would have the roles
+// appropriate to that standard action ability.
 export const ABILITY_ROLES = [
   'artillery', // Long-range AOE damage to contribute while staying out of danger
-  'attune', // Attuned combat buff
-  'barrier', // Non-damaging walls to limit the swarm's mobility and set up choke points
-  'boon', // Brief or single-round effects on allies
+  'attune', // Buff that lasts as long as you stay attuned.
+  'barrier', // Non-damaging walls to limit mobility and set up choke points
+  'boon', // Brief or one-round combat-relevant effects on one or more allies, possibly including you. If the effect is not combat relevant, it should be 'narrative' instead.
   'burn', // Single-target damage over time
   'burst', // Single-target immediate damage
-  'cleanse', // Remove conditions
-  'clear', // AOE immediate damage
+  'cleanse', // Remove conditions or, more rarely, poisons
+  'clear', // Immediate damage to multiple targets, typically in an area
   'combo', // Has an effect that requires other abilities to be useful
   'dive', // Move towards or through enemies and attack at short range
-  'execute', // Single-target immediate damage that requires the target to be in HP
-  'exertion', // Spend fatigue for more powerful effects
-  'flash', // AOE brief debuff
-  'focus', // Brief offensive self-buff that doesn't require hitting with an attack
-  'generator', // Attack and gain a brief offensive self-buff, inclulding payoff prep
-  'hazard', // Create a battlefield hazard
-  'healing', // Regain HP or DR
+  'execute', // Single-target immediate damage that requires the target to be injured
+  'exertion', // Spend fatigue for more powerful effects (or, rarely, spend other resources like vital wounds)
+  'flash', // Debuff that affects multiple targets, typically in an area. Does not require injury.
+  'focus', // Brief offensive buff on yourself. If an ability makes an attack, it is not a focus ability, though it may be a generator.
+  'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for the next round.
+  'hazard', // Create a persistent battlefield hazard, such as a zone that deals damage each round
+  'healing', // Regain hit points
   'kite', // Move away from enemies and make a ranged attack, or prevent enemies from moving closer
-  'maim', // Single-target debuff that requires the target to be in HP
+  'maim', // Single-target debuff that requires the target to be injured. Can be brief or condition.
+  'mobility', // Move yourself or allies without making an attack
   'narrative', // Non-combat effects
   'payoff', // Ability with unusual prerequisites that generally require at least a round of prep
-  'ramp', // Self-buff for the rest of the fight
-  'retaliate', // Attack that is stronger against creatures that attack you
-  'retreat', // Make a short range attack and move away from enemies
+  'ramp', // Self-buff for the rest of the fight that does not require attunement
+  'retaliate', // Attack that is stronger against creatures that attack you or your allies
   'snipe', // Long-range single-target damage
-  'softener', // Debuff that works against max hp targets
-  'stasis', // Single-target single action trade, or as close as possible
-  'trip', // Single-target brief or one-round defensive debuff
-  'turtle', // One-round defense or protection effect on self
-  'wildfire', // AOE damage over time
+  'softener', // Debuff that affects a single non-injured target
+  'stasis', // Single-target brief or one-round debuff that prevents enemy action
+  'trip', // Single-target brief or one-round debuff that penalizes defenses. Does not require injury.
+  'turtle', // Brief or one-round defensive buff or protection effect on yourself
+  'wildfire', // Damage over time against multiple targets, typically in an area
 ] as const;
 export type AbilityRole = (typeof ABILITY_ROLES)[number];
 

@@ -448,7 +448,7 @@ export const thaumaturgy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you and all adjacent \\glossterm{allies} who used a \magical ability this round are \\glossterm{briefly} \\empowered.
+          Then, you and all adjacent \\glossterm{allies} who used a \\magical ability this round are \\glossterm{briefly} \\empowered.
         `,
       },
       rank: 2,

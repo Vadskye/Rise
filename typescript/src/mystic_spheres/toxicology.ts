@@ -403,7 +403,7 @@ export const toxicology: MysticSphere = {
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 7,
-      roles: ['hazard', 'hazard'],
+      roles: ['hazard'],
       scaling: 'damage',
       tags: ['Acid', 'Manifestation', 'Sustain (minor)'],
     },
@@ -556,7 +556,7 @@ export const toxicology: MysticSphere = {
         You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['cleanse'],
     },
 
     // Frightened by you is 2.1 EA, or 1.4 EA with move action removal, which is r1.
