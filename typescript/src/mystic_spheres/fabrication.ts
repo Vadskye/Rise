@@ -336,10 +336,10 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
-          Whenever anything passes through the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Reflex against any creature currently sharing space with it.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Armor against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
-          You can only attack a given target with this spell once per \\glossterm{phase}.
+          In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Armor against it.
+          You can only attack a given target with this spell once per round.
         `,
       },
       rank: 2,
@@ -380,7 +380,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 3,
       roles: ['barrier', 'hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -454,7 +454,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 2,
       roles: ['hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -468,7 +468,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 5,
       roles: ['hazard'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       tags: ['Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -540,7 +540,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 5,
       roles: ['attune'],
-      scaling: 'accuracy',
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 

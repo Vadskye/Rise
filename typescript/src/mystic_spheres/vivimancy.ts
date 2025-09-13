@@ -8,17 +8,14 @@ export const vivimancy: MysticSphere = {
 
   cantrips: [
     {
-      name: 'Arbiter of Life',
+      name: 'Flow of Life',
 
+      cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Medicine skill.
+        At the end of each round, you regain hit points equal to your \\glossterm{power} (minimum 1).
       `,
-      roles: ['focus'],
-      scaling: {
-        2: `The bonus increases to +4.`,
-        4: `The bonus increases to +5.`,
-        6: `The bonus increases to +6.`,
-      },
+      roles: ['healing'],
+      type: 'Sustain (standard)',
     },
   ],
   spells: [
@@ -221,7 +218,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 2,
       roles: ['execute'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -234,7 +231,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 5,
       roles: ['execute'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     // TODO: unclear EA
@@ -409,7 +406,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 2,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -429,7 +426,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -450,7 +447,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -471,7 +468,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -555,7 +552,7 @@ export const vivimancy: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
     {
@@ -568,31 +565,11 @@ export const vivimancy: MysticSphere = {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: 'accuracy',
+      scaling: 'damage',
     },
 
-    {
-      name: 'Deathtouch',
-
-      // Baseline for melee range is dr7, which is 5.5+2.75dpp.
-      // If it required no remaining DR, it would be dr9, which is 9 + 4.5dpp.
-      // Maximized dr6 is 8 + 4dpp.
-      attack: {
-        hit: `
-          \\damageranksix.
-          If the target is \\glossterm{injured}, this damage is maximized.
-          When you kill a creature with this ability, you \\glossterm{briefly} gain a \\plus2 accuracy bonus.
-        `,
-        targeting: `
-          You must have a \\glossterm{free hand} to cast this spell.
-
-          Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
-        `,
-      },
-      rank: 5,
-      scaling: 'accuracy',
-    },
-
+    // r3 area is drX-2. Calculate as a rank 3 spell, then subtract a full rank for the corpse
+    // requirement.
     {
       name: 'Corpse Explosion',
 
@@ -600,17 +577,18 @@ export const vivimancy: MysticSphere = {
         hit: `\\damagerankone.`,
         missGlance: true,
         targeting: `
-          Choose one Small or larger corpse within \\medrange.
+          Choose one Small or larger \\glossterm{corpse} within \\shortrange.
           Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.
           You gain a \\plus1 accuracy bonus for each size category by which the corpse is larger than Medium.
           The corpse is also destroyed.
         `,
       },
       narrative: `
-          You violently discharge the latent magical potential within a corpse, causing it to explode.
+        You violently discharge the latent magical potential within a corpse, causing it to explode.
       `,
       rank: 2,
-      scaling: 'accuracy',
+      roles: ['clear', 'payoff'],
+      scaling: 'damage',
     },
 
     {
@@ -623,8 +601,9 @@ export const vivimancy: MysticSphere = {
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
       `,
-      rank: 6,
-      scaling: 'accuracy',
+      rank: 5,
+      roles: ['clear', 'payoff'],
+      scaling: 'damage',
     },
 
     {
@@ -632,44 +611,33 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         crit: CONDITION_CRIT,
-        hit: `As a \\glossterm{condition}, the target's body withers.
-        It takes a -2 penalty to its Fortitude defense.
-        Whenever it loses \\glossterm{hit points}, this penalty increases by 2.
-        This stacks up to a maximum total penalty of -10.`,
+        hit: `
+          As a \\glossterm{condition}, the target's body withers.
+          It takes a -2 penalty to its Fortitude defense.
+          Whenever it suffers a \\glossterm{injury}, this penalty increases by 2.
+          This stacks up to a maximum total penalty of -10.
+        `,
         targeting: `
           Make an attack vs. Fortitude with a +3 accuracy bonus against one creature within \\medrange.
         `,
       },
       rank: 2,
+      roles: ['softener'],
       scaling: 'accuracy',
     },
 
+    // Uncommon reactive damage
     {
       name: 'Retributive Lifebond',
 
       attack: {
-        hit: `\\damagerankonelow.`,
+        hit: `\\damagerankone.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
+          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to suffer an \\glossterm{injury}, make a \\glossterm{reactive attack} vs. Fortitude against it.
         `,
       },
-      rank: 1,
-      scaling: { special: 'The damage increases by +1 for each rank beyond 1.' },
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Massive Retributive Lifebond',
-
-      attack: {
-        hit: `\\damagerankthreelow.`,
-        targeting: `
-          Whenever an \\glossterm{enemy} within a \\hugearea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make \\glossterm{reactive attack} vs. Fortitude against it.
-        `,
-      },
-      rank: 4,
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 4.' },
+      rank: 2,
+      scaling: 'damage',
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -678,18 +646,19 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Retributive Lifebond',
 
       attack: {
-        hit: `\\damageranksixlow.`,
+        hit: `\\damagerankfive.`,
         targeting: `
-          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to lose \\glossterm{hit points}, make a \\glossterm{reactive attack} vs. Fortitude against it.
+          Whenever an \\glossterm{enemy} within a \\medarea radius \\glossterm{emanation} from you causes you to suffer an \\glossterm{injury}, make \\glossterm{reactive attack} vs. Fortitude against it.
         `,
       },
-      rank: 7,
+      rank: 5,
+      scaling: 'damage',
       roles: ['attune'],
       type: 'Attune (deep)',
     },
 
     {
-      name: "Healer's Intuition",
+      name: "Vital Intuition",
 
       effect: `
         If you have Medicine as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
@@ -736,14 +705,15 @@ export const vivimancy: MysticSphere = {
         missGlance: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} within \\medrange.
-          Whenever a living creature passes through the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
-          In addition, when you cast this spell and during each of your subsequent actions, make an attack vs. Fortitude against any creature currently sharing space with it.
+          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any living creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
-          You can only attack a given target with this spell once per \\glossterm{phase}.
+          In addition, whenever a living creature passes through the the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
+          You can only attack a given target with this spell once per round.
         `,
       },
       rank: 2,
-      scaling: 'accuracy',
+      roles: ['hazard'],
+      scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -753,14 +723,15 @@ export const vivimancy: MysticSphere = {
 
       cost: BARRIER_COOLDOWN,
       functionsLike: {
-        name: 'wall of death',
         exceptThat: `
-          the damage increases to \\damagerankfour.
-          In addition, the area increases to a \\largearealong \\glossterm{wall}, and the range increases to \\longrange.
+          the damage increases to \\damagerankfive.
+          In addition, the area increases to a \\largearealong \\glossterm{wall}.
         `,
+        name: 'enervating wall',
       },
-      rank: 6,
-      scaling: 'accuracy',
+      rank: 5,
+      roles: ['hazard'],
+      scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
     },
