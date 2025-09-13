@@ -34,7 +34,7 @@ export const channelDivinity: MysticSphere = {
         At the end of the next round, you become infused with divine power.
         This causes you to regain \\hprankfour, and you become \\glossterm{briefly} \\focused.
       `,
-      roles: ['focus'],
+      roles: ['focus', 'healing'],
       rank: 4,
       scaling: 'healing',
       tags: [],
@@ -45,10 +45,10 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        This causes you to \\glossterm{briefly} gain a \\plus2 bonus to your Mental defense and be \\focused.
+        This causes you to \\glossterm{briefly} gain a \\plus2 bonus to your Mental defense and are \\focused.
       `,
       rank: 1,
-      roles: ['focus'],
+      roles: ['focus', 'turtle'],
       tags: [],
     },
 
@@ -102,7 +102,7 @@ export const channelDivinity: MysticSphere = {
         If an attack \\glossterm{injures} you this round, you become \\primed next round.
       `,
       rank: 6,
-      roles: ['turtle'],
+      roles: ['turtle', 'focus', 'retaliate'],
       tags: ['Swift'],
     },
 
@@ -120,7 +120,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 2,
-      roles: ['burst'],
+      roles: ['burst', 'retaliate'],
       scaling: 'damage',
     },
 
@@ -138,7 +138,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['burst'],
+      roles: ['burst', 'retaliate'],
       scaling: 'damage',
     },
 
@@ -358,7 +358,7 @@ export const channelDivinity: MysticSphere = {
         In exchange, you gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and are \\glossterm{unaffected} by \\glossterm{conditions}.
       `,
       rank: 6,
-      roles: ['focus'],
+      roles: ['focus', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -378,7 +378,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['trip'],
+      roles: ['maim', 'stasis'],
       scaling: 'accuracy',
     },
 
@@ -452,7 +452,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 4,
-      roles: ['trip'],
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -470,7 +470,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['trip'],
+      roles: ['burst'],
       scaling: 'accuracy',
     },
 
@@ -489,7 +489,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 5,
-      roles: ['generator'],
+      roles: ['flash', 'generator'],
       scaling: 'accuracy',
     },
 
@@ -508,7 +508,7 @@ export const channelDivinity: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['generator'],
+      roles: ['flash', 'generator'],
       scaling: 'accuracy',
     },
   ],

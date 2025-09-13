@@ -16,7 +16,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
   cantrips: [
     {
-      name: 'Rocky Shell',
+      name: 'Rocky Carapace',
 
       // Double steeled + single defense would be 1 EA, but steeled and defense bonuses
       // are slightly awkward together?
@@ -91,12 +91,14 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
-          When you cast this spell, you choose a \\glossterm{grounded} location within \\shortrange.
-          A meteor appears in the sky over that area, falling down towards it.
-          Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
+          When you cast this spell, you choose a \\smallarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\medrange.
+          The bottom of the area must be \\glossterm{grounded}, and you must have \\glossterm{line of sight} and \\glossterm{line of effect} to both the top and bottom of the area.
+          This means you cannot cast this spell in tight tunnels.
 
+          A meteor appears at the top of the area.
+          Creatures can generally identify what area the meteor will fall into with a DV 10 Awareness check.
           During your next action, the meteor crashes into the ground, and you make a \\glossterm{reactive attack} vs. Armor and Reflex against everything in a \\medarea radius of your chosen location.
-          If there is not at least sixty feet of open space above your chosen location, this spell fails with no effect.
+          Creatures under overhanging structures may have \\glossterm{cover} from the attack or be entirely excluded from the effect based on their location.
         `,
       },
       rank: 4,
@@ -414,7 +416,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           Make an attack vs. Reflex and Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
       },
-      roles: ['maim'],
+      roles: ['maim', 'burst'],
       narrative: `
         You open up a rift in the ground that swallows and traps a foe.
       `,

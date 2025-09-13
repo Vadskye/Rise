@@ -93,7 +93,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 2,
-      roles: ['maim'],
+      roles: ['maim', 'softener'],
       scaling: 'accuracy',
     },
 
@@ -108,7 +108,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           'the attack \\glossterm{chains} five times, and the range increases to \\medrange.',
       },
       rank: 4,
-      roles: ['clear'],
+      roles: ['flash', 'maim'],
       scaling: 'accuracy',
     },
 
@@ -211,7 +211,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 4,
-      roles: ['maim'],
+      roles: ['maim', 'flash'],
       scaling: 'accuracy',
     },
 
@@ -226,7 +226,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         In addition, it is \\impervious to \\atElectricity attacks this round.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       // Slightly weaker scaling than dr5l, but better to keep with d6
       scaling: { special: 'The recovery increases by 2d6 for each rank beyond 3.' },
       tags: ['Swift'],
@@ -243,7 +243,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
       `,
       rank: 6,
-      roles: ['healing'],
+      roles: ['healing', 'boon'],
       scaling: { special: 'The recovery increases by 6d6 for each rank beyond 6.' },
       tags: ['Swift'],
     },
@@ -401,6 +401,8 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         `,
       },
       rank: 3,
+      // Although this technically affects an area, it will typically only hit one person,
+      // so we classify it as burst instead of clear.
       roles: ['burst'],
       scaling: 'damage',
       tags: ['Sustain (standard)'],
@@ -634,7 +636,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         The strike \\glossterm{chains} once.
       `,
       rank: 3,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'accuracy',
     },
 
@@ -646,7 +648,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         exceptThat: 'the strike deals double damage.',
       },
       rank: 6,
-      roles: ['burst'],
+      roles: ['clear'],
       scaling: 'accuracy',
     },
   ],

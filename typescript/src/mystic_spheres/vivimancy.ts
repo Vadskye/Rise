@@ -438,7 +438,7 @@ export const vivimancy: MysticSphere = {
 
       effect: `
         You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
-        However, you also gain a +8 bonus to your \glossterm{injury point}.
+        However, you also gain a +8 bonus to your \\glossterm{injury point}.
       `,
       rank: 1,
       roles: ['attune'],

@@ -18,7 +18,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         You gain a +3 \\glossterm{enhancement bonus} to the Swim skill.
       `,
-      roles: ['narrative'],
+      roles: ['attune'],
       scaling: {
         2: 'The bonus increases to +4.',
         4: 'The bonus increases to +5.',
@@ -66,7 +66,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When it does, it removes one \\glossterm{condition} affecting it.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['cleanse'],
     },
     {
       name: 'Aquatic Agility',
@@ -156,7 +156,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 7,
-      roles: ['softener'],
+      roles: ['maim'],
       tags: ['Manifestation'],
     },
 
@@ -325,7 +325,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           The wall has \\glossterm{hit points} equal to twice times your \\glossterm{power}, and is destroyed when its hit points become negative.
       `,
       rank: 1,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         3: `The wall's hit points increase to three times your \\glossterm{power}.`,
         5: `The wall's hit points increase to four times your \\glossterm{power}.`,
@@ -347,7 +347,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 4,
-      roles: ['hazard'],
+      roles: ['barrier'],
       scaling: {
         6: `The wall's hit points increase to four times your \\glossterm{power}.`,
       },
@@ -394,7 +394,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 2,
-      roles: ['burn', 'hazard'],
+      roles: ['burst', 'hazard'],
       scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
@@ -416,7 +416,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 5,
-      roles: ['burn', 'hazard'],
+      roles: ['burst', 'hazard'],
       scaling: 'damage',
       tags: ['Manifestation', 'Sustain (minor)'],
     },
@@ -745,7 +745,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
       },
       rank: 3,
-      roles: ['maim'],
+      roles: ['maim', 'burn'],
       scaling: 'damage',
     },
     {
@@ -849,7 +849,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         Pushing the target down a steep slope or through water costs half the normal movement cost, but pushing it up a steep slope costs twice the normal movement cost.
       `,
       rank: 1,
-      roles: ['dive'],
+      roles: ['mobility'],
       tags: ['Manifestation'],
     },
     {
@@ -861,7 +861,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         exceptThat: 'the maximum push distance increases to 60 feet.',
       },
       rank: 4,
-      roles: ['dive'],
+      roles: ['mobility'],
       tags: ['Manifestation'],
     },
     {
@@ -887,7 +887,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         The protection is \\atSwift, but the movement is not.
       `,
       rank: 5,
-      roles: ['dive', 'turtle'],
+      roles: ['mobility', 'turtle'],
       tags: ['Manifestation', 'Swift (see text)'],
     },
     {
@@ -899,7 +899,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         This is a \\atSwift effect, so it protects each target from attacks during the current phase.
       `,
       rank: 4,
-      roles: ['turtle'],
+      // Normally we don't combine boon and turtle, but this is a bit weird since it
+      // always affects you and only sometimes affects allies.
+      roles: ['boon', 'turtle'],
       tags: ['Manifestation', 'Swift'],
     },
     {
