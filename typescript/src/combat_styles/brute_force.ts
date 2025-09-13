@@ -115,7 +115,7 @@ export const bruteForce: CombatStyle = {
         `,
       },
       rank: 3,
-      roles: ['clear'],
+      roles: ['clear', 'generator'],
       tags: ['Earth'],
     },
 
