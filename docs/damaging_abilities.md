@@ -45,3 +45,8 @@ Reasoning: A typical sustain (minor) radius will hit the same target about twice
 * "Immediately and next round" is drX-2
 * "As a condition" is drX-2 if it has move action DV 10 removal
 * "As a condition" is drX-3 if it has standard action DV 10 removal
+
+### Injury-only damage
+
+Damage that only works on injured targets should be about +40% damage, which is roughly +2dr.
+If it deals one tick of damage then checks for double damage on injury, the combined package should be roughly +30%. That translates to drX-2 on each hit.
