@@ -315,7 +315,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
-                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to your excess rank.
+                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
