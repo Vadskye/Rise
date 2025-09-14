@@ -734,19 +734,74 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     },
 
     {
-      name: 'Zephyr Guide',
+      name: 'Asphyxiate',
 
-      // +2 accuracy is 0.3 EA, so total EA is 0.7 on self or 1.1 on ally. But it doesn't
-      // work all the time, so it's okay at r3.
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\medrange.
+          If the target does not need to breathe air, this attack has no effect.
+        `,
+      },
+      // narrative: '',
+      rank: 2,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Asphyxiate',
+
+      attack: {
+        hit: `
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude with a \\minus4 accuracy penalty against one creature within \\distrange.
+          If the target does not need to breathe air, this attack has no effect.
+        `,
+      },
+      // narrative: '',
+      rank: 5,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    // This is too weak as +1 and too strong as +2? Ranged strikes are probably weak
+    // enough that +2 is safe.
+    {
+      name: 'Wind Shear',
+
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        This round, the target is \\focused and gains a \\plus2 bonus accuracy bonus with ranged \\glossterm{strikes}.
+        This round, the target is gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
         If you choose yourself, the effect lasts \\glossterm{briefly}.
       `,
       // narrative: '',
-      rank: 3,
-      roles: ['boon', 'focus'],
+      rank: 2,
+      roles: ['boon'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Building Tempest',
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, air loudly rushes around you.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\shielded this round.
+          \\item Once: You are shielded and \\honed this round.
+          \\item Two or more times: You are shielded and \\primed this round.
+        \\end{mdframedraggeditemize}
+      `,
+      // narrative: '',
+      rank: 2,
+      roles: ['focus'],
       scaling: 'accuracy',
+      type: 'Sustain (minor)'
     },
   ],
 });
