@@ -911,13 +911,14 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\focused this round.
-          \\item Once: You are \\primed this round.
-          \\item Two or more times: You are primed and \\shielded this round.
+          \\item Never: You are \\empowered this round.
+          \\item Once: You are \\maximized this round.
+          \\item Two or more times: You are maximized and \\fortified this round.
         \\end{mdframedraggeditemize}
       `,
-      rank: 1,
+      rank: 2,
       roles: ['focus'],
+      type: 'Sustain (minor)'
     },
     {
       name: 'Greater Rising Tide',
@@ -926,9 +927,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\primed this round.
-          \\item Once: You are \\primed and \\shielded this round.
-          \\item Two or more times: You are primed this round and \\glossterm{briefly} shielded.
+          \\item Never: You are \\empowered and \\fortified this round.
+          \\item Once: You are \\maximized and fortified this round.
+          \\item Two or more times: You are maximized this round and \\glossterm{briefly} fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,
