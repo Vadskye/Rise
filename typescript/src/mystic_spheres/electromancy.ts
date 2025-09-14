@@ -226,7 +226,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         In addition, it is \\impervious to \\atElectricity attacks this round.
       `,
       rank: 3,
-      roles: ['healing', 'boon'],
+      roles: ['healing', 'boon', 'exertion'],
       // Slightly weaker scaling than dr5l, but better to keep with d6
       scaling: { special: 'The recovery increases by 2d6 for each rank beyond 3.' },
       tags: ['Swift'],
@@ -243,7 +243,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
       `,
       rank: 6,
-      roles: ['healing', 'boon'],
+      roles: ['healing', 'boon', 'exertion'],
       scaling: { special: 'The recovery increases by 6d6 for each rank beyond 6.' },
       tags: ['Swift'],
     },

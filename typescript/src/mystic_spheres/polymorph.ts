@@ -387,7 +387,7 @@ export const polymorph: MysticSphere = {
         The target regains 1d8 \\glossterm{hit points} \\plus1 per \\glossterm{power}.
       `,
       rank: 2,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
@@ -400,7 +400,7 @@ export const polymorph: MysticSphere = {
         exceptThat: 'the recovery increases to 2d8 plus 1d8 per 3 power.',
       },
       rank: 5,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
@@ -417,7 +417,7 @@ export const polymorph: MysticSphere = {
         The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by +2 for each rank beyond 3.' },
     },
 
@@ -433,7 +433,7 @@ export const polymorph: MysticSphere = {
         The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
       `,
       rank: 6,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: { special: 'The healing increases by 2d8 for each rank beyond 6.' },
     },
 
@@ -447,7 +447,7 @@ export const polymorph: MysticSphere = {
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
       rank: 5,
-      roles: ['attune'],
+      roles: ['attune', 'exertion'],
       type: 'Attune (target)',
     },
 

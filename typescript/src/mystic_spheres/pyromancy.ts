@@ -775,7 +775,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         After you are restored to life in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 7,
-      roles: ['attune'],
+      roles: ['attune', 'exertion'],
       type: 'Attune (deep)',
     },
 
