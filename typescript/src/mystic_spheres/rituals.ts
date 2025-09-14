@@ -2427,8 +2427,8 @@ export const rituals: Ritual[] = [
 
       This ritual does not give you any specific control over the newly awakened undead.
       They may attack you once they become fully active, which typically happens one minute after the ritual is complete.
-      If you also know how to perform the \ritual{command undead} ritual, you can combine that ritual with this one.
-      Doing so doubles the time required to complete the ritual, but it applies the effects of \ritual{command undead} to each creature you created.
+      If you also know how to perform the \\ritual{command undead} ritual, you can combine that ritual with this one.
+      Doing so doubles the time required to complete the ritual, but it applies the effects of \\ritual{command undead} to each creature you created.
     `,
     materialCost: true,
     rank: 3,
@@ -2517,7 +2517,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      You ask the trees within a \gargarea radius from you for information.
+      You ask the trees within a \\gargarea radius from you for information.
       Trees are not highly aware of their surroundings, and generally ignore complex questions.
       However, they have long memories of any injuries they suffered or obvious danger that they faced, such as nearby fires.
       They can only track time to the day until about a month into the past, at which point they simply refer to events by their season.
@@ -2747,7 +2747,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     effect: `
-      You can speak with air, earth, fire, or water within a \areahuge \glossterm{zone} from your location.
+      You can speak with air, earth, fire, or water within a \\areahuge \\glossterm{zone} from your location.
       You can ask it simple questions and understand its responses.
       In general, elements are only able to give information about what they touch.
       This includes the general shapes, sizes, and locations of creatures and objects they interacted with, but not any details about color or subjective appearance.

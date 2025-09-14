@@ -14,7 +14,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         At the end of each round, you regain hit points equal to your \\glossterm{power} (minimum 1).
       `,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       type: 'Sustain (standard)',
     },
   ],
@@ -124,7 +124,7 @@ export const vivimancy: MysticSphere = {
         The target regains \\hprankthree.
       `,
       rank: 1,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
     },
@@ -139,7 +139,7 @@ export const vivimancy: MysticSphere = {
         The target regains \\hpranksix.
       `,
       rank: 4,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
     },
@@ -155,7 +155,7 @@ export const vivimancy: MysticSphere = {
         The target regains \\hpranknine.
       `,
       rank: 7,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Swift'],
     },
 
@@ -165,12 +165,14 @@ export const vivimancy: MysticSphere = {
       // TODO: unclear healing rank. Short range healing would be dr5.
       // Assume that this hits two allies, so dr2. This can hit enemies mainly for
       // symmetry with circle of death; that's rarely a huge weakness in practice.
+      // +1dr for delay
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and all living creatures within a \\medarea radius from you each regain \\hpranktwo.
+        You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+        During your next action, each living creature in the area regains \\hprankthree.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
     },
@@ -180,10 +182,11 @@ export const vivimancy: MysticSphere = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You and all living \\glossterm{allies} within a \\medarea radius from you each regain \\hprankfive.
+        You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+        During your next action, each living creature in the area regains \\hpranksix.
       `,
       rank: 6,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
     },
@@ -197,7 +200,7 @@ export const vivimancy: MysticSphere = {
         The target regains \\hpranksix and removes one of its \\glossterm{vital wounds}.
       `,
       rank: 5,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
     },
 
@@ -254,23 +257,24 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Circle of Death',
 
-      // r1 area is drX normally. Drop by -1dr for injury effect.
+      // r1 area is drX normally. Drop by -1dr for injury effect, then +2dr for escapably
+      // delayed damage.
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankfour.
         `,
         injury: `
-          You deal the target an additional \\damageranktwo.
+          You deal the target an additional \\damagerankfour.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against all living creatures within a \\medarea radius from you.
+          You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 3,
       roles: ['clear', 'execute'],
       scaling: 'damage',
-      tags: ['Sustain (minor)'],
     },
 
     {
@@ -278,20 +282,20 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankseven.
         `,
         injury: `
-          You deal the target an additional \\damagerankfive.
+          You deal the target an additional \\damagerankseven.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Fortitude against all living creatures within a \\medarea radius from you.
+          You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 6,
       roles: ['clear', 'execute'],
       scaling: 'damage',
-      tags: ['Sustain (minor)'],
     },
 
     {

@@ -41,7 +41,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       rank: 1,
       scaling: { special: 'The healing increases by 1d10 for each rank beyond 1.' },
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
     },
     {
       name: 'Greater Restorative Water',
@@ -53,7 +53,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       rank: 4,
       scaling: { special: 'The healing increases by 3d8 for each rank beyond 4.' },
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
     },
     {
       name: 'Cleansing Water',
@@ -829,7 +829,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \\glossterm{briefly} \steeled.
+        This causes the critical hit to become only a regular hit, and you remain \\glossterm{briefly} \\steeled.
         Then, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,

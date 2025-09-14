@@ -499,7 +499,7 @@ export const toxicology: MysticSphere = {
         In addition, it removes all \\glossterm{poisons} affecting it and becomes \\glossterm{briefly} \\glossterm{immune} to poisons.
       `,
       rank: 1,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
     },
@@ -514,7 +514,7 @@ export const toxicology: MysticSphere = {
       },
       rank: 4,
       scaling: 'healing',
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Swift'],
     },
 
@@ -530,7 +530,7 @@ export const toxicology: MysticSphere = {
       `,
       // narrative: '',
       rank: 1,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Poison'],
     },
 
@@ -544,7 +544,7 @@ export const toxicology: MysticSphere = {
       },
       // narrative: '',
       rank: 3,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Poison'],
     },
 
@@ -556,7 +556,7 @@ export const toxicology: MysticSphere = {
         You or a living \\glossterm{ally} you \\glossterm{touch} can remove a \\glossterm{condition}.
       `,
       rank: 3,
-      roles: ['cleanse'],
+      roles: ['cleanse', 'exertion'],
     },
 
     // Frightened by you is 2.1 EA, or 1.4 EA with move action removal, which is r1.

@@ -50,3 +50,8 @@ Reasoning: A typical sustain (minor) radius will hit the same target about twice
 
 Damage that only works on injured targets should be about +40% damage, which is roughly +2dr.
 If it deals one tick of damage then checks for another damage tick on injury, it scales poorly with extra damage, so it can get only -1dr (expected damage: 2x -1dr = 1.6x baseline)
+
+### Delayed damage
+
+Inescapably delayed damage gains +1dr.
+Escapably delayed damage, such as damage that happens one round later in a fixed area, gains +2dr as long as it is not enemies-only. If it is enemies-only, then it's functionally inescapably delayed damage, so it only gains +1dr.
