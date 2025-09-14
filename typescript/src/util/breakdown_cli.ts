@@ -8,7 +8,6 @@ interface Entity {
 export type TableOrientation = 'rowsAsGroups' | 'columnsAsGroups';
 
 export interface BreakdownConfig<E extends Entity, I, G extends string | number> {
-  additionalOptions?: (command: cli.Command) => void;
   entities: E[];
   entityTypePlural: string;
   entityTypeSingular: string;
@@ -29,15 +28,10 @@ export function run(config: BreakdownConfig<any, any, any>) {
       `Comma-separated list of ${config.entityTypePlural} to display`
     );
 
-  if (config.additionalOptions) {
-    config.additionalOptions(command);
-  }
-
   command.parse(process.argv);
   const options = command.opts();
 
   let groups = [...config.groups];
-  // sort is mutable
   groups.sort();
 
   if (config.processOptions) {
@@ -63,14 +57,25 @@ export function run(config: BreakdownConfig<any, any, any>) {
       : [...sortedEntities.map(e => e.name), 'Average'];
 
   if (options.chart) {
+    const groupsToShow = Object.entries(averageCounts)
+          .filter(([, count]) => count >= 1)
+          .map(([group]) => group);
+
     for (const entityName of entitiesToShowNames) {
       if (fullBreakdown[entityName]) {
-        printBarChart(
-          entityName,
-          fullBreakdown[entityName],
-          averageCounts,
-          config.groupType
+        let countsForChart = fullBreakdown[entityName];
+        const expandedCounts: Record<string, number> = {};
+        const entityGroupsWithCount = Object.keys(countsForChart).filter(
+          group => countsForChart[group] > 0
         );
+        const allGroups = new Set([...groupsToShow, ...entityGroupsWithCount]);
+
+        for (const group of allGroups) {
+          expandedCounts[group] = countsForChart[group] || 0;
+        }
+        countsForChart = expandedCounts;
+
+        printBarChart(entityName, countsForChart, averageCounts, config.groupType);
       }
     }
   } else {

@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+
+set sphere "$argv[1]"
+
+g rts
+tsc --incremental
+node src/scripts/maneuver_rank_breakdown.js --styles="$sphere" "$argv[2..]"
+echo ""
+node src/scripts/maneuver_role_breakdown.js --styles="$sphere" "$argv[2..]"
