@@ -152,7 +152,7 @@ export const flurryOfBlows: CombatStyle = {
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
       rank: 3,
-      roles: ['artillery'],
+      roles: ['clear'],
     },
 
     {
@@ -165,7 +165,7 @@ export const flurryOfBlows: CombatStyle = {
         exceptThat: 'the area increases to a \\medarea radius, and the strike deals triple damage.',
       },
       rank: 7,
-      roles: ['artillery'],
+      roles: ['clear'],
     },
 
     {

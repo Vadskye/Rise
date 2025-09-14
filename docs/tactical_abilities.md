@@ -92,7 +92,6 @@ There are four comparative strength contexts. Note that htese specifically refer
     * Short range: Not a downside since you are a good target for the boss
 * Inferiority + Swarm = Keepaway
   * Preferred effects:
-    * Artillery: Long-range AOE damage to contribute while staying out of danger
     * Barrier: Non-damaging walls to limit the swarm's mobility and set up choke points
     * Boon: Since you aren't good at attacking enemies, buffing allies can be more effective
     * Flash
@@ -120,7 +119,6 @@ There are four comparative strength contexts. Note that htese specifically refer
   * Turtle
 * Glass Cannon + Swarm = ARPG
   * Preferred effects:
-    * Artillery
     * Clear
     * Kite
   * Preferred costs:
