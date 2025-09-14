@@ -782,7 +782,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 2,
       roles: ['boon'],
-      scaling: 'damage',
     },
 
     {
