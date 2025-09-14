@@ -33,6 +33,8 @@
   "scripts": {
     "clean": "rm src/**/*.js",
     "script": "tsc --incremental && node -r tsconfig-paths/register",
+    "spell_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_rank_breakdown.js",
+    "spell_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_role_breakdown.js",
     "tap": "tsc --incremental && NODE_OPTIONS='--import tsx' tap",
     "test": "tsc --incremental && NODE_OPTIONS='--import tsx' tap"
   }
