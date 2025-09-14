@@ -43,29 +43,22 @@ tap.test('spell_rank_breakdown.ts', async t => {
 tap.test('spell_role_breakdown.ts', async t => {
   t.test('should output correct table for default arguments', async st => {
     const output = captureOutput(() => {
-      spellRoleBreakdownMain(false, false, []);
+      spellRoleBreakdownMain(false, []);
     });
     st.matchSnapshot(output, 'default output');
   });
 
   t.test('should output correct chart for --chart argument', async st => {
     const output = captureOutput(() => {
-      spellRoleBreakdownMain(false, true, []);
+      spellRoleBreakdownMain(true, []);
     });
     st.matchSnapshot(output, 'chart output');
   });
 
   t.test('should output correct table for --spheres argument', async st => {
     const output = captureOutput(() => {
-      spellRoleBreakdownMain(false, false, ['Pyromancy', 'Aeromancy']);
+      spellRoleBreakdownMain(false, ['Pyromancy', 'Aeromancy']);
     });
     st.matchSnapshot(output, 'spheres output');
-  });
-
-  t.test('should output correct table for --no-attune argument', async st => {
-    const output = captureOutput(() => {
-      spellRoleBreakdownMain(true, false, []);
-    });
-    st.matchSnapshot(output, 'no attune output');
   });
 });
