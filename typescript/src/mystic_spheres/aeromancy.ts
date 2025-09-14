@@ -19,6 +19,14 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
       `,
       roles: ['boon'],
+      // Most cantrips don't scale, but this is simple and falling damage also
+      // intrinsically matters less at higher levels, so this seems necessary to make it
+      // matter at all.
+      scaling: {
+        2: 'The distance reduction increases to 60 feet.',
+        4: 'The distance reduction increases to 90 feet.',
+        6: 'The distance reduction increases to 120 feet.',
+      },
     },
   ],
   spells: [
