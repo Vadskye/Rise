@@ -246,7 +246,7 @@ export const prayer: MysticSphere = {
         Two \\glossterm{allies} within \\medrange can each remove a \\glossterm{condition}.
       `,
       rank: 4,
-      roles: ['cleanse'],
+      roles: ['cleanse', 'exertion'],
     },
 
     // TODO: EA math
@@ -259,7 +259,7 @@ export const prayer: MysticSphere = {
         Each ally that removes a condition in this way increases its \\glossterm{fatigue level} by one.
       `,
       rank: 6,
-      roles: ['cleanse'],
+      roles: ['cleanse', 'exertion'],
     },
 
     {
@@ -318,7 +318,7 @@ export const prayer: MysticSphere = {
         Whenever it does, it increases its \\glossterm{fatigue level} by one.
       `,
       rank: 7,
-      roles: ['attune'],
+      roles: ['attune', 'exertion'],
       type: 'Attune (target)',
     },
 
@@ -365,7 +365,7 @@ export const prayer: MysticSphere = {
         Each target is \\shielded this round and regains 1d4 \\glossterm{hit points} +1 per \\glossterm{power}.
       `,
       rank: 2,
-      roles: ['healing', 'boon'],
+      roles: ['healing', 'boon', 'exertion'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
       tags: ['Swift'],
     },
@@ -379,7 +379,7 @@ export const prayer: MysticSphere = {
         exceptThat: 'the recovery increases to 1d6 plus 1d6 per 2 power.',
       },
       rank: 5,
-      roles: ['healing', 'boon'],
+      roles: ['healing', 'boon', 'exertion'],
       scaling: { special: 'The recovery increases by 2d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },
@@ -394,7 +394,7 @@ export const prayer: MysticSphere = {
         You and all \\glossterm{allies} within a \\largearea radius from you each regain 2d8 \\glossterm{hit points}.
       `,
       rank: 3,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       // This is very strong scaling because of the AOE nature of the spell; no need for
       // an empowered version of the spell.
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },

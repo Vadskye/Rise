@@ -34,7 +34,7 @@ export const channelDivinity: MysticSphere = {
         At the end of the next round, you become infused with divine power.
         This causes you to regain \\hprankfour, and you become \\glossterm{briefly} \\focused.
       `,
-      roles: ['focus', 'healing'],
+      roles: ['focus', 'healing', 'exertion'],
       rank: 4,
       scaling: 'healing',
       tags: [],

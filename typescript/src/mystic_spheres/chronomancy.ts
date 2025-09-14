@@ -420,7 +420,7 @@ export const chronomancy: MysticSphere = {
         If it loses any \\glossterm{hit points}, it ceases to exist.
       `,
       rank: 7,
-      roles: ['boon'],
+      roles: ['boon', 'exertion'],
     },
 
     {
@@ -477,7 +477,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
-      roles: ['cleanse'],
+      roles: ['cleanse', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -511,7 +511,7 @@ export const chronomancy: MysticSphere = {
         In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
       rank: 4,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -528,7 +528,7 @@ export const chronomancy: MysticSphere = {
         The creature increases its \\glossterm{fatigue level} by three for each vital wound removed in this way.
       `,
       rank: 7,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       type: 'Sustain (minor)',
     },
 
@@ -548,7 +548,7 @@ export const chronomancy: MysticSphere = {
 
         After you cast this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,
-      roles: ['focus'],
+      roles: ['focus', 'exertion'],
       rank: 7,
     },
 
@@ -668,7 +668,7 @@ export const chronomancy: MysticSphere = {
         This recovery is doubled for each consecutive round that you have cast this spell on the same target.
       `,
       rank: 2,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       // At rank 3, expected power is about 6. dr3 is 4.5+6 = 10.5 healing, and dr4 would
       // be 5.5+7 = 12.5 healing.
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
@@ -683,7 +683,7 @@ export const chronomancy: MysticSphere = {
         exceptThat: 'the recovery increases to 1d8 plus 1d8 per 3 power.',
       },
       rank: 5,
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
       tags: ['Swift'],
     },

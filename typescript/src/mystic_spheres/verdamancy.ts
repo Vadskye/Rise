@@ -654,7 +654,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       scaling: 'healing',
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Manifestation'],
     },
     {
@@ -666,7 +666,7 @@ export const verdamancy: MysticSphere = {
       },
       rank: 4,
       scaling: 'healing',
-      roles: ['healing'],
+      roles: ['healing', 'exertion'],
       tags: ['Manifestation'],
     },
     // Brief banishment is 3.0. Limited scope drops to r8, then cheat to get it to r7.
