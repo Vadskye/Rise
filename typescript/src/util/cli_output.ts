@@ -41,7 +41,7 @@ export function printBarChart(
     if (isNumeric) {
       return Number(a) - Number(b);
     }
-    return a < b ? -1 : a > b ? 1 : 0;
+    return a.localeCompare(b)
   });
 
   if (sortedEntries.length === 0) {
