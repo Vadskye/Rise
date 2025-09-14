@@ -1,4 +1,4 @@
-import { MysticSphere, Spell, BaseSpellLike } from '../mystic_spheres';
+import { MysticSphere, BaseSpellLike } from '../mystic_spheres';
 
 type Counts = Record<string, number>;
 type Breakdown = Record<string, Counts>;
@@ -36,9 +36,13 @@ export function printBarChart(
   averageCounts: Counts,
   label: string
 ): void {
-  const sortedEntries: [string, number][] = Object.entries(counts)
-    .filter(([, count]) => count > 0)
-    .sort(([a], [b]) => Number(a) - Number(b)); // Sort numerically for ranks, alphabetically for roles
+  const sortedEntries: [string, number][] = Object.entries(counts).sort(([a], [b]) => {
+    const isNumeric = !isNaN(Number(a)) && !isNaN(Number(b));
+    if (isNumeric) {
+      return Number(a) - Number(b);
+    }
+    return a < b ? -1 : a > b ? 1 : 0;
+  });
 
   if (sortedEntries.length === 0) {
     console.log(`
