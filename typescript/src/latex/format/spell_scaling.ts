@@ -4,6 +4,7 @@ const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;
 const healingRankPattern = /hprank(\w+)\b/;
 const healingRankLowPattern = /hprank(\w+)low\b/;
+const strikePattern = /\b[mM]ake.*\bstrike/
 
 export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>): string | null {
   if (!spell.scaling) {
@@ -14,6 +15,8 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
     return null;
   }
 
+  const makesAttack = spell.attack || (spell.effect && strikePattern.test(spell.effect));
+
   // Cantrips have no rank listed. They start their scaling from rank 1.
   const rank = spell.rank || 1;
 
@@ -21,10 +24,17 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
     if (containsDamageValue(spell)) {
       console.warn(`Spell ${spell.name} has accuracy scaling, but should probably have damage scaling`);
     }
+    // We currently can't easily check whether a functionsLike spell also makes an attack.
+    if (!(makesAttack || spell.functionsLike)) {
+      console.warn(`Spell ${spell.name} has accuracy scaling, but does not make an attack.`);
+    }
     return `The attack's \\glossterm{accuracy} increases by +1 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'double_accuracy') {
     if (containsDamageValue(spell)) {
       console.warn(`Spell ${spell.name} has double accuracy scaling, but should probably have damage scaling`);
+    }
+    if (!(makesAttack || spell.functionsLike)) {
+      console.warn(`Spell ${spell.name} has double accuracy scaling, but does not make an attack.`);
     }
     return `The attack's \\glossterm{accuracy} increases by +2 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'damage') {

@@ -770,17 +770,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Pour Time Sideways',
-
-      effect: `
-        You skip the next standard action you could take.
-        Then, in the following round, you can take two standard actions.
-      `,
-      rank: 2,
-      roles: ['focus'],
-    },
-
-    {
       name: 'Minor Timetheft',
 
       castingTime: 'One \\glossterm{free action}',
@@ -811,6 +800,20 @@ export const chronomancy: MysticSphere = {
         4: 'The maximum size increases to Large.',
         6: 'The maximum size increases to Huge.',
       },
+    },
+
+    // 0.8 EA
+    {
+      name: 'Pour Time Sideways',
+
+      effect: `
+        You are \\braced this round.
+        Next round, you are \\focused.
+        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+      `,
+      rank: 1,
+      roles: ['turtle', 'focus'],
+      tags: ['Swift'],
     },
   ],
 };

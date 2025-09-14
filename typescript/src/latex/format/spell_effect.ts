@@ -64,9 +64,9 @@ function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
   // false, which probably means the omission is intentional.
   if (isArea && dealsDamage && attack.missGlance === undefined && attack.miss === undefined) {
-    console.error(`Attack from ${effectName} should probably have missGlance = true`);
+    console.warn(`Attack from ${effectName} should probably have missGlance = true`);
   } else if (attack.missGlance && dealsDamage && !isArea) {
-    console.error(`Attack from ${effectName} should probably have missGlance = false`);
+    console.warn(`Attack from ${effectName} should probably have missGlance = false`);
   }
 }
 
