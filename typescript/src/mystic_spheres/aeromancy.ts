@@ -807,7 +807,24 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 2,
       roles: ['focus'],
-      scaling: 'accuracy',
+      type: 'Sustain (minor)'
+    },
+
+    {
+      name: 'Greater Building Tempest',
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, air loudly rushes around you.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\shielded and \\honed this round.
+          \\item Once: You are shielded and \\primed this round.
+          \\item Two or more times: You are \\primed this round and \\glossterm{briefly} shielded.
+        \\end{mdframedraggeditemize}
+      `,
+      // narrative: '',
+      rank: 6,
+      roles: ['focus'],
       type: 'Sustain (minor)'
     },
   ],
