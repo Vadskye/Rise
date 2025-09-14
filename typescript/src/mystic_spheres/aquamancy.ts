@@ -934,22 +934,5 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 6,
       roles: ['focus'],
     },
-    
-    {
-      name: 'Rising Tide',
-
-      effect: `
-        When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
-        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
-        \\begin{mdframedraggeditemize}
-          \\item Never: You are \\focused this round.
-          \\item Once: You are \\primed this round.
-          \\item Two or more times: You are primed and \\fortified this round.
-        \\end{mdframedraggeditemize}
-      `,
-      rank: 2,
-      roles: ['focus'],
-      type: 'Sustain (minor)'
-    },
   ],
 });
