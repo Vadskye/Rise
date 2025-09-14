@@ -90,11 +90,11 @@ pub fn traps() -> Vec<Tool> {
         ..trap("alchemy, metal")
     });
 
-    // TODO: Why dr2l specifically?
+    // TODO: Why dr1l specifically? This is priced assuming it's not consumable.
     traps.push(Tool {
         name: String::from("Caltrops"),
         rank: 2,
-        short_description: String::from("Deals $dr2l damage when stepped on"),
+        short_description: String::from("Deals $dr1l damage when stepped on"),
         description: String::from(r"
             A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest.
             As a standard action, you can scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
@@ -102,11 +102,19 @@ pub fn traps() -> Vec<Tool> {
             They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
 
             Whenever a creature moves into the area, unless the creature moves at half speed to avoid the danger, the caltrops make a $accuracy \glossterm<reactive attack> vs. Armor against the creature.
-            \hit $dr2l piercing damage.
+            \hit $dr1l piercing damage.
 
             Caltrops may not be effective against creatures with an unusual anatomy.
             Multiple applications of caltrops in the same area have no additional effect.
         "),
+        upgrades: vec![
+            ItemUpgrade::new(4, "Deals $dr3l damage when stepped on", "
+                The accuracy increases to $accuracy, and the damage increases to $dr3l.
+            "),
+            ItemUpgrade::new(6, "Deals $dr5l damage when stepped on", "
+                The accuracy increases to $accuracy, and the damage increases to $dr5l.
+            "),
+        ],
         ..trap("alchemy, metal")
     });
 
