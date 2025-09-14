@@ -94,7 +94,6 @@ export interface BaseSpellLike {
 // a unique ability that you can use as a standard action, it would have the roles
 // appropriate to that standard action ability.
 export const ABILITY_ROLES = [
-  'artillery', // Long-range AOE damage to contribute while staying out of danger
   'attune', // Buff that lasts as long as you stay attuned.
   'barrier', // Non-damaging walls to limit mobility and set up choke points
   'boon', // Brief or one-round combat-relevant effects on one or more allies, possibly including you. If the effect is not combat relevant, it should be 'narrative' instead.
