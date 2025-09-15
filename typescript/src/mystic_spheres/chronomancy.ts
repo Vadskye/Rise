@@ -769,6 +769,32 @@ export const chronomancy: MysticSphere = {
       roles: ['cleanse'],
     },
 
+    // This spends two standard actions to gain one standard action.
+    // It's usually bad, but good when combined with powerful buffs.
+    {
+      name: 'Pour Time Sideways',
+
+      effect: `
+        You skip the next standard action you could take.
+        Then, in the following round after you skip that action, you can take an extra standard action.
+      `,
+      rank: 2,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Greater Pour Time Sideways',
+
+      castingTime: 'One \\glossterm{minor action}',
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} \\slowed, and you skip the next standard action you could take.
+        Then, in the following round after you skip that action, you can take an extra standard action.
+      `,
+      rank: 6,
+      roles: ['focus'],
+    },
+
     {
       name: 'Minor Timetheft',
 
@@ -804,7 +830,7 @@ export const chronomancy: MysticSphere = {
 
     // 0.8 EA
     {
-      name: 'Pour Time Sideways',
+      name: 'Time Ebbs and Flows',
 
       effect: `
         You are \\braced this round.
@@ -812,6 +838,19 @@ export const chronomancy: MysticSphere = {
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
       `,
       rank: 1,
+      roles: ['turtle', 'focus'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Time Bends and Twists',
+
+      effect: `
+        You are \\braced this round.
+        Next round, you are \\primed.
+        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+      `,
+      rank: 7,
       roles: ['turtle', 'focus'],
       tags: ['Swift'],
     },
