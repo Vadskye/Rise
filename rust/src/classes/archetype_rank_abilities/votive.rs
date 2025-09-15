@@ -246,15 +246,15 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \abilityusagetime Standard action.
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
-                    You regain \\hprankthree.
+                    You regain \hprankthree.
                     In addition, you may remove a \glossterm{condition} affecting you.
                     This effect \glossterm{repeats} at the end of the current round.
 
                     \rankline
-                    \rank{4} The recovery increases to \\hprankfour.
-                    \rank{5} The recovery increases to \\hprankfive.
-                    \rank{6} The recovery increases to \\hpranksix.
-                    \rank{7} The recovery increases to \\hprankseven.
+                    \rank{4} The recovery increases to \hprankfour.
+                    \rank{5} The recovery increases to \hprankfive.
+                    \rank{6} The recovery increases to \hpranksix.
+                    \rank{7} The recovery increases to \hprankseven.
                 \end{magicalactiveability}
             ",
             modifiers: None,
