@@ -23,6 +23,19 @@ export const photomancy: MysticSphere = {
   ],
   spells: [
     {
+      name: 'Illuminating Beacon',
+
+      effect: `
+        A glowing light appears in midair in any location within \\distrange.
+        It creates \\glossterm{bright illumination} in a radius of your choice, up to a maximum of 60 feet, and \\glossterm{shadowy illumination} in twice that radius.
+        You can freely choose the color of the light, but it is unchanging once created.
+      `,
+      rank: 3,
+      roles: ['narrative'],
+      tags: ['Visual'],
+      type: 'Sustain (attuneable, minor)',
+    },
+    {
       name: 'Color Spray',
 
       // Dazzled as a condition is 1.8 EA, so r3. Limited scope and double defense means
