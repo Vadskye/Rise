@@ -99,7 +99,7 @@ pub fn traps() -> Vec<Tool> {
             A caltrop is a four-pronged iron spike crafted so that one prong faces up no matter how the caltrop comes to rest.
             As a standard action, you can scatter caltrops on the ground in the hope that your enemies step on them or are at least forced to slow down to avoid them.
             One 2-pound bag of caltrops covers a 5-foot square.
-            They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
+            They can generally be noticed with a \glossterm{difficulty value} 8 Awareness check.
 
             Whenever a creature moves into the area, unless the creature moves at half speed to avoid the danger, the caltrops make a $accuracy \glossterm<reactive attack> vs. Armor against the creature.
             \hit $dr1l piercing damage.
