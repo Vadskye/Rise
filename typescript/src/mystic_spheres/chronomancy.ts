@@ -87,7 +87,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{mundane} \\glossterm{strike} with a \\minus1 accuracy penalty using a single weapon.
+        Make a \\glossterm{mundane} \\glossterm{strike} with a \\minus1 accuracy penalty.
         You may reroll the accuracy roll and take the highest result.
       `,
       rank: 2,
@@ -104,21 +104,6 @@ export const chronomancy: MysticSphere = {
       `,
       rank: 5,
       roles: ['burst'],
-      scaling: 'accuracy',
-    },
-    {
-      name: 'Quicksilver Blitz',
-
-      effect: `
-        This spell has no \\glossterm{somatic components}.
-
-        Move up to your speed.
-        At the end of your movement, you can make a \\glossterm{mundane} \\glossterm{strike}.
-        If the strike is a melee strike, you gain a \\plus2 accuracy bonus.
-        Otherwise, you take a \\minus2 accuracy penalty.
-      `,
-      rank: 4,
-      roles: ['dive'],
       scaling: 'accuracy',
     },
     {
@@ -146,9 +131,8 @@ export const chronomancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{mundane} melee \\glossterm{strike} using a single weapon.
+        Make a \\glossterm{mundane} melee \\glossterm{strike}.
         You can reroll the attack roll up to four times, keeping the highest result.
-        Before rerolling, you can learn whether your result would be a hit or critical hit, but not the damage you would deal.
       `,
       rank: 4,
       roles: ['burst'],
@@ -157,26 +141,23 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Quicksilver Infinity',
 
+      cost: 'One \\glossterm{fatigue level}.',
       // `output [highest 1 of 5d[explode 1d10]]` has a mean of 11.5, or +6 accuracy.
       // Assuming a 6 hits, it gets a crit (16 or higher) 22% of the time.
       // Expected damage is 0.96 + 0.22 + 0.25 = 1.43x hit damage, x2 from double damage,
-      // x2 from reroll = 5.72x hit damage.
+      // x2 from two strikes = 5.72x hit damage.
       // A normal strike is 0.6 + 0.2 + 0.02 = 0.82x hit damage, but doubled (two standard
-      // actions) and tripled (normal rank 7 strike) and x1.25 (delayed effect) = 6.15x
-      // hit damage.
-      // That seems like a reasonable downgrade given that this combines better with
-      // buffs.
+      // actions) and tripled (normal rank 7 strike) = 4.92x hit damage.
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        When you cast this spell, it has no immediate effect.
-        Next round, you can spend a \\glossterm{standard action} to make two \\glossterm{mundane} melee \\glossterm{strikes} using a single weapon.
+        When you cast this spell, time begins to visibly twist and warp around you.
+        Next round, you can spend a \\glossterm{standard action} to make two \\glossterm{mundane} melee \\glossterm{strikes}.
         Each strike deals double damage.
-        You can reroll the attack roll for each strike up to four times, keeping the highest result.
-        Before rerolling, you can learn whether your result would be a hit or critical hit, but not the damage you would deal.
+        You can reroll the attack roll for the strike up to four times, keeping the highest result.
       `,
       rank: 7,
-      roles: ['burst'],
+      roles: ['burst', 'exertion'],
       scaling: 'accuracy',
     },
     {
@@ -302,13 +283,13 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Distant Accelerated Dodge',
 
-      // TODO: full EA math
+      // TODO: full EA math. What is sprint + total defense worth?
       effect: `
         You are \\braced this round.
-        In addition, you can move up to your \\glossterm{movement speed}.
+        In addition, you can move up to twice your \\glossterm{movement speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
@@ -424,43 +405,25 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Time Hop',
-
-      castingTime: 'minor action',
-      effect: `
-        Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        You send the target into the future, causing it to temporarily cease to exist.
-        When you cast this spell, you choose how many rounds the target ceases to exist for, up to a maximum of five rounds.
-        At the end of the last round, it reappears in the same location where it disappeared.
-
-        The area the target occupied can be physically crossed, but it is treated as an invalid destination for teleportation and other similar magic.
-        When the target reappears, all of its surroundings are adjusted as if the object had retroactively always existed in its space.
-        For example, if the location is occupied by a creature that walked into the area, the creature is relocated to the closest unoccupied space along the path it took to reach the target.
-      `,
-      rank: 2,
-      roles: ['boon'],
-      scaling: {
-        4: `The maximum size of the target increases to Large.`,
-        6: `The maximum size of the target increases to Huge.`,
-      },
-    },
-
-    {
       name: 'Temporal Stasis',
 
       castingTime: 'minor action',
       effect: `
-        Choose yourself or one Large or smaller \\glossterm{ally} within \\medrange.
-        The target is placed into stasis, rendering it unconscious.
-        While in stasis, it cannot take any actions and cannot be targeted, moved, damaged, or otherwise affected by outside forces in any way.
+        Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
+        The target is placed into stasis.
+        While in stasis, it cannot be targeted, moved, damaged, or otherwise affected in any way, and a creature is \\glossterm{unconscious}.
 
         % TODO: wording
         This effect normally lasts as long as you \\glossterm{sustain} it.
         Since releasing sustained effects is \\atSwift, it can attack and be attacked during the action phase when you release it from stasis.
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
-      rank: 4,
-      roles: ['attune'],
+      rank: 3,
+      roles: ['boon'],
+      scaling: {
+        5: `The maximum size of the target increases to Large.`,
+        7: `The maximum size of the target increases to Huge.`,
+      },
       type: 'Sustain (minor)',
     },
 
@@ -510,7 +473,7 @@ export const chronomancy: MysticSphere = {
         Unsealing the time lock causes the creature's hit points to become identical to the locked hit points.
         In addition, the creature increases its \\glossterm{fatigue level} by one.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['healing', 'exertion'],
       type: 'Sustain (minor)',
     },
@@ -747,7 +710,7 @@ export const chronomancy: MysticSphere = {
       name: 'Mighty Unstable Aging',
       attack: {
         hit: `
-          \\damageranksix.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against one living creature within \\medrange.
@@ -759,55 +722,33 @@ export const chronomancy: MysticSphere = {
       scaling: 'damage',
     },
 
-    {
-      name: 'Accelerated Expiration',
-
-      effect: `
-        You remove a \\glossterm{condition} of your choice.
-      `,
-      rank: 4,
-      roles: ['cleanse'],
-    },
-
-    // This spends two standard actions to gain one standard action.
-    // It's usually bad, but good when combined with powerful buffs.
+    // This spends a standard action to gain an extra minor action, kind of.
+    // Spending time in stasis an also be valuable; this is a strong escape effect.
     {
       name: 'Pour Time Sideways',
 
       effect: `
-        You skip the next standard action you could take.
-        Then, in the following round after you skip that action, you can take an extra standard action.
+        You are \\glossterm{briefly} locked in stasis.
+        While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
+        In the round after your stasis ends, you can take an extra \\glossterm{move action} during the movement phase and an extra \\glossterm{minor action} during the action phase.
       `,
       rank: 2,
       roles: ['focus'],
     },
 
+    // This spends a move action to relocate a standard action.
     {
       name: 'Greater Pour Time Sideways',
 
-      castingTime: 'One \\glossterm{minor action}',
-      cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} \\slowed, and you skip the next standard action you could take.
-        Then, in the following round after you skip that action, you can take an extra standard action.
+        You are \\glossterm{briefly} locked in stasis.
+        While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
+        In the round after your stasis ends, you can take an extra standard action during the action phase.
       `,
       rank: 6,
       roles: ['focus'],
     },
 
-    {
-      name: 'Minor Timetheft',
-
-      castingTime: 'One \\glossterm{free action}',
-      cost: BRIEF_COOLDOWN,
-      effect: `
-        You can take an additional \\glossterm{minor action} this round.
-        Then, in subsequent rounds, you skip the next two minor actions you could take.
-        You can choose whether to convert a standard action to a minor action for this purpose.
-      `,
-      rank: 3,
-      roles: ['focus'],
-    },
     {
       name: 'Timeseal',
 
