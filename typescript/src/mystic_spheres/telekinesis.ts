@@ -488,8 +488,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a melee \\glossterm{strike} using one weapon you hold in a single hand.
-        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
+        Make a \\magical melee \\glossterm{strike} using one weapon you hold in a single hand.
         The weapon flies out of your hand to strike at range, granting this strike the \\weapontag{Long} tag (see \\pcref{Weapon Tags}).
         It flies back into your hand after making the strike.
       `,
@@ -505,14 +504,29 @@ export const telekinesis: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        Make a \\glossterm{strike} using an arrow as if you were shooting it from a longbow.
+        Make a \\magical \\glossterm{strike} using an arrow as if you were shooting it from a longbow.
         As normal for a longbow, the strike's \\glossterm{weapon damage} is 1d6 \\add half your \\glossterm{power}, and your \\glossterm{range limits} with this strike are 90/270.
-        You use your \\glossterm{magical power} to determine your damage with the strike (see \\pcref{Power}).
 
         The arrow must be easily accessible on your person, such as in a quiver.
         You do not have to be proficient with bows, and you do not have to manually draw the arrow.
       `,
       rank: 2,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
+
+    // dr4 is 1.75dpp.
+    // Double longbow is 7 + 1dpp.
+    // That's... pretty close? More generally, a double damage strike at rank 5 is
+    // reasonable as a maneuver.
+    {
+      name: 'Mighty Mind Arrow',
+
+      functionsLike: {
+        name: 'mind arrow',
+        exceptThat: "the strike deals double damage.",
+      },
+      rank: 5,
       roles: ['burst'],
       scaling: 'accuracy',
     },
