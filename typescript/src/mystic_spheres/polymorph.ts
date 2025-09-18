@@ -637,7 +637,7 @@ export const polymorph: MysticSphere = {
           Choose one of the following tags: \\atAcid, \\atCold, \\atElectricity, or \\atFire.
           For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you breathe energy, you \\glossterm{briefly} cannot do so again.
+          After you make this attack, you \\glossterm{briefly} cannot do so again.
         `,
       },
       rank: 3,
@@ -660,35 +660,55 @@ export const polymorph: MysticSphere = {
     {
       name: 'Cripple',
 
-      // +1r for precast
+      // Ranged precast slow is 2.5 EA, or 3.5 EA with damage, or 1.7 EA with
+      // damage, which is r3, or r2 at close range.
+      attack: {
+        hit: `
+          \\damagerankfour, and the target's body deteriorates as a \\glossterm{condition}.
+          While it is \\glossterm{injured}, it is \\slowed.
+        `,
+        targeting: `
+          When you cast this spell, the flesh on your body writhes.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
+        `,
+      },
+      rank: 2,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Cripple',
+
+      // This can get +1.1 EA over regular cripple, which we fudge to get stunned
+      attack: {
+        hit: `
+          \\damageranknine, and any \\glossterm{extra damage} is doubled.
+          In addition, the target's body deteriorates as a \\glossterm{condition}.
+          While it is \\glossterm{injured}, it is \\slowed and \\stunned.
+        `,
+        targeting: `
+          When you cast this spell, the flesh on your body writhes.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against a creature within \\shortrange.
+        `,
+      },
+      rank: 6,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Crippling Wave',
+
+      // Precast ranged slow is r7, which we fudge to r6 with kind of limited scope
       attack: {
         crit: CONDITION_CRIT,
         hit: `
           The target's body deteriorates as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
+          While it is \\glossterm{injured}, it is \\slowed.
         `,
         targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
-        `,
-      },
-      rank: 3,
-      roles: ['maim'],
-      scaling: 'accuracy',
-    },
-
-    {
-      name: 'Efficient Cripple',
-
-      // +1r for precast, +1r for extra area scaling, +2r for brief effect
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          The target is \\glossterm{briefly} \\slowed.
-          In addition, its body deteriorates as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, it is \\slowed.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea cone from you.
         `,
       },
       rank: 6,
