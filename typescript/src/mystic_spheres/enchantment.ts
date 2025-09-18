@@ -667,5 +667,41 @@ export const enchantment: MysticSphere = {
       scaling: 'accuracy',
       type: 'Sustain (attuneable, standard)',
     },
+
+    // Reactive brief frighten is 1.2 EA. Deep r2 spell is ~1.6 EA, so we can increase the
+    // area.
+    {
+      name: 'Daunting Presence',
+
+      attack: {
+        hit: `
+          The target is \\glossterm{briefly} \\frightened by you.
+        `,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 2,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
+    },
+
+    // r5 attunement can give 1.2 EA
+    {
+      name: 'Efficient Daunting Presence',
+
+      functionsLike: {
+        name: 'daunting presence',
+        exceptThat: 'it is a normal attunement instead of a \\glossterm{deep attunement}.',
+      },
+      rank: 5,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune',
+    },
   ],
 };

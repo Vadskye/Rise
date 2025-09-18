@@ -297,42 +297,7 @@ export const channelDivinity: MysticSphere = {
       type: 'Attune',
     },
 
-    // Reactive brief frighten is 1.2 EA. Deep r2 spell is ~1.6 EA, so we can increase the
-    // area.
-    {
-      name: 'Daunting Presence',
-
-      attack: {
-        hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
-        `,
-        targeting: `
-          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-        `,
-      },
-      rank: 2,
-      roles: ['attune'],
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-      type: 'Attune (deep)',
-    },
-
-    // r5 attunement can give 1.2 EA
-    {
-      name: 'Efficient Daunting Presence',
-
-      functionsLike: {
-        name: 'daunting presence',
-        exceptThat: 'it is a normal attunement instead of a \\glossterm{deep attunement}.',
-      },
-      rank: 5,
-      roles: ['attune'],
-      scaling: 'accuracy',
-      tags: ['Emotion'],
-      type: 'Attune',
-    },
-
+    // TODO: scaling?
     {
       name: 'Faithful Endurance',
 
@@ -609,7 +574,8 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksix, and the target is \\stunned as a \\glossterm{condition}.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          In addition, the target is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
@@ -630,7 +596,8 @@ export const channelDivinity: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankten, and the target is \\stunned as a \\glossterm{condition}.
+          \\damagerankten, and any \\glossterm{extra damage} is tripled.
+          In addition, the target is \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
           When you cast this spell, you begin visibly glowing with divine power.
