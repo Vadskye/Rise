@@ -418,9 +418,9 @@ export const prayer: MysticSphere = {
     {
       name: 'Mighty Consecrated Blow',
       effect: `
-        Make a \\glossterm{strike}.
+        Make a \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Then, you are \\glossterm{briefly} \\fortified.
+        Then, you \\glossterm{briefly} gain a +2 bonus to your Mental defense.
       `,
       rank: 5,
       roles: ['burst'],
@@ -432,7 +432,20 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        You gain a +1 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{channel divinity} and \\sphere{prayer} \\glossterm{mystic spheres} that you are attuned to.
+        You gain a +2 \\glossterm{accuracy} bonus with the strike for each spell from the \\sphere{channel divinity} and \\sphere{prayer} \\glossterm{mystic spheres} that you are attuned to.
+      `,
+      rank: 3,
+      roles: ['burst'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Guide My Hand',
+
+      effect: `
+        Close your eyes and make a \\glossterm{strike}.
+        The strike ignores all \\glossterm{miss chances} and gains a \\plus1 accuracy bonus.
+        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
       `,
       rank: 2,
       roles: ['burst'],
@@ -447,7 +460,7 @@ export const prayer: MysticSphere = {
         name: 'exalted excision',
         exceptThat: 'the strike deals double damage.',
       },
-      rank: 6,
+      rank: 7,
       roles: ['burst'],
       scaling: 'accuracy',
     },
