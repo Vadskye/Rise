@@ -78,8 +78,9 @@ function calculateDieScaling(effect: string | undefined, damageOrHealing: 'damag
       'five': '2d8',
       'six': '3d8',
       'seven': '3d10',
-      'eight': '5d10',
-      'nine': '8d10',
+      'eight': '4d10',
+      'nine': '6d10',
+      'ten': '8d10',
     }[drLowMatches[1]];
 
     return damageBonusByRank;
@@ -99,6 +100,7 @@ function calculateDieScaling(effect: string | undefined, damageOrHealing: 'damag
       'seven': '2d10',
       'eight': '4d6',
       'nine': '4d8',
+      'ten': '4d10',
     }[drMatches[1]];
 
     return damageBonusByRank;

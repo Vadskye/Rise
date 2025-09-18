@@ -45,10 +45,26 @@ export const channelDivinity: MysticSphere = {
 
       effect: `
         At the end of the next round, you become infused with divine power.
-        This causes you to \\glossterm{briefly} gain a \\plus2 bonus to your Mental defense and are \\focused.
+        This causes you to \\glossterm{briefly} gain a \\plus2 bonus to your Mental defense and become \\focused.
       `,
       rank: 1,
       roles: ['focus', 'turtle'],
+      tags: [],
+    },
+
+    {
+      name: 'Restoration of the Faithful',
+
+      // -1d for delay, since this basically guarantees you will get good use from the
+      // healing
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        At the end of the next round, you become infused with divine power.
+        This causes you to regain \\hprankfour.
+      `,
+      roles: ['healing', 'exertion'],
+      rank: 2,
+      scaling: 'healing',
       tags: [],
     },
 
@@ -361,26 +377,6 @@ export const channelDivinity: MysticSphere = {
       type: 'Sustain (minor)',
     },
 
-    {
-      name: 'Banish Anathema',
-
-      // baseline is r3 due to +2 accuracy
-      attack: {
-        hit: `
-          If the target is \\glossterm{injured}, it \\glossterm{teleports} to a random safe place in the Astral Plane.
-          At the end of the next round, it teleports back to its original location, or into the closest open space if that location is occupied.
-          After it returns, it becomes immune to being teleported in this way until it finishes a \\glossterm{short rest}.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a +2 accuracy bonus if the target attacked you or one of your \\glossterm{allies} during the previous round.
-        `,
-      },
-      rank: 4,
-      roles: ['maim', 'stasis'],
-      scaling: 'accuracy',
-    },
-
     // TODO: Unclear EA
     {
       name: 'Unwavering Faith',
@@ -510,6 +506,141 @@ export const channelDivinity: MysticSphere = {
       rank: 1,
       roles: ['flash', 'generator'],
       scaling: 'accuracy',
+    },
+
+    // HP Banishment is 2 EA, so r4, or r3 with limited scope
+    {
+      name: 'Divine Interdiction',
+
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, an interdiction \\glossterm{briefly} divides it from everything outside itself.
+          No ability can have \\glossterm{line of effect} to or from it, even abilities that can pass pass through solid objects.
+          After the interdiction ends, the target becomes immune to this effect until it finishes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Mental against up to two creatures within \\medrange.
+        `,
+      },
+      rank: 3,
+      roles: ['stasis'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Sanctified Blade',
+
+      effect: `
+        Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
+        If you do, the strike deals 1d6 \\glossterm{extra damage}.
+        After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      // Weaker scaling than Enhance Magic -- Might because strikes double more quickly.
+      // TODO: actual scaling math
+      scaling: {
+        3: `The extra damage increases to 1d10.`,
+        5: `The extra damage increases to 2d8.`,
+        7: `The extra damage increases to 4d6.`,
+      },
+      type: 'Attune',
+    },
+
+    // Injury goad is 1.2 EA. This is probably too generous to also bundle brief dazzle?
+    {
+      name: "Champion's Blade",
+
+      attack: {
+        hit: `
+          The target is \\glossterm{briefly} \\goaded by you.
+          If it was \\glossterm{injured} by the strike, it is also goaded by you as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
+          If you do, make an attack vs. Mental against each creature hit by the strike.
+          After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
+        `,
+      },
+      rank: 5,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    // Injury dazzle is 0.7 EA. This is probably too generous to also bundle brief dazzle?
+    {
+      name: "Radiant Blade",
+
+      attack: {
+        hit: `
+          The target is \\glossterm{briefly} \\dazzled.
+          If it was \\glossterm{injured} by the strike, it is also dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
+          If you do, make an attack vs. Mental against each creature hit by the strike.
+          After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
+        `,
+      },
+      rank: 2,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    // +4a is 0.9 EA on ally
+    {
+      name: "Unerring Blade",
+
+      effect: `
+        Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
+        If you do, you gain a \\plus4 accuracy bonus with the strike.
+        After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
+      `,
+      rank: 3,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    // Stunned as a condition is 3 EA, or 4 EA with damage, so 2 EA as a double action.
+    // Expected damage for two debuff + damage spells would be 2x dr4. dr6 seems like a
+    // reasonable approximation.
+    {
+      name: 'Touch of God',
+
+      attack: {
+        hit: `
+          \\damageranksix, and the target is \\stunned as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, you begin visibly glowing with divine power.
+          Next round, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
+          When you do, make an attack vs. Mental against that creature.
+        `,
+      },
+      rank: 3,
+      roles: ['burst', 'softener'],
+      scaling: 'damage',
+    },
+    // We have an extra 0.8 EA available. Without doing proper math, that seems like we
+    // can increase the damage by +1dr.
+    // Expected damage for two debuff + damage spells would be 2x dr7. dr10 is almost
+    // exactly the same.
+    {
+      name: 'Mighty Touch of God',
+
+      attack: {
+        hit: `
+          \\damagerankten, and the target is \\stunned as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, you begin visibly glowing with divine power.
+          Next round, you can spend a \\glossterm{standard action} to \\glossterm{touch} a creature with a \\glossterm{free hand}.
+          When you do, make an attack vs. Mental against that creature.
+        `,
+      },
+      rank: 6,
+      roles: ['burst', 'softener'],
+      scaling: 'damage',
     },
   ],
 };
