@@ -791,7 +791,7 @@ export const chronomancy: MysticSphere = {
         Next round, you are \\primed.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
       `,
-      rank: 7,
+      rank: 6,
       roles: ['turtle', 'focus'],
       tags: ['Swift'],
     },
