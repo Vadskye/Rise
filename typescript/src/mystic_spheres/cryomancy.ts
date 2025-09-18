@@ -27,7 +27,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         If you have no \\glossterm{ice crystals}, you gain one ice crystal.
         If you have exactly one ice crystal, it does not melt this round.
       `,
-      roles: ['ramp'],
+      roles: ['focus'],
     },
   ],
   spells: [
@@ -472,26 +472,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       `,
       rank: 3,
       roles: ['mobility', 'generator'],
-      scaling: {
-        5: 'The range increases to \\medrange.',
-        7: 'The range increases to \\distrange.',
-      },
     },
-
-    // {
-    //   name: 'Bonechill',
-
-    //   attack: {
-    //     hit: `
-    //       \\damageranksix.
-    //       If the target loses \\glossterm{hit points}, it is \\immobilized as a \\glossterm{condition}.
-    //     `,
-    //     targeting: `
-    //       Make an attack vs. Fortitude against one creature within \\shortrange.
-    //     `,
-    //   },
-    //   rank: 7,
-    // },
 
     {
       name: 'Wall of Ice',
@@ -624,6 +605,117 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       roles: ['burst', 'maim', 'trip'],
       scaling: 'accuracy',
       tags: [],
+    },
+
+    // Brief + injury ranged slow is about 2.4 EA, so 3.4 EA with damage, so 1.7 EA as a
+    // double action, which is r3, or r2 at close range.
+    // Normal close range debuff damage would be dr2. Double is about dr4. Upgrade to dr5
+    // for the mandatory ice crystal cost.
+    {
+      name: 'Bonechill',
+
+      cost: 'One \\glossterm{ice crystal}.',
+      attack: {
+        hit: `
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          In addition, the target is \\glossterm{briefly} \\slowed.
+        `,
+        injury: `
+          The target is slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, ice forms on your body and the air chills around you.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+        `,
+      },
+      rank: 2,
+      roles: ['burst', 'softener', 'maim'],
+      scaling: 'damage',
+    },
+
+    // Ranged slow is 5.2 EA, or 6.2 EA with damage. This is short range and requires an
+    // ice crystal, so we fudge that to 5.6 EA. As a double action, that's 2.8 EA, which
+    // is r7 with limited scope.
+    {
+      name: 'Mighty Bonechill',
+
+      cost: 'One \\glossterm{ice crystal}.',
+      attack: {
+        hit: `
+          \\damagerankten, and any \\glossterm{extra damage} is tripled.
+          In addition, the target is \\slowed as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, ice forms on your body and the air chills around you.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+        `,
+      },
+      rank: 7,
+      roles: ['burst', 'softener'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Creeping Frost',
+
+      // Call it a r1 area, so drX. -1dr for extra area that almost never matters is
+      // painful, so also give a delayed ice crystal.
+      attack: {
+        hit: `
+          \\damageranktwo.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line from you.
+          During your next action, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.
+          At the end of that round, you gain an \\glossterm{ice crystal}.
+        `,
+      },
+      rank: 2,
+      roles: ['clear', 'generator'],
+    },
+
+    {
+      name: 'Mighty Creeping Frost',
+
+      functionsLike: {
+        name: 'creeping frost',
+        exceptThat: 'the damage increases to \\damagerankfive.',
+      },
+      rank: 5,
+      roles: ['clear', 'generator'],
+    },
+
+    {
+      name: 'Ice Shield',
+
+      // Double shield is 0.6 EA. Adding a round of empowered is +0.4 EA, so 1 EA, which
+      // is fine for an optional ice crystal.
+      cost: OPTIONAL_ICE_CRYSTAL,
+      effect: `
+        You are \\glossterm{briefly} \\shielded.
+        If you spent an ice crystal, you are also briefly \\empowered.
+        Because this ability has the \\abilitytag{Swift} tag, this protects you from attacks during the current phase.
+      `,
+      rank: 1,
+      roles: ['focus', 'turtle'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Ice Shield',
+
+      // Double shield is 0.6 EA. Adding a round of maximized is +0.7 EA, so 1.3 EA, which
+      // is fine for an optional ice crystal.
+      cost: OPTIONAL_ICE_CRYSTAL,
+      effect: `
+        You are \\glossterm{briefly} \\shielded.
+        If you spent an ice crystal, you are also briefly \\maximized.
+        Because this ability has the \\abilitytag{Swift} tag, this protects you from attacks during the current phase.
+      `,
+      rank: 6,
+      roles: ['focus', 'turtle'],
+      tags: ['Swift'],
     },
   ],
 });
