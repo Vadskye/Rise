@@ -55,3 +55,10 @@ If it deals one tick of damage then checks for another damage tick on injury, it
 
 Inescapably delayed damage gains +1dr.
 Escapably delayed damage, such as damage that happens one round later in a fixed area, gains +2dr as long as it is not enemies-only. If it is enemies-only, then it's functionally inescapably delayed damage, so it only gains +1dr.
+
+### Delayed double standard action
+This category of ability has no immediate effect, and allows you to make a special attack with a standard action next round.
+
+Delayed damage normally deals +1d, but that assumes that you're making an attack on an active target, so it doesn't allow precombat usage. This type of effect can be used precombat, which is dangerous. It also scales unusually well with buffs or single-ability enhancements.
+
+Therefore, this type of ability doesn't get the +1d delayed damage modifier, and it simply deals double damage relative to a single attack. In addition, it must have no longer than short range to make it more difficult to initiate combat with it.
