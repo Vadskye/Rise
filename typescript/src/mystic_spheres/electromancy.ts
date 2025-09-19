@@ -342,7 +342,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Magnetic Blade',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{vstrikes} you make using \\glossterm{metallic} weapons against metallic targets.
+        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
       rank: 2,
       roles: ['attune'],
