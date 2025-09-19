@@ -597,5 +597,26 @@ export const revelation: MysticSphere = {
       roles: ['maim'],
       scaling: 'accuracy',
     },
+
+    {
+      name: "Behold the Lurking Danger",
+
+      effect: `
+        All \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+      `,
+      rank: 4,
+      roles: ['boon'],
+    },
+
+    // 1.2 EA for "all except you"
+    {
+      name: "Behold the Narrow Path",
+
+      effect: `
+        All \\glossterm{allies} within a \\largearea radius from you are \\honed this round.
+      `,
+      rank: 7,
+      roles: ['boon'],
+    },
   ],
 };
