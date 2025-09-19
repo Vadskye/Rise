@@ -8,22 +8,24 @@ By EA:
   Accuracy (+1)  & 0.1  & 0.2  & 0.3     & 0.4 \\
   Accuracy (+2)  & 0.3  & 0.5  & 0.8     & 1.1 \\
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
-  Braced         & 0.4  & 0.6  & 1.0     & 1.3 \\
+  Braced         & 0.4  & 0.6  & 1.0     & 1.4 \\
   Empowered      & 0.4  & 0.6  & 1.0     & 1.4 \\
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
   Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
-  Impervious     & 1.1  & 1.7  & inf     & inf \\
-  Half damage    & 0.7  & 1.0  & 1.5     & inf \\
+  Impervious     & 1.1  & no   & inf     & inf \\
+  Half damage    & 0.7  & no   & 1.5     & 2.1 \\
   Honed          & 0.4  & 0.6  & 1.0     & 1.4 \\
-  Maximized      & 0.7  & 1.0  & 1.8     & inf \\
-  Primed         & 0.8  & 1.2  & 2       & inf \\
+  Maximized      & 0.7  & no   & 1.8     & 2.8 \\
+  Primed         & 0.8  & no   & 2.0     & 3.2 \\
   Shielded       & 0.3  & 0.5  & 0.7     & 1.0 \\
   +4 defenses    & 0.9  & 1.4  & inf     & inf \\
   Single defense & 0.3  & 0.5  & 0.7     & 1.0 \\
   Steeled        & 0.2  & 0.3  & 0.5     & 0.6 \\
 ```
 "You and all adjacent" can be used instead of "any two in Medium range".
+
+"all except you" is halfway between "All" and "Any two".
 
 Delaying a defensive buff upgrades it to the "ally" column since it can be combined with other effects or prebuffed before a fight.
 
@@ -278,8 +280,8 @@ Also, low-rank buff effects could be tied to damage or other benefits which don'
 Buff-stacking is fairly dangerous. If it's easy to make one person primed + maximized, that will simply be better than using those abilities independently on anyone else, because they are both separately multiplicative. To a lesser extent, it's also easier to optimize targeted buffs with splitting, chaining, and so on. This has two main effects:
 
 * Self-buffs use their listed EA, while buffs used on other creatures cost +50% EA.
-* All buffs worth 0.7 EA or higher must be self-only in all cases.
-  * This specifically affects braced, maximized, and primed
+* All buffs worth 0.7 EA or higher must be self-only or universal, but not individually targeted on allies
+  * This specifically affects half damage, maximized, and primed
 
 ### Cleansing conditions
 

@@ -993,5 +993,17 @@ export const fabrication: MysticSphere = {
       scaling: 'damage',
       tags: ['Fire', 'Manifestation', 'Sustain (minor)'],
     },
+
+    {
+      name: "Omnishield",
+
+      effect: `
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
+      `,
+      rank: 4,
+      roles: ['boon', 'turtle'],
+      tags: ['Swift'],
+    },
   ],
 };

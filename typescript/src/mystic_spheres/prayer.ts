@@ -142,29 +142,34 @@ export const prayer: MysticSphere = {
       tags: ['Swift'],
     },
 
+    // All half damage is 2.1 EA
     {
       name: 'Boon of Invulnerability',
 
       // 1 EA on an ally
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target takes half damage from all sources this round.
-        Because this ability has the \\abilitytag{Swift} tag, it affects all damage the target takes during the current phase.
+        When you cast this spell, a holy light emanates fro you like a torch.
+        Illuminated objects seem more solid and secure.
+        Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
+        Each target takes half damage from all effects.
+        This is a \\atSwift effect, so it protects each target from attacks during that phase.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['boon'],
-      tags: ['Swift'],
+      tags: ['Swift (see text)'],
     },
 
-    // No reason why this is rank 5 instead of rank 4 except that maximized seems scary
+    // Any two maximized is 1.8 EA
     {
       name: 'Boon of Annihilation',
 
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target is \\maximized this round.
+        When you cast this spell, a holy light emanates from you like a torch.
+        The light casts sharp and dangerous-looking shadows.
+        Next round, you can spend a standard action to choose two \\glossterm{allies} within \\medrange.
+        Each target is \\maximized this round.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['boon'],
       tags: [],
     },
