@@ -732,20 +732,21 @@ export const chronomancy: MysticSphere = {
       effect: `
         You are \\glossterm{briefly} locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you can take an extra \\glossterm{move action} during the movement phase and an extra \\glossterm{minor action} during the action phase.
+        In the round after your stasis ends, you can take an extra \\glossterm{move action} during the \\glossterm{movement phase} and an extra \\glossterm{minor action} during the \\glossterm{action phase}.
       `,
       rank: 2,
       roles: ['focus'],
     },
 
-    // This spends a move action to relocate a standard action.
+    // This spends two move actions to relocate a standard action.
     {
       name: 'Greater Pour Time Sideways',
 
       effect: `
         You are \\glossterm{briefly} locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you can take an extra standard action during the action phase.
+        In the round after your stasis ends, you cannot take any actions during the \\glossterm{movement phase}.
+        However, you can take an extra standard action during that round's \\glossterm{action phase}.
       `,
       rank: 6,
       roles: ['focus'],

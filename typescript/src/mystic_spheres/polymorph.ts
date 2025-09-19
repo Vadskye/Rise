@@ -701,7 +701,7 @@ export const polymorph: MysticSphere = {
       tags: ['Swift'],
     },
 
-    // Ally empower is 0.6 EA. Long is about +1, so about 0.2 EA.
+    // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.
     {
       name: 'Extended Sinews',
 
@@ -715,14 +715,14 @@ export const polymorph: MysticSphere = {
       tags: ['Swift'],
     },
 
+    // Any two empower is 1 EA, and any two accuracy is about 0.3 EA.
     {
       name: 'Greater Extended Sinews',
 
-      effect: `
-        Choose yourself or one \\glossterm{ally} within \\medrange.
-        This round, the target is \\maximized and all of its melee \\glossterm{strikes} gain the \\atLong \\glossterm{weapon tag}.
-        If you choose yourself, the effect lasts \\glossterm{briefly}.
-      `,
+      functionsLike: {
+        name: 'extended sinews',
+        exceptThat: 'you can choose up to two targets from among yourself and your \\glossterm{allies} within \\medrange.',
+      },
       rank: 7,
       roles: ['boon'],
       tags: ['Swift'],
