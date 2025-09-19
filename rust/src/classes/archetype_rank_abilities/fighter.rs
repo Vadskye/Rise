@@ -376,7 +376,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Your \glossterm{enemies} move at half speed while within a \smallarea radius \glossterm{emanation} from you.
+                Your Huge or smaller \glossterm{enemies} move at half speed while within a \smallarea radius \glossterm{emanation} from you.
                 This does not affect creatures who are moving in a straight line directly towards you.
                 It also has no effect on enemies that are able to move through your space freely, such as \trait{incorporeal} or very large creatures.
             ",
@@ -388,7 +388,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you.
+                The area affected by this ability increases to a \medarea radius \glossterm{emanation} from you, and the maximum size category increases to Gargantuan.
             ",
             modifiers: None,
         },
