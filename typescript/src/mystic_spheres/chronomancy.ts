@@ -357,6 +357,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} with a \\minus2 accuracy penalty.
+        All \\glossterm{extra damage} does not apply to this strike.
       `,
       rank: 4,
       roles: ['attune'],
@@ -369,6 +370,7 @@ export const chronomancy: MysticSphere = {
 
       effect: `
         As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        All \\glossterm{extra damage} does not apply to this strike.
       `,
       rank: 7,
       roles: ['attune'],
