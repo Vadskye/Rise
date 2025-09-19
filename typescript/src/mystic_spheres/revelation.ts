@@ -68,7 +68,7 @@ export const revelation: MysticSphere = {
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
-      roles: ['focus'],
+      roles: ['turtle'],
       tags: ['Subtle', 'Swift'],
     },
 
@@ -79,7 +79,7 @@ export const revelation: MysticSphere = {
         At the start of the next round, you become \\glossterm{briefly} \\braced.
       `,
       rank: 5,
-      roles: ['focus'],
+      roles: ['turtle'],
       tags: ['Subtle'],
     },
 
@@ -89,7 +89,7 @@ export const revelation: MysticSphere = {
       effect: `
         You become \\glossterm{briefly} \\primed.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -100,7 +100,7 @@ export const revelation: MysticSphere = {
       effect: `
         At the end of the next round, you become \\primed during the following round.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -578,6 +578,24 @@ export const revelation: MysticSphere = {
       roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (standard)',
+    },
+
+    {
+      name: "Blinding Visions",
+
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, it becomes \\blinded as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, visions of possible futures visibly cloud around you.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Mental against up to two creatures within \\shortrange.
+        `,
+      },
+
+      rank: 2,
+      roles: ['maim'],
+      scaling: 'accuracy',
     },
   ],
 };

@@ -80,34 +80,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Consume Flame',
-
-      effect: `
-        Choose a Small or larger \\glossterm{mundane} fire within \\medrange.
-        You draw power from the fire, causing you to be \\glossterm{briefly} \\maximized.
-        Then, if that fire is Medium or smaller, it is extinguished.
-
-        As normal, eight objects of one size category are equivalent to one object of a larger size category, so you could siphon eight Tiny torch flames instead of a Small campfire.
-        When you combine sources of fire in this way, they use their true size for determining whether they are extinguished.
-      `,
-      rank: 2,
-      roles: ['focus'],
-    },
-
-    {
-      name: 'Consume Bonfire',
-
-      functionsLike: {
-        name: 'consume flame',
-        exceptThat:
-          'if the fire was Large or larger, your damaging attacks also \\glossterm{briefly} deal 2d8 \\glossterm{extra damage}.',
-      },
-      rank: 6,
-      roles: ['focus'],
-    },
-
-    {
-      name: 'Building Flame',
+      name: 'Stoke the Fires',
 
       // This has the damage of a r0 spell because of the buff
       attack: {
@@ -126,7 +99,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Intense Building Flame',
+      name: 'Stoke the Bonfire',
 
       // This has the damage of a r4 spell because of the pre-damage buff
       attack: {
@@ -279,10 +252,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Fireball',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Reflex against everything in a \\tinyarea radius within \\shortrange.
         `,
       },
 
@@ -295,10 +268,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Split Fireball',
 
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in each of two separate \\smallarea radius areas within \\shortrange.
+          Make an attack vs. Reflex against everything in each of two separate \\tinyarea radius areas within \\shortrange.
           If the areas overlap, you still only make one attack against creatures in the overlapping area.
         `,
       },
@@ -332,17 +305,17 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
           If a creature takes a \\glossterm{vital wound} from this damage that leaves it unconscious, its body is completely destroyed by flame.
           Only a pile of ashes remains.
           An immolated creature's equipment is unaffected.
         `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against everything in a \\smallarea radius within \\medrange.
+          Make an attack vs. Reflex against everything in a \\tinyarea radius within \\shortrange.
         `,
       },
-      rank: 7,
+      rank: 6,
       roles: ['clear'],
       scaling: 'damage',
     },
@@ -565,7 +538,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Flame Aura',
 
       attack: {
-        hit: `\\damagerankzero.`,
+        hit: `\\damagerankzero, and all \\glossterm{extra damage} does not apply.`,
         missGlance: true,
         targeting: `
           Heat constantly radiates in a \\smallarea radius emanation from you.
@@ -611,7 +584,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     },
 
     {
-      name: 'Mighty Flame Blade',
+      name: 'Greater Flame Blade',
 
       // One rank behind weapon / ahead of apparel?
       functionsLike: {
@@ -734,19 +707,20 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Kindled Fireburst',
 
-      // So this should be written as a rank 7 spell with the same accuracy bonus.
+      // So this should be written as a rank 6 spell with the same accuracy bonus.
       functionsLike: {
         name: 'kindled fireburst',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       narrative: `
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['burst', 'combo'],
       scaling: 'damage',
     },
 
+    // TODO: define EA of flight
     {
       name: 'Wings of the Phoenix',
 
@@ -931,6 +905,37 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       rank: 6,
       roles: ['burn'],
       scaling: 'damage',
+    },
+
+    {
+      name: 'Fire Shield',
+
+      // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
+      // It's not clear exactly how much empowered is worth vs guaranteed damage.
+      attack: {
+        hit: `\\damagerankone.`,
+        targeting: `
+          You are \\glossterm{briefly} \\empowered.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+        `,
+      },
+      roles: ['generator', 'retaliate'],
+      rank: 1,
+      scaling: 'damage',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Mighty Fire Shield',
+
+      functionsLike: {
+        name: 'fire shield',
+        exceptThat: 'the damage increases to \\damagerankfive.',
+      },
+      roles: ['generator', 'retaliate'],
+      rank: 5,
+      scaling: 'damage',
+      tags: ['Swift'],
     },
   ],
 });

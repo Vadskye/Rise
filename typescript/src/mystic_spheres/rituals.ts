@@ -407,7 +407,7 @@ export const rituals: Ritual[] = [
     spheres: ['Aquamancy', 'Revelation'],
   },
   {
-    name: 'Learn to Swim',
+    name: 'Fins',
 
     castingTime: 'one minute',
     effect: `
@@ -421,6 +421,22 @@ export const rituals: Ritual[] = [
     type: 'Attune (target)',
     spheres: ['Aquamancy', 'Polymorph'],
   },
+  {
+    name: 'Spider Climb',
+
+    castingTime: 'one minute',
+    effect: `
+      Choose up to six ritual participants.
+      Each target gains a slow \\glossterm{climb speed}.
+      If it already has a slow climb speed, it gains an average climb speed instead.
+    `,
+    // narrative: '',
+    rank: 2,
+    roles: ['attune'],
+    type: 'Attune (target)',
+    spheres: ['Aquamancy', 'Polymorph'],
+  },
+
   {
     name: 'Interplanar Gate',
     rank: 7,

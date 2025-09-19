@@ -784,7 +784,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        This round, the target is gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
+        This round, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
         If you choose yourself, the effect lasts \\glossterm{briefly}.
       `,
       // narrative: '',

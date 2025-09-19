@@ -157,7 +157,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       cost: OPTIONAL_ICE_CRYSTAL,
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Armor and Fortitude against something within \\medrange.

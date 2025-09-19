@@ -251,72 +251,13 @@ export const polymorph: MysticSphere = {
           \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
             If you already have a slow climb speed, your climb speed becomes average instead.
           \\item You do not need hands to climb.
-          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
-          \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
+          \\item You gain a +4 \\glossterm{enhancement bonus} to the Flexibility skill.
+          \\item You treat your size as being one size category smaller than normal for the purpose of squeezing into spaces too small to normally fit you (see \\pcref{Squeezing}).
         \\end{raggeditemize}
-
-        You can suppress or resume this effect as a \\glossterm{free action} once per round.
       `,
       rank: 3,
-      roles: ['attune'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Spikeform',
-
-      attack: {
-        hit: `\\damagerankone.`,
-        targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
-        `,
-      },
-      narrative: `
-        Your body grows large spikes that impale creatures who attack you.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      scaling: 'damage',
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Mighty Spikeform',
-
-      attack: {
-        hit: `\\damagerankfive.`,
-        targeting: `
-          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
-        `,
-      },
-      narrative: `
-        Your body grows large spikes that impale creatures who attack you.
-      `,
-      rank: 5,
-      roles: ['attune'],
-      scaling: 'damage',
-      type: 'Attune (deep)',
-    },
-
-    // r4 minor action attack is normally dr0.
-    // All adjacent enemies is r0, so drX+1, so total damage is dr1.
-    {
-      name: 'Extruding Spikes',
-
-      attack: {
-        hit: `\\damagerankone.`,
-        missGlance: true,
-        targeting: `
-          As a \\glossterm{minor action}, you can extend spikes to make an attack vs. Armor against all \\glossterm{enemies} adjacent to you.
-        `,
-      },
-      narrative: `
-        Your body grows small spikes that you can consciously extrude to impale nearby foes.
-      `,
-      rank: 4,
-      roles: ['attune'],
-      scaling: 'damage',
-      type: 'Attune (deep)',
+      roles: ['mobility'],
+      type: 'Sustain (standard)',
     },
 
     {
@@ -438,99 +379,6 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Vital Regeneration',
-
-      cost: 'See text.',
-      effect: `
-        At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
-        It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
-        For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
-      `,
-      rank: 5,
-      roles: ['attune', 'exertion'],
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Regeneration',
-
-      effect: `
-        At the end of each round, you regain hit points equal to half your \\glossterm{power}.
-      `,
-      rank: 3,
-      roles: ['healing'],
-      scaling: { special: 'The healing increases by 2 for each rank beyond 3.' },
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Greater Regeneration',
-
-      effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add your \\glossterm{power}.
-      `,
-      rank: 5,
-      roles: ['healing'],
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Supreme Regeneration',
-
-      effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add 1d8 per 2 \\glossterm{power}.
-      `,
-      rank: 7,
-      roles: ['healing'],
-      type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Physical Enhancement',
-
-      effect: `
-        When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
-        You gain a +2 \\glossterm{enhancement bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, you gain a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining your weight limits (see \\pcref{Weight Limits}).
-      `,
-      rank: 2,
-      roles: ['attune'],
-      scaling: {
-        4: `The bonus to checks increases to +3.`,
-        6: `The bonus to checks increases to +4.`,
-      },
-      type: 'Attune',
-    },
-
-    {
-      name: 'Mass Physical Enhancement',
-
-      functionsLike: {
-        mass: true,
-        name: 'Physical Enhancement',
-      },
-      // narrative: '',
-      rank: 4,
-      roles: ['attune'],
-      scaling: {
-        6: 'The bonus to checks increases to +3.',
-      },
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Scent',
-
-      effect: `
-        You gain the \\trait{scent} trait, which reduces the \\glossterm{difficulty value} of scent-based Awareness checks by 10 (see \\pcref{Awareness}).
-      `,
-      rank: 3,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
       name: 'Bleed',
 
       attack: {
@@ -546,7 +394,7 @@ export const polymorph: MysticSphere = {
         `,
       },
       rank: 1,
-      roles: ['burn'],
+      roles: ['burn', 'execute'],
       scaling: 'damage',
     },
 
@@ -555,10 +403,10 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'bleed',
-        exceptThat: 'both damage instances increase to \\damagerankfive.',
+        exceptThat: 'both damage instances increase to \\damagerankfive, and \\glossterm{extra damage} on the initial hit is doubled.',
       },
       rank: 4,
-      roles: ['burn'],
+      roles: ['burn', 'execute'],
       scaling: 'damage',
     },
 
@@ -574,6 +422,7 @@ export const polymorph: MysticSphere = {
       type: 'Attune',
     },
 
+    // TODO: define EA of special senses
     {
       name: 'Draconic Senses',
 
@@ -581,31 +430,7 @@ export const polymorph: MysticSphere = {
         You gain \\trait{darkvision} with a 60 foot radius, \\trait{low-light vision}, and \\trait{blindsense} with a 30 foot radius.
         If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
       `,
-      rank: 4,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Swimmer',
-
-      effect: `
-        You gain a slow \\glossterm{swim speed} (see \\pcref{Swimming}).
-        If you already have a slow swim speed, you gain an average swim speed instead.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
-      name: 'Climber',
-
-      effect: `
-        You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
-        If you already have a slow climb speed, you gain an average climb speed instead.
-      `,
-      rank: 2,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -619,31 +444,6 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['attune'],
       type: 'Attune',
-    },
-
-    // The sustain mechanic is designed to force you to be consistent about your choice of
-    // breath weapon within a single fight. It doesn't directly affect the power level of
-    // the breath, since it doesn't have to cost attunement.
-    {
-      name: 'Dragon Breath',
-
-      attack: {
-        hit: `
-          \\damageranktwo.
-          The damage is of the chosen type.
-        `,
-        missGlance: true,
-        targeting: `
-          Choose one of the following tags: \\atAcid, \\atCold, \\atElectricity, or \\atFire.
-          For the duration of this spell, you can breath that type of energy like a dragon as a standard action.
-          When you do, make an attack vs. Reflex against everything within a \\largearea cone from you.
-          After you make this attack, you \\glossterm{briefly} cannot do so again.
-        `,
-      },
-      rank: 3,
-      roles: ['clear'],
-      scaling: 'damage',
-      type: 'Sustain (attuneable, minor)',
     },
 
     {
@@ -816,27 +616,6 @@ export const polymorph: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
     {
-      name: 'Armblade',
-
-      effect: `
-        When you cast this spell, you choose a weapon you are proficient with.
-        One of your \\glossterm{free hands} shapeshifts into that weapon.
-
-        The weapon functions like an ordinary manufactured weapon, with two exceptions.
-        First, it cannot leave your body, so you cannot throw it or drop it.
-        Second, you can treat it as a \\glossterm{natural weapon}, a \\glossterm{manufactured weapon}, or both, depending on what is more beneficial for you.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        2: `
-          The weapon can be made of any special material other than cold iron and silver (see \\pcref{Weapon Special Materials}).
-          The rank of the special material cannot exceed your spellcasting rank with this spell.
-        `,
-      },
-      type: 'Attune',
-    },
-    {
       name: 'Form of the Snake',
 
       effect: `
@@ -846,7 +625,7 @@ export const polymorph: MysticSphere = {
         You cannot speak and have no \\glossterm{free hands}, but you do not need hands to climb.
       `,
       rank: 2,
-      roles: ['narrative'],
+      roles: ['attune'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
     },
@@ -860,7 +639,7 @@ export const polymorph: MysticSphere = {
         You also gain the \\trait{scent} ability.
       `,
       rank: 3,
-      roles: ['narrative'],
+      roles: ['attune'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
     },
@@ -869,14 +648,66 @@ export const polymorph: MysticSphere = {
 
       effect: `
         You \\glossterm{shapeshift} into a Small raven.
-        As a raven, you have a 30 foot \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
+        As a raven, you have an average \\glossterm{fly speed} with a \\glossterm{height limit} of 60 feet (see \\pcref{Flight}).
         You cannot speak and have no \\glossterm{free hands}.
         You are also unable to take any standard action other than \\glossterm{movement}.
       `,
       rank: 5,
-      roles: ['narrative'],
+      roles: ['attune'],
       tags: [],
       type: 'Sustain (attuneable, minor)',
+    },
+
+    // 0.4 + 2 * 0.2 EA
+    {
+      name: 'Sudden Jellification',
+
+      effect: `
+        You are \\braced this round and \\glossterm{briefly} \\steeled.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+      `,
+      rank: 1,
+      roles: ['turtle'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Sudden Jellification',
+
+      effect: `
+        You are \\glossterm{briefly} \\steeled and \\braced.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+      `,
+      rank: 6,
+      roles: ['turtle'],
+      tags: ['Swift'],
+    },
+
+    // Ally empower is 0.6 EA. Long is about +1, so about 0.2 EA.
+    {
+      name: 'Extended Sinews',
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        This round, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\atLong \\glossterm{weapon tag}.
+        If you choose yourself, the effect lasts \\glossterm{briefly}.
+      `,
+      rank: 2,
+      roles: ['boon'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Extended Sinews',
+
+      effect: `
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        This round, the target is \\maximized and all of its melee \\glossterm{strikes} gain the \\atLong \\glossterm{weapon tag}.
+        If you choose yourself, the effect lasts \\glossterm{briefly}.
+      `,
+      rank: 7,
+      roles: ['boon'],
+      tags: ['Swift'],
     },
   ],
 };

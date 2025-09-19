@@ -704,5 +704,35 @@ export const telekinesis: MysticSphere = {
       roles: ['burst'],
       scaling: 'damage',
     },
+
+    {
+      name: 'Kinetic Rebound',
+
+      attack: {
+        hit: `\\damagerankone.`,
+        targeting: `
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Brawn against them.
+        `,
+      },
+      rank: 2,
+      roles: ['attune'],
+      scaling: 'damage',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Mighty Kinetic Rebound',
+
+      attack: {
+        hit: `\\damagerankfive.`,
+        targeting: `
+          Whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Brawn against them.
+        `,
+      },
+      rank: 5,
+      roles: ['attune'],
+      scaling: 'damage',
+      type: 'Attune (deep)',
+    },
   ],
 };

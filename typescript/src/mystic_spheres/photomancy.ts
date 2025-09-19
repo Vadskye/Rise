@@ -656,5 +656,107 @@ export const photomancy: MysticSphere = {
       roles: ['narrative'],
       type: 'Sustain (standard)',
     },
+
+    {
+      name: 'Visual Illusion',
+      effect: `
+        You create a simple visual image within a single 5 ft.\\ square \\glossterm{zone}.
+        While this spell's effect lasts, you can change the image whenever you sustain it.
+        It can have any shape you imagine, though it cannot create light, and you may need a Craft check to create particularly complex illusions.
+
+        The image is obviously unreal and partially transparent.
+        Even an unintelligent observer can recognize the image to be an illusion with a \\glossterm{difficulty value} 5 Awareness check.
+        It can provide \\glossterm{concealment} to anything on the other side of the illusion, but does not completely block sight.
+      `,
+      rank: 2,
+      roles: ['narrative'],
+      type: 'Sustain (standard)',
+    },
+
+    {
+      name: 'Lightward',
+
+      // TODO: actual EA calcs
+      attack: {
+        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        missGlance: true,
+        targeting: `
+          You are \\glossterm{braced} this round.
+          This is a \\atSwift effect, so it protects you from attacks during the current phase.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+        `,
+      },
+      roles: ['turtle', 'retaliate'],
+      rank: 1,
+      scaling: 'accuracy',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Lightward',
+
+      // TODO: actual EA calcs
+      attack: {
+        hit: `The target is \\dazzled as a \\glossterm{condition}.`,
+        missGlance: true,
+        targeting: `
+          You are \\glossterm{braced} this round.
+          This is a \\atSwift effect, so it protects you from attacks during the current phase.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+        `,
+      },
+      roles: ['turtle', 'retaliate'],
+      rank: 5,
+      scaling: 'accuracy',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Focusing Lens',
+
+      effect: `
+        You are \\glossterm{briefly} \\focused.
+        In addition, choose something within \\longrange.
+        You \\glossterm{briefly} gain a \\plus2 accuracy bonus against that target.
+      `,
+      rank: 1,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Greater Focusing Lens',
+
+      effect: `
+        You are \\glossterm{briefly} \\focused.
+        In addition, choose something within \\distrange.
+        You \\glossterm{briefly} gain a \\plus4 accuracy bonus against that target.
+      `,
+      rank: 4,
+      roles: ['focus'],
+    },
+
+    // HP blind is 3.6 EA, or 4.6 EA with damage. That's 2.3 as a double action, or r5 with
+    // limited scope.
+    // drX-1 from debuff, +1dr from short range = dr5.
+    {
+      name: "Blinding Sun",
+
+      attack: {
+        hit: `
+          \\damageranksevenlow.
+        `,
+        injury: `
+          The target becomes \\blinded as a \\glossterm{condition}.
+        `,
+        targeting: `
+          When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around you.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Fortitude against something within \\shortrange.
+        `,
+      },
+
+      rank: 5,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
   ],
 };
