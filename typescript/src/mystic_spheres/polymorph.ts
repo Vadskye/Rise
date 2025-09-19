@@ -242,8 +242,7 @@ export const polymorph: MysticSphere = {
     {
       name: 'Malleable Body',
 
-      // Strike crit immune alone is about right for rank 2.
-      // The deep attunement gives the other bonuses.
+      // TODO: Unclear rank
       effect: `
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
@@ -251,8 +250,7 @@ export const polymorph: MysticSphere = {
           \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
             If you already have a slow climb speed, your climb speed becomes average instead.
           \\item You do not need hands to climb.
-          \\item You gain a +4 \\glossterm{enhancement bonus} to the Flexibility skill.
-          \\item You treat your size as being one size category smaller than normal for the purpose of squeezing into spaces too small to normally fit you (see \\pcref{Squeezing}).
+          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill.
         \\end{raggeditemize}
       `,
       rank: 3,
@@ -559,14 +557,33 @@ export const polymorph: MysticSphere = {
     },
 
     {
-      name: 'Bloody Fleshspike',
+      name: 'Mighty Fleshspike',
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Armor against an adjacent creature.
+        `,
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Bloody Fleshspike',
+
+      // Normal would be dr5. Drop by -2dr for the injury effect.
+      attack: {
+        hit: `
+          \\damagerankthree.
         `,
         injury: `
-          The target takes this damage again during your next action.
+          The target takes \\damagerankthree during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -600,6 +617,7 @@ export const polymorph: MysticSphere = {
       roles: ['maim'],
       scaling: 'damage',
     },
+
     {
       name: 'Duplicate Organ',
 
@@ -708,6 +726,39 @@ export const polymorph: MysticSphere = {
       rank: 7,
       roles: ['boon'],
       tags: ['Swift'],
+    },
+
+    {
+      name: 'Eyeseal',
+
+      attack: {
+        hit: `
+          The target is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against up to two creatures within \\shortrange.
+        `,
+      },
+      rank: 2,
+      roles: ['softener'],
+      scaling: 'accuracy',
+    },
+
+    // Base rank is r3. Add +1 for extended area and +1 for more area, so area rank is 6.
+    {
+      name: 'Massive Eyeseal',
+
+      attack: {
+        hit: `
+          The target is \\dazzled as a \\glossterm{condition}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius within \\medrange.
+        `,
+      },
+      rank: 5,
+      roles: ['softener'],
+      scaling: 'accuracy',
     },
   ],
 };
