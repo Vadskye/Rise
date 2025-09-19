@@ -582,7 +582,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           % damagerankone
-          1d6 \\glossterm{subdual damage} \\plus1 per 2 power.
+          1d6 \\glossterm{subdual damage} \\add half power.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -659,10 +659,10 @@ export const enchantment: MysticSphere = {
           It can still remain silent, say misleading truths, and so on.
         `,
         targeting: `
-          Make an attack vs. Mental against up to five creatures within \\medrange.
+          Make an attack vs. Mental with a \\plus4 accuracy bonus against up to five creatures within \\medrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (attuneable, standard)',
@@ -702,6 +702,66 @@ export const enchantment: MysticSphere = {
       scaling: 'accuracy',
       tags: ['Emotion'],
       type: 'Attune',
+    },
+
+    {
+      name: 'Mind Blast',
+
+      attack: {
+        hit: `
+          % damageranktwo
+          1d4 \\glossterm{subdual damage} \\add power.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
+          You gain a +4 accuracy bonus against each target with a negative Intelligence.
+        `,
+      },
+      rank: 4,
+      roles: ['clear'],
+      scaling: 'damage',
+      tags: ['Compulsion'],
+    },
+
+    {
+      name: 'Mighty Mind Blast',
+
+      attack: {
+        hit: `
+          % damageranksix
+          1d8 \\glossterm{subdual damage} plus 1d8 per 2 power.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
+          You gain a +4 accuracy bonus against each target with a negative Intelligence.
+        `,
+      },
+      rank: 7,
+      roles: ['clear'],
+      scaling: 'damage',
+      tags: ['Compulsion'],
+    },
+
+    {
+      name: 'Mind Scour',
+
+      // -1dr for debuff, -1d for +2a
+      attack: {
+        hit: `
+          % damagerankthree
+          1d8 \\glossterm{subdual damage} \\add power.
+          In addition, the target \\glossterm{briefly} takes a \\minus2 penalty to its Mental defense.
+        `,
+        targeting: `
+          Make an attack vs. Mental with a \\plus2 accuracy bonus against one creature within \\medrange.
+        `,
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+      tags: ['Compulsion'],
     },
   ],
 };

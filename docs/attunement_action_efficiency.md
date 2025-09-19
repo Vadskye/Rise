@@ -164,7 +164,7 @@ This all counts EA *assuming a hit*, which is different from how we normally cou
 
 ### Minor action attack: 1.75-3.0 EA
 
-A minor action attack makes 5 attacks per combat, so the correct damage multiplier is (rank EA) / 5.
+A minor action attack makes 5 attacks per combat, so the correct damage multiplier is (rank EA) / 5.Minor action attacks do not apply extra damage because that seems like a scary double stacking vector.
 
 * Rank 2: 35% damage
 * Rank 3: 40% damage = 2 EA / 5
@@ -184,7 +184,7 @@ Translating that into usable scaling, assuming medium range:
 * Rank 6: dr3, 1d8 + power (55%)
 * Rank 7:
   * dr4, 1d6 per 2 (56%)
-  * double damage strike (50%) - only double weapon damage, not double damage, because doubling extra damage on a minor action is scary
+  * double damage strike (50%) - only double weapon damage, not double damage, because extra damage doesn't apply anyway
 
 ### Honed: 2.0
 

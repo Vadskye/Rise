@@ -60,8 +60,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Magnetic Pull',
 
+      // TODO: awkward weight category wording
       effect: `
-        Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
+        Choose one \\glossterm{unattended} \\glossterm{metallic} object within \\medrange with a \\glossterm{weight category} of Small or less.
         It flies into your hands.
         If you are unable to catch it, it drops to the ground adjacent to your space without harming you.
       `,
@@ -341,7 +342,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       name: 'Magnetic Blade',
 
       effect: `
-        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{strikes} you make using \\glossterm{metallic} weapons against metallic targets.
+        You gain a +1 \\glossterm{enhancement bonus} to \\glossterm{accuracy} with \\glossterm{vstrikes} you make using \\glossterm{metallic} weapons against metallic targets.
       `,
       rank: 2,
       roles: ['attune'],
@@ -530,11 +531,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           If takes a \\glossterm{vital wound} from this damage that leaves it unconscious, it immediately dies.
         `,
         targeting: `
-          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\medrange.
+          Make an attack vs. Fortitude with a -4 \\glossterm{accuracy} penalty against something within \\shortrange.
         `,
       },
 
-      rank: 3,
+      rank: 2,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -546,7 +547,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         name: 'electrocute',
         exceptThat: 'the damage increases to \\damagerankeight.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['burst'],
       scaling: 'damage',
     },
@@ -650,6 +651,92 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       rank: 6,
       roles: ['clear'],
       scaling: 'accuracy',
+    },
+
+    {
+      name: 'Charged Blade',
+
+      effect: `
+        Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.
+        If you do, the strike deals 1d6 \\glossterm{extra damage} and gains the \\atElectricity tag.
+        After you enhance a strike in this way, this ability is \\glossterm{dismissed}.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      // Weaker scaling than Enhance Magic -- Might because strikes double more quickly.
+      // TODO: actual scaling math
+      scaling: {
+        3: `The extra damage increases to 1d10.`,
+        5: `The extra damage increases to 2d8.`,
+        7: `The extra damage increases to 4d6.`,
+      },
+      type: 'Attune',
+    },
+    {
+      name: 'Charge Up',
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\empowered this round.
+          \\item Once: This round, you are empowered and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This round, you are empowered and all of your \\glossterm{targeted} abilities can chain an additional time.
+        \\end{mdframedraggeditemize}
+      `,
+      rank: 2,
+      roles: ['focus'],
+      type: 'Sustain (minor)'
+    },
+
+    {
+      name: 'Greater Charge Up',
+
+      effect: `
+        When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
+        When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
+        \\begin{mdframedraggeditemize}
+          \\item Never: You are \\maximized this round.
+          \\item Once: This round, you are maximized and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This round, you are maximized and all of your \\glossterm{targeted} abilities can chain an additional time.
+        \\end{mdframedraggeditemize}
+      `,
+      rank: 6,
+      roles: ['focus'],
+      type: 'Sustain (minor)'
+    },
+
+    {
+      name: 'Static Shock',
+
+      // Single target melee damage would normally be dr3, or dr2 vs all adjacent.
+      // It's not clear exactly how much braced is worth vs guaranteed damage.
+      attack: {
+        hit: `\\damagerankone.`,
+        targeting: `
+          You are \\glossterm{braced} this round.
+          This is a \\atSwift effect, so it protects you from attacks during the current phase.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
+        `,
+      },
+      roles: ['turtle', 'retaliate'],
+      rank: 1,
+      scaling: 'damage',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Mighty Static Shock',
+
+      functionsLike: {
+        name: 'static shock',
+        exceptThat: 'the damage increases to \\damagerankfive.',
+      },
+      roles: ['turtle', 'retaliate'],
+      rank: 5,
+      scaling: 'damage',
+      tags: ['Swift'],
     },
   ],
 });

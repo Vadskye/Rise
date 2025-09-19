@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const vivimancy: MysticSphere = {
   name: 'Vivimancy',
@@ -209,6 +209,7 @@ export const vivimancy: MysticSphere = {
 
       // Normal short range would be dr3. Drop by -2dr for the injury effect.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damageranktwo.
         `,
@@ -230,7 +231,7 @@ export const vivimancy: MysticSphere = {
       functionsLike: {
         name: 'inflict wound',
         exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} applies to both the initial damage and the injury damage.',
+          'both damage instances increase to \\damagerankfive, and any \\glossterm{extra damage} applies to both the initial damage and the injury damage.',
       },
       rank: 5,
       roles: ['execute'],
@@ -738,6 +739,55 @@ export const vivimancy: MysticSphere = {
       scaling: 'damage',
       tags: ['Barrier'],
       type: 'Sustain (attuneable, minor)',
+    },
+
+    {
+      name: 'Vital Regeneration',
+
+      cost: 'See text.',
+      effect: `
+        At the end of each round, if the target's \\glossterm{fatigue level} does not exceed its \\glossterm{fatigue tolerance}, it automatically removes one of its \\glossterm{vital wounds}.
+        It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
+        For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
+      `,
+      rank: 5,
+      roles: ['attune', 'exertion'],
+      type: 'Attune (target)',
+    },
+
+    {
+      name: 'Regeneration',
+
+      effect: `
+        At the end of each round, you regain hit points equal to half your \\glossterm{power}.
+      `,
+      rank: 3,
+      roles: ['healing'],
+      scaling: { special: 'The healing increases by 2 for each rank beyond 3.' },
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Regeneration',
+
+      effect: `
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add your \\glossterm{power}.
+      `,
+      rank: 5,
+      roles: ['healing'],
+      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Supreme Regeneration',
+
+      effect: `
+        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add 1d8 per 2 \\glossterm{power}.
+      `,
+      rank: 7,
+      roles: ['healing'],
+      type: 'Attune (deep)',
     },
   ],
 };

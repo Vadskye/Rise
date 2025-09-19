@@ -99,7 +99,7 @@ export const fabrication: MysticSphere = {
         name: 'instant shield',
         exceptThat: 'you can activate the effect as a \\glossterm{free action}.',
       },
-      rank: 5,
+      rank: 6,
       roles: ['attune'],
       tags: ['Manifestation'],
       type: 'Attune',
@@ -115,7 +115,7 @@ export const fabrication: MysticSphere = {
         It may appear to be made of a special material such as adamantine, but functions as if it was made of an ordinary material like wood or iron.
       `,
       rank: 2,
-      roles: ['attune'],
+      roles: ['narrative'],
       tags: ['Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
@@ -259,13 +259,13 @@ export const fabrication: MysticSphere = {
       // This needs to be sufficiently different from executioner's axe, so it affects a
       // larger area.
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damagerankfive.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
         `,
       },
-      rank: 2,
+      rank: 4,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -275,13 +275,13 @@ export const fabrication: MysticSphere = {
       name: 'Mighty Whirlwind of Blades',
 
       attack: {
-        hit: `\\damageranksix.`,
+        hit: `\\damagerankeight.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
         `,
       },
-      rank: 5,
+      rank: 7,
       roles: ['clear'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -737,52 +737,6 @@ export const fabrication: MysticSphere = {
       },
       roles: ['barrier'],
       rank: 7,
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Visual Barrier',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        exceptThat: `
-          you can choose the visibility of the barrier.
-            There are three possibilities: fully \\glossterm{invisible}, barely visible like a normal \\spell{mystic barrier}, and visible as a deep black that completely blocks sight.
-            You can change the opacity of the barrier as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
-        `,
-        name: 'mystic barrier',
-      },
-      rank: 2,
-      roles: ['barrier'],
-      scaling: {
-        4: "The barrier's hit points increase to three times your \\glossterm{power}.",
-        6: "The barrier's hit points increase to four times your \\glossterm{power}.",
-      },
-      tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Sonic Barrier',
-
-      cost: BARRIER_COOLDOWN,
-      functionsLike: {
-        exceptThat: `
-          you can choose whether the barrier blocks sound.
-          You can change whether the barrier blocks sound as part of the action you use to sustain this spell, or as a \\glossterm{minor action} if you attune to this spell.
-
-          Both types of barrier still block \\glossterm{line of effect} for effects that deal bludgeoning damage, even if they narratively come from a sound or voice.
-          If the barrier does not block sound, the sound or voice can be heard on the other side at a non-damaging volume, but the attack still damages the barrier instead of anything on the other side.
-        `,
-        name: 'mystic barrier',
-      },
-      rank: 2,
-      roles: ['barrier'],
-      scaling: {
-        4: "The barrier's hit points increase to three times your power.",
-        6: "The barrier's hit points increase to four times your power.",
-      },
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (attuneable, minor)',
     },
