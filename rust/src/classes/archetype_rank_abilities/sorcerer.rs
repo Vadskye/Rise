@@ -196,8 +196,8 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                 You have the blood of that type of dragon in your veins.
                 You are \trait{impervious} to attacks with that dragon's associated ability tag.
 
-                \begin{dtable}
-                    \lcaption{Draconic Bloodline Types}
+                \begin{columntable}
+                    \columncaption{Draconic Bloodline Types}
                     \begin{dtabularx}{\columnwidth}{l >{\lcol}X >{\lcol}X}
                         \tb{Dragon} & \tb{Tag} & \tb{Mystic Sphere} \tableheaderrule
                         Black       & \atAcid             & Vivimancy    \\
@@ -211,7 +211,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
                         Silver      & \atCold             & Telekinesis  \\
                         White       & \atCold             & Cryomancy    \\
                     \end{dtabularx}
-                \end{dtable}
+                \end{columntable}
             ",
             modifiers: None,
         },
