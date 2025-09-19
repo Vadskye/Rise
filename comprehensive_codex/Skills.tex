@@ -469,8 +469,8 @@ This chapter describes each skill, including common uses for those skills.
   If you do not have a proper set of tools, you may be able to improvise from your surroundings.
   Generally, this imposes a penalty of at least \minus5 to the Devices check.
 
-  \begin{dtable}
-    \lcaption{Devices Difficulty Values}
+  \begin{columntable}
+    \columncaption{Devices Difficulty Values}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X c}
       \tb{Device Type}                          & \tb{Difficulty Value} \tableheaderrule
       Simple device (wagon wheel, typical knot) & 5                              \\
@@ -481,7 +481,7 @@ This chapter describes each skill, including common uses for those skills.
       Mundane trap                              & 10 \add twice \glossterm{rank} \\
       Magic trap                                & 15 \add twice \glossterm{rank} \\
     \end{dtabularx}
-  \end{dtable}
+  \end{columntable}
 
   \subsection{Common Devices Tasks}
     \parhead{Activate Device} You can make a Devices check using thieves' tools to make a device perform a function it was designed to do, even if you lack the normal requirements.
@@ -534,13 +534,12 @@ This chapter describes each skill, including common uses for those skills.
 
     \begin{columntable}
       \begin{dtabularx}{\columnwidth}{l X}
-        \tb{Age Change}                              & \tb{Disguise Penalty} \\
-        Per age category of difference & \minus2 \\
-        \tb{Body Shape Change}                              & \tb{Disguise Penalty} \\
+        \tb{Body Shape Change}                              & \tb{Disguise Penalty} \tableheaderrule
+        Per age category of difference                      & \minus2               \\
         To a different gender                               & \minus2               \\
         Per removed arm                                     & \minus2               \\
         Per removed leg                                     & \minus5               \\
-        Per additional arm or leg                           & \minus5               \\
+        Per additional arm or leg                           & \minus5               \tableheaderrule
         \tb{Species Change}                                 & \tb{Disguise Penalty} \tableheaderrule
         To a noticeably larger species (halfling to human)  & \minus5               \\
         To a noticeably smaller species (human to halfling) & \minus15              \\
@@ -604,8 +603,8 @@ This chapter describes each skill, including common uses for those skills.
 \skill{Flexibility}{Dex}
   The Flexibility skill represents your ability to escape bindings and move through small areas by contorting your body.
 
-  \begin{dtable}
-    \lcaption{Flexibility Difficulty Values}
+  \begin{columntable}
+    \columncaption{Flexibility Difficulty Values}
     \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
       \tb{Restraint}                   & \tb{Difficulty Value} \tableheaderrule
       Net                              & 8  \\
@@ -618,7 +617,7 @@ This chapter describes each skill, including common uses for those skills.
       Can fit head and shoulders only  & 15 \\
       Can fit head only                & 25 \\
     \end{dtabularx}
-  \end{dtable}
+  \end{columntable}
 
   \subsection{Common Flexibility Tasks}
 
@@ -933,8 +932,8 @@ This chapter describes each skill, including common uses for those skills.
   \subsection{Common Sleight of Hand Modifiers}
     All Sleight of Hand checks apply a special modifier based on the size of the action taken or object affected, as shown on \trefnp{Sleight of Hand Difficulty Modifiers}.
 
-    \begin{dtable}
-      \lcaption{Sleight of Hand Difficulty Modifiers}
+    \begin{columntable}
+      \columncaption{Sleight of Hand Difficulty Modifiers}
       \begin{dtabularx}{\columnwidth}{X l}
         \tb{Size}   & {Difficulty Modifier} \tableheaderrule
         Fine        & \minus10   \\
@@ -947,7 +946,7 @@ This chapter describes each skill, including common uses for those skills.
         Gargantuan  & \plus25 \\
         Colossal    & \plus30 \\
       \end{dtabularx}
-    \end{dtable}
+    \end{columntable}
 
   \subsection{Common Sleight of Hand Tasks}
     \parhead{Conceal Object} You can make an opposed Sleight of Hand vs. Awareness check to conceal an \glossterm{ally} or \glossterm{unattended} object on your person.
@@ -1071,8 +1070,8 @@ This chapter describes each skill, including common uses for those skills.
     Some suggestions for determining the difficulty of following a trail can be found in \trefnp{Example Tracking Difficulty Values} and \trefnp{Example Tracking Difficulty Modifiers}.
     The GM may also apply other circumstantial modifiers not listed here.
 
-    \begin{dtable}
-      \lcaption{Example Tracking Difficulty Values}
+    \begin{columntable}
+      \columncaption{Example Tracking Difficulty Values}
       \begin{dtabularx}{\columnwidth}{l >{\lcol}X l}
         \tb{Surface}     & \tb{Description}                                                                                                                                                     & \tb{Difficulty Value} \tableheaderrule
         Very soft ground & Any surface (fresh snow, thick dust, wet mud) that holds deep, clear impressions of footprints.                                                                      & 0                                 \\
@@ -1081,10 +1080,10 @@ This chapter describes each skill, including common uses for those skills.
         Hard ground      & Any surface that doesn't hold footprints at all, such as bare rock or a streambed                                                                                    & 15                    \\
         Scent            & Tracking using the \trait{scent} ability instead of vision                                                                                                           & 5 \\
       \end{dtabularx}
-    \end{dtable}
+    \end{columntable}
 
-    \begin{dtable}
-      \lcaption{Example Tracking Difficulty Modifiers}
+    \begin{columntable}
+      \columncaption{Example Tracking Difficulty Modifiers}
       \begin{dtabularx}{\columnwidth}{>{\lcol}X l}
         \tb{Condition}                                      & \tb{Difficulty Modifier} \tableheaderrule
         Every three creatures in the group being tracked    & \minus1      \\
@@ -1110,7 +1109,7 @@ This chapter describes each skill, including common uses for those skills.
       1 For a group of mixed sizes, apply only the modifier for the largest size category. \\
       2 Apply only the largest modifier from this category. \\
       3 With scent-based tracking, apply this modifier per hour since the trail was made. High winds can increase this modifier even more quickly. \\
-    \end{dtable}
+    \end{columntable}
 
 \newpage
 \skill{Swim}{Str}

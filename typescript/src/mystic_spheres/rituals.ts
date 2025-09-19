@@ -2375,8 +2375,8 @@ export const rituals: Ritual[] = [
     rank: 4,
     roles: ['narrative'],
     tableText: `
-      \\begin{dtable}
-          \\lcaption{Humanoid Reincarnations}
+      \\begin{columntable}
+          \\columncaption{Humanoid Reincarnations}
           \\begin{dtabularx}{\\columnwidth}{l X}
               \\tb{d\\%} & \\tb{Incarnation} \\tableheaderrule
               01--10 & Dwarf \\\\
@@ -2387,7 +2387,7 @@ export const rituals: Ritual[] = [
               61--70 & Orc \\\\
               71--100 & Mixed \\\\
           \\end{dtabularx}
-      \\end{dtable}
+      \\end{columntable}
     `,
     tags: ['Creation'],
     spheres: ['Chronomancy', 'Prayer', 'Vivimancy'],
