@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, EXCEPT_NOT_DEEP, MULTIHIT_CRIT } from './constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from './constants';
 
 export const telekinesis: MysticSphere = {
   name: 'Telekinesis',
