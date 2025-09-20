@@ -269,7 +269,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
-      roles: ['combo', 'payoff'],
+      roles: ['payoff'],
     },
 
     {
@@ -282,7 +282,7 @@ export const bruteForce: CombatStyle = {
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 5,
-      roles: ['combo', 'payoff'],
+      roles: ['payoff'],
     },
 
     // Start from r0 due to 0.2 EA buff. Brief goad is r-1 normally, so we can get a r1
