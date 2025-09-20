@@ -25,7 +25,7 @@ export const toxicology: MysticSphere = {
           If the target is not currently poisoned, this ability has no effect.
         `,
       },
-      roles: ['combo'],
+      roles: ['trip'],
       scaling: 'accuracy',
       tags: ['Poison'],
     },
@@ -59,7 +59,7 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'caustic grasp',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 4,
       roles: ['burn'],
