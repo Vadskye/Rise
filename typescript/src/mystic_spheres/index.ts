@@ -101,11 +101,10 @@ export const ABILITY_ROLES = [
   'burst', // Single-target immediate damage
   'cleanse', // Remove conditions or, more rarely, poisons
   'clear', // Immediate damage to multiple targets, typically in an area
-  'combo', // Has an effect that requires other abilities to be useful
   'dive', // Move towards or through enemies and attack at short range
   'execute', // Single-target immediate damage that requires the target to be injured
   'exertion', // Spend fatigue for more powerful effects (or, rarely, spend other resources like vital wounds)
-  'flash', // Debuff that affects multiple targets, typically in an area. Does not require injury.
+  'flash', // Brief or one-round debuff that affects multiple targets, typically in an area. Does not require injury.
   'focus', // Brief offensive buff on yourself. If an ability makes an attack, it is not a focus ability, though it may be a generator.
   'generator', // Attack and gain a brief buff on yourself that is typically offensive. The buff must last after the effect of the attack, typically for the next round.
   'hazard', // Create a persistent battlefield hazard, such as a zone that deals damage each round
@@ -117,10 +116,10 @@ export const ABILITY_ROLES = [
   'payoff', // Ability with unusual prerequisites that generally require at least a round of prep
   'ramp', // Self-buff for the rest of the fight that does not require attunement
   'retaliate', // Attack that is stronger against creatures that attack you or your allies
-  'snipe', // Long-range single-target damage
-  'softener', // Debuff that affects a single non-injured target
+  'snipe', // Long-range damage
+  'softener', // Debuff condition or curse that affects one or more non-injured targets
   'stasis', // Single-target brief or one-round debuff that prevents enemy action
-  'trip', // Single-target brief or one-round debuff that penalizes defenses. Does not require injury.
+  'trip', // Single-target brief or one-round debuff. Does not require injury.
   'turtle', // Brief or one-round defensive buff or protection effect on yourself
   'wildfire', // Damage over time against multiple targets, typically in an area
 ] as const;
