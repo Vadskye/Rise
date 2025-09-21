@@ -125,8 +125,8 @@ export const telekinesis: MysticSphere = {
           If you fling a Small object, you deal \\glossterm{extra damage} equal to half your \\glossterm{power}.
         `,
         targeting: `
-          Choose a Tiny or Small \\glossterm{unattended} object within \\shortrange of you.
-          You fling that object at another creature or object within \\shortrange of you.
+          Choose a Tiny or Small \\glossterm{unattended} object within \\medrange of you.
+          You fling that object at another creature or object within \\medrange of you.
           When you do, make an attack vs. Armor against the target.
           You gain a +2 accuracy bonus if you fling a Tiny object.
         `,
@@ -146,8 +146,8 @@ export const telekinesis: MysticSphere = {
           If you fling a Medium object, you deal 2d6 \\glossterm{extra damage}.
         `,
         targeting: `
-          Choose a Small or Medium \\glossterm{unattended} object within \\shortrange of you.
-          You fling that object at another creature or object within \\shortrange of you.
+          Choose a Small or Medium \\glossterm{unattended} object within \\medrange of you.
+          You fling that object at another creature or object within \\medrange of you.
           You gain a +2 accuracy bonus if you fling a Small object.
         `,
       },
@@ -624,7 +624,7 @@ export const telekinesis: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankone again.
+          During your next action, the target takes \\damagerankthree again.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
@@ -641,8 +641,8 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
-          During your during your next action, the target takes \\damagerankfive.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankfive.
           If the target takes a \\glossterm{vital wound} from either instance of damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,
@@ -650,7 +650,7 @@ export const telekinesis: MysticSphere = {
           Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       roles: ['burn'],
       scaling: 'damage',
     },

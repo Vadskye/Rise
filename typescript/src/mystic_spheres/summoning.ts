@@ -172,7 +172,7 @@ export const summoning: MysticSphere = {
           You summon a creature with a large horn or horns, such as a moose, that rams into the target with great force before disappearing.
       `,
       rank: 1,
-      roles: ['burst', 'combo'],
+      roles: ['burst'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },
@@ -196,7 +196,7 @@ export const summoning: MysticSphere = {
         You summon a large creature with a large horn or horns, such a rhinoceros, that rams into the target with great force before disappearing.
       `,
       rank: 4,
-      roles: ['burst', 'combo'],
+      roles: ['burst'],
       scaling: 'damage',
       tags: ['Manifestation'],
     },

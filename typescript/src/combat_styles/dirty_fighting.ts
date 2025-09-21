@@ -253,7 +253,7 @@ export const dirtyFighting: CombatStyle = {
         \\hit If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet.
       `,
       rank: 3,
-      roles: ['combo'],
+      roles: ['maim'],
       tags: ['Brawling'],
     },
 
@@ -267,7 +267,7 @@ export const dirtyFighting: CombatStyle = {
         \\injury You \\glossterm{knockback} the target up to 30 feet.
       `,
       rank: 7,
-      roles: ['combo'],
+      roles: ['burst', 'maim'],
       tags: ['Brawling'],
     },
 
