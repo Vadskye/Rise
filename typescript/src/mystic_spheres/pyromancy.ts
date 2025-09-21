@@ -700,7 +700,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 2,
-      roles: ['burst', 'combo'],
+      roles: ['burst'],
       scaling: 'damage',
     },
 
@@ -716,7 +716,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         A small source of fire, such as a torch, erupts into a much larger burst of flame.
       `,
       rank: 5,
-      roles: ['burst', 'combo'],
+      roles: ['burst'],
       scaling: 'damage',
     },
 
