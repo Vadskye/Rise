@@ -1181,16 +1181,16 @@ They allow more distinct and unique character customization, but also increase g
     \ff[6]{Encouraging Presence} As long as you are conscious, your \glossterm{allies} who can see or hear you are immune to being \frightened and \panicked.
 
     \ff[12]{Bolster}
-    % Assume empower affects 3 ally actions, so it's 0.6 EA.
-    % Steeled affects all allies, so it's theoretically huge EA, but in practice most people aren't crit every round.
+    % Assume empower affects 3 ally actions, so it's ~1.2 EA.
     % We add a brief cooldown to make it more reasonable.
     \begin{activeability}{Bolster}[\atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}]
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \abilityusagetime Standard action.
       \rankline
-      Each \glossterm{ally} within a \largearea radius from you is \empowered and \steeled this round.
+      Each \glossterm{ally} within a \largearea radius from you is either \empowered or \steeled this round.
+      You must make the same choice for all allies. 
       \rankline
-      \featlevel{18} This ability affect each ally who can see or hear you, regardless of distance.
+      \featlevel{18} Each target is both empowered and steeled this round.
     \end{activeability}
 
     \ff[18]{Stabilizing Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
