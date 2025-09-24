@@ -2,7 +2,6 @@ use crate::classes::ClassArchetype;
 use crate::creatures::Modifier;
 use titlecase::titlecase;
 
-mod automaton;
 mod barbarian;
 mod cleric;
 mod druid;
@@ -15,6 +14,13 @@ mod sorcerer;
 mod standard_modifiers;
 mod votive;
 mod wizard;
+mod automaton;
+mod dragon;
+mod dryad;
+mod harpy;
+mod naiad;
+mod incarnation;
+mod treant;
 
 #[derive(Default)]
 pub struct RankAbility<'a> {
@@ -135,6 +141,12 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
         ClassArchetype::SchoolSpecialist => wizard::school_specialist(),
         // Uncommon species
         ClassArchetype::Automaton => automaton::automaton(),
+        ClassArchetype::Dragon => dragon::dragon(),
+        ClassArchetype::Dryad => dryad::dryad(),
+        ClassArchetype::Harpy => harpy::harpy(),
+        ClassArchetype::Incarnation => incarnation::incarnation(),
+        ClassArchetype::Naiad => naiad::naiad(),
+        ClassArchetype::Treant => treant::treant(),
     }
 }
 
