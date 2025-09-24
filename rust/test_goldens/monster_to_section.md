@@ -341,7 +341,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus11 damage.
+                \hit 1d4\plus11 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -411,7 +411,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d6\plus11 damage.
+                \hit 1d4\plus11 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
@@ -510,7 +510,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Armor against one creature within \medrange.
-                \hit 1d6\plus15 damage.
+                \hit 1d4\plus15 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Bite}
@@ -580,7 +580,7 @@
 \abilityusagetime Standard action.
                 \rankline
                 The example monster makes a \plus9 attack vs. Fortitude against one creature within \medrange.
-                \hit 1d6\plus15 damage.
+                \hit 1d4\plus15 damage.
             \end{magicalactiveability}
         \par
             \begin{activeability}*{Generic Accuracy Bite}
