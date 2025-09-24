@@ -673,6 +673,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       rank: 2,
       roles: ['clear', 'generator'],
+      scaling: 'damage',
     },
 
     {

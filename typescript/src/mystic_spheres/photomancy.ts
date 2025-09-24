@@ -665,7 +665,7 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\glossterm{briefly} \\dazzled.`,
         missGlance: true,
         targeting: `
-          You are \\glossterm{braced} this round.
+          You are \\braced this round.
           This is a \\atSwift effect, so it protects you from attacks during the current phase.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
@@ -684,7 +684,7 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         missGlance: true,
         targeting: `
-          You are \\glossterm{braced} this round.
+          You are \\braced this round.
           This is a \\atSwift effect, so it protects you from attacks during the current phase.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
