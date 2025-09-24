@@ -187,7 +187,7 @@ The $name makes a +0 attack vs. Mental against something within \\medrange.
 The $name makes a +0 \glossterm{strike} vs. Armor.
 
 
-\hit 1d6 slashing damage.
+\hit 1d6 damage.
 
 
 
@@ -217,7 +217,7 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
 The $name makes a +3 \glossterm{strike} vs. Reflex.
 
 
-\hit 1d6 slashing damage.
+\hit 1d6 damage.
 
 
 
@@ -247,7 +247,7 @@ The $name makes a +3 \glossterm{strike} vs. Reflex.
 The $name makes a +0 \glossterm{strike} vs. Armor.
 
 
-\hit 2d6 slashing damage.
+\hit 2d6 damage.
 
 
 
@@ -277,7 +277,7 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
 The $name makes a +0 \glossterm{strike} vs. Armor.
 
 
-\hit 3d6 slashing damage.
+\hit 3d6 damage.
 
 
 
