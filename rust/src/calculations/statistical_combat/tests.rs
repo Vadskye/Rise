@@ -344,6 +344,10 @@ mod calc_individual_dpr {
     fn damage_per_round_no_modifier() {
         let mut attacker = Creature::new(1, CreatureCategory::Character);
         let mut defender = Creature::new(1, CreatureCategory::Character);
+        defender.add_modifier(Modifier::Defense(Defense::Brawn, 3), None, None);
+        defender.add_modifier(Modifier::Defense(Defense::Fortitude, 3), None, None);
+        defender.add_modifier(Modifier::Defense(Defense::Reflex, 3), None, None);
+        defender.add_modifier(Modifier::Defense(Defense::Mental, 3), None, None);
         assert_eq!(
             0.0,
             calc_individual_dpr(&attacker, &defender),
@@ -357,7 +361,7 @@ mod calc_individual_dpr {
             "Attacker should have 0 accuracy",
         );
         assert_eq!(
-            vec![0, 3, 3, 3],
+            vec![0, 3, 3, 3, 3],
             Defense::all()
                 .iter()
                 .map(|d| defender.calc_defense(d))
