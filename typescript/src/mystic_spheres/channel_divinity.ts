@@ -517,6 +517,7 @@ export const channelDivinity: MysticSphere = {
       name: "Champion's Blade",
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\goaded by you.
           If it was \\glossterm{injured} by the strike, it is also goaded by you as a \\glossterm{condition}.
@@ -529,6 +530,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 5,
       roles: ['attune'],
+      scaling: 'accuracy',
       type: 'Attune',
     },
 
@@ -537,6 +539,7 @@ export const channelDivinity: MysticSphere = {
       name: "Radiant Blade",
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\dazzled.
           If it was \\glossterm{injured} by the strike, it is also dazzled as a \\glossterm{condition}.
@@ -549,6 +552,7 @@ export const channelDivinity: MysticSphere = {
       },
       rank: 2,
       roles: ['attune'],
+      scaling: 'accuracy',
       type: 'Attune',
     },
 

@@ -584,6 +584,7 @@ export const revelation: MysticSphere = {
       name: "Blinding Visions",
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           If the target is \\glossterm{injured}, it becomes \\blinded as a \\glossterm{condition}.
         `,
