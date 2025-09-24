@@ -71,6 +71,12 @@ pub enum ClassArchetype {
     SchoolSpecialist,
     // Uncommon species
     Automaton,
+    Dragon,
+    Dryad,
+    Harpy,
+    Incarnation,
+    Naiad,
+    Treant,
 }
 
 impl ClassArchetype {
@@ -145,6 +151,12 @@ impl ClassArchetype {
             Self::SchoolSpecialist => Class::Wizard,
             // Uncommon species
             Self::Automaton => Class::Automaton,
+            Self::Dragon => Class::Dragon,
+            Self::Dryad => Class::Dryad,
+            Self::Harpy => Class::Harpy,
+            Self::Incarnation => Class::Incarnation,
+            Self::Naiad => Class::Naiad,
+            Self::Treant => Class::Treant,
         }
     }
 
@@ -219,6 +231,12 @@ impl ClassArchetype {
             Self::SchoolSpecialist => "School Specialist",
             // Uncommon species
             Self::Automaton => "Automaton",
+            Self::Dragon => "Dragon",
+            Self::Dryad => "Dryad",
+            Self::Harpy => "Harpy",
+            Self::Treant => "Treant",
+            Self::Incarnation => "Incarnation",
+            Self::Naiad => "Naiad",
         }
     }
 
@@ -443,6 +461,12 @@ impl ClassArchetype {
             ",
             // Uncommon species
             Self::Automaton => "",
+            Self::Dragon => "",
+            Self::Dryad => "",
+            Self::Harpy => "",
+            Self::Treant => "",
+            Self::Incarnation => "",
+            Self::Naiad => "",
         };
         format!(
             "{} {}",
@@ -552,6 +576,14 @@ impl ClassArchetype {
             ClassArchetype::Alchemist,
             ClassArchetype::ArcaneScholar,
             ClassArchetype::SchoolSpecialist,
+            // Uncommon species
+            ClassArchetype::Automaton,
+            ClassArchetype::Dragon,
+            ClassArchetype::Dryad,
+            ClassArchetype::Harpy,
+            ClassArchetype::Incarnation,
+            ClassArchetype::Naiad,
+            ClassArchetype::Treant,
         ]
     }
 }
