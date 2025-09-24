@@ -26,7 +26,7 @@ pub enum Class {
     Cleric,
     Dragon,
     Druid,
-    Dryaidi,
+    Dryad,
     Fighter,
     Harpy,
     Incarnation,
@@ -61,7 +61,7 @@ impl Class {
             // Optional classes
             Self::Automaton,
             Self::Dragon,
-            Self::Dryaidi,
+            Self::Dryad,
             Self::Harpy,
             Self::Incarnation,
             Self::Naiad,
@@ -148,7 +148,7 @@ impl Class {
             Self::Cleric => 1,
             Self::Dragon => 1,
             Self::Druid => 1,
-            Self::Dryaidi => 1,
+            Self::Dryad => 1,
             Self::Fighter => 0,
             Self::Harpy => 1,
             Self::Incarnation => 1,
@@ -231,12 +231,14 @@ impl Class {
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
+                Skill::Craft,
                 Skill::CreatureHandling,
                 Skill::Deception,
+                Skill::Deduction,
                 Skill::Endurance,
-                Skill::Flexibility,
                 Skill::Intimidate,
                 Skill::Knowledge(vec![KnowledgeSubskill::Arcana, KnowledgeSubskill::Items]),
+                Skill::Medicine,
                 Skill::Persuasion,
                 Skill::SocialInsight,
                 Skill::Stealth,
@@ -266,7 +268,7 @@ impl Class {
                 Skill::Survival,
                 Skill::Swim,
             ],
-            Self::Dryaidi => vec![
+            Self::Dryad => vec![
                 Skill::Awareness,
                 Skill::Balance,
                 Skill::Climb,
@@ -597,7 +599,7 @@ impl Class {
     pub fn insight_points(&self) -> i32 {
         match self {
             Self::Cleric => 1,
-            Self::Dryaidi => 1,
+            Self::Dryad => 1,
             Self::Rogue => 1,
             Self::Wizard => 1,
             _ => 0,
@@ -611,7 +613,7 @@ impl Class {
             Self::Cleric => "cleric",
             Self::Dragon => "dragon",
             Self::Druid => "druid",
-            Self::Dryaidi => "dryaidi",
+            Self::Dryad => "dryad",
             Self::Fighter => "fighter",
             Self::Harpy => "harpy",
             Self::Incarnation => "incarnation",
@@ -646,7 +648,7 @@ impl Class {
             Self::Cleric => "Clr",
             Self::Dragon => "Drg",
             Self::Druid => "Drd",
-            Self::Dryaidi => "Dry",
+            Self::Dryad => "Dry",
             Self::Fighter => "Ftr",
             Self::Harpy => "Hrp",
             Self::Incarnation => "Inc",
@@ -672,7 +674,7 @@ impl Class {
             Self::Cleric => 3,
             Self::Dragon => 4,
             Self::Druid => 4,
-            Self::Dryaidi => 4,
+            Self::Dryad => 4,
             Self::Fighter => 3,
             Self::Harpy => 5,
             Self::Incarnation => 4,
@@ -717,7 +719,7 @@ impl Class {
                 specific_armors: Some(vec![Armor::LeatherLamellar(None), Armor::StandardShield]),
                 usage_classes: vec![ArmorUsageClass::Light],
             },
-            Self::Dryaidi => ArmorProficiencies {
+            Self::Dryad => ArmorProficiencies {
                 specific_armors: None,
                 usage_classes: vec![ArmorUsageClass::Light],
             },
@@ -923,7 +925,7 @@ impl Class {
                 Their wisdom must be kept alive between generations through oral traditions.
                 Druidic circles provide a place for this knowledge transfer to occur, and offer a path to welcoming new druids into the fold.
             ".to_string(),
-            Self::Dryaidi => r"".to_string(),
+            Self::Dryad => r"".to_string(),
             Self::Fighter => r"
                 Fighters are highly disciplined warriors who excel in physical combat of any kind.
                 They have a deep mastery of the implements and strategies of battle thanks to their extensive training.
@@ -1162,7 +1164,7 @@ impl Class {
                 non_exotic_weapons: false,
                 simple_weapons: true,
             },
-            Self::Dryaidi => WeaponProficiencies {
+            Self::Dryad => WeaponProficiencies {
                 custom_weapons: None,
                 non_exotic_weapons: false,
                 simple_weapons: true,
@@ -1813,7 +1815,7 @@ impl Class {
                 \subsection{Ex-Paladins}
                     If you cease to follow your devoted alignment, you lose all \magical paladin class abilities.
                     If your atone for your misdeeds and resume the service of your devoted alignment, you can regain your abilities.
-            "
+                "
             }
             _ => "",
         }
