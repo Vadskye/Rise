@@ -117,16 +117,16 @@ Warrior             : 3.00
 Barbarian Glass     : 3.75
 Barbarian Shield    : 9.00
 Fighter Greatmace   : 9.50
-Fighter Shield      : 9.50
-Monk Kama           : 5.00
-Paladin Shield      : 9.50
-Ranger Longbow      : 6.00
-Rogue Smallsword    : 4.25
-Sorcerer Dexterity  : 3.75
+Fighter Shield      : 10.75
+Monk Kama           : 5.75
+Paladin Shield      : 10.50
+Ranger Longbow      : 6.75
+Rogue Smallsword    : 4.75
+Sorcerer Dexterity  : 4.00
 Wizard Perception   : 2.50
 Brute               : 3.50
 Leader              : 3.50
-Skirmisher          : 2.25
+Skirmisher          : 2.50
 Sniper              : 2.25
 Warrior             : 4.25
 
@@ -135,7 +135,7 @@ Warrior             : 4.25
 Barbarian Glass     : 4.50
 Barbarian Shield    : 9.75
 Fighter Greatmace   : 9.00
-Fighter Shield      : 10.75
+Fighter Shield      : 11.50
 Monk Kama           : 5.25
 Paladin Shield      : 11.00
 Ranger Longbow      : 6.00
