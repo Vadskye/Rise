@@ -77,7 +77,7 @@ Points / Self-hit: 56 / 40%
 ### Monk Kama
 A/B/F/R/M: 11 / 8 / 7 / 11 / 5
 HP/IP: 24 / 7
-Points / Self-hit: 53 / 40%
+Points / Self-hit: 53 / 30%
 
 ### Paladin Shield
 A/B/F/R/M: 9 / 10 / 8 / 5 / 7
@@ -129,7 +129,7 @@ Points / Self-hit: 78 / 40%
 ### Monk Kama
 A/B/F/R/M: 16 / 12 / 10 / 16 / 8
 HP/IP: 46 / 24
-Points / Self-hit: 78 / 20%
+Points / Self-hit: 78 / 10%
 
 ### Paladin Shield
 A/B/F/R/M: 12 / 14 / 12 / 8 / 11
@@ -142,9 +142,9 @@ HP/IP: 54 / 24
 Points / Self-hit: 64 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 13 / 8 / 8 / 14 / 8
+A/B/F/R/M: 14 / 8 / 8 / 15 / 8
 HP/IP: 46 / 20
-Points / Self-hit: 64 / 60%
+Points / Self-hit: 67 / 50%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 11 / 8 / 9 / 12 / 14
@@ -194,9 +194,9 @@ HP/IP: 102 / 51
 Points / Self-hit: 82 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 17 / 10 / 10 / 18 / 10
+A/B/F/R/M: 18 / 10 / 10 / 19 / 10
 HP/IP: 90 / 45
-Points / Self-hit: 82 / 50%
+Points / Self-hit: 85 / 40%
 
 ### Sorcerer Dexterity
 A/B/F/R/M: 14 / 10 / 12 / 15 / 18
@@ -231,9 +231,9 @@ HP/IP: 366 / 165
 Points / Self-hit: 112 / 50%
 
 ### Monk Kama
-A/B/F/R/M: 23 / 19 / 16 / 22 / 14
+A/B/F/R/M: 23 / 19 / 16 / 23 / 14
 HP/IP: 186 / 115
-Points / Self-hit: 117 / 10%
+Points / Self-hit: 118 / 9%
 
 ### Paladin Shield
 A/B/F/R/M: 17 / 20 / 18 / 13 / 16
@@ -241,21 +241,21 @@ HP/IP: 302 / 125
 Points / Self-hit: 101 / 50%
 
 ### Ranger Longbow
-A/B/F/R/M: 20 / 15 / 16 / 21 / 14
+A/B/F/R/M: 19 / 14 / 15 / 20 / 13
 HP/IP: 196 / 110
-Points / Self-hit: 106 / 50%
+Points / Self-hit: 100 / 70%
 
 ### Rogue Smallsword
-A/B/F/R/M: 20 / 13 / 13 / 21 / 13
+A/B/F/R/M: 21 / 13 / 13 / 22 / 13
 HP/IP: 176 / 100
-Points / Self-hit: 100 / 50%
+Points / Self-hit: 103 / 40%
 
 ### Sorcerer Dexterity
-A/B/F/R/M: 17 / 13 / 15 / 18 / 21
+A/B/F/R/M: 17 / 13 / 16 / 18 / 21
 HP/IP: 182 / 105
-Points / Self-hit: 101 / 70%
+Points / Self-hit: 102 / 70%
 
 ### Wizard Perception
-A/B/F/R/M: 12 / 13 / 13 / 13 / 20
+A/B/F/R/M: 12 / 13 / 13 / 13 / 21
 HP/IP: 172 / 100
-Points / Self-hit: 83 / 100%
+Points / Self-hit: 84 / 100%
