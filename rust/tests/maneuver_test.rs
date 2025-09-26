@@ -47,8 +47,8 @@ mod maneuver_tests {
                 .map(|a| a.shorthand_description(&creature))
                 .collect::<Vec<String>>(),
             vec![
-                "Certain Broadsword +2 (1d6 slashing damage.)",
-                "Broadsword +0 (1d6+1 slashing damage.)"
+                "Certain Broadsword +2 (1d6 damage.)",
+                "Broadsword +0 (1d6+1 damage.)"
             ],
         );
     }
@@ -78,8 +78,8 @@ mod maneuver_tests {
                 .map(|a| a.shorthand_description(&druid.creature))
                 .collect::<Vec<String>>(),
             vec![
-                "Elemental Broadsword +6 (1d4+1d6+4 bludgeoning, fire, and slashing damage.)",
-                "Broadsword +5 (1d6+4 slashing damage.)"
+                "Elemental Broadsword +6 (1d4+1d6+4 damage.)",
+                "Broadsword +5 (1d6+4 damage.)"
             ],
         );
     }

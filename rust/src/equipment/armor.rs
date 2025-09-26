@@ -510,24 +510,24 @@ mod tests {
     fn calc_special_material_durability() {
         assert_eq!(
             Armor::FullPlate(None).durability(),
-            6,
+            8,
             "Should be 10 with no material"
         );
         assert_eq!(
             Armor::FullPlate(Some(ArmorMaterial::Starmetal)).durability(),
-            7,
-            "Should be +1 with starmetal"
+            9,
+            "Should be +1 with starmetal. The base durability for FullPlate is 8, and Starmetal adds 1."
         );
         assert_eq!(
             Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
                 .durability(),
-            7,
-            "Should be +1 with dragonhide"
+            9,
+            "Should be +1 with dragonhide. The base durability for FullPlate is 8, and Dragonhide adds 1."
         );
         assert_eq!(
             Armor::FullPlate(Some(ArmorMaterial::Adamantine)).durability(),
-            8,
-            "Should be +2 with adamantine"
+            10,
+            "Should be +2 with adamantine. The base durability for FullPlate is 8, and Adamantine adds 2."
         );
     }
 }

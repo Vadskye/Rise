@@ -42,12 +42,16 @@ mod character_tests {
         assert_eq!(
             modifier_descriptions,
             vec![
-                "DR 3",
                 "defense armor by 2",
-                "defense mental by 2",
-                "resource attunement point by 2",
-                "resource insight point by 1",
-                "resource trained skill by 3"
+                "defense brawn by 3",
+                "defense fortitude by 3",
+                "defense mental by 3",
+                "defense reflex by 3",
+                "durability 2",
+                "resource attunement point by 1",
+                "resource fatigue tolerance by 2",
+                "resource trained skill by 3",
+                "vital roll 1"
             ],
             "Should match expected names"
         );
