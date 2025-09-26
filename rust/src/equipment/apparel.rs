@@ -50,7 +50,12 @@ impl Apparel {
     }
 
     pub fn to_latex(&self) -> String {
-        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+        if !self
+            .item()
+            .tags
+            .iter()
+            .any(|item| matches!(item, AbilityTag::Attune(_)))
+        {
             eprintln!("Apparel {} must require attunement", self.item().name);
         }
 
@@ -125,9 +130,5 @@ pub fn apparel_table() -> String {
         .collect();
     latex_table::standard_sort(&mut rows);
 
-    latex_table::longtable(
-        "Magic Apparel",
-        rows,
-        with_category,
-    )
+    latex_table::longtable("Magic Apparel", rows, with_category)
 }

@@ -1,6 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 
-
 pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {

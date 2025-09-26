@@ -361,10 +361,7 @@ impl Monster {
     //     monster
     // }
 
-    pub fn example_monster(
-        elite: bool,
-        level: i32,
-    ) -> Monster {
+    pub fn example_monster(elite: bool, level: i32) -> Monster {
         let cr = if elite {
             ChallengeRating::Four
         } else {
@@ -379,9 +376,7 @@ impl Monster {
 
         // 2 for most attributes, 4 str, 4 wil
         for attribute_name in Attribute::all() {
-            monster
-                .creature
-                .set_base_attribute(attribute_name, 2);
+            monster.creature.set_base_attribute(attribute_name, 2);
         }
         monster
             .creature

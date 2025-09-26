@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::AbilityTag;
-use crate::equipment::{Tool, ToolCategory, ItemUpgrade};
+use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 
 fn alchemical_item() -> Tool {
     return Tool {
@@ -115,15 +115,24 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against something within \shortrange.
             \hit $dr2l damage.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Fire],
         upgrades: vec![
-            ItemUpgrade::new(2, "Throw to deal $dr4l damage", r"
+            ItemUpgrade::new(
+                2,
+                "Throw to deal $dr4l damage",
+                r"
                 The damage increases to $dr4l.
-            "),
-            ItemUpgrade::new(4, "Throw to deal $dr6l damage", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                4,
+                "Throw to deal $dr6l damage",
+                r"
                 The damage increases to $dr6l.
-            "),
+            ",
+            ),
         ],
         ..alchemical_item()
     });
@@ -136,7 +145,8 @@ fn thrown_attacks() -> Vec<Tool> {
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against something within \shortrange.
             \hit $dr8l damage.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Fire],
         ..alchemical_item()
     });
@@ -307,13 +317,18 @@ fn thrown_attacks() -> Vec<Tool> {
             When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr2l damage.
             \injury The target becomes \slowed as a \glossterm{condition}.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Cold],
         upgrades: vec![
             // dX at Short range
-            ItemUpgrade::new(3, "Throw to deal $dr5l damage and slow", r"
+            ItemUpgrade::new(
+                3,
+                "Throw to deal $dr5l damage and slow",
+                r"
                 The damage increases to $dr5l.
-            "),
+            ",
+            ),
         ],
         ..alchemical_item()
     });
@@ -328,7 +343,8 @@ fn thrown_attacks() -> Vec<Tool> {
             When you do, make an attack vs. Fortitude against something within \shortrange.
             \hit $dr6l damage.
             If the target takes damage, it becomes \slowed as a \glossterm{condition}.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Cold],
         ..alchemical_item()
     });

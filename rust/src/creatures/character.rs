@@ -31,11 +31,7 @@ impl Character {
         for defense in Defense::all() {
             let bonus = class.defense_bonus(&defense);
             if bonus != 0 {
-                creature.add_modifier(
-                    Modifier::Defense(defense, bonus),
-                    Some(class.name()),
-                    None,
-                );
+                creature.add_modifier(Modifier::Defense(defense, bonus), Some(class.name()), None);
             }
         }
         for resource in Resource::all() {

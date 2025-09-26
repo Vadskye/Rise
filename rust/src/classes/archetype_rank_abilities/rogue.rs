@@ -1,7 +1,7 @@
 use super::standard_modifiers::add_standard_maneuver_modifiers;
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Attribute, DamageDice, Resource};
 use crate::core_mechanics::attacks::Maneuver;
+use crate::core_mechanics::{Attribute, DamageDice, Resource};
 use crate::creatures::Modifier;
 use crate::skills::{KnowledgeSubskill, Skill};
 
@@ -135,14 +135,12 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
 
 fn add_sneak_attack(abilities: &mut Vec<RankAbility<'_>>) {
     for rank in 1..8 {
-        abilities.append(&mut vec![
-            RankAbility {
-                name: "Sneak Attack Scaling",
-                rank,
-                modifiers: Some(vec![Modifier::Maneuver(Maneuver::SneakAttack(rank))]),
-                ..Default::default()
-            },
-        ]);
+        abilities.append(&mut vec![RankAbility {
+            name: "Sneak Attack Scaling",
+            rank,
+            modifiers: Some(vec![Modifier::Maneuver(Maneuver::SneakAttack(rank))]),
+            ..Default::default()
+        }]);
     }
 }
 

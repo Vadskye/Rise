@@ -1,4 +1,4 @@
-use rise::creatures::{Character, Monster, HasModifiers};
+use rise::creatures::{Character, HasModifiers, Monster};
 
 fn compare_classes() {
     let standard_character = Character::fighter_shield(1);
@@ -20,26 +20,11 @@ fn compare_classes() {
 }
 
 fn level_scaling() {
-    println!(
-        "Level 2: {}",
-        Character::fighter_shield(2).description()
-    );
-    println!(
-        "Level 5: {}",
-        Character::fighter_shield(5).description()
-    );
-    println!(
-        "Level 8: {}",
-        Character::fighter_shield(8).description()
-    );
-    println!(
-        "Level 14: {}",
-        Character::fighter_shield(14).description()
-    );
-    println!(
-        "Level 20: {}",
-        Character::fighter_shield(20).description()
-    );
+    println!("Level 2: {}", Character::fighter_shield(2).description());
+    println!("Level 5: {}", Character::fighter_shield(5).description());
+    println!("Level 8: {}", Character::fighter_shield(8).description());
+    println!("Level 14: {}", Character::fighter_shield(14).description());
+    println!("Level 20: {}", Character::fighter_shield(20).description());
 }
 
 fn sorcerer_scaling() {
@@ -68,7 +53,10 @@ fn sorcerer_scaling() {
 fn main() {
     let standard_monster = Monster::standard_example_monster(20);
     println!("standard monster {}", standard_monster.to_section(None));
-    println!("\nModifiers: {}", standard_monster.creature.explain_modifiers().join("\n"));
+    println!(
+        "\nModifiers: {}",
+        standard_monster.creature.explain_modifiers().join("\n")
+    );
 
     // Using `if false` instead of commenting out unused sections avoid lint errors for unused
     // code. This file doesn't really matter, but we don't want to get warnings about it.

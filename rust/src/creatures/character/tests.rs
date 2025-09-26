@@ -223,4 +223,3 @@ fn it_calculates_level_21_fighter_resources() {
         "3 class",
     );
 }
-

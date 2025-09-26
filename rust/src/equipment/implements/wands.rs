@@ -1,5 +1,5 @@
-use crate::equipment::{Implement, StandardItem};
 use crate::equipment::Implement::Wand;
+use crate::equipment::{Implement, StandardItem};
 
 pub fn wands() -> Vec<Implement> {
     let mut implements = vec![];

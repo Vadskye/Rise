@@ -1,12 +1,9 @@
-
-use crate::core_mechanics::attacks::{Maneuver};
+use crate::core_mechanics::attacks::Maneuver;
 
 use crate::creatures::{HasModifiers, Modifier, Monster};
 use crate::equipment::Weapon;
 
-
-
-use std::{io};
+use std::io;
 
 use super::write_golden_file;
 

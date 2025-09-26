@@ -80,12 +80,7 @@ pub struct MonsterStatistics {
 
 impl MonsterStatistics {
     fn monster(self, creature_type: CreatureType) -> Monster {
-        let mut monster = Monster::new(
-            self.elite,
-            creature_type,
-            self.role,
-            self.level,
-        );
+        let mut monster = Monster::new(self.elite, creature_type, self.role, self.level);
 
         for (i, attribute) in Attribute::all().iter().enumerate() {
             monster

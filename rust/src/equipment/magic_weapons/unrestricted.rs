@@ -1,6 +1,6 @@
+use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::equipment::MagicWeapon::Unrestricted;
 use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
-use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 
 // Standard weapon templates:
 // * Grant minor passive effect (energy tag) and appropriately leveled maneuver
@@ -79,16 +79,26 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         name: String::from("Educated"),
         rank: 3,
         short_description: String::from(r"Deals +2 damage if you have 3 Int"),
-        description: String::from(r"
+        description: String::from(
+            r"
             If your Intelligence is at least 3, this weapon deals 2 \glossterm{extra damage}.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(5, "Deals +1d6 damage if you have 4 Int", r"
+            ItemUpgrade::new(
+                5,
+                "Deals +1d6 damage if you have 4 Int",
+                r"
                 If your Intelligence is at least 4, the extra damage increases to 1d6.
-            "),
-            ItemUpgrade::new(7, "Deals +1d10 damage if you have 5 Int", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Deals +1d10 damage if you have 5 Int",
+                r"
                 If your Intelligence is at least 5, the extra damage increases to 1d10.
-            "),
+            ",
+            ),
         ],
         ..MagicWeapon::default()
     }));
@@ -364,9 +374,11 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         name: String::from("Merciful"),
         rank: 1,
         short_description: String::from(r"Deals subdual damage"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This weapon deals \glossterm<subdual damage>.
-        "),
+        ",
+        ),
         ..MagicWeapon::default()
     }));
 
@@ -477,7 +489,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         name: String::from("Prismatic"),
         rank: 4,
         short_description: String::from(r"+2 damage, is energetic"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This weapon is infused with prismatic energy.
             You can suppress or resume this infusion as a \glossterm{free action}.
             While the weapon is infused:
@@ -486,13 +499,21 @@ fn energy_weapons() -> Vec<MagicWeapon> {
                 \item It deals 2 \glossterm{extra damage}.
                 \item It sheds light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
-        tags: vec![AbilityTag::Cold, AbilityTag::Electricity, AbilityTag::Fire, AbilityTag::personal_attunement()],
-        upgrades: vec![
-            ItemUpgrade::new(6, "+1d6 damage, is energetic", r"
-                The extra damage increases to 1d6.
-            "),
+        ",
+        ),
+        tags: vec![
+            AbilityTag::Cold,
+            AbilityTag::Electricity,
+            AbilityTag::Fire,
+            AbilityTag::personal_attunement(),
         ],
+        upgrades: vec![ItemUpgrade::new(
+            6,
+            "+1d6 damage, is energetic",
+            r"
+                The extra damage increases to 1d6.
+            ",
+        )],
         ..MagicWeapon::default()
     }));
 
@@ -523,7 +544,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         name: String::from("Flaming"),
         rank: 3,
         short_description: String::from(r"Is burning and ignites"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This weapon constantly burns.
             You can suppress or resume this fire as a \glossterm{free action}.
             While the weapon is burning:
@@ -534,15 +556,24 @@ fn energy_weapons() -> Vec<MagicWeapon> {
                     This damage is doubled by critical hits and attacks that deal double damage.
                 \item It sheds red light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(5, "Is burning and ignites", r"
+            ItemUpgrade::new(
+                5,
+                "Is burning and ignites",
+                r"
                 The damage increases to 1d8.
-            "),
-            ItemUpgrade::new(7, "Is burning and ignites", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Is burning and ignites",
+                r"
                 The damage increases to 2d6.
-            "),
+            ",
+            ),
         ],
         ..MagicWeapon::default()
     }));
@@ -554,7 +585,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         name: String::from("Arcing"),
         rank: 4,
         short_description: String::from(r"Is charged and chains"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This weapon continuously crackles with electricity.
             You can suppress or resume this charge as a \glossterm{free action}.
             While the weapon is charged:
@@ -563,13 +595,16 @@ fn energy_weapons() -> Vec<MagicWeapon> {
                 \item Your strikes using it \glossterm{chain} once.
                 \item It sheds yellow light in a 5 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Electricity, AbilityTag::personal_attunement()],
-        upgrades: vec![
-            ItemUpgrade::new(7, "+1d4 damage, is charged and chains", r"
+        upgrades: vec![ItemUpgrade::new(
+            7,
+            "+1d4 damage, is charged and chains",
+            r"
                 While the weapon is charged, it also deals 1d4 \glossterm{extra damage}.
-            "),
-        ],
+            ",
+        )],
         ..MagicWeapon::default()
     }));
 
@@ -577,7 +612,8 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         name: String::from("Freezing"),
         rank: 2,
         short_description: String::from(r"+1 damage, is chilled"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This weapon is bitterly cold to the touch.
             You can suppress or resume this chill as a \glossterm{free action}.
             While the weapon is chilled:
@@ -586,15 +622,24 @@ fn energy_weapons() -> Vec<MagicWeapon> {
                 \item Your strikes using it deal 1 \glossterm{extra damage}.
                 \item It sheds blue light in a 5 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Cold, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(4, "+1d4 damage, is chilled", r"
+            ItemUpgrade::new(
+                4,
+                "+1d4 damage, is chilled",
+                r"
                 The extra damage increases to 1d4.
-            "),
-            ItemUpgrade::new(6, "+1d8 damage, is chilled", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "+1d8 damage, is chilled",
+                r"
                 The extra damage increases to 1d8.
-            "),
+            ",
+            ),
         ],
         ..MagicWeapon::default()
     }));

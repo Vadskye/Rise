@@ -57,8 +57,9 @@ fn format_attribute(maybe_attribute: Option<Attribute>, level: i32) -> String {
         };
         name = titlecase(attribute.name()).to_string();
         character.creature.set_base_attribute(attribute.clone(), 4);
-        character.creature.set_attribute_scaling(level, vec![attribute]);
-
+        character
+            .creature
+            .set_attribute_scaling(level, vec![attribute]);
     }
     character
         .creature

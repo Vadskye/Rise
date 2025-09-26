@@ -285,7 +285,10 @@ fn generate_latex_starting_items(class: &Class) -> String {
             "
                 \\item Any one of the following: {}
             ",
-            latex_formatting::join_string_list(&armor_options).unwrap().replace(" and ", " or ").to_lowercase()
+            latex_formatting::join_string_list(&armor_options)
+                .unwrap()
+                .replace(" and ", " or ")
+                .to_lowercase()
         )
     } else {
         "\\item A \\magicitem{spell wand, 1st} with a rank 1 spell from one \\glossterm{mystic sphere} that you have access to".to_string()
@@ -314,7 +317,10 @@ fn generate_latex_starting_items(class: &Class) -> String {
             latex_formatting::join_string_list(&weapon_options).unwrap()
         )
     } else if weapon_options.len() == 2 {
-        format!("\\item A {}", latex_formatting::join_string_list(&weapon_options).unwrap())
+        format!(
+            "\\item A {}",
+            latex_formatting::join_string_list(&weapon_options).unwrap()
+        )
     } else {
         format!(
             "\\item Any two of the following: {}",

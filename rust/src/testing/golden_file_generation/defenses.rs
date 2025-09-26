@@ -1,9 +1,7 @@
 use crate::calculations::statistical_combat::generic_attack_outcome;
 
-
 use crate::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses};
 use crate::creatures::{Character, Creature, Monster};
-
 
 use std::io;
 

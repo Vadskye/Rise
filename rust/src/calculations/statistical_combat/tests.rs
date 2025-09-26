@@ -39,17 +39,9 @@ mod calc_accuracy_bonus_from_explosions {
             "Target 10",
         );
 
-        assert_float_eq(
-            9.0,
-            calc_accuracy_bonus_from_explosions(8, 1),
-            "Target 8",
-        );
+        assert_float_eq(9.0, calc_accuracy_bonus_from_explosions(8, 1), "Target 8");
 
-        assert_float_eq(
-            5.5,
-            calc_accuracy_bonus_from_explosions(1, 1),
-            "Target 1",
-        );
+        assert_float_eq(5.5, calc_accuracy_bonus_from_explosions(1, 1), "Target 1");
 
         assert_float_eq(
             5.5,
@@ -65,83 +57,35 @@ mod calc_probability_of_explosions {
 
     #[test]
     fn no_explosion() {
-        assert_float_eq(
-            1.0,
-            calc_probability_of_explosions(100, 0),
-            "Target 100",
-        );
+        assert_float_eq(1.0, calc_probability_of_explosions(100, 0), "Target 100");
 
-        assert_float_eq(
-            1.0,
-            calc_probability_of_explosions(-100, 0),
-            "Target -100",
-        );
+        assert_float_eq(1.0, calc_probability_of_explosions(-100, 0), "Target -100");
     }
 
     #[test]
     fn single_explosion() {
-        assert_float_eq(
-            0.1,
-            calc_probability_of_explosions(100, 1),
-            "Target 100",
-        );
+        assert_float_eq(0.1, calc_probability_of_explosions(100, 1), "Target 100");
 
-        assert_float_eq(
-            0.1,
-            calc_probability_of_explosions(10, 1),
-            "Target 10",
-        );
+        assert_float_eq(0.1, calc_probability_of_explosions(10, 1), "Target 10");
 
-        assert_float_eq(
-            0.2,
-            calc_probability_of_explosions(9, 1),
-            "Target 9",
-        );
+        assert_float_eq(0.2, calc_probability_of_explosions(9, 1), "Target 9");
 
-        assert_float_eq(
-            0.9,
-            calc_probability_of_explosions(2, 1),
-            "Target 2",
-        );
+        assert_float_eq(0.9, calc_probability_of_explosions(2, 1), "Target 2");
 
-        assert_float_eq(
-            1.0,
-            calc_probability_of_explosions(-100, 1),
-            "Target -100",
-        );
+        assert_float_eq(1.0, calc_probability_of_explosions(-100, 1), "Target -100");
     }
 
     #[test]
     fn double_explosion() {
-        assert_float_eq(
-            0.01,
-            calc_probability_of_explosions(100, 2),
-            "Target 100",
-        );
+        assert_float_eq(0.01, calc_probability_of_explosions(100, 2), "Target 100");
 
-        assert_float_eq(
-            0.01,
-            calc_probability_of_explosions(10, 2),
-            "Target 10",
-        );
+        assert_float_eq(0.01, calc_probability_of_explosions(10, 2), "Target 10");
 
-        assert_float_eq(
-            0.02,
-            calc_probability_of_explosions(9, 2),
-            "Target 9",
-        );
+        assert_float_eq(0.02, calc_probability_of_explosions(9, 2), "Target 9");
 
-        assert_float_eq(
-            0.1,
-            calc_probability_of_explosions(1, 2),
-            "Target 1",
-        );
+        assert_float_eq(0.1, calc_probability_of_explosions(1, 2), "Target 1");
 
-        assert_float_eq(
-            1.0,
-            calc_probability_of_explosions(-100, 2),
-            "Target -100",
-        );
+        assert_float_eq(1.0, calc_probability_of_explosions(-100, 2), "Target -100");
     }
 }
 

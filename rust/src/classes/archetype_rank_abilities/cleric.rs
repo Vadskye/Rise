@@ -4,13 +4,12 @@ use crate::creatures::Modifier;
 use crate::skills::Skill;
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
-    vec![
-        RankAbility {
-            complexity: 4,
-            name: "Divine Spells",
-            is_magical: true,
-            rank: 1,
-            description: r"
+    vec![RankAbility {
+        complexity: 4,
+        name: "Divine Spells",
+        is_magical: true,
+        rank: 1,
+        description: r"
                 Your deity grants you the ability to use divine magic.
                 You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
@@ -30,9 +29,8 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
                 Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
-        },
-    ]
+        modifiers: None,
+    }]
 }
 
 pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
@@ -411,9 +409,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to the Persuasion skill.
                 In addition, you are immune to being \stunned.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Persuasion, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             complexity: 1,
@@ -424,9 +420,7 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
                 The Persuasion bonus increases to \plus4.
                 In addition, you are immune to being \confused.
             ",
-            modifiers: Some(vec![
-                Modifier::Skill(Skill::Persuasion, 2),
-            ]),
+            modifiers: Some(vec![Modifier::Skill(Skill::Persuasion, 2)]),
         },
         RankAbility {
             complexity: 2,

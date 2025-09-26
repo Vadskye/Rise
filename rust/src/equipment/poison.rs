@@ -11,7 +11,10 @@ pub fn poison_description(exposure: Exposure, form: Form, effect: &str) -> Strin
 impl Effect {
     fn description(&self) -> String {
         if !self.effect.trim().starts_with("The poison") {
-            eprintln!("Poison effects should start with 'The poison': '{}'", self.effect.trim());
+            eprintln!(
+                "Poison effects should start with 'The poison': '{}'",
+                self.effect.trim()
+            );
         }
 
         format!(

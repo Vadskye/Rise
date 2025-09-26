@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{MagicArmor, ItemUpgrade, StandardItem};
 use crate::equipment::MagicArmor::Body;
+use crate::equipment::{ItemUpgrade, MagicArmor, StandardItem};
 
 pub fn body_armor() -> Vec<MagicArmor> {
     let mut armor = vec![];
@@ -11,9 +11,11 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Armor of Scuttling"),
         rank: 2,
         short_description: String::from("Act normally while prone"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Being \prone does not reduce your movement speed or defenses.
-        "),
+        ",
+        ),
         ..MagicArmor::default()
     }));
 
@@ -21,16 +23,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Armor of Life"),
         rank: 2,
         short_description: String::from("Grants +6 HP"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +6 \glossterm<enhancement bonus> to your \glossterm<hit points>.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +12 HP", "
+            ItemUpgrade::new(
+                4,
+                "Grants +12 HP",
+                "
                 The bonus increases to +12.
-            "),
-            ItemUpgrade::new(6, "Grants +24 HP", "
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "Grants +24 HP",
+                "
                 The bonus increases to +24.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -39,16 +51,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Featherlight Armor"),
         rank: 1,
         short_description: String::from("Reduces encumbrance by 1"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This armor's \glossterm<encumbrance> is reduced by 1.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(3, "Reduces encumbrance by 2", "
+            ItemUpgrade::new(
+                3,
+                "Reduces encumbrance by 2",
+                "
                 The encumbrance reduction improves to 2.
-            "),
-            ItemUpgrade::new(5, "Reduces encumbrance by 3", "
+            ",
+            ),
+            ItemUpgrade::new(
+                5,
+                "Reduces encumbrance by 3",
+                "
                 The encumbrance reduction improves to 3.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -79,18 +101,28 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Stonebody Armor"),
         rank: 2,
         short_description: String::from("Grants +12 HP, but slower and heavier"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
             However, you take a -10 foot penalty to your speed with all movement modes.
             In addition, this armor's \glossterm{encumbrance} is increased by 2.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +24 HP, but slower and heavier", "
+            ItemUpgrade::new(
+                4,
+                "Grants +24 HP, but slower and heavier",
+                "
                 The bonus increases to +24.
-            "),
-            ItemUpgrade::new(6, "Grants +48 HP, but slower and heavier", "
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "Grants +48 HP, but slower and heavier",
+                "
                 The bonus increases to +48.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -115,16 +147,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Hefty Armor"),
         rank: 1,
         short_description: String::from("Grants +2 Brawn"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +2 \glossterm<enhancement bonus> to your Brawn defense.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +3 Brawn", "
+            ItemUpgrade::new(
+                4,
+                "Grants +3 Brawn",
+                "
                 The bonus increases to +3.
-            "),
-            ItemUpgrade::new(7, "Grants +4 Brawn", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +4 Brawn",
+                "
                 The bonus increases to +4.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -133,16 +175,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Evasive Armor"),
         rank: 1,
         short_description: String::from("Grants +2 Reflex"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +2 \glossterm<enhancement bonus> to your Reflex defense.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +3 Reflex", "
+            ItemUpgrade::new(
+                4,
+                "Grants +3 Reflex",
+                "
                 The bonus increases to +3.
-            "),
-            ItemUpgrade::new(7, "Grants +4 Reflex", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +4 Reflex",
+                "
                 The bonus increases to +4.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -182,21 +234,31 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Soulweave Armor"),
         rank: 3,
         short_description: String::from("Grants +12 HP, but -2 power"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +24 HP, but -3 power", "
+            ItemUpgrade::new(
+                5,
+                "Grants +24 HP, but -3 power",
+                "
                 The hit point bonus increases to +24, but the power penalty increases to -3.
-            "),
-            ItemUpgrade::new(7, "Grants +48 HP, but -4 power", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +48 HP, but -4 power",
+                "
                 The hit point bonus increases to +48, but the power penalty increases to -4.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
-    
+
     // TODO: calculate EA for movement effects
     armor.push(Body(StandardItem {
         name: String::from("Swiftstep Armor"),
@@ -213,10 +275,12 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Voidsoul Armor"),
         rank: 5,
         short_description: String::from("Immune to conditions, but hit points are halved"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Your maximum \glossterm<hit points> are halved.
             However, you are immune to \glossterm<conditions>.
-        "),
+        ",
+        ),
         ..MagicArmor::default()
     }));
 
@@ -244,16 +308,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Armor of Transfusion"),
         rank: 3,
         short_description: String::from("Regain 2d8 HP per round"),
-        description: String::from(r"
+        description: String::from(
+            r"
             At the end of each round, you regain 2d8 \glossterm{hit points}.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(5, "Regain 4d10 HP per round", "
+            ItemUpgrade::new(
+                5,
+                "Regain 4d10 HP per round",
+                "
                 The healing increases to 4d10.
-            "),
-            ItemUpgrade::new(7, "Regain 8d10 HP per round", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Regain 8d10 HP per round",
+                "
                 The healing increases to 8d10.
-            "),
+            ",
+            ),
         ],
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicArmor::default()
@@ -274,6 +348,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ],
         ..MagicArmor::default()
     }));
-    
+
     armor
 }

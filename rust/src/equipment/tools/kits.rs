@@ -1,4 +1,4 @@
-use crate::equipment::{Tool, ToolCategory, ItemUpgrade};
+use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 
 pub fn kits() -> Vec<Tool> {
     let mut kits = vec![];
