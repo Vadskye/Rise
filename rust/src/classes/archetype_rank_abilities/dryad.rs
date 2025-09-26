@@ -7,7 +7,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Tree Stride",
             is_magical: true,
             rank: 1,
-            description: r"\
+            description: r"
                 You can walk into and through living trees.
                 Moving through a tree does not impede your movement in any way, and you can end your movement inside a tree.
                 When you do, you can choose to be partially melded or fully melded with the tree.
@@ -23,7 +23,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Natural Speech",
             is_magical: true,
             rank: 2,
-            description: r"\
+            description: r"
                 You can speak with plants and animals as if they were capable of ordinary speech.
                 This ability does not make them any more friendly or cooperative than normal.
                 Wary and cunning animals are likely to be terse and evasive, while stupid ones tend to make inane comments and are unlikely to say or understand anything of use.
@@ -37,7 +37,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Tree Stride+",
             is_magical: true,
             rank: 3,
-            description: r"\
+            description: r"
                 You can \glossterm{teleport} between living trees instead of moving using your \glossterm{walk speed}.
                 Teleporting a given distance costs movement equal to half that distance.
                 If this teleportation fails for any reason, you still expend that movement.
@@ -49,7 +49,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Fey Charm",
             is_magical: true,
             rank: 4,
-            description: r"\
+            description: r"
                 \begin{magicalsustainability}{Fey Charm}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
@@ -62,7 +62,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
 
-                    \noindent The attack\'s \glossterm{accuracy} increases by \plus2 for each rank beyond 4.
+                    \noindent The attack's \glossterm{accuracy} increases by \plus2 for each rank beyond 4.
                 \end{magicalsustainability}
             ",
             modifiers: None,
@@ -72,7 +72,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Tree Bond+",
             is_magical: true,
             rank: 5,
-            description: r"\
+            description: r"
                 You can bond to a grove of trees instead of a single tree.
                 The cumulative age of all trees in the grove must be at least a thousand years, and the grove must fit within a 500 foot radius.
                 While bonded to a grove, the bonuses from your \textit{tree bond} and \textit{enchanting appearance} abilities double.
@@ -84,9 +84,9 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Tree Union",
             is_magical: true,
             rank: 6,
-            description: r"\
+            description: r"
                 When you meld with a tree using your \textit{tree stride} ability, you can fully unite with it.
-                When you do, you have \glossterm{line of sight} and \glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree\'s body.
+                When you do, you have \glossterm{line of sight} and \glossterm{line of effect} from all areas of the tree simultaneously, as if you were everywhere in the tree's body.
                 Attacks against the tree simultaneously affect both you and the tree.
                 You and the tree are both \impervious to damaging attacks, but \vulnerable to \atFire attacks and cold iron weapons.
             ",
@@ -97,7 +97,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             name: "Acorns of Life",
             is_magical: true,
             rank: 7,
-            description: r"\
+            description: r"
                 Whenever you visit a tree you are bonded to with your \textit{tree bond} ability, you can gather acorns of life.
                 You can have up to ten acorns of life at once.
                 As a \glossterm{minor action}, you can throw an acorn of life onto an unoccupied \glossterm{grounded} space within \medrange of you.

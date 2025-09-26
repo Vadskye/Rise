@@ -271,7 +271,10 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             ",
             // This only works if everyone with this archetype doesn't equip actual armor, since
             // the system won't know not to stack the effects
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::Durability(3),
+            ]),
         },
         RankAbility {
             complexity: 3,
@@ -571,7 +574,10 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+            ]),
         },
         RankAbility {
             complexity: 1,
@@ -582,7 +588,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
                 If each of your Strength, Dexterity, and Constitution are 3 or higher, this bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -592,7 +598,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus increases to \plus2, or to \plus3 if you meet the attribute requirement.
             ",
-            modifiers: None,
+            // Assume the attribute requirement is not met
+            modifiers: Some(vec![Modifier::Power(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -644,7 +651,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -654,8 +661,7 @@ pub fn transcendent_sage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to +4.
             ",
-            // TODO: represent DR
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 1,

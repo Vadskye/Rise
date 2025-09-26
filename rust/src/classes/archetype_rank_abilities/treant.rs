@@ -23,7 +23,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             description: r##"
                 You gain a \plus3 bonus to your \glossterm{durability}.
             "##,
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 2,
@@ -90,7 +90,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             description: r##"
                 The durability bonus increases to \plus5.
             "##,
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 0,

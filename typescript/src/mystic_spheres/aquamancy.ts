@@ -551,19 +551,15 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         This has the following effects:
 
         \\begin{raggeditemize}
-          \\par
+          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill.
+          \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
           \\item You gain an slow \\glossterm{swim speed}.
             If you already have a slow swim speed, your swim speed becomes average instead.
-          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill. In addition, the minimum size you can squeeze down to is reduced to one inch, which can dramatically improve your ability to squeeze through tight spaces.
-          \\item You cannot receive \\glossterm{critical hits} from \\glossterm{strikes}.
-          \\item You ignore \\glossterm{difficult terrain} from all sources except for creature abilities.
         \\end{raggeditemize}
-
-        You can suppress or resume this effect as a \\glossterm{free action} once per round.
       `,
-      rank: 2,
+      rank: 4,
       roles: ['attune'],
-      type: 'Attune (deep)',
+      type: 'Attune',
     },
     {
       name: 'Fog Cloud',

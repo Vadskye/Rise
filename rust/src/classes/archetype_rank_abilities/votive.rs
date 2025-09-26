@@ -345,7 +345,7 @@ pub fn pact_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{durability}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(1)]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -453,7 +453,10 @@ pub fn pact_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and \glossterm{fatigue tolerance}.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Resource(Resource::FatigueTolerance, 1),
+            ]),
         },
     ]
 }
@@ -611,7 +614,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus3 bonus to your \glossterm{durability}.
                 In addition, you take half the normal penalties for being \glossterm{resurrected} (see \pcref{Resurrection}).
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 1,
@@ -622,7 +625,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 The durability bonus increases to \plus5.
                 In addition, you take no penalties for being \glossterm{resurrected}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(2)]),
         },
     ]
 }

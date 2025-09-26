@@ -247,15 +247,15 @@ export const polymorph: MysticSphere = {
         Your body and equipment becomes highly flexible and malleable, allowing you to compress your body or contort yourself into odd shapes.
         This has the following effects:
         \\begin{raggeditemize}
+          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill.
           \\item You gain a slow \\glossterm{climb speed} (see \\pcref{Climbing}).
             If you already have a slow climb speed, your climb speed becomes average instead.
           \\item You do not need hands to climb.
-          \\item You gain a +8 \\glossterm{enhancement bonus} to the Flexibility skill.
         \\end{raggeditemize}
       `,
-      rank: 3,
+      rank: 4,
       roles: ['mobility'],
-      type: 'Sustain (standard)',
+      type: 'Attune',
     },
 
     {

@@ -111,7 +111,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Dexterity.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Dexterity, 1)]),
         },
         RankAbility {
             complexity: 2,
@@ -820,7 +820,11 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Deception, Persuasion, and Social Insight skills.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Deception, 2),
+                Modifier::Skill(Skill::Persuasion, 2),
+                Modifier::Skill(Skill::SocialInsight, 2),
+            ]),
         },
         RankAbility {
             complexity: 0,
@@ -830,7 +834,11 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The bonus increases to \plus4.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Skill(Skill::Deception, 2),
+                Modifier::Skill(Skill::Persuasion, 2),
+                Modifier::Skill(Skill::SocialInsight, 2),
+            ]),
         },
         RankAbility {
             complexity: 2,

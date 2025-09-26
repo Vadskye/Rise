@@ -128,7 +128,10 @@ pub fn divine_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
     ]
 }
@@ -311,7 +314,13 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus2.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 1),
+                Modifier::Defense(Defense::Brawn, 1),
+                Modifier::Defense(Defense::Fortitude, 1),
+                Modifier::Defense(Defense::Reflex, 1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
         RankAbility {
             complexity: 2,
