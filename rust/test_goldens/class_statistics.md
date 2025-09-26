@@ -18,10 +18,10 @@
  *    Dragon:  67 /  81
  *     Dryad:  68 /  81
  *     Harpy:  67 /  80
- * Incarnation:  68 /  80
+ * Incarnation:  68 /  78
  *     Naiad:  67 /  80
- *  Oozeborn:  68 /  80
- *     Troll:  67 /  87
+ *  Oozeborn:  68 /  78
+ *     Troll:  67 /  85
  *    Treant:  67 /  86
  *   Vampire:  67 /  81
 
@@ -41,10 +41,10 @@
  *    Dragon:  67 / 159
  *     Dryad:  68 / 159
  *     Harpy:  67 / 158
- * Incarnation:  68 / 158
+ * Incarnation:  68 / 156
  *     Naiad:  67 / 158
- *  Oozeborn:  68 / 158
- *     Troll:  67 / 166
+ *  Oozeborn:  68 / 156
+ *     Troll:  67 / 164
  *    Treant:  67 / 165
  *   Vampire:  67 / 159
 
@@ -64,10 +64,10 @@
  *    Dragon:  67 / 222
  *     Dryad:  68 / 222
  *     Harpy:  67 / 221
- * Incarnation:  68 / 221
+ * Incarnation:  68 / 219
  *     Naiad:  67 / 221
- *  Oozeborn:  68 / 221
- *     Troll:  67 / 228
+ *  Oozeborn:  68 / 219
+ *     Troll:  67 / 226
  *    Treant:  67 / 227
  *   Vampire:  67 / 222
 
@@ -214,7 +214,7 @@
             Incarnation 1
             AP 6, FT -2, IP 4, Skills 6
             HP 14, IP 1
-            AD 4, Brn 5, Fort 7, Ref 5, Ment 5
+            AD 4, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -232,7 +232,7 @@
             Oozeborn 1
             AP 5, FT -1, IP 4, Skills 6
             HP 14, IP 1
-            AD 4, Brn 5, Fort 7, Ref 7, Ment 5
+            AD 4, Brn 5, Fort 7, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -241,7 +241,7 @@
             Troll 1
             AP 5, FT 0, IP 4, Skills 5
             HP 15, IP 1
-            AD 5, Brn 5, Fort 5, Ref 7, Ment 5
+            AD 5, Brn 5, Fort 5, Ref 5, Ment 5
             Club +1 (1d8+1 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 2✨/2
@@ -405,7 +405,7 @@
             Incarnation 10
             AP 8, FT -2, IP 6, Skills 6
             HP 50, IP 24
-            AD 9, Brn 10, Fort 12, Ref 10, Ment 10
+            AD 9, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -423,7 +423,7 @@
             Oozeborn 10
             AP 7, FT -1, IP 6, Skills 6
             HP 50, IP 24
-            AD 9, Brn 10, Fort 12, Ref 12, Ment 10
+            AD 9, Brn 10, Fort 12, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -432,7 +432,7 @@
             Troll 10
             AP 7, FT 0, IP 6, Skills 5
             HP 58, IP 24
-            AD 10, Brn 10, Fort 10, Ref 12, Ment 10
+            AD 10, Brn 10, Fort 10, Ref 10, Ment 10
             Club +6 (1d8+3 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 7✨/7
@@ -596,7 +596,7 @@
             Incarnation 20
             AP 8, FT -2, IP 6, Skills 6
             HP 180, IP 110
-            AD 14, Brn 15, Fort 17, Ref 15, Ment 15
+            AD 14, Brn 15, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12
@@ -614,7 +614,7 @@
             Oozeborn 20
             AP 7, FT -1, IP 6, Skills 6
             HP 180, IP 110
-            AD 14, Brn 15, Fort 17, Ref 17, Ment 15
+            AD 14, Brn 15, Fort 17, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12
@@ -623,7 +623,7 @@
             Troll 20
             AP 7, FT 0, IP 6, Skills 5
             HP 200, IP 110
-            AD 15, Brn 15, Fort 15, Ref 17, Ment 15
+            AD 15, Brn 15, Fort 15, Ref 15, Ment 15
             Club +11 (1d8+6 damage.)
             Attr: Str 2, Dex 2, Con 2, Int 2, Per 2, Wil 2
             Power: 12✨/12

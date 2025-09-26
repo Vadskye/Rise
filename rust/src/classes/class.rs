@@ -96,7 +96,7 @@ impl Class {
     }
 
     pub fn validate_points() {
-        let expected_points = 44;
+        let expected_points = 65;
         for class in Self::all() {
             let actual_points = class.calculate_point_total();
             let class_expected_points =
@@ -139,6 +139,8 @@ impl Class {
             + 2 * (self.defense_bonus(&Defense::Brawn) + self.defense_bonus(&Defense::Fortitude) + self.defense_bonus(&Defense::Reflex) + self.defense_bonus(&Defense::Mental))
             // 4 points per Armor defense
             + self.defense_bonus(&Defense::Armor) * 4
+            // 4 points per vital roll bonus
+            + self.vital_roll_bonus() * 4
     }
 
     pub fn attunement_points(&self) -> i32 {
@@ -542,20 +544,12 @@ impl Class {
                 Defense::Armor => 1,
                 _ => 0,
             },
-            Self::Incarnation => match defense {
-                // Actually changes defense to match their element
-                Defense::Fortitude => 2,
-                _ => 0,
-            },
             Self::Monk => match defense {
                 Defense::Armor => 1,
                 _ => 0,
             },
             Self::Oozeborn => match defense {
                 Defense::Fortitude => 2,
-                // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
-                // build that into the point calc system.
-                Defense::Reflex => 2,
                 _ => 0,
             },
             Self::Sorcerer => match defense {
@@ -568,9 +562,6 @@ impl Class {
                 _ => 0,
             },
             Self::Troll => match defense {
-                // Hack: they actually gain +1 vital rolls, but it's not worth the effort to
-                // build that into the point calc system.
-                Defense::Reflex => 2,
                 _ => 0,
             },
             _ => 0,
@@ -688,6 +679,15 @@ impl Class {
             Self::Vampire => 4,
             Self::Votive => 3,
             Self::Wizard => 3,
+        }
+    }
+
+    pub fn vital_roll_bonus(&self) -> i32 {
+        match self {
+            Self::Incarnation => 1,
+            Self::Oozeborn => 1,
+            Self::Troll => 1,
+            _ => 0,
         }
     }
 
