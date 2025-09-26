@@ -14,6 +14,7 @@ cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.t
 cargo run --bin monster_reference_table > ../core_book/generated/monster_reference_table.tex
 # cargo run --bin modules_chapter > ../core_book/generated/modules.tex
 cargo run --bin classes_chapter > ../comprehensive_codex/generated/classes.tex
+cargo run --bin uncommon_species_classes
 
 cargo run --bin item_latex -- --category 'apparel' --descriptions > ../comprehensive_codex/generated/apparel.tex
 cargo run --bin item_latex -- --category 'apparel' --table > ../comprehensive_codex/generated/apparel_table.tex
