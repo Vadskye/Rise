@@ -26,7 +26,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
                     \crit The condition must be removed twice before the effect ends.
 
                     \rankline
-                    The attack\'s \glossterm{accuracy} increases by \plus1 for each rank beyond 1.
+                    The attack's \glossterm{accuracy} increases by \plus1 for each rank beyond 1.
                     In addition:
                     \rank{3} You can target an additional creature within range.
                     \rank{5} The maximum number of targets increases to 3.

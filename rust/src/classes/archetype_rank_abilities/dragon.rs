@@ -9,12 +9,12 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Dragon Breath",
             is_magical: true,
             rank: 1,
-            description: r"\\
+            description: r"
                 \begin{activeability}{Dragon Breath}
                     \abilityusagetime Standard action.
                     \abilitycost You \glossterm{briefly} cannot use this ability again.
                     \rankline
-                    This ability\'s tag depends on your dragon type (see Dragon Types, above).
+                    This ability's tag depends on your dragon type (see Dragon Types, above).
                     Make an attack vs. Reflex against everything in the area defined by your dragon type.
                     \hit \damageranktwo.
                     \miss Half damage.
@@ -39,7 +39,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Flight",
             is_magical: true,
             rank: 2,
-            description: r"\\
+            description: r"
                 Your wings grow larger, granting you a limited ability to fly.
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
                 As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
@@ -51,7 +51,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Body",
             is_magical: false,
             rank: 3,
-            description: r"\\
+            description: r"
                 You gain a \plus1 bonus to your Armor defense.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
@@ -61,7 +61,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Bulk",
             is_magical: false,
             rank: 4,
-            description: r"\\
+            description: r"
                 Your size category increases to Medium.
                 This increases your \glossterm{base speed} to 30 feet.
                 You reduce your Dexterity by 1 and increase your Strength by 2.
@@ -79,7 +79,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Body+",
             is_magical: false,
             rank: 5,
-            description: r"\\
+            description: r"
                 The Armor bonus from your \textit{draconic body} ability increases to \plus2.
             ",
             modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]),
@@ -89,7 +89,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Flight+",
             is_magical: true,
             rank: 6,
-            description: r"\\
+            description: r"
                 The maximum height increases to 30 feet, and the speed increases to average.
             ",
             modifiers: None,
@@ -99,7 +99,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             name: "Draconic Bulk+",
             is_magical: false,
             rank: 7,
-            description: r"\\
+            description: r"
                 Your size category increases to Large.
                 This increases your \glossterm{base speed} to 40 feet.
                 In addition, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.

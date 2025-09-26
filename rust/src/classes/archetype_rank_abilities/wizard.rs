@@ -98,7 +98,7 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus with alchemical items.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -464,7 +464,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
     ]
 }

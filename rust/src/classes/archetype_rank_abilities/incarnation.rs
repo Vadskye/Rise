@@ -7,7 +7,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Essence Spike",
             is_magical: true,
             rank: 1,
-            description: r"\
+            description: r"
                 \begin{magicalactiveability}{Essence Spike}
                     \abilityusagetime Standard action.
                     \rankline
@@ -38,7 +38,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Essence Flare",
             is_magical: true,
             rank: 2,
-            description: r"\
+            description: r"
                 \begin{magicalactiveability}{Essence Flare}
                     \abilityusagetime Standard action.
                     \rankline
@@ -54,7 +54,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Deep Tether",
             is_magical: false,
             rank: 3,
-            description: r"\
+            description: r"
                 You gain a special ability depending on whether you are tethered or untethered.
                 \begin{raggeditemize}
                     \item Tethered: Choose an \atAttune spell of rank 3 or lower from any \glossterm{mystic sphere}.
@@ -73,7 +73,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Essence Exemplar",
             is_magical: false,
             rank: 4,
-            description: r"\
+            description: r"
                 The bonus to an attribute that you gain from being an incarnate increases to \plus2.
             ",
             modifiers: None,
@@ -83,7 +83,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Essence Infusion+",
             is_magical: true,
             rank: 5,
-            description: r"\
+            description: r"
                 You become \glossterm{immune} instead of impervious to attacks with your \textit{essence infusion} tag.
                 In addition, you gain a \plus1 accuracy bonus with all abilities which have that tag.
             ",
@@ -94,7 +94,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             name: "Deep Tether+",
             is_magical: false,
             rank: 6,
-            description: r"\
+            description: r"
                 You gain a special ability depending on whether you are tethered or untethered.
                 \begin{raggeditemize}
                     \item Tethered: You can choose up two spells with a combined rank of 6 or lower.
@@ -106,11 +106,11 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
+            complexity: 3,
             name: "Essence Incarnate",
             is_magical: true,
             rank: 7,
-            description: r"\
+            description: r"
                 \begin{magicalactiveability}{Essence Incarnate}[\abilitytag{Swift}]
                     \abilityusagetime \glossterm{Minor action}, and you \glossterm{briefly} cannot use this ability again.
                     \abilitycost One \glossterm{fatigue level}.
