@@ -9,7 +9,7 @@ IP: 5 = 0.5 <rank mult> * 1 <level + 0 <modifier>
 
 ### Description
 Fighter 1
-AP 2, FT 3, IP 1, Skills 3
+AP 5, FT 3, IP 2, Skills 3
 HP 25, IP 5
 AD 8, Brn 7, Fort 13, Ref 3, Ment 3
 Generic Accuracy Broadsword +1 (1d6+2 damage.); Certain Broadsword +3 (1d6+1 damage.); Extra Damage Broadsword +1 (1d6+2 damage.); Powerful Broadsword -3 (2d6+4 damage.); Broadsword +1 (1d6+2 damage.)
@@ -26,7 +26,9 @@ fighter: defense brawn by 3
 fighter: defense fortitude by 3
 fighter: defense mental by 3
 fighter: defense reflex by 3
+fighter: resource attunement point by 3
 fighter: resource fatigue tolerance by 3
+fighter: resource insight point by 1
 fighter: resource trained skill by 3
 
 ## Level 10
@@ -38,7 +40,7 @@ IP: 44 = 2 <rank mult> * 10 <level + 0 <modifier>
 
 ### Description
 Fighter 10
-AP 4, FT 6, IP 3, Skills 3
+AP 7, FT 6, IP 4, Skills 3
 HP 118, IP 44
 AD 13, Brn 14, Fort 20, Ref 8, Ment 10
 Generic Accuracy Broadsword +9 (1d6+6 damage.); Certain Broadsword +11 (1d6+3 damage.); Powerful Broadsword +5 (2d6+12 damage.); Extra Damage Broadsword +7 (1d6+11 damage.); Broadsword +6 (1d6+6 damage.)
@@ -58,7 +60,9 @@ fighter: defense brawn by 3
 fighter: defense fortitude by 3
 fighter: defense mental by 3
 fighter: defense reflex by 3
+fighter: resource attunement point by 3
 fighter: resource fatigue tolerance by 3
+fighter: resource insight point by 1
 fighter: resource trained skill by 3
 attribute scaling with level: attribute strength by 2
 attribute scaling with level: attribute constitution by 2
@@ -74,7 +78,7 @@ IP: 165 = 5 <rank mult> * 20 <level + 0 <modifier>
 
 ### Description
 Fighter 20
-AP 4, FT 8, IP 3, Skills 3
+AP 7, FT 8, IP 4, Skills 3
 HP 366, IP 165
 AD 18, Brn 20, Fort 26, Ref 13, Ment 17
 Generic Accuracy Broadsword +18 (1d6+10 damage.); Certain Broadsword +20 (1d6+5 damage.); Powerful Broadsword +14 (2d6+20 damage.); Certain Strike+ -- Broadsword +20 (1d6+10 damage.); Power Strike+ -- Broadsword +11 (3d6+30 damage.); Extra Damage Broadsword +12 (1d6+8d8+10 damage.); Generic Triple Damage -- Broadsword +12 (3d6+30 damage.); Broadsword +12 (1d6+10 damage.)
@@ -100,7 +104,9 @@ fighter: defense brawn by 3
 fighter: defense fortitude by 3
 fighter: defense mental by 3
 fighter: defense reflex by 3
+fighter: resource attunement point by 3
 fighter: resource fatigue tolerance by 3
+fighter: resource insight point by 1
 fighter: resource trained skill by 3
 attribute scaling with level: attribute strength by 3
 attribute scaling with level: attribute constitution by 3
