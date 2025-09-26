@@ -47,7 +47,7 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
         },
         RankAbility {
-            name: "Amorphous Form",
+            name: "Amorphous Form+",
             complexity: 2,
             description: r"
               You gain a \plus4 bonus to your defenses when determining whether a \glossterm{strike} gets a \glossterm{critical hit} against you instead of a normal hit.
@@ -80,7 +80,7 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
         },
         RankAbility {
-            name: "Acidic Body",
+            name: "Acidic Body+",
             complexity: 1,
             description: r"
                 You are \trait{immune} to \atAcid and \atPoison attacks.
@@ -95,6 +95,17 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             description: r"
               The range of your \trait{blindsense} increases by 60 feet.
               In addition, the range of your \trait{blindsight} increases by 15 feet.
+            ",
+            is_magical: false,
+            modifiers: None,
+            rank: 5,
+        },
+        RankAbility {
+            name: "Ingest Object+",
+            complexity: 1,
+            description: r"
+                The maximum number of objects you can absorb with your \textit{ingest object} ability increases to 2.
+                In addition, you may absorb \glossterm{allies} with that ability in addition to unattended objects.
             ",
             is_magical: false,
             modifiers: None,

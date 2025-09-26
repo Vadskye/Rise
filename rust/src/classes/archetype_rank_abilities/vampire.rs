@@ -33,6 +33,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can designate a coffin as your home by resting in it for 24 consecutive hours.
                 When you take a \glossterm{long rest} in your home coffin, you recover two \glossterm{vital wounds} instead of one.
+                In addition, you can cross running water without penalty while in your home coffin.
             ",
             is_magical: true,
             modifiers: None,
