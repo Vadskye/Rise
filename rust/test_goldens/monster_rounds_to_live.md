@@ -6,8 +6,8 @@
 
 Barbarian Glass     : 2.50
 Barbarian Shield    : 5.25
-Fighter Greatmace   : 5.00
-Fighter Shield      : 6.75
+Fighter Greatmace   : 7.25
+Fighter Shield      : 9.75
 Monk Kama           : 3.25
 Paladin Shield      : 5.75
 Ranger Longbow      : 3.75
@@ -24,8 +24,8 @@ Warrior             : 2.75
 
 Barbarian Glass     : 3.50
 Barbarian Shield    : 8.50
-Fighter Greatmace   : 8.50
-Fighter Shield      : 11.50
+Fighter Greatmace   : 11.75
+Fighter Shield      : 16.00
 Monk Kama           : 8.25
 Paladin Shield      : 10.00
 Ranger Longbow      : 6.00
@@ -42,8 +42,8 @@ Warrior             : 3.75
 
 Barbarian Glass     : 3.75
 Barbarian Shield    : 8.75
-Fighter Greatmace   : 8.00
-Fighter Shield      : 12.00
+Fighter Greatmace   : 11.00
+Fighter Shield      : 16.25
 Monk Kama           : 10.50
 Paladin Shield      : 10.00
 Ranger Longbow      : 6.25
@@ -60,8 +60,8 @@ Warrior             : 3.75
 
 Barbarian Glass     : 4.25
 Barbarian Shield    : 11.50
-Fighter Greatmace   : 10.00
-Fighter Shield      : 13.75
+Fighter Greatmace   : 13.00
+Fighter Shield      : 18.00
 Monk Kama           : 11.50
 Paladin Shield      : 12.25
 Ranger Longbow      : 9.50
@@ -78,8 +78,8 @@ Warrior             : 5.75
 
 Barbarian Glass     : 5.50
 Barbarian Shield    : 10.50
-Fighter Greatmace   : 9.25
-Fighter Shield      : 12.50
+Fighter Greatmace   : 11.75
+Fighter Shield      : 15.75
 Monk Kama           : 16.25
 Paladin Shield      : 11.25
 Ranger Longbow      : 12.75
@@ -98,8 +98,8 @@ Warrior             : 6.25
 
 Barbarian Glass     : 2.75
 Barbarian Shield    : 5.25
-Fighter Greatmace   : 5.50
-Fighter Shield      : 6.75
+Fighter Greatmace   : 7.75
+Fighter Shield      : 10.00
 Monk Kama           : 3.75
 Paladin Shield      : 6.00
 Ranger Longbow      : 4.25
@@ -116,8 +116,8 @@ Warrior             : 3.00
 
 Barbarian Glass     : 3.75
 Barbarian Shield    : 9.00
-Fighter Greatmace   : 9.50
-Fighter Shield      : 10.75
+Fighter Greatmace   : 13.00
+Fighter Shield      : 16.25
 Monk Kama           : 5.75
 Paladin Shield      : 10.50
 Ranger Longbow      : 6.75
@@ -134,8 +134,8 @@ Warrior             : 4.25
 
 Barbarian Glass     : 4.50
 Barbarian Shield    : 9.75
-Fighter Greatmace   : 9.00
-Fighter Shield      : 11.50
+Fighter Greatmace   : 12.25
+Fighter Shield      : 17.25
 Monk Kama           : 5.25
 Paladin Shield      : 11.00
 Ranger Longbow      : 6.00
@@ -152,8 +152,8 @@ Warrior             : 4.25
 
 Barbarian Glass     : 5.25
 Barbarian Shield    : 12.50
-Fighter Greatmace   : 11.00
-Fighter Shield      : 14.75
+Fighter Greatmace   : 14.50
+Fighter Shield      : 19.25
 Monk Kama           : 5.75
 Paladin Shield      : 13.25
 Ranger Longbow      : 6.50
@@ -170,8 +170,8 @@ Warrior             : 6.25
 
 Barbarian Glass     : 6.25
 Barbarian Shield    : 11.00
-Fighter Greatmace   : 10.00
-Fighter Shield      : 13.00
+Fighter Greatmace   : 12.75
+Fighter Shield      : 16.50
 Monk Kama           : 6.50
 Paladin Shield      : 12.00
 Ranger Longbow      : 7.00
@@ -190,8 +190,8 @@ Warrior             : 6.50
 
 Barbarian Glass     : 2.75
 Barbarian Shield    : 5.25
-Fighter Greatmace   : 5.50
-Fighter Shield      : 7.00
+Fighter Greatmace   : 7.75
+Fighter Shield      : 10.00
 Monk Kama           : 3.75
 Paladin Shield      : 6.00
 Ranger Longbow      : 4.25
@@ -208,8 +208,8 @@ Warrior             : 3.00
 
 Barbarian Glass     : 3.50
 Barbarian Shield    : 8.00
-Fighter Greatmace   : 7.50
-Fighter Shield      : 10.50
+Fighter Greatmace   : 10.50
+Fighter Shield      : 14.50
 Monk Kama           : 7.25
 Paladin Shield      : 9.50
 Ranger Longbow      : 5.50
@@ -226,8 +226,8 @@ Warrior             : 3.50
 
 Barbarian Glass     : 4.50
 Barbarian Shield    : 8.25
-Fighter Greatmace   : 8.00
-Fighter Shield      : 10.50
+Fighter Greatmace   : 10.75
+Fighter Shield      : 14.50
 Monk Kama           : 9.75
 Paladin Shield      : 9.50
 Ranger Longbow      : 5.75
@@ -244,8 +244,8 @@ Warrior             : 3.75
 
 Barbarian Glass     : 4.50
 Barbarian Shield    : 10.25
-Fighter Greatmace   : 9.00
-Fighter Shield      : 11.75
+Fighter Greatmace   : 11.75
+Fighter Shield      : 15.25
 Monk Kama           : 11.50
 Paladin Shield      : 11.00
 Ranger Longbow      : 8.75
@@ -262,8 +262,8 @@ Warrior             : 5.00
 
 Barbarian Glass     : 5.75
 Barbarian Shield    : 10.00
-Fighter Greatmace   : 9.50
-Fighter Shield      : 11.50
+Fighter Greatmace   : 12.25
+Fighter Shield      : 14.50
 Monk Kama           : 17.50
 Paladin Shield      : 10.75
 Ranger Longbow      : 10.50
@@ -282,8 +282,8 @@ Warrior             : 5.75
 
 Barbarian Glass     : 3.00
 Barbarian Shield    : 6.00
-Fighter Greatmace   : 6.25
-Fighter Shield      : 7.50
+Fighter Greatmace   : 9.25
+Fighter Shield      : 11.00
 Monk Kama           : 4.00
 Paladin Shield      : 6.75
 Ranger Longbow      : 4.50
@@ -300,8 +300,8 @@ Warrior             : 3.25
 
 Barbarian Glass     : 4.25
 Barbarian Shield    : 8.75
-Fighter Greatmace   : 8.50
-Fighter Shield      : 12.50
+Fighter Greatmace   : 12.00
+Fighter Shield      : 17.25
 Monk Kama           : 8.50
 Paladin Shield      : 10.25
 Ranger Longbow      : 6.00
@@ -318,8 +318,8 @@ Warrior             : 3.75
 
 Barbarian Glass     : 4.75
 Barbarian Shield    : 8.25
-Fighter Greatmace   : 8.50
-Fighter Shield      : 10.00
+Fighter Greatmace   : 11.50
+Fighter Shield      : 13.75
 Monk Kama           : 8.75
 Paladin Shield      : 9.25
 Ranger Longbow      : 5.75
@@ -336,8 +336,8 @@ Warrior             : 3.75
 
 Barbarian Glass     : 5.25
 Barbarian Shield    : 9.50
-Fighter Greatmace   : 9.25
-Fighter Shield      : 10.25
+Fighter Greatmace   : 12.00
+Fighter Shield      : 13.25
 Monk Kama           : 10.75
 Paladin Shield      : 10.25
 Ranger Longbow      : 7.50
@@ -354,8 +354,8 @@ Warrior             : 4.75
 
 Barbarian Glass     : 5.50
 Barbarian Shield    : 9.75
-Fighter Greatmace   : 9.25
-Fighter Shield      : 10.50
+Fighter Greatmace   : 12.00
+Fighter Shield      : 13.50
 Monk Kama           : 15.50
 Paladin Shield      : 10.50
 Ranger Longbow      : 9.25
@@ -374,8 +374,8 @@ Warrior             : 5.25
 
 Barbarian Glass     : 3.25
 Barbarian Shield    : 6.25
-Fighter Greatmace   : 6.00
-Fighter Shield      : 8.00
+Fighter Greatmace   : 8.75
+Fighter Shield      : 11.75
 Monk Kama           : 4.00
 Paladin Shield      : 7.00
 Ranger Longbow      : 4.50
@@ -392,8 +392,8 @@ Warrior             : 3.25
 
 Barbarian Glass     : 4.50
 Barbarian Shield    : 10.00
-Fighter Greatmace   : 10.50
-Fighter Shield      : 13.50
+Fighter Greatmace   : 14.50
+Fighter Shield      : 18.50
 Monk Kama           : 9.50
 Paladin Shield      : 11.75
 Ranger Longbow      : 7.50
@@ -410,8 +410,8 @@ Warrior             : 4.75
 
 Barbarian Glass     : 4.00
 Barbarian Shield    : 9.75
-Fighter Greatmace   : 8.75
-Fighter Shield      : 12.75
+Fighter Greatmace   : 12.00
+Fighter Shield      : 17.25
 Monk Kama           : 11.25
 Paladin Shield      : 11.00
 Ranger Longbow      : 6.75
@@ -428,8 +428,8 @@ Warrior             : 4.00
 
 Barbarian Glass     : 4.75
 Barbarian Shield    : 12.25
-Fighter Greatmace   : 10.75
-Fighter Shield      : 14.75
+Fighter Greatmace   : 14.00
+Fighter Shield      : 19.25
 Monk Kama           : 12.25
 Paladin Shield      : 13.25
 Ranger Longbow      : 10.25
@@ -446,8 +446,8 @@ Warrior             : 6.00
 
 Barbarian Glass     : 6.00
 Barbarian Shield    : 11.25
-Fighter Greatmace   : 10.00
-Fighter Shield      : 13.50
+Fighter Greatmace   : 12.75
+Fighter Shield      : 17.00
 Monk Kama           : 17.25
 Paladin Shield      : 12.00
 Ranger Longbow      : 13.75

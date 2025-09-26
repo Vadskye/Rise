@@ -13,14 +13,14 @@ HP/IP: 15 / 1
 Points / Self-hit: 35 / 50%
 
 ### Fighter Greatmace
-A/B/F/R/M: 6 / 7 / 5 / 3 / 3
-HP/IP: 17 / 1
-Points / Self-hit: 30 / 60%
+A/B/F/R/M: 6 / 7 / 13 / 3 / 3
+HP/IP: 25 / 5
+Points / Self-hit: 38 / 60%
 
 ### Fighter Shield
-A/B/F/R/M: 8 / 7 / 5 / 3 / 3
-HP/IP: 17 / 1
-Points / Self-hit: 34 / 40%
+A/B/F/R/M: 8 / 7 / 13 / 3 / 3
+HP/IP: 25 / 5
+Points / Self-hit: 42 / 40%
 
 ### Monk Kama
 A/B/F/R/M: 5 / 5 / 5 / 7 / 3
@@ -65,14 +65,14 @@ HP/IP: 34 / 8
 Points / Self-hit: 49 / 60%
 
 ### Fighter Greatmace
-A/B/F/R/M: 8 / 10 / 8 / 5 / 5
-HP/IP: 40 / 8
-Points / Self-hit: 44 / 60%
+A/B/F/R/M: 8 / 10 / 16 / 5 / 5
+HP/IP: 56 / 16
+Points / Self-hit: 52 / 60%
 
 ### Fighter Shield
-A/B/F/R/M: 10 / 10 / 8 / 5 / 5
-HP/IP: 40 / 8
-Points / Self-hit: 48 / 40%
+A/B/F/R/M: 10 / 10 / 16 / 5 / 5
+HP/IP: 56 / 16
+Points / Self-hit: 56 / 40%
 
 ### Monk Kama
 A/B/F/R/M: 11 / 8 / 7 / 11 / 5
@@ -117,14 +117,14 @@ HP/IP: 79 / 28
 Points / Self-hit: 69 / 60%
 
 ### Fighter Greatmace
-A/B/F/R/M: 11 / 14 / 12 / 8 / 10
-HP/IP: 86 / 28
-Points / Self-hit: 66 / 60%
+A/B/F/R/M: 11 / 14 / 20 / 8 / 10
+HP/IP: 118 / 44
+Points / Self-hit: 74 / 60%
 
 ### Fighter Shield
-A/B/F/R/M: 13 / 14 / 12 / 8 / 10
-HP/IP: 86 / 28
-Points / Self-hit: 70 / 40%
+A/B/F/R/M: 13 / 14 / 20 / 8 / 10
+HP/IP: 118 / 44
+Points / Self-hit: 78 / 40%
 
 ### Monk Kama
 A/B/F/R/M: 16 / 12 / 10 / 16 / 8
@@ -169,14 +169,14 @@ HP/IP: 153 / 63
 Points / Self-hit: 84 / 60%
 
 ### Fighter Greatmace
-A/B/F/R/M: 13 / 17 / 15 / 10 / 14
-HP/IP: 156 / 60
-Points / Self-hit: 82 / 70%
+A/B/F/R/M: 13 / 17 / 23 / 10 / 14
+HP/IP: 204 / 84
+Points / Self-hit: 90 / 70%
 
 ### Fighter Shield
-A/B/F/R/M: 15 / 17 / 15 / 10 / 14
-HP/IP: 156 / 60
-Points / Self-hit: 86 / 50%
+A/B/F/R/M: 15 / 17 / 23 / 10 / 14
+HP/IP: 204 / 84
+Points / Self-hit: 94 / 50%
 
 ### Monk Kama
 A/B/F/R/M: 19 / 15 / 12 / 19 / 10
@@ -221,14 +221,14 @@ HP/IP: 280 / 130
 Points / Self-hit: 102 / 70%
 
 ### Fighter Greatmace
-A/B/F/R/M: 16 / 20 / 18 / 13 / 17
-HP/IP: 286 / 125
-Points / Self-hit: 100 / 70%
+A/B/F/R/M: 16 / 20 / 26 / 13 / 17
+HP/IP: 366 / 165
+Points / Self-hit: 108 / 70%
 
 ### Fighter Shield
-A/B/F/R/M: 18 / 20 / 18 / 13 / 17
-HP/IP: 286 / 125
-Points / Self-hit: 104 / 50%
+A/B/F/R/M: 18 / 20 / 26 / 13 / 17
+HP/IP: 366 / 165
+Points / Self-hit: 112 / 50%
 
 ### Monk Kama
 A/B/F/R/M: 23 / 19 / 16 / 22 / 14
