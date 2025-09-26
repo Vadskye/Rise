@@ -356,7 +356,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to all defenses.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -366,7 +366,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Armor defense and one other defense of your choice.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 1)]), // And one other defense of choice
         },
         RankAbility {
             complexity: 2,
@@ -608,6 +608,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     This effect immediately ends if you use this ability again.
                 \end{sustainability}
             ",
+            // Arbitrarily assume offense
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
@@ -618,7 +619,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Intelligence.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Intelligence, 1)]),
         },
         RankAbility {
             complexity: 0,

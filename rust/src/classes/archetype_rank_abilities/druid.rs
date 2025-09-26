@@ -301,7 +301,10 @@ pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Mental defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Mental, 1),
+            ]),
         },
     ]
 }
@@ -575,7 +578,10 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus2 bonus to your Fortitude defense and a \plus1 bonus to your \glossterm{vital rolls}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Fortitude, 2),
+                Modifier::VitalRoll(1),
+            ]),
         },
         RankAbility {
             complexity: 2,

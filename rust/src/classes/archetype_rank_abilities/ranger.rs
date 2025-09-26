@@ -148,7 +148,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
                 In addition, you can spend insight points to gain one additional Knowledge \glossterm{trained skill} per insight point.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         RankAbility {
             complexity: 1,
@@ -170,7 +170,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You also gain a \plus1 \glossterm{accuracy} bonus against creatures associated with Knowledge skills that you are trained with.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -180,7 +180,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The defense bonus increases to \plus2.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![Modifier::AllDefenses(1)]),
         },
         // TODO: buff to be more combat relevant, or give an extra ability?
         RankAbility {
@@ -413,7 +413,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You also gain a \plus1 bonus to your \glossterm{accuracy}.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(1)]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,

@@ -1,4 +1,4 @@
-use rise::classes::{Class, generate_latex_basic_class_abilities};
+use rise::classes::{generate_latex_basic_class_abilities, Class};
 use rise::latex_formatting::latexify;
 use std::fs;
 use std::path::PathBuf;

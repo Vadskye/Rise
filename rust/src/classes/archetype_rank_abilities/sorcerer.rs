@@ -55,7 +55,10 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{magicalactiveability}
             ",
             // Assuming no other armor
-            modifiers: Some(vec![Modifier::Defense(Defense::Armor, 2)]),
+            modifiers: Some(vec![
+                Modifier::Defense(Defense::Armor, 2),
+                Modifier::Durability(2),
+            ]),
         },
     ];
     add_standard_spell_modifiers(&mut abilities);
@@ -159,7 +162,10 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Fortitude defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Fortitude, 1),
+            ]),
         },
     ]
 }
@@ -213,7 +219,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a +3 bonus to your \glossterm{durability}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
             complexity: 0,
@@ -223,7 +229,7 @@ pub fn draconic_magic<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 The durability bonus increases to +5.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
             complexity: 1,

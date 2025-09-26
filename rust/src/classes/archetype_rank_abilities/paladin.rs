@@ -293,7 +293,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus2 bonus to your \glossterm{durability}.
                 In addition, you gain a \plus1 bonus to your \glossterm{vital rolls} (see \pcref{Vital Wounds}).
             ",
-            modifiers: Some(vec![Modifier::VitalRoll(1)]),
+            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
@@ -301,9 +301,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                This bonus increases to four times your rank in this archetype.
+                This durability bonus increases to \plus4, and the vital roll bonus increases to \plus2.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::Durability(2), Modifier::VitalRoll(1)]),
         },
         RankAbility {
             complexity: 0,
