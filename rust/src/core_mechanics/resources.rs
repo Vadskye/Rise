@@ -47,7 +47,7 @@ pub trait HasResources {
 
 impl HasResources for Creature
 where
-    Creature: HasModifiers,
+    Creature: HasModifiers + HasAttributes,
 {
     fn calc_resource(&self, resource: &Resource) -> i32 {
         let value = match resource {
@@ -61,9 +61,7 @@ where
                 }
             }
             Resource::FatigueTolerance => {
-                3 + self.get_base_attribute(&Attribute::Constitution)
-                    // TODO: remove Willpower from calcs
-                    + (self.get_base_attribute(&Attribute::Willpower) / 2)
+                self.get_attribute_modifier(&Attribute::Constitution)
             }
             Resource::InsightPoint => {
                 self.get_base_attribute(&Attribute::Intelligence)

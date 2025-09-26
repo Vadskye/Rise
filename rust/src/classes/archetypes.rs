@@ -595,22 +595,22 @@ mod tests {
     #[test]
     fn it_calculates_abilities_at_rank() {
         assert_eq!(
-            vec!["Exotic Weapon Training", "Weapon Training"],
             ClassArchetype::EquipmentTraining
                 .abilities_at_rank(1)
                 .iter()
                 .map(|a| a.name)
                 .collect::<Vec<&str>>(),
+            vec!["Exotic Weapon Training", "Armor Expertise"],
             "Should have expected ability from rank 1 equipment training",
         );
 
         assert_eq!(
-            vec!["Augmented Maneuvers"],
             ClassArchetype::MartialMastery
                 .abilities_at_rank(2)
                 .iter()
                 .map(|a| a.name)
                 .collect::<Vec<&str>>(),
+            vec!["Augmented Maneuvers"],
             "Should have expected abilities from rank 2 martial mastery",
         );
     }

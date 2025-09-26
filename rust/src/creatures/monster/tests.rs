@@ -40,7 +40,7 @@ mod statistics {
                 "Firebolt +1 (1d6+2 damage.)", // Normal
                 "Firebolt +1 (1d6+4 damage.)",  // Elite
             ];
-            assert_eq!(expected, actual, "Normal, Elite");
+            assert_eq!(actual, expected, "Normal, Elite");
         }
 
         #[test]
@@ -54,7 +54,7 @@ mod statistics {
                 "Firebolt +6 (4d6 damage.)", // Normal
                 "Firebolt +6 (5d6 damage.)", // Elite
             ];
-            assert_eq!(expected, actual, "Normal, Elite");
+            assert_eq!(actual, expected, "Normal, Elite");
         }
 
         #[test]
@@ -68,7 +68,7 @@ mod statistics {
                 "Firebolt +10 (7d8 damage.)",
                 "Firebolt +10 (9d8 damage.)",
             ];
-            assert_eq!(expected, actual, "Normal, Elite",);
+            assert_eq!(actual, expected, "Normal, Elite",);
         }
 
         #[test]
@@ -82,7 +82,7 @@ mod statistics {
                 "Firebolt +13 (10d10 damage.)",
                 "Firebolt +13 (12d10 damage.)",
             ];
-            assert_eq!(expected, actual, "Normal, Elite",);
+            assert_eq!(actual, expected, "Normal, Elite",);
         }
     }
 }

@@ -13,22 +13,22 @@ mod maneuver_tests {
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
-            2,
             creature.calc_all_attacks().len(),
+            2,
             "Should have 2 attacks, since maneuvers do not override existing weapons"
         );
         creature.add_special_attack(
             Maneuver::CertainStrike.attack(StandardWeapon::Greatsword.weapon(), creature.rank()),
         );
         assert_eq!(
-            3,
             creature.calc_all_attacks().len(),
+            3,
             "Should have 3 attacks, since maneuvers can add new weapons"
         );
         creature.weapons.push(StandardWeapon::Battleaxe.weapon());
         assert_eq!(
-            5,
             creature.calc_all_attacks().len(),
+            5,
             "Should have 5 attacks, since the battleaxe can be used alone or with a maneuver"
         );
     }
@@ -41,15 +41,15 @@ mod maneuver_tests {
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
-            vec![
-                "Certain Broadsword +2 (1d6 slashing damage.)",
-                "Broadsword +0 (1d6+1 slashing damage.)"
-            ],
             creature
                 .calc_all_attacks()
                 .iter()
                 .map(|a| a.shorthand_description(&creature))
                 .collect::<Vec<String>>(),
+            vec![
+                "Certain Broadsword +2 (1d6 slashing damage.)",
+                "Broadsword +0 (1d6+1 slashing damage.)"
+            ],
         );
     }
 
@@ -71,16 +71,16 @@ mod maneuver_tests {
             .weapons
             .push(StandardWeapon::Broadsword.weapon());
         assert_eq!(
-            vec![
-                "Elemental Broadsword +6 (1d4+1d6+4 bludgeoning, fire, and slashing damage.)",
-                "Broadsword +5 (1d6+4 slashing damage.)"
-            ],
             druid
                 .creature
                 .calc_all_attacks()
                 .iter()
                 .map(|a| a.shorthand_description(&druid.creature))
                 .collect::<Vec<String>>(),
+            vec![
+                "Elemental Broadsword +6 (1d4+1d6+4 bludgeoning, fire, and slashing damage.)",
+                "Broadsword +5 (1d6+4 slashing damage.)"
+            ],
         );
     }
 }

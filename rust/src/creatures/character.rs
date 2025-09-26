@@ -94,7 +94,7 @@ impl Character {
         character.creature.add_armor(Armor::StandardShield);
         character.creature.name = Some("Fighter Shield".to_string());
 
-        character.creature.set_base_attributes([4, 0, 2, 0, 2, 0]);
+        character.creature.set_base_attributes([4, 0, 10, 0, 2, 0]);
         character
             .creature
             .set_attribute_scaling(level, vec![Attribute::Strength, Attribute::Constitution]);

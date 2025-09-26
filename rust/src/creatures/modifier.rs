@@ -42,7 +42,7 @@ pub enum Modifier {
     Vulnerable(SpecialDefenseType),
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum ModifierType {
     Accuracy,
     ActiveAbility,

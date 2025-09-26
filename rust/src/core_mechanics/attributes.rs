@@ -73,6 +73,7 @@ pub trait HasAttributes {
     fn set_attribute_scaling(&mut self, level: i32, attributes: Vec<Attribute>);
     fn set_base_attribute(&mut self, attribute: Attribute, value: i32);
     fn set_base_attributes(&mut self, attributes: [i32; 6]);
+    fn get_attribute_modifier(&self, attribute: &Attribute) -> i32;
 }
 
 impl HasAttributes for Creature
@@ -117,5 +118,9 @@ where
         self.set_base_attribute(Attribute::Intelligence, attributes[3]);
         self.set_base_attribute(Attribute::Perception, attributes[4]);
         self.set_base_attribute(Attribute::Willpower, attributes[5]);
+    }
+
+    fn get_attribute_modifier(&self, attribute: &Attribute) -> i32 {
+        (self.get_base_attribute(attribute) - 10) / 2
     }
 }

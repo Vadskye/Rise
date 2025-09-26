@@ -187,41 +187,41 @@ mod tests {
         #[test]
         fn calculate_large_speeds() {
             let size = &Size::Large;
-            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Half, size));
-            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Slow, size));
-            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Normal, size));
-            assert_eq!(60, calc_speed_in_feet(&SpeedCategory::Fast, size));
-            assert_eq!(80, calc_speed_in_feet(&SpeedCategory::Double, size));
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Half, size), 20);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Slow, size), 30);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Normal, size), 40);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Fast, size), 60);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Double, size), 80);
         }
 
         #[test]
         fn calculate_medium_speeds() {
             let size = &Size::Medium;
-            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Half, size));
-            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Slow, size));
-            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Normal, size));
-            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Fast, size));
-            assert_eq!(60, calc_speed_in_feet(&SpeedCategory::Double, size));
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Half, size), 10);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Slow, size), 20);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Normal, size), 30);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Fast, size), 40);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Double, size), 60);
         }
 
         #[test]
         fn calculate_small_speeds() {
             let size = &Size::Small;
-            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Half, size));
-            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Slow, size));
-            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Normal, size));
-            assert_eq!(30, calc_speed_in_feet(&SpeedCategory::Fast, size));
-            assert_eq!(40, calc_speed_in_feet(&SpeedCategory::Double, size));
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Half, size), 10);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Slow, size), 10);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Normal, size), 20);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Fast, size), 30);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Double, size), 40);
         }
 
         #[test]
         fn calculate_diminutive_speeds() {
             let size = &Size::Diminutive;
-            assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Half, size));
-            assert_eq!(5, calc_speed_in_feet(&SpeedCategory::Slow, size));
-            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Normal, size));
-            assert_eq!(10, calc_speed_in_feet(&SpeedCategory::Fast, size));
-            assert_eq!(20, calc_speed_in_feet(&SpeedCategory::Double, size));
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Half, size), 5);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Slow, size), 5);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Normal, size), 10);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Fast, size), 10);
+            assert_eq!(calc_speed_in_feet(&SpeedCategory::Double, size), 20);
         }
     }
 

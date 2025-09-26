@@ -18,8 +18,8 @@ fn it_calculates_rank_abilities() {
     .collect::<Vec<&str>>();
     fighter_1_abilities.sort();
     assert_eq!(
-        vec!["Maneuvers", "Martial Maneuvers",],
         fighter_1_abilities,
+        vec!["Maneuvers", "Martial Maneuvers"],
         "Should have correct abilities for a level 1 fighter",
     );
 
@@ -36,23 +36,22 @@ fn it_calculates_rank_abilities() {
     .collect::<Vec<&str>>();
     fighter_10_abilities.sort();
     assert_eq!(
+        fighter_10_abilities,
         vec![
+            "Adaptive Blow",
             "Armor Expertise",
-            "Armored Strike",
             "Augmented Maneuvers",
             "Augmented Maneuvers+",
+            "Disciplined Blow",
             "Disciplined Reaction",
-            "Disciplined Strike",
             "Enduring Discipline",
             "Exotic Weapon Training",
-            // 2 extra since they are used for maneuver scaling at ranks 3 and 4
             "Maneuvers",
             "Maneuvers",
             "Martial Maneuvers",
             "Martial Maneuvers+",
-            "Weapon Training"
+            "Weapon Expertise"
         ],
-        fighter_10_abilities,
         "Should have correct abilities for a level 10 fighter",
     );
 }
@@ -60,7 +59,7 @@ fn it_calculates_rank_abilities() {
 #[test]
 fn it_calculates_level_21_fighter_defenses() {
     let baseline = Creature::new(21, CreatureCategory::Character);
-    let fighter = Character::new(
+    let mut fighter = Character::new(
         Class::Fighter,
         21,
         [
@@ -70,52 +69,54 @@ fn it_calculates_level_21_fighter_defenses() {
         ],
     )
     .creature;
+    fighter.set_base_attributes([8, 0, 10, 0, 2, 0]); // Set base Str to 8, Con to 10
+    fighter.set_attribute_scaling(21, vec![Attribute::Strength, Attribute::Constitution]); // Add scaling
 
     // Note that this fighter doesn't have any items, so armor defense is lower than the standard
     // character.
     assert_eq!(
-        "Armor b10 f11",
         format!(
             "Armor b{} f{}",
             baseline.calc_defense(&Defense::Armor),
             fighter.calc_defense(&Defense::Armor)
         ),
+        "Armor b10 f11",
         "10 level scaling + 1 class",
     );
     assert_eq!(
-        "Brn b13 f14",
         format!(
             "Brn b{} f{}",
             baseline.calc_defense(&Defense::Brawn),
             fighter.calc_defense(&Defense::Brawn)
         ),
+        "Brn b5 f14",
         "3 base + 10 level scaling + 1 str",
     );
     assert_eq!(
-        "Fort b13 f14",
         format!(
             "Fort b{} f{}",
             baseline.calc_defense(&Defense::Fortitude),
             fighter.calc_defense(&Defense::Fortitude)
         ),
+        "Fort b13 f14",
         "3 base + 10 level scaling + 1 con",
     );
     assert_eq!(
-        "Ref b13 f13",
         format!(
             "Ref b{} f{}",
             baseline.calc_defense(&Defense::Reflex),
             fighter.calc_defense(&Defense::Reflex)
         ),
+        "Ref b13 f13",
         "3 base + 10 level scaling",
     );
     assert_eq!(
-        "Ment b13 f13",
         format!(
             "Ment b{} f{}",
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
+        "Ment b13 f13",
         "3 base + 10 level scaling",
     );
 }
@@ -134,36 +135,36 @@ fn it_calculates_level_21_fighter_attacks() {
     )
     .creature;
     assert_eq!(
-        "Accuracy b10 f11",
         format!(
             "Accuracy b{} f{}",
             baseline.calc_accuracy(),
             fighter.calc_accuracy(),
         ),
+        "Accuracy b10 f11",
         "10 level scaling + 1 equipment training",
     );
     assert_eq!(
-        0,
         fighter.calc_all_attacks().len(),
+        0,
         "Should have no attacks without a weapon"
     );
     fighter.weapons.push(StandardWeapon::Battleaxe.weapon());
     assert_eq!(
-        vec![
-            "Generic Accuracy Battleaxe +18 (1d6+5 slashing damage.)",
-            "Certain Battleaxe +20 (1d6+2 slashing damage.)",
-            "Powerful Battleaxe +14 (2d6+10 slashing damage.)",
-            "Certain Strike+ -- Battleaxe +20 (1d6+5 slashing damage.)",
-            "Power Strike+ -- Battleaxe +11 (3d6+15 slashing damage.)",
-            "Extra Damage Battleaxe +12 (1d6+5d8+5 slashing damage.)",
-            "Generic Triple Damage -- Battleaxe +12 (3d6+15 slashing damage.)",
-            "Battleaxe +12 (1d6+5 slashing damage.)"
-        ],
         fighter
             .calc_all_attacks()
             .iter()
             .map(|a| a.shorthand_description(&fighter))
             .collect::<Vec<String>>(),
+        vec![
+            "Generic Accuracy Battleaxe +18 (1d6+5 damage.)",
+            "Certain Battleaxe +20 (1d6+2 damage.)",
+            "Powerful Battleaxe +14 (2d6+10 damage.)",
+            "Certain Strike+ -- Battleaxe +20 (1d6+5 damage.)",
+            "Power Strike+ -- Battleaxe +11 (3d6+15 damage.)",
+            "Extra Damage Battleaxe +12 (1d6+5d8+5 damage.)",
+            "Generic Triple Damage -- Battleaxe +12 (3d6+15 damage.)",
+            "Battleaxe +12 (1d6+5 damage.)"
+        ],
         "Should have attacks with a weapon"
     );
 }
@@ -171,7 +172,7 @@ fn it_calculates_level_21_fighter_attacks() {
 #[test]
 fn it_calculates_level_21_fighter_resources() {
     let baseline = Creature::new(21, CreatureCategory::Character);
-    let fighter = Character::new(
+    let mut fighter = Character::new(
         Class::Fighter,
         21,
         [
@@ -181,40 +182,45 @@ fn it_calculates_level_21_fighter_resources() {
         ],
     )
     .creature;
+    fighter.set_base_attributes([4, 0, 10, 0, 2, 0]); // Set base Con to 10
+    fighter.set_attribute_scaling(21, vec![Attribute::Strength, Attribute::Constitution]); // Add scaling
+
     assert_eq!(
-        "AP b4 f5",
         format!(
             "AP b{} f{}",
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "2 base + 2 level + 1 equipment training"
+        "AP b4 f4",
+        "4 AP from generic creature level scaling"
     );
+
     assert_eq!(
-        "FT b3 f8",
         format!(
             "FT b{} f{}",
             baseline.calc_resource(&Resource::FatigueTolerance),
             fighter.calc_resource(&Resource::FatigueTolerance)
         ),
-        "3 base + 4 enduring discipline+ + 1 con",
+        "FT b-5 f9",
+        "0 base + 2 Con + 3 Class + 2 Enduring Discipline + 2 Enduring Discipline+"
     );
     assert_eq!(
-        "Insight b3 f3",
         format!(
             "Insight b{} f{}",
             baseline.calc_resource(&Resource::InsightPoint),
             fighter.calc_resource(&Resource::InsightPoint)
         ),
+        "Insight b3 f3",
         "1 base + 2 level",
     );
     assert_eq!(
-        "Skills b0 f3",
         format!(
             "Skills b{} f{}",
             baseline.calc_resource(&Resource::TrainedSkill),
             fighter.calc_resource(&Resource::TrainedSkill)
         ),
+        "Skills b0 f3",
         "3 class",
     );
 }
+

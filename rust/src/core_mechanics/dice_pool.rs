@@ -305,76 +305,76 @@ mod tests {
     #[test]
     fn standard_dice_values() {
         let d6 = Die::d6();
-        assert_eq!("1d6", d6.to_string());
+        assert_eq!(d6.to_string(), "1d6");
         let d8 = Die::d8();
-        assert_eq!("1d8", d8.to_string());
+        assert_eq!(d8.to_string(), "1d8");
         let d10 = Die::d10();
-        assert_eq!("1d10", d10.to_string());
+        assert_eq!(d10.to_string(), "1d10");
     }
 
     #[test]
     fn calculates_average_damage() {
-        assert_eq!(3.5, DicePool::d6().average_damage());
-        assert_eq!(4.5, DicePool::d8().average_damage());
-        assert_eq!(5.5, DicePool::d10().average_damage());
-        assert_eq!(6.5, DicePool::d10().add_modifier(1).average_damage());
+        assert_eq!(DicePool::d6().average_damage(), 3.5);
+        assert_eq!(DicePool::d8().average_damage(), 4.5);
+        assert_eq!(DicePool::d10().average_damage(), 5.5);
+        assert_eq!(DicePool::d10().add_modifier(1).average_damage(), 6.5);
 
-        assert_eq!(13.5, DicePool::xdy(3, 8).average_damage());
+        assert_eq!(DicePool::xdy(3, 8).average_damage(), 13.5);
     }
 
     #[test]
     fn calculates_average_damage_maximized() {
-        assert_eq!(6.0, DicePool::d6().maximize().average_damage());
-        assert_eq!(8.0, DicePool::d8().maximize().average_damage());
-        assert_eq!(10.0, DicePool::d10().maximize().average_damage());
+        assert_eq!(DicePool::d6().maximize().average_damage(), 6.0);
+        assert_eq!(DicePool::d8().maximize().average_damage(), 8.0);
+        assert_eq!(DicePool::d10().maximize().average_damage(), 10.0);
         assert_eq!(
+            DicePool::d10().maximize().add_modifier(2).average_damage(),
             12.0,
-            DicePool::d10().maximize().add_modifier(2).average_damage()
         );
 
-        assert_eq!(24.0, DicePool::xdy(3, 8).maximize().average_damage());
+        assert_eq!(DicePool::xdy(3, 8).maximize().average_damage(), 24.0);
     }
 
     #[test]
     fn stringifies_maximized_dice() {
-        assert_eq!("6", DicePool::d6().maximize().to_string());
-        assert_eq!("9", DicePool::d6().add_modifier(3).maximize().to_string());
+        assert_eq!(DicePool::d6().maximize().to_string(), "6");
+        assert_eq!(DicePool::d6().add_modifier(3).maximize().to_string(), "9");
         assert_eq!(
-            "18",
             DicePool::d6()
                 .add_modifier(3)
                 .maximize()
                 .multiply(2)
-                .to_string()
+                .to_string(),
+            "18",
         );
     }
 
     #[test]
     fn stringifies_dice_with_flat_modifiers() {
-        assert_eq!("1d6+3", DicePool::d6().add_modifier(3).to_string());
+        assert_eq!(DicePool::d6().add_modifier(3).to_string(), "1d6+3");
         assert_eq!(
-            "1d6+1d8+3",
             DicePool::d8()
                 .add_dice(vec![Die::d6()])
                 .add_modifier(3)
-                .to_string()
+                .to_string(),
+            "1d6+1d8+3",
         );
         assert_eq!(
+            DicePool::d6().add_modifier(3).elite_double().to_string(),
             "2d6+6",
-            DicePool::d6().add_modifier(3).elite_double().to_string()
         );
     }
 
     #[test]
     fn stringifies_multiplied_dice() {
-        assert_eq!("1d6+2", DicePool::d6().add_modifier(2).to_string());
+        assert_eq!(DicePool::d6().add_modifier(2).to_string(), "1d6+2");
         assert_eq!(
+            DicePool::d6().add_modifier(2).multiply(2).to_string(),
             "2d6+4",
-            DicePool::d6().add_modifier(2).multiply(2).to_string()
         );
         assert_eq!(
+            DicePool::d6().add_modifier(2).multiply(3).to_string(),
             "3d6+6",
-            DicePool::d6().add_modifier(2).multiply(3).to_string()
         );
     }
 }
