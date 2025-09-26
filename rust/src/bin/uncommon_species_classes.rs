@@ -2,7 +2,6 @@ use rise::classes::{Class, generate_latex_basic_class_abilities};
 use rise::latex_formatting::latexify;
 use std::fs;
 use std::path::PathBuf;
-use titlecase::titlecase;
 
 // This assumes it's being run from the `rust` directory.
 fn main() {
@@ -21,7 +20,6 @@ fn main() {
 
                 {base_class}
             ",
-            name = titlecase(class.name()),
             archetype = archetype.latex_description(class.shorthand_name()).trim(),
             base_class = generate_latex_basic_class_abilities(&class).trim(),
         ));
