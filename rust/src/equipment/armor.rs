@@ -509,24 +509,24 @@ mod tests {
     #[test]
     fn calc_special_material_durability() {
         assert_eq!(
-            6,
             Armor::FullPlate(None).durability(),
+            6,
             "Should be 10 with no material"
         );
         assert_eq!(
-            7,
             Armor::FullPlate(Some(ArmorMaterial::Starmetal)).durability(),
+            7,
             "Should be +1 with starmetal"
         );
         assert_eq!(
-            7,
             Armor::FullPlate(Some(ArmorMaterial::Dragonhide("red".to_string())))
                 .durability(),
+            7,
             "Should be +1 with dragonhide"
         );
         assert_eq!(
-            8,
             Armor::FullPlate(Some(ArmorMaterial::Adamantine)).durability(),
+            8,
             "Should be +2 with adamantine"
         );
     }

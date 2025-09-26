@@ -62,44 +62,44 @@ mod tests {
     #[test]
     fn can_add_new_modifier() {
         assert_eq!(
+            add_accuracy_to_effect(1, "Attack with $accuracy accuracy", "arbitrary name"),
             "Attack with $accuracy+1 accuracy",
-            add_accuracy_to_effect(1, "Attack with $accuracy accuracy", "arbitrary name")
         );
     }
 
     #[test]
     fn can_increase_existing_modifier() {
         assert_eq!(
+            add_accuracy_to_effect(2, "Attack with $accuracy+1 accuracy", "arbitrary name"),
             "Attack with $accuracy+3 accuracy",
-            add_accuracy_to_effect(2, "Attack with $accuracy+1 accuracy", "arbitrary name")
         );
     }
 
     #[test]
     fn can_decrease_existing_modifier() {
         assert_eq!(
+            add_accuracy_to_effect(-2, "Attack with $accuracy+3 accuracy", "arbitrary name"),
             "Attack with $accuracy+1 accuracy",
-            add_accuracy_to_effect(-2, "Attack with $accuracy+3 accuracy", "arbitrary name")
         );
     }
 
     #[test]
     fn can_flip_existing_modifier_sign() {
         assert_eq!(
+            add_accuracy_to_effect(-4, "Attack with $accuracy+2 accuracy", "arbitrary name"),
             "Attack with $accuracy-2 accuracy",
-            add_accuracy_to_effect(-4, "Attack with $accuracy+2 accuracy", "arbitrary name")
         );
     }
 
     #[test]
     fn can_add_new_modifier_to_brawling() {
         assert_eq!(
-            "Attack with $brawlingaccuracy+1 accuracy",
             add_accuracy_to_effect(
                 1,
                 "Attack with $brawlingaccuracy accuracy",
                 "arbitrary name"
-            )
+            ),
+            "Attack with $brawlingaccuracy+1 accuracy",
         );
     }
 }

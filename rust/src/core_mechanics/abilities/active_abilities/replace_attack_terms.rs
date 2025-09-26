@@ -283,16 +283,16 @@ mod tests {
         #[test]
         fn replaces_one_term() {
             assert_eq!(
-                "takes $damage damage.",
                 replace_full_weapon_damage_terms("takes $fullweapondamage."),
+                "takes $damage damage.",
             );
         }
 
         #[test]
         fn replaces_two_terms() {
             assert_eq!(
-                "takes $damage damage and $damage damage.",
                 replace_full_weapon_damage_terms("takes $fullweapondamage and $fullweapondamage."),
+                "takes $damage damage and $damage damage.",
             );
         }
     }
@@ -304,84 +304,84 @@ mod tests {
         #[test]
         fn ignores_irrelevant_text() {
             assert_eq!(
-                "banana accuracy turnip with +3 vs. Armor",
                 replace_accuracy_terms(
                     "banana accuracy turnip with +3 vs. Armor",
                     &sample_creature(),
                     None
                 ),
+                "banana accuracy turnip with +3 vs. Armor",
             );
         }
 
         #[test]
         fn replaces_single_accuracy() {
             assert_eq!(
-                "A +5 attack vs. Armor",
                 replace_accuracy_terms("A $accuracy attack vs. Armor", &sample_creature(), None),
+                "A +5 attack vs. Armor",
             );
         }
 
         #[test]
         fn replaces_added_accuracy() {
             assert_eq!(
-                "A +7 attack vs. Armor",
                 replace_accuracy_terms("A $accuracy+2 attack vs. Armor", &sample_creature(), None),
+                "A +7 attack vs. Armor",
             );
         }
 
         #[test]
         fn replaces_subtracted_accuracy() {
             assert_eq!(
-                "A +3 attack vs. Armor",
                 replace_accuracy_terms("A $accuracy-2 attack vs. Armor", &sample_creature(), None),
+                "A +3 attack vs. Armor",
             );
         }
 
         #[test]
         fn replaces_two_accuracies_one_modified() {
             assert_eq!(
-                "A +2 attack vs. Armor, and a +5 attack vs. Mental",
                 replace_accuracy_terms(
                     "A $accuracy-3 attack vs. Armor, and a $accuracy attack vs. Mental",
                     &sample_creature(),
                     None
                 ),
+                "A +2 attack vs. Armor, and a +5 attack vs. Mental",
             );
         }
 
         #[test]
         fn replaces_two_accuracies() {
             assert_eq!(
-                "A +2 attack vs. Armor, and a +8 attack vs. Mental",
                 replace_accuracy_terms(
                     "A $accuracy-3 attack vs. Armor, and a $accuracy+3 attack vs. Mental",
                     &sample_creature(),
                     None
                 ),
+                "A +2 attack vs. Armor, and a +8 attack vs. Mental",
             );
         }
 
         #[test]
         fn replaces_weapon_bonus() {
             assert_eq!(
-                "A +7 attack vs. Armor",
                 replace_accuracy_terms(
                     "A $accuracy attack vs. Armor",
                     &sample_creature(),
                     Some(&StandardWeapon::Claw.weapon())
                 ),
+                "A +7 attack vs. Armor",
             );
         }
 
         #[test]
         fn replaces_weapon_penalty() {
             assert_eq!(
-                "A +4 attack vs. Armor",
                 replace_accuracy_terms(
                     "A $accuracy attack vs. Armor",
                     &sample_creature(),
                     Some(&StandardWeapon::Sledgehammer.weapon())
                 ),
+                "A +4 attack vs. Armor",
             );
         }
     }
@@ -394,65 +394,65 @@ mod tests {
         #[test]
         fn ignores_irrelevant_text() {
             assert_eq!(
-                "banana damage turnip with +3 vs. Armor",
                 replace_damage_terms(
                     "banana damage turnip with +3 vs. Armor",
                     &sample_creature(),
                     true,
                     None
                 ),
+                "banana damage turnip with +3 vs. Armor",
             );
         }
 
         #[test]
         fn replaces_broadsword_damage() {
             assert_eq!(
-                "Deals 1d6+2 electricity damage",
                 replace_damage_terms(
                     "Deals $damage electricity damage",
                     &sample_creature(),
                     true,
                     Some(&StandardWeapon::Broadsword.weapon())
                 ),
+                "Deals 1d6+2 electricity damage",
             );
         }
 
         #[test]
         fn replaces_doubled_broadsword_damage() {
             assert_eq!(
-                "Deals 2d6+4 electricity damage",
                 replace_damage_terms(
                     "Deals $damage*2 electricity damage",
                     &sample_creature(),
                     true,
                     Some(&StandardWeapon::Broadsword.weapon())
                 ),
+                "Deals 2d6+4 electricity damage",
             );
         }
 
         #[test]
         fn replaces_greatsword_damage() {
             assert_eq!(
-                "Deals 1d8+3 electricity damage",
                 replace_damage_terms(
                     "Deals $damage electricity damage",
                     &sample_creature(),
                     true,
                     Some(&StandardWeapon::Greatsword.weapon())
                 ),
+                "Deals 1d8+3 electricity damage",
             );
         }
 
         #[test]
         fn replaces_tripled_greatsword_damage() {
             assert_eq!(
-                "Deals 3d8+9 electricity damage",
                 replace_damage_terms(
                     "Deals $damage*3 electricity damage",
                     &sample_creature(),
                     true,
                     Some(&StandardWeapon::Greatsword.weapon())
                 ),
+                "Deals 3d8+9 electricity damage",
             );
         }
     }
@@ -472,54 +472,54 @@ mod tests {
         #[test]
         fn ignores_irrelevant_text() {
             assert_eq!(
-                "banana dr2 turnip with +3 vs. Armor",
                 replace_damage_rank_terms(
                     "banana dr2 turnip with +3 vs. Armor",
                     &sample_creature(),
                     true,
                 ),
+                "banana dr2 turnip with +3 vs. Armor",
             );
         }
 
         #[test]
         fn replaces_regular_scaling() {
-            // dr2 is 1d8 +1 per 2 power
+            // dr2 is 1d4 +1 per 1 power
             assert_eq!(
-                "Deals 1d8+2 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr2 electricity damage",
                     &dr_sample_creature(),
                     true
                 ),
+                "Deals 1d4+5 electricity damage",
             );
             assert_eq!(
-                "Deals 1d8+5 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr2 electricity damage",
                     &dr_sample_creature(),
                     false
                 ),
+                "Deals 1d4+10 electricity damage",
             );
         }
 
         #[test]
         fn replaces_low_scaling() {
-            // dr4l is 4d6
+            // dr4l is 3d10
             assert_eq!(
-                "Deals 4d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr4l electricity damage",
                     &dr_sample_creature(),
                     true
                 ),
+                "Deals 3d10 electricity damage",
             );
             assert_eq!(
-                "Deals 4d6 electricity damage",
                 replace_damage_rank_terms(
                     "Deals $dr4l electricity damage",
                     &dr_sample_creature(),
                     false
                 ),
+                "Deals 3d10 electricity damage",
             );
         }
     }
@@ -531,22 +531,22 @@ mod tests {
         #[test]
         fn replaces_broadsword_name() {
             assert_eq!(
-                "Deals some damage with a broadsword.",
                 replace_weapon_name_terms(
                     "Deals some damage with a $weapon.",
                     &Some(&StandardWeapon::Broadsword.weapon()),
                 ),
+                "Deals some damage with a broadsword.",
             );
         }
 
         #[test]
         fn replaces_claws_name() {
             assert_eq!(
-                "Deals some damage with its claws.",
                 replace_weapon_name_terms(
                     "Deals some damage with its $weapons.",
                     &Some(&StandardWeapon::Claw.weapon()),
                 ),
+                "Deals some damage with its claws.",
             );
         }
     }
@@ -558,25 +558,25 @@ mod tests {
         #[test]
         fn replaces_1d6_per_4_power() {
             assert_eq!(
-                // 1d6 per 4 power should be 1d6 total
-                "Deals 1d6 electricity damage",
                 replace_extra_damage_terms(
                     "Deals $d6p4 electricity damage",
                     &sample_creature(),
                     true,
                 ),
+                // 1d6 per 4 power should be 1d6 total
+                "Deals 1d6 electricity damage",
             );
         }
 
         #[test]
         fn replaces_1d8_per_1_power() {
             assert_eq!(
-                "Deals 5d8 electricity damage",
                 replace_extra_damage_terms(
                     "Deals $d8p1 electricity damage",
                     &sample_creature(),
                     true,
                 ),
+                "Deals 5d8 electricity damage",
             );
         }
     }

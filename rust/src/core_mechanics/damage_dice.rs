@@ -110,31 +110,31 @@ mod tests {
     #[test]
     fn standard_dice_values() {
         let d6 = DamageDice::d6();
-        assert_eq!("1d6", d6.to_string());
+        assert_eq!(d6.to_string(), "1d6");
         let d8 = DamageDice::d8();
-        assert_eq!("1d8", d8.to_string());
+        assert_eq!(d8.to_string(), "1d8");
         let d10 = DamageDice::d10();
-        assert_eq!("1d10", d10.to_string());
+        assert_eq!(d10.to_string(), "1d10");
     }
 
     #[test]
     fn increasing_size() {
         let d6 = DamageDice::d6();
-        assert_eq!("1d8", d6.add(1).to_string());
-        assert_eq!("1d10", d6.add(2).to_string());
-        assert_eq!("2d6", d6.add(3).to_string());
-        assert_eq!("2d8", d6.add(4).to_string());
+        assert_eq!(d6.add(1).to_string(), "1d8");
+        assert_eq!(d6.add(2).to_string(), "1d10");
+        assert_eq!(d6.add(3).to_string(), "2d6");
+        assert_eq!(d6.add(4).to_string(), "2d8");
     }
 
     #[test]
     fn decreasing_size() {
         let twod8 = DamageDice::d6().add(4);
-        assert_eq!("2d8", twod8.to_string());
-        assert_eq!("2d6", twod8.add(-1).to_string());
-        assert_eq!("1d10", twod8.add(-2).to_string());
-        assert_eq!("1d6", twod8.add(-4).to_string());
-        assert_eq!("1d3", twod8.add(-6).to_string());
-        assert_eq!("1d2", twod8.add(-7).to_string());
-        assert_eq!("1", twod8.add(-8).to_string());
+        assert_eq!(twod8.to_string(), "2d8");
+        assert_eq!(twod8.add(-1).to_string(), "2d6");
+        assert_eq!(twod8.add(-2).to_string(), "1d10");
+        assert_eq!(twod8.add(-4).to_string(), "1d6");
+        assert_eq!(twod8.add(-6).to_string(), "1d3");
+        assert_eq!(twod8.add(-7).to_string(), "1d2");
+        assert_eq!(twod8.add(-8).to_string(), "1");
     }
 }

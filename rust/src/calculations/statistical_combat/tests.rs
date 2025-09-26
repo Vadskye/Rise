@@ -6,8 +6,8 @@ use crate::equipment::StandardWeapon;
 
 fn assert_float_eq(expected: f64, actual: f64, message: &str) {
     assert_eq!(
-        format!("{expected:.2}"),
         format!("{actual:.2}"),
+        format!("{expected:.2}"),
         "{message}",
     )
 }
@@ -154,23 +154,23 @@ mod calculate_attack_outcome {
         let outcome =
             calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 6, 10);
         assert_eq!(
-            "0.500 single, 0.055 crit",
             outcome.short_description(),
+            "0.500 single, 0.055 crit",
             "Should be around 50% with +0 vs 6",
         );
 
         let outcome =
             calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 0, 10);
         assert_eq!(
-            "1.000 single, 0.111 crit",
             outcome.short_description(),
+            "1.000 single, 0.111 crit",
             "Should be around 100% with +0 vs 0",
         );
 
         let outcome = calculate_attack_outcome(&StandardWeapon::Claw.weapon().attack(), 1, 10, 10);
         assert_eq!(
-            "0.400 single, 0.044 crit",
             outcome.short_description(),
+            "0.400 single, 0.044 crit",
             "Should include weapon accuracy modifier and non-weapon accuracy modifier",
         );
     }
@@ -180,16 +180,16 @@ mod calculate_attack_outcome {
         let outcome =
             calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 0, 16, 10);
         assert_eq!(
-            "0.050 single, 0.005 crit",
             outcome.short_description(),
+            "0.050 single, 0.005 crit",
             "Should be around 5% with +0 vs 16",
         );
 
         let outcome =
             calculate_attack_outcome(&StandardWeapon::Broadsword.weapon().attack(), 10, 6, 10);
         assert_eq!(
-            "1.000 single, 0.555 crit",
             outcome.short_description(),
+            "1.000 single, 0.555 crit",
             "Should be over 100% with +10 vs 6",
         );
     }
@@ -198,23 +198,23 @@ mod calculate_attack_outcome {
     fn glance_probability() {
         let attack = &StandardWeapon::Broadsword.weapon().attack();
         assert_eq!(
-            "0.200",
             format!("{:.3}", calculate_glance_probability(attack, 0, 6, 10)),
+            "0.200",
             "Should be 20% with +0 vs 6",
         );
         assert_eq!(
-            "0.000",
             format!("{:.3}", calculate_glance_probability(attack, 0, 0, 10)),
+            "0.000",
             "Should be 0% with +0 vs 0",
         );
         assert_eq!(
-            "0.100",
             format!("{:.3}", calculate_glance_probability(attack, 0, 11, 10)),
+            "0.100",
             "Should be 10% with +0 vs 11",
         );
         assert_eq!(
-            "0.010",
             format!("{:.3}", calculate_glance_probability(attack, 0, 12, 10)),
+            "0.010",
             "Should be 1% with +0 vs 12",
         );
     }
@@ -241,7 +241,7 @@ mod calculate_attack_outcome {
                 .short_description()
             })
             .collect();
-        assert_eq!(expected_hit_probability, actual_hit_probability);
+        assert_eq!(actual_hit_probability, expected_hit_probability);
     }
 
     #[test]
@@ -266,7 +266,7 @@ mod calculate_attack_outcome {
                 .short_description()
             })
             .collect();
-        assert_eq!(expected_hit_probability, actual_hit_probability);
+        assert_eq!(actual_hit_probability, expected_hit_probability);
     }
 
     #[test]
@@ -275,7 +275,6 @@ mod calculate_attack_outcome {
         let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.500 single, 0.055 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -285,6 +284,7 @@ mod calculate_attack_outcome {
                 attacker.calc_explosion_target(),
             )
             .short_description(),
+            "0.500 single, 0.055 crit",
         );
     }
 
@@ -294,7 +294,6 @@ mod calculate_attack_outcome {
         let attacker = Monster::standard_example_monster(level).creature;
         let attack = attacker.get_attack_by_name("Bite").unwrap();
         assert_eq!(
-            "0.700 single, 0.077 crit",
             calculate_attack_outcome(
                 &attack,
                 attacker.calc_accuracy(),
@@ -304,6 +303,7 @@ mod calculate_attack_outcome {
                 attacker.calc_explosion_target(),
             )
             .short_description(),
+            "0.700 single, 0.077 crit",
         );
     }
 
@@ -325,12 +325,12 @@ mod calculate_attack_outcome {
         }
 
         assert_eq!(
+            [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
             [
                 "0.500 single, 0.055 crit",
                 "0.700 single, 0.077 crit",
                 "0.700 single, 0.077 crit"
             ],
-            [calc_at_level(1), calc_at_level(10), calc_at_level(20)],
             "at levels 1/10/20",
         );
     }
@@ -349,37 +349,37 @@ mod calc_individual_dpr {
         defender.add_modifier(Modifier::Defense(Defense::Reflex, 3), None, None);
         defender.add_modifier(Modifier::Defense(Defense::Mental, 3), None, None);
         assert_eq!(
-            0.0,
             calc_individual_dpr(&attacker, &defender),
+            0.0,
             "Should be 0.0 when attacker has no attacks",
         );
 
         // Ensure that the starting conditions match our expectations
         assert_eq!(
-            0,
             attacker.calc_accuracy(),
+            0,
             "Attacker should have 0 accuracy",
         );
         assert_eq!(
-            vec![0, 3, 3, 3, 3],
             Defense::all()
                 .iter()
                 .map(|d| defender.calc_defense(d))
                 .collect::<Vec<i32>>(),
+            vec![0, 3, 3, 3, 3],
             "Defender should have 0/3/3/3 defenses",
         );
 
         attacker.add_special_attack(StandardWeapon::Broadsword.weapon().attack());
         assert_eq!(
-            "3.889",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "3.889",
             "Should be 3.5 dph * 1.111 hpr = 3.889 dpr",
         );
 
         defender.add_modifier(Modifier::Defense(Defense::Armor, 6), None, None);
         assert_eq!(
-            "2.292",
             format!("{:.3}", calc_individual_dpr(&attacker, &defender)),
+            "2.292",
             "Should be 3.5 dph * 0.555 hpr + 1.75dpg * 0.2gpr = 2.2925 dpr after increasing defender Armor defense",
         );
     }

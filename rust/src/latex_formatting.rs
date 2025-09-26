@@ -148,7 +148,6 @@ continue for any number of lines,
 don't     remove extraneous mid-line spacing,
 end with no line break";
         assert_eq!(
-            expected,
             non_indented_block(
                 "
                     Start with a line break,
@@ -156,6 +155,7 @@ end with no line break";
             don't     remove extraneous mid-line spacing,
         end with no line break"
             ),
+            expected,
         );
     }
 
@@ -168,7 +168,6 @@ don't     remove extraneous mid-line spacing,
 end with a line break
 ";
         assert_eq!(
-            expected,
             remove_indentation(
                 "
                     Start with a line break,
@@ -177,6 +176,7 @@ end with a line break
         end with a line break
         "
             ),
+            expected,
         );
     }
 }
