@@ -39,11 +39,6 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
 
 // Generate the Resources section of the basic class abilities.
 fn generate_latex_resources(class: &Class) -> String {
-    let attunement_points = 3 + class.attunement_points();
-    let fatigue_tolerance = 2;
-    let insight_points = 1 + class.insight_points();
-    let trained_skills = class.trained_skills();
-
     format!(
         "
             \\cf<{shorthand_name}><Resources>
@@ -54,11 +49,11 @@ fn generate_latex_resources(class: &Class) -> String {
                 \\item \\glossterm<Trained skills>: {trained_skills} from among your \\glossterm<class skills>, plus additional trained skills equal to your Intelligence if it is positive (see \\pcref<Skills>).
             \\end<raggeditemize>
         ",
-        attunement_points = attunement_points,
-        fatigue_tolerance = fatigue_tolerance,
-        insight_points = insight_points,
+        attunement_points = class.attunement_points(),
+        fatigue_tolerance = class.fatigue_tolerance(),
+        insight_points = class.insight_points(),
         shorthand_name = class.shorthand_name(),
-        trained_skills = trained_skills,
+        trained_skills = class.trained_skills(),
     )
 }
 
