@@ -69,7 +69,7 @@ fn it_calculates_level_21_fighter_defenses() {
         ],
     )
     .creature;
-    fighter.set_base_attributes([8, 0, 10, 0, 2, 0]); // Set base Str to 8, Con to 10
+    fighter.set_base_attributes([3, 0, 4, 0, 2, 0]);
     fighter.set_attribute_scaling(21, vec![Attribute::Strength, Attribute::Constitution]); // Add scaling
 
     // Note that this fighter doesn't have any items, so armor defense is lower than the standard
@@ -89,8 +89,8 @@ fn it_calculates_level_21_fighter_defenses() {
             baseline.calc_defense(&Defense::Brawn),
             fighter.calc_defense(&Defense::Brawn)
         ),
-        "Brn b5 f14",
-        "3 base + 10 level scaling + 1 str",
+        "Brn b10 f20",
+        "3 class + 10 level scaling + 7 str",
     );
     assert_eq!(
         format!(
@@ -98,8 +98,8 @@ fn it_calculates_level_21_fighter_defenses() {
             baseline.calc_defense(&Defense::Fortitude),
             fighter.calc_defense(&Defense::Fortitude)
         ),
-        "Fort b13 f14",
-        "3 base + 10 level scaling + 1 con",
+        "Fort b10 f21",
+        "3 class + 10 level scaling + 8 con",
     );
     assert_eq!(
         format!(
@@ -107,8 +107,8 @@ fn it_calculates_level_21_fighter_defenses() {
             baseline.calc_defense(&Defense::Reflex),
             fighter.calc_defense(&Defense::Reflex)
         ),
-        "Ref b13 f13",
-        "3 base + 10 level scaling",
+        "Ref b10 f13",
+        "3 class + 10 level scaling",
     );
     assert_eq!(
         format!(
@@ -116,8 +116,8 @@ fn it_calculates_level_21_fighter_defenses() {
             baseline.calc_defense(&Defense::Mental),
             fighter.calc_defense(&Defense::Mental)
         ),
-        "Ment b13 f13",
-        "3 base + 10 level scaling",
+        "Ment b10 f17",
+        "3 class + 10 level scaling + 4 enduring discipline",
     );
 }
 

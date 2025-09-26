@@ -587,12 +587,6 @@ mod tests {
         #[test]
         fn replaces_mind_crush() {
             assert_multiline_eq(
-                // dr4 is 1d6 + (1d6 per 2 power)
-                r"
-                    The $name makes a +5 attack vs. Mental against one creature within \medrange.
-                    \hit 2d6 damage.
-                    \injury The target is \stunned as a condition.
-                ",
                 replace_attack_terms(
                     r"
                     The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
@@ -603,37 +597,43 @@ mod tests {
                     true,
                     None,
                 ),
+                // dr4 is 1d6 + (1d6 per 2 power)
+                r"
+                    The $name makes a +5 attack vs. Mental against one creature within \medrange.
+                    \hit 2d6 damage.
+                    \injury The target is \stunned as a condition.
+                ",
             );
         }
 
         #[test]
         fn replaces_aboleth_slime() {
             assert_multiline_eq(
-                r"
-                    The $name makes a +5 melee strike with a tentacle.
-                    \hit 1d8+3 damage.
-                    Each creature that loses hit points from this damage is poisoned by aboleth slime.
-
-                    Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
-                    The poison's accuracy is +7.
-                    Its stage 1 effect makes the target \slowed while the poison lasts.
-                    Its stage 3 effect makes the target dissolve into an sludgelike mass while the poison lasts, as the \textit{sludgeform} spell.
-                ",
                 replace_attack_terms(
                     r"
-                    The $name makes a $accuracy melee strike with a $weapon.
-                    \hit $damage damage.
-                    Each creature that loses hit points from this damage is poisoned by aboleth slime.
+                        The $name makes a $accuracy melee strike with a $weapon.
+                        \hit $damage damage.
+                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
 
-                    Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
-                    The poison's accuracy is $accuracy+2.
-                    Its stage 1 effect makes the target \slowed while the poison lasts.
-                    Its stage 3 effect makes the target dissolve into an sludgelike mass while the poison lasts, as the \textit{sludgeform} spell.
-                ",
+                        Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
+                        The poison's accuracy is $accuracy+2.
+                        Its stage 1 effect makes the target \slowed while the poison lasts.
+                        Its stage 3 effect makes the target dissolve into an sludgelike mass while the poison lasts, as the \textit{sludgeform} spell.
+                    ",
                     &sample_creature(),
                     false,
                     Some(&Weapon::tentacle()),
                 ),
+                r"
+                    The $name makes a +5 melee strike with a tentacle.
+                        \hit 1d8+3 damage.
+                        Each creature that loses hit points from this damage is poisoned by aboleth slime.
+
+                        Aboleth slime is an injury-based liquid poison (see \pcref{Poison}).
+                        The poison's accuracy is +7.
+                        Its stage 1 effect makes the target \slowed while the poison lasts.
+                        Its stage 3 effect makes the target dissolve into an sludgelike mass while the poison lasts, as the \textit{sludgeform} spell.
+                ",
             );
         }
     }
