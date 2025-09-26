@@ -27,12 +27,14 @@ pub fn mounts() -> Vec<Tool> {
         name: "Horse, Light".to_string(),
         rank: 1,
         short_description: "Large horse trained for riding".to_string(),
-        description: String::from(r"
+        description: String::from(
+            r"
             This is a Large light horse intended for riding.
             It is not trained to be effectively ridden in battle.
             % TODO: calculate horse as a monster
             It has 12 hit points.
-        "),
+        ",
+        ),
         ..mount()
     });
 
@@ -40,12 +42,14 @@ pub fn mounts() -> Vec<Tool> {
         name: "Horse, Draft".to_string(),
         rank: 1,
         short_description: "Large horse trained for labor".to_string(),
-        description: String::from(r"
+        description: String::from(
+            r"
             This is a Large draft horse intended for working a farm or similar labor.
             It is not trained to be effectively ridden in battle.
             % TODO: calculate horse as a monster
             It has 16 hit points.
-        "),
+        ",
+        ),
         ..mount()
     });
 
@@ -53,12 +57,14 @@ pub fn mounts() -> Vec<Tool> {
         name: "Warhorse".to_string(),
         rank: 2,
         short_description: "Large horse trained for battle".to_string(),
-        description: String::from(r"
+        description: String::from(
+            r"
             This is a Large warhorse.
             It is trained to be effectively ridden in battle.
             % TODO: calculate horse as a monster
             It has 20 hit points.
-        "),
+        ",
+        ),
         ..mount()
     });
 

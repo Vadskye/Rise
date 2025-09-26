@@ -17,7 +17,13 @@ pub enum Defense {
 
 impl Defense {
     pub fn all() -> Vec<Self> {
-        vec![Self::Armor, Self::Brawn, Self::Fortitude, Self::Mental, Self::Reflex]
+        vec![
+            Self::Armor,
+            Self::Brawn,
+            Self::Fortitude,
+            Self::Mental,
+            Self::Reflex,
+        ]
     }
 
     pub fn name(&self) -> &str {

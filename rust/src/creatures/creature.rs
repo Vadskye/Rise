@@ -2,9 +2,7 @@ use std::cmp::max;
 
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver, StandardAttack};
-use crate::core_mechanics::{
-    Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound,
-};
+use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
 use crate::creatures::{latex, Character, IdentifiedModifier, Modifier, Monster};
 use crate::equipment::{Armor, Weapon};
 use crate::monsters::{ChallengeRating, Role};

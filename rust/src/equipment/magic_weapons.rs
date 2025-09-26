@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{item_latex, latex_table, StandardItem};
 use crate::equipment::latex_table::{TableRow, ToTableRows};
+use crate::equipment::{item_latex, latex_table, StandardItem};
 mod melee;
 mod ranged;
 mod unrestricted;
@@ -30,7 +30,12 @@ impl MagicWeapon {
     }
 
     pub fn to_latex(&self) -> String {
-        if !self.item().tags.iter().any(|item| matches!(item, AbilityTag::Attune(_))) {
+        if !self
+            .item()
+            .tags
+            .iter()
+            .any(|item| matches!(item, AbilityTag::Attune(_)))
+        {
             eprintln!("Weapon {} must require attunement", self.item().name);
         }
 
@@ -82,9 +87,5 @@ pub fn magic_weapons_table() -> String {
         .collect();
     latex_table::standard_sort(&mut rows);
 
-    latex_table::longtable(
-        "Magic Weapons",
-        rows,
-        with_category,
-    )
+    latex_table::longtable("Magic Weapons", rows, with_category)
 }

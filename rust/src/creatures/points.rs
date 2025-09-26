@@ -1,5 +1,5 @@
-use crate::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses, HasResources, Resource};
 use crate::core_mechanics::attacks::HasAttacks;
+use crate::core_mechanics::{Defense, HasDamageAbsorption, HasDefenses, HasResources, Resource};
 use crate::creatures::{Character, Creature, CreatureCategory};
 use std::cmp::max;
 

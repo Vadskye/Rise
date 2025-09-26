@@ -1,5 +1,5 @@
 use crate::core_mechanics::{
-    abilities::AbilityTag, Debuff, MovementMode, PassiveAbility, SpecialDefenseType, Attribute,
+    abilities::AbilityTag, Attribute, Debuff, MovementMode, PassiveAbility, SpecialDefenseType,
 };
 use crate::equipment::WeaponMaterial;
 use crate::skills::Skill;

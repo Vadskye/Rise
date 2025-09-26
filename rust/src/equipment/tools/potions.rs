@@ -1,5 +1,5 @@
-use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::equipment::{ItemUpgrade, Tool, ToolCategory};
 
 pub fn potions() -> Vec<Tool> {
     let mut potions = vec![];
@@ -135,7 +135,8 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \fortified.
             This has the \atSwift tag, so it protects you against attacks during the current phase.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Swift],
         ..potion()
     });
@@ -147,7 +148,8 @@ pub fn potions() -> Vec<Tool> {
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \shielded.
             This has the \atSwift tag, so it protects you against attacks during the current phase.
-        ".to_string(),
+        "
+        .to_string(),
         tags: vec![AbilityTag::Swift],
         ..potion()
     });
@@ -168,7 +170,8 @@ pub fn potions() -> Vec<Tool> {
         short_description: "Grants critical benefits".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \honed and \steeled.
-        ".to_string(),
+        "
+        .to_string(),
         ..potion()
     });
 
@@ -178,7 +181,8 @@ pub fn potions() -> Vec<Tool> {
         short_description: "Grants brief maximization".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \maximized.
-        ".to_string(),
+        "
+        .to_string(),
         ..potion()
     });
 

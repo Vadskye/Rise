@@ -256,9 +256,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \end{attuneability}
             ",
             // TODO: this also affects allies
-            modifiers: Some(vec![
-                Modifier::Accuracy(1),
-            ]),
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 3,

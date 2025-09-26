@@ -582,18 +582,19 @@ impl Class {
     pub fn fatigue_tolerance(&self) -> i32 {
         let base_bonus = 2;
 
-        base_bonus + match self {
-            Self::Automaton => 3,
-            Self::Barbarian => 1,
-            Self::Dragon => 1,
-            Self::Fighter => 1,
-            Self::Ranger => 1,
-            Self::Oozeborn => 1,
-            Self::Sorcerer => 1,
-            Self::Treant => 1,
-            Self::Troll => 2,
-            _ => 0,
-        }
+        base_bonus
+            + match self {
+                Self::Automaton => 3,
+                Self::Barbarian => 1,
+                Self::Dragon => 1,
+                Self::Fighter => 1,
+                Self::Ranger => 1,
+                Self::Oozeborn => 1,
+                Self::Sorcerer => 1,
+                Self::Treant => 1,
+                Self::Troll => 2,
+                _ => 0,
+            }
     }
 
     pub fn insight_points(&self) -> i32 {
@@ -1359,7 +1360,7 @@ impl Class {
                 5 => 6,
                 6 => 8,
                 7 => 10,
-                _ => panic!("impossible")
+                _ => panic!("impossible"),
             };
             level_rows.push(format!(
                 "

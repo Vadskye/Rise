@@ -1,8 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
 
-
-
-
 pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {

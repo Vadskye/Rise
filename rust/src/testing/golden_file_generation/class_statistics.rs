@@ -134,8 +134,16 @@ pub fn write_class_complexity_golden() -> io::Result<()> {
 {archetypes}
             ",
             class = class.name(),
-            total3 = class.archetypes().into_iter().map(|a| a.complexity_by_rank(3)).sum::<i32>(),
-            total7 = class.archetypes().into_iter().map(|a| a.complexity_by_rank(7)).sum::<i32>(),
+            total3 = class
+                .archetypes()
+                .into_iter()
+                .map(|a| a.complexity_by_rank(3))
+                .sum::<i32>(),
+            total7 = class
+                .archetypes()
+                .into_iter()
+                .map(|a| a.complexity_by_rank(7))
+                .sum::<i32>(),
             archetypes = class
                 .archetypes()
                 .into_iter()

@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
-use crate::equipment::{MagicArmor, ItemUpgrade, StandardItem};
 use crate::equipment::MagicArmor::Shield;
+use crate::equipment::{ItemUpgrade, MagicArmor, StandardItem};
 
 pub fn shields() -> Vec<MagicArmor> {
     let mut armor = vec![];
@@ -29,16 +29,26 @@ pub fn shields() -> Vec<MagicArmor> {
         name: String::from("Shield of Arrow Deflection"),
         rank: 1,
         short_description: String::from("Grants +2 defenses vs ranged strikes"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +2 bonus to your defenses against ranged \glossterm<strikes>.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +3 defenses vs ranged strikes", "
+            ItemUpgrade::new(
+                4,
+                "Grants +3 defenses vs ranged strikes",
+                "
                 The bonus increases to +3.
-            "),
-            ItemUpgrade::new(7, "Grants +4 defenses vs ranged strikes", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +4 defenses vs ranged strikes",
+                "
                 The bonus increases to +4.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -76,9 +86,11 @@ pub fn shields() -> Vec<MagicArmor> {
         name: String::from("Impact Shield"),
         rank: 3,
         short_description: String::from(r"Is \abilitytag{Impact}"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This shield gains the \abilitytag{Impact} tag when used as a weapon.
-        "),
+        ",
+        ),
         ..MagicArmor::default()
     }));
 
@@ -86,14 +98,18 @@ pub fn shields() -> Vec<MagicArmor> {
         name: String::from("Defender's Shield"),
         rank: 1,
         short_description: String::from("Grants +1 Armor defense"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +1 \glossterm<enhancement bonus> to your Armor defense.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Grants +2 Armor defense", "
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            7,
+            "Grants +2 Armor defense",
+            "
                 The bonus increases to +2.
-            "),
-        ],
+            ",
+        )],
         ..MagicArmor::default()
     }));
 
@@ -101,16 +117,26 @@ pub fn shields() -> Vec<MagicArmor> {
         name: String::from("Psychic Shield"),
         rank: 1,
         short_description: String::from("Grants +2 Mental defense"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +2 \glossterm<enhancement bonus> to your Mental defense.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +3 Mental defense", "
+            ItemUpgrade::new(
+                4,
+                "Grants +3 Mental defense",
+                "
                 The bonus increases to +3.
-            "),
-            ItemUpgrade::new(7, "Grants +4 Mental defense", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +4 Mental defense",
+                "
                 The bonus increases to +4.
-            "),
+            ",
+            ),
         ],
         ..MagicArmor::default()
     }));
@@ -178,15 +204,19 @@ pub fn shields() -> Vec<MagicArmor> {
         name: String::from("Shield of Shielding"),
         rank: 1,
         short_description: String::from("Shields you"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You are \shielded.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        upgrades: vec![
-            ItemUpgrade::new(7, "Shields you", r"
+        upgrades: vec![ItemUpgrade::new(
+            7,
+            "Shields you",
+            r"
                 This item does not require \glossterm{deep attunement}.
-            "),
-        ],
+            ",
+        )],
         ..MagicArmor::default()
     }));
 

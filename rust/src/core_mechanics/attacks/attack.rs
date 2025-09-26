@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::{
-    latex_ability_block, AbilityTag, AbilityExtraContext, Range, Targeting, UsageTime,
+    latex_ability_block, AbilityExtraContext, AbilityTag, Range, Targeting, UsageTime,
 };
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};

@@ -252,7 +252,7 @@ impl ClassArchetype {
 
     pub fn complexity_by_rank(&self, max_rank: i32) -> i32 {
         let mut complexity = 0;
-        for rank in 1..(max_rank+1) {
+        for rank in 1..(max_rank + 1) {
             complexity += self.complexity_at_rank(rank);
         }
 
@@ -486,11 +486,7 @@ impl ClassArchetype {
         let mut rank_ability_descriptions = archetype_rank_abilities(self)
             .iter()
             .filter(|a| a.description.trim() != "")
-            .map(|a| {
-                a.latex_class_feature(class_shorthand)
-                    .trim()
-                    .to_string()
-            })
+            .map(|a| a.latex_class_feature(class_shorthand).trim().to_string())
             .collect::<Vec<String>>();
         rank_ability_descriptions.sort();
         format!(

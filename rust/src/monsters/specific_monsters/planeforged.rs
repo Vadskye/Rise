@@ -3,8 +3,8 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::{Maneuver, StandardAttack};
 use crate::core_mechanics::{
-    Debuff, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
-    SpecialDefenseType, SpeedCategory,
+    Debuff, MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType,
+    SpeedCategory,
 };
 use crate::creatures::{calculate_standard_rank, Modifier, ModifierBundle, Monster};
 use crate::equipment::{StandardWeapon, Weapon, WeaponMaterial};

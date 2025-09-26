@@ -10,10 +10,16 @@ impl ItemUpgrade {
     // constructed the struct directly
     pub fn new(rank: i32, short_description: &str, description: &str) -> Self {
         if !description.trim().ends_with(".") {
-            eprintln!("Item upgrade description should end with '.': '{}'", description)
+            eprintln!(
+                "Item upgrade description should end with '.': '{}'",
+                description
+            )
         }
         if short_description.trim().ends_with(".") {
-            eprintln!("Item upgrade short description should not end with '.': '{}'", short_description)
+            eprintln!(
+                "Item upgrade short description should not end with '.': '{}'",
+                short_description
+            )
         }
 
         Self {

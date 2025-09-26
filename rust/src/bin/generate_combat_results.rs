@@ -17,12 +17,14 @@ fn main() -> io::Result<()> {
         }
     }
 
-    let mut difficult_writer = csv::Writer::from_writer(File::create("combat_results/difficult_encounter.csv")?);
+    let mut difficult_writer =
+        csv::Writer::from_writer(File::create("combat_results/difficult_encounter.csv")?);
     for r in &difficult_combat_results {
         difficult_writer.serialize(r)?;
     }
 
-    let mut standard_writer = csv::Writer::from_writer(File::create("combat_results/standard_encounter.csv")?);
+    let mut standard_writer =
+        csv::Writer::from_writer(File::create("combat_results/standard_encounter.csv")?);
     for r in &standard_combat_results {
         standard_writer.serialize(r)?;
     }

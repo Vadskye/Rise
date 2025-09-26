@@ -41,12 +41,30 @@ fn main() {
 
 fn latexify_items(category: String, _descriptions: bool) -> Vec<String> {
     match category.to_lowercase().as_str() {
-        "apparel" => equipment::all_apparel().into_iter().map(|x| x.to_latex()).collect(),
-        "implements" => equipment::all_implements().into_iter().map(|x| x.to_latex()).collect(),
-        "magic armor" => equipment::all_magic_armor().into_iter().map(|x| x.to_latex()).collect(),
-        "magic weapons" => equipment::all_magic_weapons().into_iter().map(|x| x.to_latex()).collect(),
-        "consumable tools" => equipment::all_tools(Some(true)).into_iter().map(|x| x.to_latex()).collect(),
-        "permanent tools" => equipment::all_tools(Some(false)).into_iter().map(|x| x.to_latex()).collect(),
+        "apparel" => equipment::all_apparel()
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
+        "implements" => equipment::all_implements()
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
+        "magic armor" => equipment::all_magic_armor()
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
+        "magic weapons" => equipment::all_magic_weapons()
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
+        "consumable tools" => equipment::all_tools(Some(true))
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
+        "permanent tools" => equipment::all_tools(Some(false))
+            .into_iter()
+            .map(|x| x.to_latex())
+            .collect(),
         _ => panic!("Unrecognized category '{}'", category),
     }
 }
