@@ -10,9 +10,9 @@ pub fn generate_latex_basic_class_abilities(class: &Class) -> String {
         "
             \\subsection<Base Class Effects>
 
-            {base_class_table}
-
             If you choose {name} as your \\glossterm<base class>, you gain the following benefits.
+
+            {base_class_table}
 
             {defenses}
 
