@@ -132,30 +132,3 @@ pub fn add_standard_maneuver_modifiers(rank_abilities: &mut Vec<RankAbility<'_>>
         },
     ]);
 }
-
-pub fn add_hp_scaling(
-    rank_abilities: &mut Vec<RankAbility<'_>>,
-    triple_rank: i32,
-    quadruple_rank: i32,
-) {
-    for rank in triple_rank..quadruple_rank {
-        rank_abilities.push(RankAbility {
-            complexity: 0,
-            name: "Hit Point Scaling",
-            is_magical: false,
-            rank,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(rank * 3)]),
-        });
-    }
-    for rank in quadruple_rank..8 {
-        rank_abilities.push(RankAbility {
-            complexity: 0,
-            name: "Hit Point Scaling",
-            is_magical: false,
-            rank,
-            description: "",
-            modifiers: Some(vec![Modifier::HitPoints(rank * 4)]),
-        });
-    }
-}

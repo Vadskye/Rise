@@ -3,10 +3,10 @@ use crate::core_mechanics::{Attribute, DamageDice, Defense, MovementMode};
 use crate::creatures::Modifier;
 use crate::skills::Skill;
 
-use super::standard_modifiers::{add_hp_scaling, add_standard_maneuver_modifiers};
+use super::standard_modifiers::add_standard_maneuver_modifiers;
 
 pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
-    let mut abilities = vec![
+    vec![
         RankAbility {
             complexity: 2,
             name: "Second Wind",
@@ -105,9 +105,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-    ];
-    add_hp_scaling(&mut abilities, 2, 6);
-    abilities
+    ]
 }
 
 pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
