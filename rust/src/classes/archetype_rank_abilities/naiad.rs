@@ -111,7 +111,7 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{River or stream} You gain a \plus10 foot \glossterm{enhancement bonus} to your \glossterm{movement speed}.
                     \itemhead{Underground reservoir} The range of your \trait{darkvision} increases by 60 feet.
                     In addition, the skill bonuses increase to \plus4.
-                \end{itemize}
+                \end{raggeditemize}
             ",
             modifiers: None,
         },

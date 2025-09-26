@@ -9,10 +9,10 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Nourishing Ingrain",
             is_magical: false,
             rank: 1,
-            description: r##"
+            description: r"
                 At the end of each round while you are \ability{ingrained}, you regain hit points equal to your rank in this archetype, and you may choose to remove a \glossterm{condition}.
                 If you do, you increase your \glossterm{fatigue level} by one.
-            "##,
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -20,9 +20,9 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Sturdy as the Mighty Oak",
             is_magical: false,
             rank: 2,
-            description: r##"
+            description: r"
                 You gain a \plus3 bonus to your \glossterm{durability}.
-            "##,
+            ",
             modifiers: Some(vec![Modifier::Durability(3)]),
         },
         RankAbility {
@@ -30,7 +30,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Animate Plants",
             is_magical: true,
             rank: 3,
-            description: r##"
+            description: r"
                 \begin{magicalactiveability}{Animate Plants}[\abilitytag{Manifestation}]
                     \abilityusagetime Standard action.
                     \rankline
@@ -53,7 +53,7 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
                     \rank{6} 2d8 damage.
                     \rank{7} 2d10 damage.
                 \end{magicalactiveability}
-            "##,
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -61,11 +61,11 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Tall as the Noble Pine",
             is_magical: false,
             rank: 4,
-            description: r##"
+            description: r"
                 Your size category increases to Large.
                 Unlike normal for increasing your size, this does not increase your \glossterm{base speed}.
                 You also gain a \plus1 bonus to your Strength, and a \minus1 penalty to your Dexterity.
-            "##,
+            ",
             modifiers: Some(vec![
                 Modifier::Attribute(Attribute::Strength, 1),
                 Modifier::Attribute(Attribute::Dexterity, -1),
@@ -76,10 +76,10 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Nourishing Ingrain+",
             is_magical: false,
             rank: 5,
-            description: r##"
+            description: r"
                 The healing from your \textit{nourishing ingrain} ability increases to three times your rank in this archetype.
                 In addition, removing a condition with that ability no longer increases your fatigue level.
-            "##,
+            ",
             modifiers: None,
         },
         RankAbility {
@@ -87,9 +87,9 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Sturdy as the Mighty Oak+",
             is_magical: false,
             rank: 6,
-            description: r##"
+            description: r"
                 The durability bonus increases to \plus5.
-            "##,
+            ",
             modifiers: Some(vec![Modifier::Durability(2)]),
         },
         RankAbility {
@@ -97,12 +97,12 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             name: "Tall as the Noble Pine+",
             is_magical: false,
             rank: 7,
-            description: r##"
+            description: r"
                 Your size category increases to Huge.
                 This increases your \glossterm{base speed} to 40 feet.
                 Your normal movement speed is still only 30 feet due to the penalty from \textit{unhurried and unfaltering}.
                 The modifiers to Strength and Dexterity increase to \plus2 and \minus2, respectively.
-            "##,
+            ",
             modifiers: Some(vec![
                 Modifier::BaseSpeed(10),
                 Modifier::Attribute(Attribute::Strength, 1),

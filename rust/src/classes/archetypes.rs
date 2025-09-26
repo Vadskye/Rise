@@ -236,16 +236,16 @@ impl ClassArchetype {
             Self::ArcaneScholar => "Arcane Scholar",
             Self::SchoolSpecialist => "School Specialist",
             // Uncommon species
-            Self::Automaton => "Automaton",
-            Self::Dragon => "Dragon",
-            Self::Dryad => "Dryad",
-            Self::Harpy => "Harpy",
-            Self::Incarnation => "Incarnation",
-            Self::Naiad => "Naiad",
-            Self::Oozeborn => "Oozeborn",
-            Self::Treant => "Treant",
-            Self::Troll => "Troll",
-            Self::Vampire => "Vampire",
+            Self::Automaton => "Automaton Archetype",
+            Self::Dragon => "Dragon Archetype",
+            Self::Dryad => "Dryad Archetype",
+            Self::Harpy => "Harpy Archetype",
+            Self::Incarnation => "Incarnation Archetype",
+            Self::Naiad => "Naiad Archetype",
+            Self::Oozeborn => "Oozeborn Archetype",
+            Self::Treant => "Treant Archetype",
+            Self::Troll => "Troll Archetype",
+            Self::Vampire => "Vampire Archetype",
         }
     }
 
