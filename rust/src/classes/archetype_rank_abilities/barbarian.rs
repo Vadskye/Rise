@@ -17,7 +17,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \abilityusagetime \glossterm{Minor action}.
                     \rankline
-                    You regain all of your \glossterm{hit points}.
+                    You regain half of your maximum \glossterm{hit points}.
                 \end{activeability}
             ",
             modifiers: None,
@@ -30,18 +30,18 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
-                However, you also gain a \plus4 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
+                However, you also increase your \glossterm{injury point} by twice your rank in this archetype (see \pcref{Injury Point}).
             ",
             modifiers: None,
         },
-        // A normal rank 6 ability would give +5 durability. This gives +18 HP for +20 IP.
+        // A normal rank 6 ability would give +5 durability. This gives +18 HP for +18 IP.
         RankAbility {
             complexity: 0,
             name: "Battle-Scarred+",
             is_magical: false,
             rank: 6,
             description: r"
-                The durability bonus increases to \plus8, and the injury point bonus increases to \plus20.
+                The durability bonus increases to \plus8, and the injury point bonus increases to three times your rank in this archetype.
             ",
             modifiers: None,
         },
