@@ -65,13 +65,19 @@ fn generate_latex_defenses(class: &Class) -> String {
         .collect::<Vec<String>>();
     let plus3_defense_text = latex_formatting::join_string_list(&plus3_defense_names).unwrap();
 
-    let custom_modifiers = Defense::all()
+    let mut custom_modifiers = Defense::all()
         .iter()
         .filter(|d| class.defense_bonus(d) != 3)
         .map(|d| format_defense(d, class.defense_bonus(d)))
         .filter(|t| t.is_some())
         .map(|t| t.unwrap())
         .collect::<Vec<String>>();
+    if class.vital_roll_bonus() > 0 {
+        custom_modifiers.push(format!(
+            "a \\plus{} bonus to your \\glossterm<vital rolls>",
+            class.vital_roll_bonus()
+        ));
+    }
     let custom_modifier_text =
         if let Some(modifier_text) = latex_formatting::join_string_list(&custom_modifiers) {
             format!("In addition, you gain {modifier_text}.")
