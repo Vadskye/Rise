@@ -1,21 +1,21 @@
 use std::cmp::max;
 
-pub fn assert_multiline_eq(left: &str, right: String) {
-    let left_split = left.trim().split('\n').collect::<Vec<&str>>();
-    let right_split = right.trim().split('\n').collect::<Vec<&str>>();
+pub fn assert_multiline_eq(actual: String, expected: &str) {
+    let left_split = actual.trim().split('\n').collect::<Vec<&str>>();
+    let right_split = expected.trim().split('\n').collect::<Vec<&str>>();
     for i in 0..max(left_split.len(), right_split.len()) {
         if i == left_split.len() {
             panic!(
-                "Left is missing line {}; right has `{}`\n{}\n",
-                i, right_split[i], right,
+                "actual is missing line {}; expected has `{}`\n{}\n",
+                i, right_split[i], expected,
             );
         } else if i == right_split.len() {
             panic!(
-                "Right is missing line {}; right has `{}`\n{}\n",
-                i, left_split[i], right
+                "expected is missing line {}; expected has `{}`\n{}\n",
+                i, left_split[i], expected
             );
         } else {
-            assert_eq!(left_split[i], right_split[i], "\n{}\n", right);
+            assert_eq!(left_split[i], right_split[i], "\n{}\n", expected);
         }
     }
 }
