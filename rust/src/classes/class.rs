@@ -1259,7 +1259,11 @@ impl fmt::Display for Class {
 impl Class {
     pub fn latex_section(&self) -> String {
         let archetypes = self.archetypes();
+        if archetypes.len() == 0 {
+            panic!("Class {} has no archetypes", self.name());
+        }
         let archetype_names: Vec<&str> = archetypes.iter().map(|a| a.name()).collect();
+
         latex_formatting::latexify(format!(
             "
                 \\newpage

@@ -13,12 +13,15 @@ mod harpy;
 mod incarnation;
 mod monk;
 mod naiad;
+mod oozeborn;
 mod paladin;
 mod ranger;
 mod rogue;
 mod sorcerer;
 mod standard_modifiers;
 mod treant;
+mod troll;
+mod vampire;
 mod votive;
 mod wizard;
 
@@ -146,7 +149,10 @@ pub fn archetype_rank_abilities(archetype: &ClassArchetype) -> Vec<RankAbility> 
         ClassArchetype::Harpy => harpy::harpy(),
         ClassArchetype::Incarnation => incarnation::incarnation(),
         ClassArchetype::Naiad => naiad::naiad(),
+        ClassArchetype::Oozeborn => oozeborn::oozeborn(),
         ClassArchetype::Treant => treant::treant(),
+        ClassArchetype::Troll => troll::troll(),
+        ClassArchetype::Vampire => vampire::vampire(),
     }
 }
 
