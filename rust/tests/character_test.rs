@@ -1,7 +1,6 @@
 #[cfg(test)]
 mod character_tests {
     use rise::classes::{calc_rank_abilities, Class, ClassArchetype};
-    use rise::core_mechanics::attacks::HasAttacks;
     use rise::creatures::{Character, HasModifiers};
 
     #[test]
@@ -17,8 +16,8 @@ mod character_tests {
         let mut ability_names: Vec<&str> = abilities.iter().map(|a| a.name).collect();
         ability_names.sort();
         assert_eq!(
-            vec!["Sacrificial Covenant",],
             ability_names,
+            vec!["Sacrificial Covenant"],
             "Should match expected names"
         );
     }
@@ -41,6 +40,7 @@ mod character_tests {
         modifier_descriptions.sort();
         // Note that this ignores the DR 1 ability from rank 0 blessings of the abyss
         assert_eq!(
+            modifier_descriptions,
             vec![
                 "DR 3",
                 "defense armor by 2",
@@ -49,7 +49,6 @@ mod character_tests {
                 "resource insight point by 1",
                 "resource trained skill by 3"
             ],
-            modifier_descriptions,
             "Should match expected names"
         );
     }

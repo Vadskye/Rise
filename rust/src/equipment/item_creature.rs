@@ -60,8 +60,8 @@ mod tests {
     fn has_correct_power_at_rank() {
         for rank in 0..8 {
             assert_eq!(
-                rank * 2,
                 item_creature(rank).calc_power(false),
+                rank * 2,
                 "Should have correct power at rank {}; {}",
                 rank,
                 item_creature(rank).to_latex(),

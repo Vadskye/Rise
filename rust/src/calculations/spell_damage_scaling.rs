@@ -360,7 +360,7 @@ mod tests {
     #[test]
     fn calc_damage_works() {
         let d6_plus_d6_per_two_power = &[0, 1, 0, 0, 0, 2, 0, 0];
-        assert_eq!(7.0, calc_damage(2.0, d6_plus_d6_per_two_power),);
-        assert_eq!(10.5, calc_damage(4.0, d6_plus_d6_per_two_power),);
+        assert_eq!(calc_damage(2.0, d6_plus_d6_per_two_power), 7.0);
+        assert_eq!(calc_damage(4.0, d6_plus_d6_per_two_power), 10.5);
     }
 }
