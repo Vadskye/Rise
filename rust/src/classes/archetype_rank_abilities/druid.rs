@@ -169,13 +169,12 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
-    vec![
-        RankAbility {
-            complexity: 4,
-            name: "Nature Spells",
-            is_magical: true,
-            rank: 1,
-            description: r"
+    vec![RankAbility {
+        complexity: 4,
+        name: "Nature Spells",
+        is_magical: true,
+        rank: 1,
+        description: r"
                 Your connection to nature grants you the ability to use nature magic.
                 You gain access to one nature \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Nature Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional nature \glossterm{mystic sphere} per two \glossterm{insight points}.
@@ -195,9 +194,8 @@ pub fn nature_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of nature spells that you can learn is equal to your rank in this archetype.
                 Nature spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
-        },
-    ]
+        modifiers: None,
+    }]
 }
 
 pub fn nature_spell_mastery<'a>() -> Vec<RankAbility<'a>> {

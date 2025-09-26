@@ -20,7 +20,9 @@ where
         let durability_from_level = self.level - rank;
         let durability_from_armor: i32 = self.get_armor().iter().map(|a| a.durability()).sum();
         // TODO: include body armor durability and base class durability
-        let durability = durability_from_level + durability_from_armor + self.get_base_attribute(&Attribute::Constitution);
+        let durability = durability_from_level
+            + durability_from_armor
+            + self.get_base_attribute(&Attribute::Constitution);
 
         durability
     }
@@ -90,7 +92,7 @@ fn calc_hp_rank_multiplier(creature: &Creature) -> i32 {
         8 => 12,
         9 => 14,
         10 => 16,
-        _ => panic!("Unable to calculate rank for level {}", creature.level)
+        _ => panic!("Unable to calculate rank for level {}", creature.level),
     }
 }
 
@@ -112,7 +114,7 @@ fn calc_ip_rank_multiplier(creature: &Creature) -> f64 {
         8 => 6.0,
         9 => 7.0,
         10 => 8.0,
-        _ => panic!("Unable to calculate rank for level {}", creature.level)
+        _ => panic!("Unable to calculate rank for level {}", creature.level),
     }
 }
 

@@ -5,9 +5,7 @@ use crate::core_mechanics::abilities::{
 use crate::core_mechanics::attacks::attack_effect::{
     AttackEffectDuration, AttackTriggeredEffect, DamageOverTimeEffect, DebuffEffect,
 };
-use crate::core_mechanics::attacks::{
-    Attack, AttackEffect, SimpleDamageEffect,
-};
+use crate::core_mechanics::attacks::{Attack, AttackEffect, SimpleDamageEffect};
 use crate::core_mechanics::{Debuff, Defense, SpeedCategory, Tag};
 use std::cmp::max;
 

@@ -76,9 +76,9 @@ impl ChallengeRating {
                         defense_modifier += 1;
                     }
                 }
-                
+
                 defense_modifier
-            },
+            }
         }
     }
 
@@ -136,15 +136,8 @@ impl ChallengeRating {
 
         match count {
             1 => vec![elite(level + 3)],
-            2 => vec![
-                elite(level),
-                standard(level + 3),
-            ],
-            3 => vec![
-                elite(level),
-                standard(level),
-                standard(level),
-            ],
+            2 => vec![elite(level), standard(level + 3)],
+            3 => vec![elite(level), standard(level), standard(level)],
             4 => vec![
                 standard(level + 3),
                 standard(level + 3),
@@ -204,15 +197,8 @@ impl ChallengeRating {
 
         match count {
             1 => vec![elite(level)],
-            2 => vec![
-                standard(level + 3),
-                standard(level + 3),
-            ],
-            3 => vec![
-                standard(level + 3),
-                standard(level),
-                standard(level),
-            ],
+            2 => vec![standard(level + 3), standard(level + 3)],
+            3 => vec![standard(level + 3), standard(level), standard(level)],
             4 => vec![
                 standard(level),
                 standard(level),

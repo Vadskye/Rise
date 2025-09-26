@@ -1,5 +1,5 @@
 use crate::classes::archetype_rank_abilities::RankAbility;
-use crate::core_mechanics::{Defense, Attribute};
+use crate::core_mechanics::{Attribute, Defense};
 use crate::creatures::Modifier;
 
 pub fn dragon<'a>() -> Vec<RankAbility<'a>> {

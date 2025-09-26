@@ -1,6 +1,6 @@
-use crate::equipment::{Implement, ItemUpgrade, StandardItem};
-use crate::equipment::Implement::Staff;
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
+use crate::equipment::Implement::Staff;
+use crate::equipment::{Implement, ItemUpgrade, StandardItem};
 
 pub fn staffs() -> Vec<Implement> {
     let mut implements = vec![];
@@ -65,7 +65,7 @@ pub fn staffs() -> Vec<Implement> {
     //     short_description: String::from(r"Your slowing effects last longer"),
     //     description: String::from(r"
     //         Whenever you cause an enemy to be \slowed as a \glossterm<condition>, that condition must be removed an additional time before the effect ends.
-    //         In addition, whenever you cause an enemy to be \glossterm{briefly} \slowed, they 
+    //         In addition, whenever you cause an enemy to be \glossterm{briefly} \slowed, they
     //     "),
     //     ..Implement::default()
     // }));
@@ -109,10 +109,12 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Merciful Staff"),
         rank: 1,
         short_description: String::from(r"Converts damage to subdual damage"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Whenever you use a \magical ability that deals damage, you may activate this staff.
             If you do, that ability deals \glossterm<subdual damage>.
-        "),
+        ",
+        ),
         ..Implement::default()
     }));
 
@@ -469,9 +471,11 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Staff of Power"),
         rank: 4,
         short_description: String::from(r"Empowers you"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You are \empowered.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
     }));
@@ -480,10 +484,12 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Staff of Overwhelming Power"),
         rank: 7,
         short_description: String::from(r"Empowers you, but with \minus1 accuracy"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You are \empowered.
             However, you take a \minus1 accuracy penalty.
-        "),
+        ",
+        ),
         ..Implement::default()
     }));
 
@@ -491,7 +497,8 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Flaming Staff"),
         rank: 3,
         short_description: String::from(r"Is burning and ignites"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This staff constantly burns.
             You can suppress or resume this fire as a \glossterm{free action}.
             While the staff is burning:
@@ -502,15 +509,24 @@ pub fn staffs() -> Vec<Implement> {
                     This damage is doubled by critical hits and attacks that deal double damage.
                 \item It sheds light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(5, "Is burning and ignites", r"
+            ItemUpgrade::new(
+                5,
+                "Is burning and ignites",
+                r"
                 The damage increases to 1d10.
-            "),
-            ItemUpgrade::new(7, "Is burning and ignites", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Is burning and ignites",
+                r"
                 The damage increases to 2d8.
-            "),
+            ",
+            ),
         ],
         ..Implement::default()
     }));
@@ -545,7 +561,8 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Freezing Staff"),
         rank: 2,
         short_description: String::from(r"+1 damage, is chilled"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This staff is bitterly cold to the touch.
             You can suppress or resume this chill as a \glossterm{free action}.
             While the staff is chilled:
@@ -554,15 +571,24 @@ pub fn staffs() -> Vec<Implement> {
                 \item All damaging \magical abilities you use deal 1 \glossterm{extra damage}.
                 \item It sheds light in a 5 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Fire, AbilityTag::personal_attunement()],
         upgrades: vec![
-            ItemUpgrade::new(4, "+2 damage, is chilled", r"
+            ItemUpgrade::new(
+                4,
+                "+2 damage, is chilled",
+                r"
                 The extra damage increases to 2.
-            "),
-            ItemUpgrade::new(6, "+1d6 damage, is chilled", r"
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "+1d6 damage, is chilled",
+                r"
                 The extra damage increases to 1d6.
-            "),
+            ",
+            ),
         ],
         ..Implement::default()
     }));

@@ -14,4 +14,3 @@ pub use modifier::{HasModifiers, IdentifiedModifier, Modifier, ModifierType};
 pub use modifier_bundle::ModifierBundle;
 pub use monster::Monster;
 pub use points::calculate_character_points;
-

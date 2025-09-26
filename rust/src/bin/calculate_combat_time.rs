@@ -18,14 +18,8 @@ fn main() {
                 Character::fighter_shield(level).creature,
                 Character::fighter_shield(level).creature,
             ];
-            let blue_damage_absorption: i32 = blue
-                .iter()
-                .map(|c| c.calc_hit_points())
-                .sum();
-            let red_damage_absorption: i32 = red
-                .iter()
-                .map(|c| c.calc_hit_points())
-                .sum();
+            let blue_damage_absorption: i32 = blue.iter().map(|c| c.calc_hit_points()).sum();
+            let red_damage_absorption: i32 = red.iter().map(|c| c.calc_hit_points()).sum();
             let red_count = red.len();
             let results = run_combat(blue, red);
             println!(

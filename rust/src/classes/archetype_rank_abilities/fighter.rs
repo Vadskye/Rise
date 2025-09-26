@@ -135,9 +135,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \end{raggeditemize}
             ",
             // Assume light armor, since it's the easiest to represent
-            modifiers: Some(vec![
-                Modifier::BaseSpeed(10),
-            ]),
+            modifiers: Some(vec![Modifier::BaseSpeed(10)]),
         },
         RankAbility {
             complexity: 1,
@@ -425,9 +423,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
-            modifiers: Some(vec![
-                Modifier::Attribute(Attribute::Constitution, 1),
-            ]),
+            modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
         },
         RankAbility {
             complexity: 1,

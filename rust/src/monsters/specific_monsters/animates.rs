@@ -2,8 +2,8 @@ use crate::core_mechanics::abilities::{
     AbilityTag, AbilityType, ActiveAbility, CustomAbility, StrikeAbility, UsageTime,
 };
 use crate::core_mechanics::{
-    Debuff, Defense, DicePool, MovementMode, MovementSpeed,
-    PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
+    Debuff, Defense, DicePool, MovementMode, MovementSpeed, PassiveAbility, Sense, Size,
+    SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Creature, CreatureCategory, Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};

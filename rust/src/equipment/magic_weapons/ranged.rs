@@ -1,5 +1,5 @@
-use crate::equipment::{MagicWeapon, ItemUpgrade, StandardItem};
 use crate::equipment::MagicWeapon::Ranged;
+use crate::equipment::{ItemUpgrade, MagicWeapon, StandardItem};
 
 pub fn ranged() -> Vec<MagicWeapon> {
     let mut weapons = vec![];

@@ -43,7 +43,8 @@ fn replace_accuracy_terms(effect: &str, creature: &Creature, weapon: Option<&Wea
     // local modifiers with the right accuracy text.
     let accuracy_pattern = Regex::new(r"(\$accuracy[+-]?\d*)\b").unwrap();
     for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
-        let parsed_text = parse_accuracy_match(creature.calc_accuracy(), accuracy_match, weapon, false);
+        let parsed_text =
+            parse_accuracy_match(creature.calc_accuracy(), accuracy_match, weapon, false);
         replaced_effect = accuracy_pattern
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();
@@ -59,7 +60,8 @@ fn replace_consumable_accuracy_terms(effect: &str, creature: &Creature) -> Strin
     // local modifiers with the right accuracy text.
     let accuracy_pattern = Regex::new(r"(\$consumableaccuracy[+-]?\d*)\b").unwrap();
     for accuracy_match in accuracy_pattern.find_iter(&replaced_effect.clone()) {
-        let parsed_text = parse_accuracy_match(creature.calc_accuracy() + 2, accuracy_match, None, true);
+        let parsed_text =
+            parse_accuracy_match(creature.calc_accuracy() + 2, accuracy_match, None, true);
         replaced_effect = accuracy_pattern
             .replacen(&replaced_effect, 1, parsed_text)
             .to_string();

@@ -18,7 +18,9 @@ use std::cmp::{max, min};
 use super::humanoids::{add_humans, add_orcs};
 
 fn undead(mut def: MonsterDef) -> Monster {
-    def.abilities.modifiers.push(Modifier::immune_tag(AbilityTag::Poison));
+    def.abilities
+        .modifiers
+        .push(Modifier::immune_tag(AbilityTag::Poison));
     def.monster(CreatureType::Undead)
 }
 
@@ -237,7 +239,9 @@ pub fn add_vampires(monsters: &mut Vec<MonsterEntry>) {
                 is_magical: true,
                 name: "Unholy Creature of the Night".to_string(),
             }));
-            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(WeaponMaterial::Silver)));
+            modifiers.push(Modifier::Vulnerable(SpecialDefenseType::WeaponMaterial(
+                WeaponMaterial::Silver,
+            )));
             modifiers.push(Modifier::Attack(
                 StandardAttack::VampireAlluringGaze(calculate_standard_rank(self.level)).attack(),
             ));

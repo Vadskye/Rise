@@ -1,5 +1,7 @@
 use crate::core_mechanics::Attribute;
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, calculate_minimum_level};
+use crate::creatures::{
+    calculate_minimum_level, Creature, CreatureCategory, HasModifiers, Modifier,
+};
 
 // Return a Creature that can be used to calculate item statistics for an item of the given rank.
 // This standard creature has a power halfway between "minimum" and "maximum" reasonable power:
@@ -20,14 +22,14 @@ pub fn item_creature(rank: i32) -> Creature {
     let power_attribute = match rank {
         -1 => 0,
         0 => 0,
-        1 => 2,  // target: 2
-        2 => 2,  // target: 4
-        3 => 3,  // target: 6
-        4 => 3,  // target: 8
-        5 => 4,  // target: 10
-        6 => 4,  // target: 12
-        7 => 5,  // target: 14
-        8 => 6,  // target: 16
+        1 => 2, // target: 2
+        2 => 2, // target: 4
+        3 => 3, // target: 6
+        4 => 3, // target: 8
+        5 => 4, // target: 10
+        6 => 4, // target: 12
+        7 => 5, // target: 14
+        8 => 6, // target: 16
         _ => panic!("Unsupported rank {}", rank),
     };
 

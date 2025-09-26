@@ -3,8 +3,7 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::StandardAttack;
 use crate::core_mechanics::{
-    MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType,
-    SpeedCategory,
+    MovementMode, MovementSpeed, PassiveAbility, Sense, Size, SpecialDefenseType, SpeedCategory,
 };
 use crate::creatures::{Modifier, ModifierBundle, Monster};
 use crate::equipment::{Weapon, WeaponTag};

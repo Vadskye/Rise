@@ -248,7 +248,7 @@ pub fn poisons() -> Vec<Tool> {
 // That's a bit absurd, so generally add +1 accuracy or make the poison endless.
 fn injury_poisons() -> Vec<Tool> {
     let mut poisons = vec![];
-    
+
     poisons.push(Tool {
         name: "Poison, Asp Venom".to_string(),
         rank: 1,

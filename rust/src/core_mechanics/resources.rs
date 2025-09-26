@@ -60,9 +60,7 @@ where
                     2
                 }
             }
-            Resource::FatigueTolerance => {
-                self.get_attribute_modifier(&Attribute::Constitution)
-            }
+            Resource::FatigueTolerance => self.get_attribute_modifier(&Attribute::Constitution),
             Resource::InsightPoint => {
                 self.get_base_attribute(&Attribute::Intelligence)
                     + if self.level >= 7 {

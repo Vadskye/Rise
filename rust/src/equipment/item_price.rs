@@ -21,9 +21,5 @@ pub fn rank_and_price_text(rank: i32) -> String {
     if rank < 0 {
         return format!("\\tdash ({price} sp)", price = item_price(rank));
     }
-    format!(
-        "{rank} ({price} gp)",
-        rank = rank,
-        price = item_price(rank)
-    )
+    format!("{rank} ({price} gp)", rank = rank, price = item_price(rank))
 }

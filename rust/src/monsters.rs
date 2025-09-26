@@ -13,7 +13,7 @@ pub use creature_type::CreatureType;
 pub use full_monster_definition::FullMonsterDefinition;
 pub use knowledge::Knowledge;
 pub use monster_entry::generate_monster_entries;
-pub use monster_entry::{MonsterEntry, latex_by_name};
+pub use monster_entry::{latex_by_name, MonsterEntry};
 pub use role::Role;
 pub use simple_monster_definition::{
     MonsterAbilities, MonsterDef, MonsterNarrative, MonsterStatistics,

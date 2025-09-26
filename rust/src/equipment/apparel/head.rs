@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::AbilityTag;
-use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
-use crate::equipment::Apparel::{Blindfold, Circlet, Crown};
 use crate::core_mechanics::Attribute;
+use crate::equipment::Apparel::{Blindfold, Circlet, Crown};
+use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
 
 pub fn head() -> Vec<Apparel> {
     let mut apparel = vec![];
@@ -23,17 +23,27 @@ fn circlets() -> Vec<Apparel> {
         name: String::from("Blind Seer's Circlet"),
         rank: 2,
         short_description: String::from("Increases range of blindsense and blindsight"),
-        description: String::from(r"
+        description: String::from(
+            r"
             If you have \trait<blindsense>, you increase its range by 30 feet.
             If you have \trait<blindsight>, you increase its range by 15 feet.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Increases range of blindsense and blindsight", "
+            ItemUpgrade::new(
+                4,
+                "Increases range of blindsense and blindsight",
+                "
                 Your blindsense increases by 60 feet, and your blindsight increases by 30 feet.
-            "),
-            ItemUpgrade::new(6, "Increases range of blindsense and blindsight", "
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "Increases range of blindsense and blindsight",
+                "
                 Your blindsense increases by 120 feet, and your blindsight increases by 60 feet.
-            "),
+            ",
+            ),
         ],
         ..Apparel::default()
     }));
@@ -87,11 +97,15 @@ fn circlets() -> Vec<Apparel> {
     }));
 
     apparel.push(Circlet(StandardItem::reliable_skill_item(
-        "Circlet of Reliable Observation", "Awareness, Social Insight, or Survival", "observation-based",
+        "Circlet of Reliable Observation",
+        "Awareness, Social Insight, or Survival",
+        "observation-based",
     )));
 
     apparel.push(Circlet(StandardItem::reliable_skill_item(
-        "Circlet of Reliable Intuition", "Deduction, Knowledge, or Medicine", "intuition-based",
+        "Circlet of Reliable Intuition",
+        "Deduction, Knowledge, or Medicine",
+        "intuition-based",
     )));
 
     apparel.push(Circlet(StandardItem::attribute_item(
@@ -116,16 +130,20 @@ fn crowns() -> Vec<Apparel> {
         name: String::from("Radiant Crown"),
         rank: 1,
         short_description: String::from("Sheds light"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This crown sheds \glossterm{bright illumination} in a \medarea radius.
             You can touch the crown as a \glossterm{minor action} to suppress or resume the light.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
-        upgrades: vec![
-            ItemUpgrade::new(3, "Sheds great light", r"
+        upgrades: vec![ItemUpgrade::new(
+            3,
+            "Sheds great light",
+            r"
                 The area increases to a \largearea radius.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -133,16 +151,20 @@ fn crowns() -> Vec<Apparel> {
         name: String::from("Solar Crown"),
         rank: 4,
         short_description: String::from("Sheds brilliant light"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This crown sheds \glossterm{brilliant illumination} in a \medarea radius.
             You can touch the crown as a \glossterm{minor action} to suppress or resume the light.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
-        upgrades: vec![
-            ItemUpgrade::new(6, "Sheds brilliant light", r"
+        upgrades: vec![ItemUpgrade::new(
+            6,
+            "Sheds brilliant light",
+            r"
                 The area increases to a \hugearea radius.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 

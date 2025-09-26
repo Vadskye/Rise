@@ -27,7 +27,8 @@ impl PassiveAbility {
         Self {
             description: r"
                 The $name does not fall while in midair.
-            ".to_string(),
+            "
+            .to_string(),
             is_magical: true,
             name: "Floating".to_string(),
         }

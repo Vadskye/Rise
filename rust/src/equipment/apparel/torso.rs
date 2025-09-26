@@ -21,17 +21,27 @@ fn belts() -> Vec<Apparel> {
         name: String::from("Belt of Regeneration"),
         rank: 3,
         short_description: String::from("Regain 1d4 hit points per round"),
-        description: String::from(r"
+        description: String::from(
+            r"
             At the end of each round, you regain 1d4 \glossterm{hit points}.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
-            ItemUpgrade::new(5, "Regain 3d6 hit points per round", "
+            ItemUpgrade::new(
+                5,
+                "Regain 3d6 hit points per round",
+                "
                 The healing increases to 3d6.
-            "),
-            ItemUpgrade::new(7, "Regain 6d10 hit points per round", "
+            ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Regain 6d10 hit points per round",
+                "
                 The healing increases to 6d10.
-            "),
+            ",
+            ),
         ],
         ..Apparel::default()
     }));
@@ -52,14 +62,18 @@ fn belts() -> Vec<Apparel> {
         name: String::from("Poisonbane Belt"),
         rank: 2,
         short_description: String::from("Impervious to poisons"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You are \impervious to \glossterm{poisons} and poison damage.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Immune to poisons", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Immune to poisons",
+            r"
                 You become immune instead of impervious.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -67,16 +81,26 @@ fn belts() -> Vec<Apparel> {
         name: String::from("Belt of Health"),
         rank: 2,
         short_description: String::from("Grants +4 hit points"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants +8 hit points", "
+            ItemUpgrade::new(
+                4,
+                "Grants +8 hit points",
+                "
                 The bonus increases to +8.
-            "),
-            ItemUpgrade::new(6, "Grants +16 hit points", "
+            ",
+            ),
+            ItemUpgrade::new(
+                6,
+                "Grants +16 hit points",
+                "
                 The bonus increases to +16.
-            "),
+            ",
+            ),
         ],
         ..Apparel::default()
     }));
@@ -85,16 +109,26 @@ fn belts() -> Vec<Apparel> {
         name: String::from("Lifekeeping Belt"),
         rank: 1,
         short_description: String::from("Grants +1 to vital rolls"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain a +1 \glossterm<enhancement bonus> to your \glossterm<vital rolls>.
-        "),
+        ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants +2 to vital rolls", "
+            ItemUpgrade::new(
+                3,
+                "Grants +2 to vital rolls",
+                "
                 The bonus increases to +2.
-            "),
-            ItemUpgrade::new(5, "Grants +3 to vital rolls", "
+            ",
+            ),
+            ItemUpgrade::new(
+                5,
+                "Grants +3 to vital rolls",
+                "
                 The bonus increases to +3.
-            "),
+            ",
+            ),
         ],
         ..Apparel::default()
     }));
@@ -248,14 +282,18 @@ fn cloaks() -> Vec<Apparel> {
         name: String::from("Cloak of Death's Door"),
         rank: 1,
         short_description: String::from("Braced while at zero HP"),
-        description: String::from(r"
+        description: String::from(
+            r"
             While you have no remaining \glossterm{hit points}, you are \braced.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(4, "Braced and steeled while at zero HP", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            4,
+            "Braced and steeled while at zero HP",
+            r"
                 While you have no remaining \glossterm{hit points}, you are also \steeled.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -279,15 +317,19 @@ fn cloaks() -> Vec<Apparel> {
         name: String::from("Quilled Cloak"),
         rank: 2,
         short_description: String::from("Deals $dr4l damage when grappled"),
-        description: String::from(r"
+        description: String::from(
+            r"
             Whenever a creature grapples you, you immediately deal it $dr4l piercing damage.
             This does not affect creatures that you initiate a grapple with.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Deals $dr7l damage when grappled", "
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Deals $dr7l damage when grappled",
+            "
                 The damage increases to $dr7l.
-            "),
-        ],
+            ",
+        )],
         ..Apparel::default()
     }));
 
@@ -295,9 +337,11 @@ fn cloaks() -> Vec<Apparel> {
         name: String::from("Avian Cloak"),
         rank: 3,
         short_description: String::from("Grants a glide speed"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You gain an average \glossterm{glide speed} (see \pcref{Aerial Movement}).
-        "),
+        ",
+        ),
         ..Apparel::default()
     }));
 
@@ -340,11 +384,13 @@ fn cloaks() -> Vec<Apparel> {
         name: String::from("Assassin's Cloak"),
         rank: 5,
         short_description: String::from("Grants brief invisibility"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You can activate this cloak as a standard action.
             When you do, you \glossterm{briefly} become \trait<invisible> (see \pcref<Invisible>).
             After you activate this cloak, you \glossterm<briefly> cannot do so again.
-        "),
+        ",
+        ),
         ..Apparel::default()
     }));
 

@@ -124,13 +124,12 @@ pub fn devoted_paragon<'a>() -> Vec<RankAbility<'a>> {
 }
 
 pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
-    vec![
-        RankAbility {
-            complexity: 4,
-            name: "Divine Spells",
-            is_magical: true,
-            rank: 1,
-            description: r"
+    vec![RankAbility {
+        complexity: 4,
+        name: "Divine Spells",
+        is_magical: true,
+        rank: 1,
+        description: r"
                 Your devotion to your alignment grants you the ability to use divine magic.
                 You gain access to one divine \glossterm{mystic sphere}, plus the \sphere{universal} mystic sphere (see \pcref{Divine Mystic Spheres}).
                 You may spend \glossterm{insight points} to gain access to one additional divine \glossterm{mystic sphere} per two \glossterm{insight points}.
@@ -150,9 +149,8 @@ pub fn divine_magic<'a>() -> Vec<RankAbility<'a>> {
                 \advancement The maximum rank of divine spells that you can learn is equal to your rank in this archetype.
                 Divine spells also increase in power in unique ways based on your rank in this archetype, as indicated in their descriptions.
             ",
-            modifiers: None,
-        },
-    ]
+        modifiers: None,
+    }]
 }
 
 pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
@@ -227,7 +225,10 @@ pub fn divine_spell_expertise<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a \plus1 bonus to your \glossterm{accuracy} and Armor defense.
             ",
-            modifiers: Some(vec![Modifier::Accuracy(1), Modifier::Defense(Defense::Armor, 1)]),
+            modifiers: Some(vec![
+                Modifier::Accuracy(1),
+                Modifier::Defense(Defense::Armor, 1),
+            ]),
         },
     ]
 }

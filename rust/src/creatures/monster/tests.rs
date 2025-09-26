@@ -12,9 +12,7 @@ mod statistics {
         fn generate_creature(elite: bool, level: i32) -> Creature {
             let mut creature = Monster::example_monster(elite, level).creature;
             creature.add_modifier(
-                Modifier::Attack(
-                    StandardAttack::Firebolt((level + 2) / 3).attack(),
-                ),
+                Modifier::Attack(StandardAttack::Firebolt((level + 2) / 3).attack()),
                 None,
                 None,
             );
@@ -38,7 +36,7 @@ mod statistics {
             ];
             let expected = [
                 "Firebolt +1 (1d6+2 damage.)", // Normal
-                "Firebolt +1 (1d6+4 damage.)",  // Elite
+                "Firebolt +1 (1d6+4 damage.)", // Elite
             ];
             assert_eq!(actual, expected, "Normal, Elite");
         }
@@ -51,7 +49,7 @@ mod statistics {
                 firebolt_description(generate_creature(true, level)),
             ];
             let expected = [
-                "Firebolt +6 (1d8+9 damage.)", // Normal
+                "Firebolt +6 (1d8+9 damage.)",  // Normal
                 "Firebolt +6 (1d8+13 damage.)", // Elite
             ];
             assert_eq!(actual, expected, "Normal, Elite");
@@ -64,10 +62,7 @@ mod statistics {
                 firebolt_description(generate_creature(false, level)),
                 firebolt_description(generate_creature(true, level)),
             ];
-            let expected = [
-                "Firebolt +10 (8d8 damage.)",
-                "Firebolt +10 (10d8 damage.)",
-            ];
+            let expected = ["Firebolt +10 (8d8 damage.)", "Firebolt +10 (10d8 damage.)"];
             assert_eq!(actual, expected, "Normal, Elite",);
         }
 

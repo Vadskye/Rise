@@ -573,11 +573,13 @@ impl StrikeAbility {
                 The $name makes a $accuracy strike vs. Armor with its $weapon.
                 \hit $fullweapondamage.
                 \injury The target becomes \slowed as a \glossterm{condition}.
-            ".to_string(),
+            "
+            .to_string(),
             name: strike_prefix("Hamstring --", &weapon),
             weapon,
             ..Default::default()
-        }.plus_accuracy(rank - 1)
+        }
+        .plus_accuracy(rank - 1)
     }
 
     pub fn sweeping_strike(rank: i32, weapon: Weapon) -> Self {
@@ -597,8 +599,7 @@ impl StrikeAbility {
 }
 
 // Unbreakable Defense
-impl StrikeAbility {
-}
+impl StrikeAbility {}
 
 fn strike_prefix(prefix: &str, weapon: &Weapon) -> String {
     format!("{} {}", prefix, weapon.name)
