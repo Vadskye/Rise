@@ -76,7 +76,10 @@ pub enum ClassArchetype {
     Harpy,
     Incarnation,
     Naiad,
+    Oozeborn,
     Treant,
+    Troll,
+    Vampire,
 }
 
 impl ClassArchetype {
@@ -156,7 +159,10 @@ impl ClassArchetype {
             Self::Harpy => Class::Harpy,
             Self::Incarnation => Class::Incarnation,
             Self::Naiad => Class::Naiad,
+            Self::Oozeborn => Class::Oozeborn,
             Self::Treant => Class::Treant,
+            Self::Troll => Class::Troll,
+            Self::Vampire => Class::Vampire,
         }
     }
 
@@ -234,9 +240,12 @@ impl ClassArchetype {
             Self::Dragon => "Dragon",
             Self::Dryad => "Dryad",
             Self::Harpy => "Harpy",
-            Self::Treant => "Treant",
             Self::Incarnation => "Incarnation",
             Self::Naiad => "Naiad",
+            Self::Oozeborn => "Oozeborn",
+            Self::Treant => "Treant",
+            Self::Troll => "Troll",
+            Self::Vampire => "Vampire",
         }
     }
 
@@ -464,9 +473,12 @@ impl ClassArchetype {
             Self::Dragon => "",
             Self::Dryad => "",
             Self::Harpy => "",
-            Self::Treant => "",
             Self::Incarnation => "",
             Self::Naiad => "",
+            Self::Oozeborn => "",
+            Self::Treant => "",
+            Self::Troll => "",
+            Self::Vampire => "",
         };
         format!(
             "{} {}",
@@ -579,7 +591,10 @@ impl ClassArchetype {
             ClassArchetype::Harpy,
             ClassArchetype::Incarnation,
             ClassArchetype::Naiad,
+            ClassArchetype::Oozeborn,
             ClassArchetype::Treant,
+            ClassArchetype::Troll,
+            ClassArchetype::Vampire,
         ]
     }
 }
