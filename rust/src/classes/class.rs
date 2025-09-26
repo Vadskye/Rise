@@ -1175,7 +1175,7 @@ impl Class {
             Self::Harpy => WeaponProficiencies {
                 custom_weapons: None,
                 non_exotic_weapons: false,
-                simple_weapons: false,
+                simple_weapons: true,
             },
             Self::Incarnation => WeaponProficiencies {
                 custom_weapons: None,
