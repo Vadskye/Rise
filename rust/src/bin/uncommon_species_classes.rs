@@ -1,6 +1,8 @@
-use rise::classes::Class;
+use rise::classes::{Class, generate_latex_basic_class_abilities};
+use rise::latex_formatting::latexify;
 use std::fs;
 use std::path::PathBuf;
+use titlecase::titlecase;
 
 // This assumes it's being run from the `rust` directory.
 fn main() {
@@ -11,7 +13,18 @@ fn main() {
     for class in classes {
         let filename = format!("{}.tex", class.name());
         let filepath = output_dir.join(filename);
-        let content = class.latex_section();
+
+        let archetype = &class.archetypes()[0];
+        let content = latexify(format!(
+            "
+                {archetype}
+
+                {base_class}
+            ",
+            name = titlecase(class.name()),
+            archetype = archetype.latex_description(class.shorthand_name()).trim(),
+            base_class = generate_latex_basic_class_abilities(&class).trim(),
+        ));
         fs::write(&filepath, content).expect(&format!("Failed to write to {:?}", filepath));
     }
 }
