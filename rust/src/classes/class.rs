@@ -143,27 +143,27 @@ impl Class {
 
     pub fn attunement_points(&self) -> i32 {
         match self {
-            Self::Automaton => 0,
-            Self::Barbarian => 0,
-            Self::Cleric => 1,
-            Self::Dragon => 1,
-            Self::Druid => 1,
-            Self::Dryad => 1,
-            Self::Fighter => 0,
-            Self::Harpy => 1,
-            Self::Incarnation => 1,
-            Self::Monk => 0,
-            Self::Naiad => 1,
-            Self::Oozeborn => 0,
-            Self::Paladin => 1,
-            Self::Ranger => 0,
-            Self::Rogue => 0,
-            Self::Sorcerer => 1,
-            Self::Treant => 0,
-            Self::Troll => 0,
-            Self::Vampire => 1,
-            Self::Votive => 1,
-            Self::Wizard => 1,
+            Self::Automaton => 3,
+            Self::Barbarian => 3,
+            Self::Cleric => 4,
+            Self::Dragon => 4,
+            Self::Druid => 4,
+            Self::Dryad => 4,
+            Self::Fighter => 3,
+            Self::Harpy => 4,
+            Self::Incarnation => 4,
+            Self::Monk => 3,
+            Self::Naiad => 4,
+            Self::Oozeborn => 3,
+            Self::Paladin => 4,
+            Self::Ranger => 3,
+            Self::Rogue => 3,
+            Self::Sorcerer => 4,
+            Self::Treant => 3,
+            Self::Troll => 3,
+            Self::Vampire => 4,
+            Self::Votive => 4,
+            Self::Wizard => 4,
         }
     }
 
@@ -580,30 +580,27 @@ impl Class {
     }
 
     pub fn fatigue_tolerance(&self) -> i32 {
-        let base_bonus = 2;
-
-        base_bonus
-            + match self {
-                Self::Automaton => 3,
-                Self::Barbarian => 1,
-                Self::Dragon => 1,
-                Self::Fighter => 1,
-                Self::Ranger => 1,
-                Self::Oozeborn => 1,
-                Self::Sorcerer => 1,
-                Self::Treant => 1,
-                Self::Troll => 2,
-                _ => 0,
-            }
+        match self {
+            Self::Automaton => 5,
+            Self::Barbarian => 3,
+            Self::Dragon => 3,
+            Self::Fighter => 3,
+            Self::Ranger => 3,
+            Self::Oozeborn => 3,
+            Self::Sorcerer => 3,
+            Self::Treant => 3,
+            Self::Troll => 4,
+            _ => 2,
+        }
     }
 
     pub fn insight_points(&self) -> i32 {
         match self {
-            Self::Cleric => 1,
-            Self::Dryad => 1,
-            Self::Rogue => 1,
-            Self::Wizard => 1,
-            _ => 0,
+            Self::Cleric => 2,
+            Self::Dryad => 2,
+            Self::Rogue => 2,
+            Self::Wizard => 2,
+            _ => 1,
         }
     }
 
