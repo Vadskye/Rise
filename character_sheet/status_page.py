@@ -134,19 +134,17 @@ def circumstances():
         [
             flex_col(
                 [
-                    debuff("climbing"),
                     debuff("grappled"),
                     debuff("helpless"),
-                    debuff("midair"),
                     debuff("partially unaware"),
+                    debuff("prone"),
                 ]
             ),
             flex_col(
                 [
-                    debuff("prone"),
                     debuff("squeezing"),
-                    debuff("swimming"),
                     debuff("unaware"),
+                    debuff("unsteady"),
                 ]
             ),
         ],
@@ -163,11 +161,11 @@ def debuffs():
                     debuff("confused"),
                     debuff("dazzled"),
                     debuff("frightened"),
-                    debuff("goaded"),
                 ]
             ),
             flex_col(
                 [
+                    debuff("goaded"),
                     debuff("panicked"),
                     debuff("slowed"),
                     debuff("stunned"),
@@ -197,27 +195,23 @@ def debuff(name, representable=True):
 def debuff_explanation(debuff):
     return {
         "blinded": "50% miss chance",
-        "charmed": "friendly with charmer",
-        "climbing": "-2 accuracy, defenses",
         "confused": "-2 defenses and randomly attack or defend",
         "dazzled": "20% miss chance, no special vision",
         "deafened": "20% verbal spell failure",
         "dominated": "must obey commands",
         "midair": "-4 Armor and Reflex",
         "frightened": "-2 Mental, -2 accuracy vs. source",
-        "goaded": "-2 accuracy vs. non-goading creatures",
-        "grappled": "limited mobility and actions",
-        "helpless": "-6 Armor and Ref",
+        "goaded": "-2 accuracy vs. other creatures",
+        "grappled": "-2 Armor and Ref, can't move normally",
+        "helpless": "-8 Armor, Brawn, Ref",
         "panicked": "-4 Mental, cannot attack source",
-        "paralyzed": "cannot move",
         "partially unaware": "-2 defenses",
         "prone": "half speed, -2 Armor and Ref",
         "slowed": "half speed, -2 Armor and Ref",
         "squeezing": "-2 Armor and Ref",
         "stunned": "-2 defenses",
-        "swimming": "-2 accuracy, defenses",
         "unaware": "-5 defenses",
-        "unconscious": "unable to act",
+        "unsteady": "-2 accuracy, Armor, Brawn, Ref",
     }[debuff]
 
 
