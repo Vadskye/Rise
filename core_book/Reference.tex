@@ -179,8 +179,6 @@
   % TODO: why is this necessary? can this be removed? it seems surprising
   Being frightened is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
-  \debuffdef{gliding} A creature that is gliding takes a \minus4 penalty to its Armor and Reflex defenses (see \pcref{Aerial Movement}).
-
   \debuffdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it it as long as it is within \rngmed range of of that creature.
   If the goading creature is \glossterm{defeated}, this effect is broken.
   If a creature is goaded by multiple different creatures simultaneously, it suffers the accuracy penalty on all of its attacks.
@@ -199,8 +197,9 @@
     \item You can use the \ability{escape grapple} and \ability{maintain grapple} abilities to stop or continue grappling (see \pcref{Universal Combat Abilities}).
   \end{raggeditemize}
 
-  \debuffdef{helpless} A helpless creature is completely at an opponent's mercy.
-  It is considered to be \unaware of all attacks against it, even if it knows they are coming.
+  \debuffdef{helpless} A helpless creature is unable to move or defend itself.
+  It takes a \minus8 penalty to its Armor, Brawn, and Reflex defenses.
+  These penalties do not stack with the penalties for being unaware (partially or fully) or unsteady.
   Paralyzed, bound, and unconscious creatures are helpless.
 
   \buffdef{honed} A honed creature gains a \plus4 accuracy bonus for the purpose of determining whether it gets a \glossterm{critical hit}.
@@ -260,17 +259,17 @@
   This does not stack with the \confused effect.
 
   \debuffdef{unaware} A creature that is unaware makes no attempt to defend itself.
-  Creatures take a \minus5 penalty to all defenses against attacks that they are unaware of.
+  Creatures take a \minus4 penalty to all defenses against attacks that they are unaware of.
   They are completely unable to use \glossterm{targeted} abilities against creatures and objects that they are unaware of.
 
-  These penalties do not stack with the penalties for being \partiallyunaware.
+  These penalties do not stack with the penalties for being \partiallyunaware or \unsteady.
   For details, see \pcref{Awareness and Surprise}.
 
-  \debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
-  Some sensory abilities, such as the Awareness skill, can be used while you are asleep, but not while you are forcibly knocked unconscious.
+  \debuffdef{unconscious} While you are unconscious, you are \helpless, \unaware, and completely unable to take any actions.
+  Some sensory abilities, such as the Awareness skill, can be used reactively while you are asleep, but not while you are forcibly knocked unconscious.
 
-  % TODO: this shouldn't stack with the penalty for being paralyzed.
-  \debuffdef{unsteady} A creature that is unsteady \minus2 penalty to its \glossterm{accuracy} and Armor, Brawn, and Reflex defenses.
+  \debuffdef{unsteady} A creature that is unsteady takes a \minus2 penalty to its \glossterm{accuracy} and Armor, Brawn, and Reflex defenses.
+  These penalties do not stack with the penalties for being \partiallyunaware or \unaware.
   Creatures that are \glossterm{midair} and not native to the air, climbing without a \glossterm{climb speed}, or in liquid without a \glossterm{swim speed} are unsteady.
 
   \newpage
