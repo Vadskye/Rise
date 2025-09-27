@@ -125,8 +125,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           The target is \\glossterm{briefly} surrounded by a bubble of water.
-          It cannot breathe air and is \\submerged, which causes it to suffer penalties if it does not have a \\glossterm{swim speed}.
-          It cannot fly or glide, but can use its other movement modes normally.
+          It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
+          If it does not have a \\glossterm{swim speed}, it is \\unsteady (see \\pcref{Fighting in Water}).
         `,
         targeting: `
           Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.
@@ -148,7 +148,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           If the target is \\glossterm{injured}, it is surrounded by a bubble of water as a \\glossterm{condition}.
           It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
-          It is also \\submerged, which causes it to suffer penalties if it does not have a is \\glossterm{swim speed}.
+          If it does not have a \\glossterm{swim speed}, it is \\unsteady (see \\pcref{Fighting in Water}).
         `,
         targeting: `
           Make an attack vs. Brawn against up to three Huge or smaller creatures within \\medrange.
@@ -635,7 +635,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         injury: `
           If the target is Large or smaller, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
-          If the target is \\submerged, this distance is doubled and you can also move it vertically.
+          If the target is immersed in water, this distance is doubled and you can also move it vertically.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -678,7 +678,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\item You are \\impervious to \\atFire attacks.
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
-          \\item You are always considered to be \\submerged, so you take penalties if you do not have a swim speed (see \\pcref{Fighting In Water}).
+          \\item You are always submerged in water, so you are \\unsteady if you do not have a swim speed (see \\pcref{Fighting In Water}).
           \\item The water blocks you from breathing air, but you can poke your head out of the bubble to take a breath as a \\glossterm{move action}.
         \\end{mdframeditemize}
       `,
@@ -730,7 +730,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           This has the following effects:
           \\begin{mdframeditemize}
             \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.
-            \\item During each of your subsequent actions, if it is \\debuff{submerged} or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
+            \\item During each of your subsequent actions, if it is immersed in liquid or not \\glossterm{grounded}, it takes \\damagerankfour as its body melts away.
           \\end{mdframeditemize}
         `,
         targeting: `
