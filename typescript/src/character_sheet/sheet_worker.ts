@@ -921,7 +921,7 @@ function handleActiveAbilityDice() {
   // Local change
   on(
     'change:repeating_abilities:dice_pool' + ' change:repeating_abilities:is_magical',
-    function () {
+    function() {
       const keyPrefix = 'repeating_abilities';
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
         const diceText = parsed.dicePool ? '{{Value=[[@{calculated_dice_pool}]]}}' : '';
@@ -970,11 +970,12 @@ function handleArmorDefense() {
 
       const beforeEquipment = attributeModifier + levelModifier + crModifier;
       const totalValue =
-        beforeEquipment +
-        v.body_armor_defense +
-        v.shield_defense +
-        v.misc +
-        v.all_defenses_vital_wound_modifier;
+        Math.max(0,
+          beforeEquipment +
+          v.body_armor_defense +
+          v.shield_defense +
+          v.misc +
+          v.all_defenses_vital_wound_modifier);
 
       setAttrs({
         armor_defense: totalValue,
@@ -1105,7 +1106,7 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function () {
+  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function() {
     getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
       const isActiveIds = repeatingSectionIds.map(
         (id) => `repeating_attunedmodifiers_${id}_is_active`,
@@ -1190,7 +1191,7 @@ function handleCustomModifiers() {
   for (const modifierType of CUSTOM_MODIFIER_TYPES) {
     on(
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
-      function () {
+      function() {
         const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
@@ -1406,30 +1407,22 @@ function handleDebuffs() {
   onGet({
     variables: {
       boolean: [
-        // conditional debuffs
-        'climbing',
+        'blinded',
+        'confused',
+        'dazzled',
+        'frightened',
         'goaded',
         'grappled',
         'helpless',
         'midair',
-        'prone',
-        'squeezing',
-        'swimming',
-        'partially_unaware',
-        'unaware',
-        // rank 1 debuffs
-        'dazzled',
-        // rank 2 debuffs
-        'frightened',
-        'slowed',
-        'stunned',
-        // rank 3 debuffs
-        'confused',
-        'blinded',
         'panicked',
-        // rank 4 debuffs
-        'asleep',
-        'paralyzed',
+        'partially_unaware',
+        'prone',
+        'slowed',
+        'squeezing',
+        'stunned',
+        'unaware',
+        'unsteady',
       ],
     },
     callback: (v) => {
@@ -1441,60 +1434,57 @@ function handleDebuffs() {
         namedModifierMap.addNamedModifier(statistic, cause, -2);
       const minus4 = (cause: string, statistic: string) =>
         namedModifierMap.addNamedModifier(statistic, cause, -4);
+      const minus8 = (cause: string, statistic: string) =>
+        namedModifierMap.addNamedModifier(statistic, cause, -8);
 
-      // circumstantial effects
+      // Constrained
       if (v.grappled) {
         minus2('grappled', 'armor_defense');
         minus2('grappled', 'reflex');
       }
-      if (
-        v.partially_unaware &&
-        !(v.unaware || v.asleep || v.helpless || v.paralyzed || v.blinded)
-      ) {
-        minus2('partially unaware', 'all_defenses');
-      }
-      if (v.unaware || v.asleep || v.helpless || v.paralyzed) {
-        namedModifierMap.addNamedModifier('all_defenses', 'unaware', -5);
-      }
+      // TODO: figure out how to add "half speed" modifier
       if (v.squeezing) {
         minus2('squeezing', 'armor_defense');
         minus2('squeezing', 'reflex');
       }
-      if (v.midair) {
-        minus4('midair', 'armor_defense');
-        minus4('midair', 'brawn');
-        minus4('midair', 'reflex');
-      }
-      if (v.climbing) {
-        minus2('climbing', 'accuracy');
-        minus2('climbing', 'armor_defense');
-        minus2('climbing', 'reflex');
-      }
-      if (v.swimming) {
-        minus2('swimming', 'accuracy');
-        minus2('swimming', 'armor_defense');
-        minus2('swimming', 'reflex');
-      }
-      // TODO: figure out how to add "half speed" modifier
       if (v.prone) {
         minus2('prone', 'armor_defense');
         minus2('prone', 'reflex');
       }
 
-      // rank 1 debuffs
-      if (v.dazzled && !v.blinded) {
-        debuffHeaders.push('{{Miss chance=Miss on 1: [[d5]]}}');
+      // Unsteady / unaware / helpless
+      if (v.helpless) {
+        minus8('helpless', 'armor_defense');
+        minus8('helpless', 'brawn');
+        minus8('helpless', 'reflex');
+      } else if (v.unaware) {
+        minus4('unaware', 'all_defenses');
+      } else if (v.partially_unaware) {
+        // For a creature that is both partially unaware and unsteady, they will only show
+        // the partially unaware modifier. That's arbitrary, but also irrelevant.
+        minus2('partially unaware', 'all_defenses');
+      } else if (v.blinded) {
+        // Blinded causes partially unaware; we label them separately here, but they're
+        // conceptually the same.
+        minus2('blinded', 'all_defenses');
+      } else if (v.unsteady) {
+        minus2('unsteady', 'armor_defense');
+        minus2('unsteady', 'brawn');
+        minus2('unsteady', 'reflex');
       }
+      // The accuracy penalty is separate from the chain above
+      if (v.unsteady) {
+        minus2('unsteady', 'accuracy');
+      }
+
+      // Visual issues
       if (v.blinded) {
         debuffHeaders.push('{{Miss chance=Miss on 1: [[d2]]}}');
+      } else if (v.dazzled) {
+        debuffHeaders.push('{{Miss chance=Miss on 1: [[d5]]}}');
       }
-      if (
-        v.blinded &&
-        !(v.unaware || v.partially_unaware || v.asleep || v.helpless || v.paralyzed)
-      ) {
-        minus2('blinded', 'armor_defense');
-        minus2('blinded', 'reflex');
-      }
+
+      // Other?
       if (v.goaded) {
         debuffHeaders.push('{{Goaded=+2 accuracy vs source}}');
         minus2('goaded', 'accuracy');
@@ -1505,26 +1495,19 @@ function handleDebuffs() {
         minus2('slowed', 'reflex');
       }
 
-      // rank 2 debuffs
-      if (v.frightened && !v.panicked) {
-        debuffHeaders.push('{{Frightened=-2 accuracy vs source}}');
-        minus2('frightened', 'mental');
-      }
-      if (v.stunned && !v.confused) {
-        minus2('stunned', 'all_defenses');
-      }
-      if (v.confused) {
-        minus2('confused', 'all_defenses');
-      }
-
-      // rank 3 debuffs
-      if (v.immobilized) {
-        minus4('immobilized', 'armor_defense');
-        minus4('immobilized', 'reflex');
-      }
+      // Fear
       if (v.panicked) {
         debuffHeaders.push('{{Panicked=Cannot attack source}}');
         minus4('panicked', 'mental');
+      } else if (v.frightened) {
+        debuffHeaders.push('{{Frightened=-2 accuracy vs source}}');
+        minus2('frightened', 'mental');
+      }
+
+      if (v.confused) {
+        minus2('confused', 'all_defenses');
+      } else if (v.stunned) {
+        minus2('stunned', 'all_defenses');
       }
 
       // The semicolon is replaced in handleAttackHeaders()
@@ -2310,12 +2293,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       // Monsters only apply half attribute modifier
       const attributeModifier = v.challenge_rating ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue =
-        levelModifier +
-        crModifier +
-        sizeModifier +
-        attributeModifier +
-        v.misc +
-        v.all_defenses_vital_wound_modifier;
+        Math.max(0, levelModifier +
+          crModifier +
+          sizeModifier +
+          attributeModifier +
+          v.misc +
+          v.all_defenses_vital_wound_modifier);
 
       setAttrs({
         [defense]: totalValue,
@@ -2537,7 +2520,7 @@ function handleSkillPoints() {
 }
 
 function handleTrainedSkills() {
-  on(`change:repeating_trainedskills`, function (eventInfo) {
+  on(`change:repeating_trainedskills`, function(eventInfo) {
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
@@ -2587,7 +2570,7 @@ function handleTrainedSkills() {
     }
   });
 
-  on(`remove:repeating_trainedskills`, function (eventInfo) {
+  on(`remove:repeating_trainedskills`, function(eventInfo) {
     const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
       k.endsWith('trained_skill'),
     );
@@ -2735,7 +2718,7 @@ function uppercaseFirstLetter(str: string) {
 function getDicePoolAttrs(keyPrefix: string, dicePoolKey: string, callback: DicePoolCallback) {
   dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
   const isMagicalKey = `${keyPrefix}_is_magical`;
-  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function (attrs) {
+  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function(attrs) {
     callback(
       calculateDicePoolModifier({
         dicePool: attrs[dicePoolKey],
@@ -2775,8 +2758,8 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-      ' change:repeating_otherdamagingattacks:is_magical',
-    function () {
+    ' change:repeating_otherdamagingattacks:is_magical',
+    function() {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
       });
@@ -2784,7 +2767,7 @@ function handleOtherDamagingAttacks() {
   );
 
   // Global other damaging attack change
-  on('change:magical_power change:mundane_power change:level', function () {
+  on('change:magical_power change:mundane_power change:level', function() {
     getSectionIDs('repeating_otherdamagingattacks', (repeatingSectionIds) => {
       for (const sectionId of repeatingSectionIds) {
         getOdaDamageDiceAttrs(`repeating_otherdamagingattacks_${sectionId}`, (parsed) => {
@@ -2828,7 +2811,7 @@ function handleStrikeAttacks() {
         'magical_power',
         'mundane_power',
       ],
-      function (v) {
+      function(v) {
         const dice_type = v[is_magical_key] === '1' ? 'magical' : 'mundane';
 
         // We need to copy the weapon_exists keys into the local repeating section.
@@ -2878,7 +2861,7 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     'change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier',
-    function () {
+    function() {
       getStrikeAttrs('', (parsed: StrikeAttackAttrs) => {
         setStrikeTotalDamage('', parsed);
       });
@@ -2895,7 +2878,7 @@ function handleStrikeAttacks() {
   // Global strike attack change
   on(
     weaponChangeKeys.join(' ') + ' change:level change:magical_power change:mundane_power',
-    function () {
+    function() {
       getSectionIDs('repeating_strikeattacks', (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
           getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
@@ -3021,7 +3004,7 @@ function handleVitalWounds() {
 
   on(
     'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds',
-    function (eventInfo) {
+    function(eventInfo) {
       getSectionIDs('repeating_vitalwounds', (repeatingSectionIds) => {
         // Not sure if this is necessary
         repeatingSectionIds = repeatingSectionIds || [];
