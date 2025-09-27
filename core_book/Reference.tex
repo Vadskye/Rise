@@ -130,9 +130,6 @@
   Harming a charmed creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
   An observant creature may interpret overt threats to its allies as a threat to itself.
 
-  % TODO: this shouldn't stack with the penalty for being paralyzed.
-  \debuffdef{climbing} A creature that is climbing without a \glossterm{climb speed} takes a \minus2 penalty to its \glossterm{accuracy}, Armor defense, and Reflex defense.
-
   \debuffdef{confused} A confused creature takes a \minus2 penalty to all defenses and is unable to independently control its actions.
   This penalty does not stack with the \stunned effect.
   When a creature becomes confused, and at the beginning of each round, it randomly decides to have one of two behaviors that round: attack its \glossterm{enemies}, or protect itself and its \glossterm{allies} without attacking.
@@ -214,9 +211,6 @@
   For example, a maximized creature that uses an ability which causes \glossterm{knockback} does not maximize the damage from the knockback.
   Being maximized does not improve your \glossterm{reactive attacks}.
 
-  \debuffdef{midair} A creature that is midair takes a \minus4 penalty to its Armor, Brawn, and Reflex defenses (see \pcref{Aerial Movement}).
-  In addition, most movement modes require touching a surface, so they do not function while midair without access to any nearby surfaces.
-
   \debuffdef{panicked} A panicked creature takes a \minus4 penalty to its Mental defense.
   In addition, it is unable to make any attacks that include the source of its fear as a target.
   The penalty from this effect does not stack with the \frightened or \panicked effects.
@@ -229,7 +223,7 @@
   Creatures take a \minus2 penalty to all defenses against attacks that they are partially unaware of.
   They have a 50\% miss chance with \glossterm{targeted} atacks against creatures and objects that they are partially unaware of, and they can only attempt to target creatures and objects that they know the location of.
 
-  These penalties do not stack with the penalties for being \unaware.
+  These penalties do not stack with the penalties for being \unaware or \unsteady.
   For details, see \pcref{Awareness and Surprise}.
 
   \buffdef{primed} A primed creature automatically \glossterm{explodes} on the first die when making attack rolls (see \pcref{Exploding Dice}).
@@ -265,10 +259,6 @@
   \debuffdef{stunned} A stunned creature takes a \minus2 penalty to all defenses.
   This does not stack with the \confused effect.
 
-  \debuffdef{submerged} A creature that is in water without a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy}, Armor defense, and Reflex defense.
-  All ranged weapons have \glossterm{range limits} of 5/15 when used by a creature that is submerged, or when used against a target that is submerged, regardless of the attack's normal range limits or any other modifiers.
-  For details, see \pcref{Fighting In Water}.
-
   \debuffdef{unaware} A creature that is unaware makes no attempt to defend itself.
   Creatures take a \minus5 penalty to all defenses against attacks that they are unaware of.
   They are completely unable to use \glossterm{targeted} abilities against creatures and objects that they are unaware of.
@@ -278,6 +268,10 @@
 
   \debuffdef{unconscious} While you are unconscious, you are \helpless and completely unable to take any actions.
   Some sensory abilities, such as the Awareness skill, can be used while you are asleep, but not while you are forcibly knocked unconscious.
+
+  % TODO: this shouldn't stack with the penalty for being paralyzed.
+  \debuffdef{unsteady} A creature that is unsteady \minus2 penalty to its \glossterm{accuracy} and Armor, Brawn, and Reflex defenses.
+  Creatures that are \glossterm{midair} and not native to the air, climbing without a \glossterm{climb speed}, or in liquid without a \glossterm{swim speed} are unsteady.
 
   \newpage
 \section{Traits}\label{Traits}

@@ -110,7 +110,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         You \\glossterm{knockback} the target up to 30 feet in any direction, to a maximum of a 30 foot \\glossterm{height limit}.
         Moving the target upwards costs twice the normal movement cost.
 
-        If you leave the target \\glossterm{midair}, it normally suffers a \\minus4 penalty to its Armor and Reflex defenses until it lands.
+        If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
         It normally falls at the end of the round, causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
       `,
       rank: 1,
@@ -228,7 +228,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         hit: `
           The target is \\glossterm{briefly} borne aloft by heavy winds.
-          It floats five feet above the ground in \\debuff{midair}, which normally means it suffers a \\minus4 penalty to its Armor, Brawn, and Reflex defenses.
+          It floats five feet above the ground in \\glossterm{midair}, which normally makes it \\unsteady.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
           Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
         `,

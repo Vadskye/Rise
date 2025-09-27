@@ -583,7 +583,7 @@
 
       When a creature would fall while being pushed, it automatically makes a \glossterm{reactive check} with the Climb skill to avoid falling.
       The Climb check is made against the closest available stable object, such as the edge of a cliff.
-      Success means that the creature does not fall, but is now \climbing.
+      Success means that the creature does not fall, but is now hanging on the edge, making it \unsteady if it does not have a \glossterm{climb speed}.
       This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
 
     \subsubsection{Knockback Effects}\label{Knockback Effects}
@@ -1087,8 +1087,7 @@
 \section{Special Combat Rules}
 
   \subsection{Fighting In Water}\label{Fighting In Water}
-    Any creature that is in water and does not have a \glossterm{swim speed} takes a \minus2 penalty to its \glossterm{accuracy} and Armor and Reflex defenses.
-    This is called being \debuff{submerged}.
+    Any creature that is immersed or submerged in water and does not have a \glossterm{swim speed} is \unsteady.
     As long as the creature has a defined swim speed, it does not suffer this penalty, even if its movements are restricted or if it fails a Swim check to navigate the water.
     For example, a \grappled fish would not suffer this penalty.
 
