@@ -681,7 +681,7 @@ export const telekinesis: MysticSphere = {
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, you move 20 feet up into the air and levitate there.
         This movement is \\atSwift, so it can help you avoid attacks during the current phase.
-        While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you do not suffer penalties for being \\glossterm{midair}.
+        While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you are not \\unsteady.
         At the end of the round, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
