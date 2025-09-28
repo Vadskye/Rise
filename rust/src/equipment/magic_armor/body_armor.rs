@@ -48,34 +48,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
     }));
 
     armor.push(Body(StandardItem {
-        name: String::from("Featherlight Armor"),
-        rank: 1,
-        short_description: String::from("Reduces encumbrance by 1"),
-        description: String::from(
-            r"
-            This armor's \glossterm<encumbrance> is reduced by 1.
-        ",
-        ),
-        upgrades: vec![
-            ItemUpgrade::new(
-                3,
-                "Reduces encumbrance by 2",
-                "
-                The encumbrance reduction improves to 2.
-            ",
-            ),
-            ItemUpgrade::new(
-                5,
-                "Reduces encumbrance by 3",
-                "
-                The encumbrance reduction improves to 3.
-            ",
-            ),
-        ],
-        ..MagicArmor::default()
-    }));
-
-    armor.push(Body(StandardItem {
         name: String::from("Hidden Armor"),
         rank: 1,
         short_description: String::from("Can look like normal clothing"),
@@ -105,7 +77,6 @@ pub fn body_armor() -> Vec<MagicArmor> {
             r"
             You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
             However, you take a -10 foot penalty to your speed with all movement modes.
-            In addition, this armor's \glossterm{encumbrance} is increased by 2.
         ",
         ),
         upgrades: vec![

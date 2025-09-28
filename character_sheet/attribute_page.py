@@ -44,7 +44,6 @@ def create_page(destination):
                     flex_col(
                         {"class": "sidebar"},
                         [
-                            calc_encumbrance(),
                             display_skills_for_attribute("Other", calc_skill),
                             calc_attribute("Strength"),
                             calc_jump_distance(),
@@ -320,29 +319,6 @@ def calc_attunement_points():
         ]
     )
 
-
-def calc_encumbrance():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Encumbrance"),
-            equation(
-                [
-                    underlabel(
-                        "Armor", number_input({"name": "body_armor_encumbrance"})
-                    ),
-                    minus(),
-                    equation_misc("encumbrance", 0),
-                    minus(),
-                    equation_misc("encumbrance", 1),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "encumbrance_display",
-                    "value": "@{encumbrance}",
-                },
-            ),
-        ]
-    )
 
 def calc_combat_styles():
     return flex_row(

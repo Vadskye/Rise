@@ -418,7 +418,6 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
-        Unlike normal, you can use this fly speed while you have \\glossterm{encumbrance}.
       `,
       rank: 4,
       roles: ['attune'],

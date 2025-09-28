@@ -181,14 +181,23 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // TODO: better name?
+        RankAbility {
+            complexity: 2,
+            name: "Equipment Efficiency",
+            is_magical: false,
+            rank: 4,
+            description: r"
+                Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
+            ",
+            modifiers: None,
+        },
         RankAbility {
             complexity: 0,
             name: "Second Skin",
             is_magical: false,
-            rank: 4,
+            rank: 5,
             description: r"
-                You reduce your \glossterm{encumbrance} by 2.
+                While wearing body armor, you gain a \plus1 bonus to your Armor defense.
             ",
             modifiers: None,
         },
@@ -196,21 +205,11 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Weapon Precision",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
                 You gain a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
-        },
-        RankAbility {
-            complexity: 2,
-            name: "Equipment Efficiency",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
-            ",
-            modifiers: None,
         },
         RankAbility {
             complexity: 1,

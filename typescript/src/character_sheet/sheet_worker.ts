@@ -571,7 +571,6 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'constitution',
     'dexterity',
     'durability',
-    'encumbrance',
     'fatigue_tolerance',
     'fortitude',
     'hit_points',
@@ -720,7 +719,6 @@ function handleCoreStatistics() {
   handleDefenses();
   handleDamageDice();
   handleDurability();
-  handleEncumbrance();
   handleFatiguePenalty();
   handleHitPoints();
   handleInjuryPoint();
@@ -1557,25 +1555,6 @@ function handleDurability() {
           { name: v.base_class, value: durabilityFromClass },
           { name: 'Con', value: v.constitution },
           { name: 'body armor', value: v.body_armor_durability },
-        ]),
-      });
-    },
-  });
-}
-
-function handleEncumbrance() {
-  onGet({
-    variables: {
-      miscName: 'encumbrance',
-      numeric: ['body_armor_encumbrance', 'shield_encumbrance'],
-    },
-    callback: (v) => {
-      const totalValue = Math.max(0, v.body_armor_encumbrance + v.shield_encumbrance + v.misc);
-      setAttrs({
-        encumbrance: totalValue,
-        encumbrance_explanation: formatCombinedExplanation(v.miscExplanation, [
-          { name: 'body armor', value: v.body_armor_encumbrance },
-          { name: 'shield', value: v.shield_encumbrance },
         ]),
       });
     },
@@ -2630,12 +2609,8 @@ function handleSkills() {
         ...customModifierNames('all_skills'),
       ];
       const shouldAddAttribute = attribute !== 'other';
-      const shouldSubtractEncumbrance = attribute === 'strength' || attribute === 'dexterity';
       if (shouldAddAttribute) {
         numeric.push(attribute);
-      }
-      if (shouldSubtractEncumbrance) {
-        numeric.push('encumbrance');
       }
       onGet({
         variables: {
@@ -2647,15 +2622,13 @@ function handleSkills() {
         callback: (v) => {
           const isTrained = v[`${skill}_is_trained`];
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
-          const encumbranceModifier = v.encumbrance || 0;
           const attributeModifier = v[attribute] || 0;
           let skillValue =
             fromTraining +
             attributeModifier +
             v.misc +
             sumCustomModifiers(v, 'all_skills') -
-            v.fatigue_penalty -
-            encumbranceModifier;
+            v.fatigue_penalty;
 
           if (skill === 'stealth') {
             skillValue += v.size_stealth_modifier;
