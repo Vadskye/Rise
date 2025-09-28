@@ -161,11 +161,7 @@ def attributes_and_skills(destination):
 
 
 def attribute_section(attribute, destination):
-    attribute_modifier = (
-        f"(@{{{attribute}}} - @{{encumbrance}})"
-        if attribute in ["strength", "dexterity"]
-        else f"@{{{attribute}}}"
-    )
+    attribute_modifier = f"@{{{attribute}}}"
     return flex_col(
         {"class": f"{attribute} attribute-section"},
         [

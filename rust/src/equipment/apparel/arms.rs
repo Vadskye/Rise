@@ -26,20 +26,19 @@ fn bracers() -> Vec<Apparel> {
     apparel.push(Bracers(StandardItem {
         name: String::from("Bracers of Armor"),
         rank: 1,
-        short_description: String::from("Grants encumbrance-free medium armor"),
+        short_description: String::from("Surrounds you in armor"),
         description: String::from(r"
             You have a translucent suit of magical armor on your body and over your hands.
-            This functions like body armor that provides a +3 bonus to Armor defense, a +4 bonus to your \glossterm{durability}, and a +1 bonus to your \glossterm{vital rolls}.
-            It has no \glossterm{encumbrance} and does not reduce your Armor defense bonus from Dexterity.
-            However, you must be \glossterm{proficient} with medium body armor to use it effectively.
+            This functions like medium body armor that provides a +3 bonus to Armor defense, a +4 bonus to your \glossterm{durability}, and a +1 bonus to your \glossterm{vital rolls}.
+            Unlike normal medium body armor, it does not reduce your Armor defense bonus from Dexterity.
 
             The armor provided by this effect is dismissed if you have other body armor of any kind.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants encumbrance-free medium armor", "
+            ItemUpgrade::new(4, "Surrounds you in armor", "
                 The durability bonus increases to +5.
             "),
-            ItemUpgrade::new(7, "Grants encumbrance-free medium armor", "
+            ItemUpgrade::new(7, "Surrounds you in armor", "
                 The Armor defense bonus increases to +4.
             "),
         ],
@@ -178,11 +177,10 @@ fn gauntlets() -> Vec<Apparel> {
         short_description: String::from("Grants +1 Strength for specific purposes"),
         description: String::from(r"
             You gain a +1 \glossterm<enhancement bonus> to Strength-based \glossterm<checks>, and you gain a +1 \glossterm<enhancement bonus> to Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
-            In addition, you reduce your \glossterm<encumbrance> by 1.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +2 Strength for specific purposes", r"
-                The bonuses increase to +2, and the encumbrance reduction increases to 2.
+                The bonuses increase to +2.
             "),
         ],
         ..Apparel::default()

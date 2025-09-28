@@ -44,7 +44,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
-                    It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
+                    It does not require \glossterm{proficiency} with armor to use.
 
                     You can also use a \glossterm{free hand} to wield the barrier as a shield.
                     This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.

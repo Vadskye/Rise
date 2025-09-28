@@ -37,12 +37,6 @@ mod creature_tests {
             -4,
             "Should have -4 Climb"
         );
-        // Encumbrance should only modify str/dex skill checks, not Devices
-        assert_eq!(
-            creature.calc_skill_modifier(&Skill::Devices),
-            0,
-            "Should have 0 Devices"
-        );
     }
 
     #[test]

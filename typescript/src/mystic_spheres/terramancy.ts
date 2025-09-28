@@ -576,7 +576,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
-        However, you also increase your \\glossterm{encumbrance} by 2.
+        However, you also take a \minus1 penalty to your Reflex defense.
       `,
       rank: 1,
       roles: ['attune'],

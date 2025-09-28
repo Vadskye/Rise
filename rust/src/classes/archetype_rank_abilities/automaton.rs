@@ -51,13 +51,13 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 \begin{raggeditemize}
                     \item Bulky: You augment both of your arms with additional strength.
                     You gain a \plus1 bonus to your \glossterm{mundane power}, and to your Strength for the purpose of determining your \glossterm{weight limits}.
-                    However, you increase your \glossterm{encumbrance} by 2.
+                    However, you take a \minus1 penalty to your Reflex defense.
                     \item Plated: You add additional protective plating to both of your arms.
-                    You gain a \plus1 bonus to your Armor defense, but you increase your \glossterm{encumbrance} by 1.
-                    This does not require a \glossterm{free hand}, but it is still considered to come from a shield, and it does not stack with the benefit from using a shield.
+                    You gain a \plus1 bonus to your Armor defense.
+                    However, you take a \minus1 penalty to your \glossterm{accuracy} with \glossterm{strikes}.
                     \item Slim: You trim away excess muscle from both of your arms to make their movements more precise.
                     You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
-                    However, you take a \minus1 penalty to your \glossterm{mundane power}.
+                    However, you take a \minus1 penalty to your \glossterm{mundane power} and your Brawn defense.
                     \item Weapon: You convert one of your arms into a manufactured weapon of your choice that you are \glossterm{proficient} with.
                     It is considered either a \glossterm{natural weapon}, a manufactured weapon, or both whenever it would be beneficial for you.
                     However, that arm no longer has a \glossterm{free hand}.

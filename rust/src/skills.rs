@@ -78,14 +78,6 @@ impl Skill {
         }
     }
 
-    pub fn apply_encumbrance(&self) -> bool {
-        if let Some(attribute) = self.attribute() {
-            attribute == Attribute::Strength || attribute == Attribute::Dexterity
-        } else {
-            false
-        }
-    }
-
     pub fn name(&self) -> &str {
         match self {
             Self::Awareness => "awareness",
@@ -321,13 +313,8 @@ where
         } else {
             0
         };
-        let encumbrance_modifier = if skill.apply_encumbrance() {
-            self.calc_encumbrance()
-        } else {
-            0
-        };
 
-        attribute_modifier + training_modifier - encumbrance_modifier
+        attribute_modifier + training_modifier 
             + self.calc_total_modifier(ModifierType::Skill(skill.clone()))
     }
 

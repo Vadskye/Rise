@@ -353,7 +353,6 @@ impl ClassArchetype {
             ",
             Self::Ki => r"
                 This archtype grants you unusual abilities based on tapping into your inner ki.
-                If you have any \glossterm{encumbrance}, you lose the benefit of all abilities from this archetype.
             ",
             Self::PerfectedForm => r"
                 This archetype improves the perfection of your physical body through rigorous training.

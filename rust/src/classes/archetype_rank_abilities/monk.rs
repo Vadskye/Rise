@@ -263,7 +263,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 While you are not wearing other body armor, you gain a ki barrier around your body.
                 This functions like body armor that provides a \plus2 bonus to your Armor defense and a \plus3 bonus to your \glossterm{durability}.
-                It has no \glossterm{encumbrance} and does not require \glossterm{proficiency} with armor to use.
+                It does not require \glossterm{proficiency} with armor to use.
 
                 You can also use a \glossterm{free hand} to wield the barrier as a shield.
                 This functions like a buckler, granting you a \plus1 bonus to your Armor and Reflex defenses, except that you do not need to be proficient with light armor.
@@ -549,7 +549,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus1 bonus to your Armor and Reflex defense while you have no \glossterm{encumbrance}.
+                You gain a \plus1 bonus to your Armor and Reflex defenses while you are not wearing medium or heavy body armor.
             ",
             modifiers: Some(vec![
                 Modifier::Defense(Defense::Armor, 1),
@@ -562,7 +562,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                While you have no \glossterm{encumbrance}, you are immune to being \slowed and \paralyzed, and your movement is not slowed by \glossterm{difficult terrain}.
+                While you are not wearing medium or heavy body armor, you are immune to being \slowed and \paralyzed, and your movement is not slowed by \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },
