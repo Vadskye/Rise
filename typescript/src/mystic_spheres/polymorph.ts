@@ -264,7 +264,7 @@ export const polymorph: MysticSphere = {
       // This intentionally uses a fixed size category instead of referencing your original size
       // category to allow interaction with items like a Staff of Giants.
       effect: `
-        You absorb Medium or smaller \\glossterm{unattended} object into your body.
+        You absorb a Medium or smaller \\glossterm{unattended} object into your body.
         Your weight is increased by the weight of the object, but the object's presence cannot be otherwise physically detected.
         You must bear the weight of the object as if you were carrying it, not as if it was part of your body.
         A reactive object, such as alchemist's fire or poison, continues reacting inside your body, which may be harmful to you.
@@ -273,29 +273,12 @@ export const polymorph: MysticSphere = {
         When this effect ends, the object appears in a free hand, if you have one available, or drops to the floor.
       `,
       rank: 3,
-      roles: ['attune'],
+      roles: ['narrative'],
       scaling: {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
       type: 'Sustain (attuneable, minor)',
-    },
-
-    {
-      name: 'Camouflage',
-
-      effect: `
-        If you have Stealth as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.
-        Otherwise, you are treated as being trained in that skill.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +4.`,
-        5: `The bonus increases to +5.`,
-        7: `The bonus increases to +6.`,
-      },
-      type: 'Attune',
     },
 
     {
@@ -406,31 +389,6 @@ export const polymorph: MysticSphere = {
       rank: 4,
       roles: ['burn', 'execute'],
       scaling: 'damage',
-    },
-
-    {
-      name: 'Eyes of Darksight',
-
-      effect: `
-        You gain \\trait{darkvision} with a 30 foot radius, allowing you to see in complete darkness (see \\pcref{Darkvision}).
-        If you already have darkvision, the range of that ability increases by this amount instead.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    // TODO: define EA of special senses
-    {
-      name: 'Draconic Senses',
-
-      effect: `
-        You gain \\trait{darkvision} with a 60 foot radius, \\trait{low-light vision}, and \\trait{blindsense} with a 30 foot radius.
-        If you already have darkvision or blindsense, the range of that ability increases by the given amount instead.
-      `,
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {

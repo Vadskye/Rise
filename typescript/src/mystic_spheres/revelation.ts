@@ -257,7 +257,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You gain \\trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
-        If you already have blindsense, the range of your blindsense increases by 30 feet.
+        If you already have blindsense, the range of your blindsense increases by 60 feet.
       `,
       rank: 2,
       roles: ['attune'],
