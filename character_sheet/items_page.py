@@ -48,7 +48,7 @@ def create_page(destination):
             weapons(destination),
             div({"class": "section-header"}, "Legacy Item"),
             legacy_item(destination),
-            div({"class": "section-header"}, "Attunement Abilities and Equipment"),
+            div({"class": "section-header"}, "Attuned Abilities and Equipment"),
             # Maximum number of attunement points: 
             # 4 from sorcerer
             # 2 from level progression
