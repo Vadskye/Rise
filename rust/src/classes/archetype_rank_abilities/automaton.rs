@@ -52,7 +52,7 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                     \item Bulky: You augment both of your arms with additional strength.
                     You gain a \plus1 bonus to your \glossterm{mundane power}, and to your Strength for the purpose of determining your \glossterm{weight limits}.
                     However, you increase your \glossterm{encumbrance} by 2.
-                    \item Fortified: You add additional protective plating to both of your arms.
+                    \item Plated: You add additional protective plating to both of your arms.
                     You gain a \plus1 bonus to your Armor defense, but you increase your \glossterm{encumbrance} by 1.
                     This does not require a \glossterm{free hand}, but it is still considered to come from a shield, and it does not stack with the benefit from using a shield.
                     \item Slim: You trim away excess muscle from both of your arms to make their movements more precise.
