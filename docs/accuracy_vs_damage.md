@@ -15,7 +15,7 @@ The key to the whole system is the concept of diminishing returns. Hyperoptimizi
 
 ### Accuracy
 
-Assume you start with a base hit rate of 60% (+0 vs AD 5, hit on a 5) and deal 10 damage when you hit.
+Assume you start with a base hit rate of 60% (+0 vs 5 Armor, hit on a 5) and deal 10 damage when you hit.
 
 * Baseline: 7.6dpr = 0.6 * 10 + 0.2 * 5 + 0.1 * 0.6 * 10 = 6 + 1 + 0.6
 * +1 accuracy: 8.7 = 0.7 * 10 + 0.2 * 5 + 0.1 * 0.7 * 10 = 7 + 1 + 0.7

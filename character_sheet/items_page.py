@@ -227,7 +227,7 @@ def armor(destination, armor_type):
                 {"name": parseable_type + "_name"},
             ),
             labeled_number_input(
-                "AD",
+                "Armor",
                 {"class": "armor-defense"},
                 input_attributes={"name": parseable_type + "_defense"},
             ),
