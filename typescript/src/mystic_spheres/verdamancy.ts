@@ -623,26 +623,6 @@ export const verdamancy: MysticSphere = {
       type: 'Attune',
     },
 
-    {
-      name: 'Verdant Armor',
-
-      effect: `
-        When you cast this spell, you choose a type of body armor you are proficient with that is not normally made from metal.
-        Plants grow around your body, functioning like your chosen type of armor for you, except that the \\glossterm{encumbrance} of the armor is reduced by 2.
-        These plants are considered to be normal plants for the purpose of abilities that require plants to be near targets, such as spells from this mystic sphere.
-        This spell has no effect if you are wearing other body armor.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        2: `
-          The armor can be created from any special material other than dragonhide (see \\pcref{Armor Special Materials}).
-          Its rank cannot exceed your spellcasting rank with this spell.
-        `,
-      },
-      tags: ['Manifestation'],
-      type: 'Attune',
-    },
     // AOE healing has a poorly defined healing value. For now, this seems fine??
     {
       name: 'Healing Bloom',

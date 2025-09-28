@@ -109,7 +109,6 @@ def non_attribute():
         [
             div({"class": "section-header"}, "Non-Attribute Statistics"),
             stat_row("Attunement points"),
-            stat_row("Encumbrance"),
             stat_row("Speed"),
             stat_row("Vital rolls"),
         ]

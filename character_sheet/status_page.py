@@ -363,7 +363,6 @@ def custom_statistic(i):
                     option({"value": "dexterity"}, "Dexterity"),
                     option({"value": "disguise"}, "Disguise"),
                     option({"value": "durability"}, "Durability"),
-                    option({"value": "encumbrance"}, "Encumbrance"),
                     option({"value": "endurance"}, "Endurance"),
                     option({"value": "fatigue_tolerance"}, "Fatigue tolerance"),
                     option({"value": "flexibility"}, "Flexibility"),

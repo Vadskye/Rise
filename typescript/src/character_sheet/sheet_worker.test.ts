@@ -16,9 +16,7 @@ function setStandardFighter() {
     body_armor_defense: 5,
     body_armor_durability: 8,
     body_armor_speed: -10,
-    body_armor_encumbrance: 4,
     body_armor_vital_rolls: 2,
-    shield_encumbrance: 1,
     shield_armor_defense: 3,
     constitution_at_creation: 2,
     dexterity_at_creation: 2,
@@ -521,32 +519,6 @@ t.test('can calculate brawling accuracy', (t) => {
       t.match(attrs, {
         brawling_accuracy: 5,
         brawling_accuracy_explanation: '+5 (level)',
-      });
-      t.end();
-    });
-  });
-
-  t.end();
-});
-
-t.test('can calculate encumbrance', (t) => {
-  t.test('for fighter', (t) => {
-    setStandardFighter();
-    getAttrs(['encumbrance', 'encumbrance_explanation'], (attrs) => {
-      t.match(attrs, {
-        encumbrance: 5,
-        encumbrance_explanation: '+4 (body armor)  +1 (shield)',
-      });
-      t.end();
-    });
-  });
-
-  t.test('for wizard', (t) => {
-    setStandardWizard();
-    getAttrs(['encumbrance', 'encumbrance_explanation'], (attrs) => {
-      t.match(attrs, {
-        encumbrance: 0,
-        encumbrance_explanation: '',
       });
       t.end();
     });

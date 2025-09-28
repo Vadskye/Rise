@@ -49,7 +49,6 @@ pub enum ArmorMaterial {
 
 struct ArmorMaterialDefinition {
     durability_modifier: i32,
-    encumbrance_modifier: i32,
     item_rank: i32,
     name: String,
 }
@@ -59,121 +58,101 @@ impl ArmorMaterial {
         match self {
             Self::Normal => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "normal".to_string(),
                 item_rank: 0,
             },
             Self::Magic(_) => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "magic".to_string(),
                 item_rank: 0,
             },
             Self::Adamantine => ArmorMaterialDefinition {
                 durability_modifier: 2,
-                encumbrance_modifier: 2,
                 name: "adamantine".to_string(),
                 item_rank: 5,
             },
             Self::PureAdamantine => ArmorMaterialDefinition {
                 durability_modifier: 4,
-                encumbrance_modifier: 2,
                 name: "pure adamantine".to_string(),
                 item_rank: 7,
             },
             Self::ColdIron => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "cold iron".to_string(),
                 item_rank: 2,
             },
             Self::PureColdIron => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "pure cold iron".to_string(),
                 item_rank: 4,
             },
             Self::Diamondsteel => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "diamondsteel".to_string(),
                 item_rank: 3,
             },
             Self::PureDiamondsteel => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: 0,
                 name: "pure diamondsteel".to_string(),
                 item_rank: 5,
             },
             Self::Dragonhide(t) => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 0,
                 name: format!("{} dragonhide", t),
                 item_rank: 4,
             },
             Self::AncientDragonhide(t) => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 0,
                 name: format!("pure {} dragonhide", t),
                 item_rank: 6,
             },
             Self::Dragonscale(t) => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 0,
                 name: format!("{} dragonscale", t),
                 item_rank: 4,
             },
             Self::AncientDragonscale(t) => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 0,
                 name: format!("pure {} dragonscale", t),
                 item_rank: 6,
             },
             Self::Elvenweave => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: -1,
                 name: "elvenweave".to_string(),
                 item_rank: 3,
             },
             Self::PureElvenweave => ArmorMaterialDefinition {
                 durability_modifier: 0,
-                encumbrance_modifier: -2,
                 name: "pure elvenweave".to_string(),
                 item_rank: 5,
             },
             Self::Mithral => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: -1,
                 name: "mithral".to_string(),
                 item_rank: 3,
             },
             Self::PureMithral => ArmorMaterialDefinition {
                 durability_modifier: 2,
-                encumbrance_modifier: -2,
                 name: "pure mithral".to_string(),
                 item_rank: 5,
             },
             Self::Starmetal => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 2,
                 name: "starmetal".to_string(),
                 item_rank: 2,
             },
             Self::PureStarmetal => ArmorMaterialDefinition {
                 durability_modifier: 2,
-                encumbrance_modifier: 2,
                 name: "pure starmetal".to_string(),
                 item_rank: 4,
             },
             Self::Vineweave => ArmorMaterialDefinition {
                 durability_modifier: 1,
-                encumbrance_modifier: 0,
                 name: "vineweave".to_string(),
                 item_rank: 3,
             },
             Self::BraidedVineweave => ArmorMaterialDefinition {
                 durability_modifier: 2,
-                encumbrance_modifier: 0,
                 name: "pure starmetal".to_string(),
                 item_rank: 5,
             },
@@ -182,10 +161,6 @@ impl ArmorMaterial {
 
     fn durability_modifier(&self) -> i32 {
         self.definition().durability_modifier
-    }
-
-    fn encumbrance_modifier(&self) -> i32 {
-        self.definition().encumbrance_modifier
     }
 
     fn item_rank(&self) -> i32 {
@@ -202,7 +177,6 @@ struct ArmorDefinition {
     durability: i32,
     defense: i32,
     dex_multiplier: f64,
-    encumbrance: i32,
     item_rank: i32,
     name: String,
     // TODO: Creature should notice this
@@ -218,7 +192,6 @@ impl Armor {
                 durability: calc_durability(1, m),
                 defense: 2,
                 dex_multiplier: 1.0,
-                encumbrance: 0,
                 item_rank: 1,
                 name: "buff leather".to_string(),
                 speed_modifier: 0,
@@ -228,7 +201,6 @@ impl Armor {
                 durability: calc_durability(2, m),
                 defense: 2,
                 dex_multiplier: 1.0,
-                encumbrance: 0,
                 item_rank: 2,
                 name: "chain shirt".to_string(),
                 speed_modifier: 0,
@@ -238,7 +210,6 @@ impl Armor {
                 durability: calc_durability(0, m),
                 defense: 2,
                 dex_multiplier: 1.0,
-                encumbrance: 1,
                 item_rank: 1,
                 name: "Rawhide".to_string(),
                 speed_modifier: 0,
@@ -249,7 +220,6 @@ impl Armor {
                 durability: 0,
                 defense: 1,
                 dex_multiplier: 1.0,
-                encumbrance: 0,
                 item_rank: 0,
                 name: "buckler".to_string(),
                 speed_modifier: 0,
@@ -261,7 +231,6 @@ impl Armor {
                 durability: calc_durability(2, m),
                 defense: 4,
                 dex_multiplier: 0.5,
-                encumbrance: 2,
                 item_rank: 1,
                 name: "leather lamellar".to_string(),
                 speed_modifier: 0,
@@ -271,7 +240,6 @@ impl Armor {
                 durability: calc_durability(3, m),
                 defense: 4,
                 dex_multiplier: 0.5,
-                encumbrance: 4,
                 item_rank: 1,
                 name: "scale".to_string(),
                 speed_modifier: 0,
@@ -281,7 +249,6 @@ impl Armor {
                 durability: calc_durability(4, m),
                 defense: 4,
                 dex_multiplier: 0.5,
-                encumbrance: 4,
                 item_rank: 1,
                 name: "brigandine".to_string(),
                 speed_modifier: 0,
@@ -291,7 +258,6 @@ impl Armor {
                 durability: 0,
                 defense: 2,
                 dex_multiplier: 0.5,
-                encumbrance: 0,
                 item_rank: 0,
                 name: "standard shield".to_string(),
                 speed_modifier: 0,
@@ -303,7 +269,6 @@ impl Armor {
                 durability: calc_durability(5, m),
                 defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 3,
                 item_rank: 1,
                 name: "breastplate".to_string(),
                 speed_modifier: -10,
@@ -313,7 +278,6 @@ impl Armor {
                 durability: calc_durability(7, m),
                 defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 4,
                 item_rank: 2,
                 name: "half plate".to_string(),
                 speed_modifier: -10,
@@ -323,7 +287,6 @@ impl Armor {
                 durability: calc_durability(8, m),
                 defense: 5,
                 dex_multiplier: 0.5,
-                encumbrance: 4,
                 item_rank: 3,
                 name: "full plate".to_string(),
                 speed_modifier: -10,
@@ -333,7 +296,6 @@ impl Armor {
                 durability: 0,
                 defense: 3,
                 dex_multiplier: 0.5,
-                encumbrance: 2,
                 item_rank: 1,
                 name: "tower shield".to_string(),
                 speed_modifier: 0,
@@ -383,14 +345,6 @@ impl Armor {
 
     pub fn defense(&self) -> i32 {
         self.definition().defense
-    }
-
-    pub fn encumbrance(&self) -> i32 {
-        if let Some(m) = self.material() {
-            self.definition().encumbrance + m.encumbrance_modifier()
-        } else {
-            self.definition().encumbrance
-        }
     }
 
     pub fn item_rank(&self) -> i32 {
@@ -458,7 +412,6 @@ pub trait HasArmor {
     fn get_armor(&self) -> Vec<&Armor>;
     fn replace_armor(&mut self, armor: Armor);
     fn remove_armor(&mut self, armor: Armor);
-    fn calc_encumbrance(&self) -> i32;
     // Find the lowest dex multiplier among all the armor components being worn
     fn minimum_dex_modifier(&self) -> Option<f64> {
         self.get_armor()
@@ -490,15 +443,6 @@ where
 
     fn get_armor(&self) -> Vec<&Armor> {
         return self.armor.iter().collect();
-    }
-
-    fn calc_encumbrance(&self) -> i32 {
-        let armor_encumbrance: i32 = self.get_armor().iter().map(|a| a.encumbrance()).sum();
-        max(
-            0,
-            armor_encumbrance - self.get_base_attribute(&Attribute::Strength)
-                + self.calc_total_modifier(ModifierType::Encumbrance),
-        )
     }
 }
 

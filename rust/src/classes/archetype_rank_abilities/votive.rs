@@ -149,7 +149,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 Each covenant grants great power at a cost.
                 {
                     \subcf{Covenant of Bloodforging} While you are not wearing other body armor, your blood flows to the surface of your skin, manifesting a carapace around you.
-                    This functions like light body armor that has no \glossterm{encumbrance}.
+                    This functions like light body armor.
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 

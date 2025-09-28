@@ -143,8 +143,6 @@ export const mobileHunter: CombatStyle = {
         While still invisible, you can make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         After making the strike, you become visible at your destination.
-
-        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 5,
       roles: ['clear'],
@@ -159,8 +157,6 @@ export const mobileHunter: CombatStyle = {
         This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
         While still invisible, you can make two melee \\glossterm{strikes} at any point during your movement.
         After making the strikes, you become visible at your destination.
-
-        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 7,
       roles: ['dive'],
@@ -174,8 +170,6 @@ export const mobileHunter: CombatStyle = {
         During this movement, you move too quickly to be seen.
         This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
         You become visible at your destination, and you can then make a melee \\glossterm{strike} there.
-
-        You cannot use this ability if you have any \\glossterm{encumbrance}.
       `,
       rank: 3,
       roles: ['dive'],
