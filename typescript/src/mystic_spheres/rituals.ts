@@ -458,7 +458,7 @@ export const rituals: Ritual[] = [
     `,
     type: 'Sustain (standard)',
     castingTime: 'one week',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
+    spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
     name: 'Plane Shift',
@@ -476,7 +476,7 @@ export const rituals: Ritual[] = [
     `,
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
+    spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
     name: 'Astral Rift',
@@ -495,7 +495,7 @@ export const rituals: Ritual[] = [
     roles: ['narrative'],
     tags: [],
     castingTime: '24 hours',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
+    spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
     name: 'Homeward Shift',
@@ -511,7 +511,7 @@ export const rituals: Ritual[] = [
     roles: ['narrative'],
     tags: [],
     castingTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity', 'Summoning'],
+    spheres: ['Astromancy', 'Channel Divinity'],
   },
   // {
   //   name: 'Overland Teleportation',
@@ -561,7 +561,6 @@ export const rituals: Ritual[] = [
       'Channel Divinity',
       'Fabrication',
       'Prayer',
-      'Summoning',
       'Thaumaturgy',
     ],
   },
@@ -586,7 +585,6 @@ export const rituals: Ritual[] = [
       'Astromancy',
       'Channel Divinity',
       'Electromancy',
-      'Summoning',
       'Verdamancy',
     ],
   },
@@ -615,7 +613,6 @@ export const rituals: Ritual[] = [
       'Astromancy',
       'Channel Divinity',
       'Electromancy',
-      'Summoning',
       'Verdamancy',
     ],
   },
@@ -640,7 +637,6 @@ export const rituals: Ritual[] = [
       'Astromancy',
       'Channel Divinity',
       'Electromancy',
-      'Summoning',
       'Verdamancy',
     ],
   },
@@ -655,7 +651,7 @@ export const rituals: Ritual[] = [
     // narrative: '',
     rank: 2,
     roles: ['narrative'],
-    spheres: ['Astromancy', 'Summoning'],
+    spheres: ['Astromancy'],
   },
   {
     name: 'Astral Chest',
@@ -674,7 +670,7 @@ export const rituals: Ritual[] = [
     // narrative: '',
     rank: 3,
     roles: ['narrative'],
-    spheres: ['Astromancy', 'Summoning'],
+    spheres: ['Astromancy'],
   },
   {
     name: 'Accelerated Reading',
@@ -1963,23 +1959,6 @@ export const rituals: Ritual[] = [
     roles: ['attune'],
     type: 'Attune',
     spheres: ['Aeromancy', 'Prayer', 'Revelation'],
-  },
-  {
-    name: 'Summon Mount',
-
-    castingTime: 'one minute',
-    effect: `
-      Choose a ritual participant.
-      This ritual summons your choice of a Large light horse or a Medium pony to serve as a mount for the chosen creature.
-      The creature appears in an unoccupied location on stable grond within \\medrange.
-      It comes with a bit and bridle and a riding saddle, and will only accept the chosen creature as a rider.
-      It has the same statistics as a creature from the \\spell{summon defensive monster} spell, except that it follows its rider's directions to the extent that a well-trained horse would and it cannot attack.
-    `,
-    rank: 2,
-    roles: ['attune'],
-    tags: ['Manifestation'],
-    type: 'Attune',
-    spheres: ['Summoning'],
   },
   {
     name: 'Seal Shut',
