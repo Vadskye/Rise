@@ -32,28 +32,12 @@ from attributes.perception import calc_accuracy, calc_blank_accuracy
 from attributes.willpower import calc_magical_power, calc_mental
 import re
 
+from items_page import inventory
+
 def create_page(destination):
     return flex_col(
         {"class": "page attribute-page"},
         [
-            flex_row(
-                {"class": "header"},
-                [
-                    flex_col(
-                        {"class": "sidebar"},
-                        [
-                            calc_offense(),
-                        ],
-                    ),
-                    flex_col(
-                        {"class": "main-body"},
-                        [
-                            calc_defenses(),
-                            calc_survival(),
-                        ],
-                    ),
-                ]
-            ),
             div({"class": "section-header"}, "Attributes and Skills"),
             flex_row(
                 [
@@ -83,47 +67,7 @@ def create_page(destination):
                     ),
                 ],
             ),
-            div({"class": "page-number"}, "Page 4"),
-        ],
-    )
-
-def calc_offense():
-    return flex_col(
-        {"class": "calc-offense"},
-        [
-            div({"class": "section-header"}, "Offensive Statistics"),
-            calc_accuracy(),
-            calc_brawling_accuracy(),
-            calc_blank_accuracy(),
-            calc_extra_damage(),
-            calc_magical_power(),
-            calc_mundane_power(),
-            calc_speed(),
-        ],
-    )
-
-def calc_defenses():
-    return flex_col(
-        {"class": "calc-defenses"},
-        [
-            div({"class": "section-header"}, "Defenses"),
-            calc_armor(),
-            calc_brawn(),
-            calc_fortitude(),
-            calc_mental(),
-            calc_reflex(),
-        ],
-    )
-
-def calc_survival():
-    return flex_col(
-        {"class": "calc-survival"},
-        [
-            div({"class": "section-header"}, "Survival"),
-            calc_durability(),
-            calc_hit_points(),
-            calc_injury_point(),
-            calc_vital_rolls(),
+            *inventory(),
         ],
     )
 
@@ -400,51 +344,6 @@ def calc_encumbrance():
         ]
     )
 
-def calc_speed():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Speed"),
-            equation(
-                [
-                    underlabel(
-                        "Base",
-                        number_input({"name": "base_speed"}),
-                    ),
-                    minus(),
-                    underlabel(
-                        "Armor", number_input({"name": "body_armor_speed"})
-                    ),
-                    plus(),
-                    equation_misc("speed", 0),
-                    plus(),
-                    equation_misc("speed", 1),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "speed_display",
-                    "value": "@{speed}",
-                },
-            ),
-        ]
-    )
-
-def calc_vital_rolls():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Vital rolls"),
-            equation(
-                [
-                    equation_misc_repeat("vital_rolls", 3),
-                ],
-                result_attributes={
-                    "disabled": True,
-                    "name": "vital_rolls_display",
-                    "value": "@{vital_rolls}",
-                },
-            ),
-        ]
-    )
-
 def calc_combat_styles():
     return flex_row(
         [
@@ -551,18 +450,6 @@ def calc_blank_resource():
                     ),
                     plus(),
                     equation_misc_repeat("blank_resource", 2),
-                ],
-            ),
-        ]
-    )
-
-def calc_extra_damage():
-    return flex_row(
-        [
-            div({"class": "calc-header"}, "Extra damage"),
-            equation(
-                [
-                    equation_misc_repeat("extra_damage", 4),
                 ],
             ),
         ]

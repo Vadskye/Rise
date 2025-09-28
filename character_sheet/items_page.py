@@ -3,6 +3,8 @@ from cgi_simple import (
     checkbox,
     div,
     equation,
+    equation_misc,
+    equation_misc_repeat,
     fieldset,
     flex_col,
     flex_row,
@@ -11,6 +13,7 @@ from cgi_simple import (
     labeled_number_input,
     labeled_text_input,
     labeled_textarea,
+    minus,
     number_input,
     number_reminder,
     option,
@@ -25,9 +28,20 @@ from cgi_simple import (
     underlabel_spaced,
 )
 from status_page import custom_modifier
-
+from attributes.strength import calc_brawling_accuracy, calc_brawn, calc_mundane_power, calc_jump_distance
+from attributes.dexterity import calc_armor, calc_reflex
+from attributes.constitution import calc_fatigue_tolerance, calc_fortitude, calc_hit_points, calc_durability, calc_injury_point
+from attributes.intelligence import calc_insight_points, calc_trained_skills
+from attributes.perception import calc_accuracy, calc_blank_accuracy
+from attributes.willpower import calc_magical_power, calc_mental
 
 def create_page(destination):
+    if destination == "roll20":
+        return roll20_items_page(destination)
+    else:
+        return paper_items_page(destination)
+
+def roll20_items_page(destination):
     return flex_col(
         {"class": "page items-page"},
         [
@@ -50,11 +64,10 @@ def create_page(destination):
             legacy_item(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
             # Maximum number of attunement points: 
-            # 4 from sorcerer
-            # 2 from level progression
+            # 4 from class
             # 2 from two archetypes that each grant an attunement point
-            # Anyone with eight attunement points would almost certainly have at
-            # least two deep attunements, right? Hopefully?
+            # Anyone with six attunement points would almost certainly have at
+            # least one deep attunements, right? Hopefully?
             div(
                 {"class": "attunement-abilities"},
                 [
@@ -64,16 +77,92 @@ def create_page(destination):
                         custom_modifier(show_toggle="deep", show_text=True),
                     ),
                 ]
-                if destination == "roll20"
-                else [attunement() for _ in range(6)],
             ),
-            div({"class": "section-header"}, "Inventory"),
-            wealth_items(),
-            textarea({"class": "inventory", "name": "inventory"}),
+            *inventory(),
+        ],
+    )
+
+def paper_items_page(destination):
+    return flex_col(
+        {"class": "page items-page"},
+        [
+            div({"class": "section-header"}, "Armor"),
+            armor(destination, "Body armor"),
+            armor(destination, "Shield"),
+            div({"class": "section-header"}, "Weapons"),
+            weapons(destination),
+            div({"class": "section-header"}, "Legacy Item"),
+            legacy_item(destination),
+            div({"class": "section-header"}, "Attuned Abilities and Equipment"),
+            # Maximum number of attunement points: 
+            # 4 from class
+            # 2 from two archetypes that each grant an attunement point
+            # Anyone with six attunement points would almost certainly have at
+            # least one deep attunement, right? Hopefully?
+            div(
+                {"class": "attunement-abilities"},
+                [attunement() for _ in range(5)]
+            ),
+            flex_row({"class": "calcs"}, [
+                calc_offense(),
+                calc_defense(),
+            ]),
             div({"class": "page-number"}, "Page 3"),
         ],
     )
 
+def inventory():
+    return [
+        div({"class": "section-header"}, "Inventory"),
+        wealth_items(),
+        textarea({"class": "inventory", "name": "inventory"}),
+        div({"class": "page-number"}, "Page 4"),
+    ]
+
+
+def calc_offense():
+    return flex_col(
+        {"class": "calc-offense"},
+        [
+            div({"class": "section-header"}, "Offensive Statistics"),
+            calc_accuracy(),
+            calc_brawling_accuracy(),
+            calc_blank_accuracy(),
+            calc_extra_damage(),
+            calc_magical_power(),
+            calc_mundane_power(),
+            calc_speed(),
+        ],
+    )
+
+def calc_defense():
+    return flex_col(
+        {"class": "calc-defense"},
+        [
+            div({"class": "section-header"}, "Defensive Statistics"),
+            calc_armor(),
+            calc_brawn(),
+            calc_fortitude(),
+            calc_mental(),
+            calc_reflex(),
+            calc_durability(),
+            calc_hit_points(),
+            calc_injury_point(),
+            calc_vital_rolls(),
+        ],
+    )
+
+def calc_survival():
+    return flex_col(
+        {"class": "calc-survival"},
+        [
+            div({"class": "section-header"}, "Survival"),
+            calc_durability(),
+            calc_hit_points(),
+            calc_injury_point(),
+            calc_vital_rolls(),
+        ],
+    )
 
 def attuned_effects_tracker():
     return sidelabel(
@@ -410,4 +499,61 @@ def calc_weight_limits():
                 },
             ),
         ],
+    )
+
+def calc_extra_damage():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Extra damage"),
+            equation(
+                [
+                    equation_misc_repeat("extra_damage", 4),
+                ],
+            ),
+        ]
+    )
+
+def calc_speed():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Speed"),
+            equation(
+                [
+                    underlabel(
+                        "Base",
+                        number_input({"name": "base_speed"}),
+                    ),
+                    minus(),
+                    underlabel(
+                        "Armor", number_input({"name": "body_armor_speed"})
+                    ),
+                    plus(),
+                    equation_misc("speed", 0),
+                    plus(),
+                    equation_misc("speed", 1),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "speed_display",
+                    "value": "@{speed}",
+                },
+            ),
+        ]
+    )
+
+def calc_vital_rolls():
+    return flex_row(
+        [
+            div({"class": "calc-header"}, "Vital rolls"),
+            equation(
+                [
+                    equation_misc_repeat("vital_rolls", 3),
+                ],
+                result_attributes={
+                    "disabled": True,
+                    "name": "vital_rolls_display",
+                    "value": "@{vital_rolls}",
+                },
+            ),
+        ]
     )
