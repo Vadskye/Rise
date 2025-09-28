@@ -138,6 +138,33 @@ div.full-sheet {
             }
         }
     }
+
+    // Inventory and wealth can be on either the paper attribute page or the
+    // items page in roll20
+
+    .wealth-items {
+        justify-content: space-between;
+
+        .wealth-items-label {
+            font-size: 1.1em;
+        }
+
+        .currency {
+            width: 10em;
+        }
+    }
+
+    .weight-limits {
+        gap: 1em;
+    }
+
+    .inventory {
+        height: 8em;
+    }
+}
+
+div.paper.full-sheet .inventory {
+    height: 16em;
 }
 
 .hidden {
