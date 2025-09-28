@@ -180,12 +180,6 @@ def card(attributes, contents):
     return div(attributes, contents)
 
 
-def hidden_input(attributes=None):
-    attributes = attributes or dict()
-    attributes["type"] = "hidden"
-    return html_tag("input", attributes)
-
-
 def number_input(attributes=None):
     attributes = attributes or dict()
     attributes["type"] = "number"
