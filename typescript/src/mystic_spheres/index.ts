@@ -12,7 +12,6 @@ import { polymorph } from './polymorph';
 import { prayer } from './prayer';
 import { pyromancy } from './pyromancy';
 import { revelation } from './revelation';
-import { summoning } from './summoning';
 import { telekinesis } from './telekinesis';
 import { terramancy } from './terramancy';
 import { thaumaturgy } from './thaumaturgy';
@@ -39,7 +38,6 @@ export const mysticSpheres: MysticSphere[] = [
   prayer,
   pyromancy,
   revelation,
-  summoning,
   telekinesis,
   terramancy,
   thaumaturgy,
@@ -146,7 +144,6 @@ export type SphereName =
   | 'Prayer'
   | 'Pyromancy'
   | 'Revelation'
-  | 'Summoning'
   | 'Telekinesis'
   | 'Terramancy'
   | 'Thaumaturgy'

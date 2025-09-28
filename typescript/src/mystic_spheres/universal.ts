@@ -39,7 +39,6 @@ export const universal: MysticSphere = {
         Prayer            & Creatures             & Mental    &  \\tdash           \\\\
         Pyromancy         & Creatures and objects & Fortitude &  \\atFire          \\\\
         Revelation        & Creatures             & Mental    &  \\tdash           \\\\
-        Summoning         & Creatures and objects & Armor     &  \\atManifestation \\\\
         Telekinesis       & Creatures and objects & Brawn     &  \\tdash           \\\\
         Terramancy        & Creatures and objects & Armor     &  \\atEarth         \\\\
         Thaumaturgy       & Creatures and objects & Fortitude &  \\tdash           \\\\

@@ -489,7 +489,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Abjuration} The \sphere{telekinesis} and \sphere{thaumaturgy} mystic spheres.
                     If you specialize in this school, you a \plus1 bonus to your Armor and Reflex defenses.
 
-                \subcf{Conjuration} The \sphere{astromancy}, \sphere{fabrication}, and \sphere{summoning} mystic spheres.
+                \subcf{Conjuration} The \sphere{astromancy} and \sphere{fabrication} mystic spheres.
                     If you specialize in this school, you gain a \plus15 foot bonus to the \glossterm{range} of arcane spells you cast.
 
                 \subcf{Evocation} The \sphere{cryomancy}, \sphere{electromancy}, and \sphere{pyromancy} mystic spheres.
