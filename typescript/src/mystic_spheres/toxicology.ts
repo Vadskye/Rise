@@ -690,6 +690,38 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
+    // Self-only double maximize is 1.4 EA, so this needs downsides to function
+    {
+      name: 'Maximal Concoction',
+
+      effect: `
+        You create a potion in an empty vial or similar container within \\shortrange.
+        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\maximized and \\stunned for the next two rounds.
+        When that effect ends, it takes \\damagerankfivelow.
+      `,
+      rank: 5,
+      roles: ['boon'],
+      type: 'Sustain (attuneable, minor)',
+      tags: ['Manifestation'],
+    },
+
+    // Self-only double prime is 1.6 EA
+    {
+      name: 'Priming Concoction',
+
+      effect: `
+        You create a potion in an empty vial or similar container within \\shortrange.
+        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\primed and \\stunned for the next two rounds.
+        When that effect ends, it takes \\damageranksevenlow.
+      `,
+      rank: 7,
+      roles: ['boon'],
+      type: 'Sustain (attuneable, minor)',
+      tags: ['Manifestation'],
+    },
+
     // Briefly dazzled with damage is 1.6 EA, so r2. Spend +1r for more area and +1r for
     // extended range, so area rank 5.
     {
