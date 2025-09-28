@@ -734,5 +734,21 @@ export const telekinesis: MysticSphere = {
       scaling: 'damage',
       type: 'Attune (deep)',
     },
+
+    // TODO: define EA of special senses
+    {
+      name: 'Proprioception',
+
+      effect: `
+        You gain \\trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
+        If you already have blindsense, the range of your blindsense increases by 60 feet.
+
+        In addition, you gain \\trait{blindsight} with a 15 foot range, allowing you to see without light (see \\pcref{Blindsight}).
+        If you already have blindsight, the range of your blindsight increases by 15 feet.
+      `,
+      rank: 4,
+      roles: ['attune'],
+      type: 'Attune',
+    },
   ],
 };
