@@ -37,7 +37,7 @@
     "maneuver_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_role_breakdown.js",
     "spell_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_rank_breakdown.js",
     "spell_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_role_breakdown.js",
-    "tap": "tsc --incremental && NODE_OPTIONS='--import tsx' tap",
-    "test": "tsc --incremental && NODE_OPTIONS='--import tsx' tap"
+    "tap": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js",
+    "test": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js"
   }
 }
