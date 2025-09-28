@@ -16,7 +16,9 @@ from cgi_simple import (
     select,
     sidelabel,
     span,
+    subtlebutton,
     textarea,
+    text_input,
     this_or_that,
     underlabel,
     underlabeled_checkbox,
@@ -40,12 +42,14 @@ def create_page(_destination):
                 {"class": "standard-modifiers"},
                 [
                     flex_col(
+                        {"class": "circumstances"},
                         [
                             div({"class": "section-header"}, "Circumstances"),
                             circumstances(),
                         ]
                     ),
                     flex_col(
+                        {"class": "debuffs"},
                         [
                             div({"class": "section-header"}, "Debuffs"),
                             debuffs(),
@@ -124,13 +128,30 @@ def vital_wound():
                     "name": "vital_wound_effect",
                 },
             ),
+            # This duplication is necessary to get the effect to show up in the
+            # announcement box while still keeping the visual style of
+            # labeled_span.
+            text_input({
+                "class": "hidden",
+                "name": "vital_wound_effect",
+                "readonly": True,
+            }),
+            subtlebutton(
+                {
+                    "class": "vital-wound-announce",
+                    "name": "roll_vitalwoundannounce",
+                    "type": "roll",
+                    "value": "@{character_name} rolled a vital wound: [[@{vital_wound_roll}]] (@{vital_wound_effect})",
+                },
+                "Announce",
+            ),
         ],
     )
 
 
 def circumstances():
     return flex_row(
-        {"class": "debuffs"},
+        {"class": "debuff-list"},
         [
             flex_col(
                 [
@@ -153,7 +174,7 @@ def circumstances():
 
 def debuffs():
     return flex_row(
-        {"class": "debuffs"},
+        {"class": "debuff-list"},
         [
             flex_col(
                 [

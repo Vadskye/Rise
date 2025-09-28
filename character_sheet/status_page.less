@@ -2,7 +2,6 @@
     display: inline;
     font-size: 12px;
     font-weight: normal;
-    width: 10em;
 
     > input {
         vertical-align: initial;
@@ -17,17 +16,29 @@
     }
 }
 
-.vital-wound-effect {
-    flex-grow: 1;
-}
-
 .standard-modifiers {
     > div {
         margin-left: 0.25em;
         margin-right: 0.25em;
     }
 
+    .circumstances {
+        width: 20em;
+    }
+
     .debuffs {
+        width: 16em;
+    }
+
+    .circumstances .debuff-active-label {
+        width: 10em;
+    }
+
+    .debuffs .debuff-active-label {
+        width: 8em;
+    }
+
+    .debuff-list {
         justify-content: space-between;
     }
 
@@ -41,6 +52,14 @@
             button {
                 margin-right: 0.25em;
             }
+        }
+
+        .vital-wound-effect {
+            flex-grow: 1;
+        }
+
+        .vital-wound-announce {
+            font-size: 1em;
         }
 
         .vital-wound-roll {

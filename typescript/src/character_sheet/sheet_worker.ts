@@ -2976,7 +2976,7 @@ function handleVitalWounds() {
       return 'No effect';
     }
     return {
-      1: 'Unconscious below half HP',
+      1: 'Unconscious while injured',
       2: '-1 accuracy',
       3: '-5 foot speed',
       4: '-2 fatigue tolerance',
