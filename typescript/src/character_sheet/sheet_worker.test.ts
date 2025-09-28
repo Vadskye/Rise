@@ -183,7 +183,7 @@ t.test('can calculate attunement points', (t) => {
     getAttrs(['attunement_points', 'attunement_points_explanation'], (attrs) => {
       t.match(attrs, {
         attunement_points: 3,
-        attunement_points_explanation: '+3 (base)',
+        attunement_points_explanation: '+3 (fighter)',
       });
       t.end();
     });
@@ -193,8 +193,8 @@ t.test('can calculate attunement points', (t) => {
     setStandardWizard();
     getAttrs(['attunement_points', 'attunement_points_explanation'], (attrs) => {
       t.match(attrs, {
-        attunement_points: 5,
-        attunement_points_explanation: '+3 (base)  +2 (wizard)',
+        attunement_points: 4,
+        attunement_points_explanation: '+4 (wizard)',
       });
       t.end();
     });
@@ -209,7 +209,7 @@ t.test('can calculate insight points', (t) => {
     getAttrs(['insight_points', 'insight_points_explanation'], (attrs) => {
       t.match(attrs, {
         insight_points: 1,
-        insight_points_explanation: '+1 (base)',
+        insight_points_explanation: '+1 (fighter)',
       });
       t.end();
     });
@@ -220,7 +220,7 @@ t.test('can calculate insight points', (t) => {
     getAttrs(['insight_points', 'insight_points_explanation'], (attrs) => {
       t.match(attrs, {
         insight_points: 5,
-        insight_points_explanation: '+1 (base)  +3 (Int)  +1 (wizard)',
+        insight_points_explanation: '+3 (Int)  +2 (wizard)',
       });
       t.end();
     });
