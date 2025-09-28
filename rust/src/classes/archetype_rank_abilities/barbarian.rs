@@ -30,7 +30,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a \plus4 bonus to your \glossterm{durability} (see \pcref{Durability}).
-                However, you also increase your \glossterm{injury point} by twice your rank in this archetype (see \pcref{Injury Point}).
+                However, you also increase your \glossterm{injury point} by 4.
             ",
             modifiers: None,
         },
@@ -41,7 +41,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The durability bonus increases to \plus8, and the injury point bonus increases to three times your rank in this archetype.
+                The durability bonus increases to \plus8, and the injury point bonus increases to 20.
             ",
             modifiers: None,
         },
