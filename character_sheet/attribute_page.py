@@ -42,13 +42,14 @@ def create_page(destination):
                     flex_col(
                         {"class": "sidebar"},
                         [
-                            calc_combat(),
+                            calc_offense(),
                         ],
                     ),
                     flex_col(
                         {"class": "main-body"},
                         [
                             calc_defenses(),
+                            calc_survival(),
                         ],
                     ),
                 ]
@@ -86,9 +87,9 @@ def create_page(destination):
         ],
     )
 
-def calc_combat():
+def calc_offense():
     return flex_col(
-        {"class": "calc-combat"},
+        {"class": "calc-offense"},
         [
             div({"class": "section-header"}, "Offensive Statistics"),
             calc_accuracy(),
@@ -105,15 +106,24 @@ def calc_defenses():
     return flex_col(
         {"class": "calc-defenses"},
         [
-            div({"class": "section-header"}, "Defensive Statistics"),
-            calc_durability(),
-            calc_hit_points(),
-            calc_injury_point(),
+            div({"class": "section-header"}, "Defenses"),
             calc_armor(),
             calc_brawn(),
             calc_fortitude(),
             calc_mental(),
             calc_reflex(),
+        ],
+    )
+
+def calc_survival():
+    return flex_col(
+        {"class": "calc-survival"},
+        [
+            div({"class": "section-header"}, "Survival"),
+            calc_durability(),
+            calc_hit_points(),
+            calc_injury_point(),
+            calc_vital_rolls(),
         ],
     )
 
@@ -337,27 +347,6 @@ def calc_willpower_based():
             calc_mental(),
             # display_skills_for_attribute("Willpower", calc_skill),
         ],
-    )
-
-def calc_non_attribute():
-    return flex_row(
-        {"class": "calc-non-attribute"},
-        [
-            flex_col(
-                {"class": "sidebar"},
-                [
-                    calc_attunement_points(),
-                    calc_encumbrance(),
-                ],
-            ),
-            flex_col(
-                {"class": "main-body"},
-                [
-                    calc_vital_rolls(),
-                    display_skills_for_attribute("Other", calc_skill),
-                ],
-            )
-        ]
     )
 
 
