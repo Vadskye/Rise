@@ -48,7 +48,7 @@ impl Defense {
 
     pub fn shorthand_name(&self) -> &str {
         match self {
-            Self::Armor => "AD",
+            Self::Armor => "Armor",
             Self::Brawn => "Brn",
             Self::Fortitude => "Fort",
             Self::Mental => "Ment",

@@ -13,7 +13,7 @@ mod creature_tests {
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             0,
-            "Should have 0 AD"
+            "Should have 0 Armor"
         );
         assert_eq!(
             creature.calc_skill_modifier(&Skill::Climb),
@@ -30,7 +30,7 @@ mod creature_tests {
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             4,
-            "Should have 4 AD"
+            "Should have 4 Armor"
         );
         assert_eq!(
             creature.calc_skill_modifier(&Skill::Climb),
@@ -51,7 +51,7 @@ mod creature_tests {
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             0,
-            "Should have 0 AD"
+            "Should have 0 Armor"
         );
         assert_eq!(
             creature.calc_skill_modifier(&Skill::Climb),
@@ -68,7 +68,7 @@ mod creature_tests {
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             2,
-            "Should have 2 AD"
+            "Should have 2 Armor"
         );
         assert_eq!(
             creature.calc_defense(&Defense::Brawn),
@@ -108,20 +108,20 @@ mod creature_tests {
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             0,
-            "Should have 0 AD"
+            "Should have 0 Armor"
         );
         creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 2));
         creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 1));
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             2,
-            "Should have 2 AD; magic modifier was added first"
+            "Should have 2 Armor; magic modifier was added first"
         );
         creature.add_magic_modifier(Modifier::Defense(Defense::Armor, 3));
         assert_eq!(
             creature.calc_defense(&Defense::Armor),
             3,
-            "Should have 3 AD; magic modifier was added last"
+            "Should have 3 Armor; magic modifier was added last"
         );
     }
 }

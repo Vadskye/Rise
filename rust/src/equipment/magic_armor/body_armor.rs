@@ -130,13 +130,13 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Lithe Armor"),
         rank: 1,
-        short_description: String::from("Grants +1 AD if you have 3 Dex"),
+        short_description: String::from("Grants +1 Armor if you have 3 Dex"),
         description: String::from(r"
             If your Dexterity is at least 3, you gain a +1 \glossterm<enhancement bonus> to your Armor defense.
         "),
         upgrades: vec![
             // -1 rank for Dex requirement
-            ItemUpgrade::new(6, "Grants +2 AD if you have 5 Dex", "
+            ItemUpgrade::new(6, "Grants +2 Armor if you have 5 Dex", "
                 The bonus increases to +2 if your Dexterity is at least 5.
             "),
         ],

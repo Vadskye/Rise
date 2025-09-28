@@ -31,7 +31,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         ..MagicWeapon::default()
     }));
 
-    // Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is normally 0.98.
+    // Assume you have a 80% hit rate (+0 vs 3 Armor). Expected dpr is normally 0.98.
     // With Lucky, on an 8, you have a 60% chance to crit on the explosion (crit on 5). On a 9, you
     // have a 70% chance to crit on the explosion. Those simply add to the regular dpr, so it's
     // 0.98 + 0.1 * 0.6 + 0.1 * 0.7 = 1.11, which is 13% more damage than baseline.
@@ -157,7 +157,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     // With an Unbalanced weapon, you hit on a 5+ and crit on a 8+.
     // That means 0.6 + 0.2*0.5 + 0.3 = 1x hit damage per round.
     //
-    // Assume you have a 120% hit chance (+1 vs AD 0, so you crit on 9/10).
+    // Assume you have a 120% hit chance (+1 vs 0 Armor, so you crit on 9/10).
     // Hit 100%, crit 20%, double crit 0.02 = 1.22 dpr.
     // With unbalanced you hit 100%, crit 40%, double crit 4% = 1.44 dpr.
     // That's 18% more damage, making this strong but reasonable.
