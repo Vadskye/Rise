@@ -360,23 +360,6 @@ pub fn staffs() -> Vec<Implement> {
     }));
 
     implements.push(Staff(StandardItem {
-        name: String::from("Bushwalker's Staff"),
-        rank: 2,
-        short_description: String::from(r"Grants +1 accuracy in undergrowth"),
-        description: String::from(r"
-            You gain a +1 \glossterm{enhancement bonus} to accuracy while you are in \glossterm{undergrowth}.
-            In addition, you can activate this staff as a standard action.
-            When you do, you create a \medarea radius \glossterm{zone} of \glossterm{light undergrowth} from your location that lasts \glossterm{briefly}.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(6, "Grants +2 accuracy vs targets in undergrowth", r"
-                The accuracy bonus increases to +2, and the area increases to \medarea.
-            "),
-        ],
-        ..Implement::default()
-    }));
-
-    implements.push(Staff(StandardItem {
         name: String::from("Perceptive Staff"),
         rank: 3,
         short_description: String::from(r"Grants +1 accuracy if you have 3 Per"),
