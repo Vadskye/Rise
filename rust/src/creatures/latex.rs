@@ -6,7 +6,7 @@ pub fn format_creature(creature: &Creature) -> String {
     format!(
         "
             HP {hit_points}, IP {injury_point}
-            AD {armor}, Brn {brawn}, Fort {fortitude}, Ref {reflex}, Ment {mental}
+            Armor {armor}, Brn {brawn}, Fort {fortitude}, Ref {reflex}, Ment {mental}
             {attacks}
             Attr: {attributes}
             Power: {magical_power}✨/{mundane_power}

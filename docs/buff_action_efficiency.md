@@ -156,7 +156,7 @@ From Anydice, with a reroll:
 
 That means total damage dealt is 0.12 * 0.5 + 0.84 + 0.12 = 1.02, which is 34% better. If we just think about debuffs that don't care much about glancing or critting, it's 84% vs 60%, which is 40% better.
 
-Now assume you have a 120% hit rate (+1 vs AD 0), so you crit on a 9/10. Expected dpr is 1 + 0.2 + 0.1 * 0.2 = 1.22.
+Now assume you have a 120% hit rate (+1 vs 0 Armor), so you crit on a 9/10. Expected dpr is 1 + 0.2 + 0.1 * 0.2 = 1.22.
 
 With a reroll, your odds of getting a single crit become 36% and a double crit is 4%, so expected dpr is 1 + 0.36 + 0.04 = 1.4, which is only 15% better. So focused is better on low accuracy targets, which makes sense.
 
@@ -185,11 +185,11 @@ Applies 33% of the time, and 50% denial when it applies, so 4 / 3 * 0.5 = 0.7.
 
 ### Honed: 0.4
 
-Assume you have a 80% hit rate (+0 vs AD 3). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9 and double crit on a 10 -> 9, so 0.22 damage from crit, so 1.2 total. That's 22% more damage.
+Assume you have a 80% hit rate (+0 vs 3 Armor). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9 and double crit on a 10 -> 9, so 0.22 damage from crit, so 1.2 total. That's 22% more damage.
 
-Assume you have a 120% hit rate (+1 vs AD 0). Expected DPR is 1 from hit and 0.22 from crit + double crit, so 1.22 total. With Deadly Fortune, expected DPR gains 0.6 from crit and 0.06 from double crit, so 1.66 total, which is 38% more damage.
+Assume you have a 120% hit rate (+1 vs 0 Armor). Expected DPR is 1 from hit and 0.22 from crit + double crit, so 1.22 total. With Deadly Fortune, expected DPR gains 0.6 from crit and 0.06 from double crit, so 1.66 total, which is 38% more damage.
 
-Assume you have a 150% hit rate (+4 vs AD 0). Expected DPR is 1.55. With Deadly Fortune, expected DPR is 1.99, which is 28% more damage.
+Assume you have a 150% hit rate (+4 vs 0 Armor). Expected DPR is 1.55. With Deadly Fortune, expected DPR is 1.99, which is 28% more damage.
 
 0.4 EA is a bit high for honed since that's only true in its best case scenario, but it's risky to treat it as any lower EA than that.
 

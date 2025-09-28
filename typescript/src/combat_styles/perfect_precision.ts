@@ -145,7 +145,7 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Heartpiercer',
 
-      // Assume you have an 80% hit chance (+0 vs AD 3).
+      // Assume you have an 80% hit chance (+0 vs 3 Armor).
       // Expected damage is 0.8 + 0.5*0.2 + 0.1*0.8 = 0.98x hit damage.
       // Losing glancing blows means you deal 0.8x.
       // +4 accuracy with crits means you crit on a 9.
@@ -171,13 +171,13 @@ export const perfectPrecision: CombatStyle = {
     {
       name: 'Heartpiercer+',
 
-      // Assume you hit 80% of the time normally (+0 vs AD 3).
+      // Assume you hit 80% of the time normally (+0 vs 3 Armor).
       // Your normal hit damage is 0.8 + 0.1 + 0.08 = 0.98.
       // With this, every hit is a crit and you double crit on a 8/9/10,
       // so expected damage is 0.8 + 0.8 + 0.3 + 0.03 = 1.93 hit damage, or roughly 2x
       // damage.
       //
-      // Now assume you hit 130% of the time normally (+5 vs AD 3).
+      // Now assume you hit 130% of the time normally (+5 vs 3 Armor).
       // Normal expected damage is 0.3 * 2 + 0.7 * 1 + 0.03 = 1.33x hit damage.
       // With this, every roll is a crit and you double crit on a 3+,
       // so expected damage is 1 + 1 + 0.8 + 0.08 = 2.88x hit damage.
