@@ -57,7 +57,7 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                     This does not require a \glossterm{free hand}, but it is still considered to come from a shield, and it does not stack with the benefit from using a shield.
                     \item Slim: You trim away excess muscle from both of your arms to make their movements more precise.
                     You gain a \plus1 bonus to your \glossterm{accuracy} with \glossterm{strikes}.
-                    However, you take a \minus1 penalty to your \glossterm{mundane power}.
+                    However, you take a \minus2 penalty to your \glossterm{mundane power}.
                     \item Weapon: You convert one of your arms into a manufactured weapon of your choice that you are \glossterm{proficient} with.
                     It is considered either a \glossterm{natural weapon}, a manufactured weapon, or both whenever it would be beneficial for you.
                     However, that arm no longer has a \glossterm{free hand}.
