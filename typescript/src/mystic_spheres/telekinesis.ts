@@ -574,7 +574,6 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 3,
       roles: ['boon'],
-      type: 'Attune',
     },
 
     {
@@ -588,7 +587,6 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 7,
       roles: ['boon'],
-      type: 'Attune',
     },
 
     {
