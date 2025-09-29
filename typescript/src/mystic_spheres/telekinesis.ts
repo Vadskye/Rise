@@ -561,19 +561,33 @@ export const telekinesis: MysticSphere = {
       type: 'Attune (deep)',
     },
 
+    // Any two shielded is 0.7 EA, or 1.4 EA if the brief works on both targets. Assume
+    // that it works on one of the two targets, so ~1 EA.
     {
       name: 'Kinetic Shield',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\shielded this round.
+        Each target that is hit by a \\glossterm{strike} this round is also \\shielded next round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
       `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +8.`,
-        5: `The bonus increases to +16.`,
-        7: `The bonus increases to +32.`,
-      },
+      rank: 3,
+      roles: ['boon'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Greater Kinetic Shield',
+
+      effect: `
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\shielded this round.
+        Each target that takes damage this round is also \\shielded next round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
+      `,
+      rank: 7,
+      roles: ['boon'],
       type: 'Attune',
     },
 
@@ -737,6 +751,21 @@ export const telekinesis: MysticSphere = {
     // TODO: define EA of special senses
     {
       name: 'Proprioception',
+
+      effect: `
+        You gain \\trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
+        If you already have blindsense, the range of your blindsense increases by 60 feet.
+
+        In addition, you gain \\trait{blindsight} with a 15 foot range, allowing you to see without light (see \\pcref{Blindsight}).
+        If you already have blindsight, the range of your blindsight increases by 15 feet.
+      `,
+      rank: 4,
+      roles: ['attune'],
+      type: 'Attune',
+    },
+
+    {
+      name: '',
 
       effect: `
         You gain \\trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Blindsense}).
