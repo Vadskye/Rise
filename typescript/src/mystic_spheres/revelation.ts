@@ -34,19 +34,6 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Purge Invisibility',
-
-      cost: MINOR_FATIGUE,
-      effect: `
-        Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
-        Any effects that would cause them to be invisible are \\glossterm{suppressed}.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Sustain (attuneable, minor)',
-    },
-
-    {
       name: 'Learn from Failure',
 
       // Any two focused is 1 EA. Drop to r2 for the condition.
@@ -216,7 +203,7 @@ export const revelation: MysticSphere = {
       type: 'Attune',
     },
 
-    // TODO: calculate EA for skills
+    // TODO: calculate EA for skill bonuses
     {
       name: 'Precognitive Competence',
 

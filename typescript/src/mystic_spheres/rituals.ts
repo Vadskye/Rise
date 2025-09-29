@@ -3135,4 +3135,18 @@ export const rituals: Ritual[] = [
 
     type: 'Attune (deep)',
   },
+
+  {
+    name: 'Purge Invisibility',
+
+    castingTime: "one minute",
+    effect: `
+      Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
+      Any effects that would cause them to be invisible are \\glossterm{suppressed}.
+    `,
+    rank: 2,
+    roles: ['attune'],
+    spheres: ['Photomancy', 'Revelation', 'Thaumaturgy'],
+    type: 'Sustain (attuneable, minor)',
+  },
 ];
