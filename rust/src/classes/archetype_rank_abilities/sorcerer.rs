@@ -289,20 +289,13 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // Normal / infused progression:
-        // R1: +4 / +3
-        // R3: +8 / +9
-        // R5: +16 / +15
-        // R7: +32 / +35
         RankAbility {
             complexity: 1,
             name: "Arcane Infusion",
             is_magical: true,
             rank: 2,
             description: r"
-                You gain an \glossterm{enhancement bonus} to your maximum \glossterm{hit points} equal to three times your rank in this archetype.
-                In addition, you gain a \plus1 \glossterm{enhancement bonus} to your \glossterm{vital rolls}.
-                Because these are enhancement bonuses, they do not stack with other enhancement bonuses (see \pcref{Stacking Rules}).
+                You gain an \glossterm{enhancement bonus} to your Constitution.
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -312,41 +305,43 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Arcane Infusion+",
             is_magical: true,
-            rank: 6,
+            rank: 5,
             description: r"
-                The hit point bonus increases to five times your rank in this archetype, and the vital roll bonus increases to \plus2.
+                You gain a \plus1 \glossterm{enhancement bonus} to a different attribute of your choice.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 2,
-            name: "Magic Absorption",
+            name: "Intuitive Echo",
             is_magical: true,
             rank: 3,
             description: r"
-                Whenever another creature uses a \magical ability to attack you, if that ability does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, you \glossterm{briefly} absorb that ability.
-                This does not reduce the ability's effect on you.
+                Whenever another creature uses a \magical ability within \medrange of you as a \glossterm{standard action} or \glossterm{elite action}, you automatically \glossterm{briefly} trace that ability.
+                The ability must not have the \abilitytag{Attune} or \abilitytag{Sustain} tags, and it must not cost fatigue to use.
 
-                As a standard action, you can use any ability that you have absorbed.
-                When you use an absorbed ability, you choose the area and targets affected by it.
-                In all other ways, the ability functions in the same way as when it was used on you, including its \glossterm{accuracy} and \glossterm{power}.
-                You cannot change its effects with your other abilities, including \ability{desperate exertion}.
+                As a standard action, you can use any ability that you have traced.
+                After you decide to use a traced ability, you intuitively learn what it does, including its accuracy and any effects it would have on a hit.
+                You can choose the area and targets affected by it.
+                In all other ways, the ability functions in the same way as when it was originally used, including its original \glossterm{accuracy} and \glossterm{power}.
+                All attacks you make with that ability are \glossterm{reactive attacks}, so you cannot modify them with abilities like \ability{desperate exertion}.
 
-                As a \glossterm{minor action}, you can reserve one ability that you have absorbed so you can use it later.
-                This removes any other reserved abilities that you have absorbed.
-                When you finish a \glossterm{long rest}, you lose all reserved abilities.
+                As a \glossterm{minor action}, you can persist one ability that you have traced.
+                This means it remains traced until you finish a \glossterm{long rest}.
+                When you persist an ability in this way, you stop persisting any other traced abilities.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 1,
-            name: "Magic Absorption+",
+            name: "Intuitive Echo+",
             is_magical: true,
-            rank: 5,
+            rank: 6,
             description: r"
-                You can reserve up to three magical abilities that you have absorbed.
-                If you reserve a fourth ability, you choose which reserved ability to remove.
-                You still lose all reserved abilities when you finish a long rest.
+                You can trace abilities at up to \distrange.
+                In addition, you can persist up to three magical abilities that you have traced.
+                If you persist a fourth ability, you choose which persisted ability to remove.
+                You still lose all persisted abilities when you finish a long rest.
             ",
             modifiers: None,
         },
