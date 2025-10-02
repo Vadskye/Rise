@@ -259,6 +259,7 @@ export const thaumaturgy: MysticSphere = {
       type: 'Attune',
     },
 
+    // Repeating is basically 1 EA, but it seems scary for some reason, so call it rank 4
     {
       name: 'Enhance Magic -- Echo',
 
@@ -267,7 +268,7 @@ export const thaumaturgy: MysticSphere = {
         If you do, the spell \\glossterm{repeats} during your next action.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -395,6 +396,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You are \\braced this round.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
         In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -438,8 +440,6 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Font of Power',
 
-      // Treat "yourself and adjacent allies who used a magical ability" as being roughly
-      // "any two", so 0.5 EA. That requires a -2dr drop.
       // r0 area gives drX+1, drop to drX-1 for buff effect.
       attack: {
         hit: `
@@ -448,7 +448,7 @@ export const thaumaturgy: MysticSphere = {
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you and all adjacent \\glossterm{allies} who used a \\magical ability this round are \\glossterm{briefly} \\empowered.
+          Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
       rank: 2,
@@ -460,18 +460,194 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Mighty Font of Power',
 
-      // Treat "yourself and adjacent allies who used a magical ability" as being slightly
-      // weaker than "any two", so 0.4 EA. That requires a -2dr drop.
-      // r0 area gives drX+1, drop to drX-1 for buff effect.
-      functionsLike: {
-        name: 'font of power',
-        exceptThat:
-          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          Then, you are \\glossterm{briefly} \\empowered.
+        `,
       },
-      rank: 6,
+      rank: 5,
       roles: ['generator'],
       scaling: 'damage',
       tags: ['Swift'],
+    },
+
+    {
+      name: 'Arcane Surge',
+
+      effect: `
+        You are \\glossterm{briefly} \\maximized.
+      `,
+      rank: 1,
+      roles: ['focus'],
+    },
+
+    {
+      name: 'Greater Arcane Surge',
+
+      effect: `
+        You are \\glossterm{briefly} \\maximized and \\empowered.
+      `,
+      rank: 6,
+      roles: ['focus'],
+    },
+
+    // Half damage is 0.7 EA, empower is 0.4 EA. We can combine them with these
+    // conditions.
+    {
+      name: 'Arcane Fuel',
+
+      effect: `
+        You take half damage from \\magical effects this round.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\empowered.
+      `,
+      rank: 3,
+      roles: ['focus', 'turtle'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Arcane Fuel',
+
+      effect: `
+        You take half damage from \\magical effects this round.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\maximized.
+      `,
+      rank: 7,
+      roles: ['focus', 'turtle'],
+      tags: ['Swift'],
+    },
+
+    // +1dr for condition
+    {
+      name: 'Extract Magic',
+
+      attack: {
+        hit: `
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against a creature within \\shortrange.
+          This attack automatically fails if the target does not have any \\magical abilities.
+        `,
+      },
+      rank: 3,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Extract Magic',
+
+      attack: {
+        hit: `
+          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against a creature within \\shortrange.
+          This attack automatically fails if the target does not have any \\magical abilities.
+        `,
+      },
+      rank: 6,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    // HP action skip is 2 EA. Only blocking magical abilities is about 75% effective, so
+    // call it 1.5 EA, or 2.5 EA with damage.
+    {
+      name: 'Nullify',
+
+      attack: {
+        hit: `
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+        `,
+        injury: `
+          The target is \\glossterm{briefly} unable to use any \\magical active abilities.
+          This does not prevent its passive or triggered magical abilities from functioning normally.
+          Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against a creature within \\medrange.
+          This attack automatically fails if the target does not have any \\magical abilities.
+        `,
+      },
+      rank: 7,
+      roles: ['maim'],
+    },
+
+    // +2dr for condition and delay
+    {
+      name: 'Mystic Backlash',
+
+      attack: {
+        hit: `
+          You weave a trap into the target's magic.
+          If it uses a \\magical ability as a standard action or \\glossterm{elite action}, it takes \\damagerankfour.
+          After it takes damage in this way, this effect ends.
+          It cannot trigger this trap in the same round that you cast this spell.
+        `,
+        targeting: `
+          Make an attack vs. Mental against a creature within \\medrange.
+        `,
+      },
+      rank: 2,
+      roles: ['burn'],
+      scaling: 'damage',
+      tags: ['Subtle'],
+      type: 'Sustain (minor)',
+    },
+
+    {
+      name: 'Mighty Mystic Backlash',
+
+      functionsLike: {
+        name: 'mystic backlash',
+        exceptThat: 'the damage increases to \\damagerankseven, and any \\glossterm{extra damage} is doubled.',
+      },
+      rank: 5,
+      roles: ['burn'],
+      tags: ['Subtle'],
+      type: 'Sustain (minor)',
+    },
+
+    {
+      name: 'Mystic Convergence',
+
+      // All empowered is 1.4 EA. Allies in med radius from you is weaker, so maybe 1.2
+      // EA. That means we get normal standard action damage on the attack, with +1dr from
+      // the delay.
+      attack: {
+        hit: `
+          \\damageranktwo.
+        `,
+        targeting: `
+          When you cast this spell, magical energy visibly coalesces around you, causing you to radiate multicolored light as a torch.
+          Next round, you can spend a \\glossterm{standard action} to make an attack vs. Mental against each \\glossterm{enemy} within a \\medarea radius from you.
+          If you do, each of your \\glossterm{allies} in the area becomes \\empowered during that round.
+        `,
+      },
+      rank: 3,
+      roles: ['wildfire', 'boon'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Mystic Convergence',
+
+      functionsLike: {
+        name: "mystic convergence",
+        exceptThat: "the damage increases to \\damageranksix",
+      },
+      rank: 6,
+      roles: ['wildfire', 'boon'],
+      scaling: 'damage',
     },
   ],
 };
