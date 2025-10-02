@@ -257,5 +257,35 @@ export const mobileHunter: CombatStyle = {
       rank: 5,
       roles: ['dive'],
     },
+
+    {
+      name: 'Leap Slam',
+
+      // Basically tiny radius in short range, which is area rank 2
+      attack: {
+        hit: `\\damageranktwo.`,
+        missGlance: true,
+        targeting: `
+          You jump and move as normal for the jump (see \\pcref{Jumping}).
+          When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
+          If you do, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
+        `,
+      },
+      rank: 3,
+      roles: ['clear', 'dive'],
+      tags: ['Earth'],
+    },
+
+    {
+      name: 'Leap Slam+',
+
+      functionsLike: {
+        name: 'leap slam',
+        exceptThat: 'the damage increases to \\damageranksix.',
+      },
+      rank: 7,
+      roles: ['clear', 'dive'],
+      tags: ['Earth'],
+    },
   ],
 };
