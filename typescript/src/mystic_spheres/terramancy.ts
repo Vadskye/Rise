@@ -671,7 +671,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         exceptThat:
           'the maximum distance from you to the object increases to 30 feet. This can cause you to take \\glossterm{falling damage}.',
       },
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -816,6 +816,36 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         `,
       },
       type: 'Attune (target)',
+    },
+
+    // Double ally shield is 1 EA. We can do that at r1 with the downside.
+    {
+      name: 'Earthen Shield',
+
+      effect: `
+        Choose yourself or an \\glossterm{ally} within \\medrange.
+        The target must be \\glossterm{grounded}.
+        It is \\glossterm{briefly} \\shielded.
+        If it moves from its location or stops being grounded, this effect immediately ends.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
+      `,
+      rank: 1,
+      roles: ['boon'],
+    },
+
+    // Double any two shielded is 1.4 EA
+    {
+      name: 'Twinned Earthen Shield',
+
+      effect: `
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target must be \\glossterm{grounded}.
+        Each is \\glossterm{briefly} \\shielded.
+        If a target moves from its location or stops being grounded, this effect immediately ends on it.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
+      `,
+      rank: 6,
+      roles: ['boon'],
     },
   ],
 });
