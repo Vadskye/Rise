@@ -198,11 +198,11 @@ def calc_skill_equation_components(skill_parsable, attribute):
             ),
         ]
 
-        if attribute == "strength" or attribute == "dexterity":
+        if attribute == "dexterity":
             return [
                 *standard_prefix,
                 minus(),
-                underlabel("Encumb", number_input()),
+                underlabel("Armor", number_input()),
                 plus(),
                 equation_misc_repeat(skill_parsable, 1),
             ]
