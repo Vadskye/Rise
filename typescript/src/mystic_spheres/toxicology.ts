@@ -589,7 +589,7 @@ export const toxicology: MysticSphere = {
         crit: `All damage from the condition is doubled, not just the initial damage.`,
         hit: `
           The target becomes covered in devouring fungus as a \\glossterm{condition}.
-          It takes \\damagerankone immediately and during each of your subsequent actions.
+          It takes \\damageranktwo immediately and during each of your subsequent actions.
 
           The condition can be removed if the target makes a \\glossterm{difficulty value} 10 Dexterity check as a \\glossterm{move action} to scrape off the fungus.
           Dropping \\prone as part of this action gives a +5 bonus to this check.
@@ -598,7 +598,7 @@ export const toxicology: MysticSphere = {
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-      rank: 2,
+      rank: 3,
       roles: ['burn'],
       scaling: 'damage',
       tags: ['Manifestation'],
@@ -608,9 +608,9 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'devouring fungus',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} on the initial hit is doubled.',
       },
-      rank: 5,
+      rank: 6,
       roles: ['burn'],
       scaling: 'damage',
       tags: ['Manifestation'],
