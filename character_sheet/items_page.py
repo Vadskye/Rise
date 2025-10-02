@@ -340,9 +340,9 @@ def armor(destination, armor_type):
                 else div()
             ),
             labeled_number_input(
-                "Dex Checks",
-                {"class": "armor-dex-checks"},
-                input_attributes={"name": parseable_type + "_dex_check_modifier"},
+                "Dex Skills",
+                {"class": "armor-dex-skills"},
+                input_attributes={"name": parseable_type + "_dex_skill_modifier"},
             ),
             (
                 underlabel(
