@@ -191,6 +191,7 @@ export const vivimancy: MysticSphere = {
       tags: ['Swift'],
     },
 
+    // TODO: What level can vital wounds usually be removed? 
     {
       name: 'Cure Vital Wound',
 
@@ -573,17 +574,17 @@ export const vivimancy: MysticSphere = {
       scaling: 'damage',
     },
 
-    // r3 area is drX-2. Calculate as a rank 3 spell, then subtract a full rank for the corpse
+    // r2 area is drX-1. Calculate as a rank 4 spell, then subtract a full rank for the corpse
     // requirement.
     {
       name: 'Corpse Explosion',
 
       attack: {
-        hit: `\\damagerankone.`,
+        hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
           Choose one Small or larger \\glossterm{corpse} within \\shortrange.
-          Make an attack vs. Reflex against everything within a \\smallarea radius from the corpse.
+          Make an attack vs. Reflex against everything within a \\tinyarea radius from the corpse.
           You gain a \\plus1 accuracy bonus for each size category by which the corpse is larger than Medium.
           The corpse is also destroyed.
         `,
@@ -591,7 +592,7 @@ export const vivimancy: MysticSphere = {
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['clear', 'payoff'],
       scaling: 'damage',
     },
@@ -601,12 +602,12 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to \\damagerankfive.',
+        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\smallarea radius from the corpse.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['clear', 'payoff'],
       scaling: 'damage',
     },
