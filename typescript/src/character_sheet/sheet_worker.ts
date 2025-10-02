@@ -718,6 +718,7 @@ function handleCoreStatistics() {
   handleCharacterNameSanitization();
   handleDefenses();
   handleDamageDice();
+  handleArmorDexCheckModifier();
   handleDurability();
   handleFatiguePenalty();
   handleHitPoints();
@@ -1526,6 +1527,20 @@ function handleDebuffs() {
       }
 
       setAttrs(attrs);
+    },
+  });
+}
+
+function handleArmorDexCheckModifier() {
+  onGet({
+    variables: {
+      numeric: ['body_armor_dex_check_modifier', 'shield_dex_check_modifier'],
+    },
+    callback: (v) => {
+      const totalValue = v.body_armor_dex_check_modifier + v.shield_dex_check_modifier;
+      setAttrs({
+        armor_dex_check_modifier: totalValue,
+      });
     },
   });
 }
@@ -2609,8 +2624,12 @@ function handleSkills() {
         ...customModifierNames('all_skills'),
       ];
       const shouldAddAttribute = attribute !== 'other';
+      const shouldApplyArmorDexModifier = attribute === 'dexterity';
       if (shouldAddAttribute) {
         numeric.push(attribute);
+      }
+      if (shouldApplyArmorDexModifier) {
+        numeric.push('armor_dex_check_modifier');
       }
       onGet({
         variables: {
@@ -2622,13 +2641,15 @@ function handleSkills() {
         callback: (v) => {
           const isTrained = v[`${skill}_is_trained`];
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
+          const armorModifier = v.armor_dex_check_modifier || 0;
           const attributeModifier = v[attribute] || 0;
           let skillValue =
             fromTraining +
             attributeModifier +
             v.misc +
             sumCustomModifiers(v, 'all_skills') -
-            v.fatigue_penalty;
+            v.fatigue_penalty +
+            armorModifier;
 
           if (skill === 'stealth') {
             skillValue += v.size_stealth_modifier;
