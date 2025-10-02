@@ -163,10 +163,11 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a strike.
-        In addition, you regain hit points equal to 1d6 \\add your \\glossterm{power} at the end of the round.
+        In addition, you regain \\hprankthree at the end of the round.
       `,
       rank: 3,
       roles: ['healing'],
+      scaling: 'healing',
     },
 
     {
@@ -175,7 +176,7 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        In addition, you regain 1d10 hit points plus 1d10 per 2 power at the end of the round.
+        In addition, you regain \\hprankseven at the end of the round.
       `,
       rank: 7,
       roles: ['healing'],
@@ -276,6 +277,36 @@ export const unbreakableDefense: CombatStyle = {
       `,
       rank: 1,
       roles: ['focus'],
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Invigoration',
+
+      // Pure healing would be dr3, so dr2 for empower
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} empowered.
+        In addition, you regain \\hpranktwo.
+      `,
+      rank: 1,
+      roles: ['focus', 'healing'],
+      scaling: 'healing',
+      tags: ['Swift'],
+    },
+
+    {
+      name: 'Greater Invigoration',
+
+      // Pure healing would be dr3, so dr2 for empower
+      cost: 'One \\glossterm{fatigue level}.',
+      effect: `
+        You are \\glossterm{briefly} empowered.
+        In addition, you regain \\hpranksix.
+      `,
+      rank: 5,
+      roles: ['focus', 'healing'],
+      scaling: 'healing',
       tags: ['Swift'],
     },
   ],
