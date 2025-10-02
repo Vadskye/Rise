@@ -441,7 +441,7 @@ export const revelation: MysticSphere = {
       rank: 5,
       roles: ['narrative'],
       tags: ['Scrying'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attuneable, minor)',
     },
 
     {

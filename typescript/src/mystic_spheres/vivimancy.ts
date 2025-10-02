@@ -772,11 +772,11 @@ export const vivimancy: MysticSphere = {
       name: 'Greater Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add your \\glossterm{power}.
+        At the end of each round, you regain \\hprankthree.
       `,
       rank: 5,
       roles: ['healing'],
-      scaling: { special: 'The healing increases by 1d8 for each rank beyond 5.' },
+      scaling: 'healing',
       type: 'Attune (deep)',
     },
 
@@ -784,7 +784,7 @@ export const vivimancy: MysticSphere = {
       name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\glossterm{hit points} equal to 1d8 \\add 1d8 per 2 \\glossterm{power}.
+        At the end of each round, you regain \\hpranksix.
       `,
       rank: 7,
       roles: ['healing'],
