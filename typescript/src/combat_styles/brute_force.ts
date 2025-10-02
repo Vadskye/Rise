@@ -105,9 +105,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Mighty Stomp',
 
-      // Start from r2 due to 0.2 EA buff. With an r0 area, we get r3 damage.
+      // -2dr for 0.4 EA buff.
       attack: {
-        hit: `\\damagerankthree.`,
+        hit: `\\damageranktwo.`,
         missGlance: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
@@ -179,77 +179,7 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Leap Slam',
-
-      // Basically tiny radius in short range, which is area rank 2
-      attack: {
-        hit: `\\damageranktwo.`,
-        missGlance: true,
-        targeting: `
-          You jump and move as normal for the jump (see \\pcref{Jumping}).
-          When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.
-          If you do, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are on the same stable surface as you.
-        `,
-      },
-      rank: 3,
-      roles: ['clear', 'dive'],
-      tags: ['Earth'],
-    },
-
-    {
-      name: 'Leap Slam+',
-
-      functionsLike: {
-        name: 'leap slam',
-        exceptThat: 'the damage increases to \\damageranksix.',
-      },
-      rank: 7,
-      roles: ['clear', 'dive'],
-      tags: ['Earth'],
-    },
-
-    {
-      name: 'Ricochet',
-
-      effect: `
-        Make a thrown \\glossterm{strike} against up to three creatures or objects in a \\smallarea radius within \\medrange of you.
-        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
-        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
-      `,
-      rank: 3,
-      roles: ['clear'],
-    },
-
-    {
-      name: 'Ricochet+',
-
-      effect: `
-        Make a thrown \\glossterm{strike} against up to six creatures or objects in a \\smallarea radius within \\medrange of you.
-        You can choose the same target multiple times, but not twice in a row, and no more than three times total.
-        Choosing the same target twice means it takes double damage, and three times means it takes triple damage.
-
-        Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
-        If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
-      `,
-      rank: 7,
-      roles: ['clear'],
-    },
-
-    // {
-    //   name: 'Knockdown',
-
-    //   // We don't normally do brief effects on HP loss. Call it -0.4 EA, so 0.6 total?
-    //   effect: `
-    //     Make a melee \\glossterm{strike}.
-    //     \\hit If the target loses hit points and your attack result also hits its Brawn defense, it falls \\prone.
-    //     This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-    //   `,
-    //   rank: 1,
-    //   roles: ['maim'],
-    // },
-
-    {
-      name: 'Knockdown+',
+      name: 'Knockdown',
       effect: `
         Make a melee \\glossterm{strike}.
         \\hit If your attack result also hits the target's Brawn defense, it falls \\prone.
@@ -317,20 +247,6 @@ export const bruteForce: CombatStyle = {
       roles: ['generator'],
     },
 
-    {
-      name: 'Rejuvenating Flex',
-
-      // Pure healing would be dr5, so dr4 for empower
-      cost: 'One \\glossterm{fatigue level}.',
-      effect: `
-        You are \\glossterm{briefly} empowered.
-        In addition, you regain 1d6 hit points per 2 power.
-      `,
-      rank: 3,
-      roles: ['focus', 'healing'],
-      tags: ['Swift'],
-    },
-
     // This is 0.7 EA + 0.3 EA, but if you're a maneuver martial you generally
     // aren't doing 100% dice damage, so it can sneak in here at r3 instead of r4.
     {
@@ -367,16 +283,16 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Desperate Muscle Burst',
+      name: 'Mighty Muscle Burst',
 
       // With a fatigue, expected damage is drX-3 = dr4.
-      cost: 'One \\glossterm{fatigue level}.',
       effect: `
+        You are \\glossterm{briefly} \\empowered.
         Make a \\glossterm{strike} with that deals double damage.
         Then, you are \\glossterm{briefly} \\maximized.
       `,
       rank: 7,
-      roles: ['exertion', 'generator'],
+      roles: ['generator'],
     },
 
     {
