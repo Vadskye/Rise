@@ -1534,12 +1534,12 @@ function handleDebuffs() {
 function handleArmorDexCheckModifier() {
   onGet({
     variables: {
-      numeric: ['body_armor_dex_check_modifier', 'shield_dex_check_modifier'],
+      numeric: ['body_armor_dex_skill_modifier', 'shield_dex_skill_modifier'],
     },
     callback: (v) => {
-      const totalValue = v.body_armor_dex_check_modifier + v.shield_dex_check_modifier;
+      const totalValue = v.body_armor_dex_skill_modifier + v.shield_dex_skill_modifier;
       setAttrs({
-        armor_dex_check_modifier: totalValue,
+        armor_dex_skill_modifier: totalValue,
       });
     },
   });
@@ -2629,7 +2629,7 @@ function handleSkills() {
         numeric.push(attribute);
       }
       if (shouldApplyArmorDexModifier) {
-        numeric.push('armor_dex_check_modifier');
+        numeric.push('armor_dex_skill_modifier');
       }
       onGet({
         variables: {
@@ -2641,7 +2641,7 @@ function handleSkills() {
         callback: (v) => {
           const isTrained = v[`${skill}_is_trained`];
           const fromTraining = isTrained ? 3 + Math.floor(v.level / 2) : 0;
-          const armorModifier = v.armor_dex_check_modifier || 0;
+          const armorModifier = v.armor_dex_skill_modifier || 0;
           const attributeModifier = v[attribute] || 0;
           let skillValue =
             fromTraining +
