@@ -156,7 +156,7 @@ export const umbramancy: MysticSphere = {
           \\damageranktwolow.
         `,
         injury: `
-          The target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          As a \\glossterm{condition}, the target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -232,11 +232,21 @@ export const umbramancy: MysticSphere = {
       name: 'Shadow Mantle',
 
       effect: `
-        All attacks against you have a 20\\% \\glossterm{failure chance}.
+        While you are \\glossterm{shadowed}, attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
       narrative: `
         Your physical form becomes blurred and shifts in and out of existence.
         This is not a mere trick of the light, but an alteration of reality to make your existence more ambiguous.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      type: 'Attune (deep)',
+    },
+    {
+      name: 'Efficient Shadow Mantle',
+
+      effect: `
+        While you are \\glossterm{shadowed}, attacks against you have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 6,
       roles: ['attune'],
@@ -253,7 +263,7 @@ export const umbramancy: MysticSphere = {
           The target is \\dazzled as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
           You gain a +2 \\glossterm{accuracy} bonus with the attack against each \\glossterm{shadowed} creature.
         `,
       },
@@ -521,6 +531,105 @@ export const umbramancy: MysticSphere = {
       rank: 2,
       roles: ['generator'],
       scaling: 'accuracy',
+    },
+    {
+      name: 'Shadowfeed',
+      effect: `
+        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankone.
+      `,
+      rank: 4,
+      roles: ['attune', 'healing'],
+      scaling: 'healing',
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Greater Shadowfeed',
+      effect: `
+        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankfour.
+      `,
+      rank: 6,
+      roles: ['attune', 'healing'],
+      scaling: 'healing',
+      type: 'Attune (deep)',
+    },
+    // Should be a rank 3 spell, -1r for delay
+    {
+      name: 'Whispers in the Dark',
+      attack: {
+        hit: `
+          The target suffers no immediate effect.
+          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\glossterm{briefly} \\frightened by all creatures.
+        `,
+        targeting: `
+          Make an attack vs. Mental against up to two creatures within \\medrange.
+        `,
+      },
+      rank: 2,
+      roles: ['softener'],
+      scaling: 'accuracy',
+      tags: ['Emotion', 'Auditory'],
+    },
+    {
+      name: 'Sever Shadow',
+      effect: `
+        You separate your shadow from your body so you can control it independently.
+        As a \\glossterm{move action}, you can move your shadow using your climb speed or walk speed.
+        It can fit through any gap that allows light to pass through, such as under a door.
+        Each time you move your shadow, it frays.
+        You can move it up to five times before this effect ends.
+
+        If either you or your shadow ever stops being \\glossterm{shadowed}, this effect ends.
+        Your shadow is constantly hiding and requires a \\glossterm{difficulty value} 15 Awareness check to notice.
+        That check is modified by all normal Awareness modifiers to notice a hiding creature, such as requiring cover or concealment.
+
+        At the start of each round, you choose whether you see from your shadow or from your body.
+        While viewing through your shadow, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
+        You otherwise act normally, though you may have difficulty moving or taking actions if the shadow cannot see your body or your intended targets, effectively making you \\blinded.
+      `,
+      rank: 5,
+      roles: ['narrative'],
+      type: 'Sustain (minor)',
+    },
+
+    {
+      name: 'Greater Sever Shadow',
+      functionsLike: {
+        name: "sever shadow",
+        exceptThat: `
+          when the effect ends, you can choose to \\glossterm{teleport} to the location of your shadow.
+          You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your shadow.
+        `,
+      },
+      rank: 7,
+      roles: ['mobility', 'narrative'],
+      type: 'Sustain (minor)',
+    },
+    // +1dr for shadowed + cannot be shadowed downside
+    {
+      name: 'Devouring Shadow',
+      attack: {
+        hit: `\\damagerankfivelow, and any \\glossterm{extra damage} is doubled.`,
+        targeting: `
+          You must be \\glossterm{shadowed} to cast this spell.
+          After you cast this spell, you \\glossterm{briefly} cannot be \\glossterm{shadowed} for any reason.
+
+          Make an attack vs. Fortitude against a creature within \\shortrange.
+        `,
+      },
+      rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Devouring Shadow',
+      functionsLike: {
+        name: 'devouring shadow',
+        exceptThat: 'the damage increases to \\damagerankeightlow.',
+      },
+      rank: 7,
+      roles: ['burst'],
     },
   ],
 };
