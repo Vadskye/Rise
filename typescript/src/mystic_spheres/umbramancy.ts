@@ -20,7 +20,7 @@ export const umbramancy: MysticSphere = {
   specialRules: `
     Many spells from this sphere are particularly effective if you or the target are \\glossterm{shadowed}.
     A creature or object is shadowed if it is touching its shadow.
-    That typically means it is in \\glossterm{shadowy illumination} or \\glossterm{bright illumination}, but not \\glossterm{brilliant illumination} or complete darkness.
+    That typically means it is in \\glossterm{dim illumination} or \\glossterm{bright illumination}, but not \\glossterm{brilliant illumination} or complete darkness.
     In addition, it must be \\glossterm{grounded} or otherwise touching a surface.
   `,
 
@@ -54,7 +54,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components}.
 
-        \\glossterm{Bright illumination} within through one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{shadowy illumination}.
+        \\glossterm{Bright illumination} within through one \\glossterm{zone} within \\medrange is dimmed to be no brighter than \\glossterm{dim illumination}.
         \\glossterm{Brilliant illumination} is undimmed.
         You can choose this spell's radius, up to a maximum of a \\smallarea radius.
         Any object or effect which blocks light also blocks this spell's effect.
@@ -156,7 +156,7 @@ export const umbramancy: MysticSphere = {
           \\damageranktwolow.
         `,
         injury: `
-          As a \\glossterm{condition}, the target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain}.
+          As a \\glossterm{condition}, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -177,7 +177,7 @@ export const umbramancy: MysticSphere = {
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
         // condition.
         hit: `
-          \\damageranksixlow, and the target treats all areas of \\glossterm{shadowy illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
+          \\damageranksixlow, and the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain} as a \\glossterm{condition}.
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
@@ -461,7 +461,7 @@ export const umbramancy: MysticSphere = {
 
     //   effect: `
     //     Your shadow is naturally cast in the wrong direction, pointing towards light instead of away from it.
-    //     You are considered to be \\glossterm{shadowed} if there is \\glossterm{shadowy illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
+    //     You are considered to be \\glossterm{shadowed} if there is \\glossterm{dim illumination} or darkness within 10 feet of you, even if you would otherwise be in \\glossterm{bright illumination} or \\glossterm{brilliant illumination}.
     //     The dark area must be large enough to hold you if you were in that location.
     //   `,
     //   rank: 2,
@@ -469,35 +469,33 @@ export const umbramancy: MysticSphere = {
     //   type: 'Attune',
     // },
 
-    // 20% failure chance is 20% action denial, and two targets would plausibly affect 75%
-    // of enemy actions. So this is worth about 0.6 EA. Throw in empower to get it to 0.8
-    // EA.
     {
-      name: 'Shared Shadow Cloak',
+      name: 'Shadow Cloak',
 
       effect: `
-        Choose one ally within \\medrange.
-        All attacks against you and the target have a 20\\% \\glossterm{failure chance} this round.
+        You must be \\glossterm{shadowed} to cast this spell.
+
+        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
         This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
-        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
       `,
-      rank: 1,
-      roles: ['boon'],
+      rank: 2,
+      roles: ['boon', 'turtle'],
       tags: ['Swift'],
     },
 
+    // 1.1 EA
     {
       name: 'Enduring Shadow Cloak',
 
-      // If this affects you twice, it's about 50% in round 1 and 50% in round 2, so 4 *
-      // 0.2 = 0.8 EA. Empowerment gets this a bit higher.
       effect: `
-        All attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+        You must be \\glossterm{shadowed} to cast this spell.
+
+        All attacks against all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
+        In addition, all attacks against you \\glossterm{briefly} have a 20\\% failure chance.
         This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
-        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
       `,
-      rank: 3,
-      roles: ['focus'],
+      rank: 6,
+      roles: ['boon', 'turtle'],
       tags: ['Swift'],
     },
 
@@ -645,6 +643,57 @@ export const umbramancy: MysticSphere = {
         7: `The bonus increases to +5.`,
       },
       type: 'Attune',
+    },
+
+    // Any two focused is 1 EA
+    {
+      name: 'Shadowguide',
+      effect: `
+        Choose up to two \\glossterm{shadowed} \\glossterm{allies} within \\medrange of you.
+        Each target is \\focused this round.
+      `,
+      rank: 4,
+      roles: ['boon'],
+      type: 'Attune',
+    },
+
+    // All focused is 1.4 EA. Since it doesn't affect you, call it 1.2 EA.
+    {
+      name: 'Greater Shadowguide',
+      effect: `
+        All \\glossterm{shadowed} \\glossterm{allies} within a \\largearea radius of you are \\focused this round.
+      `,
+      rank: 7,
+      roles: ['boon'],
+      type: 'Attune',
+    },
+
+    {
+      name: 'Meld into Shadow',
+      effect: `
+        You must be \\glossterm{shadowed} to cast this spell.
+
+        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+      `,
+      rank: 1,
+      roles: ['turtle'],
+      tags: ['Swift'],
+    },
+
+    // 1.1 EA, but conditional
+    {
+      name: 'Greater Meld into Shadow',
+      effect: `
+        You must be \\glossterm{shadowed} to cast this spell.
+
+        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
+        When an attack against you fails in this way, you become \\glossterm{briefly} \\empowered.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+      `,
+      rank: 5,
+      roles: ['generator', 'turtle'],
+      tags: ['Swift'],
     },
   ],
 };
