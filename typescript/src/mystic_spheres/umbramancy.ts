@@ -605,7 +605,7 @@ export const umbramancy: MysticSphere = {
       roles: ['mobility', 'narrative'],
       type: 'Sustain (minor)',
     },
-    // +1dr for shadowed + cannot be shadowed downside
+    // +1dr for shadowed + cannot be shadowed downside would give dr5l.
     {
       name: 'Devouring Shadow',
       attack: {
@@ -630,6 +630,21 @@ export const umbramancy: MysticSphere = {
       },
       rank: 7,
       roles: ['burst'],
+    },
+
+    {
+      name: 'Shadowsight',
+      effect: `
+        You gain \\trait{low-light vision} and a \\plus2 \\glossterm{enhancement bonus} to Awareness.
+      `,
+      rank: 1,
+      roles: ['attune'],
+      scaling: {
+        3: `The bonus increases to +3.`,
+        5: `The bonus increases to +4.`,
+        7: `The bonus increases to +5.`,
+      },
+      type: 'Attune',
     },
   ],
 };

@@ -232,11 +232,13 @@ Assuming that 33% of enemy attacks target the defense, +2 is 33% action denial t
 
 50% miss chance is 50% action denial that works 25% of the time, so 20 * 0.5 * 0.25 = 2.5 EA, which is a rank 5 deep attunement.
 
-### Steeled: 0.9
+### Steeled: N/A
 
-14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9 
+14% action denial on 33% of attacks is 20 * 0.14 / 3 = 0.9.
 
-### Regen: 2.0-3.3
+In practice, you build characters very differently if they can be permanently steeled in ways that seem probably not good for the game, so this is simply disallowed.
+
+### Regen: Varies
 
 Assume that you heal drX-2 at the end of each action phase. How much does that help?
 
