@@ -5,6 +5,8 @@
 By EA:
 ```
   Buff           & Self & Ally & Any two & All \\
+  20% failure    & 0.3  & 0.4  & 0.6     & 0.8 \\
+  50% failure    & 0.7  & 1.0  & 1.5     & 2.0 \\
   Accuracy (+1)  & 0.1  & 0.2  & 0.3     & 0.4 \\
   Accuracy (+2)  & 0.3  & 0.5  & 0.8     & 1.1 \\
   Accuracy (+4)  & 0.6  & 0.9  & 1.5     & 2.1 \\
@@ -80,6 +82,14 @@ In short, that means:
 * Single ally is 1.5x EA
 * "Any two" is 2.5x EA
 * "Everyone" is 3.5x EA
+
+### 20% failure chance: 
+
+20% action denial 33% of the time is 4 * 0.2 / 3 = 0.3 EA.
+
+### 20% miss chance: 
+
+20% action denial 25% of the time is 4 * 0.2 * 0.25 = 0.2 EA.
 
 ### +1 accuracy: 0.1
 Assume you have a 70% hit rate, so you hit on a 4. Your expected damage per round is 0.7 + 0.1 from hit/glance + 0.07 from crits, or 0.87.
