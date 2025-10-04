@@ -695,5 +695,42 @@ export const umbramancy: MysticSphere = {
       roles: ['generator', 'turtle'],
       tags: ['Swift'],
     },
+
+    // 0.7 EA for personal protection. That's not a full rank 2 effect, so say we get +1dr
+    // from the combo effect. We also get the usual +1dr for unavoidable damage delay. A
+    // tiny area in short range is r2. With flat damage, the +2dr brings us back to dr3.
+    {
+      name: "Shadow Blossom",
+
+      attack: {
+        hit: `
+          \\damageranktwolow.
+        `,
+        targeting: `
+          You must be \\glossterm{shadowed} to cast this spell.
+
+          When you cast this spell, you wrap yourself in shadow.
+          All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
+          Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange of you.
+          If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
+        `,
+      },
+
+      rank: 2,
+      roles: ['clear', 'turtle'],
+      scaling: 'damage',
+    },
+
+    {
+      name: "Mighty Shadow Blossom",
+
+      functionsLike: {
+        name: 'shadow blossom',
+        exceptThat: 'the damage increases to \\damagerankfivelow, and the teleportation range increases to \\medrange.',
+      },
+      rank: 5,
+      roles: ['clear', 'turtle'],
+      scaling: 'damage',
+    },
   ],
 };
