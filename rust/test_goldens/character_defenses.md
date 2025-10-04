@@ -113,7 +113,7 @@ Points / Self-hit: 55 / 100%
 
 ### Barbarian Shield
 A/B/F/R/M: 12 / 13 / 14 / 10 / 8
-HP/IP: 79 / 28
+HP/IP: 70 / 28
 Points / Self-hit: 69 / 60%
 
 ### Fighter Greatmace
@@ -165,18 +165,18 @@ Points / Self-hit: 68 / 100%
 
 ### Barbarian Shield
 A/B/F/R/M: 14 / 16 / 18 / 12 / 10
-HP/IP: 153 / 63
+HP/IP: 138 / 63
 Points / Self-hit: 84 / 60%
 
 ### Fighter Greatmace
 A/B/F/R/M: 13 / 17 / 23 / 10 / 14
 HP/IP: 204 / 84
-Points / Self-hit: 90 / 70%
+Points / Self-hit: 90 / 60%
 
 ### Fighter Shield
 A/B/F/R/M: 15 / 17 / 23 / 10 / 14
 HP/IP: 204 / 84
-Points / Self-hit: 94 / 50%
+Points / Self-hit: 94 / 40%
 
 ### Monk Kama
 A/B/F/R/M: 19 / 15 / 12 / 19 / 10
@@ -217,7 +217,7 @@ Points / Self-hit: 86 / 100%
 
 ### Barbarian Shield
 A/B/F/R/M: 17 / 19 / 21 / 15 / 13
-HP/IP: 280 / 130
+HP/IP: 256 / 130
 Points / Self-hit: 102 / 70%
 
 ### Fighter Greatmace

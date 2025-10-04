@@ -41,7 +41,7 @@ Warrior             : 2.00
 ### Level 10
 
 Barbarian Glass     : 3.00
-Barbarian Shield    : 5.50
+Barbarian Shield    : 5.00
 Fighter Greatmace   : 7.00
 Fighter Shield      : 9.50
 Monk Kama           : 6.50
@@ -59,7 +59,7 @@ Warrior             : 2.50
 ### Level 15
 
 Barbarian Glass     : 3.25
-Barbarian Shield    : 7.50
+Barbarian Shield    : 7.00
 Fighter Greatmace   : 9.00
 Fighter Shield      : 11.50
 Monk Kama           : 8.00
@@ -77,7 +77,7 @@ Warrior             : 3.75
 ### Level 20
 
 Barbarian Glass     : 4.50
-Barbarian Shield    : 8.00
+Barbarian Shield    : 7.25
 Fighter Greatmace   : 9.25
 Fighter Shield      : 11.75
 Monk Kama           : 13.25
@@ -133,7 +133,7 @@ Warrior             : 3.00
 ### Level 10
 
 Barbarian Glass     : 3.25
-Barbarian Shield    : 7.75
+Barbarian Shield    : 6.75
 Fighter Greatmace   : 9.50
 Fighter Shield      : 14.00
 Monk Kama           : 9.00
@@ -150,26 +150,26 @@ Warrior             : 3.25
 
 ### Level 15
 
-Barbarian Glass     : 3.50
-Barbarian Shield    : 8.75
-Fighter Greatmace   : 10.25
-Fighter Shield      : 13.50
-Monk Kama           : 9.00
-Paladin Shield      : 9.25
-Ranger Longbow      : 8.00
-Rogue Smallsword    : 8.00
-Sorcerer Dexterity  : 5.25
-Wizard Perception   : 2.75
-Brute               : 4.00
-Leader              : 4.00
-Skirmisher          : 3.75
-Sniper              : 2.50
-Warrior             : 4.25
+Barbarian Glass     : 3.75
+Barbarian Shield    : 9.25
+Fighter Greatmace   : 11.50
+Fighter Shield      : 16.00
+Monk Kama           : 10.25
+Paladin Shield      : 11.00
+Ranger Longbow      : 8.50
+Rogue Smallsword    : 9.00
+Sorcerer Dexterity  : 6.25
+Wizard Perception   : 3.00
+Brute               : 4.50
+Leader              : 4.50
+Skirmisher          : 4.00
+Sniper              : 2.75
+Warrior             : 5.00
 
 ### Level 20
 
 Barbarian Glass     : 5.00
-Barbarian Shield    : 9.00
+Barbarian Shield    : 8.25
 Fighter Greatmace   : 10.25
 Fighter Shield      : 13.75
 Monk Kama           : 14.00
@@ -225,7 +225,7 @@ Warrior             : 4.75
 ### Level 10
 
 Barbarian Glass     : 4.75
-Barbarian Shield    : 10.75
+Barbarian Shield    : 9.75
 Fighter Greatmace   : 14.00
 Fighter Shield      : 18.75
 Monk Kama           : 13.75
@@ -242,26 +242,26 @@ Warrior             : 4.75
 
 ### Level 15
 
-Barbarian Glass     : 5.25
-Barbarian Shield    : 12.00
-Fighter Greatmace   : 13.75
-Fighter Shield      : 18.50
-Monk Kama           : 13.50
-Paladin Shield      : 12.75
-Ranger Longbow      : 11.25
-Rogue Smallsword    : 12.00
-Sorcerer Dexterity  : 7.25
-Wizard Perception   : 4.00
-Brute               : 5.25
-Leader              : 5.25
-Skirmisher          : 5.25
-Sniper              : 3.25
-Warrior             : 6.00
+Barbarian Glass     : 5.75
+Barbarian Shield    : 12.50
+Fighter Greatmace   : 15.75
+Fighter Shield      : 22.25
+Monk Kama           : 15.50
+Paladin Shield      : 15.00
+Ranger Longbow      : 13.00
+Rogue Smallsword    : 13.50
+Sorcerer Dexterity  : 8.50
+Wizard Perception   : 4.50
+Brute               : 6.25
+Leader              : 6.25
+Skirmisher          : 6.00
+Sniper              : 3.75
+Warrior             : 7.00
 
 ### Level 20
 
 Barbarian Glass     : 6.00
-Barbarian Shield    : 11.25
+Barbarian Shield    : 10.25
 Fighter Greatmace   : 12.75
 Fighter Shield      : 17.00
 Monk Kama           : 21.00
@@ -317,7 +317,7 @@ Warrior             : 4.75
 ### Level 10
 
 Barbarian Glass     : 5.50
-Barbarian Shield    : 9.50
+Barbarian Shield    : 8.50
 Fighter Greatmace   : 12.50
 Fighter Shield      : 16.25
 Monk Kama           : 11.25
@@ -335,7 +335,7 @@ Warrior             : 4.25
 ### Level 15
 
 Barbarian Glass     : 5.50
-Barbarian Shield    : 9.75
+Barbarian Shield    : 8.75
 Fighter Greatmace   : 12.00
 Fighter Shield      : 14.50
 Monk Kama           : 13.00
@@ -353,7 +353,7 @@ Warrior             : 4.75
 ### Level 20
 
 Barbarian Glass     : 4.75
-Barbarian Shield    : 8.00
+Barbarian Shield    : 7.50
 Fighter Greatmace   : 10.00
 Fighter Shield      : 11.75
 Monk Kama           : 16.50
@@ -409,7 +409,7 @@ Warrior             : 3.75
 ### Level 10
 
 Barbarian Glass     : 5.00
-Barbarian Shield    : 9.00
+Barbarian Shield    : 8.00
 Fighter Greatmace   : 11.75
 Fighter Shield      : 15.75
 Monk Kama           : 7.50
@@ -427,7 +427,7 @@ Warrior             : 4.00
 ### Level 15
 
 Barbarian Glass     : 5.75
-Barbarian Shield    : 10.75
+Barbarian Shield    : 9.75
 Fighter Greatmace   : 12.75
 Fighter Shield      : 16.75
 Monk Kama           : 10.75
@@ -445,7 +445,7 @@ Warrior             : 5.50
 ### Level 20
 
 Barbarian Glass     : 5.00
-Barbarian Shield    : 8.75
+Barbarian Shield    : 8.00
 Fighter Greatmace   : 10.25
 Fighter Shield      : 13.25
 Monk Kama           : 15.75
@@ -501,7 +501,7 @@ Warrior             : 2.50
 ### Level 10
 
 Barbarian Glass     : 3.75
-Barbarian Shield    : 6.50
+Barbarian Shield    : 6.00
 Fighter Greatmace   : 8.75
 Fighter Shield      : 11.25
 Monk Kama           : 6.25
@@ -519,7 +519,7 @@ Warrior             : 3.00
 ### Level 15
 
 Barbarian Glass     : 3.75
-Barbarian Shield    : 6.75
+Barbarian Shield    : 6.25
 Fighter Greatmace   : 8.50
 Fighter Shield      : 10.25
 Monk Kama           : 7.75
@@ -537,7 +537,7 @@ Warrior             : 3.50
 ### Level 20
 
 Barbarian Glass     : 3.75
-Barbarian Shield    : 6.50
+Barbarian Shield    : 6.00
 Fighter Greatmace   : 8.00
 Fighter Shield      : 9.75
 Monk Kama           : 12.50

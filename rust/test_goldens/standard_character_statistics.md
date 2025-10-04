@@ -94,9 +94,9 @@ Enduring Discipline: defense mental by 2
 Enduring Discipline: resource fatigue tolerance by 2
 Maneuvers: maneuver Certain Strike+
 Maneuvers: maneuver Power Strike+
-Weapon Precision: accuracy 1
 Enduring Discipline+: defense mental by 2
 Enduring Discipline+: resource fatigue tolerance by 2
+Weapon Precision: accuracy 1
 Maneuvers: maneuver Extra Damage Strike
 Maneuvers: maneuver Generic Triple Damage
 fighter: defense armor by 1
