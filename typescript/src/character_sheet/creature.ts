@@ -182,7 +182,7 @@ export type StandardModifierName = 'mindless';
 export interface CustomModifierConfig {
   immune?: string;
   impervious?: string;
-  name: string;
+  name?: string;
   numericEffects?: CustomModifierNumericEffect[];
   vulnerable?: string;
 }
@@ -328,7 +328,7 @@ export class Creature implements CreaturePropertyMap {
       [`${prefix}_immune`]: config.immune,
       [`${prefix}_impervious`]: config.impervious,
       [`${prefix}_vulnerable`]: config.vulnerable,
-      [`${prefix}_name`]: config.name,
+      [`${prefix}_name`]: config.name || "Invisible",
     };
     if (config.numericEffects) {
       for (let i = 0; i < config.numericEffects.length; i++) {

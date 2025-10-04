@@ -41,14 +41,18 @@ function calcWrappedEffect(
   effect: string,
 ) {
   const environment = calcEnvironment(attack.is_magical);
-  const tagsText = attack.tags
-    .split(', ')
-    .sort(caseInsensitiveSort)
-    .map((tag) => `\\abilitytag{${format.titleCase(tag)}}`)
-    .join(', ');
+  let tagsText = '';
+  if (attack.tags) {
+    const formattedTags = attack.tags
+      .split(', ')
+      .sort(caseInsensitiveSort)
+      .map((tag) => `\\abilitytag{${format.titleCase(tag)}}`)
+      .join(', ');
+      tagsText = `[${formattedTags}]`;
+  }
   const usageTimeText = `\\abilityusagetime ${format.uppercaseFirst(attack.usage_time)} action.`;
   return `
-    \\begin{${environment}}*{${format.uppercaseFirst(attack.attack_name)}}[${tagsText}]
+    \\begin{${environment}}*{${format.uppercaseFirst(attack.attack_name)}}${tagsText}
       ${usageTimeText}
       \\rankline
       ${effect}
