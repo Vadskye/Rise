@@ -65,7 +65,7 @@ It's useful as a reminder of what kinds of bonuses can be granted by classes and
   * Can breathe water
   * Can hold breath longer
 * Check bonuses
-* Checks can explode
+* Checks can explode (not retries)
 * Rituals
 * Remove "free hand" requirement from skill usage
 * Reduce enemy skill bonuses
