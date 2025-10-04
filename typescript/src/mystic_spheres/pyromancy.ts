@@ -20,7 +20,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       effect: `
         You create a flame in your hand.
         You can create it at any intensity, up to a maximum heat equivalent to a roaring campfire.
-        At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius and shadowy illumination in an 60 foot radius.
+        At it most intense, it sheds \\glossterm{bright illumination} in a 30 foot radius.
         As a standard action, you can make a melee attack vs. Reflex against a creature or object.
         On a hit, you deal the target damage equal to your \\glossterm{power}.
         If the target is highly flammable, such as a torch or campfire, it ignites.

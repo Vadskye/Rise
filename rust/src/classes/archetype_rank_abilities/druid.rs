@@ -384,7 +384,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Form of the Hawk}
                         \abilityusagetime Standard action.
                         \rankline
-                        You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                        You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
 
                         \rankline

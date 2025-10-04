@@ -2695,7 +2695,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object that is Small or smaller within \\shortrange.
-      The object emits \\glossterm{shadowy illumination} in a \\smallarea radius.
+      The object emits \\glossterm{dim illumination} in a \\smallarea radius.
       It illuminates dark areas, but does not suppress brighter light.
       Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
     `,
@@ -2715,7 +2715,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one minute',
     effect: `
-      You constantly emit \\glossterm{shadowy illumination} in a \\medarea radius.
+      You constantly emit \\glossterm{dim illumination} in a \\medarea radius.
       This illuminates dark areas, but does not suppress brighter light.
       Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
 
