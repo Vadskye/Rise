@@ -24,7 +24,7 @@ type CreatureSize =
   | 'huge'
   | 'gargantuan'
   | 'colossal';
-type MonsterIpMultiplier = 0.75 | 0.5 | 0.25;
+type MonsterIpMultiplier = 0.75 | 0.5 | 0.333;
 
 interface BaseClassModifier {
   armor_defense: number;
@@ -96,7 +96,7 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     armor_defense: 5,
     armor_usage_class: 'medium',
     durability: 4,
-    injury_point_multiplier: 0.25,
+    injury_point_multiplier: 0.333,
     brawn: 3,
     fortitude: 5,
     reflex: 3,
@@ -1683,13 +1683,17 @@ function handleHitPoints() {
 }
 
 function handleInjuryPoint() {
+  // This is used for players
   onGet({
     variables: {
       miscName: 'injury_point',
-      numeric: ['level', 'constitution'],
+      numeric: ['challenge_rating', 'level', 'constitution'],
       string: ['base_class'],
     },
     callback: (v) => {
+      if ((v.challenge_rating || 0) > 0) {
+        return;
+      }
       const rank = calculateStandardRank(v.level);
       const rankMultiplier = {
         0: 0,
@@ -1725,7 +1729,33 @@ function handleInjuryPoint() {
           { name: rankMultiplier + ' * Con', value: ipFromCon },
         ]),
       });
+      }
+  });
+
+  // This is used for monsters
+  onGet({
+    variables: {
+      miscName: 'injury_point',
+      numeric: ['challenge_rating', 'hit_points_maximum'],
+      string: ['base_class'],
     },
+    callback: (v) => {
+      if (!v.challenge_rating) {
+        return;
+      }
+      const classMultiplier = BASE_CLASS_MODIFIERS[v.base_class]?.injury_point_multiplier || 0;
+      const injuryPoint = v.hit_points_maximum * classMultiplier;
+
+      setAttrs({
+        injury_point: injuryPoint,
+        injury_point_explanation: formatCombinedExplanation(v.miscExplanation, [
+          { name: 'HP', value: v.hit_points_maximum },
+          // This will be formatted weirdly, but it's clear enough. In the future we could
+          // replace `formatCombinedExplanation` to make this more clear.
+          { name: '* class mult', value: classMultiplier },
+        ]),
+      });
+      }
   });
 }
 
