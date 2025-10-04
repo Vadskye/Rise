@@ -336,7 +336,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                         Teleporting a given distance costs movement equal to twice that distance.
                         For example, if you have a 30 foot movement speed, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
-                        If you are unable to use your walk speed, such as if you are \paralyzed, you also cannot move with this ability.
+                        If you are unable to use your walk speed, you also cannot move with this ability.
 
                         \rankline
                         \rank{5} The movement cost to teleport is reduced to be equal to the distance you teleport.
@@ -562,7 +562,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                While you are not wearing medium or heavy body armor, you are immune to being \slowed and \paralyzed, and your movement is not slowed by \glossterm{difficult terrain}.
+                While you are not wearing medium or heavy body armor, you are immune to being \slowed, and your movement is not slowed by \glossterm{difficult terrain}.
             ",
             modifiers: None,
         },

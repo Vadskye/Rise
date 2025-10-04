@@ -241,7 +241,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                % dr3 for touch range, free poison/disease because class feature
+                % dr3 for touch range, free poison because class feature
                 \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
                     \abilitycost One \glossterm{fatigue level}.
                     \abilityusagetime Standard action.
