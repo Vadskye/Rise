@@ -8,9 +8,7 @@ cd rust
 
 cargo build; or exit 1
 
-# TODO: Convert uncommon species to be Rust-generated
-# cargo run --bin uncommon_classes
-cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
+# cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
 cargo run --bin monster_reference_table > ../core_book/generated/monster_reference_table.tex
 # cargo run --bin modules_chapter > ../core_book/generated/modules.tex
 cargo run --bin classes_chapter > ../comprehensive_codex/generated/classes.tex
