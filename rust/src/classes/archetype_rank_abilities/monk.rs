@@ -106,7 +106,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You gain a slow \glossterm{fly speed} with a \glossterm{height limit} of 15 feet (see \pcref{Flight}).
-                Flying using this fly speed does not cause you to suffer penalties for being \midair.
+                Flying using this fly speed does not cause you to suffer penalties for being \glossterm{midair}.
                 While flying, you can jump as if you were on solid ground, allowing you to rapidly gain height and change directions unexpectedly.
             ",
             modifiers: None,

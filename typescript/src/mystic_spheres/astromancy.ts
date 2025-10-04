@@ -412,7 +412,7 @@ export const astromancy: MysticSphere = {
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\midair after the knockback.
+          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
