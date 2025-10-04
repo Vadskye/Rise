@@ -253,7 +253,7 @@ fn transportation() -> Vec<Tool> {
             This three-masted ship has seventy oars on either side and requires a total crew of 200.
             A typical galley is 130 feet long and 20 feet wide, and it can carry 150 tons of cargo or 250 soldiers.
             Some rare galleys are fitted with a ram and castles with firing platforms fore, aft, and amidships.
-            This ship cannot make sea voyages and sticks to the coast. It moves about 4 miles per hour when being rowed or under sail.
+            This ship cannot make sea voyages and sticks to the coast. It moves about 6 miles per hour when being rowed or under sail.
         "),
         ..Tool::permanent("metal, textiles, and wood")
     });
@@ -273,7 +273,7 @@ fn transportation() -> Vec<Tool> {
         rank: 4,
         short_description: String::from("Long, seaworthy ship with 50 crew"),
         description: String::from(r"
-            This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 3 miles per hour when being rowed or under sail.
+            This 75 foot long ship with forty oars requires a total crew of 50. It has a single mast and a square sail, and it can carry 50 tons of cargo or 120 soldiers. A longship can make sea voyages. It moves about 5 miles per hour when being rowed or under sail.
         "),
         ..Tool::permanent("metal, textiles, and wood")
     });
