@@ -253,7 +253,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\midair after the knockback.
+          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
@@ -276,7 +276,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\midair after the knockback.
+          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
@@ -304,7 +304,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         You gain a slow \\glossterm{fly speed} with a maximum height of 15 feet (see \\pcref{Flight}).
-        Flying with this fly speed does not cause you to suffer penalties for being \midair.
+        Flying with this fly speed does not make you \\unsteady.
       `,
       // narrative: '',
       rank: 6,
@@ -675,7 +675,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         This makes you \\trait{floating}, \\trait{intangible}, and \\trait{legless}.
         You cannot speak and you have no \\glossterm{free hands}.
         All of your normal movement modes are replaced with a slow \\glossterm{fly speed} with a 30 foot \\glossterm{height limit} (see \\pcref{Flight}).
-        Since you have no \\glossterm{walk speed}, flying in this way does not penalize your defenses for being \\midair.
+        Since you have no \\glossterm{walk speed}, flying in this way does not make you \\unsteady.
         You are unable to take any standard actions other than sustaining this effect, but you can still take \\glossterm{move actions} in place of standard actions.
       `,
       rank: 4,
