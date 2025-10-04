@@ -175,8 +175,9 @@ TabSize = 4
 
 CmdLine
 {
+    -H 0
     --nowarn 1
-    --nowarn 24
+    --nowarn 15
     -v2
 }
 
@@ -510,6 +511,7 @@ WipeArg
     \citetext:{} \citeyear:*{} \citeyearpar:{}
     # tipa which uses "
     \textipa:{}
+    \DeclareDocumentEnvironment:*{}{}{}{}
 }
 
 #####################################################################
