@@ -32,6 +32,8 @@ import {
   RiseTag,
   RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
+import { getManeuverByName, Maneuver } from '@src/combat_styles';
+import { getSpellByName, Spell } from '@src/mystic_spheres';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -199,9 +201,13 @@ export interface CustomModifierNumericEffect {
 // of, say, repeating abilities in Roll20.
 export class Creature implements CreaturePropertyMap {
   private sheet: CharacterSheet;
+  private maneuvers: Record<string, Maneuver>;
+  private spells: Record<string, Spell>;
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
+    this.maneuvers = {};
+    this.spells = {};
   }
 
   static new() {
@@ -277,6 +283,38 @@ export class Creature implements CreaturePropertyMap {
 
   getSheetForTesting(): CharacterSheet {
     return this.sheet;
+  }
+
+  addManeuver(maneuver: Maneuver) {
+    this.spells[maneuver.name] = maneuver;
+  }
+
+  addManeuverByName(maneuverName: string) {
+    this.maneuvers[maneuverName] = getManeuverByName(maneuverName);
+  }
+
+  // We want the exact effects of an existing maneuver, but we want to rename it for
+  // narrative reasons.
+  addManeuverByNewName(maneuverName: string, newAbilityName: string) {
+    const maneuver = getManeuverByName(maneuverName);
+    maneuver.name = newAbilityName;
+    this.maneuvers[newAbilityName] = maneuver;
+  }
+
+  addSpell(spell: Spell) {
+    this.spells[spell.name] = spell;
+  }
+
+  addSpellByName(spellName: string) {
+    this.spells[spellName] = getSpellByName(spellName);
+  }
+
+  // We want the exact effects of an existing spell, but we want to rename it for
+  // narrative reasons.
+  addSpellByNewName(spellName: string, newAbilityName: string) {
+    const spell = getSpellByName(spellName);
+    spell.name = newAbilityName;
+    this.spells[newAbilityName] = spell;
   }
 
   addCustomAttack(config: CustomAttackConfig) {
@@ -472,13 +510,35 @@ export class Creature implements CreaturePropertyMap {
     }[this.size];
   }
 
+  // We throw errors for things that can cause runtime warnings later.
+  // For things that are just suspicious, we warn.
+  // We're specifically checking that the monster is ready for LaTeX generation, so
+  // anything that would break that is treated as an error, even if it doesn't block the
+  // sheet worker from doing ordinary combat math.
+  checkValidMonster() {
+    if (this.name === this.name.toLowerCase()) {
+      this.throwError("Name must be title case");
+    }
+    if (!this.alignment) {
+      this.throwError("Must have alignment");
+    }
+
+    if (this.getTrainedSkillNames().length === 0) {
+      this.warn("Has no trained skills");
+    }
+  }
+
+  throwError(message: string) {
+    throw new Error(`Monster ${this.name}: ${message}`);
+  }
+
+  warn(message: string) {
+    console.warn(`Monster ${this.name}: ${message}`);
+  }
+
   // Getters
   public get alignment() {
-    const alignment = this.getPropertyValue('alignment');
-    if (!alignment) {
-      throw new Error(`Creature ${this.name} has no alignment`);
-    }
-    return alignment;
+    return this.getPropertyValue('alignment');
   }
 
   public get base_class() {

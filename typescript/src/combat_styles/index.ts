@@ -9,6 +9,8 @@ import { perfectPrecision } from './perfect_precision';
 import { ripAndTear } from './rip_and_tear';
 import { unbreakableDefense } from './unbreakable_defense';
 
+export { getManeuverByName } from './get_maneuver_by_name';
+
 export const combatStyles = [
   bruteForce,
   dirtyFighting,
