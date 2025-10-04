@@ -6,7 +6,7 @@ Debuffs can be grouped according to their action efficiency. Essentially, making
 
 By EA:
 ```
-  Debuff             & Brief & HP Condition & Condition \\
+  Debuff             & Brief & Injury Condition & Condition \\
   Action skip        & 3.0   & 4.8          & 12        \\
   Action skip (HP)   & 2.0   & 4.8          & N/A        \\
   Banishment         & 3.0   & 3.6          & 9         \\
@@ -44,7 +44,7 @@ By rank:
 "2d" means "rank 2 if combined with damage". It's used for effects that are too weak to ever appear as standalone spells.
 "inf" means the effect is too strong to ever appear as a spell without weird tricks.
 ```
-  Debuff             & Brief & HP Condition & Condition \\
+  Debuff             & Brief & Injury Condition & Condition \\
   Action skip        & 9     & inf          & inf       \\
   Action skip (HP)   & 4     & inf          & N/A       \\
   Banishment         & 9     & inf          & inf       \\
