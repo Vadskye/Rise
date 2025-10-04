@@ -569,7 +569,7 @@ export const rituals: Ritual[] = [
     rank: 3,
     roles: ['narrative'],
     effect: `
-      Choose an \\glossterm{astral beacon} up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
+      Choose an \\glossterm{astral beacon} up to 500 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
       Each target is teleported to the area defined by the beacon.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -593,7 +593,7 @@ export const rituals: Ritual[] = [
     rank: 4,
     roles: ['narrative'],
     effect: `
-      Choose a destination up to 200 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
+      Choose a destination up to 500 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
       Each target is teleported to the chosen destination.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -1640,7 +1640,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one hour',
     effect: `
       When you perform this ritual, choose a Tiny or larger object you \\glossterm{touch}.
-      You constantly know the exact distance and direction to the object, even if it is \\glossterm{attended}, as long as it is within 200 miles of you.
+      You constantly know the exact distance and direction to the object, even if it is \\glossterm{attended}, as long as it is within 500 miles of you.
       This connection ignores \\glossterm{line of sight} and \\glossterm{line of effect}.
     `,
     rank: 2,
@@ -1673,7 +1673,7 @@ export const rituals: Ritual[] = [
       A creature without a proper name cannot be identified by name in this way.
       If you specify the chosen creature's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-      If the creature is within 200 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
+      If the creature is within 500 miles of your location, you unerringly learn the relative direction from your location to the location it was in when you started performing this ritual.
     `,
 
     rank: 3,
@@ -1706,7 +1706,7 @@ export const rituals: Ritual[] = [
       A creature or object without a proper name cannot be identified by name in this way.
       If you specify the chosen creature or object's appearance incorrectly, or if it has significantly changed its appearance, you may accidentally affect a different creature, or the ritual may simply fail.
 
-      If the chosen creature or object is within 200 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
+      If the chosen creature or object is within 500 miles of you, you learn the location (place, name, business name, or the like), community, country, and continent where the target was at when you started performing this ritual.
       % Wording?
       If there is no corresponding information about an aspect of the target's location, such as if the target is in a location which is not part of a recognized country,
       you learn only that that aspect of the information is missing.
@@ -1731,7 +1731,7 @@ export const rituals: Ritual[] = [
 
     castingTime: 'one hour',
     effect: `
-      Choose a creature within 200 miles of you.
+      Choose a creature within 500 miles of you.
       You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
       However, you must specify your target with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the target.
@@ -1787,7 +1787,7 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     effect: `
       Each target can communicate mentally through telepathy with each other target.
-      This communication is instantaneous, though it cannot reach more than 200 miles or across planes.
+      This communication is instantaneous, though it cannot reach more than 500 miles or across planes.
 
       % Is this grammatically correct?
       Each target must attune to this ritual independently.
@@ -1833,7 +1833,7 @@ export const rituals: Ritual[] = [
       Instead, it automatically tries to follow the target to stay in its space.
       At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
       targeting: `
-      Make an attack vs. Mental against one creature within 200 miles of you.
+      Make an attack vs. Mental against one creature within 500 miles of you.
       You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
       However,  must specify your target with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the target.
