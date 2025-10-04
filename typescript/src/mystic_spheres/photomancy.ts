@@ -393,7 +393,19 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      tags: ['Visual'],
+      type: 'Sustain (attuneable, minor)',
+    },
+
+    // TODO: unclear EA
+    {
+      name: 'Greater Beacon of Light',
+
+      effect: `
+        All of your abilities and equipment that create light have their light radius tripled.
+        This includes mundane equipment you carry, such as torches.
+      `,
+      rank: 5,
+      roles: ['attune'],
       type: 'Sustain (attuneable, minor)',
     },
 
