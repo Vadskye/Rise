@@ -462,7 +462,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it up to 5 feet into unoccupied space.
                 This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
 
-                \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
                 \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.

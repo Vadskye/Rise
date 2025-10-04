@@ -438,7 +438,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You reduce your \glossterm{longshot penalty} by 1.
-                You gain \trait{low-light vision}, allowing you to see in \glossterm{shadowy illumination} (see \pcref{Low-light Vision}).
+                You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                 In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
             ",
