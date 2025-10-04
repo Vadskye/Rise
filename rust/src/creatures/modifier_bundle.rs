@@ -78,7 +78,6 @@ impl ModifierBundle {
             Self::Lifeless => vec![
                 // No named ability, since this is often used by other abilities which provide a
                 // more explicit reason for being lifeless, such as "undead" or "construct".
-                Modifier::Immune(SpecialDefenseType::Disease),
                 Modifier::Immune(SpecialDefenseType::Poison),
             ],
             Self::Mindless => vec![
