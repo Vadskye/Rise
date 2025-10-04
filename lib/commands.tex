@@ -67,12 +67,12 @@
 \newcommand{\hugearea}{Huge \reminder{90 ft.}\xspace}
 \newcommand{\gargarea}{Gargantuan \reminder{120 ft.}\xspace}
 
-\newcommand{\tinyarealong}{Tiny \reminder{5 ft. long}\xspace}
-\newcommand{\smallarealong}{Small \reminder{15 ft. long}\xspace}
-\newcommand{\medarealong}{Medium \reminder{30 ft. long}\xspace}
-\newcommand{\largearealong}{Large \reminder{60 ft. long}\xspace}
-\newcommand{\hugearealong}{Huge \reminder{90 ft. long}\xspace}
-\newcommand{\gargarealong}{Gargantuan \reminder{120 ft. long}\xspace}
+\newcommand{\tinyarealong}{Tiny \reminder{5 ft.\ long}\xspace}
+\newcommand{\smallarealong}{Small \reminder{15 ft.\ long}\xspace}
+\newcommand{\medarealong}{Medium \reminder{30 ft.\ long}\xspace}
+\newcommand{\largearealong}{Large \reminder{60 ft.\ long}\xspace}
+\newcommand{\hugearealong}{Huge \reminder{90 ft.\ long}\xspace}
+\newcommand{\gargarealong}{Gargantuan \reminder{120 ft.\ long}\xspace}
 
 \newcommand{\featpre}{\parhead{Prerequisite} }
 \newcommand{\featpres}{\parhead{Prerequisites} }
@@ -184,13 +184,13 @@
 \DeclareDocumentCommand{\imath}{m}
 {
     %\pgfmathparse{int(floor(#1))}\pgfmathresult
-    \pgfmathsetmacro{\TempVar}{int(floor(#1))}
+    \pgfmathsetmacro{\TempVar}{int (floor (#1))}
     \TempVar
 }
 
 \DeclareDocumentCommand{\imathparse}{m}
 {
-    \pgfmathsetmacro{\TempVar}{int(floor(#1))}
+    \pgfmathsetmacro{\TempVar}{int (floor (#1))}
 }
 
 \DeclareDocumentCommand{\imathresult}{}
@@ -273,8 +273,7 @@
     \IfValueT{#3}{
         % without the braces the space is swallowed for some reason
         {}~{}[#3]
-    }
-    :
+    }:
 }
 
 \DeclareDocumentCommand{\magicalitemhead}{s m o}
