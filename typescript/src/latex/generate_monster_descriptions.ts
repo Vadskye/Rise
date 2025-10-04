@@ -155,9 +155,10 @@ function genDefensiveStatisticsText(monster: Creature): string {
       \\monsep \\textbf{IP} ${monster.injury_point}
     \\pari \\textbf{Defenses}
       Armor ${monster.armor_defense}
+      \\monsep Brawn ${monster.brawn}
       \\monsep Fort ${monster.fortitude}
-      \\monsep Ref ${monster.reflex}
       ${mentalText}
+      \\monsep Ref ${monster.reflex}
   `;
 }
 
@@ -175,22 +176,22 @@ function genSpecialDefenseModifiersText(monster: Creature) {
 }
 
 function genMovementText(monster: Creature) {
-  const landSpeedText = `Land ${monster.land_speed}`;
   const jumpText = monster.hasTrainedSkill('jump')
     ? `Jump ${monster.horizontal_jump_distance}`
     : '';
   const movementDistances = [
-    landSpeedText,
     ...monster.getCustomMovementSpeeds().sort(caseInsensitiveSort),
     jumpText,
   ].filter(Boolean);
 
+  // TODO: A creature with a swim speed and that is trained with the Swim skill will
+  // display "Swim" twice here. What's the correct formatting?
   const movementText = [
     ...movementDistances,
     ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
   ].join('\\monsep ');
   // TODO
-  return `\\pari \\textbf{Movement} ${movementText}`;
+  return `\\pari \\textbf{Movement} ${monster.speed}; ${movementText}`;
 }
 
 function genSpaceAndReachText() {

@@ -47,6 +47,7 @@ type NumericCreatureProperty =
   | 'injury_point'
   | 'mundane_power'
   | 'magical_power'
+  | 'speed'
   | RiseAttribute
   | RiseAttributeModifier
   | RiseDefense
@@ -344,11 +345,12 @@ export class Creature implements CreaturePropertyMap {
   addCustomMovementSpeed(speed: string) {
     // TODO: add a regex to validate that speeds look reasonable
     for (let i = 0; i < 4; i++) {
-      const key = `movement_speed_${i}_name}` as CustomMovementSpeed;
+      const key = `movement_speed_${i}_name` as CustomMovementSpeed;
       if (!this.getPropertyValues([key])[key]) {
         this.setProperties({
           [key]: speed,
         });
+        return;
       }
     }
   }
@@ -458,15 +460,15 @@ export class Creature implements CreaturePropertyMap {
   // Currently, the only relevant logic is the size-based Sweeping tag.
   getAutomaticStrikeTags(): RiseWeaponTag[] {
     return {
-      Fine: [],
-      Diminuitive: [],
-      Tiny: [],
-      Small: [],
-      Medium: [],
-      Large: [],
-      Huge: ['Sweeping (1)'],
-      Gargantuan: ['Sweeping (2)'],
-      Colossal: ['Sweeping (3)'],
+      fine: [],
+      diminuitive: [],
+      tiny: [],
+      small: [],
+      medium: [],
+      large: [],
+      huge: ['Sweeping (1)'],
+      gargantuan: ['Sweeping (2)'],
+      colossal: ['Sweeping (3)'],
     }[this.size];
   }
 
@@ -625,6 +627,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get mental() {
     return this.getPropertyValue('mental');
+  }
+
+  public get speed() {
+    return this.getPropertyValue('speed');
   }
 
   public get combined_jump_distance() {

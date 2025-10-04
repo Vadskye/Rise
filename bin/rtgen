@@ -5,7 +5,7 @@ tsc --incremental; or exit 1
 
 # TODO: keep building the Typescript version of the monster manual so this can
 # be enabled.
-# npm run script -- src/scripts/generate_latex.js -t monster_descriptions -o ../comprehensive_codex/generated/monster_descriptions.tex
+npm run script -- src/scripts/generate_latex.js -t monster_descriptions -o ../core_book/generated/monster_descriptions.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_lists -o ../comprehensive_codex/generated/mystic_sphere_lists.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_spell_summaries -o ../comprehensive_codex/generated/mystic_sphere_spell_summaries.tex
 npm run script -- src/scripts/generate_latex.js -t mystic_sphere_ritual_summaries -o ../comprehensive_codex/generated/mystic_sphere_ritual_summaries.tex
