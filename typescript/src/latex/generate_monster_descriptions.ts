@@ -152,7 +152,7 @@ function genDefensiveStatisticsText(monster: Creature): string {
 
   return `
     \\pari \\textbf{HP} ${monster.hit_points}
-      \\monsep \\textbf{DR} ${monster.damage_resistance}
+      \\monsep \\textbf{IP} ${monster.injury_point}
     \\pari \\textbf{Defenses}
       Armor ${monster.armor_defense}
       \\monsep Fort ${monster.fortitude}
