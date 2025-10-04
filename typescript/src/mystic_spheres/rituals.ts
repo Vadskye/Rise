@@ -2212,12 +2212,18 @@ export const rituals: Ritual[] = [
     spheres: ['Revelation', 'Verdamancy'],
   },
 
+  // Diseases basically don't exist mechanically. This should still exist for narrative
+  // and GM fiat diseases.
   {
     name: 'Remove Disease',
 
+    // Can't say ritual participant because you should be able to remove diseases from
+    // unconscious creatures.
     castingTime: 'one hour',
     effect: `
-        All diseases affecting yourself or one \\glossterm{ally} within \\medrange are removed.
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        All \\glossterm{mundane} diseases affecting the target are removed.
+        Magical diseases are removed if their \\glossterm{rank} does not exceed your rank with this ritual.
     `,
     rank: 2,
     roles: ['narrative'],

@@ -26,9 +26,9 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange. 
-        Each target is immune to being \\slowed and \\paralyzed.
+        Each target is immune to being \\slowed.
       `,
-      rank: 4,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -75,12 +75,14 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Aggression',
 
-      // Ally focused + empowered is 0.9 EA
+      // Ally focused + empowered is 1.2 EA. Drop a rank for enraged, though that is
+      // basically irrelevant.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\focused, \\empowered, and \\enraged this round.
+        The target is \\focused and \\empowered this round.
+        In addition, it is \\glossterm{briefly} \\enraged.
       `,
-      rank: 1,
+      rank: 6,
       roles: ['boon'],
       tags: [],
     },
@@ -101,14 +103,13 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Tempered Steel',
 
-      // Steeled + empowered any two is 1 EA; one rank early for not hitting self, which
-      // is a more meaningful cost on a defensive effect
+      // Honed + steeled is theoretically 0.9 EA, but it's rare that you'll actually
+      // benefit from both, so this can be r1.
       effect: `
-        Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is \\empowered and \\steeled this round.
+        One \\glossterm{ally} within \\medrange is \\honed and \\steeled this round.
         Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -208,10 +209,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\impervious to \\glossterm{poisons} and \\glossterm{diseases}.
-        In addition, at the end of each round, it automatically gains one success to resist an active poison or disease affecting it that was not applied during that round.
+        Each target is \\impervious to \\glossterm{poisons}.
+        In addition, at the end of each round, it automatically gains one success to resist an active poison affecting it that was not applied during that round.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune (target)',
     },
@@ -401,7 +402,7 @@ export const prayer: MysticSphere = {
       rank: 3,
       roles: ['healing', 'exertion'],
       // This is very strong scaling because of the AOE nature of the spell; no need for
-      // an empowered version of the spell.
+      // a greater version of the spell.
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
       tags: ['Swift'],
     },
