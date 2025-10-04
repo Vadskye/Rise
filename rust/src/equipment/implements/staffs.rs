@@ -47,13 +47,13 @@ pub fn staffs() -> Vec<Implement> {
         ..Implement::default()
     }));
 
+    // TODO: very unclear value
     implements.push(Staff(StandardItem {
         name: String::from("Staff of Discordance"),
-        rank: 7,
+        rank: 6,
         short_description: String::from(r"Makes stunned creatures briefly confused"),
         description: String::from(r"
             Whenever you cause an enemy to be \stunned as a \glossterm<condition>, it is also \glossterm<briefly> \confused.
-            Whenever you cause an enemy to be \glossterm{briefly} stunned, it also briefly takes a -2 penalty to its Mental defense.
         "),
         tags: vec![AbilityTag::Compulsion, AbilityTag::personal_attunement()],
         ..Implement::default()

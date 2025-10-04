@@ -268,17 +268,25 @@ fn gloves() -> Vec<Apparel> {
         "finesse-based",
     )));
 
-    // "paralyzed" is r4; double defense and no DR makes that work.
+    // Brief melee slow is 1.4 EA. Since this is melee only and an attunement, we can get injury
+    // condition slow as well.
     apparel.push(Gloves(StandardItem {
         name: String::from("Ghoultouch Gloves"),
-        rank: 7,
-        short_description: String::from("Grants a paralyzing touch"),
+        rank: 1,
+        short_description: String::from("Grants a slowing touch"),
         description: String::from(r"
             You can activate these gloves as a standard action using a \glossterm{free hand}.
             When you do, make an attack vs. Fortitude against a creature you touch with either glove.
-            Whether the attack hits or misses, the target is immune to this ability until it finishes a \glossterm<short rest>.
-            \hit If the target is \glossterm{injured}, it becomes \glossterm{briefly} \paralyzed.
+            After activating this item, you \glossterm{briefly} cannot activate it again.
+            \hit The target is \glossterm{briefly} \\slowed.
+            If it is \glossterm{injured}, it is also slowed as a \glossterm{condition}.
         "),
+        upgrades: vec![
+            // Rank 6 allows 3.5 EA debuff, which is enough for melee slow.
+            ItemUpgrade::new(6, "Grants a slowing touch", r"
+                The target is slowed as a condition even if it is not injured.
+            "),
+        ],
         ..Apparel::default()
     }));
 
