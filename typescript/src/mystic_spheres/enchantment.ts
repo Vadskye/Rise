@@ -704,33 +704,42 @@ export const enchantment: MysticSphere = {
       type: 'Attune',
     },
 
+    // Injury stun is 1.2 EA. We compensate for the low debuff EA with the Intelligence
+    // accuracy?
     {
-      name: 'Mind Blast',
+      name: 'Psionic Blast',
 
       attack: {
         hit: `
           % damageranktwo
           1d4 \\glossterm{subdual damage} \\add power.
         `,
+        injury: `
+          The target is \\stunned as a \\glossterm{condition}.
+        `,
         missGlance: true,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
           You gain a +4 accuracy bonus against each target with a negative Intelligence.
         `,
       },
       rank: 4,
-      roles: ['clear'],
+      roles: ['clear', 'flash'],
       scaling: 'damage',
       tags: ['Compulsion'],
     },
 
     {
-      name: 'Mighty Mind Blast',
+      name: 'Mighty Psionic Blast',
 
       attack: {
         hit: `
-          % damageranksix
-          1d8 \\glossterm{subdual damage} plus 1d8 per 2 power.
+          % damagerankfive
+          1d6 \\glossterm{subdual damage} plus 1d6 per 2 power.
+          In addition, the target is \\glossterm{briefly} \\stunned.
+        `,
+        injury: `
+          The target is stunned as a \\glossterm{condition}.
         `,
         missGlance: true,
         targeting: `
@@ -739,7 +748,7 @@ export const enchantment: MysticSphere = {
         `,
       },
       rank: 7,
-      roles: ['clear'],
+      roles: ['clear', 'flash'],
       scaling: 'damage',
       tags: ['Compulsion'],
     },
