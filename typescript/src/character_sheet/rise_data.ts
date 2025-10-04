@@ -53,17 +53,18 @@ export type RiseBaseClass =
   | 'skirmisher'
   | 'sniper'
   | 'warrior';
-// First letter is capitalized; this is a value, not a key
+
+// All lowercase to match the values in creation_page.py
 export type RiseSize =
-  | 'Fine'
-  | 'Diminuitive'
-  | 'Tiny'
-  | 'Small'
-  | 'Medium'
-  | 'Large'
-  | 'Huge'
-  | 'Gargantuan'
-  | 'Colossal';
+  | 'fine'
+  | 'diminuitive'
+  | 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'huge'
+  | 'gargantuan'
+  | 'colossal';
 
 // TODO: list all debuffs if we ever actually care
 export type RiseDebuff = 'climbing';

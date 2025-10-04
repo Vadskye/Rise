@@ -11,7 +11,7 @@ export function addAberrations(grimoire: Grimoire) {
       level: 12,
     });
     creature.setProperties({
-      size: 'Huge',
+      size: 'huge',
     });
     creature.setKnowledgeResults({
       easy: `
@@ -38,8 +38,8 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomModifier({
       numericEffects: [{ statistic: 'armor_defense', modifier: 4 }],
     });
-    creature.addCustomMovementSpeed('Swim (Normal)');
-    creature.addCustomMovementSpeed('Land (Slow)');
+    creature.addCustomMovementSpeed('Swim (normal)');
+    creature.addCustomMovementSpeed('Land (slow)');
     creature.addCustomSense('Darkvision (240)');
     creature.addCustomSense('Telepathy (480)');
 
