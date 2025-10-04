@@ -26,6 +26,8 @@ export class Grimoire {
     sheet.setProperties({ name });
     this.monsters[name] = new Creature(sheet);
     initializer(this.monsters[name]);
+
+    this.monsters[name].checkValidMonster();
   }
 
   addMonsterGroup(name: string, initializers: [string, MonsterInitializer][]) {

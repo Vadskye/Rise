@@ -2031,7 +2031,7 @@ function createDamagingMonsterAttack({
       '-1': `${halfPower}`,
       0: `1d4+${halfPower}`,
       1: `1d6+${halfPower}`,
-      2: `1d6+${power}`,
+      2: `1d4+${power}`,
       3: `1d8+${power}`,
       4: `${halfPower}d6`,
       5: `${halfPower + 1}d6`,

@@ -43,6 +43,11 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomSense('Darkvision (240)');
     creature.addCustomSense('Telepathy (480)');
 
+    // TODO: mark these as elite actions
+    creature.addSpellByName('Psionic Blast');
+    creature.addSpellByNewName('Mighty Mind Crush', 'Mind Crush');
+    creature.addSpellByName('Friend to Foe');
+    creature.addSpellByName('Cause Fear');
     creature.addCustomAttack({
       effect: `
         The aboleth \glossterm{dominates} the mind of humanoid or aberration within \shortrange that is unconscious.
@@ -53,58 +58,24 @@ export function addAberrations(grimoire: Grimoire) {
       tags: ['Compulsion'],
       usageTime: 'elite',
     });
-    creature.addCustomAttack({
-      effect: `
-        The $name makes a $accuracy attack vs. Mental against each enemy in a \largearea cone.
-        \hit $dr2 damage.
-        \injury The target is \stunned as a condition.
-        \miss Half damage.
-      `,
-      isMagical: true,
-      name: 'Psionic Blast',
-      tags: ['Compulsion'],
-      usageTime: 'elite',
-    });
-    creature.addCustomAttack({
-      effect: `
-        The $name makes a $accuracy attack vs. Mental against one creature within \medrange.
-        \hit $dr4 damage.
-        \injury The target becomes \stunned as a \glossterm{condition}.
-      `,
-      isMagical: true,
-      name: 'Mind Crush',
-      tags: ['Compulsion'],
-      usageTime: 'elite',
-    });
-    creature.addCustomAttack({
-      effect: `
-        Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
-        The $name makes an $accuracy \glossterm{reactive attack} vs. Reflex against the creature that struck it.
-        \hit $dr2l damage.
-        \injury The target is poisoned by aboleth slime.
-      `,
-      isMagical: true,
+
+    // TODO: mark this as a non-action
+    creature.addSpell({
+      attack: {
+        hit: `
+          The target becomes \\glossterm{poisoned} by aboleth slime.
+          The poison's accuracy is $accuracy.
+          It makes the target \\slowed while the poison lasts.
+          The second escalation also deals \\damagerankfive.
+        `,
+        targeting: `
+          Whenever a creature hits the $name with a melee \\glossterm{strike} using a non-Long weapon, the $name makes an $accuracy \\glossterm{reactive attack] vs. Fortitude against the creature that struck it.
+        `,
+      },
       name: 'Slime-Covered Body',
-      tags: [],
-      usageTime: 'standard', // Using 'standard' as 'triggered' is not available in MonsterAttackUsageTime
-    });
-    creature.addCustomAttack({
-      effect: `
-        Aboleth slime is an injury-based liquid \glossterm{poison}.
-        The poison's accuracy is $accuracy+2.
-        Its stage 1 effect makes the target \slowed while the poison lasts.
-        Its stage 3 effect also inflicts a \glossterm{vital wound} with a unique vital wound effect.
-        Instead of making a \glossterm{vital roll} for the \glossterm{vital wound},
-          the target's skin is transformed into a clear, slimy membrane.
-        An afflicted creature must be moistened with cool, fresh water at least once every ten minutes
-          or it will increase its \glossterm<fatigue level> by two.
-        This effect lasts until the vital wound is removed.
-        Whenever a creature hits the $name with a melee strike using a non-Long weapon, it risks being covered in slime.
-      `,
-      isMagical: true,
-      name: 'Aboleth Slime',
+      rank: 4,
+      roles: ['softener'],
       tags: ['Poison'],
-      usageTime: 'standard', // Using 'standard' as 'triggered' is not available in MonsterAttackUsageTime
     });
     creature.addAutoAttack({
       defense: ['Armor'],

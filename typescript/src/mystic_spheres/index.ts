@@ -21,6 +21,7 @@ import { verdamancy } from './verdamancy';
 import { vivimancy } from './vivimancy';
 import { universal } from './universal';
 
+export { getSpellByName } from './get_spell_by_name';
 export { rituals } from './rituals';
 
 export const mysticSpheres: MysticSphere[] = [
@@ -74,14 +75,14 @@ export interface BaseSpellLike {
   // TODO: define the set of allowable tags
   tags?: string[];
   type?:
-    | 'Attune'
-    | 'Attune (deep)'
-    | 'Attune (deep, target)'
-    | 'Attune (target)'
-    | 'Sustain (minor)'
-    | 'Sustain (standard)'
-    | 'Sustain (attuneable, minor)'
-    | 'Sustain (attuneable, standard)';
+  | 'Attune'
+  | 'Attune (deep)'
+  | 'Attune (deep, target)'
+  | 'Attune (target)'
+  | 'Sustain (minor)'
+  | 'Sustain (standard)'
+  | 'Sustain (attuneable, minor)'
+  | 'Sustain (attuneable, standard)';
 }
 
 // A spell can have multiple roles if it has multiple effects, or if its effect is
