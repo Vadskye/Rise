@@ -12,6 +12,7 @@
     "chai": "^4.2.0",
     "eslint": "^9.9.1",
     "globals": "^15.9.0",
+    "source-map-support": "^0.5.21",
     "tap": "^21.0.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
@@ -32,7 +33,7 @@
   "license": "OGL",
   "scripts": {
     "clean": "rm src/**/*.js",
-    "script": "tsc --incremental && node -r tsconfig-paths/register",
+    "script": "tsc --incremental && node --enable-source-maps -r tsconfig-paths/register",
     "maneuver_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_rank_breakdown.js",
     "maneuver_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_role_breakdown.js",
     "spell_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/spell_rank_breakdown.js",
