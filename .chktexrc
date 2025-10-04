@@ -176,6 +176,7 @@ TabSize = 4
 CmdLine
 {
     --nowarn 1
+    --nowarn 24
     -v2
 }
 
