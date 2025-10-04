@@ -45,7 +45,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const sizeStarText = hasParentGroup ? '*' : '';
   const knowledgeText = genKnowledgeText(monster);
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';
-  return `
+  return replaceNames(monster.name, `
     ${pagebreakText}
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
@@ -61,7 +61,15 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${genStatisticsText(monster)}
     \\monsterabilitiesheader{$Name}
     ${genAbilitiesText(monster)}
-  `;
+  `);
+}
+
+function replaceNames(monsterName: string, monsterLatex: string) {
+  const lowercaseName = monsterName.toLowerCase();
+  if (monsterName === lowercaseName) {
+    throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
+  }
+  return monsterLatex.replaceAll("$Name", monsterName).replaceAll("$name", lowercaseName);
 }
 
 export function convertMonsterGroupToLatex(monsterGroupName: string, monsters: Creature[]): string {

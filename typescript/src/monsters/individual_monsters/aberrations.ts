@@ -2,7 +2,7 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
 export function addAberrations(grimoire: Grimoire) {
-  grimoire.addMonster('aboleth', (creature: Creature) => {
+  grimoire.addMonster('Aboleth', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
       base_class: 'leader',
@@ -36,7 +36,6 @@ export function addAberrations(grimoire: Grimoire) {
     creature.setTrainedSkills(['awareness', 'endurance', 'social_insight', 'swim']);
     creature.setBaseAttributes([4, 0, 6, 4, 4, 6]);
     creature.addCustomModifier({
-      name: 'Armor Defense',
       numericEffects: [{ statistic: 'armor_defense', modifier: 4 }],
     });
     creature.addCustomMovementSpeed('Swim (Normal)');
