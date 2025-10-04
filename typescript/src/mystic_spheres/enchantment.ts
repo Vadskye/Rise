@@ -561,7 +561,7 @@ export const enchantment: MysticSphere = {
       // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
         hit: `
-          The target \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+          If the target is \\glossterm{injured}, it \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
           After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
