@@ -43,7 +43,8 @@ type NumericCreatureProperty =
   | 'level'
   | 'challenge_rating'
   | 'hit_points'
-  | 'damage_resistance'
+  | 'durability'
+  | 'injury_point'
   | 'mundane_power'
   | 'magical_power'
   | RiseAttribute
@@ -510,12 +511,16 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('brawling_accuracy');
   }
 
+  public get durability() {
+    return this.getPropertyValue('durability');
+  }
+
   public get hit_points() {
     return this.getPropertyValue('hit_points');
   }
 
-  public get damage_resistance() {
-    return this.getPropertyValue('damage_resistance');
+  public get injury_point() {
+    return this.getPropertyValue('injury_point');
   }
 
   public get magical_power() {
