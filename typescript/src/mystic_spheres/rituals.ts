@@ -1833,12 +1833,12 @@ export const rituals: Ritual[] = [
       Instead, it automatically tries to follow the target to stay in its space.
       At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
       targeting: `
-      Make an attack vs. Mental against one creature within 500 miles of you.
-      You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
-      However,  must specify your target with a precise mental image of its appearance.
-      The image does not have to be perfect, but it must unambiguously identify the target.
-      If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail without effect.
-      This attack roll cannot \\glossterm{explode}.
+        Make an attack vs. Mental against one creature within 500 miles of you.
+        You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
+        However, you must specify your target with a precise mental image of its appearance.
+        The image does not have to be perfect, but it must unambiguously identify the target.
+        If you specify its appearance incorrectly, or if the target has changed its appearance, you may accidentally target a different creature, or the spell may simply fail without effect.
+        This attack roll cannot \\glossterm{explode}.
       `,
     },
     rank: 3,
