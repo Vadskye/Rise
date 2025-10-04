@@ -45,7 +45,9 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const sizeStarText = hasParentGroup ? '*' : '';
   const knowledgeText = genKnowledgeText(monster);
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';
-  return replaceNames(monster.name, `
+
+  // This still has various like $name and $accuracy.
+  const latexWithPlaceholders = `
     ${pagebreakText}
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
@@ -61,7 +63,11 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${genStatisticsText(monster)}
     \\monsterabilitiesheader{$Name}
     ${genAbilitiesText(monster)}
-  `);
+  `;
+
+  let finalizedLatex = replaceNames(monster.name, latexWithPlaceholders);
+
+  return finalizedLatex;
 }
 
 function replaceNames(monsterName: string, monsterLatex: string) {
