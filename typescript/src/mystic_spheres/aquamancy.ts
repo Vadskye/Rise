@@ -117,7 +117,8 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Constraining Bubble',
 
-      // Submerged is basically frightened by all, but with a much more common defense penalty.
+      // Unsteady is basically frightened by all, but with much more common defense
+      // penalties.
       // Assume 1.2 EA from the defense penalty instead of the 0.35 from frightened by
       // all, so 2.5 EA total.
       // Huge or smaller offsets the bonus "cannot fly or glide".
