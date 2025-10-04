@@ -1,0 +1,17 @@
+% This is never actually converted into a PDF.
+% However, it can be useful to have this to debug errors in generated LaTeX.
+\documentclass[twocolumn,oneside,letterpaper]{book} % consider draft option
+
+\input{../lib/packages.tex}
+\input{../lib/formatting.tex}
+\input{../lib/commands.tex}
+\input{../lib/environments.tex}
+\input{../lib/pdf.tex}
+
+\graphicspath{ {../lib/images/} }
+
+\begin{document}
+
+\input{generated/monster_descriptions.tex}
+
+\end{document}
