@@ -229,6 +229,7 @@ typescript/.tap
 core_book/generated
 comprehensive_codex/generated
 html_book/generated
+typescript/**/*.js.map
 
 #Rust
 rust/target/*
