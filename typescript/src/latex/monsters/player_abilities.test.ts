@@ -1,9 +1,9 @@
 import t from 'tap';
-import { reformatAttack } from './player_abilities';
+import { reformatAttackTargeting } from './player_abilities';
 import { Spell } from '@src/mystic_spheres';
 import { Creature } from '@src/character_sheet/creature';
 
-t.test('reformatAttack', (t) => {
+t.test('reformatAttackTargeting', (t) => {
 
   const simpleCreature = Creature.new();
   simpleCreature.setProperties({
@@ -19,7 +19,7 @@ t.test('reformatAttack', (t) => {
       },
     };
     const reformatted = structuredClone(mockSpell);
-    reformatAttack(simpleCreature, reformatted as any);
+    reformatAttackTargeting(simpleCreature, reformatted as any);
     localT.matchStrict(reformatted.attack, {
       hit: 'stuff',
       targeting: expected,
@@ -97,7 +97,7 @@ t.test('reformatAttack', (t) => {
         scaling: 'accuracy',
       };
       const reformatted = structuredClone(mockSpell);
-      reformatAttack(simpleCreature, reformatted as any);
+      reformatAttackTargeting(simpleCreature, reformatted as any);
       t.matchStrict(reformatted.attack, {
         hit: 'stuff',
         // 10th level, so rank 4, vs rank 1 spell

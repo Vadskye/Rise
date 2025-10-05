@@ -8,7 +8,8 @@ const config: BreakdownConfig<any, Maneuver, ManeuverRank> = {
   entities: combatStyles,
   entityTypePlural: 'styles',
   entityTypeSingular: 'Style',
-  getItemGroups: maneuver => maneuver.rank,
+  // TODO: deal with this weird type hack
+  getItemGroups: maneuver => maneuver.rank as ManeuverRank,
   getItems: style => style.maneuvers || [],
   groups: RANKS,
   groupType: 'Rank',
