@@ -125,15 +125,17 @@ export interface AutoAttackConfig {
   usageTime?: MonsterAttackUsageTime;
 }
 
-// This matches the `setAttrs()` in `createDamagingMonsterAttack()`.
+// This matches the `setAttrs()` in `createDamagingMonsterAttack()`, plus `defense` and
+// `tags` as set by `addAutoAttack`.
 export interface DamagingAutoAttackResult {
   attack_accuracy: number;
   attack_damage_dice: string;
   attack_effect: string;
   attack_name: string;
+  defense: string;
   is_magical: boolean;
   is_targeted: boolean;
-  monster_effect: string;
+  latex_effect: string;
   tags: string;
   usage_time: MonsterAttackUsageTime;
 }
@@ -142,9 +144,10 @@ const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
   'attack_damage_dice',
   'attack_effect',
   'attack_name',
+  'defense',
   'is_magical',
   'is_targeted',
-  'monster_effect',
+  'latex_effect',
   'tags',
   'usage_time',
 ];
@@ -155,9 +158,10 @@ export interface DebuffAutoAttackResult {
   attack_accuracy: number;
   attack_effect: string;
   attack_name: string;
+  defense: string;
   is_magical: boolean;
   is_targeted: boolean;
-  monster_effect: string;
+  latex_effect: string;
   tags: string;
   usage_time: MonsterAttackUsageTime;
 }
@@ -165,9 +169,10 @@ const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
   'attack_accuracy',
   'attack_effect',
   'attack_name',
+  'defense',
   'is_magical',
   'is_targeted',
-  'monster_effect',
+  'latex_effect',
   'tags',
   'usage_time',
 ];
