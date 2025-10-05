@@ -10,6 +10,7 @@ export type RiseAlignment =
   | 'chaotic evil';
 
 export type RiseCreatureType =
+  | 'aberration'
   | 'animate'
   | 'beast'
   | 'dragon'

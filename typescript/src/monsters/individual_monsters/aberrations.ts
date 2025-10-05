@@ -7,7 +7,7 @@ export function addAberrations(grimoire: Grimoire) {
       alignment: 'neutral evil',
       base_class: 'leader',
       challenge_rating: 4,
-      creature_type: 'planeforged',
+      creature_type: 'aberration',
       level: 12,
     });
     creature.setProperties({
