@@ -807,7 +807,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 2,
       roles: ['focus'],
-      type: 'Sustain (minor)'
+      type: 'Sustain (minor)',
     },
 
     {
@@ -825,7 +825,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // narrative: '',
       rank: 6,
       roles: ['focus'],
-      type: 'Sustain (minor)'
+      type: 'Sustain (minor)',
     },
   ],
 });

@@ -686,7 +686,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       `,
       rank: 2,
       roles: ['focus'],
-      type: 'Sustain (minor)'
+      type: 'Sustain (minor)',
     },
 
     {
@@ -703,7 +703,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       `,
       rank: 6,
       roles: ['focus'],
-      type: 'Sustain (minor)'
+      type: 'Sustain (minor)',
     },
 
     {

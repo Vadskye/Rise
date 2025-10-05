@@ -4,7 +4,6 @@ import { Spell } from '@src/mystic_spheres';
 import { Creature } from '@src/character_sheet/creature';
 
 t.test('reformatAttackTargeting', (t) => {
-
   const simpleCreature = Creature.new();
   simpleCreature.setProperties({
     level: 10,
@@ -15,7 +14,7 @@ t.test('reformatAttackTargeting', (t) => {
     const mockSpell: Partial<Spell> = {
       attack: {
         hit: 'stuff',
-        targeting: original
+        targeting: original,
       },
     };
     const reformatted = structuredClone(mockSpell);
@@ -27,8 +26,9 @@ t.test('reformatAttackTargeting', (t) => {
   }
 
   t.test('Calculating accuracy', (t) => {
-    t.test("With a numeric accuracy bonus", (t) => {
-      testTargeting(t,
+    t.test('With a numeric accuracy bonus', (t) => {
+      testTargeting(
+        t,
         `
           Make an attack vs. Mental with a +4 accuracy bonus against something.
         `,
@@ -39,8 +39,9 @@ t.test('reformatAttackTargeting', (t) => {
       t.end();
     });
 
-    t.test("With a numeric accuracy penalty", (t) => {
-      testTargeting(t,
+    t.test('With a numeric accuracy penalty', (t) => {
+      testTargeting(
+        t,
         `
           Make an attack vs. Mental with a -8 accuracy penalty against something.
         `,
@@ -51,8 +52,9 @@ t.test('reformatAttackTargeting', (t) => {
       t.end();
     });
 
-    t.test("With a \\plus accuracy bonus", (t) => {
-      testTargeting(t,
+    t.test('With a \\plus accuracy bonus', (t) => {
+      testTargeting(
+        t,
         `
           Make an attack vs. Mental with a \\plus2 accuracy bonus against something.
         `,
@@ -63,8 +65,9 @@ t.test('reformatAttackTargeting', (t) => {
       t.end();
     });
 
-    t.test("With a \\minus accuracy penalty", (t) => {
-      testTargeting(t,
+    t.test('With a \\minus accuracy penalty', (t) => {
+      testTargeting(
+        t,
         `
           Make an attack vs. Mental with a \\minus3 accuracy bonus against something.
         `,
@@ -75,8 +78,9 @@ t.test('reformatAttackTargeting', (t) => {
       t.end();
     });
 
-    t.test("With a \\glossterm{accuracy} bonus", (t) => {
-      testTargeting(t,
+    t.test('With a \\glossterm{accuracy} bonus', (t) => {
+      testTargeting(
+        t,
         `
           Make an attack vs. Mental with a +4 \\glossterm{accuracy} bonus against something.
         `,
@@ -87,7 +91,7 @@ t.test('reformatAttackTargeting', (t) => {
       t.end();
     });
 
-    t.test("With accuracy scaling", (t) => {
+    t.test('With accuracy scaling', (t) => {
       const mockSpell: Partial<Spell> = {
         attack: {
           hit: 'stuff',
@@ -110,7 +114,6 @@ t.test('reformatAttackTargeting', (t) => {
   });
 
   t.test('Replacing "you"', (t) => {
-
     t.test('With standard attack syntax', (t) => {
       testTargeting(
         t,

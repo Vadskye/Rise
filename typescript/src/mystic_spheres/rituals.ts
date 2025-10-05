@@ -382,8 +382,8 @@ export const rituals: Ritual[] = [
     rank: 2,
     roles: ['narrative'],
     scaling: {
-      4: "The volume increases to two thousand gallons of water, or two 5-ft. cubes.",
-      6: "The volume increases to four thousand gallons of water, or four 5-ft. cubes.",
+      4: 'The volume increases to two thousand gallons of water, or two 5-ft. cubes.',
+      6: 'The volume increases to four thousand gallons of water, or four 5-ft. cubes.',
     },
     spheres: ['Aquamancy', 'Prayer', 'Toxicology'],
   },
@@ -556,13 +556,7 @@ export const rituals: Ritual[] = [
     tags: [],
     materialCost: true,
     castingTime: '24 hours',
-    spheres: [
-      'Astromancy',
-      'Channel Divinity',
-      'Fabrication',
-      'Prayer',
-      'Thaumaturgy',
-    ],
+    spheres: ['Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Thaumaturgy'],
   },
   {
     name: 'Guided Translocation',
@@ -580,13 +574,7 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: 'one hour',
-    spheres: [
-      'Aeromancy',
-      'Astromancy',
-      'Channel Divinity',
-      'Electromancy',
-      'Verdamancy',
-    ],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
   {
     name: 'Distant Translocation',
@@ -608,13 +596,7 @@ export const rituals: Ritual[] = [
     sphereEffects: teleportSphereEffects,
     tags: [],
     castingTime: '24 hours',
-    spheres: [
-      'Aeromancy',
-      'Astromancy',
-      'Channel Divinity',
-      'Electromancy',
-      'Verdamancy',
-    ],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
 
   {
@@ -632,13 +614,7 @@ export const rituals: Ritual[] = [
     roles: ['narrative'],
     tags: [],
     castingTime: 'one hour',
-    spheres: [
-      'Aeromancy',
-      'Astromancy',
-      'Channel Divinity',
-      'Electromancy',
-      'Verdamancy',
-    ],
+    spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
   {
     name: 'Retrieve Legacy',
@@ -1074,7 +1050,8 @@ export const rituals: Ritual[] = [
       6: 'The volume created increases to one hundred gallons.',
     },
     sphereEffects: {
-      Terramancy: 'The locations must be \\glossterm{grounded}, and the ritual takes one hour to perform instead of one minute.',
+      Terramancy:
+        'The locations must be \\glossterm{grounded}, and the ritual takes one hour to perform instead of one minute.',
     },
     spheres: ['Aquamancy', 'Fabrication', 'Terramancy'],
     tags: ['Creation', 'Water'],
@@ -2947,7 +2924,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Enduring Time Lock -- Location',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Choose yourself or an \\glossterm{ally} within \\medrange.
       You create a \\sphereterm{time lock} for the target's current location.
@@ -2967,7 +2944,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Memory Palace',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       You can perfectly recall anything you learned or experienced since 24 hours before this ritual finished, including anything you learn during this effect.
       When this effect ends, your memory returns to normal, though you can write things down to remind you of what you knew.
@@ -2980,7 +2957,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Soothing Presence',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       All creatures within a \\largearea radius \\glossterm{emanation} from you are soothed.
       They feel pain and discomfort less intensely, and perceive themselves to be less tired.
@@ -2989,7 +2966,7 @@ export const rituals: Ritual[] = [
     rank: 1,
     roles: ['narrative'],
     sphereEffects: {
-      Enchantment: "This effect gains the \\atEmotion tag.",
+      Enchantment: 'This effect gains the \\atEmotion tag.',
     },
     spheres: ['Enchantment', 'Prayer'],
     type: 'Sustain (attuneable, minor)',
@@ -2997,7 +2974,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sanctuary',
 
-    castingTime: "one hour",
+    castingTime: 'one hour',
     attack: {
       hit: `
         While the target is in the area, it is unable to attack any creatures or objects.
@@ -3012,7 +2989,7 @@ export const rituals: Ritual[] = [
     rank: 3,
     roles: ['narrative'],
     sphereEffects: {
-      Enchantment: "This effect gains the \\atEmotion tag.",
+      Enchantment: 'This effect gains the \\atEmotion tag.',
     },
     spheres: ['Enchantment', 'Prayer'],
     type: 'Sustain (attuneable, minor)',
@@ -3034,7 +3011,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reveal Deception',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Whenever a creature within a \\largearea radius \\glossterm{emanation} from you deliberately and knowingly speaks a lie, you know that the target was lying.
       This does not reveal the truth, and unintentional inaccuracies do not trigger this effect.
@@ -3132,7 +3109,8 @@ export const rituals: Ritual[] = [
     castingTime: 'one minute',
     functionsLike: {
       name: 'control weather',
-      exceptThat: 'the area increases to a ten mile radius, and the weather changes take effect after only one minute rather than ten minutes.'
+      exceptThat:
+        'the area increases to a ten mile radius, and the weather changes take effect after only one minute rather than ten minutes.',
     },
     // narrative: '',
     rank: 7,
@@ -3145,7 +3123,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Purge Invisibility',
 
-    castingTime: "one minute",
+    castingTime: 'one minute',
     effect: `
       Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
       Any effects that would cause them to be invisible are \\glossterm{suppressed}.

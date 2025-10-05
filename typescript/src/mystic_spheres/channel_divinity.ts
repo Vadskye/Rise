@@ -536,7 +536,7 @@ export const channelDivinity: MysticSphere = {
 
     // Injury dazzle is 0.7 EA. This is probably too generous to also bundle brief dazzle?
     {
-      name: "Radiant Blade",
+      name: 'Radiant Blade',
 
       attack: {
         crit: CONDITION_CRIT,
@@ -558,7 +558,7 @@ export const channelDivinity: MysticSphere = {
 
     // +4a is 0.9 EA on ally
     {
-      name: "Unerring Blade",
+      name: 'Unerring Blade',
 
       effect: `
         Whenever you make a \\glossterm{strike}, you can activate this effect as a \\glossterm{minor action}.

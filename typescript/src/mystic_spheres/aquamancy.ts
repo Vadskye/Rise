@@ -915,7 +915,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       `,
       rank: 2,
       roles: ['focus'],
-      type: 'Sustain (minor)'
+      type: 'Sustain (minor)',
     },
     {
       name: 'Greater Rising Tide',

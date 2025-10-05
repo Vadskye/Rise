@@ -25,7 +25,7 @@ export function run(config: BreakdownConfig<any, any, any>) {
     .option('--chart', 'Display data as a bar chart')
     .option(
       `--${config.entityTypePlural} <names>`,
-      `Comma-separated list of ${config.entityTypePlural} to display`
+      `Comma-separated list of ${config.entityTypePlural} to display`,
     );
 
   command.parse(process.argv);
@@ -44,29 +44,28 @@ export function run(config: BreakdownConfig<any, any, any>) {
     sortedEntities,
     groups,
     config.getItemGroups,
-    config.getItems
+    config.getItems,
   );
 
   fullBreakdown['Average'] = averageCounts;
 
-  const entitiesToShowNames: string[] =
-    options[config.entityTypePlural]
-      ? options[config.entityTypePlural].split(',')
-      : options.chart
-      ? sortedEntities.map(e => e.name)
-      : [...sortedEntities.map(e => e.name), 'Average'];
+  const entitiesToShowNames: string[] = options[config.entityTypePlural]
+    ? options[config.entityTypePlural].split(',')
+    : options.chart
+      ? sortedEntities.map((e) => e.name)
+      : [...sortedEntities.map((e) => e.name), 'Average'];
 
   if (options.chart) {
     const groupsToShow = Object.entries(averageCounts)
-          .filter(([, count]) => count >= 1)
-          .map(([group]) => group);
+      .filter(([, count]) => count >= 1)
+      .map(([group]) => group);
 
     for (const entityName of entitiesToShowNames) {
       if (fullBreakdown[entityName]) {
         let countsForChart = fullBreakdown[entityName];
         const expandedCounts: Record<string, number> = {};
         const entityGroupsWithCount = Object.keys(countsForChart).filter(
-          group => countsForChart[group] > 0
+          (group) => countsForChart[group] > 0,
         );
         const allGroups = new Set([...groupsToShow, ...entityGroupsWithCount]);
 
@@ -80,60 +79,62 @@ export function run(config: BreakdownConfig<any, any, any>) {
     }
   } else {
     if (config.tableOrientation === 'columnsAsGroups') {
-        const header: string[] = [config.entityTypeSingular, ...groups.map(String), 'Total'];
-        const tableData: (string | number)[][] = [header];
+      const header: string[] = [config.entityTypeSingular, ...groups.map(String), 'Total'];
+      const tableData: (string | number)[][] = [header];
 
-        for (const entityName of entitiesToShowNames) {
-            const row: (string | number)[] = [entityName];
-            let entityTotal = 0;
-            for (const group of groups) {
-                const count: number = fullBreakdown[entityName]?.[String(group)] || 0;
-                row.push(count);
-                entityTotal += count;
-            }
-            row.push(entityTotal);
-            tableData.push(row);
-        }
-
-        const totalRow: (string | number)[] = ['**Total**'];
-        let grandTotal = 0;
+      for (const entityName of entitiesToShowNames) {
+        const row: (string | number)[] = [entityName];
+        let entityTotal = 0;
         for (const group of groups) {
-            let groupSum = 0;
-            for (const entityName of entitiesToShowNames) {
-                groupSum += fullBreakdown[entityName]?.[String(group)] || 0;
-            }
-            totalRow.push(groupSum);
-            grandTotal += groupSum;
+          const count: number = fullBreakdown[entityName]?.[String(group)] || 0;
+          row.push(count);
+          entityTotal += count;
         }
-        totalRow.push(grandTotal);
-        tableData.push(totalRow);
-        printTable(tableData);
-    } else { // rowsAsGroups
-        const header: string[] = [config.groupType, ...entitiesToShowNames, 'Total'];
-        const tableData: (string | number)[][] = [header];
+        row.push(entityTotal);
+        tableData.push(row);
+      }
 
-        for (const group of groups) {
-            const row: (string | number)[] = [String(group)];
-            for (const entityName of entitiesToShowNames) {
-                const count: number = fullBreakdown[entityName]?.[String(group)] || 0;
-                row.push(count);
-            }
-            row.push(totals[String(group)] || 0);
-            tableData.push(row);
-        }
-
-        const totalRow: (string | number)[] = ['**Total**'];
-        let grandTotal = 0;
+      const totalRow: (string | number)[] = ['**Total**'];
+      let grandTotal = 0;
+      for (const group of groups) {
+        let groupSum = 0;
         for (const entityName of entitiesToShowNames) {
-            const entityTotal: number = Object.values(
-                fullBreakdown[entityName] || {}
-            ).reduce((a: number, b: number) => a + b, 0);
-            totalRow.push(entityTotal);
-            grandTotal += entityTotal;
+          groupSum += fullBreakdown[entityName]?.[String(group)] || 0;
         }
-        totalRow.push(grandTotal);
-        tableData.push(totalRow);
-        printTable(tableData);
+        totalRow.push(groupSum);
+        grandTotal += groupSum;
+      }
+      totalRow.push(grandTotal);
+      tableData.push(totalRow);
+      printTable(tableData);
+    } else {
+      // rowsAsGroups
+      const header: string[] = [config.groupType, ...entitiesToShowNames, 'Total'];
+      const tableData: (string | number)[][] = [header];
+
+      for (const group of groups) {
+        const row: (string | number)[] = [String(group)];
+        for (const entityName of entitiesToShowNames) {
+          const count: number = fullBreakdown[entityName]?.[String(group)] || 0;
+          row.push(count);
+        }
+        row.push(totals[String(group)] || 0);
+        tableData.push(row);
+      }
+
+      const totalRow: (string | number)[] = ['**Total**'];
+      let grandTotal = 0;
+      for (const entityName of entitiesToShowNames) {
+        const entityTotal: number = Object.values(fullBreakdown[entityName] || {}).reduce(
+          (a: number, b: number) => a + b,
+          0,
+        );
+        totalRow.push(entityTotal);
+        grandTotal += entityTotal;
+      }
+      totalRow.push(grandTotal);
+      tableData.push(totalRow);
+      printTable(tableData);
     }
   }
 }

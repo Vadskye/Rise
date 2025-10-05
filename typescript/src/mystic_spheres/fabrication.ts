@@ -210,7 +210,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'mystic artillery',
-        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['snipe'],
@@ -244,7 +245,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: "executioner's axe",
-        exceptThat: 'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
       },
       rank: 4,
       roles: ['burst'],
@@ -319,7 +321,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'rain of arrows',
-        exceptThat: 'the area increases to a \\medarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\distrange. In addition, the damage increases to \\damageranksix.',
+        exceptThat:
+          'the area increases to a \\medarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\distrange. In addition, the damage increases to \\damageranksix.',
       },
       rank: 7,
       roles: ['clear'],
@@ -518,7 +521,8 @@ export const fabrication: MysticSphere = {
 
       functionsLike: {
         name: 'dagger cloud',
-        exceptThat: 'the area increases to a \\smallarea radius, and the damage increases to \\damagerankfour.',
+        exceptThat:
+          'the area increases to a \\smallarea radius, and the damage increases to \\damagerankfour.',
       },
       rank: 6,
       roles: ['hazard'],
@@ -898,7 +902,7 @@ export const fabrication: MysticSphere = {
       },
       rank: 7,
       roles: ['stasis'],
-      scaling: "accuracy",
+      scaling: 'accuracy',
       tags: ['Barrier', 'Manifestation'],
       type: 'Sustain (minor)',
     },
@@ -995,7 +999,7 @@ export const fabrication: MysticSphere = {
     },
 
     {
-      name: "Omnishield",
+      name: 'Omnishield',
 
       effect: `
         You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
