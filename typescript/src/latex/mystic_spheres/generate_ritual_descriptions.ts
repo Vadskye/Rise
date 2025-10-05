@@ -1,5 +1,6 @@
 import { rituals } from '@src/mystic_spheres';
-import { convertRitualToLatex, sortByRankAndLevel } from '@src/latex';
+import { convertRitualToLatex } from './convert_ritual_to_latex';
+import { sortByRankAndLevel } from './convert_mystic_sphere_to_latex';
 import _ from 'lodash';
 
 export function generateRitualDescriptions(): string {

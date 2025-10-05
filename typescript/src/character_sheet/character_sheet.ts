@@ -60,7 +60,7 @@ export class CharacterSheet {
         clickedButtonNames.push(triggerName.replaceAll('clicked:', ''));
       } else {
         // We don't currently handle anything other than changes, such as deletions
-        console.log(`Ignoring unsupported trigger name ${triggerName}.`);
+        // console.log(`Ignoring unsupported trigger name ${triggerName}.`);
       }
     }
 
