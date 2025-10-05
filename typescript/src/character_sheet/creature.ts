@@ -412,6 +412,7 @@ export class Creature implements CreaturePropertyMap {
         this.setProperties({
           [key]: speed,
         });
+        return;
       }
     }
   }
