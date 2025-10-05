@@ -123,7 +123,7 @@ Hit: The target is dazzled as a condition.`,
       attack_name: 'Flashy Light',
       is_magical: true,
       is_targeted: true,
-      monster_effect: `The $name makes a $accuracy+4 attack vs. $defense against something within 60 feet.
+      latex_effect: `The $name makes a $accuracy+4 attack vs. $defense against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
       tags: '',
       usage_time: 'standard',
@@ -155,9 +155,10 @@ t.test('can add a damaging autoattack', (t) => {
       attack_effect: `Make an attack against everything in a 15 foot radius within 30 feet.
 Miss: Half damage.`,
       attack_name: 'Fireball',
+      defense: 'Reflex',
       is_magical: true,
       is_targeted: false,
-      monster_effect: `The $name makes a $accuracy-2 attack vs. $defense against everything in a 15 foot radius within 30 feet.
+      latex_effect: `The $name makes a $accuracy-2 attack vs. $defense against everything in a 15 foot radius within 30 feet.
 Hit: 1d8+3 damage.
 Miss: Half damage.`,
       tags: '',

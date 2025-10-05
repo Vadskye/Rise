@@ -1,5 +1,4 @@
 import { addAccuracyToEffect, replaceAccuracyTerms } from './replace_placeholders';
-import { Creature } from '@src/character_sheet/creature';
 import t from 'tap';
 
 t.test('addAccuracyToEffect', (t) => {
@@ -71,14 +70,9 @@ t.test('addAccuracyToEffect', (t) => {
 });
 
 t.test('replaceAccuracyTerms', (t) => {
-  const mockCreature = {
-    name: 'Test Creature',
-    accuracy: 5,
-  } as Creature;
-
   t.test('replaces $accuracy with creature accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature),
+      replaceAccuracyTerms('$accuracy vs. Armor', 5),
       '+5 vs. Armor',
       'should replace $accuracy with creature accuracy',
     );
@@ -87,7 +81,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with positive local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor+2', mockCreature),
+      replaceAccuracyTerms('$accuracy vs. Armor+2', 5),
       '+7 vs. Armor',
       'should add positive local modifier',
     );
@@ -96,7 +90,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with negative local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor-3', mockCreature),
+      replaceAccuracyTerms('$accuracy vs. Armor-3', 5),
       '+2 vs. Armor',
       'should subtract negative local modifier',
     );
@@ -105,7 +99,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with weapon accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature, 3),
+      replaceAccuracyTerms('$accuracy vs. Armor', 5, 3),
       '+8 vs. Armor',
       'should add weapon accuracy',
     );
@@ -114,7 +108,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with local and weapon accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor+2', mockCreature, 3),
+      replaceAccuracyTerms('$accuracy vs. Armor+2', 5, 3),
       '+10 vs. Armor',
       'should add local and weapon accuracy',
     );
@@ -122,9 +116,8 @@ t.test('replaceAccuracyTerms', (t) => {
   });
 
   t.test('replaces $accuracy resulting in zero', (t) => {
-    const zeroAccuracyCreature = { ...mockCreature, accuracy: 0 } as Creature;
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', zeroAccuracyCreature),
+      replaceAccuracyTerms('$accuracy vs. Armor', 0),
       '+0 vs. Armor',
       'should result in +0 for zero accuracy',
     );
@@ -132,9 +125,8 @@ t.test('replaceAccuracyTerms', (t) => {
   });
 
   t.test('replaces $accuracy resulting in negative', (t) => {
-    const negativeAccuracyCreature = { ...mockCreature, accuracy: -5 } as Creature;
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', negativeAccuracyCreature),
+      replaceAccuracyTerms('$accuracy vs. Armor', -5),
       '-5 vs. Armor',
       'should result in negative accuracy',
     );
@@ -143,7 +135,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces multiple $accuracy terms', (t) => {
     t.equal(
-      replaceAccuracyTerms('First $accuracy, then $accuracy+1, finally $accuracy-2', mockCreature),
+      replaceAccuracyTerms('First $accuracy, then $accuracy+1, finally $accuracy-2', 5),
       'First +5, then +6, finally +3',
       'should replace multiple accuracy terms correctly',
     );
