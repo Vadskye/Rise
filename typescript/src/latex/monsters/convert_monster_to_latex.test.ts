@@ -1,6 +1,6 @@
 import t from 'tap';
 import { Creature } from '@src/character_sheet/creature';
-import { genKnowledgeText } from './generate_monster_descriptions';
+import { genKnowledgeText } from './convert_monster_to_latex';
 
 t.test('can generate empty knowledge text', (t) => {
   const creature = Creature.new();
