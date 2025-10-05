@@ -608,7 +608,8 @@ export const toxicology: MysticSphere = {
 
       functionsLike: {
         name: 'devouring fungus',
-        exceptThat: 'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} on the initial hit is doubled.',
+        exceptThat:
+          'the damage increases to \\damagerankfive, and any \\glossterm{extra damage} on the initial hit is doubled.',
       },
       rank: 6,
       roles: ['burn'],

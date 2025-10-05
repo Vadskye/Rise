@@ -18,7 +18,7 @@ function replaceNames(monsterLatex: string, monsterName: string): string {
   if (monsterName === lowercaseName) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
   }
-  return monsterLatex.replaceAll("$Name", monsterName).replaceAll("$name", lowercaseName);
+  return monsterLatex.replaceAll('$Name', monsterName).replaceAll('$name', lowercaseName);
 }
 
 export function addAccuracyToEffect(modifier: number, effect: string, name: string): string {
@@ -32,11 +32,11 @@ export function addAccuracyToEffect(modifier: number, effect: string, name: stri
     const existingModifier = match[3];
 
     const existingModifierAbs = parseInt(existingModifier) || 0;
-    const existingModifierValue = modifierSign === "-" ? -existingModifierAbs : existingModifierAbs;
+    const existingModifierValue = modifierSign === '-' ? -existingModifierAbs : existingModifierAbs;
 
     const newModifierValue = existingModifierValue + modifier;
-    const newModifierSign = newModifierValue > 0 ? "+" : "";
-    const newModifierText = newModifierValue === 0 ? "" : newModifierValue.toString();
+    const newModifierSign = newModifierValue > 0 ? '+' : '';
+    const newModifierText = newModifierValue === 0 ? '' : newModifierValue.toString();
 
     replacedEffect = replacedEffect.replace(
       match[0],
@@ -44,9 +44,7 @@ export function addAccuracyToEffect(modifier: number, effect: string, name: stri
     );
 
     if (replacedAccuracy) {
-      throw new Error(
-        `Cannot add accuracy to ability ${name}: more than one $accuracy present`,
-      );
+      throw new Error(`Cannot add accuracy to ability ${name}: more than one $accuracy present`);
     } else {
       replacedAccuracy = true;
     }
@@ -58,7 +56,11 @@ export function addAccuracyToEffect(modifier: number, effect: string, name: stri
   return replacedEffect;
 }
 
-export function replaceAccuracyTerms(latex: string, creatureAccuracy: number, weaponAccuracy?: number): string {
+export function replaceAccuracyTerms(
+  latex: string,
+  creatureAccuracy: number,
+  weaponAccuracy?: number,
+): string {
   // Find each block of "$accuracy", including any local accuracy modifiers.
   // The regex captures:
   //   Group 1: "$accuracy" (the base term)
@@ -85,7 +87,7 @@ function parseAccuracyMatch(
 
   // Handle local accuracy modifiers
   if (modifierValue) {
-    if (modifierSign === "+") {
+    if (modifierSign === '+') {
       currentAccuracy += modifierValue;
     } else {
       currentAccuracy -= modifierValue;
@@ -98,6 +100,6 @@ function parseAccuracyMatch(
   }
 
   // Format the output: "+5" for positive, "-5" for negative.
-  const accuracySign = currentAccuracy >= 0 ? "+" : "";
+  const accuracySign = currentAccuracy >= 0 ? '+' : '';
   return `${accuracySign}${currentAccuracy}`;
 }

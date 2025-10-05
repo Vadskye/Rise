@@ -27,7 +27,8 @@ export function spellTypePrefix(
     }
   }
 
-  const tagsText = tags && tags.length > 0 ? `\\abilitytags ${tags.sort().map(formatTagLatex).join(', ')}` : '';
+  const tagsText =
+    tags && tags.length > 0 ? `\\abilitytags ${tags.sort().map(formatTagLatex).join(', ')}` : '';
 
   const tagsAndRank = generateTagsAndRank(tagsText, spell.rank, omitRank);
 
@@ -41,13 +42,9 @@ export function spellTypePrefix(
   }
 }
 
-export function generateTagsAndRank(
-  tagsText: string,
-  rank?: Rank,
-  omitRank?: boolean,
-) {
+export function generateTagsAndRank(tagsText: string, rank?: Rank, omitRank?: boolean) {
   if (rank && !omitRank) {
-    return `\\spelltwocol{${tagsText}}{Rank ${rank}}`
+    return `\\spelltwocol{${tagsText}}{Rank ${rank}}`;
   } else {
     return `${tagsText}`;
   }

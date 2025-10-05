@@ -9,8 +9,8 @@ const config: BreakdownConfig<any, Maneuver, ManeuverRank> = {
   entityTypePlural: 'styles',
   entityTypeSingular: 'Style',
   // TODO: deal with this weird type hack
-  getItemGroups: maneuver => maneuver.rank as ManeuverRank,
-  getItems: style => style.maneuvers || [],
+  getItemGroups: (maneuver) => maneuver.rank as ManeuverRank,
+  getItems: (style) => style.maneuvers || [],
   groups: RANKS,
   groupType: 'Rank',
   tableOrientation: 'columnsAsGroups',

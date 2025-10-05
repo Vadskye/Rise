@@ -22,25 +22,28 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
-      ${sphere.cantrips
-      ? `
+      ${
+        sphere.cantrips
+          ? `
             \\subsection{Cantrips}
-            ${sortByRankAndLevel(sphere.cantrips).map((spell) => {
-              checkValidSpell(spell);
-              return convertSpellToLatex(spell)
-            }).join('\n')}
+            ${sortByRankAndLevel(sphere.cantrips)
+              .map((spell) => {
+                checkValidSpell(spell);
+                return convertSpellToLatex(spell);
+              })
+              .join('\n')}
           `
-      : ''
-    }
+          : ''
+      }
 
       ${ranks
-      .map((rank) =>
-        spellsByRank[rank]
-          ? `\\subsection{Rank ${rank} Spells}
+        .map((rank) =>
+          spellsByRank[rank]
+            ? `\\subsection{Rank ${rank} Spells}
           ${spellsByRank[rank].map((spell) => convertSpellToLatex(spell)).join('\n')}`
-          : '',
-      )
-      .join('\n')}
+            : '',
+        )
+        .join('\n')}
   `);
 }
 

@@ -45,7 +45,8 @@ export const vivimancy: MysticSphere = {
       rank: 1,
       roles: ['burst', 'healing'],
       scaling: {
-        special: 'For each rank beyond 1, the damage increases by 2 and the healing increases by 1d6.',
+        special:
+          'For each rank beyond 1, the damage increases by 2 and the healing increases by 1d6.',
       },
       tags: [],
     },
@@ -63,7 +64,8 @@ export const vivimancy: MysticSphere = {
       rank: 4,
       roles: ['burst', 'healing'],
       scaling: {
-        special: 'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 2d10.',
+        special:
+          'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 2d10.',
       },
       tags: [],
     },
@@ -90,7 +92,8 @@ export const vivimancy: MysticSphere = {
       rank: 2,
       roles: ['burst', 'healing'],
       scaling: {
-        special: 'For each rank beyond 2, the damage increases by 1 and the healing increases by 2d6.',
+        special:
+          'For each rank beyond 2, the damage increases by 1 and the healing increases by 2d6.',
       },
       tags: [],
     },
@@ -108,7 +111,8 @@ export const vivimancy: MysticSphere = {
       roles: ['burst', 'healing'],
       rank: 6,
       scaling: {
-        special: 'For each rank beyond 6, the damage increases by 2d8 and the healing increases by 4d8.',
+        special:
+          'For each rank beyond 6, the damage increases by 2d8 and the healing increases by 4d8.',
       },
       tags: [],
     },
@@ -191,7 +195,7 @@ export const vivimancy: MysticSphere = {
       tags: ['Swift'],
     },
 
-    // TODO: What level can vital wounds usually be removed? 
+    // TODO: What level can vital wounds usually be removed?
     {
       name: 'Cure Vital Wound',
 
@@ -513,7 +517,7 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       roles: ['burn'],
       scaling: {
-        special: "Both instances of damage increase by 1 for each rank beyond 3.",
+        special: 'Both instances of damage increase by 1 for each rank beyond 3.',
       },
     },
 
@@ -536,7 +540,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['burn'],
       scaling: {
-        special: "Both instances of damage increase by 3 for each rank beyond 6.",
+        special: 'Both instances of damage increase by 3 for each rank beyond 6.',
       },
     },
 
@@ -602,7 +606,8 @@ export const vivimancy: MysticSphere = {
 
       functionsLike: {
         name: 'corpse explosion',
-        exceptThat: 'the damage increases to \\damageranksix, and the area increases to a \\smallarea radius from the corpse.',
+        exceptThat:
+          'the damage increases to \\damageranksix, and the area increases to a \\smallarea radius from the corpse.',
       },
       narrative: `
         You violently discharge the latent magical potential within a corpse, causing it to explode in a shower of guts and gore.
@@ -664,7 +669,7 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: "Vital Intuition",
+      name: 'Vital Intuition',
 
       effect: `
         If you have Medicine as a \\glossterm{trained skill}, you gain a +3 \\glossterm{enhancement bonus} to it.

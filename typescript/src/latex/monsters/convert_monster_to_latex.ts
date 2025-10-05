@@ -45,8 +45,6 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   return replacePlaceholders(monster, latexWithPlaceholders);
 }
 
-
-
 function genArtText(monster: Creature, parentGroupName?: string): string {
   if (!monster.has_art) {
     return '';
@@ -230,18 +228,16 @@ function genAttributesText(monster: Creature): string {
 
 function genAbilitiesText(monster: Creature): string {
   // TODO: handle passive abilities
-  const autoAttacks = [...monster.getDebuffAutoAttacks(), ...monster.getDamagingAutoAttacks()].sort(
-    (a, b) => caseInsensitiveSort(a.attack_name, b.attack_name),
-  ).map(convertAutoAttackToLatex);
+  const autoAttacks = [...monster.getDebuffAutoAttacks(), ...monster.getDamagingAutoAttacks()]
+    .sort((a, b) => caseInsensitiveSort(a.attack_name, b.attack_name))
+    .map(convertAutoAttackToLatex);
 
-  const maneuvers = monster.getManeuvers().map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
+  const maneuvers = monster
+    .getManeuvers()
+    .map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
   const spells = monster.getSpells().map((spell) => convertSpellToMonsterAbility(monster, spell));
 
-  const allAttacks = [
-    ...autoAttacks,
-    ...maneuvers,
-    ...spells,
-  ];
+  const allAttacks = [...autoAttacks, ...maneuvers, ...spells];
 
   // TODO: sort allAttacks
 

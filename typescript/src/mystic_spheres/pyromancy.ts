@@ -508,7 +508,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       rank: 3,
       roles: ['attune'],
       scaling: {
-        'special': 'The damage increases by 2 for each rank beyond 3.',
+        special: 'The damage increases by 2 for each rank beyond 3.',
       },
       type: 'Attune (deep)',
     },

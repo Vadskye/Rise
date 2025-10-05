@@ -374,7 +374,7 @@ export class Creature implements CreaturePropertyMap {
       [`${prefix}_immune`]: config.immune,
       [`${prefix}_impervious`]: config.impervious,
       [`${prefix}_vulnerable`]: config.vulnerable,
-      [`${prefix}_name`]: config.name || "Invisible",
+      [`${prefix}_name`]: config.name || 'Invisible',
     };
     if (config.numericEffects) {
       for (let i = 0; i < config.numericEffects.length; i++) {
@@ -532,14 +532,14 @@ export class Creature implements CreaturePropertyMap {
   // sheet worker from doing ordinary combat math.
   checkValidMonster() {
     if (this.name === this.name.toLowerCase()) {
-      this.throwError("Name must be title case");
+      this.throwError('Name must be title case');
     }
     if (!this.alignment) {
-      this.throwError("Must have alignment");
+      this.throwError('Must have alignment');
     }
 
     if (this.getTrainedSkillNames().length === 0) {
-      this.warn("Has no trained skills");
+      this.warn('Has no trained skills');
     }
   }
 
