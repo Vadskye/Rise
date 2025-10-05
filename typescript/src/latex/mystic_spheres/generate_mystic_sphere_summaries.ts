@@ -1,4 +1,4 @@
-import { sortByRankAndLevel } from '@src/latex/convert_mystic_sphere_to_latex';
+import { sortByRankAndLevel } from './convert_mystic_sphere_to_latex';
 import { MysticSphere, mysticSpheres, SpellLike, rituals } from '@src/mystic_spheres';
 import _ from 'lodash';
 

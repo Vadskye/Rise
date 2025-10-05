@@ -51,8 +51,8 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${pagebreakText}
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
-        \\${sectionName}{${monster.name}}{${monster.level} ${monster.role}}${eliteText}
-        \\monstersize${sizeStarText}{${monster.size} ${monster.creature_type}}
+        \\${sectionName}{${monster.name}}{${monster.level} ${monster.base_class}}${eliteText}
+        \\monstersize${sizeStarText}{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
         ${genArtText(monster)}
     \\end{minipage}
     ${monster.description || ''}
