@@ -568,7 +568,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Blinding Visions",
+      name: 'Blinding Visions',
 
       attack: {
         crit: CONDITION_CRIT,
@@ -587,7 +587,7 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: "Behold the Lurking Danger",
+      name: 'Behold the Lurking Danger',
 
       effect: `
         All \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
@@ -598,7 +598,7 @@ export const revelation: MysticSphere = {
 
     // 1.2 EA for "all except you"
     {
-      name: "Behold the Narrow Path",
+      name: 'Behold the Narrow Path',
 
       effect: `
         All \\glossterm{allies} within a \\largearea radius from you are \\honed this round.

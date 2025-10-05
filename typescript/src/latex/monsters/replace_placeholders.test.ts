@@ -49,7 +49,8 @@ t.test('addAccuracyToEffect', (t) => {
 
   t.test('throws error for multiple accuracy placeholders', (t) => {
     t.throws(
-      () => addAccuracyToEffect(1, 'Attack with $accuracy and $accuracy accuracy', 'arbitrary name'),
+      () =>
+        addAccuracyToEffect(1, 'Attack with $accuracy and $accuracy accuracy', 'arbitrary name'),
       new Error('Cannot add accuracy to ability arbitrary name: more than one $accuracy present'),
       'should throw an error for multiple accuracy placeholders',
     );
@@ -64,7 +65,6 @@ t.test('addAccuracyToEffect', (t) => {
     );
     t.end();
   });
-
 
   t.end();
 });

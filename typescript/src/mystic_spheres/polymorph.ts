@@ -384,7 +384,8 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'bleed',
-        exceptThat: 'both damage instances increase to \\damagerankfive, and \\glossterm{extra damage} on the initial hit is doubled.',
+        exceptThat:
+          'both damage instances increase to \\damagerankfive, and \\glossterm{extra damage} on the initial hit is doubled.',
       },
       rank: 4,
       roles: ['burn', 'execute'],
@@ -679,7 +680,8 @@ export const polymorph: MysticSphere = {
 
       functionsLike: {
         name: 'extended sinews',
-        exceptThat: 'you can choose up to two targets from among yourself and your \\glossterm{allies} within \\medrange.',
+        exceptThat:
+          'you can choose up to two targets from among yourself and your \\glossterm{allies} within \\medrange.',
       },
       rank: 7,
       roles: ['boon'],

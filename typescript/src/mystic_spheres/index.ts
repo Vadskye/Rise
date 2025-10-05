@@ -61,7 +61,12 @@ export interface MysticSphere {
   spells: Spell[];
 }
 
-export type AbilityScaling = 'accuracy' | 'double_accuracy' | 'damage' | 'healing' | Record<string, string>;
+export type AbilityScaling =
+  | 'accuracy'
+  | 'double_accuracy'
+  | 'damage'
+  | 'healing'
+  | Record<string, string>;
 
 export interface BaseSpellLike {
   attack?: StandardAttack;
@@ -77,14 +82,14 @@ export interface BaseSpellLike {
   // TODO: define the set of allowable tags
   tags?: string[];
   type?:
-  | 'Attune'
-  | 'Attune (deep)'
-  | 'Attune (deep, target)'
-  | 'Attune (target)'
-  | 'Sustain (minor)'
-  | 'Sustain (standard)'
-  | 'Sustain (attuneable, minor)'
-  | 'Sustain (attuneable, standard)';
+    | 'Attune'
+    | 'Attune (deep)'
+    | 'Attune (deep, target)'
+    | 'Attune (target)'
+    | 'Sustain (minor)'
+    | 'Sustain (standard)'
+    | 'Sustain (attuneable, minor)'
+    | 'Sustain (attuneable, standard)';
 }
 
 // A spell can have multiple roles if it has multiple effects, or if its effect is

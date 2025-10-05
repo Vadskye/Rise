@@ -4,8 +4,8 @@ type Counts = Record<string, number>;
 type Breakdown = Record<string, Counts>;
 
 export function printTable(tableData: (string | number)[][]): void {
-  const formattedData: string[][] = tableData.map(row =>
-    row.map(cell => {
+  const formattedData: string[][] = tableData.map((row) =>
+    row.map((cell) => {
       if (typeof cell === 'number') {
         if (cell > 1) {
           return String(Math.round(cell));
@@ -13,18 +13,18 @@ export function printTable(tableData: (string | number)[][]): void {
         return cell % 1 === 0 ? String(cell) : cell.toFixed(1);
       }
       return String(cell);
-    })
+    }),
   );
 
   const columnWidths: number[] = formattedData[0].map((_, i) =>
-    Math.max(...formattedData.map(row => row[i].length))
+    Math.max(...formattedData.map((row) => row[i].length)),
   );
 
-  const separator: string[] = columnWidths.map(w => '-'.repeat(w));
+  const separator: string[] = columnWidths.map((w) => '-'.repeat(w));
   formattedData.splice(1, 0, separator);
 
   const formattedTable: string = formattedData
-    .map(row => row.map((cell, i) => cell.padEnd(columnWidths[i])).join(' | '))
+    .map((row) => row.map((cell, i) => cell.padEnd(columnWidths[i])).join(' | '))
     .join('\n');
 
   console.log(formattedTable);
@@ -34,14 +34,14 @@ export function printBarChart(
   title: string,
   counts: Counts,
   averageCounts: Counts,
-  label: string
+  label: string,
 ): void {
   const sortedEntries: [string, number][] = Object.entries(counts).sort(([a], [b]) => {
     const isNumeric = !isNaN(Number(a)) && !isNaN(Number(b));
     if (isNumeric) {
       return Number(a) - Number(b);
     }
-    return a.localeCompare(b)
+    return a.localeCompare(b);
   });
 
   if (sortedEntries.length === 0) {
@@ -55,7 +55,7 @@ export function printBarChart(
   const maxValue: number = Math.max(
     1, // Ensure a minimum value of 1 to avoid division by zero if all counts are 0
     ...Object.values(counts),
-    ...Object.values(averageCounts)
+    ...Object.values(averageCounts),
   );
   const maxBarWidth = 40;
 
@@ -63,14 +63,11 @@ export function printBarChart(
 --- ${title} ---`);
   const header = `${label.padEnd(maxNameLength)} | Count | Avg   | Chart`;
   console.log(header);
-  console.log(
-    '-'.repeat(maxNameLength) + ' | ----- | ----- | ' + '-'.repeat(maxBarWidth)
-  );
+  console.log('-'.repeat(maxNameLength) + ' | ----- | ----- | ' + '-'.repeat(maxBarWidth));
 
   for (const [name, count] of sortedEntries) {
     const avg: number = averageCounts[name] || 0;
-    const formattedAvg: string =
-      avg > 1 ? String(Math.round(avg)) : avg.toFixed(1);
+    const formattedAvg: string = avg > 1 ? String(Math.round(avg)) : avg.toFixed(1);
 
     const barWidth: number = Math.round((count / maxValue) * maxBarWidth);
     const avgMarkerPos: number = Math.round((avg / maxValue) * maxBarWidth);
@@ -84,8 +81,8 @@ export function printBarChart(
 
     console.log(
       `${name.padEnd(maxNameLength)} | ${String(count).padEnd(
-        5
-      )} | ${formattedAvg.padEnd(5)} | ${bar}`
+        5,
+      )} | ${formattedAvg.padEnd(5)} | ${bar}`,
     );
   }
 }
@@ -94,7 +91,7 @@ export function calculateBreakdown<T, AbilityType extends BaseSpellLike>(
   spheres: MysticSphere[],
   keys: readonly T[],
   getAbilityKeys: (ability: AbilityType) => T[] | T | undefined,
-  getAbilities: (sphere: MysticSphere) => AbilityType[]
+  getAbilities: (sphere: MysticSphere) => AbilityType[],
 ): {
   fullBreakdown: Breakdown;
   totals: Counts;
@@ -126,7 +123,7 @@ export function calculateBreakdown<T, AbilityType extends BaseSpellLike>(
 
   const totals: Counts = {};
   const averageCounts: Counts = {};
-  const spheresForAverage = spheres.filter(sphere => sphere.name !== 'Universal');
+  const spheresForAverage = spheres.filter((sphere) => sphere.name !== 'Universal');
   const numSpheresForAverage: number = spheresForAverage.length;
 
   for (const key of keys) {

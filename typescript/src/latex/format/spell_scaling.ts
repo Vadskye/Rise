@@ -4,9 +4,11 @@ const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;
 const healingRankPattern = /hprank(\w+)\b/;
 const healingRankLowPattern = /hprank(\w+)low\b/;
-const strikePattern = /\b[mM]ake.*\bstrike/
+const strikePattern = /\b[mM]ake.*\bstrike/;
 
-export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>): string | null {
+export function spellScaling(
+  spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>,
+): string | null {
   if (!spell.scaling) {
     return null;
   }
@@ -22,7 +24,9 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
 
   if (spell.scaling === 'accuracy') {
     if (containsDamageValue(spell)) {
-      console.warn(`Spell ${spell.name} has accuracy scaling, but should probably have damage scaling`);
+      console.warn(
+        `Spell ${spell.name} has accuracy scaling, but should probably have damage scaling`,
+      );
     }
     // We currently can't easily check whether a functionsLike spell also makes an attack.
     if (!(makesAttack || spell.functionsLike)) {
@@ -31,14 +35,19 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
     return `The attack's \\glossterm{accuracy} increases by +1 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'double_accuracy') {
     if (containsDamageValue(spell)) {
-      console.warn(`Spell ${spell.name} has double accuracy scaling, but should probably have damage scaling`);
+      console.warn(
+        `Spell ${spell.name} has double accuracy scaling, but should probably have damage scaling`,
+      );
     }
     if (!(makesAttack || spell.functionsLike)) {
       console.warn(`Spell ${spell.name} has double accuracy scaling, but does not make an attack.`);
     }
     return `The attack's \\glossterm{accuracy} increases by +2 for each rank beyond ${rank}.`;
   } else if (spell.scaling === 'damage') {
-    const scaling = calculateDieScaling(spell.attack?.hit || spell.functionsLike?.exceptThat || spell.effect, 'damage');
+    const scaling = calculateDieScaling(
+      spell.attack?.hit || spell.functionsLike?.exceptThat || spell.effect,
+      'damage',
+    );
     if (!scaling) {
       console.warn(`Unable to calculate damage scaling for ${spell.name}`);
     }
@@ -60,27 +69,36 @@ export function spellScaling(spell: Pick<SpellLike, 'attack' | 'effect' | 'funct
   }
 }
 
-function containsDamageValue(spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike'>): boolean {
-  return damageRankPattern.test(spell.effect || '') || damageRankPattern.test(spell.attack?.hit || '') || damageRankPattern.test(spell.functionsLike?.exceptThat || '');
+function containsDamageValue(
+  spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike'>,
+): boolean {
+  return (
+    damageRankPattern.test(spell.effect || '') ||
+    damageRankPattern.test(spell.attack?.hit || '') ||
+    damageRankPattern.test(spell.functionsLike?.exceptThat || '')
+  );
 }
 
-function calculateDieScaling(effect: string | undefined, damageOrHealing: 'damage' | 'healing'): string | undefined {
+function calculateDieScaling(
+  effect: string | undefined,
+  damageOrHealing: 'damage' | 'healing',
+): string | undefined {
   const lowPattern = damageOrHealing === 'damage' ? damageRankLowPattern : healingRankLowPattern;
   // First, check for damageranklow, which uses different scaling.
   const drLowMatches = effect?.match(lowPattern);
   if (drLowMatches && drLowMatches[1]) {
     const damageBonusByRank = {
-      'zero': '1',
-      'one': '2',
-      'two': '1d6',
-      'three': '1d10',
-      'four': '1d10',
-      'five': '2d8',
-      'six': '3d8',
-      'seven': '3d10',
-      'eight': '4d10',
-      'nine': '6d10',
-      'ten': '8d10',
+      zero: '1',
+      one: '2',
+      two: '1d6',
+      three: '1d10',
+      four: '1d10',
+      five: '2d8',
+      six: '3d8',
+      seven: '3d10',
+      eight: '4d10',
+      nine: '6d10',
+      ten: '8d10',
     }[drLowMatches[1]];
 
     return damageBonusByRank;
@@ -90,17 +108,17 @@ function calculateDieScaling(effect: string | undefined, damageOrHealing: 'damag
   const drMatches = effect?.match(normalPattern);
   if (drMatches && drMatches[1]) {
     const damageBonusByRank = {
-      'zero': '1',
-      'one': '1',
-      'two': '2',
-      'three': '3',
-      'four': '1d6',
-      'five': '2d6',
-      'six': '2d8',
-      'seven': '2d10',
-      'eight': '4d6',
-      'nine': '4d8',
-      'ten': '4d10',
+      zero: '1',
+      one: '1',
+      two: '2',
+      three: '3',
+      four: '1d6',
+      five: '2d6',
+      six: '2d8',
+      seven: '2d10',
+      eight: '4d6',
+      nine: '4d8',
+      ten: '4d10',
     }[drMatches[1]];
 
     return damageBonusByRank;

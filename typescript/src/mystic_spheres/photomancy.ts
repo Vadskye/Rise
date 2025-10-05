@@ -735,7 +735,7 @@ export const photomancy: MysticSphere = {
     // limited scope.
     // drX-1 from debuff, +1dr from short range = dr5.
     {
-      name: "Blinding Sun",
+      name: 'Blinding Sun',
 
       attack: {
         hit: `

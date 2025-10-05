@@ -523,7 +523,7 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'mind arrow',
-        exceptThat: "the strike deals double damage.",
+        exceptThat: 'the strike deals double damage.',
       },
       rank: 5,
       roles: ['burst'],

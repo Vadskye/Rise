@@ -85,7 +85,6 @@ export function wrapEffectWithEnvironment({
   `;
 }
 
-
 // TODO: add support for sustain/attune abilities
 function determineEnvironment(isMagical: boolean): string {
   return isMagical ? 'magicalactiveability' : 'activeability';

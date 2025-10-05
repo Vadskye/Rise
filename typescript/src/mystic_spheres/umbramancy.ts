@@ -593,7 +593,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Greater Sever Shadow',
       functionsLike: {
-        name: "sever shadow",
+        name: 'sever shadow',
         exceptThat: `
           when the effect ends, you can choose to \\glossterm{teleport} to the location of your shadow.
           You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to your shadow.
@@ -700,7 +700,7 @@ export const umbramancy: MysticSphere = {
     // from the combo effect. We also get the usual +1dr for unavoidable damage delay. A
     // tiny area in short range is r2. With flat damage, the +2dr brings us back to dr3.
     {
-      name: "Shadow Blossom",
+      name: 'Shadow Blossom',
 
       attack: {
         hit: `
@@ -722,11 +722,12 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: "Mighty Shadow Blossom",
+      name: 'Mighty Shadow Blossom',
 
       functionsLike: {
         name: 'shadow blossom',
-        exceptThat: 'the damage increases to \\damagerankfivelow, and the teleportation range increases to \\medrange.',
+        exceptThat:
+          'the damage increases to \\damagerankfivelow, and the teleportation range increases to \\medrange.',
       },
       rank: 5,
       roles: ['clear', 'turtle'],

@@ -39,15 +39,15 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   // show up in the final ability. This means that we didn't handle some scaling value
   // correctly.
   if (/\bfor each rank beyond\b/.test(abilityText)) {
-    warn("Ability still has listed scaling");
+    warn('Ability still has listed scaling');
   }
 
   if (/\\damagerank/.test(abilityText)) {
-    warn("Ability still has listed \\damagerank");
+    warn('Ability still has listed \\damagerank');
   }
 
   if (/\\hprank/.test(abilityText)) {
-    warn("Ability still has listed \\hprank");
+    warn('Ability still has listed \\hprank');
   }
 }
 
@@ -64,10 +64,7 @@ interface PlayerAbility extends Spell {
 // that placeholders can handle, and it allows us to make simplifying assumptions with our
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
-export function reformatAsMonsterAbility(
-  monster: Creature,
-  ability: PlayerAbility,
-): PlayerAbility {
+export function reformatAsMonsterAbility(monster: Creature, ability: PlayerAbility): PlayerAbility {
   if (ability.attack) {
     reformatAttackTargeting(monster, ability);
     reformatAttackConsequences(monster, ability);
@@ -140,12 +137,18 @@ export function reformatAttackConsequences(monster: Creature, ability: PlayerAbi
   // This phrasing is typically seen with fear effects
   attack.hit = attack.hit.replace(/\bby you\b/, 'by the $name');
 
-  attack.hit = attack.hit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) => calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)));
+  attack.hit = attack.hit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
+    calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
+  );
   if (attack.crit) {
-    attack.crit = attack.crit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) => calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)));
+    attack.crit = attack.crit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
+      calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
+    );
   }
   if (attack.injury) {
-    attack.injury = attack.injury.replace(damageRankPattern, (_, damageRank, lowPowerScaling) => calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)));
+    attack.injury = attack.injury.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
+      calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
+    );
   }
 
   // We should have applied all damage scaling values, so we can safely remove this to
@@ -160,17 +163,17 @@ type DamageRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 function parseDamageRank(rankText: string): DamageRank {
   // Don't laugh at me
   const rank = {
-    'zero': 0,
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4,
-    'five': 5,
-    'six': 6,
-    'seven': 7,
-    'eight': 8,
-    'nine': 9,
-    'ten': 10,
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    ten: 10,
   }[rankText];
   if (!rank) {
     throw new Error(`Unable to parse rank '${rankText}'`);
@@ -182,7 +185,12 @@ function parseDamageRank(rankText: string): DamageRank {
 // This can be applied to attack.hit, attack.crit, or attack.injury, since all of those
 // could have damage terms. We use the full `ability` to calculate damage scaling from
 // rank.
-export function calculateDamage(monster: Creature, ability: PlayerAbility, damageRank: DamageRank, lowPowerScaling: boolean): string {
+export function calculateDamage(
+  monster: Creature,
+  ability: PlayerAbility,
+  damageRank: DamageRank,
+  lowPowerScaling: boolean,
+): string {
   const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
   const relevantMonsterPower = ability.isMagical ? monster.magical_power : monster.mundane_power;
 
@@ -222,12 +230,13 @@ export function calculateDamage(monster: Creature, ability: PlayerAbility, damag
       10: `${Math.floor(effectivePower + 2)}d10`,
     }[damageRank];
 
-    const flatDamage = {
-      0: Math.floor(effectivePower / 2),
-      1: Math.floor(effectivePower / 2),
-      2: effectivePower,
-      3: effectivePower,
-    }[damageRank as number] || 0;
+    const flatDamage =
+      {
+        0: Math.floor(effectivePower / 2),
+        1: Math.floor(effectivePower / 2),
+        2: effectivePower,
+        3: effectivePower,
+      }[damageRank as number] || 0;
 
     if (flatDamage) {
       return `${damageDice}\\plus${flatDamage} damage`;
