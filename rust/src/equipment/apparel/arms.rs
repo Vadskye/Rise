@@ -278,7 +278,7 @@ fn gloves() -> Vec<Apparel> {
             You can activate these gloves as a standard action using a \glossterm{free hand}.
             When you do, make an attack vs. Fortitude against a creature you touch with either glove.
             After activating this item, you \glossterm{briefly} cannot activate it again.
-            \hit The target is \glossterm{briefly} \\slowed.
+            \hit The target is \glossterm{briefly} \slowed.
             If it is \glossterm{injured}, it is also slowed as a \glossterm{condition}.
         "),
         upgrades: vec![
