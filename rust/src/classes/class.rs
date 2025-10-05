@@ -1557,9 +1557,9 @@ impl Class {
                         This only applies the first time you attempt a task.
                         If you retry the same task, your checks do not explode.
                         \magicaldomainability{Essence} You gain the \ability{twist of fate} ability.
-                        \begin{magicalactiveability}{Twist of Fate}[\abilitytag{Subtle}]
+                        \begin{magicalactiveability}{Twist of Fate}{Standard action}
+                            \abilitytags \abilitytag{Subtle}
                             \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
-                            \abilityusagetime Standard action.
                             \rankline
                             An improbable event occurs within \distrange.
                             You can specify in general terms what you want to happen, such as ``Make the bartender leave the bar''.
@@ -1586,8 +1586,7 @@ impl Class {
                         \magicaldomainability{Gift} Your damaging attacks deal double damage to objects.
                         \domainability{Aspect} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
                         \magicaldomainability{Essence} You gain the \ability{lay waste} ability.
-                        \begin{magicalactiveability}{Lay Waste}
-                            \abilityusagetime Standard action.
+                        \begin{magicalactiveability}{Lay Waste}{Standard action}
                             \rankline
                             Make an attack vs. Fortitude against all \glossterm{unattended} \glossterm{mundane} objects in a \areamed radius.
                             You may freely exclude any number of 5-ft. cubes from the area, as long as the resulting area is still contiguous.
@@ -1611,8 +1610,8 @@ impl Class {
                         \domainability{Gift} You are immune to being \charmed and \goaded.
                         \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
                         \magicaldomainability{Essence} You gain the \ability{blood sacrifice} ability.
-                        \begin{magicalactiveability}{Blood Sacrifice}[\abilitytag{Swift}]
-                            \abilityusagetime Standard action.
+                        \begin{magicalactiveability}{Blood Sacrifice}{Standard action}
+                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
@@ -1633,8 +1632,8 @@ impl Class {
                     \subsubsection{Good Domain}
                         \domainability{Gift} You are immune to \atCurse attacks and being \dominated.
                         \magicaldomainability{Aspect} You gain the \ability{sacrificial bond} ability.
-                        \begin{magicalactiveability}{Sacrificial Bond}[\abilitytag{Swift}]
-                            \abilityusagetime Standard action.
+                        \begin{magicalactiveability}{Sacrificial Bond}{Standard action}
+                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} within \medrange.
                             Whenever that ally would gain a \glossterm{vital round} while they are within a \largearea radius \glossterm{emanation} from you, you gain that \glossterm{vital wound} instead.
@@ -1659,9 +1658,9 @@ impl Class {
                         \magicaldomainability{Aspect} When you roll a 1 on an \glossterm{attack roll}, it is treated as if you had rolled a 6.
                         This does not affect bonus dice rolled for exploding attacks (see \pcref{Exploding Attacks}).
                         \magicaldomainability{Essence} You gain the \ability{compel law} ability.
-                        \begin{magicalactiveability}{Compel Law}[\abilitytag{Compulsion}]
+                        \begin{magicalactiveability}{Compel Law}{Standard action}
+                            \abilitytags \abilitytag{Compulsion}
                             \abilitycost One \glossterm{fatigue level}.
-                            \abilityusagetime Standard action.
                             \rankline
                             Make an attack vs. Mental against all creatures within a \largearea radius from you.
                             This attack also automatically succeeds against you, ignoring all forms of immunity.
@@ -1708,8 +1707,8 @@ impl Class {
                         \domainability{Gift} You become proficient with an additional \glossterm{usage class} of armor (light, medium, or heavy).
                             You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
                         \magicaldomainability{Aspect} You gain the \ability{divine protection} ability.
-                        \begin{magicalactiveability}{Divine Protection}{\abilitytag{Swift}}
-                            \abilityusagetime Standard action.
+                        \begin{magicalactiveability}{Divine Protection}{Standard action}
+                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             It gains a \plus1 \glossterm{enhancement bonus} to all defenses while it is adjacent to you.

@@ -363,8 +363,8 @@
     Secondarily, reactive movements should be simple to resolve.
     If you find yourself rolling a lot of initiative checks to get through the movement phase, you're probably trying to make overly complicated movements.
 
-    \begin{activeability}{Block}[\abilitytag{Swift}]
-      \abilityusagetime Move action.
+    \begin{activeability}{Block}{Move action}
+      \abilitytags \abilitytag{Swift}
       \rankline
       When you use this ability, choose a creature you can see.
       During the current phase, whenever that creature attempts to move from a space adjacent to you into another space adjacent to you, you can attempt to block its movement.
@@ -378,8 +378,7 @@
       If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
     \end{activeability}
 
-    \begin{activeability}{Climb Forward}
-      \abilityusagetime Move action.
+    \begin{activeability}{Climb Forward}{Move action}
       \rankline
       This ability requires touching a solid vertical surface with two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Climb check.
       Make a Climb check to move along the surface.
@@ -388,8 +387,7 @@
       Critical success means the maximum distance you can move is doubled.
     \end{activeability}
 
-    \begin{activeability}{Follow}
-      \abilityusagetime Move action.
+    \begin{activeability}{Follow}{Move action}
       \rankline
       Choose a creature you can see, and the maximum distance you want to follow at.
       During the current phase, you automatically move such that your distance to the target is no greater than your desired follow distance, up to the limit of your relevant movement speed.
@@ -400,15 +398,13 @@
       If you fail at the initiative check, or if you cannot tell where the target went, you complete your movement as if the creature was still at the location where it disappeared.
     \end{activeability}
 
-    \begin{activeability}{Hustle}
-      \abilityusagetime Move action.
+    \begin{activeability}{Hustle}{Move action}
       \rankline
       Choose a path that you want to travel.
       You travel that path, up to the limit of your relevant movement speed.
     \end{activeability}
 
-    \begin{activeability}{Swim Forward}
-      \abilityusagetime Move action.
+    \begin{activeability}{Swim Forward}{Move action}
       \rankline
       This ability requires being immersed in a liquid like water and using two \glossterm{free hands}, or with one free hand if you take a \minus5 penalty to your Swim check.
       Make a Swim check to move through the liquid.
@@ -417,8 +413,7 @@
       Critical success means the maximum distance you can move increases to half of your base speed.
     \end{activeability}
 
-    \begin{activeability}{Withdraw}
-      \abilityusagetime Move action.
+    \begin{activeability}{Withdraw}{Move action}
       \rankline
       This ability functions like the \textit{follow} ability, except that you specify a minimum distance between you and the target instead of a maximum distance.
       In addition, you can specify multiple targets and try to keep away from all of them.
@@ -629,8 +624,8 @@
 
     You can use the \ability{soaring flight} ability to fly above your maximum height with a fly speed.
 
-    \begin{sustainability}{Soaring Flight}{\atSustain (standard)}
-      \abilityusagetime Standard action.
+    \begin{sustainability}{Soaring Flight}{Standard action}
+      \abilitytags \atSustain (standard)
       \rankline
       While this ability is active, your maximum height with your fly speed is quadrupled.
       When this ability ends, if you are above your maximum height, you fall.
@@ -651,16 +646,14 @@
   For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
   The rules for strikes listed here simply define the normal behavior.
 
-  \begin{activeability}*{Basic Strike -- Melee}
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Basic Strike -- Melee}{Standard action}
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
     You must have \glossterm{line of effect} to the target.
     \hit You deal the target \glossterm{weapon damage} from the weapon.
   \end{activeability}
 
-  \begin{activeability}*{Basic Strike -- Projectile}
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Basic Strike -- Projectile}{Standard action}
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
@@ -668,8 +661,7 @@
     \hit You deal the target \glossterm{weapon damage} from the weapon.
   \end{activeability}
 
-  \begin{activeability}*{Basic Strike -- Thrown}
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Basic Strike -- Thrown}{Standard action}
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
@@ -763,8 +755,7 @@
     \end{dtabularx}
   \end{dtable!*}
 
-  \begin{activeability}*{Charge}
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Charge}{Standard action}
     \rankline
     After you use this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
     Since this ability does not have the \abilitytag{Swift} tag, it does not affect attacks made against you during the current phase.
@@ -773,8 +764,7 @@
     At the end of your movement, you can make a melee \glossterm{strike}.
   \end{activeability}
 
-  \begin{activeability}*{Desperate Exertion}
-    \abilityusagetime Triggered (see text).
+  \begin{activeability}*{Desperate Exertion}{Triggered (see text)}
     \par \noindent Cost: Two \glossterm{fatigue levels}.
     \rankline
     You \glossterm{reroll} any \glossterm{attack roll} or \glossterm{check} you just rolled, keeping the better result.
@@ -788,8 +778,8 @@
     Finally, you cannot use this ability to affect actions that take one minute or longer to complete, such as \glossterm{rituals}.
   \end{activeability}
 
-  \begin{activeability}*{Escape Grapple}[\abilitytag{Brawling}]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Escape Grapple}{Standard action}
+    \abilitytags \abilitytag{Brawling}
     \rankline
     Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
     You can use the Flexibility skill in place of your brawling accuracy (see \pcref{Flexibility}).
@@ -799,8 +789,8 @@
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
 
-  \begin{activeability}*{Grapple}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Grapple}{Standard action}
+    \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
     \rankline
     Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
 
@@ -809,17 +799,20 @@
     \crit You also control the grapple (see \pcref{Controlling a Grapple}).
   \end{activeability}
 
-  \begin{activeability}*{Maintain Grapple}[\abilitytag{Brawling}, \abilitytag{Swift}]
-    \abilityusagetime \glossterm{Free action} once per round while you are grappling another creature.
+  \begin{activeability}*{Maintain Grapple}{\glossterm{Free action}}
+    \abilitytags \abilitytag{Brawling}, \abilitytag{Swift}
     \rankline
+    % TODO: Awkward wording
+    You can use this ability once per round while you are grappling another creature.
+
     Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
     This attack has no immediate effect.
     The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
     If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
-  \begin{activeability}*{Ready Reaction}[\atSwift]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Ready Reaction}{Standard action}
+    \abilitytags \atSwift
     \rankline
     When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
     For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
@@ -831,19 +824,19 @@
     This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
   \end{activeability}
 
-  \begin{activeability}*{Recover}[\abilitytag{Swift}]
+  \begin{activeability}*{Recover}{Standard action}
+    \abilitytags \abilitytag{Swift}
     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
-    \abilityusagetime Standard action.
     \rankline
     You remove all \glossterm{conditions} affecting you.
     Then, you regain all of your \glossterm{hit points}.
     Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
   \end{activeability}
 
-  \begin{activeability}*{Shove}[\abilitytag{Brawling}]
-    \abilityusagetime Standard action normally, or \glossterm{move action} while grappling.
+  \begin{activeability}*{Shove}{Standard action}
+    \abilitytags \abilitytag{Brawling}
     \rankline
-    If you are grappling or being grappled by a creature, this ability affects all creatures grappling with you (see \pcref{Grappling}).
+    If you are grappling or being grappled by a creature, you can use this ability as a \glossterm{move action}, and it affects all creatures grappling with you (see \pcref{Grappling}).
     Otherwise, the target is something you \glossterm{touch}.
     You must be strong enough to push each target (see \pcref{Weight Categories}).
 
@@ -859,26 +852,25 @@
     \crit If you are strong enough to carry the target, you can move up to your full movement speed.
   \end{activeability}
 
-  \begin{activeability}*{Sprint}
+  \begin{activeability}*{Sprint}{Standard action}
     % It's important that this can only be used with movements
     % to prevent it from being abused with abilities like Shove?
     % Is that clear in the text?
-    \abilityusagetime \glossterm{Move action} or standard action.
-    \abilitycost One \glossterm{fatigue level} if used as a move action. No cost when used as a standard action.
+    \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{move action}.
     \rankline
-    % TODO: figure out how to say you can't sprint twice
-    You can immediately take another \glossterm{move action}.
+    % TODO: Awkward wording
+    You can immediately take a \glossterm{move action} other than this ability.
     For the duration of that movement, you double your speed.
 
+    You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
     % TODO: flip this to penaltize the carried creature? But then it allows the old grapple nonsense
     Normally, you cannot carry or move another creature in any way while using this ability.
     If you use this ability, you must leave those creatures behind without moving them unless they spend a standard action to cling to you.
-    You can use this ability in the middle of a phase after noticing that your movement is insufficient to keep up with an enemy's reactive movement (see \pcref{Movement Abilities}).
   \end{activeability}
 
   % Is this a knockback effect? What happens if you throw someone into a wall?
-  \begin{activeability}*{Throw}[\abilitytag{Brawling}]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Throw}{Standard action}
+    \abilitytags \abilitytag{Brawling}
     \rankline
     You throw an object or creature you hold in at least one hand.
     The object's \glossterm{weight category} must be below the maximum weight category you can lift normally (see \pcref{Weight Categories}).
@@ -894,15 +886,15 @@
     That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
   \end{activeability}
 
-  \begin{activeability}*{Total Defense}[\abilitytag{Swift}]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Total Defense}{Standard action}
+    \abilitytags \abilitytag{Swift}
     \rankline
     You are \braced this round.
     Because this ability has the \abilitytag{Swift} tag, this protects you from attacks during the current phase.
   \end{activeability}
 
-  \begin{activeability}*{Trip}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-    \abilityusagetime Standard action.
+  \begin{activeability}*{Trip}{Standard action}
+    \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
     \rankline
     Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
     \hit The target becomes \prone.

@@ -73,12 +73,12 @@ export function wrapEffectWithEnvironment({
       .sort(caseInsensitiveSort)
       .map((tag) => `\\abilitytag{${format.titleCase(tag)}}`)
       .join(', ');
-    tagsText = `[${formattedTags}]`;
+    tagsText = `\\abilitytags ${formattedTags}`;
   }
-  const usageTimeText = `\\abilityusagetime ${format.uppercaseFirst(usageTime || 'standard')} action.`;
+  const usageTimeText = `${format.uppercaseFirst(usageTime || 'standard')} action.`;
   return `
-    \\begin{${environment}}*{${format.titleCase(name)}}${tagsText}
-      ${usageTimeText}
+    \\begin{${environment}}*{${format.titleCase(name)}}{${usageTimeText}}
+      ${tagsText}
       \\rankline
       ${effect}
     \\end{${environment}}

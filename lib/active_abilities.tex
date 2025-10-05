@@ -18,8 +18,8 @@
 % #1 = if true, include \label{#3}
 % #2 = Suffix after the name not used for label/targets/etc. Not bold.
 % #3 = Name of the ability
-% #4 = Right-aligned section to the right of the ability name. Usually tags, sometimes rank.
-\DeclareDocumentEnvironment{activeability}{s o m o}
+% #4 = Usage time
+\DeclareDocumentEnvironment{activeability}{s o m m}
 {
   \begin{activeabilitymdframed}
     \RaggedRight
@@ -103,12 +103,12 @@
   \end{attuneabilitymdframed}
 }
 
-\DeclareDocumentEnvironment{magicalactiveability}{s m o}
+\DeclareDocumentEnvironment{magicalactiveability}{s m m}
 {
 \IfValueTF{#1}{
-  \begin{activeability}*[\sparkle]{#2}[#3]
+  \begin{activeability}*[\sparkle]{#2}{#3}
 }{
-  \begin{activeability}[\sparkle]{#2}[#3]
+  \begin{activeability}[\sparkle]{#2}{#3}
     }
     }
     {
@@ -128,7 +128,7 @@
 }
 
 
-\DeclareDocumentEnvironment{magicalattuneability}{s m m o}
+\DeclareDocumentEnvironment{magicalattuneability}{s m m}
 {
 \IfValueTF{#1}{
   \begin{attuneability}*[\sparkle]{#2}{#3}

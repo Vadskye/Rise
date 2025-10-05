@@ -13,8 +13,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{activeability}{Sneak Attack}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Sneak Attack}{Standard action}
                     \rankline
                     Make a \glossterm{strike} with a \weapontag{Light} or \weapontag{Compact} weapon against a creature within \shortrange (see \pcref{Weapon Tags}).
 
@@ -72,8 +71,8 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{attuneability}{Darkstalker}{\abilitytag{Attune}}
-                    \abilityusagetime Standard action.
+                \begin{attuneability}{Darkstalker}{Standard action}
+                    \abilitytags \atAttune
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{raggeditemize}
@@ -119,8 +118,7 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                \begin{activeability}{Assassination}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Assassination}{Standard action}
                     \rankline
                     You study a creature within \rngmed range, finding weak points you can take advantage of.
                     As a \glossterm{brief} effect, whenever you make a \glossterm{strike} against the target while it is adjacent to you and \unaware of the attack, the strike deals double damage.
@@ -224,8 +222,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     % Bards don't pay any EA cost for ally buffs
 
                     % Primed is 0.8 EA
-                    \begin{magicalactiveability}{Boastful Bravura}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Boastful Bravura}{Standard action}
                         \rankline
                         You are \glossterm{briefly} \primed.
 
@@ -237,8 +234,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % Everyone fortified is 1 EA
-                    \begin{magicalsustainability}{Cadenza of Courage}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Cadenza of Courage}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
                         \rankline
                         All \glossterm{allies} who can see or hear your performance are \fortified.
                         Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
@@ -250,8 +247,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     % Everyone shielded is 1 EA
-                    \begin{magicalsustainability}{Cantata of Caution}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Cantata of Caution}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
                         \rankline
                         All \glossterm{allies} who can see or hear your performance are \shielded.
                         Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
@@ -263,8 +260,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target is also immune to being \partiallyunaware.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Cleansing Counterpoint}{\abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Cleansing Counterpoint}{Standard action}
+                        \abilitytags \abilitytag{Sustain} (minor)
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
                         The target chooses one of its \glossterm{conditions}.
@@ -278,8 +275,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     % r1 area gets drX. Normally, small radius would be r2, but idk bard.
-                    \begin{magicalactiveability}{Crashing Cacaphony}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Crashing Cacaphony}{Standard action}
                         \rankline
                         Make an attack vs. Fortitude against all \glossterm{enemies} in a \smallarea radius from you.
                         \hit \damagerankonelow.
@@ -295,8 +291,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % Dazzled is 1.8 EA, so we can get away with it with limited scope
-                    \begin{magicalsustainability}{Dazzling Discordance}{\abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Dazzling Discordance}{Standard action}
+                        \abilitytags \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} within a \tinyarea radius from you.
                         \hit For the duration of your performance, the target is \dazzled.
@@ -307,8 +303,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
 
-                    \begin{magicalactiveability}{Dirge of Doom}[\abilitytag{Emotion}]
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Dirge of Doom}{Standard action}
+                        \abilitytags \abilitytag{Emotion}
                         \rankline
                         Make an attack vs. Mental against one creature within \medrange.
                         \hit \damagerankonelow.
@@ -323,8 +319,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % Stunned in HP is 1.2 EA, +0.4 for prefire = 1.6 EA. We can do that with limited scope.
-                    \begin{magicalsustainability}{Dizzying Ditty}{\abilitytag{Compulsion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Dizzying Ditty}{Standard action}
+                        \abilitytags \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit For the duration of your performance, the target is \stunned while it is \glossterm{injured}.
@@ -336,8 +332,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     % Any two focused is 1 EA
-                    \begin{magicalsustainability}{Focusing Fantasia}{\abilitytag{Emotion}, \abilitytag{Sustain} (standard)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Focusing Fantasia}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline
                         Choose up to two \glossterm{allies} within \shortrange.
                         For the duration of your performance, each target is \focused.
@@ -352,8 +348,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     % Frightened by you is 1.7 EA, we can get away with it using limited scope
-                    \begin{magicalsustainability}{Frightening Fugue}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Frightening Fugue}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit For the duration of your performance, the target is \frightened by you.
@@ -364,8 +360,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{2} The area increases to a \medarea radius.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Hypnotic Hymn}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Hypnotic Hymn}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against up to two creatures within \shortrange.
                         You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
@@ -376,8 +372,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Intonation of Ingenuity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Intonation of Ingenuity}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Choose one \glossterm{ally} within \rngmed range.
                         For the duration of your performance, the target gains a \plus1 bonus to \glossterm{checks}.
@@ -389,8 +385,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalsustainability}
 
                     % Healing bonus is normally +1dr. That's stronger on a non-scaling effect, but keep it because it's a class feature.
-                    \begin{magicalactiveability}{Palliative Poem}[\abilitytag{Swift}]
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Palliative Poem}{Standard action}
+                        \abilitytags \abilitytag{Swift}
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d8+1d6 \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
@@ -406,8 +402,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % Brief goad is 1 EA. We normally don't do crit conversion, but it might make sense here, since there's no good way to do the scaling otherwise.
-                    \begin{magicalsustainability}{Partita of Provocation}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Partita of Provocation}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit The target is \glossterm{briefly} \goaded by you.
@@ -417,8 +413,8 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 1.
                     \end{magicalsustainability}
 
-                    \begin{magicalsustainability}{Serenade of Serenity}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                        \abilityusagetime Standard action.
+                    \begin{magicalsustainability}{Serenade of Serenity}{Standard action}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Choose any number of \glossterm{allies} within \medrange.
                         For the duration of your performance, each target is \trait{impervious} to \atCompulsion and \atEmotion attacks.
@@ -846,8 +842,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{What's That Over There}[\abilitytag{Compulsion}]
-                    \abilityusagetime Standard action.
+                \begin{activeability}{What's That Over There}{Standard action}
+                    \abilitytags \abilitytag{Compulsion}
                     \rankline
                     Make a attack vs. Mental against a creature within \medrange.
                     In addition, choose a location on stable ground within range.
@@ -889,8 +885,8 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                \begin{activeability}{Nothing Is Real}[\abilitytag{Compulsion}]
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Nothing Is Real}{Standard action}
+                    \abilitytags \abilitytag{Compulsion}
                     \rankline
                     Make an attack vs. Mental against a creature within \shortrange.
                     \hit The target is \glossterm{briefly} convinced that nothing is real.

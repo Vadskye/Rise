@@ -475,9 +475,8 @@ mod tests {
                 .latex_ability_block(&sample_creature())
                 .trim()
                 .to_string(),
-            r"\begin<magicalactiveability>*<Torchlight>
+            r"\begin<magicalactiveability>*<Torchlight>{Minor action}
                 \abilitytag{Compulsion}, \abilitytag{Sustain} (minor)
-\abilityusagetime Minor action.
                 \rankline
                 The $name glows like a torch for a minute.
             \end<magicalactiveability>",

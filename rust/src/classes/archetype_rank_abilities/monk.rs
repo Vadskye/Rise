@@ -72,8 +72,7 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
             // Expected jump height: 15 from speed, so can reliably jump completely
             // over Medium creatures.
             description: r"
-                \begin{activeability}{Death From Above}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Death From Above}{Standard action}
                     \rankline
                     You jump and move as normal for the jump (see \pcref{Jumping}).
                     In addition, you can make a \glossterm{strike} that deals 1d6 \glossterm{extra damage} at any point during that jump.
@@ -288,8 +287,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                 After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
                 {
-                    \begin{magicalactiveability}{Abandon the Fragile Self}[\abilitytag{Swift}]
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Abandon the Fragile Self}{Free action}
+                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You can negate one \glossterm{condition} that would be applied to you this phase.
                         In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
@@ -298,8 +297,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The defense penalty is reduced to \minus1.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Burst of Blinding Speed}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Burst of Blinding Speed}{Free action}
                         \rankline
                         You gain a \plus10 foot bonus to your \glossterm{movement speed} this phase.
                         In exchange, you cannot use the \ability{sprint} ability this phase.
@@ -308,8 +306,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The speed bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Calm the Inner Tempest}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Calm the Inner Tempest}{Free action}
                         \rankline
                         You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
 
@@ -317,8 +314,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Extend the Flow of Ki}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Extend the Flow of Ki}{Free action}
                         \rankline
                         Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
@@ -326,8 +322,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} You can attack enemies up to 15 feet away from you.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Flash Step}
-                        \abilityusagetime See text.
+                    \begin{magicalactiveability}{Flash Step}{Triggered}
                         \rankline
                         You can use this ability as part of movement with your walk speed.
                         % TODO: is 'horizontally' the correct word?
@@ -342,8 +337,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The movement cost to teleport is reduced to be equal to the distance you teleport.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Flurry of a Thousand Cuts}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Flurry of a Thousand Cuts}{Free action}
                         \rankline
                         When you make a \glossterm{strike} this round, you \glossterm{reroll} the attack roll once and take the higher result.
                         However, you cannot get a \glossterm{critical hit} or \glossterm{glancing blow} with strikes.
@@ -352,8 +346,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} You also gain a \plus1 \glossterm{accuracy} bonus with strikes.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Hear the Rustling Wings}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Hear the Rustling Wings}{Free action}
                         \rankline
                         You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
 
@@ -361,8 +354,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Kindle the Living Flame}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Kindle the Living Flame}{Free action}
                         \rankline
                         Your \glossterm{strikes} have the \atFire tag this round.
 
@@ -370,8 +362,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} This effect lasts \glossterm{briefly}.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Leap of the Heavens}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Leap of the Heavens}{Free action}
                         \rankline
                         You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
                         This increases your maximum vertical jump distance normally.
@@ -380,8 +371,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus20 feet.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Rest Atop the Precipice}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Rest Atop the Precipice}{Free action}
                         \rankline
                         You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
 
@@ -389,8 +379,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Scale the Highest Tower}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Scale the Highest Tower}{Free action}
                         \rankline
                         You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
                         % TODO: is this wording correct?
@@ -399,8 +388,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus6.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Shelter from Falling Rain}[\abilitytag{Swift}]
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Shelter from Falling Rain}{Free action}
+                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You gain a \plus2 bonus to your defenses against ranged \glossterm{strikes}.
                         However, you take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
@@ -409,8 +398,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The bonus increases to \plus3.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Step Between the Mystic Worlds}[\abilitytag{Swift}]
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
+                        \abilitytags \abilitytag{Swift}
                         \rankline
                         All attacks against you have a 20\% \glossterm{failure chance} this round.
                         However, your attacks also have a 20\% failure chance this round.
@@ -419,8 +408,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The failure chance for attacks against you increases to 30\%.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Thread the Eye of the Storm}
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Thread the Eye of the Storm}{Free action}
                         \rankline
                         You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this round (see \pcref{Weapon Range Limits}).
 
@@ -428,8 +416,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The penalty reduction increases to 3.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Surpass the Mortal Limits}[\abilitytag{Swift}]
-                        \abilityusagetime Free action.
+                    \begin{magicalactiveability}{Surpass the Mortal Limits}{Free action}
+                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You can add your Willpower to all \glossterm{checks} you make this phase that are based on Strength, Dexterity, or Constitution.
                         However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
@@ -449,8 +437,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Invested Blow}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Invested Blow}{Standard action}
                     \abilitycost Two \glossterm{fatigue levels} (see text).
                     \rankline
                     Make a \glossterm{strike} that deals double damage.

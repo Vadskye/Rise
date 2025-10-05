@@ -15,10 +15,10 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 You can use the \ability{animal companion} ability.
                 This ability requires 8 hours of training and attunement which the target must actively participate in.
                 You can convince a wild animal to undergo this training with the Creature Handling skill (see \pcref{Creature Handling}).
-                \begin{magicalattuneability}{Animal Companion}{\abilitytag{Attune}, \abilitytag{Emotion}}
-                    \abilityusagetime 8 hours of training, which the target must actively participate in.
+                \begin{magicalattuneability}{Animal Companion}{8 hours}
+                    \abilitytags \abilitytag{Attune}, \abilitytag{Emotion}
                     \rankline
-                    Choose a non-\glossterm{elite} Medium or smaller animal \glossterm{ally} within \shortrange.
+                    This ability requires eight hours of training with a non-\glossterm{elite} Medium or smaller animal \glossterm{ally}.
                     Its level must not exceed your level.
                     The target serves as a loyal companion to you.
                     It follows your directions to the best of its ability.
@@ -86,8 +86,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 As a standard action, you can use the \ability{tag-team takedown} ability.
                 When you use this ability, your animal companion generally waits until after you attack to make its own attack.
-                \begin{activeability}{Tag-Team Takedown}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Tag-Team Takedown}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
                     Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
@@ -220,8 +219,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Banestrike}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Banestrike}{Standard action}
                     \rankline
                     Make a \glossterm{strike}.
                     If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and is \glossterm{injured}, the strike deals double damage.
@@ -247,8 +245,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{attuneability}*{Quarry}{\abilitytag{Sustain} (attuneable, free), \abilitytag{Subtle}, \atSwift}
-                    \abilityusagetime \glossterm{Minor action}.
+                \begin{attuneability}*{Quarry}{\glossterm{Minor action}}
+                    \abilitytags \abilitytag{Sustain} (attuneable, free), \abilitytag{Subtle}, \atSwift
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
@@ -273,8 +271,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
-                    \begin{magicalactiveability}{Anchoring}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{magicalactiveability}{Anchoring}{Triggered}
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \glossterm{teleportation} effects.
@@ -283,8 +280,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Bring Down}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{magicalactiveability}{Bring Down}{Triggered}
                         \rankline
                         If your quarry is \glossterm{midair}, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party.
 
@@ -292,8 +288,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point this round, even if it is currently grounded.
                     \end{magicalactiveability}
 
-                    \begin{activeability}{Coordinated Stealth}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{activeability}{Coordinated Stealth}{Triggered}
                         \rankline
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
@@ -301,8 +296,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The penalty increases to \minus6.
                     \end{activeability}
 
-                    \begin{activeability}{Decoy}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{activeability}{Decoy}{Triggered}
                         \rankline
                         If you are adjacent to your quarry, it is \goaded by you.
 
@@ -310,8 +304,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} This effect instead applies if your quarry is within \shortrange of you.
                     \end{activeability}
 
-                    \begin{magicalactiveability}{Distraction}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{magicalactiveability}{Distraction}{Triggered}
                         \rankline
                         You do not gain the normal accuracy bonus against your quarry.
                         If you are adjacent to your quarry, the rest of your hunting party gains a \plus1 accuracy bonus against it.
@@ -320,8 +313,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The accuracy bonus applies as long as you are within \medrange of your quarry.
                     \end{magicalactiveability}
 
-                    \begin{activeability}{Swarm Hunter}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{activeability}{Swarm Hunter}{Triggered}
                         \rankline
                         When you use your \textit{quarry} ability, you can choose five additional targets as your quarry.
 
@@ -329,8 +321,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The number of additional targets is unlimited.
                     \end{activeability}
 
-                    \begin{magicalactiveability}{Titanslayer}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{magicalactiveability}{Titanslayer}{Triggered}
                         \rankline
                         If your quarry is Gargantuan or larger, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party that are adjacent to it.
 
@@ -338,8 +329,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The accuracy bonus applies regardless of distance from your quarry.
                     \end{magicalactiveability}
 
-                    \begin{activeability}{Vigilant}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{activeability}{Vigilant}{Triggered}
                         \rankline
                         Your quarry takes a \minus4 penalty to Sleight of Hand and Stealth checks against members of your hunting party.
 
@@ -347,8 +337,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} The penalty increases to \minus6.
                     \end{activeability}
 
-                    \begin{activeability}{Wolfpack}
-                        \abilityusagetime Can be triggered when you use \ability{quarry}.
+                    \begin{activeability}{Wolfpack}{Triggered}
                         \rankline
                         While your quarry is adjacent to at least three members of your hunting party, each adjacent member gains an additional \plus1 accuracy bonus against it.
 
@@ -367,8 +356,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{No Escape}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{No Escape}{Standard action}
                     \rankline
                     Make a strike.
                     If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, the strike deals double damage.
@@ -487,8 +475,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Ambush}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Ambush}{Standard action}
                     \rankline
                     Move up to your speed and make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
                     You gain a \plus2 accuracy bonus if the target is \unaware or \partiallyunaware of your attack.

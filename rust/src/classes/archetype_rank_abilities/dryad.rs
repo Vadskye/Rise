@@ -50,8 +50,8 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                \begin{magicalsustainability}{Fey Charm}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
-                    \abilityusagetime \glossterm{Minor action}.
+                \begin{magicalsustainability}{Fey Charm}{\glossterm{Minor action}}
+                    \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
                     \rankline
                     Make an attack vs. Mental against a creature within \medrange that is an animal, plant, or humanoid.
                     You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.

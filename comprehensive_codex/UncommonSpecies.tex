@@ -102,8 +102,7 @@
   \parhead{Special Abilities}
   \begin{raggeditemize}
     \itemhead{Alter Shape} A changling can change its body using the \ability{alter shape} ability.
-      \begin{activeability}{Alter Shape}
-        \abilityusagetime Standard action.
+    \begin{activeability}{Alter Shape}{Standard action}
         \rankline
         You make a Disguise check to alter your appearance (see \pcref{Change Appearance}).
         This physically changes your body to match the results of your disguise.
@@ -183,8 +182,8 @@
   \begin{raggeditemize}
     \itemhead{Darkvision} Drow have \trait{darkvision} with a 120 foot range, allowing them to see in complete darkness (see \pcref{Darkvision}).
     \magicalitemhead{Deep Darkness}
-      \begin{magicalsustainability}{Deep Darkness}{\abilitytag{Sustain} (standard)}
-        \abilityusagetime Standard action.
+    \begin{magicalsustainability}{Deep Darkness}{Standard action}
+        \abilitytags \abilitytag{Sustain} (standard)
         \rankline
         You create a void of darkness in a \medarea radius \glossterm{zone} within \medrange.
         \glossterm{Bright illumination} and \glossterm{brilliant illumination} within or passing through that area is dimmed to be no brighter than \glossterm{dim illumination}.
@@ -241,8 +240,7 @@
   \parhead{Special Abilities}
   \begin{raggeditemize}
     \itemhead{Fae Step}
-      \begin{magicalactiveability}{Fae Step}
-        \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Fae Step}{Standard action}
         \rankline
         You \glossterm{teleport} horizontally to a location within \shortrange.
 
@@ -421,8 +419,8 @@
       Since they have no legs, they are immune to being \prone.
       Most legless creatures cannot jump, but oozeborn can jump without penalty.
       They can also use the \ability{mold body} ability to adopt a particular shape.
-      \begin{sustainability}{Mold Body}{\abilitytag{Sustain} (free)}
-        \abilityusagetime Standard action.
+      \begin{sustainability}{Mold Body}{Standard action}
+        \abilitytags \abilitytag{Sustain} (free)
         \rankline
         You make a Disguise check to alter your appearance (see \pcref{Change Appearance}).
         This physically changes your body to match the results of your disguise.
@@ -459,8 +457,7 @@
   \begin{raggeditemize}
     \itemhead{Barkskin} A sapling gains a \plus2 bonus to Armor defense.
     \itemhead{Ingrain} A sapling can bury its roots into the ground.
-      \begin{activeability}{Ingrain}
-        \abilityusagetime \glossterm{Minor action}.
+    \begin{activeability}{Ingrain}{\glossterm{Minor action}}
         \rankline
         This ability can only be used if the sapling is \glossterm{grounded}.
         The sapling becomes \braced, and its \glossterm{movement speed} becomes 5 feet, regardless of any modifiers that normally apply.
@@ -512,8 +509,8 @@
     % A normal short range damage spell would deal drX+1.
     % Drop to drX for the teleport, and drX-1 for the AOE.
     \magicalcf{Tif}[1]{Abyssal Hop}
-      \begin{magicalactiveability}{Abyssal Hop}[\atFire]
-        \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Abyssal Hop}{Standard action}
+        \abilitytags \atFire
         \rankline
         You teleport horizontally into an unoccupied location within \shortrange on a stable surface that can support your weight.
         If the destination is invalid, this spell fails with no effect.
@@ -551,8 +548,8 @@
         % Normally, double defense is +1dr and burn is +1dr. This is more damage than that, but it's also a class feature, so it's probably fine?
         \item Hellfire Conduit: If your \ability{abyssal hop} ability also hits a target's Fortitude defense, you can repeat the attack against that during your next action.
         \item Tempting Allure: You can charm creatures.
-          \begin{magicalactiveability}{Charming Temptation}[\abilitytag{Emotion}, \abilitytag{Subtle}]
-            \abilityusagetime Standard action.
+          \begin{magicalactiveability}{Charming Temptation}{Standard action}
+            \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}
             \rankline
             Make an attack vs. Mental against a humanoid creature within \medrange.
             You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.

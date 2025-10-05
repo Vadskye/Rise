@@ -10,8 +10,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{activeability}{Dragon Breath}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Dragon Breath}{Standard action}
                     \abilitycost You \glossterm{briefly} cannot use this ability again.
                     \rankline
                     This ability's tag depends on your dragon type (see Dragon Types, above).
