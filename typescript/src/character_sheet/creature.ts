@@ -448,6 +448,14 @@ export class Creature implements CreaturePropertyMap {
       .getValuesFromAllRows(DAMAGING_ATTACK_KEYS) as any[];
   }
 
+  getManeuvers(): Maneuver[] {
+    return Object.values(this.maneuvers);
+  }
+
+  getSpells(): Spell[] {
+    return Object.values(this.spells);
+  }
+
   getDebuffAutoAttacks(): DebuffAutoAttackResult[] {
     // We assume that everything in this section comes from an autoattack; there's no
     // other way to add something here with current typescript. If we add more support for

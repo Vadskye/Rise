@@ -81,7 +81,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with positive local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor+2', 5),
+      replaceAccuracyTerms('$accuracy+2 vs. Armor', 5),
       '+7 vs. Armor',
       'should add positive local modifier',
     );
@@ -90,8 +90,8 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with negative local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor-3', 5),
-      '+2 vs. Armor',
+      replaceAccuracyTerms('a $accuracy-3 attack vs. Armor', 5),
+      'a +2 attack vs. Armor',
       'should subtract negative local modifier',
     );
     t.end();
@@ -108,8 +108,8 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with local and weapon accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor+2', 5, 3),
-      '+10 vs. Armor',
+      replaceAccuracyTerms('a $accuracy attack vs. Armor', 5, 3),
+      'a +8 attack vs. Armor',
       'should add local and weapon accuracy',
     );
     t.end();

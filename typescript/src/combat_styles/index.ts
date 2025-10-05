@@ -30,11 +30,8 @@ export interface CombatStyle {
   name: string;
   shortDescription: string;
   specialRules?: string;
-  stances?: Stance[];
 }
 
 export interface Maneuver extends BaseSpellLike {
   rank: 1 | 3 | 5 | 7;
 }
-
-export type Stance = Maneuver;
