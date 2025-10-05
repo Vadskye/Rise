@@ -25,7 +25,10 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       ${sphere.cantrips
       ? `
             \\subsection{Cantrips}
-            ${sortByRankAndLevel(sphere.cantrips).map((spell) => convertSpellToLatex(spell)).join('\n')}
+            ${sortByRankAndLevel(sphere.cantrips).map((spell) => {
+              checkValidSpell(spell);
+              return convertSpellToLatex(spell)
+            }).join('\n')}
           `
       : ''
     }
@@ -50,8 +53,9 @@ function getSpecialScaling(spell: SpellLike): string | null {
   }
 }
 
-export function convertSpellToLatex(spell: SpellLike, omitRank?: boolean): string {
+export function checkValidSpell(spell: SpellLike) {
   const specialScaling = getSpecialScaling(spell);
+
   if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
     console.error(`Spell ${spell.name} is probably missing scaling`);
   }
@@ -65,7 +69,9 @@ export function convertSpellToLatex(spell: SpellLike, omitRank?: boolean): strin
       console.error(`Spell ${spell.name} has scaling from wrong rank ${rankMatch[1]}`);
     }
   }
+}
 
+export function convertSpellToLatex(spell: SpellLike, omitRank?: boolean): string {
   const abilityType = determineAbilityType(spell);
   const internalComponents = [
     format.spellEffect(spell, 'spell'),
