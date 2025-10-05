@@ -9,8 +9,10 @@ import {
 import { Creature } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
-import { convertAttackToLatex } from '@src/latex/monster_attacks';
-import { replacePlaceholders} from './replace_placeholders';
+
+import { convertAutoAttackToLatex } from './monster_attacks';
+import { convertManeuverToLatex, convertSpellToLatex } from './player_abilities';
+import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
   const hasParentGroup = Boolean(parentGroupName);
@@ -228,9 +230,20 @@ function genAttributesText(monster: Creature): string {
 
 function genAbilitiesText(monster: Creature): string {
   // TODO: handle passive abilities
-  const allAttacks = [...monster.getDebuffAutoAttacks(), ...monster.getDamagingAutoAttacks()].sort(
+  const autoAttacks = [...monster.getDebuffAutoAttacks(), ...monster.getDamagingAutoAttacks()].sort(
     (a, b) => caseInsensitiveSort(a.attack_name, b.attack_name),
-  );
+  ).map(convertAutoAttackToLatex);
 
-  return allAttacks.map(convertAttackToLatex).join('\n');
+  const maneuvers = monster.getManeuvers().map((maneuver) => convertManeuverToLatex(monster, maneuver));
+  const spells = monster.getSpells().map((spell) => convertSpellToLatex(monster, spell));
+
+  const allAttacks = [
+    ...autoAttacks,
+    ...maneuvers,
+    ...spells,
+  ];
+
+  // TODO: sort allAttacks
+
+  return allAttacks.join('\n');
 }

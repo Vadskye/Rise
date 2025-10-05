@@ -121,10 +121,11 @@ t.test('can add a debuff autoattack', (t) => {
       attack_effect: `Make an attack against something within 60 feet.
 Hit: The target is dazzled as a condition.`,
       attack_name: 'Flashy Light',
+      defense: 'Fortitude',
       is_magical: true,
       is_targeted: true,
       latex_effect: `The $name makes a $accuracy+4 attack vs. $defense against something within 60 feet.
-Hit: The target is dazzled as a condition.`,
+\\hit The target is dazzled as a condition.`,
       tags: '',
       usage_time: 'standard',
     },
@@ -159,8 +160,8 @@ Miss: Half damage.`,
       is_magical: true,
       is_targeted: false,
       latex_effect: `The $name makes a $accuracy-2 attack vs. $defense against everything in a 15 foot radius within 30 feet.
-Hit: 1d8+3 damage.
-Miss: Half damage.`,
+\\hit 1d8+3 damage.
+\\miss Half damage.`,
       tags: '',
       usage_time: 'standard',
     },
