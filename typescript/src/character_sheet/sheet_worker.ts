@@ -2045,19 +2045,19 @@ function createDamagingMonsterAttack({
   const accuracyText = calcMonsterAccuracyText(accuracyModifier);
   const isTargeted = targetingIsTargeted(targeting);
   let effect = '';
-  let monsterEffect = '';
+  let latexEffect = '';
   if (isTargeted) {
     const range = calcTargetedText(targeting);
     effect = `Make an attack against something ${range}.`;
-    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
-Hit: ${damageDice} damage.`;
+    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
+\\hit ${damageDice} damage.`;
   } else {
     const area = calcAttackArea({ areaShape, rank, targeting });
     effect = `Make an attack against everything in a ${area}.
 Miss: Half damage.`;
-    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
-Hit: ${damageDice} damage.
-Miss: Half damage.`;
+    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
+\\hit ${damageDice} damage.
+\\miss Half damage.`;
   }
 
   const rowId = generateRowID();
@@ -2074,7 +2074,7 @@ Miss: Half damage.`;
     [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
     // This is only used for generating LaTeX outside of Roll20.
-    [`${prefix}_monster_effect`]: monsterEffect,
+    [`${prefix}_latex_effect`]: latexEffect,
     [`${prefix}_usage_time`]: usageTime,
   });
 }
@@ -2145,7 +2145,7 @@ function createMonsterDebuff({
 
   const accuracyText = calcMonsterAccuracyText(accuracyModifier);
   let effect = '';
-  let monsterEffect = '';
+  let latexEffect = '';
   if (isTargeted) {
     const range = calcTargetedText(targeting);
 
@@ -2154,8 +2154,8 @@ function createMonsterDebuff({
       : `The target is ${debuff} as a condition.`;
     effect = `Make an attack against something ${range}.
 Hit: ${hitEffect}`;
-    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
-Hit: ${hitEffect}`;
+    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against something ${range}.
+\\hit ${hitEffect}`;
   } else {
     const area = calcAttackArea({ areaShape, rank, targeting });
     if (!area) {
@@ -2169,8 +2169,8 @@ Hit: ${hitEffect}`;
       : `Each target is ${debuff} as a condition.`;
     effect = `Make an attack against everything in a ${area}.
 Hit: ${hitEffect}`;
-    monsterEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
-Hit: ${hitEffect}`;
+    latexEffect = `The $name makes a ${accuracyText} attack vs. $defense against everything in a ${area}.
+\\hit ${hitEffect}`;
   }
 
   const rowId = generateRowID();
@@ -2182,7 +2182,7 @@ Hit: ${hitEffect}`;
     [`${prefix}_attack_name`]: name,
     [`${prefix}_is_magical`]: isMagical,
     [`${prefix}_is_targeted`]: isTargeted,
-    [`${prefix}_monster_effect`]: monsterEffect,
+    [`${prefix}_latex_effect`]: latexEffect,
     [`${prefix}_usage_time`]: usageTime,
   });
 }

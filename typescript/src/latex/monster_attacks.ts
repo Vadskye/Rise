@@ -26,20 +26,21 @@ function isDebuff(attack: CreatureAttack): attack is DebuffAutoAttackResult {
 
 export function convertDebuffToLatex(attack: DebuffAutoAttackResult): string {
   // TODO: Do we need to do more fancy processing on the effect here?
-  return calcWrappedEffect(attack, attack.monster_effect);
+  return calcWrappedEffect(attack, attack.latex_effect);
 }
 
 export function convertDamagingAttackToLatex(attack: DamagingAutoAttackResult): string {
   // TODO: Do we need to do more fancy processing on the effect here?
-  return calcWrappedEffect(attack, attack.monster_effect);
+  return calcWrappedEffect(attack, attack.latex_effect);
 }
 
 // Everything that surrounds the effect is the same between a debuff and a
 // damaging attack.
 function calcWrappedEffect(
-  attack: Pick<DebuffAutoAttackResult, 'attack_name' | 'is_magical' | 'tags' | 'usage_time'>,
+  attack: Pick<DebuffAutoAttackResult, 'attack_name' | 'defense' | 'is_magical' | 'tags' | 'usage_time'>,
   effect: string,
 ) {
+  effect = effect.replaceAll('$defense', attack.defense);
   const environment = calcEnvironment(attack.is_magical);
   let tagsText = '';
   if (attack.tags) {

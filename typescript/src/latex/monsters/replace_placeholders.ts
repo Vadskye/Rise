@@ -1,13 +1,19 @@
 import { Creature } from '@src/character_sheet/creature';
 
 export function replacePlaceholders(monster: Creature, latex: string) {
-  let finalizedLatex = replaceNames(monster.name, latex);
-  finalizedLatex = addAccuracyToEffect(monster.accuracy, finalizedLatex, monster.name);
+  latex = replaceNames(latex, monster.name);
+  latex = replaceAccuracyTerms(latex, monster.accuracy);
 
-  return finalizedLatex;
+  if (latex.includes('$')) {
+    const contextMatch = latex.match(/(.{10}\$.{10})/);
+    const context = contextMatch ? contextMatch[1] : 'Unclear context';
+    console.warn(`Unable to replace all placeholder text for ${monster.name}: '${context}'`);
+  }
+
+  return latex;
 }
 
-function replaceNames(monsterName: string, monsterLatex: string): string {
+function replaceNames(monsterLatex: string, monsterName: string): string {
   const lowercaseName = monsterName.toLowerCase();
   if (monsterName === lowercaseName) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
@@ -52,7 +58,7 @@ export function addAccuracyToEffect(modifier: number, effect: string, name: stri
   return replacedEffect;
 }
 
-export function replaceAccuracyTerms(effect: string, creature: Creature, weaponAccuracy?: number): string {
+export function replaceAccuracyTerms(latex: string, creatureAccuracy: number, weaponAccuracy?: number): string {
   // Find each block of "$accuracy", including any local accuracy modifiers.
   // The regex captures:
   //   Group 1: "$accuracy" (the base term)
@@ -60,10 +66,10 @@ export function replaceAccuracyTerms(effect: string, creature: Creature, weaponA
   //   Group 3: "2" (the value of the local modifier, if present)
   const accuracyPattern = /\$accuracy([+-]?)(\d*)\b/g;
 
-  return effect.replaceAll(accuracyPattern, (_, modifierSign, modifierValueStr) => {
+  return latex.replaceAll(accuracyPattern, (_, modifierSign, modifierValueStr) => {
     const modifierValue = modifierValueStr ? Number(modifierValueStr) : 0;
     // p1 is "$accuracy", p2 is the sign, p3 is the modifier value string
-    return parseAccuracyMatch(creature.accuracy, modifierSign, modifierValue, weaponAccuracy);
+    return parseAccuracyMatch(creatureAccuracy, modifierSign, modifierValue, weaponAccuracy);
   });
 }
 
