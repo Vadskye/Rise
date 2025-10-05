@@ -11,6 +11,7 @@ export function addAberrations(grimoire: Grimoire) {
       level: 12,
     });
     creature.setProperties({
+      has_art: true,
       size: 'huge',
     });
     creature.setKnowledgeResults({
@@ -40,27 +41,26 @@ export function addAberrations(grimoire: Grimoire) {
     });
     creature.addCustomMovementSpeed('Swim (normal)');
     creature.addCustomMovementSpeed('Land (slow)');
-    creature.addCustomSense('Darkvision (240)');
-    creature.addCustomSense('Telepathy (480)');
+    creature.addCustomSense('Darkvision (240 ft.)');
+    creature.addCustomSense('Telepathy (480 ft.)');
 
     // TODO: mark these as elite actions
-    creature.addSpellByName('Psionic Blast');
+    creature.addSpell('Psionic Blast');
     creature.addSpellByNewName('Mighty Mind Crush', 'Mind Crush');
-    creature.addSpellByName('Mind Blank');
-    creature.addSpellByName('Cause Fear');
-    creature.addCustomAttack({
+    creature.addSpell('Mind Blank');
+    creature.addSpell('Cause Fear');
+    creature.addCustomSpell({
       effect: `
         The aboleth \glossterm{dominates} the mind of humanoid or aberration within \shortrange that is unconscious.
         It can attune to this ability five times, allowing it to control up to five different creatures.
       `,
-      isMagical: true,
       name: 'Dominate',
       tags: ['Compulsion'],
       usageTime: 'elite',
     });
 
     // TODO: mark this as a non-action
-    creature.addSpell({
+    creature.addCustomSpell({
       attack: {
         hit: `
           The target becomes \\glossterm{poisoned} by aboleth slime.

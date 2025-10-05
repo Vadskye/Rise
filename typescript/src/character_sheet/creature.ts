@@ -201,18 +201,23 @@ export interface CustomModifierNumericEffect {
   statistic: NumericCreatureProperty;
 }
 
+// TODO: Clarify type nonsense
+export interface ActiveAbility extends Spell {
+  isMagical: boolean;
+  // TODO: define and reference this appropriately
+  usageTime: 
+}
+
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
 // This means that "normal" typescript code shouldn't have to grapple with the complexity
 // of, say, repeating abilities in Roll20.
 export class Creature implements CreaturePropertyMap {
   private sheet: CharacterSheet;
-  private maneuvers: Record<string, Maneuver>;
-  private spells: Record<string, Spell>;
+  private activeAbilities: Record<string, ActiveAbility>;
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
-    this.maneuvers = {};
-    this.spells = {};
+    this.activeAbilities = {};
   }
 
   static new() {
@@ -291,12 +296,18 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet;
   }
 
-  addManeuver(maneuver: Maneuver) {
-    this.spells[maneuver.name] = maneuver;
+  addManeuver(maneuverName: string) {
+    this.activeAbilities[maneuverName] = {
+      ...getManeuverByName(maneuverName),
+      isMagical: false,
+    };
   }
 
-  addManeuverByName(maneuverName: string) {
-    this.maneuvers[maneuverName] = getManeuverByName(maneuverName);
+  addSpell(spellName: string) {
+    this.activeAbilities[spellName] = {
+      ...getSpellByName(spellName),
+      isMagical: true,
+    };
   }
 
   // We want the exact effects of an existing maneuver, but we want to rename it for
@@ -304,15 +315,10 @@ export class Creature implements CreaturePropertyMap {
   addManeuverByNewName(maneuverName: string, newAbilityName: string) {
     const maneuver = getManeuverByName(maneuverName);
     maneuver.name = newAbilityName;
-    this.maneuvers[newAbilityName] = maneuver;
-  }
-
-  addSpell(spell: Spell) {
-    this.spells[spell.name] = spell;
-  }
-
-  addSpellByName(spellName: string) {
-    this.spells[spellName] = getSpellByName(spellName);
+    this.activeAbilities[newAbilityName] = {
+      ...maneuver,
+      isMagical: false
+    };
   }
 
   // We want the exact effects of an existing spell, but we want to rename it for
@@ -320,21 +326,29 @@ export class Creature implements CreaturePropertyMap {
   addSpellByNewName(spellName: string, newAbilityName: string) {
     const spell = getSpellByName(spellName);
     spell.name = newAbilityName;
-    this.spells[newAbilityName] = spell;
+    this.activeAbilities[newAbilityName] = {
+      ...spell,
+      isMagical: true,
+    };
   }
 
-  addCustomAttack(config: CustomAttackConfig) {
-    const rowId = this.sheet.generateRowId();
-    // This isn't a repeating section that exists in the real Roll20 sheet. There's no
-    // advantage in using any of the "real" sections since we don't take advantage of any
-    // sheet worker magic anyway.
-    const prefix = `repeating_monsterattacks_${rowId}`;
-    this.sheet.setProperties({
-      [`${prefix}_attack_name`]: config.name,
-      [`${prefix}_attack_effect`]: config.effect,
-      [`${prefix}_usage_time`]: config.usageTime,
-      [`${prefix}_tags`]: config.tags?.join(', ') || '',
-    });
+  addCustomManeuver(maneuver: Omit<Maneuver, 'rank' | 'scaling'>) {
+    this.activeAbilities[maneuver.name] = {
+      ...maneuver,
+      isMagical: false,
+      rank: 1,
+    };
+  }
+
+  // We don't care what the rank of a custom spell is, but we create one for it anyway to
+  // avoid type confusion. Since the spell won't have scaling, the rank should never
+  // matter.
+  addCustomSpell(spell: Omit<Spell, 'rank' | 'scaling'>) {
+    this.activeAbilities[spell.name] = {
+      ...spell,
+      isMagical: true,
+      rank: 1,
+    };
   }
 
   addAutoAttack(config: AutoAttackConfig) {
@@ -448,12 +462,8 @@ export class Creature implements CreaturePropertyMap {
       .getValuesFromAllRows(DAMAGING_ATTACK_KEYS) as any[];
   }
 
-  getManeuvers(): Maneuver[] {
-    return Object.values(this.maneuvers);
-  }
-
-  getSpells(): Spell[] {
-    return Object.values(this.spells);
+  getActiveAbilities(): ActiveAbility[] {
+    return Object.values(this.activeAbilities);
   }
 
   getDebuffAutoAttacks(): DebuffAutoAttackResult[] {

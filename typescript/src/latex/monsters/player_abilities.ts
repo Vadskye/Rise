@@ -1,11 +1,11 @@
-import { Creature } from '@src/character_sheet/creature';
+import { Creature, ActiveAbility } from '@src/character_sheet/creature';
 import { Maneuver } from '@src/combat_styles';
 import { convertManeuverToLatex } from '@src/latex/combat_styles';
 import { convertSpellToLatex } from '@src/latex/mystic_spheres';
 import { Spell } from '@src/mystic_spheres';
 
 export function convertManeuverToMonsterAbility(monster: Creature, maneuver: Maneuver): string {
-  const ability: PlayerAbility = {
+  const ability: ActiveAbility = {
     ...maneuver,
     isMagical: false,
   };
@@ -15,7 +15,7 @@ export function convertManeuverToMonsterAbility(monster: Creature, maneuver: Man
 }
 
 export function convertSpellToMonsterAbility(monster: Creature, spell: Spell): string {
-  const ability: PlayerAbility = {
+  const ability: ActiveAbility = {
     ...spell,
     isMagical: true,
   };
@@ -51,11 +51,6 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   }
 }
 
-// TODO: Fix type nonsense that makes this necessary
-interface PlayerAbility extends Spell {
-  isMagical: boolean;
-}
-
 // Convert a standard spell or maneuver that appears in the player-facing section of the
 // book so it is written as a monster ability. It requires a monster with all of its
 // statistics correctly calculated so we can correctly determine the accuracy and damage
@@ -64,7 +59,7 @@ interface PlayerAbility extends Spell {
 // that placeholders can handle, and it allows us to make simplifying assumptions with our
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
-export function reformatAsMonsterAbility(monster: Creature, ability: PlayerAbility): PlayerAbility {
+export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
   if (ability.attack) {
     reformatAttackTargeting(monster, ability);
     reformatAttackConsequences(monster, ability);
@@ -74,7 +69,7 @@ export function reformatAsMonsterAbility(monster: Creature, ability: PlayerAbili
 }
 
 // This modifies `ability` in place.
-export function reformatAttackTargeting(monster: Creature, ability: PlayerAbility) {
+export function reformatAttackTargeting(monster: Creature, ability: ActiveAbility) {
   // For convenience
   const attack = ability.attack!;
 
@@ -130,25 +125,19 @@ export function reformatAttackTargeting(monster: Creature, ability: PlayerAbilit
 const damageRankPattern = /\\damagerank(\w+)(low)?/;
 
 // This modifies `ability` in place
-export function reformatAttackConsequences(monster: Creature, ability: PlayerAbility) {
+export function reformatAttackConsequences(monster: Creature, ability: ActiveAbility) {
   // For convenience
   const attack = ability.attack!;
 
   // This phrasing is typically seen with fear effects
   attack.hit = attack.hit.replace(/\bby you\b/, 'by the $name');
 
-  attack.hit = attack.hit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
-    calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
-  );
+  attack.hit = replaceDamageText(monster, ability, attack.hit);
   if (attack.crit) {
-    attack.crit = attack.crit.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
-      calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
-    );
+    attack.crit = replaceDamageText(monster, ability, attack.crit);
   }
   if (attack.injury) {
-    attack.injury = attack.injury.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
-      calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
-    );
+    attack.injury = replaceDamageText(monster, ability, attack.injury);
   }
 
   // We should have applied all damage scaling values, so we can safely remove this to
@@ -156,6 +145,19 @@ export function reformatAttackConsequences(monster: Creature, ability: PlayerAbi
   if (ability.scaling === 'damage') {
     ability.scaling = undefined;
   }
+}
+
+// This can be run for attack.hit, attack.crit, and attack.injury, since they all can have
+// damage values listed. This doesn't modify in place.
+function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText: string): string {
+  effectText = effectText.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
+    calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
+  );
+
+  // For now, we just ignore this, since monsters never have extra damage.
+  effectText = effectText.replace(/, and any (\\glossterm{)?extra damage}? is doubled/g, '');
+
+  return effectText;
 }
 
 type DamageRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
@@ -187,7 +189,7 @@ function parseDamageRank(rankText: string): DamageRank {
 // rank.
 export function calculateDamage(
   monster: Creature,
-  ability: PlayerAbility,
+  ability: ActiveAbility,
   damageRank: DamageRank,
   lowPowerScaling: boolean,
 ): string {
@@ -195,6 +197,7 @@ export function calculateDamage(
   const relevantMonsterPower = ability.isMagical ? monster.magical_power : monster.mundane_power;
 
   if (lowPowerScaling) {
+    console.warn("Damage calculation for low power scaling is not implemented yet.");
     // TODO
     return '';
   } else {
