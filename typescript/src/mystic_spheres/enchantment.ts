@@ -581,8 +581,7 @@ export const enchantment: MysticSphere = {
       // -1dr for conditional +4 accuracy
       attack: {
         hit: `
-          % damagerankone
-          1d6 \\glossterm{subdual damage} \\add half power.
+          \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -592,15 +591,14 @@ export const enchantment: MysticSphere = {
       rank: 1,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subdual'],
     },
     {
       name: 'Mighty Mind Crush',
 
       attack: {
         hit: `
-          % damagerankfive
-          1d6 \\glossterm{subdual damage} plus 1d6 per 2 power, and any \\glossterm{extra damage} is doubled.
+          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\shortrange.
@@ -610,7 +608,7 @@ export const enchantment: MysticSphere = {
       rank: 5,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subdual'],
     },
 
     {
@@ -711,8 +709,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          % damageranktwo
-          1d4 \\glossterm{subdual damage} \\add power.
+          \\damageranktwo.
         `,
         injury: `
           The target is \\stunned as a \\glossterm{condition}.
@@ -726,7 +723,7 @@ export const enchantment: MysticSphere = {
       rank: 4,
       roles: ['clear', 'flash'],
       scaling: 'damage',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subdual'],
     },
 
     {
@@ -734,9 +731,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          % damagerankfive
-          1d6 \\glossterm{subdual damage} plus 1d6 per 2 power.
-          In addition, the target is \\glossterm{briefly} \\stunned.
+          \\damagerankfive, and the target is \\glossterm{briefly} \\stunned.
         `,
         injury: `
           The target is stunned as a \\glossterm{condition}.
@@ -750,7 +745,7 @@ export const enchantment: MysticSphere = {
       rank: 7,
       roles: ['clear', 'flash'],
       scaling: 'damage',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subdual'],
     },
 
     {
@@ -759,9 +754,7 @@ export const enchantment: MysticSphere = {
       // -1dr for debuff, -1d for +2a
       attack: {
         hit: `
-          % damagerankthree
-          1d8 \\glossterm{subdual damage} \\add power.
-          In addition, the target \\glossterm{briefly} takes a \\minus2 penalty to its Mental defense.
+          \\damagerankthree, and the target \\glossterm{briefly} takes a \\minus2 penalty to its Mental defense.
         `,
         targeting: `
           Make an attack vs. Mental with a \\plus2 accuracy bonus against one creature within \\medrange.
@@ -770,7 +763,7 @@ export const enchantment: MysticSphere = {
       rank: 4,
       roles: ['burst'],
       scaling: 'damage',
-      tags: ['Compulsion'],
+      tags: ['Compulsion', 'Subdual'],
     },
   ],
 };
