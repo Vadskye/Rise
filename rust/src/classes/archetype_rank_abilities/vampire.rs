@@ -43,8 +43,8 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Charming Gaze",
             complexity: 2,
             description: r"
-              \begin{magicalsustainability}{Charming Gaze}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}}
-                \abilityusagetime Standard action.
+              \begin{magicalsustainability}{Charming Gaze}{Standard action}
+                \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}
                 \rankline
                 Make an attack vs. Mental against all humanoid creatures in a \medarea cone from you.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
@@ -65,8 +65,8 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Creature of the Night",
             complexity: 4,
             description: r"
-              \begin{magicalattuneability}{Creature of the Night}{\abilitytag{Attune}}
-                \abilityusagetime Standard action.
+              \begin{magicalattuneability}{Creature of the Night}{Standard action}
+                \abilitytags \abilitytag{Attune}
                 \rankline
                 You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
                 \begin{raggeditemize}
@@ -119,8 +119,8 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Dominating Gaze",
             complexity: 2,
             description: r"
-              \begin{magicalactiveability}{Dominating Gaze}[\abilitytag{Emotion}, \abilitytag{Visual}]
-                \abilityusagetime Standard action.
+              \begin{magicalactiveability}{Dominating Gaze}{Standard action}
+                \abilitytags \abilitytag{Emotion}, \abilitytag{Visual}
                 \rankline
                 Make an attack vs. Mental against all humanoid \glossterm{enemies} within a \medarea \glossterm{cone} from you.
                 \hit If the target is \glossterm{injured} or its \glossterm{character rank} is at least 2 lower than yours, it is \confused as a \glossterm{condition}.

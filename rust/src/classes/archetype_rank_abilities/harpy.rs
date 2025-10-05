@@ -8,8 +8,8 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Luring Song}[\abilitytag{Auditory}, \abilitytag{Compulsion}]
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Luring Song}{Standard action}
+                    \abilitytags \abilitytag{Auditory}, \abilitytag{Compulsion}
                     \rankline
                     Make an attack vs. Mental against a creature within \longrange.
                     In addition, you begin a vocal performance (see \pcref{Performance Types}).
@@ -72,8 +72,8 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                \begin{magicalsustainability}{Siren Song}{\abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)}
-                    \abilityusagetime Standard action.
+                \begin{magicalsustainability}{Siren Song}{Standard action}
+                    \abilitytags \abilitytag{Auditory}, \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     In addition, you begin a vocal performance (see \pcref{Performance Types}).

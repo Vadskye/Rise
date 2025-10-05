@@ -8,8 +8,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Essence Spike}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Essence Spike}{Standard action}
                     \rankline
                     Make an attack against something within \medrange.
                     The defense against this attack depends on your \textit{essence infusion}.
@@ -39,8 +38,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                \begin{magicalactiveability}{Essence Flare}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Essence Flare}{Standard action}
                     \rankline
                     You are \glossterm{briefly} \focused.
                     At the end of the next round, if you hit with an attack that has your \textit{essence infusion} tag during that round, you repeat the full effect of this ability.
@@ -111,9 +109,9 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                \begin{magicalactiveability}{Essence Incarnate}[\abilitytag{Swift}]
-                    \abilityusagetime \glossterm{Minor action}, and you \glossterm{briefly} cannot use this ability again.
-                    \abilitycost One \glossterm{fatigue level}.
+                \begin{magicalactiveability}{Essence Incarnate}{\glossterm{Minor action}}
+                    \abilitytags \abilitytag{Swift}
+                    \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again
                     \rankline
                     You gain a benefit depending on whether you are tethered or untethered:
                     \begin{raggeditemize}

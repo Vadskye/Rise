@@ -74,15 +74,9 @@ export function convertSpellToLatex(spell: SpellLike, omitRank?: boolean): strin
   ].filter(Boolean);
   const tableText = spell.tableText || '';
 
-  let wrappedRankText = '';
-  if (!omitRank) {
-    const rankText = spell.rank ? `Rank ${spell.rank}` : '';
-    wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
-  }
-
   const latex = `
-    \\begin{${abilityType}}{${spell.name}}${wrappedRankText}
-      ${format.spellTypePrefix(spell) || ''}
+    \\begin{${abilityType}}{${spell.name}}{${format.abilityUsageTime(spell.castingTime, spell.name)}}
+      ${format.spellTypePrefix(spell, omitRank) || ''}
       \\rankline
       \\hypertargetraised{spell:${spell.name}}{}%
       \\hypertargetraised{spell:${spell.name.toLowerCase()}}{}%

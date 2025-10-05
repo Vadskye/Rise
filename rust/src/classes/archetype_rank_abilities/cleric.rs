@@ -230,8 +230,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 You can request a \ability{miracle} as a standard action.
-                \begin{magicalactiveability}{Miracle}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Miracle}{Standard action}
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use it again for a week.
                     You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
                     At your deity's discretion, this can emulate the effects of any divine spell, or have any other effect of a similar power level.
@@ -271,9 +270,9 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 % dr3 for touch range, +1dr for healing bonus, free defense bonus because class feature
-                \begin{magicalactiveability}{Divine Aid}[\abilitytag{Swift}]
+                \begin{magicalactiveability}{Divine Aid}{Standard action}
+                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
-                    \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains \hprankfour.
@@ -328,8 +327,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Vital Restoration}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Vital Restoration}{Standard action}
                     \abilitycost Three \glossterm{fatigue levels}.
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
@@ -371,8 +369,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 6,
             description: r"
-                \begin{magicalactiveability}{Revivify}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Revivify}{Standard action}
                     \abilitycost Four \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{long rest}.
                     \rankline
                     Choose one intact corpse within \shortrange.
@@ -394,8 +391,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{activeability}{Denounce the Heathens}[\abilitytag{Auditory}, \abilitytag{Emotion}]
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Denounce the Heathens}{Standard action}
+                    \abilitytags \abilitytag{Auditory}, \abilitytag{Emotion}
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \medarea radius from you.
                     For each target, if this is your first time using this ability against that target since you finished a \glossterm{short rest}, your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -478,8 +475,8 @@ pub fn preacher<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                \begin{activeability}{Convert the Irresolute}[\abilitytag{Auditory}, \abilitytag{Emotion}]
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Convert the Irresolute}{Standard action}
+                    \abilitytags \abilitytag{Auditory}, \abilitytag{Emotion}
                     \rankline
                     Make an attack vs. Mental against all \glossterm{enemies} within a \largearea radius.
                     If this is your first time using this ability against a target since you finished a \glossterm{short rest}, your \glossterm{accuracy} against that target is equal to your Persuasion skill.

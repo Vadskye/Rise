@@ -36,8 +36,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 If you do not have access to nature magic, you gain the ability to make a strike imbued with elemental force.
-                \begin{magicalactiveability}{Elemental Infusion}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Elemental Infusion}{Standard action}
                     \rankline
                     Make a \glossterm{strike}.
                     When you use this ability, it has one of the following tags of your choice: \atAir, \atEarth, \atFire, or \atWater.
@@ -148,7 +147,8 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 5,
             description: r"
-                \begin{magicalsustainability}{Elemental Control}{\abilitytag{Sustain} (attuneable, minor)}
+                \begin{magicalsustainability}{Elemental Control}
+                    \abilitytags \abilitytag{Sustain} (attuneable, minor)
                     You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
                     Each element has different limitations on its ability to move, as described below.
                     Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
@@ -336,8 +336,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 See \pcref{Natural Weapons}, for details about natural weapons.
 
                 {
-                    \begin{magicalactiveability}{Form of the Bear}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Bear}{Standard action}
                         \rankline
                         You gain a \plus1 bonus to your Fortitude defense and vital rolls.
                         In addition, your mouth and hands transform, granting you a bite and two claw \glossterm{natural weapons} (see \tref{Natural Weapons}).
@@ -347,8 +346,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The vital roll bonus increases to \plus2.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Bull}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Bull}{Standard action}
                         \rankline
                         You can move your full movement speed when you push a creature with the \ability{shove} ability even if you do not get a critical hit (see \pcref{Shove}).
                         In addition, your head transforms, granting you a gore \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -358,8 +356,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus4.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Constrictor}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Constrictor}{Standard action}
                         \rankline
                         You gain a \plus2 accuracy bonus with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
@@ -370,8 +367,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} When you grapple a creature with the \ability{grapple} ability, you automatically take control of the grapple (see \pcref{Controlling a Grapple}).
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Fish}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Fish}{Standard action}
                         \rankline
                         You gain an average \glossterm{swim speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -381,8 +377,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You are immune to \magical effects that restrict your mobility.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Hawk}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Hawk}{Standard action}
                         \rankline
                         You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
@@ -393,8 +388,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Hound}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Hound}{Standard action}
                         \rankline
                         You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         In addition, you have the ability to move on all four limbs.
@@ -411,8 +405,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     % Seems boring? What abilities would make sense?
-                    \begin{magicalactiveability}{Form of the Monkey}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Monkey}{Standard action}
                         \rankline
                         You gain an average \glossterm{climb speed}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -422,8 +415,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You can use the \textit{creature climb} ability against creatures only one size category larger than you instead of two size categories larger than you.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Rat}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Rat}{Standard action}
                         \rankline
                         You gain a \plus2 \glossterm{enhancement bonus} to the Flexibility and Stealth skills.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -433,8 +425,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The enhancement bonuses increase to \plus4.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Viper}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Viper}{Standard action}
                         \rankline
                         You do not need to use \glossterm{free hands} to climb (see \pcref{Climb}).
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -447,8 +438,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus2.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Form of the Wolf}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Form of the Wolf}{Standard action}
                         \rankline
                         You gain a \plus1 \glossterm{accuracy} bonus against creatures that are adjacent to both you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
@@ -458,8 +448,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The accuracy bonus increases to \plus2.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Myriad Form}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Myriad Form}{Standard action}
                         \rankline
                         If you have Disguise as a \glossterm{trained skill}, you gain a \plus3 \glossterm{enhancement bonus} to it.
                         Otherwise, you are treated as being trained in that skill.
@@ -471,8 +460,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} When you use this wild aspect, you can choose to grow or shrink by up to two \glossterm{size categories} instead of only one.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Photosynthesis}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Photosynthesis}{Standard action}
                         \rankline
                         You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
@@ -484,8 +472,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         When you do, you increase your \glossterm{fatigue level} by four.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Plantspeaker}
-                        \abilityusagetime Standard action.
+                    \begin{magicalactiveability}{Plantspeaker}{Standard action}
                         \rankline
                         Your speed is not reduced when moving in \glossterm{heavy undergrowth}.
                         In addition, you can ignore \glossterm{cover} and \glossterm{concealment} from plants whenever doing so would be beneficial to you, as the plants move out of the way to help you.
@@ -507,10 +494,11 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                \begin{magicalattuneability}{Shift Body}{\abilitytag{Attune}}
-                    \abilityusagetime Can be triggered when you finish a \glossterm{long rest}.
+                \begin{magicalattuneability}{Shift Body}{Triggered}
+                    \abilitytags \abilitytag{Attune}
                     \rankline
-                    When you use this ability, choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
+                    You can use this ability when you finish a \glossterm{long rest}.
+                    Choose a physical \glossterm{attribute}: Strength, Dexterity, or Constitution (see \pcref{Attributes}).
                     You gain a \plus1 \glossterm{enhancement bonus} to that attribute.
                 \end{magicalattuneability}
             ",
@@ -539,8 +527,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 % Assume that choosing defense is worth about +3 accuracy, and that hitting all three defenses is about -3 accuracy.
                 % TODO: put this in the spreadsheet
-                \begin{magicalactiveability}{Shifting Claw}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Shifting Claw}{Standard action}
                     \rankline
                     Choose Armor, Reflex, or Fortitude defense, or all three defenses.
                     Make a \glossterm{strike} against your chosen defenses with a \glossterm{natural weapon}.
@@ -608,8 +595,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can use the \ability{natural servant} ability.
                 This ability requires spending one hour performing rituals in a natural area.
-                \begin{magicalattuneability}{Natural Servant}{\abilitytag{Attune}}
-                    \abilityusagetime One hour of rituals in a natural area.
+                \begin{magicalattuneability}{Natural Servant}{One hour}
+                    \abilitytags \abilitytag{Attune}
                     \rankline
                     An animal native to the local environment appears to help you.
                     It follows your directions to the best of its ability as long as you remain in its natural environment.
@@ -686,8 +673,8 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                \begin{magicalsustainability}{Animal Speech}{\abilitytag{Sustain} (minor)}
-                    \abilityusagetime Standard action.
+                \begin{magicalsustainability}{Animal Speech}{Standard action}
+                    \abilitytags \abilitytag{Sustain} (minor)
                     \rankline
                     Choose an animal within \rnglong range.
                     You can speak to and understand the speech of the target animal, and any other animals of the same species.

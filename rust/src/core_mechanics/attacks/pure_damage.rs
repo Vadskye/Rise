@@ -117,9 +117,7 @@ mod tests {
             assert_multiline_eq(
                 get_ability_latex(mystic_bolt),
                 "
-\\begin<magicalactiveability>*<Mystic Bolt>
-
-\\abilityusagetime Standard action.
+\\begin<magicalactiveability>*<Mystic Bolt><Standard action>
 \\rankline
 
 The $name makes a +0 attack vs. Fortitude against something within \\medrange.
@@ -146,9 +144,7 @@ The $name makes a +0 attack vs. Fortitude against something within \\medrange.
             assert_multiline_eq(
                 get_ability_latex(mystic_bolt),
                 "
-\\begin<magicalactiveability>*<Mighty Mystic Bolt>
-
-\\abilityusagetime Standard action.
+\\begin<magicalactiveability>*<Mighty Mystic Bolt><Standard action>
 \\rankline
 
 The $name makes a +0 attack vs. Mental against something within \\medrange.
@@ -180,9 +176,8 @@ The $name makes a +0 attack vs. Mental against something within \\medrange.
             assert_multiline_eq(
                 get_maneuver_latex(basic_strike),
                 r"
-\begin<activeability>*<Basic Strike>
-\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-\abilityusagetime Standard action.
+\begin<activeability>*<Basic Strike><Standard action>
+\abilitytags \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
 \rankline
 
 The $name makes a +0 \glossterm{strike} vs. Armor.

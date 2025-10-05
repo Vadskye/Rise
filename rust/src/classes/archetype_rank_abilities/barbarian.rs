@@ -13,9 +13,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{activeability}{Second Wind}[\atSwift]
+                \begin{activeability}{Second Wind}{\glossterm{Minor action}}
+                    \abilitytags \atSwift
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
-                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     You regain half of your maximum \glossterm{hit points}.
                 \end{activeability}
@@ -54,8 +54,8 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Resilient Blow}[\atSwift (see text)]
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Resilient Blow}{Standard action}
+                    \abilitytags \atSwift (see text)
                     \rankline
                     Make a melee \glossterm{strike}.
                     In addition, whenever you would reduce your \glossterm{hit points} below your \glossterm{injury point} this round, you lose half that many hit points instead (minimum 1).
@@ -118,8 +118,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
-                \begin{sustainability}{Rage}{\atEmotion, \atSustain (free), \atSwift}
-                    \abilityusagetime \glossterm{Free action}.
+                \begin{sustainability}{Rage}{\glossterm{Free action}}
+                    \abilitytags \atEmotion, \atSustain (free), \atSwift
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
@@ -155,8 +155,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Aggravated Violence}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Aggravated Violence}{Standard action}
                     \rankline
                     Make a melee \glossterm{strike}.
                     The strike deals double damage against any creature that dealt damage to you during the previous round.
@@ -269,8 +268,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 3,
             description: r"
-                \begin{activeability}{Savage Rush}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Savage Rush}{Standard action}
                     \rankline
                     Move up to your movement speed.
                     During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
@@ -526,8 +524,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 Otherwise, you lose a frenzy point.
                 You can have a maximum of 4 frenzy points and a minimum of 0.
                 Frenzy points increase the power of your \ability{feral frenzy} ability.
-                \begin{activeability}{Feral Frenzy}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Feral Frenzy}{Standard action}
                     \rankline
                     Make a melee or thrown \glossterm{strike}.
                     Then, you can spend three frenzy points to make an additional melee or thrown strike.
