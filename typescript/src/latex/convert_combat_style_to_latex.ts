@@ -2,7 +2,7 @@ import { CombatStyle, Maneuver } from '@src/combat_styles';
 import {
   determineAbilityType,
   sortByRankAndLevel,
-} from '@src/latex/convert_mystic_sphere_to_latex';
+} from '@src/latex/mystic_spheres/convert_mystic_sphere_to_latex';
 import * as format from '@src/latex/format';
 import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
 import _ from 'lodash';
