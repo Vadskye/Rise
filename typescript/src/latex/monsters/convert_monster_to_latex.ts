@@ -11,7 +11,7 @@ import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 
 import { convertAutoAttackToLatex } from './monster_attacks';
-import { convertManeuverToLatex, convertSpellToLatex } from './player_abilities';
+import { convertManeuverToMonsterAbility, convertSpellToMonsterAbility } from './player_abilities';
 import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
@@ -234,8 +234,8 @@ function genAbilitiesText(monster: Creature): string {
     (a, b) => caseInsensitiveSort(a.attack_name, b.attack_name),
   ).map(convertAutoAttackToLatex);
 
-  const maneuvers = monster.getManeuvers().map((maneuver) => convertManeuverToLatex(monster, maneuver));
-  const spells = monster.getSpells().map((spell) => convertSpellToLatex(monster, spell));
+  const maneuvers = monster.getManeuvers().map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
+  const spells = monster.getSpells().map((spell) => convertSpellToMonsterAbility(monster, spell));
 
   const allAttacks = [
     ...autoAttacks,
