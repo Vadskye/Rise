@@ -162,7 +162,7 @@ export interface Ritual extends Spell {
   spheres: SphereName[];
 }
 
-export type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7 | null;
+export type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 export interface SpellLike extends BaseSpellLike {
   castingTime?: string;

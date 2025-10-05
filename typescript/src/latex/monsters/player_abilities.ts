@@ -15,7 +15,7 @@ export function convertSpellToLatex(monster: Creature, spell: Spell): string {
 
 // TODO: Fix the type confusion that makes this necessary
 interface PlayerAbility extends BaseSpellLike {
-  rank: any;
+  rank: number;
 }
 
 export function wrapEffectWithEnvironment({
