@@ -1,4 +1,8 @@
 #!/usr/bin/env fish
+g rts
+cd src
+rm **/*.js
+rm **/*.js.map
 g rise
 cd core_book
 cleanlatex
