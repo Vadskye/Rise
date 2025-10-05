@@ -2089,6 +2089,7 @@ function calcMonsterAccuracyText(accuracyModifier: number) {
   }
 }
 
+// TODO: this hasn't been updated for the Effective Action debuff redesign
 function createMonsterDebuff({
   accuracyModifier,
   areaShape,
