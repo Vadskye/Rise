@@ -69,7 +69,7 @@ export function addAberrations(grimoire: Grimoire) {
           The second escalation also deals \\damagerankfive.
         `,
         targeting: `
-          Whenever a creature hits the $name with a melee \\glossterm{strike} using a non-Long weapon, the $name makes an $accuracy \\glossterm{reactive attack] vs. Fortitude against the creature that struck it.
+          Whenever a creature hits the $name with a melee \\glossterm{strike} using a non-Long weapon, the $name makes an $accuracy \\glossterm{reactive attack} vs. Fortitude against the creature that struck it.
         `,
       },
       name: 'Slime-Covered Body',

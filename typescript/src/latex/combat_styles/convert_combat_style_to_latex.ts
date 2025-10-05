@@ -24,14 +24,15 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
       .map((rank) =>
         maneuversByRank[rank]
           ? `\\subsection{Rank ${rank} Maneuvers}
-          ${maneuversByRank[rank].map(convertManeuverToLatex).join('\n')}`
+          ${maneuversByRank[rank].map((rank) => convertManeuverToLatex(rank)).join('\n')}`
           : '',
       )
       .join('\n')}
   `);
 }
 
-function convertManeuverToLatex(maneuver: Maneuver): string {
+// When formatted for monsters, we omit the rank of maneuvers.
+export function convertManeuverToLatex(maneuver: Maneuver, omitRank?: boolean): string {
   const abilityType = determineAbilityType(maneuver);
   const internalComponents = [
     format.spellEffect(maneuver, 'maneuver'),
@@ -39,8 +40,11 @@ function convertManeuverToLatex(maneuver: Maneuver): string {
     format.spellNarrative(maneuver),
   ].filter(Boolean);
 
-  const rankText = maneuver.rank ? `Rank ${maneuver.rank}` : '';
-  const wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
+  let wrappedRankText = '';
+  if (!omitRank) {
+    const rankText = `Rank ${maneuver.rank}`;
+    wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
+  }
 
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}${wrappedRankText}
