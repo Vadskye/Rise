@@ -235,6 +235,7 @@ export class Creature implements CreaturePropertyMap {
       );
     }
     return {
+      aberration: 'knowledge_dungeoneering' as const,
       animate: 'knowledge_arcana' as const,
       beast: 'knowledge_nature' as const,
       dragon: 'knowledge_arcana' as const,
@@ -406,7 +407,7 @@ export class Creature implements CreaturePropertyMap {
   addCustomSense(speed: string) {
     // TODO: add a regex to validate that senses look reasonable
     for (let i = 0; i < 4; i++) {
-      const key = `sense_${i}_name}` as CustomSense;
+      const key = `sense_${i}_name` as CustomSense;
       if (!this.getPropertyValues([key])[key]) {
         this.setProperties({
           [key]: speed,

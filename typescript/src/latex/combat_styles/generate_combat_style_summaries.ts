@@ -1,5 +1,5 @@
 import { CombatStyle, combatStyles, Maneuver } from '@src/combat_styles';
-import { sortByRankAndLevel } from '@src/latex/mystic_spheres/convert_mystic_sphere_to_latex';
+import { sortByRankAndLevel } from '@src/latex';
 import _ from 'lodash';
 
 export function generateCombatStyleSummaries(): string {

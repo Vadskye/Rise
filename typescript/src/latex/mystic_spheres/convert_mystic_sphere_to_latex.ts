@@ -1,5 +1,6 @@
 import * as format from '@src/latex/format';
 import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
+import { determineAbilityType, sortByRankAndLevel } from '@src/latex';
 import { MysticSphere, SpellLike } from '@src/mystic_spheres';
 import _ from 'lodash';
 
@@ -39,18 +40,6 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
         )
         .join('\n')}
   `);
-}
-
-export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
-  if (!spell.type) {
-    return 'activeability';
-  } else if (spell.type.includes('Attune')) {
-    return 'attuneability';
-  } else if (spell.type.includes('Sustain')) {
-    return 'sustainability';
-  } else {
-    return 'activeability';
-  }
 }
 
 // The types make this kind of annoying
@@ -107,12 +96,4 @@ function convertSpellToLatex(spell: SpellLike): string {
   // }
 
   return latex;
-}
-
-export function sortByRankAndLevel<T extends Pick<SpellLike, 'name' | 'rank'>>(spells: T[]): T[] {
-  // Sort by level as primary, name as secondary
-  return _.sortBy(
-    _.sortBy(spells, (s) => s.name),
-    (s) => s.rank,
-  );
 }

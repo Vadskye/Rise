@@ -1,5 +1,5 @@
 import * as format from '@src/latex/format';
-import { determineAbilityType } from './convert_mystic_sphere_to_latex';
+import { determineAbilityType } from '@src/latex';
 import { Ritual } from '@src/mystic_spheres';
 
 export function convertRitualToLatex(ritual: Ritual): string {
