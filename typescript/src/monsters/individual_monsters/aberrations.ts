@@ -46,7 +46,7 @@ export function addAberrations(grimoire: Grimoire) {
     // TODO: mark these as elite actions
     creature.addSpellByName('Psionic Blast');
     creature.addSpellByNewName('Mighty Mind Crush', 'Mind Crush');
-    creature.addSpellByName('Friend to Foe');
+    creature.addSpellByName('Mind Blank');
     creature.addSpellByName('Cause Fear');
     creature.addCustomAttack({
       effect: `

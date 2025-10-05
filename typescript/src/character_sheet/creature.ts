@@ -551,6 +551,10 @@ export class Creature implements CreaturePropertyMap {
     console.warn(`Monster ${this.name}: ${message}`);
   }
 
+  calculateRank(): number {
+    return Math.floor((this.level + 2) / 3);
+  }
+
   // Getters
   public get alignment() {
     return this.getPropertyValue('alignment');
@@ -958,6 +962,10 @@ export class Creature implements CreaturePropertyMap {
 
   public get name() {
     return this.getPropertyValue('name');
+  }
+
+  public get lowercase_name() {
+    return this.name.toLowerCase();
   }
 
   public get has_art() {
