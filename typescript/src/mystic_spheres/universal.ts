@@ -23,8 +23,8 @@ export const universal: MysticSphere = {
 
     \\begin{dtable!*}
       \\lcaption{Universal Mystic Spheres}
-      \\begin{dtabularx}{\\textwidth}{l >{\\lcol}X >{\\lcol}X >{\\lcol}X}
-        \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Mystic Bolt Defense} & \\tb{Tag} \\tableheaderrule
+      \\begin{dtabularx}{\\textwidth}{l >{\\lcol}X l >{\\lcol}X}
+        \\tb{Mystic Sphere} & \\tb{Affected} & \\tb{Defense} & \\tb{Tags} \\tableheaderrule
         Aeromancy         & Creatures and objects & Brawn     &  \\atAir           \\\\
         Aquamancy         & Creatures and objects & Armor     &  \\atWater         \\\\
         Astromancy        & Creatures and objects & Mental    &  \\tdash           \\\\
@@ -32,7 +32,7 @@ export const universal: MysticSphere = {
         Chronomancy       & Creatures and objects & Fortitude &  \\tdash           \\\\
         Cryomancy         & Creatures and objects & Fortitude &  \\atCold          \\\\
         Electromancy      & Creatures and objects & Fortitude &  \\atElectricity   \\\\
-        Enchantment       & Creatures             & Mental    &  \\atEmotion       \\\\
+        Enchantment       & Creatures             & Mental    &  \\atCompulsion, \\atSubdual       \\\\
         Fabrication       & Creatures and objects & Armor     &  \\atManifestation \\\\
         Photomancy        & Creatures and objects & Fortitude &  \\atVisual        \\\\
         Polymorph         & Creatures and objects & Fortitude &  \\tdash           \\\\
