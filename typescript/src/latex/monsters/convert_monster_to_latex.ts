@@ -10,6 +10,7 @@ import { Creature } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 import { convertAttackToLatex } from '@src/latex/monster_attacks';
+import { replacePlaceholders} from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
   const hasParentGroup = Boolean(parentGroupName);
@@ -39,18 +40,9 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${genAbilitiesText(monster)}
   `;
 
-  let finalizedLatex = replaceNames(monster.name, latexWithPlaceholders);
-
-  return finalizedLatex;
+  return replacePlaceholders(monster, latexWithPlaceholders);
 }
 
-function replaceNames(monsterName: string, monsterLatex: string) {
-  const lowercaseName = monsterName.toLowerCase();
-  if (monsterName === lowercaseName) {
-    throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
-  }
-  return monsterLatex.replaceAll("$Name", monsterName).replaceAll("$name", lowercaseName);
-}
 
 
 function genArtText(monster: Creature, parentGroupName?: string): string {
