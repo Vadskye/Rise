@@ -324,9 +324,9 @@ They allow more distinct and unique character customization, but also increase g
 
     % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
     \magicalff[1]{Ancestral Battlecry}
-    \begin{magicalactiveability}{Ancestral Battlecry}[\atSwift]
-      \abilityusagetime Standard action or \glossterm{minor action}.
-      \abilitycost One \glossterm{fatigue level} if used as a minor action.
+    \begin{magicalactiveability}{Ancestral Battlecry}{Standard action}
+      \abilitytags \atSwift
+      \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action}.
       \rankline
       Three ghostly spirits of your ancestors appear around you.
       They cannot be attacked or interacted with.
@@ -415,9 +415,9 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to a \glossterm{mystic sphere}.
 
     \magicalff[1]{Share Boon}
-    \begin{magicalactiveability}{Share Boon}
-      \abilityusagetime Can be triggered when you cast a spell with the \abilitytag{Attune} tag.
+    \begin{magicalactiveability}{Share Boon}{Triggered}
       \rankline
+      You can use this ability when you cast a spell with the \abilitytag{Attune} tag.
       The spell's \abilitytag{Attune} tag changes to \abilitytag{Attune} (target).
       Choose one \glossterm{ally} within \rngmed range.
       That ally is the target of the spell, and the spell affects that creature as if it were you instead of affecting you.
@@ -465,8 +465,8 @@ They allow more distinct and unique character customization, but also increase g
     \parhead{Special} You can only have one Ancestry feat.
 
     \magicalff[1]{Celestial Benevolence}
-    \begin{magicalactiveability}{Celestial Benevolence}[\abilitytag{Swift}]
-        \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Celestial Benevolence}{Standard action}
+        \abilitytags \abilitytag{Swift}
         \rankline
         Choose an \glossterm{ally} you \glossterm{touch}.
         Whenever that ally would be attacked by a \glossterm{targeted} ability while it is adjacent to you, the attack is made against you instead.
@@ -591,8 +591,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Specialization} You gain a \plus2 bonus to the Deception skill.
 
     \magicalff[6]{Forked Tongue}
-    \begin{sustainability}{Forked Tongue}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
-      \abilityusagetime \glossterm{Minor action}.
+    \begin{sustainability}{Forked Tongue}{\glossterm{Minor action}}
+      \abilitytags \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
       \rankline
       Whenever you speak, you can say the same words with two different vocal patterns, such as tone or accent, though you cannot significantly change the volume.
       You can freely choose which creatures hear which pattern, treating all creatures you are not aware of as a single group.
@@ -610,8 +610,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
 
     \magicalff[18]{Deceive Reality}
-    \begin{magicalactiveability}{Deceive Reality}
-      \abilityusagetime Standard action once per \glossterm{long rest}.
+    \begin{magicalactiveability}{Deceive Reality}{Standard action}
+      \abilitycost You cannot use this ability again until you finish a \glossterm{long rest}.
       \rankline
       You tell a lie that becomes true.
       The lie must not directly affect any creatures.
@@ -682,8 +682,7 @@ They allow more distinct and unique character customization, but also increase g
     % The dragon breath stays at full damage scaling, but uses half area scaling
     % that would normally be appropriate for a d(R-1) spell.
     \ff[6]{Draconic Breath}
-    \begin{activeability}{Draconic Breath}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Draconic Breath}{Standard action}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
       This ability's tag matches your dragon's associated tag.
@@ -727,8 +726,7 @@ They allow more distinct and unique character customization, but also increase g
     During that round, you gain a \plus1 bonus to your defenses against that creature's attacks.
 
     \ff[6]{Deliver the Duel}
-    \begin{activeability}{Deliver the Duel}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Deliver the Duel}{Standard action}
       \rankline
       Make a melee \glossterm{strike}.
       This strike only targets a single creature, even if your weapon would normally have the Sweeping tag.
@@ -777,8 +775,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Willpower 2.
 
     \magicalff[1]{Sudden Entropy}
-    \begin{magicalactiveability}{Sudden Entropy}
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Sudden Entropy}{Standard action}
       \rankline
       Make an attack vs. Fortitude against one creature or object within \shortrange.
       If the target is \vulnerable to any ability tags, there is a 50\% chance that this ability has that tag.
@@ -848,8 +845,7 @@ They allow more distinct and unique character customization, but also increase g
     % With -2 defenses, hit rate increases to 60% (0.7x dpr)
     % This would cause 40% hit, 60% glance, so 0.7x dpr.
     \magicalff[6]{Fateseal}
-    \begin{magicalactiveability}{Fateseal}
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Fateseal}{Standard action}
       \rankline
       Make an attack vs. Mental against one creature within \medrange of you.
       \hit The target is fatesealed as a \glossterm{condition}.
@@ -958,8 +954,7 @@ They allow more distinct and unique character customization, but also increase g
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
-    \begin{magicalactiveability}{Spectral Slice}
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Spectral Slice}{Standard action}
       \rankline
       Make a melee \glossterm{strike}.
       The attack is made against the target's Reflex defense instead of its Armor defense.
@@ -1011,8 +1006,8 @@ They allow more distinct and unique character customization, but also increase g
     % It requires two separate attacks against different defenses, but hitting with the first attack makes the second attack easier.
     % It also has highly varied effects based on the target's size category, dealing less damage to small creatures and failing completely against large creatures.
     \ff[6]{Call to Heaven}
-    \begin{activeability}{Call to Heaven}[\atBrawling (see text)]
-      \abilityusagetime Standard action.
+    \begin{activeability}{Call to Heaven}{Standard action}
+      \abilitytags \atBrawling (see text)
       \rankline
       Make a \glossterm{brawling attack} vs. Brawn against one creature or object adjacent to you.
       If you hit, and you are strong enough to carry the target, you \glossterm{knockback} the target up to 10 feet vertically.
@@ -1057,7 +1052,8 @@ They allow more distinct and unique character customization, but also increase g
   %   \ff[6]{Potent Poisons} You gain a \plus1 bonus to \glossterm{accuracy} with any poisons you create, including poisonous spells you cast.
 
   %   \ff[6]{Tempting Concoction}
-  %   \begin{magicalattuneability}{Tempting Concoction}{\abilitytag{Attune}, \abilitytag{Emotion}, \abilitytag{Subtle}}
+  %   \begin{magicalattuneability}{Tempting Concoction}
+  %     \abilitytags \abilitytag{Attune}, \abilitytag{Emotion}, \abilitytag{Subtle}
   %     \abilityusagetime Standard action.
   %     \rankline
   %     Choose one liquid poison or potion you created, or an object containing one of those liquids, within \rngshort range.
@@ -1115,8 +1111,8 @@ They allow more distinct and unique character customization, but also increase g
 
     % A normal 30' line from self would be about r0 or r1. If we assume r1, this gets drX damage.
     \ff[6]{Trample}
-    \begin{activeability}{Trample}[\abilitytag{Brawling}, \abilitytag{Size-Based}]
-      \abilityusagetime Standard action.
+    \begin{activeability}{Trample}{Standard action}
+      \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
       \rankline
       Move up to your movement speed in a straight line.
       Then, make a \glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way.
@@ -1161,8 +1157,8 @@ They allow more distinct and unique character customization, but also increase g
 
     % Focused and +1 accuracy is base 0.5 EA, or 0.8 EA on an ally.
     \ff[1]{Battle Command}
-    \begin{activeability}{Battle Command}[\atAuditory]
-      \abilityusagetime Standard action.
+    \begin{activeability}{Battle Command}{Standard action}
+      \abilitytags \atAuditory
       \rankline
       Choose an \glossterm{ally} within \medrange.
       The target becomes \focused and gains a \plus1 accuracy bonus this round.
@@ -1179,9 +1175,9 @@ They allow more distinct and unique character customization, but also increase g
     \ff[12]{Bolster}
     % Assume empower affects 3 ally actions, so it's ~1.2 EA.
     % We add a brief cooldown to make it more reasonable.
-    \begin{activeability}{Bolster}[\atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}]
+    \begin{activeability}{Bolster}{Standard action}
+      \abilitytags \atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
-      \abilityusagetime Standard action.
       \rankline
       Each \glossterm{ally} within a \largearea radius from you is either \empowered or \steeled this round.
       You must make the same choice for all allies. 
@@ -1220,8 +1216,7 @@ They allow more distinct and unique character customization, but also increase g
     When you gain access to new maneuver ranks, you can change which maneuvers you know.
 
     \ff[6]{Maneuver Fusion}
-    \begin{activeability}{Maneuver Fusion}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Maneuver Fusion}{Standard action}
       \abilitycost One \glossterm{fatigue level}, and you are unable to take any \glossterm{standard actions} during the \glossterm{action phase} of the following round.
       \rankline
       Choose two maneuvers that you know that do not increase your \glossterm{fatigue level} when used.
@@ -1285,8 +1280,7 @@ They allow more distinct and unique character customization, but also increase g
     \end{raggeditemize}
 
     \ff[6]{Versatile Blow}
-    \begin{activeability}{Versatile Blow}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Versatile Blow}{Standard action}
       \rankline
       Make a \glossterm{strike} and choose either precision or power.
       If you choose precision, you gain a \plus3 accuracy bonus.
@@ -1311,8 +1305,8 @@ They allow more distinct and unique character customization, but also increase g
 
     % rank 3 equivalent, so dr5 healing
     \ff[6]{Healing Touch}
-    \begin{activeability}{Healing Touch}[\abilitytag{Swift}]
-      \abilityusagetime Standard action.
+    \begin{activeability}{Healing Touch}{Standard action}
+      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level} from the target.
       \rankline
       Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
@@ -1356,8 +1350,8 @@ They allow more distinct and unique character customization, but also increase g
     When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
     \magicalff[1]{Imbue Projectile}
-    \begin{magicalattuneability}{Imbue Projectile}{\abilitytag{Attune}}
-      \abilityusagetime Standard action.
+    \begin{magicalattuneability}{Imbue Projectile}{Standard action}
+      \abilitytags \abilitytag{Attune}
       \rankline
       Choose a spell you know that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
       The spell's power is imbued in a \glossterm{projectile} you hold.
@@ -1433,8 +1427,7 @@ They allow more distinct and unique character customization, but also increase g
     In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
 
     \ff[6]{Shred Magic}
-    \begin{activeability}{Shred Magic}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Shred Magic}{Standard action}
       \rankline
       Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
       You gain a \plus2 accuracy bonus with the strike for each of the following conditions that is true:
@@ -1502,8 +1495,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
 
     \magicalff[18]{Suggestion}
-    \begin{sustainability}{Suggestion}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
-      \abilityusagetime Standard action.
+    \begin{sustainability}{Suggestion}{Standard action}
+      \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
       \rankline
       Make an attack vs. Mental against a creature within \rngmed range.
       Your \glossterm{accuracy} is equal to your Persuasion skill.
@@ -1528,8 +1521,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Precognitive Offense} You can add your Intelligence to your \glossterm{mundane power} instead of your Strength (see \pcref{Power}).
 
     \ff[6]{Combat Prediction}
-    \begin{sustainability}{Combat Prediction}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
-      \abilityusagetime Standard action.
+    \begin{sustainability}{Combat Prediction}{Standard action}
+      \abilitytags \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
       \rankline
       Choose a creature within \longrange of you.
       That creature's intentions become obvious to you as long as you sustain this ability.
@@ -1602,8 +1595,8 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Constitution 3.
 
     \ff[1]{Regenerative Recovery}
-    \begin{activeability}{Regenerative Recovery}[\abilitytag{Swift}]
-      \abilityusagetime Standard action.
+    \begin{activeability}{Regenerative Recovery}{Standard action}
+      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level}.
       \rankline
       You regain \damagerankthreelow \glossterm{hit points}.
@@ -1659,8 +1652,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Shield Proficiency} You become \glossterm{proficient} with using all shields as both armor and weapons, including tower shields.
 
     \ff[6]{Shield Slam}
-    \begin{activeability}{Shield Slam}
-        \abilityusagetime Standard action.
+    \begin{activeability}{Shield Slam}{Standard action}
         \rankline
         Make a \glossterm{strike} using a shield.
         If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
@@ -1691,10 +1683,11 @@ They allow more distinct and unique character customization, but also increase g
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
 
     \magicalff[18]{Extradimensional Pocket}
-    \begin{magicalattuneability}{Extradimensional Pocket}{\abilitytag{Attune}}
-      \abilityusagetime Can be triggered when you use the \ability{conceal object} ability (see \pcref{Sleight of Hand}).
+    \begin{magicalattuneability}{Extradimensional Pocket}{Triggered}
+      \abilitytags \abilitytag{Attune}
       \rankline
-      You conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
+      You can use this ability when you use the \ability{conceal object} ability (see \pcref{Sleight of Hand}).
+      When you do,  you conceal the object in a pocket dimension that cannot be accessed by nonmagical means.
       When this ability ends for any reason, the object appears in a free hand.
       If you have no free hands, it drops to the ground.
     \end{magicalattuneability}
@@ -1704,8 +1697,8 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Perception 2.
 
     \ff[1]{Aim}
-    \begin{sustainability}{Aim}{\abilitytag{Subtle}, \abilitytag{Sustain} (minor)}
-      \abilityusagetime Standard action.
+    \begin{sustainability}{Aim}{Standard action}
+      \abilitytags \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
       \rankline
       You are \glossterm{briefly} \focused.
       In addition, choose a creature or object you can see.
@@ -1729,8 +1722,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Specialization} You gain a \plus2 bonus to the Social Insight skill.
 
     \magicalff[6]{Read Emotions}
-    \begin{sustainability}{Read Emotions}{\abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}}
-      \abilityusagetime Standard action.
+    \begin{sustainability}{Read Emotions}{Standard action}
+      \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor), \abilitytag{Subtle}
       \rankline
       Make an attack vs. Mental against a creature within \rngshort range.
       Your \glossterm{accuracy} is equal to your Social Insight skill.
@@ -1762,9 +1755,8 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Martial Implement} You can cast spells using a non-\weapontag{Projectile} weapon you hold in at least one hand as if it was an implement (see \pcref{Magic Implements}).
 
     \magicalff[6]{Spellstrike}
-    \begin{magicalactiveability}{Spellstrike}
+    \begin{magicalactiveability}{Spellstrike}{Standard action}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
-      \abilityusagetime Standard action.
       \rankline
       You cast a spell and make a melee \glossterm{strike}, in either order.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
@@ -2053,9 +2045,10 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Access to the \sphere{Polymorph} \glossterm{mystic sphere}.
 
     \magicalff[1]{Augmented Body}
-    \begin{magicalattuneability}{Augmented Body}{\abilitytag{Attune} (deep)}
-      \abilityusagetime Can be triggered when you finish a \glossterm{short rest}.
+    \begin{magicalattuneability}{Augmented Body}{Triggered}
+      \abilitytags \abilitytag{Attune} (deep)
       \rankline
+      You can use this ability when you finish a \glossterm{long rest}.
       Choose a physical attribute: Strength, Dexterity, or Constitution.
       You gain a \plus1 \glossterm{enhancement bonus} to that attribute.
     \end{magicalattuneability}
@@ -2159,8 +2152,7 @@ They allow more distinct and unique character customization, but also increase g
     In addition, your maximum modifier to accuracy and checks using the object is no longer limited.
 
     \magicalff[6]{Violent Hand}
-    \begin{magicalactiveability}{Violent Hand}
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Violent Hand}{Standard action}
       \rankline
       Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
       Make a melee \glossterm{strike} using that weapon that deals \glossterm{extra damage} equal to half your \glossterm{power}.
@@ -2224,8 +2216,8 @@ They allow more distinct and unique character customization, but also increase g
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Countermagic}
-    \begin{magicalactiveability}{Countermagic}[\abilitytag{Swift}]
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Countermagic}{Standard action}
+      \abilitytags \abilitytag{Swift}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
       Choose a creature within \rngmed range of you.
@@ -2397,8 +2389,8 @@ They allow more distinct and unique character customization, but also increase g
     If you already have telepathy, the range of your telepathy increases by 120 feet.
 
     \magicalff[6]{Telepathic Tribulation}
-    \begin{magicalactiveability}{Telepathic Tribulation}[\abilitytag{Compulsion}]
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Telepathic Tribulation}{Standard action}
+      \abilitytags \abilitytag{Compulsion}
       \rankline
       Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
       You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
@@ -2417,8 +2409,8 @@ They allow more distinct and unique character customization, but also increase g
     \end{magicalactiveability}
 
     \magicalff[12]{Read Mind}
-    \begin{magicalsustainability}{Read Mind}{\abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)}
-      \abilityusagetime Standard action.
+    \begin{magicalsustainability}{Read Mind}{Standard action}
+      \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)
       \rankline
       Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
       You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
@@ -2491,8 +2483,7 @@ They allow more distinct and unique character customization, but also increase g
     As long as you have two \glossterm{free hands} and are not using a magic implement, you gain a \plus1 \glossterm{accuracy} bonus with spells that you cast using \glossterm{somatic components}.
 
     \magicalff[6]{Twinspell}
-    \begin{magicalactiveability}{Twinspell}
-      \abilityusagetime Standard action.
+    \begin{magicalactiveability}{Twinspell}{Standard action}
       \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
       \rankline
       You can only use this ability if you have two \glossterm{free hands} and are not using a magic implement.
@@ -2603,8 +2594,7 @@ They allow more distinct and unique character customization, but also increase g
     While using this ability to move through enemies, you can only end your movement in occupied space if you would not be considered squeezing by doing so.
 
     \ff[6]{Cyclone}
-    \begin{activeability}{Cyclone}
-      \abilityusagetime Standard action.
+    \begin{activeability}{Cyclone}{Standard action}
       \rankline
       When you use this ability, make a melee \glossterm{strike} with 1d4 \glossterm{extra damage}.
       The strike targets all \glossterm{enemies} adjacent to you.

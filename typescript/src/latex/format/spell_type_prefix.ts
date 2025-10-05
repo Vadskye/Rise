@@ -1,5 +1,4 @@
-import { Ritual, SpellLike } from '@src/mystic_spheres';
-import { sentenceCase } from 'change-case';
+import { Rank, Ritual, SpellLike } from '@src/mystic_spheres';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
 export function ritualSpheres(ritual: Ritual): string {
@@ -9,6 +8,7 @@ export function ritualSpheres(ritual: Ritual): string {
 
 export function spellTypePrefix(
   spell: Pick<SpellLike, 'castingTime' | 'cost' | 'name' | 'tags' | 'type' | 'rank'>,
+  omitRank?: boolean,
 ): string {
   const tags = spell.tags || [];
   if (spell.type) {
@@ -27,41 +27,28 @@ export function spellTypePrefix(
     }
   }
 
-  const tagsText = tags && tags.length > 0 ? `${tags.sort().map(formatTagLatex).join(', ')}` : '';
+  const tagsText = tags && tags.length > 0 ? `\\abilitytags ${tags.sort().map(formatTagLatex).join(', ')}` : '';
 
-  const usageAndTags = generateUsageAndTags(spell.castingTime, spell.name, tagsText);
+  const tagsAndRank = generateTagsAndRank(tagsText, spell.rank, omitRank);
 
   if (spell.cost) {
     if (spell.cost.slice(-1) !== '.') {
       console.error(`Ability '${spell.name}' cost should end in a period.`);
     }
-    return usageAndTags + '\n' + `\\abilitycost ${spell.cost}`;
+    return tagsAndRank + '\n' + `\\abilitycost ${spell.cost}`;
   } else {
-    return usageAndTags;
+    return tagsAndRank;
   }
 }
 
-export function generateUsageAndTags(
-  castingTime: string | undefined,
-  name: string,
+export function generateTagsAndRank(
   tagsText: string,
+  rank?: Rank,
+  omitRank?: boolean,
 ) {
-  if (castingTime) {
-    if (castingTime.slice(-1) === '.') {
-      console.error(`Spell '${name}' casting time should not end in a period.`);
-    }
-    const castingText =
-      castingTime === 'minor action'
-        ? `\\glossterm{Minor action}.`
-        : sentenceCase(castingTime) + '.';
-    if (tagsText) {
-      return `\\spelltwocol{Casting time: ${castingText}}{${tagsText}}`;
-    } else {
-      return `Casting time: ${castingText}`;
-    }
-  } else if (tagsText) {
-    return `\\spelltwocol{Usage time: Standard action.}{${tagsText}}`;
+  if (rank && !omitRank) {
+    return `\\spelltwocol{${tagsText}}{Rank ${rank}}`
   } else {
-    return '\\abilityusagetime Standard action.';
+    return `${tagsText}`;
   }
 }

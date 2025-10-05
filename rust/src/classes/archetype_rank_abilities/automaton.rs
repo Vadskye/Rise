@@ -76,8 +76,7 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{activeability}{Sharpening Slash}
-                    \abilityusagetime Standard action.
+                \begin{activeability}{Sharpening Slash}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals \glossterm{extra damage} equal to half your \glossterm{power}.
                     Then, if you did not get a critical hit with the strike, you are \glossterm{briefly} \honed.

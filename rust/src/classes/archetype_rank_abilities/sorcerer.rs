@@ -39,8 +39,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Mage Armor}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Mage Armor}{Standard action}
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.

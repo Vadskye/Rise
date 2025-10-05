@@ -170,8 +170,7 @@ pub fn arcane_magic<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Mage Armor}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Mage Armor}{Standard action}
                     \rankline
                     You create a translucent suit of magical armor on your body and over your hands.
                     This functions like body armor that provides a \plus2 bonus to your Armor defense and \glossterm{durability}.
@@ -288,11 +287,11 @@ pub fn arcane_scholar<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 You gain the ability to prepare a spell so it takes effect automatically if specific circumstances arise.
-                \begin{magicalattuneability}{Contingency}{\atAttune}
+                \begin{magicalattuneability}{Contingency}{One minute}
+                    \abilitytags \atAttune
                     % If any spells take more than one standard action, they would need to be excluded from Contingency, but none exist
                     % You can apply this ability to any arcane spell that can be cast as a \glossterm{standard action} or \glossterm{minor action}.
                     \abilitycost Two \glossterm{fatigue levels} (see text).
-                    \abilityusagetime One minute.
                     \rankline
                     When you use this ability, you choose a spell that you know.
                     The spell has no immediate effect.

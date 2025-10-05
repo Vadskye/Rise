@@ -47,8 +47,8 @@ export function convertManeuverToLatex(maneuver: Maneuver, omitRank?: boolean): 
   }
 
   const latex = `
-    \\begin{${abilityType}}{${maneuver.name}}${wrappedRankText}
-      ${format.spellTypePrefix(maneuver) || ''}
+    \\begin{${abilityType}}{${maneuver.name}}{${format.abilityUsageTime(undefined, maneuver.name)}}
+      ${format.spellTypePrefix(maneuver, omitRank) || ''}
       \\rankline
       \\hypertargetraised{maneuver:${maneuver.name}}{}%
       \\hypertargetraised{maneuver:${maneuver.name.toLowerCase()}}{}%

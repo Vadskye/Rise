@@ -242,8 +242,8 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
-                \begin{magicalactiveability}{Exchange Soul Fragment}[\abilitytag{Swift}]
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Exchange Soul Fragment}{Standard action}
+                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     You regain \hprankthree.
@@ -266,8 +266,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a larger fragment of your soul through the link fragment in exchange for greater aid.
-                \begin{magicalactiveability}{Exchange Vitality}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Exchange Vitality}{Standard action}
                     \abilitycost See text.
                     \rankline
                     Remove one of your \glossterm{vital wounds}.

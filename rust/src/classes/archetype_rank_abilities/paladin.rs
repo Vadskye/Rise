@@ -242,9 +242,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 % dr3 for touch range, free poison because class feature
-                \begin{magicalactiveability}{Lay on Hands}[\abilitytag{Swift}]
+                \begin{magicalactiveability}{Lay on Hands}{Standard action}
+                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
-                    \abilityusagetime Standard action.
                     \rankline
                     Choose yourself or a living \glossterm{ally} you touch.
                     The target regains \glossterm{hit points} equal to 2d6 \add your \glossterm{magical power}.
@@ -342,8 +342,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 1,
             description: r"
-                \begin{magicalactiveability}{Smite}
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Smite}{Standard action}
                     \rankline
                     Make a \glossterm{strike}.
                     You add half your Strength to your \glossterm{magical power} to determine your total power with this ability (see \pcref{Power}).
@@ -368,8 +367,8 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                \begin{magicalactiveability}{Detect Anathema}[\abilitytag{Detection}]
-                    \abilityusagetime \glossterm{Minor action}.
+                \begin{magicalactiveability}{Detect Anathema}{\glossterm{Minor action}}
+                    \abilitytags \abilitytag{Detection}
                     \rankline
                     You know the number of creatures within a \largearea cone from you that have the alignment opposed to your devoted alignment.
                     This does not give you any specific information about the location of those creatures.
@@ -429,9 +428,9 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 7,
             description: r"
-                \begin{magicalactiveability}{Pass Judgment}[\atSubtle]
+                \begin{magicalactiveability}{Pass Judgment}{\glossterm{Minor action}}
+                    \abilitytags \atSubtle
                     \abilitycost One \glossterm{fatigue level}.
-                    \abilityusagetime \glossterm{Minor action}.
                     \rankline
                     Choose one creature within \distrange.
                     You always gain the benefit of your \ability{zealous fixation} ability against that creature.

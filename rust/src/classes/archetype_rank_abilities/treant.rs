@@ -31,8 +31,8 @@ pub fn treant<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 3,
             description: r"
-                \begin{magicalactiveability}{Animate Plants}[\abilitytag{Manifestation}]
-                    \abilityusagetime Standard action.
+                \begin{magicalactiveability}{Animate Plants}{Standard action}
+                    \abilitytags \abilitytag{Manifestation}
                     \rankline
                     Make an attack vs. Reflex against one Large or smaller \glossterm{grounded} creature within \medrange.
                     You gain a \plus2 accuracy bonus if the target is in \glossterm{undergrowth}.

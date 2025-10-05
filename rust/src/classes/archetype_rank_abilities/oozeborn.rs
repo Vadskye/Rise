@@ -34,8 +34,8 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Ingest Object",
             complexity: 2,
             description: r"
-              \begin{activeability}{Ingest Object}[\atAcid]
-                \abilityusagetime Standard action.
+              \begin{activeability}{Ingest Object}{Standard action}
+                \abilitytags \atAcid
                 \rankline
                 This ability functions like the \spell{absorb object} spell, except that the maximum size of the object is equal to your size.
                 Anything you absorb in this way takes a single point of \glossterm{environmental} damage during each of your actions while it remains absorbed.
