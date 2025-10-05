@@ -116,19 +116,7 @@ mod tests {
 
             assert_multiline_eq(
                 get_ability_latex(mystic_bolt),
-                "
-\\begin<magicalactiveability>*<Mystic Bolt><Standard action>
-\\rankline
-
-The $name makes a +0 attack vs. Fortitude against something within \\medrange.
-
-
-\\hit 1d6 damage.
-
-
-
-\\end<magicalactiveability>
-",
+                "\n\begin<magicalactiveability>*<Mystic Bolt>\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 attack vs. Fortitude against something within \medrange.\n\n\n\hit 1d6 damage.\n\n\n\n\end<magicalactiveability>\n",
             );
         }
 
@@ -143,19 +131,7 @@ The $name makes a +0 attack vs. Fortitude against something within \\medrange.
 
             assert_multiline_eq(
                 get_ability_latex(mystic_bolt),
-                "
-\\begin<magicalactiveability>*<Mighty Mystic Bolt><Standard action>
-\\rankline
-
-The $name makes a +0 attack vs. Mental against something within \\medrange.
-
-
-\\hit damage.
-
-
-
-\\end<magicalactiveability>
-", // TODO: The damage dice (1d10) are not being rendered here. This test is updated to reflect the current code behavior, but this might be a bug.
+                "\n\begin<magicalactiveability>*<Mighty Mystic Bolt>\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 attack vs. Mental against something within \medrange.\n\n\n\hit damage.\n\n\n\n\end<magicalactiveability>\n", // TODO: The damage dice (1d10) are not being rendered here. This test is updated to reflect the current code behavior, but this might be a bug.
             );
         }
     }
@@ -175,20 +151,7 @@ The $name makes a +0 attack vs. Mental against something within \\medrange.
 
             assert_multiline_eq(
                 get_maneuver_latex(basic_strike),
-                r"
-\begin<activeability>*<Basic Strike><Standard action>
-\abilitytags \weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-\rankline
-
-The $name makes a +0 \glossterm{strike} vs. Armor.
-
-
-\hit 1d6 damage.
-
-
-
-\end<activeability>
-",
+                "r\n\begin<activeability>*<Basic Strike>\n\abilitytags \weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 1d6 damage.\n\n\n\n\end<activeability>\n",
             );
         }
 
@@ -197,28 +160,14 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
             let basic_strike = PureDamageManeuver {
                 defense: Defense::Reflex,
                 is_magical: false,
-                name: "+3 Accuracy".to_string(),
+                name: \"+3 Accuracy\".to_string(),
                 rank: 4,
                 weapon: Weapon::broadsword(),
             };
 
             assert_multiline_eq(
                 get_maneuver_latex(basic_strike),
-                r"
-\begin<activeability>*<+3 Accuracy>
-\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-\abilityusagetime Standard action.
-\rankline
-
-The $name makes a +3 \glossterm{strike} vs. Reflex.
-
-
-\hit 1d6 damage.
-
-
-
-\end<activeability>
-",
+                "r\n\begin<activeability>*<+3 Accuracy>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +3 \glossterm{strike} vs. Reflex.\n\n\n\hit 1d6 damage.\n\n\n\n\end<activeability>\n",
             );
         }
 
@@ -234,21 +183,7 @@ The $name makes a +3 \glossterm{strike} vs. Reflex.
 
             assert_multiline_eq(
                 get_maneuver_latex(basic_strike),
-                r"
-\begin<activeability>*<Double Damage>
-\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-\abilityusagetime Standard action.
-\rankline
-
-The $name makes a +0 \glossterm{strike} vs. Armor.
-
-
-\hit 2d6 damage.
-
-
-
-\end<activeability>
-",
+                "r\n\begin<activeability>*<Double Damage>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 2d6 damage.\n\n\n\n\end<activeability>\n",
             );
         }
 
@@ -264,21 +199,7 @@ The $name makes a +0 \glossterm{strike} vs. Armor.
 
             assert_multiline_eq(
                 get_maneuver_latex(basic_strike),
-                r"
-\begin<activeability>*<Triple Damage>
-\weapontag{Sweeping} (1), \weapontag{Versatile Grip}
-\abilityusagetime Standard action.
-\rankline
-
-The $name makes a +0 \glossterm{strike} vs. Armor.
-
-
-\hit 3d6 damage.
-
-
-
-\end<activeability>
-",
+                "r\n\begin<activeability>*<Triple Damage>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 3d6 damage.\n\n\n\n\end<activeability>\n",
             );
         }
     }

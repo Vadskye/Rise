@@ -61,6 +61,8 @@ export interface MysticSphere {
   spells: Spell[];
 }
 
+export type AbilityScaling = 'accuracy' | 'double_accuracy' | 'damage' | 'healing' | Record<string, string>;
+
 export interface BaseSpellLike {
   attack?: StandardAttack;
   castingTime?: string;
@@ -70,7 +72,7 @@ export interface BaseSpellLike {
   name: string;
   narrative?: string;
   roles: AbilityRole[];
-  scaling?: 'accuracy' | 'double_accuracy' | 'damage' | 'healing' | Record<string, string>;
+  scaling?: AbilityScaling;
   tableText?: string;
   // TODO: define the set of allowable tags
   tags?: string[];
