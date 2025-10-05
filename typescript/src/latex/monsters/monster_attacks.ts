@@ -3,7 +3,9 @@ import {
   DebuffAutoAttackResult,
   DamagingAutoAttackResult,
 } from '@src/character_sheet/creature';
-import { wrapEffectWithEnvironment } from './player_abilities';
+import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
+import * as format from '@src/latex/format';
+import { caseInsensitiveSort } from '@src/util/sort';
 
 export function convertAutoAttackToLatex(attack: CreatureAttack): string {
   if (isDamagingAttack(attack)) {
@@ -48,4 +50,43 @@ function wrapAttackWithEnvironment(
     tags: (attack.tags || '').split(', '),
     usageTime: attack.usage_time,
   });
+}
+
+// TODO: This is suspiciously redundant with some of the logic from `convertSpellToLatex`.
+export function wrapEffectWithEnvironment({
+  effect,
+  name,
+  isMagical,
+  tags,
+  usageTime,
+}: {
+  effect: string;
+  name: string;
+  isMagical: boolean;
+  tags?: string[];
+  usageTime?: MonsterAttackUsageTime;
+}): string {
+  const environment = determineEnvironment(isMagical);
+  let tagsText = '';
+  if (tags && tags.length > 0) {
+    const formattedTags = tags
+      .sort(caseInsensitiveSort)
+      .map((tag) => `\\abilitytag{${format.titleCase(tag)}}`)
+      .join(', ');
+    tagsText = `[${formattedTags}]`;
+  }
+  const usageTimeText = `\\abilityusagetime ${format.uppercaseFirst(usageTime || 'standard')} action.`;
+  return `
+    \\begin{${environment}}*{${format.titleCase(name)}}${tagsText}
+      ${usageTimeText}
+      \\rankline
+      ${effect}
+    \\end{${environment}}
+  `;
+}
+
+
+// TODO: add support for sustain/attune abilities
+function determineEnvironment(isMagical: boolean): string {
+  return isMagical ? 'magicalactiveability' : 'activeability';
 }
