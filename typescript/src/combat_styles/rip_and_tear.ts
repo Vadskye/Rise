@@ -124,7 +124,7 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a strike that deals double damage.
         \\hit The target burns.
-        A burning creature takes damage equal to 3d6 \\add your power during your next action.
+        A burning creature takes \\damagerankfour during your next action.
         On a critical hit, this burning damage is doubled.
       `,
       rank: 7,
