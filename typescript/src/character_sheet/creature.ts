@@ -32,8 +32,9 @@ import {
   RiseTag,
   RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
-import { getManeuverByName, Maneuver } from '@src/combat_styles';
+import { getManeuverByName } from '@src/combat_styles';
 import { getSpellByName, Spell } from '@src/mystic_spheres';
+import { MonsterWeapon } from '@src/monsters/weapons';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -201,11 +202,21 @@ export interface CustomModifierNumericEffect {
   statistic: NumericCreatureProperty;
 }
 
-// TODO: Clarify type nonsense
+// TODO: Clarify Spell/Maneuver type nonsense
 export interface ActiveAbility extends Spell {
   isMagical: boolean;
-  // TODO: define and reference this appropriately
-  usageTime: 
+  usageTime?: MonsterAttackUsageTime;
+  weapon?: MonsterWeapon;
+}
+
+export interface MonsterAbilityOptions {
+  displayName?: string;
+  usageTime?: MonsterAttackUsageTime;
+  weapon?: MonsterWeapon;
+}
+
+export interface CustomMonsterAbility extends Omit<Spell, 'rank' | 'roles' | 'scaling'> {
+  usageTime?: MonsterAttackUsageTime;
 }
 
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
@@ -233,6 +244,10 @@ export class Creature implements CreaturePropertyMap {
     const sheet = getCurrentCharacterSheet();
     handleEverything();
     return new this(sheet);
+  }
+
+  getRelevantPower(isMagical: boolean) {
+    return isMagical ? this.magical_power : this.mundane_power;
   }
 
   // This is the Knowledge skill used to learn more about the creature, not the creature's
@@ -296,58 +311,49 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet;
   }
 
-  addManeuver(maneuverName: string) {
-    this.activeAbilities[maneuverName] = {
+  // `displayName` is used if we want to use the mechanical effects of an existing
+  // maneuver, but to display it in the book with a different name.
+  addManeuver(maneuverName: string, { displayName, usageTime, weapon}: MonsterAbilityOptions = {}) {
+    this.activeAbilities[displayName || maneuverName] = {
+      // If the maneuver does not already have a defined scaling, we should scale accuracy
+      // with rank.
+      scaling: 'accuracy',
       ...getManeuverByName(maneuverName),
+      name: displayName || maneuverName,
       isMagical: false,
+      usageTime,
+      weapon,
     };
   }
 
-  addSpell(spellName: string) {
-    this.activeAbilities[spellName] = {
+  addSpell(spellName: string, { displayName, usageTime, weapon}: MonsterAbilityOptions = {}) {
+    this.activeAbilities[displayName || spellName] = {
       ...getSpellByName(spellName),
-      isMagical: true,
+      name: displayName || spellName,
+      isMagical: false,
+      usageTime,
+      weapon,
     };
   }
 
-  // We want the exact effects of an existing maneuver, but we want to rename it for
-  // narrative reasons.
-  addManeuverByNewName(maneuverName: string, newAbilityName: string) {
-    const maneuver = getManeuverByName(maneuverName);
-    maneuver.name = newAbilityName;
-    this.activeAbilities[newAbilityName] = {
-      ...maneuver,
-      isMagical: false
-    };
-  }
-
-  // We want the exact effects of an existing spell, but we want to rename it for
-  // narrative reasons.
-  addSpellByNewName(spellName: string, newAbilityName: string) {
-    const spell = getSpellByName(spellName);
-    spell.name = newAbilityName;
-    this.activeAbilities[newAbilityName] = {
-      ...spell,
-      isMagical: true,
-    };
-  }
-
-  addCustomManeuver(maneuver: Omit<Maneuver, 'rank' | 'scaling'>) {
+  addCustomManeuver(maneuver: CustomMonsterAbility) {
     this.activeAbilities[maneuver.name] = {
       ...maneuver,
       isMagical: false,
       rank: 1,
+      roles: [],
     };
   }
 
   // We don't care what the rank of a custom spell is, but we create one for it anyway to
   // avoid type confusion. Since the spell won't have scaling, the rank should never
   // matter.
-  addCustomSpell(spell: Omit<Spell, 'rank' | 'scaling'>) {
+  addCustomSpell(spell: CustomMonsterAbility) {
     this.activeAbilities[spell.name] = {
       ...spell,
       isMagical: true,
       rank: 1,
+      roles: [],
     };
   }
 
@@ -519,19 +525,17 @@ export class Creature implements CreaturePropertyMap {
     this.sheet.setProperties(props);
   }
 
-  // This should include all logic that automatically applies a weapon tag to strikes.
-  // Currently, the only relevant logic is the size-based Sweeping tag.
-  getAutomaticStrikeTags(): RiseWeaponTag[] {
+  getSizeBasedSweepingTag(): RiseWeaponTag | null {
     return {
-      fine: [],
-      diminuitive: [],
-      tiny: [],
-      small: [],
-      medium: [],
-      large: [],
-      huge: ['Sweeping (1)'],
-      gargantuan: ['Sweeping (2)'],
-      colossal: ['Sweeping (3)'],
+      fine: null,
+      diminuitive: null,
+      tiny: null,
+      small: null,
+      medium: null,
+      large: null,
+      huge: 'Sweeping (1)',
+      gargantuan: 'Sweeping (2)',
+      colossal: 'Sweeping (3)',
     }[this.size];
   }
 

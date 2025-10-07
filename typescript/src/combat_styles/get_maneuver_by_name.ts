@@ -1,11 +1,11 @@
-import { Maneuver, combatStyles } from '.';
+import { Maneuver, monsterCombatStyles } from '.';
 
 let allManeuvers: Record<string, Maneuver> | null = null;
 
 export function getManeuverByName(maneuverName: string) {
   if (!allManeuvers) {
     allManeuvers = {};
-    for (const combatStyle of combatStyles) {
+    for (const combatStyle of monsterCombatStyles) {
       for (const maneuver of combatStyle.maneuvers) {
         allManeuvers[maneuver.name] = maneuver;
       }

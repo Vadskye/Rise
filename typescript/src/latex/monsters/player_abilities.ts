@@ -3,6 +3,7 @@ import { Maneuver } from '@src/combat_styles';
 import { convertManeuverToLatex } from '@src/latex/combat_styles';
 import { convertSpellToLatex } from '@src/latex/mystic_spheres';
 import { Spell } from '@src/mystic_spheres';
+import { getWeaponDamageDice, getWeaponTag } from '@src/monsters/weapons';
 
 export function convertManeuverToMonsterAbility(monster: Creature, maneuver: Maneuver): string {
   const ability: ActiveAbility = {
@@ -23,6 +24,8 @@ export function convertSpellToMonsterAbility(monster: Creature, spell: Spell): s
   checkSuccessfullyConverted(latex, monster.name, spell.name);
   return latex;
 }
+
+const makeStrikePattern = /\b[mM]ake a.*strike\b/;
 
 // monsterName and abilityName are only provided to improve the clarity of warnings and
 // errors.
@@ -49,6 +52,10 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   if (/\\hprank/.test(abilityText)) {
     warn('Ability still has listed \\hprank');
   }
+
+  if (makeStrikePattern.test(abilityText)) {
+    warn("Ability still says it makes a strike");
+  }
 }
 
 // Convert a standard spell or maneuver that appears in the player-facing section of the
@@ -60,12 +67,99 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
+  if (ability.effect && makeStrikePattern.test(ability.effect)) {
+    restructureStrikeAbility(monster, ability);
+  }
+
   if (ability.attack) {
     reformatAttackTargeting(monster, ability);
     reformatAttackConsequences(monster, ability);
   }
 
   return ability;
+}
+
+// Normally, abilities that make strikes say "make a strike" in the text of
+// `ability.effect`. If we rewrite that to use `ability.attack`, we can use the standard
+// attack-parsing logic to format it without duplicating logic between strike-based
+// abilities and non-strike abilities. Since strikes don't use standard damage rank
+// values, we also have to calculate the exact damage dealt by the strike here.
+//
+// Assume that the 
+export function restructureStrikeAbility(monster: Creature, ability: ActiveAbility) {
+  if (!ability.weapon) {
+    throw new Error(`Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`);
+  }
+  if (ability.attack) {
+    throw new Error(`Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`);
+  }
+
+  let accuracyModifierText = '';
+  const accuracyMatch = ability.effect!.match(/Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/);
+  if (accuracyMatch) {
+    const modifierSign = standardizeModifierSign(accuracyMatch[2]);
+    const modifierValue = Number(accuracyMatch[3]);
+    if (!modifierValue) {
+      throw new Error(`Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[3]}'`);
+    }
+    accuracyModifierText = `${modifierSign}${modifierValue}`;
+  }
+
+  ability.attack = {
+    hit: `${calculateStrikeDamage(monster, ability)} damage.`,
+    targeting: `The $name makes a $accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.`,
+  }
+
+  ability.tags = ability.tags || [];
+  const weaponTag = getWeaponTag(ability.weapon)
+  if (weaponTag) {
+    ability.tags.push(weaponTag);
+  }
+  // TODO: if any monster weapons can sweep, we will need to sum together their sweeping
+  // value.
+  const sweepingTag = monster.getSizeBasedSweepingTag();
+  if (sweepingTag) {
+    ability.tags.push(sweepingTag);
+  }
+}
+
+export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility): string {
+  const effect = ability.effect!;
+  const weapon = ability.weapon!;
+  let damageMultiplier = 1;
+  let multiplierMatch = effect.match(/deals (double|triple|quadruple) (\\glossterm{weapon damage}|damage)/);
+  if (multiplierMatch) {
+    damageMultiplier = {
+      'double': 2,
+      'triple': 3,
+      'quadruple': 4,
+    }[multiplierMatch[1]] || 0;
+    if (!damageMultiplier) {
+      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse damage multiplier`);
+    }
+  }
+
+  const damageDice = getWeaponDamageDice(weapon);
+  const damageFromPower = monster.getRelevantPower(ability.isMagical) * damageMultiplier;
+  let damageFromPowerText = '';
+  if (damageFromPower > 0) {
+    damageFromPowerText = `+${damageFromPower}`;
+  } else if (damageFromPower < 0) {
+    damageFromPowerText = `${damageFromPower}`;
+  }
+
+  return `${damageDice.count * damageMultiplier}d${damageDice.size}${damageFromPowerText}`;
+}
+
+// LaTeX can represent modifier signs with '\\minus' or '\\plus' instead of '-' or '+'.
+export function standardizeModifierSign(latexModifierSign: string): '-' | '+' {
+  if (latexModifierSign === '\\minus' || latexModifierSign === '-') {
+    return '-';
+  } else if (latexModifierSign === '\\plus' || latexModifierSign === '+') {
+    return '+';
+  } else {
+    throw new Error(`Unable to parse LaTeX modifier sign '${latexModifierSign}'`);
+  }
 }
 
 // This modifies `ability` in place.
@@ -87,11 +181,7 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
   attack.targeting = attack.targeting.replace(
     /\bMake an attack vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
     (_, defense, modifierSign, modifierValue) => {
-      if (modifierSign === '\\minus') {
-        modifierSign = '-';
-      } else if (modifierSign === '\\plus') {
-        modifierSign = '+';
-      }
+      modifierSign = standardizeModifierSign(modifierSign);
       const withSign = modifierSign === '+' ? Number(modifierValue) : Number(modifierValue) * -1;
       const withScaling = withSign + scalingAccuracyModifier;
       modifierSign = withScaling >= 0 ? '+' : '-';
@@ -194,7 +284,6 @@ export function calculateDamage(
   lowPowerScaling: boolean,
 ): string {
   const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
-  const relevantMonsterPower = ability.isMagical ? monster.magical_power : monster.mundane_power;
 
   if (lowPowerScaling) {
     console.warn("Damage calculation for low power scaling is not implemented yet.");
@@ -217,7 +306,7 @@ export function calculateDamage(
       9: 4,
       10: 4,
     }[damageRank];
-    const effectivePower = relevantMonsterPower + excessRank * bonusPowerPerExcessRank;
+    const effectivePower = monster.getRelevantPower(ability.isMagical) + excessRank * bonusPowerPerExcessRank;
 
     const damageDice = {
       0: '1d4',
