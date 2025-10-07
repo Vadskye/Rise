@@ -1934,7 +1934,7 @@ export type MonsterAttackTargeted =
   | 'targeted_short'
   | 'targeted_long';
 export type MonsterAttackArea = 'small_area' | 'large_area';
-export type MonsterAttackUsageTime = 'standard' | 'elite' | 'minor';
+export type MonsterAttackUsageTime = 'standard' | 'elite' | 'minor' | 'triggered';
 
 function generateMonsterAttack({
   accuracy,

@@ -45,18 +45,21 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomSense('Telepathy (480 ft.)');
 
     // TODO: mark these as elite actions
-    creature.addSpell('Psionic Blast');
-    creature.addSpellByNewName('Mighty Mind Crush', 'Mind Crush');
+    creature.addSpell('Psionic Blast', {usageTime: "elite"});
+    creature.addSpell('Mighty Mind Crush', {displayName: 'Mind Crush', usageTime: "elite"});
     creature.addSpell('Mind Blank');
     creature.addSpell('Cause Fear');
     creature.addCustomSpell({
       effect: `
-        The aboleth \glossterm{dominates} the mind of humanoid or aberration within \shortrange that is unconscious.
-        It can attune to this ability five times, allowing it to control up to five different creatures.
+        The aboleth \\glossterm{dominates} the mind of humanoid or aberration within \\shortrange that is unconscious.
+        It can attune to this ability five times, allowing it to control up to five different creatures simultaneously.
       `,
       name: 'Dominate',
       tags: ['Compulsion'],
-      usageTime: 'elite',
+    });
+    creature.addManeuver('Double Damage', {
+      displayName: 'Tentacle Slam',
+      weapon: 'tentacle',
     });
 
     // TODO: mark this as a non-action
@@ -73,8 +76,6 @@ export function addAberrations(grimoire: Grimoire) {
         `,
       },
       name: 'Slime-Covered Body',
-      rank: 4,
-      roles: ['softener'],
       tags: ['Poison'],
     });
     creature.addAutoAttack({
@@ -83,7 +84,7 @@ export function addAberrations(grimoire: Grimoire) {
       isMagical: false,
       name: 'Slimy Tentacle',
       tags: [],
-      targeting: 'targeted_medium',
+      targeting: 'targeted_touch',
       usageTime: 'standard',
     });
   });

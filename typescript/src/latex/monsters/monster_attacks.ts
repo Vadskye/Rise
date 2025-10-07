@@ -75,7 +75,10 @@ export function wrapEffectWithEnvironment({
       .join(', ');
     tagsText = `\\abilitytags ${formattedTags}`;
   }
-  const usageTimeText = `${format.uppercaseFirst(usageTime || 'standard')} action.`;
+  usageTime = usageTime || 'standard';
+  const usageTimeText = usageTime === 'standard'
+    ? 'Standard action'
+    : `\\glossterm{${format.uppercaseFirst(usageTime)} action}`;
   return `
     \\begin{${environment}}*{${format.titleCase(name)}}{${usageTimeText}}
       ${tagsText}

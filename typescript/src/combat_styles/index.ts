@@ -7,6 +7,7 @@ import { heraldOfWar } from './herald_of_war';
 import { mobileHunter } from './mobile_assault';
 import { perfectPrecision } from './perfect_precision';
 import { ripAndTear } from './rip_and_tear';
+import { monsterManeuvers } from './monster_maneuvers';
 import { unbreakableDefense } from './unbreakable_defense';
 
 export { getManeuverByName } from './get_maneuver_by_name';
@@ -21,6 +22,11 @@ export const combatStyles = [
   perfectPrecision,
   ripAndTear,
   unbreakableDefense,
+];
+
+export const monsterCombatStyles = [
+  ...combatStyles,
+  monsterManeuvers,
 ];
 
 export type CombatStyleSource = 'primal' | 'martial' | 'trick' | 'esoteric' | 'wild';
