@@ -42,7 +42,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${genAbilitiesText(monster)}
   `;
 
-  return replacePlaceholders(monster, latexWithPlaceholders);
+  return format.latexify(replacePlaceholders(monster, latexWithPlaceholders));
 }
 
 function genArtText(monster: Creature, parentGroupName?: string): string {
@@ -233,9 +233,13 @@ function genAbilitiesText(monster: Creature): string {
     .map(convertAutoAttackToLatex);
 
   const maneuvers = monster
-    .getManeuvers()
+    .getActiveAbilities()
+    .filter((ability) => !ability.isMagical)
     .map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
-  const spells = monster.getSpells().map((spell) => convertSpellToMonsterAbility(monster, spell));
+  const spells = monster
+    .getActiveAbilities()
+    .filter((ability) => ability.isMagical)
+    .map((maneuver) => convertSpellToMonsterAbility(monster, maneuver));
 
   const allAttacks = [...autoAttacks, ...maneuvers, ...spells];
 
