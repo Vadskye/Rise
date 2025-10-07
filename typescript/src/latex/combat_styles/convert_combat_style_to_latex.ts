@@ -37,12 +37,6 @@ export function convertManeuverToLatex(maneuver: Maneuver, omitRank?: boolean): 
     format.spellNarrative(maneuver),
   ].filter(Boolean);
 
-  let wrappedRankText = '';
-  if (!omitRank) {
-    const rankText = `Rank ${maneuver.rank}`;
-    wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
-  }
-
   const latex = `
     \\begin{${abilityType}}{${maneuver.name}}{${format.abilityUsageTime(undefined, maneuver.name)}}
       ${format.spellTypePrefix(maneuver, omitRank) || ''}
