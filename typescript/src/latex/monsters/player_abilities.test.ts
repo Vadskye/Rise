@@ -2,8 +2,6 @@ import t from 'tap';
 import { reformatAttackTargeting, standardizeModifierSign, calculateStrikeDamage, restructureStrikeAbility, calculateDamage } from './player_abilities';
 import { Spell } from '@src/mystic_spheres';
 import { Creature } from '@src/character_sheet/creature';
-import { getWeaponDamageDice, getWeaponTag } from '@src/monsters/weapons';
-import { Maneuver } from '@src/combat_styles';
 
 t.test('reformatAttackTargeting', (t) => {
   const simpleCreature = Creature.new();
@@ -168,7 +166,7 @@ t.test('standardizeModifierSign', (t) => {
   t.equal(standardizeModifierSign('\\minus'), '-');
   t.equal(standardizeModifierSign('+'), '+');
   t.equal(standardizeModifierSign('\\plus'), '+');
-  t.throws(() => standardizeModifierSign('invalid'), 'should throw for invalid sign');
+  t.throws(() => standardizeModifierSign('invalid'), new Error("Unable to parse LaTeX modifier sign 'invalid'"));
   t.end();
 });
 
@@ -349,7 +347,7 @@ t.test('restructureStrikeAbility', (t) => {
       effect: 'Make a strike.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
-  }, 'should throw if weapon is missing');
+  }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
 
   t.throws(() => {
     const ability = {
@@ -359,7 +357,7 @@ t.test('restructureStrikeAbility', (t) => {
       attack: { hit: 'damage', targeting: 'target' },
     } as any;
     restructureStrikeAbility(mockCreature, ability);
-  }, 'should throw if banana');
+  }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
 
   t.end();
 });
