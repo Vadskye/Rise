@@ -127,7 +127,7 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   const effect = ability.effect!;
   const weapon = ability.weapon!;
   let damageMultiplier = 1;
-  let multiplierMatch = effect.match(/deals (double|triple|quadruple) (\\glossterm{weapon damage}|damage)/);
+  let multiplierMatch = effect.match(/deals (double|triple|quadruple) (\\glossterm{weapon damage}|weapon damage|damage)/);
   if (multiplierMatch) {
     damageMultiplier = {
       'double': 2,
