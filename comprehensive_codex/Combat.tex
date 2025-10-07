@@ -676,14 +676,15 @@
     You need a Dexterity of at least 2 to make a dual strike.
     In addition, you cannot use a shield to make dual strikes, even if you are proficient with using it as a weapon.
 
-    When you make a dual strike, you treat both of your weapons as a single combined weapon.
+    When you make a dual strike, you take a \minus3 accuracy penalty.
+    In exchange, you treat both of your weapons as a single combined weapon.
     You sum the accuracy modifier and \glossterm{weapon damage} from both weapons.
     However, your weapon damage bonus from \glossterm{power} only applies once to the combined weapon, not once for each weapon.
     If your power modifier to damage is different between the two weapons, use the higher power modifier.
 
     All weapon tags, magical properties, special material bonuses from both weapons apply to the combined weapon if possible.
     Numeric modifiers from both weapons stack, even if you have the same magical property or weapon tag on both weapons.
-    For example, using two magical Flaming weapons would provide 2d4 \glossterm{extra damage}, and using two Resonating weapons would impose a \minus4 Armor defense penalty on a damaged target.
+    For example, using two magical Flaming weapons would provide 2d4 \glossterm{extra damage}, and using two Keen weapons would give you a \plus4 accuracy bonus for the purpose of getting a critical hit.
     However, \glossterm{enhancement bonuses} still do not stack.
 
     Some weapon tags have special rules for how they work in a dual strike.
@@ -700,29 +701,20 @@
       \item \weapontag{Thrown}: Only functions if both weapons are Thrown. Use the lower \glossterm{range limits} of the two weapons.
     \end{raggeditemize}
 
-    % 2x rapier: +3a 2d4 = +4a 2d4, +3a Light, -4a base
-    % 2x Broadsword: -2a 2d6 Sweeping (2) = +2a 2d6, Sweeping (2), -4a base
-    % broadsword/smallsword: +1a 1d6+1d4 Sweeping (1) = +3a 1d6+1d4, Sweeping (1), +2a Light, -4a base
-    % 2x sickle: +1a 2d4 Sweeping (2) = +2a 2d4 Sweeping (2), +3a Light, -4a base
-
-    % Exotics:
-    % War scythe: +0a 1d10 Sweeping (2)
-    % 2x Kukri: +2a 2d4 Sweeping (2) = +4a 2d4 Sweeping (2), +3a Light, -5a exotic base
-    Normally, you take a \minus4 accuracy penalty when making a \glossterm{dual strike}.
-    If you are using at least one \glossterm{exotic weapon}, this accuracy penalty is increased by 1.
-
     Putting this all together, here are some examples:
     \begin{raggeditemize}
-      \item Broadsword and smallsword: \plus1 accuracy, 1d6\plus1d4 damage, Sweeping (1)
+        % = +1a smallsword, +2a light, -3a base
+      \item Broadsword and smallsword: \plus0 accuracy, 1d6\plus1d4 damage, Sweeping (1), Versatile Grip (irrelevant unless you have three hands)
+        % = +2a both weapons, +3a light, -3a base
       \item Two kukris: \plus2 accuracy, 2d4 damage, Sweeping (2).
-        % = +2a 2d4, +3a light, -4a base
-      \item Two rapiers: \plus1 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits).
-        % = +0a 2d10, -5a exotic base
+        % = +3a light, -3a base
+      \item Two kama: \plus0 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits).
+        % = -2a both weapons, -3a base
       \item Two totokias: \minus5 accuracy, 2d10 damage, Impact+ (glance if miss by 8 or less)
-        % = +1a 1d8+1d4, +2a light, -4a base
-      \item Throwing axe and handaxe: \minus1 accuracy, 1d8\plus1d4 damage, Thrown (30/60)
-        % = +0a 1d8+1d6, +2a light, -4a base
-      \item Warhammer and light hammer: \minus2 accuracy, 1d8\plus1d6 damage, Resonating+ (-4 Armor on hit), Versatile Grip (usually irrelevant)
+        % = +2a light, -3a base
+      \item Throwing axe and handaxe: \minus1 accuracy, 1d6\plus1d4 damage, Thrown (30/60)
+        % = +2a light, -3a base
+      \item Warhammer and light hammer: \minus1 accuracy, 1d8\plus1d6 damage, Impact+ (glance if miss by 8 or less), Versatile Grip (irrelevant unless you have three hands)
     \end{raggeditemize}
 
     \subsubsection{Split Strikes}
