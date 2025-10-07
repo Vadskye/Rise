@@ -140,7 +140,10 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   }
 
   const damageDice = getWeaponDamageDice(weapon);
-  const damageFromPower = monster.getRelevantPower(ability.isMagical) * damageMultiplier;
+  if (!damageDice) {
+    throw new Error(`Ability ${monster.name}.${ability.name}: Invalid weapon '${weapon}'`);
+  }
+  const damageFromPower = Math.floor(monster.getRelevantPower(ability.isMagical) / 2) * damageMultiplier;
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
