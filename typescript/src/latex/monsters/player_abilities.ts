@@ -93,9 +93,10 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   if (ability.attack) {
     throw new Error(`Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`);
   }
+  const effect = ability.effect!;
 
   let accuracyModifierText = '';
-  const accuracyMatch = ability.effect!.match(/Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/);
+  const accuracyMatch = effect.match(/Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/);
   if (accuracyMatch) {
     const modifierSign = standardizeModifierSign(accuracyMatch[2]);
     const modifierValue = Number(accuracyMatch[3]);
@@ -105,8 +106,11 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
     accuracyModifierText = `${modifierSign}${modifierValue}`;
   }
 
+  // TODO: we'll need more processing on this.
+  const effectWithoutStrike = effect.replace(/Make a (\\glossterm{strike}|strike)[^.]*\./g, '');
+
   ability.attack = {
-    hit: `${calculateStrikeDamage(monster, ability)} damage.`,
+    hit: `${calculateStrikeDamage(monster, ability)} damage.${effectWithoutStrike}`,
     targeting: `The $name makes a $accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.`,
   }
 
@@ -241,7 +245,8 @@ export function reformatAttackConsequences(monster: Creature, ability: ActiveAbi
 }
 
 // This can be run for attack.hit, attack.crit, and attack.injury, since they all can have
-// damage values listed. This doesn't modify in place.
+// damage values listed. This doesn't modify in place. It also doesn't generally calculate
+// strike-based damage, which is handled by `restructureStrikeAbility`.
 function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText: string): string {
   effectText = effectText.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
     calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),

@@ -78,14 +78,5 @@ export function addAberrations(grimoire: Grimoire) {
       name: 'Slime-Covered Body',
       tags: ['Poison'],
     });
-    creature.addAutoAttack({
-      defense: ['Armor'],
-      effect: 'damage',
-      isMagical: false,
-      name: 'Slimy Tentacle',
-      tags: [],
-      targeting: 'targeted_touch',
-      usageTime: 'standard',
-    });
   });
 }
