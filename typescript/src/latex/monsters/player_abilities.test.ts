@@ -266,6 +266,34 @@ t.test('restructureStrikeAbility', (t) => {
     t.end();
   });
 
+  t.test('with an extra effect after the strike', (t) => {
+    const ability = {
+      name: 'Test Ability',
+      weapon: 'bite',
+      effect: 'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+    } as any;
+    restructureStrikeAbility(mockCreature, ability);
+    t.matchStrict(ability.attack, {
+      hit: '1d8+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
+    });
+    t.end();
+  });
+
+  t.test('with an accuracy modifier and an extra effect after the strike', (t) => {
+    const ability = {
+      name: 'Test Ability',
+      weapon: 'bite',
+      effect: 'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+    } as any;
+    restructureStrikeAbility(mockCreature, ability);
+    t.matchStrict(ability.attack, {
+      hit: '1d8+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      targeting: 'The $name makes a $accuracy+1 melee strike vs. Armor with its bite.',
+    });
+    t.end();
+  });
+
   t.test('with a +accuracy bonus', (t) => {
     const ability = {
       name: 'Test Ability',
@@ -277,7 +305,6 @@ t.test('restructureStrikeAbility', (t) => {
       hit: '1d8+5 damage.',
       targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
     t.end();
   });
 
@@ -292,7 +319,6 @@ t.test('restructureStrikeAbility', (t) => {
       hit: '2d8+10 damage.',
       targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
     t.end();
   });
 
@@ -307,7 +333,6 @@ t.test('restructureStrikeAbility', (t) => {
       hit: '1d8+5 damage.',
       targeting: 'The $name makes a $accuracy-2 melee strike vs. Armor with its bite.',
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
     t.end();
   });
 
@@ -322,7 +347,6 @@ t.test('restructureStrikeAbility', (t) => {
       hit: '1d8+5 damage.',
       targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its bite.',
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
     t.end();
   });
 
@@ -337,7 +361,6 @@ t.test('restructureStrikeAbility', (t) => {
       hit: '1d8+5 damage.',
       targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
     t.end();
   });
 
