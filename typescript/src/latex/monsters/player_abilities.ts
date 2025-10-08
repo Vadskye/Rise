@@ -1,8 +1,8 @@
 import { Creature, ActiveAbility } from '@src/character_sheet/creature';
-import { Maneuver } from '@src/combat_styles';
-import { convertManeuverToLatex } from '@src/latex/combat_styles';
-import { convertSpellToLatex } from '@src/latex/mystic_spheres';
-import { Spell } from '@src/mystic_spheres';
+import { Maneuver } from '@src/abilities/combat_styles';
+import { convertManeuverToLatex } from '@src/latex/abilities/combat_styles';
+import { convertSpellToLatex } from '@src/latex/abilities/mystic_spheres';
+import { Spell } from '@src/abilities/mystic_spheres';
 import { getWeaponDamageDice, getWeaponTag } from '@src/monsters/weapons';
 
 export function convertManeuverToMonsterAbility(monster: Creature, maneuver: Maneuver): string {

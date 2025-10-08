@@ -1,4 +1,4 @@
-import { Spell } from '@src/mystic_spheres';
+import { Spell } from '@src/abilities/mystic_spheres';
 
 export function spellNarrative(spell: Pick<Spell, 'name' | 'narrative'>): string | null {
   if (spell.narrative) {

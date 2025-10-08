@@ -1,4 +1,4 @@
-import { MysticSphere, BaseSpellLike } from '../mystic_spheres';
+import { MysticSphere, BaseSpellLike } from '@src/abilities/mystic_spheres';
 
 type Counts = Record<string, number>;
 type Breakdown = Record<string, Counts>;

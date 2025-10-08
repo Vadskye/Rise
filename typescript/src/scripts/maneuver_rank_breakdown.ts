@@ -1,4 +1,4 @@
-import { combatStyles, Maneuver } from '../combat_styles';
+import { combatStyles, Maneuver } from '@src/abilities/combat_styles';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
 type ManeuverRank = 1 | 3 | 5 | 7;

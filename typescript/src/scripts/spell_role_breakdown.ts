@@ -1,10 +1,9 @@
 import {
   mysticSpheres,
-  AbilityRole,
-  ABILITY_ROLES,
   BaseSpellLike,
   MysticSphere,
-} from '../mystic_spheres';
+} from '@src/abilities/mystic_spheres';
+import { AbilityRole, ABILITY_ROLES } from '@src/abilities/constants';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
 const config: BreakdownConfig<MysticSphere, BaseSpellLike, AbilityRole> = {

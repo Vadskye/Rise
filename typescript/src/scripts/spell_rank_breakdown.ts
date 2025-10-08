@@ -1,5 +1,5 @@
-import { mysticSpheres, Spell, Rank, MysticSphere } from '../mystic_spheres';
-import { run, BreakdownConfig } from '../util/breakdown_cli';
+import { mysticSpheres, Spell, Rank, MysticSphere } from '@src/abilities/mystic_spheres';
+import { run, BreakdownConfig } from '@src/util/breakdown_cli';
 
 type NonNullableRank = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 const RANKS: NonNullableRank[] = [1, 2, 3, 4, 5, 6, 7] as const;

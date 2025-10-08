@@ -32,8 +32,8 @@ import {
   RiseTag,
   RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
-import { getManeuverByName } from '@src/combat_styles';
-import { getSpellByName, Spell } from '@src/mystic_spheres';
+import { getManeuverByName } from '@src/abilities/combat_styles';
+import { getSpellByName, Spell } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon } from '@src/monsters/weapons';
 
 // These have unique typedefs beyond the standard string/number/bool
