@@ -1,4 +1,4 @@
-import { combatStyles } from '@src/combat_styles';
+import { combatStyles } from '@src/abilities/combat_styles';
 import {
   convertCombatStyleToLatex,
   convertMysticSphereToLatex,
@@ -10,7 +10,7 @@ import {
   generateMysticSphereSpellSummaries,
   generateRitualDescriptions,
 } from '@src/latex';
-import { mysticSpheres } from '@src/mystic_spheres';
+import { mysticSpheres } from '@src/abilities/mystic_spheres';
 import cli from 'commander';
 import fs from 'fs';
 

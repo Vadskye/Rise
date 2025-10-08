@@ -1,5 +1,6 @@
-import { combatStyles } from '../combat_styles';
-import { AbilityRole, ABILITY_ROLES, BaseSpellLike } from '../mystic_spheres';
+import { combatStyles } from '@src/abilities/combat_styles';
+import { AbilityRole, ABILITY_ROLES } from '@src/abilities/constants';
+import { BaseSpellLike } from '@src/abilities/mystic_spheres';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
 const config: BreakdownConfig<any, BaseSpellLike, AbilityRole> = {

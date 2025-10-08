@@ -1,6 +1,6 @@
 import t from 'tap';
 import { reformatAttackTargeting, standardizeModifierSign, calculateStrikeDamage, restructureStrikeAbility, calculateDamage } from './player_abilities';
-import { Spell } from '@src/mystic_spheres';
+import { Spell } from '@src/abilities/mystic_spheres';
 import { Creature } from '@src/character_sheet/creature';
 
 t.test('reformatAttackTargeting', (t) => {

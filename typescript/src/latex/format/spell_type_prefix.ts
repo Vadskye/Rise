@@ -1,4 +1,4 @@
-import { Rank, Ritual, SpellLike } from '@src/mystic_spheres';
+import { Rank, Ritual, SpellLike } from '@src/abilities/mystic_spheres';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
 export function ritualSpheres(ritual: Ritual): string {

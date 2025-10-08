@@ -1,4 +1,4 @@
-import { SpellLike } from '@src/mystic_spheres';
+import { SpellLike } from '@src/abilities/mystic_spheres';
 
 const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;

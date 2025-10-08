@@ -1,4 +1,4 @@
-import { SpellLike } from '@src/mystic_spheres';
+import { SpellLike } from '@src/abilities/mystic_spheres';
 
 export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
   if (!spell.type) {
