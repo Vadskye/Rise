@@ -49,7 +49,7 @@ pub struct DicePool {
     // A maximized dice pool deals more `.average_damage()` and is noted in
     // `.to_string()`.
     pub maximized: bool,
-    // Useful for things like "double weapon damage". This is used in two places:
+    // Useful for things like "double damage". This is used in two places:
     // `.average_damage()` and `.to_string()`.
     pub multiplier: i32,
     // A weak dice pool halves flat modifiers
@@ -218,7 +218,7 @@ impl DicePool {
         sum
     }
 
-    // Useful for "double weapon damage" or "triple weapon damage" effects
+    // Useful for "double damage" or "triple damage" effects
     pub fn multiply(&self, multiplier: i32) -> DicePool {
         DicePool {
             dice: self.dice.clone(),

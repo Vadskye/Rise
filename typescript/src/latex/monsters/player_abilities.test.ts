@@ -188,7 +188,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with double damage multiplier', (t) => {
     const ability = {
       weapon: 'claws',
-      effect: 'Make a strike that deals double weapon damage',
+      effect: 'Make a strike that deals double damage',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '4d4+10');
@@ -198,7 +198,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with triple damage multiplier', (t) => {
     const ability = {
       weapon: 'tentacle',
-      effect: 'Make a \\glossterm{strike} that deals triple \\glossterm{weapon damage}',
+      effect: 'Make a \\glossterm{strike} that deals triple damage',
       isMagical: true,
     } as any;
     // Lower because this is a magical strike

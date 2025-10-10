@@ -504,7 +504,7 @@ export const telekinesis: MysticSphere = {
         This spell has no \\glossterm{somatic components}.
 
         Make a \\magical \\glossterm{strike} using an arrow as if you were shooting it from a longbow.
-        As normal for a longbow, the strike's \\glossterm{weapon damage} is 1d6 \\add half your \\glossterm{power}, and your \\glossterm{range limits} with this strike are 90/270.
+        As normal for a longbow, the strike deals damage equal to 1d6 \\add half your \\glossterm{power}, and your \\glossterm{range limits} with this strike are 90/270.
 
         The arrow must be easily accessible on your person, such as in a quiver.
         You do not have to be proficient with bows, and you do not have to manually draw the arrow.

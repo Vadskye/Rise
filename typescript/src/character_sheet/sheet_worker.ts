@@ -2813,6 +2813,7 @@ interface StrikeAttackAttrs {
   weaponDice: string[];
   weaponExistence: Record<string, boolean>;
   weaponExtraDamage: string[];
+  weaponPowerDamage: number[];
 }
 
 function handleStrikeAttacks() {
@@ -2826,8 +2827,8 @@ function handleStrikeAttacks() {
     const damage_multiplier_key = `repeating_strikeattacks_${sectionId}damage_multiplier`;
     const weapon_keys = [];
     for (let i = 0; i < supportedWeaponCount; i++) {
-      weapon_keys.push(`weapon_${i}_magical_damage_total`);
-      weapon_keys.push(`weapon_${i}_mundane_damage_total`);
+      weapon_keys.push(`weapon_${i}_magical_power_damage`);
+      weapon_keys.push(`weapon_${i}_mundane_power_damage`);
       weapon_keys.push(`weapon_${i}_extra_damage`);
       weapon_keys.push(`weapon_${i}_exists`);
     }
@@ -2848,9 +2849,11 @@ function handleStrikeAttacks() {
         // We need to copy the weapon_exists keys into the local repeating section.
         const weaponExistence: Record<string, boolean> = {};
         const weaponDice: string[] = [];
+        const weaponPowerDamage: number[] = [];
         const weaponExtraDamage: string[] = [];
         for (let i = 0; i < supportedWeaponCount; i++) {
-          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_total`]);
+          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_dice`]);
+          weaponPowerDamage.push(Number(v[`weapon_${i}_${dice_type}_power_damage`] || 0));
           weaponExtraDamage.push(v[`weapon_${i}_extra_damage`]);
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = Boolean(
             v[`weapon_${i}_exists`],
@@ -2864,6 +2867,7 @@ function handleStrikeAttacks() {
           weaponDice,
           weaponExtraDamage,
           weaponExistence,
+          weaponPowerDamage,
         });
       },
     );
@@ -2882,6 +2886,7 @@ function handleStrikeAttacks() {
           : `${parsed.weaponDamageMultiplier}*(${parsed.weaponDice[i]})`;
       const damageComponents = [
         multipliedWeaponDamage,
+        parsed.weaponPowerDamage,
         parsed.weaponExtraDamage[i],
         parsed.extraDamage,
       ];
@@ -3134,7 +3139,9 @@ function handleWeaponDamageDice() {
     const damageDiceKey = `weapon_${weaponIndex}_damage_dice`;
     const nameKey = `weapon_${weaponIndex}_name`;
     const magicalTotalKey = `weapon_${weaponIndex}_magical_damage_total`;
+    const magicalPowerDamageKey = `weapon_${weaponIndex}_magical_power_damage`;
     const mundaneTotalKey = `weapon_${weaponIndex}_mundane_damage_total`;
+    const mundanePowerDamageKey = `weapon_${weaponIndex}_mundane_power_damage`;
     const weaponExistsKey = `weapon_${weaponIndex}_exists`;
 
     onGet({
@@ -3148,6 +3155,8 @@ function handleWeaponDamageDice() {
           setAttrs({
             [magicalTotalKey]: '',
             [mundaneTotalKey]: '',
+            [magicalPowerDamageKey]: '',
+            [mundanePowerDamageKey]: '',
             [weaponExistsKey]: 0,
           });
 
@@ -3159,7 +3168,10 @@ function handleWeaponDamageDice() {
 
         let magicalTotal = v[damageDiceKey];
         let mundaneTotal = v[damageDiceKey];
-        if (!v[ignorePowerKey]) {
+        if (v[ignorePowerKey]) {
+          magicalPowerBonus = 0;
+          mundanePowerBonus = 0;
+        } else {
           if (magicalPowerBonus > 0) {
             magicalTotal += `+${magicalPowerBonus}`;
           } else if (magicalPowerBonus < 0) {
@@ -3173,7 +3185,9 @@ function handleWeaponDamageDice() {
         }
 
         setAttrs({
+          [magicalPowerDamageKey]: magicalPowerBonus,
           [magicalTotalKey]: magicalTotal,
+          [mundanePowerDamageKey]: mundanePowerBonus,
           [mundaneTotalKey]: mundaneTotal,
           [weaponExistsKey]: magicalTotal !== '' || mundaneTotal !== '',
         });

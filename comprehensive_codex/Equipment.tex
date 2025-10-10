@@ -225,9 +225,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
 \sectiongraphic*{Weapons}{width=\columnwidth}{equipment/weapons}
 
   Each weapon has a \glossterm{weapon group} and any number of \glossterm{weapon tags}.
-  In addition, each weapon has a particular \glossterm{accuracy} modifier and defines a base \glossterm{dice pool} for attacks using that weapon.
+  In addition, each weapon has a particular \glossterm{accuracy} modifier and defines the \glossterm{weapon damage} for attacks using that weapon.
   This section explains each of those concepts and defines the statistics for weapons in Rise.
-  You gain a bonus to your \glossterm{weapon damage} equal to half your \glossterm{power} (see \pcref{Weapon Damage}).
 
   Unless otherwise specified, a weapon must be held in a single \glossterm{free hand}.
   You can use two hands to hold a weapon if you want, but that provides no special benefit unless that weapon has the \weapontag{Versatile Grip} tag (see \pcref{Weapon Tags}).
@@ -322,7 +321,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     This cannot be used if the weapon always requires two hands to fire, such as a titanbow.
     If your Strength is 6 or higher, this accuracy penalty is removed.
 
-    While holding a Heavy weapon in two hands, you add your full \glossterm{power} to your \glossterm{weapon damage} with the weapon, rather than only half your power as normal (see \pcref{Weapon Damage}).
+    While holding a Heavy weapon in two hands, you add your full \glossterm{power} to damage with \glossterm{strikes} using the weapon, rather than only half your power as normal (see \pcref{Strikes}).
     % Assume you have a 70% chance to hit (+0 vs 4 Armor).
     % +3 accuracy takes you to 1x hit damage per round.
     % +6 accuracy for crits means you crit on 8/9/10.
@@ -358,7 +357,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     Thrown weapons can normally be used in melee without penalty.
     % Doesn't cost an improvement slot; very situational
     \weapontagdef{Versatile Grip} This weapon is designed to be held in either one hand or two hands.
-    While holding a Versatile Grip weapon in two hands, you add your full \glossterm{power} to your \glossterm{weapon damage} with the weapon, rather than only half your power as normal (see \pcref{Weapon Damage}).
+    While holding a Versatile Grip weapon in two hands, you add your full \glossterm{power} to damage with \glossterm{strikes} using the weapon, rather than only half your power as normal (see \pcref{Strikes}).
 
   \subsection{Weapon Table}
     Here is the format for weapon entries in the Weapons table, below.
@@ -743,8 +742,8 @@ This chapter defines the items and equipment that exist in the universe of Rise,
         On a miss, you still deal half damage.
       \end{activeability}
 
-      % Battleaxe 1d8 damage, Sweeping (1)
-      % 1H mithral greataxe: 1d10 damage, Sweeping (1). So you're basically paying a special material cost for +1 weapon damage.
+      % Battleaxe: 1d8 damage
+      % 1H mithral greataxe: 1d10 damage. So you're basically paying a special material cost for +1 weapon damage.
       % More generally, this is basically adding +1 weapon upgrade to a given weapon.
       \parhead{Mithral} A non-\weapontag{Heavy} mithral weapon gains the \weapontag{Light} weapon tag.
       A Heavy mithral weapon loses that tag and instead gains the \weapontag{Versatile Grip} weapon tag.

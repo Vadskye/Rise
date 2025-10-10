@@ -44,10 +44,10 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     \rank{2} You add half your Strength to your \glossterm{magical power} to determine your total power with this strike.
                     \rank{3} You deal \glossterm{extra damage} equal to half your power.
-                    \rank{4} If you miss, the target still takes the extra damage.
-                    \rank{5} The strike deals double \glossterm{weapon damage}.
-                    \rank{6} The extra damage increases to be equal to your power.
-                    \rank{7} The extra damage increases to twice your power.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to be equal to your power.
+                    \rank{6} The strike deals quadruple \glossterm{weapon damage}.
+                    \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{magicalactiveability}
             ",
             modifiers: Some(vec![Modifier::Maneuver(Maneuver::ElementalStrike(1))]),
