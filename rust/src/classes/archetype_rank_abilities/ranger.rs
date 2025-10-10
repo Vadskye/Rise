@@ -226,9 +226,10 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
-                    \rank{5} The strike deals 1d6 \glossterm{extra damage}.
-                    \rank{6} The extra damage increases to 2d6.
-                    \rank{7} The strike deals triple damage.
+                    \rank{5} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The strike deals triple \glossterm{weapon damage}.
+                    % TODO: wording
+                    \rank{7} If the strike would deal double damage, it deals triple damage instead.
                 \end{activeability}
             ",
             modifiers: None,
