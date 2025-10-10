@@ -369,7 +369,7 @@ export const chronomancy: MysticSphere = {
       name: 'Mighty Weapon Haste',
 
       effect: `
-        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        As a \\glossterm{minor action}, you can make a \\glossterm{mundane} \\glossterm{strike} that deals double damage.
         All \\glossterm{extra damage} does not apply to this strike.
       `,
       rank: 7,

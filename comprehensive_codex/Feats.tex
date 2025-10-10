@@ -352,6 +352,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Overburdened Quickdraw} Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
     This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
+    If you have the Armed and Ready fighter ability with the same effect, you can use both free actions separately, allowing you to draw or sheathe two weapons per round as a free action.
 
     \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
     Instead, if you choose weapons as your legacy item category, you always treat one weapon you wield as your legacy item.
@@ -735,10 +736,10 @@ They allow more distinct and unique character customization, but also increase g
       This extra damage stacks if both circumstances apply.
 
       \rankline
-      \featlevel{9} The extra damage from both circumstances increases to 1d10.
-      \featlevel{12} The extra damage from both circumstances increases to 2d10.
-      \featlevel{15} The strike deals double \glossterm{weapon damage}.
-      \featlevel{18} The extra damage from both circumstances increases to 4d8.
+      \featlevel{9} The strike deals double \glossterm{weapon damage}.
+      \featlevel{12} The extra damage from both circumstances increases to 2d6.
+      \featlevel{15} The extra damage from both circumstances increases to 4d6.
+      \featlevel{18} The extra damage from both circumstances increases to 4d10.
     \end{activeability}
 
     \ff[12]{Defensive Stance} You gain a \plus1 bonus to your Armor defense as long as you wield a non-\weapontag{Projectile} weapon using at least one hand.
@@ -959,13 +960,14 @@ They allow more distinct and unique character customization, but also increase g
       Make a melee \glossterm{strike}.
       The attack is made against the target's Reflex defense instead of its Armor defense.
       You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this ability (see \pcref{Power}).
-      \hit If the target takes damage and your attack also hits its Fortitude defense, it becomes \slowed as a \glossterm{condition}.
+      \hit If your attack also hits the target's Fortitude defense, it is \glossterm{briefly} \slowed.
+      \injury If your attack also hits the target's Fortitude defense, it is \slowed as a \glossterm{condition}.
 
       \rankline
-      \featlevel{9} The strike deals 1d6 \glossterm{extra damage}.
-      \featlevel{12} The extra damage increases to 1d6 \plus1 per 2 power.
-      \featlevel{15} The extra damage increases to 1d6 \plus1 per power.
-      \featlevel{18} The strike deals double \glossterm{weapon damage}.
+      \featlevel{9} The strike deals double \glossterm{weapon damage}.
+      \featlevel{12} The strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
+      \featlevel{15} The extra damage increases to 2d6 \add half your \glossterm{power}.
+      \featlevel{18} The extra damage increases to 4d6 \add your \glossterm{power}.
     \end{magicalactiveability}
 
     \magicalff[12]{Ghost Step\plus} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
@@ -2155,16 +2157,15 @@ They allow more distinct and unique character customization, but also increase g
     \begin{magicalactiveability}{Violent Hand}{Standard action}
       \rankline
       Choose a weapon you are proficient with and currently controlling using the \spell{distant hand} cantrip.
-      Make a melee \glossterm{strike} using that weapon that deals \glossterm{extra damage} equal to half your \glossterm{power}.
+      Make a melee \glossterm{strike} using that weapon that deals double \glossterm{weapon damage}.
       The strike comes from the weapon's location, not your location.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
 
-      % TODO: it would be nice if this scaled more strongly with the chosen weapon's stats? This is generally awkward scaling.
       \rankline
-      \rank{9} The extra damage increases to 1d6 \add half your power.
-      \rank{12} The extra damage increases to 1d6 \add your power.
-      \rank{15} The extra damage increases to 3d6 \add your power.
-      \rank{18} The strike deals double \glossterm{weapon damage}.
+      \rank{9} The strike deals triple weapon damage.
+      \rank{12} The strike deals \glossterm{extra damage} equal to half your \glossterm{magical power}.
+      \rank{15} The strike deals five times weapon damage.
+      \rank{18} The strike deals eight times weapon damage.
     \end{magicalactiveability}
 
     \magicalff[12]{Crushing Spell} You learn an additional spell.
@@ -2562,7 +2563,7 @@ They allow more distinct and unique character customization, but also increase g
     \ff[1]{Focused Weapon} Choose one type of weapon, such as a broadsword.
     This is your focused weapon, and your abilities from this feat give you benefits with your focused weapon.
 
-    \ff[1]{Mighty Weapon} The damage die of your focused weapon increases by one step in the order below:
+    \ff[1]{Mighty Weapon} The \glossterm{weapon damage} of your focused weapon increases by one step in the order below:
     \begin{raggeditemize}
       \item 1d3
       \item 1d4
@@ -2572,7 +2573,6 @@ They allow more distinct and unique character customization, but also increase g
       \item 2d6
       \item 2d8
       \item 2d10
-      \item 4d6
     \end{raggeditemize}
 
     \ff[6]{Enhanced Legacy} If you choose your focused weapon as your \glossterm{legacy item}, you can choose an additional magic item property with a maximum rank of 3.
@@ -2585,7 +2585,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[18]{Enhanced Legacy\plus\plus} You can change the item property, and the maximum rank increases to 7.
 
-    \ff[18]{Mighty Weapon\plus} The damage die of your weapon increases by an additional step.
+    \ff[18]{Weapon Supremacy} Whenever you miss with a \glossterm{strike} using your focused weapon, you still deal half damage.
+    Any effects other than damage do not apply.
   \end{feat}
 
   \begin{feat}{Whirlwind Warrior}{Combat}
@@ -2603,9 +2604,10 @@ They allow more distinct and unique character customization, but also increase g
 
       \rankline
       \featlevel{9} The extra damage increases to be equal to half your power.
-      \featlevel{12} The extra damage increases to be equal to your power.
-      \featlevel{15} The extra damage increases to 1d8 \add your power.
-      \featlevel{18} The strike deals double \glossterm{weapon damage}.
+      \featlevel{12} The strike deals double \glossterm{weapon damage}.
+      \featlevel{15} The strike deals quadruple \glossterm{weapon damage}.
+      \featlevel{18} The extra damage increases to be equal to your power.
+      In addition, the strike targets all enemies within a \smallarea radius of you.
     \end{activeability}
 
     \ff[12]{Eye of the Storm} You gain a \plus1 bonus to your Armor and Reflex defenses against creatures that you are sharing space with.

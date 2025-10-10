@@ -82,8 +82,8 @@ pub fn airdancer<'a>() -> Vec<RankAbility<'a>> {
                     % TODO: is Jump clear enough about how to be directly above a creature?
                     \rank{4} This extra damage is doubled against each creature that you are directly above when you make the strike.
                     \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 2d10.
-                    \rank{7} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The extra damage increases to 2d6 \add half \glossterm{power}.
+                    \rank{7} The extra damage increases to 4d6 \add half \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,

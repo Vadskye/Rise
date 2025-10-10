@@ -127,6 +127,7 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   }
 }
 
+// TODO: calculate weapon damage differently from generic double damage
 export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility): string {
   const effect = ability.effect!;
   const weapon = ability.weapon!;

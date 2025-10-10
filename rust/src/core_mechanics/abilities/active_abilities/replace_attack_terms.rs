@@ -254,7 +254,7 @@ fn calc_weapon_damage(
     is_magical: bool,
     weapon: &Weapon,
 ) -> String {
-    // Handle weapon damage multipliers
+    // Handle damage multipliers
     let multiplier_pattern = Regex::new(r"\$damage\*?(\d)?\b").unwrap();
     let multiplier_captures = multiplier_pattern.captures(damage_match.as_str()).unwrap();
     let multiplier = if let Some(multiplier_match) = multiplier_captures.get(1) {
