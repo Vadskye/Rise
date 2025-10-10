@@ -2886,7 +2886,7 @@ function handleStrikeAttacks() {
           : `${parsed.weaponDamageMultiplier}*(${parsed.weaponDice[i]})`;
       const damageComponents = [
         multipliedWeaponDamage,
-        parsed.weaponPowerDamage,
+        parsed.weaponPowerDamage[i],
         parsed.weaponExtraDamage[i],
         parsed.extraDamage,
       ];
