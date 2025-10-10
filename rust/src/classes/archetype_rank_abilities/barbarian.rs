@@ -162,10 +162,9 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
-                    % Note: rank 5 and 6 could flip order; will either be overpowered or underpowered at specifically rank 5
-                    \rank{5} The accuracy bonus increases to \plus2.
-                    \rank{6} The strike deals triple damage instead of double damage.
-                    \rank{7} The accuracy bonus increases to \plus4.
+                    \rank{5} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The strike deals triple \glossterm{weapon damage}.
+                    \rank{7} The strike deals triple damage.
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
@@ -277,10 +276,10 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
                     You cannot include the same creature or object as a target of both strikes.
 
                     \rankline
-                    \rank{4} If you take a \minus3 accuracy penalty with a strike, it deals double damage.
-                    \rank{5} The accuracy penalty is reduced to \minus1.
-                    \rank{6} You gain a \plus1 accuracy bonus with both strikes, and they always deal double damage.
-                    \rank{7} You can deal triple damage instead of double damage with one of the two strikes.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
+                    \rank{6} The extra damage increases to be equal to your power.
+                    \rank{7} The strike deals quadruple \glossterm{weapon damage}.
                 \end{activeability}
             ",
             modifiers: None,
