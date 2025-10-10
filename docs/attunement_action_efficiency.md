@@ -184,7 +184,7 @@ Translating that into usable scaling, assuming medium range:
 * Rank 6: dr3, 1d8 + power (55%)
 * Rank 7:
   * dr4, 1d6 per 2 (56%)
-  * double damage strike (50%) - only double weapon damage, not double damage, because extra damage doesn't apply anyway
+  * double damage strike (50%) - note that extra damage doesn't apply anyway
 
 ### Honed: 2.0
 

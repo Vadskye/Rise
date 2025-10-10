@@ -93,9 +93,9 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The extra damage increases to 3d6.
-                    \rank{6} The strike deals double \glossterm{weapon damage}.
-                    \rank{7} The extra damage increases to 4d8.
+                    \rank{5} The extra damage increases to 1d10 \add half your \glossterm{power}.
+                    \rank{6} The extra damage increases to 2d10 \add half your \glossterm{power}.
+                    \rank{7} The extra damage increases to 2d10 \add your \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,
@@ -481,10 +481,10 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
                     You gain a \plus2 accuracy bonus if the target is \unaware or \partiallyunaware of your attack.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d10.
-                    \rank{5} The extra damage increases to 2d10.
-                    \rank{6} The extra damage increases to 4d8.
-                    \rank{7} The strike deals double \glossterm{weapon damage}.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to 2d6.
+                    \rank{6} The extra damage increases to 4d6.
+                    \rank{7} The extra damage increases to 6d8.
                 \end{activeability}
             ",
             modifiers: None,

@@ -82,10 +82,10 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                     Then, if you did not get a critical hit with the strike, you are \glossterm{briefly} \honed.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d6 \add half your power.
-                    \rank{5} The extra damage increases to 1d6 \add your power.
-                    \rank{6} The extra damage increases to 3d6 \add your power.
-                    \rank{7} The strike deals double \glossterm{weapon damage}.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to be equal to your power.
+                    \rank{6} The strike deals quadruple \glossterm{weapon damage}.
+                    \rank{7} The extra damage increases to 1d6 per 2 \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None, // Damage scaling handled by description

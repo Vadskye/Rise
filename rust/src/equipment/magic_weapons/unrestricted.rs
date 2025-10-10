@@ -53,23 +53,23 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     }));
 
     weapons.push(Unrestricted(StandardItem {
-        // +1.5 damage instead of +2, but it increases weapon damage instead of extra damage,
-        // which is sometimes relevant.
+        // Assuming a 1d8 weapon, this is +1.5 damage. A normal r3 magic effect is about +1 damage,
+        // and this has additional upside for very large weapons.
         name: String::from("Brutish"),
         rank: 3,
-        short_description: String::from(r"Deals +1d6-2 damage if you have 3 Str"),
+        short_description: String::from(r"Deals extra weapon damage if you have 3 Str"),
         description: String::from(r"
-            If your Strength is at least 3, this weapon deals +1d6 damage, but the damage is also reduced by 2.
-            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
+            If your Strength is at least 3, this weapon deals \glossterm{extra damage} equal to its weapon damage die \\sub 3.
+            For example, a brutish battleaxe would deal 1d8\\minus3 extra damage.
         "),
         upgrades: vec![
             // +3.5 damage
-            ItemUpgrade::new(5, "Deals +1d10-2 damage if you have 4 Str", r"
-                If your Strength is at least 4, the damage die increases to 1d10.
+            ItemUpgrade::new(5, "Deals extra weapon damage if you have 4 Str", r"
+                If your Strength is at least 4, the extra damage increases to be equal to the weapon damage die \\sub 1.
             "),
-            // +5.5 damage
-            ItemUpgrade::new(7, "Deals +1d10 damage if you have 5 Str", r"
-                If your Strength is at least 5, the damage die increases to 1d10 and the damage penalty is removed.
+            // +5 damage
+            ItemUpgrade::new(7, "Deals double extra weapon damage if you have 5 Str", r"
+                If your Strength is at least 5, the extra damage increases to be equal to twice the weapon damage die \\sub 4.
             "),
         ],
         ..MagicWeapon::default()
@@ -523,8 +523,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
         short_description: String::from(r"+1 damage, -10 Stealth"),
         description: String::from(r"
             This weapon continuously emits a low-pitched rumbling noise and vibrates in the hand.
-            Strikes with it gain a \plus1 damage bonus.
-            This changes your \glossterm{weapon damage}, and is not considered \glossterm{extra damage}.
+            Strikes with it deal 1 \glossterm{extra damage}.
             However, you take a -10 penalty to Stealth checks.
         "),
         upgrades: vec![

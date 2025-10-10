@@ -54,14 +54,10 @@
   Normally, the abilities you use will tell you how to calculate your damage.
   This section explains some special circumstances which can change how your damage is calculated.
 
+  % TODO: can any ability modify weapon damage?
   \subsection{Weapon Damage}\label{Weapon Damage}
     Some abilities deal damage based on the weapon you use the ability with.
-    Typically, this will simply involve making a \glossterm{strike} (see \pcref{Strikes}).
-
-    Weapon damage dice are defined in the Equipment chapter (see \pcref{Weapons}).
-    You gain a bonus to your weapon damage equal to half your relevant \glossterm{power} (see \pcref{Power}).
-    Strikes are typically \glossterm{mundane}, so you would use your \glossterm{mundane power}.
-    However, you might use your \glossterm{magical power} instead for \magical strikes.
+    Your \glossterm{weapon damage} is normally equal to the weapon's damage die or dice, as defined in the Equipment chapter (see \pcref{Weapons}).
 
   \subsection{Extra Damage}\label{Extra Damage}
     Some abilities add \glossterm{extra damage} to your damaging attacks.
@@ -640,7 +636,9 @@
   Whenever you make a strike, you can choose which kind of strike to make.
 
   Your \glossterm{accuracy} with a strike adds the accuracy modifier from the weapon you are attacking with.
-  Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with (see \pcref{Weapon Damage}).
+  Your \glossterm{damage} with a strike is normally equal to your \glossterm{weapon damage} with the weapon you hit with, plus half your relevant \glossterm{power}.
+  If a \magical ability causes you to make a strike, you use your \glossterm{magical power}.
+  Otherwise, you use your \glossterm{mundane power}.
 
   There are many special rules that can modify how you make strikes.
   For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
@@ -650,7 +648,8 @@
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
     You must have \glossterm{line of effect} to the target.
-    \hit You deal the target \glossterm{weapon damage} from the weapon.
+    % TODO: wording
+    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
   \end{activeability}
 
   \begin{activeability}*{Basic Strike -- Projectile}{Standard action}
@@ -658,7 +657,7 @@
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
     If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-    \hit You deal the target \glossterm{weapon damage} from the weapon.
+    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
   \end{activeability}
 
   \begin{activeability}*{Basic Strike -- Thrown}{Standard action}
@@ -667,7 +666,7 @@
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
     Otherwise, your range limits are 10/20, and you take a \minus2 accuracy penalty since you are not \glossterm{proficient} with that usage of the weapon (see \pcref{Weapon Proficiency}).
     If the target is at \glossterm{long range} from you, your accuracy takes a \minus4 \glossterm{longshot penalty} (see \pcref{Weapon Range Limits}).
-    \hit You deal the target \glossterm{weapon damage} from the weapon.
+    \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
   \end{activeability}
 
   \subsection{Dual Strikes}\label{Dual Strikes}
@@ -679,7 +678,7 @@
     When you make a dual strike, you take a \minus3 accuracy penalty.
     In exchange, you treat both of your weapons as a single combined weapon.
     You sum the accuracy modifier and \glossterm{weapon damage} from both weapons.
-    However, your weapon damage bonus from \glossterm{power} only applies once to the combined weapon, not once for each weapon.
+    You still only add the damage bonus from your \glossterm{power} once to the combined weapon, not once for each weapon.
     If your power modifier to damage is different between the two weapons, use the higher power modifier.
 
     All weapon tags, magical properties, special material bonuses from both weapons apply to the combined weapon if possible.
@@ -703,12 +702,12 @@
 
     Putting this all together, here are some examples:
     \begin{raggeditemize}
-        % = +1a smallsword, +2a light, -3a base
-      \item Broadsword and smallsword: \plus0 accuracy, 1d6\plus1d4 damage, Sweeping (1), Versatile Grip (irrelevant unless you have three hands)
+        % = +2a both weapons, +2a light, -3a base
+      \item Broadsword and smallsword: \plus1 accuracy, 1d6\plus1d4 damage, Versatile Grip (irrelevant unless you have three hands)
         % = +2a both weapons, +3a light, -3a base
-      \item Two kukris: \plus2 accuracy, 2d4 damage, Sweeping (2).
+      \item Two kukris: \plus2 accuracy, 2d4 damage, Sweeping (2)
         % = +3a light, -3a base
-      \item Two kama: \plus0 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits).
+      \item Two kama: \plus0 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits)
         % = -2a both weapons, -3a base
       \item Two totokias: \minus5 accuracy, 2d10 damage, Impact+ (glance if miss by 8 or less)
         % = +2a light, -3a base

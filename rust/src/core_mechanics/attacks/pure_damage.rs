@@ -59,8 +59,8 @@ impl PureDamageManeuver {
     }
 
     // If we have ranks to spend, spend them in the following order:
-    // 1. Triple weapon damage for 6 ranks
-    // 2. Double weapon damge for 4 ranks
+    // 1. Triple damage for 6 ranks
+    // 2. Double damge for 4 ranks
     // 3. Accuracy
     fn spend_ranks(&self) -> SpentRankResults {
         let mut spendable_ranks = self.rank - 1;

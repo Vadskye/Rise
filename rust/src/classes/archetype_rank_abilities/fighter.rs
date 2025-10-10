@@ -56,10 +56,10 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
                     \miss Half damage.
 
                     \rankline
-                    \rank{4} The extra damage increases to 1d6 \add half your power.
-                    \rank{5} The extra damage increases to 1d6 \add your power.
-                    \rank{6} The extra damage increases to 3d6 \add your power.
-                    \rank{7} The strike deals double \glossterm{weapon damage}.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to be equal to your power.
+                    \rank{6} The strike deals quadruple \glossterm{weapon damage}.
+                    \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{activeability}
             ",
             modifiers: None,
@@ -139,22 +139,12 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 1,
-            name: "Weapon Expertise",
+            name: "Armed and Ready",
             is_magical: false,
             rank: 2,
             description: r"
-                The damage die of all weapons you use increases by one step in the order below:
-                \begin{raggeditemize}
-                  \item 1d3
-                  \item 1d4
-                  \item 1d6
-                  \item 1d8
-                  \item 1d10
-                  \item 2d6
-                  \item 2d8
-                  \item 2d10
-                  \item 4d6 % Maximum possible, since highest base weapon is 2d6 and weapon focus provides +2
-                \end{raggeditemize}
+                Once per round, you can draw or sheathe any non-shield weapon as a \glossterm{free action}.
+                This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
             ",
             modifiers: None,
         },
@@ -166,16 +156,16 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Adaptive Blow}{Standard action}
                     \rankline
-                    Make a \glossterm{strike} with a \plus3 \glossterm{accuracy} bonus.
+                    Make a \glossterm{strike} that deals double \glossterm{weapon damage}.
                     In addition, choose one of the following tags: \abilitytag{Keen}, \weapontag{Maneuverable}, or \weapontag{Parrying} (see \pcref{Weapon Tags}).
                     If the strike is a \glossterm{melee} strike, you can alternately choose the \weapontag{Long} or \weapontag{Sweeping} (1) weapon tags.
                     The strike gains the benefit of your chosen weapon tag if it did not already have that tag.
 
                     \rankline
-                    \rank{4} The accuracy bonus increases to \plus5.
-                    \rank{5} The accuracy bonus increases to \plus10.
-                    \rank{6} The accuracy bonus increases to \plus15.
-                    \rank{7} The accuracy bonus increases to \plus20.
+                    \rank{9} The strike deals triple weapon damage.
+                    \rank{12} The strike deals \glossterm{extra damage} equal to half your power.
+                    \rank{15} The strike deals five times weapon damage.
+                    \rank{18} The strike deals eight times weapon damage.
                 \end{activeability}
             ",
             modifiers: None,
