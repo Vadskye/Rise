@@ -3,7 +3,7 @@ import { CombatStyle } from '.';
 // Naming conventions:
 export const monsterManeuvers: CombatStyle = {
   name: 'Monster Maneuvers',
-  shortDescription: "Only used for monsters. Should not appear in the book text directly.",
+  shortDescription: 'Only used for monsters. Should not appear in the book text directly.',
 
   maneuvers: [
     {

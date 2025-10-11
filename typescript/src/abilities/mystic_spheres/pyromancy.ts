@@ -1,6 +1,11 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, DELAYED_HALF, MULTIHIT_CRIT, TELEPORT_ATTACK_FATIGUE, } from '../constants';
+import {
+  BARRIER_COOLDOWN,
+  DELAYED_HALF,
+  MULTIHIT_CRIT,
+  TELEPORT_ATTACK_FATIGUE,
+} from '../constants';
 
 // TODO: add -accuracy attacks
 export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {

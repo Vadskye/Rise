@@ -54,7 +54,7 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   }
 
   if (makeStrikePattern.test(abilityText)) {
-    warn("Ability still says it makes a strike");
+    warn('Ability still says it makes a strike');
   }
 }
 
@@ -84,24 +84,30 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
 // attack-parsing logic to format it without duplicating logic between strike-based
 // abilities and non-strike abilities. Since strikes don't use standard damage rank
 // values, we also have to calculate the exact damage dealt by the strike here.
-//
-// Assume that the 
 export function restructureStrikeAbility(monster: Creature, ability: ActiveAbility) {
   if (!ability.weapon) {
-    throw new Error(`Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`);
+    throw new Error(
+      `Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`,
+    );
   }
   if (ability.attack) {
-    throw new Error(`Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`);
+    throw new Error(
+      `Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`,
+    );
   }
   const effect = ability.effect!;
 
   let accuracyModifierText = '';
-  const accuracyMatch = effect.match(/Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/);
+  const accuracyMatch = effect.match(
+    /Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
+  );
   if (accuracyMatch) {
     const modifierSign = standardizeModifierSign(accuracyMatch[2]);
     const modifierValue = Number(accuracyMatch[3]);
     if (!modifierValue) {
-      throw new Error(`Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[3]}'`);
+      throw new Error(
+        `Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[3]}'`,
+      );
     }
     accuracyModifierText = `${modifierSign}${modifierValue}`;
   }
@@ -112,10 +118,10 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   ability.attack = {
     hit: `${calculateStrikeDamage(monster, ability)} damage.${effectWithoutStrike}`,
     targeting: `The $name makes a $accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.`,
-  }
+  };
 
   ability.tags = ability.tags || [];
-  const weaponTag = getWeaponTag(ability.weapon)
+  const weaponTag = getWeaponTag(ability.weapon);
   if (weaponTag) {
     ability.tags.push(weaponTag);
   }
@@ -132,13 +138,16 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   const effect = ability.effect!;
   const weapon = ability.weapon!;
   let damageMultiplier = 1;
-  let multiplierMatch = effect.match(/deals (double|triple|quadruple) (\\glossterm{weapon damage}|weapon damage|damage)/);
+  let multiplierMatch = effect.match(
+    /deals (double|triple|quadruple) (\\glossterm{weapon damage}|weapon damage|damage)/,
+  );
   if (multiplierMatch) {
-    damageMultiplier = {
-      'double': 2,
-      'triple': 3,
-      'quadruple': 4,
-    }[multiplierMatch[1]] || 0;
+    damageMultiplier =
+      {
+        double: 2,
+        triple: 3,
+        quadruple: 4,
+      }[multiplierMatch[1]] || 0;
     if (!damageMultiplier) {
       throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse damage multiplier`);
     }
@@ -148,7 +157,8 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   if (!damageDice) {
     throw new Error(`Ability ${monster.name}.${ability.name}: Invalid weapon '${weapon}'`);
   }
-  const damageFromPower = Math.floor(monster.getRelevantPower(ability.isMagical) / 2) * damageMultiplier;
+  const damageFromPower =
+    Math.floor(monster.getRelevantPower(ability.isMagical) / 2) * damageMultiplier;
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
@@ -295,7 +305,7 @@ export function calculateDamage(
   const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
 
   if (lowPowerScaling) {
-    console.warn("Damage calculation for low power scaling is not implemented yet.");
+    console.warn('Damage calculation for low power scaling is not implemented yet.');
     // TODO
     return '';
   } else {
@@ -315,7 +325,8 @@ export function calculateDamage(
       9: 4,
       10: 4,
     }[damageRank];
-    const effectivePower = monster.getRelevantPower(ability.isMagical) + excessRank * bonusPowerPerExcessRank;
+    const effectivePower =
+      monster.getRelevantPower(ability.isMagical) + excessRank * bonusPowerPerExcessRank;
 
     const damageDice = {
       0: '1d4',

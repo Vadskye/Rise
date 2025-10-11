@@ -24,10 +24,7 @@ export const combatStyles = [
   unbreakableDefense,
 ];
 
-export const monsterCombatStyles = [
-  ...combatStyles,
-  monsterManeuvers,
-];
+export const monsterCombatStyles = [...combatStyles, monsterManeuvers];
 
 export type CombatStyleSource = 'primal' | 'martial' | 'trick' | 'esoteric' | 'wild';
 
