@@ -33,7 +33,9 @@ export function convertDebuffToLatex(attack: DebuffAutoAttackResult): string {
 
 export function convertDamagingAttackToLatex(attack: DamagingAutoAttackResult): string {
   // TODO: Do we need to do more fancy processing on the effect here?
-  const effect = attack.latex_effect.replaceAll('$defense', attack.defense);
+  const effect = attack.latex_effect
+    .replaceAll('$defense', attack.defense)
+    .replaceAll('$attack_damage_dice', attack.attack_damage_dice);
   return wrapAttackWithEnvironment(attack, effect);
 }
 
@@ -43,11 +45,12 @@ function wrapAttackWithEnvironment(
   attack: Pick<DebuffAutoAttackResult, 'attack_name' | 'is_magical' | 'tags' | 'usage_time'>,
   effect: string,
 ) {
+  const tags = attack.tags ? attack.tags.split(', ') : null;
   return wrapEffectWithEnvironment({
     effect,
     name: attack.attack_name,
     isMagical: attack.is_magical,
-    tags: (attack.tags || '').split(', '),
+    tags,
     usageTime: attack.usage_time,
   });
 }
@@ -63,7 +66,7 @@ export function wrapEffectWithEnvironment({
   effect: string;
   name: string;
   isMagical: boolean;
-  tags?: string[];
+  tags: string[] | null;
   usageTime?: MonsterAttackUsageTime;
 }): string {
   const environment = determineEnvironment(isMagical);
