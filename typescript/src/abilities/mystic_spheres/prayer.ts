@@ -274,8 +274,8 @@ export const prayer: MysticSphere = {
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
         When you cast this spell, choose a physical attribute: Strength, Dexterity, or Constitution.
-        Each target gains a +2 \\glossterm{enhancement bonus} to checks using the chosen attribute.
-        In addition, if you choose Strength, each target gains a +1 \\glossterm{enhancement bonus} to Strength for the purpose of determining its weight limits (see \\pcref{Weight Limits}).
+        Each target gains a +2 \\glossterm{enhancement bonus} to skills using the chosen attribute.
+        In addition, if you choose Strength, each target gains a +1 \\glossterm{enhancement bonus} to Strength that only applies the purpose of determining its weight limits (see \\pcref{Weight Limits}).
       `,
       rank: 3,
       roles: ['attune'],
