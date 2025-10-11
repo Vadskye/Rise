@@ -1,4 +1,10 @@
-import { Rank, SpellLike, StandardAttack, FunctionsLike, Ritual } from '@src/abilities/mystic_spheres';
+import {
+  Rank,
+  SpellLike,
+  StandardAttack,
+  FunctionsLike,
+  Ritual,
+} from '@src/abilities/mystic_spheres';
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith('.') || text.trim().endsWith('end{mdframeditemize}'))) {

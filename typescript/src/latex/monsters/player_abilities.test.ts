@@ -1,5 +1,11 @@
 import t from 'tap';
-import { reformatAttackTargeting, standardizeModifierSign, calculateStrikeDamage, restructureStrikeAbility, calculateDamage } from './player_abilities';
+import {
+  reformatAttackTargeting,
+  standardizeModifierSign,
+  calculateStrikeDamage,
+  restructureStrikeAbility,
+  calculateDamage,
+} from './player_abilities';
 import { Spell } from '@src/abilities/mystic_spheres';
 import { Creature } from '@src/character_sheet/creature';
 
@@ -166,7 +172,10 @@ t.test('standardizeModifierSign', (t) => {
   t.equal(standardizeModifierSign('\\minus'), '-');
   t.equal(standardizeModifierSign('+'), '+');
   t.equal(standardizeModifierSign('\\plus'), '+');
-  t.throws(() => standardizeModifierSign('invalid'), new Error("Unable to parse LaTeX modifier sign 'invalid'"));
+  t.throws(
+    () => standardizeModifierSign('invalid'),
+    new Error("Unable to parse LaTeX modifier sign 'invalid'"),
+  );
   t.end();
 });
 
@@ -221,7 +230,8 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('With extraneous text and a double damage multiplier', (t) => {
     const ability = {
       weapon: 'bite',
-      effect: 'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday',
+      effect:
+        'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+10');
@@ -270,7 +280,8 @@ t.test('restructureStrikeAbility', (t) => {
     const ability = {
       name: 'Test Ability',
       weapon: 'bite',
-      effect: 'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      effect:
+        'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
@@ -284,7 +295,8 @@ t.test('restructureStrikeAbility', (t) => {
     const ability = {
       name: 'Test Ability',
       weapon: 'bite',
-      effect: 'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      effect:
+        'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {

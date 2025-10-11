@@ -96,7 +96,6 @@ export interface BaseSpellLike {
 // intrinsically versatile.
 import { AbilityRole } from '../constants';
 
-
 export type Cantrip = BaseSpellLike;
 
 export interface Spell extends BaseSpellLike {

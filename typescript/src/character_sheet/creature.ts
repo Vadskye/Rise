@@ -313,7 +313,10 @@ export class Creature implements CreaturePropertyMap {
 
   // `displayName` is used if we want to use the mechanical effects of an existing
   // maneuver, but to display it in the book with a different name.
-  addManeuver(maneuverName: string, { displayName, usageTime, weapon}: MonsterAbilityOptions = {}) {
+  addManeuver(
+    maneuverName: string,
+    { displayName, usageTime, weapon }: MonsterAbilityOptions = {},
+  ) {
     this.activeAbilities[displayName || maneuverName] = {
       // If the maneuver does not already have a defined scaling, we should scale accuracy
       // with rank.
@@ -326,7 +329,7 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
-  addSpell(spellName: string, { displayName, usageTime, weapon}: MonsterAbilityOptions = {}) {
+  addSpell(spellName: string, { displayName, usageTime, weapon }: MonsterAbilityOptions = {}) {
     this.activeAbilities[displayName || spellName] = {
       ...getSpellByName(spellName),
       name: displayName || spellName,
