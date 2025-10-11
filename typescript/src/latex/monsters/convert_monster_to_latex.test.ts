@@ -1,6 +1,27 @@
 import t from 'tap';
 import { Creature } from '@src/character_sheet/creature';
-import { genKnowledgeText } from './convert_monster_to_latex';
+import { convertMonsterToLatex, genKnowledgeText } from './convert_monster_to_latex';
+
+t.test('convertMonsterToLatex', (t) => {
+  t.test('can generate basic latex for a simple creature', (t) => {
+    const creature = Creature.new();
+    creature.setProperties({
+      name: 'Test Monster',
+      level: 1,
+      base_class: 'warrior',
+      size: 'medium',
+      creature_type: 'humanoid',
+    });
+    const latexOutput = convertMonsterToLatex(creature);
+    t.ok(latexOutput.includes('\\monsubsection{Test Monster}{1 Warrior}'));
+    t.ok(latexOutput.includes('\\monstersize{Medium humanoid}'));
+    t.ok(latexOutput.includes('\\begin{monsterstatistics}'));
+    t.ok(latexOutput.includes('\\end{monsterstatistics}'));
+    t.ok(latexOutput.includes('\\monsterabilitiesheader{Test Monster}'));
+    t.end();
+  });
+  t.end();
+});
 
 t.test('can generate empty knowledge text', (t) => {
   const creature = Creature.new();
