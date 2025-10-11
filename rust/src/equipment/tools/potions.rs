@@ -257,7 +257,7 @@ pub fn potions() -> Vec<Tool> {
         rank: 1,
         short_description: "Grants +1 bonus for weight limits".to_string(),
         description: r"
-            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +1 \glossterm<enhancement bonus> to your Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
+            When you drink this \glossterm<potion>, if you \glossterm<attune> to its effects, you gain a +1 \glossterm<enhancement bonus> to your Strength that only applies for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
             This effect expires after 8 hours.
         ".to_string(),
         upgrades: vec![
