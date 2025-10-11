@@ -553,6 +553,38 @@ t.test('can calculate weight limits', (t) => {
   t.end();
 });
 
+t.test('can handle abilities known', (t) => {
+  t.test('can set a known ability with a custom modifier', (t) => {
+    setAttrs({
+      combat_styles_known_permanent_modifier: 1,
+      combat_styles_known_permanent_explanation: 'from class',
+    });
+    getAttrs(['has_combat_styles_known', 'combat_styles_known_explanation'], (attrs) => {
+      t.match(attrs, {
+        has_combat_styles_known: '1',
+        combat_styles_known_explanation: 'from class',
+      });
+      t.end();
+    });
+  });
+
+  t.test('can set a known ability without a custom modifier', (t) => {
+    setAttrs({
+      combat_styles_known_permanent_modifier: 0,
+      combat_styles_known_permanent_explanation: '',
+    });
+    getAttrs(['has_combat_styles_known', 'combat_styles_known_explanation'], (attrs) => {
+      t.match(attrs, {
+        has_combat_styles_known: '0',
+        combat_styles_known_explanation: '',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
 t.test('can calculate vital rolls', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
