@@ -1,0 +1,7 @@
+# This is useful for when we run Vim from this directory instead of the parent
+# directory.
+node_modules
+tsconfig.tsbuildinfo
+.tap
+src/**/*.js
+src/**/*.js.map
