@@ -27,27 +27,6 @@ export const bruteForce: CombatStyle = {
       roles: ['burst'],
     },
     {
-      name: 'Pure Power',
-
-      effect: `
-        You become \\empowered this round.
-        Make a \\glossterm{strike} with a -2 accuracy penalty.
-      `,
-      rank: 1,
-      roles: ['burst'],
-    },
-
-    {
-      name: 'Pure Power+',
-
-      effect: `
-        You become \\maximized this round.
-        Make a \\glossterm{strike} with a -2 accuracy penalty that deals double damage.
-      `,
-      rank: 5,
-      roles: ['burst'],
-    },
-    {
       name: 'Armorcrusher',
 
       effect: `
