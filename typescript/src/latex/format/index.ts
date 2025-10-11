@@ -1,6 +1,5 @@
 export * from './ability_tag';
 export * from './ability_usage_time';
-export * from './attribute';
 export * from './feet';
 export * from './latexify';
 export * from './modifier';
