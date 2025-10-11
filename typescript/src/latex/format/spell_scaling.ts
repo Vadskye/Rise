@@ -13,14 +13,14 @@ export function spellScaling(
     return null;
   }
 
-  if (spell.rank === 7) {
+  // Cantrips have no rank listed. They start their scaling from rank 1.
+  const rank = spell.rank || 1;
+
+  if (rank >= 7) {
     return null;
   }
 
   const makesAttack = spell.attack || (spell.effect && strikePattern.test(spell.effect));
-
-  // Cantrips have no rank listed. They start their scaling from rank 1.
-  const rank = spell.rank || 1;
 
   if (spell.scaling === 'accuracy') {
     if (containsDamageValue(spell)) {
