@@ -45,8 +45,8 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomSense('Telepathy (480 ft.)');
 
     // TODO: mark these as elite actions
-    creature.addSpell('Psionic Blast', {usageTime: "elite"});
-    creature.addSpell('Mighty Mind Crush', {displayName: 'Mind Crush', usageTime: "elite"});
+    creature.addSpell('Psionic Blast', { usageTime: 'elite' });
+    creature.addSpell('Mighty Mind Crush', { displayName: 'Mind Crush', usageTime: 'elite' });
     creature.addSpell('Mind Blank');
     creature.addSpell('Cause Fear');
     creature.addCustomSpell({

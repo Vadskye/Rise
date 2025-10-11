@@ -1,8 +1,4 @@
-import {
-  mysticSpheres,
-  BaseSpellLike,
-  MysticSphere,
-} from '@src/abilities/mystic_spheres';
+import { mysticSpheres, BaseSpellLike, MysticSphere } from '@src/abilities/mystic_spheres';
 import { AbilityRole, ABILITY_ROLES } from '@src/abilities/constants';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
