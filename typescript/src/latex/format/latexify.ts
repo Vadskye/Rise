@@ -14,7 +14,9 @@ export function latexify(text: string): string {
 
   warnIfPattern(text, /[^\\]minus\d.*/, 'contains unprefixed minus');
 
-  warnIfPattern(text, /[^\\]damagerank\{.*/, 'contains unprefixed damagerank');
+  warnIfPattern(text, /[^\\]damagerank.*/, 'contains unprefixed damagerank');
+
+  warnIfPattern(text, /[^\\]hprank.*/, 'contains unprefixed hprank');
 
   warnIfPattern(
     text,
@@ -33,6 +35,6 @@ function warnIfPattern(text: string, pattern: RegExp, explanation: string) {
   if (text.match(pattern)) {
     const sliceStart = Math.max(0, text.search(pattern) - 15);
     const sliceEnd = Math.min(text.length, sliceStart + 30);
-    console.error(`Problem latexifying text: ${explanation} (${text.slice(sliceStart, sliceEnd)})`);
+    console.warn(`Problem latexifying text: ${explanation} (${text.slice(sliceStart, sliceEnd)})`);
   }
 }
