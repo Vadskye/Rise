@@ -1,6 +1,4 @@
 import t from 'tap';
-import { handleEverything } from '@src/character_sheet/sheet_worker';
-import { getCurrentCharacterSheet } from '@src/character_sheet/current_character_sheet';
 import { Creature } from './creature';
 
 t.test('can set a trained skill', (t) => {
