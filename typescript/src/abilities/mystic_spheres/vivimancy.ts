@@ -574,7 +574,7 @@ export const vivimancy: MysticSphere = {
         hit: `\\damagerankthree.`,
         missGlance: true,
         targeting: `
-          Choose one Small or larger \\glossterm{corpse} within \\shortrange.
+          Choose one Small or larger \\glossterm{unattended} \\glossterm{corpse} within \\shortrange.
           Make an attack vs. Reflex against everything within a \\tinyarea radius from the corpse.
           You gain a \\plus1 accuracy bonus for each size category by which the corpse is larger than Medium.
           The corpse is also destroyed.
