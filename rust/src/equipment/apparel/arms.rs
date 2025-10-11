@@ -176,7 +176,7 @@ fn gauntlets() -> Vec<Apparel> {
         rank: 2,
         short_description: String::from("Grants +1 Strength for weight limits"),
         description: String::from(r"
-            You gain a +1 \glossterm<enhancement bonus> to Strength for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
+            You gain a +1 \glossterm<enhancement bonus> to Strength that only applies for the purpose of determining your \glossterm<weight limits> (see \pcref<Weight Limits>).
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +2 Strength for weight limits", r"
