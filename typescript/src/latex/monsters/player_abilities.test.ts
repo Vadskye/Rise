@@ -317,7 +317,7 @@ t.test('restructureStrikeAbility', (t) => {
           'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
-      t.matchOnlyStrict(ability.attack, {
+      t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
         targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
       });
@@ -332,7 +332,7 @@ t.test('restructureStrikeAbility', (t) => {
           'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
-      t.matchOnlyStrict(ability.attack, {
+      t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
         targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
       });
