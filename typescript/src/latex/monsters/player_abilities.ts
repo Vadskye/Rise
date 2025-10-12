@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import { ActiveAbility, ManeuverDefinition, SpellDefinition, standardizeManeuver, standardizeSpell } from '@src/abilities';
 import { convertManeuverToLatex } from '@src/latex/abilities/combat_styles';
 import { convertSpellToLatex } from '@src/latex/abilities/mystic_spheres';
-import { getWeaponDamageDice, getWeaponTag } from '@src/monsters/weapons';
+import { getWeaponDamageDice, getWeaponTag, getWeaponAccuracy, getWeaponPowerMultiplier } from '@src/monsters/weapons';
 
 export function convertManeuverToMonsterAbility(monster: Creature, maneuver: ManeuverDefinition): string {
   const latex = convertManeuverToLatex(reformatAsMonsterAbility(monster, standardizeManeuver(maneuver)), true);
@@ -92,15 +92,26 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   const accuracyMatch = effect.match(
     /Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
   );
+
+  let accuracyModifier = getWeaponAccuracy(ability.weapon);
   if (accuracyMatch) {
     const modifierSign = standardizeModifierSign(accuracyMatch[2]);
-    const modifierValue = Number(accuracyMatch[3]);
-    if (!modifierValue) {
+    if (!accuracyMatch[3]) {
       throw new Error(
         `Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[3]}'`,
       );
     }
-    accuracyModifierText = `${modifierSign}${modifierValue}`;
+    if (modifierSign === '-') {
+      accuracyModifier -= Number(accuracyMatch[3])
+    } else {
+      accuracyModifier += Number(accuracyMatch[3])
+    }
+  }
+
+  if (accuracyModifier > 0) {
+    accuracyModifierText = `+${accuracyModifier}`;
+  } else if (accuracyModifier < 0) {
+    accuracyModifierText = `${accuracyModifier}`;
   }
 
   // TODO: we'll need more processing on this.
@@ -148,8 +159,10 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   if (!damageDice) {
     throw new Error(`Ability ${monster.name}.${ability.name}: Invalid weapon '${weapon}'`);
   }
+
+  const powerMultiplier = getWeaponPowerMultiplier(weapon);
   const damageFromPower =
-    Math.floor(monster.getRelevantPower(ability.isMagical) / 2) * damageMultiplier;
+    Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) * damageMultiplier;
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
