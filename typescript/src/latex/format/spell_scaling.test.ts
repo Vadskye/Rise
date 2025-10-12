@@ -74,10 +74,9 @@ t.test('spellScaling', (t) => {
         spellScaling(spell as ActiveAbility),
         "The attack's \\glossterm{accuracy} increases by +1 for each rank beyond 1.",
       );
-      t.matchOnlyStrict(
-        capturedWarnings,
-        [['Spell Test Spell has accuracy scaling, but does not make an attack.']],
-      );
+      t.matchOnlyStrict(capturedWarnings, [
+        ['Spell Test Spell has accuracy scaling, but does not make an attack.'],
+      ]);
       t.end();
     });
 
@@ -90,10 +89,9 @@ t.test('spellScaling', (t) => {
         attack: { hit: 'deals damage', targeting: 'target' },
       };
       spellScaling(spell as ActiveAbility);
-      t.matchOnlyStrict(
-        capturedWarnings,
-        [['Spell Test Spell has accuracy scaling, but should probably have damage scaling']],
-      );
+      t.matchOnlyStrict(capturedWarnings, [
+        ['Spell Test Spell has accuracy scaling, but should probably have damage scaling'],
+      ]);
       t.end();
     });
 
@@ -141,10 +139,9 @@ t.test('spellScaling', (t) => {
         spellScaling(spell as ActiveAbility),
         "The attack's \\glossterm{accuracy} increases by +2 for each rank beyond 1.",
       );
-      t.matchOnlyStrict(
-        capturedWarnings,
-        [['Spell Test Spell has double accuracy scaling, but does not make an attack.']],
-      );
+      t.matchOnlyStrict(capturedWarnings, [
+        ['Spell Test Spell has double accuracy scaling, but does not make an attack.'],
+      ]);
       t.end();
     });
 
@@ -157,16 +154,14 @@ t.test('spellScaling', (t) => {
         attack: { hit: 'deals damage', targeting: 'target' },
       };
       spellScaling(spell as ActiveAbility);
-      t.matchOnlyStrict(
-        capturedWarnings,
-        [['Spell Test Spell has double accuracy scaling, but should probably have damage scaling']],
-      );
+      t.matchOnlyStrict(capturedWarnings, [
+        ['Spell Test Spell has double accuracy scaling, but should probably have damage scaling'],
+      ]);
       t.end();
     });
 
     t.end();
   });
-
 
   t.test('damage scaling', (t) => {
     t.test('should work with damagerankone', (t) => {

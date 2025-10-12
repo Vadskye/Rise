@@ -29,7 +29,10 @@ function generateMysticSphereSpellSummary(sphere: MysticSphere): string {
   `;
 }
 
-function generateSpellsSummary(category: string, spells: (CantripDefinition[] | SpellDefinition[])): string {
+function generateSpellsSummary(
+  category: string,
+  spells: CantripDefinition[] | SpellDefinition[],
+): string {
   if (!(spells?.length > 0)) {
     return '';
   }

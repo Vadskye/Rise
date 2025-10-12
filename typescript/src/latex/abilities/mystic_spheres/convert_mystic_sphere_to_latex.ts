@@ -3,7 +3,13 @@ import * as format from '@src/latex/format';
 import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
 import { sortByRankAndLevel } from '@src/latex';
 import { MysticSphere } from '@src/abilities/mystic_spheres';
-import { ActiveAbility, CantripDefinition, SpellDefinition, standardizeCantrip, standardizeSpell } from '@src/abilities';
+import {
+  ActiveAbility,
+  CantripDefinition,
+  SpellDefinition,
+  standardizeCantrip,
+  standardizeSpell,
+} from '@src/abilities';
 import _ from 'lodash';
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {

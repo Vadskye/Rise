@@ -20,7 +20,7 @@ import { umbramancy } from './umbramancy';
 import { verdamancy } from './verdamancy';
 import { vivimancy } from './vivimancy';
 import { universal } from './universal';
-import { CantripDefinition, SpellDefinition} from '@src/abilities/active_abilities';
+import { CantripDefinition, SpellDefinition } from '@src/abilities/active_abilities';
 
 export { getSpellByName } from './get_spell_by_name';
 export { rituals } from './rituals';
