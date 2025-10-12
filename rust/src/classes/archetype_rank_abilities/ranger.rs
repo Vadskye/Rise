@@ -350,7 +350,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{activeability}{Wolfpack}{Triggered}
                         \rankline
-                        While your quarry is adjacent to at least three members of your hunting party, each adjacent member gains an additional \plus1 accuracy bonus against it.
+                        While your quarry is adjacent to at least three members of your hunting party, each adjacent \glossterm{ally} gains a \plus1 accuracy bonus against it.
 
                         \rankline
                         \rank{5} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
