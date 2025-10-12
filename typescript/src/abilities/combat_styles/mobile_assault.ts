@@ -75,6 +75,16 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
+      name: 'Mighty Rushdown',
+
+      effect: `
+        You can move up to your speed, then make a melee \\glossterm{strike} with a \\minus2 accuracy penalty that deals double \\glossterm{weapon damage}.
+      `,
+      rank: 3,
+      roles: ['dive'],
+    },
+
+    {
       name: 'Push Through',
 
       effect: `
@@ -219,7 +229,7 @@ export const mobileHunter: CombatStyle = {
 
     // assume movement is worth 0.6 EA or so
     {
-      name: 'Fearsome Pounce',
+      name: 'Fearsome Rushdown',
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals double damage.
@@ -231,7 +241,7 @@ export const mobileHunter: CombatStyle = {
     },
 
     {
-      name: 'Eyeflash Pounce',
+      name: 'Eyeflash Rushdown',
 
       // assume movement is worth 0.6 EA or so
       effect: `
