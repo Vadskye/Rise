@@ -1,17 +1,37 @@
 import { Creature } from '@src/character_sheet/creature';
-import { ActiveAbility, ManeuverDefinition, SpellDefinition, standardizeManeuver, standardizeSpell } from '@src/abilities';
+import {
+  ActiveAbility,
+  ManeuverDefinition,
+  SpellDefinition,
+  standardizeManeuver,
+  standardizeSpell,
+} from '@src/abilities';
 import { convertManeuverToLatex } from '@src/latex/abilities/combat_styles';
 import { convertSpellToLatex } from '@src/latex/abilities/mystic_spheres';
-import { getWeaponDamageDice, getWeaponTag, getWeaponAccuracy, getWeaponPowerMultiplier } from '@src/monsters/weapons';
+import {
+  getWeaponDamageDice,
+  getWeaponTag,
+  getWeaponAccuracy,
+  getWeaponPowerMultiplier,
+} from '@src/monsters/weapons';
 
-export function convertManeuverToMonsterAbility(monster: Creature, maneuver: ManeuverDefinition): string {
-  const latex = convertManeuverToLatex(reformatAsMonsterAbility(monster, standardizeManeuver(maneuver)), true);
+export function convertManeuverToMonsterAbility(
+  monster: Creature,
+  maneuver: ManeuverDefinition,
+): string {
+  const latex = convertManeuverToLatex(
+    reformatAsMonsterAbility(monster, standardizeManeuver(maneuver)),
+    true,
+  );
   checkSuccessfullyConverted(latex, monster.name, maneuver.name);
   return latex;
 }
 
 export function convertSpellToMonsterAbility(monster: Creature, spell: SpellDefinition): string {
-  const latex = convertSpellToLatex(reformatAsMonsterAbility(monster, standardizeSpell(spell)), true);
+  const latex = convertSpellToLatex(
+    reformatAsMonsterAbility(monster, standardizeSpell(spell)),
+    true,
+  );
   checkSuccessfullyConverted(latex, monster.name, spell.name);
   return latex;
 }
@@ -102,9 +122,9 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
       );
     }
     if (modifierSign === '-') {
-      accuracyModifier -= Number(accuracyMatch[3])
+      accuracyModifier -= Number(accuracyMatch[3]);
     } else {
-      accuracyModifier += Number(accuracyMatch[3])
+      accuracyModifier += Number(accuracyMatch[3]);
     }
   }
 
@@ -140,9 +160,7 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   const weapon = ability.weapon!;
 
   let globalDamageMultiplier = 1;
-  let globalMultiplierMatch = effect.match(
-    /deals (double|triple|quadruple) damage/,
-  );
+  let globalMultiplierMatch = effect.match(/deals (double|triple|quadruple) damage/);
   if (globalMultiplierMatch) {
     globalDamageMultiplier =
       {
@@ -151,7 +169,9 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
         quadruple: 4,
       }[globalMultiplierMatch[1]] || 0;
     if (!globalDamageMultiplier) {
-      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse global damage multiplier`);
+      throw new Error(
+        `Ability ${monster.name}.${ability.name}: Unable to parse global damage multiplier`,
+      );
     }
   }
 
@@ -171,7 +191,9 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
         'eight times': 8,
       }[weaponMultiplierMatch[1]] || 0;
     if (!weaponDamageMultiplier) {
-      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse weapon damage multiplier`);
+      throw new Error(
+        `Ability ${monster.name}.${ability.name}: Unable to parse weapon damage multiplier`,
+      );
     }
   }
 
@@ -194,7 +216,8 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   }
 
   const damageFromPower =
-    globalDamageMultiplier * (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + flatDamageBonus)
+    globalDamageMultiplier *
+    (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + flatDamageBonus);
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;

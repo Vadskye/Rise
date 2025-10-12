@@ -1,6 +1,4 @@
-import {
-  Ritual,
-} from '@src/abilities';
+import { Ritual } from '@src/abilities';
 import {
   ActiveAbilityRank,
   ActiveAbility,
@@ -78,9 +76,7 @@ function assertHasCorrectGlance(attack: ActiveAbilityAttack, effectName: string)
   }
 }
 
-export function spellEffect(
-  spell: ActiveAbility | Ritual,
-): string | null {
+export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   try {
     let fatiguePointsText = '';
     if (spell.kind === 'ritual') {
