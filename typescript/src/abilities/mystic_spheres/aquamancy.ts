@@ -31,7 +31,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Restorative Water',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target is \\glossterm{briefly} healed by water.
@@ -46,7 +46,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Greater Restorative Water',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       functionsLike: {
         name: 'restorative water',
         exceptThat: 'the healing increases to 7d8.',
@@ -58,7 +58,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Cleansing Water',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target is \\glossterm{briefly} purified by water.

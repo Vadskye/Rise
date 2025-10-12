@@ -1,5 +1,6 @@
 import { sortByRankAndLevel } from '@src/latex';
-import { MysticSphere, mysticSpheres, SpellLike, rituals } from '@src/abilities/mystic_spheres';
+import { MysticSphere, mysticSpheres, rituals } from '@src/abilities/mystic_spheres';
+import { CantripDefinition, SpellDefinition } from '@src/abilities';
 import _ from 'lodash';
 
 export function generateMysticSphereSpellSummaries(): string {
@@ -28,7 +29,7 @@ function generateMysticSphereSpellSummary(sphere: MysticSphere): string {
   `;
 }
 
-function generateSpellsSummary(category: string, spells: SpellLike[]): string {
+function generateSpellsSummary(category: string, spells: (CantripDefinition[] | SpellDefinition[])): string {
   if (!(spells?.length > 0)) {
     return '';
   }

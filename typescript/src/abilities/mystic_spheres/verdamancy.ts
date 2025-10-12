@@ -539,7 +539,7 @@ export const verdamancy: MysticSphere = {
     {
       name: 'Shillelagh',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         Choose one nonmagical, \\glossterm{unattended} stick of wood you \\glossterm{touch}.
         You transform the target into a club, quarterstaff, or sap, as you choose (see \\pcref{Weapons}).

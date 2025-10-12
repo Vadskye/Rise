@@ -1,11 +1,12 @@
 import * as format from '@src/latex/format';
 import { determineAbilityType } from '@src/latex';
-import { Ritual } from '@src/abilities/mystic_spheres';
+import { RitualDefinition, standardizeRitual } from '@src/abilities';
 
-export function convertRitualToLatex(ritual: Ritual): string {
+export function convertRitualToLatex(ritualDefinition: RitualDefinition): string {
+  const ritual = standardizeRitual(ritualDefinition);
   const abilityType = determineAbilityType(ritual);
   const internalComponents = [
-    format.spellEffect(ritual, 'ritual'),
+    format.spellEffect(ritual),
     format.ritualSphereEffects(ritual),
     format.spellScaling(ritual),
     format.spellNarrative(ritual),

@@ -1,9 +1,9 @@
 import { combatStyles } from '@src/abilities/combat_styles';
 import { AbilityRole, ABILITY_ROLES } from '@src/abilities/constants';
-import { BaseSpellLike } from '@src/abilities/mystic_spheres';
+import { ActiveAbility } from '@src/abilities';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
-const config: BreakdownConfig<any, BaseSpellLike, AbilityRole> = {
+const config: BreakdownConfig<any, ActiveAbility, AbilityRole> = {
   entities: combatStyles,
   entityTypePlural: 'styles',
   entityTypeSingular: 'Style',

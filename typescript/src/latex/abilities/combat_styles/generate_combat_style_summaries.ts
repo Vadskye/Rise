@@ -1,4 +1,5 @@
-import { CombatStyle, combatStyles, Maneuver } from '@src/abilities/combat_styles';
+import { CombatStyle, combatStyles } from '@src/abilities/combat_styles';
+import { ManeuverDefinition } from '@src/abilities';
 import { sortByRankAndLevel } from '@src/latex';
 import _ from 'lodash';
 
@@ -25,7 +26,7 @@ function generateCombatStyleSummary(style: CombatStyle): string {
   `;
 }
 
-function generateManeuversSummary(category: string, maneuvers: Maneuver[]): string | null {
+function generateManeuversSummary(category: string, maneuvers: ManeuverDefinition[]): string | null {
   if (!(maneuvers?.length > 0)) {
     return null;
   }

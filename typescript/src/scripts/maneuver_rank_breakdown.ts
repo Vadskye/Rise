@@ -1,10 +1,11 @@
-import { combatStyles, Maneuver } from '@src/abilities/combat_styles';
+import { combatStyles } from '@src/abilities/combat_styles';
+import { ManeuverDefinition } from '@src/abilities';
 import { run, BreakdownConfig } from '../util/breakdown_cli';
 
 type ManeuverRank = 1 | 3 | 5 | 7;
 const RANKS: ManeuverRank[] = [1, 3, 5, 7] as const;
 
-const config: BreakdownConfig<any, Maneuver, ManeuverRank> = {
+const config: BreakdownConfig<any, ManeuverDefinition, ManeuverRank> = {
   entities: combatStyles,
   entityTypePlural: 'styles',
   entityTypeSingular: 'Style',

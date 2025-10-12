@@ -698,7 +698,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Astral Refuge',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         You \\sphereterm{flicker} the target into a random safe location in the Astral Plane.
