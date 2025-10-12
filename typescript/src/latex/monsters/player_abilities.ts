@@ -135,23 +135,43 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   }
 }
 
-// TODO: calculate weapon damage differently from generic double damage
 export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility): string {
   const effect = ability.effect!;
   const weapon = ability.weapon!;
-  let damageMultiplier = 1;
-  let multiplierMatch = effect.match(
-    /deals (double|triple|quadruple) (\\glossterm{weapon damage}|weapon damage|damage)/,
+
+  let globalDamageMultiplier = 1;
+  let globalMultiplierMatch = effect.match(
+    /deals (double|triple|quadruple) damage/,
   );
-  if (multiplierMatch) {
-    damageMultiplier =
+  if (globalMultiplierMatch) {
+    globalDamageMultiplier =
       {
         double: 2,
         triple: 3,
         quadruple: 4,
-      }[multiplierMatch[1]] || 0;
-    if (!damageMultiplier) {
-      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse damage multiplier`);
+      }[globalMultiplierMatch[1]] || 0;
+    if (!globalDamageMultiplier) {
+      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse global damage multiplier`);
+    }
+  }
+
+  let weaponDamageMultiplier = 1;
+  let weaponMultiplierMatch = effect.match(
+    /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
+  );
+  if (weaponMultiplierMatch) {
+    weaponDamageMultiplier =
+      {
+        double: 2,
+        triple: 3,
+        quadruple: 4,
+        'five times': 5,
+        'six times': 6,
+        'seven times': 7,
+        'eight times': 8,
+      }[weaponMultiplierMatch[1]] || 0;
+    if (!weaponDamageMultiplier) {
+      throw new Error(`Ability ${monster.name}.${ability.name}: Unable to parse weapon damage multiplier`);
     }
   }
 
@@ -159,10 +179,11 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   if (!damageDice) {
     throw new Error(`Ability ${monster.name}.${ability.name}: Invalid weapon '${weapon}'`);
   }
+  damageDice.count = damageDice.count * weaponDamageMultiplier;
 
   const powerMultiplier = getWeaponPowerMultiplier(weapon);
   const damageFromPower =
-    Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) * damageMultiplier;
+    Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) * globalDamageMultiplier;
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
@@ -170,7 +191,7 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
     damageFromPowerText = `${damageFromPower}`;
   }
 
-  return `${damageDice.count * damageMultiplier}d${damageDice.size}${damageFromPowerText}`;
+  return `${damageDice.count * globalDamageMultiplier}d${damageDice.size}${damageFromPowerText}`;
 }
 
 // LaTeX can represent modifier signs with '\\minus' or '\\plus' instead of '-' or '+'.

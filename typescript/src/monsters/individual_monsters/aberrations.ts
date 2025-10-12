@@ -57,7 +57,7 @@ export function addAberrations(grimoire: Grimoire) {
       name: 'Dominate',
       tags: ['Compulsion'],
     });
-    creature.addManeuver('Double Damage', {
+    creature.addManeuver('Weapon Mult 4', {
       displayName: 'Tentacle Slam',
       weapon: 'tentacle',
     });
