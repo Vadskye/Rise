@@ -496,7 +496,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your body continues to be shaped by your soulkeeper's influence.
 
-                \subcf{Devil -- Specialized Torment} You gain a \plus4 accuracy bonus for the purpose of determining whether your attack gets a \glossterm{critical hit} against creatures that are \vulnerable to your attack.
+                \subcf{Devil -- Specialized Torment} You gain a \plus4 accuracy bonus for the purpose of determining whether your attacks get a \glossterm{critical hit} against creatures that are \vulnerable to the attack.
 
                 \subcf{Fae -- Free Spirit} At the end of each round, you have a 50\% chance to remove a random \glossterm{poison} or \glossterm{condition} affecting you.
                 This ability is \glossterm{briefly} disabled whenever you take damage from a cold iron weapon.
