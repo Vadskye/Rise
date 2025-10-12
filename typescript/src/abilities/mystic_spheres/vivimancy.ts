@@ -308,14 +308,14 @@ export const vivimancy: MysticSphere = {
       name: 'Lifegift',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        You gain a +2 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: 'The bonus increases to +8.',
-        5: 'The bonus increases to +16.',
-        7: 'The bonus increases to +32.',
+        3: 'The bonus increases to +3.',
+        5: 'The bonus increases to +4.',
+        7: 'The bonus increases to +5.',
       },
       type: 'Attune',
     },
@@ -479,23 +479,6 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
-    },
-
-    {
-      name: 'Lifetap Ward',
-
-      effect: `
-        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
-        However, you also gain a +8 bonus to your \\glossterm{injury point}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      scaling: {
-        3: `Both bonuses increase to +16.`,
-        5: `Both bonuses increase to +32.`,
-        7: `Both bonuses increase to +64.`,
-      },
-      type: 'Attune',
     },
 
     {

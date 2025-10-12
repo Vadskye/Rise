@@ -575,15 +575,15 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Stoneskin',
 
       effect: `
-        You gain a +6 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
         However, you also take a \\minus1 penalty to your Reflex defense.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +12.`,
-        5: `The bonus increases to +24.`,
-        7: `The bonus increases to +48.`,
+        3: 'The bonus increases to +4.',
+        5: 'The bonus increases to +5.',
+        7: 'The bonus increases to +6.',
       },
       tags: ['Manifestation'],
       type: 'Attune',

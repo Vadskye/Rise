@@ -79,27 +79,28 @@ fn belts() -> Vec<Apparel> {
 
     apparel.push(Belt(StandardItem {
         name: String::from("Belt of Health"),
-        rank: 2,
-        short_description: String::from("Grants +4 hit points"),
+        rank: 1,
+        short_description: String::from("Grants +1 durability"),
         description: String::from(
             r"
-            You gain a +4 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
+            You gain a +1 \glossterm<enhancement bonus> to your \glossterm{durability}.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
-                4,
-                "Grants +8 hit points",
-                "
-                The bonus increases to +8.
-            ",
+                3,
+                "Grants +2 durability",
+                "The bonus increases to +2.",
             ),
             ItemUpgrade::new(
-                6,
-                "Grants +16 hit points",
-                "
-                The bonus increases to +16.
-            ",
+                5,
+                "Grants +3 durability",
+                "The bonus increases to +3.",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +4 durability",
+                "The bonus increases to +4.",
             ),
         ],
         ..Apparel::default()

@@ -287,17 +287,17 @@ export const prayer: MysticSphere = {
     },
 
     {
-      name: 'Blessing of Endurance',
+      name: 'Blessing of Resilience',
 
       effect: `
         Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
+        Each target gains a +2 \\glossterm{enhancement bonus} to its \\glossterm{durability}.
       `,
       rank: 2,
       roles: ['attune'],
       scaling: {
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +16.`,
+        4: `The bonus increases to +3.`,
+        6: `The bonus increases to +4.`,
       },
       type: 'Attune (target)',
     },
@@ -325,22 +325,6 @@ export const prayer: MysticSphere = {
       `,
       rank: 7,
       roles: ['attune', 'exertion'],
-      type: 'Attune (target)',
-    },
-
-    {
-      name: 'Blessing of Resilience',
-
-      effect: `
-        Choose up to five creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target gains a +4 \\glossterm{enhancement bonus} to its maximum \\glossterm{hit points}.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      scaling: {
-        4: `The bonus increases to +8.`,
-        6: `The bonus increases to +16.`,
-      },
       type: 'Attune (target)',
     },
 
