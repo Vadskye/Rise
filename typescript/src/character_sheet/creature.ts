@@ -205,12 +205,13 @@ export interface CustomModifierNumericEffect {
 
 export interface MonsterAbilityOptions {
   displayName?: string;
-  isMagical?: boolean;  // Spells default to true, maneuvers default to false
+  isMagical?: boolean; // Spells default to true, maneuvers default to false
   usageTime?: MonsterAttackUsageTime;
   weapon?: MonsterWeapon;
 }
 
-export interface CustomMonsterAbility extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
+export interface CustomMonsterAbility
+  extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
   isMagical?: boolean;
   usageTime?: MonsterAttackUsageTime;
 }
@@ -328,7 +329,11 @@ export class Creature implements CreaturePropertyMap {
 
   addWeaponMult(
     weapon: MonsterWeapon,
-    { displayName, isMagical, usageTime }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+    {
+      displayName,
+      isMagical,
+      usageTime,
+    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
   ) {
     const rank = this.calculateRank();
     displayName = displayName || weapon;
@@ -342,7 +347,10 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
-  addSpell(spellName: string, { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {}) {
+  addSpell(
+    spellName: string,
+    { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {},
+  ) {
     this.activeAbilities[displayName || spellName] = {
       kind: 'spell',
       ...getSpellByName(spellName),

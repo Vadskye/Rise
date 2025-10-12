@@ -50,13 +50,15 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
 }
 
 export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
-  return ({
-    bite: 1,
-    claws: 0.5,
-    horn: 1,
-    ram: 1,
-    stinger: 1,
-    talons: 0.5,
-    tentacle: 1,
-  } as const)[weaponName];
+  return (
+    {
+      bite: 1,
+      claws: 0.5,
+      horn: 1,
+      ram: 1,
+      stinger: 1,
+      talons: 0.5,
+      tentacle: 1,
+    } as const
+  )[weaponName];
 }

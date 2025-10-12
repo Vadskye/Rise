@@ -42,7 +42,11 @@ export function spellTypePrefix(
   }
 }
 
-export function generateTagsAndRank(tagsText: string, rank?: ActiveAbilityRank, omitRank?: boolean) {
+export function generateTagsAndRank(
+  tagsText: string,
+  rank?: ActiveAbilityRank,
+  omitRank?: boolean,
+) {
   if (rank && !omitRank) {
     return `\\spelltwocol{${tagsText}}{Rank ${rank}}`;
   } else {

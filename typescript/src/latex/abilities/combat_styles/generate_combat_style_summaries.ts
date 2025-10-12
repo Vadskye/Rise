@@ -26,7 +26,10 @@ function generateCombatStyleSummary(style: CombatStyle): string {
   `;
 }
 
-function generateManeuversSummary(category: string, maneuvers: ManeuverDefinition[]): string | null {
+function generateManeuversSummary(
+  category: string,
+  maneuvers: ManeuverDefinition[],
+): string | null {
   if (!(maneuvers?.length > 0)) {
     return null;
   }
