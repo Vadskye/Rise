@@ -182,8 +182,19 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   damageDice.count = damageDice.count * weaponDamageMultiplier;
 
   const powerMultiplier = getWeaponPowerMultiplier(weapon);
+  let flatDamageBonus = 0;
+  // This is lazy; we should support other extra damage variants, like 2x power or damage
+  // dice.
+  if (effect.match(/(\\glossterm{)?extra damage}? equal to your (\\glossterm{)?power/)) {
+    flatDamageBonus += monster.getRelevantPower(ability.isMagical);
+  } else if (effect.match(/extra damage}? equal to half your (\\glossterm{)?power/)) {
+    flatDamageBonus += Math.floor(monster.getRelevantPower(ability.isMagical) / 2);
+  } else if (effect.match(/\bextra damage\b/)) {
+    console.warn(`Ability ${monster.name}.${ability.name}: Ambiguous extra damage`);
+  }
+
   const damageFromPower =
-    Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) * globalDamageMultiplier;
+    globalDamageMultiplier * (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + flatDamageBonus)
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;

@@ -44,7 +44,6 @@ export function addAberrations(grimoire: Grimoire) {
     creature.addCustomSense('Darkvision (240 ft.)');
     creature.addCustomSense('Telepathy (480 ft.)');
 
-    // TODO: mark these as elite actions
     creature.addSpell('Psionic Blast', { usageTime: 'elite' });
     creature.addSpell('Mighty Mind Crush', { displayName: 'Mind Crush', usageTime: 'elite' });
     creature.addSpell('Mind Blank', { usageTime: 'elite' });
@@ -57,10 +56,7 @@ export function addAberrations(grimoire: Grimoire) {
       name: 'Dominate',
       tags: ['Compulsion'],
     });
-    creature.addManeuver('Weapon Mult 4', {
-      displayName: 'Tentacle Slam',
-      weapon: 'tentacle',
-    });
+    creature.addWeaponMult('tentacle', { displayName: 'Tentacle Slam' });
 
     creature.addCustomSpell({
       attack: {
