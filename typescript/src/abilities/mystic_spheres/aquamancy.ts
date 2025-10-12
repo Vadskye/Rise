@@ -692,14 +692,15 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Waterward',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
+        However, you are \\vulnerable to \\atElectricity abilities.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +8.`,
-        5: `The bonus increases to +16.`,
-        7: `The bonus increases to +32.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: 'Attune',
     },
