@@ -139,17 +139,14 @@ fn amulets() -> Vec<Apparel> {
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Sturdy Companionship"),
-        rank: 2,
-        short_description: String::from(r"Grants +8 hit points to animal allies"),
+        rank: 3,
+        short_description: String::from(r"Grants +1 defenses to animal allies"),
         description: String::from(r"
-            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +8 \glossterm<enhancement bonus> to its \glossterm<hit points>.
+            Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +1 \glossterm<enhancement bonus> to all of its defenses.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, r"Grants +16 hit points to animal allies", r"
-                The bonus increases to +16.
-            "),
-            ItemUpgrade::new(6, r"Grants +32 hit points to animal allies", r"
-                The bonus increases to +32.
+            ItemUpgrade::new(7, r"Grants +2 defenses to animal allies", r"
+                The bonus increases to +2.
             "),
         ],
         ..Apparel::default()
@@ -160,7 +157,7 @@ fn amulets() -> Vec<Apparel> {
         rank: 5,
         short_description: String::from(r"Improves \ability<perfect body> on your lowest attribute"),
         description: String::from(r"
-            If you have the \ability<perfect body> monk ability, you gain a +1 bonus to your lowest physical attribute.
+            If you have the \ability<perfect body> monk ability, you gain a +1 \glossterm{enhancement bonus} to your lowest physical attribute.
             If your two lowest physical attributes are equal, this amulet has no effect.
         "),
         ..Apparel::default()

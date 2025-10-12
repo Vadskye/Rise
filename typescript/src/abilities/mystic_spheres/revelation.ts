@@ -187,19 +187,31 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
+    // Double braced is 0.8 EA
     {
       name: 'Precognitive Defense',
 
       effect: `
-        You gain a +4 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        You can activate this ability as a \\glossterm{minor action}.
+        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
-      scaling: {
-        3: `The bonus increases to +8.`,
-        5: `The bonus increases to +16.`,
-        7: `The bonus increases to +32.`,
-      },
+      type: 'Attune',
+    },
+
+    // Double braced + steeled is 1.2 EA
+    {
+      name: 'Greater Precognitive Defense',
+
+      effect: `
+        You can activate this ability as a \\glossterm{minor action}.
+        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced and \\steeled.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+      `,
+      rank: 7,
+      roles: ['attune'],
       type: 'Attune',
     },
 

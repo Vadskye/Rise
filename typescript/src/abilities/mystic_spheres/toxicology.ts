@@ -361,15 +361,15 @@ export const toxicology: MysticSphere = {
       name: 'Fungal Armor',
 
       effect: `
-        You gain a +8 \\glossterm{enhancement bonus} to your maximum \\glossterm{hit points}.
+        You gain a +3 \\glossterm{enhancement bonus} to your \\glossterm{durability}.
         However, you also take a -1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 1,
       roles: ['attune'],
       scaling: {
-        3: `The bonus increases to +16.`,
-        5: `The bonus increases to +32.`,
-        7: `The bonus increases to +64.`,
+        3: `The bonus increases to +4.`,
+        5: `The bonus increases to +5.`,
+        7: `The bonus increases to +6.`,
       },
       type: 'Attune',
     },

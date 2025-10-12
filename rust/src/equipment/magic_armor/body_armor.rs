@@ -21,27 +21,28 @@ pub fn body_armor() -> Vec<MagicArmor> {
 
     armor.push(Body(StandardItem {
         name: String::from("Armor of Life"),
-        rank: 2,
-        short_description: String::from("Grants +6 HP"),
+        rank: 1,
+        short_description: String::from("Grants +2 durability"),
         description: String::from(
             r"
-            You gain a +6 \glossterm<enhancement bonus> to your \glossterm<hit points>.
+            You gain a +2 \glossterm<enhancement bonus> to your \glossterm<durability>.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
-                4,
-                "Grants +12 HP",
-                "
-                The bonus increases to +12.
-            ",
+                3,
+                "Grants +3 durability",
+                "The bonus increases to +3.",
             ),
             ItemUpgrade::new(
-                6,
-                "Grants +24 HP",
-                "
-                The bonus increases to +24.
-            ",
+                5,
+                "Grants +4 durability",
+                "The bonus increases to +4.",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +5 durability",
+                "The bonus increases to +5.",
             ),
         ],
         ..MagicArmor::default()
@@ -72,26 +73,26 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Stonebody Armor"),
         rank: 2,
-        short_description: String::from("Grants +12 HP, but slower and heavier"),
+        short_description: String::from("Grants +4 durability, but slower and heavier"),
         description: String::from(
             r"
-            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
+            You gain a +4 \glossterm<enhancement bonus> to your \glossterm{durability}.
             However, you take a -10 foot penalty to your speed with all movement modes.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
                 4,
-                "Grants +24 HP, but slower and heavier",
+                "Grants +6 durability, but slower and heavier",
                 "
-                The bonus increases to +24.
+                The bonus increases to +6.
             ",
             ),
             ItemUpgrade::new(
                 6,
-                "Grants +48 HP, but slower and heavier",
+                "Grants +8 durability, but slower and heavier",
                 "
-                The bonus increases to +48.
+                The bonus increases to +8.
             ",
             ),
         ],
@@ -185,17 +186,17 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Lifeweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +12 HP, but +12 IP"),
+        short_description: String::from("Grants +5 durability, but -1 vital rolls"),
         description: String::from(r"
-            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
-            However, you also gain a +12 bonus to your \glossterm{injury point} (see \pcref{Injury Point}).
+            You gain a +5 \glossterm{enhancement bonus} to your \glossterm{durability.}
+            However, you also take a \minus1 penalty to your \glossterm{vital rolls}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +24 HP, but +24 IP", "
-                Both bonuses increase to +24.
+            ItemUpgrade::new(5, "Grants +6 durability, but -1 vital rolls", "
+                The bonus increases to +6.
             "),
-            ItemUpgrade::new(7, "Grants +48 HP, but +48 IP", "
-                Both bonuses increase to +48.
+            ItemUpgrade::new(7, "Grants +8 durability, but -1 vital rolls", "
+                The bonus increases to +8.
             "),
         ],
         ..MagicArmor::default()
@@ -204,27 +205,27 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Soulweave Armor"),
         rank: 3,
-        short_description: String::from("Grants +12 HP, but -2 power"),
+        short_description: String::from("Grants +5 durability, but -2 power"),
         description: String::from(
             r"
-            You gain a +12 \glossterm<enhancement bonus> to your maximum \glossterm<hit points>.
+            You gain a +5 \glossterm<enhancement bonus> to your \glossterm{durability}.
             However, you take a -2 penalty to your \glossterm{power} with all abilities.
         ",
         ),
         upgrades: vec![
             ItemUpgrade::new(
                 5,
-                "Grants +24 HP, but -3 power",
+                "Grants +6 durability, but -3 power",
                 "
-                The hit point bonus increases to +24, but the power penalty increases to -3.
-            ",
+                    The durability bonus increases to +6, but the power penalty increases to -3.
+                ",
             ),
             ItemUpgrade::new(
                 7,
-                "Grants +48 HP, but -4 power",
+                "Grants +8 durability, but -4 power",
                 "
-                The hit point bonus increases to +48, but the power penalty increases to -4.
-            ",
+                    The durability bonus increases to +8, but the power penalty increases to -4.
+                ",
             ),
         ],
         ..MagicArmor::default()
@@ -258,18 +259,18 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Grafted Armor"),
         rank: 2,
-        short_description: String::from("Grants HP instead of Armor defense"),
+        short_description: String::from("Grants Fortitude instead of Armor defense and +2 durability"),
         description: String::from(r"
             This armor does not increase your Armor defense.
-            Instead, you gain a bonus to your \glossterm{durability} equal to the Armor defense bonus the armor would normally provide.
-            In addition, the armor grants you a +6 \glossterm{enhancement bonus} to your maximum hit points.
+            Instead, you gain an \glossterm{enhancement bonus} to your Fortitude defense equal to the Armor defense bonus the armor would normally provide.
+            In addition, the armor grants you a +2 \glossterm{enhancement bonus} to your \glossterm{durability}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants bonus HP instead of Armor defense", r"
-                The hit point bonus increases to +12.
+            ItemUpgrade::new(4, "Grants Fortitude instead of Armor defense and +3 durability", r"
+                The durability bonus increases to +3.
             "),
-            ItemUpgrade::new(6, "Grants bonus HP instead of Armor defense", r"
-                The hit point bonus increases to +24.
+            ItemUpgrade::new(6, "Grants Fortitude instead of Armor defense and +4 durability", r"
+                The durability bonus increases to +4.
             "),
         ],
         ..MagicArmor::default()

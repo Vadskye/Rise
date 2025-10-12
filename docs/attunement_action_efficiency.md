@@ -190,19 +190,80 @@ Translating that into usable scaling, assuming medium range:
 
 0.4 EA * 5 actions = 2 EA
 
-### +4/8/16/32 HP: 0.9
+### Spell/armor HP: Invalid
 
-Compared to a Med HP progression:
+Math!
+20 / 3 * (1 - 1/(HP mult)) = (EA)
+6.67 * (1 - 1/h) = a
+1 - 1/h = a/6.67
+-1/h = a/6.67 - 1
+1/h = 1 - a/6.67
+1 = h * (1 - a/6.67)
+1/(1 - a/6.67) = h
+6.67 / (6.67 - a) = h
 
-* Rank 1: +4 HP is 24% more
-* Rank 2: +4 HP is 14% more
-* Rank 3: +8 HP is 18% more
-* Rank 4: +8 HP is 12% more
-* Rank 5: +16 HP is 17% more
-* Rank 6: +16 HP is 13% more
-* Rank 7: +32 HP is 20% more
+* Rank 1: +13% HP = 6.67 / (6.67 - 0.75)
+* Rank 3: +18% HP = 6.67 / (6.67 - 1)
+* Rank 5: +23% HP = 6.67 / (6.67 - 1.25)
+* Rank 7: +29% HP = 6.67 / (6.67 - 1.5)
 
-Call that about 15% more HP on average. That's 1/1.15 = 87% action efficiency, or 13% action denial. Since you get attacked 1/3 of the time, 20 * 0.13 / 3 = 0.9 EA, so about rank 3.
+Using a Med HP progression as a baseline:
+
+* Rank 1: 2 HP
+* Rank 2: 4 HP
+* Rank 3: 8 HP
+* Rank 4: 15 HP
+* Rank 5: 25 HP
+* Rank 6: 40 HP
+* Rank 7: 60 HP
+
+Or, for spells that want more infrequent HP progression:
+* Rank 1: 4 HP
+* Rank 3: 10 HP
+* Rank 5: 25 HP
+* Rank 7: 60 HP
+
+These jumps are insane. It seems like it would be a lot easier to boost durability instead of HP. Therefore, enhancement bonuses to HP *do not exist*.
+
+### Apparel HP: Invalid
+
+Using the same math as above:
+
+* Rank 1: +8% HP
+* Rank 3: +13% HP
+* Rank 5: +18% HP
+* Rank 7: +23% HP
+
+Using Med HP as a baseline:
+* Rank 2: 3 HP
+* Rank 3: 6 HP
+* Rank 4: 12 HP
+* Rank 5: 20 HP
+* Rank 6: 30 HP
+* Rank 7: 45 HP
+
+### Spell/Armor Durability: Varies
+
+Translating the raw HP values from above into durability bonuses:
+* Rank 1: +2
+* Rank 2: +2
+* Rank 3: +3
+* Rank 4: +3
+* Rank 5: +4
+* Rank 6: +4
+* Rank 7: +5 (technically a little too low, but eh)
+
+### Apparel Durability: Varies
+
+Just +1 durability behind the spell version:
+
+* Rank 1: +1
+* Rank 2: +1
+* Rank 3: +2
+* Rank 4: +2
+* Rank 5: +3
+* Rank 6: +3
+* Rank 7: +4
 
 ### +64 HP: 1.9 EA (at rank 7)
 
