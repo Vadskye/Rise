@@ -618,15 +618,14 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         \item It does not make \glossterm{vital rolls}, but it automatically drops unconscious if it gains a \glossterm{vital wound}. If it gains three vital wounds, it dies.
                     \end{raggeditemize}
 
-                    % TODO: awkward scaling
+                    % TODO: actual scaling math
                     \rankline
-                    \rank{2} The animal gains a \plus1 bonus to all of its defenses.
+                    \rank{2} The animal gains a \plus1 bonus to all defenses.
                     \rank{3} The animal's \glossterm{power} becomes equal to your power.
                     \rank{4} The animal gains a \plus1 \glossterm{accuracy} bonus with \glossterm{strikes}.
-                    \rank{5} The accuracy bonus increases to \plus2.
-                    \rank{6} The accuracy bonus increases to \plus4.
-                    \rank{7} The animal's strikes deal double damage.
-                    However, the accuracy bonus is reduced to \plus2.
+                    \rank{5} The animal's strikes deal double \glossterm{weapon damage}.
+                    \rank{6} The accuracy bonus increases to \plus2.
+                    \rank{7} The animal's strikes deal triple \glossterm{weapon damage}.
                 \end{magicalattuneability}
 
                 The special ability of the animal that appears depends on your environment, as described below.
