@@ -6,7 +6,7 @@ import {
   restructureStrikeAbility,
   calculateDamage,
 } from './player_abilities';
-import { Spell } from '@src/abilities/mystic_spheres';
+import { ActiveAbility } from '@src/abilities';
 import { Creature } from '@src/character_sheet/creature';
 
 t.test('reformatAttackTargeting', (t) => {
@@ -17,7 +17,7 @@ t.test('reformatAttackTargeting', (t) => {
 
   // TODO: figure out type of 't'
   function testTargeting(localT: any, original: string, expected: string) {
-    const mockSpell: Partial<Spell> = {
+    const mockSpell: Partial<ActiveAbility> = {
       attack: {
         hit: 'stuff',
         targeting: original,
@@ -98,7 +98,7 @@ t.test('reformatAttackTargeting', (t) => {
     });
 
     t.test('With accuracy scaling', (t) => {
-      const mockSpell: Partial<Spell> = {
+      const mockSpell: Partial<ActiveAbility> = {
         attack: {
           hit: 'stuff',
           targeting: 'Make an attack vs. Mental against something.',

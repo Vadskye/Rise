@@ -1,4 +1,5 @@
-import { CombatStyle, Maneuver } from '@src/abilities/combat_styles';
+import { CombatStyle } from '@src/abilities/combat_styles';
+import { ManeuverDefinition, standardizeManeuver } from '@src/abilities';
 import { sortByRankAndLevel } from '@src/latex';
 import { convertAbilityToLatex } from '@src/latex/convert_ability_to_latex';
 import * as format from '@src/latex/format';
@@ -22,7 +23,7 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
         .map((rank) =>
           maneuversByRank[rank]
             ? `\\subsection{Rank ${rank} Maneuvers}
-          ${maneuversByRank[rank].map((maneuver) => convertAbilityToLatex(maneuver)).join('\n')}`
+          ${maneuversByRank[rank].map((maneuver) => convertManeuverToLatex(maneuver)).join('\n')}`
             : '',
         )
         .join('\n')}
@@ -30,6 +31,6 @@ export function convertCombatStyleToLatex(style: CombatStyle): string {
 }
 
 // When formatted for monsters, we omit the rank of maneuvers.
-export function convertManeuverToLatex(maneuver: Maneuver, omitRank?: boolean): string {
-  return convertAbilityToLatex(maneuver, omitRank);
+export function convertManeuverToLatex(maneuver: ManeuverDefinition, omitRank?: boolean): string {
+  return convertAbilityToLatex(standardizeManeuver(maneuver), omitRank);
 }

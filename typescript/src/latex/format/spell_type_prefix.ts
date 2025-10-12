@@ -1,4 +1,4 @@
-import { Rank, Ritual, SpellLike } from '@src/abilities/mystic_spheres';
+import { ActiveAbility, ActiveAbilityRank, Ritual } from '@src/abilities';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
 export function ritualSpheres(ritual: Ritual): string {
@@ -7,7 +7,7 @@ export function ritualSpheres(ritual: Ritual): string {
 }
 
 export function spellTypePrefix(
-  spell: Pick<SpellLike, 'castingTime' | 'cost' | 'name' | 'tags' | 'type' | 'rank'>,
+  spell: Pick<ActiveAbility, 'usageTime' | 'cost' | 'name' | 'tags' | 'type' | 'rank'>,
   omitRank?: boolean,
 ): string {
   const tags = spell.tags || [];
@@ -42,7 +42,7 @@ export function spellTypePrefix(
   }
 }
 
-export function generateTagsAndRank(tagsText: string, rank?: Rank, omitRank?: boolean) {
+export function generateTagsAndRank(tagsText: string, rank?: ActiveAbilityRank, omitRank?: boolean) {
   if (rank && !omitRank) {
     return `\\spelltwocol{${tagsText}}{Rank ${rank}}`;
   } else {

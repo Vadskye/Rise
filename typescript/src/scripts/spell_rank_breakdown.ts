@@ -1,10 +1,11 @@
-import { mysticSpheres, Spell, Rank, MysticSphere } from '@src/abilities/mystic_spheres';
+import { mysticSpheres, MysticSphere } from '@src/abilities/mystic_spheres';
+import { SpellDefinition } from '@src/abilities';
 import { run, BreakdownConfig } from '@src/util/breakdown_cli';
 
 type NonNullableRank = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 const RANKS: NonNullableRank[] = [1, 2, 3, 4, 5, 6, 7] as const;
 
-const config: BreakdownConfig<MysticSphere, Spell, NonNullableRank> = {
+const config: BreakdownConfig<MysticSphere, SpellDefinition, NonNullableRank> = {
   entities: mysticSpheres,
   entityTypePlural: 'spheres',
   entityTypeSingular: 'Sphere',

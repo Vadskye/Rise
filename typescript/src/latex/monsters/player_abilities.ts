@@ -1,26 +1,17 @@
-import { Creature, ActiveAbility } from '@src/character_sheet/creature';
-import { Maneuver } from '@src/abilities/combat_styles';
+import { Creature } from '@src/character_sheet/creature';
+import { ActiveAbility, ManeuverDefinition, SpellDefinition, standardizeManeuver, standardizeSpell } from '@src/abilities';
 import { convertManeuverToLatex } from '@src/latex/abilities/combat_styles';
 import { convertSpellToLatex } from '@src/latex/abilities/mystic_spheres';
-import { Spell } from '@src/abilities/mystic_spheres';
 import { getWeaponDamageDice, getWeaponTag } from '@src/monsters/weapons';
 
-export function convertManeuverToMonsterAbility(monster: Creature, maneuver: Maneuver): string {
-  const ability: ActiveAbility = {
-    ...maneuver,
-    isMagical: false,
-  };
-  const latex = convertManeuverToLatex(reformatAsMonsterAbility(monster, ability), true);
+export function convertManeuverToMonsterAbility(monster: Creature, maneuver: ManeuverDefinition): string {
+  const latex = convertManeuverToLatex(reformatAsMonsterAbility(monster, standardizeManeuver(maneuver)), true);
   checkSuccessfullyConverted(latex, monster.name, maneuver.name);
   return latex;
 }
 
-export function convertSpellToMonsterAbility(monster: Creature, spell: Spell): string {
-  const ability: ActiveAbility = {
-    ...spell,
-    isMagical: true,
-  };
-  const latex = convertSpellToLatex(reformatAsMonsterAbility(monster, ability), true);
+export function convertSpellToMonsterAbility(monster: Creature, spell: SpellDefinition): string {
+  const latex = convertSpellToLatex(reformatAsMonsterAbility(monster, standardizeSpell(spell)), true);
   checkSuccessfullyConverted(latex, monster.name, spell.name);
   return latex;
 }

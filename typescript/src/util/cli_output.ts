@@ -1,4 +1,5 @@
-import { MysticSphere, BaseSpellLike } from '@src/abilities/mystic_spheres';
+import { MysticSphere } from '@src/abilities/mystic_spheres';
+import { ActiveAbility } from '@src/abilities';
 
 type Counts = Record<string, number>;
 type Breakdown = Record<string, Counts>;
@@ -87,7 +88,7 @@ export function printBarChart(
   }
 }
 
-export function calculateBreakdown<T, AbilityType extends BaseSpellLike>(
+export function calculateBreakdown<T, AbilityType extends ActiveAbility>(
   spheres: MysticSphere[],
   keys: readonly T[],
   getAbilityKeys: (ability: AbilityType) => T[] | T | undefined,

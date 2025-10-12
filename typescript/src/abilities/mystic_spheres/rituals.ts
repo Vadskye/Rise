@@ -1,4 +1,4 @@
-import { Ritual } from '.';
+import { RitualDefinition } from '@src/abilities';
 
 const resurrectionSphereEffects = {
   Chronomancy: 'The target must have died no more than 48 hours before this ritual is completed.',
@@ -17,11 +17,11 @@ const teleportSphereEffects = {
 // present, and we generally don't want to remove attunements.
 // TODO: should the "soul" spells move outside of vivimancy? They don't fit neatly into druid
 // narrative tropes, and they undercut the idea that this is the "life" sphere.
-export const rituals: Ritual[] = [
+export const rituals: RitualDefinition[] = [
   {
     name: 'Reinforcement',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
       Unlike most abilities, this ritual can affect individual parts of a whole object.
@@ -44,7 +44,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Temporary Reinforcement',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You create an area of reinforcement within a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from you.
       All \\glossterm{unattended}, nonmagical objects or parts of objects within the area gain a \\plus5 \\glossterm{enhancement bonus} to their \\glossterm{hardness}.
@@ -64,7 +64,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Enduring Reinforcement',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     functionsLike: {
       exceptThat: `
         the effect lasts for one hundred years.
@@ -85,7 +85,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Bless Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
       Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
@@ -99,7 +99,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Persistent Bless Water',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         the effect lasts for one year.
@@ -114,7 +114,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Curse Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
       Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
@@ -128,7 +128,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Permanent Curse Water',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         it loses the \\abilitytag{Attune} tag and the effect lasts permanently.
@@ -143,7 +143,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Consecrated Ground',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       The area within an \\largearea radius \\glossterm{shapeable} \\glossterm{zone} from your location becomes sacred to your deity.
       % TODO: what cares about consecration?
@@ -157,7 +157,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Permanent Consecrated Ground',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     functionsLike: {
       exceptThat: `
         the effect is permanent.
@@ -171,7 +171,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Commune with Divinity',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       You ask your source of divine power a single yes or no question.
       You receive a correct answer to that question to the limit of that source's knowledge, which is usually quite extensive.
@@ -199,13 +199,13 @@ export const rituals: Ritual[] = [
     rank: 7,
     roles: ['narrative'],
     tags: [],
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     spheres: ['Channel Divinity', 'Prayer', 'Revelation'],
   },
   {
     name: 'Commune with the Dead',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       You ask the soul of a dead creature a single yes or no question.
       To contact a creature in this way, you must know its name and have something that belonged to it in life.
@@ -233,13 +233,13 @@ export const rituals: Ritual[] = [
     rank: 6,
     roles: ['narrative'],
     tags: [],
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     spheres: ['Astromancy', 'Prayer', 'Revelation', 'Vivimancy'],
   },
   {
     name: 'Limited Air Supply',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains a temporary supply of air that it can use to breathe.
@@ -259,7 +259,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Air Supply',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains the ability to breathe clear, clean air regardless of its surroundings.
@@ -277,7 +277,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Gentle Descent',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{glide speed}.
@@ -291,7 +291,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Overland Flight',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
@@ -307,7 +307,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Rapid Overland Flight',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
@@ -323,7 +323,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Manipulate Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You change the speed of water within a \\largearea radius \\glossterm{emanation} from you by up to 5 miles per hour.
       If you decrease the water's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
@@ -340,7 +340,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Manipulate Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       name: 'manipulate water',
       exceptThat: 'the maximum speed change increases to 20 miles per hour.',
@@ -353,7 +353,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Rainstorm',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Torrential rain begins falling out of thin air within a \\glossterm{shapeable} \\largearea radius \\glossterm{zone} within \\longrange.
       The rain extinguishes minor fires such as campfires and torches on contact.
@@ -368,7 +368,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Purify Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You can separate out dirt, sand, salt, poison, and similar minor pollutants from up to one thousand gallons of water within \\shortrange.
       That roughly corresponds to a single 5-ft\\. cube of water.
@@ -390,7 +390,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sense Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
         You learn the general pattern of where water exists within a one mile radius from your location.
         The detail of your mental picture is limited to roughly knowing whether water does or does not exist in each hundred-foot square in the area.
@@ -409,7 +409,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Fins',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains a slow \\glossterm{swim speed}.
@@ -424,7 +424,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Spider Climb',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains a slow \\glossterm{climb speed}.
@@ -457,7 +457,7 @@ export const rituals: Ritual[] = [
       From the Material Plane, you can only reach the Astral Plane.
     `,
     type: 'Sustain (standard)',
-    castingTime: 'one week',
+    usageTime: 'one week',
     spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
@@ -475,7 +475,7 @@ export const rituals: Ritual[] = [
       From the Material Plane, you can only reach the Astral Plane.
     `,
     tags: [],
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
@@ -494,7 +494,7 @@ export const rituals: Ritual[] = [
     rank: 5,
     roles: ['narrative'],
     tags: [],
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     spheres: ['Astromancy', 'Channel Divinity'],
   },
   {
@@ -510,7 +510,7 @@ export const rituals: Ritual[] = [
     rank: 4,
     roles: ['narrative'],
     tags: [],
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     spheres: ['Astromancy', 'Channel Divinity'],
   },
   // {
@@ -522,7 +522,7 @@ export const rituals: Ritual[] = [
   //     If it attacks or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
-  //   castingTime: 'one hour',
+  //   usageTime: 'one hour',
   //   type: 'Attune (target)',
   //   spheres: ['astromancy'],
   // },
@@ -537,7 +537,7 @@ export const rituals: Ritual[] = [
   //   },
   //   rank: 5,
   //   tags: [],
-  //   castingTime: 'one minute',
+  //   usageTime: 'one minute',
   //   spheres: ['astromancy'],
   // },
   {
@@ -555,7 +555,7 @@ export const rituals: Ritual[] = [
     `,
     tags: [],
     materialCost: true,
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     spheres: ['Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Thaumaturgy'],
   },
   {
@@ -573,7 +573,7 @@ export const rituals: Ritual[] = [
     `,
     sphereEffects: teleportSphereEffects,
     tags: [],
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
   {
@@ -595,7 +595,7 @@ export const rituals: Ritual[] = [
     `,
     sphereEffects: teleportSphereEffects,
     tags: [],
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
 
@@ -613,13 +613,13 @@ export const rituals: Ritual[] = [
     rank: 7,
     roles: ['narrative'],
     tags: [],
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
   {
     name: 'Retrieve Legacy',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one ritual participant.
       If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, the item is teleported into the creature's hand.
@@ -632,7 +632,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Astral Chest',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
       If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
@@ -651,7 +651,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Accelerated Reading',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You can read at twice your normal speed.
       However, the mental effort imposes a -2 penalty to your Mental defense.
@@ -664,7 +664,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Accelerated Reading',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You can read at ten times your normal speed.
       However, the mental effort imposes a -4 penalty to your Mental defense.
@@ -677,7 +677,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Preservation',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one Large or smaller \\glossterm{unattended}, nonmagical object within \\shortrange.
       It does not decay or spoil with the passage of time.
@@ -698,7 +698,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Persistent Preservation',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       name: 'gentle repose',
       exceptThat: 'the effect lasts for one year.',
@@ -711,7 +711,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Observe the Future',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You receive a limited insight into your immediate future.
       When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
@@ -730,7 +730,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Interrogate the Future',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'observe the future',
       exceptThat: 'the duplicate can answer up to three yes or no questions before disappearing.',
@@ -743,7 +743,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Stasis Chamber',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one Medium or smaller container.
       Any inanimate, \\glossterm{unattended} object placed into the container enters a state of temporal stasis at the end of the round.
@@ -758,7 +758,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Persistent Stasis Chamber',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     functionsLike: {
       name: 'stasis chamber',
       exceptThat: 'the effect lasts for one year.',
@@ -780,7 +780,7 @@ export const rituals: Ritual[] = [
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     tags: [],
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     type: 'Attune (target)',
     spheres: ['Chronomancy', 'Electromancy', 'Polymorph'],
   },
@@ -795,14 +795,14 @@ export const rituals: Ritual[] = [
       name: 'overland haste',
     },
     tags: [],
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     type: 'Attune (target)',
     spheres: ['Chronomancy', 'Electromancy', 'Polymorph'],
   },
   {
     name: 'Repair',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one Large or smaller \\glossterm{broken} object within \\shortrange.
       The object is repaired as if it had never been broken.
@@ -814,7 +814,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Repair Destruction',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one Large or smaller \\glossterm{destroyed} object within \\shortrange.
       The object is repaired as if it had never been destroyed.
@@ -826,7 +826,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Rewind Death',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one Diminutive or larger piece of a corpse.
       It must have been part of the original creature's body at the time of death.
@@ -842,7 +842,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Cold Tolerance',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose either yourself or an \\glossterm{ally} or unattended object within \\medrange.
       The target suffers no harm from being in a cold environment.
@@ -858,7 +858,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Cold Snap',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location decreases rapidly.
       Over the next minute after you finish this ritual, the temperature decreases by 40 degrees Fahrenheit, to a minimum of \\minus30 degrees.
@@ -875,7 +875,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Intense Cold Snap',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         the temperature in the area decreases by 60 degrees, to a minimum of \\minus70 degrees.
@@ -890,7 +890,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Cleansing Meditation',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       You can designate unconscious creatures as ritual participants for this ritual.
@@ -907,7 +907,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Animal Messenger',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     attack: {
       hit: `
         The target is compelled to deliver a message for you.
@@ -937,7 +937,7 @@ export const rituals: Ritual[] = [
     name: 'Antipathy',
 
     // original targets: ['One Large or smaller object within \\medrange', 'Creatures near the target (see text)']
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     attack: {
       crit: `The creature is \\panicked instead of frightened.`,
       hit: `The creature is \\frightened by the chosen object until it finishes a \\glossterm{short rest}.`,
@@ -961,7 +961,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sympathy',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     attack: {
       crit: `The creature is also compelled to get as close as possible to the chosen object to admire it in greater detail.`,
       hit: `The creature is fascinated by the chosen object until it finishes a \\glossterm{short rest}.
@@ -988,7 +988,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Manifest Equipment',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one \\glossterm{ritual participant}.
       You can create any one weapon, shield, or body armor that you are proficient with.
@@ -1017,7 +1017,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Manifest Object',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Make a Craft check to create an object of Small size or smaller.
       The object appears out of thin air in your hand or in one unoccupied square on solid ground within \\shortrange.
@@ -1034,7 +1034,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Create Water',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You create up to ten gallons of wholesome, drinkable water divided among any number of locations within \\shortrange, allowing you to fill multiple small water containers.
       You must create a minimum of one ounce of water in each location.
@@ -1060,7 +1060,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Create Food',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       This ritual creates food and water in one unoccupied square within \\shortrange that is sufficient to sustain five Medium creatures for 24 hours.
       It also creates basic receptacles to hold the food.
@@ -1075,7 +1075,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Fabricate Feast',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       This ritual creates food and water in any number of unoccupied squares within \\shortrange that is sufficient to sustain one hundred Medium creatures for 24 hours.
       It also creates basic receptacles to hold the food.
@@ -1090,7 +1090,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Copy Writing',
 
-    castingTime: 'special',
+    usageTime: 'special',
     effect: `
       You copy the writing from one Small or smaller written work within \\shortrange to a Small or smaller set of blank pages within \\shortrange.
       The blank pages must have enough room for the original writing.
@@ -1105,7 +1105,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Copy Writing',
 
-    castingTime: 'special',
+    usageTime: 'special',
     functionsLike: {
       exceptThat: `
         it can target objects of Medium or smaller size.
@@ -1122,7 +1122,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Ammunition Stockpile',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You create a Large pile of either nonmagical arrows or crossbow bolts in any unoccupied location on solid ground adjacent to you.
       You can choose to create blunted ammunition, but you cannot create other forms of special ammunition like fire arrows or repeating bolts.
@@ -1137,7 +1137,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Tiny Hut',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You create a permeable barrier around a \\glossterm{shapeable} \\smallarea radius \\glossterm{zone} from your location.
       The barrier is visible as a shimmering magical membrane that does not block sight.
@@ -1158,7 +1158,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Mystic Cage',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You create a cube of magical energy within \\medrange.
       Each wall of the cube is 20 feet wide and tall.
@@ -1188,7 +1188,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Continuous Light',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
       The target glows like a torch, emitting \\glossterm{bright illumination} in a \\smallarea radius.
@@ -1208,7 +1208,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Brilliant Light',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose yourself or one Medium or smaller \\glossterm{ally} or unattended object within \\medrange.
       The target glows like a torch, emitting \\glossterm{brilliant illumination} in a \\smallarea radius.
@@ -1226,7 +1226,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Permanent Light',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'continuous light',
       exceptThat: 'the effect lasts for one year.',
@@ -1245,7 +1245,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Bestow Darkvision',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains \\trait{darkvision} with a range of 60 feet.
@@ -1261,7 +1261,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Bestow Low-Light Vision',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains \\trait{low-light vision}.
@@ -1276,7 +1276,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Bestow Scent',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains \\trait{scent}.
@@ -1292,7 +1292,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Create Handholds',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, \\glossterm{mundane} wall up to 50 feet high and 10 feet wide within \\medrange.
       You create handholds in the target, making it easier to climb.
@@ -1308,7 +1308,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Craft Object',
 
-    castingTime: 'special',
+    usageTime: 'special',
     effect: `
       Choose any number of unattended, nonmagical objects within \\shortrange.
       You make a Craft check to transform the subjects into a new item (or items) made of the same materials.
@@ -1329,7 +1329,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Purify Sustenance',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       All food in a \\smallarea radius within within \\shortrange is purified.
       Spoiled, rotten, poisonous, or otherwise contaminated food becomes pure and suitable for eating.
@@ -1343,7 +1343,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Awaken',
 
-  //   castingTime: '24 hours',
+  //   usageTime: '24 hours',
   //   effect: `
   //     One Large or smaller \\glossterm{ally} within \\medrange becomes fully intelligent.
   //     Its Intelligence becomes 1d6 - 5.
@@ -1360,7 +1360,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Meld Shut',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
       The target changes its form so it cannot be opened.
@@ -1387,7 +1387,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Enlarged Meld Shut',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         the maximum size increases to Huge, and the Devices DV to open the object increases to 26.
@@ -1403,7 +1403,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Gills',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target gains the ability to breathe water as easily as a human breathes air, preventing it from drowning or suffocating underwater.
@@ -1417,7 +1417,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Heat Tolerance',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose yourself or an \\glossterm{ally} or unattended object within \\medrange.
       The target suffers no harm from being in a hot environment.
@@ -1434,7 +1434,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Heat Wave',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       The temperature in a two mile radius cylinder-shaped \\glossterm{zone} from your location increases rapidly.
       Over the next minute after you finish this ritual, the temperature increases by 40 degrees Fahrenheit, to a maximum of 120 degrees.
@@ -1452,7 +1452,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Intense Heat Wave',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
 
     functionsLike: {
       exceptThat: `
@@ -1469,7 +1469,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sense Flame',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
         You learn the general pattern of where active fires exist within a one mile radius from your location.
         The detail of your mental picture is limited to roughly knowing whether fire does or does not exist in each hundred-foot square in the area.
@@ -1489,7 +1489,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Explosive Runes',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       % TODO: clarify how to identify that this is Explosive Runes instead of bad handwriting
       Choose one Medium or smaller \\glossterm{unattended} object with writing on it within \\shortrange.
@@ -1522,7 +1522,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reveal True Form',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one creature within \\longrange.
       You can see the target's true form, regardless of any shapechanging or illusion effects.
@@ -1536,7 +1536,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Augury',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You receive a limited glimpse into your immediate future.
       When you perform this ritual, you specify a course of action that you could hypothetically take during the next hour.
@@ -1562,7 +1562,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Augury',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
 
     functionsLike: {
       exceptThat: `
@@ -1578,7 +1578,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Supreme Augury',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
 
     functionsLike: {
       exceptThat: `
@@ -1594,7 +1594,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Alarm',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       A \\glossterm{scrying sensor} appears floating in the air in the target location.
       The sensor passively observes its surroundings.
@@ -1614,7 +1614,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Track Item',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       When you perform this ritual, choose a Tiny or larger object you \\glossterm{touch}.
       You constantly know the exact distance and direction to the object, even if it is \\glossterm{attended}, as long as it is within 500 miles of you.
@@ -1629,7 +1629,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Track Fine Item',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'track item',
       exceptThat: 'the item can be of any size category.',
@@ -1643,7 +1643,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Locate Creature',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       When you perform this ritual, choose a creature.
       You must have seen the chosen creature in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
@@ -1661,7 +1661,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Locate Object',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         it locates \\glossterm{unattended} objects instead of creatures.
@@ -1676,7 +1676,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Discern Location',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       When you perform this ritual, choose a creature or object.
       You must have seen the chosen creature or object in person and either be able to clearly visualize its appearance or know its proper name to find it with this ritual.
@@ -1706,7 +1706,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sending',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose a creature within 500 miles of you.
       You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.
@@ -1739,7 +1739,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Rapid Sending',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       exceptThat: `
         the casting time is much shorter.
@@ -1761,7 +1761,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Telepathic Bond',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Each target can communicate mentally through telepathy with each other target.
       This communication is instantaneous, though it cannot reach more than 500 miles or across planes.
@@ -1790,7 +1790,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Seek Legacy',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one \\glossterm{ritual participant}.
       They learn the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
@@ -1803,7 +1803,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Scry Creature',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     attack: {
       hit: `A scrying sensor appears in the target's space.
       This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
@@ -1836,7 +1836,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Prophetic Dream',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       The next time you fall asleep, you have a dream that foreshadows some important event or decision in your future.
       The dream may be vague or even self-contradictory, since the future is never certain, but its contents always provide some hint about what may lie ahead of you.
@@ -1853,7 +1853,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Private Sanctum',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{shapeable} \\glossterm{zone} centered on your location.
       This effect lasts for one year.
@@ -1869,7 +1869,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Scryward',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       This ritual creates a ward against scrying in a \\medarea radius \\glossterm{shapeable} \\glossterm{zone} centered on your location.
       All \\abilitytag{Scrying} effects fail to function in the area.
@@ -1882,7 +1882,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Find the Path',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
       You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
@@ -1907,7 +1907,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Find the Lost',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         the casting time is shorter, and the ritual is much less exhausting.
@@ -1925,7 +1925,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Efficient Find the Path',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
         the casting time is shorter, and the ritual is much less exhausting.
@@ -1940,7 +1940,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Seal Shut',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one Large or smaller closable, nonmagical object within \\shortrange, such as a door or box.
       The target becomes impossible to open and more difficult to break.
@@ -1959,7 +1959,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Seal Shut',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       exceptThat: `
         the maximum size increases to Huge, and the Devices DV to unlock it increases to 30.
@@ -1975,7 +1975,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Dispel Curse',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose yourself or one \\glossterm{ally} within \\shortrange.
       All curses affecting the target are removed.
@@ -1989,7 +1989,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Suppress Magic Aura',
 
-  //   castingTime: 'one minute',
+  //   usageTime: 'one minute',
   //   effect: `
   //     Choose one \\glossterm{ally} or \\glossterm{unattended} object within \\shortrange.
   //     All magical effects on the target, including any magic items a target creature wears or carries, are undetectable with abilities that detect magic.
@@ -2001,7 +2001,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Persistent Suppress Magic Aura',
 
-  //   castingTime: '24 hours',
+  //   usageTime: '24 hours',
   //   effect: `
   //     Choose one Large or smaller \\glossterm{unattended} object within \\shortrange.
   //     All magical effects on the target are undetectable with abilities that detect magic.
@@ -2012,7 +2012,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Analyze Magic',
 
-  //   castingTime: 'one hour',
+  //   usageTime: 'one hour',
   //   effect: `
   //     Make a Knowledge check to identify a magical effect with a +5 bonus (see \\pcref{Identify Magical Effect}).
   //   `,
@@ -2021,7 +2021,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Greater Analyze Magic',
 
-  //   castingTime: 'one hour',
+  //   usageTime: 'one hour',
   //   effect: `
   //     Make a Knowledge check to identify a magical effect with a +10 bonus (see \\pcref{Identify Magical Effect}).
   //   `,
@@ -2030,7 +2030,7 @@ export const rituals: Ritual[] = [
   // {
   //   name: 'Supreme Analyze Magic',
 
-  //   castingTime: 'one hour',
+  //   usageTime: 'one hour',
   //   effect: `
   //     Make a Knowledge check to identify a magical effect with a +15 bonus (see \\pcref{Identify Magical Effect}).
   //   `,
@@ -2039,7 +2039,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Restful Sleep',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one ritual participant.
       The target immediately falls asleep, and cannot be awoken unless it loses hit points or gains a vital wound.
@@ -2054,7 +2054,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Poisoncraft',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You can create a rank 1 poison.
       This functions like crafting a poison normally with the Craft (poison) skill, except that you do not need the appropriate materials to craft the poison (see \\pcref{Crafting Items}).
@@ -2076,7 +2076,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sunlight Ward',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       One ritual participant is never considered to be in \\glossterm{mundane} natural sunlight.
       This does not impair its vision, but protects it if it would otherwise suffer negative consequences from sunlight.
@@ -2093,7 +2093,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sunlight Ward+',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'sunlight ward',
       exceptThat: 'the target is also protected from \\magical effects that mimic sunlight.',
@@ -2107,7 +2107,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Conceal Trail',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to five creatures within \\medrange from among you and your \\glossterm{allies}.
       At the end of each round, the footprints, scent, and other tracks left by each target during that round are magically concealed.
@@ -2129,7 +2129,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Fertile Patch',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical 5-ft.\\ square of earth.
       The soil in the target becomes suffused with plant-sustaining nutrients, making it fertile ground for plants.
@@ -2142,7 +2142,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Fertile Field',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       This ritual creates an area of bountiful growth in a \\glossterm{shapeable} one mile radius \\glossterm{zone} from your location.
       Normal plants within the area become twice as productive as normal for the next year.
@@ -2157,7 +2157,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Blighted Field',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       This ritual creates an area of death and decay in a \\glossterm{shapeable} one mile radius \\glossterm{zone} from your location.
       Normal plants within the area become half as productive as normal for the next year.
@@ -2172,7 +2172,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sense Plants',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You learn the general pattern of where natural, nonmagical plants exist within a one mile radius from your location.
       The detail of your mental picture is limited to roughly knowing whether plants do or do not exist in each hundred-foot square in the area.
@@ -2196,7 +2196,7 @@ export const rituals: Ritual[] = [
 
     // Can't say ritual participant because you should be able to remove diseases from
     // unconscious creatures.
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         All \\glossterm{mundane} diseases affecting the target are removed.
@@ -2210,7 +2210,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Restore Senses',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose yourself or one \\glossterm{ally} within \\medrange.
       One of the target's physical senses, such as sight or hearing, is restored to full capacity.
@@ -2224,7 +2224,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Corpse Communion',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You ask a corpse a single yes or no question.
       In its afterlife, the soul that inhabited the corpse becomes aware of your question and can answer yes or no as it chooses.
@@ -2240,7 +2240,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Corpse Communion',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'corpse communion',
       exceptThat: `
@@ -2257,7 +2257,7 @@ export const rituals: Ritual[] = [
   {
     name: 'True Regeneration',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose yourself or one \\glossterm{ally} within \\medrange.
       All of the target's \\glossterm{vital wounds} are healed.
@@ -2271,7 +2271,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Resurrection',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one intact corpse within \\shortrange.
       The creature the corpse belongs to is \\glossterm{resurrected} (see \\pcref{Resurrection}).
@@ -2286,7 +2286,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Resurrection',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one Diminutive or larger piece of a corpse.
       It must have been part of the original creature's body at the time of death.
@@ -2302,7 +2302,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Unbound Resurrection',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose a dead creature.
       You must explicitly and unambiguously specify the identity of the creature being resurrected.
@@ -2318,7 +2318,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reincarnation',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     effect: `
       Choose one Diminutive or larger piece of a humanoid corpse.
       It must have been part of the original creature's body at the time of death.
@@ -2358,7 +2358,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Soul Bind',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       % Is this clear enough that you can't use the same gem for this ritual twice?
       Choose a nonmagical gem you hold that is at least rank 3 (100 gp).
@@ -2377,7 +2377,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Greater Soul Bind',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     functionsLike: {
       name: 'soul bind',
       exceptThat:
@@ -2392,7 +2392,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Animate Dead',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose up to five corpses within \\shortrange.
       The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
@@ -2416,7 +2416,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Animate Dreadhorde',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'animate dead',
       exceptThat:
@@ -2430,7 +2430,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Command Undead',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose up to five \\trait{mindless} \\creaturetag{undead} creatures within \\medrange.
       The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
@@ -2450,7 +2450,7 @@ export const rituals: Ritual[] = [
   {
     name: 'One Who Lives in Death',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       All \\trait{mindless} \\creaturetag{undead} perceive you to be another undead similar to themselves.
       This generally means that they will not attack you or interfere with you, though they may still retaliate if provoked.
@@ -2464,7 +2464,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Those Who Live in Death',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'one who lives in death',
       mass: true,
@@ -2479,7 +2479,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Command Undead Horde',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'command undead',
       exceptThat:
@@ -2493,7 +2493,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Arboreal Communion',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You ask the trees within a \\gargarea radius from you for information.
       Trees are not highly aware of their surroundings, and generally ignore complex questions.
@@ -2508,7 +2508,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Manipulate Air',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You change the wind speed within a \\largearea radius \\glossterm{emanation} from you by up to 10 miles per hour.
       If you decrease the wind's speed to 0, you can increase it again with the remainder of your speed change and choose any direction for it to travel.
@@ -2530,7 +2530,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Chill Air',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is reduced by an amount of your choice, to a maximum reduction of 20 degrees Fahrenheit.
       You cannot reduce the temperature below 0 degrees in this way.
@@ -2549,7 +2549,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Magnetize',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one Small or smaller \\glossterm{unattended} \\glossterm{metallic} object within \\medrange.
       It pulls itself toward metal objects within 1 foot of it.
@@ -2569,7 +2569,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sculpt Appearance',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       abilityType: 'ability',
       exceptThat: `
@@ -2597,7 +2597,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Malleable Sculpt Appearance',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       exceptThat: `
         you can change the nature of the disguise as a \\glossterm{minor action}.
@@ -2612,7 +2612,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Alter Object',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object you \\glossterm{touch}.
       You make a Craft check to alter it (see \\pcref{Craft}), except that you do not need any special tools to make the check (such as an anvil and furnace).
@@ -2644,7 +2644,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Heat Air',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       The temperatuture of the air within a \\largearea radius \\glossterm{emanation} from you is increased by an amount of your choice, to a maximum increase of 20 degrees Fahrenheit.
       You cannot increase the temperature above 100 degrees in this way.
@@ -2663,7 +2663,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reveal Truth',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You may reroll one Knowledge check you made within the past ten minutes.
       You can only reroll any individual Knowledge check once with this ritual.
@@ -2675,7 +2675,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Darklantern',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose one \\glossterm{unattended}, nonmagical object that is Small or smaller within \\shortrange.
       The object emits \\glossterm{dim illumination} in a \\smallarea radius.
@@ -2696,7 +2696,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Beacon of Darkness',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You constantly emit \\glossterm{dim illumination} in a \\medarea radius.
       This illuminates dark areas, but does not suppress brighter light.
@@ -2723,7 +2723,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Commune with Elements',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You can speak with air, earth, fire, or water within a \\areahuge \\glossterm{zone} from your location.
       You can ask it simple questions and understand its responses.
@@ -2765,7 +2765,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Disenchant',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose one \\glossterm{unattended} \\magical item you \\glossterm{touch}.
       If the item is \\glossterm{item rank} 1 (4 gp), it disintegrates into magical dust, which permanently \\glossterm{destroys} the item.
@@ -2788,7 +2788,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Comprehend Languages',
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target can understand all \\glossterm{common languages} (see \\pcref{Communication and Languages}).
@@ -2801,7 +2801,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Comprehend Rare Languages',
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
       Each target can understand all \\glossterm{common languages} and \\glossterm{rare languages} (see \\pcref{Communication and Languages}).
@@ -2815,7 +2815,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Memory Echo',
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       You see a vision of the single most significant event that occurred in your location within the last 24 hours.
       The vision lasts for one minute, and shows events as they appeared from wherever you currently stand.
@@ -2829,7 +2829,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Greater Memory Echo',
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'memory echo',
       exceptThat: `
@@ -2843,7 +2843,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Prophetic Dream',
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       When you next fall asleep, you have a vivid dream.
       The dream is relevant to your future within the next week.
@@ -2859,7 +2859,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Nightmare',
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       This ritual has no \\glossterm{verbal components}.
 
@@ -2877,7 +2877,7 @@ export const rituals: Ritual[] = [
   // TODO: add higher rank versions that can hold more or take more varied actions?
   {
     name: 'Animated Attendant',
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You create a Small creature that follows your instructions.
       Its \\glossterm{movement speed} is 20 feet, and it can carry one object that is neither larger nor heavier than Tiny.
@@ -2904,7 +2904,7 @@ export const rituals: Ritual[] = [
 
   {
     name: 'Tidy',
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You create a tidy area in a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from your location.
       At the end of each round, all dirt, grime, and other blemishes on \\glossterm{unattended} objects within the area are cleansed.
@@ -2924,7 +2924,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Enduring Time Lock -- Location',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose yourself or an \\glossterm{ally} within \\medrange.
       You create a \\sphereterm{time lock} for the target's current location.
@@ -2944,7 +2944,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Memory Palace',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       You can perfectly recall anything you learned or experienced since 24 hours before this ritual finished, including anything you learn during this effect.
       When this effect ends, your memory returns to normal, though you can write things down to remind you of what you knew.
@@ -2957,7 +2957,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Soothing Presence',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       All creatures within a \\largearea radius \\glossterm{emanation} from you are soothed.
       They feel pain and discomfort less intensely, and perceive themselves to be less tired.
@@ -2974,7 +2974,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Sanctuary',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     attack: {
       hit: `
         While the target is in the area, it is unable to attack any creatures or objects.
@@ -2997,7 +2997,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Persistent Sanctuary',
 
-    castingTime: '24 hours',
+    usageTime: '24 hours',
     functionsLike: {
       exceptThat: `
         the effect lasts for one hundred years.
@@ -3011,7 +3011,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Reveal Deception',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Whenever a creature within a \\largearea radius \\glossterm{emanation} from you deliberately and knowingly speaks a lie, you know that the target was lying.
       This does not reveal the truth, and unintentional inaccuracies do not trigger this effect.
@@ -3024,7 +3024,7 @@ export const rituals: Ritual[] = [
   },
   {
     name: 'Bind Object',
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     effect: `
       Choose a Small or smaller \\glossterm{unattended} object that must be placed at the center of the ritual.
       You bind that object to its current location or to a \\glossterm{ritual participant}.
@@ -3052,7 +3052,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Control Weather',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Choose a new weather pattern.
       You can only choose weather which would be reasonably probable in the climate and season of the area you are in.
@@ -3085,7 +3085,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Aura of Weather Control',
 
-    castingTime: 'one hour',
+    usageTime: 'one hour',
     functionsLike: {
       name: 'control weather',
       // 30 feet/round = 5 feet / second = 300 feet/min = 3,000 feet / 10 min,
@@ -3106,7 +3106,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Massive Control Weather',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     functionsLike: {
       name: 'control weather',
       exceptThat:
@@ -3123,7 +3123,7 @@ export const rituals: Ritual[] = [
   {
     name: 'Purge Invisibility',
 
-    castingTime: 'one minute',
+    usageTime: 'one minute',
     effect: `
       Creatures or objects within a \\largearea radius \\glossterm{emanation} from you cannot be \\trait{invisible}.
       Any effects that would cause them to be invisible are \\glossterm{suppressed}.

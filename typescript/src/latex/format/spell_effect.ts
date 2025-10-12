@@ -1,10 +1,12 @@
 import {
-  Rank,
-  SpellLike,
-  StandardAttack,
-  FunctionsLike,
   Ritual,
-} from '@src/abilities/mystic_spheres';
+} from '@src/abilities';
+import {
+  ActiveAbilityRank,
+  ActiveAbility,
+  ActiveAbilityAttack,
+  FunctionsLike,
+} from '@src/abilities/active_abilities';
 
 export function assertEndsWithPeriod(text: string | null | undefined, effectName: string): void {
   if (text && !(text.trim().endsWith('.') || text.trim().endsWith('end{mdframeditemize}'))) {
@@ -22,7 +24,7 @@ export function assertStartsWithLowercase(
 }
 
 // TODO: add checking for nonsensical crit effects
-function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void {
+function assertHasCorrectCrit(attack: ActiveAbilityAttack, effectName: string): void {
   const dealsRepeatDamage = /damage.*immediately.*again/.test(attack.hit);
   if (dealsRepeatDamage && attack.crit === undefined) {
     console.error(
@@ -54,7 +56,7 @@ function assertHasCorrectCrit(attack: StandardAttack, effectName: string): void 
   }
 }
 
-function assertDoesNotUseEachTarget(attack: StandardAttack, effectName: string): void {
+function assertDoesNotUseEachTarget(attack: ActiveAbilityAttack, effectName: string): void {
   const hasEachTarget = /ach target/.test(attack.hit);
   // Some spells, like Buffet, have more specific wording that does explicitly apply to
   // each target of the spell, even if its baseline effects correctly use "the target".
@@ -64,7 +66,7 @@ function assertDoesNotUseEachTarget(attack: StandardAttack, effectName: string):
   }
 }
 
-function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
+function assertHasCorrectGlance(attack: ActiveAbilityAttack, effectName: string) {
   const isArea = /(\bwall\b|against all|ach target|verything|and all)/.test(attack.targeting);
   const dealsDamage = /damagerank/.test(attack.hit);
   // We check for undefined to ignore cases where we explicitly defined missGlance to be
@@ -77,21 +79,13 @@ function assertHasCorrectGlance(attack: StandardAttack, effectName: string) {
 }
 
 export function spellEffect(
-  spell: Pick<
-    SpellLike,
-    'attack' | 'castingTime' | 'effect' | 'functionsLike' | 'materialCost' | 'rank' | 'name'
-  >,
-  spellCategory: 'spell' | 'maneuver' | 'ritual',
+  spell: ActiveAbility | Ritual,
 ): string | null {
   try {
-    if (spell.castingTime && spell.castingTime !== 'minor action') {
-      spellCategory = 'ritual';
-    }
-
     let fatiguePointsText = '';
-    if (spellCategory === 'ritual') {
+    if (spell.kind === 'ritual') {
       const fatigueLevel =
-        spell.castingTime === '24 hours' || spell.castingTime === 'one week'
+        spell.usageTime === '24 hours' || spell.usageTime === 'one week'
           ? `${Math.pow(spell.rank || 0, 2) * 2} \\glossterm{fatigue levels}`
           : 'one \\glossterm{fatigue level}';
       const materialCostText = spell.materialCost
@@ -131,10 +125,10 @@ export function spellEffect(
       assertEndsWithPeriod(exceptThat, spell.name);
       assertStartsWithLowercase(exceptThat, spell.name);
 
-      const referencedCategory = spell.functionsLike.abilityType || spellCategory;
+      const referencedCategory = spell.functionsLike.abilityType || spell.kind;
 
       return `
-        This ${spellCategory} functions like the \\${referencedCategory}{${spell.functionsLike.name.toLowerCase()}} ${referencedCategory}, except that ${exceptThat.trim()}
+        This ${spell.kind} functions like the \\${referencedCategory}{${spell.functionsLike.name.toLowerCase()}} ${referencedCategory}, except that ${exceptThat.trim()}
         ${fatiguePointsText}
       `.trim();
     } else {
@@ -178,7 +172,7 @@ function deriveExceptThat(functionsLike: FunctionsLike) {
   }
 }
 
-function calculateGp(itemRank?: Rank): string {
+function calculateGp(itemRank?: ActiveAbilityRank): string {
   if (itemRank === null || itemRank === undefined) {
     throw new Error('Cannot calculate gp for missing rank');
   }

@@ -1,4 +1,4 @@
-import { SpellLike } from '@src/abilities/mystic_spheres';
+import { ActiveAbility } from '@src/abilities';
 
 const damageRankPattern = /damagerank(\w+)\b/;
 const damageRankLowPattern = /damagerank(\w+)low\b/;
@@ -7,7 +7,7 @@ const healingRankLowPattern = /hprank(\w+)low\b/;
 const strikePattern = /\b[mM]ake.*\bstrike/;
 
 export function spellScaling(
-  spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>,
+  spell: Pick<ActiveAbility, 'attack' | 'effect' | 'functionsLike' | 'name' | 'scaling' | 'rank'>,
 ): string | null {
   if (!spell.scaling) {
     return null;
@@ -70,7 +70,7 @@ export function spellScaling(
 }
 
 function containsDamageValue(
-  spell: Pick<SpellLike, 'attack' | 'effect' | 'functionsLike'>,
+  spell: Pick<ActiveAbility, 'attack' | 'effect' | 'functionsLike'>,
 ): boolean {
   return (
     damageRankPattern.test(spell.effect || '') ||

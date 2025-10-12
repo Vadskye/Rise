@@ -2,7 +2,8 @@ import { convertAbilityToLatex } from '@src/latex/convert_ability_to_latex';
 import * as format from '@src/latex/format';
 import { assertEndsWithPeriod } from '@src/latex/format/spell_effect';
 import { sortByRankAndLevel } from '@src/latex';
-import { MysticSphere, SpellLike } from '@src/abilities/mystic_spheres';
+import { MysticSphere } from '@src/abilities/mystic_spheres';
+import { ActiveAbility, CantripDefinition, SpellDefinition, standardizeCantrip, standardizeSpell } from '@src/abilities';
 import _ from 'lodash';
 
 export function convertMysticSphereToLatex(sphere: MysticSphere): string {
@@ -14,6 +15,8 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
 
   const ranks = [1, 2, 3, 4, 5, 6, 7];
   const spellsByRank = _.groupBy(sortByRankAndLevel(sphere.spells), (s) => s.rank);
+
+  const cantrips: ActiveAbility[] = (sphere.cantrips || []).map(standardizeCantrip);
   return format.latexify(`
     \\section{{${sphere.name}}}
       \\hypertargetraised{sphere:${sphere.name}}{}%
@@ -24,10 +27,10 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
       ${
-        sphere.cantrips
+        cantrips.length > 0
           ? `
             \\subsection{Cantrips}
-            ${sortByRankAndLevel(sphere.cantrips)
+            ${sortByRankAndLevel(cantrips)
               .map((spell) => {
                 checkValidSpell(spell);
                 return convertSpellToLatex(spell);
@@ -48,8 +51,7 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
   `);
 }
 
-// The types make this kind of annoying
-function getSpecialScaling(spell: SpellLike): string | null {
+function getSpecialScaling(spell: Pick<SpellDefinition, 'scaling'>): string | null {
   if (spell.scaling && typeof spell.scaling === 'object' && (spell.scaling as any)['special']) {
     return (spell.scaling as any)['special'];
   } else {
@@ -57,7 +59,7 @@ function getSpecialScaling(spell: SpellLike): string | null {
   }
 }
 
-export function checkValidSpell(spell: SpellLike) {
+export function checkValidSpell(spell: CantripDefinition | SpellDefinition) {
   const specialScaling = getSpecialScaling(spell);
 
   if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
@@ -75,6 +77,6 @@ export function checkValidSpell(spell: SpellLike) {
   }
 }
 
-export function convertSpellToLatex(spell: SpellLike, omitRank?: boolean): string {
-  return convertAbilityToLatex(spell, omitRank);
+export function convertSpellToLatex(spell: SpellDefinition, omitRank?: boolean): string {
+  return convertAbilityToLatex(standardizeSpell(spell), omitRank);
 }

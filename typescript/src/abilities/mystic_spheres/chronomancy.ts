@@ -382,7 +382,7 @@ export const chronomancy: MysticSphere = {
       name: 'Temporal Duplicate',
 
       // TODO: EA math
-      castingTime: 'minor action',
+      usageTime: 'minor',
       cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
@@ -409,7 +409,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Temporal Stasis',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         Choose either yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
         The target is placed into stasis.
@@ -544,7 +544,7 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Instant Analysis',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         You accelerate your mind to incredible speed, allowing you to process information quickly.
         From your perspective, you freeze time for five rounds.

@@ -1,8 +1,9 @@
-import { Maneuver, monsterCombatStyles } from '.';
+import { monsterCombatStyles } from '.';
+import { ManeuverDefinition } from '@src/abilities';
 
-let allManeuvers: Record<string, Maneuver> | null = null;
+let allManeuvers: Record<string, ManeuverDefinition> | null = null;
 
-export function getManeuverByName(maneuverName: string) {
+export function getManeuverByName(maneuverName: string): ManeuverDefinition {
   if (!allManeuvers) {
     allManeuvers = {};
     for (const combatStyle of monsterCombatStyles) {

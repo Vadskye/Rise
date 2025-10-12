@@ -332,7 +332,7 @@ export const channelDivinity: MysticSphere = {
     {
       name: 'Divine Offering',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         When you cast this spell, you gain a \\glossterm{vital wound} that has no vital wound effect.
         In exchange, you gain a +2 \\glossterm{enhancement bonus} to \\glossterm{vital rolls} and are \\glossterm{unaffected} by \\glossterm{conditions}.

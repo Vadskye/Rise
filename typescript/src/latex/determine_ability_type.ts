@@ -1,6 +1,6 @@
-import { SpellLike } from '@src/abilities/mystic_spheres';
+import { ActiveAbility } from '@src/abilities';
 
-export function determineAbilityType(spell: Pick<SpellLike, 'type'>): string {
+export function determineAbilityType(spell: Pick<ActiveAbility, 'type'>): string {
   if (!spell.type) {
     return 'activeability';
   } else if (spell.type.includes('Attune')) {
