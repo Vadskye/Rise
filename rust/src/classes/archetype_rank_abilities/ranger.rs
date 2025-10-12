@@ -437,7 +437,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             complexity: 1,
             name: "Keen Vision+",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 The longshot penalty reduction increases to 2.
                 In addition, the range of your darkvision increases by 120 feet.
@@ -446,29 +446,24 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 1,
-            name: "Blindsight",
+            complexity: 0,
+            name: "Swift Step",
             is_magical: false,
             rank: 2,
             description: r"
-                Your perceptions are so finely honed that you can sense your enemies without seeing them.
-                You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
-                If you already have the blindsense ability, you increase its range by 120 feet.
-                In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
-                If you already have the blindsight ability, you increase its range by 30 feet.
+                You gain a \plus10 foot bonus to your \glossterm{movement speed}.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 0,
-            name: "Blindsight+",
+            name: "Swift Step+",
             is_magical: false,
             rank: 7,
             description: r"
-                The range of your blindsense increases by 240 feet.
-                In addition, the range of your blindsight increases by 60 feet.
+                The speed bonus increases to \plus20 feet.
             ",
-            modifiers: None,
+            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
         RankAbility {
             complexity: 2,
@@ -478,37 +473,51 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Ambush}{Standard action}
                     \rankline
-                    Move up to your speed and make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
+                    Move up to half your speed and make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
                     You gain a \plus2 accuracy bonus if the target is \unaware or \partiallyunaware of your attack.
 
                     \rankline
                     \rank{4} The strike deals double \glossterm{weapon damage}.
                     \rank{5} The extra damage increases to 2d6.
-                    \rank{6} The extra damage increases to 4d6.
-                    \rank{7} The extra damage increases to 6d8.
+                    \rank{6} The extra damage increases to 3d6 \add half \glossterm{power}.
+                    \rank{7} The extra damage increases to 5d6 \add half \glossterm{power}.
                 \end{activeability}
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 0,
-            name: "Skirmisher",
-            is_magical: false,
-            rank: 4,
-            description: r"
-                You gain a \plus10 foot bonus to your \glossterm{movement speed}.
-            ",
-            modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
-        },
-        RankAbility {
-            complexity: 0,
             name: "Experienced Scout",
             is_magical: false,
-            rank: 5,
+            rank: 4,
             description: r"
                 You gain a \plus1 bonus to your Perception.
             ",
             modifiers: Some(vec![Modifier::Attribute(Attribute::Perception, 1)]),
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Blindsight",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                Your perceptions are so finely honed that you can sense your enemies without seeing them.
+                You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
+                If you already have the blindsense ability, you increase its range by 120 feet.
+                In addition, you gain \trait{blindsight} with a 60 foot range, allowing you to see without light (see \pcref{Blindsight}).
+                If you already have the blindsight ability, you increase its range by 60 feet.
+            ",
+            modifiers: None,
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Hyperawareness",
+            is_magical: false,
+            rank: 7,
+            description: r"
+                You gain a \plus5 bonus to the Awareness skill.
+            ",
+            modifiers: None,
         },
     ]
 }
