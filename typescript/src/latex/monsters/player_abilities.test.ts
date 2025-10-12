@@ -6,8 +6,9 @@ import {
   restructureStrikeAbility,
   calculateDamage,
 } from './player_abilities';
-import { ActiveAbility } from '@src/abilities';
+import { ActiveAbility, standardizeManeuver } from '@src/abilities';
 import { Creature } from '@src/character_sheet/creature';
+import { getManeuverByName } from '@src/abilities/combat_styles';
 
 t.test('reformatAttackTargeting', (t) => {
   const simpleCreature = Creature.new();
@@ -282,144 +283,188 @@ t.test('calculateStrikeDamage', (t) => {
 });
 
 t.test('restructureStrikeAbility', (t) => {
-  const mockCreature = {
-    name: 'Test Monster',
-    getRelevantPower: () => 10,
-    getSizeBasedSweepingTag: () => 'Sweeping (1)',
-  } as any;
+  let mockCreature: Creature;
 
-  t.test('with no accuracy modifier', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect: 'Make a strike.',
+  t.beforeEach(() => {
+    mockCreature = {
+      name: 'Test Monster',
+      getRelevantPower: () => 10,
+      getSizeBasedSweepingTag: () => 'Sweeping (1)',
     } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '1d8+10 damage.',
-      targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
+  });
+
+  t.test('custom circumstances', (t) => {
+    t.test('with no accuracy modifier', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: 'Make a strike.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '1d8+10 damage.',
+        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
+      });
+      t.matchStrict(ability.tags, ['Sweeping (1)']);
+      t.end();
     });
-    t.matchStrict(ability.tags, ['Sweeping (1)']);
+
+    t.test('with an extra effect after the strike', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect:
+          'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchOnlyStrict(ability.attack, {
+        hit: '1d8+10 damage.',
+        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
+      });
+      t.end();
+    });
+
+    t.test('with an accuracy modifier and an extra effect after the strike', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'talons',
+        effect:
+          'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchOnlyStrict(ability.attack, {
+        hit: '2d4+5 damage.',
+        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
+      });
+      t.end();
+    });
+
+    t.test('with a +accuracy bonus', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'claws',
+        effect: 'Make a strike with a +4 accuracy bonus.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '2d4+5 damage.',
+        targeting: 'The $name makes a $accuracy+6 melee strike vs. Armor with its claws.',
+      });
+      t.end();
+    });
+
+    t.test('with extraneous text and double damage', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: 'Make a strike using a longsword with a +4 accuracy bonus that deals double damage.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '2d8+20 damage.',
+        targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
+      });
+      t.end();
+    });
+
+    t.test('with a -accuracy penalty', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'stinger',
+        effect: 'Make a strike with a -2 accuracy penalty.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '1d6+10 damage.',
+        targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its stinger.',
+      });
+      t.end();
+    });
+
+    t.test('with a \\plus accuracy bonus', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: 'Make a strike with a \\plus3 accuracy bonus.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '1d8+10 damage.',
+        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its bite.',
+      });
+      t.end();
+    });
+
+    t.test('with a \\minus accuracy penalty', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: 'Make a strike with a \\minus1 accuracy penalty.',
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '1d8+10 damage.',
+        targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
+      });
+      t.end();
+    });
+
+    t.test("throws appropriate errors", (t) => {
+      t.throws(() => {
+        const ability = {
+          name: 'Test Ability',
+          effect: 'Make a strike.',
+        } as any;
+        restructureStrikeAbility(mockCreature, ability);
+      }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
+
+      t.throws(() => {
+        const ability = {
+          name: 'Test Ability',
+          weapon: 'bite',
+          effect: 'Make a strike.',
+          attack: { hit: 'damage', targeting: 'target' },
+        } as any;
+        restructureStrikeAbility(mockCreature, ability);
+      }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
+
+      t.end();
+    });
+
     t.end();
   });
 
-  t.test('with an extra effect after the strike', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect:
-        'Make a strike. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '1d8+10 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
-      targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
+  t.test('standard maneuvers', (t) => {
+
+    t.test('Mighty Rushdown', (t) => {
+      const maneuver = standardizeManeuver({
+        ...getManeuverByName('Mighty Rushdown'),
+        weapon: 'bite',
+      });
+      restructureStrikeAbility(mockCreature, maneuver);
+
+      t.matchOnlyStrict(maneuver, {
+        attack: {
+          crit: undefined,
+          hit: '2d8+10 damage.',
+          miss: undefined,
+          injury: undefined,
+          targeting: "The $name can move up to its speed, then it makes a $accuracy melee strike vs. Armor with its bite.",
+        },
+        isMagical: false,
+        kind: 'maneuver',
+        name: 'Mighty Rushdown',
+        rank: 3,
+        roles: ['dive'],
+        tags: ['Sweeping (1)'],
+        weapon: 'bite',
+      });
+
+      t.end();
     });
+
     t.end();
   });
-
-  t.test('with an accuracy modifier and an extra effect after the strike', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'talons',
-      effect:
-        'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '2d4+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
-      targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons.',
-    });
-    t.end();
-  });
-
-  t.test('with a +accuracy bonus', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'claws',
-      effect: 'Make a strike with a +4 accuracy bonus.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '2d4+5 damage.',
-      targeting: 'The $name makes a $accuracy+6 melee strike vs. Armor with its claws.',
-    });
-    t.end();
-  });
-
-  t.test('with extraneous text and double damage', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect: 'Make a strike using a longsword with a +4 accuracy bonus that deals double damage.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '2d8+20 damage.',
-      targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
-    });
-    t.end();
-  });
-
-  t.test('with a -accuracy penalty', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'stinger',
-      effect: 'Make a strike with a -2 accuracy penalty.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '1d6+10 damage.',
-      targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its stinger.',
-    });
-    t.end();
-  });
-
-  t.test('with a \\plus accuracy bonus', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect: 'Make a strike with a \\plus3 accuracy bonus.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '1d8+10 damage.',
-      targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its bite.',
-    });
-    t.end();
-  });
-
-  t.test('with a \\minus accuracy penalty', (t) => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect: 'Make a strike with a \\minus1 accuracy penalty.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-    t.matchStrict(ability.attack, {
-      hit: '1d8+10 damage.',
-      targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
-    });
-    t.end();
-  });
-
-  t.throws(() => {
-    const ability = {
-      name: 'Test Ability',
-      effect: 'Make a strike.',
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-  }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
-
-  t.throws(() => {
-    const ability = {
-      name: 'Test Ability',
-      weapon: 'bite',
-      effect: 'Make a strike.',
-      attack: { hit: 'damage', targeting: 'target' },
-    } as any;
-    restructureStrikeAbility(mockCreature, ability);
-  }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
 
   t.end();
 });

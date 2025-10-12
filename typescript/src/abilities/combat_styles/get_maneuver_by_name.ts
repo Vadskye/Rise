@@ -21,3 +21,9 @@ export function getManeuverByName(maneuverName: string): ManeuverDefinition {
     throw new Error(`Unable to find maneuver '${maneuverName}'`);
   }
 }
+
+// We use `number` instead of `ActiveAbilityRank` because sometimes we do math with
+// ability ranks before calling this function.
+export function getWeaponMultByRank(rank: number): ManeuverDefinition {
+  return getManeuverByName(`Weapon Mult ${rank}`);
+}

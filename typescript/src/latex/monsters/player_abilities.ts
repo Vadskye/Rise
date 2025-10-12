@@ -45,6 +45,14 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
     console.warn(`Problem reformatting ${monsterName}.${abilityName}: ${message}`);
   };
 
+  if (/\$[nN]ame.*\$[nN]ame/.test(abilityText)) {
+    warn("Ability repeats '$name' in the same line");
+  }
+
+  if (/\\hit.*\\hit/s.test(abilityText)) {
+    warn("Ability has two '\\hit' sections");
+  }
+
   if (/\b[yY]our?/.test(abilityText)) {
     warn("Ability still says 'you'");
   }
@@ -106,7 +114,21 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
       `Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`,
     );
   }
-  const effect = ability.effect!;
+  let effect = ability.effect!;
+
+  // Perform generic replacements that matter regardless of which hit/injury/targeting
+  // segment they correspond to.
+  // We don't care if the strike was originally restricted to melee-only.
+  effect = effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
+  // TODO: when should this use 'it' vs 'the $name'?
+  effect = effect.replace(/your next action/g, "its next action");
+  effect = effect.replace(/you are/g, "it is");
+  effect = effect.replace(/your speed/g, "its speed");
+  effect = effect.replace(/You can/g, "The $name can");
+  const fullPower = monster.getRelevantPower(ability.isMagical);
+  const halfPower = Math.floor(fullPower / 2);
+  effect = effect.replace(/damage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
+  effect = effect.replace(/damage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
   let accuracyModifierText = '';
   const accuracyMatch = effect.match(
@@ -134,13 +156,43 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
     accuracyModifierText = `${accuracyModifier}`;
   }
 
-  // TODO: we'll need more processing on this.
-  const effectWithoutStrike = effect.replace(/Make a (\\glossterm{strike}|strike)[^.]*\./g, '');
+  // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
+  // in a continuous sentence, like "move up to your speed, then make a strike".
+  const preStrikeSentenceMatch = effect.match(/(.*)\. Make a (\\glossterm{strike}|strike)/s);
+  const preStrikeContinuousMatch = effect.match(/(.*) make a (\\glossterm{strike}|strike)/s);
+  let preStrikeText = 'The $name makes a ';
+  if (preStrikeSentenceMatch) {
+    preStrikeText = `${preStrikeSentenceMatch[1]}. The $name makes a `;
+  } else if (preStrikeContinuousMatch) {
+    if (/\$[nN]ame/.test(preStrikeContinuousMatch[1])) {
+      preStrikeText = `${preStrikeContinuousMatch[1]} it makes a `;
+    } else {
+      preStrikeText = `${preStrikeContinuousMatch[1]} the $name makes a `;
+    }
+  }
+  const postStrikeMatch = effect.match(/[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s)
+  const postStrikeText = postStrikeMatch ? postStrikeMatch[2] : '';
+  const hitMatch = effect.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
+  const hitText = hitMatch ? hitMatch[1] : '';
+  const injuryMatch = effect.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
+  const injuryText = injuryMatch ? injuryMatch[1] : undefined;
+  const critMatch = effect.match(/\\crit(.*?)(\\injury|\\miss|$)/s);
+  const critText = critMatch ? critMatch[1] : undefined;
+  const missMatch = effect.match(/\\miss(.*)/s);
+  const missText = missMatch ? missMatch[1] : undefined;
 
   ability.attack = {
-    hit: `${calculateStrikeDamage(monster, ability)} damage.${effectWithoutStrike}`,
-    targeting: `The $name makes a $accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.`,
+    crit: critText,
+    hit: `${calculateStrikeDamage(monster, ability)} damage.${hitText}`,
+    miss: missText,
+    injury: injuryText,
+    // TODO: if we support non-melee monster weapons, this would have to check the weapon
+    // to determine melee vs ranged.
+    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.${postStrikeText}`.trim(),
   };
+  // All of the information from the effect should be contained in `ability.attack`, and
+  // it's not well defined how to display an ability with both an `effect` and `attack`.
+  delete ability.effect;
 
   ability.tags = ability.tags || [];
   const weaponTag = getWeaponTag(ability.weapon);
