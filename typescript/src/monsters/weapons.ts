@@ -28,11 +28,35 @@ function xdy(count: number, size: number): DicePool {
 export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
   return {
     bite: xdy(1, 8),
-    claws: xdy(2, 4), // These have the Light tag, but that's irrelevant for running monsters.
+    claws: xdy(2, 4),
     horn: xdy(1, 6),
     ram: xdy(1, 6),
     stinger: xdy(1, 6),
-    talons: xdy(1, 4),
-    tentacle: xdy(1, 6), // This has the Maneuverable tag, but that doesn't affect strikes.
+    talons: xdy(2, 4),
+    tentacle: xdy(1, 6),
   }[weaponName];
+}
+
+export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
+  return {
+    bite: 0,
+    claws: 2,
+    horn: 0,
+    ram: 0,
+    stinger: 1,
+    talons: 2,
+    tentacle: 0,
+  }[weaponName];
+}
+
+export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
+  return ({
+    bite: 1,
+    claws: 0.5,
+    horn: 1,
+    ram: 1,
+    stinger: 1,
+    talons: 0.5,
+    tentacle: 1,
+  } as const)[weaponName];
 }

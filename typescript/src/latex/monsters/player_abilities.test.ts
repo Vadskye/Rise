@@ -35,12 +35,8 @@ t.test('reformatAttackTargeting', (t) => {
     t.test('With a numeric accuracy bonus', (t) => {
       testTargeting(
         t,
-        `
-          Make an attack vs. Mental with a +4 accuracy bonus against something.
-        `,
-        `
-          The $name makes a $accuracy+4 attack vs. Mental against something.
-        `,
+        `Make an attack vs. Mental with a +4 accuracy bonus against something.`,
+        `The $name makes a $accuracy+4 attack vs. Mental against something.`,
       );
       t.end();
     });
@@ -48,12 +44,8 @@ t.test('reformatAttackTargeting', (t) => {
     t.test('With a numeric accuracy penalty', (t) => {
       testTargeting(
         t,
-        `
-          Make an attack vs. Mental with a -8 accuracy penalty against something.
-        `,
-        `
-          The $name makes a $accuracy-8 attack vs. Mental against something.
-        `,
+        `Make an attack vs. Mental with a -8 accuracy penalty against something.`,
+        `The $name makes a $accuracy-8 attack vs. Mental against something.`,
       );
       t.end();
     });
@@ -61,12 +53,8 @@ t.test('reformatAttackTargeting', (t) => {
     t.test('With a \\plus accuracy bonus', (t) => {
       testTargeting(
         t,
-        `
-          Make an attack vs. Mental with a \\plus2 accuracy bonus against something.
-        `,
-        `
-          The $name makes a $accuracy+2 attack vs. Mental against something.
-        `,
+        `Make an attack vs. Mental with a \\plus2 accuracy bonus against something.`,
+        `The $name makes a $accuracy+2 attack vs. Mental against something.`,
       );
       t.end();
     });
@@ -74,12 +62,8 @@ t.test('reformatAttackTargeting', (t) => {
     t.test('With a \\minus accuracy penalty', (t) => {
       testTargeting(
         t,
-        `
-          Make an attack vs. Mental with a \\minus3 accuracy bonus against something.
-        `,
-        `
-          The $name makes a $accuracy-3 attack vs. Mental against something.
-        `,
+        `Make an attack vs. Mental with a \\minus3 accuracy bonus against something.`,
+        `The $name makes a $accuracy-3 attack vs. Mental against something.`,
       );
       t.end();
     });
@@ -190,7 +174,7 @@ t.test('calculateStrikeDamage', (t) => {
       effect: 'deals damage',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+5');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+10');
     t.end();
   });
 
@@ -211,7 +195,7 @@ t.test('calculateStrikeDamage', (t) => {
       isMagical: true,
     } as any;
     // Lower because this is a magical strike
-    t.equal(calculateStrikeDamage(mockCreature, ability), '3d6+6');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '3d6+15');
     t.end();
   });
 
@@ -221,7 +205,7 @@ t.test('calculateStrikeDamage', (t) => {
       effect: 'Make a \\glossterm{strike} that deals quadruple damage',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '4d8+20');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '4d8+40');
     t.end();
   });
 
@@ -234,7 +218,7 @@ t.test('calculateStrikeDamage', (t) => {
         'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+20');
     t.end();
   });
 
@@ -247,7 +231,7 @@ t.test('calculateStrikeDamage', (t) => {
       effect: 'deals damage',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability), '1d8-3');
+    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability), '1d8-5');
     t.end();
   });
 
@@ -269,7 +253,7 @@ t.test('restructureStrikeAbility', (t) => {
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage.',
+      hit: '1d8+10 damage.',
       targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
     });
     t.matchStrict(ability.tags, ['Sweeping (1)']);
@@ -285,7 +269,7 @@ t.test('restructureStrikeAbility', (t) => {
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      hit: '1d8+10 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
       targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite.',
     });
     t.end();
@@ -294,14 +278,14 @@ t.test('restructureStrikeAbility', (t) => {
   t.test('with an accuracy modifier and an extra effect after the strike', (t) => {
     const ability = {
       name: 'Test Ability',
-      weapon: 'bite',
+      weapon: 'talons',
       effect:
         'Make a strike with a +1 accuracy bonus. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
-      targeting: 'The $name makes a $accuracy+1 melee strike vs. Armor with its bite.',
+      hit: '2d4+5 damage. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+      targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons.',
     });
     t.end();
   });
@@ -309,13 +293,13 @@ t.test('restructureStrikeAbility', (t) => {
   t.test('with a +accuracy bonus', (t) => {
     const ability = {
       name: 'Test Ability',
-      weapon: 'bite',
+      weapon: 'claws',
       effect: 'Make a strike with a +4 accuracy bonus.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage.',
-      targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
+      hit: '2d4+5 damage.',
+      targeting: 'The $name makes a $accuracy+6 melee strike vs. Armor with its claws.',
     });
     t.end();
   });
@@ -328,7 +312,7 @@ t.test('restructureStrikeAbility', (t) => {
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '2d8+10 damage.',
+      hit: '2d8+20 damage.',
       targeting: 'The $name makes a $accuracy+4 melee strike vs. Armor with its bite.',
     });
     t.end();
@@ -337,13 +321,13 @@ t.test('restructureStrikeAbility', (t) => {
   t.test('with a -accuracy penalty', (t) => {
     const ability = {
       name: 'Test Ability',
-      weapon: 'bite',
+      weapon: 'stinger',
       effect: 'Make a strike with a -2 accuracy penalty.',
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage.',
-      targeting: 'The $name makes a $accuracy-2 melee strike vs. Armor with its bite.',
+      hit: '1d6+10 damage.',
+      targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its stinger.',
     });
     t.end();
   });
@@ -356,7 +340,7 @@ t.test('restructureStrikeAbility', (t) => {
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage.',
+      hit: '1d8+10 damage.',
       targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its bite.',
     });
     t.end();
@@ -370,7 +354,7 @@ t.test('restructureStrikeAbility', (t) => {
     } as any;
     restructureStrikeAbility(mockCreature, ability);
     t.matchStrict(ability.attack, {
-      hit: '1d8+5 damage.',
+      hit: '1d8+10 damage.',
       targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
     });
     t.end();
