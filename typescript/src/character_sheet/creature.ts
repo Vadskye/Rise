@@ -205,11 +205,13 @@ export interface CustomModifierNumericEffect {
 
 export interface MonsterAbilityOptions {
   displayName?: string;
+  isMagical?: boolean;  // Spells default to true, maneuvers default to false
   usageTime?: MonsterAttackUsageTime;
   weapon?: MonsterWeapon;
 }
 
 export interface CustomMonsterAbility extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
+  isMagical?: boolean;
   usageTime?: MonsterAttackUsageTime;
 }
 
@@ -309,7 +311,7 @@ export class Creature implements CreaturePropertyMap {
   // maneuver, but to display it in the book with a different name.
   addManeuver(
     maneuverName: string,
-    { displayName, usageTime, weapon }: MonsterAbilityOptions = {},
+    { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
     this.activeAbilities[displayName || maneuverName] = {
       kind: 'maneuver',
@@ -318,18 +320,34 @@ export class Creature implements CreaturePropertyMap {
       scaling: 'accuracy',
       ...getManeuverByName(maneuverName),
       name: displayName || maneuverName,
-      isMagical: false,
+      isMagical: isMagical === undefined ? false : isMagical,
       usageTime,
       weapon,
     };
   }
 
-  addSpell(spellName: string, { displayName, usageTime, weapon }: MonsterAbilityOptions = {}) {
+  addWeaponMult(
+    weapon: MonsterWeapon,
+    { displayName, isMagical, usageTime }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+  ) {
+    const rank = this.calculateRank();
+    displayName = displayName || weapon;
+    this.activeAbilities[displayName] = {
+      kind: 'maneuver',
+      ...getManeuverByName(`Weapon Mult ${rank}`),
+      name: displayName,
+      isMagical: Boolean(isMagical),
+      usageTime,
+      weapon,
+    };
+  }
+
+  addSpell(spellName: string, { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {}) {
     this.activeAbilities[displayName || spellName] = {
       kind: 'spell',
       ...getSpellByName(spellName),
       name: displayName || spellName,
-      isMagical: false,
+      isMagical: isMagical === undefined ? true : isMagical,
       usageTime,
       weapon,
     };
@@ -339,7 +357,7 @@ export class Creature implements CreaturePropertyMap {
     this.activeAbilities[maneuver.name] = {
       ...maneuver,
       kind: 'maneuver',
-      isMagical: false,
+      isMagical: maneuver.isMagical === undefined ? false : maneuver.isMagical,
       rank: 1,
       roles: [],
     };
@@ -352,7 +370,7 @@ export class Creature implements CreaturePropertyMap {
     this.activeAbilities[spell.name] = {
       ...spell,
       kind: 'spell',
-      isMagical: true,
+      isMagical: spell.isMagical === undefined ? true : spell.isMagical,
       rank: 1,
       roles: [],
     };

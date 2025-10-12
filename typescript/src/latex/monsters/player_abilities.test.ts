@@ -165,7 +165,7 @@ t.test('standardizeModifierSign', (t) => {
 
 t.test('calculateStrikeDamage', (t) => {
   const mockCreature = {
-    getRelevantPower: (isMagical: boolean) => (isMagical ? 5 : 10),
+    getRelevantPower: (isMagical: boolean) => (isMagical ? 4 : 10),
   } as any;
 
   t.test('with no damage multiplier', (t) => {
@@ -188,6 +188,16 @@ t.test('calculateStrikeDamage', (t) => {
     t.end();
   });
 
+  t.test('with extra damage', (t) => {
+    const ability = {
+      weapon: 'bite',
+      effect: 'Make a strike that deals \\glossterm{extra damage} equal to your \\glossterm{power}.',
+      isMagical: false,
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+20');
+    t.end();
+  });
+
   t.test('with triple damage multiplier', (t) => {
     const ability = {
       weapon: 'tentacle',
@@ -195,7 +205,7 @@ t.test('calculateStrikeDamage', (t) => {
       isMagical: true,
     } as any;
     // Lower because this is a magical strike
-    t.equal(calculateStrikeDamage(mockCreature, ability), '3d6+15');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '3d6+12');
     t.end();
   });
 
@@ -209,16 +219,36 @@ t.test('calculateStrikeDamage', (t) => {
     t.end();
   });
 
+  t.test('with a 8x weapon damage multiplier', (t) => {
+    const ability = {
+      weapon: 'claws',
+      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage',
+      isMagical: false,
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+5');
+    t.end();
+  });
+
+  t.test('with a 8x weapon damage multiplier and extra damage', (t) => {
+    const ability = {
+      weapon: 'claws',
+      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and extra damage equal to half your power.',
+      isMagical: false,
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+10');
+    t.end();
+  });
+
   // Note that ignoring extranous *conditional* text may cause problems, and this test may
   // need to be updated later.
-  t.test('With extraneous text and a double damage multiplier', (t) => {
+  t.test('With extraneous text and a double weapon damage multiplier', (t) => {
     const ability = {
       weapon: 'bite',
       effect:
         'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+20');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+10');
     t.end();
   });
 
