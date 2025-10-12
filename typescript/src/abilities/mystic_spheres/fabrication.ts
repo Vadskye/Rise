@@ -479,7 +479,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Instant Arrow',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         This spell has no \\glossterm{somatic components}.
 
@@ -631,7 +631,7 @@ export const fabrication: MysticSphere = {
     {
       name: 'Instant Weapon',
 
-      castingTime: 'minor action',
+      usageTime: 'minor',
       effect: `
         This spell has no \\glossterm{somatic components}.
 

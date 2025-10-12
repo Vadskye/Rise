@@ -33,8 +33,9 @@ import {
   RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
 import { getManeuverByName } from '@src/abilities/combat_styles';
-import { getSpellByName, Spell } from '@src/abilities/mystic_spheres';
+import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon } from '@src/monsters/weapons';
+import { ActiveAbility } from '@src/abilities';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -202,20 +203,13 @@ export interface CustomModifierNumericEffect {
   statistic: NumericCreatureProperty;
 }
 
-// TODO: Clarify Spell/Maneuver type nonsense
-export interface ActiveAbility extends Spell {
-  isMagical: boolean;
-  usageTime?: MonsterAttackUsageTime;
-  weapon?: MonsterWeapon;
-}
-
 export interface MonsterAbilityOptions {
   displayName?: string;
   usageTime?: MonsterAttackUsageTime;
   weapon?: MonsterWeapon;
 }
 
-export interface CustomMonsterAbility extends Omit<Spell, 'rank' | 'roles' | 'scaling'> {
+export interface CustomMonsterAbility extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
   usageTime?: MonsterAttackUsageTime;
 }
 
@@ -318,6 +312,7 @@ export class Creature implements CreaturePropertyMap {
     { displayName, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
     this.activeAbilities[displayName || maneuverName] = {
+      kind: 'maneuver',
       // If the maneuver does not already have a defined scaling, we should scale accuracy
       // with rank.
       scaling: 'accuracy',
@@ -331,6 +326,7 @@ export class Creature implements CreaturePropertyMap {
 
   addSpell(spellName: string, { displayName, usageTime, weapon }: MonsterAbilityOptions = {}) {
     this.activeAbilities[displayName || spellName] = {
+      kind: 'spell',
       ...getSpellByName(spellName),
       name: displayName || spellName,
       isMagical: false,
@@ -342,6 +338,7 @@ export class Creature implements CreaturePropertyMap {
   addCustomManeuver(maneuver: CustomMonsterAbility) {
     this.activeAbilities[maneuver.name] = {
       ...maneuver,
+      kind: 'maneuver',
       isMagical: false,
       rank: 1,
       roles: [],
@@ -354,6 +351,7 @@ export class Creature implements CreaturePropertyMap {
   addCustomSpell(spell: CustomMonsterAbility) {
     this.activeAbilities[spell.name] = {
       ...spell,
+      kind: 'spell',
       isMagical: true,
       rank: 1,
       roles: [],

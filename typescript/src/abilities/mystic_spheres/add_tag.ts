@@ -1,4 +1,5 @@
-import { BaseSpellLike, MysticSphere } from '.';
+import { MysticSphere } from '.';
+import { ActiveAbility } from '@src/abilities';
 
 export function add_tag_to_sphere(tag: string, sphere: MysticSphere): MysticSphere {
   if (sphere.cantrips) {
@@ -14,7 +15,7 @@ export function add_tag_to_sphere(tag: string, sphere: MysticSphere): MysticSphe
   return sphere;
 }
 
-function add_tag_to_spelllike(tag: string, ability: BaseSpellLike) {
+function add_tag_to_spelllike(tag: string, ability: Pick<ActiveAbility, 'tags'>) {
   ability.tags = ability.tags || [];
   ability.tags.push(tag);
 }

@@ -1,6 +1,7 @@
-import { Spell, mysticSpheres } from '.';
+import { mysticSpheres } from '.';
+import { SpellDefinition } from '@src/abilities';
 
-let allSpells: Record<string, Spell> | null = null;
+let allSpells: Record<string, SpellDefinition> | null = null;
 
 export function getSpellByName(spellName: string) {
   if (!allSpells) {
