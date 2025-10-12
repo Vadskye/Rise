@@ -537,6 +537,7 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                 If you have access to pact magic, you learn an additional pact spell.
                 The spell can be up to rank 2, even if you do not have access to rank 2 spells.
                 It gains a special effect based on your soulkeeper.
+                This is a metamagic effect, so the spell cannot have other metamagic applied to it.
                 When you gain access to new spell ranks, you can change which spell you know with this ability, including spells with a higher rank.
                 {
                     \subcf{Devil -- Tormenting Spell} Each creature hit by the spell becomes tormented by the spell as a \glossterm{condition}.
@@ -546,13 +547,13 @@ pub fn soulforged<'a>() -> Vec<RankAbility<'a>> {
                     \subcf{Fae -- Hidden Spell} The spell does not have \glossterm{verbal components} or \glossterm{somatic components}.
                     In addition, if it does not deal damage, it gains the \atSubtle tag.
 
-                    \subcf{Moirai -- Inevitable Spell} Whenever you would make an attack roll, you can instead determine if an attack result of 5 \add your \glossterm{accuracy} with the spell would result in a hit.
+                    \subcf{Moirai -- Inevitable Spell} Whenever you would make an attack roll, you can instead determine if an attack result of 6 \add your \glossterm{accuracy} with the spell would result in a hit.
                     If it does, you hit the target without making an attack roll.
                     Otherwise, you roll the attack roll normally.
                     This does not allow you to bypass other effects that can cause you to miss without making an attack roll, such as a \glossterm{miss chance}.
 
-                    \subcf{Precursor -- Eldritch Spell} You gain a \plus1 accuracy bonus with the spell.
-                    However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to your Fortitude and Reflex defenses.
+                    \subcf{Precursor -- Eldritch Spell} You gain a \plus2 accuracy bonus with the spell.
+                    However, whenever you cast the spell, you \glossterm{briefly} take a \minus2 penalty to all defenses.
                 }
             ",
             modifiers: None,
