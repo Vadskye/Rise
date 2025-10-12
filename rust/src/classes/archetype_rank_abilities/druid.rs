@@ -358,12 +358,12 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Constrictor}{Standard action}
                         \rankline
-                        You gain a \plus2 accuracy bonus with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
+                        You gain a \plus1 accuracy bonus with the \textit{grapple} ability and all grapple actions (see \pcref{Grapple}).
                         In addition, you can contort your body, allowing it to act as a free hand for the purpose of using the \textit{grapple} ability and grapple actions even if you do not have a free hand.
                         Finally, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{4} The accuracy bonus increases to \plus4.
+                        \rank{4} The accuracy bonus increases to \plus2.
                         \rank{7} When you grapple a creature with the \ability{grapple} ability, you automatically take control of the grapple (see \pcref{Controlling a Grapple}).
                     \end{magicalactiveability}
 
@@ -440,7 +440,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Wolf}{Standard action}
                         \rankline
-                        You gain a \plus1 \glossterm{accuracy} bonus against creatures that are adjacent to both you and one of your \glossterm{allies}.
+                        You gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} against creatures that are adjacent to both you and one of your \glossterm{allies}.
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
