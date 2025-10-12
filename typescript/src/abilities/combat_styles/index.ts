@@ -10,7 +10,7 @@ import { monsterManeuvers } from './monster_maneuvers';
 import { unbreakableDefense } from './unbreakable_defense';
 import { ManeuverDefinition } from '@src/abilities/active_abilities';
 
-export { getManeuverByName } from './get_maneuver_by_name';
+export { getManeuverByName, getWeaponMultByRank } from './get_maneuver_by_name';
 
 export const combatStyles = [
   bruteForce,

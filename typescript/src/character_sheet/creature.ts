@@ -32,10 +32,10 @@ import {
   RiseTag,
   RiseWeaponTag,
 } from '@src/character_sheet/rise_data';
-import { getManeuverByName } from '@src/abilities/combat_styles';
+import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon } from '@src/monsters/weapons';
-import { ActiveAbility } from '@src/abilities';
+import { ActiveAbility, ActiveAbilityRank } from '@src/abilities';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -216,6 +216,13 @@ export interface CustomMonsterAbility
   usageTime?: MonsterAttackUsageTime;
 }
 
+export interface PoisonDefinition {
+  accuracyModifier?: number;
+  injury: boolean;
+  itMakes: string;
+  name: string;
+}
+
 // A creature wraps a CharacterSheet, exposing only more user-friendly functions.
 // This means that "normal" typescript code shouldn't have to grapple with the complexity
 // of, say, repeating abilities in Roll20.
@@ -327,6 +334,42 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
+  addPoisonousStrike(
+    weapon: MonsterWeapon,
+    poison: PoisonDefinition,
+    {
+      displayName,
+      isMagical,
+      usageTime,
+    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+  ) {
+      // TODO: does this have the correct case?
+      displayName = displayName || `Venomous ${weapon}`;
+
+      // TODO: what is the correct effective rank for this? It should do less damage than
+      // a normal strike, but how much?
+      const effectiveRank = Math.max(1, this.calculateRank() - 1);
+      const maneuver = getWeaponMultByRank(effectiveRank);
+      const poisonTrigger = poison.injury ? '\\injury' : '\\hit'
+      if (poison.itMakes.trimEnd().slice(-1) !== '.') {
+        console.warn(`Ability ${this.name}.${displayName}: poison.itMakes should end with a period`);
+      }
+      maneuver.effect += `
+        ${poisonTrigger} The target becomes \\glossterm{poisoned} by ${poison.name}.
+          The poison's accuracy is $accuracy${formatNumericModifier(poison.accuracyModifier)}.
+          It makes ${poison.itMakes}
+      `;
+
+      this.activeAbilities[displayName] = {
+        kind: 'maneuver',
+        ...maneuver,
+        name: displayName,
+        isMagical: Boolean(isMagical),
+        usageTime,
+        weapon
+      }
+    }
+
   addWeaponMult(
     weapon: MonsterWeapon,
     {
@@ -335,11 +378,10 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
   ) {
-    const rank = this.calculateRank();
     displayName = displayName || weapon;
     this.activeAbilities[displayName] = {
       kind: 'maneuver',
-      ...getManeuverByName(`Weapon Mult ${rank}`),
+      ...getWeaponMultByRank(this.calculateRank()),
       name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
@@ -592,8 +634,10 @@ export class Creature implements CreaturePropertyMap {
     console.warn(`Monster ${this.name}: ${message}`);
   }
 
-  calculateRank(): number {
-    return Math.floor((this.level + 2) / 3);
+  calculateRank(): ActiveAbilityRank {
+    // TODO: should level 22+ creatures be capped at 7?
+    const rank = Math.max(0, Math.min(7, Math.floor((this.level + 2) / 3)));
+    return rank as ActiveAbilityRank;
   }
 
   // Getters
@@ -1015,5 +1059,17 @@ export class Creature implements CreaturePropertyMap {
 
   public get climbing() {
     return this.getPropertyValue('climbing');
+  }
+}
+
+function formatNumericModifier(modifier?: number): string {
+  if (modifier === undefined) {
+    return '';
+  } else if (modifier > 0) {
+    return `+${modifier}`;
+  } else if (modifier < 0) {
+    return `${modifier}`;
+  } else {
+    return '';
   }
 }
