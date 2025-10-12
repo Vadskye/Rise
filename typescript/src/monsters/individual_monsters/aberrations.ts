@@ -47,8 +47,8 @@ export function addAberrations(grimoire: Grimoire) {
     // TODO: mark these as elite actions
     creature.addSpell('Psionic Blast', { usageTime: 'elite' });
     creature.addSpell('Mighty Mind Crush', { displayName: 'Mind Crush', usageTime: 'elite' });
-    creature.addSpell('Mind Blank');
-    creature.addSpell('Cause Fear');
+    creature.addSpell('Mind Blank', { usageTime: 'elite' });
+    creature.addSpell('Cause Fear', { usageTime: 'elite' });
     creature.addCustomSpell({
       effect: `
         The aboleth \\glossterm{dominates} the mind of humanoid or aberration within \\shortrange that is unconscious.
@@ -62,7 +62,6 @@ export function addAberrations(grimoire: Grimoire) {
       weapon: 'tentacle',
     });
 
-    // TODO: mark this as a non-action
     creature.addCustomSpell({
       attack: {
         hit: `
@@ -77,6 +76,7 @@ export function addAberrations(grimoire: Grimoire) {
       },
       name: 'Slime-Covered Body',
       tags: ['Poison'],
+      usageTime: 'triggered',
     });
   });
 }

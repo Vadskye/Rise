@@ -26,7 +26,7 @@ export interface ActiveAbility {
   tags?: string[];
   // TODO: rename this to 'duration'
   type?: ActiveAbilityDurationType;
-  usageTime?: UsageTime;
+  usageTime?: ActiveAbilityUsageTime;
   // TODO: this should be a more generic Weapon type if we add support for non-monster
   // weapons.
   weapon?: MonsterWeapon;
@@ -103,7 +103,7 @@ export interface ActiveAbilityAttack {
   targeting: string;
 }
 
-export type UsageTime = MonsterAttackUsageTime | RitualCastingTime;
+export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;
 
 export function standardizeCantrip(cantrip: CantripDefinition): ActiveAbility {
   return {
