@@ -191,10 +191,10 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with extra damage', (t) => {
     const ability = {
       weapon: 'bite',
-      effect: 'Make a strike that deals \\glossterm{extra damage} equal to your \\glossterm{power}.',
+      effect: 'Make a strike that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+20');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+15');
     t.end();
   });
 
@@ -232,10 +232,20 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with a 8x weapon damage multiplier and extra damage', (t) => {
     const ability = {
       weapon: 'claws',
-      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and extra damage equal to half your power.',
+      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and extra damage equal to your power.',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+15');
+    t.end();
+  });
+
+  t.test('with a double damage multiplier and extra damage', (t) => {
+    const ability = {
+      weapon: 'bite',
+      effect: 'Make a \\glossterm{strike} that deals double damage and extra damage equal to your power.',
+      isMagical: false,
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+40');
     t.end();
   });
 
