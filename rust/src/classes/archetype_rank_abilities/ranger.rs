@@ -258,6 +258,16 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
+            complexity: 0,
+            name: "Quarry+",
+            is_magical: false,
+            rank: 6,
+            description: r"
+                The accuracy bonus from your \ability{quarry} ability increases to \plus2.
+            ",
+            modifiers: Some(vec![Modifier::Accuracy(1)]),
+        },
+        RankAbility {
             complexity: 3,
             name: "Hunting Styles",
             is_magical: false,
@@ -393,16 +403,6 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 If you are following their tracks, you can track where they teleported to in the same way.
             ",
             modifiers: None,
-        },
-        RankAbility {
-            complexity: 0,
-            name: "Experienced Hunter",
-            is_magical: false,
-            rank: 6,
-            description: r"
-                You also gain a \plus1 bonus to your \glossterm{accuracy}.
-            ",
-            modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
