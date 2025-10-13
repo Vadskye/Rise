@@ -693,6 +693,7 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
+        crit: CONDITION_CRIT,
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         missGlance: true,
         targeting: `

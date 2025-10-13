@@ -778,5 +778,37 @@ export const vivimancy: MysticSphere = {
       roles: ['healing'],
       type: 'Attune (deep)',
     },
+
+    // Brief stun is r1. Add +1 area, so we get area rank 3 and spell rank 2.
+    {
+      name: 'Putrefying Blast',
+
+      attack: {
+        hit: `The target is \\glossterm{briefly} \\stunned.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\medarea cone from you.
+        `,
+      },
+      rank: 2,
+      roles: ['flash'],
+      scaling: 'accuracy',
+    },
+
+    // Condition stun is r9. -1 rank for limited scope, -1 rank for self-stun.
+    {
+      name: 'Greater Putrefying Blast',
+
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `The target is \\stunned as a \\glossterm{condition}.`,
+        targeting: `
+          Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\largearea cone from you.
+          Then, you are \\glossterm{briefly} \\stunned.
+        `,
+      },
+      rank: 7,
+      roles: ['softener'],
+      scaling: 'accuracy',
+    },
   ],
 };
