@@ -373,9 +373,12 @@ export function reformatAttackConsequences(monster: Creature, ability: ActiveAbi
 // damage values listed. This doesn't modify in place. It also doesn't generally calculate
 // strike-based damage, which is handled by `restructureStrikeAbility`.
 function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText: string): string {
-  effectText = effectText.replace(damageRankPattern, (_, damageRank, lowPowerScaling) =>
-    calculateDamage(monster, ability, parseDamageRank(damageRank), Boolean(lowPowerScaling)),
-  );
+  effectText = effectText.replace(/\\damagerank(\w+)/g, (_, rankAndMaybeLow) => {
+    const damageRank = rankAndMaybeLow.replace('low', '');
+    const lowPowerScaling = /low/.test(rankAndMaybeLow);
+    const calculatedDamage = calculateDamage(monster, ability, parseDamageRank(damageRank), lowPowerScaling);
+    return `${calculatedDamage}`;
+  });
 
   // For now, we just ignore this, since monsters never have extra damage.
   effectText = effectText.replace(/, and any (\\glossterm{)?extra damage}? is doubled/g, '');
@@ -419,9 +422,30 @@ export function calculateDamage(
   const excessRank = Math.max(0, monster.calculateRank() - ability.rank);
 
   if (lowPowerScaling) {
-    console.warn('Damage calculation for low power scaling is not implemented yet.');
-    // TODO
-    return '';
+    const damageDice = {
+      0: '1d6',
+      1: '1d10',
+      2: `1d8+${1+excessRank}d6`,
+      3: `${2+excessRank}d10`,
+      4: `${3+excessRank}d10`,
+      5: `${5+2*excessRank}d8`,
+      6: `${7+3*excessRank}d8`,
+      7: `${8+3*excessRank}d10`,
+      8: `${11+5*excessRank}d10`,
+      9: `${16+6*excessRank}d10`,
+      10: `${22+8*excessRank}d10`,
+    }[damageRank];
+
+    const flatDamage = {
+      0: excessRank,
+      1: 2 * excessRank,
+    }[damageRank as number] || 0;
+
+    if (flatDamage) {
+      return `${damageDice}+${flatDamage} damage`;
+    } else {
+      return `${damageDice} damage`;
+    }
   } else {
     // Normally, you'd calculate the "base" damage dice first, then add on the extra dice
     // from rank scaling. But we don't want to do dice pool math here. Instead, we can
