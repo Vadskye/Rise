@@ -406,7 +406,6 @@ export const umbramancy: MysticSphere = {
       },
       rank: 7,
       roles: ['burst', 'maim'],
-      tags: ['Cold'],
     },
 
     {
