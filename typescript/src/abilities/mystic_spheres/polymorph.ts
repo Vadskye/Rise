@@ -710,6 +710,7 @@ export const polymorph: MysticSphere = {
       name: 'Massive Eyeseal',
 
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           The target is \\dazzled as a \\glossterm{condition}.
         `,

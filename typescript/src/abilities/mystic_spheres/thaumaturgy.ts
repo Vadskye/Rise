@@ -644,7 +644,7 @@ export const thaumaturgy: MysticSphere = {
 
       functionsLike: {
         name: 'mystic convergence',
-        exceptThat: 'the damage increases to \\damageranksix',
+        exceptThat: 'the damage increases to \\damageranksix.',
       },
       rank: 6,
       roles: ['wildfire', 'boon'],
