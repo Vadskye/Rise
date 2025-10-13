@@ -45,11 +45,11 @@ Complexity is calculated at (rank 3 / rank 7).
 * Stalwart Guardian: 2 / 4
 * Zealous Warrior: 4 / 10
             
-## ranger: 27 / 32
+## ranger: 26 / 33
 * Beastmaster: 4 / 7
 * Boundary Warden: 6 / 7
 * Huntmaster: 7 / 7
-* Scout: 4 / 5
+* Scout: 3 / 6
 * Wilderness Warrior: 6 / 6
             
 ## rogue: 24 / 36
