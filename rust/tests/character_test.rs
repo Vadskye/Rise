@@ -48,8 +48,9 @@ mod character_tests {
                 "defense mental by 3",
                 "defense reflex by 3",
                 "durability 2",
-                "resource attunement point by 1",
+                "resource attunement point by 4",
                 "resource fatigue tolerance by 2",
+                "resource insight point by 1",
                 "resource trained skill by 3",
                 "vital roll 1"
             ],

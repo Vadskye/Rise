@@ -50,29 +50,14 @@ where
     Creature: HasModifiers + HasAttributes,
 {
     fn calc_resource(&self, resource: &Resource) -> i32 {
+        // This does not include the base class modifiers
         let value = match resource {
-            Resource::AttunementPoint => {
-                if self.level >= 8 {
-                    4
-                } else if self.level >= 5 {
-                    3
-                } else {
-                    2
-                }
-            }
+            Resource::AttunementPoint => 0,
             Resource::FatigueTolerance => self.get_attribute_modifier(&Attribute::Constitution),
-            Resource::InsightPoint => {
-                self.get_base_attribute(&Attribute::Intelligence)
-                    + if self.level >= 7 {
-                        3
-                    } else if self.level >= 4 {
-                        2
-                    } else {
-                        1
-                    }
-            }
+            Resource::InsightPoint => self.get_base_attribute(&Attribute::Intelligence),
             Resource::TrainedSkill => self.get_base_attribute(&Attribute::Intelligence),
         };
+        // Base class modifiers are added here
         value + self.calc_total_modifier(ModifierType::Resource(*resource))
     }
 }
