@@ -14,6 +14,13 @@ import {
   getWeaponAccuracy,
   getWeaponPowerMultiplier,
 } from '@src/monsters/weapons';
+import { MonsterWeapon } from '@src/monsters/weapons';
+
+// It's the same except that `effect` and `weapon` are mandatory.
+interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
+  effect: string;
+  weapon: MonsterWeapon;
+}
 
 export function convertManeuverToMonsterAbility(
   monster: Creature,
@@ -115,7 +122,24 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
   }
 
   if (ability.effect && makeStrikePattern.test(ability.effect)) {
-    restructureStrikeAbility(monster, ability);
+    if (!ability.weapon) {
+      throw new Error(
+        `Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`,
+      );
+    }
+    if (ability.attack) {
+      throw new Error(
+        `Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`,
+      );
+    }
+    // It's weird we have to cast here, because we have `if` statements that check both
+    // parts of the changes individually. Seems like Typescript doesn't maintain that
+    // context long enough, though.
+    restructureStrikeAbility(monster, ability as StrikeActiveAbility);
+    // All of the information from the effect should be contained in `ability.attack`, and
+    // it's not well defined how to display an ability with both an `effect` and `attack`.
+    // Due to type constraints, we can't run this inside `restructureStrikeAbility`.
+    delete ability.effect;
   }
 
   if (ability.attack) {
@@ -139,26 +163,65 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
 // attack-parsing logic to format it without duplicating logic between strike-based
 // abilities and non-strike abilities. Since strikes don't use standard damage rank
 // values, we also have to calculate the exact damage dealt by the strike here.
-export function restructureStrikeAbility(monster: Creature, ability: ActiveAbility) {
-  if (!ability.weapon) {
-    throw new Error(
-      `Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`,
-    );
-  }
-  if (ability.attack) {
-    throw new Error(
-      `Monster ability ${monster.name}.${ability.name}: Strike ability already makes an explicit attack`,
-    );
-  }
-  let effect = ability.effect!;
-
+export function restructureStrikeAbility(monster: Creature, ability: StrikeActiveAbility) {
   // Perform generic replacements that matter regardless of which hit/injury/targeting
   // segment they correspond to.
   // We don't care if the strike was originally restricted to melee-only.
-  effect = effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
+  ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
 
+  // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
+  // in a continuous sentence, like "move up to your speed, then make a strike".
+  const preStrikeSentenceMatch = ability.effect.match(/(.*)\. Make a (\\glossterm{strike}|strike)/s);
+  const preStrikeContinuousMatch = ability.effect.match(/(.*) make a (\\glossterm{strike}|strike)/s);
+  let preStrikeText = 'The $name makes a ';
+  if (preStrikeSentenceMatch) {
+    preStrikeText = `${preStrikeSentenceMatch[1]}. The $name makes a `;
+  } else if (preStrikeContinuousMatch) {
+    if (/\$[nN]ame/.test(preStrikeContinuousMatch[1])) {
+      preStrikeText = `${preStrikeContinuousMatch[1]} it makes a `;
+    } else {
+      preStrikeText = `${preStrikeContinuousMatch[1]} the $name makes a `;
+    }
+  }
+  const postStrikeMatch = ability.effect.match(/[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s)
+  const postStrikeText = postStrikeMatch ? postStrikeMatch[2] : '';
+  const hitMatch = ability.effect.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
+  const hitText = hitMatch ? hitMatch[1] : '';
+  const injuryMatch = ability.effect.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
+  const injuryText = injuryMatch ? injuryMatch[1] : undefined;
+  const critMatch = ability.effect.match(/\\crit(.*?)(\\injury|\\miss|$)/s);
+  const critText = critMatch ? critMatch[1] : undefined;
+  const missMatch = ability.effect.match(/\\miss(.*)/s);
+  const missText = missMatch ? missMatch[1] : undefined;
+
+  const accuracyModifierText = calculateStrikeAccuracyText(monster, ability);
+
+  ability.attack = {
+    crit: critText,
+    hit: `${calculateStrikeDamage(monster, ability)} damage.${hitText}`,
+    miss: missText,
+    injury: injuryText,
+    // TODO: if we support non-melee monster weapons, this would have to check the weapon
+    // to determine melee vs ranged.
+    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.${postStrikeText}`.trim(),
+  };
+
+  ability.tags = ability.tags || [];
+  const weaponTag = getWeaponTag(ability.weapon);
+  if (weaponTag) {
+    ability.tags.push(weaponTag);
+  }
+  // TODO: if any monster weapons can sweep, we will need to sum together their sweeping
+  // value.
+  const sweepingTag = monster.getSizeBasedSweepingTag();
+  if (sweepingTag) {
+    ability.tags.push(sweepingTag);
+  }
+}
+
+function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility): string {
   let accuracyModifierText = '';
-  const accuracyMatch = effect.match(
+  const accuracyMatch = ability.effect.match(
     /Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
   );
 
@@ -183,55 +246,7 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
     accuracyModifierText = `${accuracyModifier}`;
   }
 
-  // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
-  // in a continuous sentence, like "move up to your speed, then make a strike".
-  const preStrikeSentenceMatch = effect.match(/(.*)\. Make a (\\glossterm{strike}|strike)/s);
-  const preStrikeContinuousMatch = effect.match(/(.*) make a (\\glossterm{strike}|strike)/s);
-  let preStrikeText = 'The $name makes a ';
-  if (preStrikeSentenceMatch) {
-    preStrikeText = `${preStrikeSentenceMatch[1]}. The $name makes a `;
-  } else if (preStrikeContinuousMatch) {
-    if (/\$[nN]ame/.test(preStrikeContinuousMatch[1])) {
-      preStrikeText = `${preStrikeContinuousMatch[1]} it makes a `;
-    } else {
-      preStrikeText = `${preStrikeContinuousMatch[1]} the $name makes a `;
-    }
-  }
-  const postStrikeMatch = effect.match(/[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s)
-  const postStrikeText = postStrikeMatch ? postStrikeMatch[2] : '';
-  const hitMatch = effect.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
-  const hitText = hitMatch ? hitMatch[1] : '';
-  const injuryMatch = effect.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
-  const injuryText = injuryMatch ? injuryMatch[1] : undefined;
-  const critMatch = effect.match(/\\crit(.*?)(\\injury|\\miss|$)/s);
-  const critText = critMatch ? critMatch[1] : undefined;
-  const missMatch = effect.match(/\\miss(.*)/s);
-  const missText = missMatch ? missMatch[1] : undefined;
-
-  ability.attack = {
-    crit: critText,
-    hit: `${calculateStrikeDamage(monster, ability)} damage.${hitText}`,
-    miss: missText,
-    injury: injuryText,
-    // TODO: if we support non-melee monster weapons, this would have to check the weapon
-    // to determine melee vs ranged.
-    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.${postStrikeText}`.trim(),
-  };
-  // All of the information from the effect should be contained in `ability.attack`, and
-  // it's not well defined how to display an ability with both an `effect` and `attack`.
-  delete ability.effect;
-
-  ability.tags = ability.tags || [];
-  const weaponTag = getWeaponTag(ability.weapon);
-  if (weaponTag) {
-    ability.tags.push(weaponTag);
-  }
-  // TODO: if any monster weapons can sweep, we will need to sum together their sweeping
-  // value.
-  const sweepingTag = monster.getSizeBasedSweepingTag();
-  if (sweepingTag) {
-    ability.tags.push(sweepingTag);
-  }
+  return accuracyModifierText;
 }
 
 export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility): string {
