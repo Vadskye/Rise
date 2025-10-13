@@ -1,13 +1,15 @@
 import { ActiveAbility } from '@src/abilities';
 
-export function determineAbilityType(spell: Pick<ActiveAbility, 'type'>): string {
-  if (!spell.type) {
-    return 'activeability';
-  } else if (spell.type.includes('Attune')) {
-    return 'attuneability';
-  } else if (spell.type.includes('Sustain')) {
-    return 'sustainability';
-  } else {
-    return 'activeability';
+export function determineAbilityType(ability: Pick<ActiveAbility, 'isMagical' | 'type'>): string {
+  let durationType = 'activeability';
+  if (!ability.type) {
+    durationType = 'activeability';
+  } else if (ability.type.includes('Attune')) {
+    durationType = 'attuneability';
+  } else if (ability.type.includes('Sustain')) {
+    durationType = 'sustainability';
   }
+
+  const magicalPrefix = ability.isMagical ? 'magical' : '';
+  return `${magicalPrefix}${durationType}`;
 }

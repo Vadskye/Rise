@@ -234,11 +234,12 @@ function genAbilitiesText(monster: Creature): string {
 
   const maneuvers = monster
     .getActiveAbilities()
-    .filter((ability) => !ability.isMagical)
+    .filter((ability) => ability.kind === 'maneuver')
     .map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
   const spells = monster
     .getActiveAbilities()
-    .filter((ability) => ability.isMagical)
+    // Spells, cantrips, and rituals are all handled by this function
+    .filter((ability) => ability.kind !== 'maneuver' )
     .map((maneuver) => convertSpellToMonsterAbility(monster, maneuver));
 
   const allAttacks = [...autoAttacks, ...maneuvers, ...spells];
