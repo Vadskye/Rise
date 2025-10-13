@@ -6,6 +6,7 @@ import {
   restructureStrikeAbility,
   reformatAttackConsequences,
   calculateDamage,
+  StrikeActiveAbility,
 } from './player_abilities';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
 import { Creature } from '@src/character_sheet/creature';
@@ -441,7 +442,7 @@ t.test('restructureStrikeAbility', (t) => {
       const maneuver = standardizeManeuver({
         ...getManeuverByName('Mighty Rushdown'),
         weapon: 'bite',
-      });
+      }) as StrikeActiveAbility;
       restructureStrikeAbility(mockCreature, maneuver);
 
       t.matchOnlyStrict(maneuver, {
