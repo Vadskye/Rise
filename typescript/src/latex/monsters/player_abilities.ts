@@ -95,6 +95,8 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     reformatAttackConsequences(monster, ability);
   }
 
+  reformatAbilityCost(ability);
+
   return ability;
 }
 
@@ -122,6 +124,7 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   effect = effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
   // TODO: when should this use 'it' vs 'the $name'?
   effect = effect.replace(/your next action/g, "its next action");
+  effect = effect.replace(/your attack result/g, "the attack result");
   effect = effect.replace(/you are/g, "it is");
   effect = effect.replace(/your speed/g, "its speed");
   effect = effect.replace(/You can/g, "The $name can");
@@ -467,4 +470,12 @@ export function calculateDamage(
       return `${damageDice} damage`;
     }
   }
+}
+
+function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
+  if (!ability.cost) {
+    return;
+  }
+
+  ability.cost = ability.cost.replace(/You (\\glossterm{briefly}|briefly)/, (...match) => `The $name ${match[1]}`);
 }
