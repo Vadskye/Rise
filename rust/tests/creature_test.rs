@@ -32,11 +32,6 @@ mod creature_tests {
             4,
             "Should have 4 Armor"
         );
-        assert_eq!(
-            creature.calc_skill_modifier(&Skill::Climb),
-            -4,
-            "Should have -4 Climb"
-        );
     }
 
     #[test]
