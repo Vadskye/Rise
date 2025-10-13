@@ -39,6 +39,7 @@ fn it_calculates_rank_abilities() {
         fighter_10_abilities,
         vec![
             "Adaptive Blow",
+            "Armed and Ready",
             "Armor Expertise",
             "Augmented Maneuvers",
             "Augmented Maneuvers+",
@@ -50,7 +51,6 @@ fn it_calculates_rank_abilities() {
             "Maneuvers",
             "Martial Maneuvers",
             "Martial Maneuvers+",
-            "Weapon Expertise"
         ],
         "Should have correct abilities for a level 10 fighter",
     );
@@ -191,8 +191,8 @@ fn it_calculates_level_21_fighter_resources() {
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "AP b4 f4",
-        "4 AP from generic creature level scaling"
+        "AP b0 f3",
+        "3 AP from fighter"
     );
 
     assert_eq!(
@@ -210,8 +210,8 @@ fn it_calculates_level_21_fighter_resources() {
             baseline.calc_resource(&Resource::InsightPoint),
             fighter.calc_resource(&Resource::InsightPoint)
         ),
-        "Insight b3 f3",
-        "1 base + 2 level",
+        "Insight b0 f1",
+        "1 fighter",
     );
     assert_eq!(
         format!(
