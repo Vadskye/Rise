@@ -4,6 +4,7 @@ import {
   standardizeModifierSign,
   calculateStrikeDamage,
   restructureStrikeAbility,
+  reformatAttackConsequences,
   calculateDamage,
 } from './player_abilities';
 import { ActiveAbility, standardizeManeuver } from '@src/abilities';
@@ -463,6 +464,108 @@ t.test('restructureStrikeAbility', (t) => {
       t.end();
     });
 
+    t.end();
+  });
+
+  t.end();
+});
+
+t.test('reformatAttackConsequences', (t) => {
+  const simpleCreature = {
+    name: 'Test Monster',
+    getRelevantPower: () => 10,
+    calculateRank: () => 3,
+  } as any;
+
+  t.test('replaces "by you" with "by the $name"', (t) => {
+    const ability = {
+      attack: {
+        hit: 'The target is frightened by you.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.attack.hit, 'The target is frightened by the $name.');
+    t.end();
+  });
+
+  t.test('replaces damage rank in hit, crit, and injury', (t) => {
+    const ability = {
+      rank: 3,
+      isMagical: false,
+      attack: {
+        hit: '\\damagerankthree.',
+        crit: 'Also deals \\damagerankfour.',
+        injury: 'And \\damagerankfive.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.attack.hit, '1d8\\plus10 damage.');
+    t.equal(ability.attack.crit, 'Also deals 5d6 damage.');
+    t.equal(ability.attack.injury, 'And 6d6 damage.');
+    t.end();
+  });
+
+  t.test('replaces non-power damage scaling', (t) => {
+    const ability = {
+      rank: 3,
+      isMagical: false,
+      attack: {
+        hit: '\\damagerankthreelow.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.attack.hit, '2d10 damage.');
+    t.end();
+  });
+
+  t.test('replaces non-power damage scaling with excess rank', (t) => {
+    const ability = {
+      rank: 1,
+      isMagical: false,
+      attack: {
+        hit: '\\damagerankfivelow.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    // +4d8 from excess rank
+    t.equal(ability.attack.hit, '9d8 damage.');
+    t.end();
+  });
+
+  t.test('removes extraneous damage text', (t) => {
+    const ability = {
+      rank: 3,
+      isMagical: false,
+      attack: {
+        hit: 'Deals \\damagerankthree, and any extra damage is doubled.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.attack.hit, 'Deals 1d8\\plus10 damage.');
+    t.end();
+  });
+
+  t.test('clears ability.scaling to undefined if it was "damage"', (t) => {
+    const ability = {
+      scaling: 'damage',
+      attack: {
+        hit: 'Deals damage.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.scaling, undefined);
+    t.end();
+  });
+
+  t.test('does not clear ability.scaling if it was not "damage"', (t) => {
+    const ability = {
+      scaling: 'accuracy',
+      attack: {
+        hit: 'Deals damage.',
+      },
+    } as any;
+    reformatAttackConsequences(simpleCreature, ability);
+    t.equal(ability.scaling, 'accuracy');
     t.end();
   });
 
