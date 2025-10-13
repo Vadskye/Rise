@@ -59,17 +59,17 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 3,
         short_description: String::from(r"Deals extra weapon damage if you have 3 Str"),
         description: String::from(r"
-            If your Strength is at least 3, this weapon deals \glossterm{extra damage} equal to its weapon damage die \\sub 3.
+            If your Strength is at least 3, this weapon deals \glossterm{extra damage} equal to its weapon damage die \sub 3.
             For example, a brutish battleaxe would deal 1d8\\minus3 extra damage.
         "),
         upgrades: vec![
             // +3.5 damage
             ItemUpgrade::new(5, "Deals extra weapon damage if you have 4 Str", r"
-                If your Strength is at least 4, the extra damage increases to be equal to the weapon damage die \\sub 1.
+                If your Strength is at least 4, the extra damage increases to be equal to the weapon damage die \sub 1.
             "),
             // +5 damage
             ItemUpgrade::new(7, "Deals double extra weapon damage if you have 5 Str", r"
-                If your Strength is at least 5, the extra damage increases to be equal to twice the weapon damage die \\sub 4.
+                If your Strength is at least 5, the extra damage increases to be equal to twice the weapon damage die \sub 4.
             "),
         ],
         ..MagicWeapon::default()
