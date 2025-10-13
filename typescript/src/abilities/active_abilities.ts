@@ -1,4 +1,5 @@
 import { MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
+import { RiseTag } from '@src/character_sheet/rise_data';
 import { AbilityRole } from '@src/abilities';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { SphereName } from '@src/abilities/mystic_spheres';
@@ -22,8 +23,7 @@ export interface ActiveAbility {
   roles: AbilityRole[];
   scaling?: ActiveAbilityScaling;
   tableText?: string;
-  // TODO: define the set of allowable tags
-  tags?: string[];
+  tags?: RiseTag[];
   // TODO: rename this to 'duration'
   type?: ActiveAbilityDurationType;
   usageTime?: ActiveAbilityUsageTime;
