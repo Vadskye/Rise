@@ -19,21 +19,42 @@ export function convertManeuverToMonsterAbility(
   monster: Creature,
   maneuver: ManeuverDefinition,
 ): string {
-  const latex = convertManeuverToLatex(
-    reformatAsMonsterAbility(monster, standardizeManeuver(maneuver)),
+  const ability = standardizeManeuver(maneuver);
+  let latex = convertManeuverToLatex(
+    reformatAsMonsterAbility(monster, ability),
     true,
   );
+  latex = replaceGenericTerms(monster, ability, latex);
   checkSuccessfullyConverted(latex, monster.name, maneuver.name);
   return latex;
 }
 
 export function convertSpellToMonsterAbility(monster: Creature, spell: SpellDefinition): string {
-  const latex = convertSpellToLatex(
-    reformatAsMonsterAbility(monster, standardizeSpell(spell)),
+  const ability = standardizeSpell(spell);
+  let latex = convertSpellToLatex(
+    reformatAsMonsterAbility(monster, ability),
     true,
   );
+  latex = replaceGenericTerms(monster, ability, latex);
   checkSuccessfullyConverted(latex, monster.name, spell.name);
   return latex;
+}
+
+function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityPart: string): string {
+  // TODO: when should this use 'it' vs 'the $name'?
+  abilityPart = abilityPart.replace(/your next action/g, "its next action");
+  abilityPart = abilityPart.replace(/your attack result/g, "the attack result");
+  abilityPart = abilityPart.replace(/you are/g, "it is");
+  abilityPart = abilityPart.replace(/your speed/g, "its speed");
+  abilityPart = abilityPart.replace(/You can/g, "The $name can");
+  abilityPart = abilityPart.replace(/You create/g, "The $name creates");
+  abilityPart = abilityPart.replace(/\$name(.*?)the \$name/g, (_, mid) => `$name${mid}it`);
+  const fullPower = monster.getRelevantPower(ability.isMagical);
+  const halfPower = Math.floor(fullPower / 2);
+  abilityPart = abilityPart.replace(/damage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
+  abilityPart = abilityPart.replace(/damage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
+
+  return abilityPart;
 }
 
 const makeStrikePattern = /\b[mM]ake a.*strike\b/;
@@ -86,11 +107,24 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
+  // Although we do call `replaceGenericTerms` at the end, calling it on each component
+  // *before* processing it makes some of our processing easier. For example, we can
+  // reliably use `$name` in regex rather than something like `(you|$name)`.
+  if (ability.effect) {
+    ability.effect = replaceGenericTerms(monster, ability, ability.effect);
+  }
+
   if (ability.effect && makeStrikePattern.test(ability.effect)) {
     restructureStrikeAbility(monster, ability);
   }
 
   if (ability.attack) {
+    for (const key of ['crit', 'hit', 'injury', 'miss', 'targeting'] as const) {
+      if (ability.attack[key]) {
+        ability.attack[key] = replaceGenericTerms(monster, ability, ability.attack[key]);
+      }
+    }
+
     reformatAttackTargeting(monster, ability);
     reformatAttackConsequences(monster, ability);
   }
@@ -122,16 +156,6 @@ export function restructureStrikeAbility(monster: Creature, ability: ActiveAbili
   // segment they correspond to.
   // We don't care if the strike was originally restricted to melee-only.
   effect = effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
-  // TODO: when should this use 'it' vs 'the $name'?
-  effect = effect.replace(/your next action/g, "its next action");
-  effect = effect.replace(/your attack result/g, "the attack result");
-  effect = effect.replace(/you are/g, "it is");
-  effect = effect.replace(/your speed/g, "its speed");
-  effect = effect.replace(/You can/g, "The $name can");
-  const fullPower = monster.getRelevantPower(ability.isMagical);
-  const halfPower = Math.floor(fullPower / 2);
-  effect = effect.replace(/damage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
-  effect = effect.replace(/damage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
   let accuracyModifierText = '';
   const accuracyMatch = effect.match(
@@ -344,8 +368,6 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
   );
 }
 
-const damageRankPattern = /\\damagerank(\w+)(low)?/;
-
 // This modifies `ability` in place
 export function reformatAttackConsequences(monster: Creature, ability: ActiveAbility) {
   // For convenience
@@ -365,7 +387,7 @@ export function reformatAttackConsequences(monster: Creature, ability: ActiveAbi
   // We should have applied all damage scaling values, so we can safely remove this to
   // mark our handling of the scaling complete.
   if (ability.scaling === 'damage') {
-    ability.scaling = undefined;
+    delete ability.scaling;
   }
 }
 
