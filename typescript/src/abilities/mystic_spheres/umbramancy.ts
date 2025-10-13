@@ -119,7 +119,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 3,
       roles: ['wildfire'],
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
+      scaling: 'damage',
     },
 
     {
