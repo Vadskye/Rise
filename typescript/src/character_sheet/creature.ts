@@ -409,7 +409,7 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
   ) {
-    displayName = displayName || weapon;
+    displayName = displayName || uppercaseFirst(weapon);
     this.activeAbilities[displayName] = {
       kind: 'maneuver',
       ...getWeaponMultByRank(this.calculateRank()),
