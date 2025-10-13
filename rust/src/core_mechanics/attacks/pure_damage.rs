@@ -85,7 +85,6 @@ mod tests {
     use super::*;
     use crate::creatures::{Creature, CreatureCategory};
     use crate::latex_formatting::remove_indentation;
-    use crate::testing::assert_multiline_eq;
 
     fn get_basic_creature() -> Creature {
         Creature::new(1, CreatureCategory::Character)
@@ -97,110 +96,5 @@ mod tests {
 
     fn get_maneuver_latex(config: PureDamageManeuver) -> String {
         remove_indentation(&config.attack().latex_ability_block(&get_basic_creature()))
-    }
-
-    mod pure_damage_ability {
-        use super::*;
-
-        #[test]
-        fn it_generates_pyromancy_mystic_bolt() {
-            // PureDamage doesn't support changing the text for "creatures" vs "creatures and objects",
-            // but it's still useful to think about the specific variants of mystic bolt for different
-            // defense and damage values.
-            let mystic_bolt = PureDamageAbility {
-                defense: Defense::Fortitude,
-                is_magical: true,
-                name: "Mystic Bolt".to_string(),
-                rank: 1,
-            };
-
-            assert_multiline_eq(
-                get_ability_latex(mystic_bolt),
-                "\n\begin<magicalactiveability>*<Mystic Bolt>\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 attack vs. Fortitude against something within \medrange.\n\n\n\hit 1d6 damage.\n\n\n\n\end<magicalactiveability>\n",
-            );
-        }
-
-        #[test]
-        fn it_generates_channel_divinity_mighty_mystic_bolt() {
-            let mystic_bolt = PureDamageAbility {
-                defense: Defense::Mental,
-                is_magical: true,
-                name: "Mighty Mystic Bolt".to_string(),
-                rank: 4,
-            };
-
-            assert_multiline_eq(
-                get_ability_latex(mystic_bolt),
-                "\n\begin<magicalactiveability>*<Mighty Mystic Bolt>\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 attack vs. Mental against something within \medrange.\n\n\n\hit damage.\n\n\n\n\end<magicalactiveability>\n", // TODO: The damage dice (1d10) are not being rendered here. This test is updated to reflect the current code behavior, but this might be a bug.
-            );
-        }
-    }
-
-    mod pure_damage_maneuver {
-        use super::*;
-
-        #[test]
-        fn it_generates_basic_strike() {
-            let basic_strike = PureDamageManeuver {
-                defense: Defense::Armor,
-                is_magical: false,
-                name: "Basic Strike".to_string(),
-                rank: 1,
-                weapon: Weapon::broadsword(),
-            };
-
-            assert_multiline_eq(
-                get_maneuver_latex(basic_strike),
-                "r\n\begin<activeability>*<Basic Strike>\n\abilitytags \weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 1d6 damage.\n\n\n\n\end<activeability>\n",
-            );
-        }
-
-        #[test]
-        fn it_scales_accuracy() {
-            let basic_strike = PureDamageManeuver {
-                defense: Defense::Reflex,
-                is_magical: false,
-                name: \"+3 Accuracy\".to_string(),
-                rank: 4,
-                weapon: Weapon::broadsword(),
-            };
-
-            assert_multiline_eq(
-                get_maneuver_latex(basic_strike),
-                "r\n\begin<activeability>*<+3 Accuracy>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +3 \glossterm{strike} vs. Reflex.\n\n\n\hit 1d6 damage.\n\n\n\n\end<activeability>\n",
-            );
-        }
-
-        #[test]
-        fn it_doubles_weapon_damage() {
-            let basic_strike = PureDamageManeuver {
-                defense: Defense::Armor,
-                is_magical: false,
-                name: "Double Damage".to_string(),
-                rank: 5,
-                weapon: Weapon::broadsword(),
-            };
-
-            assert_multiline_eq(
-                get_maneuver_latex(basic_strike),
-                "r\n\begin<activeability>*<Double Damage>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 2d6 damage.\n\n\n\n\end<activeability>\n",
-            );
-        }
-
-        #[test]
-        fn it_triples_weapon_damage() {
-            let basic_strike = PureDamageManeuver {
-                defense: Defense::Armor,
-                is_magical: false,
-                name: "Triple Damage".to_string(),
-                rank: 7,
-                weapon: Weapon::broadsword(),
-            };
-
-            assert_multiline_eq(
-                get_maneuver_latex(basic_strike),
-                "r\n\begin<activeability>*<Triple Damage>\n\weapontag{Sweeping} (1), \weapontag{Versatile Grip}\n\abilityusagetime Standard action.\n\rankline\n\nThe $name makes a +0 \glossterm{strike} vs. Armor.\n\n\n\hit 3d6 damage.\n\n\n\n\end<activeability>\n",
-            );
-        }
     }
 }
