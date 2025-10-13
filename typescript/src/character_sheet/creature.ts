@@ -208,6 +208,7 @@ export interface CustomModifierNumericEffect {
 export interface MonsterAbilityOptions {
   displayName?: string;
   isMagical?: boolean; // Spells default to true, maneuvers default to false
+  tags?: RiseTag[];
   usageTime?: MonsterAttackUsageTime;
   weapon?: MonsterWeapon;
 }
@@ -321,13 +322,14 @@ export class Creature implements CreaturePropertyMap {
   // maneuver, but to display it in the book with a different name.
   addManeuver(
     maneuverName: string,
-    { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {},
+    { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
     this.activeAbilities[displayName || maneuverName] = {
       kind: 'maneuver',
       // If the maneuver does not already have a defined scaling, we should scale accuracy
       // with rank.
       scaling: 'accuracy',
+      tags,
       ...getManeuverByName(maneuverName),
       name: displayName || maneuverName,
       isMagical: isMagical === undefined ? false : isMagical,
@@ -341,8 +343,9 @@ export class Creature implements CreaturePropertyMap {
     {
       displayName,
       isMagical,
+      tags,
       usageTime,
-    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || `Grappling ${uppercaseFirst(weapon)}`;
 
@@ -354,6 +357,9 @@ export class Creature implements CreaturePropertyMap {
         \\hit If your attack result also hits the target's Brawn defense, it is \\grappled.
       `;
     maneuver.tags = maneuver.tags || [];
+    if (tags) {
+      maneuver.tags = maneuver.tags.concat(tags);
+    }
     maneuver.tags.push('Size-Based');
 
     this.activeAbilities[displayName] = {
@@ -372,8 +378,9 @@ export class Creature implements CreaturePropertyMap {
     {
       displayName,
       isMagical,
+      tags,
       usageTime,
-    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || `Venomous ${uppercaseFirst(weapon)}`;
 
@@ -393,6 +400,7 @@ export class Creature implements CreaturePropertyMap {
 
     this.activeAbilities[displayName] = {
       kind: 'maneuver',
+      tags,
       ...maneuver,
       name: displayName,
       isMagical: Boolean(isMagical),
@@ -406,12 +414,14 @@ export class Creature implements CreaturePropertyMap {
     {
       displayName,
       isMagical,
+      tags,
       usageTime,
-    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || uppercaseFirst(weapon);
     this.activeAbilities[displayName] = {
       kind: 'maneuver',
+      tags,
       ...getWeaponMultByRank(this.calculateRank()),
       name: displayName,
       isMagical: Boolean(isMagical),
@@ -422,10 +432,11 @@ export class Creature implements CreaturePropertyMap {
 
   addSpell(
     spellName: string,
-    { displayName, isMagical, usageTime, weapon }: MonsterAbilityOptions = {},
+    { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
     this.activeAbilities[displayName || spellName] = {
       kind: 'spell',
+      tags,
       ...getSpellByName(spellName),
       name: displayName || spellName,
       isMagical: isMagical === undefined ? true : isMagical,
