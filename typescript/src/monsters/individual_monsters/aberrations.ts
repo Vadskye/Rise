@@ -9,10 +9,10 @@ export function addAberrations(grimoire: Grimoire) {
       challenge_rating: 4,
       creature_type: 'aberration',
       level: 12,
+      size: 'huge',
     });
     creature.setProperties({
       has_art: true,
-      size: 'huge',
     });
     creature.setKnowledgeResults({
       easy: `

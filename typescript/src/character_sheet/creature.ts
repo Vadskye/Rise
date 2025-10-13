@@ -36,6 +36,7 @@ import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_st
 import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon } from '@src/monsters/weapons';
 import { ActiveAbility, ActiveAbilityRank } from '@src/abilities';
+import { uppercaseFirst } from '@src/latex/format/uppercase_first';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -102,6 +103,7 @@ export type CreatureRequiredProperties =
   | 'base_class'
   | 'challenge_rating'
   | 'creature_type'
+  | 'size'
   | 'level';
 export type CreatureRequiredPropertyMap = Pick<CreaturePropertyMap, CreatureRequiredProperties>;
 
@@ -334,6 +336,36 @@ export class Creature implements CreaturePropertyMap {
     };
   }
 
+  addGrapplingStrike(
+    weapon: MonsterWeapon,
+    {
+      displayName,
+      isMagical,
+      usageTime,
+    }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
+  ) {
+    displayName = displayName || `Grappling ${uppercaseFirst(weapon)}`;
+
+    // TODO: what is the correct effective rank for this? It should do less damage than
+    // a normal strike, but how much?
+    const effectiveRank = Math.max(1, this.calculateRank() - 1);
+    const maneuver = getWeaponMultByRank(effectiveRank);
+    maneuver.effect += `
+        \\hit If your attack result also hits the target's Brawn defense, it is \\grappled.
+      `;
+    maneuver.tags = maneuver.tags || [];
+    maneuver.tags.push('Size-Based');
+
+    this.activeAbilities[displayName] = {
+      kind: 'maneuver',
+      ...maneuver,
+      name: displayName,
+      isMagical: Boolean(isMagical),
+      usageTime,
+      weapon
+    }
+  }
+
   addPoisonousStrike(
     weapon: MonsterWeapon,
     poison: PoisonDefinition,
@@ -343,32 +375,31 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Pick<MonsterAbilityOptions, 'displayName' | 'isMagical' | 'usageTime'> = {},
   ) {
-      // TODO: does this have the correct case?
-      displayName = displayName || `Venomous ${weapon}`;
+    displayName = displayName || `Venomous ${uppercaseFirst(weapon)}`;
 
-      // TODO: what is the correct effective rank for this? It should do less damage than
-      // a normal strike, but how much?
-      const effectiveRank = Math.max(1, this.calculateRank() - 1);
-      const maneuver = getWeaponMultByRank(effectiveRank);
-      const poisonTrigger = poison.injury ? '\\injury' : '\\hit'
-      if (poison.itMakes.trimEnd().slice(-1) !== '.') {
-        console.warn(`Ability ${this.name}.${displayName}: poison.itMakes should end with a period`);
-      }
-      maneuver.effect += `
+    // TODO: what is the correct effective rank for this? It should do less damage than
+    // a normal strike, but how much?
+    const effectiveRank = Math.max(1, this.calculateRank() - 1);
+    const maneuver = getWeaponMultByRank(effectiveRank);
+    const poisonTrigger = poison.injury ? '\\injury' : '\\hit'
+    if (poison.itMakes.trimEnd().slice(-1) !== '.') {
+      console.warn(`Ability ${this.name}.${displayName}: poison.itMakes should end with a period`);
+    }
+    maneuver.effect += `
         ${poisonTrigger} The target becomes \\glossterm{poisoned} by ${poison.name}.
           The poison's accuracy is $accuracy${formatNumericModifier(poison.accuracyModifier)}.
           It makes ${poison.itMakes}
       `;
 
-      this.activeAbilities[displayName] = {
-        kind: 'maneuver',
-        ...maneuver,
-        name: displayName,
-        isMagical: Boolean(isMagical),
-        usageTime,
-        weapon
-      }
+    this.activeAbilities[displayName] = {
+      kind: 'maneuver',
+      ...maneuver,
+      name: displayName,
+      isMagical: Boolean(isMagical),
+      usageTime,
+      weapon
     }
+  }
 
   addWeaponMult(
     weapon: MonsterWeapon,
@@ -498,13 +529,13 @@ export class Creature implements CreaturePropertyMap {
   }
 
   // TODO: This isn't currently very structured in the sheet.
-  addCustomSense(speed: string) {
+  addCustomSense(sense: string) {
     // TODO: add a regex to validate that senses look reasonable
     for (let i = 0; i < 4; i++) {
       const key = `sense_${i}_name` as CustomSense;
       if (!this.getPropertyValues([key])[key]) {
         this.setProperties({
-          [key]: speed,
+          [key]: sense,
         });
         return;
       }

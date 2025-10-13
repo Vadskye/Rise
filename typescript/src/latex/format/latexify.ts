@@ -18,6 +18,9 @@ export function latexify(text: string): string {
 
   warnIfPattern(text, /[^\\]hprank.*/, 'contains unprefixed hprank');
 
+  // This can happen if I write something like "\\damageranktwo damage".
+  warnIfPattern(text, /damage damage/, 'contains "damage damage"');
+
   warnIfPattern(
     text,
     /glossterm.(braced|empowered|focused|fortified|honed|maximized|primed|shielded|steeled|impervious|vulnerable)/,
