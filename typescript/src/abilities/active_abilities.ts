@@ -107,33 +107,33 @@ export type ActiveAbilityUsageTime = MonsterAttackUsageTime | RitualCastingTime;
 
 export function standardizeCantrip(cantrip: CantripDefinition): ActiveAbility {
   return {
+    isMagical: true,
     ...cantrip,
     kind: 'cantrip',
-    isMagical: true,
     rank: 0,
   };
 }
 
 export function standardizeManeuver(maneuver: ManeuverDefinition): ActiveAbility {
   return {
+    isMagical: false,
     ...maneuver,
     kind: 'maneuver',
-    isMagical: false,
   };
 }
 
 export function standardizeSpell(spell: SpellDefinition): ActiveAbility {
   return {
+    isMagical: true,
     ...spell,
     kind: 'spell',
-    isMagical: true,
   };
 }
 
 export function standardizeRitual(ritual: RitualDefinition): Ritual {
   return {
+    isMagical: true,
     ...ritual,
     kind: 'ritual',
-    isMagical: true,
   };
 }

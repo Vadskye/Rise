@@ -17,7 +17,7 @@ import {
 import { MonsterWeapon } from '@src/monsters/weapons';
 
 // It's the same except that `effect` and `weapon` are mandatory.
-interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
+export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
   effect: string;
   weapon: MonsterWeapon;
 }
@@ -103,6 +103,10 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   if (makeStrikePattern.test(abilityText)) {
     warn('Ability still says it makes a strike');
   }
+
+  if (/defense[^.]+instead of[^.]+defense/.test(abilityText)) {
+    warn('Ability still says it uses one defense instead of another');
+  }
 }
 
 // Convert a standard spell or maneuver that appears in the player-facing section of the
@@ -169,6 +173,14 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // We don't care if the strike was originally restricted to melee-only.
   ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
 
+  let defense = 'Armor';
+  // Use the correct alternate defense and strip the whole sentence, since we've
+  // incorporated it into the effect.
+  ability.effect = ability.effect.replace(/The attack is made against the target's (.*?) defense instead of its Armor defense./, (_, altDefense) => {
+    defense = altDefense;
+    return '';
+  });
+
   // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
   // in a continuous sentence, like "move up to your speed, then make a strike".
   const preStrikeSentenceMatch = ability.effect.match(/(.*)\. Make a (\\glossterm{strike}|strike)/s);
@@ -203,7 +215,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
     injury: injuryText,
     // TODO: if we support non-melee monster weapons, this would have to check the weapon
     // to determine melee vs ranged.
-    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. Armor with its ${ability.weapon}.${postStrikeText}`.trim(),
+    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. ${defense} with its ${ability.weapon}.${postStrikeText}`.trim(),
   };
 
   ability.tags = ability.tags || [];
