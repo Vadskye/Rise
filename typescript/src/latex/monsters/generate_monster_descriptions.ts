@@ -2,6 +2,7 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addMagicalBeasts } from '@src/monsters/individual_monsters/magical_beasts';
+import { addUndead } from '@src/monsters/individual_monsters/undead';
 import * as format from '@src/latex/format';
 import { convertMonsterToLatex } from './convert_monster_to_latex';
 
@@ -9,6 +10,7 @@ export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
   addAberrations(grimoire);
   addMagicalBeasts(grimoire);
+  addUndead(grimoire);
 
   const monsterSections: Record<string, string> = {};
   for (const monsterName of grimoire.getMonsterNames()) {
