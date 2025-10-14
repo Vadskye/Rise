@@ -2,6 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 import {
   ActiveAbility,
   ManeuverDefinition,
+  PassiveAbility,
   SpellDefinition,
   standardizeManeuver,
   standardizeSpell,
@@ -22,7 +23,7 @@ export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'wea
   weapon: MonsterWeapon;
 }
 
-export function convertManeuverToMonsterAbility(
+export function convertManeuverToMonsterLatex(
   monster: Creature,
   maneuver: ManeuverDefinition,
 ): string {
@@ -36,7 +37,7 @@ export function convertManeuverToMonsterAbility(
   return latex;
 }
 
-export function convertSpellToMonsterAbility(monster: Creature, spell: SpellDefinition): string {
+export function convertSpellToMonsterLatex(monster: Creature, spell: SpellDefinition): string {
   const ability = standardizeSpell(spell);
   let latex = convertSpellToLatex(
     reformatAsMonsterAbility(monster, ability),
@@ -551,4 +552,11 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
   }
 
   ability.cost = ability.cost.replace(/You (\\glossterm{briefly}|briefly)/, (...match) => `The $name ${match[1]}`);
+}
+
+export function convertPassiveAbilityToMonsterLatex(ability: PassiveAbility): string {
+  const magicalText = ability.isMagical ? '\\sparkle' : '';
+  return `
+    \\parhead{${ability.name}${magicalText}} ${ability.effect}
+  `;
 }

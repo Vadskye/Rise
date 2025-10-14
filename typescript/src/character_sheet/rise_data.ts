@@ -179,3 +179,31 @@ export type RiseSpecialDefense = 'immune' | 'impervious' | 'vulnerable';
 export type RiseTag = RiseAbilityTag | RiseWeaponTag;
 export type RiseAbilityTag = string;
 export type RiseWeaponTag = string;
+
+// We need this to be a list to autodefine the RiseTrait type, but we want to export a Set
+// instead of a List.
+const RISE_TRAITS_LIST = [
+  'blindsense',
+  'blindsight',
+  'darkvision',
+  'floating',
+  'impervious',
+  'immune',
+  'incorporeal',
+  'intangible',
+  'invisible',
+  'legless',
+  'lifesense',
+  'lifesight',
+  'low-light vision',
+  'mindless',
+  'multipedal',
+  'scent',
+  'simple-minded',
+  'telepathy',
+  'tremorsense',
+  'tremorsight',
+  'vulnerable',
+];
+export type RiseTrait = (typeof RISE_TRAITS_LIST)[number];
+export const RISE_TRAITS = new Set(RISE_TRAITS_LIST);
