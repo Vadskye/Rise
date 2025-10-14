@@ -410,7 +410,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
       level: 4,
       size: 'medium',
     });
-    creature.setTrainedSkills(['climb', 'endurance', 'swim']);
+    creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
     creature.setBaseAttributes([5, 1, 6, -8, 2, -1]);
     creature.addTrait('multipedal');
 
@@ -429,7 +429,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
       level: 6,
       size: 'large',
     });
-    creature.setTrainedSkills(['climb', 'endurance', 'swim']);
+    creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
     creature.setBaseAttributes([6, 1, 7, -8, 2, 1]);
     creature.addTrait('multipedal');
 
@@ -445,10 +445,10 @@ export function addMagicalBeasts(grimoire: Grimoire) {
       base_class: 'skirmisher',
       challenge_rating: 1,
       creature_type: 'beast',
-      level: 3,
+      level: 4,
       size: 'medium',
     });
-    creature.setTrainedSkills(['awareness']);
+    creature.setTrainedSkills(['awareness', 'survival']);
     creature.setBaseAttributes([1, 2, 1, -7, 3, 0]);
     creature.addTrait('multipedal');
 
