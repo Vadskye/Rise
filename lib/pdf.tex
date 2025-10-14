@@ -46,8 +46,19 @@
     innertopmargin=0.5em,
     innertopmargin=0.25em,
     innerbottommargin=0.25em,
+    innerrightmargin=0.25em,
     leftmargin=0em,
-]{monsterstatistics}
+]{monsterstatisticsmdframed}
+
+\DeclareDocumentEnvironment{monsterstatistics}{}
+{
+  \begin{monsterstatisticsmdframed}
+  \begin{fakehang}
+}
+{
+  \end{fakehang}
+  \end{monsterstatisticsmdframed}
+}
 
 \newmdenv[
     style=colorenv,
