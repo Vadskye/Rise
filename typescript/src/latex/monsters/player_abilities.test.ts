@@ -3,6 +3,7 @@ import {
   reformatAttackTargeting,
   standardizeModifierSign,
   calculateStrikeDamage,
+  reformatAsMonsterAbility,
   restructureStrikeAbility,
   reformatAttackConsequences,
   calculateDamage,
@@ -284,6 +285,42 @@ t.test('calculateStrikeDamage', (t) => {
   t.end();
 });
 
+t.test('reformatAsMonsterAbility', (t) => {
+  let mockCreature: Creature;
+
+  t.beforeEach(() => {
+    mockCreature = {
+      name: 'Test Monster',
+      getRelevantPower: () => 10,
+      getSizeBasedSweepingTag: () => 'Sweeping (1)',
+    } as any;
+  });
+
+  t.test("throws appropriate errors", (t) => {
+    t.throws(() => {
+      const ability = {
+        name: 'Test Ability',
+        effect: 'Make a strike.',
+      } as any;
+      reformatAsMonsterAbility(mockCreature, ability);
+    }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
+
+    t.throws(() => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: 'Make a strike.',
+        attack: { hit: 'damage', targeting: 'target' },
+      } as any;
+      reformatAsMonsterAbility(mockCreature, ability);
+    }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
+
+    t.end();
+  });
+
+  t.end();
+});
+
 t.test('restructureStrikeAbility', (t) => {
   let mockCreature: Creature;
 
@@ -408,28 +445,6 @@ t.test('restructureStrikeAbility', (t) => {
         hit: '1d8+10 damage.',
         targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
       });
-      t.end();
-    });
-
-    t.test("throws appropriate errors", (t) => {
-      t.throws(() => {
-        const ability = {
-          name: 'Test Ability',
-          effect: 'Make a strike.',
-        } as any;
-        restructureStrikeAbility(mockCreature, ability);
-      }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
-
-      t.throws(() => {
-        const ability = {
-          name: 'Test Ability',
-          weapon: 'bite',
-          effect: 'Make a strike.',
-          attack: { hit: 'damage', targeting: 'target' },
-        } as any;
-        restructureStrikeAbility(mockCreature, ability);
-      }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
-
       t.end();
     });
 

@@ -141,10 +141,6 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     // parts of the changes individually. Seems like Typescript doesn't maintain that
     // context long enough, though.
     restructureStrikeAbility(monster, ability as StrikeActiveAbility);
-    // All of the information from the effect should be contained in `ability.attack`, and
-    // it's not well defined how to display an ability with both an `effect` and `attack`.
-    // Due to type constraints, we can't run this inside `restructureStrikeAbility`.
-    delete ability.effect;
   }
 
   if (ability.attack) {
@@ -230,6 +226,12 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   if (sweepingTag) {
     ability.tags.push(sweepingTag);
   }
+
+  // All of the information from the effect should be contained in `ability.attack`, and
+  // it's not well defined how to display an ability with both an `effect` and `attack`.
+  // We technically shouldn't have access to the 'effect' key here so we have to cheat the
+  // types a bit.
+  delete (ability as ActiveAbility).effect;
 }
 
 function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility): string {
