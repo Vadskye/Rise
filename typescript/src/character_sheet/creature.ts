@@ -31,11 +31,13 @@ import {
   RiseSpecialDefense,
   RiseTag,
   RiseWeaponTag,
+  RISE_TRAITS,
+  RiseTrait,
 } from '@src/character_sheet/rise_data';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon } from '@src/monsters/weapons';
-import { ActiveAbility, ActiveAbilityRank } from '@src/abilities';
+import { ActiveAbility, ActiveAbilityRank, PassiveAbility } from '@src/abilities';
 import { uppercaseFirst } from '@src/latex/format/uppercase_first';
 
 // These have unique typedefs beyond the standard string/number/bool
@@ -495,6 +497,8 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  // Arbitrary names are ignored when generating LaTeX. However, names that match standard
+  // trait definitions are displayed.
   addCustomModifier(config: CustomModifierConfig) {
     if (config.numericEffects && config.numericEffects.length > 3) {
       throw new Error('We only support a maximum of three numeric effects per custom modifier.');
@@ -514,6 +518,51 @@ export class Creature implements CreaturePropertyMap {
       }
     }
     this.sheet.setProperties(attrs);
+  }
+
+  addPassiveAbility({ name, effect, isMagical }: PassiveAbility) {
+    const prefix = `repeating_passiveabilities_${this.sheet.generateRowId()}`;
+    this.sheet.setProperties({
+      [`${prefix}_ability_name`]: name,
+      [`${prefix}_is_magical`]: Boolean(isMagical),
+      [`${prefix}_ability_effects`]: effect,
+    });
+  }
+
+  getPassiveAbilities(): PassiveAbility[] {
+    return this.sheet.getRepeatingSection('passiveabilities').getValuesFromAllRows(['ability_name', 'ability_effects', 'is_magical']).map((ability) => {
+      return {
+        name: ability.ability_name as string,
+        isMagical: Boolean(ability.is_magical),
+        effect: ability.ability_effects as string,
+      };
+    });
+  }
+
+  getModifierNames(): string[] {
+    return this.sheet.getRepeatingSectionValues('permanentmodifiers', 'name') as string[];
+  }
+
+  getStandardTraits(): RiseTrait[] {
+    return this.getModifierNames().filter((modifierName) => RISE_TRAITS.has(modifierName));
+  }
+
+  addImmunity(immuneTo: string) {
+    this.addCustomModifier({
+      immune: immuneTo,
+    });
+  }
+
+  addImpervious(imperviousTo: string) {
+    this.addCustomModifier({
+      impervious: imperviousTo,
+    });
+  }
+
+  addVulnerability(vulnerableTo: string) {
+    this.addCustomModifier({
+      vulnerable: vulnerableTo,
+    });
   }
 
   // TODO: This isn't currently very structured in the sheet.
@@ -559,17 +608,27 @@ export class Creature implements CreaturePropertyMap {
     );
   }
 
-  addStandardModifier(modifierName: StandardModifierName) {
-    // TODO: add fancy logic for some modifiers to have special effects
-    this.addCustomModifier({ name: modifierName });
+  addTrait(traitName: RiseTrait) {
+    // TODO: add fancy logic for some traits to have special effects
+    const modifier: CustomModifierConfig = { name: traitName };
+
+    if (traitName === 'multipedal') {
+      modifier.numericEffects = [
+        { modifier: 5, statistic: 'balance' },
+        { modifier: 10, statistic: 'speed' },
+      ];
+    } else if (traitName === 'legless') {
+      modifier.immune = 'Prone';
+      // No way to mark inability to jump. Just don't give legless creatures the
+      // Jump skill as a trained skill and it shouldn't appear in the book, though.
+    }
+    this.addCustomModifier(modifier);
   }
 
   // Useful for checking if a creature has some common and important modifiers that change
   // the way LaTeX is generated, like being mindless.
   hasModifier(modifierName: StandardModifierName): boolean {
-    return this.sheet
-      .getRepeatingSectionValues('permanentmodifiers', 'name')
-      .includes(modifierName);
+    return this.getModifierNames().includes(modifierName);
   }
 
   getDamagingAutoAttacks(): DamagingAutoAttackResult[] {

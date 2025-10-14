@@ -37,9 +37,8 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'climb']);
     creature.setBaseAttributes([4, 3, 2, -8, 2, 0]);
-    // TODO: Add Multipedal modifier bundle
+    creature.addTrait('multipedal');
     creature.addCustomMovementSpeed('Burrow (slow)');
-    creature.addCustomMovementSpeed('Land (normal)');
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomSense('Tremorsense (60 ft.)');
 
@@ -70,7 +69,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'balance', 'climb']);
     creature.setBaseAttributes([4, 8, 2, 0, 3, 2]);
-    // TODO: Add Multipedal modifier bundle
+    creature.addTrait('multipedal');
     creature.addCustomSense('Tremorsense (90 ft.)');
 
     creature.addPoisonousStrike(
@@ -137,7 +136,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'survival']);
     creature.setBaseAttributes([3, 2, 1, -4, 2, -1]);
-    // TODO: Add Multipedal modifier bundle
+    creature.addTrait('multipedal');
     creature.addCustomSense('Scent');
 
     creature.addWeaponMult('bite');
@@ -175,7 +174,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['climb']);
     creature.setBaseAttributes([3, 4, 2, -8, 0, 3]);
-    // TODO: Add Legless modifier bundle
+    creature.addTrait('legless');
     creature.addCustomMovementSpeed('Climb (slow)');
     creature.addCustomMovementSpeed('Land (slow)');
     creature.addCustomSense('Darkvision (60 ft.)');
@@ -210,7 +209,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['climb']);
     creature.setBaseAttributes([6, 6, 1, -8, 2, -1]);
-    // TODO: Add Legless modifier bundle
+    creature.addTrait('legless');
     creature.addCustomSense('Darkvision (60 ft.)');
 
     // Grappling Bite
@@ -292,18 +291,15 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([5, 5, 2, -3, 2, 2]);
-    // TODO: Add Multipedal modifier bundle
+    creature.addTrait('multipedal');
     creature.addCustomMovementSpeed('Fly (fast, 60 ft.)');
-    creature.addCustomMovementSpeed('Land (normal)');
     creature.addCustomSense('Low-light Vision');
 
-    creature.addManeuver('Mighty Rushdown', { weapon: 'claws' });
-    creature.addManeuver('Rend the Hide', { displayName: "Bloodletting Claws", weapon: 'claws' });
+    creature.addManeuver('Rend the Hide', { displayName: "Bloodletting Claws", usageTime: 'elite', weapon: 'claws' });
 
-    // Bite
-    creature.addWeaponMult('bite', { usageTime: 'elite' })
+    creature.addWeaponMult('bite');
+    creature.addManeuver('Mighty Rushdown', { displayName: 'Rushdown', weapon: 'bite' });
 
-    // Eagle Eye
     creature.addCustomManeuver({
       effect: `
         The $name makes a $accuracy attack vs. Reflex against against one non-adjacent creature within \\distrange.
@@ -336,9 +332,15 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setBaseAttributes([5, 2, 4, -4, 6, 0]);
     // TODO: Add Sightless modifiers
     creature.addCustomMovementSpeed('Fly (fast, 90 ft.)');
-    creature.addCustomMovementSpeed('Land (normal)');
     creature.addCustomSense('Blindsight (120 ft.)');
     creature.addCustomSense('Blindsense (240 ft.)');
+    creature.addPassiveAbility({
+      name: 'Sightless',
+      effect: `
+        The $name uses its hearing to "see".
+        While it is deafened, it loses its natural blindsight and blindsense abilities, making it \\blinded.
+      `,
+    });
 
     // rank 3 effect, r0 area gives drX+1
     creature.addCustomManeuver({
@@ -383,8 +385,8 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['climb', 'stealth']);
     creature.setBaseAttributes([5, 2, 4, -6, 2, -2]);
+    creature.addTrait('legless');
     creature.addCustomMovementSpeed('Climb (normal)');
-    creature.addCustomMovementSpeed('Land (normal)');
     creature.addCustomSense('Darkvision (120 ft.)');
     creature.addCustomSense('Lifesense (120 ft.)');
 
@@ -397,4 +399,76 @@ export function addMagicalBeasts(grimoire: Grimoire) {
       weapon: 'bite',
     });
   });
+
+  // Ichor creatures should be +3 levels over their animal counterpart
+  grimoire.addMonster('Ichor Black Bear', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      challenge_rating: 4,
+      creature_type: 'beast',
+      level: 4,
+      size: 'medium',
+    });
+    creature.setTrainedSkills(['climb', 'endurance', 'swim']);
+    creature.setBaseAttributes([5, 1, 6, -8, 2, -1]);
+    creature.addTrait('multipedal');
+
+    creature.addWeaponMult('claws', { usageTime: 'elite' });
+    creature.addWeaponMult('bite');
+
+    ichorify(creature);
+  });
+
+  grimoire.addMonster('Ichor Brown Bear', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      challenge_rating: 4,
+      creature_type: 'beast',
+      level: 6,
+      size: 'large',
+    });
+    creature.setTrainedSkills(['climb', 'endurance', 'swim']);
+    creature.setBaseAttributes([6, 1, 7, -8, 2, 1]);
+    creature.addTrait('multipedal');
+
+    creature.addWeaponMult('claws', { usageTime: 'elite' });
+    creature.addWeaponMult('bite');
+
+    ichorify(creature);
+  });
+
+  grimoire.addMonster('Ichor Wolf', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'skirmisher',
+      challenge_rating: 1,
+      creature_type: 'beast',
+      level: 3,
+      size: 'medium',
+    });
+    creature.setTrainedSkills(['awareness']);
+    creature.setBaseAttributes([1, 2, 1, -7, 3, 0]);
+    creature.addTrait('multipedal');
+
+    creature.addWeaponMult('bite');
+    ichorify(creature);
+  });
+}
+
+// This modifies in place.
+function ichorify(creature: Creature) {
+  creature.addCustomModifier({
+    name: 'Ichor',
+    immune: 'Critical hits',
+    vulnerable: 'Fire',
+  });
+  for (const ability of creature.getActiveAbilities()) {
+    ability.effect += `
+      \\injury The target becomes unable to regain hit points as a \\glossterm{condition}.
+    `;
+  }
+
+  return creature;
 }

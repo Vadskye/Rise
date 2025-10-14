@@ -12,3 +12,4 @@ export {
   standardizeCantrip,
   standardizeManeuver,
 } from './active_abilities';
+export { PassiveAbility } from './passive_abilities';

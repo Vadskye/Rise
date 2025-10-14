@@ -30,6 +30,7 @@ export function latexify(text: string): string {
   return text
     .replace(/ "/g, ' ``')
     .replace(/" /g, "'' ")
+    .replace(/"\./g, "''.")
     .replace(/ft\. /g, "ft.\\ ")
     .replace(/ \+ /g, ' \\add ')
     .replace(/\+(\d)/g, '\\plus$1')

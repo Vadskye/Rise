@@ -22,11 +22,12 @@ const MODIFIER_SECTION_NAMES = [
 
 type AbilitySectionName = (typeof ABILITY_SECTION_NAMES)[number];
 const ABILITY_SECTION_NAMES = [
-  'abilities',
+  'abilities', // Named 'Other Active Abilities' in the current sheet
   'strikeattacks',
   'otherdamagingattacks',
-  'nondamagingattacks',
-  'monsterattacks',
+  'nondamagingattacks', // Named 'Debuffs' in the current sheet
+  'passiveabilities',
+  'monsterattacks', // TODO: is this used anywhere?
 ] as const;
 
 type OtherSectionName = (typeof OTHER_SECTION_NAMES)[number];

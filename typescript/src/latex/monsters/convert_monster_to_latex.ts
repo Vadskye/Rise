@@ -9,9 +9,10 @@ import {
 import { Creature } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
+import { sentenceCase } from 'change-case';
 
 import { convertAutoAttackToLatex } from './monster_attacks';
-import { convertManeuverToMonsterAbility, convertSpellToMonsterAbility } from './player_abilities';
+import { convertManeuverToMonsterLatex, convertSpellToMonsterLatex, convertPassiveAbilityToMonsterLatex } from './player_abilities';
 import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
@@ -104,6 +105,7 @@ function genStatisticsText(monster: Creature): string {
       \\pari \\textbf{Attributes} ${genAttributesText(monster)}
       \\pari \\textbf{Power} ${monster.magical_power}\\sparkle \\monsep ${monster.mundane_power}
       \\pari \\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}
+      ${genTraitsText(monster)}
     \\end{monsterstatistics}
   `;
 }
@@ -235,16 +237,33 @@ function genAbilitiesText(monster: Creature): string {
   const maneuvers = monster
     .getActiveAbilities()
     .filter((ability) => ability.kind === 'maneuver')
-    .map((maneuver) => convertManeuverToMonsterAbility(monster, maneuver));
+    .map((maneuver) => convertManeuverToMonsterLatex(monster, maneuver));
   const spells = monster
     .getActiveAbilities()
     // Spells, cantrips, and rituals are all handled by this function
-    .filter((ability) => ability.kind !== 'maneuver' )
-    .map((maneuver) => convertSpellToMonsterAbility(monster, maneuver));
+    .filter((ability) => ability.kind !== 'maneuver')
+    .map((maneuver) => convertSpellToMonsterLatex(monster, maneuver));
+
+  const passiveAbilities = monster.getPassiveAbilities().map(convertPassiveAbilityToMonsterLatex);
 
   const allAttacks = [...autoAttacks, ...maneuvers, ...spells];
 
   // TODO: sort allAttacks
 
-  return allAttacks.join('\n');
+  return `
+    ${passiveAbilities.join('\n')}
+
+    ${allAttacks.join('\n')}
+  `;
+}
+
+function genTraitsText(monster: Creature): string {
+  const traits = monster.getStandardTraits();
+  if (traits.length === 0) {
+    return '';
+  }
+
+  const traitsText = traits.map((trait) => `\\trait{${sentenceCase(trait)}}`).join('\\monsep');
+
+  return `\\pari \\textbf{Traits} ${traitsText}`;
 }

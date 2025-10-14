@@ -1745,7 +1745,7 @@ function handleInjuryPoint() {
         return;
       }
       const classMultiplier = BASE_CLASS_MODIFIERS[v.base_class]?.injury_point_multiplier || 0;
-      const injuryPoint = v.hit_points_maximum * classMultiplier;
+      const injuryPoint = Math.floor(v.hit_points_maximum * classMultiplier);
 
       setAttrs({
         injury_point: injuryPoint,
