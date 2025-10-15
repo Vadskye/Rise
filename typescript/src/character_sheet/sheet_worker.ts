@@ -2763,7 +2763,9 @@ function setCalculatedDicePool(keyPrefix: string, { dicePool }: DicePool) {
 }
 
 type DicePoolCallback = (dicePool: DicePool) => void;
-interface DicePool {
+// TODO: this is weirdly named and conflicts with the more useful DicePool defined in
+// `weapons.ts`.
+export interface DicePool {
   dicePool: string;
 }
 
