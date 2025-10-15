@@ -196,10 +196,21 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect:
-        'Make a strike that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.',
+        'Make a strike that deals 7 \\glossterm{extra damage}.',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+15');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+17');
+    t.end();
+  });
+
+  t.test('with double weapon damage and extra damage', (t) => {
+    const ability = {
+      weapon: 'bite',
+      effect:
+        'Make a strike that deals double weapon damage and 13 extra damage.',
+      isMagical: false,
+    } as any;
+    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+23');
     t.end();
   });
 
@@ -238,10 +249,10 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'claws',
       effect:
-        'Make a \\glossterm{strike} that deals eight times weapon damage and extra damage equal to your power.',
+        'Make a \\glossterm{strike} that deals eight times weapon damage and 3 extra damage.',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+15');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+8');
     t.end();
   });
 
@@ -249,10 +260,10 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect:
-        'Make a \\glossterm{strike} that deals double damage and extra damage equal to your power.',
+        'Make a \\glossterm{strike} that deals double damage and 7 extra damage.',
       isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+40');
+    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+34');
     t.end();
   });
 
@@ -358,7 +369,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
-        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -373,7 +384,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
-        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, you are \\glossterm{briefly} \\empowered. Next round, you are \\braced.',
+        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -466,7 +477,7 @@ t.test('restructureStrikeAbility', (t) => {
           hit: '2d8+10 damage.',
           miss: undefined,
           injury: undefined,
-          targeting: "You can move up to your speed, then the $name makes a $accuracy melee strike vs. Armor with its bite.",
+          targeting: "The $name can move up to its speed, then it makes a $accuracy melee strike vs. Armor with its bite.",
         },
         isMagical: false,
         kind: 'maneuver',
@@ -608,14 +619,14 @@ t.test('calculateDamage', (t) => {
   t.test('dr3 as a rank 3 creature using a rank 1 ability', (t) => {
     const ability = { rank: 1, isMagical: false } as any;
     // +6 from scaling
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus16 damage');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus2d6\\plus10 damage');
     t.end();
   });
 
   t.test('dr3 as a rank 6 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
     // +9 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 3, false), '1d8\\plus19 damage');
+    t.equal(calculateDamage(rank6Creature, ability, 3, false), '1d8\\plus3d6\\plus10 damage');
     t.end();
   });
 
