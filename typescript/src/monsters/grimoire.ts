@@ -1,4 +1,4 @@
-import { Creature } from '@src/character_sheet/creature';
+import { Creature, KnowledgeResultsConfig } from '@src/character_sheet/creature';
 import { handleEverything } from '@src/character_sheet/sheet_worker';
 import {
   getCurrentCharacterSheet,
@@ -7,9 +7,25 @@ import {
 
 type MonsterInitializer = (creature: Creature) => void;
 
+export interface MonsterGroup {
+  description?: string;
+  knowledge?: KnowledgeResultsConfig;
+  hasArt: boolean;
+  name: string;
+  monsters: Creature[];
+}
+
+export interface MonsterGroupConfig {
+  description?: string;
+  hasArt?: boolean;
+  knowledge?: KnowledgeResultsConfig;
+  name: string;
+  sharedInitializer?: MonsterInitializer;
+}
+
 export class Grimoire {
   private monsters: Record<string, Creature>;
-  private monsterGroups: Record<string, Creature[]>;
+  private monsterGroups: Record<string, MonsterGroup>;
 
   constructor() {
     this.monsters = {};
@@ -30,12 +46,16 @@ export class Grimoire {
     this.monsters[name].checkValidMonster();
   }
 
-  addMonsterGroup(name: string, initializers: [string, MonsterInitializer][]) {
-    if (this.monsterGroups[name] || this.monsters[name]) {
-      throw new Error(`Can't add a duplicate monster group with '${name}'.`);
+  addMonsterGroup(config: MonsterGroupConfig, initializers: [string, MonsterInitializer][]) {
+    if (this.monsterGroups[config.name] || this.monsters[config.name]) {
+      throw new Error(`Can't add a duplicate monster group with '${config.name}'.`);
     }
 
-    this.monsterGroups[name] = [];
+    this.monsterGroups[config.name] = {
+      ...config,
+      hasArt: Boolean(config.hasArt),
+      monsters: [],
+    };
 
     for (const [monsterName, initializer] of initializers) {
       setCurrentCharacterSheet(monsterName);
@@ -44,7 +64,10 @@ export class Grimoire {
       sheet.setProperties({ name: monsterName });
       const creature = new Creature(sheet);
       initializer(creature);
-      this.monsterGroups[name].push(creature);
+      if (config.sharedInitializer) {
+        config.sharedInitializer(creature);
+      }
+      this.monsterGroups[config.name].monsters.push(creature);
     }
   }
 
@@ -56,9 +79,9 @@ export class Grimoire {
     return Object.keys(this.monsterGroups);
   }
 
-  getMonsterGroup(name: string): Creature[] {
-    if (!this.monsters[name]) {
-      throw new Error(`No existing monster named '${name}'.`);
+  getMonsterGroup(name: string): MonsterGroup {
+    if (!this.monsterGroups[name]) {
+      throw new Error(`No existing monster group named '${name}'.`);
     }
     return this.monsterGroups[name];
   }

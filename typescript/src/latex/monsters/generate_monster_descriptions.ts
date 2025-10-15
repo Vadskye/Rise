@@ -1,5 +1,4 @@
-import { Grimoire } from '@src/monsters/grimoire';
-import { Creature } from '@src/character_sheet/creature';
+import { Grimoire, MonsterGroup } from '@src/monsters/grimoire';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addMagicalBeasts } from '@src/monsters/individual_monsters/magical_beasts';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
@@ -19,7 +18,6 @@ export function generateMonsterDescriptions(): string {
 
   for (const monsterGroupName of grimoire.getMonsterGroupNames()) {
     monsterSections[monsterGroupName] = convertMonsterGroupToLatex(
-      monsterGroupName,
       grimoire.getMonsterGroup(monsterGroupName),
     );
   }
@@ -32,13 +30,20 @@ export function generateMonsterDescriptions(): string {
   );
 }
 
-export function convertMonsterGroupToLatex(monsterGroupName: string, monsters: Creature[]): string {
-  const monsterText = monsters
-    .map((monster) => convertMonsterToLatex(monster, monsterGroupName))
-    .join('\n');
+export function convertMonsterGroupToLatex(group: MonsterGroup): string {
+  const monsterText = group.monsters
+    .map((monster) => convertMonsterToLatex(monster, group.name))
+    .join('\n\\vspace{1em}\n');
 
+  const spacingBuffer = group.description || group.knowledge ? '\\vspace{0.5em}' : '';
+
+  // TODO: render art, knowledge. See `monster_group.rs`.
   return `
-    \\monsection{${monsterGroupName}}
+    \\newpage
+    \\subsection*{${group.name}}
+
+    ${group.description || ''}
+    ${spacingBuffer}
 
     ${monsterText}
   `;

@@ -8,9 +8,12 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Blood Drain",
             complexity: 2,
             description: r"
-                Whenever a living creature with blood loses hit points from a \glossterm{strike} using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
+                Whenever you \glossterm{injure} a creature with blood using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
                 If you do, you regain \glossterm{hit points} at the end of the round.
-                The recovery is equal to the hit points the target lost from the attack, ignoring negative hit points and any damage increase from critical hits.
+                The recovery is equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
+
+                Unless otherwise specified, all living creatures have blood.
+                Some nonliving creatures, such as vampires, also have blood.
             ",
             is_magical: false,
             modifiers: None,
@@ -76,11 +79,10 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                   \item Mist: While in your mist form, you become \trait{floating}, \trait{intangible}, and \trait{legless}.
                     You cannot speak and have no \glossterm{free hands}.
                     All of your normal movement modes are replaced with a slow \glossterm{fly speed} with a 30 foot \glossterm{height limit} (see \pcref{Flight}).
-                    Since you have no \glossterm{walk speed}, flying in this way does not penalize your defenses.
                 \end{raggeditemize}
 
                 In either non-humanoid form, you are unable to take any standard actions, but you can still take \glossterm{move actions} in place of standard actions.
-                Since you have no walk speed in those forms, flying does not penalize your Armor or Reflex defenses.
+                Since you have no walk speed in those forms, flying does not make you \\unsteady.
                 You cannot use this ability while \paralyzed.
               \end{magicalattuneability}
             ",
