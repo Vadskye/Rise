@@ -47,9 +47,8 @@ def calc_magical_power():
                         "Wil",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "magical_power_attribute",
-                                "value": "@{willpower}",
+                                "name": "willpower",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -57,9 +56,8 @@ def calc_magical_power():
                     equation_misc_repeat("magical_power", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "magical_power_display",
-                    "value": "@{magical_power}",
+                    "name": "magical_power",
+                    "readonly": True,
                 },
             ),
         ],
@@ -87,9 +85,8 @@ def calc_mental():
                         "Wil",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "mental_attribute",
-                                "value": "(@{willpower})",
+                                "name": "willpower",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -101,9 +98,8 @@ def calc_mental():
                     equation_misc_repeat("mental", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "mental_display",
-                    "value": "@{mental}",
+                    "name": "mental",
+                    "readonly": True,
                 },
             ),
         ]

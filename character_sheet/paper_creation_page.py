@@ -125,9 +125,8 @@ def calc_attunement_points():
                     equation_misc_repeat("attunement_points", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "attunement_points_display",
-                    "value": "@{attunement_points_maximum}",
+                    "name": "attunement_points_maximum",
+                    "readonly": True,
                 },
             ),
         ]
