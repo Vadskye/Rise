@@ -538,6 +538,7 @@ export const polymorph: MysticSphere = {
 
       // Normal would be dr5. Drop by -2dr for the injury effect.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree.
         `,

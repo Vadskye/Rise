@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT, MULTIHIT_CRIT } from '../constants';
 
 export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
   name: 'Terramancy',
@@ -398,6 +398,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // considering the size + grounded limitation. We drop the damage by a tier to allow
       // the silly double effect.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfive, and the target is \\glossterm{briefly} \\slowed.
         `,
