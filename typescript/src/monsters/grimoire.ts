@@ -79,18 +79,11 @@ export class Grimoire {
     return Object.keys(this.monsterGroups);
   }
 
-  getMonsterGroup(name: string): MonsterGroup {
-    if (!this.monsterGroups[name]) {
-      throw new Error(`No existing monster group named '${name}'.`);
-    }
-    return this.monsterGroups[name];
+  getMonsterGroup(name: string): MonsterGroup | null {
+    return this.monsterGroups[name] || null;
   }
 
-  getMonster(name: string): Creature {
-    if (!this.monsters[name]) {
-      throw new Error(`No existing monster named '${name}'.`);
-    }
-    // setCurrentCharacterSheet(name);
-    return this.monsters[name];
+  getMonster(name: string): Creature | null {
+    return this.monsters[name] || null;
   }
 }
