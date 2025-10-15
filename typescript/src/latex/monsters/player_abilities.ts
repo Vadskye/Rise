@@ -1,4 +1,5 @@
 import { Creature } from '@src/character_sheet/creature';
+import { convertAbilityToLatex } from '@src/latex/convert_ability_to_latex';
 import {
   ActiveAbility,
   ManeuverDefinition,
@@ -7,8 +8,6 @@ import {
   standardizeManeuver,
   standardizeSpell,
 } from '@src/abilities';
-import { convertManeuverToLatex } from '@src/latex/abilities/combat_styles';
-import { convertSpellToLatex } from '@src/latex/abilities/mystic_spheres';
 import {
   getWeaponDamageDice,
   getWeaponTag,
@@ -27,24 +26,20 @@ export function convertManeuverToMonsterLatex(
   monster: Creature,
   maneuver: ManeuverDefinition,
 ): string {
-  const ability = standardizeManeuver(maneuver);
-  let latex = convertManeuverToLatex(
-    reformatAsMonsterAbility(monster, ability),
-    true,
-  );
-  latex = replaceGenericTerms(monster, ability, latex);
-  checkSuccessfullyConverted(latex, monster.name, maneuver.name);
-  return latex;
+  return convertAbilityToMonsterLatex(monster, standardizeManeuver(maneuver));
 }
 
 export function convertSpellToMonsterLatex(monster: Creature, spell: SpellDefinition): string {
-  const ability = standardizeSpell(spell);
-  let latex = convertSpellToLatex(
+  return convertAbilityToMonsterLatex(monster, standardizeSpell(spell));
+}
+
+export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveAbility): string {
+  let latex = convertAbilityToLatex(
     reformatAsMonsterAbility(monster, ability),
     true,
   );
   latex = replaceGenericTerms(monster, ability, latex);
-  checkSuccessfullyConverted(latex, monster.name, spell.name);
+  checkSuccessfullyConverted(latex, monster.name, ability.name);
   return latex;
 }
 
@@ -502,11 +497,14 @@ export function calculateDamage(
     // Normally, you'd calculate the "base" damage dice first, then add on the extra dice
     // from rank scaling. But we don't want to do dice pool math here. Instead, we can
     // calculate the effective power that each excess rank provides.
+    //
+    // In the special case of ranks 2 and 3, this doesn't work, since those add dice that
+    // aren't normally part of the power scaling.
     const bonusPowerPerExcessRank = {
       0: 2,
-      1: 2,
-      2: 2,
-      3: 3,
+      1: 4,
+      2: 0,
+      3: 0,
       4: 2,
       5: 2,
       6: 4,
@@ -521,8 +519,8 @@ export function calculateDamage(
     const damageDice = {
       0: '1d4',
       1: '1d6',
-      2: '1d4',
-      3: '1d8',
+      2: excessRank ? `1d10+${excessRank}d6` : '1d10',
+      3: excessRank ? `1d8+${excessRank}d6` : '1d8',
       4: `${Math.floor(effectivePower / 2)}d6`,
       5: `${Math.floor(effectivePower / 2 + 1)}d6`,
       6: `${Math.floor(effectivePower / 2 + 1)}d8`,
@@ -536,7 +534,7 @@ export function calculateDamage(
       {
         0: Math.floor(effectivePower / 2),
         1: Math.floor(effectivePower / 2),
-        2: effectivePower,
+        2: Math.floor(effectivePower / 2),
         3: effectivePower,
       }[damageRank as number] || 0;
 

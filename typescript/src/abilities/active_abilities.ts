@@ -39,7 +39,9 @@ export type ActiveAbilityKind = 'cantrip' | 'spell' | 'maneuver' | 'ritual';
 // Although player-facing maneuvers in combat styles cannot be ranks 2/4/6, monster
 // maneuvers can have those ranks, and maneuver-like player abilites can have those ranks,
 // so we don't draw a distinction at the type level.
-export type ManeuverDefinition = Omit<ActiveAbility, 'isMagical' | 'kind'>;
+export interface ManeuverDefinition extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
+  usageTime?: MonsterAttackUsageTime;
+}
 
 // This is the type used to write cantrips in `mystic_spheres/`. It's missing some
 // inferrable data fields that are shared between all cantrips.

@@ -190,18 +190,18 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         name: String::from("Bloodfuel"),
         rank: 3,
         // Expected HP at rank 3 is approximately 25.
-        // This gets +1r of extra damage for the HP cost.
-        short_description: String::from(r"Can spend 4 HP for +1d4 damage"),
+        // This gets +2r of extra damage for the HP cost and minor action.
+        short_description: String::from(r"Can spend 4 HP for +1d6 damage"),
         description: String::from(r"
-            Once per round, you can feed this weapon your blood as a \glossterm{free action}.
+            You can feed this weapon your blood as a \glossterm{minor action}.
             When you do, you lose 4 \glossterm{hit points}.
             In exchange, you deal 1d4 \glossterm{extra damage} with strikes using this weapon during the current round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can spend 8 HP for +1d8 damage", r"
+            ItemUpgrade::new(5, "Can spend 8 HP for +1d10 damage", r"
                 The HP loss increases to 8, and the extra damage increases to 1d8.
             "),
-            ItemUpgrade::new(7, "Can spend 16 HP for +2d6 damage", r"
+            ItemUpgrade::new(7, "Can spend 16 HP for +2d8 damage", r"
                 The HP loss increases to 16, and the extra damage increases to 2d6.
             "),
         ],

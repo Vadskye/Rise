@@ -12,7 +12,7 @@ import { caseInsensitiveSort } from '@src/util/sort';
 import { sentenceCase } from 'change-case';
 
 import { convertAutoAttackToLatex } from './monster_attacks';
-import { convertManeuverToMonsterLatex, convertSpellToMonsterLatex, convertPassiveAbilityToMonsterLatex } from './player_abilities';
+import { convertAbilityToMonsterLatex, convertPassiveAbilityToMonsterLatex } from './player_abilities';
 import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
@@ -148,12 +148,14 @@ function genMovementText(monster: Creature) {
 
   // TODO: A creature with a swim speed and that is trained with the Swim skill will
   // display "Swim" twice here. What's the correct formatting?
-  const movementText = [
+  const movementComponents = [
     ...movementDistances,
     ...formatSkillList(monster, RISE_MOVEMENT_SKILLS),
   ].join('\\monsep ');
-  // TODO
-  return `\\pari \\textbf{Movement} ${monster.speed}; ${movementText}`;
+
+  const movementText = movementComponents ? `; ${movementComponents}` : '';
+  // TODO: Formatting is awkward
+  return `\\pari \\textbf{Movement} ${monster.speed}${movementText}`;
 }
 
 function genSpaceAndReachText() {
@@ -236,12 +238,12 @@ function genAbilitiesText(monster: Creature): string {
   const maneuvers = monster
     .getActiveAbilities()
     .filter((ability) => ability.kind === 'maneuver')
-    .map((maneuver) => convertManeuverToMonsterLatex(monster, maneuver));
+    .map((maneuver) => convertAbilityToMonsterLatex(monster, maneuver));
   const spells = monster
     .getActiveAbilities()
     // Spells, cantrips, and rituals are all handled by this function
     .filter((ability) => ability.kind !== 'maneuver')
-    .map((maneuver) => convertSpellToMonsterLatex(monster, maneuver));
+    .map((maneuver) => convertAbilityToMonsterLatex(monster, maneuver));
 
   const passiveAbilities = monster.getPassiveAbilities().map(convertPassiveAbilityToMonsterLatex);
 
