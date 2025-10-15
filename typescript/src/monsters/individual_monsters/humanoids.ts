@@ -18,7 +18,7 @@ function addBandits(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'neutral evil',
           base_class: 'warrior',
-          challenge_rating: 1,
+          elite: false,
           creature_type: 'humanoid',
           level: 1,
           size: 'medium',
@@ -41,7 +41,7 @@ function addBandits(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'neutral evil',
           base_class: 'sniper',
-          challenge_rating: 1,
+          elite: false,
           creature_type: 'humanoid',
           level: 3,
           size: 'medium',
