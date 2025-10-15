@@ -25,6 +25,7 @@ type CreatureSize =
   | 'gargantuan'
   | 'colossal';
 type MonsterIpMultiplier = 0.75 | 0.5 | 0.333;
+type MonsterType = '' | 'Normal' | 'Elite';  // This is manually provided by the sheet
 
 interface BaseClassModifier {
   armor_defense: number;
@@ -376,16 +377,14 @@ const ATTRIBUTE_SHORTHAND: Record<string, string> = {
 
 const supportedWeaponCount = 4;
 
-type ChallengeRating = 1 | 4;
-
 type V = {
   // Mandatory fields we know exist
   eventInfo: EventInfo;
   misc: number;
   miscExplanation: string;
 } & {
-  // Optional fields with specific types
-  challenge_rating?: ChallengeRating;
+  elite?: boolean;
+  monster_type?: MonsterType;
   size?: CreatureSize;
 } & Record<string, any>;
 
@@ -750,12 +749,12 @@ function handleResources() {
   handleTrainedSkills();
 }
 
-function calcAccuracyCrScaling(level: number, challengeRating?: ChallengeRating) {
-  if (!challengeRating) {
+function calcAccuracyCrScaling(level: number, elite?: boolean) {
+  if (!elite) {
     return 0;
   }
   let levelScaling = 0;
-  if (challengeRating > 0) {
+  if (elite) {
     let levels_with_accuracy_bonuses = [7, 19];
     for (const bonus_level of levels_with_accuracy_bonuses) {
       if (level >= bonus_level) {
@@ -767,12 +766,12 @@ function calcAccuracyCrScaling(level: number, challengeRating?: ChallengeRating)
   return levelScaling;
 }
 
-function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) {
-  if (!challengeRating) {
+function calcDefenseCrScaling(level: number, elite?: boolean) {
+  if (!elite) {
     return 0;
   }
   let levelScaling = 0;
-  if (challengeRating > 0) {
+  if (elite) {
     let levels_with_defense_bonuses = [5, 11, 17];
     for (const bonus_level of levels_with_defense_bonuses) {
       if (level >= bonus_level) {
@@ -780,7 +779,7 @@ function calcDefenseCrScaling(level: number, challengeRating?: ChallengeRating) 
       }
     }
   }
-  if (challengeRating === 4) {
+  if (elite) {
     levelScaling += 2;
   }
   return levelScaling;
@@ -812,13 +811,14 @@ function handleAccuracy() {
   onGet({
     variables: {
       miscName: 'accuracy',
-      numeric: ['challenge_rating', 'level', 'perception', 'fatigue_penalty'],
+      numeric: ['level', 'perception', 'fatigue_penalty'],
+      boolean: ['elite'],
     },
     callback: (v) => {
       const levelModifier = v.level / 2;
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
-      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
+      const crModifier = calcAccuracyCrScaling(v.level, v.elite);
       const accuracy = v.misc + levelishModifier + crModifier - v.fatigue_penalty;
       setAttrs({
         accuracy,
@@ -876,19 +876,14 @@ function handleBrawlingAccuracy() {
   onGet({
     variables: {
       miscName: 'brawling_accuracy',
-      numeric: [
-        'challenge_rating',
-        'level',
-        'strength',
-        'fatigue_penalty',
-        ...accuracyMiscVariables,
-      ],
+      numeric: ['level', 'strength', 'fatigue_penalty', ...accuracyMiscVariables],
+      boolean: ['elite'],
     },
     callback: (v) => {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
       const levelishModifier = levelModifier + strengthModifier;
-      const crModifier = calcAccuracyCrScaling(v.level, v.challenge_rating);
+      const crModifier = calcAccuracyCrScaling(v.level, v.elite);
 
       let accuracyMiscModifier = 0;
       for (const varName of accuracyMiscVariables) {
@@ -942,10 +937,10 @@ function handleArmorDefense() {
         'dexterity',
         'body_armor_defense',
         'shield_defense',
-        'challenge_rating',
         'all_defenses_vital_wound_modifier',
       ],
       string: ['body_armor_usage_class', 'shield_usage_class', 'base_class'],
+      boolean: ['elite'],
     },
     callback: (v) => {
       // calculate attributeModifier
@@ -965,7 +960,7 @@ function handleArmorDefense() {
       }
 
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
+      const crModifier = calcDefenseCrScaling(v.level, v.elite);
 
       const beforeEquipment = attributeModifier + levelModifier + crModifier;
       const totalValue = Math.max(
@@ -1619,7 +1614,8 @@ function handleHitPoints() {
   onGet({
     variables: {
       miscName: 'hit_points',
-      numeric: ['level', 'durability', 'challenge_rating'],
+      numeric: ['level', 'durability'],
+      boolean: ['elite'],
     },
     options: {
       variablesWithoutListen: {
@@ -1651,11 +1647,7 @@ function handleHitPoints() {
 
       const hpFromDurability = v.durability * rankMultiplier;
 
-      let crMultiplier =
-        {
-          1: 1,
-          4: 3,
-        }[v.challenge_rating!] || 1;
+      let crMultiplier = v.elite ? 3 : 1;
 
       const flatHp = 10;
       const playerTotalHp = flatHp + hpFromDurability + v.misc;
@@ -1688,11 +1680,11 @@ function handleInjuryPoint() {
   onGet({
     variables: {
       miscName: 'injury_point',
-      numeric: ['challenge_rating', 'level', 'constitution'],
-      string: ['base_class'],
+      numeric: ['level', 'constitution'],
+      boolean: ['elite'],
     },
     callback: (v) => {
-      if ((v.challenge_rating || 0) > 0) {
+      if (v.elite) {
         return;
       }
       const rank = calculateStandardRank(v.level);
@@ -1737,11 +1729,12 @@ function handleInjuryPoint() {
   onGet({
     variables: {
       miscName: 'injury_point',
-      numeric: ['challenge_rating', 'hit_points_maximum'],
+      numeric: ['hit_points_maximum'],
       string: ['base_class'],
+      boolean: ['elite'],
     },
     callback: (v) => {
-      if (!v.challenge_rating) {
+      if (!v.elite) {
         return;
       }
       const classMultiplier = BASE_CLASS_MODIFIERS[v.base_class]?.injury_point_multiplier || 0;
@@ -2271,7 +2264,7 @@ function calcAttackArea({
 function handleMonsterToggles() {
   onGet({
     variables: {
-      numeric: ['challenge_rating'],
+      string: ['base_class', 'monster_type'],
     },
     options: {
       variablesWithoutListen: {
@@ -2279,16 +2272,14 @@ function handleMonsterToggles() {
       },
     },
     callback: (v) => {
-      if (v.challenge_rating! > 0) {
+      if (v.monster_type) {
         setAttrs({
           chat_color: 'monster',
-          is_monster: true,
           player_chat_color: v.chat_color,
         });
       } else {
         setAttrs({
           chat_color: v.chat_color || 'black',
-          is_monster: false,
         });
       }
     },
@@ -2302,14 +2293,15 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       numeric: [
         'level',
         attribute,
-        'challenge_rating',
         'all_defenses_vital_wound_modifier',
         'size_reflex_modifier',
       ],
+      string: ['monster_type'],
+      boolean: ['elite'],
     },
     callback: (v) => {
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, v.challenge_rating);
+      const crModifier = calcDefenseCrScaling(v.level, v.elite);
       let sizeModifier = 0;
       if (defense === 'reflex') {
         sizeModifier = v.size_reflex_modifier;
@@ -2317,7 +2309,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
         sizeModifier = -v.size_reflex_modifier;
       }
       // Monsters only apply half attribute modifier
-      const attributeModifier = v.challenge_rating ? Math.floor(v[attribute] / 2) : v[attribute];
+      const attributeModifier = v.monster_type ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue = Math.max(
         0,
         levelModifier +
@@ -2346,10 +2338,11 @@ function handleMagicalPower() {
   onGet({
     variables: {
       miscName: 'magical_power',
-      numeric: ['challenge_rating', 'level', 'willpower'],
+      numeric: ['level', 'willpower'],
+      boolean: ['elite'],
     },
     callback: (v) => {
-      const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
+      const eliteModifier = v.elite ? 2 : 0;
       const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + eliteModifier;
 
       setAttrs({
@@ -2377,10 +2370,11 @@ function handleMundanePower() {
   onGet({
     variables: {
       miscName: 'mundane_power',
-      numeric: ['challenge_rating', 'level', 'strength'],
+      numeric: ['level', 'strength'],
+      boolean: ['elite'],
     },
     callback: (v) => {
-      const eliteModifier = v.challenge_rating == 4 ? 2 : 0;
+      const eliteModifier = v.elite ? 2 : 0;
       const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + eliteModifier;
 
       setAttrs({
@@ -2403,80 +2397,6 @@ function handleMundanePower() {
     },
   });
 }
-
-// function handleRust() {
-//   onGet({
-//     variables: {
-//       numeric: [
-//         "level",
-//         "challenge_rating",
-//         "strength",
-//         "dexterity",
-//         "constitution",
-//         "intelligence",
-//         "perception",
-//         "willpower",
-//       ],
-//       string: [
-//         "alignment",
-//         "character_name",
-//         "size",
-//         "weapon_0_name",
-//         "weapon_1_name",
-//         "weapon_2_name",
-//         "weapon_3_name",
-//       ],
-//     },
-//     callback: (v) => {
-//       const alignment = v.alignment ? `Usually ${v.alignment}` : "";
-//       const attributes = [
-//         v.strength,
-//         v.dexterity,
-//         v.constitution,
-//         v.intelligence,
-//         v.perception,
-//         v.willpower,
-//       ];
-//       const cr = {
-//         1: "One",
-//         4: "Four",
-//       }[v.challenge_rating!];
-//       const weapons = [];
-//       for (const weaponName of [
-//         v.weapon_0_name,
-//         v.weapon_1_name,
-//         v.weapon_2_name,
-//         v.weapon_3_name,
-//       ]) {
-//         if (weaponName) {
-//           weapons.push(`StandardWeapon::${weaponName}.weapon()`);
-//         }
-//       }
-//       const weaponText = `vec![${weapons.join(", ")}]`;
-//       const rust = `
-//                 FullMonsterDefinition {
-//                     alignment: "${alignment}",
-//                     attributes: vec![${attributes.join(", ")}],
-//                     challenge_rating: ChallengeRating::${cr},
-//                     description: None,
-//                     knowledge: None,
-//                     level: ${v.level},
-//                     modifiers: None,
-//                     movement_speeds: None,
-//                     name: "${v.character_name}",
-//                     senses: None,
-//                     size: Size::${v.size || "Medium"},
-//                     trained_skills: None,
-//                     weapons: ${weaponText},
-//                 }
-//             `.trim();
-//       setAttrs({
-//         rust,
-//         is_monster: v.challenge_rating! > 0 ? "1" : "0",
-//       });
-//     }
-//   });
-// }
 
 function handleSize() {
   onGet({

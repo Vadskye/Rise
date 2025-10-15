@@ -7,7 +7,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 4,
       size: 'large',
@@ -62,7 +62,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 12,
       size: 'large',
@@ -129,7 +129,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 2,
+      elite: false,
       creature_type: 'beast',
       level: 2,
       size: 'medium',
@@ -146,7 +146,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
-      challenge_rating: 7,
+      elite: false,
       creature_type: 'beast',
       level: 7,
       size: 'large',
@@ -188,7 +188,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 7,
       size: 'large',
@@ -232,7 +232,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 2,
+      elite: false,
       creature_type: 'beast',
       level: 2,
       size: 'small',
@@ -268,7 +268,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 5,
       size: 'large',
@@ -314,7 +314,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 7,
       size: 'huge',
@@ -361,7 +361,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
-      challenge_rating: 5,
+      elite: false,
       creature_type: 'beast',
       level: 5,
       size: 'medium',
@@ -403,7 +403,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 4,
       size: 'medium',
@@ -422,7 +422,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'brute',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'beast',
       level: 6,
       size: 'large',
@@ -441,7 +441,7 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral',
       base_class: 'skirmisher',
-      challenge_rating: 1,
+      elite: false,
       creature_type: 'beast',
       level: 4,
       size: 'medium',

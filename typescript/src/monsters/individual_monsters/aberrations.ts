@@ -6,7 +6,7 @@ export function addAberrations(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
       base_class: 'leader',
-      challenge_rating: 4,
+      elite: true,
       creature_type: 'aberration',
       level: 12,
       size: 'huge',
