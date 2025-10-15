@@ -45,9 +45,8 @@ def calc_armor():
                         "Dex?",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "body_armor_attribute_display",
-                                "value": "@{body_armor_attribute}",
+                                "name": "body_armor_attribute",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -59,9 +58,8 @@ def calc_armor():
                     equation_misc_repeat("armor_defense", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "armor_defense_display",
-                    "value": "@{armor_defense}",
+                    "name": "armor_defense",
+                    "readonly": True,
                 },
             ),
         ]
@@ -88,9 +86,8 @@ def calc_reflex():
                         "Dex",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "reflex_attribute",
-                                "value": "(@{dexterity})",
+                                "name": "dexterity",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -102,9 +99,8 @@ def calc_reflex():
                     equation_misc_repeat("reflex", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "reflex_display",
-                    "value": "@{reflex}",
+                    "name": "reflex",
+                    "readonly": True,
                 },
             ),
         ]

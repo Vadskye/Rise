@@ -48,9 +48,8 @@ def calc_accuracy():
                     equation_misc_repeat("accuracy", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "accuracy_display",
-                    "value": "@{accuracy}",
+                    "name": "accuracy",
+                    "readonly": True,
                 },
             ),
         ]

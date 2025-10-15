@@ -418,9 +418,8 @@ def weapon_buttons(i):
             },
             text_input(
                 {
-                    "disabled": True,
-                    "name": "weapon_attack_name_" + i,
-                    "value": "@{weapon_" + i + "_name}",
+                    "name": "weapon_" + i + "_name",
+                    "readonly": True,
                 }
             ),
         ),

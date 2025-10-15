@@ -110,9 +110,8 @@ def calc_attribute(attribute_name):
                             equation_misc_repeat(attribute_lower, 2),
                         ],
                         result_attributes={
-                            "disabled": "true",
-                            "name": attribute_lower + "_display",
-                            "value": "(@{" + attribute_lower + "})",
+                            "name": attribute_lower,
+                            "readonly": True,
                         },
                         result_label="Total",
                     ),
@@ -173,9 +172,8 @@ def calc_skill_equation_components(skill_parsable, attribute):
                 "Train",
                 number_input(
                     {
-                        "disabled": True,
-                        "name": "skill_level_display",
-                        "value": f"@{{{skill_parsable}_level}}",
+                        "name": f"{skill_parsable}_level",
+                        "readonly": True,
                     }
                 ),
             ),
@@ -190,9 +188,8 @@ def calc_skill_equation_components(skill_parsable, attribute):
                 "Train",
                 number_input(
                     {
-                        "disabled": True,
-                        "name": "skill_level_display",
-                        "value": f"@{{{skill_parsable}_level}}",
+                        "name": f"{skill_parsable}_level",
+                        "readonly": True,
                     }
                 ),
             ),
@@ -311,9 +308,8 @@ def calc_attunement_points():
                     equation_misc_repeat("attunement_points", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "attunement_points_display",
-                    "value": "@{attunement_points_maximum}",
+                    "name": "attunement_points_maximum",
+                    "readonly": True,
                 },
             ),
         ]

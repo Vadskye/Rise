@@ -43,9 +43,8 @@ def calc_trained_skills():
                         "Int",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "skill_points_intelligence_display",
-                                "value": "(@{skill_points_intelligence})",
+                                "name": "skill_points_intelligence",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -53,9 +52,8 @@ def calc_trained_skills():
                     equation_misc_repeat("skill_points", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "skill_points_display",
-                    "value": "(@{skill_points})",
+                    "name": "skill_points",
+                    "readonly": True,
                 },
             ),
         ]
@@ -81,9 +79,8 @@ def calc_insight_points():
                         "Int",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "insight_points_intelligence_display",
-                                "value": "(@{intelligence})",
+                                "name": "intelligence",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -91,9 +88,8 @@ def calc_insight_points():
                     equation_misc_repeat("insight_points", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "insight_points_display",
-                    "value": "(@{insight_points})",
+                    "name": "insight_points",
+                    "readonly": True,
                 },
             ),
         ]
