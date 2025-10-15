@@ -62,7 +62,9 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   const fullPower = monster.getRelevantPower(ability.isMagical);
   const halfPower = Math.floor(fullPower / 2);
   abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g, `${halfPower} \\glossterm{extra damage}`);
+  abilityPart = abilityPart.replace(/\bdamage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
   abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
+  abilityPart = abilityPart.replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
   return abilityPart;
 }
