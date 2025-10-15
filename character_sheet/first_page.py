@@ -556,13 +556,13 @@ def boring_stuff(destination):
                                 "Monster?",
                                 select(
                                     {
-                                        "class": "challenge-rating",
-                                        "name": "challenge_rating",
+                                        "class": "monster-type",
+                                        "name": "monster_type",
                                     },
                                     [
                                         option({"value": ""}, ""),
-                                        option({"value": "1"}, "Normal"),
-                                        option({"value": "4"}, "Elite"),
+                                        option({"value": "normal"}, "Normal"),
+                                        option({"value": "elite"}, "Elite"),
                                     ],
                                 ),
                             ),

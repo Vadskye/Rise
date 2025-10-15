@@ -19,7 +19,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const hasParentGroup = Boolean(parentGroupName);
   const sectionName = hasParentGroup ? 'monsubsubsection' : 'monsubsection';
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
-  const eliteText = monster.challenge_rating === 4 ? '[Elite]' : '';
+  const eliteText = monster.elite ? '[Elite]' : '';
   const sizeStarText = hasParentGroup ? '*' : '';
   const knowledgeText = genKnowledgeText(monster);
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';

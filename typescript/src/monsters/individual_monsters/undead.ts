@@ -7,7 +7,7 @@ export function addUndead(grimoire: Grimoire) {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
       base_class: 'skirmisher',
-      challenge_rating: 1,
+      elite: false,
       creature_type: 'undead',
       level: 4,
       size: 'medium',
@@ -62,7 +62,7 @@ export function addUndead(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'neutral evil',
           base_class: 'skirmisher',
-          challenge_rating: 3,
+          elite: false,
           creature_type: 'undead',
           level: 3,
           size: 'medium',
@@ -81,7 +81,7 @@ export function addUndead(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'neutral evil',
           base_class: 'skirmisher',
-          challenge_rating: 6,
+          elite: false,
           creature_type: 'undead',
           level: 6,
           size: 'medium',
@@ -202,7 +202,7 @@ function addVampires(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'neutral evil',
           base_class: 'skirmisher',
-          challenge_rating: 5,
+          elite: true,
           creature_type: 'undead',
           level: 5,
           size: 'medium',
@@ -225,7 +225,7 @@ function addVampires(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'lawful evil',
           base_class: 'skirmisher',
-          challenge_rating: 4,
+          elite: true,
           creature_type: 'undead',
           level: 10,
           size: 'medium',
@@ -243,7 +243,7 @@ function addVampires(grimoire: Grimoire) {
         creature.setRequiredProperties({
           alignment: 'lawful evil',
           base_class: 'skirmisher',
-          challenge_rating: 4,
+          elite: true,
           creature_type: 'undead',
           level: 15,
           size: 'medium',

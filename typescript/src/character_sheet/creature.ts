@@ -48,7 +48,6 @@ type NumericCreatureProperty =
   | 'brawling_accuracy'
   | 'land_speed'
   | 'level'
-  | 'challenge_rating'
   | 'hit_points'
   | 'durability'
   | 'injury_point'
@@ -67,7 +66,7 @@ type StringCreatureProperty =
   | RiseSpecialDefense
   | CustomMovementSpeed
   | CustomSense;
-type BooleanCreatureProperty = 'has_art' | RiseDebuff;
+type BooleanCreatureProperty = 'has_art' | 'elite' | RiseDebuff;
 
 // TODO: this is poorly organized in the sheet. Senses and movement speeds are both
 // grouped under the `movement_speed_i_name` bucket.
@@ -103,7 +102,7 @@ export type CreaturePropertyMap = {
 export type CreatureRequiredProperties =
   | 'alignment'
   | 'base_class'
-  | 'challenge_rating'
+  | 'elite'
   | 'creature_type'
   | 'size'
   | 'level';
@@ -798,8 +797,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('mundane_power');
   }
 
-  public get challenge_rating() {
-    return this.getPropertyValue('challenge_rating');
+  public get elite() {
+    return this.getPropertyValue('elite');
   }
 
   public get strength() {
