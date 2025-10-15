@@ -99,6 +99,7 @@ export function addUndead(grimoire: Grimoire) {
   );
 
   addVampires(grimoire);
+  // TODO: We can't add skeletons or zombies until we add humanoids
 }
 
 function addVampires(grimoire: Grimoire) {
