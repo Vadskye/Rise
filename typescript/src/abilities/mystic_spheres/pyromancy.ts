@@ -818,6 +818,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // With -4 accuracy, dr5, which is 3.5 + 1.75dpp.
       // Double dr2 is 5 + 2dpp.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damageranktwo.
           During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
@@ -838,6 +839,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // With -4 accuracy, dr8, which is 3.5 + 3.5dpp.
       // Double dr5 is 7 + 3.5dpp.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfive.
           During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
@@ -859,6 +861,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Combustion and Mighty Combustion ended up at drX+1, so this can probably do the
       // same.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankeight, and any \\glossterm{extra damage} is doubled.
           During your next action, the target takes \\damagerankeight again, and any \\glossterm{extra damage} also applies to this damage.
@@ -877,6 +880,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Same damage calcs as combustion
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damageranktwo.
           During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
@@ -894,6 +898,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // Same damage calcs as mighty combustion
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfive.
           During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
