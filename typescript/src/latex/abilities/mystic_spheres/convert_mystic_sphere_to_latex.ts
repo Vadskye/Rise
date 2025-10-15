@@ -32,28 +32,30 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
-      ${
-        cantrips.length > 0
-          ? `
+      ${cantrips.length > 0
+      ? `
             \\subsection{Cantrips}
             ${sortByRankAndLevel(cantrips)
-              .map((spell) => {
-                checkValidSpell(spell);
-                return convertSpellToLatex(spell);
-              })
-              .join('\n')}
+        .map((spell) => {
+          checkValidSpell(spell);
+          return convertSpellToLatex(spell);
+        })
+        .join('\n')}
           `
-          : ''
-      }
+      : ''
+    }
 
       ${ranks
-        .map((rank) =>
-          spellsByRank[rank]
-            ? `\\subsection{Rank ${rank} Spells}
-          ${spellsByRank[rank].map((spell) => convertSpellToLatex(spell)).join('\n')}`
-            : '',
-        )
-        .join('\n')}
+      .map((rank) =>
+        spellsByRank[rank]
+          ? `\\subsection{Rank ${rank} Spells}
+          ${spellsByRank[rank].map((spell) => {
+            checkValidSpell(spell);
+            return convertSpellToLatex(spell)
+          }).join('\n')}`
+          : '',
+      )
+      .join('\n')}
   `);
 }
 
@@ -65,20 +67,28 @@ function getSpecialScaling(spell: Pick<SpellDefinition, 'scaling'>): string | nu
   }
 }
 
+// TODO: convert this to be generic so we can check maneuvers too
 export function checkValidSpell(spell: CantripDefinition | SpellDefinition) {
   const specialScaling = getSpecialScaling(spell);
 
   if (spell.attack && (spell.rank || 0) <= 6 && !spell.scaling) {
-    console.error(`Spell ${spell.name} is probably missing scaling`);
+    console.warn(`Spell ${spell.name} is probably missing scaling`);
   }
   if (spell.rank && specialScaling) {
     const forEachRankMatch = specialScaling.match(/for each rank [^b]/);
     if (forEachRankMatch) {
-      console.error(`Spell ${spell.name} uses wrong wording for its special scaling`);
+      console.warn(`Spell ${spell.name} uses wrong wording for its special scaling`);
     }
     const rankMatch = specialScaling.match(/for each rank beyond (\d)/);
     if (rankMatch && rankMatch[1] && rankMatch[1] !== spell.rank.toString()) {
-      console.error(`Spell ${spell.name} has scaling from wrong rank ${rankMatch[1]}`);
+      console.warn(`Spell ${spell.name} has scaling from wrong rank ${rankMatch[1]}`);
+    }
+  }
+
+  if (spell.attack && !spell.attack.crit) {
+    const combinedEffect = `${spell.attack.targeting}${spell.attack.hit}${spell.attack.injury}`;
+    if (/damagerank.*damagerank/s.test(combinedEffect)) {
+      console.warn(`Spell ${spell.name} has separate damage values and should probably clarify its crit effect`);
     }
   }
 }

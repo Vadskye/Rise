@@ -219,7 +219,7 @@ export const vivimancy: MysticSphere = {
           \\damageranktwo.
         `,
         injury: `
-          You deal the target an additional \\damageranktwo.
+          \\damageranktwo again.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -266,11 +266,12 @@ export const vivimancy: MysticSphere = {
       // r1 area is drX normally. Drop by -1dr for injury effect, then +2dr for escapably
       // delayed damage.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankfour.
         `,
         injury: `
-          You deal the target an additional \\damagerankfour.
+          \\damagerankfour again.
         `,
         missGlance: true,
         targeting: `
@@ -287,11 +288,12 @@ export const vivimancy: MysticSphere = {
       name: 'Mighty Circle of Death',
 
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankseven.
         `,
         injury: `
-          You deal the target an additional \\damagerankseven.
+          \\damagerankseven again.
         `,
         missGlance: true,
         targeting: `
@@ -489,6 +491,7 @@ export const vivimancy: MysticSphere = {
       // dr3 is 4.5 + 1dpp.
       // Double dr1 is 5 + 1dpp.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone, and the target's life becomes linked to yours as a \\glossterm{condition}.
           At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankone.
@@ -512,6 +515,7 @@ export const vivimancy: MysticSphere = {
       // dr6 is 4.5 + 2.25dpp.
       // Double dr3 is 9 + 2dpp.
       attack: {
+        crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
           At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
@@ -523,7 +527,7 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['burn'],
       scaling: {
-        special: 'Both instances of damage increase by 3 for each rank beyond 6.',
+        special: 'Both instances of damage increase by 1d6 for each rank beyond 6.',
       },
     },
 
