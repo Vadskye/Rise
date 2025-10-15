@@ -485,14 +485,14 @@ mod tests {
 
         #[test]
         fn replaces_regular_scaling() {
-            // dr2 is 1d4 +1 per 1 power
+            // dr2 is 1d10 plus half power
             assert_eq!(
                 replace_damage_rank_terms(
                     "Deals $dr2 electricity damage",
                     &dr_sample_creature(),
                     true
                 ),
-                "Deals 1d4+5 electricity damage",
+                "Deals 1d10+2 electricity damage",
             );
             assert_eq!(
                 replace_damage_rank_terms(
@@ -500,7 +500,7 @@ mod tests {
                     &dr_sample_creature(),
                     false
                 ),
-                "Deals 1d4+10 electricity damage",
+                "Deals 1d10+5 electricity damage",
             );
         }
 

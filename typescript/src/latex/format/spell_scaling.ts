@@ -109,9 +109,9 @@ function calculateDieScaling(
   if (drMatches && drMatches[1]) {
     const damageBonusByRank = {
       zero: '1',
-      one: '1',
-      two: '2',
-      three: '3',
+      one: '2',
+      two: '1d6',
+      three: '1d6',
       four: '1d6',
       five: '2d6',
       six: '2d8',

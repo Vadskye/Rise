@@ -352,25 +352,24 @@ export const prayer: MysticSphere = {
       // dr3
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round and regains 1d4 \\glossterm{hit points} +1 per \\glossterm{power}.
+        Each target is \\shielded this round and regains \\hpranktwo.
       `,
       rank: 2,
       roles: ['healing', 'boon', 'exertion'],
-      scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
+      scaling: 'healing',
       tags: ['Swift'],
     },
 
     {
       name: 'Greater Boon of Shielding',
 
-      // dr6
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to 1d6 plus 1d6 per 2 power.',
+        exceptThat: 'the recovery increases to \\hpranksix.',
       },
       rank: 5,
       roles: ['healing', 'boon', 'exertion'],
-      scaling: { special: 'The recovery increases by 2d8 for each rank beyond 5.' },
+      scaling: 'healing',
       tags: ['Swift'],
     },
 
