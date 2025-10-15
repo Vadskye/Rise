@@ -5,7 +5,7 @@ import { addAberrations } from './aberrations';
 t.test('aboleth', (t) => {
   const grimoire = new Grimoire();
   addAberrations(grimoire);
-  const aboleth = grimoire.getMonster('Aboleth');
+  const aboleth = grimoire.getMonster('Aboleth')!;
 
   t.test('has basic combat values', (t) => {
     const vals = aboleth.getPropertyValues([
