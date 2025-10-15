@@ -4,7 +4,7 @@ import re
 def generate_script():
     with open("../typescript/src/character_sheet/sheet_worker.js") as file:
         lines = file.readlines()
-        return "".join([
+        return "\n".join([
             '<script type="text/worker">',
             *prune_irrelevant_lines(lines),
             'handleEverything();',
