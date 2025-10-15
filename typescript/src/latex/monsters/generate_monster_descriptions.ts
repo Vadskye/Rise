@@ -1,6 +1,7 @@
 import { Grimoire, MonsterGroup } from '@src/monsters/grimoire';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addMagicalBeasts } from '@src/monsters/individual_monsters/magical_beasts';
+import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
 import * as format from '@src/latex/format';
 import { convertMonsterToLatex } from './convert_monster_to_latex';
@@ -8,26 +9,30 @@ import { convertMonsterToLatex } from './convert_monster_to_latex';
 export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
   addAberrations(grimoire);
+  addHumanoids(grimoire);
   addMagicalBeasts(grimoire);
   addUndead(grimoire);
 
-  const monsterSections: Record<string, string> = {};
-  for (const monsterName of grimoire.getMonsterNames()) {
-    monsterSections[monsterName] = convertMonsterToLatex(grimoire.getMonster(monsterName));
-  }
+  const sectionNames: string[] = [
+    ...grimoire.getMonsterNames(),
+    ...grimoire.getMonsterGroupNames(),
+  ];
+  sectionNames.sort();
 
-  for (const monsterGroupName of grimoire.getMonsterGroupNames()) {
-    monsterSections[monsterGroupName] = convertMonsterGroupToLatex(
-      grimoire.getMonsterGroup(monsterGroupName),
-    );
-  }
+  const latexSections = sectionNames.map((sectionName) => {
+    const monster = grimoire.getMonster(sectionName);
+    if (monster) {
+      return convertMonsterToLatex(monster);
+    }
+    const monsterGroup = grimoire.getMonsterGroup(sectionName);
+    if (monsterGroup) {
+      return convertMonsterGroupToLatex(monsterGroup);
+    }
 
-  // TODO: sort the sections
-  return format.latexify(
-    Object.keys(monsterSections)
-      .map((sectionName) => monsterSections[sectionName])
-      .join('\n'),
-  );
+    throw new Error(`Could not find monster by name: '${sectionName}'`);
+  });
+
+  return format.latexify(latexSections.map((section) => section.trim()).join('\n'));
 }
 
 export function convertMonsterGroupToLatex(group: MonsterGroup): string {
