@@ -74,9 +74,8 @@ def create_page(_destination):
                                         "Roll mod",
                                         number_input(
                                             {
-                                                "disabled": True,
-                                                "name": "vital_rolls_display",
-                                                "value": "@{vital_rolls}",
+                                                "name": "vital_rolls",
+                                                "readonly": True,
                                             }
                                         ),
                                     ),

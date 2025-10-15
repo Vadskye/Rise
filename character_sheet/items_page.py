@@ -173,9 +173,8 @@ def attuned_effects_tracker():
                     "Current",
                     number_input(
                         {
-                            "disabled": True,
-                            "name": "active_attuned_effects_display",
-                            "value": "@{active_attunement_count}",
+                            "name": "active_attunement_count",
+                            "readonly": True,
                         }
                     ),
                 ),
@@ -184,9 +183,8 @@ def attuned_effects_tracker():
                     "Max",
                     number_input(
                         {
-                            "disabled": True,
-                            "name": "attunement_points_maximum_display",
-                            "value": "@{attunement_points_maximum}",
+                            "name": "attunement_points_maximum",
+                            "readonly": True,
                         }
                     ),
                 ),
@@ -533,9 +531,8 @@ def calc_speed():
                     equation_misc("speed", 1),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "speed_display",
-                    "value": "@{speed}",
+                    "name": "speed",
+                    "readonly": True,
                 },
             ),
         ]
@@ -550,9 +547,8 @@ def calc_vital_rolls():
                     equation_misc_repeat("vital_rolls", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "vital_rolls_display",
-                    "value": "@{vital_rolls}",
+                    "name": "vital_rolls",
+                    "readonly": True,
                 },
             ),
         ]

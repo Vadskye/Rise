@@ -48,9 +48,8 @@ def calc_brawling_accuracy():
                     equation_misc_repeat("accuracy", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "brawling_accuracy_display",
-                    "value": "@{brawling_accuracy}",
+                    "name": "brawling_accuracy",
+                    "readonly": True,
                 },
             ),
         ]
@@ -77,9 +76,8 @@ def calc_brawn():
                         "Str",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "brawn_strength_display",
-                                "value": "(@{strength})",
+                                "name": "strength",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -91,9 +89,8 @@ def calc_brawn():
                     equation_misc_repeat("brawn", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "brawn_display",
-                    "value": "@{brawn}",
+                    "name": "brawn",
+                    "readonly": True,
                 },
             ),
         ]
@@ -122,9 +119,8 @@ def calc_mundane_power():
                         "Str",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "mundane_power_attribute",
-                                "value": "@{strength}",
+                                "name": "strength",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -132,9 +128,8 @@ def calc_mundane_power():
                     equation_misc_repeat("mundane_power", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "mundane_power_display",
-                    "value": "@{mundane_power}",
+                    "name": "mundane_power",
+                    "readonly": True,
                 },
             ),
         ],
@@ -170,9 +165,8 @@ def calc_jump_distance():
                     equation_misc_repeat("horizontal_jump_distance", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "horizontal_jump_distance_display",
-                    "value": "@{horizontal_jump_distance}",
+                    "name": "horizontal_jump_distance",
+                    "readonly": True,
                 },
             ),
             flex_row(

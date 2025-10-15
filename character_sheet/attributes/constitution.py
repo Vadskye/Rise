@@ -46,9 +46,8 @@ def calc_fortitude():
                         "Con",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "fortitude_attribute",
-                                "value": "(@{constitution})",
+                                "name": "constitution",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -60,9 +59,8 @@ def calc_fortitude():
                     equation_misc_repeat("fortitude", 2),
                 ],
                 result_attributes={
-                    "disabled": "true",
-                    "name": "fortitude_display",
-                    "value": "@{fortitude}",
+                    "name": "fortitude",
+                    "readonly": True,
                 },
             ),
         ]
@@ -88,9 +86,8 @@ def calc_fatigue_tolerance():
                         "Con",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "fatigue_tolerance_con_display",
-                                "value": "(@{constitution})",
+                                "name": "constitution",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -98,9 +95,8 @@ def calc_fatigue_tolerance():
                     equation_misc_repeat("fatigue_tolerance", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "fatigue_tolerance_display",
-                    "value": "@{fatigue_tolerance}",
+                    "name": "fatigue_tolerance",
+                    "readonly": True,
                 },
             ),
         ]
@@ -120,9 +116,8 @@ def calc_durability():
                         "Level",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "durability_level",
-                                "value": "(@{durability_level})",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -131,9 +126,8 @@ def calc_durability():
                         "Con",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "durability_constitution",
-                                "value": "(@{constitution})",
+                                "name": "constitution",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -142,9 +136,8 @@ def calc_durability():
                         "Armor",
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "durability_armor",
-                                "value": "(@{body_armor_durability})",
+                                "name": "body_armor_durability",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -152,9 +145,8 @@ def calc_durability():
                     equation_misc_repeat("durability", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "durability_display",
-                    "value": "@{durability_maximum}",
+                    "name": "durability_maximum",
+                    "readonly": True,
                 },
             ),
         ]
@@ -174,9 +166,8 @@ def calc_hit_points():
                         "Rank mult",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "hit_points_rank_multiplier",
-                                "value": "(@{hit_points_rank_multiplier})",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -185,9 +176,8 @@ def calc_hit_points():
                         "Durability",
                         number_input(
                             {
-                                "disabled": True,
                                 "name": "hit_points_durability",
-                                "value": "(@{hit_points_durability})",
+                                "readonly": True,
                             }
                         ),
                     ),
@@ -195,9 +185,8 @@ def calc_hit_points():
                     equation_misc_repeat("hit_points", 3),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "hit_points_display",
-                    "value": "@{hit_points_maximum}",
+                    "name": "hit_points_maximum",
+                    "readonly": True,
                 },
             ),
         ]
@@ -237,9 +226,8 @@ def calc_injury_point():
                     equation_misc_repeat("injury_point", 2),
                 ],
                 result_attributes={
-                    "disabled": True,
-                    "name": "injury_point_display",
-                    "value": "@{injury_point_maximum}",
+                    "name": "injury_point_maximum",
+                    "readonly": True,
                 },
             ),
         ]

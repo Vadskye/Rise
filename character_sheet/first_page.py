@@ -181,9 +181,8 @@ def attribute_section(attribute, destination):
                     ),
                     number_input(
                         {
-                            "disabled": True,
-                            "name": f"{attribute}_display",
-                            "value": "(@{" + attribute + "})",
+                            "name": f"{attribute}",
+                            "readonly": True,
                         }
                     ),
                 ],
@@ -360,15 +359,12 @@ def defenses():
                             sidelabeled_number_input(
                                 defense,
                                 input_attributes={
-                                    "disabled": "true",
-                                    "name": defense.lower() + "_display",
-                                    "value": "@{"
-                                    + (
+                                    "name": (
                                         "armor_defense"
                                         if defense == "Armor"
                                         else defense.lower()
-                                    )
-                                    + "}",
+                                    ),
+                                    "readonly": True,
                                 },
                             )
                             for defense in DEFENSES
@@ -424,16 +420,14 @@ def core_statistics(destination):
                             {
                                 "class": "large-number-input",
                                 "name": "hit_points",
-                                "value": "@{hit_points}",
                             }
                         ),
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
                                 "class": "large-number-input",
-                                "disabled": True,
-                                "name": "hit_points_maximum_display",
-                                "value": "@{hit_points_maximum}",
+                                "name": "hit_points_maximum",
+                                "readonly": True,
                             }
                         ),
                     ],
@@ -442,9 +436,8 @@ def core_statistics(destination):
             sidelabeled_number_input(
                 "Injury point",
                 input_attributes={
-                    "disabled": True,
-                    "name": f"injury_point_display",
-                    "value": "@{injury_point}",
+                    "name": f"injury_point",
+                    "readonly": True,
                 },
             ),
             sidelabel(
@@ -455,15 +448,13 @@ def core_statistics(destination):
                         number_input(
                             {
                                 "name": "fatigue_points",
-                                "value": "@{fatigue_points}",
                             }
                         ),
                         span({"class": "core-statistics-separator"}, "/"),
                         number_input(
                             {
-                                "disabled": True,
-                                "name": "fatigue_tolerance_display_first_page",
-                                "value": "@{fatigue_tolerance}",
+                                "name": "fatigue_tolerance",
+                                "readonly": True,
                             }
                         ),
                     ],
@@ -472,17 +463,15 @@ def core_statistics(destination):
             sidelabeled_number_input(
                 "Accuracy",
                 input_attributes={
-                    "disabled": True,
-                    "name": f"accuracy_display",
-                    "value": "@{accuracy}",
+                    "name": f"accuracy",
+                    "readonly": True,
                 },
             ),
             sidelabeled_number_input(
                 "Speed",
                 input_attributes={
-                    "disabled": True,
-                    "name": f"speed_display",
-                    "value": "@{speed}",
+                    "name": f"speed",
+                    "readonly": True,
                 },
             ),
         ],
