@@ -45,17 +45,24 @@ export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveA
 
 function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityPart: string): string {
   // TODO: when should this use 'it' vs 'the $name'?
-  abilityPart = abilityPart.replace(/your next action/g, "its next action");
-  abilityPart = abilityPart.replace(/your attack result/g, "the attack result");
-  abilityPart = abilityPart.replace(/you are/g, "it is");
-  abilityPart = abilityPart.replace(/your speed/g, "its speed");
-  abilityPart = abilityPart.replace(/You can/g, "The $name can");
-  abilityPart = abilityPart.replace(/You create/g, "The $name creates");
+  abilityPart = abilityPart.replace(/\byour next action\b/g, "its next action");
+  abilityPart = abilityPart.replace(/\byour attack result\b/g, "the attack result");
+  abilityPart = abilityPart.replace(/\byou are\b/g, "it is");
+  abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
+  abilityPart = abilityPart.replace(/\bYou can\b/g, "The $name can");
+  abilityPart = abilityPart.replace(/\bYou create\b/g, "The $name creates");
+  abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
+  abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
+  abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
+  abilityPart = abilityPart.replace(/\byour (allies|\\glossterm{allies})\b/g, "its allies");
   abilityPart = abilityPart.replace(/\$name(.*?)the \$name/g, (_, mid) => `$name${mid}it`);
+
+  // This is lazy; we should support other extra damage variants, like 2x power or damage
+  // dice.
   const fullPower = monster.getRelevantPower(ability.isMagical);
   const halfPower = Math.floor(fullPower / 2);
-  abilityPart = abilityPart.replace(/damage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
-  abilityPart = abilityPart.replace(/damage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
+  abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g, `${halfPower} \\glossterm{extra damage}`);
+  abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
 
   return abilityPart;
 }
@@ -114,13 +121,6 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
-  // Although we do call `replaceGenericTerms` at the end, calling it on each component
-  // *before* processing it makes some of our processing easier. For example, we can
-  // reliably use `$name` in regex rather than something like `(you|$name)`.
-  if (ability.effect) {
-    ability.effect = replaceGenericTerms(monster, ability, ability.effect);
-  }
-
   if (ability.effect && makeStrikePattern.test(ability.effect)) {
     if (!ability.weapon) {
       throw new Error(
@@ -164,6 +164,11 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // segment they correspond to.
   // We don't care if the strike was originally restricted to melee-only.
   ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
+
+  // Although we do call `replaceGenericTerms` at the end, calling it on `effect`
+  // *before* processing it makes some of our processing easier. For example, we can
+  // reliably use `$name` in regex rather than something like `(you|$name)`.
+  ability.effect = replaceGenericTerms(monster, ability, ability.effect);
 
   let defense = 'Armor';
   // Use the correct alternate defense and strip the whole sentence, since we've
@@ -308,20 +313,23 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   damageDice.count = damageDice.count * weaponDamageMultiplier;
 
   const powerMultiplier = getWeaponPowerMultiplier(weapon);
-  let flatDamageBonus = 0;
-  // This is lazy; we should support other extra damage variants, like 2x power or damage
-  // dice.
-  if (effect.match(/(\\glossterm{)?extra damage}? equal to your (\\glossterm{)?power/)) {
-    flatDamageBonus += monster.getRelevantPower(ability.isMagical);
-  } else if (effect.match(/extra damage}? equal to half your (\\glossterm{)?power/)) {
-    flatDamageBonus += Math.floor(monster.getRelevantPower(ability.isMagical) / 2);
-  } else if (effect.match(/\bextra damage\b/)) {
-    console.warn(`Ability ${monster.name}.${ability.name}: Ambiguous extra damage`);
+  let extraFlatDamage = 0;
+  // TODO: handle extra damage dice.
+  // We rely on `replaceGenericTerms` to make sure that flat damage is pre-converted into
+  // numbers instead of a scaling expression.
+  const extraDamageDiceMatch = effect.match(/\b(\d+)d(\d+) (extra damage|\\glossterm{extra damage})/);
+  if (extraDamageDiceMatch) {
+    console.warn("TODO: Unable to parse extra damage dice");
+  }
+
+  const extraFlatDamageMatch = effect.match(/ (\d+) (extra damage|\\glossterm{extra damage})/);
+  if (extraFlatDamageMatch) {
+    extraFlatDamage = Number(extraFlatDamageMatch[1]);
   }
 
   const damageFromPower =
     globalDamageMultiplier *
-    (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + flatDamageBonus);
+    (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + extraFlatDamage);
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
@@ -472,15 +480,15 @@ export function calculateDamage(
     const damageDice = {
       0: '1d6',
       1: '1d10',
-      2: `1d8+${1+excessRank}d6`,
-      3: `${2+excessRank}d10`,
-      4: `${3+excessRank}d10`,
-      5: `${5+2*excessRank}d8`,
-      6: `${7+3*excessRank}d8`,
-      7: `${8+3*excessRank}d10`,
-      8: `${11+5*excessRank}d10`,
-      9: `${16+6*excessRank}d10`,
-      10: `${22+8*excessRank}d10`,
+      2: `1d8+${1 + excessRank}d6`,
+      3: `${2 + excessRank}d10`,
+      4: `${3 + excessRank}d10`,
+      5: `${5 + 2 * excessRank}d8`,
+      6: `${7 + 3 * excessRank}d8`,
+      7: `${8 + 3 * excessRank}d10`,
+      8: `${11 + 5 * excessRank}d10`,
+      9: `${16 + 6 * excessRank}d10`,
+      10: `${22 + 8 * excessRank}d10`,
     }[damageRank];
 
     const flatDamage = {
@@ -489,7 +497,7 @@ export function calculateDamage(
     }[damageRank as number] || 0;
 
     if (flatDamage) {
-      return `${damageDice}+${flatDamage} damage`;
+      return `${damageDice}\\plus${flatDamage} damage`;
     } else {
       return `${damageDice} damage`;
     }
@@ -519,8 +527,8 @@ export function calculateDamage(
     const damageDice = {
       0: '1d4',
       1: '1d6',
-      2: excessRank ? `1d10+${excessRank}d6` : '1d10',
-      3: excessRank ? `1d8+${excessRank}d6` : '1d8',
+      2: excessRank ? `1d10\\plus${excessRank}d6` : '1d10',
+      3: excessRank ? `1d8\\plus${excessRank}d6` : '1d8',
       4: `${Math.floor(effectivePower / 2)}d6`,
       5: `${Math.floor(effectivePower / 2 + 1)}d6`,
       6: `${Math.floor(effectivePower / 2 + 1)}d8`,
