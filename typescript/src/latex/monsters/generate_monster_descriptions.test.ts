@@ -8,5 +8,11 @@ t.test('generateMonsterDescriptions', (t) => {
     t.end();
   });
 
+  t.test('should contain Army Deserter', (t) => {
+    const result = generateMonsterDescriptions();
+    t.matchStrict(result, /\\monsubsubsection\{Army Deserter\}/);
+    t.end();
+  });
+
   t.end();
 });
