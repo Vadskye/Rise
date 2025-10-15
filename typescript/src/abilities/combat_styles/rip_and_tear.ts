@@ -1,4 +1,5 @@
 import { CombatStyle } from '.';
+import { MULTIHIT_CRIT } from '@src/abilities/constants';
 
 export const ripAndTear: CombatStyle = {
   name: 'Rip and Tear',
@@ -23,7 +24,7 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike}.
         \\hit If the target is not wearing metal body armor, it bleeds.
         A bleeding creature takes damage equal to half your power during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 3,
       roles: ['burst'],
@@ -36,7 +37,7 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} that deals double damage.
         If the target is not wearing metal body armor, it bleeds.
         A bleeding creature takes 1d6 damage per 2 power during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 7,
       roles: ['burst'],
@@ -98,7 +99,7 @@ export const ripAndTear: CombatStyle = {
         Make a melee \\glossterm{dual strike} (see \\pcref{Dual Strikes}).
         \\hit The target bleeds.
         A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
       roles: ['burn'],
@@ -111,7 +112,7 @@ export const ripAndTear: CombatStyle = {
         Make a strike.
         \\hit The target burns.
         A burning creature takes damage equal to half your power during your next action.
-        On a critical hit, this burning damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 3,
       tags: ['Fire'],
@@ -125,7 +126,7 @@ export const ripAndTear: CombatStyle = {
         Make a strike that deals double damage.
         \\hit The target burns.
         A burning creature takes \\damagerankfour during your next action.
-        On a critical hit, this burning damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 7,
       tags: ['Fire'],
@@ -192,7 +193,7 @@ export const ripAndTear: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
         Each creature hit by the strike bleeds.
         A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
       roles: ['wildfire'],
@@ -208,7 +209,7 @@ export const ripAndTear: CombatStyle = {
         You cannot use the \\textit{desperate exertion} ability to affect this strike.
         Each creature hit by the strike bleeds.
         A bleeding creature takes damage equal to your \\glossterm{power} during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
       roles: ['wildfire'],
@@ -221,7 +222,7 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike}.
         \\injury The target bleeds.
         A bleeding creature takes damage equal to 1d4 \\add half your \\glossterm{power} during your next action.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
       roles: ['execute'],
@@ -236,7 +237,7 @@ export const ripAndTear: CombatStyle = {
         Make a \\glossterm{strike} that deals double damage.
         \\injury The target bleeds profusely.
         A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next two actions.
-        On a critical hit, this bleeding damage is doubled.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
       roles: ['execute'],
