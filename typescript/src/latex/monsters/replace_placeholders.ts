@@ -7,7 +7,7 @@ export function replacePlaceholders(monster: Creature, latex: string) {
   if (latex.includes('$')) {
     const contextMatch = latex.match(/(.{10}\$.{10})/);
     const context = contextMatch ? contextMatch[1] : 'Unclear context';
-    console.warn(`Unable to replace all placeholder text for ${monster.name}: '${context}'`);
+    console.warn(`replace_placeholders.ts: Unable to replace all placeholder text for ${monster.name}: '${context}'`);
   }
 
   return latex;
