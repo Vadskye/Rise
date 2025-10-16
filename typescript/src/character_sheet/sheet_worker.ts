@@ -25,7 +25,7 @@ type CreatureSize =
   | 'gargantuan'
   | 'colossal';
 type MonsterIpMultiplier = 0.75 | 0.5 | 0.333;
-type MonsterType = '' | 'Normal' | 'Elite';  // This is manually provided by the sheet
+type MonsterType = '' | 'normal' | 'elite';  // This is manually provided by the sheet
 
 interface BaseClassModifier {
   armor_defense: number;
@@ -766,12 +766,12 @@ function calcAccuracyCrScaling(level: number, elite?: boolean) {
   return levelScaling;
 }
 
-function calcDefenseCrScaling(level: number, elite?: boolean) {
-  if (!elite) {
+function calcDefenseCrScaling(level: number, isMonster: boolean, elite: boolean) {
+  if (!isMonster) {
     return 0;
   }
   let levelScaling = 0;
-  if (elite) {
+  if (isMonster) {
     let levels_with_defense_bonuses = [5, 11, 17];
     for (const bonus_level of levels_with_defense_bonuses) {
       if (level >= bonus_level) {
@@ -939,7 +939,7 @@ function handleArmorDefense() {
         'shield_defense',
         'all_defenses_vital_wound_modifier',
       ],
-      string: ['body_armor_usage_class', 'shield_usage_class', 'base_class'],
+      string: ['body_armor_usage_class', 'shield_usage_class', 'base_class', 'monster_type'],
       boolean: ['elite'],
     },
     callback: (v) => {
@@ -960,7 +960,7 @@ function handleArmorDefense() {
       }
 
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, v.elite);
+      const crModifier = calcDefenseCrScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
 
       const beforeEquipment = attributeModifier + levelModifier + crModifier;
       const totalValue = Math.max(
@@ -2268,18 +2268,19 @@ function handleMonsterToggles() {
     },
     options: {
       variablesWithoutListen: {
-        string: ['chat_color'],
+        string: ['chat_color', 'player_chat_color'],
       },
     },
     callback: (v) => {
       if (v.monster_type) {
         setAttrs({
           chat_color: 'monster',
+          elite: v.monster_type === 'elite',
           player_chat_color: v.chat_color,
         });
       } else {
         setAttrs({
-          chat_color: v.chat_color || 'black',
+          chat_color: v.player_chat_color || 'black',
         });
       }
     },
@@ -2301,7 +2302,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
     },
     callback: (v) => {
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, v.elite);
+      const crModifier = calcDefenseCrScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
       let sizeModifier = 0;
       if (defense === 'reflex') {
         sizeModifier = v.size_reflex_modifier;
