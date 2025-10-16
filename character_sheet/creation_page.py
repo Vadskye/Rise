@@ -253,7 +253,6 @@ def creation_guidance():
                         option({"value": "vampire"}, "(Vampire)"),
                         option({"value": "brute"}, "(Monster - Brute)"),
                         option({"value": "leader"}, "(Monster - Leader)"),
-                        option({"value": "mystic"}, "(Monster - Mystic)"),
                         option({"value": "skirmisher"}, "(Monster - Skirmisher)"),
                         option({"value": "sniper"}, "(Monster - Sniper)"),
                         option({"value": "warrior"}, "(Monster - Warrior)"),
