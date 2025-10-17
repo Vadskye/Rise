@@ -2,13 +2,14 @@
 // weapons, we'll need to be more organized.
 // If the name is plural, it indicates that the monster is using two of the weapon to
 // make a dual strike.
-export type MonsterWeapon = 'bite' | 'claws' | 'horn' | 'ram' | 'stinger' | 'talons' | 'tentacle' | 'heavy crossbow' | 'spear' | 'longbow' | 'sickle' | 'club' | 'lance' | 'scythe';
+export type MonsterWeapon = 'bite' | 'claws' | 'horn' | 'ram' | 'stinger' | 'talons' | 'tentacle' | 'heavy crossbow' | 'spear' | 'longbow' | 'sickle' | 'club' | 'lance' | 'scythe' | 'greataxe' | 'battleaxe';
 
 export function getWeaponTag(weaponName: MonsterWeapon): string | null {
   return {
     bite: null,
     claws: null, // These have the Light tag, but that's irrelevant for running monsters.
     club: null,
+    greataxe: null,
     ['heavy crossbow']: 'Projectile (90/270)', // Ignore Heavy tag
     horn: 'Keen',
     lance: 'Mounted',
@@ -20,6 +21,7 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     stinger: null,
     talons: null,
     tentacle: null, // This has the Maneuverable tag, but that doesn't affect strikes.
+    battleaxe: null,
   }[weaponName];
 }
 
@@ -37,6 +39,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     bite: xdy(1, 8),
     claws: xdy(2, 4),
     club: xdy(1, 6),
+    greataxe: xdy(1, 10),
     ['heavy crossbow']: xdy(1, 10),
     horn: xdy(1, 6),
     lance: xdy(1, 6),
@@ -48,6 +51,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     stinger: xdy(1, 6),
     talons: xdy(2, 4),
     tentacle: xdy(1, 6),
+    battleaxe: xdy(1, 8),
   }[weaponName];
 }
 
@@ -56,6 +60,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     bite: 0,
     claws: 2,
     club: 0,
+    greataxe: 0,
     ['heavy crossbow']: 0,
     horn: 0,
     lance: 0,
@@ -67,6 +72,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     stinger: 1,
     talons: 2,
     tentacle: 0,
+    battleaxe: 0,
   }[weaponName];
 }
 
@@ -76,6 +82,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       bite: 1,
       claws: 0.5,
       club: 0.5,
+      greataxe: 1,
       ['heavy crossbow']: 0.5,
       horn: 1,
       lance: 0.5,
@@ -87,6 +94,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       stinger: 1,
       talons: 0.5,
       tentacle: 1,
+      battleaxe: 0.5,  // Assume one-handing. Currently, there's no way to mark Versatile Grip.
     } as const
   )[weaponName];
 }
