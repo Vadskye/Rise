@@ -47,15 +47,20 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   // TODO: when should this use 'it' vs 'the $name'?
   abilityPart = abilityPart.replace(/\byour next action\b/g, "its next action");
   abilityPart = abilityPart.replace(/\byour attack result\b/g, "the attack result");
+  abilityPart = abilityPart.replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
   abilityPart = abilityPart.replace(/\byou are\b/g, "it is");
+  abilityPart = abilityPart.replace(/\bYou are\b/g, "The $name is");
+  abilityPart = abilityPart.replace(/\bYou must have\b/g, "The $name must have");
   abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
+  abilityPart = abilityPart.replace(/\byour subsequent\b/g, "the $name's subsequent");
   abilityPart = abilityPart.replace(/\bYou can\b/g, "The $name can");
+  abilityPart = abilityPart.replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
   abilityPart = abilityPart.replace(/\bYou create\b/g, "The $name creates");
   abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
   abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
   abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
-  abilityPart = abilityPart.replace(/\byour (allies|\\glossterm{allies})\b/g, "its allies");
-  abilityPart = abilityPart.replace(/\$name(.*?)the \$name/g, (_, mid) => `$name${mid}it`);
+  abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
+  abilityPart = abilityPart.replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
 
   // This is lazy; we should support other extra damage variants, like 2x power or damage
   // dice.
