@@ -1,4 +1,5 @@
 import { CombatStyle } from '.';
+import { MULTIHIT_CRIT } from '@src/abilities/constants';
 
 export const dirtyFighting: CombatStyle = {
   name: 'Dirty Fighting',
@@ -28,7 +29,7 @@ export const dirtyFighting: CombatStyle = {
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         \\injury The target takes \\damageranksix.
         % TODO: wording
-        \\crit Damage is doubled for both the initial strike and the injury effect.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 5,
       roles: ['execute'],
@@ -42,7 +43,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a strike that deals double damage using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
         \\injury The target takes \\damagerankeight.
-        \\crit Damage is doubled for both the initial strike and the injury effect.
+        \\crit ${MULTIHIT_CRIT}
       `,
       rank: 7,
       roles: ['execute'],

@@ -212,17 +212,17 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Inflict Wound',
 
-      // Normal short range would be dr3. Drop by -2dr for the injury effect.
+      // Normal short range would be dr3. Drop by -1dr for the injury effect.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
+          \\damagerankone.
         `,
         injury: `
-          \\damageranktwo again.
+          \\damagerankone again.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\shortrange.
+          Make an attack vs. Fortitude against one living creature within \\medrange.
         `,
       },
       rank: 2,
@@ -275,7 +275,7 @@ export const vivimancy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+          You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
@@ -297,7 +297,7 @@ export const vivimancy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
+          You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
