@@ -31,7 +31,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     \\begin{minipage}{\\columnwidth}
         \\${sectionName}{${monster.name}}{${monster.level} ${format.uppercaseFirst(monster.base_class)}}${eliteText}
         \\monstersize${sizeStarText}{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
-        ${genArtText(monster)}
+        ${genArtText(monster, parentGroupName)}
     \\end{minipage}
     ${monster.description || ''}
     ${knowledgeText}
