@@ -304,6 +304,7 @@ t.test('reformatAsMonsterAbility', (t) => {
       name: 'Test Monster',
       getRelevantPower: () => 10,
       getSizeBasedSweepingTag: () => 'Sweeping (1)',
+      calculateRank: () => 3,
     } as any;
   });
 
@@ -340,6 +341,7 @@ t.test('restructureStrikeAbility', (t) => {
       name: 'Test Monster',
       getRelevantPower: () => 10,
       getSizeBasedSweepingTag: () => 'Sweeping (1)',
+      calculateRank: () => 3,
     } as any;
   });
 
@@ -369,7 +371,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
-        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
+        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -384,7 +386,7 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
-        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\empowered. Next round, it is \\braced.',
+        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -612,28 +614,28 @@ t.test('calculateDamage', (t) => {
 
   t.test('dr3 as a rank 3 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus10 damage');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus10');
     t.end();
   });
 
   t.test('dr3 as a rank 3 creature using a rank 1 ability', (t) => {
     const ability = { rank: 1, isMagical: false } as any;
     // +6 from scaling
-    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus2d6\\plus10 damage');
+    t.equal(calculateDamage(rank3Creature, ability, 3, false), '1d8\\plus2d6\\plus10');
     t.end();
   });
 
   t.test('dr3 as a rank 6 creature', (t) => {
     const ability = { rank: 3, isMagical: false } as any;
     // +9 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 3, false), '1d8\\plus3d6\\plus10 damage');
+    t.equal(calculateDamage(rank6Creature, ability, 3, false), '1d8\\plus3d6\\plus10');
     t.end();
   });
 
   t.test('dr4 as a rank 6 creature', (t) => {
     const ability = { rank: 4, isMagical: false } as any;
     // +2d6 from scaling
-    t.equal(calculateDamage(rank6Creature, ability, 4, false), '7d6 damage');
+    t.equal(calculateDamage(rank6Creature, ability, 4, false), '7d6');
     t.end();
   });
 
