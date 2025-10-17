@@ -648,7 +648,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankeone again during your next action.
+          The target takes \\damagerankone again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
