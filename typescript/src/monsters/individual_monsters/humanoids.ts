@@ -185,4 +185,69 @@ export function addHumanoids(grimoire: Grimoire) {
   addBandits(grimoire);
   addCultists(grimoire);
   addGoblins(grimoire);
+  addTownsfolk(grimoire);
 }
+
+function addTownsfolk(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Townsfolk",
+      hasArt: false,
+      knowledge: {
+        normal: `
+          Townsfolk are common throughout civilization.
+          They are typically found in small groups, preying on travelers or isolated settlements.
+        `,
+      },
+    },
+    [
+      ['Town Guard', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setProperties({
+          has_art: false,
+        });
+        creature.setKnowledgeResults({
+          easy: `
+            Town guards are common throughout civilization.
+            This represents the sort of ordinary guard that would be found even in rural towns, not an elite bodyguard.
+          `,
+        });
+        creature.setTrainedSkills([]);
+        creature.setBaseAttributes([1, 1, 1, 0, 0, 0]);
+        creature.addWeaponMult('spear'); // TODO: Add 'broadsword' to MonsterWeapon type or find a better equivalent.
+
+      }],
+      ['Town Healer', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'leader',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setProperties({
+          has_art: false,
+        });
+        creature.setKnowledgeResults({
+          easy: `
+            Town healers are typically clerics or druids with some healing ability.
+            They may be prominent leaders of a temple, or they may prefer solitude, but it is rare to find a reasonably sized town that does not have a healer of some variety.
+          `,
+        });
+        creature.setTrainedSkills(['medicine']);
+        creature.setBaseAttributes([0, 0, 0, 0, 3, 3]);
+        creature.addSpell('Restoration');
+        creature.addWeaponMult('club');
+      }],
+    ]
+  );
+}
+
