@@ -177,6 +177,7 @@ CmdLine
 {
     -H 0
     --nowarn 1
+    --nowarn 8
     --nowarn 15
     -v2
 }
