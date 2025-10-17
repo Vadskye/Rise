@@ -728,7 +728,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       attack: {
         hit: `
           The target's body starts to liquify as a \\glossterm{condition}.
-          While it is below its maximum \\glossterm{hit points}, its lower body \\glossterm{shapeshifts} into a puddle of water.
+          While it is \\glossterm{injured}, its lower body \\glossterm{shapeshifts} into a puddle of water.
           This has the following effects:
           \\begin{mdframeditemize}
             \\item It has no functioning legs, causing it to be permanently \\prone. It can still slosh across the ground, but at half speed, as normal for being prone.

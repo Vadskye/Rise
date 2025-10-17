@@ -318,7 +318,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target randomly slows down.
-          At the start of each round, if it is below its maximum \\glossterm{hit points}, it has a 50\\% chance to be \\slowed during that round.
+          At the start of each round, if it \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
@@ -662,7 +662,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\deafened and \\dazzled.
-          If it is below its maximum hit points, it is also deafened and dazzled as a single \\glossterm{condition}.
+          If it is \\glossterm{injured}, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\medarea cone.

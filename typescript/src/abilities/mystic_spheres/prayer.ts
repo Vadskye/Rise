@@ -464,7 +464,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target has difficulty seeing until it finishes a \\glossterm{short rest}.
-          While it is below its maximum \\glossterm{hit points}, it is \\dazzled.
+          While it is \\injured, it is \\dazzled.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
@@ -504,7 +504,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target becomes slothful until it finishes a \\glossterm{short rest}.
-          While a slothful creature is below its maximum \\glossterm{hit points}, it is \\slowed.
+          While a slothful creature is \\glossterm{injured}, it is \\slowed.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
@@ -526,7 +526,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target perceives you as its nemesis until it finishes a \\glossterm{short rest}.
-          While it is below its maximum hit points, it is \\goaded by you and \\frightened by you.
+          While it is \\glossterm{injured}, it is \\goaded by you and \\frightened by you.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\medrange.
@@ -567,7 +567,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target has difficulty looking at you until it finishes a \\glossterm{short rest}.
-          While it is below its maximum \\glossterm{hit points}, it treats you as being \\trait{invisible}.
+          While it is \\glossterm{injured}, it treats you as being \\trait{invisible}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.

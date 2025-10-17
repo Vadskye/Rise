@@ -184,7 +184,7 @@ pub fn shields() -> Vec<MagicArmor> {
             After you use this ability, you \glossterm{briefly} cannot use it again.
 
             \hit The target slowly turns to stone as a \glossterm{condition}.
-            While it is below its maximum \glossterm{hit points}, it is \slowed.
+            While it is \glossterm{injured}, it is \slowed.
             During this condition, if it takes a \glossterm{vital wound} that leaves it unconscious, it immediately dies.
             If the target dies in this way, its body is petrified in the form of a stone statue.
             \critcondition
@@ -193,7 +193,7 @@ pub fn shields() -> Vec<MagicArmor> {
             // Adding in stunned to the HP condition is +1.2 EA, so 3.4 EA total. That makes it a
             // rank 6 item.
             ItemUpgrade::new(6, r"Can slow and stun viewers", r"
-                Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \stunned while it is below its maximum hit points.
+                Your minimum accuracy increases to $accuracy, and the condition also causes each target to be \stunned while it is injured.
             "),
         ],
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],

@@ -221,20 +221,20 @@ export const ripAndTear: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         \\injury The target bleeds.
-        A bleeding creature takes damage equal to 1d4 \\add half your \\glossterm{power} during your next action.
+        A bleeding creature takes damage equal to half your \\glossterm{power} during your next action.
         \\crit ${MULTIHIT_CRIT}
       `,
       rank: 1,
       roles: ['execute'],
     },
 
-    // If you include the bonus round, this is the highest damage ability in the game, but
-    // it seems like that would very rarely apply.
+    // With only a single extra round of damage, this is 36% more damage than baseline.
+    // That's almost on par for an injury-only attack.
     {
       name: 'Bloodletter+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double damage.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         \\injury The target bleeds profusely.
         A bleeding creature takes damage equal to 2d6 \\add your \\glossterm{power} during your next two actions.
         \\crit ${MULTIHIT_CRIT}
@@ -335,7 +335,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         You may choose to lose a quarter of your maximum hit points.
-        Then, if you are below your maximum \\glossterm{hit points}, you become \\glossterm{briefly} \\primed and \\empowered.
+        Then, if you are \\glossterm{injured}, you become \\glossterm{briefly} \\primed and \\empowered.
       `,
       // narrative: '',
       rank: 3,

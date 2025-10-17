@@ -99,5 +99,15 @@ export const monsterManeuvers: CombatStyle = {
       rank: 7,
       roles: ['burst'],
     },
+    // Same as Leadership feat ability
+    {
+      name: 'Battle Command',
+      effect: `
+        Choose an \\glossterm{ally} within \\medrange.
+        The target becomes \\focused and gains a \\plus1 accuracy bonus this round.
+      `,
+      rank: 1,
+      roles: ['boon'],
+    }
   ],
 };
