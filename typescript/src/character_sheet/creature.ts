@@ -327,9 +327,9 @@ export class Creature implements CreaturePropertyMap {
   ) {
     this.activeAbilities[displayName || maneuverName] = {
       kind: 'maneuver',
-      // If the maneuver does not already have a defined scaling, we should scale accuracy
-      // with rank.
-      scaling: 'accuracy',
+      // If the maneuver uses a weapon and does not already have a defined scaling,
+      // we should scale accuracy with rank.
+      scaling: weapon ? 'accuracy' : undefined,
       tags,
       ...getManeuverByName(maneuverName),
       name: displayName || maneuverName,
