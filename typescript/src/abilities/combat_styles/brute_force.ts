@@ -10,20 +10,20 @@ export const bruteForce: CombatStyle = {
       name: 'Wild Swing',
 
       effect: `
-        Make a \\glossterm{strike} with a 50\\% miss chance.
-        The strike deals double damage.
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        The strike has a 50\\% miss chance.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['burst'],
     },
     {
       name: 'Wild Swing+',
 
       effect: `
-        Make a \\glossterm{strike} with a 50\\% miss chance that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
-        The strike deals triple damage.
+        Make a \\glossterm{strike} that deals triple damage.
+        The strike has a 50\\% miss chance.
       `,
-      rank: 7,
+      rank: 5,
       roles: ['burst'],
     },
     {

@@ -216,7 +216,7 @@ export const umbramancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           The target becomes afraid of the dark as a \\glossterm{condition}.
-          While it is \\glossterm{shadowed} and below its maximum \\glossterm{hit points}, it is \\frightened of all creatures.
+          While it is \\glossterm{shadowed} and \\glossterm{injured}, it is \\frightened of all creatures.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.

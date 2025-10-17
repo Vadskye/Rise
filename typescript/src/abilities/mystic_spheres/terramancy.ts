@@ -476,7 +476,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       functionsLike: {
         name: 'earthbind',
         exceptThat: `
-          as part of the same condition, the target is also \\slowed while it is below its maximum \\glossterm{hit points}.
+          as part of the same condition, the target is also \\slowed while it is \\glossterm{injured}.
           At the start of each round, the target can make a DV 10 Strength check.
           Success means that it stops being slowed during that round.
         `,
