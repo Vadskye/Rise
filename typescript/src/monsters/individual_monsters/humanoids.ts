@@ -96,7 +96,7 @@ function addCultists(grimoire: Grimoire) {
           size: 'medium',
         });
         creature.setTrainedSkills(['endurance']);
-        creature.setBaseAttributes([0, 1, 2, -1, 0, 4]);
+        creature.setBaseAttributes([1, 1, 2, -1, 1, 4]);
         creature.addSpell('Drain Life');
         creature.addWeaponMult('scythe');
       }],
