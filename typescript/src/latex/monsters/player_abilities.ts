@@ -59,6 +59,7 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
   abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
   abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
+  abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
   abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
   abilityPart = abilityPart.replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
 
@@ -110,6 +111,10 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
     warn('Ability still has listed \\hprank');
   }
 
+  if (/\\hprank/.test(abilityText)) {
+    warn('Ability still has listed \\hprank');
+  }
+
   if (makeStrikePattern.test(abilityText)) {
     warn('Ability still says it makes a strike');
   }
@@ -154,6 +159,14 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
 
     reformatAttackTargeting(monster, ability);
     reformatAttackConsequences(monster, ability);
+  }
+
+  if (ability.effect) {
+    ability.effect = replaceDamageText(monster, ability, ability.effect);
+    if (ability.scaling === 'healing') {
+      // This should have been handled by `replaceDamageText`.
+      delete ability.scaling;
+    }
   }
 
   reformatAbilityCost(ability);
@@ -435,11 +448,12 @@ export function reformatAttackConsequences(monster: Creature, ability: ActiveAbi
 // damage values listed. This doesn't modify in place. It also doesn't generally calculate
 // strike-based damage, which is handled by `restructureStrikeAbility`.
 function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText: string): string {
-  effectText = effectText.replace(/\\damagerank(\w+)/g, (_, rankAndMaybeLow) => {
+  effectText = effectText.replace(/\\(damage|hp)rank(\w+)/g, (_, hpOrDamage, rankAndMaybeLow) => {
     const damageRank = rankAndMaybeLow.replace('low', '');
     const lowPowerScaling = /low/.test(rankAndMaybeLow);
     const calculatedDamage = calculateDamage(monster, ability, parseDamageRank(damageRank), lowPowerScaling);
-    return `${calculatedDamage}`;
+    const hpOrDamageText = hpOrDamage === 'hp' ? '\\glossterm{hit points}' : 'damage';
+    return `${calculatedDamage} ${hpOrDamageText}`;
   });
 
   // For now, we just ignore this, since monsters never have extra damage.
@@ -475,6 +489,8 @@ function parseDamageRank(rankText: string): DamageRank {
 // This can be applied to attack.hit, attack.crit, or attack.injury, since all of those
 // could have damage terms. We use the full `ability` to calculate damage scaling from
 // rank.
+// Despite the name, the exact same calculations are used for both HP and damage, so this
+// handles both.
 export function calculateDamage(
   monster: Creature,
   ability: ActiveAbility,
@@ -504,9 +520,9 @@ export function calculateDamage(
     }[damageRank as number] || 0;
 
     if (flatDamage) {
-      return `${damageDice}\\plus${flatDamage} damage`;
+      return `${damageDice}\\plus${flatDamage}`;
     } else {
-      return `${damageDice} damage`;
+      return `${damageDice}`;
     }
   } else {
     // Normally, you'd calculate the "base" damage dice first, then add on the extra dice
@@ -554,9 +570,9 @@ export function calculateDamage(
       }[damageRank as number] || 0;
 
     if (flatDamage) {
-      return `${damageDice}\\plus${flatDamage} damage`;
+      return `${damageDice}\\plus${flatDamage}`;
     } else {
-      return `${damageDice} damage`;
+      return `${damageDice}`;
     }
   }
 }
