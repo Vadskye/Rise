@@ -2,7 +2,7 @@
 // weapons, we'll need to be more organized.
 // If the name is plural, it indicates that the monster is using two of the weapon to
 // make a dual strike.
-export type MonsterWeapon = 'bite' | 'claws' | 'horn' | 'ram' | 'stinger' | 'talons' | 'tentacle' | 'heavy crossbow' | 'spear' | 'longbow' | 'sickle' | 'club' | 'lance';
+export type MonsterWeapon = 'bite' | 'claws' | 'horn' | 'ram' | 'stinger' | 'talons' | 'tentacle' | 'heavy crossbow' | 'spear' | 'longbow' | 'sickle' | 'club' | 'lance' | 'scythe';
 
 export function getWeaponTag(weaponName: MonsterWeapon): string | null {
   return {
@@ -17,6 +17,7 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     talons: null,
     tentacle: null, // This has the Maneuverable tag, but that doesn't affect strikes.
     sickle: null,
+    scythe: 'Sweeping (2)',
     club: null,
     lance: 'Mounted',
   }[weaponName];
@@ -44,6 +45,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     talons: xdy(2, 4),
     tentacle: xdy(1, 6),
     sickle: xdy(1, 4),
+    scythe: xdy(1, 6),
     club: xdy(1, 8),
     lance: xdy(1, 6),
   }[weaponName];
@@ -62,6 +64,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     talons: 2,
     tentacle: 0,
     sickle: 0,
+    scythe: 0,
     club: 0,
     lance: 0,
   }[weaponName];
@@ -80,6 +83,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       stinger: 1,
       talons: 0.5,
       tentacle: 1,
+      scythe: 1,
       sickle: 0.5,
       club: 1,
       lance: 0.5,
