@@ -814,5 +814,35 @@ export const vivimancy: MysticSphere = {
       roles: ['softener'],
       scaling: 'accuracy',
     },
+
+    {
+      name: 'Drain Life',
+
+      attack: {
+        hit: `\\damageranktwo.`,
+        injury: `You are \\glossterm{briefly} \\empowered.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
+      rank: 1,
+      roles: ['burst', 'generator'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Drain Life',
+
+      attack: {
+        hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
+        injury: `You are \\glossterm{briefly} \\empowered.`,
+        targeting: `
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
+        `,
+      },
+      rank: 4,
+      roles: ['burst', 'generator'],
+      scaling: 'damage',
+    },
   ],
 };
