@@ -646,7 +646,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         miss: DELAYED_HALF,
         hit: `
           \\damagerankone.
-          If the target \\glossterm{hit points}, it takes this damage again during your next action.
+        `,
+        injury: `
+          The target takes \\damagerankeone again during your next action.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.

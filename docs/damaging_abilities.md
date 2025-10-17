@@ -49,7 +49,10 @@ Reasoning: A typical sustain (minor) radius will hit the same target about twice
 ### Injury-only damage
 
 Damage that only works on injured targets should be about +40% damage, which is roughly +2dr.
-If it deals one tick of damage then checks for another damage tick on injury, it scales poorly with extra damage, so it can get only -1dr (expected damage: 2x -1dr = 1.6x baseline)
+If it deals one tick of damage then checks for another damage tick on injury, neither drX-1 (0.8 + 0.8 = 1.6x) or drX-2 (0.6 + 0.6 = 1.2x) fits perfectly. There are two options:
+* Medium range / AOE: -1dr for injury bonus damge
+* Short range: -1dr for *delayed* injury bonus damage (so drX=rank overall)
+* Touch range: -2dr for injury bonus damage
 
 ### Delayed damage
 
