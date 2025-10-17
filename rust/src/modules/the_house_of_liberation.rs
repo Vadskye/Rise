@@ -163,7 +163,7 @@ pub fn generate_module() -> Module {
             If she notices the party, she will immediately attack.
             During battle, she taunts the party by telling them that escaped prisoners make good meat.
             She prioritizes the weakest targets she can reach until they fall unconscious.
-            If she drops below half her maximum hit points, she seems happy to have died in battle, and makes no attempt to call for backup.
+            If she becomes injured, she seems happy to have died in battle, and makes no attempt to call for backup.
             Instead, she asks the party to cook and eat her once she is dead.
             If she defeats the party, she wrestles with her desire to kill and eat them, but eventually goes to find the guards, grumbling about how the guards would figure out what happened if she did what she wanted.
 

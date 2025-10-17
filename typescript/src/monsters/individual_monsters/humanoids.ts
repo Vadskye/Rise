@@ -1,6 +1,14 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
+export function addHumanoids(grimoire: Grimoire) {
+  addBandits(grimoire);
+  addCultists(grimoire);
+  addGoblins(grimoire);
+  addOrcs(grimoire);
+  addTownsfolk(grimoire);
+}
+
 function addBandits(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
@@ -27,7 +35,7 @@ function addBandits(grimoire: Grimoire) {
           has_art: true,
         });
         creature.setKnowledgeResults({
-          easy: `
+          normal: `
             Army deserters have abandoned their past life in an army and struck out on their own.
             Since the punishments for desertion are typically harsh, they have little to lose.
           `,
@@ -181,11 +189,165 @@ function addGoblins(grimoire: Grimoire) {
   );
 }
 
-export function addHumanoids(grimoire: Grimoire) {
-  addBandits(grimoire);
-  addCultists(grimoire);
-  addGoblins(grimoire);
-  addTownsfolk(grimoire);
+function addOrcs(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Orcs",
+      hasArt: false,
+      knowledge: {
+        normal: `
+          Orcs are green-skinned humanoids that are generally larger, stronger, and less intelligent than humans.
+          Most other humanoid races consider them ugly, though orcs would say the same about most other humanoid races.
+          They tend to be selfish, but they adhere strictly to the particular orcish interpretation of honorable combat.
+        `,
+        hard: `
+          Honorable orc combat avoids sneak attacks or deception, allows enemies to surrender, and respects the distinction between civilians and combatants.
+          However, honorable orc combat does not require a great deal of warning before battle is joined, and they have no concept of "dirty fighting" - orcs fight brutally and with no reservations in combat.
+
+          Orcs have highly militaristic and regimented society that is divided into different clans, each of which is ruled by a powerful chieftain.
+        `,
+        legendary: `
+          Orc hierarchy and status is almost always determined by power, and chieftains can be deposed at specific intervals in a personal trial by combat.
+          You know the general patterns that determine when these personal trials by combat are permissible for local orc clans.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.setTrainedSkills(['endurance']);
+        creature.addCustomSense('Darkvision (60 ft.)');
+      },
+    },
+    [
+      ['Orc Peon', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc peons are the weakest warrior that orc clans field in battle.
+            They have the lowest status of any adult in orc society.
+            Peons are typically fresh recruits who have not yet been fully incorporated into an orc army.
+          `,
+        });
+        creature.setBaseAttributes([4, 0, 1, -2, 0, 0]);
+        creature.addWeaponMult('greataxe');
+      }],
+      ['Orc Grunt', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc grunts are the standard warrior that orc clans field in battle.
+          `,
+        });
+        creature.setBaseAttributes([5, 0, 2, -2, 0, 0]);
+        creature.addWeaponMult('greataxe');
+        creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
+      }],
+      ['Orc Butcher', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 3,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc butchers usually run the field kitchens in orc armies.
+            They tend to be smarter than the average orc warrior, but are no less ferocious when challenged.
+          `,
+        });
+        creature.setBaseAttributes([5, 1, 2, 0, 0, 0]);
+        creature.addCustomManeuver({
+          name: "Butcher's Cleaver",
+          effect: `
+            The $name makes a strike.
+          `,
+          tags: ['sweeping (2)'],
+          weapon: 'greataxe',
+        });
+        creature.addManeuver('Bloodletter', { weapon: 'greataxe' });
+      }],
+      ['Orc Veteran', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 5,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc veterans are battle-hardened elite warriors who are deadly at any range.
+            They often serve as bodyguards to orc chieftains or as devastating shock troops in battle.
+          `,
+        });
+        creature.setBaseAttributes([6, 0, 3, -2, 1, 1]);
+        creature.addWeaponMult('greataxe');
+        creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
+        creature.addWeaponMult('heavy crossbow');
+      }],
+      ['Orc Clan Chief', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'leader',
+          elite: true,
+          creature_type: 'humanoid',
+          level: 7,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc clan chiefs are the among the most powerful orc warriors.
+            Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants.
+          `,
+        });
+        creature.setBaseAttributes([6, 0, 4, 0, 2, 3]);
+        creature.addWeaponMult('greataxe');
+        creature.addManeuver('Distant Shot', { weapon: 'heavy crossbow' });
+        creature.addManeuver('Armorcrusher', { weapon: 'greataxe' });
+        creature.addManeuver('Battle Command', { usageTime: 'elite' });
+      }],
+      ['Orc Shaman', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'leader',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Orc shamans provide orc battle squads with divine magical support.
+            They primarily aid their allies, though they have no fear of taking up arms themselves when necessary.
+          `,
+          hard: `
+            If an orc shaman proves their mettle and wisdom in combat, they may eventually become a trusted advisor to a clan chief.
+            The advice and spiritual guidance of a capable shaman often has more influence on the success of an orc clan than mere strength of arms, and good clan chiefs recognize that fact.
+          `,
+        });
+        creature.setBaseAttributes([4, 1, 1, -1, 1, 4]);
+        creature.addSpell('Reveal Victory');
+        creature.addSpell('Foresee Safety');
+        creature.addSpell("Executioner's Axe");
+        creature.addWeaponMult('greataxe');
+      }],
+    ]
+  );
 }
 
 function addTownsfolk(grimoire: Grimoire) {
