@@ -50,15 +50,20 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
   abilityPart = abilityPart.replace(/\byou are\b/g, "it is");
   abilityPart = abilityPart.replace(/\bYou are\b/g, "The $name is");
+  abilityPart = abilityPart.replace(/\bYou become\b/g, "The $name becomes");
   abilityPart = abilityPart.replace(/\bYou must have\b/g, "The $name must have");
   abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
+  abilityPart = abilityPart.replace(/\bprotects you\b\b/g, "protects it");
   abilityPart = abilityPart.replace(/\byour subsequent\b/g, "the $name's subsequent");
   abilityPart = abilityPart.replace(/\bYou can\b/g, "The $name can");
   abilityPart = abilityPart.replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
+  abilityPart = abilityPart.replace(/\bWhen you cast this spell, you create\b/g, "When the $name casts this spell, it creates");
   abilityPart = abilityPart.replace(/\bYou create\b/g, "The $name creates");
   abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
   abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
   abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
+  abilityPart = abilityPart.replace(/\bto you\b/g, "to it");
+  abilityPart = abilityPart.replace(/\byour space\b/g, "its space");
   abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
   abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
   abilityPart = abilityPart.replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
@@ -388,14 +393,16 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
 
   // Accuracy-modified attack
   attack.targeting = attack.targeting.replace(
-    /\bMake an attack vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
-    (_, defense, modifierSign, modifierValue) => {
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
+    (_, maybeCapital, maybeReactive, defense, modifierSign, modifierValue) => {
       modifierSign = standardizeModifierSign(modifierSign);
       const withSign = modifierSign === '+' ? Number(modifierValue) : Number(modifierValue) * -1;
       const withScaling = withSign + scalingAccuracyModifier;
       modifierSign = withScaling >= 0 ? '+' : '-';
       const withoutSign = Math.abs(withScaling);
-      return `The $name makes a $accuracy${modifierSign}${withoutSign} attack vs${defense}`;
+      const attackText = /reactive/.test(maybeReactive) ? '\\glossterm{reactive attack}' : 'attack';
+      const theText = maybeCapital === 'M' ? 'The' : 'the';
+      return `${theText} $name makes a $accuracy${modifierSign}${withoutSign} ${attackText} vs${defense}`;
     },
   );
 
@@ -403,8 +410,12 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     scalingAccuracyModifier > 0 ? `+${scalingAccuracyModifier}` : '';
   // Baseline accuracy attack
   attack.targeting = attack.targeting.replace(
-    'Make an attack',
-    `The $name makes a $accuracy${scalingAccuracyModifierText} attack`,
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack})/g,
+    (_, maybeCapital, maybeReactive) => {
+      const attackText = /reactive/.test(maybeReactive) ? '\\glossterm{reactive attack}' : 'attack';
+      const theText = maybeCapital === 'M' ? 'The' : 'the';
+      return `${theText} $name makes a $accuracy${scalingAccuracyModifierText} ${attackText}`
+    },
   );
 
   // If we said $name already, replace 'from you' (usually in area descriptors) with
