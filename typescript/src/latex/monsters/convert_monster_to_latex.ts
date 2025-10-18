@@ -104,6 +104,7 @@ function genStatisticsText(monster: Creature): string {
       \\rankline
       \\spelltwocol{\\pari \\textbf{Attributes} ${genAttributesText(monster)}}{\\textbf{Power} ${monster.magical_power}\\sparkle \\monsep ${monster.mundane_power}\\hskip 0.25em}
       \\pari \\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}
+      ${genEquipmentText(monster)}
       ${genTraitsText(monster)}
     \\end{monsterstatistics}
   `;
@@ -258,13 +259,24 @@ function genAbilitiesText(monster: Creature): string {
   `;
 }
 
+function genEquipmentText(monster: Creature): string {
+  const equippedItems = monster.getEquipment();
+  if (equippedItems.length === 0) {
+    return '';
+  }
+
+  const equippedItemsText = equippedItems.map((item) => sentenceCase(item)).join('\\monsep ');
+
+  return `\\pari \\textbf{Equipment} ${equippedItemsText}`;
+}
+
 function genTraitsText(monster: Creature): string {
   const traits = monster.getStandardTraits();
   if (traits.length === 0) {
     return '';
   }
 
-  const traitsText = traits.map((trait) => `\\trait{${sentenceCase(trait)}}`).join('\\monsep');
+  const traitsText = traits.map((trait) => `\\trait{${sentenceCase(trait)}}`).join('\\monsep ');
 
   return `\\pari \\textbf{Traits} ${traitsText}`;
 }

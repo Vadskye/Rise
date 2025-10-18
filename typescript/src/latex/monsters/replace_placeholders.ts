@@ -2,7 +2,7 @@ import { Creature } from '@src/character_sheet/creature';
 
 export function replacePlaceholders(monster: Creature, latex: string) {
   latex = replaceNames(latex, monster.name);
-  latex = replaceAccuracyTerms(latex, monster.accuracy);
+  latex = replaceAccuracyTerms(latex, monster);
 
   if (latex.includes('$')) {
     const contextMatch = latex.match(/(.{10}\$.{10})/);
@@ -58,7 +58,7 @@ export function addAccuracyToEffect(modifier: number, effect: string, name: stri
 
 export function replaceAccuracyTerms(
   latex: string,
-  creatureAccuracy: number,
+  creature: Creature,
   weaponAccuracy?: number,
 ): string {
   // Find each block of "$accuracy", including any local accuracy modifiers.
@@ -66,23 +66,33 @@ export function replaceAccuracyTerms(
   //   Group 1: "$accuracy" (the base term)
   //   Group 2: "+" or "-" (the sign of the local modifier)
   //   Group 3: "2" (the value of the local modifier, if present)
-  const accuracyPattern = /\$accuracy([+-]?)(\d*)\b/g;
+  const accuracyPattern = /\$(brawling)?accuracy([+-]?)(\d*)\b/g;
 
-  return latex.replaceAll(accuracyPattern, (_, modifierSign, modifierValueStr) => {
+  return latex.replaceAll(accuracyPattern, (_, maybeBrawling, modifierSign, modifierValueStr) => {
     const modifierValue = modifierValueStr ? Number(modifierValueStr) : 0;
     // p1 is "$accuracy", p2 is the sign, p3 is the modifier value string
-    return parseAccuracyMatch(creatureAccuracy, modifierSign, modifierValue, weaponAccuracy);
+    return parseAccuracyMatch({
+      creatureAccuracy: maybeBrawling ? creature.brawling_accuracy : creature.accuracy,
+      modifierSign,
+      modifierValue,
+      weaponAccuracy,
+    });
   });
 }
 
 // For a given accuracy block, such as "$accuracy" or "$accuracy+2", return the specific text that
 // should replace it, such as "+5".
-function parseAccuracyMatch(
-  creatureAccuracy: number,
-  modifierSign: string, // e.g., "+" or "-"
-  modifierValue: number, // e.g., "2" or ""
-  weaponAccuracy?: number,
-): string {
+function parseAccuracyMatch({
+  creatureAccuracy,
+  modifierSign,
+  modifierValue,
+  weaponAccuracy,
+}: {
+  creatureAccuracy: number;
+  modifierSign: string; // e.g., "+" or "-"
+  modifierValue: number; // e.g., "2" or ""
+  weaponAccuracy?: number;
+}): string {
   let currentAccuracy = creatureAccuracy;
 
   // Handle local accuracy modifiers

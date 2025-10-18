@@ -50,7 +50,7 @@ export type RiseBaseClass =
   | 'vampire'
   | 'brute'
   | 'leader'
-  | 'mystic'
+  | 'mystic'  // TODO: remove mystic, since it is no longer supported
   | 'skirmisher'
   | 'sniper'
   | 'warrior';
@@ -183,6 +183,7 @@ export type RiseWeaponTag = string;
 // We need this to be a list to autodefine the RiseTrait type, but we want to export a Set
 // instead of a List.
 const RISE_TRAITS_LIST = [
+  'amphibious',
   'blindsense',
   'blindsight',
   'darkvision',
@@ -204,6 +205,10 @@ const RISE_TRAITS_LIST = [
   'tremorsense',
   'tremorsight',
   'vulnerable',
-];
+] as const;
 export type RiseTrait = (typeof RISE_TRAITS_LIST)[number];
 export const RISE_TRAITS = new Set(RISE_TRAITS_LIST);
+
+export function isTrait(text: string): text is RiseTrait {
+  return RISE_TRAITS.has(text as RiseTrait);
+}

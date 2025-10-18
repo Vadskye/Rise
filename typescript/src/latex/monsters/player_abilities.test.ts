@@ -1,5 +1,6 @@
 import t from 'tap';
 import {
+  convertAbilityToMonsterLatex,
   reformatAttackTargeting,
   standardizeModifierSign,
   calculateStrikeDamage,
@@ -14,9 +15,13 @@ import { Creature } from '@src/character_sheet/creature';
 import { getManeuverByName } from '@src/abilities/combat_styles';
 
 t.test('reformatAttackTargeting', (t) => {
-  const simpleCreature = Creature.new();
-  simpleCreature.setProperties({
-    level: 10,
+  let simpleCreature: Creature;
+
+  t.beforeEach(() => {
+    simpleCreature = Creature.new();
+    simpleCreature.setProperties({
+      level: 10,
+    });
   });
 
   // TODO: figure out type of 't'
@@ -296,16 +301,70 @@ t.test('calculateStrikeDamage', (t) => {
   t.end();
 });
 
-t.test('reformatAsMonsterAbility', (t) => {
-  let mockCreature: Creature;
+// These are effectively change detector integration tests, so don't add many here.
+t.test('convertAbilityToMonsterLatex', (t) => {
+  let simpleCreature: Creature;
 
   t.beforeEach(() => {
-    mockCreature = {
-      name: 'Test Monster',
-      getRelevantPower: () => 10,
-      getSizeBasedSweepingTag: () => 'Sweeping (1)',
-      calculateRank: () => 3,
-    } as any;
+    simpleCreature = Creature.new();
+    simpleCreature.setProperties({
+      name: 'Simple Creature',
+      level: 10,
+      strength_at_creation: 5,  // Allows differentiating regular accuracy from brawling accuracy
+    });
+  });
+
+  t.test('Weapon mult x2', (t) => {
+    // Lazy way to define the ability, but it works
+    simpleCreature.addWeaponMult('bite');
+    const ability = simpleCreature.getActiveAbilities()[0];
+    t.matchOnlyStrict(convertAbilityToMonsterLatex(simpleCreature, ability), `\\begin{activeability}{Bite}{Standard action}
+      
+      \\rankline
+      \\hypertargetraised{maneuver:Bite}{}%
+      \\hypertargetraised{maneuver:bite}{}%
+      \\noindent
+      The $name makes a $accuracy melee strike vs. Armor with its bite.%
+        \\vspace{0.25em}
+        \\hit 3d8+10 damage.% 
+      \\vspace{0.1em}%
+    \\end{activeability}`);
+
+    t.end();
+  });
+
+  t.test('Grapple', (t) => {
+    // Lazy way to define the ability, but it works
+    simpleCreature.addManeuver('Grapple');
+    const ability = simpleCreature.getActiveAbilities()[0];
+    t.equal(convertAbilityToMonsterLatex(simpleCreature, ability), `\\begin{activeability}{Grapple}{Standard action}
+      \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Size-Based}
+      \\rankline
+      \\hypertargetraised{maneuver:Grapple}{}%
+      \\hypertargetraised{maneuver:grapple}{}%
+      \\noindent
+      Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
+
+        \\hit You and the target are \\grappled by each other.
+        \\crit You also control the grapple (see \\pcref{Controlling a Grapple}).% 
+      \\vspace{0.1em}%
+    \\end{activeability}`);
+
+    t.end();
+  });
+
+  t.end();
+});
+
+t.test('reformatAsMonsterAbility', (t) => {
+  let simpleCreature: Creature;
+
+  t.beforeEach(() => {
+    simpleCreature = Creature.new();
+    simpleCreature.setProperties({
+      name: 'Simple Creature',
+      level: 10,
+    });
   });
 
   t.test("throws appropriate errors", (t) => {
@@ -314,8 +373,8 @@ t.test('reformatAsMonsterAbility', (t) => {
         name: 'Test Ability',
         effect: 'Make a strike.',
       } as any;
-      reformatAsMonsterAbility(mockCreature, ability);
-    }, new Error('Monster ability Test Monster.Test Ability: Strike ability has no weapon'));
+      reformatAsMonsterAbility(simpleCreature, ability);
+    }, new Error('Monster ability Simple Creature.Test Ability: Strike ability has no weapon'));
 
     t.throws(() => {
       const ability = {
@@ -324,8 +383,8 @@ t.test('reformatAsMonsterAbility', (t) => {
         effect: 'Make a strike.',
         attack: { hit: 'damage', targeting: 'target' },
       } as any;
-      reformatAsMonsterAbility(mockCreature, ability);
-    }, new Error('Monster ability Test Monster.Test Ability: Strike ability already makes an explicit attack'));
+      reformatAsMonsterAbility(simpleCreature, ability);
+    }, new Error('Monster ability Simple Creature.Test Ability: Strike ability already makes an explicit attack'));
 
     t.end();
   });
@@ -338,7 +397,7 @@ t.test('restructureStrikeAbility', (t) => {
 
   t.beforeEach(() => {
     mockCreature = {
-      name: 'Test Monster',
+      name: 'Simple Creature',
       getRelevantPower: () => 10,
       getSizeBasedSweepingTag: () => 'Sweeping (1)',
       calculateRank: () => 3,

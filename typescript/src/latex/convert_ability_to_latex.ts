@@ -24,7 +24,7 @@ export function convertAbilityToLatex(ability: ActiveAbility, omitRank?: boolean
       \\vspace{0.1em}%
     \\end{${abilityType}}
     ${tableText}
-  `;
+`;
 
-  return latex;
+  return latex.trim();
 }
