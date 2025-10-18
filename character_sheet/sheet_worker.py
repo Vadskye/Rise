@@ -4,12 +4,14 @@ import re
 def generate_script():
     with open("../typescript/src/character_sheet/sheet_worker.js") as file:
         lines = file.readlines()
-        return "\n".join([
+        return "".join([
             '<script type="text/worker">',
             *prune_irrelevant_lines(lines),
+            '\n',
             'handleEverything();',
+            '\n',
             '</script>',
-            '',
+            '\n',
         ])
 
 # As a side effect of Typescript compilation, we add some extra junk that we
