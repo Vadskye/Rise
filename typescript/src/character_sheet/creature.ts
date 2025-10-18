@@ -511,6 +511,27 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  addSneakAttack(
+    weapon: MonsterWeapon,
+    {
+      displayName,
+      isMagical,
+      tags,
+      usageTime,
+    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+  ) {
+    displayName = displayName || 'Sneak Attack';
+    this.addActiveAbility({
+      kind: 'maneuver',
+      tags,
+      ...getManeuverByName(`Sneak Attack ${this.calculateRank()}`),
+      name: displayName,
+      isMagical: Boolean(isMagical),
+      usageTime,
+      weapon,
+    });
+  }
+
   addSpell(
     spellName: string,
     { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
