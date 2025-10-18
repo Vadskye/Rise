@@ -634,14 +634,14 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankthree again.
+          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
+          During your next action, the target takes \\damagerankfour again.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
       },
-      rank: 4,
+      rank: 5,
       roles: ['burn'],
       scaling: 'damage',
     },
