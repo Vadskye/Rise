@@ -6,76 +6,72 @@ Debuffs can be grouped according to their action efficiency. Essentially, making
 
 By EA:
 ```
-  Debuff             & Brief & Injury Condition & Condition \\
-  Action skip        & 3.0   & 4.8          & 12        \\
-  Action skip (HP)   & 2.0   & 4.8          & N/A        \\
-  Banishment         & 3.0   & 3.6          & 9         \\
-  Banishment (HP)    & 2.0   & 3.6          & N/A         \\
-  Blinded            & 3.4   & 3.6          & 9.0       \\
-  Confused           & 2.8   & 2.9          & 7.2       \\
-  Dazzled            & 0.6   & 0.7          & 1.8       \\
-  Deafened           & 0.3   & 0.5          & 1.2       \\
-  Frightened by you  & 0.8   & 0.8          & 2.1       \\
-  Frightened by ally & 1.1   & 1.1          & 2.8       \\
-  Frightened by all  & 1.7   & 1.9          & 4.8       \\
-  Goaded             & 1.0   & 1.2          & 3.0       \\
-  Panicked by self   & 2.3   & 2.4          & 6.1       \\
-  Panicked by ally   & 2.7   & 3.0          & 7.6       \\
-  Prone (ranged)     & 1.6   & 2.4          & 6.0       \\
-  Prone (melee)      & 1.0   & 1.6          & 4.1       \\
-  Pull 15'           & 0.5   & N/A          & N/A       \\
-  Pull 30'           & 1.5   & N/A          & N/A       \\
-  Pull 60'           & 2.5   & N/A          & N/A       \\
-  Push 15' (ranged)  & 0.9   & N/A          & N/A       \\
-  Push 15' (melee)   & 0.4   & N/A          & N/A       \\
-  Push 30' (ranged)  & 2.0   & N/A          & N/A       \\
-  Push 30' (melee)   & 1.5   & N/A          & N/A       \\
-  Submerged          & 2.5   & 2.6          & 6.6       \\
-  Single defense     & 1.0   & 0.8          & 2.0       \\
-  Slowed (ranged)    & 2.0   & 2.1          & 5.2       \\
-  Slowed (melee)     & 1.5   & 1.5          & 3.7       \\
-  Stunned            & 1.4   & 1.2          & 3.0       \\
-  Time skip          & 3.5   & 4.3          & 10.8      \\
-  Treat as invis:    & 1.2   & 1.6          & 4.0       \\
-  Vulnerable         & 3.5   & 3.0          & 7.5       \\
+  Debuff             & Injury Brief & Brief & Injury Condition & Condition \\
+  Action skip        & 2.0          & 3.0   & 4.8              & 12        \\
+  Banishment         & 2.0          & 3.0   & 3.6              & 9         \\
+  Blinded            & 2.2          & 3.4   & 3.6              & 9.0       \\
+  Confused           & 1.8          & 2.8   & 2.9              & 7.2       \\
+  Dazzled            & 0.4          & 0.6   & 0.7              & 1.8       \\
+  Deafened           & 0.2          & 0.3   & 0.5              & 1.2       \\
+  Frightened by you  & 0.5          & 0.8   & 0.8              & 2.1       \\
+  Frightened by ally & 0.7          & 1.1   & 1.1              & 2.8       \\
+  Frightened by all  & 1.1          & 1.7   & 1.9              & 4.8       \\
+  Goaded             & 0.6          & 1.0   & 1.2              & 3.0       \\
+  Panicked by self   & 1.5          & 2.3   & 2.4              & 6.1       \\
+  Panicked by ally   & 1.8          & 2.7   & 3.0              & 7.6       \\
+  Prone (ranged)     & 1.0          & 1.6   & 2.4              & 6.0       \\
+  Prone (melee)      & 0.6          & 1.0   & 1.6              & 4.1       \\
+  Pull 15'           & 0.3          & 0.5   & N/A              & N/A       \\
+  Pull 30'           & 1.0          & 1.5   & N/A              & N/A       \\
+  Pull 60'           & 1.6          & 2.5   & N/A              & N/A       \\
+  Push 15' (ranged)  & 0.6          & 0.9   & N/A              & N/A       \\
+  Push 15' (melee)   & 0.2          & 0.4   & N/A              & N/A       \\
+  Push 30' (ranged)  & 1.3          & 2.0   & N/A              & N/A       \\
+  Push 30' (melee)   & 1.0          & 1.5   & N/A              & N/A       \\
+  Single defense     & 0.7          & 1.0   & 0.8              & 2.0       \\
+  Slowed (ranged)    & 1.3          & 2.0   & 2.1              & 5.2       \\
+  Slowed (melee)     & 1.0          & 1.5   & 1.5              & 3.7       \\
+  Stunned            & 0.9          & 1.4   & 1.2              & 3.0       \\
+  Submerged          & 1.6          & 2.5   & 2.6              & 6.6       \\
+  Time skip          & 2.3          & 3.5   & 4.3              & 10.8      \\
+  Treat as invis:    & 0.8          & 1.2   & 1.6              & 4.0       \\
+  Vulnerable         & 2.3          & 3.5   & 3.0              & 7.5       \\
 ```
 
 By rank:
 "2d" means "rank 2 if combined with damage". It's used for effects that are too weak to ever appear as standalone spells.
 "inf" means the effect is too strong to ever appear as a spell without weird tricks.
 ```
-  Debuff             & Brief & Injury Condition & Condition \\
-  Action skip        & 9     & inf          & inf       \\
-  Action skip (HP)   & 4     & inf          & N/A       \\
-  Banishment         & 9     & inf          & inf       \\
-  Banishment (HP)    & 4     & inf          & N/A       \\
-  Blinded            & 11    & inf           & inf       \\
-  Confused           & 8     & 9            & inf       \\
-  Dazzled            & 2d    & 3d           & 3         \\
-  Deafened           & 1d    & 2d           & 0         \\
-  Frightened by you  & 3d    & 3d           & 5         \\
-  Frightened by ally & 0     & 0            & 8         \\
-  Frightened by all  & 3     & 4            & inf       \\
-  Goaded             & 4d    & 0            & 9         \\
-  Panicked by self   & 6     & 6            & inf       \\
-  Panicked by ally   & 8     & 9            & inf       \\
-  Prone (ranged)     & 2     & 6            & inf       \\
-  Prone (melee)      & 4d    & 2            & inf       \\
-  Pull 15'           & 2d    & N/A          & N/A       \\
-  Pull 30'           & 2     & N/A          & N/A       \\
-  Pull 60'           & 7     & N/A          & N/A       \\
-  Push 15' (ranged)  & 4d    & N/A          & N/A       \\
-  Push 15' (melee)   & 1d    & N/A          & N/A       \\
-  Push 30' (ranged)  & 4     & N/A          & N/A       \\
-  Push 30' (melee)   & 2     & N/A          & N/A       \\
-  Single defense     & 4d    & 3d           & 4         \\
-  Slowed (ranged)    & 4     & 5            & inf       \\
-  Slowed (melee)     & 2     & 2            & inf       \\
-  Stunned            & 1     & 0            & 9         \\
-  Submerged          & 7     & 7            & inf       \\
-  Time skip          & inf   & inf          & inf       \\
-  Treat as invis:    & 0     & 2            & inf       \\
-  Vulnerable         & 8     & 9            & inf       \\
+  Debuff             & Injury Brief & Brief & Injury Condition & Condition \\
+  Action skip        & 4            & 9     & inf              & inf       \\
+  Banishment         & 4            & 9     & inf              & inf       \\
+  Blinded            & 5            & 11    & inf              & inf       \\
+  Confused           & 3            & 8     & 9                & inf       \\
+  Dazzled            & 1d           & 2d    & 3d               & 3         \\
+  Deafened           & 0d           & 1d    & 2d               & 0         \\
+  Frightened by you  & 2d           & 3d    & 3d               & 5         \\
+  Frightened by ally & 3d           & 0     & 0                & 8         \\
+  Frightened by all  & 5d           & 3     & 4                & inf       \\
+  Goaded             & 2d           & 4d    & 0                & 9         \\
+  Panicked by self   & 2            & 6     & 6                & inf       \\
+  Panicked by ally   & 3            & 8     & 9                & inf       \\
+  Prone (ranged)     & 4d           & 2     & 6                & inf       \\
+  Prone (melee)      & 2d           & 4d    & 2                & inf       \\
+  Pull 15'           & 1d           & 2d    & N/A              & N/A       \\
+  Pull 30'           & 4d           & 2     & N/A              & N/A       \\
+  Pull 60'           & 2            & 7     & N/A              & N/A       \\
+  Push 15' (ranged)  & 2d           & 4d    & N/A              & N/A       \\
+  Push 15' (melee)   & 0d           & 1d    & N/A              & N/A       \\
+  Push 30' (ranged)  & 1            & 4     & N/A              & N/A       \\
+  Push 30' (melee)   & 4d           & 2     & N/A              & N/A       \\
+  Single defense     & 3d           & 4d    & 3d               & 4         \\
+  Slowed (ranged)    & 1            & 4     & 5                & inf       \\
+  Slowed (melee)     & 4d           & 2     & 2                & inf       \\
+  Stunned            & 4d           & 1     & 0                & 9         \\
+  Submerged          & 2            & 7     & 7                & inf       \\
+  Time skip          & 6            & inf   & inf              & inf       \\
+  Treat as invis:    & 3d           & 2     & inf              & inf       \\
+  Vulnerable         & 6            & 9     & inf              & inf       \\
 ```
 
 ### Effective actions by rank
@@ -108,6 +104,8 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 * +0.4 EA: Condition becomes a curse
 * +0.2 EA: Condition becomes a poison
 * +1 EA: The effect becomes a Sustain (minor) zone that repeats its attack each round. This also comes with -2dr, and the area must be a ranged radius (not a radius from self).
+* -0.2 EA: -2 accuracy
+* -0.4 EA: -4 accuracy
 * -1 EA: The effect only works if you hit the creature with it twice.
 * -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
 
@@ -488,13 +486,17 @@ The blindness is 12 * 0.25 * 0.75 = 2.2 effective actions. The brief effect gets
 ### Vulnerable: 7.5
 Double stunned, plus 25% effectiveness for negating impervious/immune.
 
-## HP-Only Condition Effectiveness
+## Injury Condition Effectiveness
 
-A condition that you can only apply after the target has entered HP is roughly the same power level as a brief effect. It has the upside of being able to last longer in boss fights or to fully remove non-elite enemies from the fight if they are in HP, but the downside of not working at all if the target is uninjured.
+A condition that you can only apply after the target is injured is roughly the same power level as a brief effect. It has the upside of being able to last longer in boss fights or to fully remove non-elite enemies from the fight if they are in HP, but the downside of not working at all if the target is uninjured.
 
 In general, a monster will be injured about halfway through the fight. In group fights, individual enemies can easily be injured after round 1, but it's rare for all enemies to be injured simultaneously, making injury conditions difficult to use effectively unless you apply an AOE pre-fire debuff that works while they are uninjured. For bosses, assume that 10 of our standard 20 player actions are required to injure the boss. This means that defense debuffs are about 50% effective. Action denial debuffs only have 2 boss attack actions to negate with instead of the usual 4, which is also 50% effective.
 
 Those are both best-case scenarios though. In practice, it's hard for an HP condition to reach that full 50% effectiveness, especially in a group fight. It seems reasonable to estimate HP-only conditions as being 40% of the effectiveness of a condition without prerequisites.
+
+## Injury Brief Effectiveness
+
+A brief debuff that only applies if the target is injured is roughly 2/3 the EA of a regular brief effect. We don't want to undercut the power of injury condition too much, or else no one will use injury conditions.
 
 ## Area and Targets
 
