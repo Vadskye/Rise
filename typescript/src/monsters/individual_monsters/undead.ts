@@ -156,7 +156,7 @@ function addSkeletons(grimoire: Grimoire) {
           level: 1,
           size: 'medium',
         });
-        creature.setBaseAttributes([3, 3, 0, 0, 0, 0]);
+        creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
         creature.addWeaponMult('claws');
       }],
       ['Fallen Soldier', (creature) => {
@@ -166,7 +166,7 @@ function addSkeletons(grimoire: Grimoire) {
           level: 2,
           size: 'medium',
         });
-        creature.setBaseAttributes([3, 3, 0, 0, 0, 0]);
+        creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
         creature.setEquippedArmor({
           bodyArmor: 'leather lamellar',
           shield: 'standard shield',
@@ -180,7 +180,7 @@ function addSkeletons(grimoire: Grimoire) {
           level: 3,
           size: 'medium',
         });
-        creature.setBaseAttributes([3, 3, 0, 0, 2, 0]);
+        creature.setBaseAttributes([3, 3, 0, -7, 2, 0]);
         creature.setEquippedArmor({
           bodyArmor: 'leather lamellar',
         });
@@ -193,7 +193,7 @@ function addSkeletons(grimoire: Grimoire) {
           level: 7,
           size: 'medium',
         });
-        creature.setBaseAttributes([5, 5, 0, 0, 2, 0]);
+        creature.setBaseAttributes([5, 5, 0, -7, 2, 0]);
         creature.setEquippedArmor({
           bodyArmor: 'scale',
           shield: 'standard shield',
