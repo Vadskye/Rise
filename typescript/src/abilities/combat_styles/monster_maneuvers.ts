@@ -116,7 +116,7 @@ export const monsterManeuvers: CombatStyle = {
         Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.
 
         \\hit You and the target are \\grappled by each other.
-        \\crit You also control the grapple (see \\pcref{Controlling a Grapple}).
+        \\crit You also control the grapple.
       `,
       rank: 1,
       roles: ['softener'],
