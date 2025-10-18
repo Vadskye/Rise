@@ -99,9 +99,104 @@ export function addUndead(grimoire: Grimoire) {
     ]
   );
 
+  addSkeletons(grimoire);
   addVampires(grimoire);
   addZombies(grimoire);
   // TODO: We can't add skeletons or zombies until we add humanoids
+}
+
+function addSkeletons(grimoire: Grimoire) {
+  const requiredProperties = {
+    alignment: 'neutral evil',
+    elite: false,
+    creature_type: 'undead',
+  } as const;
+
+  grimoire.addMonsterGroup(
+    {
+      name: "Skeletons",
+      knowledge: {
+        easy: `
+          Skeletons are the reanimated corpses of once-living creatures.
+          They are the most basic form of animated undead, since they can be created from corpses that have been reduced to mere bones.
+          Creating a skeleton is generally regarded as an evil act.
+        `,
+        normal: `
+          Skeletons retain none of the specific physical or magical abilities of the original creature.
+          They are capable of using armor and weapons, and have a minimal degree of self-preservation, but they lack any understanding of tactics.
+
+          Skeletons are sometimes created naturally near areas of recent mass death, such as battlefields where the corpses were not removed.
+        `,
+        legendary: `
+          Creating a skeleton from a corpse requires splintering the soul of the creature the corpse belonged to.
+          The soul splinter created this way is used to give the skeleton its agency.
+          This is painful for the dead creature in its afterlife.
+          The more powerful the soul, the more powerful the corresponding skeleton.
+
+          Creating a skeleton requires a larger soul splinter than creating a zombie.
+          This larger splinter compensates for the greater decay of the corpse and grants skeletons a slightly greater effective intelligence.
+          However, skeletons still retain none of the original creature's personality.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('simple-minded');
+      }
+    },
+    [
+      ['Bones', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          base_class: 'skirmisher',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([3, 3, 0, 0, 0, 0]);
+        creature.addWeaponMult('claws');
+      }],
+      ['Fallen Soldier', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          base_class: 'warrior',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([3, 3, 0, 0, 0, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+          shield: 'standard shield',
+        });
+        creature.addWeaponMult('spear');
+      }],
+      ['Skeleton Archer', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          base_class: 'sniper',
+          level: 3,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([3, 3, 0, 0, 2, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+        });
+        creature.addWeaponMult('longbow');
+      }],
+      ['Fallen Hero', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          base_class: 'warrior',
+          level: 7,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([5, 5, 0, 0, 2, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+          shield: 'standard shield',
+        });
+        creature.addWeaponMult('battleaxe');
+        creature.addWeaponMult('javelin');
+      }],
+    ],
+  );
 }
 
 function addVampires(grimoire: Grimoire) {
@@ -283,5 +378,76 @@ function addVampires(grimoire: Grimoire) {
 }
 
 function addZombies(grimoire: Grimoire) {
+  const requiredProperties = {
+    alignment: 'neutral evil',
+    base_class: 'brute',
+    elite: false,
+    creature_type: 'undead',
+  } as const;
 
+  grimoire.addMonsterGroup(
+    {
+      name: "Zombies",
+      knowledge: {
+        easy: `
+          Zombies are the reanimated corpses of once-living creatures.
+          They must be created from corpses that still retain most of their organs and internal structure.
+          Creating a zombie is generally regarded as an evil act.
+        `,
+        normal: `
+          Zombies retain the raw strength of the original creature, but lose all special abilities.
+          They are mindless, relentless, and incapable of tactics or tool usage.
+          Instead of using weapons, they try to grab and bite their enemies.
+          They have a relentless hunger for flesh, though consuming it brings them no relief.
+
+          Zombies are sometimes created naturally near areas of recent mass death, such as battlefields where the corpses were not removed.
+        `,
+        legendary: `
+          Creating a zombie from a corpse requires splintering the soul of the creature the corpse belonged to.
+          The soul splinter created this way is used to give the zombie its limited agency.
+          This is painful for the dead creature in its afterlife.
+          The more powerful the soul, the more powerful the corresponding zombie.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('mindless');
+        creature.addManeuver('Grapple');
+        creature.addWeaponMult('bite');
+      },
+    },
+    [
+      ['Shambler', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          level: 1,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([4, -2, 5, 0, -2, 0]);
+      }],
+      ['Walker', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          level: 3,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([5, -2, 6, 0, -2, 0]);
+      }],
+      ['Mauler', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          level: 6,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([6, -2, 7, 0, -2, 0]);
+      }],
+      ['Hulk', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          level: 9,
+          size: 'large',
+        });
+        creature.setBaseAttributes([8, -2, 8, 0, -2, 0]);
+      }],
+    ],
+  );
 }
