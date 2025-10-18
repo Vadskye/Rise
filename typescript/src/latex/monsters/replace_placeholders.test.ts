@@ -70,9 +70,18 @@ t.test('addAccuracyToEffect', (t) => {
 });
 
 t.test('replaceAccuracyTerms', (t) => {
+  let mockCreature: any;
+
+  t.beforeEach(() => {
+    mockCreature = {
+      accuracy: 5,
+      brawling_accuracy: 10,
+    } as any;
+  });
+
   t.test('replaces $accuracy with creature accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', 5),
+      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature),
       '+5 vs. Armor',
       'should replace $accuracy with creature accuracy',
     );
@@ -81,7 +90,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with positive local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy+2 vs. Armor', 5),
+      replaceAccuracyTerms('$accuracy+2 vs. Armor', mockCreature),
       '+7 vs. Armor',
       'should add positive local modifier',
     );
@@ -90,7 +99,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with negative local modifier', (t) => {
     t.equal(
-      replaceAccuracyTerms('a $accuracy-3 attack vs. Armor', 5),
+      replaceAccuracyTerms('a $accuracy-3 attack vs. Armor', mockCreature),
       'a +2 attack vs. Armor',
       'should subtract negative local modifier',
     );
@@ -99,7 +108,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with weapon accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', 5, 3),
+      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature, 3),
       '+8 vs. Armor',
       'should add weapon accuracy',
     );
@@ -108,7 +117,7 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces $accuracy with local and weapon accuracy', (t) => {
     t.equal(
-      replaceAccuracyTerms('a $accuracy attack vs. Armor', 5, 3),
+      replaceAccuracyTerms('a $accuracy attack vs. Armor', mockCreature, 3),
       'a +8 attack vs. Armor',
       'should add local and weapon accuracy',
     );
@@ -116,8 +125,9 @@ t.test('replaceAccuracyTerms', (t) => {
   });
 
   t.test('replaces $accuracy resulting in zero', (t) => {
+    mockCreature.accuracy = 0;
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', 0),
+      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature),
       '+0 vs. Armor',
       'should result in +0 for zero accuracy',
     );
@@ -125,8 +135,9 @@ t.test('replaceAccuracyTerms', (t) => {
   });
 
   t.test('replaces $accuracy resulting in negative', (t) => {
+    mockCreature.accuracy = -5;
     t.equal(
-      replaceAccuracyTerms('$accuracy vs. Armor', -5),
+      replaceAccuracyTerms('$accuracy vs. Armor', mockCreature),
       '-5 vs. Armor',
       'should result in negative accuracy',
     );
@@ -135,9 +146,17 @@ t.test('replaceAccuracyTerms', (t) => {
 
   t.test('replaces multiple $accuracy terms', (t) => {
     t.equal(
-      replaceAccuracyTerms('First $accuracy, then $accuracy+1, finally $accuracy-2', 5),
+      replaceAccuracyTerms('First $accuracy, then $accuracy+1, finally $accuracy-2', mockCreature),
       'First +5, then +6, finally +3',
       'should replace multiple accuracy terms correctly',
+    );
+    t.end();
+  });
+
+  t.test('replaces $brawlingaccuracy', (t) => {
+    t.equal(
+      replaceAccuracyTerms('$brawlingaccuracy vs. Brawn', mockCreature),
+      '+10 vs. Brawn',
     );
     t.end();
   });

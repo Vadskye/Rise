@@ -27,11 +27,12 @@ export function addUndead(grimoire: Grimoire) {
       `,
     });
     creature.setTrainedSkills(['awareness', 'stealth']);
-    creature.setBaseAttributes([0, 3, 0, -2, -2, 6]);
+    // TODO: should allips have any defined Strength attribute?
+    creature.setBaseAttributes([-9, 3, 0, -2, -2, 6]);
     creature.addCustomMovementSpeed('Fly (normal)');
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomSense('Lifesense (120 ft.)');
-    creature.addTrait('Incorporeal');
+    creature.addTrait('incorporeal');
     creature.addSpell('Inflict Wound');
   });
 

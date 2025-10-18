@@ -31,14 +31,15 @@ import {
   RiseSpecialDefense,
   RiseTag,
   RiseWeaponTag,
-  RISE_TRAITS,
   RiseTrait,
+  isTrait,
 } from '@src/character_sheet/rise_data';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
-import { MonsterWeapon } from '@src/monsters/weapons';
+import { MonsterWeapon, isManufactured } from '@src/monsters/weapons';
 import { ActiveAbility, ActiveAbilityRank, PassiveAbility } from '@src/abilities';
-import { uppercaseFirst } from '@src/latex/format/uppercase_first';
+import { titleCase } from '@src/latex/format/title_case';
+import { EquippedItem, isBodyArmor, isShield, generateBodyArmorProperties, generateShieldProperties, BodyArmor, Shield } from '@src/monsters/equipment';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -62,6 +63,10 @@ type NumericCreatureProperty =
 type StringCreatureProperty =
   | 'description'
   | 'name'
+  | 'weapon_0_name'
+  | 'weapon_1_name'
+  | 'weapon_2_name'
+  | 'weapon_3_name'
   | CreatureKnowledgeResult
   | RiseSpecialDefense
   | CustomMovementSpeed
@@ -319,13 +324,88 @@ export class Creature implements CreaturePropertyMap {
     return this.sheet;
   }
 
+  // This is "set" instead of "add" because it overwrites any existing equipment.
+  // By default, any manufactured weapons specified in maneuvers are automatically
+  // included in the creature's equipment using `addWeapon`, and armor can be set with
+  // `setEquippedArmor`, so you don't normally need to use this.
+  // This function is primarily useful for defining creatures that have equipment that
+  // doesn't match their maneuvers for some weird reason.
+  setEquipment(items: EquippedItem[]) {
+    let weaponIndex = 0;
+    for (const item of items) {
+      if (isBodyArmor(item)) {
+        this.sheet.setProperties(generateBodyArmorProperties(item));
+      } else if (isShield(item)) {
+        this.sheet.setProperties(generateShieldProperties(item));
+      } else {
+        const key = `weapon_${weaponIndex}_name`;
+        this.sheet.setProperties({ [key]: item });
+        weaponIndex += 1;
+      }
+    }
+    // Clear any remaining weapons
+    while (weaponIndex <= 3) {
+      this.sheet.setProperties({ [`weapon_${weaponIndex}_name`]: '' });
+      weaponIndex += 1;
+    }
+  }
+
+  setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor, shield?: Shield }) {
+    if (bodyArmor) {
+      this.sheet.setProperties(generateBodyArmorProperties(bodyArmor));
+    }
+    if (shield) {
+      this.sheet.setProperties(generateShieldProperties(shield));
+    }
+  }
+
+  // This skips over existing weapons to make sure it's an additive process.
+  // Adding a copy of an existing weapon is a no-op.
+  addWeapon(weapon: MonsterWeapon) {
+    for (let weaponIndex = 0; weaponIndex <= 3; weaponIndex++) {
+      const key = `weapon_${weaponIndex}_name`;
+      const existingWeapon = this.sheet.getPropertyValue(key);
+      if (existingWeapon === weapon) {
+        return;
+      } else if (!existingWeapon) {
+        this.sheet.setProperties({ [key]: weapon });
+        return;
+      }
+    }
+
+    throw new Error(`Creature ${this.name}: Could not add fifth weapon '${weapon}'`);
+  }
+
+  getEquipment(): EquippedItem[] {
+    // We use this as the return ordering
+    const keys = ['body_armor_name', 'shield_name', 'weapon_0_name', 'weapon_1_name', 'weapon_2_name', 'weapon_3_name'];
+    const equippedItemMap = this.sheet.getPropertyValues(keys);
+    return keys.map((key) => equippedItemMap[key]).filter(Boolean);
+  }
+
+  // Use this instead of directly setting `this.activeAbilities` to get some standard
+  // logic.
+  addActiveAbility(ability: ActiveAbility) {
+    if (ability.weapon && isManufactured(ability.weapon)) {
+      this.addWeapon(ability.weapon);
+    }
+    if (this.activeAbilities[ability.name]) {
+      console.warn(`Creature ${this.name}: Overwriting existing ability '${ability.name}'`);
+    }
+    // Monsters ignore personal fatigue
+    if (ability.cost === 'One \\glossterm{fatigue level}') {
+      delete ability.cost;
+    }
+    this.activeAbilities[ability.name] = ability;
+  }
+
   // `displayName` is used if we want to use the mechanical effects of an existing
   // maneuver, but to display it in the book with a different name.
   addManeuver(
     maneuverName: string,
     { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
-    this.activeAbilities[displayName || maneuverName] = {
+    this.addActiveAbility({
       kind: 'maneuver',
       // If the maneuver uses a weapon and does not already have a defined scaling,
       // we should scale accuracy with rank.
@@ -333,10 +413,10 @@ export class Creature implements CreaturePropertyMap {
       tags,
       ...getManeuverByName(maneuverName),
       name: displayName || maneuverName,
-      isMagical: isMagical === undefined ? false : isMagical,
+      isMagical: Boolean(isMagical),
       usageTime,
       weapon,
-    };
+    });
   }
 
   addGrapplingStrike(
@@ -348,7 +428,7 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || `Grappling ${uppercaseFirst(weapon)}`;
+    displayName = displayName || `Grappling ${titleCase(weapon)}`;
 
     // TODO: what is the correct effective rank for this? It should do less damage than
     // a normal strike, but how much?
@@ -363,14 +443,14 @@ export class Creature implements CreaturePropertyMap {
     }
     maneuver.tags.push('Size-Based');
 
-    this.activeAbilities[displayName] = {
+    this.addActiveAbility({
       kind: 'maneuver',
       ...maneuver,
       name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
-      weapon
-    }
+      weapon,
+    });
   }
 
   addPoisonousStrike(
@@ -383,7 +463,7 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || `Venomous ${uppercaseFirst(weapon)}`;
+    displayName = displayName || `Venomous ${titleCase(weapon)}`;
 
     // TODO: what is the correct effective rank for this? It should do less damage than
     // a normal strike, but how much?
@@ -399,7 +479,7 @@ export class Creature implements CreaturePropertyMap {
           It makes ${poison.itMakes}
       `;
 
-    this.activeAbilities[displayName] = {
+    this.addActiveAbility({
       kind: 'maneuver',
       tags,
       ...maneuver,
@@ -407,7 +487,7 @@ export class Creature implements CreaturePropertyMap {
       isMagical: Boolean(isMagical),
       usageTime,
       weapon
-    }
+    });
   }
 
   addWeaponMult(
@@ -419,8 +499,8 @@ export class Creature implements CreaturePropertyMap {
       usageTime,
     }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || uppercaseFirst(weapon);
-    this.activeAbilities[displayName] = {
+    displayName = displayName || titleCase(weapon);
+    this.addActiveAbility({
       kind: 'maneuver',
       tags,
       ...getWeaponMultByRank(this.calculateRank()),
@@ -428,14 +508,14 @@ export class Creature implements CreaturePropertyMap {
       isMagical: Boolean(isMagical),
       usageTime,
       weapon,
-    };
+    });
   }
 
   addSpell(
     spellName: string,
     { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
-    this.activeAbilities[displayName || spellName] = {
+    this.addActiveAbility({
       kind: 'spell',
       tags,
       ...getSpellByName(spellName),
@@ -443,30 +523,30 @@ export class Creature implements CreaturePropertyMap {
       isMagical: isMagical === undefined ? true : isMagical,
       usageTime,
       weapon,
-    };
+    });
   }
 
   addCustomManeuver(maneuver: CustomMonsterAbility) {
-    this.activeAbilities[maneuver.name] = {
+    this.addActiveAbility({
       ...maneuver,
       kind: 'maneuver',
       isMagical: maneuver.isMagical === undefined ? false : maneuver.isMagical,
       rank: 1,
       roles: [],
-    };
+    });
   }
 
   // We don't care what the rank of a custom spell is, but we create one for it anyway to
   // avoid type confusion. Since the spell won't have scaling, the rank should never
   // matter.
   addCustomSpell(spell: CustomMonsterAbility) {
-    this.activeAbilities[spell.name] = {
+    this.addActiveAbility({
       ...spell,
       kind: 'spell',
       isMagical: spell.isMagical === undefined ? true : spell.isMagical,
       rank: 1,
       roles: [],
-    };
+    });
   }
 
   addAutoAttack(config: AutoAttackConfig) {
@@ -543,7 +623,7 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getStandardTraits(): RiseTrait[] {
-    return this.getModifierNames().filter((modifierName) => RISE_TRAITS.has(modifierName));
+    return this.getModifierNames().filter(isTrait);
   }
 
   addImmunity(immuneTo: string) {
@@ -611,7 +691,12 @@ export class Creature implements CreaturePropertyMap {
     // TODO: add fancy logic for some traits to have special effects
     const modifier: CustomModifierConfig = { name: traitName };
 
-    if (traitName === 'multipedal') {
+    if (traitName === 'incorporeal') {
+      modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
+      modifier.numericEffects = [
+        { modifier: 5, statistic: 'stealth' },
+      ];
+    } else if (traitName === 'multipedal') {
       modifier.numericEffects = [
         { modifier: 5, statistic: 'balance' },
         { modifier: 10, statistic: 'speed' },
@@ -660,6 +745,7 @@ export class Creature implements CreaturePropertyMap {
     this.sheet.setProperties(properties);
   }
 
+  // TODO: support missing attributes, such as for mindless creatures
   setBaseAttributes(attributes: number[]) {
     if (attributes.length !== 6) {
       throw new Error(`Invalid attributes array: ${attributes}`);
@@ -685,6 +771,8 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
+  // We currently don't provide a way to bulk *unset* trained skills; this function is
+  // purely additive.
   setTrainedSkills(skillNames: RiseSkill[]) {
     const props: Record<string, string> = {};
     for (const skillName of skillNames) {
@@ -1083,6 +1171,22 @@ export class Creature implements CreaturePropertyMap {
 
   public get description() {
     return this.getPropertyValue('description');
+  }
+
+  public get weapon_0_name() {
+    return this.getPropertyValue('weapon_0_name');
+  }
+
+  public get weapon_1_name() {
+    return this.getPropertyValue('weapon_1_name');
+  }
+
+  public get weapon_2_name() {
+    return this.getPropertyValue('weapon_2_name');
+  }
+
+  public get weapon_3_name() {
+    return this.getPropertyValue('weapon_3_name');
   }
 
   public get movement_speed_0_name() {
