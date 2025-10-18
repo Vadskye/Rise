@@ -49,9 +49,9 @@ interface BaseClassModifier {
 // However, armor_usage_class needs custom handling in `handleArmorDefense`.
 const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
   // ROLES
+  // High durability, high IP, medium defenses.
   brute: {
     armor_defense: 4,
-    armor_usage_class: 'medium',
     durability: 6,
     injury_point_multiplier: 0.75,
     brawn: 5,
@@ -60,10 +60,10 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     mental: 3,
     fatigue_tolerance: 0,
   },
+  // Well rounded
   leader: {
     armor_defense: 4,
-    armor_usage_class: 'medium',
-    durability: 6,
+    durability: 4,
     injury_point_multiplier: 0.5,
     brawn: 4,
     fortitude: 4,
@@ -71,37 +71,37 @@ const BASE_CLASS_MODIFIERS: Record<string, BaseClassModifier> = {
     mental: 4,
     fatigue_tolerance: 0,
   },
+  // Low durability, high defenses
   skirmisher: {
-    armor_defense: 4,
-    armor_usage_class: 'medium',
+    armor_defense: 5,
     durability: 2,
     injury_point_multiplier: 0.5,
     brawn: 4,
-    fortitude: 3,
+    fortitude: 4,
     reflex: 5,
     mental: 4,
     fatigue_tolerance: 0,
   },
+  // Low durability, weak defenses; must have stronger special abilities
   sniper: {
     armor_defense: 3,
-    armor_usage_class: 'medium',
     durability: 2,
     injury_point_multiplier: 0.5,
     brawn: 3,
     fortitude: 3,
-    reflex: 5,
-    mental: 5,
+    reflex: 4,
+    mental: 4,
     fatigue_tolerance: 0,
   },
+  // Polarized defenses, low IP; generally strong, should have weaker special abilities
   warrior: {
     armor_defense: 5,
-    armor_usage_class: 'medium',
     durability: 4,
     injury_point_multiplier: 0.333,
-    brawn: 3,
+    brawn: 4,
     fortitude: 5,
     reflex: 3,
-    mental: 3,
+    mental: 4,
     fatigue_tolerance: 0,
   },
 
@@ -755,7 +755,7 @@ function calcAccuracyCrScaling(level: number, elite?: boolean) {
   }
   let levelScaling = 0;
   if (elite) {
-    let levels_with_accuracy_bonuses = [7, 19];
+    let levels_with_accuracy_bonuses = [13, 21];
     for (const bonus_level of levels_with_accuracy_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;
@@ -772,7 +772,7 @@ function calcDefenseCrScaling(level: number, isMonster: boolean, elite: boolean)
   }
   let levelScaling = 0;
   if (isMonster) {
-    let levels_with_defense_bonuses = [5, 11, 17];
+    let levels_with_defense_bonuses = [7, 19];
     for (const bonus_level of levels_with_defense_bonuses) {
       if (level >= bonus_level) {
         levelScaling += 1;
@@ -944,11 +944,13 @@ function handleArmorDefense() {
       boolean: ['elite'],
     },
     callback: (v) => {
+      const isMonster = Boolean(v.monster_type);
       // calculate attributeModifier
       let attributeModifier = 0;
       let all_usage_classes = [v.body_armor_usage_class, v.shield_usage_class];
-      if (v.base_class) {
-        all_usage_classes.push(BASE_CLASS_MODIFIERS[v.base_class].armor_usage_class);
+      // Monsters only add half dex. They could still get set to zero dex by heavy armor.
+      if (isMonster) {
+        all_usage_classes.push('medium');
       }
       const worstUsageClass =
         all_usage_classes.find((u) => u === 'heavy') ||
