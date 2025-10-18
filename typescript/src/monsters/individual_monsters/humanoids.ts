@@ -7,6 +7,8 @@ export function addHumanoids(grimoire: Grimoire) {
   addGoblins(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
+  addLizardfolk(grimoire);
+  addBugbears(grimoire);
 }
 
 function addBandits(grimoire: Grimoire) {
@@ -42,6 +44,10 @@ function addBandits(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['endurance']);
         creature.setBaseAttributes([2, 0, 2, 0, 1, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+          shield: 'buckler', // Buckler over standard shield so they can use the crossbow more easily
+        });
         creature.addWeaponMult('spear');
         creature.addWeaponMult('heavy crossbow');
       }],
@@ -59,6 +65,9 @@ function addBandits(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness']);
         creature.setBaseAttributes([2, 3, 0, 0, 4, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+        });
         creature.addManeuver('Arrowguide', { weapon: 'longbow' });
         creature.addWeaponMult('longbow');
       }],
@@ -73,9 +82,103 @@ function addBandits(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness']);
         creature.setBaseAttributes([0, 3, 0, 0, 3, 4]);
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+          shield: 'buckler',
+        });
         creature.addSpell('Arc');
         creature.addSpell('Electrocute');
         creature.addSpell('Stunning Discharge');
+      }],
+    ]
+  );
+}
+
+function addBugbears(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Bugbears",
+      sharedInitializer: (creature: Creature) => {
+        creature.setTrainedSkills(['endurance']);
+      },
+    },
+    [
+      ['Bugbear Raider', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'chaotic evil',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 4,
+          size: 'medium',
+        });
+        creature.setTrainedSkills([]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+        });
+        creature.setBaseAttributes([2, 0, 5, -2, 0, 2]);
+        creature.addManeuver('Grapple');
+        creature.addManeuver('Piledriver');
+        creature.addWeaponMult('heavy flail');
+      }],
+
+      ['Bugbear Shaman', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'chaotic evil',
+          base_class: 'leader',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 4,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(["awareness"]);
+        creature.setBaseAttributes([0, 0, 5, -2, 2, 4]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+          shield: 'standard shield',
+        });
+        creature.addSpell('Mind Crush');
+        creature.addSpell('Taunt');
+        creature.addSpell('Repeat');
+        creature.addWeaponMult('flail');
+      }],
+
+      ['Bugbear Growl', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'chaotic evil',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+        });
+        creature.setBaseAttributes([2, 0, 4, -2, 0, 1]);
+        creature.addWeaponMult('heavy flail');
+        creature.addManeuver('Piledriver');
+        creature.addManeuver('Grapple');
+      }],
+
+      ['Bugbear Chief', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral evil',
+          base_class: 'leader',
+          elite: true,
+          creature_type: 'humanoid',
+          level: 6,
+          size: 'medium',
+        });
+        creature.setEquippedArmor({
+          bodyArmor: 'brigandine',
+        });
+        creature.setTrainedSkills([]);
+        creature.setBaseAttributes([3, 0, 6, 0, 3, 6]);
+        creature.addWeaponMult('heavy flail');
+        creature.addManeuver('Weather the Storm', { usageTime: 'elite'});
+        creature.addManeuver('Invigoration', { usageTime: 'elite'});
+        creature.addManeuver('Defensive Stance', { usageTime: 'elite'});
       }],
     ]
   );
@@ -105,6 +208,7 @@ function addCultists(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['endurance']);
         creature.setBaseAttributes([1, 1, 2, -1, 1, 4]);
+        // No body armor; assume they are wearing robes
         creature.addSpell('Drain Life');
         creature.addWeaponMult('scythe');
       }],
@@ -119,6 +223,7 @@ function addCultists(grimoire: Grimoire) {
         });
         creature.setTrainedSkills([]);
         creature.setBaseAttributes([0, 2, 0, -1, 2, 5]);
+        // No body armor; assume they are wearing robes
         creature.addSpell('Ignition');
         creature.addSpell('Pyrohemia');
         creature.addSpell('Burning Grasp');
@@ -154,7 +259,10 @@ function addGoblins(grimoire: Grimoire) {
         creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
         creature.addWeaponMult('spear');
         creature.addManeuver('Rushdown', { weapon: 'spear' });
-        creature.addTrait('Buckler');
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+          shield: 'buckler',
+        });
       }],
       ['Goblin Wolf Rider', (creature: Creature) => {
         creature.setRequiredProperties({
@@ -169,7 +277,10 @@ function addGoblins(grimoire: Grimoire) {
         creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
         creature.addWeaponMult('lance');
         creature.addWeaponMult('spear');
-        creature.addTrait('Buckler');
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+          shield: 'buckler',
+        });
       }],
       ['Goblin Shaman', (creature: Creature) => {
         creature.setRequiredProperties({
@@ -183,6 +294,10 @@ function addGoblins(grimoire: Grimoire) {
         creature.setTrainedSkills(['awareness']);
         creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
         creature.addSpell('Word of Power');
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+          shield: 'standard shield',
+        });
         creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
       }],
     ]
@@ -233,6 +348,9 @@ function addOrcs(grimoire: Grimoire) {
             Peons are typically fresh recruits who have not yet been fully incorporated into an orc army.
           `,
         });
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+        });
         creature.setBaseAttributes([4, 0, 1, -2, 0, 0]);
         creature.addWeaponMult('greataxe');
       }],
@@ -251,6 +369,9 @@ function addOrcs(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([5, 0, 2, -2, 0, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+        });
         creature.addWeaponMult('greataxe');
         creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
       }],
@@ -270,6 +391,9 @@ function addOrcs(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([5, 1, 2, 0, 0, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+        });
         creature.addCustomManeuver({
           name: "Butcher's Cleaver",
           effect: `
@@ -296,6 +420,9 @@ function addOrcs(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([6, 0, 3, -2, 1, 1]);
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+        });
         creature.addWeaponMult('greataxe');
         creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
         creature.addWeaponMult('heavy crossbow');
@@ -316,6 +443,9 @@ function addOrcs(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([6, 0, 4, 0, 2, 3]);
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+        });
         creature.addWeaponMult('greataxe');
         creature.addManeuver('Distant Shot', { weapon: 'heavy crossbow' });
         creature.addManeuver('Armorcrusher', { weapon: 'greataxe' });
@@ -341,6 +471,9 @@ function addOrcs(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([4, 1, 1, -1, 1, 4]);
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+        });
         creature.addSpell('Reveal Victory');
         creature.addSpell('Foresee Safety');
         creature.addSpell("Executioner's Axe");
@@ -383,7 +516,11 @@ function addTownsfolk(grimoire: Grimoire) {
         });
         creature.setTrainedSkills([]);
         creature.setBaseAttributes([1, 1, 1, 0, 0, 0]);
-        creature.addWeaponMult('spear'); // TODO: Add 'broadsword' to MonsterWeapon type or find a better equivalent.
+        creature.setEquippedArmor({
+          bodyArmor: 'leather lamellar',
+          shield: 'standard shield',
+        });
+        creature.addWeaponMult('spear');
 
       }],
       ['Town Healer', (creature: Creature) => {
@@ -406,8 +543,76 @@ function addTownsfolk(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['medicine']);
         creature.setBaseAttributes([0, 0, 0, 0, 3, 3]);
+        creature.setEquippedArmor({
+          bodyArmor: 'buff leather',
+          shield: 'buckler',
+        });
         creature.addSpell('Restoration');
         creature.addWeaponMult('club');
+      }],
+    ]
+  );
+}
+
+function addLizardfolk(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Lizardfolk",
+      hasArt: true,
+      knowledge: {
+        normal: `
+          Lizardfolk are Medium bipedal creatures covered in reptilian scales.
+          They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
+          Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
+          Their scales are typically green, gray, or brown.
+          In battle, they typically fight as unorganized individuals.
+        `,
+        hard: `
+          Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
+          They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+          If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
+          Advanced tribes use more sophisticated tactics and have better traps and ambushes.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('amphibious');
+        creature.addCustomMovementSpeed('Land (normal)');
+        creature.addCustomMovementSpeed('Swim (normal)');
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+          shield: 'standard shield',
+        });
+      },
+    },
+    [
+      ['Lizardfolk Grunt', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 3,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['swim']);
+        creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
+        creature.addWeaponMult('spear');
+        creature.addManeuver('Bloodletter', { weapon: 'bite' });
+      }],
+      ['Lizardfolk Champion', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 5,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['swim']);
+        creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
+        creature.addWeaponMult('spear');
+        creature.addManeuver('Bloodletter', { weapon: 'bite' });
+        creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
       }],
     ]
   );

@@ -13,8 +13,8 @@ import {
   getWeaponTag,
   getWeaponAccuracy,
   getWeaponPowerMultiplier,
+  MonsterWeapon,
 } from '@src/monsters/weapons';
-import { MonsterWeapon } from '@src/monsters/weapons';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -50,18 +50,29 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
   abilityPart = abilityPart.replace(/\byou are\b/g, "it is");
   abilityPart = abilityPart.replace(/\bYou are\b/g, "The $name is");
+  abilityPart = abilityPart.replace(/\bYou and the\b/g, "The $name and the");
+  abilityPart = abilityPart.replace(/\bYou also control\b/g, "The $name also controls");
   abilityPart = abilityPart.replace(/\bYou become\b/g, "The $name becomes");
+  abilityPart = abilityPart.replace(/\b, you become\b/g, ", it becomes");
   abilityPart = abilityPart.replace(/\bYou must have\b/g, "The $name must have");
   abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
-  abilityPart = abilityPart.replace(/\bprotects you\b\b/g, "protects it");
+  abilityPart = abilityPart.replace(/\bthat you missed\b/g, "that it missed");
+  // TODO: standardize on "protects you" vs "affects attacks against you"
+  abilityPart = abilityPart.replace(/\bprotects you\b\b/g, "protects the $name");
+  abilityPart = abilityPart.replace(/\battacks against you\b\b/g, "attacks against the $name");
   abilityPart = abilityPart.replace(/\byour subsequent\b/g, "the $name's subsequent");
   abilityPart = abilityPart.replace(/\bYou can\b/g, "The $name can");
   abilityPart = abilityPart.replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
   abilityPart = abilityPart.replace(/\bWhen you cast this spell, you create\b/g, "When the $name casts this spell, it creates");
   abilityPart = abilityPart.replace(/\bYou create\b/g, "The $name creates");
   abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
+  // This is overly specific since we might want to use "it" for some uses of "you
+  // regain".
+  abilityPart = abilityPart.replace(/\bIn addition, you regain\b/g, "In addition, the $name regains");
   abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
+  abilityPart = abilityPart.replace(/\bif you take\b/g, "if the $name takes");
   abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
+  abilityPart = abilityPart.replace(/goaded by you\b/g, "goaded by the $name");
   abilityPart = abilityPart.replace(/\bto you\b/g, "to it");
   abilityPart = abilityPart.replace(/\byour space\b/g, "its space");
   abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
@@ -80,7 +91,8 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   return abilityPart;
 }
 
-const makeStrikePattern = /\b[mM]ake a.*strike\b/;
+const makeStrikePattern = /\b[mM]ake a.*(strike\b|\\glossterm{strike})/;
+const brawlingAttackPattern = /\b[mM]ake a (brawling attack\b|\\glossterm{brawling attack})/;
 
 // monsterName and abilityName are only provided to improve the clarity of warnings and
 // errors.
@@ -155,6 +167,10 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     restructureStrikeAbility(monster, ability as StrikeActiveAbility);
   }
 
+  if (ability.effect && brawlingAttackPattern.test(ability.effect)) {
+    restructureBrawlingAbility(monster, ability);
+  }
+
   if (ability.attack) {
     for (const key of ['crit', 'hit', 'injury', 'miss', 'targeting'] as const) {
       if (ability.attack[key]) {
@@ -185,15 +201,15 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
 // abilities and non-strike abilities. Since strikes don't use standard damage rank
 // values, we also have to calculate the exact damage dealt by the strike here.
 export function restructureStrikeAbility(monster: Creature, ability: StrikeActiveAbility) {
-  // Perform generic replacements that matter regardless of which hit/injury/targeting
-  // segment they correspond to.
-  // We don't care if the strike was originally restricted to melee-only.
-  ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
-
   // Although we do call `replaceGenericTerms` at the end, calling it on `effect`
   // *before* processing it makes some of our processing easier. For example, we can
   // reliably use `$name` in regex rather than something like `(you|$name)`.
   ability.effect = replaceGenericTerms(monster, ability, ability.effect);
+
+  // Perform generic replacements that matter regardless of which hit/injury/targeting
+  // segment they correspond to.
+  // We don't care if the strike was originally restricted to melee-only.
+  ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
 
   let defense = 'Armor';
   // Use the correct alternate defense and strip the whole sentence, since we've
@@ -229,6 +245,14 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   const missText = missMatch ? missMatch[1] : undefined;
 
   const accuracyModifierText = calculateStrikeAccuracyText(monster, ability);
+  let strikeRange = ' melee';
+  const tag = getWeaponTag(ability.weapon) || '';
+  if (/Projectile/.test(tag)) {
+    strikeRange = ' ranged';
+  } else if (/Thrown/.test(tag)) {
+    // Assume thrown weapons can be used at any range.
+    strikeRange = '';
+  }
 
   ability.attack = {
     crit: critText,
@@ -237,7 +261,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
     injury: injuryText,
     // TODO: if we support non-melee monster weapons, this would have to check the weapon
     // to determine melee vs ranged.
-    targeting: `${preStrikeText}$accuracy${accuracyModifierText} melee strike vs. ${defense} with its ${ability.weapon}.${postStrikeText}`.trim(),
+    targeting: `${preStrikeText}$accuracy${accuracyModifierText}${strikeRange} strike vs. ${defense} with its ${ability.weapon}.${postStrikeText}`.trim(),
   };
 
   ability.tags = ability.tags || [];
@@ -257,6 +281,16 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // We technically shouldn't have access to the 'effect' key here so we have to cheat the
   // types a bit.
   delete (ability as ActiveAbility).effect;
+}
+
+export function restructureBrawlingAbility(monster: Creature, ability: ActiveAbility) {
+  ability.effect = replaceGenericTerms(monster, ability, ability.effect!);
+
+  // TODO: handle brawling attacks with local accuracy modifiers
+  ability.effect = ability.effect.replace(/([mM])ake a (brawling attack|\\glossterm{brawling attack})/, (_, maybeCapital) => {
+    const theText = maybeCapital === 'M' ? 'The' : 'the';
+    return `${theText} $name makes a $brawlingaccuracy attack`;
+  });
 }
 
 function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility): string {
@@ -391,18 +425,23 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     ability.scaling = undefined;
   }
 
-  // Accuracy-modified attack
+  // Accuracy-modified attack.
+  // Note that we technically handle brawling accuracy here, but it should be extremely
+  // rare for a *strike* to use brawling accuracy, and maybe impossible. Normal brawling
+  // attacks are handled with `restructureBrawlingAbility`.
   attack.targeting = attack.targeting.replace(
-    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
-    (_, maybeCapital, maybeReactive, defense, modifierSign, modifierValue) => {
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
+    (_, maybeCapital, attackType, defense, modifierSign, modifierValue) => {
       modifierSign = standardizeModifierSign(modifierSign);
       const withSign = modifierSign === '+' ? Number(modifierValue) : Number(modifierValue) * -1;
       const withScaling = withSign + scalingAccuracyModifier;
       modifierSign = withScaling >= 0 ? '+' : '-';
       const withoutSign = Math.abs(withScaling);
-      const attackText = /reactive/.test(maybeReactive) ? '\\glossterm{reactive attack}' : 'attack';
+
+      const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
+      const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a $accuracy${modifierSign}${withoutSign} ${attackText} vs${defense}`;
+      return `${theText} $name makes a ${accuracyText}${modifierSign}${withoutSign} ${attackText} vs${defense}`;
     },
   );
 
@@ -410,11 +449,12 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     scalingAccuracyModifier > 0 ? `+${scalingAccuracyModifier}` : '';
   // Baseline accuracy attack
   attack.targeting = attack.targeting.replace(
-    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack})/g,
-    (_, maybeCapital, maybeReactive) => {
-      const attackText = /reactive/.test(maybeReactive) ? '\\glossterm{reactive attack}' : 'attack';
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack})/g,
+    (_, maybeCapital, attackType) => {
+      const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
+      const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a $accuracy${scalingAccuracyModifierText} ${attackText}`
+      return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`
     },
   );
 

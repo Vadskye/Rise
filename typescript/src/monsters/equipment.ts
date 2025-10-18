@@ -39,6 +39,17 @@ export function isShield(item: EquippedItem): item is Shield {
   return SHIELDS.has(item as Shield);
 }
 
+// For now, we ignore all mechanical effects of fancy body armor.
+// Since heavy armor doesn't provide monsters with a numerical benefit, it doesn't provide
+// them with a speed penalty either.
+// In the future, we could change monsters to actually use body armor if we want to get
+// complicated.
+export function generateBodyArmorProperties(bodyArmor: BodyArmor) {
+  return {
+    body_armor_name: bodyArmor,
+  };
+}
+
 export function generateShieldProperties(shield: Shield) {
   return {
     buckler: {

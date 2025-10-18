@@ -398,75 +398,93 @@ export function addMagicalBeasts(grimoire: Grimoire) {
     });
   });
 
-  // Ichor creatures should be +3 levels over their animal counterpart
-  grimoire.addMonster('Ichor Black Bear', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral',
-      base_class: 'brute',
-      elite: true,
-      creature_type: 'beast',
-      level: 4,
-      size: 'medium',
-    });
-    creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
-    creature.setBaseAttributes([5, 1, 6, -8, 2, -1]);
-    creature.addTrait('multipedal');
-
-    creature.addWeaponMult('claws', { usageTime: 'elite' });
-    creature.addWeaponMult('bite');
-
-    ichorify(creature);
-  });
-
-  grimoire.addMonster('Ichor Brown Bear', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral',
-      base_class: 'brute',
-      elite: true,
-      creature_type: 'beast',
-      level: 6,
-      size: 'large',
-    });
-    creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
-    creature.setBaseAttributes([6, 1, 7, -8, 2, 1]);
-    creature.addTrait('multipedal');
-
-    creature.addWeaponMult('claws', { usageTime: 'elite' });
-    creature.addWeaponMult('bite');
-
-    ichorify(creature);
-  });
-
-  grimoire.addMonster('Ichor Wolf', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral',
-      base_class: 'skirmisher',
-      elite: false,
-      creature_type: 'beast',
-      level: 4,
-      size: 'medium',
-    });
-    creature.setTrainedSkills(['awareness', 'survival']);
-    creature.setBaseAttributes([1, 2, 1, -7, 3, 0]);
-    creature.addTrait('multipedal');
-
-    creature.addWeaponMult('bite');
-    ichorify(creature);
-  });
+  addIchorTainted(grimoire);
 }
 
-// This modifies in place.
-function ichorify(creature: Creature) {
-  creature.addCustomModifier({
-    name: 'Ichor',
-    immune: 'Critical hits',
-    vulnerable: 'Fire',
-  });
-  for (const ability of creature.getActiveAbilities()) {
-    ability.effect += `
-      \\injury The target becomes unable to regain hit points as a \\glossterm{condition}.
-    `;
-  }
+function addIchorTainted(grimoire: Grimoire) {
+  // Ichor creatures should be +3 levels over their animal counterpart
 
-  return creature;
+  grimoire.addMonsterGroup(
+    {
+      name: "Ichor-Tainted",
+      knowledge: {
+        normal: `
+            The dreadful magical liquid known as ichor has no known origin.
+            All is known is that it can corrupt creatures who contact it.
+            Creatures who become tainted in this way recklessly attack anything they encounter, making them extremely dangerous.
+        `,
+        hard: `
+          Ichor-tainted creatures have had their internal organs restructured in unnatural ways, making them difficult to dispatch quickly.
+          When the ichor spreads, as it often does during a fight, it inhibits healing as it tries to corrupt its new host.
+        `,
+        legendary: `
+          Only animals can be fully transformed by ichor.
+          Other creatures suffer temporary effects at worst.
+          The biological structure of transformed animals bears some resemblance to aberrations.
+          Some scholars theorize that this means the ichor originated from the Eternal Void, while others think it is a mere imitation.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addCustomModifier({
+          name: 'Ichor',
+          immune: 'Critical hits',
+          vulnerable: 'Fire',
+        });
+        for (const ability of creature.getActiveAbilities()) {
+          ability.effect += `
+            \\injury The target becomes unable to regain hit points as a \\glossterm{condition}.
+          `;
+        }
+      }
+    },
+    [
+      ['Ichor Black Bear', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: true,
+          creature_type: 'beast',
+          level: 4,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+        creature.setBaseAttributes([5, 1, 6, -8, 2, -1]);
+        creature.addTrait('multipedal');
+
+        creature.addWeaponMult('claws', { usageTime: 'elite' });
+        creature.addWeaponMult('bite');
+      }],
+      ['Ichor Brown Bear', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: true,
+          creature_type: 'beast',
+          level: 6,
+          size: 'large',
+        });
+        creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+        creature.setBaseAttributes([6, 1, 7, -8, 2, 1]);
+        creature.addTrait('multipedal');
+
+        creature.addWeaponMult('claws', { usageTime: 'elite' });
+        creature.addWeaponMult('bite');
+      }],
+      ['Ichor Wolf', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 4,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['awareness', 'survival']);
+        creature.setBaseAttributes([1, 2, 1, -7, 3, 0]);
+        creature.addTrait('multipedal');
+
+        creature.addWeaponMult('bite');
+      }],
+    ],
+  );
 }
