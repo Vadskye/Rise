@@ -111,7 +111,7 @@ function genStatisticsText(monster: Creature): string {
 }
 
 function genDefensiveStatisticsText(monster: Creature): string {
-  const mentalText = monster.hasModifier('mindless') ? '' : `\\monsep Ment ${monster.mental}`;
+  const mentalText = monster.hasTrait('mindless') ? '' : `\n\\monsep Ment ${monster.mental}`;
 
   return `
     \\pari \\textbf{HP} ${monster.hit_points}
@@ -119,8 +119,7 @@ function genDefensiveStatisticsText(monster: Creature): string {
     \\pari \\textbf{Defenses}
       Armor ${monster.armor_defense}
       \\monsep Brawn ${monster.brawn}
-      \\monsep Fort ${monster.fortitude}
-      ${mentalText}
+      \\monsep Fort ${monster.fortitude}${mentalText}
       \\monsep Ref ${monster.reflex}
   `;
 }
@@ -219,14 +218,13 @@ function genAttributesText(monster: Creature): string {
   };
 
   return [
-    monster.strength,
-    monster.dexterity,
-    monster.constitution,
-    monster.intelligence,
-    monster.perception,
-    monster.willpower,
+    formatAttribute(monster.strength),
+    formatAttribute(monster.dexterity),
+    formatAttribute(monster.constitution),
+    monster.hasTrait('mindless') ? '---' : formatAttribute(monster.intelligence),
+    formatAttribute(monster.perception),
+    monster.hasTrait('mindless') ? '---' : formatAttribute(monster.willpower),
   ]
-    .map(formatAttribute)
     .join(', ');
 }
 
