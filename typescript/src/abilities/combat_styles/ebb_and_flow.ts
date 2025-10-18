@@ -85,7 +85,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 1,
       roles: ['burst'],
@@ -97,7 +97,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
         However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 5,
       roles: ['burst'],
