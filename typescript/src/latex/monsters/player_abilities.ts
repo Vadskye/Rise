@@ -56,6 +56,9 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/\b, you become\b/g, ", it becomes");
   abilityPart = abilityPart.replace(/\bYou must have\b/g, "The $name must have");
   abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
+  abilityPart = abilityPart.replace(/\byour attack\b/g, "its attack");
+  abilityPart = abilityPart.replace(/\bwhether you get\b/g, "whether it gets");
+  abilityPart = abilityPart.replace(/\byou cannot get\b/g, "it cannot get");
   abilityPart = abilityPart.replace(/\bthat you missed\b/g, "that it missed");
   // TODO: standardize on "protects you" vs "affects attacks against you"
   abilityPart = abilityPart.replace(/\bprotects you\b\b/g, "protects the $name");
@@ -150,6 +153,9 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
+  // Monster abilities shouldn't show the normal player-facing narrative text
+  delete ability.narrative;
+
   if (ability.effect && makeStrikePattern.test(ability.effect)) {
     if (!ability.weapon) {
       throw new Error(
@@ -378,7 +384,12 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   // numbers instead of a scaling expression.
   const extraDamageDiceMatch = effect.match(/\b(\d+)d(\d+) (extra damage|\\glossterm{extra damage})/);
   if (extraDamageDiceMatch) {
-    console.warn("TODO: Unable to parse extra damage dice");
+    // Conditional extra damage is fine, and we don't need to warn about it; we can't
+    // incorporate it into the main effect anyway.
+    const conditionalExtraDamage = /extra damage}? if/
+    if (!conditionalExtraDamage) {
+      console.warn("TODO: Unable to parse extra damage dice");
+    }
   }
 
   const extraFlatDamageMatch = effect.match(/ (\d+) (extra damage|\\glossterm{extra damage})/);

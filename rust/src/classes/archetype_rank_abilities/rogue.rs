@@ -19,14 +19,14 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
 
                     The strike deals 1d4 \glossterm{extra damage} if the target is \unaware or \partiallyunaware of your attack, or if they are adjacent to one of your \glossterm{allies}.
                     This extra damage is doubled if the target is fully unaware of your attack.
-                    You do not gain this damage against creatures that you are unable to score a \glossterm{critical hit} against.
+                    It does not apply if the target is immune to \\glossterm{critical hits}.
 
                     \rankline
                     \rank{2} The extra damage increases to 1d6.
                     \rank{3} The extra damage increases to 1d10.
                     \rank{4} The extra damage increases to 2d8.
-                    \rank{5} The extra damage increases to 4d8.
-                    \rank{6} The extra damage increases to 6d8.
+                    \rank{5} The extra damage increases to 3d10.
+                    \rank{6} The extra damage increases to 5d10.
                     \rank{7} The extra damage increases to 8d10.
                 \end{activeability}
             ",

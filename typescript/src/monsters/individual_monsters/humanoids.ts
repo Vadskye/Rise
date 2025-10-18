@@ -3,12 +3,13 @@ import { Creature } from '@src/character_sheet/creature';
 
 export function addHumanoids(grimoire: Grimoire) {
   addBandits(grimoire);
+  addBugbears(grimoire);
   addCultists(grimoire);
   addGoblins(grimoire);
+  addKobolds(grimoire);
+  addLizardfolk(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
-  addLizardfolk(grimoire);
-  addBugbears(grimoire);
 }
 
 function addBandits(grimoire: Grimoire) {
@@ -176,9 +177,9 @@ function addBugbears(grimoire: Grimoire) {
         creature.setTrainedSkills([]);
         creature.setBaseAttributes([3, 0, 6, 0, 3, 6]);
         creature.addWeaponMult('heavy flail');
-        creature.addManeuver('Weather the Storm', { usageTime: 'elite'});
-        creature.addManeuver('Invigoration', { usageTime: 'elite'});
-        creature.addManeuver('Defensive Stance', { usageTime: 'elite'});
+        creature.addManeuver('Weather the Storm', { usageTime: 'elite' });
+        creature.addManeuver('Invigoration', { usageTime: 'elite' });
+        creature.addManeuver('Defensive Stance', { usageTime: 'elite' });
       }],
     ]
   );
@@ -551,6 +552,84 @@ function addTownsfolk(grimoire: Grimoire) {
         creature.addWeaponMult('club');
       }],
     ]
+  );
+}
+
+function addKobolds(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Kobolds",
+      sharedInitializer: (creature) => {
+        creature.setTrainedSkills(['awareness', 'stealth']);
+      },
+    },
+    [
+      ['Kobold Nipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'skirmisher',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 2,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+        creature.addSneakAttack('smallswords');
+      }],
+      ['Kobold Snipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'sniper',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 2,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+        creature.addWeaponMult('longbow');
+        creature.addManeuver('Heartpiercer', {weapon: 'longbow'});
+      }],
+      ['Dragonsworn Nipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'skirmisher',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 11,
+          size: 'medium',
+        });
+        creature.addPassiveAbility({
+          name: "Dragonsworn",
+          effect: `
+            The $name is \\impervious to the tag associated with the dragon it swore to serve.
+          `
+        });
+        creature.addImpervious('Varies');
+        creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
+        creature.addSneakAttack('smallswords');
+      }],
+      ['Dragonsworn Snipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'sniper',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 11,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
+        creature.addPassiveAbility({
+          name: "Dragonsworn",
+          effect: `
+            The $name is \\impervious to the tag associated with the dragon it swore to serve.
+          `
+        });
+        creature.addImpervious('Varies');
+        creature.addWeaponMult('longbow');
+        creature.addManeuver('Distant Shot', {weapon: 'longbow'});
+        creature.addManeuver('Pure Precision', {weapon: 'longbow'});
+      }],
+    ],
   );
 }
 
