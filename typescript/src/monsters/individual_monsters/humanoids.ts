@@ -305,6 +305,148 @@ function addGoblins(grimoire: Grimoire) {
   );
 }
 
+function addLizardfolk(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Lizardfolk",
+      hasArt: true,
+      knowledge: {
+        normal: `
+          Lizardfolk are Medium bipedal creatures covered in reptilian scales.
+          They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
+          Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
+          Their scales are typically green, gray, or brown.
+          In battle, they typically fight as unorganized individuals.
+        `,
+        hard: `
+          Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
+          They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
+          If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
+          Advanced tribes use more sophisticated tactics and have better traps and ambushes.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('amphibious');
+        creature.addCustomMovementSpeed('Land (normal)');
+        creature.addCustomMovementSpeed('Swim (normal)');
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+          shield: 'standard shield',
+        });
+      },
+    },
+    [
+      ['Lizardfolk Grunt', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 3,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['swim']);
+        creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
+        creature.addWeaponMult('spear');
+        creature.addManeuver('Bloodletter', { weapon: 'bite' });
+      }],
+      ['Lizardfolk Champion', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'humanoid',
+          level: 5,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['swim']);
+        creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
+        creature.addWeaponMult('spear');
+        creature.addManeuver('Bloodletter', { weapon: 'bite' });
+        creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
+      }],
+    ]
+  );
+}
+
+function addKobolds(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Kobolds",
+      sharedInitializer: (creature) => {
+        creature.setTrainedSkills(['awareness', 'stealth']);
+      },
+    },
+    [
+      ['Kobold Nipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'skirmisher',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 2,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+        creature.addSneakAttack('smallswords');
+      }],
+      ['Kobold Snipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'sniper',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 2,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+        creature.addWeaponMult('longbow');
+        creature.addManeuver('Heartpiercer', {weapon: 'longbow'});
+      }],
+      ['Dragonsworn Nipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'skirmisher',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 11,
+          size: 'medium',
+        });
+        creature.addPassiveAbility({
+          name: "Dragonsworn",
+          effect: `
+            The $name is \\impervious to the tag associated with the dragon it swore to serve.
+          `
+        });
+        creature.addImpervious('Varies');
+        creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
+        creature.addSneakAttack('smallswords');
+      }],
+      ['Dragonsworn Snipper', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'sniper',
+          creature_type: 'humanoid',
+          elite: false,
+          level: 11,
+          size: 'medium',
+        });
+        creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
+        creature.addPassiveAbility({
+          name: "Dragonsworn",
+          effect: `
+            The $name is \\impervious to the tag associated with the dragon it swore to serve.
+          `
+        });
+        creature.addImpervious('Varies');
+        creature.addWeaponMult('longbow');
+        creature.addManeuver('Distant Shot', {weapon: 'longbow'});
+        creature.addManeuver('Pure Precision', {weapon: 'longbow'});
+      }],
+    ],
+  );
+}
+
 function addOrcs(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
@@ -554,146 +696,3 @@ function addTownsfolk(grimoire: Grimoire) {
     ]
   );
 }
-
-function addKobolds(grimoire: Grimoire) {
-  grimoire.addMonsterGroup(
-    {
-      name: "Kobolds",
-      sharedInitializer: (creature) => {
-        creature.setTrainedSkills(['awareness', 'stealth']);
-      },
-    },
-    [
-      ['Kobold Nipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'skirmisher',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 2,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-        creature.addSneakAttack('smallswords');
-      }],
-      ['Kobold Snipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'sniper',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 2,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-        creature.addWeaponMult('longbow');
-        creature.addManeuver('Heartpiercer', {weapon: 'longbow'});
-      }],
-      ['Dragonsworn Nipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'skirmisher',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 11,
-          size: 'medium',
-        });
-        creature.addPassiveAbility({
-          name: "Dragonsworn",
-          effect: `
-            The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `
-        });
-        creature.addImpervious('Varies');
-        creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
-        creature.addSneakAttack('smallswords');
-      }],
-      ['Dragonsworn Snipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'sniper',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 11,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
-        creature.addPassiveAbility({
-          name: "Dragonsworn",
-          effect: `
-            The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `
-        });
-        creature.addImpervious('Varies');
-        creature.addWeaponMult('longbow');
-        creature.addManeuver('Distant Shot', {weapon: 'longbow'});
-        creature.addManeuver('Pure Precision', {weapon: 'longbow'});
-      }],
-    ],
-  );
-}
-
-function addLizardfolk(grimoire: Grimoire) {
-  grimoire.addMonsterGroup(
-    {
-      name: "Lizardfolk",
-      hasArt: true,
-      knowledge: {
-        normal: `
-          Lizardfolk are Medium bipedal creatures covered in reptilian scales.
-          They are slightly taller and bulkier than humans, typically standing 6 to 7 feet tall and weighing up to 250 pounds.
-          Their tail resembles that of a crocodile, and is typically 3 to 4 feet long.
-          Their scales are typically green, gray, or brown.
-          In battle, they typically fight as unorganized individuals.
-        `,
-        hard: `
-          Lizardfolk use their tail for balance on land and to accelerate their swimming while in water.
-          They prefer direct charges and massed rushes in battle, sometimes trying to force foes into the water, where the lizardfolk have an advantage.
-          If lizardfolk are outnumbered or if their territory is being invaded, they set snares, plan ambushes, and make raids to hinder enemy supplies.
-          Advanced tribes use more sophisticated tactics and have better traps and ambushes.
-        `,
-      },
-      sharedInitializer: (creature: Creature) => {
-        creature.addTrait('amphibious');
-        creature.addCustomMovementSpeed('Land (normal)');
-        creature.addCustomMovementSpeed('Swim (normal)');
-        creature.setEquippedArmor({
-          bodyArmor: 'scale',
-          shield: 'standard shield',
-        });
-      },
-    },
-    [
-      ['Lizardfolk Grunt', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['swim']);
-        creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
-        creature.addWeaponMult('spear');
-        creature.addManeuver('Bloodletter', { weapon: 'bite' });
-      }],
-      ['Lizardfolk Champion', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 5,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['swim']);
-        creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
-        creature.addWeaponMult('spear');
-        creature.addManeuver('Bloodletter', { weapon: 'bite' });
-        creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
-      }],
-    ]
-  );
-}
-
