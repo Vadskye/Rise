@@ -343,10 +343,10 @@ t.test('convertAbilityToMonsterLatex', (t) => {
       \\hypertargetraised{maneuver:Grapple}{}%
       \\hypertargetraised{maneuver:grapple}{}%
       \\noindent
-      Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
+      The $name makes a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
 
-        \\hit You and the target are \\grappled by each other.
-        \\crit You also control the grapple (see \\pcref{Controlling a Grapple}).% 
+        \\hit The $name and the target are \\grappled by each other.
+        \\crit The $name also controls the grapple (see \\pcref{Controlling a Grapple}).% 
       \\vspace{0.1em}%
     \\end{activeability}`);
 
