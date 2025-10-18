@@ -293,11 +293,18 @@ def armor(destination, armor_type):
         input_attributes={"name": parseable_type + "_durability"},
     )
     shield_reflex = labeled_number_input(
-        "Ref",
+        "Reflex",
         {
             "class": "shield-reflex",
         },
         input_attributes={"name": parseable_type + "_reflex"},
+    )
+    shield_accuracy = labeled_number_input(
+        "Accuracy",
+        {
+            "class": "shield-accuracy",
+        },
+        input_attributes={"name": parseable_type + "_accuracy"},
     )
     body_armor_vitals = labeled_number_input(
         "Vital rolls",
@@ -326,7 +333,7 @@ def armor(destination, armor_type):
             (
                 body_armor_vitals
                 if armor_type == "Body armor"
-                else div()
+                else shield_accuracy
             ),
             (
                 labeled_number_input(
