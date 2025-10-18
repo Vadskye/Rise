@@ -2,7 +2,7 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 import { BRIEF_COOLDOWN } from '@src/abilities/constants';
 
-export function addMagicalBeasts(grimoire: Grimoire) {
+export function addBeasts(grimoire: Grimoire) {
   grimoire.addMonster('Ankheg', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral',
