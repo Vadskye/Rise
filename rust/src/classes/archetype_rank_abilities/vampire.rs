@@ -49,7 +49,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \begin{magicalsustainability}{Charming Gaze}{Standard action}
                 \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor), \abilitytag{Visual}
                 \rankline
-                Make an attack vs. Mental against all humanoid creatures in a \medarea cone from you.
+                Make an attack vs. Mental against all humanoid creatures and undead creatures in a \medarea cone from you.
                 You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
                 \hit The target is \charmed by you.
                 Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
@@ -124,7 +124,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
               \begin{magicalactiveability}{Dominating Gaze}{Standard action}
                 \abilitytags \abilitytag{Emotion}, \abilitytag{Visual}
                 \rankline
-                Make an attack vs. Mental against all humanoid \glossterm{enemies} within a \medarea \glossterm{cone} from you.
+                Make an attack vs. Mental against all humanoid \glossterm{enemies} and undead enemies within a \medarea \glossterm{cone} from you.
                 \hit If the target is \glossterm{injured} or its \glossterm{character rank} is at least 2 lower than yours, it is \confused as a \glossterm{condition}.
                 \crit If the target was already confused from a previous use of this ability, you may \glossterm{attune} to this ability.
                 When you do, the target becomes \dominated by you for the duration of that attunement.
