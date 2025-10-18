@@ -381,7 +381,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike}.
         It deals double damage, but you cannot get a \\glossterm{critical hit}.
         After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 3,
       roles: ['burst'],
@@ -394,7 +394,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
         It deals triple damage, but you cannot get a \\glossterm{critical hit}.
         After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 7,
       roles: ['burst'],

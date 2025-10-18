@@ -188,7 +188,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You are \\glossterm{briefly} \\fortified and \\steeled.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks made against you during the current phase.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
       `,
       rank: 3,
       roles: ['focus'],
@@ -201,7 +201,7 @@ export const unbreakableDefense: CombatStyle = {
       // 1.2 EA
       effect: `
         You are \\glossterm{briefly} \\empowered, \\fortified, and \\steeled.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks made against you during the current phase.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
       `,
       rank: 7,
       roles: ['focus'],
@@ -213,7 +213,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 3,
       roles: ['generator'],
@@ -225,7 +225,7 @@ export const unbreakableDefense: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty that deals triple damage.
         Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks made against you during the current phase.
+        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
       `,
       rank: 7,
       roles: ['generator'],
@@ -272,8 +272,8 @@ export const unbreakableDefense: CombatStyle = {
       // Theoretically 3 rounds of shielded, so 0.9 EA.
       effect: `
         You become \\glossterm{briefly} \\shielded.
-        At the end of next round, if you took damage that round, you are \\glossterm{briefly} \\shielded again.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks made against you during the current phase.
+        Next round, if you take damage that round, you become \\glossterm{briefly} \\shielded again.
+        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
       `,
       rank: 1,
       roles: ['focus'],

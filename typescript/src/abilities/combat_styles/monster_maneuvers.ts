@@ -108,6 +108,30 @@ export const monsterManeuvers: CombatStyle = {
       `,
       rank: 1,
       roles: ['boon'],
-    }
+    },
+    // Same as Grapple universal ability
+    {
+      name: 'Grapple',
+      effect: `
+        Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.
+
+        \\hit You and the target are \\grappled by each other.
+        \\crit You also control the grapple (see \\pcref{Controlling a Grapple}).
+      `,
+      rank: 1,
+      roles: ['softener'],
+      tags: ['Brawling', 'Size-Based'],
+    },
+    // Same as Trip universal ability
+    {
+      name: 'Trip',
+      effect: `
+        Make a \\glossterm{brawling attack} vs. Brawn using a free hand against a creature you \\glossterm{touch}.
+        \\hit The target becomes \\prone.
+      `,
+      rank: 1,
+      roles: ['trip'],
+      tags: ['Brawling', 'Size-Based'],
+    },
   ],
 };
