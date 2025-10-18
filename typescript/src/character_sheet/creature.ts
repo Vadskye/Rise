@@ -37,7 +37,7 @@ import {
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured } from '@src/monsters/weapons';
-import { ActiveAbility, ActiveAbilityRank, PassiveAbility } from '@src/abilities';
+import { ActiveAbility, ActiveAbilityRank, PassiveAbility, ActiveAbilityScaling } from '@src/abilities';
 import { titleCase } from '@src/latex/format/title_case';
 import { EquippedItem, isBodyArmor, isShield, generateBodyArmorProperties, generateShieldProperties, BodyArmor, Shield } from '@src/monsters/equipment';
 
@@ -219,11 +219,20 @@ export interface MonsterAbilityOptions {
   weapon?: MonsterWeapon;
 }
 
-export interface CustomMonsterAbility
+interface NonScaledCustomMonsterAbility
   extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'rank' | 'roles' | 'scaling'> {
   isMagical?: boolean;
   usageTime?: MonsterAttackUsageTime;
 }
+
+// If you provide `scaling`, you must also provide `rank`. Most monster abilities will
+// provide neither.
+interface ScaledCustomMonsterAbility extends NonScaledCustomMonsterAbility {
+  rank: ActiveAbilityRank;
+  scaling: ActiveAbilityScaling;
+}
+
+export type CustomMonsterAbility = NonScaledCustomMonsterAbility | ScaledCustomMonsterAbility;
 
 export interface PoisonDefinition {
   accuracyModifier?: number;
@@ -562,10 +571,10 @@ export class Creature implements CreaturePropertyMap {
   // matter.
   addCustomSpell(spell: CustomMonsterAbility) {
     this.addActiveAbility({
+      rank: 1,
       ...spell,
       kind: 'spell',
       isMagical: spell.isMagical === undefined ? true : spell.isMagical,
-      rank: 1,
       roles: [],
     });
   }

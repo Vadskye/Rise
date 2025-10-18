@@ -100,6 +100,7 @@ export function addUndead(grimoire: Grimoire) {
   );
 
   addVampires(grimoire);
+  addZombies(grimoire);
   // TODO: We can't add skeletons or zombies until we add humanoids
 }
 
@@ -132,7 +133,7 @@ function addVampires(grimoire: Grimoire) {
     \\parhead{Vampire Weaknesses\\sparkle}
     Vampires have a number of specific weaknesses.
     Many vampire weaknesses trigger on exposure to particular substances or circumstances.
-    These weaknesses trigger immediately upon first contact, and are repeated at the start of each \\glossterm{action phase} in subsequent rounds.
+    These weaknesses trigger immediately upon first contact, and are repeated at the start of each \\glossterm{action phase} in subsequent rounds as long as the vampire remains exposed.
     \\begin{raggeditemize}
       \\itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
         If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
@@ -176,9 +177,7 @@ function addVampires(grimoire: Grimoire) {
         `;
         creature.addCustomManeuver(bloodDrain);
 
-        // Same as Charming Gaze from Vampire class, except that we don't include accuracy
-        // scaling because it's annoying to implement.
-        // TODO: add accuracy scaling.
+        // Same as Charming Gaze from Vampire class.
         creature.addCustomSpell({
           name: 'Charming Gaze',
           attack: {
@@ -189,10 +188,12 @@ function addVampires(grimoire: Grimoire) {
               An observant target may interpret overt threats to its allies as a threat to itself.
             `,
             targeting: `
-              Make an attack vs. Mental against all humanoid creatures in a \\medarea cone from you.
+              Make an attack vs. Mental against all humanoid creatures and undead creatures in a \\medarea cone from you.
               You take a \\minus10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
             `,
           },
+          rank: 3,
+          scaling: 'double_accuracy',
           usageTime: 'elite',
           tags: ['Emotion', 'Subtle', 'Sustain (minor)', 'Visual'],
         });
@@ -246,18 +247,41 @@ function addVampires(grimoire: Grimoire) {
           base_class: 'skirmisher',
           elite: true,
           creature_type: 'undead',
-          level: 15,
+          level: 16,
           size: 'medium',
         });
         creature.setKnowledgeResults({
           normal: `
-            Vampire lords are one of the most powerful types of undead.
+            Vampire lords are some of the most powerful undead.
             They can command legions of followers and vast fortunes that they have developed over centuries.
           `,
         });
         creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
         creature.setBaseAttributes([4, 6, 2, 5, 5, 5]);
+
+        // Mostly the same as the vampire ability, but without attunement
+        creature.addCustomSpell({
+          name: 'Dominating Gaze',
+          attack: {
+            hit: `
+              If the target is \\glossterm{injured} or its \\glossterm{character rank} is 5 or lower, it is \\confused as a \\glossterm{condition}.
+            `,
+            crit: `
+              If the target was already confused from a previous use of this ability, the $name may make it permanently \\dominated.
+              The $name can dominate any number of rank 5 or lower creatures with this ability, but only one creature at a time with a rank higher than that.
+            `,
+            targeting: `
+              Make an attack vs. Mental against all humanoid \\glossterm{enemies} and undead enemies within a \\medarea \\glossterm{cone} from you.
+            `,
+          },
+          usageTime: 'elite',
+          tags: ['Emotion', 'Visual'],
+        });
       }],
     ]
   );
+}
+
+function addZombies(grimoire: Grimoire) {
+
 }

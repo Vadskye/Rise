@@ -1,6 +1,7 @@
 export { AbilityRole } from './constants';
 export {
   ActiveAbilityRank,
+  ActiveAbilityScaling,
   ActiveAbility,
   CantripDefinition,
   ManeuverDefinition,
