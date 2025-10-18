@@ -195,9 +195,6 @@ export interface CustomAttackConfig {
   tags?: RiseTag[];
 }
 
-// TODO: add more standard modifiers, add infra for their effects
-export type StandardModifierName = 'mindless';
-
 export interface CustomModifierConfig {
   immune?: string;
   impervious?: string;
@@ -739,10 +736,8 @@ export class Creature implements CreaturePropertyMap {
     this.addCustomModifier(modifier);
   }
 
-  // Useful for checking if a creature has some common and important modifiers that change
-  // the way LaTeX is generated, like being mindless.
-  hasModifier(modifierName: StandardModifierName): boolean {
-    return this.getModifierNames().includes(modifierName);
+  hasTrait(traitName: RiseTrait): boolean {
+    return this.getModifierNames().includes(traitName);
   }
 
   getDamagingAutoAttacks(): DamagingAutoAttackResult[] {

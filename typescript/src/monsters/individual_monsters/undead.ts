@@ -48,8 +48,13 @@ export function addUndead(grimoire: Grimoire) {
         `,
         hard: `
           Ghouls can lay simple ambushes, but lack the capacity for complex traps or schemes.
-          They are commmonly found in the service of vampires, who can create new ghouls by draining the blood of their victims completely.
+          They are commmonly found in the service of vampires.
           As natural servants, ghouls are weak-willed despite their combat acumen.
+        `,
+        legendary: `
+          Vampires can create new ghouls by fully draining a creature's blood shortly after death.
+          Necromancers can achieve the same ends with a ritual.
+          In either case, the newly created ghoul owes its creator no allegiance unless compelled to do so, making the process dangerous for the unprepared.
         `,
       },
       sharedInitializer: (creature: Creature) => {
@@ -115,6 +120,7 @@ function addSkeletons(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       name: "Skeletons",
+      hasArt: true,
       knowledge: {
         easy: `
           Skeletons are the reanimated corpses of once-living creatures.
@@ -410,6 +416,7 @@ function addZombies(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
+        creature.addCustomSense('Darkvision (60 ft.)');
         creature.addTrait('mindless');
         creature.addManeuver('Grapple');
         creature.addWeaponMult('bite');
