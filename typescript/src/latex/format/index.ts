@@ -2,6 +2,7 @@ export * from './ability_tag';
 export * from './ability_usage_time';
 export * from './feet';
 export * from './latexify';
+export * from './sentence_case';
 export * from './modifier';
 export * from './skill_name';
 export * from './spell_effect';

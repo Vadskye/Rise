@@ -9,7 +9,6 @@ import {
 import { Creature } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
-import { sentenceCase } from 'change-case';
 
 import { convertAutoAttackToLatex } from './monster_attacks';
 import { convertAbilityToMonsterLatex, convertPassiveAbilityToMonsterLatex } from './player_abilities';
@@ -105,7 +104,7 @@ export function genKnowledgeText(monster: Creature): string {
 // This is currently a one-liner, but it's possible that future developments could cause
 // some subskills to need more translation effort later.
 function formatKnowledgeSubskill(knowledge: RiseKnowledgeSkill): string {
-  return sentenceCase(knowledge.replace('knowledge_', ''));
+  return format.sentenceCase(knowledge.replace('knowledge_', ''));
 }
 
 function genStatisticsText(monster: Creature): string {
@@ -120,7 +119,7 @@ function genStatisticsText(monster: Creature): string {
       ${genOtherSkillsText(monster)}
       \\rankline
       \\spelltwocol{\\pari \\textbf{Attributes} ${genAttributesText(monster)}}{\\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}}
-      \\spelltwocol{\\pari \\textbf{Accuracy} ${format.modifier(monster.accuracy)}; Brawling ${format.modifier(monster.brawling_accuracy)}}{\\textbf{Power} ${monster.mundane_power} \\monsep ${monster.magical_power}\\sparkle}
+      \\spelltwocol{\\pari \\textbf{Accuracy} ${format.modifier(monster.accuracy)}; Brawling ${format.modifier(monster.brawling_accuracy)}}{\\textbf{Power} ${monster.mundane_power}; ${monster.magical_power}\\sparkle}
       ${genEquipmentText(monster)}
       ${genTraitsText(monster)}
     \\end{monsterstatistics}
@@ -280,7 +279,7 @@ function genEquipmentText(monster: Creature): string {
     return '';
   }
 
-  const equippedItemsText = equippedItems.map((item) => sentenceCase(item)).join('\\monsep ');
+  const equippedItemsText = format.sentenceCase(equippedItems.map((item) => item).join(', '));
 
   return `\\pari \\textbf{Equipment} ${equippedItemsText}`;
 }
@@ -291,7 +290,7 @@ function genTraitsText(monster: Creature): string {
     return '';
   }
 
-  const traitsText = traits.map((trait) => `\\trait{${sentenceCase(trait)}}`).join('\\monsep ');
+  const traitsText = traits.map((trait) => `\\trait{${format.sentenceCase(trait)}}`).join('\\monsep ');
 
   return `\\pari \\textbf{Traits} ${traitsText}`;
 }
