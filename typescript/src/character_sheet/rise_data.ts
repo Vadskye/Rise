@@ -199,6 +199,7 @@ const RISE_TRAITS_LIST = [
   'low-light vision',
   'mindless',
   'multipedal',
+  'quadrupedal',
   'scent',
   'simple-minded',
   'telepathy',
