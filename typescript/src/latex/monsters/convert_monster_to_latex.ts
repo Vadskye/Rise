@@ -9,7 +9,6 @@ import { Creature } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 
-import { convertAutoAttackToLatex } from './monster_attacks';
 import {
   convertAbilityToMonsterLatex,
   convertPassiveAbilityToMonsterLatex,
@@ -240,11 +239,6 @@ function genAttributesText(monster: Creature): string {
 }
 
 function genAbilitiesText(monster: Creature): string {
-  // TODO: handle passive abilities
-  const autoAttacks = [...monster.getDebuffAutoAttacks(), ...monster.getDamagingAutoAttacks()]
-    .sort((a, b) => caseInsensitiveSort(a.attack_name, b.attack_name))
-    .map(convertAutoAttackToLatex);
-
   const maneuvers = monster
     .getActiveAbilities()
     .filter((ability) => ability.kind === 'maneuver')
@@ -257,7 +251,7 @@ function genAbilitiesText(monster: Creature): string {
 
   const passiveAbilities = monster.getPassiveAbilities().map(convertPassiveAbilityToMonsterLatex);
 
-  const allAttacks = [...autoAttacks, ...maneuvers, ...spells];
+  const allAttacks = [...maneuvers, ...spells];
 
   // TODO: sort allAttacks
 
