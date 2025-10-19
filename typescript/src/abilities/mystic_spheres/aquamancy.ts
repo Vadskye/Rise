@@ -402,13 +402,13 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Geyser',
 
-      // Treat the knockback plus larger area as +1 rank. The knockback is not a ton of
+      // Treat the fling plus larger area as +1 rank. The fling is not a ton of
       // damage, and it doesn't meaningfully restrain movement, but this should pay some
       // rank cost relative to geyser.
       attack: {
         hit: `
           \\damagerankthree.
-          If the target is Huge or smaller, you \\glossterm{knockback} it 20 feet vertically.
+          If the target is Huge or smaller, you \\glossterm{fling} it 20 feet vertically.
         `,
         missGlance: true,
         targeting: `
@@ -635,7 +635,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\damageranktwo.
         `,
         injury: `
-          If the target is Large or smaller, you \\glossterm{knockback} it up to 15 feet horizontally (see \\pcref{Knockback Effects}).
+          If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet horizontally (see \\pcref{Fling Effects}).
           If the target is immersed in water, this distance is doubled and you can also move it vertically.
         `,
         targeting: `
@@ -656,7 +656,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       functionsLike: {
         name: 'aquajet grasp',
         exceptThat:
-          'the damage increases to \\damagerankseven, and the knockback distance increases to 30 feet.',
+          'the damage increases to \\damagerankseven, and the fling distance increases to 30 feet.',
       },
       // narrative: '',
       rank: 6,

@@ -1696,12 +1696,12 @@ impl Class {
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
-                        \magicaldomainability{Aspect} You increase the distance of your \glossterm{push} and \glossterm{knockback} abilities by 10 feet.
+                        \magicaldomainability{Aspect} You increase the distance of your \glossterm{push} and \glossterm{fling} abilities by 10 feet.
                         This does not allow you to push creatures out of your reach with abilities that would not normally allow that, such as the \ability{shove} ability.
                         \magicaldomainability{Essence} You gain a slow \glossterm{swim speed} (see \pcref{Swimming}).
                         If you already have a slow swim speed, your swim speed becomes average instead.
                         \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
-                        In addition, the push and knockback distance bonus increases to 20 feet.
+                        In addition, the push and fling distance bonus increases to 20 feet.
 
                     \subsubsection{Protection Domain}
                         \domainability{Gift} You become proficient with an additional \glossterm{usage class} of armor (light, medium, or heavy).

@@ -16,7 +16,7 @@ pub enum AttackEffect {
     DebuffInstead(DebuffInsteadEffect),
     HalfDamage,
     Healing(HealingEffect),
-    Knockback(i32),
+    Fling(i32),
     MustRemoveTwice,
     Poison(PoisonEffect),
     Push(i32),
@@ -333,7 +333,7 @@ impl AttackEffect {
             Self::DebuffInstead(_) => AbilityType::Normal,
             Self::HalfDamage => AbilityType::Normal,
             Self::Healing(_) => AbilityType::Normal,
-            Self::Knockback(_) => AbilityType::Normal,
+            Self::Fling(_) => AbilityType::Normal,
             Self::MustRemoveTwice => AbilityType::Normal,
             Self::Poison(_) => AbilityType::Normal,
             Self::Push(_) => AbilityType::Normal,
@@ -396,10 +396,10 @@ impl AttackEffect {
                     the_subject = the_subject,
                 )
             }
-            Self::Knockback(feet) => {
+            Self::Fling(feet) => {
                 format!(
                     "
-                        {the_subject} is \\glossterm<knocked back> up to {feet} ft. in any direction.
+                        {the_subject} is \\glossterm<flung> up to {feet} ft. in any direction.
                     ",
                     the_subject = the_subject,
                     feet = feet,

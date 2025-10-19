@@ -173,8 +173,8 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{knockback} it 15 feet.
-        If you are \\empowered, this knockback distance is doubled.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 15 feet.
+        If you are \\empowered, this fling distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -186,8 +186,8 @@ export const bruteForce: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{knockback} it 30 feet.
-        If you are \\empowered, this knockback distance is doubled.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 30 feet.
+        If you are \\empowered, this fling distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 5,

@@ -584,7 +584,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a defensive ability based on your chosen school.
                 {
-                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{knockback} effects unless you choose to be affected.
+                    \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{fling} effects unless you choose to be affected.
 
                     \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
 

@@ -201,7 +201,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Earthen Anchor',
 
       effect: `
-        You are immune to \\glossterm{knockback}, \\glossterm{push}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
+        You are immune to \\glossterm{push}, \\glossterm{fling}, and \\glossterm{teleport} effects from attacks, unless the effects come from an attack that scores a \\glossterm{critical hit}.
         In addition, you are always considered either \\glossterm{grounded} or not grounded, whichever is more beneficial for you.
 
         For example, you would not take damage from the \\spell{earthquake} spell.
