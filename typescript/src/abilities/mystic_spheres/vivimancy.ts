@@ -34,7 +34,6 @@ export const vivimancy: MysticSphere = {
         injury: `
           You can increase your \\glossterm{fatigue level} by one. 
           If you do, you regain \\hprankfour at the end of the round.
-          This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -46,7 +45,7 @@ export const vivimancy: MysticSphere = {
       roles: ['burst', 'healing'],
       scaling: {
         special:
-          'For each rank beyond 1, the damage increases by 2 and the healing increases by 1d6.',
+          'For each rank beyond 1, the damage increases by 1d6 and the healing increases by 1d10.',
       },
       tags: [],
     },
@@ -65,7 +64,7 @@ export const vivimancy: MysticSphere = {
       roles: ['burst', 'healing'],
       scaling: {
         special:
-          'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 2d10.',
+          'For each rank beyond 4, the damage increases by 2d6 and the healing increases by 3d10.',
       },
       tags: [],
     },
@@ -93,7 +92,7 @@ export const vivimancy: MysticSphere = {
       roles: ['burst', 'healing'],
       scaling: {
         special:
-          'For each rank beyond 2, the damage increases by 1 and the healing increases by 2d6.',
+          'For each rank beyond 2, the damage increases by 2 and the healing increases by 2d8.',
       },
       tags: [],
     },
