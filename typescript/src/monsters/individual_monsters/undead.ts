@@ -1,6 +1,7 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature, CustomMonsterAbility } from '@src/character_sheet/creature';
 import { getWeaponMultByRank } from '@src/abilities/combat_styles';
+import { BARRIER_COOLDOWN } from '@src/abilities/constants';
 
 export function addUndead(grimoire: Grimoire) {
   grimoire.addMonster('Allip', (creature: Creature) => {
@@ -16,11 +17,11 @@ export function addUndead(grimoire: Grimoire) {
       has_art: true,
     });
     creature.setKnowledgeResults({
-      easy: `
+      normal: `
         Allips are incorporeal ghost-like creatures.
         They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
       `,
-      normal: `
+      hard: `
         An allip is the spectral remains of someone driven to suicide by madness.
         It craves only revenge and unrelentingly pursues those that it believes tormented it in life.
         This belief may or may not have any basis in reality.
@@ -104,10 +105,72 @@ export function addUndead(grimoire: Grimoire) {
     ]
   );
 
+  addHalfsouls(grimoire);
   addSkeletons(grimoire);
   addVampires(grimoire);
   addZombies(grimoire);
   // TODO: We can't add skeletons or zombies until we add humanoids
+}
+
+function addHalfsouls(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Halfsouls",
+      knowledge: {
+        normal: `
+          A halfsoul is a creature that was incorrectly resurrected, returning only half of the original creature's soul to its body.
+          This splitting of the soul has disastrous consequences, leaving both halves wracked by pain and confusion.
+          Although a halfsoul has all of the original abilities of the creature, it is violent and insane, with only fragmentary glimpses of its original personality.
+        `,
+        hard: `
+          Halfsouls can be created by resurrection rituals that are interrupted shortly before completion.
+          They can also be the result of botched necromantic rituals that were intended to splinter a soul, such as rituals to create skeletons and zombies.
+        `,
+      },
+      sharedInitializer: (creature) => {
+        creature.addImpervious('Emotion');
+      },
+    },
+    [
+      ['Halfsoul Telekine', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'chaotic neutral',
+          base_class: 'sniper',
+          elite: true,
+          creature_type: 'undead',
+          level: 15,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['awareness', 'knowledge_arcana']);
+        creature.setBaseAttributes([-1, 4, 1, 6, 5, 7]);
+        // Proprioception
+        creature.addCustomSense('Blindsense (60 ft.)')
+        creature.addCustomSense('Blindsight (15 ft.)')
+
+        // Damaging effects are standard action, debuffs are elite
+        creature.addSpell('Neck Snap');
+        creature.addSpell('Mighty Compression');
+        creature.addSpell('Kinetic Cudgel', { usageTime: 'elite' });
+        creature.addSpell('Mighty Blastwave', { usageTime: 'elite' });
+        // Annoying to automate the conversion for this spell.
+        // TODO: make this automatic if we want to give other creatures Wall of Force.
+        creature.addCustomSpell({
+          name: 'Sturdy Wall of Force',
+
+          cost: BARRIER_COOLDOWN,
+          effect: `
+            You create a \\medarealong \\glossterm{wall} of magical energy within \\shortrange.
+            The wall is visible as a shimmering magical field that does not block sight.
+            Nothing can pass through the wall until it is destroyed.
+            It has \\glossterm{hit points} equal to five times your \\glossterm{power}, and is destroyed when its hit points become negative.
+          `,
+          usageTime: 'elite',
+          tags: ['Barrier', 'Manifestation'],
+          type: 'Sustain (attuneable, minor)',
+        });
+      }],
+    ],
+  );
 }
 
 function addSkeletons(grimoire: Grimoire) {
@@ -185,6 +248,27 @@ function addSkeletons(grimoire: Grimoire) {
           bodyArmor: 'leather lamellar',
         });
         creature.addWeaponMult('longbow');
+      }],
+      ['Bone Knight', (creature) => {
+        creature.setRequiredProperties({
+          ...requiredProperties,
+          base_class: 'warrior',
+          level: 5,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A bone knight is a fusion of horse and rider, reanimated as a single skeleton.
+            The rider wields its lance as if mounted, but the two cannot be separated without death.
+          `,
+        });
+        creature.setBaseAttributes([4, 4, 0, -7, 2, 0]);
+        creature.setEquippedArmor({
+          bodyArmor: 'scale',
+          shield: 'standard shield',
+        });
+        creature.addWeaponMult('lance');
+        creature.addManeuver('Rushdown', { weapon: 'lance' });
       }],
       ['Fallen Hero', (creature) => {
         creature.setRequiredProperties({

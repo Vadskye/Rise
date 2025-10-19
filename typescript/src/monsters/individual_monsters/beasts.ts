@@ -58,6 +58,28 @@ export function addBeasts(grimoire: Grimoire) {
     });
   });
 
+  grimoire.addMonster('Carrion Crow', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'skirmisher',
+      elite: false,
+      creature_type: 'beast',
+      level: 3,
+      size: 'small',
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        Carrion crows are larger and stronger than ordinary crows.
+        They are primarily scavengers, but if hungry, they will ruthlessly mob creatures who seem weak or isolated.
+      `,
+    });
+    creature.addCustomMovementSpeed('Fly (normal, 90 ft.)');
+    creature.setTrainedSkills(['awareness']);
+    creature.setTrainedSkills([]);
+    creature.setBaseAttributes([2, 4, -1, 0, 4, 0]);
+    creature.addManeuver('Eye Poke', { displayName: 'Peck Out Your Eyes', weapon: 'beak' });
+  });
+
   grimoire.addMonster('Frostweb Spider', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral',

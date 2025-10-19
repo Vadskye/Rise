@@ -73,11 +73,14 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   // regain".
   abilityPart = abilityPart.replace(/\bIn addition, you regain\b/g, "In addition, the $name regains");
   abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
+  abilityPart = abilityPart.replace(/\bYou (\\glossterm{briefly}|briefly) cannot use\b/g, "The $name \\glossterm{briefly} cannot use");
   abilityPart = abilityPart.replace(/\bif you take\b/g, "if the $name takes");
   abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
   abilityPart = abilityPart.replace(/goaded by you\b/g, "goaded by the $name");
   abilityPart = abilityPart.replace(/\bto you\b/g, "to it");
   abilityPart = abilityPart.replace(/\byour space\b/g, "its space");
+  abilityPart = abilityPart.replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name flings");
+  abilityPart = abilityPart.replace(/\baway from you\b/g, "away from it");
   abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
   abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
   abilityPart = abilityPart.replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
@@ -91,6 +94,28 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
   abilityPart = abilityPart.replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
+  abilityPart = abilityPart.replace(
+    /(hit points|\\glossterm{hit points}) equal to (\w+)?( times)? your (power|\\glossterm{power})/,
+    (_, __, multiplier) => {
+      const numericMultiplier = {
+        half: 0.5,
+        twice: 2,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        seven: 7,
+        eight: 8,
+        nine: 9,
+      }[multiplier as string] || 1;
+
+      const hitPoints = Math.floor(monster.getRelevantPower(ability.isMagical) * numericMultiplier);
+
+      return `${hitPoints} \\glossterm{hit points}`;
+    }
+  );
+
   return abilityPart;
 }
 
@@ -103,6 +128,10 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   const warn = (message: string) => {
     console.warn(`Problem reformatting ${monsterName}.${abilityName}: ${message}`);
   };
+
+  // Ignore the name of the ability when testing; it's fine if an ability's name includes
+  // "you", for example.
+  abilityText = abilityText.replace(/ability}{[^}]+}/g, '').replace(/hypertargetraised{[^}]+}/g, '')
 
   if (/\$[nN]ame.*\$[nN]ame/.test(abilityText)) {
     warn("Ability repeats '$name' in the same line");

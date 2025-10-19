@@ -4,6 +4,7 @@
 // make a dual strike.
 const MONSTER_WEAPONS_LIST = [
   'battleaxe',
+  'beak',
   'bite',
   'claws',
   'club',
@@ -30,6 +31,7 @@ export const MONSTER_WEAPONS = new Set(MONSTER_WEAPONS_LIST);
 // TODO: weapons can have multiple tags...
 export function getWeaponTag(weaponName: MonsterWeapon): string | null {
   return {
+    beak: null,
     bite: null,
     claws: null, // These have the Light tag, but that's irrelevant for running monsters.
     club: null,
@@ -64,6 +66,7 @@ function xdy(count: number, size: number): DicePool {
 
 export function isManufactured(weaponName: MonsterWeapon): boolean {
   return {
+    beak: false,
     battleaxe: true,
     bite: false,
     claws: false,
@@ -89,6 +92,7 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
 
 export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
   return {
+    beak: xdy(1, 6),
     bite: xdy(1, 8),
     claws: xdy(2, 4),
     club: xdy(1, 6),
@@ -114,6 +118,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
 
 export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
   return {
+    beak: 1,
     bite: 0,
     claws: 2,
     club: 0,
@@ -141,6 +146,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
 export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
   return (
     {
+      beak: 1,
       bite: 1,
       claws: 0.5,
       club: 0.5,
