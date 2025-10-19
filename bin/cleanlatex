@@ -11,3 +11,4 @@ rm *.tmp
 rm *.xref
 rm *.out
 rm *.fls
+rm -r latex.out
