@@ -484,7 +484,7 @@ function addNecromancers(grimoire: Grimoire) {
             They still have far to go before they truly embrace undeath, but they gain some benefits from their partial transformation.
           `,
         });
-        creature.setTrainedSkills(["awareness", "intimidate", "craft_bone"]);
+        creature.setTrainedSkills(["awareness", "intimidate", "craft_bone", 'knowledge_arcana']);
         creature.setBaseAttributes([0, 2, 4, 3, 2, 6]);
         creature.addCustomSense('Darkvision (60 ft.)');
         creature.addCustomSense('Lifesight (30 ft.)');
