@@ -1,6 +1,5 @@
 import {
   RiseSkill,
-  RiseKnowledgeSkill,
   RISE_MOVEMENT_SKILLS,
   RISE_SENSE_SKILLS,
   RISE_SOCIAL_SKILLS,
@@ -88,7 +87,7 @@ export function genKnowledgeText(monster: Creature): string {
     const difficultiesText = difficulties
       .map(
         (difficulty) =>
-          `\\par ${formatKnowledgeSubskill(relevantKnowledge)} DV ${difficulty}: ${difficultyMap[difficulty]}`,
+          `\\par ${format.sentenceCase(relevantKnowledge.replace('knowledge_', ''))} DV ${difficulty}: ${difficultyMap[difficulty]}`,
       )
       .join('\n');
 
@@ -99,12 +98,6 @@ export function genKnowledgeText(monster: Creature): string {
   } else {
     return '';
   }
-}
-
-// This is currently a one-liner, but it's possible that future developments could cause
-// some subskills to need more translation effort later.
-function formatKnowledgeSubskill(knowledge: RiseKnowledgeSkill): string {
-  return format.sentenceCase(knowledge.replace('knowledge_', ''));
 }
 
 function genStatisticsText(monster: Creature): string {
