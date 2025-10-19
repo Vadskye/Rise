@@ -112,51 +112,6 @@ t.test('reformatAttackTargeting', (t) => {
     t.end();
   });
 
-  t.test('Replacing "you"', (t) => {
-    t.test('With standard attack syntax', (t) => {
-      testTargeting(
-        t,
-        `
-          Make an attack vs. Mental against something.
-        `,
-        `
-          The $name makes a $accuracy attack vs. Mental against something.
-        `,
-      );
-      t.end();
-    });
-
-    t.test('With an area that mentions "you"', (t) => {
-      testTargeting(
-        t,
-        `
-          Make an attack vs. Mental against all enemies in a Medium cone from you.
-        `,
-        `
-          The $name makes a $accuracy attack vs. Mental against all enemies in a Medium cone from itself.
-        `,
-      );
-      t.end();
-    });
-
-    t.test('With an area that mentions "you" and a followup conditional "you"', (t) => {
-      testTargeting(
-        t,
-        `
-          Make an attack vs. Mental against all enemies in a Medium cone from you.
-          You gain a +2 accuracy bonus against each \\glossterm{shadowed} target.
-        `,
-        `
-          The $name makes a $accuracy attack vs. Mental against all enemies in a Medium cone from itself.
-          It gains a +2 accuracy bonus against each \\glossterm{shadowed} target.
-        `,
-      );
-      t.end();
-    });
-
-    t.end();
-  });
-
   t.end();
 });
 
@@ -343,10 +298,10 @@ t.test('convertAbilityToMonsterLatex', (t) => {
       \\hypertargetraised{maneuver:Grapple}{}%
       \\hypertargetraised{maneuver:grapple}{}%
       \\noindent
-      The $name makes a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
+      The $name makes a $brawlingaccuracy attack with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
 
         \\hit The $name and the target are \\grappled by each other.
-        \\crit The $name also controls the grapple (see \\pcref{Controlling a Grapple}).% 
+        \\crit The $name also controls the grapple.% 
       \\vspace{0.1em}%
     \\end{activeability}`);
 

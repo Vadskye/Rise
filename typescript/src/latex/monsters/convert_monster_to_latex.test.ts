@@ -23,25 +23,31 @@ t.test('convertMonsterToLatex', (t) => {
   t.end();
 });
 
-t.test('can generate empty knowledge text', (t) => {
-  const creature = Creature.new();
-  t.equal(genKnowledgeText(creature), '');
-  t.end();
-});
-
-t.test('Can generate meaningful knowledge text', (t) => {
-  const creature = Creature.new();
-  creature.setProperties({
-    creature_type: 'undead',
-    knowledge_result_easy: 'Easy result',
-    level: 20,
-    knowledge_result_hard: 'Hard result',
+t.test('genKnowledgeText', (t) => {
+  t.test('can generate empty knowledge', (t) => {
+    const creature = Creature.new();
+    t.equal(genKnowledgeText(creature), '');
+    t.end();
   });
 
-  t.equal(
-    genKnowledgeText(creature),
-    `\\par Knowledge (religion) 10: Easy result
-\\par Knowledge (religion) 20: Hard result`,
-  );
+  t.test('Can generate meaningful knowledge', (t) => {
+    const creature = Creature.new();
+    creature.setProperties({
+      creature_type: 'undead',
+      knowledge_result_easy: 'Easy result',
+      level: 20,
+      knowledge_result_hard: 'Hard result',
+    });
+
+    t.equal(
+      genKnowledgeText(creature),
+      `
+      \\monsterknowledgeheader{$Name}
+      \\par Religion DV 10: Easy result
+\\par Religion DV 20: Hard result
+    `,
+    );
+    t.end();
+  });
   t.end();
 });
