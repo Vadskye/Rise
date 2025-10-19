@@ -450,6 +450,25 @@ function addNecromancers(grimoire: Grimoire) {
       },
     },
     [
+      ['Graverobber', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'chaotic evil',
+          base_class: 'leader',
+          elite: true,
+          creature_type: 'humanoid',
+          level: 4,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(["awareness", "stealth", "craft_bone"]);
+        creature.setBaseAttributes([0, 4, 0, 2, 2, 4]);
+
+        creature.addWeaponMult('heavy crossbow');
+        creature.addSpell('Inflict Wound');
+        creature.addSpell('Putrefying Blast', { usageTime: 'elite' });
+        creature.addSpell('Lifesteal');
+        creature.addSpell('Drain Life', { usageTime: 'elite' })
+      }],
+
       ['Lichbound', (creature: Creature) => {
         creature.setRequiredProperties({
           alignment: 'lawful evil',
@@ -459,9 +478,6 @@ function addNecromancers(grimoire: Grimoire) {
           level: 8,
           size: 'medium',
         });
-        creature.setProperties({
-          has_art: false,
-        });
         creature.setKnowledgeResults({
           normal: `
             A lichbound is a mage who has started the process of becoming a lich by intentionally splintering their own soul.
@@ -469,7 +485,9 @@ function addNecromancers(grimoire: Grimoire) {
           `,
         });
         creature.setTrainedSkills(["awareness", "intimidate", "craft_bone"]);
-        creature.setBaseAttributes([0, 2, 4, 0, 2, 6]);
+        creature.setBaseAttributes([0, 2, 4, 3, 2, 6]);
+        creature.addCustomSense('Darkvision (60 ft.)');
+        creature.addCustomSense('Lifesight (30 ft.)');
 
         creature.addPassiveAbility({
           name: 'Life Suppression',
@@ -479,14 +497,16 @@ function addNecromancers(grimoire: Grimoire) {
           `,
         });
 
-        // Melee abilities are standard actions, ranged abilities are elite actions.
+        // Immediate damage is standard action, debuff / buildup is elite action
         creature.addWeaponMult('scythe', { displayName: 'Reaping Scythe', isMagical: true });
         // Lifesteal Grasp, but as rank 3 and reformatted for a monster.
         creature.addCustomSpell({
           name: "Lifesteal Grasp",
           attack: {
             hit: '\\damagerankfour.',
-            injury: 'You regain \\hprankfour at the end of the round.',
+            // A true lifesteal grasp should be rank 6, but that seems strong when they
+            // don't have to pay a fatigue cost.
+            injury: 'You regain \\hprankfive at the end of the round.',
             targeting: `
               You must have a \\glossterm{free hand} to cast this spell.
 
@@ -498,7 +518,8 @@ function addNecromancers(grimoire: Grimoire) {
         creature.addSpell('Circle of Death', { usageTime: 'elite' })
         creature.addSpell('Fearsome Aura', { usageTime: 'triggered' })
         creature.addSpell('Mind Blank', { displayName: 'Splinter Soul', usageTime: 'elite' });
-        creature.addSpell('Lifetap Blast', { usageTime: 'elite' })
+        creature.addSpell('Lifetap Blast');
+        creature.addSpell('Sanguine Bond', { usageTime: 'elite' });
       }],
     ]
   );
