@@ -12,10 +12,11 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\injury The target becomes \\stunned as a \\glossterm{condition}.
+        \\hit The target is \\glossterm{briefly} \\stunned.
+        \\injury The target is stunned as a \\glossterm{condition}.
       `,
-      rank: 1,
-      roles: ['maim'],
+      rank: 3,
+      roles: ['softener', 'maim'],
     },
 
     {
@@ -408,6 +409,51 @@ export const dirtyFighting: CombatStyle = {
       },
       rank: 5,
       roles: ['generator', 'flash'],
+    },
+
+    {
+      name: 'Gutshot',
+
+      effect: `
+        Make a melee strike.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\glossterm{briefly} \\stunned.
+      `,
+      rank: 1,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Gutshot+',
+
+      effect: `
+        Make a melee strike that deals double damage.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\glossterm{briefly} \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
+      `,
+      rank: 5,
+      roles: ['maim'],
+    },
+
+    {
+      name: 'Crush the Fallen',
+
+      effect: `
+        Make a melee strike.
+        If the target is \\prone, the strike deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
+      `,
+      rank: 1,
+      roles: ['payoff'],
+    },
+
+    {
+      name: 'Crush the Fallen+',
+
+      effect: `
+        Make a melee strike.
+        If the target is \\prone, the strike deals triple damage.
+      `,
+      rank: 5,
+      roles: ['payoff'],
     },
   ],
 };
