@@ -323,7 +323,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 You can use the \ability{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
-                After you use this ability, you \glossterm{briefly} cannot use it again.
+                After using this ability, you \glossterm{briefly} cannot use it again.
             ",
             modifiers: None,
         },

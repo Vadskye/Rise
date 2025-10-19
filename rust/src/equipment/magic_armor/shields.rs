@@ -181,7 +181,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
             When you activate the shield, make an attack vs. Fortitude against all creatures within a \medarea cone.
             Your minimum accuracy is $accuracy.
-            After you use this ability, you \glossterm{briefly} cannot use it again.
+            After using this ability, you \glossterm{briefly} cannot use it again.
 
             \hit The target slowly turns to stone as a \glossterm{condition}.
             While it is \glossterm{injured}, it is \slowed.

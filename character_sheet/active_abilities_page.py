@@ -644,7 +644,7 @@ def universal_abilities():
             universal_ability_button(
                 "Charge",
                 """
-                    After you use this ability, you briefly take a -2 penalty to all defenses.
+                    After using this ability, you briefly take a -2 penalty to all defenses.
                     Move up to your speed in a single straight line. At the end of your movement, you can make a melee strike from your new location.
                 """,
             ),
@@ -652,7 +652,7 @@ def universal_abilities():
                 "Desperate Exertion",
                 """
                     You reroll any attack or check you just made and gain a +2 bonus.
-                    After you use this ability, you increase your fatigue level by two.
+                    After using this ability, you increase your fatigue level by two.
                 """,
             ),
             universal_ability_button(
@@ -696,7 +696,7 @@ def universal_abilities():
             universal_ability_button(
                 "Recover",
                 """
-                    After you use this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
+                    After using this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain all of your hit points. In addition, you remove all conditions affecting you.
                 """,
                 tags=["Swift"],
