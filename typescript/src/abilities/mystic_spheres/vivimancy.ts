@@ -79,8 +79,7 @@ export const vivimancy: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          You can increase your \\glossterm{fatigue level} by one. 
-          % dr2
+          You can increase your \\glossterm{fatigue level} by one.
           If you do, you regain \\hprankfive at the end of the round.
         `,
         targeting: `
