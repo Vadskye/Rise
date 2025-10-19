@@ -49,7 +49,11 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
     abilityPart = abilityPart.replace(pattern, replacement as any);
   }
 
-  // TODO: when should this use 'it' vs 'the $name'?
+  // Assume monsters always pay the fatigue and don't track it. Cheating!
+  // This is made a bit more complicated because the original latex could have line
+  // breaks, since we're joining multiple sentences together.
+  replace(/\bYou can increase your (fatigue level|\\glossterm{fatigue level}) by one\.\n? +If you do, you/g, "You");
+
   replace(/\byour next action\b/g, "its next action");
   replace(/\byour attack result\b/g, "the attack result");
   replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
