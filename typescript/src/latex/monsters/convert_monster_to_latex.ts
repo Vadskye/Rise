@@ -119,8 +119,8 @@ function genStatisticsText(monster: Creature): string {
       ${genSocialText(monster)}
       ${genOtherSkillsText(monster)}
       \\rankline
-      \\spelltwocol{\\pari \\textbf{Attributes} ${genAttributesText(monster)}}{\\textbf{Power} ${monster.magical_power}\\sparkle \\monsep ${monster.mundane_power}\\hskip 0.25em}
-      \\pari \\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}
+      \\spelltwocol{\\pari \\textbf{Attributes} ${genAttributesText(monster)}}{\\textbf{Alignment} ${format.uppercaseFirst(monster.alignment)}}
+      \\spelltwocol{\\pari \\textbf{Accuracy} ${format.modifier(monster.accuracy)}; Brawling ${format.modifier(monster.brawling_accuracy)}}{\\textbf{Power} ${monster.mundane_power} \\monsep ${monster.magical_power}\\sparkle}
       ${genEquipmentText(monster)}
       ${genTraitsText(monster)}
     \\end{monsterstatistics}
