@@ -239,26 +239,26 @@ function genAttributesText(monster: Creature): string {
 }
 
 function genAbilitiesText(monster: Creature): string {
-  const maneuvers = monster
-    .getActiveAbilities()
-    .filter((ability) => ability.kind === 'maneuver')
-    .map((maneuver) => convertAbilityToMonsterLatex(monster, maneuver));
-  const spells = monster
-    .getActiveAbilities()
-    // Spells, cantrips, and rituals are all handled by this function
-    .filter((ability) => ability.kind !== 'maneuver')
-    .map((maneuver) => convertAbilityToMonsterLatex(monster, maneuver));
 
-  const passiveAbilities = monster.getPassiveAbilities().map(convertPassiveAbilityToMonsterLatex);
+  const activeAbilities = monster.getActiveAbilities();
+  // Secondary sort is by name
+  activeAbilities.sort((a, b) => a.name.localeCompare(b.name));
+  // Primary sort is by usage time
+  activeAbilities.sort((a, b) => {
+    return (a.usageTime || 'standard').localeCompare(b.usageTime || 'standard')
+  });
 
-  const allAttacks = [...maneuvers, ...spells];
+  const activeAbilityLatex = activeAbilities.map((ability) => convertAbilityToMonsterLatex(monster, ability)).join('\n');
 
-  // TODO: sort allAttacks
+  const passiveAbilities = monster.getPassiveAbilities();
+  // Only sort is by name
+  passiveAbilities.sort((a, b) => a.name.localeCompare(b.name));
+  const passiveAbilityLatex = passiveAbilities.map(convertPassiveAbilityToMonsterLatex).join('\n');
 
   return `
-    ${passiveAbilities.join('\n')}
+    ${passiveAbilityLatex}
 
-    ${allAttacks.join('\n')}
+    ${activeAbilityLatex}
   `;
 }
 
