@@ -281,79 +281,79 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 When you use your \textit{quarry} ability, you may also use one of your \textit{hunting styles}.
                 Each \textit{hunting style} ability lasts as long as the \textit{quarry} ability you used it with.
                 {
-                    \begin{magicalactiveability}{Anchoring}{Triggered}
+                    \begin{magicaltriggeredability}{Anchoring}{Triggered}
                         \rankline
                         As long as your quarry is adjacent to any member of your hunting party, it cannot travel extradimensionally.
                         This prevents all \glossterm{teleportation} effects.
 
                         \rankline
                         \rank{5} This effect instead applies if your quarry is within \medrange of any member of your hunting party.
-                    \end{magicalactiveability}
+                    \end{magicaltriggeredability}
 
-                    \begin{magicalactiveability}{Bring Down}{Triggered}
+                    \begin{magicaltriggeredability}{Bring Down}{Triggered}
                         \rankline
                         If your quarry is \glossterm{midair}, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party.
 
                         \rankline
                         \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point this round, even if it is currently grounded.
-                    \end{magicalactiveability}
+                    \end{magicaltriggeredability}
 
-                    \begin{activeability}{Coordinated Stealth}{Triggered}
+                    \begin{triggeredability}{Coordinated Stealth}{Triggered}
                         \rankline
                         Your quarry takes a \minus4 penalty to Awareness checks to notice members of your hunting party.
 
                         \rankline
                         \rank{5} The penalty increases to \minus6.
-                    \end{activeability}
+                    \end{triggeredability}
 
-                    \begin{activeability}{Decoy}{Triggered}
+                    \begin{triggeredability}{Decoy}{Triggered}
                         \rankline
                         If you are adjacent to your quarry, it is \goaded by you.
 
                         \rankline
                         \rank{5} This effect instead applies if your quarry is within \shortrange of you.
-                    \end{activeability}
+                    \end{triggeredability}
 
-                    \begin{magicalactiveability}{Distraction}{Triggered}
+                    \begin{magicaltriggeredability}{Distraction}{Triggered}
                         \rankline
                         You do not gain the normal accuracy bonus against your quarry.
                         If you are adjacent to your quarry, the rest of your hunting party gains a \plus1 accuracy bonus against it.
 
                         \rankline
                         \rank{5} The accuracy bonus applies as long as you are within \medrange of your quarry.
-                    \end{magicalactiveability}
+                    \end{magicaltriggeredability}
 
-                    \begin{activeability}{Swarm Hunter}{Triggered}
+                    \begin{triggeredability}{Swarm Hunter}{Triggered}
                         \rankline
                         When you use your \textit{quarry} ability, you can choose five additional targets as your quarry.
 
                         \rankline
                         \rank{5} The number of additional targets is unlimited.
-                    \end{activeability}
+                    \end{triggeredability}
 
-                    \begin{magicalactiveability}{Titanslayer}{Triggered}
+                    \begin{magicaltriggeredability}{Titanslayer}{Triggered}
                         \rankline
                         If your quarry is Gargantuan or larger, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party that are adjacent to it.
 
                         \rankline
                         \rank{5} The accuracy bonus applies regardless of distance from your quarry.
-                    \end{magicalactiveability}
+                    \end{magicaltriggeredability}
 
-                    \begin{activeability}{Vigilant}{Triggered}
+                    \begin{triggeredability}{Vigilant}{Triggered}
                         \rankline
                         Your quarry takes a \minus4 penalty to Sleight of Hand and Stealth checks against members of your hunting party.
 
                         \rankline
                         \rank{5} The penalty increases to \minus6.
-                    \end{activeability}
+                    \end{triggeredability}
 
-                    \begin{activeability}{Wolfpack}{Triggered}
+                    \begin{triggeredability}{Wolfpack}{Triggered}
                         \rankline
                         While your quarry is adjacent to at least three members of your hunting party, each adjacent \glossterm{ally} gains a \plus1 accuracy bonus against it.
 
                         \rankline
                         \rank{5} This effect instead applies if your quarry is adjacent to at least two members of your hunting party.
-                    \end{activeability}
+                    \end{triggeredability}
                 }
             ",
             modifiers: None,

@@ -1,5 +1,104 @@
 \ExplSyntaxOn
 
+
+\newmdenv[
+  backgroundcolor=lavenderweblight,
+  leftline=true,
+  topline=true,
+  rightline=true,
+  bottomline=true,
+  roundcorner=4pt,
+  skipabove=0.5em,
+  skipbelow=0.5em,
+  leftmargin=0pt,
+  innerleftmargin=0.25em,
+  innerrightmargin=0.5em,
+  innertopmargin=0.5em,
+  innerbottommargin=0.25em,
+]{eliteabilitymdframed}
+% #1 = if true, include \label{#3}
+% #2 = Suffix after the name not used for label/targets/etc. Not bold.
+% #3 = Name of the ability
+% #4 = Usage time
+\DeclareDocumentEnvironment{eliteability}{s o m m}
+{
+  \begin{eliteabilitymdframed}
+    \RaggedRight
+    \lowercase{\hypertargetraised{ability:#3}{}}
+    \hypertargetraised{ability:#3}{}
+    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \spelltwocol{
+      {\normalsize \textbf{#3}}
+      \IfValueT{#2}{#2}
+    }{
+      #4
+    }
+    }
+    {
+  \end{eliteabilitymdframed}
+}
+
+\DeclareDocumentEnvironment{magicaleliteability}{s m m}
+{
+\IfValueTF{#1}{
+  \begin{eliteability}*[\sparkle]{#2}{#3}
+}{
+  \begin{eliteability}[\sparkle]{#2}{#3}
+    }
+    }
+    {
+  \end{eliteability}
+}
+
+\newmdenv[
+  backgroundcolor=verylightred,
+  leftline=true,
+  topline=true,
+  rightline=true,
+  bottomline=true,
+  roundcorner=4pt,
+  skipabove=0.5em,
+  skipbelow=0.5em,
+  leftmargin=0pt,
+  innerleftmargin=0.25em,
+  innerrightmargin=0.5em,
+  innertopmargin=0.5em,
+  innerbottommargin=0.25em,
+]{triggeredabilitymdframed}
+% #1 = if true, include \label{#3}
+% #2 = Suffix after the name not used for label/targets/etc. Not bold.
+% #3 = Name of the ability
+% #4 = Usage time
+\DeclareDocumentEnvironment{triggeredability}{s o m m}
+{
+  \begin{triggeredabilitymdframed}
+    \RaggedRight
+    \lowercase{\hypertargetraised{ability:#3}{}}
+    \hypertargetraised{ability:#3}{}
+    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \spelltwocol{
+      {\normalsize \textbf{#3}}
+      \IfValueT{#2}{#2}
+    }{
+      #4
+    }
+    }
+    {
+  \end{triggeredabilitymdframed}
+}
+
+\DeclareDocumentEnvironment{magicaltriggeredability}{s m m}
+{
+\IfValueTF{#1}{
+  \begin{triggeredability}*[\sparkle]{#2}{#3}
+}{
+  \begin{triggeredability}[\sparkle]{#2}{#3}
+    }
+    }
+    {
+  \end{triggeredability}
+}
+
 \newmdenv[
   backgroundcolor=MintCream,
   leftline=true,
@@ -30,7 +129,7 @@
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
     }{
-      \IfValueT{#4}{#4}
+      #4
     }
     }
     {
@@ -61,7 +160,7 @@
     \IfBooleanT{#1}{\nonsectionlabel{#3}}
     \spelltwocol{
       {\normalsize \textbf{#3}}
-      \IfValueTF{#2}{#2}{}
+      \IfValueT{#2}{#2}
     }{
       #4
     }
@@ -94,7 +193,7 @@
     \IfBooleanT{#1}{\nonsectionlabel{#3}}
     \spelltwocol{
       {\normalsize \textbf{#3}}
-      \IfValueTF{#2}{#2}{}
+      \IfValueT{#2}{#2}
     }{
       #4
     }
