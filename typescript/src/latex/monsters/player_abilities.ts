@@ -79,7 +79,7 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   abilityPart = abilityPart.replace(/goaded by you\b/g, "goaded by the $name");
   abilityPart = abilityPart.replace(/\bto you\b/g, "to it");
   abilityPart = abilityPart.replace(/\byour space\b/g, "its space");
-  abilityPart = abilityPart.replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name flings");
+  abilityPart = abilityPart.replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name \\glossterm{flings}");
   abilityPart = abilityPart.replace(/\baway from you\b/g, "away from it");
   abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
   abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");

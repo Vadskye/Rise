@@ -34,7 +34,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Updraft',
 
       effect: `
-        Whenever you \\glossterm{knockback} or \\glossterm{push} a creature or object, you can increase the distance of that knockback or push by up to ten feet.
+        Whenever you \\glossterm{push} or \\glossterm{fling} a creature or object, you can increase the distance of that push or fling by up to ten feet.
         In addition, you gain a +10 foot \\glossterm{enhancement bonus} to your maximum horizontal jump distance (see \\pcref{Jumping}).
         This increases your maximum vertical jump distance normally.
       `,
@@ -107,7 +107,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
 
-        You \\glossterm{knockback} the target up to 30 feet in any direction, to a maximum of a 30 foot \\glossterm{height limit}.
+        You \\glossterm{fling} the target up to 30 feet in any direction, to a maximum of a 30 foot \\glossterm{height limit}.
         Moving the target upwards costs twice the normal movement cost.
 
         If you leave the target \\glossterm{midair}, it is normally \\unsteady until it lands.
@@ -122,7 +122,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'propulsion',
-        exceptThat: 'the maximum knockback distance increases to 60 feet.',
+        exceptThat: 'the maximum fling distance increases to 60 feet.',
       },
       rank: 4,
       roles: ['mobility'],
@@ -241,7 +241,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       roles: ['flash'],
       scaling: 'accuracy',
     },
-    // Alternate design: push, or knockback if no remaining DR. More useful, but would
+    // Alternate design: push, or fling if no remaining DR. More useful, but would
     // have to be higher rank and have more complicated text.
     {
       name: 'Buffet',
@@ -249,11 +249,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
+          You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
@@ -272,11 +272,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       // sneak into three targets by keeping a relatively low weight category.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet upwards or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
+          You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `
@@ -510,7 +510,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          You \\glossterm{knockback} the object up to 60 feet towards you.
+          You \\glossterm{fling} the object up to 60 feet towards you.
           You can use a \\glossterm{free hand} to catch the object if it reaches you.
         `,
         targeting: `

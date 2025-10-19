@@ -72,12 +72,12 @@ fn bracers() -> Vec<Apparel> {
             When you do, they emit a telekinetic burst of force.
             Make an attack vs. Brawn against everything within a \areasmall radius burst from you.
             Your minimum accuracy is $accuracy.
-            \hit You \glossterm<knockback> the target up to 10 feet away from you.
-            \crit The knockback distance is doubled.
+            \hit You \glossterm<fling> the target up to 10 feet away from you.
+            \crit The fling distance is doubled.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Can knock nearby creatures back", r"
-                The minimum accuracy increases to $accuracy and the knockback distance increases to 30 feet.
+                The minimum accuracy increases to $accuracy and the fling distance increases to 30 feet.
             "),
         ],
         ..Apparel::default()

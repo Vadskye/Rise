@@ -228,7 +228,7 @@ export const telekinesis: MysticSphere = {
           \\damagerankthree.
         `,
         injury: `
-          If the target is Large or smaller, you \\glossterm{knockback} it up to 15 feet away from you.
+          If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
@@ -243,14 +243,14 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Mighty Blastwave',
 
-      // We don't calculate the size limitation into knockback officially, but removing
+      // We don't calculate the size limitation into fling officially, but removing
       // the limitation here has some value added.
       attack: {
         hit: `
           \\damagerankfive.
         `,
         injury: `
-          You \\glossterm{knockback} the target up to 15 feet away from you.
+          You \\glossterm{fling} the target up to 15 feet away from you.
         `,
         missGlance: true,
         targeting: `
@@ -265,14 +265,14 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Massive Blastwave',
 
-      // Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value with just a 15' knockback. Add the size-based doubling to compensate.
+      // Correct debuff tier here would be 1.6 EA, so we're missing 0.7 EA of debuff value with just a 15' fling. Add the size-based doubling to compensate.
       attack: {
         hit: `
           \\damageranksix.
         `,
         injury: `
-          You \\glossterm{knockback} the target up to 15 feet away from you.
-          This knockback distance is doubled if the target is Medium or smaller.
+          You \\glossterm{fling} the target up to 15 feet away from you.
+          This fling distance is doubled if the target is Medium or smaller.
         `,
         missGlance: true,
         targeting: `
@@ -342,7 +342,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally.
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
@@ -360,7 +360,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet upwards or horizontally.
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet upwards or horizontally.
           Moving it upwards costs twice the normal movement cost.
         `,
         targeting: `
@@ -592,7 +592,7 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Repulsion Field',
 
-      // TODO: correct rank, clarify whether this triggers damage from knockback
+      // TODO: correct rank, clarify whether this triggers damage from fling
       attack: {
         hit: `
           The target is unable to enter the spell's area for the rest of the round.
