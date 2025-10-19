@@ -22,5 +22,15 @@ t.test('uppercaseFirst', (t) => {
     t.end();
   });
 
+  t.test('should ignore preceding whitespace', (t) => {
+    t.equal(uppercaseFirst('    hello world'), '    Hello world');
+    t.end();
+  });
+
+  t.test('should ignore preceding special characters', (t) => {
+    t.equal(uppercaseFirst('"hello world"'), '"Hello world"');
+    t.end();
+  });
+
   t.end();
 });
