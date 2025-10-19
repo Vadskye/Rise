@@ -173,9 +173,27 @@ export const enchantment: MysticSphere = {
       tags: ['Emotion'],
     },
 
-    // HP confusion is 2.9 EA. Limited scope lets us sneak in at r7.
+    // Needs to be rank 4 to get the enemies-only, and this should have the same area as
+    // the rank 7 confusion.
     {
       name: 'Confusion',
+
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+        `,
+      },
+      rank: 4,
+      roles: ['maim'],
+      scaling: 'accuracy',
+      tags: ['Compulsion'],
+    },
+    // HP confusion is 2.9 EA. Limited scope lets us sneak in at r7.
+    {
+      name: 'Enduring Confusion',
 
       attack: {
         crit: CONDITION_CRIT,
