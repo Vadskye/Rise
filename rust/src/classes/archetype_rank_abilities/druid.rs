@@ -392,16 +392,16 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         In addition, you have the ability to move on all four limbs.
-                        When doing so, you become \trait{multipedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
-                        This gives you a \plus10 foot bonus to your \glossterm{movement speed} and a \plus5 bonus to the Balance skill.
-                        Your bite also gains the \weapontag{Heavy} weapon tag while you are multipedal in this way.
+                        When doing so, you become \trait{quadrupedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
+                        This gives you a \plus10 foot bonus to your \glossterm{movement speed}.
+                        Your bite also gains the \weapontag{Heavy} weapon tag while you are quadrupedal in this way.
 
                         When not using your hands to move, your ability to use your hands is unchanged.
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
 
                         \rankline
                         \rank{4} You gain the \trait{scent} ability.
-                        \rank{7} You can run on three limbs instead of four, allowing you to retain one free hand while multipedal.
+                        \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks.
                     \end{magicalactiveability}
 
                     % Seems boring? What abilities would make sense?
