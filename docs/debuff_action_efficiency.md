@@ -591,52 +591,61 @@ A 30' range single-target debuff deals drX-1 damage, since a normal 30' range si
 
 ### Strike-based debuffs
 
-A strike with unrestricted weapon types uses "limited scope", so -1 rank. A melee-only strike uses melee-only, so -2 ranks.
+A strike with unrestricted weapon types uses "limited scope", so it gets an extra 0.2 EA available. Melee-only gets an extra 0.4 EA available. That means:
+* Rank 1: 1.6 / 1.8 EA
+* Rank 3: 2.0 / 2.2 EA
+* Rank 5: 2.4 / 2.6 EA
+* Rank 7: 2.8 / 3.0 EA
 
-* Rank 1: A normal damage strike takes up 1.2 of the 1.4 (unrestricted) or 1.6 (melee) EA available, so the baseline EA available for debuffs is only 0.2/0.4.
-* Rank 3: A normal damage strike takes up 1 EA of the 1.8 (unrestricted) or 2.0 (melee) EA available, so the baseline EA available for debuffs is 0.8/1.0.
-* Rank 5: 2x damage takes up 1.2 EA, so 1.2/1.4.
-* Rank 7: 3x damage takes up 1.2 EA, so 1.6/1.8.
+A damage + debuff spell consistently pays 1 EA for the damage, and the damage is -1d relative to a normal damaging spell (so about 80% damage). Strikes have trickier scaling, so they pay a variable EA cost for the strike component of the attack.
+* Rank 1: A strike is relatively high damage, so it costs 1.2 EA.
+* Rank 3: A strike is 68% damage, so it costs 0.8 EA.
+* Rank 5: A double damage strike is 84% damage, so it costs 1 EA.
+* Rank 7: A triple damage strike is 75% damage, so it costs 1 EA.
 
-These accuracy modifiers are separate from the normal accuracy modifier calculation, and do not directly affect the resulting rank of the debuff.
+Putting that all together, for unrestricted / melee effects:
+* Rank 1: 0.4 / 0.6 EA debuff
+* Rank 3: 1.2 / 1.4 EA debuff
+* Rank 5: 1.4 / 1.6 EA debuff
+* Rank 7: 1.8 / 2.0 EA debuff
 
 #### Specific strike-based effects
-* Rank 1:
+* Rank 1 unrestricted:
   * Unrestricted:
-    * Strike and 0.2 EA debuff
-    * Strike, if beat Fort/Ment, 0.4 EA debuff
-    * Strike and crit, 0.6 EA debuff
-  * Melee only:
     * Strike and 0.4 EA debuff
     * Strike, if beat Fort/Ment, 0.6 EA debuff
     * Strike and crit, 0.8 EA debuff
+  * Melee only:
+    * Strike and 0.6 EA debuff
+    * Strike, if beat Fort/Ment, 0.8 EA debuff
+    * Strike and crit, 1.0 EA debuff
 * Rank 3:
   * Unrestricted:
-    * strike and 0.8 EA debuff
-    * strike, if beat Fort/Ment, 1.0 EA debuff
-    * strike and crit, 1.2 EA debuff
+    * strike and 1.2 EA debuff
+    * strike, if beat Fort/Ment, 1.4 EA debuff
+    * strike and crit, 1.6 EA debuff
   * Melee only:
-    * strike and 1 EA debuff
-    * strike, if beat Fort/Ment, 1.2 EA debuff
-    * strike and crit, 1.4 EA debuff
+    * strike and 1.4 EA debuff
+    * strike, if beat Fort/Ment, 1.6 EA debuff
+    * strike and crit, 1.8 EA debuff
 * Rank 5:
   * Unrestricted:
-    * double damage strike and 1.2 EA debuff
-    * double damage strike, if beat Fort/Ment, 1.4 EA debuff
-    * double damage strike and crit, 1.6 EA debuff
-  * Melee only:
     * double damage strike and 1.4 EA debuff
     * double damage strike, if beat Fort/Ment, 1.6 EA debuff
     * double damage strike and crit, 1.8 EA debuff
+  * Melee only:
+    * double damage strike and 1.6 EA debuff
+    * double damage strike, if beat Fort/Ment, 1.8 EA debuff
+    * double damage strike and crit, 2.0 EA debuff
 * Rank 7:
   * Unrestricted:
-    * triple damage strike and 1.6 EA debuff
-    * triple damage strike, if beat Fort/Ment, 1.8 EA debuff
-    * triple damage strike and crit, 2.0 EA debuff
-  * Melee only:
     * triple damage strike and 1.8 EA debuff
     * triple damage strike, if beat Fort/Ment, 2.0 EA debuff
     * triple damage strike and crit, 2.2 EA debuff
+  * Melee only:
+    * triple damage strike and 2.0 EA debuff
+    * triple damage strike, if beat Fort/Ment, 2.2 EA debuff
+    * triple damage strike and crit, 2.4 EA debuff
 
 ### Rank modifiers
 
