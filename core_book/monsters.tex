@@ -139,7 +139,19 @@ This chapter describes the rules for monsters, and the combat statistics for a v
   \subsection{Monster Conditions}\label{Monster Conditions}
     Monsters normally can't use the \textit{recover} ability, since they cannot use abilities which would increase their \glossterm{fatigue level}.
     Standard monsters can only remove \glossterm{conditions} by taking a \glossterm{short rest}.
-    However, elite monsters can remove conditions automatically.
+    However, \glossterm{elite} monsters can remove conditions more easily with the \ability{elite cleanse} ability.
+    Intelligence monsters can generally choose which condition they remove, while unintelligent monsters may choose instinctually or randomly.
+
+    % The timing here is important.
+    % If the monster could remove conditions as an action on its turn, then offensive debuffs would have a chance to be removed before they ever affected the monster's actions.
+    % Conditions should never be worse than brief effects, so this has to be an end of round trigger.
+    \begin{triggeredability}{Elite Cleanse}{Triggered}
+      \rankline
+      At the end of each round, roll 1d10.
+      On an 7 or higher, the monster can remove one \glossterm{condition}.
+      On a 10, it can also remove a different condition.
+      Conditions applied during the current round cannot be removed in this way.
+    \end{triggeredability}
 
     Whenever an elite monster gains a unique condition, it is added to a ``condition track''.
     The first condition is to the first slot in the track, the second condition is added to the second slot, and so on.

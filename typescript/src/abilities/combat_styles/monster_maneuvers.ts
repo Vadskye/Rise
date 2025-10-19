@@ -218,5 +218,18 @@ export const monsterManeuvers: CombatStyle = {
       rank: 7,
       roles: ['burst'],
     },
+
+    {
+      name: 'Elite Cleanse',
+      effect: `
+        At the end of each round, roll 1d10.
+        On an 8 or 9, the monster can remove one \\glossterm{condition}.
+        On a 10, it can instead remove two different conditions.
+        Conditions applied during the current round cannot be removed in this way.
+      `,
+      rank: 1,
+      roles: ['cleanse'],
+      usageTime: 'triggered',
+    },
   ],
 };
