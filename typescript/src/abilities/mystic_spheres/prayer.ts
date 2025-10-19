@@ -464,7 +464,7 @@ export const prayer: MysticSphere = {
         crit: `The effect lasts until the curse is removed.`,
         hit: `
           The target has difficulty seeing until it finishes a \\glossterm{short rest}.
-          While it is \\injured, it is \\dazzled.
+          While it is \\glossterm{injured}, it is \\dazzled.
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\smallarea radius within \\shortrange.
