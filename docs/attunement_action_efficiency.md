@@ -154,11 +154,11 @@ Note that this requires a minor action to activate to avoid stacking multiple at
 
 ### Singleton reactive debuff: ???
 
-Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that brief
-debuffs often have additional effect:
+Assume that the trigger for the reactive debuff always happens, but it is limited to once per creature. That means it makes 1 attack per fight. However, incremental bonuses that add up to some EA value over a long fight are different from this sort of immediate trigger that happens on round 1. For that reason, unlike the minor action attack system that assumes that each attack is worth 1 EA, we use the direct EA value of the debuff, keeping in mind that reactive brief debuffs often have additional effects:
 * Briefly stunned: 1.6 EA, since it affects your first attack too
 * Briefly dazzled: 1.2 EA, since it affects two rounds of enemy attacks instead of one
 * Briefly frightened by you: 1.2 EA, since 0.8 EA from double action denial and 0.4 EA from Mental debuff
+* Frightened by you as a condition: 2.5 EA, with the normal 2.1 EA from frightened plus the 0.4 EA from also affecting the first round attack.
 
 This all counts EA *assuming a hit*, which is different from how we normally count buff/attunement effects. For now, let's test ignoring this discrepancy since auto-attacks are scary from an action economy perspective.
 
