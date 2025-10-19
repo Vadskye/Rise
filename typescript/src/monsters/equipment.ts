@@ -27,11 +27,7 @@ export function isBodyArmor(item: EquippedItem): item is BodyArmor {
 }
 
 // This is used to apply numeric modifiers to the monster.
-const SHIELDS_LIST = [
-  'buckler',
-  'standard shield',
-  'tower shield',
-] as const;
+const SHIELDS_LIST = ['buckler', 'standard shield', 'tower shield'] as const;
 export type Shield = (typeof SHIELDS_LIST)[number];
 export const SHIELDS = new Set(SHIELDS_LIST);
 

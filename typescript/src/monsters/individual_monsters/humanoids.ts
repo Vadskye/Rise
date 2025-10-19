@@ -16,217 +16,244 @@ export function addHumanoids(grimoire: Grimoire) {
 function addBandits(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Bandits",
+      name: 'Bandits',
       hasArt: false,
     },
     [
-      ['Army Deserter', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setProperties({
-          has_art: true,
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Army Deserter',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setProperties({
+            has_art: true,
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Army deserters have abandoned their past life in an army and struck out on their own.
             Since the punishments for desertion are typically harsh, they have little to lose.
           `,
-        });
-        creature.setTrainedSkills(['endurance']);
-        creature.setBaseAttributes([2, 0, 2, 0, 1, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-          shield: 'buckler', // Buckler over standard shield so they can use the crossbow more easily
-        });
-        creature.addWeaponMult('spear');
-        creature.addWeaponMult('heavy crossbow');
-      }],
-      ['Veteran Archer', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'sniper',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setProperties({
-          has_art: false,
-        });
-        creature.setTrainedSkills(['awareness']);
-        creature.setBaseAttributes([2, 3, 0, 0, 4, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-        });
-        creature.addManeuver('Arrowguide', { weapon: 'longbow' });
-        creature.addWeaponMult('longbow');
-      }],
-      ['Renegade Bolter', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'sniper',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 4,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['awareness']);
-        creature.setBaseAttributes([0, 3, 0, 0, 3, 4]);
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-          shield: 'buckler',
-        });
-        creature.addSpell('Arc');
-        creature.addSpell('Electrocute');
-        creature.addSpell('Stunning Discharge');
-      }],
-    ]
+          });
+          creature.setTrainedSkills(['endurance']);
+          creature.setBaseAttributes([2, 0, 2, 0, 1, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+            shield: 'buckler', // Buckler over standard shield so they can use the crossbow more easily
+          });
+          creature.addWeaponMult('spear');
+          creature.addWeaponMult('heavy crossbow');
+        },
+      ],
+      [
+        'Veteran Archer',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'sniper',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setProperties({
+            has_art: false,
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setBaseAttributes([2, 3, 0, 0, 4, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+          });
+          creature.addManeuver('Arrowguide', { weapon: 'longbow' });
+          creature.addWeaponMult('longbow');
+        },
+      ],
+      [
+        'Renegade Bolter',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'sniper',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setBaseAttributes([0, 3, 0, 0, 3, 4]);
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+          creature.addSpell('Arc');
+          creature.addSpell('Electrocute');
+          creature.addSpell('Stunning Discharge');
+        },
+      ],
+    ],
   );
 }
 
 function addBugbears(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Bugbears",
+      name: 'Bugbears',
       sharedInitializer: (creature: Creature) => {
         creature.setTrainedSkills(['endurance']);
       },
     },
     [
-      ['Bugbear Raider', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 4,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-        });
-        creature.setBaseAttributes([2, 0, 5, -2, 0, 2]);
-        creature.addManeuver('Grapple');
-        creature.addManeuver('Piledriver');
-        creature.addWeaponMult('heavy flail');
-      }],
+      [
+        'Bugbear Raider',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.setBaseAttributes([2, 0, 5, -2, 0, 2]);
+          creature.addManeuver('Grapple');
+          creature.addManeuver('Piledriver');
+          creature.addWeaponMult('heavy flail');
+        },
+      ],
 
-      ['Bugbear Shaman', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'leader',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 4,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(["awareness"]);
-        creature.setBaseAttributes([0, 0, 5, -2, 2, 4]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-          shield: 'standard shield',
-        });
-        creature.addSpell('Mind Crush');
-        creature.addSpell('Taunt');
-        creature.addSpell('Repeat');
-        creature.addWeaponMult('flail');
-      }],
+      [
+        'Bugbear Shaman',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'leader',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setBaseAttributes([0, 0, 5, -2, 2, 4]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+            shield: 'standard shield',
+          });
+          creature.addSpell('Mind Crush');
+          creature.addSpell('Taunt');
+          creature.addSpell('Repeat');
+          creature.addWeaponMult('flail');
+        },
+      ],
 
-      ['Bugbear Growl', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 2,
-          size: 'medium',
-        });
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-        });
-        creature.setBaseAttributes([2, 0, 4, -2, 0, 1]);
-        creature.addWeaponMult('heavy flail');
-        creature.addManeuver('Piledriver');
-        creature.addManeuver('Grapple');
-      }],
+      [
+        'Bugbear Growl',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 2,
+            size: 'medium',
+          });
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+          });
+          creature.setBaseAttributes([2, 0, 4, -2, 0, 1]);
+          creature.addWeaponMult('heavy flail');
+          creature.addManeuver('Piledriver');
+          creature.addManeuver('Grapple');
+        },
+      ],
 
-      ['Bugbear Chief', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'leader',
-          elite: true,
-          creature_type: 'humanoid',
-          level: 6,
-          size: 'medium',
-        });
-        creature.setEquippedArmor({
-          bodyArmor: 'brigandine',
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([3, 0, 6, 0, 3, 6]);
-        creature.addWeaponMult('heavy flail');
-        creature.addManeuver('Weather the Storm', { usageTime: 'elite' });
-        creature.addManeuver('Invigoration', { usageTime: 'elite' });
-        creature.addManeuver('Defensive Stance', { usageTime: 'elite' });
-      }],
-    ]
+      [
+        'Bugbear Chief',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'leader',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 6,
+            size: 'medium',
+          });
+          creature.setEquippedArmor({
+            bodyArmor: 'brigandine',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([3, 0, 6, 0, 3, 6]);
+          creature.addWeaponMult('heavy flail');
+          creature.addManeuver('Weather the Storm', { usageTime: 'elite' });
+          creature.addManeuver('Invigoration', { usageTime: 'elite' });
+          creature.addManeuver('Defensive Stance', { usageTime: 'elite' });
+        },
+      ],
+    ],
   );
 }
 
 function addCultists(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Cultists",
+      name: 'Cultists',
       hasArt: false,
     },
     [
-      ['Death Cultist', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'sniper',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['endurance']);
-        creature.setBaseAttributes([1, 1, 2, -1, 1, 4]);
-        // No body armor; assume they are wearing robes
-        creature.addSpell('Drain Life');
-        creature.addWeaponMult('scythe');
-      }],
-      ['Pyromaniac', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 4,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([0, 2, 0, -1, 2, 5]);
-        // No body armor; assume they are wearing robes
-        creature.addSpell('Ignition');
-        creature.addSpell('Pyrohemia');
-        creature.addSpell('Burning Grasp');
-        creature.addWeaponMult('club');
-      }],
-    ]
+      [
+        'Death Cultist',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'sniper',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['endurance']);
+          creature.setBaseAttributes([1, 1, 2, -1, 1, 4]);
+          // No body armor; assume they are wearing robes
+          creature.addSpell('Drain Life');
+          creature.addWeaponMult('scythe');
+        },
+      ],
+      [
+        'Pyromaniac',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([0, 2, 0, -1, 2, 5]);
+          // No body armor; assume they are wearing robes
+          creature.addSpell('Ignition');
+          creature.addSpell('Pyrohemia');
+          creature.addSpell('Burning Grasp');
+          creature.addWeaponMult('club');
+        },
+      ],
+    ],
   );
 }
 
 function addGoblins(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Goblins",
+      name: 'Goblins',
       hasArt: true,
       knowledge: {
         normal: `
@@ -236,68 +263,77 @@ function addGoblins(grimoire: Grimoire) {
       },
     },
     [
-      ['Goblin Warrior', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['awareness']);
-        creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
-        creature.addWeaponMult('spear');
-        creature.addManeuver('Rushdown', { weapon: 'spear' });
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-          shield: 'buckler',
-        });
-      }],
-      ['Goblin Wolf Rider', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['ride']);
-        creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
-        creature.addWeaponMult('lance');
-        creature.addWeaponMult('spear');
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-          shield: 'buckler',
-        });
-      }],
-      ['Goblin Shaman', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['awareness']);
-        creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
-        creature.addSpell('Word of Power');
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-          shield: 'standard shield',
-        });
-        creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
-      }],
-    ]
+      [
+        'Goblin Warrior',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Rushdown', { weapon: 'spear' });
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+        },
+      ],
+      [
+        'Goblin Wolf Rider',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['ride']);
+          creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
+          creature.addWeaponMult('lance');
+          creature.addWeaponMult('spear');
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+        },
+      ],
+      [
+        'Goblin Shaman',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setBaseAttributes([-1, 3, 0, -2, 2, 3]);
+          creature.addSpell('Word of Power');
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'standard shield',
+          });
+          creature.addWeaponMult('spear', { displayName: 'Consecrated Strike', isMagical: true });
+        },
+      ],
+    ],
   );
 }
 
 function addLizardfolk(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Lizardfolk",
+      name: 'Lizardfolk',
       hasArt: true,
       knowledge: {
         normal: `
@@ -325,113 +361,131 @@ function addLizardfolk(grimoire: Grimoire) {
       },
     },
     [
-      ['Lizardfolk Grunt', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['swim']);
-        creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
-        creature.addWeaponMult('spear');
-        creature.addManeuver('Bloodletter', { weapon: 'bite' });
-      }],
-      ['Lizardfolk Champion', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 5,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['swim']);
-        creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
-        creature.addWeaponMult('spear');
-        creature.addManeuver('Bloodletter', { weapon: 'bite' });
-        creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
-      }],
-    ]
+      [
+        'Lizardfolk Grunt',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['swim']);
+          creature.setBaseAttributes([2, 2, 4, -1, 1, 0]);
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Bloodletter', { weapon: 'bite' });
+        },
+      ],
+      [
+        'Lizardfolk Champion',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 5,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['swim']);
+          creature.setBaseAttributes([3, 3, 5, 0, 1, 1]);
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Bloodletter', { weapon: 'bite' });
+          creature.addManeuver('Redeeming Followup', { weapon: 'spear' });
+        },
+      ],
+    ],
   );
 }
 
 function addKobolds(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Kobolds",
+      name: 'Kobolds',
       sharedInitializer: (creature) => {
         creature.setTrainedSkills(['awareness', 'stealth']);
       },
     },
     [
-      ['Kobold Nipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'skirmisher',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 2,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-        creature.addSneakAttack('smallswords');
-      }],
-      ['Kobold Snipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'sniper',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 2,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
-        creature.addWeaponMult('longbow');
-        creature.addManeuver('Heartpiercer', { weapon: 'longbow' });
-      }],
-      ['Dragonsworn Nipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'skirmisher',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 11,
-          size: 'medium',
-        });
-        creature.addPassiveAbility({
-          name: "Dragonsworn",
-          effect: `
+      [
+        'Kobold Nipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'skirmisher',
+            creature_type: 'humanoid',
+            elite: false,
+            level: 2,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+          creature.addSneakAttack('smallswords');
+        },
+      ],
+      [
+        'Kobold Snipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'sniper',
+            creature_type: 'humanoid',
+            elite: false,
+            level: 2,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+          creature.addWeaponMult('longbow');
+          creature.addManeuver('Heartpiercer', { weapon: 'longbow' });
+        },
+      ],
+      [
+        'Dragonsworn Nipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'skirmisher',
+            creature_type: 'humanoid',
+            elite: false,
+            level: 11,
+            size: 'medium',
+          });
+          creature.addPassiveAbility({
+            name: 'Dragonsworn',
+            effect: `
             The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `
-        });
-        creature.addImpervious('Varies');
-        creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
-        creature.addSneakAttack('smallswords');
-      }],
-      ['Dragonsworn Snipper', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'sniper',
-          creature_type: 'humanoid',
-          elite: false,
-          level: 11,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
-        creature.addPassiveAbility({
-          name: "Dragonsworn",
-          effect: `
+          `,
+          });
+          creature.addImpervious('Varies');
+          creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
+          creature.addSneakAttack('smallswords');
+        },
+      ],
+      [
+        'Dragonsworn Snipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'sniper',
+            creature_type: 'humanoid',
+            elite: false,
+            level: 11,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
+          creature.addPassiveAbility({
+            name: 'Dragonsworn',
+            effect: `
             The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `
-        });
-        creature.addImpervious('Varies');
-        creature.addWeaponMult('longbow');
-        creature.addManeuver('Distant Shot', { weapon: 'longbow' });
-        creature.addManeuver('Pure Precision', { weapon: 'longbow' });
-      }],
+          `,
+          });
+          creature.addImpervious('Varies');
+          creature.addWeaponMult('longbow');
+          creature.addManeuver('Distant Shot', { weapon: 'longbow' });
+          creature.addManeuver('Pure Precision', { weapon: 'longbow' });
+        },
+      ],
     ],
   );
 }
@@ -439,7 +493,7 @@ function addKobolds(grimoire: Grimoire) {
 function addNecromancers(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Necromancers",
+      name: 'Necromancers',
       hasArt: false,
       knowledge: {
         normal: `
@@ -450,85 +504,91 @@ function addNecromancers(grimoire: Grimoire) {
       },
     },
     [
-      ['Graverobber', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic evil',
-          base_class: 'leader',
-          elite: true,
-          creature_type: 'humanoid',
-          level: 4,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(["awareness", "stealth", "craft_bone"]);
-        creature.setBaseAttributes([0, 4, 0, 2, 2, 4]);
+      [
+        'Graverobber',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'leader',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness', 'stealth', 'craft_bone']);
+          creature.setBaseAttributes([0, 4, 0, 2, 2, 4]);
 
-        creature.addWeaponMult('heavy crossbow');
-        creature.addSpell('Inflict Wound');
-        creature.addSpell('Putrefying Blast', { usageTime: 'elite' });
-        creature.addSpell('Lifesteal');
-        creature.addSpell('Drain Life', { usageTime: 'elite' })
-      }],
+          creature.addWeaponMult('heavy crossbow');
+          creature.addSpell('Inflict Wound');
+          creature.addSpell('Putrefying Blast', { usageTime: 'elite' });
+          creature.addSpell('Lifesteal');
+          creature.addSpell('Drain Life', { usageTime: 'elite' });
+        },
+      ],
 
-      ['Lichbound', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'leader',
-          elite: true,
-          creature_type: 'humanoid',
-          level: 8,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Lichbound',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'leader',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 8,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             A lichbound is a mage who has started the process of becoming a lich by intentionally splintering their own soul.
             They still have far to go before they truly embrace undeath, but they gain some benefits from their partial transformation.
           `,
-        });
-        creature.setTrainedSkills(["awareness", "intimidate", "craft_bone", 'knowledge_arcana']);
-        creature.setBaseAttributes([0, 2, 4, 3, 2, 6]);
-        creature.addCustomSense('Darkvision (60 ft.)');
-        creature.addCustomSense('Lifesight (30 ft.)');
+          });
+          creature.setTrainedSkills(['awareness', 'intimidate', 'craft_bone', 'knowledge_arcana']);
+          creature.setBaseAttributes([0, 2, 4, 3, 2, 6]);
+          creature.addCustomSense('Darkvision (60 ft.)');
+          creature.addCustomSense('Lifesight (30 ft.)');
 
-        creature.addPassiveAbility({
-          name: 'Life Suppression',
-          effect: `
+          creature.addPassiveAbility({
+            name: 'Life Suppression',
+            effect: `
             Although the $name is alive, it is not considered a living creature for the purpose of attacks against it.
             This means that attacks which only affect living creatures have no effect on it.
           `,
-        });
+          });
 
-        // Immediate damage is standard action, debuff / buildup is elite action
-        creature.addWeaponMult('scythe', { displayName: 'Reaping Scythe', isMagical: true });
-        // Lifesteal Grasp, but as rank 3 and reformatted for a monster.
-        creature.addCustomSpell({
-          name: "Lifesteal Grasp",
-          attack: {
-            hit: '\\damagerankfour.',
-            // A true lifesteal grasp should be rank 6, but that seems strong when they
-            // don't have to pay a fatigue cost.
-            injury: 'You regain \\hprankfive at the end of the round.',
-            targeting: `
+          // Immediate damage is standard action, debuff / buildup is elite action
+          creature.addWeaponMult('scythe', { displayName: 'Reaping Scythe', isMagical: true });
+          // Lifesteal Grasp, but as rank 3 and reformatted for a monster.
+          creature.addCustomSpell({
+            name: 'Lifesteal Grasp',
+            attack: {
+              hit: '\\damagerankfour.',
+              // A true lifesteal grasp should be rank 6, but that seems strong when they
+              // don't have to pay a fatigue cost.
+              injury: 'You regain \\hprankfive at the end of the round.',
+              targeting: `
               You must have a \\glossterm{free hand} to cast this spell.
 
               Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
             `,
-          },
-        });
+            },
+          });
 
-        creature.addSpell('Circle of Death', { usageTime: 'elite' })
-        creature.addSpell('Fearsome Aura', { usageTime: 'triggered' })
-        creature.addSpell('Mind Blank', { displayName: 'Splinter Soul', usageTime: 'elite' });
-        creature.addSpell('Lifetap Blast');
-        creature.addSpell('Sanguine Bond', { usageTime: 'elite' });
-      }],
-    ]
+          creature.addSpell('Circle of Death', { usageTime: 'elite' });
+          creature.addSpell('Fearsome Aura', { usageTime: 'triggered' });
+          creature.addSpell('Mind Blank', { displayName: 'Splinter Soul', usageTime: 'elite' });
+          creature.addSpell('Lifetap Blast');
+          creature.addSpell('Sanguine Bond', { usageTime: 'elite' });
+        },
+      ],
+    ],
   );
 }
 
 function addOrcs(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Orcs",
+      name: 'Orcs',
       hasArt: false,
       knowledge: {
         normal: `
@@ -553,161 +613,179 @@ function addOrcs(grimoire: Grimoire) {
       },
     },
     [
-      ['Orc Peon', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'brute',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Orc Peon',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc peons are the weakest warrior that orc clans field in battle.
             They have the lowest status of any adult in orc society.
             Peons are typically fresh recruits who have not yet been fully incorporated into an orc army.
           `,
-        });
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-        });
-        creature.setBaseAttributes([4, 0, 1, -2, 0, 0]);
-        creature.addWeaponMult('greataxe');
-      }],
-      ['Orc Grunt', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'brute',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 2,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+          });
+          creature.setBaseAttributes([4, 0, 1, -2, 0, 0]);
+          creature.addWeaponMult('greataxe');
+        },
+      ],
+      [
+        'Orc Grunt',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 2,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc grunts are the standard warrior that orc clans field in battle.
           `,
-        });
-        creature.setBaseAttributes([5, 0, 2, -2, 0, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-        });
-        creature.addWeaponMult('greataxe');
-        creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
-      }],
-      ['Orc Butcher', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'brute',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setBaseAttributes([5, 0, 2, -2, 0, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.addWeaponMult('greataxe');
+          creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
+        },
+      ],
+      [
+        'Orc Butcher',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc butchers usually run the field kitchens in orc armies.
             They tend to be smarter than the average orc warrior, but are no less ferocious when challenged.
           `,
-        });
-        creature.setBaseAttributes([5, 1, 2, 0, 0, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-        });
-        creature.addCustomManeuver({
-          name: "Butcher's Cleaver",
-          effect: `
+          });
+          creature.setBaseAttributes([5, 1, 2, 0, 0, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.addCustomManeuver({
+            name: "Butcher's Cleaver",
+            effect: `
             The $name makes a strike.
           `,
-          tags: ['sweeping (2)'],
-          weapon: 'greataxe',
-        });
-        creature.addManeuver('Bloodletter', { weapon: 'greataxe' });
-      }],
-      ['Orc Veteran', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'brute',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 5,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+            tags: ['sweeping (2)'],
+            weapon: 'greataxe',
+          });
+          creature.addManeuver('Bloodletter', { weapon: 'greataxe' });
+        },
+      ],
+      [
+        'Orc Veteran',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 5,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc veterans are battle-hardened elite warriors who are deadly at any range.
             They often serve as bodyguards to orc chieftains or as devastating shock troops in battle.
           `,
-        });
-        creature.setBaseAttributes([6, 0, 3, -2, 1, 1]);
-        creature.setEquippedArmor({
-          bodyArmor: 'scale',
-        });
-        creature.addWeaponMult('greataxe');
-        creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
-        creature.addWeaponMult('heavy crossbow');
-      }],
-      ['Orc Clan Chief', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'leader',
-          elite: true,
-          creature_type: 'humanoid',
-          level: 7,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setBaseAttributes([6, 0, 3, -2, 1, 1]);
+          creature.setEquippedArmor({
+            bodyArmor: 'scale',
+          });
+          creature.addWeaponMult('greataxe');
+          creature.addManeuver('Wild Swing', { weapon: 'greataxe' });
+          creature.addWeaponMult('heavy crossbow');
+        },
+      ],
+      [
+        'Orc Clan Chief',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'leader',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 7,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc clan chiefs are the among the most powerful orc warriors.
             Even the lowest clan chief commands hundreds of powerful orc warriors, plus at least as many noncombatants.
           `,
-        });
-        creature.setBaseAttributes([6, 0, 4, 0, 2, 3]);
-        creature.setEquippedArmor({
-          bodyArmor: 'scale',
-        });
-        creature.addWeaponMult('greataxe');
-        creature.addManeuver('Distant Shot', { weapon: 'heavy crossbow' });
-        creature.addManeuver('Armorcrusher', { weapon: 'greataxe' });
-        creature.addManeuver('Battle Command', { usageTime: 'elite' });
-      }],
-      ['Orc Shaman', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'leader',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 2,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setBaseAttributes([6, 0, 4, 0, 2, 3]);
+          creature.setEquippedArmor({
+            bodyArmor: 'scale',
+          });
+          creature.addWeaponMult('greataxe');
+          creature.addManeuver('Distant Shot', { weapon: 'heavy crossbow' });
+          creature.addManeuver('Armorcrusher', { weapon: 'greataxe' });
+          creature.addManeuver('Battle Command', { usageTime: 'elite' });
+        },
+      ],
+      [
+        'Orc Shaman',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'leader',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 2,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Orc shamans provide orc battle squads with divine magical support.
             They primarily aid their allies, though they have no fear of taking up arms themselves when necessary.
           `,
-          hard: `
+            hard: `
             If an orc shaman proves their mettle and wisdom in combat, they may eventually become a trusted advisor to a clan chief.
             The advice and spiritual guidance of a capable shaman often has more influence on the success of an orc clan than mere strength of arms, and good clan chiefs recognize that fact.
           `,
-        });
-        creature.setBaseAttributes([4, 1, 1, -1, 1, 4]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-        });
-        creature.addSpell('Reveal Victory');
-        creature.addSpell('Foresee Safety');
-        creature.addSpell("Executioner's Axe");
-        creature.addWeaponMult('greataxe');
-      }],
-    ]
+          });
+          creature.setBaseAttributes([4, 1, 1, -1, 1, 4]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.addSpell('Reveal Victory');
+          creature.addSpell('Foresee Safety');
+          creature.addSpell("Executioner's Axe");
+          creature.addWeaponMult('greataxe');
+        },
+      ],
+    ],
   );
 }
 
 function addTownsfolk(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Townsfolk",
+      name: 'Townsfolk',
       hasArt: false,
       knowledge: {
         normal: `
@@ -717,60 +795,65 @@ function addTownsfolk(grimoire: Grimoire) {
       },
     },
     [
-      ['Town Guard', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setProperties({
-          has_art: false,
-        });
-        creature.setKnowledgeResults({
-          easy: `
+      [
+        'Town Guard',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setProperties({
+            has_art: false,
+          });
+          creature.setKnowledgeResults({
+            easy: `
             Town guards are common throughout civilization.
             This represents the sort of ordinary guard that would be found even in rural towns, not an elite bodyguard.
           `,
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([1, 1, 1, 0, 0, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-          shield: 'standard shield',
-        });
-        creature.addWeaponMult('spear');
-
-      }],
-      ['Town Healer', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral',
-          base_class: 'leader',
-          elite: false,
-          creature_type: 'humanoid',
-          level: 2,
-          size: 'medium',
-        });
-        creature.setProperties({
-          has_art: false,
-        });
-        creature.setKnowledgeResults({
-          easy: `
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([1, 1, 1, 0, 0, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+            shield: 'standard shield',
+          });
+          creature.addWeaponMult('spear');
+        },
+      ],
+      [
+        'Town Healer',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral',
+            base_class: 'leader',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 2,
+            size: 'medium',
+          });
+          creature.setProperties({
+            has_art: false,
+          });
+          creature.setKnowledgeResults({
+            easy: `
             Town healers are typically clerics or druids with some healing ability.
             They may be prominent leaders of a temple, or they may prefer solitude, but it is rare to find a reasonably sized town that does not have a healer of some variety.
           `,
-        });
-        creature.setTrainedSkills(['medicine']);
-        creature.setBaseAttributes([0, 0, 0, 0, 3, 3]);
-        creature.setEquippedArmor({
-          bodyArmor: 'buff leather',
-          shield: 'buckler',
-        });
-        creature.addSpell('Restoration');
-        creature.addWeaponMult('club');
-      }],
-    ]
+          });
+          creature.setTrainedSkills(['medicine']);
+          creature.setBaseAttributes([0, 0, 0, 0, 3, 3]);
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+          creature.addSpell('Restoration');
+          creature.addWeaponMult('club');
+        },
+      ],
+    ],
   );
 }

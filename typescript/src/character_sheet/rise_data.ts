@@ -50,7 +50,7 @@ export type RiseBaseClass =
   | 'vampire'
   | 'brute'
   | 'leader'
-  | 'mystic'  // TODO: remove mystic, since it is no longer supported
+  | 'mystic' // TODO: remove mystic, since it is no longer supported
   | 'skirmisher'
   | 'sniper'
   | 'warrior';

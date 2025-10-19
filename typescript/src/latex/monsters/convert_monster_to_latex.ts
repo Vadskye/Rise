@@ -10,7 +10,10 @@ import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 
 import { convertAutoAttackToLatex } from './monster_attacks';
-import { convertAbilityToMonsterLatex, convertPassiveAbilityToMonsterLatex } from './player_abilities';
+import {
+  convertAbilityToMonsterLatex,
+  convertPassiveAbilityToMonsterLatex,
+} from './player_abilities';
 import { replacePlaceholders } from './replace_placeholders';
 
 export function convertMonsterToLatex(monster: Creature, parentGroupName?: string) {
@@ -52,7 +55,7 @@ function checkValidMonster(monster: Creature) {
   }
 
   if (monster.name !== format.titleCase(monster.name)) {
-    warn("Monster name should be title case");
+    warn('Monster name should be title case');
   }
 }
 
@@ -233,8 +236,7 @@ function genAttributesText(monster: Creature): string {
     monster.hasTrait('mindless') ? '---' : formatAttribute(monster.intelligence),
     formatAttribute(monster.perception),
     monster.hasTrait('mindless') ? '---' : formatAttribute(monster.willpower),
-  ]
-    .join(', ');
+  ].join(', ');
 }
 
 function genAbilitiesText(monster: Creature): string {
@@ -283,7 +285,9 @@ function genTraitsText(monster: Creature): string {
     return '';
   }
 
-  const traitsText = traits.map((trait) => `\\trait{${format.sentenceCase(trait)}}`).join('\\monsep ');
+  const traitsText = traits
+    .map((trait) => `\\trait{${format.sentenceCase(trait)}}`)
+    .join('\\monsep ');
 
   return `\\pari \\textbf{Traits} ${traitsText}`;
 }

@@ -155,8 +155,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with extra damage', (t) => {
     const ability = {
       weapon: 'bite',
-      effect:
-        'Make a strike that deals 7 \\glossterm{extra damage}.',
+      effect: 'Make a strike that deals 7 \\glossterm{extra damage}.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+17');
@@ -166,8 +165,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with double weapon damage and extra damage', (t) => {
     const ability = {
       weapon: 'bite',
-      effect:
-        'Make a strike that deals double weapon damage and 13 extra damage.',
+      effect: 'Make a strike that deals double weapon damage and 13 extra damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+23');
@@ -208,8 +206,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with a 8x weapon damage multiplier and extra damage', (t) => {
     const ability = {
       weapon: 'claws',
-      effect:
-        'Make a \\glossterm{strike} that deals eight times weapon damage and 3 extra damage.',
+      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and 3 extra damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+8');
@@ -219,8 +216,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with a double damage multiplier and extra damage', (t) => {
     const ability = {
       weapon: 'bite',
-      effect:
-        'Make a \\glossterm{strike} that deals double damage and 7 extra damage.',
+      effect: 'Make a \\glossterm{strike} that deals double damage and 7 extra damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+34');
@@ -265,7 +261,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     simpleCreature.setProperties({
       name: 'Simple Creature',
       level: 10,
-      strength_at_creation: 5,  // Allows differentiating regular accuracy from brawling accuracy
+      strength_at_creation: 5, // Allows differentiating regular accuracy from brawling accuracy
     });
   });
 
@@ -273,7 +269,9 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     // Lazy way to define the ability, but it works
     simpleCreature.addWeaponMult('bite');
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.matchOnlyStrict(convertAbilityToMonsterLatex(simpleCreature, ability), `\\begin{activeability}{Bite}{Standard action}
+    t.matchOnlyStrict(
+      convertAbilityToMonsterLatex(simpleCreature, ability),
+      `\\begin{activeability}{Bite}{Standard action}
       
       \\rankline
       \\hypertargetraised{maneuver:Bite}{}%
@@ -283,7 +281,8 @@ t.test('convertAbilityToMonsterLatex', (t) => {
         \\vspace{0.25em}
         \\hit 3d8+10 damage.% 
       \\vspace{0.1em}%
-    \\end{activeability}`);
+    \\end{activeability}`,
+    );
 
     t.end();
   });
@@ -292,7 +291,9 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     // Lazy way to define the ability, but it works
     simpleCreature.addManeuver('Grapple');
     const ability = simpleCreature.getActiveAbilities()[0];
-    t.equal(convertAbilityToMonsterLatex(simpleCreature, ability), `\\begin{activeability}{Grapple}{Standard action}
+    t.equal(
+      convertAbilityToMonsterLatex(simpleCreature, ability),
+      `\\begin{activeability}{Grapple}{Standard action}
       \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Size-Based}
       \\rankline
       \\hypertargetraised{maneuver:Grapple}{}%
@@ -303,7 +304,8 @@ t.test('convertAbilityToMonsterLatex', (t) => {
         \\hit The $name and the target are \\grappled by each other.
         \\crit The $name also controls the grapple.% 
       \\vspace{0.1em}%
-    \\end{activeability}`);
+    \\end{activeability}`,
+    );
 
     t.end();
   });
@@ -322,7 +324,7 @@ t.test('reformatAsMonsterAbility', (t) => {
     });
   });
 
-  t.test("throws appropriate errors", (t) => {
+  t.test('throws appropriate errors', (t) => {
     t.throws(() => {
       const ability = {
         name: 'Test Ability',
@@ -385,7 +387,8 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
-        targeting: 'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
+        targeting:
+          'The $name makes a $accuracy melee strike vs. Armor with its bite. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -400,7 +403,8 @@ t.test('restructureStrikeAbility', (t) => {
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
         hit: '2d4+5 damage.',
-        targeting: 'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
+        targeting:
+          'The $name makes a $accuracy+3 melee strike vs. Armor with its talons. Then, it is \\glossterm{briefly} \\buff{empowered} \\reminder{\\plus3 damage}. Next round, it is \\braced.',
       });
       t.end();
     });
@@ -423,7 +427,8 @@ t.test('restructureStrikeAbility', (t) => {
       const ability = {
         name: 'Test Ability',
         weapon: 'bite',
-        effect: 'Make a strike using a longsword with a +4 accuracy bonus that deals double damage.',
+        effect:
+          'Make a strike using a longsword with a +4 accuracy bonus that deals double damage.',
       } as any;
       restructureStrikeAbility(mockCreature, ability);
       t.matchStrict(ability.attack, {
@@ -497,7 +502,6 @@ t.test('restructureStrikeAbility', (t) => {
   });
 
   t.test('standard maneuvers', (t) => {
-
     t.test('Mighty Rushdown', (t) => {
       const maneuver = standardizeManeuver({
         ...getManeuverByName('Mighty Rushdown'),
@@ -511,7 +515,8 @@ t.test('restructureStrikeAbility', (t) => {
           hit: '2d8+10 damage.',
           miss: undefined,
           injury: undefined,
-          targeting: "The $name can move up to its speed, then it makes a $accuracy melee strike vs. Armor with its bite.",
+          targeting:
+            'The $name can move up to its speed, then it makes a $accuracy melee strike vs. Armor with its bite.',
         },
         isMagical: false,
         kind: 'maneuver',

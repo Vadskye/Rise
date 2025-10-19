@@ -32,30 +32,33 @@ export function convertMysticSphereToLatex(sphere: MysticSphere): string {
       \\par \\textit{${sphere.shortDescription}}
       ${sphere.specialRules ? `\\parhead{Special Rules} ${sphere.specialRules}` : ''}
 
-      ${cantrips.length > 0
-      ? `
+      ${
+        cantrips.length > 0
+          ? `
             \\subsection{Cantrips}
             ${sortByRankAndLevel(cantrips)
-        .map((spell) => {
-          checkValidSpell(spell);
-          return convertSpellToLatex(spell);
-        })
-        .join('\n')}
+              .map((spell) => {
+                checkValidSpell(spell);
+                return convertSpellToLatex(spell);
+              })
+              .join('\n')}
           `
-      : ''
-    }
+          : ''
+      }
 
       ${ranks
-      .map((rank) =>
-        spellsByRank[rank]
-          ? `\\subsection{Rank ${rank} Spells}
-          ${spellsByRank[rank].map((spell) => {
-            checkValidSpell(spell);
-            return convertSpellToLatex(spell)
-          }).join('\n')}`
-          : '',
-      )
-      .join('\n')}
+        .map((rank) =>
+          spellsByRank[rank]
+            ? `\\subsection{Rank ${rank} Spells}
+          ${spellsByRank[rank]
+            .map((spell) => {
+              checkValidSpell(spell);
+              return convertSpellToLatex(spell);
+            })
+            .join('\n')}`
+            : '',
+        )
+        .join('\n')}
   `);
 }
 
@@ -88,7 +91,9 @@ export function checkValidSpell(spell: CantripDefinition | SpellDefinition) {
   if (spell.attack && !spell.attack.crit) {
     const combinedEffect = `${spell.attack.targeting}${spell.attack.hit}${spell.attack.injury}`;
     if (/damagerank.*damagerank/s.test(combinedEffect)) {
-      console.warn(`Spell ${spell.name} has separate damage values and should probably clarify its crit effect`);
+      console.warn(
+        `Spell ${spell.name} has separate damage values and should probably clarify its crit effect`,
+      );
     }
   }
 }

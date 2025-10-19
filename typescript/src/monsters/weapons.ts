@@ -150,7 +150,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       bite: 1,
       claws: 0.5,
       club: 0.5,
-      flail: 0.5,  // Assume one-handing.
+      flail: 0.5, // Assume one-handing.
       ['heavy flail']: 1,
       greataxe: 1,
       ['heavy crossbow']: 0.5,
@@ -162,11 +162,11 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       scythe: 1,
       sickle: 0.5,
       smallswords: 0.5,
-      spear: 0.5,  // Assume one-handing.
+      spear: 0.5, // Assume one-handing.
       stinger: 1,
       talons: 0.5,
       tentacle: 1,
-      battleaxe: 0.5,  // Assume one-handing.
+      battleaxe: 0.5, // Assume one-handing.
     } as const
   )[weaponName];
 }
