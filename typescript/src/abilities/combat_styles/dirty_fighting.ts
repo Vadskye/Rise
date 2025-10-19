@@ -247,11 +247,11 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Fling',
 
-      // -1r for using brawling accuracy? A 30' knockback would normally be r2.
+      // -1r for using brawling accuracy? A 30' fling would normally be r2.
       effect: `
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
-        \\hit If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 30 feet.
+        \\hit If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet.
       `,
       rank: 3,
       roles: ['maim'],
@@ -265,7 +265,7 @@ export const dirtyFighting: CombatStyle = {
         Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
         The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
         \\hit \\damagerankeight.
-        \\injury You \\glossterm{knockback} the target up to 30 feet.
+        \\injury You \\glossterm{fling} the target up to 30 feet.
       `,
       rank: 7,
       roles: ['burst', 'maim'],

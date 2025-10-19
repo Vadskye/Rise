@@ -280,19 +280,19 @@ Since goaded is 33% action denial when it applies, that gives it 4 * 0.75 / 3 = 
 
 Fully removing a creature's ability to move is too strong to exist; it would be too rare to define as an explicit debuff.
 
-### Knockback 15' (horizontal): 0.9 (ranged) / 0.4 (melee)
+### Fling 15' (horizontal): 0.9 (ranged) / 0.4 (melee)
 
-Knockback is dangerous compared to push because it can send enemies into bottomless pits and cliffs. Treat knockback 15' as being the same EA as push 15', except that knockback requires HP loss.
+Fling is dangerous compared to push because it can send enemies into bottomless pits and cliffs. Treat fling 15' as being the same EA as push 15', except that fling requires injury.
 
-### Knockback 15' (vertical): 1.6 (ranged) / 1.4 (melee)
+### Fling 15' (vertical): 1.6 (ranged) / 1.4 (melee)
 
-In addition to the utility from pushing into hazards, a vertical knockback can leave enemies in midair. A -4 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth 1.2 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both.
+In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -4 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth 1.2 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both.
 
-### Knockback 30' (horizontal): 2.0 (ranged) / 1.5 (melee)
+### Fling 30' (horizontal): 2.0 (ranged) / 1.5 (melee)
 
 Same as push 30', but this always requires the target to be injured.
 
-### Knockback 30' (vertical): 2.6 (ranged) / 2.1 (melee)
+### Fling 30' (vertical): 2.6 (ranged) / 2.1 (melee)
 
 This time the push is a larger part of the EA contribution, so we'll start from the push and add half the defense effect, which is 0.6 EA extra.
 

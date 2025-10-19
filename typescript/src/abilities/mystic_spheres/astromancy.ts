@@ -408,11 +408,11 @@ export const astromancy: MysticSphere = {
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{knockback} it up to 15 feet upwards or horizontally (see \\pcref{Knockback Effects}).
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
-          You can leave the target \\glossterm{midair} after the knockback, which usually makes it \\unsteady.
+          You can leave the target \\glossterm{midair} after the fling, which usually makes it \\unsteady.
           It normally falls at the end of the round, potentially causing it to take \\glossterm{falling damage} (see \\pcref{Falling Damage}).
         `,
         targeting: `

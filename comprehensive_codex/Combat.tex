@@ -73,7 +73,9 @@
     Because both of those damage instances are caused by a single attack roll, extra damage only applies to the first damage instance.
     However, a \spell{wall of fire} would apply extra damage each time a creature passes through it, since a separate attack is made for each instance of damage.
 
-    In addition, extra damage never applies to \glossterm{poisons}.
+    Exra damage is only applied to damage directly caused by your attacks.
+    It does not apply to damaging \glossterm{conditions} you inflict, \glossterm{poisons}, or other special effects.
+    For example, an empowered creature that uses an ability which \glossterm{flings} a creature does not apply the extra damage to the impact from the fling, if any.
 
 \section{Taking Damage}\label{Taking Damage}
   When you take damage, the damage reduces your \glossterm{hit points}.
@@ -565,7 +567,7 @@
   \subsection{Forced Movement}\label{Forced Movement}
     Some abilities can physically move you against your will.
     Effects that limit movement speed, such as \glossterm{difficult terrain}, similarly limit the distance you can be moved by forced movement effects.
-    There are two kinds of forced movement: \glossterm{push} effects and \glossterm{knockback} effects.
+    There are two kinds of forced movement: \glossterm{push} effects and \glossterm{fling} effects.
     Unless otherwise noted, all forced movement effects move the target in a single straight horizontal line.
 
     \subsubsection{Push Effects}\label{Push Effects}
@@ -579,14 +581,14 @@
       Success means that the creature does not fall, but is now hanging on the edge, making it \unsteady if it does not have a \glossterm{climb speed}.
       This can allow creatures pushed off the edge of a cliff to grab the edge of the cliff.
 
-    \subsubsection{Knockback Effects}\label{Knockback Effects}
-      A creature affected by a \glossterm{knockback} effect is thrown backwards by a single point of impact.
+    \subsubsection{Fling Effects}\label{Flin Effects}
+      A creature affected by a \glossterm{fling} effect is thrown backwards by a single point of impact.
       It always travels in a single straight line.
-      If it encounters an \glossterm{obstacle}, the knockback ends.
+      If it encounters an \glossterm{obstacle}, the fling ends.
       Both the creature and the obstacle take 1d8 damage per 10 feet of movement remaining.
 
-      A creature moving as a result of a knockback effect does not have to be supported during the movement by solid ground.
-      This can allow you to knockback creatures off of cliffs without allowing them to save themselves.
+      A creature moving as a result of a fling effect does not have to be supported during the movement by solid ground.
+      This can allow you to fling creatures off of cliffs without allowing them to save themselves.
 
 \section{Aerial Movement}\label{Aerial Movement}
   Creatures with a fly speed or glide speed can move in midair to some degree.
@@ -863,7 +865,7 @@
     If you use this ability, you must leave those creatures behind without moving them unless they spend a standard action to cling to you.
   \end{activeability}
 
-  % Is this a knockback effect? What happens if you throw someone into a wall?
+  % Is this a fling effect? What happens if you throw someone into a wall?
   \begin{activeability}*{Throw}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
