@@ -8,3 +8,5 @@ cd core_book
 cleanlatex
 cd ../html_book
 cleanlatex
+cd ../comprehensive_codex
+cleanlatex
