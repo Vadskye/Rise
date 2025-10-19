@@ -101,11 +101,13 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
   replace(/\bAfter you attack\b/g, 'After the $name attacks');
   replace(/\byou lose\b/g, 'it loses');
+  replace(/, if you lost\b/g, ', if the $name lost');
   // Elite monsters cheat this kind of cost.
   const halfHpCost = monster.elite ? Math.floor(monster.hit_points / 4) : Math.floor(monster.hit_points / 2);
   replace(/\bto be equal to half your maximum (hit points|\\glossterm{hit points})\b/g, `to ${halfHpCost} \\glossterm{hit points}`);
   replace(/\bIf you do\b/g, "If it does");
   replace(/, you gain/g, ", it gains");
+  replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
@@ -175,7 +177,7 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   // Whenever we deal with an ability's scaling automatically, we clear it so it doesn't
   // show up in the final ability. This means that we didn't handle some scaling value
   // correctly.
-  if (/\bfor each rank beyond\b/.test(abilityText)) {
+  if (/\b[fF]or each rank beyond\b/.test(abilityText)) {
     warn('Ability still has listed scaling');
   }
 
@@ -211,6 +213,8 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
   // Monster abilities shouldn't show the normal player-facing narrative text
   delete ability.narrative;
+
+  reformatAbilityScaling(ability);
 
   // Ignore attunement tags, since monsters don't attune.
   if (ability.type && /Attune/.test(ability.type)) {
@@ -260,6 +264,17 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
   reformatAbilityCost(ability);
 
   return ability;
+}
+
+function reformatAbilityScaling(ability: ActiveAbility) {
+  const specialScaling: string = ability.scaling && (ability.scaling as any).special;
+  // We can automatically handle this kind of simple scaling
+  if (specialScaling && /\bBoth instances of damage\b/.test(specialScaling)) {
+    ability.scaling = 'damage';
+  }
+  if (specialScaling && /\bdamage increases.*healing increases\b/.test(specialScaling)) {
+    ability.scaling = 'damage';
+  }
 }
 
 // Normally, abilities that make strikes say "make a strike" in the text of
@@ -693,6 +708,10 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
   }
 
   ability.cost = ability.cost.replace(/You (\\glossterm{briefly}|briefly)/, (...match) => `The $name ${match[1]}`);
+
+  if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
+    delete ability.cost;
+  }
 }
 
 export function convertPassiveAbilityToMonsterLatex(ability: PassiveAbility): string {
