@@ -6,10 +6,6 @@ import {
 } from '@src/character_sheet/current_character_sheet';
 import {
   handleEverything,
-  MonsterAttackAccuracy,
-  MonsterAttackAreaShape,
-  MonsterAttackTargeting,
-  MonsterAttackDebuff,
   MonsterAttackUsageTime,
 } from '@src/character_sheet/sheet_worker';
 import {
@@ -135,78 +131,6 @@ type CreatureProperty =
 // These are the defenses as displayed in attacks, not the defense statistics on
 // characters
 export type RiseDefenseHumanReadable = 'Armor' | 'Brawn' | 'Fortitude' | 'Reflex' | 'Mental';
-
-export interface AutoAttackConfig {
-  accuracy?: MonsterAttackAccuracy;
-  areaShape?: MonsterAttackAreaShape;
-  defense: RiseDefenseHumanReadable[];
-  effect: 'damage' | MonsterAttackDebuff;
-  isMagical: boolean;
-  name: string;
-  tags?: RiseTag[];
-  targeting: MonsterAttackTargeting;
-  usageTime?: MonsterAttackUsageTime;
-}
-
-// This matches the `setAttrs()` in `createDamagingMonsterAttack()`, plus `defense` and
-// `tags` as set by `addAutoAttack`.
-export interface DamagingAutoAttackResult {
-  attack_accuracy: number;
-  attack_damage_dice: string;
-  attack_effect: string;
-  attack_name: string;
-  defense: string;
-  is_magical: boolean;
-  is_targeted: boolean;
-  latex_effect: string;
-  tags: string;
-  usage_time: MonsterAttackUsageTime;
-}
-const DAMAGING_ATTACK_KEYS: Array<keyof DamagingAutoAttackResult> = [
-  'attack_accuracy',
-  'attack_damage_dice',
-  'attack_effect',
-  'attack_name',
-  'defense',
-  'is_magical',
-  'is_targeted',
-  'latex_effect',
-  'tags',
-  'usage_time',
-];
-
-export type CreatureAttack = DamagingAutoAttackResult | DebuffAutoAttackResult;
-
-export interface DebuffAutoAttackResult {
-  attack_accuracy: number;
-  attack_effect: string;
-  attack_name: string;
-  defense: string;
-  is_magical: boolean;
-  is_targeted: boolean;
-  latex_effect: string;
-  tags: string;
-  usage_time: MonsterAttackUsageTime;
-}
-const DEBUFF_RESULT_KEYS: Array<keyof DebuffAutoAttackResult> = [
-  'attack_accuracy',
-  'attack_effect',
-  'attack_name',
-  'defense',
-  'is_magical',
-  'is_targeted',
-  'latex_effect',
-  'tags',
-  'usage_time',
-];
-
-export interface CustomAttackConfig {
-  effect: string;
-  isMagical: boolean;
-  name: string;
-  usageTime?: MonsterAttackUsageTime;
-  tags?: RiseTag[];
-}
 
 export interface CustomModifierConfig {
   immune?: string;
@@ -576,33 +500,6 @@ export class Creature implements CreaturePropertyMap {
     });
   }
 
-  addAutoAttack(config: AutoAttackConfig) {
-    if (!this.level) {
-      throw new Error(`Creature ${this.name} must have level before adding an autoattack`);
-    }
-    this.sheet.setProperties({
-      monster_attack_accuracy: config.accuracy || 'normal',
-      monster_attack_area_shape: config.areaShape || 'default',
-      monster_attack_effect: config.effect,
-      monster_attack_is_magical: config.isMagical,
-      monster_attack_name: config.name,
-      monster_attack_targeting: config.targeting,
-      monster_attack_usage_time: config.usageTime,
-    });
-
-    this.sheet.clickButton('createmonsterattack');
-
-    const sectionName =
-      config.effect === 'damage'
-        ? 'repeating_otherdamagingattacks'
-        : 'repeating_nondamagingattacks';
-    const prefix = `${sectionName}_${this.sheet.getLatestRowId()}`;
-    this.sheet.setProperties({
-      [`${prefix}_defense`]: config.defense.join(' and '),
-      [`${prefix}_tags`]: config.tags?.join(', ') || '',
-    });
-  }
-
   // Arbitrary names are ignored when generating LaTeX. However, names that match standard
   // trait definitions are displayed.
   addCustomModifier(config: CustomModifierConfig) {
@@ -743,26 +640,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getModifierNames().includes(traitName);
   }
 
-  getDamagingAutoAttacks(): DamagingAutoAttackResult[] {
-    // TODO: figure out how to make these types work without `any`
-    return this.sheet
-      .getRepeatingSection('otherdamagingattacks')
-      .getValuesFromAllRows(DAMAGING_ATTACK_KEYS) as any[];
-  }
-
   getActiveAbilities(): ActiveAbility[] {
     return Object.values(this.activeAbilities);
-  }
-
-  getDebuffAutoAttacks(): DebuffAutoAttackResult[] {
-    // We assume that everything in this section comes from an autoattack; there's no
-    // other way to add something here with current typescript. If we add more support for
-    // custom attacks, some names might have to change.
-    //
-    // TODO: figure out how to make these types work without `any`
-    return this.sheet
-      .getRepeatingSection('nondamagingattacks')
-      .getValuesFromAllRows(DEBUFF_RESULT_KEYS) as any[];
   }
 
   setRequiredProperties(properties: CreatureRequiredPropertyMap) {
