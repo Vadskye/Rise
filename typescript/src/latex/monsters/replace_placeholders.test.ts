@@ -154,10 +154,7 @@ t.test('replaceAccuracyTerms', (t) => {
   });
 
   t.test('replaces $brawlingaccuracy', (t) => {
-    t.equal(
-      replaceAccuracyTerms('$brawlingaccuracy vs. Brawn', mockCreature),
-      '+10 vs. Brawn',
-    );
+    t.equal(replaceAccuracyTerms('$brawlingaccuracy vs. Brawn', mockCreature), '+10 vs. Brawn');
     t.end();
   });
 

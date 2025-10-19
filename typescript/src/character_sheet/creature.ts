@@ -37,9 +37,22 @@ import {
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured } from '@src/monsters/weapons';
-import { ActiveAbility, ActiveAbilityRank, PassiveAbility, ActiveAbilityScaling } from '@src/abilities';
+import {
+  ActiveAbility,
+  ActiveAbilityRank,
+  PassiveAbility,
+  ActiveAbilityScaling,
+} from '@src/abilities';
 import { titleCase } from '@src/latex/format/title_case';
-import { EquippedItem, isBodyArmor, isShield, generateBodyArmorProperties, generateShieldProperties, BodyArmor, Shield } from '@src/monsters/equipment';
+import {
+  EquippedItem,
+  isBodyArmor,
+  isShield,
+  generateBodyArmorProperties,
+  generateShieldProperties,
+  BodyArmor,
+  Shield,
+} from '@src/monsters/equipment';
 
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
@@ -356,7 +369,7 @@ export class Creature implements CreaturePropertyMap {
     }
   }
 
-  setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor, shield?: Shield }) {
+  setEquippedArmor({ bodyArmor, shield }: { bodyArmor?: BodyArmor; shield?: Shield }) {
     if (bodyArmor) {
       this.sheet.setProperties(generateBodyArmorProperties(bodyArmor));
     }
@@ -384,7 +397,14 @@ export class Creature implements CreaturePropertyMap {
 
   getEquipment(): EquippedItem[] {
     // We use this as the return ordering
-    const keys = ['body_armor_name', 'shield_name', 'weapon_0_name', 'weapon_1_name', 'weapon_2_name', 'weapon_3_name'];
+    const keys = [
+      'body_armor_name',
+      'shield_name',
+      'weapon_0_name',
+      'weapon_1_name',
+      'weapon_2_name',
+      'weapon_3_name',
+    ];
     const equippedItemMap = this.sheet.getPropertyValues(keys);
     return keys.map((key) => equippedItemMap[key]).filter(Boolean);
   }
@@ -427,12 +447,7 @@ export class Creature implements CreaturePropertyMap {
 
   addGrapplingStrike(
     weapon: MonsterWeapon,
-    {
-      displayName,
-      isMagical,
-      tags,
-      usageTime,
-    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || `Grappling ${titleCase(weapon)}`;
 
@@ -462,12 +477,7 @@ export class Creature implements CreaturePropertyMap {
   addPoisonousStrike(
     weapon: MonsterWeapon,
     poison: PoisonDefinition,
-    {
-      displayName,
-      isMagical,
-      tags,
-      usageTime,
-    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || `Venomous ${titleCase(weapon)}`;
 
@@ -475,7 +485,7 @@ export class Creature implements CreaturePropertyMap {
     // a normal strike, but how much?
     const effectiveRank = Math.max(1, this.calculateRank() - 1);
     const maneuver = getWeaponMultByRank(effectiveRank);
-    const poisonTrigger = poison.injury ? '\\injury' : '\\hit'
+    const poisonTrigger = poison.injury ? '\\injury' : '\\hit';
     if (poison.itMakes.trimEnd().slice(-1) !== '.') {
       console.warn(`Ability ${this.name}.${displayName}: poison.itMakes should end with a period`);
     }
@@ -492,18 +502,13 @@ export class Creature implements CreaturePropertyMap {
       name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
-      weapon
+      weapon,
     });
   }
 
   addWeaponMult(
     weapon: MonsterWeapon,
-    {
-      displayName,
-      isMagical,
-      tags,
-      usageTime,
-    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || titleCase(weapon);
     this.addActiveAbility({
@@ -519,12 +524,7 @@ export class Creature implements CreaturePropertyMap {
 
   addSneakAttack(
     weapon: MonsterWeapon,
-    {
-      displayName,
-      isMagical,
-      tags,
-      usageTime,
-    }: Omit<MonsterAbilityOptions, 'weapon'> = {},
+    { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
     displayName = displayName || 'Sneak Attack';
     this.addActiveAbility({
@@ -636,13 +636,16 @@ export class Creature implements CreaturePropertyMap {
   }
 
   getPassiveAbilities(): PassiveAbility[] {
-    return this.sheet.getRepeatingSection('passiveabilities').getValuesFromAllRows(['ability_name', 'ability_effects', 'is_magical']).map((ability) => {
-      return {
-        name: ability.ability_name as string,
-        isMagical: Boolean(ability.is_magical),
-        effect: ability.ability_effects as string,
-      };
-    });
+    return this.sheet
+      .getRepeatingSection('passiveabilities')
+      .getValuesFromAllRows(['ability_name', 'ability_effects', 'is_magical'])
+      .map((ability) => {
+        return {
+          name: ability.ability_name as string,
+          isMagical: Boolean(ability.is_magical),
+          effect: ability.ability_effects as string,
+        };
+      });
   }
 
   getModifierNames(): string[] {
@@ -720,9 +723,7 @@ export class Creature implements CreaturePropertyMap {
 
     if (traitName === 'incorporeal') {
       modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
-      modifier.numericEffects = [
-        { modifier: 5, statistic: 'stealth' },
-      ];
+      modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
     } else if (traitName === 'multipedal') {
       modifier.numericEffects = [
         { modifier: 5, statistic: 'balance' },
@@ -733,9 +734,7 @@ export class Creature implements CreaturePropertyMap {
       // No way to mark inability to jump. Just don't give legless creatures the
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
     } else if (traitName === 'quadrupedal') {
-      modifier.numericEffects = [
-        { modifier: 10, statistic: 'speed' },
-      ];
+      modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
     }
     this.addCustomModifier(modifier);
   }

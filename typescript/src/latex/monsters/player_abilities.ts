@@ -34,116 +34,149 @@ export function convertSpellToMonsterLatex(monster: Creature, spell: SpellDefini
 }
 
 export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveAbility): string {
-  let latex = convertAbilityToLatex(
-    reformatAsMonsterAbility(monster, ability),
-    true,
-  );
+  let latex = convertAbilityToLatex(reformatAsMonsterAbility(monster, ability), true);
   latex = replaceGenericTerms(monster, ability, latex);
   checkSuccessfullyConverted(latex, monster.name, ability.name);
   return latex;
 }
 
-function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityPart: string): string {
-
-  function replace(pattern: RegExp, replacement: string | ((substring: string, ...args: any[]) => string)) {
+function replaceGenericTerms(
+  monster: Creature,
+  ability: ActiveAbility,
+  abilityPart: string,
+): string {
+  function replace(
+    pattern: RegExp,
+    replacement: string | ((substring: string, ...args: any[]) => string),
+  ) {
     abilityPart = abilityPart.replace(pattern, replacement as any);
   }
 
   // Assume monsters always pay the fatigue and don't track it. Cheating!
   // This is made a bit more complicated because the original latex could have line
   // breaks, since we're joining multiple sentences together.
-  replace(/\bYou can increase your (fatigue level|\\glossterm{fatigue level}) by one\.\n? +If you do, you/g, "You");
+  replace(
+    /\bYou can increase your (fatigue level|\\glossterm{fatigue level}) by one\.\n? +If you do, you/g,
+    'You',
+  );
 
-  replace(/\byour next action\b/g, "its next action");
-  replace(/\byour attack result\b/g, "the attack result");
-  replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
-  replace(/\byou are\b/g, "it is");
-  replace(/\bYou are\b/g, "The $name is");
-  replace(/\bYou and the\b/g, "The $name and the");
-  replace(/\bYou also control\b/g, "The $name also controls");
-  replace(/\bYou become\b/g, "The $name becomes");
-  replace(/\b, you become\b/g, ", it becomes");
-  replace(/\bYou must have\b/g, "The $name must have");
-  replace(/\byour speed\b/g, "its speed");
-  replace(/\byour attack\b/g, "its attack");
-  replace(/\bwhether you get\b/g, "whether it gets");
-  replace(/\byou cannot get\b/g, "it cannot get");
-  replace(/\bthat you missed\b/g, "that it missed");
+  replace(/\byour next action\b/g, 'its next action');
+  replace(/\byour attack result\b/g, 'the attack result');
+  replace(/\byou (touch\b|\\glossterm{touch})/g, 'it \\glossterm{touches}');
+  replace(/\byou are\b/g, 'it is');
+  replace(/\bYou are\b/g, 'The $name is');
+  replace(/\bYou and the\b/g, 'The $name and the');
+  replace(/\bYou also control\b/g, 'The $name also controls');
+  replace(/\bYou become\b/g, 'The $name becomes');
+  replace(/\b, you become\b/g, ', it becomes');
+  replace(/\bYou must have\b/g, 'The $name must have');
+  replace(/\byour speed\b/g, 'its speed');
+  replace(/\byour attack\b/g, 'its attack');
+  replace(/\bwhether you get\b/g, 'whether it gets');
+  replace(/\byou cannot get\b/g, 'it cannot get');
+  replace(/\bthat you missed\b/g, 'that it missed');
   // TODO: standardize on "protects you" vs "affects attacks against you"
-  replace(/\bprotects you\b\b/g, "protects the $name");
-  replace(/\battacks against you\b\b/g, "attacks against the $name");
+  replace(/\bprotects you\b\b/g, 'protects the $name');
+  replace(/\battacks against you\b\b/g, 'attacks against the $name');
   replace(/\byour subsequent\b/g, "the $name's subsequent");
-  replace(/\bYou can\b/g, "The $name can");
-  replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
-  replace(/\bWhen you cast this spell, you create\b/g, "When the $name casts this spell, it creates");
-  replace(/\bYou create\b/g, "The $name creates");
-  replace(/\bYou regain\b/g, "The $name regains");
-  replace(/\bYou gain\b/g, "The $name gains");
+  replace(/\bYou can\b/g, 'The $name can');
+  replace(
+    /\\empowered\b/g,
+    `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`,
+  );
+  replace(
+    /\bWhen you cast this spell, you create\b/g,
+    'When the $name casts this spell, it creates',
+  );
+  replace(/\bYou create\b/g, 'The $name creates');
+  replace(/\bYou regain\b/g, 'The $name regains');
+  replace(/\bYou gain\b/g, 'The $name gains');
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
-  replace(/\bIn addition, you regain\b/g, "In addition, the $name regains");
-  replace(/\bYou take\b/g, "The $name takes");
-  replace(/\bYou inscribe\b/g, "The $name inscribes");
-  replace(/\bYou (\\glossterm{briefly}|briefly) cannot use\b/g, "The $name \\glossterm{briefly} cannot use");
-  replace(/\bif you take\b/g, "if the $name takes");
-  replace(/\bact by you\b/g, "act by the $name");
-  replace(/goaded by you\b/g, "goaded by the $name");
-  replace(/\bto you\b/g, "to it");
-  replace(/\byour space\b/g, "its space");
-  replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name \\glossterm{flings}");
-  replace(/\baway from you\b/g, "away from it");
-  replace(/(\bemanation|\\glossterm{emanation}) from you\b/g, "\\glossterm{emanation} from the $name");
-  replace(/\bfrom your location\b/g, "from its location");
-  replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
-  replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
+  replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
+  replace(/\bYou take\b/g, 'The $name takes');
+  replace(/\bYou inscribe\b/g, 'The $name inscribes');
+  replace(
+    /\bYou (\\glossterm{briefly}|briefly) cannot use\b/g,
+    'The $name \\glossterm{briefly} cannot use',
+  );
+  replace(/\bif you take\b/g, 'if the $name takes');
+  replace(/\bact by you\b/g, 'act by the $name');
+  replace(/goaded by you\b/g, 'goaded by the $name');
+  replace(/\bto you\b/g, 'to it');
+  replace(/\byour space\b/g, 'its space');
+  replace(/\bYou (fling\b|\\glossterm{fling})/g, 'The $name \\glossterm{flings}');
+  replace(/\baway from you\b/g, 'away from it');
+  replace(
+    /(\bemanation|\\glossterm{emanation}) from you\b/g,
+    '\\glossterm{emanation} from the $name',
+  );
+  replace(/\bfrom your location\b/g, 'from its location');
+  replace(/\bChoose yourself or\b/g, 'The $name chooses itself or');
+  replace(/\byour (allies\b|\\glossterm{allies})/g, 'its allies');
   replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
-  replace(/\bYou must be (alive|\\glossterm{alive}) to (cast this spell|use this ability)\./g, "");
+  replace(/\bYou must be (alive|\\glossterm{alive}) to (cast this spell|use this ability)\./g, '');
   replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
   replace(/\bAfter you attack\b/g, 'After the $name attacks');
   replace(/\byou lose\b/g, 'it loses');
   replace(/, if you lost\b/g, ', if the $name lost');
   // Elite monsters cheat this kind of cost.
-  const halfHpCost = monster.elite ? Math.floor(monster.hit_points / 4) : Math.floor(monster.hit_points / 2);
-  replace(/\bto be equal to half your maximum (hit points|\\glossterm{hit points})\b/g, `to ${halfHpCost} \\glossterm{hit points}`);
-  replace(/\bIf you do\b/g, "If it does");
-  replace(/, you gain/g, ", it gains");
+  const halfHpCost = monster.elite
+    ? Math.floor(monster.hit_points / 4)
+    : Math.floor(monster.hit_points / 2);
+  replace(
+    /\bto be equal to half your maximum (hit points|\\glossterm{hit points})\b/g,
+    `to ${halfHpCost} \\glossterm{hit points}`,
+  );
+  replace(/\bIf you do\b/g, 'If it does');
+  replace(/, you gain/g, ', it gains');
   replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
-  replace(/\blarger than you\b/g, "larger than the $name");
+  replace(/\blarger than you\b/g, 'larger than the $name');
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
   replace(/\battack from you\b/g, 'attack from the $name');
-  replace(/(\bradius|\bcone|\\glossterm{cone}|\bline|\\glossterm{line}|\bzone|\\glossterm{zone}|\bemanation|\\glossterm{emanation}) from you\b/g, (_, area) => `${area} from itself`);
+  replace(
+    /(\bradius|\bcone|\\glossterm{cone}|\bline|\\glossterm{line}|\bzone|\\glossterm{zone}|\bemanation|\\glossterm{emanation}) from you\b/g,
+    (_, area) => `${area} from itself`,
+  );
 
   // This is lazy; we should support other extra damage variants, like 2x power or damage
   // dice.
   const fullPower = monster.getRelevantPower(ability.isMagical);
   const halfPower = Math.floor(fullPower / 2);
-  replace(/(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g, `${halfPower} \\glossterm{extra damage}`);
+  replace(
+    /(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g,
+    `${halfPower} \\glossterm{extra damage}`,
+  );
   replace(/\bdamage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
-  replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
+  replace(
+    /(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g,
+    `${fullPower} \\glossterm{extra damage}`,
+  );
   replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
   replace(
     /(hit points|\\glossterm{hit points}) equal to (\w+)?( times)? your (power|\\glossterm{power})/,
     (_, __, multiplier) => {
-      const numericMultiplier = {
-        half: 0.5,
-        twice: 2,
-        two: 2,
-        three: 3,
-        four: 4,
-        five: 5,
-        six: 6,
-        seven: 7,
-        eight: 8,
-        nine: 9,
-      }[multiplier as string] || 1;
+      const numericMultiplier =
+        {
+          half: 0.5,
+          twice: 2,
+          two: 2,
+          three: 3,
+          four: 4,
+          five: 5,
+          six: 6,
+          seven: 7,
+          eight: 8,
+          nine: 9,
+        }[multiplier as string] || 1;
 
       const hitPoints = Math.floor(monster.getRelevantPower(ability.isMagical) * numericMultiplier);
 
       return `${hitPoints} \\glossterm{hit points}`;
-    }
+    },
   );
 
   return abilityPart;
@@ -161,7 +194,9 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 
   // Ignore the name of the ability when testing; it's fine if an ability's name includes
   // "you", for example.
-  abilityText = abilityText.replace(/ability}{[^}]+}/g, '').replace(/hypertargetraised{[^}]+}/g, '')
+  abilityText = abilityText
+    .replace(/ability}{[^}]+}/g, '')
+    .replace(/hypertargetraised{[^}]+}/g, '');
 
   if (/\$[nN]ame.*\$[nN]ame/.test(abilityText)) {
     warn("Ability repeats '$name' in the same line");
@@ -292,20 +327,30 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // Perform generic replacements that matter regardless of which hit/injury/targeting
   // segment they correspond to.
   // We don't care if the strike was originally restricted to melee-only.
-  ability.effect = ability.effect.replace(/(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g, (...match) => match[2]);
+  ability.effect = ability.effect.replace(
+    /(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g,
+    (...match) => match[2],
+  );
 
   let defense = 'Armor';
   // Use the correct alternate defense and strip the whole sentence, since we've
   // incorporated it into the effect.
-  ability.effect = ability.effect.replace(/The attack is made against the target's (.*?) defense instead of its Armor defense./, (_, altDefense) => {
-    defense = altDefense;
-    return '';
-  });
+  ability.effect = ability.effect.replace(
+    /The attack is made against the target's (.*?) defense instead of its Armor defense./,
+    (_, altDefense) => {
+      defense = altDefense;
+      return '';
+    },
+  );
 
   // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
   // in a continuous sentence, like "move up to your speed, then make a strike".
-  const preStrikeSentenceMatch = ability.effect.match(/(.*)\. Make a (\\glossterm{strike}|strike)/s);
-  const preStrikeContinuousMatch = ability.effect.match(/(.*) make a (\\glossterm{strike}|strike)/s);
+  const preStrikeSentenceMatch = ability.effect.match(
+    /(.*)\. Make a (\\glossterm{strike}|strike)/s,
+  );
+  const preStrikeContinuousMatch = ability.effect.match(
+    /(.*) make a (\\glossterm{strike}|strike)/s,
+  );
   let preStrikeText = 'The $name makes a ';
   if (preStrikeSentenceMatch) {
     preStrikeText = `${preStrikeSentenceMatch[1]}. The $name makes a `;
@@ -316,7 +361,9 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
       preStrikeText = `${preStrikeContinuousMatch[1]} the $name makes a `;
     }
   }
-  const postStrikeMatch = ability.effect.match(/[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s)
+  const postStrikeMatch = ability.effect.match(
+    /[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s,
+  );
   const postStrikeText = postStrikeMatch ? postStrikeMatch[2] : '';
   const hitMatch = ability.effect.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
   const hitText = hitMatch ? hitMatch[1] : '';
@@ -344,7 +391,8 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
     injury: injuryText,
     // TODO: if we support non-melee monster weapons, this would have to check the weapon
     // to determine melee vs ranged.
-    targeting: `${preStrikeText}$accuracy${accuracyModifierText}${strikeRange} strike vs. ${defense} with its ${ability.weapon}.${postStrikeText}`.trim(),
+    targeting:
+      `${preStrikeText}$accuracy${accuracyModifierText}${strikeRange} strike vs. ${defense} with its ${ability.weapon}.${postStrikeText}`.trim(),
   };
 
   ability.tags = ability.tags || [];
@@ -370,10 +418,13 @@ export function restructureBrawlingAbility(monster: Creature, ability: ActiveAbi
   ability.effect = replaceGenericTerms(monster, ability, ability.effect!);
 
   // TODO: handle brawling attacks with local accuracy modifiers
-  ability.effect = ability.effect.replace(/([mM])ake a (brawling attack|\\glossterm{brawling attack})/, (_, maybeCapital) => {
-    const theText = maybeCapital === 'M' ? 'The' : 'the';
-    return `${theText} $name makes a $brawlingaccuracy attack`;
-  });
+  ability.effect = ability.effect.replace(
+    /([mM])ake a (brawling attack|\\glossterm{brawling attack})/,
+    (_, maybeCapital) => {
+      const theText = maybeCapital === 'M' ? 'The' : 'the';
+      return `${theText} $name makes a $brawlingaccuracy attack`;
+    },
+  );
 }
 
 function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility): string {
@@ -413,7 +464,9 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   // We only check the sentence of the strike to avoid catching conditional clauses.
   const strikeSentenceMatch = effect.match(/([mM]ake[^.]+strike[^.]*\.)/);
   if (!strikeSentenceMatch) {
-    throw new Error(`${monster.name}.${ability.name}: Cannot calculate strike damage for an ability that does not make a strike`);
+    throw new Error(
+      `${monster.name}.${ability.name}: Cannot calculate strike damage for an ability that does not make a strike`,
+    );
   }
   const strikeSentence: string = strikeSentenceMatch![1];
 
@@ -466,13 +519,15 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   // TODO: handle extra damage dice.
   // We rely on `replaceGenericTerms` to make sure that flat damage is pre-converted into
   // numbers instead of a scaling expression.
-  const extraDamageDiceMatch = effect.match(/\b(\d+)d(\d+) (extra damage|\\glossterm{extra damage})/);
+  const extraDamageDiceMatch = effect.match(
+    /\b(\d+)d(\d+) (extra damage|\\glossterm{extra damage})/,
+  );
   if (extraDamageDiceMatch) {
     // Conditional extra damage is fine, and we don't need to warn about it; we can't
     // incorporate it into the main effect anyway.
-    const conditionalExtraDamage = /extra damage}? if/
+    const conditionalExtraDamage = /extra damage}? if/;
     if (!conditionalExtraDamage) {
-      console.warn("TODO: Unable to parse extra damage dice");
+      console.warn('TODO: Unable to parse extra damage dice');
     }
   }
 
@@ -549,7 +604,7 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
       const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
       const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`
+      return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`;
     },
   );
 }
@@ -584,7 +639,12 @@ function replaceDamageText(monster: Creature, ability: ActiveAbility, effectText
   effectText = effectText.replace(/\\(damage|hp)rank(\w+)/g, (_, hpOrDamage, rankAndMaybeLow) => {
     const damageRank = rankAndMaybeLow.replace('low', '');
     const lowPowerScaling = /low/.test(rankAndMaybeLow);
-    const calculatedDamage = calculateDamage(monster, ability, parseDamageRank(damageRank), lowPowerScaling);
+    const calculatedDamage = calculateDamage(
+      monster,
+      ability,
+      parseDamageRank(damageRank),
+      lowPowerScaling,
+    );
     const hpOrDamageText = hpOrDamage === 'hp' ? '\\glossterm{hit points}' : 'damage';
     return `${calculatedDamage} ${hpOrDamageText}`;
   });
@@ -647,10 +707,11 @@ export function calculateDamage(
       10: `${22 + 8 * excessRank}d10`,
     }[damageRank];
 
-    const flatDamage = {
-      0: excessRank,
-      1: 2 * excessRank,
-    }[damageRank as number] || 0;
+    const flatDamage =
+      {
+        0: excessRank,
+        1: 2 * excessRank,
+      }[damageRank as number] || 0;
 
     if (flatDamage) {
       return `${damageDice}\\plus${flatDamage}`;
@@ -715,7 +776,10 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
     return;
   }
 
-  ability.cost = ability.cost.replace(/You (\\glossterm{briefly}|briefly)/, (...match) => `The $name ${match[1]}`);
+  ability.cost = ability.cost.replace(
+    /You (\\glossterm{briefly}|briefly)/,
+    (...match) => `The $name ${match[1]}`,
+  );
 
   if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
     delete ability.cost;

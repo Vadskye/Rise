@@ -40,7 +40,7 @@ export function addUndead(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       hasArt: true,
-      name: "Ghouls",
+      name: 'Ghouls',
       knowledge: {
         normal: `
           Ghouls are undead creatures that hunger for the flesh of the living.
@@ -65,44 +65,50 @@ export function addUndead(grimoire: Grimoire) {
       },
     },
     [
-      ['Drudge Ghoul', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'undead',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Drudge Ghoul',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'undead',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Drudge ghouls are the weakest form of ghoul.
             They are typically made from incomplete corpses or partially botched rituals that failed to create a true ghoul.
           `,
-        });
-        creature.setBaseAttributes([4, 4, 0, -4, 1, -2]);
-        creature.addManeuver('Strip the Flesh', { weapon: 'bite' });
-        creature.addWeaponMult('bite');
-      }],
-      ['True Ghoul', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'skirmisher',
-          elite: false,
-          creature_type: 'undead',
-          level: 6,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setBaseAttributes([4, 4, 0, -4, 1, -2]);
+          creature.addManeuver('Strip the Flesh', { weapon: 'bite' });
+          creature.addWeaponMult('bite');
+        },
+      ],
+      [
+        'True Ghoul',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'undead',
+            level: 6,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             True ghouls are the most common form of ghoul.
           `,
-        });
-        creature.setBaseAttributes([5, 5, 1, -3, 1, 0]);
-        creature.addManeuver('Strip the Flesh', { weapon: 'bite' });
-        creature.addWeaponMult('bite');
-      }],
-    ]
+          });
+          creature.setBaseAttributes([5, 5, 1, -3, 1, 0]);
+          creature.addManeuver('Strip the Flesh', { weapon: 'bite' });
+          creature.addWeaponMult('bite');
+        },
+      ],
+    ],
   );
 
   addHalfsouls(grimoire);
@@ -115,7 +121,7 @@ export function addUndead(grimoire: Grimoire) {
 function addHalfsouls(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
-      name: "Halfsouls",
+      name: 'Halfsouls',
       knowledge: {
         normal: `
           A halfsoul is a creature that was incorrectly resurrected, returning only half of the original creature's soul to its body.
@@ -132,43 +138,46 @@ function addHalfsouls(grimoire: Grimoire) {
       },
     },
     [
-      ['Halfsoul Telekine', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'chaotic neutral',
-          base_class: 'sniper',
-          elite: true,
-          creature_type: 'undead',
-          level: 15,
-          size: 'medium',
-        });
-        creature.setTrainedSkills(['awareness', 'knowledge_arcana']);
-        creature.setBaseAttributes([-1, 4, 1, 6, 5, 7]);
-        // Proprioception
-        creature.addCustomSense('Blindsense (60 ft.)')
-        creature.addCustomSense('Blindsight (15 ft.)')
+      [
+        'Halfsoul Telekine',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic neutral',
+            base_class: 'sniper',
+            elite: true,
+            creature_type: 'undead',
+            level: 15,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness', 'knowledge_arcana']);
+          creature.setBaseAttributes([-1, 4, 1, 6, 5, 7]);
+          // Proprioception
+          creature.addCustomSense('Blindsense (60 ft.)');
+          creature.addCustomSense('Blindsight (15 ft.)');
 
-        // Damaging effects are standard action, debuffs are elite
-        creature.addSpell('Neck Snap');
-        creature.addSpell('Mighty Compression');
-        creature.addSpell('Kinetic Cudgel', { usageTime: 'elite' });
-        creature.addSpell('Mighty Blastwave', { usageTime: 'elite' });
-        // Annoying to automate the conversion for this spell.
-        // TODO: make this automatic if we want to give other creatures Wall of Force.
-        creature.addCustomSpell({
-          name: 'Sturdy Wall of Force',
+          // Damaging effects are standard action, debuffs are elite
+          creature.addSpell('Neck Snap');
+          creature.addSpell('Mighty Compression');
+          creature.addSpell('Kinetic Cudgel', { usageTime: 'elite' });
+          creature.addSpell('Mighty Blastwave', { usageTime: 'elite' });
+          // Annoying to automate the conversion for this spell.
+          // TODO: make this automatic if we want to give other creatures Wall of Force.
+          creature.addCustomSpell({
+            name: 'Sturdy Wall of Force',
 
-          cost: BARRIER_COOLDOWN,
-          effect: `
+            cost: BARRIER_COOLDOWN,
+            effect: `
             You create a \\medarealong \\glossterm{wall} of magical energy within \\shortrange.
             The wall is visible as a shimmering magical field that does not block sight.
             Nothing can pass through the wall until it is destroyed.
             It has \\glossterm{hit points} equal to five times your \\glossterm{power}, and is destroyed when its hit points become negative.
           `,
-          usageTime: 'elite',
-          tags: ['Barrier', 'Manifestation'],
-          type: 'Sustain (attuneable, minor)',
-        });
-      }],
+            usageTime: 'elite',
+            tags: ['Barrier', 'Manifestation'],
+            type: 'Sustain (attuneable, minor)',
+          });
+        },
+      ],
     ],
   );
 }
@@ -182,7 +191,7 @@ function addSkeletons(grimoire: Grimoire) {
 
   grimoire.addMonsterGroup(
     {
-      name: "Skeletons",
+      name: 'Skeletons',
       hasArt: true,
       knowledge: {
         easy: `
@@ -209,88 +218,102 @@ function addSkeletons(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('simple-minded');
-      }
+      },
     },
     [
-      ['Bones', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          base_class: 'skirmisher',
-          level: 1,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
-        creature.addWeaponMult('claws');
-      }],
-      ['Fallen Soldier', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          base_class: 'warrior',
-          level: 2,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-          shield: 'standard shield',
-        });
-        creature.addWeaponMult('spear');
-      }],
-      ['Skeleton Archer', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          base_class: 'sniper',
-          level: 3,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([3, 3, 0, -7, 2, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'leather lamellar',
-        });
-        creature.addWeaponMult('longbow');
-      }],
-      ['Bone Knight', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          base_class: 'warrior',
-          level: 5,
-          size: 'large',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Bones',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'skirmisher',
+            level: 1,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
+          creature.addWeaponMult('claws');
+        },
+      ],
+      [
+        'Fallen Soldier',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'warrior',
+            level: 2,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([3, 3, 0, -8, 0, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+            shield: 'standard shield',
+          });
+          creature.addWeaponMult('spear');
+        },
+      ],
+      [
+        'Skeleton Archer',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'sniper',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([3, 3, 0, -7, 2, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.addWeaponMult('longbow');
+        },
+      ],
+      [
+        'Bone Knight',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'warrior',
+            level: 5,
+            size: 'large',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             A bone knight is a fusion of horse and rider, reanimated as a single skeleton.
             The rider wields its lance as if mounted, but the two cannot be separated without death.
           `,
-        });
-        creature.setBaseAttributes([4, 4, 0, -7, 2, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'scale',
-          shield: 'standard shield',
-        });
-        creature.addWeaponMult('lance');
-        creature.addManeuver('Rushdown', { weapon: 'lance' });
-      }],
-      ['Fallen Hero', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          base_class: 'warrior',
-          level: 7,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([5, 5, 0, -7, 2, 0]);
-        creature.setEquippedArmor({
-          bodyArmor: 'scale',
-          shield: 'standard shield',
-        });
-        creature.addWeaponMult('battleaxe');
-        creature.addWeaponMult('javelin');
-      }],
+          });
+          creature.setBaseAttributes([4, 4, 0, -7, 2, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'scale',
+            shield: 'standard shield',
+          });
+          creature.addWeaponMult('lance');
+          creature.addManeuver('Rushdown', { weapon: 'lance' });
+        },
+      ],
+      [
+        'Fallen Hero',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'warrior',
+            level: 7,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([5, 5, 0, -7, 2, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'scale',
+            shield: 'standard shield',
+          });
+          creature.addWeaponMult('battleaxe');
+          creature.addWeaponMult('javelin');
+        },
+      ],
     ],
   );
 }
 
 function addVampires(grimoire: Grimoire) {
-
   // These effects are copied from the uncommon species definition
   const vampireDescription = `
     \\parhead{Creature of the Night\\sparkle} All vampires have the \\ability{creature of the night} ability.
@@ -346,7 +369,7 @@ function addVampires(grimoire: Grimoire) {
   // TODO: Vampires need more abilities so they can use their elite actions
   grimoire.addMonsterGroup(
     {
-      name: "Vampires",
+      name: 'Vampires',
       description: vampireDescription,
       sharedInitializer: (creature: Creature) => {
         creature.addVulnerability('Silvered weapons');
@@ -382,88 +405,97 @@ function addVampires(grimoire: Grimoire) {
           usageTime: 'elite',
           tags: ['Emotion', 'Subtle', 'Sustain (minor)', 'Visual'],
         });
-      }
+      },
     },
     [
-      ['Fledgling Vampire', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'skirmisher',
-          elite: true,
-          creature_type: 'undead',
-          level: 5,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+      [
+        'Fledgling Vampire',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'undead',
+            level: 5,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Fledgling vampires are the weakest form of vampire.
             They are recently turned, and some still feel a strong attachment to their old life.
             Despite their inexperience, they still possess some of a vampire's powerful abilities, so they should not be taken lightly.
           `,
-          hard: `
+            hard: `
             Most fledgling vampires are still growing accustomed to their need for blood.
             They may attempt to fast, which weakens them, before being consumed by an uncontrollable bloodlust.
           `,
-        });
-        creature.setTrainedSkills(['awareness', 'intimidate']);
-        creature.setBaseAttributes([3, 4, 1, 3, 3, 3]);
-      }],
-      ['True Vampire', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'skirmisher',
-          elite: true,
-          creature_type: 'undead',
-          level: 10,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setTrainedSkills(['awareness', 'intimidate']);
+          creature.setBaseAttributes([3, 4, 1, 3, 3, 3]);
+        },
+      ],
+      [
+        'True Vampire',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'undead',
+            level: 10,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             True vampires have fully awakened their vampiric potential.
             They have abandoned the world of the living and embraced their need for blood.
           `,
-        });
-        creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
-        creature.setBaseAttributes([5, 6, 2, 4, 4, 4]);
-      }],
-      ['Vampire Lord', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful evil',
-          base_class: 'skirmisher',
-          elite: true,
-          creature_type: 'undead',
-          level: 16,
-          size: 'medium',
-        });
-        creature.setKnowledgeResults({
-          normal: `
+          });
+          creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
+          creature.setBaseAttributes([5, 6, 2, 4, 4, 4]);
+        },
+      ],
+      [
+        'Vampire Lord',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful evil',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'undead',
+            level: 16,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
             Vampire lords are some of the most powerful undead.
             They can command legions of followers and vast fortunes that they have developed over centuries.
           `,
-        });
-        creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
-        creature.setBaseAttributes([4, 6, 2, 5, 5, 5]);
+          });
+          creature.setTrainedSkills(['awareness', 'intimidate', 'social_insight', 'persuasion']);
+          creature.setBaseAttributes([4, 6, 2, 5, 5, 5]);
 
-        // Mostly the same as the vampire ability, but without attunement
-        creature.addCustomSpell({
-          name: 'Dominating Gaze',
-          attack: {
-            hit: `
+          // Mostly the same as the vampire ability, but without attunement
+          creature.addCustomSpell({
+            name: 'Dominating Gaze',
+            attack: {
+              hit: `
               If the target is \\glossterm{injured} or its \\glossterm{character rank} is 5 or lower, it is \\confused as a \\glossterm{condition}.
             `,
-            crit: `
+              crit: `
               If the target was already confused from a previous use of this ability, the $name may make it permanently \\dominated.
               The $name can dominate any number of rank 5 or lower creatures with this ability, but only one creature at a time with a rank higher than that.
             `,
-            targeting: `
+              targeting: `
               Make an attack vs. Mental against all humanoid \\glossterm{enemies} and undead enemies within a \\medarea \\glossterm{cone} from you.
             `,
-          },
-          usageTime: 'elite',
-          tags: ['Emotion', 'Visual'],
-        });
-      }],
-    ]
+            },
+            usageTime: 'elite',
+            tags: ['Emotion', 'Visual'],
+          });
+        },
+      ],
+    ],
   );
 }
 
@@ -477,7 +509,7 @@ function addZombies(grimoire: Grimoire) {
 
   grimoire.addMonsterGroup(
     {
-      name: "Zombies",
+      name: 'Zombies',
       knowledge: {
         easy: `
           Zombies are the reanimated corpses of once-living creatures.
@@ -507,38 +539,50 @@ function addZombies(grimoire: Grimoire) {
       },
     },
     [
-      ['Shambler', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          level: 1,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([4, -2, 5, 0, -2, 0]);
-      }],
-      ['Walker', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          level: 3,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([5, -2, 6, 0, -2, 0]);
-      }],
-      ['Mauler', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          level: 6,
-          size: 'medium',
-        });
-        creature.setBaseAttributes([6, -2, 7, 0, -2, 0]);
-      }],
-      ['Hulk', (creature) => {
-        creature.setRequiredProperties({
-          ...requiredProperties,
-          level: 9,
-          size: 'large',
-        });
-        creature.setBaseAttributes([8, -2, 8, 0, -2, 0]);
-      }],
+      [
+        'Shambler',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            level: 1,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([4, -2, 5, 0, -2, 0]);
+        },
+      ],
+      [
+        'Walker',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            level: 3,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([5, -2, 6, 0, -2, 0]);
+        },
+      ],
+      [
+        'Mauler',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            level: 6,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([6, -2, 7, 0, -2, 0]);
+        },
+      ],
+      [
+        'Hulk',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            level: 9,
+            size: 'large',
+          });
+          creature.setBaseAttributes([8, -2, 8, 0, -2, 0]);
+        },
+      ],
     ],
   );
 }
