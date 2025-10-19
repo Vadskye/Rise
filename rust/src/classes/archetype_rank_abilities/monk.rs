@@ -322,7 +322,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         \rank{5} You can attack enemies up to 15 feet away from you.
                     \end{magicalactiveability}
 
-                    \begin{magicalactiveability}{Flash Step}{Triggered}
+                    \begin{magicaltriggeredability}{Flash Step}{Triggered}
                         \rankline
                         You can use this ability as part of movement with your walk speed.
                         % TODO: is 'horizontally' the correct word?
@@ -335,7 +335,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                         \rankline
                         \rank{5} The movement cost to teleport is reduced to be equal to the distance you teleport.
-                    \end{magicalactiveability}
+                    \end{magicaltriggeredability}
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}{Free action}
                         \rankline
