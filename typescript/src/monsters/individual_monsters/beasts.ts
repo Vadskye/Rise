@@ -58,6 +58,44 @@ export function addBeasts(grimoire: Grimoire) {
     });
   });
 
+  // Should this be "wasp, giant"?
+  grimoire.addMonster('Giant Wasp', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'skirmisher',
+      elite: false,
+      creature_type: 'beast',
+      level: 1,
+      size: 'large',
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        A giant wasp is a Large insect resembling a normal wasp.
+        Giant wasps attack when hungry or threatened, stinging their prey to death.
+      `,
+      hard: `
+        Giant wasps take dead or incapacitated opponents back to their lairs as food for their unhatched young.
+      `,
+    });
+    creature.setTrainedSkills(['awareness', 'balance', 'flexibility', 'stealth']);
+    creature.setBaseAttributes([2, 5, 0, -8, 3, -2]);
+    creature.addTrait('multipedal');
+    creature.addCustomMovementSpeed('Fly (fast, 120 ft.)');
+    creature.addCustomSense('Scent');
+    creature.addPoisonousStrike(
+      'stinger',
+      {
+        name: 'Giant Wasp Venom',
+        injury: true,
+        accuracyModifier: 2,
+        itMakes: `
+          the target \\slowed while the poison lasts.
+          Its stage 3 effect also deals \\damagerankthreelow.
+        `,
+      },
+    );
+  });
+
   grimoire.addMonster('Carrion Crow', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral',
@@ -420,11 +458,322 @@ export function addBeasts(grimoire: Grimoire) {
     });
   });
 
+  addAnimals(grimoire);
+  addDireAnimals(grimoire);
   addIchorTainted(grimoire);
 }
 
+function addAnimals(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Animals',
+      knowledge: {
+        easy: `
+          All animals are \\glossterm{mundane} and cannot speak.
+          They are easier to influence with the Creature Handling skill than other creatures.
+        `,
+      },
+    },
+    [
+      ['Baboon', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A baboon is an aggressive primate adapted to life on the ground.
+            A typical baboon is the size of a big dog.
+          `,
+          hard: `
+            Baboons prefer open spaces but climb trees to find safe places to rest overnight.
+            They can be aggressive, though they avoid attacking creatures that seem too dangerous.
+          `,
+        });
+        creature.setTrainedSkills(['awareness']);
+        creature.setBaseAttributes([2, 3, 1, -8, 2, -1]);
+        creature.addWeaponMult('claws');
+        creature.addCustomMovementSpeed('Climb (normal)');
+      }],
+      ['Badger', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A badger is a furry animal with a squat, powerful body.
+            Badgers can be tenacious in combat.
+          `,
+          hard: `
+            Badgers have strong forelimbs that are armed with long claws for digging.
+            A typical adult badger is 2 to 3 feet long and weighs 25 to 35 pounds.
+          `,
+        });
+        creature.setTrainedSkills(['endurance']);
+        creature.setBaseAttributes([-2, 2, 3, -8, 1, -1]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.addWeaponMult('claws');
+      }],
+      ['Black Bear', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: true,
+          creature_type: 'beast',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Black bears are forest-dwelling omnivores that are usually not dangerous unless an interloper threatens their cubs or food supply.
+            They can be pure black, blond, or cinnamon in color, and are rarely more than 5 feet long.
+            A typical black bear can be easily frightened away by loud noises and creatures that appear large.
+          `,
+        });
+        creature.setBaseAttributes([4, 0, 5, -8, 2, -2]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+        creature.addWeaponMult('bite', { usageTime: 'elite' });
+        creature.addWeaponMult('claws');
+      }],
+      ['Brown Bear', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: true,
+          creature_type: 'beast',
+          level: 3,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Brown bears tend to be bad-tempered and territorial.
+          `,
+        });
+        creature.setProperties({
+          description: "A brown bear's statistics can be used for almost any big bear, including a grizzly bear.",
+        });
+        creature.setBaseAttributes([5, 0, 6, -8, 1, 0]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
+        creature.addWeaponMult('bite', { usageTime: 'elite' });
+        creature.addWeaponMult('claws');
+      }],
+      ['Camel', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Camels are known for their ability to travel long distances without food or water.
+          `,
+        });
+        creature.setTrainedSkills(['endurance']);
+        creature.setBaseAttributes([3, 0, 3, -8, 1, 0]);
+        creature.addTrait('multipedal');
+        creature.addWeaponMult('bite');
+      }],
+      ['Cat', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'small',
+        });
+        creature.setTrainedSkills(['awareness', 'balance', 'flexibility', 'stealth']);
+        creature.setBaseAttributes([-7, 4, -3, -7, 2, -2]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.addWeaponMult('bite');
+      }],
+      ['Dog', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'medium',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Some dogs are trained to serve as steeds for halflings and kobolds.
+            Such riding dogs may be trained for combat, or may be only used for travel.
+          `,
+        });
+        creature.setProperties({
+          description: `
+            These statistics can be used for any large dog or similar creature, such as an ordinary wolf.
+            For particularly small dogs, use the statistics for a cat instead.
+          `,
+        });
+        creature.setTrainedSkills(['awareness', 'survival']);
+        creature.setBaseAttributes([0, 1, 0, -7, 2, -1]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.addWeaponMult('bite');
+      }],
+      ['Draft Horse', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'beast',
+          level: 2,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Draft horses are typically used to work farms.
+            They are slower than light horses, but stronger.
+            They are the cheapest type of horse that is normally available.
+          `,
+        });
+        creature.setTrainedSkills(['endurance']);
+        creature.addCustomMovementSpeed('Land (slow)');
+        creature.setBaseAttributes([4, 1, 2, -8, 0, -2]);
+      }],
+      ['Light Horse', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 2,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Light horses are typically used to carry riders, not to work or fight.
+          `,
+        });
+        creature.setBaseAttributes([2, 2, -1, -8, 0, -2]);
+      }],
+      ['Pony', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'beast',
+          level: 2,
+          size: 'medium',
+        });
+        creature.setTrainedSkills(['endurance']);
+        creature.setBaseAttributes([2, 0, 2, -8, 0, -2]);
+        creature.addTrait('multipedal');
+        creature.addWeaponMult('bite');
+      }],
+      ['Warhorse', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 3,
+          size: 'large',
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            Warhorses are trained to carry riders into battle.
+            They are superior to other types of horses, but more expensive.
+          `,
+        });
+        creature.setBaseAttributes([4, 2, 2, -8, 0, 0]);
+      }],
+    ],
+  );
+}
+
+function addDireAnimals(grimoire: Grimoire) {
+  // Dire animals are +1 size category and +3 levels over the base animal.
+  grimoire.addMonsterGroup(
+    {
+      name: "Dire Animals",
+      knowledge: {
+        normal: `
+          Dire animals are monstrous variants of ordinary animals.
+          They are larger, stronger, and more aggressive.
+          Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous.
+        `,
+      },
+    },
+    [
+      ['Dire Rat', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 1,
+          size: 'small',
+        });
+        creature.setProperties({
+          has_art: true,
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A dire rat is a Small omnivorous scavenger that resembles an unusually large rat.
+            Dire rats are not generally aggressive, but will attack to defend their nests and territories.
+            Dire rats can grow to be up to 3 feet long and weigh over 20 pounds.
+          `,
+        });
+        creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
+        creature.setBaseAttributes([1, 4, 0, -9, 3, -2]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.addManeuver('Gutshot', { displayName: 'Noxious Bite', weapon: 'bite' });
+      }],
+      ['Dire Wolf', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral',
+          base_class: 'skirmisher',
+          elite: false,
+          creature_type: 'beast',
+          level: 4,
+          size: 'large',
+        });
+        creature.setProperties({
+          has_art: true,
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A dire wolf is a wolf-like creature that is much larger than an ordinary wolf.
+            Their fur is usually mottled gray or black.
+            Dire wolves are efficient pack hunters that will kill anything they can catch.
+          `,
+        });
+        creature.setTrainedSkills(['awareness']);
+        creature.setBaseAttributes([4, 4, 1, -7, 3, 0]);
+        creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
+        creature.addManeuver('Crush the Fallen', { weapon: 'bite' });
+        creature.addManeuver('Knockdown', { weapon: 'bite' });
+      }],
+    ]
+  );
+}
+
 function addIchorTainted(grimoire: Grimoire) {
-  // Ichor creatures should be +3 levels over their animal counterpart
+  // Ichor creatures should be +6 levels over their animal counterpart
 
   grimoire.addMonsterGroup(
     {
@@ -466,15 +815,16 @@ function addIchorTainted(grimoire: Grimoire) {
           base_class: 'brute',
           elite: true,
           creature_type: 'beast',
-          level: 4,
+          level: 7,
           size: 'medium',
         });
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
-        creature.setBaseAttributes([5, 1, 6, -8, 2, -1]);
+        creature.setBaseAttributes([6, 2, 7, -8, 2, -2]);
         creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
 
-        creature.addWeaponMult('claws', { usageTime: 'elite' });
-        creature.addWeaponMult('bite');
+        creature.addWeaponMult('bite', { usageTime: 'elite' });
+        creature.addWeaponMult('claws');
       }],
       ['Ichor Brown Bear', (creature: Creature) => {
         creature.setRequiredProperties({
@@ -482,15 +832,16 @@ function addIchorTainted(grimoire: Grimoire) {
           base_class: 'brute',
           elite: true,
           creature_type: 'beast',
-          level: 6,
+          level: 9,
           size: 'large',
         });
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
-        creature.setBaseAttributes([6, 1, 7, -8, 2, 1]);
+        creature.setBaseAttributes([7, 1, 8, -8, 2, 1]);
         creature.addTrait('multipedal');
+        creature.addCustomSense('Scent');
 
-        creature.addWeaponMult('claws', { usageTime: 'elite' });
-        creature.addWeaponMult('bite');
+        creature.addWeaponMult('bite', { usageTime: 'elite' });
+        creature.addWeaponMult('claws');
       }],
       ['Ichor Wolf', (creature: Creature) => {
         creature.setRequiredProperties({
