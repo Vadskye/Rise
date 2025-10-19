@@ -60,7 +60,7 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         short_description: String::from(r"Deals extra weapon damage if you have 3 Str"),
         description: String::from(r"
             If your Strength is at least 3, this weapon deals \glossterm{extra damage} equal to its weapon damage die \sub 3.
-            For example, a brutish battleaxe would deal 1d8\\minus3 extra damage.
+            For example, a brutish battleaxe would deal 1d8\minus3 extra damage.
         "),
         upgrades: vec![
             // +3.5 damage
