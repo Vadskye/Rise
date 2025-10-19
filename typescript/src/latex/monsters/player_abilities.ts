@@ -44,57 +44,80 @@ export function convertAbilityToMonsterLatex(monster: Creature, ability: ActiveA
 }
 
 function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityPart: string): string {
+
+  function replace(pattern: RegExp, replacement: string | ((substring: string, ...args: any[]) => string)) {
+    abilityPart = abilityPart.replace(pattern, replacement as any);
+  }
+
   // TODO: when should this use 'it' vs 'the $name'?
-  abilityPart = abilityPart.replace(/\byour next action\b/g, "its next action");
-  abilityPart = abilityPart.replace(/\byour attack result\b/g, "the attack result");
-  abilityPart = abilityPart.replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
-  abilityPart = abilityPart.replace(/\byou are\b/g, "it is");
-  abilityPart = abilityPart.replace(/\bYou are\b/g, "The $name is");
-  abilityPart = abilityPart.replace(/\bYou and the\b/g, "The $name and the");
-  abilityPart = abilityPart.replace(/\bYou also control\b/g, "The $name also controls");
-  abilityPart = abilityPart.replace(/\bYou become\b/g, "The $name becomes");
-  abilityPart = abilityPart.replace(/\b, you become\b/g, ", it becomes");
-  abilityPart = abilityPart.replace(/\bYou must have\b/g, "The $name must have");
-  abilityPart = abilityPart.replace(/\byour speed\b/g, "its speed");
-  abilityPart = abilityPart.replace(/\byour attack\b/g, "its attack");
-  abilityPart = abilityPart.replace(/\bwhether you get\b/g, "whether it gets");
-  abilityPart = abilityPart.replace(/\byou cannot get\b/g, "it cannot get");
-  abilityPart = abilityPart.replace(/\bthat you missed\b/g, "that it missed");
+  replace(/\byour next action\b/g, "its next action");
+  replace(/\byour attack result\b/g, "the attack result");
+  replace(/\byou (touch\b|\\glossterm{touch})/g, "it \\glossterm{touches}");
+  replace(/\byou are\b/g, "it is");
+  replace(/\bYou are\b/g, "The $name is");
+  replace(/\bYou and the\b/g, "The $name and the");
+  replace(/\bYou also control\b/g, "The $name also controls");
+  replace(/\bYou become\b/g, "The $name becomes");
+  replace(/\b, you become\b/g, ", it becomes");
+  replace(/\bYou must have\b/g, "The $name must have");
+  replace(/\byour speed\b/g, "its speed");
+  replace(/\byour attack\b/g, "its attack");
+  replace(/\bwhether you get\b/g, "whether it gets");
+  replace(/\byou cannot get\b/g, "it cannot get");
+  replace(/\bthat you missed\b/g, "that it missed");
   // TODO: standardize on "protects you" vs "affects attacks against you"
-  abilityPart = abilityPart.replace(/\bprotects you\b\b/g, "protects the $name");
-  abilityPart = abilityPart.replace(/\battacks against you\b\b/g, "attacks against the $name");
-  abilityPart = abilityPart.replace(/\byour subsequent\b/g, "the $name's subsequent");
-  abilityPart = abilityPart.replace(/\bYou can\b/g, "The $name can");
-  abilityPart = abilityPart.replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
-  abilityPart = abilityPart.replace(/\bWhen you cast this spell, you create\b/g, "When the $name casts this spell, it creates");
-  abilityPart = abilityPart.replace(/\bYou create\b/g, "The $name creates");
-  abilityPart = abilityPart.replace(/\bYou regain\b/g, "The $name regains");
+  replace(/\bprotects you\b\b/g, "protects the $name");
+  replace(/\battacks against you\b\b/g, "attacks against the $name");
+  replace(/\byour subsequent\b/g, "the $name's subsequent");
+  replace(/\bYou can\b/g, "The $name can");
+  replace(/\\empowered\b/g, `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`);
+  replace(/\bWhen you cast this spell, you create\b/g, "When the $name casts this spell, it creates");
+  replace(/\bYou create\b/g, "The $name creates");
+  replace(/\bYou regain\b/g, "The $name regains");
+  replace(/\bYou gain\b/g, "The $name gains");
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
-  abilityPart = abilityPart.replace(/\bIn addition, you regain\b/g, "In addition, the $name regains");
-  abilityPart = abilityPart.replace(/\bYou take\b/g, "The $name takes");
-  abilityPart = abilityPart.replace(/\bYou (\\glossterm{briefly}|briefly) cannot use\b/g, "The $name \\glossterm{briefly} cannot use");
-  abilityPart = abilityPart.replace(/\bif you take\b/g, "if the $name takes");
-  abilityPart = abilityPart.replace(/\bact by you\b/g, "act by the $name");
-  abilityPart = abilityPart.replace(/goaded by you\b/g, "goaded by the $name");
-  abilityPart = abilityPart.replace(/\bto you\b/g, "to it");
-  abilityPart = abilityPart.replace(/\byour space\b/g, "its space");
-  abilityPart = abilityPart.replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name \\glossterm{flings}");
-  abilityPart = abilityPart.replace(/\baway from you\b/g, "away from it");
-  abilityPart = abilityPart.replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
-  abilityPart = abilityPart.replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
-  abilityPart = abilityPart.replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
+  replace(/\bIn addition, you regain\b/g, "In addition, the $name regains");
+  replace(/\bYou take\b/g, "The $name takes");
+  replace(/\bYou inscribe\b/g, "The $name inscribes");
+  replace(/\bYou (\\glossterm{briefly}|briefly) cannot use\b/g, "The $name \\glossterm{briefly} cannot use");
+  replace(/\bif you take\b/g, "if the $name takes");
+  replace(/\bact by you\b/g, "act by the $name");
+  replace(/goaded by you\b/g, "goaded by the $name");
+  replace(/\bto you\b/g, "to it");
+  replace(/\byour space\b/g, "its space");
+  replace(/\bYou (fling\b|\\glossterm{fling})/g, "The $name \\glossterm{flings}");
+  replace(/\baway from you\b/g, "away from it");
+  replace(/(\bemanation|\\glossterm{emanation}) from you\b/g, "\\glossterm{emanation} from the $name");
+  replace(/\bfrom your location\b/g, "from its location");
+  replace(/\bChoose yourself or\b/g, "The $name chooses itself or");
+  replace(/\byour (allies\b|\\glossterm{allies})/g, "its allies");
+  replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
+  replace(/\bYou must be (alive|\\glossterm{alive}) to (cast this spell|use this ability)\./g, "");
+  replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
+  replace(/\bAfter you attack\b/g, 'After the $name attacks');
+  replace(/\byou lose\b/g, 'it loses');
+  // Elite monsters cheat this kind of cost.
+  const halfHpCost = monster.elite ? Math.floor(monster.hit_points / 4) : Math.floor(monster.hit_points / 2);
+  replace(/\bto be equal to half your maximum (hit points|\\glossterm{hit points})\b/g, `to ${halfHpCost} \\glossterm{hit points}`);
+  replace(/\bIf you do\b/g, "If it does");
+  replace(/, you gain/g, ", it gains");
+
+  // "from you" is tricky. We want to replace "attack from you" with "attack from the
+  // $name", but every variant of "area from you" with "area from itself".
+  replace(/\battack from you\b/g, 'attack from the $name');
+  replace(/(\bradius|\bcone|\\glossterm{cone}|\bline|\\glossterm{line}|\bzone|\\glossterm{zone}|\bemanation|\\glossterm{emanation}) from you\b/g, (_, area) => `${area} from itself`);
 
   // This is lazy; we should support other extra damage variants, like 2x power or damage
   // dice.
   const fullPower = monster.getRelevantPower(ability.isMagical);
   const halfPower = Math.floor(fullPower / 2);
-  abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g, `${halfPower} \\glossterm{extra damage}`);
-  abilityPart = abilityPart.replace(/\bdamage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
-  abilityPart = abilityPart.replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
-  abilityPart = abilityPart.replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
+  replace(/(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g, `${halfPower} \\glossterm{extra damage}`);
+  replace(/\bdamage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
+  replace(/(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g, `${fullPower} \\glossterm{extra damage}`);
+  replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
-  abilityPart = abilityPart.replace(
+  replace(
     /(hit points|\\glossterm{hit points}) equal to (\w+)?( times)? your (power|\\glossterm{power})/,
     (_, __, multiplier) => {
       const numericMultiplier = {
@@ -184,6 +207,11 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
   // Monster abilities shouldn't show the normal player-facing narrative text
   delete ability.narrative;
+
+  // Ignore attunement tags, since monsters don't attune.
+  if (ability.type && /Attune/.test(ability.type)) {
+    delete ability.type;
+  }
 
   if (ability.effect && makeStrikePattern.test(ability.effect)) {
     if (!ability.weapon) {
@@ -496,19 +524,6 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
       const theText = maybeCapital === 'M' ? 'The' : 'the';
       return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`
     },
-  );
-
-  // If we said $name already, replace 'from you' (usually in area descriptors) with
-  // "itself" instead of using "$name" again to avoid repetition.
-  attack.targeting = attack.targeting.replace(
-    /(\$name.*)from you\b/gs,
-    (_, preface) => `${preface}from itself`,
-  );
-
-  // If we said $name already, replace 'You gain' with 'It gains' to avoid repetition.
-  attack.targeting = attack.targeting.replace(
-    /(\$name.*)You gain\b/gs,
-    (_, preface) => `${preface}It gains`,
   );
 }
 
