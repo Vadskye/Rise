@@ -321,40 +321,62 @@ export const enchantment: MysticSphere = {
       tags: ['Emotion'],
     },
 
-    // TODO: update
-    // {
-    //   name: 'Fearsome Aura',
+    // Briefly frighened is 1.2 EA, which is low for a rank 1 deep attunement. We use the
+    // extra EA for accuracy. We could make a ~rank 6 version of this, but it seems like a
+    // bad idea to have reactive attacks on non-deep attunements.
+    {
+      name: 'Fearsome Aura',
 
-    //   attack: {
-    //     crit: CONDITION_CRIT,
-    //     hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
-    //     targeting: `
-    //       Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-    //       After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-    //     `,
-    //   },
-    //   rank: 4,
-    //   scaling: 'accuracy',
-    //   tags: ['Emotion'],
-    //   type: 'Attune (deep)',
-    // },
+      attack: {
+        hit: `The target is \\glossterm{briefly} \\frightened by you.`,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them with a \\plus2 accuracy bonus.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 1,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
+    },
 
-    // {
-    //   name: 'Intense Fearsome Aura',
+    // Panicked by you for only a single round is worth about 0.7 EA for the Mental
+    // defense, plus 1.5 EA from a single round of action denial, so 2.2 EA.
+    {
+      name: 'Intense Fearsome Aura',
 
-    //   attack: {
-    //     crit: CONDITION_CRIT,
-    //     hit: `The target is \\panicked by you as a \\glossterm{condition}.`,
-    //     targeting: `
-    //       Whenever an \\glossterm{enemy} enters a \\smallarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
-    //       After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
-    //     `,
-    //   },
-    //   rank: 7,
-    //   scaling: 'accuracy',
-    //   tags: ['Emotion'],
-    //   type: 'Attune (deep)',
-    // },
+      attack: {
+        hit: `The target is \\panicked by you this round.`,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 6,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
+    },
+
+    {
+      name: 'Enduring Fearsome Aura',
+
+      attack: {
+        crit: CONDITION_CRIT,
+        hit: `The target is \\frightened by you as a \\glossterm{condition}.`,
+        targeting: `
+          Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
+          After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
+        `,
+      },
+      rank: 7,
+      roles: ['attune'],
+      scaling: 'accuracy',
+      tags: ['Emotion'],
+      type: 'Attune (deep)',
+    },
 
     {
       name: 'Charm',
