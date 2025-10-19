@@ -109,6 +109,16 @@ These are EA modifiers, as opposed to rank modifiers that apply after calculatin
 * -1 EA: The effect only works if you hit the creature with it twice.
 * -2 EA: The effect only works if you hit the creature with it twice, both times while it is in HP.
 
+## Debuff Area
+
+All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a rank X area (see Area Tiers, below).
+
+### Limited Scope Debuffs
+
+You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
+* Rank - 1: Rank X / 2 area, to a minimum of rank 0
+* Rank - 2: Single target melee range
+
 ## Defense penalties
 
 ### From a debuff
@@ -646,58 +656,3 @@ Putting that all together, for unrestricted / melee effects:
     * triple damage strike and 2.0 EA debuff
     * triple damage strike, if beat Fort/Ment, 2.2 EA debuff
     * triple damage strike and crit, 2.4 EA debuff
-
-### Rank modifiers
-
-All rank modifiers apply after calculating EA and the debuff to be applied.
-
-These rank modifiers apply before calculating area and damage:
-
-* -1 rank: +2 area ranks (net +1 area rank, -1 effect rank)
-* -1 rank: Damage requires one defense, debuff requires beating a separate non-Reflex defense
-* -1 rank: -2 accuracy (max -4; see Accuracy vs Damage doc)
-* -2 ranks: Condition is removed when the target takes damage
-* -2 ranks: Condition can be removed with movement (burning Dex check)
-
-These rank modifiers apply after calculating damage, but before calculating area.
-For pure damage effects, this is equivalent to directly modifying damage rank:
-
-* -1 rank: Must beat two defenses instead of one, one of which is Reflex
-* -1 rank: Effect is inescapably delayed by one round
-* -1 rank: Easy combo condition:
-  * Target must have already taken damage this round
-  * Target must have one of your allies adjacent to it
-  * You must be focused or primed
-* -2 ranks: Effect is escapably delayed by one round (can leave area) - can't be combined with enemies-only area targeting
-* -2 ranks: Must beat two non-Reflex defenses instead of one
-* -2 ranks: Difficult combo condition:
-  * You must be one of braced, empowered, fortified, shielded, or steeled (no accuracy buff)
-
-These rank modifiers apply after calculating both area and damage:
-* -1 rank: Limited scope (see Debuff Area, below)
-* -2 ranks: Melee range (see Debuff Area, below)
-
-## Debuff Area
-
-All of the effective action calculations assume that every enemy in the fight is affected by the debuff. For that reason, a "standard" debuff affects a large area: a rank X spell uses a rank X area (see Area Tiers, below).
-
-### Limited Scope Debuffs
-
-You can apply a stronger debuff if you are willing to affect fewer enemies. There are three versions of a limited scope debuff:
-* Rank - 1: Rank X / 2 area, to a minimum of rank 0
-* Rank - 2: Single target melee range
-
-## Stock effects
-
-### Naming prefixes
-THIS IS AN ORDERED LIST.
-If a spell improves in multiple ways, use the first name in this list that applies.
-
-* Efficient: lower requirements (on damage instead of on HP loss)
-* Intense: a stronger (non-damaging) hostile effect, like dazed -> stunned
-* Certain: more accuracy
-* Massive: more AOE
-* Empowered: a strong non-hostile numeric effect, like healing
-* Greater: a stronger non-hostile, non-numeric effect, like phasestep -> greater phasestep
-* Distant: more range
-* Mighty: more damage
