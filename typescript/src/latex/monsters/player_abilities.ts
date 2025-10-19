@@ -108,6 +108,7 @@ function replaceGenericTerms(monster: Creature, ability: ActiveAbility, abilityP
   replace(/\bIf you do\b/g, "If it does");
   replace(/, you gain/g, ", it gains");
   replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
+  replace(/\blarger than you\b/g, "larger than the $name");
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
@@ -409,8 +410,15 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   const effect = ability.effect!;
   const weapon = ability.weapon!;
 
+  // We only check the sentence of the strike to avoid catching conditional clauses.
+  const strikeSentenceMatch = effect.match(/([mM]ake[^.]+strike[^.]*\.)/);
+  if (!strikeSentenceMatch) {
+    throw new Error(`${monster.name}.${ability.name}: Cannot calculate strike damage for an ability that does not make a strike`);
+  }
+  const strikeSentence: string = strikeSentenceMatch![1];
+
   let globalDamageMultiplier = 1;
-  let globalMultiplierMatch = effect.match(/deals (double|triple|quadruple) damage/);
+  let globalMultiplierMatch = strikeSentence.match(/deals (double|triple|quadruple) damage/);
   if (globalMultiplierMatch) {
     globalDamageMultiplier =
       {
@@ -426,7 +434,7 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   }
 
   let weaponDamageMultiplier = 1;
-  let weaponMultiplierMatch = effect.match(
+  let weaponMultiplierMatch = strikeSentence.match(
     /deals (double|triple|quadruple|five times|six times|seven times|eight times) (\\glossterm{weapon damage}|weapon damage)/,
   );
   if (weaponMultiplierMatch) {

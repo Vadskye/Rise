@@ -135,7 +135,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with no damage multiplier', (t) => {
     const ability = {
       weapon: 'bite',
-      effect: 'deals damage',
+      effect: 'Make a strike.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+10');
@@ -145,7 +145,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with double damage multiplier', (t) => {
     const ability = {
       weapon: 'claws',
-      effect: 'Make a strike that deals double damage',
+      effect: 'Make a strike that deals double damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '4d4+10');
@@ -177,7 +177,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with triple damage multiplier', (t) => {
     const ability = {
       weapon: 'tentacle',
-      effect: 'Make a \\glossterm{strike} that deals triple damage',
+      effect: 'Make a \\glossterm{strike} that deals triple damage.',
       isMagical: true,
     } as any;
     // Lower because this is a magical strike
@@ -188,7 +188,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with quadruple damage multiplier', (t) => {
     const ability = {
       weapon: 'bite',
-      effect: 'Make a \\glossterm{strike} that deals quadruple damage',
+      effect: 'Make a \\glossterm{strike} that deals quadruple damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '4d8+40');
@@ -198,7 +198,7 @@ t.test('calculateStrikeDamage', (t) => {
   t.test('with a 8x weapon damage multiplier', (t) => {
     const ability = {
       weapon: 'claws',
-      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage',
+      effect: 'Make a \\glossterm{strike} that deals eight times weapon damage.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+5');
@@ -233,7 +233,7 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect:
-        'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday',
+        'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+10');
@@ -246,7 +246,7 @@ t.test('calculateStrikeDamage', (t) => {
     } as any;
     const ability = {
       weapon: 'bite',
-      effect: 'deals damage',
+      effect: 'Make a strike.',
       isMagical: false,
     } as any;
     t.equal(calculateStrikeDamage(creatureWithNegativePower, ability), '1d8-5');
@@ -471,6 +471,24 @@ t.test('restructureStrikeAbility', (t) => {
       t.matchStrict(ability.attack, {
         hit: '1d8+10 damage.',
         targeting: 'The $name makes a $accuracy-1 melee strike vs. Armor with its bite.',
+      });
+      t.end();
+    });
+
+    t.test('with conditional double damage', (t) => {
+      const ability = {
+        name: 'Test Ability',
+        weapon: 'bite',
+        effect: `
+          Make a strike using a longsword.
+          If the target is \\prone, the strike deals double damage.
+        `,
+      } as any;
+      restructureStrikeAbility(mockCreature, ability);
+      t.matchStrict(ability.attack, {
+        hit: '1d8+10 damage.',
+        targeting: `The $name makes a $accuracy melee strike vs. Armor with its bite.
+          If the target is \\prone, the strike deals double damage.`,
       });
       t.end();
     });
