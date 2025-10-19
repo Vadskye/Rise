@@ -761,5 +761,41 @@ export const telekinesis: MysticSphere = {
       roles: ['attune'],
       type: 'Attune',
     },
+
+    // brief injury stun is 4d. Limited scope drops to rank 3.
+    {
+      name: 'Kinetic Cudgel',
+
+      attack: {
+        hit: `\\damagerankthree.`,
+        injury: 'The target is \\glossterm{briefly} \\stunned.',
+        targeting: `
+          Make an attack vs. Brawn against something within \\shortrange.
+        `,
+      },
+      rank: 3,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
+
+    // Brief stun or stun as a condition is 1.8 EA, so rank 8 normally.
+    // Limited scope drops to rank 7.
+    {
+      name: 'Mighty Kinetic Cudgel',
+
+      attack: {
+        hit: `
+          \\damagerankseven, and any \\glossterm{extra damage} is doubled.
+          The target is also \\glossterm{briefly} \\stunned.
+        `,
+        injury: 'The target is \\stunned as a \\glossterm{condition}.',
+        targeting: `
+          Make an attack vs. Brawn against something within \\shortrange.
+        `,
+      },
+      rank: 7,
+      roles: ['burst', 'maim'],
+      scaling: 'damage',
+    },
   ],
 };
