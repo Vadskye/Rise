@@ -364,8 +364,9 @@ export class Creature implements CreaturePropertyMap {
       ...getManeuverByName(maneuverName),
       name: displayName || maneuverName,
       isMagical: Boolean(isMagical),
-      usageTime,
       weapon,
+      // We don't want to override the original maneuver's usage time
+      ...(usageTime ? { usageTime } : {}),
     });
   }
 
@@ -472,8 +473,9 @@ export class Creature implements CreaturePropertyMap {
       ...getSpellByName(spellName),
       name: displayName || spellName,
       isMagical: isMagical === undefined ? true : isMagical,
-      usageTime,
       weapon,
+      // We don't want to override the original spell's usage time
+      ...(usageTime ? { usageTime } : {}),
     });
   }
 
@@ -646,6 +648,12 @@ export class Creature implements CreaturePropertyMap {
 
   setRequiredProperties(properties: CreatureRequiredPropertyMap) {
     this.setProperties(properties);
+    // TODO: this is a bit of a hack, since it's possible to define a monster as being
+    // elite without calling this function. However, it's unlikely that we'd do that, so
+    // this is fine for now.
+    if (properties.elite) {
+      this.addManeuver('Elite Cleanse');
+    }
   }
 
   setProperties(properties: Partial<CreaturePropertyMap>) {

@@ -401,9 +401,10 @@ The miss chance applies to roughly 25% of boss attacks. Since blindness is worse
 Following the logic of being stunned, being vulnerable to all damage would be worth 2.8 action effectiveness. Add 25% effectiveness because it negates impervious/immune, so 3.5 EA.
 
 ## Debuff Condition Action Effectiveness
-Assume that a normal group combat lasts for 16 player effective actions, and a typical boss fight lasts for 20 player effective actions. If you apply a condition to a boss on round 1, it will have the opportunity to remove that condition at the end of rounds 2, 3, and 4. The condition lasts 1 + 1 + 5/6 * (1 + 5/6 * (1 + 5/6)) = 2 + 5/6 * (1 + 1.53) = 4.1 rounds.
+Assume that a normal group combat lasts for 16 player effective actions, and a typical boss fight lasts for 20 player effective actions. If you apply a condition to a boss on round 1, it will have the opportunity to remove that condition during rounds 2, 3, and 4. On average, the condition lasts for 2 + 0.6 + (0.6)^2 + (0.6)^3 = 3.18 rounds.
 
-Or, equivalently, 2 + 5/6 + (5/6)^2 + (5/6)^3 = 2 + 0.83 + 0.69 + 0.57 = 4.1. That's basically the same as the expected condition duration in a group fight, since non-elites can't remove conditions.
+However, that only applies if the condition is the *only* condition applied during the fight. If the elite would also need to remove other conditions, the condition should last longer.
+That's basically the same as the expected condition duration in a group fight, since non-elites can't remove conditions. If the elite monster gains two conditions, the odds of removal are more complicated to calculate, but I'll wave my hand and say that it lets us go up to 4 rounds of combat. Or so.
 
 Basically, we can generally assume that a condition lasts for 4 rounds of combat. That generally means that the maximum player action count is 15, and 3 rounds of enemy attacks are affected by enemy attack debuffs.
 
