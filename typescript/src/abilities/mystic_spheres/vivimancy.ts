@@ -82,7 +82,6 @@ export const vivimancy: MysticSphere = {
           You can increase your \\glossterm{fatigue level} by one. 
           % dr2
           If you do, you regain \\hprankfive at the end of the round.
-          This healing does not have the \\abilitytag{Swift} tag, so it applies after attacks during the current phase.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
