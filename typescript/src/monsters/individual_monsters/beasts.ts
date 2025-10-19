@@ -79,7 +79,6 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'balance', 'flexibility', 'stealth']);
     creature.setBaseAttributes([2, 5, 0, -8, 3, -2]);
-    creature.addTrait('multipedal');
     creature.addCustomMovementSpeed('Fly (fast, 120 ft.)');
     creature.addCustomSense('Scent');
     creature.addPoisonousStrike(
@@ -196,7 +195,7 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'survival']);
     creature.setBaseAttributes([3, 2, 1, -4, 2, -1]);
-    creature.addTrait('multipedal');
+    creature.addTrait('quadrupedal');
     creature.addCustomSense('Scent');
 
     creature.addWeaponMult('bite');
@@ -349,7 +348,7 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([5, 5, 2, -3, 2, 2]);
-    creature.addTrait('multipedal');
+    creature.addTrait('quadrupedal');
     creature.addCustomMovementSpeed('Fly (fast, 60 ft.)');
     creature.addCustomSense('Low-light Vision');
 
@@ -520,7 +519,7 @@ function addAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['endurance']);
         creature.setBaseAttributes([-2, 2, 3, -8, 1, -1]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.addWeaponMult('claws');
       }],
@@ -541,7 +540,7 @@ function addAnimals(grimoire: Grimoire) {
           `,
         });
         creature.setBaseAttributes([4, 0, 5, -8, 2, -2]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
         creature.addWeaponMult('bite', { usageTime: 'elite' });
@@ -565,7 +564,7 @@ function addAnimals(grimoire: Grimoire) {
           description: "A brown bear's statistics can be used for almost any big bear, including a grizzly bear.",
         });
         creature.setBaseAttributes([5, 0, 6, -8, 1, 0]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
         creature.addWeaponMult('bite', { usageTime: 'elite' });
@@ -587,7 +586,7 @@ function addAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['endurance']);
         creature.setBaseAttributes([3, 0, 3, -8, 1, 0]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addWeaponMult('bite');
       }],
       ['Cat', (creature: Creature) => {
@@ -601,7 +600,7 @@ function addAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness', 'balance', 'flexibility', 'stealth']);
         creature.setBaseAttributes([-7, 4, -3, -7, 2, -2]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.addWeaponMult('bite');
       }],
@@ -628,7 +627,7 @@ function addAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness', 'survival']);
         creature.setBaseAttributes([0, 1, 0, -7, 2, -1]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.addWeaponMult('bite');
       }],
@@ -679,7 +678,7 @@ function addAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['endurance']);
         creature.setBaseAttributes([2, 0, 2, -8, 0, -2]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addWeaponMult('bite');
       }],
       ['Warhorse', (creature: Creature) => {
@@ -738,7 +737,7 @@ function addDireAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
         creature.setBaseAttributes([1, 4, 0, -9, 3, -2]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.addManeuver('Gutshot', { displayName: 'Noxious Bite', weapon: 'bite' });
       }],
@@ -763,7 +762,7 @@ function addDireAnimals(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness']);
         creature.setBaseAttributes([4, 4, 1, -7, 3, 0]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
         creature.addManeuver('Crush the Fallen', { weapon: 'bite' });
         creature.addManeuver('Knockdown', { weapon: 'bite' });
@@ -820,7 +819,7 @@ function addIchorTainted(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
         creature.setBaseAttributes([6, 2, 7, -8, 2, -2]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
 
         creature.addWeaponMult('bite', { usageTime: 'elite' });
@@ -837,7 +836,7 @@ function addIchorTainted(grimoire: Grimoire) {
         });
         creature.setTrainedSkills(['awareness', 'climb', 'endurance', 'survival', 'swim']);
         creature.setBaseAttributes([7, 1, 8, -8, 2, 1]);
-        creature.addTrait('multipedal');
+        creature.addTrait('quadrupedal');
         creature.addCustomSense('Scent');
 
         creature.addWeaponMult('bite', { usageTime: 'elite' });
@@ -849,14 +848,15 @@ function addIchorTainted(grimoire: Grimoire) {
           base_class: 'skirmisher',
           elite: false,
           creature_type: 'beast',
-          level: 4,
+          level: 7,
           size: 'medium',
         });
         creature.setTrainedSkills(['awareness', 'survival']);
-        creature.setBaseAttributes([1, 2, 1, -7, 3, 0]);
-        creature.addTrait('multipedal');
+        creature.setBaseAttributes([4, 5, 3, -7, 4, 0]);
+        creature.addTrait('quadrupedal');
 
-        creature.addWeaponMult('bite');
+        creature.addManeuver('Crush the Fallen', { weapon: 'bite' });
+        creature.addManeuver('Knockdown', { weapon: 'bite' });
       }],
     ],
   );
