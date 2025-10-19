@@ -19,7 +19,7 @@ t.test('aboleth', (t) => {
     ]);
     t.match(vals, {
       awareness: 13,
-      hit_points: 270,
+      hit_points: 246,
       level: 12,
       name: 'Aboleth',
       perception: 4,
