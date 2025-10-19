@@ -8,6 +8,7 @@ export function addHumanoids(grimoire: Grimoire) {
   addGoblins(grimoire);
   addKobolds(grimoire);
   addLizardfolk(grimoire);
+  addNecromancers(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
 }
@@ -17,12 +18,6 @@ function addBandits(grimoire: Grimoire) {
     {
       name: "Bandits",
       hasArt: false,
-      knowledge: {
-        normal: `
-          Bandits are common throughout civilization.
-          They are typically found in small groups, preying on travelers or isolated settlements.
-        `,
-      },
     },
     [
       ['Army Deserter', (creature: Creature) => {
@@ -190,12 +185,6 @@ function addCultists(grimoire: Grimoire) {
     {
       name: "Cultists",
       hasArt: false,
-      knowledge: {
-        normal: `
-          Cultists are common throughout civilization.
-          They are typically found in small groups, preying on travelers or isolated settlements.
-        `,
-      },
     },
     [
       ['Death Cultist', (creature: Creature) => {
@@ -401,7 +390,7 @@ function addKobolds(grimoire: Grimoire) {
         });
         creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
         creature.addWeaponMult('longbow');
-        creature.addManeuver('Heartpiercer', {weapon: 'longbow'});
+        creature.addManeuver('Heartpiercer', { weapon: 'longbow' });
       }],
       ['Dragonsworn Nipper', (creature: Creature) => {
         creature.setRequiredProperties({
@@ -440,10 +429,78 @@ function addKobolds(grimoire: Grimoire) {
         });
         creature.addImpervious('Varies');
         creature.addWeaponMult('longbow');
-        creature.addManeuver('Distant Shot', {weapon: 'longbow'});
-        creature.addManeuver('Pure Precision', {weapon: 'longbow'});
+        creature.addManeuver('Distant Shot', { weapon: 'longbow' });
+        creature.addManeuver('Pure Precision', { weapon: 'longbow' });
       }],
     ],
+  );
+}
+
+function addNecromancers(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: "Necromancers",
+      hasArt: false,
+      knowledge: {
+        normal: `
+          Necromancers revive and manipulate undead.
+          Some even attempt to emulate the strength of undead in their own bodies.
+          They are reviled in most societies, both for their desecration of the dead and for the harm their magic can do to souls.
+        `,
+      },
+    },
+    [
+      ['Lichbound', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful evil',
+          base_class: 'leader',
+          elite: true,
+          creature_type: 'humanoid',
+          level: 8,
+          size: 'medium',
+        });
+        creature.setProperties({
+          has_art: false,
+        });
+        creature.setKnowledgeResults({
+          normal: `
+            A lichbound is a mage who has started the process of becoming a lich by intentionally splintering their own soul.
+            They still have far to go before they truly embrace undeath, but they gain some benefits from their partial transformation.
+          `,
+        });
+        creature.setTrainedSkills(["awareness", "intimidate", "craft_bone"]);
+        creature.setBaseAttributes([0, 2, 4, 0, 2, 6]);
+
+        creature.addPassiveAbility({
+          name: 'Life Suppression',
+          effect: `
+            Although the $name is alive, it is not considered a living creature for the purpose of attacks against it.
+            This means that attacks which only affect living creatures have no effect on it.
+          `,
+        });
+
+        // Melee abilities are standard actions, ranged abilities are elite actions.
+        creature.addWeaponMult('scythe', { displayName: 'Reaping Scythe', isMagical: true });
+        // Lifesteal Grasp, but as rank 3 and reformatted for a monster.
+        creature.addCustomSpell({
+          name: "Lifesteal Grasp",
+          attack: {
+            hit: '\\damagerankfour.',
+            injury: 'You regain \\hprankfour at the end of the round.',
+            targeting: `
+              You must have a \\glossterm{free hand} to cast this spell.
+
+              Make an attack vs. Fortitude against a living creature you \\glossterm{touch}.
+            `,
+          },
+        });
+
+        creature.addSpell('Circle of Death', { usageTime: 'elite' })
+        creature.addSpell('Fearsome Aura', { usageTime: 'triggered' })
+        creature.addSpell('Mind Blank', { displayName: 'Splinter Soul', usageTime: 'elite' });
+        creature.addSpell('Lifetap Blast', { usageTime: 'elite' })
+      }],
+    ]
   );
 }
 
