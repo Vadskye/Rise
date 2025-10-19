@@ -161,7 +161,18 @@ export const bruteForce: CombatStyle = {
       name: 'Knockdown',
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Brawn defense, it falls \\prone.
+        \\injury If your attack result hits the target's Brawn defense, it falls \\prone.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 1,
+      roles: ['trip'],
+    },
+
+    {
+      name: 'Knockdown+',
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit If your attack result hits the target's Brawn defense, it falls \\prone.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 3,
@@ -327,28 +338,6 @@ export const bruteForce: CombatStyle = {
       `,
       rank: 7,
       roles: ['burst', 'exertion'],
-    },
-
-    {
-      name: 'Gutshot',
-
-      effect: `
-        Make a melee strike.
-        If you are \\empowered and the strike hits, the target is \\glossterm{briefly} \\stunned.
-      `,
-      rank: 3,
-      roles: ['softener', 'payoff'],
-    },
-
-    {
-      name: 'Gutshot+',
-
-      effect: `
-        Make a melee strike that deals triple damage.
-        If you are \\empowered and the strike hits, the target is \\stunned as a \\glossterm{condition}.
-      `,
-      rank: 7,
-      roles: ['softener', 'payoff'],
     },
 
     {
