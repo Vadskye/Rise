@@ -25,7 +25,7 @@ type CreatureSize =
   | 'gargantuan'
   | 'colossal';
 type MonsterIpMultiplier = 0.75 | 0.5 | 0.333;
-type MonsterType = '' | 'normal' | 'elite';  // This is manually provided by the sheet
+type MonsterType = '' | 'normal' | 'elite'; // This is manually provided by the sheet
 
 interface BaseClassModifier {
   armor_defense: number;
@@ -819,7 +819,8 @@ function handleAccuracy() {
       const perceptionModifier = v.perception / 2;
       const levelishModifier = Math.floor(levelModifier + perceptionModifier);
       const crModifier = calcAccuracyCrScaling(v.level, v.elite);
-      const accuracy = v.misc + levelishModifier + crModifier + v.shield_accuracy - v.fatigue_penalty;
+      const accuracy =
+        v.misc + levelishModifier + crModifier + v.shield_accuracy - v.fatigue_penalty;
       setAttrs({
         accuracy,
         accuracy_explanation: formatCombinedExplanation(v.miscExplanation, [
@@ -916,7 +917,7 @@ function handleActiveAbilityDice() {
   // Local change
   on(
     'change:repeating_abilities:dice_pool' + ' change:repeating_abilities:is_magical',
-    function() {
+    function () {
       const keyPrefix = 'repeating_abilities';
       getAbilityDicePoolAttrs(keyPrefix, (parsed) => {
         const diceText = parsed.dicePool ? '{{Value=[[@{calculated_dice_pool}]]}}' : '';
@@ -969,10 +970,10 @@ function handleArmorDefense() {
       const totalValue = Math.max(
         0,
         beforeEquipment +
-        v.body_armor_defense +
-        v.shield_defense +
-        v.misc +
-        v.all_defenses_vital_wound_modifier,
+          v.body_armor_defense +
+          v.shield_defense +
+          v.misc +
+          v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -1104,7 +1105,7 @@ function handleAttributes() {
 }
 
 function handleAttunedEffects() {
-  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function() {
+  on('change:repeating_attunedmodifiers remove:repeating_attunedmodifiers', function () {
     getSectionIDs('repeating_attunedmodifiers', (repeatingSectionIds) => {
       const isActiveIds = repeatingSectionIds.map(
         (id) => `repeating_attunedmodifiers_${id}_is_active`,
@@ -1189,7 +1190,7 @@ function handleCustomModifiers() {
   for (const modifierType of CUSTOM_MODIFIER_TYPES) {
     on(
       `change:repeating_${modifierType}modifiers remove:repeating_${modifierType}modifiers`,
-      function() {
+      function () {
         const nestedCustomStatisticCount = 3;
         const formatStatisticId = (id: string, i: number) =>
           `repeating_${modifierType}modifiers_${id}_statistic${i}`;
@@ -2294,12 +2295,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
   onGet({
     variables: {
       miscName: defense,
-      numeric: [
-        'level',
-        attribute,
-        'all_defenses_vital_wound_modifier',
-        'size_reflex_modifier',
-      ],
+      numeric: ['level', attribute, 'all_defenses_vital_wound_modifier', 'size_reflex_modifier'],
       string: ['monster_type'],
       boolean: ['elite'],
     },
@@ -2317,11 +2313,11 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       let totalValue = Math.max(
         0,
         levelModifier +
-        crModifier +
-        sizeModifier +
-        attributeModifier +
-        v.misc +
-        v.all_defenses_vital_wound_modifier,
+          crModifier +
+          sizeModifier +
+          attributeModifier +
+          v.misc +
+          v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2472,7 +2468,7 @@ function handleSkillPoints() {
 }
 
 function handleTrainedSkills() {
-  on(`change:repeating_trainedskills`, function(eventInfo) {
+  on(`change:repeating_trainedskills`, function (eventInfo) {
     const trainedSkill = formatParseableSkillName(eventInfo.newValue);
     const untrainedSkill = formatParseableSkillName(eventInfo.previousValue);
 
@@ -2522,7 +2518,7 @@ function handleTrainedSkills() {
     }
   });
 
-  on(`remove:repeating_trainedskills`, function(eventInfo) {
+  on(`remove:repeating_trainedskills`, function (eventInfo) {
     const skillNameKey = Object.keys(eventInfo.removedInfo).find((k) =>
       k.endsWith('trained_skill'),
     );
@@ -2670,7 +2666,7 @@ function uppercaseFirstLetter(str: string) {
 function getDicePoolAttrs(keyPrefix: string, dicePoolKey: string, callback: DicePoolCallback) {
   dicePoolKey = `${keyPrefix}_${dicePoolKey}`;
   const isMagicalKey = `${keyPrefix}_is_magical`;
-  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function(attrs) {
+  getAttrs(['mundane_power', 'magical_power', dicePoolKey, isMagicalKey], function (attrs) {
     callback(
       calculateDicePoolModifier({
         dicePool: attrs[dicePoolKey],
@@ -2712,8 +2708,8 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-    ' change:repeating_otherdamagingattacks:is_magical',
-    function() {
+      ' change:repeating_otherdamagingattacks:is_magical',
+    function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
       });
@@ -2721,7 +2717,7 @@ function handleOtherDamagingAttacks() {
   );
 
   // Global other damaging attack change
-  on('change:magical_power change:mundane_power change:level', function() {
+  on('change:magical_power change:mundane_power change:level', function () {
     getSectionIDs('repeating_otherdamagingattacks', (repeatingSectionIds) => {
       for (const sectionId of repeatingSectionIds) {
         getOdaDamageDiceAttrs(`repeating_otherdamagingattacks_${sectionId}`, (parsed) => {
@@ -2769,7 +2765,7 @@ function handleStrikeAttacks() {
         'magical_power',
         'mundane_power',
       ],
-      function(v) {
+      function (v) {
         const dice_type = v[is_magical_key] === '1' ? 'magical' : 'mundane';
 
         // We need to copy the weapon_exists keys into the local repeating section.
@@ -2826,7 +2822,7 @@ function handleStrikeAttacks() {
   // Local strike attack change
   on(
     'change:repeating_strikeattacks:attack_name change:repeating_strikeattacks:is_magical change:repeating_strikeattacks:attack_extra_damage change:repeating_strikeattacks:weapon_damage_multiplier change:repeating_strikeattacks:damage_multiplier',
-    function() {
+    function () {
       getStrikeAttrs('', (parsed: StrikeAttackAttrs) => {
         setStrikeTotalDamage('', parsed);
       });
@@ -2843,7 +2839,7 @@ function handleStrikeAttacks() {
   // Global strike attack change
   on(
     weaponChangeKeys.join(' ') + ' change:level change:magical_power change:mundane_power',
-    function() {
+    function () {
       getSectionIDs('repeating_strikeattacks', (repeatingSectionIds) => {
         for (const sectionId of repeatingSectionIds) {
           getStrikeAttrs(sectionId, (parsed: StrikeAttackAttrs) => {
@@ -2969,7 +2965,7 @@ function handleVitalWounds() {
 
   on(
     'change:repeating_vitalwounds:vital_wound_roll remove:repeating_vitalwounds',
-    function(eventInfo) {
+    function (eventInfo) {
       getSectionIDs('repeating_vitalwounds', (repeatingSectionIds) => {
         // Not sure if this is necessary
         repeatingSectionIds = repeatingSectionIds || [];
@@ -3234,7 +3230,12 @@ function handleTypescriptMonsterCreation() {
     defense: string;
     effect: string;
     name: string;
-    type: 'repeating_strikeattacks' | 'repeating_otherdamagingattacks' | 'repeating_nondamagingattacks' | 'repeating_abilities' | 'repeating_passiveabilities';
+    type:
+      | 'repeating_strikeattacks'
+      | 'repeating_otherdamagingattacks'
+      | 'repeating_nondamagingattacks'
+      | 'repeating_abilities'
+      | 'repeating_passiveabilities';
   }
 
   function generateTypescriptMonster(v: any, allAbilityKeys: AbilityKey[]) {
@@ -3294,92 +3295,94 @@ function handleTypescriptMonsterCreation() {
           creature.setBaseAttributes([${v.strength}, ${v.dexterity}, ${v.constitution}, ${v.intelligence}, ${v.perception}, ${v.willpower}]);
           ${abilityDescriptions.join('\n')}
         });
-      `.trim()
+      `.trim(),
     });
   }
 
-  on(
-    'sheet:opened',
-    () => {
-      getSectionIDs('repeating_strikeattacks', (strikeSectionIds) => {
-        const allSectionIds: Record<string, string[]> = {};
-        allSectionIds.repeating_strikeattacks = strikeSectionIds;
-        getSectionIDs('repeating_otherdamagingattacks', (otherDamageSectionIds) => {
-          allSectionIds.repeating_otherdamagingattacks = otherDamageSectionIds;
-          getSectionIDs('repeating_nondamagingattacks', (debuffIds) => {
-            allSectionIds.repeating_nondamagingattacks = debuffIds;
-            getSectionIDs('repeating_abilities', (activeAbilityIds) => {
-              allSectionIds.repeating_abilities = activeAbilityIds;
-              getSectionIDs('repeating_passiveabilities', (passiveIds) => {
-                allSectionIds.repeating_passiveabilities = passiveIds;
+  on('sheet:opened', () => {
+    getSectionIDs('repeating_strikeattacks', (strikeSectionIds) => {
+      const allSectionIds: Record<string, string[]> = {};
+      allSectionIds.repeating_strikeattacks = strikeSectionIds;
+      getSectionIDs('repeating_otherdamagingattacks', (otherDamageSectionIds) => {
+        allSectionIds.repeating_otherdamagingattacks = otherDamageSectionIds;
+        getSectionIDs('repeating_nondamagingattacks', (debuffIds) => {
+          allSectionIds.repeating_nondamagingattacks = debuffIds;
+          getSectionIDs('repeating_abilities', (activeAbilityIds) => {
+            allSectionIds.repeating_abilities = activeAbilityIds;
+            getSectionIDs('repeating_passiveabilities', (passiveIds) => {
+              allSectionIds.repeating_passiveabilities = passiveIds;
 
-                const allAbilityFetchKeys: string[] = [];
-                const allAbilityKeys: AbilityKey[] = [];
-                for (const key of Object.keys(allSectionIds)) {
-                  for (const sectionId of allSectionIds[key]) {
-                    const prefix = `${key}_${sectionId}`;
-                    // Each section has its own key because I'm inconsistent over time
-                    const nameSuffix = {
-                      repeating_strikeattacks: 'attack_name',
-                      repeating_otherdamagingattacks: 'attack_name',
-                      repeating_nondamagingattacks: 'attack_name',
-                      repeating_abilities: 'active_ability0_name',
-                      repeating_passiveabilities: 'ability_name',
-                    }[key];
-                    const nameKey = `${prefix}_${nameSuffix}`;
-                    allAbilityFetchKeys.push(nameKey);
+              const allAbilityFetchKeys: string[] = [];
+              const allAbilityKeys: AbilityKey[] = [];
+              for (const key of Object.keys(allSectionIds)) {
+                for (const sectionId of allSectionIds[key]) {
+                  const prefix = `${key}_${sectionId}`;
+                  // Each section has its own key because I'm inconsistent over time
+                  const nameSuffix = {
+                    repeating_strikeattacks: 'attack_name',
+                    repeating_otherdamagingattacks: 'attack_name',
+                    repeating_nondamagingattacks: 'attack_name',
+                    repeating_abilities: 'active_ability0_name',
+                    repeating_passiveabilities: 'ability_name',
+                  }[key];
+                  const nameKey = `${prefix}_${nameSuffix}`;
+                  allAbilityFetchKeys.push(nameKey);
 
-                    const effectSuffix = {
-                      repeating_strikeattacks: 'attack_effect',
-                      repeating_otherdamagingattacks: 'attack_effect',
-                      repeating_nondamagingattacks: 'attack_effect',
-                      repeating_abilities: 'active_ability0_effect',
-                      repeating_passiveabilities: 'ability_effect',
-                    }[key];
-                    const effectKey = `${prefix}_${effectSuffix}`;
-                    allAbilityFetchKeys.push(effectKey);
+                  const effectSuffix = {
+                    repeating_strikeattacks: 'attack_effect',
+                    repeating_otherdamagingattacks: 'attack_effect',
+                    repeating_nondamagingattacks: 'attack_effect',
+                    repeating_abilities: 'active_ability0_effect',
+                    repeating_passiveabilities: 'ability_effect',
+                  }[key];
+                  const effectKey = `${prefix}_${effectSuffix}`;
+                  allAbilityFetchKeys.push(effectKey);
 
-                    const accuracyKey = `${prefix}_attack_accuracy`;
-                    allAbilityFetchKeys.push(accuracyKey);
+                  const accuracyKey = `${prefix}_attack_accuracy`;
+                  allAbilityFetchKeys.push(accuracyKey);
 
-                    const defenseKey = `${prefix}_attack_defense`;
-                    allAbilityFetchKeys.push(defenseKey);
-                    allAbilityKeys.push({
-                      accuracyModifier: accuracyKey,
-                      defense: defenseKey,
-                      effect: effectKey!,
-                      name: nameKey!,
-                      type: key as any,
-                    });
-                  }
+                  const defenseKey = `${prefix}_attack_defense`;
+                  allAbilityFetchKeys.push(defenseKey);
+                  allAbilityKeys.push({
+                    accuracyModifier: accuracyKey,
+                    defense: defenseKey,
+                    effect: effectKey!,
+                    name: nameKey!,
+                    type: key as any,
+                  });
                 }
+              }
 
-                getAttrs(
-                  [
-                    // Boolean
-                    'elite',
-                    // Numeric
-                    ...skillTrainedKeys,
-                    'challenge_rating',
-                    'level',
-                    'strength',
-                    'dexterity',
-                    'constitution',
-                    'intelligence',
-                    'perception',
-                    'willpower',
-                    // String
-                    'alignment', 'base_class', 'character_name', 'size', 'weapon_0_name', ...allAbilityFetchKeys,
-                  ],
-                  (attrs) => generateTypescriptMonster(attrs, allAbilityKeys),
-                );
-              });
+              getAttrs(
+                [
+                  // Boolean
+                  'elite',
+                  // Numeric
+                  ...skillTrainedKeys,
+                  'challenge_rating',
+                  'level',
+                  'strength',
+                  'dexterity',
+                  'constitution',
+                  'intelligence',
+                  'perception',
+                  'willpower',
+                  // String
+                  'alignment',
+                  'base_class',
+                  'character_name',
+                  'size',
+                  'weapon_0_name',
+                  ...allAbilityFetchKeys,
+                ],
+                (attrs) => generateTypescriptMonster(attrs, allAbilityKeys),
+              );
             });
           });
         });
       });
-    }
-  );
+    });
+  });
 }
 
 // This is not a permanent feature of the sheet, so it's not in `handleEverything`. It's

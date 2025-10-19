@@ -39,7 +39,8 @@ export type ActiveAbilityKind = 'cantrip' | 'spell' | 'maneuver' | 'ritual';
 // Although player-facing maneuvers in combat styles cannot be ranks 2/4/6, monster
 // maneuvers can have those ranks, and maneuver-like player abilites can have those ranks,
 // so we don't draw a distinction at the type level.
-export interface ManeuverDefinition extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
+export interface ManeuverDefinition
+  extends Omit<ActiveAbility, 'isMagical' | 'kind' | 'usageTime'> {
   usageTime?: MonsterAttackUsageTime;
 }
 
