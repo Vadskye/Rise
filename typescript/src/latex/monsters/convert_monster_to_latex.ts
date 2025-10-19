@@ -34,11 +34,11 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
         ${genArtText(monster, parentGroupName)}
     \\end{minipage}
     ${monster.description || ''}
-    ${knowledgeText}
     ${contentBufferText}
 
     \\par \\RaggedRight
     ${genStatisticsText(monster)}
+    ${knowledgeText}
     \\monsterabilitiesheader{$Name}
     ${genAbilitiesText(monster)}
   `;
@@ -74,12 +74,17 @@ export function genKnowledgeText(monster: Creature): string {
 
   if (difficulties.length > 0) {
     const relevantKnowledge = monster.getRelevantKnowledge();
-    return difficulties
+    const difficultiesText = difficulties
       .map(
         (difficulty) =>
-          `\\par Knowledge (${formatKnowledgeSubskill(relevantKnowledge)}) ${difficulty}: ${difficultyMap[difficulty]}`,
+          `\\par ${formatKnowledgeSubskill(relevantKnowledge)} DV ${difficulty}: ${difficultyMap[difficulty]}`,
       )
       .join('\n');
+
+    return `
+      \\monsterknowledgeheader{$Name}
+      ${difficultiesText}
+    `;
   } else {
     return '';
   }
@@ -88,7 +93,7 @@ export function genKnowledgeText(monster: Creature): string {
 // This is currently a one-liner, but it's possible that future developments could cause
 // some subskills to need more translation effort later.
 function formatKnowledgeSubskill(knowledge: RiseKnowledgeSkill): string {
-  return knowledge.replace('knowledge_', '');
+  return sentenceCase(knowledge.replace('knowledge_', ''));
 }
 
 function genStatisticsText(monster: Creature): string {
@@ -155,7 +160,7 @@ function genMovementText(monster: Creature) {
 
   const movementText = movementComponents ? `; ${movementComponents}` : '';
   // TODO: Formatting is awkward
-  return `\\pari \\textbf{Movement} ${monster.speed}${movementText}`;
+  return `\\pari \\textbf{Movement} ${monster.speed} ft.${movementText}`;
 }
 
 function genSpaceAndReachText() {
