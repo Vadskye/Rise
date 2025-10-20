@@ -220,6 +220,90 @@ export const monsterManeuvers: CombatStyle = {
     },
 
     {
+      name: 'Ranged Sneak Attack 1',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 1d4 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 1,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 2',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 1d6 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 2,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 3',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 1d10 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 3,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 4',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 2d8 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 4,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 5',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 3d10 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 5,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 6',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 5d10 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 6,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Ranged Sneak Attack 7',
+      effect: `
+        Make a strike against a creature within \\shortrange.
+        The strike deals 8d10 \\glossterm{extra damage} if the target is \\unaware or \\partiallyunaware of your attack, or if they are adjacent to one of your \\glossterm{allies}.
+        This extra damage is doubled if the target is fully unaware of your attack.
+        It does not apply if the target is immune to \\glossterm{critical hits}.
+      `,
+      rank: 7,
+      roles: ['burst'],
+    },
+
+    {
       name: 'Elite Cleanse',
       effect: `
         At the end of each round, roll 1d10.
