@@ -250,6 +250,17 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory'],
     },
 
+    {
+      name: 'Directing Shout',
+
+      effect: `
+        Up to two \\glossterm{allies} within \\distrange are \\focused this round.
+      `,
+      rank: 5,
+      roles: ['boon'],
+      tags: ['Auditory'],
+    },
+
     // Shielded is 0.3 EA and brief goad is 1.0 EA, so we need 1 / 0.7 = 1.4 EA of base
     // debuff, which is a standard r1 debuff.
     {
