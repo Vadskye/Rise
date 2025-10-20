@@ -62,10 +62,12 @@ export function addHumanoids(grimoire: Grimoire) {
   addBandits(grimoire);
   addBugbears(grimoire);
   addCultists(grimoire);
+  addGiants(grimoire);
   addGoblins(grimoire);
   addKobolds(grimoire);
   addLizardfolk(grimoire);
   addNecromancers(grimoire);
+  addOgres(grimoire);
   addOrcs(grimoire);
   addTownsfolk(grimoire);
 }
@@ -323,6 +325,118 @@ function addCultists(grimoire: Grimoire) {
   );
 }
 
+function addGiants(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Giants',
+      hasArt: false,
+      knowledge: {
+        easy: `
+          Giants are massive humanoid creatures that tower over lesser creatures.
+          All giants have immense strength and unimpressive agility - except when it comes to throwing and catching rocks, which they tend to excel at.
+        `,
+        normal: `
+          A giant can throw objects no larger than two size categories smaller than itself with ease.
+          Giants prefer to throw boulders, but in a pinch they can throw almost anything.
+        `,
+        hard: `
+          A giant's \glossterm{range limits} with an object other than a boulder are generally half its range limit with a boulder.
+          The object may also deal less damage than a boulder depending on its construction.
+        `,
+      },
+    },
+    [
+      [
+        'Hill Giant',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 10,
+            size: 'huge',
+          });
+          creature.setBaseAttributes([8, 0, 3, -2, 2, -1]);
+          creature.setKnowledgeResults({
+            normal: `
+              A hill giant is a Huge giant that is usually found in hilly areas.
+              Hill giants prefer to fight from high, rocky outcroppings, where they can pelt opponents with rocks and boulders while limiting the risk to themselves.
+              Skin color among hill giants ranges from light tan to deep ruddy brown.
+              They wear layers of crudely prepared hides with the fur left on.
+            `,
+            hard: `
+              Hill giants lack the intelligence or desire to retreat if their enemies survive to approach them, and prefer to draw their massive clubs and enter melee.
+              If possible, they smash their foes off of cliffs.
+
+              The hair of hill giants is brown or black, with eyes the same color.
+              They seldom wash or repair their garments, preferring to simply add more hides as their old ones wear out.
+              Adult hill giants are about 25 feet tall.
+              They can live to be 70 years old.
+            `,
+          });
+          creature.addManeuver('Forceful Smash', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
+          creature.addWeaponMult('greatclub');
+        },
+      ],
+      [
+        'Stone Giant',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 11,
+            size: 'gargantuan',
+          });
+          creature.setBaseAttributes([7, -2, 7, 0, 2, 4]);
+          creature.setKnowledgeResults({
+            normal: `
+              A stone giant is a Gargantuan giant that is usually found in mountainous regions.
+              Stone giants fight from a great distance whenever possible, using their ability to hurl stones vast distances and bend the earth to their will.
+              They prefer thick leather garments, dyed in shades of brown and gray to match the stone around them.
+            `,
+            hard: `
+              Adult stone giants stand about 50 feet tall.
+              They can live to be 300 years old.
+              Young stone giants can be capricious, hunting tiny creatures like goats and humanoids on a whim.
+              Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
+            `,
+          });
+          creature.addManeuver('Forceful Smash', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
+          creature.addWeaponMult('greatclub');
+          creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
+          creature.addSpell('Crushing Gravity', { usageTime: 'elite' });
+          creature.addSpell('Tremor', { usageTime: 'elite' });
+        },
+      ],
+      [
+        'Stone Giant Elder',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral',
+            base_class: 'warrior',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 15,
+            size: 'gargantuan',
+          });
+          creature.setBaseAttributes([8, -2, 8, 0, 4, 6]);
+          creature.addManeuver('Forceful Smash+', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addManeuver('Forceful Smash+', { weapon: 'greatclub' });
+          creature.addWeaponMult('greatclub');
+          creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
+          creature.addSpell('Crushing Gravity', { usageTime: 'elite' });
+          creature.addSpell('Mighty Tremor', { usageTime: 'elite' });
+        },
+      ],
+    ],
+  );
+}
+
 function addGoblins(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
@@ -502,8 +616,8 @@ function addKobolds(grimoire: Grimoire) {
           });
           creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
           creature.setEquippedArmor({ bodyArmor: 'buff leather' });
-          creature.addSneakAttack('smallswords');
-          creature.addSneakAttack('darts');
+          creature.addSneakAttack('smallswords', { displayName: 'Sneaky Nip' });
+          creature.addSneakAttack('darts', { displayName: 'Sneaky Darts' });
         },
       ],
       [
@@ -559,8 +673,8 @@ function addKobolds(grimoire: Grimoire) {
           creature.setEquippedArmor({ bodyArmor: 'buff leather' });
           creature.addImpervious('Varies');
           creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
-          creature.addSneakAttack('smallswords');
-          creature.addSneakAttack('darts');
+          creature.addSneakAttack('smallswords', { displayName: 'Sneaky Nip' });
+          creature.addSneakAttack('darts', { displayName: 'Sneaky Darts' });
         },
       ],
       [
@@ -699,6 +813,142 @@ function addNecromancers(grimoire: Grimoire) {
           creature.addSpell('Mind Blank', { displayName: 'Splinter Soul', usageTime: 'elite' });
           creature.addSpell('Lifetap Blast');
           creature.addSpell('Sanguine Bond', { usageTime: 'elite' });
+        },
+      ],
+    ],
+  );
+}
+
+function addOgres(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Ogres',
+      hasArt: false,
+      knowledge: {
+        normal: `
+          Ogres are Large, hideous humanoid creatures with a taste for human flesh.
+          If that is unavailable, they also enjoy the flesh of other humanoid creatures.
+          They lack the intelligence for complex plans, but they like lying in wait to ambush helpless travelers.
+        `,
+        hard: `
+          Ogre skin color ranges from dull yellow to dull brown.
+          Their clothing consists of poorly cured furs and hides, which add to their naturally repellent odor.
+
+          They are intelligent enough to throw their javelins first to soften up their foes before closing into melee, but ogre gangs and bands fight as disorganized individuals.
+          Ogres use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
+        `,
+      },
+    },
+    [
+      [
+        'Ogre Ganger',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 5,
+            size: 'large',
+          });
+          creature.setBaseAttributes([5, 0, 2, -4, 1, -1]);
+          creature.setKnowledgeResults({
+            normal: `
+              Ogre gangers are relatively weak or young ogres that tend to gather together in gangs for mutual protection.
+            `,
+          });
+          creature.setTrainedSkills(['intimidate']);
+          creature.setEquippedArmor({ bodyArmor: 'leather lamellar' });
+
+          creature.addWeaponMult('javelin');
+          creature.addManeuver('Knockdown', { weapon: 'greatclub' });
+          creature.addManeuver('Sweep', { weapon: 'greatclub' });
+        },
+      ],
+      [
+        'Ogre Menace',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 8,
+            size: 'large',
+          });
+          creature.setBaseAttributes([6, 1, 3, -2, 2, 0]);
+          creature.setKnowledgeResults({
+            normal: `
+              Ogre menaces are mature adult ogres that often terrorize small towns.
+              They tend to work in pairs or with minions like goblins that they bully into submission.
+            `,
+          });
+          creature.setTrainedSkills(['intimidate']);
+          creature.setEquippedArmor({ bodyArmor: 'leather lamellar' });
+
+          creature.addWeaponMult('javelin');
+          creature.addManeuver('Armorcrusher', { weapon: 'greatclub' });
+          creature.addManeuver('Concussion', { weapon: 'greatclub' });
+          creature.addWeaponMult('greatclub');
+        },
+      ],
+      [
+        'Ogre Mage',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'sniper',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 8,
+            size: 'large',
+          });
+          creature.setBaseAttributes([4, 0, 0, 1, 4, 4]);
+          creature.setKnowledgeResults({
+            normal: `
+              Ogre mages are unusual ogres that have innate arcane magical talent.
+              They are generally identifiable as the only ogres who do not go into battle wearing armor.
+              They are more intelligent than other ogres, and more likely to use combat strategies like hiding behind their minions.
+            `,
+          });
+          creature.setTrainedSkills(['awareness']);
+          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+
+          creature.addWeaponMult('greatclub');
+          creature.addSpell('Time Ebbs and Flows');
+          creature.addSpell('Stutterstop');
+          creature.addSpell('Wave of Senescence');
+          creature.addSpell('Unstable Aging');
+        },
+      ],
+      [
+        'Ogre Skullclaimer',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'brute',
+            elite: true,
+            creature_type: 'humanoid',
+            level: 9,
+            size: 'large',
+          });
+          creature.setBaseAttributes([8, 1, 4, -1, 3, 2]);
+          creature.setKnowledgeResults({
+            normal: `
+              Ogre skullclaimers are the leaders of large roaming bands of ogres.
+              Ogre bands are often accompanied by goblins or other similar creatures that help the ogres in exchange for a share of the valuable items they find, since the ogres care more about the creatures they kill.
+            `,
+            hard: `
+              Ogre skullclaimers are named after their right to eat the most prized part of any humanoid the band kills: the head.
+            `,
+          });
+          creature.setTrainedSkills(['intimidate']);
+          creature.addManeuver('Armorcrusher', { weapon: 'greatclub' });
+          creature.addManeuver('Concussion', { weapon: 'greatclub' });
+          creature.addWeaponMult('greatclub');
+          creature.addManeuver('Watch Out', { usageTime: 'elite' });
+          creature.addManeuver('Empowering Roar', { usageTime: 'elite' });
+          creature.addManeuver('Deafening Shout', { usageTime: 'elite' });
         },
       ],
     ],

@@ -32,7 +32,7 @@ import {
 } from '@src/character_sheet/rise_data';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { getSpellByName } from '@src/abilities/mystic_spheres';
-import { MonsterWeapon, isManufactured } from '@src/monsters/weapons';
+import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';
 import {
   ActiveAbility,
   ActiveAbilityRank,
@@ -355,13 +355,23 @@ export class Creature implements CreaturePropertyMap {
     maneuverName: string,
     { displayName, isMagical, tags, usageTime, weapon }: MonsterAbilityOptions = {},
   ) {
-    this.addActiveAbility({
-      kind: 'maneuver',
+    const baseManeuver = getManeuverByName(maneuverName);
+
+    // Maneuvers almost never have defined scaling.
+    let scaling: ActiveAbilityScaling | null = null;
+    if (weapon) {
       // If the maneuver uses a weapon and does not already have a defined scaling,
       // we should scale accuracy with rank.
-      scaling: weapon ? 'accuracy' : undefined,
+      scaling = 'accuracy';
+    } else if (/damagerank/.test(baseManeuver.effect || '')) {
+      // Maneuvers that deal fixed damage should scale that.
+      scaling = 'damage';
+    }
+    this.addActiveAbility({
+      kind: 'maneuver',
+      ...(scaling ? { scaling } : {}),
       tags,
-      ...getManeuverByName(maneuverName),
+      ...baseManeuver,
       name: displayName || maneuverName,
       isMagical: Boolean(isMagical),
       weapon,
@@ -451,11 +461,12 @@ export class Creature implements CreaturePropertyMap {
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
+    const maybeRanged = /(Projectile|Thrown)/.test(getWeaponTag(weapon) || '') ? 'Ranged ' : '';
     displayName = displayName || 'Sneak Attack';
     this.addActiveAbility({
       kind: 'maneuver',
       tags,
-      ...getManeuverByName(`Sneak Attack ${this.calculateRank()}`),
+      ...getManeuverByName(`${maybeRanged}Sneak Attack ${this.calculateRank()}`),
       name: displayName,
       isMagical: Boolean(isMagical),
       usageTime,
