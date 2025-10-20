@@ -103,7 +103,7 @@ export const dirtyFighting: CombatStyle = {
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
       effect: `
         Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit The target takes \\damagerankthree.
+        \\hit \\damagerankthree.
       `,
       rank: 1,
       roles: ['burst', 'payoff'],
@@ -115,7 +115,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit The target takes \\damagerankseven.
+        \\hit \\damagerankseven.
       `,
       rank: 5,
       roles: ['burst', 'payoff'],
