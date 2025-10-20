@@ -16,7 +16,7 @@
   innertopmargin=0.5em,
   innerbottommargin=0.25em,
 ]{eliteabilitymdframed}
-% #1 = if true, include \label{#3}
+% #1 = if true, skip hypertargets and label.
 % #2 = Suffix after the name not used for label/targets/etc. Not bold.
 % #3 = Name of the ability
 % #4 = Usage time
@@ -24,9 +24,11 @@
 {
   \begin{eliteabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertargetraised{ability:#3}{}}
-    \hypertargetraised{ability:#3}{}
-    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \IfBooleanF{#1}{
+      \lowercase{\hypertargetraised{ability:#3}{}}
+      \hypertargetraised{ability:#3}{}
+      \nonsectionlabel{#3}
+    }
     \spelltwocol{
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
@@ -73,9 +75,11 @@
 {
   \begin{triggeredabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertargetraised{ability:#3}{}}
-    \hypertargetraised{ability:#3}{}
-    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \IfBooleanF{#1}{
+      \lowercase{\hypertargetraised{ability:#3}{}}
+      \hypertargetraised{ability:#3}{}
+      \nonsectionlabel{#3}
+    }
     \spelltwocol{
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
@@ -122,9 +126,11 @@
 {
   \begin{activeabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertargetraised{ability:#3}{}}
-    \hypertargetraised{ability:#3}{}
-    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \IfBooleanF{#1}{
+      \lowercase{\hypertargetraised{ability:#3}{}}
+      \hypertargetraised{ability:#3}{}
+      \nonsectionlabel{#3}
+    }
     \spelltwocol{
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
@@ -155,9 +161,11 @@
 {
   \begin{sustainabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertargetraised{ability:#3}{}}
-    \hypertargetraised{ability:#3}{}
-    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \IfBooleanF{#1}{
+      \lowercase{\hypertargetraised{ability:#3}{}}
+      \hypertargetraised{ability:#3}{}
+      \nonsectionlabel{#3}
+    }
     \spelltwocol{
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
@@ -188,9 +196,11 @@
 {
   \begin{attuneabilitymdframed}
     \RaggedRight
-    \lowercase{\hypertargetraised{ability:#3}{}}
-    \hypertargetraised{ability:#3}{}
-    \IfBooleanT{#1}{\nonsectionlabel{#3}}
+    \IfBooleanF{#1}{
+      \lowercase{\hypertargetraised{ability:#3}{}}
+      \hypertargetraised{ability:#3}{}
+      \nonsectionlabel{#3}
+    }
     \spelltwocol{
       {\normalsize \textbf{#3}}
       \IfValueT{#2}{#2}
