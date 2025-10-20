@@ -245,7 +245,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{attuneability}*{Quarry}{\glossterm{Minor action}}
+                \begin{attuneability}{Quarry}{\glossterm{Minor action}}
                     \abilitytags \abilitytag{Sustain} (attuneable, free), \abilitytag{Subtle}, \atSwift
                     \rankline
                     Choose a creature you can see.

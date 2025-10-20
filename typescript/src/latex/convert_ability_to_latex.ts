@@ -13,8 +13,10 @@ export function convertAbilityToLatex(ability: ActiveAbility, omitRank?: boolean
 
   const tableText = 'tableText' in ability ? ability.tableText || '' : '';
 
+  const skipLabelsStar = ability.forMonster ? '*' : '';
+
   const latex = `
-    \\begin{${abilityType}}{${ability.name}}{${format.abilityUsageTime(ability.usageTime, ability.name)}}
+    \\begin{${abilityType}}${skipLabelsStar}{${ability.name}}{${format.abilityUsageTime(ability.usageTime, ability.name)}}
       ${format.spellTypePrefix(ability, omitRank) || ''}
       \\rankline
       \\hypertargetraised{${ability.kind}:${ability.name}}{}%
