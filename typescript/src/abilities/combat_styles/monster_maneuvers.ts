@@ -315,5 +315,15 @@ export const monsterManeuvers: CombatStyle = {
       roles: ['cleanse'],
       usageTime: 'triggered',
     },
+
+    {
+      name: 'Sweep',
+      effect: `
+        Make a strike.
+      `,
+      rank: 1,
+      roles: ['clear'],
+      tags: ['Sweeping (1)'],
+    },
   ],
 };
