@@ -654,7 +654,7 @@
   For example, \glossterm{dual strikes} allow you to attack with two weapons instead of one.
   The rules for strikes listed here simply define the normal behavior.
 
-  \begin{activeability}*{Basic Strike -- Melee}{Standard action}
+  \begin{activeability}{Basic Strike -- Melee}{Standard action}
     \rankline
     Make a \glossterm{melee} attack vs. Armor using a weapon against something adjacent to you.
     You must have \glossterm{line of effect} to the target.
@@ -662,7 +662,7 @@
     \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
   \end{activeability}
 
-  \begin{activeability}*{Basic Strike -- Projectile}{Standard action}
+  \begin{activeability}{Basic Strike -- Projectile}{Standard action}
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a \weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the target is adjacent to you, you take a \minus4 accuracy penalty.
@@ -670,7 +670,7 @@
     \hit You deal the target damage equal to your \glossterm{weapon damage} plus half your \glossterm{mundane power}.
   \end{activeability}
 
-  \begin{activeability}*{Basic Strike -- Thrown}{Standard action}
+  \begin{activeability}{Basic Strike -- Thrown}{Standard action}
     \rankline
     Make a \glossterm{ranged} attack vs. Armor using a non-\weapontag{Projectile} weapon against something that you have \glossterm{line of effect} to.
     If the weapon has the \weapontag{Thrown} weapon tag, use its defined \glossterm{range limits}.
@@ -758,7 +758,7 @@
     \end{dtabularx}
   \end{dtable!*}
 
-  \begin{activeability}*{Charge}{Standard action}
+  \begin{activeability}{Charge}{Standard action}
     \rankline
     After using this ability, you \glossterm{briefly} take a \minus2 penalty to all defenses.
     Since this ability does not have the \abilitytag{Swift} tag, it does not affect attacks against you during the current phase.
@@ -767,7 +767,7 @@
     At the end of your movement, you can make a melee \glossterm{strike}.
   \end{activeability}
 
-  \begin{triggeredability}*{Desperate Exertion}{Triggered (see text)}
+  \begin{triggeredability}{Desperate Exertion}{Triggered (see text)}
     \par \noindent Cost: Two \glossterm{fatigue levels}.
     \rankline
     You \glossterm{reroll} any \glossterm{attack roll} or \glossterm{check} you just rolled, keeping the better result.
@@ -781,7 +781,7 @@
     Finally, you cannot use this ability to affect actions that take one minute or longer to complete, such as \glossterm{rituals}.
   \end{triggeredability}
 
-  \begin{activeability}*{Escape Grapple}{Standard action}
+  \begin{activeability}{Escape Grapple}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
     Make a \glossterm{brawling attack} against any number of creatures that you are grappled by.
@@ -792,7 +792,7 @@
     For each target, if you hit that target with this attack, it stops being grappled by you and you stop being grappled by it.
   \end{activeability}
 
-  \begin{activeability}*{Grapple}{Standard action}
+  \begin{activeability}{Grapple}{Standard action}
     \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
     \rankline
     Make a \glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \glossterm{touch}.
@@ -802,7 +802,7 @@
     \crit You also control the grapple (see \pcref{Controlling a Grapple}).
   \end{activeability}
 
-  \begin{activeability}*{Maintain Grapple}{\glossterm{Free action}}
+  \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
     \abilitytags \abilitytag{Brawling}, \abilitytag{Swift}
     \rankline
     % TODO: Awkward wording
@@ -814,7 +814,7 @@
     If you do not use this ability while you are in a grapple, then creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
-  \begin{activeability}*{Ready Reaction}{Standard action}
+  \begin{activeability}{Ready Reaction}{Standard action}
     \abilitytags \atSwift
     \rankline
     When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
@@ -827,7 +827,7 @@
     This means that you can't use this ability to kill an enemy before their attack hits you, and an enemy can't invalidate your reaction by briefly moving in range and then moving back out again.
   \end{activeability}
 
-  \begin{activeability}*{Recover}{Standard action}
+  \begin{activeability}{Recover}{Standard action}
     \abilitytags \abilitytag{Swift}
     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
     \rankline
@@ -836,7 +836,7 @@
     Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
   \end{activeability}
 
-  \begin{activeability}*{Shove}{Standard action}
+  \begin{activeability}{Shove}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
     If you are grappling or being grappled by a creature, you can use this ability as a \glossterm{move action}, and it affects all creatures grappling with you (see \pcref{Grappling}).
@@ -855,7 +855,7 @@
     \crit If you are strong enough to carry the target, you can move up to your full movement speed.
   \end{activeability}
 
-  \begin{activeability}*{Sprint}{Standard action}
+  \begin{activeability}{Sprint}{Standard action}
     % It's important that this can only be used with movements
     % to prevent it from being abused with abilities like Shove?
     % Is that clear in the text?
@@ -872,7 +872,7 @@
   \end{activeability}
 
   % Is this a fling effect? What happens if you throw someone into a wall?
-  \begin{activeability}*{Throw}{Standard action}
+  \begin{activeability}{Throw}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
     You throw an object or creature you hold in at least one hand.
@@ -889,14 +889,14 @@
     That attack roll is rolled separately from the attack roll to throw an unwilling creature, if any.
   \end{activeability}
 
-  \begin{activeability}*{Total Defense}{Standard action}
+  \begin{activeability}{Total Defense}{Standard action}
     \abilitytags \abilitytag{Swift}
     \rankline
     You are \braced this round.
     Because this ability has the \abilitytag{Swift} tag, this protects you from attacks during the current phase.
   \end{activeability}
 
-  \begin{activeability}*{Trip}{Standard action}
+  \begin{activeability}{Trip}{Standard action}
     \abilitytags \abilitytag{Brawling}, \abilitytag{Size-Based}
     \rankline
     Make a \glossterm{brawling attack} vs. Brawn using a free hand against a creature you \glossterm{touch}.
