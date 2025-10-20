@@ -459,5 +459,75 @@ export const bruteForce: CombatStyle = {
       rank: 5,
       roles: ['mobility', 'burst'],
     },
+
+    // Treat a no-condition brawling attack as being about +2 accuracy, so -1dr.
+    // You have to have extremely high strength to get above +2 accuracy diff.
+    // However, pure brawling attacks are still dangerous from an optimization
+    // perspective, so they always have to be more complicated than pure damage.
+    {
+      name: 'Chokeslam',
+
+      attack: {
+        hit: `\\damagerankthree.`,
+        injury: `The target falls \\prone.`,
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn against one creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 3,
+      roles: ['burst'],
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Chokeslam+',
+
+      attack: {
+        hit: `\\damagerankseven, and the target falls \\prone.`,
+        injury: `The target is \\glossterm{briefly} unable to stand.`,
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn against one creature you \\glossterm{touch}.
+        `,
+      },
+      rank: 7,
+      roles: ['burst'],
+      tags: ['Brawling'],
+    },
+
+    // -1dr for brawling attack, +1dr for stun, -1dr for accuracy.
+    // Assume you have 4 str at level 1.
+    // Using this attack, you deal 1d10+2 damage with +2 accuracy.
+    // Using a greataxe, you deal 1d10+4 damage with +0 accuracy.
+    // It's a pretty even trade at that level, +2 accuracy for -2 damage, and over time
+    // the greataxe will scale better.
+    {
+      name: 'Body Slam',
+
+      attack: {
+        hit: `\\damageranktwo.`,
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn against one creature you \\glossterm{touch}.
+          Then, you fall \\prone.
+        `,
+      },
+      rank: 1,
+      roles: ['burst'],
+      tags: ['Brawling'],
+    },
+
+    {
+      name: 'Body Slam+',
+
+      attack: {
+        hit: `\\damageranksix.`,
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn against one creature you \\glossterm{touch}.
+          Then, you fall \\prone.
+        `,
+      },
+      rank: 5,
+      roles: ['burst'],
+      tags: ['Brawling'],
+    },
   ],
 };
