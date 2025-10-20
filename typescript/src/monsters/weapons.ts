@@ -8,9 +8,12 @@ const MONSTER_WEAPONS_LIST = [
   'bite',
   'claws',
   'club',
+  'darts',
   'flail',
   'heavy flail',
+  'greatclub',
   'greataxe',
+  'giant boulder',
   'heavy crossbow',
   'horn',
   'javelin',
@@ -19,6 +22,7 @@ const MONSTER_WEAPONS_LIST = [
   'ram',
   'scythe',
   'sickle',
+  'sling',
   'smallswords',
   'spear',
   'stinger',
@@ -28,16 +32,20 @@ const MONSTER_WEAPONS_LIST = [
 export type MonsterWeapon = (typeof MONSTER_WEAPONS_LIST)[number];
 export const MONSTER_WEAPONS = new Set(MONSTER_WEAPONS_LIST);
 
-// TODO: weapons can have multiple tags...
+// TODO: weapons can have multiple tags, and some tags are \weapontag{} while some are
+// \abilitytag{}.
 export function getWeaponTag(weaponName: MonsterWeapon): string | null {
   return {
     beak: null,
     bite: null,
     claws: null, // These have the Light tag, but that's irrelevant for running monsters.
     club: null,
+    darts: 'Thrown (30/60)',
     flail: null, // Ignore Maneuverable tag
     ['heavy flail']: null, // Ignore Maneuverable tag
-    greataxe: null,
+    greatclub: null,
+    greataxe: 'Keen',
+    'giant boulder': 'Thrown (90/180)',
     ['heavy crossbow']: 'Projectile (90/270)', // Ignore Heavy tag
     horn: 'Keen',
     javelin: 'Thrown (60/120)',
@@ -46,12 +54,13 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     ram: 'Impact',
     scythe: 'Sweeping (2)',
     sickle: null,
+    sling: 'Projectile (50/150)',
     smallswords: null,
     spear: 'Thrown (30/60)', // Ignore Versatile Grip tag and assume one-handing, so not Long
     stinger: null,
     talons: null,
-    tentacle: null, // This has the Maneuverable tag, but that doesn't affect strikes.
-    battleaxe: null,
+    tentacle: null,
+    battleaxe: 'Keen',
   }[weaponName];
 }
 
@@ -71,9 +80,12 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
     bite: false,
     claws: false,
     club: true,
+    darts: true,
     flail: true,
-    ['heavy flail']: true, // Ignore Maneuverable tag
+    ['heavy flail']: true,
+    greatclub: true,
     greataxe: true,
+    'giant boulder': true,
     ['heavy crossbow']: true,
     horn: false,
     javelin: true,
@@ -82,6 +94,7 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
     ram: false,
     scythe: true,
     sickle: true,
+    sling: true,
     smallswords: true,
     spear: true,
     stinger: false,
@@ -96,9 +109,12 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     bite: xdy(1, 8),
     claws: xdy(2, 4),
     club: xdy(1, 6),
+    darts: xdy(2, 4),
     flail: xdy(1, 8),
     ['heavy flail']: xdy(1, 10), // Ignore Maneuverable tag
-    greataxe: xdy(1, 10),
+    greatclub: xdy(1, 10),
+    greataxe: xdy(1, 8),
+    'giant boulder': xdy(1, 8),
     ['heavy crossbow']: xdy(1, 10),
     horn: xdy(1, 6),
     javelin: xdy(1, 6),
@@ -107,12 +123,13 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     ram: xdy(1, 6),
     scythe: xdy(1, 6),
     sickle: xdy(1, 4),
+    sling: xdy(1, 4),
     smallswords: xdy(2, 4),
     spear: xdy(1, 6),
     stinger: xdy(1, 6),
     talons: xdy(2, 4),
     tentacle: xdy(1, 6),
-    battleaxe: xdy(1, 8),
+    battleaxe: xdy(1, 6),
   }[weaponName];
 }
 
@@ -122,9 +139,12 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     bite: 0,
     claws: 2,
     club: 0,
+    darts: 0, // +3 light offsets -3 dual strike
     flail: -1,
     ['heavy flail']: -1,
+    greatclub: 0,
     greataxe: 0,
+    'giant boulder': 0,
     ['heavy crossbow']: 0,
     horn: 0,
     javelin: 0,
@@ -133,6 +153,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     ram: 0,
     scythe: 0,
     sickle: 0,
+    sling: 0,
     smallswords: 2,
     spear: 0,
     stinger: 1,
@@ -150,9 +171,12 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       bite: 1,
       claws: 0.5,
       club: 0.5,
+      darts: 0.5,
       flail: 0.5, // Assume one-handing.
       ['heavy flail']: 1,
+      greatclub: 1,
       greataxe: 1,
+      'giant boulder': 1,
       ['heavy crossbow']: 0.5,
       horn: 1,
       javelin: 0.5,
@@ -161,8 +185,8 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       ram: 1,
       scythe: 1,
       sickle: 0.5,
-      smallswords: 0.5,
-      spear: 0.5, // Assume one-handing.
+      sling: 0.5,
+      smallswords: 0.5, spear: 0.5, // Assume one-handing.
       stinger: 1,
       talons: 0.5,
       tentacle: 1,

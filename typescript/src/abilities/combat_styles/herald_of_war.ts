@@ -221,7 +221,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
-        Because this ability has the \\abilitytag{Swift} tag, it removes any relevant penalties from those conditions during the current phase.
+        Because this is a \\abilitytag{Swift} ability, so it removes any relevant penalties from those conditions during the current phase.
       `,
       rank: 3,
       roles: ['cleanse'],
@@ -232,7 +232,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Empowering Roar',
 
       effect: `
-        Your \\glossterm{allies} within a \\largearea radius from you are \\empowered this round.
+        Up to two \\glossterm{allies} within a \\smallarea radius from you are \\empowered this round.
       `,
       rank: 3,
       roles: ['boon'],
@@ -243,11 +243,71 @@ export const heraldOfWar: CombatStyle = {
       name: 'Empowering Roar+',
 
       effect: `
-        You and your \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\empowered.
+        Your \\glossterm{allies} within a \\medarea radius from you are \\empowered this round.
       `,
       rank: 7,
       roles: ['boon'],
       tags: ['Auditory'],
+    },
+
+    {
+      name: 'Watch Out',
+
+      effect: `
+        Up to two \\glossterm{allies} within \\medrange are \\shielded this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Auditory', 'Swift'],
+    },
+
+    {
+      name: 'Watch Out+',
+
+      effect: `
+        Your \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+      `,
+      rank: 5,
+      roles: ['boon'],
+      tags: ['Auditory', 'Swift'],
+    },
+
+    {
+      name: 'Stand Firm',
+
+      effect: `
+        One \\glossterm{ally} within \\medrange is \\fortified and \\steeled this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against it during the current phase.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Auditory', 'Swift'],
+    },
+
+    {
+      name: 'Stand Firm+',
+
+      effect: `
+        Up to two \\glossterm{allies} within \\medrange are \\fortified and \\steeled this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+      `,
+      rank: 5,
+      roles: ['boon'],
+      tags: ['Auditory', 'Swift'],
+    },
+
+    {
+      name: 'Brace Yourselves',
+
+      effect: `
+        Up to two \\glossterm{allies} within \\shortrange are \\braced this round.
+        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+      `,
+      rank: 3,
+      roles: ['boon'],
+      tags: ['Auditory', 'Swift'],
     },
 
     {
