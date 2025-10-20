@@ -128,7 +128,7 @@ export const bruteForce: CombatStyle = {
       name: 'Steady Slam+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double damage using a single weapon.
+        Make a melee \\glossterm{strike} that deals double damage.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
       `,
       roles: ['burst'],
@@ -139,7 +139,7 @@ export const bruteForce: CombatStyle = {
       name: 'Concussion',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         \\injury The target becomes \\stunned as a \\glossterm{condition}.
       `,
       roles: ['maim'],
@@ -157,6 +157,8 @@ export const bruteForce: CombatStyle = {
       rank: 7,
     },
 
+    // Beating the extra defense is unnecessary, but we include it for symmetry with
+    // Knockdown+.
     {
       name: 'Knockdown',
       effect: `
@@ -183,9 +185,8 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 15 feet.
-        If you are \\empowered, this fling distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 1,
@@ -196,9 +197,8 @@ export const bruteForce: CombatStyle = {
       name: 'Forceful Smash+',
 
       effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
+        Make a \\glossterm{strike} that deals double damage.
         \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 30 feet.
-        If you are \\empowered, this fling distance is doubled.
         This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
       `,
       rank: 5,
