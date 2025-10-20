@@ -25,7 +25,7 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Magic Missile',
 
-      // -1 range in exchange for the strong miss effect
+      // -1dr in exchange for miss + cover/concealment
       attack: {
         hit: `
           \\damagerankone.
@@ -44,6 +44,7 @@ export const thaumaturgy: MysticSphere = {
       scaling: 'damage',
     },
 
+    // -1dr for miss + cover/concealment, -1dr for long range
     {
       name: 'Distant Magic Missile',
 
@@ -68,7 +69,9 @@ export const thaumaturgy: MysticSphere = {
     {
       name: 'Mighty Magic Missile',
 
-      // -1 range for miss effect and cover/concealment effect
+      // -1dr for miss effect and cover/concealment effect.
+      // We cheat a bit to get this to have double extra damage; a normal rank 4 short
+      // range damage spell would have double extra damage.
       attack: {
         hit: `
           \\damagerankfour, and any \\glossterm{extra damage} is doubled.
