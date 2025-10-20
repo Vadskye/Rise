@@ -90,11 +90,13 @@ function replaceGenericTerms(
   );
   replace(/\bYou create\b/g, 'The $name creates');
   replace(/\bYou regain\b/g, 'The $name regains');
-  replace(/\bYou gain\b/g, 'The $name gains');
+  replace(/\bYou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `The $name ${maybeBriefly || ''}gains`);
+  replace(/\byou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `it ${maybeBriefly || ''}gains`);
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
   replace(/\bYou take\b/g, 'The $name takes');
+  replace(/\bYou reduce your\b/g, 'The $name reduces its');
   replace(/\bYou inscribe\b/g, 'The $name inscribes');
   replace(
     /\bYou (\\glossterm{briefly}|briefly) cannot use\b/g,
@@ -105,7 +107,6 @@ function replaceGenericTerms(
   replace(/goaded by you\b/g, 'goaded by the $name');
   replace(/\bto you\b/g, 'to it');
   replace(/\byour space\b/g, 'its space');
-  replace(/\bYou (fling\b|\\glossterm{fling})/g, 'The $name \\glossterm{flings}');
   replace(/\baway from you\b/g, 'away from it');
   replace(
     /(\bemanation|\\glossterm{emanation}) from you\b/g,
@@ -132,6 +133,13 @@ function replaceGenericTerms(
   replace(/, you gain/g, ', it gains');
   replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
   replace(/\blarger than you\b/g, 'larger than the $name');
+  replace(/\bYou (fling\b|\\glossterm{fling})/g, 'The $name \\glossterm{flings}');
+  // Include 'it' in the match here because it confirms that we don't want to say 'it
+  // flings'.
+  replace(/\byou (fling\b|\\glossterm{fling}) it\b/g, 'the $name \\glossterm{flings} it');
+  replace(/\bsame stable surface as you\b/g, 'same stable surface as it');
+  // This is tricky; "range of you" could be part of multiple grammatical patterns
+  replace(/\brange of you\b/g, 'range of itself');
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
@@ -195,7 +203,7 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
   // Ignore the name of the ability when testing; it's fine if an ability's name includes
   // "you", for example.
   abilityText = abilityText
-    .replace(/ability}{[^}]+}/g, '')
+    .replace(/ability}\*?{[^}]+}/g, '')
     .replace(/hypertargetraised{[^}]+}/g, '');
 
   if (/\$[nN]ame.*\$[nN]ame/.test(abilityText)) {
@@ -206,7 +214,7 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
     warn("Ability has two '\\hit' sections");
   }
 
-  if (/\b[yY]our?/.test(abilityText)) {
+  if (/\b[yY]our?\b/.test(abilityText)) {
     warn("Ability still says 'you'");
   }
 
@@ -247,6 +255,8 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
 // regex patterns (like checking for "$name" to check if we're repeating the monsters's
 // name).
 export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbility): ActiveAbility {
+  ability.forMonster = true;
+
   // Monster abilities shouldn't show the normal player-facing narrative text
   delete ability.narrative;
 
@@ -330,9 +340,9 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
 
   // Perform generic replacements that matter regardless of which hit/injury/targeting
   // segment they correspond to.
-  // We don't care if the strike was originally restricted to melee-only.
+  // We don't care if the strike was originally restricted to melee-only or ranged-only.
   ability.effect = ability.effect.replace(
-    /(\\glossterm{melee}|melee) (\\glossterm{strike}|strike)/g,
+    /(ranged|\\glossterm{ranged}|melee|\\glossterm{melee}) (\\glossterm{strike}|strike)/g,
     (...match) => match[2],
   );
 
@@ -347,38 +357,36 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
     },
   );
 
-  // TODO: we currently don't handle the case where a maneuver leads into "make a strike"
-  // in a continuous sentence, like "move up to your speed, then make a strike".
-  const preStrikeSentenceMatch = ability.effect.match(
-    /(.*)\. Make a (\\glossterm{strike}|strike)/s,
+  const strikeComponentMatch = ability.effect.match(
+    /(.*)?([mM])ake a (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
   );
-  const preStrikeContinuousMatch = ability.effect.match(
-    /(.*) make a (\\glossterm{strike}|strike)/s,
-  );
-  let preStrikeText = 'The $name makes a ';
-  if (preStrikeSentenceMatch) {
-    preStrikeText = `${preStrikeSentenceMatch[1]}. The $name makes a `;
-  } else if (preStrikeContinuousMatch) {
-    if (/\$[nN]ame/.test(preStrikeContinuousMatch[1])) {
-      preStrikeText = `${preStrikeContinuousMatch[1]} it makes a `;
-    } else {
-      preStrikeText = `${preStrikeContinuousMatch[1]} the $name makes a `;
-    }
+  if (!strikeComponentMatch) {
+    throw new Error(`${ability.name}: Unable to parse strike: '${ability.effect}'`);
   }
-  const postStrikeMatch = ability.effect.match(
-    /[mM]ake a (\\glossterm{strike}|strike)[^.]*\.(.*?)(\\hit|\\injury|\\miss|$)/s,
-  );
-  const postStrikeText = postStrikeMatch ? postStrikeMatch[2] : '';
-  const hitMatch = ability.effect.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
+  const preStrike = strikeComponentMatch[1] || '';
+  const maybeCapital = strikeComponentMatch[2];
+  const restOfStrikeSentence = strikeComponentMatch[4];
+  const postStrike = strikeComponentMatch[5];
+  const labeledEffects = `${strikeComponentMatch[6] || ''}${strikeComponentMatch[7] || ''}`;
+
+  let preStrikeText = maybeCapital === 'M' ? `${preStrike}The $name makes a ` : `${preStrike}the $name makes a `;
+  // Fix duplicate 'the $name' in case the pre-strike text already contains the monster's
+  // name.
+  preStrikeText = preStrikeText.replace(/(\$name.*)[tT]he \$name/, (_, prefix) => `${prefix}it`);
+  // We intentionally exclude the rest of the strike sentence from this text.
+  // The rest of the sentence typically includes modifiers, like accuracy or damage
+  // modifiers, that we already calculate.
+  const postStrikeText = postStrike || '';
+  const hitMatch = labeledEffects.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
   const hitText = hitMatch ? hitMatch[1] : '';
-  const injuryMatch = ability.effect.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
+  const injuryMatch = labeledEffects.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
   const injuryText = injuryMatch ? injuryMatch[1] : undefined;
-  const critMatch = ability.effect.match(/\\crit(.*?)(\\injury|\\miss|$)/s);
+  const critMatch = labeledEffects.match(/\\crit(.*?)(\\injury|\\miss|$)/s);
   const critText = critMatch ? critMatch[1] : undefined;
-  const missMatch = ability.effect.match(/\\miss(.*)/s);
+  const missMatch = labeledEffects.match(/\\miss(.*)/s);
   const missText = missMatch ? missMatch[1] : undefined;
 
-  const accuracyModifierText = calculateStrikeAccuracyText(monster, ability);
+  const accuracyModifierText = calculateStrikeAccuracyText(monster, ability, restOfStrikeSentence);
   let strikeRange = ' melee';
   const tag = getWeaponTag(ability.weapon) || '';
   if (/Projectile/.test(tag)) {
@@ -431,24 +439,27 @@ export function restructureBrawlingAbility(monster: Creature, ability: ActiveAbi
   );
 }
 
-function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility): string {
+function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility, restOfStrikeSentence: string): string {
   let accuracyModifierText = '';
-  const accuracyMatch = ability.effect.match(
-    /Make a (\\glossterm{strike}|strike).* with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
+  const accuracyMatch = restOfStrikeSentence.match(
+    /with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
   );
+  if (!accuracyMatch) {
+    return '';
+  }
 
   let accuracyModifier = getWeaponAccuracy(ability.weapon);
   if (accuracyMatch) {
-    const modifierSign = standardizeModifierSign(accuracyMatch[2]);
-    if (!accuracyMatch[3]) {
+    const modifierSign = standardizeModifierSign(accuracyMatch[1]);
+    if (!accuracyMatch[2]) {
       throw new Error(
-        `Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[3]}'`,
+        `Monster ability ${monster.name}.${ability.name}: Failed to parse strike accuracy modifier '${accuracyMatch[2]}'`,
       );
     }
     if (modifierSign === '-') {
-      accuracyModifier -= Number(accuracyMatch[3]);
+      accuracyModifier -= Number(accuracyMatch[2]);
     } else {
-      accuracyModifier += Number(accuracyMatch[3]);
+      accuracyModifier += Number(accuracyMatch[2]);
     }
   }
 
@@ -580,9 +591,6 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
   }
 
   // Accuracy-modified attack.
-  // Note that we technically handle brawling accuracy here, but it should be extremely
-  // rare for a *strike* to use brawling accuracy, and maybe impossible. Normal brawling
-  // attacks are handled with `restructureBrawlingAbility`.
   attack.targeting = attack.targeting.replace(
     /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
     (_, maybeCapital, attackType, defense, modifierSign, modifierValue) => {

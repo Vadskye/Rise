@@ -271,7 +271,7 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     const ability = simpleCreature.getActiveAbilities()[0];
     t.matchOnlyStrict(
       convertAbilityToMonsterLatex(simpleCreature, ability),
-      `\\begin{activeability}{Bite}{Standard action}
+      `\\begin{activeability}*{Bite}{Standard action}
       
       \\rankline
       \\hypertargetraised{maneuver:Bite}{}%
@@ -293,16 +293,38 @@ t.test('convertAbilityToMonsterLatex', (t) => {
     const ability = simpleCreature.getActiveAbilities()[0];
     t.equal(
       convertAbilityToMonsterLatex(simpleCreature, ability),
-      `\\begin{activeability}{Grapple}{Standard action}
+      `\\begin{activeability}*{Grapple}{Standard action}
       \\abilitytags \\abilitytag{Brawling}, \\abilitytag{Size-Based}
       \\rankline
       \\hypertargetraised{maneuver:Grapple}{}%
       \\hypertargetraised{maneuver:grapple}{}%
       \\noindent
-      The $name makes a $brawlingaccuracy attack with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.
-
+      The $name makes a $brawlingaccuracy attack with a free hand against the Brawn and Reflex defenses of one creature it \\glossterm{touches}.%
+        \\vspace{0.25em}
         \\hit The $name and the target are \\grappled by each other.
+        
         \\crit The $name also controls the grapple.% 
+      \\vspace{0.1em}%
+    \\end{activeability}`,
+    );
+
+    t.end();
+  });
+
+  t.test('Piledriver', (t) => {
+    simpleCreature.addManeuver('Piledriver');
+    const ability = simpleCreature.getActiveAbilities()[0];
+    t.equal(
+      convertAbilityToMonsterLatex(simpleCreature, ability),
+      `\\begin{activeability}*{Piledriver}{Standard action}
+      \\abilitytags \\abilitytag{Brawling}
+      \\rankline
+      \\hypertargetraised{maneuver:Piledriver}{}%
+      \\hypertargetraised{maneuver:piledriver}{}%
+      \\noindent
+      The $name makes a $brawlingaccuracy attack vs. Brawn using a \\glossterm{free hand} against a creature it is \\glossterm{grappling}.%
+        \\vspace{0.25em}
+        \\hit 1d8\\plus3d6\\plus10 damage.% 
       \\vspace{0.1em}%
     \\end{activeability}`,
     );
@@ -516,7 +538,7 @@ t.test('restructureStrikeAbility', (t) => {
           miss: undefined,
           injury: undefined,
           targeting:
-            'The $name can move up to its speed, then it makes a $accuracy melee strike vs. Armor with its bite.',
+            'The $name can move up to its speed, then it makes a $accuracy-2 melee strike vs. Armor with its bite.',
         },
         isMagical: false,
         kind: 'maneuver',
