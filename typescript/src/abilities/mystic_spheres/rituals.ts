@@ -635,7 +635,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one hour',
     effect: `
       When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
-      If you send an object to the Astral Plane, choose a a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
+      If you send an object to the Astral Plane, choose a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
       That object \\glossterm{teleports} to a random location in the Astral Plane.
 
       If you retrieve an object, choose an unoccupied space on stable ground within \\medrange of you.

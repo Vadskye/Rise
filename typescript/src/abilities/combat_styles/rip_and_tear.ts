@@ -160,7 +160,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Ricochet',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to four creatures or objects in a \\smallarea radius within \\medrange of you.
+        Make a thrown \\glossterm{strike} against up to four creatures or objects in a \\smallarea radius within \\medrange.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         If you choose yourself as one of the targets, you can catch the weapon instead of taking damage from it.
       `,
@@ -172,7 +172,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Ricochet+',
 
       effect: `
-        Make a thrown \\glossterm{strike} against up to six creatures or objects in a \\smallarea radius within \\medrange of you.
+        Make a thrown \\glossterm{strike} against up to six creatures or objects in a \\smallarea radius within \\medrange.
         You can choose the same target multiple times, but not twice in a row, and no more than three times total.
         Choosing the same target twice means it takes double damage, and three times means it takes triple damage.
 

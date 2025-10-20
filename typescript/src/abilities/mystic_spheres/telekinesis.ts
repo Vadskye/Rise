@@ -125,7 +125,7 @@ export const telekinesis: MysticSphere = {
           If you fling a Small object, you deal \\glossterm{extra damage} equal to half your \\glossterm{power}.
         `,
         targeting: `
-          Choose a Tiny or Small \\glossterm{unattended} object within \\medrange of you.
+          Choose a Tiny or Small \\glossterm{unattended} object within \\medrange.
           You fling that object at another creature or object within \\medrange of you.
           When you do, make an attack vs. Armor against the target.
           You gain a +2 accuracy bonus if you fling a Tiny object.
@@ -146,7 +146,7 @@ export const telekinesis: MysticSphere = {
           If you fling a Medium object, you deal 2d6 \\glossterm{extra damage}.
         `,
         targeting: `
-          Choose a Small or Medium \\glossterm{unattended} object within \\medrange of you.
+          Choose a Small or Medium \\glossterm{unattended} object within \\medrange.
           You fling that object at another creature or object within \\medrange of you.
           You gain a +2 accuracy bonus if you fling a Small object.
         `,
@@ -294,7 +294,7 @@ export const telekinesis: MysticSphere = {
           Each target of this spell must be pushed in the same direction.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange.
         `,
       },
       rank: 2,
@@ -311,7 +311,7 @@ export const telekinesis: MysticSphere = {
           Each target of this spell must be pushed in the same direction.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Huge or smaller in a \\medarea radius within \\medrange of you.
+          Make an attack vs. Brawn against everything that is Huge or smaller in a \\medarea radius within \\medrange.
         `,
       },
       rank: 5,
@@ -327,7 +327,7 @@ export const telekinesis: MysticSphere = {
           Each target of this spell can be pushed in a different direction of your choice.
         `,
         targeting: `
-          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange of you.
+          Make an attack vs. Brawn against everything that is Large or smaller in a \\medarea radius within \\longrange.
         `,
       },
       rank: 6,

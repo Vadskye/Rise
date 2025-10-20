@@ -3,7 +3,7 @@ import { add_tag_to_sphere } from './add_tag';
 import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from '../constants';
 
 const WATER_ACCURACY_BONUS =
-  'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.';
+  'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
 
 export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
   name: 'Aquamancy',
@@ -131,7 +131,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         `,
         targeting: `
           Make an attack vs. Brawn against up to two Huge or smaller creatures within \\medrange.
-          You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange of you.
+          You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.
         `,
       },
       rank: 6,

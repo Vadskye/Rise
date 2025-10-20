@@ -648,7 +648,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowguide',
       effect: `
-        Choose up to two \\glossterm{shadowed} \\glossterm{allies} within \\medrange of you.
+        Choose up to two \\glossterm{shadowed} \\glossterm{allies} within \\medrange.
         Each target is \\focused this round.
       `,
       rank: 4,
@@ -710,7 +710,7 @@ export const umbramancy: MysticSphere = {
 
           When you cast this spell, you wrap yourself in shadow.
           All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
-          Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange of you.
+          Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
           If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
         `,
       },
