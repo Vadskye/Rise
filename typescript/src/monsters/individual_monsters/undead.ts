@@ -37,6 +37,54 @@ export function addUndead(grimoire: Grimoire) {
     creature.addSpell('Inflict Wound');
   });
 
+  grimoire.addMonster('Macabre Mourner', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral evil',
+      base_class: 'skirmisher',
+      elite: true,
+      creature_type: 'undead',
+      level: 5,
+      size: 'large',
+    });
+    // TODO: awkward wording
+    creature.setKnowledgeResults({
+      normal: `
+        A macabre mourner is a Large ghost.
+        When a great many people mourn at once, and the creature they mourn was not buried properly, the strength of their feeling can trap the soul of the creature they mourn.
+      `,
+    });
+    creature.setTrainedSkills([]);
+    creature.addTrait('incorporeal');
+    creature.addCustomMovementSpeed('Fly (average, 5 ft.)');
+    creature.addVulnerability('Auditory');
+    creature.addVulnerability('Emotion');
+    creature.setBaseAttributes([0, 0, -2, 0, 2, 4]);
+    creature.addCustomSpell({
+      name: 'Mournful Howl',
+      attack: {
+        hit: '\\damagerankone.',
+        targeting: `
+          Make an attack vs. Mental against all creatures within a \\medarea radius from you.
+          You gain a \\plus4 accuracy bonus if you or any any creature in the area suffered an \\glossterm{injury} last round.
+        `,
+      },
+      tags: ['Auditory'],
+      usageTime: 'elite',
+    });
+    creature.addCustomSpell({
+      name: 'Toll the Dead',
+      attack: {
+        hit: `
+          As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.
+          This damage is doubled if the target has killed a living creature within the last 24 hours.
+        `,
+        targeting: `
+          Make an attack vs. Mental against one creature within \\medrange.
+        `,
+      },
+    });
+  });
+
   grimoire.addMonsterGroup(
     {
       hasArt: true,
