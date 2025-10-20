@@ -1,7 +1,7 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature, CustomMonsterAbility } from '@src/character_sheet/creature';
 import { getWeaponMultByRank } from '@src/abilities/combat_styles';
-import { BARRIER_COOLDOWN } from '@src/abilities/constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '@src/abilities/constants';
 
 export function addUndead(grimoire: Grimoire) {
   grimoire.addMonster('Allip', (creature: Creature) => {
@@ -30,7 +30,7 @@ export function addUndead(grimoire: Grimoire) {
     creature.setTrainedSkills(['awareness', 'stealth']);
     // TODO: should allips have any defined Strength attribute?
     creature.setBaseAttributes([-9, 3, 0, -2, -2, 6]);
-    creature.addCustomMovementSpeed('Fly (normal)');
+    creature.addCustomMovementSpeed('Fly (average, 5 ft. limit)');
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomSense('Lifesense (120 ft.)');
     creature.addTrait('incorporeal');
@@ -55,7 +55,7 @@ export function addUndead(grimoire: Grimoire) {
     });
     creature.setTrainedSkills([]);
     creature.addTrait('incorporeal');
-    creature.addCustomMovementSpeed('Fly (average, 5 ft.)');
+    creature.addCustomMovementSpeed('Fly (average, 5 ft. limit)');
     creature.addVulnerability('Auditory');
     creature.addVulnerability('Emotion');
     creature.setBaseAttributes([0, 0, -2, 0, 2, 4]);
@@ -74,12 +74,13 @@ export function addUndead(grimoire: Grimoire) {
     creature.addCustomSpell({
       name: 'Toll the Dead',
       attack: {
+        crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.
-          This damage is doubled if the target has killed a living creature within the last 24 hours.
         `,
         targeting: `
           Make an attack vs. Mental against one creature within \\medrange.
+          You gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours.
         `,
       },
     });

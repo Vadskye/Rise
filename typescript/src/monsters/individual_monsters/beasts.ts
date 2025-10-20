@@ -79,7 +79,7 @@ export function addBeasts(grimoire: Grimoire) {
     });
     creature.setTrainedSkills(['awareness', 'balance', 'flexibility', 'stealth']);
     creature.setBaseAttributes([2, 5, 0, -8, 3, -2]);
-    creature.addCustomMovementSpeed('Fly (fast, 120 ft.)');
+    creature.addCustomMovementSpeed('Fly (average, 60 ft. limit)');
     creature.addCustomSense('Scent');
     creature.addPoisonousStrike('stinger', {
       name: 'Giant Wasp Venom',
@@ -107,7 +107,7 @@ export function addBeasts(grimoire: Grimoire) {
         They are primarily scavengers, but if hungry, they will ruthlessly mob creatures who seem weak or isolated.
       `,
     });
-    creature.addCustomMovementSpeed('Fly (normal, 90 ft.)');
+    creature.addCustomMovementSpeed('Fly (average, 90 ft. limit)');
     creature.setTrainedSkills(['awareness']);
     creature.setTrainedSkills([]);
     creature.setBaseAttributes([2, 4, -1, 0, 4, 0]);
@@ -343,7 +343,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.setTrainedSkills(['awareness', 'jump']);
     creature.setBaseAttributes([5, 5, 2, -3, 2, 2]);
     creature.addTrait('quadrupedal');
-    creature.addCustomMovementSpeed('Fly (fast, 60 ft.)');
+    creature.addCustomMovementSpeed('Fly (average, 60 ft. limit)');
     creature.addCustomSense('Low-light Vision');
 
     creature.addManeuver('Rend the Hide', {
@@ -386,7 +386,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.setTrainedSkills(['awareness', 'stealth']);
     creature.setBaseAttributes([5, 2, 4, -4, 6, 0]);
     // TODO: Add Sightless modifiers
-    creature.addCustomMovementSpeed('Fly (fast, 90 ft.)');
+    creature.addCustomMovementSpeed('Fly (average, 30 ft. limit)');
     creature.addCustomSense('Blindsight (120 ft.)');
     creature.addCustomSense('Blindsense (240 ft.)');
     creature.addPassiveAbility({
