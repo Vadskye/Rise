@@ -250,6 +250,10 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
   // Monster abilities shouldn't show the normal player-facing narrative text
   delete ability.narrative;
 
+  // Monster ability names shouldn't have player-relevant suffixes like "+".
+  // TODO: Should this also remove prefixes like "Mighty"?
+  ability.name = ability.name.replaceAll('+', '');
+
   reformatAbilityScaling(ability);
 
   // Ignore attunement tags, since monsters don't attune.
