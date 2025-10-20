@@ -81,20 +81,6 @@ export const chronomancy: MysticSphere = {
     },
 
     {
-      name: 'Quicksilver Slash',
-
-      // Rerolling is about +2 accuracy
-      effect: `
-        This spell has no \\glossterm{somatic components}.
-
-        Make a \\glossterm{mundane} \\glossterm{strike} with a \\minus1 accuracy penalty.
-        You may reroll the accuracy roll and take the highest result.
-      `,
-      rank: 2,
-      roles: ['burst'],
-      scaling: 'accuracy',
-    },
-    {
       name: 'Quicksilver Flurry',
 
       effect: `
@@ -654,7 +640,7 @@ export const chronomancy: MysticSphere = {
     },
 
     // Deafened hp is 0.5 EA. dazzled hp is 0.7 EA. Combined is 1.2 EA, plus brief is 1.6
-    // EA. Total is rank 2.
+    // EA. Add +1 rank for area, so total area rank 4.
     // weird accuracy bonus doesn't get a rank value
     {
       name: 'Wave of Senescence',
@@ -665,11 +651,11 @@ export const chronomancy: MysticSphere = {
           If it is \\glossterm{injured}, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\medarea cone.
+          Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\largearea cone.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
-      rank: 2,
+      rank: 3,
       roles: ['flash', 'maim'],
       scaling: 'accuracy',
       tags: ['Auditory', 'Visual'],
@@ -684,7 +670,7 @@ export const chronomancy: MysticSphere = {
           The target is \\dazzled and \\deafened as a single \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against each creature in a \\largearea cone.
+          Make an attack vs. Fortitude against each \\glossterm{enemy} in a \\largearea cone.
           You gain a +2 accuracy bonus against creatures that are too young or too old to be ordinary adults.
         `,
       },
