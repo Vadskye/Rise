@@ -2,6 +2,63 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
 export function addHumanoids(grimoire: Grimoire) {
+  grimoire.addMonster('Choker', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'chaotic evil',
+      base_class: 'brute',
+      elite: false,
+      creature_type: 'beast',
+      level: 4,
+      size: 'medium',
+    });
+    creature.setProperties({
+      has_art: true,
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        A choker is a vicious predator that delights in strangling its foes.
+        Chokers are bipedal, but their arms are inhumanly long and sinuous, terminating in hands with spiny pads to help them hold on tightly to walls and foes.
+        They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
+      `,
+    });
+    creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
+    creature.addCustomSense('Darkvision (60 ft.)');
+    creature.addCustomMovementSpeed('Climb (slow)');
+    creature.setBaseAttributes([5, 4, -1, -4, 0, -1]);
+    creature.addGrapplingStrike('tentacle');
+    creature.addManeuver('Piledriver', { displayName: 'Choke' });
+  });
+
+  grimoire.addMonster('Minotaur', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      elite: true,
+      creature_type: 'humanoid',
+      level: 7,
+      size: 'large',
+    });
+    creature.setProperties({
+      has_art: true,
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        A minotaur is a Large bull-headed creature.
+        Minotaurs are known for their poor sense of direction.
+        They have a tendency to become trapped in dungeons of even moderate complexity.
+      `,
+    });
+    creature.setTrainedSkills(['awareness']);
+    creature.setBaseAttributes([6, 0, 4, -2, 0, 1]);
+    creature.addCustomSense('Darkvision (60 ft.)');
+
+    // Horns are standard, smashing is elite.
+    creature.addManeuver('Mighty Rushdown', { displayName: 'Charging Gore', weapon: 'horn' });
+    creature.addWeaponMult('horn', { displayName: 'Gore' });
+    creature.addManeuver('Chokeslam', { usageTime: 'elite' });
+    creature.addManeuver('Ground Stomp', { usageTime: 'elite' });
+  });
+
   addBandits(grimoire);
   addBugbears(grimoire);
   addCultists(grimoire);
@@ -103,6 +160,22 @@ function addBugbears(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       name: 'Bugbears',
+      knowledge: {
+        normal: `
+          Bugbears are Medium humanoid creatures with burly, hairy bodies and ugly goblin faces.
+          They are brutish and chaotic, and enjoy bullying their goblin kin.
+        `,
+        hard: `
+          Although bugbears have only ordinary physical strength, they are remarkably durable.
+          Their name comes from their hirstute nature and inexhaustible endurance, both of which are reminiscent of bears.
+          They enjoy wrestling, and tend to grapple their foes in combat, even when doing so is not tactically advantageous.
+        `,
+        legendary: `
+          Bugbears are typically found in small packs that rarely have more than a dozen members.
+          However, sometimes they will congregate around a powerful leader for a time.
+          These groupings are not hierarchical or well organized, and are typically based around some discovery of wealth that a chief can ration out to their followers.
+        `,
+      },
       sharedInitializer: (creature: Creature) => {
         creature.setTrainedSkills(['endurance']);
       },
@@ -142,7 +215,7 @@ function addBugbears(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setTrainedSkills(['awareness']);
-          creature.setBaseAttributes([0, 0, 5, -2, 2, 4]);
+          creature.setBaseAttributes([1, 0, 5, -2, 2, 4]);
           creature.setEquippedArmor({
             bodyArmor: 'leather lamellar',
             shield: 'standard shield',
@@ -401,6 +474,13 @@ function addLizardfolk(grimoire: Grimoire) {
 }
 
 function addKobolds(grimoire: Grimoire) {
+  const dragonsworn = {
+    name: 'Dragonsworn',
+    effect: `
+      The $name is \\impervious to the tag associated with the dragon it swore to serve.
+    `,
+  }
+
   grimoire.addMonsterGroup(
     {
       name: 'Kobolds',
@@ -410,7 +490,7 @@ function addKobolds(grimoire: Grimoire) {
     },
     [
       [
-        'Kobold Nipper',
+        'Nipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
@@ -421,11 +501,13 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
           creature.addSneakAttack('smallswords');
+          creature.addSneakAttack('darts');
         },
       ],
       [
-        'Kobold Snipper',
+        'Snipper',
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
@@ -436,8 +518,30 @@ function addKobolds(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.setBaseAttributes([0, 4, 2, 0, 4, 0]);
+          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
           creature.addWeaponMult('longbow');
           creature.addManeuver('Heartpiercer', { weapon: 'longbow' });
+        },
+      ],
+      [
+        'Yipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'leader',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 3,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([-2, 4, 2, 1, 2, 3]);
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Stunning Shout');
+          creature.addManeuver('Battle Command');
         },
       ],
       [
@@ -451,15 +555,12 @@ function addKobolds(grimoire: Grimoire) {
             level: 11,
             size: 'medium',
           });
-          creature.addPassiveAbility({
-            name: 'Dragonsworn',
-            effect: `
-            The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `,
-          });
+          creature.addPassiveAbility(dragonsworn);
+          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
           creature.addImpervious('Varies');
           creature.setBaseAttributes([0, 6, 4, 0, 4, 2]);
           creature.addSneakAttack('smallswords');
+          creature.addSneakAttack('darts');
         },
       ],
       [
@@ -470,20 +571,39 @@ function addKobolds(grimoire: Grimoire) {
             base_class: 'sniper',
             creature_type: 'humanoid',
             elite: false,
-            level: 11,
+            level: 12,
             size: 'medium',
           });
           creature.setBaseAttributes([0, 6, 2, 0, 6, 2]);
-          creature.addPassiveAbility({
-            name: 'Dragonsworn',
-            effect: `
-            The $name is \\impervious to the tag associated with the dragon it swore to serve.
-          `,
-          });
+          creature.setEquippedArmor({ bodyArmor: 'buff leather' });
+          creature.addPassiveAbility(dragonsworn);
           creature.addImpervious('Varies');
           creature.addWeaponMult('longbow');
           creature.addManeuver('Distant Shot', { weapon: 'longbow' });
           creature.addManeuver('Pure Precision', { weapon: 'longbow' });
+        },
+      ],
+      [
+        'Dragonsworn Yipper',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'leader',
+            elite: false,
+            creature_type: 'humanoid',
+            level: 13,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([-1, 6, 3, 2, 5, 4]);
+          creature.setEquippedArmor({
+            bodyArmor: 'buff leather',
+            shield: 'buckler',
+          });
+          creature.addPassiveAbility(dragonsworn);
+          creature.addImpervious('Varies');
+          creature.addWeaponMult('spear');
+          creature.addManeuver('Directing Shout');
+          creature.addManeuver('Stunning Shout+');
         },
       ],
     ],
