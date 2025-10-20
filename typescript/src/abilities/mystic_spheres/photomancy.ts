@@ -316,7 +316,7 @@ export const photomancy: MysticSphere = {
         `,
         missGlance: true,
         targeting: `
-          Choose up to five \\tinyarea radius cylinder-shaped areas within \\medrange of you.
+          Choose up to five \\tinyarea radius cylinder-shaped areas within \\medrange.
           Each cylinder is 30 feet high.
           Make an attack vs. Reflex against all creatures in any of those areas.
           The areas can overlap, but this does not allow you to make multiple attacks against the same creature.

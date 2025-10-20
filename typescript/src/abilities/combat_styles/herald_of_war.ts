@@ -191,7 +191,7 @@ export const heraldOfWar: CombatStyle = {
           \\damagerankone, and the target is \\glossterm{briefly} \\deafened.
         `,
         targeting: `
-          Make an attack vs. Fortitude against a creature within \\shortrange of you.
+          Make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },
       rank: 1,
@@ -208,7 +208,7 @@ export const heraldOfWar: CombatStyle = {
           \\hit The target becomes \\deafened as a \\glossterm{condition}.
         `,
         targeting: `
-          Make an attack vs. Fortitude against a creature within \\shortrange of you.
+          Make an attack vs. Fortitude against a creature within \\shortrange.
         `,
       },
       rank: 5,

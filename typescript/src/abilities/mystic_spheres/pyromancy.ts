@@ -443,7 +443,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
-          When you do, make an attack vs. Fortitude against a creature within \\shortrange of you.
+          When you do, make an attack vs. Fortitude against a creature within \\shortrange.
           After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
         `,
       },
