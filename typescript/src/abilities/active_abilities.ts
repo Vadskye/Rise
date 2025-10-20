@@ -11,6 +11,7 @@ export interface ActiveAbility {
   attack?: ActiveAbilityAttack;
   cost?: string;
   effect?: string;
+  forMonster?: boolean;
   functionsLike?: FunctionsLike;
   isMagical: boolean;
   kind: ActiveAbilityKind;

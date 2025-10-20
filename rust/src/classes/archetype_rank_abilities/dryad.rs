@@ -100,7 +100,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you visit a tree you are bonded to with your \textit{tree bond} ability, you can gather acorns of life.
                 You can have up to ten acorns of life at once.
-                As a \glossterm{minor action}, you can throw an acorn of life onto an unoccupied \glossterm{grounded} space within \medrange of you.
+                As a \glossterm{minor action}, you can throw an acorn of life onto an unoccupied \glossterm{grounded} space within \medrange.
                 The space must be made of dirt, earth, or stone.
                 When the acorn lands, a tree immediately grows in that space.
                 The tree has a five foot diameter trunk and grows vertically until it reaches a hundred feet tall or until it encounters a solid obstacle preventing its growth.
