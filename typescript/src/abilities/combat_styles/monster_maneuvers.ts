@@ -112,12 +112,13 @@ export const monsterManeuvers: CombatStyle = {
     // Same as Grapple universal ability
     {
       name: 'Grapple',
-      effect: `
-        Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.
-
-        \\hit You and the target are \\grappled by each other.
-        \\crit You also control the grapple.
-      `,
+      attack: {
+        hit: 'You and the target are \\grappled by each other.',
+        crit: 'You also control the grapple.',
+        targeting: `
+          Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.
+        `,
+      },
       rank: 1,
       roles: ['softener'],
       tags: ['Brawling', 'Size-Based'],
@@ -125,10 +126,12 @@ export const monsterManeuvers: CombatStyle = {
     // Same as Trip universal ability
     {
       name: 'Trip',
-      effect: `
-        Make a \\glossterm{brawling attack} vs. Brawn using a free hand against a creature you \\glossterm{touch}.
-        \\hit The target becomes \\prone.
-      `,
+      attack: {
+        hit: 'The target becomes \\prone.',
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn using a free hand against a creature you \\glossterm{touch}.
+        `,
+      },
       rank: 1,
       roles: ['trip'],
       tags: ['Brawling', 'Size-Based'],
@@ -316,6 +319,7 @@ export const monsterManeuvers: CombatStyle = {
       usageTime: 'triggered',
     },
 
+    // Wide Sweep, but the tag works
     {
       name: 'Sweep',
       effect: `
