@@ -101,10 +101,12 @@ export const dirtyFighting: CombatStyle = {
 
       // A melee range spell would deal dr3.
       // Grapple requirement offsets the higher accuracy from the Brawling tag?
-      effect: `
-        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit \\damagerankthree.
-      `,
+      attack: {
+        hit: '\\damagerankthree.',
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        `,
+      },
       rank: 1,
       roles: ['burst', 'payoff'],
       tags: ['Brawling'],
@@ -113,10 +115,12 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Piledriver+',
 
-      effect: `
-        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit \\damagerankseven.
-      `,
+      attack: {
+        hit: '\\damagerankseven.',
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        `,
+      },
       rank: 5,
       roles: ['burst', 'payoff'],
       tags: ['Brawling'],
@@ -133,15 +137,18 @@ export const dirtyFighting: CombatStyle = {
       //
       // If you use a Medium creature, the baseline damage is 2d6 + 0.83dpp, which is
       // roughly dr4, but with strong scaling based on the creature's size.
-      effect: `
-        Make an \\glossterm{brawling attack} against the Brawn defense of a Medium or larger creature you are \\glossterm{grappling}.
-        If you hit, you can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
-        Treat the creature as a \\weapontag{Heavy} weapon that deals 2d6 damage per size category by which the creature is above Small.
-        You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
-
-        % TODO: clarify how this interacts with Sweeping
-        The weapon creature takes damage equal to the damage dealt by the strike, ignoring any damage increase from critical hits.
-      `,
+      attack: {
+        hit: `
+          You can make a \\glossterm{strike} with your normal accuracy using that creature as a weapon.
+          Treat the creature as a \\weapontag{Heavy} weapon that deals 2d6 damage per size category by which the creature is above Small.
+          You must also be strong enough to carry the weapon creature normally (see \\pcref{Weight Limits}).
+          % TODO: clarify how this interacts with Sweeping
+          The weapon creature takes damage equal to the damage dealt by the strike, ignoring any damage increase from critical hits.
+        `,
+        targeting: `
+          Make an \\glossterm{brawling attack} against the Brawn defense of a Medium or larger creature you are \\glossterm{grappling}.
+        `,
+      },
       rank: 3,
       roles: ['burst', 'payoff'],
       // This doesn't need to be size-based because grappling already is size-based.
@@ -173,11 +180,13 @@ export const dirtyFighting: CombatStyle = {
       name: 'Backbreaker',
 
       // A damage + debuff slow is 2.6 EA, so rank 7, or rank 5 if melee range.
-      effect: `
-        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit The target takes \\damageranksix.
-        \\injury The target becomes \\slowed as a \\glossterm{condition}.
-      `,
+      attack: {
+        hit: '\\damageranksix.',
+        injury: 'The target is \\slowed as a \\glossterm{condition}.',
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        `,
+      },
       rank: 5,
       roles: ['maim', 'payoff'],
       tags: ['Brawling'],
@@ -234,12 +243,16 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Pin',
 
-      effect: `
-        Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
-        \\hit The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
-        In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
-        These penalties do not stack if you use this ability multiple times.
-      `,
+      attack: {
+        hit: `
+          The defense penalties the target suffers from being \\grappled are doubled as long as the grapple continues.
+          In addition, it takes a \\minus2 penalty to the \\ability{escape grapple} ability.
+          These penalties do not stack if you use this ability multiple times.
+        `,
+        targeting: `
+          Make a \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+        `,
+      },
       rank: 7,
       roles: ['maim'],
       tags: ['Brawling'],
@@ -249,11 +262,15 @@ export const dirtyFighting: CombatStyle = {
       name: 'Fling',
 
       // -1r for using brawling accuracy? A 30' fling would normally be r2.
-      effect: `
-        Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
-        The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
-        \\hit If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet.
-      `,
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 30 feet.
+        `,
+        targeting: `
+          Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+          The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
+        `,
+      },
       rank: 3,
       roles: ['maim'],
       tags: ['Brawling'],
@@ -262,12 +279,14 @@ export const dirtyFighting: CombatStyle = {
     {
       name: 'Fling+',
 
-      effect: `
-        Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
-        The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
-        \\hit \\damagerankeight.
-        \\injury You \\glossterm{fling} the target up to 30 feet.
-      `,
+      attack: {
+        hit: '\\damagerankeight.',
+        injury: 'You \\glossterm{fling} the target up to 30 feet.',
+        targeting: `
+          Make an \\glossterm{brawling attack} vs. Brawn using a \\glossterm{free hand} against a creature you \\glossterm{touch}.
+          The target's \\glossterm{weight category} must be below the maximum weight category you can lift normally (see \\pcref{Weight Categories}).
+        `,
+      },
       rank: 7,
       roles: ['burst', 'maim'],
       tags: ['Brawling'],
