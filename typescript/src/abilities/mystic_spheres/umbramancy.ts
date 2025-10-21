@@ -81,7 +81,7 @@ export const umbramancy: MysticSphere = {
       },
       roles: ['clear'],
       rank: 1,
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 1.' },
+      scaling: 'damage',
     },
 
     {
@@ -97,7 +97,7 @@ export const umbramancy: MysticSphere = {
       },
       roles: ['clear'],
       rank: 4,
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.' },
+      scaling: 'damage',
     },
 
     {
@@ -141,7 +141,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 6,
       roles: ['wildfire'],
-      scaling: { special: 'The damage increases by 3d10 for each rank beyond 6.' },
+      scaling: 'damage',
       tags: ['Sustain (standard)'],
     },
 
@@ -168,7 +168,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 1,
       roles: ['burst', 'maim'],
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 1.' },
+      scaling: 'damage',
     },
 
     {
@@ -188,7 +188,7 @@ export const umbramancy: MysticSphere = {
       },
       rank: 5,
       roles: ['burst', 'maim'],
-      scaling: { special: 'The damage increases by 3d8 for each rank beyond 5.' },
+      scaling: 'damage',
     },
 
     {
