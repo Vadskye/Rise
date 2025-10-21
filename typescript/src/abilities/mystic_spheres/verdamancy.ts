@@ -374,7 +374,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo damage immediately, and again during your next action.
+          \\damageranktwo immediately, and again during your next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
         `,
         targeting: `
