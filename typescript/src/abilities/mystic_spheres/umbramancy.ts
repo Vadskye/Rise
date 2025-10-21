@@ -160,6 +160,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
+
           % Normally grasp spells would require touch and a free hand, but your shadow touches
           % the target, not you.
           Make an attack vs. Brawn against something adjacent to you.
@@ -181,6 +182,7 @@ export const umbramancy: MysticSphere = {
         `,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
+
           Make an attack vs. Brawn against something adjacent to you.
         `,
       },
