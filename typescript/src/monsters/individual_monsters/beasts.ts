@@ -389,11 +389,12 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addCustomMovementSpeed('Fly (average, 30 ft. limit)');
     creature.addCustomSense('Blindsight (120 ft.)');
     creature.addCustomSense('Blindsense (240 ft.)');
+    creature.addTrait('sightless');
     creature.addPassiveAbility({
-      name: 'Sightless',
+      name: 'Echolocation',
       effect: `
         The $name uses its hearing to "see".
-        While it is deafened, it loses its natural blindsight and blindsense abilities, making it \\blinded.
+        While it is \\deafened, it loses its natural blindsight and blindsense abilities, making it \\blinded.
       `,
     });
 
@@ -470,6 +471,9 @@ function addAnimals(grimoire: Grimoire) {
           They are easier to influence with the Creature Handling skill than other creatures.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('animal');
+      }
     },
     [
       [
@@ -746,6 +750,9 @@ function addDireAnimals(grimoire: Grimoire) {
           Like animals, they are more susceptible to the Creature Handling skill, though their aggression makes any lapse in control more dangerous.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('animal');
+      }
     },
     [
       [
