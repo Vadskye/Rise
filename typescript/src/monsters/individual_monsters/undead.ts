@@ -53,19 +53,19 @@ export function addUndead(grimoire: Grimoire) {
         When a great many people mourn at once, and the creature they mourn was not buried properly, the strength of their feeling can trap the soul of the creature they mourn.
       `,
     });
-    creature.setTrainedSkills([]);
+    creature.setTrainedSkills(['awareness', 'intimidate']);
     creature.addTrait('incorporeal');
     creature.addCustomMovementSpeed('Fly (average, 5 ft. limit)');
     creature.addVulnerability('Auditory');
     creature.addVulnerability('Emotion');
-    creature.setBaseAttributes([0, 0, -2, 0, 2, 4]);
+    creature.setBaseAttributes([0, 0, -2, -4, 2, 4]);
     creature.addCustomSpell({
       name: 'Mournful Howl',
       attack: {
         hit: '\\damagerankone.',
         targeting: `
           Make an attack vs. Mental against all creatures within a \\medarea radius from you.
-          You gain a \\plus4 accuracy bonus if you or any any creature in the area suffered an \\glossterm{injury} last round.
+          You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} last round.
         `,
       },
       tags: ['Auditory'],
