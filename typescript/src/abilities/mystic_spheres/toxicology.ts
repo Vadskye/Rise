@@ -96,7 +96,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: POISON_CRIT,
         hit: `
-          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by asp venom (see \\pcref{Poison}).
+          If the target is \\glossterm{injured}, it becomes \\glossterm{poisoned} by giant wasp venom (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It makes the target \\slowed while the poison lasts.
           The second escalation also deals \\damagerankthreelow.
