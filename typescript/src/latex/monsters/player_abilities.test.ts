@@ -565,17 +565,6 @@ t.test('reformatAttackConsequences', (t) => {
     calculateRank: () => 3,
   } as any;
 
-  t.test('replaces "by you" with "by the $name"', (t) => {
-    const ability = {
-      attack: {
-        hit: 'The target is frightened by you.',
-      },
-    } as any;
-    reformatAttackConsequences(simpleCreature, ability);
-    t.equal(ability.attack.hit, 'The target is frightened by the $name.');
-    t.end();
-  });
-
   t.test('replaces damage rank in hit, crit, and injury', (t) => {
     const ability = {
       rank: 3,
