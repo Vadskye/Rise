@@ -56,7 +56,7 @@ export function convertMonsterGroupToLatex(group: MonsterGroup): string {
   // TODO: render art, knowledge. See `monster_group.rs`.
   return `
     \\newpage
-    \\subsection*{${group.name}}
+    \\section{${group.name}}
 
     ${group.description || ''}
     ${spacingBuffer}
