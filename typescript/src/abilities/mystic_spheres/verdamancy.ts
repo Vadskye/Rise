@@ -689,7 +689,7 @@ export const verdamancy: MysticSphere = {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea \\glossterm{radius} from you have \\glossterm{cover} from all attacks this round.
+        You and all \\glossterm{allies} within a \\largearea radius from you have \\glossterm{cover} from all attacks this round.
       `,
       rank: 4,
       roles: ['boon'],
