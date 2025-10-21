@@ -235,7 +235,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: POISON_CRIT,
         hit: `
-          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The target becomes \\glossterm{poisoned} by wolfsbane (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankonelow immediately and with each escalation.
           The second escalation also ends the poison.
@@ -256,7 +256,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: POISON_CRIT,
         hit: `
-          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The target becomes \\glossterm{poisoned} by nightshade (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankfourlow immediately and with each escalation.
           The second escalation also ends the poison.
@@ -277,7 +277,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: POISON_CRIT,
         hit: `
-          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The target becomes \\glossterm{poisoned} by bloodroot (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankfourlow immediately and with each escalation.
           The second escalation also ends the poison.
@@ -298,7 +298,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: POISON_CRIT,
         hit: `
-          The target becomes \\glossterm{poisoned} by snakeroot (see \\pcref{Poison}).
+          The target becomes \\glossterm{poisoned} by black lotus (see \\pcref{Poison}).
           The poison's accuracy is equal to your accuracy with this spell.
           It deals \\damagerankfivelow immediately and with each escalation.
         `,
