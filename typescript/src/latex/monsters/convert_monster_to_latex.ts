@@ -45,7 +45,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${genAbilitiesText(monster)}
   `;
 
-  return format.latexify(replacePlaceholders(monster, latexWithPlaceholders));
+  return format.latexify(replacePlaceholders(monster, latexWithPlaceholders)).trim();
 }
 
 function checkValidMonster(monster: Creature) {
