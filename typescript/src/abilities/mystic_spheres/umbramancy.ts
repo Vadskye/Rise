@@ -146,7 +146,7 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Shadowgrasp',
+      name: 'Dark Grasp',
 
       attack: {
         // Assume this is 50% action denial in 25% of fights, which would be 0.6 EA as a
@@ -171,7 +171,7 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      name: 'Efficient Shadowgrasp',
+      name: 'Efficient Dark Grasp',
 
       attack: {
         // 1.5 EA for the condition, so we need a rank 5 effect to apply it as a regular
