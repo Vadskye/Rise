@@ -73,9 +73,20 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -2 accuracy penalty.
-        The strike deals \\glossterm{extra damage} equal to your power against all creatures that you dealt damage to with a \\glossterm{strike} last round.
+        The strike deals \\glossterm{extra damage} equal to your power against each target that you dealt damage to with a \\glossterm{strike} last round.
       `,
       rank: 3,
+      roles: ['payoff'],
+    },
+
+    {
+      name: 'Victorious Followup+',
+
+      effect: `
+        Make a \\glossterm{strike} with a -2 accuracy penalty that deals quadruple \\glossterm{weapon damage}.
+        The strike deals \\damageranksix \\glossterm{extra damage} against each target that you dealt damage to with a \\glossterm{strike} last round.
+      `,
+      rank: 7,
       roles: ['payoff'],
     },
 
@@ -273,6 +284,30 @@ export const ebbAndFlow: CombatStyle = {
       rank: 7,
       roles: ['focus'],
       tags: ['Swift'],
+    },
+
+    {
+      name: 'Aftershock',
+
+      effect: `
+        Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
+        \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
+        A rumbling creature takes \\damagerankone during your next action.
+      `,
+      rank: 3,
+      roles: ['burn'],
+    },
+
+    {
+      name: 'Aftershock+',
+
+      effect: `
+        Make a \\glossterm{strike} with a \\minus1 accuracy penalty that deals double damage.
+        \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
+        A rumbling creature takes \\damagerankfive during your next action.
+      `,
+      rank: 7,
+      roles: ['burn'],
     },
   ],
 };
