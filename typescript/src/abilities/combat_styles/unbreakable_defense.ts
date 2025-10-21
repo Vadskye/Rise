@@ -191,14 +191,15 @@ export const unbreakableDefense: CombatStyle = {
         This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
       `,
       rank: 3,
-      roles: ['focus'],
+      roles: ['turtle'],
       tags: ['Swift'],
     },
 
     {
       name: 'Sinews of Steel+',
 
-      // 1.2 EA
+      // 1.4 EA, though you're unlikely to benefit from all of these equally, so it's
+      // probably fine.
       effect: `
         You are \\glossterm{briefly} \\empowered, \\fortified, and \\steeled.
         This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
@@ -238,7 +239,7 @@ export const unbreakableDefense: CombatStyle = {
         crit: CONDITION_CRIT,
         hit: `
           The target is \\glossterm{briefly} \\goaded by you.
-          If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
+          If it is \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.

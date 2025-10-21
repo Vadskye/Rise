@@ -22,9 +22,8 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes damage equal to half your power during your next action.
-        \\crit ${MULTIHIT_CRIT}
+        \\injury If the target is not wearing metal body armor, it bleeds.
+        A bleeding creature takes the same damage from the strike again during your next action.
       `,
       rank: 3,
       roles: ['burst'],
@@ -34,10 +33,9 @@ export const ripAndTear: CombatStyle = {
       name: 'Rend the Hide+',
 
       effect: `
-        Make a \\glossterm{strike} that deals double damage.
-        If the target is not wearing metal body armor, it bleeds.
-        A bleeding creature takes 1d6 damage per 2 power during your next action.
-        \\crit ${MULTIHIT_CRIT}
+        Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
+        \\injury If the target is not wearing metal body armor, it bleeds.
+        A bleeding creature takes the same damage from the strike again during your next action.
       `,
       rank: 7,
       roles: ['burst'],

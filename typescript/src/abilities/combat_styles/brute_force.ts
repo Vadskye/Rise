@@ -341,17 +341,6 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Boneshatter',
-
-      effect: `
-        Make a \\glossterm{strike}.
-        If your attack result hits the target's Fortitude defense, the strike deals triple damage.
-      `,
-      rank: 5,
-      roles: ['burst'],
-    },
-
-    {
       name: 'Earsplitting Bonedrum',
 
       effect: `
@@ -528,6 +517,28 @@ export const bruteForce: CombatStyle = {
       rank: 5,
       roles: ['burst'],
       tags: ['Brawling'],
+    },
+
+    {
+      name: 'Boneshatter',
+
+      effect: `
+        Make a \\glossterm{strike}.
+        \\injury If your attack result hits the target's Fortitude defense, it immediately takes the damage from the strike again.
+      `,
+      rank: 3,
+      roles: ['execute'],
+    },
+
+    {
+      name: 'Boneshatter+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
+        \\injury If your attack result hits the target's Fortitude defense, it immediately takes the damage from the strike again.
+      `,
+      rank: 7,
+      roles: ['execute'],
     },
   ],
 };
