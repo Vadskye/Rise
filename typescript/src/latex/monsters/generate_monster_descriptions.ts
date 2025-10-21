@@ -19,22 +19,31 @@ export function generateMonsterDescriptions(): string {
     ...grimoire.getMonsterNames(),
     ...grimoire.getMonsterGroupNames(),
   ];
-  sectionNames.sort();
 
-  const latexSections = sectionNames.map((sectionName) => {
-    const monster = grimoire.getMonster(sectionName);
-    if (monster) {
-      return convertMonsterToLatex(monster);
+  const letters: Set<string> = new Set();
+  for (const sectionName of sectionNames) {
+    letters.add(sectionName[0]);
+  }
+  const orderedLetters = [...letters];
+  orderedLetters.sort();
+
+  const withSectionBookmarks: string[] = [];
+  for (const letter of orderedLetters) {
+    withSectionBookmarks.push(`\\clearpage\\phantomsection\\addcontentsline{toc}{section}{${letter}}`);
+    for (const sectionName of sectionNames.filter((sectionName) => sectionName.startsWith(letter))) {
+      const monster = grimoire.getMonster(sectionName);
+      const monsterGroup = grimoire.getMonsterGroup(sectionName);
+      if (monster) {
+        withSectionBookmarks.push(convertMonsterToLatex(monster));
+      } else if (monsterGroup) {
+        withSectionBookmarks.push(convertMonsterGroupToLatex(monsterGroup));
+      } else {
+        throw new Error(`Could not find monster by name: '${sectionName}'`);
+      }
     }
-    const monsterGroup = grimoire.getMonsterGroup(sectionName);
-    if (monsterGroup) {
-      return convertMonsterGroupToLatex(monsterGroup);
-    }
+  }
 
-    throw new Error(`Could not find monster by name: '${sectionName}'`);
-  });
-
-  return format.latexify(latexSections.map((section) => section.trim()).join('\n'));
+  return format.latexify(withSectionBookmarks.join('\n'));
 }
 
 export function convertMonsterGroupToLatex(group: MonsterGroup): string {
@@ -53,5 +62,5 @@ export function convertMonsterGroupToLatex(group: MonsterGroup): string {
     ${spacingBuffer}
 
     ${monsterText}
-  `;
+  `.trim();
 }
