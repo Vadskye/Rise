@@ -1,5 +1,6 @@
 import { Grimoire, MonsterGroup } from '@src/monsters/grimoire';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
+import { addAnimates } from '@src/monsters/individual_monsters/animates';
 import { addBeasts } from '@src/monsters/individual_monsters/beasts';
 import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
@@ -9,6 +10,7 @@ import { convertMonsterToLatex } from './convert_monster_to_latex';
 export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
   addAberrations(grimoire);
+  addAnimates(grimoire);
   addBeasts(grimoire);
   addHumanoids(grimoire);
   addUndead(grimoire);
