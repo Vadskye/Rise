@@ -66,6 +66,7 @@ function replaceGenericTerms(
   replace(/\byou are\b/g, 'it is');
   replace(/\bYou are\b/g, 'The $name is');
   replace(/\bYou and the\b/g, 'The $name and the');
+  replace(/\bYou and all\b/g, 'The $name and all');
   replace(/\bYou also control\b/g, 'The $name also controls');
   replace(/\bYou become\b/g, 'The $name becomes');
   replace(/\b, you become\b/g, ', it becomes');
@@ -89,6 +90,8 @@ function replaceGenericTerms(
     'When the $name casts this spell, it creates',
   );
   replace(/\bYou create\b/g, 'The $name creates');
+  // The preceding comma probably means we can safely use 'it' instead of 'the $name'?
+  replace(/\b, you create\b/g, ', it creates');
   replace(/\bYou regain\b/g, 'The $name regains');
   replace(/\bYou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `The $name ${maybeBriefly || ''}gains`);
   replace(/\byou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `it ${maybeBriefly || ''}gains`);
@@ -102,7 +105,6 @@ function replaceGenericTerms(
     /\bYou (\\glossterm{briefly}|briefly) cannot use\b/g,
     'The $name \\glossterm{briefly} cannot use',
   );
-  replace(/\bif you take\b/g, 'if the $name takes');
   replace(/\bact by you\b/g, 'act by the $name');
   replace(/goaded by you\b/g, 'goaded by the $name');
   replace(/\bto you\b/g, 'to it');
@@ -114,13 +116,14 @@ function replaceGenericTerms(
   );
   replace(/\bfrom your location\b/g, 'from its location');
   replace(/\bChoose yourself or\b/g, 'The $name chooses itself or');
+  replace(/\byou can choose\b/g, 'the $name can choose');
   replace(/\byour (allies\b|\\glossterm{allies})/g, 'its allies');
   replace(/\$name(.*?)the \$name\b/g, (_, mid) => `$name${mid}it`);
   replace(/\bYou must be (alive|\\glossterm{alive}) to (cast this spell|use this ability)\./g, '');
   replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
   replace(/\bAfter you attack\b/g, 'After the $name attacks');
   replace(/\byou lose\b/g, 'it loses');
-  replace(/, if you lost\b/g, ', if the $name lost');
+
   // Elite monsters cheat this kind of cost.
   const halfHpCost = monster.elite
     ? Math.floor(monster.hit_points / 4)
@@ -129,7 +132,6 @@ function replaceGenericTerms(
     /\bto be equal to half your maximum (hit points|\\glossterm{hit points})\b/g,
     `to ${halfHpCost} \\glossterm{hit points}`,
   );
-  replace(/\bIf you do\b/g, 'If it does');
   replace(/, you gain/g, ', it gains');
   replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
   replace(/\blarger than you\b/g, 'larger than the $name');
@@ -140,6 +142,21 @@ function replaceGenericTerms(
   replace(/\bsame stable surface as you\b/g, 'same stable surface as it');
   // This is tricky; "range of you" could be part of multiple grammatical patterns
   replace(/\brange of you\b/g, 'range of itself');
+  replace(/\bYou must be\b/g, 'The $name must be');
+  replace(/\bOtherwise, you\b/g, 'Otherwise, it');
+  // In general, page references don't work in monster abilities, since they typically
+  // refer to book sections that would only appear in the Comprehensive Codex.
+  replace(/ \(see \\pcref{[^}]+}\)/, '');
+  // This phrasing is typically seen with fear effects
+  replace(/\bby you\b/, 'by the $name');
+
+  replace(/\bif you take\b/g, 'if the $name takes');
+  replace(/, if you lost\b/g, ', if the $name lost');
+  replace(/\bIf you do\b/g, 'If it does');
+  replace(/(\$[nN]ame.*)\bif you\b/g, (_, prefix) => `${prefix}if it`);
+
+  // Monsters don't generally have "spells", they just have abilities
+  replace(/\bto cast this spell\b/g, 'to use this ability');
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
@@ -350,8 +367,8 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // Use the correct alternate defense and strip the whole sentence, since we've
   // incorporated it into the effect.
   ability.effect = ability.effect.replace(
-    /The attack is made against the target's (.*?) defense instead of its Armor defense./,
-    (_, altDefense) => {
+    /The attack is made against (the|each) target's (.*?) defense instead of its Armor defense./,
+    (_, __, altDefense) => {
       defense = altDefense;
       return '';
     },
@@ -376,7 +393,10 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // We intentionally exclude the rest of the strike sentence from this text.
   // The rest of the sentence typically includes modifiers, like accuracy or damage
   // modifiers, that we already calculate.
-  const postStrikeText = postStrike || '';
+  let postStrikeText = postStrike || '';
+  // This is already factored in automatically by `calculateStrikeDamage`
+  postStrikeText = postStrikeText.replace(/You use the higher of your (magical power|\\glossterm{magical power}) and your (mundane power|\\glossterm{mundane power})[^.]*.\n?/, '');
+
   const hitMatch = labeledEffects.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
   const hitText = hitMatch ? hitMatch[1] : '';
   const injuryMatch = labeledEffects.match(/\\injury(.*?)(\\crit|\\miss|$)/s);
@@ -472,12 +492,11 @@ function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbi
   return accuracyModifierText;
 }
 
-export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility): string {
-  const effect = ability.effect!;
+export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAbility): string {
   const weapon = ability.weapon!;
 
   // We only check the sentence of the strike to avoid catching conditional clauses.
-  const strikeSentenceMatch = effect.match(/([mM]ake[^.]+strike[^.]*\.)/);
+  const strikeSentenceMatch = ability.effect.match(/([mM]ake[^.]+strike[^.]*\.)/);
   if (!strikeSentenceMatch) {
     throw new Error(
       `${monster.name}.${ability.name}: Cannot calculate strike damage for an ability that does not make a strike`,
@@ -534,7 +553,7 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
   // TODO: handle extra damage dice.
   // We rely on `replaceGenericTerms` to make sure that flat damage is pre-converted into
   // numbers instead of a scaling expression.
-  const extraDamageDiceMatch = effect.match(
+  const extraDamageDiceMatch = ability.effect.match(
     /\b(\d+)d(\d+) (extra damage|\\glossterm{extra damage})/,
   );
   if (extraDamageDiceMatch) {
@@ -546,14 +565,19 @@ export function calculateStrikeDamage(monster: Creature, ability: ActiveAbility)
     }
   }
 
-  const extraFlatDamageMatch = effect.match(/ (\d+) (extra damage|\\glossterm{extra damage})/);
+  const extraFlatDamageMatch = ability.effect.match(/ (\d+) (extra damage|\\glossterm{extra damage})/);
   if (extraFlatDamageMatch) {
     extraFlatDamage = Number(extraFlatDamageMatch[1]);
   }
 
+  let relevantPower = monster.getRelevantPower(ability.isMagical);
+  if (/higher of.*mundane.*magical/.test(ability.effect)) {
+    relevantPower = Math.max(monster.getRelevantPower(true), monster.getRelevantPower(false));
+  }
+
   const damageFromPower =
     globalDamageMultiplier *
-    (Math.floor(monster.getRelevantPower(ability.isMagical) * powerMultiplier) + extraFlatDamage);
+    (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
@@ -626,8 +650,19 @@ export function reformatAttackConsequences(monster: Creature, ability: ActiveAbi
   // For convenience
   const attack = ability.attack!;
 
-  // This phrasing is typically seen with fear effects
-  attack.hit = attack.hit.replace(/\bby you\b/, 'by the $name');
+  // This usually comes from poisons.
+  attack.hit = attack.hit.replace(/\bis equal to your accuracy with this (spell|ability)\b/, () => {
+    // We need the full $accuracy string, including any local modifiers, that was already
+    // calculated in `reformatAttackTargeting`.
+    const accuracyMatch = attack.targeting.match(/\$accuracy([+-]\d+)?/);
+    // In the future, it's possible that we should default to monster.accuracy. For now,
+    // this is surprising, so throw an error.
+    if (!accuracyMatch) {
+      throw new Error(`${monster.name}.${ability.name}: Can't find existing $accuracy value`);
+    }
+    const accuracyText = `$accuracy${accuracyMatch[1] || ''}`;
+    return `is ${accuracyText}`;
+  });
 
   attack.hit = replaceDamageText(monster, ability, attack.hit);
   if (attack.crit) {
