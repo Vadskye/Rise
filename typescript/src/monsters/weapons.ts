@@ -1,5 +1,3 @@
-// For now, we only allow natural weapons. If we implement support for all manufactured
-// weapons, we'll need to be more organized.
 // If the name is plural, it indicates that the monster is using two of the weapon to
 // make a dual strike.
 const MONSTER_WEAPONS_LIST = [
