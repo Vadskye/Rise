@@ -221,7 +221,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       roles: ['burst'],
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 4.' },
+      scaling: 'damage',
     },
 
     {
@@ -266,7 +266,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       roles: ['clear'],
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 5.' },
+      scaling: 'damage',
     },
 
     {
@@ -628,7 +628,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       roles: ['clear'],
-      scaling: { special: 'The damage increases by 1d6 for each rank beyond 3.' },
+      scaling: 'damage',
     },
 
     {
@@ -641,7 +641,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       roles: ['clear'],
-      scaling: { special: 'The damage increases by 2d8 for each rank beyond 6.' },
+      scaling: 'damage',
     },
     {
       name: 'Visual Illusion',
