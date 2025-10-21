@@ -2432,7 +2432,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     effect: `
-      Choose up to five \\trait{mindless} \\creaturetag{undead} creatures within \\medrange.
+      Choose up to five \\trait{mindless} \\creaturetype{undead} creatures within \\medrange.
       The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
       Each target become your servant, and will obey your commands.
 
@@ -2452,7 +2452,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one minute',
     effect: `
-      All \\trait{mindless} \\creaturetag{undead} perceive you to be another undead similar to themselves.
+      All \\trait{mindless} \\creaturetype{undead} perceive you to be another undead similar to themselves.
       This generally means that they will not attack you or interfere with you, though they may still retaliate if provoked.
     `,
     rank: 3,
