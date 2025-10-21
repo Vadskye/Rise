@@ -52,12 +52,13 @@ export function convertMonsterGroupToLatex(group: MonsterGroup): string {
     .join('\n\\vspace{1em}\n');
 
   const spacingBuffer = group.description || group.knowledge ? '\\vspace{0.5em}' : '';
+  const artText = group.hasArt ? `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${group.name}}` : '';
 
   // TODO: render art, knowledge. See `monster_group.rs`.
   return `
     \\newpage
     \\section{${group.name}}
-
+    ${artText}
     ${group.description || ''}
     ${spacingBuffer}
 
