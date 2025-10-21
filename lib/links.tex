@@ -110,15 +110,15 @@
     \label{#1}
 }
 
-\DeclareDocumentCommand{\creaturetag}{o m}
+\DeclareDocumentCommand{\creaturetype}{o m}
 {
     \IfValueTF{#1}
-    {\termlink[#1]{#2}{creaturetag}}
-    {\termlink{#2}{creaturetag}}
+    {\termlink[#1]{#2}{creaturetype}}
+    {\termlink{#2}{creaturetype}}
 }
-\DeclareDocumentCommand{\creaturetagdef}{m m}
+\DeclareDocumentCommand{\creaturetypedef}{m m}
 {
-    \termdef{#1}[#2]{creaturetag}
+    \termdef{#1}[#2]{creaturetype}
     \label{#1}
 }
 
