@@ -158,11 +158,11 @@ export const umbramancy: MysticSphere = {
         injury: `
           As a \\glossterm{condition}, the target treats all areas of \\glossterm{dim illumination} as \\glossterm{difficult terrain}.
         `,
+        // Normally grasp spells would require touch and a free hand, but your shadow touches
+        // the target, not you.
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
 
-          % Normally grasp spells would require touch and a free hand, but your shadow touches
-          % the target, not you.
           Make an attack vs. Brawn against something adjacent to you.
         `,
       },
