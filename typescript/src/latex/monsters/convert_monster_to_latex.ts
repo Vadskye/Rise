@@ -19,7 +19,6 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   checkValidMonster(monster);
 
   const hasParentGroup = Boolean(parentGroupName);
-  const sectionName = hasParentGroup ? 'monsubsubsection' : 'monsubsection';
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? '[Elite]' : '';
   const sizeStarText = hasParentGroup ? '*' : '';
@@ -31,7 +30,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     ${pagebreakText}
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
-        \\${sectionName}{${monster.name}}{${monster.level} ${format.uppercaseFirst(monster.base_class)}}${eliteText}
+        \\monsubsection{${monster.name}}{${monster.level} ${format.uppercaseFirst(monster.base_class)}}${eliteText}
         \\monstersize${sizeStarText}{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
         ${genArtText(monster, parentGroupName)}
     \\end{minipage}
