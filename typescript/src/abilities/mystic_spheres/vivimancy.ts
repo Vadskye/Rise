@@ -841,5 +841,45 @@ export const vivimancy: MysticSphere = {
       roles: ['burst', 'generator'],
       scaling: 'damage',
     },
+
+    {
+      name: 'Siphon Protection',
+
+      // Single defense is 1.0 EA. One rank of area gives a r0 spell with r1 area, which
+      // is enough for 0.4 ranks of buff.
+      attack: {
+        hit: `
+          The target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
+        `,
+        targeting: `
+          Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
+          Make an attack vs. Fortitude against up to two creatures within \\shortrange.
+          Then, you \\glossterm{briefly} gain a +2 bonus to that defense.
+          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+        `,
+      },
+      rank: 1,
+      roles: ['generator', 'softener'],
+      scaling: 'accuracy',
+    },
+
+    {
+      name: 'Intense Siphon Protection',
+
+      // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks.
+      attack: {
+        hit: `
+          The target is \\glossterm{briefly} \\stunned.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude against up to two creatures within \\shortrange.
+          Then, you are \\glossterm{briefly} \\braced.
+          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
+        `,
+      },
+      rank: 5,
+      roles: ['generator', 'softener'],
+      scaling: 'accuracy',
+    },
   ],
 };
