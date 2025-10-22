@@ -8,6 +8,7 @@ const MONSTER_WEAPONS_LIST = [
   'club',
   'darts',
   'flail',
+  'fists',  // Dual-wielding punch/kick, assuming monk bonus
   'heavy flail',
   'greatclub',
   'greataxe',
@@ -40,6 +41,7 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     club: null,
     darts: 'Thrown (30/60)',
     flail: null, // Ignore Maneuverable tag
+    fists: null,
     ['heavy flail']: null, // Ignore Maneuverable tag
     greatclub: null,
     greataxe: 'Keen',
@@ -78,6 +80,7 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
     bite: false,
     claws: false,
     club: true,
+    fists: false,
     darts: true,
     flail: true,
     ['heavy flail']: true,
@@ -108,6 +111,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     claws: xdy(2, 4),
     club: xdy(1, 6),
     darts: xdy(2, 4),
+    fists: xdy(2, 4),
     flail: xdy(1, 8),
     ['heavy flail']: xdy(1, 10), // Ignore Maneuverable tag
     greatclub: xdy(1, 10),
@@ -138,6 +142,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     claws: 2,
     club: 0,
     darts: 0, // +3 light offsets -3 dual strike
+    fists: 2,
     flail: -1,
     ['heavy flail']: -1,
     greatclub: 0,
@@ -170,6 +175,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       claws: 0.5,
       club: 0.5,
       darts: 0.5,
+      fists: 0.5,
       flail: 0.5, // Assume one-handing.
       ['heavy flail']: 1,
       greatclub: 1,

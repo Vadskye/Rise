@@ -3,6 +3,7 @@ import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addAnimates } from '@src/monsters/individual_monsters/animates';
 import { addBeasts } from '@src/monsters/individual_monsters/beasts';
 import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
+import { addPlaneforged } from '@src/monsters/individual_monsters/planeforged';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
 import * as format from '@src/latex/format';
 import { convertMonsterToLatex } from './convert_monster_to_latex';
@@ -13,6 +14,7 @@ export function generateMonsterDescriptions(): string {
   addAnimates(grimoire);
   addBeasts(grimoire);
   addHumanoids(grimoire);
+  addPlaneforged(grimoire);
   addUndead(grimoire);
 
   const sectionNames: string[] = [
