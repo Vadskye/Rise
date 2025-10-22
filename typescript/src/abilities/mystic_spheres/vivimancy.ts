@@ -199,9 +199,9 @@ export const vivimancy: MysticSphere = {
       cost: 'Three \\glossterm{fatigue levels} from the target.',
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains \\hpranksix and removes one of its \\glossterm{vital wounds}.
+        The target regains \\hprankseven and removes one of its \\glossterm{vital wounds}.
       `,
-      rank: 5,
+      rank: 4,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
     },
@@ -866,18 +866,19 @@ export const vivimancy: MysticSphere = {
     {
       name: 'Intense Siphon Protection',
 
-      // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks.
+      // Brief stun is 1.4 EA, so r1. Braced requires 4 ranks. Drop by a rank since the
+      // brace is conditional.
       attack: {
         hit: `
           The target is \\glossterm{briefly} \\stunned.
+          Then, you are briefly \\braced.
+          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
         targeting: `
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.
-          Then, you are \\glossterm{briefly} \\braced.
-          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
       },
-      rank: 5,
+      rank: 4,
       roles: ['generator', 'softener'],
       scaling: 'accuracy',
     },
