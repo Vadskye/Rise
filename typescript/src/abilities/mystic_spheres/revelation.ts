@@ -118,8 +118,8 @@ export const revelation: MysticSphere = {
       tags: [],
     },
 
-    // Focus is 0.4 EA, so r1 gives 0.8 EA of debuff, which is just enough for brief
-    // frighten. We can increase to r2 to get a r3 area.
+    // Focus is 0.7 EA. Brief frighten is 0.8 EA, so the total is 1.5
+    // EA. We cheat by 0.1 EA to get an extra area tier.
     {
       name: 'Visions of Certain Doom',
 
@@ -141,8 +141,7 @@ export const revelation: MysticSphere = {
       tags: ['Emotion', 'Visual'],
     },
 
-    // Brief focus is 0.4 EA. To get brief frightened by all, we would need 1.7 / 0.6 = 2.8
-    // EA, which we can get at r7 with limited scope.
+    // 2.4 EA is r6, or r5 with limited scope if we cheat on area again.
     {
       name: 'Visions of Omnipresent Doom',
 
@@ -150,7 +149,7 @@ export const revelation: MysticSphere = {
         name: 'visions of certain doom',
         exceptThat: 'each target is frightened of all creatures, not just you.',
       },
-      rank: 7,
+      rank: 5,
       roles: ['generator', 'flash'],
       scaling: 'accuracy',
       tags: ['Emotion', 'Visual'],
@@ -553,6 +552,7 @@ export const revelation: MysticSphere = {
       rank: 2,
       roles: ['maim'],
       scaling: 'accuracy',
+      tags: ['Visual'],
     },
 
     {
@@ -574,6 +574,25 @@ export const revelation: MysticSphere = {
       `,
       rank: 7,
       roles: ['boon'],
+    },
+
+    // Injury brief confusion is r3, add +1 area for r5 area total
+    {
+      name: "Baffling Visions",
+
+      attack: {
+        hit: `
+          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+        `,
+        targeting: `
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.
+        `,
+      },
+
+      rank: 4,
+      roles: ['maim'],
+      scaling: 'accuracy',
+      tags: ['Visual'],
     },
   ],
 };

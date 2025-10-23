@@ -282,17 +282,16 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rippling Earthwave',
 
-      // r1 area is about halfway between "ranged" and "melee"; call it 1.4 EA. That gives
-      // 0.2 EA for empowerment.
+      // r1 area is about halfway between "ranged" and "melee"; call it 1.4 EA. That lets
+      // us get enemies-only.
       attack: {
         hit: `The target is knocked \\prone.`,
         targeting: `
-          Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in in a \\medarea cone from you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Make an attack vs. Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in in a \\medarea cone from you.
         `,
       },
       rank: 2,
-      roles: ['generator', 'flash'],
+      roles: ['flash'],
       scaling: 'accuracy',
     },
 

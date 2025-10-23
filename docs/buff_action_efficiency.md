@@ -120,7 +120,7 @@ Applies 100% of the time
 
 ### Empowered: 0.4
 
-Empowered is roughly 40% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling.
+At rank 3+, Empowered is roughly 40% more damage, averaging arbitrarily between strikes and spells, which have different dice scaling. However, it is not very effective at ranks 1 or 2. In general, abilities that apply empowered as a buff should be rank 3 or higher, or at least have strong scaling so they remain relevant at higher ranks.
 
 ### Enraged: -0.2
 
@@ -306,54 +306,38 @@ Removing conditions isn't exactly a buff, but it occupies a similar narrative sp
 
 ### Buff and damage effects
 
-Consider a standard damage effect to be 1 EA. For each damage rank you drop, you lose about 20% damage, so you can get 0.2 EA for self-buffs, to a maximum of 0.8 EA. That you can get some standard effects:
+drX:
+* -1d / -20% damage:
+  * 0.3 EA buff effect guaranteed
+  * 0.4 EA buff effect on hit
+  * 0.6 EA buff effect on injury
+* -2d / -35% damage:
+  * 0.4 EA buff effect guaranteed
+  * 0.6 EA buff effect on hit
+  * 0.8 EA buff effect on injury
+* -3d / -50% damage:
+  * 0.6 EA buff effect guaranteed
+  * 0.8 EA buff effect on hit
+  * 1.0 EA buff effect on injury
 
-Rank X:
-* rX-1 damage:
-  * Then brief 0.2 EA
-* rX-2 damage:
-  * First brief 0.2 EA
-  * Then brief 0.4 EA (focused, honed, steeled...)
-  * And 0.4 EA this round (focused, honed, steeled...)
-* rX-3 damage:
-  * First briefly focused
-  * Then briefly shielded / and shielded this round
-
-Maneuvers:
+Strike-based damage:
 * Rank 1:
-  * -2 accuracy strike, then brief 0.2 EA buff
-  * -1 accuracy strike, then brief 0.2 EA buff on hit?
+  * -2 accuracy strike, then 0.4 EA buff on hit
+  * -1 accuracy strike, then 0.3 EA buff on hit
 * Rank 3:
-  * -1 accuracy strike, then brief 0.4 EA buff
-  * Strike, then brief 0.3 EA buff
-  * Strike, then 0.4 EA buff on hit
-  * Brief 0.2 EA buff, then strike
+  * Standard strike is the equivalent of -1d
 * Rank 5:
-  * double damage strike, then brief 0.2 EA buff
-  * strike, then 0.6 EA buff
+  * Double damage strike is the equivalent of -1d
 * Rank 7:
-  * triple damage strike, then brief 0.2 EA buff
-  * -1 accuracy triple damage strike, then brief 0.3 EA buff
-  * -2 accuracy triple damage strike, then brief 0.4 EA buff
-  * +2 accuracy double damage strike, then brief 0.4 EA buff
-  * -1 accuracy double damage strike, then brief 0.6 EA buff
-
-You can pay one fatigue level to get either +1dr or +0.2EA, but not both. This allows granting braced / maximized / primed with rX-3 damage attached.
+  * Triple damage strike is the equivalent of -1d
 
 ### Buff and debuff effects
 
-Every 0.1 EA of buff removes 10% of the EA from the debuff, but does not reduce the debuff area. Examples:
-
-* Rank 1:
-  * 0.2 EA buff, 1.4 * 0.8 = 1.1 EA debuff, r1 area
-  * 0.4 EA buff, 1.4 * 0.6 = 0.8 EA debuff, r1 area
-  * 0.6 EA buff, 1.4 * 0.6 = 0.6 EA debuff, r1 area
-* Rank 4:
-  * 0.3 EA buff, 2.0 * 0.7 = 1.4 EA debuff, r4 area
-
-Much like with damage spells, you start with a standard debuff spell. For every rank you drop the debuff by, including area, you gain 0.2 EA of buff, to a maximum of 0.8 EA. There should never be buff + debuff + damage effects, because that's just too much going on in one spell.
-
-Note that this is somewhat unfair, since you normally get 0.8 EA of buff at r1 and 1.2 EA of buff at r7. We could use a more nuanced calculation, such as saying that a r7 effect with 0.4 EA of buff gets 2/3 debuff effectiveness instead of 0.6 debuff effectiveness. However, this isn't really worth the complexity, and debuffs already have strong scaling with level, so a simpler approximation is fine.
+We generally assume about a 60-70% hit rate, so divide buff EA by 0.6 to get the debuff EA value:
+* 0.3 EA buff costs 0.5 EA from the debuff
+* 0.4 EA buff costs 0.7 EA from the debuff
+* 0.6 EA buff costs 1 EA from the debuff
+* 0.8 EA buff (max) costs 1.3 EA from the debuff
 
 ### Pure buff effects
 

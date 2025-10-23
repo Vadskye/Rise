@@ -515,9 +515,9 @@ export const umbramancy: MysticSphere = {
     },
 
     {
-      // Personal 20% failure is about 0.4 EA. That gives room for 1 EA of debuff at a
-      // base area rank of r0. Brief frighten is 0.6 EA, so we have +3 area ranks to
-      // spend, reaching r3 area.
+      // Personal 20% failure is about 0.4 EA as a buff, so it costs 0.7 EA on a debuff.
+      // Brief frighten is 0.6 EA, so 1.3 EA base area. That means we can spend a rank to
+      // get r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
         hit: `The target is \\glossterm{briefly} \\frightened of you.`,
