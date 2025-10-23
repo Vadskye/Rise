@@ -36,7 +36,7 @@ export const revelation: MysticSphere = {
     {
       name: 'Learn from Failure',
 
-      // Any two focused is 1 EA. Drop to r2 for the condition.
+      // Any two focused is 1 EA. Drop to r2 for the prereq.
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target that missed a creature with an attack becomes \\focused this round.
@@ -529,7 +529,7 @@ export const revelation: MysticSphere = {
         `,
       },
 
-      rank: 2,
+      rank: 3,
       roles: ['narrative'],
       scaling: 'accuracy',
       type: 'Sustain (standard)',
