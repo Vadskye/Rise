@@ -14,17 +14,6 @@ export function addPlaneforged(grimoire: Grimoire) {
     {
       name: 'Imps',
       hasArt: false,
-      sharedInitializer: (creature: Creature) => {
-        creature.addPassiveAbility({
-          name: 'Soulless',
-          effect: `
-            The $name has no soul.
-            If it dies, it cannot be resurrected.
-          `,
-          isMagical: false,
-        });
-        creature.addVulnerability('Water');
-      },
     },
     [
       [
@@ -38,6 +27,7 @@ export function addPlaneforged(grimoire: Grimoire) {
             level: 5,
             size: 'small',
           });
+          creature.addTrait('soulless');
           creature.setBaseAttributes([3, 5, 2, 1, 0, -2]);
           creature.addWeaponMult('fists', { tags: ['Fire'] });
         },
@@ -51,50 +41,43 @@ function addAngels(grimoire: Grimoire) {
     const rank = creature.calculateRank();
     let teleportRange: string;
     if (rank >= 7) {
-      teleportRange = '\extrange';
+      teleportRange = '\\extrange';
     } else if (rank >= 5) {
-      teleportRange = '\distrange';
+      teleportRange = '\\distrange';
     } else if (rank >= 3) {
-      teleportRange = '\longrange';
+      teleportRange = '\\longrange';
     } else {
-      teleportRange = '\medrange';
+      teleportRange = '\\medrange';
     }
 
-    creature.addPassiveAbility({
-      name: 'Soulless',
-      effect: `
-        The $name has no soul.
-        If it dies, it cannot be resurrected.
-      `,
-      isMagical: false,
-    });
+    creature.addTrait('soulless');
     creature.addImmunity('Frightened');
     creature.addImmunity('Panicked');
-    creature.addSpell('Divine Judgment');
-    creature.addSpell('Word of Faith');
+
+    creature.addPassiveAbility({
+      name: 'Divine Radiance',
+      effect: `
+        The $name constantly radiates \\glossterm{bright illumination} in a \\largearea radius.
+      `,
+    });
     creature.addCustomSpell({
       name: 'Divine Translocation',
       effect: `
-        The $name teleports horizontally into an unoccupied location within ${teleportRange}.
-        If the destination is invalid, this ability fails with no effect.
+        The $name \\glossterm{teleports} into an unoccupied location within ${teleportRange}.
+        It can teleport in any direction and does not need to land on stable ground.
       `,
-      isMagical: true,
       usageTime: 'elite',
     });
     creature.addPassiveAbility({
       name: 'Divine Rituals',
       effect: `
-        The $name can perform any ritual of rank ${rank} or lower from the \sphere{channel divinity} or \sphere{prayer} mystic spheres.
-        It does not need to expend material components or increase its \glossterm{fatigue level} to perform those ritauls.
+        The $name can perform any ritual of rank ${rank} or lower from the \\sphere{channel divinity} or \\sphere{prayer} mystic spheres.
+        It does not need to expend material components or increase its \\glossterm{fatigue level} to perform those rituals.
       `,
       isMagical: true,
     });
 
-    if (creature.getCustomMovementSpeeds().length === 0) {
-      creature.addCustomMovementSpeed('Fly (fast)');
-      creature.addCustomMovementSpeed('Land (normal)');
-    }
-    creature.addCustomSense('Low-light vision');
+    creature.addCustomMovementSpeed('Fly (normal, 60 ft. limit)');
   }
 
   grimoire.addMonsterGroup(
@@ -126,19 +109,16 @@ function addAngels(grimoire: Grimoire) {
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'neutral good',
-            base_class: 'skirmisher',
+            base_class: 'leader',
             elite: true,
             creature_type: 'planeforged',
             level: 16,
             size: 'huge',
           });
-          creature.setBaseAttributes([5, 6, 4, 4, 4, 8]);
+          creature.setBaseAttributes([8, 8, 8, 8, 8, 8]);
           creature.setProperties({
             has_art: true,
           });
-          creature.setTrainedSkills(['awareness', 'endurance']);
-          creature.addSpell('Combustion');
-          creature.addWeaponMult('ram', { tags: ['Fire'] });
           creature.setKnowledgeResults({
             normal: `
               Seraphim are six-winged angels of immense power.
@@ -147,9 +127,13 @@ function addAngels(grimoire: Grimoire) {
             `,
             hard: `
               Despite their serpentine appearance, seraphim have beautiful singing voices.
-              They sing almost constaintly both in and out of combat.
+              They sing almost constantly both in and out of combat.
             `,
           });
+          creature.setTrainedSkills(['awareness', 'endurance']);
+          creature.addSpell('Mighty Pyroclasm', { usageTime: 'elite' });
+          creature.addSpell('Immolating Fireball', { usageTime: 'elite' });
+          creature.addWeaponMult('bite', { tags: ['Fire'] });
         },
       ],
       [
@@ -160,10 +144,10 @@ function addAngels(grimoire: Grimoire) {
             base_class: 'warrior',
             elite: true,
             creature_type: 'planeforged',
-            level: 14,
+            level: 13,
             size: 'large',
           });
-          creature.setBaseAttributes([5, 5, 5, 4, 6, 6]);
+          creature.setBaseAttributes([7, 7, 7, 7, 7, 7]);
           creature.setProperties({
             has_art: true,
           });
@@ -174,7 +158,8 @@ function addAngels(grimoire: Grimoire) {
             'intimidate',
             'social_insight',
           ]);
-          creature.addManeuver('Double Strike');
+          creature.addWeaponMult('greatsword');
+          creature.addSpell('Intense Visions of Weakness')
           creature.setKnowledgeResults({
             normal: `
               Justicars enforce justice on good-aligned planes.
@@ -206,7 +191,7 @@ function addAngels(grimoire: Grimoire) {
             base_class: 'skirmisher',
             elite: true,
             creature_type: 'planeforged',
-            level: 12,
+            level: 10,
             size: 'large',
           });
           creature.setBaseAttributes([4, 5, 7, 4, 4, 6]);
@@ -215,7 +200,7 @@ function addAngels(grimoire: Grimoire) {
           });
           creature.setTrainedSkills(['awareness', 'endurance']);
           creature.addSpell('Pyroclasm');
-          creature.addManeuver('Whirlwind', { weapon: 'ram' as const });
+          creature.addManeuver('Whirlwind', { weapon: 'ram' });
           creature.addCustomMovementSpeed('Fly (fast)');
           creature.addCustomMovementSpeed('Land (fast)');
           creature.setKnowledgeResults({
@@ -245,7 +230,7 @@ function addAirElementals(grimoire: Grimoire) {
     creature.addPassiveAbility({
       name: 'Floating',
       effect: `
-        The $name is \glossterm{floating}.
+        The $name is \\glossterm{floating}.
       `,
       isMagical: false,
     });
@@ -568,8 +553,8 @@ function addDemonspawn(grimoire: Grimoire) {
             name: 'Spiked Body',
             effect: `
               Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.
-              The $name makes an $accuracy \glossterm{reactive attack} vs. Armor against the creature that attacked it.
-              \hit $dr1 damage.
+              The $name makes an $accuracy \\glossterm{reactive attack} vs. Armor against the creature that attacked it.
+              \\hit $dr1 damage.
             `,
             isMagical: false,
             usageTime: 'triggered',
@@ -642,7 +627,7 @@ function addMagmaElementals(grimoire: Grimoire) {
     // Generic Extra Damage (based on Maneuver::GenericExtraDamage)
     // The Rust code uses Weapon::ram() for this.
     creature.addManeuver('Generic Extra Damage', {
-      weapon: 'ram' as const,
+      weapon: 'ram',
       tags: ['Earth'],
     });
   }
@@ -818,15 +803,15 @@ function addFormians(grimoire: Grimoire) {
             name: 'Poisonous Stinger',
             effect: `
               The $name makes a $accuracy attack vs. Armor with its stinger.
-              \hit $dr1 damage.
-              \injury The target becomes poisoned by drone venom.
+              \\hit $dr1 damage.
+              \\injury The target becomes poisoned by drone venom.
             `,
-            weapon: 'stinger' as const,
+            weapon: 'stinger',
           });
           creature.addCustomSpell({
             name: 'Drone Venom',
             effect: `
-              Drone venom is an injury-based liquid \glossterm{poison}.
+              Drone venom is an injury-based liquid \\glossterm{poison}.
               The poison's accuracy is $accuracy.
               Its stage 1 effect inflicts 2d8 poison damage per poison stage.
             `,
@@ -850,4 +835,3 @@ function addFormians(grimoire: Grimoire) {
     ],
   );
 }
-
