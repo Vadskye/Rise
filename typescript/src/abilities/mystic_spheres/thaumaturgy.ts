@@ -413,10 +413,11 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         You are \\braced this round.
+        This is a \\atSwift effect, so it protects you from attacks during the current phase.
         In addition, whenever a creature within \\medrange of you makes a \\magical attack against you this round, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['turtle'],
       tags: ['Swift'],
     },
@@ -440,43 +441,43 @@ export const thaumaturgy: MysticSphere = {
       type: 'Sustain (attuneable, minor)',
     },
 
+    // +1dr for prereq
     {
-      name: 'Font of Power',
+      name: 'Negate',
 
-      // r0 area gives drX+1, drop to drX-1 for buff effect.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
         `,
-        missGlance: true,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+          This attack automatically fails if the target does not have any \\magical abilities.
         `,
       },
-      rank: 2,
-      roles: ['generator'],
+      rank: 1,
+      roles: ['burst'],
       scaling: 'damage',
-      tags: ['Swift'],
     },
 
+    // +1dr for prereq, -1dr for debuff. TODO: exact EA.
     {
-      name: 'Mighty Font of Power',
+      name: 'Nullify',
 
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
-        missGlance: true,
+        injury: `
+          The target is \\glossterm{briefly} unable to use any \\magical abilities that would require a \\glossterm{standard action} or \\glossterm{elite action}.
+        `,
         targeting: `
-          Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Make an attack vs. Fortitude against one creature within \\shortrange.
+          This attack automatically fails if the target does not have any \\magical abilities.
         `,
       },
       rank: 5,
-      roles: ['generator'],
+      roles: ['burst', 'maim'],
       scaling: 'damage',
-      tags: ['Swift'],
     },
 
     {
@@ -527,21 +528,22 @@ export const thaumaturgy: MysticSphere = {
       tags: ['Swift'],
     },
 
-    // +1dr for condition
+    // +1dr for prereq, -1dr for empowered
     {
       name: 'Extract Magic',
 
       attack: {
         hit: `
-          \\damagerankfive, and any \\glossterm{extra damage} is doubled.
+          \\damagerankthree.
+          You are also \\glossterm{briefly} \\empowered.
         `,
         targeting: `
-          Make an attack vs. Fortitude against a creature within \\shortrange.
+          Make an attack vs. Fortitude against a creature within \\medrange.
           This attack automatically fails if the target does not have any \\magical abilities.
         `,
       },
       rank: 3,
-      roles: ['burst'],
+      roles: ['burst', 'generator'],
       scaling: 'damage',
     },
 
@@ -550,7 +552,8 @@ export const thaumaturgy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+          You are also \\glossterm{briefly} \\empowered.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange.
@@ -558,7 +561,7 @@ export const thaumaturgy: MysticSphere = {
         `,
       },
       rank: 6,
-      roles: ['burst'],
+      roles: ['burst', 'generator'],
       scaling: 'damage',
     },
 
