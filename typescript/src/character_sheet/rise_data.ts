@@ -207,6 +207,7 @@ const RISE_TRAITS_LIST = [
   'scent',
   'sightless',
   'simple-minded',
+  'soulless',
   'telepathy',
   'tremorsense',
   'tremorsight',
