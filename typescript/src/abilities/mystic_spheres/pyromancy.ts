@@ -82,10 +82,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Stoke the Fires',
 
-      // This has the damage of a r0 spell because of the buff
+      // -2dr for empower buff
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -93,7 +93,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
-      rank: 1,
+      rank: 3,
       roles: ['generator'],
       scaling: 'damage',
     },
@@ -101,7 +101,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Stoke the Bonfire',
 
-      // This has the damage of a r4 spell because of the pre-damage buff
+      // -3dr for pre-applied empower buff
       attack: {
         hit: `
           \\damagerankfour.
@@ -112,7 +112,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Then, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
-      rank: 5,
+      rank: 6,
       roles: ['generator'],
       scaling: 'damage',
     },
@@ -120,12 +120,13 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Kindling',
 
-      // Normally, a maximizing spell would require R-3 damage. This gets R-2 because of the
-      // self-targeting, and R-1 from the fatigue level.
+      // Normally, a maximizing spell would require drX-3 damage and would only work on
+      // hit. This pays self-targeting instead of on-hit, and gets drX+1 from the fatigue
+      // level, for a total of drX-2.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
         `,
         missGlance: true,
         targeting: `
@@ -133,7 +134,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Then, you are \\glossterm{briefly} \\maximized.
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['exertion', 'generator'],
       scaling: 'damage',
     },
@@ -141,12 +142,10 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Desperate Pyre',
 
-      // Normally, a maximizing spell would require R-3 damage. This gets R-2 because of the
-      // self-targeting, and R-1 from the fatigue level.
       cost: 'One \\glossterm{fatigue level}.',
       attack: {
         hit: `
-          \\damagerankfive.
+          \\damageranksix.
         `,
         missGlance: true,
         targeting: `
@@ -154,7 +153,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Then, you are \\glossterm{briefly} \\maximized.
         `,
       },
-      rank: 6,
+      rank: 7,
       roles: ['exertion', 'generator'],
       scaling: 'damage',
     },

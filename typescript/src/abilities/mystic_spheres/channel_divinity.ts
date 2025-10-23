@@ -434,8 +434,7 @@ export const channelDivinity: MysticSphere = {
       scaling: 'damage',
     },
 
-    // 0.4 EA, so -40% debuff EA. Brief stun is normally 1.4 EA, so 2.3 EA = rank 6 with
-    // this, or rank 5 with limited scope.
+    // Brief stun is 1.4 EA, so 2.1 EA with empower.
     {
       name: 'Greater Word of Power',
 
@@ -444,7 +443,7 @@ export const channelDivinity: MysticSphere = {
           The target is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
+          Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
@@ -453,7 +452,8 @@ export const channelDivinity: MysticSphere = {
       scaling: 'accuracy',
     },
 
-    // Brief + HP deafen is normally ~0.9 EA, so 1.5 EA with empower. Call that rank 1.
+    // Brief + HP deafen is normally ~0.9 EA, so 1.6 EA with empower. Call that rank 1,
+    // because even the fancy version of deafen is still pretty weak.
     {
       name: 'Word of Power',
 

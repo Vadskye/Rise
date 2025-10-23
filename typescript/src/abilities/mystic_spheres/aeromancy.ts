@@ -470,21 +470,20 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     },
     // A standard debuff + damage r4 spell would deal dr1 with a r4 area. Increase to dr2
     // for double defense.
-    // Standard debuff rank for a r4 damage + debuff spell would be 1.0. Push is a little
-    // weak for that, so we also add empowered.
+    // Standard debuff rank for a r4 damage + debuff spell would be 1.0. Clockwise push is
+    // actually quite weak for that, so we add +1dr.
     {
       name: 'Hurricane',
 
       attack: {
         hit: `
-          \\damageranktwo.
+          \\damagerankthree.
           In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
           Its final position should be the same distance from you as its starting position.
         `,
         missGlance: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
       // narrative: '',
@@ -498,7 +497,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       functionsLike: {
         name: 'hurricane',
         exceptThat:
-          'the damage increases to \\damagerankfour, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
+          'the damage increases to \\damagerankfive, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
       },
       // narrative: '',
       rank: 6,
@@ -688,10 +687,10 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       name: 'Shielding Windblast',
 
       // dr-2 for buff effect. Tiny radius from self is r0, so that would normally be
-      // drX+1.
+      // drX+1, or drX+2 for double defense.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damageranktwo.
         `,
         missGlance: true,
         targeting: `
@@ -708,11 +707,9 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Mighty Shielding Windblast',
 
-      // dr-2 for buff effect. Tiny radius from self is r0, so that would normally be
-      // drX+1.
       attack: {
         hit: `
-          \\damagerankfour.
+          \\damagerankfive.
         `,
         missGlance: true,
         targeting: `

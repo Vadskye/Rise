@@ -414,6 +414,20 @@ export const telekinesis: MysticSphere = {
     },
 
     {
+      name: 'Greater Kinetic Redirection',
+
+      effect: `
+        You are \\shielded this round.
+        In addition, whenever a creature attacks you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        It cannot choose to reduce its accuracy or damage against itself.
+        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
+      `,
+      rank: 7,
+      roles: ['turtle'],
+      tags: ['Swift'],
+    },
+
+    {
       name: 'Levitate',
 
       effect: `
