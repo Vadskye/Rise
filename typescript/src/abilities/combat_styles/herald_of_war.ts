@@ -462,5 +462,31 @@ export const heraldOfWar: CombatStyle = {
       roles: ['generator', 'flash'],
       tags: ['Auditory'],
     },
+
+    {
+      name: 'Earsplitting Bonedrum',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit You and the target are \\glossterm{briefly} \\deafened.
+      `,
+      rank: 1,
+      roles: ['softener'],
+      tags: ['Auditory'],
+    },
+
+    {
+      name: 'Erupting Bonedrum',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\hit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
+        This is an \\atAuditory effect.
+        On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike, ignoring any damage increase from \\glossterm{critical hits} with the strike.
+      `,
+      rank: 3,
+      roles: ['clear'],
+      tags: [],
+    },
   ],
 };
