@@ -309,5 +309,29 @@ export const ebbAndFlow: CombatStyle = {
       rank: 7,
       roles: ['burn'],
     },
+
+    {
+      name: 'Overhand Smash',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+      `,
+      rank: 3,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Overhand Smash+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} and triple damage overall.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses.
+        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+      `,
+      rank: 7,
+      roles: ['burst'],
+    },
   ],
 };

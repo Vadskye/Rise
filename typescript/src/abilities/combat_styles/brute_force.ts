@@ -32,9 +32,18 @@ export const bruteForce: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         The attack is made against the target's Fortitude defense instead of its Armor defense.
-        \\hit The target \\glossterm{briefly} takes a -2 penalty to its Armor defense.
       `,
-      rank: 3,
+      rank: 1,
+      roles: ['softener'],
+    },
+    {
+      name: 'Armorcrusher+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        The attack is made against the target's Fortitude defense instead of its Armor defense.
+      `,
+      rank: 5,
       roles: ['softener'],
     },
 
@@ -181,59 +190,18 @@ export const bruteForce: CombatStyle = {
       roles: ['trip'],
     },
 
-    {
-      name: 'Forceful Smash',
-
-      effect: `
-        Make a \\glossterm{strike}.
-        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 15 feet.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-      `,
-      rank: 1,
-      roles: ['payoff'],
-    },
-
-    {
-      name: 'Forceful Smash+',
-
-      effect: `
-        Make a \\glossterm{strike} that deals double damage.
-        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 30 feet.
-        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-      `,
-      rank: 5,
-      roles: ['payoff'],
-    },
-
-    // Start from r0 due to 0.2 EA buff. Brief goad is r-1 normally, so we can get a r1
-    // area by spending one rank on area size. We only use a r0 area though.
+    // Brief empower costs 0.7 EA, and brief goad costs 1.0 EA. Total is 1.7 EA, or r3.
     {
       name: 'Ostentatious Flex',
 
       attack: {
         hit: `The target is \\glossterm{briefly} \\goaded by you.`,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} adjacent to you.
+          Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
           Then, you are \\glossterm{briefly} \\empowered.
         `,
       },
-      rank: 1,
-      roles: ['generator'],
-    },
-
-    {
-      name: 'Ostentatious Flex+',
-
-      // Start from r6 due to 0.2 EA buff, limited scope gets us back to r7
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `The target is \\goaded by you as a \\glossterm{condition}.`,
-        targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\empowered.
-        `,
-      },
-      rank: 7,
+      rank: 3,
       roles: ['generator'],
     },
 
@@ -286,32 +254,6 @@ export const bruteForce: CombatStyle = {
     },
 
     {
-      name: 'Press Forward',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        After you make the strike, you can move up to 10 feet.
-        During this movement, you can move into space occupied by creatures that you hit with the strike.
-        When you do, you \\glossterm{push} that creature up to 5 feet away from you into an unoccupied space.
-        This push is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
-      `,
-      rank: 1,
-      roles: ['dive'],
-    },
-
-    {
-      name: 'Press Forward+',
-
-      functionsLike: {
-        exceptThat:
-          'the strike deals double damage, and you can move up to half your movement speed instead of only 10 feet.',
-        name: 'press forward',
-      },
-      rank: 5,
-      roles: ['dive'],
-    },
-
-    {
       name: 'Desperate Smash',
 
       cost: 'One \\glossterm{fatigue level} (see text).',
@@ -338,58 +280,6 @@ export const bruteForce: CombatStyle = {
       `,
       rank: 7,
       roles: ['burst', 'exertion'],
-    },
-
-    {
-      name: 'Earsplitting Bonedrum',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        On a hit, you and the target are \\glossterm{briefly} \\deafened.
-      `,
-      rank: 1,
-      roles: ['softener'],
-      tags: ['Auditory'],
-    },
-
-    {
-      name: 'Overhand Smash',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        It deals double damage, but you cannot get a \\glossterm{critical hit}.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
-      `,
-      rank: 3,
-      roles: ['burst'],
-    },
-
-    {
-      name: 'Overhand Smash+',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals \\glossterm{extra damage} equal to half your \\glossterm{power}.
-        It deals triple damage, but you cannot get a \\glossterm{critical hit}.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor and Reflex defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
-      `,
-      rank: 7,
-      roles: ['burst'],
-    },
-
-    {
-      name: 'Erupting Bonedrum',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        \\hit Compare your attack result to the Fortitude defense of all other \\glossterm{enemies} within a \\medarea radius of the target of your strike.
-        This is an \\atAuditory effect.
-        On a hit against a secondary target, you deal damage equal to the damage you dealt with the strike, ignoring any damage increase from \\glossterm{critical hits} with the strike.
-      `,
-      rank: 3,
-      roles: ['clear'],
-      tags: [],
     },
 
     {
@@ -425,28 +315,6 @@ export const bruteForce: CombatStyle = {
       rank: 7,
       roles: ['flash'],
       tags: ['Earth'],
-    },
-
-    {
-      name: 'Forceful Retreat',
-
-      effect: `
-        Make a melee \\glossterm{strike}.
-        If you hit, you \\glossterm{push} yourself up to 10 feet in a straight line away from the target.
-      `,
-      rank: 1,
-      roles: ['mobility', 'burst'],
-    },
-
-    {
-      name: 'Forceful Retreat+',
-
-      effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
-        If you hit, you \\glossterm{push} yourself up to 20 feet in a straight line away from the target.
-      `,
-      rank: 5,
-      roles: ['mobility', 'burst'],
     },
 
     // Treat a no-condition brawling attack as being about +2 accuracy, so -1dr.
