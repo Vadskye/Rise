@@ -5,6 +5,5 @@ pub mod creatures;
 pub mod equipment;
 pub mod latex_formatting;
 pub mod modules;
-pub mod monsters;
 pub mod skills;
 pub mod testing;

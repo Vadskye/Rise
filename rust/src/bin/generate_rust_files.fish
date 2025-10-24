@@ -8,8 +8,6 @@ cd rust
 
 cargo build; or exit 1
 
-# cargo run --bin monsters_chapter > ../core_book/generated/monster_descriptions.tex
-cargo run --bin monster_reference_table > ../core_book/generated/monster_reference_table.tex
 # cargo run --bin modules_chapter > ../core_book/generated/modules.tex
 cargo run --bin classes_chapter > ../comprehensive_codex/generated/classes.tex
 cargo run --bin uncommon_species_classes
@@ -33,12 +31,3 @@ cargo run --bin item_latex -- --category 'permanent tools' --descriptions > ../c
 cargo run --bin item_latex -- --category 'permanent tools' --table > ../comprehensive_codex/generated/permanent_tools_table.tex
 
 cargo run --bin item_latex -- --category 'everything' --table > ../core_book/generated/everything_table.tex
-
-mkdir -p combat_results
-cargo run --bin generate_combat_results
-cp combat_results/difficult_encounter.csv (p utransfer)
-cp combat_results/standard_encounter.csv (p utransfer)
-
-mkdir -p test_goldens
-rm test_goldens/*
-cargo run --bin generate_golden_files
