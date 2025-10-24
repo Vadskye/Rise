@@ -590,9 +590,9 @@ function addDemonspawn(grimoire: Grimoire) {
           });
           // TODO: decide a clearer pattern for standard vs elite here
           creature.addSpell('Mighty Burning Grasp');
-          creature.addSpell('Mighty Fan of Flames');
+          creature.addSpell('Ignition');
           creature.addSpell('Split Fireball');
-          creature.addSpell('Mighty Wall of Fire', { usageTime: 'elite' });
+          creature.addSpell('Mighty Pyrohemia', { usageTime: 'elite' });
           creature.addSpell('Flame Dash', { usageTime: 'elite' });
           creature.addSpell('Stoke the Fires', { usageTime: 'elite' });
         },
@@ -608,7 +608,7 @@ function addDemonspawn(grimoire: Grimoire) {
             level: 11,
             size: 'large',
           });
-          creature.addCustomSpell({
+          creature.addPassiveAbility({
             name: 'Atrophy',
             effect: `
               Whenever the $name \\glossterm{injures} a creature, that creature suffers a \\minus1 penalty to all defenses as a \\glossterm{condition}.

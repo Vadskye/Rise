@@ -15,6 +15,7 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
+import { TELEPORT_ATTACK_FATIGUE } from '@src/abilities/constants';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -71,6 +72,7 @@ function replaceGenericTerms(
   replace(/\bYou become\b/g, 'The $name becomes');
   replace(/\b, you become\b/g, ', it becomes');
   replace(/\bYou must have\b/g, 'The $name must have');
+  replace(/\bMove up to your speed\b/g, 'The $name moves up to its speed');
   replace(/\byour speed\b/g, 'its speed');
   replace(/\byour attack\b/g, 'its attack');
   replace(/\bwhether you get\b/g, 'whether it gets');
@@ -81,6 +83,7 @@ function replaceGenericTerms(
   replace(/\battacks against you\b\b/g, 'attacks against the $name');
   replace(/\byour subsequent\b/g, "the $name's subsequent");
   replace(/\bYou can\b/g, 'The $name can');
+  replace(/\bYou (teleport\b|\\glossterm{teleport})/g, 'The $name \\glossterm{teleports}');
   replace(
     /\\empowered\b/g,
     `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`,
@@ -114,7 +117,10 @@ function replaceGenericTerms(
     /(\bemanation|\\glossterm{emanation}) from you\b/g,
     '\\glossterm{emanation} from the $name',
   );
-  replace(/\bfrom your location\b/g, 'from its location');
+  replace(/(\$[nN]ame.*)from your location\b/g, (_, prefix) => `${prefix}from its location`);
+  replace(/\bfrom your location\b/g, "from the $name's location");
+  replace(/\byour starting location\b/g, "its starting location");
+  replace(/\byour ending location\b/g, "its starting location");
   replace(/\bChoose yourself or\b/g, 'The $name chooses itself or');
   replace(/\byou can choose\b/g, 'the $name can choose');
   replace(/\byour (allies\b|\\glossterm{allies})/g, 'its allies');
@@ -123,6 +129,29 @@ function replaceGenericTerms(
   replace(/\bthe \$name, the \$name\b/g, 'the $name, it');
   replace(/\bAfter you attack\b/g, 'After the $name attacks');
   replace(/\byou lose\b/g, 'it loses');
+  replace(/\byou include yourself\b/g, 'it includes itself');
+  replace(/\byou still only make\b/g, 'it still only makes');
+  replace(/\bof you before your movement\b/g, 'of it before its movement');
+  replace(/\bafter your strike\b/g, 'after its strike');
+
+  // This whole thing is probably just for clairvoyance?
+  replace(/\bYou do not need\b/g, 'The $name does not need');
+  replace(/\bYou must specify\b/g, 'The $name must specify');
+  replace(/\byou cannot see\b/g, 'it cannot see');
+  replace(/, you choose\b/g, ', the $name chooses');
+  replace(/\bIf you choose\b/g, 'If the $name chooses');
+  replace(/\byou see and hear\b/g, 'it sees and hears');
+  replace(/\bor from your\b/g, 'or from its');
+  replace(/\byour observation ability\b/g, "the $name's observation ability");
+  replace(/\byour normal body\b/g, "its normal body");
+  replace(/\bYou otherwise act\b/g, "The $name otherwise acts");
+  replace(/\bthough you\b/g, "though it");
+  replace(/\bsee your body\b/g, "see its body");
+  replace(/\byour intended\b/g, "its intended");
+  replace(/\bmaking you\b/g, "making it");
+  replace(/\ballow you\b/g, "allow it");
+  replace(/\bimprove your\b/g, "improve its");
+
 
   // Elite monsters cheat this kind of cost.
   const halfHpCost = monster.elite
@@ -833,13 +862,15 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
     return;
   }
 
-  ability.cost = ability.cost.replace(
-    /You (\\glossterm{briefly}|briefly)/,
-    (...match) => `The $name ${match[1]}`,
-  );
-
   if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
     delete ability.cost;
+  } else if (ability.cost === TELEPORT_ATTACK_FATIGUE) {
+    delete ability.cost;
+  } else {
+    ability.cost = ability.cost.replace(
+      /You (\\glossterm{briefly}|briefly)/,
+      (...match) => `The $name ${match[1]}`,
+    );
   }
 }
 

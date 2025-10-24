@@ -661,9 +661,18 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
     {
       name: 'Mighty Pyrohemia',
 
-      functionsLike: {
-        name: 'pyrohemia',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+      attack: {
+        crit: MULTIHIT_CRIT,
+        miss: DELAYED_HALF,
+        hit: `
+          \\damagerankfour.
+        `,
+        injury: `
+          The target takes \\damagerankfour again during your next action.
+        `,
+        targeting: `
+          Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
+        `,
       },
       rank: 4,
       roles: ['wildfire'],
