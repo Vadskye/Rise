@@ -375,16 +375,24 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   );
 
   const strikeComponentMatch = ability.effect.match(
-    /(.*)?([mM])ake a (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
+    /(.*)?([mM])ake a( mundane| \\glossterm{mundane}| magical| \\glossterm{magical})? (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
   );
   if (!strikeComponentMatch) {
     throw new Error(`${ability.name}: Unable to parse strike: '${ability.effect}'`);
   }
   const preStrike = strikeComponentMatch[1] || '';
   const maybeCapital = strikeComponentMatch[2];
-  const restOfStrikeSentence = strikeComponentMatch[4];
-  const postStrike = strikeComponentMatch[5];
-  const labeledEffects = `${strikeComponentMatch[6] || ''}${strikeComponentMatch[7] || ''}`;
+  const mundaneOrMagical = (strikeComponentMatch[3] || '').trim();
+  const restOfStrikeSentence = strikeComponentMatch[5];
+  const postStrike = strikeComponentMatch[6];
+  const labeledEffects = `${strikeComponentMatch[7] || ''}${strikeComponentMatch[8] || ''}`;
+
+  let strikeIsMagical = ability.isMagical;
+  if (/mundane/.test(mundaneOrMagical)) {
+    strikeIsMagical = false;
+  } else if (/magical/.test(mundaneOrMagical)) {
+    strikeIsMagical = true;
+  }
 
   let preStrikeText = maybeCapital === 'M' ? `${preStrike}The $name makes a ` : `${preStrike}the $name makes a `;
   // Fix duplicate 'the $name' in case the pre-strike text already contains the monster's
@@ -418,7 +426,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
 
   ability.attack = {
     crit: critText,
-    hit: `${calculateStrikeDamage(monster, ability)} damage.${hitText}`,
+    hit: `${calculateStrikeDamage(monster, ability, strikeIsMagical)} damage.${hitText}`,
     miss: missText,
     injury: injuryText,
     // TODO: if we support non-melee monster weapons, this would have to check the weapon
@@ -492,7 +500,9 @@ function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbi
   return accuracyModifierText;
 }
 
-export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAbility): string {
+// We need an explicit `isMagical` here because some magical abilities make mundane
+// strikes.
+export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAbility, isMagical: boolean): string {
   const weapon = ability.weapon!;
 
   // We only check the sentence of the strike to avoid catching conditional clauses.
@@ -570,7 +580,7 @@ export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAb
     extraFlatDamage = Number(extraFlatDamageMatch[1]);
   }
 
-  let relevantPower = monster.getRelevantPower(ability.isMagical);
+  let relevantPower = monster.getRelevantPower(isMagical);
   if (/higher of.*mundane.*magical/.test(ability.effect)) {
     relevantPower = Math.max(monster.getRelevantPower(true), monster.getRelevantPower(false));
   }

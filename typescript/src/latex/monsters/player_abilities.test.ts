@@ -136,9 +136,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a strike.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+10');
     t.end();
   });
 
@@ -146,9 +145,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'claws',
       effect: 'Make a strike that deals double damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '4d4+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '4d4+10');
     t.end();
   });
 
@@ -156,9 +154,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a strike that deals 7 \\glossterm{extra damage}.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '1d8+17');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '1d8+17');
     t.end();
   });
 
@@ -166,9 +163,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a strike that deals double weapon damage and 13 extra damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+23');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+23');
     t.end();
   });
 
@@ -176,10 +172,9 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'tentacle',
       effect: 'Make a \\glossterm{strike} that deals triple damage.',
-      isMagical: true,
     } as any;
     // Lower because this is a magical strike
-    t.equal(calculateStrikeDamage(mockCreature, ability), '3d6+12');
+    t.equal(calculateStrikeDamage(mockCreature, ability, true), '3d6+12');
     t.end();
   });
 
@@ -187,9 +182,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a \\glossterm{strike} that deals quadruple damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '4d8+40');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '4d8+40');
     t.end();
   });
 
@@ -197,9 +191,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'claws',
       effect: 'Make a \\glossterm{strike} that deals eight times weapon damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+5');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '16d4+5');
     t.end();
   });
 
@@ -207,9 +200,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'claws',
       effect: 'Make a \\glossterm{strike} that deals eight times weapon damage and 3 extra damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '16d4+8');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '16d4+8');
     t.end();
   });
 
@@ -217,9 +209,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a \\glossterm{strike} that deals double damage and 7 extra damage.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+34');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+34');
     t.end();
   });
 
@@ -230,9 +221,8 @@ t.test('calculateStrikeDamage', (t) => {
       weapon: 'bite',
       effect:
         'Make a strike using exactly one turkey leg wrapped around a longsword that deals double weapon damage if it is Tuesday.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(mockCreature, ability), '2d8+10');
+    t.equal(calculateStrikeDamage(mockCreature, ability, false), '2d8+10');
     t.end();
   });
 
@@ -243,9 +233,8 @@ t.test('calculateStrikeDamage', (t) => {
     const ability = {
       weapon: 'bite',
       effect: 'Make a strike.',
-      isMagical: false,
     } as any;
-    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability), '1d8-5');
+    t.equal(calculateStrikeDamage(creatureWithNegativePower, ability, false), '1d8-5');
     t.end();
   });
 
