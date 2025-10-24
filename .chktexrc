@@ -179,6 +179,7 @@ CmdLine
     --nowarn 1
     --nowarn 8
     --nowarn 15
+    --nowarn 35
     -v2
 }
 
