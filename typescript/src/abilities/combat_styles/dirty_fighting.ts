@@ -50,33 +50,35 @@ export const dirtyFighting: CombatStyle = {
       roles: ['execute'],
     },
 
+    // TODO: unclear EA?
     {
       name: 'Stay Down',
 
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target is also unable to stand up during the next movement phase.
+          the target is also \\glossterm{briefly} unable to stand up.
         `,
         name: 'trip',
       },
-      rank: 3,
+      rank: 5,
       roles: ['trip'],
       tags: ['Brawling'],
     },
 
+    // Normal melee damage would be dr5, -1dr for brawling, -1dr for 
     {
       name: 'Sweep and Slam',
 
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target also takes \\damagerankfour.
+          the target also takes \\damagerankthree.
           You cannot get a \\glossterm{glancing blow} with this attack.
         `,
         name: 'trip',
       },
-      rank: 5,
+      rank: 3,
       roles: ['trip'],
       tags: ['Brawling'],
     },
@@ -356,7 +358,7 @@ export const dirtyFighting: CombatStyle = {
       name: 'Eye Poke',
 
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a \\glossterm{strike}.
         \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\dazzled.
       `,
       rank: 1,
@@ -367,10 +369,10 @@ export const dirtyFighting: CombatStyle = {
       name: 'Eye Gouge',
 
       effect: `
-        Make a \\glossterm{strike}.
-        \\injury The target is \\dazzled as a \\glossterm{condition}.
+        Make a melee \\glossterm{strike} that deals triple damage.
+        \\injury If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
       `,
-      rank: 3,
+      rank: 7,
       roles: ['maim'],
     },
 
