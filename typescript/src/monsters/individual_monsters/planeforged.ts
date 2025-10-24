@@ -216,22 +216,8 @@ function addAngels(grimoire: Grimoire) {
 
 function addAirElementals(grimoire: Grimoire) {
   function airElemental(creature: Creature) {
-    const rank = creature.calculateRank();
-    creature.addPassiveAbility({
-      name: 'Soulless',
-      effect: `
-        The $name has no soul.
-        If it dies, it cannot be resurrected.
-      `,
-      isMagical: false,
-    });
-    creature.addPassiveAbility({
-      name: 'Floating',
-      effect: `
-        The $name is \\glossterm{floating}.
-      `,
-      isMagical: false,
-    });
+    creature.addTrait('floating');
+    creature.addTrait('soulless');
     creature.addImpervious('Air');
     creature.addVulnerability('Earth');
     creature.addVulnerability('Electricity');
@@ -243,10 +229,12 @@ function addAirElementals(grimoire: Grimoire) {
       isMagical: true,
     });
 
-    if (rank >= 2) {
+    const rank = creature.calculateRank();
+    creature.addSpell('Windblast');
+    if (rank >= 3) {
       creature.addSpell('Windslash');
     }
-    if (rank >= 3) {
+    if (rank >= 4) {
       creature.addSpell('Windsnipe');
     }
 
@@ -258,8 +246,7 @@ function addAirElementals(grimoire: Grimoire) {
     }
     creature.addWeaponMult('fists');
 
-    creature.addCustomMovementSpeed('Fly (fast)');
-    creature.addCustomMovementSpeed('Land (normal)');
+    creature.addCustomMovementSpeed('Fly (normal, limitless)');
   }
 
   grimoire.addMonsterGroup(
@@ -357,24 +344,17 @@ function addAirElementals(grimoire: Grimoire) {
 function addFireElementals(grimoire: Grimoire) {
   function fireElemental(creature: Creature) {
     const rank = creature.calculateRank();
-    creature.addPassiveAbility({
-      name: 'Soulless',
-      effect: `
-        The $name has no soul.
-        If it dies, it cannot be resurrected.
-      `,
-      isMagical: false,
-    });
+    creature.addTrait('soulless');
     creature.addImmunity('Fire');
     creature.addImpervious('Cold');
     creature.addVulnerability('Water');
     creature.addSpell('Combustion');
-    creature.addSpell('Firebolt');
-    if (rank >= 3) {
+    if (rank >= 2) {
       creature.addSpell('Ignition');
+    }
+    if (rank >= 3) {
       creature.addSpell('Fireball');
     }
-    creature.addCustomMovementSpeed('Land (fast)');
   }
 
   grimoire.addMonsterGroup(
@@ -476,25 +456,20 @@ function addDemonspawn(grimoire: Grimoire) {
       name: 'Demonspawn',
       hasArt: false,
       knowledge: {
-        easy: `
+        normal: `
           Demonspawn are infernal beings that live in the Abyss.
           They are the weakest and least intelligent type of demon, but they are still dangerous to mortals.
         `,
-        normal: `
+        hard: `
           Demonspawn were formed in the torturous flames of the Abyss.
-          They all share an immunity to fire.
+          They are all resistant to fire.
+          Like many demons, they are vulnerable to cold iron weapons.
         `,
       },
       sharedInitializer: (creature: Creature) => {
-        creature.addImmunity('Fire');
-        creature.addPassiveAbility({
-          name: 'Soulless',
-          effect: `
-            The $name has no soul.
-            If it dies, it cannot be resurrected.
-          `,
-          isMagical: false,
-        });
+        creature.addImpervious('Fire');
+        creature.addTrait('soulless');
+        creature.addVulnerability('Cold iron weapons');
       },
     },
     [
@@ -513,10 +488,6 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setProperties({
             has_art: true,
           });
-          creature.setTrainedSkills(['endurance']);
-          creature.addSpell('Enrage');
-          creature.addManeuver('Power Strike');
-          creature.addVulnerability('Emotion');
           creature.setKnowledgeResults({
             normal: `
               Rageborn demons are anger personified.
@@ -528,6 +499,13 @@ function addDemonspawn(grimoire: Grimoire) {
               This makes them easy to mislead with magical effects that manipulate their emotions.
             `,
           });
+          creature.setTrainedSkills(['endurance']);
+          creature.addVulnerability('Emotion');
+
+          creature.addWeaponMult('fists');
+          creature.addManeuver('Gutshot', { usageTime: 'elite', weapon: 'fists' });
+          creature.addManeuver('Rushdown', { usageTime: 'elite', weapon: 'fists' });
+          creature.addManeuver('Whirlwind', { usageTime: 'elite', weapon: 'fists' });
         },
       ],
       [
@@ -545,19 +523,6 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.setProperties({
             has_art: true,
           });
-          creature.setTrainedSkills(['endurance']);
-          creature.addGrapplingStrike('claws');
-          creature.addCustomManeuver({
-            name: 'Spiked Body',
-            effect: `
-              Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.
-              The $name makes an $accuracy \\glossterm{reactive attack} vs. Armor against the creature that attacked it.
-              \\hit $dr1 damage.
-            `,
-            isMagical: false,
-            usageTime: 'triggered',
-          });
-          creature.addVulnerability('Compulsion');
           creature.setKnowledgeResults({
             normal: `
               Painborn demons are pain personified.
@@ -570,6 +535,35 @@ function addDemonspawn(grimoire: Grimoire) {
               Magical effects that compel their actions, freeing them from the burden of choice, are their greatest weakness.
             `,
           });
+          creature.setTrainedSkills(['endurance']);
+          creature.addVulnerability('Compulsion');
+
+          creature.addGrapplingStrike('claws');
+          creature.addCustomManeuver({
+            name: 'Impale',
+            attack: {
+              hit: '\\damagerankfive.',
+              targeting: `
+                Make a \\glossterm{brawling attack} vs. Armor using a \\glossterm{free hand} against a creature you are \\glossterm{grappling}.
+              `,
+            },
+            rank: 3,
+            tags: ['Brawling'],
+          });
+          creature.addSpell('Agony', { usageTime: 'elite' });
+          creature.addSpell('Sanguine Bond', { displayName: 'Painbond',  usageTime: 'elite' });
+
+          creature.addCustomManeuver({
+            name: 'Spiked Body',
+            attack: {
+              hit: '\\damagerankone.',
+              targeting: `
+                Whenever a creature attacks the $name with a melee strike using a non-Long weapon, it risks being impaled by spikes.
+                The $name makes an $accuracy \\glossterm{reactive attack} vs. Armor against the creature that attacked it.
+              `,
+            },
+            usageTime: 'triggered',
+          });
         },
       ],
       [
@@ -580,18 +574,54 @@ function addDemonspawn(grimoire: Grimoire) {
             base_class: 'sniper',
             elite: true,
             creature_type: 'planeforged',
-            level: 13,
+            level: 14,
             size: 'large',
           });
           creature.setProperties({
             has_art: true,
           });
-          creature.setBaseAttributes([3, 2, 3, 2, 6, 6]);
-          creature.addSpell('Combustion');
-          creature.addSpell('Pyroclasm');
-          creature.addSpell('Pyrohemia');
-          creature.addSpell('Ignition');
-          creature.addVulnerability('Cold Iron weapons');
+          creature.setBaseAttributes([3, 2, 3, 2, 6, 7]);
+          creature.addPassiveAbility({
+            name: 'Soulfire',
+            effect: `
+              Whenever the $name \\glossterm{injures} a creature, that creature is \\glossterm{briefly} unable to regain \\glossterm{hit points}.
+            `,
+            isMagical: true,
+          });
+          // TODO: decide a clearer pattern for standard vs elite here
+          creature.addSpell('Mighty Burning Grasp');
+          creature.addSpell('Mighty Fan of Flames');
+          creature.addSpell('Split Fireball');
+          creature.addSpell('Mighty Wall of Fire', { usageTime: 'elite' });
+          creature.addSpell('Flame Dash', { usageTime: 'elite' });
+          creature.addSpell('Stoke the Fires', { usageTime: 'elite' });
+        },
+      ],
+      [
+        'Atrophic Demon',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'planeforged',
+            level: 11,
+            size: 'large',
+          });
+          creature.addCustomSpell({
+            name: 'Atrophy',
+            effect: `
+              Whenever the $name \\glossterm{injures} a creature, that creature suffers a \\minus1 penalty to all defenses as a \\glossterm{condition}.
+              This condition stacks with itself, up to a maximum penalty of \\minus5.
+            `,
+            isMagical: true,
+          });
+          creature.setBaseAttributes([4, 6, 0, 1, 2, 4]);
+          creature.addSpell('Quicksilver Ambush', { weapon: 'claws' });
+          creature.addSpell('Quicksilver Perfection', { weapon: 'claws' });
+          creature.addSpell('Wave of Senescence', { usageTime: 'elite' });
+          creature.addSpell('Stutterstop', { usageTime: 'elite' });
+          creature.addSpell('Slow', { usageTime: 'elite' });
         },
       ],
     ],
@@ -600,34 +630,19 @@ function addDemonspawn(grimoire: Grimoire) {
 
 function addMagmaElementals(grimoire: Grimoire) {
   function magmaElemental(creature: Creature) {
-    creature.addPassiveAbility({
-      name: 'Soulless',
-      effect: `
-        The $name has no soul.
-        If it dies, it cannot be resurrected.
-      `,
-      isMagical: false,
-    });
+    creature.addTrait('soulless');
     creature.addImpervious('Earth');
     creature.addImmunity('Fire');
     creature.addImpervious('Cold');
     creature.addVulnerability('Acid');
     creature.addVulnerability('Water');
+
     creature.addSpell('Combustion');
-
-    // Magma Throw (based on Firebolt)
-    creature.addSpell('Firebolt', {
+    creature.addSpell('Rock Throw', {
       displayName: 'Magma Throw',
-      isMagical: false,
-      tags: ['Earth'],
+      tags: ['Fire'],
     });
-
-    // Generic Extra Damage (based on Maneuver::GenericExtraDamage)
-    // The Rust code uses Weapon::ram() for this.
-    creature.addManeuver('Generic Extra Damage', {
-      weapon: 'ram',
-      tags: ['Earth'],
-    });
+    creature.addWeaponMult('fists');
   }
 
   grimoire.addMonsterGroup(
@@ -656,13 +671,13 @@ function addMagmaElementals(grimoire: Grimoire) {
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'neutral',
-            base_class: 'brute',
+            base_class: 'warrior',
             elite: false,
             creature_type: 'planeforged',
             level: 6,
             size: 'medium',
           });
-          creature.setBaseAttributes([4, 4, 7, -4, 0, 0]);
+          creature.setBaseAttributes([4, 4, 6, -4, 0, 0]);
         },
       ],
       [
@@ -670,13 +685,13 @@ function addMagmaElementals(grimoire: Grimoire) {
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'neutral',
-            base_class: 'brute',
+            base_class: 'warrior',
             elite: false,
             creature_type: 'planeforged',
             level: 12,
             size: 'large',
           });
-          creature.setBaseAttributes([5, 5, 8, -3, 0, 0]);
+          creature.setBaseAttributes([5, 5, 8, -3, 0, 1]);
         },
       ],
       [
@@ -684,13 +699,13 @@ function addMagmaElementals(grimoire: Grimoire) {
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'neutral',
-            base_class: 'brute',
+            base_class: 'warrior',
             elite: false,
             creature_type: 'planeforged',
             level: 18,
             size: 'huge',
           });
-          creature.setBaseAttributes([5, 5, 9, -3, 0, 0]);
+          creature.setBaseAttributes([6, 6, 10, -3, 0, 2]);
         },
       ],
     ],
@@ -733,17 +748,17 @@ function addFormians(grimoire: Grimoire) {
       name: 'Formians',
       hasArt: true,
       knowledge: {
-        easy: `
+        normal: `
           Formians are ant-like inhabitants native to Ordus, the Aligned Plane of law.
           They share a hive mind that allows telepathic communication at great distances.
         `,
-        normal: `
+        hard: `
           All formians can sense their surroundings instinctively by feeling tremors in the ground.
           Most formians are simple drones with no independent thought or agency; they act only as directed by their queen.
           As a result, they fight with no concern for their own lives, serving only the greater good of the group.
           They may still retreat to avoid expending unnecessary resources on a battle that is already lost.
         `,
-        hard: `
+        legendary: `
           Formians often attempt to set up colonies in unclaimed locations on other planes to expand their influence, though they never attack civilizations or sentient creatures to do so.
           Once they have established their colonies, they consider themselves to have a rightful claim to that land, and they can be highly territorial.
 
@@ -801,7 +816,7 @@ function addFormians(grimoire: Grimoire) {
             name: 'Poisonous Stinger',
             effect: `
               The $name makes a $accuracy attack vs. Armor with its stinger.
-              \\hit $dr1 damage.
+              \\hit \\damagerankone.
               \\injury The target becomes poisoned by drone venom.
             `,
             weapon: 'stinger',
