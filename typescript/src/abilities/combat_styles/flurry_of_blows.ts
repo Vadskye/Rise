@@ -112,7 +112,8 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Fragmentary Burst',
 
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\smallarea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
+        The strike targets everything in a \\smallarea cone from you.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         You also still take the normal -4 accuracy penalty for attacking an adjacent creature with a Projectile weapon (see \\pcref{Weapon Tags}).
       `,
@@ -127,7 +128,8 @@ export const flurryOfBlows: CombatStyle = {
       // A standard rank 5 AOE damage spell would affect a Huge cone and deal 1.75dpp.
       // Seems close enough.
       effect: `
-        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon against everything in a \\largearea cone from you.
+        Make a ranged \\glossterm{strike} using a \\weapontag{Projectile} weapon.
+        The strike targets everything in a \\largearea cone from you.
         You take a -1 accuracy penalty with the strike, but it deals double damage.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
         You also still take the normal -4 accuracy penalty for attacking an adjacent creature with a Projectile weapon (see \\pcref{Weapon Tags}).
@@ -148,6 +150,7 @@ export const flurryOfBlows: CombatStyle = {
         Creature can generally recognize the area that the arrows will land in with a DV 15 Awareness check.
 
         During your next action, the arrows land, and you make a \\glossterm{strike} with your weapon from last round against all creatures in the area.
+        The attack is a \\glossterm{reactive attack}.
         On a miss, you still deal half damage.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).
       `,
@@ -216,9 +219,9 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Deathseeking Flurry',
 
       effect: `
-        Make a \\glossterm{strike}.
-        \\hit Make an additional strike against all creatures that lost hit points from the first strike.
-        The second strike cannot target any other creatures.
+        Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
+        \\injury Make an additional strike with a \\minus1 accuracy penalty.
+        The strike targets against all creatures that were injured by the first strike, and cannot target any other creatures.
       `,
       rank: 3,
       roles: ['execute'],
@@ -229,8 +232,8 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        \\hit Make an additional strike against all creatures that lost hit points from the first strike.
-        The second strike deals double damage, and cannot target any other creatures.
+        \\injury Make an additional strike that deals triple damage.
+        The strike targets against all creatures that were injured by the first strike, and cannot target any other creatures.
       `,
       rank: 7,
       roles: ['execute'],
