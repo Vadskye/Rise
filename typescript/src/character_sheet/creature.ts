@@ -39,7 +39,7 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
 } from '@src/abilities';
-import format from '@src/latex/format';
+import * as format from '@src/latex/format';
 import {
   EquippedItem,
   isBodyArmor,
@@ -414,7 +414,7 @@ export class Creature implements CreaturePropertyMap {
     poison: PoisonDefinition,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || `Venomous ${titleCase(weapon)}`;
+    displayName = displayName || `Venomous ${format.titleCase(weapon)}`;
 
     // TODO: what is the correct effective rank for this? It should do less damage than
     // a normal strike, but how much?
@@ -445,7 +445,7 @@ export class Creature implements CreaturePropertyMap {
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || titleCase(weapon);
+    displayName = displayName || format.titleCase(weapon);
     this.addActiveAbility({
       kind: 'maneuver',
       tags,
