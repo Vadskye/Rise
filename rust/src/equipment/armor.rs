@@ -1,5 +1,4 @@
-use crate::core_mechanics::{Attribute, HasAttributes};
-use crate::creatures::{Creature, HasModifiers, ModifierType};
+use crate::creatures::{Creature, HasModifiers};
 use std::{cmp::max, fmt};
 
 #[derive(Clone, Debug)]

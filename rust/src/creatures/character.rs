@@ -1,4 +1,3 @@
-use super::creature::CreatureCategory;
 use crate::classes::{calc_rank_abilities, Class, ClassArchetype};
 use crate::core_mechanics::{Attribute, Defense, HasAttributes, HasResources, Resource};
 use crate::creatures::{creature, latex, HasModifiers, Modifier};
@@ -14,7 +13,7 @@ pub struct Character {
 impl Character {
     // archetypes should be provided in the order that they should be ranked up
     pub fn new(class: Class, level: i32, archetypes: [ClassArchetype; 3]) -> Character {
-        let mut creature = creature::Creature::new(level, CreatureCategory::Character);
+        let mut creature = creature::Creature::new(level);
 
         for rank_ability in calc_rank_abilities(level, &archetypes) {
             if let Some(rank_modifiers) = rank_ability.modifiers {

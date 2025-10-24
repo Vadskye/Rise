@@ -2,7 +2,7 @@ use crate::core_mechanics::attacks::HasAttacks;
 use crate::core_mechanics::{
     Defense, HasDamageAbsorption, HasDefenses, HasResources, HasVitalWounds, Resource,
 };
-use crate::creatures::{Character, Creature, CreatureCategory};
+use crate::creatures::{Character, Creature};
 use std::cmp::max;
 
 // Get a rough idea of how effective a character is. This includes calculations unique to
@@ -37,8 +37,7 @@ pub fn calculate_character_points(character: &Character) -> i32 {
 
 // This only counts raw combat statistics.
 pub fn calculate_creature_points(creature: &Creature) -> i32 {
-    let min_hp =
-        Creature::new(creature.level, CreatureCategory::Character).calc_hit_points() as f64;
+    let min_hp = Creature::new(creature.level).calc_hit_points() as f64;
     let hp_multiplier = creature.calc_hit_points() as f64 / min_hp;
     // 1 point for every 10% more HP
     let hp_points = max(0, ((hp_multiplier - 1.0) * 10.0) as i32);

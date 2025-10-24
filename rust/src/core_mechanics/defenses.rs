@@ -1,5 +1,5 @@
 use crate::core_mechanics::{Attribute, Debuff, HasSize};
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, Modifier, ModifierType};
+use crate::creatures::{Creature, HasModifiers, Modifier, ModifierType};
 use crate::equipment::{HasArmor, WeaponMaterial};
 use std::fmt;
 
@@ -138,17 +138,6 @@ where
     Creature: HasModifiers + HasArmor + HasAttributes + HasSize,
 {
     fn calc_defense_modifier_attribute(&self, defense: &Defense) -> i32 {
-        // Monsters add half the relevant attribute to all defenses
-        if matches!(self.category, CreatureCategory::Monster(_, _)) {
-            let base_attribute = match defense {
-                Defense::Armor => self.get_base_attribute(&Attribute::Dexterity),
-                Defense::Brawn => self.get_base_attribute(&Attribute::Strength),
-                Defense::Fortitude => self.get_base_attribute(&Attribute::Constitution),
-                Defense::Reflex => self.get_base_attribute(&Attribute::Dexterity),
-                Defense::Mental => self.get_base_attribute(&Attribute::Willpower),
-            };
-            return base_attribute / 2;
-        }
         // Characters add full attribute to most defenses, and Dex depends on worn armor.
 
         let dex_multiplier: f64 = if let Some(modifier) = self.minimum_dex_modifier() {

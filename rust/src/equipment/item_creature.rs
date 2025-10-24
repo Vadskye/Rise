@@ -1,6 +1,6 @@
 use crate::core_mechanics::Attribute;
 use crate::creatures::{
-    calculate_minimum_level, Creature, CreatureCategory, HasModifiers, Modifier,
+    calculate_minimum_level, Creature, HasModifiers, Modifier,
 };
 
 // Return a Creature that can be used to calculate item statistics for an item of the given rank.
@@ -33,7 +33,7 @@ pub fn item_creature(rank: i32) -> Creature {
         _ => panic!("Unsupported rank {}", rank),
     };
 
-    let mut creature = Creature::new(level, CreatureCategory::Character);
+    let mut creature = Creature::new(level);
     creature.add_modifier(
         Modifier::Attribute(Attribute::Perception, perception),
         None,
