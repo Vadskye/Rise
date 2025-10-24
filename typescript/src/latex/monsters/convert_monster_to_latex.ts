@@ -21,7 +21,6 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const hasParentGroup = Boolean(parentGroupName);
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? '[Elite]' : '';
-  const sizeStarText = hasParentGroup ? '*' : '';
   const knowledgeText = genKnowledgeText(monster);
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';
 
@@ -31,7 +30,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
         \\monsubsection{${monster.name}}{${monster.level} ${format.uppercaseFirst(monster.base_class)}}${eliteText}
-        \\monstersize${sizeStarText}{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
+        \\monstersize{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
         ${genArtText(monster, parentGroupName)}
     \\end{minipage}
     ${monster.description || ''}
