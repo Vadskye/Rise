@@ -3,9 +3,8 @@ use std::cmp::max;
 use crate::core_mechanics::abilities::ActiveAbility;
 use crate::core_mechanics::attacks::{Attack, Maneuver, StandardAttack};
 use crate::core_mechanics::{Attribute, MovementSpeed, PassiveAbility, Sense, Size, VitalWound};
-use crate::creatures::{latex, Character, IdentifiedModifier, Modifier, Monster};
+use crate::creatures::{latex, Character, IdentifiedModifier, Modifier};
 use crate::equipment::{Armor, Weapon};
-use crate::monsters::{ChallengeRating, Role};
 use crate::skills::Skill;
 use std::collections::HashMap;
 
@@ -16,7 +15,6 @@ pub struct Creature {
     pub anonymous_modifiers: Vec<Modifier>,
     pub armor: Vec<Armor>,
     pub base_attributes: HashMap<Attribute, i32>,
-    pub category: CreatureCategory,
     pub damage_resistance_lost: i32,
     pub hit_points_lost: i32,
     pub identified_modifiers: Vec<IdentifiedModifier>,
@@ -33,19 +31,12 @@ pub struct Creature {
     pub weapons: Vec<Weapon>,
 }
 
-#[derive(Clone, Debug)]
-pub enum CreatureCategory {
-    Character,
-    Monster(ChallengeRating, Role),
-}
-
 impl Creature {
-    pub fn new(level: i32, category: CreatureCategory) -> Creature {
+    pub fn new(level: i32) -> Creature {
         Creature {
             anonymous_modifiers: vec![],
             armor: vec![],
             base_attributes: HashMap::<Attribute, i32>::new(),
-            category,
             damage_resistance_lost: 0,
             hit_points_lost: 0,
             identified_modifiers: vec![],
@@ -63,23 +54,15 @@ impl Creature {
     }
 
     pub fn standard_set(level: i32) -> Vec<Creature> {
-        let mut creatures: Vec<Creature> = Character::standard_set(level)
+        Character::standard_set(level)
             .into_iter()
             .map(|c| c.creature)
-            .collect();
-        creatures.append(
-            &mut Monster::standard_set(level)
-                .into_iter()
-                .map(|m| m.creature)
-                .collect::<Vec<Creature>>(),
-        );
-
-        creatures
+            .collect()
     }
 
     // This can save a slightly annoying import for callers, especially in tests.
     pub fn new_character(level: i32) -> Creature {
-        Self::new(level, CreatureCategory::Character)
+        Self::new(level)
     }
 
     pub fn add_sense(&mut self, sense: Sense) {
@@ -165,27 +148,6 @@ impl Creature {
 
     pub fn to_latex(&self) -> String {
         latex::format_creature(self)
-    }
-
-    pub fn is_character(&self) -> bool {
-        match self.category {
-            CreatureCategory::Character => true,
-            CreatureCategory::Monster(..) => false,
-        }
-    }
-
-    pub fn is_elite(&self) -> bool {
-        match self.category {
-            CreatureCategory::Character => false,
-            CreatureCategory::Monster(cr, _) => cr == ChallengeRating::Four,
-        }
-    }
-
-    pub fn can_recover(&self) -> bool {
-        match self.category {
-            CreatureCategory::Character => true,
-            CreatureCategory::Monster(..) => false,
-        }
     }
 
     pub fn rank(&self) -> i32 {

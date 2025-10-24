@@ -3,7 +3,7 @@ use crate::core_mechanics::abilities::{
 };
 use crate::core_mechanics::attacks::attack_effect::DamageEffect;
 use crate::core_mechanics::{Attribute, Defense, DicePool, HasAttributes, Tag};
-use crate::creatures::{Creature, CreatureCategory, HasModifiers, ModifierType};
+use crate::creatures::{Creature, HasModifiers, ModifierType};
 use crate::equipment::{HasArmor, Weapon};
 use crate::latex_formatting;
 
@@ -333,10 +333,7 @@ where
     }
 
     fn calc_damage_per_round_multiplier(&self) -> f64 {
-        match self.category {
-            CreatureCategory::Character => 1.0,
-            CreatureCategory::Monster(cr, _) => cr.damage_per_round_multiplier(),
-        }
+        1.0
     }
 
     fn calc_accuracy(&self) -> i32 {

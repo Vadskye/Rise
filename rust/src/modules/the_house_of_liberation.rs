@@ -1,5 +1,4 @@
 use crate::modules::Module;
-use crate::monsters::latex_by_name;
 
 pub fn generate_module() -> Module {
     Module {
@@ -209,10 +208,10 @@ pub fn generate_module() -> Module {
             Each warrior carries 2 gp.
 
 ",
-skeleton_guard=latex_by_name("Skeletal Town Guard"),
-orc_butcher=latex_by_name("Orc Butcher"),
-human_cleric=latex_by_name("Town Healer"),
-human_warrior=latex_by_name("Town Guard"),
+skeleton_guard="",
+orc_butcher="",
+human_cleric="",
+human_warrior="",
         ),
     }
 }
