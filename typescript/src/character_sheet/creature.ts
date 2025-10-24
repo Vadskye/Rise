@@ -31,7 +31,7 @@ import {
   isTrait,
 } from '@src/character_sheet/rise_data';
 import { getManeuverByName, getWeaponMultByRank } from '@src/abilities/combat_styles';
-import { getSpellByName } from '@src/abilities/mystic_spheres';
+import { getSpellByName, SphereName } from '@src/abilities/mystic_spheres';
 import { MonsterWeapon, isManufactured, getWeaponTag } from '@src/monsters/weapons';
 import {
   ActiveAbility,
@@ -39,7 +39,7 @@ import {
   PassiveAbility,
   ActiveAbilityScaling,
 } from '@src/abilities';
-import { titleCase } from '@src/latex/format/title_case';
+import format from '@src/latex/format';
 import {
   EquippedItem,
   isBodyArmor,
@@ -384,7 +384,7 @@ export class Creature implements CreaturePropertyMap {
     weapon: MonsterWeapon,
     { displayName, isMagical, tags, usageTime }: Omit<MonsterAbilityOptions, 'weapon'> = {},
   ) {
-    displayName = displayName || `Grappling ${titleCase(weapon)}`;
+    displayName = displayName || `Grappling ${format.titleCase(weapon)}`;
 
     // TODO: what is the correct effective rank for this? It should do less damage than
     // a normal strike, but how much?
@@ -556,6 +556,18 @@ export class Creature implements CreaturePropertyMap {
           effect: ability.ability_effects as string,
         };
       });
+  }
+
+  addRituals(spheres: SphereName[], displayName?: string) {
+    const sphereNames = format.joinStringList(spheres.map((s) => `\\sphere{${s.toLowerCase()}}`));
+    this.addPassiveAbility({
+      name: displayName || 'Rituals',
+      effect: `
+        The $name can perform any ritual of rank ${this.calculateRank()} or lower from the ${sphereNames} mystic spheres.
+        It does not need to increase its \\glossterm{fatigue level} to perform those rituals.
+      `,
+      isMagical: true,
+    });
   }
 
   getModifierNames(): string[] {

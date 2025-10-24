@@ -68,14 +68,6 @@ function addAngels(grimoire: Grimoire) {
       `,
       usageTime: 'elite',
     });
-    creature.addPassiveAbility({
-      name: 'Divine Rituals',
-      effect: `
-        The $name can perform any ritual of rank ${rank} or lower from the \\sphere{channel divinity} or \\sphere{prayer} mystic spheres.
-        It does not need to expend material components or increase its \\glossterm{fatigue level} to perform those rituals.
-      `,
-      isMagical: true,
-    });
 
     creature.addCustomMovementSpeed('Fly (normal, 60 ft. limit)');
   }
@@ -131,6 +123,7 @@ function addAngels(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills(['awareness', 'endurance']);
+          creature.addRituals(['Channel Divinity', 'Prayer']);
           creature.addSpell('Mighty Pyroclasm', { usageTime: 'elite' });
           creature.addSpell('Immolating Fireball', { usageTime: 'elite' });
           creature.addWeaponMult('bite', { tags: ['Fire'] });
@@ -151,15 +144,6 @@ function addAngels(grimoire: Grimoire) {
           creature.setProperties({
             has_art: true,
           });
-          creature.setTrainedSkills([
-            'awareness',
-            'deduction',
-            'endurance',
-            'intimidate',
-            'social_insight',
-          ]);
-          creature.addWeaponMult('greatsword');
-          creature.addSpell('Intense Visions of Weakness')
           creature.setKnowledgeResults({
             normal: `
               Justicars enforce justice on good-aligned planes.
@@ -181,6 +165,19 @@ function addAngels(grimoire: Grimoire) {
               They consider only truly immense evils to be worthy of their attention, and ignore all lesser sins.
             `,
           });
+          creature.setTrainedSkills([
+            'awareness',
+            'deduction',
+            'endurance',
+            'intimidate',
+            'social_insight',
+          ]);
+
+          creature.addWeaponMult('greatsword');
+          creature.addRituals(['Channel Divinity', 'Revelation']);
+          creature.addSpell('Baffling Visions', { usageTime: 'elite' })
+          creature.addSpell('Clairvoyance', { usageTime: 'elite' })
+          creature.addSpell('Foresee Distant Safety', { usageTime: 'elite' })
         },
       ],
       [
@@ -198,11 +195,6 @@ function addAngels(grimoire: Grimoire) {
           creature.setProperties({
             has_art: true,
           });
-          creature.setTrainedSkills(['awareness', 'endurance']);
-          creature.addSpell('Pyroclasm');
-          creature.addManeuver('Whirlwind', { weapon: 'ram' });
-          creature.addCustomMovementSpeed('Fly (fast)');
-          creature.addCustomMovementSpeed('Land (fast)');
           creature.setKnowledgeResults({
             normal: `
               Ophanim resemble burning wheels rimmed with many eyes.
@@ -210,6 +202,12 @@ function addAngels(grimoire: Grimoire) {
               In combat, they spin into a raging whirlwind.
             `,
           });
+          creature.setTrainedSkills(['awareness', 'endurance']);
+
+          creature.addSpell('Pyroclasm', { usageTime: 'elite' });
+          creature.addSpell('Mighty Combustion', { usageTime: 'elite' });
+          creature.addSpell('Stoke the Fires', { usageTime: 'elite' });
+          creature.addManeuver('Whirlwind+', { weapon: 'ram' });
         },
       ],
     ],
