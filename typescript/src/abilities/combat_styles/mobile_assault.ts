@@ -190,7 +190,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You jump and move as normal for the jump (see \\pcref{Jumping}).
-        You can make a melee \\glossterm{strike} with a -2 accuracy penalty from any location you occupy during the motion.
+        You can make a melee \\glossterm{strike} with a -1 accuracy penalty from any location you occupy during the motion.
         This includes both your initial leap and any fall afterwards that happens during the current round.
       `,
       rank: 1,
