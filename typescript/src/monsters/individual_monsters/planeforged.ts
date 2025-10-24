@@ -812,26 +812,14 @@ function addFormians(grimoire: Grimoire) {
             size: 'medium',
           });
           creature.addTrait('simple-minded');
-          creature.addCustomManeuver({
-            name: 'Poisonous Stinger',
-            effect: `
-              The $name makes a $accuracy attack vs. Armor with its stinger.
-              \\hit \\damagerankone.
-              \\injury The target becomes poisoned by drone venom.
+          creature.addPoisonousStrike('stinger', {
+            name: 'drone venom',
+            injury: true,
+            it: `
+              inflicts \\damageranktwolow immediately and with each escalation.
+              The second escalation also ends the poison.
             `,
-            weapon: 'stinger',
           });
-          creature.addCustomSpell({
-            name: 'Drone Venom',
-            effect: `
-              Drone venom is an injury-based liquid \\glossterm{poison}.
-              The poison's accuracy is $accuracy.
-              Its stage 1 effect inflicts 2d8 poison damage per poison stage.
-            `,
-            isMagical: false,
-            usageTime: 'triggered',
-          });
-          creature.addCustomMovementSpeed('Land (fast)');
           creature.setTrainedSkills(['awareness', 'climb', 'endurance']);
           creature.setBaseAttributes([3, 4, 3, -4, 3, 0]);
           creature.setKnowledgeResults({

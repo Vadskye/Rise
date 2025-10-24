@@ -171,7 +171,7 @@ export type CustomMonsterAbility = NonScaledCustomMonsterAbility | ScaledCustomM
 export interface PoisonDefinition {
   accuracyModifier?: number;
   injury: boolean;
-  itMakes: string;
+  it: string;
   name: string;
 }
 
@@ -421,13 +421,13 @@ export class Creature implements CreaturePropertyMap {
     const effectiveRank = Math.max(1, this.calculateRank() - 1);
     const maneuver = getWeaponMultByRank(effectiveRank);
     const poisonTrigger = poison.injury ? '\\injury' : '\\hit';
-    if (poison.itMakes.trimEnd().slice(-1) !== '.') {
-      console.warn(`Ability ${this.name}.${displayName}: poison.itMakes should end with a period`);
+    if (poison.it.trimEnd().slice(-1) !== '.') {
+      console.warn(`Ability ${this.name}.${displayName}: poison.it should end with a period`);
     }
     maneuver.effect += `
         ${poisonTrigger} The target becomes \\glossterm{poisoned} by ${poison.name}.
           The poison's accuracy is $accuracy${formatNumericModifier(poison.accuracyModifier)}.
-          It makes ${poison.itMakes}
+          It ${poison.it}
       `;
 
     this.addActiveAbility({

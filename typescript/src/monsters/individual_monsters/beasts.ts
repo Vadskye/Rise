@@ -85,8 +85,8 @@ export function addBeasts(grimoire: Grimoire) {
       name: 'Giant Wasp Venom',
       injury: true,
       accuracyModifier: 2,
-      itMakes: `
-          the target \\slowed while the poison lasts.
+      it: `
+          makes the target \\slowed while the poison lasts.
           Its stage 3 effect also deals \\damagerankthreelow.
         `,
     });
@@ -131,8 +131,8 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addPoisonousStrike('bite', {
       injury: true,
       name: 'frostweb spider venom',
-      itMakes: `
-          the target \\slowed while the poison lasts.
+      it: `
+          makes the target \\slowed while the poison lasts.
 
           The second escalation also inflicts a \\glossterm{vital wound} with a unique vital wound effect.
           Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target's blood runs cold.
