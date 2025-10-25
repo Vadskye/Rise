@@ -15,7 +15,7 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
-import { TELEPORT_ATTACK_FATIGUE } from '@src/abilities/constants';
+import { TELEPORT_ATTACK_FATIGUE, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from '@src/abilities/constants';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -83,7 +83,6 @@ function replaceGenericTerms(
   replace(/\battacks against you\b\b/g, 'attacks against the $name');
   replace(/\byour subsequent\b/g, "the $name's subsequent");
   replace(/\bYou can\b/g, 'The $name can');
-  replace(/\bYou (teleport\b|\\glossterm{teleport})/g, 'The $name \\glossterm{teleports}');
   replace(
     /\\empowered\b/g,
     `\\buff{empowered} \\reminder{\\plus${monster.calculateRank()} damage}`,
@@ -101,7 +100,10 @@ function replaceGenericTerms(
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
-  replace(/\bYou take\b/g, 'The $name takes');
+  replace(/\b[yY]ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
+    const the = capital ===  'Y' ? 'The' : 'the';
+    return `${the} $name${briefly} takes`;
+  });
   replace(/\bYou reduce your\b/g, 'The $name reduces its');
   replace(/\bYou inscribe\b/g, 'The $name inscribes');
   replace(
@@ -134,6 +136,9 @@ function replaceGenericTerms(
   replace(/\bof you before your movement\b/g, 'of it before its movement');
   replace(/\bafter your strike\b/g, 'after its strike');
   replace(/\byou control the\b/g, "the $name controls the");
+  replace(/\bIf you hit\b/g, "If the $name hits");
+  replace(/\bif you hit\b/g, "if the $name hits");
+  replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, "");
 
   // This whole thing is probably just for clairvoyance?
   replace(/\bYou do not need\b/g, 'The $name does not need');
@@ -165,15 +170,21 @@ function replaceGenericTerms(
   replace(/, you gain/g, ', it gains');
   replace(/\blife becomes linked to yours\b/g, "life becomes linked to the $name's life");
   replace(/\blarger than you\b/g, 'larger than the $name');
+
   replace(/\bYou (fling\b|\\glossterm{fling})/g, 'The $name \\glossterm{flings}');
   // Include 'it' in the match here because it confirms that we don't want to say 'it
   // flings'.
   replace(/\byou (fling\b|\\glossterm{fling}) it\b/g, 'the $name \\glossterm{flings} it');
+  replace(/\bYou (teleport\b|\\glossterm{teleport})/g, 'The $name \\glossterm{teleports}');
+  replace(/\byou (teleport\b|\\glossterm{teleport}) it/g, 'the $name \\glossterm{teleports} it');
+
   replace(/\bsame stable surface as you\b/g, 'same stable surface as it');
   // This is tricky; "range of you" could be part of multiple grammatical patterns
   replace(/\brange of you\b/g, 'range of itself');
-  replace(/\bYou must be\b/g, 'The $name must be');
-  replace(/\bOtherwise, you\b/g, 'Otherwise, it');
+  replace(/\bfeet of you\b/g, 'feet of itself');
+  replace(/\bYou must\b/g, 'The $name must');
+  replace(/\bOtherwise, you do\b/g, 'Otherwise, it does');
+  replace(/\bHowever, you do\b/g, 'However, it does');
   // In general, page references don't work in monster abilities, since they typically
   // refer to book sections that would only appear in the Comprehensive Codex.
   replace(/ \(see \\pcref{[^}]+}\)/, '');
@@ -185,13 +196,16 @@ function replaceGenericTerms(
   replace(/, if you lost\b/g, ', if the $name lost');
   replace(/\bIf you do\b/g, 'If it does');
   replace(/(\$[nN]ame.*)\bif you\b/g, (_, prefix) => `${prefix}if it`);
+  replace(/\bto your destination\b/g, 'to the destination');
 
   // Monsters don't generally have "spells", they just have abilities
   replace(/\bto cast this spell\b/g, 'to use this ability');
+  replace(/\bthis spell\b/g, 'this ability');
 
   // "from you" is tricky. We want to replace "attack from you" with "attack from the
   // $name", but every variant of "area from you" with "area from itself".
   replace(/\battack from you\b/g, 'attack from the $name');
+  replace(/\bdistance from you\b/g, 'distance from itself');
   replace(
     /(\bradius|\bcone|\\glossterm{cone}|\bline|\\glossterm{line}|\bzone|\\glossterm{zone}|\bemanation|\\glossterm{emanation}) from you\b/g,
     (_, area) => `${area} from itself`,
@@ -866,7 +880,7 @@ function reformatAbilityCost(ability: Pick<ActiveAbility, 'cost'>) {
 
   if (ability.cost === 'One optional \\glossterm{fatigue level} (see text).') {
     delete ability.cost;
-  } else if (ability.cost === TELEPORT_ATTACK_FATIGUE) {
+  } else if ([TELEPORT_ATTACK_FATIGUE, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF].includes(ability.cost)) {
     delete ability.cost;
   } else {
     ability.cost = ability.cost.replace(
