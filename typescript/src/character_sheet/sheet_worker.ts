@@ -2339,11 +2339,12 @@ function handleMagicalPower() {
     variables: {
       miscName: 'magical_power',
       numeric: ['level', 'willpower'],
-      boolean: ['elite'],
+      boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
+      const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue = Math.floor(v.level / 2) + v.willpower + v.misc + eliteModifier;
+      const totalValue = Math.floor(v.level / 2) + v.willpower + monsterBonus + v.misc + eliteModifier;
 
       setAttrs({
         magical_power: totalValue,
@@ -2355,6 +2356,10 @@ function handleMagicalPower() {
           {
             name: `Wil`,
             value: v.willpower,
+          },
+          {
+            name: `Monster`,
+            value: monsterBonus,
           },
           {
             name: `Elite`,
@@ -2371,11 +2376,12 @@ function handleMundanePower() {
     variables: {
       miscName: 'mundane_power',
       numeric: ['level', 'strength'],
-      boolean: ['elite'],
+      boolean: ['elite', 'is_monster'],
     },
     callback: (v) => {
+      const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue = Math.floor(v.level / 2) + v.strength + v.misc + eliteModifier;
+      const totalValue = Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier;
 
       setAttrs({
         mundane_power: totalValue,
@@ -2389,6 +2395,10 @@ function handleMundanePower() {
             value: v.strength,
           },
           {
+            name: `Monster`,
+            value: monsterBonus,
+          },
+          {
             name: `Elite`,
             value: eliteModifier,
           },
@@ -2396,6 +2406,16 @@ function handleMundanePower() {
       });
     },
   });
+}
+
+function calcMonsterPowerBonus(level: number) {
+  if (level >= 17) {
+    return 3;
+  } else if (level >= 11) {
+    return 2;
+  } else if (level >= 5) {
+    return 1;
+  }
 }
 
 function handleSize() {
