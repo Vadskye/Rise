@@ -1338,10 +1338,10 @@ impl Class {
             "
                 \\begin<columntable>
                     \\begin<dtabularx><\\columnwidth><l l l l {xcol}>
-                        \\tb<Level> & \\tb<Rank> & \\tb<Durability> & \\tb<HP Mult>\\fn<1> &\\tb<Universal Benefits> \\tableheaderrule
+                        \\tb<Level> & \\tb<Rank> & \\tb<Durability> & \\tb<Bonus>\\fn<1> & \\tb<Special> \\tableheaderrule
                         {level_rows}
                     \\end<dtabularx>
-                    1. You multiply your \\glossterm<durability> by this value to get your total hit points.
+                    1. This bonus applies to your \\glossterm<accuracy>, \\magical power, mundane power, trained skills, and defenses. \\
                 \\end<columntable>
             ",
             xcol = r">{\lcol}X",
@@ -1829,11 +1829,17 @@ impl Class {
 fn universal_character_progression_at_level(level: i32) -> String {
     match level {
         3 => "+1 to two attributes",
+        4 => r"HP: 2x \glossterm{durability}",
         6 => "Legacy item: rank 3",
+        7 => r"HP: 3x durability",
         9 => "+1 to two attributes",
+        10 => r"HP: 4x durability",
         12 => "Legacy item: rank 5",
+        13 => r"HP: 6x durability",
         15 => "+1 to two attributes",
+        16 => r"HP: 8x durability",
         18 => "Legacy item: ranks 7",
+        19 => r"HP: 10x durability",
         21 => "+1 to two attributes",
         _ => r"\tdash",
     }
