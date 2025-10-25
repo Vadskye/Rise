@@ -335,8 +335,19 @@ export const dirtyFighting: CombatStyle = {
       name: 'Anklebreaker',
 
       effect: `
+        Make a \\glossterm{strike}.
+        \\injury If your attack hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
+      `,
+      rank: 3,
+      roles: ['softener'],
+    },
+
+    {
+      name: 'Anklebreaker+',
+
+      effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        If you get a \\glossterm{critical hit}, the target is \\glossterm{briefly} \\slowed.
+        \\hit If your attack hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
       `,
       rank: 7,
       roles: ['softener'],
