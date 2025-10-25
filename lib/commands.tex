@@ -347,35 +347,21 @@
     \hspace{0.8em}
 }
 
-\DeclareDocumentCommand{\monsubsection}{m o m o}
+\DeclareDocumentCommand{\monsubsection}{m m m}
 {
     \setlength\multicolsep{0pt}
     \noindent
-    \begin{multicols}{2}
-        \IfValueTF{#2}
-        {
-            \lowercase{\hypertarget{mon:#2~#1}{}}
-            \label{mon:#2~#1}
-            \hypertarget{mon:#2~#1}
-                {\subsection*{#1,~#2}}
-        }
-        {
-            \lowercase{\hypertarget{mon:#1}{}}
-            \label{mon:#1}
-            \hypertarget{mon:#1}
-                {\subsection*{#1}}
-        }
-
-        \columnbreak
-        \begin{flushright}
-            Level~#3
-            \IfValueT{#4}
-            {
-                % For some reason this space is eaten if we don't use {} here
-                {}~--~\textbf{#4}
-            }
-        \end{flushright}
-    \end{multicols}
+    \begin{minipage}{0.6\linewidth}
+      \lowercase{\hypertarget{mon:#1}{}}
+      \label{mon:#1}
+      \hypertarget{mon:#1}
+          {\subsection*{#1}}
+    \end{minipage}
+    \begin{minipage}{0.4\linewidth}
+      \begin{flushright}
+        #2 \par #3
+      \end{flushright}
+    \end{minipage}
 }
 
 \DeclareDocumentCommand{\monsubsubsection}{m o m o}
