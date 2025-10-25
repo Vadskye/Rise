@@ -16,11 +16,21 @@ export function replacePlaceholders(monster: Creature, latex: string) {
 }
 
 function replaceNames(monsterLatex: string, monsterName: string): string {
-  const lowercaseName = monsterName.toLowerCase();
-  if (monsterName === lowercaseName) {
+  if (monsterName === monsterName.toLowerCase()) {
     throw new Error(`Monster ${monsterName} has lowercase name, but should be title case`);
   }
-  return monsterLatex.replaceAll('$Name', monsterName).replaceAll('$name', lowercaseName);
+  // Some monsters have a comma that indicates a title for the creature.
+  // In that case, the $name text should only use the creature's base name, ignoring its
+  // longer title.
+  const nameIsTitle = /,/.test(monsterName);
+  if (nameIsTitle) {
+    const displayName = monsterName.replace(/,.*/, '');
+    const lowercaseDisplayName = displayName.toLowerCase();
+    return monsterLatex.replaceAll('$Name', displayName).replaceAll('The $name', displayName).replaceAll('the $name', lowercaseDisplayName);
+  } else {
+    const lowercaseName = monsterName.toLowerCase();
+    return monsterLatex.replaceAll('$Name', monsterName).replaceAll('$name', lowercaseName);
+  }
 }
 
 export function addAccuracyToEffect(modifier: number, effect: string, name: string): string {

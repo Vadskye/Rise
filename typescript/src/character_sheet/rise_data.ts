@@ -12,9 +12,8 @@ export type RiseAlignment =
 export type RiseCreatureType =
   | 'aberration'
   | 'animate'
-  | 'beast'
   | 'dragon'
-  | 'humanoid'
+  | 'mortal'
   | 'planeforged'
   | 'undead';
 export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Mystic' | 'Leader';
@@ -191,6 +190,7 @@ const RISE_TRAITS_LIST = [
   'construct',
   'darkvision',
   'floating',
+  'humanoid',
   'impervious',
   'immune',
   'incorporeal',
@@ -203,6 +203,8 @@ const RISE_TRAITS_LIST = [
   'low-light vision',
   'mindless',
   'multipedal',
+  'nonliving',
+  'plant',
   'quadrupedal',
   'scent',
   'sightless',

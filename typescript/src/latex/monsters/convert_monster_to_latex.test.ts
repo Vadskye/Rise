@@ -6,11 +6,11 @@ t.test('convertMonsterToLatex', (t) => {
   t.test('can generate basic latex for a simple creature', (t) => {
     const creature = Creature.new();
     creature.setProperties({
-      name: 'Test Monster',
-      level: 1,
       base_class: 'warrior',
+      creature_type: 'mortal',
+      level: 1,
+      name: 'Test Monster',
       size: 'medium',
-      creature_type: 'humanoid',
     });
     const latexOutput = convertMonsterToLatex(creature);
     t.ok(latexOutput.includes('\\monsubsection{Test Monster}{1 Warrior}'));

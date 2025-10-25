@@ -8,7 +8,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 4,
       size: 'large',
     });
@@ -64,7 +64,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 1,
       size: 'large',
     });
@@ -97,7 +97,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 3,
       size: 'small',
     });
@@ -119,7 +119,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 12,
       size: 'large',
     });
@@ -183,7 +183,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 2,
       size: 'medium',
     });
@@ -200,7 +200,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 7,
       size: 'large',
     });
@@ -242,7 +242,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 7,
       size: 'large',
     });
@@ -286,7 +286,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 2,
       size: 'small',
     });
@@ -322,7 +322,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 5,
       size: 'large',
     });
@@ -372,7 +372,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'skirmisher',
       elite: true,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 7,
       size: 'huge',
     });
@@ -420,7 +420,7 @@ export function addBeasts(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 5,
       size: 'medium',
     });
@@ -483,7 +483,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -510,7 +510,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -538,7 +538,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: true,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -564,7 +564,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: true,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 3,
             size: 'large',
           });
@@ -592,7 +592,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'large',
           });
@@ -614,7 +614,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'small',
           });
@@ -632,7 +632,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -662,7 +662,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 2,
             size: 'large',
           });
@@ -685,7 +685,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 2,
             size: 'large',
           });
@@ -704,7 +704,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -721,7 +721,7 @@ function addAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 3,
             size: 'large',
           });
@@ -762,7 +762,7 @@ function addDireAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 1,
             size: 'small',
           });
@@ -790,7 +790,7 @@ function addDireAnimals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 4,
             size: 'large',
           });
@@ -860,7 +860,7 @@ function addIchorTainted(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: true,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });
@@ -880,7 +880,7 @@ function addIchorTainted(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'brute',
             elite: true,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 9,
             size: 'large',
           });
@@ -900,7 +900,7 @@ function addIchorTainted(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'beast',
+            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });
