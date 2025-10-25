@@ -307,6 +307,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                     \end{triggeredability}
 
                     \begin{triggeredability}{Decoy}{Triggered}
+                        \abilitytags \abilitytag{Emotion}
                         \rankline
                         If you are adjacent to your quarry, it is \goaded by you.
 
