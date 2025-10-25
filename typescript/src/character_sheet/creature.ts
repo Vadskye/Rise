@@ -50,6 +50,17 @@ import {
   Shield,
 } from '@src/monsters/equipment';
 
+// TODO: this should probably be in a `knowledge.ts` file
+export interface KnowledgeResultConfig {
+  easy?: string;
+  normal?: string;
+  hard?: string;
+  legendary?: string;
+  monsterLevel: number;
+  monsterName: string;
+  relevantKnowledges: RiseSkill[];
+}
+
 // These have unique typedefs beyond the standard string/number/bool
 type CustomCreatureProperty = 'base_class' | 'creature_type' | 'role' | 'size';
 
@@ -641,6 +652,19 @@ export class Creature implements CreaturePropertyMap {
     return [this.sense_0_name, this.sense_1_name, this.sense_2_name, this.sense_3_name].filter(
       (val) => val !== undefined,
     );
+  }
+
+  getKnowledgeResultConfig(): KnowledgeResultConfig {
+    return {
+      easy: this.knowledge_result_easy,
+      normal: this.knowledge_result_normal,
+      hard: this.knowledge_result_hard,
+      legendary: this.knowledge_result_legendary,
+      monsterLevel: this.level,
+      monsterName: this.name,
+      // TODO: calculate multiple relevant knowledges based on traits
+      relevantKnowledges: [this.getRelevantKnowledge()],
+    };
   }
 
   addTrait(traitName: RiseTrait) {

@@ -5,7 +5,7 @@ import {
   RISE_SOCIAL_SKILLS,
   RISE_OTHER_SKILLS,
 } from '@src/character_sheet/rise_data';
-import { Creature } from '@src/character_sheet/creature';
+import { Creature, KnowledgeResultConfig } from '@src/character_sheet/creature';
 import * as format from '@src/latex/format';
 import { caseInsensitiveSort } from '@src/util/sort';
 
@@ -21,7 +21,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const hasParentGroup = Boolean(parentGroupName);
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? ' -- \\textbf{Elite}' : '';
-  const knowledgeText = genKnowledgeText(monster);
+  const knowledgeText = genKnowledgeText(monster.getKnowledgeResultConfig());
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
   const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
@@ -67,25 +67,26 @@ function genArtText(monster: Creature, parentGroupName?: string): string {
   return `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${path}}\\vspace{0.5em}`;
 }
 
-export function genKnowledgeText(monster: Creature): string {
+export function genKnowledgeText(config: KnowledgeResultConfig): string {
   const difficultyMap: Record<string, string> = {};
-  const baseDifficulty = Math.floor(monster.level / 2) + 5;
-  if (monster.knowledge_result_easy) {
-    difficultyMap[baseDifficulty - 5] = monster.knowledge_result_easy;
+  const baseDifficulty = Math.floor(config.monsterLevel / 2) + 5;
+  if (config.easy) {
+    difficultyMap[baseDifficulty - 5] = config.easy;
   }
-  if (monster.knowledge_result_normal) {
-    difficultyMap[baseDifficulty] = monster.knowledge_result_normal;
+  if (config.normal) {
+    difficultyMap[baseDifficulty] = config.normal;
   }
-  if (monster.knowledge_result_hard) {
-    difficultyMap[baseDifficulty + 5] = monster.knowledge_result_hard;
+  if (config.hard) {
+    difficultyMap[baseDifficulty + 5] = config.hard;
   }
-  if (monster.knowledge_result_legendary) {
-    difficultyMap[baseDifficulty + 10] = monster.knowledge_result_legendary;
+  if (config.legendary) {
+    difficultyMap[baseDifficulty + 10] = config.legendary;
   }
   const difficulties: string[] = Object.keys(difficultyMap).sort((a, b) => Number(a) - Number(b));
 
   if (difficulties.length > 0) {
-    const relevantKnowledge = monster.getRelevantKnowledge();
+    // TODO: render multiple relevant knowledges
+    const relevantKnowledge = config.relevantKnowledges[0];
     const difficultiesText = difficulties
       .map(
         (difficulty) =>
@@ -94,7 +95,7 @@ export function genKnowledgeText(monster: Creature): string {
       .join('\n');
 
     return `
-      \\monsterknowledgeheader{$Name}
+      \\monsterknowledgeheader{${config.monsterName}}
       ${difficultiesText}
     `;
   } else {
