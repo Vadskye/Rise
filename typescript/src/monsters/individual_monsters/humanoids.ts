@@ -7,7 +7,7 @@ export function addHumanoids(grimoire: Grimoire) {
       alignment: 'chaotic evil',
       base_class: 'brute',
       elite: false,
-      creature_type: 'beast',
+      creature_type: 'mortal',
       level: 4,
       size: 'medium',
     });
@@ -21,6 +21,7 @@ export function addHumanoids(grimoire: Grimoire) {
         They live to hear the desperate gasping for breath and crunching of bones that their powerful arms can inflict on their prey.
       `,
     });
+    creature.addTrait('humanoid');
     creature.setTrainedSkills(['awareness', 'climb', 'stealth']);
     creature.addCustomSense('Darkvision (60 ft.)');
     creature.addCustomMovementSpeed('Climb (slow)');
@@ -34,10 +35,11 @@ export function addHumanoids(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'brute',
       elite: true,
-      creature_type: 'humanoid',
+      creature_type: 'mortal',
       level: 7,
       size: 'large',
     });
+    creature.addTrait('humanoid');
     creature.setProperties({
       has_art: true,
     });
@@ -77,6 +79,9 @@ function addBandits(grimoire: Grimoire) {
     {
       name: 'Bandits',
       hasArt: false,
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      }
     },
     [
       [
@@ -86,7 +91,7 @@ function addBandits(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -116,7 +121,7 @@ function addBandits(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -139,7 +144,7 @@ function addBandits(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -179,6 +184,7 @@ function addBugbears(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
         creature.setTrainedSkills(['endurance']);
       },
     },
@@ -190,7 +196,7 @@ function addBugbears(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -212,7 +218,7 @@ function addBugbears(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'leader',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -236,7 +242,7 @@ function addBugbears(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -257,7 +263,7 @@ function addBugbears(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 6,
             size: 'medium',
           });
@@ -281,6 +287,9 @@ function addCultists(grimoire: Grimoire) {
     {
       name: 'Cultists',
       hasArt: false,
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      },
     },
     [
       [
@@ -290,7 +299,7 @@ function addCultists(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -308,7 +317,7 @@ function addCultists(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -319,6 +328,42 @@ function addCultists(grimoire: Grimoire) {
           creature.addSpell('Pyrohemia');
           creature.addSpell('Burning Grasp');
           creature.addWeaponMult('club');
+        },
+      ],
+      [
+        'Arsonist',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'mortal',
+            level: 6,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([0, 4, 1, 0, 3, 1]);
+          creature.addCustomManeuver({
+            name: "Alchemist's Fire",
+            attack: {
+              hit: '\\damagerankfourlow.',
+              targeting: `
+                Make an attack vs. Reflex against something within \\shortrange.
+              `,
+            },
+            tags: ['Fire'],
+          });
+          creature.addCustomManeuver({
+            name: "Firebomb",
+            attack: {
+              hit: '\\damagerankthreelow.',
+              missGlance: true,
+              targeting: `
+                Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
+              `,
+            },
+            tags: ['Fire'],
+          });
         },
       ],
     ],
@@ -344,6 +389,9 @@ function addGiants(grimoire: Grimoire) {
           The object may also deal less damage than a boulder depending on its construction.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      }
     },
     [
       [
@@ -353,7 +401,7 @@ function addGiants(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 10,
             size: 'huge',
           });
@@ -375,7 +423,7 @@ function addGiants(grimoire: Grimoire) {
               They can live to be 70 years old.
             `,
           });
-          creature.addManeuver('Forceful Smash', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
           creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
           creature.addWeaponMult('greatclub');
         },
@@ -387,7 +435,7 @@ function addGiants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 11,
             size: 'gargantuan',
           });
@@ -401,11 +449,11 @@ function addGiants(grimoire: Grimoire) {
             hard: `
               Adult stone giants stand about 50 feet tall.
               They can live to be 300 years old.
-              Young stone giants can be capricious, hunting tiny creatures like goats and humanoids on a whim.
+              Young stone giants can be capricious, hunting tiny creatures like goats and mortal on a whim.
               Elder stone giants tend to be wiser and more cautious, and avoid unnecessary conflict.
             `,
           });
-          creature.addManeuver('Forceful Smash', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
           creature.addManeuver('Forceful Smash', { weapon: 'greatclub' });
           creature.addWeaponMult('greatclub');
           creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
@@ -420,12 +468,12 @@ function addGiants(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 15,
             size: 'gargantuan',
           });
           creature.setBaseAttributes([8, -2, 8, 0, 4, 6]);
-          creature.addManeuver('Forceful Smash+', { displayName: 'Boulder Toss', weapon: 'giant boulder' });
+          creature.addWeaponMult('giant boulder', { displayName: 'Boulder Toss' });
           creature.addManeuver('Forceful Smash+', { weapon: 'greatclub' });
           creature.addWeaponMult('greatclub');
           creature.addSpell('Mighty Rockshard Blast', { usageTime: 'elite' });
@@ -448,6 +496,9 @@ function addGoblins(grimoire: Grimoire) {
           They are typically found in small groups, preying on travelers or isolated settlements.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      },
     },
     [
       [
@@ -457,7 +508,7 @@ function addGoblins(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -478,7 +529,7 @@ function addGoblins(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -499,7 +550,7 @@ function addGoblins(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -539,6 +590,7 @@ function addLizardfolk(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('amphibious');
+        creature.addTrait('humanoid');
         creature.addCustomMovementSpeed('Land (normal)');
         creature.addCustomMovementSpeed('Swim (normal)');
         creature.setEquippedArmor({
@@ -555,7 +607,7 @@ function addLizardfolk(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -572,7 +624,7 @@ function addLizardfolk(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 5,
             size: 'medium',
           });
@@ -599,6 +651,7 @@ function addKobolds(grimoire: Grimoire) {
     {
       name: 'Kobolds',
       sharedInitializer: (creature) => {
+        creature.addTrait('humanoid');
         creature.setTrainedSkills(['awareness', 'stealth']);
       },
     },
@@ -609,7 +662,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             elite: false,
             level: 2,
             size: 'medium',
@@ -626,7 +679,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
             base_class: 'sniper',
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             elite: false,
             level: 2,
             size: 'medium',
@@ -644,7 +697,7 @@ function addKobolds(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -664,7 +717,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             elite: false,
             level: 11,
             size: 'medium',
@@ -683,7 +736,7 @@ function addKobolds(grimoire: Grimoire) {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
             base_class: 'sniper',
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             elite: false,
             level: 12,
             size: 'medium',
@@ -704,7 +757,7 @@ function addKobolds(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 13,
             size: 'medium',
           });
@@ -736,6 +789,9 @@ function addNecromancers(grimoire: Grimoire) {
           They are reviled in most societies, both for their desecration of the dead and for the harm their magic can do to souls.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      }
     },
     [
       [
@@ -745,7 +801,7 @@ function addNecromancers(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 4,
             size: 'medium',
           });
@@ -767,7 +823,7 @@ function addNecromancers(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 8,
             size: 'medium',
           });
@@ -815,6 +871,51 @@ function addNecromancers(grimoire: Grimoire) {
           creature.addSpell('Sanguine Bond', { usageTime: 'elite' });
         },
       ],
+      [
+        'Idoris, Queen of the Dead',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'mystic',
+            elite: true,
+            creature_type: 'mortal',
+            level: 18,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
+              Idoris is a powerful necromancer who lives deep in a cursed forest.
+              She controls a large army of undead minions who aggressively defend her territory.
+            `,
+            // TODO: there is no reasonable god for Idoris to worship
+          });
+          creature.setTrainedSkills(['awareness', 'knowledge_arcana', 'knowledge_religion', 'persuasion']);
+          creature.setBaseAttributes([0, 4, 1, 5, 6, 10]);
+
+          // Channel Divinity spells are elite actions
+          creature.addSpell('Mighty Retributive Judgment', { usageTime: 'elite' });
+          creature.addSpell('Mighty Word of Faith', { usageTime: 'elite' });
+          creature.addSpell('Divine Interdiction', { usageTime: 'elite' });
+          creature.addSpell('Mighty Lifetap Slash');
+          creature.addSpell('Mighty Sanguine Bond');
+          // Mighty lifesteal; TODO automatically support `functionsLike` spells
+          creature.addCustomSpell({
+            name: 'Lifesteal',
+            attack: {
+              hit: `
+                \\damagerankfive.
+              `,
+              injury: `
+                You regain \\hprankeight at the end of the round.
+              `,
+              targeting: `
+                Make an attack vs. Fortitude against one living creature within \\medrange.
+              `,
+            },
+            rank: 6,
+          });
+        },
+      ],
     ],
   );
 }
@@ -838,6 +939,9 @@ function addOgres(grimoire: Grimoire) {
           Ogres use massive clubs in battle to tenderize their meat instead of wastefully hacking off bits.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      }
     },
     [
       [
@@ -847,7 +951,7 @@ function addOgres(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 5,
             size: 'large',
           });
@@ -872,7 +976,7 @@ function addOgres(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 8,
             size: 'large',
           });
@@ -899,7 +1003,7 @@ function addOgres(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'sniper',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 8,
             size: 'large',
           });
@@ -928,7 +1032,7 @@ function addOgres(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 9,
             size: 'large',
           });
@@ -978,6 +1082,7 @@ function addOrcs(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
         creature.setTrainedSkills(['endurance']);
         creature.addCustomSense('Darkvision (60 ft.)');
       },
@@ -990,7 +1095,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -1015,7 +1120,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -1039,7 +1144,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 3,
             size: 'medium',
           });
@@ -1071,7 +1176,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'brute',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 5,
             size: 'medium',
           });
@@ -1097,7 +1202,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: true,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 7,
             size: 'medium',
           });
@@ -1124,7 +1229,7 @@ function addOrcs(grimoire: Grimoire) {
             alignment: 'lawful evil',
             base_class: 'leader',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });
@@ -1163,6 +1268,9 @@ function addTownsfolk(grimoire: Grimoire) {
           They are typically found in small groups, preying on travelers or isolated settlements.
         `,
       },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
+      },
     },
     [
       [
@@ -1172,7 +1280,7 @@ function addTownsfolk(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 1,
             size: 'medium',
           });
@@ -1201,7 +1309,7 @@ function addTownsfolk(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'leader',
             elite: false,
-            creature_type: 'humanoid',
+            creature_type: 'mortal',
             level: 2,
             size: 'medium',
           });

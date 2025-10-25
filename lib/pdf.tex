@@ -110,8 +110,7 @@
 \DeclareDocumentCommand{\spelltwocol}{m m}
 {
     \par\noindent
-    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~>{\rcol}X~@{}}
-        \renewcommand{\arraystretch}{0.5}
+    \begin{tabularx}{\columnwidth}{@{}~>{\lcol}X~r~@{}}
         #1 & #2
     \end{tabularx}
 }
