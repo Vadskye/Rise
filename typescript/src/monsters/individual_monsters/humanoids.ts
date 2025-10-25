@@ -385,7 +385,7 @@ function addGiants(grimoire: Grimoire) {
           Giants prefer to throw boulders, but in a pinch they can throw almost anything.
         `,
         hard: `
-          A giant's \glossterm{range limits} with an object other than a boulder are generally half its range limit with a boulder.
+          A giant's \\glossterm{range limits} with an object other than a boulder are generally half its range limit with a boulder.
           The object may also deal less damage than a boulder depending on its construction.
         `,
       },
