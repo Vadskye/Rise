@@ -6,7 +6,7 @@ import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
 import { addPlaneforged } from '@src/monsters/individual_monsters/planeforged';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
 import * as format from '@src/latex/format';
-import { convertMonsterToLatex } from './convert_monster_to_latex';
+import { convertMonsterToLatex, genKnowledgeText } from './convert_monster_to_latex';
 
 export function generateMonsterDescriptions(): string {
   const grimoire = new Grimoire();
@@ -21,6 +21,7 @@ export function generateMonsterDescriptions(): string {
     ...grimoire.getMonsterNames(),
     ...grimoire.getMonsterGroupNames(),
   ];
+  sectionNames.sort();
 
   const letters: Set<string> = new Set();
   for (const sectionName of sectionNames) {
@@ -53,17 +54,34 @@ export function convertMonsterGroupToLatex(group: MonsterGroup): string {
     .map((monster) => convertMonsterToLatex(monster, group.name))
     .join('\n\\vspace{1em}\n');
 
-  const spacingBuffer = group.description || group.knowledge ? '\\vspace{0.5em}' : '';
+  const spacingBuffer = group.description || group.knowledge ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
   const artText = group.hasArt ? `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${group.name}}` : '';
 
-  // TODO: render art, knowledge. See `monster_group.rs`.
   return `
     \\newpage
     \\section{${group.name}}
     ${artText}
     ${group.description || ''}
+    ${genGroupKnowledgeText(group)}
     ${spacingBuffer}
 
     ${monsterText}
   `.trim();
+}
+
+function genGroupKnowledgeText(group: MonsterGroup): string {
+  if (!group.knowledge) {
+    return '';
+  }
+
+  // For now, assume that the first monster is representative of all monsters in the
+  // group.
+  const exampleMonster = group.monsters[0];
+
+  return genKnowledgeText({
+    ...group.knowledge,
+    monsterLevel: exampleMonster.level,
+    monsterName: group.name,
+    relevantKnowledges: [exampleMonster.getRelevantKnowledge()],
+  });
 }
