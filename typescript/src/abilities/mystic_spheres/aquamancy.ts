@@ -881,7 +881,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Call that equal to braced.
       effect: `
         You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
-        In addition, you can move up to your movement speed during your action.
+        In addition, you can move up to your speed during your action.
         The protection is \\atSwift, but the movement is not.
       `,
       rank: 5,

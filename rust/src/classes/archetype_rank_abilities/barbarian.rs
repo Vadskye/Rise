@@ -269,7 +269,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Savage Rush}{Standard action}
                     \rankline
-                    Move up to your movement speed.
+                    Move up to your speed.
                     During this movement, you can pass through spaces occupied by your \glossterm{enemies} as if they were unoccupied.
                     You must still end your movement in an unoccupied space.
                     At any two points during this movement, you may make a melee \glossterm{strike}.

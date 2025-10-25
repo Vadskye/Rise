@@ -44,7 +44,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest',
 
       effect: `
-        Move up to your movement speed in a straight line.
+        Move up to your speed in a straight line.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -56,7 +56,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest+',
 
       effect: `
-        Move up to your movement speed in a straight line.
+        Move up to your speed in a straight line.
         You can also make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -137,7 +137,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to your movement speed.
+        Then, you can move up to your speed.
       `,
       rank: 3,
       roles: ['mobility', 'burst'],
