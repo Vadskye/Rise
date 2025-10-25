@@ -115,6 +115,7 @@ export function addUndead(grimoire: Grimoire) {
   addFleshwrought(grimoire);
   addGhouls(grimoire);
   addHalfsouls(grimoire);
+  addLiches(grimoire);
   addSkeletons(grimoire);
   addVampires(grimoire);
   addZombies(grimoire);
@@ -149,7 +150,7 @@ function addFleshwrought(grimoire: Grimoire) {
         creature.addManeuver('Anklebreaker', { weapon: 'spike' });
         // TODO: unclear EA
         creature.addCustomManeuver({
-          name: 'Rotting Stench', 
+          name: 'Rotting Stench',
           attack: {
             // Explicitly mark no crit to avoid lint warnings
             crit: null,
@@ -164,6 +165,21 @@ function addFleshwrought(grimoire: Grimoire) {
           },
           usageTime: 'elite',
         });
+      }],
+      ['Fleshwrought Slicer', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral evil',
+          base_class: 'warrior',
+          elite: false,
+          creature_type: 'undead',
+          level: 8,
+          size: 'medium',
+        });
+        creature.setTrainedSkills([]);
+        creature.setBaseAttributes([4, 5, 0, -4, 1, 0]);
+        creature.addManeuver('Spinning Steel', { weapon: 'claws' });
+        creature.addManeuver('Strip the Flesh', { weapon: 'claws' });
+        creature.addManeuver('Rend the Hide', { weapon: 'claws' });
       }],
     ],
   );
@@ -251,7 +267,7 @@ function addHalfsouls(grimoire: Grimoire) {
       name: 'Halfsouls',
       knowledge: {
         normal: `
-          A halfsoul is a creature that was incorrectly resurrected, returning only half of the original creature's soul to its body.
+          A halfsoul is an undead creature that was incorrectly resurrected, returning only half of the original creature's soul to its body.
           This splitting of the soul has disastrous consequences, leaving both halves wracked by pain and confusion.
           Although a halfsoul has all of the original abilities of the creature, it is violent and insane, with only fragmentary glimpses of its original personality.
         `,
@@ -304,6 +320,82 @@ function addHalfsouls(grimoire: Grimoire) {
             type: 'Sustain (attuneable, minor)',
           });
         },
+      ],
+    ],
+  );
+}
+
+function addLiches(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Liches',
+      knowledge: {
+        normal: `
+          A lich is an undead creature that intentionally severed its soul from its body and placed the soul in a vessel called a phylactery.
+          As long as its phylactery survives, a lich cannot be fully destroyed.
+          Becoming a lich requires horrific acts of violence, and even researching the process is generally illegal.
+        `,
+        hard: `
+          Because the normal body of a lich is soulless, it is incapable of growing or changing its mind.
+          Liches must commune with their phylactery to truly learn and develop their skills.
+          However, they must also keep their phylactery safely protected, since keeping it on their body means it could easily be destroyed if they die.
+          Each lich must resolve this dangerous contradiction in their own way.
+        `,
+        legendary: `
+          The body of a lich is not completely soulless.
+          A tiny soul splinter inhabits the body, binding it to the phylactery.
+          It provides the body no animating force, but the soul splinter returns to the phylactery when the lich's body is destroyed.
+          The return of that soul splinter prompts the phylactery to inhabit a new body.
+        `,
+      },
+      sharedInitializer: (creature) => {
+        creature.addTrait('soulless');
+        creature.addPassiveAbility({
+          name: "Phylactery",
+          isMagical: true,
+          effect: `
+            Every lich contains their soul in their phylactery.
+            Most phylacteries are valuable gems, but other objects are possible.
+            A phylactery must be at least Tiny in size.
+
+            Liches can commune with their phylacteries to allow their souls to temporarily inhabit their bodies.
+            This allows their soul to process the memories stored in their body, allowing the lich to improve its skills and change its mind.
+            A lich that never communes with its phylactery suffers no direct consequences, but is also incapable of increasing its personal power.
+
+            When a lich dies, the phylactery creates a new body for the lich after 24 hours.
+            The new body has no memory of what happened to the original body since the last time the lich communed with its phylactery.
+          `,
+        });
+      },
+    },
+    [
+      [
+        'Okonlok, Astral Lich',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'chaotic evil',
+            base_class: 'sniper',
+            elite: true,
+            creature_type: 'undead',
+            level: 17,
+            size: 'medium',
+          });
+          creature.setTrainedSkills(['awareness', 'deduction', 'craft_bone', 'knowledge_arcana', 'knowledge_religion']);
+          creature.setBaseAttributes([-2, 5, 2, 5, 8, 10]);
+          creature.setKnowledgeResults({
+            hard: `
+              Okonlok learned how to become a lich on a long interplanar quest for power.
+            `,
+          });
+
+          creature.addSpell('Planar Jaunt -- Myriad');
+          creature.addSpell('Massive Astral Rupture');
+          creature.addSpell('Distant Splicing Grasp');
+          creature.addSpell('Giant Twinned Portals', { usageTime: 'elite' });
+          creature.addSpell('Dimension Door', { usageTime: 'elite' });
+          creature.addSpell('Banishment', { usageTime: 'elite' });
+          creature.addSpell('Hostile Transposition', { usageTime: 'elite' });
+        }
       ],
     ],
   );
