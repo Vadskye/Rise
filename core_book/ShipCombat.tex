@@ -10,67 +10,44 @@ It is primarily intended for naval campaigns where the players are important cre
 These rules could also be used for other types of vehicles, such as flying ships in the Astral Plane or zeppelins.
 
 \section{Ship Statistics}
-  Ships use the same basic framework for calculating their statistics as characters and monsters.
+  Ships use the same basic framework for calculating their statistics as monsters.
   A ship has a level that indicates its general power.
   This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
+
   A ship's level determines its hit points, accuracy, defenses, and power, as indicated in the table below.
-  These values change based on the ship's attributes, as indicated in \pcref{Ship Attributes}.
+  Ships have the same roles as monsters (see \pcref{Monster Roles}).
+  Unlike monsters, ships do not naturally increase their attributes with level.
+  Instead, their attributes increased based on their crew.
+  For details, see \pcref{Ship Attributes}.
 
   % NOTE: Keep in sync with Monster Advancement in Monsters
   \begin{dtable}
     \lcaption{Ship Statistics}
     \begin{compresseddtabularx}{\columnwidth}{l l l l >{\lcol}X}
-      \tb{Level} & \tb{HP} & \tb{Defenses} & \tb{Accuracy, Power} & \tb{Item Rank (Cost)} \tableheaderrule
-      1st        & 8       & 3             & \tdash               & 1 (40 gp)      \\
-      2nd        & 10      & 4             & \plus1               & 1 (40 gp)      \\
-      3rd        & 12      & 4             & \plus1               & 1 (40 gp)      \\
-      4th        & 14      & 5             & \plus2               & 2 (200 gp)     \\
-      5th        & 16      & 5             & \plus2               & 2 (200 gp)     \\
-      6th        & 18      & 6             & \plus3               & 2 (200 gp)     \\
-      7th        & 20      & 6             & \plus3               & 3 (1,000 gp)   \\
-      8th        & 23      & 7             & \plus4               & 3 (1,000 gp)   \\
-      9th        & 26      & 7             & \plus4               & 3 (1,000 gp)   \\
-      10th       & 29      & 8             & \plus5               & 4 (5,000 gp)   \\
-      11th       & 32      & 8             & \plus5               & 4 (5,000 gp)   \\
-      12th       & 35      & 9             & \plus6               & 4 (5,000 gp)   \\
-      13th       & 40      & 9             & \plus6               & 5 (25,000 gp)  \\
-      14th       & 46      & 10            & \plus7               & 5 (25,000 gp)  \\
-      15th       & 52      & 10            & \plus7               & 5 (25,000 gp)  \\
-      16th       & 58      & 11            & \plus8               & 6 (125,000 gp) \\
-      17th       & 64      & 11            & \plus8               & 6 (125,000 gp) \\
-      18th       & 70      & 12            & \plus9               & 6 (125,000 gp) \\
-      19th       & 80      & 12            & \plus9               & 7 (625,000 gp) \\
-      20th       & 92      & 13            & \plus10              & 7 (625,000 gp) \\
-      21st       & 104     & 13            & \plus10              & 7 (625,000 gp) \\
+      \tb{Level} & \tb{Item Rank (Cost)} & \tb{Durability} & \tb{Bonus}\fn{1} & \tb{Special}             \tableheaderrule
+      1st        & 1 (40 gp)             & \plus0          & \tdash           & \tdash                              \\
+      2nd        & 1 (40 gp)             & \plus1          & \plus1           & \tdash                              \\
+      3rd        & 1 (40 gp)             & \plus2          & \plus1           & \tdash                              \\
+      4th        & 2 (200 gp)            & \plus2          & \plus2           & HP: 2x \glossterm{durability}       \\
+      5th        & 2 (200 gp)            & \plus3          & \plus2           & \plus1 power                        \\
+      6th        & 2 (200 gp)            & \plus4          & \plus3           & \tdash                              \\
+      7th        & 3 (1,000 gp)          & \plus4          & \plus3           & HP: 3x durability, \plus1 defenses  \\
+      8th        & 3 (1,000 gp)          & \plus5          & \plus4           & \tdash                              \\
+      9th        & 3 (1,000 gp)          & \plus6          & \plus4           & \tdash                              \\
+      10th       & 4 (5,000 gp)          & \plus6          & \plus5           & HP: 4x durability                   \\
+      11th       & 4 (5,000 gp)          & \plus7          & \plus5           & \plus1 power                        \\
+      12th       & 4 (5,000 gp)          & \plus8          & \plus6           & \tdash                              \\
+      13th       & 5 (25,000 gp)         & \plus8          & \plus6           & HP: 6x durability, \plus1 accuracy  \\
+      14th       & 5 (25,000 gp)         & \plus9          & \plus7           & \tdash                              \\
+      15th       & 5 (25,000 gp)         & \plus10         & \plus7           & \tdash                              \\
+      16th       & 6 (125,000 gp)        & \plus10         & \plus8           & HP: 8x durability                   \\
+      17th       & 6 (125,000 gp)        & \plus11         & \plus8           & \plus1 power                        \\
+      18th       & 6 (125,000 gp)        & \plus12         & \plus9           & \tdash                              \\
+      19th       & 7 (625,000 gp)        & \plus12         & \plus9           & HP: 10x durability, \plus1 defenses \\
+      20th       & 7 (625,000 gp)        & \plus13         & \plus10          & \tdash                              \\
+      21st       & 7 (625,000 gp)        & \plus14         & \plus10          & \plus1 accuracy                     \\
     \end{compresseddtabularx}
-  \end{dtable}
-
-  \begin{dtable}
-    \lcaption{Elite Ship Statistics}
-    \begin{compresseddtabularx}{\columnwidth}{l l l l l >{\lcol}X}
-      \tb{Level} & \tb{HP} & \tb{Defenses} & \tb{Accuracy} & \tb{Power} & \tb{Item Rank (Cost)} \tableheaderrule
-      1st        & 24      & 5             & \tdash        & \plus2     & 1 (40 gp)      \\
-      2nd        & 30      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-      3rd        & 36      & 6             & \plus1        & \plus3     & 1 (40 gp)      \\
-      4th        & 42      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-      5th        & 48      & 7             & \plus2        & \plus4     & 2 (200 gp)     \\
-      6th        & 54      & 8             & \plus3        & \plus5     & 2 (200 gp)     \\
-      7th        & 60      & 8             & \plus3        & \plus5     & 3 (1,000 gp)   \\
-      8th        & 69      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-      9th        & 78      & 9             & \plus4        & \plus6     & 3 (1,000 gp)   \\
-      10th       & 87      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-      11th       & 96      & 10            & \plus5        & \plus7     & 4 (5,000 gp)   \\
-      12th       & 105     & 11            & \plus6        & \plus8     & 4 (5,000 gp)   \\
-      13th       & 120     & 11            & \plus6        & \plus8     & 5 (25,000 gp)  \\
-      14th       & 138     & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-      15th       & 156     & 12            & \plus7        & \plus9     & 5 (25,000 gp)  \\
-      16th       & 174     & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-      17th       & 192     & 13            & \plus8        & \plus10    & 6 (125,000 gp) \\
-      18th       & 210     & 14            & \plus9        & \plus11    & 6 (125,000 gp) \\
-      19th       & 240     & 14            & \plus9        & \plus11    & 7 (625,000 gp) \\
-      20th       & 276     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
-      21st       & 312     & 15            & \plus10       & \plus12    & 7 (625,000 gp) \\
-    \end{compresseddtabularx}
+    1. This bonus applies to the ship's \glossterm{accuracy}, \magical power, mundane power, and defenses. Intelligent ships also add this bonus to their \glossterm{trained skills}.  \\
   \end{dtable}
 
   \subsection{Ship Hit Points}
@@ -573,7 +550,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       It still cannot apply that ability twice to the same check.
 
     \cf{Bsn}[2]{Specialized Encouragement}
-    \begin{activeability}{Specialized Encouragement}{Standard action}
+      \begin{activeability}{Specialized Encouragement}{Standard action}
         \rankline
 
         You choose one of the following benefits:
