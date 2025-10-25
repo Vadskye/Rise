@@ -29,7 +29,7 @@
   \abilitytagdef{Cold} Cold abilities draw energy out of the environment to cause their effects.
 
   \abilitytagdef{Compulsion} Compulsion abilities forcibly alter a creature's actions, but do not necessarily affect its opinions or personality.
-  They have no effect on objects or creatures without minds.
+  They have no effect on anything without a mind.
 
   \abilitytagdef{Creation} Creation abilities create permanent physical objects.
   Objects created with Creation abilities are identical to objects created through more mundane means.
@@ -47,7 +47,7 @@
   Their effects typically create \glossterm{bright illumination} in a \smallarea radius that immediately ends when they are done.
 
   \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
-  They have no effect on objects or creatures without minds.
+  They have no effect on anything without a mind.
 
   \abilitytagdef{Fire} Fire abilities tap into the elemental force of fire.
   Their effects typically create \glossterm{bright illumination} in a \smallarea radius that lingers until the end of the current round.
@@ -106,7 +106,7 @@
   Instead, they use their \glossterm{line of sight} to also determine their \glossterm{line of effect}.
   For example, a Visual effect is not blocked by glass, but it is blocked by thick smoke.
 
-  Creatures and objects that cannot see a Visual effect are immune to it.
+  Anything that cannot see a Visual effect is immune to it.
   Simply closing your eyes only makes you \impervious to Visual effects.
   Completely covering your eyes, such as with your hands or with a blindfold, makes you immune.
   Special vision abilities that replace normal vision entirely, such as \trait{blindsight} and \trait{tremorsense}, are unable to perceive Visual effects.
@@ -306,12 +306,8 @@
   Its inanimate body is given a semblance of life and sentience by some form of magic.
   Like other creatures, they can move and follow instructions.
   However, they lack agency and cannot make the independent decisions.
-  They are \trait{mindless}, making them immune to \abilitytag{Compulsion} and \abilitytag{Emotion} effects.
-  Constructs lack a soul and cannot be resurrected by any means if they are destroyed.
-
-  Constructs are considered to be both creatures and objects, and are affected by abilities which affect either.
-  They are not alive, and they do not need to eat, drink, or sleep.
-  They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
+  They are \trait{mindless}, \trait{nonliving}, and \trait{soulless}.
+  they do not need to eat, drink, or sleep.
 
   Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
   Instead, their vital wounds must be repaired manually.
@@ -334,6 +330,11 @@
   This does not increase its \glossterm{height limit} for any \glossterm{fly speed} it may have.
   A floating creature above the height limit for its fly speed falls down until its fly speed becomes functional again, which does not cause it to take \glossterm{falling damage}.
   Some creatures can freely choose whether they float, potentially allowing them to glide.
+
+  \traitdef{Humanoid}{humanoid}
+  A humanoid is an intelligent creature with two arms and two legs.
+  Humanoids can have magical abilities, but are usually not intrinsically magical.
+  Most civilized creatures and societies are predominantly humanoid.
 
   \traitdef{Impervious}{impervious}
   % Are there any other things you can be impervious to?
@@ -379,10 +380,8 @@
   If an indwelt is killed, it can be resurrected, but its previous body is not considered its corpse in the same way that a human's dead body is.
   This means it cannot be resurrected by magic that uses the corpse of the deceased creature.
 
-  Indwelt are considered to be both creatures and objects, and are affected by abilities which affect either.
-  They are alive if their base matter is alive, but not if their base matter is dead or inorganic.
+  Indwelt are alive if their base matter is alive, but not if their base matter is dead or inorganic.
   If they are alive, they need to eat, drink, and sleep.
-  They are always considered to be \glossterm{attended} by themselves, so they are never affected by abilities that only affect unattended objects, even while unconscious.
 
   \traitdef{Intangible}{intangible}
   An intangible creature has a physical body that is gaseous or otherwise difficult to touch.
@@ -417,6 +416,12 @@
   Lifesight functions like \trait{blindsight}, except that it can only see living things.
   This includes both creatures and non-creatures, such as plants.
 
+  \traitdef{Living}{living}
+  A living thing has life, which means that it can change and adapt over time.
+  Most creatures are living, but animates and undead are not.
+  % Is this the right place for this text?
+  Since most creatures are living, this trait is normally omitted from monster descriptions.
+
   \traitdef{Low-light Vision}{low-light vision}
   A creature with low-light vision can see perfectly in \glossterm{dim illumination}, just like a human does in \glossterm{bright illumination}.
   This provides no benefit in areas of complete darkness.
@@ -438,10 +443,19 @@
   A multipedal creature typically uses more than four legs to move.
   Multipedal creatures gain a \plus10 foot bonus to their \glossterm{movement speed} and a \plus5 bonus to the Balance skill.
 
+  \traitdef{Nonliving}{nonliving}
+  A nonliving creature or object is neither alive nor undead.
+  It does not need to eat, drink, or sleep.
+
   \traitdef{Planebound}{planebound}
   A planebound creature cannot leave a specific plane by any means.
   Effects which would cause it to leave that plane have no effect on that creature.
   Most planebound creatures are \creaturetype{planeforged} creatures from that plane.
+
+  \traitdef{Plant}{plant}
+  A plant is alive, but it does not have flesh or blood.
+  Plants are vulnerable to \atFire abilities.
+  Some plants are creatures, but most plants are living \glossterm{objects}.
 
   \traitdef{Quadrupedal}{quadrupedal}
   A quadrupedal creature typically uses four legs to move.
@@ -508,7 +522,7 @@
   Each creature type has a defined narrative implication, and some creature types have special effects that are relevant in combat.
 
   % TODO: weird place for this?
-  Unless otherwise noted in a creature's type or description, it is a \glossterm{living} creature with a body, mind, and soul.
+  Unless otherwise noted in a creature's type or description, it is a \trait{living} creature with a body, mind, and soul.
   It needs to eat, drink, and sleep, and it dies of old age eventually.
 
   \creaturetypedef{Aberration}{aberration}
@@ -516,8 +530,9 @@
   When an aberration dies, its soul does not splinter, and neither Nature nor ordinary deities can claim any reward.
   Instead, the soul slowly drifts through the Astral Plane for centuries until it finally returns to the Eternal Void.
 
-  \creaturetypedef{Beast}{beast}
-  A beast is a 
+  \creaturetypedef{Mortal}{mortal}
+  A mortal is a creature with a body made from the composite essence of many planes and a soul.
+  Most creatures in the universe are mortals, including all of the common species.
 
   % Is this a subcategory of beast?
   \creaturetypedef{Dragon}{dragon} A dragon is a powerful magical creature with four legs and two wings.
@@ -525,15 +540,10 @@
   They are known for their vast hoards of wealth.
   Since dragons never stop growing in size or strength, elder dragons are some of the most powerful creatures in existence.
 
-  \creaturetypedef{Humanoid}{humanoid}
-  A humanoid is an intelligent creature with two arms and two legs.
-  Humanoids can have magical abilities, but are usually not intrinsically magical.
-  Most civilized creatures and societies are predominantly humanoid.
-
   \creaturetypedef{Planeforged}{planeforged}
   A planeforged is a creature that is made from the concentrated planar essence of only one or two planes.
-  It is not \glossterm{living}.
-  When a planeforged dies, its soul generally does not splinter.
+  It is \trait{nonliving}.
+  When a planeforged with a soul dies, its soul generally does not splinter.
   Instead, the soul returns intact to its home plane, where it may reform a new body if it still has the necessary willpower.
   Some planeforged are \trait{planebound}, including the bodies of dead souls in their afterlife.
 
@@ -541,7 +551,7 @@
   Undead are creatures that are made from the corpse or spirit of a dead creature.
   They are animated by some part of the soul of the original creature.
 
-  Although undead are not \glossterm{living}, they are affected in unusual ways by effects that directly manipulate life energy.
+  Although undead are \trait{nonliving}, they are affected in unusual ways by effects that directly manipulate life energy.
   They can be targeted as if they were living \glossterm{allies} by \magical effects that would cause living creatures to regain \glossterm{hit points}.
   Whenever they would regain \glossterm{hit points} from an ability that normally only affects living creatures, they instead take damage equal to the hit points that they would have regained, ignoring any hit point maximum the ability would normally have.
 
