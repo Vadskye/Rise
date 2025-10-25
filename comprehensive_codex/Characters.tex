@@ -33,7 +33,7 @@ You can either skim past terms you don't yet understand or look them up as you g
         \item You add your Strength to your \glossterm{mundane power} (see \pcref{Power}).
         \item You add your Strength to your level to determine your \glossterm{brawling accuracy} (see \pcref{Brawling Accuracy}).
         \item Your Strength improves Strength-based \glossterm{skills}: Climb, Jump, and Swim (see \pcref{Skills}).
-        % \item You need at least 3 Strength to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
+          % \item You need at least 3 Strength to use \weapontag{Heavy} weapons in one hand (see \pcref{Weapon Tags}).
       \end{raggeditemize}
     }
 
@@ -161,12 +161,12 @@ You can either skim past terms you don't yet understand or look them up as you g
       \begin{dtabularx}{\columnwidth}{l l X}
         \tb{Rank} & \tb{Flat HP} & \tb{Bonus HP} \\
         1 & 10 & 1 \x \glossterm{durability} \\
-        2 & 10 & 2 \x \glossterm{durability} \\
-        3 & 10 & 3 \x \glossterm{durability} \\
-        4 & 10 & 4 \x \glossterm{durability} \\
-        5 & 10 & 6 \x \glossterm{durability} \\
-        6 & 10 & 8 \x \glossterm{durability} \\
-        7 & 10 & 10 \x \glossterm{durability} \\
+        2 & 10 & 2 \x durability \\
+        3 & 10 & 3 \x durability \\
+        4 & 10 & 4 \x durability \\
+        5 & 10 & 6 \x durability \\
+        6 & 10 & 8 \x durability \\
+        7 & 10 & 10 \x durability \\
       \end{dtabularx}
     \end{columntable}
 
@@ -1532,9 +1532,7 @@ You can either skim past terms you don't yet understand or look them up as you g
     %             If that is your goal, consider the Mystic Archer and Sniper feats instead of Greatweapon Warrior and Spellsword.
 
 \sectiongraphic*{Character Advancement and Gaining Levels}{width=\columnwidth}{characters/character advancement}
-
-  As you accomplish challenges and defeats foes, you gain experience.
-  If you have enough experience, you gain a level.
+  As you accomplish challenges and defeats foes, your GM may tell you that you gain a level.
   You gain some abilities at specific levels, as described in \trefnp{Character Advancement and Gaining Levels}.
 
   When you gain a level, the following things happen:
@@ -1560,29 +1558,29 @@ You can either skim past terms you don't yet understand or look them up as you g
 
   \begin{dtable}
     \lcaption{Character Advancement and Gaining Levels}
-    \begin{compresseddtabularx}{\columnwidth}{l l l l X l}
-      \tb{Level} & \tb{Rank} & \tb{Durability} & \tb{Bonus}\fn{1} & \tb{Special}             & \tb{XP} \tableheaderrule
-      1st        & 1         & \plus0          & \tdash           & \tdash                   & 0      \\
-      2nd        & 1         & \plus1          & \plus1           & \tdash                   & 10     \\ % +10 xp
-      3rd        & 1         & \plus2          & \plus1           & \plus1 to two attributes & 25     \\ % +15 xp
-      4th        & 2         & \plus2          & \plus2           & \tdash                   & 45     \\ % +20 xp
-      5th        & 2         & \plus3          & \plus2           & \tdash                   & 70     \\ % +25 xp
-      6th        & 2         & \plus4          & \plus3           & Legacy item: rank 3      & 100    \\ % +30 xp
-      7th        & 3         & \plus4          & \plus3           & \tdash                   & 140    \\ % +40 xp
-      8th        & 3         & \plus5          & \plus4           & \tdash                   & 200    \\ % +60 xp
-      9th        & 3         & \plus6          & \plus4           & \plus1 to two attributes & 300    \\ % +100 xp
-      10th       & 4         & \plus6          & \plus5           & \tdash                   & 450    \\ % +150 xp
-      11th       & 4         & \plus7          & \plus5           & \tdash                   & 700    \\ % +250 xp
-      12th       & 4         & \plus8          & \plus6           & Legacy item: rank 5      & 1,000  \\ % +300 xp
-      13th       & 5         & \plus8          & \plus6           & \tdash                   & 1,400  \\ % +400 xp
-      14th       & 5         & \plus9          & \plus7           & \tdash                   & 2,000  \\ % +600 xp
-      15th       & 5         & \plus10         & \plus7           & \plus1 to two attributes & 3,000  \\ % +1000 xp
-      16th       & 6         & \plus10         & \plus8           & \tdash                   & 4,500  \\ % +1,500 xp
-      17th       & 6         & \plus11         & \plus8           & \tdash                   & 7,000  \\ % +2,500 xp
-      18th       & 6         & \plus12         & \plus9           & Legacy item: rank 7      & 10,000 \\ % +3,000 xp
-      19th       & 7         & \plus12         & \plus9           & \tdash                   & 14,000 \\
-      20th       & 7         & \plus13         & \plus10          & \tdash                   & 20,000 \\
-      21st       & 7         & \plus14         & \plus10          & \plus1 to two attributes & 30,000 \\
+    \begin{compresseddtabularx}{\columnwidth}{l l l l X}
+      \tb{Level} & \tb{Rank} & \tb{Durability} & \tb{Bonus}\fn{1} & \tb{Special}                  \tableheaderrule
+      1st        & 1         & \plus0          & \tdash           & \tdash                        \\
+      2nd        & 1         & \plus1          & \plus1           & \tdash                        \\
+      3rd        & 1         & \plus2          & \plus1           & \plus1 to two attributes      \\
+      4th        & 2         & \plus2          & \plus2           & HP: 2x \glossterm{durability} \\
+      5th        & 2         & \plus3          & \plus2           & \tdash                        \\
+      6th        & 2         & \plus4          & \plus3           & Legacy item: rank 3           \\
+      7th        & 3         & \plus4          & \plus3           & HP: 3x durability             \\
+      8th        & 3         & \plus5          & \plus4           & \tdash                        \\
+      9th        & 3         & \plus6          & \plus4           & \plus1 to two attributes      \\
+      10th       & 4         & \plus6          & \plus5           & HP: 4x durability             \\
+      11th       & 4         & \plus7          & \plus5           & \tdash                        \\
+      12th       & 4         & \plus8          & \plus6           & Legacy item: rank 5           \\
+      13th       & 5         & \plus8          & \plus6           & HP: 6x durability             \\
+      14th       & 5         & \plus9          & \plus7           & \tdash                        \\
+      15th       & 5         & \plus10         & \plus7           & \plus1 to two attributes      \\
+      16th       & 6         & \plus10         & \plus8           & HP: 8x durability             \\
+      17th       & 6         & \plus11         & \plus8           & \tdash                        \\
+      18th       & 6         & \plus12         & \plus9           & Legacy item: rank 7           \\
+      19th       & 7         & \plus12         & \plus9           & HP: 10x durability            \\
+      20th       & 7         & \plus13         & \plus10          & \tdash                        \\
+      21st       & 7         & \plus14         & \plus10          & \plus1 to two attributes      \\
     \end{compresseddtabularx}
     1. This bonus applies to your \glossterm{accuracy}, \magical power, mundane power, trained skills, and defenses. \\
   \end{dtable}
@@ -1596,7 +1594,6 @@ You can either skim past terms you don't yet understand or look them up as you g
     It is determined by your level, as shown in \trefnp{Character Advancement and Gaining Levels}.
     Your maximum rank in any individual \glossterm{archetype} is equal to your character rank (see \pcref{Archetypes}).
     It has no other universal effects, though some abilities reference your character rank to determine their effects.
-    
 
   \subsection{Legacy Items}\label{Legacy Items}
 

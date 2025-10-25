@@ -82,35 +82,37 @@ This chapter describes the rules for monsters, and the combat statistics for a v
       % The 21st level bonus is mainly just because monsters otherwise don't get much of anything from 21st level,
       % and we want to make sure that extremely high level monsters are appropriately dangerous.
       \item Monsters gain a \plus1 accuracy bonus at 13th level and 21st level.
+      % Monsters need to deal enough damage, and they don't get the extra damage effects that players get.
+      \item Monsters gain a \plus1 power bonus at 5th level, 11th level, and 17th level.
     \end{raggeditemize}
 
     % NOTE: Keep in sync with Ship Statistics in Ship Combat
     \begin{dtable}
       \lcaption{Monster Advancement}
-      \begin{dtabularx}{\columnwidth}{l l l >{\lcol}X l}
+      \begin{compresseddtabularx}{\columnwidth}{l l l l >{\lcol}X}
         \tb{Level} & \tb{Rank} & \tb{Durability} & \tb{Bonus}\fn{1} & \tb{Special}             \tableheaderrule
-        1st        & 1         & \plus0          & \tdash           & \tdash                   \\
-        2nd        & 1         & \plus1          & \plus1           & \tdash                   \\
-        3rd        & 1         & \plus2          & \plus1           & \plus1 to two attributes \\
-        4th        & 2         & \plus2          & \plus2           & \tdash                   \\
-        5th        & 2         & \plus3          & \plus2           & \tdash                   \\
-        6th        & 2         & \plus4          & \plus3           & \plus1 to two attributes \\
-        7th        & 3         & \plus4          & \plus3           & \plus1 to all defenses   \\
-        8th        & 3         & \plus5          & \plus4           & \tdash                   \\
-        9th        & 3         & \plus6          & \plus4           & \plus1 to two attributes \\
-        10th       & 4         & \plus6          & \plus5           & \tdash                   \\
-        11th       & 4         & \plus7          & \plus5           & \tdash                   \\
-        12th       & 4         & \plus8          & \plus6           & \plus1 to two attributes \\
-        13th       & 5         & \plus8          & \plus6           & \plus1 to accuracy       \\
-        14th       & 5         & \plus9          & \plus7           & \tdash                   \\
-        15th       & 5         & \plus10         & \plus7           & \plus1 to two attributes \\
-        16th       & 6         & \plus10         & \plus8           & \tdash                   \\
-        17th       & 6         & \plus11         & \plus8           & \tdash                   \\
-        18th       & 6         & \plus12         & \plus9           & \plus1 to two attributes \\
-        19th       & 7         & \plus12         & \plus9           & \plus1 to all defenses   \\
-        20th       & 7         & \plus13         & \plus10          & \tdash                   \\
-        21st       & 7         & \plus14         & \plus10          & \plus1 to accuracy       \\
-      \end{dtabularx}
+        1st        & 1         & \plus0          & \tdash           & \tdash                                     \\
+        2nd        & 1         & \plus1          & \plus1           & \tdash                                     \\
+        3rd        & 1         & \plus2          & \plus1           & \plus1 to two attributes                   \\
+        4th        & 2         & \plus2          & \plus2           & HP: 2x \glossterm{durability}              \\
+        5th        & 2         & \plus3          & \plus2           & \plus1 power                               \\
+        6th        & 2         & \plus4          & \plus3           & \plus1 to two attributes                   \\
+        7th        & 3         & \plus4          & \plus3           & HP: 3x durability, \plus1 defenses  \\
+        8th        & 3         & \plus5          & \plus4           & \tdash                                     \\
+        9th        & 3         & \plus6          & \plus4           & \plus1 to two attributes                   \\
+        10th       & 4         & \plus6          & \plus5           & HP: 4x durability                          \\
+        11th       & 4         & \plus7          & \plus5           & \plus1 power                               \\
+        12th       & 4         & \plus8          & \plus6           & \plus1 to two attributes                   \\
+        13th       & 5         & \plus8          & \plus6           & HP: 6x durability, \plus1 accuracy         \\
+        14th       & 5         & \plus9          & \plus7           & \tdash                                     \\
+        15th       & 5         & \plus10         & \plus7           & \plus1 to two attributes                   \\
+        16th       & 6         & \plus10         & \plus8           & HP: 8x durability                          \\
+        17th       & 6         & \plus11         & \plus8           & \plus1 power                               \\
+        18th       & 6         & \plus12         & \plus9           & \plus1 to two attributes                   \\
+        19th       & 7         & \plus12         & \plus9           & HP: 10x durability, \plus1 defenses \\
+        20th       & 7         & \plus13         & \plus10          & \tdash                                     \\
+        21st       & 7         & \plus14         & \plus10          & \plus1 accuracy                            \\
+      \end{compresseddtabularx}
       1. This bonus applies to the monster's \glossterm{accuracy}, \magical power, mundane power, trained skills, and defenses. \\
     \end{dtable}
 
