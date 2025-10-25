@@ -1009,5 +1009,47 @@ export const fabrication: MysticSphere = {
       roles: ['boon', 'turtle'],
       tags: ['Swift'],
     },
+
+    {
+      name: 'Buzzsaw',
+
+      // -1dr for extremely avoidable dot
+      attack: {
+        hit: `
+          \\damagerankone.
+        `,
+        missGlance: true,
+        targeting: `
+          You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
+          Make an attack vs. Armor against everything in the area.
+          During your next action, this effect \\glossterm{repeats} in the same area.
+        `,
+      },
+      roles: ['clear'],
+      rank: 3,
+      scaling: 'damage',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Buzzsaw',
+
+      // -1dr for extremely avoidable dot
+      attack: {
+        hit: `
+          \\damagerankfour.
+        `,
+        missGlance: true,
+        targeting: `
+          You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
+          Make an attack vs. Armor against everything in the area.
+          During your next action, this effect \\glossterm{repeats} in the same area.
+        `,
+      },
+      roles: ['clear'],
+      rank: 6,
+      scaling: 'damage',
+      tags: ['Manifestation'],
+    },
   ],
 };

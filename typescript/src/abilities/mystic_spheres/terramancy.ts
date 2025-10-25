@@ -107,17 +107,13 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       tags: ['Manifestation'],
     },
 
-    // Technically this should be medium range, but it feels like it should be long range?
     {
-      name: 'Meteor Swarm',
+      name: 'Mighty Meteor',
 
-      // -1dr for extended range
       functionsLike: {
         name: 'meteor',
         exceptThat: `
-          you can choose up to four separate \\glossterm{grounded} locations within \\longrange, creating one meteor per area.
-          In addition, the damage increases to \\damagerankseven.
-          Any individual creature can only be attacked by one meteor, even if it occupies multiple areas, and overlapping the areas has no benefit.
+          the damage increases to \\damagerankeight.
         `,
       },
       rank: 7,
