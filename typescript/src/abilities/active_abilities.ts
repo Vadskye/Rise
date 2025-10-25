@@ -99,7 +99,7 @@ export interface FunctionsLike {
 }
 
 export interface ActiveAbilityAttack {
-  crit?: string;
+  crit?: string | null;
   hit: string;
   injury?: string;
   missGlance?: boolean;

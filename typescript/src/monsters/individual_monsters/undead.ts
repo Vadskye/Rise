@@ -151,6 +151,8 @@ function addFleshwrought(grimoire: Grimoire) {
         creature.addCustomManeuver({
           name: 'Rotting Stench', 
           attack: {
+            // Explicitly mark no crit to avoid lint warnings
+            crit: null,
             hit: `
               The target feels sick as a \\glossterm{condition}.
               The next time it becomes \\glossterm{injured}, it must spend a standard action vomiting.
