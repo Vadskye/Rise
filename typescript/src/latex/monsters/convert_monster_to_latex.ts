@@ -20,17 +20,19 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
 
   const hasParentGroup = Boolean(parentGroupName);
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
-  const eliteText = monster.elite ? '[Elite]' : '';
+  const eliteText = monster.elite ? ' -- \\textbf{Elite}' : '';
   const knowledgeText = genKnowledgeText(monster);
   const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';
+
+  const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
+  const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_type}`;
 
   // This still has various like $name and $accuracy.
   const latexWithPlaceholders = `
     ${pagebreakText}
     \\par \\noindent
     \\begin{minipage}{\\columnwidth}
-        \\monsubsection{${monster.name}}{${monster.level} ${format.uppercaseFirst(monster.base_class)}}${eliteText}
-        \\monstersize{${format.uppercaseFirst(monster.size)} ${monster.creature_type}}
+        \\monsubsection{${monster.name}}{${monsterContext1}}{${monsterContext2}}
         ${genArtText(monster, parentGroupName)}
     \\end{minipage}
     ${monster.description || ''}

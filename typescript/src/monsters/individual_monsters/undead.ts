@@ -37,6 +37,32 @@ export function addUndead(grimoire: Grimoire) {
     creature.addSpell('Inflict Wound');
   });
 
+  grimoire.addMonster('Corpsetree', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral evil',
+      base_class: 'warrior',
+      elite: true,
+      creature_type: 'undead',
+      level: 8,
+      size: 'huge',
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        A corpsetree's body is a mixture of rotting flesh and wood.
+        When fresh corpses are left to rot near a dying tree, their lingering soul energy can merge with the tree to create a corpsetree.
+      `,
+    });
+    creature.setTrainedSkills(["awareness"]);
+    creature.setBaseAttributes([7, -2, 5, -5, 2, 2]);
+    creature.addTrait('plant');
+
+    creature.addWeaponMult('fists');
+    creature.addGrapplingStrike('fists');
+    creature.addSpell('Circle of Death', { usageTime: 'elite' });
+    creature.addSpell('Embedded Growth', { usageTime: 'elite' });
+    creature.addSpell('Corpse Explosion', { usageTime: 'elite' });
+  });
+
   grimoire.addMonster('Macabre Mourner', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
@@ -356,6 +382,24 @@ function addSkeletons(grimoire: Grimoire) {
           });
           creature.addWeaponMult('battleaxe');
           creature.addWeaponMult('javelin');
+        },
+      ],
+      [
+        'Skeleton Sniper',
+        (creature) => {
+          creature.setRequiredProperties({
+            ...requiredProperties,
+            base_class: 'sniper',
+            level: 10,
+            size: 'medium',
+          });
+          creature.setBaseAttributes([4, 5, 0, -7, 5, 0]);
+          creature.setEquippedArmor({
+            bodyArmor: 'leather lamellar',
+          });
+          creature.addWeaponMult('longbow');
+          creature.addManeuver('Distant Shot', { weapon: 'longbow' });
+          creature.addManeuver('Armorpiercer', { weapon: 'longbow' });
         },
       ],
     ],

@@ -215,15 +215,18 @@ export class Creature implements CreaturePropertyMap {
         `Unable to get relevant knowledge for creature ${this.name} with no creature type.`,
       );
     }
-    return {
+
+    const defaultKnowledge = {
       aberration: 'knowledge_dungeoneering' as const,
       animate: 'knowledge_arcana' as const,
-      beast: 'knowledge_nature' as const,
       dragon: 'knowledge_arcana' as const,
-      humanoid: 'knowledge_local' as const,
+      mortal: 'knowledge_local' as const,
       planeforged: 'knowledge_planes' as const,
       undead: 'knowledge_religion' as const,
     }[this.creature_type];
+    // TODO: determine correct knowledge based on checking traits like Animal.
+
+    return defaultKnowledge;
   }
 
   getTrainedSkillNames(): RiseSkill[] {
@@ -392,6 +395,7 @@ export class Creature implements CreaturePropertyMap {
     const maneuver = getWeaponMultByRank(effectiveRank);
     maneuver.effect += `
         \\hit If your attack result also hits the target's Brawn defense, it is \\grappled.
+        \\crit If your attack result is also a critical hit against the target's Brawn defense, you control the grapple.
       `;
     maneuver.tags = maneuver.tags || [];
     if (tags) {
@@ -643,9 +647,18 @@ export class Creature implements CreaturePropertyMap {
     // TODO: add fancy logic for some traits to have special effects
     const modifier: CustomModifierConfig = { name: traitName };
 
-    if (traitName === 'incorporeal') {
+    if (traitName === 'construct') {
+      this.addTrait('mindless');
+      this.addTrait('nonliving');
+      this.addTrait('soulless');
+    } else if (traitName === 'incorporeal') {
+      this.addTrait('floating');
+      this.addTrait('intangible');
+    } else if (traitName === 'intangible') {
       modifier.immune = '\\atCreation, \\atManifestation, \\glossterm{mundane}';
       modifier.numericEffects = [{ modifier: 5, statistic: 'stealth' }];
+    } else if (traitName === 'mindless') {
+      modifier.immune = '\\atCompulsion, \\atEmotion';
     } else if (traitName === 'multipedal') {
       modifier.numericEffects = [
         { modifier: 5, statistic: 'balance' },
@@ -655,6 +668,8 @@ export class Creature implements CreaturePropertyMap {
       modifier.immune = 'Prone';
       // No way to mark inability to jump. Just don't give legless creatures the
       // Jump skill as a trained skill and it shouldn't appear in the book, though.
+    } else if (traitName === 'plant') {
+      modifier.vulnerable = 'Fire';
     } else if (traitName === 'quadrupedal') {
       modifier.numericEffects = [{ modifier: 10, statistic: 'speed' }];
     }
@@ -676,6 +691,12 @@ export class Creature implements CreaturePropertyMap {
     // this is fine for now.
     if (properties.elite) {
       this.addManeuver('Elite Cleanse');
+    }
+
+    if (properties.creature_type === 'planeforged') {
+      this.addTrait('nonliving');
+    } else if (properties.creature_type === 'undead') {
+      this.addTrait('nonliving');
     }
   }
 

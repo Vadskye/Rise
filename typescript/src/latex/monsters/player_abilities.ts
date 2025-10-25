@@ -133,6 +133,7 @@ function replaceGenericTerms(
   replace(/\byou still only make\b/g, 'it still only makes');
   replace(/\bof you before your movement\b/g, 'of it before its movement');
   replace(/\bafter your strike\b/g, 'after its strike');
+  replace(/\byou control the\b/g, "the $name controls the");
 
   // This whole thing is probably just for clairvoyance?
   replace(/\bYou do not need\b/g, 'The $name does not need');
@@ -178,6 +179,7 @@ function replaceGenericTerms(
   replace(/ \(see \\pcref{[^}]+}\)/, '');
   // This phrasing is typically seen with fear effects
   replace(/\bby you\b/, 'by the $name');
+  replace(/(\$[nN]ame.*)attacked you\b/, (_, prefix) => `${prefix}attacked it`);
 
   replace(/\bif you take\b/g, 'if the $name takes');
   replace(/, if you lost\b/g, ', if the $name lost');
@@ -198,20 +200,20 @@ function replaceGenericTerms(
   // This is lazy; we should support other extra damage variants, like 2x power or damage
   // dice.
   const fullPower = monster.getRelevantPower(ability.isMagical);
+  replace(
+    /(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g,
+    `${fullPower} \\glossterm{extra damage}`,
+  );
+  replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
   const halfPower = Math.floor(fullPower / 2);
   replace(
     /(extra damage|\\glossterm{extra damage}) equal to half your (\\glossterm{power}|power)/g,
     `${halfPower} \\glossterm{extra damage}`,
   );
   replace(/\bdamage equal to half your (\\glossterm{power}|power)/g, `${halfPower} damage`);
-  replace(
-    /(extra damage|\\glossterm{extra damage}) equal to your (\\glossterm{power}|power)/g,
-    `${fullPower} \\glossterm{extra damage}`,
-  );
-  replace(/\bdamage equal to your (\\glossterm{power}|power)/g, `${fullPower} damage`);
 
   replace(
-    /(hit points|\\glossterm{hit points}) equal to (\w+)?( times)? your (power|\\glossterm{power})/,
+    /(hit points|\\glossterm{hit points}) equal to ?(\w+)?( times)? your (power|\\glossterm{power})/,
     (_, __, multiplier) => {
       const numericMultiplier =
         {
@@ -229,7 +231,7 @@ function replaceGenericTerms(
 
       const hitPoints = Math.floor(monster.getRelevantPower(ability.isMagical) * numericMultiplier);
 
-      return `${hitPoints} \\glossterm{hit points}`;
+      return `${hitPoints} hit points`;
     },
   );
 
