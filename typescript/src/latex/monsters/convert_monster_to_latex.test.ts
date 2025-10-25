@@ -13,8 +13,7 @@ t.test('convertMonsterToLatex', (t) => {
       size: 'medium',
     });
     const latexOutput = convertMonsterToLatex(creature);
-    t.ok(latexOutput.includes('\\monsubsection{Test Monster}{1 Warrior}'));
-    t.ok(latexOutput.includes('\\monstersize{Medium humanoid}'));
+    t.ok(latexOutput.includes('\monsubsection{Test Monster}{Level 1 Warrior}{Medium mortal}'));
     t.ok(latexOutput.includes('\\begin{monsterstatistics}'));
     t.ok(latexOutput.includes('\\end{monsterstatistics}'));
     t.ok(latexOutput.includes('\\monsterabilitiesheader{Test Monster}'));
