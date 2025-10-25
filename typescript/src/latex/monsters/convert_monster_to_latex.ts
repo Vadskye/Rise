@@ -22,7 +22,7 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? ' -- \\textbf{Elite}' : '';
   const knowledgeText = genKnowledgeText(monster);
-  const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '';
+  const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
   const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
   const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_type}`;
@@ -279,6 +279,7 @@ function genTraitsText(monster: Creature): string {
     return '';
   }
 
+  traits.sort();
   const traitsText = traits
     .map((trait) => `\\trait{${format.sentenceCase(trait)}}`)
     .join('\\monsep ');
