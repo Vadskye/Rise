@@ -25,6 +25,7 @@ const MONSTER_WEAPONS_LIST = [
   'sling',
   'smallswords',
   'spear',
+  'spike',  // Same as stinger
   'stinger',
   'talons',
   'tentacle',
@@ -60,6 +61,7 @@ export function getWeaponTag(weaponName: MonsterWeapon): string | null {
     sling: 'Projectile (50/150)',
     smallswords: null,
     spear: 'Thrown (30/60)', // Ignore Versatile Grip tag and assume one-handing, so not Long
+    spike: null,
     stinger: null,
     talons: null,
     tentacle: null,
@@ -101,6 +103,7 @@ export function isManufactured(weaponName: MonsterWeapon): boolean {
     sling: true,
     smallswords: true,
     spear: true,
+    spike: false,
     stinger: false,
     talons: false,
     tentacle: false,
@@ -133,6 +136,7 @@ export function getWeaponDamageDice(weaponName: MonsterWeapon): DicePool {
     sling: xdy(1, 4),
     smallswords: xdy(2, 4),
     spear: xdy(1, 6),
+    spike: xdy(1, 6),
     stinger: xdy(1, 6),
     talons: xdy(2, 4),
     tentacle: xdy(1, 6),
@@ -165,6 +169,7 @@ export function getWeaponAccuracy(weaponName: MonsterWeapon): number {
     sling: 0,
     smallswords: 2,
     spear: 0,
+    spike: 1,
     stinger: 1,
     talons: 2,
     tentacle: 0,
@@ -198,6 +203,7 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       sickle: 0.5,
       sling: 0.5,
       smallswords: 0.5, spear: 0.5, // Assume one-handing.
+      spike: 1,
       stinger: 1,
       talons: 0.5,
       tentacle: 1,

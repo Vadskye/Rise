@@ -112,11 +112,59 @@ export function addUndead(grimoire: Grimoire) {
     });
   });
 
+  addFleshwrought(grimoire);
   addGhouls(grimoire);
   addHalfsouls(grimoire);
   addSkeletons(grimoire);
   addVampires(grimoire);
   addZombies(grimoire);
+}
+
+function addFleshwrought(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Fleshwrought',
+      knowledge: {
+        normal: `
+          Some necromancers use mechanical augmentations to compensate for the weaknesses of the flesh.
+          The creatures resulting from these twisted experiments are called fleshwrought.
+          They are undead, but they have inorganic matter incorporated directly into their body.
+        `,
+      },
+    },
+    [
+      ['Fleshwrought Spiker', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'neutral evil',
+          base_class: 'brute',
+          elite: true,
+          creature_type: 'undead',
+          level: 16,
+          size: 'large',
+        });
+        creature.setBaseAttributes([8, 4, 6, -4, 2, 0]);
+        creature.addWeaponMult('spike');
+        creature.addGrapplingStrike('spike');
+        creature.addManeuver('Piledriver+', { displayName: 'Impale' });
+        creature.addManeuver('Anklebreaker', { weapon: 'spike' });
+        // TODO: unclear EA
+        creature.addCustomManeuver({
+          name: 'Rotting Stench', 
+          attack: {
+            hit: `
+              The target feels sick as a \\glossterm{condition}.
+              The next time it becomes \\glossterm{injured}, it must spend a standard action vomiting.
+              After it does, it removes all instances of this condition.
+            `,
+            targeting: `
+              Make an attack vs. Fortitude against all adjacent living creatures.
+            `,
+          },
+          usageTime: 'elite',
+        });
+      }],
+    ],
+  );
 }
 
 function addGhouls(grimoire: Grimoire) {
