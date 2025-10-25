@@ -34,6 +34,16 @@ export const perfectPrecision: CombatStyle = {
       rank: 3,
       roles: ['softener'],
     },
+    {
+      name: 'Armorpiercer+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals six times \\glossterm{weapon damage}.
+        The attack is made against the target's Reflex defense instead of its Armor defense.
+      `,
+      rank: 7,
+      roles: ['softener'],
+    },
 
     {
       name: 'Desperate Pierce',
@@ -243,28 +253,6 @@ export const perfectPrecision: CombatStyle = {
         Effects which would replace your attack result with a fixed value, such as a law paladin's \\ability{aligned aura} ability, do not apply to this strike.
       `,
       rank: 5,
-      roles: ['burst'],
-    },
-
-    {
-      name: 'Full-Body Thrust',
-
-      effect: `
-        Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
-      `,
-      rank: 3,
-      roles: ['burst'],
-    },
-
-    {
-      name: 'Full-Body Thrust+',
-
-      effect: `
-        Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
-      `,
-      rank: 7,
       roles: ['burst'],
     },
 

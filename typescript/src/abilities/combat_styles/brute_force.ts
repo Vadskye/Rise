@@ -1,5 +1,4 @@
 import { CombatStyle } from '.';
-import { CONDITION_CRIT } from '../constants';
 
 export const bruteForce: CombatStyle = {
   name: 'Brute Force',
@@ -407,6 +406,30 @@ export const bruteForce: CombatStyle = {
       `,
       rank: 7,
       roles: ['execute'],
+    },
+
+    {
+      name: 'Forceful Smash',
+
+      effect: `
+        Make a melee \\glossterm{strike}.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 15 feet.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 1,
+      roles: ['payoff'],
+    },
+
+    {
+      name: 'Forceful Smash+',
+
+      effect: `
+        Make a melee \\glossterm{strike} that deals double damage.
+        \\injury If your attack result hits the target's Brawn defense, you \\glossterm{fling} it 30 feet.
+        This is a \\abilitytag{Size-Based} effect, so it does not affect creatures more than one size category larger than you.
+      `,
+      rank: 5,
+      roles: ['payoff'],
     },
   ],
 };
