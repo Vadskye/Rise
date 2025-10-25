@@ -148,9 +148,8 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your \\glossterm{movement speed}.
-        During this movement, you move too quickly to be seen.
-        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
-        While still invisible, you can make a melee \\glossterm{strike}.
+        During this movement, you move too quickly to be seen, making you \\trait{invisible}.
+        While still invisible, you can make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
         After making the strike, you become visible at your destination.
       `,
@@ -163,9 +162,8 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your \\glossterm{movement speed}.
-        During this movement, you move too quickly to be seen.
-        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
-        While still invisible, you can make two melee \\glossterm{strikes} at any point during your movement.
+        During this movement, you move too quickly to be seen, making you \\trait{invisible}.
+        While still invisible, you can make two melee \\glossterm{strikes} that deal double \\glossterm{weapon damage} at any point during your movement.
         After making the strikes, you become visible at your destination.
       `,
       rank: 7,
@@ -177,8 +175,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         You can move in a straight line up to your \\glossterm{movement speed}.
-        During this movement, you move too quickly to be seen.
-        This makes you \\trait{invisible} and allows you to move through space occupied by enemies, treating those spaces as \\glossterm{difficult terrain}.
+        During this movement, you move too quickly to be seen, making you \\trait{invisible}.
         You become visible at your destination, and you can then make a melee \\glossterm{strike} there.
       `,
       rank: 3,
@@ -256,14 +253,13 @@ export const mobileHunter: CombatStyle = {
     {
       name: 'Frenzied Charge',
 
-      functionsLike: {
-        abilityType: 'ability',
-        exceptThat: `
-          the strike deals double damage, and you gain a +2 accuracy bonus with the strike if you moved at least 15 feet during the charge.
-          However, the penalty to your defenses increases to \\minus4.
-        `,
-        name: 'charge',
-      },
+      effect: `
+        After using this ability, you \\glossterm{briefly} take a \\minus4 penalty to all defenses.
+
+        Move up to your speed in a single straight line.
+        At the end of your movement, you can make a melee \\glossterm{strike} that deals double damage.
+        If you moved at least 15 feet during the charge, you gain a \\plus2 accuracy bonus with the strike.
+      `,
       rank: 5,
       roles: ['dive'],
     },

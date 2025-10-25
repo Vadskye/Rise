@@ -9,7 +9,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Double Flurry',
 
       effect: `
-        Make two \\glossterm{strikes}.
+        Make two \\glossterm{strikes} with a \\plus1 accuracy bonus.
       `,
       rank: 5,
       roles: ['burst'],
@@ -19,7 +19,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Triple Flurry',
 
       effect: `
-        Make three \\glossterm{strikes}.
+        Make three \\glossterm{strikes} with a \\plus1 accuracy bonus.
       `,
       rank: 7,
       roles: ['burst'],
@@ -56,10 +56,10 @@ export const flurryOfBlows: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        Make three \\glossterm{strikes} with a \\minus2 accuracy penalty.
+        Make three \\glossterm{strikes} with a \\minus1 accuracy penalty that deal triple \\glossterm{weapon damage}.
         You cannot use the \\textit{desperate exertion} ability to affect these strikes.
       `,
-      rank: 5,
+      rank: 7,
       roles: ['burst', 'exertion'],
     },
 
@@ -386,6 +386,19 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 5,
       roles: ['focus'],
+    },
+
+    // Brief invis is 1.2 EA. Melee extra defense allows 1.8 EA. That's probably enough to
+    // allow the "if either hits" text?
+    {
+      name: 'Faster Than Sight',
+
+      effect: `
+        Make two melee \\glossterm{strikes}.
+        If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats you as \\glossterm{invisible}.
+      `,
+      rank: 5,
+      roles: ['trip'],
     },
   ],
 };
