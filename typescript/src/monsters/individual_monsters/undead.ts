@@ -329,6 +329,18 @@ function addLiches(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       name: 'Liches',
+      description: `
+        \\parhead{Phylactery \\sparkle} Every lich contains their soul in their phylactery.
+          Most phylacteries are valuable gems, but other objects are possible.
+          A phylactery must be at least Tiny in size.
+
+          Liches can commune with their phylacteries to allow their souls to temporarily inhabit their bodies.
+          This allows their soul to process the memories stored in their body, allowing the lich to improve its skills and change its mind.
+          A lich that never communes with its phylactery suffers no direct consequences, but is also incapable of increasing its personal power.
+
+          When a lich dies, the phylactery creates a new body for the lich after 24 hours.
+          The new body has no memory of what happened to the original body since the last time the lich communed with its phylactery.
+      `,
       knowledge: {
         normal: `
           A lich is an undead creature that intentionally severed its soul from its body and placed the soul in a vessel called a phylactery.
@@ -350,22 +362,6 @@ function addLiches(grimoire: Grimoire) {
       },
       sharedInitializer: (creature) => {
         creature.addTrait('soulless');
-        creature.addPassiveAbility({
-          name: "Phylactery",
-          isMagical: true,
-          effect: `
-            Every lich contains their soul in their phylactery.
-            Most phylacteries are valuable gems, but other objects are possible.
-            A phylactery must be at least Tiny in size.
-
-            Liches can commune with their phylacteries to allow their souls to temporarily inhabit their bodies.
-            This allows their soul to process the memories stored in their body, allowing the lich to improve its skills and change its mind.
-            A lich that never communes with its phylactery suffers no direct consequences, but is also incapable of increasing its personal power.
-
-            When a lich dies, the phylactery creates a new body for the lich after 24 hours.
-            The new body has no memory of what happened to the original body since the last time the lich communed with its phylactery.
-          `,
-        });
       },
     },
     [
@@ -609,6 +605,7 @@ function addVampires(grimoire: Grimoire) {
       name: 'Vampires',
       description: vampireDescription,
       sharedInitializer: (creature: Creature) => {
+        creature.addTrait('humanoid');
         creature.addVulnerability('Silvered weapons');
         creature.addCustomSense('Darkvision (120 ft.)');
 
