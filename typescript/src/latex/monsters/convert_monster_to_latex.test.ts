@@ -25,7 +25,8 @@ t.test('convertMonsterToLatex', (t) => {
 t.test('genKnowledgeText', (t) => {
   t.test('can generate empty knowledge', (t) => {
     const creature = Creature.new();
-    t.equal(genKnowledgeText(creature), '');
+    creature.setProperties({ creature_type: 'mortal' });
+    t.equal(genKnowledgeText(creature.getKnowledgeResultConfig()), '');
     t.end();
   });
 
@@ -39,7 +40,7 @@ t.test('genKnowledgeText', (t) => {
     });
 
     t.equal(
-      genKnowledgeText(creature),
+      genKnowledgeText(creature.getKnowledgeResultConfig()),
       `
       \\monsterknowledgeheader{$Name}
       \\par Religion DV 10: Easy result
