@@ -387,6 +387,7 @@ pub fn sentinel<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 \begin{activeability}{Sentinel's Challenge}{Standard action}
+                    \abilitytags \abilitytag{Emotion}
                     \rankline
                     Make a \glossterm{strike}.
                     \hit The target is \glossterm{briefly} \goaded by you.
