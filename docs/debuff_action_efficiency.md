@@ -13,6 +13,10 @@ By EA:
   Confused           & 1.8          & 2.8   & 2.9              & 7.2       \\
   Dazzled            & 0.4          & 0.6   & 0.7              & 1.8       \\
   Deafened           & 0.2          & 0.3   & 0.5              & 1.2       \\
+  Fling 15' (ranged) & 1.0          & N/A   & N/A              & N/A       \\
+  Fling 15' (melee)  & 0.8          & N/A   & N/A              & N/A       \\
+  Fling 30' (ranged) & 1.9          & N/A   & N/A              & N/A       \\
+  Fling 30' (melee)  & 1.6          & N/A   & N/A              & N/A       \\
   Frightened by you  & 0.5          & 0.8   & 0.8              & 2.1       \\
   Frightened by ally & 0.7          & 1.1   & 1.1              & 2.8       \\
   Frightened by all  & 1.1          & 1.7   & 1.9              & 4.8       \\
@@ -49,6 +53,10 @@ By rank:
   Confused           & 3            & 8     & 9                & inf       \\
   Dazzled            & 1d           & 2d    & 3d               & 3         \\
   Deafened           & 0d           & 1d    & 2d               & 0         \\
+  Fling 15' (ranged) & 4d           & N/A   & N/A              & N/A       \\
+  Fling 15' (melee)  & 3d           & N/A   & N/A              & N/A       \\
+  Fling 30' (ranged) & 4            & N/A   & N/A              & N/A       \\
+  Fling 30' (melee)  & 2            & N/A   & N/A              & N/A       \\
   Frightened by you  & 2d           & 3d    & 3d               & 5         \\
   Frightened by ally & 3d           & 0     & 0                & 8         \\
   Frightened by all  & 5d           & 3     & 4                & inf       \\
@@ -290,21 +298,13 @@ Since goaded is 33% action denial when it applies, that gives it 4 * 0.75 / 3 = 
 
 Fully removing a creature's ability to move is too strong to exist; it would be too rare to define as an explicit debuff.
 
-### Fling 15' (horizontal): 0.9 (ranged) / 0.4 (melee)
+### Fling 15': 1.0 (ranged) / 0.8 (melee)
 
-Fling is dangerous compared to push because it can send enemies into bottomless pits and cliffs. Treat fling 15' as being the same EA as push 15', except that fling requires injury.
-
-### Fling 15' (vertical): 1.6 (ranged) / 1.4 (melee)
-
-In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -4 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth 1.2 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both.
-
-### Fling 30' (horizontal): 2.0 (ranged) / 1.5 (melee)
-
-Same as push 30', but this always requires the target to be injured.
+In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -2 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth about 0.6 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both. Note that fling *always* requires injury, because instantly killing off a cliff from full HP is too dangerous.
 
 ### Fling 30' (vertical): 2.6 (ranged) / 2.1 (melee)
 
-This time the push is a larger part of the EA contribution, so we'll start from the push and add half the defense effect, which is 0.6 EA extra.
+This time the push is a larger part of the EA contribution, so we'll start from the push and add the defense effect, which is 0.6 EA extra.
 
 ### Panicked by self: 2.3
 
