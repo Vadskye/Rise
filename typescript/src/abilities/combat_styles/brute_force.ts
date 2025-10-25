@@ -431,5 +431,14 @@ export const bruteForce: CombatStyle = {
       rank: 5,
       roles: ['payoff'],
     },
+    {
+      name: 'Heavy Hitter',
+
+      effect: `
+        Make a \\glossterm{strike} using a \\weapontag{Heavy} weapon that deals quadruple \\glossterm{weapon damage}.
+      `,
+      rank: 5,
+      roles: ['burst'],
+    },
   ],
 };
