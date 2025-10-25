@@ -224,7 +224,7 @@ export const polymorph: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          This damage is \\maximized if the target is an object.
+          This damage is \\maximized if the target is a \\trait{nonliving} \\glossterm{object}.
           If this damage reduces an object to zero hit points, or gives a creature a vital wound that knocks it unconscious, the target is completely disintegrated.
           Only a fine dust remains.
           A disintegrated creature's equipment is unaffected.
@@ -235,6 +235,20 @@ export const polymorph: MysticSphere = {
       },
 
       rank: 4,
+      roles: ['burst'],
+      scaling: 'damage',
+    },
+
+    {
+      name: 'Mighty Disintegrate',
+
+      // -1dr for nonliving maximization
+
+      functionsLike: {
+        name: 'disintegrate',
+        exceptThat: 'the damage increases to \\damagerankten.',
+      },
+      rank: 7,
       roles: ['burst'],
       scaling: 'damage',
     },
