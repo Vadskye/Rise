@@ -95,8 +95,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
       `,
       rank: 1,
       roles: ['burst'],
@@ -107,8 +106,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
-        However, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
       `,
       rank: 5,
       roles: ['burst'],
@@ -311,24 +309,44 @@ export const ebbAndFlow: CombatStyle = {
     },
 
     {
-      name: 'Overhand Smash',
+      name: 'Reckless Smash',
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor defense.
       `,
       rank: 3,
       roles: ['burst'],
     },
 
     {
-      name: 'Overhand Smash+',
+      name: 'Reckless Smash+',
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} and triple damage overall.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses.
-        This penalty does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor defense.
+      `,
+      rank: 7,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Full-Body Thrust',
+
+      effect: `
+        Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
+        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+      `,
+      rank: 3,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Full-Body Thrust+',
+
+      effect: `
+        Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
+        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 7,
       roles: ['burst'],
