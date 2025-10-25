@@ -441,17 +441,18 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost Two \glossterm{fatigue levels} (see text).
                     \rankline
                     Make a \glossterm{strike} that deals double damage.
-                    The strike must target a single creature within \shortrange, with no secondary targets.
+                    You cannot use a \weapontag{Heavy} weapon to make the strike.
+                    It must target a single creature within \shortrange, with no secondary targets.
 
                     Whether or not the target takes damage, it becomes invested with your ki.
                     This does not cause it any ill effects.
                     If it dies or falls unconscious, or you finish a \glossterm{short rest}, your ki returns to you.
-                    When it does, you reduce your \glossterm{fatigue level} by one.
+                    When it does, you reduce your \glossterm{fatigue level} by two.
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
-                    \rank{5} The strike deals 1d8 \glossterm{extra damage}.
-                    \rank{6} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The strike deals double \glossterm{weapon damage}.
+                    \rank{6} The strike deals triple \glossterm{weapon damage}.
                     \rank{7} The strike deals triple damage.
                 \end{magicalactiveability}
             ",
