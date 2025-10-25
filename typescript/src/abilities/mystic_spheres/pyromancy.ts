@@ -493,7 +493,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       name: 'Personal Ignition',
 
       attack: {
-        hit: `1d4 damage \\add half power.`,
+        hit: `\\damagerankone.`,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -506,9 +506,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       `,
       rank: 3,
       roles: ['attune'],
-      scaling: {
-        special: 'The damage increases by 2 for each rank beyond 3.',
-      },
+      scaling: 'damage',
       type: 'Attune (deep)',
     },
 

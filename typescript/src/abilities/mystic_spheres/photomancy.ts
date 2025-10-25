@@ -197,9 +197,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 1,
       roles: ['burst'],
-      scaling: {
-        special: 'The damage increases by 1d6 per rank above 1.',
-      },
+      scaling: 'damage',
     },
 
     {
@@ -288,9 +286,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       roles: ['wildfire'],
-      scaling: {
-        special: 'The damage increases by 1d6 for each rank beyond 3.',
-      },
+      scaling: 'damage',
     },
 
     {
@@ -325,9 +321,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 4,
       roles: ['clear'],
-      scaling: {
-        special: 'The damage increases by 1d10 per rank above 4',
-      },
+      scaling: 'damage',
     },
 
     {
@@ -500,9 +494,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 2,
       roles: ['flash'],
-      scaling: {
-        special: 'The damage increases by 1d6 for each rank beyond 2.',
-      },
+      scaling: 'damage',
       tags: ['Visual'],
       // Should this have the Emotion tag?
     },
@@ -522,9 +514,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 5,
       roles: ['flash'],
-      scaling: {
-        special: 'The damage increases by 1d10 for each rank beyond 5.',
-      },
+      scaling: 'damage',
       tags: ['Visual'],
     },
 
@@ -544,9 +534,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 3,
       roles: ['clear', 'dive'],
-      scaling: {
-        special: 'the damage increases by 1d10 for each rank beyond 3.',
-      },
+      scaling: 'damage',
     },
 
     {
@@ -563,9 +551,7 @@ export const photomancy: MysticSphere = {
       },
       rank: 6,
       roles: ['clear', 'dive'],
-      scaling: {
-        special: 'the damage increases by 2d8 for each rank beyond 6.',
-      },
+      scaling: 'damage',
     },
 
     {
