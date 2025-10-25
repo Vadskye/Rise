@@ -112,6 +112,15 @@ export function addUndead(grimoire: Grimoire) {
     });
   });
 
+  addGhouls(grimoire);
+  addHalfsouls(grimoire);
+  addSkeletons(grimoire);
+  addVampires(grimoire);
+  addZombies(grimoire);
+  // TODO: We can't add skeletons or zombies until we add humanoids
+}
+
+function addGhouls(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       hasArt: true,
@@ -185,12 +194,6 @@ export function addUndead(grimoire: Grimoire) {
       ],
     ],
   );
-
-  addHalfsouls(grimoire);
-  addSkeletons(grimoire);
-  addVampires(grimoire);
-  addZombies(grimoire);
-  // TODO: We can't add skeletons or zombies until we add humanoids
 }
 
 function addHalfsouls(grimoire: Grimoire) {
