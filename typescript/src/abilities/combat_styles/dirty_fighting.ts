@@ -200,8 +200,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target also takes \\damageranktwo damage.
-          You cannot get a \\glossterm{glancing blow} with this attack.
+          the target also takes \\damagerankthree.
         `,
         name: 'grapple',
       },
