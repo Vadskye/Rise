@@ -310,7 +310,7 @@ This chapter defines the items and equipment that exist in the universe of Rise,
     It is one size category smaller than normal (that is, two size categories smaller than the creature it is intended for).
     This makes it easier to conceal (see \pcref{Sleight of Hand}).
     In addition, you only take a \minus5 penalty to Stealth when trying to conceal strikes with a Compact weapon instead of the normal \minus10 or \minus20 penalty for concealing a strike (see \pcref{Stealth}).
-    \weapontagdef{Heavy} Heavy weapons are larger and heavier than other weapons.
+    \weapontagdef{Heavy} Heavy weapons are larger than other weapons.
     You normally need two hands to use a Heavy weapon, whether you are throwing it or using it in melee.
     Drawing a Heavy item from a sheath, or returning it to a sheath, requires a \glossterm{standard action}.
     Unlike most items, Heavy weapons can have two magic item properties (see \pcref{Magic Weapons}).
@@ -711,10 +711,13 @@ This chapter defines the items and equipment that exist in the universe of Rise,
           Mithral, pure       & \plus1 accuracy, lighter                                                   & 7 (12,500 gp)  \\
           % just vulnerabilities  
           Silver              & Common vulnerabilities                                                     & 2 (20 gp)      \\
-          Sanctified silver   & \plus2 \glossterm{extra damage}, common vulnerabilities                    & 6 (12,500 gp)   \\
+          Sanctified silver   & \plus2 \glossterm{extra damage}, common vulnerabilities                    & 6 (12,500 gp)  \\
           % +2dr for -1a
-          Starmetal           & \plus1 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 2 (20 gp)      \\
-          Starmetal, pure     & \plus1d4 \glossterm{extra damage}, \minus1 accuracy, extra weight          & 4 (500 gp)     \\
+          Starmetal           & \plus2 \glossterm{extra damage}, \minus1 accuracy, extra weight            & 3 (100 gp)     \\
+          Starmetal, pure     & \plus1d6 \glossterm{extra damage}, \minus1 accuracy, extra weight          & 6 (12,500 gp)  \\
+          % Very heavy
+          Voidstone           & \plus1d4 \glossterm{extra damage}, extremely heavy, \atEarth tag           & 4 (500 gp)     \\
+          Voidstone, pure     & \plus1d10 \glossterm{extra damage}, extremely heavy, \atEarth tag          & 7 (12,500 gp)  \\
         \end{dtabularx}
       \end{dtable!*}
 
@@ -765,13 +768,24 @@ This chapter defines the items and equipment that exist in the universe of Rise,
       \parhead{Silver} Silver has purifying properties.
       Diseased and festering creatures, such as vampires and werewolves, are \vulnerable to silver weapons.
 
-      \parhead{Starmetal} A starmetal weapon deals 1 \glossterm{extra damage}.
+      \parhead{Starmetal} A starmetal weapon deals 2 \glossterm{extra damage}.
       However, it also has a \minus1 accuracy penalty.
-      Unlike other weapons, starmetal weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 2 to wield.
+      Unlike other weapons, starmetal weapons are not \glossterm{lightweight}, so \abilitytag{Heavy} starmetal weapons typically require a minimum Strength of 2.
 
-      \parhead{Pure Starmetal} A pure starmetal weapon deals 1d4 \glossterm{extra damage}.
+      \parhead{Starmetal, Pure} A pure starmetal weapon deals 1d6 \glossterm{extra damage}.
       However, it also has a \minus1 accuracy penalty.
-      Unlike other weapons, pure starmetal weapons are not \glossterm{lightweight}, so they typically require a minimum Strength of 2 to wield.
+      Unlike other weapons, pure starmetal weapons are not \glossterm{lightweight}, so \abilitytag{Heavy} pure starmetal weapons typically require a minimum Strength of 2.
+
+      \parhead{Voidstone} A voidstone weapon deals 1d4 \glossterm{extra damage}, and all strikes with it have the \atEarth tag.
+      In addition, it is staggeringly heavy.
+      If the weapon was previously \weapontag{Light}, it loses that tag.
+      If it was previously \weapontag{Heavy}, it takes a \minus1 accuracy penalty.
+      Otherwise, it gains the \weapontag{Heavy} tag.
+      Unlike other weapons, voidstone weapons are \glossterm{heavyweight}.
+      That means a normal voidstone weapon requires a minimum Strength of 2, and a voidstone weapon that would normally have the \abilitytag{Heavy} tag requires a minimum Strength of 5.
+
+      \parhead{Voidstone, Pure} A pure voidstone weapon deals 1d10 \glossterm{extra damage}, and all strikes with it have the \atEarth tag.
+      In addition, it is staggeringly heavy, as voidstone.
 
 \newpage
 \sectiongraphic*{Armor}{width=\columnwidth}{equipment/armor}
