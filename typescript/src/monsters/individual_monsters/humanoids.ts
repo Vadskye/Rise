@@ -890,7 +890,7 @@ function addNecromancers(grimoire: Grimoire) {
             `,
             // TODO: there is no reasonable god for Idoris to worship
           });
-          creature.setTrainedSkills(['awareness', 'knowledge_arcana', 'knowledge_religion', 'persuasion']);
+          creature.setTrainedSkills(['awareness', 'knowledge_arcana', 'knowledge_souls', 'persuasion']);
           creature.setBaseAttributes([0, 4, 1, 5, 6, 10]);
 
           // Channel Divinity spells are elite actions

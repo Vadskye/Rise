@@ -423,7 +423,7 @@ function addLiches(grimoire: Grimoire) {
             level: 17,
             size: 'medium',
           });
-          creature.setTrainedSkills(['awareness', 'deduction', 'craft_bone', 'knowledge_arcana', 'knowledge_religion']);
+          creature.setTrainedSkills(['awareness', 'deduction', 'craft_bone', 'knowledge_arcana', 'knowledge_souls']);
           creature.setBaseAttributes([-2, 5, 2, 5, 8, 10]);
           creature.setKnowledgeResults({
             hard: `
