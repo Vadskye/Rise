@@ -250,7 +250,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                     The target regains \glossterm{hit points} equal to 2d6 \add your \glossterm{magical power}.
                     In addition, it removes one \glossterm{condition} or poison affecting it.
                     % TODO: wording
-                    This removal can only affect conditions and poisons with a rank no more than two ranks higher than your rank in this archetype.
+                    This removal can only affect conditions and poisons with a rank no more than two higher than your rank in this archetype.
 
                     \rankline
                     \rank{3} The bonus healing increases to 1d6 per 2 power.
