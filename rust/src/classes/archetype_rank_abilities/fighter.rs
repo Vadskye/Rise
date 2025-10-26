@@ -171,22 +171,22 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
         },
         RankAbility {
-            complexity: 2,
-            name: "Equipment Efficiency",
+            complexity: 0,
+            name: "Second Skin",
             is_magical: false,
             rank: 4,
             description: r"
-                Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
+                While wearing body armor, you gain a \plus1 bonus to your Armor defense.
             ",
             modifiers: None,
         },
         RankAbility {
-            complexity: 0,
-            name: "Second Skin",
+            complexity: 3,
+            name: "Equipment Efficiency",
             is_magical: false,
             rank: 5,
             description: r"
-                While wearing body armor, you gain a \plus1 bonus to your Armor defense.
+                Whenever you draw a weapon or don a shield, you can attune to it as a \glossterm{free action} (see \pcref{Item Attunement}).
             ",
             modifiers: None,
         },
