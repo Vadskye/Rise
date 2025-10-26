@@ -198,6 +198,26 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    // This is kind of a scaling fix; Smite doesn't work as well with Heavy weapons at very high
+    // levels.
+    apparel.push(Amulet(StandardItem {
+        name: String::from("Zealous Titan's Amulet"),
+        rank: 5,
+        short_description: String::from(r"Deal extra damage with \ability<smite> using \\weapontag<Heavy> weapons"),
+        // 2.24x normal damage / 1.88x normal damage = 19% more damage, which is on par for a
+        // rank 5 attunement.
+        description: String::from(r"
+            When you use the \ability<smite> paladin ability using a \\weapontag{Heavy} weapon, you deal \glossterm{extra damage} equal to half your \glossterm{power}.
+        "),
+        upgrades: vec![
+            // 2.15x / 1.69x = +27% more damage
+            ItemUpgrade::new(7, r"Deal extra damage with \ability<smite> using \\weapontag<Heavy> weapons", r"
+                The extra damage increases to be equal to your power.
+            "),
+        ],
+        ..Apparel::default()
+    }));
+
     apparel.push(Amulet(StandardItem {
         name: String::from("Twinhunter Amulet"),
         rank: 3,
