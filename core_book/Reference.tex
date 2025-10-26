@@ -119,6 +119,8 @@
   \debuffdef{blinded} A blinded creature cannot use its eyes.
   Assuming it does not have other methods of sight, it automatically fails at actions which depend on vision, including simply seeing the locations of other objects and creatures.
   This makes it at least \partiallyunaware of all attacks, and it may be fully \unaware as normal.
+  It has a 50\% \glossterm{miss chance} when trying to attack targets it cannot see.
+  If a blinded creature can perceive targets with other effects that do not require eyes, such as \trait{blindsight}, it can ignore these detrimental effects.
 
   \buffdef{braced} An braced creature gains a \plus2 bonus to all defenses.
 
@@ -142,8 +144,9 @@
 
   \debuffdef{dazzled} A dazzled creature has difficulty seeing.
   It loses the benefits of special vision traits that require eyes, such as \trait{darkvision} and \trait{low-light vision}.
-  In addition, it treats everything as if it had \glossterm{concealment}.
+  In addition, it treats everything it sees as if it had \glossterm{concealment}.
   Among other effects, this gives its \glossterm{targeted} attacks a 20\% \glossterm{miss chance}.
+  If the dazzled creature can perceive targets with other effects that do not require eyes, such as \trait{blindsight}, it can ignore this miss chance.
 
   \debuffdef{deafened} A deafened creature cannot hear.
   It automatically fails at actions which depend on hearing, and is immune to Auditory abilities.
