@@ -269,8 +269,9 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Exchange Vitality}{Standard action}
                     \abilitycost See text.
                     \rankline
-                    Remove one of your \glossterm{vital wounds}.
-                    If you remove a vital wound in this way, you increase your \glossterm{fatigue level} by 2.
+                    You are \glossterm{briefly} \empowered.
+                    Then, you may remove one of your \glossterm{vital wounds}.
+                    If you remove a vital wound in this way, you increase your \glossterm{fatigue level} by two.
                     This effect \glossterm{repeats} at the end of the current round.
                 \end{magicalactiveability}
             ",
