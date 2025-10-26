@@ -73,8 +73,8 @@ function replaceGenericTerms(
   replace(/\b, you become\b/g, ', it becomes');
   replace(/\bYou must have\b/g, 'The $name must have');
   replace(/\b, you move\b/g, ', it moves');
-  replace(/\bMove up to your speed\b/g, 'The $name moves up to its speed');
-  replace(/\byour speed\b/g, 'its speed');
+  replace(/\bMove up to your (speed\b|\\glossterm{speed})/g, 'The $name moves up to its \\glossterm{speed}');
+  replace(/\byour (speed\b|\\glossterm{speed})/g, 'its \\glossterm{speed}');
   replace(/\byour attack\b/g, 'its attack');
   replace(/\bwhether you get\b/g, 'whether it gets');
   replace(/\byou cannot get\b/g, 'it cannot get');
@@ -135,6 +135,7 @@ function replaceGenericTerms(
   replace(/\byou include yourself\b/g, 'it includes itself');
   replace(/\byou still only make\b/g, 'it still only makes');
   replace(/\bof you before your movement\b/g, 'of it before its movement');
+  replace(/\bduring your movement\b/g, 'during its movement');
   replace(/\byou moved through\b/g, 'it moved through');
   replace(/\bafter your strike\b/g, 'after its strike');
   replace(/\byou control the\b/g, "the $name controls the");
@@ -201,6 +202,7 @@ function replaceGenericTerms(
   replace(/\bIf you do\b/g, 'If it does');
   replace(/(\$[nN]ame.*)\bif you\b/g, (_, prefix) => `${prefix}if it`);
   replace(/\bto your destination\b/g, 'to the destination');
+  replace(/\bat your destination\b/g, 'at its destination');
 
   // Monsters don't generally have "spells", they just have abilities
   replace(/\bto cast this spell\b/g, 'to use this ability');
@@ -256,9 +258,6 @@ function replaceGenericTerms(
   return abilityPart;
 }
 
-const makeStrikePattern = /\b[mM]ake a.*(strike\b|\\glossterm{strike})/;
-const brawlingAttackPattern = /\b[mM]ake a (brawling attack\b|\\glossterm{brawling attack})/;
-
 // monsterName and abilityName are only provided to improve the clarity of warnings and
 // errors.
 function checkSuccessfullyConverted(abilityText: string, monsterName: string, abilityName: string) {
@@ -303,7 +302,9 @@ function checkSuccessfullyConverted(abilityText: string, monsterName: string, ab
     warn('Ability still has listed \\hprank');
   }
 
-  if (makeStrikePattern.test(abilityText)) {
+  // Note that we don't allow any interstitial text; this means we don't find "can make a
+  // +9 strike", which is a valid outcome from the conversion process.
+  if (/\b[mM]ake a (strike\b|\\glossterm{strike})/.test(abilityText)) {
     warn('Ability still says it makes a strike');
   }
 
@@ -337,7 +338,7 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     delete ability.type;
   }
 
-  if (ability.effect && makeStrikePattern.test(ability.effect)) {
+  if (ability.effect && /\b[mM]ake a.*(strike\b|\\glossterm{strike})/.test(ability.effect)) {
     if (!ability.weapon) {
       throw new Error(
         `Monster ability ${monster.name}.${ability.name}: Strike ability has no weapon`,
@@ -354,7 +355,7 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     restructureStrikeAbility(monster, ability as StrikeActiveAbility);
   }
 
-  if (ability.effect && brawlingAttackPattern.test(ability.effect)) {
+  if (ability.effect && /\b[mM]ake a (brawling attack\b|\\glossterm{brawling attack})/.test(ability.effect)) {
     restructureBrawlingAbility(monster, ability);
   }
 
@@ -424,17 +425,18 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   );
 
   const strikeComponentMatch = ability.effect.match(
-    /(.*)?([mM])ake a( mundane| \\glossterm{mundane}| magical| \\glossterm{magical})? (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
+    /(.*?)?([yY]ou can )?([mM])ake a( mundane| \\glossterm{mundane}| magical| \\glossterm{magical})? (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
   );
   if (!strikeComponentMatch) {
     throw new Error(`${ability.name}: Unable to parse strike: '${ability.effect}'`);
   }
   const preStrike = strikeComponentMatch[1] || '';
-  const maybeCapital = strikeComponentMatch[2];
-  const mundaneOrMagical = (strikeComponentMatch[3] || '').trim();
-  const restOfStrikeSentence = strikeComponentMatch[5];
-  const postStrike = strikeComponentMatch[6];
-  const labeledEffects = `${strikeComponentMatch[7] || ''}${strikeComponentMatch[8] || ''}`;
+  const maybeYouCan = strikeComponentMatch[2] || '';
+  const useCapital = strikeComponentMatch[3] === 'M' || maybeYouCan[0] === 'Y';
+  const mundaneOrMagical = (strikeComponentMatch[4] || '').trim();
+  const restOfStrikeSentence = strikeComponentMatch[6];
+  const postStrike = strikeComponentMatch[7];
+  const labeledEffects = `${strikeComponentMatch[8] || ''}${strikeComponentMatch[9] || ''}`;
 
   let strikeIsMagical = ability.isMagical;
   if (/mundane/.test(mundaneOrMagical)) {
@@ -443,7 +445,8 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
     strikeIsMagical = true;
   }
 
-  let preStrikeText = maybeCapital === 'M' ? `${preStrike}The $name makes a ` : `${preStrike}the $name makes a `;
+  const makesA = maybeYouCan ? 'can make a' : 'makes a';
+  let preStrikeText = useCapital ? `${preStrike}The $name ${makesA} ` : `${preStrike}the $name ${makesA} `;
   // Fix duplicate 'the $name' in case the pre-strike text already contains the monster's
   // name.
   preStrikeText = preStrikeText.replace(/(\$name.*)[tT]he \$name/, (_, prefix) => `${prefix}it`);

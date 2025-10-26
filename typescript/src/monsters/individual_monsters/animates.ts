@@ -115,6 +115,7 @@ export function addAnimates(grimoire: Grimoire) {
   });
 
   addAnimatedObjects(grimoire);
+  addGolems(grimoire);
   addTreants(grimoire);
 }
 
@@ -235,6 +236,62 @@ function addAnimatedObjects(grimoire: Grimoire) {
         },
       ],
     ],
+  );
+}
+
+function addGolems(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Golems',
+      hasArt: false,
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('construct');
+      },
+    },
+    [
+      ['Mining Golem', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'brute',
+          elite: false,
+          creature_type: 'animate',
+          level: 5,
+          size: 'medium',
+        });
+        creature.setTrainedSkills([]);
+        creature.setBaseAttributes([5, 3, 3, 0, 2, 0]);
+        creature.addWeaponMult('pick');
+        creature.addManeuver('Ground Slam', { weapon: 'pick' });
+      }],
+      ['Mithral Golem', (creature: Creature) => {
+        creature.setRequiredProperties({
+          alignment: 'lawful neutral',
+          base_class: 'warrior',
+          elite: true,
+          creature_type: 'animate',
+          level: 14,
+          size: 'large',
+        });
+        creature.setTrainedSkills([]);
+        creature.setBaseAttributes([6, 10, 1, 0, 6, 4]);
+        creature.addWeaponMult('fists');
+        // Not worth the effort to automate conversion of "make two strikes"
+        creature.addCustomManeuver({
+          name: 'Faster Than Sight',
+          attack: {
+            hit: '2d6+7 damage.',
+            targeting: `
+              The $name makes two melee \\glossterm{strikes}.
+              If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats the $name as \\glossterm{invisible}.
+            `,
+          },
+          tags: ['Visual'],
+        });
+        creature.addManeuver('Whirlwind+', { weapon: 'fists' });
+        creature.addManeuver('Building Storm', { usageTime: 'elite' })
+        creature.addManeuver('Flash Sweep', { usageTime: 'elite', 'weapon': 'fists' })
+      }],
+    ]
   );
 }
 
@@ -397,7 +454,7 @@ function addTreants(grimoire: Grimoire) {
           });
 
           creature.addWeaponMult('greatclub');
-          creature.addManeuver('Prepared Defense', {weapon: 'greatclub'});
+          creature.addManeuver('Prepared Defense', { weapon: 'greatclub' });
 
           creature.addSpell('Embedded Growth', { usageTime: 'elite' });
           creature.addSpell('Wall of Thorns', { usageTime: 'elite' });
