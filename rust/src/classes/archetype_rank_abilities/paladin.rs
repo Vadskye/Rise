@@ -269,14 +269,15 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                In addition to regaining hit points, you can cause the target to remove a \glossterm{vital wound}.
-                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
+                The target can also remove a \glossterm{vital wound}.
+                If it does, you increase your \glossterm{fatigue level} by two.
+                Otherwise, you are \glossterm{briefly} \empowered.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 1,
-            name: "Lay on Hands+",
+            name: "Lay on Hands++",
             is_magical: true,
             rank: 7,
             description: r"
