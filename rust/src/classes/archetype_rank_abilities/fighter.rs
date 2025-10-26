@@ -448,6 +448,16 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
                 {
+                    \begin{sustainability}{Brace Yourselves}{\glossterm{Minor action}}
+                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \rankline
+                        Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
+
+                        \rankline
+                        \rank{4} The bonus increases to \plus3.
+                        \rank{7} The bonus increases to \plus4.
+                    \end{sustainability}
+
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
@@ -514,11 +524,11 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Lead From the Front}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target other than you gains a \plus1 bonus to Armor defense against \glossterm{enemies} that you are adjacent to.
+                        One \glossterm{ally} gains a \plus1 bonus to all defenses against \glossterm{enemies} that you are adjacent to.
 
                         \rankline
                         \rank{4} The bonus also applies against \glossterm{enemies} within 15 feet of you.
-                        \rank{7} The bonus applies to all defenses.
+                        \rank{7} You can choose a second ally.
                     \end{sustainability}
 
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
@@ -552,7 +562,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
+                If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use some of that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
                 You cannot carry over more than five feet of movement in this way.
             ",
             modifiers: None,
