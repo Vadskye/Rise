@@ -2770,10 +2770,11 @@ function handleStrikeAttacks() {
     const damage_multiplier_key = `repeating_strikeattacks_${sectionId}damage_multiplier`;
     const weapon_keys = [];
     for (let i = 0; i < supportedWeaponCount; i++) {
-      weapon_keys.push(`weapon_${i}_magical_power_damage`);
-      weapon_keys.push(`weapon_${i}_mundane_power_damage`);
+      weapon_keys.push(`weapon_${i}_damage_dice`);
       weapon_keys.push(`weapon_${i}_extra_damage`);
       weapon_keys.push(`weapon_${i}_exists`);
+      weapon_keys.push(`weapon_${i}_magical_power_damage`);
+      weapon_keys.push(`weapon_${i}_mundane_power_damage`);
     }
     getAttrs(
       [
@@ -2788,14 +2789,13 @@ function handleStrikeAttacks() {
       ],
       function (v) {
         const dice_type = v[is_magical_key] === '1' ? 'magical' : 'mundane';
-
         // We need to copy the weapon_exists keys into the local repeating section.
         const weaponExistence: Record<string, boolean> = {};
         const weaponDice: string[] = [];
         const weaponPowerDamage: number[] = [];
         const weaponExtraDamage: string[] = [];
         for (let i = 0; i < supportedWeaponCount; i++) {
-          weaponDice.push(v[`weapon_${i}_${dice_type}_damage_dice`]);
+          weaponDice.push(v[`weapon_${i}_damage_dice`]);
           weaponPowerDamage.push(Number(v[`weapon_${i}_${dice_type}_power_damage`] || 0));
           weaponExtraDamage.push(v[`weapon_${i}_extra_damage`]);
           weaponExistence[`repeating_strikeattacks_${sectionId}weapon_${i}_exists_local`] = Boolean(
