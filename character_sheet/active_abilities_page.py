@@ -416,10 +416,14 @@ def weapon_buttons(i):
                 "type": "roll",
                 "value": weapon_attack_button(i),
             },
+            # This has to use value instead of the more common `readonly`
+            # approach because it's referencing a value outside of the current
+            # repeating ability section.
             text_input(
                 {
-                    "name": "weapon_" + i + "_name",
-                    "readonly": True,
+                    "disabled": True,
+                    "name": "weapon_attack_name_" + i,
+                    "value": "@{weapon_" + i + "_name}",
                 }
             ),
         ),
