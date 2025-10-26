@@ -182,6 +182,7 @@ fn amulets() -> Vec<Apparel> {
         ..Apparel::default()
     }));
 
+    // Accuracy is normally rank 3, but this isn't enhancement bonus, so it's fancy
     apparel.push(Amulet(StandardItem {
         name: String::from("Holy Avenger's Amulet"),
         rank: 3,
@@ -191,7 +192,7 @@ fn amulets() -> Vec<Apparel> {
             This accuracy bonus is doubled if the target caused one of your allies to gain a vital wound during the previous round.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Grants +2 accuracy with \ability<smite> when avenging allies", r"
+            ItemUpgrade::new(7, r"Grants +2 accuracy with \ability<smite> when avenging allies", r"
                 The accuracy bonus increases to +2.
             "),
         ],
