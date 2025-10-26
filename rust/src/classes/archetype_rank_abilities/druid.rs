@@ -393,7 +393,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
                         In addition, you have the ability to move on all four limbs.
                         When doing so, you become \trait{quadrupedal} and have no \glossterm{free hands} (see \pcref{Multipedal}).
-                        This gives you a \plus10 foot bonus to your \glossterm{movement speed}.
+                        This gives you a \plus10 foot bonus to your \glossterm{speed}.
                         Your bite also gains the \weapontag{Heavy} weapon tag while you are quadrupedal in this way.
 
                         When not using your hands to move, your ability to use your hands is unchanged.

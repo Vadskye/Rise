@@ -21,7 +21,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
-        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{movement speed} and are \\primed.
+        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 1,
@@ -33,7 +33,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You \\glossterm{briefly} gain a \\plus20 foot bonus to your \\glossterm{movement speed} and are \\primed.
+        You \\glossterm{briefly} gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 5,
@@ -147,7 +147,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Sweep',
 
       effect: `
-        You can move in a straight line up to your \\glossterm{movement speed}.
+        You can move in a straight line up to your \\glossterm{speed}.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
         While still invisible, you can make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
@@ -161,7 +161,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Flurry',
 
       effect: `
-        You can move in a straight line up to your \\glossterm{movement speed}.
+        You can move in a straight line up to your \\glossterm{speed}.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
         While still invisible, you can make two melee \\glossterm{strikes} that deal double \\glossterm{weapon damage} at any point during your movement.
         After making the strikes, you become visible at your destination.
@@ -174,7 +174,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Flash Charge',
 
       effect: `
-        You can move in a straight line up to your \\glossterm{movement speed}.
+        You can move in a straight line up to your \\glossterm{speed}.
         During this movement, you move too quickly to be seen, making you \\trait{invisible}.
         You become visible at your destination, and you can then make a melee \\glossterm{strike} there.
       `,

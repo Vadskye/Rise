@@ -300,7 +300,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You gain a \plus10 foot bonus to your \glossterm{movement speed}.
+                You gain a \plus10 foot bonus to your \glossterm{speed}.
             ",
             modifiers: Some(vec![Modifier::MovementSpeed(MovementMode::Land, 10)]),
         },
@@ -561,7 +561,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Bear} \plus2 Endurance and \plus1 to your \glossterm{vital rolls}.
                     \itemhead{Crocodile} \plus2 Stealth and you can hold your breath ten times as long as normal (see \pcref{Endurance}).
                     \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
-                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{movement speed} while you are affected by the \ability{sprint} ability.
+                    \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{speed} while you are affected by the \ability{sprint} ability.
                         This speed bonus is doubled as normal for that ability.
                     \itemhead{Shark} \plus2 Swim and you gain the \trait{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
