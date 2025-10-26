@@ -415,6 +415,17 @@ def roll20_weapon(i):
                     None,
                     {"class": "ignore-power", "name": f"weapon_{i}_ignore_power"},
                 ),
+                # We need these two for sheet_worker calcs
+                text_input({
+                    "class": "hidden",
+                    "name": f"weapon_{i}_magical_power_damage",
+                    "readonly": True,
+                }),
+                text_input({
+                    "class": "hidden",
+                    "name": f"weapon_{i}_mundane_power_damage",
+                    "readonly": True,
+                }),
             ]),
             flex_row(
                 {"class": "weapon-calcs"},
