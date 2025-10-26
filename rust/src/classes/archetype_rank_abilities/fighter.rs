@@ -579,14 +579,14 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     You can move up to half your \glossterm{speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     After you stop moving, you can make a melee \glossterm{strike}.
-                    You gain a \plus3 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of \plus6.
+                    You gain a \plus2 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of \plus4.
                     
 
                     \rankline
-                    \rank{4} The accuracy bonus per ally increases to \plus5, to a maximum of \plus10.
-                    \rank{5} The strike deals 1d8 \glossterm{extra damage}.
-                    \rank{6} The extra damage increases to 1d8 \add your \glossterm{power}.
-                    \rank{6} The extra damage increases to 3d8 \add your \glossterm{power}.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
+                    \rank{6} The strike deals triple weapon damage.
+                    \rank{7} The extra damage increases to be equal to your \glossterm{power}, and you can move up to your full speed.
                 \end{activeability}
             ",
             modifiers: None,
