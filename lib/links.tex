@@ -110,6 +110,12 @@
     \label{#1}
 }
 
+\DeclareDocumentCommand{\sense}{o m}
+{
+    \IfValueTF{#1}
+    {\termlink[#1]{#2}{sense}}
+    {\termlink{#2}{sense}}
+}
 \DeclareDocumentCommand{\sensedef}{m m}
 {
     \termdef{#1}[#2]{sense}
