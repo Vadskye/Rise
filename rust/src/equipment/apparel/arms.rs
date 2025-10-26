@@ -59,25 +59,36 @@ fn bracers() -> Vec<Apparel> {
             ItemUpgrade::new(4, "Can exert to gain instant +4 Armor defense", "
                 The defense bonus increases to +4.
             "),
+            ItemUpgrade::new(7, "Can exert to gain instant +6 Armor defense", "
+                The defense bonus increases to +6.
+            "),
         ],
         ..Apparel::default()
     }));
 
+    // 15' push is 0.9 EA at range. A rank 1 attunement item would normally allow 1.75 EA.
+    // Upgrading to fling on injury is worth about 0.2 EA, plus starting with the fling EA
+    // instead of push EA, so 1.2 EA? That allows spending two ranks on area.
     apparel.push(Bracers(StandardItem {
         name: String::from("Bracers of Repulsion"),
         rank: 1,
-        short_description: String::from("Can knock nearby creatures back"),
+        short_description: String::from("Can push nearby creatures back"),
         description: String::from(r"
             You can activate these bracers as a standard action.
             When you do, they emit a telekinetic burst of force.
-            Make an attack vs. Brawn against everything within a \areasmall radius burst from you.
+            Make an attack vs. Brawn against all \glossterm{enemies} within a \medarea radius from you.
             Your minimum accuracy is $accuracy.
-            \hit You \glossterm<fling> the target up to 10 feet away from you.
-            \crit The fling distance is doubled.
+            \hit You \glossterm<push> the target 15 feet in a straight line directly away from you.
+            If the target is \glossterm{injured}, you \glossterm{fling} it instead of pushing it.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Can knock nearby creatures back", r"
-                The minimum accuracy increases to $accuracy and the fling distance increases to 30 feet.
+            // 30' ranged fling is 1.9 EA. We can get 2.4 EA on a rank 3 attunement item.
+            ItemUpgrade::new(3, "Can push nearby creatures back", r"
+                The minimum accuracy increases to $accuracy and the push or fling distance increases to 30 feet.
+            "),
+            // 60' push/fling isn't really defined. Seems strong?
+            ItemUpgrade::new(6, "Can push nearby creatures back", r"
+                The minimum accuracy increases to $accuracy and the push or fling distance increases to 60 feet.
             "),
         ],
         ..Apparel::default()
@@ -107,6 +118,11 @@ fn bracers() -> Vec<Apparel> {
         upgrades: vec![
             ItemUpgrade::new(4, "Can protect against two critical hits", "
                 This item can activate twice before you stop being attuned to it.
+                It can only reroll any individual attack once.
+            "),
+            // TODO: unclear EA
+            ItemUpgrade::new(7, "Can protect against three critical hits", "
+                This item can activate three times before you stop being attuned to it.
             "),
         ],
         ..Apparel::default()
@@ -143,8 +159,11 @@ fn gauntlets() -> Vec<Apparel> {
             When you make a thrown \glossterm<strike>, you reduce your \glossterm<longshot penalty> by 1 (see \pcref<Weapon Range Limits>).
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Reduces thrown longshot penalty by 2", r"
+            ItemUpgrade::new(4, "Reduces thrown longshot penalty by 2", r"
                 The penalty reduction increases to 2.
+            "),
+            ItemUpgrade::new(6, "Reduces thrown longshot penalty by 3", r"
+                The penalty reduction increases to 3.
             "),
         ],
         ..Apparel::default()
@@ -180,7 +199,10 @@ fn gauntlets() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Grants +2 Strength for weight limits", r"
-                The bonuses increase to +2.
+                The bonus increases to +2.
+            "),
+            ItemUpgrade::new(7, "Grants +1 mundane power and +2 Strength for weight limits", r"
+                You also gain a +1 \glossterm{enhancement bonus} to your \glossterm{mundane power}.
             "),
         ],
         ..Apparel::default()
@@ -307,7 +329,10 @@ fn gloves() -> Vec<Apparel> {
         upgrades: vec![
             ItemUpgrade::new(4, "Can create daggers with special materials", r"
                 The daggers be made from a special material of your choice.
-                You can create an adamantine, pure diamondsteel, mithral, or silvered dagger (see \pcref<Weapon Special Materials>).
+                You can create an adamantine, pure diamondsteel, mithral, or silver dagger (see \pcref<Weapon Special Materials>).
+            "),
+            ItemUpgrade::new(7, "Can create daggers with special materials", r"
+                The daggers can also be made of pure adamantine, pure mithral, or sanctified silver.
             "),
         ],
         tags: vec![AbilityTag::Manifestation, AbilityTag::personal_attunement()],
