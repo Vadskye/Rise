@@ -162,10 +162,10 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                     The strike gains the benefit of your chosen weapon tag if it did not already have that tag.
 
                     \rankline
-                    \rank{9} The strike deals triple weapon damage.
-                    \rank{12} The strike deals \glossterm{extra damage} equal to half your power.
-                    \rank{15} The strike deals five times weapon damage.
-                    \rank{18} The strike deals eight times weapon damage.
+                    \rank{4} The strike deals triple weapon damage.
+                    \rank{5} The strike deals \glossterm{extra damage} equal to half your power.
+                    \rank{6} The strike deals five times weapon damage.
+                    \rank{7} The strike deals eight times weapon damage.
                 \end{activeability}
             ",
             modifiers: None,
