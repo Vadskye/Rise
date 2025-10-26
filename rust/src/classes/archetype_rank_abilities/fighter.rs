@@ -157,9 +157,9 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Adaptive Blow}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals double \glossterm{weapon damage}.
-                    In addition, choose one of the following tags: \abilitytag{Keen}, \weapontag{Maneuverable}, or \weapontag{Parrying} (see \pcref{Weapon Tags}).
-                    If the strike is a \glossterm{melee} strike, you can alternately choose the \weapontag{Long} or \weapontag{Sweeping} (1) weapon tags.
-                    The strike gains the benefit of your chosen weapon tag if it did not already have that tag.
+                    In addition, choose one of the following tags: \abilitytag{Keen}, \abilitytag{Impact}, or \abilitytag{Subdual} (see \pcref{Ability Tags}).
+                    If the strike is a \glossterm{melee} strike, you can alternatively choose the \weapontag{Long} or \weapontag{Sweeping} (1) \glossterm{weapon tags}.
+                    The strike gains the benefit of your chosen tag if it did not already have that tag.
 
                     \rankline
                     \rank{4} The strike deals triple weapon damage.
