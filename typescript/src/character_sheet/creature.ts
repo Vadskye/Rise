@@ -236,9 +236,43 @@ export class Creature implements CreaturePropertyMap {
       dragon: 'knowledge_arcana' as const,
       mortal: 'knowledge_local' as const,
       planeforged: 'knowledge_planes' as const,
-      undead: 'knowledge_religion' as const,
+      undead: 'knowledge_souls' as const,
     }[this.creature_type];
     // TODO: determine correct knowledge based on checking traits like Animal.
+    // TODO: return more than one valid knowledge skill. For now, just return the first
+    // that matches, which is dumb.
+
+    for (const trait of this.getStandardTraits()) {
+      const traitToKnowledgeMap: Record<RiseTrait, RiseKnowledgeSkill | null> = {
+        'amphibious': null,
+        'amorphous': null,
+        'animal': 'knowledge_nature',
+        'beast': 'knowledge_nature',
+        'construct': 'knowledge_arcana',
+        'floating': null,
+        'humanoid': 'knowledge_local',
+        'incorporeal': null,
+        'indwelt': 'knowledge_souls',
+        'intangible': null,
+        'invisible': null,
+        'legless': null,
+        'mindless': null,
+        'multipedal': null,
+        'nonliving': null,
+        'plant': 'knowledge_nature',
+        'quadrupedal': null,
+        'scent': null,
+        'sightless': null,
+        'simple-minded': null,
+        'soulless': null,
+        'telepathy': null,
+      };
+
+      const traitBasedKnowledge = traitToKnowledgeMap[trait];
+      if (traitBasedKnowledge) {
+        return traitBasedKnowledge;
+      }
+    }
 
     return defaultKnowledge;
   }
@@ -815,6 +849,13 @@ export class Creature implements CreaturePropertyMap {
     if (this.intelligence >= -2 && this.getTrainedSkillNames().length === 0) {
       this.warn('Has no trained skills');
     }
+
+    if (this.intelligence > -8 && this.hasTrait('animal')) {
+      this.warn('Animal should have an Intelligence of -8 or less');
+    }
+    if (this.intelligence > -5 && this.hasTrait('beast')) {
+      this.warn('Beast should have an Intelligence of -5 or less');
+    }
   }
 
   throwError(message: string) {
@@ -1128,8 +1169,8 @@ export class Creature implements CreaturePropertyMap {
     return this.getPropertyValue('knowledge_planes');
   }
 
-  public get knowledge_religion() {
-    return this.getPropertyValue('knowledge_religion');
+  public get knowledge_souls() {
+    return this.getPropertyValue('knowledge_souls');
   }
 
   public get knowledge_untrained() {
