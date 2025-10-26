@@ -278,7 +278,7 @@ export const flurryOfBlows: CombatStyle = {
     },
 
     {
-      name: 'Dazzling Kata',
+      name: 'Dazzling Display',
 
       // Dazzled is 0.6 EA and we have 1.0 EA to work with. Spending two ranks on area
       // tier gets us back to a r1 area, since we start from r-1. We only actually use a

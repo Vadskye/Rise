@@ -115,10 +115,23 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         You are \\shielded this round.
-        Make a melee \\glossterm{strike} with a -2 accuracy penalty using a shield.
+        Make a melee \\glossterm{strike} with a -1 accuracy penalty using a shield.
         The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 1,
+      roles: ['turtle'],
+      tags: ['Swift (see text)'],
+    },
+
+    {
+      name: 'Shield Bash+',
+
+      effect: `
+        You are \\shielded this round.
+        Make a melee \\glossterm{strike} that deals double damage using a shield.
+        The shielding is a \\atSwift effect, but the strike is not.
+      `,
+      rank: 5,
       roles: ['turtle'],
       tags: ['Swift (see text)'],
     },
@@ -213,11 +226,10 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
-        This ability does not have the \\abilitytag{Swift} tag, so it does not affect attacks against you during the current phase.
+        After making the strike, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
       `,
       rank: 3,
-      roles: ['generator'],
+      roles: ['generator', 'turtle'],
     },
 
     {
@@ -309,6 +321,28 @@ export const unbreakableDefense: CombatStyle = {
       roles: ['focus', 'healing'],
       scaling: 'healing',
       tags: ['Swift'],
+    },
+
+    {
+      name: 'Fortifying Force',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double damage.
+        After making the strike, you are \\glossterm{briefly} \\fortified.
+      `,
+      rank: 5,
+      roles: ['generator', 'turtle'],
+    },
+
+    {
+      name: 'Bracing Blow',
+
+      effect: `
+        Make a \\glossterm{strike} that deals triple damage.
+        \\hit You are \\glossterm{briefly} \\braced.
+      `,
+      rank: 7,
+      roles: ['generator', 'turtle'],
     },
   ],
 };
