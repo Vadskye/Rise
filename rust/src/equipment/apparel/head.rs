@@ -162,7 +162,7 @@ fn crowns() -> Vec<Apparel> {
             7,
             "Emits massive light",
             r"
-                The area increases to a \gargantuanarea radius.
+                The area increases to a \gargarea radius.
             ",
         )],
         ..Apparel::default()
