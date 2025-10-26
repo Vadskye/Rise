@@ -259,18 +259,18 @@ pub fn body_armor() -> Vec<MagicArmor> {
     armor.push(Body(StandardItem {
         name: String::from("Grafted Armor"),
         rank: 2,
-        short_description: String::from("Grants Fortitude instead of Armor defense and +2 durability"),
+        short_description: String::from("Grants Fortitude instead of Armor defense and +3 durability"),
         description: String::from(r"
             This armor does not increase your Armor defense.
             Instead, you gain an \glossterm{enhancement bonus} to your Fortitude defense equal to the Armor defense bonus the armor would normally provide.
-            In addition, the armor grants you a +2 \glossterm{enhancement bonus} to your \glossterm{durability}.
+            In addition, the armor grants you a +3 \glossterm{enhancement bonus} to your \glossterm{durability}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(4, "Grants Fortitude instead of Armor defense and +3 durability", r"
-                The durability bonus increases to +3.
-            "),
-            ItemUpgrade::new(6, "Grants Fortitude instead of Armor defense and +4 durability", r"
+            ItemUpgrade::new(4, "Grants Fortitude instead of Armor defense and +4 durability", r"
                 The durability bonus increases to +4.
+            "),
+            ItemUpgrade::new(6, "Grants Fortitude instead of Armor defense and +5 durability", r"
+                The durability bonus increases to +5.
             "),
         ],
         ..MagicArmor::default()
