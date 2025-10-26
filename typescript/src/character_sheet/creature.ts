@@ -82,16 +82,19 @@ type NumericCreatureProperty =
   | RiseJumpDistance;
 type StringCreatureProperty =
   | 'description'
+  | 'monster_type'
   | 'name'
   | 'weapon_0_name'
   | 'weapon_1_name'
   | 'weapon_2_name'
   | 'weapon_3_name'
   | CreatureKnowledgeResult
+  | CalcExplanation
   | RiseSpecialDefense
   | CustomMovementSpeed
   | CustomSense;
 type BooleanCreatureProperty = 'has_art' | 'elite' | RiseDebuff;
+type CalcExplanation = 'armor_defense_explanation' | 'brawn_explanation' | 'fortitude_explanation' | 'mental_explanation' | 'reflex_explanation';
 
 // TODO: this is poorly organized in the sheet. Senses and movement speeds are both
 // grouped under the `movement_speed_i_name` bucket.
@@ -345,6 +348,16 @@ export class Creature implements CreaturePropertyMap {
     ];
     const equippedItemMap = this.sheet.getPropertyValues(keys);
     return keys.map((key) => equippedItemMap[key]).filter(Boolean);
+  }
+
+  getCommonExplanations() {
+    return {
+      armor: this.armor_defense_explanation,
+      brawn: this.brawn_explanation,
+      fortitude: this.fortitude_explanation,
+      mental: this.mental_explanation,
+      reflex: this.reflex_explanation,
+    };
   }
 
   // Use this instead of directly setting `this.activeAbilities` to get some standard
@@ -713,7 +726,10 @@ export class Creature implements CreaturePropertyMap {
   }
 
   setRequiredProperties(properties: CreatureRequiredPropertyMap) {
-    this.setProperties(properties);
+    this.setProperties({
+      ...properties,
+      monster_type: properties.elite ? 'elite' : 'normal',
+    });
     // TODO: this is a bit of a hack, since it's possible to define a monster as being
     // elite without calling this function. However, it's unlikely that we'd do that, so
     // this is fine for now.
@@ -1250,6 +1266,30 @@ export class Creature implements CreaturePropertyMap {
 
   public get climbing() {
     return this.getPropertyValue('climbing');
+  }
+
+  public get armor_defense_explanation() {
+    return this.getPropertyValue('armor_defense_explanation');
+  }
+
+  public get brawn_explanation() {
+    return this.getPropertyValue('brawn_explanation');
+  }
+
+  public get fortitude_explanation() {
+    return this.getPropertyValue('fortitude_explanation');
+  }
+
+  public get mental_explanation() {
+    return this.getPropertyValue('mental_explanation');
+  }
+
+  public get reflex_explanation() {
+    return this.getPropertyValue('reflex_explanation');
+  }
+
+  public get monster_type() {
+    return this.getPropertyValue('monster_type');
   }
 }
 
