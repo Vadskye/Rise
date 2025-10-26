@@ -175,9 +175,9 @@ function addAngels(grimoire: Grimoire) {
 
           creature.addWeaponMult('greatsword');
           creature.addRituals(['Channel Divinity', 'Revelation']);
-          creature.addSpell('Baffling Visions', { usageTime: 'elite' })
-          creature.addSpell('Clairvoyance', { usageTime: 'elite' })
-          creature.addSpell('Foresee Distant Safety', { usageTime: 'elite' })
+          creature.addSpell('Baffling Visions', { usageTime: 'elite' });
+          creature.addSpell('Clairvoyance', { usageTime: 'elite' });
+          creature.addSpell('Foresee Distant Safety', { usageTime: 'elite' });
         },
       ],
       [
@@ -551,7 +551,7 @@ function addDemonspawn(grimoire: Grimoire) {
             tags: ['Brawling'],
           });
           creature.addSpell('Agony', { usageTime: 'elite' });
-          creature.addSpell('Sanguine Bond', { displayName: 'Painbond',  usageTime: 'elite' });
+          creature.addSpell('Sanguine Bond', { displayName: 'Painbond', usageTime: 'elite' });
 
           creature.addCustomManeuver({
             name: 'Spiked Body',

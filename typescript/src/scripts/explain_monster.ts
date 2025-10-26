@@ -8,7 +8,9 @@ function main(monsterNameInput: string) {
   let monster: Creature;
   if (/\./.test(monsterNameInput)) {
     const [groupName, monsterName] = monsterNameInput.split('.');
-    monster = grimoire.getMonsterGroup(groupName)!.monsters.find((monster) => monster.name === monsterName)!;
+    monster = grimoire
+      .getMonsterGroup(groupName)!
+      .monsters.find((monster) => monster.name === monsterName)!;
   } else {
     monster = grimoire.getMonster(monsterNameInput)!;
   }

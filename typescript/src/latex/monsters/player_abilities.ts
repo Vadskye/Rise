@@ -15,7 +15,11 @@ import {
   getWeaponPowerMultiplier,
   MonsterWeapon,
 } from '@src/monsters/weapons';
-import { TELEPORT_ATTACK_FATIGUE, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from '@src/abilities/constants';
+import {
+  TELEPORT_ATTACK_FATIGUE,
+  SWIFT_FATIGUE,
+  SWIFT_FATIGUE_SELF,
+} from '@src/abilities/constants';
 import { addAccuracyToEffect } from '@src/latex/monsters/replace_placeholders';
 
 // It's the same except that `effect` and `weapon` are mandatory.
@@ -74,7 +78,10 @@ function replaceGenericTerms(
   replace(/\b, you become\b/g, ', it becomes');
   replace(/\bYou must have\b/g, 'The $name must have');
   replace(/\b, you move\b/g, ', it moves');
-  replace(/\bMove up to your (speed\b|\\glossterm{speed})/g, 'The $name moves up to its \\glossterm{speed}');
+  replace(
+    /\bMove up to your (speed\b|\\glossterm{speed})/g,
+    'The $name moves up to its \\glossterm{speed}',
+  );
   replace(/\byour (speed\b|\\glossterm{speed})/g, 'its \\glossterm{speed}');
   replace(/\byour attack\b/g, 'its attack');
   replace(/\bwhether you get\b/g, 'whether it gets');
@@ -97,13 +104,19 @@ function replaceGenericTerms(
   // The preceding comma probably means we can safely use 'it' instead of 'the $name'?
   replace(/\b, you create\b/g, ', it creates');
   replace(/\bYou regain\b/g, 'The $name regains');
-  replace(/\bYou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `The $name ${maybeBriefly || ''}gains`);
-  replace(/\byou (briefly |\\glossterm{briefly} )?gain\b/g, (_, maybeBriefly) => `it ${maybeBriefly || ''}gains`);
+  replace(
+    /\bYou (briefly |\\glossterm{briefly} )?gain\b/g,
+    (_, maybeBriefly) => `The $name ${maybeBriefly || ''}gains`,
+  );
+  replace(
+    /\byou (briefly |\\glossterm{briefly} )?gain\b/g,
+    (_, maybeBriefly) => `it ${maybeBriefly || ''}gains`,
+  );
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
   replace(/\b([yY])ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
-    const the = capital ===  'Y' ? 'The' : 'the';
+    const the = capital === 'Y' ? 'The' : 'the';
     return `${the} $name${briefly} takes`;
   });
   replace(/\bYou reduce your\b/g, 'The $name reduces its');
@@ -123,8 +136,8 @@ function replaceGenericTerms(
   );
   replace(/(\$[nN]ame.*)from your location\b/g, (_, prefix) => `${prefix}from its location`);
   replace(/\bfrom your location\b/g, "from the $name's location");
-  replace(/\byour starting location\b/g, "its starting location");
-  replace(/\byour ending location\b/g, "its starting location");
+  replace(/\byour starting location\b/g, 'its starting location');
+  replace(/\byour ending location\b/g, 'its starting location');
   replace(/\bChoose yourself or\b/g, 'The $name chooses itself or');
   replace(/\byou can choose\b/g, 'the $name can choose');
   replace(/\byour (allies\b|\\glossterm{allies})/g, 'its allies');
@@ -139,13 +152,13 @@ function replaceGenericTerms(
   replace(/\bduring your movement\b/g, 'during its movement');
   replace(/\byou moved through\b/g, 'it moved through');
   replace(/\bafter your strike\b/g, 'after its strike');
-  replace(/\byou control the\b/g, "the $name controls the");
+  replace(/\byou control the\b/g, 'the $name controls the');
   // Normally we replace 'hit' with 'hits', but not if it was referring to the past tense.
   replace(/\bIf you hit(.*?)last round\b/g, (_, context) => `If the $name hit${context}last round`);
-  replace(/\bIf you hit\b/g, "If the $name hits");
-  replace(/\bif you hit\b/g, "if the $name hits");
-  replace(/\bIf you get\b/g, "If the $name gets");
-  replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, "");
+  replace(/\bIf you hit\b/g, 'If the $name hits');
+  replace(/\bif you hit\b/g, 'if the $name hits');
+  replace(/\bIf you get\b/g, 'If the $name gets');
+  replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, '');
   replace(/\bto your (\w+) defense\b/g, (_, defense) => `to its ${defense} defense`);
 
   // This whole thing is probably just for clairvoyance?
@@ -158,15 +171,14 @@ function replaceGenericTerms(
   replace(/\byou see and hear\b/g, 'it sees and hears');
   replace(/\bor from your\b/g, 'or from its');
   replace(/\byour observation ability\b/g, "the $name's observation ability");
-  replace(/\byour normal body\b/g, "its normal body");
-  replace(/\bYou otherwise act\b/g, "The $name otherwise acts");
-  replace(/\bthough you\b/g, "though it");
-  replace(/\bsee your body\b/g, "see its body");
-  replace(/\byour intended\b/g, "its intended");
-  replace(/\bmaking you\b/g, "making it");
-  replace(/\ballow you\b/g, "allow it");
-  replace(/\bimprove your\b/g, "improve its");
-
+  replace(/\byour normal body\b/g, 'its normal body');
+  replace(/\bYou otherwise act\b/g, 'The $name otherwise acts');
+  replace(/\bthough you\b/g, 'though it');
+  replace(/\bsee your body\b/g, 'see its body');
+  replace(/\byour intended\b/g, 'its intended');
+  replace(/\bmaking you\b/g, 'making it');
+  replace(/\ballow you\b/g, 'allow it');
+  replace(/\bimprove your\b/g, 'improve its');
 
   // Elite monsters cheat this kind of cost.
   const halfHpCost = monster.elite
@@ -360,7 +372,10 @@ export function reformatAsMonsterAbility(monster: Creature, ability: ActiveAbili
     restructureStrikeAbility(monster, ability as StrikeActiveAbility);
   }
 
-  if (ability.effect && /\b[mM]ake a (brawling attack\b|\\glossterm{brawling attack})/.test(ability.effect)) {
+  if (
+    ability.effect &&
+    /\b[mM]ake a (brawling attack\b|\\glossterm{brawling attack})/.test(ability.effect)
+  ) {
     restructureBrawlingAbility(monster, ability);
   }
 
@@ -430,7 +445,7 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   );
 
   const strikeComponentMatch = ability.effect.match(
-    /(.*?)?([yY]ou can )?([mM])ake a( mundane| \\glossterm{mundane}| magical| \\glossterm{magical})? (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s
+    /(.*?)?([yY]ou can )?([mM])ake a( mundane| \\glossterm{mundane}| magical| \\glossterm{magical})? (strike|\\glossterm{strike})([^.]*\.)(.*?)(\\hit|\\injury|\\miss|\\crit|$)(.*)/s,
   );
   if (!strikeComponentMatch) {
     throw new Error(`${ability.name}: Unable to parse strike: '${ability.effect}'`);
@@ -451,7 +466,9 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   }
 
   const makesA = maybeYouCan ? 'can make a' : 'makes a';
-  let preStrikeText = useCapital ? `${preStrike}The $name ${makesA} ` : `${preStrike}the $name ${makesA} `;
+  let preStrikeText = useCapital
+    ? `${preStrike}The $name ${makesA} `
+    : `${preStrike}the $name ${makesA} `;
   // Fix duplicate 'the $name' in case the pre-strike text already contains the monster's
   // name.
   preStrikeText = preStrikeText.replace(/(\$name.*)[tT]he \$name/, (_, prefix) => `${prefix}it`);
@@ -460,7 +477,10 @@ export function restructureStrikeAbility(monster: Creature, ability: StrikeActiv
   // modifiers, that we already calculate.
   let postStrikeText = postStrike || '';
   // This is already factored in automatically by `calculateStrikeDamage`
-  postStrikeText = postStrikeText.replace(/You use the higher of your (magical power|\\glossterm{magical power}) and your (mundane power|\\glossterm{mundane power})[^.]*.\n?/, '');
+  postStrikeText = postStrikeText.replace(
+    /You use the higher of your (magical power|\\glossterm{magical power}) and your (mundane power|\\glossterm{mundane power})[^.]*.\n?/,
+    '',
+  );
 
   const hitMatch = labeledEffects.match(/\\hit(.*?)(\\crit|\\injury|\\miss|$)/s);
   const hitText = hitMatch ? hitMatch[1] : '';
@@ -525,7 +545,11 @@ export function restructureBrawlingAbility(monster: Creature, ability: ActiveAbi
   );
 }
 
-function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbility, restOfStrikeSentence: string): string {
+function calculateStrikeAccuracyText(
+  monster: Creature,
+  ability: StrikeActiveAbility,
+  restOfStrikeSentence: string,
+): string {
   let accuracyModifierText = '';
   const accuracyMatch = restOfStrikeSentence.match(
     /with a (\\minus|-|\\plus|\+)(\d+) (\\glossterm{accuracy}|accuracy) (bonus|penalty)/,
@@ -560,7 +584,11 @@ function calculateStrikeAccuracyText(monster: Creature, ability: StrikeActiveAbi
 
 // We need an explicit `isMagical` here because some magical abilities make mundane
 // strikes.
-export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAbility, isMagical: boolean): string {
+export function calculateStrikeDamage(
+  monster: Creature,
+  ability: StrikeActiveAbility,
+  isMagical: boolean,
+): string {
   const weapon = ability.weapon!;
 
   // We only check the sentence of the strike to avoid catching conditional clauses.
@@ -633,7 +661,9 @@ export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAb
     }
   }
 
-  const extraFlatDamageMatch = ability.effect.match(/ (\d+) (extra damage|\\glossterm{extra damage})/);
+  const extraFlatDamageMatch = ability.effect.match(
+    / (\d+) (extra damage|\\glossterm{extra damage})/,
+  );
   if (extraFlatDamageMatch) {
     extraFlatDamage = Number(extraFlatDamageMatch[1]);
   }
@@ -644,8 +674,7 @@ export function calculateStrikeDamage(monster: Creature, ability: StrikeActiveAb
   }
 
   const damageFromPower =
-    globalDamageMultiplier *
-    (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
+    globalDamageMultiplier * (Math.floor(relevantPower * powerMultiplier) + extraFlatDamage);
   let damageFromPowerText = '';
   if (damageFromPower > 0) {
     damageFromPowerText = `+${damageFromPower}`;
@@ -685,7 +714,11 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
   // The ability is already formatted using $accuracy, so we just need to apply scaling.
   if (/\$accuracy/.test(attack.targeting)) {
     if (scalingAccuracyModifier > 0) {
-      attack.targeting = addAccuracyToEffect(scalingAccuracyModifier, attack.targeting, `${monster.name}.${ability.name}`);
+      attack.targeting = addAccuracyToEffect(
+        scalingAccuracyModifier,
+        attack.targeting,
+        `${monster.name}.${ability.name}`,
+      );
     }
     return;
   }

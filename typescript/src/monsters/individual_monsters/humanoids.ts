@@ -79,7 +79,7 @@ function addBandits(grimoire: Grimoire) {
       hasArt: false,
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('humanoid');
-      }
+      },
     },
     [
       [
@@ -353,7 +353,7 @@ function addCultists(grimoire: Grimoire) {
             tags: ['Fire'],
           });
           creature.addCustomManeuver({
-            name: "Firebomb",
+            name: 'Firebomb',
             attack: {
               hit: '\\damagerankthreelow.',
               missGlance: true,
@@ -390,7 +390,7 @@ function addGiants(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('humanoid');
-      }
+      },
     },
     [
       [
@@ -646,7 +646,7 @@ function addKobolds(grimoire: Grimoire) {
     effect: `
       The $name is \\impervious to the tag associated with the dragon it swore to serve.
     `,
-  }
+  };
 
   grimoire.addMonsterGroup(
     {
@@ -792,7 +792,7 @@ function addNecromancers(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('humanoid');
-      }
+      },
     },
     [
       [
@@ -890,7 +890,12 @@ function addNecromancers(grimoire: Grimoire) {
             `,
             // TODO: there is no reasonable god for Idoris to worship
           });
-          creature.setTrainedSkills(['awareness', 'knowledge_arcana', 'knowledge_souls', 'persuasion']);
+          creature.setTrainedSkills([
+            'awareness',
+            'knowledge_arcana',
+            'knowledge_souls',
+            'persuasion',
+          ]);
           creature.setBaseAttributes([0, 4, 1, 5, 6, 10]);
 
           // Channel Divinity spells are elite actions
@@ -942,7 +947,7 @@ function addOgres(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('humanoid');
-      }
+      },
     },
     [
       [

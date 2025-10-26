@@ -21,8 +21,12 @@ export function generateMonsterDescriptions(): string {
 
   const withSectionBookmarks: string[] = [];
   for (const letter of orderedLetters) {
-    withSectionBookmarks.push(`\\clearpage\\phantomsection\\addcontentsline{toc}{section}{${letter}}`);
-    for (const sectionName of sectionNames.filter((sectionName) => sectionName.startsWith(letter))) {
+    withSectionBookmarks.push(
+      `\\clearpage\\phantomsection\\addcontentsline{toc}{section}{${letter}}`,
+    );
+    for (const sectionName of sectionNames.filter((sectionName) =>
+      sectionName.startsWith(letter),
+    )) {
       const monster = grimoire.getMonster(sectionName);
       const monsterGroup = grimoire.getMonsterGroup(sectionName);
       if (monster) {
@@ -43,8 +47,11 @@ export function convertMonsterGroupToLatex(group: MonsterGroup): string {
     .map((monster) => convertMonsterToLatex(monster, group.name))
     .join('\n\\vspace{1em}\n');
 
-  const spacingBuffer = group.description || group.knowledge ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
-  const artText = group.hasArt ? `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${group.name}}` : '';
+  const spacingBuffer =
+    group.description || group.knowledge ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
+  const artText = group.hasArt
+    ? `\\noindent\\includegraphics[width=\\columnwidth]{monsters/${group.name}}`
+    : '';
 
   return `
     \\newpage

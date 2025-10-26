@@ -7,7 +7,7 @@ const MONSTER_WEAPONS_LIST = [
   'claws',
   'club',
   'darts',
-  'fists',  // Dual-wielding punch/kick, assuming monk bonus
+  'fists', // Dual-wielding punch/kick, assuming monk bonus
   'flail',
   'giant boulder',
   'greataxe',
@@ -26,7 +26,7 @@ const MONSTER_WEAPONS_LIST = [
   'sling',
   'smallswords',
   'spear',
-  'spike',  // Same as stinger
+  'spike', // Same as stinger
   'stinger',
   'talons',
   'tentacle',
@@ -208,7 +208,8 @@ export function getWeaponPowerMultiplier(weaponName: MonsterWeapon): 0.5 | 1 {
       scythe: 1,
       sickle: 0.5,
       sling: 0.5,
-      smallswords: 0.5, spear: 0.5, // Assume one-handing.
+      smallswords: 0.5,
+      spear: 0.5, // Assume one-handing.
       spike: 1,
       stinger: 1,
       talons: 0.5,

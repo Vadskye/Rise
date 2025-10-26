@@ -964,7 +964,11 @@ function handleArmorDefense() {
       }
 
       const levelModifier = Math.floor(v.level / 2);
-      const monsterModifier = calcDefenseMonsterScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
+      const monsterModifier = calcDefenseMonsterScaling(
+        v.level,
+        Boolean(v.monster_type),
+        Boolean(v.elite),
+      );
 
       const beforeEquipment = attributeModifier + levelModifier + monsterModifier;
       const totalValue = Math.max(
@@ -2345,7 +2349,8 @@ function handleMagicalPower() {
     callback: (v) => {
       const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue = Math.floor(v.level / 2) + v.willpower + monsterBonus + v.misc + eliteModifier;
+      const totalValue =
+        Math.floor(v.level / 2) + v.willpower + monsterBonus + v.misc + eliteModifier;
 
       setAttrs({
         magical_power: totalValue,
@@ -2382,7 +2387,8 @@ function handleMundanePower() {
     callback: (v) => {
       const monsterBonus = v.is_monster ? calcMonsterPowerBonus(v.level) : 0;
       const eliteModifier = v.elite ? 2 : 0;
-      const totalValue = Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier;
+      const totalValue =
+        Math.floor(v.level / 2) + v.strength + monsterBonus + v.misc + eliteModifier;
 
       setAttrs({
         mundane_power: totalValue,

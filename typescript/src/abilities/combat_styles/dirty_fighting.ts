@@ -66,7 +66,7 @@ export const dirtyFighting: CombatStyle = {
       tags: ['Brawling'],
     },
 
-    // Normal melee damage would be dr5, -1dr for brawling, -1dr for 
+    // Normal melee damage would be dr5, -1dr for brawling, -1dr for
     {
       name: 'Sweep and Slam',
 

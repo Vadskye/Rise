@@ -69,10 +69,12 @@ export function addAnimates(grimoire: Grimoire) {
     creature.setTrainedSkills(['climb', 'endurance', 'flexibility', 'stealth']);
     creature.setBaseAttributes([6, -4, 8, -10, 0, -10]);
     creature.addCustomModifier({
-      numericEffects: [{
-        modifier: -20,
-        statistic: 'speed',
-      }],
+      numericEffects: [
+        {
+          modifier: -20,
+          statistic: 'speed',
+        },
+      ],
     });
     creature.addCustomSense('Tremorsense (120 ft.)');
     creature.addCustomSense('Tremorsight (60 ft.)');
@@ -253,124 +255,142 @@ function addGolems(grimoire: Grimoire) {
       },
     },
     [
-      ['Mining Golem', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'brute',
-          elite: false,
-          creature_type: 'animate',
-          level: 5,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([5, 3, 3, 0, 2, 0]);
-        creature.addWeaponMult('pick');
-        creature.addManeuver('Ground Slam', { weapon: 'pick' });
-      }],
-      ['Mithral Golem', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'skirmisher',
-          elite: true,
-          creature_type: 'animate',
-          level: 14,
-          size: 'medium',
-        });
-        creature.addCustomModifier({
-          numericEffects: [{
-            modifier: 10,
-            statistic: 'speed',
-          }],
-        });
-        creature.setBaseAttributes([6, 10, 1, 0, 6, 4]);
-        creature.addWeaponMult('fists');
-        // Not worth the effort to automate conversion of "make two strikes"
-        creature.addCustomManeuver({
-          name: 'Faster Than Sight',
-          attack: {
-            hit: '2d6+7 damage.',
-            targeting: `
+      [
+        'Mining Golem',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'brute',
+            elite: false,
+            creature_type: 'animate',
+            level: 5,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([5, 3, 3, 0, 2, 0]);
+          creature.addWeaponMult('pick');
+          creature.addManeuver('Ground Slam', { weapon: 'pick' });
+        },
+      ],
+      [
+        'Mithral Golem',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'animate',
+            level: 14,
+            size: 'medium',
+          });
+          creature.addCustomModifier({
+            numericEffects: [
+              {
+                modifier: 10,
+                statistic: 'speed',
+              },
+            ],
+          });
+          creature.setBaseAttributes([6, 10, 1, 0, 6, 4]);
+          creature.addWeaponMult('fists');
+          // Not worth the effort to automate conversion of "make two strikes"
+          creature.addCustomManeuver({
+            name: 'Faster Than Sight',
+            attack: {
+              hit: '2d6+7 damage.',
+              targeting: `
               The $name makes two melee \\glossterm{strikes}.
               If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats the $name as \\glossterm{invisible}.
             `,
-          },
-        });
-        creature.addManeuver('Whirlwind+', { weapon: 'fists' });
-        creature.addManeuver('Building Storm', { usageTime: 'elite' })
-        creature.addManeuver('Flash Sweep', { usageTime: 'elite', 'weapon': 'fists' })
-      }],
-      ['Adamantine Golem', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'warrior',
-          elite: true,
-          creature_type: 'animate',
-          level: 17,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([10, -2, 12, 0, 6, 0]);
-        creature.addPassiveAbility({
-          name: 'Indestructible',
-          effect: `
+            },
+          });
+          creature.addManeuver('Whirlwind+', { weapon: 'fists' });
+          creature.addManeuver('Building Storm', { usageTime: 'elite' });
+          creature.addManeuver('Flash Sweep', { usageTime: 'elite', weapon: 'fists' });
+        },
+      ],
+      [
+        'Adamantine Golem',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'warrior',
+            elite: true,
+            creature_type: 'animate',
+            level: 17,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([10, -2, 12, 0, 6, 0]);
+          creature.addPassiveAbility({
+            name: 'Indestructible',
+            effect: `
             The $name reduces all damage it takes by 10.
             This can reduce incoming damage to 0.
             In addition, it takes no additional damage from \\glossterm{critical hits}.
             Non-damaging effects from critical hits still function normally.
           `,
-        });
-        creature.addPassiveAbility({
-          name: 'Unstoppable',
-          effect: `
+          });
+          creature.addPassiveAbility({
+            name: 'Unstoppable',
+            effect: `
             The $name is unaffected by \\glossterm{difficult terrain} and is immune to being \\slowed.
           `,
-        });
+          });
 
-        creature.addWeaponMult('fists', { tags: ['Impact'] });
-        creature.addManeuver('Steady Slam+', { tags: ['Impact'], weapon: 'fists' });
-        creature.addManeuver('Brace for Impact', { usageTime: 'elite' });
-        creature.addManeuver('Fortifying Force', { weapon: 'fists', tags: ['Impact'], usageTime: 'elite' });
-        creature.addManeuver('Sinews of Steel', { usageTime: 'elite' });
-      }],
-      ['Voidstar Golem', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'lawful neutral',
-          base_class: 'warrior',
-          elite: true,
-          creature_type: 'animate',
-          level: 20,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.addCustomMovementSpeed('Burrow (average)');
-        creature.addImmunity('Earth');
-        creature.addImpervious('Electricity');
-        creature.addVulnerability('Acid');
-        creature.setBaseAttributes([13, 2, 10, 0, 6, 10]);
-        creature.addPassiveAbility({
-          name: 'Crushing Gravity',
-          effect: `
+          creature.addWeaponMult('fists', { tags: ['Impact'] });
+          creature.addManeuver('Steady Slam+', { tags: ['Impact'], weapon: 'fists' });
+          creature.addManeuver('Brace for Impact', { usageTime: 'elite' });
+          creature.addManeuver('Fortifying Force', {
+            weapon: 'fists',
+            tags: ['Impact'],
+            usageTime: 'elite',
+          });
+          creature.addManeuver('Sinews of Steel', { usageTime: 'elite' });
+        },
+      ],
+      [
+        'Voidstar Golem',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'warrior',
+            elite: true,
+            creature_type: 'animate',
+            level: 20,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.addCustomMovementSpeed('Burrow (average)');
+          creature.addImmunity('Earth');
+          creature.addImpervious('Electricity');
+          creature.addVulnerability('Acid');
+          creature.setBaseAttributes([13, 2, 10, 0, 6, 10]);
+          creature.addPassiveAbility({
+            name: 'Crushing Gravity',
+            effect: `
             All other creatures move at half speed while within a \\medarea radius \\glossterm{emanation} of the $name.
             This does not affect creatures who are moving in a straight line directly towards the $name.
             This is a \\atEarth effect.
           `,
-        });
-        creature.addPassiveAbility({
-          name: 'Denser Than Steel',
-          effect: `
+          });
+          creature.addPassiveAbility({
+            name: 'Denser Than Steel',
+            effect: `
             The $name can use its burrow ability to pass through solid metal and stone without reducing its speed.
           `,
-        });
+          });
 
-        creature.addWeaponMult('fists');
-        creature.addManeuver('Boneshatter+', { weapon: 'fists' });
-        creature.addManeuver('Chokeslam+');
-        creature.addSpell('Mighty Earthspike', { usageTime: 'elite' });
-        creature.addSpell('Earthquake', { usageTime: 'elite' });
-        creature.addSpell('Swallowed by Earth', { usageTime: 'elite' });
-        creature.addSpell('Gravity Well', { usageTime: 'elite' });
-      }],
-    ]
+          creature.addWeaponMult('fists');
+          creature.addManeuver('Boneshatter+', { weapon: 'fists' });
+          creature.addManeuver('Chokeslam+');
+          creature.addSpell('Mighty Earthspike', { usageTime: 'elite' });
+          creature.addSpell('Earthquake', { usageTime: 'elite' });
+          creature.addSpell('Swallowed by Earth', { usageTime: 'elite' });
+          creature.addSpell('Gravity Well', { usageTime: 'elite' });
+        },
+      ],
+    ],
   );
 }
 
