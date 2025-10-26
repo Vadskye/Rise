@@ -16,6 +16,7 @@ import {
   MonsterWeapon,
 } from '@src/monsters/weapons';
 import { TELEPORT_ATTACK_FATIGUE, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from '@src/abilities/constants';
+import { addAccuracyToEffect } from '@src/latex/monsters/replace_placeholders';
 
 // It's the same except that `effect` and `weapon` are mandatory.
 export interface StrikeActiveAbility extends Omit<ActiveAbility, 'effect' | 'weapon'> {
@@ -101,7 +102,7 @@ function replaceGenericTerms(
   // This is overly specific since we might want to use "it" for some uses of "you
   // regain".
   replace(/\bIn addition, you regain\b/g, 'In addition, the $name regains');
-  replace(/\b[yY]ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
+  replace(/\b([yY])ou( briefly| \\glossterm{briefly})? take\b/g, (_, capital, briefly) => {
     const the = capital ===  'Y' ? 'The' : 'the';
     return `${the} $name${briefly} takes`;
   });
@@ -143,7 +144,9 @@ function replaceGenericTerms(
   replace(/\bIf you hit(.*?)last round\b/g, (_, context) => `If the $name hit${context}last round`);
   replace(/\bIf you hit\b/g, "If the $name hits");
   replace(/\bif you hit\b/g, "if the $name hits");
+  replace(/\bIf you get\b/g, "If the $name gets");
   replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, "");
+  replace(/\bto your (\w+) defense\b/g, (_, defense) => `to its ${defense} defense`);
 
   // This whole thing is probably just for clairvoyance?
   replace(/\bYou do not need\b/g, 'The $name does not need');
@@ -151,6 +154,7 @@ function replaceGenericTerms(
   replace(/\byou cannot see\b/g, 'it cannot see');
   replace(/, you choose\b/g, ', the $name chooses');
   replace(/\bIf you choose\b/g, 'If the $name chooses');
+  replace(/\bIf you both\b/g, 'If the $name both');
   replace(/\byou see and hear\b/g, 'it sees and hears');
   replace(/\bor from your\b/g, 'or from its');
   replace(/\byour observation ability\b/g, "the $name's observation ability");
@@ -205,6 +209,7 @@ function replaceGenericTerms(
   replace(/\bat your destination\b/g, 'at its destination');
 
   // Monsters don't generally have "spells", they just have abilities
+  replace(/\bWhen you cast this spell\b/g, 'When it uses this ability');
   replace(/\bto cast this spell\b/g, 'to use this ability');
   replace(/\bthis spell\b/g, 'this ability');
 
@@ -677,21 +682,28 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     ability.scaling = undefined;
   }
 
+  // The ability is already formatted using $accuracy, so we just need to apply scaling.
+  if (/\$accuracy/.test(attack.targeting)) {
+    if (scalingAccuracyModifier > 0) {
+      attack.targeting = addAccuracyToEffect(scalingAccuracyModifier, attack.targeting, `${monster.name}.${ability.name}`);
+    }
+    return;
+  }
+
   // Accuracy-modified attack.
   attack.targeting = attack.targeting.replace(
-    /\b(you can )?([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
-    (_, maybeYouCan, maybeCapital, attackType, defense, modifierSign, modifierValue) => {
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
+    (_, maybeCapital, attackType, defense, modifierSign, modifierValue) => {
       modifierSign = standardizeModifierSign(modifierSign);
       const withSign = modifierSign === '+' ? Number(modifierValue) : Number(modifierValue) * -1;
       const withScaling = withSign + scalingAccuracyModifier;
       modifierSign = withScaling >= 0 ? '+' : '-';
       const withoutSign = Math.abs(withScaling);
 
-      const makesText = maybeYouCan ? 'can make' : 'makes';
       const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
       const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name ${makesText} a ${accuracyText}${modifierSign}${withoutSign} ${attackText} vs${defense}`;
+      return `${theText} $name makes a ${accuracyText}${modifierSign}${withoutSign} ${attackText} vs${defense}`;
     },
   );
 
@@ -699,13 +711,12 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     scalingAccuracyModifier > 0 ? `+${scalingAccuracyModifier}` : '';
   // Baseline accuracy attack
   attack.targeting = attack.targeting.replace(
-    /\b(you can )?([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack})/g,
-    (_, maybeYouCan, maybeCapital, attackType) => {
+    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack})/g,
+    (_, maybeCapital, attackType) => {
       const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
       const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      const makesText = maybeYouCan ? 'can make' : 'makes';
-      return `${theText} $name ${makesText} a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`;
+      return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`;
     },
   );
 }

@@ -34,6 +34,7 @@
   "scripts": {
     "clean": "rm src/**/*.js",
     "coverage": "tsc --incremental && NODE_OPTIONS='--import tsx' tap --exclude=**/*.js --coverage-report=text",
+    "explain_monster": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/explain_monster.js",
     "script": "tsc --incremental && node --enable-source-maps -r tsconfig-paths/register",
     "maneuver_ranks": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_rank_breakdown.js",
     "maneuver_roles": "tsc --incremental && NODE_OPTIONS='--import tsx' node src/scripts/maneuver_role_breakdown.js",

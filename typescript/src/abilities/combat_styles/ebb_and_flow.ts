@@ -313,7 +313,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor defense.
+        After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to your Armor defense.
       `,
       rank: 3,
       roles: ['burst'],

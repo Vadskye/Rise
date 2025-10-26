@@ -851,7 +851,7 @@ function addFormians(grimoire: Grimoire) {
 
           creature.addWeaponMult('greatsword');
           creature.addManeuver('Dance of Death');
-          creature.addManeuver('Reckless Smash', { weapon: 'greatsword' });
+          creature.addManeuver('Pure Precision', { weapon: 'greatsword' });
         },
       ],
     ],
