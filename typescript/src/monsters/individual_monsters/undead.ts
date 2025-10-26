@@ -63,6 +63,53 @@ export function addUndead(grimoire: Grimoire) {
     creature.addSpell('Corpse Explosion', { usageTime: 'elite' });
   });
 
+  grimoire.addMonster('Corpsemound', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral evil',
+      base_class: 'brute',
+      elite: true,
+      creature_type: 'undead',
+      level: 8,
+      size: 'large',
+    });
+    creature.addTrait('mindless');
+    creature.setBaseAttributes([6, -2, 6, -5, 2, 2]);
+    creature.setKnowledgeResults({
+      normal: `
+        A corpsemound is a Large undead amalgation of many corpses.
+        It resembles a pile of bodies.
+        The bodies push, drag, and roll the mound towards anything living.
+      `,
+    });
+    // Same as trample from juggernaut
+    creature.addCustomManeuver({
+      name: 'Trample',
+      attack: {
+        hit: '\\damagerankthree.',
+        missGlance: true,
+        targeting: `
+          Move up to your speed in a straight line.
+          Then, make a \\glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way.
+        `,
+      },
+      tags: ['Brawling', 'Size-Based'],
+    });
+    creature.addWeaponMult('fists');
+
+    creature.addCustomManeuver({
+      name: "Fling Corpse",
+      attack: {
+        hit: '\\damagerankthree.',
+        targeting: `
+          The $name throws a zombie mauler from its body.
+          Make an attack vs. Armor against something within \\shortrange.
+          Whether the attack hits or misses, the mauler takes damage as if it was hit by the attack, and then acts independently afterwards.
+        `,
+      },
+    });
+    creature.addManeuver('Mighty Stomp', { usageTime: 'elite' });
+  });
+
   grimoire.addMonster('Macabre Mourner', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
