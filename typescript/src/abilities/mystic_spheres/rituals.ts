@@ -26,7 +26,7 @@ export const rituals: RitualDefinition[] = [
       Choose one \\glossterm{unattended}, nonmagical object or part of an object of up to Large size.
       Unlike most abilities, this ritual can affect individual parts of a whole object.
 
-      The target gains a +4 \\glossterm{enhancement bonus} to its \\glossterm{hardness}.
+      The target gains a +10 \\glossterm{enhancement bonus} to its \\glossterm{hardness}.
       If the target is moved, this ability is \\glossterm{dismissed}.
       Otherwise, it lasts for one year.
     `,
@@ -34,10 +34,9 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
     scaling: {
-      special: `
-        You can perform this ritual at a higher rank.
-        The hardness bonus increases by 4 per rank above 1.
-      `,
+      3: 'The bonus increases to \\plus20.',
+      5: 'The bonus increases to \\plus40.',
+      7: 'The bonus increases to \\plus80.',
     },
   },
 
@@ -47,15 +46,13 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       You create an area of reinforcement within a \\glossterm{shapeable} \\medarea radius \\glossterm{zone} from you.
-      All \\glossterm{unattended}, nonmagical objects or parts of objects within the area gain a \\plus5 \\glossterm{enhancement bonus} to their \\glossterm{hardness}.
+      All \\glossterm{unattended}, nonmagical objects or parts of objects within the area gain a \\plus10 \\glossterm{enhancement bonus} to their \\glossterm{hardness}.
     `,
     rank: 2,
     roles: ['narrative'],
     scaling: {
-      special: `
-        You can perform this ritual at a higher rank.
-        The hardness bonus increases by 1 per rank above 1.
-      `,
+      4: 'The bonus increases to \\plus20.',
+      6: 'The bonus increases to \\plus40.',
     },
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
     type: 'Sustain (attuneable, standard)',
@@ -67,17 +64,15 @@ export const rituals: RitualDefinition[] = [
     usageTime: '24 hours',
     functionsLike: {
       exceptThat: `
-        the effect lasts for one hundred years.
+        the effect lasts for one hundred years, and the bonus increases to \\plus20.
       `,
       name: 'reinforcement',
     },
     rank: 3,
     roles: ['narrative'],
     scaling: {
-      special: `
-        You can perform this ritual at a higher rank.
-        The hardness bonus increases by 4 per rank above 3.
-      `,
+      5: 'The bonus increases to \\plus40.',
+      7: 'The bonus increases to \\plus80.',
     },
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
   },
