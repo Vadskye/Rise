@@ -11,9 +11,7 @@ export function addHumanoids(grimoire: Grimoire) {
       level: 4,
       size: 'medium',
     });
-    creature.setProperties({
-      has_art: true,
-    });
+    creature.setProperties({ has_art: true });
     creature.setKnowledgeResults({
       normal: `
         A choker is a vicious predator that delights in strangling its foes.
@@ -321,6 +319,7 @@ function addCultists(grimoire: Grimoire) {
             level: 4,
             size: 'medium',
           });
+          creature.setProperties({ has_art: true });
           creature.setTrainedSkills([]);
           creature.setBaseAttributes([0, 2, 0, -1, 2, 5]);
           // No body armor; assume they are wearing robes
@@ -405,6 +404,7 @@ function addGiants(grimoire: Grimoire) {
             level: 10,
             size: 'huge',
           });
+          creature.setProperties({ has_art: true });
           creature.setBaseAttributes([8, 0, 3, -2, 2, -1]);
           creature.setKnowledgeResults({
             normal: `
@@ -439,6 +439,7 @@ function addGiants(grimoire: Grimoire) {
             level: 11,
             size: 'gargantuan',
           });
+          creature.setProperties({ has_art: true });
           creature.setBaseAttributes([7, -2, 7, 0, 2, 4]);
           creature.setKnowledgeResults({
             normal: `
@@ -489,7 +490,6 @@ function addGoblins(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       name: 'Goblins',
-      hasArt: true,
       knowledge: {
         normal: `
           Goblins are common throughout civilization.
@@ -533,6 +533,7 @@ function addGoblins(grimoire: Grimoire) {
             level: 3,
             size: 'medium',
           });
+          creature.setProperties({ has_art: true });
           creature.setTrainedSkills(['ride']);
           creature.setBaseAttributes([-1, 4, 0, -2, 2, -2]);
           creature.addWeaponMult('lance');
@@ -980,6 +981,7 @@ function addOgres(grimoire: Grimoire) {
             level: 8,
             size: 'large',
           });
+          creature.setProperties({ has_art: true });
           creature.setBaseAttributes([6, 1, 3, -2, 2, 0]);
           creature.setKnowledgeResults({
             normal: `
@@ -1007,6 +1009,7 @@ function addOgres(grimoire: Grimoire) {
             level: 8,
             size: 'large',
           });
+          creature.setProperties({ has_art: true });
           creature.setBaseAttributes([4, 0, 0, 1, 4, 4]);
           creature.setKnowledgeResults({
             normal: `
@@ -1099,6 +1102,7 @@ function addOrcs(grimoire: Grimoire) {
             level: 1,
             size: 'medium',
           });
+          creature.setProperties({ has_art: true });
           creature.setKnowledgeResults({
             normal: `
             Orc peons are the weakest warrior that orc clans field in battle.
@@ -1233,6 +1237,7 @@ function addOrcs(grimoire: Grimoire) {
             level: 2,
             size: 'medium',
           });
+          creature.setProperties({ has_art: true });
           creature.setKnowledgeResults({
             normal: `
             Orc shamans provide orc battle squads with divine magical support.
