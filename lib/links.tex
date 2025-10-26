@@ -110,6 +110,12 @@
     \label{#1}
 }
 
+\DeclareDocumentCommand{\sensedef}{m m}
+{
+    \termdef{#1}[#2]{sense}
+    \label{#1}
+}
+
 \DeclareDocumentCommand{\creaturetype}{o m}
 {
     \IfValueTF{#1}

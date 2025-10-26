@@ -73,7 +73,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
                 \rankline
                 You \glossterm{shapeshift} into the form of a Tiny bat, a Medium cloud of mist, or your normal humanoid form.
                 \begin{raggeditemize}
-                  \item Bat: While in your bat form, you gain \trait{blindsense} (120 ft.) and \trait{blindsight} (30 ft.).
+                  \item Bat: While in your bat form, you gain \sense{blindsense} (120 ft.) and \sense{blindsight} (30 ft.).
                     You cannot speak and have no \glossterm{free hands}.
                     All of your normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
                   \item Mist: While in your mist form, you become \trait{floating}, \trait{intangible}, and \trait{legless}.

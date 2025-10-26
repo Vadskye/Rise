@@ -117,7 +117,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                 \begin{raggeditemize}
                     \item Air: You gain a slow \glossterm{glide speed} (see \pcref{Aerial Movement}).
                     \item Earth: You gain a \plus1 bonus to your Fortitude defense.
-                    \item Fire: You are \trait{impervious} to \atFire attacks.
+                    \item Fire: You are \impervious to \atFire attacks.
                     \item Water: You gain a slow \glossterm{swim speed}.
                 \end{raggeditemize}
             ",
@@ -379,7 +379,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Form of the Hawk}{Standard action}
                         \rankline
-                        You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
+                        You gain \sense{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                         In addition, you gain a \plus3 \glossterm{enhancement bonus} to the Awareness skill.
 
                         \rankline
@@ -400,7 +400,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         You can descend to four legs and rise up to stand on two legs again as part of movement.
 
                         \rankline
-                        \rank{4} You gain the \trait{scent} ability.
+                        \rank{4} You gain the \sense{scent} ability.
                         \rank{7} You gain an additional \plus10 bonus to scent-based Awareness checks.
                     \end{magicalactiveability}
 
@@ -444,7 +444,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         In addition, you gain a bite \glossterm{natural weapon} (see \tref{Natural Weapons}).
 
                         \rankline
-                        \rank{4} You gain the \trait{scent} ability.
+                        \rank{4} You gain the \sense{scent} ability.
                         \rank{7} The accuracy bonus increases to \plus2.
                     \end{magicalactiveability}
 
@@ -643,11 +643,11 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
                         It has a ram \glossterm{natural weapon}.
                     \item Forest: A wolverine appears that calculates its hit points as a barbarian of your level, rather than as a druid of your level.
                         It has a bite \glossterm{natural weapon}.
-                    \item Plains: A wolf appears that has the \trait{scent} ability.
+                    \item Plains: A wolf appears that has the \sense{scent} ability.
                         It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skills.
                     \item Swamp: A crocodile appears that has a slow \glossterm{walk speed} and an average \glossterm{swim speed}.
                         It has a bite \glossterm{natural weapon}, and it is trained with the Swim and Stealth skills.
-                    \item Underground: A dire rat appears that has \trait{low-light vision}.
+                    \item Underground: A dire rat appears that has \sense{low-light vision}.
                         It has a bite \glossterm{natural weapon}, and it is trained with the Awareness and Stealth skill.
                 \end{raggeditemize}
             ",
