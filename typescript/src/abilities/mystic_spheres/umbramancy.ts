@@ -443,7 +443,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You create a \\smallarealong \\glossterm{wall} of darkness within \\medrange.
         The wall is visible as a solid block of darkness.
-        It blocks ordinary vision and \\trait{low-light vision}, but creatures with \\trait{darkvision} can see through the wall normally.
+        It blocks ordinary vision and \\sense{low-light vision}, but creatures with \\sense{darkvision} can see through the wall normally.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 2,
@@ -634,7 +634,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowsight',
       effect: `
-        You gain \\trait{low-light vision} and a \\plus2 \\glossterm{enhancement bonus} to Awareness.
+        You gain \\sense{low-light vision} and a \\plus2 \\glossterm{enhancement bonus} to Awareness.
       `,
       rank: 1,
       roles: ['attune'],

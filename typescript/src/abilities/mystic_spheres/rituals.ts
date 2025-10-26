@@ -357,7 +357,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Torrential rain begins falling out of thin air within a \\glossterm{shapeable} \\largearea radius \\glossterm{zone} within \\longrange.
       The rain extinguishes minor fires such as campfires and torches on contact.
-      Everything in the area is \\trait{impervious} to \\atFire attacks.
+      Everything in the area is \\impervious to \\atFire attacks.
     `,
     rank: 1,
     roles: ['narrative'],
@@ -1248,7 +1248,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains \\trait{darkvision} with a range of 60 feet.
+      Each target gains \\sense{darkvision} with a range of 60 feet.
       If it already has darkvision, the range of its darkvision increases by 60 feet instead.
     `,
     rank: 2,
@@ -1264,7 +1264,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains \\trait{low-light vision}.
+      Each target gains \\sense{low-light vision}.
     `,
     rank: 1,
     roles: ['attune'],
@@ -1279,7 +1279,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       Choose up to six ritual participants.
-      Each target gains \\trait{scent}.
+      Each target gains \\sense{scent}.
     `,
     rank: 3,
     roles: ['attune'],
@@ -1858,7 +1858,7 @@ export const rituals: RitualDefinition[] = [
       This ritual creates a ward against any external perception in a \\medarea radius \\glossterm{shapeable} \\glossterm{zone} centered on your location.
       This effect lasts for one year.
       Everything in the area is completely imperceptible from outside the area.
-      Anyone observing the area from outside sees only a dark, silent void, regardless of \\trait{darkvision} and similar abilities.
+      Anyone observing the area from outside sees only a dark, silent void, regardless of \\sense{darkvision} and similar abilities.
       In addition, all \\abilitytag{Scrying} effects fail to function in the area.
       Creatures inside the area can see within the area and outside of it without any difficulty.
     `,

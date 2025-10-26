@@ -462,7 +462,7 @@ fn utility_weapons() -> Vec<MagicWeapon> {
         description: String::from(r"
             This weapon is transluscent and has no physical presence for anyone except you.
             It has no effect on anything without a soul, such as an object or construct.
-            Creatures with a soul cannot be \trait{impervious} or \trait{immune} to damage from this weapon.
+            Creatures with a soul cannot be \impervious or \buff{immune} to damage from this weapon.
 
             Attacks with this weapon deal no damage immediately.
             This means that any effects which trigger when you deal damage with the attack, such as conditions, do not happen.

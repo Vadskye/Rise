@@ -162,7 +162,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It is removed when the creature finishes a \glossterm{short rest}.
                     If the condition would normally have a special way to remove it, such as the \spell{ignition} spell, that also removes the curse.
 
-                    In exchange, whenever you would gain a \glossterm{condition} that you are not \trait{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
+                    In exchange, whenever you would gain a \glossterm{condition} that you are not \buff{immune} to, that effect becomes a \abilitytag{Curse} on you instead of a condition.
                     If you were already affected by a Curse from this ability, the old Curse becomes a condition instead.
                     Whenever you finish a \glossterm{short rest}, you remove any Curse affecting you as a result of this ability.
                 }

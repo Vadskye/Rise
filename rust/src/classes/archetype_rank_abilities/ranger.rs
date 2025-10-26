@@ -427,8 +427,8 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 You reduce your \glossterm{longshot penalty} by 1.
-                You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
-                In addition, you gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                You gain \sense{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
+                In addition, you gain \sense{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                 If you already have that ability, you increase its range by 60 feet.
             ",
             modifiers: None,
@@ -502,9 +502,9 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 Your perceptions are so finely honed that you can sense your enemies without seeing them.
-                You gain \trait{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
+                You gain \sense{blindsense} with a 120 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
                 If you already have the blindsense ability, you increase its range by 120 feet.
-                In addition, you gain \trait{blindsight} with a 60 foot range, allowing you to see without light (see \pcref{Blindsight}).
+                In addition, you gain \sense{blindsight} with a 60 foot range, allowing you to see without light (see \pcref{Blindsight}).
                 If you already have the blindsight ability, you increase its range by 60 feet.
             ",
             modifiers: None,

@@ -58,7 +58,7 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{River or stream} You gain a \plus2 bonus to your Reflex defense.
                     In addition, when you \ability{sprint} downhill, you gain a \plus10 foot bonus to your \glossterm{speed}.
                     This bonus is doubled as normal by the sprint ability.
-                    \itemhead{Underground reservoir} You gain \trait{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
+                    \itemhead{Underground reservoir} You gain \sense{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                     In addition, you gain a \plus2 \glossterm{enhancement bonus} to the Deception and Stealth skills.
                 \end{raggeditemize}
             ",
@@ -109,7 +109,7 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Geyser or spring} The accuracy bonus increases to \plus4.
                     \itemhead{Lake} The hit point bonus increases to five times your rank in this archetype.
                     \itemhead{River or stream} You gain a \plus10 foot \glossterm{enhancement bonus} to your \glossterm{speed}.
-                    \itemhead{Underground reservoir} The range of your \trait{darkvision} increases by 60 feet.
+                    \itemhead{Underground reservoir} The range of your \sense{darkvision} increases by 60 feet.
                     In addition, the skill bonuses increase to \plus4.
                 \end{raggeditemize}
             ",

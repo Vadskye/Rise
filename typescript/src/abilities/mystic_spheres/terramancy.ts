@@ -773,7 +773,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Tremorsense',
 
       effect: `
-        You gain \\trait{tremorsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Tremorsense}).
+        You gain \\sense{tremorsense} with a 60 foot range, allowing you to sense your surroundings without light (see \\pcref{Tremorsense}).
         If you already have tremorsense, the range of your tremorsense increases by 60 feet.
       `,
       rank: 2,
@@ -784,7 +784,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Tremorsight',
 
       effect: `
-        You gain \\trait{tremorsight} with a 30 foot range, allowing you to see your surroundings without light (see \\pcref{Tremorsight}).
+        You gain \\sense{tremorsight} with a 30 foot range, allowing you to see your surroundings without light (see \\pcref{Tremorsight}).
         If you already have tremorsight, the range of your tremorsight increases by 30 feet.
       `,
       rank: 4,
