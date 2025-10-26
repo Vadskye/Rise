@@ -766,7 +766,7 @@ function calcAccuracyCrScaling(level: number, elite?: boolean) {
   return levelScaling;
 }
 
-function calcDefenseCrScaling(level: number, isMonster: boolean, elite: boolean) {
+function calcDefenseMonsterScaling(level: number, isMonster: boolean, elite: boolean) {
   if (!isMonster) {
     return 0;
   }
@@ -885,7 +885,7 @@ function handleBrawlingAccuracy() {
       const levelModifier = v.level / 2;
       const strengthModifier = v.strength / 2;
       const levelishModifier = levelModifier + strengthModifier;
-      const crModifier = calcAccuracyCrScaling(v.level, v.elite);
+      const monsterModifier = calcAccuracyCrScaling(v.level, v.elite);
 
       let accuracyMiscModifier = 0;
       for (const varName of accuracyMiscVariables) {
@@ -893,7 +893,7 @@ function handleBrawlingAccuracy() {
       }
 
       const brawling_accuracy = Math.floor(
-        v.misc + levelishModifier + accuracyMiscModifier + crModifier - v.fatigue_penalty,
+        v.misc + levelishModifier + accuracyMiscModifier + monsterModifier - v.fatigue_penalty,
       );
       setAttrs({
         brawling_accuracy,
@@ -902,7 +902,7 @@ function handleBrawlingAccuracy() {
           { name: 'Str', value: strengthModifier },
           { name: 'general accuracy', value: accuracyMiscModifier },
           { name: 'fatigue', value: -v.fatigue_penalty },
-          { name: 'CR', value: crModifier },
+          { name: 'Monster', value: monsterModifier },
         ]),
       });
     },
@@ -964,9 +964,9 @@ function handleArmorDefense() {
       }
 
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
+      const monsterModifier = calcDefenseMonsterScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
 
-      const beforeEquipment = attributeModifier + levelModifier + crModifier;
+      const beforeEquipment = attributeModifier + levelModifier + monsterModifier;
       const totalValue = Math.max(
         0,
         beforeEquipment +
@@ -985,7 +985,7 @@ function handleArmorDefense() {
           { name: 'body armor', value: v.body_armor_defense },
           { name: 'shield', value: v.shield_defense },
           { name: 'vital', value: v.all_defenses_vital_wound_modifier },
-          { name: 'CR', value: crModifier },
+          { name: 'Monster', value: monsterModifier },
         ]),
       });
     },
@@ -2300,8 +2300,9 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       boolean: ['elite'],
     },
     callback: (v) => {
+      const isMonster = Boolean(v.monster_type);
       const levelModifier = Math.floor(v.level / 2);
-      const crModifier = calcDefenseCrScaling(v.level, Boolean(v.monster_type), Boolean(v.elite));
+      const monsterModifier = calcDefenseMonsterScaling(v.level, isMonster, Boolean(v.elite));
       let sizeModifier = 0;
       if (defense === 'reflex') {
         sizeModifier = v.size_reflex_modifier;
@@ -2309,11 +2310,11 @@ function handleNonArmorDefense(defense: string, attribute: string) {
         sizeModifier = -v.size_reflex_modifier;
       }
       // Monsters only apply half attribute modifier
-      const attributeModifier = v.monster_type ? Math.floor(v[attribute] / 2) : v[attribute];
+      const attributeModifier = isMonster ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue = Math.max(
         0,
         levelModifier +
-          crModifier +
+          monsterModifier +
           sizeModifier +
           attributeModifier +
           v.misc +
@@ -2324,10 +2325,10 @@ function handleNonArmorDefense(defense: string, attribute: string) {
         [defense]: totalValue,
         [`${defense}_explanation`]: formatCombinedExplanation(v.miscExplanation, [
           { name: 'level', value: levelModifier },
-          { name: ATTRIBUTE_SHORTHAND[attribute], value: v[attribute] },
+          { name: ATTRIBUTE_SHORTHAND[attribute], value: attributeModifier },
           { name: 'size', value: sizeModifier },
           { name: 'vital', value: v.all_defenses_vital_wound_modifier },
-          { name: 'CR', value: crModifier },
+          { name: 'Monster', value: monsterModifier },
         ]),
       });
     },
