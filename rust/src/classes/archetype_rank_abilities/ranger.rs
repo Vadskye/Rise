@@ -371,9 +371,9 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{No Escape}{Standard action}
                     \rankline
                     Make a strike that deals 1d6 \glossterm{extra damage}.
-                    \\hit If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, it is \glossterm{briefly} \slowed.
+                    \hit If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, it is \glossterm{briefly} \slowed.
                     This applies even if you moved closer to the target, so long as it tried to move away from your original location.
-                    \\injury If the target would be briefly slowed, it is also slowed as a \glossterm{condition}.
+                    \injury If the target would be briefly slowed, it is also slowed as a \glossterm{condition}.
 
                     \rankline
                     \rank{4} The strike deals double \glossterm{weapon damage}.
@@ -599,7 +599,7 @@ pub fn wilderness_warrior<'a>() -> Vec<RankAbility<'a>> {
                     If your excess rank is at least 4, the range triples instead.
                     You can only apply this augment to maneuvers that have a listed range.
 
-                    \parhead{Mighty Maneuver} You take a \\minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
+                    \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
