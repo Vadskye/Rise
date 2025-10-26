@@ -604,7 +604,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{raggeditemize}
                         \item Offense: You gain a \plus1 accuracy bonus against adjacent \glossterm{enemies}.
                         \item Defense: You gain a \plus1 bonus to your defenses.
-                        \item Support: Each \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus.
+                        \item Support: One \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus.
                     \end{raggeditemize}
 
                     This effect immediately ends if you use this ability again.
