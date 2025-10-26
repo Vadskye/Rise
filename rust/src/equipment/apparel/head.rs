@@ -76,20 +76,27 @@ fn circlets() -> Vec<Apparel> {
             ItemUpgrade::new(4, "Can allow you to quickly see at distance", r"
                 You can activate the item and sustain its effect as a \glossterm{minor action}.
             "),
+            ItemUpgrade::new(6, "Can allow you to quickly see at distance", r"
+                You can activate the item and sustain its effect as a \glossterm{free action} once per round.
+            "),
         ],
         ..Apparel::default()
     }));
 
+    // TODO: unclear EA
     apparel.push(Circlet(StandardItem {
         name: String::from("Circlet of Desperate Visions"),
         rank: 1,
         short_description: String::from("Grants lingering benefits from \\ability{desperate exertion}"),
         description: String::from(r"
             Whenever you use the \ability{desperate exertion} ability, you become \glossterm{briefly} \focused.
-            This does not affect the initial roll that you used \ability{desperate exertion} to change.
+            This does not affect the initial ability that you used \ability{desperate exertion} to change.
         "),
         upgrades: vec![
-            ItemUpgrade::new(3, "Grants lingering benefits from \\ability{desperate exertion}", r"
+            ItemUpgrade::new(4, "Grants lingering benefits from \\ability{desperate exertion}", r"
+                You are also \glossterm{briefly} \honed.
+            "),
+            ItemUpgrade::new(7, "Grants lingering benefits from \\ability{desperate exertion}", r"
                 You are also \glossterm{briefly} \empowered.
             "),
         ],
@@ -129,7 +136,7 @@ fn crowns() -> Vec<Apparel> {
     apparel.push(Crown(StandardItem {
         name: String::from("Radiant Crown"),
         rank: 1,
-        short_description: String::from("Sheds light"),
+        short_description: String::from("Emits light"),
         description: String::from(
             r"
             This crown sheds \glossterm{bright illumination} in a \medarea radius.
@@ -139,9 +146,23 @@ fn crowns() -> Vec<Apparel> {
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
         upgrades: vec![ItemUpgrade::new(
             3,
-            "Sheds great light",
+            "Emits great light",
             r"
                 The area increases to a \largearea radius.
+            ",
+        ),
+        ItemUpgrade::new(
+            5,
+            "Emits vast light",
+            r"
+                The area increases to a \hugearea radius.
+            ",
+        ),
+        ItemUpgrade::new(
+            7,
+            "Emits massive light",
+            r"
+                The area increases to a \gargantuanarea radius.
             ",
         )],
         ..Apparel::default()

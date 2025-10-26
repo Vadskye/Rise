@@ -21,7 +21,7 @@ fn amulets() -> Vec<Apparel> {
         short_description: String::from(r"Can control undead"),
         description: String::from(r"
             Whenever you would kill an undead creature with a healing ability, you may activate this amulet.
-            If the creature has a \glossterm{rank} less than or equal to your rank, and it is not \glossterm{elite}, it becomes \dominated by you instead of dying.
+            If the creature's \glossterm{character rank} is less than or equal to your rank, and it is not \glossterm{elite}, it becomes \dominated by you instead of dying.
 
             This effect lasts for 24 hours.
             You can only control one undead at a time in this way.
@@ -30,22 +30,30 @@ fn amulets() -> Vec<Apparel> {
             Whenever this effect ends for any reason, the previously dominated creature immediately dies.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Can permanently control undead", r"
-                The effect is permanent.
-                It is still removed if you dominate a different undead. 
+            ItemUpgrade::new(5, r"Can permanently control some undead", r"
+                If the creature is \trait{simple-minded}, this effect is permanent.
+                It is still removed if you dominate a different undead.
             "),
-        ],
+            ItemUpgrade::new(7, r"Can permanently control undead", r"
+                The effect is also permanent if the creature's character rank is less than yours, even if it is not simple-minded.
+            "),
+        ],      
         ..Apparel::default()
     }));
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of the Undead Horde"),
         rank: 5,
-        short_description: String::from(r"Can control many undead"),
+        short_description: String::from(r"Can control several undead"),
         description: String::from(r"
-            This item functions like a \mitem{amulet of undead control}, except that you can control up to five different undead creatures.
-            Each individual undead creature must have a \glossterm{rank} lower than yours.
+            This item functions like a \mitem{amulet of undead control}, except that you can control up to three different undead creatures.
+            Each individual creature must be \trait{simple-minded}, and its \glossterm{rank} must be at least two lower than yours.
         "),
+        upgrades: vec![
+            ItemUpgrade::new(7, r"Can control many undead", r"
+                You can control up to five undead rather than up to three.
+            "),
+        ],      
         ..Apparel::default()
     }));
 
@@ -70,10 +78,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Mystic Rage"),
         rank: 2,
-        short_description: String::from(r"Accuracy from \ability{rage} affects magical attacks"),
+        short_description: String::from(r"\ability{Rage} also affects magical attacks"),
         description: String::from(r"
             Your accuracy bonus from the \ability{rage} barbarian ability also applies to \magical abilities.
         "),
+        upgrades: vec![
+            ItemUpgrade::new(5, r"+1 magical power, and \ability{rage} also affects magical attacks", r"
+                You also gain a +1 \glossterm{enhancement bonus} to your \\magical \glossterm{power}.
+            "),
+        ],
         ..Apparel::default()
     }));
 
@@ -115,8 +128,8 @@ fn amulets() -> Vec<Apparel> {
             Whenever you use the \ability<cleansing discipline> fighter ability, one \glossterm<ally> adjacent to you can also remove a \glossterm<condition>.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, r"Using \ability<cleansing discipline> also helps an ally", r"
-                The ally can be within \medrange instead of adjacent.
+            ItemUpgrade::new(6, r"Using \ability<cleansing discipline> also helps a nearby ally", r"
+                The ally can be within \medrange.
             "),
         ],
         ..Apparel::default()
@@ -130,8 +143,11 @@ fn amulets() -> Vec<Apparel> {
             When you use the \ability<protect> fighter ability or the \ability{divine protection} cleric ability, the ally can be within \shortrange instead of adjacent.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Greatly increases range of \ability{protect}", r"
-                The range increases to \longrange.
+            ItemUpgrade::new(5, r"Greatly increases range of \ability{protect}", r"
+                The range increases to \medrange.
+            "),
+            ItemUpgrade::new(7, r"Greatly increases range of \ability{protect}", r"
+                The range increases to \distrange.
             "),
         ],
         ..Apparel::default()
@@ -145,8 +161,11 @@ fn amulets() -> Vec<Apparel> {
             Each creature you command with the \ability<natural servant> druid ability or the \ability<animal companion> ranger ability gains a +1 \glossterm<enhancement bonus> to all of its defenses.
         "),
         upgrades: vec![
-            ItemUpgrade::new(7, r"Grants +2 defenses to animal allies", r"
-                The bonus increases to +2.
+            ItemUpgrade::new(5, r"Grants +1 defenses and injury resistance to animal allies", r"
+                Each creature's \glossterm{injury point} is also halved.
+            "),
+            ItemUpgrade::new(7, r"Grants +2 defenses and injury resistance to animal allies", r"
+                The defense bonus increases to +2.
             "),
         ],
         ..Apparel::default()
@@ -185,15 +204,15 @@ fn amulets() -> Vec<Apparel> {
         short_description: String::from(r"Adds an additional target with \ability<quarry>"),
         description: String::from(
             r"
-            When you use the \ability<quarry> ranger ability, you may target an additional creature.
-        ",
+                When you use the \ability<quarry> ranger ability, you may target an additional creature.
+            ",
         ),
         ..Apparel::default()
     }));
 
     apparel.push(Amulet(StandardItem {
         name: String::from("Swarmhunter Amulet"),
-        rank: 7,
+        rank: 6,
         short_description: String::from(r"Allows unlimited targets with \ability<quarry>"),
         description: String::from(r"
             When you use the \ability<quarry> ranger ability, you may target any number of creatures.
@@ -212,6 +231,9 @@ fn amulets() -> Vec<Apparel> {
             ItemUpgrade::new(5, r"Increases range with \ability<sneak attack>", r"
                 The range increases to \distrange.
             "),
+            ItemUpgrade::new(7, r"Increases range and distant precision with \ability<sneak attack>", r"
+                You also reduce your \glossterm{longshot penalty} with \ability{sneak attack} by 2.
+            "),
         ],
         ..Apparel::default()
     }));
@@ -219,13 +241,16 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Amulet of Mighty Stealth"),
         rank: 3,
-        short_description: String::from(r"Can \ability<sneak attack> with non-Light weapons"),
+        short_description: String::from(r"Can \ability<sneak attack> with any weapon"),
         description: String::from(r"
-            You can use the \ability<sneak attack> rogue ability with any weapon that you use in one hand.
+            You can use the \ability<sneak attack> rogue ability with any weapon.
         "),
         upgrades: vec![
-            ItemUpgrade::new(6, r"Can \ability<sneak attack> with any weapon", r"
-                You can \ability{sneak attack} with any weapon, including \weapontag{Heavy} weapons held in two hands.
+            ItemUpgrade::new(5, r"Can \ability<sneak attack> with any weapon for extra damage", r"
+                When you \ability{sneak attack} with a \\weapontag{Heavy} weapon, it deals 1d6 \glossterm{extra damage}.
+            "),
+            ItemUpgrade::new(7, r"Can \ability<sneak attack> with any weapon for extra damage", r"
+                The extra damage increases to 2d10.
             "),
         ],
         ..Apparel::default()
@@ -241,6 +266,9 @@ fn amulets() -> Vec<Apparel> {
         upgrades: vec![
             ItemUpgrade::new(5, r"Increase \ability<skill exemplar> bonus with untrained skills by 3", r"
                 The bonus increases to +3.
+            "),
+            ItemUpgrade::new(7, r"Increase \ability<skill exemplar> bonus with untrained skills by 5", r"
+                The bonus increases to +5.
             "),
         ],
         ..Apparel::default()
