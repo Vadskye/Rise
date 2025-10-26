@@ -96,7 +96,7 @@ export const photomancy: MysticSphere = {
       effect: `
         You create a \\medarealong \\glossterm{wall} of light within \\medrange.
         The wall is visible as a solid block of light.
-        It blocks all forms of vision, including \\trait{darkvision}, but does not block senses like \\trait{blindsight} that do not require the use of eyes.
+        It blocks all forms of vision, including \\sense{darkvision}, but does not block senses like \\sense{blindsight} that do not require the use of eyes.
         It does not inhibit the passage of objects or creatures.
       `,
       rank: 1,

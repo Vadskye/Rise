@@ -459,7 +459,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Crocodile} Once per round, when you damage a creature with a melee \glossterm{strike}, you can use this ability to \glossterm{push} it up to 5 feet into unoccupied space.
                 This is a \abilitytag{Size-Based} ability, so it has no effect on creatures that are two or more size categories larger than you.
 
-                \subcf{Eagle} You gain \trait{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
+                \subcf{Eagle} You gain \sense{low-light vision}, allowing you to see in \glossterm{dim illumination} (see \pcref{Low-light Vision}).
                 In addition, you reduce your \glossterm{longshot penalty} by 1 (see \pcref{Weapon Range Limits}).
 
                 \subcf{Lion} You add half your Willpower to your \glossterm{mundane power}.
@@ -563,7 +563,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
                     \itemhead{Eagle} \plus2 Awareness and \plus10 feet to your maximum horizontal jump distance (see \pcref{Jumping}).
                     \itemhead{Lion} \plus2 Intimidate and \plus10 feet to your \glossterm{speed} while you are affected by the \ability{sprint} ability.
                         This speed bonus is doubled as normal for that ability.
-                    \itemhead{Shark} \plus2 Swim and you gain the \trait{scent} ability (see \pcref{Tracking}).
+                    \itemhead{Shark} \plus2 Swim and you gain the \sense{scent} ability (see \pcref{Tracking}).
                 \end{raggeditemize}
             ",
             modifiers: Some(vec![

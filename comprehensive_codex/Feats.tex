@@ -285,7 +285,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Specialization} You gain a \plus2 bonus to the Awareness skill.
 
-    \ff[6]{Extraordinary Senses} You gain one of the following senses: \trait{blindsense} (15 ft.), \trait{darkvision} (60 ft.), \trait{low-light vision}, or \trait{tremorsense} (15 ft.).
+    \ff[6]{Extraordinary Senses} You gain one of the following senses: \sense{blindsense} (15 ft.), \sense{darkvision} (60 ft.), \sense{low-light vision}, or \sense{tremorsense} (15 ft.).
     As normal, if you already have the chosen sense from another source, you sum the ranges from both abilities to determine your total range with that sense.
 
     \ff[12]{Specialization\plus} The bonus from your \textit{specialization} ability increases to \plus4.
@@ -374,9 +374,9 @@ They allow more distinct and unique character customization, but also increase g
     When you have a 50\% miss chance, such as while \blinded, you \glossterm{reroll} the miss chance once and keep the better result.
     This does not prevent your attacks from failing for other reasons.
 
-    \ff[6]{Blindsight} You gain \trait{blindsense} with a 90 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
+    \ff[6]{Blindsight} You gain \sense{blindsense} with a 90 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
     If you already have blindsense, the range of your blindsense increases by 90 feet.
-    In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
+    In addition, you gain \sense{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
     If you already have blindsight, the range of your blindsight increases by 30 feet.
 
     \ff[12]{Unseeing Precision} You gain a \plus1 \glossterm{accuracy} bonus.
@@ -818,8 +818,8 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Finishing Blow} You gain a \plus1 accuracy bonus against creatures that are marked for execution.
 
-    \ff[6]{Blood Sense} You gain \trait{lifesense} with a 60 foot range, allowing you to sense the location of living things without light (see \pcref{Lifesense}).
-    Your lifesense functions like \trait{lifesight} against creatures who are marked for execution, allowing you to see them perfectly.
+    \ff[6]{Blood Sense} You gain \sense{lifesense} with a 60 foot range, allowing you to sense the location of living things without light (see \pcref{Lifesense}).
+    Your lifesense functions like \sense{lifesight} against creatures who are marked for execution, allowing you to see them perfectly.
     In addition, you do not need \glossterm{line of sight} or \glossterm{line of effect} to see creatures that are marked for execution with lifesight.
     This allows you to see them through solid objects, but grants you no special ability to attack through solid objects, so your attacks are still affected normally by \glossterm{cover}.
 
@@ -951,7 +951,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
     If you chose a weapon, it is treated as cold iron, and you can choose to give attacks with it the \atCold tag.
     If you chose an implement, you can choose to give all \magical abilities you use the \atCold tag.
-    Otherwise, you are \trait{impervious} to \atCold attacks and all attacks by \trait{incorporeal} creatures.
+    Otherwise, you are \impervious to \atCold attacks and all attacks by \trait{incorporeal} creatures.
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
@@ -1951,7 +1951,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Electromancy}{Casting, Magical}
     \featpre Access to the \sphere{Electromancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Electricity Tolerance} You are \trait{impervious} to \atElectricity attacks.
+    \magicalff[1]{Electricity Tolerance} You are \impervious to \atElectricity attacks.
 
     \magicalff[1]{Extended Chain} The distance that your abilities can \glossterm{chain} increases by 15 feet.
 
@@ -1962,7 +1962,7 @@ They allow more distinct and unique character customization, but also increase g
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Electricity Immunity} You are \trait{immune} to \atElectricity attacks.
+    \magicalff[12]{Electricity Immunity} You are \buff{immune} to \atElectricity attacks.
 
     \magicalff[12]{Static Buildup} Whenever you use the \ability{sprint} ability, you gain a \plus1 accuracy bonus with your next spell from the \sphere{Electromancy} mystic sphere.
     This bonus disappears if not used before the end of the next round.
@@ -2098,7 +2098,7 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Sphere Focus: Pyromancy}{Casting, Magical}
     \featpre Access to the \sphere{Pyromancy} \glossterm{mystic sphere}.
 
-    \magicalff[1]{Fire Tolerance} You are \trait{impervious} to \atFire attacks.
+    \magicalff[1]{Fire Tolerance} You are \impervious to \atFire attacks.
 
     \magicalff[1]{Spreading Flame} Whenever you cast a spell from the \sphere{Pyromancy} \glossterm{mystic sphere} with a standard area, you can increase its area to the next standard area category, to a maximum of a Gargantuan area.
     If you do, the spell deals no damage against targets that it misses, even if it would normally deal half damage.
@@ -2114,7 +2114,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Friendly Fire} Whenever you deal damage to your \glossterm{allies} with a \atFire ability, you deal half damage.
 
-    \magicalff[12]{Fire Immunity} You are \trait{immune} to \atFire attacks.
+    \magicalff[12]{Fire Immunity} You are \buff{immune} to \atFire attacks.
 
     \magicalff[18]{Burning Heart} You gain a \plus1 bonus to your \glossterm{magical power}.
 
@@ -2140,9 +2140,9 @@ They allow more distinct and unique character customization, but also increase g
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
-    \magicalff[12]{Blind Seer} You gain \trait{blindsense} with a 90 foot range (see \pcref{Blindsense}).
+    \magicalff[12]{Blind Seer} You gain \sense{blindsense} with a 90 foot range (see \pcref{Blindsense}).
     If you already have blindsense, you increase its range by 90 feet.
-    In addition, you gain \trait{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
+    In addition, you gain \sense{blindsight} with a 30 foot range, allowing you to see without light (see \pcref{Blindsight}).
     If you already have blindsight, the range of your blindsight increases by 30 feet.
 
     \magicalff[18]{Oracle\plus} You can use your \textit{oracle} ability once per \glossterm{short rest} instead of once per long rest.
@@ -2435,7 +2435,7 @@ They allow more distinct and unique character customization, but also increase g
     You can send separate thoughts to each creature.
 
     \magicalff[18]{Mindsight} You can perfectly see intelligent creatures within the maximum range of your telepathy.
-    This functions like \trait{blindsight}, except that it only allows you to see creatures with an Intelligence of \minus2 or higher.
+    This functions like \sense{blindsight}, except that it only allows you to see creatures with an Intelligence of \minus2 or higher.
 
     \magicalff[18]{Telepathy\plus\plus} The range of your telepathy increases by 120 feet.
   \end{magicalfeat}

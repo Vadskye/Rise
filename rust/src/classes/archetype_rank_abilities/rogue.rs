@@ -76,13 +76,13 @@ pub fn assassin<'a>() -> Vec<RankAbility<'a>> {
                     \rankline
                     You become completely undetectable by your choice of one of the following sense groups:
                     \begin{raggeditemize}
-                        \item \trait{Blindsense} and \trait{blindsight}
-                        \item \trait{Darkvision}
+                        \item \sense{Blindsense} and \sense{blindsight}
+                        \item \sense{Darkvision}
                         \item \abilitytag{Detection} abilities
-                        \item \trait{Lifesense} and \trait{lifesight}
-                        \item \trait{Scent}
+                        \item \sense{Lifesense} and \sense{lifesight}
+                        \item \sense{Scent}
                         \item \abilitytag{Scrying} abilities
-                        \item \trait{Tremorsense} and \trait{tremorsight}
+                        \item \sense{Tremorsense} and \sense{tremorsight}
                     \end{raggeditemize}
                     If you have access to any other more unusual senses, such as the \ability{mindsight} ability from the Telepath feat, you may also choose one of those senses as a separate sense group.
 
@@ -417,12 +417,12 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Choose any number of \glossterm{allies} within \medrange.
-                        For the duration of your performance, each target is \trait{impervious} to \atCompulsion and \atEmotion attacks.
+                        For the duration of your performance, each target is \impervious to \atCompulsion and \atEmotion attacks.
 
                         \rankline
                         \rank{3} At the end of each round, each target removes all \glossterm{conditions} caused by Compulsion and Emotion effects that were not applied during that round.
                         \rank{5} The range increases to a \distrange.
-                        \rank{7} Each target is \trait{immune} to Compulsion and Emotion attacks.
+                        \rank{7} Each target is \buff{immune} to Compulsion and Emotion attacks.
                     \end{magicalsustainability}
                 }
             ",
@@ -501,7 +501,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 5,
             description: r"
-                You are \trait{immune} to \abilitytag{Auditory} attacks.
+                You are \buff{immune} to \abilitytag{Auditory} attacks.
             ",
             modifiers: None,
         },

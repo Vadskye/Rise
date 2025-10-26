@@ -602,7 +602,7 @@ function addVampires(grimoire: Grimoire) {
       \\rankline
       The vampire \\glossterm{shapeshifts} into the form of a Tiny bat, a Medium cloud of mist, or its normal humanoid form.
       \\begin{raggeditemize}
-        \\item Bat: While in its bat form, the vampire gains \\trait{blindsense} (120 ft.) and \\trait{blindsight} (30 ft.).
+        \\item Bat: While in its bat form, the vampire gains \\sense{blindsense} (120 ft.) and \\sense{blindsight} (30 ft.).
           It cannot speak and has no \\glossterm{free hands}.
           All of its normal movement modes are replaced with an average fly speed with a 60 ft. height limit.
         \\item Mist: While in its mist form, the vampire becomes \\trait{floating}, \\trait{intangible}, and \\trait{legless}.

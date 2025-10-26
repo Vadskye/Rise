@@ -1777,7 +1777,7 @@ impl Class {
                         \magicaldomainability{Mastery} The skill bonuses increase to \plus2.
                         In addition, you are undetectable to all \magical abilities.
                         They cannot detect your presence, sounds you make, or any actions you take.
-                        For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \trait{darkvision} would not be able to see you without light.
+                        For example, a scrying sensor created by a \abilitytag{Scrying} effect would be unable to detect your presence, and a creature with magical \sense{darkvision} would not be able to see you without light.
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.

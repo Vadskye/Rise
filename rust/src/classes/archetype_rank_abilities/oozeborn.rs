@@ -21,9 +21,9 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Darkborn Senses",
             complexity: 1,
             description: r"
-              You gain \trait{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
+              You gain \sense{blindsense} with a 60 foot range, allowing you to sense your surroundings without light (see \pcref{Blindsense}).
               If you already have the blindsense ability, you increase its range by 60 feet.
-              In addition, you gain \trait{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
+              In addition, you gain \sense{blindsight} with a 15 foot range, allowing you to see without light (see \pcref{Blindsight}).
               If you already have the blindsight ability, you increase its range by 15 feet.
             ",
             is_magical: false,
@@ -83,7 +83,7 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Acidic Body+",
             complexity: 1,
             description: r"
-                You are \trait{immune} to \atAcid and \atPoison attacks.
+                You are \buff{immune} to \atAcid and \atPoison attacks.
             ",
             is_magical: false,
             modifiers: None,
@@ -93,8 +93,8 @@ pub fn oozeborn<'a>() -> Vec<RankAbility<'a>> {
             name: "Darkborn Senses+",
             complexity: 0,
             description: r"
-              The range of your \trait{blindsense} increases by 60 feet.
-              In addition, the range of your \trait{blindsight} increases by 15 feet.
+              The range of your \sense{blindsense} increases by 60 feet.
+              In addition, the range of your \sense{blindsight} increases by 15 feet.
             ",
             is_magical: false,
             modifiers: None,

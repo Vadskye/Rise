@@ -89,7 +89,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 1.1 EA
       effect: `
-        You are \\trait{impervious} to all damage this round.
+        You are \\impervious to all damage this round.
         Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
       `,
       rank: 5,

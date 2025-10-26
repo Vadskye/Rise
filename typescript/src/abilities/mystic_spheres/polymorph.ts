@@ -628,7 +628,7 @@ export const polymorph: MysticSphere = {
         You \\glossterm{shapeshift} into a Medium wolf.
         As a wolf, you are \\trait{multipedal} and have a bite natural weapon.
         You cannot speak and have no \\glossterm{free hands}.
-        You also gain the \\trait{scent} ability.
+        You also gain the \\sense{scent} ability.
       `,
       rank: 3,
       roles: ['attune'],

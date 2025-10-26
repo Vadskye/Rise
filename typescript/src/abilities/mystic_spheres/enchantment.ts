@@ -267,7 +267,7 @@ export const enchantment: MysticSphere = {
       attack: {
         hit: `
           If the target is \\glossterm{injured}, it is compelled to spend its next \\glossterm{standard action} doing nothing at all.
-          After it takes this standard action, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
+          After it takes this standard action, it becomes \\buff{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -308,7 +308,7 @@ export const enchantment: MysticSphere = {
           It cannot target any other creatures with the strike, even if it has a Sweeping weapon or similar abilities.
           The target uses whatever type of strike it believes will be most effective, as if it was attacking an enemy.
 
-          After it makes this attack against itself, it becomes \\trait{immune} to this effect until it finishes a \\glossterm{short rest}.
+          After it makes this attack against itself, it becomes \\buff{immune} to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against up to three creatures within \\medrange.
