@@ -440,7 +440,9 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                 You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
                 When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
-                Your \textit{battle tactics} affect yourself and your \glossterm{allies} who can either see or hear your efforts.
+                Your \textit{battle tactics} can affect yourself and your \glossterm{allies} who can either see or hear your efforts.
+                Some battle tactics will only affect a limited number of targets.
+                You choose the targets whenever you initiate or sustain the battle tactic.
 
                 All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
@@ -449,7 +451,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target gains a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
+                        Two targets gain a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
 
                         \rankline
                         \rank{4} The bonus increases to \plus3.
@@ -469,38 +471,39 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Follow My Lead}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}                        
                         \rankline
-                        Whenever you hit a creature with a \glossterm{strike}, you mark that creature.
-                        Each \glossterm{ally} adjacent to you gains a \plus1 accuracy bonus against creatures that you marked this round.
+                        One adjacent \glossterm{ally} gains a \plus1 accuracy bonus against any creature that you hit with a \glossterm{strike} during the current round.
 
                         \rankline
-                        \rank{4} The bonus applies to \glossterm{allies} within 15 feet of you.
-                        \rank{7} The bonus applies to all targets other than you.
+                        \rank{4} The ally can be within \shortrange.
+                        \rank{7} You can choose two allies instead of one.
                     \end{sustainability}
 
                     \begin{sustainability}{Group Up}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target that is adjacent to at least one other target gains a \plus1 bonus to its Armor defense.
+                        Two targets each gain a \plus1 bonus to their Armor defense if they are adjacent to each other.
 
                         \rankline
-                        \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Mental defense.
+                        \rank{4} Both targets also gain a \plus1 bonus to their Mental defense if they are adjacent to each other.
                         \rank{7} The bonuses increase to \plus2.
                     \end{sustainability}
 
                     \begin{sustainability}{Hold The Line}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Your \glossterm{enemies} move at half speed while adjacent to any two targets.
+                        Choose two targets.
+                        Your \glossterm{enemies} move at half speed while adjacent to either of those targets.
 
                         \rankline
-                        \rank{4} The effect persists for an additional five feet of the enemy's movement after they stop being adjacent to two targets.
-                        \rank{7} The extra length increases to 10 feet.
+                        \rank{4} The effect persists for an additional five feet of the enemy's movement after they stop being adjacent to either targets.
+                        \rank{7} The extra distance increases to 10 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target that ends the \glossterm{movement phase} at least twenty feet away from where it started the round
+                        Choose two targets.
+                        Each target that ended the \glossterm{movement phase} at least twenty feet away from where it started the round
                             gains a \plus1 bonus to its Armor defense this round.
 
                         \rankline
@@ -532,6 +535,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Stand Your Ground}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
+                        Choose two targets.
                         Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
