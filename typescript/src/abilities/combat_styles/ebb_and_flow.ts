@@ -132,14 +132,18 @@ export const ebbAndFlow: CombatStyle = {
     // If you used this on your first two rounds, you'd theoretically get an additional 0.3 EA of
     // value, but your first round buff would also have been spent on one round of a
     // relatively low damage maneuver, so assume the stacking just takes this to 0.6 EA.
+    // That means this gets double weapon damage instead of the more common double damage
+    // for a rank 5 maneuver.
     {
       name: 'Begin the Hunt+',
 
-      functionsLike: {
-        name: 'begin the hunt',
-        exceptThat:
-          'the accuracy bonus stacks with itself, up to a maximum of a +4 bonus. This accuracy bonus does not stack with the accuracy bonus from \\ability{begin the hunt}.',
-      },
+      effect: `
+        Make a strike that deals double \\glossterm{weapon damage}.
+        Then, you gain a +1 accuracy bonus against one creature targeted by the strike.
+        If the strike had multiple targets, you choose which target you gain the bonus against.
+        This accuracy bonus stacks with itself, up to a maximum of a +4 bonus, but does not stack with the accuracy bonus from \\ability{begin the hunt}.
+        It lasts until you finish a \\glossterm{short rest} or make an attack that does not include that creature as a target.
+      `,
       rank: 5,
       roles: ['ramp'],
     },
