@@ -61,7 +61,8 @@ KNOWABLE_CONCEPTS = [
 SUBSKILLS = [
     "Craft",
     "Knowledge",
-    "Perform",
+    # TODO: fully support perform subskills
+    # "Perform",
     "Profession",
 ]
 
