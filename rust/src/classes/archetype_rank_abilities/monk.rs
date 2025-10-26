@@ -505,7 +505,7 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             // This starts out equivalent to a smallsword. We don't want to make this exotic by
             // default, because it would invalidate Esoteric Weaponry.
             description: r"
-                You gain a \plus1 accuracy bonus with the punch/kick \glossterm{natural weapon}, and you deal 1d4 damage with it (see \pcref{Natural Weapons}).
+                You deal 1d6 damage with the punch/kick \glossterm{natural weapon} (see \pcref{Natural Weapons}).
                 In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
             ",
             // TODO: selective bonus with only unarmed? It's easy enough to just give people
@@ -518,7 +518,8 @@ pub fn perfected_form<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                Your punch/kick damage increases to 1d6.
+                Your punch/kick natural weapon gains a \plus1 accuracy bonus.
+                Since this bonus is local to the weapon, it is doubled if you make \glossterm{dual strikes} with it.
             ",
             modifiers: None,
         },
