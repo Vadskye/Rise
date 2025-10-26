@@ -269,19 +269,9 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 4,
             description: r"
-                The target can also remove a \glossterm{vital wound}.
-                If it does, you increase your \glossterm{fatigue level} by two.
+                You can also remove a \glossterm{vital wound} from the target.
+                If you do, you increase your \glossterm{fatigue level} by two.
                 Otherwise, you are \glossterm{briefly} \empowered.
-            ",
-            modifiers: None,
-        },
-        RankAbility {
-            complexity: 1,
-            name: "Lay on Hands++",
-            is_magical: true,
-            rank: 7,
-            description: r"
-                When you use this ability on a creature other than yourself, it also targets you.
             ",
             modifiers: None,
         },
@@ -328,6 +318,17 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
                 You gain a \plus1 bonus to your Constitution.
             ",
             modifiers: Some(vec![Modifier::Attribute(Attribute::Constitution, 1)]),
+        },
+        RankAbility {
+            complexity: 1,
+            name: "Last to Fall",
+            is_magical: true,
+            rank: 7,
+            description: r"
+                Each vital wound you suffer only causes a \minus1 penalty to \glossterm{vital rolls} instead of the normal \minus2 penalty.
+                In addition, whenever you gain a vital wound, you remove one of your \glossterm{fatigue levels}.
+            ",
+            modifiers: None,
         },
     ]
 }
