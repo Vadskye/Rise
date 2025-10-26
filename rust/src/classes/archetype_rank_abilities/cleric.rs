@@ -334,8 +334,7 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
                     The target removes one of its \glossterm{vital wounds}.
 
                     \rankline
-                    \rank{5} If the target's level is at least two levels lower than your level,
-                        you do not increase your fatigue level when you use this ability.
+                    \rank{5} If the target's \glossterm{character rank} is lower than your rank in this archetype, this ability only costs one fatigue level.
                     \rank{7} The target can remove an additional \glossterm{vital wound}.
                 \end{magicalactiveability}
             ",
