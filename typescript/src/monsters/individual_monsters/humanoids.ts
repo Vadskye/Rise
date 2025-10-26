@@ -523,7 +523,7 @@ function addGoblins(grimoire: Grimoire) {
         },
       ],
       [
-        'Goblin Wolf Rider',
+        'Wolf Rider',
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'chaotic evil',
