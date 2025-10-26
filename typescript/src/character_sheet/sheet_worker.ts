@@ -524,7 +524,7 @@ const SKILLS_BY_ATTRIBUTE: Record<string, string[]> = {
     'knowledge_local',
     'knowledge_nature',
     'knowledge_planes',
-    'knowledge_religion',
+    'knowledge_souls',
     'knowledge_untrained',
     'medicine',
   ],
@@ -1318,7 +1318,7 @@ class NamedModifierMap {
         'knowledge_local',
         'knowledge_nature',
         'knowledge_planes',
-        'knowledge_religion',
+        'knowledge_souls',
         'knowledge_untrained',
       ]) {
         this.addNamedModifier(knowledgeKey, name, value);

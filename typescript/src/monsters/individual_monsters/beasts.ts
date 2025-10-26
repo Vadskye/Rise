@@ -15,6 +15,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.setProperties({
       has_art: true,
     });
+    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         An ankheg is a Large burrowing ant-like creature with large mandibles and a taste for fresh meat.
@@ -69,6 +70,7 @@ export function addBeasts(grimoire: Grimoire) {
       size: 'large',
     });
     creature.setProperties({ has_art: true });
+    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         A giant wasp is a Large insect resembling a normal wasp.
@@ -102,6 +104,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 3,
       size: 'small',
     });
+    creature.addTrait('beast');
     creature.setKnowledgeResults({
       normal: `
         Carrion crows are larger and stronger than ordinary crows.
@@ -111,7 +114,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addCustomMovementSpeed('Fly (average, 90 ft. limit)');
     creature.setTrainedSkills(['awareness']);
     creature.setTrainedSkills([]);
-    creature.setBaseAttributes([2, 4, -1, 0, 4, 0]);
+    creature.setBaseAttributes([2, 4, -1, -6, 4, 0]);
     creature.addManeuver('Eye Poke', { displayName: 'Peck Out Your Eyes', weapon: 'beak' });
   });
 
@@ -124,9 +127,10 @@ export function addBeasts(grimoire: Grimoire) {
       level: 12,
       size: 'large',
     });
+    creature.addTrait('beast');
     creature.setProperties({ has_art: true });
     creature.setTrainedSkills(['awareness', 'balance', 'climb']);
-    creature.setBaseAttributes([4, 8, 2, 0, 3, 2]);
+    creature.setBaseAttributes([4, 8, 2, -5, 3, 2]);
     creature.addTrait('multipedal');
     creature.addCustomSense('Tremorsense (90 ft.)');
 
@@ -189,8 +193,9 @@ export function addBeasts(grimoire: Grimoire) {
       level: 2,
       size: 'medium',
     });
+    creature.addTrait('beast');
     creature.setTrainedSkills(['awareness', 'survival']);
-    creature.setBaseAttributes([3, 2, 1, -4, 2, -1]);
+    creature.setBaseAttributes([3, 2, 1, -5, 2, -1]);
     creature.addTrait('quadrupedal');
     creature.addCustomSense('Scent');
 
@@ -206,6 +211,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 7,
       size: 'large',
     });
+    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -248,6 +254,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 7,
       size: 'large',
     });
+    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -292,6 +299,9 @@ export function addBeasts(grimoire: Grimoire) {
       level: 2,
       size: 'small',
     });
+    // TODO: darkmantles should fall under dungeoneering. We probably need a standard
+    // "environment" term...
+    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -328,6 +338,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 5,
       size: 'large',
     });
+    creature.addTrait('beast');
     creature.setProperties({
       has_art: true,
     });
@@ -343,7 +354,7 @@ export function addBeasts(grimoire: Grimoire) {
       `,
     });
     creature.setTrainedSkills(['awareness', 'jump']);
-    creature.setBaseAttributes([5, 5, 2, -3, 2, 2]);
+    creature.setBaseAttributes([5, 5, 2, -5, 2, 2]);
     creature.addTrait('quadrupedal');
     creature.addCustomMovementSpeed('Fly (average, 60 ft. limit)');
     creature.addCustomSense('Low-light Vision');
@@ -385,8 +396,9 @@ export function addBeasts(grimoire: Grimoire) {
         Beyond that range, they cannot see, though they can still identify the existence and location of creatures at great range by sound.
       `,
     });
+    creature.addTrait('beast');
     creature.setTrainedSkills(['awareness', 'stealth']);
-    creature.setBaseAttributes([5, 2, 4, -4, 6, 0]);
+    creature.setBaseAttributes([5, 2, 4, -5, 6, 0]);
     // TODO: Add Sightless modifiers
     creature.addCustomMovementSpeed('Fly (average, 30 ft. limit)');
     creature.addCustomSense('Blindsight (120 ft.)');
@@ -426,6 +438,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 5,
       size: 'medium',
     });
+    creature.addTrait('beast');
     creature.setProperties({ has_art: true });
     creature.setKnowledgeResults({
       normal: `
@@ -844,6 +857,7 @@ function addIchorTainted(grimoire: Grimoire) {
         `,
       },
       sharedInitializer: (creature: Creature) => {
+        creature.addTrait('beast');
         creature.addCustomModifier({
           name: 'Ichor',
           immune: 'Critical hits',
