@@ -775,7 +775,7 @@ export const rituals: RitualDefinition[] = [
     // smooth ground depending on party composition and size.
     effect: `
       Choose up to six ritual participants.
-      Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{movement speed}.
+      Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{speed}.
       If it uses a \\glossterm{standard action} or is dealt damage, it is \\glossterm{briefly} unable to take any actions and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
@@ -2880,7 +2880,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       You create a Small creature that follows your instructions.
-      Its \\glossterm{movement speed} is 20 feet, and it can carry one object that is neither larger nor heavier than Tiny.
+      Its \\glossterm{speed} is 20 feet, and it can carry one object that is neither larger nor heavier than Tiny.
       It cannot take any actions other picking up objects, putting them down, and moving.
       % TODO: wording, standard summoned creature combat stats? 
       Its combat statistics are the same as \\spell{summon monster}, except that it is destroyed if it takes any damage rather than if it gains a vital wound.

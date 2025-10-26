@@ -58,7 +58,7 @@ export class Grimoire {
     };
 
     for (const [monsterName, initializer] of initializers) {
-      setCurrentCharacterSheet(monsterName);
+      setCurrentCharacterSheet(`${config.name}.${monsterName}`);
       handleEverything();
       const sheet = getCurrentCharacterSheet();
       sheet.setProperties({ name: monsterName });
