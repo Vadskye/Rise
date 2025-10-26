@@ -410,7 +410,7 @@ export const polymorph: MysticSphere = {
       name: 'Runner',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{speed}.
       `,
       rank: 4,
       roles: ['attune'],

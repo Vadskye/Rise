@@ -259,7 +259,7 @@ export const chronomancy: MysticSphere = {
       cost: BRIEF_COOLDOWN,
       effect: `
         You are \\braced this round.
-        In addition, you can move up to half your \\glossterm{movement speed}.
+        In addition, you can move up to half your \\glossterm{speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 1,
@@ -272,7 +272,7 @@ export const chronomancy: MysticSphere = {
       // TODO: full EA math. What is sprint + total defense worth?
       effect: `
         You are \\braced this round.
-        In addition, you can move up to twice your \\glossterm{movement speed}.
+        In addition, you can move up to twice your \\glossterm{speed}.
         This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
       `,
       rank: 5,
@@ -319,7 +319,7 @@ export const chronomancy: MysticSphere = {
       name: 'Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{speed}.
       `,
       rank: 3,
       roles: ['attune'],
@@ -330,7 +330,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Haste',
 
       effect: `
-        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{movement speed}.
+        You gain a +10 foot \\glossterm{enhancement bonus} to your \\glossterm{speed}.
         In addition, you can take two \\glossterm{minor actions} each round instead of one.
       `,
       rank: 7,

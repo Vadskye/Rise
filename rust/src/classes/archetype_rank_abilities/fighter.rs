@@ -11,7 +11,7 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                You halve all penalties to your \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{movement speed} from temporary debuffs on you.
+                You halve all penalties to your \glossterm{accuracy}, \glossterm{defenses}, and \glossterm{speed} from temporary debuffs on you.
                 This includes the defense and speed penalties from being \slowed, the accuracy and Mental defense penalty from being \frightened, and so on.
                 It does not include permanent effects, such as if you are intrinsically \vulnerable to attacks.
             ",
@@ -127,7 +127,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a special ability based on the \glossterm{usage class} of your body armor.
                 \begin{raggeditemize}
-                    \item Light: You gain a \plus10 foot bonus to your \glossterm{movement speed}.
+                    \item Light: You gain a \plus10 foot bonus to your \glossterm{speed}.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
                         However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
                         Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still halves it.
@@ -521,7 +521,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target gains a \plus5 foot bonus to its \glossterm{movement speed} during any phase that it uses the \textit{sprint} ability.
+                        Each target gains a \plus5 foot bonus to its \glossterm{speed} during any phase that it uses the \textit{sprint} ability.
                         This bonus is doubled as normal by the sprint ability.
 
                         \rankline
@@ -548,7 +548,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                If you have \glossterm{movement speed} remaining after the \glossterm{movement phase}, you may use that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
+                If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
                 You cannot carry over more than five feet of movement in this way.
             ",
             modifiers: None,
@@ -561,7 +561,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{Coordinated Charge}{Standard action}
                     \rankline
-                    You can move up to half your \glossterm{movement speed}.
+                    You can move up to half your \glossterm{speed}.
                     You can \glossterm{push} one adjacent \glossterm{ally} along to match your movement.
                     After you stop moving, you can make a melee \glossterm{strike}.
                     You gain a \plus3 \glossterm{accuracy} bonus with the strike for each of your \glossterm{allies} that is adjacent to the target, to a maximum of \plus6.

@@ -72,6 +72,7 @@ function replaceGenericTerms(
   replace(/\bYou become\b/g, 'The $name becomes');
   replace(/\b, you become\b/g, ', it becomes');
   replace(/\bYou must have\b/g, 'The $name must have');
+  replace(/\b, you move\b/g, ', it moves');
   replace(/\bMove up to your speed\b/g, 'The $name moves up to its speed');
   replace(/\byour speed\b/g, 'its speed');
   replace(/\byour attack\b/g, 'its attack');
@@ -134,8 +135,11 @@ function replaceGenericTerms(
   replace(/\byou include yourself\b/g, 'it includes itself');
   replace(/\byou still only make\b/g, 'it still only makes');
   replace(/\bof you before your movement\b/g, 'of it before its movement');
+  replace(/\byou moved through\b/g, 'it moved through');
   replace(/\bafter your strike\b/g, 'after its strike');
   replace(/\byou control the\b/g, "the $name controls the");
+  // Normally we replace 'hit' with 'hits', but not if it was referring to the past tense.
+  replace(/\bIf you hit(.*?)last round\b/g, (_, context) => `If the $name hit${context}last round`);
   replace(/\bIf you hit\b/g, "If the $name hits");
   replace(/\bif you hit\b/g, "if the $name hits");
   replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, "");
@@ -504,10 +508,11 @@ export function restructureBrawlingAbility(monster: Creature, ability: ActiveAbi
 
   // TODO: handle brawling attacks with local accuracy modifiers
   ability.effect = ability.effect.replace(
-    /([mM])ake a (brawling attack|\\glossterm{brawling attack})/,
-    (_, maybeCapital) => {
+    /(you can )?([mM])ake a (brawling attack|\\glossterm{brawling attack})/,
+    (_, maybeYouCan, maybeCapital) => {
+      const makesText = maybeYouCan ? 'can make' : 'makes';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a $brawlingaccuracy attack`;
+      return `${theText} $name ${makesText} a $brawlingaccuracy attack`;
     },
   );
 }
@@ -671,18 +676,19 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
 
   // Accuracy-modified attack.
   attack.targeting = attack.targeting.replace(
-    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
-    (_, maybeCapital, attackType, defense, modifierSign, modifierValue) => {
+    /\b(you can )?([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack}) vs(.+) with a (\\plus|\\minus|-|\+)(\d+) (\\glossterm{)?accuracy}? (bonus|penalty)\b/g,
+    (_, maybeYouCan, maybeCapital, attackType, defense, modifierSign, modifierValue) => {
       modifierSign = standardizeModifierSign(modifierSign);
       const withSign = modifierSign === '+' ? Number(modifierValue) : Number(modifierValue) * -1;
       const withScaling = withSign + scalingAccuracyModifier;
       modifierSign = withScaling >= 0 ? '+' : '-';
       const withoutSign = Math.abs(withScaling);
 
+      const makesText = maybeYouCan ? 'can make' : 'makes';
       const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
       const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a ${accuracyText}${modifierSign}${withoutSign} ${attackText} vs${defense}`;
+      return `${theText} $name ${makesText} a ${accuracyText}${modifierSign}${withoutSign} ${attackText} vs${defense}`;
     },
   );
 
@@ -690,12 +696,13 @@ export function reformatAttackTargeting(monster: Creature, ability: ActiveAbilit
     scalingAccuracyModifier > 0 ? `+${scalingAccuracyModifier}` : '';
   // Baseline accuracy attack
   attack.targeting = attack.targeting.replace(
-    /\b([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack})/g,
-    (_, maybeCapital, attackType) => {
+    /\b(you can )?([mM])ake (an attack|a reactive attack|a \\glossterm{reactive attack}|a brawling attack|a \\glossterm{brawling attack})/g,
+    (_, maybeYouCan, maybeCapital, attackType) => {
       const accuracyText = /brawling/.test(attackType) ? '$brawlingaccuracy' : '$accuracy';
       const attackText = /reactive/.test(attackType) ? '\\glossterm{reactive attack}' : 'attack';
       const theText = maybeCapital === 'M' ? 'The' : 'the';
-      return `${theText} $name makes a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`;
+      const makesText = maybeYouCan ? 'can make' : 'makes';
+      return `${theText} $name ${makesText} a ${accuracyText}${scalingAccuracyModifierText} ${attackText}`;
     },
   );
 }

@@ -671,6 +671,10 @@ export class Creature implements CreaturePropertyMap {
     // TODO: add fancy logic for some traits to have special effects
     const modifier: CustomModifierConfig = { name: traitName };
 
+    if (this.hasTrait(traitName)) {
+      console.warn(`${this.name}: Adding trait '${traitName}' that already exists.`);
+    }
+
     if (traitName === 'construct') {
       this.addTrait('mindless');
       this.addTrait('nonliving');
@@ -792,7 +796,7 @@ export class Creature implements CreaturePropertyMap {
       this.throwError('Must have alignment');
     }
 
-    if (this.getTrainedSkillNames().length === 0) {
+    if (this.intelligence >= -2 && this.getTrainedSkillNames().length === 0) {
       this.warn('Has no trained skills');
     }
   }
