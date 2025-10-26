@@ -172,7 +172,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Second Skin",
+            name: "Armored Core",
             is_magical: false,
             rank: 4,
             description: r"
