@@ -10,6 +10,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{magicalactiveability}{Essence Spike}{Standard action}
                     \abilitycost You \glossterm{briefly} cannot use this ability again.
+                    \abilitytags The tag of your \ability{essence infusion}.
                     \rankline
                     Make an attack against something within \medrange.
                     You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this attack (see \\pcref{Power}).
