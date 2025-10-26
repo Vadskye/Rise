@@ -164,7 +164,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
                     \rank{5} The strike deals double \glossterm{weapon damage}.
                     \rank{6} The strike deals triple \glossterm{weapon damage}.
-                    \rank{7} The strike deals triple damage.
+                    \rank{7} If the strike would deal double damage, it deals triple damage instead.
                 \end{activeability}
             ",
             // This is too inconsistent to add as a generally usable strike
