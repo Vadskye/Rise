@@ -2389,11 +2389,11 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     effect: `
-      Choose up to five corpses within \\shortrange.
-      The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
-      Each target becomes an undead creature that obeys your mental commands.
+      Choose a Medium humanoid corpse within \\shortrange.
+      Its \\glossterm{character rank} must be lower than your rank with this ritual, and it cannot be \\glossterm{elite}.
+      The target permanently becomes an undead creature.
 
-      You choose whether to create a skeleton or a zombie from each corpse.
+      The target becomes your choice of any skeleton or zombie of its rank or lower.
       Creating a zombie require a mostly intact corpse, including most of the flesh.
       Creating a skeleton only requires a mostly intact skeleton.
       If a skeleton is made from an intact corpse, the flesh falls off the animated bones over the next few minutes as it moves around.
@@ -2401,24 +2401,10 @@ export const rituals: RitualDefinition[] = [
       This ritual does not give you any specific control over the newly awakened undead.
       They may attack you once they become fully active, which typically happens one minute after the ritual is complete.
       If you also know how to perform the \\ritual{command undead} ritual, you can combine that ritual with this one.
-      Doing so doubles the time required to complete the ritual, but it applies the effects of \\ritual{command undead} to each creature you created.
+      Doing so doubles the time required to complete the ritual, but it applies the effects of \\ritual{command undead} to the creature you create.
     `,
     materialCost: true,
     rank: 3,
-    roles: ['narrative'],
-    spheres: ['Vivimancy'],
-  },
-  {
-    name: 'Animate Dreadhorde',
-
-    usageTime: 'one hour',
-    functionsLike: {
-      name: 'animate dead',
-      exceptThat:
-        'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
-    },
-    materialCost: true,
-    rank: 6,
     roles: ['narrative'],
     spheres: ['Vivimancy'],
   },
@@ -2427,16 +2413,17 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     effect: `
-      Choose up to five \\trait{mindless} \\creaturetype{undead} creatures within \\medrange.
-      The combined levels of all targets cannot exceed your level, and none of the targets can be \\glossterm{elite}.
-      Each target become your servant, and will obey your commands.
+      Choose one \\trait{simple-minded} \\creaturetype{undead} creature within \\medrange.
+      Its \\glossterm{character rank} must be lower than your rank with this ritual, and it cannot be \\glossterm{elite}.
+      The target becomes \\dominated by you.
+      You can attune to this ritual multiple times, commanding an additional undead each time.
 
       As a \\glossterm{minor action}, you can mentally command any number of undead you control using this ritual.
       The command must be no more than 10 words, and overly complex commands may cause strange and unintended behavior.
       Each target of the command must be within \\distrange of you.
       Undead commanded in this way will obey their most recent command indefinitely, even if it causes them great danger.
     `,
-    rank: 2,
+    rank: 3,
     roles: ['attune'],
     type: 'Attune (deep)',
     spheres: ['Vivimancy'],
@@ -2448,29 +2435,15 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       All \\trait{mindless} \\creaturetype{undead} perceive you to be another undead similar to themselves.
-      This generally means that they will not attack you or interfere with you, though they may still retaliate if provoked.
+      This generally means that they will not attack you or interfere with you, though they may still retaliate if you or your apparent allies provoke them.
     `,
-    rank: 3,
+    rank: 4,
     roles: ['attune'],
     type: 'Attune',
     spheres: ['Vivimancy'],
   },
 
-  {
-    name: 'Those Who Live in Death',
-
-    usageTime: 'one hour',
-    functionsLike: {
-      name: 'one who lives in death',
-      mass: true,
-    },
-    rank: 6,
-    roles: ['attune'],
-    type: 'Attune (target)',
-    spheres: ['Vivimancy'],
-  },
-
-  // TODO: math, consider whether Willpower or power should be involved
+  // TODO: math
   {
     name: 'Command Undead Horde',
 
@@ -2478,7 +2451,7 @@ export const rituals: RitualDefinition[] = [
     functionsLike: {
       name: 'command undead',
       exceptThat:
-        'the combined levels of all targets cannot exceed twice your level. The level of each individual target must also not exceed your level.',
+        'it affects up to ten targets, and the \\glossterm{character rank} of each target must be at least three lower than your rank with this ritual.',
     },
     rank: 5,
     roles: ['attune'],
@@ -3127,5 +3100,19 @@ export const rituals: RitualDefinition[] = [
     roles: ['attune'],
     spheres: ['Photomancy', 'Revelation', 'Thaumaturgy'],
     type: 'Sustain (attuneable, minor)',
+  },
+
+  {
+    name: 'Sanctify Silver',
+
+    usageTime: 'one hour',
+    materialCost: true,
+    effect: `
+      Choose one silver weapon within \\shortrange.
+      The weapon becomes sanctified silver (see \\pcref{Weapon Special Materials}).
+    `,
+    rank: 6,
+    roles: ['narrative'],
+    spheres: ['Channel Divinity', 'Polymorph', 'Prayer', 'Terramancy'],
   },
 ];
