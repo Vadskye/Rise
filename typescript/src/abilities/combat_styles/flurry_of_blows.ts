@@ -399,6 +399,7 @@ export const flurryOfBlows: CombatStyle = {
       `,
       rank: 5,
       roles: ['trip'],
+      tags: ['Visual'],
     },
   ],
 };
