@@ -259,10 +259,10 @@ fn cloaks() -> Vec<Apparel> {
 
     apparel.push(Cloak(StandardItem {
         name: String::from("Cloak of the Unseen Hunter"),
-        rank: 5,
+        rank: 4,
         short_description: String::from("Grants +1 accuracy while concealed"),
         description: String::from(r"
-            You gain a +1 \glossterm<accuracy> bonus against creatures and objects that you have \glossterm<concealment> from.
+            You gain a +1 \glossterm{enhancement bonus} to \glossterm{accuracy} against creatures and objects that you have \glossterm<concealment> from.
         "),
         ..Apparel::default()
     }));
@@ -340,9 +340,18 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Grants a glide speed"),
         description: String::from(
             r"
-            You gain an average \glossterm{glide speed} (see \pcref{Aerial Movement}).
-        ",
+                You gain an average \glossterm{glide speed} (see \pcref{Aerial Movement}).
+            ",
         ),
+        upgrades: vec![
+            ItemUpgrade::new(5, "Grants a stable glide speed", "
+                When you start gliding, it \\glossterm{briefly} does not make you \\unsteady (see \\pcref{Aerial Movement}).
+                After that time, you can become unsteady as normal.
+            "),
+            ItemUpgrade::new(7, "Grants a very stable glide speed", "
+                Gliding does not make you unsteady.
+            "),
+        ],
         ..Apparel::default()
     }));
 
