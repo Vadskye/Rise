@@ -30,11 +30,12 @@ pub fn latexify(text: String) -> String {
         )
     }
 
-    let midline_double_backslash = Regex::new(r"\\\\.").unwrap();
+    let midline_double_backslash = Regex::new(r"\\\\.+").unwrap();
     if midline_double_backslash.is_match(&text) {
         eprintln!(
-            r"Problem latexifying text: contains a midline \\ ({})",
-            text.trim()
+            r"Problem latexifying text: contains a midline \\ ({});{}",
+            midline_double_backslash.find(&text).unwrap().as_str(),
+            short_text
         )
     }
 
