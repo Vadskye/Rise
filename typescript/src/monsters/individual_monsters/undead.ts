@@ -636,7 +636,7 @@ function addVampires(grimoire: Grimoire) {
       \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\glossterm{briefly} becomes \\paralyzed.
         This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
         It can use the \\ability{struggle} ability to move despite being paralyzed, but only towards the closest shore.
-      \\itemhead{Silver} Vampires are \\vulnerable to strikes using silvered weapons.
+      \\itemhead{Silver} Vampires are \\vulnerable to strikes using silver weapons.
       \\itemhead{Sunlight} A vampire that touches sunlight takes 20 damage and becomes \\blinded as a condition if it is not already blinded.
       \\itemhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
         This can allow careful observers to identify vampires.
@@ -653,7 +653,7 @@ function addVampires(grimoire: Grimoire) {
       description: vampireDescription,
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('humanoid');
-        creature.addVulnerability('Silvered weapons');
+        creature.addVulnerability('Silver weapons');
         creature.addCustomSense('Darkvision (120 ft.)');
 
         const bloodDrain: CustomMonsterAbility = {
@@ -859,9 +859,9 @@ function addZombies(grimoire: Grimoire) {
           creature.setRequiredProperties({
             ...requiredProperties,
             level: 9,
-            size: 'large',
+            size: 'medium',
           });
-          creature.setBaseAttributes([8, -2, 8, 0, -2, 0]);
+          creature.setBaseAttributes([7, -2, 8, 0, -2, 0]);
         },
       ],
     ],
