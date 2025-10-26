@@ -360,8 +360,8 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
-        // Brief ranged slow is 2 EA. Normal rank 3 would be strike and 0.8 EA. That's enough of a
-        // buff to justify the class feature + movement trigger.
+        // Brief ranged slow is 2 EA, or 2.4 EA with injury effect Normal rank 3 would be strike and 1.2 EA.
+        // That's enough of a buff to justify the class feature + movement trigger.
         RankAbility {
             complexity: 2,
             name: "No Escape",
@@ -370,15 +370,16 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 \begin{activeability}{No Escape}{Standard action}
                     \rankline
-                    Make a strike.
-                    If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, the strike deals double damage.
+                    Make a strike that deals 1d6 \glossterm{extra damage}.
+                    \\hit If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, it is \glossterm{briefly} \slowed.
                     This applies even if you moved closer to the target, so long as it tried to move away from your original location.
+                    \\injury If the target would be briefly slowed, it is also slowed as a \glossterm{condition}.
 
                     \rankline
-                    \rank{4} You gain a \plus1 accuracy bonus with the strike.
-                    \rank{5} The strike deals 1d6 \glossterm{extra damage}.
-                    \rank{6} The extra damage increases to 2d6.
-                    \rank{7} The strike deals triple damage instead of double damage.
+                    \rank{4} The strike deals double \glossterm{weapon damage}.
+                    \rank{5} The extra damage increases to 1d6 \add half \glossterm{power}.
+                    \rank{6} The strike deals triple \glossterm{weapon damage}.
+                    \rank{7} The extra damage increases to 1d6 per 2 power.
                 \end{activeability}
             ",
             modifiers: None,
