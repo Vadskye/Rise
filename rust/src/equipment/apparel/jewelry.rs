@@ -84,7 +84,7 @@ fn amulets() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, r"+1 magical power, and \ability{rage} also affects magical attacks", r"
-                You also gain a +1 \glossterm{enhancement bonus} to your \\magical \glossterm{power}.
+                You also gain a +1 \glossterm{enhancement bonus} to your \magical \glossterm{power}.
             "),
         ],
         ..Apparel::default()
@@ -204,15 +204,15 @@ fn amulets() -> Vec<Apparel> {
     apparel.push(Amulet(StandardItem {
         name: String::from("Zealous Titan's Amulet"),
         rank: 5,
-        short_description: String::from(r"Deal extra damage with \ability<smite> using \\weapontag<Heavy> weapons"),
+        short_description: String::from(r"Deal extra damage with \ability<smite> using \weapontag<Heavy> weapons"),
         // 2.24x normal damage / 1.88x normal damage = 19% more damage, which is on par for a
         // rank 5 attunement.
         description: String::from(r"
-            When you use the \ability<smite> paladin ability using a \\weapontag{Heavy} weapon, you deal \glossterm{extra damage} equal to half your \glossterm{power}.
+            When you use the \ability<smite> paladin ability using a \weapontag{Heavy} weapon, you deal \glossterm{extra damage} equal to half your \glossterm{power}.
         "),
         upgrades: vec![
             // 2.15x / 1.69x = +27% more damage
-            ItemUpgrade::new(7, r"Deal extra damage with \ability<smite> using \\weapontag<Heavy> weapons", r"
+            ItemUpgrade::new(7, r"Deal extra damage with \ability<smite> using \weapontag<Heavy> weapons", r"
                 The extra damage increases to be equal to your power.
             "),
         ],
@@ -268,7 +268,7 @@ fn amulets() -> Vec<Apparel> {
         "),
         upgrades: vec![
             ItemUpgrade::new(5, r"Can \ability<sneak attack> with any weapon for extra damage", r"
-                When you \ability{sneak attack} with a \\weapontag{Heavy} weapon, it deals 1d6 \glossterm{extra damage}.
+                When you \ability{sneak attack} with a \weapontag{Heavy} weapon, it deals 1d6 \glossterm{extra damage}.
             "),
             ItemUpgrade::new(7, r"Can \ability<sneak attack> with any weapon for extra damage", r"
                 The extra damage increases to 2d10.
