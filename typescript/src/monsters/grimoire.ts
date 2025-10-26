@@ -4,6 +4,12 @@ import {
   getCurrentCharacterSheet,
   setCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
+import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
+import { addAnimates } from '@src/monsters/individual_monsters/animates';
+import { addBeasts } from '@src/monsters/individual_monsters/beasts';
+import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
+import { addPlaneforged } from '@src/monsters/individual_monsters/planeforged';
+import { addUndead } from '@src/monsters/individual_monsters/undead';
 
 type MonsterInitializer = (creature: Creature) => void;
 
@@ -30,6 +36,15 @@ export class Grimoire {
   constructor() {
     this.monsters = {};
     this.monsterGroups = {};
+  }
+
+  addAllMonsters() {
+    addAberrations(this);
+    addAnimates(this);
+    addBeasts(this);
+    addHumanoids(this);
+    addPlaneforged(this);
+    addUndead(this);
   }
 
   addMonster(name: string, initializer: MonsterInitializer) {
