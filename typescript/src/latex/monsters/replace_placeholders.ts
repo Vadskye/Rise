@@ -26,7 +26,10 @@ function replaceNames(monsterLatex: string, monsterName: string): string {
   if (nameIsTitle) {
     const displayName = monsterName.replace(/,.*/, '');
     const lowercaseDisplayName = displayName.toLowerCase();
-    return monsterLatex.replaceAll('$Name', displayName).replaceAll('The $name', displayName).replaceAll('the $name', lowercaseDisplayName);
+    return monsterLatex
+      .replaceAll('$Name', displayName)
+      .replaceAll('The $name', displayName)
+      .replaceAll('the $name', lowercaseDisplayName);
   } else {
     const lowercaseName = monsterName.toLowerCase();
     return monsterLatex.replaceAll('$Name', monsterName).replaceAll('$name', lowercaseName);

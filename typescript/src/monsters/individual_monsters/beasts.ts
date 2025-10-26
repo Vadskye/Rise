@@ -489,7 +489,7 @@ function addAnimals(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('animal');
-      }
+      },
     },
     [
       [
@@ -768,7 +768,7 @@ function addDireAnimals(grimoire: Grimoire) {
       },
       sharedInitializer: (creature: Creature) => {
         creature.addTrait('animal');
-      }
+      },
     },
     [
       [
