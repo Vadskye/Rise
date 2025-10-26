@@ -309,7 +309,7 @@ function addGolems(grimoire: Grimoire) {
           size: 'medium',
         });
         creature.setTrainedSkills([]);
-        creature.setBaseAttributes([10, -2, 12, 0, 6, 10]);
+        creature.setBaseAttributes([10, -2, 12, 0, 6, 0]);
         creature.addPassiveAbility({
           name: 'Indestructible',
           effect: `
@@ -346,7 +346,7 @@ function addGolems(grimoire: Grimoire) {
         creature.addImmunity('Earth');
         creature.addImpervious('Electricity');
         creature.addVulnerability('Acid');
-        creature.setBaseAttributes([13, 2, 13, 0, 6, 10]);
+        creature.setBaseAttributes([13, 2, 10, 0, 6, 10]);
         creature.addPassiveAbility({
           name: 'Crushing Gravity',
           effect: `
@@ -363,6 +363,12 @@ function addGolems(grimoire: Grimoire) {
         });
 
         creature.addWeaponMult('fists');
+        creature.addManeuver('Boneshatter+', { weapon: 'fists' });
+        creature.addManeuver('Chokeslam+');
+        creature.addSpell('Mighty Earthspike', { usageTime: 'elite' });
+        creature.addSpell('Earthquake', { usageTime: 'elite' });
+        creature.addSpell('Swallowed by Earth', { usageTime: 'elite' });
+        creature.addSpell('Gravity Well', { usageTime: 'elite' });
       }],
     ]
   );
