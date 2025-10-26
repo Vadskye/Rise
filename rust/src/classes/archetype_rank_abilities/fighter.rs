@@ -441,7 +441,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 You can initiate a \textit{battle tactic} as a \glossterm{minor action}.
                 When you initiate a battle tactic, you choose whether to use visual cues like gestures, auditory cues like shouts, or both to communicate your tactic with your allies.
                 Your \textit{battle tactics} can affect yourself and your \glossterm{allies} who can either see or hear your efforts.
-                Some battle tactics will only affect a limited number of targets.
+                Most battle tactics will only affect a limited number of targets.
                 You choose the targets whenever you initiate or sustain the battle tactic.
 
                 All \textit{battle tactics} have the \abilitytag{Sustain} (free) tag, so they last as long as you \glossterm{sustain} them (see \pcref{Sustained Abilities}).
@@ -471,6 +471,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Duck and Cover}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
+                        Choose two targets.
                         Each target gains a \plus1 bonus to its defenses against ranged \glossterm{strikes}.
 
                         \rankline
