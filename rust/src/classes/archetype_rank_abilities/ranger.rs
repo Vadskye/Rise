@@ -517,7 +517,7 @@ pub fn scout<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You gain a \plus5 bonus to the Awareness skill.
+                You gain a \plus10 bonus to the Awareness skill.
             ",
             modifiers: None,
         },
