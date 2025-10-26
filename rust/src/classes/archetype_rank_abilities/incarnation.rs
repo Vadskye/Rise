@@ -9,8 +9,10 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{magicalactiveability}{Essence Spike}{Standard action}
+                    \abilitycost You \glossterm{briefly} cannot use this ability again.
                     \rankline
                     Make an attack against something within \medrange.
+                    You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this attack (see \\pcref{Power}).
                     The defense against this attack depends on your \textit{essence infusion}.
                     \begin{raggeditemize}
                         \item Armor defense: \atWater.
