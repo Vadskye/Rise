@@ -57,10 +57,10 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a special ability depending on whether you are tethered or untethered.
                 \begin{raggeditemize}
-                    \item Tethered: Choose an \atAttune spell of rank 3 or lower from any \glossterm{mystic sphere}.
+                    \item Tethered: Choose an \atAttune spell of rank 2 or lower from any \glossterm{mystic sphere}.
                     The spell must have your \textit{essence infusion} tag, and it must not be a \glossterm{deep attunement}.
                     You gain the effect of that spell on you permanently.
-                    If the spell disables itself, you gain its benefit again after 5 minutes.
+                    If the spell disables itself, you gain its benefit again after 10 minutes.
                     \item Untethered: The height limit of your fly speed increases to 10 feet.
                     In addition, whenever you use the \ability{sprint} ability, you can become \trait{intangible} during that phase.
                     This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
@@ -97,7 +97,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain a special ability depending on whether you are tethered or untethered.
                 \begin{raggeditemize}
-                    \item Tethered: You can choose up two spells with a combined rank of 6 or lower.
+                    \item Tethered: You can choose up to two spells with a combined rank of 4 or less.
                     % TODO: weak?
                     \item Untethered: The height limit of your fly speed increases to 20 feet.
                     In addition, you gain a \plus1 bonus to your \glossterm{mundane power} and \glossterm{magical power}.
@@ -105,20 +105,24 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             ",
             modifiers: None,
         },
+        // Tethered: 1.6 EA if you meet the condition, which is easy
+        // Untethered: ???
         RankAbility {
             complexity: 3,
             name: "Essence Incarnate",
             is_magical: true,
             rank: 7,
             description: r"
-                \begin{magicalactiveability}{Essence Incarnate}{\glossterm{Minor action}}
+                \begin{magicalactiveability}{Essence Incarnate}{Standard action}
                     \abilitytags \abilitytag{Swift}
-                    \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again
+                    \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
                     \rankline
                     You gain a benefit depending on whether you are tethered or untethered:
                     \begin{raggeditemize}
-                        \item Tethered: You \glossterm{briefly} \primed with abilities that have your \textit{essence infusion} tag.
+                        \item Tethered: You are \glossterm{briefly} \primed.
+                        Next round, if you hit with an attack that has your \ability{essence infusion} tag, you are \glossterm{briefly} primed again.
                         \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
+                        This makes you immune to \glossterm{mundane}, \atCreation, and \atManifestation abilities, among other effects (see \pref{Incorporeal}).
                         If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
                         You take 5d10 damage for every 5 feet that you are pushed in this way.
                     \end{raggeditemize}
