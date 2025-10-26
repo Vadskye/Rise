@@ -821,7 +821,7 @@ function addFormians(grimoire: Grimoire) {
             `,
           });
           creature.setTrainedSkills(['awareness', 'climb', 'endurance']);
-          creature.setBaseAttributes([3, 4, 3, -4, 3, 0]);
+          creature.setBaseAttributes([3, 4, 2, -4, 3, 0]);
           creature.setKnowledgeResults({
             normal: `
               Drones are the basic fighting unit of formian society.
@@ -831,6 +831,27 @@ function addFormians(grimoire: Grimoire) {
               Even the smallest formian colony typically has dozens of warriors, and larger colonies can have thousands.
             `,
           });
+        },
+      ],
+      [
+        'Myrmarch',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'lawful neutral',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'planeforged',
+            level: 9,
+            size: 'medium',
+          });
+          creature.setProperties({ has_art: true });
+          creature.addTrait('simple-minded');
+          creature.setTrainedSkills(['awareness', 'climb', 'endurance']);
+          creature.setBaseAttributes([4, 6, 3, -4, 3, 2]);
+
+          creature.addWeaponMult('greatsword');
+          creature.addManeuver('Dance of Death');
+          creature.addManeuver('Reckless Smash', { weapon: 'greatsword' });
         },
       ],
     ],

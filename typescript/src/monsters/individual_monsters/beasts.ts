@@ -68,6 +68,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 1,
       size: 'large',
     });
+    creature.setProperties({ has_art: true });
     creature.setKnowledgeResults({
       normal: `
         A giant wasp is a Large insect resembling a normal wasp.
@@ -123,6 +124,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 12,
       size: 'large',
     });
+    creature.setProperties({ has_art: true });
     creature.setTrainedSkills(['awareness', 'balance', 'climb']);
     creature.setBaseAttributes([4, 8, 2, 0, 3, 2]);
     creature.addTrait('multipedal');
@@ -424,6 +426,7 @@ export function addBeasts(grimoire: Grimoire) {
       level: 5,
       size: 'medium',
     });
+    creature.setProperties({ has_art: true });
     creature.setKnowledgeResults({
       normal: `
         A stygian leech is a Medium worm-like creature that feeds on life energy.
@@ -822,6 +825,7 @@ function addIchorTainted(grimoire: Grimoire) {
   grimoire.addMonsterGroup(
     {
       name: 'Ichor-Tainted',
+      hasArt: true,
       knowledge: {
         normal: `
             The dreadful magical liquid known as ichor has no known origin.
