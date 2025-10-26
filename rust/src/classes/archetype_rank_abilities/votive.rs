@@ -92,7 +92,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \parhead{Finishing Maneuver} You gain an accuracy bonus equal to twice your excess rank against creatures who are \glossterm{injured}.
 
-                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
+                    \parhead{Mighty Maneuver} You take a \\minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
 
