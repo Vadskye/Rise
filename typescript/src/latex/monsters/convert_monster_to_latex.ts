@@ -22,7 +22,8 @@ export function convertMonsterToLatex(monster: Creature, parentGroupName?: strin
   const pagebreakText = hasParentGroup ? '' : '\\newpage';
   const eliteText = monster.elite ? ' -- \\textbf{Elite}' : '';
   const knowledgeText = genKnowledgeText(monster.getKnowledgeResultConfig());
-  const contentBufferText = monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
+  const contentBufferText =
+    monster.description || knowledgeText ? '\\vspace{0.5em}' : '\\vspace{0.25em}';
 
   const monsterContext1 = `Level ${monster.level} ${format.uppercaseFirst(monster.base_class)}${eliteText}`;
   const monsterContext2 = `${format.uppercaseFirst(monster.size)} ${monster.creature_type}`;
@@ -240,16 +241,17 @@ function genAttributesText(monster: Creature): string {
 }
 
 function genAbilitiesText(monster: Creature): string {
-
   const activeAbilities = monster.getActiveAbilities();
   // Secondary sort is by name
   activeAbilities.sort((a, b) => a.name.localeCompare(b.name));
   // Primary sort is by usage time
   activeAbilities.sort((a, b) => {
-    return (a.usageTime || 'standard').localeCompare(b.usageTime || 'standard')
+    return (a.usageTime || 'standard').localeCompare(b.usageTime || 'standard');
   });
 
-  const activeAbilityLatex = activeAbilities.map((ability) => convertAbilityToMonsterLatex(monster, ability)).join('\n');
+  const activeAbilityLatex = activeAbilities
+    .map((ability) => convertAbilityToMonsterLatex(monster, ability))
+    .join('\n');
 
   const passiveAbilities = monster.getPassiveAbilities();
   // Only sort is by name

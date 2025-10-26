@@ -1,7 +1,8 @@
 import { ActiveAbility } from '@src/abilities';
 
-export function determineAbilityType(ability: Pick<ActiveAbility, 'isMagical' | 'type' | 'usageTime'>): string {
-
+export function determineAbilityType(
+  ability: Pick<ActiveAbility, 'isMagical' | 'type' | 'usageTime'>,
+): string {
   let abilityType = 'activeability';
   if (ability.usageTime === 'elite') {
     abilityType = 'eliteability';

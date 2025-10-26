@@ -578,7 +578,7 @@ export const revelation: MysticSphere = {
 
     // Injury brief confusion is r3, add +1 area for r5 area total
     {
-      name: "Baffling Visions",
+      name: 'Baffling Visions',
 
       attack: {
         hit: `

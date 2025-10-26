@@ -4,10 +4,7 @@ import {
   setCurrentCharacterSheet,
   resetDefaultCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
-import {
-  handleEverything,
-  MonsterAttackUsageTime,
-} from '@src/character_sheet/sheet_worker';
+import { handleEverything, MonsterAttackUsageTime } from '@src/character_sheet/sheet_worker';
 import {
   RiseAlignment,
   RiseAttribute,
@@ -94,7 +91,12 @@ type StringCreatureProperty =
   | CustomMovementSpeed
   | CustomSense;
 type BooleanCreatureProperty = 'has_art' | 'elite' | RiseDebuff;
-type CalcExplanation = 'armor_defense_explanation' | 'brawn_explanation' | 'fortitude_explanation' | 'mental_explanation' | 'reflex_explanation';
+type CalcExplanation =
+  | 'armor_defense_explanation'
+  | 'brawn_explanation'
+  | 'fortitude_explanation'
+  | 'mental_explanation'
+  | 'reflex_explanation';
 
 // TODO: this is poorly organized in the sheet. Senses and movement speeds are both
 // grouped under the `movement_speed_i_name` bucket.
@@ -244,28 +246,28 @@ export class Creature implements CreaturePropertyMap {
 
     for (const trait of this.getStandardTraits()) {
       const traitToKnowledgeMap: Record<RiseTrait, RiseKnowledgeSkill | null> = {
-        'amphibious': null,
-        'amorphous': null,
-        'animal': 'knowledge_nature',
-        'beast': 'knowledge_nature',
-        'construct': 'knowledge_arcana',
-        'floating': null,
-        'humanoid': 'knowledge_local',
-        'incorporeal': null,
-        'indwelt': 'knowledge_souls',
-        'intangible': null,
-        'invisible': null,
-        'legless': null,
-        'mindless': null,
-        'multipedal': null,
-        'nonliving': null,
-        'plant': 'knowledge_nature',
-        'quadrupedal': null,
-        'scent': null,
-        'sightless': null,
+        amphibious: null,
+        amorphous: null,
+        animal: 'knowledge_nature',
+        beast: 'knowledge_nature',
+        construct: 'knowledge_arcana',
+        floating: null,
+        humanoid: 'knowledge_local',
+        incorporeal: null,
+        indwelt: 'knowledge_souls',
+        intangible: null,
+        invisible: null,
+        legless: null,
+        mindless: null,
+        multipedal: null,
+        nonliving: null,
+        plant: 'knowledge_nature',
+        quadrupedal: null,
+        scent: null,
+        sightless: null,
         'simple-minded': null,
-        'soulless': null,
-        'telepathy': null,
+        soulless: null,
+        telepathy: null,
       };
 
       const traitBasedKnowledge = traitToKnowledgeMap[trait];

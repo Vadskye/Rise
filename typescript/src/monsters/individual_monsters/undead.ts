@@ -52,7 +52,7 @@ export function addUndead(grimoire: Grimoire) {
         When fresh corpses are left to rot near a dying tree, their lingering soul energy can merge with the tree to create a corpsetree.
       `,
     });
-    creature.setTrainedSkills(["awareness"]);
+    creature.setTrainedSkills(['awareness']);
     creature.setBaseAttributes([7, -2, 5, -5, 2, 2]);
     creature.addTrait('plant');
 
@@ -97,7 +97,7 @@ export function addUndead(grimoire: Grimoire) {
     creature.addWeaponMult('fists');
 
     creature.addCustomManeuver({
-      name: "Fling Corpse",
+      name: 'Fling Corpse',
       attack: {
         hit: '\\damagerankthree.',
         targeting: `
@@ -181,53 +181,59 @@ function addFleshwrought(grimoire: Grimoire) {
       },
     },
     [
-      ['Fleshwrought Spiker', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'brute',
-          elite: true,
-          creature_type: 'undead',
-          level: 16,
-          size: 'large',
-        });
-        creature.setBaseAttributes([8, 4, 6, -4, 2, 0]);
-        creature.addWeaponMult('spike');
-        creature.addGrapplingStrike('spike');
-        creature.addManeuver('Piledriver+', { displayName: 'Impale' });
-        creature.addManeuver('Anklebreaker', { weapon: 'spike' });
-        // TODO: unclear EA
-        creature.addCustomManeuver({
-          name: 'Rotting Stench',
-          attack: {
-            // Explicitly mark no crit to avoid lint warnings
-            crit: null,
-            hit: `
+      [
+        'Fleshwrought Spiker',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'brute',
+            elite: true,
+            creature_type: 'undead',
+            level: 16,
+            size: 'large',
+          });
+          creature.setBaseAttributes([8, 4, 6, -4, 2, 0]);
+          creature.addWeaponMult('spike');
+          creature.addGrapplingStrike('spike');
+          creature.addManeuver('Piledriver+', { displayName: 'Impale' });
+          creature.addManeuver('Anklebreaker', { weapon: 'spike' });
+          // TODO: unclear EA
+          creature.addCustomManeuver({
+            name: 'Rotting Stench',
+            attack: {
+              // Explicitly mark no crit to avoid lint warnings
+              crit: null,
+              hit: `
               The target feels sick as a \\glossterm{condition}.
               The next time it becomes \\glossterm{injured}, it must spend a standard action vomiting.
               After it does, it removes all instances of this condition.
             `,
-            targeting: `
+              targeting: `
               Make an attack vs. Fortitude against all adjacent living creatures.
             `,
-          },
-          usageTime: 'elite',
-        });
-      }],
-      ['Fleshwrought Slicer', (creature: Creature) => {
-        creature.setRequiredProperties({
-          alignment: 'neutral evil',
-          base_class: 'warrior',
-          elite: false,
-          creature_type: 'undead',
-          level: 8,
-          size: 'medium',
-        });
-        creature.setTrainedSkills([]);
-        creature.setBaseAttributes([4, 5, 0, -4, 1, 0]);
-        creature.addManeuver('Spinning Steel', { weapon: 'claws' });
-        creature.addManeuver('Strip the Flesh', { weapon: 'claws' });
-        creature.addManeuver('Rend the Hide', { weapon: 'claws' });
-      }],
+            },
+            usageTime: 'elite',
+          });
+        },
+      ],
+      [
+        'Fleshwrought Slicer',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'warrior',
+            elite: false,
+            creature_type: 'undead',
+            level: 8,
+            size: 'medium',
+          });
+          creature.setTrainedSkills([]);
+          creature.setBaseAttributes([4, 5, 0, -4, 1, 0]);
+          creature.addManeuver('Spinning Steel', { weapon: 'claws' });
+          creature.addManeuver('Strip the Flesh', { weapon: 'claws' });
+          creature.addManeuver('Rend the Hide', { weapon: 'claws' });
+        },
+      ],
     ],
   );
 }
@@ -423,7 +429,13 @@ function addLiches(grimoire: Grimoire) {
             level: 17,
             size: 'medium',
           });
-          creature.setTrainedSkills(['awareness', 'deduction', 'craft_bone', 'knowledge_arcana', 'knowledge_souls']);
+          creature.setTrainedSkills([
+            'awareness',
+            'deduction',
+            'craft_bone',
+            'knowledge_arcana',
+            'knowledge_souls',
+          ]);
           creature.setBaseAttributes([-2, 5, 2, 5, 8, 10]);
           creature.setKnowledgeResults({
             hard: `
@@ -438,7 +450,7 @@ function addLiches(grimoire: Grimoire) {
           creature.addSpell('Dimension Door', { usageTime: 'elite' });
           creature.addSpell('Banishment', { usageTime: 'elite' });
           creature.addSpell('Hostile Transposition', { usageTime: 'elite' });
-        }
+        },
       ],
     ],
   );
