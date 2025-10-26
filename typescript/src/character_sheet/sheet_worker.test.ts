@@ -610,3 +610,40 @@ t.test('can calculate vital rolls', (t) => {
 
   t.end();
 });
+
+t.test('can handle strike attacks', (t) => {
+  const supportedWeaponCount = 4;
+
+  t.test('calculates total damage for a single weapon strike attack', (t) => {
+    // Set initial character and weapon attributes
+    setAttrs({
+      // Differentiate mundane power from magical power
+      strength_at_creation: 3,
+      weapon_0_name: 'Psionic Broadsword',
+      weapon_0_extra_damage: '1',
+      weapon_0_damage_dice: '1d6',
+      // This will create a row ID, which is needed for the global change listener.
+      // The `generateRowID` function is mocked by `roll20_shim` to return sequential IDs.
+      repeating_strikeattacks_0_attack_name: 'Double Weapon Damage',
+      repeating_strikeattacks_0_is_magical: false,
+      repeating_strikeattacks_0_attack_extra_damage: '0',
+      repeating_strikeattacks_0_weapon_damage_multiplier: '2',
+      repeating_strikeattacks_0_damage_multiplier: '1',
+    });
+
+    // Trigger a global update; Roll20 does some internal magic to update repeating
+    // sections appropriately from a local update, but we can only use the global one.
+    setAttrs({
+      level: 10,
+    });
+
+    getAttrs(['repeating_strikeattacks_0_weapon_0_total_damage'], (attrs) => {
+      t.match(attrs, {
+        repeating_strikeattacks_0_weapon_0_total_damage: '2*(1d6)+4+1+0',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
