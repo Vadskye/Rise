@@ -597,7 +597,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 4,
             description: r"
-                \begin{sustainability}{Shifting Stance}{}{\glossterm{Minor action}}
+                \begin{sustainability}{Shifting Stance}{\glossterm{Minor action}}
                     \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                     \rankline
                     You gain one of the following benefits:
