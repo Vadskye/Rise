@@ -246,13 +246,13 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 1,
             description: r"
-                \begin{attuneability}{Quarry}{\glossterm{Minor action}}
+                \begin{sustainability}{Quarry}{\glossterm{Minor action}}
                     \abilitytags \abilitytag{Sustain} (attuneable, free), \abilitytag{Subtle}, \atSwift
                     \rankline
                     Choose a creature you can see.
                     That creature becomes your quarry.
                     You gain a \plus1 \glossterm{accuracy} bonus against your quarry, and you gain a \plus5 bonus to checks you make to follow tracks left by your quarry.
-                \end{attuneability}
+                \end{sustainability}
             ",
             // TODO: this also affects allies
             modifiers: Some(vec![Modifier::Accuracy(1)]),
