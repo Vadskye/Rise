@@ -203,7 +203,7 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Mighty Maneuver} You deal \glossterm{extra damage} equal to twice your excess rank.
+                    \parhead{Mighty Maneuver} You take a \\minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your speed.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
