@@ -180,7 +180,7 @@ export const ebbAndFlow: CombatStyle = {
       // This is a debuff, which is much less reliable, so it's probably fine.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike}.
-        \\hit The target takes a -2 penalty to its Armor and Reflex defenses against that ally's attacks this round.
+        \\hit The target takes a -2 penalty to its Armor defense against that ally's attacks this round.
       `,
       rank: 1,
       roles: ['trip'],
@@ -194,7 +194,7 @@ export const ebbAndFlow: CombatStyle = {
       // EA here.
       effect: `
         Choose an \\glossterm{ally}, then make a melee \\glossterm{strike} that deals double damage.
-        \\hit The target takes a -4 penalty to its Armor and Reflex defenses against that ally's attacks this round.
+        \\hit The target takes a -4 penalty to its Armor defense against that ally's attacks this round.
       `,
       rank: 5,
       roles: ['trip'],
