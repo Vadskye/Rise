@@ -270,7 +270,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 In addition to regaining hit points, you can cause the target to remove a \glossterm{vital wound}.
-                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by three.
+                If a vital wound is removed in this way, you increase your \glossterm{fatigue level} by two.
             ",
             modifiers: None,
         },
