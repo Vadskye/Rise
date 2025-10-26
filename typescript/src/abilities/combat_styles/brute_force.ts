@@ -123,8 +123,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Steady Slam',
 
+      // Must be a single weapon to avoid the dual totokia nonsense
       effect: `
-        Make a melee \\glossterm{strike}.
+        Make a melee \\glossterm{strike} using a single weapon.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
         However, you cannot get a \\glossterm{critical hit}.
       `,
@@ -135,8 +136,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Steady Slam+',
 
+      // Must be a single weapon to avoid the dual totokia nonsense
       effect: `
-        Make a melee \\glossterm{strike} that deals double damage.
+        Make a melee \\glossterm{strike} that deals double damage using a single weapon.
         If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
       `,
       roles: ['burst'],
