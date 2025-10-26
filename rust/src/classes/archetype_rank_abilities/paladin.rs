@@ -420,7 +420,7 @@ pub fn zealous_warrior<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You are immune to being \stunned and \confused.
+                You are immune to being \dazzled and \blinded.
             ",
             modifiers: None,
         },
