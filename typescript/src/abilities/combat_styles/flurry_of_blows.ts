@@ -400,5 +400,38 @@ export const flurryOfBlows: CombatStyle = {
       rank: 5,
       roles: ['trip'],
     },
+
+    {
+      name: 'Cascading Crush',
+
+      effect: `
+        Make a \\glossterm{strike} that deals double \\glossterm{weapon damage}.
+        The strike cannot use a \\weapontag{Heavy} weapon.
+      `,
+      rank: 3,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Cascading Crush+',
+
+      effect: `
+        Make a \\glossterm{strike} that deals quadruple \\glossterm{weapon damage}.
+        The strike cannot use a \\weapontag{Heavy} weapon.
+      `,
+      rank: 5,
+      roles: ['burst'],
+    },
+
+    {
+      name: 'Avalanche of Blows',
+
+      effect: `
+        Make two \\glossterm{strike} that deal quadruple \\glossterm{weapon damage}.
+        The strikes cannot use a \\weapontag{Heavy} weapon.
+      `,
+      rank: 7,
+      roles: ['burst'],
+    },
   ],
 };
