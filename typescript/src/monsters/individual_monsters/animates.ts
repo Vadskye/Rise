@@ -285,7 +285,6 @@ function addGolems(grimoire: Grimoire) {
               If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats the $name as \\glossterm{invisible}.
             `,
           },
-          tags: ['Visual'],
         });
         creature.addManeuver('Whirlwind+', { weapon: 'fists' });
         creature.addManeuver('Building Storm', { usageTime: 'elite' })
