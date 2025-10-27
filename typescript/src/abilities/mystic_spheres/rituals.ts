@@ -85,7 +85,7 @@ export const rituals: RitualDefinition[] = [
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
       A creature can throw a vial of holy water as a standard action.
       When they do, they make an attack vs. Reflex against something within \shortrange.
-      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes \\damageranktwolow damage.
       Some creatures have specific effects when they are hit by holy water.
     `,
     rank: 1,
@@ -126,7 +126,7 @@ export const rituals: RitualDefinition[] = [
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
       A creature can throw a vial of unholy water as a standard action.
       When they do, they make an attack vs. Reflex against something within \shortrange.
-      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes \\damageranktwolow damage.
       Some creatures have specific effects when they are hit by holy water.
     `,
     rank: 1,
