@@ -83,25 +83,37 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
-      Holy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck undead or an evil planeforged.
-      `,
+      A creature can throw a vial of holy water as a standard action.
+      When they do, they make an attack vs. Reflex against something within \shortrange.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+      Some creatures have specific effects when they are hit by holy water.
+    `,
     rank: 1,
     roles: ['narrative'],
+    scaling: {
+      3: 'The damage increases to \\damagerankfourlow.',
+      5: 'The damage increases to \\damageranksixlow.',
+      7: 'The damage increases to \\damagerankeightlow.',
+    },
     spheres: ['Channel Divinity', 'Prayer'],
     type: 'Attune',
   },
 
   {
-    name: 'Persistent Bless Water',
+    name: 'Permanent Bless Water',
 
     usageTime: 'one hour',
     functionsLike: {
       exceptThat: `
-        the effect lasts for one year.
+        the effect lasts permanently.
       `,
       name: 'bless water',
     },
     rank: 3,
+    scaling: {
+      5: 'The damage increases to \\damagerankfourlow.',
+      7: 'The damage increases to \\damageranksixlow.',
+    },
     roles: ['narrative'],
     spheres: ['Channel Divinity', 'Prayer'],
   },
@@ -112,10 +124,18 @@ export const rituals: RitualDefinition[] = [
     usageTime: 'one minute',
     effect: `
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
-      Unholy water can be can be thrown as a splash weapon, dealing 1d8 points of damage to a struck good planeforged.
-      `,
+      A creature can throw a vial of unholy water as a standard action.
+      When they do, they make an attack vs. Reflex against something within \shortrange.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+      Some creatures have specific effects when they are hit by holy water.
+    `,
     rank: 1,
     roles: ['narrative'],
+    scaling: {
+      3: 'The damage increases to \\damagerankfourlow.',
+      5: 'The damage increases to \\damageranksixlow.',
+      7: 'The damage increases to \\damagerankeightlow.',
+    },
     type: 'Attune',
     spheres: ['Channel Divinity', 'Prayer'],
   },
@@ -132,6 +152,10 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 3,
     roles: ['narrative'],
+    scaling: {
+      5: 'The damage increases to \\damagerankfourlow.',
+      7: 'The damage increases to \\damageranksixlow.',
+    },
     spheres: ['Channel Divinity', 'Prayer'],
   },
 
