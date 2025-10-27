@@ -106,6 +106,66 @@ pub fn alchemical_items() -> Vec<Tool> {
 fn thrown_attacks() -> Vec<Tool> {
     let mut tools = vec![];
 
+    tools.push(Tool {
+        name: "Holy Water".to_string(),
+        rank: 0,
+        short_description: "Throw to deal $dr2l damage".to_string(),
+        description: r"
+            You can throw this item as a standard action.
+            When you do, make an attack vs. Reflex against something within \shortrange.
+            \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+            Some creatures have specific effects when they are hit by holy water.
+        "
+        .to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(
+                2,
+                "Throw to deal $dr4l damage",
+                r"
+                The damage increases to $dr4l.
+            ",
+            ),
+            ItemUpgrade::new(
+                4,
+                "Throw to deal $dr6l damage",
+                r"
+                The damage increases to $dr6l.
+            ",
+            ),
+        ],
+        ..alchemical_item()
+    });
+
+    tools.push(Tool {
+        name: "Unholy Water".to_string(),
+        rank: 0,
+        short_description: "Throw to deal $dr2l damage".to_string(),
+        description: r"
+            You can throw this item as a standard action.
+            When you do, make an attack vs. Reflex against something within \shortrange.
+            \hit If the target is a good \creaturetype{planeforged}, it takes $dr2l damage.
+            Some creatures have specific effects when they are hit by unholy water.
+        "
+        .to_string(),
+        upgrades: vec![
+            ItemUpgrade::new(
+                2,
+                "Throw to deal $dr4l damage",
+                r"
+                The damage increases to $dr4l.
+            ",
+            ),
+            ItemUpgrade::new(
+                4,
+                "Throw to deal $dr6l damage",
+                r"
+                The damage increases to $dr6l.
+            ",
+            ),
+        ],
+        ..alchemical_item()
+    });
+
     // +1dr for Short range, -1dr for single-target Reflex attack
     tools.push(Tool {
         name: "Alchemist's Fire".to_string(),
