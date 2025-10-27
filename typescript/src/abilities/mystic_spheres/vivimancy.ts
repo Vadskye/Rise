@@ -199,9 +199,9 @@ export const vivimancy: MysticSphere = {
       cost: 'Three \\glossterm{fatigue levels} from the target.',
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\medrange.
-        The target regains \\hprankseven and removes one of its \\glossterm{vital wounds}.
+        The target regains \\hprankeight and removes one of its \\glossterm{vital wounds}.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
     },
@@ -740,7 +740,7 @@ export const vivimancy: MysticSphere = {
         It can choose to stop this regeneration if it is conscious, but the regeneration happens automatically if it is unconscious due to vital wounds.
         For each vital wound removed in this way, it increases its \\glossterm{fatigue level} by three.
       `,
-      rank: 5,
+      rank: 6,
       roles: ['attune', 'exertion'],
       type: 'Attune (target)',
     },
