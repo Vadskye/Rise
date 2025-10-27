@@ -1051,5 +1051,41 @@ export const fabrication: MysticSphere = {
       scaling: 'damage',
       tags: ['Manifestation'],
     },
+
+    {
+      name: 'Garotte',
+
+      // +1dr for double defense, +1dr for short range
+      attack: {
+        hit: `
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Reflex and Brawn against one creature within \\shortrange.
+        `,
+      },
+      roles: ['burst'],
+      rank: 4,
+      scaling: 'damage',
+      tags: ['Manifestation'],
+    },
+
+    {
+      name: 'Mighty Garotte',
+
+      // +1dr for double defense, +1dr for short range
+      attack: {
+        hit: `
+          \\damageranknine, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Reflex and Brawn against one creature within \\shortrange.
+        `,
+      },
+      roles: ['burst'],
+      rank: 7,
+      scaling: 'damage',
+      tags: ['Manifestation'],
+    },
   ],
 };
