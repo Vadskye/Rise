@@ -160,6 +160,14 @@ function replaceGenericTerms(
   replace(/\bIf you get\b/g, 'If the $name gets');
   replace(/\bThe number of targets affected by this spell cannot be modified by abilites\./g, '');
   replace(/\bto your (\w+) defense\b/g, (_, defense) => `to its ${defense} defense`);
+  replace(/\bof you as\b/g, 'of the $name as');
+
+  // Jumping
+  replace(/\bYou jump\b/g, 'The $name jumps');
+  replace(/\bWhen you land\b/g, 'When it lands');
+  replace(/\bof your leap\b/g, 'of its leap');
+  replace(/\byour landing point\b/g, 'its landing point');
+  replace(/, you emit\b/g, ', it emits');
 
   // This whole thing is probably just for clairvoyance?
   replace(/\bYou do not need\b/g, 'The $name does not need');
