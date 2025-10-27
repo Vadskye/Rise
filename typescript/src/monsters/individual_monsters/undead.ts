@@ -4,39 +4,6 @@ import { getWeaponMultByRank } from '@src/abilities/combat_styles';
 import { BARRIER_COOLDOWN, CONDITION_CRIT } from '@src/abilities/constants';
 
 export function addUndead(grimoire: Grimoire) {
-  grimoire.addMonster('Allip', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral evil',
-      base_class: 'skirmisher',
-      elite: false,
-      creature_type: 'undead',
-      level: 4,
-      size: 'medium',
-    });
-    creature.setProperties({
-      has_art: true,
-    });
-    creature.setKnowledgeResults({
-      normal: `
-        Allips are incorporeal ghost-like creatures.
-        They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
-      `,
-      hard: `
-        An allip is the spectral remains of someone driven to suicide by madness.
-        It craves only revenge and unrelentingly pursues those that it believes tormented it in life.
-        This belief may or may not have any basis in reality.
-      `,
-    });
-    creature.setTrainedSkills(['awareness', 'stealth']);
-    // TODO: should allips have any defined Strength attribute?
-    creature.setBaseAttributes([-9, 3, 0, -2, -2, 6]);
-    creature.addCustomMovementSpeed('Fly (average, 5 ft. limit)');
-    creature.addCustomSense('Darkvision (60 ft.)');
-    creature.addCustomSense('Lifesense (120 ft.)');
-    creature.addTrait('incorporeal');
-    creature.addSpell('Inflict Wound');
-  });
-
   grimoire.addMonster('Corpsetree', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral evil',
@@ -110,56 +77,8 @@ export function addUndead(grimoire: Grimoire) {
     creature.addManeuver('Mighty Stomp', { usageTime: 'elite' });
   });
 
-  grimoire.addMonster('Macabre Mourner', (creature: Creature) => {
-    creature.setRequiredProperties({
-      alignment: 'neutral evil',
-      base_class: 'skirmisher',
-      elite: true,
-      creature_type: 'undead',
-      level: 5,
-      size: 'large',
-    });
-    // TODO: awkward wording
-    creature.setKnowledgeResults({
-      normal: `
-        A macabre mourner is a Large ghost.
-        When a great many people mourn at once, and the creature they mourn was not buried properly, the strength of their feeling can trap the soul of the creature they mourn.
-      `,
-    });
-    creature.setTrainedSkills(['awareness', 'intimidate']);
-    creature.addTrait('incorporeal');
-    creature.addCustomMovementSpeed('Fly (average, 5 ft. limit)');
-    creature.addVulnerability('Auditory');
-    creature.addVulnerability('Emotion');
-    creature.setBaseAttributes([0, 0, -2, -4, 2, 4]);
-    creature.addCustomSpell({
-      name: 'Mournful Howl',
-      attack: {
-        hit: '\\damagerankone.',
-        targeting: `
-          Make an attack vs. Mental against all creatures within a \\medarea radius from you.
-          You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} last round.
-        `,
-      },
-      tags: ['Auditory'],
-      usageTime: 'elite',
-    });
-    creature.addCustomSpell({
-      name: 'Toll the Dead',
-      attack: {
-        crit: CONDITION_CRIT,
-        hit: `
-          As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.
-        `,
-        targeting: `
-          Make an attack vs. Mental against one creature within \\medrange.
-          You gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours.
-        `,
-      },
-    });
-  });
-
   addFleshwrought(grimoire);
+  addGhosts(grimoire);
   addGhouls(grimoire);
   addHalfsouls(grimoire);
   addLiches(grimoire);
@@ -232,6 +151,146 @@ function addFleshwrought(grimoire: Grimoire) {
           creature.addManeuver('Spinning Steel', { weapon: 'claws' });
           creature.addManeuver('Strip the Flesh', { weapon: 'claws' });
           creature.addManeuver('Rend the Hide', { weapon: 'claws' });
+        },
+      ],
+    ],
+  );
+}
+
+function addGhosts(grimoire: Grimoire) {
+  grimoire.addMonsterGroup(
+    {
+      name: 'Ghosts',
+      knowledge: {
+        normal: `
+          Ghosts are the souls of deceased creatures that linger after death instead of proceeding to their proper afterlife.
+        `,
+        hard: `
+          Some ghosts can be appeased peacefully if the reason they refused to pass on is addressed.
+          Others can only be banished by force.
+          Although ghosts do not fear cold, they are strongly affected by fire.
+        `,
+      },
+      sharedInitializer: (creature: Creature) => {
+        creature.addTrait('ghost');
+        creature.addCustomSense('Darkvision (90 ft.)');
+        creature.addCustomMovementSpeed('Fly (average, 30 ft. limit)');
+      },
+    },
+    [
+      [
+        'Allip',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'undead',
+            level: 4,
+            size: 'medium',
+          });
+          creature.setProperties({
+            has_art: true,
+          });
+          creature.setKnowledgeResults({
+            normal: `
+              Allips are incorporeal ghost-like creatures.
+              They cannot speak intelligibly, but they are known for their propensity for babbling incoherently as they attack.
+            `,
+            hard: `
+              An allip is the spectral remains of someone driven to suicide by madness.
+              It craves only revenge and unrelentingly pursues those that it believes tormented it in life.
+              This belief may or may not have any basis in reality.
+            `,
+          });
+          creature.setTrainedSkills(['awareness', 'stealth']);
+          // TODO: should allips have any defined Strength attribute?
+          creature.setBaseAttributes([-9, 3, 0, -2, -2, 6]);
+          creature.addCustomSense('Darkvision (60 ft.)');
+          creature.addCustomSense('Lifesense (120 ft.)');
+          creature.addSpell('Inflict Wound');
+        },
+      ],
+      [
+        'Macabre Mourner',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: true,
+            creature_type: 'undead',
+            level: 5,
+            size: 'large',
+          });
+          // TODO: awkward wording
+          creature.setKnowledgeResults({
+            normal: `
+              A macabre mourner is a Large ghost.
+              When a great many people mourn at once, and the creature they mourn was not buried properly, the strength of their feeling can trap the soul of the creature they mourn.
+            `,
+          });
+          creature.setTrainedSkills(['awareness', 'intimidate']);
+          creature.addVulnerability('Auditory');
+          creature.addVulnerability('Emotion');
+          creature.setBaseAttributes([0, 0, -2, -4, 2, 4]);
+          creature.addCustomSpell({
+            name: 'Mournful Howl',
+            attack: {
+              hit: '\\damagerankone.',
+              targeting: `
+                Make an attack vs. Mental against all creatures within a \\medarea radius from you.
+                You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} last round.
+              `,
+            },
+            tags: ['Auditory'],
+            usageTime: 'elite',
+          });
+          creature.addCustomSpell({
+            name: 'Toll the Dead',
+            attack: {
+              crit: CONDITION_CRIT,
+              hit: `
+                As a \\glossterm{condition}, the target takes \\damagerankone whenever it deals damage.
+              `,
+              targeting: `
+                Make an attack vs. Mental against one creature within \\medrange.
+                You gain a \\plus4 accuracy bonus if the target has killed a living creature within the last 24 hours.
+              `,
+            },
+          });
+        },
+      ],
+      [
+        'Tetherghast',
+        (creature: Creature) => {
+          creature.setRequiredProperties({
+            alignment: 'neutral evil',
+            base_class: 'skirmisher',
+            elite: false,
+            creature_type: 'undead',
+            level: 14,
+            size: 'medium',
+          });
+          creature.setKnowledgeResults({
+            normal: `
+              A tetherghast is a ghost formed by a creature who died while bound and trying desperately to escape.
+            `,
+          });
+          creature.setBaseAttributes([0, 8, -2, -4, 2, 6]);
+          creature.addCustomSpell({
+            name: 'Entangling Cords',
+            attack: {
+              hit: `
+                \\damagerankfour, and the target is \\glossterm{briefly} \\slowed.
+              `,
+              targeting: `
+                Make an attack vs. Brawn against one creature within \\medrange.
+              `,
+            },
+            rank: 5,
+            tags: ['Manifestation'],
+          }),
+          creature.addSpell('Garotte')
         },
       ],
     ],

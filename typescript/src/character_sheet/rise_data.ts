@@ -188,6 +188,7 @@ const RISE_TRAITS_LIST = [
   'beast',
   'construct',
   'floating',
+  'ghost',
   'humanoid',
   'incorporeal',
   'indwelt',

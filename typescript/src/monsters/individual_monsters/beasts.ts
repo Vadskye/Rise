@@ -472,6 +472,49 @@ export function addBeasts(grimoire: Grimoire) {
     });
   });
 
+  grimoire.addMonster('Quadrilla', (creature: Creature) => {
+    creature.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      elite: true,
+      creature_type: 'mortal',
+      level: 9,
+      size: 'large',
+    });
+    creature.setKnowledgeResults({
+      normal: `
+        A quadrilla is a mighty ape with four arms.
+        It leaps upon its foes and bashes them to death in a fury.
+      `,
+    });
+    creature.setTrainedSkills(['jump', "stealth"]);
+    creature.setBaseAttributes([8, 6, 1, -6, 2, -2]);
+    creature.addManeuver('Leap Slam');
+    creature.addWeaponMult('fists');
+    // We don't currently support "functionsLike" maneuvers
+    creature.addCustomManeuver({
+      name: 'Strangle',
+      attack: {
+        hit: `
+          \\damagerankthree, and the target is \\grappled by the $name.
+        `,
+        targeting: `
+          Make a \\glossterm{brawling attack} with a free hand against the Brawn and Reflex defenses of one creature you \\glossterm{touch}.
+        `,
+      },
+    });
+    creature.addWeaponMult('fists', { displayName: "More Fists", usageTime: 'elite' });
+    creature.addManeuver('Mighty Roar', { usageTime: 'elite' });
+    creature.addManeuver('Fearsome Roar', { usageTime: 'elite' });
+    creature.addPassiveAbility({
+      name: "Four Arms",
+      effect: `
+        The $name has four arms.
+        When it initiates a grapple while not already grappling a creature, it automatically controls the grapple.
+      `,
+    });
+  });
+
   addAnimals(grimoire);
   addDireAnimals(grimoire);
   addIchorTainted(grimoire);
