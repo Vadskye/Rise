@@ -246,12 +246,13 @@ export class Creature implements CreaturePropertyMap {
 
     for (const trait of this.getStandardTraits()) {
       const traitToKnowledgeMap: Record<RiseTrait, RiseKnowledgeSkill | null> = {
-        amphibious: null,
         amorphous: null,
+        amphibious: null,
         animal: 'knowledge_nature',
         beast: 'knowledge_nature',
         construct: 'knowledge_arcana',
         floating: null,
+        ghost: 'knowledge_souls',
         humanoid: 'knowledge_local',
         incorporeal: null,
         indwelt: 'knowledge_souls',
@@ -728,6 +729,10 @@ export class Creature implements CreaturePropertyMap {
       this.addTrait('mindless');
       this.addTrait('nonliving');
       this.addTrait('soulless');
+    } else if (traitName === 'ghost') {
+      this.addTrait('incorporeal');
+      modifier.impervious = 'Cold, Earth';
+      modifier.vulnerable = 'Fire';
     } else if (traitName === 'incorporeal') {
       this.addTrait('floating');
       this.addTrait('intangible');
