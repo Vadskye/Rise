@@ -550,14 +550,14 @@ export const polymorph: MysticSphere = {
     {
       name: 'Bloody Fleshspike',
 
-      // Normal would be dr5. Drop by -1dr for the injury effect.
+      // Normal would be dr5. Drop by -2dr for the injury effect.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour.
+          \\damagerankthree.
         `,
         injury: `
-          The target takes \\damagerankfour during your next action.
+          The target takes \\damagerankthree during your next action.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
