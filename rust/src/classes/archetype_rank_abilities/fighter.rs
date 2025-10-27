@@ -448,16 +448,6 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                 You cannot sustain multiple battle tactics simultaneously, and any existing \textit{battle tactics} end as soon as you activate another battle tactic.
 
                 {
-                    \begin{sustainability}{Brace Yourselves}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
-                        \rankline
-                        Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
-
-                        \rankline
-                        \rank{4} The bonus increases to \plus3.
-                        \rank{7} The bonus increases to \plus4.
-                    \end{sustainability}
-
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
@@ -510,6 +500,16 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} The extra distance increases to 10 feet.
                     \end{sustainability}
 
+                    \begin{sustainability}{Hunker Down}{\glossterm{Minor action}}
+                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \rankline
+                        Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
+
+                        \rankline
+                        \rank{4} The bonus increases to \plus3.
+                        \rank{7} The bonus increases to \plus4.
+                    \end{sustainability}
+
                     \begin{sustainability}{Keep Moving}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
@@ -547,7 +547,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
                         Choose two targets.
-                        Each target that ends the \glossterm{movement phase} without changing its location gains a \plus1 bonus to its Armor defense until its location changes.
+                        Each target that ended the \glossterm{movement phase} without changing its location this round gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
                         \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Brawn defense.
