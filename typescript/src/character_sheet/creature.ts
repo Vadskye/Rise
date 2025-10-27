@@ -557,20 +557,17 @@ export class Creature implements CreaturePropertyMap {
 
   addCustomManeuver(maneuver: CustomMonsterAbility) {
     this.addActiveAbility({
+      rank: this.calculateRank(),
       ...maneuver,
       kind: 'maneuver',
       isMagical: maneuver.isMagical === undefined ? false : maneuver.isMagical,
-      rank: 1,
       roles: [],
     });
   }
 
-  // We don't care what the rank of a custom spell is, but we create one for it anyway to
-  // avoid type confusion. Since the spell won't have scaling, the rank should never
-  // matter.
   addCustomSpell(spell: CustomMonsterAbility) {
     this.addActiveAbility({
-      rank: 1,
+      rank: this.calculateRank(),
       ...spell,
       kind: 'spell',
       isMagical: spell.isMagical === undefined ? true : spell.isMagical,
