@@ -877,7 +877,7 @@ function addNecromancers(grimoire: Grimoire) {
         (creature: Creature) => {
           creature.setRequiredProperties({
             alignment: 'lawful neutral',
-            base_class: 'mystic',
+            base_class: 'leader',
             elite: true,
             creature_type: 'mortal',
             level: 18,
@@ -897,6 +897,7 @@ function addNecromancers(grimoire: Grimoire) {
             'persuasion',
           ]);
           creature.setBaseAttributes([0, 4, 1, 5, 6, 10]);
+          creature.addRituals(['Channel Divinity', 'Vivimancy']);
 
           // Channel Divinity spells are elite actions
           creature.addSpell('Mighty Retributive Judgment', { usageTime: 'elite' });
