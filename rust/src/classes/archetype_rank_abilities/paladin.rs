@@ -271,7 +271,7 @@ pub fn stalwart_guardian<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You can also remove a \glossterm{vital wound} from the target.
                 If you do, you increase your \glossterm{fatigue level} by two.
-                Otherwise, you are \glossterm{briefly} \empowered.
+                Otherwise, you are \glossterm{briefly} \focused.
             ",
             modifiers: None,
         },
