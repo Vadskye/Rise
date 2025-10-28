@@ -471,7 +471,7 @@ export const vivimancy: MysticSphere = {
 
           Make an attack vs. Reflex against everything within a \\largearea cone from you.
           Whether the attack hits or misses, you lose \\glossterm{hit points} equal to your \\glossterm{power}.
-          Alternately, you can increase this hit point loss to be equal to your maximum hit points.
+          Alternately, you can increase this hit point loss to be equal to half your maximum hit points.
           If you do, you gain a +5 accuracy bonus with the attack.
         `,
       },
