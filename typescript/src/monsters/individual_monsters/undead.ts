@@ -697,7 +697,7 @@ function addVampires(grimoire: Grimoire) {
       \\itemhead{Blood Dependence} For every 24 hours that a vampire remains awake without ingesting at least one pint of blood from living creatures, its maximum hit points are reduced by 20.
         If its maximum hit points are reduced to 0 in this way, it dies and withers away into a pile of ash.
         This penalty is removed as soon as the vampire drinks a pint of blood.
-        A vampire can can enter a torpor to survive without blood.
+        A vampire can enter a torpor to survive without blood.
         While in a torpor, it is unconscious until it smells blood nearby.
         It can survive while in torpor for a number of consecutive centuries equal to its \\glossterm{rank} before it withers away to dust.
       \\itemhead{Consecrated Ground} A vampire in consecrated ground takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
