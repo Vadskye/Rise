@@ -145,15 +145,18 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Mighty Crushing Gravity',
 
-      functionsLike: {
-        name: 'crushing gravity',
-        exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled.',
+      attack: {
+        hit: `
+          \\damageranksix, and any \\glossterm{extra damage} is doubled.
+        `,
+        targeting: `
+          Make an attack vs. Brawn against a \\glossterm{grounded} creature or object within \\medrange.
+          You gain a +1 accuracy bonus for each weight category by which the target is heavier than Medium.
+        `,
       },
       rank: 6,
       roles: ['burst'],
       scaling: 'damage',
-      tags: [],
     },
 
     {
