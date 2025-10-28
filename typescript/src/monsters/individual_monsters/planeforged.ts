@@ -13,7 +13,7 @@ export function addPlaneforged(grimoire: Grimoire) {
   grimoire.addMonster('Fusion Elemental', (creature: Creature) => {
     creature.setRequiredProperties({
       alignment: 'neutral',
-      base_class: 'mystic',
+      base_class: 'leader',
       elite: true,
       creature_type: 'planeforged',
       level: 16,
