@@ -204,6 +204,20 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       scaling: 'damage',
     },
     {
+      name: 'Mighty Windsnipe',
+
+      attack: {
+        hit: `
+          \\damagerankfive.
+        `,
+        targeting: 'Make an attack vs. Armor against something within \\distrange.',
+      },
+      // narrative: '',
+      rank: 7,
+      roles: ['snipe'],
+      scaling: 'damage',
+    },
+    {
       name: 'Windseal',
 
       attack: {
@@ -223,7 +237,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     // EA, which is R6. Adding the grounded requirement means this can't be chained
     // indefinitely.
     {
-      name: 'Skyward',
+      name: 'Skyseal',
 
       attack: {
         hit: `
@@ -494,10 +508,16 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Massive Hurricane',
 
-      functionsLike: {
-        name: 'hurricane',
-        exceptThat:
-          'the damage increases to \\damagerankfive, and it affects all \\glossterm{enemies} in a \\largearea radius from you.',
+      attack: {
+        hit: `
+          \\damagerankfive.
+          In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
+          Its final position should be the same distance from you as its starting position.
+        `,
+        missGlance: true,
+        targeting: `
+          Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
+        `,
       },
       // narrative: '',
       rank: 6,

@@ -103,7 +103,7 @@ pub fn dragon<'a>() -> Vec<RankAbility<'a>> {
                 This increases your \glossterm{base speed} to 40 feet.
                 In addition, the attribute modifiers to Dexterity and Strength increase to \minus2 and \plus3 respectively, and the power bonus increases to \plus2.
                 You also gain a tail slam \glossterm{natural weapon}.
-                It deals 1d10 damage and has the \abilitytag{Impact} weapon tag (see \pcref{Weapon Tags}).
+                It deals 1d8 damage and has the \abilitytag{Impact} weapon tag (see \pcref{Weapon Tags}).
             ",
             modifiers: Some(vec![
                 Modifier::BaseSpeed(10),
