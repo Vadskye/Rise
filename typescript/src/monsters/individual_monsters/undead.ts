@@ -835,9 +835,9 @@ function addVampires(grimoire: Grimoire) {
               If the target is \\glossterm{injured} or its \\glossterm{character rank} is 5 or lower, it is \\confused as a \\glossterm{condition}.
             `,
               crit: `
-              If the target was already confused from a previous use of this ability, the $name may make it permanently \\dominated.
-              The $name can dominate any number of rank 5 or lower creatures with this ability, but only one creature at a time with a rank higher than that.
-            `,
+                If the target was already confused from a previous use of this ability, or if they are a vampire spawn sired by the $name, the $name may make it permanently \\dominated.
+                The $name can dominate any number of rank 5 or lower creatures with this ability, but only one creature at a time with a rank higher than that.
+              `,
               targeting: `
               Make an attack vs. Mental against all humanoid \\glossterm{enemies} and undead enemies within a \\medarea \\glossterm{cone} from you.
             `,
