@@ -13,7 +13,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytags The tag of your \ability{essence infusion}.
                     \rankline
                     Make an attack against something within \medrange.
-                    You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with this attack (see \\pcref{Power}).
+                    You use the higher of your \glossterm{magical power} and your \glossterm{mundane power} to determine your damage with this attack (see \pcref{Power}).
                     The defense against this attack depends on your \textit{essence infusion}.
                     \begin{raggeditemize}
                         \item Armor defense: \atWater.
