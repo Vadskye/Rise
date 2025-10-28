@@ -790,7 +790,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damagerankfour.`,
         missGlance: true,
         targeting: `
-          You teleport into an unoccupied destination on a stable surface within \\distrange.
+          You teleport into an unoccupied destination on a stable surface within \\longrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
         `,
       },
