@@ -470,7 +470,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Follow My Lead}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}                        
+                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
                         One adjacent \glossterm{ally} gains a \plus1 accuracy bonus against any creature that you hit with a \glossterm{strike} during the current round.
 
