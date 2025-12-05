@@ -140,11 +140,11 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
     vec![
         RankAbility {
             complexity: 2,
-            name: "Know Your Enemy",
+            name: "Warden's Wisdom",
             is_magical: false,
             rank: 1,
             description: r"
-                You gain a \plus1 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
+                You gain two additional \glossterm{insight points}.
                 In addition, you can spend insight points to gain one additional Knowledge \glossterm{trained skill} per insight point.
             ",
             modifiers: Some(vec![Modifier::AllDefenses(1)]),
@@ -163,25 +163,24 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
         },
         RankAbility {
             complexity: 0,
-            name: "Know Your Enemy+",
+            name: "Know Your Enemy",
             is_magical: false,
             rank: 4,
             description: r"
-                You also gain a \plus1 \glossterm{accuracy} bonus against creatures associated with Knowledge skills that you are trained with.
+                You gain a \plus1 \glossterm{accuracy} bonus against creatures associated with Knowledge skills that you are trained with.
             ",
             modifiers: Some(vec![Modifier::Accuracy(1)]),
         },
         RankAbility {
             complexity: 0,
-            name: "Know Your Enemy++",
+            name: "Know Your Enemy+",
             is_magical: false,
             rank: 7,
             description: r"
-                The defense bonus increases to \plus2.
+                You gain a \plus2 bonus to all defenses against creatures associated with Knowledge skills that you are trained with.
             ",
-            modifiers: Some(vec![Modifier::AllDefenses(1)]),
+            modifiers: Some(vec![Modifier::AllDefenses(2)]),
         },
-        // TODO: buff to be more combat relevant, or give an extra ability?
         RankAbility {
             complexity: 1,
             name: "Experienced Guide",
@@ -189,17 +188,19 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You and your \glossterm{allies} who can see or hear you can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-                In addition, any group you are part of can travel at full speed through difficult terrain during overland travel.
+                This also applies during overland travel.
+                In addition, each ally who can see or hear you can use half of your skill modifier in place of its own for the Balance, Climb, Survival, and Swim skills.
             ",
             modifiers: None,
         },
         RankAbility {
             complexity: 1,
-            name: "Experienced Guide+",
+            name: "Warden's Warning",
             is_magical: false,
-            rank: 5,
+            rank: 6,
             description: r"
-                You and your \glossterm{allies} who can see or hear you can ignore all \glossterm{difficult terrain}, regardless of its source.
+                You and your \glossterm{allies} who can see or hear you take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack Armor or Reflex defense.
+                This does not protect creatures from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
             ",
             modifiers: None,
         },
@@ -207,7 +208,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             complexity: 0,
             name: "Steadfast Warden",
             is_magical: false,
-            rank: 6,
+            rank: 5,
             description: r"
                 You gain a \plus1 bonus to your Constitution.
             ",
@@ -222,7 +223,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Banestrike}{Standard action}
                     \rankline
                     Make a \glossterm{strike}.
-                    If the target is \vulnerable to the strike, or if the target is subject to your \ability{know your enemy} ability and is \glossterm{injured}, the strike deals double damage.
+                    If the target is \vulnerable to the strike or is \glossterm{injured}, the strike deals double damage.
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.
