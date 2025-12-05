@@ -574,8 +574,43 @@ export const rituals: RitualDefinition[] = [
     `,
     tags: [],
     materialCost: true,
+    sphereEffects: {
+      Aquamancy: `
+        The astral beacon must be within a Huge or larger body of water.
+        If the water is moved or destroyed, the astral beacon is destroyed.
+      `,
+      Pyromancy: `
+        The astral beacon must be anchored to a Medium or larger active fire.
+        While the fire is extinguished, the astral beacon is inactive, but it becomes active again if the fire is rekindled.
+      `,
+      Terramancy: `
+        The astral beacon must be anchored to a Large or larger boulder, statue, or other structure made of stone that touches the ground within the area.
+        If the stone is moved or broken, the astral beacon is destroyed.
+      `,
+      Verdamancy: `
+        The astral beacon must be anchored to a Large or larger living tree with its trunk within the area.
+        If the tree dies, the astral beacon is destroyed.
+      `,
+    },
     usageTime: '24 hours',
-    spheres: ['Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Thaumaturgy'],
+    spheres: [
+      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+    ],
+  },
+  {
+    name: 'Forge Permanent Astral Beacon',
+    rank: 5,
+    roles: ['narrative'],
+    functionsLike: {
+      name: "forge astral beacon",
+      exceptThat: "the astral beacon is permanent.",
+    },
+    tags: [],
+    materialCost: true,
+    usageTime: '24 hours',
+    spheres: [
+      'Aquamancy', 'Astromancy', 'Channel Divinity', 'Fabrication', 'Prayer', 'Terramancy', 'Thaumaturgy', 'Verdamancy'
+    ],
   },
   {
     name: 'Guided Translocation',
