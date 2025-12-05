@@ -1353,24 +1353,16 @@ impl Class {
         let mut level_rows = Vec::new();
         for level in 1..22 {
             let rank = (level + 2) / 3;
-            let hp_multiplier = match rank {
-                1 => 1,
-                2 => 2,
-                3 => 3,
-                4 => 4,
-                5 => 6,
-                6 => 8,
-                7 => 10,
-                _ => panic!("impossible"),
-            };
+            let durability_bonus = level - rank;
+            let misc_bonus = level / 2;
             level_rows.push(format!(
                 "
-                    {level} & {rank} & \\plus{durability_bonus} & {hp_multiplier} & {special} \\\\
+                    {level} & {rank} & \\plus{durability_bonus} & {misc_bonus} & {special} \\\\
                 ",
                 level = level,
                 rank = rank,
-                hp_multiplier = format!("\\mult{}", hp_multiplier),
-                durability_bonus = level - rank,
+                misc_bonus = latex_formatting::modifier(misc_bonus),
+                durability_bonus = durability_bonus,
                 special = universal_character_progression_at_level(level),
             ))
         }
