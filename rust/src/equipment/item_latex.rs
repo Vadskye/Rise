@@ -150,7 +150,7 @@ pub fn item_latex(item: StandardItem, crafting_text: &str) -> String {
         name = item.name.clone(),
         // attuneability uses {} for the last argument, but activeability uses [] for the last
         // argument.
-        rank_and_price = rank_and_price_text(item.rank),
+        rank_and_price = rank_and_price_text(item.rank, &item.rarity),
         crafting = crafting_text,
         tags = tags.join(", "),
         description =
@@ -208,7 +208,7 @@ fn latex_upgrades_section(item: StandardItem) -> String {
                 name = upgraded_item.name,
                 // Note that `\upgraderank` provides "Rank" text, so we don't prefix
                 // this with "Rank".
-                rank_and_price = rank_and_price_text(upgraded_item.rank),
+                rank_and_price = rank_and_price_text(upgraded_item.rank, &upgraded_item.rarity),
                 description = replace_attack_terms(
                     &upgraded_item.description,
                     &item_creature(upgraded_item.rank),

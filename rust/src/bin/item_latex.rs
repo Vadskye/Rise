@@ -1,5 +1,6 @@
 use clap::Parser;
 use rise::equipment;
+use rise::equipment::ItemRarity;
 
 #[derive(Parser, Debug)]
 #[command(about = "Generate item tables and descriptions")]
@@ -32,6 +33,7 @@ fn main() {
             "magic weapons" => equipment::magic_weapons_table(),
             "consumable tools" => equipment::consumable_tools_table(),
             "permanent tools" => equipment::permanent_tools_table(),
+            "relics" => equipment::relics_table(),
             _ => panic!("Unrecognized category '{}'", args.category),
         }
     };
@@ -41,30 +43,31 @@ fn main() {
 
 fn latexify_items(category: String, _descriptions: bool) -> Vec<String> {
     match category.to_lowercase().as_str() {
-        "apparel" => equipment::all_apparel()
+        "apparel" => equipment::all_apparel(Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
-        "implements" => equipment::all_implements()
+        "implements" => equipment::all_implements(Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
-        "magic armor" => equipment::all_magic_armor()
+        "magic armor" => equipment::all_magic_armor(Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
-        "magic weapons" => equipment::all_magic_weapons()
+        "magic weapons" => equipment::all_magic_weapons(Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
-        "consumable tools" => equipment::all_tools(Some(true))
+        "consumable tools" => equipment::all_tools(Some(true), Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
-        "permanent tools" => equipment::all_tools(Some(false))
+        "permanent tools" => equipment::all_tools(Some(false), Some(ItemRarity::Common))
             .into_iter()
             .map(|x| x.to_latex())
             .collect(),
+        "relics" => equipment::all_relic_descriptions(),
         _ => panic!("Unrecognized category '{}'", category),
     }
 }

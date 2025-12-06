@@ -1,3 +1,4 @@
+use crate::equipment::ItemRarity;
 use num_format::{Locale, ToFormattedString};
 
 pub fn item_price(rank: i32) -> String {
@@ -17,9 +18,19 @@ pub fn item_price(rank: i32) -> String {
     value.to_formatted_string(&Locale::en)
 }
 
-pub fn rank_and_price_text(rank: i32) -> String {
-    if rank < 0 {
-        return format!("\\tdash ({price} sp)", price = item_price(rank));
+pub fn rank_and_price_text(rank: i32, rarity: &ItemRarity) -> String {
+    match rarity {
+        ItemRarity::Common => {
+            if rank < 0 {
+                return format!("\\tdash ({price} sp)", price = item_price(rank));
+            }
+            format!("{rank} ({price} gp)", rank = rank, price = item_price(rank))
+        }
+        ItemRarity::Relic => {
+            if rank < 0 {
+                return format!("\\tdash");
+            }
+            format!("{rank}")
+        }
     }
-    format!("{rank} ({price} gp)", rank = rank, price = item_price(rank))
 }

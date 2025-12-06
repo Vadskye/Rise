@@ -106,7 +106,7 @@ impl ToolCategory {
     }
 }
 
-pub fn all_tools(consumable: Option<bool>) -> Vec<Tool> {
+pub fn all_tools(consumable: Option<bool>, rarity_filter: Option<ItemRarity>) -> Vec<Tool> {
     let mut tools = vec![];
 
     tools.append(&mut alchemical_items::alchemical_items());
@@ -122,6 +122,10 @@ pub fn all_tools(consumable: Option<bool>) -> Vec<Tool> {
             .into_iter()
             .filter(|t| t.category.is_consumable() == c)
             .collect();
+    }
+
+    if let Some(rarity) = rarity_filter {
+        tools = tools.into_iter().filter(|t| t.rarity == rarity).collect();
     }
 
     tools.sort_by(|a, b| a.name.cmp(&b.name));
@@ -143,7 +147,7 @@ impl ToTableRows for Tool {
 pub fn consumable_tools_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<TableRow> = all_tools(Some(true))
+    let mut rows: Vec<TableRow> = all_tools(Some(true), Some(ItemRarity::Common))
         .iter()
         .map(|t| t.to_table_rows())
         .flatten()
@@ -156,7 +160,7 @@ pub fn consumable_tools_table() -> String {
 pub fn permanent_tools_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<TableRow> = all_tools(Some(false))
+    let mut rows: Vec<TableRow> = all_tools(Some(false), Some(ItemRarity::Common))
         .iter()
         .map(|t| t.to_table_rows())
         .flatten()

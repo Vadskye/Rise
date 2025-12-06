@@ -59,12 +59,23 @@ impl MagicWeapon {
     }
 }
 
-pub fn all_magic_weapons() -> Vec<MagicWeapon> {
+use crate::equipment::ItemRarity;
+
+pub fn all_magic_weapons(rarity_filter: Option<ItemRarity>) -> Vec<MagicWeapon> {
     let mut weapons = vec![];
 
     weapons.append(&mut melee::melee());
     weapons.append(&mut ranged::ranged());
     weapons.append(&mut unrestricted::unrestricted());
+
+    let mut weapons = if let Some(rarity) = rarity_filter {
+        weapons
+            .into_iter()
+            .filter(|w| w.item().rarity == rarity)
+            .collect()
+    } else {
+        weapons
+    };
 
     weapons.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
@@ -80,7 +91,7 @@ impl ToTableRows for MagicWeapon {
 pub fn magic_weapons_table() -> String {
     let with_category = false;
 
-    let mut rows: Vec<TableRow> = all_magic_weapons()
+    let mut rows: Vec<TableRow> = all_magic_weapons(Some(ItemRarity::Common))
         .iter()
         .map(|w| w.to_table_rows())
         .flatten()

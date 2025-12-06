@@ -1,5 +1,6 @@
-#[derive(Clone, Debug, Default)]
+#[derive(Clone, Debug, Default, PartialEq, Eq)]
 pub enum ItemRarity {
-    #[default] Common,
+    #[default]
+    Common,
     Relic,
 }
