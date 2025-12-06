@@ -37,7 +37,7 @@ fn amulets() -> Vec<Apparel> {
             ItemUpgrade::new(7, r"Can permanently control undead", r"
                 The effect is also permanent if the creature's character rank is less than yours, even if it is not simple-minded.
             "),
-        ],      
+        ],
         ..Apparel::default()
     }));
 

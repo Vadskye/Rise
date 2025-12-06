@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::Apparel::Boots;
-use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
+use crate::equipment::{Apparel, ItemRarity, ItemUpgrade, StandardItem};
 
 pub fn legs() -> Vec<Apparel> {
     let mut apparel = vec![];
@@ -118,6 +118,9 @@ fn boots() -> Vec<Apparel> {
             ItemUpgrade::new(4, "Can teleport next to distant bonded ally", r"
                 The teleportation range increases to \longrange.
             "),
+            ItemUpgrade::new(6, "Can teleport next to distant bonded ally", r"
+                The teleportation does not require \glossterm{line of sight} or \glossterm{line of effect}.
+            "),
         ],
         ..Apparel::default()
     }));
@@ -205,6 +208,7 @@ fn boots() -> Vec<Apparel> {
             If this would place you within a solid object or otherwise impossible space, the boots will shunt you up to 1,000 feet in any direction to the closest available space.
             If there is no available space within 1,000 feet of your intended destination, the effect fails and you take 4d6 damage.
         "),
+        rarity: ItemRarity::Relic,
         ..Apparel::default()
     }));
 
@@ -262,7 +266,7 @@ fn boots() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can move when you recover"),
         description: String::from(r"
-            When you use the \ability<recover> ability, you can also make a \glossterm{movement} immediately afterward.
+            When you use the \ability<recover> ability, you can also use a \glossterm{move action} immediately afterward.
         "),
         upgrades: vec![
             ItemUpgrade::new(4, "Can sprint when you recover", r"

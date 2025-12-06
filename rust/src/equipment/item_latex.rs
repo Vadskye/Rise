@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::{replace_attack_terms, AbilityTag, AttuneType};
 use crate::core_mechanics::Attribute;
-use crate::equipment::{item_creature, rank_and_price_text, ItemUpgrade};
+use crate::equipment::{item_creature, rank_and_price_text, ItemRarity, ItemUpgrade};
 use crate::latex_formatting::latexify;
 use regex::Regex;
 
@@ -12,6 +12,7 @@ pub struct StandardItem {
     pub magical: bool,
     pub name: String,
     pub rank: i32,
+    pub rarity: ItemRarity,
     pub upgrades: Vec<ItemUpgrade>,
     pub tags: Vec<AbilityTag>,
 }
@@ -36,6 +37,7 @@ impl StandardItem {
                 "The bonus increases to +2.",
             )],
             tags: vec![AbilityTag::Attune(AttuneType::Deep)],
+            rarity: ItemRarity::Common,
         }
     }
 
@@ -58,6 +60,7 @@ impl StandardItem {
             )],
             magical: true,
             tags: vec![AbilityTag::Attune(AttuneType::Personal)],
+            rarity: ItemRarity::Common,
         }
     }
 
@@ -82,6 +85,7 @@ impl StandardItem {
             )],
             magical: true,
             tags: vec![AbilityTag::Attune(AttuneType::Personal)],
+            rarity: ItemRarity::Common,
         }
     }
 }
@@ -103,6 +107,7 @@ impl StandardItem {
                     magical: self.magical,
                     name: format!("{}{}", self.name, "+".repeat(upgrade_tier)),
                     rank: upgrade.rank,
+                    rarity: self.rarity,
                     upgrades: vec![],
                     tags: self.tags.clone(),
                 }
