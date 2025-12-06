@@ -671,19 +671,6 @@ export const rituals: RitualDefinition[] = [
     spheres: ['Aeromancy', 'Astromancy', 'Channel Divinity', 'Electromancy', 'Verdamancy'],
   },
   {
-    name: 'Retrieve Legacy',
-
-    usageTime: '24 hours',
-    effect: `
-      Choose one ritual participant.
-      If its \\glossterm{legacy item} is on the same plane and \\glossterm{unattended}, the item is teleported into the creature's hand.
-    `,
-    // narrative: '',
-    rank: 2,
-    roles: ['narrative'],
-    spheres: ['Astromancy'],
-  },
-  {
     name: 'Astral Chest',
 
     usageTime: 'one hour',
@@ -1839,19 +1826,6 @@ export const rituals: RitualDefinition[] = [
     },
     type: 'Attune',
     spheres: ['Enchantment', 'Revelation'],
-  },
-
-  {
-    name: 'Seek Legacy',
-
-    usageTime: 'one minute',
-    effect: `
-      Choose one \\glossterm{ritual participant}.
-      They learn the precise distance and direction to their \\glossterm{legacy item}, if it is on the same plane.
-    `,
-    rank: 2,
-    roles: ['narrative'],
-    spheres: ['Prayer', 'Revelation', 'Thaumaturgy'],
   },
 
   {

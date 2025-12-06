@@ -652,7 +652,6 @@ fn composite_staffs() -> Vec<Implement> {
             description: format!("
                 This staff has two different magic implement properties that are rank {n} or lower.
                 Each property must not already require a \\glossterm<deep attunement>.
-                You cannot choose a composite staff as your \\glossterm<legacy item> (see \\pcref<Legacy Items>).
             "),
             tags: vec![AbilityTag::Attune(AttuneType::Deep)],
             ..Implement::default()

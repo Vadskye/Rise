@@ -60,7 +60,7 @@ def roll20_items_page(destination):
                 As a reminder, your magical✨ power is {number_reminder("magical_power")}and your mundane power is {number_reminder("mundane_power")}.
             """),
             weapons(destination),
-            div({"class": "section-header"}, "Legacy Item"),
+            div({"class": "section-header"}, "Legacy Item (Deprecated)"),
             legacy_item(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
             # Maximum number of attunement points: 
@@ -91,17 +91,15 @@ def paper_items_page(destination):
             armor(destination, "Shield"),
             div({"class": "section-header"}, "Weapons"),
             weapons(destination),
-            div({"class": "section-header"}, "Legacy Item"),
-            legacy_item(destination),
             div({"class": "section-header"}, "Attuned Abilities and Equipment"),
             # Maximum number of attunement points: 
-            # 4 from class
+            # 5 from class
             # 2 from two archetypes that each grant an attunement point
             # Anyone with six attunement points would almost certainly have at
             # least one deep attunement, right? Hopefully?
             div(
                 {"class": "attunement-abilities"},
-                [attunement() for _ in range(5)]
+                [attunement() for _ in range(6)]
             ),
             flex_row({"class": "calcs"}, [
                 calc_offense(),
