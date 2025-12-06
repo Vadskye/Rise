@@ -12,6 +12,7 @@ mod magic_weapons;
 pub mod poison;
 mod tools;
 mod weapons;
+mod item_rarity;
 
 pub use apparel::{all_apparel, apparel_table, Apparel};
 pub use armor::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor};
@@ -20,6 +21,7 @@ pub use implements::{all_implements, implements_table, Implement};
 pub use item_creature::item_creature;
 pub use item_latex::{item_latex, StandardItem};
 pub use item_price::{item_price, rank_and_price_text};
+pub use item_rarity::ItemRarity;
 pub use item_upgrade::ItemUpgrade;
 pub use magic_armor::{all_magic_armor, magic_armor_table, MagicArmor};
 pub use magic_weapons::{all_magic_weapons, magic_weapons_table, MagicWeapon};

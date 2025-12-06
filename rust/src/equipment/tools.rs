@@ -1,6 +1,6 @@
 use crate::core_mechanics::abilities::AbilityTag;
 use crate::equipment::latex_table::{TableRow, ToTableRows};
-use crate::equipment::{item_latex, latex_table, ItemUpgrade, StandardItem};
+use crate::equipment::{item_latex, latex_table, ItemRarity, ItemUpgrade, StandardItem};
 mod alchemical_items;
 mod kits;
 mod mounts;
@@ -17,6 +17,7 @@ pub struct Tool {
     pub magical: bool,
     pub name: String,
     pub rank: i32,
+    pub rarity: ItemRarity,
     pub upgrades: Vec<ItemUpgrade>,
     pub tags: Vec<AbilityTag>,
 }
@@ -42,6 +43,7 @@ impl Tool {
             magical: self.magical,
             name: self.name.clone(),
             rank: self.rank,
+            rarity: self.rarity,
             upgrades: self.upgrades.clone(),
             tags: self.tags.clone(),
         };

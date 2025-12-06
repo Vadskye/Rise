@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::{AbilityTag, AttuneType};
 use crate::core_mechanics::Attribute;
 use crate::equipment::Apparel::{Bracers, Gauntlets, Gloves, Tattoo};
-use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
+use crate::equipment::{Apparel, ItemRarity, ItemUpgrade, StandardItem};
 
 // Effects of items worn on the arms:
 // * hand agility (gloves)
@@ -222,7 +222,7 @@ fn gloves() -> Vec<Apparel> {
 
     apparel.push(Gloves(StandardItem {
         name: String::from("Gloves of Improvisation"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Grants proficiency with improvised weapons"),
         description: String::from(r"
             You are \glossterm<proficient> with \glossterm<improvised weapons> (see \pcref<Weapon Proficiency>).
@@ -232,7 +232,7 @@ fn gloves() -> Vec<Apparel> {
 
     apparel.push(Gloves(StandardItem {
         name: String::from("Ambidextrous Gloves"),
-        rank: 2,
+        rank: 1,
         short_description: String::from("Make dual strikes without Dexterity"),
         description: String::from(r"
             You can make \glossterm<dual strikes> even if your Dexterity is less than 2 (see \pcref{Dual Strikes}).
@@ -281,6 +281,7 @@ fn gloves() -> Vec<Apparel> {
                 "The maximum size category increases to Large.",
             ),
         ],
+        rarity: ItemRarity::Relic,
         ..Apparel::default()
     }));
 
