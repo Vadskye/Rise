@@ -123,6 +123,7 @@ They allow more distinct and unique character customization, but also increase g
           % \featref{Herbalist}                             & Trained Knowledge (nature)       & Brew potions with natural ingredients      & \tdash            & \featpref{Herbalist}                        \\
           \featref{Iron Will}                             & Wil 2                            & Increase mental resilience                 & \tdash            & \featpref{Iron Will}                        \\
           \featref{Null}                                  & Wil 2                            & Become immune to magic                     & \tdash            & \featpref{Null}                             \\
+          \magicalfeatref{Legacy Item}                    & \tdash                           & Gain a special magic item                  & Magical           & \featpref{Legacy Item}                             \\
           \featref{Precognition}                          & Int 3                            & React to future events                     & \tdash            & \featpref{Precognition}                     \\
           \featref{Regenerator}                           & Con 3                            & Heal wounds with inhuman speed             & \tdash            & \featpref{Regenerator}                      \\
           \featref{Rapid Reaction}                        & Dex 2                            & Increase reaction speed                    & \tdash            & \featpref{Rapid Reaction}                   \\
@@ -267,16 +268,16 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[6]{Open Mind} You gain an additional \glossterm{insight point}.
 
-    \magicalff[6]{Renounce Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-    Instead, you gain a \plus1 bonus to your non-Armor \glossterm{defenses}.
-
-    \magicalff[12]{Renounce Legacy\plus} The defense bonus increases to \plus2.
+    \magicalff[6]{Simple Life} You reduce your maximum \glossterm{attunement points} by one.
+    In exchange, you gain a \plus1 bonus to your non-Armor \glossterm{defenses}.
 
     \magicalff[12]{Sanctified Garb\plus} The Armor defense bonus increases to \plus4.
 
-    \ff[18]{Open Mind\plus} You gain two additional insight points.
+    \magicalff[12]{Simple Life\plus} The non-Armor defense bonus increases to \plus2.
 
-    \magicalff[18]{Renounce Legacy\plus\plus} The defense bonus increases to \plus3.
+    \ff[18]{Sanctified Garb\plus} The durability bonus you gain from each attunement increases to 3.
+
+    \magicalff[18]{Simple Life\plus\plus} The non-Armor defense bonus increases to \plus3.
   \end{feat}
 
   \begin{feat}{Awareness Specialization}{Skill}
@@ -356,11 +357,7 @@ They allow more distinct and unique character customization, but also increase g
     This does not count against your normal one free action \glossterm{object manipulation} per round (see \pcref{Manipulating Objects}).
     If you have the Armed and Ready fighter ability with the same effect, you can use both free actions separately, allowing you to draw or sheathe two weapons per round as a free action.
 
-    \magicalff[6]{Legacy Armory} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
-    Instead, if you choose weapons as your legacy item category, you always treat one weapon you wield as your legacy item.
-    If you wield more than one weapon at a time, you can choose which of your weapons is your legacy item as a \glossterm{free action} once per round.
-
-    \magicalff[6]{Rapid Attunement} You can use the \ability{item attunement} ability to attune to weapons and armor as a \glossterm{minor action} (see \pcref{Item Attunement}).
+    \magicalff[6]{Rapid Attunement} Once per round, you can use the \ability{item attunement} ability to attune to a weapon or armor as a \glossterm{free action} (see \pcref{Item Attunement}).
 
     \ff[12]{Versatile Force} You gain a \plus1 bonus to your \glossterm{magical power} and \glossterm{mundane power}.
 
@@ -952,11 +949,6 @@ They allow more distinct and unique character customization, but also increase g
     This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
     After using this ability, you \glossterm{briefly} cannot use it again.
 
-    \magicalff[6]{Spectral Armament} The equipment you choose as your \glossterm{legacy item} becomes ghostly and translucent (see \pcref{Legacy Items}).
-    If you chose a weapon, it is treated as cold iron, and you can choose to give attacks with it the \atCold tag.
-    If you chose an implement, you can choose to give all \magical abilities you use the \atCold tag.
-    Otherwise, you are \impervious to \atCold attacks and all attacks by \trait{incorporeal} creatures.
-
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
     \begin{magicalactiveability}{Spectral Slice}{Standard action}
@@ -978,6 +970,8 @@ They allow more distinct and unique character customization, but also increase g
     This ability has the \abilitytag{Swift} tag, so it grants you the defensive benefits of being incorporeal during the current phase.
     % TODO: wording
     If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
+
+    \magicalff[12]{Spectral Shield} You are \impervious to all attacks by \trait{incorporeal} creatures.
 
     \magicalff[18]{Half Spirit} Your \glossterm{injury point} is set to 0, so you are only \glossterm{injured} while you have no remaining hit points.
   \end{magicalfeat}
@@ -1199,6 +1193,29 @@ They allow more distinct and unique character customization, but also increase g
     \ff[18]{Stabilizing Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
   \end{feat}
 
+  \begin{magicalfeat}{Legacy Item}{General}
+    \ff[1]{Legacy Item} You choose a \glossterm{mundane} weapon, body armor, shield, apparel item, or implement you own that is not made from a special material.
+    That item becomes your legacy item.
+    You choose a single magic item property of rank 3 or lower that does not require \glossterm{deep attunement}, and your legacy item gains that property.
+    You do not have to \glossterm{attune} to your legacy item to gain its benefits, and it only functions for you.
+    However, you reduce your maximum \glossterm{attunement points} by one.
+
+    The property must be appropriate for the category of item you chose: weapon, armor, apparel, or implement.
+    You do not have to precisely match the location of an apparel item, just the category.
+    For example, you can choose an amulet as your legacy item and give it the effect of the \mitem{boots of translocation}, or apply the effects of a \mitem{shield of arrow catching} to your body armor.
+
+    If you lose your legacy item, you must retrieve it to regain its power.
+    If your legacy item is \glossterm{destroyed}, you can choose a new object to be your legacy item after one week.
+    The new legacy item must keep the same magic item properties as your old legacy item.
+
+    \ff[6]{Expanded Legacy} You choose an additional magic item property of rank 3 or lower.
+    Your legacy item gains that property in addition to its existing property.
+
+    \ff[12]{Legacy Item\plus} You can replace your legacy item's original property with a magic item property that is rank 5 or lower.
+
+    \ff[18]{Legacy Item\plus\plus} You can replace your legacy item's additional property with a magic item property that is rank 7 or lower.
+  \end{magicalfeat}
+
   \begin{feat}{Living Weapon}{Combat}
     \featpre Strength and Constitution sum to at least 3
 
@@ -1208,8 +1225,10 @@ They allow more distinct and unique character customization, but also increase g
     In addition, you treat that weapon as having the \weapontag{Light} weapon tag, which allows you to make dual strikes with it more easily (see \pcref{Dual Strikes}).
     If you also have the Unarmed Warrior ability from the monk class or Brawler feat, you choose which style of punch/kick weapon to use whenever you make a \glossterm{strike}.
 
-    \ff[6]{Legacy Written In Bone} You do not choose an individual weapon as a \glossterm{legacy item} (see \pcref{Legacy Items}).
-    Instead, if you choose weapons as your legacy item category, you choose magic weapon abilities that apply to all \glossterm{natural weapons} you use.
+    \magicalff[6]{Consume Weapon} Whenever you destroy a magical weapon, you can permanently consume its magical property.
+    You can attune to any property you have consumed in this way as a \glossterm{minor action}.
+    The property applies to all \glossterm{natural weapons} you use.
+    You can only attune to one property that you have consumed in this way at a time.
 
     \ff[12]{Forged in the Flame of Life} You gain a \plus1 bonus to your Constitution.
 
@@ -1409,10 +1428,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Null}{General}
     \featpre Willpower 2.
 
-    \ff[1]{Mundane Resilience} You gain a \plus2 bonus to your \glossterm{durability}.
-
     \ff[1]{Nullify Magic} You gain a \plus4 bonus to your \glossterm{defenses} against \magical abilities.
-    In exchange, you lose the benefits of all magical abilities you possess.
+    In exchange, you lose the benefits of all magical abilities you possess, and you reduce your maximum \glossterm{attunement points} by one.
     You are unable to \glossterm{attune} to any magical abilities, such as magic items or spells cast by other creatures.
     You cannot use \glossterm{potions} or other similar magic items or abilities that affect you personally, even if they do not require attunement.
     In addition, you are never considered an \glossterm{ally} for a magical ability, even while \unconscious.
@@ -1433,10 +1450,9 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{12} The extra damage is reduced to 1d6, but the strike deals double damage.
       \featlevel{15} The extra damage increases to 2d6.
       \featlevel{18} The strike deals triple damage.
-  \end{activeability}
+    \end{activeability}
 
-    \ff[6]{Personal Legacy} You do not choose a legacy item, and you do not gain any legacy item upgrades (see \pcref{Legacy Items}).
-    Instead, you gain a \plus1 bonus to your \glossterm{durability} and non-Armor \glossterm{defenses}.
+    \ff[6]{Mundane Resilience} You gain a \plus1 bonus to your \glossterm{durability} and non-Armor \glossterm{defenses}.
 
     \ff[12]{Disruptive Presence} Whenever an \glossterm{enemy} within an \smallarea radius from you uses a \magical ability as a standard action or \glossterm{elite action}, the ability has a 20\% chance to fail with no effect.
     This can only affect any individual creature once per round, so a creature that uses two magical abilities will have no failure chance on the second ability it uses.
@@ -1444,9 +1460,9 @@ They allow more distinct and unique character customization, but also increase g
     This cannot cause passive abilities or triggered abilities to fail.
     Although this ability is \glossterm{mundane}, it still affects \trait{intangible} creatures.
 
-    \ff[12]{Personal Legacy\plus} The bonuses increases to \plus2.
+    \ff[12]{Mundane Resilience\plus} The bonuses increases to \plus2.
 
-    \ff[18]{Personal Legacy\plus\plus} The bonuses increases to \plus3.
+    \ff[18]{Mundane Resilience\plus\plus} The bonuses increases to \plus3.
 
     \ff[18]{True Null} You are immune to all \magical abilities.
   \end{feat}
@@ -2510,7 +2526,7 @@ They allow more distinct and unique character customization, but also increase g
     % You shouldn't have to reattune, but that's not clear.
     \magicalff[6]{Twinned Enhancement} If you are twin-wielding with one \magical weapon and one \glossterm{mundane} weapon that is not made of a special property, you can attune to the magical weapon multiple times.
     For each additional time you attune to the magical weapon, you can copy one of its magical properties that does not require a \glossterm{deep attunement} to your \glossterm{mundane} weapon.
-    Normally, weapons can only have one magical property, but this can allow you to copy multiple properties from a \glossterm{legacy item} or \magicitem{composite} weapon.
+    Normally, weapons can only have one magical property, but this can allow you to copy multiple properties from a \magicitem{composite} weapon.
 
     \ff[12]{Paired Precision} You gain a \plus1 bonus to \glossterm{accuracy} with \glossterm{strikes} using weapons that you are twin-wielding.
 
@@ -2558,18 +2574,12 @@ They allow more distinct and unique character customization, but also increase g
       \item 2d10
     \end{raggeditemize}
 
-    \ff[6]{Enhanced Legacy} If you choose your focused weapon as your \glossterm{legacy item}, you can choose an additional magic item property with a maximum rank of 3.
-    This does not function if your choice of legacy item is not specific to a particular weapon, such as with the Battle Armory feat.
-    Otherwise, you gain an additional \glossterm{attunement point} that you can only use for magic weapons.
-
-    \ff[12]{Enhanced Legacy\plus} You can change the item property, and the maximum rank increases to 5.
-
-    \ff[12]{Precise Focus} You gain a \plus1 accuracy bonus with \glossterm{strikes} using your focused weapon.
-
-    \ff[18]{Enhanced Legacy\plus\plus} You can change the item property, and the maximum rank increases to 7.
-
-    \ff[18]{Weapon Supremacy} Whenever you miss with a \glossterm{strike} using your focused weapon, you still deal half damage.
+    \ff[6]{Precise Focus} You gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with \glossterm{strikes} using your focused weapon.
+    
+    \ff[12]{Weapon Supremacy} Whenever you miss with a \glossterm{strike} using your focused weapon, you still deal half damage.
     Any effects other than damage do not apply.
+
+    \ff[18]{Precise Focus\plus} The accuracy bonus increases to \plus2.
   \end{feat}
 
   \begin{feat}{Whirlwind Warrior}{Combat}
