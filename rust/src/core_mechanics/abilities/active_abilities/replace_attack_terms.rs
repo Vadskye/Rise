@@ -272,11 +272,10 @@ fn calc_weapon_damage(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::creatures::CreatureCategory;
     use crate::testing::assert_multiline_eq;
 
     fn sample_creature() -> Creature {
-        Creature::new(10, CreatureCategory::Character)
+        Creature::new(10)
     }
 
     mod replace_full_weapon_damage_terms {
@@ -466,7 +465,7 @@ mod tests {
         // We want a creature who has a different magical power and mundane power.
         // This should have a magical power of 5 and a mundane power of 10.
         fn dr_sample_creature() -> Creature {
-            let mut creature = Creature::new(10, CreatureCategory::Character);
+            let mut creature = Creature::new(10);
             creature.set_base_attribute(Attribute::Strength, 5);
             creature
         }

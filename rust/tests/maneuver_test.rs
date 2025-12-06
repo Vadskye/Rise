@@ -4,12 +4,12 @@ mod maneuver_tests {
     use rise::core_mechanics::attacks::{HasAttacks, Maneuver};
     use rise::core_mechanics::{Attribute, HasAttributes};
     use rise::creatures::creature::Creature;
-    use rise::creatures::{Character, CreatureCategory, HasModifiers, Modifier};
+    use rise::creatures::{Character, HasModifiers, Modifier};
     use rise::equipment::StandardWeapon;
 
     #[test]
     fn it_calculates_attack_counts() {
-        let mut creature = Creature::new(1, CreatureCategory::Character);
+        let mut creature = Creature::new(1);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
         creature.add_modifier(Modifier::Maneuver(Maneuver::CertainStrike), None, None);
         assert_eq!(
@@ -35,7 +35,7 @@ mod maneuver_tests {
 
     #[test]
     fn it_calculates_attack_effects() {
-        let mut creature = Creature::new(1, CreatureCategory::Character);
+        let mut creature = Creature::new(1);
         // It's useful to have a nonzero power to make sure power multipliers are calculated correctly
         creature.set_base_attribute(Attribute::Strength, 3);
         creature.weapons.push(StandardWeapon::Broadsword.weapon());
