@@ -101,7 +101,6 @@ pub fn automaton<'a>() -> Vec<RankAbility<'a>> {
                 This allows you to use one additional apparel item from each body slot (see \pcref{Body Slots}).
                 For example, you could embed one set of magic boots into your feet and then wear another pair of magic boots over them.
                 You also gain an additional \glossterm{attunement point} that you can only use to attune to items embedded into your body.
-                You cannot embed a \glossterm{legacy item} in this way.
             ",
             modifiers: Some(vec![Modifier::Resource(Resource::AttunementPoint, 1)]),
         },
