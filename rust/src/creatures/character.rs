@@ -468,8 +468,8 @@ fn calc_standard_magic_modifiers(level: i32) -> Vec<Modifier> {
     // relevant items.
     // For most characters, damage is most important, followed by DR and then hit points.
     // The level breakpoints for HP/DR items are 4/10/16.
-    // This ignores legacy items, but assumes that items are acquired as soon as possible. On
-    // average, this should make the levels reasonably accurate.
+    // This assumes that items are acquired as soon as possible.
+    // On average, this should make the levels reasonably accurate.
 
     // Some people get +1d earlier with the rank 3 weapons; ignore that for this purpose.
     let strike_damage = if level >= 19 {
