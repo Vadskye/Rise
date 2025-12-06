@@ -58,7 +58,7 @@ fn it_calculates_rank_abilities() {
 
 #[test]
 fn it_calculates_level_21_fighter_defenses() {
-    let baseline = Creature::new(21, CreatureCategory::Character);
+    let baseline = Creature::new(21);
     let mut fighter = Character::new(
         Class::Fighter,
         21,
@@ -123,7 +123,7 @@ fn it_calculates_level_21_fighter_defenses() {
 
 #[test]
 fn it_calculates_level_21_fighter_attacks() {
-    let baseline = Creature::new(21, CreatureCategory::Character);
+    let baseline = Creature::new(21);
     let mut fighter = Character::new(
         Class::Fighter,
         21,
@@ -171,7 +171,7 @@ fn it_calculates_level_21_fighter_attacks() {
 
 #[test]
 fn it_calculates_level_21_fighter_resources() {
-    let baseline = Creature::new(21, CreatureCategory::Character);
+    let baseline = Creature::new(21);
     let mut fighter = Character::new(
         Class::Fighter,
         21,
@@ -191,8 +191,8 @@ fn it_calculates_level_21_fighter_resources() {
             baseline.calc_resource(&Resource::AttunementPoint),
             fighter.calc_resource(&Resource::AttunementPoint)
         ),
-        "AP b0 f3",
-        "3 AP from fighter"
+        "AP b0 f4",
+        "4 AP from fighter"
     );
 
     assert_eq!(

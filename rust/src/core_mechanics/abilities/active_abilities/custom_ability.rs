@@ -450,11 +450,10 @@ impl CustomAbility {
 mod tests {
     use super::*;
     use crate::core_mechanics::abilities::SustainAction;
-    use crate::creatures::CreatureCategory;
     use crate::testing::assert_multiline_eq;
 
     fn sample_creature() -> Creature {
-        Creature::new(10, CreatureCategory::Character)
+        Creature::new(10)
     }
 
     #[test]

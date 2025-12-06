@@ -43,7 +43,7 @@ impl Tool {
             magical: self.magical,
             name: self.name.clone(),
             rank: self.rank,
-            rarity: self.rarity,
+            rarity: self.rarity.clone(),
             upgrades: self.upgrades.clone(),
             tags: self.tags.clone(),
         };
