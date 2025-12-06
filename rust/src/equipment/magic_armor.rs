@@ -57,11 +57,22 @@ impl MagicArmor {
     }
 }
 
-pub fn all_magic_armor() -> Vec<MagicArmor> {
+use crate::equipment::ItemRarity;
+
+pub fn all_magic_armor(rarity_filter: Option<ItemRarity>) -> Vec<MagicArmor> {
     let mut armor = vec![];
 
     armor.append(&mut body_armor::body_armor());
     armor.append(&mut shields::shields());
+
+    let mut armor = if let Some(rarity) = rarity_filter {
+        armor
+            .into_iter()
+            .filter(|a| a.item().rarity == rarity)
+            .collect()
+    } else {
+        armor
+    };
 
     armor.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
@@ -77,23 +88,21 @@ impl ToTableRows for MagicArmor {
 pub fn magic_armor_table() -> String {
     let with_category = true;
 
-    let mut body_armor = body_armor::body_armor();
-    body_armor.sort_by(|a, b| a.item().name.cmp(&b.item().name));
-    let mut body_armor_rows: Vec<TableRow> = body_armor
-        .iter()
-        .map(|a| a.to_table_rows())
-        .flatten()
-        .collect();
-    latex_table::standard_sort(&mut body_armor_rows);
+    let all_armor = all_magic_armor(Some(ItemRarity::Common));
 
-    let mut shields = shields::shields();
-    shields.sort_by(|a, b| a.item().name.cmp(&b.item().name));
-    let mut shield_rows: Vec<TableRow> = shields
+    let body_armor_rows: Vec<TableRow> = all_armor
         .iter()
+        .filter(|a| matches!(a, MagicArmor::Body(_)))
         .map(|a| a.to_table_rows())
         .flatten()
         .collect();
-    latex_table::standard_sort(&mut shield_rows);
+
+    let shield_rows: Vec<TableRow> = all_armor
+        .iter()
+        .filter(|a| matches!(a, MagicArmor::Shield(_)))
+        .map(|a| a.to_table_rows())
+        .flatten()
+        .collect();
 
     format!(
         "{} {}",

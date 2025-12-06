@@ -4,14 +4,14 @@ use crate::equipment::{
 };
 
 pub fn everything_table() -> String {
-    let mut rows: Vec<TableRow> = all_apparel()
+    let mut rows: Vec<TableRow> = all_apparel(None)
         .iter()
         .map(|a| a.to_table_rows())
         .flatten()
         .collect();
 
     rows.append(
-        &mut all_magic_armor()
+        &mut all_magic_armor(None)
             .iter()
             .map(|a| a.to_table_rows())
             .flatten()
@@ -19,7 +19,7 @@ pub fn everything_table() -> String {
     );
 
     rows.append(
-        &mut all_implements()
+        &mut all_implements(None)
             .iter()
             .map(|a| a.to_table_rows())
             .flatten()
@@ -27,7 +27,7 @@ pub fn everything_table() -> String {
     );
 
     rows.append(
-        &mut all_magic_weapons()
+        &mut all_magic_weapons(None)
             .iter()
             .map(|a| TableRow::from_item(a.item(), false, Some("Weapon".to_string())))
             .flatten()
@@ -35,7 +35,7 @@ pub fn everything_table() -> String {
     );
 
     rows.append(
-        &mut all_tools(Some(true))
+        &mut all_tools(Some(true), None)
             .iter()
             .map(|a| a.to_table_rows())
             .flatten()
@@ -43,7 +43,7 @@ pub fn everything_table() -> String {
     );
 
     rows.append(
-        &mut all_tools(Some(false))
+        &mut all_tools(Some(false), None)
             .iter()
             .map(|a| a.to_table_rows())
             .flatten()
