@@ -512,7 +512,10 @@ export const verdamancy: MysticSphere = {
 
       // Short range instead of med range for the two weird effects
       attack: {
-        hit: '\\damageranktwo.',
+        hit: `
+          \\damageranktwo.
+          If the target is a Large or smaller object, it immediately dies.
+        `,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
           In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\glossterm{briefly}.
@@ -530,7 +533,7 @@ export const verdamancy: MysticSphere = {
 
       functionsLike: {
         name: 'blight',
-        exceptThat: 'the damage increases to \\damageranksix.',
+        exceptThat: 'the damage increases to \\damageranksix, and it can kill objects that are Gargantuan or smaller.',
       },
       roles: ['burst'],
       rank: 6,
