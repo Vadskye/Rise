@@ -107,7 +107,7 @@ impl StandardItem {
                     magical: self.magical,
                     name: format!("{}{}", self.name, "+".repeat(upgrade_tier)),
                     rank: upgrade.rank,
-                    rarity: self.rarity,
+                    rarity: self.rarity.clone(),
                     upgrades: vec![],
                     tags: self.tags.clone(),
                 }

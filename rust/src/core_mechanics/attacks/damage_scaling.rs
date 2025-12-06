@@ -48,11 +48,11 @@ impl DamageScaling {
 
     pub fn dr2() -> Self {
         Self {
-            base_dice: DicePool::d4(),
+            base_dice: DicePool::d10(),
             power_scalings: vec![PowerScaling {
                 dice: None,
                 power_per_dice: 0,
-                power_per_plus1_modifier: 1,
+                power_per_plus1_modifier: 2,
             }],
         }
     }
