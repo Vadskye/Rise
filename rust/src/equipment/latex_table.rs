@@ -1,5 +1,5 @@
 use crate::core_mechanics::abilities::replace_attack_terms;
-use crate::equipment::{item_creature, rank_and_price_text, StandardItem};
+use crate::equipment::{item_creature, rank_and_price_text, ItemRarity, StandardItem};
 use crate::latex_formatting::latexify;
 
 pub trait ToTableRows {
@@ -13,6 +13,7 @@ pub struct TableRow {
     name: String,
     magical: bool,
     rank: i32,
+    rarity: ItemRarity,
     short_description: String,
 }
 
@@ -25,6 +26,7 @@ impl TableRow {
             magical: item.magical,
             name: item.name.clone(),
             rank: item.rank,
+            rarity: item.rarity.clone(),
             short_description: item.short_description.clone(),
         });
 
@@ -35,6 +37,7 @@ impl TableRow {
                 magical: item.magical,
                 name: upgraded_item.name,
                 rank: upgraded_item.rank,
+                rarity: upgraded_item.rarity.clone(),
                 short_description: upgraded_item.short_description,
             });
         }
@@ -55,7 +58,7 @@ impl TableRow {
             sparkle = if self.magical { r"\sparkle" } else { "" },
             category_separator = if self.category.is_some() { "&" } else { "" },
             category = self.category.clone().unwrap_or(String::from("")),
-            rank_and_price = rank_and_price_text(self.rank),
+            rank_and_price = rank_and_price_text(self.rank, &self.rarity),
             short_description = self.short_description.trim(),
             page_or_percentile = percentile.unwrap_or(&format!("\\itempref<{}>", self.name)),
         );

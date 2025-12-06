@@ -100,7 +100,9 @@ impl Apparel {
     }
 }
 
-pub fn all_apparel() -> Vec<Apparel> {
+use crate::equipment::ItemRarity;
+
+pub fn all_apparel(rarity_filter: Option<ItemRarity>) -> Vec<Apparel> {
     let mut apparel = vec![];
 
     apparel.append(&mut arms::arms());
@@ -108,6 +110,15 @@ pub fn all_apparel() -> Vec<Apparel> {
     apparel.append(&mut jewelry::jewelry());
     apparel.append(&mut legs::legs());
     apparel.append(&mut torso::torso());
+
+    let mut apparel = if let Some(rarity) = rarity_filter {
+        apparel
+            .into_iter()
+            .filter(|a| a.item().rarity == rarity)
+            .collect()
+    } else {
+        apparel
+    };
 
     apparel.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
@@ -123,7 +134,7 @@ impl ToTableRows for Apparel {
 pub fn apparel_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<TableRow> = all_apparel()
+    let mut rows: Vec<TableRow> = all_apparel(Some(ItemRarity::Common))
         .iter()
         .map(|a| a.to_table_rows())
         .flatten()

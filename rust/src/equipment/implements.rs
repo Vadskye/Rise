@@ -62,12 +62,23 @@ impl Implement {
     }
 }
 
-pub fn all_implements() -> Vec<Implement> {
+use crate::equipment::ItemRarity;
+
+pub fn all_implements(rarity_filter: Option<ItemRarity>) -> Vec<Implement> {
     let mut implements = vec![];
 
     implements.append(&mut staffs::staffs());
     implements.append(&mut rods::rods());
     implements.append(&mut wands::wands());
+
+    let mut implements = if let Some(rarity) = rarity_filter {
+        implements
+            .into_iter()
+            .filter(|i| i.item().rarity == rarity)
+            .collect()
+    } else {
+        implements
+    };
 
     implements.sort_by(|a, b| a.item().name.cmp(&b.item().name));
 
@@ -83,7 +94,7 @@ impl ToTableRows for Implement {
 pub fn implements_table() -> String {
     let with_category = true;
 
-    let mut rows: Vec<TableRow> = all_implements()
+    let mut rows: Vec<TableRow> = all_implements(Some(ItemRarity::Common))
         .iter()
         .map(|i| i.to_table_rows())
         .flatten()
