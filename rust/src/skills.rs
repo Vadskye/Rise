@@ -314,7 +314,8 @@ where
             0
         };
 
-        attribute_modifier + training_modifier 
+        attribute_modifier
+            + training_modifier
             + self.calc_total_modifier(ModifierType::Skill(skill.clone()))
     }
 

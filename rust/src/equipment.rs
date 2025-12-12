@@ -5,6 +5,7 @@ mod implements;
 mod item_creature;
 mod item_latex;
 mod item_price;
+mod item_rarity;
 mod item_upgrade;
 mod latex_table;
 mod magic_armor;
@@ -13,7 +14,6 @@ pub mod poison;
 mod relics;
 mod tools;
 mod weapons;
-mod item_rarity;
 
 pub use apparel::{all_apparel, apparel_table, Apparel};
 pub use armor::{Armor, ArmorMaterial, ArmorUsageClass, HasArmor};

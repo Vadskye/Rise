@@ -29,21 +29,9 @@ pub fn body_armor() -> Vec<MagicArmor> {
         ",
         ),
         upgrades: vec![
-            ItemUpgrade::new(
-                3,
-                "Grants +3 durability",
-                "The bonus increases to +3.",
-            ),
-            ItemUpgrade::new(
-                5,
-                "Grants +4 durability",
-                "The bonus increases to +4.",
-            ),
-            ItemUpgrade::new(
-                7,
-                "Grants +5 durability",
-                "The bonus increases to +5.",
-            ),
+            ItemUpgrade::new(3, "Grants +3 durability", "The bonus increases to +3."),
+            ItemUpgrade::new(5, "Grants +4 durability", "The bonus increases to +4."),
+            ItemUpgrade::new(7, "Grants +5 durability", "The bonus increases to +5."),
         ],
         ..MagicArmor::default()
     }));
@@ -187,17 +175,27 @@ pub fn body_armor() -> Vec<MagicArmor> {
         name: String::from("Lifeweave Armor"),
         rank: 3,
         short_description: String::from("Grants +5 durability, but -1 vital rolls"),
-        description: String::from(r"
-            You gain a +5 \glossterm{enhancement bonus} to your \glossterm{durability.}
-            However, you also take a \minus1 penalty to your \glossterm{vital rolls}.
-        "),
+        description: String::from(
+            r"
+                You gain a +5 \glossterm{enhancement bonus} to your \glossterm{durability.}
+                However, you also take a \minus1 penalty to your \glossterm{vital rolls}.
+            ",
+        ),
         upgrades: vec![
-            ItemUpgrade::new(5, "Grants +6 durability, but -1 vital rolls", "
-                The bonus increases to +6.
-            "),
-            ItemUpgrade::new(7, "Grants +8 durability, but -1 vital rolls", "
-                The bonus increases to +8.
-            "),
+            ItemUpgrade::new(
+                5,
+                "Grants +6 durability, but -1 vital rolls",
+                "
+                    The bonus increases to +6.
+                ",
+            ),
+            ItemUpgrade::new(
+                7,
+                "Grants +8 durability, but -1 vital rolls",
+                "
+                    The bonus increases to +8.
+                ",
+            ),
         ],
         ..MagicArmor::default()
     }));

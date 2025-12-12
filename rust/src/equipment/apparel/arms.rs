@@ -260,11 +260,11 @@ fn gloves() -> Vec<Apparel> {
             You can activate these gloves as a standard action.
             When you do, they absorbs one Small or smaller object you are touching with either glove.
 
-            An absorbed object leaves no trace that it ever existed.
-            This weapon can hold no more than three objects at once.
-            If you attempt to absorb an object while gloves are full, the attempt fails.
+            An absorbed object does not increase the weight of the gloves and is undetectable by any means.
+            The gloves can hold no more than three objects at once.
+            If you attempt to absorb an object while the gloves are full, the attempt fails.
 
-            As a free action, you can retrieve the last item absorbed by the gloves.
+            As a free action, you can retrieve the most recently absorbed item.
             The item appears in your hand, or falls to the ground if your hand is occupied.
             The item similarly reappears if you stop attuning to this gloves or take them off.
         ",
@@ -337,6 +337,66 @@ fn gloves() -> Vec<Apparel> {
             "),
         ],
         tags: vec![AbilityTag::Manifestation, AbilityTag::personal_attunement()],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Static Gloves"),
+        rank: 1,
+        short_description: String::from("Can be statically charged"),
+        description: String::from(r"
+            You can activate or deactivate these soft silk gloves as a \glossterm{minor action}.
+            While active, the gloves have a small static charge.
+            This grants you a \plus2 \glossterm{enhancement bonus} to the Climb skill.
+            In addition, Fine objects stick to your hands without needing to be held.
+            While statically charged, the gloves tend to accumulate dirt and dust quickly.
+        "),
+        rarity: ItemRarity::Relic,
+        tags: vec![AbilityTag::Electricity],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Gloves of the Ice Sculptor"),
+        rank: 2,
+        short_description: String::from("Sculpt ice with your hands"),
+        description: String::from(r"
+            While wearing these thick, woolen gloves, you can sculpt ice as if it was soft clay.
+            You still must make a Craft check to create anything complex.
+            This generally allows you to craft things with ice five times faster than normal.
+        "),
+        rarity: ItemRarity::Relic,
+        tags: vec![AbilityTag::Cold],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Twinsculpt Gloves"),
+        rank: 2,
+        short_description: String::from("Can copy details between surfaces"),
+        description: String::from(r"
+            You can activate or deactivate these gloves as a \glossterm{minor action}.
+            While active, the right glove changes the surface texture of whatever it touches to match the surface texture of whatever your left hand is touching.
+            This can copy writing, minor decorative flourishes, and similar small changes.
+            It cannot cause significant structural changes.
+            The right glove can change the surface texture of \glossterm{mundane} objects that are softer than stone, such as wood or paper, but does not affect living things or harder obejcts.
+        "),
+        rarity: ItemRarity::Relic,
+        tags: vec![],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Gloves(StandardItem {
+        name: String::from("Shadowplay Gloves"),
+        rank: 1,
+        short_description: String::from("Create realistic shadow puppets"),
+        description: String::from(r"
+            When you make shadow puppets with your hands while wearing these black silk gloves, the shadows created are unnervingly realistic and detailed.
+            They match your intended vision of what the shadows should look like, and are able to portray expressions and fine movements that would normally be impossible.
+            Any observer can still recognize the shadows as shadows, as they are still flat and lack color.
+        "),
+        rarity: ItemRarity::Relic,
+        tags: vec![AbilityTag::Visual],
         ..Apparel::default()
     }));
 

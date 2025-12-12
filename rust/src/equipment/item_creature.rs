@@ -1,7 +1,5 @@
 use crate::core_mechanics::Attribute;
-use crate::creatures::{
-    calculate_minimum_level, Creature, HasModifiers, Modifier,
-};
+use crate::creatures::{calculate_minimum_level, Creature, HasModifiers, Modifier};
 
 // Return a Creature that can be used to calculate item statistics for an item of the given rank.
 // This standard creature has a power halfway between "minimum" and "maximum" reasonable power:

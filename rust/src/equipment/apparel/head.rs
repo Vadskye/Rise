@@ -1,7 +1,7 @@
 use crate::core_mechanics::abilities::AbilityTag;
 use crate::core_mechanics::Attribute;
-use crate::equipment::Apparel::{Blindfold, Circlet, Crown};
-use crate::equipment::{Apparel, ItemUpgrade, StandardItem};
+use crate::equipment::Apparel::{Blindfold, Circlet, Crown, Veil};
+use crate::equipment::{Apparel, ItemRarity, ItemUpgrade, StandardItem};
 
 pub fn head() -> Vec<Apparel> {
     let mut apparel = vec![];
@@ -9,6 +9,20 @@ pub fn head() -> Vec<Apparel> {
     apparel.append(&mut blindfolds());
     apparel.append(&mut circlets());
     apparel.append(&mut crowns());
+
+    apparel.push(Veil(StandardItem {
+        name: "Whispering Veil".to_string(),
+        rank: 3,
+        short_description: "Hear distant sounds on the wind".to_string(),
+        description: r"
+            This gossamer veil seems to whisper continuously.
+            While you wear it over your head, you can hear faint, indistinct sounds carried on the wind.
+            These might be fragments of conversations, animal calls, or music from many miles away.
+        ".to_string(),
+        rarity: ItemRarity::Relic,
+        tags: vec![AbilityTag::Air, AbilityTag::Auditory],
+        ..Apparel::default()
+    }));
 
     apparel
 }
@@ -125,6 +139,54 @@ fn circlets() -> Vec<Apparel> {
         &Attribute::Willpower,
     )));
 
+    apparel.push(Circlet(StandardItem {
+        name: String::from("Mask of Many Faces"),
+        rank: 2,
+        short_description: String::from("Copies the appearance of a familiar face"),
+        description: String::from(r"
+            This is a blank porcelain mask.
+            As a standard action, you can don the mask while envisioning a face familiar to you.
+            When you do, the mask molds to your face and takes on the appearance of the face you envisioned.
+            This grants you a +3 \glossterm{enhancement bonus} to Disguise checks to emulate that creature.
+            You can remove the mask as a standard action, which returns it to its blank appearance.
+        "),
+        rarity: crate::equipment::ItemRarity::Relic,
+        tags: vec![AbilityTag::Visual],
+        magical: true,
+        ..Apparel::default()
+    }));
+
+    apparel.push(Circlet(StandardItem {
+        name: String::from("Glasses of Novelty"),
+        rank: 3,
+        short_description: String::from("Notices small, seemingly insignificant details"),
+        description: String::from(r"
+            These appear to be a pair of simple spectacles.
+            As a standard action, you can don the glasses and activate their effect.
+            While active, the glasses force your eyes to look at only the most surprising or unexpected thing in your field of view.
+            If that thing leaves your field of view, the glasses find a new thing to focus on at the end of the next round.
+
+            Each pair of glasses of novelty has its own perspective on what is surprising or unexpected, and the glasses have no memory of anything you learn or previous things they have seen.
+            You can remove the glasses as a normal object interaction, which deactivates their effect.
+        "),
+        rarity: crate::equipment::ItemRarity::Relic,
+        tags: vec![AbilityTag::Visual],
+        ..Apparel::default()
+    }));
+
+    apparel.push(Circlet(StandardItem {
+        name: String::from("Crown of Flowers"),
+        rank: 2,
+        short_description: String::from("Appear friendly to small animals"),
+        description: String::from(r"
+            While wearing this crown, wild animals that are Small or smaller perceive you to be friendly and nonthreatening.
+            This does not grant you an ability to command them, though you can use Creature Handling as normal.
+        "),
+        rarity: crate::equipment::ItemRarity::Relic,
+        tags: vec![AbilityTag::Emotion],
+        ..Apparel::default()
+    }));
+
     apparel
 }
 
@@ -144,27 +206,29 @@ fn crowns() -> Vec<Apparel> {
         ",
         ),
         tags: vec![AbilityTag::Visual, AbilityTag::personal_attunement()],
-        upgrades: vec![ItemUpgrade::new(
-            3,
-            "Emits great light",
-            r"
+        upgrades: vec![
+            ItemUpgrade::new(
+                3,
+                "Emits great light",
+                r"
                 The area increases to a \largearea radius.
             ",
-        ),
-        ItemUpgrade::new(
-            5,
-            "Emits vast light",
-            r"
+            ),
+            ItemUpgrade::new(
+                5,
+                "Emits vast light",
+                r"
                 The area increases to a \hugearea radius.
             ",
-        ),
-        ItemUpgrade::new(
-            7,
-            "Emits massive light",
-            r"
+            ),
+            ItemUpgrade::new(
+                7,
+                "Emits massive light",
+                r"
                 The area increases to a \gargarea radius.
             ",
-        )],
+            ),
+        ],
         ..Apparel::default()
     }));
 
