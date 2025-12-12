@@ -348,14 +348,18 @@ pub fn staffs() -> Vec<Implement> {
         name: String::from("Staff of Radiance"),
         rank: 1,
         short_description: String::from(r"Increases light radius"),
-        description: String::from(r"
+        description: String::from(
+            r"
             You double the radius of all light you create using \magical effects.
-        "),
-        upgrades: vec![
-            ItemUpgrade::new(5, "Grants +1 accuracy, increases light radius", r"
+        ",
+        ),
+        upgrades: vec![ItemUpgrade::new(
+            5,
+            "Grants +1 accuracy, increases light radius",
+            r"
                 You also gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy}.
-            "),
-        ],
+            ",
+        )],
         ..Implement::default()
     }));
 
@@ -612,10 +616,12 @@ fn composite_staffs() -> Vec<Implement> {
         name: String::from("Composite Staff, 1st"),
         rank: 3,
         short_description: String::from(r"Has two rank 1 properties"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This staff has two different rank 1 magic implement properties.
             Each property must not already require a \glossterm{deep attunement}.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
     }));
@@ -624,10 +630,12 @@ fn composite_staffs() -> Vec<Implement> {
         name: String::from("Composite Staff, 2nd"),
         rank: 4,
         short_description: String::from(r"Has two rank 2 or lower properties"),
-        description: String::from(r"
+        description: String::from(
+            r"
             This staff has two different magic implement properties that are rank 2 or lower.
             Each property must not already require a \glossterm{deep attunement}.
-        "),
+        ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
     }));
@@ -636,10 +644,12 @@ fn composite_staffs() -> Vec<Implement> {
         name: String::from("Composite Staff, 3rd"),
         rank: 5,
         short_description: String::from(r"Has two rank 3 or lower properties"),
-        description: String::from(r"
-            This staff has two different magic implement properties that are rank 2 or lower.
-            Each property must not already require a \glossterm{deep attunement}.
-        "),
+        description: String::from(
+            r"
+                This staff has two different magic implement properties that are rank 2 or lower.
+                Each property must not already require a \glossterm{deep attunement}.
+            ",
+        ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..Implement::default()
     }));
@@ -647,12 +657,14 @@ fn composite_staffs() -> Vec<Implement> {
     fn nth(implements: &mut Vec<Implement>, n: i32) {
         implements.push(Staff(StandardItem {
             name: format!("Composite Staff, {}th", n),
-            rank: n+2,
+            rank: n + 2,
             short_description: format!("Has two rank {} or lower properties", n),
-            description: format!("
-                This staff has two different magic implement properties that are rank {n} or lower.
-                Each property must not already require a \\glossterm<deep attunement>.
-            "),
+            description: format!(
+                "
+                    This staff has two different magic implement properties that are rank {n} or lower.
+                    Each property must not already require a \\glossterm<deep attunement>.
+                "
+            ),
             tags: vec![AbilityTag::Attune(AttuneType::Deep)],
             ..Implement::default()
         }));

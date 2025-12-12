@@ -87,21 +87,9 @@ fn belts() -> Vec<Apparel> {
         ",
         ),
         upgrades: vec![
-            ItemUpgrade::new(
-                3,
-                "Grants +2 durability",
-                "The bonus increases to +2.",
-            ),
-            ItemUpgrade::new(
-                5,
-                "Grants +3 durability",
-                "The bonus increases to +3.",
-            ),
-            ItemUpgrade::new(
-                7,
-                "Grants +4 durability",
-                "The bonus increases to +4.",
-            ),
+            ItemUpgrade::new(3, "Grants +2 durability", "The bonus increases to +2."),
+            ItemUpgrade::new(5, "Grants +3 durability", "The bonus increases to +3."),
+            ItemUpgrade::new(7, "Grants +4 durability", "The bonus increases to +4."),
         ],
         ..Apparel::default()
     }));
