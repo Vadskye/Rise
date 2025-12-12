@@ -164,6 +164,20 @@ fn boots() -> Vec<Apparel> {
     }));
 
     apparel.push(Boots(StandardItem {
+        name: String::from("Dry Boots"),
+        rank: 1,
+        short_description: String::from("Keeps feet dry"),
+        description: String::from(r"
+            These boots remain dry and comfortable in all circumstances.
+            Even when submerged in water, they prevent any water from touching your feet.
+        "),
+        rarity: ItemRarity::Relic,
+        tags: vec![],
+        magical: true,
+        upgrades: vec![],
+    }));
+
+    apparel.push(Boots(StandardItem {
         name: String::from("Boots of the Winterlands"),
         rank: 1,
         short_description: String::from("Eases travel in cold areas"),
@@ -171,13 +185,14 @@ fn boots() -> Vec<Apparel> {
             You can travel across snow and ice without slipping or suffering movement penalties for the terrain.
         "),
         tags: vec![AbilityTag::Cold, AbilityTag::personal_attunement()],
+        rarity: ItemRarity::Relic,
         upgrades: vec![
             ItemUpgrade::new(3, "Greatly eases travel in cold areas", "
                 % TODO: degree symbol?
                 The boots also keep you warm, protecting you in environments as cold as -50 degrees Fahrenheit.
             "),
         ],
-        ..Apparel::default()
+        magical: true,
     }));
 
     apparel.push(Boots(StandardItem {
@@ -195,7 +210,9 @@ fn boots() -> Vec<Apparel> {
                 The boots also keep you cool, protecting you in environments as warm as 140 degrees Fahrenheit.
             "),
         ],
-        ..Apparel::default()
+        rarity: ItemRarity::Relic,
+        tags: vec![],
+        magical: true,
     }));
 
     apparel.push(Boots(StandardItem {

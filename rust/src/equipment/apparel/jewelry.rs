@@ -53,7 +53,7 @@ fn amulets() -> Vec<Apparel> {
             ItemUpgrade::new(7, r"Can control many undead", r"
                 You can control up to five undead rather than up to three.
             "),
-        ],      
+        ],
         ..Apparel::default()
     }));
 
