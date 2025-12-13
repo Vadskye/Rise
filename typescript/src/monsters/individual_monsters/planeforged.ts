@@ -672,7 +672,7 @@ function addFormians(grimoire: Grimoire) {
       hasArt: true,
       knowledge: {
         normal: `
-          Formians are ant-like inhabitants native to Ordus, the Aligned Plane of law.
+          Formians are ant-like inhabitants native to Ordus, the Spiritual Plane of law.
           They share a hive mind that allows telepathic communication at great distances.
         `,
         hard: `

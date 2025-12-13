@@ -1479,7 +1479,7 @@ impl Class {
                         Each type of soulkeeper has different terms for its pacts and offers different rewards.
 
                         \parhead{Devils}
-                        Devils are lawful evil creatures native to the Abyss, the Aligned Plane of evil.
+                        Devils are lawful evil creatures native to the Abyss, the Spiritual Plane of evil.
                         Their pacts offer the most generous terms of all soulkeepers, in theory.
                         They impose no restrictions on your actions in life, and only affect your soul after death.
                         A typical devil will keep your soul in the Abyss for one year for each year that you live after making the pact, to a minimum of ten years.
@@ -1495,7 +1495,7 @@ impl Class {
                         They try tempt their votives into greater evil, and encourage acquiring power by any means necessary.
 
                         \parhead{Fae}
-                        Fae are chaotic neutral creatures native to Discord, the Aligned Plane of chaos.
+                        Fae are chaotic neutral creatures native to Discord, the Spiritual Plane of chaos.
                         Their pacts can be idiosyncratic, and often come with seemingly arbitrary restrictions on how you must act in life.
                         They are also more likely to renegotiate pact details than other soul keepers, often seeking to change the restrictions that the votive must obey in life to suit their whims.
                         After death, they will typically keep your soul in Discord until you become boring to them, with a guarantee that you will eventually reach your proper afterlife.
@@ -1505,7 +1505,7 @@ impl Class {
                         Eventually, they will get bored and disappear entirely until their attention is caught again.
 
                         \parhead{Moirai}
-                        Moirai are lawful neutral creatures native to Ordus, the Aligned Plane of law.
+                        Moirai are lawful neutral creatures native to Ordus, the Spiritual Plane of law.
                         Each moirai is an impartial arbiter of some fundamental concept.
                         Their pacts always impose one restriction on you in life, and retain your soul in Ordus for a hundred years after your death.
                         The restriction is always relevant to the moirai's identity, and is focused on you as an individual rather than the world you inhabit.
