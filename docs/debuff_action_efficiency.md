@@ -294,10 +294,6 @@ Assuming that the monster attacks all party members equally, goaded applies to 7
 
 Since goaded is 33% action denial when it applies, that gives it 4 * 0.75 / 3 = 1.0 action effectiveness.
 
-### Immobilized: N/A
-
-Fully removing a creature's ability to move is too strong to exist; it would be too rare to define as an explicit debuff.
-
 ### Fling 15': 1.0 (ranged) / 0.8 (melee)
 
 In addition to the utility from pushing into hazards, a vertical fling can leave enemies in midair. A -2 penalty to Armor/Brawn/Reflex against 3 potential party attacks is worth about 0.6 EA by itself. Add in 0.4/0.2 EA from the regular push effect, since you can get either but not generally both. Note that fling *always* requires injury, because instantly killing off a cliff from full HP is too dangerous.
