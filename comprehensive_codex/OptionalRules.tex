@@ -112,8 +112,8 @@ They can also provide more detailed character customization options, increasing 
       In addition, you no longer age and can never be \glossterm{injured}.
 
       \magicalepicfate{5}{Ascension} You cannot be killed, only dissipated.
-      When you die, you automatically reform at a random location within a mile of your death after 10 minutes.
-      Reforming in this way returns you to full hit points and removes all conditions and vital wounds, but your \glossterm{fatigue levels} and other effects remain the same.
+      When you die, you automatically \glossterm{resurrect} in a new body at a random location within 100 miles of your death after 1d8 hours.
+      Resurrecting in this way does not cause the normal penalties for resurrection.
 
   \subsection{Avatar of Life}
     You are vibrantly and fully alive in a way other people can only dream of.
@@ -122,20 +122,102 @@ They can also provide more detailed character customization options, increasing 
     In addition, you must have some contact with Gaia, the ultimate source and destination for all life.
     This could be benevolent, such as by gaining her blessing, or hostile, such as by stealing a sliver of her power for yourself.
 
-    \parhead{Progression} To progress towards this epic fate, you must 
+    \parhead{Progression} To progress towards this epic fate, you must lifebond living things that are either individually powerful or massive in number.
 
     \subsubsection{Avatar of Life Ranks}
-      \epicfate{1}{Vibrant Senses} You gain a \plus10 bonus to the Awareness skill.
+      \magicalepicfate{1}{Lifebond}
+      \begin{magicalactiveability}{Lifebond}{Standard action}
+        \rankline
+        You bond your life to one living creature or object you touch.
+        If area has many living plants living in harmony, you can lifebond to the area as a whole instead of to an individual plant.
+        The maximum area size you can bond to in this way is a \hugearea radius \glossterm{zone}.
+        Creating a lifebond has several effects, all of which only function while you are on the same plane as the target.
+        \begin{raggeditemize}
+          \item You know the exact distance and direction to the target.
+          \item You know whether the target is \glossterm{injured} and how many \glossterm{vital wounds} it has.
+          \item Whenever the target would lose hit points, it loses half that many hit points instead (minimum 1).
+            If the target's rank matches or exceeds twice your rank in this epic fate, you lose hit points equal to half the hit points that the target lost, which is usually a quarter of the original damage.
+            This does not cause you to suffer any other non-damaging effects of any attacks.
+          \item Whenever you regain hit points, the target also regains that many hit points.
+            If you would regain hit points over your maximum, the target regains hit points equal to the full value you would have regained, ignoring your maximum hit points.
+        \end{raggeditemize}
+
+        This effect lasts permanently, and you can lifebond any number of living things.
+        However, it cannot be \glossterm{dismissed} or removed by any means.
+        The lifebond only ends when either you or the target dies.
+      \end{magicalactiveability}
+
+      \epicfate{2}{Vibrant Senses} You gain a \plus10 bonus to the Awareness skill and a \plus2 bonus to your Perception.
       In addition, you gain \glossterm{lifesense} with a 300 foot radius and \glossterm{lifesight} with a 120 foot radius.
       If you already have either of those abilities, you increase their range by that amount.
+      Your lifesense and lifesight can also penetrate up to 1 foot of any solid material.
 
-      \epicfate{2}{} 
+      \epicfate{3}{Burgeoning Life} Your maximum hit points are doubled.
+      In addition, whenever you regain hit points, you regain the same number of hit points at the end of the next round.
+      This ability does not trigger itself.
 
-      \epicfate{3}{} 
+      % Low impact because rank 4 is when Lifebond allows you to protect all of your rank 7 allies freely
+      \magicalepicfate{4}{Lifebond Infusion} Creatures that you are lifebonded to gain the benefit of your \textit{vibrant senses} ability.
+      Non-creatures that you are lifebonded to gain the benefit of your \textit{burgeoning life} ability, and they grow at a hundred times their normal rate while only requiring their normal nutrients.
 
-      \epicfate{4}{} 
+      \magicalepicfate{5}{Bonds Beyond Death} When you die, your lifebonds do not end.
+      If any part of your \glossterm{corpse} is brought to anything you are lifebonded to, you are automatically \glossterm{resurrected} after 8 hours in its presence.
+      Resurrecting in this way does not cause the normal penalties for resurrection.
+      In addition, any creature that you are lifebonded to can choose to sacrifice a piece of its life to resurrect you without a corpse.
+      This requires 24 hours.
+      If you are resurrected in this way, that creature suffers penalties as if it had also been resurrected (see \pcref{Resurrection}).
 
-      \epicfate{5}{} 
+  \subsection{Axiom}
+    You embody a specific universal truth or constant of the universe.
+    When you gain this epic fate, you choose an axiom to adopt as your own.
+    Your axiom can be a philosophical concept, a directive, or a material fact, as long as it can be expressed at its most basic level in one or two words and it is widely applicable.
+    "Fight", "Choice", "Truth", "Gravity", "Change", and "Exist" are all valid examples of axioms.
+
+    \parhead{Prerequisites} You must spend at least a week contemplating the many facets of your axiom and accepting it as your own.
+
+    \parhead{Progression} To progress towards this epic fate, you must change the universe to more closely resemble your axiom.
+    This could take many forms.
+    For example, if your axiom is "Truth", you could spend time hunting down and killing all known liars and oathbreakers in a given country, or you could reform a country's educational system to correct systematic misconceptions about the world.
+    To reach higher ranks, the scope and significance of your changes must increase.
+    In addition, as you reach higher ranks, you become increasingly incapable of acting against your axiom.
+
+  \subsubsection{Axiom Ranks}
+
+    \epicfate{1}{Internalized Axiom} You gain a \plus4 bonus to one attribute and two skills that are thematically related to your chosen axiom.
+
+    \epicfate{2}{Immutable} You become immune to \glossterm{conditions} and all debuffs defined in \pcref{Circumstances and Debuffs}.
+    In addition, you no longer age.
+
+    \magicalepicfate{3}{Walk the Affinity Web} You can intuitively sense the direction to any locations within 500 miles of you that are strongly connected to your axiom.
+    In general, this can only sense locations that involve large numbers of people, such as cities, or extraordinarily powerful individuals.
+    For example, an axiom of "Fight" could sense two armies fighting, but not a tavern brawl or a village defending itself from a goblin raid.
+    Each location has its own distinct "signature".
+    This does not give you any other information about the location by itself, but once you have been to a location, you can recognize it again with this ability.
+
+    As a standard action, you can \glossterm{teleport} yourself and up to ten allies to any location that you sense with this ability.
+    Teleporting in this way increases your \glossterm{fatigue level} by 1.
+
+    \magicalepicfate{4}{Axiomatic Adherence} 
+      \begin{magicalactiveability}{Axiomatic Adherence}{Standard action}
+        \rankline
+        Make an attack against one creature within \medrange.
+        The defense depends on your chosen axiom.
+        If your axiom is a behavior or directive, you attack the target's Mental defense, and this ability gains the \atCompulsion tag.
+        Otherwise, you attack the target's Fortitude defense.
+        \hit The target embodies your axiom as a \glossterm{condition}.
+        If your axiom is a behavior or directive, the target acts to maximize that axiom.
+        For example, an axiom of "Fight" would compel it to fight endlessly, while an axiom of "Exist" would compel it to protect the existence of all things.
+
+        Otherwise, the target is physically transformed to more closely resemble your axiom.
+        This can make the target \blinded, \slowed, \stunned and \goaded, \panicked, or other debuffs of similar power that make sense for your axiom.
+        For example, an axiom of "Gravity" might slow the target by increasing its weight.
+      \end{magicalactiveability}
+
+    \epicfate{5}{Universal Truth} You are as immortal as the concept you embody.
+    When you die, you automatically \glossterm{resurrect} in a new body after 8 hours at the location in the universe that most strongly embodies your axiom.
+    % TODO: adjust once new cosmology is defined
+    That location does not have to be on the same plane as where you died, but it must exist outside of the Aligned Planes.
+    If no location in the universe is sufficiently related to your axiom, you die permanently.
 
   \subsection{Deity}
     People have begun to worship you, putting you on the path to become a deity.
@@ -170,9 +252,11 @@ They can also provide more detailed character customization options, increasing 
       While you are on that plane, you can teleport to any Spiritual Plane with your \textit{prayers} ability from this epic fate.
       In addition, you can use that teleportation ability once per hour instead of once per week.
 
-      \epicfate{5}{Deification} You become a deity.
+      \epicfate{5}{Deification} You become a minor deity.
       You are transported to an Spiritual Plane matching your alignment, and you gain divine dominion over an amount of territory in that plane.
       While you are in your territory, you can freely reshape your territory with a thought to match your desires, and you are immune to all damage and \glossterm{conditions}.
+      Unlike major deities, you are still able to leave your home plane.
+      However, you suffer a \minus2 penalty to your \glossterm{fatigue tolerance} whenever you are not on your home plane.
 
       While you are on any Spiritual Plane, you can teleport to anywhere within your home plane as a \glossterm{standard action}.
       In addition, there is no limit on the number of times you can teleport with your \textit{prayers} ability from this epic fate.
@@ -234,7 +318,7 @@ They can also provide more detailed character customization options, increasing 
       You gain these weapons in addition to any natural weapons you already have, no matter how biologically implausible that may be.
       In addition, each of your natural weapons has the \weapontag{Sweeping} (3) weapon tag in addition to its other weapon tags.
 
-      \epicfate{2}{Regeneration} At the end of each round, you regain hit points equal to a quarter of your maximum hit points.
+      \epicfate{2}{Regeneration} At the end of each round, you regain hit points equal to 20 times your rank in this epic fate.
       In addition, you may increase the result of one of your \glossterm{vital wounds} by 1, to a maximum of 10.
       If you are unconscious, this automatically applies to your most severe vital wounds first.
 
@@ -251,7 +335,7 @@ They can also provide more detailed character customization options, increasing 
       If you choose for both heads to be active, you can use an extra \glossterm{minor action} during the \glossterm{action phase}.
 
       \epicfate{5}{Regenerative Immortality} You can regenerate from any wounds, even lethal ones.
-      When you die, your \textit{unnatural regeneration} ability continues functioning.
+      When you die, your \textit{regeneration} ability continues functioning.
       Once that ability improves your vital wounds so they are all above 0, you return to life.
       However, each time you die, you gain a new scar that your regeneration always recreates.
 
@@ -261,13 +345,13 @@ They can also provide more detailed character customization options, increasing 
       Your soul will automatically return to the first piece that regenerates completely, at which point the remaining fragments will wither and die.
 
   \subsection{Paradox}
-    You exist partly outside of the ordinary flow of time.
+    You exist partly outside of the ordinary flow of time and destiny.
     Your very existence wreaks havoc on prophecies and the orderly sequence of events.
     As your alterations to the natural timeline of the universe grow in scope, your ability to bend time to your whims grows in turn.
     Eventually, you become a fixed point across all of time.
 
     \parhead{Prerequisites} You must have been directly involved with an action that resulted in a significant change to at least one major country or similarly significant entity.
-    Any type of change is acceptable, as long as it would be historically important would not have happened without your intervention.
+    Any type of change is acceptable, as long as it is important to history and would not have happened without your involvement.
 
     \parhead{Progression} To progress towards this epic fate, you must be alter the course of other major events that will be remembered to history.
     Reaching the higher ranks typically requires changing the fate of major planes, or creatures of similar importance.
