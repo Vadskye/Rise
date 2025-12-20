@@ -1,7 +1,7 @@
 import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
-export function addPlaneforged(grimoire: Grimoire) {
+export function addSoulforged(grimoire: Grimoire) {
   addAirElementals(grimoire);
   addAngels(grimoire);
   addDemonspawn(grimoire);
@@ -15,7 +15,7 @@ export function addPlaneforged(grimoire: Grimoire) {
       alignment: 'neutral',
       base_class: 'leader',
       elite: true,
-      creature_type: 'planeforged',
+      creature_type: 'soulforged',
       level: 16,
       size: 'huge',
     });
@@ -103,7 +103,7 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 4,
             size: 'small',
           });
@@ -117,7 +117,7 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 8,
             size: 'medium',
           });
@@ -131,7 +131,7 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 12,
             size: 'large',
           });
@@ -145,7 +145,7 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 16,
             size: 'large',
           });
@@ -159,7 +159,7 @@ function addAirElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 20,
             size: 'huge',
           });
@@ -237,7 +237,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'neutral good',
             base_class: 'leader',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 16,
             size: 'huge',
           });
@@ -270,7 +270,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'lawful good',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 13,
             size: 'large',
           });
@@ -321,7 +321,7 @@ function addAngels(grimoire: Grimoire) {
             alignment: 'neutral good',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 10,
             size: 'large',
           });
@@ -378,7 +378,7 @@ function addDemonspawn(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'brute',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 5,
             size: 'large',
           });
@@ -413,7 +413,7 @@ function addDemonspawn(grimoire: Grimoire) {
             alignment: 'neutral evil',
             base_class: 'warrior',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 7,
             size: 'medium',
           });
@@ -471,7 +471,7 @@ function addDemonspawn(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'sniper',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 14,
             size: 'large',
           });
@@ -502,7 +502,7 @@ function addDemonspawn(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: true,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 11,
             size: 'large',
           });
@@ -568,7 +568,7 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 4,
             size: 'small',
           });
@@ -582,7 +582,7 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 8,
             size: 'medium',
           });
@@ -596,7 +596,7 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 12,
             size: 'large',
           });
@@ -610,7 +610,7 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 16,
             size: 'large',
           });
@@ -624,7 +624,7 @@ function addFireElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 20,
             size: 'huge',
           });
@@ -701,7 +701,7 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 1,
             size: 'medium',
           });
@@ -730,7 +730,7 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 5,
             size: 'medium',
           });
@@ -763,7 +763,7 @@ function addFormians(grimoire: Grimoire) {
             alignment: 'lawful neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 9,
             size: 'medium',
           });
@@ -795,7 +795,7 @@ function addImps(grimoire: Grimoire) {
             alignment: 'chaotic evil',
             base_class: 'skirmisher',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 5,
             size: 'small',
           });
@@ -853,7 +853,7 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 6,
             size: 'medium',
           });
@@ -867,7 +867,7 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 12,
             size: 'large',
           });
@@ -881,7 +881,7 @@ function addMagmaElementals(grimoire: Grimoire) {
             alignment: 'neutral',
             base_class: 'warrior',
             elite: false,
-            creature_type: 'planeforged',
+            creature_type: 'soulforged',
             level: 18,
             size: 'huge',
           });

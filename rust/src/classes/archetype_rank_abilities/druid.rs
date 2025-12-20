@@ -716,7 +716,7 @@ pub fn wildspeaker<'a>() -> Vec<RankAbility<'a>> {
             rank: 6,
             description: r"
                 % TODO: does this need a glossterm? These are only defined fully in the Grimoire of Guidance.
-                This ability also protects you and your allies from plant animates, elemental planeforged, and all summoned creatures.
+                This ability also protects you and your allies from plant animates, elemental animates, and all summoned creatures.
             ",
             modifiers: None,
         },
