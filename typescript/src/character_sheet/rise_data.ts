@@ -14,7 +14,7 @@ export type RiseCreatureType =
   | 'animate'
   | 'dragon'
   | 'mortal'
-  | 'planeforged'
+  | 'soulforged'
   | 'undead';
 export type RiseRole = 'Brute' | 'Skirmisher' | 'Warrior' | 'Sniper' | 'Mystic' | 'Leader';
 export type RiseBaseClass =

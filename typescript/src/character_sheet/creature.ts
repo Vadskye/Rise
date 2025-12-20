@@ -237,7 +237,7 @@ export class Creature implements CreaturePropertyMap {
       animate: 'knowledge_arcana' as const,
       dragon: 'knowledge_arcana' as const,
       mortal: 'knowledge_local' as const,
-      planeforged: 'knowledge_planes' as const,
+      soulforged: 'knowledge_souls' as const,
       undead: 'knowledge_souls' as const,
     }[this.creature_type];
     // TODO: determine correct knowledge based on checking traits like Animal.
@@ -775,7 +775,7 @@ export class Creature implements CreaturePropertyMap {
       this.addManeuver('Elite Cleanse');
     }
 
-    if (properties.creature_type === 'planeforged') {
+    if (properties.creature_type === 'soulforged') {
       this.addTrait('nonliving');
     } else if (properties.creature_type === 'undead') {
       this.addTrait('nonliving');

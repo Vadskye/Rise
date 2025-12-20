@@ -42,8 +42,8 @@ impl PassiveAbility {
         StandardPassiveAbility::Mindless.ability()
     }
 
-    pub fn planeforged() -> Self {
-        StandardPassiveAbility::Planeforged.ability()
+    pub fn soulforged() -> Self {
+        StandardPassiveAbility::Soulforged.ability()
     }
 
     pub fn simple_minded() -> Self {
@@ -67,7 +67,7 @@ pub enum StandardPassiveAbility {
     EliteActions,
     Indwelt,
     Mindless,
-    Planeforged,
+    Soulforged,
     SimpleMinded,
     Soulless,
     Undead,
@@ -113,12 +113,12 @@ impl StandardPassiveAbility {
                 is_magical: false,
                 name: "Mindless".to_string(),
             },
-            Self::Planeforged => PassiveAbility {
+            Self::Soulforged => PassiveAbility {
                 description: r"
-                  The $name has a body made of concentrated planar essence, and is not alive.
+                  The $name has a body made of \glossterm{essentia}, or soul residue, and is not alive.
                 ".to_string(),
                 is_magical: false,
-                name: "Planeforged".to_string(),
+                name: "Soulforged".to_string(),
             },
             Self::SimpleMinded => PassiveAbility {
                 description: r"

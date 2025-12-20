@@ -14,7 +14,7 @@ pub enum ModifierBundle {
     Lifeless,
     Mindless,
     Multipedal,
-    Planeforged,
+    Soulforged,
     Sightless,
     SimpleMinded,
     SimpleMindedConstruct,
@@ -92,8 +92,8 @@ impl ModifierBundle {
                 Modifier::MovementSpeed(MovementMode::Land, 10),
                 Modifier::Skill(Skill::Balance, 5),
             ],
-            Self::Planeforged => vec![
-                Modifier::PassiveAbility(PassiveAbility::planeforged()),
+            Self::Soulforged => vec![
+                Modifier::PassiveAbility(PassiveAbility::soulforged()),
             ],
             Self::Sightless => vec![
                 Modifier::PassiveAbility(PassiveAbility {
