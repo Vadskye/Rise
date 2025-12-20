@@ -85,7 +85,7 @@ export const rituals: RitualDefinition[] = [
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes holy water.
       A creature can throw a vial of holy water as a standard action.
       When they do, they make an attack vs. Reflex against something within \shortrange.
-      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes \\damageranktwolow damage.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{soulforged}, it takes \\damageranktwolow damage.
       Some creatures have specific effects when they are hit by holy water.
     `,
     rank: 1,
@@ -126,7 +126,7 @@ export const rituals: RitualDefinition[] = [
       One pint of \\glossterm{unattended}, nonmagical water within \\shortrange becomes unholy water.
       A creature can throw a vial of unholy water as a standard action.
       When they do, they make an attack vs. Reflex against something within \shortrange.
-      \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes \\damageranktwolow damage.
+      \hit If the target is \creaturetype{undead} or an evil \creaturetype{soulforged}, it takes \\damageranktwolow damage.
       Some creatures have specific effects when they are hit by holy water.
     `,
     rank: 1,
@@ -457,80 +457,68 @@ export const rituals: RitualDefinition[] = [
   },
 
   {
-    name: 'Interplanar Gate',
+    name: 'Forge Planar Rift',
     rank: 7,
     roles: ['narrative'],
     effect: `
-      Choose a plane that connects to your current plane, and a location within that plane.
-      This ritual creates an interdimensional connection between your current plane and the location you choose, allowing travel between those two planes in either direction.
-      The gate takes the form of a 15-foot radius circular disk, oriented in a direction you choose (typically vertical).
-      It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through it is shunted instantly to the other location.
-      The gate cannot be \\glossterm{sustained} for more than 5 rounds, and is automatically dismissed at the end of that time.
+      Choose any location on your current plane.
+      You create a \\glossterm{planar rift} between your current location and your chosen location, allowing travel between the two locations in either direction.
+      The planar rift takes the form of a 15-foot radius circular disk, oriented in a direction you choose (typically vertical).
+      It is a physical connection betweeen the two locations, and anything that passes through arrives at the other location.
+      When it opens, it pushes aside anything in the way.
+      If it encounters an immovable obstacle with 10 or more hardness, the planar rift stops its expansion in that direction.
 
-      You must specify the gate's destination with a precise mental image of its appearance.
+      This ritual cannot be \\glossterm{sustained} for more than 10 minutes, and is automatically dismissed at the end of that time.
+      When this ritual ends for any reason, the planar rift spends a round slowly closing, allowing anything currently in transit to choose which side of the rift it wants to end up on.
+      Anything still in the middle when it closes is severed cleanly in half.
+
+      You must specify the planar rift's destination with a precise mental image of its appearance.
       The image does not have to be perfect, but it must unambiguously identify the location.
-      Incomplete or incorrect mental images may result in the ritual leading to an unintended destination within the same plane, or simply failing entirely.
-
-      % TODO: Is this planar cosmology correct?
-      The Astral Plane connects to every plane, but transit from other planes is usually more limited.
-      From the Material Plane, you can only reach the Astral Plane.
+      Incomplete or incorrect mental images may result in the ritual leading to an unintended destination or simply failing entirely.
     `,
     type: 'Sustain (standard)',
     usageTime: 'one week',
-    spheres: ['Astromancy', 'Channel Divinity'],
+    sphereEffects: {
+      Terramancy: 'Both sides of the planar rift must be no more than 60 feet above stable ground.',
+    },
+    spheres: ['Astromancy', 'Prayer', 'Terramancy'],
   },
   {
-    name: 'Plane Shift',
-    rank: 4,
+    name: 'Planet Shift',
+    rank: 5,
     roles: ['narrative'],
     effect: `
-      Choose a \\glossterm{planar rift} within \\medrange and up to six Medium or smaller ritual participants.
-      Each creature \\glossterm{teleports} to the unoccupied spaces closest to the other side of the planar rift.
+      Choose another planet within your current plane and up to six Medium or smaller ritual participants.
+      Each creature \\glossterm{teleports} to unoccupied spaces outdoors on the surface of your chosen planet.
+      If the planet does not have an ordinary surface, such as Ventus, you appear high in its atmosphere.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
-      For details about planar rifts, see \\pcref{Planar Rifts}.
-
-      % TODO: Is this planar cosmology correct?
-      The Astral Plane connects to every plane, but transit from other planes is usually more limited.
-      From the Material Plane, you can only reach the Astral Plane.
+      If you have been to that planet before, you can specify your destination to within a 1 mile radius, but you always appear outdoors on the planet's surface.
     `,
     tags: [],
-    usageTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity'],
+    materialCost: true,
+    sphereEffects: {
+      Terramancy: `
+        Both your current planet and your destination planet must have a surface of solid ground.
+        This precludes travel to or from Aqua and Ventus.
+      `,
+    },
+    usageTime: '24 hours',
+    spheres: ['Astromancy', 'Prayer', 'Terramancy'],
   },
   {
-    name: 'Astral Rift',
+    name: 'Astral Expedition',
 
     effect: `
       Choose up to six Medium or smaller ritual participants.
-      The group of creatures \\glossterm{teleports} to a random location within the Inner Astral Plane (see \\pcref{The Astral Plane}).
+      The group of creatures \\glossterm{teleports} to the closest location in the Astral Expanse (see \\pcref{The Astral Expanse}).
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
-
-      In addition, a localized \\glossterm{planar rift} appears at the destination area on the Astral Plane.
-      The rift leads back to the location where this ritual was performed.
-      The targets of this ritual can traverse the rift simply by walking through it, while other creatures can only navigate it with the help of effects like the \\ritual{plane shift} ritual.
-      It lasts for one week before disappearing permanently, potentially stranding the targets in the Astral Plane if they have not yet returned.
+      Physically travelling through the Astral Expanse is extremely dangerous, and few who dare to perform this ritual return alive.
     `,
-    rank: 5,
+    rank: 6,
     roles: ['narrative'],
     tags: [],
     usageTime: '24 hours',
-    spheres: ['Astromancy', 'Channel Divinity'],
-  },
-  {
-    name: 'Homeward Shift',
-
-    effect: `
-      This ritual can only be performed on the Astral Plane.
-
-      Choose up to six Medium or smaller ritual participants.
-      Each target \\glossterm{teleports} to the last spaces they occupied on their home planes.
-      This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
-    `,
-    rank: 4,
-    roles: ['narrative'],
-    tags: [],
-    usageTime: 'one hour',
-    spheres: ['Astromancy', 'Channel Divinity'],
+    spheres: ['Astromancy', 'Prayer'],
   },
   // {
   //   name: 'Overland Teleportation',
@@ -617,7 +605,7 @@ export const rituals: RitualDefinition[] = [
     rank: 3,
     roles: ['narrative'],
     effect: `
-      Choose an \\glossterm{astral beacon} up to 500 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
+      Choose an \\glossterm{astral beacon} up to 500 miles away from you, and up to six Medium or smaller ritual participants.
       Each target is teleported to the area defined by the beacon.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -635,7 +623,7 @@ export const rituals: RitualDefinition[] = [
     rank: 4,
     roles: ['narrative'],
     effect: `
-      Choose a destination up to 500 miles away from you on your current plane, and up to six Medium or smaller ritual participants.
+      Choose a destination up to 500 miles away from you, and up to six Medium or smaller ritual participants.
       Each target is teleported to the chosen destination.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
 
@@ -675,14 +663,14 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     effect: `
-      When you cast this spell, you choose whether to send an object to the Astral Plane or retrieve the object you stored there.
-      If you send an object to the Astral Plane, choose a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
-      That object \\glossterm{teleports} to a random location in the Astral Plane.
+      When you cast this spell, you choose whether to send an object to the Astral Expanse or retrieve the object you stored there.
+      If you send an object to the Astral Expanse, choose a Medium or smaller \\glossterm{unattended} object within \\medrange of you.
+      That object \\glossterm{teleports} to a random location in the Astral Expanse.
 
       If you retrieve an object, choose an unoccupied space on stable ground within \\medrange of you.
-      The object you previously stored in the Astral Plane with this ritual appears at that location.
-      The object normally returns exactly as it was sent away, since the Astral Plane is vast and mostly uninhabited.
-      There is a 1\\% chance per year that the object spends in the Astral Plane that it has been lost irretrievably.
+      The object you previously stored in the Astral Expanse with this ritual appears at that location.
+      The object normally returns exactly as it was sent away, since the Astral Expanse is vast and small objects rarely attract attention from its inhabitants.
+      There is a 1\\% chance per year that the object spends in the Astral Expanse that it has been lost irretrievably.
     `,
     // narrative: '',
     rank: 3,
@@ -983,7 +971,7 @@ export const rituals: RitualDefinition[] = [
       crit: `The creature is \\panicked instead of frightened.`,
       hit: `The creature is \\frightened by the chosen object until it finishes a \\glossterm{short rest}.`,
       targeting: `
-      Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+      Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, soulforged, or undead.
       In addition, choose one Large or smaller object within \\medrange.
       If the target is moved, this ability is \\glossterm{dismissed}.
 
@@ -1012,7 +1000,7 @@ export const rituals: RitualDefinition[] = [
       Harming the creature is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
       `,
       targeting: `
-      Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, planeforged, or undead.
+      Choose a creature type: aberration, animal, animate, dragon, humanoid, magical beast, monstrous humanoid, soulforged, or undead.
       In addition, choose one Large or smaller object within \\medrange.
       If the target is moved, this ability is \\glossterm{dismissed}.
 
@@ -1734,11 +1722,11 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     scaling: {
       4: `
-        There is no distance limitation. 
-        The target must simply be on the same plane as you.
+        There is no distance limitation.
+        The target must simply be on the same planet as you.
       `,
       6: `
-        The target does not have to be on the same plane as you.
+        The target must simply be on the same plane as you.
       `,
     },
     spheres: ['Revelation'],
@@ -1766,11 +1754,11 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     scaling: {
       4: `
-        There is no distance limitation. 
-        The target must simply be on the same plane as you.
+        There is no distance limitation.
+        The target must simply be on the same planet as you.
       `,
       6: `
-        The target does not have to be on the same plane as you.
+        The target must simply be on the same plane as you.
       `,
     },
     type: 'Sustain (standard)',
@@ -1792,7 +1780,7 @@ export const rituals: RitualDefinition[] = [
     scaling: {
       6: `
         There is no distance limitation. 
-        The target must simply be on the same plane as you.
+        The target must simply be on the same planet as you.
       `,
     },
     type: 'Sustain (standard)',
@@ -1850,11 +1838,11 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     scaling: {
       5: `
-        There is no distance limitation. 
-        The target must simply be on the same plane as you.
+        There is no distance limitation.
+        The target must simply be on the same planet as you.
       `,
       7: `
-        The target does not have to be on the same plane as you.
+        The target must simply be on the same plane as you.
       `,
     },
     tags: ['Scrying'],
@@ -1912,7 +1900,7 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: '24 hours',
     effect: `
-      When you perform this ritual, you must unambiguously specify a location on the same plane as you, and you choose up to six ritual participants to guide.
+      When you perform this ritual, you must unambiguously specify a location on the same planet as you, and you choose up to six ritual participants to guide.
       You know exactly what direction you must travel to reach your chosen destination by the most direct physical route.
       You are not always led in the exact direction of the destination -- if there is an impassable obstacle between the target and the destination, this ability will direct you around the obstacle, rather than through it.
 
@@ -3147,5 +3135,27 @@ export const rituals: RitualDefinition[] = [
     rank: 6,
     roles: ['narrative'],
     spheres: ['Channel Divinity', 'Polymorph', 'Prayer', 'Terramancy'],
+  },
+  {
+    name: 'Stabilize Planar Rift',
+
+    usageTime: '24 hours',
+    effect: `
+      A \\glossterm{planar rift} within \\medrange of you becomes stable.
+      It will persist for the next 7 days without disappearing.
+      The next time this ritual is used on the same planar rift, that ritual has a 10\\% chance to fail.
+      This failure chance increases each time the ritual is used successfully, to a maximum of a 90\\% chance to fail.
+
+      While not affected by this ritual, a planar rift typically disappears within a few days, but this can vary widely.
+    `,
+    rank: 5,
+    roles: ['narrative'],
+    scaling: {
+      7: 'The effect lasts for 30 days instead of 7 days.',
+    },
+    sphereEffects: {
+      Terramancy: 'Both sides of the planar rift must be no more than 60 feet above stable ground.',
+    },
+    spheres: ['Astromancy', 'Chronomancy', 'Prayer', 'Terramancy', 'Thaumaturgy'],
   },
 ];

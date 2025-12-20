@@ -113,7 +113,7 @@ fn thrown_attacks() -> Vec<Tool> {
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against something within \shortrange.
-            \hit If the target is \creaturetype{undead} or an evil \creaturetype{planeforged}, it takes $dr2l damage.
+            \hit If the target is \creaturetype{undead} or an evil \creaturetype{soulforged}, it takes $dr2l damage.
             Some creatures have specific effects when they are hit by holy water.
         "
         .to_string(),
@@ -143,7 +143,7 @@ fn thrown_attacks() -> Vec<Tool> {
         description: r"
             You can throw this item as a standard action.
             When you do, make an attack vs. Reflex against something within \shortrange.
-            \hit If the target is a good \creaturetype{planeforged}, it takes $dr2l damage.
+            \hit If the target is a good \creaturetype{soulforged}, it takes $dr2l damage.
             Some creatures have specific effects when they are hit by unholy water.
         "
         .to_string(),

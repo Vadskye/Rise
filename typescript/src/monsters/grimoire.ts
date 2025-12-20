@@ -8,7 +8,7 @@ import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
 import { addAnimates } from '@src/monsters/individual_monsters/animates';
 import { addBeasts } from '@src/monsters/individual_monsters/beasts';
 import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
-import { addPlaneforged } from '@src/monsters/individual_monsters/planeforged';
+import { addSoulforged } from '@src/monsters/individual_monsters/soulforged';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
 
 type MonsterInitializer = (creature: Creature) => void;
@@ -43,7 +43,7 @@ export class Grimoire {
     addAnimates(this);
     addBeasts(this);
     addHumanoids(this);
-    addPlaneforged(this);
+    addSoulforged(this);
     addUndead(this);
   }
 

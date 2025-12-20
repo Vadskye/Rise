@@ -120,7 +120,7 @@ export const astromancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against up to three Large or smaller creatures within \\medrange.
-          You gain a +2 accuracy bonus against \\creaturetype{planeforged} creatures.
+          You gain a +2 accuracy bonus against \\creaturetype{soulforged} creatures.
         `,
       },
       narrative: `
@@ -146,7 +146,7 @@ export const astromancy: MysticSphere = {
           You must have a \\glossterm{free hand} to cast this spell.
 
           Make an attack vs. Mental against a creature you \\glossterm{touch}.
-          You gain a +2 accuracy bonus against \\creaturetype{planeforged} creatures.
+          You gain a +2 accuracy bonus against \\creaturetype{soulforged} creatures.
         `,
       },
       rank: 7,
