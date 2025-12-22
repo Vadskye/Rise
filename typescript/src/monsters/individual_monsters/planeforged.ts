@@ -666,13 +666,14 @@ function addFormians(grimoire: Grimoire) {
     creature.addTrait('multipedal');
   }
 
+  // TODO: move to not be soulforged
   grimoire.addMonsterGroup(
     {
       name: 'Formians',
       hasArt: true,
       knowledge: {
         normal: `
-          Formians are ant-like inhabitants native to Ordus, the Spiritual Plane of law.
+          Formians are ant-like creatures native to Terra.
           They share a hive mind that allows telepathic communication at great distances.
         `,
         hard: `
