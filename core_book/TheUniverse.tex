@@ -182,6 +182,13 @@ However, doing so can significantly change the tone of the game and create logic
   Anything entering them is compressed into three dimensions.
   That is why they are called "planes", like a plane is a two-dimensional object within a three-dimensional space.
 
+  It is impossible for mortals to reach the Spiritual Planes by normal means.
+  To do so, they would have to move through the fourth spacial dimension.
+  Imagine that there are two pieces of paper resting flat on different shelves.
+  You could make each paper as long and wide as you want, but they would never intersect each other, because they are parallel.
+  To move from one piece of paper to the other, you would have to move in a third dimension: vertically.
+  In the same way, you could fly in any direction for any length of time and never reach the Spiritual Plane.
+
   \subsectiongraphic*{Planar Rifts}{width=\columnwidth}{the universe/planar rifts}\label{Planar Rifts}
     Planar rifts are places where the fabric of a plane has "folded" to directly connect two distant locations within a single plane.
     The two locations on either side of the rift are physically next to each other, so travel through a planar rift is not magical.
@@ -197,23 +204,142 @@ However, doing so can significantly change the tone of the game and create logic
     These demiplanes may be compose of ordinary material, \glossterm{essentia}, or both, and they can have widely varied properties.
     Most demiplanes were created for particular purposes by beings of great power, though some simply came into existence through unknown means.
 
+  % TODO: This seems like it belongs in a different section
+  \subsection{Soulforged Creatures}
+    The Spiritual Planes have native inhabitants, but they are not born in the same way as creatures of the Material Plane.
+    % TODO: name lawful/chaotic equivalents
+    Angels, demons, devils, and other such creatures are made from the essentia of their corresponding Spiritual Plane.
+    They are called soulforged creatures because they are made of essentia, which comes from souls.
+    Most such creatures do not have their own souls.
+    They are agents of deities and other powerful figures, used to enforce their will.
+
+    When a soulforged is destroyed, its essentia is absorbed by the plane it is on.
+    This is one reason that soulforged creatures rarely leave their home plane, since dying on other planes is a net loss of essentia to their creators.
+    If a soulforged has a soul and a strong will, the soul travels to its home plane like mortal souls do.
+    It can generally make a new body for itself within a week if it died on another plane, or within a day if it died on its home plane.
+    Soulforged that die without a soul, or with a soul too weak to reconstitute itself, do not reform.
+
+\section{Realm Traits}
+
+  Specific areas can have unusual traits.
+  Effects that change how physics or magic work in a particular area are called realm traits.
+  It is common for the divine dominion of deities to have special realm traits chosen by the deity.
+  Unusual realms can also exist naturally in any Spiritual Plane.
+  Esoteric realm traits are less common on the Material Plane, but some planets or magical areas have unusual traits.
+
+  \subsection{Gravity Direction}
+    The direction of gravity in a realm can take one of the following forms:
+    \begin{raggeditemize}
+      \item Massive Gravity: Gravity pulls towards object based on their mass, as it does in the real world.
+        This is the default for all locations unless otherwise specified.
+      \item Fixed Gravity: Gravity points in a fixed direction and with a fixed strength at all locations in the realm.
+      \item Absolute Directional Gravity: Gravity points in a consistent direction according to a rule that applies equally to everything on the realm, but which is not in a fixed direction.
+        For example, a realm filled with floating spheres where gravity always points towards the closest sphere, but the strength and direction of gravity does not depend on the mass of the spheres, has absolute directional gravity.
+      \item Subjective Gravity: Each creature in the realm chooses the direction of gravity for that creature.
+        The realm has no gravity for unattended objects and mindless creatures.
+        You can control gravity in a subjective gravity realm using the \ability{control gravity} ability.
+        \begin{activeability}{Control Gravity}{\glossterm{Minor action}}
+          \rankline
+          You can only use this ability while in a realm with subjective gravity.
+
+          Make a Willpower check with a \glossterm{difficulty value} of 10.
+          Success means that you choose the direction of gravity that applies to you in your current realm.
+          Alternately, you can choose for gravity to not apply to you.
+
+          Failure means you gain a \plus2 bonus to the next \textit{control gravity} ability you use in your current realm.
+          This bonus stacks with itself and lasts until you succeed with this ability.
+        \end{activeability}
+    \end{raggeditemize}
+
+  \subsection{Gravity Strength} The strength of gravity in a realm can take one of the following forms:
+    \begin{raggeditemize}
+      \item Normal Gravity: Gravity is about the strength of Earth.
+          This is the default for all locations unless otherwise specified.
+      \item No Gravity: There is no gravity in the realm.
+        The weight of all objects is reduced by one \glossterm{weight category}.
+        Even while weightless, objects still have mass, so heavy objects can still slow your movements.
+        The \glossterm{range limits} of ranged weapons are quadrupled.
+        Falling damage is impossible.
+        A creature that jumps continues at the same rate indefinitely.
+        % TODO: what additional effects are there?
+      \item Light Gravity: Gravity is about half the strength of Earth.
+        The weight of all objects is halved.
+        The \glossterm{range limits} of ranged weapons are doubled.
+        The horizontal and vertical jump distances for all creatures are doubled.
+        Falling damage is halved.
+      \item Heavy Gravity: Gravity is about twice the strength of Earth.
+        The weight of all objects is doubled.
+        The range limits of ranged weapons are halved, to a minimum of 5 feet.
+        The horizontal and vertical jump distances for all creatures are halved.
+        Falling damage is doubled.
+        % TODO: falling damage
+      \item Extreme Gravity: Gravity is about four times the strength of Earth.
+        The weight of all objects is increased by one \glossterm{weight category}.
+        The range limits of ranged weapons are reduced to one quarter of their normal value, to a minimum of 5 feet.
+        The horizontal and vertical jump distances for all creatures are also reduced to one quarter.
+        Falling damage is quadrupled.
+    \end{raggeditemize}
+
+  \subsection{Light} Various realms are illuminated in different ways.
+  Unless otherwise specified, this only determines whether there is an ambient source of light.
+  It does not affect the behavior of other sources of light, such as torches or a sun.
+  A realm can have multiple simultaneous traits that change its light.
+    \begin{raggeditemize}
+      \item None: There is no ambient source of light in the realm.
+        This is the default for all realms unless otherwise specified.
+      \item Fixed Source: There is a single constant source of light in the realm.
+      \item Mobile Source: There is a single source of light in the realm that moves around it, illuminating different parts of the realm at different times.
+      \item Universal: All parts of the realm, even indoors, are constantly illuminated with either \glossterm{shadowy illumination} or \glossterm{bright illumination}.
+        Total darkness is impossible without magic.
+      \item Suppressed: All sources of light are downgraded to one step, to a minimum of either total darkness or \glossterm{shadowy illumination}.
+        This means \glossterm{bright illumination} becomes shadowy, and \glossterm{brilliant illumination} becomes bright.
+    \end{raggeditemize}
+
+  \subsection{Magic} Some realms have strange effects on the use of magic.
+  A realm can have multiple simultaneous traits that change its magic.
+    \begin{raggeditemize}
+      \item Normal: Magic functions normally.
+        This is the default for all realms unless otherwise specified.
+      \item Suppressed: Whenever a creature in the realm uses a magical ability as a \glossterm{standard action}, \glossterm{minor action}, or \glossterm{elite action}, it must roll 1d10 \add its \glossterm{rank}.
+        If the result is less than 10, the ability fails with no effect.
+        This does not affect other types of magical abilities, such as passive magical abilities.
+      \item Siphoning: Creatures in the realm have no \glossterm{attunement points}, and they immediately deattune from all of their effects as soon as they enter the realm.
+      \item Nullified: Creatures in the realm have no magical abilities of any kind.
+        Magic items in the realm have no effect and cannot be attuned to.
+    \end{raggeditemize}
+
+  \subsection{Temperature} Some realms have unusual temperature effects.
+  A realm can have multiple simultaneous traits that change its temperature.
+    \begin{raggeditemize}
+      \item Normal: Temperature is determined normally.
+        This is the default for all realms unless otherwise specified.
+      \item Warm: The realm has a minimum ambient temperature that it reaches if left alone, even indoors.
+         Specific locations can still be cooled with effort.
+      \item Siphoning: The realm siphons heat away.
+        Sources of heat, such as fire, still have their normal temperature.
+        However, that temperature is lost quickly as it radiates.
+        It takes approximately four times the normal amount of heat to warm an area.
+        Some realms may siphon heat more or less intensely.
+    \end{raggeditemize}
+
 \section{Planets of the Material Plane}\label{Planets of the Material Plane}
   The Material Plane consists of planets orbiting a central sun, named Sol.
   Each planet has its own composition and structure, and many are inhospitable for normal humans.
   It is possible to fly through space between the planets, though space is extremely dangerous, so magical transportation is much more common.
   Each planet is listed below in order of its distance from the sun.
 
+  \subsection{Terra}
+    The surface of Terra is almost devoid of air, burning hot during the day, and freezing at night.
+    Its variable and harsh conditions make it inhospitable to almost everything.
+    Instead, creatures on Terra live underground in vast tunnels and caverns.
+    Some underground cities even contain air, which is carefully controlled to prevent it from escaping.
+    It is the natural home of earth elementals.
+
   \subsection{Ignis}
     Ignis is a burning planet with a thick atmosphere.
     It is hot enough to light ordinary wood on fire within minutes.
     Instead of rivers of water, it has rivers of lava, and firestorms frequently illuminate the sky.
     It is the natural home of fire elementals.
-
-  \subsection{Terra}
-    The surface of Terra is almost devoid of air, burning hot during the day, and freezing at night.
-    Its variable and harsh conditions make it inhospitable to almost everything.
-    Instead, creatures on Terra live underground in vast tunnels and caverns.
-    It is the natural home of earth elementals.
 
   \subsection{Nexus}
     Nexus is an Earth-like planet inhabited by humanoid creatures and covered in a mixture of biomes.
@@ -224,8 +350,8 @@ However, doing so can significantly change the tone of the game and create logic
       Luna is a moon of Nexus.
       Although it appears barren and lifeless from Nexus, like the real life moon, that is an ancient magical illusion.
       In reality, Luna is a verdant paradise ruled by fae, who call it Arcadia.
-      This is not common knowledge, but it is not a closely guarded secret.
-      A DV 15 Knowledge (local) check is enough to know the truth of Luna.
+      This is not common knowledge, but it is also not a closely guarded secret.
+      A DV 15 Knowledge (local) check is enough to know Luna's true nature.
       Even people who do not know about the illusion generally know that fae are associated with Luna.
 
   \subsection{Ventus}
@@ -248,20 +374,26 @@ However, doing so can significantly change the tone of the game and create logic
     Essentia responds to the will exerted by creatures with souls.
     This is how deities form their divine dominions, which can have arbitrary and impossible rules and physics.
     Even ordinary creatures, such as the souls of mortals living out their afterlife, can create smaller changes in the world around them.
+    As a result, individual regions within each Spiritual Plane can have widely varied traits that do not match that Spiritual Plane as a whole.
 
-  \subsection{Soulforged Creatures}
-    The Spiritual Planes have native inhabitants, but they are not born in the same way as creatures of the Material Plane.
-    % TODO: name lawful/chaotic equivalents
-    Angels, demons, devils, and other such creatures are made from the essentia of their corresponding Spiritual Plane.
-    They are called soulforged creatures because they are made of essentia, which comes from souls.
-    Most such creatures do not have their own souls.
-    They are agents of deities and other powerful figures, used to enforce their will.
+    \subsection{Elysium}
+      Elysium is a beautiful and majestic world.
+      It is shaped like a shallow bowl.
+      The concave side is significantly more populated, and it is what most people think of when they imagine Elysium.
+      Mountains rise dramatically out of misty clouds, trees are massive and laden with delicious fruit, and buildings surpass the wildest dreams of mortal architects.
+      A serene blue sky gives way to a night so lit by stars that it is almost as bright as the day.
+      Because of the world's bowl-like structure, you can see the majestic landscape spread out in every direction even from flat ground, and the view from mountains is staggering.
 
-    When a soulforged is destroyed, its essentia is absorbed by the plane it is on.
-    This is one reason that soulforged creatures rarely leave their home plane, since dying on other planes is a net loss of essentia to their creators.
-    If a soulforged has a soul and a strong will, the soul travels to its home plane like mortal souls do.
-    It can generally make a new body for itself within a week if it died on another plane, or within a day if it died on its home plane.
-    Soulforged that die without a soul, or with a soul too weak to reconstitute itself, do not reform.
+      The underside of Elysium is wreathed in fog and an endless tranquil twilight.
+      It is a place for contemplation, serenity, and isolation.
+
+      Elysium has the following nonstandard realm traits:
+      \begin{raggeditemize}
+        \item Gravity: Absolute directional. Gravity always points towards the 
+        \item Light: Fixed and mobile sources. The "top" of the plane has a false sun that travels through the sky each day, creating day/night cycles like the Material Plane.
+          At night, the stars so plentiful and bright that the world is almost as bright as the day.
+          The bottom of the plane has enough stars to generate shadowy illumination.
+      \end{raggeditemize}
 
 \section{The Astral Expanse}
 
