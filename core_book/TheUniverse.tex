@@ -227,15 +227,25 @@ However, doing so can significantly change the tone of the game and create logic
   Unusual realms can also exist naturally in any Spiritual Plane.
   Esoteric realm traits are less common on the Material Plane, but some planets or magical areas have unusual traits.
 
+  \subsection{Atmosphere}
+    The atmosphere in a realm can take one of the following forms:
+    \begin{raggeditemize}
+      \item Air: The realm has breathable air suitable for humans.
+        This is the default for all locations unless otherwise specified.
+      \item Vacuum: The realm has no atmosphere at all.
+        At the end of each round, everything in the realm takes 10 cold damage unless it is protected from the cold.
+      \item Unbreathable: The realm has an atmosphere, but creatures that need air are unable to breathe it.
+    \end{raggeditemize}
+
   \subsection{Gravity Direction}
     The direction of gravity in a realm can take one of the following forms:
     \begin{raggeditemize}
-      \item Massive Gravity: Gravity pulls towards object based on their mass, as it does in the real world.
+      \item Massive: Gravity pulls towards object based on their mass, as it does in the real world.
         This is the default for all locations unless otherwise specified.
-      \item Fixed Gravity: Gravity points in a fixed direction and with a fixed strength at all locations in the realm.
-      \item Absolute Directional Gravity: Gravity points in a consistent direction according to a rule that applies equally to everything on the realm, but which is not in a fixed direction.
+      \item Fixed: Gravity points in a fixed direction and with a fixed strength at all locations in the realm.
+      \item Absolute directional: Gravity points in a consistent direction according to a rule that applies equally to everything on the realm, but which is not in a fixed direction.
         For example, a realm filled with floating spheres where gravity always points towards the closest sphere, but the strength and direction of gravity does not depend on the mass of the spheres, has absolute directional gravity.
-      \item Subjective Gravity: Each creature in the realm chooses the direction of gravity for that creature.
+      \item Subjective: Each creature in the realm chooses the direction of gravity for that creature.
         The realm has no gravity for unattended objects and mindless creatures.
         You can control gravity in a subjective gravity realm using the \ability{control gravity} ability.
         \begin{activeability}{Control Gravity}{\glossterm{Minor action}}
@@ -255,25 +265,25 @@ However, doing so can significantly change the tone of the game and create logic
     \begin{raggeditemize}
       \item Normal Gravity: Gravity is about the strength of Earth.
           This is the default for all locations unless otherwise specified.
-      \item No Gravity: There is no gravity in the realm.
+      \item None: There is no gravity in the realm.
         The weight of all objects is reduced by one \glossterm{weight category}.
         Even while weightless, objects still have mass, so heavy objects can still slow your movements.
         The \glossterm{range limits} of ranged weapons are quadrupled.
         Falling damage is impossible.
         A creature that jumps continues at the same rate indefinitely.
         % TODO: what additional effects are there?
-      \item Light Gravity: Gravity is about half the strength of Earth.
+      \item Light: Gravity is about half the strength of Earth.
         The weight of all objects is halved.
         The \glossterm{range limits} of ranged weapons are doubled.
         The horizontal and vertical jump distances for all creatures are doubled.
         Falling damage is halved.
-      \item Heavy Gravity: Gravity is about twice the strength of Earth.
+      \item Heavy: Gravity is about twice the strength of Earth.
         The weight of all objects is doubled.
         The range limits of ranged weapons are halved, to a minimum of 5 feet.
         The horizontal and vertical jump distances for all creatures are halved.
         Falling damage is doubled.
         % TODO: falling damage
-      \item Extreme Gravity: Gravity is about four times the strength of Earth.
+      \item Extreme: Gravity is about four times the strength of Earth.
         The weight of all objects is increased by one \glossterm{weight category}.
         The range limits of ranged weapons are reduced to one quarter of their normal value, to a minimum of 5 feet.
         The horizontal and vertical jump distances for all creatures are also reduced to one quarter.
@@ -331,15 +341,25 @@ However, doing so can significantly change the tone of the game and create logic
   \subsection{Terra}
     The surface of Terra is almost devoid of air, burning hot during the day, and freezing at night.
     Its variable and harsh conditions make it inhospitable to almost everything.
-    Instead, creatures on Terra live underground in vast tunnels and caverns.
+    Instead, creatures on Terra live underground in its sturdy rock.
+    A labyrinthine series of mostly airless tunnels weave their way through the planet.
     Some underground cities even contain air, which is carefully controlled to prevent it from escaping.
-    It is the natural home of earth elementals.
+
+    Deep tunnels on the plane can lead to gems, diamonds, and rare metals like mithral.
+    However, the dense rock and airless environment make successful mining difficult.
+    In addition, earthquakes periodically reshape the environment by collapsing old tunnel systems and constructing new ones.
+    The deepest tunnels are blisteringly hot, and terminate in vast oceans of magma.
+
+    Terra is the natural home of earth elementals.
 
   \subsection{Ignis}
     Ignis is a burning planet with a thick atmosphere.
     It is hot enough to light ordinary wood on fire within minutes.
     Instead of rivers of water, it has rivers of lava, and firestorms frequently illuminate the sky.
-    It is the natural home of fire elementals.
+    Unlike Terra, the planet's surface is generally a mixture of sand and glass, so tunneling to escape the hostile conditions is infeasible.
+    There are a few enclaves that maintain slightly more liveable temperatures through magical means, but they are rare.
+
+    Ignis is the natural home of fire elementals.
 
   \subsection{Nexus}
     Nexus is an Earth-like planet inhabited by humanoid creatures and covered in a mixture of biomes.
@@ -357,18 +377,27 @@ However, doing so can significantly change the tone of the game and create logic
   \subsection{Ventus}
     Ventus is a gas giant with powerful winds and frequent storms.
     It does not have an ordinary surface, though the air becomes thicker as you descend into its depths in a way that eventually renders all travel impossible.
-    There are flying cities where landbound creatures from other worlds can reside, but almost all creatures on Ventus can fly.
-    It is the natural home of air elementals.
+    The vast majority of creatures on Ventus can fly, though there are flying cities where landbound creatures from other worlds can reside.
+
+    Ventus is the natural home of air elementals.
 
   \subsection{Aqua}
-    Aqua is a water planet with an ocean that is a hundred miles deep.
+    Aqua is a water planet with an ocean that is up to a hundred miles deep.
     Its surface is covered in a thick layer of ice, and creatures adapted to the cold live on its surface.
-    The bottom of the ocean is composed of a mysterious ice-like substance that seems to exist despite the warmth of the water.
-    The ocean is the natural home of water elementals.
+    The deepest depths of the ocean terminate in a mysterious ice-like substance that seems to exist despite the warmth of the water.
+    Towering underwater mountains break up the underwater landscape, though they rarely reach above the ice cap.
+
+    Powerful currents sweep through the ocean, but much of it is calm, and many forms of aquatic life abound in the water.
+    Magnificant underwater cities are carved from huge rocks that float peacefully suspended in the water, or are embedded into mountains.
+    Though the sun is distant and diffused by the surface ice, the ocean is warmed by extensive underwater vents.
+    Simple creatures akin to plankton feed on the energy from those vents and form the base of the ocean's food chain.
+    Many of them are bioluminescent
+
+    Aqua's ocean is the natural home of water elementals.
 
 \section{Spiritual Planes}
     The five Spiritual Planes are manifestations of the five alignments.
-    Elysium is good-aligned, the Abyss is evil-aligned, Ordus is law-aligned, Discord is chaos-aligned, and the Expanse is neutral-aligned.
+    Elysium is good-aligned, the Abyss is evil-aligned, Concord is law-aligned, Monody is chaos-aligned, and Haven is neutral-aligned.
     They are made from \glossterm{essentia}, the substance left behind when souls decompose.
     This makes them makes them much more malleable than the Material Plane.
     Essentia responds to the will exerted by creatures with souls.
@@ -387,13 +416,133 @@ However, doing so can significantly change the tone of the game and create logic
       The underside of Elysium is wreathed in fog and an endless tranquil twilight.
       It is a place for contemplation, serenity, and isolation.
 
+      Mortal souls inhabiting Elysium are guided and assisted by the choirs.
+      The choirs refer collectively to all of the seraphim, cherubim, angels, archangels, and other benevolent creatures native to Elysium.
+
       Elysium has the following nonstandard realm traits:
       \begin{raggeditemize}
-        \item Gravity: Absolute directional. Gravity always points towards the 
+        \item Gravity: Absolute directional. At any location on the plane, gravity pulls towards the bowl's core, so creatures can walk normally on the bowl from any location. If you were exactly between the top and bottom of the bowl at any point along its breadth, you would not experience gravity. However, there are no natural tunnels that reach that deep below the surface.
         \item Light: Fixed and mobile sources. The "top" of the plane has a false sun that travels through the sky each day, creating day/night cycles like the Material Plane.
           At night, the stars so plentiful and bright that the world is almost as bright as the day.
           The bottom of the plane has enough stars to generate shadowy illumination.
       \end{raggeditemize}
+
+    \subsection{The Abyss}
+
+      The Abyss is a desolate and brutal plane.
+      It consists of cliffs surrounding a deep central pit.
+      There is a 20 mile elevation gap between the base of the pit and the peak of the cliffs.
+      The highest point of the cliffs, and their back faces, extend out into the Astral Expanse.
+      The cliffs are jagged and broken, with many flat areas between elevation changes where creatures survive.
+      Cities exist in these flat areas, and are built into the cliffs to extend their usable area and to improve their defenses.
+
+      New mortal souls generally arrive at the bottom of the pit.
+      This gives them safety in numbers from demons and other threats, but conditions are crowded and unpleasant, so most mortals climb the cliffs to find better opportunities.
+      Higher elevations are generally higher status, though some powerful creatures choose to live closer to the base of the pit.
+
+      With the exception of the great palaces of the Lords of the Abyss, most buildings that exist are designed for defense rather than aesthetics.
+      The terrain is typically rocky and dull, and most of the color belongs to carcasses left behind after violent battles.
+      All manner of nightmarish creatures stalk the Abyss.
+      The best known of these creatures are demons and devils.
+
+      Demons are soulforged creatures that echo the emotions of mortal souls that enter the Abyss.
+      They are chaotic creatures that are driven entirely by the primal emotion that birthed them.
+      This makes them functionally insane, and they are almost always driven to lash out at everything around them.
+      Rage-born demons violently attack anything they see, pain-born demons try to lessen their pain by sharing it, and so on.
+      Some demons are naturally spawned in reaction to mortal souls, but others are intentionally created and directed by evil deities.
+
+      Demons generally avoid attacking other demons, since they can find no gratification for their urges in attacking soulless creatures.
+      Instead, they hunt creatures with complete souls, which generally means attacking the afterlife bodies of evil-aligned creatures who went to the Abyss for their afterlife.
+      If they have access to ordinary mortal, they eagerly hunt them, as they are generally easier prey.
+      Demonic incursions into other planes are devastating but fortunately rare.
+
+      Unlike demons, devils are lawful creatures with a functioning society.
+      Devil-run cities are isolated enclaves in the general chaos of the Abyss, and many mortal souls choose to live there.
+      The laws there are not necessarily fair or ethical, but they are scrupulously followed.
+      Devils are far less numerous than demons, since they cannot simply spawn accidentally like demons do.
+      Instead, every devil must be intentionally created.
+
+      Since most devils do not have souls, this requires the intervention of creatures with souls.
+      This generally means that devils must make deals with mortals or deities.
+      They do that when they can, since the more servants a devil has, the greater their power.
+      The greatest prize for a devil is to gain mastery over a mortal soul.
+      They can use its ability to manipulate essentia to create powerful servants or reshape their home in the Abyss to their liking.
+      This makes powerful devils common soulkeepers, and they seek out votives wherever possible.
+
+      Some powerful devils leave the devil-run cities to establish their own territory.
+      This generally requires that they must already have control of multiple mortal souls, or their territory could be reshaped by any passing mortal.
+      A devil that can establish its own territory gains the title of Lord of the Abyss, and it is a title that almost all devils desperately crave.
+
+      The Abyss has the following nonstandard realm traits:
+      \begin{raggeditemize}
+        \item Gravity: Fixed directional. Gravity pulls towards the side of the plane with the deep pit.
+        \item Light: Fixed. A blood-red orb hovers directly over the central pit above the highest cliffs, casting bright illumination throughout the plane.
+      \end{raggeditemize}
+
+    \subsection{Concord}
+      Concord is a hollow cube that is divided into a myriad of different levels and rooms.
+      The cube is made from hardened \glossterm{essentia} that functions like pure adamantine, except that it is self-healing when damaged and cannot be removed from the plane.
+      Although it can bend to exceptionally strong-willed souls, it returns to its original shape and structure when not actively controlled.
+      The boundaries of the cube are precisely aligned with the extent of the plane itself, so anything standing on the outside of the cube would be in the Astral Expanse.
+      Each level and room is organized in a consistent way, making navigation easy once you understand the system.
+      The center of each level is a transit hub containing stairs, mechanical lifts, and magical portals to make travel easier.
+
+      Each level has its own rules, which are clearly explained in every language at that level's transit hub.
+      Individual rooms often have their own additional rules, which may or may not be clearly communicated.
+      They can be as large as countries or as small as closets.
+      Large rooms often contain natural elements, such as forests or lakes, with ecosystems that are carefully kept in balance.
+      Corridors run through the levels to facilitate travel between rooms, except for rooms which are intentionally isolated.
+      Although Concord itself has no intrinsic light source, its corridors are generally well-lit by magical lights, and rooms often have their own lighting.
+
+      Concord is administered and inhabited by the moirai, who are soulforged native to that plane.
+      Each moirai is an impartial arbiter and embodiment of a specific concept, directive, or material fact.
+      Lesser moirai represent extremely specific or obscure concepts, while greater moirai represent universal truths or fundamental forces.
+      Constructs called telos enforce the decisions of moirai and the rules of Concord.
+
+      Concord has the following nonstandard realm traits:
+      \begin{raggeditemize}
+        \item Gravity: Fixed directional. Gravity pulls towards the bottom of the cube.
+      \end{raggeditemize}
+
+  \subsection{Monody}
+    Monody is a constantly shifting plane.
+    Even its core shape contorts and changes over time.
+    It could be a hollow sphere where everyone lives on the inside, a torus twisting around itself, a collection of small spheres, or anything else.
+
+    The \glossterm{essentia} comprising all Spiritual Planes is malleable to some degree, but Monody is the easiest to control.
+    Even relatively weak-willed mortals can still bend the landscape around them to suit their desires.
+    The real challenge is in making your changes permanent.
+    Beyond actively shaped spaces, the terrain is constantly changing.
+    In a matter of hours, a field might grow trees that are consumed by a forest fire before vast chasms open up and consume their charred remains.
+
+    The native inhabitants of Monody are called proteans.
+    They are amorphous creatures that can freely reshape their bodies.
+    Individual proteans tend to have forms they prefer to use.
+    Proteans can feel mortals attempting to change them in the same way that mortals can shape inanimate essentia, though they can ignore those commands.
+    Sometimes proteans choose to act like terrain for a while as part of their own games.
+
+    Fae are not native to Monody, but it is not uncommon to find them there.
+    They enjoy its malleable nature, and its constant change helps fight their tendency to become bored.
+
+    Monody has the following nonstandard realm traits:
+    \begin{raggeditemize}
+      \item Gravity: Subjective. The difficulty value to change your gravity on Monody is 0 instead of the normal 10.
+      \item Light: Mobile source. The number of lights, and their color and direction, are highly variable.
+        They usually provide \glossterm{bright illumination}, and less commonly provide shadowy or brilliant illumination.
+    \end{raggeditemize}
+
+  \subsection{Haven}
+    Haven is a stable spherical planet.
+    Its basic structure resembles Nexus, though it is smaller and has no moon.
+    It has a wide variety of biomes, and is generally peaceful and has a place for anyone.
+
+    Unlike the other Spiritual Planes, Haven has no native inhabitants.
+    However, it has more mortal souls than any other Spiritual Plane, so there are still cities for those who prefer the company of others.
+
+    Monody has the following nonstandard realm traits:
+    \begin{raggeditemize}
+      \item Light: Mobile source. A glowing orb orbits the planet, mimicking the sun as viewed from Haven.
+    \end{raggeditemize}
 
 \section{The Astral Expanse}
 
@@ -418,6 +567,18 @@ However, doing so can significantly change the tone of the game and create logic
   Meanwhile, the pencil can freely draw \textit{inside} the drawings without "passing through" their outer edge.
   No matter how reinforced the drawing's armor might be, it is irrelevant since the pencil could tap directly on their eyes or heart.
   Deities are sufficiently strong and uniform in composition to survive such internal attacks, but even they can only survive, not effectively counterattack.
+
+  The precursors are unable to directly enter or interact with the Material and Spiritual Planes.
+  The flattening effect of the planes is lethal to their four-dimensional bodies, just like compressing a person into two dimensions would be lethal.
+  As a result, they generally give the planes a wide berth.
+  Nonliving objects from the Astral Expanse occasionally collide with the Material Plane.
+  Typically, they appear in empty space as bizarre and misshapen asteroids, and they are either never seen or they burn up upon entering a planet's atmosphere, making this phenomenon essentially unnoticeable.
+  On extremely rare occasions, they may arrive close to a planet's surface, creating inexplicable eldritch ruins on the ground or in caves.
+  These become a hotbed of precursor cult activity if they are ever discovrered.
+
+  Aberrations are the closest things to precursors on the Material Plane.
+  They arrived fully formed on Nexus within the past thousand years, and their bodies seem to operate fundamentally differently than other life.
+  Some fear that aberrations are an attempt by precursors to invade the Material Plane, though how this would be accomplished on a larger scale remains unclear.
 
   The Astral Expanse holds ancient monstrosities of cosmic size and power.
   Fortunately, they live far away from the Material and Spiritual Planes.

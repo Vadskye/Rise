@@ -1495,19 +1495,19 @@ impl Class {
                         They try tempt their votives into greater evil, and encourage acquiring power by any means necessary.
 
                         \parhead{Fae}
-                        Fae are chaotic neutral creatures native to Discord, the Spiritual Plane of chaos.
+                        Fae are chaotic neutral creatures that live on the moon.
                         Their pacts can be idiosyncratic, and often come with seemingly arbitrary restrictions on how you must act in life.
                         They are also more likely to renegotiate pact details than other soul keepers, often seeking to change the restrictions that the votive must obey in life to suit their whims.
-                        After death, they will typically keep your soul in Discord until you become boring to them, with a guarantee that you will eventually reach your proper afterlife.
+                        After death, they will typically keep your soul until you become boring to them, with a guarantee that you will eventually reach your proper afterlife.
 
                         Fae soulkeepers will periodically pay great attention to their votives.
                         When they do, they may send a distracting flurry of thoughts and urges that may or may not be relevant to the situation at hand.
                         Eventually, they will get bored and disappear entirely until their attention is caught again.
 
                         \parhead{Moirai}
-                        Moirai are lawful neutral creatures native to Ordus, the Spiritual Plane of law.
-                        Each moirai is an impartial arbiter of some fundamental concept.
-                        Their pacts always impose one restriction on you in life, and retain your soul in Ordus for a hundred years after your death.
+                        Moirai are lawful neutral creatures native to Concord, the Spiritual Plane of law.
+                        Each moirai is an impartial arbiter and embodiment of a specific concept, directive, or material fact.
+                        Their pacts always impose one restriction on you in life, and retain your soul in Concord for a hundred years after your death.
                         The restriction is always relevant to the moirai's identity, and is focused on you as an individual rather than the world you inhabit.
                         For example, a moirai of cleanliness may require you to remain personally clean, but would not require you to clean everywhere you go.
 
