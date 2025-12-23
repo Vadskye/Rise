@@ -21,7 +21,7 @@ export const astromancy: MysticSphere = {
     If one of your allies takes a turn after you, they will be able to attack the flickered target normally, since it will have returned by then.
 
     If the target cannot be \\glossterm{teleported}, the flicker fails.
-    This also prevents effects that trigger when it returns, such as the damage from the \\spell{planar jaunt -- astral plane} spell.
+    This also prevents effects that trigger when it returns, such as the damage from the \\spell{planar jaunt -- astral expanse} spell.
   `,
 
   cantrips: [
@@ -114,7 +114,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          If the target is \\glossterm{injured}, it \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
           It does not return until the end of the next round.
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
@@ -138,7 +138,7 @@ export const astromancy: MysticSphere = {
 
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to a random safe place in the Astral Plane.
+          The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
           It does not return until the end of the next round.
           After it returns, it becomes immune to flickering in this way until it finishes a \\glossterm{short rest}.
         `,
@@ -383,11 +383,11 @@ export const astromancy: MysticSphere = {
       tags: ['Fire'],
     },
     {
-      name: 'Planar Jaunt -- Astral Plane',
+      name: 'Astral Jaunt',
 
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to the Astral Plane.
+          The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
           When it returns, it takes \\damagerankone.
         `,
         targeting: `
@@ -395,7 +395,7 @@ export const astromancy: MysticSphere = {
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Astral Plane.
+        Your foe disappears for a second into the Astral Expanse.
         Though its destination is peaceful, the rough transit is jarring by itself.
       `,
       rank: 2,
@@ -403,7 +403,7 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
     },
     {
-      name: 'Planar Jaunt -- Plane of Air',
+      name: 'Conjoined Conjuration -- Ventus',
 
       // A 15' vertical push is worth 1.6 EA, which is r2.
       attack: {
@@ -419,8 +419,9 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against up to two creatures within \\longrange that each have a \\glossterm{weight category} of Medium or lighter.
         `,
       },
+      cost: `You must be \\glossterm{midair} to cast this spell.`,
       narrative: `
-        Your foes disappear for a second into the Plane of Air, where they are knocked flying by powerful winds.
+        You create a connection to Ventus and channel its powerful winds.
       `,
       // narrative: '',
       rank: 3,
@@ -429,7 +430,7 @@ export const astromancy: MysticSphere = {
       tags: ['Air'],
     },
     {
-      name: 'Planar Jaunt -- Plane of Earth',
+      name: 'Conjoined Conjuration -- Terra',
 
       // Ranged slow is 2 EA, so r4.
       attack: {
@@ -438,13 +439,13 @@ export const astromancy: MysticSphere = {
           When it returns, it is \\glossterm{briefly} \\slowed.
         `,
         targeting: `
-          Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
+          Make an attack vs. Mental against all \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       narrative: `
-        Your foes disappear for a second into the Plane of Earth.
-        When they return, they are encumbered by the weight of earth.
+        You create a connection to Terra and channel its powerful gravity.
       `,
+      cost: `You must be \\glossterm{grounded} to cast this spell.`,
       rank: 4,
       roles: ['flash'],
       scaling: 'accuracy',
@@ -557,7 +558,7 @@ export const astromancy: MysticSphere = {
       name: 'Astral Instability',
 
       effect: `
-        At the start of each phase, you may \\sphereterm{flicker} to a random unoccupied location in the Astral Plane.
+        At the start of each phase, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
         You do not return until the end of the round.
         After you flicker in this way, you \\glossterm{briefly} cannot flicker with this ability again.
       `,
@@ -634,7 +635,7 @@ export const astromancy: MysticSphere = {
       rank: 3,
       roles: ['attune'],
       narrative: `
-        You augment your weapons with the ability to travel short distances through the Astral Plane to reach their targets.
+        You augment your weapons with the ability to travel short distances through the Astral Expanse to reach their targets.
       `,
       type: 'Attune',
     },
@@ -657,7 +658,7 @@ export const astromancy: MysticSphere = {
         This can allow you to cast spells through solid walls, though it does not grant you the ability to see through the wall.
       `,
       narrative: `
-        You augment your spells with the ability to travel short distances through the Astral Plane to reach their targets.
+        You augment your spells with the ability to travel short distances through the Astral Expanse to reach their targets.
       `,
       rank: 4,
       roles: ['attune'],
@@ -673,7 +674,7 @@ export const astromancy: MysticSphere = {
         If you are not able to move normally, such as if you are \\grappled, this spell does not help you.
       `,
       narrative: `
-        You augment your body with the ability to travel short distances through the Astral Plane to reach your destination.
+        You augment your body with the ability to travel short distances through the Astral Expanse to reach your destination.
       `,
       rank: 1,
       roles: ['attune'],
@@ -688,7 +689,7 @@ export const astromancy: MysticSphere = {
           'you can also move through \\glossterm{mundane}, \\glossterm{inanimate} objects that are no more than six inches thick.',
       },
       narrative: `
-        You augment your body with the ability to travel through the Astral Plane to reach your destination.
+        You augment your body with the ability to travel through the Astral Expanse to reach your destination.
       `,
       rank: 4,
       roles: ['attune'],
@@ -701,8 +702,8 @@ export const astromancy: MysticSphere = {
       usageTime: 'minor',
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} or \\glossterm{unattended} object within \\medrange.
-        You \\sphereterm{flicker} the target into a random safe location in the Astral Plane.
-        When you cast this spell, you choose how many rounds the target spends in the Astral Plane, up to a maximum of five rounds.
+        You \\sphereterm{flicker} the target into a nearby safe location in the Astral Expanse.
+        When you cast this spell, you choose how many rounds the target spends in the Astral Expanse, up to a maximum of five rounds.
         It returns at the end of the last round.
       `,
       rank: 2,
@@ -716,7 +717,7 @@ export const astromancy: MysticSphere = {
         In addition, you gain a +2 bonus to all defenses.
         This ability has the \\abilitytag{Swift} tag, so it protects you from attacks during the current phase.
       `,
-      narrative: `You jump into the Astral Plane the instant before a sword slashes through the space you left behind.`,
+      narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
       rank: 1,
       roles: ['turtle'],
       tags: ['Swift'],
@@ -729,7 +730,7 @@ export const astromancy: MysticSphere = {
         This does not affect spells that do not have a range listed in feet.
       `,
       narrative: `
-        By channeling your spells through the Astral Plane, you can reach foes that are farther away than would normally be possible.
+        By channeling your spells through the Astral Expanse, you can reach foes that are farther away than would normally be possible.
       `,
       rank: 2,
       roles: ['attune'],
