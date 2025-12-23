@@ -138,22 +138,30 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
   }
 }
 
-export function ritualSphereEffects(ritual: Ritual): string | null {
-  if (!ritual.sphereEffects) {
-    return null;
-  }
+export function ritualSpheres(ritual: Ritual): string | null {
 
-  return `
-    Mystic sphere effects:
-    \\begin{raggeditemize}
-      ${Object.entries(ritual.sphereEffects)
-        .map(([sphereName, effect]) => {
-          assertEndsWithPeriod(effect, ritual.name);
-          return `\\item ${sphereName}: ${effect}`;
-        })
-        .join('\n')}
-    \\end{raggeditemize}
-  `;
+  const effects = ritual.sphereEffects
+    ? `
+      \noindent Mystic sphere effects:
+      \\begin{raggeditemize}
+        ${Object.entries(ritual.sphereEffects)
+          .map(([sphereName, effect]) => {
+            assertEndsWithPeriod(effect, ritual.name);
+            return `\\item ${sphereName}: ${effect}`;
+          })
+          .join('\n')}
+      \\end{raggeditemize}
+    `
+    : '';
+
+    const sphereNames = [...ritual.spheres];
+    sphereNames.sort();
+
+    return `
+      Mystic spheres: ${sphereNames.join(', ')}
+
+      ${effects}
+    `.trim();
 }
 
 function deriveExceptThat(functionsLike: FunctionsLike) {

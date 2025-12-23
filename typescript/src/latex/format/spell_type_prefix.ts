@@ -1,11 +1,6 @@
 import { ActiveAbility, ActiveAbilityRank, Ritual } from '@src/abilities';
 import { formatTagLatex } from '@src/latex/format/ability_tag';
 
-export function ritualSpheres(ritual: Ritual): string {
-  // TODO: sort by name
-  return `Spheres: ${ritual.spheres.join(', ')}`;
-}
-
 export function spellTypePrefix(
   spell: Pick<ActiveAbility, 'usageTime' | 'cost' | 'name' | 'tags' | 'type' | 'rank'>,
   omitRank?: boolean,
