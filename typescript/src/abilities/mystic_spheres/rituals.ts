@@ -488,11 +488,11 @@ export const rituals: RitualDefinition[] = [
     rank: 5,
     roles: ['narrative'],
     effect: `
-      Choose another planet within your current plane and up to six Medium or smaller ritual participants.
+      Choose a planet within your current plane and up to six Medium or smaller ritual participants.
       Each creature \\glossterm{teleports} to unoccupied spaces outdoors on the surface of your chosen planet.
       If the planet does not have an ordinary surface, such as Ventus, you appear high in its atmosphere.
       This does not require \\glossterm{line of sight} or \\glossterm{line of effect} to the destination.
-      If you have been to that planet before, you can specify your destination to within a 1 mile radius, but you always appear outdoors on the planet's surface.
+      Your destination on the planet is random, and there is no way to make it more precise.
     `,
     tags: [],
     materialCost: true,
@@ -3135,6 +3135,22 @@ export const rituals: RitualDefinition[] = [
     rank: 6,
     roles: ['narrative'],
     spheres: ['Channel Divinity', 'Polymorph', 'Prayer', 'Terramancy'],
+  },
+  {
+    name: 'Locate Planar Rift',
+
+    usageTime: 'one hour',
+    effect: `
+      You learn the distance and direction to the \\glossterm{planar rift} that is closest to you on your current planet, ignoring \\glossterm{line of sight} and \\glossterm{line of effect}.
+      This provides no guidance about how to reach it efficiently, or where it might lead.
+    `,
+    rank: 3,
+    roles: ['narrative'],
+    sphereEffects: {
+      Aeromancy: 'You can only find planar rifts that are outdoors.',
+      Terramancy: 'You can only find planar rifts that are \\glossterm{grounded}.',
+    },
+    spheres: ['Aeromancy', 'Astromancy', 'Prayer', 'Revelation', 'Terramancy'],
   },
   {
     name: 'Stabilize Planar Rift',
