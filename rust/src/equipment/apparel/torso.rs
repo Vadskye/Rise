@@ -188,7 +188,7 @@ fn belts() -> Vec<Apparel> {
             Overstuffed pockets may take more time to sift through to find the specific item you want, just like rummaging through a backpack.
 
             If you take off this belt or stop attuning to it, the items in the belt become inaccessible.
-            If this belt is destroyed, the items within it become lost in the Astral Plane.
+            If this belt is destroyed, the items within it become lost in the Astral Expanse.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Contains ten large pockets", "
