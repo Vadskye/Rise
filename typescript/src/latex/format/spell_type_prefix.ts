@@ -33,7 +33,7 @@ export function spellTypePrefix(
   const tagsAndRank = generateTagsAndRank(tagsText, spell.rank, omitRank);
 
   if (spell.cost) {
-    if (spell.cost.slice(-1) !== '.') {
+    if (spell.cost.trim().slice(-1) !== '.') {
       console.error(`Ability '${spell.name}' cost should end in a period.`);
     }
     return tagsAndRank + '\n' + `\\abilitycost ${spell.cost}`;
