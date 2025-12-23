@@ -22,7 +22,12 @@ export function addElementals(grimoire: Grimoire) {
     creature.addImpervious('Earth');
     creature.addImpervious('Fire');
     creature.addImpervious('Water');
-    creature.addTrait('soulless');
+    creature.setKnowledgeResults({
+      normal: `
+        Fusion elementals are a hybrid of the four common elemental types: air, earth, fire, and water.
+        Unlike common elementals, they are fully sentient.
+      `,
+    });
 
     // Single-target is standard action, AOE is elite action
     // Air
@@ -43,7 +48,7 @@ export function addElementals(grimoire: Grimoire) {
 function addAirElementals(grimoire: Grimoire) {
   function airElemental(creature: Creature) {
     creature.addTrait('floating');
-    creature.addTrait('soulless');
+    creature.addTrait('simple-minded');
     creature.addImpervious('Air');
     creature.addVulnerability('Earth');
     creature.addVulnerability('Electricity');
@@ -170,7 +175,7 @@ function addAirElementals(grimoire: Grimoire) {
 function addFireElementals(grimoire: Grimoire) {
   function fireElemental(creature: Creature) {
     const rank = creature.calculateRank();
-    creature.addTrait('soulless');
+    creature.addTrait('simple-minded');
     creature.addImmunity('Fire');
     creature.addImpervious('Cold');
     creature.addVulnerability('Water');
@@ -278,7 +283,7 @@ function addFireElementals(grimoire: Grimoire) {
 
 function addMagmaElementals(grimoire: Grimoire) {
   function magmaElemental(creature: Creature) {
-    creature.addTrait('soulless');
+    creature.addTrait('simple-minded');
     creature.addImpervious('Earth');
     creature.addImmunity('Fire');
     creature.addImpervious('Cold');
