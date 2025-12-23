@@ -306,7 +306,7 @@ pub fn objects() -> Vec<Tool> {
         rank: 1,
         short_description: "When thrown, avoids creatures".to_string(),
         description: r"
-            As a standard action, you can throw this small iron orb up to 90 feet.
+            You can throw this small iron orb up to 90 feet as a standard action.
             The orb treats any space occupied by a Tiny or larger creature as being an impassible barrier.
         ".to_string(),
         rarity: ItemRarity::Relic,
