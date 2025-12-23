@@ -502,7 +502,7 @@ function addLiches(grimoire: Grimoire) {
             `,
           });
 
-          creature.addSpell('Planar Jaunt -- Myriad');
+          creature.addSpell('Empowered Astral Jaunt');
           creature.addSpell('Massive Astral Rupture');
           creature.addSpell('Distant Splicing Grasp');
           creature.addSpell('Giant Twinned Portals', { usageTime: 'elite' });
