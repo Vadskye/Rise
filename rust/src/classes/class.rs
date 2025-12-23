@@ -887,20 +887,20 @@ impl Class {
             Self::Dragon => r"".to_string(),
             Self::Druid => r"
                 Druids are nature spellcasters who draw power from their veneration of the natural world.
-                They worship Nature herself, the over-deity who guides and nurtures all living things.
-                Nature grants her followers influence over her domain in gratitude for their service.
+                They worship Gaia, the embodiment of life.
+                Gaia grants her followers influence over her domain in gratitude for their service.
 
                 All druids value the continuation of life - in the abstract, universal sense, not the specific sense.
                 Predation is a critical part of the natural world, and most druids have no prohibitions against killing.
                 Life as a whole, across all species and levels of sentience, must continue.
                 The worst nightmare of all druids is a dead world, inhabited only by rocks and memories of the life that once existed.
 
-                Individual druids have a great variety of opinions and interpretations about which aspects of Nature's domain are most important.
+                Individual druids have a great variety of opinions and interpretations about which aspects of nature are most important.
                 Some druids treat all forms of life as equal.
                 Others draw distinctions between different forms of life, such as prioritizing the needs of highly sentient or highly complex life over others.
-                Of course, many druids don't dwell on philosophical questions about the precise value of Nature's various aspects. 
+                Of course, many druids don't dwell on philosophical questions about the precise value of Gaia's various aspects. 
                 They focus more on practical maintenance of the natural world according to their own instincts.
-                Nature's domain is immense, and her guidance is virtually nonexistent.
+                Gaia's domain is immense, and her guidance is virtually nonexistent.
 
                 Many druids avoid or actively reject overly developed civilization.
                 The details and causes of this aversion can be source of great disagreement between different druids.
@@ -1000,7 +1000,7 @@ impl Class {
                 Different rangers may have more personal affinity for civilization or for monsters.
 
                 Like druids and monks, rangers are seldom self-taught.
-                Just as rangers occupy a middle space between society and the wilds beyond it, their abilities are a complex combination of training, experience, and gifts freely granted by Nature herself.
+                Just as rangers occupy a middle space between society and the wilds beyond it, their abilities are a complex combination of training, experience, and gifts granted by Gaia.
                 The vast majority of people who might attempt to learn how to be a ranger on their own would focus too much on only one aspect of a ranger's abilities.
                 These people might find the path to becoming a fighter, druid, or rogue instead.
 
@@ -1008,7 +1008,7 @@ impl Class {
                 However, they also study the natural world and the environment around them.
                 This study is more focused on practical knowlege about survival and hunting than the more reverent study of druids.
                 During this wilderness experience, some rangers forge a deep bond with a single animal who follows them everywhere.
-                This bond is intensified by Nature's influence, and has a hint of her magic in it.
+                This bond is intensified by Gaia's influence, and has a hint of her magic in it.
                 Others shy away from that level of commitment or find no meaning in it, and prefer a more solitary hunt.
 
                 Traditionally, a ranger's training occurs under an experienced ranger leader.
