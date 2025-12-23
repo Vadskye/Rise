@@ -52,7 +52,8 @@ impl Apparel {
     }
 
     pub fn to_latex(&self) -> String {
-        if !self
+        // Relics are allowed to not require attunement
+        if self.item().rarity == ItemRarity::Common && !self
             .item()
             .tags
             .iter()

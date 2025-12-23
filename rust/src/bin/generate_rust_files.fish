@@ -30,7 +30,7 @@ cargo run --bin item_latex -- --category 'consumable tools' --table > ../compreh
 cargo run --bin item_latex -- --category 'permanent tools' --descriptions > ../comprehensive_codex/generated/permanent_tools.tex
 cargo run --bin item_latex -- --category 'permanent tools' --table > ../comprehensive_codex/generated/permanent_tools_table.tex
 
-cargo run --bin item_latex -- --category 'relics' --descriptions > ../comprehensive_codex/generated/relics.tex
-cargo run --bin item_latex -- --category 'relics' --table > ../comprehensive_codex/generated/relics_table.tex
+cargo run --bin item_latex -- --category 'relics' --descriptions > ../core_book/generated/relics.tex
+cargo run --bin item_latex -- --category 'relics' --table > ../core_book/generated/relics_table.tex
 
 cargo run --bin item_latex -- --category 'everything' --table > ../core_book/generated/everything_table.tex
