@@ -2,34 +2,34 @@ import * as format from '@src/latex/format';
 import { determineAbilityType } from '@src/latex';
 import { RitualDefinition, standardizeRitual } from '@src/abilities';
 
+// TODO: make this repetitive with convertAbilityToLatex
 export function convertRitualToLatex(ritualDefinition: RitualDefinition): string {
   const ritual = standardizeRitual(ritualDefinition);
   const abilityType = determineAbilityType(ritual);
+
   const internalComponents = [
     format.spellEffect(ritual),
-    format.ritualSphereEffects(ritual),
+    format.ritualSpheres(ritual),
     format.spellScaling(ritual),
     format.spellNarrative(ritual),
   ].filter(Boolean);
-  const tableText = ritual.tableText || '';
 
-  const rankText = ritual.rank ? `Rank ${ritual.rank}` : '';
-  const wrappedRankText = abilityType === 'activeability' ? `[${rankText}]` : `{${rankText}}`;
+  const tableText = 'tableText' in ritual ? ritual.tableText || '' : '';
+
+  const skipLabelsStar = ritual.forMonster ? '*' : '';
 
   const latex = `
-    \\begin{${abilityType}}{${ritual.name}}${wrappedRankText}
+    \\begin{${abilityType}}${skipLabelsStar}{${ritual.name}}{${format.abilityUsageTime(ritual.usageTime, ritual.name)}}
       ${format.spellTypePrefix(ritual) || ''}
       \\rankline
-      ${format.ritualSpheres(ritual)}
-      \\rankline
-      \\hypertargetraised{spell:${ritual.name}}{}%
-      \\hypertargetraised{spell:${ritual.name.toLowerCase()}}{}%
+      \\hypertargetraised{${ritual.kind}:${ritual.name}}{}%
+      \\hypertargetraised{${ritual.kind}:${ritual.name.toLowerCase()}}{}%
       \\noindent
-      ${internalComponents.join('\n\\rankline\n\n\\noindent ').trim()}%
+      ${internalComponents.join('\n\\rankline\n\n\\noindent ').trim()}% 
       \\vspace{0.1em}%
     \\end{${abilityType}}
     ${tableText}
-  `;
+`;
 
-  return latex;
+  return latex.trim();
 }
