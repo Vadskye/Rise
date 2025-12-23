@@ -21,7 +21,7 @@ export const astromancy: MysticSphere = {
     If one of your allies takes a turn after you, they will be able to attack the flickered target normally, since it will have returned by then.
 
     If the target cannot be \\glossterm{teleported}, the flicker fails.
-    This also prevents effects that trigger when it returns, such as the damage from the \\spell{planar jaunt -- astral expanse} spell.
+    This also prevents effects that trigger when it returns, such as the damage from the \\spell{astral jaunt} spell.
   `,
 
   cantrips: [
