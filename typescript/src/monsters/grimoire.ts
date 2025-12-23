@@ -5,8 +5,10 @@ import {
   setCurrentCharacterSheet,
 } from '@src/character_sheet/current_character_sheet';
 import { addAberrations } from '@src/monsters/individual_monsters/aberrations';
+import { addAliens } from '@src/monsters/individual_monsters/aliens';
 import { addAnimates } from '@src/monsters/individual_monsters/animates';
 import { addBeasts } from '@src/monsters/individual_monsters/beasts';
+import { addElementals } from '@src/monsters/individual_monsters/elementals';
 import { addHumanoids } from '@src/monsters/individual_monsters/humanoids';
 import { addSoulforged } from '@src/monsters/individual_monsters/soulforged';
 import { addUndead } from '@src/monsters/individual_monsters/undead';
@@ -40,8 +42,10 @@ export class Grimoire {
 
   addAllMonsters() {
     addAberrations(this);
+    addAliens(this);
     addAnimates(this);
     addBeasts(this);
+    addElementals(this);
     addHumanoids(this);
     addSoulforged(this);
     addUndead(this);
