@@ -586,7 +586,7 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Abjuration} You are immune to \glossterm{push} and \glossterm{fling} effects unless you choose to be affected.
 
-                    \subcf{Conjuration} You passively flicker into the Astral Plane, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
+                    \subcf{Conjuration} You passively flicker into the Astral Expanse, causing all \glossterm{targeted} attacks against you to have a 10\% \glossterm{failure chance}.
 
                     \subcf{Evocation} You are \impervious to attacks from your choice of one of the following tags: \atCold, \atElectricity, or \atFire.
 
