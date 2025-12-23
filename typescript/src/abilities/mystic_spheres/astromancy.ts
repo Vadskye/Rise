@@ -389,7 +389,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, you deal it \\damagerankone.
+          When it returns, it takes \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\longrange.
@@ -404,13 +404,13 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
     },
     {
-      name: 'Greater Astral Jaunt',
+      name: 'Empowered Astral Jaunt',
 
       // Briefly stunned is r1, so r5 with damage, or r7 with damage + hp condition
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, you deal it \\damageranksix, and it is \\glossterm{briefly} \\stunned.
+          When it returns, it takes \\damageranksix, and it is \\glossterm{briefly} \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -446,8 +446,8 @@ export const astromancy: MysticSphere = {
       `,
       // narrative: '',
       rank: 3,
-      roles: ['maim'],
-      scaling: 'accuracy',
+      roles: ['snipe', 'maim'],
+      scaling: 'damage',
       tags: ['Air'],
     },
     {
@@ -491,7 +491,7 @@ export const astromancy: MysticSphere = {
       },
       cost: `
         You must be touching a Small or larger area of water to cast this spell.
-        The water can be in a container you carry, as long as you are touching the container.
+        The water can be in a container you carry, as long as you are touching the container;
       `,
       narrative: `
         You create a connection to Aqua, the ocean planet, and summon a torrent of water.
