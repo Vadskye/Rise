@@ -2,6 +2,7 @@ import { Grimoire } from '@src/monsters/grimoire';
 import { Creature } from '@src/character_sheet/creature';
 
 export function addSoulforged(grimoire: Grimoire) {
+  // TODO: add earth elementals and give them immunity to gravity effects
   addAirElementals(grimoire);
   addAngels(grimoire);
   addDemonspawn(grimoire);

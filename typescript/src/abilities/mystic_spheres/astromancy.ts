@@ -359,25 +359,26 @@ export const astromancy: MysticSphere = {
       type: 'Sustain (attuneable, standard)',
     },
     {
-      name: 'Planar Jaunt -- Plane of Fire',
+      name: 'Conjoined Conjuration -- Ignis',
 
       // Normal damage for short range would be dr2, which is 2.5 + 1dpp.
       // Double dr0 is 5 + 1dpp.
+      // Medium range due to strict casting requirement.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Fire.
-          When it returns, you deal it \\damagerankzero.
+          \\damagerankzero.
           During your next action, the target takes \\damagerankzero again.
         `,
         targeting: `
-          Make an attack vs. Mental against something within \\shortrange.
+          Make an attack vs. Mental against something within \\medrange.
         `,
       },
       narrative: `
-        Your foe disappears for a second into the Plane of Fire, where it bursts into flame.
+        You create a connection to Ignis, the fire planet, and channel its powerful flames.
       `,
       rank: 1,
+      cost: `You must be within \\shortrange of a Small or larger active fire to cast this spell.`,
       roles: ['burn'],
       scaling: 'damage',
       tags: ['Fire'],
@@ -388,7 +389,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, it takes \\damagerankone.
+          When it returns, you deal it \\damagerankone.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\longrange.
@@ -403,12 +404,32 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
     },
     {
+      name: 'Greater Astral Jaunt',
+
+      // Briefly stunned is r1, so r5 with damage, or r7 with damage + hp condition
+      attack: {
+        hit: `
+          The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
+          When it returns, you deal it \\damageranksix, and it is \\glossterm{briefly} \\stunned.
+        `,
+        targeting: `
+          Make an attack vs. Mental against something within \\medrange.
+        `,
+      },
+      roles: ['burst', 'maim'],
+      rank: 7,
+    },
+    {
       name: 'Conjoined Conjuration -- Ventus',
 
       // A 15' vertical push is worth 1.6 EA, which is r2.
+      // Midair cost allows damage as a bonus?
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, you \\glossterm{fling} it up to 15 feet upwards or horizontally (see \\pcref{Fling Effects}).
+          \\damagerankone.
+        `,
+        injury: `
+          You \\glossterm{fling} the target up to 15 feet vertically or horizontally (see \\pcref{Fling Effects}).
           Moving it upwards costs twice the normal movement cost.
           Each target of this spell must be knocked back in the same direction.
 
@@ -419,9 +440,9 @@ export const astromancy: MysticSphere = {
           Make an attack vs. Mental against up to two creatures within \\longrange that each have a \\glossterm{weight category} of Medium or lighter.
         `,
       },
-      cost: `You must be \\glossterm{midair} to cast this spell.`,
+      cost: `You must be \\glossterm{midair} and at least 10 feet away from solid ground to cast this spell.`,
       narrative: `
-        You create a connection to Ventus and channel its powerful winds.
+        You create a connection to Ventus, the wind planet, and channel air to buffet your foes.
       `,
       // narrative: '',
       rank: 3,
@@ -435,15 +456,14 @@ export const astromancy: MysticSphere = {
       // Ranged slow is 2 EA, so r4.
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Earth.
-          When it returns, it is \\glossterm{briefly} \\slowed.
+          The target is \\glossterm{briefly} \\slowed and unable to fly or glide.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
         `,
       },
       narrative: `
-        You create a connection to Terra and channel its powerful gravity.
+        You create a connection to Terra, the earth planet, and channel its powerful gravity.
       `,
       cost: `You must be \\glossterm{grounded} to cast this spell.`,
       rank: 4,
@@ -453,13 +473,12 @@ export const astromancy: MysticSphere = {
     },
 
     {
-      name: 'Planar Jaunt -- Plane of Water',
+      name: 'Conjoined Conjuration -- Aqua',
 
-      // -1dr for the accuracy and weird debuff
+      // Water requirement allows the accuracy and weird debuff
       attack: {
         hit: `
-          The target \\sphereterm{flickers} to the Plane of Water.
-          When it returns, it you deal it \\damagerankfour.
+          \\damagerankfive.
         `,
         injury: `
           The target becomes unable to breathe air as a \\glossterm{condition}.
@@ -470,59 +489,17 @@ export const astromancy: MysticSphere = {
           You gain a \\plus2 accuracy bonus if the target needs to breathe and cannot breathe water.
         `,
       },
+      cost: `
+        You must be touching a Small or larger area of water to cast this spell.
+        The water can be in a container you carry, as long as you are touching the container.
+      `,
       narrative: `
-        Your foe disappears for a second into the Plane of Water, where it suddenly begins drowning.
+        You create a connection to Aqua, the ocean planet, and summon a torrent of water.
       `,
       rank: 5,
       roles: ['burst', 'maim'],
       scaling: 'damage',
       tags: ['Water'],
-    },
-    {
-      name: 'Planar Jaunt -- Myriad',
-
-      // -1dr for multi-tag stuff
-      attack: {
-        hit: `
-          The target \\sphereterm{flickers} to a random assortment of planes.
-          When it returns, it takes \\damagerankfive.
-        `,
-        targeting: `
-          Make an attack vs. Mental against something within \\medrange.
-          The target must be impervious or immune to all of this spell's tags to be impervous or immune to this attack.
-        `,
-      },
-      narrative: `
-        Your foe briefly teleports through a number of planes in a rapid sequence.
-        No matter what its weaknesses are, one of those planes probably held the key.
-      `,
-      rank: 6,
-      roles: ['burst'],
-      scaling: 'damage',
-      tags: ['Air', 'Cold', 'Earth', 'Electricity', 'Fire', 'Water'],
-    },
-    {
-      name: 'Planar Jaunt -- Eternal Void',
-
-      // Briefly stunned is r1, so r5 with damage, or r7 with damage + hp condition
-      attack: {
-        hit: `
-          The target \\sphereterm{flickers} to the Eternal Void.
-          When it returns, you deal it \\damageranksix, and it is \\glossterm{briefly} \\stunned.
-        `,
-        injury: `
-          The target becomes \\stunned as a condition.
-        `,
-        targeting: `
-          Make an attack vs. Mental against something within \\medrange.
-        `,
-      },
-      narrative: `
-        Your foe briefly teleports into the Eternal Void.
-        The distance of the journey, combined with the bizarre destination, is deeply unsettling.
-      `,
-      roles: ['burst', 'maim'],
-      rank: 7,
     },
     // Scary against melee enemies, hard to calculate EA
     {
