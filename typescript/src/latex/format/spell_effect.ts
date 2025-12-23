@@ -142,7 +142,7 @@ export function ritualSpheres(ritual: Ritual): string | null {
 
   const effects = ritual.sphereEffects
     ? `
-      \noindent Mystic sphere effects:
+      \\noindent Mystic sphere effects:
       \\begin{raggeditemize}
         ${Object.entries(ritual.sphereEffects)
           .map(([sphereName, effect]) => {
