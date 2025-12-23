@@ -85,7 +85,7 @@ function addAirElementals(grimoire: Grimoire) {
       hasArt: true,
       knowledge: {
         normal: `
-          Air elementals are formed from the pure essence of the Plane of Air.
+          Air elementals are native to Ventus, the wind planet.
           They can fly through the air with agile ease, but they tend to be physically frail.
         `,
         hard: `
@@ -549,7 +549,7 @@ function addFireElementals(grimoire: Grimoire) {
       hasArt: true,
       knowledge: {
         normal: `
-          Fire elementals are formed from the pure essence of the Plane of Fire.
+          Fire elementals are native to Ignis, the fire planet.
           They tend to be fast and agile, and they burn their opponents to ash in combat.
         `,
         hard: `
@@ -833,7 +833,7 @@ function addMagmaElementals(grimoire: Grimoire) {
       hasArt: true,
       knowledge: {
         normal: `
-          Magma elementals are a fusion of the Plane of Earth and the Plane of Fire.
+          Magma elementals are native to Terra, the earth planet.
           They combine the durability of earth elementals with some of the agility of fire elementals.
           Their outer shell appears rocky, but inside that shell they hold molten rock at incredible temperatures.
         `,
