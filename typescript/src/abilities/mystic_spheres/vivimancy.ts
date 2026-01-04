@@ -485,12 +485,13 @@ export const vivimancy: MysticSphere = {
 
       // Assume the total damage dealt is doubled. It might trigger 2-3 times, and with a
       // delay, so overall multiplying the damage by 2 seems reasonable.
-      // dr3 is 4.5 + 1dpp.
-      // Double dr1 is 5 + 1dpp.
+      // Delayed damage would normally be dr4, which is 0 + 1.75dpp.
+      // Double dr2 is 11 + 1dpp.
+      // It's hard to directly compare them, but it seems plausible.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          \\damageranktwo, and the target's life becomes linked to yours as a \\glossterm{condition}.
           At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankone.
         `,
         targeting: `
@@ -500,22 +501,18 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       roles: ['burn'],
       scaling: {
-        special: 'Both instances of damage increase by 2 for each rank beyond 3.',
+        special: 'Both instances of damage increase by 1d6 for each rank beyond 3.',
       },
     },
 
     {
       name: 'Mighty Sanguine Bond',
 
-      // Assume the total damage dealt is doubled. It might trigger 2-3 times, and with a
-      // delay, so overall multiplying the damage by 2 seems reasonable.
-      // dr6 is 4.5 + 2.25dpp.
-      // Double dr3 is 9 + 2dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
+          \\damagerankfour, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
