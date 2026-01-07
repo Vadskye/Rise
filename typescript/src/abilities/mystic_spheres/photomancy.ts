@@ -726,7 +726,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `
-          \\damageranksevenlow.
+          \\damageranksevenlow, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
           The target becomes \\blinded as a \\glossterm{condition}.
