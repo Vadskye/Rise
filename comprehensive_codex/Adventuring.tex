@@ -33,7 +33,7 @@
     You can take multiple long rests consecutively to recover from extensive vital wounds.
 
   \subsection{Sleep and Fatigue}\label{Sleep and Fatigue}
-    A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep every week.
+    A typical creature needs a minimum of 6 hours of sleep for every 18 hours spent awake, and a minimum of 50 hours of sleep per week.
     You can stay awake beyond those limits with the Endurance skill (see \pcref{Stay Awake}).
 
 \section{Overland Movement}\label{Overland Movement}
@@ -130,7 +130,7 @@
   Rare languages are more difficult to learn, and are usually only spoken by unusual creatures.
 
   Some intelligent but non-civilized monsters, such as gnolls and lizardfolk, have their own language.
-  You can learn a the language of a single type of monster as a rare language.
+  You can learn the language of a single type of monster as a rare language.
   They are not all listed invidually here due to the sheer number of languages.
 
   \parhead{Learning Languages}\nonsectionlabel{Learning Languages}
@@ -156,7 +156,7 @@
       Halfling             & Halflings             & Letters \\
       Human                & Humans                & Letters \\
       Orcish               & Orcs                  & Runes   \tableheaderrule
-      \tb{Rare Language}   & \tb{Typical Speakers} & \tb{Alphabet} \tableheaderrule
+      \tb{Rare Language}   & \tb{Typical Speakers} & \tb{Writing System} \tableheaderrule
       Abyssal              & Evil soulforged       & Sigils  \\
       Elysian              & Good soulforged       & Sigils  \\
       Moirain              & Lawful soulforged     & Sigils  \\
@@ -304,9 +304,9 @@
   \subsection{Damaging Objects}
     Objects have \glossterm{hit points} like creatures.
     They can also have \glossterm{hardness}, which reduces damage they take.
-    Whenever an object takes damage, it first subtracts it hardness from that damage before applying that damage to its hit points.
+    Whenever an object takes damage, it first subtracts its hardness from that damage before applying that damage to its hit points.
     Objects are not normally subject to \glossterm{critical hits}.
-    When object lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
+    When objects lose enough hit points, they can become \glossterm{broken} (see \pcref{Broken and Destroyed Objects}).
 
     \subsubsection{Vulnerable and Impervious Objects}
       An object that is \impervious to an attack doubles its \glossterm{hardness} against that attack.
@@ -325,8 +325,7 @@
     The primary material it is constructed from determines its \glossterm{hardness}, and can modify the number of hit points it has.
     Details are given in \tref{Object Statistics By Size} and \tref{Object Statistics By Material}.
 
-    For objects that have two large dimensions and one small dimension, treat their size as being one size category smaller than the bulk of their larger dimensions.
-    For objects that have one large dimension and two smaller dimensions, just use the smaller dimensions.
+    Oddly shaped objects, such as a ladder or pillar, should generally use some size category in between their largest and smallest dimensions.
     Consider these examples:
     \begin{raggeditemize}
       \item A 20 foot cube would have the hit points of a Huge object.
@@ -337,6 +336,7 @@
     These rules are more detailed than you should really need.
     During a typical game session, it's often best to just guess whether a character could plausibly sunder or smash an object rather than consulting these tables.
 
+    % TODO: Should object HP be determined by size or by weight?
     \begin{dtable}
       \lcaption{Object Statistics By Size}
       \begin{dtabularx}{\textwidth}{l X X}
@@ -388,7 +388,7 @@
     Most magical effects that create temporary objects are fully destroyed when they become broken.
 
     \parhead{Destroyed Objects}\nonsectionlabel{Destroyed Objects}
-    Destroyed object have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
+    Destroyed objects have been damaged beyond hope of any sort of repair short of crafting the object again from raw materials.
     For example, a destroyed wall is reduced to dust or small, useless chunks of rubble.
     Magic items that are destroyed irrevocably lose their magical properties.
     The remains of a destroyed object generally occupy a space one size category smaller than the original object.
