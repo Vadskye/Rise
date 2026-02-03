@@ -234,12 +234,13 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use it again for a week.
                     You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
                     At your deity's discretion, this can emulate the effects of any non-attunable divine spell, or have any other effect of a similar power level.
-                    A miracle can also mimic the effects of many rituals.
+                    A miracle can also mimic the effects of many non-attunable rituals.
                     However, rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
 
                     Miracles are most effective when your request is directly related to your domains, and more generally your deity's domains and purview.
-                    They do not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
-                    If the deity has a direct interest in your situation, the miracle may be of even greater power.
+                    Requesting a miracle outside that scope may limit its power.
+                    Your request does not have to be extremely specific, since deities prefer to have leeway to act as they see fit, but they should not be overly broad or vague.
+                    If the deity has a direct interest in your situation, the miracle may be of unusual power.
                     On the other hand, if your deity sees your request as unbefitting of its involvement or contrary to its goals, the miracle may be weaker or even fail.
 
                     If you perform an extraordinary service for your deity, you may gain the ability to request an additional miracle, at your deity's discretion.
