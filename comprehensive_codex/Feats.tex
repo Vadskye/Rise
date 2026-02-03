@@ -406,7 +406,7 @@ They allow more distinct and unique character customization, but also increase g
     Those creatures have the same effects if they try to attack you.
     This allows you to safely use area spells that include your allies as targets, since they will suffer no ill effect from the attack.
 
-    \magicalff[12]{Fountain of Blood} At the end of each round, if you did not use your \ability{bloodspell} ability that round, you regain hit points equal to your \glossterm{magical power}.
+    \magicalff[12]{Fountain of Blood} You gain a \plus5 bonus to your \glossterm{durability}.
 
     \magicalff[18]{Bloodspell\plus} The accuracy bonus increases to \plus2.
   \end{magicalfeat}
@@ -478,9 +478,23 @@ They allow more distinct and unique character customization, but also increase g
         While this ability is active, you cannot be affected by other creatures using this ability on you.
     \end{magicalactiveability}
 
-    \magicalff[6]{Healing Radiance} When you use the \ability{recover} ability, you \glossterm{briefly} emit \glossterm{brilliant illumination} in a \largearea radius \glossterm{zone} from you.
-    % TODO: unclear scaling
-    At the end of each round, each \glossterm{ally} in the radius of brilliant illumination regains \glossterm{hit points} equal to a quarter of your maximum hit points.
+    \magicalff[6]{Divine Radiance} You radiate \glossterm{brilliant illumination} in a \medarea radius from you.
+    You can suppress or resume this illumination once per round as a \glossterm{free action}.
+
+    \magicalff[6]{Scouring Light}
+    \begin{magicalactiveability}{Scouring Light}{Standard action}
+      \abilitycost You \glossterm{briefly} cannot use this ability again.
+      \rankline
+      Make an attack vs. Reflex against all enemies in a \medarealong, 10 ft. wide line from you.
+      Whether you hit or miss, each target suffers a \minus2 penalty to its Armor and Reflex defenses this round.
+      \hit \damageranktwo.
+      \rankline
+      \featlevel{9} The damage increases to \damagerankthree.
+      \featlevel{12} The damage increases to \damagerankfour.
+      \featlevel{15} The damage increases to \damagerankfive.
+      \featlevel{18} The damage increases to \damageranksix.
+      \featlevel{21} The damage increases to \damagerankseven.
+    \end{magicalactiveability}
 
     \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
@@ -489,7 +503,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[18]{Angel Wings\plus} The height limit increases to 30 feet.
 
-    \magicalff[18]{Celestial Benevolence\plus} When you use this ability, you can choose an additional ally you \glossterm{touch}.
+    \magicalff[18]{Celestial Benevolence\plus} You take only half of the damage that the target takes, not the same amount of damage as the target.
   \end{magicalfeat}
 
   \begin{feat}{Chameleon}{General}
@@ -1765,7 +1779,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}{Standard action}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+      \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
       \rankline
       You cast a spell and make a melee \glossterm{strike}, in either order.
       Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
