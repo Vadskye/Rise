@@ -305,52 +305,49 @@ Assume that you heal drX-2 at the end of each action phase. How much does that h
 
 The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to attacks. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
 
-However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. To be safer, calculate the value of regeneration using a full 4 rounds of healing, even though a typical combat won't trigger all 4 rounds.
+However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. In addition, particularly difficult fights are generally longer fights, making this healing even more effective. To be safer, calculate the value of regeneration using 5 rounds of healing, even though a typical combat won't trigger all 5 rounds. That means the healing value per round should be 20% of the total expected healing value.
 
-drX is about a third of a typical character's HP pool, so 4 rounds of drX healing twice is like having 133% more HP, or 125% extra HP counting the first round healing limit. That's too much to exist.
-
-drX-3 is about 50% as strong, so about 66% more HP. Having 66% more HP is 1/1.66 = 60% action efficiency, or 40% action denial. (100% more HP is 1/2 = 50% action efficiency, so 50% action denial). 40% action denial that works 1/3 of the time, since you are attacked 1/3 of the time, is 20 * 0.4 / 3 = 2.7 EA.
-
-Put another way, since drX-2 is about a quarter of character HP, it's worth:
-* +100% HP -> 50% action denial -> 20 * 0.5 / 3 = 3.3 EA
-
-What about drX-3? That's:
-* +66% HP -> 40% action denial -> 20 * 0.4 / 3 = 2.6 EA (rank 6 deep)
-
-These values are all too high. Instead, let's try recovering 10% of a typical HP pool.
+We can use the action denial calculations to determine the value of healing.
 * +40% HP -> 29% action denial -> 20 * 0.29 / 3 = 1.9 EA (rank 3 deep)
 * +50% HP -> 33% action denial -> 20 * 0.33 / 3 = 2.2 EA (rank 4 deep)
 * +60% HP -> 38% action denial -> 20 * 0.38 / 3 = 2.5 EA (rank 5 deep)
 * +70% HP -> 41% action denial -> 20 * 0.41 / 3 = 2.75 EA (rank 6 deep)
 * +80% HP -> 44% action denial -> 20 * 0.41 / 3 = 3 EA (rank 7 deep)
 
-Correct numeric values:
-* Rank 3: 3 HP (10%)
-* Rank 4: 8 HP (12%)
-* Rank 5: 16 HP (15%)
-* Rank 6: 28 HP (17%)
-* Rank 7: 44 HP (20%)
+HP by rank:
+* Rank 3: 45
+* Rank 4: 65
+* Rank 5: 90
+* Rank 6: 125
+* Rank 7: 180
+
+Correct healing values:
+* Rank 3: 40% of HP is 18, 20% of that is 3.5 HP
+* Rank 4: 50% of HP is 35, 20% of that is 6 HP
+* Rank 5: 60% of HP is 54, 20% of that is 11 HP
+* Rank 6: 70% of HP is 88, 20% of that is 18 HP
+* Rank 7: 80% of HP is 144, 20% of that is 29 HP
 
 As dice:
 * Rank 3: 1d6
-* Rank 4: 2d6
-* Rank 5: 4d6
-* Rank 6: 6d8
-* Rank 7: 8d10
+* Rank 4: 1d10
+* Rank 5: 2d10
+* Rank 6: 4d8
+* Rank 7: 5d10
 
 As power scaling:
 * Rank 3: Half power (= 4)
-* Rank 4: dr1 (1d6 + half power = 3.5 + 5 = 8.5)
-* Rank 5: dr3 (1d8 + power = 4.5 + 12.5 = 17)
-* Rank 6: dr4 (1d6 per 2 power = 3.5 * 15 / 2 = 26)
-* Rank 7: dr6 (1d8 + 1d8 per 2 power = 4.5 + 4.5 * 16 / 2 = 40.5)
+* Rank 4: dr0 (1d4 + half power = 2.5 + 5 = 7.5) - a bit too high?
+* Rank 5: dr2 (1d10 + half power = 5.5 + 6 = 11)
+* Rank 6: dr3 (1d8 + power = 4.5 + 15 = 19.5)
+* Rank 7: dr5 (1d6 + 1d6 per 2 power = 3.5 + 3.5 * 16 / 2 = 31.5)
 
 As rank multiplier:
 * Rank 3: 1x
-* Rank 4: 2x
-* Rank 5: 3x
-* Rank 6: 4x
-* Rank 7: 6x
+* Rank 4: 1x
+* Rank 5: 2x
+* Rank 6: 3x
+* Rank 7: 4x
 
 TODO: calculate apparel value, since apparel is 0.5 EA worse than self-cast spells
 
