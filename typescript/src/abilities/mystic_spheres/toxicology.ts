@@ -656,7 +656,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 1,
       roles: ['boon'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
 
@@ -671,7 +671,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 2,
       roles: ['boon'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
 
@@ -687,7 +687,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 3,
       roles: ['boon'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
 
@@ -703,7 +703,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 5,
       roles: ['boon'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
 
@@ -719,7 +719,7 @@ export const toxicology: MysticSphere = {
       `,
       rank: 7,
       roles: ['boon'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
 

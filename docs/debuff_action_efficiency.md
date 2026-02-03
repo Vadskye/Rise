@@ -101,8 +101,8 @@ By rank:
 
 These are EA modifiers, as opposed to rank modifiers that apply after calculating EA and damage.
 
-* +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, minor)
-* -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attuneable, standard)
+* +0.8 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, minor)
+* -0.2 EA: Condition becomes a static zone that does not require attacks or persist effects on creatures that leave - Sustain (attunable, standard)
 * x0.5 EA: Condition can be removed with a DV 10 check as a move action, with +5 bonus for dropping prone.
 * x0.5 EA: Condition can be removed with a DV 8 check as a move action, with a +5 bonus as a standard action.
 * x0.4 EA: Condition becomes a HP-only condition

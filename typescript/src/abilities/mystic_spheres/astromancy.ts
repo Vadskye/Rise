@@ -334,7 +334,7 @@ export const astromancy: MysticSphere = {
       rank: 5,
       roles: ['wildfire'],
       scaling: 'damage',
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     // Since this is sustain (standard), it doesn't have to pay the steep damage cost of
     // Persistent Astral Rupture. It still pays a cost for extended range.
@@ -356,7 +356,7 @@ export const astromancy: MysticSphere = {
       },
       rank: 7,
       roles: ['wildfire'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
     {
       name: 'Conjoined Conjuration -- Ignis',
@@ -744,7 +744,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 3,
       roles: ['mobility'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Giant Twinned Portals',
@@ -759,7 +759,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 6,
       roles: ['mobility'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Rapid Twinned Portals',
@@ -774,7 +774,7 @@ export const astromancy: MysticSphere = {
       `,
       rank: 7,
       roles: ['mobility'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
 };

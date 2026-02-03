@@ -21,7 +21,7 @@ export const polymorph: MysticSphere = {
       `,
       roles: ['attune'],
       // no scaling; unclear what scaling could exist
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -292,7 +292,7 @@ export const polymorph: MysticSphere = {
         5: `The maximum size of the object increases to Large.`,
         7: `The maximum size of the object increases to Huge.`,
       },
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -605,7 +605,7 @@ export const polymorph: MysticSphere = {
       `,
       rank: 2,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Form of the Snake',
@@ -619,7 +619,7 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['attune'],
       tags: [],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Form of the Wolf',
@@ -633,7 +633,7 @@ export const polymorph: MysticSphere = {
       rank: 3,
       roles: ['attune'],
       tags: [],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Form of the Raven',
@@ -647,7 +647,7 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['attune'],
       tags: [],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // 0.4 + 2 * 0.2 EA

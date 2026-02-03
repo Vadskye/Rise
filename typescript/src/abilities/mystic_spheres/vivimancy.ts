@@ -707,7 +707,7 @@ export const vivimancy: MysticSphere = {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -725,7 +725,7 @@ export const vivimancy: MysticSphere = {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {

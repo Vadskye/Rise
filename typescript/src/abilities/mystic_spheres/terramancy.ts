@@ -275,7 +275,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 3,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -502,7 +502,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 7,
       roles: ['hazard', 'softener'],
       scaling: 'accuracy',
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -529,7 +529,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       },
       roles: ['hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: calculate EA of movement effects
@@ -542,7 +542,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 3,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -554,7 +554,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 6,
       roles: ['attune'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -567,7 +567,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       `,
       rank: 5,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     {
@@ -739,7 +739,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         6: "The wall's hit points increase to five times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -755,7 +755,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       rank: 6,
       roles: ['hazard'],
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {

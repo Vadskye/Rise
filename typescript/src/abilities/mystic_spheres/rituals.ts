@@ -55,7 +55,7 @@ export const rituals: RitualDefinition[] = [
       6: 'The bonus increases to \\plus40.',
     },
     spheres: ['Fabrication', 'Polymorph', 'Prayer', 'Terramancy'],
-    type: 'Sustain (attuneable, standard)',
+    type: 'Sustain (attunable, standard)',
   },
 
   {
@@ -353,7 +353,7 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 2,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Aquamancy'],
   },
   {
@@ -366,7 +366,7 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 6,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Aquamancy'],
   },
   {
@@ -381,7 +381,7 @@ export const rituals: RitualDefinition[] = [
     rank: 1,
     roles: ['narrative'],
     tags: ['Manifestation'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Aquamancy'],
   },
   {
@@ -397,7 +397,7 @@ export const rituals: RitualDefinition[] = [
       Using this to gradually purify a very large body of water is difficult, since the waste material can easily mix with the water unaffected by a single use of this ritual.
     `,
     // narrative: '',
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     rank: 2,
     roles: ['narrative'],
     scaling: {
@@ -687,7 +687,7 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 1,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Chronomancy', 'Revelation'],
   },
   {
@@ -700,7 +700,7 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 5,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Chronomancy', 'Revelation'],
   },
   {
@@ -1230,7 +1230,7 @@ export const rituals: RitualDefinition[] = [
       7: 'The area increases to a \\gargarea radius.',
     },
     tags: ['Visual'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
   },
 
@@ -1248,7 +1248,7 @@ export const rituals: RitualDefinition[] = [
       7: 'The area increases to a \\medarea radius.',
     },
     tags: ['Visual'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Electromancy', 'Photomancy', 'Pyromancy'],
   },
 
@@ -1558,7 +1558,7 @@ export const rituals: RitualDefinition[] = [
     `,
     rank: 3,
     roles: ['narrative'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
     spheres: ['Photomancy', 'Revelation'],
   },
 
@@ -2514,7 +2514,7 @@ export const rituals: RitualDefinition[] = [
     rank: 1,
     roles: ['narrative'],
     spheres: ['Aeromancy'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Chill Air',
@@ -2533,7 +2533,7 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 1,
     spheres: ['Cryomancy'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Magnetize',
@@ -2553,7 +2553,7 @@ export const rituals: RitualDefinition[] = [
       7: `The maximum size increases to Huge.`,
     },
     spheres: ['Electromancy'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Sculpt Appearance',
@@ -2580,7 +2580,7 @@ export const rituals: RitualDefinition[] = [
         A successful Awareness check that beats your Disguise check only reveals that your body's appearance has been magically altered.
       `,
     },
-    tags: ['Sustain (attuneable, minor)'],
+    tags: ['Sustain (attunable, minor)'],
     spheres: ['Photomancy', 'Polymorph'],
   },
   {
@@ -2595,7 +2595,7 @@ export const rituals: RitualDefinition[] = [
     },
     rank: 4,
     roles: ['narrative'],
-    tags: ['Sustain (attuneable, minor)'],
+    tags: ['Sustain (attunable, minor)'],
     spheres: ['Photomancy', 'Polymorph'],
   },
   {
@@ -2678,7 +2678,7 @@ export const rituals: RitualDefinition[] = [
       5: `You can increase the radius to a \\largearea radius.`,
       7: `You can increase the radius to a \\hugearea radius.`,
     },
-    tags: ['Sustain (attuneable, minor)'],
+    tags: ['Sustain (attunable, minor)'],
     spheres: ['Umbramancy'],
   },
 
@@ -2706,7 +2706,7 @@ export const rituals: RitualDefinition[] = [
       4: `You can also change the area to a \\largearea radius.`,
       6: `You can also change the area to a \\hugearea radius.`,
     },
-    tags: ['Sustain (attuneable, minor)'],
+    tags: ['Sustain (attunable, minor)'],
     spheres: ['Umbramancy'],
   },
   {
@@ -2747,7 +2747,7 @@ export const rituals: RitualDefinition[] = [
         Earth can tell you whether there exist underground tunnels within the area, but any sort of detailed mapping is beyond its ability to communicate.
       `,
     },
-    tags: ['Sustain (attuneable, minor)'],
+    tags: ['Sustain (attunable, minor)'],
     spheres: ['Aeromancy', 'Aquamancy', 'Pyromancy', 'Terramancy'],
   },
 
@@ -2908,7 +2908,7 @@ export const rituals: RitualDefinition[] = [
       `,
     },
     spheres: ['Aeromancy', 'Aquamancy', 'Polymorph', 'Telekinesis'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Enduring Time Lock -- Location',
@@ -2941,7 +2941,7 @@ export const rituals: RitualDefinition[] = [
     rank: 4,
     roles: ['narrative'],
     spheres: ['Enchantment', 'Revelation'],
-    type: 'Sustain (attuneable, standard)',
+    type: 'Sustain (attunable, standard)',
   },
   {
     name: 'Soothing Presence',
@@ -2958,7 +2958,7 @@ export const rituals: RitualDefinition[] = [
       Enchantment: 'This effect gains the \\atEmotion tag.',
     },
     spheres: ['Enchantment', 'Prayer'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Sanctuary',
@@ -2981,7 +2981,7 @@ export const rituals: RitualDefinition[] = [
       Enchantment: 'This effect gains the \\atEmotion tag.',
     },
     spheres: ['Enchantment', 'Prayer'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Persistent Sanctuary',
@@ -3009,7 +3009,7 @@ export const rituals: RitualDefinition[] = [
     roles: ['narrative'],
     spheres: ['Enchantment', 'Revelation'],
     tags: ['Subtle'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
   {
     name: 'Bind Object',
@@ -3120,7 +3120,7 @@ export const rituals: RitualDefinition[] = [
     rank: 2,
     roles: ['attune'],
     spheres: ['Photomancy', 'Revelation', 'Thaumaturgy'],
-    type: 'Sustain (attuneable, minor)',
+    type: 'Sustain (attunable, minor)',
   },
 
   {

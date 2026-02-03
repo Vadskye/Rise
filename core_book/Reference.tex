@@ -19,12 +19,12 @@
   % TODO: awkward wording
   Any part of a Barrier ability that would extend within 5 feet of an already active Barrier ability is not created, unless the new barrier simply extends an already existing wall along its length.
 
-  \abilitytagdef{Brawling} Brawling abililities rely on brute force in hand to hand combat.
+  \abilitytagdef{Brawling} Brawling abilities rely on brute force in hand to hand combat.
   Many Brawling abilities use your \glossterm{brawling accuracy} instead of your normal \glossterm{accuracy}.
   They always require a \glossterm{free hand} or \weapontag{Maneuverable} weapon unless otherwise noted in the ability's description.
   Common Brawling abilities are described in \pcref{Universal Combat Abilities}.
 
-  \abilitytagdef{Clinch} You gain a \plus2 accuracy bonus with this ability against creatures that are \grappled by you or who are grappling you.
+  \abilitytagdef{Clinch} You gain a \plus2 accuracy bonus with this ability against creatures that are \grappled by you or are grappling you.
 
   \abilitytagdef{Cold} Cold abilities draw energy out of the environment to cause their effects.
 
@@ -46,7 +46,7 @@
   \abilitytagdef{Electricity} Electricity abilities use electrical energy to cause their effects.
   Their effects typically create \glossterm{bright illumination} in a \smallarea radius that immediately ends when they are done.
 
-  \abilitytagdef{Emotion} Emotion abilities alter a creature's opinons or personality, but do not necessarily affect their actions.
+  \abilitytagdef{Emotion} Emotion abilities alter a creature's opinions or personality, but do not necessarily affect their actions.
   They have no effect on anything without a mind.
 
   \abilitytagdef{Fire} Fire abilities tap into the elemental force of fire.
@@ -71,7 +71,7 @@
   This includes the effect of any abilities which target you personally, such as spells to increase your visual acuity, but not abilities which affect an area around you.
   However, the sensor is treated as a separate, independent sensory organ, and it functions normally even if you have been blinded, deafened, or otherwise suffered sensory impairment.
   \par The sensor can be dismissed as if it were an active spell.
-  You cannot create a sensor in a location with lead sheeting between you and the location, and you sense that the effect is blocked in this way.
+  You cannot create a sensor in a location blocked by lead sheeting, and you sense when the effect is blocked in this way.
 
   \abilitytagdef{Size-Based} Size-Based abilities are limited based on your own size.
   They have no effect on creatures or objects that are two or more size categories larger than you.
@@ -91,7 +91,7 @@
 
   \abilitytagdef{Sustain} Sustain abilities require an action to maintain.
   The tag includes an action type, such as (minor), which indicates the type of action required to sustain the ability.
-  If it also includes ``attuneable'', you can choose to \glossterm{attune} to the effect instead of sustaining it every round.
+  If it also includes ``attunable'', you can choose to \glossterm{attune} to the effect instead of sustaining it every round.
   For details, see \pcref{Sustained Abilities}.
 
   \abilitytagdef{Swift} Swift abilities take effect before non-Swift abilities used during the same phase.
@@ -102,7 +102,7 @@
   Any part of a Trap ability that would extend within 15 feet of an already active Trap ability is not created.
 
   \abilitytagdef{Visual} Visual abilities use visible objects or forces to cause their effects.
-  Visual abilities do not determin their \glossterm{line of effect} like other abilities.
+  Visual abilities do not determine their \glossterm{line of effect} like other abilities.
   Instead, they use their \glossterm{line of sight} to also determine their \glossterm{line of effect}.
   For example, a Visual effect is not blocked by glass, but it is blocked by thick smoke.
 
@@ -122,7 +122,7 @@
   It has a 50\% \glossterm{miss chance} when trying to attack targets it cannot see.
   If a blinded creature can perceive targets with other effects that do not require eyes, such as \sense{blindsight}, it can ignore these detrimental effects.
 
-  \buffdef{braced} An braced creature gains a \plus2 bonus to all defenses.
+  \buffdef{braced} A braced creature gains a \plus2 bonus to all defenses.
 
   \debuffdef{charmed} A charmed creature is mentally influenced to like another creature.
   It always sees the words and actions of the creature that charmed it in the most favorable way, as a close friend or trusted ally.
@@ -149,12 +149,12 @@
   If the dazzled creature can perceive targets with other effects that do not require eyes, such as \sense{blindsight}, it can ignore this miss chance.
 
   \debuffdef{deafened} A deafened creature cannot hear.
-  It automatically fails at actions which depend on hearing, and is immune to Auditory abilities.
+  It automatically fails at actions that depend on hearing, and is immune to Auditory abilities.
   In addition, it has a 20\% failure chance when casting any spell with verbal components.
 
   \debuffdef{dominated}[dominate] A dominated creature is mentally compelled to obey another creature.
-  It obeys the commands of the creature of the dominated it unquestioningly, as an automaton.
-  If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commmands (such as ``attack'' or ``follow'') can usually be communicated successfully.
+  It obeys the commands of the creature that dominated it unquestioningly, as an automaton.
+  If it does not understand the language of the creature that dominated it, it still attempts to obey as much as possible, and simple commands (such as ``attack'' or ``follow'') can usually be communicated successfully.
   A creature that is both dominated and \confused obeys its dominated orders, ignoring the confusion.
 
   \buffdef{empowered} An empowered creature deals \glossterm{extra damage} with all of its damaging abilities equal to its \glossterm{character rank}.
@@ -181,7 +181,7 @@
   % TODO: why is this necessary? can this be removed? it seems surprising
   Being frightened is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
-  \debuffdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it it as long as it is within \rngmed range of of that creature.
+  \debuffdef{goaded} A goaded creature takes a \minus2 penalty to \glossterm{accuracy} against creatures other than the creature that goaded it as long as it is within \medrange of that creature.
   If the goading creature is \glossterm{defeated}, this effect is broken.
   If a creature is goaded by multiple different creatures simultaneously, the most recent effect takes precedence, so it does not take an accuracy penalty on its attacks against the most recent goading creature.
   Being goaded is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
@@ -189,8 +189,8 @@
   \debuffdef{grappled} A grappled creature is wrestling or in some other form of hand-to-hand struggle with at least one other creature.
   While grappled, you suffer certain penalties and restrictions, as described below.
   \begin{raggeditemize}
-    \item One of your hands cannot be used for any purposes.
-      This prevents humanoid creatures from taking any actions which would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
+    \item One of your hands cannot be used for any purpose.
+      This prevents humanoid creatures from taking any actions that would require having two free hands, such as attacking with \weapontag{Heavy} weapons.
       This does not affect creatures without hands.
     \item You take a \minus2 penalty to Armor and Reflex defenses.
     \item You cannot move unless you \glossterm{push} all creatures grappling you, such as with the \ability{shove} ability (see \pcref{Shove}).
@@ -208,7 +208,7 @@
   As normal, a miss or glancing blow cannot also get a critical hit.
 
   \buffdef{immune} A creature that is immune to an attack is completely unaffected by it.
-  Creatures and objects can be immune to specific ability tag or debuffs.
+  Creatures and objects can be immune to a specific ability tag or debuff.
   It is also possible to be immune to more specific effects, like being \grappled or gaining \glossterm{conditions}.
 
   If an attack has multiple tags, a creature is immune to the attack if it is immune to any of the attack's tags.
@@ -231,7 +231,7 @@
 
   \debuffdef{panicked} A panicked creature takes a \minus4 penalty to its Mental defense.
   In addition, it is unable to make any attacks that include the source of its fear as a target.
-  The penalty from this effect does not stack with the \frightened or \panicked effects.
+  The penalty from this effect does not stack with the \frightened effect.
   If the source of a panicked creature's fear is \glossterm{defeated}, this effect is broken.
   Being panicked is always an \abilitytag{Emotion} effect, even if it is caused by an ability that does not have that tag.
 
@@ -239,7 +239,7 @@
 
   \debuffdef{partially unaware} A creature that is partially unaware knows that something is nearby, but is missing information about the exact location or nature of the creature, object, or attack it is partially unaware of.
   Creatures take a \minus2 penalty to all defenses against attacks that they are partially unaware of.
-  They have a 50\% miss chance with \glossterm{targeted} atacks against creatures and objects that they are partially unaware of, and they can only attempt to target creatures and objects that they know the location of.
+  They have a 50\% miss chance with \glossterm{targeted} attacks against creatures and objects that they are partially unaware of, and they can only attempt to target creatures and objects that they know the location of.
 
   These penalties do not stack with the penalties for being \unaware or \unsteady.
   For details, see \pcref{Awareness and Surprise}.
@@ -259,7 +259,7 @@
   Mounted creatures that are knocked prone fall off their mounts.
   Creatures cannot glide or fly while prone.
 
-  A creature can stand up from being prone as part of a \glossterm{movement} using one of their move speeds.
+  A creature can stand up from being prone as part of a \glossterm{movement}.
   This generally requires one \glossterm{free hand}.
   Standing up from a prone position costs half of the creature's speed during that movement.
 
@@ -267,7 +267,7 @@
 
   \debuffdef{slowed} A slowed creature has a \minus10 foot penalty to its \glossterm{speed} and takes a \minus2 penalty to its Armor and Reflex defenses.
 
-  \debuffdef{squeezing} A squeezing creature is trying to move though an area too small for it to fight in normally.
+  \debuffdef{squeezing} A squeezing creature is trying to move through an area too small for it to fight in normally.
   While squeezing, a creature moves at half speed and takes a \minus2 penalty to its Armor and Reflex defenses.
   For details, see \pcref{Squeezing}.
 
@@ -308,7 +308,6 @@
   Blindsense always has a specific range limit, and provides no benefit beyond that range.
   However, it only grants knowledge of location, not actual sight, so does not mitigate any \glossterm{miss chances} that would apply.
   It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
-  Blindsense does not require using eyes.
 
   \sensedef{Blindsight}{blindsight}
   A creature with blindsight can perceive its surroundings perfectly regardless of concealment, invisibility, or light levels.
@@ -316,12 +315,11 @@
   This allows the creature to ignore all \glossterm{miss chances} caused by those effects.
   Blindsight always has a specific range limit, and provides no benefit beyond that range.
   It also does not mitigate \glossterm{cover} or otherwise allow sensing through objects that block \glossterm{line of effect}.
-  Blindsight does not require using eyes.
 
   \sensedef{Darkvision}{darkvision}
   A creature with darkvision can see perfectly in both complete darkness and \glossterm{dim illumination} just like a human does in \glossterm{bright illumination}.
   Darkvision always has a specific range limit, and provides no benefit beyond that range.
-  As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, their darkvision stops working.
+  As long as a creature with darkvision is in \glossterm{bright illumination} or \glossterm{brilliant illumination}, its darkvision stops working.
   The darkvision \glossterm{briefly} stays disabled even after they leave the lit area.
   Darkvision requires using eyes, and is disabled while you are \dazzled.
 
@@ -353,7 +351,7 @@
   The target does not have to be willing to receive telepathic communication in this way.
   While this channel is open, the telepathic creature can cause the target to ``hear'' the telepathic creature's voice inside the target's head.
   If the target attempts to mentally reply while the channel is open, the telepathic creature can similarly ``hear'' the reply in its head as if the target was speaking.
-  This does not generally grant the ability to detect any other thoughts, though exceptionally stupid targets may accidentally broadcast their private thoughts.
+  This does not generally grant the ability to detect any other thoughts, though creatures with limited self-control may accidentally broadcast their private thoughts.
 
   Telepathic communication uses words, so it still requires a shared language to be intelligible, even though the words are only imagined.
   A telepathic creature may attempt to telepathically communicate with creatures without a language, though this is generally unproductive.
@@ -364,7 +362,7 @@
   This makes it incapable of sensing flying creatures, but it ignores \glossterm{cover} and can even sense through solid obstacles that are no more than half a foot thick.
 
   \sensedef{Tremorsight}{tremorsight}
-  Tremorsense functions like \sense{blindsight}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
+  Tremorsight functions like \sense{blindsight}, except that it requires an uninterrupted path through solid objects instead of \glossterm{line of effect}.
   This makes it incapable of seeing flying creatures, but it ignores \glossterm{cover} and can even see through solid obstacles that are no more than half a foot thick.
 
   \newpage
@@ -382,22 +380,22 @@
   The Creature Handling skill is more effective on animals, as indicated in that skill's description.
 
   \traitdef{Beast}{beast}
-  Beasts are more typically more complex than animals, with a maximum Intelligence of \minus5.
+  Beasts are typically more complex than animals, with a maximum Intelligence of \minus5.
   Unlike animals, they can have \magical abilities.
   They have flesh, blood, skin, and bones, and their bodies are made from organic matter.
   Beasts are typically found in the wilderness, and seem to naturally avoid civilized areas.
 
   % TODO: should constructs regain hit points when they rest?
-  \traitdef{Construct}{construct} A construct is a creature that is made of nonsapient matter.
+  \traitdef{Construct}{construct} A construct is a creature that is made of non-sapient matter.
   Its inanimate body is given a semblance of life and sentience by some form of magic.
   Like other creatures, they can move and follow instructions.
-  However, they lack agency and cannot make the independent decisions.
+  However, they lack agency and cannot make independent decisions.
   They are \trait{mindless}, \trait{nonliving}, and \trait{soulless}.
-  they do not need to eat, drink, or sleep.
+  They do not need to eat, drink, or sleep.
 
   Constructs are not affected by the Medicine skill, and do not normally remove \glossterm{vital wounds} when they take a \glossterm{long rest}.
   Instead, their vital wounds must be repaired manually.
-  This functions like like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
+  This functions like \ability{accelerate recovery} ability from the Medicine skill, except that it uses an appropriate Craft skill and raw materials appropriate to the construct's construction.
 
   % TODO: What makes fey unique? Are they lawful or chaotic?
   \traitdef{Fey}{fey}
@@ -411,7 +409,7 @@
   Some creatures can freely choose whether they float, potentially allowing them to glide.
 
   \traitdef{Humanoid}{humanoid}
-  A humanoid is an intelligent creature two arms and two legs.
+  A humanoid is an intelligent creature with two arms and two legs.
   Humanoids can have magical abilities, but are usually not intrinsically magical.
   They have flesh, blood, skin, and bones, and their bodies are made from organic matter.
   Most civilized creatures and societies are predominantly humanoid.
@@ -438,7 +436,7 @@
   If it is partially contained, it has \glossterm{cover}, but can otherwise attack and be attacked normally.
 
   \traitdef{Indwelt}{indwelt}
-  An indwelt is a creature that is made of nonsapient matter.
+  An indwelt is a creature that is made of non-sapient matter.
   Its inanimate body was awakened to life by connection to an external soul.
   Unlike constructs, indwelt have agency and true intelligence.
 

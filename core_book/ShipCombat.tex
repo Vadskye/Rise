@@ -12,12 +12,12 @@ These rules could also be used for other types of vehicles, such as flying ships
 \section{Ship Statistics}
   Ships use the same basic framework for calculating their statistics as monsters.
   A ship has a level that indicates its general power.
-  This represents the sophistication of its construction, how advanced its weapons are, the general competence of its crew, and so on.
+  This represents the sophistication of its construction, the strength of its weaponry, the general competence of its crew, and similar factors.
 
   A ship's level determines its hit points, accuracy, defenses, and power, as indicated in the table below.
   Ships have the same roles as monsters (see \pcref{Monster Roles}).
   Unlike monsters, ships do not naturally increase their attributes with level.
-  Instead, their attributes increased based on their crew.
+  Instead, their attributes increase based on their crew.
   For details, see \pcref{Ship Attributes}.
 
   % NOTE: Keep in sync with Monster Advancement in Monsters
@@ -59,7 +59,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   \subsection{Elite Ships}\label{Elite Ships}
     Some ships are designated ``elite'' ships.
-    Elite ships are approximately four times as strong as an ordinary ships.
+    Elite ships are approximately four times as strong as an ordinary ship.
     They have a number of benefits and modifiers which make them superior to ordinary ships:
     % NOTE: Keep in sync with elite monsters
     \begin{raggeditemize}
@@ -112,9 +112,9 @@ These rules could also be used for other types of vehicles, such as flying ships
     With constant effort to remove excess water, a crew can often keep a ship afloat long enough to repair it or reach dry land.
 
     \subsubsection{Time to Sink}
-      A Medium ship with a leak becomes unusable after one minute.
+      A Medium ship with a leak becomes unusable after ten minutes.
       After that point, the crew cannot perform any ship tasks, and the ship is immobile in the water except for natural drifting.
-      It generally takes another minute for the ship to fully sink.
+      It generally takes another ten minutes for the ship to fully sink.
       For each size category larger than Medium, the time required for the ship to become unusable and sink increases, as described below:
       \begin{raggeditemize}
         \item Medium: Ten minutes
@@ -122,7 +122,7 @@ These rules could also be used for other types of vehicles, such as flying ships
         \item Huge: One hour
         \item Gargantuan: Two hours
         \item Colossal: Four hours
-        \item Galleon: Eight hours
+        \item Behemoth: Eight hours
         \item Titan: One day
       \end{raggeditemize}
 
@@ -139,7 +139,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   Unlike characters, ships do not automatically heal over time.
   Significant ship damage can be both time-consuming and expensive to repair.
 
-  Ships are assumed to have one repair crew that can only perform one repair task a time.
+  Ships are assumed to have one repair crew that can only perform one repair task at a time.
   For large ships, that repair crew may have many members, but they can still only perform one repair task at a time.
   A skilled fixer can reduce repair times (see \pcref{Crew Roles}).
   At the GM's discretion, a relevant Craft skill check by a crew member can also reduce repair times.
@@ -251,7 +251,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       % Keep in sync with character attributes
       % Note that since since 
   \subsection{Determining Ship Attributes}
-    As with characters, ships can use a predefined attribute array or use an 8-point point buy to calculate attributes, just like player characters.
+    As with characters, ships can use a predefined attribute array or an 8-point point buy to calculate their attributes.
     A ship's attributes can be further increased by crew roles and ship enhancements (see \pcref{Crew Roles}, and \pcref{Ship Enhancements}).
     However, normal ships do not have an Intelligence value, so you can't increase a ship's Intelligence unless it is specifically an intelligent ship.
 
@@ -262,9 +262,9 @@ These rules could also be used for other types of vehicles, such as flying ships
     Intelligent ships have a number of skill points equal to 3 \add their Intelligence.
     These trained skills apply to any ship-related checks that the ship might make.
     Ships cannot make skill checks for skills that they are not trained in.
-    For example, a ship that was trained in Awareness could be its own lookout, but a ship without Awareness trained would not be able to independenlty perceive its external surroundings.
+    For example, a ship that was trained in Awareness could be its own lookout, but a ship without Awareness trained would not be able to independently perceive its external surroundings.
 
-    In addition, each point of intelligence above \minus5 contributes a number of effective crew members to the ship's operation equal to a quarter of the ship's minimum crew requirements.
+    In addition, each point of intelligence above \minus4 contributes a number of effective crew members to the ship's operation equal to a quarter of the ship's minimum crew requirements.
     For example, a ship with an Intelligence of 0 would require no crew members to meet its minimum for navigation.
     A ship with an Intelligence of 4 would have a total automatic crew count equal to twice its minimum crew.
 
@@ -273,19 +273,21 @@ These rules could also be used for other types of vehicles, such as flying ships
   \begin{dtable*}
     \lcaption{Ship Size}
     \begin{compresseddtabularx}{\textwidth}{l l l l l l >{\lcol}X >{\lcol}X l l l}
-      \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Weapons} & \tb{Space} & \tb{Speed} & \tb{Turning Cost} & \tb{Cargo}    & \tb{Item Rank} \tableheaderrule
-      Medium     & 1              & No          & 1               & Light           & \tdash       & 5 ft.      & 30 ft.     & 10 ft.            & Small x2      & \tdash       \\
-      Large      & 1              & No          & 1---2           & Light           & 1            & 10 ft.     & 30 ft.     & 15 ft.            & Medium x2     & \tdash       \\
-      Huge       & 4              & Either      & 1---5           & Light or medium & 2            & 20 ft.     & 40 ft.     & 20 ft.            & Large x2      & \plus1\fn{2} \\
-      Gargantuan & 7              & Either      & 2---20          & Any             & 3            & 40 ft.     & 50 ft.     & 30 ft.            & Huge x2       & \plus1\fn{2} \\
-      Colossal   & 10             & Yes         & 10---100        & Any             & 4            & 80 ft.     & 60 ft.     & 40 ft.            & Gargantuan x2 & \plus3       \\
-      Galleon    & 13             & Yes         & 50---500        & Any             & 6            & 160 ft.    & 80 ft.     & 60 ft.            & Colossal x2   & \plus3       \\
-      Titan      & 16             & Yes         & 100---1000      & Any             & 8            & 320 ft.    & 100 ft.    & 80 ft.            & Galleon x2    & \plus4       \\
+      \tb{Size}  & \tb{Min Level} & \tb{Elite?} & \tb{Crew}\fn{1} & \tb{Armor}      & \tb{Weapons} & \tb{Length}\fn{2} & \tb{Speed} & \tb{Turning Cost} & \tb{Cargo}    & \tb{Item Rank Bonus} \tableheaderrule
+      Medium     & 1              & No          & 1               & Light           & \tdash       & 10 ft.            & 30 ft.     & 10 ft.            & Small x2      & \tdash       \\
+      Large      & 1              & No          & 1---2           & Light           & 1            & 20 ft.            & 30 ft.     & 15 ft.            & Medium x2     & \tdash       \\
+      Huge       & 4              & Either      & 1---5           & Light or medium & 2            & 40 ft.            & 40 ft.     & 20 ft.            & Large x2      & \plus1\fn{3} \\
+      Gargantuan & 7              & Either      & 2---20          & Any             & 3            & 80 ft.            & 50 ft.     & 30 ft.            & Huge x2       & \plus1\fn{3} \\
+      Colossal   & 10             & Yes         & 10---100        & Any             & 4            & 160 ft.           & 60 ft.     & 40 ft.            & Gargantuan x2 & \plus3       \\
+      Behemoth   & 13             & Yes         & 50---500        & Any             & 6            & 320 ft.           & 80 ft.     & 60 ft.            & Colossal x2   & \plus3       \\
+      Titan      & 16             & Yes         & 100---1000      & Any             & 8            & 640 ft.           & 100 ft.    & 80 ft.            & Behemoth x2    & \plus4       \\
     \end{compresseddtabularx}
     1. This range indicates the number of crew members that meaningfully contribute to the ship's functions, not the ship's maximum carrying capacity including passengers and cargo.
     It is either difficult or impossible to adequately control a large ship with less than the minimum crew listed here.
     Individual ships may have higher minimum crew requirements or lower maximum allowable crew based on their structure, at the GM's discretion. \\
-    2. If the ship is Elite, increase its item rank by an additional \plus1.
+    2. A typical ship is long and narrow.
+    Its overall size category is one smaller than its length would indicate. \\
+    3. If the ship is Elite, increase its item rank by an additional \plus1.
   \end{dtable*}
 
   A ship's size does not directly affect its statistics.
@@ -294,21 +296,26 @@ These rules could also be used for other types of vehicles, such as flying ships
   Some of these effects are listed below in \trefnp{Ship Size}.
   In addition, advanced ship weapons often require a minimum ship size (see \pcref{Ship Weapons}).
 
-  Some ships can be larger than most creatures and objects are usually defined.
-  To track ship size beyond the limits of Colossal, additional Galleon and Titan categories are listed below.
+  Ships can be larger than Colossal, which is the largest size category defined for ordinary creatures and objects.
+  To track ship size beyond the limits of Colossal, additional Behemoth and Titan categories are listed below.
   As usual, each size category represents a doubling of each dimension, and an eightfold increase in weight.
-  Titan ships are unlikely to be present at all in many universes, and they require extensive magical reinforcement to function.
+  Titan ships are unlikely to be present at all in many universes, and they require advanced metallurgy or magic to create.
   The GM can decide whether their world is advanced enough to construct such monstrosities.
 
   Some examples of ships of a given size are given below.
   Since ships are typically named for their function and structure, not their size, this is only a rough guide.
   \begin{raggeditemize}
-    \item Medium: Single-person kayak
-    \item Large: Canoe, lifeboat
-    \item Huge: Dinghy, outrigger canoe, punt, skiff
-    \item Gargantuan: Felucca, small longship
-    \item Colossal: Keelboat, large longship
+    \item Medium: Kayak, canoe
+    \item Large: Dinghy, outrigger canoe, punt, skiff
+    \item Huge: Felucca, lifeboat
+    \item Gargantuan: Longship, keelboat
+    \item Colossal: Clipper, galleon
   \end{raggeditemize}
+
+  \subsection{Ship Shapes}
+    Most large ships are long and narrow.
+    When determining their size category of such a ship, use a size one category smaller than the ship's largest dimension.
+    For example, ship that is 200 feet long and 40 feet wide would be considered Colossal.
 
 \section{Ship Movement}
   This section defines the rules that ships use to move, which are not identical to character movement.
@@ -330,7 +337,7 @@ These rules could also be used for other types of vehicles, such as flying ships
     \subsubsection{Reversing}
       A ship can travel in reverse, allowing it to move within a 90 degree cone centered around the opposite direction of its heading.
       This has two restrictions.
-      First, the ship must have not used more than half its movement during the previous round to travel forward.
+      First, the ship must not have used more than half its movement during the previous round to travel forward.
       Second, the ship's speed is halved while travelling in reverse.
 
   \subsection{Movement Timing}
@@ -371,12 +378,12 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   There are two ways that a GM can choose to use ship weapons.
   Real siege weapons used on ships had high crew requirements, slow firing rates, and extreme range.
-  In practice, this can reduce ship combat to a slog of tracking reload times across multiple weapons and carefully maneuvering ship range to make the best use of varying weapon types.
+  In practice, this can reduce ship combat to a tedious process of tracking reload times across multiple weapons and carefully maneuvering ship range to optimize the use of varying weapon types.
   For GMs who want more realistic and unique ship combat, use the weapons listed in \tref{Realistic Ship Weapons}.
   For GMs who want ship combat to feel simpler and more similar to regular combat, use the weapons listed in \tref{Simplified Ship Weapons}.
 
   The simplified ship weapons listed in the table normally attack Armor defense.
-  Magical simplified ship weapons use the same statistics as regular ship weapons, except that that they have the \weapontag{Fixed} (200) and \weapontag{Mystic} tags instead of \weapontag{Projectile} (200/600).
+  Magical simplified ship weapons use the same statistics as regular ship weapons, except that they have the \weapontag{Fixed} (200) and \weapontag{Mystic} tags instead of \weapontag{Projectile} (200/600).
   In addition, they can attack Brawn, Fortitude, Reflex, or Mental defense instead of Armor defense.
 
   % Baseline weapon is dr = rank - 1 with Projectile (200/600).
@@ -401,33 +408,33 @@ These rules could also be used for other types of vehicles, such as flying ships
   \begin{dtable!*}
     \lcaption{Realistic Ship Weapons}
     \begin{compresseddtabularx}{\textwidth}{l l l >{\lcol}X l l l}
-      \tb{Name}                & \tb{Damage}              & \tb{Defense}          & \tb{Tags}                                          & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
+      \tb{Name}                & \tb{Damage}              & \tb{Defense} & \tb{Tags}                                                    & \tb{Crew} & \tb{Ship Size} & \tb{Item Rank (Cost)} \tableheaderrule
       % +1dr for -1 range
-      Rock sling               & 1d8 \add 1 per power     & Armor                 & Projectile (60/180), Slow Reload (1)               & 1         & Medium         & 2 (200 gp)     \\
+      Rock sling               & 1d8 \add 1 per power     & Armor        & Projectile (60/180), Slow Load (1)                           & 1         & Medium         & 2 (200 gp)     \\
       % -1dr for +1 range
-      Springald                & 1d6 \add 1 per 2 power   & Armor                 & Projectile (120/360), Slow Reload (1)              & 1         & Large          & 2 (200 gp)     \\
+      Springald                & 1d6 \add 1 per 2 power   & Armor        & Projectile (120/360), Slow Load (1)                          & 1         & Large          & 2 (200 gp)     \\
       % +1dr for reload -> load, -1dr for range
-      Lightning caller\sparkle & 3d6                      & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 3 (1,000 gp)   \\
+      Lightning caller\sparkle & 3d6                      & Reflex       & \atElectricity, Fixed (200), Mystic, Slow Load (1), Volatile & 3         & Large          & 3 (1,000 gp)   \\
       % +2dr for slow reload, -2dr for range
-      Scorpion                 & 1d8 \add 1 per power     & Armor                 & Projectile (200/600), Slow Reload (2)              & 1         & Huge           & 3 (1,000 gp)   \\
+      Scorpion                 & 1d8 \add 1 per power     & Armor        & Projectile (200/600), Slow Load (2)                          & 1         & Huge           & 3 (1,000 gp)   \\
       % +3dr for slow reload, -3dr for range
-      Onager                   & 1d8 \add 1 per power     & Armor                 & Projectile (300/900), Slow Reload (3)              & 8         & Gargantuan     & 3 (1,000 gp)   \\
+      Onager                   & 1d8 \add 1 per power     & Armor        & Projectile (300/900), Slow Load (3)                          & 8         & Gargantuan     & 3 (1,000 gp)   \\
       % +1dr for reload -> load, +2dr for (1) to (2), -3dr for range
-      Torsion ballista         & 1d8 per 3 power          & Armor                 & Projectile (300/900), Slow Load (2)                & 3         & Huge           & 4 (5,000 gp)   \\
+      Torsion ballista         & 1d8 per 3 power          & Armor        & Projectile (300/900), Slow Load (2), Volatile                & 3         & Huge           & 4 (5,000 gp)   \\
       % +1dr for reload -> load, -1dr for range
-      Flame caller\sparkle     & 4d6                      & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 4 (5,000 gp)   \\
+      Flame caller\sparkle     & 4d6                      & Reflex       & \atFire, Fixed (200), Mystic, Slow Load (1), Volatile        & 3         & Large          & 4 (5,000 gp)   \\
       % +1dr for reload -> load, -1dr for range
-      Acid caller\sparkle      & 5d10                     & Fortitude    \atAcid, & Fixed (200), Mystic, Slow Load (1)                 & 3         & Large          & 5 (25,000 gp)  \\
+      Acid caller\sparkle      & 5d10                     & Fortitude    & \atAcid, Fixed (200), Mystic, Slow Load (1), Volatile        & 3         & Large          & 5 (25,000 gp)  \\
       % -2dr for removing reload
-      Polybolos                & 1d8 \add 1 per power     & Armor                 & Projectile (90/270)                                & 3         & Huge           & 5 (25,000 gp)  \\
+      Polybolos                & 1d8 \add 1 per power     & Armor        & Projectile (90/270)                                          & 3         & Huge           & 5 (25,000 gp)  \\
       % +2dr for slow reload, -2dr for range
-      Mangonel                 & 1d8 plus 1d8 per 3 power & Armor                 & Projectile (300/900), Slow Reload (2)              & 20        & Gargantuan     & 5 (25,000 gp)  \\
+      Mangonel                 & 1d8 plus 1d8 per 3 power & Armor        & Projectile (300/900), Slow Load (2)                          & 20        & Gargantuan     & 5 (25,000 gp)  \\
       % +1dr for reload -> load, -1dr for range
-      Storm caller\sparkle     & 5d10                     & Reflex                & \atElectricity, Fixed (200), Mystic, Slow Load (1) & 3         & Large          & 6 (125,000 gp) \\
+      Storm caller\sparkle     & 5d10                     & Reflex       & \atElectricity, Fixed (200), Mystic, Slow Load (1), Volatile & 3         & Large          & 6 (125,000 gp) \\
       % +3dr for slow reload, -4dr for range
-      Trebuchet                & 1d6 plus 1d6 per 2 power & Armor                 & Projectile (400/1200), Slow Reload (3)             & 10        & Gargantuan     & 6 (125,000 gp) \\
+      Trebuchet                & 1d6 plus 1d6 per 2 power & Armor        & Projectile (400/1200), Slow Load (3)                         & 10        & Gargantuan     & 6 (125,000 gp) \\
       % +1dr for reload -> load, -1dr for range
-      Meteor caller\sparkle    & 7d10                     & Reflex                & \atFire, Fixed (200), Mystic, Slow Load (1)        & 3         & Large          & 7 (625,000 gp) \\
+      Meteor caller\sparkle    & 7d10                     & Reflex       & \atFire, Fixed (200), Mystic, Slow Load (1), Volatile        & 3         & Large          & 7 (625,000 gp) \\
     \end{compresseddtabularx}
   \end{dtable!*}
 
@@ -442,18 +449,13 @@ These rules could also be used for other types of vehicles, such as flying ships
     The minimum spell rank of each creature must be no more than two lower than this weapon's item rank.
 
     % +1dr for Slow Reload to Slow Load, +1dr for (1) to (2), then +1dr for each subsequent round
-    \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire for the first time.
+    \weapontagdef{Slow Load} This weapon requires multiple rounds to load before it can fire.
     The number of rounds required to finish loading before it can be fired is indicated in its description.
     For example, a weapon with Slow Load (1) could be fired every other round.
     Only rounds where the weapon is being fully crewed count towards this load time.
-    If the weapon is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
-    % +2dr for (1) to (2), then +1dr for each subsequent round
-    \weapontagdef{Slow Reload} This weapon requires multiple rounds to after being fired.
-    The number of rounds required to finish reloading is indicated in its description.
-    For example, a weapon with Slow Reload (1) could be fired every other round.
-    Only rounds where the weapon is being fully crewed count towards this reload time.
-    The weapon can sustain its load for an arbitrary amount of time in combat before being fired.
+    \weapontagdef{Volatile} This weapon must be fired immediately after being loaded.
+    If it is not fired during the round after its loading time is completed, the loading is wasted, and the weapon must be loaded again before it can fire.
 
     % This replaces the automatic monster progression
 \section{Ship Enhancements}\label{Ship Enhancements}
@@ -491,7 +493,7 @@ These rules could also be used for other types of vehicles, such as flying ships
       \item Huge: \weapontag{Massive} (10)
       \item Gargantuan \weapontag{Massive} (15)
       \item Colossal \weapontag{Massive} (20)
-      \item Galleon \weapontag{Massive} (25)
+      \item Behemoth \weapontag{Massive} (25)
       \item Titan \weapontag{Massive} (30)
     \end{raggeditemize}
 
@@ -512,7 +514,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
   The default names for ship weapons assume that gunpowder is not being used.
   If technology has advanced to the point that gunpowder weapons are possible, you can assume that hull reinforcement has also increased at the same rate.
-  All the GM has to do for ship vs ship combat is change the name of the weapons to match their preferred technology level.
+  You just need to change the name of the weapons for ship vs ship combat to match your preferred technology level.
   More advanced weaponry is more generally effective against non-ship targets, however.
   If you use gunpowder-based ship weapons, they deal double damage against non-ship targets.
 
@@ -521,7 +523,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   There are many jobs that are necessary to make large ships function, including sailors, rowers, cooks, pages, and more.
   Fully defining life on a ship is outside the scope of this brief introduction to ship combat.
   However, some roles have outsized influence on the ship's effectiveness, such as the ship's captain and pilot.
-  These roles provide a way for player characters to meaningfully influence the outcome of ship battles, even if their personal combat talents are irrelevant at those scales.
+  These roles provide a way for player characters to meaningfully influence the outcome of ship battles, even if their personal combat talents are irrelevant at that scale.
 
   Each crew role defined here functions like a class archetype, with seven progression ranks.
   A character can have any number of crew roles, but they can only fulfill one role at a time on a ship.
@@ -537,7 +539,7 @@ These rules could also be used for other types of vehicles, such as flying ships
   This does not mean that the ship literally has multiple captains or pilots.
   Instead, the ship would have a hierarchy.
   It might have a boatswain and boatswain's mate, or a pilot and pilot's mate, with both characters able to fully use their crew role abilities.
-  Colossal ships can have two people for each crew role, Galleon ships can have three, and Titan ships can have four.
+  Colossal ships can have two people for each crew role, Behemoth ships can have three, and Titan ships can have four.
 
   % TODO: do "ship-related" effects need to be defined in more detail?
 
@@ -563,7 +565,7 @@ These rules could also be used for other types of vehicles, such as flying ships
         \end{raggeditemize}
 
         You can only use this ability while you are in an appropriate location so that relevant crew can see or hear you.
-        Changing which your location to be able to provide a different benefit with this ability typically takes one full round of movement for each size category by which the ship is larger than Huge.
+        Changing your location to be able to provide a different benefit with this ability typically takes one full round of movement for each size category by which the ship is larger than Huge.
         Specific ships may be easier or more difficult to navigate, at the GM's discretion.
         You cannot provide more than one benefit with this ability at once, even if you are perfectly located on the ship.
       \end{activeability}
@@ -712,7 +714,7 @@ These rules could also be used for other types of vehicles, such as flying ships
 
     In order to take this role on a ship, you must be able to cast spells.
     At the GM's discretion, you may also need to have access to mystic spheres that can plausibly be used to protect the ship.
-    Most mystic spheres which have spells that affect objects can be used to justify this role.
+    Most mystic spheres that have spells that affect objects can be used to justify this role.
     However, highly specialized mystic spheres like \sphere{enchantment} or \sphere{vivimancy} may not be sufficient.
 
     \cf{Wrd}[1]{Active Defense} As a standard action, you can give the ship a \plus2 bonus to all defenses during the current round.

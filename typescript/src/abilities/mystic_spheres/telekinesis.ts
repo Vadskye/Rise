@@ -29,7 +29,7 @@ export const telekinesis: MysticSphere = {
         This means that a shield does not grant you its defense bonus, a magic ring does not grant its benefits to you, and so on.
       `,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -46,7 +46,7 @@ export const telekinesis: MysticSphere = {
       scaling: {
         special: "For each rank beyond 2, the hand's effective Strength increases by 1.",
       },
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Interposing Force',
@@ -382,7 +382,7 @@ export const telekinesis: MysticSphere = {
       `,
       rank: 1,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -456,7 +456,7 @@ export const telekinesis: MysticSphere = {
         7: "The wall's hit points increase to five times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -476,7 +476,7 @@ export const telekinesis: MysticSphere = {
         7: "The wall's hit points increase to six times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -492,7 +492,7 @@ export const telekinesis: MysticSphere = {
       rank: 6,
       roles: ['hazard'],
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
