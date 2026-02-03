@@ -320,17 +320,6 @@ export const vivimancy: MysticSphere = {
     },
 
     {
-      name: 'Wellspring of Life',
-
-      effect: `
-        Whenever you regain hit points, you regain the maximum possible number instead of rolling.
-      `,
-      rank: 2,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-
-    {
       name: 'Blood Calls to Blood',
 
       // Rank 3:
