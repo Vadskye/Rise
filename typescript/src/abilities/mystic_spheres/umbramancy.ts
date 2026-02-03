@@ -534,7 +534,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowfeed',
       effect: `
-        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankone.
+        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankzero.
       `,
       rank: 4,
       roles: ['attune', 'healing'],
@@ -545,7 +545,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Greater Shadowfeed',
       effect: `
-        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankfour.
+        At the end of each round, if you are \\glossterm{shadowed}, you regain \\hprankthree.
       `,
       rank: 6,
       roles: ['attune', 'healing'],

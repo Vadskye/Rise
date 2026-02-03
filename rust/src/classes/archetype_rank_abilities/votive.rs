@@ -153,9 +153,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     It provides a \plus4 bonus to your Armor defense, a \plus4 bonus to your \glossterm{durability}, and a \plus1 bonus to your \glossterm{vital rolls}.
                     In exchange, the \ability{recover} ability no longer causes you to recover hit points (see \pcref{Recover}).
 
-                    \subcf{Covenant of Bloodsharing} At the end of each round, if you made a living \glossterm{enemy} lose \glossterm{hit points} during that round, you regain \glossterm{hit points} equal to half your \glossterm{power}.
-                    % TODO: do multiple targets sum their HP loss?
-                    You cannot regain more hit points in this way than the target lost from your attack.
+                    \subcf{Covenant of Bloodsharing} At the end of each round, if you \glossterm{injured} a living creature other than yourself during that round, you regain \glossterm{hit points} equal to half your \glossterm{power} (minimum 1).
                     In exchange, you are \glossterm{injured} whenever you are below your maximum hit points, regardless of your normal \glossterm{injury point}.
 
                     \subcf{Covenant of Soulcursing} Whenever you would inflict a \glossterm{condition} on a creature that is not already under the effects of a Curse, that effect becomes a Curse on it instead of a condition.
@@ -184,7 +182,8 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} The vital roll bonus from the armor increases to \plus2.
 
-                    \subcf{Covenant of Bloodsharing} The healing increases to 1d6 \add your \glossterm{magical power}.
+                    \subcf{Covenant of Bloodsharing} The healing applies if you made a living creature other than yourself lose hit points, even if they were not injured.
+                    In addition, the healing increases to be equal to your \glossterm{magical power}.
 
                     \subcf{Covenant of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -202,7 +201,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Covenant of Bloodforging} The durability bonus from the armor increases to \plus5.
                     In addition, the defense bonus increases to \plus5.
 
-                    \parhead{Covenant of Bloodsharing} The healing increases to 1d6 \add 1d6 per 2 \glossterm{magical power}.
+                    \parhead{Covenant of Bloodsharing} The healing increases to \hpranksix.
 
                     \parhead{Covenant of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
