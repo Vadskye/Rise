@@ -88,6 +88,25 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
     },
 
+    {
+      name: 'Mighty Splicing Grasp',
+
+      attack: {
+        hit: `
+          \\damagerankfive.
+          If the target is Huge or smaller, you may \\glossterm{teleport} it up to 15 feet.
+        `,
+        targeting: `
+          You must have a \\glossterm{free hand} to cast this spell.
+
+          Make an attack vs. Mental against a creature you \\glossterm{touch}.
+        `,
+      },
+      roles: ['burst', 'kite'],
+      rank: 4,
+      scaling: 'damage',
+    },
+
     // 30' melee teleport is 1.7 EA, or 2.7 EA with damage. Melee takes that down to 2.3,
     // which is rank 6.
     {
