@@ -291,7 +291,7 @@ export const thaumaturgy: MysticSphere = {
       rank: 2,
       roles: ['narrative'],
       scaling: 'accuracy',
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -304,7 +304,7 @@ export const thaumaturgy: MysticSphere = {
       `,
       rank: 4,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -439,7 +439,7 @@ export const thaumaturgy: MysticSphere = {
         7: "The wall's hit points increase to four times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // +1dr for prereq

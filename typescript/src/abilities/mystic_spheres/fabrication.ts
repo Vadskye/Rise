@@ -19,7 +19,7 @@ export const fabrication: MysticSphere = {
       `,
       roles: ['narrative'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -33,7 +33,7 @@ export const fabrication: MysticSphere = {
       rank: 4,
       roles: ['narrative'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Forge',
@@ -56,7 +56,7 @@ export const fabrication: MysticSphere = {
         `,
       },
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     // Shielded is 0.3, cover is ~0.4, so 0.7 total?
     {
@@ -117,7 +117,7 @@ export const fabrication: MysticSphere = {
       rank: 2,
       roles: ['narrative'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Hidden Copy',
@@ -130,7 +130,7 @@ export const fabrication: MysticSphere = {
       rank: 5,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Mystic Forge',
@@ -349,7 +349,7 @@ export const fabrication: MysticSphere = {
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -367,7 +367,7 @@ export const fabrication: MysticSphere = {
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -385,7 +385,7 @@ export const fabrication: MysticSphere = {
       roles: ['barrier', 'hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -395,12 +395,12 @@ export const fabrication: MysticSphere = {
       functionsLike: {
         name: 'forge',
         exceptThat:
-          'you can only create a weapon, and this spell has the \\atSustain (attuneable, minor) tag instead of the \\atAttune tag.',
+          'you can only create a weapon, and this spell has the \\atSustain (attunable, minor) tag instead of the \\atAttune tag.',
       },
       rank: 1,
       roles: ['attune'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: EA
@@ -420,7 +420,7 @@ export const fabrication: MysticSphere = {
         7: 'The hit points increase to five times your power.',
       },
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: EA
@@ -436,7 +436,7 @@ export const fabrication: MysticSphere = {
       rank: 6,
       roles: ['barrier'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -459,7 +459,7 @@ export const fabrication: MysticSphere = {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -625,7 +625,7 @@ export const fabrication: MysticSphere = {
         7: `The cage's \\glossterm{hit points} increase to five times your power.`,
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -724,7 +724,7 @@ export const fabrication: MysticSphere = {
         7: `The barrier's hit points increase to five times your power.`,
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -742,7 +742,7 @@ export const fabrication: MysticSphere = {
       roles: ['barrier'],
       rank: 7,
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -765,7 +765,7 @@ export const fabrication: MysticSphere = {
         6: "The barrier's hit points increase to four times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -786,7 +786,7 @@ export const fabrication: MysticSphere = {
         7: "The barrier's hit points increase to five times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -806,7 +806,7 @@ export const fabrication: MysticSphere = {
         6: "The barrier's hit points increase to four times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -825,7 +825,7 @@ export const fabrication: MysticSphere = {
         6: "The barrier's hit points increase to four times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: unclear EA. It's roughly an action trade, so ~2 EA assuming they can destroy
@@ -924,7 +924,7 @@ export const fabrication: MysticSphere = {
         7: "The barrier's hit points increase to six times your power.",
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Shrapnel Grenade',

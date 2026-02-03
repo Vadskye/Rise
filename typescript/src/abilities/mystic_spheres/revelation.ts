@@ -367,7 +367,7 @@ export const revelation: MysticSphere = {
       rank: 3,
       roles: ['flash', 'hazard'],
       scaling: 'accuracy',
-      tags: ['Sustain (attuneable, minor)', 'Visual'],
+      tags: ['Sustain (attunable, minor)', 'Visual'],
     },
 
     {
@@ -409,7 +409,7 @@ export const revelation: MysticSphere = {
       rank: 5,
       roles: ['narrative'],
       tags: ['Scrying'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {

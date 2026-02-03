@@ -26,7 +26,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         If the target is highly flammable, such as a torch or campfire, it ignites.
       `,
       roles: ['narrative'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -612,7 +612,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -630,7 +630,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {

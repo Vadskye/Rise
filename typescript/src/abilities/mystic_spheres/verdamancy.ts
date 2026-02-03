@@ -22,7 +22,7 @@ export const verdamancy: MysticSphere = {
         If it was already light undergrowth, it becomes \\glossterm{heavy undergrowth} instead.
       `,
       roles: ['hazard'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
     },
   ],
@@ -424,7 +424,7 @@ export const verdamancy: MysticSphere = {
       roles: ['attune', 'clear'],
       scaling: 'damage',
       tags: ['Fire'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -438,7 +438,7 @@ export const verdamancy: MysticSphere = {
       roles: ['attune', 'clear'],
       scaling: 'damage',
       tags: ['Fire'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -466,7 +466,7 @@ export const verdamancy: MysticSphere = {
       roles: ['clear', 'hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -484,7 +484,7 @@ export const verdamancy: MysticSphere = {
       roles: ['hazard'],
       scaling: 'damage',
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: unclear EA
@@ -504,7 +504,7 @@ export const verdamancy: MysticSphere = {
       rank: 4,
       roles: ['hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -552,7 +552,7 @@ export const verdamancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {

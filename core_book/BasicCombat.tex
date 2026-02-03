@@ -10,8 +10,8 @@ The combat rules also generally cover situations where time and precise position
   When you use an offensive ability, you will have to make an attack.
   To make an attack, roll 1d10 and add your \glossterm{accuracy} with the attack.
   That should be written on your character sheet in the attack's description.
-  If you get a 10, add 10 to your result and roll the d10 again, adding the new result to your total. This can only happen once per attack roll.
-  If you get a 10, keep rolling until you get a number less than 10, then sum all of the rolls.
+  If you get a 10, add 10 to your result and roll the d10 again, adding the new result to your total.
+  If you get a 10 again, keep rolling until you get a number less than 10, then sum all of the rolls.
   This is called ``exploding''.
 
   Your attack result is compared to your target's relevant defense.
@@ -44,20 +44,24 @@ The combat rules also generally cover situations where time and precise position
   If you are dealt damage that reduces your hit points below 0, you gain one or more \glossterm{vital wounds}.
 
   While you have vital wounds, you suffer penalties based on the wound.
-  If you get more than one vital wound, you can die.
+  If you gain more than one vital wound, you can die.
   The GM can explain how vital wounds work in more detail if it comes up.
-  Vital wounds can only be removed with an 8 hour rest, or with some rare abilities which you probably won't have access to.
+  Vital wounds can only be removed with an 8 hour rest, or with some rare abilities.
 
 \section{Tracking Time in Combat}
   Combat takes place in a series of \glossterm{rounds}, which represent about six seconds of time.
-  Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase (see \pcref{Phases}).
+  Each round of a combat is divided into two \glossterm{phases}: the movement phase and the action phase.
   After both phases are complete, the round ends and the next round begins.
 
-  During the movement phase, everyone will move, but can't attack.
-  During the action phase, everyone will take a \glossterm{standard action} of their choice.
-  This could be an attack, an additional movement, or another special ability.
+  During the movement phase, everyone can use a \glossterm{move action}.
+  Move actions can be used to move, but not to attack.
+  During the action phase, everyone can use a \glossterm{standard action} and a \glossterm{minor action}.
+  Most abilities require a standard action, including all normal attacks.
+  Minor actions are less common, and are typically used as part of the text of specific abilities.
+  There are also \glossterm{free actions}, which aren't generally used for specific player abilities.
+  You can take any number of free actions during both the movement and action phase.
 
-  You and your fellow player characters will take turns during each phase, but you can act in any order.
+  You and your fellow player characters will take turns during each phase, but you can act in any order among yourselves.
   The GM might ask each player in turn what they plan to do, or players could decide for themselves what they want to do and tell the GM whenever they have decided.
   It depends how the GM wants to run the game.
 
@@ -65,18 +69,8 @@ The combat rules also generally cover situations where time and precise position
   Their actions resolve simultaneously with your actions.
   The GM will typically tell you what your enemies did after all of the players have finished their actions.
 
-  \subsection{Action Types}
-    Most abilities require a \glossterm{standard action} to use.
-    You can take one standard action during each action phase.
-
-    Some less common abilities require a \glossterm{minor action}.
-    You can take one minor action during each action phase in addition to your standard action.
-
-    There are also \glossterm{free actions}, which aren't generally used for specific player abilities.
-    You can take any number of free actions during both the movement and action phase.
-
 \section{Movement}\label{Movement}
-  During the movement phase, your character move up to their speed along the ground.
+  As a \glossterm{move action}, your character can move up to their speed along the ground.
   Most characters have a movement speed of 30 feet, but your character sheet will tell you your speed.
   You tell the GM which location you want to move to, or which creature you want to move next to.
   If you move during the action phase, you can sprint, which doubles your movement speed.
@@ -100,7 +94,7 @@ The combat rules also generally cover situations where time and precise position
     \item Escape Grapple: Stop being grappled.
     \item Grapple: Start grappling with a foe.
     \item Maintain Grapple: Continue grappling with a foe as a \glossterm{free action}.
-    \item Recover: Regain all of your hit points and remove all conditions. However, you gain two fatigue levels, and you can only do it once per fight.
+    \item Recover: Regain half of your maximum hit points and remove all conditions. However, you gain two fatigue levels, and you can only do it once per fight.
     \item Shove: Push a foe up to half your speed.
     \item Sprint: Move at double speed. Costs one fatigue during the movement phase, but is free during the action phase.
     \item Total Defense: Gain a \plus2 bonus to all defenses this round.
@@ -187,6 +181,4 @@ The combat rules also generally cover situations where time and precise position
   \subsection{Dismissal}\label{Dismissal}
     When an ability is \glossterm{dismissed}, all of its lingering effects immediately end.
     Unless otherwise noted, all \magical abilities with a duration can be dismissed, but \glossterm{mundane} abilities cannot be dismissed.
-    % Seems unnecessary
-    % This includes \glossterm{conditions}, \glossterm{brief} effects, and other abilities with more specific durations.
     You can dismiss abilities as a \glossterm{free action} that requires only mental effort.

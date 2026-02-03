@@ -619,7 +619,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 1,
       roles: ['barrier'],
       tags: ['Barrier'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Air Walk',
@@ -700,7 +700,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       rank: 4,
       roles: ['attune'],
       tags: [],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     {

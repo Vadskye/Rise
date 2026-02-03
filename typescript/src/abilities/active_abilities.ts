@@ -87,8 +87,8 @@ type ActiveAbilityDurationType =
   | 'Attune (target)'
   | 'Sustain (minor)'
   | 'Sustain (standard)'
-  | 'Sustain (attuneable, minor)'
-  | 'Sustain (attuneable, standard)';
+  | 'Sustain (attunable, minor)'
+  | 'Sustain (attunable, standard)';
 
 export interface FunctionsLike {
   abilityType?: 'cantrip' | 'spell' | 'maneuver' | 'ability' | 'ritual';

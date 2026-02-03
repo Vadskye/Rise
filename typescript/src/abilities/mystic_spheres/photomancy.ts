@@ -18,7 +18,7 @@ export const photomancy: MysticSphere = {
       `,
       roles: ['narrative'],
       tags: ['Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -33,7 +33,7 @@ export const photomancy: MysticSphere = {
       rank: 3,
       roles: ['narrative'],
       tags: ['Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Color Spray',
@@ -86,7 +86,7 @@ export const photomancy: MysticSphere = {
       rank: 3,
       roles: ['narrative'],
       tags: ['Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -102,7 +102,7 @@ export const photomancy: MysticSphere = {
       rank: 1,
       roles: ['hazard'],
       tags: ['Barrier', 'Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -116,7 +116,7 @@ export const photomancy: MysticSphere = {
       rank: 5,
       roles: ['hazard'],
       tags: ['Barrier', 'Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     {
@@ -387,7 +387,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 1,
       roles: ['attune'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: unclear EA
@@ -400,7 +400,7 @@ export const photomancy: MysticSphere = {
       `,
       rank: 5,
       roles: ['attune'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // Rank 5 version is unlimited. It's not obvious how to downscale that correctly to
