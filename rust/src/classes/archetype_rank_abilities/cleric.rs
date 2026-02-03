@@ -233,7 +233,7 @@ pub fn domain_influence<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Miracle}{Standard action}
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use it again for a week.
                     You mentally specify a request to your deity, and your deity fulfills that request in the manner it sees fit.
-                    At your deity's discretion, this can emulate the effects of any divine spell, or have any other effect of a similar power level.
+                    At your deity's discretion, this can emulate the effects of any non-attunable divine spell, or have any other effect of a similar power level.
                     A miracle can also mimic the effects of many rituals.
                     However, rituals that require expensive material components or 24 hours to perform may require a similar investment of time or materials from you for the miracle to succeed.
 
