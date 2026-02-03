@@ -142,7 +142,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 1,
         short_description: String::from(r"Allows excluding a single square from an area"),
         description: String::from(r"
-            Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can freely exclude a single 5-ft. square from the ability's effect.
+            Whenever you use a non-attunable \magical ability that affects an area, you can freely exclude a single 5-ft. square from the ability's effect.
             All squares in the final area of the ability must be contiguous.
             You cannot create split an ability's area into multiple completely separate areas.
         "),
@@ -154,7 +154,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 3,
         short_description: String::from(r"Allows excluding something from an area"),
         description: String::from(r"
-            Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can activate this staff.
+            Whenever you use a non-attunable \magical ability that affects an area, you can activate this staff.
             When you do, you choose to have the ability exclude up to two creatures or objects of your choice.
             The excluded creature or object is not a target of the ability.
         "),
@@ -166,7 +166,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 5,
         short_description: String::from(r"Allows excluding creatures from an area"),
         description: String::from(r"
-            Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can activate this staff.
+            Whenever you use a non-attunable \magical ability that affects an area, you can activate this staff.
             When you do, you choose to have the ability exclude your \glossterm{allies}, your \glossterm{enemies}, or everything that is neither an ally nor an enemy.
             Excluded creatures and objects are not targets of the ability.
         "),
@@ -178,7 +178,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 1,
         short_description: String::from(r"Allows reshaping areas to become smaller"),
         description: String::from(r"
-            Whenever you use a \magical ability that affects an area and does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you can reshape its area.
+            Whenever you use a non-attunable \magical ability that affects an area, you can reshape its area.
             The new area must be a radius, line, or 90 degree cone, and it must be able to fit entirely within the ability's original area.
             For example, you could convert a radius into a cone, or a cone into a 5 foot wide line.
             However, you could not convert a line into a cone or radius.
@@ -244,7 +244,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 1,
         short_description: String::from(r"Can exert to use abilities from a short distance away"),
         description: String::from(r"
-            Whenever you use a \magical ability that does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you may activate this staff.
+            Whenever you use a non-attunable \magical ability, you may activate this staff.
             When you do, choose a location within \shortrange to act as a \glossterm{targeting proxy}.
             This means the ability determines its targets as if you were in that location, which can allow you to affect targets outside your normal range.
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this staff again.
@@ -317,7 +317,7 @@ pub fn staffs() -> Vec<Implement> {
         rank: 7,
         short_description: String::from(r"Can exert to repeat effect"),
         description: String::from(r"
-            Whenever you use a \magical ability that does not have the \abilitytag<Sustain> or \abilitytag<Attune> tags, you may activate this staff.
+            Whenever you use a non-attunable \magical ability, you may activate this staff.
             When you do, the ability \glossterm{repeats} during your next action.
             In addition, you increase your \glossterm<fatigue level> by one, and you \glossterm<briefly> cannot activate this effect again.
         "),

@@ -363,7 +363,7 @@ export const vivimancy: MysticSphere = {
       effect: `
         You must be alive to cast this spell.
 
-        Whenever you cast a spell that does not have the \\abilitytag{Sustain} or \\abilitytag{Attune} tags, you can activate this effect as a \\glossterm{minor action}.
+        Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
         If you do, the spell deals 1d8 \\glossterm{extra damage} when it deals damage for the first time.
         In addition, the spell can target objects and nonliving creatures as if they were living creatures.
         However, you also lose 2 hit points.
