@@ -58,7 +58,7 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytags \atSwift (see text)
                     \rankline
                     Make a melee \glossterm{strike}.
-                    In addition, whenever you would reduce your \glossterm{hit points} below your \glossterm{injury point} this round, you lose half that many hit points instead (minimum 1).
+                    In addition, whenever you would lose hit points that are below your \glossterm{injury point} this round, you lose half that many hit points instead (minimum 1).
                     This effect is \atSwift, but the strike is not.
 
                     \rankline
