@@ -238,18 +238,19 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
 
     // It would make more sense if the healing was limited by the HP remaining, but that's
     // complicated to track.
+    // This gets +1 rank for healing because of the harsh condition.
     weapons.push(Unrestricted(StandardItem {
         name: String::from("Vampiric"),
         rank: 2,
         short_description: String::from(r"Steals HP"),
         description: String::from(r"
-            At the end of each round, if you \glossterm{injured} a living creature other than yourself with a \glossterm{strike} using this weapon that round, you regain 1d10 hit points.
+            At the end of each round, if you \glossterm{injured} a living creature other than yourself with a \glossterm{strike} using this weapon that round, you regain 1d6 hit points.
         "),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             // -1dr for no downsides or requirements and the healing effect
             ItemUpgrade::new(4, "Deals +2 damage and steals HP", r"
-                The weapon also deals 2 \glossterm{extra damage} to living creatures, and the healing increases to 3d8.
+                The weapon also deals 2 \glossterm{extra damage} to living creatures, and the healing increases to 2d10.
             "),
             ItemUpgrade::new(6, "Deals +1d6 damage and steals HP", r"
                 The \glossterm{extra damage} increases to 1d6, and the healing increases to 5d10.

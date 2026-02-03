@@ -619,14 +619,17 @@ export const toxicology: MysticSphere = {
     {
       name: 'Regenerative Fungus',
 
-      // -1 rank for vital roll penalty
+      // Normal healing would be 40% of HP total, with 20% of that per round.
+      // The vital wound cost is worth +25% healing, so 50% of HP.
+      // Base HP is 45, so 22.5 total, or 4.5/round. We bump that to 5.5 to allow using a
+      // standard scaling.
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain hit points equal to half your \\glossterm{power}.
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankonelow.
         However, you take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune', 'healing'],
-      scaling: { special: 'The healing increases by 2 for each rank beyond 2.' },
+      scaling: 'healing',
       type: 'Attune (deep)',
       tags: ['Manifestation'],
     },
@@ -634,13 +637,17 @@ export const toxicology: MysticSphere = {
     {
       name: 'Greater Regenerative Fungus',
 
+      // Normal healing would be 60% of HP, with 20% of that per round.
+      // Vital wound cost is +25% healing, so 75% of HP.
+      // Base HP is 91, so 68 total, or 13.5/round.
       effect: `
-        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain \\hprankfour.
+        At the end of each round, fungus grows rapidly in your body to close your wounds, causing you to regain 4d6 hit points.
         However, you take a \\minus1 penalty to your \\glossterm{vital rolls}.
       `,
       rank: 5,
       roles: ['attune', 'healing'],
-      scaling: 'healing',
+      // At rank 6, base HP is 126, so 94 total, or 19/round.
+      scaling: { special: 'The healing increases by 2d6 for each rank beyond 5.' },
       type: 'Attune (deep)',
       tags: ['Manifestation'],
     },

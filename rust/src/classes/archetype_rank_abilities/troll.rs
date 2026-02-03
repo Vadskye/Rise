@@ -54,7 +54,7 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
             name: "Regeneration+",
             complexity: 2,
             description: r"
-                The recovery increases to three times your rank in this archetype.
+                The recovery increases to twice your rank in this archetype.
                 In addition, you also automatically remove one \glossterm{vital wound}.
                 You can choose to suppress this healing, and it does not function if you took damage from a \atAcid or \atFire ability that round.
                 While you are unconscious, this automatically removes your most severe vital wound.
@@ -105,7 +105,7 @@ pub fn troll<'a>() -> Vec<RankAbility<'a>> {
             name: "Regeneration++",
             complexity: 1,
             description: r"
-                The recovery increases to six times your rank in this archetype.
+                The recovery increases to five times your rank in this archetype.
                 In addition, removing a vital wound with this ability only increases your fatigue level by two.
             ",
             is_magical: false,

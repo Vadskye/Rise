@@ -319,12 +319,9 @@ export const vivimancy: MysticSphere = {
       type: 'Attune',
     },
 
-    // TODO: unclear EA
     {
       name: 'Wellspring of Life',
 
-      // This has a larger effect on large healing values, so it's not a great
-      // combo with incremental regeneration-style healing.
       effect: `
         Whenever you regain hit points, you regain the maximum possible number instead of rolling.
       `,
@@ -758,7 +755,7 @@ export const vivimancy: MysticSphere = {
       name: 'Greater Regeneration',
 
       effect: `
-        At the end of each round, you regain \\hprankthree.
+        At the end of each round, you regain \\hpranktwo.
       `,
       rank: 5,
       roles: ['healing'],
@@ -770,7 +767,7 @@ export const vivimancy: MysticSphere = {
       name: 'Supreme Regeneration',
 
       effect: `
-        At the end of each round, you regain \\hpranksix.
+        At the end of each round, you regain \\hprankfive.
       `,
       rank: 7,
       roles: ['healing'],
