@@ -148,7 +148,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 \begin{magicalsustainability}{Elemental Control}{Standard action}
-                    \abilitytags \abilitytag{Sustain} (attuneable, minor)
+                    \abilitytags \abilitytag{Sustain} (attunable, minor)
                     You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
                     Each element has different limitations on its ability to move, as described below.
                     Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.

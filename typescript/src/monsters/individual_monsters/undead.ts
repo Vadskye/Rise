@@ -429,7 +429,7 @@ function addHalfsouls(grimoire: Grimoire) {
           `,
             usageTime: 'elite',
             tags: ['Barrier', 'Manifestation'],
-            type: 'Sustain (attuneable, minor)',
+            type: 'Sustain (attunable, minor)',
           });
         },
       ],

@@ -17,7 +17,7 @@ export const enchantment: MysticSphere = {
       `,
       roles: ['narrative'],
       tags: ['Emotion'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
   ],
   spells: [
@@ -703,7 +703,7 @@ export const enchantment: MysticSphere = {
       rank: 4,
       roles: ['narrative'],
       scaling: 'accuracy',
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
 
     // Reactive brief frighten is 1.2 EA. Deep r2 spell is ~1.6 EA, so we can increase the

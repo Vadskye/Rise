@@ -494,7 +494,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       },
       roles: ['barrier'],
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     // TODO: unclear rank
     {
@@ -513,7 +513,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       rank: 4,
       roles: ['barrier'],
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Frostblade',

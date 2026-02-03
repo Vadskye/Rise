@@ -453,7 +453,7 @@ export const umbramancy: MysticSphere = {
         6: 'You can choose to create a \\largearealong wall instead.',
       },
       tags: ['Barrier', 'Visual'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
 
     // TODO: maybe combine with a different more useful buff?

@@ -24,7 +24,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         4: 'The bonus increases to +5.',
         6: 'The bonus increases to +6.',
       },
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
   ],
   spells: [
@@ -333,7 +333,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         7: `The wall's hit points increase to five times your \\glossterm{power}.`,
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Massive Wall of Water',
@@ -353,13 +353,13 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         6: `The wall's hit points increase to four times your \\glossterm{power}.`,
       },
       tags: ['Barrier', 'Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Raging River',
 
       // Ranged push is 0.9 EA, so damaging ranged push is 1.9 EA. Round down to 1.8 since
-      // this is less than Medium range. +1 rank for Sustain (attuneable, standard)?
+      // this is less than Medium range. +1 rank for Sustain (attunable, standard)?
       attack: {
         hit: `
           \\damageranktwo.
@@ -377,7 +377,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 4,
       roles: ['flash', 'hazard'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Sustain (attuneable, standard)'],
+      tags: ['Manifestation', 'Sustain (attunable, standard)'],
     },
     {
       name: 'Geyser',
@@ -577,7 +577,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       },
       roles: ['flash', 'hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
     {
       name: 'Persistent Fog Cloud',
@@ -589,7 +589,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 6,
       roles: ['flash', 'hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, minor)',
+      type: 'Sustain (attunable, minor)',
     },
     {
       name: 'Solid Fog Cloud',
@@ -602,7 +602,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       rank: 7,
       roles: ['flash', 'hazard'],
       tags: ['Manifestation'],
-      type: 'Sustain (attuneable, standard)',
+      type: 'Sustain (attunable, standard)',
     },
     {
       name: 'Fluid Motion',
