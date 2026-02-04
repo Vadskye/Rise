@@ -19,6 +19,7 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
+      tags: ['Swift'],
     },
   ],
   spells: [
