@@ -438,17 +438,12 @@ fn rings() -> Vec<Apparel> {
 
     apparel.push(Ring(StandardItem {
         name: String::from("Hexward Ring"),
-        rank: 4,
-        short_description: String::from("Grants +1 defenses against targeted spells"),
+        rank: 5,
+        short_description: String::from("Grants +1 defenses against targeted magic"),
         description: String::from(r"
-            You gain a +1 bonus to your defenses against \glossterm{targeted} spells.
-            This does not protect you from abilities that affect an area, or from magical abilities that are not spells.
+            You gain a +1 bonus to your defenses against \glossterm{targeted} \magical abilities.
+            This does not protect you from abilities that affect an area.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Grants +2 defenses against targeted spells", r"
-                The bonus increases to +2.
-            "),
-        ],
         ..Apparel::default()
     }));
 
