@@ -803,6 +803,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         This spell creates up to two weapons, suits of body armor, or shields from a Large or smaller \\glossterm{unattended} body of earth or stone within 5 feet of you.
         The body targeted must be at least as large as the largest item you create.
         You can create any weapon, shield, or body armor that you are proficient with, and which would normally be made of metal.
+        The item's rank cannot exceed your spellcasting rank with this spell.
         It is sized appropriately for the target, up to a maximum of a Medium size item.
         The items appear in your hand or on the ground at your feet.
       `,
@@ -811,7 +812,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       scaling: {
         2: `
           If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonfang (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
-          The rank of the special material cannot exceed your spellcasting rank with this spell.
+          Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },
       type: 'Attune (target)',
