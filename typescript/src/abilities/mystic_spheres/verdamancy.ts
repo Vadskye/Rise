@@ -660,7 +660,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `
           A Huge grove of trees grows around the target, \\glossterm{briefly} trapping it inside the grove.
-          While it is trapped, it is \\paralyzed and does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
+          While it is trapped, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
 
           The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, all of its defenses are 5, and it is destroyed when its hit points become negative.
           If the grove is destroyed, this effect ends early.

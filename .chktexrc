@@ -396,7 +396,7 @@ Silent
     \areatiny \areasmall \areamed \arealarge \areahuge \areagarg
     \spellsuccess \spellfailure \spelleffect \spelldur \spellcritical \spellspecial
     \spellnotes \norepeatspellnotes \physicalspellnotes \forcespellnotes \dismissable \norepeatnotes \destructivespellnotes \subtlespellnotes \cursespellnotes \spelltime \sizingspellnotes \firespellnotes \fogspellnotes \fogwindspellnotes \sensorspellnotes
-    \frightened \panicked \unaware \staggered \stunned \taunted \confused \slowed \confusionexplanation \deafened \charmed \dominated \helpless \blinded \grappled \disabled \paralyzed \prone
+    \frightened \panicked \unaware \staggered \stunned \taunted \confused \slowed \confusionexplanation \deafened \charmed \dominated \helpless \blinded \grappled \disabled \prone
     \degree
     \durshort \durmed \durlong \durext \durbrief \durpersonallong
     \rngshort \rngmed \rnglong \rngdist
