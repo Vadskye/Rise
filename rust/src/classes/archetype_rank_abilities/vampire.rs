@@ -30,6 +30,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
             rank: 2,
         },
+        // TODO: add resurrection ability oops. or maybe only at higher rank?
         RankAbility {
             name: "Reviving Coffin",
             complexity: 2,
@@ -94,8 +95,9 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Reviving Coffin+",
             complexity: 1,
             description: r"
-                You can designate up to three home coffins, rather than only one.
-                This can allow you to travel with one coffin while keeping others safe for emergencies.
+                Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
+                As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
+                Only the destruction of your home coffin or the total annihilation of your corpse can prevent your return.
             ",
             is_magical: true,
             modifiers: None,
@@ -153,9 +155,8 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Eternal Undeath",
             complexity: 1,
             description: r"
-                Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
-                As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
-                Only the destruction of all of your home coffins or the total annihilation of your corpse can prevent your return.
+                You can designate up to three home coffins, rather than only one.
+                This can allow you to travel with one coffin while keeping others safe for emergencies.
             ",
             is_magical: true,
             modifiers: None,
