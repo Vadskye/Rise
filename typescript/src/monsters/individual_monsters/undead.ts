@@ -683,7 +683,7 @@ function addVampires(grimoire: Grimoire) {
 
       In either non-humanoid form, the vampire is unable to take any standard actions, but it can still take \\glossterm{move actions} in place of standard actions.
       Since it has no \\glossterm{walk speed} in those forms, flying does not make it \\unsteady.
-      The vampire cannot use this ability while \\paralyzed.
+      The vampire cannot use this ability while \\helpless.
     \\end{magicalattuneability}
 
     \\parhead{Gentle Fangs} Whenever a vampire deal damage using its bite natural weapon, it can choose not to reduce the target's hit points below 0, or it can treat the damage as \\glossterm{subdual damage}.
@@ -704,15 +704,15 @@ function addVampires(grimoire: Grimoire) {
       \\itemhead{Garlic} A vampire that smells garlic becomes \\frightened by any creatures bearing garlic as a condition.
         In addition, creatures that have eaten garlic recently are treated as not having blood for the purpose of a vampire's abilities, so their blood cannot be drained.
       \\itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
-      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\glossterm{briefly} becomes \\paralyzed.
+      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\glossterm{briefly} becomes \\helpless.
         This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
-        It can use the \\ability{struggle} ability to move despite being paralyzed, but only towards the closest shore.
+        It can use the \\ability{struggle} ability to move despite being helpless, but only towards the closest shore.
       \\itemhead{Silver} Vampires are \\vulnerable to strikes using silver weapons.
       \\itemhead{Sunlight} A vampire that touches sunlight takes 20 damage and becomes \\blinded as a condition if it is not already blinded.
       \\itemhead{Unmirrored} Vampires have no reflection in mirrors, including their clothes and equipment.
         This can allow careful observers to identify vampires.
       \\itemhead{Wooden Stakes} If a vampire is \\glossterm{injured} by a critical strike using a wooden stake, the stake becomes impaled in its heart.
-        The vampire becomes \\paralyzed until the stake is removed.
+        The vampire becomes \\helpless until the stake is removed.
         A wooden stake is a \\weapontag{Light} improvised weapon that deals 1d4 damage.
     \\end{raggeditemize}
   `;
