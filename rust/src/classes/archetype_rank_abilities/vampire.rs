@@ -30,12 +30,11 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             modifiers: None,
             rank: 2,
         },
-        // TODO: add resurrection ability oops. or maybe only at higher rank?
         RankAbility {
-            name: "Reviving Coffin",
+            name: "Sheltering Coffin",
             complexity: 2,
             description: r"
-                You can designate a coffin as your home by resting in it for 24 consecutive hours.
+                You can designate a coffin as your home by completing a long rest in it every day for a week.
                 When you take a \glossterm{long rest} in your home coffin, you recover two \glossterm{vital wounds} instead of one.
                 In addition, you can cross running water without penalty while in your home coffin.
             ",
@@ -92,11 +91,11 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
         },
         RankAbility {
-            name: "Reviving Coffin+",
+            name: "Reviving Coffin",
             complexity: 1,
             description: r"
-                Your \ability{reviving coffin} ability can revive you from any cause of death or severity of vital wound.
-                As long as some part of your corpse, even just a pinch of ash, is placed inside one of your home coffins, you will resurrect after 24 hours.
+                Your home coffin can revive you from death.
+                As long as some part of your corpse, even just a pinch of ash, is placed inside your home coffin, you will resurrect there after 24 hours.
                 Only the destruction of your home coffin or the total annihilation of your corpse can prevent your return.
             ",
             is_magical: true,
