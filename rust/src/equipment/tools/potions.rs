@@ -157,7 +157,7 @@ pub fn potions() -> Vec<Tool> {
     potions.push(Tool {
         name: "Potion of Impending Violence".to_string(),
         rank: 4,
-        short_description: "Grants priming".to_string(),
+        short_description: "Primes and enrages you".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \primed and \enraged.
         ".to_string(),
@@ -178,7 +178,7 @@ pub fn potions() -> Vec<Tool> {
     potions.push(Tool {
         name: "Potion of Maximal Might".to_string(),
         rank: 3,
-        short_description: "Grants brief maximization".to_string(),
+        short_description: "Grants maximum damage".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \maximized.
         "
@@ -191,7 +191,7 @@ pub fn potions() -> Vec<Tool> {
     potions.push(Tool {
         name: "Potion of Pure Power".to_string(),
         rank: 7,
-        short_description: "Grants many benefits and confusion".to_string(),
+        short_description: "Grants power and maximum damage".to_string(),
         description: r"
             When you drink this \glossterm<potion>, you are \glossterm{briefly} \empowered and \maximized.
         ".to_string(),
