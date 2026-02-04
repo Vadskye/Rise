@@ -294,7 +294,7 @@ pub fn innate_arcanist<'a>() -> Vec<RankAbility<'a>> {
             is_magical: true,
             rank: 2,
             description: r"
-                You gain an \glossterm{enhancement bonus} to your Constitution.
+                You gain a \plus1 \glossterm{enhancement bonus} to your Constitution.
             ",
             // TODO: figure out stacking limitations? For now, this conflicts with magic items, so
             // treat it like you have extra attunement points instead.
@@ -401,7 +401,7 @@ pub fn wild_magic<'a>() -> Vec<RankAbility<'a>> {
                 \end{columntable}
 
                 Some wild magic effects cannot be meaningfully applied to all spells.
-                For example, doubling the area of a spell does not affect spells that do not deal damage.
+                For example, doubling the area of a spell does not affect spells that do not affect an area.
                 Any wildspell effects that do not make sense for a particular spell have no effect.
             ",
             // TODO: define extra damage modifier for scaling
