@@ -34,9 +34,10 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             name: "Sheltering Coffin",
             complexity: 2,
             description: r"
-                You can designate a coffin as your home by completing a long rest in it every day for a week.
+                You can designate a coffin as your home coffin by completing a long rest in it every day for a week.
                 When you take a \glossterm{long rest} in your home coffin, you recover two \glossterm{vital wounds} instead of one.
                 In addition, you can cross running water without penalty while in your home coffin.
+                You can only have one home coffin at a time.
             ",
             is_magical: true,
             modifiers: None,
