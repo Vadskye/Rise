@@ -365,7 +365,6 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \begin{magicalactiveability}{Leap of the Heavens}{Free action}
                         \rankline
                         You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jumping}).
-                        This increases your maximum vertical jump distance normally.
 
                         \rankline
                         \rank{5} The bonus increases to \plus20 feet.

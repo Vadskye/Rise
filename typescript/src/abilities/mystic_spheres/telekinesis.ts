@@ -377,8 +377,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{unattended} object within \\medrange.
         The target's weight is reduced by one \\glossterm{weight category}, which makes it easier to lift and move.
-        It also gains a \\plus10 foot bonus to its maximum horizontal jump distance, if applicable (see \\pcref{Jumping}).
-        This increases the target's maximum vertical jump distance normally.
+        It also gains a \\plus10 foot \\glossterm{enhancement bonus} to its maximum horizontal jump distance, if applicable (see \\pcref{Jumping}).
       `,
       rank: 1,
       roles: ['narrative'],
@@ -391,8 +390,7 @@ export const telekinesis: MysticSphere = {
       effect: `
         Choose yourself or one Large or smaller \\glossterm{unattended} object within \\medrange.
         The target's weight is reduced by two \\glossterm{weight categories}, which makes it much easier to lift and move.
-        It also gains a \\plus20 foot bonus to its maximum horizontal jump distance, if applicable (see \\pcref{Jumping}).
-        This increases the target's maximum vertical jump distance normally.
+        It also gains a \\plus20 foot \\glossterm{enhancement bonus} to its maximum horizontal jump distance, if applicable (see \\pcref{Jumping}).
       `,
       rank: 4,
       roles: ['narrative'],
