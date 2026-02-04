@@ -1719,7 +1719,6 @@ impl Class {
                         In addition, you add the Jump skill to your list of class skills.
 
                         \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
-                        This increases your maximum vertical jump distance normally.
                         \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
                         In addition, you take half damage from \glossterm{falling damage}.
                         \magicaldomainability{Essence} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
