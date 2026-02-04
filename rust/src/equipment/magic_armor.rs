@@ -90,19 +90,21 @@ pub fn magic_armor_table() -> String {
 
     let all_armor = all_magic_armor(Some(ItemRarity::Common));
 
-    let body_armor_rows: Vec<TableRow> = all_armor
+    let mut body_armor_rows: Vec<TableRow> = all_armor
         .iter()
         .filter(|a| matches!(a, MagicArmor::Body(_)))
         .map(|a| a.to_table_rows())
         .flatten()
         .collect();
+    latex_table::standard_sort(&mut body_armor_rows);
 
-    let shield_rows: Vec<TableRow> = all_armor
+    let mut shield_rows: Vec<TableRow> = all_armor
         .iter()
         .filter(|a| matches!(a, MagicArmor::Shield(_)))
         .map(|a| a.to_table_rows())
         .flatten()
         .collect();
+    latex_table::standard_sort(&mut shield_rows);
 
     format!(
         "{} {}",
