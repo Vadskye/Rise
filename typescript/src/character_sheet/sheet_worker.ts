@@ -1921,8 +1921,7 @@ export type MonsterAttackDebuff =
   | 'slowed'
   | 'blinded'
   | 'panicked'
-  | 'vulnerable to all attacks'
-  | 'paralyzed';
+  | 'vulnerable to all attacks';
 export type MonsterAttackAreaShape =
   | 'default'
   | 'cone'
@@ -2126,7 +2125,6 @@ function createMonsterDebuff({
     panicked: 9,
     'vulnerable to all attacks': 9,
     immobilized: 11,
-    paralyzed: 13,
   }[debuff];
   let requiresInjury = false;
   if (availableRank < debuffRank) {

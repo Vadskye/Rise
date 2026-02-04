@@ -142,7 +142,7 @@ export function addBeasts(grimoire: Grimoire) {
 
           The second escalation also inflicts a \\glossterm{vital wound} with a unique vital wound effect.
           Instead of making a \\glossterm{vital roll} for the \\glossterm{vital wound}, the target's blood runs cold.
-          Whenever it takes damage from a \\atCold ability, it becomes \\glossterm{briefly} \\paralyzed.
+          Whenever it takes damage from a \\atCold ability, it becomes \\glossterm{briefly} \\helpless.
           This effect lasts until the vital wound is removed.
         `,
     });
