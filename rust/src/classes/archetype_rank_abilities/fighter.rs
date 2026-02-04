@@ -124,12 +124,10 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             name: "Armor Expertise",
             is_magical: false,
             rank: 1,
-            // TODO: does this make it clear enough that it doesn't give you a benefit while
-            // unarmored?
             description: r"
                 You gain a special ability based on the \glossterm{usage class} of body armor you wear.
                 \begin{raggeditemize}
-                    \item Light: You gain a \plus10 foot bonus to your \glossterm{speed}.
+                    \item Light or unarmored: You gain a \plus10 foot bonus to your \glossterm{speed}.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
                         However, the maximum Armor defense bonus you can gain from Dexterity is \plus4.
                         Using a medium armor shield also does not reduce your Dexterity bonus to Armor defense, but using a heavy armor shield still halves it.
@@ -210,7 +208,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional special ability based on the usage class of your body armor.
                 \begin{raggeditemize}
-                    \item Light: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
+                    \item Light or unarmored: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                     \item Medium: You gain a \plus2 bonus to your Brawn, Fortitude, and Reflex defenses, up to a maximum equal to your Armor defense.
                     \item Heavy: You double your armor's \glossterm{durability} bonus.
