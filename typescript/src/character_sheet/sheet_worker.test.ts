@@ -180,8 +180,8 @@ t.test('can calculate attunement points', (t) => {
     setStandardFighter();
     getAttrs(['attunement_points', 'attunement_points_explanation'], (attrs) => {
       t.match(attrs, {
-        attunement_points: 3,
-        attunement_points_explanation: '+3 (fighter)',
+        attunement_points: 4,
+        attunement_points_explanation: '+4 (fighter)',
       });
       t.end();
     });
@@ -191,8 +191,8 @@ t.test('can calculate attunement points', (t) => {
     setStandardWizard();
     getAttrs(['attunement_points', 'attunement_points_explanation'], (attrs) => {
       t.match(attrs, {
-        attunement_points: 4,
-        attunement_points_explanation: '+4 (wizard)',
+        attunement_points: 5,
+        attunement_points_explanation: '+5 (wizard)',
       });
       t.end();
     });

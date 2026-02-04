@@ -527,7 +527,7 @@ t.test('restructureStrikeAbility', (t) => {
           miss: undefined,
           injury: undefined,
           targeting:
-            'The $name can move up to its speed, then it makes a $accuracy-2 melee strike vs. Armor with its bite.',
+            'The $name can move up to its \\glossterm{speed}, then it makes a $accuracy-2 melee strike vs. Armor with its bite.',
         },
         isMagical: false,
         kind: 'maneuver',

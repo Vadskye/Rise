@@ -36,15 +36,16 @@ t.test('genKnowledgeText', (t) => {
       creature_type: 'undead',
       knowledge_result_easy: 'Easy result',
       level: 20,
+      name: "Test Monster",
       knowledge_result_hard: 'Hard result',
     });
 
     t.equal(
       genKnowledgeText(creature.getKnowledgeResultConfig()),
       `
-      \\monsterknowledgeheader{$Name}
-      \\par Religion DV 10: Easy result
-\\par Religion DV 20: Hard result
+      \\monsterknowledgeheader{Test Monster}
+      \\par Souls DV 10: Easy result
+\\par Souls DV 20: Hard result
     `,
     );
     t.end();
