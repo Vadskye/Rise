@@ -360,7 +360,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'One with the Blade',
 
       effect: `
-        Make a \\glossterm{strike} that deals quadruple \\glossterm{weapon damage}.
+        Make a melee \\glossterm{strike} that deals quadruple \\glossterm{weapon damage}.
         After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to all non-Armor defenses.
       `,
       rank: 5,
