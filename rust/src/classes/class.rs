@@ -1591,7 +1591,7 @@ impl Class {
                         In addition, your damaging attacks now deal triple damage to objects.
 
                     \subsubsection{Earth Domain}
-                        If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{terramancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
                         \domainability{Gift} You are \impervious to Earth attacks.
                         \domainability{Aspect} You gain a \plus3 bonus to your \glossterm{durability}.
@@ -1675,7 +1675,7 @@ impl Class {
                         \domainability{Mastery} The durability bonus increases to \plus5.
 
                     \subsubsection{Magic Domain}
-                        If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{thaumaturgy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
                         % TODO: power bonus is less relevant than it used to be, maybe grant attunement point or more spells known instead?
 
                         \domainability{Gift} You gain a \plus2 bonus to the Knowledge (arcana) skill (see \pcref{Knowledge}).
@@ -1684,7 +1684,7 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2, and the skill bonus increases to \plus4.
 
                     \subsubsection{Ocean Domain}
-                        If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{aquamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
                         In addition, you add the Flexibility and Swim skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain a \plus1 bonus to the Flexibility and Swim skills.
@@ -1715,7 +1715,7 @@ impl Class {
                     % TODO: revelry / celebration domain? Nothing for Dionysus currently
 
                     \subsubsection{Sky Domain}
-                        If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{aeromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
                         In addition, you add the Jump skill to your list of class skills.
 
                         \magicaldomainability{Gift} You gain a \plus10 foot bonus to your maximum horizontal jump distance (see \pcref{Jump}).
@@ -1726,7 +1726,7 @@ impl Class {
                         \magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
 
                     \subsubsection{Storm Domain}
-                        If you choose this domain, you add the \sphere{electromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{electromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
                         \magicaldomainability{Gift} You are \impervious to \atElectricity attacks.
                         \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability during your next action.
@@ -1735,7 +1735,7 @@ impl Class {
                         \magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \glossterm{enemies} within a \smallarea radius from you.
 
                     \subsubsection{Sun Domain}
-                        If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{pyromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
                         \domainability{Gift} You radiate \glossterm{bright illumination} in a \medarea radius.
                         You can suppress or resume this illumination as a \glossterm{free action} once per round.
@@ -1746,7 +1746,7 @@ impl Class {
                         \magicaldomainability{Mastery} The power bonus increases to \plus2, and you radiate \glossterm{brilliant illumination} instead of bright illumination.
 
                     \subsubsection{Travel Domain}
-                        If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{astromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
                         In addition, you add the Knowledge (nature) and Survival skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain a \plus1 bonus to the Knowledge (nature) and Survival skills.
@@ -1772,7 +1772,7 @@ impl Class {
 
                     \subsubsection{War Domain}
                         \domainability{Gift} You gain proficiency with all non-exotic weapons.
-                        \domainability{Aspect} You learn one \glossterm{maneuver} from any \glossterm{combat style} (see \pcref{Combat Styles}).
+                        \domainability{Aspect} You learn one \glossterm{maneuver} from any \glossterm{combat style} (see \pcref{Maneuver Lists}).
                         Its rank must not exceed your rank in the Domain Influence archetype.
                         You gain an accuracy bonus with that maneuver equal to the amount by which your rank in the Domain Influence archetype exceeds the maneuver's rank.
                         When you gain access to a new \glossterm{rank} in the Domain Influence archetype,
@@ -1781,7 +1781,7 @@ impl Class {
                         \domainability{Mastery} You gain a +1 \glossterm{accuracy} bonus with \glossterm{strikes}.
 
                     \subsubsection{Wild Domain}
-                        If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Mystic Spheres}).
+                        If you choose this domain, you add the \sphere{verdamancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
                         In addition, you add the Creature Handling, Knowledge (nature), and Survival skills to your cleric \glossterm{class skill} list.
 
                         \domainability{Gift} You gain a \plus1 bonus to the Creature Handling, Knowledge (nature), and Survival skills.
@@ -1828,7 +1828,7 @@ fn universal_character_progression_at_level(level: i32) -> String {
         15 => "+1 to two attributes",
         16 => r"HP: 8x durability",
         19 => r"HP: 10x durability",
-        21 => "+1 to two attributes",
+        21 => "+2 to two attributes",
         _ => r"\tdash",
     }
     .to_string()
