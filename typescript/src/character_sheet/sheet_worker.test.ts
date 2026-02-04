@@ -396,6 +396,38 @@ t.test('can calculate jump distance', (t) => {
     );
   });
 
+  t.test('increases when size increases', (t) => {
+    setAttrs({
+      base_speed: 40,
+      size: 'large',
+      strength_at_creation: 0,
+    });
+    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation'], (attrs) => {
+      t.match(attrs, {
+        horizontal_jump_distance: 10,
+        horizontal_jump_distance_explanation: '+10 (base speed / 4)',
+      });
+      t.end();
+    });
+  });
+
+  t.test('does not increase when speed increases (but not size)', (t) => {
+    setAttrs({
+      base_speed: 30,
+      size: 'medium',
+      speed_permanent_modifier: 10,
+      strength_at_creation: 0,
+    });
+    getAttrs(['horizontal_jump_distance', 'horizontal_jump_distance_explanation', 'speed'], (attrs) => {
+      t.match(attrs, {
+        speed: 40,
+        horizontal_jump_distance: 5,
+        horizontal_jump_distance_explanation: '+5 (base speed / 4)',
+      });
+      t.end();
+    });
+  });
+
   t.end();
 });
 
