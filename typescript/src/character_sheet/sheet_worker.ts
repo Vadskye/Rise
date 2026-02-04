@@ -2299,7 +2299,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
   onGet({
     variables: {
       miscName: defense,
-      numeric: ['level', attribute, 'all_defenses_vital_wound_modifier', 'size_reflex_modifier'],
+      numeric: ['level', attribute, 'all_defenses_vital_wound_modifier', 'size_reflex_modifier', 'shield_reflex'],
       string: ['monster_type'],
       boolean: ['elite'],
     },
@@ -2313,6 +2313,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       } else if (defense === 'brawn') {
         sizeModifier = -v.size_reflex_modifier;
       }
+      const shieldModifier = defense === 'reflex' ? v.shield_reflex : 0;
       // Monsters only apply half attribute modifier
       const attributeModifier = isMonster ? Math.floor(v[attribute] / 2) : v[attribute];
       let totalValue = Math.max(
@@ -2320,6 +2321,7 @@ function handleNonArmorDefense(defense: string, attribute: string) {
         levelModifier +
           monsterModifier +
           sizeModifier +
+          shieldModifier +
           attributeModifier +
           v.misc +
           v.all_defenses_vital_wound_modifier,
