@@ -124,8 +124,10 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             name: "Armor Expertise",
             is_magical: false,
             rank: 1,
+            // TODO: does this make it clear enough that it doesn't give you a benefit while
+            // unarmored?
             description: r"
-                You gain a special ability based on the \glossterm{usage class} of your body armor.
+                You gain a special ability based on the \glossterm{usage class} of body armor you wear.
                 \begin{raggeditemize}
                     \item Light: You gain a \plus10 foot bonus to your \glossterm{speed}.
                     \item Medium: You add your full Dexterity to your Armor defense, rather than only half your Dexterity like normal for medium armor.
