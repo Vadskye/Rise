@@ -460,27 +460,6 @@ export const thaumaturgy: MysticSphere = {
       scaling: 'damage',
     },
 
-    // +1dr for prereq, -1dr for debuff. TODO: exact EA.
-    {
-      name: 'Nullify',
-
-      attack: {
-        hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
-        `,
-        injury: `
-          The target is \\glossterm{briefly} unable to use any \\magical abilities that would require a \\glossterm{standard action} or \\glossterm{elite action}.
-        `,
-        targeting: `
-          Make an attack vs. Fortitude against one creature within \\shortrange.
-          This attack automatically fails if the target does not have any \\magical abilities.
-        `,
-      },
-      rank: 5,
-      roles: ['burst', 'maim'],
-      scaling: 'damage',
-    },
-
     {
       name: 'Arcane Surge',
 
