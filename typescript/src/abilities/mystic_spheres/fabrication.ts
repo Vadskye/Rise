@@ -40,6 +40,7 @@ export const fabrication: MysticSphere = {
 
       effect: `
         You can create any one weapon, shield, or body armor that you are proficient with.
+        The item's rank cannot exceed your spellcasting rank with this spell.
         It is sized appropriately for you, up to a maximum of a Medium size item.
         You can choose whether the item appears in your hand, on your body fully donned, or on the ground at your feet.
         It disappears when this spell's effect ends.
@@ -52,7 +53,7 @@ export const fabrication: MysticSphere = {
       scaling: {
         2: `
           If you create body armor or a weapon, it can be created from any special material other than cold iron, dragonscale, and dragonhide (see \\pcref{Armor Special Materials}, and \\pcref{Weapon Special Materials}).
-          The item's rank cannot exceed your spellcasting rank with this spell.
+          Its rank cannot exceed your spellcasting rank with this spell.
         `,
       },
       tags: ['Manifestation'],
