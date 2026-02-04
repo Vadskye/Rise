@@ -721,7 +721,7 @@ export const verdamancy: MysticSphere = {
       name: 'Mighty Thorns',
 
       functionsLike: {
-        name: 'shielding thorns',
+        name: 'thorns',
         exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 5,
@@ -752,7 +752,7 @@ export const verdamancy: MysticSphere = {
       name: 'Mighty Shared Thorns',
 
       functionsLike: {
-        name: 'shielding thorns',
+        name: 'thorns',
         exceptThat: 'the damage increases to \\damagerankfour.',
       },
       rank: 6,
