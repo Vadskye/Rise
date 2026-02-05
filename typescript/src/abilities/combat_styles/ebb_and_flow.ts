@@ -269,7 +269,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
+        If you both dealt damage to another creature and took damage from another creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
@@ -280,7 +280,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to a creature and took damage from a creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
+        If you both dealt damage to another creature and took damage from another creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
         Since this ability has the \\atSwift tag, it protects you from attacks during the current phase.
       `,
       rank: 7,
