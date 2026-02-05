@@ -295,14 +295,14 @@ fn boots() -> Vec<Apparel> {
 
     apparel.push(Boots(StandardItem {
         name: String::from("Anchoring Boots"),
-        rank: 2,
+        rank: 3,
         short_description: String::from("Immune to most forced movement attacks"),
         description: String::from(r"
             You are immune to \glossterm{teleport}, \glossterm{push}, and \glossterm{fling} effects from attacks, unless the effects come from an attack that scores a \glossterm{critical hit}.
             This does not affect movement effects used by your \glossterm{allies}.
         "),
         upgrades: vec![
-            ItemUpgrade::new(5, "Immune to most forced relocation attacks", r"
+            ItemUpgrade::new(6, "Immune to most forced relocation attacks", r"
                 You are also immune to push, fling, and teleportation effects from attacks that are critical hits.
             "),
         ],
