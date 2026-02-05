@@ -206,7 +206,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         For example, you would not take damage from the \\spell{earthquake} spell.
         You must still stand on appropriate materials for effects like \\spell{rock throw} which require a specific type of grounding.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -218,7 +218,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         mass: true,
         name: 'earthen anchor',
       },
-      rank: 4,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune (target)',
     },
