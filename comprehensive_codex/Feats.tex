@@ -846,13 +846,9 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Fateweaver}{General, Magical}
     \featpre Perception 2.
 
-    \magicalff[1]{Inevitable Attack} Whenever you would make an attack roll, you can instead determine if an attack result of 5 \add your \glossterm{accuracy} with the attack would result in a hit.
-    If it does, you hit the target without making an attack roll.
-    Otherwise, you roll the attack roll normally.
-    This does not allow you to bypass other effects that can cause you to miss without making an attack roll, such as a \glossterm{miss chance}.
-
-    % TODO: worth the effort to explain here? Is there an easier way to say this
-    If the attack roll is already affected by the Inevitable Spell ability from a moirai votive, you instead determine if an attack result of 7 \add your accuracy would hit.
+    \magicalff[1]{Inevitable Attack} Whenever you make an attack roll, your minimum attack result is equal to 5 \add your \glossterm{accuracy} with the attack, as if you had rolled a 5 on the die.
+    % TODO: worth the effort to explain here? Is there an easier way to say this?
+    If the attack roll is already affected by the Inevitable Spell ability from a moirai votive, the minimum attack result increases by 2.
 
     % Assume a 70% base hit rate, so 0.8x dpr with glances.
     % A -2 defenses debuff increases damage to 0.95x dpr.
@@ -865,19 +861,16 @@ They allow more distinct and unique character customization, but also increase g
       \rankline
       Make an attack vs. Mental against one creature within \medrange.
       \hit The target is fatesealed as a \glossterm{condition}.
-      Whenever a creature makes an attack roll against it, if the attack result would be less than 5 \add their \glossterm{accuracy} with that attack, treat it as 5 \add their \glossterm{accuracy} with that attack instead.
-      This does not affect extra dice from exploding attacks.
+      Whenever a creature makes an attack roll against it, their minimum attack result is equal to 5 \add their \glossterm{accuracy} with the attack, as if they had rolled a 5 on the die.
       \crit This condition must be removed an additional time before the effect ends.
 
       \rankline
       You gain a \plus2 accuracy bonus for every 3 levels beyond 6.
     \end{magicalactiveability}
 
-    \magicalff[12]{Inevitable Success} Whenever you would make a \glossterm{check}, you can instead determine if a check result of 5 \add your modifier with the check would result in a success.
-    If it does, you succeed a the check without making a roll.
-    Otherwise, you roll the check normally.
+    \magicalff[12]{Inevitable Success} Whenever you make a \glossterm{check}, your minimum check result is equal to 5 \add your modifier with the check, as if you had rolled a 5 on the die.
 
-    \magicalff[18]{Fated Victory} The fixed results from your \textit{inevitable attack} and \textit{inevitable success} abilities each increase to 7 \add your \glossterm{accuracy} or modifier.
+    \magicalff[18]{Fated Victory} The minimum results from your \textit{inevitable attack} and \textit{inevitable success} abilities each increase to 7 \add your \glossterm{accuracy} or modifier.
   \end{feat}
 
   % \begin{feat}{Fatesealed}{General}
