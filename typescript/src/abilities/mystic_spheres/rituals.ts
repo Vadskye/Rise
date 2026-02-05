@@ -1994,7 +1994,7 @@ export const rituals: RitualDefinition[] = [
     usageTime: '24 hours',
     effect: `
       Choose yourself or one \\glossterm{ally} within \\shortrange.
-      All curses affecting the target are removed.
+      Each curse affecting the target is removed if its rank is no greater than your rank with this ritual.
       This ritual cannot remove a curse that is part of the effect of an item the target has equipped.
       However, it can allow the target to remove any cursed items it has equipped.
     `,
