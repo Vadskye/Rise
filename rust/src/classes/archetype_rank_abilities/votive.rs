@@ -182,7 +182,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \subcf{Covenant of Bloodforging} The vital roll bonus from the armor increases to \plus2.
 
-                    \subcf{Covenant of Bloodsharing} The healing increases to \hpranktwo.
+                    \subcf{Covenant of Bloodsharing} The healing increases to \hprankthree.
 
                     \subcf{Covenant of Soulcursing} You can convert conditions into Curse effects against creatures that already have a single Curse effect active on them.
                 }
@@ -200,7 +200,7 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Covenant of Bloodforging} The durability bonus from the armor increases to \plus5.
                     In addition, the defense bonus increases to \plus5.
 
-                    \parhead{Covenant of Bloodsharing} The healing increases to \hpranksix.
+                    \parhead{Covenant of Bloodsharing} The healing increases to \hprankseven.
 
                     \parhead{Covenant of Soulcursing} You can convert conditions into Curse effects with this ability regardless of the number of Curse effects active on the target.
                 }
