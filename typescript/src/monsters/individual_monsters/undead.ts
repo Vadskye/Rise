@@ -664,6 +664,7 @@ function addSkeletons(grimoire: Grimoire) {
   );
 }
 
+// TODO: vampires need coffins
 function addVampires(grimoire: Grimoire) {
   // These effects are copied from the uncommon species definition
   const vampireDescription = `
