@@ -242,7 +242,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       attack: {
         hit: `
           The target is \\glossterm{briefly} borne aloft by heavy winds.
-          You \\glosserm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
+          You \\glossterm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
           Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
         `,

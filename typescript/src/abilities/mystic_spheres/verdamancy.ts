@@ -183,7 +183,6 @@ export const verdamancy: MysticSphere = {
         A long, slender vine grows around your body.
         You can use it as a \\glossterm{natural weapon}, though it does not require a \\glossterm{free hand} to use.
         The weapon deals 1d6 bludgeoning damage and has the \\weapontag{Light} and \\weapontag{Long} weapon tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine its damage with strikes using the weapon (see \\pcref{Power}).
 
         You can attune to this spell multiple times.
         Each time, you gain an additional vine tentacle, which can allow you to make \\glossterm{dual strikes} using your vine tentacles.

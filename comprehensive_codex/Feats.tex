@@ -1365,16 +1365,13 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Mystic Archer}{Casting, Magical}
     \featpre Access to a \glossterm{mystic sphere}.
 
-    \magicalff[1]{Magical Projectiles} Whenever you make a ranged \glossterm{strike} with a \weapontag{Projectile} weapon, you can choose to treat that as a \magical ability.
-    When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
-
     \magicalff[1]{Imbue Projectile}
     \begin{magicalattuneability}{Imbue Projectile}{Standard action}
       \abilitytags \abilitytag{Attune}
       \rankline
       Choose a spell you know that does not have the \abilitytag{Attune} or \abilitytag{Sustain} tags.
-      The spell's power is imbued in a \glossterm{projectile} you hold.
-      Unlike most \abilitytag{Attune} abilities, you can attune to this ability any number of times, choosing a different spell and projectile each time.
+      The spell's power is imbued in up to two \glossterm{projectiles} you hold.
+      Unlike most \abilitytag{Attune} abilities, you can attune to this ability any number of times, choosing a different spell and up to two projectiles each time.
       An individual projectile can only be imbued with this ability once, even if multiple creatures use this ability on the same projectile.
 
       When you make a \glossterm{strike} with that projectile, the spell takes effect on one primary target of the strike.
@@ -1391,8 +1388,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[6]{Guided Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons are unaffected by all \glossterm{miss chances}, such as from \glossterm{concealment}.
     This does not prevent your attacks from failing for other reasons.
 
-    \magicalff[12]{Imbue Projectile\plus} Each time you attune to your \textit{imbue projectile} ability, you can imbue two different projectiles with two different spells.
-    Your attunement to the ability ends when both spells have taken effect.
+    \magicalff[12]{Archer's Eye} You gain a \plus1 accuracy bonus.
 
     \magicalff[18]{Phasing Projectiles} Your ranged \glossterm{strikes} with \weapontag{Projectile} weapons are unaffected by \glossterm{cover}.
     In addition, you can ignore all physical obstacles in single one-foot span.
@@ -1764,37 +1760,36 @@ They allow more distinct and unique character customization, but also increase g
   \begin{magicalfeat}{Spellsword}{Magical, Spell}
     \featpre Access to a \glossterm{mystic sphere}.
 
-    \magicalff[1]{Magical Strikes} 
-    Whenever you make a melee \glossterm{strike}, you can choose to treat it as a \magical ability.
-    When you do, you use your \glossterm{magical power} to determine your damage instead of your \glossterm{mundane power} (see \pcref{Power}).
-    % TODO: wording / placement is a little janky, but so is giving this feat three separate level 1 abilities
-    In addition, if your Strength is positive, you add half your Strength to your \glossterm{magical power} to determine your total power with all magical \glossterm{strikes}.
+    \ff[1]{Enhanced Blade} You gain a \plus1 \glossterm{enhancement bonus} to your \glossterm{mundane power}.
 
     \ff[1]{Martial Implement} You can cast spells using a non-\weapontag{Projectile} weapon you hold in at least one hand as if it was an implement (see \pcref{Magic Implements}).
 
     \magicalff[6]{Spellstrike}
     \begin{magicalactiveability}{Spellstrike}{Standard action}
-      \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
+      \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
-      You cast a spell and make a melee \glossterm{strike}, in either order.
-      Because this is a \magical ability, you use your \glossterm{magical power} to determine your damage with the strike instead of your \glossterm{mundane power} (see \pcref{Power}).
+      You cast a spell and make a \glossterm{mundane} melee \glossterm{strike}, in either order.
       % TODO: clarify how this interacts with double standard action spells.
       % It seems like they have no targets when first cast, which makes it fine.
       The spell and the strike must affect completely different targets, with no overlap between their targets or areas (if any).
+      You cannot cast a spell that would cause you to make a strike.
 
       \rankline
       \featlevel{9} The strike deals double \glossterm{weapon damage}.
-      \featlevel{12} The strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
+      \featlevel{12} The strike deals \glossterm{extra damage} equal to half your \glossterm{mundane power}.
       \featlevel{15} The strike deals triple \glossterm{weapon damage}.
-      \featlevel{18} The extra damage increases to 1d6 \add your \glossterm{power}.
+      \featlevel{18} The extra damage increases to 1d6 \add your \glossterm{mundane power}.
     \end{magicalactiveability}
 
-    \magicalff[12]{Spellshield} You gain a \plus1 \glossterm{enhancement bonus} to your Armor and Reflex defenses.
-    If you are holding a non-weapon implement in at least one hand, this bonus increases by 1.
+    \magicalff[12]{Enhanced Blade\plus} The bonus increases to \plus2.
 
-    \magicalff[18]{Mystic Blade} Any \glossterm{extra damage} from magic properties on one weapon you wield also applies to damaging spells you cast, even if the extra damage would normally only apply to strikes with that weapon.
+    \magicalff[12]{Mystic Blade} Whenever you cast a damaging spell, you can choose one weapon you wield and are proficient with.
+    You add that weapon's accuracy and base damage as \glossterm{extra damage} to the spell.
+    In addition, if the weapon has the Keen or Impact tags, you apply those tags to the spell if it did not already have them.
+    This ignores any magic weapon properties the weapon has.
 
-    \magicalff[18]{Spellshield\plus} The bonuses increase to \plus2.
+    \magicalff[18]{Mystic Blade\plus} You also apply any accuracy and damage from magic weapon properties, including \glossterm{extra damage} that would normally only apply to strikes with the weapon.
+    Other special abilities from magic weapon properties besides accuracy and immediate, unconditional damage do not apply to the spell.
   \end{magicalfeat}
 
   \begin{magicalfeat}{Spellwarped}{General, Magical}

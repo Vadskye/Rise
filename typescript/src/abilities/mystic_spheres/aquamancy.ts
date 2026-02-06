@@ -440,9 +440,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Aqueous Tentacle',
 
       effect: `
-        You gain an aqueous \\glossterm{natural weapon} that replaces one of your \\glossterm{free hands}.
-        The weapon deals 1d8 damage and has the \\atWater and \\weapontag{Long} \\glossterm{weapon tags} (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapon (see \\pcref{Power}).
+        You gain an aqueous tentacle that replaces one of your \\glossterm{free hands}.
+        It functions as a \\glossterm{natural weapon} deals 1d8 damage and has the \\atWater and \\weapontag{Long} \\glossterm{weapon tags} (see \\pcref{Weapon Tags}).
+        You can still use it as a \\glossterm{free hand} with no loss of dexterity, allowing you to manipulate objects up to ten feet away from you.
       `,
       narrative: `
         You grow a massive watery tentacle that extends from your body.
@@ -459,7 +459,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         name: 'aqueous tentacle',
         exceptThat: `
           it affects up to five creatures of your choice from among yourself and your allies within \\medrange.
-          Each target uses the higher of your \\glossterm{magical power} and its own \\glossterm{mundane power} to determine its damage with strikes using the weapon.
         `,
       },
       rank: 4,
@@ -488,9 +487,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Octopus Tentacles',
 
       effect: `
-        You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles.
+        You gain eight aqueous \\glossterm{natural weapons} that resemble tentacles extending from your torso.
         Each natural weapon deals 1d6 damage and has the \\atWater, \\weapontag{Long}, and \\weapontag{Light} tags (see \\pcref{Weapon Tags}).
-        You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with strikes using the weapons (see \\pcref{Power}).
+        The tentacles are not dextrous enough to function as free hands.
 
         Whenever you make a \\glossterm{strike} with the tentacles, you can attack with all of the tentacles at once, with each tentacle attacking a different target.
         This functions as if your attacks had the \\weapontag{Sweeping} (7) tag, with no limit on how far each secondary target must be from the primary target.
