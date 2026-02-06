@@ -53,6 +53,24 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
     }));
 
     weapons.push(Unrestricted(StandardItem {
+        name: String::from("Mystic"),
+        rank: 1,
+        short_description: String::from(r"Use \magical power for damage"),
+        description: String::from(r"
+            You use your \glossterm{magical power} to determine your damage with strikes using this weapon instead of your \glossterm{mundane power}.
+        "),
+        upgrades: vec![
+            ItemUpgrade::new(4, r"Use \magical power for damage, +2 damage", r"
+                This weapon also deals 2 \glossterm{extra damage}.
+            "),
+            ItemUpgrade::new(6, r"Use \magical power for damage, +1d6 damage", r"
+                This weapon also deals 1d6 \glossterm{extra damage}.
+            "),
+        ],
+        ..MagicWeapon::default()
+    }));
+
+    weapons.push(Unrestricted(StandardItem {
         // Assuming a 1d8 weapon, this is +1.5 damage. A normal r3 magic effect is about +1 damage,
         // and this has additional upside for very large weapons.
         name: String::from("Brutish"),
