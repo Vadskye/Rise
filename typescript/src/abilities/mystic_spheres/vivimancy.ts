@@ -471,20 +471,19 @@ export const vivimancy: MysticSphere = {
 
       // Assume the total damage dealt is doubled. It might trigger 2-3 times, and with a
       // delay, so overall multiplying the damage by 2 seems reasonable.
-      // Delayed damage would normally be dr4, which is 0 + 1.75dpp.
-      // Double dr2 is 11 + 1dpp.
-      // It's hard to directly compare them, but it seems plausible.
+      // Delayed damage would normally be dr6, which is 4.5 + 2.25dpp.
+      // Double dr3 is 9 + 2dpp.
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankone.
+          \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-      rank: 3,
+      rank: 4,
       roles: ['burn'],
       scaling: {
         special: 'Both instances of damage increase by 1d6 for each rank beyond 3.',
@@ -497,18 +496,15 @@ export const vivimancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankfour.
+          \\damageranksix, and the target's life becomes linked to yours as a \\glossterm{condition}.
+          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damageranksix.
         `,
         targeting: `
-          Make an attack vs. Fortitude against one living creature within \\medrange.
+          Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
       },
-      rank: 6,
+      rank: 7,
       roles: ['burn'],
-      scaling: {
-        special: 'Both instances of damage increase by 1d6 for each rank beyond 6.',
-      },
     },
 
     {
