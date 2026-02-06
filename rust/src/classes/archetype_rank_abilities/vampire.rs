@@ -152,10 +152,10 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
         },
         RankAbility {
-            name: "Eternal Undeath",
+            name: "Reviving Coffin+",
             complexity: 1,
             description: r"
-                You can designate up to three home coffins, rather than only one.
+                You can designate up to five home coffins, rather than only one.
                 This can allow you to travel with one coffin while keeping others safe for emergencies.
             ",
             is_magical: true,
