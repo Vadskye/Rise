@@ -303,7 +303,6 @@ impl ClassArchetype {
                 This archetype grants you the ability to cast divine spells.
             ",
             Self::DivineSpellMastery => "
-                This archetype improves the divine spells you cast.
                 You must have the Divine Magic archetype from the cleric class to gain the abilities from this archetype.
             ",
             Self::DomainInfluence => "
@@ -368,7 +367,6 @@ impl ClassArchetype {
                 This archetype grants you the ability to cast divine spells.
             ",
             Self::DivineSpellExpertise => r"
-                This archetype improves the divine spells you cast.
                 You must have the Divine Magic archetype from the paladin class to gain the abilities from this archetype.
             ",
             Self::StalwartGuardian => r"
