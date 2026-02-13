@@ -318,7 +318,6 @@ impl ClassArchetype {
                 This archetype grants you the ability to cast nature spells.
             ",
             Self::NatureSpellMastery => r"
-                This archetype improves the nature spells you cast.
                 You must have the Nature Magic archetype from the druid class to gain the abilities from this archetype.
             ",
             Self::Shifter => r"
@@ -412,7 +411,6 @@ impl ClassArchetype {
                 This archetype grants you the ability to cast arcane spells.
             ",
             Self::SorcererArcaneSpellMastery => r"
-                This archetype improves the arcane spells you cast.
                 You must have the Arcane Magic archetype from the sorcerer class to gain the abilities from this archetype.
             ",
             Self::DraconicMagic => r"
@@ -458,7 +456,6 @@ impl ClassArchetype {
                 You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
             Self::WizardArcaneSpellMastery => r"
-                This archetype improves the arcane spells you cast.
                 You must have the Arcane Magic archetype from the wizard class to gain the abilities from this archetype.
             ",
             Self::SchoolSpecialist => r"
