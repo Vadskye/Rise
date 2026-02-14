@@ -372,8 +372,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{No Escape}{Standard action}
                     \rankline
                     Make a strike that deals 1d6 \glossterm{extra damage}.
-                    \hit If the target is your \ability{quarry} and it moved away from you during the movement phase of this round, it is \glossterm{briefly} \slowed.
-                    This applies even if you moved closer to the target, so long as it tried to move away from your original location.
+                    \hit If the target is your \ability{quarry} and it moved away from you since your last turn, it is \glossterm{briefly} \slowed.
                     \injury If the target would be briefly slowed, it is also slowed as a \glossterm{condition}.
 
                     \rankline

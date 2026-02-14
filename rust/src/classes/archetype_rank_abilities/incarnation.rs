@@ -63,8 +63,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                     You gain the effect of that spell on you permanently.
                     If the spell disables itself, you gain its benefit again after 10 minutes.
                     \item Untethered: The height limit of your fly speed increases to 10 feet.
-                    In addition, whenever you use the \ability{sprint} ability, you can become \trait{intangible} during that phase.
-                    This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
+                    In addition, whenever you use the \ability{sprint} ability, you can become \trait{intangible} for the rest of your turn.
                 \end{raggeditemize}
             ",
             modifiers: None,

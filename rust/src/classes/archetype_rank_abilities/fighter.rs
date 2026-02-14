@@ -71,11 +71,9 @@ pub fn combat_discipline<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{activeability}{Cleansing Discipline}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action}.
                     \rankline
                     Remove all \glossterm{conditions} affecting you.
-                    Because this ability has the \abilitytag{Swift} tag, the removed conditions do not affect you during the current phase.
                     In addition, you \glossterm{briefly} become immune to all conditions.
                 \end{activeability}
             ",
@@ -297,8 +295,7 @@ pub fn martial_mastery<'a>() -> Vec<RankAbility<'a>> {
                     However, you cannot get a \glossterm{critical hit}.
                     You can only apply this augment to maneuvers which deal damage and can inflict a \glossterm{condition}.
 
-                    \parhead{Defensive Maneuver} You gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
-                    This is an \abilitytag{Swift} effect, so it protects you from attacks against you during the current phase.
+                    \parhead{Defensive Maneuver} You \glossterm{briefly} gain a bonus to your Armor defense equal to half your excess rank (minimum 1) when you use the maneuver.
                     You can only apply this augment to maneuvers which cause you to make a \glossterm{strike}.
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
@@ -514,8 +511,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
                         Choose two targets.
-                        Each target that ended the \glossterm{movement phase} at least twenty feet away from where it started the round
-                            gains a \plus1 bonus to its Armor defense this round.
+                        Whenever a target ends a \glossterm{move action} at least twenty feet away from where it started the move action, it \glossterm{briefly} gains a \plus1 bonus to its Armor defense.
 
                         \rankline
                         \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Reflex defense.
@@ -535,7 +531,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Each target gains a \plus5 foot bonus to its \glossterm{speed} during any phase that it uses the \textit{sprint} ability.
+                        Whenever a target uses the \ability{sprint} ability, it gains a \plus5 foot bonus to its \glossterm{speed} during that movement.
                         This bonus is doubled as normal by the sprint ability.
 
                         \rankline
@@ -547,7 +543,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
                         Choose two targets.
-                        Each target that ended the \glossterm{movement phase} without changing its location this round gains a \plus1 bonus to its Armor defense until its location changes.
+                        At the end of each target's turn, if it did not change its location during that turn, it gains a \plus1 bonus to its Armor defense until its location changes.
 
                         \rankline
                         \rank{4} Each target affected by the Armor defense bonus also gains a \plus1 bonus to its Brawn defense.
@@ -563,8 +559,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                If you have \glossterm{speed} remaining after the \glossterm{movement phase}, you may use some of that movement during the \glossterm{action phase} as a \glossterm{free action} once per round.
-                You cannot carry over more than five feet of movement in this way.
+                Once during your turn, you may move up to five feet as a \glossterm{free action}.
             ",
             modifiers: None,
         },
