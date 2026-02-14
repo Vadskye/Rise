@@ -92,13 +92,11 @@ export const telekinesis: MysticSphere = {
 
       // 0.7 EA
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You \\glossterm{briefly} take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
       // narrative: '',
-      tags: ['Swift'],
     },
 
     {
@@ -106,13 +104,10 @@ export const telekinesis: MysticSphere = {
 
       // 0.3 + 0.7 EA
       effect: `
-        You are \\shielded and take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You are \\glossterm{briefly} \\shielded and take half damage from all sources.
       `,
       rank: 4,
       roles: ['turtle'],
-      // narrative: '',
-      tags: ['Swift'],
     },
 
     // This is slightly above rate because requiring objects is annoying.
@@ -181,27 +176,25 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Discharge',
 
-      // Baseline would be dr2 for enemies-only Small radius. Drop to dr1 for kinetic
-      // charge mechanic and delay, which functionally makes it a non-action.
+      // Baseline would be dr3 for enemies-only Small radius. Drop to dr2 for kinetic
+      // charge accuracy mechanic, increase to dr3 since the damage is delayed.
       attack: {
         hit: `
-          \\damagerankone.
+          \\damagerankthree.
         `,
         halfOnMiss: true,
         targeting: `
-          This spell has no immediate effect.
-          Whenever you take damage during this spell's effect, you gain a kinetic charge.
-          This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          At the start of your next turn after you stop sustaining this spell, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
-          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
+          You \\glossterm{briefly} build up energy.
+          Whenever you take damage during that time, you gain a kinetic charge.
 
-          If you build up 8 kinetic charges, you immediately stop sustaining this spell, and the attack targets you and all creatures in a \\medarea radius from you.
+          When that effect ends, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\smallarea radius from you.
+          You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
+          If you built up 5 or more kinetic charges, the area increases to a \\smallarea radius.
         `,
       },
       rank: 3,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
     {
@@ -209,12 +202,11 @@ export const telekinesis: MysticSphere = {
 
       functionsLike: {
         name: 'kinetic discharge',
-        exceptThat: 'the damage increases to \\damagerankfour.',
+        exceptThat: 'the damage increases to \\damagerankfive.',
       },
       rank: 6,
       roles: ['clear'],
       scaling: 'damage',
-      tags: ['Sustain (minor)', 'Swift (see text)'],
     },
 
     // Baseline for a double defense r0 area is drX+2, or crX+1 with drX+1. A 15' cone
@@ -401,28 +393,24 @@ export const telekinesis: MysticSphere = {
       name: 'Kinetic Redirection',
 
       effect: `
-        You are \\shielded this round.
-        In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        You are \\glossterm{briefly} \\shielded.
+        In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
-        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,
       rank: 2,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Kinetic Redirection',
 
       effect: `
-        You are \\shielded this round.
-        In addition, whenever a creature attacks you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        You are \\glossterm{briefly} \\shielded.
+        In addition, whenever a creature attacks you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
-        This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -580,9 +568,8 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round.
-        Each target that is hit by a \\glossterm{strike} this round is also \\shielded next round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
+        Each target is \\glossterm{briefly} \\shielded.
+        Each target that is hit by a \\glossterm{strike} during that effect is \\glossterm{briefly} shielded again.
       `,
       rank: 3,
       roles: ['boon'],
@@ -593,9 +580,8 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round.
-        Each target that takes damage this round is also \\shielded next round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
+        Each target is \\glossterm{briefly} \\shielded.
+        Each target takes damage during that effect is \\glossterm{briefly} shielded again.
       `,
       rank: 7,
       roles: ['boon'],
@@ -706,7 +692,6 @@ export const telekinesis: MysticSphere = {
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
         If you do, you move 20 feet up into the air and levitate there.
-        This movement is \\atSwift, so it can help you avoid attacks during the current phase.
         While levitating in this way, your telekinesis provides you with a stable platform to maneuver, so you are not \\unsteady.
         At the end of the round, you descend 20 feet without taking \\glossterm{falling damage}, then this ability is \\glossterm{dismissed}.
       `,

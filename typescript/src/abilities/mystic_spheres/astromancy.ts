@@ -709,14 +709,23 @@ export const astromancy: MysticSphere = {
       name: 'Blink',
 
       effect: `
-        All attacks against you this round have a 20\\% \\glossterm{failure chance}.
-        In addition, you gain a +2 bonus to all defenses.
-        This ability has the \\abilitytag{Swift} tag, so it protects you from attacks during the current phase.
+        You \\glossterm{briefly} blink in and out of existence in response to attacks.
+        This causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
+    },
+    {
+      name: 'Empowered Blink',
+
+      effect: `
+        You \\glossterm{briefly} blink in and out of existence in response to attacks.
+        This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
+      `,
+      narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
+      rank: 6,
+      roles: ['turtle'],
     },
     {
       name: 'Distant Spells',

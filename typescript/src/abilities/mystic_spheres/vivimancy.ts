@@ -127,7 +127,6 @@ export const vivimancy: MysticSphere = {
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -142,7 +141,6 @@ export const vivimancy: MysticSphere = {
       rank: 4,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -157,7 +155,6 @@ export const vivimancy: MysticSphere = {
       `,
       rank: 7,
       roles: ['healing', 'exertion'],
-      tags: ['Swift'],
     },
 
     {
@@ -175,7 +172,6 @@ export const vivimancy: MysticSphere = {
       rank: 3,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -189,7 +185,6 @@ export const vivimancy: MysticSphere = {
       rank: 6,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     // TODO: What level can vital wounds usually be removed?
@@ -834,7 +829,6 @@ export const vivimancy: MysticSphere = {
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.
           Then, you \\glossterm{briefly} gain a +2 bonus to that defense.
-          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
       },
       rank: 1,
@@ -851,7 +845,6 @@ export const vivimancy: MysticSphere = {
         hit: `
           The target is \\glossterm{briefly} \\stunned.
           Then, you are briefly \\braced.
-          Since this ability does not have the \\atSwift tag, it does not protect you from attacks during the current phase.
         `,
         targeting: `
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.

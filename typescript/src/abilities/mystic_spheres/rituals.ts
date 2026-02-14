@@ -2691,7 +2691,7 @@ export const rituals: RitualDefinition[] = [
       This illuminates dark areas, but does not suppress brighter light.
       Unlike normal light, this light is completely invisible outside of the radius that it illuminates.
 
-      Once per round, you can adjust the illumination you provide as a \\glossterm{free action} with the \\atSwift tag.
+      Once per round, you can adjust the illumination you provide as a \\glossterm{free action}.
       You can choose one of the following effects:
       \\begin{raggeditemize}
         \\item Suppress the light

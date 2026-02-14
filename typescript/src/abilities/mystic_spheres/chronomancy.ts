@@ -258,26 +258,22 @@ export const chronomancy: MysticSphere = {
 
       cost: BRIEF_COOLDOWN,
       effect: `
-        You are \\braced this round.
-        In addition, you can move up to half your \\glossterm{speed}.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+        You are \\glossterm{briefly} \\braced.
+        In addition, you can move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['turtle', 'mobility'],
-      tags: ['Swift (see text)'],
     },
     {
       name: 'Distant Accelerated Dodge',
 
-      // TODO: full EA math. What is sprint + total defense worth?
+      // TODO: full EA math. What is jog + total defense worth?
       effect: `
-        You are \\braced this round.
-        In addition, you can move up to twice your \\glossterm{speed}.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase, but the movement is not Swift.
+        You are \\glossterm{briefly} \\braced.
+        In addition, you can move up to twice your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 5,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
@@ -401,9 +397,7 @@ export const chronomancy: MysticSphere = {
         The target is placed into stasis.
         While in stasis, it cannot be targeted, moved, damaged, or otherwise affected in any way, and a creature is \\glossterm{unconscious}.
 
-        % TODO: wording
         This effect normally lasts as long as you \\glossterm{sustain} it.
-        Since releasing sustained effects is \\atSwift, it can attack and be attacked during the action phase when you release it from stasis.
         If you use this ability on yourself, it instead lasts for a number of rounds you choose when you cast the spell, up to a maximum of five rounds.
       `,
       rank: 3,
@@ -623,7 +617,6 @@ export const chronomancy: MysticSphere = {
       // At rank 3, expected power is about 6. dr3 is 4.5+6 = 10.5 healing, and dr4 would
       // be 5.5+7 = 12.5 healing.
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -636,7 +629,6 @@ export const chronomancy: MysticSphere = {
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
-      tags: ['Swift'],
     },
 
     // Deafened hp is 0.5 EA. dazzled hp is 0.7 EA. Combined is 1.2 EA, plus brief is 1.6
@@ -763,26 +755,20 @@ export const chronomancy: MysticSphere = {
       name: 'Time Ebbs and Flows',
 
       effect: `
-        You are \\braced this round.
-        Next round, you are \\focused.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+        You are \\glossterm{briefly} \\braced and \\focused.
       `,
       rank: 1,
       roles: ['turtle', 'focus'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\braced this round.
-        Next round, you are \\primed.
-        This defense bonus is \\atSwift, so it protects you against attacks during the current phase.
+        You are \\glossterm{briefly} \\braced and \\primed.
       `,
       rank: 6,
       roles: ['turtle', 'focus'],
-      tags: ['Swift'],
     },
   ],
 };

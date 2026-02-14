@@ -51,10 +51,10 @@ fn bracers() -> Vec<Apparel> {
         short_description: String::from("Can exert to gain instant +2 Armor defense"),
         description: String::from(r"
             You can activate these bracers as a \glossterm{free action}.
-            When you do, you increase your \glossterm<fatigue level> by one and gain a +2 bonus to your Armor defense this round.
+            When you do, you increase your \glossterm<fatigue level> by one and \glossterm{briefly} gain a +2 bonus to your Armor defense.
             After you activate this item, you \glossterm{briefly} cannot do so again.
         "),
-        tags: vec![AbilityTag::Swift, AbilityTag::personal_attunement()],
+        tags: vec![AbilityTag::personal_attunement()],
         upgrades: vec![
             ItemUpgrade::new(4, "Can exert to gain instant +4 Armor defense", "
                 The defense bonus increases to +4.

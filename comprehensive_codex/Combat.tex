@@ -214,12 +214,19 @@
     It's generally fine to just start rolling dice if you already know what you're going to do, and just act in the order that people decide their actions.
     The GM can help resolve situations where this is ambiguous.
 
+  \subsection{Delaying Your Turn}
+    You can freely delay your turn in a round to join a later initiative group.
+    However, you can't join in the middle of an enemy initiative group to try to break it up.
+    You can only join allied initiative groups or create a new initiative group after an already existing enemy initiative group.
+
+    When you delay your turn, any effects that would have happened at the start or end of your turn still happen at your original initiative order.
+    You can't extend the duration of \glossterm{brief} effects by delaying your turn.
+
   % TODO: solve the peasant railgun in a sequential initiative system
   % \subsection{Group Size Limits}\label{Group Size Limits}
   %   There is a limit to how many creatures can coordinate in combat.
   %   In general, no more than twenty creatures can constitute an initiative group.
   %   Larger groups than that are still allies, but they must resolve actions within their group without perfect knowledge of or coordination with other allied groups.
-
 
 % TODO: Clean up this wording, this whole section is awkward with the movement -> move action change
 \section{Basic Movement}\label{Basic Movement}
@@ -679,7 +686,7 @@
 
   \begin{activeability}{Jog}{Standard action}
     \rankline
-    You gain a bonus to your \glossterm{available movement} this round equal to twice your movement speed.
+    You gain a bonus to your \glossterm{available movement} this round equal to twice your \glossterm{speed}.
   \end{activeability}
 
   \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
@@ -726,13 +733,11 @@
     Make a \glossterm{brawling attack} vs. Brawn against each target.
     If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
-    % Critical hit shove should be equivalent to moving without any limitation.
-    % This represents 
-    \hit You can move up to half your movement speed.
+    % Can't use crit for extra movement here to limit your ability to push party members in excess of their normal speed.
+    \hit You can move up to half your \glossterm{speed} without reducing your \glossterm{available movement}.
     During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
     If you push a target so it stops being adjacent to you, you stop being able to push it further.
     When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
-    \crit If you are strong enough to carry the target, you can move up to your full movement speed.
   \end{activeability}
 
   \begin{activeability}{Sprint}{Free action}

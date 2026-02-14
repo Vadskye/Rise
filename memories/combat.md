@@ -8,7 +8,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 
 **Time & Actions:**
 *   Combat occurs in Rounds (~6 seconds), divided into a Movement Phase and an Action Phase. Free actions can be taken at any time.
-*   Actions within an allied group resolve sequentially, while actions between different allied groups resolve simultaneously. Swift abilities resolve globally before non-Swift abilities.
+*   Actions within an allied group resolve sequentially, while actions between different allied groups resolve simultaneously.
 *   Conflicting actions are resolved via Initiative checks, with a strict "Only One Movement Per Phase" rule.
 
 **Movement & Positioning:**

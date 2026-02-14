@@ -354,7 +354,6 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, this spell does not have \\glossterm{somatic components}.
         `,
@@ -371,7 +370,6 @@ export const umbramancy: MysticSphere = {
       functionsLike: {
         exceptThat: `
           you can also make a \\glossterm{strike} at your destination.
-          The strike is not \\abilitytag{Swift}, even if you make the teleportation Swift.
           You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
           In addition, you can repeat the teleportation and strike.
 
@@ -470,34 +468,18 @@ export const umbramancy: MysticSphere = {
     //   type: 'Attune',
     // },
 
+    // 0.8 EA
+    // TODO: Upgrade
     {
       name: 'Shadow Cloak',
 
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
-      tags: ['Swift'],
-    },
-
-    // 1.1 EA
-    {
-      name: 'Enduring Shadow Cloak',
-
-      effect: `
-        You must be \\glossterm{shadowed} to cast this spell.
-
-        All attacks against all \\glossterm{shadowed} allies within a \\largearea radius from you have a 20\\% \\glossterm{failure chance} this round.
-        In addition, all attacks against you \\glossterm{briefly} have a 20\\% failure chance.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
-      `,
-      rank: 6,
-      roles: ['boon', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -505,13 +487,11 @@ export const umbramancy: MysticSphere = {
 
       // 50% action denial against 50% of enemy attacks = 1 EA.
       effect: `
-        All attacks against you have a 50\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
         If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
-      tags: ['Swift'],
     },
 
     {
@@ -524,7 +504,6 @@ export const umbramancy: MysticSphere = {
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
           In addition, all attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
-          Since this ability does not have the \\abilitytag{Swift} tag, it does not affect attacks against you during the current phase.
         `,
       },
       rank: 2,
@@ -674,12 +653,10 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks during the current phase.
+        Attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     // 1.1 EA, but conditional
@@ -688,13 +665,11 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you have a 50\\% \\glossterm{failure chance} this round.
+        Attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
         When an attack against you fails in this way, you become \\glossterm{briefly} \\empowered.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
-      tags: ['Swift'],
     },
 
     // 0.7 EA for personal protection. That's not a full rank 2 effect, so say we get +1dr
