@@ -74,7 +74,6 @@ export const dirtyFighting: CombatStyle = {
         abilityType: 'ability',
         exceptThat: `
           the target also takes \\damagerankthree.
-          You cannot get a \\glossterm{glancing blow} with this attack.
         `,
         name: 'trip',
       },

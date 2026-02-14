@@ -238,10 +238,7 @@ def common_concepts():
                 "Common Concepts",
             ),
             p(
-                """<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks roll double damage dice on a critical hit."""
-            ),
-            p(
-                """<b>Glancing blow</b>: If you miss with an attack by 1 or 2, you get a glancing blow. Unless otherwise specified, all damaging attacks deal half damage on a glancing blow."""
+                """<b>Critical hit</b>: If you hit with an attack by 10 or more, you get a critical hit. Unless otherwise specified, all damaging attacks deal double damage on a critical hit."""
             ),
             p(
                 """<b>Rounding</b>: Always round down.""",

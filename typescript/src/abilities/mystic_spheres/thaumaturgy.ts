@@ -30,7 +30,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against something within \\shortrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
@@ -52,7 +52,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           \\damagerankfive, and any \\glossterm{extra damage} is doubled.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against something within \\longrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
@@ -76,7 +76,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           \\damagerankfour, and any \\glossterm{extra damage} is doubled.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against something within \\shortrange.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
@@ -100,7 +100,7 @@ export const thaumaturgy: MysticSphere = {
         hit: `
           \\damagerankfour.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\largearea radius from you.
           This attack ignores \\glossterm{cover} and all \\glossterm{miss chances}.
@@ -401,7 +401,7 @@ export const thaumaturgy: MysticSphere = {
       effect: `
         You are \\braced this round.
         This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        In addition, whenever a creature within \\medrange of you misses or \\glossterm{glances} you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
+        In addition, whenever a creature within \\medrange of you misses you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 2,

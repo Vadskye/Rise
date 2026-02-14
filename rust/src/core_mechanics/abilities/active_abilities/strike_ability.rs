@@ -79,7 +79,7 @@ impl StrikeAbility {
         self
     }
 
-    pub fn latex_ability_block(mut self, creature: &Creature) -> String {
+    pub fn latex_ability_block(self, creature: &Creature) -> String {
         // We have to stringify the tags before sending them over
         let mut latex_tags: Vec<String> = self.tags.iter().map(|t| t.latex()).collect();
         // Add the tags from the weapon
@@ -88,18 +88,10 @@ impl StrikeAbility {
                 latex_tags.push(tag.latex());
             }
         }
-        // If the creature is massive, add the appropriate tag and add a "glance on miss"
-        // effect.
+        // If the creature is massive, add the appropriate tag.
         if let Some(tag) = creature.size.massive_weapon_tag() {
             // TODO: remove Sweeping if it exists
             latex_tags.push(tag.latex());
-            if !self.effect.contains(r"\miss") {
-                self.effect.push_str(
-                    r"
-                    \miss Half damage.
-                ",
-                );
-            }
         }
 
         // TODO: does this sort by the visible tag name, or does it put all \\abilitytag
@@ -523,9 +515,8 @@ impl StrikeAbility {
     pub fn heartpiercer(rank: i32, weapon: Weapon) -> Self {
         Self {
             effect: r"
-                The $name makes a $accuracy strike vs. Armor with its $weapon.
-                It gains a +3 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
-                However, it cannot get a \glossterm{glancing blow} with this strike.
+                The $name makes a $accuracy-1 strike vs. Armor with its $weapon.
+                It gains a +5 accuracy bonus with the strike for the purpose of determining whether it gets a \glossterm<critical hit>.
                 \hit $fullweapondamage.
             ".to_string(),
             name: strike_prefix("Heartpiercing", &weapon),

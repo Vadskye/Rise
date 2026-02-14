@@ -59,7 +59,7 @@ pub fn shields() -> Vec<MagicArmor> {
         rank: 2,
         short_description: String::from("Reflects missed ranged strikes"),
         description: String::from(r"
-            Whenever a creature within \longrange of you misses or \glossterm<glances> you with a ranged \glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
+            Whenever a creature within \longrange of you misses you with a ranged \glossterm<strike>, it treats itself as a target of that attack in addition to any other targets.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Precisely reflects missed ranged strikes", "

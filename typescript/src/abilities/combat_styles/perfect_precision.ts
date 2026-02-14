@@ -157,20 +157,16 @@ export const perfectPrecision: CombatStyle = {
       name: 'Heartpiercer',
 
       // Assume you have an 80% hit chance (+0 vs 3 Armor).
-      // Expected damage is 0.8 + 0.5*0.2 + 0.1*0.8 = 0.98x hit damage.
-      // Losing glancing blows means you deal 0.8x.
-      // +4 accuracy with crits means you crit on a 9.
-      // That makes expected damage 0.8 + 0.2 = 1x hit damage, scaling to be stronger as
-      // your accuracy increases.
-      // Now assume you crit on a 9 before this maneuver due to Keen, but you still miss
-      // on 1/2.
-      // Expected damage is 0.8 + 0.5 * 0.2 + 0.2 = 1.1x hit damage.
-      // With this maneuver, expected damage is 0.8 + 0.6 = 1.4x hit damage, or 27% more
-      // damage.
+      // Expected damage is 0.8 + 0.1*0.8 = 0.88x hit damage.
+      // -1a / +5 for crits means you hit on a 4 and crit on a 9.
+      // That means you deal 0.7 + 0.2 + 0.1 * 0.2 = 0.92x hit damage.
+      // Assume you have a 90% hit chance with Keen (+1 vs 3 Armor).
+      // Expected damage is 0.9 + 0.1 + 0.1 * 0.1 = 1.01x hit damage.
+      // With this maneuver, you crit on an 8.
+      // Expected damage is 0.8 + 0.3 + 0.1 * 0.3 = 1.13x hit damage.
       effect: `
-        Make a \\glossterm{strike}.
-        You gain a +3 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
-        However, you cannot get a \\glossterm{glancing blow} with this strike.
+        Make a \\glossterm{strike} with a -1 accuracy penalty.
+        You gain a +5 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
       `,
       narrative: `
         You strike directly for your foe's heart.
@@ -183,9 +179,9 @@ export const perfectPrecision: CombatStyle = {
       name: 'Heartpiercer+',
 
       // Assume you hit 80% of the time normally (+0 vs 3 Armor).
-      // Your normal hit damage is 0.8 + 0.1 + 0.08 = 0.98.
+      // Your normal hit damage is 0.8 + 0.08 = 0.88.
       // With this, every hit is a crit and you double crit on a 8/9/10,
-      // so expected damage is 0.8 + 0.8 + 0.3 + 0.03 = 1.93 hit damage, or roughly 2x
+      // so expected damage is 0.8 + 0.8 + 0.3 + 0.03 = 1.93 hit damage, or roughly 2.2x
       // damage.
       //
       // Now assume you hit 130% of the time normally (+5 vs 3 Armor).
@@ -197,7 +193,6 @@ export const perfectPrecision: CombatStyle = {
       effect: `
         Make a \\glossterm{strike}.
         You gain a +15 accuracy bonus with the strike for the purpose of determining whether you get a \\glossterm{critical hit}.
-        However, you cannot get a \\glossterm{glancing blow} with this strike.
       `,
       narrative: `
         You strike directly for your foe's heart.

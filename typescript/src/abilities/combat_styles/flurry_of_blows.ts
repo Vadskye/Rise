@@ -285,7 +285,7 @@ export const flurryOfBlows: CombatStyle = {
       // r0 area.
       attack: {
         hit: `The target is \\glossterm{briefly} \\dazzled.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\focused.

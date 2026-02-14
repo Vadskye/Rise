@@ -89,7 +89,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // The open area requirement is a cost for stacking this much +damage.
       attack: {
         hit: `\\damagerankfive.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a \\smallarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\medrange.
           The bottom of the area must be \\glossterm{grounded}, and you must have \\glossterm{line of sight} and \\glossterm{line of effect} to both the top and bottom of the area.
@@ -166,7 +166,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // accuracy bonus
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\smallarea cone from you.
           You gain a +2 accuracy bonus if you are \\glossterm{grounded} on stone.
@@ -183,7 +183,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything in a \\medarea cone from you.
           You gain a +2 \\glossterm{accuracy} bonus if you are \\glossterm{grounded} on stone.
@@ -325,7 +325,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Brawn and Reflex against everything in the area that is \\glossterm{grounded}.
@@ -350,7 +350,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         hit: `
           \\damagerankthree, and the target falls \\prone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           The earth shakes in a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
@@ -374,7 +374,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
         hit: `
           \\damagerankfour, and the target falls \\prone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           The earth shakes in a \\largearea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex and Brawn against everything in the area that is \\glossterm{grounded}.
@@ -410,7 +410,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
           When this effect ends, the target reappears in the closest unoccupied space to where it was swallowed by the earth.
           Some effects such as teleportation can also remove the target from the fissure, which also ends the condition.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against all Large or smaller \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius in \\shortrange.
         `,
@@ -611,7 +611,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // treat as short range med radius, which is a t3 area
       attack: {
         hit: `\\damagerankone.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a volcano at a \\glossterm{grounded} location within \\shortrange.
           The area affected by the volcano increases over time.

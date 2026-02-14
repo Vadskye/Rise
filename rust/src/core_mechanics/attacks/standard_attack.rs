@@ -377,7 +377,7 @@ impl StandardAttack {
                 tags: None,
                 targeting: Targeting::Creature(Range::Medium),
             }.attack(),
-            // TODO: add "and you suffer a glancing blow"
+            // TODO: add "and you take half damage"
             Self::Pyroclasm(rank) => SimpleSpell {
                 accuracy: *rank - 1,
                 crit: None,

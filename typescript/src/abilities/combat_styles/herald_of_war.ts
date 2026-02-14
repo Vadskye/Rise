@@ -158,7 +158,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `\\damagerankone.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
         `,
@@ -173,7 +173,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `\\damagerankfive.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
         `,

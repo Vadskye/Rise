@@ -199,7 +199,7 @@ pub fn boundary_warden<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                You and your \glossterm{allies} who can see or hear you take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack Armor or Reflex defense.
+                You and your \glossterm{allies} who can see or hear you take no damage when an area ability attacks and misses a target's Armor or Reflex defense.
                 This does not protect creatures from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
             ",
             modifiers: None,

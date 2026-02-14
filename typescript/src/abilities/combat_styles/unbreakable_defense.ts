@@ -15,7 +15,7 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
           In addition, choose a creature you can see.
-          Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+          Whenever that creature misses you with a melee \\glossterm{strike} this round, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
           As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
           The defense bonus from this ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
@@ -35,7 +35,7 @@ export const unbreakableDefense: CombatStyle = {
         exceptThat: `
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
-          In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
+          In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, it becomes \\dazzled as a \\glossterm{condition}.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
           However, the penalty imposed on attackers is not Swift.
         `,
@@ -55,7 +55,7 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
           In addition, choose a creature you can see.
-          Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+          Whenever that creature misses with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
           It cannot choose to reduce its accuracy or damage against itself.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
@@ -74,7 +74,7 @@ export const unbreakableDefense: CombatStyle = {
         exceptThat: `
           you gain an additional +2 bonus to Armor defense if you are not using a shield.
           In addition, choose one creature you can see.
-          Whenever that creature misses or \\glossterm{glances} you with a \\glossterm{targeted} attack this round, it treats itself as a target of that attack in addition to any other targets.
+          Whenever that creature misses you with a \\glossterm{targeted} attack this round, it treats itself as a target of that attack in addition to any other targets.
           This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
         `,
         name: 'total defense',

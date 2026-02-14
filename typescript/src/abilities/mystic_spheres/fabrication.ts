@@ -229,7 +229,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: false,
+        halfOnMiss: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
           During your next action, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
@@ -263,7 +263,7 @@ export const fabrication: MysticSphere = {
       // larger area.
       attack: {
         hit: `\\damagerankfive.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
         `,
@@ -279,7 +279,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `\\damagerankeight.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against everything in a \\smallarea radius from you.
         `,
@@ -298,7 +298,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a \\smallarea radius, 60 foot tall cylinder-shaped \\glossterm{zone} within \\medrange.
           You must have \\glossterm{line of sight} and \\glossterm{line of effect} to both the top and bottom of the area.
@@ -336,7 +336,7 @@ export const fabrication: MysticSphere = {
       cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} of whirling blades within \\medrange.
           The wall provides \\glossterm{cover} against attacks made through it, though it takes no damage from attacks that hit it.
@@ -714,7 +714,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
             The barrier's defenses become equal to 6 \\add half your level, and its hit points increase to three times your \\glossterm{power}.
-            Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it hits itself with that attack.
         `,
         name: 'mystic barrier',
       },
@@ -736,7 +736,7 @@ export const fabrication: MysticSphere = {
         exceptThat: `
           it reflects \\glossterm{mundane} attacks against it.
             The barrier's defenses become equal to 10 \\add half your level, and its hit poinst increase to four times your \\glossterm{power}.
-            Whenever a creature misses or \\glossterm{glances} the barrier with a \\glossterm{mundane} attack, it scores a \\glossterm{glancing blow} with that attack against itself.
+            Whenever a creature misses the barrier with a \\glossterm{mundane} attack, it hits itself with that attack.
         `,
         name: 'mystic barrier',
       },
@@ -935,7 +935,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
         `,
@@ -952,7 +952,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor and Reflex against everything within a \\tinyarea radius in \\shortrange.
         `,
@@ -971,7 +971,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a powderkeg on the ground within \\shortrange.
           The powderkeg has 10 hit points, and it automatically takes 5 damage whenever you sustain this spell.
@@ -1019,7 +1019,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
@@ -1040,7 +1040,7 @@ export const fabrication: MysticSphere = {
         hit: `
           \\damagerankfour.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.

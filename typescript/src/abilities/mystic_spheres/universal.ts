@@ -100,7 +100,7 @@ export const universal: MysticSphere = {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and one other defense against everything in a \\medarea cone from you.
           The valid targets for this spell, and the extra defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).
@@ -115,7 +115,7 @@ export const universal: MysticSphere = {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and one other defense against everything in a \\largearea cone from you.
           The valid targets for this spell, and the extra defense you attack, depend on the mystic sphere you learn this spell with (see \\tref{Universal Mystic Spheres}).

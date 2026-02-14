@@ -214,7 +214,7 @@ export const mobileHunter: CombatStyle = {
         You are \\braced this round.
         In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature.
-        Whenever that creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
+        Whenever that creature misses you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
 
         The defense bonus and reactive penalty trigger are \\abilitytag{Swift} effects, but not the movement.
@@ -270,7 +270,7 @@ export const mobileHunter: CombatStyle = {
       // Basically tiny radius in short range, which is area rank 2
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You jump and move as normal for the jump (see \\pcref{Jumping}).
           When you land, if the vertical distance in feet between the highest point of your leap and your landing point was at least ten feet, you emit a small shockwave.

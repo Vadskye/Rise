@@ -23,7 +23,7 @@ By EA:
   Shielded       & 0.3  & 0.5  & 0.7     & 1.0 \\
   +4 defenses    & 0.9  & 1.4  & inf     & inf \\
   Single defense & 0.3  & 0.5  & 0.7     & 1.0 \\
-  Steeled        & 0.2  & 0.3  & 0.5     & 0.6 \\
+  Steeled        & 0.3  & 0.5  & 0.7     & 1.0 \\
 ```
 "You and all adjacent" can be used instead of "any two in Medium range".
 
@@ -92,9 +92,9 @@ In short, that means:
 20% action denial 25% of the time is 4 * 0.2 * 0.25 = 0.2 EA.
 
 ### +1 accuracy: 0.1
-Assume you have a 70% hit rate, so you hit on a 4. Your expected damage per round is 0.7 + 0.1 from hit/glance + 0.07 from crits, or 0.87.
+Assume you have a 70% hit rate, so you hit on a 4. Your expected damage per round is 0.7 from hit + 0.07 from crits, or 0.77.
 
-With +1a, you deal 0.8 + 0.1 + 0.08 = 0.98, which is ~13% more.
+With +1a, you deal 0.8 + 0.08 = 0.88, which is ~14% more.
 
 ### +2 accuracy: 0.3
 
@@ -156,15 +156,14 @@ This has a target of 50% more damage.
 * Rank 9: 3d8
 
 ### Focused: 0.4
-Assume you have a 60% hit rate, so you hit on a 5. Your expected damage per round is 0.6 + 0.1 from hit/glance + 0.06 from crits, or 0.76.
+Assume you have a 60% hit rate, so you hit on a 5. Your expected damage per round is 0.6 + 0.06 from crits, or 0.66.
 
 From Anydice, with a reroll:
-* Odds of missing (1/2) are 4%
-* Odds of glancing (3/4) are 5%+7% = 12%
+* Odds of missing (1/2/3/4) are 16%
 * Odds of hitting (5/6/7/8/9/10) are 84%
 * Odds of critting (15+) are 11.6%
 
-That means total damage dealt is 0.12 * 0.5 + 0.84 + 0.12 = 1.02, which is 34% better. If we just think about debuffs that don't care much about glancing or critting, it's 84% vs 60%, which is 40% better.
+That means total damage dealt is 0.84 + 0.12 = 0.96, which is 45% better. If we just think about debuffs that don't care much about critting, it's 84% vs 60%, which is 40% better.
 
 Now assume you have a 120% hit rate (+1 vs 0 Armor), so you crit on a 9/10. Expected dpr is 1 + 0.2 + 0.1 * 0.2 = 1.22.
 
@@ -195,11 +194,11 @@ Applies 33% of the time, and 50% denial when it applies, so 4 / 3 * 0.5 = 0.7.
 
 ### Honed: 0.4
 
-Assume you have a 80% hit rate (+0 vs 3 Armor). Expected dpr is 0.9 from hit/glance and 0.1 * 0.8 = 0.08 from crit, so 0.98 total. With Deadly Fortune, it's the same 0.9 from hit/glance, but you crit on a 9 and double crit on a 10 -> 9, so 0.22 damage from crit, so 1.2 total. That's 22% more damage.
+Assume you have a 80% hit rate (+0 vs 3 Armor). Expected dpr is 0.8 from hit and 0.1 * 0.8 = 0.08 from crit, so 0.88 total. While honed, it's the same 0.8 from hit + 0.2 from critting on a 9 + 0.02 from double crit on 10 -> 9, so 0.22 damage from crit, so 1.02 total. That's 16% more damage.
 
-Assume you have a 120% hit rate (+1 vs 0 Armor). Expected DPR is 1 from hit and 0.22 from crit + double crit, so 1.22 total. With Deadly Fortune, expected DPR gains 0.6 from crit and 0.06 from double crit, so 1.66 total, which is 38% more damage.
+Assume you have a 120% hit rate (+1 vs 0 Armor). Expected DPR is 1 from hit and 0.22 from crit + double crit, so 1.22 total. While honed, expected DPR gains 0.6 from crit and 0.06 from double crit, so 1.66 total, which is 38% more damage.
 
-Assume you have a 150% hit rate (+4 vs 0 Armor). Expected DPR is 1.55. With Deadly Fortune, expected DPR is 1.99, which is 28% more damage.
+Assume you have a 150% hit rate (+4 vs 0 Armor). Expected DPR is 1.55. While honed, expected DPR is 1.99, which is 28% more damage.
 
 0.4 EA is a bit high for honed since that's only true in its best case scenario, but it's risky to treat it as any lower EA than that.
 
@@ -254,23 +253,19 @@ From the -4 accuracy calculation, +4 defenses is 2/3 action denial when relevant
 ### Single defense (self): 0.3
 You can probably choose the best defense here, so it's pretty close in power to the other defense abilities.
 
-### Steeled (self): 0.2
+### Steeled (self): 0.3
 Assumptions:
 * You are attacked 33% of the time
 * The enemy gets a critical hit 5% of the time (standard 50% hit chance)
-* Critical hits are *three* times as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
+* Critical hits are twice as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
 
-With 50% hit chance, expected enemy hits per round is 2 hits + 0.4 glance + 0.2 crits * 2 (extra scary crits) = 2.8. If you remove crits from that possibility, expected incoming damage is 2.4. That's about 14% action denial, which has a base value of 0.6 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.2 EA as a self-buff.
+With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 2 (extra scary crits) = 2.4. If you remove crits from that possibility, expected incoming damage is 2. That's about 20% action denial, which has a base value of 4 * 0.2 = 0.8 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.3 EA as a self-buff.
 
-### Steeled (ally): 0.3
+### Steeled (ally): 0.5
 
-0.6 * 0.5 = 0.3
+### Steeled (any two): 0.7
 
-### Steeled (any two): 0.5
-
-0.6 * 0.75 = 0.5
-
-### Steeled (all): 0.6
+### Steeled (all): 1.0
 
 ## Buff effect scaling
 

@@ -51,7 +51,7 @@ export const bruteForce: CombatStyle = {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
         `,
@@ -66,7 +66,7 @@ export const bruteForce: CombatStyle = {
 
       attack: {
         hit: `\\damageranksix.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
         `,
@@ -95,7 +95,7 @@ export const bruteForce: CombatStyle = {
       // -2dr for 0.4 EA buff.
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
           Then, you are \\glossterm{briefly} \\empowered.
@@ -123,11 +123,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Steady Slam',
 
-      // Must be a single weapon to avoid the dual totokia nonsense
       effect: `
-        Make a melee \\glossterm{strike} using a single weapon.
-        If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
-        However, you cannot get a \\glossterm{critical hit}.
+        Make a melee \\glossterm{strike} with a +1 accuracy bonus.
+        You cannot get a \\glossterm{critical hit} with this strike.
       `,
       roles: ['burst'],
       rank: 1,
@@ -136,10 +134,9 @@ export const bruteForce: CombatStyle = {
     {
       name: 'Steady Slam+',
 
-      // Must be a single weapon to avoid the dual totokia nonsense
       effect: `
-        Make a melee \\glossterm{strike} that deals double damage using a single weapon.
-        If you get a \\glossterm{glancing blow}, it deals full damage instead of half damage.
+        Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
+        You cannot get a \\glossterm{critical hit} with this strike.
       `,
       roles: ['burst'],
       rank: 5,

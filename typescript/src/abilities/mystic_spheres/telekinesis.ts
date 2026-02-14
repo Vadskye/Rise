@@ -187,7 +187,7 @@ export const telekinesis: MysticSphere = {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           This spell has no immediate effect.
           Whenever you take damage during this spell's effect, you gain a kinetic charge.
@@ -230,7 +230,7 @@ export const telekinesis: MysticSphere = {
         injury: `
           If the target is Large or smaller, you \\glossterm{fling} it up to 15 feet away from you.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
         `,
@@ -252,7 +252,7 @@ export const telekinesis: MysticSphere = {
         injury: `
           You \\glossterm{fling} the target up to 15 feet away from you.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against everything in a \\smallarea cone from you.
         `,
@@ -274,7 +274,7 @@ export const telekinesis: MysticSphere = {
           You \\glossterm{fling} the target up to 15 feet away from you.
           This fling distance is doubled if the target is Medium or smaller.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Brawn against everything in a \\largearea cone from you.
         `,
@@ -402,7 +402,7 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         You are \\shielded this round.
-        In addition, whenever a creature misses or \\glossterm{glances} you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
+        In addition, whenever a creature misses you with a melee \\glossterm{strike} this round, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
         This ability is \\abilitytag{Swift}, so it protects you from attacks in the current phase.
       `,

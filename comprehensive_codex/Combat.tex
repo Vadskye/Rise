@@ -10,18 +10,9 @@
     Most attacks are made against exactly one defense, which is indicated in the attack's description.
 
   \subsection{Attack Outcomes}
-    There are four possible outcomes for an attack: a glancing blow, a miss, a critical hit, and a regular hit.
+    There are three possible outcomes for an attack: a miss, a critical hit, and a regular hit.
     You check the outcomes in that order.
-    This means that if an attack misses or gets a glancing blow, it cannot also get a critical hit, even if you have large accuracy bonuses that only apply to critical hits.
-
-    \subsubsection{Glancing Blows}\label{Glancing Blows}
-      If you make a damaging attack and the attack result is 1 or 2 lower than the target's defense, you get a \glossterm{glancing blow} against that target.
-      All damaging attacks deal half damage on a glancing blow unless otherwise specified.
-      They also do not have any special effects other than immediate damage, unless those effects would also happen on a miss.
-      Non-damaging attacks cannot cause glancing blows.
-
-      A glancing blow is neither a hit nor a miss.
-      Some abilities trigger on both glancing blows and missed attacks.
+    This means that if an attack misses, it cannot also get a critical hit, even if you have large accuracy bonuses that only apply to critical hits.
 
     \subsubsection{Misses}
       If your attack result is lower than the target's defense, it is a miss.
@@ -64,7 +55,7 @@
   \subsection{Extra Damage}\label{Extra Damage}
     Some abilities add \glossterm{extra damage} to your damaging attacks.
     Extra damage generally works in the same way as damage that is inherently part of the attack.
-    It is halved on a glancing blow, doubled on a critical hit, and so on.
+    It is doubled on a critical hit, and so on.
     Attacks that deal double damage also double their extra damage.
     Some attacks specifically double any extra damage that applies to them.
 
@@ -714,7 +705,7 @@
       \item \weapontag{Ammunition}: Only the Ammunition weapon breaks after making the dual strike.
       \item \weapontag{Compact}: Only functions if both weapons are Compact.
       \item \weapontag{Heavy}: You take a \minus1 accuracy penalty for each Heavy weapon.
-      \item \abilitytag{Impact}: If you use two Impact weapons, you get a glancing blow when you would miss by 8 or less.
+      \item \abilitytag{Impact}: If you use two Impact weapons, you deal half damage when you would miss by 8 or less.
       \item \weapontag{Light}: You gain a \plus3 accuracy bonus if both weapons are Light, or a \plus2 accuracy bonus if only one weapon is Light.
       \item \weapontag{Long}: Only functions if both weapons are Long.
       \item \weapontag{Parrying}: The bonus stacks, even though it does not stack with the benefits of using a shield.
@@ -732,11 +723,11 @@
         % = +3a light, -3a base
       \item Two kama: \plus0 accuracy, 2d4 damage, Keen+ (\plus4 accuracy with critical hits)
         % = -2a both weapons, -3a base
-      \item Two totokias: \minus5 accuracy, 2d10 damage, Impact+ (glance if miss by 8 or less)
+      \item Two totokias: \minus5 accuracy, 2d10 damage, Impact+ (half damage if miss by 8 or less)
         % = +2a light, -3a base
       \item Throwing axe and handaxe: \minus1 accuracy, 1d6\plus1d4 damage, Thrown (30/60)
         % = -1a warhammer, +2a light, -3a base
-      \item Warhammer and light hammer: \minus2 accuracy, 1d8\plus1d4 damage, Impact+ (glance if miss by 8 or less), Versatile Grip (irrelevant unless you have three hands)
+      \item Warhammer and light hammer: \minus2 accuracy, 1d8\plus1d4 damage, Impact+ (half damage if miss by 8 or less), Versatile Grip (irrelevant unless you have three hands)
         % = +2a both weapons, +3a light, -3a base
       \item Two claws: \plus2 accuracy, 2d4 damage
     \end{raggeditemize}
@@ -1011,10 +1002,9 @@
 
     Cover represents any obstacle that physically prevents you from striking your target, such as a tree or intervening creature.
     A creature or object behind cover gains a \plus2 bonus to Armor, Brawn, and Reflex defenses.
-    If an attack would miss or \glossterm{glance} the defense of a creature or object behind cover,
-    the attack is instead applied to the obstacle instead of to the intended target.
+    If an attack would miss the defense of a creature or object behind cover, the attack is applied to the obstacle instead of the intended target.
     In the case of area attacks, this cannot cause an individual creature or object to be targeted or attacked twice by the same ability.
-    This can protect creatures behind cover from attacks that deal damage on a miss (see \pcref{Glancing Blows}).
+    This can protect creatures behind cover from attacks that deal damage on a miss.
     In addition, a creature behind cover can hide (see \pcref{Stealth}).
 
     Cover is only relevant if the attacker has \glossterm{line of effect} to its target (see \pcref{Line of Effect}).

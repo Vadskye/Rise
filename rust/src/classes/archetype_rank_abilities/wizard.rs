@@ -63,7 +63,8 @@ pub fn alchemist<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Expanded Construction} The area affected by any alchemical item you create is doubled.
                     \parhead{Explosive Construction} Whenever you create an alchemical item that deals damage, you can enhance its destructive potential.
                     Attacks with the item gain a \plus2 accuracy bonus.
-                    However, if the attacker rolls a 1 or 2 on the attack roll, ignoring dice rolled for \glossterm{explosions}, they suffer a \glossterm{glancing blow} from the attack.
+                    However, if the attacker rolls a 1 or 2 on the attack roll, the item targets them in addition to any other targets, dealing them half damage.
+                    Ignore dice rolled for \glossterm{explosions} for this purpose.
                     \parhead{Repetitive Construction} Whenever you use your \ability{portable workshop} ability, you can create two copies of the same alchemical item.
                     This only counts as one item for the purpose of determining the number of items you can maintain with that ability.
                 }

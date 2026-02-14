@@ -53,8 +53,9 @@
   Their effects typically create \glossterm{bright illumination} in a \smallarea radius that lingers until the end of the current round.
   Damage from Fire abilities can set flammable objects on fire.
 
-  \abilitytagdef{Impact} You get a \glossterm{glancing blow} with this ability when you would miss by 5 or less (see \pcref{Glancing Blows}).
-  This does not allow you to get glancing blows if that would normally be impossible for you.
+  \abilitytagdef{Impact} When you miss by 4 or less with a damaging Impact ability, you still deal half damage.
+  The attack is still treated as a miss, and it has no effects other than immediate damage.
+  For example, the target does not suffer any conditions that would normally result from a successful hit with the ability.
 
   \abilitytagdef{Keen} You gain a \plus2 \glossterm{accuracy} bonus with this ability for the purpose of determining whether you get a \glossterm{critical hit}.
 
@@ -207,7 +208,6 @@
   Bound and unconscious creatures are helpless.
 
   \buffdef{honed} A honed creature gains a \plus4 accuracy bonus for the purpose of determining whether it gets a \glossterm{critical hit}.
-  As normal, a miss or glancing blow cannot also get a critical hit.
 
   \buffdef{immune} A creature that is immune to an attack is completely unaffected by it.
   Creatures and objects can be immune to a specific ability tag or debuff.
@@ -221,7 +221,7 @@
   % Are there any other things you can be impervious to?
   A creature can be impervious to a particular ability tag.
   Creatures gain a \plus4 bonus to all defenses against attacks that they are impervious to.
-  In addition, they take no damage if the attack misses or gets a \glossterm{glancing blow}, even if the attack would normally deal half damage on a miss.
+  In addition, they take no damage if the attack misses, even if the attack would normally deal half damage on a miss.
   If an attack has multiple tags, a creature is impervious to the attack if it is impervious to any of the attack's tags.
   % There shouldn't be any conditional tags like this
   % For attacks with random effects, such as the \spell{chromatic orb} spell, determine the random effect before determining if the creature is impervious.

@@ -288,7 +288,6 @@ impl Maneuver {
                 .attack()
                 .except(|a| a.accuracy -= 1)
                 .except(|a| a.targeting = Targeting::Strikes(2)),
-            // TODO: handle glancing blow on miss
             Self::Whirlwind => weapon
                 .attack()
                 .except(|a| {

@@ -2,8 +2,8 @@
 This is a Gemini-generated summary of the Rise combat rules defined in `comprehensive_codex/Combat.tex`.
 
 **Combat Flow & Core Mechanics:**
-*   **Attack Resolution:** Attacks proceed through a sequence of outcomes: Glancing Blow (1-2 below defense, half damage), Miss (below defense, no effect), Critical Hit (10+ above defense, double damage, effects can repeat), and Regular Hit. Exploding d10s add to attack rolls.
-*   **Damage Calculation:** Weapon damage is influenced by Power (Mundane/Magical). Extra damage behaves like inherent damage (halved on glance, doubled on crit) and applies once per attack roll per creature, excluding poisons.
+*   **Attack Resolution:** Attacks proceed through a sequence of outcomes: Miss (below defense, no effect), Critical Hit (10+ above defense, double damage, effects can repeat), and Regular Hit. Exploding d10s add to attack rolls.
+*   **Damage Calculation:** Weapon damage is influenced by Power (Mundane/Magical). Extra damage behaves like inherent damage (doubled on crit) and applies once per attack roll per creature, excluding poisons.
 *   **Taking Damage:** Damage first reduces Damage Resistance (DR), then Hit Points (HP). Vital Wounds are incurred when HP drops below 0, with specific detrimental effects determined by a Vital Roll. Negative HP is temporary, resetting to 0 at round end. Environmental damage reduces DR without consuming it, while Subdual damage increases fatigue instead of inflicting vital wounds.
 
 **Time & Actions:**
