@@ -324,7 +324,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           You create a patch of growing fruit in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           The patch becomes \\glossterm{light undergrowth} if there was no undergrowth there, and any existing light undergrowth becomes \\glossterm{heavy undergrowth}.
-          During your next action, the fruits explode, and you make a \\glossterm{reactive attack} vs. Armor against all creatures in the area.
+          At the start of your next turn, the fruits explode, and you make a \\glossterm{reactive attack} vs. Armor against all creatures in the area.
           When the fruits explode, the undergrowth disappears.
         `,
       },
@@ -373,7 +373,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again during your next action.
+          \\damageranktwo immediately, and again at the end of the target's next action.
           Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
         `,
         targeting: `

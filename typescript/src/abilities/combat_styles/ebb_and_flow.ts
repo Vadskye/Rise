@@ -294,7 +294,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
         \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
-        A rumbling creature takes \\damagerankone during your next action.
+        A rumbling creature takes \\damagerankone at the end of its next turn.
       `,
       rank: 3,
       roles: ['burn'],
@@ -306,7 +306,7 @@ export const ebbAndFlow: CombatStyle = {
       effect: `
         Make a \\glossterm{strike} with a \\minus1 accuracy penalty that deals double damage.
         \\hit If your attack result hits the target's Fortitude defense, the target rumbles.
-        A rumbling creature takes \\damagerankfive during your next action.
+        A rumbling creature takes \\damagerankfive at the end of its next turn.
       `,
       rank: 7,
       roles: ['burn'],

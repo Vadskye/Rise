@@ -580,7 +580,7 @@ fn energy_weapons() -> Vec<MagicWeapon> {
             \begin{raggeditemize}
                 \item All strikes with it have the \atFire tag.
                 \item Whenever you hit a creature with a strike using it, the creature burns.
-                    It takes 1d4 damage during your next action.
+                    It takes 1d4 damage at the end of its next turn.
                     This damage is doubled by critical hits and attacks that deal double damage.
                 \item It sheds red light in a 15 foot radius of \glossterm{bright illumination}.
             \end{raggeditemize}

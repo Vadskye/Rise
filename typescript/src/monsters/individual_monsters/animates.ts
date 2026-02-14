@@ -520,7 +520,7 @@ function addTreants(grimoire: Grimoire) {
             effect: `
               Make a \\glossterm{strike} with a \\minus1 accuracy penalty.
               \\hit If your attack result hits the target's Fortitude defense, the target festers.
-              A festering creature takes \\damagerankone during your next action.
+              A festering creature takes \\damagerankone at the end of its next turn.
             `,
           });
           creature.addWeaponMult('greatclub');

@@ -192,7 +192,7 @@ export const telekinesis: MysticSphere = {
           This spell has no immediate effect.
           Whenever you take damage during this spell's effect, you gain a kinetic charge.
           This is a \\abilitytag{Swift} effect, so you build up kinetic charges during the first round that you cast this spell.
-          During your next action after you stop sustaining this spell, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
+          At the start of your next turn after you stop sustaining this spell, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\medarea radius from you.
           You gain an accuracy bonus with this attack equal to the number of kinetic charges you built up, to a maximum of +4.
 
           If you build up 8 kinetic charges, you immediately stop sustaining this spell, and the attack targets you and all creatures in a \\medarea radius from you.
@@ -629,7 +629,7 @@ export const telekinesis: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          During your next action, the target takes \\damagerankone again.
+          The target takes \\damagerankone again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
@@ -646,8 +646,9 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfour again.
+          \\damagerankfour.
+          The target takes \\damagerankfour again at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
         `,
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
@@ -664,8 +665,10 @@ export const telekinesis: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfive.
+          \\damageranksix.
+          The target takes \\damageranksix again at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
+
           If the target takes a \\glossterm{vital wound} from either instance of damage that leaves it unconscious, it is crushed into a small sphere and immediately dies.
           The sphere left behind is three size categories smaller than the original creature.
         `,

@@ -168,7 +168,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankone.
-          During your next action, the target takes \\damagerankone again.
+          At the end of its next turn, the target takes \\damagerankone again.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -189,8 +189,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankfour again.
+          \\damagerankfour immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -217,7 +217,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Fire consumes a \\medarea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,
@@ -239,7 +239,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           Fire consumes a \\largearea radius \\glossterm{zone} from your location.
           Make an attack vs. Reflex against everything in the area.
           This typically means you include yourself as a target.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 6,
@@ -324,7 +324,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: `\\damagerankone immediately, and again during your next action.`,
+        hit: `\\damagerankone immediately, and again at the end of the target's next turn.`,
         miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\smallarea cone from you.
@@ -341,7 +341,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // Normal immediate damage would be dr5 (3.5 + 1.75dpp)
       attack: {
         crit: MULTIHIT_CRIT,
-        hit: `\\damagerankthree immediately, and again during your next action.`,
+        hit: `\\damagerankthree immediately, and again at the end of the target's next turn.`,
         miss: DELAYED_HALF,
         targeting: `
           Make an attack vs. Reflex against everything in a \\medarea cone from you.
@@ -645,7 +645,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone again during your next action.
+          The target takes \\damagerankone again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -666,7 +666,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           \\damagerankfour.
         `,
         injury: `
-          The target takes \\damagerankfour again during your next action.
+          The target takes \\damagerankfour again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude and Reflex against everything in a \\medarea cone.
@@ -828,8 +828,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -849,8 +849,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive.
-          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankfive immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -871,8 +871,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankeight, and any \\glossterm{extra damage} is doubled.
-          During your next action, the target takes \\damagerankeight again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankeight immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against something adjacent to you.
@@ -890,8 +890,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo.
-          During your next action, the target takes \\damageranktwo again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.
@@ -908,8 +908,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfive.
-          During your next action, the target takes \\damagerankfive again, and any \\glossterm{extra damage} also applies to this damage.
+          \\damagerankfive immediately, and again at the end of the target's next turn.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude with a -4 accuracy penalty against a living creature within \\medrange.

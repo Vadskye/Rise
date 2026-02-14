@@ -170,7 +170,7 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        During your next action, each living creature in the area regains \\hprankthree.
+        At the start of your next turn, each living creature in the area regains \\hprankthree.
       `,
       rank: 3,
       roles: ['healing', 'exertion'],
@@ -184,7 +184,7 @@ export const vivimancy: MysticSphere = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You inscribe a circle in a \\medarea radius \\glossterm{zone} from you.
-        During your next action, each living creature in the area regains \\hpranksix.
+        At the start of your next turn, each living creature in the area regains \\hpranksix.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
@@ -273,7 +273,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 3,
@@ -295,7 +295,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
         `,
       },
       rank: 6,
@@ -519,7 +519,7 @@ export const vivimancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
           If you are at full hit points at that time, you gain a \\plus4 accuracy bonus with this attack.
         `,
       },

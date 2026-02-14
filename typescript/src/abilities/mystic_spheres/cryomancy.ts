@@ -246,7 +246,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           The target feels a growing chill.
-          During your next action, it takes \\damagerankfour.
+          At the end of its next turn, it takes \\damagerankfour.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -265,7 +265,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           The target feels a growing chill.
-          During your next action, it takes \\damagerankeight.
+          At the end of its next turn, it takes \\damagerankeight.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -292,7 +292,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           Choose a \\smallarea radius within \\shortrange.
           Make an attack vs. Armor and Fortitude against everything in the area.
           If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 4,
@@ -313,7 +313,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           Choose a \\medarea radius within \\longrange.
           Make an attack vs. Armor and Fortitude against everything in the area.
           If you spent an \\glossterm{ice crystal}, you only need to hit each target's Armor defense.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['wildfire'],
@@ -396,7 +396,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
       attack: {
         hit: `
           The target feels a growing chill.
-          During your next action, it takes \\damagerankfive.
+          At the end of its next turn, it takes \\damagerankfive.
         `,
         halfOnMiss: true,
         targeting: `
@@ -543,7 +543,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
         \\hit The target feels a growing chill.
-        During your next action, it takes 1d8 damage.
+        At the end of its next turn, it takes 1d8 damage.
       `,
       rank: 3,
       roles: ['burn'],
@@ -563,7 +563,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
         If you spent an \\glossterm{ice crystal}, you gain a +2 accuracy bonus with the strike.
         \\hit The target feels a growing chill.
-        During your next action, it takes 1d6 damage per 2 \\glossterm{magical power}.
+        At the end of its next turn, it takes 1d6 damage per 2 \\glossterm{magical power}.
       `,
       rank: 6,
       roles: ['burn'],
@@ -668,7 +668,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line from you.
-          During your next action, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.
+          At the start of your next turn, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.
           At the end of that round, you gain an \\glossterm{ice crystal}.
         `,
       },
