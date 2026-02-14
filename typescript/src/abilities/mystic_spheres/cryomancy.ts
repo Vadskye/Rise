@@ -86,7 +86,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\smallarea cone from you.
           If you have no \\glossterm{ice crystals}, you gain an ice crystal.
@@ -102,7 +102,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
 
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarea cone from you.
           If you have no \\glossterm{ice crystals}, you gain an ice crystal.
@@ -287,7 +287,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Choose a \\smallarea radius within \\shortrange.
           Make an attack vs. Armor and Fortitude against everything in the area.
@@ -308,7 +308,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Choose a \\medarea radius within \\longrange.
           Make an attack vs. Armor and Fortitude against everything in the area.
@@ -398,7 +398,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
           The target feels a growing chill.
           During your next action, it takes \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe cold like a dragon as a standard action.
           When you do, make an attack vs. Fortitude against everything in a \\medarea cone from you.
@@ -665,7 +665,7 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line from you.
           During your next action, make an attack vs. Fortitude against everything in a \\medarealong, 5 ft.\\ wide line that continues straight from the end of the previous line.

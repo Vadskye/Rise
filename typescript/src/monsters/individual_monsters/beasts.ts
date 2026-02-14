@@ -155,7 +155,7 @@ export function addBeasts(grimoire: Grimoire) {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Choose a \\smallarea radius within \\shortrange.
           Make an attack vs. Armor and Reflex against everything in the area.
@@ -172,7 +172,7 @@ export function addBeasts(grimoire: Grimoire) {
           The target feels a growing chill.
           Duing your next action, it takes \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           The $name makes a $accuracy attack vs. Fortitude against everything within in a \\medarea cone from it.
         `,
@@ -416,7 +416,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addCustomManeuver({
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarealong, 5 ft. wide line.
         `,

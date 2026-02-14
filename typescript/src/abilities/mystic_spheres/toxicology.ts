@@ -280,7 +280,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `\\damagerankone.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
@@ -303,7 +303,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
@@ -383,7 +383,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a pool of acid in a \\smallarea radius cylinder-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against everything in the area.
@@ -416,7 +416,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankthree immediately, and again during your next action.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Fortitude and Reflex against everything in a \\medarea cone from you.
@@ -457,7 +457,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damageranktwo immediately, and again during your next action.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a location within \\shortrange.
           Acid rain appears in the sky over that area, falling down towards it.
@@ -739,7 +739,7 @@ export const toxicology: MysticSphere = {
         hit: `
           \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all living creatures in a \\medarea radius \\glossterm{zone} within \\medrange.
         `,

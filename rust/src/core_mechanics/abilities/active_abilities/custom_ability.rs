@@ -297,7 +297,7 @@ impl CustomAbility {
         Self {
             effect: "
                 The $name gains a +2 bonus to all defenses this round.
-                In addition, whenever a creature within \\medrange of it misses or \\glossterm{glances} it with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
+                In addition, whenever a creature within \\medrange of it misses it with a \\magical attack this round, that creature treats itself as a target of that strike in addition to any other targets.
                 The attacker cannot choose to reduce its accuracy or damage against itself.
             ".to_string(),
             is_magical: true,

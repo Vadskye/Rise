@@ -168,7 +168,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\medarealong, 10 ft. wide line from you.
           ${WATER_ACCURACY_BONUS}
@@ -186,7 +186,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\medarealong, 10 ft. wide line from you.
           ${WATER_ACCURACY_BONUS}
@@ -281,7 +281,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           If there is a Large or larger source of water within \\shortrange of you, this area increases to a \\medarea radius.
@@ -299,7 +299,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           \\damageranksix.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} within a \\smallarea radius from you.
           If there is a Large or larger source of water within \\shortrange of you, this area increases to a \\medarea radius.
@@ -366,7 +366,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           In addition, if the target is Large or smaller, it is \\glossterm{pushed} 15 feet in the direction the water flows.
           Once the target leaves the area, it stops being moved and blocks any other targets from being pushed.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a continuous river of water in a \\medarealong, 10 ft. wide line-shaped \\glossterm{zone} from you.
           The water flows in a direction that you choose when you cast the spell.
@@ -387,7 +387,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a geyser in a \\medarealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
@@ -410,7 +410,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
           \\damagerankthree.
           If the target is Huge or smaller, you \\glossterm{fling} it 20 feet vertically.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a geyser in a \\largearealong, 5 ft.\\ wide vertical line-shaped \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in the area.
@@ -876,7 +876,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Waterward Dash',
 
-      // Cover is basically shielded, but also prevents half on miss and glancing blows.
+      // Cover is basically shielded, but also prevents half on miss
       // Call that equal to braced.
       effect: `
         You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.

@@ -102,7 +102,7 @@ export interface ActiveAbilityAttack {
   crit?: string | null;
   hit: string;
   injury?: string;
-  missGlance?: boolean;
+  halfOnMiss?: boolean;
   miss?: string;
   targeting: string;
 }

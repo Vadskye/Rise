@@ -74,7 +74,7 @@ export const umbramancy: MysticSphere = {
       // r0 gives drX+1 with shadowed requirement
       attack: {
         hit: `\\damageranktwolow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -90,7 +90,7 @@ export const umbramancy: MysticSphere = {
       // r0 gives drX+1 with shadowed requirement
       attack: {
         hit: `\\damagerankfivelow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{shadowed} creatures in a \\smallarea cone from you.
         `,
@@ -110,7 +110,7 @@ export const umbramancy: MysticSphere = {
       // with a shadowed requirement.
       attack: {
         hit: `\\damageranktwolow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a field of dark miasma in a \\medarea radius \\glossterm{zone} from you.
           Make an attack vs. Fortitude against all \\glossterm{shadowed} \\glossterm{enemies} in the area.
@@ -131,7 +131,7 @@ export const umbramancy: MysticSphere = {
       // justify dr6l here.
       attack: {
         hit: `\\damageranksixlow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a spreading field of dark miasma in a \\glossterm{zone} from you.
           It affects a \\medarea radius \\glossterm{zone} in the first round, a \\largearea radius in the second round, and a \\hugearea radius in all subsequent rounds.

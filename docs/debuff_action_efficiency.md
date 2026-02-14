@@ -163,50 +163,70 @@ Stun is worth 0.2 action effectiveness per attack it affects, for a total of 1.4
 
 ### Accuracy Penalties
 
-#### -2 with lowish defenses: 1.0
+```
+hit_probability * 4 = expected_hits
 
-As a baseline, assume the enemy has a 70% chance to hit, 20% chance to glance. Expected hits with 4 actions is 2.8 hits + 0.4 glance = 3.2.
+(hit_probability - accuracy_penalty) * 4 = adjusted_expected_hits
 
-If they have a -2 accuracy penalty, they drop to a 50% chance to hit, so expected hits is 2 hits + 0.4 glance = 2.4. 25% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 * 0.25 = 1 effective action.
+4 * (1 - (adjusted_expected_hits / expected_hits)) = effective_actions
+4 - (4 * adjusted_expected_hits / expected_hits) = effective_actions
+4 - (16 * (hit_probability - accuracy_penalty) / (hit_probability * 4)) = effective_actions
+4 - (4 * hit_probability - 4 * accuracy_penalty) / hit_probability) = effective_actions
+4 - 4 + (4 * accuracy_penalty / hit_probability) = effective_actions
+4 * accuracy_penalty / hit_probability = effective_actions
+```
 
-#### -2 with 50% hit rate: 1.3
+#### -2 with 70% hit rate: 1.1
 
-Expected hits with 4 actions is 2 hits + 0.4 glance = 2.4. With -2 accuracy, that's 30% chance to hit, so 1.2 hits + 0.4 glance = 1.6. 1/3 of enemy actions were removed. That's worth 1.3 effective actions.
+As a baseline, assume the enemy has a 70% chance to hit. Expected hits with 4 actions is 2.8 hits.
 
-#### -1 with 50% hit rate:
+If they have a -2 accuracy penalty, they drop to a 50% chance to hit, so expected hits is 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 * 0.29 = 1.1 effective actions.
 
-2.4 normal, 40% chance to hit with -1, so 1.6 hits + 0.4 glance = 2.0. ~17% of enemy actions were removed, which is worth 0.7 effective actions.
+From the formula: EA = 4 * 0.2 / 0.7 = 1.1 EA
 
-#### -2 with high defenses: 2.0
-As a baseline, assume the enemy has a 30% chance to hit. Expected hits with 4 actions is 1.2 hits + 0.4 glance = 1.6.
+#### -2 with 50% hit rate: 1.6
 
-If they have a -2 accuracy penalty, they drop to a 10% chance to hit, so expected hits is 0.4 hits + 0.4 glance = 0.8. 50% of enemy actions were removed. That means a -2 accuracy penalty has an effective action value of 4 * 0.67 = 2 effective actions.
+Expected hits with 4 actions is 2 hits. With -2 accuracy, that's 30% chance to hit, so 1.2 hits. 2/3 of enemy actions were removed. That's worth 2.7 effective actions.
 
-#### -4 with lowish defenses: 2.0
+From the formula: EA = 4 * 0.2 / 0.5 = 1.6 EA
 
-Baseline is 2.8 hits + 0.4 glance = 3.2. With -4 accuracy, 30% chance to hit, so expected hits is 1.2 hits + 0.4 glance = 1.6. 50% of enemy actions were removed, which is worth 2 effective actions.
+#### -2 with 30% hit rate: 2.7
 
-#### -4 with 50% hit rate: 2.7
+EA = 0.8 / 0.3 = 2.7 EA
 
-Baseline is 2 hits + 0.4 glance = 2.4. With -4 accuracy, 10% to hit, so expected hits is 0.4 hits + 0.4 glance = 0.8. 2/3 of enemy actions were removed, which is worth 2.7 EA.
+#### -1 with lowish defenses: 0.6
 
-#### Impervious with 50% hit rate: 3.3
+EA = 4 * 0.1 / 0.7 = 0.6 EA
 
-Ignoring glance means they only get 0.4 hits instead of 0.8, so 83% action denial, which is worth 3.3 EA.
+#### -1 with 50% hit rate: 0.8
 
-### Roll twice, keep lower with lowish defenses
+EA = 0.4 / 0.5 = 0.8 EA
 
-Assume 70% hit rate, with 2.8 expected hits over 4 actions.
+#### -1 with 30% hit rate: 1.3
 
-Expected hit rate is 0.7 * 0.7 = 0.5 chance to hit, so 2 hits. 29% of enemy actions were removed.
+EA = 0.4 / 0.3 = 1.3 EA
 
-### Roll twice, keep lower with 50% hit rate
+#### -4 with 70% hit rate: 2.3
+
+EA = 4 * 0.4 / 0.7 = 2.3 EA
+
+#### -4 with 50% hit rate: 3.2
+
+EA = 4 * 0.4 / 0.5 = 3.2 EA
+
+### Roll twice, keep lower with 70% hit rate: 1.1
+
+Expected hits is 2.8 over 4 actions
+
+Expected hit rate is 0.7 * 0.7 = 0.5 chance to hit, so 2 hits. (1 - 2 / 2.8) = 28.6% of enemy actions were removed, the same as a -2 accuracy penalty
+
+### Roll twice, keep lower with 50% hit rate: 2.0
 
 Baseline is 2 expected hits over 4 actions.
 
-Expected hit rate is 0.5 * 0.5 = 0.25 chance to hit, so 1 hit. 50% of enemy actions were removed.
+Expected hit rate is 0.5 * 0.5 = 0.25 chance to hit, so 1 hit. (1 - 1 / 2) = 50% of enemy actions were removed, so 2 EA
 
-### Roll twice, keep lower with high defenses
+### Roll twice, keep lower with high defenses: 2.8
 
 Assume 30% hit rate, with 1.2 expected hits over 4 actions.
 

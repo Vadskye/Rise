@@ -754,7 +754,7 @@ export const enchantment: MysticSphere = {
         injury: `
           The target is \\stunned as a \\glossterm{condition}.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea cone from you.
           You gain a +4 accuracy bonus against each target with a negative Intelligence.
@@ -776,7 +776,7 @@ export const enchantment: MysticSphere = {
         injury: `
           The target is stunned as a \\glossterm{condition}.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea cone from you.
           You gain a +4 accuracy bonus against each target with a negative Intelligence.
