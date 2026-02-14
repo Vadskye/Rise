@@ -680,22 +680,22 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target has \\glossterm{cover} from all attacks this round.
+        Each target has \\glossterm{briefly} has \\glossterm{cover} from all attacks.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you have \\glossterm{cover} from all attacks this round.
+        You and all \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} have \\glossterm{cover} from all attacks.
       `,
       rank: 4,
       roles: ['boon'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     // Shielded is 0.3 EA.
@@ -706,14 +706,15 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `\\damageranktwo.`,
         targeting: `
-          You have \\glossterm{cover} from all attacks this round.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against them.
+          You are \\glossterm{briefly} covered in thorns.
+          The thorns grant you \\glossterm{cover} from all attacks.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
       },
       rank: 2,
       roles: ['focus'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -726,7 +727,7 @@ export const verdamancy: MysticSphere = {
       rank: 5,
       roles: ['focus'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -737,14 +738,15 @@ export const verdamancy: MysticSphere = {
         hit: `\\damagerankone.`,
         targeting: `
           Choose one creature from among yourself and your \\glossterm{allies} within \\medrange.
-          The target has \\glossterm{cover} from all attacks this round.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon this round, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
+          The target is \\glossterm{briefly} covered in thorns.
+          The thorns grant it \\glossterm{cover} from all attacks.
+          In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
         `,
       },
       rank: 3,
       roles: ['boon'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
 
     {
@@ -757,7 +759,7 @@ export const verdamancy: MysticSphere = {
       rank: 6,
       roles: ['boon'],
       scaling: 'damage',
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
       name: 'Treeclub',

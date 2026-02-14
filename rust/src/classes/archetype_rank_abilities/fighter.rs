@@ -446,7 +446,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
 
                 {
                     \begin{sustainability}{Dogpile}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets gain a \plus2 accuracy bonus with the \ability{grapple} and \ability{maintain grapple} abilities (see \pcref{Universal Combat Abilities}).
 
@@ -456,7 +456,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Duck and Cover}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         Each target gains a \plus1 bonus to its defenses against ranged \glossterm{strikes}.
@@ -467,7 +467,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Follow My Lead}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         One adjacent \glossterm{ally} gains a \plus1 accuracy bonus against any creature that you hit with a \glossterm{strike} during the current round.
 
@@ -477,7 +477,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Group Up}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets each gain a \plus1 bonus to their Armor defense if they are adjacent to each other.
 
@@ -487,7 +487,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Hold The Line}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         Your \glossterm{enemies} move at half speed while adjacent to either of those targets.
@@ -498,7 +498,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Hunker Down}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Two targets gain a \plus2 bonus to their Brawn defense against \atBrawling abilities.
 
@@ -508,7 +508,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Keep Moving}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         Whenever a target ends a \glossterm{move action} at least twenty feet away from where it started the move action, it \glossterm{briefly} gains a \plus1 bonus to its Armor defense.
@@ -519,7 +519,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Lead From the Front}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         One \glossterm{ally} gains a \plus1 bonus to all defenses against \glossterm{enemies} that you are adjacent to.
 
@@ -529,18 +529,17 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \end{sustainability}
 
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
-                        Whenever a target uses the \ability{sprint} ability, it gains a \plus10 foot bonus to its \glossterm{speed} during that movement.
-                        This bonus is doubled as normal by the sprint ability.
+                        Whenever a target uses the \ability{sprint} ability, it gains \plus10 feet of \glossterm{available movement}.
 
                         \rankline
-                        \rank{4} The speed bonus increases to \plus10 feet.
-                        \rank{7} The speed bonus increases to \plus15 feet.
+                        \rank{4} The speed bonus increases to \plus20 feet.
+                        \rank{7} The speed bonus increases to \plus30 feet.
                     \end{sustainability}
 
                     \begin{sustainability}{Stand Your Ground}{\glossterm{Minor action}}
-                        \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Sustain} (free)
                         \rankline
                         Choose two targets.
                         At the end of each target's turn, if it did not change its location during that turn, it gains a \plus1 bonus to its Armor defense until its location changes.
@@ -593,7 +592,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             rank: 4,
             description: r"
                 \begin{sustainability}{Shifting Stance}{\glossterm{Minor action}}
-                    \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
+                    \abilitytags \abilitytag{Sustain} (free)
                     \rankline
                     You gain one of the following benefits:
                     \begin{raggeditemize}

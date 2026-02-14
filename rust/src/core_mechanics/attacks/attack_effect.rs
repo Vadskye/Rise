@@ -103,7 +103,6 @@ impl DamageEffect {
             format!(
                 "
                     If any creature is \\glossterm<injured> by this attack, {regain} {effect}
-                    This ability does not have the \\abilitytag<Swift> tag, so it resolves after attacks during the current phase.
                 ",
                 effect = effect.description(attacker),
                 regain = "you regain",

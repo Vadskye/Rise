@@ -26,7 +26,6 @@ pub fn staffs() -> Vec<Implement> {
             Once per round, when you cause a creature other yourself to regain \glossterm<hit points> using a \magical ability, you can activate this item.
             When you do, you also regain that many hit points.
             In addition, you increase your \glossterm<fatigue level> by one.
-            This ability has the \abilitytag<Swift> tag if you use it to affect healing with a Swift ability.
         "),
         ..Implement::default()
     }));

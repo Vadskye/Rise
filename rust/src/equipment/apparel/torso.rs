@@ -138,7 +138,7 @@ fn belts() -> Vec<Apparel> {
                 The healing increases to $dr7l.
             "),
         ],
-        tags: vec![AbilityTag::Swift, AbilityTag::personal_attunement()],
+        tags: vec![AbilityTag::personal_attunement()],
         ..Apparel::default()
     }));
 
@@ -365,7 +365,6 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Deals $dr3l damage when you recover"),
         description: String::from(r"
             Whenever you use the \ability{recover} ability, make an attack vs. Reflex against all \glossterm{enemies} within a \smallarea radius from you.
-            This attack is not \atSwift, even though the \ability{recover} ability is Swift.
             \hit \damagerankthreelow.
             \miss Half damage.
         "),

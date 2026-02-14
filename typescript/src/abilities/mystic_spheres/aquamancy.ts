@@ -864,42 +864,32 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Waterward',
 
-      // Shielded alone is on the weaker side, so add impervious to fire
+      // Shielded is 0.3 EA.
+      // Strike-only braced is about 0.3 EA.
+      // Impervious to fire is about 0.2 EA??
       effect: `
-        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You are \\glossterm{briefly} surrounded by a protective bubble of water.
+        The bubble has three effects:
+        \\begin{itemize}
+          \\item You are \\shielded.
+          \\item You are \\impervious to \\atFire.
+          \\item You gain a \\plus2 bonus to all defenses against \\glossterm{strikes}.
+        \\end{itemize}
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
       name: 'Waterward Dash',
 
-      // Cover is basically shielded, but also prevents half on miss
-      // Call that equal to braced.
-      effect: `
-        You are \\glossterm{briefly} \\impervious to \\atFire attacks and \\shielded.
-        In addition, you can move up to your speed during your action.
-        The protection is \\atSwift, but the movement is not.
-      `,
+      functionsLike: {
+        name: "waterward",
+        exceptThat: "you can also move up to your \\glossterm{speed} without reducing your \\glossterm{available movement}.",
+      },
       rank: 5,
       roles: ['mobility', 'turtle'],
-      tags: ['Manifestation', 'Swift (see text)'],
-    },
-    {
-      name: 'Expanded Waterward',
-
-      // You and all adjacent isn't as flexible as "any two", but it's similarly strong.
-      effect: `
-        This round, you and all \\glossterm{allies} adjacent to you are \\impervious to \\atFire attacks and \\shielded.
-        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
-      `,
-      rank: 4,
-      // Normally we don't combine boon and turtle, but this is a bit weird since it
-      // always affects you and only sometimes affects allies.
-      roles: ['boon', 'turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     {
       name: 'Rising Tide',

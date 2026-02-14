@@ -399,28 +399,26 @@ export const thaumaturgy: MysticSphere = {
       name: 'Reflect Magic',
 
       effect: `
-        You are \\braced this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        In addition, whenever a creature within \\medrange of you misses you with a \\magical attack this round, that creature treats itself as a target of that attack in addition to any other targets.
+        You are \\glossterm{briefly} protected by reflective magic.
+        This makes you \\glossterm{braced}.
+        In addition, whenever a creature within \\medrange of you misses you with a \\magical attack, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 2,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Reflect Magic',
 
       effect: `
-        You are \\braced this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        In addition, whenever a creature within \\medrange of you makes a \\magical attack against you this round, that creature treats itself as a target of that attack in addition to any other targets.
+        You are \\glossterm{briefly} protected by reflective magic.
+        This makes you \\glossterm{braced}.
+        In addition, whenever a creature within \\medrange of you makes a \\magical attack against you, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
       `,
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -486,26 +484,22 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Fuel',
 
       effect: `
-        You take half damage from \\magical effects this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\empowered.
+        You \\glossterm{briefly} take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\glossterm{briefly} \\empowered.
       `,
       rank: 3,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Arcane Fuel',
 
       effect: `
-        You take half damage from \\magical effects this round.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        When you take damage from a magical effect this round, you become \\glossterm{briefly} \\maximized.
+        You \\glossterm{briefly} take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\glossterm{briefly} \\maximized.
       `,
       rank: 7,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
 
     // +1dr for prereq, -1dr for empowered
