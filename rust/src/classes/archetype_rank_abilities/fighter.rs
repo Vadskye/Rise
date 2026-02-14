@@ -531,7 +531,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
                     \begin{sustainability}{Rush}{\glossterm{Minor action}}
                         \abilitytags \abilitytag{Sustain} (free), \abilitytag{Swift}
                         \rankline
-                        Whenever a target uses the \ability{sprint} ability, it gains a \plus5 foot bonus to its \glossterm{speed} during that movement.
+                        Whenever a target uses the \ability{sprint} ability, it gains a \plus10 foot bonus to its \glossterm{speed} during that movement.
                         This bonus is doubled as normal by the sprint ability.
 
                         \rankline
