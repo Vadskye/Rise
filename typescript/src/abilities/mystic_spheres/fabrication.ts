@@ -196,7 +196,7 @@ export const fabrication: MysticSphere = {
         `,
         targeting: `
           When you cast this spell, you create a ballista bolt in midair within your space and choose a target within \\longrange.
-          During your next action, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -2 accuracy penalty against it.
+          At the start of your next turn, if that target is still within \\longrange, make a \\glossterm{reactive attack} vs. Armor with a -2 accuracy penalty against it.
           Otherwise, the bolt disappears and this spell is wasted.
         `,
       },
@@ -232,7 +232,7 @@ export const fabrication: MysticSphere = {
         halfOnMiss: false,
         targeting: `
           When you cast this spell, you create a greataxe in midair within your space.
-          During your next action, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Armor with the axe against up to two targets adjacent to you.
         `,
       },
       rank: 1,
@@ -306,7 +306,7 @@ export const fabrication: MysticSphere = {
 
           A rain of arrows appears at the top of the area.
           Creatures can generally identify what area the arrows will fall into with a DV 10 Awareness check.
-          During your next action, the arrows fall through the area, and you make a \\glossterm{reactive attack} vs. Armor against everything in the area.
+          At the start of your next turn, the arrows fall through the area, and you make a \\glossterm{reactive attack} vs. Armor against everything in the area.
           This attack does not damage thin \\glossterm{walls} in the area.
           Creatures under overhanging structures may have \\glossterm{cover} from the attack or be entirely excluded from the effect based on their location.
         `,
@@ -576,7 +576,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You \\glossterm{briefly} coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in the area.
-          During your next action, this effect \\glossterm{repeats}.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 5,
@@ -1023,7 +1023,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],
@@ -1044,7 +1044,7 @@ export const fabrication: MysticSphere = {
         targeting: `
           You create a sawblade in a \\tinyarea radius \\glossterm{zone} within \\shortrange.
           Make an attack vs. Armor against everything in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       roles: ['clear'],

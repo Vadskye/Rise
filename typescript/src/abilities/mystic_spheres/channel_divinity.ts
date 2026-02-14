@@ -238,7 +238,7 @@ export const channelDivinity: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\largearea radius from you.
-          This attack \\glossterm{repeats} during your next action.
+          At the start of your next turn, this attack \\glossterm{repeats} in the same area.
         `,
       },
       rank: 4,

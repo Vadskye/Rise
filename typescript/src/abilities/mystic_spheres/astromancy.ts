@@ -387,7 +387,7 @@ export const astromancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankzero.
-          During your next action, the target takes \\damagerankzero again.
+          The target takes \\damagerankzero again at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.

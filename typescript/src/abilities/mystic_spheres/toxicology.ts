@@ -39,7 +39,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damagerankone immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -325,7 +325,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankone immediately, and again during your next action.
+          \\damagerankone immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
         `,
         targeting: `
@@ -344,8 +344,9 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankfour immediately, and again during your next action.
+          \\damagerankfour immediately, and again at the end of the target's next turn.
           This damage is doubled if the target is an object that is not \\glossterm{metallic}.
+          Any \\glossterm{extra damage} applies to both the initial damage and the delayed damage.
         `,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
@@ -414,7 +415,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damagerankthree immediately, and again during your next action.
+          \\damagerankthree immediately, and again at the end of the target's next turn.
         `,
         halfOnMiss: true,
         targeting: `
@@ -455,7 +456,7 @@ export const toxicology: MysticSphere = {
       attack: {
         crit: MULTIHIT_CRIT,
         hit: `
-          \\damageranktwo immediately, and again during your next action.
+          \\damageranktwo immediately, and again at the end of the target's next turn.
         `,
         halfOnMiss: true,
         targeting: `
@@ -463,7 +464,7 @@ export const toxicology: MysticSphere = {
           Acid rain appears in the sky over that area, falling down towards it.
           Creatures can generally identify what area the rain will fall into with a DV 10 Awareness check.
 
-          During your next action, the rain falls in your chosen area, and you make a \\glossterm{reactive attack} vs. Fortitude and Reflex against everything in a \\medarea radius of your chosen location.
+          At the start of your next turn, the rain falls in your chosen area, and you make a \\glossterm{reactive attack} vs. Fortitude and Reflex against everything in a \\medarea radius of your chosen location.
           If there is not at least fifty feet of open space above your chosen area, this spell fails with no effect.
           This attack does not damage thin \\glossterm{walls} in the area.
         `,
