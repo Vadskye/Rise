@@ -325,7 +325,6 @@ They allow more distinct and unique character customization, but also increase g
     % Better than Cleave in large group fights where you have time to prebuff, worse otherwise
     \magicalff[1]{Ancestral Battlecry}
     \begin{magicalactiveability}{Ancestral Battlecry}{Standard action}
-      \abilitytags \atSwift
       \abilitycost You can increase your \glossterm{fatigue level} by one to use this ability as a \glossterm{minor action}.
       \rankline
       Three ghostly spirits of your ancestors appear around you.
@@ -333,7 +332,7 @@ They allow more distinct and unique character customization, but also increase g
       Whenever you make a melee \glossterm{strike}, each spirit mimics you.
       For each spirit that mimics you, the strike can affect an additional secondary target of your choice within 15 foot \glossterm{range} of you, even if you are not adjacent to it.
 
-      At the end of each subsequent round after you use this ability, one of the spirits disappears.
+      At the end of each of your subsequent turns after you use this ability, one of the spirits disappears.
       When all of the spirits have disappeared, this effect ends.
     \end{magicalactiveability}
 
@@ -466,7 +465,6 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[1]{Celestial Benevolence}
     \begin{magicalactiveability}{Celestial Benevolence}{Standard action}
-        \abilitytags \abilitytag{Swift}
         \rankline
         Choose an \glossterm{ally} within \shortrange.
         While the target is within \shortrange of you, it takes half damage from all damaging effects (minimum 1).
@@ -507,7 +505,7 @@ They allow more distinct and unique character customization, but also increase g
     \featpre Disguise as a trained skill, Intelligence 2.
 
     \ff[1]{Adaptive Specialty} As a \glossterm{free action}, if you do not already have an adaptive specialty active, you can choose an adaptive specialty from the list below.
-    You immediately gain the benefits of that adaptive specialty as a \atSwift effect.
+    You immediately gain the benefits of that adaptive specialty.
     Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive specialty, losing all of its benefits.
     \begin{raggeditemize}
       \item Martial: You become proficient with all non-exotic weapons and an additional armor \glossterm{usage class} of your choice.
@@ -524,7 +522,7 @@ They allow more distinct and unique character customization, but also increase g
     These three archetypes are your adaptive archetypes.
 
     As a \glossterm{free action}, if you do not already have an adaptive archetype active, you can choose one of your adaptive archetypes.
-    You immediately gain all benefits of that archetype as a \atSwift effect.
+    You immediately gain all benefits of that archetype.
     Whenever you finish a \glossterm{short rest}, you can deactivate your adaptive archetype, losing all of its benefits.
     You must track which choices you made for each archetype that you lose access to in this way, such as which spells and maneuvers you learned.
     When you regain access to that archetype, you must make the same choices.
@@ -945,10 +943,7 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{Ghost Shroud} Your Constitution does not increase your \glossterm{injury point} (see \pcref{Injury Point}).
     You can also use the lower of your Dexterity and Willpower in place of your Constitution to determine your \glossterm{hit points}.
 
-    \magicalff[1]{Ghost Step} When you use the \textit{sprint} ability, you can become \trait{invisible} during that phase (see \pcref{Invisible}, and \pcref{Sprint}).
-    This usually makes it impossible for creatures to react to your movement, such as by using the \ability{block} or \ability{follow} abilities (see \pcref{Movement Abilities}).
-    This ability has the \abilitytag{Swift} tag, so it affects attacks against you during the current phase.
-    After using this ability, you \glossterm{briefly} cannot use it again.
+    \magicalff[1]{Ghost Step} When you use the \ability{jog} or \ability{sprint} abilities, you can become \trait{invisible} until the end of your turn (see \pcref{Jog}, and \pcref{Sprint}).
 
     % as rank 3 maneuver, except for hitting Reflex defense
     \magicalff[6]{Spectral Slice}
@@ -967,10 +962,8 @@ They allow more distinct and unique character customization, but also increase g
       \featlevel{18} The extra damage increases to 4d6 \add your \glossterm{power}.
     \end{magicalactiveability}
 
-    \magicalff[12]{Ghost Step\plus} When you use your \textit{ghost step} ability, you can also become \trait{incorporeal} for the duration of the movement.
-    This ability has the \abilitytag{Swift} tag, so it grants you the defensive benefits of being incorporeal during the current phase.
-    % TODO: wording
-    If you choose not to become incorporeal, you do not have to wait \glossterm{briefly} before being able to use your \textit{ghost step} ability again.
+    \magicalff[12]{Ghost Step\plus} When you use the \ability{jog} or \ability{sprint} abilities, you can become \trait{incorporeal} until the end of your turn.
+    While you are incorporeal in this way, you gain an average fly speed.
 
     \magicalff[12]{Spectral Shield} You are \impervious to all attacks by \trait{incorporeal} creatures.
 

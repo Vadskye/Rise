@@ -248,7 +248,6 @@
     You could think of characters as using the hustle ability whenever they move while not actively engaged in combat, but it's not generally useful to think about narrative movements in terms of combat abilities.
 
     \begin{activeability}{Block}{Move action}
-      \abilitytags \abilitytag{Swift}
       \rankline
       When you use this ability, choose a creature you can see.
       Until your next turn, the next time the target attempts to move out of a space adjacent to you, you attempt to block its movement.
@@ -258,7 +257,7 @@
       If it cannot, it stops moving.
       This represents you automatically repositioning yourself to block its movement.
 
-      If a creature has the ability to move through your space, it is unaffected by this additional movement cost.
+      If a creature has the ability to move through your space, or if you stop being able to see it and react to its movements, it is unaffected by this additional movement cost.
       If multiple creatures are able to block the same creature from moving, it must pay all additional movement costs, which generally keeps it stuck in place.
     \end{activeability}
 
@@ -623,7 +622,7 @@
       Desperate Exertion & Non-action       & Reroll an attack or check with a \plus2 bonus & \tdash                                         \\
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
-      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
+      Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}                          \\
       Jog                & Standard         & Triple your available movement                & \tdash                                         \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
@@ -684,19 +683,18 @@
   \end{activeability}
 
   \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
-    \abilitytags \abilitytag{Brawling}, \abilitytag{Swift}
+    \abilitytags \abilitytag{Brawling}
     \rankline
     % TODO: Awkward wording
     You can use this ability once per round while you are grappling another creature.
 
     Make a \glossterm{brawling attack} against each creature that you are grappling (see \pcref{Grappling}).
     This attack has no immediate effect.
-    The result of this roll determines how difficult it is for a creature to escape the grapple during the current round using the \textit{escape grapple} ability.
+    The result of this roll \glossterm{briefly} determines how difficult it is for a creature to escape the grapple using the \textit{escape grapple} ability.
     If you do not use this ability while you are in a grapple, creatures can easily escape the grapple with the \textit{escape grapple} ability.
   \end{activeability}
 
   \begin{activeability}{Ready Reaction}{Standard action}
-    \abilitytags \atSwift
     \rankline
     When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
     For example, you could declare your intent to make a melee strike against a creature that is not close to you, or cast a targeted spell on an enemy that you can't see behind a wall.
@@ -1287,10 +1285,8 @@
     Sustained abilities have the \abilitytag{Sustain} tag.
     They last as long as you take an action to sustain them each round.
     The type of action required is always specified in the ability's tag, such as ``Sustain (standard)'' for a standard action, or in the ability's description.
-    Sustaining an ability is a \atSwift effect.
 
-    At the start of each \glossterm{action phase}, the ability is dismissed unless you take the appropriate action to sustain the ability.
-    This happens before your normal turn, so you and your allies can't gain the benefits of a sustained ability without you sustaining it.
+    At the start of your turn, the ability is dismissed unless you take the appropriate action to sustain the ability.
 
     Taking an action to sustain an ability only allows you to sustain a single use of that ability.
     While you have a sustained ability active, you can't sustain that same ability again, so using the ability twice does not allow you to sustain two instances of it.
