@@ -14,7 +14,6 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{activeability}{Second Wind}{\glossterm{Minor action}}
-                    \abilitytags \atSwift
                     \abilitycost Two \glossterm{fatigue levels}, and you cannot use this ability again until you finish a \glossterm{short rest}.
                     \rankline
                     You regain half of your maximum \glossterm{hit points}.
@@ -55,11 +54,9 @@ pub fn battleforged_resilience<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             description: r"
                 \begin{activeability}{Resilient Blow}{Standard action}
-                    \abilitytags \atSwift (see text)
                     \rankline
                     Make a melee \glossterm{strike}.
-                    In addition, whenever you would lose hit points that are below your \glossterm{injury point} this round, you lose half that many hit points instead (minimum 1).
-                    This effect is \atSwift, but the strike is not.
+                    As a \glossterm{brief} effect, whenever you would lose hit points that are below your \glossterm{injury point}, you lose half that many hit points instead (minimum 1).
 
                     \rankline
                     \rank{4} You gain a \plus1 accuracy bonus with the strike.

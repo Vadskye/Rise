@@ -192,7 +192,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                 If you are not trained with that Perform skill, you take a \minus2 accuracy penalty with the bardic performance ability.
                 There are four types of performances: dance, instrumental, manipulation, and vocal.
                 \begin{raggeditemize}
-                    \item Dance: You use your body to dance or act. This limits your ability to defend yourself, giving you a \minus2 penalty to your Armor and Reflex defenses as a \atSwift effect. Dance performances have the \atVisual tag.
+                    \item Dance: You use your body to dance or act. This limits your ability to defend yourself, giving you a \minus2 penalty to your Armor and Reflex defenses. Dance performances have the \atVisual tag.
                     \item Instrumental: You use an instrument to make music. This requires at least one \glossterm{free hand} to use the instrument. Instrumental performances have the \atAuditory tag.
                     \item Manipulation: You use objects or gestures to perform, such as juggling or puppetry. This requires at least one \glossterm{free hand} to use the objects. Manipulation performances have the \atVisual tag.
                     \item Vocal: You use your voice to orate or sing. This prevents you from talking or using other abilities with \glossterm{verbal components}. Vocal performances have the \atAuditory tag.
@@ -235,10 +235,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     % Everyone fortified is 1 EA
                     \begin{magicalsustainability}{Cadenza of Courage}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline
                         All \glossterm{allies} who can see or hear your performance are \fortified.
-                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
                         \rank{3} This ability also affects you.
@@ -248,10 +247,9 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     % Everyone shielded is 1 EA
                     \begin{magicalsustainability}{Cantata of Caution}{Standard action}
-                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard), \abilitytag{Swift}
+                        \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline
                         All \glossterm{allies} who can see or hear your performance are \shielded.
-                        Since this ability has the \atSwift tag, it affects attacks against those allies during the current phase.
 
                         \rankline
                         \rank{3} This ability also affects you.
@@ -386,7 +384,6 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
 
                     % Healing bonus is normally +1dr. That's stronger on a non-scaling effect, but keep it because it's a class feature.
                     \begin{magicalactiveability}{Palliative Poem}{Standard action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
                         Choose one living \glossterm{ally} within \medrange.
                         The target regains 1d8+1d6 \glossterm{hit points} and increases its \glossterm{fatigue level} by one.
@@ -601,9 +598,8 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
                     \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This movement does not count against your \glossterm{available movement} for the round.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-                    This movement is never \abilitytag{Swift}.
-                    If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
