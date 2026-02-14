@@ -272,12 +272,11 @@ pub fn healer<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 % dr3 for touch range, +1dr for healing bonus, free defense bonus because class feature
                 \begin{magicalactiveability}{Divine Aid}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     Choose yourself or one adjacent living \glossterm{ally}.
                     The target regains \hprankfour.
-                    In addition, if the target is an \glossterm{ally}, it becomes \braced this round.
+                    In addition, if the target is an \glossterm{ally}, it becomes \glossterm{briefly} \braced.
 
                     \rankline
                     \rank{3} The bonus healing increases to 1d8 per 2 power.
