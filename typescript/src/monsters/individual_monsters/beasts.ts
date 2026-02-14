@@ -159,7 +159,7 @@ export function addBeasts(grimoire: Grimoire) {
         targeting: `
           Choose a \\smallarea radius within \\shortrange.
           Make an attack vs. Armor and Reflex against everything in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       tags: ['Cold'],

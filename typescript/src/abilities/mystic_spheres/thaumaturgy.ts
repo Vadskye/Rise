@@ -268,7 +268,7 @@ export const thaumaturgy: MysticSphere = {
 
       effect: `
         Whenever you cast a non-attunable spell, you can activate this effect as a \\glossterm{minor action}.
-        If you do, the spell \\glossterm{repeats} during your next action.
+        If you do, the spell \\glossterm{repeats} at the start of your next turn.
         After you enhance a spell in this way, this ability is \\glossterm{dismissed}.
       `,
       rank: 4,

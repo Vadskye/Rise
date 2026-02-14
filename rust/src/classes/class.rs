@@ -1570,7 +1570,7 @@ impl Class {
 
                     \subsubsection{Destiny Domain}
                         \domainability{Gift} You are immune to being \partiallyunaware.
-                        \domainability{Aspect} When you use the \ability{desperate exertion} ability, if your attack result still does not hit, the ability \glossterm{repeats} during your next action on each target that it did not hit.
+                        \domainability{Aspect} When you use the \ability{desperate exertion} ability, if your attack result still does not hit, the ability \glossterm{repeats} at the start of your next turn on each target that it did not hit.
                         \domainability{Essence} Your \glossterm{allies} within a \largearea radius \glossterm{emanation} from you also gain the benefit of this domain's aspect.
                         \domainability{Mastery} You gain a \plus1 bonus to your \glossterm{accuracy}.
 
@@ -1729,7 +1729,7 @@ impl Class {
                         If you choose this domain, you add the \sphere{electromancy} \glossterm{mystic sphere} to your list of divine mystic spheres (see \pcref{Spell Lists}).
 
                         \magicaldomainability{Gift} You are \impervious to \atElectricity attacks.
-                        \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability during your next action.
+                        \magicaldomainability{Essence} Whenever you use a damaging \atElectricity ability that affects an area, you \glossterm{repeat} that ability at the start of your next turn.
                         The repeat has the \atAuditory tag instead of the \atElectricity tag, deals half damage, and affects each \glossterm{enemy} adjacent to you instead of its normal targets.
                         \magicaldomainability{Aspect} The repeat from this domain's essence also triggers when you \glossterm{chain} to yourself with a damaging \atElectricity ability.
                         \magicaldomainability{Mastery} The repeat from this domain's essence instead affects all \glossterm{enemies} within a \smallarea radius from you.

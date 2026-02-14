@@ -259,7 +259,7 @@ export const photomancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius \\glossterm{emanation} around you.
-          During your next action, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
+          At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
         `,
       },
       rank: 5,
@@ -281,7 +281,7 @@ export const photomancy: MysticSphere = {
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
           \\glossterm{Brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
           Make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
-          During your next action, this effect \\glossterm{repeats} in the same area.
+          At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
       },
       rank: 3,

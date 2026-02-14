@@ -32,7 +32,7 @@ export const polymorph: MysticSphere = {
 
         Make a \\glossterm{mundane} melee \\glossterm{strike} using \\glossterm{natural weapons}.
         If the target takes damage and is living, it bleeds.
-        A bleeding creature takes damage equal to half your power during your next action.
+        A bleeding creature takes damage equal to half your power at the end of its next turn.
         This bleeding damage is doubled on a critical hit.
       `,
       rank: 3,
@@ -382,7 +382,7 @@ export const polymorph: MysticSphere = {
           \\damagerankone.
         `,
         injury: `
-          The target takes \\damagerankone during your next action.
+          The target takes \\damagerankone at the end of its next turn.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -557,7 +557,8 @@ export const polymorph: MysticSphere = {
           \\damagerankthree.
         `,
         injury: `
-          The target takes \\damagerankthree during your next action.
+          The target takes \\damagerankthree at the end of its next turn.
+          Any \\glossterm{extra damage} also applies to this delayed damage.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
