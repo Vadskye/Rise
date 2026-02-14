@@ -360,8 +360,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
                 If you do, you gain a \plus1 accuracy bonus with the spell this round.
-                However, you take a \minus2 penalty to all defenses this round.
-                This defense penalty is \abilitytag{Swift}.
+                However, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             ",
             modifiers: Some(vec![
                 Modifier::Accuracy(1),

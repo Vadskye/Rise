@@ -205,10 +205,9 @@ pub fn esoteric_warrior<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your speed.
+                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This movement does not count against your \glossterm{available movement} for the round.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
-                    This movement is never \abilitytag{Swift}.
-                    If your chosen maneuver is Swift, you can only walk after using the maneuver, not before.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
                 }
@@ -288,10 +287,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 After you use a \textit{ki manifestation}, you \glossterm{briefly} cannot use a \textit{ki manifestation} again.
                 {
                     \begin{magicalactiveability}{Abandon the Fragile Self}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You can negate one \glossterm{condition} that would be applied to you this phase.
-                        In exchange, you take a \minus2 penalty to \glossterm{defenses} this phase.
+                        In exchange, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses}.
 
                         \rankline
                         \rank{5} The defense penalty is reduced to \minus1.
@@ -388,20 +386,19 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Shelter from Falling Rain}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
                         You gain a \plus2 bonus to your defenses against ranged \glossterm{strikes}.
-                        However, you take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
+                        However, you \glossterm{briefly} take a \minus2 penalty to your defenses against melee \glossterm{strikes}.
 
                         \rankline
                         \rank{5} The bonus increases to \plus3.
                     \end{magicalactiveability}
 
+                    % TODO: Solve ready action failure chance cheat
                     \begin{magicalactiveability}{Step Between the Mystic Worlds}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
-                        All attacks against you have a 20\% \glossterm{failure chance} this round.
-                        However, your attacks also have a 20\% failure chance this round.
+                        All attacks against you \glossterm{briefly} have a 20\% \glossterm{failure chance}.
+                        However, your attacks also \glossterm{briefly} have a 20\% failure chance.
 
                         \rankline
                         \rank{5} The failure chance for attacks against you increases to 30\%.
@@ -416,10 +413,9 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                     \end{magicalactiveability}
 
                     \begin{magicalactiveability}{Surpass the Mortal Limits}{Free action}
-                        \abilitytags \abilitytag{Swift}
                         \rankline
-                        You can add your Willpower to all \glossterm{checks} you make this phase that are based on Strength, Dexterity, or Constitution.
-                        However, you take a \minus2 penalty to Strength, Dexterity, and Constitution checks during the next round.
+                        You can add your Willpower to all \glossterm{checks} you make this turn that are based on Strength, Dexterity, or Constitution.
+                        However, you \glossterm{briefly} take a \minus2 penalty to Strength, Dexterity, and Constitution checks.
 
                         \rankline
                         \rank{5} The penalty during the next round is removed.

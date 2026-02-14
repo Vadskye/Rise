@@ -241,12 +241,11 @@ pub fn covenant_keeper<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 Your connection to your soulkeeper deepens, allowing you to send a fragment of your soul through the link in exchange for aid.
                 \begin{magicalactiveability}{Exchange Soul Fragment}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     You regain \hprankthree.
                     In addition, you may remove a \glossterm{condition} affecting you.
-                    This effect \glossterm{repeats} at the end of the current round.
+                    This effect \glossterm{repeats} at the start of your next turn.
 
                     \rankline
                     \rank{4} The recovery increases to \hprankfour.

@@ -114,7 +114,6 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 \begin{magicalactiveability}{Essence Incarnate}{Standard action}
-                    \abilitytags \abilitytag{Swift}
                     \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
                     \rankline
                     You gain a benefit depending on whether you are tethered or untethered:

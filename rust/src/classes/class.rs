@@ -1603,7 +1603,6 @@ impl Class {
                         \domainability{Aspect} You gain a \plus1 accuracy bonus with abilities that inflict \glossterm{conditions}.
                         \magicaldomainability{Essence} You gain the \ability{blood sacrifice} ability.
                         \begin{magicalactiveability}{Blood Sacrifice}{Standard action}
-                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             Whenever you would lose \glossterm{hit points} while you are adjacent to that ally, it loses half of those hit points in place of you.
@@ -1625,7 +1624,6 @@ impl Class {
                         \domainability{Gift} You are immune to \atCurse attacks and being \dominated.
                         \magicaldomainability{Aspect} You gain the \ability{sacrificial bond} ability.
                         \begin{magicalactiveability}{Sacrificial Bond}{Standard action}
-                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} within \medrange.
                             Whenever that ally would gain a \glossterm{vital round} while they are within a \largearea radius \glossterm{emanation} from you, you gain that \glossterm{vital wound} instead.
@@ -1700,7 +1698,6 @@ impl Class {
                             You must be proficient with light armor to become proficient with medium armor, and you must be proficient with medium armor to become proficient with heavy armor.
                         \magicaldomainability{Aspect} You gain the \ability{divine protection} ability.
                         \begin{magicalactiveability}{Divine Protection}{Standard action}
-                            \abilitytags \abilitytag{Swift}
                             \rankline
                             Choose an \glossterm{ally} you \glossterm{touch}.
                             It gains a \plus1 \glossterm{enhancement bonus} to all defenses while it is adjacent to you.
