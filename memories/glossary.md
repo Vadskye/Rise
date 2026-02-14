@@ -11,7 +11,6 @@ The game uses a d10-based system with clear distinctions between different types
     *   **Attacks**: Used in combat. A d10 is rolled and an **Accuracy** bonus is added to beat one of five **Defenses** (Armor, Brawn, Fortitude, Reflex, Mental).
 *   **Degrees of Success**: Rolls are not simple pass/fail.
     *   **Critical Hit/Success**: Beating the target number by 10 or more results in a critical effect. For damaging attacks, this doubles damage dice and flat modifiers.
-    *   **Glancing Blow**: Missing an attack roll by 2 or less results in a "glance," which still deals half damage. This makes combat more consistent and reduces the frustration of near misses.
 *   **Power Stat**: Abilities scale off a **Power** statistic, which is divided into two types, creating a clear martial/magical divide:
     *   **Mundane Power**: Derived from Strength. Used for non-magical abilities.
     *   **Magical Power**: Derived from Willpower. Used for spells and magical effects.
@@ -50,6 +49,5 @@ Combat appears to be tactical, with an emphasis on positioning, resource managem
 My edit of the glossary revealed several areas where the rules text was unclear or contradictory. This provides insight into areas that may require careful attention in the future.
 
 *   **Circular Definitions**: The original definitions for `area`, `melee`, and `ranged` were circular. This suggests a need for precise, independent definitions for core terms.
-*   **Rule Interactions**: The contradiction between `damaging hit` and `glancing blow` highlights the importance of ensuring that interlocking rules are consistent with each other.
 *   **"Attended" vs. "Unattended"**: The rules for what constitutes an "unattended" item were contradictory, especially concerning items held by allies. The apparent design intent is that allies' equipment is easier to affect with abilities, which is a significant rule with tactical implications.
 *   **Glossary Philosophy**: Many terms pointed to other sections rather than providing a concise definition. A glossary should be a quick reference, defining terms succinctly.

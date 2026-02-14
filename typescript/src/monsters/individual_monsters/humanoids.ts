@@ -356,7 +356,7 @@ function addCultists(grimoire: Grimoire) {
             name: 'Firebomb',
             attack: {
               hit: '\\damagerankthreelow.',
-              missGlance: true,
+              halfOnMiss: true,
               targeting: `
                 Make an attack vs. Reflex against everything in a \\smallarea radius within \\shortrange.
               `,

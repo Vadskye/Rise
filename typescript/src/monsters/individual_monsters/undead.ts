@@ -53,7 +53,7 @@ export function addUndead(grimoire: Grimoire) {
       name: 'Trample',
       attack: {
         hit: '\\damagerankthree.',
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Move up to your speed in a straight line.
           Then, make a \\glossterm{brawling attack} vs. Brawn against each creature whose space you moved through in this way.

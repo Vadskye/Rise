@@ -118,7 +118,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
         `,
@@ -133,7 +133,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\hugearealong, 15 ft. wide line from you.
         `,
@@ -257,7 +257,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `
           \\damagerankone.
         `,
-        missGlance: false,
+        halfOnMiss: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} once.
@@ -277,7 +277,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: false,
+        halfOnMiss: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} twice.
@@ -294,7 +294,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // short range for one chain
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
-        missGlance: false,
+        halfOnMiss: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} once.
@@ -311,7 +311,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // +1r/-1dr for metallic effects
       attack: {
         hit: `\\damagerankthree.`,
-        missGlance: false,
+        halfOnMiss: false,
         targeting: `
           Make an attack vs. Fortitude against something within \\shortrange.
           This attack \\glossterm{chains} twice.
@@ -394,7 +394,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
           If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
@@ -441,7 +441,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
 
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
@@ -475,7 +475,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // TODO: clean up wording
       attack: {
         hit: `\\damagerankzero.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a Medium size ball of lightning in one space within \\medrange.
           The ball of lightning does not occupy space or block movement, and can move through creatures (but not solid objects) freely.
@@ -485,7 +485,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
           At the end of each round, if the ball is more than 120 feet from you, it disappears.
           You can recreate it in an unoccupied space within \\medrange as a minor action.
         `,
-        // missGlance: true,
+        // halfOnMiss: true,
       },
       rank: 4,
       roles: ['attune'],
@@ -558,7 +558,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           Both your departure and arrival with this spell sound like a clap of thunder.
@@ -579,7 +579,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       // need to drop to dr3.
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a short-lived duplicate of yourself made of electricity in a space adjacent to you.
           It lasts as long as you sustain this spell.
@@ -601,7 +601,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\longrange.
           Both your departure and arrival with this spell sound like a clap of thunder.

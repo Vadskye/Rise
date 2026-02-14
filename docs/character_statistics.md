@@ -44,8 +44,6 @@ It's useful as a reminder of what kinds of bonuses can be granted by classes and
 * Explode on extra values
 * Extra damage
 * Fatigue tolerance
-* Glancing blow range
-* Glancing blows deal full damage
 * Ignore cover / concealment / miss chances
 * Insight point / additional ability known
 * Longshot penalty

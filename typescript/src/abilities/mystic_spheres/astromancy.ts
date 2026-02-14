@@ -303,7 +303,7 @@ export const astromancy: MysticSphere = {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\smallarea radius from you.
         `,
@@ -322,7 +322,7 @@ export const astromancy: MysticSphere = {
         hit: `
           \\damageranksix.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex and Mental against all \\glossterm{enemies} within a \\medarea radius from you.
         `,
@@ -344,7 +344,7 @@ export const astromancy: MysticSphere = {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a chaotic planar rupture in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all creatures in the area.
@@ -364,7 +364,7 @@ export const astromancy: MysticSphere = {
         hit: `
           \\damagerankfour.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a chaotic planar rupture at a location within \\longrange.
           Its area increases over time.

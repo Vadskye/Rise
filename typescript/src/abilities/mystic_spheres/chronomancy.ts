@@ -507,7 +507,7 @@ export const chronomancy: MysticSphere = {
       name: 'Accelerated Evasion',
 
       effect: `
-        You take no damage from \\glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
+        You take no damage when an area ability attacks and misses your Armor or Reflex defense.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 2,
@@ -519,7 +519,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Accelerated Evasion',
 
       effect: `
-        You take no damage from \\glossterm{glancing blows} or misses caused by abilities that affect an area.
+        You take no damage when an area ability attacks and misses any of your defenses.
         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
       `,
       rank: 5,

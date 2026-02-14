@@ -256,7 +256,7 @@ export const photomancy: MysticSphere = {
         injury: `
           The target suffers consequences as if it had been struck by a beam of natural sunlight, which can be deadly for some creatures.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius \\glossterm{emanation} around you.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
@@ -276,7 +276,7 @@ export const photomancy: MysticSphere = {
         hit: `
           \\damageranktwolow.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
           \\glossterm{Brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
@@ -310,7 +310,7 @@ export const photomancy: MysticSphere = {
         hit: `
           \\damagerankthreelow.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Choose up to five \\tinyarea radius cylinder-shaped areas within \\medrange.
           Each cylinder is 30 feet high.
@@ -507,7 +507,7 @@ export const photomancy: MysticSphere = {
         hit: `
           \\damagerankfourlow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} in a \\medarea radius within \\longrange.
         `,
@@ -525,7 +525,7 @@ export const photomancy: MysticSphere = {
       attack: {
         // TODO: dr2 or dr3?
         hit: `\\damagerankthreelow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\shortrange.
           A blast of \\glossterm{brilliant illumination} fills a 60 foot radius around both your starting location and your ending location.
@@ -543,7 +543,7 @@ export const photomancy: MysticSphere = {
       cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankfivelow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You teleport into an unoccupied destination on a stable surface within \\longrange.
           In addition, make an attack vs. Reflex against everything in a 5 ft.\\ wide line between your starting location and your ending location.
@@ -605,7 +605,7 @@ export const photomancy: MysticSphere = {
 
       attack: {
         hit: `\\damageranktwolow.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against everything in a \\largearealong, 5 ft. wide line from you.
           You can make the line bend at a 90 degree angle once during its length.
@@ -661,7 +661,7 @@ export const photomancy: MysticSphere = {
       // TODO: actual EA calcs
       attack: {
         hit: `The target is \\glossterm{briefly} \\dazzled.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You are \\braced this round.
           This is a \\atSwift effect, so it protects you from attacks during the current phase.
@@ -681,7 +681,7 @@ export const photomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You are \\braced this round.
           This is a \\atSwift effect, so it protects you from attacks during the current phase.

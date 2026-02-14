@@ -498,7 +498,7 @@ export const polymorph: MysticSphere = {
         injury: `
           The target becomes \\vulnerable to all damage as a \\glossterm{condition}.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Fortitude and Reflex against all creatures in a \\smallarea radius within \\medrange.
         `,

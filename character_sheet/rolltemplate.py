@@ -133,9 +133,5 @@ def rolltemplate_css():
 .sheet-rolltemplate-custom .sheet-content .sheet-value > a:nth-child(2)  {
     background-color: #379c12;
 }
-/* Glance button color */
-.sheet-rolltemplate-custom .sheet-content .sheet-value > a:nth-child(3)  {
-    background-color: #B31515;
-}
 """
     return jakob_default + rise_custom

@@ -270,7 +270,7 @@ export const vivimancy: MysticSphere = {
         injury: `
           \\damagerankfour again.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
@@ -292,7 +292,7 @@ export const vivimancy: MysticSphere = {
         injury: `
           \\damagerankseven again.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You inscribe a circle in a \\medarea radius \\glossterm{zone} from your location.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living creatures in the area.
@@ -430,7 +430,7 @@ export const vivimancy: MysticSphere = {
       // r1 area is normally drX. Add +1dr due to self damage.
       attack: {
         hit: `\\damagerankfour.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You must be alive to cast this spell.
 
@@ -451,7 +451,7 @@ export const vivimancy: MysticSphere = {
       // +1dr due to self damage
       attack: {
         hit: `\\damagerankseven.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You must be alive to cast this spell.
 
@@ -516,7 +516,7 @@ export const vivimancy: MysticSphere = {
         hit: `
           \\damagerankthree.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, your life energy begins to surge.
           During your next action, make a \\glossterm{reactive attack} vs. Fortitude against all living \\glossterm{enemies} within a \\smallarea radius from you.
@@ -548,7 +548,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damagerankthree.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Choose one Small or larger \\glossterm{unattended} \\glossterm{corpse} within \\shortrange.
           Make an attack vs. Reflex against everything within a \\tinyarea radius from the corpse.
@@ -676,7 +676,7 @@ export const vivimancy: MysticSphere = {
       cost: BARRIER_COOLDOWN,
       attack: {
         hit: `\\damagerankone.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a \\medarealong \\glossterm{wall} within \\medrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any living creature sharing space with it.

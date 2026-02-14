@@ -417,7 +417,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damagerankfour.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a \\smallarea radius within \\shortrange.
           A dust devil begins forming in that area.
@@ -443,7 +443,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a \\medarea radius within \\medrange.
           A tornado begins forming in that area.
@@ -467,7 +467,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damageranksix.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           When you cast this spell, you choose a \\largearea radius within \\medrange.
           A tornado begins forming in that area.
@@ -495,7 +495,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
           Its final position should be the same distance from you as its starting position.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\medarea radius from you.
         `,
@@ -514,7 +514,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
           In addition, the target is \\glossterm{pushed} 15 feet clockwise around you.
           Its final position should be the same distance from you as its starting position.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -640,7 +640,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
         `,
@@ -657,7 +657,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\medarea cone from you.
         `,
@@ -675,7 +675,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damageranksix.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against everything in a \\largearea cone from you.
         `,
@@ -712,7 +712,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\shielded.
@@ -731,7 +731,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         hit: `
           \\damagerankfive.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
           Then, you are \\glossterm{briefly} \\shielded.

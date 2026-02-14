@@ -64,15 +64,15 @@ function assertDoesNotUseEachTarget(attack: ActiveAbilityAttack, effectName: str
   }
 }
 
-function assertHasCorrectGlance(attack: ActiveAbilityAttack, effectName: string) {
+function assertHasCorrectHalfDamage(attack: ActiveAbilityAttack, effectName: string) {
   const isArea = /(\bwall\b|against all|ach target|verything|and all)/.test(attack.targeting);
   const dealsDamage = /damagerank/.test(attack.hit);
-  // We check for undefined to ignore cases where we explicitly defined missGlance to be
+  // We check for undefined to ignore cases where we explicitly defined halfOnMiss to be
   // false, which probably means the omission is intentional.
-  if (isArea && dealsDamage && attack.missGlance === undefined && attack.miss === undefined) {
-    console.warn(`Attack from ${effectName} should probably have missGlance = true`);
-  } else if (attack.missGlance && dealsDamage && !isArea) {
-    console.warn(`Attack from ${effectName} should probably have missGlance = false`);
+  if (isArea && dealsDamage && attack.halfOnMiss === undefined && attack.miss === undefined) {
+    console.warn(`Attack from ${effectName} should probably have halfOnMiss = true`);
+  } else if (attack.halfOnMiss && dealsDamage && !isArea) {
+    console.warn(`Attack from ${effectName} should probably have halfOnMiss = false`);
   }
 }
 
@@ -95,7 +95,7 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
       assertEndsWithPeriod(spell.attack.hit, spell.name);
       assertEndsWithPeriod(spell.attack.injury, spell.name);
       assertEndsWithPeriod(spell.attack.crit, spell.name);
-      assertHasCorrectGlance(spell.attack, spell.name);
+      assertHasCorrectHalfDamage(spell.attack, spell.name);
       assertHasCorrectCrit(spell.attack, spell.name);
       assertDoesNotUseEachTarget(spell.attack, spell.name);
       // The terminal % prevents a double-space in weird edge cases
@@ -105,7 +105,7 @@ export function spellEffect(spell: ActiveAbility | Ritual): string | null {
         \\hit ${spell.attack.hit.trim()}
         ${spell.attack.injury ? `\\injury ${spell.attack.injury.trim()}` : ''}
         ${spell.attack.crit ? `\\crit ${spell.attack.crit.trim()}` : ''}
-        ${spell.attack.missGlance ? '\\miss Half damage.' : ''}
+        ${spell.attack.halfOnMiss ? '\\miss Half damage.' : ''}
         ${spell.attack.miss ? `\\miss ${spell.attack.miss}` : ''}
       `;
     } else if (spell.effect) {

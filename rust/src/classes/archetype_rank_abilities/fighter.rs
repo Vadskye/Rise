@@ -208,7 +208,7 @@ pub fn equipment_training<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain an additional special ability based on the usage class of your body armor.
                 \begin{raggeditemize}
-                    \item Light or unarmored: You take no damage from \glossterm{glancing blows} or misses caused by abilities that affect an area and attack your Armor or Reflex defense.
+                    \item Light or unarmored: You take no damage when an area ability attacks and misses your Armor or Reflex defense.
                         This does not protect you from any non-damaging effects of those abilities, or from abilities that affect multiple specific targets without affecting an area.
                     \item Medium: You gain a \plus2 bonus to your Brawn, Fortitude, and Reflex defenses, up to a maximum equal to your Armor defense.
                     \item Heavy: You double your armor's \glossterm{durability} bonus.

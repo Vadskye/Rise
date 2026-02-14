@@ -125,7 +125,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           \\damagerankone.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against all creatures within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
@@ -144,7 +144,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           \\damagerankfour.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against all creatures within a \\smallarea radius from you.
           You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
@@ -163,7 +163,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           \\damageranksix.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           Make an attack vs. Armor against all \\glossterm{enemies} within a \\medarea radius from you.
           You gain a +2 accuracy bonus against each target that is in \\glossterm{undergrowth}.
@@ -320,7 +320,7 @@ export const verdamancy: MysticSphere = {
         hit: `
           \\damageranktwo.
         `,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           You create a patch of growing fruit in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           The patch becomes \\glossterm{light undergrowth} if there was no undergrowth there, and any existing light undergrowth becomes \\glossterm{heavy undergrowth}.
@@ -410,7 +410,7 @@ export const verdamancy: MysticSphere = {
       // penalty for the weird effect.
       attack: {
         hit: `\\damageranktwo.`,
-        missGlance: true,
+        halfOnMiss: true,
         targeting: `
           % Does "seed structure" make sense?
           You transform up to three \\glossterm{unattended} acorns or similar seed structures you \\glossterm{touch} into small bombs.
@@ -458,7 +458,7 @@ export const verdamancy: MysticSphere = {
           Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
           You can only make this attack against a given target once per \\glossterm{phase}.
         `,
-        missGlance: true,
+        halfOnMiss: true,
       },
 
       rank: 1,
