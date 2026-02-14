@@ -56,8 +56,8 @@ pub fn naiad<'a>() -> Vec<RankAbility<'a>> {
                     In addition, when you use the \ability{desperate exertion} ability to affect an attack, the target is considered \partiallyunaware of that attack.
                     \itemhead{Lake} You gain a \plus3 bonus to your \glossterm{durability}.
                     \itemhead{River or stream} You gain a \plus2 bonus to your Reflex defense.
-                    In addition, when you \ability{sprint} downhill, you gain a \plus10 foot bonus to your \glossterm{speed}.
-                    This bonus is doubled as normal by the sprint ability.
+                    In addition, when you \ability{sprint} or \ability{jog} downhill, you gain a \plus10 foot bonus to your \glossterm{speed}.
+                    This bonus is multiplied as normal by those sprint abilities.
                     \itemhead{Underground reservoir} You gain \sense{darkvision} with a 60 foot range, allowing you to see in complete darkness (see \pcref{Darkvision}).
                     In addition, you gain a \plus2 \glossterm{enhancement bonus} to the Deception and Stealth skills.
                 \end{raggeditemize}

@@ -222,22 +222,23 @@
 
 
 % TODO: Clean up this wording, this whole section is awkward with the movement -> move action change
-\section{Movement and Positioning}\label{Movement and Positioning}
+\section{Basic Movement}\label{Basic Movement}
   This section describes how creatures move and position themselves in combat.
 
   \subsection{Movement Speed}\label{Movement Speed}
-    If an ability references your ``speed'' without additional details, it is referring to your movement speed.
-    Your total movement speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
-    Some abilities can modify your movement speed.
-    At the start of each round, your available movement speed becomes equal to your total movement speed.
-    Any movement you make during that round subtracts from your available movement speed until it reaches 0.
+    Your \glossterm{speed} is how far you can move during a typical round.
+    Your speed is normally equal to your \glossterm{base speed}, which is derived from your size (see \pcref{Size in Combat}).
+    Some abilities can modify your speed.
+    At the start of each round, your available movement becomes equal to your speed.
+    Any movement you make during that round subtracts from your available movement until it reaches 0.
+    Some abilities can increase your available movement, including above your speed.
 
     Almost all creatures have a walking movement mode, which represents their ability to move across mostly flat terrain.
     For details about other forms of movement, such as flying and swimming, see \pcref{Movement Modes}.
 
-    \subsubsection{Shared Movement Speed Limits}\label{Shared Movement Speed Limits}
-      Any non-forced movement that moves you subtracts from your available movement speed, even if you aren't the one causing the movement.
-      If your available movement speed reaches zero, you can't be moved any farther by non-forced movement, even if you're being carried by an ally.
+    \subsubsection{Shared Movement Limits}\label{Shared Movement Limits}
+      Any non-forced movement that moves you subtracts from your available movement, even if you aren't the one causing the movement.
+      If your available movement reaches zero, you can't be moved any farther by non-forced movement, even if you're being carried by an ally.
       For example, you can't move your full speed onto a mount and then have that mount move with you in the same round.
       You can still be moved by \glossterm{push}, \glossterm{fling}, and teleportation effects.
 
@@ -252,8 +253,8 @@
       When you use this ability, choose a creature you can see.
       Until your next turn, the next time the target attempts to move out of a space adjacent to you, you attempt to block its movement.
       When you do, make an opposed \glossterm{initiative} check against it.
-      If you beat it on the initiative check, it must spend additional movement equal to your remaining speed in order to move from its space.
-      This consumes all of your remaining speed.
+      If you beat it on the initiative check, it must spend additional movement equal to your available movement in order to move from its space.
+      This consumes all of your available movement.
       If it cannot, it stops moving.
       This represents you automatically repositioning yourself to block its movement.
 
@@ -268,7 +269,7 @@
       The \glossterm{difficulty value} is based on the surface (see \pcref{Climb}).
       Success means that you move along the surface to a location.
 
-      % TODO: a slow climb speed technically subtracts more from your speed than not having a climb speed?
+      % TODO: a slow climb speed technically subtracts more from your available movement than not having a climb speed?
       If you have a climb speed, you use that to determine the maximum distance you can move with this ability.
       Otherwise, you move a maximum distance equal to the vertical size of your space (see \pcref{Size Categories}).
       Critical success means you can use twice the vertical size of your space instead.
@@ -278,7 +279,7 @@
     \begin{activeability}{Hustle}{Move action}
       \rankline
       Choose a path that you want to travel.
-      You travel that path, up to the limit of your relevant movement speed.
+      You travel that path, up to the limit of your available movement.
     \end{activeability}
 
     \begin{activeability}{Swim Forward}{Move action}
@@ -292,12 +293,55 @@
       Critical success means the maximum distance increases to half of your base speed.
     \end{activeability}
 
+  \subsection{Measuring Movement}
+
+    For simplicity, all movement in combat is measured in five-foot increments.
+    While it is possible to be more precise than that, it's generally not worth the complexity.
+
+    \parhead{Squares}\nonsectionlabel{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
+    A single square represents the area occupied by a single humanoid creature in combat.
+    Sometimes, movement and distance are represented by the number of squares travelled.
+    A 30-ft.\ movement is the same thing as moving six squares.
+
+    \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counts as ten feet of movement.
+    The third costs five feet, the fourth costs ten feet, and so on.
+    You can move diagonally past corners and enemies.
+
+  \subsection{Movement Impediments}
+
+    \parhead{Difficult Terrain}\nonsectionlabel{Difficult Terrain}
+    Some terrain is hard to move through, like thick bushes or a swamp.
+    If a square is \glossterm{difficult terrain}, it increases the movement cost required to move out of the square by 5 feet.
+
+    If a square is considered difficult terrain for multiple reasons, the cost increases stack.
+    For example, a square in a swamp that also has thick bushes blocking your passage would cost 10 extra feet of movement to leave.
+
+    Exceptionally large creatures can ignore ordinary difficult terrain.
+    In general, a Huge or larger creature does not treat \glossterm{heavy undergrowth} or shallow water as difficult terrain.
+    However, at the GM's discretion, they may still treat small trees or deeper water as difficult terrain.
+
+    \parhead{Obstacles}\nonsectionlabel{Obstacles}
+    An obstacle is anything that gets in your way.
+    Enemies and large solid objects like walls completely block your movement, preventing you from entering the space they occupy.
+    Some abilities can allow you to move through spaces occupied by enemies, which means you do not treat them as obstacles.
+
+    \parhead{Undergrowth}\nonsectionlabel{Undergrowth} Vines, roots, bushes, and similar plants can obstruct sight and impede movement.
+    There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
+
+    \subparhead{Light Undergrowth}\nonsectionlabel{Light Undergrowth}
+    Light undergrowth provides \glossterm{concealment}.
+
+    \subparhead{Heavy Undergrowth}\nonsectionlabel{Heavy Undergrowth}
+    Heavy undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}.
+
+\section{Advanced Movement}
+
   \subsection{Movement Modes}\label{Movement Modes}
     A \glossterm{movement mode} is a method of moving from one location to another.
     The most common movement mode is walking, which allows creatures to move across the ground.
     In addition, some abilities grant creatures the ability to move in unusual ways.
     These forms of movement are described here.
-    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Movement Speed}).
+    Each of your movement modes has an associated \glossterm{speed category} (see \pcref{Speed Categories}).
 
     \parhead{Burrowing}
     A creature with a \glossterm{burrow speed} can move through solid dirt and loose earth in any direction, even vertically.
@@ -348,7 +392,7 @@
 
   \subsection{Combining Movement Modes}
     You can move using multiple different movement modes in the same turn in any order.
-    Each distance moved subtracts from your available speed during that turn, using the appropriate modifiers for fast or slow movement modes.
+    Each distance moved subtracts from your available movement during that turn, using the appropriate modifiers for fast or slow movement modes.
 
     For example, assume you have a 40 foot base speed, an average walk speed, and a slow swim speed.
     If you swim 10 feet, that would cost 20 feet of movement.
@@ -363,7 +407,7 @@
     % Human with 2 strength jumps 15 feet.
     % Human with 4 strength jumps 25 feet, which is almost a world record.
     A jump's maximum horizontal distance is normally equal to a quarter of your \glossterm{base speed} plus 5 feet per 2 Strength.
-    Modifiers to your available speed, such as the \ability{sprint} ability, do not affect your jumping distance.
+    Modifiers to your available movement, such as the \ability{sprint} ability, do not affect your jumping distance.
     If you are trained with the Jump skill, the distance you add from your Strength is instead equal to 5 feet per Strength, to a minimum of \plus5 feet.
     A jump's maximum vertical height is equal to half your maximum horizontal distance.
     Note that if you jump 20 feet into the air or more, you may take falling damage when you land (see \pcref{Falling Damage}).
@@ -373,53 +417,12 @@
     This allows you to jump using a \glossterm{move action} and then take a \glossterm{standard action} while midair.
     Unlike normal for being \glossterm{midair}, you do not suffer penalties to your Armor and Reflex defense for being partway through a jump that you initiated.
 
-  \subsection{Jumping Speed Limits}
-    Movement while jumping subtracts from your remaining \glossterm{speed} just like any other movement.
-    This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
-    This limits both your maximum horizontal distance and your maximum vertical height.
-    For example, if your speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
-    If your jump distance is extremely high and your speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
-
-  \subsection{Measuring Movement}
-
-    For simplicity, all movement in combat is measured in five-foot increments.
-    While it is possible to be more precise than that, it's generally not worth the complexity.
-
-    \parhead{Squares}\nonsectionlabel{Squares} Area is commonly measured in 5-ft.\ by 5-ft.\ spaces called \glossterm{squares}.
-    A single square represents the area occupied by a single humanoid creature in combat.
-    Sometimes, movement and distance are represented by the number of squares travelled.
-    A 30-ft.\ movement is the same thing as moving six squares.
-
-    \parhead{Diagonals}\nonsectionlabel{Diagonals} When measuring distance, the first diagonal counts as five feet of movement, and the second counts as ten feet of movement.
-    The third costs five feet, the fourth costs ten feet, and so on.
-    You can move diagonally past corners and enemies.
-
-  \subsection{Movement Impediments}
-
-    \parhead{Difficult Terrain}\nonsectionlabel{Difficult Terrain}
-    Some terrain is hard to move through, like thick bushes or a swamp.
-    If a square is \glossterm{difficult terrain}, it increases the movement cost required to move out of the square by 5 feet.
-
-    If a square is considered difficult terrain for multiple reasons, the cost increases stack.
-    For example, a square in a swamp that also has thick bushes blocking your passage would cost 10 extra feet of movement to leave.
-
-    Exceptionally large creatures can ignore ordinary difficult terrain.
-    In general, a Huge or larger creature does not treat \glossterm{heavy undergrowth} or shallow water as difficult terrain.
-    However, at the GM's discretion, they may still treat small trees or deeper water as difficult terrain.
-
-    \parhead{Obstacles}\nonsectionlabel{Obstacles}
-    An obstacle is anything that gets in your way.
-    Enemies and large solid objects like walls completely block your movement, preventing you from entering the space they occupy.
-    Some abilities can allow you to move through spaces occupied by enemies, which means you do not treat them as obstacles.
-
-    \parhead{Undergrowth}\nonsectionlabel{Undergrowth} Vines, roots, bushes, and similar plants can obstruct sight and impede movement.
-    There are two kinds of undergrowth: \glossterm{light undergrowth} and \glossterm{heavy undergrowth}.
-
-    \subparhead{Light Undergrowth}\nonsectionlabel{Light Undergrowth}
-    Light undergrowth provides \glossterm{concealment}.
-
-    \subparhead{Heavy Undergrowth}\nonsectionlabel{Heavy Undergrowth}
-    Heavy undergrowth provides \glossterm{concealment} and is \glossterm{difficult terrain}, which increases the movement cost required to move out of each square by 5 feet.
+    \subsubsection{Jumping Speed Limits}
+      Movement while jumping subtracts from your remaining \glossterm{speed} just like any other movement.
+      This distance is measured only for the farthest extent that you travel from your starting location, not for a round trip or for the entire distance travelled along the arc of your jump.
+      This limits both your maximum horizontal distance and your maximum vertical height.
+      For example, if your speed is thirty feet and you start by walking ten feet, you can jump no more than twenty feet forward, or fifteen feet forward and five feet vertically, and so on.
+      If your jump distance is extremely high and your speed is low, you may need to use the \ability{sprint} ability to make use of your full jumping potential (see \pcref{Sprint}).
 
   \subsection{Squeezing}\label{Squeezing}
     In some cases, you may have to squeeze into or through an area that isn't as wide as the space you take up.
@@ -621,11 +624,11 @@
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}, \abilitytag{Swift}      \\
-      Jog                & Standard         & Triple your available speed                   & \tdash                                         \\
+      Jog                & Standard         & Triple your available movement                & \tdash                                         \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
-      Sprint             & Free             & Double your available speed                   & \tdash                                         \\
+      Sprint             & Free             & Double your available movement                & \tdash                                         \\
       Total Defense      & Standard         & Gain \plus2 to all defenses                   & \tdash                                         \\
       Throw              & Standard         & Throw a held object                           & \tdash                                         \\
       Trip               & Standard         & Trip a foe                                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
@@ -677,7 +680,7 @@
 
   \begin{activeability}{Jog}{Standard action}
     \rankline
-    You gain a bonus to your \glossterm{available speed} this round equal to twice your speed.
+    You gain a bonus to your \glossterm{available movement} this round equal to twice your movement speed.
   \end{activeability}
 
   \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
@@ -739,7 +742,7 @@
   \begin{activeability}{Sprint}{Free action}
     \abilitycost One \glossterm{fatigue level}. You can only use this ability once per turn.
     \rankline
-    You gain a bonus to your \glossterm{available speed} this round equal to your speed.
+    You gain a bonus to your \glossterm{available movement} this round equal to your movement speed.
   \end{activeability}
 
   % Is this a fling effect? What happens if you throw someone into a wall?
