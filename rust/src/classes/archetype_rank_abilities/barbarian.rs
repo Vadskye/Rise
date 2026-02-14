@@ -119,7 +119,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
                 \begin{sustainability}{Rage}{\glossterm{Free action}}
-                    \abilitytags \atEmotion, \atSustain (free), \atSwift
+                    \abilitytags \atEmotion, \atSustain (free)
                     \abilitycost One \glossterm{fatigue level}.
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
@@ -128,8 +128,6 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
                     \end{raggeditemize}
-
-                    Because this ability has the \atSwift tag, the defense penalties apply to attacks against you during the current phase.
                 \end{sustainability}
             ",
             modifiers: Some(vec![
@@ -251,9 +249,9 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             description: r"
                 You gain your choice of one of the following benefits:
                 \begin{raggeditemize}
-                    \item Climb: A \glossterm{climb speed} 10 feet slower than your \glossterm{base speed}.
+                    \item Climb: A slow \glossterm{climb speed}.
                     \item Jump: A \plus10 foot bonus to your maximum horizontal jump distance.
-                    \item Swim: A \glossterm{swim speed} 10 feet slower than your \glossterm{base speed}.
+                    \item Swim: A slow \glossterm{swim speed}.
                 \end{raggeditemize}
 
                 You can invest up to two additional \glossterm{insight points} into this ability.
@@ -322,7 +320,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \ability{sprint} ability during the \glossterm{movement phase} without increasing your \glossterm{fatigue level}.
+                You can use the \ability{sprint} ability as a \glossterm{move action} without increasing your \glossterm{fatigue level}.
                 After using this ability, you \glossterm{briefly} cannot use it again.
             ",
             modifiers: None,

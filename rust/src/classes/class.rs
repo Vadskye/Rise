@@ -1751,7 +1751,7 @@ impl Class {
 
                         \domainability{Gift} You gain a \plus1 bonus to the Knowledge (nature) and Survival skills.
                         \magicaldomainability{Aspect} You can ignore \glossterm{difficult terrain} from inanimate natural sources, such as \glossterm{heavy undergrowth}.
-                        \magicaldomainability{Essence} Once per phase, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
+                        \magicaldomainability{Essence} Once during your turn, you can teleport horizontally instead of moving using your \glossterm{walk speed}.
                             Teleporting a given distance costs movement equal to twice that distance.
                             If this teleportation fails for any reason, you still expend that movement.
                         \magicaldomainability{Mastery} Teleporting a given distance only costs movement equal to that distance.

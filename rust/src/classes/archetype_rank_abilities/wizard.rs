@@ -504,7 +504,6 @@ pub fn school_specialist<'a>() -> Vec<RankAbility<'a>> {
                 \subcf{Transmutation} The \sphere{chronomancy}, \sphere{polymorph}, and \sphere{terramancy} mystic spheres.
                     If you specialize in this school, you gain a \plus2 bonus to your Brawn, Fortitude, Reflex, or Mental defense.
                     You can change which defense this bonus applies to as a \glossterm{minor action}.
-                    This ability has the \abilitytag{Swift} tag, so it protects you from attacks during the current phase.
             ",
             // Assume evocation
             modifiers: Some(vec![Modifier::Power(2)]),
