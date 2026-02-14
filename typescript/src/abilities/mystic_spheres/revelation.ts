@@ -19,7 +19,6 @@ export const revelation: MysticSphere = {
         4: `The bonus increases to +5.`,
         6: `The bonus increases to +6.`,
       },
-      tags: ['Swift'],
     },
   ],
   spells: [
@@ -52,21 +51,9 @@ export const revelation: MysticSphere = {
       name: 'Foresee Safety',
 
       effect: `
-        You become \\glossterm{briefly} \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        At the end of your next turn, you become \\glossterm{briefly} \\braced.
       `,
       rank: 1,
-      roles: ['turtle'],
-      tags: ['Subtle', 'Swift'],
-    },
-
-    {
-      name: 'Foresee Distant Safety',
-
-      effect: `
-        At the start of the next round, you become \\glossterm{briefly} \\braced.
-      `,
-      rank: 5,
       roles: ['turtle'],
       tags: ['Subtle'],
     },
@@ -75,7 +62,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Victory',
 
       effect: `
-        You become \\glossterm{briefly} \\primed.
+        At the end of your next turn, you become \\glossterm{briefly} \\focused.
       `,
       rank: 2,
       roles: ['focus'],
@@ -83,10 +70,10 @@ export const revelation: MysticSphere = {
     },
 
     {
-      name: 'Foresee Distant Victory',
+      name: 'Greater Foresee Victory',
 
       effect: `
-        At the end of the next round, you become \\primed during the following round.
+        At the end of your next turn, you become \\glossterm{briefly} \\primed.
       `,
       rank: 6,
       roles: ['focus'],
@@ -99,11 +86,10 @@ export const revelation: MysticSphere = {
       // Ally focus and +1 accuracy is 0.8 EA.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target becomes \\focused and gains a \\plus1 accuracy bonus this round.
+        The target \\glossterm{briefly} becomes \\focused and gains a \\plus1 accuracy bonus.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: [],
     },
 
     {
@@ -111,8 +97,8 @@ export const revelation: MysticSphere = {
 
       // Ally focus and +2 accuracy is 1.1 EA.
       effect: `
-        Choose one \\glossterm{ally} within \\medrange.
-        The target becomes \\focused and gains a \\plus2 accuracy bonus this round.
+        Choose one \\glossterm{ally} within \\longrange.
+        The target \\glossterm{briefly} becomes \\focused and gains a \\plus2 accuracy bonus.
       `,
       rank: 6,
       roles: ['boon'],
@@ -187,28 +173,28 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
-    // Double braced is 0.8 EA
+    // Braced + steeled is 0.7 EA
     {
       name: 'Precognitive Defense',
 
       effect: `
-        You can activate this ability as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You can activate this ability as a \\glossterm{free action}.
+        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced and \\steeled.
+        If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
 
-    // Double braced + steeled is 1.2 EA
+    // Double braced + steeled is 1.4 EA
     {
       name: 'Greater Precognitive Defense',
 
       effect: `
-        You can activate this ability as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced and \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You can activate this ability as a \\glossterm{free action}.
+        When you do, your attunement to this effect ends and you \\glossterm{briefly} become \\steeled and take half damage from all sources.
+        If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 7,
       roles: ['attune'],

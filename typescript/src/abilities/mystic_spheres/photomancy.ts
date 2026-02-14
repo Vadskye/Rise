@@ -364,13 +364,12 @@ export const photomancy: MysticSphere = {
 
       // 50% miss chance for 2 rounds of attacks is 8 * 0.5 * 0.25 = 1 EA.
       effect: `
-        You can activate this spell as a \\glossterm{free action}.
+        You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
         All \\glossterm{targeted} attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{miss chance}.
-        After that time, this ability is \\glossterm{dismissed}.
+        You can activate this spell twice before it is \\glossterm{dismissed}.
 
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
-        It provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
+        This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
       `,
       rank: 3,
       roles: ['attune'],
@@ -521,7 +520,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Lightbeam Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         // TODO: dr2 or dr3?
         hit: `\\damagerankthreelow.`,
@@ -540,7 +538,6 @@ export const photomancy: MysticSphere = {
     {
       name: 'Distant Lightbeam Dash',
 
-      cost: 'One optional \\glossterm{fatigue level}. If you pay this cost, the spell becomes \\abilitytag{Swift}.',
       attack: {
         hit: `\\damagerankfivelow.`,
         halfOnMiss: true,
@@ -663,15 +660,14 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\glossterm{briefly} \\dazzled.`,
         halfOnMiss: true,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\glossterm{briefly} protected by a field of light.
+          The light makes you \\braced.
+          In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['turtle', 'retaliate'],
       rank: 1,
       scaling: 'accuracy',
-      tags: ['Swift'],
     },
 
     {
@@ -683,15 +679,14 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\glossterm{briefly} protected by a field of light.
+          The light makes you \\braced.
+          In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['turtle', 'retaliate'],
       rank: 5,
       scaling: 'accuracy',
-      tags: ['Swift'],
     },
 
     {

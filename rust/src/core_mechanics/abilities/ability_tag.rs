@@ -21,7 +21,6 @@ pub enum AbilityTag {
     Speech,
     Subtle,
     Sustain(SustainAction),
-    Swift,
     Visual,
     Water,
 }
@@ -50,7 +49,6 @@ impl AbilityTag {
             Self::Speech => r"Speech".to_string(),
             Self::Subtle => r"Subtle".to_string(),
             Self::Sustain(action) => format!("Sustain ({})", action.description()),
-            Self::Swift => r"Swift".to_string(),
             Self::Visual => r"Visual".to_string(),
             Self::Water => r"Water".to_string(),
         }

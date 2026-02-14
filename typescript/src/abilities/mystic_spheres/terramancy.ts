@@ -18,13 +18,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rocky Carapace',
 
-      // Double steeled + single defense would be 1 EA, but steeled and defense bonuses
-      // are slightly awkward together?
+      // Like total defense, but with steeled on top. Braced + steeled is 0.7 EA.
       effect: `
-        You \\glossterm{briefly} are \\steeled and gain a +2 bonus to your Armor defense.
+        You are \\glossterm{briefly} \\steeled and \\braced.
       `,
       roles: ['turtle'],
-      tags: ['Manifestation', 'Swift'],
+      tags: ['Manifestation'],
     },
     // TODO: add a cantrip
   ],
@@ -763,9 +762,8 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes covered in stone for the rest of the round, and this ability is \\glossterm{dismissed}.
+        If you do, your body becomes \\glossterm{briefly} covered in stone, and this ability is \\glossterm{dismissed}.
         This makes you \\fortified and \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['attune'],
@@ -818,31 +816,29 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune (target)',
     },
 
-    // Double ally shield is 1 EA. We can do that at r1 with the downside.
+    // Ally shielded + steeled is 1 EA. We can do that at r1 with the downside.
     {
       name: 'Earthen Shield',
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target must be \\glossterm{grounded}.
-        It is \\glossterm{briefly} \\shielded.
+        It is \\glossterm{briefly} \\shielded and \\steeled.
         If it moves from its location or stops being grounded, this effect immediately ends.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
       `,
       rank: 1,
       roles: ['boon'],
     },
 
-    // Double any two shielded is 1.4 EA
+    // Any two shielded + steeled is 1.4 EA
     {
       name: 'Twinned Earthen Shield',
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
         Each target must be \\glossterm{grounded}.
-        Each is \\glossterm{briefly} \\shielded.
+        Each is \\glossterm{briefly} \\shielded and \\steeled.
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against each target during the current phase.
       `,
       rank: 6,
       roles: ['boon'],

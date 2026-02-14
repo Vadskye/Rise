@@ -685,9 +685,9 @@ def universal_abilities():
             universal_ability_button(
                 "Maintain Grapple",
                 """
-                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for a creature to escape the grapple during the current round using the escape grapple ability.
+                    Make a brawling attack using a free hand. This attack has no immediate effect. The attack result determines how difficult it is for enemies to escape your grapple.
                 """,
-                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling", "Swift"]},
+                attack={"accuracy": "@{brawling_accuracy}", "defense": "None", "tags": ["Brawling"]},
             ),
             universal_ability_button(
                 "Ready Reaction",
@@ -703,7 +703,6 @@ def universal_abilities():
                     After using this ability, you increase your fatigue level by two, and you cannot use it again until you finish a short rest.
                     You regain half of your maximum hit points. Then, you remove all conditions affecting you.
                 """,
-                tags=["Swift"],
             ),
             universal_ability_button(
                 "Shove",
@@ -724,9 +723,8 @@ def universal_abilities():
             universal_ability_button(
                 "Total Defense",
                 """
-                    You gain a +2 bonus to your defenses this round. Because this ability has the Swift tag, this protects you from attacks during the current phase.
+                    You briefly gain a +2 bonus to your defenses.
                 """,
-                tags=["Swift"],
             ),
             universal_ability_button(
                 "Throw",
