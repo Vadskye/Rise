@@ -1565,7 +1565,7 @@ impl Class {
                         \magicaldomainability{Gift} When you get a critical hit with a damaging ability, it deals \glossterm{extra damage} equal to your rank in the Domain Influence archetype.
                         This extra damage is multiplied as normal by the critical hit.
                         \domainability{Aspect} You gain a \plus1 accuracy bonus for the purpose of determining whether your attacks get a critical hit.
-                        \magicaldomainability{Essence} Whenever you kill a Small or larger living creature, you are \glossterm{briefly} \honed.
+                        \magicaldomainability{Essence} Whenever you kill a Small or larger living creature, you are \briefly \honed.
                         \domainability{Mastery} The accuracy bonus with critical hits increases to \plus3.
 
                     \subsubsection{Destiny Domain}
