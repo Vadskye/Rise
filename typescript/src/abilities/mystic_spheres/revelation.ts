@@ -51,9 +51,20 @@ export const revelation: MysticSphere = {
       name: 'Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\braced.
+        At the end of your next turn, you become \\glossterm{briefly} \\braced and \\steeled.
       `,
       rank: 1,
+      roles: ['turtle'],
+      tags: ['Subtle'],
+    },
+
+    {
+      name: 'Greater Foresee Safety',
+
+      effect: `
+        At the end of your next turn, you become \\glossterm{briefly} \\braced and \\shielded.
+      `,
+      rank: 4,
       roles: ['turtle'],
       tags: ['Subtle'],
     },
@@ -62,7 +73,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Victory',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\focused.
+        At the end of your next turn, you become \\glossterm{briefly} \\primed.
       `,
       rank: 2,
       roles: ['focus'],
@@ -73,9 +84,9 @@ export const revelation: MysticSphere = {
       name: 'Greater Foresee Victory',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\primed.
+        At the end of your next turn, you become \\glossterm{briefly} \\primed and \\honed.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['focus'],
       tags: ['Subtle'],
     },
@@ -173,7 +184,7 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
-    // Braced + steeled is 0.7 EA
+    // Braced + steeled is 0.8 EA
     {
       name: 'Precognitive Defense',
 
@@ -187,7 +198,6 @@ export const revelation: MysticSphere = {
       type: 'Attune',
     },
 
-    // Double braced + steeled is 1.4 EA
     {
       name: 'Greater Precognitive Defense',
 

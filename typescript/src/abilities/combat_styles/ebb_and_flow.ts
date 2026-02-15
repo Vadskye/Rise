@@ -236,6 +236,7 @@ export const ebbAndFlow: CombatStyle = {
     {
       name: 'Tranquil Kata',
 
+      // 0.5 + 0.4 EA
       effect: `
         You are \\glossterm{briefly} \\braced.
         If your location did not change since the start of the round, you are also briefly \\focused.

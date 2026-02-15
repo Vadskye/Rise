@@ -297,15 +297,27 @@ export const heraldOfWar: CombatStyle = {
     },
 
     {
+      name: 'Brace Yourself',
+
+      // 0.8 EA
+      effect: `
+        One \\glossterm{ally} within \\medrange is \\glossterm{briefly} \\braced.
+      `,
+      rank: 1,
+      roles: ['boon'],
+      tags: ['Auditory'],
+    },
+
+    {
       name: 'Brace Yourselves',
 
+      // 1.2 EA
       effect: `
-        Up to two \\glossterm{allies} within \\shortrange are \\braced this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\braced.
       `,
-      rank: 3,
+      rank: 7,
       roles: ['boon'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
@@ -336,8 +348,8 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Emotion'],
     },
 
-    // Braced is 0.4 EA and brief goad + hp goad is 1.6 EA, so we need 1.6 / 0.6 = 2.7 EA
-    // of base debuff, which is r8. Limited scope lets us get that at r7.
+    // Braced is 0.5 EA and brief goad + hp goad is 1.6 EA, so we need 1.6 / 0.5 = 3.2 EA
+    // of base debuff, which is too high. Limited scope lets us sort of cheat that in.
     {
       name: 'Challenge+',
 
