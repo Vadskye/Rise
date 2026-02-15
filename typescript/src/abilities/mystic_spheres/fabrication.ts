@@ -83,8 +83,7 @@ export const fabrication: MysticSphere = {
         It is automatically strapped to your arm and cannot be detached.
         This allows you to use it immediately, but prevents you from using that hand for any other purpose.
 
-        This is a \\atSwift effect, so the shield protects you from attacks during the current phase.
-        The shield automatically disappears at the end of the round, but you can summon it again in future rounds.
+        The shield automatically disappears at the start of your next turn, but you can summon it as long as this ability lasts.
       `,
       rank: 2,
       roles: ['attune'],
@@ -843,7 +842,7 @@ export const fabrication: MysticSphere = {
 
         The sphere is immobile, so it normally prevents you from leaving the area.
         You cannot \\glossterm{dismiss} it.
-        It disappears as a \\atSwift effect if you stop sustaining it, as normal for sustained abilities.
+        It disappears if you stop sustaining it, as normal for sustained abilities.
 
         The field as a whole has \\glossterm{hit points} equal to twice your \\glossterm{power}, and is destroyed when its hit points become negative.
         It is also destroyed if you leave the area by any means.

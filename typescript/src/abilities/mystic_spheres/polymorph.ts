@@ -325,7 +325,6 @@ export const polymorph: MysticSphere = {
       rank: 2,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by +2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -338,7 +337,6 @@ export const polymorph: MysticSphere = {
       rank: 5,
       roles: ['healing', 'exertion'],
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 5.' },
-      tags: ['Swift'],
     },
 
     {
@@ -677,12 +675,11 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        This round, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
+        This turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
         If you choose yourself, the effect lasts \\glossterm{briefly}.
       `,
       rank: 2,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     // Any two empower is 1 EA, and any two accuracy is about 0.3 EA.
@@ -696,7 +693,6 @@ export const polymorph: MysticSphere = {
       },
       rank: 7,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {

@@ -245,28 +245,24 @@ export const ripAndTear: CombatStyle = {
       name: 'Spinning Steel',
 
       effect: `
-        You are \\steeled this round.
+        You are \\glossterm{briefly} \\steeled.
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        The steel is a \\atSwift effect, but the strike is not.
       `,
       rank: 3,
       roles: ['clear', 'turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
       name: 'Spinning Steel+',
 
       effect: `
-        You are \\steeled this round.
+        You are \\glossterm{briefly} \\steeled.
         Make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
-        The steel is a \\atSwift effect, but the strike is not.
       `,
       rank: 7,
       roles: ['clear', 'turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
