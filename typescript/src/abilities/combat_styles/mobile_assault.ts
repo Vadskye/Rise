@@ -214,13 +214,10 @@ export const mobileHunter: CombatStyle = {
         You are \\braced this round.
         In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature without reducing your \\glossterm{available movement}.
-        Whenever that creature misses you with a melee \\glossterm{strike} this round, it takes a -2 penalty to Armor defense during the next round.
+        Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it takes a -2 penalty to its Armor defense.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
-
-        The defense bonus and reactive penalty trigger are \\abilitytag{Swift} effects, but not the movement.
       `,
       rank: 1,
-      tags: ['Swift (see text)'],
       roles: ['turtle'],
     },
 

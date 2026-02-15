@@ -219,13 +219,13 @@ export const heraldOfWar: CombatStyle = {
     {
       name: 'Rally the Troops',
 
+      // TODO: EA calc
       effect: `
-        Your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} they are already affected by.
-        Because this is a \\abilitytag{Swift} ability, so it removes any relevant penalties from those conditions during the current phase.
+        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} each target is already affected by.
       `,
-      rank: 3,
+      rank: 1,
       roles: ['cleanse'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
@@ -276,24 +276,22 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stand Firm',
 
       effect: `
-        One \\glossterm{ally} within \\medrange is \\fortified and \\steeled this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against it during the current phase.
+        One \\glossterm{ally} within \\medrange is \\glossterm{briefly} \\fortified and \\steeled.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
       name: 'Stand Firm+',
 
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\fortified and \\steeled this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\fortified and \\steeled.
       `,
       rank: 5,
       roles: ['boon'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
@@ -416,13 +414,14 @@ export const heraldOfWar: CombatStyle = {
 
       // We have to use a power scaling here because maneuvers don't have rank scaling, so
       // this would fall behind quickly otherwise
+      // TODO: update maneuvers so fixed damage maneuvers are allowed to have scaling
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         You and each \\glossterm{ally} in a \\medarea radius from you each regain \\glossterm{hit points} equal to 1d6 \\add your \\glossterm{power}.
       `,
       rank: 3,
       roles: ['healing'],
-      tags: ['Auditory', 'Emotion', 'Swift'],
+      tags: ['Auditory', 'Emotion'],
     },
 
     {
@@ -434,7 +433,7 @@ export const heraldOfWar: CombatStyle = {
       `,
       rank: 7,
       roles: ['healing'],
-      tags: ['Auditory', 'Emotion', 'Swift'],
+      tags: ['Auditory', 'Emotion'],
     },
 
     {

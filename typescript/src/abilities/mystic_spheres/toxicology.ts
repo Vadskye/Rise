@@ -502,7 +502,6 @@ export const toxicology: MysticSphere = {
       rank: 1,
       roles: ['healing', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -516,7 +515,6 @@ export const toxicology: MysticSphere = {
       rank: 4,
       scaling: 'healing',
       roles: ['healing', 'exertion'],
-      tags: ['Swift'],
     },
 
     {

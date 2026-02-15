@@ -660,14 +660,13 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d8 \\add your power.
-        In addition, it gains a +2 bonus to its Mental defense this round.
+        In addition, it \\glossterm{briefly} gains a +2 bonus to its Mental defense.
       `,
       rank: 2,
       roles: ['healing', 'boon', 'exertion'],
       // Flat would be 1d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 2 for each rank beyond 2.' },
-      tags: ['Swift'],
     },
 
     {
@@ -679,14 +678,13 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d10 plus 1d10 per 2 power.
-        In addition, it gains a +4 bonus to its Mental defense this round.
+        In addition, it \\glossterm{briefly} gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
       // Flat would be 3d10, but power scaling means we shouldn't scale too much. TODO:
       // math.
       scaling: { special: 'The recovery increases by 1d10 for each rank beyond 6.' },
-      tags: ['Swift'],
     },
     {
       name: 'Speak Only Truth',

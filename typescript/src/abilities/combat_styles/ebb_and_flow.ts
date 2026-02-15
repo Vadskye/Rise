@@ -10,26 +10,24 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature tries to attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature tries to attack you, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack that creature once in this way, even if it attacks you multiple times.
       `,
       rank: 1,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Counter Sweep',
 
       effect: `
-        Whenever a creature attacks you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, whenever a creature attacks you , you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's attack, so if you incapacitate it with the strike, its attack does not affect you.
         You can only attack any individual creature once in this way, even if it attacks you multiple times.
       `,
       rank: 3,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
@@ -37,13 +35,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature attacks you this round, you immediately make two melee \\glossterm{strikes} against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature attacks you, you immediately make two melee \\glossterm{strikes} against them as a \\glossterm{reactive attack} if possible.
         These attacks resolve before the creature's attack, so if you incapacitate it with either strike, its attack does not affect you.
         You can only respond once in this way, even if the creature attacks you multiple times.
       `,
       rank: 5,
       roles: ['retaliate'],
-      tags: ['Swift'],
     },
 
     {
@@ -153,13 +150,12 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Choose a creature you can see.
-        If that creature takes a \\glossterm{standard action} that does not attack you this round, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
+        Until your next turn, if that creature takes a \\glossterm{standard action} that does not attack you, you immediately make a melee \\glossterm{strike} with a +2 accuracy bonus against them as a \\glossterm{reactive attack} if possible.
         This attack resolves before the creature's action, so if you incapacitate it with the strike, its action fails.
         You can only attack that creature once in this way, even if it takes multiple standard actions.
       `,
       rank: 1,
       roles: ['burst'],
-      tags: ['Swift'],
     },
 
     {
