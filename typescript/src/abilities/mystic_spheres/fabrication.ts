@@ -1001,7 +1001,7 @@ export const fabrication: MysticSphere = {
       name: 'Omnishield',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded until the start of your next turn.
       `,
       rank: 7,
       roles: ['boon', 'turtle'],

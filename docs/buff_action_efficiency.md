@@ -36,7 +36,7 @@ Delaying a defensive buff upgrades it to the "ally" column since it can be combi
 
 If you give an ally a brief buff, it generally affects them for two actions.
 On the other hand, if you give yourself a brief buff, it generally affects you for one action.
-This is why effects like True Strike aren't brief, and instead say "this round" or "this phase".
+This is why effects like True Strike aren't brief, and instead say "this turn".
 For this section, assume that all buffs only affect the target for a single action.
 
 For protective buffs, assume that a self-buff works 1/3 of the time and an ally buff works 50% of the time. We use 33% instead of 25% because AOE attacks mean the boss targets each party member more than a quarter of the time.
