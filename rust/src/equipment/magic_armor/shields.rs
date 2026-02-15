@@ -159,7 +159,8 @@ pub fn shields() -> Vec<MagicArmor> {
         short_description: String::from(r"Can reflect magical attacks"),
         description: String::from(r"
             Whenever you use the \ability<total defense> ability, you can activate this shield.
-            When you do, any \glossterm<targeted> \magical abilities that target you this round also target the creature using that ability in addition to you.
+            When you do, the shield \glossterm{briefly} reflects magic.
+            Any \glossterm<targeted> \magical abilities that target you also target the creature using that ability in addition to you.
             It cannot choose to reduce its accuracy or damage against itself.
             Any other targets of the ability are affected normally.
         "),

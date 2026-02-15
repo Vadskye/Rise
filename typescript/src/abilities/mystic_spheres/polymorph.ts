@@ -58,7 +58,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You become \\empowered this round.
+        You become \\empowered this turn.
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
       `,
       rank: 1,
@@ -71,7 +71,7 @@ export const polymorph: MysticSphere = {
       effect: `
         This spell has no \\glossterm{somatic components}.
 
-        You become \\maximized this round.
+        You become \\maximized this turn.
         Make a \\glossterm{mundane} melee \\glossterm{strike} with a -2 accuracy penalty using \\glossterm{natural weapons}.
         The strike deals double damage.
       `,
@@ -675,7 +675,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        This turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
+        Until the start of your next turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
         If you choose yourself, the effect lasts \\glossterm{briefly}.
       `,
       rank: 2,

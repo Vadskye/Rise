@@ -395,7 +395,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         halfOnMiss: true,
         targeting: `
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against everything in an area.
-          If you sustained this spell this round, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
+          If you sustained this spell this turn, or if you are outside in a storm, the area is a \\largearealong, 5 ft. wide vertical line within \\longrange.
           Otherwise, it is a \\medarealong, 5 ft. wide vertical line within \\medrange.
         `,
       },
@@ -677,9 +677,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this round.
-          \\item Once: This round, you are empowered and your abilities that \\glossterm{chain} can chain an additional time.
-          \\item Two or more times: This round, you are empowered and all of your \\glossterm{targeted} abilities can chain an additional time.
+          \\item Never: You are \\empowered this turn.
+          \\item Once: This turn, you are empowered and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This turn, you are empowered and all of your \\glossterm{targeted} abilities can chain an additional time.
         \\end{mdframedraggeditemize}
       `,
       rank: 2,
@@ -694,9 +694,9 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         When you cast this spell, and whenever you sustain it, electricity loudly arcs and crackles around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\maximized this round.
-          \\item Once: This round, you are maximized and your abilities that \\glossterm{chain} can chain an additional time.
-          \\item Two or more times: This round, you are maximized and all of your \\glossterm{targeted} abilities can chain an additional time.
+          \\item Never: You are \\maximized this turn.
+          \\item Once: This turn, you are maximized and your abilities that \\glossterm{chain} can chain an additional time.
+          \\item Two or more times: This turn, you are maximized and all of your \\glossterm{targeted} abilities can chain an additional time.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,
@@ -713,7 +713,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `\\damagerankone.`,
         targeting: `
           You are \\glossterm{briefly} \\braced.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },

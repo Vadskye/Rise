@@ -306,7 +306,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Calm the Inner Tempest}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Endurance skill this round (see \pcref{Endurance}).
+                        You gain a \plus4 bonus to the Endurance skill this turn (see \pcref{Endurance}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -314,7 +314,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Extend the Flow of Ki}{Free action}
                         \rankline
-                        Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this round, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
+                        Your melee \glossterm{strikes} gain the \weapontag{Long} weapon tag this turn, allowing you to attack targets up to 10 feet away from you (see \pcref{Weapon Tags}).
 
                         \rankline
                         \rank{5} You can attack enemies up to 15 feet away from you.
@@ -337,8 +337,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Flurry of a Thousand Cuts}{Free action}
                         \rankline
-                        When you make a \glossterm{strike} this round, you \glossterm{reroll} the attack roll once and take the higher result.
-                        However, you cannot get a \glossterm{critical hit} with strikes.
+                        When you make a \glossterm{strike} this turn, you \glossterm{reroll} the attack roll once and take the higher result.
+                        However, you cannot get a \glossterm{critical hit} with strikes this turn.
 
                         \rankline
                         \rank{5} You also gain a \plus1 \glossterm{accuracy} bonus with strikes.
@@ -346,7 +346,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Awareness skill this round (see \pcref{Awareness}).
+                        You \\glossterm{briefly} gain a \plus4 bonus to the Awareness skill (see \pcref{Awareness}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -354,7 +354,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Kindle the Living Flame}{Free action}
                         \rankline
-                        Your \glossterm{strikes} have the \atFire tag this round.
+                        Your \glossterm{strikes} have the \atFire tag this turn.
 
                         \rankline
                         \rank{5} This effect lasts \glossterm{briefly}.
@@ -370,7 +370,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Rest Atop the Precipice}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Balance skill this round (see \pcref{Balance}).
+                        You gain a \plus4 bonus to the Balance skill this turn (see \pcref{Balance}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -378,8 +378,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Scale the Highest Tower}{Free action}
                         \rankline
-                        You gain a \plus4 bonus to the Climb skill this round (see \pcref{Climb}).
-                        % TODO: is this wording correct?
+                        You gain a \plus4 bonus to the Climb skill this turn (see \pcref{Climb}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
@@ -406,7 +405,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Thread the Eye of the Storm}{Free action}
                         \rankline
-                        You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this round (see \pcref{Weapon Range Limits}).
+                        You reduce your \glossterm{longshot penalty} with thrown weapons by 2 this turn (see \pcref{Weapon Range Limits}).
 
                         \rankline
                         \rank{5} The penalty reduction increases to 3.

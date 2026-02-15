@@ -630,7 +630,7 @@ export const umbramancy: MysticSphere = {
       name: 'Shadowguide',
       effect: `
         Choose up to two \\glossterm{shadowed} \\glossterm{allies} within \\medrange.
-        Each target is \\focused this round.
+        Each target is \\focused until the start of your next turn.
       `,
       rank: 4,
       roles: ['boon'],
@@ -641,7 +641,7 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Greater Shadowguide',
       effect: `
-        All \\glossterm{shadowed} \\glossterm{allies} within a \\largearea radius of you are \\focused this round.
+        All \\glossterm{shadowed} \\glossterm{allies} within a \\largearea radius of you are \\focused until the start of your next turn.
       `,
       rank: 7,
       roles: ['boon'],

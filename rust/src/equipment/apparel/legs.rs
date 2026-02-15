@@ -247,7 +247,7 @@ fn boots() -> Vec<Apparel> {
         description: String::from(r"
             Whenever you jump, you can activate these boots (see \pcref{Jumping}).
             When you do, you increase your \glossterm<fatigue level> by one.
-            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this round.
+            In exchange, your maximum jump height is equal to your maximum horizontal jump distance, and you can land in midair at any point during your jump this turn.
             You can \glossterm<briefly> levitate in that location as if you were standing on solid ground.
 
             These boots cannot be activated again until you spend a full round on a solid surface capable of supporting your weight.

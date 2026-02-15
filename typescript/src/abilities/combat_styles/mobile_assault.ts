@@ -10,7 +10,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        If your movement during the \\glossterm{movement phase} of this round consisted entirely of moving at least 20 feet in a straight line towards your target, the strike deals deals \\glossterm{extra damage} equal to half your power.
+        If you moved at least 20 feet in a straight line towards your target this turn, the strike deals deals \\glossterm{extra damage} equal to half your power.
       `,
       rank: 3,
       roles: ['burst', 'payoff'],
@@ -211,7 +211,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Unbalancing Backstep',
 
       effect: `
-        You are \\braced this round.
+        You are \\glossterm{briefly} \\braced.
         In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature without reducing your \\glossterm{available movement}.
         Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it takes a -2 penalty to its Armor defense.

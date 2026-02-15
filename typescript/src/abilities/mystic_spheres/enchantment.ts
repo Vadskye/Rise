@@ -28,11 +28,11 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          During the next round, the target must repeat the same standard action that it took this round if possible.
+          During its next turn, the target must repeat the same standard action that it took during its most recent turn if possible.
           It can choose different targets or otherwise make different decisions about its action, but the action must be the same.
           This does not affect its other actions, such as movement.
           If it is unable to take the same standard action, it can act normally.
-          For example, if the target used the \\ability{recover} ability this round, which can only be used once per short rest, its actions would not be restricted next round.
+          For example, if the target used the \\ability{recover} ability during its most recent turn, its actions would not be restricted next round.
 
           After the target repeats or fails to repeat its action in this way, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
@@ -365,7 +365,7 @@ export const enchantment: MysticSphere = {
       name: 'Intense Fearsome Aura',
 
       attack: {
-        hit: `The target is \\panicked by you this round.`,
+        hit: `The target is \\panicked by you until the start of your next turn.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.

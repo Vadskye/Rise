@@ -38,9 +38,8 @@ export const revelation: MysticSphere = {
 
       // Any two focused is 1 EA. Drop to r2 for the prereq.
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target that missed a creature with an attack becomes \\focused this round.
-        If you target yourself, this effect lasts \\glossterm{briefly} on you instead of only this round.
+        Choose up to two \\glossterm{allies} within \\medrange.
+        Each target that missed an enemy with an attack this round becomes \\glossterm{briefly} \\focused.
       `,
       rank: 2,
       roles: ['boon'],
@@ -568,7 +567,7 @@ export const revelation: MysticSphere = {
 
       // All would be 1.4 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\honed this round.
+        All \\glossterm{allies} within a \\largearea radius from you are \\honed until the start of your next turn.
       `,
       rank: 7,
       roles: ['boon'],

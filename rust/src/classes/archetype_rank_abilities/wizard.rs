@@ -359,7 +359,7 @@ pub fn arcane_spell_mastery<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 Whenever you cast a spell, you can use this ability to make the spell's incantations more nuanced and complex.
-                If you do, you gain a \plus1 accuracy bonus with the spell this round.
+                If you do, you gain a \plus1 accuracy bonus with the spell this turn.
                 However, you \glossterm{briefly} take a \minus2 penalty to all defenses.
             ",
             modifiers: Some(vec![

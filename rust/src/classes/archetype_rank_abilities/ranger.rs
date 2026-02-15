@@ -89,7 +89,7 @@ pub fn beastmaster<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Tag-Team Takedown}{Standard action}
                     \rankline
                     Make a \glossterm{strike} that deals 1d4 \glossterm{extra damage}.
-                    Your \ability{animal companion} gains the same extra damage this round against each damaged creature.
+                    Your \ability{animal companion} gains the same extra damage this turn against each damaged creature.
 
                     \rankline
                     \rank{4} The extra damage increases to 1d10.
@@ -296,7 +296,7 @@ pub fn huntmaster<'a>() -> Vec<RankAbility<'a>> {
                         If your quarry is \glossterm{midair}, the accuracy bonus from \ability{quarry} also applies to all members of your hunting party.
 
                         \rankline
-                        \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point this round, even if it is currently grounded.
+                        \rank{5} The accuracy bonus also applies if your quarry used a fly or glide speed at any point since your last turn, even if it is currently grounded.
                     \end{magicaltriggeredability}
 
                     \begin{triggeredability}{Coordinated Stealth}{Triggered}

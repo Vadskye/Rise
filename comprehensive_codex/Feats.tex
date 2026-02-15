@@ -476,20 +476,28 @@ They allow more distinct and unique character customization, but also increase g
         While this ability is active, you cannot be affected by other creatures using this ability on you.
     \end{magicalactiveability}
 
+    % Treat as r1 area, which is a little cheating but makes the damage scaling easier
     \magicalff[6]{Scouring Light}
-    \begin{magicalactiveability}{Scouring Light}{Standard action}
-      \abilitycost You \glossterm{briefly} cannot use this ability again.
+    \begin{magicalsustainability}{Scouring Light}{Standard action}
+      \abilitytags \abilitytag{Sustain} (standard)
       \rankline
-      Make an attack vs. Reflex against all enemies in a \medarealong, 10 ft. wide line from you.
-      Whether you hit or miss, each target suffers a \minus2 penalty to its Armor and Reflex defenses this round, and you \glossterm{briefly} radiate \glossterm{brilliant illumination} in a \medarea radius from you.
-      \hit \damageranktwo.
+      When you use or sustain this ability, you \glossterm{briefly} radiate \glossterm{brilliant illumination} in a \medarea radius from you.
+      Then, make an attack vs. Reflex against all enemies in an area.
+      The area depends on how many times you have sustained this ability:
+      \begin{raggeditemize}
+        \item Never: \areamedlong, 5 ft. wide line
+        \item Once: \areamedlong, 10 ft. wide line
+        \item Two or more times: \areamed radius
+      \end{raggeditemize}
+      \hit \damagerankthree.
+      \miss Half damage.
       \rankline
-      \featlevel{9} The damage increases to \damagerankthree.
-      \featlevel{12} The damage increases to \damagerankfour.
-      \featlevel{15} The damage increases to \damagerankfive.
-      \featlevel{18} The damage increases to \damageranksix.
-      \featlevel{21} The damage increases to \damagerankseven.
-    \end{magicalactiveability}
+      \featlevel{9} The damage increases to \damagerankfour.
+      \featlevel{12} The damage increases to \damagerankfive.
+      \featlevel{15} The damage increases to \damageranksix.
+      \featlevel{18} The damage increases to \damagerankseven.
+      \featlevel{21} The damage increases to \damagerankeight.
+    \end{magicalsustainability}
 
     \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
@@ -1165,7 +1173,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilitytags \atAuditory
       \rankline
       Choose an \glossterm{ally} within \medrange.
-      The target becomes \focused and gains a \plus1 accuracy bonus this round.
+      The target becomes \focused and gains a \plus1 accuracy bonus until the start of your next turn.
 
       \rankline
       % 0.7 base EA, or 1.1 on an ally.
@@ -2124,10 +2132,10 @@ They allow more distinct and unique character customization, but also increase g
     The spell can be up to rank 3, even if you do not have access to rank 3 spells.
     As a \glossterm{minor action}, you can foresee the future of casting that spell.
     When you do, roll 1d10 and record the result.
-    If you cast the spell, then the first time you attack with it this round, you must use this die result for the attack roll.
+    If you cast the spell, then the first time you attack with it this turn, you must use this die result for the attack roll.
     This does not tell you whether your attack will hit, only high your roll will be.
     A 10 explodes as normal, but only when you actually cast the spell and make the attack, not when foreseeing the future.
-    If you don't like the result, you can simply choose not to cast the spell this round, and the die result is ignored.
+    If you don't like the result, you can simply choose not to cast the spell this turn, and the die result is ignored.
     Either way, you \glossterm{briefly} cannot use this ability again.
 
     This is a metamagic effect, so you cannot apply another metamagic to the same spell.
