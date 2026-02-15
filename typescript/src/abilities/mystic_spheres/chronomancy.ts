@@ -179,11 +179,11 @@ export const chronomancy: MysticSphere = {
       // condition, so 1.9 EA, which is about rank 4.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it becomes \\glossterm{briefly} frozen in time.
+          If the target is \\glossterm{injured}, it becomes \\briefly frozen in time.
           It becomes completely immune to all damage, attacks, and effects of any kind.
           In addition, it cannot act in any way, and the duration of other effects on it does not expire.
           At the end of the next round, it returns to normal, with no awareness of the intervening time.
-          After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+          After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -202,7 +202,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
           If it is \\glossterm{injured}, is also slowed as a \\glossterm{condition}.
         `,
         targeting: `
@@ -258,7 +258,7 @@ export const chronomancy: MysticSphere = {
 
       cost: BRIEF_COOLDOWN,
       effect: `
-        You are \\glossterm{briefly} \\braced.
+        You are \\momentarily \\braced.
         In addition, you can move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 1,
@@ -269,7 +269,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: full EA math. What is jog + total defense worth?
       effect: `
-        You are \\glossterm{briefly} \\braced.
+        You are \\momentarily \\braced.
         In addition, you can move up to twice your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 5,
@@ -365,7 +365,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: EA math
       usageTime: 'minor',
-      cost: 'One \\glossterm{fatigue level}, and you \\glossterm{briefly} cannot cast this spell again.',
+      cost: 'One \\glossterm{fatigue level}, and you \\enduringly cannot cast this spell again.',
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
@@ -639,7 +639,7 @@ export const chronomancy: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\deafened and \\dazzled.
+          The target is \\briefly \\deafened and \\dazzled.
           If it is \\glossterm{injured}, it is also deafened and dazzled as a single \\glossterm{condition}.
         `,
         targeting: `
@@ -708,7 +708,7 @@ export const chronomancy: MysticSphere = {
       name: 'Pour Time Sideways',
 
       effect: `
-        You are \\glossterm{briefly} locked in stasis.
+        You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
         In the round after your stasis ends, you can take an extra \\glossterm{move action} during the \\glossterm{movement phase} and an extra \\glossterm{minor action} during the \\glossterm{action phase}.
       `,
@@ -721,7 +721,7 @@ export const chronomancy: MysticSphere = {
       name: 'Greater Pour Time Sideways',
 
       effect: `
-        You are \\glossterm{briefly} locked in stasis.
+        You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
         In the round after your stasis ends, you cannot take any actions during the \\glossterm{movement phase}.
         However, you can take an extra standard action during that round's \\glossterm{action phase}.
@@ -736,11 +736,11 @@ export const chronomancy: MysticSphere = {
       cost: MINOR_FATIGUE,
       effect: `
         Choose yourself or one Medium or smaller \\glossterm{ally} within \\medrange.
-        The target becomes \\glossterm{briefly} frozen in time.
+        The target becomes \\briefly frozen in time.
         It becomes completely immune to all damage, attacks, and effects of any kind.
         In addition, it cannot act in any way, and the duration of other effects on it does not expire.
         At the end of the next round, it returns to normal, with no awareness of the intervening time.
-        After it returns to normal, it \\glossterm{briefly} becomes immune to this effect.
+        After it returns to normal, it becomes immune to this effect until it finishes a \\glossterm{short rest}.
       `,
       roles: ['boon'],
       rank: 2,
@@ -754,8 +754,9 @@ export const chronomancy: MysticSphere = {
     {
       name: 'Time Ebbs and Flows',
 
+      // Keep wording up to date based on brief ending at start/end of turn
       effect: `
-        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\glossterm{briefly} \\focused.
+        You are \\momentarily \\braced. When that effect ends, you become \\focused during that turn.
       `,
       rank: 2,
       roles: ['turtle', 'focus'],
@@ -766,7 +767,7 @@ export const chronomancy: MysticSphere = {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\glossterm{briefly} \\primed.
+        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\primed during that turn.
       `,
       rank: 7,
       roles: ['turtle', 'focus'],
