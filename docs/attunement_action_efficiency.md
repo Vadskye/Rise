@@ -42,9 +42,9 @@ If you could be braced as an attunement, it would be 40% action denial that work
 
 Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss, and this protects you from the 50% damage that you would take from the miss. That's 20 / 3 * 0.75 * 0.5 * 0.5 * 0.5 = 0.6 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
 
-### Fortified: 2.0
+### Fortified: 1.5
 
-0.4 EA * 5 actions = 2 EA
+0.3 EA * 5 actions = 1.5 EA
 
 ### 25% extra damage: 1.25
 

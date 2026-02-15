@@ -15,7 +15,7 @@ By EA:
   Empowered      & 0.4  & 0.6  & 1.0     & 1.4 \\
   Extra damage   & 0.4  & 0.6  & 1.0     & 1.4 \\
   Focused        & 0.4  & 0.6  & 1.0     & 1.4 \\
-  Fortified      & 0.4  & 0.6  & 0.9     & 1.2 \\
+  Fortified      & 0.3  & 0.5  & 0.7     & 1.0 \\
   Impervious     & 1.3  & no   & inf     & inf \\
   Half damage    & 0.7  & no   & 1.5     & 2.1 \\
   Honed          & 0.4  & 0.6  & 1.0     & 1.4 \\
@@ -138,7 +138,7 @@ Now assume you have a 120% hit rate (+1 vs 0 Armor), so you crit on a 9/10. Expe
 With a reroll, your odds of getting a single crit become 36% and a double crit is 4%, so expected dpr is 1 + 0.36 + 0.04 = 1.4, which is only 15% better. So focused is better on low accuracy targets, which makes sense.
 
 ### Fortified: 0.3 (self), 0.5 (ally), 0.7 (any two), 1.0 (all)
-Same logic as Shielded.
+You are attacked 1/3 of the time, and fortified protects from 50% of enemy attacks, so 1.6 / 3 * 0.5 = 0.3
 
 ### Impervious (self): 1.1
 

@@ -233,16 +233,16 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You are also \glossterm{briefly} \empowered.
                     \end{magicalactiveability}
 
-                    % Everyone fortified is 1.2 EA
+                    % Everyone fortified is 1 EA
                     \begin{magicalsustainability}{Cadenza of Courage}{Standard action}
                         \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline
-                        All \glossterm{allies} who can see or hear your performance are \fortified.
+                        You and all \glossterm{allies} who can see or hear your performance are \fortified.
 
                         \rankline
-                        \rank{3} This ability also affects you.
-                        \rank{5} Each target is also immune to being \frightened.
-                        \rank{7} Each target is also immune to being \panicked.
+                        \rank{3} Each target is also immune to being \frightened.
+                        \rank{5} Each target is also immune to being \panicked.
+                        \rank{7} This ability continues functioning \glossterm{briefly} after you stop sustaining it.
                     \end{magicalsustainability}
 
                     % Everyone shielded is 1.2 EA
