@@ -273,14 +273,14 @@ fn cloaks() -> Vec<Apparel> {
         short_description: String::from("Braced while at zero HP"),
         description: String::from(
             r"
-            While you have no remaining \glossterm{hit points}, you are \braced.
-        ",
+                While you have no remaining \glossterm{hit points}, you are \braced.
+            ",
         ),
         upgrades: vec![ItemUpgrade::new(
             4,
-            "Braced and steeled while at zero HP",
+            "Braced and take half damage while at zero HP",
             r"
-                While you have no remaining \glossterm{hit points}, you are also \steeled.
+                While you have no remaining \glossterm{hit points}, you also take half damage from all sources.
             ",
         )],
         ..Apparel::default()

@@ -714,8 +714,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\braced this round.
-          This is a \\atSwift effect, so it protects you from attacks during the current phase.
+          You are \\glossterm{briefly} \\braced.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
@@ -723,7 +722,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       roles: ['turtle', 'retaliate'],
       rank: 1,
       scaling: 'damage',
-      tags: ['Swift'],
     },
 
     {

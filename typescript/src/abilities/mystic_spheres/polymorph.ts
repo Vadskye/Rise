@@ -651,29 +651,24 @@ export const polymorph: MysticSphere = {
       type: 'Sustain (attunable, minor)',
     },
 
-    // 0.4 + 2 * 0.2 EA
     {
       name: 'Sudden Jellification',
 
       effect: `
-        You are \\braced this round and \\glossterm{briefly} \\steeled.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You \\glossterm{briefly} take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Sudden Jellification',
 
       effect: `
-        You are \\glossterm{briefly} \\steeled and \\braced.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
+        You \\glossterm{briefly} are \\steeled and take half damage from all sources.
       `,
-      rank: 6,
+      rank: 4,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     // Ally empower is 0.6 EA. Long is about +1a, so about 0.2 EA.
