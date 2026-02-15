@@ -161,11 +161,8 @@
     You can also take any number of \glossterm{free actions}.
     Once you have taken all of the actions you intend to take, your turn is done.
 
-    Within your turn, you can take actions in any order.
-    Once you have started an action, you must complete it before you use another action.
-    For example, you can't use a \glossterm{standard action} halfway through the resolution of your \glossterm{move action} to move, attack, and then move away.
-    As a special case, you can use \glossterm{free actions} and \glossterm{minor actions} during the resolution of \glossterm{move actions}.
-    For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
+    You typically share a turn with other members of your party rather than having your own turn to yourself.
+    For details, see \pcref{Initiative Groups}.
 
   % TODO: move to a more relevant location
   \subsection{Simultaneous Damage and Healing}\label{Simultaneous Damage and Healing}
@@ -187,29 +184,36 @@
 
   \subsection{Initiative Groups}\label{Initiative Groups}
     Once everyone in a combat has determined their initiative order, allies with no enemies between them in the initiative order are bundled into initiative groups.
-    Within an initiative group, each creature can take their turn in any order.
-    Once one creature starts its turn, it must finish its turn before any other creature in its initiative group can act.
-    After all creatures in an initiative group have acted, the next initiative group can act.
+    Each initiative group gets a single shared turn.
+    Within that turn, each creature in the initiative group can take actions in any order.
+
+    Once you have started an action, you must complete it before any creature in the initiative group can take another action.
+    As a special case, you can use \glossterm{free actions} and \glossterm{minor actions} during the resolution of your own \glossterm{move actions}.
+    For example, you can walk up to a door, open it, and continue through the door (see \pcref{Manipulating Objects}).
+    However, you can't move up to a creature, use a standard action to attack it, and move away with the same move action.
+
+    After all creatures in an initiative group taken all of their intended actions, the next initiative group can act.
+    Since your whole initiative group shares a turn, effects that last "until the end of your turn" last until the end of your full initiative group's turn, regardless of when you take your actions during that turn.
 
   \subsection{Initiative Example}
     Alice, Bob, Carol, and Dave are player characters in an adventuring party.
-    They come across a group of goblins led by a shaman.
+    They come across a group of goblins led by a troll.
     Alice and Dave decide to act independently, while Bob declares Carol as his leader.
-    The goblins all declare their shaman as their leader.
+    The goblins all declare the troll as their leader.
 
     When initiative is rolled, Alice rolls an 4, Dave rolls a 6, the goblin shaman rolls a 7, and Carol rolls a 9.
     Bob and the individual goblins don't roll initiative, since they designated leaders.
     Alice and Dave are grouped together, since there are no enemies between them.
-    The final combat order is:
+    There are three turns in the final combat order:
 
     \begin{enumerate}
       \item Bob and Carol
-      \item The goblins
+      \item The troll and goblins
       \item Alice and Dave
     \end{enumerate}
 
-  \subsection{Deciding Turn Order}\label{Deciding Turn Order}
-    Try not to spend too much time on the exact order of everyone's turns within your initiative group.
+  \subsection{Deciding Action Order}\label{Deciding Action Order}
+    Try not to spend too much time on the exact order of everyone's actions within your initiative group.
     Most of the time, the exact order doesn't matter.
     It's generally fine to just start rolling dice if you already know what you're going to do, and just act in the order that people decide their actions.
     The GM can help resolve situations where this is ambiguous.
