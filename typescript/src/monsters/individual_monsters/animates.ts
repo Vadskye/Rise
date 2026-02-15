@@ -300,7 +300,7 @@ function addGolems(grimoire: Grimoire) {
               hit: '2d6+7 damage.',
               targeting: `
               The $name makes two melee \\glossterm{strikes}.
-              If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats the $name as \\glossterm{invisible}.
+              If either strike hits and its attack result also hits the target's Reflex defense, the target \\briefly treats the $name as \\glossterm{invisible}.
             `,
             },
           });

@@ -281,7 +281,7 @@ function addGhosts(grimoire: Grimoire) {
             name: 'Entangling Cords',
             attack: {
               hit: `
-                \\damagerankfour, and the target is \\glossterm{briefly} \\slowed.
+                \\damagerankfour, and the target is \\momentarily \\slowed.
               `,
               targeting: `
                 Make an attack vs. Brawn against one creature within \\medrange.
@@ -705,7 +705,7 @@ function addVampires(grimoire: Grimoire) {
       \\itemhead{Garlic} A vampire that smells garlic becomes \\frightened by any creatures bearing garlic as a condition.
         In addition, creatures that have eaten garlic recently are treated as not having blood for the purpose of a vampire's abilities, so their blood cannot be drained.
       \\itemhead{Holy Water} A vampire that touches holy water takes 20 damage and becomes \\stunned as a condition if it is not already stunned.
-      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\glossterm{briefly} becomes \\helpless.
+      \\itemhead{Running Water} A vampire that touches or passes over running water takes 10 damage and \\enduringly becomes \\helpless.
         This applies as long as the vampire is within 100 feet of the running water, even the water is underground or under a bridge.
         It can use the \\ability{struggle} ability to move despite being helpless, but only towards the closest shore.
       \\itemhead{Silver} Vampires are \\vulnerable to strikes using silver weapons.

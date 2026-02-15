@@ -320,7 +320,7 @@ function addDemonspawn(grimoire: Grimoire) {
           creature.addPassiveAbility({
             name: 'Soulfire',
             effect: `
-              Whenever the $name \\glossterm{injures} a creature, that creature is \\glossterm{briefly} unable to regain \\glossterm{hit points}.
+              Whenever the $name \\glossterm{injures} a creature, that creature is \\briefly unable to regain \\glossterm{hit points}.
             `,
             isMagical: true,
           });

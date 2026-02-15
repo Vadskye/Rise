@@ -35,7 +35,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target is \\glossterm{briefly} healed by water.
-        During this spell's effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
+        During this effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
         When it does, it regains 2d10 hit points and increases its \\glossterm{fatigue level} by one.
       `,
@@ -62,7 +62,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
         The target is \\glossterm{briefly} purified by water.
-        During this spell's effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
+        During this effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
         When it does, it removes one \\glossterm{condition} affecting it.
       `,
       rank: 3,
@@ -125,7 +125,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // -1 rank for limited scope
       attack: {
         hit: `
-          The target is \\glossterm{briefly} surrounded by a bubble of water.
+          The target is \\briefly surrounded by a bubble of water.
           It cannot breathe air, fly, or glide, but it can use its other movement modes normally.
           If it does not have a \\glossterm{swim speed}, it is \\unsteady (see \\pcref{Fighting in Water}).
         `,
@@ -203,7 +203,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // No standard calculation for either the self-stun or the "must have previously
       // hit" requirement. Assume those combine to give about +2 ranks of power, which are
       // split between +1dr and +2a.
-      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
+      cost: 'You \\enduringly cannot use this ability and are \\stunned.',
       attack: {
         hit: `
           \\damagerankfour.
@@ -222,7 +222,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Water Hammer',
 
-      cost: 'You \\glossterm{briefly} cannot use this ability and are \\stunned.',
+      cost: 'You \\enduringly cannot use this ability and are \\stunned.',
       attack: {
         hit: `
           \\damagerankseven.
@@ -428,7 +428,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Misty Shroud',
 
       effect: `
-        At the end of each round, fog \\glossterm{briefly} fills a \\smallarea radius \\glossterm{zone} from you.
+        At the end of each of your turns, fog \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,
@@ -826,7 +826,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \\glossterm{briefly} \\steeled.
+        This causes the critical hit to become only a regular hit, and you remain \\momentarily \\steeled.
         Then, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -867,7 +867,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Cover is 0.5 EA.
       // Fire impervious is about 0.3 EA??
       effect: `
-        You are \\glossterm{briefly} surrounded by a protective bubble of water.
+        You are \\momentarily surrounded by a protective bubble of water.
         The bubble makes you \\impervious to \\atFire and grants you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
@@ -896,7 +896,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\empowered this turn.
           \\item Once: You are \\maximized this turn.
-          \\item Two or more times: You are maximized this turn and \\glossterm{briefly} \\fortified.
+          \\item Two or more times: You are maximized this turn and \\momentarily \\fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 1,
@@ -912,9 +912,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this turn and \\glossterm{briefly} \\fortified.
-          \\item Once: You are \\maximized this turn and briefly fortified.
-          \\item Two or more times: You are maximized and empowered this turn, and \\glossterm{briefly} fortified.
+          \\item Never: You are \\empowered this turn and \\momentarily \\fortified.
+          \\item Once: You are \\maximized this turn and momentarily fortified.
+          \\item Two or more times: You are maximized and empowered this turn, and momentarily fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,
