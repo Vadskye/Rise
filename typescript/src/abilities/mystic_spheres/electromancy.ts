@@ -204,7 +204,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
           If it is \\glossterm{injured}, it is also \\stunned as a \\glossterm{condition}.
         `,
         targeting: `
@@ -224,7 +224,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
-        In addition, it is \\glossterm{briefly} \\impervious to \\atElectricity attacks.
+        In addition, it is \\momentarily \\impervious to \\atElectricity attacks.
       `,
       rank: 3,
       roles: ['healing', 'boon', 'exertion'],
@@ -240,7 +240,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per power.
-        In addition, it is \\glossterm{briefly} \\glossterm{immune} to \\atElectricity attacks.
+        In addition, it is \\momentarily \\glossterm{immune} to \\atElectricity attacks.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
@@ -443,7 +443,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
-          After you use breathe electricity, you \\glossterm{briefly} cannot do so again.
+          After you use breathe electricity, you \\enduringly cannot do so again.
         `,
       },
       rank: 3,
@@ -712,7 +712,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\glossterm{briefly} \\braced.
+          You are \\momentarily \\braced.
           Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,

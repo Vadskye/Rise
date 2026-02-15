@@ -90,7 +90,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 3,
@@ -108,7 +108,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         `,
         halfOnMiss: true,
         targeting: `
-          You are \\glossterm{briefly} \\empowered.
+          You are \\briefly \\empowered.
           Then, make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
@@ -131,7 +131,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\maximized.
+          Then, you are \\briefly \\maximized.
         `,
       },
       rank: 4,
@@ -150,7 +150,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against yourself and all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\maximized.
+          Then, you are \\briefly \\maximized.
         `,
       },
       rank: 7,
@@ -408,7 +408,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           For the duration of this spell, you can breathe fire like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\medarea cone from you.
-          After you breathe fire, you \\glossterm{briefly} cannot do so again.
+          After you breathe fire, you \\enduringly cannot do so again.
         `,
       },
       rank: 3,
@@ -438,12 +438,12 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1 effective rank for attune with cooldown
       attack: {
         hit: `
-          \\damageranktwo, and the target is \\glossterm{briefly} \\dazzled.
+          \\damageranktwo, and the target is \\momentarily \\dazzled.
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
           When you do, make an attack vs. Fortitude against a creature within \\shortrange.
-          After you stare at a creature in this way, you \\glossterm{briefly} cannot do so again.
+          After you stare at a creature in this way, you \\enduringly cannot do so again.
         `,
       },
       rank: 1,
@@ -459,7 +459,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       functionsLike: {
         name: 'eyes of flame',
         exceptThat:
-          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\glossterm{briefly} treats you as being \\trait{invisible}.',
+          'the damage increases to \\damageranksix, and any \\glossterm{extra damage} is doubled. On a hit, the target also \\briefly treats you as being \\trait{invisible}.',
       },
       rank: 5,
       roles: ['burst', 'softener'],
@@ -927,8 +927,8 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\glossterm{briefly} \\empowered.
-          Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
+          You are \\briefly \\empowered.
+          As a \\momentary effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['generator', 'retaliate'],

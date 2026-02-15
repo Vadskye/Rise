@@ -62,7 +62,7 @@ export const photomancy: MysticSphere = {
       // The area is rank 2, which is a little awkward.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\dazzled and \\stunned.
+          The target is \\briefly \\dazzled and \\stunned.
         `,
         targeting: `
           Make an attack vs. Reflex and Mental against each \\glossterm{enemy} within a \\medarea cone from you.
@@ -130,7 +130,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against all creatures in a \\medarea cone from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around you.
+          In addition, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around you.
         `,
       },
       rank: 2,
@@ -150,7 +150,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\largearea radius from you.
-          In addition, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around the area.
+          In addition, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around the area.
         `,
       },
       rank: 4,
@@ -192,7 +192,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 1,
@@ -214,7 +214,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 4,
@@ -236,7 +236,7 @@ export const photomancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against something within \\shortrange.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius around a 5 ft. wide straight line between you and the target.
         `,
       },
       rank: 7,
@@ -258,7 +258,7 @@ export const photomancy: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          When you cast this spell, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius \\glossterm{emanation} around you.
+          When you cast this spell, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius \\glossterm{emanation} around you.
           At the start of your next turn, make a \\glossterm{reactive attack} vs. Fortitude and Reflex against all \\glossterm{enemies} within that area, and brilliant illumination briefly fills a 60 foot radius around that area.
         `,
       },
@@ -279,7 +279,7 @@ export const photomancy: MysticSphere = {
         halfOnMiss: true,
         targeting: `
           You create a field of light in a \\medarea radius \\glossterm{zone} from your location.
-          \\glossterm{Brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from the area.
+          \\glossterm{Brilliant illumination} \\briefly fills a 60 foot radius from the area.
           Make an attack vs. Fortitude against all \\glossterm{enemies} in the area.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
@@ -316,7 +316,7 @@ export const photomancy: MysticSphere = {
           Each cylinder is 30 feet high.
           Make an attack vs. Reflex against all creatures in any of those areas.
           The areas can overlap, but this does not allow you to make multiple attacks against the same creature.
-          Whether you hit or miss, \\glossterm{brilliant illumination} \\glossterm{briefly} fills a 60 foot radius from each area.
+          Whether you hit or miss, \\glossterm{brilliant illumination} \\briefly fills a 60 foot radius from each area.
         `,
       },
       rank: 4,
@@ -331,7 +331,7 @@ export const photomancy: MysticSphere = {
       // use a r5 area, and we drop by 1 rank for the delay.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
         `,
         targeting: `
           You create a \\medarea radius \\glossterm{zone} of multicolored patterns within \\shortrange.
@@ -366,7 +366,7 @@ export const photomancy: MysticSphere = {
       effect: `
         You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
-        All \\glossterm{targeted} attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you \\momentarily have a 50\\% \\glossterm{miss chance}.
         You can activate this spell twice before it is \\glossterm{dismissed}.
 
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
@@ -485,7 +485,7 @@ export const photomancy: MysticSphere = {
       // -0.2 EA, or 0.6 total, so r2 total with damage.
       attack: {
         hit: `
-          \\damageranktwolow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damageranktwolow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         targeting: `
           Make an attack vs. Reflex against one creature within \\shortrange.
@@ -504,7 +504,7 @@ export const photomancy: MysticSphere = {
       // Baseline would be r2, we increase to with 5 +1 area rank and extended area scaling for a total of area rank 6.
       attack: {
         hit: `
-          \\damagerankfourlow, and the target \\glossterm{briefly} suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
+          \\damagerankfourlow, and the target \\briefly suffers one of the following effects, chosen randomly: \\dazzled, \\frightened by you, \\goaded by you, or -2 Reflex defense.
         `,
         halfOnMiss: true,
         targeting: `
@@ -583,7 +583,7 @@ export const photomancy: MysticSphere = {
       // Reactive brief dazzle is 1.2 EA, and r1 deep attunement is 1.5 EA.
       // That gives us some vague ranks to increase to medarea radius?
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\momentarily \\dazzled.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.
           Whenever an \\glossterm{enemy} enters that area, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -657,10 +657,10 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\momentarily \\dazzled.`,
         halfOnMiss: true,
         targeting: `
-          You are \\glossterm{briefly} protected by a field of light.
+          You are \\momentarily protected by a field of light.
           The light makes you \\braced.
           In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
@@ -679,7 +679,7 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `
-          You are \\glossterm{briefly} protected by a field of light.
+          You are \\momentarily protected by a field of light.
           The light makes you \\braced.
           In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
@@ -693,9 +693,9 @@ export const photomancy: MysticSphere = {
       name: 'Focusing Lens',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\briefly \\focused.
         In addition, choose something within \\longrange.
-        You \\glossterm{briefly} gain a \\plus2 accuracy bonus against that target.
+        You briefly gain a \\plus2 accuracy bonus against that target.
       `,
       rank: 1,
       roles: ['focus'],
@@ -705,9 +705,9 @@ export const photomancy: MysticSphere = {
       name: 'Greater Focusing Lens',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\briefly \\focused.
         In addition, choose something within \\distrange.
-        You \\glossterm{briefly} gain a \\plus4 accuracy bonus against that target.
+        You briefly gain a \\plus4 accuracy bonus against that target.
       `,
       rank: 4,
       roles: ['focus'],
