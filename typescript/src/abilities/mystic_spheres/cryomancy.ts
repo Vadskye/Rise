@@ -691,33 +691,29 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Ice Shield',
 
-      // Double shield is 0.6 EA. Adding a round of empowered is +0.4 EA, so 1 EA, which
+      // Cover is 0.5 EA. Adding empowered is +0.4 EA, so 0.9 EA, which
       // is fine for an optional ice crystal.
       cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You \\glossterm{briefly} have \\glossterm{cover} from all attacks.
         If you spent an ice crystal, you are also briefly \\empowered.
-        Because this ability has the \\abilitytag{Swift} tag, this protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Greater Ice Shield',
 
-      // Double shield is 0.6 EA. Adding a round of maximized is +0.7 EA, so 1.3 EA, which
+      // Cover is 0.5 EA. Adding a round of maximized is +0.7 EA, so 1.2 EA, which
       // is fine for an optional ice crystal.
       cost: OPTIONAL_ICE_CRYSTAL,
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You \\glossterm{briefly} have \\glossterm{cover} from all attacks.
         If you spent an ice crystal, you are also briefly \\maximized.
-        Because this ability has the \\abilitytag{Swift} tag, this protects you from attacks during the current phase.
       `,
       rank: 6,
       roles: ['focus', 'turtle'],
-      tags: ['Swift'],
     },
   ],
 });
