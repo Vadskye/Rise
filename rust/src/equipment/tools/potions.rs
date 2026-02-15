@@ -100,6 +100,7 @@ pub fn potions() -> Vec<Tool> {
     // R6: 1.0 EA
     // R8: 1.1 EA
 
+    // 0.4 + 0.3
     potions.push(Tool {
         name: "Invigorating Potion".to_string(),
         rank: 1,
