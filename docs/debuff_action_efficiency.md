@@ -10,9 +10,9 @@ By EA:
   Action skip        & 2.0          & 3.0   & 4.8              & 12        \\
   Banishment         & 2.0          & 3.0   & 3.6              & 9         \\
   Blinded            & 2.2          & 3.4   & 3.6              & 9.0       \\
-  Confused           & 1.8          & 2.8   & 2.9              & 7.2       \\
-  Dazzled            & 0.4          & 0.6   & 0.7              & 1.8       \\
-  Deafened           & 0.2          & 0.3   & 0.5              & 1.2       \\
+  Confused           & 1.8          & 2.8   & 3.2              & 7.9       \\
+  Dazzled            & 0.4          & 0.6   & 0.8              & 2.1       \\
+  Deafened           & 0.2          & 0.3   & 0.6              & 1.4       \\
   Fling 15' (ranged) & 1.0          & N/A   & N/A              & N/A       \\
   Fling 15' (melee)  & 0.8          & N/A   & N/A              & N/A       \\
   Fling 30' (ranged) & 1.9          & N/A   & N/A              & N/A       \\
@@ -20,10 +20,10 @@ By EA:
   Frightened by you  & 0.5          & 0.8   & 0.8              & 2.1       \\
   Frightened by ally & 0.7          & 1.1   & 1.1              & 2.8       \\
   Frightened by all  & 1.1          & 1.7   & 1.9              & 4.8       \\
-  Goaded             & 0.6          & 1.0   & 1.2              & 3.0       \\
+  Goaded             & 0.8          & 1.2   & 1.2              & 3.0       \\
   Panicked by self   & 1.5          & 2.3   & 2.4              & 6.1       \\
-  Panicked by ally   & 1.8          & 2.7   & 3.0              & 7.6       \\
-  Prone (ranged)     & 1.0          & 1.6   & 2.4              & 6.0       \\
+  Panicked by ally   & 1.8          & 2.7   & 3.4              & 8.6       \\
+  Prone (ranged)     & 1.0          & 1.6   & 2.4              & 6.1       \\
   Prone (melee)      & 0.6          & 1.0   & 1.6              & 4.1       \\
   Pull 15'           & 0.3          & 0.5   & N/A              & N/A       \\
   Pull 30'           & 1.0          & 1.5   & N/A              & N/A       \\
@@ -37,8 +37,8 @@ By EA:
   Slowed (melee)     & 1.0          & 1.5   & 1.5              & 3.7       \\
   Stunned            & 0.9          & 1.4   & 1.2              & 3.0       \\
   Submerged          & 1.6          & 2.5   & 2.6              & 6.6       \\
-  Time skip          & 2.3          & 3.5   & 4.3              & 10.8      \\
-  Treat as invis:    & 0.8          & 1.2   & 1.6              & 4.0       \\
+  Time skip          & 2.3          & 3.5   & 4.8              & 12        \\
+  Treat as invis:    & 0.8          & 1.2   & 1.8              & 4.5       \\
   Vulnerable         & 2.3          & 3.5   & 3.0              & 7.5       \\
 ```
 
@@ -298,19 +298,19 @@ The Mental defense penalty can apply to 7 party attacks (see Stunned). However, 
 
 That adds up to 0.75 effective actions for frighten.
 
-### Frightened by ally: 1.1
+### Frightened by ally: 1.2
 
-0.7 from Braced (ally) + 0.35 from defense penalty = 1.1.
+0.8 from Braced (ally) + 0.35 from defense penalty = 1.1.
 
-### Frightened by all: 1.7
+### Frightened by all: 1.8
 
-1.3 from Braced (all) + 0.35 from defense penalty = 1.7.
+1.6 from Braced (all) - 0.2 excluding you + 0.35 from defense penalty = 1.8.
 
-### Goaded: 1.0
+### Goaded: 1.2
 
 Assuming that the monster attacks all party members equally, goaded applies to 75% of its attacks.
 
-Since goaded is 33% action denial when it applies, that gives it 4 * 0.75 / 3 = 1.0 action effectiveness.
+Since -2a is 1.6 EA when it applies, that gives it 1.6 * 0.75 = 1.2 action effectiveness.
 
 ### Fling 15': 1.0 (ranged) / 0.8 (melee)
 
@@ -420,42 +420,43 @@ Assume that a normal group combat lasts for 16 player effective actions, and a t
 However, that only applies if the condition is the *only* condition applied during the fight. If the elite would also need to remove other conditions, the condition should last longer.
 That's basically the same as the expected condition duration in a group fight, since non-elites can't remove conditions. If the elite monster gains two conditions, the odds of removal are more complicated to calculate, but I'll wave my hand and say that it lets us go up to 4 rounds of combat. Or so.
 
-Basically, we can generally assume that a condition lasts for 4 rounds of combat. That generally means that the maximum player action count is 15, and 3 rounds of enemy attacks are affected by enemy attack debuffs.
+Basically, we can generally assume that a condition lasts for 4 rounds of combat. That generally means that the maximum player action count is 15. For enemy attack debuffs, you sometimes go before the enemies and sometimes after, so estimate that 3.5 rounds of enemy attacks are affected by enemy attack debuffs.
 
 ### Action Denial
 
-What is the correct action effectiveness of a hypothetical condition that prevents the boss from taking any actions? Start from our usual assumption of 4 rounds of combat, or 3 rounds of enemy attacks, which would be worth 12 effective actions. The real problem with this sort of condition is that it can be reapplied during the 12 action window, making it worth effectively infinite actions. For a more mild debuff like being dazzled, this reapplication problem doesn't really exist, and it's reasonable to just look at the 3 rounds of enemy attacks that we would normally consider. How do we scale the calculations between the small debuff and the infinite debuff?
+What is the correct action effectiveness of a hypothetical condition that prevents the boss from taking any actions? Start from our usual assumption of 4 rounds of combat. Since it's possible to go before the boss, assume 3.5 rounds of enemy attacks, which would be worth 14 effective actions. The real problem with this sort of condition is that it can be reapplied during the 14 action window, making it worth effectively infinite actions. For a more mild debuff like being dazzled, this reapplication problem doesn't really exist, and it's reasonable to just look at the 3 rounds of enemy attacks that we would normally consider. How do we scale the calculations between the small debuff and the infinite debuff?
 
 We can solve that by making "cannot be reapplied" an intrinsic part of the definition of any sufficiently high action denial effects. There is no such thing as an action skip debuff that can be applied multiple times to the same creature. This lets us use 3 rounds of enemy attacks as the standard calculation for all action denial effects. This doesn't technically solve the problem for mooks, since a complete action denial on a creature that can't remove conditions is still worth infinite actions, but in practice this doesn't matter because total action denial is beyond the scope of any player-accessible condition.
 
-In short, X% action denial is worth X% of 12 EA.
+In short, X% action denial is worth X% of 14 EA.
 
-* A -2 accuracy penalty is 33% action denial of 4 boss attacks = 4 effective actions.
-* Dazzled would remove 20% of 75% of 4 boss attacks = 2.4 effective actions.
-* Confusion is more similar to dazzled in duration because it also has a defense debuff, so it removes 35% of 4 boss attacks = 5.6 effective actions.
-* Slowed should also use the dazzled baseline, so it removes 12.5% of 4 boss attacks = 2 effective actions.
+Examples of action denial:
+* A -2 accuracy penalty is 28.6% action denial of 14 EA = 4 EA.
+* Dazzled would remove 20% of 75% of 14 EA = 2.1 effective actions.
+* Confusion removes 35% of 14 EA = 4.9 EA (ignoring the defense debuff).
+* Slowed removes 12.5% of 14 EA = 1.8 EA (ignoring the defense debuff).
 
-### Action skip: 12
+### Action skip: 14
 
-### Banishment: 9
+### Banishment: 10.5
 Say that this is 75% of the effectiveness of a full action skip.
 
-### Blinded: 9
-Removing 50% of enemy actions is worth 12 * 0.5 = 6 effective actions.
+### Blinded: 10
+Removing 50% of enemy actions is worth 14 * 0.5 = 7 effective actions.
 
 Partially unaware is worth 3 effective actions using the same logic as being stunned.
 
-### Confused: 7.2
-35% action denial is worth 4.2 EA. The defense debuff is worth 3 effective actions, just like stunned.
+### Confused: 7.9
+35% action denial is worth 4.9 EA. The defense debuff is worth 3 effective actions, just like stunned.
 
-### Dazzled: 1.8
+### Dazzled: 2.1
 75% of 20% action denial is worth 1.8 EA.
 
-### Deafened: 1.2
+### Deafened: 1.4
 Assume this is 10% action denial.
 
 ### Frightened by you: 2.1
--2 accuracy applies 33% of the time, which is 1.3 EA.
+-2 accuracy applies 33% of the time, which is 4 / 3 = 1.3 EA.
 
 Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 * 0.25 * 0.2 = 0.8 effective actions.
 
@@ -474,22 +475,22 @@ Assuming the Mental penalty applies to 25% of attacks as before, it is worth 15 
 
 The defense penalty is twice the Frightened penalty, so 1.6 effective actions.
 
-As with the brief effect, assume 37.5% action denial, so 4.5 EA.
+As with the brief effect, assume 37.5% action denial, so 5.25 EA.
 
-### Panicked by ally: 7.6
+### Panicked by ally: 8.6
 
-50% action denial is 6 EA, plus the 1.6 EA from the defense penalty.
+50% action denial is 7 EA, plus the 1.6 EA from the defense penalty.
 
-### Prone: 6.0 (ranged) / 4.1 (melee)
+### Prone: 6.1 (ranged) / 4.1 (melee)
 
-Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's 25% more effective, so +0.8 EA (ranged) or +0.4 EA (melee).
+Prone as a condition is basically the same as slow, but with a slightly more punishing action denial. Vaguely assume it's 25% more effective, so +0.9 EA (ranged) or +0.4 EA (melee).
 
 ### Single defense: 2.0
 
 Choosing a single defense probably affects 10 of the 15 available player actions.
 
 ### Slowed: 5.2 (ranged) / 3.7 (melee)
-We calculated the action denial from the speed debuff as 25% action denial, which is 3 effective actions. In melee, that would be 1.5 effective actions.
+We calculated the action denial from the speed debuff as 25% action denial, which is 3.5 effective actions. In melee, that would be 1.75 effective actions.
 For the defense debuff, assume that 11 of the 15 party actions will take advantage of it, so it's worth 2.2 effective actions.
 
 ### Stunned: 3
@@ -500,13 +501,13 @@ For the defense debuff, assume that 11 of the 15 party actions will take advanta
 
 4 EA from accuracy penalty plus 2.6 EA from Armor/Reflex penalty = 6.6 EA
 
-### Time Skip: 10.8
+### Time Skip: 12
 
-### Treat as invisible: 4.0
+### Treat as invisible: 4.5
 
 The defense penalty applies to 3 party attacks, so it provides 0.6 action effectiveness.
 
-The blindness is 12 * 0.25 * 0.75 = 2.2 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.4.
+The blindness is 14 * 0.25 * 0.75 = 2.6 effective actions. The brief effect gets a 25% boost here, but a condition is easier to game by having only the invisible person stick around to fight, so give it a 50% boost to 3.9.
 
 ### Vulnerable: 7.5
 Double stunned, plus 25% effectiveness for negating impervious/immune.
