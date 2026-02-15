@@ -816,31 +816,28 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       type: 'Attune (target)',
     },
 
-    // Ally shielded + steeled is 1 EA. We can do that at r1 with the downside.
+    // Any two shielded is 0.9 EA
     {
       name: 'Earthen Shield',
 
       effect: `
-        Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target must be \\glossterm{grounded}.
-        It is \\glossterm{briefly} \\shielded and \\steeled.
-        If it moves from its location or stops being grounded, this effect immediately ends.
+        Choose up to two \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\glossterm{briefly} \\shielded.
+        If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 1,
       roles: ['boon'],
     },
 
-    // Any two shielded + steeled is 1.4 EA
     {
-      name: 'Twinned Earthen Shield',
+      name: 'Mass Earthen Shield',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target must be \\glossterm{grounded}.
-        Each is \\glossterm{briefly} \\shielded and \\steeled.
+        Choose up to five \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Each target is \\glossterm{briefly} \\shielded.
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['boon'],
     },
   ],

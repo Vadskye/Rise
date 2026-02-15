@@ -233,7 +233,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} You are also \glossterm{briefly} \empowered.
                     \end{magicalactiveability}
 
-                    % Everyone fortified is 1 EA
+                    % Everyone fortified is 1.2 EA
                     \begin{magicalsustainability}{Cadenza of Courage}{Standard action}
                         \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline
@@ -245,7 +245,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \rank{7} Each target is also immune to being \panicked.
                     \end{magicalsustainability}
 
-                    % Everyone shielded is 1 EA
+                    % Everyone shielded is 1.2 EA
                     \begin{magicalsustainability}{Cantata of Caution}{Standard action}
                         \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (standard)
                         \rankline

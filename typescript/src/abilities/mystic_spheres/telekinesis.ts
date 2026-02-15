@@ -102,11 +102,11 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Greater Kinetic Ablation',
 
-      // 0.3 + 0.7 EA
+      // 0.4 + 0.7 EA
       effect: `
         You are \\glossterm{briefly} \\shielded and take half damage from all sources.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['turtle'],
     },
 
@@ -392,12 +392,13 @@ export const telekinesis: MysticSphere = {
     {
       name: 'Kinetic Redirection',
 
+      // Shielded is 0.4 EA, redirect is ???
       effect: `
         You are \\glossterm{briefly} \\shielded.
         In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['turtle'],
     },
 
@@ -561,29 +562,17 @@ export const telekinesis: MysticSphere = {
       type: 'Attune (deep)',
     },
 
-    // Any two shielded is 0.7 EA, or 1.4 EA if the brief works on both targets. Assume
-    // that it works on one of the two targets, so ~1 EA.
+    // Ally shielded is 0.6 EA. Ally empowered is 0.6 EA. The damage requirement means we
+    // can try it at rank 5.
     {
       name: 'Kinetic Shield',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\glossterm{briefly} \\shielded.
-        Each target that is hit by a \\glossterm{strike} during that effect is \\glossterm{briefly} shielded again.
+        Choose yourself or one \\glossterm{ally} within \\medrange.
+        The target is \\glossterm{briefly} \\shielded.
+        During the effect, if the target takes damage, it is \\glossterm{briefly} \\empowered.
       `,
-      rank: 3,
-      roles: ['boon'],
-    },
-
-    {
-      name: 'Greater Kinetic Shield',
-
-      effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\glossterm{briefly} \\shielded.
-        Each target takes damage during that effect is \\glossterm{briefly} shielded again.
-      `,
-      rank: 7,
+      rank: 5,
       roles: ['boon'],
     },
 

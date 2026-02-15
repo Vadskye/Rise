@@ -674,7 +674,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         You surround yourself in a bubble of water.
         This has the following effects:
         \\begin{mdframeditemize}
-          \\item You are \\shielded.
+          \\item You have \\glossterm{cover} against all attacks.
           \\item You are \\impervious to \\atFire attacks.
           \\item If you have a walk speed, it becomes slow.
           \\item If you have a swim speed, you can use it to move around on land.
@@ -683,7 +683,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\end{mdframeditemize}
       `,
       // narrative: '',
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (deep)',
     },
@@ -864,17 +864,11 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Waterward',
 
-      // Shielded is 0.3 EA.
-      // Strike-only braced is about 0.3 EA.
-      // Impervious to fire is about 0.2 EA??
+      // Cover is 0.5 EA.
+      // Fire impervious is about 0.3 EA??
       effect: `
         You are \\glossterm{briefly} surrounded by a protective bubble of water.
-        The bubble has three effects:
-        \\begin{itemize}
-          \\item You are \\shielded.
-          \\item You are \\impervious to \\atFire.
-          \\item You gain a \\plus2 bonus to all defenses against \\glossterm{strikes}.
-        \\end{itemize}
+        The bubble makes you \\impervious to \\atFire and grants you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
       roles: ['turtle'],

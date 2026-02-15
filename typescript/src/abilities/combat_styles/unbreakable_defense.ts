@@ -114,20 +114,18 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Shield Bash',
 
       effect: `
-        You are \\shielded this round.
+        You are \\glossterm{briefly} \\shielded.
         Make a melee \\glossterm{strike} with a -1 accuracy penalty using a shield.
-        The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
       name: 'Shield Bash+',
 
       effect: `
-        You are \\shielded this round.
+        You are \\glossterm{briefly} \\shielded.
         Make a melee \\glossterm{strike} that deals double damage using a shield.
         The shielding is a \\atSwift effect, but the strike is not.
       `,
@@ -277,20 +275,6 @@ export const unbreakableDefense: CombatStyle = {
       rank: 5,
       roles: ['softener'],
       tags: ['Emotion'],
-    },
-
-    {
-      name: 'Defensive Stance',
-
-      // Theoretically 3 rounds of shielded, so 0.9 EA.
-      effect: `
-        You become \\glossterm{briefly} \\shielded.
-        Next round, if you take damage that round, you become \\glossterm{briefly} \\shielded again.
-        This ability has the \\abilitytag{Swift} tag, so it affects attacks against you during the current phase.
-      `,
-      rank: 1,
-      roles: ['focus'],
-      tags: ['Swift'],
     },
 
     {

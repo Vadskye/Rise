@@ -674,15 +674,15 @@ export const verdamancy: MysticSphere = {
       rank: 7,
     },
 
-    // Any two shielded is 0.7, any two 0.4 EA is 1 EA.
+    // Any two shielded is 0.9 EA
     {
       name: 'Vineward',
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target has \\glossterm{briefly} has \\glossterm{cover} from all attacks.
+        Each target is \\glossterm{briefly} \\shielded.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['boon'],
       tags: ['Manifestation'],
     },
@@ -691,14 +691,14 @@ export const verdamancy: MysticSphere = {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you \\glossterm{briefly} have \\glossterm{cover} from all attacks.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['boon'],
       tags: ['Manifestation'],
     },
 
-    // Shielded is 0.3 EA.
+    // Shielded is 0.4 EA.
     // Reactive damage takes up half the EA budget, so ~0.4 EA here.
     {
       name: 'Thorns',
