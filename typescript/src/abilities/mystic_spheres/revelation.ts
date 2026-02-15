@@ -545,17 +545,18 @@ export const revelation: MysticSphere = {
     {
       name: 'Behold the Lurking Danger',
 
+      // All would be 1.2 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
+        All \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
       `,
-      rank: 4,
+      rank: 5,
       roles: ['boon'],
     },
 
-    // 1.2 EA for "all except you"
     {
       name: 'Behold the Narrow Path',
 
+      // All would be 1.4 EA, give it -2r for excluding you.
       effect: `
         All \\glossterm{allies} within a \\largearea radius from you are \\honed this round.
       `,

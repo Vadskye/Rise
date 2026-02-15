@@ -323,26 +323,22 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Guardweave',
 
       effect: `
-        You are \\shielded this round.
+        You are \\glossterm{briefly} \\shielded.
         Make a \\glossterm{strike}.
-        The shielding is a \\atSwift effect, but the strike is not.
       `,
       rank: 3,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {
       name: 'Guardweave Flurry',
 
       effect: `
-        You are \\shielded this round.
+        You are \\glossterm{briefly} \\shielded.
         Make three \\glossterm{strikes} with a -2 accuracy penalty.
-        The shielding is a \\atSwift effect, but the strikes are not.
       `,
       rank: 7,
       roles: ['turtle'],
-      tags: ['Swift (see text)'],
     },
 
     {

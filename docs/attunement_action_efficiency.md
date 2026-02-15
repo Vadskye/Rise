@@ -30,9 +30,9 @@ As with weapons, we treat +2 accuracy as 0.3 EA per hit, so 1.5 EA.
 
 ### Singleton +5 accuracy: 0.7
 
-### Braced: 2.2
+### Braced: 2.7
 
-If you could be braced as an attunement, it would be 33% action denial that works 33% of the time, so 20 / 3 / 3 = 2.2 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
+If you could be braced as an attunement, it would be 40% action denial that works 33% of the time, so 20 * 0.4 / 3 = 2.7 EA. That's too powerful for a single attunement, but within scope for a deep attunement.
 
 ### Empowered: 2.0
 
@@ -42,9 +42,9 @@ If you could be braced as an attunement, it would be 33% action denial that work
 
 Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that target you are area attacks, 50% of area attacks that target you miss, and this protects you from the 50% damage that you would take from the miss. That's 20 / 3 * 0.75 * 0.5 * 0.5 * 0.5 = 0.6 EA. That's a lot of assumptions, so call it rank 2 to match rogue, but it's definitely not a deep attunement.
 
-### Fortified: 1.6
+### Fortified: 2.0
 
-0.325 EA * 5 actions = 1.6 EA
+0.4 EA * 5 actions = 2 EA
 
 ### 25% extra damage: 1.25
 
@@ -54,9 +54,9 @@ Assume that 75% of abilities attack Armor and Reflex, 50% of abilities that targ
 
 0.4 EA * 5 actions = 2 EA
 
-### Shielded: 1.6
+### Shielded: 2.0
 
-0.325 EA * 5 actions = 1.6 EA
+0.4 EA * 5 actions = 2 EA
 
 ### Singleton focused: 0.6
 
