@@ -1,4 +1,4 @@
-# Buf Action Efficiency
+# Buff Action Efficiency
 
 ## Summary
 

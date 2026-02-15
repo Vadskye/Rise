@@ -178,7 +178,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Protection',
 
-      // Choosing between shielded and fortified is almost as good as braced, which is 1
+      // Choosing between shielded and fortified is almost as good as braced, which is 1.2
       // EA for any two. But you can't target yourself with this.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
@@ -186,7 +186,7 @@ export const prayer: MysticSphere = {
         You must make the same choice for each target.
         Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
-      rank: 1,
+      rank: 3,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -194,12 +194,12 @@ export const prayer: MysticSphere = {
     {
       name: 'Mass Boon of Protection',
 
-      // All braced is 1.3 EA, but you can't target yourself with this.
+      // All braced is 1.6 EA, but you can't target yourself with this.
       functionsLike: {
         name: 'boon of protection',
         exceptThat: 'you can target up to five \\glossterm{allies}.',
       },
-      rank: 5,
+      rank: 7,
       roles: ['boon'],
       tags: ['Swift'],
     },
@@ -345,16 +345,16 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Shielding',
 
-      // Any two shielded is 0.5 EA, so we reduce the healing to dr2.
+      // Ally shielded is 0.6 EA, so we reduce the healing to dr2.
       // TODO: more clear guidelines on how healing interacts with buffs, and who pays the
       // fatigue for this sort of effect.
       cost: 'One \\glossterm{fatigue level}.',
       // dr3
       effect: `
-        Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\shielded this round and regains \\hpranktwo.
+        Choose one \\glossterm{ally} within \\medrange.
+        The target is \\shielded this round and regains \\hpranktwo.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],
@@ -365,9 +365,9 @@ export const prayer: MysticSphere = {
 
       functionsLike: {
         name: 'boon of shielding',
-        exceptThat: 'the recovery increases to \\hpranksix.',
+        exceptThat: 'the recovery increases to \\hprankfive.',
       },
-      rank: 5,
+      rank: 4,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
       tags: ['Swift'],

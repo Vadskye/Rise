@@ -71,7 +71,7 @@ pub fn shields() -> Vec<MagicArmor> {
 
     // +2 Armor is 1.5 EA. This is active less than half the time, so r1 is fine.
     armor.push(Shield(StandardItem {
-        name: String::from("Covering Shield"),
+        name: String::from("Turtle Shield"),
         rank: 1,
         short_description: String::from("Grants +2 Armor during total defense"),
         description: String::from(r"
@@ -202,21 +202,27 @@ pub fn shields() -> Vec<MagicArmor> {
 
     armor.push(Shield(StandardItem {
         name: String::from("Shield of Shielding"),
-        rank: 1,
+        rank: 3,
         short_description: String::from("Shields you"),
         description: String::from(
             r"
-            You are \shielded.
-        ",
+                You are \shielded.
+            ",
         ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
-        upgrades: vec![ItemUpgrade::new(
-            7,
-            "Shields you",
+        ..MagicArmor::default()
+    }));
+
+    armor.push(Shield(StandardItem {
+        name: String::from("Covering Shield"),
+        rank: 6,
+        short_description: String::from("Grants you cover"),
+        description: String::from(
             r"
-                This item does not require \glossterm{deep attunement}.
+                You have \glossterm{cover} from all attacks.
             ",
-        )],
+        ),
+        tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         ..MagicArmor::default()
     }));
 

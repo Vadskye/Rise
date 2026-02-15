@@ -749,13 +749,11 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        This round, the target is \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against the target during the current phase.
+        The target is \\glossterm{briefly} \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
       `,
       // narrative: '',
-      rank: 1,
+      rank: 2,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
@@ -812,17 +810,18 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Building Tempest',
 
+      // Once is 0.9 EA, twice is 1.3 EA
       effect: `
         When you cast this spell, and whenever you sustain it, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\shielded this round.
-          \\item Once: You are shielded and \\honed this round.
-          \\item Two or more times: You are shielded and \\primed this round.
+          \\item Never: You are \\glossterm{briefly} \\shielded.
+          \\item Once: You are \\honed this turn and briefly shielded.
+          \\item Two or more times: You are briefly honed and shielded.
         \\end{mdframedraggeditemize}
       `,
       // narrative: '',
-      rank: 2,
+      rank: 3,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },
@@ -830,17 +829,18 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Greater Building Tempest',
 
+      // Once is 1.2 EA, twice is 1.6 EA
       effect: `
         When you cast this spell, and whenever you sustain it, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\shielded and \\honed this round.
-          \\item Once: You are shielded and \\primed this round.
-          \\item Two or more times: You are \\primed this round and \\glossterm{briefly} shielded.
+          \\item Never: You are \\primed this turn.
+          \\item Once: You are primed this turn and \\glossterm{briefly} \\shielded.
+          \\item Two or more times: You are primed and \\honed this turn, and briefly shielded.
         \\end{mdframedraggeditemize}
       `,
       // narrative: '',
-      rank: 6,
+      rank: 7,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },

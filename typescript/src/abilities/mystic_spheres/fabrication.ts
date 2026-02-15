@@ -59,15 +59,14 @@ export const fabrication: MysticSphere = {
       tags: ['Manifestation'],
       type: 'Sustain (attunable, minor)',
     },
-    // Shielded is 0.3, cover is ~0.4, so 0.7 total?
+    // Shielded is 0.4, cover is 0.5, so 0.9 total?
     {
       name: 'Desperate Shieldwall',
 
       effect: `
         You can activate this effect as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you create a wall of indestructible shields around you until the end of the round.
+        When you do, your attunement to this effect ends and you \\glossterm{briefly} create a wall of indestructible shields around you.
         The shields make you \\shielded and give you \\glossterm{cover} from all attacks.
-        This is a \\atSwift effect, so it protects you from attacks during the current phase.
       `,
       rank: 1,
       roles: ['attune'],
@@ -1004,11 +1003,9 @@ export const fabrication: MysticSphere = {
 
       effect: `
         You and all \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
-        This is a \\atSwift effect, so it protects each target from attacks during the current phase.
       `,
-      rank: 4,
+      rank: 7,
       roles: ['boon', 'turtle'],
-      tags: ['Swift'],
     },
 
     {

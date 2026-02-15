@@ -371,20 +371,9 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\shielded.
       `,
-      rank: 2,
+      rank: 3,
       roles: ['attune'],
       type: 'Attune (deep)',
-    },
-
-    {
-      name: 'Efficient Shield of Faith',
-
-      effect: `
-        You are \\shielded.
-      `,
-      rank: 7,
-      roles: ['attune'],
-      type: 'Attune',
     },
 
     {
@@ -393,7 +382,7 @@ export const channelDivinity: MysticSphere = {
       effect: `
         You are \\braced.
       `,
-      rank: 4,
+      rank: 6,
       roles: ['attune'],
       type: 'Attune (deep)',
     },

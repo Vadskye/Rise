@@ -254,24 +254,22 @@ export const heraldOfWar: CombatStyle = {
       name: 'Watch Out',
 
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\shielded this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\shielded.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
       name: 'Watch Out+',
 
       effect: `
-        Your \\glossterm{allies} within a \\largearea radius from you are \\shielded this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against them during the current phase.
+        Your \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
       `,
       rank: 5,
       roles: ['boon'],
-      tags: ['Auditory', 'Swift'],
+      tags: ['Auditory'],
     },
 
     {
@@ -321,7 +319,7 @@ export const heraldOfWar: CombatStyle = {
       tags: ['Auditory'],
     },
 
-    // Shielded is 0.3 EA and brief goad is 1.0 EA, so we need 1 / 0.7 = 1.4 EA of base
+    // Shielded is 0.4 EA and brief goad is 1.0 EA, so we need 1 / 0.7 = 1.4 EA of base
     // debuff, which is a standard r1 debuff.
     {
       name: 'Challenge',
