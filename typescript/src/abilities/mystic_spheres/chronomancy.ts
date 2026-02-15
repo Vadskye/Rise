@@ -750,24 +750,25 @@ export const chronomancy: MysticSphere = {
       },
     },
 
-    // 0.8 EA
+    // 0.5 + 0.4 EA
     {
       name: 'Time Ebbs and Flows',
 
       effect: `
-        You are \\glossterm{briefly} \\braced and \\focused.
+        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\glossterm{briefly} \\focused.
       `,
-      rank: 1,
+      rank: 2,
       roles: ['turtle', 'focus'],
     },
 
+    // 0.5 + 0.8 EA
     {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\glossterm{briefly} \\braced and \\primed.
+        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\glossterm{briefly} \\primed.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['turtle', 'focus'],
     },
   ],

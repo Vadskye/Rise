@@ -18,9 +18,9 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Rocky Carapace',
 
-      // Like total defense, but with steeled on top. Braced + steeled is 0.7 EA.
+      // Shielded + steeled is 0.7 EA.
       effect: `
-        You are \\glossterm{briefly} \\steeled and \\braced.
+        You are \\glossterm{briefly} \\shielded and \\braced.
       `,
       roles: ['turtle'],
       tags: ['Manifestation'],
@@ -296,16 +296,18 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
     {
       name: 'Stoneward',
 
+      // 0.5 + 0.4 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\steeled.
+         If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\fortified.
       `,
       rank: 2,
-      roles: ['focus'],
+      roles: ['turtle'],
     },
 
     {
       name: 'Draw Upon The Deepest Earth',
 
+      // 0.5 + 0.7 EA
       effect: `
          If you are \\glossterm{grounded} on stone, you are \\glossterm{briefly} \\braced and \\maximized.
          However, your movement speed is also \\glossterm{briefly} halved.

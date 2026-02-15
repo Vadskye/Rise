@@ -653,7 +653,7 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double brace is 0.8 EA.
+    // Self-only double brace is 1 EA.
     {
       name: 'Bracing Concoction',
 
@@ -662,7 +662,7 @@ export const toxicology: MysticSphere = {
         A creature can drink the potion as a standard action using a \\glossterm{free hand}.
         When a living creature drinks the potion, it becomes \\braced for the next two rounds.
       `,
-      rank: 1,
+      rank: 4,
       roles: ['boon'],
       type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
@@ -677,7 +677,7 @@ export const toxicology: MysticSphere = {
         A creature can drink the potion as a standard action using a \\glossterm{free hand}.
         When a living creature drinks the potion, it becomes \\empowered for the next two rounds.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['boon'],
       type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],
@@ -693,7 +693,7 @@ export const toxicology: MysticSphere = {
         A creature can drink the potion as a standard action using a \\glossterm{free hand}.
         When a living creature drinks the potion, it becomes \\focused for the next two rounds.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['boon'],
       type: 'Sustain (attunable, minor)',
       tags: ['Manifestation'],

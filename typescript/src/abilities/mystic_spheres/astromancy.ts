@@ -719,6 +719,7 @@ export const astromancy: MysticSphere = {
     {
       name: 'Empowered Blink',
 
+      // 0.7 + 0.5 EA, though they have a bit of antisynergy
       effect: `
         You \\glossterm{briefly} blink in and out of existence in response to attacks.
         This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
