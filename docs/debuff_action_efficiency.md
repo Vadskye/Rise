@@ -186,8 +186,6 @@ From the formula: EA = 4 * 0.2 / 0.7 = 1.1 EA
 
 #### -2 with 50% hit rate: 1.6
 
-Expected hits with 4 actions is 2 hits. With -2 accuracy, that's 30% chance to hit, so 1.2 hits. 2/3 of enemy actions were removed. That's worth 2.7 effective actions.
-
 From the formula: EA = 4 * 0.2 / 0.5 = 1.6 EA
 
 #### -2 with 30% hit rate: 2.7
