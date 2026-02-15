@@ -225,9 +225,11 @@ You can probably choose the best defense here, so it's pretty close in power to 
 Assumptions:
 * You are attacked 33% of the time
 * The enemy gets a critical hit 5% of the time (standard 50% hit chance)
-* Critical hits are twice as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
+* Critical hits are three times as scary as a regular hit, because they have a disproportionate probability of killing / incapacitating.
 
-With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 2 (extra scary crits) = 2.4. If you remove crits from that possibility, expected incoming damage is 2. That's about 20% action denial, which has a base value of 4 * 0.2 = 0.8 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.3 EA as a self-buff.
+With 50% hit chance, expected enemy hits per round is 2 hits + 0.2 crits * 3 (extra scary crits) = 2.6. If you remove crits from that possibility, expected incoming damage is 2. That's about 23% action denial, which has a base value of 4 * 0.23 = 0.9 EA. With the standard assumption that you are targeted by 33% of attacks, that's 0.3 EA as a self-buff.
+
+If you assume an 80% hit chance, expected enemy hits per round is 3.2 hits + (4 * 0.1 * 0.8 * 3) = 4.2 hits. If you remove crits, expected incoming damage is 3.2. That's about 24% action denial, which is basically the same. So steeled has similar value regardless of hit probability.
 
 ### Steeled (ally): 0.5
 

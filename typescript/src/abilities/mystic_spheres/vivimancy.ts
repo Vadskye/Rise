@@ -759,7 +759,7 @@ export const vivimancy: MysticSphere = {
       name: 'Putrefying Blast',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\stunned.`,
+        hit: `The target is \\briefly \\stunned.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\medarea cone from you.
         `,
@@ -778,7 +778,7 @@ export const vivimancy: MysticSphere = {
         hit: `The target is \\stunned as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} within a \\largearea cone from you.
-          Then, you are \\glossterm{briefly} \\stunned.
+          Then, you are \\briefly \\stunned.
         `,
       },
       rank: 7,
@@ -791,7 +791,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damageranktwo.`,
-        injury: `You are \\glossterm{briefly} \\empowered.`,
+        injury: `You are \\briefly \\empowered.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -806,7 +806,7 @@ export const vivimancy: MysticSphere = {
 
       attack: {
         hit: `\\damagerankfive, and any \\glossterm{extra damage} is doubled.`,
-        injury: `You are \\glossterm{briefly} \\empowered.`,
+        injury: `You are \\briefly \\empowered.`,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
         `,
@@ -823,12 +823,12 @@ export const vivimancy: MysticSphere = {
       // is enough for 0.4 ranks of buff.
       attack: {
         hit: `
-          The target \\glossterm{briefly} takes a -2 penalty to the chosen defense.
+          The target \\briefly takes a -2 penalty to the chosen defense.
         `,
         targeting: `
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.
-          Then, you \\glossterm{briefly} gain a +2 bonus to that defense.
+          Then, you \\momentarily gain a +2 bonus to that defense.
         `,
       },
       rank: 1,
@@ -843,8 +843,8 @@ export const vivimancy: MysticSphere = {
       // brace is conditional.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
-          Then, you are briefly \\braced.
+          The target is \\briefly \\stunned.
+          Then, you are \\momentarily \\braced.
         `,
         targeting: `
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.

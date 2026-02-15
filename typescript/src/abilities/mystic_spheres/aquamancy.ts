@@ -34,7 +34,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} healed by water.
+        The target is \\briefly healed by water.
         During this effect, the target can draw restorative power from water by drinking at least one ounce of clean water as a standard action.
         % dr3l
         When it does, it regains 2d10 hit points and increases its \\glossterm{fatigue level} by one.
@@ -61,7 +61,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       usageTime: 'minor',
       effect: `
         Choose yourself or an \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} purified by water.
+        The target is \\briefly purified by water.
         During this effect, the target can cleanse itself by drinking at least one ounce of clean water as a standard action.
         When it does, it removes one \\glossterm{condition} affecting it.
       `,
