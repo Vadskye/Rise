@@ -73,14 +73,12 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Aggression',
 
-      // Ally focused + empowered is 1.2 EA. Drop a rank for enraged, though that is
-      // basically irrelevant.
+      // Ally maximized is dangerous, but we try it out at rank 7 with a downside.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\focused and \\empowered this round.
-        In addition, it is \\glossterm{briefly} \\enraged.
+        The target is \\maximized and \\enraged until the start of your next turn.
       `,
-      rank: 6,
+      rank: 7,
       roles: ['boon'],
       tags: [],
     },
@@ -91,7 +89,7 @@ export const prayer: MysticSphere = {
       // "any two" is 1.0 EA
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is \\focused this round.
+        Each target is \\focused until the start of your next turn.
       `,
       rank: 4,
       roles: ['boon'],
@@ -104,7 +102,7 @@ export const prayer: MysticSphere = {
       // Honed + steeled is theoretically 0.9 EA, but it's rare that you'll actually
       // benefit from both, so this can be r1.
       effect: `
-        One \\glossterm{ally} within \\medrange is \\honed this turn and \\glossterm{briefly} \\steeled.
+        One \\glossterm{ally} within \\medrange is \\honed and \\steeled until the start of your next turn.
       `,
       rank: 1,
       roles: ['boon'],
@@ -118,7 +116,7 @@ export const prayer: MysticSphere = {
       // reasonable.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\honed this round.
+        Each target is \\honed until the start of your next turn.
       `,
       rank: 3,
       roles: ['boon'],
@@ -160,7 +158,7 @@ export const prayer: MysticSphere = {
         When you cast this spell, a holy light emanates from you like a torch.
         The light casts sharp and dangerous-looking shadows.
         Next round, you can spend a standard action to choose two \\glossterm{allies} within \\medrange.
-        Each target is \\maximized this round.
+        Each target is \\maximized until the start of your next turn.
       `,
       rank: 4,
       roles: ['boon'],

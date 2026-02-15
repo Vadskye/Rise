@@ -888,29 +888,33 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Rising Tide',
 
+      // Once: 0.7 EA
+      // Twice: 0.7 + 0.3
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this round.
-          \\item Once: You are \\maximized this round.
-          \\item Two or more times: You are maximized and \\fortified this round.
+          \\item Never: You are \\empowered this turn.
+          \\item Once: You are \\maximized this turn.
+          \\item Two or more times: You are maximized this turn and \\glossterm{briefly} \\fortified.
         \\end{mdframedraggeditemize}
       `,
-      rank: 2,
+      rank: 1,
       roles: ['focus'],
       type: 'Sustain (minor)',
     },
     {
       name: 'Greater Rising Tide',
 
+      // Once: 0.7 + 0.3
+      // Twice: 0.7 + 0.4 + 0.3
       effect: `
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered and \\fortified this round.
-          \\item Once: You are \\maximized and fortified this round.
-          \\item Two or more times: You are maximized this round and \\glossterm{briefly} fortified.
+          \\item Never: You are \\empowered this turn and \\glossterm{briefly} \\fortified.
+          \\item Once: You are \\maximized this turn and briefly fortified.
+          \\item Two or more times: You are maximized and empowered this turn, and \\glossterm{briefly} fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,

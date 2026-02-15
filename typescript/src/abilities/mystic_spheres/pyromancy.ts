@@ -65,7 +65,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +5 accuracy bonus is reasonable for a one-off attunement
       effect: `
         Whenever you use a \\atFire ability, you can draw power from one Small or larger \\glossterm{mundane} fire within \\medrange.
-        When you do, you gain a \\plus2 accuracy bonus with that ability this round.
+        When you do, you gain a \\plus2 accuracy bonus with that ability this turn.
         % Med +4, Large +6, Huge +8, Garg +10
         For each size category above Small that you siphon in this way, this accuracy bonus increases by 2, to a maximum of a \\plus10 bonus from a Gargantuan flame.
         Then, if that fire was Medium or smaller, it is extinguished.
@@ -928,7 +928,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damagerankone.`,
         targeting: `
           You are \\glossterm{briefly} \\empowered.
-          In addition, whenever a creature makes a \\glossterm{melee} attack against you this round, make a \\glossterm{reactive attack} vs. Reflex against them.
+          Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['generator', 'retaliate'],

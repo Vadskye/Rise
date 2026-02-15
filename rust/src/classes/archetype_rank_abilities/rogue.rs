@@ -801,7 +801,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
                 \begin{activeability}{Fool Them Once}{Minor action}
                     \abilitytags \atCompulsion, \atSubtle
                     \abilitycost You cannot use this ability again until you finish a \glossterm{short rest}.
-                    The next time this round that you make an attack or check against one or more creatures, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against those creatures.
+                    The next time this turn that you make an attack or check against one or more creatures, you can use your Deception or Persuasion skill instead of your normal \glossterm{accuracy} or check modifier against those creatures.
                     Each target must be aware of the attack or check.
                     You must use this ability before making the attack or check.
                     If a target is unaware of the attack or check, or is otherwise immune to this ability, you use your normal accuracy or check modifier against that creature.
