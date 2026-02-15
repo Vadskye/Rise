@@ -9,7 +9,7 @@ export const EXCEPT_NOT_DEEP =
   'it has the \\abilitytag{Attune} tag instead of \\abilitytag{Attune} (deep).';
 export const BARRIER_COOLDOWN =
   'You \\glossterm{briefly} cannot use this ability or any other \\atBarrier ability.';
-export const BRIEF_COOLDOWN = 'You \\glossterm{briefly} cannot use this ability again.';
+export const BRIEF_COOLDOWN = 'You \\enduringly cannot use this ability again.';
 
 export const ABILITY_ROLES = [
   'attune', // Buff that lasts as long as you stay attuned.
