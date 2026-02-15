@@ -1180,13 +1180,13 @@ They allow more distinct and unique character customization, but also increase g
     % Assume empower affects 3 ally actions, so it's ~1.2 EA.
     % We add a brief cooldown to make it more reasonable.
     \begin{activeability}{Bolster}{Standard action}
-      \abilitytags \atAuditory, \abilitytag{Emotion}, \abilitytag{Swift}
+      \abilitytags \atAuditory, \abilitytag{Emotion}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
-      Each \glossterm{ally} within a \largearea radius from you is either \empowered or \steeled this round.
+      Each \glossterm{ally} within a \largearea radius from you is \glossterm{briefly} either \empowered or \steeled.
       You must make the same choice for all allies. 
       \rankline
-      \featlevel{18} Each target is both empowered and steeled this round.
+      \featlevel{18} Each target is both empowered and steeled.
     \end{activeability}
 
     \ff[18]{Stabilizing Presence} As long as you are conscious, your \glossterm{allies} who can see or hear gain a \plus2 bonus to their \glossterm{vital rolls}.
@@ -1315,7 +1315,6 @@ They allow more distinct and unique character customization, but also increase g
     % rank 3 equivalent, so dr5 healing
     \ff[6]{Healing Touch}
     \begin{activeability}{Healing Touch}{Standard action}
-      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level} from the target.
       \rankline
       Choose yourself or a living \glossterm{ally} you \glossterm{touch}.
@@ -1402,7 +1401,7 @@ They allow more distinct and unique character customization, but also increase g
       \item Dominating: You use your Willpower in place of your Perception to determine your \glossterm{accuracy} with the spell.
         You can only apply this augment to non-damaging spells with the \atCompulsion tag.
       \item Finesse: You use your Dexterity in place of your Perception to determine your \glossterm{accuracy} with the spell.
-        However, when you cast the spell, you take a \minus1 penalty to your Armor and Reflex defenses that round as a \atSwift effect.
+        However, when you cast the spell, you \glossterm{briefly} take a \minus1 penalty to your Armor and Reflex defenses.
       \item Point Blank: You gain a \plus1 \glossterm{enhancement bonus} to accuracy with the spell against each target that is within half the spell's maximum \glossterm{range} from you.
         You can only apply this augment to \glossterm{targeted} spells with a defined range.
       \item Sanguine: You use your Constitution in place of your Willpower to determine your \glossterm{magical power} with the spell.
@@ -1600,11 +1599,10 @@ They allow more distinct and unique character customization, but also increase g
 
     \ff[1]{Regenerative Recovery}
     \begin{activeability}{Regenerative Recovery}{Standard action}
-      \abilitytags \abilitytag{Swift}
       \abilitycost One \glossterm{fatigue level}.
       \rankline
       You regain \damagerankthreelow \glossterm{hit points}.
-      If you gained any \glossterm{vital wounds} during the previous round, your healing with this ability is doubled.
+      If you gained any \glossterm{vital wounds} last round, your healing with this ability is doubled.
       If this would heal you above your maximum hit points, any excess healing applies at the end of the next round.
       Any excess healing at that point is lost.
 
@@ -2214,11 +2212,11 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Countermagic}
     \begin{magicalactiveability}{Countermagic}{Standard action}
-      \abilitytags \abilitytag{Subtle}, \abilitytag{Swift}
+      \abilitytags \abilitytag{Subtle}
       \abilitycost You \glossterm{briefly} cannot use this ability again.
       \rankline
       Choose a creature within \rngmed range of you.
-      If the target uses a \magical ability as a standard action or \glossterm{elite action} this round, that ability has no effect.
+      Until the start of your next turn, if the target uses a \magical ability as a standard action or \glossterm{elite action}, that ability has no effect.
       When you negate an ability in this way, if that ability's rank was higher than your \glossterm{character rank}, you increase your \glossterm{fatigue level} by one.
 
       If a creature is capable of using multiple abilities during a single phase, only the first ability it uses can be countered.

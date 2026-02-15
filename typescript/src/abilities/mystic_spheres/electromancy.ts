@@ -224,13 +224,12 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
-        In addition, it is \\impervious to \\atElectricity attacks this round.
+        In addition, it is \\glossterm{briefly} \\impervious to \\atElectricity attacks.
       `,
       rank: 3,
       roles: ['healing', 'boon', 'exertion'],
       // Slightly weaker scaling than dr5l, but better to keep with d6
       scaling: { special: 'The recovery increases by 2d6 for each rank beyond 3.' },
-      tags: ['Swift'],
     },
 
     {
@@ -241,12 +240,11 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per power.
-        In addition, it is \\glossterm{immune} to \\atElectricity attacks this round.
+        In addition, it is \\glossterm{briefly} \\glossterm{immune} to \\atElectricity attacks.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
       scaling: { special: 'The recovery increases by 6d6 for each rank beyond 6.' },
-      tags: ['Swift'],
     },
 
     {
@@ -734,7 +732,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       roles: ['turtle', 'retaliate'],
       rank: 5,
       scaling: 'damage',
-      tags: ['Swift'],
     },
   ],
 });

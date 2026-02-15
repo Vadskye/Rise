@@ -12,12 +12,10 @@ export const prayer: MysticSphere = {
       // "Any two" fortify is 0.7 EA.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\fortified this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
+        Each target is \\glossterm{briefly} \\fortified.
       `,
       name: 'Fortifying Boon',
       roles: ['boon'],
-      tags: ['Swift'],
     },
   ],
   spells: [
@@ -106,12 +104,10 @@ export const prayer: MysticSphere = {
       // Honed + steeled is theoretically 0.9 EA, but it's rare that you'll actually
       // benefit from both, so this can be r1.
       effect: `
-        One \\glossterm{ally} within \\medrange is \\honed and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
+        One \\glossterm{ally} within \\medrange is \\honed this turn and \\glossterm{briefly} \\steeled.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
@@ -135,12 +131,10 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\fortified and \\steeled this round.
-        Because this ability has the \\abilitytag{Swift} tag, this protects the target from attacks during the current phase.
+        The target is \\glossterm{briefly} \\fortified and \\steeled.
       `,
       rank: 1,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     // All half damage is 2.1 EA
@@ -152,12 +146,10 @@ export const prayer: MysticSphere = {
         When you cast this spell, a holy light emanates fro you like a torch.
         Illuminated objects seem more solid and secure.
         Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
-        Each target takes half damage from all effects.
-        This is a \\atSwift effect, so it protects each target from attacks during that phase.
+        Each target \\glossterm{briefly} takes half damage from all sources.
       `,
       rank: 6,
       roles: ['boon'],
-      tags: ['Swift (see text)'],
     },
 
     // Any two maximized is 1.8 EA
@@ -182,13 +174,11 @@ export const prayer: MysticSphere = {
       // EA for any two. But you can't target yourself with this.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is either \\fortified or \\shielded this round.
+        Each target is \\glossterm{briefly} either \\fortified or \\shielded.
         You must make the same choice for each target.
-        Because this ability has the \\abilitytag{Swift} tag, this protects each target from attacks during the current phase.
       `,
       rank: 3,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
@@ -201,7 +191,6 @@ export const prayer: MysticSphere = {
       },
       rank: 7,
       roles: ['boon'],
-      tags: ['Swift'],
     },
 
     {
@@ -352,12 +341,11 @@ export const prayer: MysticSphere = {
       // dr3
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\shielded this round and regains \\hpranktwo.
+        The target regains \\hpranktwo and is \\glossterm{briefly} \\shielded.
       `,
       rank: 1,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -370,7 +358,6 @@ export const prayer: MysticSphere = {
       rank: 4,
       roles: ['healing', 'boon', 'exertion'],
       scaling: 'healing',
-      tags: ['Swift'],
     },
 
     {
@@ -387,7 +374,6 @@ export const prayer: MysticSphere = {
       // This is very strong scaling because of the AOE nature of the spell; no need for
       // a greater version of the spell.
       scaling: { special: 'The recovery increases by 1d8 for each rank beyond 3.' },
-      tags: ['Swift'],
     },
 
     {

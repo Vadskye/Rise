@@ -101,25 +101,21 @@ export const channelDivinity: MysticSphere = {
       name: 'Endure Tribulation',
 
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
+        You take \\glossterm{briefly} take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
-      tags: ['Swift'],
     },
 
     {
       name: 'Embrace Tribulation',
 
       effect: `
-        You take half damage from all sources this round.
-        Because this is a \\abilitytag{Swift} ability, it affects attacks against you during the current phase.
-        If an attack \\glossterm{injures} you this round, you become \\primed next round.
+        You \\glossterm{briefly} take half damage from all sources.
+        If an enemy attack \\glossterm{injures} you during this effect, you become \\glossterm{briefly} \\primed.
       `,
       rank: 6,
       roles: ['turtle', 'focus', 'retaliate'],
-      tags: ['Swift'],
     },
 
     {
