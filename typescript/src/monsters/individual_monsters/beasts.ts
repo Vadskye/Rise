@@ -466,7 +466,7 @@ export function addBeasts(grimoire: Grimoire) {
     creature.addCustomManeuver({
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If the target has blood, the $name regains \\damageranktwo hit points at the end of the round.
+        \\injury If the target has blood, the $name regains \\damageranktwo hit points.
       `,
       name: 'Leech Life',
       weapon: 'bite',

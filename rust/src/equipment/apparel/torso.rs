@@ -20,24 +20,24 @@ fn belts() -> Vec<Apparel> {
     apparel.push(Belt(StandardItem {
         name: String::from("Belt of Regeneration"),
         rank: 3,
-        short_description: String::from("Regain 1d6 hit points per round"),
+        short_description: String::from("Regain 1d6 hit points each turn"),
         description: String::from(
             r"
-            At the end of each round, you regain 1d6 \glossterm{hit points}.
+            At the end of your turn, you regain 1d6 \glossterm{hit points}.
         ",
         ),
         tags: vec![AbilityTag::Attune(AttuneType::Deep)],
         upgrades: vec![
             ItemUpgrade::new(
                 5,
-                "Regain 3d6 hit points per round",
+                "Regain 3d6 hit points each turn",
                 "
                 The healing increases to 3d6.
             ",
             ),
             ItemUpgrade::new(
                 7,
-                "Regain 5d10 hit points per round",
+                "Regain 5d10 hit points each turn",
                 "
                 The healing increases to 5d10.
             ",

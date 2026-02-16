@@ -33,7 +33,7 @@ export const vivimancy: MysticSphere = {
         `,
         injury: `
           You can increase your \\glossterm{fatigue level} by one. 
-          If you do, you regain \\hprankfour at the end of the round.
+          If you do, you regain \\hprankfour.
         `,
         targeting: `
           You must have a \\glossterm{free hand} to cast this spell.
@@ -80,7 +80,7 @@ export const vivimancy: MysticSphere = {
         `,
         injury: `
           You can increase your \\glossterm{fatigue level} by one.
-          If you do, you regain \\hprankfive at the end of the round.
+          If you do, you regain \\hprankfive.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\medrange.
@@ -472,7 +472,7 @@ export const vivimancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damagerankthree, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damagerankthree.
+          At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damagerankthree.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
@@ -492,7 +492,7 @@ export const vivimancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damageranksix, and the target's life becomes linked to yours as a \\glossterm{condition}.
-          At the end of each subsequent round, if you lost hit points during that round, the target takes \\damageranksix.
+          At the end of each of your subsequent turns, if you lost hit points since your last turn, the target takes \\damageranksix.
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature within \\shortrange.
