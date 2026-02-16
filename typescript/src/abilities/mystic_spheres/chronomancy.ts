@@ -300,7 +300,7 @@ export const chronomancy: MysticSphere = {
         crit: CONDITION_CRIT,
         hit: `
           As a \\glossterm{condition}, the target randomly slows down.
-          At the start of each round, if it \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
+          At the start of each round, if the target is \\glossterm{injured}, it has a 50\\% chance to be \\slowed during that round.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.

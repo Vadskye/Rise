@@ -293,7 +293,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         You become \\briefly \\focused.
-        During the next round, if you hit with a strike, you become \\briefly focused again.
+        During your next turn, if you hit with a strike, you become \\briefly focused again.
       `,
       rank: 1,
       roles: ['focus'],

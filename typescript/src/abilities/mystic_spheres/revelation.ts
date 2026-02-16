@@ -371,7 +371,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         A \\glossterm{scrying sensor} appears floating in the air in any unoccupied square within \\medrange.
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
 
         While viewing through the sensor, your observation ability is the same as your normal body, except that the sensor does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
@@ -396,7 +396,7 @@ export const revelation: MysticSphere = {
         You must specify a distance and direction to target a location you cannot see.
         This can allow you to cast the spell beyond walls and similar obstacles.
 
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 
@@ -414,7 +414,7 @@ export const revelation: MysticSphere = {
       effect: `
         Choose one magical sensor within \\medrange.
         A \\glossterm{scrying sensor} appears at the location of the source of the ability that created the chosen sensor.
-        At the start of each round, you choose whether you see and hear from this sensor or from your body.
+        At the start of your turn, you choose whether you see and hear from this sensor or from your body.
         While viewing through the sensor, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the sensor cannot see your body or your intended targets, effectively making you \\blinded.
 

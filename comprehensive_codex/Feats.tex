@@ -501,7 +501,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Angel Wings} You gain feathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
     \magicalff[18]{Angel Wings\plus} The height limit increases to 30 feet.
@@ -730,7 +730,7 @@ They allow more distinct and unique character customization, but also increase g
     % TODO: figure out a way to differentiate these from angel wings
     \ff[12]{Draconic Wings} You gain leathery wings that sprout from your back.
     These wings grant you a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     The wings themselves are \glossterm{mundane}, but the ability to fly and glide with them is \magical.
 
     \ff[18]{Scales\plus} The Armor defense bonus from your \textit{scales} ability increases to \plus2.
@@ -741,8 +741,8 @@ They allow more distinct and unique character customization, but also increase g
   \begin{feat}{Duelist}{Combat}
     \featpre Dexterity 2, Perception 1.
 
-    \ff[1]{Duel Focus} At the start of each round, you may choose a creature you can see.
-    During that round, you gain a \plus1 bonus to your defenses against that creature's attacks.
+    \ff[1]{Duel Focus} At the start of your turn, you may choose a creature you can see.
+    Until your next turn, you gain a \plus1 bonus to your defenses against that creature's attacks.
 
     \ff[6]{Deliver the Duel}
     \begin{activeability}{Deliver the Duel}{Standard action}
@@ -1717,13 +1717,14 @@ They allow more distinct and unique character customization, but also increase g
       If you lose sight of the target for a full round, this effect ends.
     \end{sustainability}
 
-    \ff[6]{Steady Shot} If your location has not changed since the start of the round, you reduce your \glossterm{longshot penalty} by 2.
+    \ff[6]{Steady Shot} You can steady your aim as a \glossterm{move action}.
+    This reduces your \glossterm{longshot penalty} by 2 this turn and reduces your \glossterm{available movement} to 0.
 
     \ff[12]{Sniper's Precision} You gain a \plus1 \glossterm{accuracy} bonus with ranged \glossterm{strikes}.
 
     \ff[18]{Aim\plus} When you use this ability, you are also \briefly \honed.
 
-    \ff[18]{Steady Shot\plus} If your location has not changed since the start of the round, your ranged \glossterm{strikes} ignore \glossterm{cover} and \glossterm{concealment}.
+    \ff[18]{Steady Shot\plus} This ability also causes your ranged \glossterm{strikes} to ignore \glossterm{cover} and \glossterm{concealment}.
   \end{feat}
 
   \begin{feat}{Social Insight Specialization}{Skill}
@@ -1837,7 +1838,7 @@ They allow more distinct and unique character customization, but also increase g
     When you gain access to a new rank of spells, you can replace your current spell affected by this metamagic with a new spell of that rank.
 
     \magicalff[12]{Airborne} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+    As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
     In addition, you gain a \plus15 foot bonus to the height limit of any fly speed you gain from \sphere{Aeromancy} spells.
 
     \magicalff[18]{Distant Winds\plus} The range bonus from your \textit{distant winds} ability increases to \plus30 feet.
@@ -2302,7 +2303,7 @@ They allow more distinct and unique character customization, but also increase g
 
     \magicalff[12]{Verdant Army} Your \glossterm{allies} who can see or hear you also gain the benefit of your \textit{verdant allies} ability.
 
-    \magicalff[18]{Sprouting Step} At the start of each phase, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
+    \magicalff[18]{Sprouting Step} At the start of your turn, if you are \glossterm{grounded} and not already in undergrowth, \glossterm{light undergrowth} grows in your space.
     The undergrowth lasts until you leave that space.
   \end{magicalfeat}
 
@@ -2516,7 +2517,7 @@ They allow more distinct and unique character customization, but also increase g
     You can use \glossterm{natural weapons} to meet this condition, such as claws, as long as your hand is exclusively dedicated to using the natural weapon and not holding or being used for anything else.
     Several abilities from this feat only function while you are twin-wielding.
 
-    \ff[1]{Twin-Weapon Stance} At the start of each round, you can enter one of the stances below or change which stance you are in.
+    \ff[1]{Twin-Weapon Stance} At the start of your turn, you can enter one of the stances below or change which stance you are in.
     You can maintain that stance as long as you are twin-wielding.
     % TODO: do fancy balance math
     \begin{raggeditemize}

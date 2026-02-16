@@ -1626,7 +1626,7 @@ impl Class {
                         \begin{magicalactiveability}{Sacrificial Bond}{Standard action}
                             \rankline
                             Choose an \glossterm{ally} within \medrange.
-                            Whenever that ally would gain a \glossterm{vital round} while they are within a \largearea radius \glossterm{emanation} from you, you gain that \glossterm{vital wound} instead.
+                            Whenever that ally would gain a \glossterm{vital wound} while they are within a \largearea radius \glossterm{emanation} from you, you gain that \glossterm{vital wound} instead.
                             You gain a \plus2 bonus to the \glossterm{vital roll} of each \glossterm{vital wound} you gain this way.
                             This ability lasts until you \glossterm{dismiss} it.
                             You can use it multiple times on different allies to redirect all of their vital wounds to you.
@@ -1719,7 +1719,7 @@ impl Class {
                         \magicaldomainability{Aspect} You gain an average \glossterm{glide speed} (see \pcref{Gliding}).
                         In addition, you take half damage from \glossterm{falling damage}.
                         \magicaldomainability{Essence} You gain a slow \glossterm{fly speed} with a maximum height of 15 feet (see \pcref{Flight}).
-                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                        As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
                         \magicaldomainability{Mastery} Your fly speed improves to average speed, with a maximum height of 30 feet.
 
                     \subsubsection{Storm Domain}

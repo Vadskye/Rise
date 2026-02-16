@@ -107,7 +107,7 @@ pub fn pactbound_warrior<'a>() -> Vec<RankAbility<'a>> {
                     You do not have to spend time casting the spell, but each target must still meet any targeting requirements for the spell, such as range or touch.
 
                     You can only apply this augment to maneuvers which cause you to make a melee \glossterm{strike}, and you must choose a different spell each time you apply this augment to a maneuver.
-                    After you use this maneuver, you \glossterm{briefly} cannot use any spellfused maneuver again.
+                    After you use this maneuver, you can't use any spellfused maneuver next round.
                 }
             ",
             modifiers: None,

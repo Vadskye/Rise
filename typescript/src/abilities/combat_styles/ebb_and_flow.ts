@@ -235,7 +235,7 @@ export const ebbAndFlow: CombatStyle = {
       // 0.5 + 0.4 EA
       effect: `
         You are \\briefly \\braced.
-        If your location did not change since the start of the round, you are also briefly \\focused.
+        If your location did not change since the start of your turn, you are also briefly \\focused, and your \\glossterm{available movement} is reduced to 0.
       `,
       rank: 3,
       roles: ['focus'],

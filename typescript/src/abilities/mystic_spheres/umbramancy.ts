@@ -561,7 +561,7 @@ export const umbramancy: MysticSphere = {
         Your shadow is constantly hiding and requires a \\glossterm{difficulty value} 15 Awareness check to notice.
         That check is modified by all normal Awareness modifiers to notice a hiding creature, such as requiring cover or concealment.
 
-        At the start of each round, you choose whether you see from your shadow or from your body.
+        At the start of your turn, you choose whether you see from your shadow or from your body.
         While viewing through your shadow, your observation ability is the same as your normal body, except that it does not share the benefits of any \\magical effects that improve your vision.
         You otherwise act normally, though you may have difficulty moving or taking actions if the shadow cannot see your body or your intended targets, effectively making you \\blinded.
       `,

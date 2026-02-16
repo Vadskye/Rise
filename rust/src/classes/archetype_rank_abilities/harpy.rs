@@ -42,7 +42,7 @@ pub fn harpy<'a>() -> Vec<RankAbility<'a>> {
             rank: 2,
             description: r"
                 You gain a slow \glossterm{fly speed} with a maximum height of 10 feet (see \pcref{Flight}).
-                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit until the end of the round.
+                As a \glossterm{free action}, you can increase your \glossterm{fatigue level} by one to ignore this height limit this turn.
             ",
             modifiers: None,
         },
