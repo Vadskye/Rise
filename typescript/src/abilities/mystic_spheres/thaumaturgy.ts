@@ -399,7 +399,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Reflect Magic',
 
       effect: `
-        You are \\momentarily protected by reflective magic.
+        You are \\briefly protected by reflective magic.
         This makes you \\glossterm{braced}.
         In addition, whenever a creature within \\medrange of you misses you with a \\magical attack, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
@@ -412,7 +412,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Reflect Magic',
 
       effect: `
-        You are \\momentarily protected by reflective magic.
+        You are \\briefly protected by reflective magic.
         This makes you \\glossterm{braced}.
         In addition, whenever a creature within \\medrange of you makes a \\magical attack against you, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
@@ -484,7 +484,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Fuel',
 
       effect: `
-        You \\momentarily take half damage from \\magical effects.
+        You \\briefly take half damage from \\magical effects.
         When you take damage from a magical ability during this effect, you become \\briefly \\empowered.
       `,
       rank: 3,
@@ -495,7 +495,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Arcane Fuel',
 
       effect: `
-        You \\momentarily take half damage from \\magical effects.
+        You \\briefly take half damage from \\magical effects.
         When you take damage from a magical ability during this effect, you become \\briefly \\maximized.
       `,
       rank: 7,
@@ -549,7 +549,7 @@ export const thaumaturgy: MysticSphere = {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target is \\momentarily unable to use any \\magical active abilities.
+          The target is \\briefly unable to use any \\magical active abilities.
           This does not prevent its passive or triggered magical abilities from functioning normally.
           Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
         `,

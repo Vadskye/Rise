@@ -92,7 +92,7 @@ export const telekinesis: MysticSphere = {
 
       // 0.7 EA
       effect: `
-        You \\momentarily take half damage from all sources.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -104,7 +104,7 @@ export const telekinesis: MysticSphere = {
 
       // 0.4 + 0.7 EA
       effect: `
-        You \\momentarily are \\shielded and take half damage from all sources.
+        You \\briefly are \\shielded and take half damage from all sources.
       `,
       rank: 6,
       roles: ['turtle'],
@@ -394,7 +394,7 @@ export const telekinesis: MysticSphere = {
 
       // Shielded is 0.4 EA, redirect is ???
       effect: `
-        You are \\momentarily \\shielded.
+        You are \\briefly \\shielded.
         In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -406,7 +406,7 @@ export const telekinesis: MysticSphere = {
       name: 'Greater Kinetic Redirection',
 
       effect: `
-        You are \\momentarily \\shielded.
+        You are \\briefly \\shielded.
         In addition, whenever a creature attacks you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -569,7 +569,7 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target is \\momentarily \\shielded.
+        The target is \\briefly \\shielded.
         During the effect, if the target takes damage, it is \\briefly \\empowered.
       `,
       rank: 5,

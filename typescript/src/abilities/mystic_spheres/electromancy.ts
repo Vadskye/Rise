@@ -224,7 +224,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per 2 power.
-        In addition, it is \\momentarily \\impervious to \\atElectricity attacks.
+        In addition, it is \\briefly \\impervious to \\atElectricity attacks.
       `,
       rank: 3,
       roles: ['healing', 'boon', 'exertion'],
@@ -240,7 +240,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\shortrange.
         The target regains 1d6 \\glossterm{hit points} plus 1d6 per power.
-        In addition, it is \\momentarily \\glossterm{immune} to \\atElectricity attacks.
+        In addition, it is \\briefly \\glossterm{immune} to \\atElectricity attacks.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
@@ -712,7 +712,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          You are \\momentarily \\braced.
+          You are \\briefly \\braced.
           Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
