@@ -169,7 +169,7 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a strike.
-        In addition, you regain \\hprankthree at the end of the round.
+        In addition, you regain \\hprankthree.
       `,
       rank: 3,
       roles: ['healing'],
@@ -182,7 +182,7 @@ export const unbreakableDefense: CombatStyle = {
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        In addition, you regain \\hprankseven at the end of the round.
+        In addition, you regain \\hprankseven.
       `,
       rank: 7,
       roles: ['healing'],

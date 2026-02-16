@@ -9,8 +9,7 @@ pub fn vampire<'a>() -> Vec<RankAbility<'a>> {
             complexity: 2,
             description: r"
                 Whenever you \glossterm{injure} a creature with blood using your bite natural weapon, you can increase your \glossterm{fatigue level} by one.
-                If you do, you regain \glossterm{hit points} at the end of the round.
-                The recovery is equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
+                If you do, you regain \glossterm{hit points} equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
 
                 Unless otherwise specified, all living creatures have blood.
                 Some nonliving creatures, such as vampires, also have blood.

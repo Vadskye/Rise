@@ -734,7 +734,7 @@ function addVampires(grimoire: Grimoire) {
           weapon: 'bite' as const,
         };
         bloodDrain.effect += `
-          \\injury You regain hit points at the end of the round equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
+          \\injury You regain hit points equal to the hit points the target lost from the strike, ignoring negative hit points and any damage increase from critical hits.
         `;
         creature.addCustomManeuver(bloodDrain);
 

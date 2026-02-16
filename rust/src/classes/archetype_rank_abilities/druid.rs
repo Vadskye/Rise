@@ -464,7 +464,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                         \rankline
                         You do not gain hunger or thirst while in natural sunlight.
                         When you leave natural sunlight, you continue gaining hunger or thirst at your normal rate, ignoring any time you spent in natural sunlight.
-                        In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of each round.
+                        In addition, as long as you are in natural sunlight, you regain hit points equal to half your \glossterm{power} at the end of your turn.
                         \rankline
                         % This is about as strong as a r3 deep attunement - class feature plus natural sunlight requirement is probably enough?
                         \rank{4} The healing increases to be equal to your \glossterm{power}.
