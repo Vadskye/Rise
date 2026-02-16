@@ -443,7 +443,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         targeting: `
           For the duration of this spell, you can breathe electricity like a dragon as a standard action.
           When you do, make an attack vs. Reflex against everything within a \\largearealong, 5 ft. wide line from you.
-          After you use breathe electricity, you \\enduringly cannot do so again.
+          You can't use this ability again next round.
         `,
       },
       rank: 3,

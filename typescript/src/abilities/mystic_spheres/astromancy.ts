@@ -554,9 +554,9 @@ export const astromancy: MysticSphere = {
       name: 'Astral Instability',
 
       effect: `
-        At the start of each phase, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
-        You do not return until the end of the round.
-        After you flicker in this way, you \\enduringly cannot flicker with this ability again.
+        At the start of your turn, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
+        You do not return until the start of your next turn.
+        After you flicker in this way, you can't flicker with this ability next round.
       `,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
