@@ -428,7 +428,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       name: 'Misty Shroud',
 
       effect: `
-        At the end of each of your turns, fog \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
+        At the end of your turn, fog \\briefly fills a \\smallarea radius \\glossterm{zone} from you.
         This fog does not fully block sight, but it provides \\glossterm{concealment}.
         There is no time gap between the disappearance of the old fog and the appearance of the new fog, so you can keep continuous fog cover by staying in the same place or moving slowly.
       `,

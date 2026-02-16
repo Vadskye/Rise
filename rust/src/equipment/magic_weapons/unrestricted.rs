@@ -282,7 +282,8 @@ pub fn unrestricted() -> Vec<MagicWeapon> {
         rank: 2,
         short_description: String::from(r"Grants +1 accuracy while stationary"),
         description: String::from(r"
-            Whenever you make a \glossterm{strike}, if you have not changed location since start of the round, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with that strike.
+            Whenever you make a \glossterm{strike}, if you have not changed location since the start of your turn, you can activate this weapon.
+            If you do, you gain a \plus1 \glossterm{enhancement bonus} to \glossterm{accuracy} with the strike, and your \glossterm{available movement} is reduced to 0.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Grants +2 accuracy while stationary", r"

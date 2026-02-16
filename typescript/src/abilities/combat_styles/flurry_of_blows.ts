@@ -149,7 +149,7 @@ export const flurryOfBlows: CombatStyle = {
         This requires shooting a \\weapontag{Projectile} weapon five times to cover the full area.
         Creature can generally recognize the area that the arrows will land in with a DV 15 Awareness check.
 
-        At the start of your next turn, the arrows land, and you make a \\glossterm{strike} with your weapon from last round against all creatures in the area.
+        At the start of your next turn, the arrows land, and you make a \\glossterm{strike} with your weapon from your last turn against all creatures in the area.
         The attack is a \\glossterm{reactive attack}.
         On a miss, you still deal half damage.
         Each target must be within your maximum \\glossterm{range limit} with your weapon, and you take the normal longshot penalty for attacking a creature at long range (see \\pcref{Weapon Range Limits}).

@@ -317,8 +317,8 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \ability{sprint} ability as a \glossterm{move action} without increasing your \glossterm{fatigue level}.
-                After using this ability, you \glossterm{briefly} cannot use it again.
+                You can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
+                After using this ability, you can't use it again next round.
             ",
             modifiers: None,
         },

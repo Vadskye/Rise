@@ -323,6 +323,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         Make an attack vs. Mental against all \glossterm{enemies} in a \tinyarea radius from you.
                         \hit For the duration of your performance, the target is \stunned while it is \glossterm{injured}.
 
+                        % TODO: bizarre scaling
                         \rankline
                         You gain a \plus2 \glossterm{accuracy} bonus with the attack for each rank beyond 2.
 
@@ -597,8 +598,8 @@ pub fn combat_trickster<'a>() -> Vec<RankAbility<'a>> {
 
                     \parhead{Mighty Maneuver} You take a \minus1 accuracy penalty, but you deal \glossterm{extra damage} equal to twice your excess rank.
 
-                    \parhead{Mobile Maneuver} You can walk up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
-                    This movement does not count against your \glossterm{available movement} for the round.
+                    \parhead{Mobile Maneuver} You can move up to 5 feet per excess rank before or after using your chosen maneuver, up to a maximum distance equal to your \glossterm{speed}.
+                    This does not reduce your \glossterm{available movement}.
                     You cannot apply this augment to maneuvers that already allow you to move using one of your movement modes.
 
                     \parhead{Precise Maneuver} You gain an accuracy bonus equal to your excess rank.
@@ -877,7 +878,7 @@ pub fn suave_scoundrel<'a>() -> Vec<RankAbility<'a>> {
             rank: 5,
             description: r"
                 You can use your \ability{fool them once} ability twice per \glossterm{short rest}.
-                However, after using that ability, you \glossterm{briefly} cannot use it again.
+                However, after using that ability, you can't use it again next round.
             ",
             modifiers: None,
         },
