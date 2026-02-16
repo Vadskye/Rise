@@ -20,7 +20,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // Shielded + steeled is 0.7 EA.
       effect: `
-        You are \\momentarily \\shielded and \\braced.
+        You are \\briefly \\shielded and \\braced.
       `,
       roles: ['turtle'],
       tags: ['Manifestation'],
@@ -298,7 +298,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       // 0.5 + 0.4 EA
       effect: `
-         If you are \\glossterm{grounded} on stone, you are \\momentarily \\braced and \\fortified.
+         If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\fortified.
       `,
       rank: 2,
       roles: ['turtle'],
@@ -764,7 +764,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Whenever you use the \\ability{total defense} or \\ability{recover} ability, you can activate this ability.
-        If you do, your body becomes \\momentarily covered in stone, and this ability is \\glossterm{dismissed}.
+        If you do, your body becomes \\briefly covered in stone, and this ability is \\glossterm{dismissed}.
         This makes you \\fortified and \\steeled.
       `,
       rank: 1,
@@ -824,7 +824,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Choose up to two \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\momentarily \\shielded.
+        Each target is \\briefly \\shielded.
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 1,
@@ -836,7 +836,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
 
       effect: `
         Choose up to five \\glossterm{grounded} creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\momentarily \\shielded.
+        Each target is \\briefly \\shielded.
         If a target moves from its location or stops being grounded, this effect immediately ends on it.
       `,
       rank: 5,

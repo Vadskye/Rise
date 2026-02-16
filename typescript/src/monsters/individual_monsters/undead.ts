@@ -281,7 +281,7 @@ function addGhosts(grimoire: Grimoire) {
             name: 'Entangling Cords',
             attack: {
               hit: `
-                \\damagerankfour, and the target is \\momentarily \\slowed.
+                \\damagerankfour, and the target is \\briefly \\slowed.
               `,
               targeting: `
                 Make an attack vs. Brawn against one creature within \\medrange.

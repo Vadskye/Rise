@@ -50,7 +50,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\momentarily \\braced and \\steeled.
+        At the end of your next turn, you become \\briefly \\braced and \\steeled.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -61,7 +61,7 @@ export const revelation: MysticSphere = {
       name: 'Greater Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\momentarily \\braced and \\shielded.
+        At the end of your next turn, you become \\briefly \\braced and \\shielded.
       `,
       rank: 4,
       roles: ['turtle'],
@@ -189,7 +189,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you become \\momentarily \\braced and \\steeled.
+        When you do, your attunement to this effect ends and you become \\briefly \\braced and \\steeled.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 2,
@@ -202,7 +202,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you \\momentarily become \\steeled and take half damage from all sources.
+        When you do, your attunement to this effect ends and you \\briefly become \\steeled and take half damage from all sources.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 7,
@@ -354,7 +354,7 @@ export const revelation: MysticSphere = {
 
       // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
-        hit: `The target is \\momentarily \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
@@ -556,7 +556,7 @@ export const revelation: MysticSphere = {
 
       // All would be 1.2 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\momentarily \\shielded.
+        All \\glossterm{allies} within a \\largearea radius from you are \\briefly \\shielded.
       `,
       rank: 5,
       roles: ['boon'],

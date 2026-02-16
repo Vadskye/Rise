@@ -828,7 +828,7 @@ export const vivimancy: MysticSphere = {
         targeting: `
           Choose one of the five defenses: Armor, Brawn, Fortitude, Reflex, or Mental.
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.
-          Then, you \\momentarily gain a +2 bonus to that defense.
+          Then, you \\briefly gain a +2 bonus to that defense.
         `,
       },
       rank: 1,
@@ -844,7 +844,7 @@ export const vivimancy: MysticSphere = {
       attack: {
         hit: `
           The target is \\briefly \\stunned.
-          Then, you are \\momentarily \\braced.
+          Then, you are \\briefly \\braced.
         `,
         targeting: `
           Make an attack vs. Fortitude against up to two creatures within \\shortrange.

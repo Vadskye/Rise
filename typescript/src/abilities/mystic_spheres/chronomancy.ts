@@ -258,7 +258,7 @@ export const chronomancy: MysticSphere = {
 
       cost: BRIEF_COOLDOWN,
       effect: `
-        You are \\momentarily \\braced.
+        You are \\briefly \\braced.
         In addition, you can move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 1,
@@ -269,7 +269,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: full EA math. What is jog + total defense worth?
       effect: `
-        You are \\momentarily \\braced.
+        You are \\briefly \\braced.
         In addition, you can move up to twice your \\glossterm{speed} without reducing your \\glossterm{available movement}.
       `,
       rank: 5,
@@ -756,7 +756,7 @@ export const chronomancy: MysticSphere = {
 
       // Keep wording up to date based on brief ending at start/end of turn
       effect: `
-        You are \\momentarily \\braced. When that effect ends, you become \\focused during that turn.
+        You are \\briefly \\braced. When that effect ends, you become \\focused during that turn.
       `,
       rank: 2,
       roles: ['turtle', 'focus'],

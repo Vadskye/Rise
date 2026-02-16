@@ -826,7 +826,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       effect: `
         When you would suffer a \\glossterm{critical hit}, this spell automatically activates.
         When it does, your body liquifies in an instant, limiting the damage to vital areas.
-        This causes the critical hit to become only a regular hit, and you remain \\momentarily \\steeled.
+        This causes the critical hit to become only a regular hit, and you remain \\briefly \\steeled.
         Then, this ability is \\glossterm{dismissed}.
       `,
       rank: 1,
@@ -867,7 +867,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // Cover is 0.5 EA.
       // Fire impervious is about 0.3 EA??
       effect: `
-        You are \\momentarily surrounded by a protective bubble of water.
+        You are \\briefly surrounded by a protective bubble of water.
         The bubble makes you \\impervious to \\atFire and grants you \\glossterm{cover} against all attacks.
       `,
       rank: 1,
@@ -896,7 +896,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\empowered this turn.
           \\item Once: You are \\maximized this turn.
-          \\item Two or more times: You are maximized this turn and \\momentarily \\fortified.
+          \\item Two or more times: You are maximized this turn and \\briefly \\fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 1,
@@ -912,9 +912,9 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
         When you cast this spell, and whenever you sustain it, water loudly swirls and crashes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\empowered this turn and \\momentarily \\fortified.
-          \\item Once: You are \\maximized this turn and momentarily fortified.
-          \\item Two or more times: You are maximized and empowered this turn, and momentarily fortified.
+          \\item Never: You are \\empowered this turn and \\briefly \\fortified.
+          \\item Once: You are \\maximized this turn and briefly fortified.
+          \\item Two or more times: You are maximized and empowered this turn, and briefly fortified.
         \\end{mdframedraggeditemize}
       `,
       rank: 6,

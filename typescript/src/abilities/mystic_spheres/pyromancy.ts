@@ -438,7 +438,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       // +1 effective rank for attune with cooldown
       attack: {
         hit: `
-          \\damageranktwo, and the target is \\momentarily \\dazzled.
+          \\damageranktwo, and the target is \\briefly \\dazzled.
         `,
         targeting: `
           You can set creatures on fire simply by staring at them as a standard action.
@@ -928,7 +928,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         hit: `\\damagerankone.`,
         targeting: `
           You are \\briefly \\empowered.
-          As a \\momentary effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
+          As a \\brief effect, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
       },
       roles: ['generator', 'retaliate'],

@@ -680,7 +680,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\momentarily \\shielded.
+        Each target is \\briefly \\shielded.
       `,
       rank: 2,
       roles: ['boon'],
@@ -691,7 +691,7 @@ export const verdamancy: MysticSphere = {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you are \\momentarily \\shielded.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\briefly \\shielded.
       `,
       rank: 6,
       roles: ['boon'],
@@ -706,7 +706,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `\\damageranktwo.`,
         targeting: `
-          You are \\momentarily covered in thorns.
+          You are \\briefly covered in thorns.
           The thorns grant you \\glossterm{cover} from all attacks.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -738,7 +738,7 @@ export const verdamancy: MysticSphere = {
         hit: `\\damagerankone.`,
         targeting: `
           Choose one creature from among yourself and your \\glossterm{allies} within \\medrange.
-          The target is \\momentarily covered in thorns.
+          The target is \\briefly covered in thorns.
           The thorns grant it \\glossterm{cover} from all attacks.
           In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
         `,

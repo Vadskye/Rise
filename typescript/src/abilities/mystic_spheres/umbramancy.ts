@@ -476,7 +476,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\momentarily have a 20\\% \\glossterm{failure chance}.
+        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\briefly have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
@@ -487,7 +487,7 @@ export const umbramancy: MysticSphere = {
 
       // 50% action denial against 50% of enemy attacks = 1 EA.
       effect: `
-        All attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+        All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
         If you are currently \\glossterm{shadowed}, you are also \\briefly \\empowered.
       `,
       rank: 6,
@@ -503,7 +503,7 @@ export const umbramancy: MysticSphere = {
         hit: `The target is \\briefly \\frightened of you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          In addition, all attacks against you \\momentarily have a 20\\% \\glossterm{failure chance}.
+          In addition, all attacks against you \\briefly have a 20\\% \\glossterm{failure chance}.
         `,
       },
       rank: 2,
@@ -653,7 +653,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -665,7 +665,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+        Attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
         When an attack against you fails in this way, you become \\briefly \\empowered.
       `,
       rank: 5,
@@ -686,7 +686,7 @@ export const umbramancy: MysticSphere = {
           You must be \\glossterm{shadowed} to cast this spell.
 
           When you cast this spell, you wrap yourself in shadow.
-          All attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+          All attacks against you \\briefly have a 50\\% \\glossterm{failure chance}.
           Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
           If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
         `,
