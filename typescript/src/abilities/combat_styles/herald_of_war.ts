@@ -15,7 +15,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Cry of Rage',
 
       effect: `
-        You are \\glossterm{briefly} \\primed and \\enraged.
+        You are \\briefly \\primed and \\enraged.
       `,
       rank: 1,
       roles: ['focus'],
@@ -26,7 +26,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Cry of Rage+',
 
       effect: `
-        You are \\glossterm{briefly} \\primed, \\empowered, and \\enraged.
+        You are \\briefly \\primed, \\empowered, and \\enraged.
       `,
       rank: 5,
       roles: ['focus'],
@@ -37,7 +37,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stunning Shout',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\stunned.`,
+        hit: `The target is \\briefly \\stunned.`,
         targeting: `
           Make an attack vs. Mental against everything in a \\medarea cone from you.
         `,
@@ -55,7 +55,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\stunned.
+          The target is \\briefly \\stunned.
           If it is \\glossterm{injured}, it is stunned as a \\glossterm{condition} instead.
         `,
         targeting: `
@@ -72,7 +72,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Faltering Roar',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\slowed.`,
+        hit: `The target is \\briefly \\slowed.`,
         targeting: `
           Make an attack vs. Brawn against all \\glossterm{enemies} in a \\largearea radius from you.
         `,
@@ -89,7 +89,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it has no remaining \\glossterm{hit points}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -125,7 +125,7 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
+          The target is \\briefly \\frightened by you.
           If the target is \\glossterm{injured}, it also becomes frightened of you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -188,7 +188,7 @@ export const heraldOfWar: CombatStyle = {
 
       attack: {
         hit: `
-          \\damagerankone, and the target is \\glossterm{briefly} \\deafened.
+          \\damagerankone, and the target is \\briefly \\deafened.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange.
@@ -221,7 +221,7 @@ export const heraldOfWar: CombatStyle = {
 
       // TODO: EA calc
       effect: `
-        You and your \\glossterm{allies} within a \\largearea radius from you can each \\glossterm{briefly} ignore any effects from all \\glossterm{conditions} each target is already affected by.
+        You and your \\glossterm{allies} within a \\largearea radius from you can each \\briefly ignore any effects from all \\glossterm{conditions} each target is already affected by.
       `,
       rank: 1,
       roles: ['cleanse'],
@@ -254,7 +254,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Watch Out',
 
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\shielded.
+        Up to two \\glossterm{allies} within \\medrange are \\briefly \\shielded.
       `,
       rank: 1,
       roles: ['boon'],
@@ -265,7 +265,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Watch Out+',
 
       effect: `
-        Your \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
+        Your \\glossterm{allies} within a \\largearea radius from you are \\briefly \\shielded.
       `,
       rank: 5,
       roles: ['boon'],
@@ -276,7 +276,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stand Firm',
 
       effect: `
-        One \\glossterm{ally} within \\medrange is \\glossterm{briefly} \\fortified and \\steeled.
+        One \\glossterm{ally} within \\medrange is \\briefly \\fortified and \\steeled.
       `,
       rank: 1,
       roles: ['boon'],
@@ -287,7 +287,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Stand Firm+',
 
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\fortified and \\steeled.
+        Up to two \\glossterm{allies} within \\medrange are \\briefly \\fortified and \\steeled.
       `,
       rank: 5,
       roles: ['boon'],
@@ -299,7 +299,7 @@ export const heraldOfWar: CombatStyle = {
 
       // 0.8 EA
       effect: `
-        One \\glossterm{ally} within \\medrange is \\glossterm{briefly} \\braced.
+        One \\glossterm{ally} within \\medrange is \\briefly \\braced.
       `,
       rank: 1,
       roles: ['boon'],
@@ -311,7 +311,7 @@ export const heraldOfWar: CombatStyle = {
 
       // 1.2 EA
       effect: `
-        Up to two \\glossterm{allies} within \\medrange are \\glossterm{briefly} \\braced.
+        Up to two \\glossterm{allies} within \\medrange are \\briefly \\braced.
       `,
       rank: 7,
       roles: ['boon'],
@@ -335,10 +335,10 @@ export const heraldOfWar: CombatStyle = {
       name: 'Challenge',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\goaded by you.`,
+        hit: `The target is \\briefly \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against up to two creatures in \\shortrange.
-          Then, you are \\glossterm{briefly} \\shielded.
+          Then, you are \\briefly \\shielded.
         `,
       },
       rank: 1,
@@ -354,12 +354,12 @@ export const heraldOfWar: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If the target is \\glossterm{injured}, it also goaded as a \\glossterm{condition}.
         `,
         targeting: `
           Make an attack vs. Mental against up to four creatures in \\shortrange.
-          Then, you are \\glossterm{briefly} \\braced.
+          Then, you are \\briefly \\braced.
         `,
       },
       rank: 7,
@@ -373,7 +373,7 @@ export const heraldOfWar: CombatStyle = {
       // Brief frighten is 0.8 EA
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Mental defense, it becomes \\glossterm{briefly} \\frightened by you.
+        \\hit If your attack result also hits the target's Mental defense, it becomes \\briefly \\frightened by you.
       `,
       rank: 3,
       roles: ['softener'],
@@ -402,7 +402,7 @@ export const heraldOfWar: CombatStyle = {
       effect: `
         Make a strike that deals double damage.
         \\hit Compare your attack result to the Mental defense of each \\glossterm{enemy} other than the target of that strike within a \\smallarea radius from the target.
-        On a hit, each secondary target is \\glossterm{briefly} \\frightened by you.
+        On a hit, each secondary target is \\briefly \\frightened by you.
       `,
       rank: 5,
       roles: ['flash'],
@@ -443,10 +443,10 @@ export const heraldOfWar: CombatStyle = {
       // Brief deafened is 0.3 EA, so we get two ranks of +area, which gets us to area
       // rank 3.
       attack: {
-        hit: `The target is \\glossterm{briefly} \\deafened.`,
+        hit: `The target is \\briefly \\deafened.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\fortified and \\empowered.
+          Then, you are \\briefly \\fortified and \\empowered.
         `,
       },
       rank: 1,
@@ -464,7 +464,7 @@ export const heraldOfWar: CombatStyle = {
         hit: `The target is \\deafened as a \\glossterm{condition}.`,
         targeting: `
           Make an attack vs. Fortitude against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\fortified and \\empowered.
+          Then, you are \\briefly \\fortified and \\empowered.
         `,
       },
       rank: 5,
@@ -477,7 +477,7 @@ export const heraldOfWar: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit You and the target are \\glossterm{briefly} \\deafened.
+        \\hit You and the target are \\briefly \\deafened.
       `,
       rank: 1,
       roles: ['softener'],

@@ -33,7 +33,7 @@ export const verdamancy: MysticSphere = {
       // Ranged slow is 2.1 EA, or r5, or r4 with limited scope.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Brawn against up to two \\glossterm{grounded} creatures within \\medrange.
@@ -89,7 +89,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
+          After you attack, \\glossterm{light undergrowth} \\briefly fills the target's space and all adjacent spaces.
         `,
       },
       rank: 1,
@@ -109,7 +109,7 @@ export const verdamancy: MysticSphere = {
         targeting: `
           Make an attack vs. Brawn against one \\glossterm{grounded} creature within \\shortrange.
           You gain a +2 accuracy bonus if the target is in \\glossterm{undergrowth}.
-          After you attack, \\glossterm{light undergrowth} \\glossterm{briefly} fills the target's space and all adjacent spaces.
+          After you attack, \\glossterm{light undergrowth} \\briefly fills the target's space and all adjacent spaces.
         `,
       },
       rank: 6,
@@ -374,7 +374,7 @@ export const verdamancy: MysticSphere = {
         crit: MULTIHIT_CRIT,
         hit: `
           \\damageranktwo immediately, and again at the end of the target's next action.
-          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\glossterm{briefly} fills its space and all adjacent spaces.
+          Whenever it takes damage in this way, \\glossterm{light undergrowth} \\briefly fills its space and all adjacent spaces.
         `,
         targeting: `
           Make an attack vs. Reflex and Fortitude against one creature within \\shortrange.
@@ -517,7 +517,7 @@ export const verdamancy: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Fortitude against one living creature or plant within \\shortrange.
-          In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\glossterm{briefly}.
+          In addition, you create a \\medarea radius \\glossterm{zone} around the target that persists \\briefly.
           All \\glossterm{undergrowth} in that area shrivels away into the ground, reemerging when the effect ends.
           If the target is a plant, including plant creatures, you gain a \\plus10 accuracy bonus with the attack.
         `,
@@ -658,7 +658,7 @@ export const verdamancy: MysticSphere = {
 
       attack: {
         hit: `
-          A Huge grove of trees grows around the target, \\glossterm{briefly} trapping it inside the grove.
+          A Huge grove of trees grows around the target, \\briefly trapping it inside the grove.
           While it is trapped, it does not have \\glossterm{line of sight} or \\glossterm{line of effect} to any creature other than itself.
 
           The grove has \\glossterm{hit points} equal to five times your \\glossterm{power}, all of its defenses are 5, and it is destroyed when its hit points become negative.
@@ -680,7 +680,7 @@ export const verdamancy: MysticSphere = {
 
       effect: `
         Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
-        Each target is \\glossterm{briefly} \\shielded.
+        Each target is \\momentarily \\shielded.
       `,
       rank: 2,
       roles: ['boon'],
@@ -691,7 +691,7 @@ export const verdamancy: MysticSphere = {
       name: 'Mass Vineward',
 
       effect: `
-        You and all \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
+        You and all \\glossterm{allies} within a \\largearea radius from you are \\momentarily \\shielded.
       `,
       rank: 6,
       roles: ['boon'],
@@ -706,7 +706,7 @@ export const verdamancy: MysticSphere = {
       attack: {
         hit: `\\damageranktwo.`,
         targeting: `
-          You are \\glossterm{briefly} covered in thorns.
+          You are \\momentarily covered in thorns.
           The thorns grant you \\glossterm{cover} from all attacks.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against them.
         `,
@@ -738,7 +738,7 @@ export const verdamancy: MysticSphere = {
         hit: `\\damagerankone.`,
         targeting: `
           Choose one creature from among yourself and your \\glossterm{allies} within \\medrange.
-          The target is \\glossterm{briefly} covered in thorns.
+          The target is \\momentarily covered in thorns.
           The thorns grant it \\glossterm{cover} from all attacks.
           In addition, whenever a creature makes a \\glossterm{melee} attack against it using a free hand or non-\\weapontag{Long} weapon, make a \\glossterm{reactive attack} vs. Armor against the attacking creature.
         `,

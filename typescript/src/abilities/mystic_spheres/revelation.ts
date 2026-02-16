@@ -11,7 +11,7 @@ export const revelation: MysticSphere = {
       name: 'Reveal Sensation',
 
       effect: `
-        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
+        You \\briefly gain a +3 \\glossterm{enhancement bonus} to Awareness checks.
       `,
       roles: ['narrative'],
       scaling: {
@@ -39,7 +39,7 @@ export const revelation: MysticSphere = {
       // Any two focused is 1 EA. Drop to r2 for the prereq.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target that missed an enemy with an attack this round becomes \\glossterm{briefly} \\focused.
+        Each target that missed an enemy with an attack this round becomes \\briefly \\focused.
       `,
       rank: 2,
       roles: ['boon'],
@@ -50,7 +50,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\braced and \\steeled.
+        At the end of your next turn, you become \\momentarily \\braced and \\steeled.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -61,7 +61,7 @@ export const revelation: MysticSphere = {
       name: 'Greater Foresee Safety',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\braced and \\shielded.
+        At the end of your next turn, you become \\momentarily \\braced and \\shielded.
       `,
       rank: 4,
       roles: ['turtle'],
@@ -72,7 +72,7 @@ export const revelation: MysticSphere = {
       name: 'Foresee Victory',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\primed.
+        At the end of your next turn, you become \\briefly \\primed.
       `,
       rank: 2,
       roles: ['focus'],
@@ -83,7 +83,7 @@ export const revelation: MysticSphere = {
       name: 'Greater Foresee Victory',
 
       effect: `
-        At the end of your next turn, you become \\glossterm{briefly} \\primed and \\honed.
+        At the end of your next turn, you become \\briefly \\primed and \\honed.
       `,
       rank: 7,
       roles: ['focus'],
@@ -96,7 +96,7 @@ export const revelation: MysticSphere = {
       // Ally focus and +1 accuracy is 0.8 EA.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target \\glossterm{briefly} becomes \\focused and gains a \\plus1 accuracy bonus.
+        The target \\briefly becomes \\focused and gains a \\plus1 accuracy bonus.
       `,
       rank: 1,
       roles: ['boon'],
@@ -108,7 +108,7 @@ export const revelation: MysticSphere = {
       // Ally focus and +2 accuracy is 1.1 EA.
       effect: `
         Choose one \\glossterm{ally} within \\longrange.
-        The target \\glossterm{briefly} becomes \\focused and gains a \\plus2 accuracy bonus.
+        The target \\briefly becomes \\focused and gains a \\plus2 accuracy bonus.
       `,
       rank: 6,
       roles: ['boon'],
@@ -122,11 +122,11 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened of you.
+          The target is \\briefly \\frightened of you.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\focused.
+          Then, you are \\briefly \\focused.
         `,
       },
       narrative: `
@@ -189,7 +189,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you become \\glossterm{briefly} \\braced and \\steeled.
+        When you do, your attunement to this effect ends and you become \\momentarily \\braced and \\steeled.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 2,
@@ -202,7 +202,7 @@ export const revelation: MysticSphere = {
 
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you \\glossterm{briefly} become \\steeled and take half damage from all sources.
+        When you do, your attunement to this effect ends and you \\momentarily become \\steeled and take half damage from all sources.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 7,
@@ -354,7 +354,7 @@ export const revelation: MysticSphere = {
 
       // brief dazzle is 0.6, so zone is 1.6 = rank 2. Trade +1 rank for +2 area rank.
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\momentarily \\dazzled.`,
         targeting: `
           You create a field of hallucinatory visions in a \\smallarea radius \\glossterm{zone} within \\shortrange.
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Mental against all \\glossterm{enemies} in the area.
@@ -556,7 +556,7 @@ export const revelation: MysticSphere = {
 
       // All would be 1.2 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\glossterm{briefly} \\shielded.
+        All \\glossterm{allies} within a \\largearea radius from you are \\momentarily \\shielded.
       `,
       rank: 5,
       roles: ['boon'],
@@ -579,7 +579,7 @@ export const revelation: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+          If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\largearea radius from you.

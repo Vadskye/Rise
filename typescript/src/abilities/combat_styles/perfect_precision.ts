@@ -135,7 +135,7 @@ export const perfectPrecision: CombatStyle = {
         Make a melee \\glossterm{strike} with a -1 accuracy penalty against up to two creatures or objects in a 10 ft. long, 5 ft. wide line from you.
         The line must point directly away from you, and only one of the spaces in the line can be adjacent to you.
         The strike deals double damage.
-        If you deal damage to two creatures in this way, you \\glossterm{briefly} become \\focused.
+        If you deal damage to two creatures in this way, you \\briefly become \\focused.
       `,
       rank: 5,
       roles: ['clear', 'generator'],
@@ -147,7 +147,7 @@ export const perfectPrecision: CombatStyle = {
       // Treat the local +2 accuracy as a 0.2 EA buff
       effect: `
         Make a ranged \\glossterm{strike} with a -2 accuracy penalty.
-        Then, you \\glossterm{briefly} gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against the target.
+        Then, you \\briefly gain a +2 \\glossterm{accuracy} bonus with ranged \\glossterm{strikes} against the target.
       `,
       rank: 1,
       roles: ['generator'],
@@ -270,7 +270,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit You become \\glossterm{briefly} \\honed.
+        \\hit You become \\briefly \\honed.
       `,
       rank: 3,
       roles: ['generator'],
@@ -281,7 +281,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit You become \\glossterm{briefly} \\honed.
+        \\hit You become \\briefly \\honed.
       `,
       rank: 7,
       roles: ['generator'],
@@ -292,8 +292,8 @@ export const perfectPrecision: CombatStyle = {
       name: 'Maintain Focus',
 
       effect: `
-        You become \\glossterm{briefly} \\focused.
-        During the next round, if you hit with a strike, you become \\glossterm{briefly} focused again.
+        You become \\briefly \\focused.
+        During the next round, if you hit with a strike, you become \\briefly focused again.
       `,
       rank: 1,
       roles: ['focus'],
@@ -304,8 +304,8 @@ export const perfectPrecision: CombatStyle = {
 
       // 0.8 EA baseline, 1.2 EA if you hit the condition
       effect: `
-        You become \\glossterm{briefly} \\focused and \\honed.
-        During the next round, if you get a critical hit with a strike, you become \\glossterm{briefly} honed again.
+        You become \\briefly \\focused and \\honed.
+        During the next round, if you get a critical hit with a strike, you become \\briefly honed again.
       `,
       rank: 5,
       roles: ['focus'],

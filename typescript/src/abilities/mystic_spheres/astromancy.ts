@@ -11,7 +11,7 @@ export const astromancy: MysticSphere = {
     Unless otherwise specified, teleporation requires \\glossterm{line of sight}, \\glossterm{line of effect}, and an unoccupied destination on stable ground.
     For details, see \\pcref{Teleportation}.
 
-    \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to very briefly \\glossterm{teleport} to other locations.
+    \\spheredef{flicker}[flickered] Some spells from this sphere can cause creatures or objects to temporarily \\glossterm{teleport} to other locations.
     This is called flickering.
     If the space occupied by a flickered target is occupied or otherwise inaccessible when it returns, it instead reappears in the closest available open space.
     Flickering works even if the target is not on stable ground.
@@ -429,7 +429,7 @@ export const astromancy: MysticSphere = {
       attack: {
         hit: `
           The target \\sphereterm{flickers} to a nearby safe location in the Astral Expanse.
-          When it returns, it takes \\damageranksix, and it is \\glossterm{briefly} \\stunned.
+          When it returns, it takes \\damageranksix, and it is \\briefly \\stunned.
         `,
         targeting: `
           Make an attack vs. Mental against something within \\medrange.
@@ -475,7 +475,7 @@ export const astromancy: MysticSphere = {
       // Ranged slow is 2 EA, so r4.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed and unable to fly or glide.
+          The target is \\briefly \\slowed and unable to fly or glide.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{grounded} \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -556,7 +556,7 @@ export const astromancy: MysticSphere = {
       effect: `
         At the start of each phase, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
         You do not return until the end of the round.
-        After you flicker in this way, you \\glossterm{briefly} cannot flicker with this ability again.
+        After you flicker in this way, you \\enduringly cannot flicker with this ability again.
       `,
       narrative: `
         Armor and shields can offer some protection, but true defensive mastery comes from not being hit at all.
@@ -583,7 +583,7 @@ export const astromancy: MysticSphere = {
       },
       narrative: `
         The cultists were confident that they were safe behind their defensive wall of zombies.
-        When one of their number was unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+        When one of their number was unexpectedly replaced by a raging barbarian, they discovered how wrong they were.
       `,
       rank: 4,
       roles: ['mobility'],
@@ -604,7 +604,7 @@ export const astromancy: MysticSphere = {
       `,
       narrative: `
         As your enemies drew close to you, they expected you to panic and run.
-        When you were unexpectedly replaced by a raging barbarian, they briefly discovered how wrong they were.
+        When you were unexpectedly replaced by a raging barbarian, they discovered how wrong they were.
       `,
       rank: 1,
       roles: ['mobility'],
@@ -709,7 +709,7 @@ export const astromancy: MysticSphere = {
       name: 'Blink',
 
       effect: `
-        You \\glossterm{briefly} blink in and out of existence in response to attacks.
+        You \\momentarily blink in and out of existence in response to attacks.
         This causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
@@ -721,7 +721,7 @@ export const astromancy: MysticSphere = {
 
       // 0.7 + 0.5 EA, though they have a bit of antisynergy
       effect: `
-        You \\glossterm{briefly} blink in and out of existence in response to attacks.
+        You \\momentarily blink in and out of existence in response to attacks.
         This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,

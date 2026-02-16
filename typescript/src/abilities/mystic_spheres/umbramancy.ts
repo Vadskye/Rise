@@ -31,7 +31,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         This spell has no \\glossterm{verbal components} or \\glossterm{somatic components}.
 
-        You \\glossterm{briefly} gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
+        You \\briefly gain a +3 \\glossterm{enhancement bonus} to the Stealth skill.
         If you stop being \\glossterm{shadowed} at any point, this effect immediately ends.
       `,
       roles: ['narrative'],
@@ -197,7 +197,7 @@ export const umbramancy: MysticSphere = {
       // Brief slowed is 2 EA ranged, so r4, or r3 shadowed.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{shadowed} creatures in a \\smallarea radius within \\shortrange.
@@ -392,7 +392,7 @@ export const umbramancy: MysticSphere = {
           \\damageranksevenlow.
         `,
         injury: `
-          The target becomes \\glossterm{briefly} \\slowed.
+          The target becomes \\briefly \\slowed.
           If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
           It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
           During this movement, its movement is not reduced by being slowed.
@@ -424,7 +424,7 @@ export const umbramancy: MysticSphere = {
         \\end{raggeditemize}
 
         At the end of each round, if you are not \\glossterm{shadowed}, this effect is \\glossterm{suppressed} and you return to your normal size and shape.
-        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\glossterm{briefly}.
+        If doing so is impossible, such as if you are in a space too small to contain your body, you gain a \\glossterm{vital wound} and this effect persists \\briefly.
         This form offers you no special immunity to damage, as creatures can simply attack the shadow.
 
         You can suppress or resume this ability as a \\glossterm{free action}.
@@ -476,7 +476,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+        All attacks against you and all \\glossterm{shadowed} allies within a \\largearea radius from you \\momentarily have a 20\\% \\glossterm{failure chance}.
       `,
       rank: 2,
       roles: ['boon', 'turtle'],
@@ -487,8 +487,8 @@ export const umbramancy: MysticSphere = {
 
       // 50% action denial against 50% of enemy attacks = 1 EA.
       effect: `
-        All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
-        If you are currently \\glossterm{shadowed}, you are also \\glossterm{briefly} \\empowered.
+        All attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+        If you are currently \\glossterm{shadowed}, you are also \\briefly \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
@@ -500,10 +500,10 @@ export const umbramancy: MysticSphere = {
       // get r3 area.
       name: 'Fearsome Shadow Cloak',
       attack: {
-        hit: `The target is \\glossterm{briefly} \\frightened of you.`,
+        hit: `The target is \\briefly \\frightened of you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius from you.
-          In addition, all attacks against you \\glossterm{briefly} have a 20\\% \\glossterm{failure chance}.
+          In addition, all attacks against you \\momentarily have a 20\\% \\glossterm{failure chance}.
         `,
       },
       rank: 2,
@@ -537,7 +537,7 @@ export const umbramancy: MysticSphere = {
       attack: {
         hit: `
           The target suffers no immediate effect.
-          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\glossterm{briefly} \\frightened by all creatures.
+          At the end of the next round, if it is \\glossterm{shadowed}, it becomes \\briefly \\frightened by all creatures.
         `,
         targeting: `
           Make an attack vs. Mental against up to two creatures within \\medrange.
@@ -590,7 +590,7 @@ export const umbramancy: MysticSphere = {
         hit: `\\damagerankfivelow, and any \\glossterm{extra damage} is doubled.`,
         targeting: `
           You must be \\glossterm{shadowed} to cast this spell.
-          After you cast this spell, you \\glossterm{briefly} cannot be \\glossterm{shadowed} for any reason.
+          After you cast this spell, you \\briefly cannot be \\glossterm{shadowed} for any reason.
 
           Make an attack vs. Fortitude against a creature within \\shortrange.
         `,
@@ -653,7 +653,7 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
+        Attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -665,8 +665,8 @@ export const umbramancy: MysticSphere = {
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
 
-        Attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
-        When an attack against you fails in this way, you become \\glossterm{briefly} \\empowered.
+        Attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
+        When an attack against you fails in this way, you become \\briefly \\empowered.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
@@ -686,7 +686,7 @@ export const umbramancy: MysticSphere = {
           You must be \\glossterm{shadowed} to cast this spell.
 
           When you cast this spell, you wrap yourself in shadow.
-          All attacks against you \\glossterm{briefly} have a 50\\% \\glossterm{failure chance}.
+          All attacks against you \\momentarily have a 50\\% \\glossterm{failure chance}.
           Next round, you can spend a \\glossterm{standard action} to \\glossterm{teleport} to a location within \\shortrange.
           If you do, make an attack vs. Fortitude against each \\glossterm{enemy} adjacent to you.
         `,

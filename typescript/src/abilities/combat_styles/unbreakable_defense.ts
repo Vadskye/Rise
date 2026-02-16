@@ -15,7 +15,7 @@ export const unbreakableDefense: CombatStyle = {
           you gain an additional +2 bonus to your Armor defense if you are using a melee weapon.
           This bonus is considered to come from a shield, and does not stack with the benefits of using a shield.
           In addition, choose a creature you can see.
-          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it \\glossterm{briefly} takes a -2 penalty to Armor defense.
+          Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it \\briefly takes a -2 penalty to Armor defense.
           As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
         `,
         name: 'total defense',
@@ -79,7 +79,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.5 + 0.7 EA, but they have antisynergy
       effect: `
-        You \\glossterm{briefly} are \\braced and take half damage from all sources.
+        You \\briefly are \\braced and take half damage from all sources.
       `,
       rank: 5,
       roles: ['turtle'],
@@ -90,7 +90,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 1.3 EA
       effect: `
-        You are \\glossterm{briefly} \\impervious to all damage.
+        You are \\briefly \\impervious to all damage.
       `,
       rank: 7,
       roles: ['turtle'],
@@ -101,7 +101,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.7 EA
       effect: `
-        You \\glossterm{briefly} take half damage from all sources.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -111,7 +111,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Shield Bash',
 
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\briefly \\shielded.
         Make a melee \\glossterm{strike} with a -1 accuracy penalty using a shield.
       `,
       rank: 1,
@@ -122,7 +122,7 @@ export const unbreakableDefense: CombatStyle = {
       name: 'Shield Bash+',
 
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\briefly \\shielded.
         Make a melee \\glossterm{strike} that deals double damage using a shield.
       `,
       rank: 5,
@@ -135,7 +135,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} using a shield.
-        \\hit The target is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\briefly \\stunned.
       `,
       rank: 3,
       roles: ['softener'],
@@ -193,7 +193,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.3 + 0.7 EA
       effect: `
-        You are \\glossterm{briefly} \\steeled and \\maximized.
+        You are \\briefly \\steeled and \\maximized.
       `,
       rank: 3,
       roles: ['turtle'],
@@ -204,7 +204,7 @@ export const unbreakableDefense: CombatStyle = {
 
       // 0.3 + 0.3 + 0.7
       effect: `
-        You are \\glossterm{briefly} \\steeled, \\fortified, and \\maximized.
+        You are \\briefly \\steeled, \\fortified, and \\maximized.
       `,
       rank: 7,
       roles: ['focus'],
@@ -215,7 +215,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        After making the strike, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
+        After making the strike, you can choose to either be \\briefly \\fortified or briefly \\shielded.
       `,
       rank: 3,
       roles: ['generator', 'turtle'],
@@ -226,7 +226,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty that deals triple damage.
-        Then, you can choose to either be \\glossterm{briefly} \\fortified or \\glossterm{briefly} \\shielded.
+        Then, you can choose to either be \\briefly \\fortified or briefly \\shielded.
       `,
       rank: 7,
       roles: ['generator'],
@@ -238,7 +238,7 @@ export const unbreakableDefense: CombatStyle = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it is \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -273,7 +273,7 @@ export const unbreakableDefense: CombatStyle = {
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} empowered.
+        You are \\briefly empowered.
         In addition, you regain \\hpranktwo.
       `,
       rank: 1,
@@ -287,7 +287,7 @@ export const unbreakableDefense: CombatStyle = {
       // Pure healing would be dr3, so dr2 for empower
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You are \\glossterm{briefly} empowered.
+        You are \\briefly empowered.
         In addition, you regain \\hpranksix.
       `,
       rank: 5,
@@ -300,7 +300,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals double damage.
-        After making the strike, you are \\glossterm{briefly} \\fortified.
+        After making the strike, you are \\briefly \\fortified.
       `,
       rank: 5,
       roles: ['generator', 'turtle'],
@@ -311,7 +311,7 @@ export const unbreakableDefense: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit You are \\glossterm{briefly} \\braced.
+        \\hit You are \\briefly \\braced.
       `,
       rank: 7,
       roles: ['generator', 'turtle'],
