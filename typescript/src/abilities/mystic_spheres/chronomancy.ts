@@ -365,7 +365,7 @@ export const chronomancy: MysticSphere = {
 
       // TODO: EA math
       usageTime: 'minor',
-      cost: 'One \\glossterm{fatigue level}, and you \\enduringly cannot cast this spell again.',
+      cost: "One \\glossterm{fatigue level}, and you can't cast this spell next round.",
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         You reach into a possible future and create a duplicate of the target.
