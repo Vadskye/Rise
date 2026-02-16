@@ -709,7 +709,7 @@ export const astromancy: MysticSphere = {
       name: 'Blink',
 
       effect: `
-        You \\momentarily blink in and out of existence in response to attacks.
+        You \\briefly blink in and out of existence in response to attacks.
         This causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,
@@ -721,7 +721,7 @@ export const astromancy: MysticSphere = {
 
       // 0.7 + 0.5 EA, though they have a bit of antisynergy
       effect: `
-        You \\momentarily blink in and out of existence in response to attacks.
+        You \\briefly blink in and out of existence in response to attacks.
         This makes you \\braced, and causes all attacks against you to have a 50\\% \\glossterm{failure chance}.
       `,
       narrative: `You jump into the Astral Expanse the instant before a sword slashes through the space you left behind.`,

@@ -366,7 +366,7 @@ export const photomancy: MysticSphere = {
       effect: `
         You can activate this spell as a \\glossterm{minor action}.
         When you do, a burst of illusory duplicates appear from your body, each appearing to performing a different action.
-        All \\glossterm{targeted} attacks against you \\momentarily have a 50\\% \\glossterm{miss chance}.
+        All \\glossterm{targeted} attacks against you \\briefly have a 50\\% \\glossterm{miss chance}.
         You can activate this spell twice before it is \\glossterm{dismissed}.
 
         This ability provides no defensive benefit against creatures immune to \\abilitytag{Visual} abilities.
@@ -583,7 +583,7 @@ export const photomancy: MysticSphere = {
       // Reactive brief dazzle is 1.2 EA, and r1 deep attunement is 1.5 EA.
       // That gives us some vague ranks to increase to medarea radius?
       attack: {
-        hit: `The target is \\momentarily \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         targeting: `
           You are surrounded by a \\medarea radius \\glossterm{emanation} of \\glossterm{brilliant illumination}.
           Whenever an \\glossterm{enemy} enters that area, make a \\glossterm{reactive attack} vs. Fortitude against them.
@@ -657,10 +657,10 @@ export const photomancy: MysticSphere = {
 
       // TODO: actual EA calcs
       attack: {
-        hit: `The target is \\momentarily \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
-          You are \\momentarily protected by a field of light.
+          You are \\briefly protected by a field of light.
           The light makes you \\braced.
           In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,
@@ -679,7 +679,7 @@ export const photomancy: MysticSphere = {
         hit: `The target is \\dazzled as a \\glossterm{condition}.`,
         halfOnMiss: true,
         targeting: `
-          You are \\momentarily protected by a field of light.
+          You are \\briefly protected by a field of light.
           The light makes you \\braced.
           In addition, whenever a creature within \\medrange attacks you, make a \\glossterm{reactive attack} vs. Reflex against them.
         `,

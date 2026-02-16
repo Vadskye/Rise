@@ -12,7 +12,7 @@ export const prayer: MysticSphere = {
       // "Any two" fortify is 0.7 EA.
       effect: `
         Choose two \\glossterm{allies} within \\medrange.
-        Each target is \\momentarily \\fortified.
+        Each target is \\briefly \\fortified.
       `,
       name: 'Fortifying Boon',
       roles: ['boon'],
@@ -129,7 +129,7 @@ export const prayer: MysticSphere = {
 
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target is \\momentarily \\fortified and \\steeled.
+        The target is \\briefly \\fortified and \\steeled.
       `,
       rank: 1,
       roles: ['boon'],
@@ -144,7 +144,7 @@ export const prayer: MysticSphere = {
         When you cast this spell, a holy light emanates fro you like a torch.
         Illuminated objects seem more solid and secure.
         Next round, you can spend a standard action to protect you and all \\glossterm{allies} within a \\largearea radius.
-        Each target \\momentarily takes half damage from all sources.
+        Each target \\briefly takes half damage from all sources.
       `,
       rank: 6,
       roles: ['boon'],
@@ -172,7 +172,7 @@ export const prayer: MysticSphere = {
       // EA for any two. But you can't target yourself with this.
       effect: `
         Choose up to two \\glossterm{allies} within \\medrange.
-        Each target is \\momentarily either \\fortified or \\shielded.
+        Each target is \\briefly either \\fortified or \\shielded.
         You must make the same choice for each target.
       `,
       rank: 3,
@@ -339,7 +339,7 @@ export const prayer: MysticSphere = {
       // dr3
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
-        The target regains \\hpranktwo and is \\momentarily \\shielded.
+        The target regains \\hpranktwo and is \\briefly \\shielded.
       `,
       rank: 1,
       roles: ['healing', 'boon', 'exertion'],
@@ -381,7 +381,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike}.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Then, you \\momentarily gain a +2 bonus to your Mental defense.
+        Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 1,
       roles: ['burst'],
@@ -393,7 +393,7 @@ export const prayer: MysticSphere = {
       effect: `
         Make a \\glossterm{strike} that deals double damage.
         You use the higher of your \\glossterm{magical power} and your \\glossterm{mundane power} to determine your damage with the strike (see \\pcref{Power}).
-        Then, you \\momentarily gain a +2 bonus to your Mental defense.
+        Then, you \\briefly gain a +2 bonus to your Mental defense.
       `,
       rank: 5,
       roles: ['burst'],

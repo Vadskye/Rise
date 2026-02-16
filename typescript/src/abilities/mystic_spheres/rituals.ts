@@ -526,7 +526,7 @@ export const rituals: RitualDefinition[] = [
   //   effect: `
   //     Choose any number of Medium or smaller ritual participants.
   //     Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
-  //     If it attacks or is dealt damage, it is \\momentarily unable to take any actions and this ability is \\glossterm{dismissed}.
+  //     If it attacks or is dealt damage, it is \\briefly unable to take any actions and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
   //   usageTime: 'one hour',
