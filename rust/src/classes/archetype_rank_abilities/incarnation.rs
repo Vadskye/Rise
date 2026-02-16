@@ -9,7 +9,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 1,
             description: r"
                 \begin{magicalactiveability}{Essence Spike}{Standard action}
-                    \abilitycost You \glossterm{briefly} cannot use this ability again.
+                    \abilitycost You can't use this ability next round.
                     \abilitytags The tag of your \ability{essence infusion}.
                     \rankline
                     Make an attack against something within \medrange.
@@ -44,7 +44,7 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
                 \begin{magicalactiveability}{Essence Flare}{Standard action}
                     \rankline
                     You are \glossterm{briefly} \focused.
-                    At the end of the next round, if you hit with an attack that has your \textit{essence infusion} tag during that round, you repeat the full effect of this ability.
+                    At the end of your next turn, if you hit with an attack that has your \textit{essence infusion} tag during that turn, you repeat the full effect of this ability.
                     Otherwise, you are \glossterm{briefly} \maximized.
                 \end{magicalactiveability}
             ",
@@ -114,12 +114,12 @@ pub fn incarnation<'a>() -> Vec<RankAbility<'a>> {
             rank: 7,
             description: r"
                 \begin{magicalactiveability}{Essence Incarnate}{Standard action}
-                    \abilitycost One \glossterm{fatigue level}, and you \glossterm{briefly} cannot use this ability again.
+                    \abilitycost One \glossterm{fatigue level}, and you can't use this ability next round.
                     \rankline
                     You gain a benefit depending on whether you are tethered or untethered:
                     \begin{raggeditemize}
                         \item Tethered: You are \glossterm{briefly} \primed.
-                        Next round, if you hit with an attack that has your \ability{essence infusion} tag, you are \glossterm{briefly} primed again.
+                        During your next turn, if you hit with an attack that has your \ability{essence infusion} tag, you are \glossterm{briefly} primed again.
                         \item Untethered: You \glossterm{briefly} become \trait{incorporeal}.
                         This makes you immune to \glossterm{mundane}, \atCreation, and \atManifestation abilities, among other effects (see \pref{Incorporeal}).
                         If this effect ends while you are inside of a solid object, you are pushed back in the direction from which you entered that object until you emerge.
