@@ -421,7 +421,7 @@ export const toxicology: MysticSphere = {
         targeting: `
           For the duration of this spell, you can breathe acid like a dragon as a standard action.
           When you do, make an attack vs. Fortitude and Reflex against everything in a \\medarea cone from you.
-          After you use breathe acid, you \\glossterm{briefly} cannot do so again.
+          After you use breathe acid, you \\enduringly cannot do so again.
         `,
       },
       rank: 3,
@@ -497,7 +497,7 @@ export const toxicology: MysticSphere = {
       effect: `
         Choose yourself or a living \\glossterm{ally} within \\shortrange.
         The target regains \\hprankthree.
-        In addition, it removes all \\glossterm{poisons} affecting it and becomes \\glossterm{briefly} \\glossterm{immune} to poisons.
+        In addition, it removes all \\glossterm{poisons} affecting it and becomes \\briefly \\glossterm{immune} to poisons.
       `,
       rank: 1,
       roles: ['healing', 'exertion'],
@@ -736,7 +736,7 @@ export const toxicology: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankone, and the target is \\glossterm{briefly} \\dazzled.
+          \\damagerankone, and the target is \\briefly \\dazzled.
         `,
         halfOnMiss: true,
         targeting: `

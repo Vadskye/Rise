@@ -399,7 +399,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Reflect Magic',
 
       effect: `
-        You are \\glossterm{briefly} protected by reflective magic.
+        You are \\momentarily protected by reflective magic.
         This makes you \\glossterm{braced}.
         In addition, whenever a creature within \\medrange of you misses you with a \\magical attack, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
@@ -412,7 +412,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Reflect Magic',
 
       effect: `
-        You are \\glossterm{briefly} protected by reflective magic.
+        You are \\momentarily protected by reflective magic.
         This makes you \\glossterm{braced}.
         In addition, whenever a creature within \\medrange of you makes a \\magical attack against you, that creature treats itself as a target of that attack in addition to any other targets.
         The attacker cannot choose to reduce its accuracy or damage against itself.
@@ -462,7 +462,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Surge',
 
       effect: `
-        You are \\glossterm{briefly} \\maximized.
+        You are \\briefly \\maximized.
       `,
       rank: 1,
       roles: ['focus'],
@@ -472,7 +472,7 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Arcane Surge',
 
       effect: `
-        You are \\glossterm{briefly} \\maximized and \\empowered.
+        You are \\briefly \\maximized and \\empowered.
       `,
       rank: 6,
       roles: ['focus'],
@@ -484,8 +484,8 @@ export const thaumaturgy: MysticSphere = {
       name: 'Arcane Fuel',
 
       effect: `
-        You \\glossterm{briefly} take half damage from \\magical effects.
-        When you take damage from a magical ability during this effect, you become \\glossterm{briefly} \\empowered.
+        You \\momentarily take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\briefly \\empowered.
       `,
       rank: 3,
       roles: ['focus', 'turtle'],
@@ -495,8 +495,8 @@ export const thaumaturgy: MysticSphere = {
       name: 'Greater Arcane Fuel',
 
       effect: `
-        You \\glossterm{briefly} take half damage from \\magical effects.
-        When you take damage from a magical ability during this effect, you become \\glossterm{briefly} \\maximized.
+        You \\momentarily take half damage from \\magical effects.
+        When you take damage from a magical ability during this effect, you become \\briefly \\maximized.
       `,
       rank: 7,
       roles: ['focus', 'turtle'],
@@ -509,7 +509,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           \\damagerankthree.
-          You are also \\glossterm{briefly} \\empowered.
+          You are also \\briefly \\empowered.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\medrange.
@@ -527,7 +527,7 @@ export const thaumaturgy: MysticSphere = {
       attack: {
         hit: `
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
-          You are also \\glossterm{briefly} \\empowered.
+          You are also \\briefly \\empowered.
         `,
         targeting: `
           Make an attack vs. Fortitude against a creature within \\shortrange.
@@ -549,7 +549,7 @@ export const thaumaturgy: MysticSphere = {
           \\damageranksix, and any \\glossterm{extra damage} is doubled.
         `,
         injury: `
-          The target is \\glossterm{briefly} unable to use any \\magical active abilities.
+          The target is \\momentarily unable to use any \\magical active abilities.
           This does not prevent its passive or triggered magical abilities from functioning normally.
           Once this effect ends, the target becomes \\glossterm{immune} to it until it takes a \\glossterm{short rest}.
         `,

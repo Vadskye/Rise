@@ -160,7 +160,7 @@ export const enchantment: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\goaded by you.
+          The target is \\briefly \\goaded by you.
           If it \\glossterm{injured}, it is also goaded by you as a \\glossterm{condition}.
         `,
         targeting: `
@@ -180,7 +180,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it is \\glossterm{briefly} \\confused.
+          If the target is \\glossterm{injured}, it is \\briefly \\confused.
         `,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} in a \\smallarea radius within \\shortrange.
@@ -346,7 +346,7 @@ export const enchantment: MysticSphere = {
       name: 'Fearsome Aura',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\frightened by you.`,
+        hit: `The target is \\briefly \\frightened by you.`,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\medarea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them with a \\plus2 accuracy bonus.
           After you attack a creature this way, it becomes immune to this attack from you until it finishes a \\glossterm{short rest}.
@@ -601,7 +601,7 @@ export const enchantment: MysticSphere = {
       // Don't scale enemy count because action skip scales strongly with enemy count.
       attack: {
         hit: `
-          If the target is \\glossterm{injured}, it \\glossterm{briefly} sees all creatures as its \\glossterm{enemies}.
+          If the target is \\glossterm{injured}, it \\briefly sees all creatures as its \\glossterm{enemies}.
           It is compelled to attack the creature closest to it, choosing randomly between equally close creatures.
           After this effect ends, the target becomes immune to this spell until it finishes a \\glossterm{short rest}.
         `,
@@ -660,7 +660,7 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d8 \\add your power.
-        In addition, it \\glossterm{briefly} gains a +2 bonus to its Mental defense.
+        In addition, it \\briefly gains a +2 bonus to its Mental defense.
       `,
       rank: 2,
       roles: ['healing', 'boon', 'exertion'],
@@ -678,7 +678,7 @@ export const enchantment: MysticSphere = {
       effect: `
         Chose yourself or one \\glossterm{ally} within \\medrange.
         The target regains \\glossterm{hit points} equal to 1d10 plus 1d10 per 2 power.
-        In addition, it \\glossterm{briefly} gains a +4 bonus to its Mental defense.
+        In addition, it \\briefly gains a +4 bonus to its Mental defense.
       `,
       rank: 6,
       roles: ['healing', 'boon', 'exertion'],
@@ -711,7 +711,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\frightened by you.
+          The target is \\briefly \\frightened by you.
         `,
         targeting: `
           Whenever an \\glossterm{enemy} enters a \\largearea radius \\glossterm{emanation} from you, make a \\glossterm{reactive attack} vs. Mental against them.
@@ -769,7 +769,7 @@ export const enchantment: MysticSphere = {
 
       attack: {
         hit: `
-          \\damagerankfive, and the target is \\glossterm{briefly} \\stunned.
+          \\damagerankfive, and the target is \\briefly \\stunned.
         `,
         injury: `
           The target is stunned as a \\glossterm{condition}.
@@ -792,7 +792,7 @@ export const enchantment: MysticSphere = {
       // -1dr for debuff, -1d for +2a
       attack: {
         hit: `
-          \\damagerankthree, and the target \\glossterm{briefly} takes a \\minus2 penalty to its Mental defense.
+          \\damagerankthree, and the target \\briefly takes a \\minus2 penalty to its Mental defense.
         `,
         targeting: `
           Make an attack vs. Mental with a \\plus2 accuracy bonus against one creature within \\medrange.

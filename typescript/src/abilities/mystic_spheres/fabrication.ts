@@ -65,7 +65,7 @@ export const fabrication: MysticSphere = {
 
       effect: `
         You can activate this effect as a \\glossterm{minor action}.
-        When you do, your attunement to this effect ends and you \\glossterm{briefly} create a wall of indestructible shields around you.
+        When you do, your attunement to this effect ends and you \\briefly create a wall of indestructible shields around you.
         The shields make you \\shielded and give you \\glossterm{cover} from all attacks.
       `,
       rank: 1,
@@ -572,7 +572,7 @@ export const fabrication: MysticSphere = {
       attack: {
         hit: `The target falls \\prone.`,
         targeting: `
-          You \\glossterm{briefly} coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
+          You \\briefly coat everything in a \\smallarea radius \\glossterm{zone} within \\shortrange in grease.
           Make an attack vs. Reflex against all Large or smaller \\glossterm{grounded} creatures in the area.
           At the start of your next turn, this effect \\glossterm{repeats} in the same area.
         `,
@@ -591,7 +591,7 @@ export const fabrication: MysticSphere = {
 
       attack: {
         hit: `
-          The target falls \\prone, and is \\glossterm{briefly} \\vulnerable to \\atFire attacks.
+          The target falls \\prone, and is \\briefly \\vulnerable to \\atFire attacks.
           This vulnerability ends if it takes damage from a \\atFire attack.
         `,
         targeting: `

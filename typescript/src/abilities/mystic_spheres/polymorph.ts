@@ -116,7 +116,7 @@ export const polymorph: MysticSphere = {
       attack: {
         crit: CONDITION_CRIT,
         hit: `
-          The target is \\glossterm{briefly} \\confused.
+          The target is \\briefly \\confused.
           If it is \\glossterm{injured} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
           Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
@@ -348,7 +348,7 @@ export const polymorph: MysticSphere = {
       // best as an emergency button and this requires planning.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each round.
+        The target \\briefly regains 1d8 \\glossterm{hit points} +1 per \\glossterm{power} at the end of each of its turns.
       `,
       rank: 3,
       roles: ['healing', 'exertion'],
@@ -364,7 +364,7 @@ export const polymorph: MysticSphere = {
       // 3 version.
       effect: `
         Choose yourself or one living \\glossterm{ally} within \\shortrange.
-        The target \\glossterm{briefly} regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each round.
+        The target \\briefly regains \\glossterm{hit points} equal to 1d10 per 2 \\glossterm{power} at the end of each of its turns.
       `,
       rank: 6,
       roles: ['healing', 'exertion'],
@@ -653,7 +653,7 @@ export const polymorph: MysticSphere = {
       name: 'Sudden Jellification',
 
       effect: `
-        You \\glossterm{briefly} take half damage from all sources.
+        You \\briefly take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -663,7 +663,7 @@ export const polymorph: MysticSphere = {
       name: 'Greater Sudden Jellification',
 
       effect: `
-        You \\glossterm{briefly} are \\steeled and take half damage from all sources.
+        You \\briefly are \\steeled and take half damage from all sources.
       `,
       rank: 4,
       roles: ['turtle'],
@@ -676,7 +676,7 @@ export const polymorph: MysticSphere = {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
         Until the start of your next turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
-        If you choose yourself, the effect lasts \\glossterm{briefly}.
+        If you choose yourself, the effect lasts \\briefly.
       `,
       rank: 2,
       roles: ['boon'],

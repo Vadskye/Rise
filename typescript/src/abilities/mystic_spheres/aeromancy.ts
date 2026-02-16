@@ -63,7 +63,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target \\glossterm{briefly} takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
+          The target \\briefly takes a -2 penalty to defenses against \\atAir abilities and projectile \\glossterm{strikes}.
         `,
         targeting: `
           Make an attack vs. Reflex against up to two creatures within \\distrange.
@@ -221,7 +221,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} \\slowed.
+          The target is \\briefly \\slowed.
         `,
         targeting: `
           Make an attack vs. Brawn against up to three creatures within \\medrange.
@@ -240,7 +240,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       attack: {
         hit: `
-          The target is \\glossterm{briefly} borne aloft by heavy winds.
+          The target is \\briefly borne aloft by heavy winds.
           You \\glossterm{fling} it five feet upwards, where it hovers in \\glossterm{midair}, which normally makes it \\unsteady.
           Although it cannot use a \\glossterm{walk speed} or most other normal movement modes while midair, it gains an average \\glossterm{fly speed} with a 5 foot \\glossterm{height limit} that it intuitively knows how to use.
           Although it can move around in the air with this fly speed, it cannot get lower than 5 feet above the ground.
@@ -714,7 +714,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\shielded.
+          Then, you are \\briefly \\shielded.
         `,
       },
       // narrative: '',
@@ -733,7 +733,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Brawn and Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\shielded.
+          Then, you are \\briefly \\shielded.
         `,
       },
       // narrative: '',
@@ -748,7 +748,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        The target is \\glossterm{briefly} \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
+        The target is \\briefly \\shielded and gains a \\plus2 bonus to all defenses against \\glossterm{ranged} \\glossterm{strikes}.
       `,
       // narrative: '',
       rank: 2,
@@ -799,7 +799,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
         Until the start of your next turn, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
-        If you choose yourself, the effect lasts \\glossterm{briefly}.
+        If you choose yourself, the effect lasts \\briefly.
       `,
       // narrative: '',
       rank: 2,
@@ -814,7 +814,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         When you cast this spell, and whenever you sustain it, air loudly rushes around you.
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
-          \\item Never: You are \\glossterm{briefly} \\shielded.
+          \\item Never: You are \\briefly \\shielded.
           \\item Once: You are \\honed this turn and briefly shielded.
           \\item Two or more times: You are briefly honed and shielded.
         \\end{mdframedraggeditemize}
@@ -834,7 +834,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         When you stop sustaining this spell, you gain a benefit based on how many times you sustained it.
         \\begin{mdframedraggeditemize}
           \\item Never: You are \\primed this turn.
-          \\item Once: You are primed this turn and \\glossterm{briefly} \\shielded.
+          \\item Once: You are primed this turn and \\briefly \\shielded.
           \\item Two or more times: You are primed and \\honed this turn, and briefly shielded.
         \\end{mdframedraggeditemize}
       `,
