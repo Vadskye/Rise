@@ -92,7 +92,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +1 accuracy bonus.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of the strike.
+        After making the strike, you \\briefly take a -2 penalty to all defenses against each target of the strike.
       `,
       rank: 1,
       roles: ['burst'],
@@ -103,7 +103,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with a +2 accuracy bonus that deals double damage.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to all defenses against each target of either strike.
+        After making the strike, you \\briefly take a -2 penalty to all defenses against each target of either strike.
       `,
       rank: 5,
       roles: ['burst'],
@@ -201,7 +201,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a \\glossterm{dual strike} using two weapons (see \\pcref{Dual Strikes}).
-        \\hit You are \\glossterm{briefly} \\focused.
+        \\hit You are \\briefly \\focused.
       `,
       rank: 3,
       roles: ['generator'],
@@ -234,7 +234,7 @@ export const ebbAndFlow: CombatStyle = {
 
       // 0.5 + 0.4 EA
       effect: `
-        You are \\glossterm{briefly} \\braced.
+        You are \\briefly \\braced.
         If your location did not change since the start of the round, you are also briefly \\focused.
       `,
       rank: 3,
@@ -245,7 +245,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata',
 
       effect: `
-        If you did not attack last round, you are \\glossterm{briefly} \\focused and \\honed.
+        If you did not attack last round, you are \\briefly \\focused and \\honed.
       `,
       rank: 1,
       roles: ['focus'],
@@ -255,7 +255,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Sharpening Kata+',
 
       effect: `
-        If you did not attack last round, you are \\glossterm{briefly} \\primed and \\honed.
+        If you did not attack last round, you are \\briefly \\primed and \\honed.
       `,
       rank: 5,
       roles: ['focus'],
@@ -266,7 +266,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you are \\glossterm{briefly} \\maximized and \\shielded.
+        If you both dealt damage to another creature and took damage from another creature last round, you are \\briefly \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
@@ -277,7 +277,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you \\glossterm{briefly} are \\maximized and take half damage from all sources.
+        If you both dealt damage to another creature and took damage from another creature last round, you \\briefly are \\maximized and take half damage from all sources.
       `,
       rank: 7,
       roles: ['focus'],
@@ -312,7 +312,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to your Armor defense.
+        After making the strike, you \\briefly take a \\minus2 penalty to your Armor defense.
       `,
       rank: 3,
       roles: ['burst'],
@@ -323,7 +323,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double \\glossterm{weapon damage} and triple damage overall.
-        After making the strike, you \\glossterm{briefly} take a -2 penalty to your Armor defense.
+        After making the strike, you \\briefly take a -2 penalty to your Armor defense.
       `,
       rank: 7,
       roles: ['burst'],
@@ -334,7 +334,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\glossterm{extra damage} equal to 1d4 plus half your \\glossterm{power}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+        However, you \\briefly take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 3,
       roles: ['burst'],
@@ -345,7 +345,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} with \\damagerankseven \\glossterm{extra damage}.
-        However, you \\glossterm{briefly} take a -2 penalty to your accuracy and defenses after making the strike.
+        However, you \\briefly take a -2 penalty to your accuracy and defenses after making the strike.
       `,
       rank: 7,
       roles: ['burst'],
@@ -356,7 +356,7 @@ export const ebbAndFlow: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals quadruple \\glossterm{weapon damage}.
-        After making the strike, you \\glossterm{briefly} take a \\minus2 penalty to all non-Armor defenses.
+        After making the strike, you \\briefly take a \\minus2 penalty to all non-Armor defenses.
       `,
       rank: 5,
       roles: ['burst'],

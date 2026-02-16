@@ -98,7 +98,7 @@ export const bruteForce: CombatStyle = {
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you that are \\glossterm{grounded} on the same stable surface as you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 3,
@@ -193,10 +193,10 @@ export const bruteForce: CombatStyle = {
       name: 'Ostentatious Flex',
 
       attack: {
-        hit: `The target is \\glossterm{briefly} \\goaded by you.`,
+        hit: `The target is \\briefly \\goaded by you.`,
         targeting: `
           Make an attack vs. Mental against all \\glossterm{enemies} within a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\empowered.
+          Then, you are \\briefly \\empowered.
         `,
       },
       rank: 3,
@@ -209,7 +209,7 @@ export const bruteForce: CombatStyle = {
       name: 'Steady Flex',
 
       effect: `
-        You are \\glossterm{briefly} \\fortified and \\maximized.
+        You are \\briefly \\fortified and \\maximized.
       `,
       rank: 3,
       roles: ['focus'],
@@ -219,7 +219,7 @@ export const bruteForce: CombatStyle = {
       name: 'Devastating Flex',
 
       effect: `
-        You \\glossterm{briefly} are \\maximized and deal 1d8 \\glossterm{extra damage} with \\glossterm{strikes}.
+        You \\briefly are \\maximized and deal 1d8 \\glossterm{extra damage} with \\glossterm{strikes}.
       `,
       rank: 7,
       roles: ['focus'],
@@ -231,7 +231,7 @@ export const bruteForce: CombatStyle = {
       // Standard effect for r3 would be brief empower -> dr1, which is basically what
       // this is.
       effect: `
-        You are \\glossterm{briefly} \\empowered.
+        You are \\briefly \\empowered.
         Then, make a \\glossterm{strike}.
       `,
       rank: 3,
@@ -243,9 +243,9 @@ export const bruteForce: CombatStyle = {
 
       // With a fatigue, expected damage is drX-3 = dr4.
       effect: `
-        You are \\glossterm{briefly} \\empowered.
+        You are \\briefly \\empowered.
         Make a \\glossterm{strike} with that deals double damage.
-        Then, you are \\glossterm{briefly} \\maximized.
+        Then, you are \\briefly \\maximized.
       `,
       rank: 7,
       roles: ['generator'],
@@ -289,7 +289,7 @@ export const bruteForce: CombatStyle = {
         Make a melee \\glossterm{strike} against a stable surface and no other targets.
         Then, make an attack vs. Armor against everything in a 10 ft. wide line from one corner of the target space.
         The length of the line is equal to one foot per point of damage you dealt to the surface, rounded to the nearest 5 foot increment.
-        \\hit \\damagerankthree. If your attack result also hits the target's Reflex defense, it is \\glossterm{briefly} \\dazzled.
+        \\hit \\damagerankthree. If your attack result also hits the target's Reflex defense, it is \\briefly \\dazzled.
         \\miss Half damage.
       `,
       rank: 3,
@@ -339,7 +339,7 @@ export const bruteForce: CombatStyle = {
 
       attack: {
         hit: `\\damagerankseven, and the target falls \\prone.`,
-        injury: `The target is \\glossterm{briefly} unable to stand.`,
+        injury: `The target is \\briefly unable to stand.`,
         targeting: `
           Make a \\glossterm{brawling attack} vs. Brawn against one creature you \\glossterm{touch}.
         `,

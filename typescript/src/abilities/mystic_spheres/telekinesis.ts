@@ -58,7 +58,7 @@ export const telekinesis: MysticSphere = {
       // call it 2 EA. The Strength check is worth -2 ranks, probably.
       attack: {
         hit: `
-          The target is \\glossterm{briefly} unable to move closer to you without effort.
+          The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
           As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 6.
           If it succeeds, its movement towards you costs double the normal movement speed.
@@ -92,7 +92,7 @@ export const telekinesis: MysticSphere = {
 
       // 0.7 EA
       effect: `
-        You \\glossterm{briefly} take half damage from all sources.
+        You \\momentarily take half damage from all sources.
       `,
       rank: 1,
       roles: ['turtle'],
@@ -104,7 +104,7 @@ export const telekinesis: MysticSphere = {
 
       // 0.4 + 0.7 EA
       effect: `
-        You are \\glossterm{briefly} \\shielded and take half damage from all sources.
+        You \\momentarily are \\shielded and take half damage from all sources.
       `,
       rank: 6,
       roles: ['turtle'],
@@ -184,7 +184,7 @@ export const telekinesis: MysticSphere = {
         `,
         halfOnMiss: true,
         targeting: `
-          You \\glossterm{briefly} build up energy.
+          You \\briefly build up energy.
           Whenever you take damage during that time, you gain a kinetic charge.
 
           When that effect ends, make a \\glossterm{reactive attack} vs. Brawn against all \\glossterm{enemies} in a \\smallarea radius from you.
@@ -394,7 +394,7 @@ export const telekinesis: MysticSphere = {
 
       // Shielded is 0.4 EA, redirect is ???
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\momentarily \\shielded.
         In addition, whenever a creature misses you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -406,7 +406,7 @@ export const telekinesis: MysticSphere = {
       name: 'Greater Kinetic Redirection',
 
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\momentarily \\shielded.
         In addition, whenever a creature attacks you with a melee \\glossterm{strike} during that effect, it treats itself as a target of that strike in addition to any other targets.
         It cannot choose to reduce its accuracy or damage against itself.
       `,
@@ -569,8 +569,8 @@ export const telekinesis: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        The target is \\glossterm{briefly} \\shielded.
-        During the effect, if the target takes damage, it is \\glossterm{briefly} \\empowered.
+        The target is \\momentarily \\shielded.
+        During the effect, if the target takes damage, it is \\briefly \\empowered.
       `,
       rank: 5,
       roles: ['boon'],
@@ -757,7 +757,7 @@ export const telekinesis: MysticSphere = {
 
       attack: {
         hit: `\\damagerankthree.`,
-        injury: 'The target is \\glossterm{briefly} \\stunned.',
+        injury: 'The target is \\briefly \\stunned.',
         targeting: `
           Make an attack vs. Brawn against something within \\shortrange.
         `,
@@ -775,7 +775,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           \\damagerankseven, and any \\glossterm{extra damage} is doubled.
-          The target is also \\glossterm{briefly} \\stunned.
+          The target is also \\briefly \\stunned.
         `,
         injury: 'The target is \\stunned as a \\glossterm{condition}.',
         targeting: `

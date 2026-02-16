@@ -21,7 +21,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level} (see text).',
       effect: `
-        You \\glossterm{briefly} gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
+        You \\briefly gain a \\plus10 foot bonus to your \\glossterm{speed} and are \\primed.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 1,
@@ -33,7 +33,7 @@ export const mobileHunter: CombatStyle = {
 
       cost: 'One \\glossterm{fatigue level}.',
       effect: `
-        You \\glossterm{briefly} gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
+        You \\briefly gain a \\plus20 foot bonus to your \\glossterm{speed} and are \\primed.
         If you have a \\glossterm{vital wound}, this ability does not increase your fatigue level.
       `,
       rank: 5,
@@ -89,7 +89,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\hit If the target is a creature, you \\glossterm{briefly} do not consider it to be an \\glossterm{obstacle} when moving through its space.
+        \\hit If the target is a creature, you \\briefly do not consider it to be an \\glossterm{obstacle} when moving through its space.
         You still cannot end your movement in its space.
       `,
       rank: 1,
@@ -115,7 +115,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Prepared Sprint',
 
       effect: `
-        Your movement speed is \\glossterm{briefly} doubled.
+        Your movement speed is \\briefly doubled.
         However, you cannot use the \\textit{sprint} ability during that time.
       `,
       rank: 1,
@@ -211,7 +211,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Unbalancing Backstep',
 
       effect: `
-        You are \\glossterm{briefly} \\braced.
+        You are \\briefly \\braced.
         In addition, choose a creature you can see.
         You can move up to 5 feet away from that creature without reducing your \\glossterm{available movement}.
         Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it takes a -2 penalty to its Armor defense.
@@ -227,7 +227,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals double damage.
-        \\hit If your attack result also hits the target's Mental defense, it is \\glossterm{briefly} \\frightened by you.
+        \\hit If your attack result also hits the target's Mental defense, it is \\briefly \\frightened by you.
       `,
       rank: 5,
       tags: ['Emotion'],
@@ -240,7 +240,7 @@ export const mobileHunter: CombatStyle = {
       // assume movement is worth 0.6 EA or so
       effect: `
         Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
-        \\hit The target \\glossterm{briefly} treats you as being \\trait{invisible}.
+        \\hit The target \\briefly treats you as being \\trait{invisible}.
       `,
       rank: 7,
       tags: ['Emotion'],
@@ -251,7 +251,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Frenzied Charge',
 
       effect: `
-        After using this ability, you \\glossterm{briefly} take a \\minus4 penalty to all defenses.
+        After using this ability, you \\briefly take a \\minus4 penalty to all defenses.
 
         Move up to your speed in a single straight line.
         At the end of your movement, you can make a melee \\glossterm{strike} that deals double damage.

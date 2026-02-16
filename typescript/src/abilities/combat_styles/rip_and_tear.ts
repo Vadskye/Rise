@@ -245,7 +245,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Spinning Steel',
 
       effect: `
-        You are \\glossterm{briefly} \\steeled.
+        You are \\briefly \\steeled.
         Make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
@@ -257,7 +257,7 @@ export const ripAndTear: CombatStyle = {
       name: 'Spinning Steel+',
 
       effect: `
-        You are \\glossterm{briefly} \\steeled.
+        You are \\briefly \\steeled.
         Make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you.
       `,
@@ -305,7 +305,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        \\injury You are \\glossterm{briefly} \\empowered.
+        \\injury You are \\briefly \\empowered.
       `,
       // narrative: '',
       rank: 1,
@@ -317,7 +317,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals double damage.
-        \\injury You are \\glossterm{briefly} \\empowered.
+        \\injury You are \\briefly \\empowered.
       `,
       // narrative: '',
       rank: 5,
@@ -329,7 +329,7 @@ export const ripAndTear: CombatStyle = {
 
       effect: `
         You may choose to lose a quarter of your maximum hit points.
-        Then, if you are \\glossterm{injured}, you become \\glossterm{briefly} \\primed and \\empowered.
+        Then, if you are \\glossterm{injured}, you become \\briefly \\primed and \\empowered.
       `,
       // narrative: '',
       rank: 3,

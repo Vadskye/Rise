@@ -12,7 +12,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a strike using the punch/kick \\glossterm{natural weapon} (see \\pcref{Natural Weapons}).
-        \\hit The target is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\briefly \\stunned.
         \\injury The target is stunned as a \\glossterm{condition}.
       `,
       rank: 3,
@@ -57,7 +57,7 @@ export const dirtyFighting: CombatStyle = {
       functionsLike: {
         abilityType: 'ability',
         exceptThat: `
-          the target is also \\glossterm{briefly} unable to stand up.
+          the target is also \\briefly unable to stand up.
         `,
         name: 'trip',
       },
@@ -335,7 +335,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\injury If your attack hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
+        \\injury If your attack hits the target's Fortitude defense, it is \\briefly \\slowed.
       `,
       rank: 3,
       roles: ['softener'],
@@ -346,7 +346,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit If your attack hits the target's Fortitude defense, it is \\glossterm{briefly} \\slowed.
+        \\hit If your attack hits the target's Fortitude defense, it is \\briefly \\slowed.
       `,
       rank: 7,
       roles: ['softener'],
@@ -368,7 +368,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        \\hit If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\dazzled.
+        \\hit If your attack result also hits the target's Fortitude defense, it is \\briefly \\dazzled.
       `,
       rank: 1,
       roles: ['softener'],
@@ -379,7 +379,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike} that deals triple damage.
-        \\injury If your attack result also hits the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
+        \\injury If your attack result also hits the target's Fortitude defense, it is \\briefly \\blinded.
       `,
       rank: 7,
       roles: ['maim'],
@@ -391,7 +391,7 @@ export const dirtyFighting: CombatStyle = {
       effect: `
         Make a melee \\glossterm{strike}.
         If your attack result hits the target's Reflex defense, the strike deals \\glossterm{extra damage} equal to half your power.
-        Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
+        Otherwise, you \\briefly take a \\minus2 accuracy penalty against the target.
       `,
       rank: 3,
       roles: ['burst'],
@@ -404,7 +404,7 @@ export const dirtyFighting: CombatStyle = {
         Make a melee \\glossterm{strike} that deals double damage.
         If your attack result hits the target's Reflex defense, the strike deals 1d6 \\glossterm{extra damage} per 2 power.
         This extra damage is not doubled by the base double damage of the strike.
-        Otherwise, you \\glossterm{briefly} take a \\minus2 accuracy penalty against the target.
+        Otherwise, you \\briefly take a \\minus2 accuracy penalty against the target.
       `,
       rank: 7,
       roles: ['burst'],
@@ -415,7 +415,7 @@ export const dirtyFighting: CombatStyle = {
 
       // This gets r0 area instead of r1 because Reflex defense is easy to hit.
       attack: {
-        hit: `The target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        hit: `The target \\briefly treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
@@ -431,10 +431,10 @@ export const dirtyFighting: CombatStyle = {
       // This seems like a strong combo, so we don't layer any other benefits on it. Maybe
       // Reflex defense is too easy to hit for such a strong debuff?
       attack: {
-        hit: `The target \\glossterm{briefly} treats you as if you were \\trait{invisible}.`,
+        hit: `The target \\briefly treats you as if you were \\trait{invisible}.`,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} within a \\medarea radius from you.
-          Then, you are \\glossterm{briefly} \\focused.
+          Then, you are \\briefly \\focused.
         `,
       },
       rank: 5,
@@ -446,7 +446,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee strike.
-        \\injury If your attack result hits the target's Fortitude defense, it is \\glossterm{briefly} \\stunned.
+        \\injury If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
       `,
       rank: 1,
       roles: ['maim'],
@@ -457,7 +457,7 @@ export const dirtyFighting: CombatStyle = {
 
       effect: `
         Make a melee strike that deals double damage.
-        \\hit If your attack result hits the target's Fortitude defense, it is \\glossterm{briefly} \\stunned.
+        \\hit If your attack result hits the target's Fortitude defense, it is \\briefly \\stunned.
         \\injury If your attack result hits the target's Fortitude defense, it is stunned as a \\glossterm{condition}.
       `,
       rank: 5,

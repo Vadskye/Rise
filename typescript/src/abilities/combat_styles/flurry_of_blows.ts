@@ -244,7 +244,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike}.
-        If your attack result hits the target's Fortitude defense, it becomes \\glossterm{briefly} \\stunned.
+        If your attack result hits the target's Fortitude defense, it becomes \\briefly \\stunned.
       `,
       rank: 3,
       roles: ['maim'],
@@ -256,7 +256,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} that deals triple damage.
-        \\hit The target is \\glossterm{briefly} \\stunned.
+        \\hit The target is \\briefly \\stunned.
         \\injury The target is stunned as a \\glossterm{condition}.
       `,
       rank: 7,
@@ -271,7 +271,7 @@ export const flurryOfBlows: CombatStyle = {
       // means this is probably fine.
       effect: `
         Make three melee \\glossterm{strikes} with a \\minus1 accuracy penalty.
-        If all three strikes deal damage and also hit the target's Fortitude defense, it is \\glossterm{briefly} \\blinded.
+        If all three strikes deal damage and also hit the target's Fortitude defense, it is \\briefly \\blinded.
       `,
       rank: 7,
       roles: ['softener'],
@@ -284,11 +284,11 @@ export const flurryOfBlows: CombatStyle = {
       // tier gets us back to a r1 area, since we start from r-1. We only actually use a
       // r0 area.
       attack: {
-        hit: `The target is \\glossterm{briefly} \\dazzled.`,
+        hit: `The target is \\briefly \\dazzled.`,
         halfOnMiss: true,
         targeting: `
           Make an attack vs. Reflex against all \\glossterm{enemies} adjacent to you.
-          Then, you are \\glossterm{briefly} \\focused.
+          Then, you are \\briefly \\focused.
         `,
       },
       rank: 1,
@@ -301,7 +301,7 @@ export const flurryOfBlows: CombatStyle = {
       // Missing 0.2 EA from the debuff
       effect: `
         Make a \\glossterm{strike}.
-        \\hit The target is \\glossterm{briefly} \\dazzled.
+        \\hit The target is \\briefly \\dazzled.
       `,
       rank: 3,
       roles: ['softener'],
@@ -323,7 +323,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Guardweave',
 
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\briefly \\shielded.
         Make a \\glossterm{strike}.
       `,
       rank: 3,
@@ -334,7 +334,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Guardweave Flurry',
 
       effect: `
-        You are \\glossterm{briefly} \\shielded.
+        You are \\briefly \\shielded.
         Make three \\glossterm{strikes} with a -2 accuracy penalty.
       `,
       rank: 7,
@@ -346,7 +346,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make a \\glossterm{strike} with a -1 accuracy penalty.
-        Then, you are \\glossterm{briefly} \\focused.
+        Then, you are \\briefly \\focused.
       `,
       rank: 3,
       roles: ['generator'],
@@ -356,7 +356,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Frenzy+',
 
       effect: `
-        You are \\glossterm{briefly} \\focused.
+        You are \\briefly \\focused.
         Then, make a \\glossterm{strike} with a -1 accuracy penalty that deals double damage.
       `,
       rank: 7,
@@ -367,7 +367,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Storm',
 
       effect: `
-        If you hit with a strike last round, you are \\glossterm{briefly} \\primed.
+        If you hit with a strike last round, you are \\briefly \\primed.
       `,
       rank: 1,
       roles: ['focus'],
@@ -377,7 +377,7 @@ export const flurryOfBlows: CombatStyle = {
       name: 'Building Storm+',
 
       effect: `
-        You are \\glossterm{briefly} \\primed.
+        You are \\briefly \\primed.
         If you hit with at least two strikes last round, you are also briefly \\focused.
       `,
       rank: 5,
@@ -391,7 +391,7 @@ export const flurryOfBlows: CombatStyle = {
 
       effect: `
         Make two melee \\glossterm{strikes}.
-        If either strike hits and its attack result also hits the target's Reflex defense, the target \\glossterm{briefly} treats you as \\glossterm{invisible}.
+        If either strike hits and its attack result also hits the target's Reflex defense, the target \\briefly treats you as \\glossterm{invisible}.
       `,
       rank: 5,
       roles: ['trip'],
