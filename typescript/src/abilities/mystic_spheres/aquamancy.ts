@@ -203,7 +203,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       // No standard calculation for either the self-stun or the "must have previously
       // hit" requirement. Assume those combine to give about +2 ranks of power, which are
       // split between +1dr and +2a.
-      cost: 'You \\enduringly cannot use this ability and are \\stunned.',
+      cost: "You can't use this ability next round and are \\briefly stunned.",
       attack: {
         hit: `
           \\damagerankfour.
@@ -222,7 +222,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: 'Mighty Water Hammer',
 
-      cost: 'You \\enduringly cannot use this ability and are \\stunned.',
+      cost: "You can't use this ability next round and are \\briefly stunned.",
       attack: {
         hit: `
           \\damagerankseven.

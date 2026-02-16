@@ -314,8 +314,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains an average \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\enduringly unable to take any actions and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
     `,
     // narrative: '',
     rank: 4,
@@ -330,7 +329,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\enduringly unable to take any actions and this ability is \\glossterm{dismissed}.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
@@ -526,7 +525,7 @@ export const rituals: RitualDefinition[] = [
   //   effect: `
   //     Choose any number of Medium or smaller ritual participants.
   //     Each target can \\glossterm{teleport} up to 60 feet as a \\glossterm{movement}.
-  //     If it attacks or is dealt damage, it is \\briefly unable to take any actions and this ability is \\glossterm{dismissed}.
+  //     If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
   //   `,
   //   tags: [],
   //   usageTime: 'one hour',
@@ -805,7 +804,7 @@ export const rituals: RitualDefinition[] = [
     effect: `
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{speed}.
-      If it uses a \\glossterm{standard action} or is dealt damage, it is \\enduringly unable to take any actions and this ability is \\glossterm{dismissed}.
+      If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
       It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     tags: [],
