@@ -265,16 +265,11 @@ fn boots() -> Vec<Apparel> {
         rank: 4,
         short_description: String::from("Can sprint without exertion"),
         description: String::from(r"
-            Whenever you use the \ability{sprint} ability during the \glossterm{movement phase}, you can activate these boots.
-            When you do, you do not increase your \glossterm{fatigue level} from using that \ability{sprint} ability.
+            Whenever you use the \ability{sprint} ability, you can activate these boots.
+            When you do, that ability does not increase your \glossterm{fatigue level}.
 
             After you activate these boots, you cannot do so again until you spend a full round without making a \glossterm{movement}.
         "),
-        upgrades: vec![
-            ItemUpgrade::new(7, "Can sprint without exertion", "
-                You can activate the boots again after you spend a movement phase without making a movement, rather than a full round.
-            "),
-        ],
         ..Apparel::default()
     }));
 

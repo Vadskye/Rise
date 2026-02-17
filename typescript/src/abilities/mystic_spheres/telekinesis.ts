@@ -21,9 +21,10 @@ export const telekinesis: MysticSphere = {
         You can telekinetically control the target object as if you were holding it in a single extra hand.
         Your maximum modifier to \\glossterm{accuracy} and checks using the object is equal to your rank with this cantrip.
 
-        During the movement phase, you can move the target up to 15 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
+        Once per turn as a \\glossterm{free action}, you can move the target up to 15 feet in any direction, to a maximum \\glossterm{height limit} of 5 feet.
         Your \\glossterm{weight limits} are calculated as if your Strength was \\minus1, so you can carry a Small object normally or push a Medium object at half speed.
-        At the end of each round, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
+        % TODO: should this be a start of turn trigger or an "anytime" trigger?
+        At the start of your turn, if the target is outside of this ability's range, this ability is \\glossterm{dismissed}.
 
         Although you can control the object's motion, you do not have it equipped.
         This means that a shield does not grant you its defense bonus, a magic ring does not grant its benefits to you, and so on.

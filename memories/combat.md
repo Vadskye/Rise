@@ -6,13 +6,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 *   **Damage Calculation:** Weapon damage is influenced by Power (Mundane/Magical). Extra damage behaves like inherent damage (doubled on crit) and applies once per attack roll per creature, excluding poisons.
 *   **Taking Damage:** Damage reduces Hit Points (HP). Vital Wounds are incurred when HP drops below 0, with specific detrimental effects determined by a Vital Roll. Negative HP is temporary, resetting to 0 at round end. Environmental damage reduces DR without consuming it, while Subdual damage increases fatigue instead of inflicting vital wounds.
 
-**Time & Actions:**
-*   Combat occurs in Rounds (~6 seconds), divided into a Movement Phase and an Action Phase. Free actions can be taken at any time.
-*   Actions within an allied group resolve sequentially, while actions between different allied groups resolve simultaneously.
-*   Conflicting actions are resolved via Initiative checks, with a strict "Only One Movement Per Phase" rule.
-
 **Movement & Positioning:**
-*   Movement is governed by Move Actions and Movement Speed, which resets each phase. Various Movement Modes (Walking, Burrowing, Climbing, Flying, Gliding, Swimming) exist, each with associated Speed Categories (Fast, Average, Slow).
 *   Jumping distances are determined by Strength and the Jump skill.
 *   Movement is measured in 5-foot increments, with specific rules for diagonals.
 *   Impediments include Difficult Terrain, Obstacles, and Undergrowth (Light/Heavy).
