@@ -558,7 +558,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 2,
             description: r"
-                Once during your turn, you may move up to five feet as a \glossterm{free action}.
+                Once per turn, you may move up to five feet as a \glossterm{free action}.
             ",
             modifiers: None,
         },
@@ -623,7 +623,7 @@ pub fn tactician<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 6,
             description: r"
-                The maximum movement speed that you can carry over with this ability increases to fifteen feet.
+                The maximum movement increases to ten feet.
             ",
             modifiers: None,
         },

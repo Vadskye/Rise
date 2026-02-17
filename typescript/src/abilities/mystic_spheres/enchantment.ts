@@ -122,7 +122,7 @@ export const enchantment: MysticSphere = {
         hit: `
           As a \\glossterm{condition}, the target is compelled to dance.
           It can spend a \\glossterm{move action} to dance, if it is physically capable of dancing.
-          At the end of each movement phase, if the target did not dance during that phase, it takes a -1 penalty to its defenses as the compulsion intensifies.
+          At the end of its turn, if the target did not dance during that turn, it takes a -1 penalty to its defenses as the compulsion intensifies.
           This penalty stacks each round up to a maximum of -4.
           When the target dances, it resets its penalties to 0.
         `,
