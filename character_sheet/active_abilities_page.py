@@ -676,6 +676,12 @@ def universal_abilities():
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort and Ref", "tags": ["Brawling", "Size-Based"]},
             ),
             universal_ability_button(
+                "Jog",
+                """
+                    You add twice your speed to your available movement.
+                """,
+            ),
+            universal_ability_button(
                 "Jump",
                 f"""
                     As part of movement, you can jump up to [[@{{jump_distance}}]] feet horizontally, and half that distance vertically.
@@ -715,9 +721,8 @@ def universal_abilities():
             universal_ability_button(
                 "Sprint",
                 """
-                    You move up to double your normal speed.
-                    After you use this ability during the movement phase, you increase your fatigue level by one.
-                    Using this ability during the action phase does not cost fatigue.
+                    You add your speed to your available movement.
+                    This is a free action and increases your fatigue level by one.
                 """,
             ),
             universal_ability_button(

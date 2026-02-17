@@ -393,10 +393,11 @@ export const umbramancy: MysticSphere = {
         `,
         injury: `
           The target becomes \\briefly \\slowed.
-          If it was already slowed with this effect and your attack result hits its Mental defense, you also control its movement during the next movement phase.
-          It cannot take any actions during the movement phase, and as a \\glossterm{move action}, you can cause it to move up to its normal speed.
+          If it was already slowed with this effect and your attack result hits its Mental defense, you also briefly control its movement.
+          You decide where it moves.
+          On its turn, it must spend a \\glossterm{move action} to follow the path you defined for it.
           During this movement, its movement is not reduced by being slowed.
-          After this effect ends, you cannot control its movement again until it takes a \\glossterm{short rest}.
+          After this effect ends, you cannot control its movement again until it finishes a \\glossterm{short rest}.
 
           If the target enters \\glossterm{brilliant illumination}, the effect automatically ends.
         `,

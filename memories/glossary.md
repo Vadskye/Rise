@@ -22,7 +22,7 @@ The game uses a d10-based system with clear distinctions between different types
 
 Combat appears to be tactical, with an emphasis on positioning, resource management, and lasting consequences.
 
-*   **Action Economy**: A combat **Round** is divided into a **Movement Phase** and an **Action Phase**. Characters have a limited number of Standard, Minor, and Move actions per round, plus unlimited Free actions.
+*   **Action Economy**: Characters can use one Standard, Minor, and Move action per round, plus unlimited Free actions.
 *   **Targeting & Range**:
     *   Abilities are categorized as **Melee** (adjacent), **Ranged** (at a distance), or **Area**.
     *   Targeting requires **Line of Sight** (can you see it?) and often **Line of Effect** (is there a solid barrier in the way?).

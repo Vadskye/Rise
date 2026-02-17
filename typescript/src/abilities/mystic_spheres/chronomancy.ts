@@ -54,18 +54,6 @@ export const chronomancy: MysticSphere = {
       type: 'Attune',
     },
     {
-      name: 'Instant Reversal -- Movement',
-
-      effect: `
-        At the end of each movement phase, you can use this ability to rewind time to the start of the movement phase.
-        All other creatures make the same movements, but you can change your movement based on your knowledge of their previous movements.
-        After you rewind time in this way, this ability is \\glossterm{dismissed}.
-      `,
-      rank: 1,
-      roles: ['attune'],
-      type: 'Attune',
-    },
-    {
       name: 'Instant Reversal -- Decision',
 
       effect: `
@@ -710,7 +698,7 @@ export const chronomancy: MysticSphere = {
       effect: `
         You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you can take an extra \\glossterm{move action} during the \\glossterm{movement phase} and an extra \\glossterm{minor action} during the \\glossterm{action phase}.
+        In the round after your stasis ends, you can take an extra \\glossterm{move action} and an extra \\glossterm{minor action} during your turn.
       `,
       rank: 2,
       roles: ['focus'],
@@ -723,8 +711,8 @@ export const chronomancy: MysticSphere = {
       effect: `
         You are \\briefly locked in stasis.
         While in stasis, you are \\debuff{unconscious} and cannot be targeted, moved, damaged, or otherwise affected in any way.
-        In the round after your stasis ends, you cannot take any actions during the \\glossterm{movement phase}.
-        However, you can take an extra standard action during that round's \\glossterm{action phase}.
+        In the round after your stasis ends, you cannot take any \\glossterm{move actions}, and your \\glossterm{available movement} is zero.
+        However, you can take an extra standard action during your turn.
       `,
       rank: 6,
       roles: ['focus'],
