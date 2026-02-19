@@ -439,6 +439,7 @@ impl CustomAbility {
             ),
             is_magical: true,
             name: "Restoration".to_string(),
+            tags: vec![],
             usage_time: UsageTime::Standard,
         }
     }
