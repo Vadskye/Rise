@@ -860,7 +860,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
     },
     {
-      name: 'Waterward',
+      name: 'Protective Bubble',
 
       // Cover is 0.5 EA.
       // Fire impervious is about 0.3 EA??
@@ -873,7 +873,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
       tags: ['Manifestation'],
     },
     {
-      name: 'Waterward Dash',
+      name: 'Protective Bubble Dash',
 
       functionsLike: {
         name: "waterward",
