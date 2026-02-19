@@ -162,7 +162,7 @@ impl DamageOverTimeEffect {
         return format!(
             "
                 {narrative_text} {duration}.
-                {the_subject} takes {damage} immediately and during each subsequent \\glossterm<action phase>.
+                {the_subject} takes {damage} immediately and at the end of its subsequent turns.
 
                 {removal}
             ",
@@ -292,7 +292,7 @@ impl PoisonEffect {
                 \\glossterm<poisoned>.
                 As long as it is poisoned, it is {debuffs}.
 
-                During each subsequent \\glossterm<action phase>, make an attack with the same accuracy against each poisoned creature's Fortitude defense, as normal for poisons (see \\pcref<Poison>).
+                At the end of each of the target's turns, make an attack with the same accuracy against its Fortitude defense, as normal for poisons (see \\pcref<Poison>).
                 {third_stage}
             ",
             debuffs = debuffs,

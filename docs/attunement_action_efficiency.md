@@ -301,9 +301,9 @@ In practice, you build characters very differently if they can be permanently st
 
 ### Regen: Varies
 
-Assume that you heal drX-2 at the end of each action phase. How much does that help?
+Assume that you heal drX-2 at the end of each turn. How much does that help?
 
-The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to attacks. The healing on the fifth round is "wasted" because end of action phase healing doesn't prevent you from gaining vital wounds. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
+The healing on the first round is limited, because sometimes monsters miss - assume that you only lose 1/4 of your max HP to attacks. The healing on the fifth round is "wasted" because end of turn healing doesn't prevent you from gaining vital wounds during that round. So you get 3 full triggers and a fourth trigger that is capped at 1/4 of max HP.
 
 However, strong healing can make fights last longer, increasing the number of rounds that this effect remains active. In addition, particularly difficult fights are generally longer fights, making this healing even more effective. To be safer, calculate the value of regeneration using 5 rounds of healing, even though a typical combat won't trigger all 5 rounds. That means the healing value per round should be 20% of the total expected healing value.
 
