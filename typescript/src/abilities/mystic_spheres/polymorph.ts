@@ -675,7 +675,7 @@ export const polymorph: MysticSphere = {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\medrange.
-        Until the start of your next turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
+        Until your next turn, the target is \\empowered and all of its melee \\glossterm{strikes} gain the \\weapontag{Long} \\glossterm{weapon tag}.
         If you choose yourself, the effect lasts \\briefly.
       `,
       rank: 2,

@@ -550,7 +550,7 @@ export const astromancy: MysticSphere = {
 
       effect: `
         At the start of your turn, you may \\sphereterm{flicker} to a nearby safe location in the Astral Expanse.
-        You do not return until the start of your next turn.
+        You do not return until your next turn.
         After you flicker in this way, you can't flicker with this ability next round.
       `,
       narrative: `

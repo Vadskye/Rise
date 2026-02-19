@@ -72,7 +72,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    Until the start of the $name's next turn, whenever the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
+                    Until the $name's next turn, whenever the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +2, r3: +3, etc.
                 accuracy_modifier = 1 + ((rank + 1) / 2),
@@ -375,7 +375,7 @@ impl CustomAbility {
             effect: format!(
                 "
                     The $name chooses an ally within \\medrange.
-                    Until the start of the $name's next turn, the first time the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
+                    Until the $name's next turn, the first time the target makes a strike, it gains a \\plus{accuracy_modifier} \\glossterm<accuracy> bonus and \\glossterm<rerolls> once, keeping the higher result.
                 ",
                 // r1: +1, r3: +2, etc.
                 accuracy_modifier = ((rank + 1) / 2),

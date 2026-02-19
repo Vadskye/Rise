@@ -104,7 +104,7 @@ export const monsterManeuvers: CombatStyle = {
       name: 'Battle Command',
       effect: `
         Choose an \\glossterm{ally} within \\medrange.
-        Until the start of your next turn, the target becomes \\focused and gains a \\plus1 accuracy bonus.
+        Until your next turn, the target becomes \\focused and gains a \\plus1 accuracy bonus.
       `,
       rank: 1,
       roles: ['boon'],
