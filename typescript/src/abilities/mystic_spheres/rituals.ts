@@ -950,7 +950,7 @@ export const rituals: RitualDefinition[] = [
       `,
       targeting: `
         Make an attack vs. Mental against one Small or Tiny animal within \\medrange.
-        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+        You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
       `,
     },
     rank: 2,
