@@ -744,7 +744,7 @@ export const chronomancy: MysticSphere = {
 
       // Keep wording up to date based on brief ending at start/end of turn
       effect: `
-        You are \\briefly \\braced. When that effect ends, you become \\focused during that turn.
+        You are \\briefly \\braced. When that effect ends, you become \\briefly \\focused.
       `,
       rank: 2,
       roles: ['turtle', 'focus'],
@@ -755,7 +755,7 @@ export const chronomancy: MysticSphere = {
       name: 'Time Bends and Twists',
 
       effect: `
-        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\primed during that turn.
+        You are \\glossterm{briefly} \\braced. When that effect ends, you become \\briefly \\primed.
       `,
       rank: 7,
       roles: ['turtle', 'focus'],
