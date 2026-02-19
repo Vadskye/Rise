@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
@@ -330,7 +330,6 @@ export const umbramancy: MysticSphere = {
     {
       name: 'Shadowstep',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         You must be \\glossterm{shadowed} to cast this spell.
         It has no \\glossterm{verbal components}.

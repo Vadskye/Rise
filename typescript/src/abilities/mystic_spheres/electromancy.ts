@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { CONDITION_CRIT, SWIFT_FATIGUE } from '../constants';
+import { CONDITION_CRIT } from '../constants';
 
 export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
   name: 'Electromancy',
@@ -553,7 +553,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Thunderdash',
 
-      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -596,7 +595,6 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
     {
       name: 'Distant Thunderdash',
 
-      cost: SWIFT_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
