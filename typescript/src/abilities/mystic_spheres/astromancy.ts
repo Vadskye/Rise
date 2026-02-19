@@ -1,5 +1,5 @@
 import { MysticSphere } from '.';
-import { MULTIHIT_CRIT, SWIFT_FATIGUE, SWIFT_FATIGUE_SELF } from '../constants';
+import { MULTIHIT_CRIT } from '../constants';
 
 export const astromancy: MysticSphere = {
   name: 'Astromancy',
@@ -176,7 +176,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must be Medium or smaller.
@@ -192,7 +191,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Distant Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat:
@@ -208,7 +206,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Giant Translocation',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'translocation',
         exceptThat: 'the maximum size increases to Huge.',
@@ -283,7 +280,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Dimension Door',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         You teleport to an unoccupied destination on a stable surface within 300 feet of you.
         You must clearly visualize the destination's appearance and have an approximate knowledge of its direction and distance from you.
@@ -592,7 +588,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Transposition',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         Choose two creatures from among yourself and your Medium or smaller \\glossterm{allies} within \\medrange.
         Both targets must be within \\shortrange of each other.
@@ -611,7 +606,6 @@ export const astromancy: MysticSphere = {
     {
       name: 'Giant Transposition',
 
-      cost: SWIFT_FATIGUE,
       functionsLike: {
         name: 'transposition',
         exceptThat: 'the maximum size increases to Huge.',

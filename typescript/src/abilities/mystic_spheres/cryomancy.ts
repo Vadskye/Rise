@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 const OPTIONAL_ICE_CRYSTAL = 'One optional \\glossterm{ice crystal}.';
 
@@ -466,7 +466,6 @@ export const cryomancy: MysticSphere = add_tag_to_sphere('Cold', {
     {
       name: 'Chillwind Dash',
 
-      cost: SWIFT_FATIGUE,
       effect: `
         You teleport into an unoccupied destination on a stable surface within \\shortrange.
         If you have no \\glossterm{ice crystals}, you gain an ice crystal.
