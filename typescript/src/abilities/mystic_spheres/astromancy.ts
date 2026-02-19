@@ -520,26 +520,25 @@ export const astromancy: MysticSphere = {
       scaling: 'damage',
       tags: ['Water'],
     },
-    // Scary against melee enemies, hard to calculate EA
-    {
-      name: 'Dimensional Jitter',
+    // {
+    //   name: 'Dimensional Jitter',
 
-      effect: `
-        At the end of each \\glossterm{phase}, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
-      `,
-      narrative: `
-        The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
-        Will they ever learn?
-      `,
-      rank: 5,
-      roles: ['attune'],
-      type: 'Attune',
-    },
+    //   effect: `
+    //     At the end of your turn, you may choose to \\glossterm{teleport} 10 feet horizontally in a random direction.
+    //   `,
+    //   narrative: `
+    //     The squad of furious orcs rush up to you again, ready to strike, but you teleport away from them just before their greataxes reach you.
+    //     Will they ever learn?
+    //   `,
+    //   rank: 5,
+    //   roles: ['attune'],
+    //   type: 'Attune',
+    // },
     {
       name: 'Dimension Walk',
 
       effect: `
-        Once per phase, you can teleport horizontally instead of moving using your \\glossterm{walk speed}.
+        Once during your turn, you can teleport horizontally instead of walking.
         Teleporting a given distance costs movement equal to that distance.
         If this teleportation fails for any reason, you still expend that movement.
       `,
@@ -761,12 +760,14 @@ export const astromancy: MysticSphere = {
         A shimmering portal appears in each of the two squares.
         Each portal appears as an opaque colored disc five feet in diameter.
 
-        Once per phase, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
+        % TODO: solve delaying until the start of the next round to make sure you're the
+        % first one through the portal
+        Once per round, when a Medium or smaller creature or object touches the portal in its square, it passes through that portal.
         If it does, it \\glossterm{teleports} to the portal in the other chosen square, regardless of \\glossterm{line of sight} or \\glossterm{line of effect} between the two portals.
         Objects maintain their speed when passing through the portal, but moving objects have an unpredictable trajectory, so shooting projectiles through a portal is ineffective.
 
         If multiple creatures attempt to pass through the portals simultaneously, they roll \\glossterm{initiative} to determine the first creature into the portal.
-        A creature that attempts to pass through the portal in a phase where the portal was already activated stops its movement in the square with the portal.
+        A creature that attempts to pass through the portal in a round where the portal was already activated stops its movement in the square with the portal.
       `,
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
@@ -796,7 +797,7 @@ export const astromancy: MysticSphere = {
       functionsLike: {
         name: 'twinned portals',
         exceptThat:
-          'the portals function any number of times per phase intead of only once per phase.',
+          'the portals function any number of times per round intead of only once per round.',
       },
       narrative: `
         You create a pair of portals that allow instant passage from one to the other.
