@@ -86,7 +86,7 @@ Character creation blends thematic and mechanical decisions, typically following
 
 ### 4.4. Falling Damage
 
-*   Falling creatures/objects descend 300 ft./phase. Take damage on impact; obstacle takes half damage (max of falling object's HP).
+*   Falling creatures/objects descend 300 ft./round. Take damage on impact; obstacle takes half damage (max of falling object's HP).
 *   Damage based on \glossterm{weight category} (see \tref{Weight Categories}). Roll damage die once per 10 ft. fallen (max 300 ft.). No damage for falls < 10 ft.
 *   Intentional falls are 10 ft. shorter. Jumping falls measure from 10 ft. below jump start.
 

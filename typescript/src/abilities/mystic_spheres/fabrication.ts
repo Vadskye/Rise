@@ -450,7 +450,7 @@ export const fabrication: MysticSphere = {
           They can generally be noticed with a \\glossterm{difficulty value} 8 Awareness check.
 
           Whenever a \\glossterm{grounded} creature moves into any of the squares, unless the creature moves at half speed to avoid the danger, you make a \\glossterm{reactive attack} vs. Armor against them.
-          You cannot make this attack against the same creature more than once per \\glossterm{phase}.
+          You cannot make this attack against the same creature more than once per round.
           Caltrops may not be effective against creatures with an unusual anatomy.
         `,
       },

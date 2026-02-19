@@ -584,7 +584,7 @@ export const telekinesis: MysticSphere = {
       attack: {
         hit: `
           The target is unable to enter the spell's area for the rest of the round.
-          The rest of its movement in the current phase is cancelled.
+          The rest of its movement is cancelled.
         `,
         targeting: `
           When you cast this spell, you create a repulsive field in a \\smallarea radius \\glossterm{zone} from your location.

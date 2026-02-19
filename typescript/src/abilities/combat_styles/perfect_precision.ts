@@ -217,7 +217,7 @@ export const perfectPrecision: CombatStyle = {
 
       effect: `
         You ready a reactive melee strike (see \\pcref{Ready Reaction}).
-        The strike triggers against any \\glossterm{enemy} that you couldn't already hit with a melee strike at the start of the phase, such as enemies already adjacent to you.
+        The strike triggers against any \\glossterm{enemy} that you couldn't already hit with a melee strike when you used this ability, such as enemies already adjacent to you.
         You gain a +2 accuracy bonus with the reactive strike.
       `,
       rank: 1,

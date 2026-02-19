@@ -698,8 +698,8 @@ def universal_abilities():
             universal_ability_button(
                 "Ready Reaction",
                 """
-                    When you use this ability, you declare another standard action that you intend to take during this phase as soon as it becomes possible.
-                    If that action becomes possible during this phase, it happens.
+                    When you use this ability, you declare another standard action that you intend to take as soon as it becomes possible.
+                    If that action becomes possible before your next turn, it happens.
                     Otherwise, your action is wasted.
                 """,
             ),

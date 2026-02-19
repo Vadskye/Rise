@@ -1818,10 +1818,12 @@ export const rituals: RitualDefinition[] = [
 
     usageTime: 'one hour',
     attack: {
-      hit: `A scrying sensor appears in the target's space.
-      This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
-      Instead, it automatically tries to follow the target to stay in its space.
-      At the end of each phase, if the sensor is not in the target's space, this effect is \\glossterm{dismissed}.`,
+      hit: `
+        A scrying sensor appears in the target's space.
+        This sensor functions like the sensor created by the \\spell{mystic eye} spell, except that you cannot move the sensor manually.
+        Instead, it automatically tries to follow the target to stay in its space.
+        If the target teleports, turns invisible, or otherwise becomes impossible for the sensor to follow normally, this effect is \\glossterm{dismissed}.
+      `,
       targeting: `
         Make an attack vs. Mental against one creature within 500 miles of you.
         You do not need \\glossterm{line of sight} or \\glossterm{line of effect} to the target.

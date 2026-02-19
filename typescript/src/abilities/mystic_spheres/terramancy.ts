@@ -651,12 +651,12 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       name: 'Personal Gravitation',
 
       effect: `
-        Once per phase, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
+        Once during your turn, while you are within 5 feet of an \\glossterm{unattended} object at least one size category larger than you, you can adjust your personal gravity as a \\glossterm{free action}.
         When you do, gravity pulls you towards that object instead of in the normal direction.
         This allows you to walk normally on walls or even ceilings.
 
         Whenever you change the direction that gravity pulls you, you must make a \\glossterm{difficulty value} 10 Balance check to keep your feet.
-        Failure means you fall \\prone and your movement for that phase ends.
+        Failure means you fall \\prone and your movement ends.
       `,
       rank: 2,
       roles: ['attune'],

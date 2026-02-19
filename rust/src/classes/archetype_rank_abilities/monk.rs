@@ -289,8 +289,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                 {
                     \begin{magicalactiveability}{Abandon the Fragile Self}{Free action}
                         \rankline
-                        You can negate one \glossterm{condition} that would be applied to you this phase.
-                        In exchange, you \glossterm{briefly} take a \minus2 penalty to \glossterm{defenses}.
+                        The first time you would gain a \glossterm{condition} before your next turn, you negate that condition.
+                        In exchange, you take a \minus2 penalty to \glossterm{defenses} until your next turn.
 
                         \rankline
                         \rank{5} The defense penalty is reduced to \minus1.
@@ -298,8 +298,8 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Burst of Blinding Speed}{Free action}
                         \rankline
-                        You gain a \plus10 foot bonus to your \glossterm{speed} this phase.
-                        In exchange, you cannot use the \ability{sprint} ability this phase.
+                        You increase your \glossterm{available speed} by 10 feet this turn.
+                        In exchange, you cannot use the \ability{sprint} ability this turn.
 
                         \rankline
                         \rank{5} The speed bonus increases to \plus20 feet.

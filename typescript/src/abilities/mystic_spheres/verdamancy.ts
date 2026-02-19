@@ -456,7 +456,7 @@ export const verdamancy: MysticSphere = {
 
           Creatures can pass through the wall, though it costs five extra feet of movement to move through the wall.
           Whenever anything passes through the wall, make a \\glossterm{reactive attack} vs. Armor against it.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per round.
         `,
         halfOnMiss: true,
       },

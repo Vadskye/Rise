@@ -396,7 +396,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
         targeting: `
           Whenever a creature within \\medrange of you attacks you, make a \\glossterm{reactive attack} vs. Armor against them.
           Any effect which increases this spell's range increases the range of this retaliation by the same amount.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per round.
         `,
       },
       // effect: '',
