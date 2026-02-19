@@ -559,6 +559,60 @@ t.test('can calculate brawling accuracy', (t) => {
   t.end();
 });
 
+t.test('can calculate initiative', (t) => {
+  t.test('for fighter (high Dex)', (t) => {
+    setStandardFighter();
+    getAttrs(['initiative', 'initiative_explanation'], (attrs) => {
+      t.match(attrs, {
+        initiative: 1,
+        initiative_explanation: '+1 (half highest (Dex/Per/Int))',
+      });
+      t.end();
+    });
+  });
+
+  t.test('for wizard (high Int)', (t) => {
+    setStandardWizard();
+    getAttrs(['initiative', 'initiative_explanation'], (attrs) => {
+      t.match(attrs, {
+        initiative: 1,
+        initiative_explanation: '+1 (half highest (Dex/Per/Int))',
+      });
+      t.end();
+    });
+  });
+
+  t.test('with high Perception', (t) => {
+    setAttrs({
+      perception_at_creation: 5,
+    });
+    getAttrs(['initiative', 'initiative_explanation'], (attrs) => {
+      t.match(attrs, {
+        initiative: 2,
+        initiative_explanation: '+2 (half highest (Dex/Per/Int))',
+      });
+      t.end();
+    });
+  });
+
+  t.test('with custom modifiers', (t) => {
+    setAttrs({
+      dexterity_at_creation: 4,
+      initiative_permanent_modifier: 2,
+      initiative_permanent_explanation: 'Combat Prediction Feat',
+    });
+    getAttrs(['initiative', 'initiative_explanation'], (attrs) => {
+      t.match(attrs, {
+        initiative: 4,
+        initiative_explanation: '+2 (half highest (Dex/Per/Int))  +2 Combat Prediction Feat',
+      });
+      t.end();
+    });
+  });
+
+  t.end();
+});
+
 t.test('can calculate weight limits', (t) => {
   t.test('for fighter', (t) => {
     setStandardFighter();
