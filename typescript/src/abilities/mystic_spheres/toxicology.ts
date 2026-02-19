@@ -651,14 +651,15 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double brace is 1 EA.
+    // Self-only brace is 0.5 EA.
+    // Minor action activation doubles the EA?
     {
       name: 'Bracing Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\braced for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\briefly \\braced.
       `,
       rank: 4,
       roles: ['boon'],
@@ -666,14 +667,14 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double empower is 0.8 EA.
+    // Self-only minor action empower is 0.8 EA?
     {
       name: 'Empowering Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\empowered for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\empowered that turn.
       `,
       rank: 1,
       roles: ['boon'],
@@ -681,15 +682,15 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double focus is 0.8 EA. Arbitrarily kick this up from empowering
+    // Self-only minor action focus is 0.8 EA. Arbitrarily kick this up from empowering
     // concoction since it's more versatile and we want a decent rank spread.
     {
       name: 'Focusing Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\focused for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} action using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\focused that turn.
       `,
       rank: 2,
       roles: ['boon'],
@@ -697,14 +698,14 @@ export const toxicology: MysticSphere = {
       tags: ['Manifestation'],
     },
 
-    // Self-only double maximize is 1.4 EA, so this needs downsides to function
+    // Self-only minor action maximize is 1.4 EA, so this needs downsides to function
     {
       name: 'Maximal Concoction',
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\maximized and \\stunned for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\maximized and \\stunned until its next turn.
         When that effect ends, it takes \\damagerankfivelow.
       `,
       rank: 5,
@@ -719,8 +720,8 @@ export const toxicology: MysticSphere = {
 
       effect: `
         You create a potion in an empty vial or similar container within \\shortrange.
-        A creature can drink the potion as a standard action using a \\glossterm{free hand}.
-        When a living creature drinks the potion, it becomes \\primed and \\stunned for the next two rounds.
+        A creature can drink the potion as a \\glossterm{minor action} using a \\glossterm{free hand}.
+        When a living creature drinks the potion, it becomes \\primed and \\stunned until its next turn.
         When that effect ends, it takes \\damageranksevenlow.
       `,
       rank: 7,
