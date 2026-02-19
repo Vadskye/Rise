@@ -282,7 +282,7 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankone.`,
         halfOnMiss: true,
         targeting: `
-          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
+          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} adjacent to you.
         `,
       },
       narrative: `
@@ -305,7 +305,7 @@ export const toxicology: MysticSphere = {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
         targeting: `
-          Once per round, when you lose \\glossterm{hit points} during the \\glossterm{action phase}, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
+          The first time you lose \\glossterm{hit points} each round, make a \\glossterm{reactive attack} vs. Reflex against all \\glossterm{enemies} in a \\smallarea radius from you.
         `,
       },
       narrative: `

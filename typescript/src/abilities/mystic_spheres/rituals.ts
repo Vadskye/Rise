@@ -330,7 +330,6 @@ export const rituals: RitualDefinition[] = [
       Choose up to six ritual participants.
       Each target gains a fast \\glossterm{fly speed} with a 15 foot \\glossterm{height limit} (see \\pcref{Flight}).
       If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     // narrative: '',
     rank: 7,
@@ -805,7 +804,6 @@ export const rituals: RitualDefinition[] = [
       Choose up to six ritual participants.
       Each target gains a +30 foot \\glossterm{enhancement bonus} to its \\glossterm{speed}.
       If it uses a \\glossterm{standard action} or is dealt damage, it can't take any actions next round and this ability is \\glossterm{dismissed}.
-      It can still use a \\glossterm{move action} in place of a standard action during the action phase without ending this effect.
     `,
     tags: [],
     usageTime: 'one minute',
