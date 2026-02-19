@@ -374,7 +374,7 @@ If you can freely choose a single defense to reduce, you can typically choose th
 
 ### Slowed: 2.0 (ranged) / 1.5 (melee)
 
-Slowed has two effects: the movement speed debuff and the defense debuff.
+Slowed has two effects: the speed debuff and the defense debuff.
 
 The speed debuff is hard to calculate. It enables kiting, which can theoretically end some encounters, but that's a fairly rare circumstance. As a guess, assume that this forces the monster to use 50% of its actions to mitigate the speed debuff and that its replacement action is 50% as effective. For example, it may charge or sprint instead of making a stronger attack, and it may attack a frontline tank party member instead of being able to reach the backline. That gives it 4 * 0.5 * 0.5 = 1 effective action.
 
