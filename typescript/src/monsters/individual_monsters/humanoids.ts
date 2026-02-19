@@ -273,7 +273,6 @@ function addBugbears(grimoire: Grimoire) {
           creature.addWeaponMult('heavy flail');
           creature.addManeuver('Weather the Storm', { usageTime: 'elite' });
           creature.addManeuver('Invigoration', { usageTime: 'elite' });
-          creature.addManeuver('Defensive Stance', { usageTime: 'elite' });
         },
       ],
     ],

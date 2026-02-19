@@ -149,7 +149,7 @@ function addAngels(grimoire: Grimoire) {
           creature.addRituals(['Channel Divinity', 'Revelation']);
           creature.addSpell('Baffling Visions', { usageTime: 'elite' });
           creature.addSpell('Clairvoyance', { usageTime: 'elite' });
-          creature.addSpell('Foresee Distant Safety', { usageTime: 'elite' });
+          creature.addSpell('Foresee Safety', { usageTime: 'elite' });
         },
       ],
       [
