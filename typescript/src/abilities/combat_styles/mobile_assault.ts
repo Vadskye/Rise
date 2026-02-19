@@ -42,7 +42,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest',
 
       effect: `
-        Move up to your speed in a straight line.
+        Move up to your speed in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -54,7 +54,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest+',
 
       effect: `
-        Move up to your speed in a straight line.
+        Move up to your speed in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -113,8 +113,8 @@ export const mobileHunter: CombatStyle = {
       name: 'Prepared Sprint',
 
       effect: `
-        Your movement speed is \\briefly doubled.
-        However, you cannot use the \\textit{sprint} ability during that time.
+        Your \\glossterm{speed} is \\briefly doubled.
+        However, you cannot use the \\ability{sprint} or \\ability{jog} abilities during that time.
       `,
       rank: 1,
       roles: ['focus'],
@@ -125,7 +125,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to half your movement speed.
+        Then, you can move up to half your movement speed without reducing your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['mobility', 'burst'],
@@ -135,7 +135,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to your speed.
+        Then, you can move up to your speed without reducing your \\glossterm{available movement}.
       `,
       rank: 3,
       roles: ['mobility', 'burst'],
@@ -224,7 +224,8 @@ export const mobileHunter: CombatStyle = {
       name: 'Fearsome Rushdown',
 
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} that deals double damage.
+        Move up to half your movement speed without reducing your \\glossterm{available movement}.
+        Then, make a melee \\glossterm{strike} that deals double damage.
         \\hit If your attack result also hits the target's Mental defense, it is \\briefly \\frightened by you.
       `,
       rank: 5,
@@ -237,7 +238,8 @@ export const mobileHunter: CombatStyle = {
 
       // assume movement is worth 0.6 EA or so
       effect: `
-        Move up to half your movement speed and make a melee \\glossterm{strike} that deals triple damage.
+        Move up to half your movement speed without reducing your \\glossterm{available movement}.
+        Then, make a \\glossterm{strike} that deals triple damage.
         \\hit The target \\briefly treats you as being \\trait{invisible}.
       `,
       rank: 7,

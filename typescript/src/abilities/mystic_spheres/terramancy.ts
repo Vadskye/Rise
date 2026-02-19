@@ -310,7 +310,7 @@ export const terramancy: MysticSphere = add_tag_to_sphere('Earth', {
       // 0.5 + 0.7 EA
       effect: `
          If you are \\glossterm{grounded} on stone, you are \\briefly \\braced and \\maximized.
-         However, your movement speed is also briefly halved.
+         However, your \\glossterm{speed} is also briefly halved.
       `,
       rank: 5,
       roles: ['focus'],

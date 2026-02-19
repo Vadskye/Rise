@@ -657,7 +657,7 @@ export const astromancy: MysticSphere = {
       name: 'Phasestep',
 
       effect: `
-        When you move using one of your movement speeds, you can move through creatures freely.
+        When you move using your \\glossterm{speed}, you can move through creatures freely.
         This does not allow you to move through inanimate objects.
         You must still end your movement in an unoccupied space.
         If you are not able to move normally, such as if you are \\grappled, this spell does not help you.

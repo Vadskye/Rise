@@ -714,7 +714,7 @@ def universal_abilities():
                 "Shove",
                 """
                     Choose either one adjacent creature or all creatures grappling you. Make a brawling attack with a free hand against each target.
-                    On a hit, you can move up to half your movement speed in a straight line, pushing each target as you move.
+                    On a hit, you can move up to half your speed in a straight line, pushing each target as you move.
                  """,
                 attack={"accuracy": "@{brawling_accuracy}", "defense": "Fort", "tags": ["Brawling", "Size-Based"]},
             ),

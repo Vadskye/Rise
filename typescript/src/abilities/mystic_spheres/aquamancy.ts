@@ -608,7 +608,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       // TODO: proper EA calculation
       effect: `
-        When you move using one of your movement speeds, you can \\glossterm{shapeshift} into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
+        When you move using your \\glossterm{speed}, you can \\glossterm{shapeshift} into a rushing flow of water with a volume roughly equal to your normal volume until your movement is complete.
         You can only transform into water in this way once during your movement, and you return to your normal form at the end of the movement.
 
         While transformed into water, you may move wherever water could go.

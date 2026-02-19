@@ -62,7 +62,7 @@ export const telekinesis: MysticSphere = {
           The target is \\briefly unable to move closer to you without effort.
           This does not impede its movement unless its movement would bring it closer to you while it is within \\medrange of you.
           As part of the movement, it can make a Strength check with a \\glossterm{difficulty value} of 6.
-          If it succeeds, its movement towards you costs double the normal movement speed.
+          If it succeeds, its movement towards you costs double the normal \\glossterm{available movement}.
           Otherwise, it is unable to move towards you, and that part of its movement is wasted.
       `,
         targeting: `
