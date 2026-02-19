@@ -232,7 +232,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Empowering Roar',
 
       effect: `
-        Up to two \\glossterm{allies} within a \\smallarea radius from you are \\empowered until the start of your next turn.
+        Up to two \\glossterm{allies} within a \\smallarea radius from you are \\empowered until your next turn.
       `,
       rank: 3,
       roles: ['boon'],
@@ -243,7 +243,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Empowering Roar+',
 
       effect: `
-        Your \\glossterm{allies} within a \\medarea radius from you are \\empowered until the start of your next turn.
+        Your \\glossterm{allies} within a \\medarea radius from you are \\empowered until your next turn.
       `,
       rank: 7,
       roles: ['boon'],
@@ -322,7 +322,7 @@ export const heraldOfWar: CombatStyle = {
       name: 'Directing Shout',
 
       effect: `
-        Up to two \\glossterm{allies} within \\distrange are \\focused until the start of your next turn.
+        Up to two \\glossterm{allies} within \\distrange are \\focused until your next turn.
       `,
       rank: 5,
       roles: ['boon'],

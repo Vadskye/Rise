@@ -13,7 +13,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or an \\glossterm{ally} within \\longrange.
-        Until the start of your next turn, the target treats all falls as if they were 30 feet shorter for the purpose of determining \\glossterm{falling damage}.
+        Until your next turn, the target treats all falls as if they were 30 feet shorter for the purpose of determining \\glossterm{falling damage}.
       `,
       narrative: `
         The air beneath you suddenly accelerates into a great wind, softening the force of your unexpected fall.
@@ -796,7 +796,7 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
 
       effect: `
         Choose yourself or one \\glossterm{ally} within \\distrange.
-        Until the start of your next turn, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
+        Until your next turn, the target gains a \\plus2 accuracy bonus with ranged \\glossterm{strikes} and is \\honed.
         If you choose yourself, the effect lasts \\briefly.
       `,
       // narrative: '',

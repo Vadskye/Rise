@@ -567,7 +567,7 @@ export const revelation: MysticSphere = {
 
       // All would be 1.4 EA, give it -2r for excluding you.
       effect: `
-        All \\glossterm{allies} within a \\largearea radius from you are \\honed until the start of your next turn.
+        All \\glossterm{allies} within a \\largearea radius from you are \\honed until your next turn.
       `,
       rank: 7,
       roles: ['boon'],
