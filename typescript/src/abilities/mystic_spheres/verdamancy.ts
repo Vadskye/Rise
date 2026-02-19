@@ -674,19 +674,21 @@ export const verdamancy: MysticSphere = {
       rank: 7,
     },
 
-    // Any two shielded is 0.9 EA
+    // Any two shielded is 0.9 EA. Short range to make it rank 1 to avoid conflicting with
+    // thorns
     {
       name: 'Vineward',
 
       effect: `
-        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\medrange.
+        Choose up to two creatures from among yourself and your \\glossterm{allies} within \\shortrange.
         Each target is \\briefly \\shielded.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['boon'],
       tags: ['Manifestation'],
     },
 
+    // TODO: gap with vineward is weird. med area would be rank 4 or rank 5?
     {
       name: 'Mass Vineward',
 
