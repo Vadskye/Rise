@@ -443,9 +443,9 @@ function onGet(args: {
     ...miscVariables.numericVariables,
   ];
 
-  const changeString = changeVariables.map(formatChangeString).join(' ');
+  let changeString = changeVariables.map(formatChangeString).join(' ');
   if (options.runOnSheetOpen) {
-    changeString + ' sheet:opened';
+    changeString += ' sheet:opened';
   }
   const getVariables = [
     ...changeVariables,
@@ -574,6 +574,7 @@ const VARIABLES_WITH_CUSTOM_MODIFIERS = new Set(
     'fortitude',
     'hit_points',
     'horizontal_jump_distance',
+    'initiative',
     'injury_point',
     'insight_points',
     'intelligence',
@@ -721,6 +722,7 @@ function handleCoreStatistics() {
   handleDurability();
   handleFatiguePenalty();
   handleHitPoints();
+  handleInitiative();
   handleInjuryPoint();
   handleJumpDistance();
   handleMagicalPower();
@@ -829,6 +831,30 @@ function handleAccuracy() {
           { name: 'Shield', value: v.shield_accuracy },
           { name: 'fatigue', value: -v.fatigue_penalty },
           { name: 'CR', value: crModifier },
+        ]),
+      });
+    },
+  });
+}
+
+function handleInitiative() {
+  onGet({
+    variables: {
+      miscName: 'initiative',
+      numeric: ['dexterity', 'perception', 'intelligence'],
+    },
+    callback: (v) => {
+      const highestAttribute = Math.max(v.dexterity, v.perception, v.intelligence);
+      const initiativeModifier = Math.floor(highestAttribute / 2);
+      const initiative = initiativeModifier + v.misc;
+
+      setAttrs({
+        initiative,
+        initiative_explanation: formatCombinedExplanation(v.miscExplanation, [
+          {
+            name: 'half highest (Dex/Per/Int)',
+            value: initiativeModifier,
+          },
         ]),
       });
     },
@@ -974,10 +1000,10 @@ function handleArmorDefense() {
       const totalValue = Math.max(
         0,
         beforeEquipment +
-          v.body_armor_defense +
-          v.shield_defense +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        v.body_armor_defense +
+        v.shield_defense +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2317,12 +2343,12 @@ function handleNonArmorDefense(defense: string, attribute: string) {
       let totalValue = Math.max(
         0,
         levelModifier +
-          monsterModifier +
-          sizeModifier +
-          shieldModifier +
-          attributeModifier +
-          v.misc +
-          v.all_defenses_vital_wound_modifier,
+        monsterModifier +
+        sizeModifier +
+        shieldModifier +
+        attributeModifier +
+        v.misc +
+        v.all_defenses_vital_wound_modifier,
       );
 
       setAttrs({
@@ -2735,7 +2761,7 @@ function handleOtherDamagingAttacks() {
   // Local other damaging attack change
   on(
     'change:repeating_otherdamagingattacks:attack_damage_dice' +
-      ' change:repeating_otherdamagingattacks:is_magical',
+    ' change:repeating_otherdamagingattacks:is_magical',
     function () {
       getOdaDamageDiceAttrs('repeating_otherdamagingattacks', (parsed) => {
         setCalculatedDicePool('repeating_otherdamagingattacks', parsed);
@@ -3258,11 +3284,11 @@ function handleTypescriptMonsterCreation() {
     effect: string;
     name: string;
     type:
-      | 'repeating_strikeattacks'
-      | 'repeating_otherdamagingattacks'
-      | 'repeating_nondamagingattacks'
-      | 'repeating_abilities'
-      | 'repeating_passiveabilities';
+    | 'repeating_strikeattacks'
+    | 'repeating_otherdamagingattacks'
+    | 'repeating_nondamagingattacks'
+    | 'repeating_abilities'
+    | 'repeating_passiveabilities';
   }
 
   function generateTypescriptMonster(v: any, allAbilityKeys: AbilityKey[]) {
