@@ -711,7 +711,7 @@ export const electromancy: MysticSphere = add_tag_to_sphere('Electricity', {
         hit: `\\damagerankone.`,
         targeting: `
           You are \\briefly \\braced.
-          Until the start of your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
+          Until your next turn, whenever a creature makes a \\glossterm{melee} attack against you, make a \\glossterm{reactive attack} vs. Fortitude against them.
           If the target is \\glossterm{metallic} or used a \\glossterm{metallic} weapon to make the attack, you gain a \\plus2 accuracy bonus with this attack.
         `,
       },
