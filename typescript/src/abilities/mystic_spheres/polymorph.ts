@@ -118,7 +118,7 @@ export const polymorph: MysticSphere = {
         hit: `
           The target is \\briefly \\confused.
           If it is \\glossterm{injured} and was already confused by this ability, it also \\glossterm{shapeshifts} into a Tiny squirrel as a \\glossterm{condition}.
-          Squirrels have a 30 foot movement speed, an average climb speed, and a bite natural weapon.
+          Squirrels have a 30 foot \\glossterm{speed}, an average climb speed, and a bite natural weapon.
           They cannot speak and have no \\glossterm{free hands}.
           If the target takes damage, this condition is removed.
         `,

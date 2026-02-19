@@ -98,7 +98,7 @@ type CalcExplanation =
   | 'mental_explanation'
   | 'reflex_explanation';
 
-// TODO: this is poorly organized in the sheet. Senses and movement speeds are both
+// TODO: this is poorly organized in the sheet. Senses and speeds are both
 // grouped under the `movement_speed_i_name` bucket.
 export type CustomMovementSpeed =
   | 'movement_speed_0_name'

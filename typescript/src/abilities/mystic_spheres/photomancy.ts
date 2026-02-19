@@ -442,7 +442,7 @@ export const photomancy: MysticSphere = {
 
       effect: `
         You create an illusory duplicate of yourself overlayed on your body.
-        Whenever you move using one of your movement speeds, you may also move the illusory duplicate the same distance in any direction.
+        Whenever you move using your \\glossterm{speed}, you may also move the illusory duplicate the same distance in any direction.
         If the duplicate was sharing a space with you before this movement, onlookers must make a DV 20 Awareness check to identify which is the real you and which is the duplicate.
 
         All of your duplicate's defenses are 0.
