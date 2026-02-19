@@ -347,7 +347,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
 
                     \begin{magicalactiveability}{Hear the Rustling Wings}{Free action}
                         \rankline
-                        You \\glossterm{briefly} gain a \plus4 bonus to the Awareness skill (see \pcref{Awareness}).
+                        You \briefly gain a \plus4 bonus to the Awareness skill (see \pcref{Awareness}).
 
                         \rankline
                         \rank{5} The bonus increases to \plus6.
