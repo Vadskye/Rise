@@ -54,13 +54,13 @@ fn boots() -> Vec<Apparel> {
         short_description: String::from("Can very briefly walk on air"),
         description: String::from(r"
             You can activate these boots as a \glossterm<free action>.
-            When you do, you may treat air as if it were solid ground to your feet for the rest of the current phase.
+            When you do, you may treat air as if it were solid ground to your feet during this turn.
             You may selectively choose when to treat the air as solid ground, allowing you to walk or jump on air freely.
             These boots cannot be activated again until you land on a solid surface capable of supporting your weight.
         "),
         upgrades: vec![
             ItemUpgrade::new(6, "Can briefly walk on air", r"
-                The effect lasts \glossterm<briefly> instead of only during the current phase.
+                The effect lasts \glossterm<briefly> instead of only during the current turn.
             "),
         ],
         ..Apparel::default()
@@ -92,7 +92,7 @@ fn boots() -> Vec<Apparel> {
             This allows you to walk normally on walls or even ceilings.
 
             Whenever you change the direction that gravity pulls you, you must make a \glossterm<difficulty value> 10 Balance check to keep your feet.
-            Failure means you fall \prone and your movement for that phase ends.
+            Failure means you fall \prone and your movement ends.
         "),
         upgrades: vec![
             ItemUpgrade::new(5, "Redirects personal gravity to nearby objects", "

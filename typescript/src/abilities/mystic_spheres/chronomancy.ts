@@ -520,7 +520,7 @@ export const chronomancy: MysticSphere = {
         Your mind remains active during this time, and you are the only one aware of the stoppage of time.
         You cannot move or take any actions other than to observe your surroundings.
         In addition, you can release the time freeze as a \\glossterm{free action}.
-        When this spell ends, time resumes in the same phase that it was originally frozen.
+        When this spell ends, time resumes in the same moment that it was originally frozen.
 
         After casting this spell, you cannot cast it again until you finish a \\glossterm{short rest}.
       `,

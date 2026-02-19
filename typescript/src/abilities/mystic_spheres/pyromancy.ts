@@ -495,9 +495,9 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
       attack: {
         hit: `\\damagerankone.`,
         targeting: `
-          When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
+          At the end of your turn, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          You can only attack a given target with this spell once per \\glossterm{phase}.
+          You can only attack a given target with this spell once per round.
         `,
       },
       narrative: `

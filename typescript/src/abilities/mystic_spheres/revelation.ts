@@ -158,8 +158,8 @@ export const revelation: MysticSphere = {
       // 0.8 EA in theory, but focused and honed aren't optimal together since focused is
       // better on low accuracy and honed is better on high accuracy
       effect: `
-        At the start of each phase, you can choose to become \\focused and \\honed during that phase.
-        At the end of that phase, this ability is \\glossterm{dismissed}.
+        At the start of your turn, you can choose to become \\focused and \\honed during that turn.
+        Then, this ability is \\glossterm{dismissed}.
       `,
       narrative: `
         You can intuitively perceive your foes' weaknesses.
@@ -494,7 +494,7 @@ export const revelation: MysticSphere = {
 
           While using the target's senses, you can choose any creatures you see as intended targets to continue the chain.
           Whenever the currently affected creature touches an intended target, you make a \\glossterm{reactive attack} vs. Mental against the new creature.
-          You can only make this attack against a given target once per \\glossterm{phase}.
+          You can only make this attack against a given target once per round.
           On a hit, the touched creature becomes the new target of this spell and the condition is transferred to it.
           On a miss, the condition remains on the previous creature.
         `,
