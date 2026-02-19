@@ -405,7 +405,7 @@ export const enchantment: MysticSphere = {
           This spell has no \\glossterm{verbal components}.
 
           Make an attack vs. Mental against one creature within \\medrange.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
         `,
       },
       rank: 3,
@@ -447,7 +447,7 @@ export const enchantment: MysticSphere = {
         `,
         targeting: `
           Make an attack vs. Mental against all creatures in a \\largearea radius from you.
-          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+          You take a -10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
         `,
       },
       rank: 3,

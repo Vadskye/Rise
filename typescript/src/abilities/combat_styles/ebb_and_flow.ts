@@ -266,7 +266,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you are \\briefly \\maximized and \\shielded.
+        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you are \\briefly \\maximized and \\shielded.
       `,
       rank: 3,
       roles: ['focus'],
@@ -277,7 +277,7 @@ export const ebbAndFlow: CombatStyle = {
       name: 'Dance of Death+',
 
       effect: `
-        If you both dealt damage to another creature and took damage from another creature last round, you \\briefly are \\maximized and take half damage from all sources.
+        If you both dealt damage to another creature and took damage from another creature since the start of your last turn, you \\briefly are \\maximized and take half damage from all sources.
       `,
       rank: 7,
       roles: ['focus'],

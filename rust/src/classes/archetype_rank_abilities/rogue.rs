@@ -363,7 +363,7 @@ pub fn bardic_music<'a>() -> Vec<RankAbility<'a>> {
                         \abilitytags \abilitytag{Emotion}, \abilitytag{Sustain} (minor)
                         \rankline
                         Make an attack vs. Mental against up to two creatures within \shortrange.
-                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+                        You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
                         \hit For the duration of your performance, the target is \charmed by you.
                         This ability does not have the \abilitytag{Subtle} tag, so an observant target may notice it is being influenced either during this effect or after it ends.
 
