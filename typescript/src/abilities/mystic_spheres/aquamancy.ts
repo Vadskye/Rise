@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 const WATER_ACCURACY_BONUS =
   'You gain a +2 accuracy bonus with the attack if there is a Large or larger body of water within \\shortrange.';
@@ -836,7 +836,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: "River's Passage",
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
@@ -852,7 +851,6 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
     {
       name: "Intense River's Passage",
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: "River's Passage",
         exceptThat: 'the maximum push distance increases to 60 feet.',

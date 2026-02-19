@@ -1,6 +1,6 @@
 import { MysticSphere } from '.';
 import { add_tag_to_sphere } from './add_tag';
-import { BARRIER_COOLDOWN, CONDITION_CRIT, SWIFT_FATIGUE_SELF } from '../constants';
+import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 
 export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
   name: 'Aeromancy',
@@ -102,7 +102,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Propulsion',
 
-      cost: SWIFT_FATIGUE_SELF,
       effect: `
         Choose either yourself or one unattended object or \\glossterm{ally} within \\medrange.
         If you choose something other than yourself, it must have a \\glossterm{weight category} of Medium or less.
@@ -119,7 +118,6 @@ export const aeromancy: MysticSphere = add_tag_to_sphere('Air', {
     {
       name: 'Intense Propulsion',
 
-      cost: SWIFT_FATIGUE_SELF,
       functionsLike: {
         name: 'propulsion',
         exceptThat: 'the maximum fling distance increases to 60 feet.',

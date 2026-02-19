@@ -4,7 +4,6 @@ import {
   BARRIER_COOLDOWN,
   DELAYED_HALF,
   MULTIHIT_CRIT,
-  TELEPORT_ATTACK_FATIGUE,
 } from '../constants';
 
 // TODO: add -accuracy attacks
@@ -766,7 +765,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // A Medium line is about r1 normally, which would be dr3. Drop to dr2 for the
       // teleportation.
-      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
         hit: `\\damageranktwo.`,
         halfOnMiss: true,
@@ -785,7 +783,6 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
 
       // A Large line is about r3 normally, which would be dr5. Drop to dr4 for the
       // teleportation.
-      cost: TELEPORT_ATTACK_FATIGUE,
       attack: {
         hit: `\\damagerankfour.`,
         halfOnMiss: true,
