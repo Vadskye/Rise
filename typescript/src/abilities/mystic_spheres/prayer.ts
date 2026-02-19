@@ -1,4 +1,5 @@
 import { MysticSphere } from '.';
+import { BRIEF_COOLDOWN } from '@src/abilities/constants';
 
 // Normally, curses would be +0.4 EA, because immunity to condition removal is powerful.
 // This sphere is limited and has few attacks, so it gets curses at only +0.2 EA.
@@ -73,6 +74,7 @@ export const prayer: MysticSphere = {
     {
       name: 'Boon of Aggression',
 
+      cost: BRIEF_COOLDOWN,
       // Ally maximized is dangerous, but we try it out at rank 7 with a downside.
       effect: `
         Choose one \\glossterm{ally} within \\medrange.
