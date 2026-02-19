@@ -239,7 +239,7 @@ function addGhosts(grimoire: Grimoire) {
               hit: '\\damagerankone.',
               targeting: `
                 Make an attack vs. Mental against all creatures within a \\medarea radius from you.
-                You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} last round.
+                You gain a \\plus4 accuracy bonus if you or any creature in the area suffered an \\glossterm{injury} since your last turn.
               `,
             },
             tags: ['Auditory'],
@@ -750,7 +750,7 @@ function addVampires(grimoire: Grimoire) {
             `,
             targeting: `
               Make an attack vs. Mental against all humanoid creatures and undead creatures in a \\medarea cone from you.
-              You take a \\minus10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+              You take a \\minus10 penalty to \\glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
             `,
           },
           rank: 3,

@@ -54,7 +54,7 @@ pub fn dryad<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (minor)
                     \rankline
                     Make an attack vs. Mental against a creature within \medrange that is an animal, plant, or humanoid.
-                    You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of the last round.
+                    You take a \minus10 penalty to \glossterm{accuracy} with this attack against creatures who have made an attack or been attacked since the start of your last turn.
                     \hit The target is \charmed by you.
                     Any act by you or by creatures that appear to be your allies that threatens or harms the charmed person breaks the effect.
                     Harming the target is not limited to dealing it damage, but also includes causing it significant subjective discomfort.
