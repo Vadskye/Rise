@@ -8,6 +8,7 @@ This is a Gemini-generated summary of the Rise combat rules defined in `comprehe
 
 **Combat Flow & Core Mechanics:**
 *   **Attack Resolution:** Attacks proceed through a sequence of outcomes: Miss (below defense, no effect), Critical Hit (10+ above defense, double damage, effects can repeat), and Regular Hit. Exploding d10s add to attack rolls.
+*   **Rule Precedence:** Rules defined in `.agent/rules` take precedence over logic inferred directly from source code or generated tables, as they are curated to match the intent of the LaTeX source (`comprehensive_codex/Combat.tex`). 
 *   **Damage Calculation:** Weapon damage is influenced by Power (Mundane/Magical). Extra damage behaves like inherent damage (doubled on crit) and applies once per attack roll per creature, excluding poisons.
 *   **Taking Damage:** Damage reduces Hit Points (HP). Vital Wounds are incurred when HP drops below 0, with specific detrimental effects determined by a Vital Roll. Negative HP is temporary, resetting to 0 at the start of your turn. Environmental damage reduces DR without consuming it, while Subdual damage increases fatigue instead of inflicting vital wounds.
 

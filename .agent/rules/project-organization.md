@@ -8,8 +8,8 @@ trigger: always_on
 
 | Directory | Purpose |
 | :--- | :--- |
-| `core_book/` | Main `.tex` files for the core rulebook. |
-| `comprehensive_codex/` | `.tex` files for the expanded rulebook. |
+| `core_book/` | Main `.tex` files for the introductory rulebook aimed at new players. Rarely used. |
+| `comprehensive_codex/` | `.tex` files for the comprehensive, primary rulebook. |
 | `html_book/` | `.tex` source for the unified HTML version of the rulebooks. |
 | `character_sheet/` | Python, Less, and JS for the dynamic character sheet. |
 | `lib/` | Common `.tex` files used by all books. |
