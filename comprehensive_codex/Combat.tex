@@ -640,9 +640,9 @@
       Escape Grapple     & Standard         & Stop being grappled                           & \abilitytag{Brawling}                          \\
       Grapple            & Standard         & Start grappling with a foe                    & \abilitytag{Brawling}, \abilitytag{Size-Based} \\
       Maintain Grapple   & Free action      & Continue grappling with a foe                 & \abilitytag{Brawling}                          \\
-      Jog                & Standard         & Triple your available movement                & \tdash                                         \\
       Ready Reaction     & Standard         & Ready an action                               & \tdash                                         \\
       Recover            & Standard         & Regain HP, remove conditions                  & \tdash                                         \\
+      Run                & Standard         & Triple your available movement                & \tdash                                         \\
       Shove              & Move or standard & Move a foe                                    & \abilitytag{Brawling}                          \\
       Sprint             & Free             & Double your available movement                & \tdash                                         \\
       Total Defense      & Standard         & Gain \plus2 to all defenses                   & \tdash                                         \\
@@ -694,11 +694,6 @@
     \crit You also control the grapple (see \pcref{Controlling a Grapple}).
   \end{activeability}
 
-  \begin{activeability}{Jog}{Standard action}
-    \rankline
-    You gain a bonus to your \glossterm{available movement} this round equal to twice your \glossterm{speed}.
-  \end{activeability}
-
   \begin{activeability}{Maintain Grapple}{\glossterm{Free action}}
     \abilitytags \abilitytag{Brawling}
     \rankline
@@ -733,6 +728,11 @@
     Then, you remove all \glossterm{conditions} affecting you.
   \end{activeability}
 
+  \begin{activeability}{Run}{Standard action}
+    \rankline
+    You add twice your \glossterm{speed} to your \glossterm{available movement}.
+  \end{activeability}
+
   \begin{activeability}{Shove}{Standard action}
     \abilitytags \abilitytag{Brawling}
     \rankline
@@ -744,7 +744,7 @@
     If a target is not able to use any of its movement speeds, such as if it is being carried by a flying creature, its defense is treated as 0.
 
     % Can't use crit for extra movement here to limit your ability to push party members in excess of their normal speed.
-    \hit You can move up to half your \glossterm{speed} without reducing your \glossterm{available movement}.
+    \hit You can move up to half your \glossterm{speed}, reducing your \glossterm{available movement} as normal.
     During this movement, you can \glossterm{push} each target 5 feet for each 5 feet that you move.
     If you push a target so it stops being adjacent to you, you stop being able to push it further.
     When pushing a target off of a ledge, if you move with the target over the edge to fall with them, it cannot make the normal reactive Climb check to grab the ledge (see \pcref{Push Effects}).
@@ -753,7 +753,7 @@
   \begin{activeability}{Sprint}{Free action}
     \abilitycost One \glossterm{fatigue level}. You can only use this ability once per turn.
     \rankline
-    You gain a bonus to your \glossterm{available movement} this round equal to your \glossterm{speed}.
+    You add your \glossterm{speed} to your \glossterm{available movement}.
   \end{activeability}
 
   % Is this a fling effect? What happens if you throw someone into a wall?

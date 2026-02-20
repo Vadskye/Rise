@@ -247,7 +247,7 @@ export const chronomancy: MysticSphere = {
       cost: BRIEF_COOLDOWN,
       effect: `
         You are \\briefly \\braced.
-        In addition, you can move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
+        In addition, you add half your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['turtle', 'mobility'],
@@ -258,7 +258,7 @@ export const chronomancy: MysticSphere = {
       // TODO: full EA math. What is jog + total defense worth?
       effect: `
         You are \\briefly \\braced.
-        In addition, you can move up to twice your \\glossterm{speed} without reducing your \\glossterm{available movement}.
+        In addition, you add twice your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 5,
       roles: ['turtle'],
