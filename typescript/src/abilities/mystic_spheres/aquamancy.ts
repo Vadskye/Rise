@@ -877,7 +877,7 @@ export const aquamancy: MysticSphere = add_tag_to_sphere('Water', {
 
       functionsLike: {
         name: "waterward",
-        exceptThat: "you can also move up to your \\glossterm{speed} without reducing your \\glossterm{available movement}.",
+        exceptThat: "you also add your \\glossterm{speed} to your \\glossterm{available movement}.",
       },
       rank: 5,
       roles: ['mobility', 'turtle'],
