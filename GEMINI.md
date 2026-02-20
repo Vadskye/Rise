@@ -1,6 +1,6 @@
 # Gemini Instructions
 
-In this session, you will be focusing on development of the Rise tabletop role-playing game. You have relevant memory files in `./memories/`. Consult those files for context on game rules and coding conventions in Rise.
+In this session, you will be focusing on development of the Rise tabletop role-playing game.
 
 ## Project File Structure
 
@@ -17,7 +17,7 @@ In this session, you will be focusing on development of the Rise tabletop role-p
 | `typescript/` | TypeScript project for generating LaTeX content (spells, maneuvers). |
 | `utils/` | Utility scripts. |
 
-## Key Generation Logic
+## Generation Logic
 
 *   **Rust:** Generates LaTeX for classes, monsters, and equipment.
     *   Source: `rust/src/`
@@ -27,18 +27,16 @@ In this session, you will be focusing on development of the Rise tabletop role-p
     *   Source: `typescript/src/`
     *   Generation script: `typescript/src/scripts/generate_latex`
 
-## Memory File Quick Reference
+## Memories
 
-| Memory File | Content |
-| :--- | :--- |
-| `character_sheet.md` | Character sheet functionality. |
-| `characters.md` | Character creation and rules. |
-| `classes.md` | Summary of character classes. |
-| `coding_conventions.md` | LaTeX and coding style guide. |
-| `combat.md` | Combat rules. |
-| `equipment.md` | Equipment rules. |
-| `glossary.md` | Key game terms and concepts. |
-| `spells.md` | Spellcasting and mystic spheres. |
+@./memories/characters.md
+@./memories/equipment.md
+@./memories/spells.md
+@./memories/combat.md
+@./memories/glossary.md
+@./memories/character_sheet.md    
+@./memories/classes.md
+@./memories/coding_conventions.md
 
 ## Writing Style
 
