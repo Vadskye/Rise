@@ -64,25 +64,44 @@ Character creation blends thematic and mechanical decisions, typically following
 
 ### 4.1. Size Categories
 
-*   Affects \glossterm{space}, \glossterm{base speed}, attributes, and noticeability.
-*   **Space:** Area controlled in combat. Humanoids typically 5x5 ft. (one \glossterm{square}). Larger than physical body for maneuvering. Multiple smaller creatures can occupy a single square.
-*   **Base Speed:** Movement distance based on size category.
-*   **Other Effects:** Affects some skills/abilities (e.g., immunity to \atSizeBased abilities from much smaller creatures).
-*   **Very Small Creatures:** Multiple can occupy a single square (e.g., 4 Small, 25 Tiny, 100 Diminutive, 400 Fine; more if flying). Creatures two size categories smaller are not obstacles.
-*   **Very Large Creatures:** Occupy multiple squares. Creatures two size categories larger are not obstacles. Weapons are automatically \weapontag{Sweeping} (Huge+).
+| Size | Space | Base Speed | Weight Limits | Brawn | Reflex | Stealth | Weapons |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Fine | 1/4 ft. | 10 ft. | -4 Str | -4 | +4 | +16 | - |
+| Diminutive | 1/2 ft. | 10 ft. | -3 Str | -3 | +3 | +12 | - |
+| Tiny | 1 ft. | 20 ft. | -2 Str | -2 | +2 | +8 | - |
+| Small | 2-1/2 ft. | 20 ft. | -1 Str | -1 | +1 | +4 | - |
+| Medium | 5 ft. | 30 ft. | - | - | - | - | - |
+| Large | 10 ft. | 40 ft. | +1 Str | +1 | -1 | -4 | - |
+| Huge | 20 ft. | 50 ft. | +2 Str | +2 | -2 | -8 | Sweeping (1) |
+| Gargantuan | 40 ft. | 60 ft. | +3 Str | +3 | -3 | -12 | Sweeping (2) |
+| Colossal | 80+ ft. | 80 ft. | +4 Str | +4 | -4 | -16 | Sweeping (4) |
 
-### 4.2. Weight Limits
+### 4.2. Weight Limits by Strength
 
-*   Determined by Strength (see \trefnp{Weight Limits by Strength}).
-*   Measured in \glossterm{weight categories}.
-*   **Carrying Capacity:** Max weight held without penalty. Beyond this, objects can be pushed/dragged.
-*   **General Rule:** Ignore weight of objects lighter than your maximum weight category. 8 objects of one category = 1 object of next heavier category.
-*   **Modifiers:** Large/small creatures gain Strength bonus for weight limits. Multi-legged creatures carry/push/drag twice as much.
+| Strength | Carrying Capacity | Push/Drag |
+| :--- | :--- | :--- |
+| -2 | Tiny x8 | Small x8 |
+| -1 | Small x2 | Medium x2 |
+| 0 | Small x4 | Medium x4 |
+| 1 | Small x8 | Medium x8 |
+| 2 | Medium x2 | Large x2 |
+| 3 | Medium x4 | Large x4 |
+| 4 | Medium x8 | Large x8 |
+| 5 | Large x2 | Huge x2 |
 
 ### 4.3. Weight Categories
 
-*   Use same terms as \glossterm{size categories} (see \tref{Weight Categories}). Generally, a creature's weight category matches its size category.
-*   **Lightweight/Heavyweight:** Objects can be one category lighter/heavier than their size category.
+| Weight Category | Falling Damage Die | Average Weight |
+| :--- | :--- | :--- |
+| Fine | - | 1/2 oz. |
+| Diminutive | - | 1/4 lb. |
+| Tiny | 1d2 | 2 lb. |
+| Small | 1d6 | 15 lb. |
+| Medium | 1d8 | 120 lb. |
+| Large | 1d10 | 1,000 lb. |
+| Huge | 2d6 | 8,000 lb. |
+| Gargantuan | 2d8 | 64,000 lb. |
+| Colossal | 2d10 | 512,000 lb. |
 
 ### 4.4. Falling Damage
 
