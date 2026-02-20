@@ -35,15 +35,18 @@ Character creation blends thematic and mechanical decisions, typically following
 
 ### 2.2. Combat Statistics
 
-*   **Accuracy:** Number added to attack rolls. Normally half (level + Perception).
-    *   **Brawling Accuracy:** Used for \glossterm{brawling attacks}. Normally half (level + Strength). General accuracy modifiers apply; some abilities affect only brawling accuracy.
+*   **Accuracy:** Number added to attack rolls.
+    *   **Formula:** `floor((Level + Perception) / 2)`
+    *   **Brawling Accuracy:** Used for \glossterm{brawling attacks}.
+    *   **Brawling Formula:** `floor((Level + Strength) / 2)`
+    *   **Note:** General accuracy modifiers (like weapon bonuses) apply on top of this base.
 *   **Defenses (AD, Brawn, Reflex, Fortitude, Mental):** Value needed to hit.
+    *   **Calculation:** `floor(Level / 2) + primary attribute + class/equipment bonuses`
     *   **Armor Defense (AD):** Physical attacks (e.g., sword). Most common.
     *   **Brawn Defense:** Physical restraint/control (e.g., grappling).
     *   **Reflex Defense:** Dodging/evading (e.g., area attacks).
     *   **Fortitude Defense:** Attacks against body/life (e.g., poisons).
     *   **Mental Defense:** Attacks against mind (e.g., mind manipulation).
-    *   **Calculation:** Half level + primary attribute + class/equipment bonuses.
 *   **Encumbrance:** Penalty from armor to Dexterity-based checks and Strength-based skill checks (not direct Strength checks).
 *   **Hit Points:** Measures how much damage a character can take before dying. Defined by class, increase with level and Constitution. Cannot be less than 1. Represent resilience, luck, and determination, not literal injury.
 *   **Injury Point:** 
@@ -120,9 +123,25 @@ Character creation blends thematic and mechanical decisions, typically following
 *   **Minimum and Maximum Modifiers:** Bonuses with max values apply last. If multiple maxes, use lowest. If value already exceeds max, ignore bonus. Minimums apply after all other modifiers.
 *   **Doubling and Halving:** Normal doubling/halving applies. If a single effect doubles something twice, it becomes three times the original value (not four).
 *   **Changing Statistics:** Changes take effect immediately. Loss of prerequisites (e.g., Intelligence reduction) results in immediate loss of relevant abilities until within new limits.
-*   **Rounding:** Round down fractional numbers. For negative numbers, round away from 0.
+*   **Rounding:** 
+    *   In general, round down fractional numbers (use `floor`).
+    *   For negative numbers, round **away from 0**. For example, `-2.5` becomes `-3`.
 
-## 6. Character Advancement and Gaining Levels
+## 6. Formula Quick Reference
+
+| Statistic | Formula | Primary Attribute |
+| :--- | :--- | :--- |
+| **Accuracy** | `floor((Level + Per) / 2)` | Perception |
+| **Brawling Acc** | `floor((Level + Str) / 2)` | Strength |
+| **Defenses** | `floor(Level / 2) + Attr + Bonus` | (See 2.2) |
+| **Mundane Power** | `floor(Level / 2) + Str` | Strength |
+| **Magical Power** | `floor(Level / 2) + Wil` | Willpower |
+| **Fatigue Tolerance** | `3 + Con` (standard) | Constitution |
+
+> [!IMPORTANT]
+> Some class tables include a "Bonus" column equal to `floor(Level / 2)`. This is the same value used in the formulas above; it is not an additional bonus to be added on top of the `half level` component already present in the Power or Defense calculations.
+
+## 7. Character Advancement and Gaining Levels
 
 *   Gaining experience leads to leveling up, granting abilities (see \trefnp{Character Advancement and Gaining Levels}).
 *   **Per-Level Increases:** Hit Points, archetype rank, accuracy (may), power (even levels), trained skills bonus (even levels), defenses (even levels).
