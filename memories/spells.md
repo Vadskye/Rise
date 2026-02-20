@@ -41,5 +41,27 @@ The list of roles is defined in `typescript/src/mystic_spheres/index.ts`. A summ
 - `turtle`: Brief or one-round defensive buff or protection effect on yourself.
 - `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
 
+## Magic Sources
+There are four magic sources:
+- **Arcane:** Sorcerers and Wizards. Requires verbal and somatic components.
+- **Divine:** Clerics and Paladins. Requires verbal components.
+- **Nature:** Druids. Requires verbal components.
+- **Pact:** Votives. Requires verbal and somatic components.
+
+## Casting Components
+- **Verbal:** Speaking clearly. 20% failure if deafened.
+- **Somatic:** Free hand required. Cannot be used if grappled or restrained.
+
+## Rituals
+Rituals are powerful magical effects that take time and fatigue to perform.
+- **Fatigue Cost:** Every ritual takes at least 1 fatigue level.
+- **Leader:** Must have access to the ritual's sphere and be able to cast spells of its rank.
+- **Time:** At least 1 minute, often much longer.
+- **Participation:** Non-leaders can participate to help share the fatigue cost. Requires verbal and somatic components.
+- **Ritual Books:** Used to learn and store rituals.
+
+Note: Attuned effects generally only have the 'attune' role, even if they would otherwise fit other roles (e.g., a spell that grants a persistent bonus is just an 'attune' spell, not a 'boon attune' spell).
+- `wildfire`: Damage over time against multiple targets, typically in an area (AOE).
+
 ### Attuned Effects
 Roles are defined in terms of how characters spend standard actions. Long duration buff spells are generally not cast in the middle of combat, so their specific effects generally don't change a character's standard actions. For that reason, spells that require attunement will generally *only* have the 'attune' role, rather than any more specific roles based on their effects.
