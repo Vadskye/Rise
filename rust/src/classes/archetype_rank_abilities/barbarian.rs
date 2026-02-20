@@ -116,8 +116,7 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                 For most barbarians, this represents entering a furious rage.
                 Some barbarians instead enter a joyous battle trance or undergo a partial physical transformation into a more fearsome form.
                 \begin{sustainability}{Rage}{\glossterm{Free action}}
-                    \abilitytags \atEmotion, \atSustain (free)
-                    \abilitycost One \glossterm{fatigue level}.
+                    \abilitytags \atEmotion, \atSustain (minor)
                     \rankline
                     For the duration of this ability, you gain the following benefits and drawbacks:
                     \begin{raggeditemize}
@@ -125,6 +124,8 @@ pub fn battlerager<'a>() -> Vec<RankAbility<'a>> {
                         \item You take a \minus2 penalty to your Armor and Reflex defenses.
                         \item You are \enraged.
                     \end{raggeditemize}
+
+                    When this ability ends, you are \glossterm{briefly} \stunned.
                 \end{sustainability}
             ",
             modifiers: Some(vec![
@@ -317,7 +318,7 @@ pub fn outland_savage<'a>() -> Vec<RankAbility<'a>> {
             is_magical: false,
             rank: 7,
             description: r"
-                You can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
+                Once per turn, you can use the \ability{sprint} ability without increasing your \glossterm{fatigue level}.
                 After using this ability, you can't use it again next round.
             ",
             modifiers: None,
@@ -514,7 +515,7 @@ pub fn totemist<'a>() -> Vec<RankAbility<'a>> {
             rank: 3,
             // TODO: run this through the spreadsheet
             description: r"
-                At the end of each round, if you attacked a creature other than yourself that round, you gain a frenzy point.
+                At the end of your turn, if you attacked a creature other than yourself that turn, you gain a frenzy point.
                 Otherwise, you lose a frenzy point.
                 You can have a maximum of 4 frenzy points and a minimum of 0.
                 Frenzy points increase the power of your \ability{feral frenzy} ability.
