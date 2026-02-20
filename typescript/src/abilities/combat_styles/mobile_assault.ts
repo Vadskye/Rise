@@ -42,7 +42,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest',
 
       effect: `
-        Move up to your speed in a straight line without reducing your \\glossterm{available movement}.
+        Move up to your \\glossterm{speed} in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike}.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -54,7 +54,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Reaping Harvest+',
 
       effect: `
-        Move up to your speed in a straight line without reducing your \\glossterm{available movement}.
+        Move up to your \\glossterm{speed} in a straight line without reducing your \\glossterm{available movement}.
         You can also make a melee \\glossterm{strike} that deals triple damage.
         The strike targets all \\glossterm{enemies} adjacent to you at any point during your movement.
       `,
@@ -125,7 +125,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to half your movement speed without reducing your \\glossterm{available movement}.
+        Then, you add half your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 1,
       roles: ['mobility', 'burst'],
@@ -135,7 +135,7 @@ export const mobileHunter: CombatStyle = {
 
       effect: `
         Make a melee \\glossterm{strike}.
-        Then, you can move up to your speed without reducing your \\glossterm{available movement}.
+        Then, you add your \\glossterm{speed} to your \\glossterm{available movement}.
       `,
       rank: 3,
       roles: ['mobility', 'burst'],
@@ -211,7 +211,7 @@ export const mobileHunter: CombatStyle = {
       effect: `
         You are \\briefly \\braced.
         In addition, choose a creature you can see.
-        You can move up to 5 feet away from that creature without reducing your \\glossterm{available movement}.
+        You can move up to 5 feet away from that creature.
         Until your next turn, whenever that creature misses you with a melee \\glossterm{strike}, it takes a -2 penalty to its Armor defense.
         As normal, this bonus does not stack with itself, even if the same creature misses you with multiple melee attacks.
       `,
@@ -224,7 +224,7 @@ export const mobileHunter: CombatStyle = {
       name: 'Fearsome Rushdown',
 
       effect: `
-        Move up to half your movement speed without reducing your \\glossterm{available movement}.
+        Move up to half your \\glossterm{speed} without reducing your \\glossterm{available movement}.
         Then, make a melee \\glossterm{strike} that deals double damage.
         \\hit If your attack result also hits the target's Mental defense, it is \\briefly \\frightened by you.
       `,
