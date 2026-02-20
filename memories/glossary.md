@@ -18,12 +18,8 @@ The game uses a d10-based system with clear distinctions between different types
     *   **Character Rank**: A tier of power based on total level. It acts as a gatekeeper, limiting the maximum **Archetype Rank** a character can have.
     *   **Ability/Item Rank**: Abilities and items also have ranks, indicating their power level and the character rank required to use them.
 
-## 2. Combat System Overview
-
-Combat appears to be tactical, with an emphasis on positioning, resource management, and lasting consequences.
-
-*   **Action Economy**: Characters can use one Standard, Minor, and Move action per round, plus unlimited Free actions.
-*   **Targeting & Range**:
+*   **Initiative & Groups**: Combat uses a **Grouped Initiative** system. Initiative determines turn order, and allies with no enemies between them in the order form an **Initiative Group** that shares a turn and acts in any order.
+*   **Health and Damage**:
     *   Abilities are categorized as **Melee** (adjacent), **Ranged** (at a distance), or **Area**.
     *   Targeting requires **Line of Sight** (can you see it?) and often **Line of Effect** (is there a solid barrier in the way?).
 *   **Health and Damage**:
