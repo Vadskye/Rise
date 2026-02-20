@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: When interacting with spells, spellcasting, or mystic spheres
+---
+
 # Spells and Spellcasting
 
 ## Rule Locations

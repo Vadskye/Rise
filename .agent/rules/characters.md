@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: When you need rules for character creation or core character statistics like attributes
+---
+
 # Rise Character System Overview
 
 This document summarizes the core rules and mechanics for character definition and progression in Rise, derived from `comprehensive_codex/Characters.tex`.
@@ -131,44 +136,3 @@ Character creation blends thematic and mechanical decisions, typically following
 
 *   General indication of overall power, determined by level.
 *   Maximum rank in any individual archetype equals character rank.
-
-### 6.2. Legacy Items
-
-*   **Purpose:** Items gain magical properties with character advancement.
-*   **Acquisition:** At 6th level, choose a weapon, body armor, shield, apparel, or implement. Gains a rank 3 or lower magic item property.
-*   **Attunement:** No attunement required, but \glossterm{deep attunement} properties reduce maximum attunement points.
-*   **Properties:** Retains normal properties. Can be imbued/reforged like mundane items. Property must be appropriate for item category (e.g., amulet can gain boot effects).
-*   **Scaling:** Improves at 12th (rank 5 property) and 18th (rank 7 property) levels.
-*   **Loss/Destruction:** Must be retrieved if lost. If destroyed, a new item of the same type can be designated after a \glossterm{long rest}.
-*   **Unique Legacy Items:** Players can work with GMs to create custom magical effects reflecting character personality/powers.
-
-## 7. Narrative Elements
-
-### 7.1. Alignment
-
-*   **Types:** Lawful Good, Neutral Good, Chaotic Good, Lawful Neutral, Neutral, Chaotic Neutral, Lawful Evil, Neutral Evil, Chaotic Evil.
-*   **Purpose:** Tool for character development, broad framework for personality/philosophy.
-*   **Spectrum:** Not binary. Angels/demons are "pure." Population ratios: ~50% Neutral, ~25% Good, ~25% Evil (similar for Law/Chaos). Distribution varies (e.g., humanoids more good/lawful, monsters more chaotic/evil).
-*   **Good vs. Evil:** Defined by intent.
-    *   **Good:** Altruistic intentions, respect/empathy for others.
-    *   **Evil:** Selfish intentions, prioritizing personal desires over others' known needs.
-    *   **Neutral:** Neither consistently altruistic nor selfish. Intentions not involving others, or for mandatory needs, are neutral. Non-sapient beings are typically neutral.
-*   **Law vs. Chaos:**
-    *   **Law:** Values consistency, adheres to rules (external or self-imposed).
-    *   **Chaos:** Values flexibility/freedom, decisions based on immediate thoughts/feelings.
-    *   **Neutral:** Neither exceptionally consistent nor inconsistent. Non-sapient beings are typically neutral.
-
-### 7.2. Backgrounds
-
-*   **Purpose:** Character history before campaign. Explains statistics narratively.
-*   **Structure:** Benefits and flaws. Choosing a benefit requires a flaw. Mixed backgrounds provide both. Generally, limit to one benefit/flaw or one mixed background.
-*   **Acquisition:** Can be acquired during campaign at GM's discretion.
-*   **Relevance:** Primarily relevant where reputation is known.
-*   **Examples (Benefits):** Criminal Connections, Folk Hero, Guild Member, Mysterious Heirloom, Landed, Noble.
-*   **Examples (Flaws):** Escapee, Indebted, Nemesis, Repulsive, Wanted.
-*   **Examples (Mixed):** Scion.
-
-### 7.3. Personal Appearance
-
-*   **Age:** Typical ages by species (Adulthood, Middle Age, Old, Venerable, Maximum Age). Old/Venerable characters incur attribute penalties/bonuses.
-*   **Height and Weight:** Typical values vary by species.

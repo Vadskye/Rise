@@ -1,3 +1,8 @@
+---
+trigger: model_decision
+description: When interacting with combat, including movement
+---
+
 # Combat Summary
 This is a Gemini-generated summary of the Rise combat rules defined in `comprehensive_codex/Combat.tex`.
 
