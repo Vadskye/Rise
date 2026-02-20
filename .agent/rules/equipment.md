@@ -1,6 +1,11 @@
+---
+trigger: model_decision
+description: When interacting with equipment: weapons, armor, magic apparel, and consumables
+---
+
 # Rise Game Knowledge: Equipment
 
-This memory details key aspects of the Rise game system related to equipment, derived from editing `comprehensive_codex/Equipment.tex`. This information is crucial for understanding how items function within the game and for future tasks involving equipment rules.
+This memory details key aspects of the Rise game system related to equipment, derived from editing `comprehensive_codex/Equipment.tex`. This information is useful for understanding how items function within the game.
 
 ## Core Concepts and Interconnections
 
