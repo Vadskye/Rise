@@ -1014,7 +1014,6 @@ They allow more distinct and unique character customization, but also increase g
       Make a \glossterm{brawling attack} vs. Brawn against one creature or object adjacent to you.
       If you hit, and you are strong enough to carry the target, you \glossterm{fling} it up to 10 feet directly upwards.
       This leaves it \glossterm{midair}, which normally makes it \unsteady.
-      On a critical hit, the maximum fling distance is doubled.
       You can then jump up to their height, assuming it is within your maximum jump height.
       This jump does not reduce your \glossterm{available movement}.
 
@@ -1637,13 +1636,12 @@ They allow more distinct and unique character customization, but also increase g
         \rankline
         Make a \glossterm{strike} using a shield.
         If your Armor defense is higher than the target's Armor defense against this attack, the strike deals double damage.
-        Otherwise, the strike deals \glossterm{extra damage} equal to half your \glossterm{power}.
 
         \rankline
         \featlevel{9} You gain a \plus1 accuracy bonus with the strike.
-        \featlevel{12} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage. Otherwise, the extra damage increases to be equal to your power.
+        \featlevel{12} The strike deals double \glossterm{weapon damage}.
         \featlevel{15} The accuracy bonus increases to \plus2.
-        \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals 1d8 \glossterm{extra damage}. Otherwise, the extra damage increases to 2d8 \add your \glossterm{power}.
+        \featlevel{18} If your Armor defense is higher than the target's Armor defense, the strike deals triple damage.
     \end{activeability}
 
     \ff[12]{Shield Expertise\plus} Both Armor defense bonuses from this ability increase to \plus2.
@@ -2362,24 +2360,22 @@ They allow more distinct and unique character customization, but also increase g
     \magicalff[1]{Telepathy} You gain \glossterm{telepathy} with a 120 foot range (see \pcref{Telepathy}).
     If you already have telepathy, the range of your telepathy increases by 120 feet.
 
-    \magicalff[6]{Telepathic Tribulation}
-    \begin{magicalactiveability}{Telepathic Tribulation}{Standard action}
-      \abilitytags \abilitytag{Compulsion}
+    \magicalff[6]{Mindbreak}
+    \begin{magicalactiveability}{Mindbreak}{Standard action}
+      \abilitycost You \glossterm{briefly} lose your \glossterm{telepathy}, and you can't use this ability next round.
+      \abilitytags \abilitytag{Compulsion}, \abilitytag{Subdual}
       \rankline
       Make an attack vs. Mental against one creature within half the maximum range of your \glossterm{telepathy}.
       You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
-      \hit \damagerankone.
+      \hit \damageranktwo.
       \injury The target becomes \stunned as a \glossterm{condition}.
 
       \rankline
-      % increase to d2
-      \featlevel{9} The damage bonus from your power increases to be equal to your power.
-      % increase to d3ish
-      \featlevel{12} The base damage increases to 1d10.
-      % increase to d4ish
-      \featlevel{15} The damage bonus increases to 1d6 per 3 power.
-      % at r7, can upgrade condition
-      \featlevel{18} The target becomes \confused instead of stunned.
+      \featlevel{9} The damage increases to \damagerankthree.
+      \featlevel{12} The damage increases to \damagerankfour.
+      \featlevel{15} The damage increases to \damagerankfive.
+      \featlevel{18} The damage increases to \damageranksix.
+      \featlevel{21} The damage increases to \damagerankseven, and the target becomes \confused instead of stunned.
     \end{magicalactiveability}
 
     \magicalff[12]{Read Mind}
@@ -2387,7 +2383,7 @@ They allow more distinct and unique character customization, but also increase g
       \abilitytags \abilitytag{Emotion}, \abilitytag{Subtle}, \abilitytag{Sustain} (standard)
       \rankline
       Make an attack vs. Mental against a creature within half the maximum range of your \glossterm{telepathy}.
-      You use your full Intelligence or Willpower in place of half your Perception to determine your accuracy with this attack (see \pcref{Accuracy}).
+      You gain an accuracy bonus with this attack equal to half the sum of your Intelligence and Willpower.
       Whether you hit or miss, you cannot attack the target with this ability again until it finishes a \glossterm{short rest}.
       \hit You know the target's current thoughts and emotions.
       In addition to the obvious effects, this grants you a \plus5 bonus to Deception, Persuasion, Intimidate, and Social Insight attacks and checks against the target.
@@ -2440,19 +2436,13 @@ They allow more distinct and unique character customization, but also increase g
 
     At the end of the next round after you use this ability, the arrow and alchemical item are destroyed.
 
-    \ff[6]{Carom} Whenever you make a \glossterm{strike} with an arrow, you can have it bounce off of one obstacle before it reaches its destination.
-    You use the square on the obstacle that you bounce off of as a \glossterm{targeting proxy} for your strike.
-    The obstacle takes no damage, but it must be at least Small size and stable.
-    You measure the total distance travelled by the arrow from you to the obstacle, and from the obstacle to the target, to determine the range of your attack.
+    \ff[6]{Carom} Whenever you make a \glossterm{strike} with an arrow, you can give the strike an additional \glossterm{secondary target} within 15 feet of the primary target.
+    That extra target cannot already be a target of the strike.
+    You take a \minus1 accuracy with the strike against both targets when you use this ability.
 
-    You take a \minus2 accuracy penalty with the strike when you use this ability.
-    If you cannot see the target, you suffer the normal 50\% miss chance for making a blind targeted attack.
+    \ff[12]{Alchemical Arrow\plus} You can use this ability as a \glossterm{minor action} if the alchemical item is at least two ranks lower than your character rank.
 
-    \ff[12]{Alchemical Arrow\plus} When you use an alchemical item with a rank lower than your character rank, the alchemical arrow lasts for ten minutes before it is destroyed.
-    This can allow you to prepare multiple alchemical arrows before combat.
-    You still cannot recover alchemical items from arrows prepared with this ability, so preparing an alchemical arrow always consumes the item.
-
-    \ff[18]{Carom\plus} You no longer take an accuracy penalty when you use this ability.
+    \ff[18]{Carom\plus} The number of secondary targets increases to two, and the maximum distance between the primary target and each secondary target increases to 30 feet.
   \end{feat}
 
   \begin{magicalfeat}{Twinhand Spellcaster}{Casting, Magical}
