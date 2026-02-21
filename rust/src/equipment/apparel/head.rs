@@ -91,7 +91,7 @@ fn circlets() -> Vec<Apparel> {
                 You can activate the item and sustain its effect as a \glossterm{minor action}.
             "),
             ItemUpgrade::new(6, "Can allow you to quickly see at distance", r"
-                You can activate the item and sustain its effect as a \glossterm{free action} once per round.
+                You can activate the item and sustain its effect as a \glossterm{free action} once per turn.
             "),
         ],
         ..Apparel::default()

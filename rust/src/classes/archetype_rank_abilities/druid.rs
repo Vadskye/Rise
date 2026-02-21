@@ -151,7 +151,7 @@ pub fn elementalist<'a>() -> Vec<RankAbility<'a>> {
                     \abilitytags \abilitytag{Sustain} (attunable, minor)
                     You can control either air, earth, fire, or water within a \hugearea \glossterm{zone} from your location.
                     Each element has different limitations on its ability to move, as described below.
-                    Once per round as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
+                    Once per turn as a \glossterm{free action}, you can change how you direct your chosen element, but you must still control the same element.
                     \begin{raggeditemize}
                         \item Air: You can change the wind speed of air by up to 30 miles per hour, to a maximum total speed of 40 miles per hour.
                             If you reduce the air's speed to 0 and then increase it again, you can change the direction the air blows.
@@ -322,7 +322,7 @@ pub fn shifter<'a>() -> Vec<RankAbility<'a>> {
                 You can also spend \glossterm{insight points} to learn one additional \textit{wild aspect} per \glossterm{insight point}.
 
                 As a \glossterm{standard action}, you can gain the effects of one wild aspect that you know.
-                You cannot change your wild aspect more than once per round.
+                You cannot change your wild aspect more than once per turn.
                 That effect lasts until you activate a different wild aspect you know or until you dismiss it.
 
                 The abilities in the list below describe the effects of the aspect.

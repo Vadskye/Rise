@@ -677,7 +677,7 @@ export const vivimancy: MysticSphere = {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Fortitude against any living creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           In addition, whenever a living creature passes through the the wall, you make a \\glossterm{reactive attack} vs. Fortitude against it.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,

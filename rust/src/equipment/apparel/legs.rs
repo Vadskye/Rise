@@ -87,7 +87,7 @@ fn boots() -> Vec<Apparel> {
         rank: 3,
         short_description: String::from("Redirects personal gravity to adjacent objects"),
         description: String::from(r"
-            Once per round, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can activate these boots as a \glossterm<free action>.
+            Once per turn, while you are within 5 feet of an \glossterm<unattended> object at least one size category larger than you, you can activate these boots as a \glossterm<free action>.
             When you do, gravity pulls you towards that surface instead of in the normal direction.
             This allows you to walk normally on walls or even ceilings.
 

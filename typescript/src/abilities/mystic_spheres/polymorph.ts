@@ -597,7 +597,7 @@ export const polymorph: MysticSphere = {
       effect: `
         When you cast this spell, you choose your eyes, nose, mouth, or ears.
         You gain a duplicate copy of that organ anywhere on your body.
-        You can only use one of them at a time, but you can change which one is active once per round as a \\glossterm{free action}.
+        You can only use one of them at a time, but you can change which one is active once per turn as a \\glossterm{free action}.
 
         You can sustain or attune to this spell multiple times.
         Each time, you must choose a different organ to copy.

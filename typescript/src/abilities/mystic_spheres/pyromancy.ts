@@ -496,7 +496,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
         targeting: `
           At the end of your turn, make an attack vs. Fortitude against any creature that you are either grappling or are \\grappled by.
           In addition, whenever a creature makes a \\glossterm{melee} attack against you using a free hand or natural weapon, make a \\glossterm{reactive attack} vs. Fortitude against them.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       narrative: `
@@ -604,7 +604,7 @@ export const pyromancy: MysticSphere = add_tag_to_sphere('Fire', {
           When you cast this spell, and during each of your subsequent actions, make an attack vs. Reflex against any creature sharing space with it.
           Generally, this is only possible for Large or larger creatures.
           In addition, whenever something passes through the the wall, you make a \\glossterm{reactive attack} vs. Reflex against it.
-          You can only attack a given target with this spell once per round.
+          You can only attack a given target with this spell once per turn.
         `,
       },
       rank: 2,

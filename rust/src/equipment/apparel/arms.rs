@@ -323,7 +323,7 @@ fn gloves() -> Vec<Apparel> {
         rank: 1,
         short_description: String::from("Can create daggers"),
         description: String::from(r"
-            Once per round, you can activate these gloves as a \glossterm<free action>.
+            Once per turn, you can activate these gloves as a \glossterm<free action>.
             When you do, a dagger \glossterm<briefly> appears in each of your free hands.
             The daggers disappear when this effect ends.
         "),
