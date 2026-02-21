@@ -30,6 +30,23 @@ interface FightState {
 }
 
 /**
+ * Outcome of a single combat step or action.
+ */
+enum CombatStepStatus {
+    Ongoing,
+    Victory,
+    Draw,
+}
+
+/**
+ * Result of a single combat action, tracking status and potential winner.
+ */
+interface CombatStepResult {
+    status: CombatStepStatus;
+    winner: string | null;
+}
+
+/**
  * Manages a combat encounter between multiple creatures.
  */
 export class CombatScenario {
@@ -112,9 +129,9 @@ export class CombatScenario {
             for (const { team } of teamInitiatives) {
                 if (state.aliveMembersByTeam[team.name].length === 0) continue;
 
-                const winner = this.executeTeamTurn(team, state);
-                if (winner !== undefined) {
-                    return { winner, rounds, teamHpPercents: this.getTeamHpPercents(state) };
+                const result = this.executeTeamTurn(team, state);
+                if (result.status !== CombatStepStatus.Ongoing) {
+                    return { winner: result.winner, rounds, teamHpPercents: this.getTeamHpPercents(state) };
                 }
             }
         }
@@ -168,24 +185,24 @@ export class CombatScenario {
         return teamInitiatives;
     }
 
-    private executeTeamTurn(team: CombatTeam, state: FightState): string | null | undefined {
+    private executeTeamTurn(team: CombatTeam, state: FightState): CombatStepResult {
         const attackers = [...state.aliveMembersByTeam[team.name]];
         for (const attacker of attackers) {
             if (state.hp[attacker.id] <= 0) continue;
 
-            const combatOutcome = this.executeAttackerAction(attacker, team, state);
-            if (combatOutcome !== undefined) return combatOutcome;
+            const result = this.executeAttackerAction(attacker, team, state);
+            if (result.status !== CombatStepStatus.Ongoing) return result;
         }
-        return undefined;
+        return { status: CombatStepStatus.Ongoing, winner: null };
     }
 
     private executeAttackerAction(
         attacker: Creature,
         team: CombatTeam,
         state: FightState,
-    ): string | null | undefined {
+    ): CombatStepResult {
         const potentialTargets = this.getPotentialTargets(team, state);
-        if (potentialTargets.length === 0) return undefined;
+        if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
         const defender = potentialTargets[0]; // Simple targeting: pick the first one
         const damage = this.resolveAttack(attacker, defender);
@@ -217,18 +234,18 @@ export class CombatScenario {
         }
     }
 
-    private checkVictory(state: FightState): string | null | undefined {
+    private checkVictory(state: FightState): CombatStepResult {
         const teamsWithAlive = Object.entries(state.aliveMembersByTeam).filter(
             ([_, members]) => members.length > 0,
         );
 
         if (teamsWithAlive.length === 1) {
-            return teamsWithAlive[0][0]; // Winner name
+            return { status: CombatStepStatus.Victory, winner: teamsWithAlive[0][0] };
         }
         if (teamsWithAlive.length === 0) {
-            return null; // Draw
+            return { status: CombatStepStatus.Draw, winner: null };
         }
-        return undefined; // Continue
+        return { status: CombatStepStatus.Ongoing, winner: null };
     }
 
     private resolveAttack(attacker: Creature, defender: Creature): number {
