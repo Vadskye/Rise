@@ -19,17 +19,19 @@ t.test('CombatScenarioGenerator can create a custom character', (t) => {
     t.end();
 });
 
-t.test('CombatScenario can simulate a fight and report a victor', (t) => {
+t.test('CombatScenario can simulate a fight and report statistics', (t) => {
     const gen = new CombatScenarioGenerator();
     addBeasts(gen.grimoire);
     const ankheg = gen.getMonster('Ankheg');
-    const hero = gen.createCharacter('Hero', 5, 'fighter');
+    const wasp = gen.getMonster('Giant Wasp');
 
-    const scenario = gen.createScenario([hero, ankheg]);
-    const victor = scenario.simulate();
+    const scenario = gen.createScenario([wasp, ankheg]);
+    const result = scenario.simulate(100);
 
-    t.ok(victor, 'A victor should be reported');
-    t.equal(victor?.name, 'Hero', 'The first combatant should be the victor for now');
+    t.ok(result.averageRounds > 0, 'Average rounds should be positive');
+    t.ok(result.winRates['Ankheg'] > 0 || result.winRates['Giant Wasp'] > 0, 'There should be at least one winner');
+    console.log(`Ankheg Win Rate: ${result.winRates['Ankheg']}%`);
+    console.log(`Giant Wasp Win Rate: ${result.winRates['Giant Wasp']}%`);
     t.end();
 });
 
