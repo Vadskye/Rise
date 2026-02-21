@@ -844,18 +844,11 @@ function handleInitiative() {
       numeric: ['dexterity', 'perception', 'intelligence'],
     },
     callback: (v) => {
-      const highestAttribute = Math.max(v.dexterity, v.perception, v.intelligence);
-      const initiativeModifier = Math.floor(highestAttribute / 2);
-      const initiative = initiativeModifier + v.misc;
+      const initiative = v.misc;
 
       setAttrs({
         initiative,
-        initiative_explanation: formatCombinedExplanation(v.miscExplanation, [
-          {
-            name: 'half highest (Dex/Per/Int)',
-            value: initiativeModifier,
-          },
-        ]),
+        initiative_explanation: formatCombinedExplanation(v.miscExplanation),
       });
     },
   });
