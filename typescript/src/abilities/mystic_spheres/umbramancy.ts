@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 export const umbramancy: MysticSphere = {
   name: 'Umbramancy',
   shortDescription: 'Manipulate shadows to conceal allies and inhibit foes.',
-  sources: ['arcane', 'nature'],
+  sources: ['arcane', 'bardic', 'nature'],
   // Spells that manipulate your shadow to attack enemies target Brawn/Fortitude.
   // Spells that manipulate the shadows of enemies target Mental.
   // Umbramancy spells deal flat damage, like photomancy spells.

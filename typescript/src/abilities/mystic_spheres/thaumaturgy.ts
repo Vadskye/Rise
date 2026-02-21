@@ -4,7 +4,7 @@ import { BARRIER_COOLDOWN, CONDITION_CRIT } from '../constants';
 export const thaumaturgy: MysticSphere = {
   name: 'Thaumaturgy',
   shortDescription: 'Suppress and manipulate magical effects.',
-  sources: ['arcane', 'domain'],
+  sources: ['arcane', 'bardic', 'domain'],
 
   cantrips: [
     {
