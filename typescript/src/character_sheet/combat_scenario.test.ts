@@ -7,7 +7,13 @@ import {
   createScenario,
   cloneMonster,
   createCreature,
+  CombatSimulationResult,
 } from './combat_scenario';
+
+function assertExpectedWinRate(tap: any, result: CombatSimulationResult, teamName: string, expected: number) {
+  const actual = result.winRates[teamName];
+  tap.ok(Math.abs(actual - expected) <= 5, `${teamName} win rate should be ~${expected}% (actual: ${actual.toFixed(2)}%)`);
+}
 
 loadAllMonsters();
 
@@ -36,30 +42,28 @@ t.test('CombatScenario can simulate a fight and report statistics', (t) => {
   const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  t.ok(
-    result.winRates['Ankheg Team'] > 0 || result.winRates['Wasp Team'] > 0,
-    'There should be at least one winner',
-  );
+  assertExpectedWinRate(t, result, 'Ankheg Team', 100);
+  assertExpectedWinRate(t, result, 'Wasp Team', 0);
   t.end();
 });
 
-t.test('CombatScenario can simulate 1 Ankheg vs 10 Wasps', (t) => {
+t.test('CombatScenario can simulate 1 Ankheg vs 10 Carrion Crows', (t) => {
   const ankheg = getMonster('Ankheg');
-  const wasps = [];
+  const crows = [];
 
   for (let i = 0; i < 10; i++) {
-    wasps.push(cloneMonster('Giant Wasp'));
+    crows.push(cloneMonster('Carrion Crow'));
   }
 
-  const waspTeam = createTeam('Wasps', wasps);
+  const crowTeam = createTeam('Crows', crows);
   const ankhegTeam = createTeam('Ankheg', [ankheg]);
 
-  const scenario = createScenario([waspTeam, ankhegTeam]);
+  const scenario = createScenario([crowTeam, ankhegTeam]);
   const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
-  t.ok(result.winRates['Wasps'] >= 0, 'Wasps should have a win rate');
+  assertExpectedWinRate(t, result, 'Ankheg', 72.4);
+  assertExpectedWinRate(t, result, 'Crows', 27.6);
   t.end();
 });
 
@@ -78,28 +82,32 @@ t.test('CombatScenario can simulate 1 Ankheg vs 1 Ankheg', (t) => {
   const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  t.ok(result.winRates['Ankheg Team 1'] >= 0, 'Ankheg Team 1 should have a win rate');
-  t.ok(result.winRates['Ankheg Team 2'] >= 0, 'Ankheg Team 2 should have a win rate');
+  assertExpectedWinRate(t, result, 'Ankheg Team 1', 53.5);
+  assertExpectedWinRate(t, result, 'Ankheg Team 2', 46.5);
   t.end();
 });
 
-t.test('CombatScenario can simulate 1 Ankheg vs 5 Carrion Crows', (t) => {
-  const ankheg = getMonster('Ankheg');
+t.test('CombatScenario can simulate 5 Carrion Crows vs 10 Giant Wasps', (t) => {
   const crows = [];
+  const wasps = [];
 
   for (let i = 0; i < 5; i++) {
     crows.push(cloneMonster('Carrion Crow'));
   }
 
-  const crowTeam = createTeam('Crows', crows);
-  const ankhegTeam = createTeam('Ankheg', [ankheg]);
+  for (let i = 0; i < 10; i++) {
+    wasps.push(cloneMonster('Giant Wasp'));
+  }
 
-  const scenario = createScenario([crowTeam, ankhegTeam]);
+  const crowTeam = createTeam('Crows', crows);
+  const waspTeam = createTeam('Wasps', wasps);
+
+  const scenario = createScenario([crowTeam, waspTeam]);
   const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  t.ok(result.winRates['Ankheg'] >= 0, 'Ankheg should have a win rate');
-  t.ok(result.winRates['Crows'] >= 0, 'Crows should have a win rate');
+  assertExpectedWinRate(t, result, 'Crows', 0.2);
+  assertExpectedWinRate(t, result, 'Wasps', 99.8);
   t.end();
 });
 
@@ -134,8 +142,8 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   const result = scenario.simulate();
 
   t.ok(result.averageRounds > 0, 'Average rounds should be positive');
-  t.ok(result.winRates['A-Team'] >= 0, 'A-Team should have a win rate');
-  t.ok(result.winRates['B-Team'] >= 0, 'B-Team should have a win rate');
+  assertExpectedWinRate(t, result, 'A-Team', 0.1);
+  assertExpectedWinRate(t, result, 'B-Team', 99.9);
   t.ok(result.averageHpPercentRemaining['A-Team'] >= 0, 'A-Team should have avg HP remaining');
   t.ok(result.averageHpPercentRemaining['B-Team'] >= 0, 'B-Team should have avg HP remaining');
   t.end();
@@ -181,6 +189,6 @@ t.test('Elite monsters hit multiple targets with area attack', (t) => {
   // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
   const result = scenario.simulate();
   t.ok(result.averageRounds <= 2.5, `Should kill targets quickly (${result.averageRounds} rounds)`);
-  t.equal(result.winRates['Elite Team'], 100, 'Elite should always win');
+  assertExpectedWinRate(t, result, 'Elite Team', 100);
   t.end();
 });
