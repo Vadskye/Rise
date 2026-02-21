@@ -183,16 +183,16 @@ export const revelation: MysticSphere = {
       type: 'Attune (target)',
     },
 
-    // Braced + steeled is 0.8 EA
     {
       name: 'Precognitive Defense',
 
+      // Automatic steel is very strong, even if it's only for one round
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you become \\briefly \\braced and \\steeled.
+        When you do, your attunement to this effect ends and you become \\briefly \\steeled.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
-      rank: 2,
+      rank: 1,
       roles: ['attune'],
       type: 'Attune',
     },
@@ -200,9 +200,11 @@ export const revelation: MysticSphere = {
     {
       name: 'Greater Precognitive Defense',
 
+      // Unclear how to calculate EA, since most of the power comes from the automatic
+      // trigger on steeled
       effect: `
         You can activate this ability as a \\glossterm{free action}.
-        When you do, your attunement to this effect ends and you \\briefly become \\steeled and take half damage from all sources.
+        When you do, your attunement to this effect ends and you \\briefly \\braced and \\steeled.
         If an attack would get a \\glossterm{critical hit} against you, this effect automatically activates, protecting you from the triggering attack.
       `,
       rank: 7,
@@ -212,23 +214,23 @@ export const revelation: MysticSphere = {
 
     // TODO: calculate EA for skill bonuses
     {
-      name: 'Precognitive Competence',
+      name: 'Universal Insight',
 
       effect: `
-        You gain a +2 \\glossterm{enhancement bonus} to all skills.
+        You gain a +1 \\glossterm{enhancement bonus} to all skills.
       `,
-      rank: 3,
+      rank: 2,
       roles: ['attune'],
       type: 'Attune',
     },
 
     {
-      name: 'Greater Precognitive Competence',
+      name: 'Greater Universal Insight',
 
       effect: `
-        You gain a +3 \\glossterm{enhancement bonus} to all skills.
+        You gain a +2 \\glossterm{enhancement bonus} to all skills.
       `,
-      rank: 6,
+      rank: 5,
       roles: ['attune'],
       type: 'Attune',
     },
