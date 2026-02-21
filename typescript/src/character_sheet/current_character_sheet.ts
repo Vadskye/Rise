@@ -14,6 +14,10 @@ export function getCurrentCharacterSheet(): CharacterSheet {
   return characters[currentCharacterName];
 }
 
+export function characterSheetExists(characterName: string) {
+  return characters[characterName] !== undefined;
+}
+
 export function setCurrentCharacterSheet(characterName: string) {
   currentCharacterName = characterName;
 }
