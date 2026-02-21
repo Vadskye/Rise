@@ -56,7 +56,7 @@ export class CombatScenario {
      * Simulates the combat until a victor is determined.
      * Runs multiple iterations to gather statistics.
      */
-    public simulate(iterations: number = 1000): CombatSimulationResult {
+    public simulate(iterations: number = 50): CombatSimulationResult {
         if (this.teams.length < 2) {
             throw new Error('Combat requires at least two teams.');
         }
