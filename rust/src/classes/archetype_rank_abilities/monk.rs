@@ -329,7 +329,7 @@ pub fn ki<'a>() -> Vec<RankAbility<'a>> {
                         If your \glossterm{line of effect} to your destination is blocked, or if this teleportation would somehow place you inside a solid object, your teleportation is cancelled and you remain where you are.
 
                         Teleporting a given distance costs movement equal to twice that distance.
-                        For example, if you have a 30 foot \\glossterm{speed}, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
+                        For example, if you have a 30 foot \glossterm{speed}, you can move 10 feet, teleport 5 feet, and move an additional 10 feet before your movement ends.
                         If you are unable to use your walk speed, you also cannot move with this ability.
 
                         \rankline
