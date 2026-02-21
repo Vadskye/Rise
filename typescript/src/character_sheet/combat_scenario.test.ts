@@ -148,3 +148,49 @@ t.test('CombatScenario can simulate teams of multiple monsters', (t) => {
   t.ok(result.averageHpPercentRemaining['B-Team'] >= 0, 'B-Team should have avg HP remaining');
   t.end();
 });
+
+t.test('Elite monsters hit multiple targets with area attack', (t) => {
+  const gen = new CombatScenarioGenerator();
+
+  // Create an elite level 4 monster (Ankheg-like)
+  const elite = gen.createCreature('Elite', (c) => {
+    c.setRequiredProperties({
+      alignment: 'neutral',
+      base_class: 'brute',
+      elite: true,
+      creature_type: 'mortal',
+      level: 4,
+      size: 'large',
+    });
+    c.setProperties({
+      hit_points: 100,
+      accuracy: 20, // Guaranteed hit
+      mundane_power: 10,
+    });
+  });
+
+  // Create 5 weak targets
+  const targets = [];
+  for (let i = 0; i < 5; i++) {
+    targets.push(
+      gen.createCreature(`Target ${i}`, (c) => {
+        c.setProperties({
+          hit_points: 10,
+          armor_defense: 0,
+        });
+      }),
+    );
+  }
+
+  const team1 = gen.createTeam('Elite Team', [elite]);
+  const team2 = gen.createTeam('Target Team', targets);
+
+  const scenario = gen.createScenario([team1, team2]);
+
+  // If no area attack, it takes 5 rounds to kill 5 targets (1 target/round).
+  // With area attack, it kills one target and damages others, killing them all in ~2 rounds.
+  const result = scenario.simulate(20);
+  t.ok(result.averageRounds <= 2.5, `Should kill targets quickly (${result.averageRounds} rounds)`);
+  t.equal(result.winRates['Elite Team'], 100, 'Elite should always win');
+  t.end();
+});
