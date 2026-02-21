@@ -204,7 +204,7 @@ export class CombatScenario {
         const potentialTargets = this.getPotentialTargets(team, state);
         if (potentialTargets.length === 0) return { status: CombatStepStatus.Ongoing, winner: null };
 
-        const defender = potentialTargets[0]; // Simple targeting: pick the first one
+        const defender = this.selectTarget(attacker, potentialTargets, state);
         const damage = this.resolveAttack(attacker, defender);
         state.hp[defender.id] -= damage;
 
@@ -213,6 +213,31 @@ export class CombatScenario {
         }
 
         return this.checkVictory(state);
+    }
+
+    private selectTarget(attacker: Creature, targets: Creature[], state: FightState): Creature {
+        const logic = attacker.targetPreference;
+
+        if (logic === 'Random') {
+            const index = Math.floor(Math.random() * targets.length);
+            return targets[index];
+        } else if (logic === 'Vulnerable') {
+            // Sort by armor_defense (lowest first), then by current HP (lowest first)
+            const sorted = [...targets].sort((a, b) => {
+                const defA = a.armor_defense;
+                const defB = b.armor_defense;
+                if (defA !== defB) return defA - defB;
+
+                const hpA = state.hp[a.id];
+                const hpB = state.hp[b.id];
+                return hpA - hpB;
+            });
+            return sorted[0];
+        } else if (logic === 'Ordered') {
+            return targets[0];
+        }
+
+        throw new Error(`Unknown target preference: ${logic}`);
     }
 
     private getPotentialTargets(team: CombatTeam, state: FightState): Creature[] {

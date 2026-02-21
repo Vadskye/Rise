@@ -47,6 +47,8 @@ import {
   Shield,
 } from '@src/monsters/equipment';
 
+export type TargetSelectionLogic = 'Random' | 'Ordered' | 'Vulnerable';
+
 // TODO: this should probably be in a `knowledge.ts` file
 export interface KnowledgeResultConfig {
   easy?: string;
@@ -197,6 +199,8 @@ export interface PoisonDefinition {
 export class Creature implements CreaturePropertyMap {
   private sheet: CharacterSheet;
   private activeAbilities: Record<string, ActiveAbility>;
+  // Only used by CombatScenario
+  public targetPreference: TargetSelectionLogic = 'Ordered';
 
   constructor(sheet: CharacterSheet) {
     this.sheet = sheet;
