@@ -506,7 +506,7 @@ export const astromancy: MysticSphere = {
       },
       cost: `
         You must be touching a Small or larger area of water to cast this spell.
-        The water can be in a container you carry, as long as you are touching the container;
+        The water can be in a container you carry, as long as you are touching the container.
       `,
       narrative: `
         You create a connection to Aqua, the ocean planet, and summon a torrent of water.
