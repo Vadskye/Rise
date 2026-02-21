@@ -197,13 +197,4 @@ export class CharacterSheet {
 
     return allProperties;
   }
-
-  public clone(newName: string): CharacterSheet {
-    // We import createCharacterSheet here to avoid circular dependency if it were at top level,
-    // though in this project it's in a separate file.
-    const { createCharacterSheet } = require('./current_character_sheet');
-    const newSheet = createCharacterSheet(newName);
-    newSheet.setProperties(this.getAllProperties());
-    return newSheet;
-  }
 }
